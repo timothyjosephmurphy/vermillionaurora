@@ -8,7 +8,7 @@
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#07080c;color:#f4f6fb;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{padding:16px}.app{width:min(1500px,100%);margin:auto}h1{margin:0;font-size:clamp(22px,3vw,34px)}.sub{margin:4px 0 12px;color:#9da5b8}.controls{display:flex;flex-wrap:wrap;align-items:end;gap:10px 14px;padding:12px;background:#10121a;border:1px solid rgba(255,255,255,.12);border-radius:14px;margin-bottom:12px}.controls label{display:grid;gap:4px;min-width:115px;color:#aab0c0;font-size:12px}.controls input[type=range]{width:125px}.controls output{color:#fff;font-variant-numeric:tabular-nums}.controls button,.controls select{border:1px solid rgba(255,255,255,.13);background:#171a24;color:#fff;border-radius:9px;padding:9px 12px;font:inherit;cursor:pointer}.controls button.primary{background:#3158b8;border-color:#527af0}.stage{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:#000;box-shadow:0 18px 60px rgba(0,0,0,.35)}canvas{display:block;width:100%;height:auto;background:#05060a;cursor:crosshair}.status{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:9px;color:#9da5b8;font-size:13px}.back{display:inline-block;margin-bottom:1em;color:#7b8ab6;font-size:14px;text-decoration:none}.back:hover{color:#b0bcdd}body.full{padding:0;overflow:hidden}body.full h1,body.full .sub,body.full .controls,body.full .status,body.full .back{display:none}body.full .app,body.full .stage{width:100vw;height:100vh;max-width:none;margin:0;border:0;border-radius:0}body.full canvas{width:100vw;height:100vh;object-fit:contain}
 
-.project-story{max-width:1100px;margin:48px auto 16px;padding:36px 0 0;border-top:1px solid rgba(255,255,255,.16);font-size:16px;line-height:1.75;color:#c2c8d7}
+.project-story{max-width:1100px;margin:24px auto 16px;padding:12px 0 0;font-size:16px;line-height:1.75;color:#c2c8d7}
 .project-label{color:#9baef0;font-size:14px;letter-spacing:.06em;margin:0 0 12px}
 .project-story h2{font-size:clamp(28px,4vw,42px);line-height:1.2;letter-spacing:-.025em;color:#f4f6fb;margin:0 0 20px}
 .project-intro{font-size:clamp(18px,2vw,21px);max-width:850px;color:#e0e5f1;margin-bottom:30px}
@@ -22,6 +22,12 @@ body.full .project-story{display:none}
 @media(max-width:720px){.project-columns{grid-template-columns:1fr;gap:20px}.project-story{margin-top:32px;padding-top:28px}.prototype-note{padding:20px}}
 .mural-photo{margin:30px 0 36px}.mural-photo img{display:block;width:100%;height:auto;border:1px solid rgba(255,255,255,.16);border-radius:10px}.mural-photo figcaption{margin-top:10px;font-size:14px;color:#9da5b8}.mural-photo a:focus-visible{outline:2px solid #9baef0;outline-offset:5px;display:block}
 .performance-note{color:#b9c7ef;font-size:14px;margin:8px 0 12px}.emergency-stop{display:none}body.full .performance-note{display:none}.stage:fullscreen .emergency-stop,body.full .emergency-stop{display:block;position:fixed;z-index:100;top:12px;right:12px;background:#171a24;color:white;border:1px solid #9baef0;border-radius:9px;padding:10px 14px;font:inherit}
+
+#original-simulation{margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)}
+#original-simulation .prototype-note{margin:0 0 20px;color:#c2c8d7;line-height:1.65}
+#original-simulation h2{margin:0 0 14px;color:#f4f6fb;font-size:clamp(22px,3vw,32px)}
+body.full #original-simulation{margin:0;padding:0;border:0}
+body.full #original-simulation .prototype-note{display:none}
 </style>
 </head>
 <body>
@@ -29,36 +35,12 @@ body.full .project-story{display:none}
   <a href="/" class="back">← Back to portfolio</a>
   <h1>Neural Dance Mural</h1>
   <p class="sub">An interactive prototype for a participatory mural about agency, rhythm, and connection.</p>
-  <div class="controls">
-    <button id="audio" class="primary">Start audio</button>
-    <label>Volume<input id="vol" type="range" min="0" max="1" step=".01" value=".48"><output id="volv">48%</output></label>
-    <label>Type<select id="kind"><option value="kick">Kick</option><option value="bass" selected>Bass</option><option value="mid">Mid</option><option value="treble">Treble</option></select></label>
-    <label>BPM<input id="bpm" type="range" min="70" max="180" value="120"><output id="bpmv">120</output></label>
-    <label>Gravity<input id="gravity" type="range" min="0" max="6" step=".1" value="2.5"><output id="gravityv">2.5×</output></label>
-    <label>Wander<input id="wander" type="range" min="0" max=".8" step=".05" value=".25"><output id="wanderv">0.25</output></label>
-    <label>Pulse bloom<input id="bloom" type="range" min="0" max="3" step=".1" value="1.4"><output id="bloomv">1.4×</output></label>
-    <label>Halo bloom<input id="halobloom" type="range" min="0" max="3" step=".1" value="1.5"><output id="halobloomv">1.5×</output></label>
-    <label>Threshold<input id="thr" type="range" min="1" max="1.9" step=".05" value="1.4"><output id="thrv">1.40</output></label>
-    <label>Peak hold<input id="stamina" type="range" min="1" max="6" step=".1" value="2.8"><output id="staminav">2.8 s</output></label>
-    <label>Wobble<input id="wobble" type="range" min="0" max="2.5" step=".1" value="1"><output id="wobblev">1.0×</output></label>
-    <button id="seed">Seed pulse</button><button id="pause" class="primary">Start simulation</button><button id="reset">Reset</button><button id="fullscreen">Fullscreen</button>
-  </div>
-  <p id="performance-note" class="performance-note" role="status" aria-live="polite">Ready. Select Start simulation.</p>
-  <div class="stage"><button id="stop" class="emergency-stop">Stop simulation</button><canvas id="canvas" width="1000" height="620"></canvas></div>
-  <div class="status"><span id="status">Loading…</span><span>Click: add dancer · Shift-click: remove nearest</span></div>
-
   <section class="project-story" aria-labelledby="project-purpose">
     <p class="project-label">About the project · An installation in development</p>
     <h2 id="project-purpose">Showing up and moving, together.</h2>
     <p class="project-intro">Neural Dance is a participatory mural that turns individual acts of presence into a shared, living constellation. Dance, music, and projected light make each person’s contribution visible—and let it ripple through the people around them.</p>
 
 
-    <figure class="mural-photo">
-      <a href="/neural-dance/mural-with-silhouettes.jpeg" aria-label="View the mural photograph at full size">
-        <img src="/neural-dance/mural-with-silhouettes.jpeg" width="882" height="196" loading="lazy" alt="Panoramic mural on corrugated metal with dancer silhouettes, a bright sunset, and flowing painted figures." />
-      </a>
-      <figcaption>The mural with participant silhouettes—the physical setting for Neural Dance.</figcaption>
-    </figure>
 
     <div class="project-columns">
       <section aria-labelledby="project-motivation">
@@ -75,11 +57,13 @@ body.full .project-story{display:none}
       </section>
     </div>
 
-    <section class="prototype-note" aria-labelledby="prototype-use">
-      <h3 id="prototype-use">Explore the prototype</h3>
-      <p>The interactive sketch above explores the light, rhythm, and network behavior. Its colored points stand in for dancer silhouettes. It generates its own rhythmic audio; the photo booth, physical mural, and camera-to-projector installation are the next context for this idea.</p>
-      <p>Select <strong>Start simulation</strong> to begin. The demo pauses when you switch tabs or scroll away, and after five minutes of playback. You can resume whenever you’re ready. Choose a rhythm under <strong>Type</strong>, then click or tap the stage to add a dancer. Place dancers close together or farther apart and watch how the network changes. Select <strong>Start audio</strong> to hear it, adjust <strong>BPM</strong> to change the tempo, or use <strong>Seed pulse</strong> to start a wave. Shift-click removes a nearby dancer; <strong>Reset</strong> creates a new arrangement.</p>
-    </section>
+    <figure class="mural-photo">
+      <a href="/neural-dance/mural-with-silhouettes.jpeg" aria-label="View the mural photograph at full size">
+        <img src="/neural-dance/mural-with-silhouettes.jpeg" width="882" height="196" loading="lazy" alt="Panoramic mural on corrugated metal with dancer silhouettes, a bright sunset, and flowing painted figures." />
+      </a>
+      <figcaption>The mural with participant silhouettes—the physical setting for Neural Dance.</figcaption>
+    </figure>
+
     <p class="project-credit">A project by Timothy Joseph Murphy · Vermillion Aurora Productions</p>
   </section>
 
@@ -210,6 +194,32 @@ new MutationObserver(theme).observe(document.documentElement,{attributes:true,at
 photo.onload=still;theme();reset();play.textContent='Start simulation';
 })();
 </script>
+
+  <section id="original-simulation" aria-labelledby="prototype-use">
+    <section class="prototype-note" aria-labelledby="prototype-use">
+      <h2 id="prototype-use">Explore the original prototype</h2>
+      <p>The interactive sketch below explores the light, rhythm, and network behavior. Its colored points stand in for dancer silhouettes. It generates its own rhythmic audio; the photo booth, physical mural, and camera-to-projector installation are the next context for this idea.</p>
+      <p>Select <strong>Start simulation</strong> to begin. The demo pauses when you switch tabs or scroll away, and after five minutes of playback. You can resume whenever you’re ready. Choose a rhythm under <strong>Type</strong>, then click or tap the stage to add a dancer. Place dancers close together or farther apart and watch how the network changes. Select <strong>Start audio</strong> to hear it, adjust <strong>BPM</strong> to change the tempo, or use <strong>Seed pulse</strong> to start a wave. Shift-click removes a nearby dancer; <strong>Reset</strong> creates a new arrangement.</p>
+    </section>
+  <div class="controls">
+    <button id="audio" class="primary">Start audio</button>
+    <label>Volume<input id="vol" type="range" min="0" max="1" step=".01" value=".48"><output id="volv">48%</output></label>
+    <label>Type<select id="kind"><option value="kick">Kick</option><option value="bass" selected>Bass</option><option value="mid">Mid</option><option value="treble">Treble</option></select></label>
+    <label>BPM<input id="bpm" type="range" min="70" max="180" value="120"><output id="bpmv">120</output></label>
+    <label>Gravity<input id="gravity" type="range" min="0" max="6" step=".1" value="2.5"><output id="gravityv">2.5×</output></label>
+    <label>Wander<input id="wander" type="range" min="0" max=".8" step=".05" value=".25"><output id="wanderv">0.25</output></label>
+    <label>Pulse bloom<input id="bloom" type="range" min="0" max="3" step=".1" value="1.4"><output id="bloomv">1.4×</output></label>
+    <label>Halo bloom<input id="halobloom" type="range" min="0" max="3" step=".1" value="1.5"><output id="halobloomv">1.5×</output></label>
+    <label>Threshold<input id="thr" type="range" min="1" max="1.9" step=".05" value="1.4"><output id="thrv">1.40</output></label>
+    <label>Peak hold<input id="stamina" type="range" min="1" max="6" step=".1" value="2.8"><output id="staminav">2.8 s</output></label>
+    <label>Wobble<input id="wobble" type="range" min="0" max="2.5" step=".1" value="1"><output id="wobblev">1.0×</output></label>
+    <button id="seed">Seed pulse</button><button id="pause" class="primary">Start simulation</button><button id="reset">Reset</button><button id="fullscreen">Fullscreen</button>
+  </div>
+  <p id="performance-note" class="performance-note" role="status" aria-live="polite">Ready. Select Start simulation.</p>
+  <div class="stage"><button id="stop" class="emergency-stop">Stop simulation</button><canvas id="canvas" width="1000" height="620"></canvas></div>
+  <div class="status"><span id="status">Loading…</span><span>Click: add dancer · Shift-click: remove nearest</span></div>
+
+  </section>
 
 </div>
 <script>
@@ -398,4 +408,5 @@ reset();draw();showNotice(notice);
 </script>
 </body>
 </html>
+
 
