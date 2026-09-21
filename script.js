@@ -1,20 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.contact-form');
+  if (!form) return;
 
-  if (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const button = form.querySelector('button[type="submit"]');
-      const originalText = button.textContent;
+  const button = form.querySelector('button[type="submit"]');
+  const status = form.querySelector('.form-status');
+  const originalText = button.textContent;
+  let sending = false;
 
-      button.textContent = 'Message sent';
-      button.disabled = true;
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (sending || !form.reportValidity()) return;
 
-      setTimeout(() => {
-        button.textContent = originalText;
-        button.disabled = false;
-        form.reset();
-      }, 1800);
-    });
-  }
+    sending = true;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    status.textContent = 'Sending your message…';
+    form.setAttribute('aria-busy', 'true');
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (!response.ok) {
+        status.textContent = 'Your message could not be sent. Please try again or email TJ@VermillionAurora.com directly.';
+        return;
+      }
+
+      status.textContent = 'Thank you! Your message has been submitted.';
+      form.reset();
+    } catch (error) {
+      status.textContent = 'We could not confirm your submission. Please check your connection and try again, or email TJ@VermillionAurora.com directly.';
+    } finally {
+      sending = false;
+      button.disabled = false;
+      button.textContent = originalText;
+      form.removeAttribute('aria-busy');
+    }
+  });
 });

@@ -209,11 +209,11 @@
               </p>
               <ul class="contact-list">
                 <li>Seattle, WA</li>
-                <li>TJ@VermillionAurora.com</li>
+                <li><a href="mailto:TJ@VermillionAurora.com">TJ@VermillionAurora.com</a></li>
               </ul>
             </div>
 
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/mgavkoql" method="POST">
               <div class="field-row">
                 <label>
                   <span>First Name</span>
@@ -226,16 +226,17 @@
               </div>
 
               <label>
-                <span>Email</span>
-                <input type="email" name="email" placeholder="Email" />
+                <span>Email (required)</span>
+                <input type="email" name="email" placeholder="Email" autocomplete="email" required />
               </label>
 
               <label>
-                <span>Message</span>
-                <textarea name="message" rows="5" placeholder="Tell me about your vision"></textarea>
+                <span>Message (required)</span>
+                <textarea name="message" required rows="5" placeholder="Tell me about your vision"></textarea>
               </label>
 
               <button type="submit" class="button button-solid">Send</button>
+              <p class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
             </form>
           </div>
         </section>
