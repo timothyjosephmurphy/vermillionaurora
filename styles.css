@@ -653,3 +653,33 @@ textarea {
     padding: 20px 0;
   }
 }
+
+/* Product links and detail pages */
+a.product-image, a.art-image { display: block; }
+.product-title-link:hover { text-decoration: underline; text-underline-offset: 0.15em; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.product-detail { padding-top: 2rem; padding-bottom: 5rem; }
+.product-breadcrumb { display: flex; flex-wrap: wrap; gap: 0.6rem; font-size: 0.875rem; color: var(--muted); margin-bottom: 2.5rem; }
+.product-breadcrumb a, .product-back { text-decoration: underline; text-underline-offset: 0.2em; }
+.product-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.product-figure { margin: 0; padding: clamp(1rem, 3vw, 2rem); background: var(--paper); border: 1px solid var(--line); }
+.product-figure img { width: 100%; max-height: 75vh; object-fit: contain; }
+.product-figure figcaption { margin-top: 1rem; font-size: 0.875rem; color: var(--muted); }
+.product-summary { padding-top: 1rem; min-width: 0; }
+.product-summary .eyebrow { font-size: 0.875rem; }
+.product-summary h1 { font: 600 clamp(2.6rem, 4.5vw, 4.5rem)/1.05 "Cormorant Garamond", serif; margin: 0; overflow-wrap: break-word; }
+.product-detail-price { font-size: 1.5rem; color: var(--accent-dark); margin: 1.5rem 0; }
+.product-description { font-size: 1.125rem; max-width: 40rem; }
+.product-inquiry { border-top: 1px solid var(--line); padding-top: 1.5rem; margin-top: 2rem; margin-bottom: 2rem; }
+.product-inquiry .button { font-size: 0.875rem; }
+.product-inquiry p { color: var(--muted); max-width: 35rem; }
+.product-layout-text { display: block; max-width: 780px; margin: 0 auto; border-top: 2px solid var(--accent); padding: 2rem 0; }
+.product-page .page-shell { display: flex; flex-direction: column; }
+.product-page main { flex: 1; }
+#contact { scroll-margin-top: 10rem; }
+@media (max-width: 800px) {
+  .product-layout { grid-template-columns: 1fr; }
+  .product-figure img { max-height: 65vh; }
+  .product-detail { padding-top: 1.5rem; padding-bottom: 3rem; }
+  .product-page .header-actions .button { padding: 0.75rem 1rem; }
+}

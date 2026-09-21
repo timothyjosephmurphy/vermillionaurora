@@ -2,6 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
+  const productNames = {
+  "warszawska-syrenka": "Warszawska Syrenka",
+  "honeybadger-and-cub-with-genesis-block": "Honeybadger and Cub with Genesis Block",
+  "el-zonte-at-sunrise": "El Zonte at Sunrise",
+  "single-portrait": "Single portrait",
+  "double-portrait": "Double portrait",
+  "small-landscape": "Small landscape",
+  "sunset-over-water": "Sunset Over Water",
+  "velvet-dawn": "Velvet Dawn",
+  "personal-portrait": "Personal Portrait"
+};
+  const productSlug = new URLSearchParams(window.location.search).get('product');
+  const message = form.querySelector('[name="message"]');
+  if (Object.hasOwn(productNames, productSlug) && message && !message.value) {
+    message.value = 'Hello, I’m interested in ' + productNames[productSlug] + '.\n\n';
+  }
+
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector('.form-status');
   const originalText = button.textContent;
