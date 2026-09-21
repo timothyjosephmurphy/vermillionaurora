@@ -3,16 +3,30 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Neural Dance Mural</title>
+<title>Neural Dance Mural | Vermillion Aurora</title>
+<meta name="description" content="Explore Neural Dance, a participatory mural in development about human agency, shared rhythm, and connection. Try the interactive network prototype." />
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#07080c;color:#f4f6fb;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{padding:16px}.app{width:min(1500px,100%);margin:auto}h1{margin:0;font-size:clamp(22px,3vw,34px)}.sub{margin:4px 0 12px;color:#9da5b8}.controls{display:flex;flex-wrap:wrap;align-items:end;gap:10px 14px;padding:12px;background:#10121a;border:1px solid rgba(255,255,255,.12);border-radius:14px;margin-bottom:12px}.controls label{display:grid;gap:4px;min-width:115px;color:#aab0c0;font-size:12px}.controls input[type=range]{width:125px}.controls output{color:#fff;font-variant-numeric:tabular-nums}.controls button,.controls select{border:1px solid rgba(255,255,255,.13);background:#171a24;color:#fff;border-radius:9px;padding:9px 12px;font:inherit;cursor:pointer}.controls button.primary{background:#3158b8;border-color:#527af0}.stage{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:#000;box-shadow:0 18px 60px rgba(0,0,0,.35)}canvas{display:block;width:100%;height:auto;background:#05060a;cursor:crosshair}.status{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:9px;color:#9da5b8;font-size:13px}.back{display:inline-block;margin-bottom:1em;color:#7b8ab6;font-size:14px;text-decoration:none}.back:hover{color:#b0bcdd}body.full{padding:0;overflow:hidden}body.full h1,body.full .sub,body.full .controls,body.full .status,body.full .back{display:none}body.full .app,body.full .stage{width:100vw;height:100vh;max-width:none;margin:0;border:0;border-radius:0}body.full canvas{width:100vw;height:100vh;object-fit:contain}
+
+.project-story{max-width:1100px;margin:48px auto 16px;padding:36px 0 0;border-top:1px solid rgba(255,255,255,.16);font-size:16px;line-height:1.75;color:#c2c8d7}
+.project-label{color:#9baef0;font-size:14px;letter-spacing:.06em;margin:0 0 12px}
+.project-story h2{font-size:clamp(28px,4vw,42px);line-height:1.2;letter-spacing:-.025em;color:#f4f6fb;margin:0 0 20px}
+.project-intro{font-size:clamp(18px,2vw,21px);max-width:850px;color:#e0e5f1;margin-bottom:30px}
+.project-columns{display:grid;grid-template-columns:1fr 1.35fr;gap:24px 48px}
+.project-story h3{font-size:21px;line-height:1.35;color:#f4f6fb;margin:0 0 12px}
+.project-story p{margin-top:0}
+.prototype-note{padding:24px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:#10121a;margin-top:24px}
+.prototype-note p:last-child{margin-bottom:0}
+.project-credit{font-size:14px;color:#9da5b8;margin:28px 0 0}
+body.full .project-story{display:none}
+@media(max-width:720px){.project-columns{grid-template-columns:1fr;gap:20px}.project-story{margin-top:32px;padding-top:28px}.prototype-note{padding:20px}}
 </style>
 </head>
 <body>
 <div class="app">
   <a href="/" class="back">← Back to portfolio</a>
   <h1>Neural Dance Mural</h1>
-  <p class="sub">Standalone interactive prototype</p>
+  <p class="sub">An interactive prototype for a participatory mural about agency, rhythm, and connection.</p>
   <div class="controls">
     <button id="audio" class="primary">Start audio</button>
     <label>Volume<input id="vol" type="range" min="0" max="1" step=".01" value=".48"><output id="volv">48%</output></label>
@@ -29,6 +43,35 @@
   </div>
   <div class="stage"><canvas id="canvas" width="1000" height="620"></canvas></div>
   <div class="status"><span id="status">Loading…</span><span>Click: add dancer · Shift-click: remove nearest</span></div>
+
+  <section class="project-story" aria-labelledby="project-purpose">
+    <p class="project-label">About the project · An installation in development</p>
+    <h2 id="project-purpose">Showing up and moving, together.</h2>
+    <p class="project-intro">Neural Dance is a participatory mural that turns individual acts of presence into a shared, living constellation. Dance, music, and projected light make each person’s contribution visible—and let it ripple through the people around them.</p>
+
+    <div class="project-columns">
+      <section aria-labelledby="project-motivation">
+        <h3 id="project-motivation">Why make it?</h3>
+        <p>As AI and automation take on more of our labor and decision-making, what will it mean to exercise human agency? Neural Dance explores a future in which meaning comes from choosing to move, create, connect, and affect the world.</p>
+        <p>Joining the mural is a small, deliberate act. Where you place yourself changes the relationships that form around you. Each dancer keeps a distinct rhythm, while their presence helps shape something larger: a collective work that exists because people chose to participate.</p>
+      </section>
+
+      <section aria-labelledby="project-experience">
+        <h3 id="project-experience">The intended experience</h3>
+        <p>Designed for a shared gathering around music and dance, the proposed installation begins at a photo booth. Participants are photographed dancing; their silhouettes are cut into stickers, which they place wherever they choose on a mural shaped by sacred geometry and the feeling of a communal stage or amphitheater.</p>
+        <p>A fixed camera would locate the silhouettes, and a projector would illuminate each one individually. One dancer might swell with the bass, another flash with the kick, another breathe with the midrange or flicker with the treble. Their different rhythmic personalities would move together within the same music.</p>
+        <p>Nearby dancers reinforce one another. Pulses travel along connections and geometric paths, activating other dancers and spreading waves of light. The neural-network metaphor makes connection tangible: each participant becomes a point of influence in an evolving record of the gathering.</p>
+      </section>
+    </div>
+
+    <section class="prototype-note" aria-labelledby="prototype-use">
+      <h3 id="prototype-use">Explore the prototype</h3>
+      <p>The interactive sketch above explores the light, rhythm, and network behavior. Its colored points stand in for dancer silhouettes. It generates its own rhythmic audio; the photo booth, physical mural, and camera-to-projector installation are the next context for this idea.</p>
+      <p>Choose a rhythm under <strong>Type</strong>, then click or tap the stage to add a dancer. Place dancers close together or farther apart and watch how the network changes. Select <strong>Start audio</strong> to hear it, adjust <strong>BPM</strong> to change the tempo, or use <strong>Seed pulse</strong> to start a wave. Shift-click removes a nearby dancer; <strong>Reset</strong> creates a new arrangement.</p>
+    </section>
+    <p class="project-credit">A project by Timothy Joseph Murphy · Vermillion Aurora Productions</p>
+  </section>
+
 </div>
 <script>
 (()=>{
