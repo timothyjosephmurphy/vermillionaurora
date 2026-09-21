@@ -83,6 +83,134 @@ body.full .project-story{display:none}
     <p class="project-credit">A project by Timothy Joseph Murphy · Vermillion Aurora Productions</p>
   </section>
 
+<section id="nd-mural-mapped" aria-labelledby="mural-simulation-title">
+  <div class="viz-row"><h2 id="mural-simulation-title">Dance across the mural</h2><button class="btn btn-primary" data-action="play">Start simulation</button><button class="btn" data-action="audio" aria-pressed="false">Audio off</button><button class="btn" data-action="reset">Reset placement</button></div>
+  <p class="mural-help">Start the simulation to see 28 dancers mapped onto the mural’s silhouette stickers. Zoom in to explore; drag a marker to adjust its placement, click to add a dancer, or Shift-click to remove one.</p>
+  <div class="viz-controls">
+    <label class="form-label">New dancer rhythm<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Mid</option><option value="3">Treble</option></select></label>
+    <label class="form-label">Tempo <output data-value="bpm">120 BPM</output><input class="form-range" data-control="bpm" type="range" min="70" max="180" value="120"></label>
+    <label class="form-label">Zoom <output data-value="zoom">1×</output><input class="form-range" data-control="zoom" type="range" min="1" max="3" step=".1" value="1"></label>
+    <label class="form-label">View center<input class="form-range" data-control="pan" aria-label="Horizontal view center" type="range" min="0" max="1" step=".01" value=".5"></label>
+  </div>
+  <canvas class="cursor-interaction" data-stage width="1764" height="640" role="img" aria-label="Interactive neural light overlay on the shipping container mural. Click to add a dancer; drag a marker to align it with a silhouette; shift-click to remove it."></canvas>
+  <div class="viz-row text-small"><span data-legend="0">● Kick</span><span data-legend="1">◆ Bass</span><span data-legend="2">■ Mid</span><span data-legend="3">▲ Treble</span><span data-status role="status" aria-live="polite">Ready · 28 dancers</span></div>
+  <img data-mural src="/neural-dance/mural-with-silhouettes.jpeg" hidden alt="Shipping container mural with dancer silhouettes">
+</section>
+<style>
+#nd-mural-mapped{--background:#07080c;--foreground:#f4f6fb;--viz-series-1:#ff927d;--viz-series-2:#eb92f5;--viz-series-3:#7fe8b3;--viz-series-4:#81b7fc;margin:48px 0 24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)}
+#nd-mural-mapped .viz-row,#nd-mural-mapped .viz-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+#nd-mural-mapped h2{font-size:clamp(22px,3vw,32px);margin:0 auto 0 0}
+#nd-mural-mapped .mural-help{color:#aab0c0;line-height:1.6}
+#nd-mural-mapped .viz-controls{padding:12px;background:#10121a;border-radius:14px}
+#nd-mural-mapped .form-label{display:grid;gap:6px;flex:1 1 160px;min-width:0;color:#aab0c0;font-size:14px}
+#nd-mural-mapped .form-range{width:100%;margin:0;accent-color:#81b7fc}
+#nd-mural-mapped .btn,#nd-mural-mapped .form-select{border:1px solid rgba(255,255,255,.18);background:#171a24;color:#f4f6fb;border-radius:9px;padding:10px 12px;font:inherit;cursor:pointer}
+#nd-mural-mapped .btn-primary{background:#3158b8;border-color:#527af0}
+#nd-mural-mapped button:focus-visible,#nd-mural-mapped input:focus-visible,#nd-mural-mapped select:focus-visible{outline:2px solid #9baef0;outline-offset:3px}
+#nd-mural-mapped .text-small{font-size:14px;color:#aab0c0}
+body.full #nd-mural-mapped{display:none}
+
+#nd-mural-mapped [data-stage]{display:block;width:100%;height:auto;aspect-ratio:1764/640;touch-action:none;margin:16px 0}
+#nd-mural-mapped .viz-row{justify-content:flex-start}
+#nd-mural-mapped h2{margin-right:auto}
+</style>
+<script>
+(()=>{
+const root=document.getElementById('nd-mural-mapped');
+const canvas=root.querySelector('[data-stage]'),ctx=canvas.getContext('2d'),photo=root.querySelector('[data-mural]');
+const el=s=>root.querySelector(s),play=el('[data-action="play"]'),audioButton=el('[data-action="audio"]'),status=el('[data-status]');
+const W=882,H=196,R=82,MAX=48,MAX_PULSES=48,rates=[1,.5,1.5,2];
+let nodes=[],pulses=[],id=0,bpm=120,zoom=1,pan=.5,running=false,audio=false,low=false;
+let timer=0,raf=0,last=0,started=0,slow=0,time=0,lastReport=0,pointer=null;
+let ac=null,master=null,voices=new Set(),lastTone=[-99,-99,-99,-99],toneWindow=0,toneCount=0;
+let colors=[],foreground='',background='';const glows=[];
+function theme(){
+  const resolver=document.createElement('span');root.appendChild(resolver);
+  function color(token){resolver.style.color='var('+token+')';return getComputedStyle(resolver).color;}
+  colors=[1,2,3,4].map(i=>color('--viz-series-'+i));foreground=color('--foreground');background=color('--background');resolver.remove();
+  for(let k=0;k<4;k++){
+    el('[data-legend="'+k+'"]').style.color=colors[k];
+    const sprite=document.createElement('canvas');sprite.width=sprite.height=64;const c=sprite.getContext('2d');
+    const gradient=c.createRadialGradient(32,32,0,32,32,32);gradient.addColorStop(0,colors[k]);gradient.addColorStop(1,'transparent');
+    c.fillStyle=gradient;c.fillRect(0,0,64,64);glows[k]=sprite;
+  }
+  still();
+}
+function add(x,y,k){if(nodes.length>=MAX){report('48-dancer limit · remove one to add another');return;}nodes.push({id:++id,x,y,k,phase:(id%7)*.047,a:0,rest:0,peak:0,ref:0});}
+// Manually traced sticker centers, in source-photo pixels (882 x 196).
+// Blurred centers remain approximate; drag markers for individual corrections.
+const positions=[[122.8,75.0],[124.8,98.5],[134.6,68.6],[141.8,49.0],[141.4,99.5],[154.7,75.0],[162.8,71.0],[163.0,100.6],[183.0,105.5],[203.2,74.3],[202.9,109.8],[208.7,99.5],[222.9,51.3],[222.8,123.6],[235.1,124.4],[244.0,98.7],[255.7,123.4],[283.0,123.8],[288.7,131.2],[349.0,48.5],[351.2,123.6],[366.6,127.6],[357.6,162.7],[473.0,51.0],[654.5,130.2],[703.0,46.0],[755.6,117.3],[768.6,106.0]];
+function reset(){stop('Placement reset');nodes=[];pulses=[];id=0;time=0;positions.forEach(([x,y],i)=>add(x,y,i%4));still();report('Ready · '+nodes.length+' dancers');}
+function view(){const scale=canvas.width/W*zoom;return {scale,x:canvas.width/2-pan*W*scale,y:canvas.height/2-H*scale/2};}
+function transform(n){const v=view();return {x:v.x+n.x*v.scale,y:v.y+n.y*v.scale};}
+function report(text){status.textContent=text;}
+function onscreen(){const r=canvas.getBoundingClientRect();return !document.hidden&&r.bottom>0&&r.top<innerHeight&&r.left<innerWidth&&r.right>0&&root.isConnected;}
+function cancel(){clearTimeout(timer);cancelAnimationFrame(raf);timer=raf=0;}
+function mute(){audio=false;audioButton.textContent='Audio off';audioButton.setAttribute('aria-pressed','false');for(const voice of [...voices]){try{voice.o.stop();}catch{}voice.release();}if(ac)ac.suspend().catch(()=>{});}
+function stop(text='Paused'){running=false;cancel();mute();play.textContent='Resume';report(text);}
+function start(){if(running||!onscreen())return;cancel();running=true;last=performance.now();started=last;slow=0;play.textContent='Pause';report(low?'Running · reduced effects':'Running');schedule(0);}
+function schedule(delay){if(running)timer=setTimeout(()=>{timer=0;raf=requestAnimationFrame(frame);},delay);}
+function still(){if(running||raf||!root.isConnected)return;raf=requestAnimationFrame(()=>{raf=0;draw();});}
+async function toggleAudio(){if(audio){mute();return;}try{start();if(!running)return;if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.16;master.connect(ac.destination);}await ac.resume();if(!running||!onscreen()){mute();return;}audio=true;audioButton.textContent='Audio on';audioButton.setAttribute('aria-pressed','true');}catch{mute();report('Audio unavailable · visuals ready');}}
+function tone(k){if(!audio||!ac||voices.size>=8)return;const now=ac.currentTime;if(now-lastTone[k]<.09)return;if(now-toneWindow>=1){toneWindow=now;toneCount=0;}if(toneCount>=24)return;toneCount++;lastTone[k]=now;
+ const o=ac.createOscillator(),g=ac.createGain();o.type=k===1?'sawtooth':'sine';o.frequency.setValueAtTime([130,55,430,1500][k],now);if(k===0)o.frequency.exponentialRampToValueAtTime(42,now+.15);
+ g.gain.setValueAtTime(.001,now);g.gain.exponentialRampToValueAtTime([.65,.22,.15,.09][k],now+.008);g.gain.exponentialRampToValueAtTime(.001,now+.18);o.connect(g).connect(master);
+ const voice={o,release(){o.disconnect();g.disconnect();o.onended=null;voices.delete(voice);}};voices.add(voice);o.onended=voice.release;o.start(now);o.stop(now+.2);
+}
+function update(dt){time+=dt;const queue=[],emitted=new Set(),received=new Map();
+ function emit(n){if(!emitted.has(n.id)){emitted.add(n.id);queue.push(n);}}
+ for(const n of nodes){n.a=Math.max(0,n.a-dt*1.5);n.phase+=dt*bpm/60*rates[n.k];n.rest=Math.max(0,n.rest-dt);if(n.phase>=1){n.phase%=1;if(!n.rest){n.a=Math.min(2,Math.max(.95,n.a+.25));emit(n);}}}
+ for(let i=0;i<queue.length&&i<MAX;i++){const a=queue[i];tone(a.k);let trails=0;
+  for(const b of nodes){const distance=Math.hypot(a.x-b.x,a.y-b.y);if(a===b||distance>=R||b.rest)continue;
+   const used=received.get(b.id)||0,amount=Math.min(.65-used,.2+.25*(1-distance/R));if(amount>0){received.set(b.id,used+amount);b.a=Math.min(2,b.a+amount);if(b.a>=1.4&&time>=b.ref){b.ref=time+.2;emit(b);}}
+   if(trails<2&&pulses.length<(low?24:MAX_PULSES)){pulses.push({a,b,k:a.k,age:0,duration:.3+distance/170,trail:[]});trails++;}
+  }
+ }
+ for(const n of nodes){n.peak=n.a>1.75?n.peak+dt:Math.max(0,n.peak-dt*.6);if(n.peak>2.8){n.rest=1.6;n.peak=0;n.a=.4;}}
+ for(let i=pulses.length-1;i>=0;i--){const p=pulses[i];p.age+=dt;if(p.age>=p.duration){pulses.splice(i,1);continue;}const q=path(p.a,p.b,p.age/p.duration);p.trail.push(q);if(p.trail.length>10)p.trail.shift();}
+}
+function path(a,b,t){return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t-Math.sin(Math.PI*t)*Math.min(18,Math.abs(b.x-a.x)*.15)};}
+function shape(n,p,r){ctx.beginPath();if(n.k===0)ctx.arc(p.x,p.y,r,0,Math.PI*2);else if(n.k===1){ctx.moveTo(p.x,p.y-r);ctx.lineTo(p.x+r,p.y);ctx.lineTo(p.x,p.y+r);ctx.lineTo(p.x-r,p.y);ctx.closePath();}else if(n.k===2)ctx.rect(p.x-r*.8,p.y-r*.8,r*1.6,r*1.6);else{ctx.moveTo(p.x,p.y-r);ctx.lineTo(p.x+r,p.y+r);ctx.lineTo(p.x-r,p.y+r);ctx.closePath();}ctx.fill();}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);const v=view();ctx.fillStyle=background;ctx.fillRect(0,0,canvas.width,canvas.height);
+ if(photo.complete&&photo.naturalWidth)ctx.drawImage(photo,v.x,v.y,W*v.scale,H*v.scale);
+ ctx.save();ctx.beginPath();ctx.rect(Math.max(0,v.x),Math.max(0,v.y),Math.min(canvas.width,W*v.scale),Math.min(canvas.height,H*v.scale));ctx.clip();
+ ctx.lineWidth=1.5;ctx.strokeStyle=foreground;
+ for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j];if(Math.hypot(a.x-b.x,a.y-b.y)>R)continue;const activity=Math.min(a.a,b.a);if(activity<.25)continue;ctx.globalAlpha=.08+.15*Math.min(1,activity);const p=transform(a),q=transform(b),mid=transform(path(a,b,.5));ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(mid.x,mid.y-(p.y+q.y)/2+mid.y,q.x,q.y);ctx.stroke();}
+ ctx.globalAlpha=1;
+ for(const pulse of pulses){ctx.strokeStyle=colors[pulse.k];for(let j=1;j<pulse.trail.length;j++){ctx.globalAlpha=.6*j/pulse.trail.length;ctx.lineWidth=2+j/4;const a=transform(pulse.trail[j-1]),b=transform(pulse.trail[j]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=transform(path(pulse.a,pulse.b,pulse.age/pulse.duration));ctx.fillStyle=colors[pulse.k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
+ for(const n of nodes){const p=transform(n),q=Math.min(1,n.a/1.4),radius=(5+11*q)*Math.min(2,zoom);ctx.globalAlpha=n.rest?.4:1;
+  if(q>.05&&!low){ctx.globalAlpha=.7*q;ctx.drawImage(glows[n.k],p.x-radius*2,p.y-radius*2,radius*4,radius*4);ctx.globalAlpha=1;}
+  ctx.strokeStyle=colors[n.k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[n.k];shape(n,p,3+2*q);
+ }
+ ctx.restore();ctx.globalAlpha=1;
+}
+function frame(now){raf=0;if(!running)return;if(!onscreen()){stop('Paused while out of view');return;}if(now-started>300000){stop('Paused after five minutes');return;}const begin=performance.now(),gap=now-last;last=now;
+ try{update(Math.min(.067,gap/1000));draw();}catch{stop('Paused · reset to continue');return;}const cost=performance.now()-begin;slow=cost>25||gap>150?slow+1:Math.max(0,slow-1);
+ if(cost>150||slow>=12){low=true;stop('Paused to keep the browser responsive');return;}if(slow>=4){low=true;pulses.length=Math.min(24,pulses.length);}
+ if(now-lastReport>1000){report(nodes.length+' dancers · '+pulses.length+' pulses'+(low?' · reduced effects':''));lastReport=now;}
+ schedule(Math.max(0,1000/(low?15:30)-cost));
+}
+function pointerWorld(e){const r=canvas.getBoundingClientRect(),v=view();return {x:((e.clientX-r.left)*canvas.width/r.width-v.x)/v.scale,y:((e.clientY-r.top)*canvas.height/r.height-v.y)/v.scale};}
+canvas.addEventListener('pointerdown',e=>{const p=pointerWorld(e);if(p.x<0||p.x>W||p.y<0||p.y>H)return;const radius=12/zoom;let near=null,best=radius;for(const n of nodes){const d=Math.hypot(n.x-p.x,n.y-p.y);if(d<best){near=n;best=d;}}
+ if(e.shiftKey){if(near){nodes=nodes.filter(n=>n!==near);pulses=pulses.filter(p=>p.a!==near&&p.b!==near);still();}return;}
+ pointer={node:near,x:e.clientX,y:e.clientY,moved:false};canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener('pointermove',e=>{if(!pointer)return;pointer.moved=pointer.moved||Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y)>3;if(pointer.node&&pointer.moved){const p=pointerWorld(e);pointer.node.x=Math.max(0,Math.min(W,p.x));pointer.node.y=Math.max(0,Math.min(H,p.y));still();}});
+canvas.addEventListener('pointerup',e=>{if(!pointer)return;if(!pointer.node&&!pointer.moved){const p=pointerWorld(e);if(p.x>=0&&p.x<=W&&p.y>=0&&p.y<=H)add(p.x,p.y,+el('[data-control="type"]').value);}pointer=null;still();});
+canvas.addEventListener('pointercancel',()=>pointer=null);
+play.onclick=()=>running?stop():start();audioButton.onclick=toggleAudio;el('[data-action="reset"]').onclick=reset;
+el('[data-control="bpm"]').oninput=e=>{bpm=+e.target.value;el('[data-value="bpm"]').textContent=bpm+' BPM';};
+el('[data-control="zoom"]').oninput=e=>{zoom=+e.target.value;el('[data-value="zoom"]').textContent=zoom.toFixed(1)+'×';still();};
+el('[data-control="pan"]').oninput=e=>{pan=+e.target.value;still();};
+window.addEventListener('pagehide',()=>stop());
+document.addEventListener('keydown',e=>{if(e.key==='Escape')stop();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop('Paused while out of view');});
+if('IntersectionObserver' in window)new IntersectionObserver(()=>{if(running&&!onscreen())stop('Paused while out of view');}).observe(canvas);
+new MutationObserver(theme).observe(document.documentElement,{attributes:true,attributeFilter:['class','style','data-theme']});
+photo.onload=still;theme();reset();play.textContent='Start simulation';
+})();
+</script>
+
 </div>
 <script>
 (()=>{
@@ -270,3 +398,4 @@ reset();draw();showNotice(notice);
 </script>
 </body>
 </html>
+
