@@ -20,7 +20,6 @@
 .project-credit{font-size:14px;color:#9da5b8;margin:28px 0 0}
 body.full .project-story{display:none}
 @media(max-width:720px){.project-columns{grid-template-columns:1fr;gap:20px}.project-story{margin-top:32px;padding-top:28px}.prototype-note{padding:20px}}
-.mural-photo{margin:30px 0 36px}.mural-photo img{display:block;width:100%;height:auto;border:1px solid rgba(255,255,255,.16);border-radius:10px}.mural-photo figcaption{margin-top:10px;font-size:14px;color:#9da5b8}.mural-photo a:focus-visible{outline:2px solid #9baef0;outline-offset:5px;display:block}
 .performance-note{color:#b9c7ef;font-size:14px;margin:8px 0 12px}.emergency-stop{display:none}body.full .performance-note{display:none}.stage:fullscreen .emergency-stop,body.full .emergency-stop{display:block;position:fixed;z-index:100;top:12px;right:12px;background:#171a24;color:white;border:1px solid #9baef0;border-radius:9px;padding:10px 14px;font:inherit}
 
 #original-simulation{margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)}
@@ -39,30 +38,6 @@ body.full #original-simulation .prototype-note{display:none}
     <p class="project-label">About the project · An installation in development</p>
     <h2 id="project-purpose">Showing up and moving, together.</h2>
     <p class="project-intro">Neural Dance is a participatory mural that turns individual acts of presence into a shared, living constellation. Dance, music, and projected light make each person’s contribution visible—and let it ripple through the people around them.</p>
-
-
-
-    <div class="project-columns">
-      <section aria-labelledby="project-motivation">
-        <h3 id="project-motivation">Why make it?</h3>
-        <p>As AI and automation take on more of our labor and decision-making, what will it mean to exercise human agency? Neural Dance explores a future in which meaning comes from choosing to move, create, connect, and affect the world.</p>
-        <p>Joining the mural is a small, deliberate act. Where you place yourself changes the relationships that form around you. Each dancer keeps a distinct rhythm, while their presence helps shape something larger: a collective work that exists because people chose to participate.</p>
-      </section>
-
-      <section aria-labelledby="project-experience">
-        <h3 id="project-experience">The intended experience</h3>
-        <p>Designed for a shared gathering around music and dance, the proposed installation begins at a photo booth. Participants are photographed dancing; their silhouettes are cut into stickers, which they place wherever they choose on a mural shaped by sacred geometry and the feeling of a communal stage or amphitheater.</p>
-        <p>A fixed camera would locate the silhouettes, and a projector would illuminate each one individually. One dancer might swell with the bass, another flash with the kick, another breathe with the midrange or flicker with the treble. Their different rhythmic personalities would move together within the same music.</p>
-        <p>Nearby dancers reinforce one another. Pulses travel along connections and geometric paths, activating other dancers and spreading waves of light. The neural-network metaphor makes connection tangible: each participant becomes a point of influence in an evolving record of the gathering.</p>
-      </section>
-    </div>
-
-    <figure class="mural-photo">
-      <a href="/neural-dance/mural-with-silhouettes.jpeg" aria-label="View the mural photograph at full size">
-        <img src="/neural-dance/mural-with-silhouettes.jpeg" width="882" height="196" loading="lazy" alt="Panoramic mural on corrugated metal with dancer silhouettes, a bright sunset, and flowing painted figures." />
-      </a>
-      <figcaption>The mural with participant silhouettes—the physical setting for Neural Dance.</figcaption>
-    </figure>
 
     <p class="project-credit">A project by Timothy Joseph Murphy · Vermillion Aurora Productions</p>
   </section>
@@ -194,6 +169,23 @@ new MutationObserver(theme).observe(document.documentElement,{attributes:true,at
 photo.onload=still;theme();reset();play.textContent='Start simulation';
 })();
 </script>
+
+  <div class="project-story">
+    <div class="project-columns">
+      <section aria-labelledby="project-motivation">
+        <h3 id="project-motivation">Why make it?</h3>
+        <p>As AI and automation take on more of our labor and decision-making, what will it mean to exercise human agency? Neural Dance explores a future in which meaning comes from choosing to move, create, connect, and affect the world.</p>
+        <p>Joining the mural is a small, deliberate act. Where you place yourself changes the relationships that form around you. Each dancer keeps a distinct rhythm, while their presence helps shape something larger: a collective work that exists because people chose to participate.</p>
+      </section>
+
+      <section aria-labelledby="project-experience">
+        <h3 id="project-experience">The intended experience</h3>
+        <p>Designed for a shared gathering around music and dance, the proposed installation begins at a photo booth. Participants are photographed dancing; their silhouettes are cut into stickers, which they place wherever they choose on a mural shaped by sacred geometry and the feeling of a communal stage or amphitheater.</p>
+        <p>A fixed camera would locate the silhouettes, and a projector would illuminate each one individually. One dancer might swell with the bass, another flash with the kick, another breathe with the midrange or flicker with the treble. Their different rhythmic personalities would move together within the same music.</p>
+        <p>Nearby dancers reinforce one another. Pulses travel along connections and geometric paths, activating other dancers and spreading waves of light. The neural-network metaphor makes connection tangible: each participant becomes a point of influence in an evolving record of the gathering.</p>
+      </section>
+    </div>
+  </div>
 
   <section id="original-simulation" aria-labelledby="prototype-use">
     <section class="prototype-note" aria-labelledby="prototype-use">
@@ -408,5 +400,4 @@ reset();draw();showNotice(notice);
 </script>
 </body>
 </html>
-
 
