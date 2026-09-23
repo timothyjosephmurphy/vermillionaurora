@@ -50,6 +50,8 @@ If no check appears, inspect the Worker's connected repository, branch, automati
 | `index.html` | Root homepage, including a link to Neural Dance |
 | `styles.css` | Root homepage styling and responsive layout |
 | `script.js` | Homepage form interaction |
+| `murals/index.html` | Friends Club mural story and swipeable process gallery |
+| `murals/images/` | Optimized mural and process photographs |
 | `neural-dance/index.html` | Interactive Neural Dance demo |
 | `public_html/` | Older Bluehost upload bundle with separate homepage/style copies and an Apache `.htaccess` file |
 
