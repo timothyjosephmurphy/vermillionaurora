@@ -1,0 +1,12 @@
+.featured-stage { position:relative; overflow:hidden; border-radius:18px; }
+.featured-slide { width:100%; }
+.featured-entering { position:absolute; inset:0; }
+.featured-painting { display:block; width:100%; height:440px; object-fit:contain; background:rgba(16,14,13,.3); border-radius:14px; }
+.featured-caption { color:#fff; padding:16px 2px 0; min-height:144px; }
+.featured-caption h2 { margin:0 0 8px; font:600 1.8rem/1.1 "Cormorant Garamond",serif; }
+.featured-caption p { margin:0; font-size:.85rem; }
+.featured-caption a:hover { text-decoration:underline; }
+.featured-controls { display:flex; align-items:center; justify-content:space-between; gap:10px; color:#fff; margin-top:12px; }
+.featured-controls button { min-height:40px; padding:7px 12px; border:1px solid #ffffff70; border-radius:8px; background:#201b1780; color:#fff; cursor:pointer; }
+.featured-position { font-size:.8rem; font-variant-numeric:tabular-nums; }
+@media(max-width:600px) { .featured-painting { height:360px; }.featured-caption { min-height:150px; } }
