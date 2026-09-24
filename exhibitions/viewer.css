@@ -13,3 +13,21 @@
 .ev-slider{display:flex;align-items:center;gap:12px;font-size:.75rem;margin-top:6px}
 .ev-slider input{flex:1;min-width:0;accent-color:#a33b26;cursor:pointer}
 @media(max-width:640px){.ev-stage{height:52vh;min-height:240px}.ev-thumbs button{flex-basis:66px;width:66px;height:58px}.ev-controls{gap:6px}.ev-original{font-size:.7rem}}
+
+/* Keep the title and gallery close together. */
+.exhibition-page{padding-top:18px;padding-bottom:36px}
+.exhibition-page .product-breadcrumb{margin-bottom:12px;font-size:.8rem}
+.exhibition-page>.eyebrow{margin:0 0 4px;font-size:.7rem}
+.exhibition-page h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;margin:0 0 12px}
+.exhibition-page>.section-heading{margin:0 0 8px}
+.exhibition-page>.section-heading h2{display:none}
+.exhibition-page>.section-heading p{font-size:.85rem;margin:0;line-height:1.4}
+.exhibition-page .exhibition-viewer{margin-top:8px}
+.exhibition-page .paul-introduction{margin:12px auto 18px}
+.ev-stage:has(img){cursor:grab;user-select:none}
+.ev-stage:has(img):active{cursor:grabbing}
+.ev-stage img{-webkit-user-drag:none}
+.painting-gallery-page #gallery{padding-top:22px;padding-bottom:36px}
+.painting-gallery-page .section-heading{margin-bottom:12px}
+.painting-gallery-page .section-heading .eyebrow{margin:0 0 4px}
+.painting-gallery-page .section-heading h2{font-size:clamp(2rem,4vw,3.2rem);margin:0;line-height:1.08}

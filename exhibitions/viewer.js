@@ -1,7 +1,14 @@
 // Enhance the existing gallery; keep its links available if JavaScript is disabled.
-document.querySelectorAll('.exhibition-grid').forEach(grid => {
+document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-grid').forEach(grid => {
   const items = [...grid.children].map(node => {
     const img = node.querySelector('img');
+    const product = node.querySelector('.product-title-link');
+    if (product) {
+      const imageLink = node.querySelector('.gallery-product-image, .product-image');
+      const background = imageLink && getComputedStyle(imageLink).backgroundImage.match(/url\(["']?(.*?)["']?\)/);
+      const src = img?.src || background?.[1];
+      return src ? {src, alt: product.textContent, product: product.href} : null;
+    }
     const video = node.querySelector('video');
     return img ? {src: node.href, alt: img.alt} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
   }).filter(Boolean);
@@ -46,7 +53,8 @@ document.querySelectorAll('.exhibition-grid').forEach(grid => {
     slider.value = String(index + 1);
     slider.setAttribute('aria-valuetext', `${index + 1} of ${items.length}`);
     box.querySelector('.ev-count').textContent = `${index + 1} / ${items.length}`;
-    box.querySelector('.ev-original').href = item.src;
+    box.querySelector('.ev-original').href = item.product || item.src;
+    box.querySelector('.ev-original').textContent = item.product ? 'View painting ↗' : 'Open full size ↗';
     schedule();
   }
   function updatePlay() { play.textContent = paused ? 'Play' : 'Pause'; play.setAttribute('aria-label', `${paused ? 'Start' : 'Pause'} automatic slideshow`); schedule(); }
@@ -61,13 +69,34 @@ document.querySelectorAll('.exhibition-grid').forEach(grid => {
   box.addEventListener('focusout', event => { focused = box.contains(event.relatedTarget); schedule(); });
   document.addEventListener('visibilitychange', schedule);
   motion.addEventListener('change', () => { paused = motion.matches; updatePlay(); });
+
+  // Horizontal gestures change images; vertical gestures and pinch zoom stay native.
+  let gesture = null;
+  stage.style.touchAction = 'pan-y pinch-zoom';
+  stage.addEventListener('dragstart', event => event.preventDefault());
+  stage.addEventListener('pointerdown', event => {
+    if (!event.isPrimary || event.button !== 0 || event.target.closest('video')) { gesture = null; return; }
+    gesture = {id:event.pointerId, x:event.clientX, y:event.clientY};
+    stage.setPointerCapture(event.pointerId);
+    clearTimeout(timer);
+  });
+  stage.addEventListener('pointerup', event => {
+    if (!gesture || gesture.id !== event.pointerId) return;
+    const dx = event.clientX - gesture.x, dy = event.clientY - gesture.y;
+    gesture = null;
+    if (Math.abs(dx) >= 45 && Math.abs(dx) > Math.abs(dy) * 1.3) show(index + (dx < 0 ? 1 : -1));
+    else schedule();
+  });
+  stage.addEventListener('pointercancel', () => { gesture = null; schedule(); });
+  stage.addEventListener('lostpointercapture', () => { gesture = null; });
+
   grid.before(box);
-  grid.hidden = true;
+  grid.hidden = !grid.closest('.painting-gallery-page');
   const page = grid.closest('.exhibition-page');
   const hero = page?.querySelector('.exhibition-hero');
   if (hero) hero.hidden = true;
   const description = box.previousElementSibling?.querySelector('p');
-  if (description) description.textContent = 'Browse the thumbnails or use the slider to explore the gallery.';
+  if (description && grid.classList.contains('exhibition-grid')) description.textContent = 'Swipe the image or choose a thumbnail.';
   new IntersectionObserver(entries => { visible = entries[0].isIntersecting; schedule(); }, {threshold:0.1}).observe(box);
   show(0); updatePlay();
 });
