@@ -732,3 +732,15 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 .painting-carousel .ex-slide a { height:auto; }
 .painting-carousel .ex-slide img { height:100%; aspect-ratio:auto; }
 .painting-carousel .product-info { min-height:140px; }
+
+/* Homepage documentary */
+#film { scroll-margin-top:100px; }
+.home-film-card { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); align-items:center; overflow:hidden; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.4); }
+.home-film-video { aspect-ratio:16/9; width:100%; background:#171513; }
+.home-film-video iframe { display:block; width:100%; height:100%; border:0; }
+.home-film-copy { padding:28px; }
+.home-film-copy .eyebrow { margin:0 0 12px; }
+.home-film-copy h3 { margin:0 0 16px; font:600 2rem/1.1 "Cormorant Garamond",serif; }
+.home-film-copy p { color:var(--muted); font-size:.95rem; line-height:1.6; }
+@media(min-width:981px) { .main-nav { flex-wrap:wrap; gap:12px 18px; justify-content:center; } }
+@media(max-width:800px) { .home-film-card { grid-template-columns:1fr; }.home-film-copy { padding:24px; } }
