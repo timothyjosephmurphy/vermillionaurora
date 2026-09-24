@@ -1,0 +1,70 @@
+/* Compact homepage spacing and five-across painting carousel. */
+.home-page .section { padding:48px 0; }
+.home-page .section-heading { margin-bottom:22px; }
+.home-page .section-heading .eyebrow { margin-bottom:10px; }
+.home-page .section-heading h2,.home-page .about-copy h2,.home-page .contact-copy h2 { font-size:clamp(2rem,3.5vw,3rem); }
+.home-page .hero-grid { min-height:540px; gap:32px; padding:28px 0; }
+.home-page .hero-copy { padding:24px 0; }
+.home-page .hero-copy h1 { font-size:clamp(3rem,5.5vw,4.8rem); }
+.home-page .hero-copy .eyebrow { margin-bottom:18px; }
+.home-page .lede { margin:18px 0 0; font-size:1rem; }
+.home-page .hero-actions { margin-top:22px; }
+.home-page .featured-art { max-width:360px; padding:14px; }
+.home-page .featured-painting { height:320px; }
+.home-page .featured-caption { min-height:116px; padding-top:12px; }
+.home-page .featured-caption h2 { font-size:1.55rem; }
+.home-page .art-image { height:320px; }
+.home-page .ex-track { gap:18px; padding-bottom:12px; }
+.home-page .painting-carousel .ex-slide { flex-basis:calc((100% - 72px)/5); }
+.home-page .painting-carousel .product-info { min-height:110px; padding:12px; }
+.home-page .painting-carousel .product-info h3 { font-size:1.35rem; line-height:1.12; }
+.home-page .painting-carousel .product-info p { font-size:.76rem; line-height:1.45; font-weight:500; }
+.home-page .painting-carousel .product-card { border-radius:12px; }
+.home-page .ex-controls { margin-top:10px; gap:16px; }
+.home-page .ex-controls button { height:44px; width:44px; }
+.home-page .ex-controls .ex-autoplay { width:auto; }
+.home-page #exhibitions .ex-slide { flex-basis:calc((100% - 36px)/3); }
+.home-page #exhibitions .ex-slide img { aspect-ratio:16/9; }
+.home-page .ex-slide-caption { padding:14px; }
+.home-page .ex-slide-caption h3 { font-size:1.65rem; }
+.home-page .centered-link-row { margin-top:20px; }
+.home-page .product-grid,.home-page .service-grid { gap:20px; }
+.home-page .book-tile { padding:18px; gap:10px; min-height:220px; }
+.home-page .book-tile h3 { font-size:1.65rem; }
+.home-page .book-tile p { font-size:.9rem; font-weight:400; }
+.home-page .book-tile .eyebrow { font-size:.7rem; }
+.home-page .service-card { padding:22px; }
+.home-page .service-card h3 { font-size:1.8rem; }
+.home-page .service-card p { margin-bottom:12px; }
+.home-page .service-number { margin-bottom:6px; }
+.home-page .about-grid { gap:30px; grid-template-columns:.75fr 1.25fr; }
+.home-page .about-copy p { font-size:.96rem; line-height:1.6; }
+.home-page .mural-links { margin:0; gap:20px; }
+.home-page .mural-links img { height:210px; }
+.home-page .mural-links span { font-size:22px; }
+.home-page .home-film-copy { padding:22px; }
+.home-page .home-film-copy h3 { font-size:1.75rem; }
+.home-page .contact-form { gap:12px; padding:20px; }
+.home-page .contact-form textarea { min-height:110px; }
+.home-page .contact-list { margin-top:20px; }
+@media(max-width:980px) {
+ .home-page .hero-grid { grid-template-columns:1.1fr .9fr; min-height:0; gap:22px; }
+ .home-page .hero-copy h1 { font-size:clamp(2.5rem,5.8vw,3.5rem); }
+ .home-page .featured-painting { height:280px; }
+ .home-page .painting-carousel .ex-slide { flex-basis:calc((100% - 36px)/3); }
+ .home-page #books .product-grid,.home-page .service-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .home-page .book-tile { padding:14px; }
+}
+@media(max-width:640px) {
+ .home-page .section { padding:32px 0; }
+ .home-page .hero-grid { grid-template-columns:1fr; padding:18px 0 28px; gap:20px; }
+ .home-page .hero-copy { padding:12px 0 0; }
+ .home-page .hero-copy h1 { font-size:clamp(2.6rem,10vw,3.4rem); }
+ .home-page .hero-panel { width:100%; }
+ .home-page .featured-art { max-width:340px; }
+ .home-page .painting-carousel .ex-slide { flex-basis:calc((100% - 18px)/2); }
+ .home-page #exhibitions .ex-slide { flex-basis:82%; }
+ .home-page #books .product-grid,.home-page .service-grid,.home-page .about-grid { grid-template-columns:1fr; }
+ .home-page .book-tile { min-height:0; }
+ .home-page .mural-links img { height:180px; }
+}
