@@ -4,6 +4,7 @@ document.querySelectorAll('.ex-carousel').forEach(carousel => {
   const slides = [...track.children];
   const status = carousel.querySelector('.ex-position');
   const toggle = carousel.querySelector('.ex-autoplay');
+  const label = carousel.getAttribute('aria-label').toLowerCase();
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   carousel.querySelector('.ex-controls').hidden = false;
   let paused = reducedMotion.matches;
@@ -18,7 +19,7 @@ document.querySelectorAll('.ex-carousel').forEach(carousel => {
   const current = () => slides.reduce((best, slide, i) => Math.abs(slide.offsetLeft - track.scrollLeft) < Math.abs(slides[best].offsetLeft - track.scrollLeft) ? i : best, 0);
   function updateToggle() {
     toggle.textContent = paused ? 'Play' : 'Pause';
-    toggle.setAttribute('aria-label', `${paused ? 'Start' : 'Pause'} automatic exhibition scrolling`);
+    toggle.setAttribute('aria-label', `${paused ? 'Start' : 'Pause'} automatic ${label} scrolling`);
   }
   function move(step) {
     resumeAt = performance.now() + 5000;

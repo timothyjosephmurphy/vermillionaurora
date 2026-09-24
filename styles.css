@@ -727,3 +727,8 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 @media(max-width:800px) { .exhibition-grid { columns:2; } }
 @media(max-width:520px) { .exhibition-grid { columns:1; }.ex-lightbox { padding:60px 48px 42px; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+/* Keep painting cards in their existing portrait format. */
+.painting-carousel .ex-slide a { height:auto; }
+.painting-carousel .ex-slide img { height:100%; aspect-ratio:auto; }
+.painting-carousel .product-info { min-height:140px; }
