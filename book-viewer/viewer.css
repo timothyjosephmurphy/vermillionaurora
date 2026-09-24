@@ -1,0 +1,11 @@
+.book-reader[hidden], .book-preview iframe[hidden] { display:none; }
+.book-reader { border:1px solid #cbbdab; border-radius:12px; background:#e8dfd3; overflow:hidden; }
+.book-reader-controls { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px; padding:14px; background:#f3ebdf; }
+.book-reader-controls button,.book-reader-controls select { font:inherit; padding:8px 12px; border:1px solid #b4a28b; border-radius:6px; background:#fffaf4; color:#1d1a17; min-height:44px; }
+.book-reader-controls button { cursor:pointer; }
+.book-reader-controls button:disabled { cursor:default; opacity:.5; }
+.book-reader-controls span { font-size:.9rem; }
+.book-reader-controls label { font-size:.9rem; }
+.book-reader-pages { display:grid; gap:12px; align-items:start; padding:16px; max-height:80vh; overflow:auto; }
+.book-reader-pages canvas { display:block; width:100%; height:auto; box-shadow:0 2px 8px #0002; }
+@media(max-width:600px) { .book-reader-controls { gap:8px; padding:10px; }.book-reader-pages { padding:8px; gap:6px; } }
