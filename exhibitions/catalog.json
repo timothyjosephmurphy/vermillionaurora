@@ -1,0 +1,932 @@
+[
+  {
+    "name": "Cape Town",
+    "slug": "cape-town",
+    "folder": "images/Ex-Cape-Town/",
+    "hero": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0102.jpeg",
+    "files": [
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0102.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0102.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0107.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0107.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0313.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0313.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0383.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0383.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0496.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0496.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0959.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0959.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0960.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0960.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0961.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0961.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0962.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0962.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0968.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0968.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0969.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0969.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0971.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0971.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0976.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0976.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0977.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0977.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0978.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0978.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0980.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0980.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0999.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_0999.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9094.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9094.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9095.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9095.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9101.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9101.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9102.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9102.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9103.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9103.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9104.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9104.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9105.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9105.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9174.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9174.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9178.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9178.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9885.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9885.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9896.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9896.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9903.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9903.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9907.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9907.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9912.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9912.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9913.jpeg",
+        "key": "images/Ex-Cape-Town/IMG_9913.jpeg",
+        "video": false
+      }
+    ]
+  },
+  {
+    "name": "El Salvador",
+    "slug": "el-salvador",
+    "folder": "images/Ex-El-Salvador/",
+    "hero": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5441.jpeg",
+    "files": [
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_4050.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_4050.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5441.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5441.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5448.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5448.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5455.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5455.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5467.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5467.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5471.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5471.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5559.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5559.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5602.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5602.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5607.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5607.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5652.PNG",
+        "key": "images/Ex-El-Salvador/IMG_5652.PNG",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5708.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5708.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5711.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_5711.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7577.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_7577.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7580.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_7580.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7581.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_7581.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7693.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_7693.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7701.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_7701.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7725.jpeg",
+        "key": "images/Ex-El-Salvador/IMG_7725.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5539.MOV",
+        "key": "images/Ex-El-Salvador/IMG_5539.MOV",
+        "video": true
+      }
+    ]
+  },
+  {
+    "name": "Living Room",
+    "slug": "living-room",
+    "folder": "images/Ex-Living Room/",
+    "hero": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4341.jpeg",
+    "files": [
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4341.jpeg",
+        "key": "images/Ex-Living Room/IMG_4341.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4342.jpeg",
+        "key": "images/Ex-Living Room/IMG_4342.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4343.jpeg",
+        "key": "images/Ex-Living Room/IMG_4343.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4344.jpeg",
+        "key": "images/Ex-Living Room/IMG_4344.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4345.jpeg",
+        "key": "images/Ex-Living Room/IMG_4345.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4346.jpeg",
+        "key": "images/Ex-Living Room/IMG_4346.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4347.jpeg",
+        "key": "images/Ex-Living Room/IMG_4347.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4348.jpeg",
+        "key": "images/Ex-Living Room/IMG_4348.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4349.jpeg",
+        "key": "images/Ex-Living Room/IMG_4349.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4350.jpeg",
+        "key": "images/Ex-Living Room/IMG_4350.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4351.jpeg",
+        "key": "images/Ex-Living Room/IMG_4351.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4352.jpeg",
+        "key": "images/Ex-Living Room/IMG_4352.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4353.jpeg",
+        "key": "images/Ex-Living Room/IMG_4353.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4354.jpeg",
+        "key": "images/Ex-Living Room/IMG_4354.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4355.jpeg",
+        "key": "images/Ex-Living Room/IMG_4355.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4356.jpeg",
+        "key": "images/Ex-Living Room/IMG_4356.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4357.jpeg",
+        "key": "images/Ex-Living Room/IMG_4357.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4358.jpeg",
+        "key": "images/Ex-Living Room/IMG_4358.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4359.jpeg",
+        "key": "images/Ex-Living Room/IMG_4359.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4360.jpeg",
+        "key": "images/Ex-Living Room/IMG_4360.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4361.jpeg",
+        "key": "images/Ex-Living Room/IMG_4361.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4362.jpeg",
+        "key": "images/Ex-Living Room/IMG_4362.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4363.jpeg",
+        "key": "images/Ex-Living Room/IMG_4363.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4364.jpeg",
+        "key": "images/Ex-Living Room/IMG_4364.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4365.jpeg",
+        "key": "images/Ex-Living Room/IMG_4365.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4366.jpeg",
+        "key": "images/Ex-Living Room/IMG_4366.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4367.jpeg",
+        "key": "images/Ex-Living Room/IMG_4367.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4368.jpeg",
+        "key": "images/Ex-Living Room/IMG_4368.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4370.jpeg",
+        "key": "images/Ex-Living Room/IMG_4370.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4371.jpeg",
+        "key": "images/Ex-Living Room/IMG_4371.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4372.jpeg",
+        "key": "images/Ex-Living Room/IMG_4372.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4373.jpeg",
+        "key": "images/Ex-Living Room/IMG_4373.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4374.jpeg",
+        "key": "images/Ex-Living Room/IMG_4374.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4375.jpeg",
+        "key": "images/Ex-Living Room/IMG_4375.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4376.jpeg",
+        "key": "images/Ex-Living Room/IMG_4376.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4377.jpeg",
+        "key": "images/Ex-Living Room/IMG_4377.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4378.jpeg",
+        "key": "images/Ex-Living Room/IMG_4378.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4379.jpeg",
+        "key": "images/Ex-Living Room/IMG_4379.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4380.jpeg",
+        "key": "images/Ex-Living Room/IMG_4380.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4381.jpeg",
+        "key": "images/Ex-Living Room/IMG_4381.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4383.jpeg",
+        "key": "images/Ex-Living Room/IMG_4383.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4384.jpeg",
+        "key": "images/Ex-Living Room/IMG_4384.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4385.jpeg",
+        "key": "images/Ex-Living Room/IMG_4385.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4386.jpeg",
+        "key": "images/Ex-Living Room/IMG_4386.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4387.jpeg",
+        "key": "images/Ex-Living Room/IMG_4387.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4388.jpeg",
+        "key": "images/Ex-Living Room/IMG_4388.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4389.jpeg",
+        "key": "images/Ex-Living Room/IMG_4389.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4390.jpeg",
+        "key": "images/Ex-Living Room/IMG_4390.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4391.jpeg",
+        "key": "images/Ex-Living Room/IMG_4391.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4392.jpeg",
+        "key": "images/Ex-Living Room/IMG_4392.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4393.jpeg",
+        "key": "images/Ex-Living Room/IMG_4393.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4394.jpeg",
+        "key": "images/Ex-Living Room/IMG_4394.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4395.jpeg",
+        "key": "images/Ex-Living Room/IMG_4395.jpeg",
+        "video": false
+      }
+    ]
+  },
+  {
+    "name": "Studio 601",
+    "slug": "studio-601",
+    "folder": "images/Ex-Studio-601/",
+    "hero": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4532.jpeg",
+    "files": [
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_3425.jpeg",
+        "key": "images/Ex-Studio-601/IMG_3425.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_3443.jpeg",
+        "key": "images/Ex-Studio-601/IMG_3443.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_3444.mov",
+        "key": "images/Ex-Studio-601/IMG_3444.mov",
+        "video": true
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_3446.mov",
+        "key": "images/Ex-Studio-601/IMG_3446.mov",
+        "video": true
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_3448.mov",
+        "key": "images/Ex-Studio-601/IMG_3448.mov",
+        "video": true
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_3451.mov",
+        "key": "images/Ex-Studio-601/IMG_3451.mov",
+        "video": true
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4331.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4331.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4470.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4470.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4532.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4532.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4533.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4533.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4534.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4534.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4535.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4535.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4540.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4540.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4541.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4541.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4542.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4542.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4543.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4543.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4546.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4546.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4547.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4547.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4548.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4548.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4549.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4549.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4551.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4551.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4552.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4552.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4553.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4553.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4554.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4554.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4555.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4555.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4556.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4556.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4557.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4557.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4788.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4788.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4790.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4790.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4791.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4791.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4792.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4792.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4802.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4802.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4806.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4806.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4807.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4807.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4938.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4938.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4940.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4940.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4945.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4945.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4955.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4955.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4960.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4960.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4968.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4968.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4974.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4974.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4975.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4975.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4976.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4976.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4977.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4977.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4981.PNG",
+        "key": "images/Ex-Studio-601/IMG_4981.PNG",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4982.jpeg",
+        "key": "images/Ex-Studio-601/IMG_4982.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_5003.jpeg",
+        "key": "images/Ex-Studio-601/IMG_5003.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_8398.mov",
+        "key": "images/Ex-Studio-601/IMG_8398.mov",
+        "video": true
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_8403.jpeg",
+        "key": "images/Ex-Studio-601/IMG_8403.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_8404.jpeg",
+        "key": "images/Ex-Studio-601/IMG_8404.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_8405.jpeg",
+        "key": "images/Ex-Studio-601/IMG_8405.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_8406.jpeg",
+        "key": "images/Ex-Studio-601/IMG_8406.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/72064089526__670907BA-6F07-4A76-B462-99F35ADAFBB5.jpeg",
+        "key": "images/Ex-Studio-601/72064089526__670907BA-6F07-4A76-B462-99F35ADAFBB5.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Studio-601/image000000.jpg",
+        "key": "images/Ex-Studio-601/image000000.jpg",
+        "video": false
+      }
+    ]
+  },
+  {
+    "name": "Victrola",
+    "slug": "victrola",
+    "folder": "images/Ex-Victrola/",
+    "hero": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1600.jpeg",
+    "files": [
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1591.jpeg",
+        "key": "images/Ex-Victrola/IMG_1591.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1592.jpeg",
+        "key": "images/Ex-Victrola/IMG_1592.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1593.jpeg",
+        "key": "images/Ex-Victrola/IMG_1593.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1594.jpeg",
+        "key": "images/Ex-Victrola/IMG_1594.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1595.jpeg",
+        "key": "images/Ex-Victrola/IMG_1595.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1596.jpeg",
+        "key": "images/Ex-Victrola/IMG_1596.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1597.jpeg",
+        "key": "images/Ex-Victrola/IMG_1597.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1598.jpeg",
+        "key": "images/Ex-Victrola/IMG_1598.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1599.jpeg",
+        "key": "images/Ex-Victrola/IMG_1599.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1600.jpeg",
+        "key": "images/Ex-Victrola/IMG_1600.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1601.jpeg",
+        "key": "images/Ex-Victrola/IMG_1601.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1602.jpeg",
+        "key": "images/Ex-Victrola/IMG_1602.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1604.jpeg",
+        "key": "images/Ex-Victrola/IMG_1604.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1605.jpeg",
+        "key": "images/Ex-Victrola/IMG_1605.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1607.jpeg",
+        "key": "images/Ex-Victrola/IMG_1607.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1608.jpeg",
+        "key": "images/Ex-Victrola/IMG_1608.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1609.jpeg",
+        "key": "images/Ex-Victrola/IMG_1609.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1610.jpeg",
+        "key": "images/Ex-Victrola/IMG_1610.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1611.jpeg",
+        "key": "images/Ex-Victrola/IMG_1611.jpeg",
+        "video": false
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1630.jpeg",
+        "key": "images/Ex-Victrola/IMG_1630.jpeg",
+        "video": false
+      }
+    ]
+  }
+]
