@@ -9,3 +9,12 @@
 .book-reader-pages { display:grid; gap:12px; align-items:start; padding:16px; max-height:80vh; overflow:auto; }
 .book-reader-pages canvas { display:block; width:100%; height:auto; box-shadow:0 2px 8px #0002; }
 @media(max-width:600px) { .book-reader-controls { gap:8px; padding:10px; }.book-reader-pages { padding:8px; gap:6px; } }
+
+.book-thumbnail-nav { display:flex; align-items:center; gap:8px; padding:12px; border-bottom:1px solid #cbbdab; }
+.book-thumbnail-nav > button { flex:0 0 36px; min-height:44px; border:1px solid #b4a28b; border-radius:6px; background:#fffaf4; color:#1d1a17; cursor:pointer; }
+.book-thumbnails { position:relative; display:flex; gap:10px; overflow-x:auto; overscroll-behavior-x:contain; padding:4px 4px 10px; flex:1; min-width:0; }
+.book-thumbnail { flex:0 0 82px; padding:5px; border:2px solid transparent; border-radius:6px; color:#1d1a17; background:#f3ebdf; cursor:pointer; font:inherit; font-size:.8rem; }
+.book-thumbnail-preview { display:flex; align-items:center; justify-content:center; height:100px; background:#fffcf7; margin-bottom:4px; }
+.book-thumbnail canvas { display:block; max-width:100%; max-height:100%; width:auto; height:auto; }
+.book-thumbnail[aria-pressed="true"] { border-color:#8c4d39; background:#fffaf4; }
+.book-thumbnail:focus-visible { outline:3px solid #8c4d39; outline-offset:1px; }
