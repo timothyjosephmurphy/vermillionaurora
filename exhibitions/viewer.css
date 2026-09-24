@@ -31,3 +31,9 @@
 .painting-gallery-page .section-heading{margin-bottom:12px}
 .painting-gallery-page .section-heading .eyebrow{margin:0 0 4px}
 .painting-gallery-page .section-heading h2{font-size:clamp(2rem,4vw,3.2rem);margin:0;line-height:1.08}
+
+/* Exhibition strips show three complete images at once. */
+.ev-three-up .ev-stage{display:flex;justify-content:flex-start;align-items:stretch;gap:12px;height:clamp(170px,30vw,420px);min-height:0;overflow-x:auto;overflow-y:hidden;position:relative;background:transparent;border-radius:0;scrollbar-width:thin}
+.ev-three-up .ev-cell{flex:0 0 calc((100% - 24px)/3);min-width:0;background:#201f1c;border-radius:8px;overflow:hidden}
+.ev-three-up .ev-cell img,.ev-three-up .ev-cell video{width:100%;height:100%;object-fit:contain}
+@media(max-width:640px){.ev-three-up .ev-stage{gap:6px;height:180px}.ev-three-up .ev-cell{flex-basis:calc((100% - 12px)/3)}}
