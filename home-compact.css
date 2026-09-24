@@ -68,3 +68,18 @@
  .home-page .book-tile { min-height:0; }
  .home-page .mural-links img { height:180px; }
 }
+
+/* Small controls share one compact row under each carousel. */
+.home-page .ex-track { padding-bottom:6px; }
+.home-page .ex-controls { margin-top:4px; gap:8px; min-height:28px; }
+.home-page .ex-controls button { width:28px; height:28px; min-height:28px; padding:0; font-size:18px; }
+.home-page .ex-controls .ex-autoplay { width:auto; padding:0 10px; font-size:.72rem; }
+.home-page .ex-controls p { font-size:.75rem; white-space:nowrap; }
+.home-page .painting-carousel .ex-autoplay { margin-right:0; }
+.home-page .ex-controls .carousel-view-all { margin-left:auto; width:auto; min-height:28px; padding:4px 10px; font-size:.62rem; letter-spacing:.05em; white-space:nowrap; }
+.home-page #gallery { padding-bottom:12px; }
+.home-page #exhibitions { padding-top:16px; padding-bottom:12px; }
+.home-page #murals { padding-top:20px; }
+.home-page .featured-controls { gap:8px; margin-top:6px; }
+.home-page .featured-controls button { min-height:28px; padding:3px 9px; font-size:.75rem; }
+.home-page .featured-position { font-size:.72rem; }
