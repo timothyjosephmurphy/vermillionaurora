@@ -13,7 +13,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
     return img ? {src: node.href, alt: img.alt} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
   }).filter(Boolean);
   if (!items.length) return;
-  const threeUp = grid.classList.contains('exhibition-grid');
+  const threeUp = true;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const box = document.createElement('section');
   box.className = 'exhibition-viewer' + (threeUp ? ' ev-three-up' : '');
@@ -36,7 +36,8 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   });
   if (threeUp) {
     items.forEach(item => {
-      const cell = document.createElement('div'); cell.className = 'ev-cell';
+      const cell = document.createElement(item.product ? 'a' : 'div'); cell.className = 'ev-cell';
+      if (item.product) { cell.href = item.product; cell.setAttribute('aria-label', `View ${item.alt}`); }
       const media = document.createElement(item.video ? 'video' : 'img');
       media.src = item.src;
       if (item.video) { media.controls = true; media.playsInline = true; media.preload = 'none'; }
@@ -58,8 +59,13 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
     requestAnimationFrame(animate);
   }
   if (threeUp) {
-    stage.addEventListener('pointerdown', () => { interacting = true; });
-    const release = () => { if (interacting) resumeAt = performance.now() + 5000; interacting = false; };
+    let dragStart = null, suppressClick = false;
+    stage.addEventListener('pointerdown', event => { interacting = true; dragStart = {x:event.clientX, y:event.clientY}; suppressClick = false; });
+    stage.addEventListener('pointermove', event => {
+      if (dragStart && Math.hypot(event.clientX - dragStart.x, event.clientY - dragStart.y) > 10) suppressClick = true;
+    });
+    stage.addEventListener('click', event => { if (suppressClick) { event.preventDefault(); suppressClick = false; } });
+    const release = () => { if (interacting) resumeAt = performance.now() + 5000; interacting = false; dragStart = null; };
     window.addEventListener('pointerup', release); window.addEventListener('pointercancel', release);
     stage.addEventListener('wheel', () => { resumeAt = performance.now() + 5000; }, {passive:true});
     stage.addEventListener('scroll', () => {
@@ -119,7 +125,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   stage.style.touchAction = threeUp ? 'auto' : 'pan-y pinch-zoom';
   stage.addEventListener('dragstart', event => event.preventDefault());
   stage.addEventListener('pointerdown', event => {
-    if (threeUp && event.pointerType !== 'mouse') return;
+    if (threeUp) return;
     if (!event.isPrimary || event.button !== 0 || event.target.closest('video')) { gesture = null; return; }
     gesture = {id:event.pointerId, x:event.clientX, y:event.clientY};
     stage.setPointerCapture(event.pointerId);
