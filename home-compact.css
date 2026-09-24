@@ -85,3 +85,11 @@
 .home-page .featured-position { font-size:.72rem; }
 
 .home-page #exhibitions .ex-autoplay { margin-right:0; }
+
+/* Bring featured-painting controls directly beneath its caption. */
+.home-page .featured-caption { min-height:0; padding-top:10px; }
+.home-page .featured-controls { justify-content:flex-start; gap:6px; margin-top:8px; }
+.home-page .featured-controls button { min-height:24px; height:24px; padding:2px 7px; border-radius:6px; font-size:.68rem; line-height:1; }
+.home-page .featured-controls [data-prev],.home-page .featured-controls [data-next] { width:26px; padding:2px 0; }
+.home-page .featured-position { font-size:.65rem; margin:0 4px; }
+
