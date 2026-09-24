@@ -83,3 +83,5 @@
 .home-page .featured-controls { gap:8px; margin-top:6px; }
 .home-page .featured-controls button { min-height:28px; padding:3px 9px; font-size:.75rem; }
 .home-page .featured-position { font-size:.72rem; }
+
+.home-page #exhibitions .ex-autoplay { margin-right:0; }
