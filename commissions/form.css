@@ -1,0 +1,35 @@
+.commission-main { padding-block: clamp(2rem, 6vw, 5rem); }
+.commission-intro { max-width: 760px; margin-bottom: 2.5rem; }
+.commission-intro h1 { font: 600 clamp(3rem, 6vw, 5rem)/1 "Cormorant Garamond", serif; margin: 0 0 1.3rem; }
+.commission-intro p { color: var(--muted); }
+.commission-layout { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(230px, .7fr); gap: 3rem; align-items: start; }
+.commission-form fieldset { border: 0; padding: 0; margin: 0 0 1rem; display: grid; gap: 1rem; min-width: 0; }
+.commission-form legend { font: 600 1.8rem "Cormorant Garamond", serif; margin-bottom: 1rem; color: var(--ink); }
+.commission-form select { width: 100%; min-width: 0; border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1rem; font: inherit; background: #fffaf5; color: var(--ink); }
+.commission-form input { min-width: 0; }
+.commission-form input[type=file] { padding: .8rem; font-size: .85rem; }
+.commission-form input[type=file]::file-selector-button { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: .5rem; margin-right: .6rem; cursor: pointer; }
+.commission-form .help { font-size: .88rem; color: var(--muted); margin: 0; text-transform: none; letter-spacing: normal; }
+.commission-form a:not(.button) { text-decoration: underline; text-underline-offset: 3px; }
+.commission-form :is(input,select,textarea,button):focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.commission-form [hidden] { display: none !important; }
+.upload-preview { max-height: 240px; max-width: 100%; border-radius: 10px; object-fit: contain; object-position: left; }
+.palette-colors { display: flex; flex-wrap: wrap; gap: .8rem; }
+.palette-color { display: grid; gap: .35rem; width: 92px; }
+.commission-form .palette-color input { padding: 3px; height: 48px; cursor: pointer; }
+.palette-color output { font-size: .78rem; text-align: center; }
+.palette-color button { border: 0; background: transparent; color: var(--accent-dark); text-decoration: underline; cursor: pointer; font-size: .78rem; }
+.palette-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+.palette-actions .button { width: auto; cursor: pointer; }
+.form-status { margin: 0; }
+.form-status[data-state=error] { color: #8b2626; }
+.form-status[data-state=success] { color: #275d38; }
+.commission-form button:disabled { opacity: .6; cursor: wait; }
+.commission-notes { border-top: 2px solid var(--accent); padding-top: 1rem; }
+.commission-notes h2 { font: 600 2rem "Cormorant Garamond", serif; }
+.commission-notes p { color: var(--muted); }
+.commission-notes a { text-decoration: underline; text-underline-offset: 3px; }
+.commission-notes ol { padding-left: 1.2rem; }
+.commission-notes li { margin-bottom: 1rem; }
+.honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+@media(max-width: 800px) { .commission-layout { grid-template-columns: 1fr; gap: 2rem; } }

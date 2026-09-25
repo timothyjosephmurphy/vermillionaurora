@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Request a Commission | Vermillion Aurora</title><meta name="description" content="Commission custom artwork by TJ Murphy. Share your idea, reference image, desired size, and optional color palette."><link rel="canonical" href="https://vermillionaurora.com/commissions/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/site-header.css"><link rel="stylesheet" href="/commissions/form.css"></head><body><div class="page-shell"><header class="site-header">
+        <div class="container header-inner">
+          <div class="brand-block">
+            <a href="/#top" class="brand" aria-label="Vermillion Aurora Productions home">
+              <span class="brand-mark">V</span>
+              <span>VERMILLION AURORA<br /><small>PRODUCTIONS</small></span>
+            </a>
+          </div>
+
+          <nav class="main-nav" aria-label="Main navigation">
+            <a href="/gallery/">Gallery</a>
+            <a href="/#exhibitions">Exhibitions</a>
+            <a href="/murals/">Murals</a>
+            <a href="/#books">Books</a>
+            <a href="/#services">Commissions</a>
+            <a href="/#film">Film</a>
+            <a href="/about/">About</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+
+          <div class="header-actions">
+            <a href="/commissions/" class="button button-solid">Book a commission</a>
+          </div>
+        </div>
+      </header><main class="container commission-main" id="top">
+<div class="commission-intro"><p class="eyebrow accent">Made for you</p><h1>Let’s bring your idea to life.</h1><p>A face you love, a place you remember, or something entirely your own. Share your idea with TJ, choose a size, and add references or colors if you have them.</p></div>
+<div class="commission-layout">
+<form class="contact-form commission-form" action="https://formspree.io/f/mgavkoql" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="subject" value="New commission request — Vermillion Aurora">
+<div class="honeypot" aria-hidden="true"><label>Leave this empty<input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+<fieldset><legend>Your details</legend><div class="field-row">
+<label>Your name (required)<input name="name" autocomplete="name" required maxlength="120"></label>
+<label>Email (required)<input type="email" name="email" autocomplete="email" required maxlength="254"></label>
+</div></fieldset>
+<fieldset><legend>The artwork</legend>
+<label>Commission type<select name="artwork_type"><option>Single portrait</option><option>Double portrait</option><option>Family or group portrait</option><option>Landscape</option><option>Mural</option><option>Other / let’s discuss</option></select></label>
+<label>Desired size (required)<select name="size" required><option value="">Choose a size</option><option>9 × 12 inches</option><option>12 × 9 inches</option><option>12 × 15 inches</option><option>18 × 24 inches</option><option>24 × 36 inches</option><option value="Custom">Custom dimensions</option><option>I’d like advice on size</option></select></label>
+<div id="custom-size" hidden><div class="field-row"><label>Width<input type="number" name="width" min="0.1" max="10000" step="any" disabled></label><label>Height<input type="number" name="height" min="0.1" max="10000" step="any" disabled></label></div><label>Units<select name="units" disabled><option>inches</option><option>centimeters</option><option>feet</option></select></label></div>
+<label>Your idea (required)<textarea name="message" rows="5" required maxlength="10000" placeholder="Who or what would you like painted? Tell me about the mood, the story, or where the artwork will live."></textarea></label>
+<div class="field-row"><label>Budget (optional)<input name="budget" maxlength="100" placeholder="e.g. $200–$400 USD"></label><label>Preferred date (optional)<input type="date" name="preferred_date"></label></div>
+</fieldset>
+<fieldset><legend>A reference image</legend><p class="help" id="reference-help">Add a clear photo of your subject, a place, or your wall. Optional — you can also share a link or send images later.</p>
+<label>Upload a reference<input id="reference" type="file" name="reference_image" accept="image/jpeg,image/png,image/webp" aria-describedby="reference-help file-help"></label>
+<img id="reference-preview" class="upload-preview" alt="Your selected reference image" hidden>
+<p class="help" id="file-help">JPG, PNG, or WebP, up to 10 MB per image.</p>
+<label>Reference image link (optional)<input type="url" name="reference_link" placeholder="https://" maxlength="2000"></label>
+</fieldset>
+<fieldset><legend>Your color palette <small>(optional)</small></legend><p class="help">Have colors in mind? Choose up to five swatches, upload a palette image, or leave this open for TJ.</p>
+<div id="palette-colors" class="palette-colors"></div><input id="palette-value" type="hidden" name="color_palette" value="">
+<div class="palette-actions"><button class="button button-ghost" id="add-color" type="button">+ Add a color</button></div>
+<label>Upload a palette or room photo<input id="palette-image" type="file" name="palette_image" accept="image/jpeg,image/png,image/webp" aria-describedby="file-help"></label>
+<img id="palette-image-preview" class="upload-preview" alt="Your selected color palette image" hidden>
+<label>Color notes (optional)<input name="color_notes" maxlength="1000" placeholder="e.g. warm earth tones, deep blues, or colors to avoid"></label>
+</fieldset>
+<p class="help">This is an inquiry, with no payment or commitment. Your details and images are sent to TJ to discuss your commission.</p>
+<button class="button button-solid" type="submit">Send commission request</button><p class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+<p class="help">Prefer email? <a href="mailto:TJ@VermillionAurora.com?subject=Commission%20request">TJ@VermillionAurora.com</a></p>
+<noscript><p>For custom dimensions or color preferences, include them in your message. Image attachments can still be submitted.</p></noscript>
+</form>
+<aside class="commission-notes"><h2>From an idea to your artwork</h2><ol><li>Share your subject, size, and inspiration.</li><li>We’ll discuss the approach, price, and timing by email.</li><li>Once the details are agreed, your commission can begin.</li></ol><p>Not sure about colors or size? That’s part of the conversation.</p><h2>Find inspiration</h2><p><a href="/products/single-portrait/">Single portraits</a> · <a href="/products/double-portrait/">Double portraits</a></p><p><a href="/gallery/">Browse paintings</a> · <a href="/murals/">Explore murals</a></p></aside>
+</div></main><footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            <p class="footer-brand">VERMILLION AURORA PRODUCTIONS</p>
+          </div>
+          <div class="footer-links">
+            <a href="/murals/">Murals</a>
+            <a href="/gallery/">Gallery</a>
+            <a href="/#exhibitions">Exhibitions</a><a href="/#books">Books</a>
+            <a href="/#services">Commissions</a>
+            <a href="/about/">About</a>
+            <a href="/#film">Film</a>
+            <a href="/#contact">Contact</a>
+          </div>
+        </div>
+      </footer></div><script src="/commissions/form.js" defer></script></body></html>
