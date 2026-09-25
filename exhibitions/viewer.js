@@ -1,18 +1,19 @@
 // Enhance the existing gallery; keep its links available if JavaScript is disabled.
 document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-grid').forEach(grid => {
-  const items = [...grid.children].map(node => {
+  let items = [...grid.children].map(node => {
     const img = node.querySelector('img');
     const product = node.querySelector('.product-title-link');
     if (product) {
       const imageLink = node.querySelector('.gallery-product-image, .product-image');
       const background = imageLink && getComputedStyle(imageLink).backgroundImage.match(/url\(["']?(.*?)["']?\)/);
       const src = img?.src || background?.[1];
-      return src ? {src, alt: product.textContent, product: product.href} : null;
+      return src ? {src, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
     }
     const video = node.querySelector('video');
     return img ? {src: node.href, alt: img.alt} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
   }).filter(Boolean);
   if (!items.length) return;
+  const allItems = items;
   const threeUp = true;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const box = document.createElement('section');
@@ -25,6 +26,8 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   const slider = box.querySelector('input');
   const play = box.querySelector('[data-play]');
   let index = 0, paused = motion.matches, visible = false, hovered = false, focused = false, timer;
+  function buildItems() {
+    stage.replaceChildren(); thumbs.replaceChildren();
   items.forEach((item, i) => {
     const button = document.createElement('button');
     button.type = 'button';
@@ -45,6 +48,8 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
       cell.append(media); stage.append(cell);
     });
   }
+  }
+  buildItems();
   let autoPosition = 0, autoDirection = 1, lastFrame = 0, interacting = false, resumeAt = 0;
   function animate(time) {
     const elapsed = lastFrame ? Math.min(time - lastFrame, 50) : 0; lastFrame = time;
@@ -69,7 +74,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
     window.addEventListener('pointerup', release); window.addEventListener('pointercancel', release);
     stage.addEventListener('wheel', () => { resumeAt = performance.now() + 5000; }, {passive:true});
     stage.addEventListener('scroll', () => {
-      const width = stage.children[1]?.offsetLeft - stage.children[0].offsetLeft;
+      const width = stage.children[1]?.offsetLeft - (stage.children[0]?.offsetLeft || 0);
       const n = width ? Math.round(stage.scrollLeft / width) : 0;
       if (n !== index) show(n, true);
     }, {passive:true});
@@ -80,6 +85,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
     if (!threeUp && !paused && visible && !document.hidden && !hovered && !focused && !items[index].video) timer = setTimeout(() => show(index + 1), 5000);
   }
   function show(n, fromScroll = false) {
+    if (!items.length) return;
     index = (n + items.length) % items.length;
     const item = items[index];
     if (threeUp && !fromScroll) {
@@ -150,4 +156,22 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   if (description && grid.classList.contains('exhibition-grid')) description.textContent = 'Swipe to browse or choose a thumbnail.';
   new IntersectionObserver(entries => { visible = entries[0].isIntersecting; schedule(); }, {threshold:0.1}).observe(box);
   show(0); updatePlay();
+  const filter = document.querySelector('#available-only');
+  if (filter && grid.closest('.painting-gallery-page')) {
+    const count = document.querySelector('#gallery-result-count');
+    const available = value => value === 'Available' || value === 'Available by inquiry';
+    function applyFilter() {
+      items = filter.checked ? allItems.filter(item => available(item.availability)) : allItems;
+      [...grid.children].forEach(card => { card.hidden = filter.checked && !available(card.dataset.availability); });
+      index = 0; autoPosition = 0; autoDirection = 1;
+      buildItems(); slider.max = String(Math.max(1, items.length));
+      box.hidden = !items.length;
+      count.textContent = `${items.length} of ${allItems.length} paintings`;
+      if (items.length) show(0);
+    }
+    filter.closest('.gallery-filter').hidden = false;
+    filter.addEventListener('change', applyFilter);
+    applyFilter();
+  }
+
 });
