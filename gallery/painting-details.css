@@ -1,0 +1,1 @@
+.painting-facts{display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;margin:18px 0 24px;font-size:.95rem}.painting-facts dt{font-weight:600}.painting-facts dd{margin:0}.product-summary .product-availability{font-weight:600;margin:10px 0}.product-summary h1{overflow-wrap:anywhere}@media(max-width:600px){.painting-facts{gap:6px 12px}}
