@@ -1,0 +1,113 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: rgba(247, 241, 234, 0.85);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 82px;
+  gap: 12px;
+}
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+.site-header .brand small {
+  display: block;
+  letter-spacing: 0.14em;
+  font-size: 0.52rem;
+}
+
+.site-header .brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--sand));
+  color: #fff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.site-header .main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.site-header .main-nav a {
+  position: relative;
+}
+
+.site-header .main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.site-header .main-nav a:hover::after,
+.site-header .main-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.site-header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-header .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.9rem 1.5rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.site-header .button:hover,
+.site-header .button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(89, 61, 45, 0.12);
+}
+
+.site-header .button-solid {
+  background: var(--ink);
+  color: #fff;
+}
+
+
+.site-header{--ink:#1d1a17;--muted:#5e554d;--line:rgba(25,19,15,.14);--accent:#8c4d39;--sand:#d4b48a;color:var(--ink);font-family:Inter,sans-serif;font-size:16px;line-height:1.6;text-align:left;padding:0;margin:0;width:100%}.site-header *{box-sizing:border-box}.site-header a{color:inherit;text-decoration:none}.site-header .container{width:min(1200px,calc(100% - 40px));margin:0 auto}.site-header .button-solid{color:white}.site-header .header-actions .button{width:auto;padding:.9rem 1.5rem;white-space:nowrap}.site-header .main-nav{flex-wrap:wrap;gap:12px 18px;justify-content:center}.site-header .brand-block{flex-shrink:0}
+@media(max-width:980px){.site-header .header-inner{flex-wrap:wrap;padding:12px 0;gap:10px;justify-content:space-between}.site-header .main-nav{display:flex;order:3;flex:0 0 100%;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;padding:6px 0 10px;gap:18px}.site-header .main-nav a{white-space:nowrap}.site-header .header-actions{width:auto}.site-header .header-actions .button{font-size:.65rem;padding:.65rem .8rem}}
+@media(max-width:420px){.site-header .brand{font-size:.65rem;gap:6px}.site-header .brand-mark{width:32px;height:32px}.site-header .container{width:calc(100% - 24px)}}
+body.full .site-header{display:none}
