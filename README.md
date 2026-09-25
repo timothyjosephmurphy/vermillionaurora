@@ -72,3 +72,11 @@ Open:
 - Older Bluehost bundle, for comparison: http://localhost:8000/public_html/
 
 No dependency installation or application compilation is needed for this local static-file preview. This server does not reproduce Cloudflare-specific domain routing or deployment settings.
+
+## Commission requests
+
+`/commissions/` submits to the existing Formspree endpoint `https://formspree.io/f/mgavkoql`. The shared header action and portrait/landscape inquiry buttons link here. Customer details, desired size (including custom dimensions), reference images/links, and optional palette hex values/images are sent as multipart form data.
+
+**Account setup:** Native file uploads require a Formspree Personal, Professional, or Business plan, with submission storage enabled. Confirm the form's notification recipient in Formspree. The page uses the existing form's email routing; it does not configure the recipient itself. See https://help.formspree.io/articles/building-your-form/file-uploads . Text/link-only requests omit empty file fields and do not require file-upload support. The page limits each of its two image attachments to 10 MB and accepts JPG, PNG, and WebP. Upload failures preserve all entries and suggest a link or direct email.
+
+Before treating attachments as operational, verify the Formspree plan and perform a real submission with a reference image and palette, then confirm receipt. Client-side tests/mock responses do not verify delivery or account entitlements. No credentials are embedded in the page, and references are not stored in the public R2 image bucket.
