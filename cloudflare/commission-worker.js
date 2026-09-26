@@ -24,6 +24,11 @@ export default {
       const email=clean(form.get("email"),254);
       const size=clean(form.get("size"),100);
       const description=clean(form.get("description") || form.get("message"),5000);
+      const inquiryType=clean(form.get("inquiryType"),30);
+      const paintingSlug=clean(form.get("paintingSlug"),150);
+      const paintingTitle=clean(form.get("paintingTitle"),200);
+      const paintingPrice=clean(form.get("paintingPrice"),100);
+      const isPurchase=inquiryType === "purchase" && paintingTitle;
       const website=clean(form.get("website"),200);
       if (website) return json({success:true},200,cors);
       if (!name || !email || !description) return json({success:false,error:"Name, email, and project description are required."},400,cors);
@@ -78,15 +83,26 @@ export default {
       const uploadLines=uploaded.length
         ? uploaded.flatMap(x=>[`${x.label}: ${x.originalName}`,`R2 object: ${x.key}`])
         : ["Uploads: None"];
-      const body=[
-        "New commission request","",
-        `Request ID: ${requestId}`,
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Requested size: ${size || "Not specified"}`,"",
-        ...uploadLines,"",
-        "Project description:",description
-      ].join("\r\n");
+      const body = isPurchase
+        ? [
+            "New painting purchase inquiry","",
+            `Request ID: ${requestId}`,
+            `Painting: ${paintingTitle}`,
+            `Price: ${paintingPrice || "Not specified"}`,
+            `Inventory ID: ${paintingSlug || "Not specified"}`,"",
+            `Name: ${name}`,
+            `Email: ${email}`,"",
+            "Message:",description
+          ].join("\r\n")
+        : [
+            "New commission request","",
+            `Request ID: ${requestId}`,
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Requested size: ${size || "Not specified"}`,"",
+            ...uploadLines,"",
+            "Project description:",description
+          ].join("\r\n");
 
       const totalAttachmentBytes = uploaded.reduce((sum, x) => sum + x.bytes.byteLength, 0);
       if (totalAttachmentBytes > 18 * 1024 * 1024) {
@@ -101,7 +117,7 @@ export default {
         `From: Vermilion Aurora Website <${senderAddress}>`,
         `To: ${senderAddress}`,
         `Reply-To: ${email}`,
-        `Subject: ${mimeHeader(`New Commission Request — ${name}`)}`,
+        `Subject: ${mimeHeader(isPurchase ? `Painting Purchase Inquiry — ${paintingTitle}` : `New Commission Request — ${name}`)}`,
         "MIME-Version: 1.0",
         `Content-Type: multipart/mixed; boundary="${boundary}"`,
         "",
