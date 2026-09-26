@@ -199,9 +199,26 @@
               </label>
 
               <label>
+                <span>Desired size</span>
+                <input type="text" name="size" placeholder="For example: 24 × 36 inches" />
+              </label>
+
+              <label>
+                <span>Reference image (optional, max 10 MB)</span>
+                <input type="file" name="referenceImage" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" />
+              </label>
+
+              <label>
+                <span>Color palette / swatch (optional, max 10 MB)</span>
+                <input type="file" name="paletteImage" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" />
+              </label>
+
+              <label>
                 <span>Message (required)</span>
                 <textarea name="message" required rows="5" placeholder="Tell me about your vision"></textarea>
               </label>
+
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot" />
 
               <button type="submit" class="button button-solid">Send</button>
               <p class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
