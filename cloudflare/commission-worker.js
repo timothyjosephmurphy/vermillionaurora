@@ -41,7 +41,13 @@ export default {
             httpMetadata:{contentType:file.type},
             customMetadata:{originalName:file.name.slice(0,200),customerEmail:email}
           });
-          uploaded.push({label,key,originalName:file.name});
+          uploaded.push({
+            label,
+            key,
+            originalName: file.name,
+            type: file.type,
+            bytes: new Uint8Array(await file.arrayBuffer())
+          });
         }
       }
 
@@ -74,15 +80,39 @@ export default {
         "Project description:",description
       ].join("\r\n");
 
-      const mime=[
+      const totalAttachmentBytes = uploaded.reduce((sum, x) => sum + x.bytes.byteLength, 0);
+      if (totalAttachmentBytes > 18 * 1024 * 1024) {
+        return json({success:false,error:"Combined image attachments must be 18 MB or smaller."},400,cors);
+      }
+
+      const boundary = "va_" + crypto.randomUUID().replace(/-/g, "");
+      const mimeParts = [
         `From: Vermilion Aurora Website <${env.GMAIL_ADDRESS}>`,
         `To: ${env.GMAIL_ADDRESS}`,
         `Reply-To: ${email}`,
         `Subject: ${mimeHeader(`New Commission Request — ${name}`)}`,
         "MIME-Version: 1.0",
+        `Content-Type: multipart/mixed; boundary="${boundary}"`,
+        "",
+        `--${boundary}`,
         'Content-Type: text/plain; charset="UTF-8"',
-        "Content-Transfer-Encoding: 8bit","",body
-      ].join("\r\n");
+        "Content-Transfer-Encoding: 8bit",
+        "",
+        body
+      ];
+
+      for (const item of uploaded) {
+        mimeParts.push(
+          `--${boundary}`,
+          `Content-Type: ${item.type}; name="${safeFilename(item.originalName)}"`,
+          "Content-Transfer-Encoding: base64",
+          `Content-Disposition: attachment; filename="${safeFilename(item.originalName)}"`,
+          "",
+          base64Lines(item.bytes)
+        );
+      }
+      mimeParts.push(`--${boundary}--`, "");
+      const mime = mimeParts.join("\r\n");
 
       const gmail=await fetch("https://gmail.googleapis.com/gmail/v1/users/me/messages/send",{
         method:"POST",
@@ -107,4 +137,6 @@ function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
 function extensionFor(t){return ({"image/jpeg":"jpg","image/png":"png","image/webp":"webp","image/heic":"heic","image/heif":"heif"})[t] || "bin";}
 function mimeHeader(v){const b=new TextEncoder().encode(v);let s="";for(const x of b)s+=String.fromCharCode(x);return `=?UTF-8?B?${btoa(s)}?=`;}
 function base64url(v){const b=new TextEncoder().encode(v);let s="";for(const x of b)s+=String.fromCharCode(x);return btoa(s).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");}
+function safeFilename(v){return String(v || "attachment").replace(/[\r\n"]/g,"_").slice(0,180);}
+function base64Lines(bytes){let out="";const chunk=0x8000;for(let i=0;i<bytes.length;i+=chunk){out+=String.fromCharCode(...bytes.subarray(i,i+chunk));}const encoded=btoa(out);return encoded.match(/.{1,76}/g).join("\r\n");}
 function json(d,status,h={}){return new Response(JSON.stringify(d),{status,headers:{"Content-Type":"application/json; charset=UTF-8",...h}});}
