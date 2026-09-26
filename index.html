@@ -182,6 +182,15 @@
             </div>
 
             <form class="contact-form" action="https://vermillion-commissions.timothyjosephmurphy.workers.dev" method="POST">
+              <div class="purchase-summary" hidden>
+                <p class="eyebrow dark">Purchase inquiry</p>
+                <h3 class="purchase-title"></h3>
+                <p class="purchase-price"></p>
+              </div>
+              <input type="hidden" name="inquiryType" value="commission" />
+              <input type="hidden" name="paintingSlug" value="" />
+              <input type="hidden" name="paintingTitle" value="" />
+              <input type="hidden" name="paintingPrice" value="" />
               <div class="field-row">
                 <label>
                   <span>First Name</span>
@@ -198,17 +207,17 @@
                 <input type="email" name="email" placeholder="Email" autocomplete="email" required />
               </label>
 
-              <label>
+              <label class="commission-only">
                 <span>Desired size</span>
                 <input type="text" name="size" placeholder="For example: 24 × 36 inches" />
               </label>
 
-              <label>
+              <label class="commission-only">
                 <span>Reference image (optional, max 10 MB)</span>
                 <input type="file" name="referenceImage" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" />
               </label>
 
-              <label>
+              <label class="commission-only">
                 <span>Color palette / swatch (optional, max 10 MB)</span>
                 <input type="file" name="paletteImage" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" />
               </label>
