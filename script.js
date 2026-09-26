@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form.querySelector('[name="paintingTitle"]').value = painting.B;
         form.querySelector('[name="paintingPrice"]').value = price;
 
+        form.classList.add('purchase-mode');
         form.querySelectorAll('.commission-only').forEach((element) => { element.hidden = true; });
         const summary = form.querySelector('.purchase-summary');
         summary.hidden = false;
