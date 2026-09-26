@@ -94,10 +94,11 @@ export default {
       }
 
       const boundary = "va_" + crypto.randomUUID().replace(/-/g, "");
+      const senderAddress = String(env.GMAIL_ADDRESS || "").trim();
       const mimeParts = [
-        `From: Vermilion Aurora Website <${env.GMAIL_ADDRESS}>`,
-        `To: ${env.GMAIL_ADDRESS}`,
-        `Reply-To: ${email}`,
+        `From: Vermilion Aurora Website <${senderAddress}>`,
+        `To: <${senderAddress}>`,
+        `Reply-To: <${email}>`,
         `Subject: ${mimeHeader(`New Commission Request — ${name}`)}`,
         "MIME-Version: 1.0",
         `Content-Type: multipart/mixed; boundary="${boundary}"`,
