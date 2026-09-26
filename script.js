@@ -74,9 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       for (const fieldName of ['referenceImage', 'paletteImage']) {
         const file = data.get(fieldName);
-        if (file instanceof File && file.size > 10 * 1024 * 1024) {
-          status.textContent = 'Each uploaded image must be 10 MB or smaller.';
-          return;
+        if (!(file instanceof File) || !file.size) continue;
+
+        if (file.size > 10 * 1024 * 1024) {
+          status.textContent = 'Optimizing image…';
+          const optimized = await optimizeImage(file);
+
+          if (optimized.size > 10 * 1024 * 1024) {
+            status.textContent = 'This image could not be reduced enough to upload. Please choose a smaller image.';
+            return;
+          }
+
+          data.set(fieldName, optimized, optimized.name);
         }
       }
 
@@ -110,3 +119,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+async function optimizeImage(file) {
+  const supported = new Set(['image/jpeg', 'image/png', 'image/webp']);
+  if (!supported.has(file.type)) return file;
+
+  const bitmap = await createImageBitmap(file);
+  const maxDimension = 3000;
+  const scale = Math.min(1, maxDimension / Math.max(bitmap.width, bitmap.height));
+  const width = Math.max(1, Math.round(bitmap.width * scale));
+  const height = Math.max(1, Math.round(bitmap.height * scale));
+
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d', { alpha: false });
+  ctx.drawImage(bitmap, 0, 0, width, height);
+  bitmap.close();
+
+  const baseName = file.name.replace(/\.[^.]+$/, '') || 'reference-image';
+  const targetBytes = 5 * 1024 * 1024;
+  let quality = 0.88;
+  let blob = await canvasToBlob(canvas, 'image/jpeg', quality);
+
+  while (blob.size > targetBytes && quality > 0.55) {
+    quality -= 0.08;
+    blob = await canvasToBlob(canvas, 'image/jpeg', quality);
+  }
+
+  return new File([blob], baseName + '-optimized.jpg', {
+    type: 'image/jpeg',
+    lastModified: Date.now()
+  });
+}
+
+function canvasToBlob(canvas, type, quality) {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(
+      (blob) => blob ? resolve(blob) : reject(new Error('Image compression failed')),
+      type,
+      quality
+    );
+  });
+}
