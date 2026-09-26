@@ -13,8 +13,39 @@ document.addEventListener('DOMContentLoaded', () => {
   "velvet-dawn": "Velvet Dawn",
   "personal-portrait": "Personal Portrait"
 };
-  const productSlug = new URLSearchParams(window.location.search).get('product');
+  const params = new URLSearchParams(window.location.search);
+  const productSlug = params.get('product');
+  const purchaseSlug = params.get('buy');
   const message = form.querySelector('[name="message"]');
+
+  if (purchaseSlug) {
+    fetch('/gallery/inventory.json')
+      .then((response) => response.json())
+      .then((inventory) => {
+        const painting = (inventory.paintings || []).find((item) => item.A === purchaseSlug);
+        if (!painting || painting.E !== 'Available') return;
+
+        const price = painting.C
+          ? new Intl.NumberFormat('en-US', { style: 'currency', currency: painting.D || 'USD', maximumFractionDigits: 0 }).format(Number(painting.C))
+          : 'Price on request';
+
+        form.querySelector('[name="inquiryType"]').value = 'purchase';
+        form.querySelector('[name="paintingSlug"]').value = painting.A;
+        form.querySelector('[name="paintingTitle"]').value = painting.B;
+        form.querySelector('[name="paintingPrice"]').value = price;
+
+        form.querySelectorAll('.commission-only').forEach((element) => { element.hidden = true; });
+        const summary = form.querySelector('.purchase-summary');
+        summary.hidden = false;
+        summary.querySelector('.purchase-title').textContent = painting.B;
+        summary.querySelector('.purchase-price').textContent = price;
+
+        if (message) {
+          message.value = 'Hello, I’m interested in purchasing ' + painting.B + ' for ' + price + '.\n\n';
+        }
+      })
+      .catch(() => {});
+  }
   if (Object.hasOwn(productNames, productSlug) && message && !message.value) {
     message.value = 'Hello, I’m interested in ' + productNames[productSlug] + '.\n\n';
   }
