@@ -55,8 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { Accept: 'application/json' }
       });
 
+      let result = {};
+      try {
+        result = await response.json();
+      } catch (_) {}
+
       if (!response.ok) {
-        status.textContent = 'Your message could not be sent. Please try again or email TJ@VermillionAurora.com directly.';
+        status.textContent = result.error
+          ? 'Submission error: ' + result.error
+          : 'Your message could not be sent. Please try again or email TJ@VermillionAurora.com directly.';
         return;
       }
 
