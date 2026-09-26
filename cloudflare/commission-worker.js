@@ -1,4 +1,5 @@
-// Deployed automatically from GitHub via Cloudflare Builds.\nconst ALLOWED_ORIGIN = "https://vermillionaurora.com";
+// Deployed automatically from GitHub via Cloudflare Builds.
+const ALLOWED_ORIGIN = "https://vermillionaurora.com";
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ALLOWED_TYPES = new Set(["image/jpeg","image/png","image/webp","image/heic","image/heif"]);
 
