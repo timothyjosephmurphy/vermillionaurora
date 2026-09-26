@@ -38,22 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = new FormData(form);
       const firstName = (data.get('firstName') || '').toString().trim();
       const lastName = (data.get('lastName') || '').toString().trim();
-      const name = [firstName, lastName].filter(Boolean).join(' ') || 'Website visitor';
+      data.set('name', [firstName, lastName].filter(Boolean).join(' ') || 'Website visitor');
+      data.set('description', (data.get('message') || '').toString());
+
+      for (const fieldName of ['referenceImage', 'paletteImage']) {
+        const file = data.get(fieldName);
+        if (file instanceof File && file.size > 10 * 1024 * 1024) {
+          status.textContent = 'Each uploaded image must be 10 MB or smaller.';
+          return;
+        }
+      }
 
       const response = await fetch(form.action, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({
-          name,
-          email: (data.get('email') || '').toString(),
-          description: (data.get('message') || '').toString(),
-          size: '',
-          palette: '',
-          website: ''
-        })
+        body: data,
+        headers: { Accept: 'application/json' }
       });
 
       if (!response.ok) {
