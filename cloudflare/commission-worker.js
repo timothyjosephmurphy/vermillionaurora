@@ -37,16 +37,23 @@ export default {
           if (!ALLOWED_TYPES.has(file.type)) return json({success:false,error:`${label} must be JPEG, PNG, WebP, HEIC, or HEIF.`},400,cors);
           const ext=extensionFor(file.type);
           const key=`commissions/${requestId}/${field}.${ext}`;
-          await env.COMMISSION_UPLOADS.put(key,file.stream(),{
+
+          // Read the upload once, then reuse the same bytes for R2 and Gmail.
+          // A File body cannot reliably be consumed once by file.stream() and
+          // then consumed again by file.arrayBuffer().
+          const bytes = new Uint8Array(await file.arrayBuffer());
+
+          await env.COMMISSION_UPLOADS.put(key, bytes, {
             httpMetadata:{contentType:file.type},
             customMetadata:{originalName:file.name.slice(0,200),customerEmail:email}
           });
+
           uploaded.push({
             label,
             key,
             originalName: file.name,
             type: file.type,
-            bytes: new Uint8Array(await file.arrayBuffer())
+            bytes
           });
         }
       }
