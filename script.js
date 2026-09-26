@@ -35,10 +35,25 @@ document.addEventListener('DOMContentLoaded', () => {
     form.setAttribute('aria-busy', 'true');
 
     try {
+      const data = new FormData(form);
+      const firstName = (data.get('firstName') || '').toString().trim();
+      const lastName = (data.get('lastName') || '').toString().trim();
+      const name = [firstName, lastName].filter(Boolean).join(' ') || 'Website visitor';
+
       const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email: (data.get('email') || '').toString(),
+          description: (data.get('message') || '').toString(),
+          size: '',
+          palette: '',
+          website: ''
+        })
       });
 
       if (!response.ok) {
