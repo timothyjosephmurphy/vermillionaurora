@@ -8,5 +8,11 @@
       "binding": "COMMISSION_UPLOADS",
       "bucket_name": "vermillion-commission-uploads"
     }
-  ]
+  ],
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  }
 }
