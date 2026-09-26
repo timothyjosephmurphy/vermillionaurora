@@ -753,3 +753,13 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
   height: 1px !important;
   overflow: hidden !important;
 }
+
+
+/* Existing-painting purchase inquiries use a distinct, simplified form. */
+.contact-form.purchase-mode .commission-only {
+  display: none !important;
+}
+
+.contact-form.purchase-mode .purchase-summary {
+  display: block;
+}
