@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "vermillion-commissions",
+  "main": "commission-worker.js",
+  "compatibility_date": "2026-09-25",
+  "r2_buckets": [
+    {
+      "binding": "COMMISSION_UPLOADS",
+      "bucket_name": "vermillion-commission-uploads"
+    }
+  ]
+}
