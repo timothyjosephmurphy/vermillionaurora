@@ -94,11 +94,13 @@ export default {
       }
 
       const boundary = "va_" + crypto.randomUUID().replace(/-/g, "");
-      const senderAddress = String(env.GMAIL_ADDRESS || "").trim();
+      // Use the authenticated Gmail identity as the envelope recipient.
+      // This avoids relying on a runtime address variable for MIME parsing.
+      const senderAddress = "tj@vermillionaurora.com";
       const mimeParts = [
         `From: Vermilion Aurora Website <${senderAddress}>`,
-        `To: <${senderAddress}>`,
-        `Reply-To: <${email}>`,
+        `To: ${senderAddress}`,
+        `Reply-To: ${email}`,
         `Subject: ${mimeHeader(`New Commission Request — ${name}`)}`,
         "MIME-Version: 1.0",
         `Content-Type: multipart/mixed; boundary="${boundary}"`,
