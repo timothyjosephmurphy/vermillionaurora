@@ -71,7 +71,7 @@ body.full #original-simulation .prototype-note{display:none}
 
 <section id="nd-mural-mapped" aria-labelledby="mural-simulation-title">
   <div class="viz-row"><h2 id="mural-simulation-title">Dance across the mural</h2><button class="btn btn-primary" data-action="play">Start simulation</button><button class="btn" data-action="audio" aria-pressed="false">Audio off</button><button class="btn" data-action="reset">Reset placement</button></div>
-  <p class="mural-help">Start the simulation to see 28 dancers mapped onto the mural’s silhouette stickers. Zoners hear every rhythm and send a strong pulse to one randomly chosen nearby dancer on each musical activation without listening to neighbors; leaders amplify everyone nearby and choose one or two favorites and change them after recovering from fatigue; followers have a gentler influence. Zoom in to explore; drag a marker to adjust its placement, click to add a dancer, or Shift-click to remove one.</p>
+  <p class="mural-help">Start the simulation to see 28 dancers mapped onto the mural’s silhouette stickers. Zoners hear every rhythm and send a strong pulse to one randomly chosen nearby dancer on each musical activation without listening to neighbors; activation builds more slowly as it rises, and strongly activated leaders can send pulses to up to five nearby dancers while retaining one or two favorites, which change after they recover from fatigue; followers have a gentler influence. Zoom in to explore; drag a marker to adjust its placement, click to add a dancer, or Shift-click to remove one.</p>
   <div class="viz-controls">
     <label class="form-label">New dancer role<select class="form-select" data-control="role"><option value="zoner">Zoner</option><option value="leader">Leader</option><option value="follower" selected>Follower</option></select></label>
     <label class="form-label">Music channel<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Mid</option><option value="3">Treble</option></select></label>
@@ -108,6 +108,7 @@ const canvas=root.querySelector('[data-stage]'),ctx=canvas.getContext('2d'),phot
 const el=s=>root.querySelector(s),play=el('[data-action="play"]'),audioButton=el('[data-action="audio"]'),status=el('[data-status]');
 const W=882,H=196,R=82,MAX=48,MAX_PULSES=48,rates=[1,.5,1.5,2];
 const roles={zoner:1.55,leader:1.2,follower:.5};
+function addActivation(n,amount){n.a=Math.min(2,n.a+amount*Math.exp(-n.a/1.35));}
 let nodes=[],pulses=[],id=0,bpm=120,zoom=1,pan=.5,running=false,audio=false,low=false;
 let timer=0,raf=0,last=0,started=0,slow=0,time=0,lastReport=0,pointer=null;
 let ac=null,master=null,voices=new Set(),lastTone=[-99,-99,-99,-99],toneWindow=0,toneCount=0;
@@ -151,14 +152,14 @@ function update(dt){const before=time;time+=dt;const queue=[],emitted=new Set(),
  for(const n of nodes){n.a=Math.max(0,n.a-dt*1.5);if(n.role==='zoner'){n.rest=0;n.peak=0;}const wasResting=n.rest>0;n.rest=Math.max(0,n.rest-dt);if(wasResting&&!n.rest&&n.role==='leader')rotateFavorites(n);if(n.role==='leader'&&!n.favorites.size)rotateFavorites(n);
   const channels=n.role==='zoner'?[0,1,2,3]:[n.k];
   for(const k of channels){const start=before*bpm/60*rates[k]+n.phase,end=time*bpm/60*rates[k]+n.phase;
-   if(Math.floor(end)>Math.floor(start)&&!n.rest){n.a=Math.min(2,Math.max(.95,n.a+.25));emit(n,k);}}
+   if(Math.floor(end)>Math.floor(start)&&!n.rest){addActivation(n,n.a<.95?.95:.25);emit(n,k);}}
  }
  for(let i=0;i<queue.length&&i<MAX;i++){const {n:a,k}=queue[i];tone(k);let trails=0;
   const nearby=nodes.filter(b=>b!==a&&(a.role==='zoner'||b.role!=='zoner')&&!b.rest&&Math.hypot(a.x-b.x,a.y-b.y)<R);
   const neighbors=a.role==='zoner'?(nearby.length?[nearby[Math.floor(Math.random()*nearby.length)]]:[]):nearby.sort((b,c)=>Number(a.favorites.has(c.id))-Number(a.favorites.has(b.id)));
   for(const b of neighbors){const distance=Math.hypot(a.x-b.x,a.y-b.y),favorite=a.role==='leader'&&a.favorites.has(b.id),strength=roles[a.role]*(favorite?1.65:1);
-   {const used=received.get(b.id)||0,amount=Math.min(.95-used,(.16+.22*(1-distance/R))*strength);if(amount>0){received.set(b.id,used+amount);b.a=Math.min(2,b.a+amount);if(b.a>=1.4&&time>=b.ref){b.ref=time+.2;emit(b);}}}
-   if(trails<2&&pulses.length<(low?24:MAX_PULSES)){pulses.push({a,b,k,age:0,duration:.3+distance/170,trail:[],favorite});trails++;}
+   {const used=received.get(b.id)||0,amount=Math.min(.95-used,(.16+.22*(1-distance/R))*strength);if(amount>0){received.set(b.id,used+amount);addActivation(b,amount);if(b.a>=1.4&&time>=b.ref){b.ref=time+.2;emit(b);}}}
+   if(trails<(a.role==='leader'&&a.a>=1.4?5:2)&&pulses.length<(low?24:MAX_PULSES)){pulses.push({a,b,k,age:0,duration:.3+distance/170,trail:[],favorite});trails++;}
   }
  }
  for(const n of nodes){if(n.role==='zoner'){n.peak=0;n.rest=0;continue;}n.peak=n.a>1.75?n.peak+dt:Math.max(0,n.peak-dt*.6);if(n.peak>(n.role==='leader'?5.6:1.8)){n.rest=n.role==='leader'?2.2:1.4;n.peak=0;n.a=.4;}}
@@ -261,6 +262,7 @@ const MAX_NODES=48,MAX_PULSES=48,MAX_LINKS=96,MAX_TRAIL=10,MAX_VOICES=8;
 let nodes=[],pulses=[],links=new Map();
 const activationQueue=[],queuedDancers=new Set();
 const roles={zoner:1.55,leader:1.2,follower:.5};
+function addActivation(n,amount){n.a=Math.min(2,n.a+amount*Math.exp(-n.a/1.35));}
 function queueActivation(n){if(!queuedDancers.has(n.id)&&activationQueue.length<MAX_NODES){queuedDancers.add(n.id);activationQueue.push(n);}}
 function reinforceNeighbors(){
   const received=new Map();
@@ -357,9 +359,9 @@ function ad(a,b){let d=b-a;while(d>Math.PI)d-=Math.PI*2;while(d<-Math.PI)d+=Math
 function topo(a,b,z){let A=fc(a),B=fc(b),s=sm(z),ang=A.a+ad(A.a,B.a)*s,rad=A.r+(B.r-A.r)*s,rings=[105,185,265],avg=(A.r+B.r)/2,target=rings.reduce((u,v)=>Math.abs(v-avg)<Math.abs(u-avg)?v:u);rad+=(target-rad)*.2*Math.max(0,1-Math.abs(A.r-B.r)/160)*Math.sin(Math.PI*z);return{x:CX+Math.cos(ang)*rad*SX,y:CY+Math.sin(ang)*rad*SY}}
 function plen(a,b){let p=topo(a,b,0),L=0;for(let i=1;i<=25;i++){let q=topo(a,b,i/25);L+=D(p,q);p=q}return Math.max(1,L)}
 function quad(a,q,b,z){let u=1-z;return{x:u*u*a.x+2*u*z*q.x+z*z*b.x,y:u*u*a.y+2*u*z*q.y+z*z*b.y}}
-function fire(n,s){if(n.role==='zoner'||n.tired)return false;n.a=Math.min(2,n.a+s*(1-.42*n.fatigue));if(n.a>=TH&&t>n.ref){n.last=t;n.ref=t+.18;queueActivation(n);return true}return false}
+function fire(n,s){if(n.role==='zoner'||n.tired)return false;addActivation(n,s*(1-.42*n.fatigue));if(n.a>=TH&&t>n.ref){n.last=t;n.ref=t+.18;queueActivation(n);return true}return false}
 function launch(a,b,str=.85,v=0,k=null,parent=null){if((a.role!=='zoner'&&b.role==='zoner')||pulses.length>=pulseLimit())return;let q=parent||{};pulses.push({mode:'edge',a:a.id,b:b.id,d:0,len:plen(a,b),v:Math.max(330,v+BOOST),str,age:0,kind:k||a.k,phase:q.phase??Math.random()*6.28,freq:q.freq??10+Math.random()*8,amp:q.amp??3+Math.random()*3,noise:q.noise??Math.random()*100,trail:[],hit:new Set([a.id]),gx:0,gy:0,gvx:0,gvy:0,wander:false})}
-function spread(n,exclude,str,v,k=null,parent=null){const nearby=nodes.filter(o=>o.id!==n.id&&o.id!==exclude&&(n.role==='zoner'||o.role!=='zoner')&&D(n,o)<R);const chosen=n.role==='zoner'?(nearby.length?[nearby[Math.floor(Math.random()*nearby.length)]]:[]):nearby.sort((a,b)=>Number(n.favorites.has(b.id))-Number(n.favorites.has(a.id))).slice(0,2);chosen.forEach(o=>launch(n,o,str*(n.role==='leader'&&n.favorites.has(o.id)?1.65:1),v,k,parent));return chosen;}
+function spread(n,exclude,str,v,k=null,parent=null){const nearby=nodes.filter(o=>o.id!==n.id&&o.id!==exclude&&(n.role==='zoner'||o.role!=='zoner')&&D(n,o)<R);const chosen=n.role==='zoner'?(nearby.length?[nearby[Math.floor(Math.random()*nearby.length)]]:[]):nearby.sort((a,b)=>Number(n.favorites.has(b.id))-Number(n.favorites.has(a.id))).slice(0,n.role==='leader'&&n.a>=TH?5:2);chosen.forEach(o=>launch(n,o,str*(n.role==='leader'&&n.favorites.has(o.id)?1.65:1),v,k,parent));return chosen;}
 function maybeWander(p,dt){if(p.mode!=='edge'||p.wander||Math.random()>WANDER*dt)return;let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return;let z=Math.min(1,p.d/p.len),here=topo(a,b,z),cand=nodes.filter(n=>n.id!==p.a&&n.id!==p.b&&(a.role==='zoner'||n.role!=='zoner')&&D(here,n)<190);if(!cand.length)return;let target=cand[Math.floor(Math.random()*cand.length)],dx=target.x-here.x,dy=target.y-here.y,L=Math.max(1,Math.hypot(dx,dy)),nx=-dy/L,ny=dx/L,bend=(Math.random()-.5)*120;p.mode='wander';p.wander=true;p.sx=here.x;p.sy=here.y;p.tx=target.x;p.ty=target.y;p.ctrl={x:(here.x+target.x)/2+nx*bend,y:(here.y+target.y)/2+ny*bend};p.len=Math.max(1,D(here,target)*1.08);p.d=0;p.target=target.id;p.v*=.92;p.gx=0;p.gy=0}
 function basePos(p){if(p.mode==='edge'){let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return null;return topo(a,b,Math.min(1,p.d/p.len))}if(p.mode==='wander')return quad({x:p.sx,y:p.sy},p.ctrl,{x:p.tx,y:p.ty},Math.min(1,p.d/p.len));return{x:p.x+p.ux*p.d,y:p.y+p.uy*p.d}}
 function tangent(p){const e=.008;if(p.mode==='edge'){let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return{x:1,y:0};let u=Math.min(1,p.d/p.len),q0=topo(a,b,Math.max(0,u-e)),q1=topo(a,b,Math.min(1,u+e)),dx=q1.x-q0.x,dy=q1.y-q0.y,L=Math.max(.001,Math.hypot(dx,dy));return{x:dx/L,y:dy/L}}if(p.mode==='wander'){let u=Math.min(1,p.d/p.len),q0=quad({x:p.sx,y:p.sy},p.ctrl,{x:p.tx,y:p.ty},Math.max(0,u-e)),q1=quad({x:p.sx,y:p.sy},p.ctrl,{x:p.tx,y:p.ty},Math.min(1,u+e)),dx=q1.x-q0.x,dy=q1.y-q0.y,L=Math.max(.001,Math.hypot(dx,dy));return{x:dx/L,y:dy/L}}return{x:p.ux,y:p.uy}}
@@ -379,7 +381,7 @@ for(const n of nodes){
   for(const k of (n.role==='zoner'?Object.keys(T):[n.k])){
     const phase=n.phase+T[k].m*(t-dt)*bpm/60, next=n.phase+T[k].m*t*bpm/60;
     if(Math.floor(next)<=Math.floor(phase)||n.tired)continue;
-    n.a=Math.min(2,Math.max(.95,n.a+.25));n.last=t;queueActivation(n);sound(k);
+    addActivation(n,n.a<.95?.95:.25);n.last=t;queueActivation(n);sound(k);
   }
 }
 for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){let a=nodes[i],b=nodes[j];if(a.tired||b.tired||a.role==='zoner'||b.role==='zoner'||D(a,b)>R)continue;if(t-a.last<.14&&t-b.last<.14){let k=K(a,b);if(links.has(k)||links.size<MAX_LINKS)links.set(k,Math.min(2.2,(links.get(k)||.1)+.015));if(Math.random()<.04){launch(a,b,.8,90);launch(b,a,.8,90)}}}
