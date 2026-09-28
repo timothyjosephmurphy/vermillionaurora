@@ -39,9 +39,11 @@
 .home-page .service-number { margin-bottom:6px; }
 .home-page .about-grid { gap:30px; grid-template-columns:.75fr 1.25fr; }
 .home-page .about-copy p { font-size:.96rem; line-height:1.6; }
-.home-page .mural-links { margin:0; gap:20px; }
-.home-page .mural-links img { height:210px; }
-.home-page .mural-links span { font-size:22px; }
+.home-page #murals .ex-slide { flex-basis:68%; }
+.home-page #murals .ex-slide img { display:block; height:280px; aspect-ratio:16/9; object-fit:cover; }
+.home-page #murals .ex-slide:nth-child(2) img { object-fit:contain; background:#e8dfd3; }
+.home-page #books .ex-slide { flex-basis:46%; }
+.home-page #books .ex-slide a { height:auto; }
 .home-page .home-film-copy { padding:22px; }
 .home-page .home-film-copy h3 { font-size:1.75rem; }
 .home-page .contact-form { gap:12px; padding:20px; }
@@ -52,7 +54,7 @@
  .home-page .hero-copy h1 { font-size:clamp(2.5rem,5.8vw,3.5rem); }
  .home-page .featured-painting { height:280px; }
  .home-page .painting-carousel .ex-slide { flex-basis:calc((100% - 36px)/3); }
- .home-page #books .product-grid,.home-page .service-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .home-page .service-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
  .home-page .book-tile { padding:14px; }
 }
 @media(max-width:640px) {
@@ -64,9 +66,10 @@
  .home-page .featured-art { max-width:340px; }
  .home-page .painting-carousel .ex-slide { flex-basis:calc((100% - 18px)/2); }
  .home-page #exhibitions .ex-slide,.home-page #featured-artists .ex-slide { flex-basis:82%; }
- .home-page #books .product-grid,.home-page .service-grid,.home-page .about-grid { grid-template-columns:1fr; }
+ .home-page .service-grid,.home-page .about-grid { grid-template-columns:1fr; }
+ .home-page #books .ex-slide,.home-page #murals .ex-slide { flex-basis:82%; }
  .home-page .book-tile { min-height:0; }
- .home-page .mural-links img { height:180px; }
+ .home-page #murals .ex-slide img { height:210px; }
 }
 
 /* Small controls share one compact row under each carousel. */
