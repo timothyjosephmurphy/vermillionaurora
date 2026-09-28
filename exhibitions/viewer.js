@@ -10,7 +10,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
       return src ? {src, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
     }
     const video = node.querySelector('video');
-    return img ? {src: node.href, alt: img.alt} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
+    return img ? {src: node.href, alt: img.alt, caption: node.dataset.caption} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
   }).filter(Boolean);
   if (!items.length) return;
   const allItems = items;
@@ -31,7 +31,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   items.forEach((item, i) => {
     const button = document.createElement('button');
     button.type = 'button';
-    button.setAttribute('aria-label', `${item.video ? 'Video' : 'Image'} ${i + 1}: ${item.alt || ''}`);
+    button.setAttribute('aria-label', `${item.video ? 'Video' : 'Image'} ${i + 1}: ${item.alt || ''}${item.caption ? `, ${item.caption}` : ''}`);
     if (item.video) button.textContent = `▶ Video ${i + 1}`;
     else { const img = document.createElement('img'); img.src = item.src; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async'; button.append(img); }
     button.addEventListener('click', () => show(i));
@@ -45,7 +45,9 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
       media.src = item.src;
       if (item.video) { media.controls = true; media.playsInline = true; media.preload = 'none'; }
       else { media.alt = item.alt || 'Exhibition image'; media.loading = 'lazy'; media.decoding = 'async'; }
-      cell.append(media); stage.append(cell);
+      cell.append(media);
+      if (item.caption) { const caption = document.createElement('span'); caption.className = 'ev-caption'; caption.textContent = item.caption; cell.append(caption); }
+      stage.append(cell);
     });
   }
   }

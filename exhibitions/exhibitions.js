@@ -71,7 +71,7 @@ if (viewer && typeof viewer.showModal === 'function') {
     index = (n + photos.length) % photos.length;
     viewer.querySelector('img').src = photos[index].href;
     viewer.querySelector('img').alt = photos[index].querySelector('img').alt;
-    viewer.querySelector('[role="status"]').textContent = `${index + 1} / ${photos.length}`;
+    viewer.querySelector('[role="status"]').textContent = `${index + 1} / ${photos.length}${photos[index].dataset.caption ? ` · ${photos[index].dataset.caption}` : ''}`;
   };
   photos.forEach((photo, n) => photo.addEventListener('click', event => {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
