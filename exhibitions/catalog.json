@@ -933,22 +933,94 @@
     "name": "Paul Murphy",
     "slug": "paul-murphy",
     "folder": "images/Ex-Featured-Artist-Paul-Murphy/",
-    "hero": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg",
+    "hero": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
     "files": [
       {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg",
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
         "video": false,
-        "location": 1,
-        "price": 25,
+        "location": 86,
+        "price": null,
+        "availability": "Not for sale"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7466.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7466.jpeg",
+        "video": false,
+        "location": 57,
+        "price": 1000,
         "availability": "Available"
       },
       {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7473.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7473.jpeg",
         "video": false,
-        "location": 2,
-        "price": 25,
+        "location": 64,
+        "price": 1000,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7464.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7464.jpeg",
+        "video": false,
+        "location": 56,
+        "price": 600,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
+        "video": false,
+        "location": 62,
+        "price": 500,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7472.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7472.jpeg",
+        "video": false,
+        "location": 63,
+        "price": 500,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7474.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7474.jpeg",
+        "video": false,
+        "location": 65,
+        "price": 500,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7416.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7416.jpeg",
+        "video": false,
+        "location": 8,
+        "price": 100,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
+        "video": false,
+        "location": 55,
+        "price": 100,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
+        "video": false,
+        "location": 14,
+        "price": 75,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
+        "video": false,
+        "location": 15,
+        "price": 75,
         "availability": "Available"
       },
       {
@@ -968,22 +1040,6 @@
         "availability": "Available"
       },
       {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7415.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7415.jpeg",
-        "video": false,
-        "location": 7,
-        "price": 25,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7416.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7416.jpeg",
-        "video": false,
-        "location": 8,
-        "price": 100,
-        "availability": "Available"
-      },
-      {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7419.jpeg",
         "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7419.jpeg",
         "video": false,
@@ -992,19 +1048,43 @@
         "availability": "Available"
       },
       {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7462.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7462.jpeg",
         "video": false,
-        "location": 14,
-        "price": 75,
+        "location": 54,
+        "price": 50,
         "availability": "Available"
       },
       {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7482.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7482.jpeg",
         "video": false,
-        "location": 15,
-        "price": 75,
+        "location": 73,
+        "price": 50,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg",
+        "video": false,
+        "location": 1,
+        "price": 25,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
+        "video": false,
+        "location": 2,
+        "price": 25,
+        "availability": "Available"
+      },
+      {
+        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7415.jpeg",
+        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7415.jpeg",
+        "video": false,
+        "location": 7,
+        "price": 25,
         "availability": "Available"
       },
       {
@@ -1136,83 +1216,11 @@
         "availability": "Available"
       },
       {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7462.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7462.jpeg",
-        "video": false,
-        "location": 54,
-        "price": 50,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
-        "video": false,
-        "location": 55,
-        "price": 100,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7464.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7464.jpeg",
-        "video": false,
-        "location": 56,
-        "price": 600,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7466.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7466.jpeg",
-        "video": false,
-        "location": 57,
-        "price": 1000,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-        "video": false,
-        "location": 62,
-        "price": 500,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7472.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7472.jpeg",
-        "video": false,
-        "location": 63,
-        "price": 500,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7473.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7473.jpeg",
-        "video": false,
-        "location": 64,
-        "price": 1000,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7474.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7474.jpeg",
-        "video": false,
-        "location": 65,
-        "price": 500,
-        "availability": "Available"
-      },
-      {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7481.jpeg",
         "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7481.jpeg",
         "video": false,
         "location": 72,
         "price": 25,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7482.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7482.jpeg",
-        "video": false,
-        "location": 73,
-        "price": 50,
         "availability": "Available"
       },
       {
@@ -1254,14 +1262,6 @@
         "location": 85,
         "price": 25,
         "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-        "video": false,
-        "location": 86,
-        "price": null,
-        "availability": "Not for sale"
       }
     ]
   }
