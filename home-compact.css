@@ -23,8 +23,8 @@
 .home-page .ex-controls { margin-top:10px; gap:16px; }
 .home-page .ex-controls button { height:44px; width:44px; }
 .home-page .ex-controls .ex-autoplay { width:auto; }
-.home-page #exhibitions .ex-slide { flex-basis:calc((100% - 36px)/3); }
-.home-page #exhibitions .ex-slide img { aspect-ratio:16/9; }
+.home-page #exhibitions .ex-slide,.home-page #featured-artists .ex-slide { flex-basis:calc((100% - 36px)/3); }
+.home-page #exhibitions .ex-slide img,.home-page #featured-artists .ex-slide img { aspect-ratio:16/9; }
 .home-page .ex-slide-caption { padding:14px; }
 .home-page .ex-slide-caption h3 { font-size:1.65rem; }
 .home-page .centered-link-row { margin-top:20px; }
@@ -63,7 +63,7 @@
  .home-page .hero-panel { width:100%; }
  .home-page .featured-art { max-width:340px; }
  .home-page .painting-carousel .ex-slide { flex-basis:calc((100% - 18px)/2); }
- .home-page #exhibitions .ex-slide { flex-basis:82%; }
+ .home-page #exhibitions .ex-slide,.home-page #featured-artists .ex-slide { flex-basis:82%; }
  .home-page #books .product-grid,.home-page .service-grid,.home-page .about-grid { grid-template-columns:1fr; }
  .home-page .book-tile { min-height:0; }
  .home-page .mural-links img { height:180px; }
@@ -78,7 +78,7 @@
 .home-page .painting-carousel .ex-autoplay { margin-right:0; }
 .home-page .ex-controls .carousel-view-all { margin-left:auto; width:auto; min-height:28px; padding:4px 10px; font-size:.62rem; letter-spacing:.05em; white-space:nowrap; }
 .home-page #gallery { padding-bottom:12px; }
-.home-page #exhibitions { padding-top:16px; padding-bottom:12px; }
+.home-page #exhibitions,.home-page #featured-artists { padding-top:16px; padding-bottom:12px; }
 .home-page #murals { padding-top:20px; }
 .home-page .featured-controls { gap:8px; margin-top:6px; }
 .home-page .featured-controls button { min-height:28px; padding:3px 9px; font-size:.75rem; }
