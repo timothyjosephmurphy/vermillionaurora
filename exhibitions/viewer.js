@@ -10,7 +10,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
       return src ? {src, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
     }
     const video = node.querySelector('video');
-    return img ? {src: node.href, alt: img.alt, caption: node.dataset.caption} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
+    return img ? {src: img.src, alt: img.alt, caption: node.dataset.caption, product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
   }).filter(Boolean);
   if (!items.length) return;
   const allItems = items;

@@ -648,6 +648,416 @@
       "O": "https://vermillionaurora.com/products/painting-portrait-in-blue-light/",
       "P": "https://vermillionaurora.com/gallery-images/portrait-in-blue-light.jpg",
       "image": "/gallery-images/portrait-in-blue-light.jpg"
+    },
+    {
+      "A": "paul-murphy-painting-1",
+      "B": "Painting 1 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-1/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-2",
+      "B": "Painting 2 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-2/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-3",
+      "B": "Painting 3 by Paul Murphy",
+      "C": "50",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-3/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7411.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7411.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-6",
+      "B": "Painting 6 by Paul Murphy",
+      "C": "50",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-6/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7414.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7414.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-7",
+      "B": "Painting 7 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-7/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7415.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7415.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-8",
+      "B": "Painting 8 by Paul Murphy",
+      "C": "100",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-8/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7416.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7416.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-11",
+      "B": "Painting 11 by Paul Murphy",
+      "C": "50",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-11/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7419.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7419.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-14",
+      "B": "Painting 14 by Paul Murphy",
+      "C": "75",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-14/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-15",
+      "B": "Painting 15 by Paul Murphy",
+      "C": "75",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-15/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-23",
+      "B": "Painting 23 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-23/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7431.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7431.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-24",
+      "B": "Painting 24 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-24/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-25",
+      "B": "Painting 25 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-25/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7433.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7433.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-27",
+      "B": "Painting 27 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-27/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7435.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7435.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-28",
+      "B": "Painting 28 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-28/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7436.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7436.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-31",
+      "B": "Painting 31 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-31/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7439.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7439.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-34",
+      "B": "Painting 34 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-34/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7442.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7442.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-35",
+      "B": "Painting 35 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-35/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7443.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7443.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-38",
+      "B": "Painting 38 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-38/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7446.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7446.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-39",
+      "B": "Painting 39 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-39/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7447.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7447.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-40",
+      "B": "Painting 40 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-40/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7448.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7448.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-41",
+      "B": "Painting 41 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-41/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7449.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7449.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-43",
+      "B": "Painting 43 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-43/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7451.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7451.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-44",
+      "B": "Painting 44 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-44/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7452.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7452.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-45",
+      "B": "Painting 45 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-45/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7453.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7453.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-51",
+      "B": "Painting 51 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-51/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7459.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7459.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-54",
+      "B": "Painting 54 by Paul Murphy",
+      "C": "50",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-54/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7462.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7462.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-55",
+      "B": "Painting 55 by Paul Murphy",
+      "C": "100",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-55/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-56",
+      "B": "Painting 56 by Paul Murphy",
+      "C": "600",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-56/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7464.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7464.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-57",
+      "B": "Painting 57 by Paul Murphy",
+      "C": "1000",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-57/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7466.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7466.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-62",
+      "B": "Painting 62 by Paul Murphy",
+      "C": "500",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-62/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-63",
+      "B": "Painting 63 by Paul Murphy",
+      "C": "500",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-63/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7472.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7472.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-64",
+      "B": "Painting 64 by Paul Murphy",
+      "C": "1000",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-64/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7473.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7473.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-65",
+      "B": "Painting 65 by Paul Murphy",
+      "C": "500",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-65/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7474.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7474.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-72",
+      "B": "Painting 72 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-72/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7481.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7481.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-73",
+      "B": "Painting 73 by Paul Murphy",
+      "C": "50",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-73/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7482.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7482.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-74",
+      "B": "Painting 74 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-74/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7483.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7483.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-82",
+      "B": "Painting 82 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-82/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-83",
+      "B": "Painting 83 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-83/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7492.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7492.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-84",
+      "B": "Painting 84 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-84/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7493.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7493.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-85",
+      "B": "Painting 85 by Paul Murphy",
+      "C": "25",
+      "D": "USD",
+      "E": "Available",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-85/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7494.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7494.jpeg"
+    },
+    {
+      "A": "paul-murphy-painting-86",
+      "B": "Painting 86 by Paul Murphy",
+      "C": "",
+      "D": "USD",
+      "E": "Not for sale",
+      "O": "https://vermillionaurora.com/products/paul-murphy-painting-86/",
+      "P": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
+      "image": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg"
     }
   ],
   "removed_ids": [
