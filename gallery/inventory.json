@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25",
+  "updated": "2026-09-28",
   "paintings": [
     {
       "A": "warszawska-syrenka",
@@ -310,7 +310,7 @@
     {
       "A": "painting-portrait-with-hat",
       "B": "Sunrise on Rainier from Denny Blaine with Eagle Catching Fish",
-      "C": "1200.0",
+      "C": "3000.0",
       "D": "USD",
       "E": "Available",
       "F": "60.0",
@@ -508,7 +508,7 @@
     {
       "A": "painting-portrait-in-green",
       "B": "Chase Toole",
-      "C": "400.0",
+      "C": "200.0",
       "D": "USD",
       "E": "Available",
       "F": "15.0",
@@ -543,7 +543,7 @@
     },
     {
       "A": "painting-guitarist",
-      "B": "Malone Tuning Guitar",
+      "B": "Girl Tuning Guitar",
       "C": "",
       "D": "USD",
       "E": "Not for sale",
@@ -580,7 +580,7 @@
     {
       "A": "painting-insect-garden",
       "B": "El Salvador: Past - Chase Toole Collab",
-      "C": "3000.0",
+      "C": "1000.0",
       "D": "USD",
       "E": "Available",
       "F": "24.0",
@@ -598,7 +598,7 @@
     {
       "A": "painting-emergence",
       "B": "El Salvador: Present - Chase Toole Collab",
-      "C": "3000.0",
+      "C": "1000.0",
       "D": "USD",
       "E": "Available",
       "F": "24.0",
@@ -616,7 +616,7 @@
     {
       "A": "painting-twin-dragons",
       "B": "El Salvador: Future - Chase Toole Collab",
-      "C": "3000.0",
+      "C": "1000.0",
       "D": "USD",
       "E": "Available",
       "F": "24.0",
@@ -651,8 +651,8 @@
     },
     {
       "A": "paul-murphy-painting-1",
-      "B": "Painting 1 by Paul Murphy",
-      "C": "25",
+      "B": "Painting 1",
+      "C": "300.0",
       "D": "USD",
       "E": "Available",
       "O": "https://vermillionaurora.com/products/paul-murphy-painting-1/",
@@ -661,7 +661,7 @@
     },
     {
       "A": "paul-murphy-painting-2",
-      "B": "Painting 2 by Paul Murphy",
+      "B": "Painting 2",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -671,7 +671,7 @@
     },
     {
       "A": "paul-murphy-painting-3",
-      "B": "Painting 3 by Paul Murphy",
+      "B": "Painting 3",
       "C": "50",
       "D": "USD",
       "E": "Available",
@@ -681,7 +681,7 @@
     },
     {
       "A": "paul-murphy-painting-6",
-      "B": "Painting 6 by Paul Murphy",
+      "B": "Painting 6",
       "C": "50",
       "D": "USD",
       "E": "Available",
@@ -691,7 +691,7 @@
     },
     {
       "A": "paul-murphy-painting-7",
-      "B": "Painting 7 by Paul Murphy",
+      "B": "Painting 7",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -701,7 +701,7 @@
     },
     {
       "A": "paul-murphy-painting-8",
-      "B": "Painting 8 by Paul Murphy",
+      "B": "Painting 8",
       "C": "100",
       "D": "USD",
       "E": "Available",
@@ -711,7 +711,7 @@
     },
     {
       "A": "paul-murphy-painting-11",
-      "B": "Painting 11 by Paul Murphy",
+      "B": "Painting 11",
       "C": "50",
       "D": "USD",
       "E": "Available",
@@ -721,7 +721,7 @@
     },
     {
       "A": "paul-murphy-painting-14",
-      "B": "Painting 14 by Paul Murphy",
+      "B": "Painting 14",
       "C": "75",
       "D": "USD",
       "E": "Available",
@@ -731,7 +731,7 @@
     },
     {
       "A": "paul-murphy-painting-15",
-      "B": "Painting 15 by Paul Murphy",
+      "B": "Painting 15",
       "C": "75",
       "D": "USD",
       "E": "Available",
@@ -741,7 +741,7 @@
     },
     {
       "A": "paul-murphy-painting-23",
-      "B": "Painting 23 by Paul Murphy",
+      "B": "Painting 23",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -751,7 +751,7 @@
     },
     {
       "A": "paul-murphy-painting-24",
-      "B": "Painting 24 by Paul Murphy",
+      "B": "Painting 24",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -761,7 +761,7 @@
     },
     {
       "A": "paul-murphy-painting-25",
-      "B": "Painting 25 by Paul Murphy",
+      "B": "Painting 25",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -771,7 +771,7 @@
     },
     {
       "A": "paul-murphy-painting-27",
-      "B": "Painting 27 by Paul Murphy",
+      "B": "Painting 27",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -781,7 +781,7 @@
     },
     {
       "A": "paul-murphy-painting-28",
-      "B": "Painting 28 by Paul Murphy",
+      "B": "Painting 28",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -791,7 +791,7 @@
     },
     {
       "A": "paul-murphy-painting-31",
-      "B": "Painting 31 by Paul Murphy",
+      "B": "Painting 31",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -801,7 +801,7 @@
     },
     {
       "A": "paul-murphy-painting-34",
-      "B": "Painting 34 by Paul Murphy",
+      "B": "Painting 34",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -811,7 +811,7 @@
     },
     {
       "A": "paul-murphy-painting-35",
-      "B": "Painting 35 by Paul Murphy",
+      "B": "Painting 35",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -821,7 +821,7 @@
     },
     {
       "A": "paul-murphy-painting-38",
-      "B": "Painting 38 by Paul Murphy",
+      "B": "Painting 38",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -831,7 +831,7 @@
     },
     {
       "A": "paul-murphy-painting-39",
-      "B": "Painting 39 by Paul Murphy",
+      "B": "Painting 39",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -841,7 +841,7 @@
     },
     {
       "A": "paul-murphy-painting-40",
-      "B": "Painting 40 by Paul Murphy",
+      "B": "Painting 40",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -851,7 +851,7 @@
     },
     {
       "A": "paul-murphy-painting-41",
-      "B": "Painting 41 by Paul Murphy",
+      "B": "Painting 41",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -861,7 +861,7 @@
     },
     {
       "A": "paul-murphy-painting-43",
-      "B": "Painting 43 by Paul Murphy",
+      "B": "Painting 43",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -871,7 +871,7 @@
     },
     {
       "A": "paul-murphy-painting-44",
-      "B": "Painting 44 by Paul Murphy",
+      "B": "Painting 44",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -881,7 +881,7 @@
     },
     {
       "A": "paul-murphy-painting-45",
-      "B": "Painting 45 by Paul Murphy",
+      "B": "Painting 45",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -891,7 +891,7 @@
     },
     {
       "A": "paul-murphy-painting-51",
-      "B": "Painting 51 by Paul Murphy",
+      "B": "Painting 51",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -901,7 +901,7 @@
     },
     {
       "A": "paul-murphy-painting-54",
-      "B": "Painting 54 by Paul Murphy",
+      "B": "Painting 54",
       "C": "50",
       "D": "USD",
       "E": "Available",
@@ -911,7 +911,7 @@
     },
     {
       "A": "paul-murphy-painting-55",
-      "B": "Painting 55 by Paul Murphy",
+      "B": "Painting 55",
       "C": "100",
       "D": "USD",
       "E": "Available",
@@ -921,7 +921,7 @@
     },
     {
       "A": "paul-murphy-painting-56",
-      "B": "Painting 56 by Paul Murphy",
+      "B": "Painting 56",
       "C": "600",
       "D": "USD",
       "E": "Available",
@@ -931,7 +931,7 @@
     },
     {
       "A": "paul-murphy-painting-57",
-      "B": "Painting 57 by Paul Murphy",
+      "B": "Painting 57",
       "C": "1000",
       "D": "USD",
       "E": "Available",
@@ -941,7 +941,7 @@
     },
     {
       "A": "paul-murphy-painting-62",
-      "B": "Painting 62 by Paul Murphy",
+      "B": "Painting 62",
       "C": "500",
       "D": "USD",
       "E": "Available",
@@ -951,7 +951,7 @@
     },
     {
       "A": "paul-murphy-painting-63",
-      "B": "Painting 63 by Paul Murphy",
+      "B": "Painting 63",
       "C": "500",
       "D": "USD",
       "E": "Available",
@@ -961,7 +961,7 @@
     },
     {
       "A": "paul-murphy-painting-64",
-      "B": "Painting 64 by Paul Murphy",
+      "B": "Painting 64",
       "C": "1000",
       "D": "USD",
       "E": "Available",
@@ -971,7 +971,7 @@
     },
     {
       "A": "paul-murphy-painting-65",
-      "B": "Painting 65 by Paul Murphy",
+      "B": "Painting 65",
       "C": "500",
       "D": "USD",
       "E": "Available",
@@ -981,7 +981,7 @@
     },
     {
       "A": "paul-murphy-painting-72",
-      "B": "Painting 72 by Paul Murphy",
+      "B": "Painting 72",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -991,7 +991,7 @@
     },
     {
       "A": "paul-murphy-painting-73",
-      "B": "Painting 73 by Paul Murphy",
+      "B": "Painting 73",
       "C": "50",
       "D": "USD",
       "E": "Available",
@@ -1001,7 +1001,7 @@
     },
     {
       "A": "paul-murphy-painting-74",
-      "B": "Painting 74 by Paul Murphy",
+      "B": "Painting 74",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -1011,7 +1011,7 @@
     },
     {
       "A": "paul-murphy-painting-82",
-      "B": "Painting 82 by Paul Murphy",
+      "B": "Painting 82",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -1021,7 +1021,7 @@
     },
     {
       "A": "paul-murphy-painting-83",
-      "B": "Painting 83 by Paul Murphy",
+      "B": "Painting 83",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -1031,7 +1031,7 @@
     },
     {
       "A": "paul-murphy-painting-84",
-      "B": "Painting 84 by Paul Murphy",
+      "B": "Painting 84",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -1041,7 +1041,7 @@
     },
     {
       "A": "paul-murphy-painting-85",
-      "B": "Painting 85 by Paul Murphy",
+      "B": "Painting 85",
       "C": "25",
       "D": "USD",
       "E": "Available",
@@ -1051,7 +1051,7 @@
     },
     {
       "A": "paul-murphy-painting-86",
-      "B": "Painting 86 by Paul Murphy",
+      "B": "Painting 86",
       "C": "",
       "D": "USD",
       "E": "Not for sale",

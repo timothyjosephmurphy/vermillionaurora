@@ -23,17 +23,6 @@ The site uses PayPal-hosted payment links. This requires no payment credentials 
 5. Publish the JSON after verifying its link belongs to the intended PayPal Business account. The button appears only if the product page is marked Available and the configured title and amount match its visible title and price. Production checkout accepts only live `paypal.com` payment links.
 6. When a unique original sells, set its website availability to Sold **and** disable or mark the PayPal listing out of stock. An old link shared elsewhere may remain accessible even after the website button disappears. Confirm payment in PayPal before shipping; a redirect is not proof of payment.
 
-## Price audit before adding links
+## Product details source
 
-The inventory data and visible product pages currently disagree for these available paintings. Resolve each discrepancy before creating its PayPal listing:
-
-| Product slug | Product page | Inventory JSON |
-| --- | ---: | ---: |
-| `painting-portrait-with-hat` | $3,000 | $1,200 |
-| `painting-portrait-in-green` | $200 | $400 |
-| `painting-insect-garden` | $1,000 | $3,000 |
-| `painting-emergence` | $1,000 | $3,000 |
-| `painting-twin-dragons` | $1,000 | $3,000 |
-| `paul-murphy-painting-1` | $300 | $25 |
-
-The payment button validates against the visible product page price, but stale inventory data can still cause incorrect purchase-inquiry messages.
+Use the current product page title and price when creating a PayPal listing. The inventory titles and prices were synced to those product pages on September 28, 2026. The checkout button validates its configured price against the visible page price before appearing.
