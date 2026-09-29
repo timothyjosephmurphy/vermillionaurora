@@ -1,6 +1,12 @@
 (() => {
   const card = document.querySelector('.featured-art');
   const products = [...document.querySelectorAll('.painting-carousel .product-card')];
+  // Keep source markup compatible with sale updates; prices imply availability in homepage captions.
+  const captions = products.map(product => product.querySelector('.product-info p'));
+  captions.push(card?.querySelector('.art-meta p'));
+  captions.filter(Boolean).forEach(caption => {
+    caption.textContent = caption.textContent.replace(/ · Available\s*$/, '');
+  });
   if (!card || products.length < 2) return;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const items = products.map(product => {
