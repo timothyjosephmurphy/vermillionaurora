@@ -91,7 +91,7 @@ export async function checkout(request, env) {
       const allowedHosts = env.PAYPAL_MODE === 'sandbox' ? ['sandbox.paypal.com','www.sandbox.paypal.com'] : ['paypal.com','www.paypal.com'];
       if (!ORDER_ID.test(order.id || '') || !approve || new URL(approve).protocol !== 'https:' || !allowedHosts.includes(new URL(approve).hostname) ||
           !await stub.bindOrder(holdId,order.id,quote)) throw new Error('Invalid PayPal approval response');
-      return respond({url:approve});
+      return respond({url:approve, ...(env.PAYPAL_MODE === 'sandbox' ? {testOrderId:order.id,testHoldId:holdId} : {})});
     } catch (error) {
       await stub.release(holdId);
       console.error('Checkout create failed:',slug,error.message);
