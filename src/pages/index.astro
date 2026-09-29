@@ -1,0 +1,236 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { byId, catalogVersion, urlFor, priceLabel, statusLabel } from '../../catalog/catalog.mjs';
+import collections from '../../catalog/collections.json';
+const featured=byId[collections.home.find(entry=>entry.variant==='carousel').product];
+---
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vermillion Aurora Productions</title>
+    <meta name="description" content="Vermillion Aurora Productions creates fine art, custom portrait commissions, and collectible original works.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/featured-carousel/carousel.css">
+  <link rel="stylesheet" href="/home-compact.css">
+  <link rel="stylesheet" href="/portrait-preview.css"><link rel="stylesheet" href="/site-header.css">
+<meta name="catalog-version" content={catalogVersion} /></head>
+  <body class="home-page">
+    <div class="page-shell">
+      <SiteHeader />
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-background" aria-hidden="true"></div>
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">Original works · custom commissions · limited edition prints</p>
+              <h1>Art that captures light, memory, and atmosphere.</h1>
+              <p class="lede">
+                Vermillion Aurora creates evocative watercolor pastels and acrylic murals for collectors, interiors, and unforgettable personal portraits.
+              </p>
+              <div class="hero-actions">
+                <a href="#services" class="button button-ghost">View commissions</a>
+              </div>
+            </div>
+
+            <div class="hero-panel" aria-label="Featured artwork panel">
+              <div class="art-card featured-art">
+                <a href={urlFor(featured)} class="art-image art-1" style={`background-image:url('${featured.image.src}')`} aria-label={`View ${featured.title}`}></a>
+                <div class="art-meta"><span class="meta-label">Featured piece</span><h2><a href={urlFor(featured)} class="product-title-link">{featured.title}</a></h2><p>{featured.listing.status==='available'?priceLabel(featured):statusLabel(featured)}</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" class="section section-light">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow dark">Selected works</p>
+              <h2>Paintings</h2>
+            </div>
+<div class="ex-carousel painting-carousel" role="region" aria-roledescription="carousel" aria-label="Paintings"><div class="ex-track" tabindex="0" aria-label="Swipe or use arrow keys to browse paintings">{collections.home.filter(entry=>entry.variant==='carousel').map(entry=><ProductCard product={byId[entry.product]} variant={entry.variant} />)}
+</div><div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic painting scrolling">Pause</button><a href="/gallery/" class="button button-solid carousel-view-all">View all paintings</a><button type="button" data-direction="-1" aria-label="Previous painting">←</button><p class="ex-position" role="status">1 / 37</p><button type="button" data-direction="1" aria-label="Next painting">→</button></div></div>
+            <noscript><p><a href="/gallery/">View all paintings</a></p></noscript>
+          </div>
+        </section>
+
+
+        <section id="exhibitions" class="section section-light"><div class="container"><div class="section-heading"><p class="eyebrow dark">Art &amp; community</p><h2>Exhibitions</h2></div><div class="ex-carousel" role="region" aria-roledescription="carousel" aria-label="Exhibitions"><div class="ex-track" tabindex="0" aria-label="Swipe or use arrow keys to browse exhibitions"><article class="ex-slide product-card" aria-label="1 of 6"><a href="/exhibitions/intiman-auction/"><img src="https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4483.jpeg" alt="Intiman Auction exhibition" loading="lazy"><div class="ex-slide-caption product-info"><h3>Intiman Auction</h3><p>View exhibition →</p></div></a></article><article class="ex-slide product-card" aria-label="2 of 6"><a href="/exhibitions/cape-town/"><img src="https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0102.jpeg" alt="Cape Town exhibition" loading="lazy"><div class="ex-slide-caption product-info"><h3>Cape Town</h3><p>View exhibition →</p></div></a></article><article class="ex-slide product-card" aria-label="3 of 6"><a href="/exhibitions/el-salvador/"><img src="https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5441.jpeg" alt="El Salvador exhibition" loading="lazy"><div class="ex-slide-caption product-info"><h3>El Salvador</h3><p>View exhibition →</p></div></a></article><article class="ex-slide product-card" aria-label="4 of 6"><a href="/exhibitions/living-room/"><img src="https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4341.jpeg" alt="Living Room exhibition" loading="lazy"><div class="ex-slide-caption product-info"><h3>Living Room</h3><p>View exhibition →</p></div></a></article><article class="ex-slide product-card" aria-label="5 of 6"><a href="/exhibitions/studio-601/"><img src="https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4532.jpeg" alt="Studio 601 exhibition" loading="lazy"><div class="ex-slide-caption product-info"><h3>Studio 601</h3><p>View exhibition →</p></div></a></article><article class="ex-slide product-card" aria-label="6 of 6"><a href="/exhibitions/victrola/"><img src="https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1600.jpeg" alt="Victrola exhibition" loading="lazy"><div class="ex-slide-caption product-info"><h3>Victrola</h3><p>View exhibition →</p></div></a></article></div><div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic exhibition scrolling">Pause</button><a href="/exhibitions/" class="button button-solid carousel-view-all">View all exhibitions</a><button type="button" data-direction="-1" aria-label="Previous exhibition">←</button><p class="ex-position" role="status">1 / 6</p><button type="button" data-direction="1" aria-label="Next exhibition">→</button></div></div></div></section>
+
+        <section id="murals" class="section section-shop">
+          <div class="container">
+            <div class="section-heading"><p class="eyebrow dark">Art in place</p><h2>Murals</h2></div>
+            <div class="ex-carousel mural-carousel" role="region" aria-roledescription="carousel" aria-label="Murals">
+              <div class="ex-track" tabindex="0" aria-label="Swipe or use arrow keys to browse murals">
+                <article class="ex-slide product-card" aria-label="1 of 2"><a href="/murals/#garden-mural"><img src="/murals/images/cormorant-hero.jpg" alt="Cormorant mural: orange sunset over Puget Sound, with a bird and sailboats" loading="lazy"><div class="ex-slide-caption product-info"><h3>Cormorant Presiding over Sunset on Puget Sound</h3><p>Garden mural · Seattle</p></div></a></article>
+                <article class="ex-slide product-card" aria-label="2 of 2"><a href="/murals/#friends-story"><img src="/murals/images/3886996e.jpg" alt="Completed Friends Club shipping-container mural" loading="lazy"><div class="ex-slide-caption product-info"><h3>Friends Club</h3><p>Festival mural · Lillooet, BC</p></div></a></article>
+              </div>
+              <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic mural scrolling">Pause</button><a href="/murals/" class="button button-solid carousel-view-all">View all murals</a><button type="button" data-direction="-1" aria-label="Previous mural">←</button><p class="ex-position" role="status">1 / 2</p><button type="button" data-direction="1" aria-label="Next mural">→</button></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="books" class="section section-shop">
+          <div class="container">
+            <div class="section-heading"><p class="eyebrow dark">Books</p><h2>Art books &amp; illustrated poetry</h2></div>
+            <div class="ex-carousel book-carousel" role="region" aria-roledescription="carousel" aria-label="Books">
+              <div class="ex-track" tabindex="0" aria-label="Swipe or use arrow keys to browse books">
+              {collections.home.filter(entry=>entry.variant==='book').map(entry=><ProductCard product={byId[entry.product]} variant={entry.variant} />)}
+</div>
+              <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic book scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous book">←</button><p class="ex-position" role="status">1 / 3</p><button type="button" data-direction="1" aria-label="Next book">→</button></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" class="section section-contrast">
+          <div class="container">
+            <div class="section-heading narrow">
+              <p class="eyebrow accent">Commissions</p>
+              <h2>Commissioned art for people and places</h2>
+            </div>
+
+            <div class="service-grid">
+              {collections.home.filter(entry=>entry.variant==='service').map(entry=><ProductCard product={byId[entry.product]} variant={entry.variant} />)}
+</div>
+          </div>
+        </section>
+
+        <section id="featured-artists" class="section section-light">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow dark">Artists in focus</p>
+              <h2>Featured Artists and Collaborations</h2>
+            </div>
+            <div class="ex-track" aria-label="Featured artists and collaborations">
+              <article class="ex-slide product-card"><a href="/exhibitions/paul-murphy/"><img src="https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg" alt="Painting by Paul Murphy" loading="lazy"><div class="ex-slide-caption product-info"><h3>Paul Murphy</h3><p>View featured artist →</p></div></a></article>
+              <article class="ex-slide product-card"><a href="/exhibitions/chase-toole/"><img src="/gallery-images/insect-garden.jpg" alt="El Salvador: Past — a collaboration by Chase Toole and TJ Murphy" loading="lazy"><div class="ex-slide-caption product-info"><h3>Chase Tool Collab</h3><p>Three collaborations with TJ Murphy · View gallery →</p></div></a></article>
+              <article class="ex-slide product-card"><a href="/exhibitions/gavin-robertson/"><img src="/gallery-images/coined-in-watercolor-film-poster.jpg" alt="Coined in Watercolor film poster by TJ Murphy" loading="lazy" style="object-fit:contain"><div class="ex-slide-caption product-info"><h3>Gavin Robertson Collab</h3><p>Coined in Watercolor · Film and paintings · View gallery →</p></div></a></article>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section section-plain" aria-labelledby="artist-film-heading">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow dark">The journey into art</p>
+              <h2 id="artist-film-heading">About the Artist &amp; Film</h2>
+            </div>
+            <div class="artist-film-carousel" role="region" aria-roledescription="carousel" aria-labelledby="artist-film-heading">
+              <div id="artist-film-track" class="artist-film-track" tabindex="0" aria-label="Swipe or use arrow keys to browse the artist profile and film">
+                <article class="product-card artist-film-card" role="group" aria-roledescription="slide" aria-label="1 of 2: About the artist">
+                  <a class="artist-film-media artist-film-portrait" href="/about/" aria-label="Meet TJ Murphy">
+                    <img src="/about/images/tj-murphy-portrait.jpg" alt="TJ Murphy smiling outdoors in sunglasses and a white shirt" width="424" height="360" loading="lazy" decoding="async">
+                  </a>
+                  <div class="artist-film-copy">
+                    <p class="eyebrow dark">About the artist</p>
+                    <h3>TJ Murphy</h3>
+                    <p>TJ Murphy is a Seattle-based artist working in watercolor, watercolor pastel, and outdoor acrylic murals. Since 2020, he has explored the changing light of the Pacific Northwest and the expressions that give a portrait its character. His work brings luminous color, rich texture, and close observation to landscapes, portraits, and public spaces.</p>
+                    <a href="/about/" class="button button-solid">Meet the artist</a>
+                  </div>
+                </article>
+                <article id="film" class="product-card artist-film-card" role="group" aria-roledescription="slide" aria-label="2 of 2: Coined in Watercolor documentary">
+                  <div class="artist-film-media artist-film-video">
+                    <iframe width="960" height="540" src="https://www.youtube-nocookie.com/embed/i7tvzE_bqM8?playsinline=1" title="Coined in Watercolor: The Art of Going All In — documentary by Gavin Robertson" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                  </div>
+                  <div class="artist-film-copy">
+                    <p class="eyebrow dark">A documentary by Gavin Robertson</p>
+                    <h3>Coined in Watercolor: The Art of Going All In</h3>
+                    <p>Gavin Robertson follows my journey of becoming an artist, from Seattle to Cape Town. The film features my artwork at home and on display at the Bitcoin conference in Cape Town.</p>
+                    <p>Gavin’s debut documentary premiered at the Bitcoin Film Festival in Warsaw, Poland, in 2026.</p>
+                    <a class="button button-ghost" href="https://www.youtube.com/watch?v=i7tvzE_bqM8" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+                  </div>
+                </article>
+              </div>
+              <div class="artist-film-controls" hidden="">
+                <button type="button" data-artist-film-prev="" aria-label="Previous artist and film card" aria-controls="artist-film-track">←</button>
+                <button type="button" data-artist-film-next="" aria-label="Next artist and film card" aria-controls="artist-film-track">→</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section section-contact">
+          <div class="container contact-grid">
+            <div class="contact-copy">
+              <p class="eyebrow dark">Contact</p>
+              <h2>Reach out for custom artwork</h2>
+              <p>
+                Whether you’re commissioning a portrait, purchasing a collectible, or planning a project,
+                let’s start the conversation.
+              </p>
+              <ul class="contact-list">
+                <li>Seattle, WA</li>
+                <li><a href="mailto:TJ@VermillionAurora.com">TJ@VermillionAurora.com</a></li>
+              </ul>
+            </div>
+
+            <form class="contact-form" action="https://vermillion-commissions.timothyjosephmurphy.workers.dev" method="POST">
+              <div class="purchase-summary" hidden="">
+                <p class="eyebrow dark">Purchase inquiry</p>
+                <h3 class="purchase-title"></h3>
+                <p class="purchase-price"></p>
+              </div>
+              <input type="hidden" name="inquiryType" value="commission">
+              <input type="hidden" name="paintingSlug" value="">
+              <input type="hidden" name="paintingTitle" value="">
+              <input type="hidden" name="paintingPrice" value="">
+              <div class="field-row">
+                <label>
+                  <span>First Name</span>
+                  <input type="text" name="firstName" placeholder="First Name">
+                </label>
+                <label>
+                  <span>Last Name</span>
+                  <input type="text" name="lastName" placeholder="Last Name">
+                </label>
+              </div>
+
+              <label>
+                <span>Email (required)</span>
+                <input type="email" name="email" placeholder="Email" autocomplete="email" required="">
+              </label>
+
+              <label class="commission-only">
+                <span>Desired size</span>
+                <input type="text" name="size" placeholder="For example: 24 × 36 inches">
+              </label>
+
+              <label class="commission-only">
+                <span>Reference image (optional)</span>
+                <input type="file" name="referenceImage" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              </label>
+
+              <label class="commission-only">
+                <span>Color palette / swatch (optional)</span>
+                <input type="file" name="paletteImage" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              </label>
+
+              <label>
+                <span>Message (required)</span>
+                <textarea name="message" required="" rows="5" placeholder="Tell me about your vision"></textarea>
+              </label>
+
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
+
+              <button type="submit" class="button button-solid">Send</button>
+              <p class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter showDestroy />
+    </div>
+
+    <script is:inline src="/exhibitions/exhibitions.js" defer=""></script>
+    <script is:inline src="script.js"></script>
+  <script is:inline src="/featured-carousel/carousel.js" defer=""></script>
+  <script is:inline src="/portrait-preview.js" defer=""></script>
+  <script is:inline src="/artist-film-carousel.js" defer=""></script>
+
+<script is:inline src="/catalog/availability.js" defer=""></script></body></html>

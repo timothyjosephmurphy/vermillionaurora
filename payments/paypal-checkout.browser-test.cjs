@@ -2,7 +2,7 @@ const {chromium}=require('playwright');
 const fs=require('node:fs');
 const assert=require('node:assert/strict');
 const path=require('node:path');
-const root=path.resolve(__dirname,'..');
+const root=path.resolve(__dirname,'../dist');
 const output=process.env.CHECKOUT_TEST_OUTPUT || '/tmp/checkout-ui';
 fs.mkdirSync(output,{recursive:true});
 
@@ -27,7 +27,7 @@ fs.mkdirSync(output,{recursive:true});
     }
     if(url.pathname==='/products/painting-portrait-in-green/'){
       let html=fs.readFileSync(path.join(root,'products/painting-portrait-in-green/index.html'),'utf8');
-      html=html.replace(/(<p class="product-availability">)(Available|Sold)(<\/p>)/,`$1${available?'Available':'Sold'}$3`);
+      html=html.replace(/(<p class="product-availability"[^>]*>)(Available|Sold)(<\/p>)/,`$1${available?'Available':'Sold'}$3`);
       return route.fulfill({contentType:'text/html',body:html});
     }
     if(url.pathname==='/gallery-images/portrait-in-green.jpg')return route.fulfill({contentType:'image/jpeg',body:fs.readFileSync(path.join(root,'gallery-images/portrait-in-green.jpg'))});

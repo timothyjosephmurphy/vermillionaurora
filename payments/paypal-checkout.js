@@ -9,12 +9,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!inquiry || !slug || !title) return;
 
   const endpoint = 'https://vermillion-commissions.timothyjosephmurphy.workers.dev';
+  let liveStock;
+  document.addEventListener('catalog:availability',event=>{
+    liveStock=event.detail?.[slug];
+    if(['sold','reserved','retired','not-for-sale'].includes(liveStock)){
+      document.querySelectorAll('.purchase-panel,.product-purchase-cta,.paypal-checkout-link').forEach(el=>el.remove());
+    }
+  });
+  const catalogVersion = document.querySelector('meta[name="catalog-version"]')?.content;
   const params = new URLSearchParams(location.search);
   const notice = document.createElement('p');
   notice.setAttribute('role','status');
   notice.className = 'checkout-notice';
   const post = async (path, data) => {
-    const response = await fetch(`${endpoint}${path}`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    const response = await fetch(`${endpoint}${path}`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...data,...(catalogVersion?{catalogVersion}:{})})});
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || 'Checkout is unavailable.');
     return result;
@@ -100,7 +108,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       catch { return null; }
     };
     const [paypalStatus,bitcoinStatus] = await Promise.all([loadStatus('/checkout/status'),loadStatus('/checkout/bitcoin/status')]);
-    const matches = value => value && value.title === title && value.currency === 'USD' && Number(value.amount) === shownPrice;
+    const matches = value => value && (!catalogVersion || !value.catalogVersion || value.catalogVersion === catalogVersion) && value.title === title && value.currency === 'USD' && Number(value.amount) === shownPrice;
     const paypalReady = !!matches(paypalStatus), bitcoinReady = bitcoinStatus?.enabled === true && !!matches(bitcoinStatus);
     if (paypalReady || bitcoinReady) {
       const candidates=[paypalReady?paypalStatus:null,bitcoinReady?bitcoinStatus:null].filter(Boolean);
@@ -109,7 +117,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         summary.querySelector('.product-availability').textContent = current.status === 'sold' ? 'Sold' : 'Temporarily reserved';
         return;
       }
-      if (current.status !== 'available') return;
+      if (current.status !== 'available' || ['sold','reserved','retired','not-for-sale'].includes(liveStock)) return;
       const panel = document.createElement('section');
       panel.id = 'buy-painting';
       panel.className = 'purchase-panel';
@@ -270,6 +278,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (_) { /* Leave the existing inquiry action available. */ }
 
   try {
+    if(catalogVersion) {
+      const stockResponse=await fetch(`${endpoint}/inventory/status?ids=${encodeURIComponent(slug)}`,{cache:'no-store'});
+      if(!stockResponse.ok)return;
+      const stock=await stockResponse.json();
+      if(stock.version!==catalogVersion || stock.availability?.[slug]!=='available')return;
+    }
     const response = await fetch('/payments/paypal-links.json', { cache: 'no-store' });
     if (!response.ok) return;
     const links = await response.json();

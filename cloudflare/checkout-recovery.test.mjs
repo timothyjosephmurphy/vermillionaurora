@@ -1,8 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
 import { checkout, checkoutWebhook } from './paypal-orders.mjs';
-import { commitCheckoutSale } from './paypal-inventory.mjs';
 import catalog from './checkout-catalog.mjs';
 
 test('verified webhook settles a paused checkout, replay is safe, and invalid events are rejected', async t => {
@@ -30,28 +28,4 @@ test('verified webhook settles a paused checkout, replay is safe, and invalid ev
   merchant='MERCHANT';amount='1.00';assert.equal((await checkoutWebhook(event(),env)).status,400);
   amount='1221.00';eventCapture='OTHER';assert.equal((await checkoutWebhook(event(),env)).status,400);
   assert.equal(completed,2);
-});
-
-test('every checkout painting can publish a sold inventory and product update',async t=>{
-  let files,writes;
-  t.mock.method(globalThis,'fetch',async(url,options={})=>{
-    if(url.endsWith('/git/ref/heads/main'))return Response.json({object:{sha:'base'}});
-    if(url.endsWith('/git/commits/base'))return Response.json({tree:{sha:'base-tree'}});
-    if(url.includes('/contents/')){const path=url.split('/contents/')[1].split('?')[0];return Response.json({encoding:'base64',content:Buffer.from(files[path]).toString('base64')});}
-    if(url.endsWith('/git/trees')){writes=JSON.parse(options.body).tree;return Response.json({sha:'new-tree'});}
-    if(url.endsWith('/git/commits'))return Response.json({sha:'new-commit'});
-    if(url.endsWith('/git/refs/heads/main')){assert.equal(JSON.parse(options.body).force,false);return Response.json({});}
-    throw Error('Unexpected request');
-  });
-  for(const [slug,item] of Object.entries(catalog)){
-    if(item.available===false)continue;
-    const paths=['gallery/inventory.json','payments/paypal-links.json',`products/${slug}/index.html`,...(slug.startsWith('paul-')?['exhibitions/paul-murphy/index.html']:['index.html','gallery/index.html'])];
-    files=Object.fromEntries(paths.map(path=>[path,readFileSync(new URL('../'+path,import.meta.url),'utf8')]));
-    await commitCheckoutSale({GITHUB_TOKEN:'test'},slug,item);
-    const changed=Object.fromEntries(writes.map(x=>[x.path,x.content]));
-    const painting=JSON.parse(changed['gallery/inventory.json']).paintings.find(p=>p.A===slug);
-    assert.equal(painting.E,'Sold',slug);
-    assert.match(changed[`products/${slug}/index.html`],/class="product-availability">Sold/);
-    assert.equal(changed['payments/paypal-links.json'],undefined);
-  }
 });

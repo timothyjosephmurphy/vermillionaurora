@@ -8,7 +8,7 @@ const item = catalog[slug];
 const origin = 'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev';
 const orderId = 'ABC123456789';
 
-test('catalog builds packages from physical painting sizes', () => {
+test('catalog preserves existing explicit shipping profiles', () => {
   assert.deepEqual(catalog['paul-murphy-painting-1'].parcel,{length:14,width:12,height:2,weight:2});
   assert.equal(catalog['paul-murphy-painting-1'].packaging,'flat');
   assert.equal(catalog['paul-murphy-painting-57'].packaging,'flat', 'framed paintings cannot be rolled');
@@ -20,10 +20,12 @@ test('catalog builds packages from physical painting sizes', () => {
 test('one original is reserved for only one buyer, and a completed capture sells it', async t => {
   let held = null, sold = false, order = null, captured = false;
   let savedQuote;
+  const originalAmount=item.amount;
+  t.after(()=>{item.amount=originalAmount;});
   const address={name:'Buyer',street1:'123 Main St',city:'Seattle',state:'WA',zip:'98122'};
   const total=(Number(item.amount)+12+9).toFixed(2);
   const purchaseUnit=()=>({reference_id:slug,custom_id:slug,
-    amount:{currency_code:'USD',value:total,breakdown:{item_total:{value:item.amount},shipping:{value:'12.00'},tax_total:{value:'9.00'}}},
+    amount:{currency_code:'USD',value:total,breakdown:{item_total:{value:originalAmount},shipping:{value:'12.00'},tax_total:{value:'9.00'}}},
     shipping:{address:{country_code:'US',postal_code:'98122',admin_area_1:'WA'}},payee:{merchant_id:'MERCHANT1'},
     ...(captured ? {payments:{captures:[{id:'CAPTURE1',status:'COMPLETED',amount:{currency_code:'USD',value:total}}]}} : {})});
   const stub = {
@@ -63,6 +65,8 @@ test('one original is reserved for only one buyer, and a completed capture sells
   };
   t.after(() => { globalThis.fetch = originalFetch; });
   const request = (path,data) => new Request(`https://worker.example${path}`, {method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(data)});
+  assert.equal((await checkout(request('/checkout/create',{slug,catalogVersion:'stale'}),env)).status,409);
+  assert.equal(held,null);
   const quote = await checkout(request('/checkout/quote',{slug,address}),env);
   assert.equal((await quote.json()).total,total);
   const first = await checkout(request('/checkout/create',{slug,address,expectedTotal:total}),env);
@@ -72,6 +76,7 @@ test('one original is reserved for only one buyer, and a completed capture sells
   assert.ok(savedQuote.quotedAt > 0);
   const second = await checkout(request('/checkout/create',{slug}),env);
   assert.equal(second.status,409);
+  item.amount='9999.00'; // An open order must settle against its saved quote.
   env.PAYPAL_CHECKOUT_ENABLED='false';
   env.PAYPAL_CHECKOUT_SLUGS='another-painting';
   const capture = await checkout(request('/checkout/capture',{slug,orderId,holdId:held}),env);

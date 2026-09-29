@@ -1,0 +1,45 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { byId, catalogVersion } from '../../../catalog/catalog.mjs';
+import collections from '../../../catalog/collections.json';
+---
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Vermillion Aurora Productions</title>
+    <meta name="description" content="Vermillion Aurora Productions creates fine art, custom portrait commissions, and collectible original works.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/exhibitions/viewer.css"><link rel="stylesheet" href="/site-header.css">
+<meta name="catalog-version" content={catalogVersion} /></head>
+  <body class="painting-gallery-page">
+    <div class="page-shell">
+      <SiteHeader />
+
+      <main>
+        <section id="gallery" class="section section-light">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow dark">Gallery</p>
+              <h2>Paintings</h2>
+            </div>
+
+            <div class="gallery-filter" hidden=""><label><input type="checkbox" id="available-only"> Available works only</label><span id="gallery-result-count" role="status" aria-live="polite"></span></div>
+<div class="product-grid">{collections.gallery.map(entry=><ProductCard product={byId[entry.product]} variant={entry.variant} />)}</div>
+
+          </div>
+          </section></main></div>
+
+
+
+      <SiteFooter />
+
+
+
+  <script is:inline src="/exhibitions/viewer.js" defer=""></script>
+
+<script is:inline src="/catalog/availability.js" defer=""></script></body></html>
