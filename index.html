@@ -36,7 +36,6 @@
             <a href="/murals/">Murals</a>
             <a href="/#books">Books</a>
             <a href="/#services">Commissions</a>
-            <a href="/#film">Film</a>
             <a href="/about/">About</a>
             <a href="/#contact">Contact</a>
           </nav>
@@ -162,36 +161,43 @@
           </div>
         </section>
 
-        <section id="about" class="section section-plain">
-          <div class="container about-grid">
-            <div class="about-image-wrap">
-              <img src="/about/images/tj-murphy-portrait.jpg" alt="TJ Murphy smiling outdoors in sunglasses and a white shirt" width="424" height="360" loading="lazy" style="display:block;width:100%;max-width:300px;height:auto;border-radius:20px;margin:0 auto" />
-            </div>
-
-            <div class="about-copy">
-              <p class="eyebrow dark">About the artist</p>
-              <h2>TJ Murphy</h2>
-              <p>TJ Murphy is a Seattle-based artist working in watercolor, watercolor pastel, and outdoor acrylic murals. Since 2020, he has explored the changing light of the Pacific Northwest and the expressions that give a portrait its character. His work brings luminous color, rich texture, and close observation to landscapes, portraits, and public spaces.</p>
-              <a href="/about/" class="button button-solid">Meet the artist</a>
-            </div>
-          </div>
-        </section>
-
-        <section id="film" class="section section-light" aria-labelledby="film-heading">
+        <section id="about" class="section section-plain" aria-labelledby="artist-film-heading">
           <div class="container">
-            <div class="section-heading"><p class="eyebrow dark">Film</p><h2 id="film-heading">The journey into art</h2></div>
-            <article class="home-film-card">
-              <div class="home-film-video">
-                <iframe src="https://www.youtube-nocookie.com/embed/i7tvzE_bqM8" title="Coined in Watercolor: The Art of Going All In — documentary by Gavin Robertson" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="section-heading">
+              <p class="eyebrow dark">The journey into art</p>
+              <h2 id="artist-film-heading">About the Artist &amp; Film</h2>
+            </div>
+            <div class="artist-film-carousel" role="region" aria-roledescription="carousel" aria-labelledby="artist-film-heading">
+              <div id="artist-film-track" class="artist-film-track" tabindex="0" aria-label="Swipe or use arrow keys to browse the artist profile and film">
+                <article class="product-card artist-film-card" role="group" aria-roledescription="slide" aria-label="1 of 2: About the artist">
+                  <a class="artist-film-media artist-film-portrait" href="/about/" aria-label="Meet TJ Murphy">
+                    <img src="/about/images/tj-murphy-portrait.jpg" alt="TJ Murphy smiling outdoors in sunglasses and a white shirt" width="424" height="360" loading="lazy" decoding="async">
+                  </a>
+                  <div class="artist-film-copy">
+                    <p class="eyebrow dark">About the artist</p>
+                    <h3>TJ Murphy</h3>
+                    <p>TJ Murphy is a Seattle-based artist working in watercolor, watercolor pastel, and outdoor acrylic murals. Since 2020, he has explored the changing light of the Pacific Northwest and the expressions that give a portrait its character. His work brings luminous color, rich texture, and close observation to landscapes, portraits, and public spaces.</p>
+                    <a href="/about/" class="button button-solid">Meet the artist</a>
+                  </div>
+                </article>
+                <article id="film" class="product-card artist-film-card" role="group" aria-roledescription="slide" aria-label="2 of 2: Coined in Watercolor documentary">
+                  <div class="artist-film-media artist-film-video">
+                    <iframe width="960" height="540" src="https://www.youtube-nocookie.com/embed/i7tvzE_bqM8?playsinline=1" title="Coined in Watercolor: The Art of Going All In — documentary by Gavin Robertson" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <div class="artist-film-copy">
+                    <p class="eyebrow dark">A documentary by Gavin Robertson</p>
+                    <h3>Coined in Watercolor: The Art of Going All In</h3>
+                    <p>Gavin Robertson follows my journey of becoming an artist, from Seattle to Cape Town. The film features my artwork at home and on display at the Bitcoin conference in Cape Town.</p>
+                    <p>Gavin’s debut documentary premiered at the Bitcoin Film Festival in Warsaw, Poland, in 2026.</p>
+                    <a class="button button-ghost" href="https://www.youtube.com/watch?v=i7tvzE_bqM8" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+                  </div>
+                </article>
               </div>
-              <div class="home-film-copy">
-                <p class="eyebrow dark">A documentary by Gavin Robertson</p>
-                <h3>Coined in Watercolor: The Art of Going All In</h3>
-                <p>Gavin Robertson follows my journey of becoming an artist, from Seattle to Cape Town. The film features my artwork at home and on display at the Bitcoin conference in Cape Town.</p>
-                <p>Gavin’s debut documentary premiered at the Bitcoin Film Festival in Warsaw, Poland, in 2026.</p>
-                <a class="button button-ghost" href="https://www.youtube.com/watch?v=i7tvzE_bqM8" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+              <div class="artist-film-controls" hidden>
+                <button type="button" data-artist-film-prev aria-label="Previous artist and film card" aria-controls="artist-film-track">←</button>
+                <button type="button" data-artist-film-next aria-label="Next artist and film card" aria-controls="artist-film-track">→</button>
               </div>
-            </article>
+            </div>
           </div>
         </section>
 
@@ -287,5 +293,6 @@
     <script src="/exhibitions/exhibitions.js" defer></script>
     <script src="script.js"></script>
   <script src="/featured-carousel/carousel.js" defer></script>
-  <script src="/portrait-preview.js" defer></script></body>
+  <script src="/portrait-preview.js" defer></script>
+  <script src="/artist-film-carousel.js" defer></script></body>
 </html>

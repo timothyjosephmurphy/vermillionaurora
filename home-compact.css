@@ -98,3 +98,26 @@
 .home-page .featured-controls button { min-height:24px; height:24px; padding:2px 7px; border-radius:6px; font-size:.68rem; line-height:1; }
 .home-page .featured-controls [data-prev],.home-page .featured-controls [data-next] { width:26px; padding:2px 0; }
 .home-page .featured-position { font-size:.65rem; margin:0 4px; }
+
+/* One shared row for the artist profile and documentary. */
+.home-page #about,.home-page #film { scroll-margin-top:150px; }
+.artist-film-track { position:relative; display:flex; align-items:stretch; gap:18px; overflow-x:auto; padding:4px 0 8px; scroll-snap-type:x mandatory; overscroll-behavior-x:contain; }
+.artist-film-card { flex:0 0 calc((100% - 18px)/2); min-width:0; display:flex; flex-direction:column; scroll-snap-align:start; }
+.artist-film-media { display:block; width:100%; aspect-ratio:16/9; min-height:200px; flex-shrink:0; background:var(--paper); overflow:hidden; }
+.artist-film-portrait img { display:block; width:100%; height:100%; object-fit:contain; }
+.artist-film-video { background:#171513; }
+.artist-film-video iframe { display:block; width:100%; height:100%; border:0; }
+.artist-film-copy { flex:1; display:flex; flex-direction:column; align-items:flex-start; padding:22px; }
+.artist-film-copy .eyebrow { font-size:.7rem; margin:0 0 10px; }
+.artist-film-copy h3 { margin:0 0 14px; font:600 clamp(1.65rem,2.8vw,2rem)/1.12 "Cormorant Garamond",serif; }
+.artist-film-copy p:not(.eyebrow) { margin:0 0 16px; color:var(--muted); font-size:.95rem; line-height:1.65; }
+.artist-film-copy .button { margin-top:auto; max-width:100%; }
+.artist-film-controls { display:flex; justify-content:flex-end; gap:8px; margin-top:4px; }
+.artist-film-controls[hidden] { display:none; }
+.artist-film-controls button { width:44px; height:44px; padding:0; border:1px solid var(--line); border-radius:50%; background:var(--paper); color:var(--ink); font-size:22px; cursor:pointer; }
+.artist-film-controls button:disabled { opacity:.35; cursor:default; }
+.artist-film-track:focus-visible,.artist-film-controls button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media(max-width:760px) {
+ .artist-film-card { flex-basis:86%; }
+ .artist-film-copy { padding:18px; }
+}

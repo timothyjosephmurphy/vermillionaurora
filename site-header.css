@@ -111,3 +111,6 @@
 @media(max-width:980px){.site-header .header-inner{flex-wrap:wrap;padding:12px 0;gap:10px;justify-content:space-between}.site-header .main-nav{display:flex;order:3;flex:0 0 100%;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;padding:6px 0 10px;gap:18px}.site-header .main-nav a{white-space:nowrap}.site-header .header-actions{width:auto}.site-header .header-actions .button{font-size:.65rem;padding:.65rem .8rem}}
 @media(max-width:420px){.site-header .brand{font-size:.65rem;gap:6px}.site-header .brand-mark{width:32px;height:32px}.site-header .container{width:calc(100% - 24px)}}
 body.full .site-header{display:none}
+
+/* Film now lives in the homepage About carousel; keep shared top navigation consistent. */
+.site-header .main-nav a[href$="#film"] { display:none; }
