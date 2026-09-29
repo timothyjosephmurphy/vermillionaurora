@@ -8,12 +8,12 @@
     "PAYPAL_IPN_ENABLED": "true",
     "PAYPAL_CHECKOUT_ENABLED": "true",
     "PAYPAL_MODE": "live",
-    "PAYPAL_CHECKOUT_SLUGS": "painting-portrait-in-green",
+    "PAYPAL_CHECKOUT_SLUGS": "painting-portrait-in-green,painting-portrait-in-gold",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "SHIPPO_CARRIER_ALLOWLIST": "UPS",
     "CHECKOUT_PILOT_ENABLED": "true",
     "BTCPAY_URL": "https://btcpay884215.lndyn.com",
-    "BTCPAY_CHECKOUT_SLUGS": "painting-portrait-in-green",
+    "BTCPAY_CHECKOUT_SLUGS": "painting-portrait-in-green,painting-portrait-in-gold",
     "CART_CHECKOUT_ENABLED": "true"
   },
   "durable_objects": {

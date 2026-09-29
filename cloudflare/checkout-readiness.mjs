@@ -39,7 +39,8 @@ export async function checkoutReadiness(request,env) {
   checks.salesLedger=!!env.SALES_LEDGER&&!!env.SALES_ARCHIVE;
   checks.shippingOrigin=!!env.SHIP_FROM_STREET;
   if (env.CHECKOUT_PILOT_ENABLED==='true') {
-    checks.pilotRestriction=env.PAYPAL_CHECKOUT_SLUGS==='painting-portrait-in-green' && env.SHIPPO_CARRIER_ALLOWLIST==='UPS';
+    const pilotSlugs=(env.PAYPAL_CHECKOUT_SLUGS||'').split(',').map(s=>s.trim()).sort().join(',');
+    checks.pilotRestriction=['painting-portrait-in-green','painting-portrait-in-gold,painting-portrait-in-green'].includes(pilotSlugs) && env.SHIPPO_CARRIER_ALLOWLIST==='UPS';
     checks.automaticLabels=env.SHIPPO_AUTO_LABEL_ENABLED==='true';
     try { await sellerMailToken(env); checks.sellerEmail=true; }
     catch(error) { checks.sellerEmailError=error.message; }

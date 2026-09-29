@@ -13,7 +13,7 @@ This branch implements a guest cart for original paintings. It has not been depl
 
 ## Review images
 
-These are local browser captures using test customer details and mocked payment, shipping and tax responses. They do not represent a live shipping quote or additional products enabled for purchase.
+These are local browser captures using test customer details and mocked payment, shipping and tax responses. They show the selected Chase Toole and Dorian Nakamoto pilots at $20 each. Shipping and tax totals are illustrative, not live quotes.
 
 [Desktop cart](cart-preview/cart-desktop.png) · [Mobile cart](cart-preview/cart-mobile.png) · [Confirmation](cart-preview/confirmation-mobile.png)
 
@@ -33,12 +33,12 @@ Gmail does not provide a send idempotency key. An uncertain confirmation-send ou
 
 ## Decisions before launch
 
-1. Choose which additional originals to enable and verify their packing dimensions/weights. This branch preserves the current payment allowlists, which only contain the Chase Toole pilot. The two-item previews use mocked eligibility.
+1. The owner selected **Dorian Nakamoto** (`painting-portrait-in-gold`) on September 29 as the second pilot and set its price to **$20**. This branch includes both it and the $20 Chase Toole portrait in the PayPal and Bitcoin allowlists. Dorian’s parcel remains the existing estimated 12 × 4 × 4-inch, 2-lb tube; confirm its packing before deployment. No shipping measurements were changed or marked verified.
 2. Confirm separate-parcel shipping for the first release. Combined packaging is a later improvement.
 3. Approve deployment of the API binding/migration and website together. No production or sandbox deployments, real charges, label purchases, or emails were made while developing this branch.
-4. Run a provider sandbox acceptance checkout before expanding live eligibility. Automated tests mock external payment, shipping, tax, and email services.
+4. Run a provider sandbox acceptance checkout before launching the two-item pilot. Automated tests mock external payment, shipping, tax, and email services.
 
-The branch sets `CART_CHECKOUT_ENABLED=true` for its proposed production configuration. Setting it to `false` pauses new cart quotes; existing orders can still settle. Provider allowlists remain an additional gate. Do not remove the new Durable Object binding or roll back its schema while any cart payment is unresolved. Refunds and exceptions requiring human judgment remain manual.
+The branch sets `CART_CHECKOUT_ENABLED=true` for its proposed production configuration. Setting it to `false` pauses new cart quotes; existing orders can still settle. Provider allowlists restrict the proposed release to these two portraits. Do not remove the new Durable Object binding or roll back its schema while any cart payment is unresolved. Refunds and exceptions requiring human judgment remain manual.
 
 ## Checks
 
