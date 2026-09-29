@@ -64,7 +64,7 @@ export async function checkout(request, env) {
       return respond({base:quote.base,shipping:quote.shipping,tax:quote.tax,total:quote.total,carrier:quote.carrier,service:quote.service,packaging:quote.packaging});
     } catch (error) {
       console.error('Shipping or tax quote failed:',slug,error.message);
-      return respond({error:'Unable to quote shipping and tax for this address.', ...(env.PAYPAL_MODE === 'sandbox' ? {reason:error.message} : {})},422);
+      return respond({error:'Unable to quote shipping and tax for this address.'},422);
     }
   }
 
