@@ -46,7 +46,7 @@ jobs:
           const created=await post('create',{slug,address,expectedTotal:quote.total});
           console.log('Sandbox PayPal order creation HTTP',created.code);
           if(created.code!==200||!created.data.testOrderId||!created.data.testHoldId||new URL(created.data.url).hostname!=='www.sandbox.paypal.com') {
-            console.log('Order creation response:',created.data.error||'Unexpected response');
+            console.log('Order creation response:',created.data.reason||created.data.error||'Unexpected response');
             process.exit(1);
           }
           const cancelled=await post('cancel',{slug,orderId:created.data.testOrderId,holdId:created.data.testHoldId});
