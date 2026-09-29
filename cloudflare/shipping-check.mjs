@@ -16,7 +16,7 @@ export async function shippingCheck(request, env) {
     return new Response('Not found',{status:404});
   }
   const insured = new URL(request.url).searchParams.get('scenario') === 'chase-insurance';
-  const stub = env.SHIPPING_CHECK.getByName(insured ? 'label-email-chase-insurance-v1' : 'label-email-v2');
+  const stub = env.SHIPPING_CHECK.getByName(insured ? 'label-email-chase-insurance-ups-v1' : 'label-email-v2');
   if (!['GET','POST'].includes(request.method)) return new Response('Method not allowed',{status:405});
   const result = request.method === 'POST' ? await stub.start(insured ? 'chase-insurance' : 'default') : await stub.status();
   return Response.json(result,{headers:{'Cache-Control':'no-store'}});
@@ -88,7 +88,7 @@ export class ShippingCheck extends DurableObject {
     if (!data || data.job?.emailId) return;
     const insured = data.scenario === 'chase-insurance';
     const checkSlug = insured ? 'painting-portrait-in-green' : slug;
-    const checkSale = insured ? {...sample,slug:checkSlug,order_id:'INSURANCECHECKCHASEV1',capture_id:'INSURANCECHECKCHASEV1'} : sample;
+    const checkSale = insured ? {...sample,slug:checkSlug,order_id:'INSURANCECHECKCHASEUPSV1',capture_id:'INSURANCECHECKCHASEUPSV1'} : sample;
     try {
       if (!data.job) {
         const quote = await priceOrder(this.env,checkSlug,{name:'Shippo Integration Test',street1:'1600 Amphitheatre Pkwy',city:'Mountain View',state:'CA',zip:'94043'});

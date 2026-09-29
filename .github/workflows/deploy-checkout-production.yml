@@ -34,11 +34,13 @@ jobs:
       - name: Wait for the existing Cloudflare production build
         run: |
           node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const expected=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc','utf8')).vars;
           const url='https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/health';
           let ready=false;
-          for(let i=0;i<30;i++){
+          for(let i=0;i<72;i++){
             const r=await fetch(url);const h=await r.json().catch(()=>({}));
-            if(r.ok&&h.mode==='live'){ready=true;console.log('Production checkout health:',JSON.stringify(h));break;}
+            if(r.ok&&h.mode==='live'&&h.release===(expected.CHECKOUT_RELEASE||null)&&h.enabled===(expected.PAYPAL_CHECKOUT_ENABLED==='true')){ready=true;console.log('Production checkout health:',JSON.stringify(h));break;}
             await new Promise(resolve=>setTimeout(resolve,5000));
           }
           if(!ready)throw Error('The Cloudflare production build did not become ready');

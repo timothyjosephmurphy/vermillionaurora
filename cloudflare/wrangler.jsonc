@@ -7,7 +7,11 @@
   "vars": {
     "PAYPAL_IPN_ENABLED": "true",
     "PAYPAL_CHECKOUT_ENABLED": "false",
-    "PAYPAL_MODE": "live"
+    "PAYPAL_MODE": "live",
+    "PAYPAL_CHECKOUT_SLUGS": "painting-portrait-in-green",
+    "SHIPPO_AUTO_LABEL_ENABLED": "true",
+    "SHIPPO_CARRIER_ALLOWLIST": "UPS",
+    "CHECKOUT_RELEASE": "insured-pilot-v1"
   },
   "durable_objects": {
     "bindings": [{ "name": "PAINTING_STOCK", "class_name": "PaintingStock" }]

@@ -1,4 +1,7 @@
-// Administrative read-only provider checks. The deployment job creates and removes
+import { sellerMailToken } from './shipping-email.mjs';
+import { priceOrder } from './checkout-pricing.mjs';
+
+// Administrative provider checks without payments or label purchases. The deployment job creates and removes
 // this random credential; public callers cannot trigger provider requests.
 export async function checkoutReadiness(request,env) {
   const reply=(value,status=200)=>Response.json(value,{status,headers:{'Cache-Control':'no-store'}});
@@ -39,6 +42,24 @@ export async function checkoutReadiness(request,env) {
   }catch(error){checks.githubError=error.message;}
   checks.inventoryBinding=!!env.PAINTING_STOCK;
   checks.shippingOrigin=!!env.SHIP_FROM_STREET;
-  const ready=checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryRepository&&checks.repositoryWritePermission!==false&&checks.inventoryBinding&&checks.shippingOrigin;
-  return reply({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',ready:!!ready,checks},ready?200:503);
+  if (env.CHECKOUT_RELEASE?.startsWith('insured-pilot-')) {
+    checks.pilotRestriction=env.PAYPAL_CHECKOUT_SLUGS==='painting-portrait-in-green' && env.SHIPPO_CARRIER_ALLOWLIST==='UPS';
+    checks.automaticLabels=env.SHIPPO_AUTO_LABEL_ENABLED==='true';
+    try { await sellerMailToken(env); checks.sellerEmail=true; }
+    catch(error) { checks.sellerEmailError=error.message; }
+    try {
+      const slug='painting-portrait-in-green';
+      checks.pilotStock=await env.PAINTING_STOCK.getByName(slug).status();
+      // A quote only, addressed to the configured origin. No PayPal order,
+      // tax transaction, shipping label or email is created by this check.
+      const quote=await priceOrder(env,slug,{name:'Live checkout verification',street1:env.SHIP_FROM_STREET,city:'Seattle',state:'WA',zip:'98122'});
+      checks.pilotQuote={base:quote.base,shipping:quote.shipping,tax:quote.tax,total:quote.total,carrier:quote.carrier,
+        insurance:quote.insurance?.amount||null,insuranceFee:quote.insurance?.fee||null};
+      checks.insuredQuote=quote.base==='20.00'&&quote.insurance?.amount==='20.00'&&quote.carrier==='UPS';
+    } catch(error) { checks.pilotQuoteError=error.message; }
+  }
+  const pilotReady=!env.CHECKOUT_RELEASE?.startsWith('insured-pilot-') ||
+    (checks.pilotRestriction&&checks.automaticLabels&&checks.sellerEmail&&checks.insuredQuote&&checks.pilotStock==='available');
+  const ready=checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryRepository&&checks.repositoryWritePermission!==false&&checks.inventoryBinding&&checks.shippingOrigin&&pilotReady;
+  return reply({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE||null,ready:!!ready,checks},ready?200:503);
 }

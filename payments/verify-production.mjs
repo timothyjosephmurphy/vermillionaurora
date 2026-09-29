@@ -1,4 +1,6 @@
 import { randomBytes } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+const expected=JSON.parse(readFileSync('cloudflare/wrangler.jsonc','utf8')).vars;
 const worker='vermillion-commissions';
 const base=`https://${worker}.timothyjosephmurphy.workers.dev`;
 const cf=`https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/${worker}/secrets`;
@@ -19,10 +21,17 @@ try {
   }
   const audit=await response.json();
   console.log('Production provider verification:',JSON.stringify(audit));
-  if(!response.ok||!audit.ready||audit.mode!=='live')throw Error('Production provider verification failed');
+  if(!response.ok||!audit.ready||audit.mode!=='live'||audit.enabled!==(expected.PAYPAL_CHECKOUT_ENABLED==='true')||audit.release!==(expected.CHECKOUT_RELEASE||null))throw Error('Production provider verification failed');
   const r=await fetch(base+'/checkout/status?slug=honeybadger-and-cub-with-genesis-block');
   console.log('Public checkout status HTTP:',r.status);
   if(!audit.enabled&&r.status!==503)throw Error('Expected new checkout to remain disabled');
+  if(audit.enabled&&expected.PAYPAL_CHECKOUT_SLUGS==='painting-portrait-in-green') {
+    if(r.status!==503)throw Error('A painting outside the pilot is purchasable');
+    const pilot=await fetch(base+'/checkout/status?slug=painting-portrait-in-green');
+    const state=await pilot.json();
+    console.log('Live pilot status:',JSON.stringify(state));
+    if(!pilot.ok||state.status!=='available'||state.amount!=='20.00')throw Error('The live pilot is not available at its approved price');
+  }
 } finally {
   if(installed){await cloudflare('DELETE','/'+key);console.log('Temporary production diagnostic credential removed');}
 }

@@ -62,3 +62,7 @@ The catalog builder reads `payments/shipping-overrides.json`. Insured items send
 The **Verify insured Chase Toole shipping** workflow runs `node payments/verify-shipping.mjs --insurance` in the sandbox only. It uses a separate durable sample (`label-email-chase-insurance-v1`) and confirms $20 insurance, a test label, and its PDF email without a PayPal charge or inventory write. The original uninsurable/failed samples remain preserved. Re-running it reuses the existing sample and does not buy another label. Coverage is not active until a successful live label purchase.
 
 Reference: https://docs.goshippo.com/shipments/shipping-insurance
+
+## Controlled live pilot
+
+The owner authorized the Chase Toole $20 live test before the business tax ID arrives on September 29 at 02:12 PDT. The pilot restricts checkout to `painting-portrait-in-green` and carrier selection to UPS through `SHIPPO_CARRIER_ALLOWLIST=UPS`. Preserve Stripe Tax and its actual registration status. Production labels are enabled only with this restricted checkout release after sandbox insurance, live Gmail, and insured-rate checks. A real successful capture triggers the real label and seller PDF email.

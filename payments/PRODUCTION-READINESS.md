@@ -5,7 +5,7 @@ Pull request #3 is merged. Production checkout is deployed with purchases disabl
 ## Current release status — September 29, 2026
 
 - Production verification run 36539118165, attempt 3, passed the live PayPal authentication/webhook/merchant, Stripe Tax settings, Shippo carrier, GitHub repository access, inventory binding, and shipping-origin checks. Checkout reported `mode=live`, `enabled=false`, `ready=true`. The new restricted Stripe live key's write permissions have not yet been exercised.
-- Stripe returned no active tax registrations. The owner submitted the Washington business license application and is awaiting processing. Keep real purchases disabled while the required licensing and tax setup are pending.
+- Stripe returned no active tax registrations. The owner submitted the Washington business license application and is awaiting processing. At 02:12 PDT, the owner explicitly authorized one controlled live test before the tax ID arrives. This supersedes the earlier request to wait. Preserve Stripe Tax calculations and its current registration status; do not invent a registration or mark the artwork exempt.
 - Live verification evidence: https://github.com/timothyjosephmurphy/vermillionaurora/actions/runs/36539118165
 
 ## Selected first-purchase painting and shipping requirements
@@ -19,7 +19,7 @@ The owner selected **Chase Toole** (`painting-portrait-in-green`) for the next c
 
 The owner authorized restoring Chase Toole for another controlled test. Inventory and product listings show **Available at $20**, and it is included in the shared checkout catalog. The earlier completed payment history is preserved.
 
-The parcel override is saved in `payments/shipping-overrides.json`. The catalog builder uses its flat 15 × 12 × 0.125-inch, 0.25-lb parcel when this painting becomes eligible for shared checkout. It overrides the generic 2-lb/tube estimate. `insuranceRequested` now sends the actual painting sale value to Shippo as XCover insurance. Checkout uses only rates with confirmed insurance and includes the returned premium once. Before label purchase, the shipping integration rechecks the stored rate and shipment; the seller email reports the coverage. No live insurance has been purchased. Live checkout remains disabled pending licensing/tax setup and a controlled purchase.
+The parcel override is saved in `payments/shipping-overrides.json`. The catalog builder uses its flat 15 × 12 × 0.125-inch, 0.25-lb parcel when this painting becomes eligible for shared checkout. It overrides the generic 2-lb/tube estimate. `insuranceRequested` now sends the actual painting sale value to Shippo as XCover insurance. Checkout uses only rates with confirmed insurance and includes the returned premium once. Before label purchase, the shipping integration rechecks the stored rate and shipment; the seller email reports the coverage. No live insurance has been purchased. Live checkout is being prepared for the owner-authorized controlled purchase; the tax ID remains pending.
 
 ## Pre-deployment verification (historical)
 
@@ -40,7 +40,7 @@ Evidence: https://github.com/timothyjosephmurphy/vermillionaurora/actions/runs/3
 3. Finish shipping and insurance setup before accepting live orders. Chase Toole has owner-confirmed envelope dimensions and owner-authorized weight/thickness estimates in the override above. Other current quotes estimate 2 lb per package, with a 4-inch tube for works whose longer side exceeds 12 inches and flat packages for smaller works. Tube length currently equals the rounded-up shorter painting dimension; allow for end caps and padding when measuring the real package. Chase Toole is configured for insurance through the shipping integration; other paintings retain their existing settings.
 4. Set `PAYPAL_CHECKOUT_SLUGS` to one chosen product slug for a controlled live purchase, then set `PAYPAL_CHECKOUT_ENABLED=true`. The optional comma-separated slug list restricts new checkout to selected paintings; blank or absent allows the whole catalog. These runtime values should be set in the release configuration before deployment because Wrangler explicitly manages the enable flag.
 5. Verify the paid order, immediate sold state, GitHub inventory/page commit, public site update, webhook, and Stripe Tax record. This live inventory write was deliberately not performed by the sandbox test.
-6. Clear `PAYPAL_CHECKOUT_SLUGS` after the controlled purchase succeeds and shipping is ready for all paintings.
+6. Keep `PAYPAL_CHECKOUT_SLUGS=painting-portrait-in-green` after the controlled purchase. A broader public rollout requires separate authorization and completion of the remaining tax/shipping setup.
 
 To pause new purchases, set `PAYPAL_CHECKOUT_ENABLED=false`. Existing capture/cancel requests and signed webhooks continue to work while credentials remain configured. Preserve the Durable Object namespace and its state. Do not clear a capturing or sold record as a rollback step.
 
@@ -49,3 +49,11 @@ To pause new purchases, set `PAYPAL_CHECKOUT_ENABLED=false`. Existing capture/ca
 The deployment workflow installs a temporary diagnostic credential on the sandbox Worker, confirms the recorded webhook receipt and Stripe test tax record, and removes the credential. Requesting a fresh PayPal capture-event replay is an optional workflow action; the prior successful replay is already recorded. The diagnostic route exists only in the isolated sandbox entry point and is inaccessible without the temporary credential. Responses contain state flags, not buyer details or provider secrets.
 
 Shippo label purchase and seller email are implemented behind the separate, default-off `SHIPPO_AUTO_LABEL_ENABLED` flag. Follow [Shippo notification setup](SHIPPO-NOTIFICATIONS.md) and verify the sandbox label/email and insured Chase test before enabling it during the coordinated production release.
+
+## Authorized live pilot — September 29, 2026, 02:12 PDT
+
+The owner asked to run a live test without waiting for the business tax ID, acknowledged the risk, and authorized setup. The pilot is restricted to Chase Toole at $20 with the existing flat-envelope estimates and $20 Shippo insurance. UPS is the only eligible carrier for this pilot: the insured USPS sandbox label returned `sender_info_missing`, while UPS label generation was verified earlier. Stripe Tax remains active, with its normal taxable-goods product code and no fabricated registration; a zero result is retained as returned by Stripe.
+
+Release preparation sets `SHIPPO_AUTO_LABEL_ENABLED=true` and `PAYPAL_CHECKOUT_SLUGS=painting-portrait-in-green`, while keeping checkout disabled until the insured UPS sandbox test and production Gmail/insured-quote checks pass. Then only `PAYPAL_CHECKOUT_ENABLED` changes to true. The owner's purchase is the remaining real payment action; no automatic diagnostic creates a live PayPal order, purchases postage, or records a fabricated sale.
+
+Production health reports `CHECKOUT_RELEASE` so deployment verification waits for the intended code/configuration rather than accepting an old healthy Worker. The protected readiness route verifies the live Gmail refresh, selected painting availability, a live insured UPS rate, and Stripe calculation. It only quotes to the configured origin address and exposes no address or secret values.

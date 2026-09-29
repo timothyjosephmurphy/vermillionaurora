@@ -9,6 +9,7 @@
     "PAYPAL_CHECKOUT_ENABLED": "true",
     "PAYPAL_MODE": "sandbox",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
+    "SHIPPO_CARRIER_ALLOWLIST": "UPS",
     "PAYPAL_MERCHANT_ID": "QRRG2GBRVB8DN",
     "SANDBOX_RETURN_ORIGIN": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev"
   },

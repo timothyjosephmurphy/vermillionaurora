@@ -1,8 +1,8 @@
 name: Verify insured Chase Toole shipping
 on:
   push:
-    branches: [shippo-label-email]
-    paths: ['cloudflare/shipping-insurance.mjs', 'cloudflare/test/insurance.test.mjs', '.github/workflows/verify-shipping-insurance.yml']
+    branches: [shippo-label-email, live-checkout-pilot]
+    paths: ['cloudflare/**', '.github/workflows/verify-shipping-insurance.yml']
   workflow_dispatch:
 permissions:
   contents: read
