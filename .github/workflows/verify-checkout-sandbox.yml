@@ -1,5 +1,5 @@
 name: Verify isolated checkout sandbox
-run-name: Diagnose PayPal sandbox order creation
+run-name: Verify updated PayPal and Shippo sandbox credentials
 
 on:
   push:
