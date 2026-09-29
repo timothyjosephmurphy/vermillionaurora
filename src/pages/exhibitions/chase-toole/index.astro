@@ -2,13 +2,14 @@
 import SiteHeader from '../../../components/SiteHeader.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import ProductCard from '../../../components/ProductCard.astro';
-import { byId, catalogVersion } from '../../../../catalog/catalog.mjs';
+import { byId, catalogVersion, priceLabel, statusLabel, urlFor } from '../../../../catalog/catalog.mjs';
 import collections from '../../../../catalog/collections.json';
+const portrait = byId['painting-portrait-in-green'];
 ---
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chase Tool Collab | Vermillion Aurora</title>
-<meta name="description" content="Explore El Salvador: Past, Present, and Future — three collaborative paintings by Chase Toole and TJ Murphy.">
+<meta name="description" content="Nearly a decade of friendship and art mentorship: a portrait of Chase Toole and three paintings created in collaboration with TJ Murphy.">
 <link rel="canonical" href="https://vermillionaurora.com/exhibitions/chase-toole/">
 <meta property="og:title" content="Chase Tool Collab"><meta property="og:description" content="El Salvador: Past, Present &amp; Future. Three collaborative paintings by Chase Toole and TJ Murphy."><meta property="og:type" content="website"><meta property="og:url" content="https://vermillionaurora.com/exhibitions/chase-toole/"><meta property="og:image" content="https://vermillionaurora.com/gallery-images/insect-garden.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -21,6 +22,18 @@ import collections from '../../../../catalog/collections.json';
 .collaboration-heading h1{font:600 clamp(2.8rem,6vw,4.8rem)/1.05 "Cormorant Garamond",serif;margin:0 0 14px}
 .collaboration-heading h2{font:500 clamp(1.6rem,3vw,2.4rem)/1.2 "Cormorant Garamond",serif;margin:0 0 16px}
 .collaboration-heading p:last-child{color:var(--muted);margin:0;max-width:640px}
+.collaboration-intro{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center;margin-bottom:48px}
+.collaboration-portrait{width:100%;max-width:320px;margin:0;min-width:0}
+.collaboration-portrait>a{display:block;background:var(--paper)}
+.collaboration-portrait img{display:block;width:100%;height:auto}
+.collaboration-portrait .product-info{padding:18px 20px}
+.collaboration-portrait h2{font:600 1.65rem/1.15 "Cormorant Garamond",serif;margin:0 0 10px}
+.collaboration-portrait .product-info p{font-size:.85rem;font-weight:400;line-height:1.7}
+.collaboration-portrait .product-info>a{display:inline-block;margin-top:12px;text-decoration:underline;text-underline-offset:3px;font-size:.9rem}
+.collaboration-story{max-width:680px}
+.collaboration-story h2{font:600 clamp(1.8rem,3vw,2.5rem)/1.15 "Cormorant Garamond",serif;margin:0 0 20px}
+.collaboration-story p{line-height:1.8;color:var(--muted);margin:0 0 18px}
+.collaboration-story p:last-child{margin-bottom:0}
 .collaboration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .collaboration-card{display:flex;flex-direction:column;min-width:0}
 .collaboration-image{display:block;position:relative;aspect-ratio:4/3;flex-shrink:0;background:var(--paper)}
@@ -34,10 +47,28 @@ import collections from '../../../../catalog/collections.json';
 .collaboration-more{display:flex;flex-wrap:wrap;gap:18px;border-top:1px solid var(--line);padding-top:24px;margin-top:36px;color:var(--muted);font-size:.9rem}
 .collaboration-more a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){.collaboration-grid{grid-template-columns:1fr;max-width:600px;margin-inline:auto}.collaboration-heading{margin-bottom:24px}.collaboration-page{padding-top:20px}.collaboration-card .button{width:auto}}
+@media(max-width:800px){.collaboration-intro{grid-template-columns:1fr;gap:28px;margin-bottom:36px}.collaboration-portrait{max-width:280px;margin-inline:auto}.collaboration-story{max-width:650px;margin-inline:auto}}
 </style><meta name="catalog-version" content={catalogVersion} /></head><body><div class="page-shell"><SiteHeader />
 <main class="container collaboration-page" id="top">
 <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/#featured-artists">Featured Artists and Collaborations</a><span aria-hidden="true">/</span><span aria-current="page">Chase Tool Collab</span></nav>
-<div class="collaboration-heading"><p class="eyebrow accent">Featured artist · In collaboration with TJ Murphy</p><h1>Chase Tool Collab</h1><h2>El Salvador: Past, Present &amp; Future</h2><p>Three collaborative paintings by Chase Toole and TJ Murphy, created in 2022. Explore the series from past to present to future, and select a painting for details.</p></div>
+<div class="collaboration-heading"><p class="eyebrow accent">Featured artist · In collaboration with TJ Murphy</p><h1>Chase Tool Collab</h1></div>
+<section class="collaboration-intro" aria-labelledby="collaboration-story-title">
+  <article class="product-card collaboration-portrait" data-product-id={portrait.id} data-availability={statusLabel(portrait)}>
+    <a href={urlFor(portrait)} aria-label={`View ${portrait.title}`}><img src={portrait.image.src} alt={portrait.image.alt} width="808" height="970" fetchpriority="high" decoding="async" /></a>
+    <div class="product-info">
+      <h2><a class="product-title-link" href={urlFor(portrait)}>{portrait.title}</a></h2>
+      <p>{portrait.medium} · {portrait.artist}</p>
+      <p><span data-card-price>{portrait.listing.status==='available' ? priceLabel(portrait) : statusLabel(portrait)}</span></p>
+      <a href={urlFor(portrait)}>View painting ↗</a>
+    </div>
+  </article>
+  <div class="collaboration-story">
+    <h2 id="collaboration-story-title">Nearly a decade of mentorship</h2>
+    <p>Chase and I were neighbors at the Nantucket in Seattle for a number of years, and he has been my art mentor for almost a decade. A professional concept artist in the video game industry, he has an impressive list of credits to his name.</p>
+    <p>Chase now lives in Montreal, but we continue to meet regularly to discuss my artistic development. Over the years, he has pushed me to learn new skills and keep improving as an artist.</p>
+  </div>
+</section>
+<div class="collaboration-heading"><h2>El Salvador: Past, Present &amp; Future</h2><p>Three collaborative paintings by Chase Toole and TJ Murphy, created in 2022. Explore the series from past to present to future, and select a painting for details.</p></div>
 <section class="collaboration-grid" aria-label="El Salvador collaboration paintings">
 {collections.chase.map(entry=><ProductCard product={byId[entry.product]} variant={entry.variant} />)}
 </section>
