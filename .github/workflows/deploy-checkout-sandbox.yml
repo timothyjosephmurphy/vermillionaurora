@@ -8,6 +8,11 @@ on:
       - 'payments/check-production-config.mjs'
       - '.github/workflows/deploy-checkout-sandbox.yml'
   workflow_dispatch:
+    inputs:
+      replay_webhook:
+        description: Request a fresh PayPal webhook replay
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -38,10 +43,10 @@ jobs:
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           workingDirectory: cloudflare
           command: deploy --config wrangler.sandbox.jsonc
-      - name: Confirm real sandbox webhook delivery and tax record
+      - name: Confirm recorded sandbox payment, webhook receipt, and tax record
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: node payments/verify-sandbox.mjs
+        run: node payments/verify-sandbox.mjs ${{ inputs.replay_webhook && '--replay' || '' }}
   production-config:
     runs-on: ubuntu-latest
     steps:
