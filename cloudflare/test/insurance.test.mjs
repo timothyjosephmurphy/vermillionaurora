@@ -41,9 +41,15 @@ it('quotes the flat envelope with $20 insurance and includes its fee only once',
   const quote=await pricing();
   const request=JSON.parse(calls.find(c=>c.url.endsWith('/shipments/')).body);
   expect(request.extra.insurance).toEqual(shipment.extra.insurance);
+  expect(request.address_from.phone).toBe('+12065550123');
   expect(request.parcels).toEqual([{length:'15',width:'12',height:'0.125',weight:'0.25',distance_unit:'in',mass_unit:'lb'}]);
   expect(quote).toMatchObject({base:'20.00',shipping:'5.75',total:'25.75',rateId:'INS_RATE',insurance:{amount:'20.00',fee:'0.75'}});
   expect(calls.find(c=>c.url.endsWith('/tax/calculations')).body.get('shipping_cost[amount]')).toBe('575');
+});
+
+it('requires the sender phone before quoting or charging for an insured shipment',async()=>{
+  await expect(priceOrder({...env,SHIP_FROM_PHONE:''},slug,{name:'Buyer',street1:'123 Main St',city:'Seattle',state:'WA',zip:'98122'})).rejects.toThrow('SHIP_FROM_PHONE');
+  expect(calls).toHaveLength(0);
 });
 
 it.each(['missing premium','wrong value','wrong currency'])('refuses an unconfirmed quote: %s',async(kind)=>{

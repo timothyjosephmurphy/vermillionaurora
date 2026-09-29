@@ -49,3 +49,7 @@ To pause new purchases, set `PAYPAL_CHECKOUT_ENABLED=false`. Existing capture/ca
 The deployment workflow installs a temporary diagnostic credential on the sandbox Worker, confirms the recorded webhook receipt and Stripe test tax record, and removes the credential. Requesting a fresh PayPal capture-event replay is an optional workflow action; the prior successful replay is already recorded. The diagnostic route exists only in the isolated sandbox entry point and is inaccessible without the temporary credential. Responses contain state flags, not buyer details or provider secrets.
 
 Shippo label purchase and seller email are implemented behind the separate, default-off `SHIPPO_AUTO_LABEL_ENABLED` flag. Follow [Shippo notification setup](SHIPPO-NOTIFICATIONS.md) and verify the sandbox label/email and insured Chase test before enabling it during the coordinated production release.
+
+## Insured shipping provider check
+
+The $20 Chase Toole insurance quote was confirmed by Shippo, but USPS rejected the first sandbox label because the sender phone was missing. Set encrypted `SHIP_FROM_PHONE` on both `vermillion-checkout-sandbox` and `vermillion-commissions` in international format. Insured checkout now refuses to quote without it. Re-run **Verify insured Chase Toole shipping** after deployment to confirm the fresh v2 sample, label, and PDF email. The failed v1 transaction remains preserved. Keep live checkout and automatic live labels disabled until the outstanding launch checks are complete.

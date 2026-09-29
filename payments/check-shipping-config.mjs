@@ -1,5 +1,5 @@
 // Read names/types only. Never print provider credentials or the settings response.
-const required = ['SHIPPO_TOKEN','SHIP_FROM_STREET','GOOGLE_CLIENT_ID','GOOGLE_CLIENT_SECRET','GOOGLE_REFRESH_TOKEN'];
+const required = ['SHIPPO_TOKEN','SHIP_FROM_STREET','SHIP_FROM_PHONE','GOOGLE_CLIENT_ID','GOOGLE_CLIENT_SECRET','GOOGLE_REFRESH_TOKEN'];
 const workers = ['vermillion-commissions','vermillion-checkout-sandbox'];
 if (!process.env.CLOUDFLARE_API_TOKEN) throw new Error('Cloudflare read credential is unavailable');
 for (const worker of workers) {

@@ -20,8 +20,11 @@ export async function priceOrder(env, slug, input) {
   const item = catalog[slug];
   if (!item?.parcel || !env.SHIPPO_TOKEN || !env.STRIPE_SECRET_KEY || !env.SHIP_FROM_STREET) throw new Error('Shipping and tax services are not configured');
   const address = cleanAddress(input);
-  const from = {name:'Vermillion Aurora',email:'tj@vermillionaurora.com',street1:env.SHIP_FROM_STREET,city:'Seattle',state:'WA',zip:'98122',country:'US'};
   const insurance = insuranceRequest(item);
+  const phone = env.SHIP_FROM_PHONE?.trim();
+  if (insurance && !/^\+[1-9]\d{7,14}$/.test(phone || '')) throw new Error('Shipping sender phone is not configured. Set SHIP_FROM_PHONE in international format.');
+  const from = {name:'Vermillion Aurora',email:'tj@vermillionaurora.com',street1:env.SHIP_FROM_STREET,city:'Seattle',state:'WA',zip:'98122',country:'US',
+    ...(phone ? {phone} : {})};
   const parcel = Object.fromEntries(Object.entries(item.parcel).map(([key,value]) => [key,String(value)]));
   Object.assign(parcel,{distance_unit:'in',mass_unit:'lb'});
   const shipmentResponse = await fetch('https://api.goshippo.com/shipments/',{
