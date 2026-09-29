@@ -35,11 +35,6 @@ export async function checkoutReadiness(request,env) {
     checks.shippoAuthentication=true;
     checks.activeCarriers=(accounts.results||[]).filter(x=>x.active===true).map(x=>x.carrier);
   }catch(error){checks.shippoError=error.message;}
-  try {
-    const repo=await get('https://api.github.com/repos/timothyjosephmurphy/vermillionaurora',`Bearer ${env.GITHUB_TOKEN}`,{'User-Agent':'VermillionAurora-Readiness','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'});
-    checks.inventoryRepository=repo.full_name==='timothyjosephmurphy/vermillionaurora';
-    checks.repositoryWritePermission=repo.permissions?.push??null;
-  }catch(error){checks.githubError=error.message;}
   checks.inventoryBinding=!!env.PAINTING_STOCK;
   checks.salesLedger=!!env.SALES_LEDGER&&!!env.SALES_ARCHIVE;
   checks.shippingOrigin=!!env.SHIP_FROM_STREET;
@@ -65,6 +60,6 @@ export async function checkoutReadiness(request,env) {
   }
   const pilotReady=env.CHECKOUT_PILOT_ENABLED!=='true' ||
     (checks.pilotRestriction&&checks.automaticLabels&&checks.sellerEmail&&(checks.completedPilot||(checks.insuredQuote&&checks.pilotStock==='available')));
-  const ready=checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryRepository&&checks.repositoryWritePermission!==false&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
+  const ready=checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
   return reply({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE||null,ready:!!ready,checks},ready?200:503);
 }

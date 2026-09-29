@@ -5,7 +5,7 @@ const data=await response.json();
 if(!response.ok||!data.success){console.log(`Production Worker settings are inaccessible to the deployment token (HTTP ${response.status}).`);process.exitCode=1;}
 else {
   const bindings=data.result.bindings||[];
-  const required=['PAYPAL_CLIENT_ID','PAYPAL_CLIENT_SECRET','PAYPAL_MERCHANT_ID','PAYPAL_WEBHOOK_ID','GITHUB_TOKEN','SHIPPO_TOKEN','STRIPE_SECRET_KEY','SHIP_FROM_STREET'];
+  const required=['PAYPAL_CLIENT_ID','PAYPAL_CLIENT_SECRET','PAYPAL_MERCHANT_ID','PAYPAL_WEBHOOK_ID','SHIPPO_TOKEN','STRIPE_SECRET_KEY','SHIP_FROM_STREET'];
   const names=new Set(bindings.map(x=>x.name));
   const missing=required.filter(x=>!names.has(x));
   const safe={requiredBindingsPresent:required.filter(x=>names.has(x)),missingBindings:missing,

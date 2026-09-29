@@ -1,3 +1,7 @@
+# Archived hosted-link setup notes
+
+This historical workflow was superseded by the shared checkout and catalog migration. For current behavior and file paths, read [CUSTOM-CHECKOUT.md](CUSTOM-CHECKOUT.md) and the root README. Do not follow the old GitHub inventory-publication setup below.
+
 # PayPal checkout setup
 
 ## Create the remaining links in a batch

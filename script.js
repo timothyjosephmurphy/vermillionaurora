@@ -2,53 +2,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
-  const productNames = {
-  "warszawska-syrenka": "Warszawska Syrenka",
-  "honeybadger-and-cub-with-genesis-block": "Honeybadger and Cub with Genesis Block",
-  "el-zonte-at-sunrise": "El Zonte at Sunrise",
-  "single-portrait": "Single portrait",
-  "double-portrait": "Double portrait",
-  "small-landscape": "Small landscape",
-  "sunset-over-water": "Sunset Over Water",
-  "velvet-dawn": "Velvet Dawn",
-  "personal-portrait": "Personal Portrait"
-};
   const params = new URLSearchParams(window.location.search);
   const productSlug = params.get('product');
   const purchaseSlug = params.get('buy');
   const message = form.querySelector('[name="message"]');
 
-  if (purchaseSlug) {
-    fetch('/gallery/inventory.json')
-      .then((response) => response.json())
-      .then((inventory) => {
-        const painting = (inventory.paintings || []).find((item) => item.A === purchaseSlug);
-        if (!painting || painting.E !== 'Available') return;
-
-        const price = painting.C
-          ? new Intl.NumberFormat('en-US', { style: 'currency', currency: painting.D || 'USD', maximumFractionDigits: 0 }).format(Number(painting.C))
-          : 'Price on request';
-
-        form.querySelector('[name="inquiryType"]').value = 'purchase';
-        form.querySelector('[name="paintingSlug"]').value = painting.A;
-        form.querySelector('[name="paintingTitle"]').value = painting.B;
-        form.querySelector('[name="paintingPrice"]').value = price;
-
-        form.classList.add('purchase-mode');
-        form.querySelectorAll('.commission-only').forEach((element) => { element.hidden = true; });
-        const summary = form.querySelector('.purchase-summary');
-        summary.hidden = false;
-        summary.querySelector('.purchase-title').textContent = painting.B;
-        summary.querySelector('.purchase-price').textContent = price;
-
-        if (message) {
-          message.value = 'Hello, I’m interested in purchasing ' + painting.B + ' for ' + price + '.\n\n';
-        }
-      })
-      .catch(() => {});
-  }
-  if (Object.hasOwn(productNames, productSlug) && message && !message.value) {
-    message.value = 'Hello, I’m interested in ' + productNames[productSlug] + '.\n\n';
+  if (purchaseSlug || productSlug) {
+    fetch('/catalog/products.json').then(response=>response.json()).then(async catalog=>{
+      const product=catalog.products.find(p=>p.slug===(purchaseSlug||productSlug));
+      if(!product)return;
+      if(message && !message.value)message.value='Hello, I’m interested in '+product.title+'.\n\n';
+      if(!purchaseSlug || product.listing?.status!=='available')return;
+      const response=await fetch('https://vermillion-commissions.timothyjosephmurphy.workers.dev/inventory/status?ids='+encodeURIComponent(product.id),{cache:'no-store'});
+      if(!response.ok || (await response.json()).availability?.[product.id]!=='available')return;
+      const price=new Intl.NumberFormat('en-US',{style:'currency',currency:product.listing.price.currency,maximumFractionDigits:2}).format(Number(product.listing.price.amount));
+      form.querySelector('[name="inquiryType"]').value='purchase';
+      form.querySelector('[name="paintingSlug"]').value=product.slug;
+      form.querySelector('[name="paintingTitle"]').value=product.title;
+      form.querySelector('[name="paintingPrice"]').value=price;
+      form.classList.add('purchase-mode');
+      form.querySelectorAll('.commission-only').forEach(element=>{element.hidden=true;});
+      const summary=form.querySelector('.purchase-summary');summary.hidden=false;
+      summary.querySelector('.purchase-title').textContent=product.title;
+      summary.querySelector('.purchase-price').textContent=price;
+      if(message)message.value='Hello, I’m interested in purchasing '+product.title+' for '+price+'.\n\n';
+    }).catch(()=>{});
   }
 
   const button = form.querySelector('button[type="submit"]');

@@ -1,6 +1,6 @@
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
-const root=path.resolve(__dirname,'..');
+const root=path.resolve(__dirname,'../dist');
 (async()=>{
   const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']}: {})});
   const page=await browser.newPage({viewport:{width:390,height:844}});
@@ -19,7 +19,7 @@ const root=path.resolve(__dirname,'..');
     if(p==='/checkout/bitcoin/order')return route.fulfill({headers:cors,json:{status:state.toLowerCase(),orderId:id}});
     if(p==='/products/painting-portrait-in-green/') {
       let html=fs.readFileSync(path.join(root,p,'index.html'),'utf8');
-      if(sold)html=html.replace('<p class="product-availability">Available</p>','<p class="product-availability">Sold</p>');
+      if(sold)html=html.replace(/(<p class="product-availability"[^>]*>)Available<\/p>/,'$1Sold</p>');
       return route.fulfill({contentType:'text/html',body:html});
     }
     const file=path.join(root,p);

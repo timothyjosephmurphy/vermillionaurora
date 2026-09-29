@@ -1,12 +1,6 @@
 (() => {
   const card = document.querySelector('.featured-art');
   const products = [...document.querySelectorAll('.painting-carousel .product-card')];
-  // Keep source markup compatible with sale updates; prices imply availability in homepage captions.
-  const captions = products.map(product => product.querySelector('.product-info p'));
-  captions.push(card?.querySelector('.art-meta p'));
-  captions.filter(Boolean).forEach(caption => {
-    caption.textContent = caption.textContent.replace(/ · Available\s*$/, '');
-  });
   if (!card || products.length < 2) return;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const items = products.map(product => {
@@ -14,7 +8,7 @@
     const image = product.querySelector('img');
     const background = product.querySelector('.product-image');
     const source = image ? image.src : getComputedStyle(background).backgroundImage.replace(/^url\(["']?|["']?\)$/g, '');
-    return {href:link.href, title:link.textContent, source, detail:product.querySelector('.product-info p').textContent};
+    return {id:product.dataset.productId,href:link.href, title:link.textContent, source, detail:product.querySelector('.product-info p').textContent};
   });
   let index = Math.max(0, items.findIndex(item => item.href === card.querySelector('a').href));
   let busy = false;
@@ -103,6 +97,10 @@
   card.addEventListener('focusout', event => {focused = card.contains(event.relatedTarget); schedule();});
   motion.addEventListener('change', () => {paused = motion.matches; update(); schedule();});
   new IntersectionObserver(entries => {visible = entries[0].isIntersecting; schedule();}).observe(card);
+  document.addEventListener('catalog:availability',()=>{
+    items.forEach((item,i)=>{item.detail=products[i].querySelector('.product-info p').textContent;});
+    if(!busy)stage.replaceChildren(slide(items[index]));
+  });
   update();
   schedule();
 })();

@@ -1,3 +1,5 @@
+import { inventoryStatus } from './inventory-api.mjs';
+import { catalogVersion } from './checkout-catalog.mjs';
 export { SalesLedger } from './sales-ledger.mjs';
 export { BitcoinOrder } from './bitcoin-order.mjs';
 import { bitcoinCheckout, bitcoinWebhook } from './bitcoin-checkout.mjs';
@@ -14,9 +16,10 @@ const ALLOWED_TYPES = new Set(["image/jpeg","image/png","image/webp","image/heic
 export default {
   async fetch(request, env) {
     const path = new URL(request.url).pathname;
+    if (path === '/inventory/status') return inventoryStatus(request,env);
     if (path === '/checkout/bitcoin/webhook') return bitcoinWebhook(request,env);
     if (path.startsWith('/checkout/bitcoin/')) return bitcoinCheckout(request,env);
-    if (path === '/checkout/health' && request.method === 'GET') return Response.json({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE || null},{headers:{'Cache-Control':'no-store'}});
+    if (path === '/checkout/health' && request.method === 'GET') return Response.json({catalogVersion,mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE || null},{headers:{'Cache-Control':'no-store'}});
     if (path === '/checkout/sales-maintenance') return salesMaintenance(request,env);
     if (path === '/checkout/readiness') return checkoutReadiness(request,env);
     if (path === "/paypal-ipn") {

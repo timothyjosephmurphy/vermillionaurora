@@ -1,4 +1,4 @@
-import catalog from './checkout-catalog.mjs';
+import catalog, {catalogVersion} from './checkout-catalog.mjs';
 import { priceOrder } from './checkout-pricing.mjs';
 import { SITE, ORDER, bitcoinApi, bitcoinOffered, validBitcoinSignature } from './bitcoin-api.mjs';
 
@@ -12,7 +12,7 @@ export async function bitcoinCheckout(request,env) {
   if (path === '/checkout/bitcoin/status' && request.method === 'GET') {
     const slug = url.searchParams.get('slug'), item = catalog[slug];
     if (!item || !bitcoinOffered(env,slug)) return json({enabled:false});
-    return json({enabled:true,status:item.available===false?'sold':await env.PAINTING_STOCK.getByName(slug).status(),
+    return json({enabled:true,catalogVersion,status:item.available===false?'sold':await env.PAINTING_STOCK.getByName(slug).status(),
       title:item.title,amount:item.amount,currency:'USD'});
   }
   if (request.method !== 'POST' || !['/checkout/bitcoin/quote','/checkout/bitcoin/create','/checkout/bitcoin/order'].includes(path)) return json({error:'Not found.'},404);
@@ -24,6 +24,7 @@ export async function bitcoinCheckout(request,env) {
     try { return json(await env.BITCOIN_ORDERS.getByName(data.orderId).publicStatus(data.slug)); }
     catch { return json({error:'Payment status is temporarily unavailable. Please keep your invoice and check again.'},503); }
   }
+  if(data?.catalogVersion && data.catalogVersion!==catalogVersion)return json({error:'This page has changed. Reload it before starting checkout.'},409);
   const slug=data?.slug,item=catalog[slug];
   if (!item || !bitcoinOffered(env,slug)) return json({error:'Bitcoin checkout is being set up.'},503);
   if (item.available===false || await env.PAINTING_STOCK.getByName(slug).status() !== 'available') return json({error:'This painting is reserved or sold.'},409);

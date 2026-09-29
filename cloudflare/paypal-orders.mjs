@@ -1,4 +1,4 @@
-import catalog from './checkout-catalog.mjs';
+import catalog, {catalogVersion} from './checkout-catalog.mjs';
 import { priceOrder } from './checkout-pricing.mjs';
 import { captureDetails } from './sales-records.mjs';
 
@@ -9,7 +9,7 @@ const SLUG = /^[a-z0-9-]+$/;
 const site = env => env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN : SITE;
 const cors = env => ({ 'Access-Control-Allow-Origin':site(env), 'Access-Control-Allow-Methods':'GET, POST, OPTIONS', 'Access-Control-Allow-Headers':'Content-Type', 'Vary':'Origin', 'Cache-Control':'no-store' });
 const json = (body, status=200, env={}) => new Response(JSON.stringify(body), {status, headers:{...cors(env),'Content-Type':'application/json'}});
-const configured = env => ['live','sandbox'].includes(env.PAYPAL_MODE) && env.PAYPAL_CLIENT_ID && env.PAYPAL_CLIENT_SECRET && env.PAYPAL_MERCHANT_ID && (env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN && !env.GITHUB_TOKEN : env.GITHUB_TOKEN) && env.PAINTING_STOCK && env.SHIPPO_TOKEN && env.STRIPE_SECRET_KEY && env.SHIP_FROM_STREET && env.PAYPAL_WEBHOOK_ID;
+const configured = env => ['live','sandbox'].includes(env.PAYPAL_MODE) && env.PAYPAL_CLIENT_ID && env.PAYPAL_CLIENT_SECRET && env.PAYPAL_MERCHANT_ID && (env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN && !env.GITHUB_TOKEN : true) && env.PAINTING_STOCK && env.SHIPPO_TOKEN && env.STRIPE_SECRET_KEY && env.SHIP_FROM_STREET && env.PAYPAL_WEBHOOK_ID;
 const stock = (env, slug) => env.PAINTING_STOCK.getByName(slug);
 const offered = (env,slug) => !env.PAYPAL_CHECKOUT_SLUGS || env.PAYPAL_CHECKOUT_SLUGS.split(',').map(x=>x.trim()).includes(slug);
 const paypalBase = env => env.PAYPAL_MODE === 'sandbox' ? 'https://api-m.sandbox.paypal.com' : 'https://api-m.paypal.com';
@@ -53,14 +53,15 @@ export async function checkout(request, env) {
     const slug = url.searchParams.get('slug');
     if (!catalog[slug]) return respond({error:'Painting not in checkout catalog.'},404);
     if (!offered(env,slug)) return respond({error:'Checkout is being set up.'},503);
-    return respond({status:catalog[slug].available===false?'sold':await stock(env,slug).status(),title:catalog[slug].title,amount:catalog[slug].amount,currency:'USD'});
+    return respond({catalogVersion,status:catalog[slug].available===false?'sold':await stock(env,slug).status(),title:catalog[slug].title,amount:catalog[slug].amount,currency:'USD'});
   }
   if (!['/checkout/quote','/checkout/create','/checkout/capture','/checkout/cancel'].includes(url.pathname) || request.method !== 'POST') return respond({error:'Not found.'},404);
   let data;
   try { data = await request.json(); } catch { return respond({error:'Invalid request.'},400); }
   const slug = data?.slug;
-  if (typeof slug !== 'string' || !SLUG.test(slug) || !catalog[slug]) return respond({error:'Painting not in checkout catalog.'},404);
+  if (typeof slug !== 'string' || !SLUG.test(slug) || (!finishing && !catalog[slug])) return respond({error:'Painting not in checkout catalog.'},404);
   if (!finishing && !offered(env,slug)) return respond({error:'Checkout is being set up.'},503);
+  if (!finishing && data.catalogVersion && data.catalogVersion !== catalogVersion) return respond({error:'This page has changed. Reload it before starting checkout.'},409);
   const item = catalog[slug];
   if (!finishing && item.available===false) return respond({error:'This painting is sold.'},409);
   const stub = stock(env,slug);
@@ -138,14 +139,13 @@ export async function checkout(request, env) {
 }
 
 function validateCapture(order,slug,env,expected) {
-  const item = catalog[slug];
   const unit = order?.purchase_units?.[0];
   const captures = unit?.payments?.captures;
   const capture = captures?.[0];
   const address = unit?.shipping?.address;
   if (order?.status !== 'COMPLETED' || order.purchase_units.length !== 1 || unit.reference_id !== slug || unit.custom_id !== slug ||
       unit.amount?.currency_code !== 'USD' || unit.amount?.value !== expected?.total ||
-      unit.amount?.breakdown?.item_total?.value !== item.amount || unit.amount?.breakdown?.shipping?.value !== expected.shipping ||
+      unit.amount?.breakdown?.item_total?.value !== (expected.base || ((Math.round(Number(expected.total)*100)-Math.round(Number(expected.shipping)*100)-Math.round(Number(expected.tax)*100))/100).toFixed(2)) || unit.amount?.breakdown?.shipping?.value !== expected.shipping ||
       unit.amount?.breakdown?.tax_total?.value !== expected.tax || captures?.length !== 1 ||
       address?.country_code !== 'US' || address?.postal_code !== expected.destination?.zip || address?.admin_area_1 !== expected.destination?.state ||
       capture?.status !== 'COMPLETED' || capture.amount?.currency_code !== 'USD' || capture.amount?.value !== expected.total ||
@@ -172,7 +172,7 @@ export async function checkoutWebhook(request,env) {
     if (!ORDER_ID.test(orderId || '')) return new Response('Ignored');
     const order = await paypal(env,`/v2/checkout/orders/${orderId}`,accessToken);
     const slug = order.purchase_units?.[0]?.reference_id;
-    if (!catalog[slug]) return new Response('Ignored');
+    if (typeof slug !== 'string' || !SLUG.test(slug)) return new Response('Ignored');
     const stub = stock(env,slug);
     const expected = await stub.order();
     if (expected?.orderId !== orderId) return new Response('Unrecognized order',{status:409});

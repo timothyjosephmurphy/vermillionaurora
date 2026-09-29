@@ -3,3 +3,5 @@ node_modules/
 *.local
 .DS_Store
 payments/generated-links.local
+dist/
+.astro/

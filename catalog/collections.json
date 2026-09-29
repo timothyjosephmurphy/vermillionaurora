@@ -1,0 +1,504 @@
+{
+  "home": [
+    {
+      "product": "painting-portrait-with-hat",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-phoenix-rising",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-festival-portrait",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-lightburst",
+      "variant": "carousel"
+    },
+    {
+      "product": "warszawska-syrenka",
+      "variant": "carousel"
+    },
+    {
+      "product": "honeybadger-and-cub-with-genesis-block",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-insect-garden",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-emergence",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-twin-dragons",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-red-horizon",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-shoreline-at-dusk",
+      "variant": "carousel"
+    },
+    {
+      "product": "el-zonte-at-sunrise",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-moonlit-water",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-chef-in-white",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-portrait-with-cheese",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-studio-figure",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-portrait-in-gold",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-portrait-in-green",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-clouds-over-water",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-embrace",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-sunset-silhouette",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-beach-walk",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-golden-coast",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-sunset-reflection",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-mount-rainier-at-sunset",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-sunflower-woman",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-figures-in-wheatfield",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-family-portrait",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-portrait-in-blue",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-golden-reflection",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-sunset-shore",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-two-soldiers",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-couple-in-color",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-portrait-with-scarf",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-guitarist",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-portrait-in-blue-light",
+      "variant": "carousel"
+    },
+    {
+      "product": "coined-in-watercolor-film-poster",
+      "variant": "carousel"
+    },
+    {
+      "product": "watercolor-portraits",
+      "variant": "book"
+    },
+    {
+      "product": "watercolor-landscapes",
+      "variant": "book"
+    },
+    {
+      "product": "reflections-on-time",
+      "variant": "book"
+    },
+    {
+      "product": "single-portrait",
+      "variant": "service"
+    },
+    {
+      "product": "double-portrait",
+      "variant": "service"
+    },
+    {
+      "product": "small-landscape",
+      "variant": "service"
+    }
+  ],
+  "gallery": [
+    {
+      "product": "warszawska-syrenka",
+      "variant": "gallery"
+    },
+    {
+      "product": "honeybadger-and-cub-with-genesis-block",
+      "variant": "gallery"
+    },
+    {
+      "product": "el-zonte-at-sunrise",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-clouds-over-water",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-moonlit-water",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-red-horizon",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-embrace",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-shoreline-at-dusk",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-sunset-silhouette",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-family-portrait",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-portrait-in-blue",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-golden-reflection",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-sunset-shore",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-two-soldiers",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-beach-walk",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-golden-coast",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-sunset-reflection",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-portrait-with-hat",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-mount-rainier-at-sunset",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-sunflower-woman",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-figures-in-wheatfield",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-chef-in-white",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-couple-in-color",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-phoenix-rising",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-festival-portrait",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-portrait-with-cheese",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-studio-figure",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-portrait-with-scarf",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-portrait-in-green",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-portrait-in-gold",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-guitarist",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-lightburst",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-insect-garden",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-emergence",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-twin-dragons",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-portrait-in-blue-light",
+      "variant": "gallery"
+    },
+    {
+      "product": "coined-in-watercolor-film-poster",
+      "variant": "gallery"
+    }
+  ],
+  "paul": [
+    {
+      "product": "paul-murphy-painting-86",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-57",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-64",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-56",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-62",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-63",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-65",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-1",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-8",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-55",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-14",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-15",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-3",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-6",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-11",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-73",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-2",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-7",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-23",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-24",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-25",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-27",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-28",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-34",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-35",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-38",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-39",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-40",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-41",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-43",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-44",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-45",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-51",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-72",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-74",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-82",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-83",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-84",
+      "variant": "artist"
+    },
+    {
+      "product": "paul-murphy-painting-85",
+      "variant": "artist"
+    }
+  ],
+  "chase": [
+    {
+      "product": "painting-insect-garden",
+      "variant": "collaboration"
+    },
+    {
+      "product": "painting-emergence",
+      "variant": "collaboration"
+    },
+    {
+      "product": "painting-twin-dragons",
+      "variant": "collaboration"
+    }
+  ],
+  "gavin": [
+    {
+      "product": "coined-in-watercolor-film-poster",
+      "variant": "poster"
+    }
+  ]
+}

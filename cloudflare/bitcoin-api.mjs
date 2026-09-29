@@ -9,7 +9,7 @@ export function bitcoinServer(env) {
 export function bitcoinConfigured(env) {
   try { bitcoinServer(env); } catch { return false; }
   return !!(env.BTCPAY_API_KEY && env.BTCPAY_STORE_ID && env.BTCPAY_WEBHOOK_SECRET && env.BITCOIN_ORDERS &&
-    env.PAINTING_STOCK && env.SALES_LEDGER && env.SALES_ARCHIVE && env.GITHUB_TOKEN &&
+    env.PAINTING_STOCK && env.SALES_LEDGER && env.SALES_ARCHIVE &&
     env.SHIPPO_TOKEN && env.STRIPE_SECRET_KEY && env.SHIP_FROM_STREET && env.PAYPAL_MODE === 'live');
 }
 export const bitcoinOffered = (env,slug) => env.BTCPAY_CHECKOUT_ENABLED === 'true' && bitcoinConfigured(env) &&

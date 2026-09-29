@@ -1,4 +1,4 @@
-import catalog from './checkout-catalog.mjs';
+import catalog, {catalogVersion} from './checkout-catalog.mjs';
 import { insuranceRequest, insuredShipmentMatches, insuredRateMatches } from './shipping-insurance.mjs';
 
 const cents = value => Math.round(Number(value) * 100);
@@ -65,7 +65,7 @@ export async function priceOrder(env, slug, input) {
     throw new Error(`Tax calculation unavailable (${taxResponse.status})`);
   }
   return {
-    address,base:item.amount,shipping:dollars(shippingCents),tax:dollars(calculation.amount_total-paintingCents-shippingCents),
+    catalogVersion,address,base:item.amount,shipping:dollars(shippingCents),tax:dollars(calculation.amount_total-paintingCents-shippingCents),
     total:dollars(calculation.amount_total),taxCalculationId:calculation.id,
     carrier:rate.provider || 'Carrier',service:rate.servicelevel?.name || 'Shipping',
     parcel:item.parcel,packaging:item.packaging,title:item.title,

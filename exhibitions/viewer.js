@@ -7,10 +7,10 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
       const imageLink = node.querySelector('.gallery-product-image, .product-image');
       const background = imageLink && getComputedStyle(imageLink).backgroundImage.match(/url\(["']?(.*?)["']?\)/);
       const src = img?.src || background?.[1];
-      return src ? {src, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
+      return src ? {id:node.dataset.productId,src, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
     }
     const video = node.querySelector('video');
-    return img ? {src: img.src, alt: img.alt, caption: node.dataset.caption, product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
+    return img ? {id:node.dataset.productId,src: img.src, alt: img.alt, caption: node.dataset.caption, product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
   }).filter(Boolean);
   if (!items.length) return;
   const allItems = items;
@@ -158,6 +158,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   if (description && grid.classList.contains('exhibition-grid')) description.textContent = 'Swipe to browse or choose a thumbnail.';
   new IntersectionObserver(entries => { visible = entries[0].isIntersecting; schedule(); }, {threshold:0.1}).observe(box);
   show(0); updatePlay();
+  let refreshFilter;
   const filter = document.querySelector('#available-only');
   if (filter && grid.closest('.painting-gallery-page')) {
     const count = document.querySelector('#gallery-result-count');
@@ -171,9 +172,13 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
       count.textContent = `${items.length} of ${allItems.length} paintings`;
       if (items.length) show(0);
     }
+    refreshFilter=applyFilter;
     filter.closest('.gallery-filter').hidden = false;
     filter.addEventListener('change', applyFilter);
     applyFilter();
   }
-
+  document.addEventListener('catalog:availability',()=>{
+    allItems.forEach(item=>{if(!item.id)return;const node=[...grid.children].find(node=>node.dataset.productId===item.id);if(node){item.availability=node.dataset.availability;item.caption=node.dataset.caption;}});
+    if(refreshFilter)refreshFilter();else{buildItems();show(index);}
+  });
 });

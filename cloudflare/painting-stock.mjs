@@ -1,6 +1,4 @@
 import { DurableObject } from 'cloudflare:workers';
-import catalog from './checkout-catalog.mjs';
-import { commitCheckoutSale } from './paypal-inventory.mjs';
 import { recordTax } from './checkout-pricing.mjs';
 import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
 import { checkoutRecord, fulfillmentRecord, ledgerFor } from './sales-records.mjs';
@@ -92,6 +90,14 @@ export class PaintingStock extends DurableObject {
     });
     return true;
   }
+  recordExternalSale(transactionId) {
+    const orderId=`ipn:${transactionId}`,row=this.row();
+    if(row?.state==='sold')return row.order_id===orderId;
+    if(this.status()!=='available')return false;
+    this.ctx.storage.sql.exec(`INSERT INTO stock(id,state,order_id,capture_id,published,tax_recorded) VALUES(1,'sold',?,?,1,1)
+      ON CONFLICT(id) DO UPDATE SET state='sold',order_id=excluded.order_id,capture_id=excluded.capture_id,expires_at=NULL,published=1,tax_recorded=1`,orderId,transactionId);
+    return true;
+  }
   async archiveSale() {
     const row=this.row();
     if(row?.state!=='sold')return {recorded:false};
@@ -130,7 +136,7 @@ export class PaintingStock extends DurableObject {
     this.ctx.storage.sql.exec('DELETE FROM shipping_job WHERE id=1');
     return { reset: !!row, priorState: row?.state || 'available' };
   }
-  order() { const row = this.row(); return row ? {orderId:row.order_id,state:row.state,published:!!row.published,captureId:row.capture_id,total:row.total,shipping:row.shipping,tax:row.tax,destination:row.destination ? JSON.parse(row.destination) : null} : null; }
+  order() { const row = this.row(); return row ? {orderId:row.order_id,state:row.state,published:!!row.published,captureId:row.capture_id,total:row.total,base:row.total ? ((Math.round(Number(row.total)*100)-Math.round(Number(row.shipping)*100)-Math.round(Number(row.tax)*100))/100).toFixed(2) : null,shipping:row.shipping,tax:row.tax,destination:row.destination ? JSON.parse(row.destination) : null} : null; }
   markPublished(orderId) {
     if (this.row()?.order_id === orderId && this.row()?.state === 'sold') this.ctx.storage.sql.exec('UPDATE stock SET published=1 WHERE id=1');
   }
@@ -156,21 +162,10 @@ export class PaintingStock extends DurableObject {
     let finished = true;
     try { await this.archiveSale(); }
     catch { finished=false; console.error('Sales ledger needs retry'); }
-    // Sandbox captures use test services and may send explicitly marked test emails.
-    // A sandbox Worker must never publish inventory into the production repository.
-    if (this.env.PAYPAL_MODE === 'sandbox' && !row.published) this.markPublished(row.order_id);
-    // The object name is the painting slug; the first hold stores it for alarms.
+    // The durable sold state is the public inventory authority. No GitHub write
+    // or website rebuild is needed; retain the published field for old receipts.
+    if (!row.published) this.markPublished(row.order_id);
     const slug = this.ctx.storage.sql.exec('SELECT slug FROM painting WHERE id=1').toArray()[0]?.slug;
-    try {
-      if (this.env.PAYPAL_MODE !== 'sandbox' && !row.published) {
-        if (!slug || !catalog[slug] || !this.env.GITHUB_TOKEN) throw new Error('Inventory publication is not configured');
-        await commitCheckoutSale(this.env, slug, catalog[slug]);
-        this.markPublished(row.order_id);
-      }
-    } catch (error) {
-      finished = false;
-      console.error('Checkout inventory publication failed:', slug, error.message);
-    }
     try {
       if (!row.tax_recorded) {
         await recordTax(this.env,row.tax_calc_id,row.capture_id);

@@ -1,0 +1,19 @@
+name: Validate catalog and templates
+on:
+  pull_request:
+    paths: ['catalog/**', 'src/**', 'scripts/**', 'tests/**', 'package*.json', 'astro.config.mjs', 'payments/build-checkout-catalog.mjs', '.github/workflows/test-catalog.yml']
+permissions:
+  contents: read
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: git diff --exit-code -- cloudflare/checkout-catalog.mjs

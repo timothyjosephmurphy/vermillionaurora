@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+import { products } from '../catalog/catalog.mjs';
 // Create PayPal-hosted links from the live catalog's product-page prices.
 // No links are published to the website by this command.
 import { readFile, writeFile } from 'node:fs/promises';
@@ -26,24 +26,7 @@ async function paypalFetch(url, options) {
 }
 
 export async function candidates() {
-  const inventory = JSON.parse(await read('gallery/inventory.json')).paintings;
-  const published = JSON.parse(await read('payments/paypal-links.json'));
-  const rows = [];
-  for (const p of inventory) {
-    if (p.E !== 'Available' || published[p.A]) continue;
-    const slug = p.A;
-    if (!/^[a-z0-9-]+$/.test(slug) || p.D !== 'USD') throw new Error(`Invalid product ${slug}`);
-    const page = await read(`products/${slug}/index.html`);
-    const name = titleText(page.match(/<h1>([^<]+)<\/h1>/)?.[1] ?? '');
-    const price = page.match(/<p class="product-detail-price">\$([\d,]+(?:\.\d{2})?) USD<\/p>/)?.[1];
-    if (name !== p.B || !price || Number(price.replaceAll(',', '')) !== Number(p.C) ||
-        !page.includes('<p class="product-availability">Available</p>') || Number(p.C) <= 0) {
-      throw new Error(`Product page and inventory disagree for ${slug}`);
-    }
-    const artist = slug.startsWith('paul-murphy-') ? 'Paul Murphy' : 'TJ Murphy';
-    rows.push({ slug, title: name, paypalTitle: name, amount: Number(p.C).toFixed(2), currency: 'USD', artist,
-      productPage: `https://vermillionaurora.com/products/${slug}/` });
-  }
+  const rows = products.filter(p=>p.type==='painting' && p.listing.status==='available' && p.checkout?.mode!=='paypal-link').map(p=>({slug:p.slug,title:p.title,paypalTitle:p.title,amount:p.listing.price.amount,currency:p.listing.price.currency,artist:p.artist,productPage:`https://vermillionaurora.com/products/${p.slug}/`}));
   // PayPal's IPN identifies a product by its item name; make repeated titles unique.
   const counts = new Map();
   for (const row of rows) counts.set(row.title, (counts.get(row.title) ?? 0) + 1);
