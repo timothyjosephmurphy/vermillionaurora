@@ -33,7 +33,7 @@ Gmail does not provide a send idempotency key. An uncertain confirmation-send ou
 
 ## Decisions before launch
 
-1. The owner selected **Dorian Nakamoto** (`painting-portrait-in-gold`) on September 29 as the second pilot and set its price to **$20**. This branch includes both it and the $20 Chase Toole portrait in the PayPal and Bitcoin allowlists. Dorian’s parcel remains the existing estimated 12 × 4 × 4-inch, 2-lb tube; confirm its packing before deployment. No shipping measurements were changed or marked verified.
+1. The owner selected **Dorian Nakamoto** (`painting-portrait-in-gold`) on September 29 as the second pilot and set its price to **$20**. This branch includes both it and the $20 Chase Toole portrait in the PayPal and Bitcoin allowlists. The owner also selected the same flat-envelope shipping profile for Dorian as Chase: 15 × 12 inches, estimated 1/8-inch thickness and 4-oz packed weight, with insurance for the actual $20 sale value. Each portrait ships in its own envelope. Thickness and weight remain labeled as estimates.
 2. Confirm separate-parcel shipping for the first release. Combined packaging is a later improvement.
 3. Approve deployment of the API binding/migration and website together. No production or sandbox deployments, real charges, label purchases, or emails were made while developing this branch.
 4. Run a provider sandbox acceptance checkout before launching the two-item pilot. Automated tests mock external payment, shipping, tax, and email services.
