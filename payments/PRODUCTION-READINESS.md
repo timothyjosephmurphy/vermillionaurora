@@ -13,13 +13,13 @@ Pull request #3 is merged. Production checkout is deployed with purchases disabl
 The owner selected **Chase Toole** (`painting-portrait-in-green`) for the next controlled purchase, with these instructions on September 29:
 
 - Ship flat in an envelope.
-- Supplied dimensions: 12 × 15 inches. These match the recorded artwork dimensions; verify the outside packed-envelope dimensions before buying a label.
-- Contents: one sheet of watercolor paper and an envelope. No numeric measured weight or packed thickness was supplied. Do not substitute the catalog's default 2 lb estimate as a confirmed weight.
+- Envelope exterior dimensions confirmed by the owner: 12 × 15 inches.
+- Contents: one sheet of watercolor paper and an envelope. At the owner's explicit request, use an estimated packed weight of **4 oz (0.25 lb)** and thickness of **1/8 inch (0.125 in)**. These are estimates, not measurements. Further measurements are not a blocker for preparing the test.
 - Shipping insurance is requested. The intended test sale price is $20, as previously specified by the owner. Set insured value to the actual sale value when preparing the label; no insurance has been purchased or implemented by this note.
 
 Current `main` inventory and the product page both mark this painting **Sold** after the earlier payment. The inventory price field is 0 and the painting is absent from the shared checkout catalog. Before another live purchase, deliberately restore the intended $20 price and available inventory, verify stock/payment state, route the product through shared checkout rather than its legacy hosted link, and rebuild the catalog. Preserve the existing completed-payment history; do not reset it as a side effect of recording shipping preferences.
 
-Still needed: measured packed weight, packed thickness, confirmation of exterior dimensions, and insurance support in the separate shipping-label integration. These instructions are saved requirements, not a completed carrier configuration.
+The parcel override is saved in `payments/shipping-overrides.json`. The catalog builder uses its flat 15 × 12 × 0.125-inch, 0.25-lb parcel when this painting becomes eligible for shared checkout. It overrides the generic 2-lb/tube estimate. `insuranceRequested` records the requirement for the separate label integration; it does not buy coverage or add an insurance charge. Still needed for this painting: restore test availability and finish insurance support in that integration.
 
 ## Pre-deployment verification (historical)
 
@@ -37,7 +37,7 @@ Evidence: https://github.com/timothyjosephmurphy/vermillionaurora/actions/runs/3
 
 1. **Complete:** PR #3 is merged and deployed to `vermillion-commissions` with `PAYPAL_MODE=live`, `PAYPAL_CHECKOUT_ENABLED=false`, and the `PAINTING_STOCK` binding.
 2. **Connection verification complete:** live provider credentials and webhook registration passed the diagnostic. Tax-calculation and transaction-write access remain to be exercised. Live webhook URL: `https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/webhook`; event: `PAYMENT.CAPTURE.COMPLETED`.
-3. Confirm actual packed dimensions and weight and decide insurance before accepting live orders. Current quotes estimate 2 lb per package, with a 4-inch tube for works whose longer side exceeds 12 inches and flat packages for smaller works. Tube length currently equals the rounded-up shorter painting dimension; allow for end caps and padding when measuring the real package. No insurance is explicitly purchased by this checkout.
+3. Finish shipping and insurance setup before accepting live orders. Chase Toole has owner-confirmed envelope dimensions and owner-authorized weight/thickness estimates in the override above. Other current quotes estimate 2 lb per package, with a 4-inch tube for works whose longer side exceeds 12 inches and flat packages for smaller works. Tube length currently equals the rounded-up shorter painting dimension; allow for end caps and padding when measuring the real package. No insurance is explicitly purchased by this checkout.
 4. Set `PAYPAL_CHECKOUT_SLUGS` to one chosen product slug for a controlled live purchase, then set `PAYPAL_CHECKOUT_ENABLED=true`. The optional comma-separated slug list restricts new checkout to selected paintings; blank or absent allows the whole catalog. These runtime values should be set in the release configuration before deployment because Wrangler explicitly manages the enable flag.
 5. Verify the paid order, immediate sold state, GitHub inventory/page commit, public site update, webhook, and Stripe Tax record. This live inventory write was deliberately not performed by the sandbox test.
 6. Clear `PAYPAL_CHECKOUT_SLUGS` after the controlled purchase succeeds and shipping is ready for all paintings.
