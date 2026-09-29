@@ -28,7 +28,36 @@ try {
  await page.goto(origin+'/gallery/');const card=page.locator('[data-product-id="painting-portrait-in-green"]');await page.waitForFunction(()=>document.querySelector('[data-product-id="painting-portrait-in-green"]').dataset.availability==='Sold');await page.locator('#available-only').check();assert(await card.isHidden());
  await page.goto(origin+'/products/painting-portrait-in-green/');await page.getByText('Sold',{exact:true}).waitFor();await page.screenshot({path:'/tmp/catalog-preview/product-mobile.png',fullPage:true});
  await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:'/tmp/catalog-preview/product-desktop.png',fullPage:true});
+ for(const width of [1440,390]){
+  await page.setViewportSize({width,height:900});
+  await page.goto(origin+'/products/painting-portrait-in-green/');
+  const trigger=page.getByRole('link',{name:'View Chase Toole full screen'}),dialog=page.getByRole('dialog'),image=dialog.locator('img'),close=dialog.getByRole('button',{name:'Close'});
+  await trigger.scrollIntoViewIfNeeded();
+  const scroll=await page.evaluate(()=>window.scrollY);
+  await trigger.click();await dialog.waitFor();
+  await page.waitForFunction(()=>{const img=document.querySelector('.painting-lightbox img');return img.complete&&img.naturalWidth>0;});
+  assert.equal(await image.getAttribute('src'),await trigger.getAttribute('href'));
+  const bounds=await image.boundingBox(),frame=await dialog.boundingBox();
+  assert.equal(frame.y,0);assert.equal(frame.height,900);assert.equal(frame.width,width);
+  assert(bounds.x>=19&&bounds.y>=75&&bounds.x+bounds.width<=width-19&&bounds.y+bounds.height<=877,'painting fits the viewport');
+  const ratio=await image.evaluate(img=>img.naturalWidth/img.naturalHeight);
+  assert(Math.abs(bounds.width/bounds.height-ratio)<.01,'painting retains its aspect ratio');
+  assert.equal(await page.evaluate(()=>getComputedStyle(document.body).position),'fixed');
+  assert(await close.evaluate(el=>el===document.activeElement));
+  await page.keyboard.press('Tab');
+  assert(await dialog.evaluate(el=>el.contains(document.activeElement)||document.activeElement===document.body),'keyboard cannot reach the page behind the modal');
+  await image.click();assert(await dialog.isVisible(),'clicking the painting keeps it open');
+  await page.screenshot({path:`/tmp/catalog-preview/painting-viewer-${width}.png`});
+  await page.mouse.click(8,450);await dialog.waitFor({state:'hidden'});
+  await page.waitForFunction(()=>!document.documentElement.classList.contains('painting-viewer-open'));
+  assert.equal(await page.evaluate(()=>window.scrollY),scroll,'click-away restores the original scroll position');
+  assert(await trigger.evaluate(el=>el===document.activeElement),'focus returns to the image link');
+  await trigger.press('Enter');await dialog.waitFor();await page.keyboard.press('Escape');await dialog.waitFor({state:'hidden'});
+  await trigger.click();await dialog.waitFor();await close.click();await dialog.waitFor({state:'hidden'});
+  await page.waitForFunction(()=>!document.documentElement.classList.contains('painting-viewer-open'));
+  assert.equal(await page.evaluate(()=>window.scrollY),scroll);
+ }
  await page.goto(origin+'/exhibitions/gavin-robertson/');assert(await page.getByRole('heading',{name:'From the Nantucket to Cape Town'}).isVisible());assert.equal(await page.locator('iframe').getAttribute('src'),'https://www.youtube-nocookie.com/embed/i7tvzE_bqM8?playsinline=1');
  assert.deepEqual(errors,[]);assert.deepEqual([...new Set(missing)],[]);
- console.log('PASS: 10 routes on desktop/mobile; live homepage, gallery filter and artist captions; preserved film/story; no local asset errors.');
+ console.log('PASS: 10 routes on desktop/mobile; full-screen painting with click-away, Escape, close button and focus/scroll restoration; live inventory; preserved film/story; no local asset errors.');
 }finally{await browser.close();}
