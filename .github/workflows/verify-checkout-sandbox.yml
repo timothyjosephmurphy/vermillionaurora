@@ -31,3 +31,27 @@ jobs:
           cat /tmp/checkout-quote.json
           test "$status" = 200
           node -e "const q=JSON.parse(require('fs').readFileSync('/tmp/checkout-quote.json'));if(!q.total||!q.shipping||!q.tax)process.exit(1)"
+      - name: Create and cancel PayPal sandbox order
+        run: |
+          node --input-type=module <<'NODE'
+          const base='https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev';
+          const slug='honeybadger-and-cub-with-genesis-block';
+          const address={name:'Test Buyer',street1:'1600 Amphitheatre Pkwy',city:'Mountain View',state:'CA',zip:'94043'};
+          const quote=JSON.parse((await import('node:fs')).readFileSync('/tmp/checkout-quote.json','utf8'));
+          const post=async(path,body)=>{
+            const response=await fetch(base+'/checkout/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+            return {code:response.status,data:await response.json()};
+          };
+          const created=await post('create',{slug,address,expectedTotal:quote.total});
+          console.log('Sandbox PayPal order creation HTTP',created.code);
+          if(created.code!==200||!created.data.testOrderId||!created.data.testHoldId||new URL(created.data.url).hostname!=='www.sandbox.paypal.com') {
+            console.log('Order creation response:',created.data.error||'Unexpected response');
+            process.exit(1);
+          }
+          const cancelled=await post('cancel',{slug,orderId:created.data.testOrderId,holdId:created.data.testHoldId});
+          console.log('Sandbox PayPal order cancellation HTTP',cancelled.code,cancelled.data.status);
+          if(cancelled.code!==200||cancelled.data.status!=='cancelled')process.exit(1);
+          const status=await (await fetch(base+'/checkout/status?slug='+slug)).json();
+          console.log('Stock after cancellation:',status.status);
+          if(status.status!=='available')process.exit(1);
+          NODE
