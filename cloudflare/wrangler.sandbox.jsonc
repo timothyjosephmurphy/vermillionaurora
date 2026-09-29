@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "vermillion-checkout-sandbox",
+  "main": "checkout-sandbox.mjs",
+  "compatibility_date": "2026-09-25",
+  "workers_dev": true,
+  "keep_vars": true,
+  "vars": {
+    "PAYPAL_CHECKOUT_ENABLED": "false",
+    "PAYPAL_MODE": "sandbox",
+    "SANDBOX_RETURN_ORIGIN": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev"
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "PAINTING_STOCK", "class_name": "PaintingStock" }]
+  },
+  "migrations": [{ "tag": "painting-stock-sandbox-v1", "new_sqlite_classes": ["PaintingStock"] }],
+  "observability": {"logs": {"enabled": true}}
+}
