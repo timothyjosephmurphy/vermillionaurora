@@ -162,7 +162,7 @@ async function main() {
     }
     existing[key][row.slug] = { ...row, id: result.id, url, stockVerified: false };
     await writeFile(output, JSON.stringify(existing, null, 2) + '\n', { mode: 0o600 });
-    console.log(`${row.slug}: ${url}`);
+    console.log(`${row.slug}: link created; URL saved in the workflow artifact`);
   }
   console.log(`Recorded ${Object.keys(existing[key]).length} ${key} links in payments/generated-links.local. Set stock to 1 and block out-of-stock purchases in PayPal before publishing any links.`);
 }
