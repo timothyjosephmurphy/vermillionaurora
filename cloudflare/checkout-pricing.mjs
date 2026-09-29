@@ -53,7 +53,7 @@ export async function priceOrder(env, slug, input) {
   const calculation = await taxResponse.json();
   if (!taxResponse.ok || calculation.currency !== 'usd' || !Number.isSafeInteger(calculation.amount_total) ||
       calculation.amount_total < paintingCents + shippingCents || !/^taxcalc_/.test(calculation.id || '')) {
-    throw new Error(`Tax calculation unavailable (${taxResponse.status})`);
+    throw new Error(`Tax calculation unavailable (${taxResponse.status}; ${calculation.error?.type || 'unknown'}; ${calculation.error?.code || 'no-code'}; ${calculation.error?.message || 'no-message'})`);
   }
   return {
     address,base:item.amount,shipping:dollars(shippingCents),tax:dollars(calculation.amount_total-paintingCents-shippingCents),
