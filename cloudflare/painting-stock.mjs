@@ -2,6 +2,7 @@ import { DurableObject } from 'cloudflare:workers';
 import catalog from './checkout-catalog.mjs';
 import { commitCheckoutSale } from './paypal-inventory.mjs';
 import { recordTax } from './checkout-pricing.mjs';
+import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
 
 // One SQLite-backed object per original. All state changes happen on the same object.
 export class PaintingStock extends DurableObject {
@@ -22,6 +23,8 @@ export class PaintingStock extends DurableObject {
       tax_calc_id TEXT,
       destination TEXT
     )`);
+    // Separate table adds fulfillment without altering existing stock records.
+    ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS shipping_job (id INTEGER PRIMARY KEY CHECK (id=1), data TEXT NOT NULL)');
   }
 
   row() { return this.ctx.storage.sql.exec('SELECT * FROM stock WHERE id = 1').toArray()[0]; }
@@ -43,6 +46,8 @@ export class PaintingStock extends DurableObject {
     if (row?.state !== 'held' || row.hold_id !== holdId || row.expires_at <= Date.now() || row.order_id) return false;
     this.ctx.storage.sql.exec('UPDATE stock SET order_id=?,total=?,shipping=?,tax=?,tax_calc_id=?,destination=? WHERE id=1',
       orderId,quote.total,quote.shipping,quote.tax,quote.taxCalculationId,JSON.stringify(quote.address));
+    this.ctx.storage.sql.exec('INSERT OR REPLACE INTO shipping_job (id,data) VALUES (1,?)',
+      JSON.stringify(newShippingJob(this.env, orderId, quote)));
     return true;
   }
   beginCapture(orderId, holdId) {
@@ -98,29 +103,46 @@ export class PaintingStock extends DurableObject {
   }
   async alarm() {
     const row = this.row();
-    if (!row || row.state !== 'sold' || (row.published && row.tax_recorded)) return;
-    // Sandbox captures exercise the stock state machine and Stripe test ledger only.
+    if (!row || row.state !== 'sold') return;
+    // Schedule recovery before external I/O, including a process crash during purchase.
+    await this.ctx.storage.setAlarm(Date.now() + 60_000);
+    let finished = true;
+    // Sandbox captures use test services and may send explicitly marked test emails.
     // A sandbox Worker must never publish inventory into the production repository.
     if (this.env.PAYPAL_MODE === 'sandbox' && !row.published) this.markPublished(row.order_id);
     // The object name is the painting slug; the first hold stores it for alarms.
     const slug = this.ctx.storage.sql.exec('SELECT slug FROM painting WHERE id=1').toArray()[0]?.slug;
-    if (!slug || !catalog[slug] || (this.env.PAYPAL_MODE !== 'sandbox' && !this.env.GITHUB_TOKEN)) {
-      await this.ctx.storage.setAlarm(Date.now() + 60_000);
-      return;
-    }
     try {
       if (this.env.PAYPAL_MODE !== 'sandbox' && !row.published) {
+        if (!slug || !catalog[slug] || !this.env.GITHUB_TOKEN) throw new Error('Inventory publication is not configured');
         await commitCheckoutSale(this.env, slug, catalog[slug]);
         this.markPublished(row.order_id);
       }
+    } catch (error) {
+      finished = false;
+      console.error('Checkout inventory publication failed:', slug, error.message);
+    }
+    try {
       if (!row.tax_recorded) {
         await recordTax(this.env,row.tax_calc_id,row.capture_id);
         this.ctx.storage.sql.exec('UPDATE stock SET tax_recorded=1 WHERE id=1');
       }
     } catch (error) {
-      console.error('Checkout inventory publication failed:', slug, error.message);
-      await this.ctx.storage.setAlarm(Date.now() + 60_000);
+      finished = false;
+      console.error('Checkout tax recording failed:', slug, error.message);
     }
+    try {
+      const storedJob = this.ctx.storage.sql.exec('SELECT data FROM shipping_job WHERE id=1').toArray()[0];
+      const shipped = await fulfillSale(this.env, {...row,slug}, storedJob ? JSON.parse(storedJob.data) : null, async job => {
+        this.ctx.storage.sql.exec('UPDATE shipping_job SET data=? WHERE id=1', JSON.stringify(job));
+        await this.ctx.storage.sync();
+      });
+      if (!shipped) finished = false;
+    } catch (error) {
+      finished = false;
+      console.error('Checkout shipping notification failed:', slug, error.message);
+    }
+    if (finished) await this.ctx.storage.deleteAlarm();
   }
   initialize(slug) {
     this.ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS painting (id INTEGER PRIMARY KEY CHECK (id=1), slug TEXT NOT NULL)');

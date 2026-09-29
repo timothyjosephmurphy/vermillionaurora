@@ -153,7 +153,8 @@ export default {
       "height": 0.125,
       "weight": 0.25
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "insuranceRequested": true
   },
   "painting-portrait-in-gold": {
     "title": "Dorian Nakamoto",

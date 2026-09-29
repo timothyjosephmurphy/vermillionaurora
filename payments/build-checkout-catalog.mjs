@@ -34,7 +34,8 @@ for (const painting of inventory.paintings) {
     : {length:Math.ceil(longer + 2),width:Math.ceil(shorter + 2),height:2,weight:2};
   const profile = shippingOverrides[slug];
   const parcel = profile ? Object.fromEntries(['length', 'width', 'height', 'weight'].map(key => [key, profile.parcel[key]])) : estimatedParcel;
-  catalog[slug] = { title, amount: Number(rawPrice).toFixed(2), currency, parcel, packaging:profile?.packaging ?? (rolled ? 'tube' : 'flat') };
+  catalog[slug] = { title, amount: Number(rawPrice).toFixed(2), currency, parcel, packaging:profile?.packaging ?? (rolled ? 'tube' : 'flat'),
+    ...(profile?.insuranceRequested === true ? {insuranceRequested:true} : {}) };
 }
 await writeFile(new URL('../cloudflare/checkout-catalog.mjs', import.meta.url), `export default ${JSON.stringify(catalog, null, 2)};\n`);
 console.log(`Built checkout catalog: ${Object.keys(catalog).length} paintings`);
