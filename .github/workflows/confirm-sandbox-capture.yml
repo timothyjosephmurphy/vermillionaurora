@@ -1,5 +1,4 @@
-name: Confirm sandbox capture, stock, and event
-run-name: Recheck PayPal event history with bounded query
+name: Confirm sandbox capture and stock
 on:
   push:
     branches: [main]
@@ -20,9 +19,3 @@ jobs:
             'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/status?slug=honeybadger-and-cub-with-genesis-block' \
             -o /tmp/stock.json
           node -e "const s=JSON.parse(require('fs').readFileSync('/tmp/stock.json')); console.log('Sandbox stock:',s.status); if(s.status!=='sold') process.exit(1)"
-      - name: Audit PayPal sandbox webhook registration
-        run: |
-          curl --silent --show-error --fail --max-time 20 \
-            'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/webhook-audit' \
-            -o /tmp/webhook.json
-          node -e "const w=JSON.parse(require('fs').readFileSync('/tmp/webhook.json')); console.log('Webhook audit:',JSON.stringify(w));"
