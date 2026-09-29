@@ -88,7 +88,7 @@ export async function checkout(request, env) {
           cancel_url:env.PAYPAL_MODE === 'sandbox' ? `${site(env)}/checkout/test?slug=${slug}&checkout=cancel&hold=${holdId}` : `${SITE}/products/${slug}/?checkout=cancel&hold=${holdId}`}}}
       },holdId);
       const payeeId = order.purchase_units?.[0]?.payee?.merchant_id;
-      if (payeeId && payeeId !== env.PAYPAL_MERCHANT_ID) throw new Error(`PayPal order merchant does not match configured merchant: ${payeeId}`);
+      if (payeeId && payeeId !== env.PAYPAL_MERCHANT_ID) throw new Error('PayPal order merchant does not match configured merchant');
       const approve = order.links?.find(link => link.rel === 'payer-action' || link.rel === 'approve')?.href;
       const allowedHosts = env.PAYPAL_MODE === 'sandbox' ? ['sandbox.paypal.com','www.sandbox.paypal.com'] : ['paypal.com','www.paypal.com'];
       if (!ORDER_ID.test(order.id || '') || !approve || new URL(approve).protocol !== 'https:' || !allowedHosts.includes(new URL(approve).hostname) ||
@@ -97,7 +97,7 @@ export async function checkout(request, env) {
     } catch (error) {
       await stub.release(holdId);
       console.error('Checkout create failed:',slug,error.message);
-      return respond({error:'Could not start checkout. Please try again.', ...(env.PAYPAL_MODE === 'sandbox' ? {reason:error.message} : {})},502);
+      return respond({error:'Could not start checkout. Please try again.'},502);
     }
   }
   if (!ORDER_ID.test(data.orderId || '') || !HOLD_ID.test(data.holdId || '')) return respond({error:'Invalid checkout return.'},400);
