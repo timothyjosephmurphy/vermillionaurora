@@ -1,5 +1,5 @@
 name: Verify isolated checkout sandbox
-run-name: Verify corrected sandbox merchant binding
+run-name: Verify final sandbox checkout order
 
 on:
   push:
