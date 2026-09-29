@@ -16,12 +16,14 @@ fs.mkdirSync(output,{recursive:true});
   const quote={base:'20.00',shipping:'6.01',tax:'0.00',total:'26.01',carrier:'UPS',service:'Ground',packaging:'flat'};
   await page.route('**/*',async route=>{
     const request=route.request(), url=new URL(request.url());
+    const cors={'Access-Control-Allow-Origin':'https://vermillionaurora.com','Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type'};
+    if(request.method()==='OPTIONS')return route.fulfill({status:204,headers:cors});
     if(url.hostname==='www.paypal.com'){redirects++;return route.fulfill({body:'Mock PayPal checkout'});}
-    if(url.pathname==='/checkout/status')return route.fulfill({json:{status:'available',title:'Chase Toole',amount:'20.00',currency:'USD'}});
-    if(url.pathname==='/checkout/quote')return new Promise(resolve=>quoteRequests.push({data:request.postDataJSON(),finish:async(json=quote,status=200)=>{await route.fulfill({status,json});resolve();}}));
+    if(url.pathname==='/checkout/status')return route.fulfill({headers:cors,json:{status:'available',title:'Chase Toole',amount:'20.00',currency:'USD'}});
+    if(url.pathname==='/checkout/quote')return new Promise(resolve=>quoteRequests.push({data:request.postDataJSON(),finish:async(json=quote,status=200)=>{await route.fulfill({status,json,headers:cors});resolve();}}));
     if(url.pathname==='/checkout/create'){
       createRequests.push(request.postDataJSON());
-      return route.fulfill(createFails?{status:502,json:{error:'Could not start checkout. Please try again.'}}:{json:{url:'https://www.paypal.com/checkoutnow?token=TEST'}});
+      return route.fulfill(createFails?{headers:cors,status:502,json:{error:'Could not start checkout. Please try again.'}}:{headers:cors,json:{url:'https://www.paypal.com/checkoutnow?token=TEST'}});
     }
     if(url.pathname==='/products/painting-portrait-in-green/'){
       let html=fs.readFileSync(path.join(root,'products/painting-portrait-in-green/index.html'),'utf8');
