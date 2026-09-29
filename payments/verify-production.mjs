@@ -26,6 +26,12 @@ try {
   const archive=await archiveResponse.json();
   console.log('Private sales archive:',JSON.stringify(archive));
   if(!archiveResponse.ok||!archive.ready)throw Error('Sales archive verification failed');
+  if(expected.CHECKOUT_RESET_SLUG) {
+    const resetResponse=await fetch(base+'/checkout/sales-maintenance?action=reset&slug='+encodeURIComponent(expected.CHECKOUT_RESET_SLUG),{method:'POST',headers:{Authorization:`Bearer ${secret}`},signal:AbortSignal.timeout(90000)});
+    const reset=await resetResponse.json();
+    console.log('Production stock reset:',JSON.stringify(reset));
+    if(!resetResponse.ok||reset.slug!==expected.CHECKOUT_RESET_SLUG||reset.result?.priorState!=='sold')throw Error('Production stock reset failed');
+  }
   const denied=await fetch(base+'/checkout/sales-maintenance',{method:'POST'});
   if(denied.status!==404)throw Error('Unauthenticated accounting access was not denied');
   const r=await fetch(base+'/checkout/status?slug=honeybadger-and-cub-with-genesis-block');
