@@ -5,8 +5,14 @@
   "compatibility_date": "2026-09-25",
   "keep_vars": true,
   "vars": {
-    "PAYPAL_IPN_ENABLED": "true"
+    "PAYPAL_IPN_ENABLED": "true",
+    "PAYPAL_CHECKOUT_ENABLED": "false",
+    "PAYPAL_MODE": "live"
   },
+  "durable_objects": {
+    "bindings": [{ "name": "PAINTING_STOCK", "class_name": "PaintingStock" }]
+  },
+  "migrations": [{ "tag": "painting-stock-v1", "new_sqlite_classes": ["PaintingStock"] }],
   "r2_buckets": [
     {
       "binding": "COMMISSION_UPLOADS",

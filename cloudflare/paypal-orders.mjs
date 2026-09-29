@@ -1,0 +1,150 @@
+import catalog from './checkout-catalog.mjs';
+
+const SITE = 'https://vermillionaurora.com';
+const ORDER_ID = /^[A-Z0-9]{1,36}$/;
+const HOLD_ID = /^[0-9a-f-]{36}$/;
+const SLUG = /^[a-z0-9-]+$/;
+const cors = { 'Access-Control-Allow-Origin':SITE, 'Access-Control-Allow-Methods':'GET, POST, OPTIONS', 'Access-Control-Allow-Headers':'Content-Type', 'Vary':'Origin', 'Cache-Control':'no-store' };
+const json = (body, status=200) => new Response(JSON.stringify(body), {status, headers:{...cors,'Content-Type':'application/json'}});
+const configured = env => env.PAYPAL_CHECKOUT_ENABLED === 'true' && env.PAYPAL_CLIENT_ID && env.PAYPAL_CLIENT_SECRET && env.PAYPAL_MERCHANT_ID && env.GITHUB_TOKEN && env.PAINTING_STOCK;
+const stock = (env, slug) => env.PAINTING_STOCK.getByName(slug);
+const paypalBase = env => env.PAYPAL_MODE === 'sandbox' ? 'https://api-m.sandbox.paypal.com' : 'https://api-m.paypal.com';
+
+async function token(env) {
+  const response = await fetch(`${paypalBase(env)}/v1/oauth2/token`, {
+    method:'POST',
+    headers:{Authorization:`Basic ${btoa(`${env.PAYPAL_CLIENT_ID}:${env.PAYPAL_CLIENT_SECRET}`)}`, 'Content-Type':'application/x-www-form-urlencoded'},
+    body:'grant_type=client_credentials'
+  });
+  const body = await response.json();
+  if (!response.ok || !body.access_token) throw new Error(`PayPal token: ${response.status}`);
+  return body.access_token;
+}
+async function paypal(env, path, accessToken, body, requestId) {
+  const response = await fetch(`${paypalBase(env)}${path}`, {
+    method:body === undefined ? 'GET' : 'POST',
+    headers:{Authorization:`Bearer ${accessToken}`, 'Content-Type':'application/json', 'Prefer':'return=representation', ...(requestId ? {'PayPal-Request-Id':requestId} : {})},
+    body:body === undefined ? undefined : JSON.stringify(body)
+  });
+  const result = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const error = new Error(`PayPal API: ${response.status} ${result.name || ''}`);
+    error.status = response.status;
+    throw error;
+  }
+  return result;
+}
+export async function checkout(request, env) {
+  const url = new URL(request.url);
+  if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:cors});
+  if (!configured(env)) return json({error:'Checkout is being set up.'},503);
+  const origin = request.headers.get('Origin');
+  if (origin && origin !== SITE) return json({error:'Origin not allowed.'},403);
+
+  if (url.pathname === '/checkout/status' && request.method === 'GET') {
+    const slug = url.searchParams.get('slug');
+    if (!catalog[slug]) return json({error:'Painting not in checkout catalog.'},404);
+    return json({status:await stock(env,slug).status(),title:catalog[slug].title,amount:catalog[slug].amount,currency:'USD'});
+  }
+  if (!['/checkout/create','/checkout/capture','/checkout/cancel'].includes(url.pathname) || request.method !== 'POST') return json({error:'Not found.'},404);
+  let data;
+  try { data = await request.json(); } catch { return json({error:'Invalid request.'},400); }
+  const slug = data?.slug;
+  if (typeof slug !== 'string' || !SLUG.test(slug) || !catalog[slug]) return json({error:'Painting not in checkout catalog.'},404);
+  const item = catalog[slug];
+  const stub = stock(env,slug);
+
+  if (url.pathname === '/checkout/create') {
+    const holdId = crypto.randomUUID();
+    if (!await stub.reserve(holdId)) return json({error:'This painting is reserved or sold.'},409);
+    await stub.initialize(slug);
+    try {
+      const accessToken = await token(env);
+      const order = await paypal(env,'/v2/checkout/orders',accessToken,{
+        intent:'CAPTURE',
+        purchase_units:[{reference_id:slug,custom_id:slug,description:item.title,
+          amount:{currency_code:'USD',value:item.amount}}],
+        payment_source:{paypal:{experience_context:{brand_name:'Vermillion Aurora',user_action:'PAY_NOW',shipping_preference:'GET_FROM_FILE',
+          return_url:`${SITE}/products/${slug}/?checkout=return&hold=${holdId}`,
+          cancel_url:`${SITE}/products/${slug}/?checkout=cancel&hold=${holdId}`}}}
+      },holdId);
+      const approve = order.links?.find(link => link.rel === 'payer-action' || link.rel === 'approve')?.href;
+      const allowedHosts = env.PAYPAL_MODE === 'sandbox' ? ['sandbox.paypal.com','www.sandbox.paypal.com'] : ['paypal.com','www.paypal.com'];
+      if (!ORDER_ID.test(order.id || '') || !approve || new URL(approve).protocol !== 'https:' || !allowedHosts.includes(new URL(approve).hostname) ||
+          !await stub.bindOrder(holdId,order.id)) throw new Error('Invalid PayPal approval response');
+      return json({url:approve});
+    } catch (error) {
+      await stub.release(holdId);
+      console.error('Checkout create failed:',slug,error.message);
+      return json({error:'Could not start checkout. Please try again.'},502);
+    }
+  }
+  if (!ORDER_ID.test(data.orderId || '') || !HOLD_ID.test(data.holdId || '')) return json({error:'Invalid checkout return.'},400);
+  if (url.pathname === '/checkout/cancel') {
+    await stub.releaseOrder(data.orderId,data.holdId);
+    return json({status:'cancelled'});
+  }
+  const state = await stub.beginCapture(data.orderId,data.holdId);
+  if (state === 'sold') return json({status:'sold'});
+  if (state === 'invalid' || state === 'expired') return json({error:'This checkout has expired.'},409);
+  try {
+    const accessToken = await token(env);
+    let order = await paypal(env,`/v2/checkout/orders/${data.orderId}`,accessToken);
+    if (order.status !== 'COMPLETED') {
+      const unit = order.purchase_units?.[0];
+      if (order.status !== 'APPROVED' || order.purchase_units?.length !== 1 || unit?.reference_id !== slug || unit?.custom_id !== slug ||
+          unit?.amount?.currency_code !== 'USD' || unit?.amount?.value !== item.amount) throw new Error('Order did not match the painting or is not approved');
+      order = await paypal(env,`/v2/checkout/orders/${data.orderId}/capture`,accessToken,{},`capture-${data.orderId}`);
+    }
+    const capture = validateCapture(order,slug,env);
+    if (!capture || !await stub.complete(data.orderId,capture)) throw new Error('Capture is not completed or did not match');
+    return json({status:'sold'});
+  } catch (error) {
+    // A timed-out capture may still complete. Keep the lock and reconcile by webhook or retry.
+    console.error('Checkout capture needs reconciliation:',slug,data.orderId,error.message);
+    return json({error:'We could not confirm the payment yet. Please check PayPal Activity before trying again.'},503);
+  }
+}
+
+function validateCapture(order,slug,env) {
+  const item = catalog[slug];
+  const unit = order?.purchase_units?.[0];
+  const captures = unit?.payments?.captures;
+  const capture = captures?.[0];
+  if (order?.status !== 'COMPLETED' || order.purchase_units.length !== 1 || unit.reference_id !== slug || unit.custom_id !== slug ||
+      unit.amount?.currency_code !== 'USD' || unit.amount?.value !== item.amount || captures.length !== 1 ||
+      capture?.status !== 'COMPLETED' || capture.amount?.currency_code !== 'USD' || capture.amount?.value !== item.amount ||
+      (unit.payee?.merchant_id && unit.payee.merchant_id !== env.PAYPAL_MERCHANT_ID) || !capture.id) return null;
+  return capture.id;
+}
+
+export async function checkoutWebhook(request,env) {
+  if (request.method !== 'POST') return new Response('Method not allowed',{status:405});
+  if (!configured(env) || !env.PAYPAL_WEBHOOK_ID || !env.PAYPAL_MERCHANT_ID) return new Response('Not configured',{status:503});
+  const raw = await request.text();
+  if (raw.length > 64000) return new Response('Too large',{status:413});
+  try {
+    const event = JSON.parse(raw);
+    const accessToken = await token(env);
+    const verification = await paypal(env,'/v1/notifications/verify-webhook-signature',accessToken,{
+      auth_algo:request.headers.get('paypal-auth-algo'),cert_url:request.headers.get('paypal-cert-url'),
+      transmission_id:request.headers.get('paypal-transmission-id'),transmission_sig:request.headers.get('paypal-transmission-sig'),
+      transmission_time:request.headers.get('paypal-transmission-time'),webhook_id:env.PAYPAL_WEBHOOK_ID,webhook_event:event
+    });
+    if (verification.verification_status !== 'SUCCESS') return new Response('Invalid signature',{status:400});
+    if (event.event_type !== 'PAYMENT.CAPTURE.COMPLETED') return new Response('Ignored');
+    const orderId = event.resource?.supplementary_data?.related_ids?.order_id;
+    if (!ORDER_ID.test(orderId || '')) return new Response('Ignored');
+    const order = await paypal(env,`/v2/checkout/orders/${orderId}`,accessToken);
+    const slug = order.purchase_units?.[0]?.reference_id;
+    if (!catalog[slug]) return new Response('Ignored');
+    const captureId = validateCapture(order,slug,env);
+    if (!captureId || captureId !== event.resource?.id) return new Response('Invalid capture',{status:400});
+    const stub = stock(env,slug);
+    if (!await stub.complete(orderId,captureId)) return new Response('Unrecognized order',{status:409});
+    return new Response('OK');
+  } catch(error) {
+    console.error('Checkout webhook failed:',error.message);
+    return new Response('Retry later',{status:503});
+  }
+}

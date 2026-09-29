@@ -170,6 +170,60 @@ export function applySale(files, slug, item) {
   return changed;
 }
 
+// Shared checkout uses the same four-page inventory update but has no reusable link.
+export async function commitCheckoutSale(env, slug, item) {
+  const productPath = `products/${slug}/index.html`;
+  const paul = slug.startsWith('paul-murphy-painting-');
+  const paulPath = 'exhibitions/paul-murphy/index.html';
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const head = await github(env, `git/ref/heads/${BRANCH}`);
+    const sha = head.object.sha;
+    const commit = await github(env, `git/commits/${sha}`);
+    const files = await readFiles(env, sha, paul ? ['gallery/inventory.json',productPath,paulPath,'payments/paypal-links.json'] : [...FILES, productPath]);
+    const inventory = JSON.parse(files['gallery/inventory.json']);
+    const painting = inventory.paintings.find(p => p.A === slug);
+    if (painting?.E === 'Sold') return;
+    if (!painting || painting.E !== 'Available' || painting.B !== item.title || Number(painting.C) !== Number(item.amount)) {
+      throw new Error(`Inventory mismatch for ${slug}`);
+    }
+    // Reuse the page and card transformation, with a temporary link entry only in memory.
+    const links = JSON.parse(files['payments/paypal-links.json']);
+    if (links[slug]) throw new Error(`Conflicting hosted link for ${slug}`);
+    let changes;
+    if (paul) {
+      painting.C = '0'; painting.E = 'Sold'; inventory.updated = new Date().toISOString().slice(0,10);
+      const product = files[productPath];
+      if (!product.includes(`<h1>${item.title}</h1>`) || !product.includes('<p class="product-availability">Available</p>')) throw new Error(`Product page mismatch for ${slug}`);
+      const card = new RegExp(`(<a class="ex-photo"[^>]*data-product="/products/${slug}/"[^>]*>)`);
+      const exhibition = files[paulPath].replace(card,match => match.replace(/data-caption="[^"]*"/, 'data-caption="Sold"'));
+      if (exhibition === files[paulPath]) throw new Error(`Exhibition card missing for ${slug}`);
+      changes = {
+        'gallery/inventory.json':JSON.stringify(inventory,null,2)+'\n',
+        [productPath]:product.replace('<p class="product-availability">Available</p>','<p class="product-availability">Sold</p>').replace('Available."','Sold."'),
+        [paulPath]:exhibition
+      };
+    } else {
+      links[slug] = { ...item, autoInventory: true };
+      changes = applySale({...files, 'payments/paypal-links.json': JSON.stringify(links)}, slug, item);
+      delete changes['payments/paypal-links.json'];
+    }
+    const tree = await github(env, 'git/trees', {
+      base_tree: commit.tree.sha,
+      tree: Object.entries(changes).map(([path, content]) => ({path, mode:'100644', type:'blob', content}))
+    });
+    const newCommit = await github(env, 'git/commits', {
+      message: `Mark ${slug} sold after verified PayPal checkout`, tree:tree.sha, parents:[sha]
+    });
+    try {
+      await github(env, `git/refs/heads/${BRANCH}`, {sha:newCommit.sha,force:false}, 'PATCH');
+      return;
+    } catch (error) {
+      if (error.status !== 409 && error.status !== 422) throw error;
+    }
+  }
+  throw new Error('GitHub main changed during checkout inventory update');
+}
+
 function formatPrice(amount) {
   return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Number(amount));
 }
