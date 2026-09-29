@@ -1,4 +1,5 @@
 name: Deploy isolated checkout sandbox
+run-name: Redeploy and verify sandbox checkout
 
 on:
   push:
