@@ -38,7 +38,7 @@ function transactionState(job, transaction) {
   return {...job,status:'review',reason:`Shippo label status: ${String(transaction.status || 'unknown').slice(0,40)}. Check the transaction in Shippo.`};
 }
 
-// Called only by the per-painting alarm after validated PayPal capture.
+// Called only by the per-painting alarm after verified payment settlement.
 // `save` must durably commit before resolving. Never repeat a transaction POST:
 // Shippo does not document an idempotency key for this endpoint.
 export async function fulfillSale(env, sale, initialJob, save) {
@@ -59,7 +59,7 @@ export async function fulfillSale(env, sale, initialJob, save) {
       (!await verifyQuotedInsurance(env, job.quote) ? 'The saved shipping rate no longer confirms the requested insurance. No label was purchased.' : '');
     if (reason) await persist({...job,status:'review',reason});
     else {
-      await persist({...job,status:'purchasing',metadata:`paypal-${sale.capture_id}`,attemptedAt:Date.now(),
+      await persist({...job,status:'purchasing',metadata:sale.capture_id.startsWith('btcpay:')?sale.capture_id:`paypal-${sale.capture_id}`,attemptedAt:Date.now(),
         ...(job.quote.insurance ? {insuranceVerified:true} : {})});
       let transaction;
       try {

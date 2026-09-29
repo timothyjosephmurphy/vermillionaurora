@@ -219,7 +219,7 @@ export async function commitCheckoutSale(env, slug, item) {
       tree: Object.entries(changes).map(([path, content]) => ({path, mode:'100644', type:'blob', content}))
     });
     const newCommit = await github(env, 'git/commits', {
-      message: `Mark ${slug} sold after verified PayPal checkout`, tree:tree.sha, parents:[sha]
+      message: `Mark ${slug} sold after verified checkout`, tree:tree.sha, parents:[sha]
     });
     try {
       await github(env, `git/refs/heads/${BRANCH}`, {sha:newCommit.sha,force:false}, 'PATCH');

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const availability = summary?.querySelector('.product-availability')?.textContent?.trim();
   const title = document.querySelector('.product-layout h1')?.textContent?.trim();
   const slug = location.pathname.match(/^\/products\/([a-z0-9-]+)\/?$/)?.[1];
-  if (!inquiry || !slug || !title || availability !== 'Available' || !priceText) return;
+  if (!inquiry || !slug || !title) return;
 
   const endpoint = 'https://vermillion-commissions.timothyjosephmurphy.workers.dev';
   const params = new URLSearchParams(location.search);
@@ -19,6 +19,57 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!response.ok) throw new Error(result.error || 'Checkout is unavailable.');
     return result;
   };
+  const bitcoinKey = `bitcoin-order:${slug}`;
+  const rememberBitcoin = id => { try { if(id)sessionStorage.setItem(bitcoinKey,id);else sessionStorage.removeItem(bitcoinKey); } catch {} };
+  const bitcoinReturn = params.get('bitcoin');
+  async function showBitcoinOrder(orderId) {
+    inquiry.prepend(notice);
+    notice.textContent = 'Checking your Bitcoin payment…';
+    const controls = document.createElement('div');
+    controls.className = 'bitcoin-order-controls';
+    const resume = document.createElement('a');
+    resume.className = 'button button-solid'; resume.textContent = 'Resume Bitcoin payment'; resume.hidden = true;
+    resume.rel = 'noreferrer';
+    const check = document.createElement('button');
+    check.type = 'button'; check.className = 'button button-ghost'; check.textContent = 'Check payment status';
+    controls.append(resume,check); notice.after(controls);
+    let attempts = 0, timer, busy = false, terminal = false;
+    const refresh = async () => {
+      if(busy || terminal)return;
+      clearTimeout(timer); busy = true; check.disabled = true;
+      try {
+        const result = await post('/checkout/bitcoin/order',{slug,orderId});
+        const messages = {
+          creating:'Preparing your Bitcoin invoice. Please check again shortly.',
+          preparing:'Preparing your Bitcoin invoice. Please check again shortly.',
+          pending:'Your painting is reserved. Complete payment on your BTCPay invoice.',
+          processing:'Bitcoin payment received and awaiting confirmation. Your painting remains reserved.',
+          settled:'Bitcoin payment confirmed. Thank you for purchasing this painting!',
+          expired:'This Bitcoin invoice expired without payment. Reload this page to start a new checkout.',
+          review:'Your Bitcoin payment needs review. Please contact tj@vermillionaurora.com with your invoice number before paying again.',
+          missing:'This Bitcoin order could not be found. Please contact tj@vermillionaurora.com if you sent a payment.',
+          unavailable:'This painting was reserved by another buyer before your invoice was created.'
+        };
+        notice.textContent = messages[result.status] || 'Your Bitcoin payment is being checked.';
+        resume.hidden = true;
+        if(result.url && result.status === 'pending') {
+          const target = new URL(result.url);
+          if(target.protocol === 'https:' && !target.username && !target.password) { resume.href=target.href;resume.hidden=false; }
+        }
+        if(result.status === 'settled') summary.querySelector('.product-availability').textContent = 'Sold';
+        terminal = ['settled','expired','unavailable','missing'].includes(result.status);
+        if(terminal) { rememberBitcoin(null);check.hidden=true; }
+        if(!terminal && result.status !== 'review' && ++attempts < 12) timer=setTimeout(refresh,5000);
+      } catch(error) { notice.textContent=error.message; }
+      finally { busy=false;check.disabled=false; }
+    };
+    check.addEventListener('click',refresh);
+    await refresh();
+  }
+  if(bitcoinReturn) { rememberBitcoin(bitcoinReturn);await showBitcoinOrder(bitcoinReturn);return; }
+  let savedBitcoin;
+  try { savedBitcoin=sessionStorage.getItem(bitcoinKey); } catch {}
+  if(savedBitcoin && !params.has('checkout')) { await showBitcoinOrder(savedBitcoin);return; }
   const queryCheckout = params.get('checkout');
   if (queryCheckout === 'return' || queryCheckout === 'cancel') {
     inquiry.prepend(notice);
@@ -38,14 +89,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (queryCheckout === 'return') return;
   }
 
+  if (availability !== 'Available' || !priceText) return;
+
   // Shared checkout is enabled on the Worker only after its credentials and
   // inventory binding are configured. Until then the inquiry link remains.
   try {
-    const response = await fetch(`${endpoint}/checkout/status?slug=${encodeURIComponent(slug)}`, {cache:'no-store'});
-    if (response.ok) {
-      const current = await response.json();
-      const shownPrice = Number(priceText.replace(/[^\d.]/g,''));
-      if (current.title !== title || current.currency !== 'USD' || Number(current.amount) !== shownPrice) return;
+    const shownPrice = Number(priceText.replace(/[^\d.]/g,''));
+    const loadStatus = async path => {
+      try { const response=await fetch(`${endpoint}${path}?slug=${encodeURIComponent(slug)}`,{cache:'no-store'});return response.ok?await response.json():null; }
+      catch { return null; }
+    };
+    const [paypalStatus,bitcoinStatus] = await Promise.all([loadStatus('/checkout/status'),loadStatus('/checkout/bitcoin/status')]);
+    const matches = value => value && value.title === title && value.currency === 'USD' && Number(value.amount) === shownPrice;
+    const paypalReady = !!matches(paypalStatus), bitcoinReady = bitcoinStatus?.enabled === true && !!matches(bitcoinStatus);
+    if (paypalReady || bitcoinReady) {
+      const candidates=[paypalReady?paypalStatus:null,bitcoinReady?bitcoinStatus:null].filter(Boolean);
+      const current=candidates.find(value=>['sold','reserved'].includes(value.status)) || candidates[0];
       if (current.status === 'sold' || current.status === 'reserved') {
         summary.querySelector('.product-availability').textContent = current.status === 'sold' ? 'Sold' : 'Temporarily reserved';
         return;
@@ -80,7 +139,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       pay.className = 'button button-solid checkout-pay';
       pay.textContent = 'Buy with PayPal';
       pay.disabled = true;
+      pay.hidden = !paypalReady;
       pay.setAttribute('aria-describedby','checkout-payment-help');
+      const bitcoin = document.createElement('button');
+      bitcoin.type = 'button'; bitcoin.className = 'button button-solid checkout-pay checkout-bitcoin';
+      bitcoin.textContent = 'Buy with Bitcoin'; bitcoin.disabled = true; bitcoin.hidden = !bitcoinReady;
+      bitcoin.setAttribute('aria-describedby','checkout-payment-help');
       const help = document.createElement('p');
       help.id = 'checkout-payment-help';
       help.className = 'checkout-payment-help';
@@ -94,6 +158,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         quotedAddress = null;
         pay.disabled = true;
         pay.textContent = 'Buy with PayPal';
+        bitcoin.disabled = true;bitcoin.textContent = 'Buy with Bitcoin';
         details.replaceChildren();
         help.textContent = 'Calculate your total above to enable payment.';
       };
@@ -117,7 +182,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         details.textContent = 'Calculating shipping and tax…';
         notice.textContent = '';
         try {
-          const result = await post('/checkout/quote',{slug,address:requestAddress});
+          const result = await post(paypalReady?'/checkout/quote':'/checkout/bitcoin/quote',{slug,address:requestAddress});
           if (revision !== requestRevision || fingerprint !== JSON.stringify(address())) return;
           quote = result;
           quotedAddress = requestAddress;
@@ -132,8 +197,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           delivery.textContent = `${quote.carrier} ${quote.service}. ${quote.packaging === 'tube' ? 'Ships in a tube.' : 'Ships flat.'}`;
           details.replaceChildren(breakdown,delivery);
           pay.textContent = `Buy with PayPal · $${quote.total}`;
-          pay.disabled = false;
-          help.textContent = 'Your total includes shipping and tax. Continue to PayPal to pay securely.';
+          pay.disabled = !paypalReady;
+          bitcoin.disabled = !bitcoinReady;
+          bitcoin.textContent = `Buy with Bitcoin · $${quote.total}`;
+          help.textContent = bitcoinReady ? 'Your total includes shipping and tax. Bitcoin payment opens in BTCPay, with Lightning available when enabled there.' : 'Your total includes shipping and tax. Continue to PayPal to pay securely.';
         } catch (error) {
           if (revision === requestRevision) details.textContent = error.message;
         } finally {
@@ -143,22 +210,28 @@ document.addEventListener('DOMContentLoaded', async () => {
           }
         }
       });
-      pay.addEventListener('click',async () => {
+      const beginPayment = async provider => {
         if (creating || !quote || !quotedAddress) return;
         if (!form.reportValidity() || JSON.stringify(address()) !== JSON.stringify(quotedAddress)) {
           invalidateQuote();
           return;
         }
         creating = true;
-        pay.disabled = true;
+        pay.disabled = true;bitcoin.disabled = true;
         // Send the exact address used for the displayed total, and prevent
         // edits or duplicate clicks while the server reserves the original.
         const checkoutAddress = {...quotedAddress}, expectedTotal = quote.total;
         fields.disabled = true;
-        pay.textContent = 'Opening PayPal…';
-        notice.textContent = 'Opening PayPal…';
+        const paymentButton = provider === 'bitcoin' ? bitcoin : pay;
+        paymentButton.textContent = provider === 'bitcoin' ? 'Opening Bitcoin checkout…' : 'Opening PayPal…';
+        notice.textContent = paymentButton.textContent;
         try {
-          const result = await post('/checkout/create',{slug,address:checkoutAddress,expectedTotal});
+          const result = await post(provider === 'bitcoin' ? '/checkout/bitcoin/create' : '/checkout/create',{slug,address:checkoutAddress,expectedTotal});
+          if(provider === 'bitcoin') {
+            if(result.status === 'unavailable')throw new Error('This painting was just reserved. Please reload the page.');
+            rememberBitcoin(result.orderId);
+            if(!result.url) { panel.remove();await showBitcoinOrder(result.orderId);return; }
+          }
           location.assign(result.url);
         } catch (error) {
           creating = false;
@@ -167,8 +240,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           notice.textContent = error.message;
           help.textContent = 'Calculate shipping and tax again before retrying payment.';
         }
-      });
-      panel.append(form,details,pay,help,notice);
+      };
+      pay.addEventListener('click',()=>beginPayment('paypal'));
+      bitcoin.addEventListener('click',()=>beginPayment('bitcoin'));
+      panel.append(form,details,pay,bitcoin,help,notice);
       const availabilityNode = summary.querySelector('.product-availability');
       (availabilityNode || summary.querySelector('.product-detail-price')).after(panel);
 
@@ -220,4 +295,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     // The existing purchase inquiry remains available if links are not configured.
   }
 });
-
