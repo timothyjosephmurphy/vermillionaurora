@@ -87,6 +87,8 @@ export async function checkout(request, env) {
           return_url:env.PAYPAL_MODE === 'sandbox' ? `${site(env)}/checkout/test?slug=${slug}&checkout=return&hold=${holdId}` : `${SITE}/products/${slug}/?checkout=return&hold=${holdId}`,
           cancel_url:env.PAYPAL_MODE === 'sandbox' ? `${site(env)}/checkout/test?slug=${slug}&checkout=cancel&hold=${holdId}` : `${SITE}/products/${slug}/?checkout=cancel&hold=${holdId}`}}}
       },holdId);
+      const payeeId = order.purchase_units?.[0]?.payee?.merchant_id;
+      if (payeeId && payeeId !== env.PAYPAL_MERCHANT_ID) throw new Error('PayPal order merchant does not match configured merchant');
       const approve = order.links?.find(link => link.rel === 'payer-action' || link.rel === 'approve')?.href;
       const allowedHosts = env.PAYPAL_MODE === 'sandbox' ? ['sandbox.paypal.com','www.sandbox.paypal.com'] : ['paypal.com','www.paypal.com'];
       if (!ORDER_ID.test(order.id || '') || !approve || new URL(approve).protocol !== 'https:' || !allowedHosts.includes(new URL(approve).hostname) ||
