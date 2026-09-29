@@ -1,5 +1,5 @@
 name: Deploy isolated checkout sandbox
-run-name: Redeploy and verify sandbox checkout
+run-name: Diagnose sandbox shipping and tax quote
 
 on:
   push:
