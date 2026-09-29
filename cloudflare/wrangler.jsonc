@@ -11,7 +11,7 @@
     "PAYPAL_CHECKOUT_SLUGS": "painting-portrait-in-green",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "SHIPPO_CARRIER_ALLOWLIST": "UPS",
-    "CHECKOUT_PILOT_ENABLED": "true",
+    "CHECKOUT_PILOT_ENABLED": "true"
   },
   "durable_objects": {
     "bindings": [
