@@ -105,6 +105,17 @@ export class PaintingStock extends DurableObject {
     }
     return false;
   }
+  // Relisting maintenance removes the current stock row while retaining the
+  // sale_receipt and ledger history for any earlier completed payment.
+  resetForRelisting() {
+    const row = this.row();
+    if (row?.state === 'held' || row?.state === 'capturing') {
+      throw new Error('Cannot relist a painting with an active checkout');
+    }
+    this.ctx.storage.sql.exec('DELETE FROM stock WHERE id=1');
+    this.ctx.storage.sql.exec('DELETE FROM shipping_job WHERE id=1');
+    return { reset: !!row, priorState: row?.state || 'available' };
+  }
   order() { const row = this.row(); return row ? {orderId:row.order_id,state:row.state,published:!!row.published,captureId:row.capture_id,total:row.total,shipping:row.shipping,tax:row.tax,destination:row.destination ? JSON.parse(row.destination) : null} : null; }
   markPublished(orderId) {
     if (this.row()?.order_id === orderId && this.row()?.state === 'sold') this.ctx.storage.sql.exec('UPDATE stock SET published=1 WHERE id=1');
