@@ -1,5 +1,5 @@
 name: Deploy isolated checkout sandbox
-run-name: Diagnose sandbox shipping and tax quote
+run-name: Identify Stripe sandbox quote response
 
 on:
   push:
