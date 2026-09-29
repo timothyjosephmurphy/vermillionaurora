@@ -5,19 +5,24 @@
  if(!ids.length)return;
  const endpoint='https://vermillion-commissions.timothyjosephmurphy.workers.dev/inventory/status';
  const labels={available:'Available',reserved:'Temporarily reserved',sold:'Sold','not-for-sale':'Not for sale',retired:'Unavailable'};
- let busy=false;
+ for(const node of nodes){
+  node.querySelectorAll('[data-live-status]').forEach(el=>{el.dataset.initialText=el.textContent;});
+  node.querySelectorAll('[data-card-price]').forEach(el=>{el.dataset.price=el.textContent;});
+  if(node.dataset.caption)node.dataset.initialCaption=node.dataset.caption;
+ }
+ let busy=false,lastSignature;
  async function refresh() {
   if(busy||document.hidden)return;busy=true;
   try {
    const status={};
    for(let i=0;i<ids.length;i+=80){const response=await fetch(`${endpoint}?ids=${encodeURIComponent(ids.slice(i,i+80).join(','))}`,{cache:'no-store',signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('Availability unavailable');Object.assign(status,(await response.json()).availability);}
+   const signature=JSON.stringify(status);if(signature===lastSignature)return;lastSignature=signature;
    for(const node of nodes) {
     const value=status[node.dataset.productId],label=labels[value];if(!label)continue;
-    if(!node.dataset.initialAvailability)node.dataset.initialAvailability=node.dataset.availability||node.querySelector('[data-live-status]')?.textContent||'';
     node.dataset.availability=label;
-    node.querySelectorAll('[data-live-status]').forEach(el=>{if(!el.dataset.initialText)el.dataset.initialText=el.textContent;el.textContent=value==='available'?el.dataset.initialText:label;if(value!=='available')el.hidden=false;});
-    node.querySelectorAll('[data-card-price]').forEach(el=>{if(!el.dataset.price)el.dataset.price=el.textContent;el.textContent=value==='available'?el.dataset.price:label;});
-    if(node.dataset.caption){if(!node.dataset.initialCaption)node.dataset.initialCaption=node.dataset.caption;node.dataset.caption=value==='available'?node.dataset.initialCaption:node.dataset.initialCaption.replace(/ · [^]*$/,' · '+label);}
+    node.querySelectorAll('[data-live-status]').forEach(el=>{el.textContent=value==='available'?el.dataset.initialText:label;if(value!=='available')el.hidden=false;});
+    node.querySelectorAll('[data-card-price]').forEach(el=>{el.textContent=value==='available'?el.dataset.price:label;});
+    if(node.dataset.caption){node.dataset.caption=value==='available'?node.dataset.initialCaption:node.dataset.initialCaption.replace(/ · [^]*$/,' · '+label);}
    }
    document.dispatchEvent(new CustomEvent('catalog:availability',{detail:status}));
   }catch { /* Keep inquiry links and server-authoritative checkout available. */ }
