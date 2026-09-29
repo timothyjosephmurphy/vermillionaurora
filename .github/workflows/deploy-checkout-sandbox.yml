@@ -1,6 +1,10 @@
 name: Deploy isolated checkout sandbox
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/deploy-checkout-sandbox.yml
   workflow_dispatch:
 
 permissions:
