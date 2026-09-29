@@ -11,7 +11,7 @@ test('every product renders at its stable URL with matching content and checkout
 });
 test('shared cards use the catalog and preserve collection order',()=>{
  for(const [key,path] of Object.entries({home:'index.html',gallery:'gallery/index.html',paul:'exhibitions/paul-murphy/index.html',chase:'exhibitions/chase-toole/index.html',gavin:'exhibitions/gavin-robertson/index.html'})){
- const $=load(fs.readFileSync(`dist/${path}`,'utf8'));const expected=collections[key].filter(e=>byId[e.product].type==='painting').map(e=>e.product);assert.deepEqual($('[data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),expected);for(const id of expected)assert.ok($(`[data-product-id="${id}"]`).find('img').attr('src')===byId[id].image.src);
+ const $=load(fs.readFileSync(`dist/${path}`,'utf8'));const scope=({home:'.painting-carousel',gallery:'.product-grid',paul:'.exhibition-grid',chase:'.collaboration-grid',gavin:'.film-collaboration-gallery'})[key];const expected=collections[key].filter(e=>byId[e.product].type==='painting').map(e=>e.product);assert.deepEqual($(`${scope} [data-product-id]`).map((i,e)=>$(e).attr('data-product-id')).get(),expected);for(const node of $('[data-product-id]').toArray()){const id=$(node).attr('data-product-id');assert.ok(byId[id],id);assert.equal($(node).find('img').attr('src'),byId[id].image.src);}
  if(key==='home')assert.equal($('.painting-carousel .product-card').filter((i,e)=>$(e).text().includes('Available')).length,0);
  }
 });
