@@ -7,8 +7,10 @@
   },
   "painting-portrait-in-green": {
     "title": "Chase Toole",
+    "paypalTitle": "Chase Toole Portrait",
     "amount": "20.00",
     "currency": "USD",
-    "url": "https://www.paypal.com/ncp/payment/722YQTYAYAUP6"
+    "url": "https://www.paypal.com/ncp/payment/722YQTYAYAUP6",
+    "autoInventory": true
   }
 }

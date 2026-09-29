@@ -1,10 +1,14 @@
 // Deployed automatically from GitHub via Cloudflare Builds.
+import { handlePaypalIpn } from "./paypal-inventory.mjs";
 const ALLOWED_ORIGIN = "https://vermillionaurora.com";
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ALLOWED_TYPES = new Set(["image/jpeg","image/png","image/webp","image/heic","image/heif"]);
 
 export default {
   async fetch(request, env) {
+    if (new URL(request.url).pathname === "/paypal-ipn") {
+      return handlePaypalIpn(request, env);
+    }
     const cors = {
       "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
       "Access-Control-Allow-Methods": "POST, OPTIONS",

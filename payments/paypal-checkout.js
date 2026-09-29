@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!inquiry || !slug || !title || availability !== 'Available' || !priceText) return;
 
   try {
-    const response = await fetch('/payments/paypal-links.json');
+    const response = await fetch('/payments/paypal-links.json', { cache: 'no-store' });
     if (!response.ok) return;
     const links = await response.json();
     const item = links[slug];
