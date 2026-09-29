@@ -95,7 +95,7 @@ export async function checkout(request, env) {
     } catch (error) {
       await stub.release(holdId);
       console.error('Checkout create failed:',slug,error.message);
-      return respond({error:'Could not start checkout. Please try again.'},502);
+      return respond({error:'Could not start checkout. Please try again.', ...(env.PAYPAL_MODE === 'sandbox' ? {reason:error.message} : {})},502);
     }
   }
   if (!ORDER_ID.test(data.orderId || '') || !HOLD_ID.test(data.holdId || '')) return respond({error:'Invalid checkout return.'},400);
