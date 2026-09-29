@@ -35,7 +35,8 @@ export class ShippingCheck extends DurableObject {
     const data = this.read();
     const result = {test:true,status:data?.job?.status || (data ? 'quoting' : 'not-started'),
       transactionCreated:!!data?.job?.transactionId,emailAccepted:!!data?.job?.emailId,
-      pdfAttached:data?.job?.pdfAttached === true,reason:data?.job?.reason || null,error:data?.error || null};
+      pdfAttached:data?.job?.pdfAttached === true,attachmentError:data?.job?.attachmentError || null,
+      reason:data?.job?.reason || null,error:data?.error || null};
     // Read the existing failed test transaction only; never purchase again.
     // Provider message text can contain addresses, so expose codes and fixed
     // keyword hints instead of logging the raw response in public CI logs.
@@ -64,7 +65,13 @@ export class ShippingCheck extends DurableObject {
   async start() {
     if (!isolated(this.env) || this.env.SHIPPO_AUTO_LABEL_ENABLED !== 'true') throw new Error('Sandbox shipping is not enabled');
     if (!this.read()) this.ctx.storage.sql.exec('INSERT INTO check_state (id,data) VALUES (1,?)',JSON.stringify({createdAt:Date.now()}));
-    const data = this.read();
+    let data = this.read();
+    // One deliberate email-only retry for this sandbox sample. Preserve the
+    // existing successful transaction and original email for auditability.
+    if (data.job?.status === 'ready' && data.job.emailId && !data.job.pdfAttached && !data.attachmentRetried) {
+      data = {...data,attachmentRetried:true,job:{...data.job,previousEmailId:data.job.emailId,emailId:null}};
+      await this.save(data);
+    }
     if (!data.job?.emailId) {
       this.ctx.storage.sql.exec('UPDATE check_state SET data=? WHERE id=1',JSON.stringify({...data,error:null}));
       await this.ctx.storage.setAlarm(Date.now()+1000);

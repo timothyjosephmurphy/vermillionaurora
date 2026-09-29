@@ -35,8 +35,18 @@ export function secureUrl(value) {
 
 async function labelAttachment(url) {
   // The URL comes only from the authenticated Shippo transaction response.
-  const response = await request(url, {redirect:'error'});
-  if (!response.ok || !response.body) throw new Error('Label download failed');
+  let response;
+  for (let hop = 0; hop <= 4; hop++) {
+    if (!secureUrl(url)) throw new Error('Label URL is not HTTPS');
+    response = await request(url, {redirect:'manual'});
+    if (![301,302,303,307,308].includes(response.status)) break;
+    const location = response.headers.get('Location');
+    await response.body?.cancel();
+    if (!location || hop === 4) throw new Error('Label redirect limit');
+    url = new URL(location,url).href;
+  }
+  if (!response.ok) throw new Error(`Label HTTP ${response.status}`);
+  if (!response.body) throw new Error('Label download failed');
   const reader = response.body.getReader(), chunks = [];
   let length = 0;
   try {
@@ -60,10 +70,14 @@ export async function sendShippingEmail(token, sale, job) {
   const integrationTest = job.mode === 'sandbox' && sale.integrationTest === true;
   const quote = job.quote, address = quote.address, parcel = quote.parcel;
   const subject = `${job.mode === 'sandbox' ? '[TEST] ' : ''}${ready ? 'Shipping label ready' : 'Shipping needs attention'} — ${quote.title || sale.slug}`;
-  let attachment = null;
+  let attachment = null, attachmentError = null;
   if (ready) {
     try { attachment = await labelAttachment(secureUrl(job.labelUrl)); }
-    catch { /* Send the download link promptly if attaching the PDF fails. */ }
+    catch (error) {
+      // Only fixed download errors/status codes may enter diagnostic logs.
+      attachmentError = /^(Label HTTP [0-9]{3}|Label URL is not HTTPS|Label redirect limit|Label PDF is too large|Label is not a PDF)$/.test(error.message)
+        ? error.message : 'Label download failed';
+    }
   }
   const lines = [
     integrationTest ? 'INTEGRATION TEST — sample order, no PayPal charge. This label is not valid for shipping.' :
@@ -106,5 +120,5 @@ export async function sendShippingEmail(token, sale, job) {
   });
   const result = await response.json();
   if (!response.ok || !result.id) throw new Error(`Seller email delivery failed (${response.status})`);
-  return {id:result.id,pdfAttached:!!attachment};
+  return {id:result.id,pdfAttached:!!attachment,attachmentError};
 }

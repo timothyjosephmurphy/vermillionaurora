@@ -13,11 +13,12 @@ const quote = () => ({title:'Honeybadger and Cub with Genesis Block',base:'1200.
 const sale = {state:'sold',order_id:'ORDER1',capture_id:'CAPTURE1',slug};
 const success = {object_id:'TX1',test:true,status:'SUCCESS',label_url:'https://deliver.goshippo.com/label.pdf',
   tracking_number:'TRACK1',tracking_url_provider:'https://tools.usps.com/track/TRACK1'};
-let calls, transaction, pollTransaction, failEmail, failPurchase, failTax, failPdf;
+let calls, transaction, pollTransaction, failEmail, failPurchase, failTax, failPdf, pdfRedirect;
 let objects;
 beforeEach(() => {
   calls = []; objects = []; transaction = success; pollTransaction = success;
   failEmail = failPurchase = failTax = failPdf = false;
+  pdfRedirect = null;
   vi.stubGlobal('fetch', vi.fn(async (url, options = {}) => {
     calls.push({url:String(url),...options});
     if (url === 'https://oauth2.googleapis.com/token') return Response.json({access_token:'EMAIL_TOKEN'});
@@ -28,7 +29,8 @@ beforeEach(() => {
       return Response.json(transaction);
     }
     if (url === 'https://api.goshippo.com/transactions/TX1/') return Response.json(pollTransaction);
-    if (url === success.label_url) return failPdf ? new Response('expired',{status:403}) : new Response('%PDF-1.4\nTest label');
+    if (url === success.label_url) return pdfRedirect ? new Response(null,{status:302,headers:{Location:pdfRedirect}}) : failPdf ? new Response('expired',{status:403}) : new Response('%PDF-1.4\nTest label');
+    if (url === 'https://labels.example.test/final.pdf') return new Response('%PDF-1.4\nRedirected test label');
     if (url === 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send') {
       return failEmail ? Response.json({error:'Unavailable'},{status:503}) : Response.json({id:'EMAIL1'});
     }
@@ -187,9 +189,41 @@ it('emails the download link when the PDF cannot be attached', async () => {
   const result = await runJob();
   expect(result.job.emailId).toBe('EMAIL1');
   expect(result.job.pdfAttached).toBe(false);
+  expect(result.job.attachmentError).toBe('Label HTTP 403');
   expect(emailMime()).not.toContain('filename="shipping-label.pdf"');
   const encodedBody = emailMime().split('Content-Transfer-Encoding: base64\r\n\r\n')[1].split('\r\n--')[0];
   expect(atob(encodedBody.replaceAll('\r\n',''))).toContain(success.label_url);
+});
+
+it('attaches a PDF served through an HTTPS redirect without forwarding provider credentials', async () => {
+  pdfRedirect = 'https://labels.example.test/final.pdf';
+  const result = await runJob();
+  expect(result.job.pdfAttached).toBe(true);
+  expect(calls.find(call=>call.url===pdfRedirect).headers).toBeUndefined();
+});
+
+it('rejects an insecure label redirect and keeps the download-link email', async () => {
+  pdfRedirect = 'http://labels.example.test/final.pdf';
+  const result = await runJob();
+  expect(result.job.pdfAttached).toBe(false);
+  expect(result.job.attachmentError).toBe('Label URL is not HTTPS');
+  expect(calls.some(call=>call.url===pdfRedirect)).toBe(false);
+});
+
+it('retries only the sandbox attachment once and reuses its existing label', async () => {
+  failPdf = true;
+  const stub = env.SHIPPING_CHECK.getByName(crypto.randomUUID()); objects.push(stub);
+  await stub.start();
+  await runDurableObjectAlarm(stub);
+  expect(await stub.status()).toMatchObject({status:'ready',emailAccepted:true,pdfAttached:false});
+  failPdf = false;
+  await stub.start();
+  await runDurableObjectAlarm(stub);
+  expect(await stub.status()).toMatchObject({status:'ready',emailAccepted:true,pdfAttached:true});
+  await stub.start();
+  expect(await runDurableObjectAlarm(stub)).toBe(false);
+  expect(purchases()).toHaveLength(1);
+  expect(emails()).toHaveLength(2);
 });
 
 it('runs a sample shipping check once without a PayPal purchase or inventory mutation', async () => {
