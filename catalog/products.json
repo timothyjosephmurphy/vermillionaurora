@@ -1106,8 +1106,8 @@
     "id": "painting-mount-rainier-at-sunset",
     "slug": "painting-mount-rainier-at-sunset",
     "type": "painting",
-    "title": "Ukrainian Flower Woman with Flower Crown",
-    "description": "Ukrainian Flower Woman with Flower Crown by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Ukrainian woman with flower crown",
+    "description": "Ukrainian woman with flower crown by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1137,8 +1137,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/mount-rainier-at-sunset.jpg",
-      "alt": "Ukrainian Flower Woman with Flower Crown by TJ Murphy",
-      "caption": "Ukrainian Flower Woman with Flower Crown"
+      "alt": "Ukrainian woman with flower crown by TJ Murphy",
+      "caption": "Ukrainian woman with flower crown"
     },
     "checkout": {
       "mode": "inquiry"
