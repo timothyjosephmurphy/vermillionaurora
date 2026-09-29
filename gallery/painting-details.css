@@ -1,2 +1,29 @@
 .painting-facts{display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;margin:18px 0 24px;font-size:.95rem}.painting-facts dt{font-weight:600}.painting-facts dd{margin:0}.product-summary .product-availability{font-weight:600;margin:10px 0}.product-summary h1{overflow-wrap:anywhere}.painting-story{margin-top:1.75rem;max-width:42rem}.painting-story h2{font:600 2rem/1.15 "Cormorant Garamond",serif;margin:0 0 1rem}.painting-story p{line-height:1.7;margin:0 0 1rem}.product-inquiry .paypal-checkout-link{margin-right:.75rem;margin-bottom:.75rem}@media(max-width:600px){.painting-facts{gap:6px 12px}}
 .checkout-address-form{display:grid;gap:.7rem;margin:1rem 0;max-width:28rem}.checkout-address-form[hidden],.product-inquiry button[hidden]{display:none}.checkout-address-form label{display:grid;gap:.25rem;font-size:.9rem}.checkout-address-form input{width:100%;padding:.65rem;border:1px solid #b9a99c;border-radius:4px;background:#fff;color:#251f1b}.checkout-address-form button{justify-self:start}.checkout-notice{line-height:1.5}
+
+/* Purchase details appear before the painting's story and specifications. */
+.product-purchase-cta{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;padding:1.1rem 1.4rem;margin:-.5rem 0 2rem;border:1px solid var(--line,#d6c9bc);border-radius:12px;background:var(--paper,#fffaf4)}
+.product-purchase-cta p{margin:0;font-weight:600;line-height:1.5}
+.product-purchase-cta .button{flex-shrink:0;background:var(--accent-dark,#874c33);font-size:.85rem}
+.purchase-panel{padding:1.5rem;margin:1.25rem 0 2rem;border:1px solid var(--line,#d6c9bc);border-top:3px solid var(--accent-dark,#874c33);border-radius:12px;background:var(--paper,#fffaf4);scroll-margin-top:9rem}
+.purchase-panel h2{margin:0 0 .5rem;font:600 2rem/1.15 "Cormorant Garamond",serif}
+.purchase-panel>p{font-size:.9rem;line-height:1.5;margin:0 0 1rem}
+.purchase-panel .checkout-address-form{max-width:none;margin:1.25rem 0}
+.checkout-address-form fieldset{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.85rem .75rem;margin:0;padding:0;border:0;min-width:0}
+.checkout-full-row{grid-column:1/-1}
+.purchase-panel .checkout-address-form input{min-width:0;font-size:1rem;padding:.7rem .75rem;border-radius:6px}
+.purchase-panel input:focus-visible{outline:2px solid var(--accent-dark,#874c33);outline-offset:2px}
+.purchase-panel input[name=state]{text-transform:uppercase}
+.checkout-address-form .checkout-country{margin:0;color:var(--muted,#65574d);font-size:.8rem}
+.purchase-panel .checkout-address-form button{width:100%;min-height:44px;font-size:.78rem;letter-spacing:.06em}
+.purchase-panel .checkout-pay{width:100%;min-height:54px;font-size:.95rem;letter-spacing:.04em;cursor:pointer;background:var(--accent-dark,#874c33)}
+.purchase-panel button:disabled,.purchase-panel button:disabled:hover{background:#dedbd7;color:#66615c;border-color:#d0cbc5;cursor:not-allowed;transform:none;box-shadow:none;opacity:1}
+.purchase-panel .checkout-payment-help{margin:.65rem 0 0;font-size:.8rem;color:var(--muted,#65574d)}
+.checkout-total:not(:empty){padding:1rem 0;margin:0 0 1rem;border-top:1px solid var(--line,#d6c9bc);font-size:.9rem;line-height:1.5}
+.checkout-total dl{display:grid;grid-template-columns:1fr auto;gap:.4rem 1rem;margin:0}
+.checkout-total dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.checkout-total dt:last-of-type,.checkout-total dd:last-of-type{font-weight:700;font-size:1.1rem;padding-top:.6rem;border-top:1px solid var(--line,#d6c9bc)}
+.checkout-total p{margin:.8rem 0 0;font-size:.8rem;color:var(--muted,#65574d)}
+.purchase-panel .checkout-notice:not(:empty){margin:1rem 0 0}
+.checkout-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:600px){.product-purchase-cta{flex-direction:column;align-items:stretch;padding:1rem;gap:.75rem}.product-purchase-cta .button{width:100%}.purchase-panel{padding:1.1rem;scroll-margin-top:6rem}}

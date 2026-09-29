@@ -1,0 +1,27 @@
+name: Test product checkout interface
+on:
+  push:
+    branches: [checkout-ui-review, main]
+    paths: ['payments/paypal-checkout.js', 'payments/paypal-checkout.browser-test.cjs', 'gallery/painting-details.css', '.github/workflows/test-checkout-ui.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save --package-lock=false playwright@1.62.1
+      - run: npx playwright install --with-deps chromium
+      - name: Check address, quote and payment states without contacting providers
+        run: node payments/paypal-checkout.browser-test.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: checkout-ui-previews
+          path: /tmp/checkout-ui/*.png
+          retention-days: 7
