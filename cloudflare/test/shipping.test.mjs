@@ -3,6 +3,7 @@ import { runInDurableObject, runDurableObjectAlarm, evictDurableObject } from 'c
 import { beforeEach, afterEach, it, expect, vi } from 'vitest';
 import { fulfillSale, newShippingJob } from '../shipping-fulfillment.mjs';
 import { shippingCheck } from '../shipping-check.mjs';
+import { sellerMailToken } from '../shipping-email.mjs';
 
 const slug = 'honeybadger-and-cub-with-genesis-block';
 const quote = () => ({title:'Honeybadger and Cub with Genesis Block',base:'1200.00',shipping:'12.00',tax:'9.00',total:'1221.00',
@@ -166,6 +167,19 @@ it.each([
 it('does not purchase when Gmail is unconfigured', async () => {
   await expect(runJob({...env,GOOGLE_REFRESH_TOKEN:''})).rejects.toThrow('not configured');
   expect(purchases()).toHaveLength(0);
+});
+
+it('normalizes whitespace from pasted Google credentials', async () => {
+  await sellerMailToken({...env,GOOGLE_CLIENT_ID:' fake\n',GOOGLE_CLIENT_SECRET:' fake\n',GOOGLE_REFRESH_TOKEN:' fake\n'});
+  const form = calls[0].body;
+  expect(form.get('client_id')).toBe('fake');
+  expect(form.get('client_secret')).toBe('fake');
+  expect(form.get('refresh_token')).toBe('fake');
+});
+
+it('reports the Google error code without exposing its response or credentials', async () => {
+  vi.stubGlobal('fetch',vi.fn(async()=>Response.json({error:'invalid_client',error_description:'private response'},{status:401})));
+  await expect(sellerMailToken(env)).rejects.toThrow('Seller email authorization failed (401: invalid_client)');
 });
 
 it('emails the download link when the PDF cannot be attached', async () => {

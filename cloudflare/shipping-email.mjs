@@ -9,16 +9,20 @@ const encode = bytes => {
 const utf8 = text => encode(new TextEncoder().encode(text));
 
 export async function sellerMailToken(env) {
-  if (!env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET || !env.GOOGLE_REFRESH_TOKEN) {
+  const clientId = env.GOOGLE_CLIENT_ID?.trim(), clientSecret = env.GOOGLE_CLIENT_SECRET?.trim(), refreshToken = env.GOOGLE_REFRESH_TOKEN?.trim();
+  if (!clientId || !clientSecret || !refreshToken) {
     throw new Error('Seller email credentials are not configured');
   }
   const response = await request('https://oauth2.googleapis.com/token', {
     method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:new URLSearchParams({client_id:env.GOOGLE_CLIENT_ID,client_secret:env.GOOGLE_CLIENT_SECRET,
-      refresh_token:env.GOOGLE_REFRESH_TOKEN,grant_type:'refresh_token'})
+    body:new URLSearchParams({client_id:clientId,client_secret:clientSecret,
+      refresh_token:refreshToken,grant_type:'refresh_token'})
   });
   const data = await response.json();
-  if (!response.ok || !data.access_token) throw new Error(`Seller email authorization failed (${response.status})`);
+  if (!response.ok || !data.access_token) {
+    const reason = ['invalid_client','invalid_grant','unauthorized_client','invalid_request','invalid_scope'].includes(data.error) ? data.error : 'unknown';
+    throw new Error(`Seller email authorization failed (${response.status}: ${reason})`);
+  }
   return data.access_token;
 }
 
