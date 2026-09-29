@@ -2,6 +2,7 @@ import { env } from 'cloudflare:workers';
 import { runInDurableObject, runDurableObjectAlarm, evictDurableObject } from 'cloudflare:test';
 import { it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { bitcoinCheckout, bitcoinWebhook } from '../bitcoin-checkout.mjs';
+import { backfillCheckoutSale } from '../paypal-orders.mjs';
 
 const objects=[];
 let invoices, requests, timeoutCreate, emails;
@@ -72,6 +73,8 @@ it('settles once from the saved order, survives eviction and records Bitcoin pay
   const receipt=await runInDurableObject(stock,(_,ctx)=>JSON.parse(ctx.storage.sql.exec('SELECT data FROM sale_receipt').one().data));
   expect(receipt.provider).toBe('btcpay');expect(receipt.invoiceId).toBe('INV0');expect(receipt.gross).toBe('27.00');
   expect(receipt.bitcoinPayments[0].amount).toBe('0.00027');expect(receipt.paypalFee).toBeNull();
+  const period=new Date().toISOString().slice(0,7);objects.push(env.SALES_LEDGER.getByName(`sandbox:${period}`));
+  expect((await backfillCheckoutSale(env,slug)).recorded).toBe(true);
   await evictDurableObject(order);
   expect((await order.publicStatus(slug)).status).toBe('settled');
   expect(await env.SALES_ARCHIVE.get(`bitcoin/sandbox/${id}.json`)).not.toBeNull();
