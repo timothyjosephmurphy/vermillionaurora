@@ -9,6 +9,21 @@ const root = new URL('../', import.meta.url);
 const output = new URL('./generated-links.local', import.meta.url);
 const read = async path => readFile(new URL(path, root), 'utf8');
 const titleText = text => text.replaceAll('&amp;', '&').replaceAll('&#39;', "'").replaceAll('&quot;', '"');
+const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+async function paypalFetch(url, options) {
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const response = await fetch(url, options);
+    if (response.status !== 429 && response.status !== 503) return response;
+    if (attempt === 4) return response;
+    const header = response.headers.get('retry-after');
+    const seconds = Number(header);
+    const dateMs = Date.parse(header ?? '');
+    const backoff = Number.isFinite(seconds) && header !== null ? seconds * 1000 :
+      Number.isFinite(dateMs) ? dateMs - Date.now() : 30000 * 2 ** attempt;
+    await pause(Math.min(120000, Math.max(5000, backoff)));
+  }
+}
 
 export async function candidates() {
   const inventory = JSON.parse(await read('gallery/inventory.json')).paintings;
@@ -92,7 +107,7 @@ async function main() {
   const remote = new Map();
   let next = `${api}/v1/checkout/payment-resources?page_size=100`;
   for (let pages = 0; next && pages < 100; pages++) {
-    const listed = await fetch(next, { headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' } });
+    const listed = await paypalFetch(next, { headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' } });
     if (!listed.ok) throw new Error(`PayPal list returned HTTP ${listed.status}`);
     const result = await listed.json();
     for (const item of result.resources ?? []) {
@@ -129,7 +144,9 @@ async function main() {
       continue;
     }
     const requestId = createHash('sha256').update(`${key}:${row.slug}:${row.paypalTitle}:${row.amount}`).digest('hex');
-    const response = await fetch(`${api}/v1/checkout/payment-resources`, {
+    // Stay well below PayPal's observed creation rate limit.
+    await pause(5000);
+    const response = await paypalFetch(`${api}/v1/checkout/payment-resources`, {
       method: 'POST', headers: { Authorization: `Bearer ${token}`, Accept: 'application/json',
         'Content-Type': 'application/json', 'PayPal-Request-Id': requestId },
       body: JSON.stringify({ integration_mode: 'LINK', type: 'BUY_NOW', reusable: 'MULTIPLE',
