@@ -29,6 +29,10 @@
       {
         "name": "SALES_LEDGER",
         "class_name": "SalesLedger"
+      },
+      {
+        "name": "BITCOIN_ORDERS",
+        "class_name": "BitcoinOrder"
       }
     ]
   },
@@ -44,6 +48,12 @@
       "tag": "sales-ledger-v1",
       "new_sqlite_classes": [
         "SalesLedger"
+      ]
+    },
+    {
+      "tag": "bitcoin-orders-v1",
+      "new_sqlite_classes": [
+        "BitcoinOrder"
       ]
     }
   ],

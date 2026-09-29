@@ -11,7 +11,9 @@
     "PAYPAL_CHECKOUT_SLUGS": "painting-portrait-in-green",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "SHIPPO_CARRIER_ALLOWLIST": "UPS",
-    "CHECKOUT_PILOT_ENABLED": "true"
+    "CHECKOUT_PILOT_ENABLED": "true",
+    "BTCPAY_URL": "https://btcpay884215.lndyn.com",
+    "BTCPAY_CHECKOUT_SLUGS": "painting-portrait-in-green"
   },
   "durable_objects": {
     "bindings": [
@@ -22,6 +24,10 @@
       {
         "name": "SALES_LEDGER",
         "class_name": "SalesLedger"
+      },
+      {
+        "name": "BITCOIN_ORDERS",
+        "class_name": "BitcoinOrder"
       }
     ]
   },
@@ -36,6 +42,12 @@
       "tag": "sales-ledger-v1",
       "new_sqlite_classes": [
         "SalesLedger"
+      ]
+    },
+    {
+      "tag": "bitcoin-orders-v1",
+      "new_sqlite_classes": [
+        "BitcoinOrder"
       ]
     }
   ],

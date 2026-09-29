@@ -7,7 +7,7 @@ const output=process.env.CHECKOUT_TEST_OUTPUT || '/tmp/checkout-ui';
 fs.mkdirSync(output,{recursive:true});
 
 (async()=>{
-  const browser=await chromium.launch({headless:true});
+  const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']}: {})});
   // All HTTP requests are intercepted below; this cannot create a real order or label.
   const page=await browser.newPage({viewport:{width:1440,height:1100}});
   const errors=[];
@@ -27,7 +27,7 @@ fs.mkdirSync(output,{recursive:true});
     }
     if(url.pathname==='/products/painting-portrait-in-green/'){
       let html=fs.readFileSync(path.join(root,'products/painting-portrait-in-green/index.html'),'utf8');
-      if(available)html=html.replaceAll('Sold','Available');
+      html=html.replace(/(<p class="product-availability">)(Available|Sold)(<\/p>)/,`$1${available?'Available':'Sold'}$3`);
       return route.fulfill({contentType:'text/html',body:html});
     }
     if(url.pathname==='/gallery-images/portrait-in-green.jpg')return route.fulfill({contentType:'image/jpeg',body:fs.readFileSync(path.join(root,'gallery-images/portrait-in-green.jpg'))});

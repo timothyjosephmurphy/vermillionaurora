@@ -61,6 +61,20 @@ export class PaintingStock extends DurableObject {
     this.ctx.storage.sql.exec("UPDATE stock SET state='capturing' WHERE id=1");
     return 'ready';
   }
+  bindBitcoinOrder(holdId,quote) {
+    if (!this.bindOrder(holdId,`btcpay:${holdId}`,quote)) return false;
+    // BitcoinOrder owns expiry/reconciliation. A timed local hold cannot release
+    // an invoice while its Bitcoin transaction is still confirming.
+    this.ctx.storage.sql.exec("UPDATE stock SET state='capturing',expires_at=NULL WHERE id=1");
+    return true;
+  }
+  releaseBitcoinOrder(holdId) {
+    const row=this.row();
+    if(row?.state!=='capturing' || row.order_id!==`btcpay:${holdId}` || row.hold_id!==holdId)return false;
+    this.ctx.storage.sql.exec('DELETE FROM stock WHERE id=1');
+    this.ctx.storage.sql.exec('DELETE FROM shipping_job WHERE id=1');
+    return true;
+  }
   async complete(orderId, captureId, details={}) {
     let row = this.row();
     if (!row || row.order_id !== orderId || !['held','capturing','sold'].includes(row.state) || (row.state==='sold' && row.capture_id!==captureId)) return false;

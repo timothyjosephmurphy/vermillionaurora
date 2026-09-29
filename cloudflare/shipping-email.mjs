@@ -69,6 +69,7 @@ export async function sendShippingEmail(token, sale, job) {
   const ready = job.status === 'ready';
   const integrationTest = job.mode === 'sandbox' && sale.integrationTest === true;
   const quote = job.quote, address = quote.address, parcel = quote.parcel;
+  const bitcoin = sale.capture_id?.startsWith('btcpay:');
   const subject = `${job.mode === 'sandbox' ? '[TEST] ' : ''}${ready ? 'Shipping label ready' : 'Shipping needs attention'} — ${quote.title || sale.slug}`;
   let attachment = null, attachmentError = null;
   if (ready) {
@@ -83,7 +84,7 @@ export async function sendShippingEmail(token, sale, job) {
     integrationTest ? 'INTEGRATION TEST — sample order, no PayPal charge. This label is not valid for shipping.' :
       job.mode === 'sandbox' ? 'TEST SALE — this label is not valid for shipping.' : 'Payment confirmed.', '',
     `Painting: ${quote.title || sale.slug}`, `Product: https://vermillionaurora.com/products/${sale.slug}/`,
-    `${integrationTest ? 'Sample order' : 'PayPal order'}: ${sale.order_id}`, `${integrationTest ? 'Test reference' : 'PayPal capture'}: ${sale.capture_id}`,
+    `${integrationTest ? 'Sample order' : bitcoin ? 'Bitcoin order' : 'PayPal order'}: ${sale.order_id}`, `${integrationTest ? 'Test reference' : bitcoin ? 'BTCPay invoice' : 'PayPal capture'}: ${sale.capture_id}`,
     `Painting: $${quote.base} | Shipping: $${quote.shipping} | Tax: $${quote.tax} | Total: $${quote.total}`, '',
     'Ship to:', address.name, address.street1, address.street2,
     `${address.city}, ${address.state} ${address.zip}`, address.country, '',

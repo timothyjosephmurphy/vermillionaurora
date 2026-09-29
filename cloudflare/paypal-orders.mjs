@@ -192,6 +192,9 @@ export async function checkoutWebhook(request,env) {
 export async function backfillCheckoutSale(env,slug) {
   const stub=stock(env,slug),expected=await stub.order();
   if(expected?.state!=='sold' || !expected.captureId)return {recorded:false,status:expected?.state||'available'};
+  // Bitcoin receipts are already durably saved by settlement; never send their
+  // order IDs to PayPal during accounting maintenance or relisting.
+  if(expected.orderId?.startsWith('btcpay:'))return stub.archiveSale();
   const accessToken=await token(env);
   const order=await paypal(env,`/v2/checkout/orders/${expected.orderId}`,accessToken);
   const captureId=validateCapture(order,slug,env,expected);
