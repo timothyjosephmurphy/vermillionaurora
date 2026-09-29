@@ -23,7 +23,7 @@ jobs:
           node-version: '22'
       - name: Verify checkout and catalog
         run: |
-          node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs
+          node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
           node payments/build-checkout-catalog.mjs
           git diff --exit-code -- cloudflare/checkout-catalog.mjs
           node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.PAYPAL_CHECKOUT_ENABLED!=='true'||c.main!=='checkout-sandbox.mjs')process.exit(1)"

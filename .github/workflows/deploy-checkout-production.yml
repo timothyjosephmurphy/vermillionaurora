@@ -1,0 +1,44 @@
+name: Deploy production checkout
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cloudflare/commission-worker.js'
+      - 'cloudflare/checkout-*.mjs'
+      - 'cloudflare/paypal-*.mjs'
+      - 'cloudflare/painting-stock.mjs'
+      - 'cloudflare/wrangler.jsonc'
+      - 'payments/verify-production.mjs'
+      - '.github/workflows/deploy-checkout-production.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checkout-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify production checkout
+        run: |
+          node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
+          node payments/build-checkout-catalog.mjs
+          git diff --exit-code -- cloudflare/checkout-catalog.mjs
+          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.PAYPAL_MODE!=='live')process.exit(1)"
+      - name: Deploy production Worker
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.jsonc
+      - name: Verify live providers without taking payment
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node payments/verify-production.mjs

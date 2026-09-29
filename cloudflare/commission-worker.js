@@ -1,6 +1,7 @@
 // Deployed automatically from GitHub via Cloudflare Builds.
 import { handlePaypalIpn } from "./paypal-inventory.mjs";
 import { checkout, checkoutWebhook } from "./paypal-orders.mjs";
+import { checkoutReadiness } from './checkout-readiness.mjs';
 export { PaintingStock } from './painting-stock.mjs';
 const ALLOWED_ORIGIN = "https://vermillionaurora.com";
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
@@ -9,6 +10,7 @@ const ALLOWED_TYPES = new Set(["image/jpeg","image/png","image/webp","image/heic
 export default {
   async fetch(request, env) {
     const path = new URL(request.url).pathname;
+    if (path === '/checkout/readiness') return checkoutReadiness(request,env);
     if (path === "/paypal-ipn") {
       return handlePaypalIpn(request, env);
     }
