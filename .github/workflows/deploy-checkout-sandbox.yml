@@ -51,6 +51,8 @@ jobs:
           command: deploy --config wrangler.sandbox.jsonc
       - name: Verify sandbox endpoint
         run: |
-          curl --fail --retry 5 --retry-delay 2 --silent --show-error \
-            https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/health \
-            | node -e "let s='';process.stdin.on('data',x=>s+=x).on('end',()=>{const h=JSON.parse(s);if(h.mode!=='sandbox'||h.enabled!==true)process.exit(1);console.log('Sandbox endpoint enabled')})"
+          curl --retry 5 --retry-delay 2 --silent --show-error \
+            --output /tmp/sandbox-health.txt --write-out 'Sandbox health HTTP %{http_code}\\n' \
+            https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/health
+          cat /tmp/sandbox-health.txt
+          node -e "const h=JSON.parse(require('fs').readFileSync('/tmp/sandbox-health.txt'));if(h.mode!=='sandbox'||h.enabled!==true)process.exit(1);console.log('Sandbox endpoint enabled')"
