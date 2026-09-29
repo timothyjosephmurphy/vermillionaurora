@@ -1,4 +1,5 @@
 import { sellerMailToken, sendShippingEmail, secureUrl } from './shipping-email.mjs';
+import { verifyQuotedInsurance, insuredTransactionMatches } from './shipping-insurance.mjs';
 
 const week = 7 * 24 * 60 * 60_000;
 const shippoHeaders = env => ({Authorization:`ShippoToken ${env.SHIPPO_TOKEN}`,
@@ -27,7 +28,11 @@ function transactionState(job, transaction) {
   }
   if (['WAITING','QUEUED'].includes(transaction.status)) return {...job,status:'waiting'};
   if (transaction.status === 'SUCCESS' && secureUrl(transaction.label_url)) {
+    if (job.quote.insurance && (!job.insuranceVerified || !insuredTransactionMatches(transaction, job.quote))) {
+      return {...job,status:'review',reason:'The purchased label did not confirm the insured rate. Review its coverage in Shippo before shipping.'};
+    }
     return {...job,status:'ready',labelUrl:secureUrl(transaction.label_url),
+      ...(job.quote.insurance ? {insuranceConfirmed:true} : {}),
       trackingNumber:transaction.tracking_number || '',trackingUrl:secureUrl(transaction.tracking_url_provider)};
   }
   return {...job,status:'review',reason:`Shippo label status: ${String(transaction.status || 'unknown').slice(0,40)}. Check the transaction in Shippo.`};
@@ -50,10 +55,12 @@ export async function fulfillSale(env, sale, initialJob, save) {
     const reason = configurationIssue(env, job) ||
       (env.SHIPPO_AUTO_LABEL_ENABLED !== 'true' ? 'Automatic label purchases were paused.' : '') ||
       (!['PDF','PDF_4x6'].includes(env.SHIPPING_LABEL_FORMAT || 'PDF') ? 'Shipping label format is not supported.' : '') ||
-      (!job.quote.rateId || !Number.isFinite(job.quote.quotedAt) || Date.now() - job.quote.quotedAt >= week ? 'The saved shipping rate is missing or expired.' : '');
+      (!job.quote.rateId || !Number.isFinite(job.quote.quotedAt) || Date.now() - job.quote.quotedAt >= week ? 'The saved shipping rate is missing or expired.' : '') ||
+      (!await verifyQuotedInsurance(env, job.quote) ? 'The saved shipping rate no longer confirms the requested insurance. No label was purchased.' : '');
     if (reason) await persist({...job,status:'review',reason});
     else {
-      await persist({...job,status:'purchasing',metadata:`paypal-${sale.capture_id}`,attemptedAt:Date.now()});
+      await persist({...job,status:'purchasing',metadata:`paypal-${sale.capture_id}`,attemptedAt:Date.now(),
+        ...(job.quote.insurance ? {insuranceVerified:true} : {})});
       let transaction;
       try {
         const response = await fetch('https://api.goshippo.com/transactions/', {

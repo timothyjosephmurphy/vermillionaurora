@@ -88,6 +88,9 @@ export async function sendShippingEmail(token, sale, job) {
     'Ship to:', address.name, address.street1, address.street2,
     `${address.city}, ${address.state} ${address.zip}`, address.country, '',
     `Service: ${quote.carrier} — ${quote.service}`,
+    ...(quote.insurance ? [job.insuranceConfirmed
+      ? `Insurance: $${quote.insurance.amount} ${quote.insurance.currency} requested through XCover; premium $${quote.insurance.fee} included in shipping. Insured rate confirmed on the label.`
+      : `Insurance requested: $${quote.insurance.amount} ${quote.insurance.currency}. Coverage is not confirmed; review Shippo before shipping.`] : []),
     `Package: ${quote.packaging}, ${parcel.length} × ${parcel.width} × ${parcel.height} inches, ${parcel.weight} lb`, '',
     ...(ready ? [
       attachment ? 'Print the attached PDF at actual size (100%).' : 'Use the label download link below to print your label.',

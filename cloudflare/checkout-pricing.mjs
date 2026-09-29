@@ -1,4 +1,5 @@
 import catalog from './checkout-catalog.mjs';
+import { insuranceRequest, insuredShipmentMatches, insuredRateMatches } from './shipping-insurance.mjs';
 
 const cents = value => Math.round(Number(value) * 100);
 const dollars = value => (value / 100).toFixed(2);
@@ -19,16 +20,19 @@ export async function priceOrder(env, slug, input) {
   const item = catalog[slug];
   if (!item?.parcel || !env.SHIPPO_TOKEN || !env.STRIPE_SECRET_KEY || !env.SHIP_FROM_STREET) throw new Error('Shipping and tax services are not configured');
   const address = cleanAddress(input);
-  const from = {name:'Vermillion Aurora',street1:env.SHIP_FROM_STREET,city:'Seattle',state:'WA',zip:'98122',country:'US'};
+  const from = {name:'Vermillion Aurora',email:'tj@vermillionaurora.com',street1:env.SHIP_FROM_STREET,city:'Seattle',state:'WA',zip:'98122',country:'US'};
+  const insurance = insuranceRequest(item);
   const parcel = Object.fromEntries(Object.entries(item.parcel).map(([key,value]) => [key,String(value)]));
   Object.assign(parcel,{distance_unit:'in',mass_unit:'lb'});
   const shipmentResponse = await fetch('https://api.goshippo.com/shipments/',{
     method:'POST',headers:{Authorization:`ShippoToken ${env.SHIPPO_TOKEN}`,'Content-Type':'application/json','SHIPPO-API-VERSION':'2018-02-08'},
-    body:JSON.stringify({address_from:from,address_to:address,parcels:[parcel],async:false})
+    body:JSON.stringify({address_from:from,address_to:address,parcels:[parcel],async:false,...(insurance ? {extra:{insurance}} : {})})
   });
   const shipment = await shipmentResponse.json();
   if (!shipmentResponse.ok) throw new Error(`Shipping quote unavailable (${shipmentResponse.status})`);
-  const rates = (shipment.rates || []).filter(r => r.object_id && r.currency === 'USD' && Number.isFinite(Number(r.amount)) && Number(r.amount) > 0);
+  if (insurance && !insuredShipmentMatches(shipment, insurance)) throw new Error('Shipping insurance was not confirmed by Shippo');
+  const rates = (shipment.rates || []).filter(r => r.object_id && r.currency === 'USD' && Number.isFinite(Number(r.amount)) && Number(r.amount) > 0 &&
+    (!insurance || insuredRateMatches(r, shipment.object_id)));
   if (!rates.length) throw new Error('No carrier rate available for this package and address');
   const rate = rates.sort((a,b) => Number(a.amount)-Number(b.amount))[0];
   const shippingCents = cents(rate.amount), paintingCents = cents(item.amount);
@@ -60,7 +64,8 @@ export async function priceOrder(env, slug, input) {
     total:dollars(calculation.amount_total),taxCalculationId:calculation.id,
     carrier:rate.provider || 'Carrier',service:rate.servicelevel?.name || 'Shipping',
     parcel:item.parcel,packaging:item.packaging,title:item.title,
-    rateId:rate.object_id,quotedAt:Date.now()
+    rateId:rate.object_id,quotedAt:Date.now(),
+    ...(insurance ? {insurance:{...insurance,fee:Number(rate.included_insurance_price).toFixed(2),shipmentId:shipment.object_id}} : {})
   };
 }
 

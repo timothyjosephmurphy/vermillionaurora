@@ -15,9 +15,10 @@ export async function shippingCheck(request, env) {
       request.headers.get('Authorization') !== `Bearer ${env.SHIPPING_CHECK_TOKEN}`) {
     return new Response('Not found',{status:404});
   }
-  const stub = env.SHIPPING_CHECK.getByName('label-email-v2');
+  const insured = new URL(request.url).searchParams.get('scenario') === 'chase-insurance';
+  const stub = env.SHIPPING_CHECK.getByName(insured ? 'label-email-chase-insurance-v1' : 'label-email-v2');
   if (!['GET','POST'].includes(request.method)) return new Response('Method not allowed',{status:405});
-  const result = request.method === 'POST' ? await stub.start() : await stub.status();
+  const result = request.method === 'POST' ? await stub.start(insured ? 'chase-insurance' : 'default') : await stub.status();
   return Response.json(result,{headers:{'Cache-Control':'no-store'}});
 }
 
@@ -36,7 +37,9 @@ export class ShippingCheck extends DurableObject {
     const result = {test:true,status:data?.job?.status || (data ? 'quoting' : 'not-started'),
       transactionCreated:!!data?.job?.transactionId,emailAccepted:!!data?.job?.emailId,
       pdfAttached:data?.job?.pdfAttached === true,attachmentError:data?.job?.attachmentError || null,
-      reason:data?.job?.reason || null,error:data?.error || null};
+      reason:data?.job?.reason || null,error:data?.error || null,
+      insuranceRequested:!!data?.job?.quote?.insurance,insuranceConfirmed:data?.job?.insuranceConfirmed === true,
+      insuranceAmount:data?.job?.quote?.insurance?.amount || null};
     // Read the existing failed test transaction only; never purchase again.
     // Provider message text can contain addresses, so expose codes and fixed
     // keyword hints instead of logging the raw response in public CI logs.
@@ -62,9 +65,10 @@ export class ShippingCheck extends DurableObject {
     }
     return result;
   }
-  async start() {
+  async start(scenario = 'default') {
     if (!isolated(this.env) || this.env.SHIPPO_AUTO_LABEL_ENABLED !== 'true') throw new Error('Sandbox shipping is not enabled');
-    if (!this.read()) this.ctx.storage.sql.exec('INSERT INTO check_state (id,data) VALUES (1,?)',JSON.stringify({createdAt:Date.now()}));
+    if (!['default','chase-insurance'].includes(scenario)) throw new Error('Unknown shipping test');
+    if (!this.read()) this.ctx.storage.sql.exec('INSERT INTO check_state (id,data) VALUES (1,?)',JSON.stringify({createdAt:Date.now(),scenario}));
     let data = this.read();
     // One deliberate email-only retry for this sandbox sample. Preserve the
     // existing successful transaction and original email for auditability.
@@ -82,14 +86,17 @@ export class ShippingCheck extends DurableObject {
     if (!isolated(this.env)) return;
     let data = this.read();
     if (!data || data.job?.emailId) return;
+    const insured = data.scenario === 'chase-insurance';
+    const checkSlug = insured ? 'painting-portrait-in-green' : slug;
+    const checkSale = insured ? {...sample,slug:checkSlug,order_id:'INSURANCECHECKCHASEV1',capture_id:'INSURANCECHECKCHASEV1'} : sample;
     try {
       if (!data.job) {
-        const quote = await priceOrder(this.env,slug,{name:'Shippo Integration Test',street1:'1600 Amphitheatre Pkwy',city:'Mountain View',state:'CA',zip:'94043'});
-        quote.title = 'Shippo email integration test';
-        data = {...data,job:newShippingJob(this.env,sample.order_id,quote)};
+        const quote = await priceOrder(this.env,checkSlug,{name:'Shippo Integration Test',street1:'1600 Amphitheatre Pkwy',city:'Mountain View',state:'CA',zip:'94043'});
+        quote.title = insured ? 'Chase Toole insured shipping test' : 'Shippo email integration test';
+        data = {...data,job:newShippingJob(this.env,checkSale.order_id,quote)};
         await this.save(data);
       }
-      const done = await fulfillSale(this.env,sample,data.job,async job => {
+      const done = await fulfillSale(this.env,checkSale,data.job,async job => {
         data = {...data,job,error:null};
         await this.save(data);
       });

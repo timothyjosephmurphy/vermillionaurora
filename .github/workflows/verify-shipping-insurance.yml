@@ -1,0 +1,47 @@
+name: Verify insured Chase Toole shipping
+on:
+  push:
+    branches: [shippo-label-email]
+    paths: ['cloudflare/shipping-insurance.mjs', 'cloudflare/test/insurance.test.mjs', '.github/workflows/verify-shipping-insurance.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checkout-sandbox
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test before deployment
+        run: |
+          node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
+          npm --prefix cloudflare/test ci
+          npm --prefix cloudflare/test test
+          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.SHIPPO_AUTO_LABEL_ENABLED!=='true')process.exit(1)"
+      - name: Deploy isolated sandbox
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc
+      - name: Generate an insured test label and email its PDF to the seller
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node payments/verify-shipping.mjs --insurance
+      - name: Remove diagnostic credential even if the check failed
+        if: always()
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          node --input-type=module <<'NODE'
+          const r=await fetch('https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/vermillion-checkout-sandbox/secrets/SHIPPING_CHECK_TOKEN',{method:'DELETE',headers:{Authorization:`Bearer ${process.env.CLOUDFLARE_API_TOKEN}`}});
+          console.log('Diagnostic credential cleanup HTTP',r.status);
+          if(!r.ok && r.status!==404)process.exit(1);
+          NODE

@@ -3,6 +3,14 @@ import { existsSync } from 'node:fs';
 
 const inventory = JSON.parse(await readFile(new URL('../gallery/inventory.json', import.meta.url)));
 const links = JSON.parse(await readFile(new URL('./paypal-links.json', import.meta.url)));
+const shippingOverrides = JSON.parse(await readFile(new URL('./shipping-overrides.json', import.meta.url)));
+for (const [slug, profile] of Object.entries(shippingOverrides)) {
+  if (!inventory.paintings.some(painting => painting.A === slug) ||
+      !['flat', 'tube'].includes(profile.packaging) ||
+      !['length', 'width', 'height', 'weight'].every(key => typeof profile.parcel?.[key] === 'number' && Number.isFinite(profile.parcel[key]) && profile.parcel[key] > 0)) {
+    throw new Error(`Invalid shipping override: ${slug}`);
+  }
+}
 const catalog = {};
 for (const painting of inventory.paintings) {
   const { A: slug, B: title, C: rawPrice, D: currency, E: availability } = painting;
@@ -21,10 +29,13 @@ for (const painting of inventory.paintings) {
   }
   const shorter = Math.min(width,height), longer = Math.max(width,height);
   const rolled = longer > 12;
-  const parcel = rolled
+  const estimatedParcel = rolled
     ? {length:Math.ceil(shorter),width:4,height:4,weight:2}
     : {length:Math.ceil(longer + 2),width:Math.ceil(shorter + 2),height:2,weight:2};
-  catalog[slug] = { title, amount: Number(rawPrice).toFixed(2), currency, parcel, packaging:rolled ? 'tube' : 'flat' };
+  const profile = shippingOverrides[slug];
+  const parcel = profile ? Object.fromEntries(['length', 'width', 'height', 'weight'].map(key => [key, profile.parcel[key]])) : estimatedParcel;
+  catalog[slug] = { title, amount: Number(rawPrice).toFixed(2), currency, parcel, packaging:profile?.packaging ?? (rolled ? 'tube' : 'flat'),
+    ...(profile?.insuranceRequested === true ? {insuranceRequested:true} : {}) };
 }
 await writeFile(new URL('../cloudflare/checkout-catalog.mjs', import.meta.url), `export default ${JSON.stringify(catalog, null, 2)};\n`);
 console.log(`Built checkout catalog: ${Object.keys(catalog).length} paintings`);

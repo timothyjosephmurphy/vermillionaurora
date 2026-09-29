@@ -4,6 +4,7 @@ import { beforeEach, afterEach, it, expect, vi } from 'vitest';
 import { fulfillSale, newShippingJob } from '../shipping-fulfillment.mjs';
 import { shippingCheck } from '../shipping-check.mjs';
 import { sellerMailToken } from '../shipping-email.mjs';
+import { priceOrder } from '../checkout-pricing.mjs';
 
 const slug = 'honeybadger-and-cub-with-genesis-block';
 const quote = () => ({title:'Honeybadger and Cub with Genesis Block',base:'1200.00',shipping:'12.00',tax:'9.00',total:'1221.00',
@@ -14,16 +15,22 @@ const sale = {state:'sold',order_id:'ORDER1',capture_id:'CAPTURE1',slug};
 const success = {object_id:'TX1',test:true,status:'SUCCESS',label_url:'https://deliver.goshippo.com/label.pdf',
   tracking_number:'TRACK1',tracking_url_provider:'https://tools.usps.com/track/TRACK1'};
 let calls, transaction, pollTransaction, failEmail, failPurchase, failTax, failPdf, pdfRedirect;
-let objects;
+let objects, insuredRate, insuredShipment;
 beforeEach(() => {
   calls = []; objects = []; transaction = success; pollTransaction = success;
+  insuredRate = {object_id:'INS_RATE',shipment:'INS_SHIPMENT',currency:'USD',amount:'5.75',included_insurance_price:'0.75',provider:'USPS',servicelevel:{name:'Ground Advantage'}};
+  insuredShipment = {object_id:'INS_SHIPMENT',extra:{insurance:{amount:'20.00',currency:'USD',content:'Original painting: Chase Toole'}}};
   failEmail = failPurchase = failTax = failPdf = false;
   pdfRedirect = null;
   vi.stubGlobal('fetch', vi.fn(async (url, options = {}) => {
     calls.push({url:String(url),...options});
     if (url === 'https://oauth2.googleapis.com/token') return Response.json({access_token:'EMAIL_TOKEN'});
-    if (url === 'https://api.goshippo.com/shipments/') return Response.json({rates:[{object_id:'RATE1',currency:'USD',amount:'12.00',provider:'USPS',servicelevel:{name:'Ground'}}]});
-    if (url === 'https://api.stripe.com/v1/tax/calculations') return Response.json({id:'taxcalc_TEST',currency:'usd',amount_total:122100});
+    if (url === 'https://api.goshippo.com/shipments/') return JSON.parse(options.body).extra?.insurance
+      ? Response.json({...insuredShipment,rates:[{object_id:'CHEAPER_UNINSURED',currency:'USD',amount:'1.00'},insuredRate]})
+      : Response.json({rates:[{object_id:'RATE1',currency:'USD',amount:'12.00',provider:'USPS',servicelevel:{name:'Ground'}}]});
+    if (url === 'https://api.goshippo.com/rates/INS_RATE/') return Response.json(insuredRate);
+    if (url === 'https://api.goshippo.com/shipments/INS_SHIPMENT/') return Response.json(insuredShipment);
+    if (url === 'https://api.stripe.com/v1/tax/calculations') return Response.json({id:'taxcalc_TEST',currency:'usd',amount_total:Number(options.body.get('line_items[0][amount]'))+Number(options.body.get('shipping_cost[amount]'))+900});
     if (url === 'https://api.goshippo.com/transactions/') {
       if (failPurchase) throw new Error('Connection lost after request was accepted');
       return Response.json(transaction);
@@ -237,6 +244,18 @@ it('runs a sample shipping check once without a PayPal purchase or inventory mut
   expect(await runDurableObjectAlarm(stub)).toBe(false);
   expect(purchases()).toHaveLength(1);
   expect(emails()).toHaveLength(1);
+  expect(calls.some(c=>c.url.includes('paypal.com') || c.url.includes('api.github.com') || c.url.includes('tax/transactions'))).toBe(false);
+});
+
+it('keeps the insured Chase diagnostic separate and confirms its coverage without a PayPal purchase', async () => {
+  transaction = {...success,rate:'INS_RATE'};
+  const stub = env.SHIPPING_CHECK.getByName(crypto.randomUUID()); objects.push(stub);
+  await stub.start('chase-insurance');
+  await runDurableObjectAlarm(stub);
+  expect(await stub.status()).toMatchObject({status:'ready',insuranceRequested:true,insuranceConfirmed:true,insuranceAmount:'20.00',pdfAttached:true});
+  await stub.start('chase-insurance');
+  expect(await runDurableObjectAlarm(stub)).toBe(false);
+  expect(purchases()).toHaveLength(1);
   expect(calls.some(c=>c.url.includes('paypal.com') || c.url.includes('api.github.com') || c.url.includes('tax/transactions'))).toBe(false);
 });
 
