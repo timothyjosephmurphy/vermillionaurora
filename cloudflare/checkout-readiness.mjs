@@ -42,7 +42,7 @@ export async function checkoutReadiness(request,env) {
   }catch(error){checks.githubError=error.message;}
   checks.inventoryBinding=!!env.PAINTING_STOCK;
   checks.shippingOrigin=!!env.SHIP_FROM_STREET;
-  if (env.CHECKOUT_RELEASE?.startsWith('insured-pilot-')) {
+  if (env.CHECKOUT_PILOT_ENABLED==='true') {
     checks.pilotRestriction=env.PAYPAL_CHECKOUT_SLUGS==='painting-portrait-in-green' && env.SHIPPO_CARRIER_ALLOWLIST==='UPS';
     checks.automaticLabels=env.SHIPPO_AUTO_LABEL_ENABLED==='true';
     try { await sellerMailToken(env); checks.sellerEmail=true; }
@@ -58,7 +58,7 @@ export async function checkoutReadiness(request,env) {
       checks.insuredQuote=quote.base==='20.00'&&quote.insurance?.amount==='20.00'&&quote.carrier==='UPS';
     } catch(error) { checks.pilotQuoteError=error.message; }
   }
-  const pilotReady=!env.CHECKOUT_RELEASE?.startsWith('insured-pilot-') ||
+  const pilotReady=env.CHECKOUT_PILOT_ENABLED!=='true' ||
     (checks.pilotRestriction&&checks.automaticLabels&&checks.sellerEmail&&checks.insuredQuote&&checks.pilotStock==='available');
   const ready=checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryRepository&&checks.repositoryWritePermission!==false&&checks.inventoryBinding&&checks.shippingOrigin&&pilotReady;
   return reply({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE||null,ready:!!ready,checks},ready?200:503);

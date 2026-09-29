@@ -2,7 +2,9 @@
   "name": "vermillion-shipping-local-tests",
   "main": "worker.mjs",
   "compatibility_date": "2026-09-25",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "vars": {
     "PAYPAL_MODE": "sandbox",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
@@ -11,8 +13,28 @@
     "GOOGLE_CLIENT_ID": "fake",
     "GOOGLE_CLIENT_SECRET": "fake",
     "GOOGLE_REFRESH_TOKEN": "fake",
-    "STRIPE_SECRET_KEY": "sk_test_fake"
+    "STRIPE_SECRET_KEY": "sk_test_fake",
+    "SHIP_FROM_PHONE": "+12065550123"
   },
-  "durable_objects": {"bindings": [{"name":"PAINTING_STOCK","class_name":"PaintingStock"},{"name":"SHIPPING_CHECK","class_name":"ShippingCheck"}]},
-  "migrations": [{"tag":"test-v1","new_sqlite_classes":["PaintingStock","ShippingCheck"]}]
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "PAINTING_STOCK",
+        "class_name": "PaintingStock"
+      },
+      {
+        "name": "SHIPPING_CHECK",
+        "class_name": "ShippingCheck"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "test-v1",
+      "new_sqlite_classes": [
+        "PaintingStock",
+        "ShippingCheck"
+      ]
+    }
+  ]
 }

@@ -13,6 +13,7 @@ Configure these on the Worker, not in public source code. Do not paste API token
 | `SHIPPO_TOKEN` (secret) | Existing token must begin `shippo_live_` | Token must begin `shippo_test_` |
 | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REFRESH_TOKEN` (secrets) | Reuse the commission form's Gmail credentials for `tj@vermillionaurora.com` | Configure credentials authorized to send a test email from that same address |
 | `SHIPPO_AUTO_LABEL_ENABLED` (variable) | Set `true` only after the sandbox email and package checks below | Set `true` for the test |
+| `SHIP_FROM_PHONE` (secret) | Your real sender phone in international format (`+1` followed by ten digits for a US number) | Same real sender phone; required by USPS |
 | `SHIPPING_LABEL_FORMAT` (variable) | `PDF` (default), or `PDF_4x6` | Use the format being tested |
 
 The checkout's existing `SHIP_FROM_STREET`, PayPal and Stripe settings remain required. Shippo needs a valid billing method and a usable carrier account for the quoted service. The release preparation found a production `SHIPPO_TOKEN` already present; its value, mode and billing readiness have not been verified by this change.
@@ -59,10 +60,12 @@ API references: [Shippo label creation](https://docs.goshippo.com/api-reference/
 
 The catalog builder reads `payments/shipping-overrides.json`. Insured items send `extra.insurance` with amount, currency and contents to Shippo. A matching shipment and a rate with `included_insurance_price` are required. Shippo includes that premium in `rate.amount`; checkout never adds it again. The saved rate/shipment are checked again before purchase, and the transaction must refer to that insured rate before the seller email reports coverage. Missing or changed insurance stops the purchase or flags the existing label for review, without buying another label.
 
-The **Verify insured Chase Toole shipping** workflow runs `node payments/verify-shipping.mjs --insurance` in the sandbox only. It uses a separate durable sample (`label-email-chase-insurance-v1`) and confirms $20 insurance, a test label, and its PDF email without a PayPal charge or inventory write. The original uninsurable/failed samples remain preserved. Re-running it reuses the existing sample and does not buy another label. Coverage is not active until a successful live label purchase.
+The **Verify insured Chase Toole shipping** workflow runs `node payments/verify-shipping.mjs --insurance` in the sandbox only. It uses a separate durable sample (`label-email-chase-insurance-v2`) and confirms $20 insurance, a test label, and its PDF email without a PayPal charge or inventory write. The original uninsurable/failed samples remain preserved. Re-running it reuses the existing sample and does not buy another label. Coverage is not active until a successful live label purchase.
 
 Reference: https://docs.goshippo.com/shipments/shipping-insurance
 
 ## Controlled live pilot
 
 The owner authorized the Chase Toole $20 live test before the business tax ID arrives on September 29 at 02:12 PDT. The pilot restricts checkout to `painting-portrait-in-green` and carrier selection to UPS through `SHIPPO_CARRIER_ALLOWLIST=UPS`. Preserve Stripe Tax and its actual registration status. Production labels are enabled only with this restricted checkout release after sandbox insurance, live Gmail, and insured-rate checks. A real successful capture triggers the real label and seller PDF email.
+
+The first insured sandbox sample confirmed the $20 insurance quote but USPS rejected the label (`sender_info_missing`) because the sender phone was not supplied. Its record is preserved. Set `SHIP_FROM_PHONE` on both Workers; the code now checks it before an insured quote. The v2 sample can then be retried without resubmitting the failed transaction.

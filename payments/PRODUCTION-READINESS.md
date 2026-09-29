@@ -57,3 +57,7 @@ The owner asked to run a live test without waiting for the business tax ID, ackn
 Release preparation sets `SHIPPO_AUTO_LABEL_ENABLED=true` and `PAYPAL_CHECKOUT_SLUGS=painting-portrait-in-green`, while keeping checkout disabled until the insured UPS sandbox test and production Gmail/insured-quote checks pass. Then only `PAYPAL_CHECKOUT_ENABLED` changes to true. The owner's purchase is the remaining real payment action; no automatic diagnostic creates a live PayPal order, purchases postage, or records a fabricated sale.
 
 Production health reports `CHECKOUT_RELEASE` so deployment verification waits for the intended code/configuration rather than accepting an old healthy Worker. The protected readiness route verifies the live Gmail refresh, selected painting availability, a live insured UPS rate, and Stripe calculation. It only quotes to the configured origin address and exposes no address or secret values.
+
+## Insured shipping provider check
+
+The $20 Chase Toole insurance quote was confirmed by Shippo, but USPS rejected the first sandbox label because the sender phone was missing. Set encrypted `SHIP_FROM_PHONE` on both `vermillion-checkout-sandbox` and `vermillion-commissions` in international format. Insured checkout now refuses to quote without it. Re-run **Verify insured Chase Toole shipping** after deployment to confirm the fresh v2 sample, label, and PDF email. The failed v1 transaction remains preserved. Keep live checkout and automatic live labels disabled until the outstanding launch checks are complete.

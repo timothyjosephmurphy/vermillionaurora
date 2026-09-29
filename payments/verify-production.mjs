@@ -21,7 +21,7 @@ try {
   }
   const audit=await response.json();
   console.log('Production provider verification:',JSON.stringify(audit));
-  if(!response.ok||!audit.ready||audit.mode!=='live'||audit.enabled!==(expected.PAYPAL_CHECKOUT_ENABLED==='true')||audit.release!==(expected.CHECKOUT_RELEASE||null))throw Error('Production provider verification failed');
+  if(!response.ok||!audit.ready||audit.mode!=='live'||audit.enabled!==(expected.PAYPAL_CHECKOUT_ENABLED==='true')||audit.release!==(process.env.GITHUB_SHA||expected.CHECKOUT_RELEASE||null))throw Error('Production provider verification failed');
   const r=await fetch(base+'/checkout/status?slug=honeybadger-and-cub-with-genesis-block');
   console.log('Public checkout status HTTP:',r.status);
   if(!audit.enabled&&r.status!==503)throw Error('Expected new checkout to remain disabled');

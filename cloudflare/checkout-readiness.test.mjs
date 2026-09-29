@@ -26,7 +26,7 @@ test('production readiness requires authentication and only reads provider confi
   const text=await r.text();assert.equal(JSON.parse(text).ready,true);
   for(const secret of ['audit-secret','paypal-secret','github-secret','123 private street','sk_live_fake','shippo_live_fake'])assert.ok(!text.includes(secret));
   const testKey=await checkoutReadiness(request(),{...env,STRIPE_SECRET_KEY:'sk_test_fake'});assert.equal(testKey.status,503);
-  const pilot={...env,CHECKOUT_RELEASE:'insured-pilot-v1',PAYPAL_CHECKOUT_SLUGS:'painting-portrait-in-green',SHIPPO_CARRIER_ALLOWLIST:'UPS',SHIPPO_AUTO_LABEL_ENABLED:'true',
+  const pilot={...env,CHECKOUT_PILOT_ENABLED:'true',SHIP_FROM_PHONE:'+12065550100',PAYPAL_CHECKOUT_SLUGS:'painting-portrait-in-green',SHIPPO_CARRIER_ALLOWLIST:'UPS',SHIPPO_AUTO_LABEL_ENABLED:'true',
     GOOGLE_CLIENT_ID:'client',GOOGLE_CLIENT_SECRET:'google-secret',GOOGLE_REFRESH_TOKEN:'refresh',PAINTING_STOCK:{getByName:()=>({status:async()=>'available'})}};
   const verified=await checkoutReadiness(request(),pilot);
   assert.equal(verified.status,200);
