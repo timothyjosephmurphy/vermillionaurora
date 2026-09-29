@@ -10,7 +10,7 @@ const ALLOWED_TYPES = new Set(["image/jpeg","image/png","image/webp","image/heic
 export default {
   async fetch(request, env) {
     const path = new URL(request.url).pathname;
-    if (path === '/checkout/health' && request.method === 'GET') return Response.json({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true'},{headers:{'Cache-Control':'no-store'}});
+    if (path === '/checkout/health' && request.method === 'GET') return Response.json({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE || null},{headers:{'Cache-Control':'no-store'}});
     if (path === '/checkout/readiness') return checkoutReadiness(request,env);
     if (path === "/paypal-ipn") {
       return handlePaypalIpn(request, env);
