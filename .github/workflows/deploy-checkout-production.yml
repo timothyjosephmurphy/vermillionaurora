@@ -1,4 +1,4 @@
-name: Deploy website and production checkout
+name: Deploy checkout and verify website release
 on:
   push:
     branches: [main]
@@ -60,11 +60,8 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: node payments/verify-production.mjs
-      - name: Deploy the generated website
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
-          command: deploy --config wrangler.jsonc
+      # Cloudflare Workers Builds publishes the website using its existing
+      # Git integration. The Actions token is scoped to API deployment and
+      # cannot create static-asset upload sessions. Verify both releases below.
       - name: Verify website and API catalog versions agree
         run: node scripts/verify-release.mjs
