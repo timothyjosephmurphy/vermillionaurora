@@ -30,11 +30,35 @@ export class ShippingCheck extends DurableObject {
     this.ctx.storage.sql.exec('INSERT OR REPLACE INTO check_state (id,data) VALUES (1,?)',JSON.stringify(data));
     await this.ctx.storage.sync();
   }
-  status() {
+  async status() {
     const data = this.read();
-    return {test:true,status:data?.job?.status || (data ? 'quoting' : 'not-started'),
+    const result = {test:true,status:data?.job?.status || (data ? 'quoting' : 'not-started'),
       transactionCreated:!!data?.job?.transactionId,emailAccepted:!!data?.job?.emailId,
       pdfAttached:data?.job?.pdfAttached === true,reason:data?.job?.reason || null,error:data?.error || null};
+    // Read the existing failed test transaction only; never purchase again.
+    // Provider message text can contain addresses, so expose codes and fixed
+    // keyword hints instead of logging the raw response in public CI logs.
+    if (isolated(this.env) && data?.job?.status === 'review' && data.job.transactionId) {
+      const response = await fetch(`https://api.goshippo.com/transactions/${encodeURIComponent(data.job.transactionId)}/`, {
+        headers:{Authorization:`ShippoToken ${this.env.SHIPPO_TOKEN}`,'SHIPPO-API-VERSION':'2018-02-08'},
+        signal:AbortSignal.timeout(20_000)
+      });
+      result.providerLookupStatus = response.status;
+      if (response.ok) {
+        const transaction = await response.json();
+        if (transaction.object_id === data.job.transactionId && transaction.test === true) {
+          const safeCode = value => typeof value === 'string' && /^[a-zA-Z0-9_.:-]{1,80}$/.test(value) ? value : null;
+          result.providerMessages = (Array.isArray(transaction.messages) ? transaction.messages : []).slice(0,10).map(message => ({
+            code:safeCode(message.code),source:safeCode(message.source),
+            hints:['phone','email','address','street','zip','postal','state','country','origin','destination','sender','recipient',
+              'billing','payment','card','balance','account','activation','verification','authentication','permission','test',
+              'rate','expired','service','carrier','parcel','weight','dimension','insurance','required','missing','invalid','unavailable']
+              .filter(word => new RegExp(`\\b${word}\\b`,'i').test(String(message.text || '')))
+          }));
+        }
+      }
+    }
+    return result;
   }
   async start() {
     if (!isolated(this.env) || this.env.SHIPPO_AUTO_LABEL_ENABLED !== 'true') throw new Error('Sandbox shipping is not enabled');

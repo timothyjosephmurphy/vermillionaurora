@@ -206,6 +206,21 @@ it('runs a sample shipping check once without a PayPal purchase or inventory mut
   expect(calls.some(c=>c.url.includes('paypal.com') || c.url.includes('api.github.com') || c.url.includes('tax/transactions'))).toBe(false);
 });
 
+it('diagnoses a failed test transaction without exposing private message text or purchasing again', async () => {
+  transaction = {object_id:'TX1',test:true,status:'ERROR'};
+  pollTransaction = {...transaction,messages:[{source:'UPS',code:'120100',text:'Sender phone is missing: private buyer details'}]};
+  const stub = env.SHIPPING_CHECK.getByName(crypto.randomUUID()); objects.push(stub);
+  await stub.start();
+  await runDurableObjectAlarm(stub);
+  const result = await stub.status();
+  expect(result).toMatchObject({status:'review',emailAccepted:true,providerMessages:[{source:'UPS',code:'120100',hints:['phone','sender','missing']}]});
+  expect(JSON.stringify(result)).not.toContain('private buyer details');
+  await stub.start();
+  expect(await runDurableObjectAlarm(stub)).toBe(false);
+  expect(purchases()).toHaveLength(1);
+  expect(emails()).toHaveLength(1);
+});
+
 it.each([
   ['no diagnostic token',{}],
   ['wrong diagnostic token',{SHIPPING_CHECK_TOKEN:'different'}],
