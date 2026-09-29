@@ -9,8 +9,10 @@ const origin = 'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.
 const orderId = 'ABC123456789';
 
 test('catalog builds packages from physical painting sizes', () => {
-  assert.deepEqual(catalog['paul-murphy-painting-1'].parcel,{length:14,width:11,height:2,weight:2});
+  assert.deepEqual(catalog['paul-murphy-painting-1'].parcel,{length:14,width:12,height:2,weight:2});
   assert.equal(catalog['paul-murphy-painting-1'].packaging,'flat');
+  assert.equal(catalog['paul-murphy-painting-57'].packaging,'flat', 'framed paintings cannot be rolled');
+  assert.equal(catalog['paul-murphy-painting-55'],undefined, 'measurements are required before automatic shipping');
   assert.deepEqual(catalog['painting-portrait-with-hat'].parcel,{length:22,width:4,height:4,weight:2});
   assert.equal(catalog['painting-portrait-with-hat'].packaging,'tube');
 });

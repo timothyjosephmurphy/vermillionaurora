@@ -217,480 +217,444 @@ export default {
     "packaging": "tube"
   },
   "paul-murphy-painting-1": {
-    "title": "Painting 1",
+    "title": "Tipi",
     "amount": "300.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-2": {
-    "title": "Painting 2",
+    "title": "Leo/Bear Constilation",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
+      "length": 38,
+      "width": 18,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-3": {
-    "title": "Painting 3",
+    "title": "Rebel Loon/MN ICE Protest",
     "amount": "50.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-6": {
-    "title": "Painting 6",
+    "title": "Son TJ Sedona",
     "amount": "50.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-7": {
-    "title": "Painting 7",
+    "title": "Slot Canyon",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-8": {
-    "title": "Painting 8",
+    "title": "Arixona Slot Cave",
     "amount": "100.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-11": {
-    "title": "Painting 11",
+    "title": "Puerto Rico Beach",
     "amount": "50.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
-      "height": 2,
+      "length": 12,
+      "width": 4,
+      "height": 4,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "tube"
   },
   "paul-murphy-painting-14": {
-    "title": "Painting 14",
+    "title": "Eagle from photo 1",
     "amount": "75.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-15": {
-    "title": "Painting 15",
+    "title": "Eagle from photo 2",
     "amount": "75.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-23": {
-    "title": "Painting 23",
+    "title": "My Ego",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-24": {
-    "title": "Painting 24",
+    "title": "Beach Egland AFB",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
-      "height": 2,
+      "length": 11,
+      "width": 4,
+      "height": 4,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "tube"
   },
   "paul-murphy-painting-25": {
-    "title": "Painting 25",
+    "title": "Spiritual Sedona Mountains 1",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-27": {
-    "title": "Painting 27",
+    "title": "Spiritual Sedona Mountains 2",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-28": {
-    "title": "Painting 28",
+    "title": "Spiritual Sedona Mountains 3",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
-      "height": 2,
-      "weight": 2
-    },
-    "packaging": "flat"
-  },
-  "paul-murphy-painting-31": {
-    "title": "Painting 31",
-    "amount": "25.00",
-    "currency": "USD",
-    "parcel": {
-      "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-34": {
-    "title": "Painting 34",
+    "title": "Spiritual Sedona Mountains 4",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-35": {
-    "title": "Painting 35",
+    "title": "Spiritual Sedona Mountains 5",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-38": {
-    "title": "Painting 38",
+    "title": "Spiritual Sedona Mountains 6",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-39": {
-    "title": "Painting 39",
+    "title": "Spiritual Sedona Mountains 7",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-40": {
-    "title": "Painting 40",
+    "title": "Spiritual Sedona Mountains 8",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-41": {
-    "title": "Painting 41",
+    "title": "Spiritual Sedona Mountains 9",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-43": {
-    "title": "Painting 43",
+    "title": "Spiritual Sedona Mountains 10",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-44": {
-    "title": "Painting 44",
+    "title": "Spiritual Sedona Mountains 11",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-45": {
-    "title": "Painting 45",
+    "title": "Spiritual Sedona Mountains 12",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-51": {
-    "title": "Painting 51",
+    "title": "Puerto Rico Waterfront",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
-      "height": 2,
-      "weight": 2
-    },
-    "packaging": "flat"
-  },
-  "paul-murphy-painting-54": {
-    "title": "Painting 54",
-    "amount": "50.00",
-    "currency": "USD",
-    "parcel": {
-      "length": 14,
-      "width": 11,
-      "height": 2,
-      "weight": 2
-    },
-    "packaging": "flat"
-  },
-  "paul-murphy-painting-55": {
-    "title": "Painting 55",
-    "amount": "100.00",
-    "currency": "USD",
-    "parcel": {
-      "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-56": {
-    "title": "Painting 56",
+    "title": "Peach Preserves",
     "amount": "600.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
-      "height": 2,
+      "length": 18,
+      "width": 4,
+      "height": 4,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "tube"
   },
   "paul-murphy-painting-57": {
-    "title": "Painting 57",
+    "title": "Lady in Gold",
     "amount": "1000.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
+      "length": 38,
+      "width": 18,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-62": {
-    "title": "Painting 62",
+    "title": "Waiting on your ship",
     "amount": "500.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
+      "length": 19,
+      "width": 16,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-63": {
-    "title": "Painting 63",
+    "title": "Slot Canyon Face",
     "amount": "500.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-64": {
-    "title": "Painting 64",
+    "title": "Slot Canyon Arizona",
     "amount": "1000.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-65": {
-    "title": "Painting 65",
+    "title": "Phoenix",
     "amount": "500.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
-      "height": 2,
+      "length": 10,
+      "width": 4,
+      "height": 4,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "tube"
   },
   "paul-murphy-painting-72": {
-    "title": "Painting 72",
+    "title": "Dancing Wolf on Moon",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
-      "height": 2,
+      "length": 13,
+      "width": 4,
+      "height": 4,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "tube"
   },
   "paul-murphy-painting-73": {
-    "title": "Painting 73",
+    "title": "Sunset Tree",
     "amount": "50.00",
     "currency": "USD",
     "parcel": {
       "length": 14,
-      "width": 11,
+      "width": 12,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-74": {
-    "title": "Painting 74",
+    "title": "Music Notes of the Universe",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
-      "height": 2,
+      "length": 13,
+      "width": 4,
+      "height": 4,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "tube"
   },
   "paul-murphy-painting-82": {
-    "title": "Painting 82",
+    "title": "Angies' Eyes",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
-      "height": 2,
+      "length": 13,
+      "width": 4,
+      "height": 4,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "tube"
   },
   "paul-murphy-painting-83": {
-    "title": "Painting 83",
+    "title": "Soul Connections 1",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
+      "length": 12,
+      "width": 10,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-84": {
-    "title": "Painting 84",
+    "title": "Soul Connections 2",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
+      "length": 12,
+      "width": 10,
       "height": 2,
       "weight": 2
     },
     "packaging": "flat"
   },
   "paul-murphy-painting-85": {
-    "title": "Painting 85",
+    "title": "Soul Connections 3",
     "amount": "25.00",
     "currency": "USD",
     "parcel": {
-      "length": 14,
-      "width": 11,
+      "length": 12,
+      "width": 10,
       "height": 2,
       "weight": 2
     },

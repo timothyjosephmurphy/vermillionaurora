@@ -941,7 +941,13 @@
         "video": false,
         "location": 86,
         "price": null,
-        "availability": "Not for sale"
+        "availability": "Not for sale",
+        "title": "My tipi, on Grand Traverse Bay",
+        "sequence": 1,
+        "width": 13,
+        "height": 20,
+        "unit": "in",
+        "material": "Canvas"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7466.jpeg",
@@ -949,7 +955,13 @@
         "video": false,
         "location": 57,
         "price": 1000,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Lady in Gold",
+        "sequence": 2,
+        "width": 16,
+        "height": 36,
+        "unit": "in",
+        "material": "Framed"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7473.jpeg",
@@ -957,7 +969,13 @@
         "video": false,
         "location": 64,
         "price": 1000,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Slot Canyon Arizona",
+        "sequence": 3,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Framed"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7464.jpeg",
@@ -965,7 +983,13 @@
         "video": false,
         "location": 56,
         "price": 600,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Peach Preserves",
+        "sequence": 4,
+        "width": 18,
+        "height": 18,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
@@ -973,7 +997,13 @@
         "video": false,
         "location": 62,
         "price": 500,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Waiting on your ship",
+        "sequence": 5,
+        "width": 17,
+        "height": 14,
+        "unit": "in",
+        "material": "Framed"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7472.jpeg",
@@ -981,7 +1011,13 @@
         "video": false,
         "location": 63,
         "price": 500,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Slot Canyon Face",
+        "sequence": 6,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Framed"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7474.jpeg",
@@ -989,7 +1025,13 @@
         "video": false,
         "location": 65,
         "price": 500,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Phoenix",
+        "sequence": 7,
+        "width": 16,
+        "height": 10,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg",
@@ -997,7 +1039,13 @@
         "video": false,
         "location": 1,
         "price": 300,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Tipi",
+        "sequence": 8,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7416.jpeg",
@@ -1005,7 +1053,13 @@
         "video": false,
         "location": 8,
         "price": 100,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Arixona Slot Cave",
+        "sequence": 9,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
@@ -1013,7 +1067,13 @@
         "video": false,
         "location": 55,
         "price": 100,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Pyrimid from photo",
+        "sequence": 10,
+        "width": null,
+        "height": null,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
@@ -1021,7 +1081,13 @@
         "video": false,
         "location": 14,
         "price": 75,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Eagle from photo 1",
+        "sequence": 11,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
@@ -1029,7 +1095,13 @@
         "video": false,
         "location": 15,
         "price": 75,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Eagle from photo 2",
+        "sequence": 12,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7411.jpeg",
@@ -1037,7 +1109,13 @@
         "video": false,
         "location": 3,
         "price": 50,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Rebel Loon/MN ICE Protest",
+        "sequence": 13,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7414.jpeg",
@@ -1045,7 +1123,13 @@
         "video": false,
         "location": 6,
         "price": 50,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Son TJ Sedona",
+        "sequence": 14,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7419.jpeg",
@@ -1053,15 +1137,13 @@
         "video": false,
         "location": 11,
         "price": 50,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7462.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7462.jpeg",
-        "video": false,
-        "location": 54,
-        "price": 50,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Puerto Rico Beach",
+        "sequence": 15,
+        "width": 18,
+        "height": 12,
+        "unit": "in",
+        "material": "Canvas"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7482.jpeg",
@@ -1069,7 +1151,13 @@
         "video": false,
         "location": 73,
         "price": 50,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Sunset Tree",
+        "sequence": 17,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
@@ -1077,7 +1165,13 @@
         "video": false,
         "location": 2,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Leo/Bear Constilation",
+        "sequence": 18,
+        "width": 16,
+        "height": 36,
+        "unit": "in",
+        "material": "Framed"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7415.jpeg",
@@ -1085,7 +1179,13 @@
         "video": false,
         "location": 7,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Slot Canyon",
+        "sequence": 19,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7431.jpeg",
@@ -1093,7 +1193,13 @@
         "video": false,
         "location": 23,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "My Ego",
+        "sequence": 20,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
@@ -1101,7 +1207,13 @@
         "video": false,
         "location": 24,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Beach Egland AFB",
+        "sequence": 21,
+        "width": 11,
+        "height": 20,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7433.jpeg",
@@ -1109,7 +1221,13 @@
         "video": false,
         "location": 25,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 1",
+        "sequence": 22,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7435.jpeg",
@@ -1117,7 +1235,13 @@
         "video": false,
         "location": 27,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 2",
+        "sequence": 23,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7436.jpeg",
@@ -1125,15 +1249,13 @@
         "video": false,
         "location": 28,
         "price": 25,
-        "availability": "Available"
-      },
-      {
-        "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7439.jpeg",
-        "key": "images/Ex-Featured-Artist-Paul-Murphy/IMG_7439.jpeg",
-        "video": false,
-        "location": 31,
-        "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 3",
+        "sequence": 24,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7442.jpeg",
@@ -1141,7 +1263,13 @@
         "video": false,
         "location": 34,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 4",
+        "sequence": 26,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7443.jpeg",
@@ -1149,7 +1277,13 @@
         "video": false,
         "location": 35,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 5",
+        "sequence": 27,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7446.jpeg",
@@ -1157,7 +1291,13 @@
         "video": false,
         "location": 38,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 6",
+        "sequence": 28,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7447.jpeg",
@@ -1165,7 +1305,13 @@
         "video": false,
         "location": 39,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 7",
+        "sequence": 29,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7448.jpeg",
@@ -1173,7 +1319,13 @@
         "video": false,
         "location": 40,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 8",
+        "sequence": 30,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7449.jpeg",
@@ -1181,7 +1333,13 @@
         "video": false,
         "location": 41,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 9",
+        "sequence": 31,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7451.jpeg",
@@ -1189,7 +1347,13 @@
         "video": false,
         "location": 43,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 10",
+        "sequence": 32,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7452.jpeg",
@@ -1197,7 +1361,13 @@
         "video": false,
         "location": 44,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 11",
+        "sequence": 33,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7453.jpeg",
@@ -1205,7 +1375,13 @@
         "video": false,
         "location": 45,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Spiritual Sedona Mountains 12",
+        "sequence": 34,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7459.jpeg",
@@ -1213,7 +1389,13 @@
         "video": false,
         "location": 51,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Puerto Rico Waterfront",
+        "sequence": 35,
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7481.jpeg",
@@ -1221,7 +1403,13 @@
         "video": false,
         "location": 72,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Dancing Wolf on Moon",
+        "sequence": 36,
+        "width": 13,
+        "height": 20,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7483.jpeg",
@@ -1229,7 +1417,13 @@
         "video": false,
         "location": 74,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Music Notes of the Universe",
+        "sequence": 37,
+        "width": 13,
+        "height": 15,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
@@ -1237,7 +1431,13 @@
         "video": false,
         "location": 82,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Angies' Eyes",
+        "sequence": 38,
+        "width": 13,
+        "height": 15,
+        "unit": "in",
+        "material": "Paper"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7492.jpeg",
@@ -1245,7 +1445,13 @@
         "video": false,
         "location": 83,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Soul Connections 1",
+        "sequence": 39,
+        "width": 8,
+        "height": 10,
+        "unit": "in",
+        "material": "Canvas"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7493.jpeg",
@@ -1253,7 +1459,13 @@
         "video": false,
         "location": 84,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Soul Connections 2",
+        "sequence": 40,
+        "width": 8,
+        "height": 10,
+        "unit": "in",
+        "material": "Canvas"
       },
       {
         "url": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7494.jpeg",
@@ -1261,7 +1473,13 @@
         "video": false,
         "location": 85,
         "price": 25,
-        "availability": "Available"
+        "availability": "Available",
+        "title": "Soul Connections 3",
+        "sequence": 41,
+        "width": 8,
+        "height": 10,
+        "unit": "in",
+        "material": "Canvas"
       }
     ]
   }

@@ -24,13 +24,16 @@ for (const painting of inventory.paintings) {
   if (titleOnPage !== title || Number(priceOnPage?.replaceAll(',', '')) !== Number(rawPrice) || !html.includes('<p class="product-availability">Available</p>')) {
     throw new Error(`Product page does not match inventory: ${slug}`);
   }
+  // Paintings awaiting measurements remain available through their inquiry link.
+  // Do not offer automatic shipping with dimensions that have not been supplied.
+  if (painting.F === '' && painting.G === '') continue;
   const width = Number(painting.F) * (painting.H === 'cm' ? 1 / 2.54 : 1);
   const height = Number(painting.G) * (painting.H === 'cm' ? 1 / 2.54 : 1);
   if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0 || !['cm','in'].includes(painting.H)) {
     throw new Error(`Physical dimensions missing for ${slug}`);
   }
   const shorter = Math.min(width,height), longer = Math.max(width,height);
-  const rolled = longer > 12;
+  const rolled = longer > 12 && painting.L !== 'Framed';
   const estimatedParcel = rolled
     ? {length:Math.ceil(shorter),width:4,height:4,weight:2}
     : {length:Math.ceil(longer + 2),width:Math.ceil(shorter + 2),height:2,weight:2};
