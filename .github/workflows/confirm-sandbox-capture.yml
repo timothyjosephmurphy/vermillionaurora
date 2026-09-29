@@ -1,4 +1,5 @@
 name: Confirm sandbox capture, stock, and event
+run-name: Recheck PayPal event history with bounded query
 on:
   push:
     branches: [main]
