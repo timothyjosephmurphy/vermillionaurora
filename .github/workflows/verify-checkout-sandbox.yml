@@ -1,5 +1,5 @@
 name: Verify isolated checkout sandbox
-run-name: Confirm PayPal sandbox merchant identity
+run-name: Diagnose sandbox merchant identity mismatch
 
 on:
   push:
