@@ -32,6 +32,10 @@ jobs:
             --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
             https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/vermillion-checkout-sandbox/settings)
           node -e "const r=JSON.parse(require('fs').readFileSync('/tmp/cf-settings.json'));console.log('Worker settings HTTP',process.argv[1],'success',r.success,'errors',JSON.stringify((r.errors||[]).map(e=>({code:e.code,message:e.message}))))" "$status"
+          status=$(curl --silent --show-error --output /tmp/cf-routes.json --write-out '%{http_code}' \
+            --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/vermillion-checkout-sandbox/routes)
+          node -e "const r=JSON.parse(require('fs').readFileSync('/tmp/cf-routes.json'));console.log('Worker routes HTTP',process.argv[1],'success',r.success,'errors',JSON.stringify((r.errors||[]).map(e=>({code:e.code,message:e.message}))))" "$status"
       - name: Deploy sandbox Worker
         uses: cloudflare/wrangler-action@v4
         with:
