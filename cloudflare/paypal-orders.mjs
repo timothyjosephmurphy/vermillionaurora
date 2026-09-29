@@ -187,10 +187,18 @@ export async function sandboxWebhookAudit(env) {
     });
     if (!response.ok) return Response.json({registered:false,apiStatus:response.status});
     const hook = await response.json();
+    const orderId = (await stock(env,'honeybadger-and-cub-with-genesis-block').order())?.orderId;
+    const start = new Date(Date.now() - 24 * 60 * 60_000).toISOString();
+    const events = await fetch(`${paypalBase(env)}/v1/notifications/webhooks-events?start_time=${encodeURIComponent(start)}&page_size=100`, {
+      headers:{Authorization:`Bearer ${accessToken}`}
+    });
+    const eventList = events.ok ? await events.json() : {};
     return Response.json({
       registered:hook.id === env.PAYPAL_WEBHOOK_ID,
       urlMatches:hook.url === `${env.SANDBOX_RETURN_ORIGIN}/checkout/webhook`,
-      captureSubscribed:hook.event_types?.some(type => type.name === 'PAYMENT.CAPTURE.COMPLETED' || type.name === '*') ?? false
+      captureSubscribed:hook.event_types?.some(type => type.name === 'PAYMENT.CAPTURE.COMPLETED' || type.name === '*') ?? false,
+      eventApiStatus:events.status,
+      captureEventPresent:!!orderId && eventList.events?.some(event => event.event_type === 'PAYMENT.CAPTURE.COMPLETED' && event.resource?.supplementary_data?.related_ids?.order_id === orderId) === true
     });
   } catch (error) {
     console.error('Sandbox webhook audit failed:',error.message);
