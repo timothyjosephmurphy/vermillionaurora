@@ -5,7 +5,7 @@ import catalog from './checkout-catalog.mjs';
 
 const slug = 'honeybadger-and-cub-with-genesis-block';
 const item = catalog[slug];
-const origin = 'https://vermillionaurora.com';
+const origin = 'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev';
 const orderId = 'ABC123456789';
 
 test('catalog builds packages from physical painting sizes', () => {
@@ -34,7 +34,7 @@ test('one original is reserved for only one buyer, and a completed capture sells
     async beginCapture(id,secret) { if (id !== order || secret !== held) return 'invalid'; return 'ready'; },
     async complete(id,captureId) { assert.equal(id,order); assert.equal(captureId,'CAPTURE1'); sold=true; return true; }
   };
-  const env = { PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CLIENT_ID:'test',PAYPAL_CLIENT_SECRET:'test',PAYPAL_MERCHANT_ID:'MERCHANT1',GITHUB_TOKEN:'test',PAINTING_STOCK:{getByName:() => stub}, PAYPAL_MODE:'sandbox',SHIPPO_TOKEN:'test',STRIPE_SECRET_KEY:'test',SHIP_FROM_STREET:'123 Origin',PAYPAL_WEBHOOK_ID:'webhook' };
+  const env = { PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CLIENT_ID:'test',PAYPAL_CLIENT_SECRET:'test',PAYPAL_MERCHANT_ID:'MERCHANT1',PAINTING_STOCK:{getByName:() => stub}, PAYPAL_MODE:'sandbox',SANDBOX_RETURN_ORIGIN:origin,SHIPPO_TOKEN:'test',STRIPE_SECRET_KEY:'test',SHIP_FROM_STREET:'123 Origin',PAYPAL_WEBHOOK_ID:'webhook' };
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (url,options) => {
     if (url.includes('goshippo.com/shipments')) {
@@ -49,6 +49,7 @@ test('one original is reserved for only one buyer, and a completed capture sells
       const body=JSON.parse(options.body);
       assert.equal(body.purchase_units[0].amount.value,total);
       assert.equal(body.purchase_units[0].reference_id,slug);
+      assert.match(body.payment_source.paypal.experience_context.return_url,/vermillion-checkout-sandbox/);
       return Response.json({id:orderId,links:[{rel:'payer-action',href:`https://www.sandbox.paypal.com/checkoutnow?token=${orderId}`}]});
     }
     if (url.endsWith(`/orders/${orderId}`)) return Response.json({status:captured?'COMPLETED':'APPROVED',purchase_units:[purchaseUnit()]});
