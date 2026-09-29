@@ -22,8 +22,12 @@ The old API-created reusable payment links must remain unpublished; they cannot 
 
 The separate `vermillion-checkout-sandbox` Worker uses `cloudflare/wrangler.sandbox.jsonc` and `cloudflare/checkout-sandbox.mjs`. It exposes `/checkout/health` and `/checkout/test`, and has its own SQLite Durable Objects. It refuses to run if a `GITHUB_TOKEN` is set. Sandbox captures update only its local stock state and a Stripe **test** tax transaction; they never commit to the live inventory. The production Worker remains in live mode with shared checkout disabled.
 
-Run **Deploy isolated checkout sandbox** from GitHub Actions on the repository's main branch. It checks out the draft PR branch, runs the checkout tests, and deploys only the named sandbox Worker using the repository secret `CLOUDFLARE_API_TOKEN`. The token should have Editor access only to this Worker.
+Run **Deploy isolated checkout sandbox** on `shared-paypal-checkout` until the PR is merged, then on `main`. It checks out the selected commit, runs the checkout tests and production bundle check, and deploys only the named sandbox Worker using the repository secret `CLOUDFLARE_API_TOKEN`. It also reads production configuration names without retrieving secret values. The sandbox verification uses a short-lived diagnostic secret, removed after checking actual webhook receipt and the Stripe test tax record.
 
 After the first deployment, set these encrypted secrets on **the sandbox Worker**: `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET` (sandbox REST app); `PAYPAL_MERCHANT_ID` (sandbox business account); `SHIPPO_TOKEN` (test token); `STRIPE_SECRET_KEY` (test key); `SHIP_FROM_STREET` (shipping origin); and `PAYPAL_WEBHOOK_ID` (sandbox app webhook for `https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/webhook`, subscribed to `PAYMENT.CAPTURE.COMPLETED`). Never copy live provider keys or `GITHUB_TOKEN` into this Worker.
 
 With those settings present, `PAYPAL_CHECKOUT_ENABLED` is `true` in **the sandbox Wrangler config only**. Deploy it again and use `https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/test` with sandbox buyer credentials. The test page does not appear on the production site. Validate quotes, cancellation, capture, stock status, and webhook delivery. A sandbox capture is not a real purchase and does not mark a painting sold on the site.
+
+## Release preparation
+
+See `payments/PRODUCTION-READINESS.md` for the verified sandbox results and staged deployment sequence. `PAYPAL_CHECKOUT_SLUGS` can restrict new purchases to a comma-separated list for a controlled live test. Turning `PAYPAL_CHECKOUT_ENABLED` off pauses new orders while existing captures, cancellations, and verified webhooks continue to settle.

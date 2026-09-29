@@ -68,7 +68,12 @@ test('one original is reserved for only one buyer, and a completed capture sells
   assert.match((await first.json()).url,/sandbox.paypal.com/);
   const second = await checkout(request('/checkout/create',{slug}),env);
   assert.equal(second.status,409);
+  env.PAYPAL_CHECKOUT_ENABLED='false';
+  env.PAYPAL_CHECKOUT_SLUGS='another-painting';
   const capture = await checkout(request('/checkout/capture',{slug,orderId,holdId:held}),env);
   assert.deepEqual(await capture.json(),{status:'sold'});
+  env.PAYPAL_CHECKOUT_ENABLED='true';
+  assert.equal((await checkout(request('/checkout/create',{slug}),env)).status,503);
+  env.PAYPAL_CHECKOUT_SLUGS='';
   assert.equal((await checkout(request('/checkout/create',{slug}),env)).status,409);
 });

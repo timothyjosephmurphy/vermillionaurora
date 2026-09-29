@@ -10,6 +10,7 @@ const cors = env => ({ 'Access-Control-Allow-Origin':site(env), 'Access-Control-
 const json = (body, status=200, env={}) => new Response(JSON.stringify(body), {status, headers:{...cors(env),'Content-Type':'application/json'}});
 const configured = env => ['live','sandbox'].includes(env.PAYPAL_MODE) && env.PAYPAL_CLIENT_ID && env.PAYPAL_CLIENT_SECRET && env.PAYPAL_MERCHANT_ID && (env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN && !env.GITHUB_TOKEN : env.GITHUB_TOKEN) && env.PAINTING_STOCK && env.SHIPPO_TOKEN && env.STRIPE_SECRET_KEY && env.SHIP_FROM_STREET && env.PAYPAL_WEBHOOK_ID;
 const stock = (env, slug) => env.PAINTING_STOCK.getByName(slug);
+const offered = (env,slug) => !env.PAYPAL_CHECKOUT_SLUGS || env.PAYPAL_CHECKOUT_SLUGS.split(',').map(x=>x.trim()).includes(slug);
 const paypalBase = env => env.PAYPAL_MODE === 'sandbox' ? 'https://api-m.sandbox.paypal.com' : 'https://api-m.paypal.com';
 
 async function token(env) {
@@ -50,6 +51,7 @@ export async function checkout(request, env) {
   if (url.pathname === '/checkout/status' && request.method === 'GET') {
     const slug = url.searchParams.get('slug');
     if (!catalog[slug]) return respond({error:'Painting not in checkout catalog.'},404);
+    if (!offered(env,slug)) return respond({error:'Checkout is being set up.'},503);
     return respond({status:await stock(env,slug).status(),title:catalog[slug].title,amount:catalog[slug].amount,currency:'USD'});
   }
   if (!['/checkout/quote','/checkout/create','/checkout/capture','/checkout/cancel'].includes(url.pathname) || request.method !== 'POST') return respond({error:'Not found.'},404);
@@ -57,6 +59,7 @@ export async function checkout(request, env) {
   try { data = await request.json(); } catch { return respond({error:'Invalid request.'},400); }
   const slug = data?.slug;
   if (typeof slug !== 'string' || !SLUG.test(slug) || !catalog[slug]) return respond({error:'Painting not in checkout catalog.'},404);
+  if (!finishing && !offered(env,slug)) return respond({error:'Checkout is being set up.'},503);
   const item = catalog[slug];
   const stub = stock(env,slug);
 
@@ -181,4 +184,3 @@ export async function checkoutWebhook(request,env) {
     return new Response('Retry later',{status:503});
   }
 }
-
