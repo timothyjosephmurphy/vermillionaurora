@@ -5,9 +5,10 @@ const SITE = 'https://vermillionaurora.com';
 const ORDER_ID = /^[A-Z0-9]{1,36}$/;
 const HOLD_ID = /^[0-9a-f-]{36}$/;
 const SLUG = /^[a-z0-9-]+$/;
-const cors = { 'Access-Control-Allow-Origin':SITE, 'Access-Control-Allow-Methods':'GET, POST, OPTIONS', 'Access-Control-Allow-Headers':'Content-Type', 'Vary':'Origin', 'Cache-Control':'no-store' };
-const json = (body, status=200) => new Response(JSON.stringify(body), {status, headers:{...cors,'Content-Type':'application/json'}});
-const configured = env => env.PAYPAL_CHECKOUT_ENABLED === 'true' && env.PAYPAL_CLIENT_ID && env.PAYPAL_CLIENT_SECRET && env.PAYPAL_MERCHANT_ID && env.GITHUB_TOKEN && env.PAINTING_STOCK && env.SHIPPO_TOKEN && env.STRIPE_SECRET_KEY && env.SHIP_FROM_STREET && env.PAYPAL_WEBHOOK_ID;
+const site = env => env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN : SITE;
+const cors = env => ({ 'Access-Control-Allow-Origin':site(env), 'Access-Control-Allow-Methods':'GET, POST, OPTIONS', 'Access-Control-Allow-Headers':'Content-Type', 'Vary':'Origin', 'Cache-Control':'no-store' });
+const json = (body, status=200, env={}) => new Response(JSON.stringify(body), {status, headers:{...cors(env),'Content-Type':'application/json'}});
+const configured = env => env.PAYPAL_CHECKOUT_ENABLED === 'true' && env.PAYPAL_CLIENT_ID && env.PAYPAL_CLIENT_SECRET && env.PAYPAL_MERCHANT_ID && (env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN && !env.GITHUB_TOKEN : env.GITHUB_TOKEN) && env.PAINTING_STOCK && env.SHIPPO_TOKEN && env.STRIPE_SECRET_KEY && env.SHIP_FROM_STREET && env.PAYPAL_WEBHOOK_ID;
 const stock = (env, slug) => env.PAINTING_STOCK.getByName(slug);
 const paypalBase = env => env.PAYPAL_MODE === 'sandbox' ? 'https://api-m.sandbox.paypal.com' : 'https://api-m.paypal.com';
 
@@ -37,38 +38,39 @@ async function paypal(env, path, accessToken, body, requestId) {
 }
 export async function checkout(request, env) {
   const url = new URL(request.url);
-  if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:cors});
-  if (!configured(env)) return json({error:'Checkout is being set up.'},503);
+  const respond = (body,status=200) => json(body,status,env);
+  if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:cors(env)});
+  if (!configured(env)) return respond({error:'Checkout is being set up.'},503,env);
   const origin = request.headers.get('Origin');
-  if (origin && origin !== SITE) return json({error:'Origin not allowed.'},403);
+  if (origin && origin !== site(env)) return respond({error:'Origin not allowed.'},403,env);
 
   if (url.pathname === '/checkout/status' && request.method === 'GET') {
     const slug = url.searchParams.get('slug');
-    if (!catalog[slug]) return json({error:'Painting not in checkout catalog.'},404);
-    return json({status:await stock(env,slug).status(),title:catalog[slug].title,amount:catalog[slug].amount,currency:'USD'});
+    if (!catalog[slug]) return respond({error:'Painting not in checkout catalog.'},404);
+    return respond({status:await stock(env,slug).status(),title:catalog[slug].title,amount:catalog[slug].amount,currency:'USD'});
   }
-  if (!['/checkout/quote','/checkout/create','/checkout/capture','/checkout/cancel'].includes(url.pathname) || request.method !== 'POST') return json({error:'Not found.'},404);
+  if (!['/checkout/quote','/checkout/create','/checkout/capture','/checkout/cancel'].includes(url.pathname) || request.method !== 'POST') return respond({error:'Not found.'},404);
   let data;
-  try { data = await request.json(); } catch { return json({error:'Invalid request.'},400); }
+  try { data = await request.json(); } catch { return respond({error:'Invalid request.'},400); }
   const slug = data?.slug;
-  if (typeof slug !== 'string' || !SLUG.test(slug) || !catalog[slug]) return json({error:'Painting not in checkout catalog.'},404);
+  if (typeof slug !== 'string' || !SLUG.test(slug) || !catalog[slug]) return respond({error:'Painting not in checkout catalog.'},404);
   const item = catalog[slug];
   const stub = stock(env,slug);
 
   if (url.pathname === '/checkout/quote') {
-    if (await stub.status() !== 'available') return json({error:'This painting is reserved or sold.'},409);
+    if (await stub.status() !== 'available') return respond({error:'This painting is reserved or sold.'},409);
     try {
       const quote = await priceOrder(env,slug,data.address);
-      return json({base:quote.base,shipping:quote.shipping,tax:quote.tax,total:quote.total,carrier:quote.carrier,service:quote.service,packaging:quote.packaging});
+      return respond({base:quote.base,shipping:quote.shipping,tax:quote.tax,total:quote.total,carrier:quote.carrier,service:quote.service,packaging:quote.packaging});
     } catch (error) {
       console.error('Shipping or tax quote failed:',slug,error.message);
-      return json({error:'Unable to quote shipping and tax for this address.'},422);
+      return respond({error:'Unable to quote shipping and tax for this address.'},422);
     }
   }
 
   if (url.pathname === '/checkout/create') {
     const holdId = crypto.randomUUID();
-    if (!await stub.reserve(holdId)) return json({error:'This painting is reserved or sold.'},409);
+    if (!await stub.reserve(holdId)) return respond({error:'This painting is reserved or sold.'},409);
     await stub.initialize(slug);
     try {
       const quote = await priceOrder(env,slug,data.address);
@@ -82,28 +84,28 @@ export async function checkout(request, env) {
             ...(quote.address.street2 ? {address_line_2:quote.address.street2} : {}),admin_area_2:quote.address.city,
             admin_area_1:quote.address.state,postal_code:quote.address.zip,country_code:'US'}}}],
         payment_source:{paypal:{experience_context:{brand_name:'Vermillion Aurora',user_action:'PAY_NOW',shipping_preference:'SET_PROVIDED_ADDRESS',
-          return_url:`${SITE}/products/${slug}/?checkout=return&hold=${holdId}`,
-          cancel_url:`${SITE}/products/${slug}/?checkout=cancel&hold=${holdId}`}}}
+          return_url:env.PAYPAL_MODE === 'sandbox' ? `${site(env)}/checkout/test?slug=${slug}&checkout=return&hold=${holdId}` : `${SITE}/products/${slug}/?checkout=return&hold=${holdId}`,
+          cancel_url:env.PAYPAL_MODE === 'sandbox' ? `${site(env)}/checkout/test?slug=${slug}&checkout=cancel&hold=${holdId}` : `${SITE}/products/${slug}/?checkout=cancel&hold=${holdId}`}}}
       },holdId);
       const approve = order.links?.find(link => link.rel === 'payer-action' || link.rel === 'approve')?.href;
       const allowedHosts = env.PAYPAL_MODE === 'sandbox' ? ['sandbox.paypal.com','www.sandbox.paypal.com'] : ['paypal.com','www.paypal.com'];
       if (!ORDER_ID.test(order.id || '') || !approve || new URL(approve).protocol !== 'https:' || !allowedHosts.includes(new URL(approve).hostname) ||
           !await stub.bindOrder(holdId,order.id,quote)) throw new Error('Invalid PayPal approval response');
-      return json({url:approve});
+      return respond({url:approve});
     } catch (error) {
       await stub.release(holdId);
       console.error('Checkout create failed:',slug,error.message);
-      return json({error:'Could not start checkout. Please try again.'},502);
+      return respond({error:'Could not start checkout. Please try again.'},502);
     }
   }
-  if (!ORDER_ID.test(data.orderId || '') || !HOLD_ID.test(data.holdId || '')) return json({error:'Invalid checkout return.'},400);
+  if (!ORDER_ID.test(data.orderId || '') || !HOLD_ID.test(data.holdId || '')) return respond({error:'Invalid checkout return.'},400);
   if (url.pathname === '/checkout/cancel') {
     await stub.releaseOrder(data.orderId,data.holdId);
-    return json({status:'cancelled'});
+    return respond({status:'cancelled'});
   }
   const state = await stub.beginCapture(data.orderId,data.holdId);
-  if (state === 'sold') return json({status:'sold'});
-  if (state === 'invalid' || state === 'expired') return json({error:'This checkout has expired.'},409);
+  if (state === 'sold') return respond({status:'sold'});
+  if (state === 'invalid' || state === 'expired') return respond({error:'This checkout has expired.'},409);
   try {
     const accessToken = await token(env);
     const expected = await stub.order();
@@ -117,11 +119,11 @@ export async function checkout(request, env) {
     }
     const capture = validateCapture(order,slug,env,expected);
     if (!capture || !await stub.complete(data.orderId,capture)) throw new Error('Capture is not completed or did not match');
-    return json({status:'sold'});
+    return respond({status:'sold'});
   } catch (error) {
     // A timed-out capture may still complete. Keep the lock and reconcile by webhook or retry.
     console.error('Checkout capture needs reconciliation:',slug,data.orderId,error.message);
-    return json({error:'We could not confirm the payment yet. Please check PayPal Activity before trying again.'},503);
+    return respond({error:'We could not confirm the payment yet. Please check PayPal Activity before trying again.'},503);
   }
 }
 
