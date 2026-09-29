@@ -1,8 +1,27 @@
 # Checkout release preparation — September 29, 2026
 
-Branch: `shared-paypal-checkout`, pull request #3.
+Pull request #3 is merged. Production checkout is deployed with purchases disabled.
 
-## Verified
+## Current release status — September 29, 2026
+
+- Production verification run 36539118165, attempt 3, passed the live PayPal authentication/webhook/merchant, Stripe Tax settings, Shippo carrier, GitHub repository access, inventory binding, and shipping-origin checks. Checkout reported `mode=live`, `enabled=false`, `ready=true`. The new restricted Stripe live key's write permissions have not yet been exercised.
+- Stripe returned no active tax registrations. The owner submitted the Washington business license application and is awaiting processing. Keep real purchases disabled while the required licensing and tax setup are pending.
+- Live verification evidence: https://github.com/timothyjosephmurphy/vermillionaurora/actions/runs/36539118165
+
+## Selected first-purchase painting and shipping requirements
+
+The owner selected **Chase Toole** (`painting-portrait-in-green`) for the next controlled purchase, with these instructions on September 29:
+
+- Ship flat in an envelope.
+- Supplied dimensions: 12 × 15 inches. These match the recorded artwork dimensions; verify the outside packed-envelope dimensions before buying a label.
+- Contents: one sheet of watercolor paper and an envelope. No numeric measured weight or packed thickness was supplied. Do not substitute the catalog's default 2 lb estimate as a confirmed weight.
+- Shipping insurance is requested. The intended test sale price is $20, as previously specified by the owner. Set insured value to the actual sale value when preparing the label; no insurance has been purchased or implemented by this note.
+
+Current `main` inventory and the product page both mark this painting **Sold** after the earlier payment. The inventory price field is 0 and the painting is absent from the shared checkout catalog. Before another live purchase, deliberately restore the intended $20 price and available inventory, verify stock/payment state, route the product through shared checkout rather than its legacy hosted link, and rebuild the catalog. Preserve the existing completed-payment history; do not reset it as a side effect of recording shipping preferences.
+
+Still needed: measured packed weight, packed thickness, confirmation of exterior dimensions, and insurance support in the separate shipping-label integration. These instructions are saved requirements, not a completed carrier configuration.
+
+## Pre-deployment verification (historical)
 
 - Merged the current `main` into the checkout branch and resolved the sandbox workflow conflict.
 - Eight automated checks pass. They include inventory/page transformations for all 57 checkout paintings, concurrent reservation rejection, capture, invalid webhook signatures, wrong merchant/amount, replay, and settling an existing order while new checkout is paused.
@@ -14,10 +33,10 @@ Branch: `shared-paypal-checkout`, pull request #3.
 
 Evidence: https://github.com/timothyjosephmurphy/vermillionaurora/actions/runs/36537716207
 
-## Deployment sequence
+## Deployment sequence and remaining launch work
 
-1. Merge the reviewed PR into `main` and deploy `cloudflare/wrangler.jsonc` to `vermillion-commissions`. The checked-in configuration sets `PAYPAL_MODE=live` and `PAYPAL_CHECKOUT_ENABLED=false` and creates the `PAINTING_STOCK` binding. The September 29 preflight found no deployed checkout mode flag or inventory binding yet; the new deployment supplies them.
-2. Confirm the live provider credentials and webhook registration. Live webhook URL: `https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/webhook`; event: `PAYMENT.CAPTURE.COMPLETED`.
+1. **Complete:** PR #3 is merged and deployed to `vermillion-commissions` with `PAYPAL_MODE=live`, `PAYPAL_CHECKOUT_ENABLED=false`, and the `PAINTING_STOCK` binding.
+2. **Connection verification complete:** live provider credentials and webhook registration passed the diagnostic. Tax-calculation and transaction-write access remain to be exercised. Live webhook URL: `https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/webhook`; event: `PAYMENT.CAPTURE.COMPLETED`.
 3. Confirm actual packed dimensions and weight and decide insurance before accepting live orders. Current quotes estimate 2 lb per package, with a 4-inch tube for works whose longer side exceeds 12 inches and flat packages for smaller works. Tube length currently equals the rounded-up shorter painting dimension; allow for end caps and padding when measuring the real package. No insurance is explicitly purchased by this checkout.
 4. Set `PAYPAL_CHECKOUT_SLUGS` to one chosen product slug for a controlled live purchase, then set `PAYPAL_CHECKOUT_ENABLED=true`. The optional comma-separated slug list restricts new checkout to selected paintings; blank or absent allows the whole catalog. These runtime values should be set in the release configuration before deployment because Wrangler explicitly manages the enable flag.
 5. Verify the paid order, immediate sold state, GitHub inventory/page commit, public site update, webhook, and Stripe Tax record. This live inventory write was deliberately not performed by the sandbox test.
@@ -27,6 +46,6 @@ To pause new purchases, set `PAYPAL_CHECKOUT_ENABLED=false`. Existing capture/ca
 
 ## Sandbox verification
 
-The deployment workflow installs a temporary diagnostic credential on the sandbox Worker, requests the actual capture-event replay, confirms verified receipt and the Stripe test tax record, and removes the credential. The diagnostic route exists only in the isolated sandbox entry point and is inaccessible without the temporary credential. Responses contain state flags, not buyer details or provider secrets.
+The deployment workflow installs a temporary diagnostic credential on the sandbox Worker, confirms the recorded webhook receipt and Stripe test tax record, and removes the credential. Requesting a fresh PayPal capture-event replay is an optional workflow action; the prior successful replay is already recorded. The diagnostic route exists only in the isolated sandbox entry point and is inaccessible without the temporary credential. Responses contain state flags, not buyer details or provider secrets.
 
 Production checkout does not buy a shipping label or email one. That separate fulfillment integration must be coordinated before it is added to this checkout branch.
