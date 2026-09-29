@@ -44,11 +44,13 @@ jobs:
           DEPLOYED_SHA: ${{ github.sha }}
         run: |
           node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const expected=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc','utf8')).vars;
           const url='https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/health';
           let ready=false;
           for(let i=0;i<30;i++){
             const r=await fetch(url);const h=await r.json().catch(()=>({}));
-            if(r.ok&&h.mode==='live'&&h.release===process.env.DEPLOYED_SHA){ready=true;console.log('Production checkout health:',JSON.stringify(h));break;}
+            if(r.ok&&h.mode==='live'&&h.release===process.env.DEPLOYED_SHA&&h.enabled===(expected.PAYPAL_CHECKOUT_ENABLED==='true')){ready=true;console.log('Production checkout health:',JSON.stringify(h));break;}
             await new Promise(resolve=>setTimeout(resolve,5000));
           }
           if(!ready)throw Error('The expected production revision did not become ready');

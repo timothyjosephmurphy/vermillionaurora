@@ -34,7 +34,9 @@ export async function priceOrder(env, slug, input) {
   const shipment = await shipmentResponse.json();
   if (!shipmentResponse.ok) throw new Error(`Shipping quote unavailable (${shipmentResponse.status})`);
   if (insurance && !insuredShipmentMatches(shipment, insurance)) throw new Error('Shipping insurance was not confirmed by Shippo');
-  const rates = (shipment.rates || []).filter(r => r.object_id && r.currency === 'USD' && Number.isFinite(Number(r.amount)) && Number(r.amount) > 0 &&
+  const carriers = (env.SHIPPO_CARRIER_ALLOWLIST || '').split(',').map(value=>value.trim().toLowerCase()).filter(Boolean);
+  const rates = (shipment.rates || []).filter(r => (!carriers.length || carriers.includes(String(r.provider || '').toLowerCase())) &&
+    r.object_id && r.currency === 'USD' && Number.isFinite(Number(r.amount)) && Number(r.amount) > 0 &&
     (!insurance || insuredRateMatches(r, shipment.object_id)));
   if (!rates.length) throw new Error('No carrier rate available for this package and address');
   const rate = rates.sort((a,b) => Number(a.amount)-Number(b.amount))[0];

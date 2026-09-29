@@ -47,6 +47,18 @@ it('quotes the flat envelope with $20 insurance and includes its fee only once',
   expect(calls.find(c=>c.url.endsWith('/tax/calculations')).body.get('shipping_cost[amount]')).toBe('575');
 });
 
+it('uses only an allowed carrier even when another insured rate is cheaper',async()=>{
+  rate.provider='UPS';
+  fetch.mockImplementationOnce(async()=>Response.json({...shipment,rates:[{...rate,object_id:'USPS_RATE',provider:'USPS',amount:'2.00'},rate]}));
+  const quote=await priceOrder({...env,SHIPPO_CARRIER_ALLOWLIST:'UPS'},slug,{name:'Test Buyer',street1:'123 Main St',city:'Seattle',state:'WA',zip:'98122'});
+  expect(quote).toMatchObject({carrier:'UPS',rateId:'INS_RATE',shipping:'5.75',insurance:{amount:'20.00'}});
+});
+
+it('does not substitute a disallowed carrier when the selected carrier has no rate',async()=>{
+  await expect(priceOrder({...env,SHIPPO_CARRIER_ALLOWLIST:'UPS'},slug,{name:'Test Buyer',street1:'123 Main St',city:'Seattle',state:'WA',zip:'98122'})).rejects.toThrow('No carrier rate');
+  expect(purchases()).toHaveLength(0);
+});
+
 it('requires the sender phone before quoting or charging for an insured shipment',async()=>{
   await expect(priceOrder({...env,SHIP_FROM_PHONE:''},slug,{name:'Buyer',street1:'123 Main St',city:'Seattle',state:'WA',zip:'98122'})).rejects.toThrow('SHIP_FROM_PHONE');
   expect(calls).toHaveLength(0);

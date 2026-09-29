@@ -64,4 +64,8 @@ The **Verify insured Chase Toole shipping** workflow runs `node payments/verify-
 
 Reference: https://docs.goshippo.com/shipments/shipping-insurance
 
+## Controlled live pilot
+
+The owner authorized the Chase Toole $20 live test before the business tax ID arrives on September 29 at 02:12 PDT. The pilot restricts checkout to `painting-portrait-in-green` and carrier selection to UPS through `SHIPPO_CARRIER_ALLOWLIST=UPS`. Preserve Stripe Tax and its actual registration status. Production labels are enabled only with this restricted checkout release after sandbox insurance, live Gmail, and insured-rate checks. A real successful capture triggers the real label and seller PDF email.
+
 The first insured sandbox sample confirmed the $20 insurance quote but USPS rejected the label (`sender_info_missing`) because the sender phone was not supplied. Its record is preserved. Set `SHIP_FROM_PHONE` on both Workers; the code now checks it before an insured quote. The v2 sample can then be retried without resubmitting the failed transaction.
