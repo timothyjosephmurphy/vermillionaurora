@@ -5,8 +5,24 @@ import { applySale, handlePaypalIpn } from './paypal-inventory.mjs';
 
 const slug = 'painting-portrait-in-green';
 const paths = ['gallery/inventory.json', 'payments/paypal-links.json', 'index.html', 'gallery/index.html', `products/${slug}/index.html`];
+// Chase has already sold in production. Reconstruct its pre-sale state only
+// inside the test, so IPN regression checks do not depend on live stock.
 const files = Object.fromEntries(paths.map(path => [path, readFileSync(new URL(`../${path}`, import.meta.url), 'utf8')]));
-const item = JSON.parse(files['payments/paypal-links.json'])[slug];
+const inventory = JSON.parse(files['gallery/inventory.json']);
+const painting = inventory.paintings.find(p => p.A === slug);
+painting.C = '20.0'; painting.E = 'Available';
+files['gallery/inventory.json'] = JSON.stringify(inventory);
+const links = JSON.parse(files['payments/paypal-links.json']);
+const item = {title:'Chase Toole',paypalTitle:'Chase Toole Portrait',amount:'20.00',currency:'USD',autoInventory:true};
+links[slug] = item;
+files['payments/paypal-links.json'] = JSON.stringify(links);
+files[`products/${slug}/index.html`] = files[`products/${slug}/index.html`].replace('<p class="product-availability">Sold</p>','<p class="product-availability">Available</p>');
+for (const path of ['index.html','gallery/index.html']) {
+  files[path] = files[path].replace(/<article\b[^>]*>[\s\S]*?<\/article>/g, article =>
+    article.includes(`/products/${slug}/`) ? article.replace('$20 USD · Sold','$20 USD · Available')
+      .replace('data-availability="Sold"','data-availability="Available"')
+      .replaceAll(`/products/${slug}/`,`/?buy=${slug}#contact`) : article);
+}
 
 test('a completed sale updates every public listing in one tree', () => {
   const changed = applySale(files, slug, item);
@@ -26,7 +42,10 @@ test('a completed sale updates every public listing in one tree', () => {
 test('a stale price or status cannot silently mark an unrelated item sold', () => {
   assert.throws(() => applySale(files, slug, { ...item, amount: '200.00' }), /Inventory mismatch/);
   const sold = structuredClone(files);
-  sold['gallery/inventory.json'] = sold['gallery/inventory.json'].replace('"A": "painting-portrait-in-green",\n      "B": "Chase Toole",\n      "C": "20.0",\n      "D": "USD",\n      "E": "Available"', '"A": "painting-portrait-in-green",\n      "B": "Chase Toole",\n      "C": "0",\n      "D": "USD",\n      "E": "Sold"');
+  const soldInventory = JSON.parse(sold['gallery/inventory.json']);
+  const soldPainting = soldInventory.paintings.find(p => p.A === slug);
+  soldPainting.C = '0'; soldPainting.E = 'Sold';
+  sold['gallery/inventory.json'] = JSON.stringify(soldInventory);
   assert.throws(() => applySale(sold, slug, item), /Inventory mismatch/);
 });
 

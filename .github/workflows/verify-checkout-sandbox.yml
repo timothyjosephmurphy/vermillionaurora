@@ -19,14 +19,14 @@ jobs:
         run: |
           base=https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev
           status=$(curl --silent --show-error --output /tmp/checkout-status.json --write-out '%{http_code}' \
-            "$base/checkout/status?slug=honeybadger-and-cub-with-genesis-block")
+            "$base/checkout/status?slug=el-zonte-at-sunrise")
           echo "Checkout status HTTP $status"
           cat /tmp/checkout-status.json
           test "$status" = 200
           node -e "const s=JSON.parse(require('fs').readFileSync('/tmp/checkout-status.json'));if(s.status!=='available')process.exit(1)"
           status=$(curl --silent --show-error --output /tmp/checkout-quote.json --write-out '%{http_code}' \
             --header 'Content-Type: application/json' \
-            --data '{"slug":"honeybadger-and-cub-with-genesis-block","address":{"name":"Test Buyer","street1":"1600 Amphitheatre Pkwy","city":"Mountain View","state":"CA","zip":"94043"}}' \
+            --data '{"slug":"el-zonte-at-sunrise","address":{"name":"Test Buyer","street1":"1600 Amphitheatre Pkwy","city":"Mountain View","state":"CA","zip":"94043"}}' \
             "$base/checkout/quote")
           echo "Checkout quote HTTP $status"
           cat /tmp/checkout-quote.json
@@ -36,7 +36,7 @@ jobs:
         run: |
           node --input-type=module <<'NODE'
           const base='https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev';
-          const slug='honeybadger-and-cub-with-genesis-block';
+          const slug='el-zonte-at-sunrise';
           const address={name:'Test Buyer',street1:'1600 Amphitheatre Pkwy',city:'Mountain View',state:'CA',zip:'94043'};
           const quote=JSON.parse((await import('node:fs')).readFileSync('/tmp/checkout-quote.json','utf8'));
           const post=async(path,body)=>{
