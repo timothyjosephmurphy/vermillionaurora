@@ -172,6 +172,9 @@ export async function checkoutWebhook(request,env) {
     if (!ORDER_ID.test(orderId || '')) return new Response('Ignored');
     const order = await paypal(env,`/v2/checkout/orders/${orderId}`,accessToken);
     const slug = order.purchase_units?.[0]?.reference_id;
+    if(/^cart:[0-9a-f-]{36}$/.test(slug||'') && env.CART_ORDERS) {
+      await env.CART_ORDERS.getByName(slug.slice(5)).refresh(orderId);return new Response('OK');
+    }
     if (typeof slug !== 'string' || !SLUG.test(slug)) return new Response('Ignored');
     const stub = stock(env,slug);
     const expected = await stub.order();
@@ -194,6 +197,7 @@ export async function backfillCheckoutSale(env,slug) {
   if(expected?.state!=='sold' || !expected.captureId)return {recorded:false,status:expected?.state||'available'};
   // Bitcoin receipts are already durably saved by settlement; never send their
   // order IDs to PayPal during accounting maintenance or relisting.
+  if(expected.orderId?.startsWith('cart:'))return env.CART_ORDERS.getByName(expected.orderId.slice(5)).archiveSale();
   if(expected.orderId?.startsWith('btcpay:'))return stub.archiveSale();
   const accessToken=await token(env);
   const order=await paypal(env,`/v2/checkout/orders/${expected.orderId}`,accessToken);

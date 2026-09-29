@@ -41,6 +41,29 @@ export class PaintingStock extends DurableObject {
       holdId, Date.now() + 20 * 60_000);
     return true;
   }
+  reserveCart(orderId) {
+    const row=this.row(),owner=`cart:${orderId}`;
+    if(row?.state==='cart-held'&&row.order_id===owner)return true;
+    if(this.status()!=='available')return false;
+    // The coordinator owns expiry. Locks cannot time out while payment is uncertain.
+    this.ctx.storage.sql.exec(`INSERT INTO stock(id,state,hold_id,order_id,expires_at) VALUES(1,'cart-held',?,?,NULL)
+      ON CONFLICT(id) DO UPDATE SET state='cart-held',hold_id=excluded.hold_id,order_id=excluded.order_id,expires_at=NULL,capture_id=NULL,published=0,tax_recorded=0,total=NULL,shipping=NULL,tax=NULL,tax_calc_id=NULL,destination=NULL`,orderId,owner);
+    this.ctx.storage.sql.exec('DELETE FROM shipping_job WHERE id=1');
+    return true;
+  }
+  ownsCart(orderId) {const row=this.row();return row?.state==='cart-held'&&row.order_id===`cart:${orderId}`;}
+  releaseCart(orderId) {
+    if(!this.ownsCart(orderId))return false;
+    this.ctx.storage.sql.exec('DELETE FROM stock WHERE id=1');return true;
+  }
+  completeCart(orderId,captureId) {
+    const row=this.row();
+    if(row?.state==='sold'&&row.order_id===`cart:${orderId}`&&row.capture_id===captureId)return true;
+    if(!this.ownsCart(orderId))return false;
+    this.ctx.storage.sql.exec("UPDATE stock SET state='sold',capture_id=?,published=1,expires_at=NULL WHERE id=1",captureId);
+    // Payment receipt, tax and fulfillment belong to the coordinator, once per order.
+    return true;
+  }
   bindOrder(holdId, orderId, quote) {
     const row = this.row();
     if (row?.state !== 'held' || row.hold_id !== holdId || row.expires_at <= Date.now() || row.order_id) return false;
@@ -101,6 +124,7 @@ export class PaintingStock extends DurableObject {
   async archiveSale() {
     const row=this.row();
     if(row?.state!=='sold')return {recorded:false};
+    if(row.order_id?.startsWith('cart:'))return this.env.CART_ORDERS.getByName(row.order_id.slice(5)).archiveSale();
     const saved=this.ctx.storage.sql.exec('SELECT data FROM sale_receipt WHERE capture_id=?',row.capture_id).toArray()[0];
     if(!saved)throw Error('Sale receipt needs backfill');
     if(!this.env.SALES_LEDGER)throw Error('Sales ledger is not configured');
@@ -129,7 +153,7 @@ export class PaintingStock extends DurableObject {
   // sale_receipt and ledger history for any earlier completed payment.
   resetForRelisting() {
     const row = this.row();
-    if (row?.state === 'held' || row?.state === 'capturing') {
+    if (row?.state === 'held' || row?.state === 'capturing' || row?.state === 'cart-held') {
       throw new Error('Cannot relist a painting with an active checkout');
     }
     this.ctx.storage.sql.exec('DELETE FROM stock WHERE id=1');
@@ -156,7 +180,7 @@ export class PaintingStock extends DurableObject {
   }
   async alarm() {
     const row = this.row();
-    if (!row || row.state !== 'sold') return;
+    if (!row || row.state !== 'sold' || row.order_id?.startsWith('cart:')) return;
     // Schedule recovery before external I/O, including a process crash during purchase.
     await this.ctx.storage.setAlarm(Date.now() + 60_000);
     let finished = true;

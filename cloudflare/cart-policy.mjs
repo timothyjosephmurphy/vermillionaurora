@@ -1,0 +1,36 @@
+import catalog, {catalogVersion} from './checkout-catalog.mjs';
+import {bitcoinOffered} from './bitcoin-api.mjs';
+export const MAX_ITEMS=12;
+export const ORDER_ID=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+export const ACCESS_KEY=/^[a-f0-9]{64}$/;
+export const cartOrigin=env=>env.PAYPAL_MODE==='sandbox'?env.SANDBOX_RETURN_ORIGIN:'https://vermillionaurora.com';
+export const dollars=n=>(n/100).toFixed(2);
+export function cents(value) {
+  if(typeof value!=='string'||!/^\d+\.\d{2}$/.test(value))throw Error('Invalid amount');
+  const result=Number(value.replace('.',''));if(!Number.isSafeInteger(result))throw Error('Invalid amount');return result;
+}
+export const listed=(list,id)=>!!list?.split(',').map(s=>s.trim()).includes(id);
+export function paymentMethods(env,id) {
+  if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS||!env.PAINTING_STOCK||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return [];
+  if(!env.SHIPPO_TOKEN||!env.STRIPE_SECRET_KEY||!env.SHIP_FROM_STREET||!['live','sandbox'].includes(env.PAYPAL_MODE))return [];
+  if(!catalog[id]||catalog[id].available===false)return [];
+  const methods=[];
+  if(env.PAYPAL_CHECKOUT_ENABLED==='true'&&listed(env.PAYPAL_CHECKOUT_SLUGS,id)&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');
+  if(bitcoinOffered(env,id))methods.push('bitcoin');
+  return methods;
+}
+export function cartItems(input) {
+  if(!Array.isArray(input)||input.length<1||input.length>MAX_ITEMS)throw Error(`Choose between 1 and ${MAX_ITEMS} originals.`);
+  const seen=new Set();
+  return input.map(line=>{
+    if(!line||typeof line.id!=='string'||seen.has(line.id)||line.quantity!==1||!Object.hasOwn(catalog,line.id)||catalog[line.id].available===false)throw Error('An item is unavailable or its quantity is invalid.');
+    seen.add(line.id);return {id:line.id,type:'original',quantity:1,title:catalog[line.id].title,amount:catalog[line.id].amount};
+  }).sort((a,b)=>a.id.localeCompare(b.id));
+}
+export function commonMethods(env,items) { return ['paypal','bitcoin'].filter(method=>items.every(item=>paymentMethods(env,item.id).includes(method))); }
+export function cleanEmail(email) {
+  if(typeof email!=='string'||email.length>254||!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email))throw Error('Enter a valid email address.');
+  return email;
+}
+export async function keyHash(key) { return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(key)))].map(n=>n.toString(16).padStart(2,'0')).join(''); }
+export {catalogVersion};

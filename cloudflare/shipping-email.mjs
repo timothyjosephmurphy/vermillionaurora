@@ -85,7 +85,7 @@ export async function sendShippingEmail(token, sale, job) {
       job.mode === 'sandbox' ? 'TEST SALE — this label is not valid for shipping.' : 'Payment confirmed.', '',
     `Painting: ${quote.title || sale.slug}`, `Product: https://vermillionaurora.com/products/${sale.slug}/`,
     `${integrationTest ? 'Sample order' : bitcoin ? 'Bitcoin order' : 'PayPal order'}: ${sale.order_id}`, `${integrationTest ? 'Test reference' : bitcoin ? 'BTCPay invoice' : 'PayPal capture'}: ${sale.capture_id}`,
-    `Painting: $${quote.base} | Shipping: $${quote.shipping} | Tax: $${quote.tax} | Total: $${quote.total}`, '',
+    ...(quote.orderTotal ? [`This parcel: artwork $${quote.base} | Shipping $${quote.shipping}`,`Whole order: tax $${quote.orderTax} | Total $${quote.orderTotal}`] : [`Painting: $${quote.base} | Shipping: $${quote.shipping} | Tax: $${quote.tax} | Total: $${quote.total}`]), '',
     'Ship to:', address.name, address.street1, address.street2,
     `${address.city}, ${address.state} ${address.zip}`, address.country, '',
     `Service: ${quote.carrier} — ${quote.service}`,
@@ -110,7 +110,7 @@ export async function sendShippingEmail(token, sale, job) {
   const parts = [
     `From: Vermilion Aurora Shipping <${seller}>`, `To: ${seller}`,
     `Subject: =?UTF-8?B?${utf8(subject)}?=`,
-    `Message-ID: <shippo-${sale.capture_id.replace(/[^a-zA-Z0-9]/g,'')}-${job.status}@vermillionaurora.com>`,
+    `Message-ID: <shippo-${sale.capture_id.replace(/[^a-zA-Z0-9]/g,'')}-${sale.slug}-${job.status}@vermillionaurora.com>`,
     'MIME-Version: 1.0', `Content-Type: multipart/mixed; boundary="${boundary}"`, '',
     `--${boundary}`, 'Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: base64', '',
     utf8(lines.join('\r\n')).match(/.{1,76}/g).join('\r\n')

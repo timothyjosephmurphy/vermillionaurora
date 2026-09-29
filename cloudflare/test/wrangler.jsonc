@@ -14,7 +14,8 @@
     "GOOGLE_CLIENT_SECRET": "fake",
     "GOOGLE_REFRESH_TOKEN": "fake",
     "STRIPE_SECRET_KEY": "sk_test_fake",
-    "SHIP_FROM_PHONE": "+12065550123"
+    "SHIP_FROM_PHONE": "+12065550123",
+    "CART_CHECKOUT_ENABLED": "true"
   },
   "durable_objects": {
     "bindings": [
@@ -33,6 +34,10 @@
       {
         "name": "BITCOIN_ORDERS",
         "class_name": "BitcoinOrder"
+      },
+      {
+        "name": "CART_ORDERS",
+        "class_name": "CartOrder"
       }
     ]
   },
@@ -54,6 +59,12 @@
       "tag": "bitcoin-orders-v1",
       "new_sqlite_classes": [
         "BitcoinOrder"
+      ]
+    },
+    {
+      "tag": "cart-orders-v1",
+      "new_sqlite_classes": [
+        "CartOrder"
       ]
     }
   ],

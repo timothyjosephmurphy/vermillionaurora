@@ -1,4 +1,4 @@
-import { readdir, mkdir, copyFile, writeFile } from 'node:fs/promises';
+import { readdir, mkdir, copyFile, writeFile, readFile } from 'node:fs/promises';
 import { products, catalogVersion, statusLabel } from '../catalog/catalog.mjs';
 
 // Copy only public assets. Worker code, payment maintenance scripts, catalogs with
@@ -31,3 +31,18 @@ await writeFile('dist/payments/paypal-links.json',JSON.stringify(Object.fromEntr
 // Read-only compatibility export for existing links and integrations. Never edit it.
 await writeFile('dist/gallery/inventory.json',JSON.stringify({paintings:products.filter(p=>p.type==='painting').map(p=>({A:p.slug,B:p.title,C:p.listing.price?.amount||'0',D:p.listing.price?.currency||'USD',E:statusLabel(p),F:p.dimensions?.width||'',G:p.dimensions?.height||'',H:p.dimensions?.unit||'',I:p.medium||'',J:p.surface||'',K:p.year||'',L:p.framing||'',M:p.story.join('\n\n'),O:`https://vermillionaurora.com/products/${p.slug}/`,P:p.image.src,image:p.image.src}))}));
 console.log(`Public assets copied; catalog ${catalogVersion}`);
+
+// All public pages, including the remaining static pages, share cart navigation/assets.
+await copyFile('payments/cart.js','dist/payments/cart.js');
+await copyFile('payments/cart.css','dist/payments/cart.css');
+async function addCartAssets(dir) {
+  for(const entry of await readdir(dir,{withFileTypes:true})) {
+    const path=`${dir}/${entry.name}`;
+    if(entry.isDirectory())await addCartAssets(path);
+    else if(entry.name.endsWith('.html')) {
+      const html=await readFile(path,'utf8');
+      if(html.includes('class="site-header"')&&!html.includes('src="/payments/cart.js"'))await writeFile(path,html.replace('</head>','<link rel="stylesheet" href="/payments/cart.css"><script src="/payments/cart.js" defer></script></head>'));
+    }
+  }
+}
+await addCartAssets('dist');

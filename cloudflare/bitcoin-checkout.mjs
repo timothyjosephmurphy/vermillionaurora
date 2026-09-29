@@ -54,6 +54,10 @@ export async function bitcoinWebhook(request,env) {
     if (event.storeId!==env.BTCPAY_STORE_ID || !/^[a-zA-Z0-9]{1,100}$/.test(event.invoiceId||'')) return new Response('Ignored');
     // Read authoritative invoice state, rather than trusting event order or browser redirects.
     const invoice=await bitcoinApi(env,`/invoices/${encodeURIComponent(event.invoiceId)}`);
+    const cartId=invoice.metadata?.orderId?.replace(/^va-cart-/,'');
+    if(invoice.metadata?.orderId?.startsWith('va-cart-') && ORDER.test(cartId||'') && env.CART_ORDERS) {
+      await env.CART_ORDERS.getByName(cartId).refresh(event.invoiceId);return new Response('OK');
+    }
     const orderId=invoice.metadata?.orderId?.replace(/^va-btc-/,'');
     if (!invoice.metadata?.orderId?.startsWith('va-btc-') || !ORDER.test(orderId||'')) return new Response('Ignored');
     await env.BITCOIN_ORDERS.getByName(orderId).refresh(event.invoiceId);

@@ -1,7 +1,7 @@
 name: Validate catalog and templates
 on:
   pull_request:
-    paths: ['catalog/**', 'src/**', 'scripts/**', 'tests/**', 'package*.json', 'astro.config.mjs', 'payments/build-checkout-catalog.mjs', '.github/workflows/test-catalog.yml']
+    paths: ['cloudflare/**', 'payments/cart.*', 'catalog/**', 'src/**', 'scripts/**', 'tests/**', 'package*.json', 'astro.config.mjs', 'payments/build-checkout-catalog.mjs', '.github/workflows/test-catalog.yml']
 permissions:
   contents: read
 jobs:
@@ -17,3 +17,5 @@ jobs:
       - run: npm run build
       - run: npm test
       - run: git diff --exit-code -- cloudflare/checkout-catalog.mjs
+      - run: npm --prefix cloudflare/test ci
+      - run: npm run test:worker

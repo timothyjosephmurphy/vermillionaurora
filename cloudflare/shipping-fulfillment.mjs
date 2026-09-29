@@ -59,7 +59,7 @@ export async function fulfillSale(env, sale, initialJob, save) {
       (!await verifyQuotedInsurance(env, job.quote) ? 'The saved shipping rate no longer confirms the requested insurance. No label was purchased.' : '');
     if (reason) await persist({...job,status:'review',reason});
     else {
-      await persist({...job,status:'purchasing',metadata:sale.capture_id.startsWith('btcpay:')?sale.capture_id:`paypal-${sale.capture_id}`,attemptedAt:Date.now(),
+      await persist({...job,status:'purchasing',metadata:(sale.capture_id.startsWith('btcpay:')?sale.capture_id:`paypal-${sale.capture_id}`)+(sale.order_id.startsWith('cart:')?`:${sale.slug}`:''),attemptedAt:Date.now(),
         ...(job.quote.insurance ? {insuranceVerified:true} : {})});
       let transaction;
       try {

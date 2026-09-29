@@ -13,7 +13,8 @@
     "SHIPPO_CARRIER_ALLOWLIST": "UPS",
     "CHECKOUT_PILOT_ENABLED": "true",
     "BTCPAY_URL": "https://btcpay884215.lndyn.com",
-    "BTCPAY_CHECKOUT_SLUGS": "painting-portrait-in-green"
+    "BTCPAY_CHECKOUT_SLUGS": "painting-portrait-in-green",
+    "CART_CHECKOUT_ENABLED": "true"
   },
   "durable_objects": {
     "bindings": [
@@ -28,6 +29,10 @@
       {
         "name": "BITCOIN_ORDERS",
         "class_name": "BitcoinOrder"
+      },
+      {
+        "name": "CART_ORDERS",
+        "class_name": "CartOrder"
       }
     ]
   },
@@ -48,6 +53,12 @@
       "tag": "bitcoin-orders-v1",
       "new_sqlite_classes": [
         "BitcoinOrder"
+      ]
+    },
+    {
+      "tag": "cart-orders-v1",
+      "new_sqlite_classes": [
+        "CartOrder"
       ]
     }
   ],

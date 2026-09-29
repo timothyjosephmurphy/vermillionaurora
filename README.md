@@ -47,6 +47,10 @@ Cloudflare Workers Builds publishes the website through its existing Git integra
 
 Rollback content and templates together with the generated Worker catalog. Do not roll back or delete Durable Object data. A failed release leaves CI visibly failed; investigate the failing deployment instead of clearing stock or replaying payments.
 
+## Originals shopping cart
+
+See [the cart review](docs/cart-review.md) for customer behavior, recovery rules, validation, and the decisions required before deployment. `payments/cart.js` provides the browser cart, `/cart/` is the checkout page, and `cloudflare/cart-order.mjs` coordinates one payment across several originals. Prints are the next phase.
+
 ## Inventory, payments, and commissions
 
 - `cloudflare/commission-worker.js`: API entry point and Gmail/R2 commission form integration.
