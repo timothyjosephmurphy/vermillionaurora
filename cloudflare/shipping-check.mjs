@@ -5,7 +5,8 @@ import { priceOrder } from './checkout-pricing.mjs';
 import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
 
 const slug = 'honeybadger-and-cub-with-genesis-block';
-const sample = {state:'sold',slug,order_id:'SHIPPINGCHECKV1',capture_id:'SHIPPINGCHECKV1',integrationTest:true};
+// A new sample after UPS setup was corrected; preserve the failed v1 record.
+const sample = {state:'sold',slug,order_id:'SHIPPINGCHECKV2',capture_id:'SHIPPINGCHECKV2',integrationTest:true};
 const isolated = env => env.PAYPAL_MODE === 'sandbox' && !env.GITHUB_TOKEN &&
   env.SHIPPO_TOKEN?.startsWith('shippo_test_') && /^[sr]k_test_/.test(env.STRIPE_SECRET_KEY || '');
 
@@ -14,7 +15,7 @@ export async function shippingCheck(request, env) {
       request.headers.get('Authorization') !== `Bearer ${env.SHIPPING_CHECK_TOKEN}`) {
     return new Response('Not found',{status:404});
   }
-  const stub = env.SHIPPING_CHECK.getByName('label-email-v1');
+  const stub = env.SHIPPING_CHECK.getByName('label-email-v2');
   if (!['GET','POST'].includes(request.method)) return new Response('Method not allowed',{status:405});
   const result = request.method === 'POST' ? await stub.start() : await stub.status();
   return Response.json(result,{headers:{'Cache-Control':'no-store'}});
