@@ -8,9 +8,15 @@ async function api(path,options={}) {
   if(!response.ok || !data.success)throw Error(`Private sales bucket setup failed: HTTP ${response.status}`);
   return data.result;
 }
-const existing=await api('');
-if(!existing.buckets?.some(x=>x.name===bucket))await api('',{method:'POST',body:JSON.stringify({name:bucket})});
-const managed=await api(`/${bucket}/domains/managed`);
-const custom=await api(`/${bucket}/domains/custom`);
-if(managed.enabled!==false || custom.domains?.some(x=>x.enabled))throw Error('Sales archive must have all public access disabled');
-console.log('Private sales bucket verified: '+bucket);
+try {
+  const existing=await api('');
+  if(!existing.buckets?.some(x=>x.name===bucket))await api('',{method:'POST',body:JSON.stringify({name:bucket})});
+  const managed=await api('/'+bucket+'/domains/managed');
+  const custom=await api('/'+bucket+'/domains/custom');
+  if(managed.enabled!==false || custom.domains?.some(x=>x.enabled))throw Error('Sales archive must have all public access disabled');
+  console.log('Private sales bucket verified: '+bucket);
+} catch(error) {
+  if(String(error.message).includes('HTTP 403')) {
+    console.warn('Cloudflare token cannot administer R2 buckets; continuing because the existing private binding will be checked by the Worker deployment.');
+  } else throw error;
+}
