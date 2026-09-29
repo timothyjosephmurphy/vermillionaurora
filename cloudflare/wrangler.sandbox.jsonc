@@ -14,8 +14,44 @@
     "SANDBOX_RETURN_ORIGIN": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev"
   },
   "durable_objects": {
-    "bindings": [{ "name": "PAINTING_STOCK", "class_name": "PaintingStock" },{ "name": "SHIPPING_CHECK", "class_name": "ShippingCheck" }]
+    "bindings": [
+      {
+        "name": "PAINTING_STOCK",
+        "class_name": "PaintingStock"
+      },
+      {
+        "name": "SHIPPING_CHECK",
+        "class_name": "ShippingCheck"
+      },
+      {
+        "name": "SALES_LEDGER",
+        "class_name": "SalesLedger"
+      }
+    ]
   },
-  "migrations": [{ "tag": "painting-stock-sandbox-v1", "new_sqlite_classes": ["PaintingStock"] },{ "tag": "shipping-check-v1", "new_sqlite_classes": ["ShippingCheck"] }],
-  "observability": {"logs": {"enabled": true}}
+  "migrations": [
+    {
+      "tag": "painting-stock-sandbox-v1",
+      "new_sqlite_classes": [
+        "PaintingStock"
+      ]
+    },
+    {
+      "tag": "shipping-check-v1",
+      "new_sqlite_classes": [
+        "ShippingCheck"
+      ]
+    },
+    {
+      "tag": "sales-ledger-v1",
+      "new_sqlite_classes": [
+        "SalesLedger"
+      ]
+    }
+  ],
+  "observability": {
+    "logs": {
+      "enabled": true
+    }
+  }
 }

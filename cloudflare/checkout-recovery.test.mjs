@@ -44,6 +44,7 @@ test('every checkout painting can publish a sold inventory and product update',a
     throw Error('Unexpected request');
   });
   for(const [slug,item] of Object.entries(catalog)){
+    if(item.available===false)continue;
     const paths=['gallery/inventory.json','payments/paypal-links.json',`products/${slug}/index.html`,...(slug.startsWith('paul-')?['exhibitions/paul-murphy/index.html']:['index.html','gallery/index.html'])];
     files=Object.fromEntries(paths.map(path=>[path,readFileSync(new URL('../'+path,import.meta.url),'utf8')]));
     await commitCheckoutSale({GITHUB_TOKEN:'test'},slug,item);

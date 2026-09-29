@@ -1,5 +1,6 @@
 import catalog from './checkout-catalog.mjs';
 import { priceOrder } from './checkout-pricing.mjs';
+import { captureDetails } from './sales-records.mjs';
 
 const SITE = 'https://vermillionaurora.com';
 const ORDER_ID = /^[A-Z0-9]{1,36}$/;
@@ -52,7 +53,7 @@ export async function checkout(request, env) {
     const slug = url.searchParams.get('slug');
     if (!catalog[slug]) return respond({error:'Painting not in checkout catalog.'},404);
     if (!offered(env,slug)) return respond({error:'Checkout is being set up.'},503);
-    return respond({status:await stock(env,slug).status(),title:catalog[slug].title,amount:catalog[slug].amount,currency:'USD'});
+    return respond({status:catalog[slug].available===false?'sold':await stock(env,slug).status(),title:catalog[slug].title,amount:catalog[slug].amount,currency:'USD'});
   }
   if (!['/checkout/quote','/checkout/create','/checkout/capture','/checkout/cancel'].includes(url.pathname) || request.method !== 'POST') return respond({error:'Not found.'},404);
   let data;
@@ -61,6 +62,7 @@ export async function checkout(request, env) {
   if (typeof slug !== 'string' || !SLUG.test(slug) || !catalog[slug]) return respond({error:'Painting not in checkout catalog.'},404);
   if (!finishing && !offered(env,slug)) return respond({error:'Checkout is being set up.'},503);
   const item = catalog[slug];
+  if (!finishing && item.available===false) return respond({error:'This painting is sold.'},409);
   const stub = stock(env,slug);
 
   if (url.pathname === '/checkout/quote') {
@@ -126,7 +128,7 @@ export async function checkout(request, env) {
       order = await paypal(env,`/v2/checkout/orders/${data.orderId}/capture`,accessToken,{},`capture-${data.orderId}`);
     }
     const capture = validateCapture(order,slug,env,expected);
-    if (!capture || !await stub.complete(data.orderId,capture)) throw new Error('Capture is not completed or did not match');
+    if (!capture || !await stub.complete(data.orderId,capture,captureDetails(order))) throw new Error('Capture is not completed or did not match');
     return respond({status:'sold'});
   } catch (error) {
     // A timed-out capture may still complete. Keep the lock and reconcile by webhook or retry.
@@ -176,11 +178,24 @@ export async function checkoutWebhook(request,env) {
     if (expected?.orderId !== orderId) return new Response('Unrecognized order',{status:409});
     const captureId = validateCapture(order,slug,env,expected);
     if (!captureId || captureId !== event.resource?.id) return new Response('Invalid capture',{status:400});
-    if (!await stub.complete(orderId,captureId)) return new Response('Unrecognized order',{status:409});
+    if (!await stub.complete(orderId,captureId,captureDetails(order))) return new Response('Unrecognized order',{status:409});
     await stub.recordWebhook(orderId,captureId);
     return new Response('OK');
   } catch(error) {
     console.error('Checkout webhook failed:',error.message);
     return new Response('Retry later',{status:503});
   }
+}
+
+// Authenticated maintenance can reconstruct a receipt from an already captured order.
+// GET only: never create/capture/refund payments or purchase labels here.
+export async function backfillCheckoutSale(env,slug) {
+  const stub=stock(env,slug),expected=await stub.order();
+  if(expected?.state!=='sold' || !expected.captureId)return {recorded:false,status:expected?.state||'available'};
+  const accessToken=await token(env);
+  const order=await paypal(env,`/v2/checkout/orders/${expected.orderId}`,accessToken);
+  const captureId=validateCapture(order,slug,env,expected);
+  if(!captureId || captureId!==expected.captureId)throw Error('Historical capture validation failed');
+  await stub.complete(expected.orderId,captureId,captureDetails(order));
+  return stub.archiveSale();
 }

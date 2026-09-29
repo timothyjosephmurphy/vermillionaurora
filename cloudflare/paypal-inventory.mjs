@@ -1,3 +1,4 @@
+import { ipnRecord, ledgerFor } from './sales-records.mjs';
 // PayPal account-level IPN listener. Disabled until the merchant configures
 // PAYPAL_IPN_ENABLED, PAYPAL_MERCHANT_ID, and GITHUB_TOKEN as Worker secrets.
 const REPO = 'timothyjosephmurphy/vermillionaurora';
@@ -32,9 +33,15 @@ export async function handlePaypalIpn(request, env) {
     }
 
     const fields = new URLSearchParams(new TextDecoder().decode(raw));
-    if (fields.get('payment_status') !== 'Completed') return new Response('Ignored', { status: 200 });
     if (fields.get('receiver_id') !== env.PAYPAL_MERCHANT_ID) return new Response('Wrong merchant', { status: 400 });
     if (fields.get('test_ipn') === '1') return new Response('Sandbox notification', { status: 400 });
+    const record=ipnRecord(env,fields);
+    if(!record)return new Response('Ignored',{status:200});
+    if(!env.SALES_LEDGER)throw Error('Sales ledger is not configured');
+    // Record every verified merchant payment even when no inventory link matches.
+    // A failed write receives 503 so PayPal retries; never acknowledge and lose it.
+    await ledgerFor(env,record).record(record);
+    if(fields.get('payment_status')!=='Completed')return new Response('Recorded',{status:200});
     const isCart = fields.get('txn_type') === 'cart';
     const nameKey = isCart ? 'item_name1' : 'item_name';
     if (fields.get('mc_currency') !== 'USD' || !single(fields, 'txn_id') || !single(fields, nameKey) ||

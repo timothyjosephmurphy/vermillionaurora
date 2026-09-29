@@ -25,6 +25,10 @@
       {
         "name": "SHIPPING_CHECK",
         "class_name": "ShippingCheck"
+      },
+      {
+        "name": "SALES_LEDGER",
+        "class_name": "SalesLedger"
       }
     ]
   },
@@ -35,6 +39,18 @@
         "PaintingStock",
         "ShippingCheck"
       ]
+    },
+    {
+      "tag": "sales-ledger-v1",
+      "new_sqlite_classes": [
+        "SalesLedger"
+      ]
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "SALES_ARCHIVE",
+      "bucket_name": "test-sales-records"
     }
   ]
 }
