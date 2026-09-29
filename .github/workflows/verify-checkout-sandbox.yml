@@ -1,5 +1,5 @@
 name: Verify isolated checkout sandbox
-run-name: Diagnose sandbox merchant identity mismatch
+run-name: Identify sandbox PayPal payee ID
 
 on:
   push:
