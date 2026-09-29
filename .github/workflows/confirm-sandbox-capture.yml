@@ -1,0 +1,21 @@
+name: Confirm sandbox capture and stock
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/confirm-sandbox-capture.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  confirm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm isolated stock is sold
+        run: |
+          curl --silent --show-error --fail --max-time 20 \
+            'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/status?slug=honeybadger-and-cub-with-genesis-block' \
+            -o /tmp/stock.json
+          node -e "const s=JSON.parse(require('fs').readFileSync('/tmp/stock.json')); console.log('Sandbox stock:',s.status); if(s.status!=='sold') process.exit(1)"
