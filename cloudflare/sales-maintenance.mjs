@@ -6,6 +6,20 @@ export async function salesMaintenance(request,env) {
   const reply=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'no-store'}});
   if(request.method!=='POST'||!env.CHECKOUT_AUDIT_TOKEN||request.headers.get('Authorization')!==`Bearer ${env.CHECKOUT_AUDIT_TOKEN}`)return reply({error:'Not found'},404);
   if(env.PAYPAL_MODE!=='live'||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return reply({error:'Sales archive is not configured'},503);
+  const url=new URL(request.url);
+  if(url.searchParams.get('action')==='reset') {
+    const slug=url.searchParams.get('slug');
+    if(typeof slug!=='string'||!catalog[slug])return reply({error:'Painting not in checkout catalog'},404);
+    try {
+      // Backfill/archive the completed sale before clearing the stock row.
+      const archived=await backfillCheckoutSale(env,slug);
+      const result=await env.PAINTING_STOCK.getByName(slug).resetForRelisting();
+      return reply({slug,archived,result});
+    } catch {
+      return reply({error:'Painting could not be safely relisted; existing payment records are preserved'},409);
+    }
+  }
+
   try {
     const periods=new Set();let backfilled=0;
     for(const slug of Object.keys(catalog)) {
