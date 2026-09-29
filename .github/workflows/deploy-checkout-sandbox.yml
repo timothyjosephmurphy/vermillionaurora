@@ -1,0 +1,29 @@
+name: Deploy isolated checkout sandbox
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: shared-paypal-checkout
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify sandbox isolation and checkout tests
+        run: |
+          node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs
+          node --input-type=module -e "import fs from 'node:fs'; const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc')); if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.PAYPAL_CHECKOUT_ENABLED!=='false'||c.main!=='checkout-sandbox.mjs') process.exit(1)"
+      - name: Deploy sandbox Worker
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc
