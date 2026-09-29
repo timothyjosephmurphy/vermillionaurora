@@ -35,7 +35,10 @@ export async function handlePaypalIpn(request, env) {
     if (fields.get('payment_status') !== 'Completed') return new Response('Ignored', { status: 200 });
     if (fields.get('receiver_id') !== env.PAYPAL_MERCHANT_ID) return new Response('Wrong merchant', { status: 400 });
     if (fields.get('test_ipn') === '1') return new Response('Sandbox notification', { status: 400 });
-    if (fields.get('mc_currency') !== 'USD' || !single(fields, 'txn_id') || !single(fields, 'item_name')) {
+    const isCart = fields.get('txn_type') === 'cart';
+    const nameKey = isCart ? 'item_name1' : 'item_name';
+    if (fields.get('mc_currency') !== 'USD' || !single(fields, 'txn_id') || !single(fields, nameKey) ||
+        (isCart && fields.has('item_name') && fields.get('item_name') !== fields.get(nameKey))) {
       return new Response('Missing transaction data', { status: 400 });
     }
     if (['quantity', 'quantity1'].some(key => fields.has(key) && fields.get(key) !== '1') ||
@@ -50,7 +53,7 @@ export async function handlePaypalIpn(request, env) {
       const files = await readFiles(env, sha, FILES);
       const links = JSON.parse(files['payments/paypal-links.json']);
       const sale = Object.entries(links).find(([, item]) => item.autoInventory === true &&
-        item.paypalTitle === fields.get('item_name') && item.currency === 'USD');
+        item.paypalTitle === fields.get(nameKey) && item.currency === 'USD');
       if (!sale) {
         console.log('IPN completed payment did not match an enabled inventory item');
         return new Response('Ignored', { status: 200 });

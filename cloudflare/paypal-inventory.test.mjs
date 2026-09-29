@@ -78,6 +78,9 @@ test('verified completed payment commits only after matching merchant, item and 
     assert.deepEqual(writes.map(x => x.path.split('/').slice(-2).join('/')), ['git/trees', 'git/commits', 'heads/main']);
     assert.equal(writes[0].body.tree.length, 5);
     assert.equal(writes[2].body.force, false);
+    // PayPal Payment Links send a one-item cart: item_name1, not item_name.
+    assert.equal((await handlePaypalIpn(cartIpn(), env)).status, 200);
+    assert.equal(writes.length, 6);
   } finally {
     globalThis.fetch = oldFetch;
   }
@@ -90,4 +93,15 @@ function ipn(overrides = {}) {
     ...overrides
   });
   return new Request('https://example.com/paypal-ipn', { method: 'POST', body: fields });
+}
+
+function cartIpn() {
+  return new Request('https://example.com/paypal-ipn', {
+    method: 'POST',
+    body: new URLSearchParams({
+      txn_type: 'cart', num_cart_items: '1', item_name1: 'Chase Toole Portrait',
+      payment_status: 'Completed', receiver_id: 'MERCHANT12345', txn_id: 'TX-CART-123',
+      mc_currency: 'USD', mc_gross: '20.00', mc_gross_1: '20.00', quantity1: '1'
+    })
+  });
 }
