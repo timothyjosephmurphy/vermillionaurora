@@ -1,5 +1,17 @@
 # PayPal checkout setup
 
+## Create the remaining links in a batch
+
+PayPal's Payment Links and Buttons API can create links in a loop; the PayPal payment-link editor does not provide a documented CSV import. The site has 57 available paintings without links as of September 29, 2026: 17 TJ Murphy works and 40 Paul Murphy works. The existing Warsaw Syrenka link and sold/not-for-sale works are skipped. The batch reads `gallery/inventory.json` and checks each product page's title, displayed price, and availability. The two paintings titled “El Zonte at Sunrise, El Salvador” get distinct PayPal item names so a payment notification can identify the correct original.
+
+1. In [PayPal Developer Dashboard](https://developer.paypal.com/dashboard/applications/live), create or select a **Live** REST app under the same Business account. Enable **Payment Links & Buttons** for that app. Keep its Client ID and Secret private. Use Sandbox credentials for an initial trial.
+2. From the repository root, review the exact batch with `node payments/bulk-links.mjs plan > paypal-candidates.csv`. Open the CSV and confirm every item and price. The CSV is a review file; it is not a PayPal upload format.
+3. Set `PAYPAL_CLIENT_ID` and `PAYPAL_CLIENT_SECRET` in your local shell. Run `node payments/bulk-links.mjs create --sandbox --ack-reusable` for a trial, then use your **Live** app credentials with `node payments/bulk-links.mjs create --live --ack-reusable` to create real links. Keep the credentials out of Git and screenshots. The script uses the OAuth token only in memory, creates one PayPal item per painting, requests a shipping address, skips previously recorded links, and saves results in the ignored `payments/generated-links.local` file after each creation. Sandbox and live results are separate.
+4. **Before sharing or adding a link to the site**, inspect every live link in PayPal. Set **Quantity in stock: 1**, disable **Allow out-of-stock purchases**, and confirm quantity, shipping charge, tax, item name, price, and merchant account. The API documents reusable links and does not expose the editor's stock setting in its create request. If PayPal does not let you set inventory on an API-created link, leave it unpublished and use the PayPal editor for that painting. A website Sold label alone cannot stop a previously shared link from accepting a second payment.
+5. Add only individually verified live links to `payments/paypal-links.json`, keyed by slug, with `title`, `paypalTitle`, `amount`, `currency`, `url`, and `autoInventory: true` **after** confirming that the IPN Worker supports that product's public listing. The current Worker was validated for the Chase Toole portrait; other paintings require an end-to-end inventory test before enabling automatic sold status. Never add sandbox links to the live site.
+
+The script deliberately creates links without publishing checkout buttons or changing product pages. Reruns use the local checkpoint, so retain `payments/generated-links.local` securely. PayPal stores request IDs for only six hours; if a response was lost before the checkpoint was written, inspect your PayPal link list for that product before retrying after six hours. Do not assume an API-created link is stock-limited merely because the quantity selector is absent.
+
 The site uses PayPal-hosted payment links. This requires no payment credentials or order API in the website. Until a link is configured, product pages keep their existing inquiry action and show no PayPal button.
 
 ## Merchant setup
