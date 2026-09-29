@@ -3,6 +3,7 @@ import catalog from './checkout-catalog.mjs';
 import { commitCheckoutSale } from './paypal-inventory.mjs';
 import { recordTax } from './checkout-pricing.mjs';
 import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
+import { checkoutRecord, fulfillmentRecord, ledgerFor } from './sales-records.mjs';
 
 // One SQLite-backed object per original. All state changes happen on the same object.
 export class PaintingStock extends DurableObject {
@@ -23,6 +24,7 @@ export class PaintingStock extends DurableObject {
       tax_calc_id TEXT,
       destination TEXT
     )`);
+    ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS sale_receipt (capture_id TEXT PRIMARY KEY, data TEXT NOT NULL)');
     // Separate table adds fulfillment without altering existing stock records.
     ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS shipping_job (id INTEGER PRIMARY KEY CHECK (id=1), data TEXT NOT NULL)');
   }
@@ -59,13 +61,33 @@ export class PaintingStock extends DurableObject {
     this.ctx.storage.sql.exec("UPDATE stock SET state='capturing' WHERE id=1");
     return 'ready';
   }
-  async complete(orderId, captureId) {
-    const row = this.row();
-    if (!row || row.order_id !== orderId || !['held','capturing','sold'].includes(row.state)) return false;
-    if (row.state === 'sold') return row.capture_id === captureId;
-    this.ctx.storage.sql.exec("UPDATE stock SET state='sold',capture_id=?,expires_at=NULL WHERE id=1", captureId);
+  async complete(orderId, captureId, details={}) {
+    let row = this.row();
+    if (!row || row.order_id !== orderId || !['held','capturing','sold'].includes(row.state) || (row.state==='sold' && row.capture_id!==captureId)) return false;
+    const existing=this.ctx.storage.sql.exec('SELECT data FROM sale_receipt WHERE capture_id=?',captureId).toArray()[0];
+    if(row.state==='sold' && existing)return true;
     await this.ctx.storage.setAlarm(Date.now() + 1000);
+    row=this.row();
+    if(!row || row.order_id!==orderId || (row.state==='sold' && row.capture_id!==captureId))return false;
+    const slug=this.ctx.storage.sql.exec('SELECT slug FROM painting WHERE id=1').toArray()[0]?.slug;
+    const savedJob=this.ctx.storage.sql.exec('SELECT data FROM shipping_job WHERE id=1').toArray()[0];
+    const receipt=checkoutRecord(this.env,{...row,capture_id:captureId},slug,savedJob?JSON.parse(savedJob.data):null,details);
+    this.ctx.storage.transactionSync(()=>{
+      this.ctx.storage.sql.exec("UPDATE stock SET state='sold',capture_id=?,expires_at=NULL WHERE id=1", captureId);
+      this.ctx.storage.sql.exec('INSERT OR IGNORE INTO sale_receipt (capture_id,data) VALUES (?,?)',captureId,JSON.stringify(receipt));
+    });
     return true;
+  }
+  async archiveSale() {
+    const row=this.row();
+    if(row?.state!=='sold')return {recorded:false};
+    const saved=this.ctx.storage.sql.exec('SELECT data FROM sale_receipt WHERE capture_id=?',row.capture_id).toArray()[0];
+    if(!saved)throw Error('Sale receipt needs backfill');
+    if(!this.env.SALES_LEDGER)throw Error('Sales ledger is not configured');
+    const job=this.ctx.storage.sql.exec('SELECT data FROM shipping_job WHERE id=1').toArray()[0];
+    const receipt={...JSON.parse(saved.data),fulfillment:fulfillmentRecord(row,job?JSON.parse(job.data):null)};
+    await ledgerFor(this.env,receipt).record(receipt);
+    return {recorded:true,period:receipt.paidAt.slice(0,7)};
   }
   release(holdId) {
     const row = this.row();
@@ -83,7 +105,7 @@ export class PaintingStock extends DurableObject {
     }
     return false;
   }
-  order() { const row = this.row(); return row ? {orderId:row.order_id,state:row.state,published:!!row.published,total:row.total,shipping:row.shipping,tax:row.tax,destination:row.destination ? JSON.parse(row.destination) : null} : null; }
+  order() { const row = this.row(); return row ? {orderId:row.order_id,state:row.state,published:!!row.published,captureId:row.capture_id,total:row.total,shipping:row.shipping,tax:row.tax,destination:row.destination ? JSON.parse(row.destination) : null} : null; }
   markPublished(orderId) {
     if (this.row()?.order_id === orderId && this.row()?.state === 'sold') this.ctx.storage.sql.exec('UPDATE stock SET published=1 WHERE id=1');
   }
@@ -107,6 +129,8 @@ export class PaintingStock extends DurableObject {
     // Schedule recovery before external I/O, including a process crash during purchase.
     await this.ctx.storage.setAlarm(Date.now() + 60_000);
     let finished = true;
+    try { await this.archiveSale(); }
+    catch { finished=false; console.error('Sales ledger needs retry'); }
     // Sandbox captures use test services and may send explicitly marked test emails.
     // A sandbox Worker must never publish inventory into the production repository.
     if (this.env.PAYPAL_MODE === 'sandbox' && !row.published) this.markPublished(row.order_id);
@@ -142,6 +166,8 @@ export class PaintingStock extends DurableObject {
       finished = false;
       console.error('Checkout shipping notification failed:', slug, error.message);
     }
+    try { await this.archiveSale(); }
+    catch { finished=false; console.error('Sales ledger update needs retry'); }
     if (finished) await this.ctx.storage.deleteAlarm();
   }
   initialize(slug) {

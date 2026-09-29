@@ -11,9 +11,11 @@ for (const [slug, profile] of Object.entries(shippingOverrides)) {
     throw new Error(`Invalid shipping override: ${slug}`);
   }
 }
+const previous=(await import('../cloudflare/checkout-catalog.mjs')).default;
 const catalog = {};
 for (const painting of inventory.paintings) {
   const { A: slug, B: title, C: rawPrice, D: currency, E: availability } = painting;
+  if (availability==='Sold' && previous[slug]) { catalog[slug]={...previous[slug],available:false}; continue; }
   if (availability !== 'Available' || currency !== 'USD' || !Number.isFinite(Number(rawPrice)) || Number(rawPrice) <= 0 || links[slug]) continue;
   if (!/^[a-z0-9-]+$/.test(slug) || !existsSync(new URL(`../products/${slug}/index.html`, import.meta.url))) continue;
   const html = await readFile(new URL(`../products/${slug}/index.html`, import.meta.url), 'utf8');

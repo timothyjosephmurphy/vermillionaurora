@@ -41,6 +41,7 @@ export async function checkoutReadiness(request,env) {
     checks.repositoryWritePermission=repo.permissions?.push??null;
   }catch(error){checks.githubError=error.message;}
   checks.inventoryBinding=!!env.PAINTING_STOCK;
+  checks.salesLedger=!!env.SALES_LEDGER&&!!env.SALES_ARCHIVE;
   checks.shippingOrigin=!!env.SHIP_FROM_STREET;
   if (env.CHECKOUT_PILOT_ENABLED==='true') {
     checks.pilotRestriction=env.PAYPAL_CHECKOUT_SLUGS==='painting-portrait-in-green' && env.SHIPPO_CARRIER_ALLOWLIST==='UPS';
@@ -50,16 +51,20 @@ export async function checkoutReadiness(request,env) {
     try {
       const slug='painting-portrait-in-green';
       checks.pilotStock=await env.PAINTING_STOCK.getByName(slug).status();
+      if(checks.pilotStock==='sold') {
+        checks.completedPilot=true;
+      } else {
       // A quote only, addressed to the configured origin. No PayPal order,
       // tax transaction, shipping label or email is created by this check.
       const quote=await priceOrder(env,slug,{name:'Live checkout verification',street1:env.SHIP_FROM_STREET,city:'Seattle',state:'WA',zip:'98122'});
       checks.pilotQuote={base:quote.base,shipping:quote.shipping,tax:quote.tax,total:quote.total,carrier:quote.carrier,
         insurance:quote.insurance?.amount||null,insuranceFee:quote.insurance?.fee||null};
       checks.insuredQuote=quote.base==='20.00'&&quote.insurance?.amount==='20.00'&&quote.carrier==='UPS';
+      }
     } catch(error) { checks.pilotQuoteError=error.message; }
   }
   const pilotReady=env.CHECKOUT_PILOT_ENABLED!=='true' ||
-    (checks.pilotRestriction&&checks.automaticLabels&&checks.sellerEmail&&checks.insuredQuote&&checks.pilotStock==='available');
-  const ready=checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryRepository&&checks.repositoryWritePermission!==false&&checks.inventoryBinding&&checks.shippingOrigin&&pilotReady;
+    (checks.pilotRestriction&&checks.automaticLabels&&checks.sellerEmail&&(checks.completedPilot||(checks.insuredQuote&&checks.pilotStock==='available')));
+  const ready=checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryRepository&&checks.repositoryWritePermission!==false&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
   return reply({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE||null,ready:!!ready,checks},ready?200:503);
 }

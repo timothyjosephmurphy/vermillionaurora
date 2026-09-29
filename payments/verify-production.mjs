@@ -22,6 +22,12 @@ try {
   const audit=await response.json();
   console.log('Production provider verification:',JSON.stringify(audit));
   if(!response.ok||!audit.ready||audit.mode!=='live'||audit.enabled!==(expected.PAYPAL_CHECKOUT_ENABLED==='true')||audit.release!==(process.env.GITHUB_SHA||expected.CHECKOUT_RELEASE||null))throw Error('Production provider verification failed');
+  const archiveResponse=await fetch(base+'/checkout/sales-maintenance',{method:'POST',headers:{Authorization:`Bearer ${secret}`},signal:AbortSignal.timeout(90000)});
+  const archive=await archiveResponse.json();
+  console.log('Private sales archive:',JSON.stringify(archive));
+  if(!archiveResponse.ok||!archive.ready)throw Error('Sales archive verification failed');
+  const denied=await fetch(base+'/checkout/sales-maintenance',{method:'POST'});
+  if(denied.status!==404)throw Error('Unauthenticated accounting access was not denied');
   const r=await fetch(base+'/checkout/status?slug=honeybadger-and-cub-with-genesis-block');
   console.log('Public checkout status HTTP:',r.status);
   if(!audit.enabled&&r.status!==503)throw Error('Expected new checkout to remain disabled');
@@ -30,7 +36,7 @@ try {
     const pilot=await fetch(base+'/checkout/status?slug=painting-portrait-in-green');
     const state=await pilot.json();
     console.log('Live pilot status:',JSON.stringify(state));
-    if(!pilot.ok||state.status!=='available'||state.amount!=='20.00')throw Error('The live pilot is not available at its approved price');
+    if(!pilot.ok||!['available','sold'].includes(state.status)||state.amount!=='20.00')throw Error('The live pilot status or recorded price is incorrect');
   }
 } finally {
   if(installed){await cloudflare('DELETE','/'+key);console.log('Temporary production diagnostic credential removed');}

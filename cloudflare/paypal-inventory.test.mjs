@@ -51,7 +51,7 @@ test('a stale price or status cannot silently mark an unrelated item sold', () =
 
 test('IPN ignores incomplete payment and refuses unverified or wrong-merchant messages', async () => {
   const oldFetch = globalThis.fetch;
-  const env = { PAYPAL_IPN_ENABLED: 'true', PAYPAL_MERCHANT_ID: 'MERCHANT12345', GITHUB_TOKEN: 'test' };
+  const env = { PAYPAL_IPN_ENABLED: 'true', PAYPAL_MERCHANT_ID: 'MERCHANT12345', GITHUB_TOKEN: 'test', SALES_LEDGER:{getByName:()=>({record:async()=>({recorded:true})})} };
   let calls = [];
   try {
     globalThis.fetch = async url => { calls.push(String(url)); return new Response('VERIFIED'); };
@@ -73,7 +73,7 @@ test('IPN ignores incomplete payment and refuses unverified or wrong-merchant me
 
 test('verified completed payment commits only after matching merchant, item and amount', async () => {
   const oldFetch = globalThis.fetch;
-  const env = { PAYPAL_IPN_ENABLED: 'true', PAYPAL_MERCHANT_ID: 'MERCHANT12345', GITHUB_TOKEN: 'test' };
+  const env = { PAYPAL_IPN_ENABLED: 'true', PAYPAL_MERCHANT_ID: 'MERCHANT12345', GITHUB_TOKEN: 'test', SALES_LEDGER:{getByName:()=>({record:async()=>({recorded:true})})} };
   const writes = [];
   try {
     globalThis.fetch = async (url, options = {}) => {

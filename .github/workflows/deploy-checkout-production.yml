@@ -8,6 +8,8 @@ on:
       - 'cloudflare/paypal-*.mjs'
       - 'cloudflare/painting-stock.mjs'
       - 'cloudflare/shipping-*.mjs'
+      - 'cloudflare/sales-*.mjs'
+      - 'payments/prepare-sales-archive.mjs'
       - 'cloudflare/wrangler.jsonc'
       - 'payments/verify-production.mjs'
       - '.github/workflows/deploy-checkout-production.yml'
@@ -26,12 +28,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm --prefix cloudflare/test ci
+      - run: npm --prefix cloudflare/test test
       - name: Verify production checkout
         run: |
           node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
           node payments/build-checkout-catalog.mjs
           git diff --exit-code -- cloudflare/checkout-catalog.mjs
           node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.PAYPAL_MODE!=='live')process.exit(1)"
+      - name: Prepare and verify private accounting storage
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node payments/prepare-sales-archive.mjs
       - name: Deploy the production Worker with the checked-in checkout settings
         uses: cloudflare/wrangler-action@v4
         with:

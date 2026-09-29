@@ -67,3 +67,7 @@ It remains disabled until the merchant finishes the following setup. Do not put 
 5. Make a controlled end-to-end test before relying on automation: inspect the PayPal Activity transaction, IPN delivery history, Worker logs, the new GitHub commit, and the live product and gallery pages. PayPal retries failed IPN deliveries. If an actual sale happened before IPN was enabled, update the site manually; earlier events are not automatically backfilled.
 
 On a matching completed payment, the Worker makes one atomic GitHub commit: inventory price becomes `0`, availability becomes `Sold`, the product page and its homepage/gallery cards show `Sold`, and the PayPal URL is removed from `paypal-links.json`. GitHub/Cloudflare deployment is asynchronous. The checkout script fetches the link map without browser caching. The existing inquiry link remains available on the sold product page.
+
+## Sales bookkeeping
+
+Automatic private sales records and monthly CSV exports are documented in [SALES-RECORDS.md](./SALES-RECORDS.md). Open Cloudflare R2 → `vermillion-sales-records` → `sales/live/YYYY-MM/sales.csv`.

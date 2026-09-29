@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { checkoutReadiness } from './checkout-readiness.mjs';
 
 test('production readiness requires authentication and only reads provider configuration',async t=>{
-  const env={CHECKOUT_AUDIT_TOKEN:'audit-secret',PAYPAL_MODE:'live',PAYPAL_CHECKOUT_ENABLED:'false',PAYPAL_CLIENT_ID:'client',PAYPAL_CLIENT_SECRET:'paypal-secret',PAYPAL_WEBHOOK_ID:'hook',PAYPAL_MERCHANT_ID:'8DYAVLDCWDESE',STRIPE_SECRET_KEY:'sk_live_fake',SHIPPO_TOKEN:'shippo_live_fake',GITHUB_TOKEN:'github-secret',PAINTING_STOCK:{},SHIP_FROM_STREET:'123 private street'};
+  const env={CHECKOUT_AUDIT_TOKEN:'audit-secret',PAYPAL_MODE:'live',PAYPAL_CHECKOUT_ENABLED:'false',PAYPAL_CLIENT_ID:'client',PAYPAL_CLIENT_SECRET:'paypal-secret',PAYPAL_WEBHOOK_ID:'hook',PAYPAL_MERCHANT_ID:'8DYAVLDCWDESE',STRIPE_SECRET_KEY:'sk_live_fake',SHIPPO_TOKEN:'shippo_live_fake',GITHUB_TOKEN:'github-secret',PAINTING_STOCK:{},SALES_LEDGER:{},SALES_ARCHIVE:{},SHIP_FROM_STREET:'123 private street'};
   let calls=0;
   t.mock.method(globalThis,'fetch',async(url,options)=>{
     calls++;
@@ -33,6 +33,8 @@ test('production readiness requires authentication and only reads provider confi
   const audit=await verified.json();
   assert.equal(audit.checks.sellerEmail,true);assert.equal(audit.checks.insuredQuote,true);
   assert.deepEqual(audit.checks.pilotQuote,{base:'20.00',shipping:'6.50',tax:'0.00',total:'26.50',carrier:'UPS',insurance:'20.00',insuranceFee:'1.50'});
+  const completed=await checkoutReadiness(request(),{...pilot,PAINTING_STOCK:{getByName:()=>({status:async()=>'sold'})}});
+  assert.equal(completed.status,200);assert.equal((await completed.json()).checks.completedPilot,true);
   assert.equal((await checkoutReadiness(request(),{...pilot,PAYPAL_CHECKOUT_SLUGS:''})).status,503);
   assert.equal((await checkoutReadiness(request(),{...pilot,GOOGLE_REFRESH_TOKEN:''})).status,503);
 });
