@@ -143,6 +143,18 @@ export default {
     },
     "packaging": "tube"
   },
+  "painting-portrait-in-green": {
+    "title": "Chase Toole",
+    "amount": "20.00",
+    "currency": "USD",
+    "parcel": {
+      "length": 15,
+      "width": 12,
+      "height": 0.125,
+      "weight": 0.25
+    },
+    "packaging": "flat"
+  },
   "painting-portrait-in-gold": {
     "title": "Dorian Nakamoto",
     "amount": "400.00",
