@@ -85,14 +85,17 @@ export class PaintingStock extends DurableObject {
   async alarm() {
     const row = this.row();
     if (!row || row.state !== 'sold' || (row.published && row.tax_recorded)) return;
+    // Sandbox captures exercise the stock state machine and Stripe test ledger only.
+    // A sandbox Worker must never publish inventory into the production repository.
+    if (this.env.PAYPAL_MODE === 'sandbox' && !row.published) this.markPublished(row.order_id);
     // The object name is the painting slug; the first hold stores it for alarms.
     const slug = this.ctx.storage.sql.exec('SELECT slug FROM painting WHERE id=1').toArray()[0]?.slug;
-    if (!slug || !catalog[slug] || !this.env.GITHUB_TOKEN) {
+    if (!slug || !catalog[slug] || (this.env.PAYPAL_MODE !== 'sandbox' && !this.env.GITHUB_TOKEN)) {
       await this.ctx.storage.setAlarm(Date.now() + 60_000);
       return;
     }
     try {
-      if (!row.published) {
+      if (this.env.PAYPAL_MODE !== 'sandbox' && !row.published) {
         await commitCheckoutSale(this.env, slug, catalog[slug]);
         this.markPublished(row.order_id);
       }
