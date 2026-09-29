@@ -1,6 +1,7 @@
 import { DurableObject } from 'cloudflare:workers';
 import catalog from './checkout-catalog.mjs';
 import { commitCheckoutSale } from './paypal-inventory.mjs';
+import { recordTax } from './checkout-pricing.mjs';
 
 // One SQLite-backed object per original. All state changes happen on the same object.
 export class PaintingStock extends DurableObject {
@@ -13,7 +14,13 @@ export class PaintingStock extends DurableObject {
       expires_at INTEGER,
       order_id TEXT,
       capture_id TEXT,
-      published INTEGER NOT NULL DEFAULT 0
+      published INTEGER NOT NULL DEFAULT 0,
+      tax_recorded INTEGER NOT NULL DEFAULT 0,
+      total TEXT,
+      shipping TEXT,
+      tax TEXT,
+      tax_calc_id TEXT,
+      destination TEXT
     )`);
   }
 
@@ -27,14 +34,15 @@ export class PaintingStock extends DurableObject {
     if (this.status() !== 'available') return false;
     this.ctx.storage.sql.exec(`INSERT INTO stock (id,state,hold_id,expires_at,order_id,capture_id,published)
       VALUES (1,'held',?,?,NULL,NULL,0)
-      ON CONFLICT(id) DO UPDATE SET state='held',hold_id=excluded.hold_id,expires_at=excluded.expires_at,order_id=NULL,capture_id=NULL,published=0`,
+      ON CONFLICT(id) DO UPDATE SET state='held',hold_id=excluded.hold_id,expires_at=excluded.expires_at,order_id=NULL,capture_id=NULL,published=0,tax_recorded=0,total=NULL,shipping=NULL,tax=NULL,tax_calc_id=NULL,destination=NULL`,
       holdId, Date.now() + 20 * 60_000);
     return true;
   }
-  bindOrder(holdId, orderId) {
+  bindOrder(holdId, orderId, quote) {
     const row = this.row();
     if (row?.state !== 'held' || row.hold_id !== holdId || row.expires_at <= Date.now() || row.order_id) return false;
-    this.ctx.storage.sql.exec('UPDATE stock SET order_id=? WHERE id=1', orderId);
+    this.ctx.storage.sql.exec('UPDATE stock SET order_id=?,total=?,shipping=?,tax=?,tax_calc_id=?,destination=? WHERE id=1',
+      orderId,quote.total,quote.shipping,quote.tax,quote.taxCalculationId,JSON.stringify(quote.address));
     return true;
   }
   beginCapture(orderId, holdId) {
@@ -70,13 +78,13 @@ export class PaintingStock extends DurableObject {
     }
     return false;
   }
-  order() { const row = this.row(); return row ? {orderId:row.order_id,state:row.state,published:!!row.published} : null; }
+  order() { const row = this.row(); return row ? {orderId:row.order_id,state:row.state,published:!!row.published,total:row.total,shipping:row.shipping,tax:row.tax,destination:row.destination ? JSON.parse(row.destination) : null} : null; }
   markPublished(orderId) {
     if (this.row()?.order_id === orderId && this.row()?.state === 'sold') this.ctx.storage.sql.exec('UPDATE stock SET published=1 WHERE id=1');
   }
   async alarm() {
     const row = this.row();
-    if (!row || row.state !== 'sold' || row.published) return;
+    if (!row || row.state !== 'sold' || (row.published && row.tax_recorded)) return;
     // The object name is the painting slug; the first hold stores it for alarms.
     const slug = this.ctx.storage.sql.exec('SELECT slug FROM painting WHERE id=1').toArray()[0]?.slug;
     if (!slug || !catalog[slug] || !this.env.GITHUB_TOKEN) {
@@ -84,8 +92,14 @@ export class PaintingStock extends DurableObject {
       return;
     }
     try {
-      await commitCheckoutSale(this.env, slug, catalog[slug]);
-      this.markPublished(row.order_id);
+      if (!row.published) {
+        await commitCheckoutSale(this.env, slug, catalog[slug]);
+        this.markPublished(row.order_id);
+      }
+      if (!row.tax_recorded) {
+        await recordTax(this.env,row.tax_calc_id,row.capture_id);
+        this.ctx.storage.sql.exec('UPDATE stock SET tax_recorded=1 WHERE id=1');
+      }
     } catch (error) {
       console.error('Checkout inventory publication failed:', slug, error.message);
       await this.ctx.storage.setAlarm(Date.now() + 60_000);

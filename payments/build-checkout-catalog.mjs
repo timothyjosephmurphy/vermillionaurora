@@ -14,7 +14,17 @@ for (const painting of inventory.paintings) {
   if (titleOnPage !== title || Number(priceOnPage?.replaceAll(',', '')) !== Number(rawPrice) || !html.includes('<p class="product-availability">Available</p>')) {
     throw new Error(`Product page does not match inventory: ${slug}`);
   }
-  catalog[slug] = { title, amount: Number(rawPrice).toFixed(2), currency };
+  const width = Number(painting.F) * (painting.H === 'cm' ? 1 / 2.54 : 1);
+  const height = Number(painting.G) * (painting.H === 'cm' ? 1 / 2.54 : 1);
+  if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0 || !['cm','in'].includes(painting.H)) {
+    throw new Error(`Physical dimensions missing for ${slug}`);
+  }
+  const shorter = Math.min(width,height), longer = Math.max(width,height);
+  const rolled = longer > 12;
+  const parcel = rolled
+    ? {length:Math.ceil(shorter),width:4,height:4,weight:2}
+    : {length:Math.ceil(longer + 2),width:Math.ceil(shorter + 2),height:2,weight:2};
+  catalog[slug] = { title, amount: Number(rawPrice).toFixed(2), currency, parcel, packaging:rolled ? 'tube' : 'flat' };
 }
 await writeFile(new URL('../cloudflare/checkout-catalog.mjs', import.meta.url), `export default ${JSON.stringify(catalog, null, 2)};\n`);
 console.log(`Built checkout catalog: ${Object.keys(catalog).length} paintings`);
