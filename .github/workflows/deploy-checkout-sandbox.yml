@@ -38,6 +38,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           workingDirectory: cloudflare
+          wranglerVersion: '4.140.0'
           command: deploy --config wrangler.sandbox.jsonc
       - name: Verify sandbox endpoint
         run: |
