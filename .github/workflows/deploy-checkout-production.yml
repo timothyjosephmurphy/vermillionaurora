@@ -1,0 +1,49 @@
+name: Verify production checkout deployment
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cloudflare/commission-worker.js'
+      - 'cloudflare/checkout-*.mjs'
+      - 'cloudflare/paypal-*.mjs'
+      - 'cloudflare/painting-stock.mjs'
+      - 'cloudflare/wrangler.jsonc'
+      - 'payments/verify-production.mjs'
+      - '.github/workflows/deploy-checkout-production.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checkout-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify production checkout
+        run: |
+          node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
+          node payments/build-checkout-catalog.mjs
+          git diff --exit-code -- cloudflare/checkout-catalog.mjs
+          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.PAYPAL_MODE!=='live')process.exit(1)"
+      - name: Wait for the existing Cloudflare production build
+        run: |
+          node --input-type=module <<'NODE'
+          const url='https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/health';
+          let ready=false;
+          for(let i=0;i<30;i++){
+            const r=await fetch(url);const h=await r.json().catch(()=>({}));
+            if(r.ok&&h.mode==='live'){ready=true;console.log('Production checkout health:',JSON.stringify(h));break;}
+            await new Promise(resolve=>setTimeout(resolve,5000));
+          }
+          if(!ready)throw Error('The Cloudflare production build did not become ready');
+          NODE
+      - name: Verify live providers without taking payment
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node payments/verify-production.mjs

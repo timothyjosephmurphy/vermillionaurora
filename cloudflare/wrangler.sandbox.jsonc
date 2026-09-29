@@ -8,12 +8,13 @@
   "vars": {
     "PAYPAL_CHECKOUT_ENABLED": "true",
     "PAYPAL_MODE": "sandbox",
+    "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "PAYPAL_MERCHANT_ID": "QRRG2GBRVB8DN",
     "SANDBOX_RETURN_ORIGIN": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev"
   },
   "durable_objects": {
-    "bindings": [{ "name": "PAINTING_STOCK", "class_name": "PaintingStock" }]
+    "bindings": [{ "name": "PAINTING_STOCK", "class_name": "PaintingStock" },{ "name": "SHIPPING_CHECK", "class_name": "ShippingCheck" }]
   },
-  "migrations": [{ "tag": "painting-stock-sandbox-v1", "new_sqlite_classes": ["PaintingStock"] }],
+  "migrations": [{ "tag": "painting-stock-sandbox-v1", "new_sqlite_classes": ["PaintingStock"] },{ "tag": "shipping-check-v1", "new_sqlite_classes": ["ShippingCheck"] }],
   "observability": {"logs": {"enabled": true}}
 }

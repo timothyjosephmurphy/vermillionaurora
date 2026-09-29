@@ -7,11 +7,12 @@
     "PAYPAL_MODE": "sandbox",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "SHIPPO_TOKEN": "shippo_test_fake",
+    "SHIP_FROM_STREET": "123 Origin St",
     "GOOGLE_CLIENT_ID": "fake",
     "GOOGLE_CLIENT_SECRET": "fake",
     "GOOGLE_REFRESH_TOKEN": "fake",
     "STRIPE_SECRET_KEY": "sk_test_fake"
   },
-  "durable_objects": {"bindings": [{"name":"PAINTING_STOCK","class_name":"PaintingStock"}]},
-  "migrations": [{"tag":"test-v1","new_sqlite_classes":["PaintingStock"]}]
+  "durable_objects": {"bindings": [{"name":"PAINTING_STOCK","class_name":"PaintingStock"},{"name":"SHIPPING_CHECK","class_name":"ShippingCheck"}]},
+  "migrations": [{"tag":"test-v1","new_sqlite_classes":["PaintingStock","ShippingCheck"]}]
 }

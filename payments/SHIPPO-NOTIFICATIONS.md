@@ -2,7 +2,7 @@
 
 After a verified PayPal capture, the painting's Durable Object buys the **same Shippo rate quoted at checkout** and sends a printable PDF and tracking information to **tj@vermillionaurora.com**. Email uses the existing commission form's Gmail identity. It does not send mail to the buyer or control a physical printer. The default PDF is suitable for a regular printer; `PDF_4x6` selects a thermal label.
 
-This feature defaults **off**. The implementation branch does not enable production checkout, change its credentials, or deploy the PayPal buttons. Integrate it with the checkout release from PR #3 before enabling it. It applies only to the shared `/checkout/` flow, not legacy hosted PayPal links or IPN payments.
+This feature defaults **off in production** and is enabled in the isolated sandbox configuration. The implementation branch does not enable production checkout, change its credentials, or deploy the PayPal buttons. Integrate it with the checkout release from PR #3 before enabling it. It applies only to the shared `/checkout/` flow, not legacy hosted PayPal links or IPN payments.
 
 ## Worker settings
 
@@ -17,7 +17,7 @@ Configure these on the Worker, not in public source code. Do not paste API token
 
 The checkout's existing `SHIP_FROM_STREET`, PayPal and Stripe settings remain required. Shippo needs a valid billing method and a usable carrier account for the quoted service. The release preparation found a production `SHIPPO_TOKEN` already present; its value, mode and billing readiness have not been verified by this change.
 
-Read-only check on September 29, 2026: production has all five required secret entries above. The sandbox has `SHIPPO_TOKEN` and `SHIP_FROM_STREET` but is missing **all three `GOOGLE_*` email secrets**. Automatic labels are disabled in both Workers. Cloudflare does not return secret values, so the sandbox email credentials must be supplied from the owner's existing credential records. Evidence: [configuration check](https://github.com/timothyjosephmurphy/vermillionaurora/actions/runs/36538360061/job/109307599842).
+Read-only check on September 29, 2026 at 08:16 UTC: both Workers now have all five required secret entries. Secret values were not retrieved. [Configuration check](https://github.com/timothyjosephmurphy/vermillionaurora/actions/runs/36538360061/job/109318396571).
 
 ## Validate, then activate
 
@@ -28,7 +28,7 @@ Read-only check on September 29, 2026: production has all five required secret e
 5. Before enabling live labels, measure the actual packed dimensions and weight, including tube end caps and padding. The catalog currently estimates **2 lb**. Resolve insurance/service requirements: this integration buys the quoted service and adds no insurance. Correct the package catalog before accepting live orders if those estimates are wrong.
 6. Deploy the reviewed checkout and shipping code to production as part of the coordinated PayPal release. Verify Gmail and the live Shippo token/billing. Set `SHIPPO_AUTO_LABEL_ENABLED=true`; optionally set `SHIPPING_LABEL_FORMAT=PDF_4x6`. Keep the PayPal rollout limited to the chosen controlled-purchase product until that new paid order produces one real label and a delivered email.
 
-No real label has been purchased and no real email has been sent by the automated tests in this branch. Receipt of the sandbox email and a controlled live label remain release checks.
+Local tests use mocked providers and send no mail. The separate **Deploy and verify sandbox label email** workflow generates a Shippo test label and sends a real, clearly marked test email to the seller. It uses a fixed sample order in its own `ShippingCheck` Durable Object, without creating a PayPal purchase, changing painting stock, or recording a Stripe tax transaction. A random diagnostic credential protects `/checkout/shipping-check` and is removed after the run. The route and test object are included only in the sandbox Worker. Repeated runs reuse the persisted transaction/email result. This provider check complements the previously verified PayPal capture/webhook tests; a new complete checkout and a controlled live label remain release checks.
 
 ## Retry and recovery behavior
 
@@ -39,7 +39,7 @@ No real label has been purchased and no real email has been sent by the automate
 - Email failures retry every minute using the existing transaction. A lost Gmail acknowledgement can result in a duplicate email, but not a second label purchase. A stable Message-ID is included; it is not a Gmail deduplication guarantee.
 - If attaching the PDF fails, the email includes the Shippo download link. If the link has expired, retrieve the label from the transaction in the Shippo dashboard.
 - Setting `SHIPPO_AUTO_LABEL_ENABLED=false` prevents new automatic purchases. Already purchased/queued labels still finish their notification. Pending enabled orders receive an attention email when captured; orders created while disabled stay excluded.
-- Existing sold records without a shipping job are not backfilled. No additional Durable Object namespace or class migration is needed. Preserve `stock` and `shipping_job` state during deployment/rollback.
+- Existing sold records without a shipping job are not backfilled. Production needs no additional Durable Object namespace or class migration. The sandbox-only diagnostic adds the separate `ShippingCheck` class and `shipping-check-v1` migration. Preserve `stock` and `shipping_job` state during deployment/rollback.
 
 For diagnosis, inspect the per-painting `shipping_job` table in Cloudflare's Durable Object storage. It contains status, transaction ID, email ID and timestamps plus private order/address data. Do not expose that table through public endpoints or paste buyer addresses into public issues. `review` plus an email ID means automatic work has stopped and manual shipping is required. Do not reset `purchasing`, `waiting`, `ready` or `review` to `pending` without checking Shippo first.
 

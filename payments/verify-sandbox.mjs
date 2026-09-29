@@ -12,14 +12,18 @@ let installed=false;
 try {
   await cloudflare('PUT','',{name:key,text:secret,type:'secret_text'});installed=true;
   const headers={Authorization:`Bearer ${secret}`};
+  const replay=process.argv.includes('--replay');
   let response;
   for(let i=0;i<6;i++){
-    response=await fetch(base+'/checkout/verification',{method:'POST',headers});
+    response=await fetch(base+'/checkout/verification',{method:replay?'POST':'GET',headers});
     if(response.status!==404)break;
     await new Promise(resolve=>setTimeout(resolve,5000));
   }
   const audit=await response.json();
   console.log('Sandbox payment verification:',JSON.stringify(audit));
+  if(!replay){
+    if(!response.ok||audit.status!=='sold'||!audit.webhookReceived||!audit.taxRecorded)throw Error('Recorded sandbox payment, webhook receipt, or tax transaction is missing');
+  }else{
   if(!response.ok||!audit.registered||!audit.replayRequested)throw Error('Sandbox webhook replay could not be requested');
   let state;
   for(let i=0;i<12;i++){
@@ -29,6 +33,7 @@ try {
   }
   console.log('Sandbox final state:',JSON.stringify(state));
   if(state.status!=='sold'||!(state.webhookReceivedAt>(audit.webhookReceivedAt||0))||!state.taxRecorded)throw Error('New webhook receipt or Stripe test tax transaction is not confirmed');
+  }
 } finally {
   if(installed){await cloudflare('DELETE','/'+key);console.log('Temporary sandbox diagnostic credential removed');}
 }

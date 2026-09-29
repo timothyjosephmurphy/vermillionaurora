@@ -2,6 +2,7 @@ import { env } from 'cloudflare:workers';
 import { runInDurableObject, runDurableObjectAlarm, evictDurableObject } from 'cloudflare:test';
 import { beforeEach, afterEach, it, expect, vi } from 'vitest';
 import { fulfillSale, newShippingJob } from '../shipping-fulfillment.mjs';
+import { shippingCheck } from '../shipping-check.mjs';
 
 const slug = 'honeybadger-and-cub-with-genesis-block';
 const quote = () => ({title:'Honeybadger and Cub with Genesis Block',base:'1200.00',shipping:'12.00',tax:'9.00',total:'1221.00',
@@ -19,6 +20,8 @@ beforeEach(() => {
   vi.stubGlobal('fetch', vi.fn(async (url, options = {}) => {
     calls.push({url:String(url),...options});
     if (url === 'https://oauth2.googleapis.com/token') return Response.json({access_token:'EMAIL_TOKEN'});
+    if (url === 'https://api.goshippo.com/shipments/') return Response.json({rates:[{object_id:'RATE1',currency:'USD',amount:'12.00',provider:'USPS',servicelevel:{name:'Ground'}}]});
+    if (url === 'https://api.stripe.com/v1/tax/calculations') return Response.json({id:'taxcalc_TEST',currency:'usd',amount_total:122100});
     if (url === 'https://api.goshippo.com/transactions/') {
       if (failPurchase) throw new Error('Connection lost after request was accepted');
       return Response.json(transaction);
@@ -67,6 +70,7 @@ it('purchases the saved rate, emails its PDF, and survives duplicate captures, a
   expect(emailMime()).toContain('To: tj@vermillionaurora.com');
   expect(emailMime()).toContain('filename="shipping-label.pdf"');
   expect((await readJob(stub)).emailId).toBe('EMAIL1');
+  expect((await readJob(stub)).pdfAttached).toBe(true);
   expect(await runInDurableObject(stub, (_,ctx) => ctx.storage.getAlarm())).toBeNull();
   await evictDurableObject(stub);
   expect(await stub.complete(sale.order_id,sale.capture_id)).toBe(true);
@@ -168,7 +172,35 @@ it('emails the download link when the PDF cannot be attached', async () => {
   failPdf = true;
   const result = await runJob();
   expect(result.job.emailId).toBe('EMAIL1');
+  expect(result.job.pdfAttached).toBe(false);
   expect(emailMime()).not.toContain('filename="shipping-label.pdf"');
   const encodedBody = emailMime().split('Content-Transfer-Encoding: base64\r\n\r\n')[1].split('\r\n--')[0];
   expect(atob(encodedBody.replaceAll('\r\n',''))).toContain(success.label_url);
+});
+
+it('runs a sample shipping check once without a PayPal purchase or inventory mutation', async () => {
+  const stub = env.SHIPPING_CHECK.getByName(crypto.randomUUID()); objects.push(stub);
+  await stub.start();
+  await runDurableObjectAlarm(stub);
+  expect(await stub.status()).toMatchObject({test:true,status:'ready',transactionCreated:true,emailAccepted:true,pdfAttached:true});
+  const encodedBody = emailMime().split('Content-Transfer-Encoding: base64\r\n\r\n')[1].split('\r\n--')[0];
+  expect(atob(encodedBody.replaceAll('\r\n',''))).toContain('sample order, no PayPal charge');
+  await stub.start();
+  expect(await runDurableObjectAlarm(stub)).toBe(false);
+  expect(purchases()).toHaveLength(1);
+  expect(emails()).toHaveLength(1);
+  expect(calls.some(c=>c.url.includes('paypal.com') || c.url.includes('api.github.com') || c.url.includes('tax/transactions'))).toBe(false);
+});
+
+it.each([
+  ['no diagnostic token',{}],
+  ['wrong diagnostic token',{SHIPPING_CHECK_TOKEN:'different'}],
+  ['live PayPal mode',{SHIPPING_CHECK_TOKEN:'test',PAYPAL_MODE:'live'}],
+  ['live Shippo key',{SHIPPING_CHECK_TOKEN:'test',SHIPPO_TOKEN:'shippo_live_fake'}],
+  ['live Stripe key',{SHIPPING_CHECK_TOKEN:'test',STRIPE_SECRET_KEY:'sk_live_fake'}],
+  ['production inventory credential',{SHIPPING_CHECK_TOKEN:'test',GITHUB_TOKEN:'fake'}]
+])('blocks shipping diagnostics with %s',async (_, overrides) => {
+  const response = await shippingCheck(new Request('https://sandbox.example/checkout/shipping-check',{method:'POST',headers:{Authorization:'Bearer test'}}),{...env,...overrides});
+  expect(response.status).toBe(404);
+  expect(calls).toHaveLength(0);
 });

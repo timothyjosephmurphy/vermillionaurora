@@ -1,7 +1,9 @@
 import catalog from './checkout-catalog.mjs';
 import { checkout, checkoutWebhook } from './paypal-orders.mjs';
 import { verifySandbox } from './checkout-verification.mjs';
+import { shippingCheck } from './shipping-check.mjs';
 export { PaintingStock } from './painting-stock.mjs';
+export { ShippingCheck } from './shipping-check.mjs';
 
 const page = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vermillion Aurora sandbox checkout</title>
 <style>body{font:16px system-ui;max-width:600px;margin:40px auto;padding:0 16px}label{display:block;margin:12px 0}input,select,button{font:inherit;padding:8px;width:100%;box-sizing:border-box}button{margin:12px 0}pre{white-space:pre-wrap}</style>
@@ -24,6 +26,7 @@ export default {
   fetch(request,env) {
     if (env.PAYPAL_MODE !== 'sandbox' || env.GITHUB_TOKEN) return new Response('Sandbox isolation failure',{status:503});
     const path=new URL(request.url).pathname;
+    if (path==='/checkout/shipping-check') return shippingCheck(request,env);
     if (path==='/checkout/verification') return verifySandbox(request,env);
     if (path==='/checkout/test' && request.method==='GET') return new Response(page,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
     if (path==='/checkout/health' && request.method==='GET') return Response.json({mode:'sandbox',enabled:env.PAYPAL_CHECKOUT_ENABLED==='true'});
