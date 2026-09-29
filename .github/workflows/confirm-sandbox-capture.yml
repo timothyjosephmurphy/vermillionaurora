@@ -1,4 +1,4 @@
-name: Confirm sandbox capture and stock
+name: Confirm sandbox capture, stock, and event
 on:
   push:
     branches: [main]
