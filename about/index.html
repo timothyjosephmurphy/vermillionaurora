@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/styles.css" />
   <link rel="canonical" href="https://vermillionaurora.com/about/" /><style>.artist-statement{max-width:760px;padding-top:64px;padding-bottom:64px}.artist-statement h1{font-size:clamp(3rem,7vw,5rem);line-height:1.1;margin:12px 0 32px}.artist-statement h2{font-size:2.3rem;margin:40px 0 16px}.artist-statement p{font-size:1.1rem;line-height:1.85;margin-bottom:22px}.artist-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}.portrait-gallery{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:36px 0}.portrait-gallery figure{margin:0}.portrait-gallery img{width:100%;height:380px;object-fit:contain;background:#e8dfd3;border-radius:12px}.portrait-gallery figcaption{font-size:.9rem;color:#65574d;margin-top:10px}.film-poster{display:block;max-width:420px;width:100%;height:auto;margin:24px auto;border-radius:12px}@media(max-width:600px){.portrait-gallery{grid-template-columns:1fr}.portrait-gallery img{height:auto;max-height:500px}} </style><link rel="stylesheet" href="/site-header.css">
 <style>
-.artist-portfolio{margin:40px 0 48px;padding:28px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.4);scroll-margin-top:100px}
+.about-hero{display:grid;grid-template-columns:minmax(0,424px) minmax(0,1fr);gap:32px;align-items:center;margin:24px 0 48px}.about-hero>img{display:block;width:100%;max-width:424px;height:auto;border-radius:16px;margin:0}.about-hero .artist-portfolio{margin:0;}.artist-portfolio{margin:40px 0 48px;padding:28px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.4);scroll-margin-top:100px}
 .portfolio-summary{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:center}
 .portfolio-cover{display:block;line-height:0}
 .portfolio-cover img{display:block;width:100%;height:auto;border:1px solid var(--line);box-shadow:0 8px 24px rgba(28,18,12,.08)}
@@ -28,7 +28,7 @@
 .portfolio-reader{margin-top:24px;border-top:1px solid var(--line);padding-top:18px}
 .portfolio-reader summary{cursor:pointer;font-size:.9rem;text-decoration:underline;text-underline-offset:3px}
 .portfolio-reader iframe{display:block;width:100%;height:70vh;min-height:420px;max-height:800px;margin-top:18px;border:1px solid var(--line);background:white}
-@media(max-width:600px){.artist-portfolio{padding:20px}.portfolio-summary{grid-template-columns:1fr;gap:22px}.portfolio-cover{max-width:280px;margin-inline:auto}.portfolio-actions .button{flex:1;text-align:center}.portfolio-reader iframe{min-height:360px}}
+@media(max-width:850px){.about-hero{grid-template-columns:1fr}.about-hero>img{margin-inline:auto}.about-hero .artist-portfolio{margin:0}}@media(max-width:600px){.artist-portfolio{padding:20px}.portfolio-summary{grid-template-columns:1fr;gap:22px}.portfolio-cover{max-width:280px;margin-inline:auto}.portfolio-actions .button{flex:1;text-align:center}.portfolio-reader iframe{min-height:360px}}
 </style>
 </head><body><div class="page-shell"><header class="site-header">
         <div class="container header-inner">
@@ -55,7 +55,7 @@
           </div>
         </div>
       </header><main><article class="container artist-statement">
-<p class="eyebrow dark">About the artist</p><h1>TJ Murphy</h1><img src="/about/images/tj-murphy-portrait.jpg" alt="TJ Murphy smiling outdoors in sunglasses and a white shirt" width="424" height="360" fetchpriority="high" style="display:block;width:100%;max-width:424px;height:auto;border-radius:16px;margin:24px auto 32px" />
+<p class="eyebrow dark">About the artist</p><h1>TJ Murphy</h1><div class="about-hero"><img src="/about/images/tj-murphy-portrait.jpg" alt="TJ Murphy smiling outdoors in sunglasses and a white shirt" width="424" height="360" fetchpriority="high" />
 <section class="artist-portfolio" id="portfolio" aria-labelledby="portfolio-heading">
   <div class="portfolio-summary">
     <a class="portfolio-cover" href="/about/portfolio/TJ-Murphy-Artist-Portfolio-2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View TJ Murphy’s artist portfolio PDF">
@@ -75,7 +75,7 @@
     <summary>Read the portfolio on this page</summary>
     <iframe src="/about/portfolio/TJ-Murphy-Artist-Portfolio-2026.pdf#view=FitH" title="TJ Murphy artist portfolio, 2026" loading="lazy"></iframe>
   </details>
-</section>
+</section></div>
 <h2>Artist statement</h2>
 <p>I paint to capture the luminosity of changing light and the character of the people and places around me. My practice began in 2020 with ink, watercolor, and watercolor pastel. Watching Mount Rainier from Denny Blaine and the morning sky from my balcony became a form of meditation—and an invitation to translate fleeting color into paint.</p>
 <p>Working with a limited palette of three primaries and a dark tone, I build each painting’s colors through mixing and layering. Watercolor pastel brings deep saturation, while the texture of the paper creates granulation. I return often to shorelines, birds, and the meeting of sea and sky; in portraits, I look for the expression that makes a person distinctly themselves.</p>
