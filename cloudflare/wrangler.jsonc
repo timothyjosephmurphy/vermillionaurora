@@ -6,7 +6,7 @@
   "keep_vars": true,
   "vars": {
     "PAYPAL_IPN_ENABLED": "true",
-    "PAYPAL_CHECKOUT_ENABLED": "false",
+    "PAYPAL_CHECKOUT_ENABLED": "true",
     "PAYPAL_MODE": "live",
     "PAYPAL_CHECKOUT_SLUGS": "painting-portrait-in-green",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
