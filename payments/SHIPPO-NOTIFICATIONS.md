@@ -17,6 +17,8 @@ Configure these on the Worker, not in public source code. Do not paste API token
 
 The checkout's existing `SHIP_FROM_STREET`, PayPal and Stripe settings remain required. Shippo needs a valid billing method and a usable carrier account for the quoted service. The release preparation found a production `SHIPPO_TOKEN` already present; its value, mode and billing readiness have not been verified by this change.
 
+Read-only check on September 29, 2026: production has all five required secret entries above. The sandbox has `SHIPPO_TOKEN` and `SHIP_FROM_STREET` but is missing **all three `GOOGLE_*` email secrets**. Automatic labels are disabled in both Workers. Cloudflare does not return secret values, so the sandbox email credentials must be supplied from the owner's existing credential records. Evidence: [configuration check](https://github.com/timothyjosephmurphy/vermillionaurora/actions/runs/36538360061/job/109307599842).
+
 ## Validate, then activate
 
 1. Merge this branch into the shared checkout branch. The sandbox deployment must bundle `shipping-fulfillment.mjs` and `shipping-email.mjs` alongside `painting-stock.mjs`.
