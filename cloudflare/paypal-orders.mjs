@@ -177,3 +177,23 @@ export async function checkoutWebhook(request,env) {
     return new Response('Retry later',{status:503});
   }
 }
+
+export async function sandboxWebhookAudit(env) {
+  if (env.PAYPAL_MODE !== 'sandbox' || !env.PAYPAL_WEBHOOK_ID) return Response.json({registered:false},{status:503});
+  try {
+    const accessToken = await token(env);
+    const response = await fetch(`${paypalBase(env)}/v1/notifications/webhooks/${encodeURIComponent(env.PAYPAL_WEBHOOK_ID)}`, {
+      headers:{Authorization:`Bearer ${accessToken}`}
+    });
+    if (!response.ok) return Response.json({registered:false,apiStatus:response.status});
+    const hook = await response.json();
+    return Response.json({
+      registered:hook.id === env.PAYPAL_WEBHOOK_ID,
+      urlMatches:hook.url === `${env.SANDBOX_RETURN_ORIGIN}/checkout/webhook`,
+      captureSubscribed:hook.event_types?.some(type => type.name === 'PAYMENT.CAPTURE.COMPLETED' || type.name === '*') ?? false
+    });
+  } catch (error) {
+    console.error('Sandbox webhook audit failed:',error.message);
+    return Response.json({registered:false,apiStatus:502},{status:502});
+  }
+}
