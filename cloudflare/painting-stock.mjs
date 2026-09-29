@@ -82,6 +82,19 @@ export class PaintingStock extends DurableObject {
   markPublished(orderId) {
     if (this.row()?.order_id === orderId && this.row()?.state === 'sold') this.ctx.storage.sql.exec('UPDATE stock SET published=1 WHERE id=1');
   }
+  recordWebhook(orderId,captureId) {
+    const row = this.row();
+    if (row?.state !== 'sold' || row.order_id !== orderId || row.capture_id !== captureId) return false;
+    this.ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS webhook_receipt (id INTEGER PRIMARY KEY CHECK(id=1), received_at INTEGER NOT NULL)');
+    this.ctx.storage.sql.exec('INSERT OR REPLACE INTO webhook_receipt (id,received_at) VALUES (1,?)',Date.now());
+    return true;
+  }
+  verification() {
+    const row = this.row();
+    this.ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS webhook_receipt (id INTEGER PRIMARY KEY CHECK(id=1), received_at INTEGER NOT NULL)');
+    return {status:this.status(),taxRecorded:!!row?.tax_recorded,published:!!row?.published,
+      webhookReceived:!!this.ctx.storage.sql.exec('SELECT received_at FROM webhook_receipt WHERE id=1').toArray()[0]};
+  }
   async alarm() {
     const row = this.row();
     if (!row || row.state !== 'sold' || (row.published && row.tax_recorded)) return;

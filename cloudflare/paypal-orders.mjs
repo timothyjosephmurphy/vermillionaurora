@@ -8,7 +8,7 @@ const SLUG = /^[a-z0-9-]+$/;
 const site = env => env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN : SITE;
 const cors = env => ({ 'Access-Control-Allow-Origin':site(env), 'Access-Control-Allow-Methods':'GET, POST, OPTIONS', 'Access-Control-Allow-Headers':'Content-Type', 'Vary':'Origin', 'Cache-Control':'no-store' });
 const json = (body, status=200, env={}) => new Response(JSON.stringify(body), {status, headers:{...cors(env),'Content-Type':'application/json'}});
-const configured = env => env.PAYPAL_CHECKOUT_ENABLED === 'true' && env.PAYPAL_CLIENT_ID && env.PAYPAL_CLIENT_SECRET && env.PAYPAL_MERCHANT_ID && (env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN && !env.GITHUB_TOKEN : env.GITHUB_TOKEN) && env.PAINTING_STOCK && env.SHIPPO_TOKEN && env.STRIPE_SECRET_KEY && env.SHIP_FROM_STREET && env.PAYPAL_WEBHOOK_ID;
+const configured = env => ['live','sandbox'].includes(env.PAYPAL_MODE) && env.PAYPAL_CLIENT_ID && env.PAYPAL_CLIENT_SECRET && env.PAYPAL_MERCHANT_ID && (env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN && !env.GITHUB_TOKEN : env.GITHUB_TOKEN) && env.PAINTING_STOCK && env.SHIPPO_TOKEN && env.STRIPE_SECRET_KEY && env.SHIP_FROM_STREET && env.PAYPAL_WEBHOOK_ID;
 const stock = (env, slug) => env.PAINTING_STOCK.getByName(slug);
 const paypalBase = env => env.PAYPAL_MODE === 'sandbox' ? 'https://api-m.sandbox.paypal.com' : 'https://api-m.paypal.com';
 
@@ -41,6 +41,9 @@ export async function checkout(request, env) {
   const respond = (body,status=200) => json(body,status,env);
   if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:cors(env)});
   if (!configured(env)) return respond({error:'Checkout is being set up.'},503,env);
+  // Pausing new purchases must still let existing orders settle and reconcile.
+  const finishing = ['/checkout/capture','/checkout/cancel'].includes(url.pathname);
+  if (!finishing && env.PAYPAL_CHECKOUT_ENABLED !== 'true') return respond({error:'Checkout is being set up.'},503);
   const origin = request.headers.get('Origin');
   if (origin && origin !== site(env)) return respond({error:'Origin not allowed.'},403,env);
 
@@ -171,6 +174,7 @@ export async function checkoutWebhook(request,env) {
     const captureId = validateCapture(order,slug,env,expected);
     if (!captureId || captureId !== event.resource?.id) return new Response('Invalid capture',{status:400});
     if (!await stub.complete(orderId,captureId)) return new Response('Unrecognized order',{status:409});
+    await stub.recordWebhook(orderId,captureId);
     return new Response('OK');
   } catch(error) {
     console.error('Checkout webhook failed:',error.message);
