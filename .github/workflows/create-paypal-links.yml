@@ -1,0 +1,41 @@
+name: Create PayPal links
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - payments/batch-request.json
+
+permissions:
+  contents: read
+
+jobs:
+  create-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check PayPal credentials
+        env:
+          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
+          PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
+        run: |
+          if [ -z "$PAYPAL_CLIENT_ID" ] || [ -z "$PAYPAL_CLIENT_SECRET" ]; then
+            echo 'Add PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET as GitHub Actions secrets.' >&2
+            exit 1
+          fi
+      - name: Create requested live links
+        env:
+          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
+          PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
+        run: node payments/bulk-links.mjs create --live --ack-reusable --request payments/batch-request.json
+      - name: Save generated links for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: paypal-links-${{ github.run_id }}
+          path: payments/generated-links.local
+          if-no-files-found: ignore
+          retention-days: 30

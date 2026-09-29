@@ -12,6 +12,19 @@ PayPal's Payment Links and Buttons API can create links in a loop; the PayPal pa
 
 The script deliberately creates links without publishing checkout buttons or changing product pages. Reruns use the local checkpoint, so retain `payments/generated-links.local` securely. PayPal stores request IDs for only six hours; if a response was lost before the checkpoint was written, inspect your PayPal link list for that product before retrying after six hours. Do not assume an API-created link is stock-limited merely because the quantity selector is absent.
 
+### Let Codex create links in your PayPal account
+
+The repository also has a narrowly scoped GitHub Actions workflow at `.github/workflows/create-paypal-links.yml`. Once you add **`PAYPAL_CLIENT_ID`** and **`PAYPAL_CLIENT_SECRET`** in [repository Settings → Secrets and variables → Actions](https://github.com/timothyjosephmurphy/vermillionaurora/settings/secrets/actions), Codex can trigger it by committing `payments/batch-request.json` to `main` with a unique batch ID and explicit eligible slugs:
+
+```json
+{
+  "batchId": "paintings-2026-09-29-a",
+  "slugs": ["honeybadger-and-cub-with-genesis-block", "painting-phoenix-rising"]
+}
+```
+
+Only a change to that request file triggers creation. The workflow refuses a missing credential, invalid request, or unavailable painting. It checks PayPal's existing API-created resources by product ID before creating duplicates. It writes the returned URLs into a private GitHub Actions artifact retained for 30 days; it does **not** publish the URLs to the website. Codex can read the run result and prepare the site entries after you verify stock one and checkout settings in PayPal. Do not put credentials in the request JSON, an issue, chat, or a repository file. The GitHub Actions secrets are separate from the Cloudflare Worker secrets used by IPN.
+
 The site uses PayPal-hosted payment links. This requires no payment credentials or order API in the website. Until a link is configured, product pages keep their existing inquiry action and show no PayPal button.
 
 ## Merchant setup

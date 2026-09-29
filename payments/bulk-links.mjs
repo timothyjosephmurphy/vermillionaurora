@@ -41,10 +41,27 @@ export async function candidates() {
 const csv = value => `"${String(value).replaceAll('"', '""')}"`;
 async function main() {
   const [command = 'plan', ...args] = process.argv.slice(2);
-  if (!['plan', 'create'].includes(command) || args.some(x => !['--sandbox', '--live', '--ack-reusable'].includes(x))) {
-    throw new Error('Usage: node payments/bulk-links.mjs plan | create (--sandbox | --live) --ack-reusable');
+  const requestIndex = args.indexOf('--request');
+  let requestPath;
+  if (requestIndex !== -1) {
+    requestPath = args[requestIndex + 1];
+    if (!requestPath || requestPath.startsWith('--')) throw new Error('--request requires a JSON file');
+    args.splice(requestIndex, 2);
   }
-  const rows = await candidates();
+  if (!['plan', 'create'].includes(command) || args.some(x => !['--sandbox', '--live', '--ack-reusable'].includes(x))) {
+    throw new Error('Usage: node payments/bulk-links.mjs plan | create (--sandbox | --live) --ack-reusable [--request payments/batch-request.json]');
+  }
+  let rows = await candidates();
+  if (requestPath) {
+    if (command !== 'create' || requestPath !== 'payments/batch-request.json') throw new Error('Only the catalog batch-request.json is accepted for create');
+    const request = JSON.parse(await read(requestPath));
+    if (!/^[a-zA-Z0-9_-]{8,80}$/.test(request.batchId) || !Array.isArray(request.slugs) ||
+        !request.slugs.length || new Set(request.slugs).size !== request.slugs.length ||
+        request.slugs.some(x => typeof x !== 'string')) throw new Error('Invalid batch request');
+    const selection = new Set(request.slugs);
+    rows = rows.filter(row => selection.has(row.slug));
+    if (rows.length !== selection.size) throw new Error('Batch contains a sold, linked, missing, or otherwise ineligible painting');
+  }
   if (command === 'plan') {
     console.log(['slug', 'artist', 'site title', 'PayPal item name', 'USD price', 'product page'].map(csv).join(','));
     for (const r of rows) console.log([r.slug, r.artist, r.title, r.paypalTitle, r.amount, r.productPage].map(csv).join(','));
@@ -70,12 +87,45 @@ async function main() {
   const token = (await tokenResponse.json()).access_token;
   if (!token) throw new Error('PayPal OAuth response did not include an access token');
 
+  // Find earlier API-created resources by stable product ID. This prevents a
+  // second workflow run from creating another link after its artifact expires.
+  const remote = new Map();
+  let next = `${api}/v1/checkout/payment-resources?page_size=100`;
+  for (let pages = 0; next && pages < 100; pages++) {
+    const listed = await fetch(next, { headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' } });
+    if (!listed.ok) throw new Error(`PayPal list returned HTTP ${listed.status}`);
+    const result = await listed.json();
+    for (const item of result.resources ?? []) {
+      const productId = item.line_items?.[0]?.product_id;
+      if (item.status === 'ACTIVE' && productId && item.line_items?.length === 1) {
+        if (remote.has(productId)) throw new Error(`Multiple active PayPal links use product ID ${productId}; resolve this in PayPal first`);
+        remote.set(productId, item);
+      }
+    }
+    const url = result.links?.find(x => x.rel === 'next')?.href;
+    if (url && new URL(url).origin !== api) throw new Error('Unexpected PayPal pagination URL');
+    next = url;
+    if (next && pages === 99) throw new Error('PayPal link list exceeded 100 pages');
+  }
+
   for (const row of rows) {
     if (existing[key][row.slug]) {
       const old = existing[key][row.slug];
       if (old.amount !== row.amount || old.title !== row.title || old.paypalTitle !== row.paypalTitle) {
         throw new Error(`Existing ${row.slug} link has stale catalog details; review it before continuing`);
       }
+      continue;
+    }
+    const previous = remote.get(row.slug);
+    if (previous) {
+      const line = previous.line_items[0];
+      if (line.name !== row.paypalTitle || line.unit_amount?.value !== row.amount ||
+          line.unit_amount?.currency_code !== 'USD') throw new Error(`Existing PayPal link differs from catalog for ${row.slug}`);
+      const url = previous.payment_link ?? previous.links?.find(x => x.rel === 'payment_link')?.href;
+      if (!url) throw new Error(`No URL returned for existing PayPal link ${row.slug}`);
+      existing[key][row.slug] = { ...row, id: previous.id, url, stockVerified: false };
+      await writeFile(output, JSON.stringify(existing, null, 2) + '\n', { mode: 0o600 });
+      console.log(`${row.slug}: existing PayPal resource recorded`);
       continue;
     }
     const requestId = createHash('sha256').update(`${key}:${row.slug}:${row.paypalTitle}:${row.amount}`).digest('hex');
