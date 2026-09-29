@@ -24,11 +24,11 @@ try {
   let state;
   for(let i=0;i<12;i++){
     const r=await fetch(base+'/checkout/verification',{headers});state=await r.json();
-    if(state.webhookReceived&&state.taxRecorded)break;
+    if(state.webhookReceivedAt>(audit.webhookReceivedAt||0)&&state.taxRecorded)break;
     await new Promise(resolve=>setTimeout(resolve,5000));
   }
   console.log('Sandbox final state:',JSON.stringify(state));
-  if(state.status!=='sold'||!state.webhookReceived||!state.taxRecorded)throw Error('Webhook receipt or Stripe test tax transaction is not confirmed');
+  if(state.status!=='sold'||!(state.webhookReceivedAt>(audit.webhookReceivedAt||0))||!state.taxRecorded)throw Error('New webhook receipt or Stripe test tax transaction is not confirmed');
 } finally {
   if(installed){await cloudflare('DELETE','/'+key);console.log('Temporary sandbox diagnostic credential removed');}
 }

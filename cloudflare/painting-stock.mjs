@@ -92,8 +92,9 @@ export class PaintingStock extends DurableObject {
   verification() {
     const row = this.row();
     this.ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS webhook_receipt (id INTEGER PRIMARY KEY CHECK(id=1), received_at INTEGER NOT NULL)');
+    const receivedAt=this.ctx.storage.sql.exec('SELECT received_at FROM webhook_receipt WHERE id=1').toArray()[0]?.received_at||null;
     return {status:this.status(),taxRecorded:!!row?.tax_recorded,published:!!row?.published,
-      webhookReceived:!!this.ctx.storage.sql.exec('SELECT received_at FROM webhook_receipt WHERE id=1').toArray()[0]};
+      webhookReceived:!!receivedAt,webhookReceivedAt:receivedAt};
   }
   async alarm() {
     const row = this.row();
