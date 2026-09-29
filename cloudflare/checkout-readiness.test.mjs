@@ -33,6 +33,9 @@ test('production readiness requires authentication and only reads provider confi
   const audit=await verified.json();
   assert.equal(audit.checks.sellerEmail,true);assert.equal(audit.checks.insuredQuote,true);
   assert.deepEqual(audit.checks.pilotQuote,{base:'20.00',shipping:'6.50',tax:'0.00',total:'26.50',carrier:'UPS',insurance:'20.00',insuranceFee:'1.50'});
+  const cartPilot={...pilot,PAYPAL_CHECKOUT_SLUGS:'painting-portrait-in-green,painting-portrait-in-gold'};
+  assert.equal((await checkoutReadiness(request(),cartPilot)).status,200);
+  assert.equal((await checkoutReadiness(request(),{...cartPilot,PAYPAL_CHECKOUT_SLUGS:cartPilot.PAYPAL_CHECKOUT_SLUGS+',el-zonte-at-sunrise'})).status,503);
   const completed=await checkoutReadiness(request(),{...pilot,PAINTING_STOCK:{getByName:()=>({status:async()=>'sold'})}});
   assert.equal(completed.status,200);assert.equal((await completed.json()).checks.completedPilot,true);
   assert.equal((await checkoutReadiness(request(),{...pilot,PAYPAL_CHECKOUT_SLUGS:''})).status,503);

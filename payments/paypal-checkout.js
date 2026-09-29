@@ -97,6 +97,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (queryCheckout === 'return') return;
   }
 
+  const cartOptions = await window.vaCartReady;
+  if (cartOptions?.enabled && cartOptions.products?.some(p=>p.id===slug)) return;
+
   if (availability !== 'Available' || !priceText) return;
 
   // Shared checkout is enabled on the Worker only after its credentials and

@@ -16,7 +16,7 @@ export function cleanAddress(input) {
   return address;
 }
 
-export async function priceOrder(env, slug, input) {
+export async function priceShipment(env, slug, input) {
   const item = catalog[slug];
   if (!item?.parcel || !env.SHIPPO_TOKEN || !env.STRIPE_SECRET_KEY || !env.SHIP_FROM_STREET) throw new Error('Shipping and tax services are not configured');
   const address = cleanAddress(input);
@@ -28,7 +28,7 @@ export async function priceOrder(env, slug, input) {
   const parcel = Object.fromEntries(Object.entries(item.parcel).map(([key,value]) => [key,String(value)]));
   Object.assign(parcel,{distance_unit:'in',mass_unit:'lb'});
   const shipmentResponse = await fetch('https://api.goshippo.com/shipments/',{
-    method:'POST',headers:{Authorization:`ShippoToken ${env.SHIPPO_TOKEN}`,'Content-Type':'application/json','SHIPPO-API-VERSION':'2018-02-08'},
+    method:'POST',signal:AbortSignal.timeout(20000),headers:{Authorization:`ShippoToken ${env.SHIPPO_TOKEN}`,'Content-Type':'application/json','SHIPPO-API-VERSION':'2018-02-08'},
     body:JSON.stringify({address_from:from,address_to:address,parcels:[parcel],async:false,...(insurance ? {extra:{insurance}} : {})})
   });
   const shipment = await shipmentResponse.json();
@@ -40,38 +40,40 @@ export async function priceOrder(env, slug, input) {
     (!insurance || insuredRateMatches(r, shipment.object_id)));
   if (!rates.length) throw new Error('No carrier rate available for this package and address');
   const rate = rates.sort((a,b) => Number(a.amount)-Number(b.amount))[0];
-  const shippingCents = cents(rate.amount), paintingCents = cents(item.amount);
-  const form = new URLSearchParams({
-    currency:'usd',
-    'customer_details[address][line1]':address.street1,
-    'customer_details[address][city]':address.city,
-    'customer_details[address][state]':address.state,
-    'customer_details[address][postal_code]':address.zip,
-    'customer_details[address][country]':'US',
-    'customer_details[address_source]':'shipping',
-    'line_items[0][amount]':String(paintingCents),
-    'line_items[0][tax_code]':'txcd_99999999',
-    'line_items[0][tax_behavior]':'exclusive',
-    'line_items[0][reference]':slug,
-    'shipping_cost[amount]':String(shippingCents)
+  return {slug,address,base:item.amount,shipping:dollars(cents(rate.amount)),carrier:rate.provider||'Carrier',service:rate.servicelevel?.name||'Shipping',
+    parcel:item.parcel,packaging:item.packaging,title:item.title,rateId:rate.object_id,quotedAt:Date.now(),
+    ...(insurance?{insurance:{...insurance,fee:Number(rate.included_insurance_price).toFixed(2),shipmentId:shipment.object_id}}:{})};
+}
+
+async function calculateTax(env,items,address,shippingCents) {
+  const form=new URLSearchParams({currency:'usd',
+    'customer_details[address][line1]':address.street1,'customer_details[address][city]':address.city,
+    'customer_details[address][state]':address.state,'customer_details[address][postal_code]':address.zip,
+    'customer_details[address][country]':'US','customer_details[address_source]':'shipping',
+    'shipping_cost[amount]':String(shippingCents)});
+  if(address.street2)form.set('customer_details[address][line2]',address.street2);
+  items.forEach((item,i)=>{
+    form.set(`line_items[${i}][amount]`,String(cents(item.amount)));
+    form.set(`line_items[${i}][tax_code]`,'txcd_99999999');
+    form.set(`line_items[${i}][tax_behavior]`,'exclusive');
+    form.set(`line_items[${i}][reference]`,item.id);
   });
-  if (address.street2) form.set('customer_details[address][line2]',address.street2);
-  const taxResponse = await fetch('https://api.stripe.com/v1/tax/calculations',{
-    method:'POST',headers:{Authorization:`Bearer ${env.STRIPE_SECRET_KEY}`,'Content-Type':'application/x-www-form-urlencoded'},body:form
-  });
-  const calculation = await taxResponse.json();
-  if (!taxResponse.ok || calculation.currency !== 'usd' || !Number.isSafeInteger(calculation.amount_total) ||
-      calculation.amount_total < paintingCents + shippingCents || !/^taxcalc_/.test(calculation.id || '')) {
-    throw new Error(`Tax calculation unavailable (${taxResponse.status})`);
-  }
-  return {
-    catalogVersion,address,base:item.amount,shipping:dollars(shippingCents),tax:dollars(calculation.amount_total-paintingCents-shippingCents),
-    total:dollars(calculation.amount_total),taxCalculationId:calculation.id,
-    carrier:rate.provider || 'Carrier',service:rate.servicelevel?.name || 'Shipping',
-    parcel:item.parcel,packaging:item.packaging,title:item.title,
-    rateId:rate.object_id,quotedAt:Date.now(),
-    ...(insurance ? {insurance:{...insurance,fee:Number(rate.included_insurance_price).toFixed(2),shipmentId:shipment.object_id}} : {})
-  };
+  const response=await fetch('https://api.stripe.com/v1/tax/calculations',{
+    method:'POST',signal:AbortSignal.timeout(20000),headers:{Authorization:`Bearer ${env.STRIPE_SECRET_KEY}`,'Content-Type':'application/x-www-form-urlencoded'},body:form});
+  const calculation=await response.json(),base=items.reduce((sum,item)=>sum+cents(item.amount),0);
+  if(!response.ok||calculation.currency!=='usd'||!Number.isSafeInteger(calculation.amount_total)||calculation.amount_total<base+shippingCents||!/^taxcalc_/.test(calculation.id||''))throw Error('Tax calculation unavailable');
+  return {base:dollars(base),shipping:dollars(shippingCents),tax:dollars(calculation.amount_total-base-shippingCents),total:dollars(calculation.amount_total),taxCalculationId:calculation.id};
+}
+export async function priceOrder(env,slug,input) {
+  const shipment=await priceShipment(env,slug,input);
+  return {...shipment,catalogVersion,...await calculateTax(env,[{id:slug,amount:shipment.base}],shipment.address,cents(shipment.shipping))};
+}
+export async function priceCart(env,items,input,email) {
+  const address=cleanAddress(input),shipments=[];
+  // Each original is packed separately. No speculative combined-parcel dimensions.
+  for(const item of items)shipments.push(await priceShipment(env,item.id,address));
+  const totals=await calculateTax(env,items,address,shipments.reduce((sum,s)=>sum+cents(s.shipping),0));
+  return {schemaVersion:2,catalogVersion,address,email,items,shipments,...totals,quotedAt:Date.now()};
 }
 
 export async function recordTax(env,calculationId,captureId) {

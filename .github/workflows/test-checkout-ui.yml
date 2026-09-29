@@ -2,9 +2,9 @@ name: Test product checkout interface
 on:
   push:
     branches: [checkout-ui-review, main]
-    paths: ['catalog/**', 'src/**', 'scripts/**', 'package*.json', 'astro.config.mjs', 'tests/**', 'payments/paypal-checkout.js', 'payments/paypal-checkout.browser-test.cjs', 'payments/bitcoin-checkout.browser-test.cjs', 'gallery/painting-details.css', '.github/workflows/test-checkout-ui.yml']
+    paths: ['catalog/**', 'src/**', 'scripts/**', 'package*.json', 'astro.config.mjs', 'tests/**', 'payments/cart.*', 'payments/paypal-checkout.js', 'payments/paypal-checkout.browser-test.cjs', 'payments/bitcoin-checkout.browser-test.cjs', 'gallery/painting-details.css', '.github/workflows/test-checkout-ui.yml']
   pull_request:
-    paths: ['catalog/**', 'src/**', 'scripts/**', 'package*.json', 'astro.config.mjs', 'tests/**', 'payments/*checkout*.js', 'payments/*checkout*.cjs', 'gallery/painting-details.css', '.github/workflows/test-checkout-ui.yml']
+    paths: ['catalog/**', 'src/**', 'scripts/**', 'package*.json', 'astro.config.mjs', 'tests/**', 'payments/cart.*', 'payments/*checkout*.js', 'payments/*checkout*.cjs', 'gallery/painting-details.css', '.github/workflows/test-checkout-ui.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -23,11 +23,14 @@ jobs:
       - name: Check address, quote and payment states without contacting providers
         run: |
           node tests/catalog.browser-test.mjs
+          node tests/cart.browser-test.mjs
           node payments/paypal-checkout.browser-test.cjs
           node payments/bitcoin-checkout.browser-test.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: checkout-ui-previews
-          path: /tmp/checkout-ui/*.png
+          path: |
+            /tmp/checkout-ui/*.png
+            /tmp/cart-preview/*.png
           retention-days: 7

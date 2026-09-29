@@ -37,12 +37,14 @@ try {
   const r=await fetch(base+'/checkout/status?slug=honeybadger-and-cub-with-genesis-block');
   console.log('Public checkout status HTTP:',r.status);
   if(!audit.enabled&&r.status!==503)throw Error('Expected new checkout to remain disabled');
-  if(audit.enabled&&expected.PAYPAL_CHECKOUT_SLUGS==='painting-portrait-in-green') {
+  if(audit.enabled&&expected.PAYPAL_CHECKOUT_SLUGS) {
     if(r.status!==503)throw Error('A painting outside the pilot is purchasable');
-    const pilot=await fetch(base+'/checkout/status?slug=painting-portrait-in-green');
-    const state=await pilot.json();
-    console.log('Live pilot status:',JSON.stringify(state));
-    if(!pilot.ok||!['available','sold'].includes(state.status)||state.amount!=='20.00')throw Error('The live pilot status or recorded price is incorrect');
+    for(const slug of expected.PAYPAL_CHECKOUT_SLUGS.split(',').map(s=>s.trim())) {
+      const pilot=await fetch(base+'/checkout/status?slug='+encodeURIComponent(slug));
+      const state=await pilot.json();
+      console.log('Live pilot status:',slug,JSON.stringify(state));
+      if(!pilot.ok||!['available','sold'].includes(state.status)||state.amount!=='20.00')throw Error('The live pilot status or recorded price is incorrect');
+    }
   }
 } finally {
   if(installed){await cloudflare('DELETE','/'+key);console.log('Temporary production diagnostic credential removed');}

@@ -1317,7 +1317,7 @@
     "listing": {
       "status": "available",
       "price": {
-        "amount": "400.00",
+        "amount": "20.00",
         "currency": "USD"
       }
     },
@@ -1347,14 +1347,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 12,
-        "width": 4,
-        "height": 4,
-        "weight": 2,
-        "packaging": "tube",
-        "insuranceRequested": false,
+        "length": 15,
+        "width": 12,
+        "height": 0.125,
+        "weight": 0.25,
+        "packaging": "flat",
+        "insuranceRequested": true,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Owner selected the same flat-envelope shipping profile as Chase Toole on 2026-09-29: 12 by 15 inch envelope exterior, estimated thickness of 1/8 inch and packed weight of 4 oz (0.25 lb) for one sheet of watercolor paper in an envelope. Parcel dimensions use inches and weight uses pounds. Insure for the actual sale value; the pilot price is $20. Insurance is requested through the Shippo shipment and included in the selected shipping rate; the label integration verifies the insured rate before purchase."
       }
     },
     "inquiry": {
