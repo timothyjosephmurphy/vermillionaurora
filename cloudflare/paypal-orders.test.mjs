@@ -41,7 +41,7 @@ test('one original is reserved for only one buyer, and a completed capture sells
       const body=JSON.parse(options.body);
       assert.equal(body.address_from.zip,'98122');
       assert.equal(body.parcels[0].length,String(item.parcel.length));
-      return Response.json({rates:[{currency:'USD',amount:'12.00',provider:'USPS',servicelevel:{name:'Ground'}}]});
+      return Response.json({rates:[{object_id:'RATE1',currency:'USD',amount:'12.00',provider:'USPS',servicelevel:{name:'Ground'}}]});
     }
     if (url.includes('api.stripe.com/v1/tax/calculations')) return Response.json({currency:'usd',amount_total:Math.round(Number(total)*100),id:'taxcalc_FAKE'});
     if (url.endsWith('/v1/oauth2/token')) return Response.json({access_token:'fake'});
@@ -66,6 +66,8 @@ test('one original is reserved for only one buyer, and a completed capture sells
   const first = await checkout(request('/checkout/create',{slug,address,expectedTotal:total}),env);
   assert.equal(first.status,200);
   assert.match((await first.json()).url,/sandbox.paypal.com/);
+  assert.equal(savedQuote.rateId,'RATE1');
+  assert.ok(savedQuote.quotedAt > 0);
   const second = await checkout(request('/checkout/create',{slug}),env);
   assert.equal(second.status,409);
   env.PAYPAL_CHECKOUT_ENABLED='false';

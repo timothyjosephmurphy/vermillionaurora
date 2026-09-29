@@ -28,7 +28,7 @@ export async function priceOrder(env, slug, input) {
   });
   const shipment = await shipmentResponse.json();
   if (!shipmentResponse.ok) throw new Error(`Shipping quote unavailable (${shipmentResponse.status})`);
-  const rates = (shipment.rates || []).filter(r => r.currency === 'USD' && Number.isFinite(Number(r.amount)) && Number(r.amount) > 0);
+  const rates = (shipment.rates || []).filter(r => r.object_id && r.currency === 'USD' && Number.isFinite(Number(r.amount)) && Number(r.amount) > 0);
   if (!rates.length) throw new Error('No carrier rate available for this package and address');
   const rate = rates.sort((a,b) => Number(a.amount)-Number(b.amount))[0];
   const shippingCents = cents(rate.amount), paintingCents = cents(item.amount);
@@ -59,7 +59,8 @@ export async function priceOrder(env, slug, input) {
     address,base:item.amount,shipping:dollars(shippingCents),tax:dollars(calculation.amount_total-paintingCents-shippingCents),
     total:dollars(calculation.amount_total),taxCalculationId:calculation.id,
     carrier:rate.provider || 'Carrier',service:rate.servicelevel?.name || 'Shipping',
-    parcel:item.parcel,packaging:item.packaging
+    parcel:item.parcel,packaging:item.packaging,title:item.title,
+    rateId:rate.object_id,quotedAt:Date.now()
   };
 }
 

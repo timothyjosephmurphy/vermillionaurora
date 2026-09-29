@@ -29,4 +29,4 @@ To pause new purchases, set `PAYPAL_CHECKOUT_ENABLED=false`. Existing capture/ca
 
 The deployment workflow installs a temporary diagnostic credential on the sandbox Worker, requests the actual capture-event replay, confirms verified receipt and the Stripe test tax record, and removes the credential. The diagnostic route exists only in the isolated sandbox entry point and is inaccessible without the temporary credential. Responses contain state flags, not buyer details or provider secrets.
 
-Production checkout does not buy a shipping label or email one. That separate fulfillment integration must be coordinated before it is added to this checkout branch.
+Shippo label purchase and seller email are implemented behind the separate, default-off `SHIPPO_AUTO_LABEL_ENABLED` flag. Follow [Shippo notification setup](SHIPPO-NOTIFICATIONS.md) and verify a new sandbox label/email before enabling it during the coordinated production release. Its automated tests use mocked providers; no real label or email has been produced by those tests.
