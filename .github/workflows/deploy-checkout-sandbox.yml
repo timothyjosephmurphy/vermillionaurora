@@ -27,3 +27,8 @@ jobs:
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           workingDirectory: cloudflare
           command: deploy --config wrangler.sandbox.jsonc
+      - name: Verify sandbox endpoint
+        run: |
+          curl --fail --retry 5 --retry-delay 2 --silent --show-error \
+            https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/health \
+            | node -e "let s='';process.stdin.on('data',x=>s+=x).on('end',()=>{const h=JSON.parse(s);if(h.mode!=='sandbox'||h.enabled!==true)process.exit(1);console.log('Sandbox endpoint enabled')})"
