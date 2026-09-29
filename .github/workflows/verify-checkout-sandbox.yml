@@ -1,4 +1,5 @@
 name: Verify isolated checkout sandbox
+run-name: Diagnose PayPal sandbox order creation
 
 on:
   push:
