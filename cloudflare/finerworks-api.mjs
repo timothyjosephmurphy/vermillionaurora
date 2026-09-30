@@ -46,7 +46,7 @@ export async function finerworksRequest(env,path,body,method='POST') {
   if(validation)return validation;
   if(!response.ok||data?.status?.success!==true){
     const error=failure(response.status,'json',failureHint(data?.status?.message||''));
-    error.details=finerworksFailureDetails(path,data,[webKey,appKey]);
+    error.details=finerworksFailureDetails(path,data,[webKey,appKey,env.FINERWORKS_PAYMENT_TOKEN,body?.payment_token]);
     throw error;
   }
   return data;

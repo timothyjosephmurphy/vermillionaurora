@@ -1,5 +1,13 @@
 import {test,afterEach} from 'node:test';
 import assert from 'node:assert/strict';
+
+test('a live billing rejection cannot place the payment token in saved diagnostics',async t=>{
+  const token='private-live-billing-token';
+  t.mock.method(globalThis,'fetch',async()=>Response.json({status:{success:false,message:`Rejected payment ${token}`}},{status:400}));
+  await assert.rejects(finerworksRequest({PAYPAL_MODE:'live',PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'private-web',FINERWORKS_APP_KEY:'private-app',FINERWORKS_PAYMENT_TOKEN:token},'/v3/submit_orders_v2',{
+    validate_only:false,payment_token:token,orders:[{order_po:`va-cart-${'a'.repeat(32)}-prints`,test_mode:false}]
+  }),error=>!JSON.stringify(error.details).includes(token)&&error.details.providerMessage.includes('[redacted]'));
+});
 import {finerworksRequest,finerworksEnvironment,finerworksMaterials,finerworksPrices,finerworksProductCode,finerworksSizeAllowed} from './finerworks-api.mjs';
 const originalFetch=globalThis.fetch;
 const env={PAYPAL_MODE:'sandbox',FINERWORKS_WEB_API_KEY:'private-web-key',FINERWORKS_APP_KEY:'private-app-key'};
