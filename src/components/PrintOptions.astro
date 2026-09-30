@@ -1,5 +1,6 @@
 ---
 import {printOptions,config,papers,sizeLabel} from '../../catalog/prints.mjs';
+import FrameRecommendations from './FrameRecommendations.astro';
 const {product,preview=false}=Astro.props;
 const options=printOptions(product,config,papers);
 const publicOptions=options.map(({id,label,scale,image,paper,amount,ready,paperLabel,reasons,testOnly})=>({id,label,scale,image,paper,amount,ready,paperLabel,testOnly,...(preview?{reasons}:{})}));
@@ -14,6 +15,7 @@ const visible=preview||options.some(o=>o.ready&&!o.testOnly);
   </fieldset>
   <figure class="print-sheet-figure"><div class="print-sheet" data-print-sheet><div class="print-image-area" data-print-image-area><img src={product.image.src} alt={`Print layout preview of ${product.title}`} loading="lazy"/></div></div><figcaption data-print-dimensions></figcaption></figure>
   <p class="print-paper" data-print-paper></p><p class="print-border-note">Unframed. Any white margin shown is included in the paper dimensions.</p>
+  <FrameRecommendations context="print" paper={options[0]?.paper} image={options[0]?.image}/>
   {preview&&<details class="print-readiness"><summary>Preparation for this size</summary><ul data-print-readiness></ul></details>}
   <div class="print-actions"><label>Quantity <input data-print-quantity type="number" min="1" max="10" step="1" value="1" inputmode="numeric"/></label><button data-print-add class="button button-solid" type="button" disabled>{preview?'Ordering not yet open':'Add print to cart'}</button></div>
   <p data-print-message class="print-message" role="status" aria-live="polite"></p>

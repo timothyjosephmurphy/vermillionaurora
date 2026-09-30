@@ -1,0 +1,44 @@
+---
+import {frameCatalog,frameSelection} from '../../catalog/frame-matching.mjs';
+const {paper=null,image=paper,context='original'}=Astro.props;
+const selection=frameSelection(paper,image,context);
+const Heading=context==='print'?'h3':'h2';
+const rel=frameCatalog.affiliateTag?'sponsored noopener noreferrer':'noopener noreferrer';
+---
+<section class="frame-recommendations" data-frame-recommendations data-frame-context={context} aria-label="Find a matching frame">
+  <div class="frame-heading"><p class="eyebrow dark">Finishing touches</p><Heading>Find a matching frame</Heading><p data-frame-size>{selection.summary}</p></div>
+  <div class="frame-options" data-frame-list>
+    {selection.options.map(frame=><article class="frame-option">
+      <p class:list={['frame-fit',{'frame-fit-direct':frame.fit==='direct'}]}>{frame.label}</p>
+      <h4>{frame.title}</h4><p class="frame-brand">{frame.brand}</p><p class="frame-detail">{frame.detail}</p>
+      <a class="frame-link" href={frame.href} target="_blank" rel={rel} aria-label={`Check ${frame.title} ${frame.brand} frame price on Amazon (opens in a new tab)`}>Check price on Amazon <span aria-hidden="true">↗</span></a>
+    </article>)}
+  </div>
+  <p class="frame-empty" data-frame-empty hidden={selection.options.length>0}>{selection.empty}</p>
+  <p class="frame-order-note">Frames are purchased separately on Amazon and ship separately from your artwork. Confirm the listed frame size before ordering.</p>
+  <p class="frame-care-note">For original watercolors, use conservation matting or spacers to keep the painted surface clear of the glazing.</p>
+  {frameCatalog.affiliateTag&&<p class="frame-affiliate">As an Amazon Associate I earn from qualifying purchases.</p>}
+  {context==='print'&&<noscript><p>These frame recommendations are for the default print size. Enable JavaScript to update them when choosing another size.</p></noscript>}
+</section>
+<script>
+  import {initializeFrameRecommendations} from '../scripts/frame-recommendations.js';
+  initializeFrameRecommendations();
+</script>
+<style is:global>
+  .frame-recommendations{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(92,65,45,.2);color:#302b25}
+  .frame-recommendations .frame-heading h2,.frame-recommendations .frame-heading h3{font-size:1.5rem;line-height:1.2;margin:.2rem 0 .6rem}
+  .frame-recommendations .frame-heading>p:last-child{font-size:.92rem;color:#625a50;margin:0 0 1rem}
+  .frame-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+  .frame-option{display:flex;flex-direction:column;min-width:0;border:1px solid #d8cdbf;border-radius:12px;background:#faf6ef;padding:1rem}
+  .frame-recommendations .frame-fit{font:600 .74rem/1.4 system-ui,sans-serif;color:#77552c;margin:0 0 .7rem}
+  .frame-recommendations .frame-fit-direct{color:#365947}
+  .frame-recommendations h4{font-size:1.05rem;line-height:1.3;margin:0 0 .2rem}
+  .frame-recommendations .frame-brand{font-size:.8rem;color:#71685e;margin:0 0 .65rem}
+  .frame-recommendations .frame-detail{font-size:.86rem;line-height:1.5;margin:0 0 1rem}
+  .frame-link{display:block;margin-top:auto;min-height:44px;padding:.7rem .2rem .2rem;font:600 .85rem/1.5 system-ui,sans-serif;color:#733d29;text-underline-offset:3px}
+  .frame-link:focus-visible{outline:3px solid #a35a37;outline-offset:4px;border-radius:3px}
+  .frame-recommendations .frame-order-note,.frame-recommendations .frame-care-note,.frame-recommendations .frame-affiliate{font-size:.78rem;line-height:1.5;color:#655d53;margin:.8rem 0 0}
+  .frame-recommendations .frame-empty{font-size:.92rem;line-height:1.5}
+  .frame-recommendations [hidden]{display:none!important}
+  @media(max-width:600px){.frame-options{grid-template-columns:1fr}.frame-option{padding:.9rem}}
+</style>
