@@ -36,6 +36,10 @@ const facts=painting ? [
   <p class="book-back"><a href="/#books">← All books</a></p>
 </main> : <main class="container product-detail" data-product-id={painting?p.id:undefined}>
   <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href={p.back.href}>{p.artist==='Paul Murphy'?'Paul Murphy':p.type==='commission'?'Commissions':'Gallery'}</a><span>/</span><span aria-current="page">{p.title}</span></nav>
+  {p.examples?.length>0 && <section class="commission-gallery"><div class="section-heading"><h2>Portrait gallery</h2><p>{p.galleryDescription}</p></div><div class="exhibition-grid">{p.examples.map(img=><a class="ex-photo" href={img.src}><img {...img} loading="lazy" decoding="async" /></a>)}</div></section>}
+  <article class:list={['product-layout',{'product-layout-text':!painting}]}>
+    {painting && <PaintingImage image={p.image} title={p.title} />}
+    <div class="product-summary"><p class="eyebrow dark">{p.eyebrow}</p><h1>{p.title}</h1>
   {painting && (p.listing.status==='available' || availablePrints.length>0) && <section class="product-purchase-actions" aria-label="Purchase options">
     {p.listing.status==='available' && <div data-original-purchase>
       {p.checkout?.mode==='integrated' ? <div data-cart-product hidden>
@@ -48,10 +52,6 @@ const facts=painting ? [
       <p class="product-print-availability">{availablePrints.some(o=>o.sampleOnly)?'Print samples':'Fine art prints'} from ${printFrom.toFixed(2)} · Choose size &amp; framing</p>
     </div>}
   </section>}
-  {p.examples?.length>0 && <section class="commission-gallery"><div class="section-heading"><h2>Portrait gallery</h2><p>{p.galleryDescription}</p></div><div class="exhibition-grid">{p.examples.map(img=><a class="ex-photo" href={img.src}><img {...img} loading="lazy" decoding="async" /></a>)}</div></section>}
-  <article class:list={['product-layout',{'product-layout-text':!painting}]}>
-    {painting && <PaintingImage image={p.image} title={p.title} />}
-    <div class="product-summary"><p class="eyebrow dark">{p.eyebrow}</p><h1>{p.title}</h1>
       {p.listing.price && <p class="product-detail-price">{priceLabel(p,painting)}</p>}
       {painting && <p class="product-availability" data-live-status>{statusLabel(p)}</p>}
       {painting&&availablePrints.length===0&&<p class="product-print-availability">Prints not yet available for this painting.</p>}

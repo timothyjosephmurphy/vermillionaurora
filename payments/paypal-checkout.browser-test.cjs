@@ -44,7 +44,7 @@ fs.mkdirSync(output,{recursive:true});
   await pay.waitFor();
   assert(await pay.isVisible());assert(await pay.isDisabled());
   assert(await page.locator('.checkout-address-form').isVisible());
-  assert(await page.locator('.product-purchase-actions').evaluate(el=>el.compareDocumentPosition(document.querySelector('.product-layout'))&Node.DOCUMENT_POSITION_FOLLOWING));
+  assert(await page.locator('.product-purchase-actions').evaluate(el=>el.previousElementSibling?.matches('h1')), 'Purchase options follow the artwork title');
   assert(await page.locator('.purchase-panel').evaluate(el=>el.compareDocumentPosition(document.querySelector('.painting-facts'))&Node.DOCUMENT_POSITION_FOLLOWING));
   await page.screenshot({path:path.join(output,'checkout-desktop.png'),fullPage:true});
   await calculate();assert.equal(quoteRequests.length,0,'invalid address must not call quote');
