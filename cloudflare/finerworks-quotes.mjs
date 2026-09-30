@@ -1,6 +1,7 @@
 import {finerworksRequest,finerworksMaterials,finerworksPrices,finerworksEnvironment} from './finerworks-api.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
 import {moneyCents,moneyString,printRetailPrice} from '../catalog/print-pricing.mjs';
+import {printAssetUrl} from './print-asset-policy.mjs';
 import {quoteMattedOption} from './finerworks-matting.mjs';
 import {sameMat} from '../catalog/matting.mjs';
 // No order creation, payment, email or Shippo calls. Wholesale totals remain server-side.
@@ -87,9 +88,8 @@ export async function quoteFinerWorksPrints(env,items,address) {
   }
   // The shipping endpoint validates the order model, including the image object.
   for(const product of products) {
-    const item=items.find(i=>i.sku===product.product_sku),u=new URL(item.assetUrl);
-    if(u.protocol!=='https:'||u.username||u.password||u.search||u.hash||!['vermillionaurora.com','media.vermillionaurora.com'].includes(u.hostname)||! /\.(jpg|jpeg|png)$/i.test(u.pathname))throw Error('Invalid FinerWorks image URL');
-    product.product_image={product_url_file:u.href,product_url_thumbnail:u.href};
+    const item=items.find(i=>i.sku===product.product_sku),url=printAssetUrl(item.assetUrl,env.PAYPAL_MODE);
+    product.product_image={product_url_file:url,product_url_thumbnail:url};
   }
   const body={orders:[{order_po:po,order_key:null,recipient,order_items:products,shipping_code:'EC',test_mode:env.PAYPAL_MODE==='sandbox'}]};
   const data=await finerworksRequest(env,'/v3/list_shipping_options_multiple',body);
@@ -102,9 +102,8 @@ export async function validateFinerWorksPrintOrder(env,items,address,quote) {
   const po=`va-test-${crypto.randomUUID()}`;
   groupPrintProducts(items,po);
   const order_items=items.map(item=>{
-    const u=new URL(item.assetUrl);
-    if(u.protocol!=='https:'||u.username||u.password||u.search||u.hash||!['vermillionaurora.com','media.vermillionaurora.com'].includes(u.hostname)||! /\.(jpg|jpeg|png)$/i.test(u.pathname))throw Error('Invalid FinerWorks image URL');
-    return {product_order_po:po,product_sku:item.sku,product_qty:item.quantity,product_title:String(item.title||'Art print').slice(0,50),product_image:{product_url_file:u.href,product_url_thumbnail:u.href}};
+    const url=printAssetUrl(item.assetUrl,env.PAYPAL_MODE);
+    return {product_order_po:po,product_sku:item.sku,product_qty:item.quantity,product_title:String(item.title||'Art print').slice(0,50),product_image:{product_url_file:url,product_url_thumbnail:url}};
   });
   // Omit the optional source label: the live validator rejected it despite its documented text type.
   const body={orders:[{order_po:po,order_key:null,recipient:finerworksRecipient(address,po),order_items,shipping_code:quote.shippingMethod,test_mode:true}],validate_only:true,payment_token:'xxxx'};

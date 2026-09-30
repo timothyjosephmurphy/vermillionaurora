@@ -30,7 +30,7 @@ test('both pilot paintings use saved $75/$45/$25 FinerWorks prices, never legacy
     const options=printOptions(product,config,papers);
     assert.deepEqual(options.map(o=>o.amount),['75.00','45.00','25.00']);
     assert.deepEqual(options.map(o=>o.scale),[1,.75,.5]);
-    assert(options.every(o=>o.provider==='finerworks' && o.paper.sku.startsWith('5M144M8S') && !o.ready && o.asset===null));
+    assert(options.every(o=>o.provider==='finerworks' && o.paper.sku.startsWith('5M144M8S') && o.ready && o.testOnly && o.asset.sandboxOnly));
     assert(options.every(o=>o.image.width<=art.dimensions.width&&o.image.height<=art.dimensions.height));
   }
 });

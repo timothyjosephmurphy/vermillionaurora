@@ -30,30 +30,79 @@
         "sha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2"
       },
       "testOnly": true,
-      "enabled": false,
+      "enabled": true,
       "variants": {
         "full": {
           "amount": "75.00",
           "sku": "5M144M8S15X12",
           "pricingRule": "finerworks-3.5x-v1",
           "quotedAt": "2026-09-30",
-          "asset": null
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/print-assets/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
+            "sha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+            "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+            "productCode": "5M144M8S15X12",
+            "imageWidthIn": 15,
+            "imageHeightIn": 12,
+            "paperWidthIn": 15,
+            "paperHeightIn": 12,
+            "approved": true,
+            "layoutApproved": true,
+            "sandboxOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          }
         },
         "medium": {
           "amount": "45.00",
           "sku": "5M144M8S11.25X9",
           "pricingRule": "finerworks-3.5x-v1",
           "quotedAt": "2026-09-30",
-          "asset": null
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/print-assets/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
+            "sha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+            "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+            "productCode": "5M144M8S11.25X9",
+            "imageWidthIn": 11.25,
+            "imageHeightIn": 9,
+            "paperWidthIn": 11.25,
+            "paperHeightIn": 9,
+            "approved": true,
+            "layoutApproved": true,
+            "sandboxOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          }
         },
         "small": {
           "amount": "25.00",
           "sku": "5M144M8S7.5X6",
           "pricingRule": "finerworks-3.5x-v1",
           "quotedAt": "2026-09-30",
-          "asset": null
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/print-assets/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
+            "sha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+            "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+            "productCode": "5M144M8S7.5X6",
+            "imageWidthIn": 7.5,
+            "imageHeightIn": 6,
+            "paperWidthIn": 7.5,
+            "paperHeightIn": 6,
+            "approved": true,
+            "layoutApproved": true,
+            "sandboxOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          }
         }
-      }
+      },
+      "sandboxQualityTestApproved": true
     },
     "painting-portrait-in-gold": {
       "dimensions": {
@@ -68,30 +117,79 @@
         "sha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4"
       },
       "testOnly": true,
-      "enabled": false,
+      "enabled": true,
       "variants": {
         "full": {
           "amount": "75.00",
           "sku": "5M144M8S15X12",
           "pricingRule": "finerworks-3.5x-v1",
           "quotedAt": "2026-09-30",
-          "asset": null
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/print-assets/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
+            "sha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+            "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+            "productCode": "5M144M8S15X12",
+            "imageWidthIn": 15,
+            "imageHeightIn": 12,
+            "paperWidthIn": 15,
+            "paperHeightIn": 12,
+            "approved": true,
+            "layoutApproved": true,
+            "sandboxOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          }
         },
         "medium": {
           "amount": "45.00",
           "sku": "5M144M8S11.25X9",
           "pricingRule": "finerworks-3.5x-v1",
           "quotedAt": "2026-09-30",
-          "asset": null
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/print-assets/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
+            "sha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+            "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+            "productCode": "5M144M8S11.25X9",
+            "imageWidthIn": 11.25,
+            "imageHeightIn": 9,
+            "paperWidthIn": 11.25,
+            "paperHeightIn": 9,
+            "approved": true,
+            "layoutApproved": true,
+            "sandboxOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          }
         },
         "small": {
           "amount": "25.00",
           "sku": "5M144M8S7.5X6",
           "pricingRule": "finerworks-3.5x-v1",
           "quotedAt": "2026-09-30",
-          "asset": null
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/print-assets/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
+            "sha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+            "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+            "productCode": "5M144M8S7.5X6",
+            "imageWidthIn": 7.5,
+            "imageHeightIn": 6,
+            "paperWidthIn": 7.5,
+            "paperHeightIn": 6,
+            "approved": true,
+            "layoutApproved": true,
+            "sandboxOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          }
         }
-      }
+      },
+      "sandboxQualityTestApproved": true
     }
   }
 }

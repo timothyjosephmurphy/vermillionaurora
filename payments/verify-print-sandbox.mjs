@@ -1,4 +1,4 @@
-// Read-only quotes and explicitly validation-only preflight; never place an order.
+// Quote and preflight checks; --test-orders also exercises unbilled sandbox fulfillment.
 // The encrypted artifact is the only output containing supplier costs/diagnostics.
 import {randomBytes,createCipheriv,publicEncrypt} from 'node:crypto';
 import {readFileSync,writeFileSync} from 'node:fs';
@@ -9,8 +9,8 @@ import products from '../catalog/products.json' with {type:'json'};
 const base='https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev';
 const cf='https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/vermillion-checkout-sandbox/secrets';
 const name='FINERWORKS_AUDIT_TOKEN',secret=`${Date.now()+15*60000}.${randomBytes(32).toString('hex')}`;
-const publicKey=readFileSync(new URL('./finerworks-report-public.pem',import.meta.url),'utf8');
-const report={provider:'finerworks',release:process.env.DEPLOYED_SHA,createdAt:new Date().toISOString(),readOnly:true,ordersSubmitted:false,prices:[],catalogPrices:[],shipping:[],failures:[]};
+const publicKey=readFileSync(new URL(process.argv.includes('--pilot-checkout')?'./finerworks-pilot-report-public.pem':'./finerworks-report-public.pem',import.meta.url),'utf8');
+const report={provider:'finerworks',release:process.env.DEPLOYED_SHA,createdAt:new Date().toISOString(),readOnly:!process.argv.includes('--test-orders'),ordersSubmitted:false,prices:[],catalogPrices:[],shipping:[],testOrders:[],failures:[]};
 async function cloudflare(method,path='',body) {
   const r=await fetch(cf+path,{method,redirect:'error',headers:{Authorization:`Bearer ${process.env.CLOUDFLARE_API_TOKEN}`,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(30000)});
   const d=await r.json();if(!r.ok||!d.success)throw Error(`Sandbox audit credential ${method} failed: HTTP ${r.status}`);
@@ -42,8 +42,13 @@ try {
   let health;
   for(let i=0;i<18;i++){health=await read('/checkout/health');if(health.mode==='sandbox'&&health.release===process.env.DEPLOYED_SHA)break;await new Promise(r=>setTimeout(r,5000));}
   assert.equal(health.mode,'sandbox');assert.equal(health.release,process.env.DEPLOYED_SHA);
-  const provider=await read('/checkout/prints/health');assert.equal(provider.provider,'finerworks');assert.equal(provider.enabled,false);assert.equal(provider.readOnly,true);
-  const cart=await read('/checkout/cart/catalog');assert.ok(cart.products.every(p=>p.type!=='print'||!p.methods?.length));
+  const provider=await read('/checkout/prints/health');assert.equal(provider.provider,'finerworks');assert.equal(provider.enabled,true);assert.equal(provider.readOnly,false);
+  const cart=await read('/checkout/cart/catalog');assert.equal(cart.products.filter(p=>p.type==='print'&&p.methods.includes('paypal')).length,6);
+  for(const art of Object.values(config.artworks)) {
+    const file=art.variants.small.asset;const r=await fetch(file.url);assert.equal(r.status,200);
+    const {createHash}=await import('node:crypto');assert.equal(createHash('sha256').update(Buffer.from(await r.arrayBuffer())).digest('hex'),file.sha256);
+  }
+  console.log('PASS: six sandbox-only print options and both exact test files are available.');
   installed=true;await cloudflare('PUT','',{name,text:secret,type:'secret_text'});
   const credentials=await verify({task:'credentials'});assert.equal(credentials.credentialsOk,true);report.credentialsOk=true;console.log('PASS: FinerWorks credentials.');
   const materials=await verify({task:'materials'});assert.ok(materials.media.length&&materials.styles.length);
@@ -57,32 +62,44 @@ try {
   assert.equal(watercolor.length,pilots.length*3);assert.ok(watercolor.every(p=>p.pricing.amount===p.pricing.recommendedAmount&&!p.pricing.needsReview));
   console.log('PASS: all six pilot retail prices match the approved 3.5x / round-up-$5 / $25-floor rule.');
   report.matting=[];
-  const matMaterials=await verify({task:'mats'});
-  console.log('VERIFIED_WHITE_MATS '+JSON.stringify(matMaterials.materials.filter(m=>/white/i.test(m.name))));
-  for(const sizeKey of ['small','medium','full']) {
+  if(!process.argv.includes('--pilot-checkout')) {
+    const matMaterials=await verify({task:'mats'});
+    console.log('VERIFIED_WHITE_MATS '+JSON.stringify(matMaterials.materials.filter(m=>/white/i.test(m.name))));
+  }
+  if(!process.argv.includes('--pilot-checkout'))for(const sizeKey of ['small','medium','full']) {
     const option=await verify({task:'matting',productId:pilots[0],sizeKey});
     assert.equal(option.readOnly,true);assert.equal(option.ordersSubmitted,false);assert.equal(option.sellable,false);
     report.matting.push(option);
     // Public catalog fields only: omit supplier costs, addresses, and diagnostics.
     console.log('VERIFIED_MAT_OPTION '+JSON.stringify({key:sizeKey,sku:option.sku,baseSku:option.baseSku,mat:option.mat,material:option.material,amount:option.pricing.recommendedAmount,pricingRule:option.pricing.ruleId,quotedAt:option.quotedAt}));
   }
-  console.log('PASS: three exact-size print-and-mat configurations validated and priced.');
+  if(report.matting.length)console.log('PASS: three exact-size print-and-mat configurations validated and priced.');
   // Get price recommendations for every measured painting without enabling it or
   // publishing changed prices. Unsupported sizes remain excluded, not enlarged.
   const paper=materials.media.find(m=>m.name==='Watercolor Bright White'),ids=products.filter(p=>p.type==='painting'&&p.dimensions).map(p=>p.id);
-  for(let i=0;i<ids.length;i+=10)report.catalogPrices.push(await verify({task:'prices',productIds:ids.slice(i,i+10),mediaId:paper.id,styleId:style.id}));
+  if(process.argv.includes('--full-catalog'))for(let i=0;i<ids.length;i+=10)report.catalogPrices.push(await verify({task:'prices',productIds:ids.slice(i,i+10),mediaId:paper.id,styleId:style.id}));
   report.pricedCatalogVariants=report.catalogPrices.flatMap(p=>p.candidates).filter(p=>p.ok).length;
-  console.log(`PASS: ${report.pricedCatalogVariants} exact-size catalog retail recommendations retrieved; no automatic publication.`);
+  if(report.pricedCatalogVariants)console.log(`PASS: ${report.pricedCatalogVariants} exact-size catalog retail recommendations retrieved; no automatic publication.`);
   // Public building address, not a customer or the artist's home. Quote/preflight only.
   const address={name:'Sandbox Test',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'};
-  for(const sizeKey of ['small','medium','full']) {
-    report.shipping.push(await verify({task:'shipping',productId:pilots[0],sizeKey,quantity:1,address}));
+  for(const productId of pilots)for(const sizeKey of ['small','medium','full']) {
+    report.shipping.push(await verify({task:'shipping',productId,sizeKey,quantity:1,address}));
   }
   assert.ok(report.shipping.every(q=>q.shippingMarkup==='0.00'&&q.provider==='finerworks'));
-  console.log('PASS: three destination-based FinerWorks shipping quotes; shipping markup is zero.');
-  report.preflight=await verify({task:'preflight',productId:pilots[0],sizeKey:'small',quantity:1,address});
-  assert.equal(report.preflight.validated,true);assert.equal(report.preflight.ordersSubmitted,false);
-  console.log('PASS: FinerWorks validation-only order preflight. No orders, payments, or customer emails submitted.');
+  console.log('PASS: six destination-based FinerWorks shipping quotes; shipping markup is zero.');
+  report.preflight=[];
+  for(const productId of pilots) {
+    const p=await verify({task:'preflight',productId,sizeKey:'small',quantity:1,address});
+    assert.equal(p.validated,true);assert.equal(p.ordersSubmitted,false);report.preflight.push(p);
+  }
+  console.log('PASS: validation-only order preflight for both Dorian and Chase.');
+  if(process.argv.includes('--test-orders'))for(const productId of pilots) {
+    const t=await verify({task:'test-order',productId,sizeKey:'small',quantity:1,address,testRunId:process.env.DEPLOYED_SHA});
+    report.testOrders.push(t);report.ordersSubmitted=report.testOrders.some(o=>o.ordersSubmitted);
+    assert.equal(t.testMode,true);assert.equal(t.paymentTaken,false);assert.equal(t.status,'test-complete');assert.ok(t.orderId);
+    console.log(`PASS: ${productId} accepted by FinerWorks in test mode; private test record saved.`);
+  }
+  console.log('No real payment, printing, shipping, or customer email occurred in this provider test.');
   if(config.artworks[pilots[0]].variants.small.matOptions?.['snow-white']?.sku){
     report.matShipping=[];
     for(const sizeKey of ['small','medium','full'])report.matShipping.push(await verify({task:'shipping',productId:pilots[0],sizeKey,finishKey:'snow-white',quantity:1,address}));

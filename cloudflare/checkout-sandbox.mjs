@@ -7,6 +7,9 @@ import catalog from './checkout-catalog.mjs';
 import { checkout, checkoutWebhook } from './paypal-orders.mjs';
 import { verifySandbox } from './checkout-verification.mjs';
 import { shippingCheck } from './shipping-check.mjs';
+import {printTestPage} from './print-test-page.mjs';
+import printTestAssets from './print-test-assets.generated.mjs';
+import printCatalog from './print-catalog.mjs';
 export { PaintingStock } from './painting-stock.mjs';
 export { ShippingCheck } from './shipping-check.mjs';
 
@@ -31,6 +34,16 @@ export default {
   fetch(request,env) {
     if (env.PAYPAL_MODE !== 'sandbox' || env.GITHUB_TOKEN) return new Response('Sandbox isolation failure',{status:503});
     const path=new URL(request.url).pathname;
+    if(request.method==='GET'&&Object.hasOwn(printTestAssets,path)) {
+      const asset=printTestAssets[path],bytes=Uint8Array.from(atob(asset.base64),c=>c.charCodeAt(0));
+      return new Response(bytes,{headers:{'Content-Type':'image/jpeg','Cache-Control':'public, max-age=31536000, immutable','ETag':asset.sha256}});
+    }
+    if(request.method==='GET'&&(path==='/checkout/print-test'||path==='/cart/'))return new Response(printTestPage,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
+    if(request.method==='GET'&&path==='/checkout/print-preview') {
+      const id=new URL(request.url).searchParams.get('product'),p=Object.values(printCatalog).find(p=>p.productId===id&&p.testOnly);
+      if(p)return Response.redirect(p.assetUrl,302);
+      return new Response('Not found',{status:404});
+    }
     if (path.startsWith('/checkout/prints/')) return printApi(request,env);
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path==='/checkout/shipping-check') return shippingCheck(request,env);
