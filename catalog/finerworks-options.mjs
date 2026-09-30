@@ -3,6 +3,7 @@ import {publishedPrintPrice} from './print-pricing.mjs';
 import {printAssetUrl} from '../cloudflare/print-asset-policy.mjs';
 import {withMatOptions} from './matted-options.mjs';
 import {withFrameOptions} from './framed-options.mjs';
+import {reviewedPortraitSample} from './sample-layout.mjs';
 // Geometry functions are injected to keep this module independent of the legacy provider.
 export function finerworksOptions(product, config, papers, geometry) {
   if (product.type !== 'painting' || !product.dimensions) return [];
@@ -23,7 +24,7 @@ export function finerworksOptions(product, config, papers, geometry) {
     } catch {reasons.push('No verified exact-size FinerWorks paper mapping or valid price');}
     if (!amount) reasons.push('Retrieve and approve the FinerWorks retail price');
     if (!resolution) reasons.push('Add a high-resolution source image');
-    else if(!((testOnly&&art.sandboxQualityTestApproved===true&&variant.asset?.sandboxOnly===true||!testOnly&&sampleOnly&&art.liveSampleApproved===true&&variant.asset?.sampleOnly===true)&&variant.asset?.layout==='contain-with-clear-trim-margin')) {
+    else if(!((testOnly&&art.sandboxQualityTestApproved===true&&variant.asset?.sandboxOnly===true||!testOnly&&sampleOnly&&art.liveSampleApproved===true&&variant.asset?.sampleOnly===true)&&reviewedPortraitSample(variant.asset,art.source,image))) {
       if (resolution.aspectError>0.01) reasons.push('Source image proportions do not match the artwork measurements');
       if (resolution.dpi<config.minimumDpi) reasons.push(`Source resolution is below ${config.minimumDpi} dpi at this size`);
     }

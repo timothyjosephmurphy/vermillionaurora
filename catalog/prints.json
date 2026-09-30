@@ -19,8 +19,8 @@
   "artworks": {
     "painting-portrait-in-green": {
       "dimensions": {
-        "width": 15,
-        "height": 12,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "dimensionsVerified": true,
@@ -30,29 +30,34 @@
         "sha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2"
       },
       "testOnly": false,
-      "enabled": true,
+      "enabled": false,
       "variants": {
         "full": {
           "amount": "75.00",
-          "sku": "5M144M8S15X12",
+          "sku": "5M144M8S12X15",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-09-30",
           "asset": {
             "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-            "sha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+            "url": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+            "sha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
             "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
-            "productCode": "5M144M8S15X12",
-            "imageWidthIn": 15,
-            "imageHeightIn": 12,
-            "paperWidthIn": 15,
-            "paperHeightIn": 12,
+            "productCode": "5M144M8S12X15",
+            "imageWidthIn": 12,
+            "imageHeightIn": 15,
+            "paperWidthIn": 12,
+            "paperHeightIn": 15,
             "approved": true,
             "layoutApproved": true,
             "sampleOnly": true,
-            "layout": "contain-with-clear-trim-margin",
-            "widthPx": 1250,
-            "heightPx": 1000
+            "layout": "borderless-center-crop",
+            "crop": {
+              "left": 16,
+              "top": 0,
+              "width": 776,
+              "height": 970
+            },
+            "widthPx": 1000,
+            "heightPx": 1250
           },
           "matOptions": {
             "snow-white": {
@@ -364,25 +369,30 @@
         },
         "medium": {
           "amount": "45.00",
-          "sku": "5M144M8S11.25X9",
+          "sku": "5M144M8S9X11.25",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-09-30",
           "asset": {
             "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-            "sha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+            "url": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+            "sha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
             "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
-            "productCode": "5M144M8S11.25X9",
-            "imageWidthIn": 11.25,
-            "imageHeightIn": 9,
-            "paperWidthIn": 11.25,
-            "paperHeightIn": 9,
+            "productCode": "5M144M8S9X11.25",
+            "imageWidthIn": 9,
+            "imageHeightIn": 11.25,
+            "paperWidthIn": 9,
+            "paperHeightIn": 11.25,
             "approved": true,
             "layoutApproved": true,
             "sampleOnly": true,
-            "layout": "contain-with-clear-trim-margin",
-            "widthPx": 1250,
-            "heightPx": 1000
+            "layout": "borderless-center-crop",
+            "crop": {
+              "left": 16,
+              "top": 0,
+              "width": 776,
+              "height": 970
+            },
+            "widthPx": 1000,
+            "heightPx": 1250
           },
           "matOptions": {
             "snow-white": {
@@ -694,25 +704,30 @@
         },
         "small": {
           "amount": "25.00",
-          "sku": "5M144M8S7.5X6",
+          "sku": "5M144M8S6X7.5",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-09-30",
           "asset": {
             "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-            "sha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+            "url": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+            "sha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
             "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
-            "productCode": "5M144M8S7.5X6",
-            "imageWidthIn": 7.5,
-            "imageHeightIn": 6,
-            "paperWidthIn": 7.5,
-            "paperHeightIn": 6,
+            "productCode": "5M144M8S6X7.5",
+            "imageWidthIn": 6,
+            "imageHeightIn": 7.5,
+            "paperWidthIn": 6,
+            "paperHeightIn": 7.5,
             "approved": true,
             "layoutApproved": true,
             "sampleOnly": true,
-            "layout": "contain-with-clear-trim-margin",
-            "widthPx": 1250,
-            "heightPx": 1000
+            "layout": "borderless-center-crop",
+            "crop": {
+              "left": 16,
+              "top": 0,
+              "width": 776,
+              "height": 970
+            },
+            "widthPx": 1000,
+            "heightPx": 1250
           },
           "matOptions": {
             "snow-white": {
@@ -1028,8 +1043,8 @@
     },
     "painting-portrait-in-gold": {
       "dimensions": {
-        "width": 15,
-        "height": 12,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "dimensionsVerified": true,
@@ -1039,29 +1054,34 @@
         "sha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4"
       },
       "testOnly": false,
-      "enabled": true,
+      "enabled": false,
       "variants": {
         "full": {
           "amount": "75.00",
-          "sku": "5M144M8S15X12",
+          "sku": "5M144M8S12X15",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-09-30",
           "asset": {
             "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-            "sha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+            "url": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+            "sha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
             "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
-            "productCode": "5M144M8S15X12",
-            "imageWidthIn": 15,
-            "imageHeightIn": 12,
-            "paperWidthIn": 15,
-            "paperHeightIn": 12,
+            "productCode": "5M144M8S12X15",
+            "imageWidthIn": 12,
+            "imageHeightIn": 15,
+            "paperWidthIn": 12,
+            "paperHeightIn": 15,
             "approved": true,
             "layoutApproved": true,
             "sampleOnly": true,
-            "layout": "contain-with-clear-trim-margin",
-            "widthPx": 1250,
-            "heightPx": 1000
+            "layout": "borderless-center-crop",
+            "crop": {
+              "left": 24,
+              "top": 0,
+              "width": 312,
+              "height": 390
+            },
+            "widthPx": 1000,
+            "heightPx": 1250
           },
           "matOptions": {
             "snow-white": {
@@ -1373,25 +1393,30 @@
         },
         "medium": {
           "amount": "45.00",
-          "sku": "5M144M8S11.25X9",
+          "sku": "5M144M8S9X11.25",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-09-30",
           "asset": {
             "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-            "sha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+            "url": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+            "sha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
             "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
-            "productCode": "5M144M8S11.25X9",
-            "imageWidthIn": 11.25,
-            "imageHeightIn": 9,
-            "paperWidthIn": 11.25,
-            "paperHeightIn": 9,
+            "productCode": "5M144M8S9X11.25",
+            "imageWidthIn": 9,
+            "imageHeightIn": 11.25,
+            "paperWidthIn": 9,
+            "paperHeightIn": 11.25,
             "approved": true,
             "layoutApproved": true,
             "sampleOnly": true,
-            "layout": "contain-with-clear-trim-margin",
-            "widthPx": 1250,
-            "heightPx": 1000
+            "layout": "borderless-center-crop",
+            "crop": {
+              "left": 24,
+              "top": 0,
+              "width": 312,
+              "height": 390
+            },
+            "widthPx": 1000,
+            "heightPx": 1250
           },
           "matOptions": {
             "snow-white": {
@@ -1703,25 +1728,30 @@
         },
         "small": {
           "amount": "25.00",
-          "sku": "5M144M8S7.5X6",
+          "sku": "5M144M8S6X7.5",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-09-30",
           "asset": {
             "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-            "sha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+            "url": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+            "sha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
             "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
-            "productCode": "5M144M8S7.5X6",
-            "imageWidthIn": 7.5,
-            "imageHeightIn": 6,
-            "paperWidthIn": 7.5,
-            "paperHeightIn": 6,
+            "productCode": "5M144M8S6X7.5",
+            "imageWidthIn": 6,
+            "imageHeightIn": 7.5,
+            "paperWidthIn": 6,
+            "paperHeightIn": 7.5,
             "approved": true,
             "layoutApproved": true,
             "sampleOnly": true,
-            "layout": "contain-with-clear-trim-margin",
-            "widthPx": 1250,
-            "heightPx": 1000
+            "layout": "borderless-center-crop",
+            "crop": {
+              "left": 24,
+              "top": 0,
+              "width": 312,
+              "height": 390
+            },
+            "widthPx": 1000,
+            "heightPx": 1250
           },
           "matOptions": {
             "snow-white": {

@@ -12,7 +12,7 @@ const frameChoices=[...new Map(options.flatMap(o=>o.frameOptions||[]).map(o=>[o.
 ---
 {visible&&<section id="print-options" class="print-options" data-print-options data-preview={preview?'true':'false'} data-options={JSON.stringify(publicOptions)} aria-label="Fine art print options">
   <div class="print-heading"><p class="eyebrow dark">The work, in your space</p><h2>{sample?'Order a print sample':'Order a fine art print'}</h2><p>Choose your size and presentation. Printed on textured watercolor paper by FinerWorks.</p></div>
-  {sample&&!preview&&<p class="print-preview-note print-test-note">Sample-quality prints · These use the current low-resolution image, with white margins to preserve the whole painting. This is a real purchase and shipment. One copy per painting per order.</p>}
+  {sample&&!preview&&<p class="print-preview-note print-test-note">Sample-quality prints · These use the current low-resolution image, cropped to fill the portrait paper without added white margins. The preview shows the crop; trimming and matting cover a small amount at the edges. This is a real purchase and shipment. One copy per painting per order.</p>}
   {preview&&<p class="print-preview-note">Preview · Saved retail prices are shown where quoted. Ordering opens only after the print file, trimming layout, and fulfillment flow are approved.</p>}
   {preview&&options.some(o=>o.testOnly)&&<p class="print-preview-note print-test-note">Sandbox preview only · The current web images are not approved print masters. These prints are not available for purchase.</p>}
   <fieldset class="print-sizes"><legend>Choose your image size</legend>

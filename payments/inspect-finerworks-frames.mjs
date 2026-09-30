@@ -18,10 +18,15 @@ async function verify(input={}){
 let installed=false;
 try{
   installed=true;await secret('PUT');
+  const quotesOnly=process.argv.includes('--quotes-only');
+  const prices=await verify({task:'prices',productIds:['painting-portrait-in-green','painting-portrait-in-gold'],mediaId:144,styleId:8});
+  console.log('VERIFIED_PORTRAIT_PRICES '+JSON.stringify(prices));
+  for(const sizeKey of ['small','medium','full'])console.log('VERIFIED_MAT_OPTION '+JSON.stringify(await verify({task:'matting',sizeKey})));
   for(const frameKey of ['black','white','natural'])for(const sizeKey of ['small','medium','full']){
     const q=await verify({task:'framing',frameKey,sizeKey});
-    assert.equal(q.pricing.amount,q.pricing.recommendedAmount);assert.equal(q.pricing.needsReview,false);
+    if(!quotesOnly){assert.equal(q.pricing.amount,q.pricing.recommendedAmount);assert.equal(q.pricing.needsReview,false);}
     console.log('VERIFIED_FRAME_OPTION '+JSON.stringify({frameKey,key:sizeKey,sku:q.sku,baseSku:q.baseSku,mat:q.mat,frame:q.frame,amount:q.pricing.recommendedAmount,pricingRule:q.pricing.ruleId,quotedAt:q.quotedAt,cost:q.quote}));
+    if(quotesOnly)continue;
     const address={name:'Sandbox Test',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'};
     const shipping=await verify({task:'shipping',sizeKey,finishKey:`frame-${frameKey}`,quantity:1,address});
     assert.equal(shipping.readOnly,true);assert.equal(shipping.shippingMarkup,'0.00');
