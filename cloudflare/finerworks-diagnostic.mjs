@@ -29,10 +29,9 @@ export async function finerworksDiagnostic(request,env,products) {
       const option=printOptions(product,config,papers).find(o=>o.key===input.sizeKey);
       if(!option?.paper||!option.amount||option.image.width>inches(product.dimensions).width||option.image.height>inches(product.dimensions).height)return reply({error:'An exact-size priced print is required'},400);
       // Client prices, file URLs, dimensions, and product codes are intentionally ignored.
-      const item={id:option.id,provider:'finerworks',sku:option.paper.sku,title:product.title,quantity:input.quantity,amount:option.amount,imageSize:option.image,paperSize:{width:option.paper.width,height:option.paper.height}};
+      const item={id:option.id,provider:'finerworks',sku:option.paper.sku,title:product.title,quantity:input.quantity,amount:option.amount,assetUrl:new URL(product.image.src,'https://vermillionaurora.com').href,imageSize:option.image,paperSize:{width:option.paper.width,height:option.paper.height}};
       const quote=await quoteFinerWorksPrints(env,[item],input.address);
       if(task==='shipping')return reply({provider:'finerworks',readOnly:true,productId:product.id,sizeKey:option.key,...quote});
-      item.assetUrl=new URL(product.image.src,'https://vermillionaurora.com').href;
       return reply(await validateFinerWorksPrintOrder(env,[item],input.address,quote));
     }
     const ids=input.productIds;

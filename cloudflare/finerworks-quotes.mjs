@@ -10,7 +10,6 @@ const clean=(value,max,required=true)=>{
 export function finerworksRecipient(address,po) {
   if(!address||address.country!=='US'||! /^[A-Z]{2}$/.test(address.state||'')||! /^\d{5}(?:-\d{4})?$/.test(address.zip||''))throw Error('A complete US print shipping address is required');
   const name=clean(address.name,100),parts=name.split(/\s+/),first=parts.shift(),last=parts.join(' ');
-  // Do not invent a last name, truncate an address, or silently alter a recipient.
   if(!last||first.length>50||last.length>50)throw Error('Enter first and last name for print delivery');
   return {first_name:first,last_name:last,address_1:clean(address.street1,100),address_2:clean(address.street2||'',100,false),city:clean(address.city,50),state_code:address.state,zip_postal_code:address.zip,country_code:'US',address_order_po:po};
 }
@@ -36,7 +35,6 @@ export function shippingOptions(data,po,products) {
   if(rows.length!==1||data.orders.length!==1||!Array.isArray(rows[0].options))throw Error('FinerWorks shipping quote identity mismatch');
   const seen=new Set(),options=[];
   for(const r of rows[0].options) {
-    // Require the exact service ID, rather than substituting a generic shipping class.
     if(!Number.isSafeInteger(r.id)||r.id<=0||seen.has(r.id))continue;
     seen.add(r.id);
     try {
@@ -52,7 +50,6 @@ export function shippingOptions(data,po,products) {
   }
   if(!options.length) {
     const error=Error('No exact FinerWorks shipping option passed validation');
-    // Only typed numeric fields and product-code identities are retained, never recipients.
     const scalar=v=>typeof v==='number'||typeof v==='boolean'?v:typeof v;
     error.details={endpoint:'/v3/list_shipping_options_multiple',optionCount:rows[0].options.length,samples:rows[0].options.slice(0,3).map(r=>({
       id:scalar(r.id),rate:scalar(r.rate),total:r.calculated_total?Object.fromEntries(['order_subtotal','order_shipping_rate','order_discount','order_sales_tax','order_expedite_fee','order_credits_used','order_grand_total'].map(k=>[k,scalar(r.calculated_total[k])])):null,
@@ -80,6 +77,12 @@ export async function quoteFinerWorksPrints(env,items,address) {
     const q=units.find(q=>q.code===item.sku);
     if(!q?.ok||moneyCents(item.amount)<moneyCents(printRetailPrice(q.productionCost)))throw Error('Print production cost changed; review the saved retail price before checkout');
   }
+  // The shipping endpoint validates the order model, including the image object.
+  for(const product of products) {
+    const item=items.find(i=>i.sku===product.product_sku),u=new URL(item.assetUrl);
+    if(u.protocol!=='https:'||u.username||u.password||u.search||u.hash||!['vermillionaurora.com','media.vermillionaurora.com'].includes(u.hostname)||! /\.(jpg|jpeg|png)$/i.test(u.pathname))throw Error('Invalid FinerWorks image URL');
+    product.product_image={product_url_file:u.href,product_url_thumbnail:u.href};
+  }
   const body={orders:[{order_po:po,order_key:null,recipient,order_items:products,shipping_code:'EC',test_mode:env.PAYPAL_MODE==='sandbox'}]};
   const data=await finerworksRequest(env,'/v3/list_shipping_options_multiple',body);
   const options=shippingOptions(data,po,products),selected=options[0];
@@ -97,6 +100,6 @@ export async function validateFinerWorksPrintOrder(env,items,address,quote) {
   });
   const body={orders:[{order_po:po,order_key:null,recipient:finerworksRecipient(address,po),order_items,shipping_code:quote.shippingMethod,test_mode:true,source:'TJM.art sandbox'}],validate_only:true,payment_token:'xxxx'};
   const data=await finerworksRequest(env,'/v3/submit_orders_v2',body);
-  if(data.status?.success!==true)throw Error('FinerWorks order preflight failed');
+  if(data.status?.success!==true||Array.isArray(data.orders)&&data.orders.length)throw Error('FinerWorks preflight did not confirm validation-only success');
   return {provider:'finerworks',validationOnly:true,testMode:true,validated:true,ordersSubmitted:false};
 }
