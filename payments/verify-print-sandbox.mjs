@@ -52,6 +52,15 @@ try {
   const pilotPrices=report.prices.flatMap(p=>p.candidates).filter(p=>p.ok),watercolor=pilotPrices.filter(p=>p.mediaName==='Watercolor Bright White');
   assert.equal(watercolor.length,pilots.length*3);assert.ok(watercolor.every(p=>p.pricing.amount===p.pricing.recommendedAmount&&!p.pricing.needsReview));
   console.log('PASS: all six pilot retail prices match the approved 3.5x / round-up-$5 / $25-floor rule.');
+  report.matting=[];
+  for(const sizeKey of ['small','medium','full']) {
+    const option=await verify({task:'matting',productId:pilots[0],sizeKey});
+    assert.equal(option.readOnly,true);assert.equal(option.ordersSubmitted,false);assert.equal(option.sellable,false);
+    report.matting.push(option);
+    // Public catalog fields only: omit supplier costs, addresses, and diagnostics.
+    console.log('VERIFIED_MAT_OPTION '+JSON.stringify({key:sizeKey,sku:option.sku,baseSku:option.baseSku,mat:option.mat,material:option.material,amount:option.pricing.recommendedAmount,pricingRule:option.pricing.ruleId,quotedAt:option.quotedAt}));
+  }
+  console.log('PASS: three exact-size print-and-mat configurations validated and priced.');
   // Get price recommendations for every measured painting without enabling it or
   // publishing changed prices. Unsupported sizes remain excluded, not enlarged.
   const paper=materials.media.find(m=>m.name==='Watercolor Bright White'),ids=products.filter(p=>p.type==='painting'&&p.dimensions).map(p=>p.id);
@@ -68,6 +77,14 @@ try {
   report.preflight=await verify({task:'preflight',productId:pilots[0],sizeKey:'small',quantity:1,address});
   assert.equal(report.preflight.validated,true);assert.equal(report.preflight.ordersSubmitted,false);
   console.log('PASS: FinerWorks validation-only order preflight. No orders, payments, or customer emails submitted.');
+  if(config.artworks[pilots[0]].variants.small.matOptions?.['snow-white']?.sku){
+    report.matShipping=[];
+    for(const sizeKey of ['small','medium','full'])report.matShipping.push(await verify({task:'shipping',productId:pilots[0],sizeKey,finishKey:'snow-white',quantity:1,address}));
+    assert.ok(report.matShipping.every(q=>q.shippingMarkup==='0.00'));
+    report.matPreflight=await verify({task:'preflight',productId:pilots[0],sizeKey:'small',finishKey:'snow-white',quantity:2,address});
+    assert.equal(report.matPreflight.ordersSubmitted,false);assert.equal(report.matPreflight.validated,true);
+    console.log('PASS: three mat-inclusive shipping quotes and two-copy print-with-mat validation. No orders submitted.');
+  }
 }catch(error){report.error=error.message;throw error;}
 finally {
   try {if(installed){await cloudflare('DELETE','/'+name);console.log('Temporary FinerWorks audit credential removed.');}}

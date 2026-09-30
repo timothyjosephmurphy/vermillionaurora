@@ -10,6 +10,9 @@ const READS=new Map([
   ['/v3/list_media_types','POST'],
   ['/v3/list_style_types','POST'],
   ['/v3/get_prices','POST'],
+  ['/v3/list_mats','POST'],
+  ['/v3/build_product_code','POST'],
+  ['/v3/validate_product','POST'],
   ['/v3/list_shipping_options_multiple','POST']
 ]);
 export function finerworksEnvironment(env,requireKeys=true) {
@@ -66,7 +69,7 @@ export async function finerworksMaterials(env) {
   if(!Array.isArray(media.media_types)||!Array.isArray(styles.style_types))throw Error('Unexpected FinerWorks materials response');
   return {
     media:media.media_types.filter(m=>positive(m.id)&&positive(m.product_type_id)).map(m=>({id:m.id,productTypeId:m.product_type_id,name:text(m.name),description:text(m.description),styleIds:(m.style_ids||[]).filter(positive)})),
-    styles:styles.style_types.filter(s=>positive(s.id)).map(s=>({id:s.id,name:text(s.name),description:text(s.description),customSizing:s.custom_sizing===true,allowDecimal:s.allow_decimal===true,allowRotate:s.allow_rotate===true,min:dimensions(s.min),max:dimensions(s.max),availableSizes:(s.available_sizes||[]).map(dimensions).filter(Boolean),borderSize:typeof s.border_size==='number'?s.border_size:null,bleed:typeof s.bleed_amt==='number'?s.bleed_amt:null}))
+    styles:styles.style_types.filter(s=>positive(s.id)).map(s=>({id:s.id,name:text(s.name),description:text(s.description),canMat:s.can_mat===true,customSizing:s.custom_sizing===true,allowDecimal:s.allow_decimal===true,allowRotate:s.allow_rotate===true,min:dimensions(s.min),max:dimensions(s.max),availableSizes:(s.available_sizes||[]).map(dimensions).filter(Boolean),borderSize:typeof s.border_size==='number'?s.border_size:null,bleed:typeof s.bleed_amt==='number'?s.bleed_amt:null}))
   };
 }
 function cost(value) {
@@ -75,7 +78,7 @@ function cost(value) {
 }
 export async function finerworksPrices(env,codes) {
   const unique=[...new Set(codes)];
-  if(!unique.length||unique.length>50||unique.some(s=>typeof s!=='string'||s.length>100||!/^\d+M\d+M\d+S\d+(?:\.\d+)?X\d+(?:\.\d+)?$/.test(s)))throw Error('Choose between one and fifty unframed product codes');
+  if(!unique.length||unique.length>50||unique.some(s=>typeof s!=='string'||!/^[A-Za-z0-9._-]{1,160}$/.test(s)))throw Error('Choose between one and fifty verified product codes');
   const data=await finerworksRequest(env,'/v3/get_prices',{products:unique.map(product_sku=>({product_qty:1,product_sku}))});
   if(!Array.isArray(data.prices))throw Error('Unexpected FinerWorks pricing response');
   return unique.map(code=>{
@@ -85,7 +88,7 @@ export async function finerworksPrices(env,codes) {
     try {
       const productionCost=cost(p.total_price);
       if(Number(productionCost)<=0)throw Error('No positive quote');
-      return {code,ok:true,quantity:1,productionCost,baseCost:cost(p.product_price),shippingIncluded:false,taxIncluded:false};
+      return {code,ok:true,quantity:1,productionCost,baseCost:cost(p.product_price),matCost:cost(p.add_mat_1_price??0),secondMatCost:cost(p.add_mat_2_price??0),frameCost:cost(p.add_frame_price??0),glazingCost:cost(p.add_glazing_price??0),shippingIncluded:false,taxIncluded:false};
     }catch{return {code,ok:false,error:'Provider did not return a valid positive price'};}
   });
 }

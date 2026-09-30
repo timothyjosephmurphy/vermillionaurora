@@ -5,10 +5,14 @@ on:
     paths:
       - 'catalog/frames.json'
       - 'catalog/frame-matching.mjs'
+      - 'catalog/*mat*.mjs'
+      - 'catalog/finerworks-mats.json'
+      - 'payments/prints.*'
       - 'src/components/FrameRecommendations.astro'
       - 'src/components/PrintOptions.astro'
       - 'src/scripts/frame-recommendations.js'
       - 'tests/frames*'
+      - 'tests/print-matting*'
       - '.github/workflows/test-frames.yml'
 permissions:
   contents: read
@@ -26,8 +30,12 @@ jobs:
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: node tests/frames.browser-test.mjs
+      - run: node --test tests/print-matting.test.mjs
+      - run: node tests/print-matting.browser-test.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: frame-previews
-          path: /tmp/frames-*.png
+          path: |
+            /tmp/frames-*.png
+            /tmp/matting-*.png

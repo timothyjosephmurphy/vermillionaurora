@@ -4,6 +4,7 @@ import {PRINT_SCALES,scaledDimensions,inches,printOptions} from '../catalog/prin
 import {reviewPrintPrice} from '../catalog/print-pricing.mjs';
 import config from '../catalog/prints.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
+import {quoteMattedOption} from './finerworks-matting.mjs';
 const reply=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 export async function finerworksDiagnostic(request,env,products) {
   const action=new URL(request.url).pathname.split('/').at(-1);
@@ -16,20 +17,30 @@ export async function finerworksDiagnostic(request,env,products) {
   let input;try{input=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   if(!input||Array.isArray(input)||typeof input!=='object')return reply({error:'Invalid request'},400);
   const task=input.task||'credentials';
-  if(!['credentials','materials','prices','shipping','preflight'].includes(task))return reply({error:'Unknown read-only diagnostic task'},400);
+  if(!['credentials','materials','prices','shipping','preflight','matting'].includes(task))return reply({error:'Unknown read-only diagnostic task'},400);
   try {
     if(task==='credentials'){
       await finerworksRequest(env,'/v3/test_my_credentials',undefined,'GET');
       return reply({provider:'finerworks',mode:'sandbox',readOnly:true,credentialsOk:true,providerAppMode:'not-verified'});
     }
     if(task==='materials')return reply({provider:'finerworks',mode:'sandbox',readOnly:true,...await finerworksMaterials(env)});
+    if(task==='matting') {
+      const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];
+      if(!product||!art?.testOnly)return reply({error:'Choose a configured sandbox pilot'},400);
+      const option=printOptions(product,config,papers).find(o=>o.key===input.sizeKey);
+      if(!option?.paper)return reply({error:'Choose a supported print size'},400);
+      const materials=await finerworksMaterials(env);
+      const matted=await quoteMattedOption(env,materials,option,art.variants?.[option.key]?.matOptions?.['snow-white']);
+      return reply({provider:'finerworks',readOnly:true,ordersSubmitted:false,...matted});
+    }
     if(task==='shipping'||task==='preflight') {
       const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];
       if(!product||!art?.testOnly||!Number.isSafeInteger(input.quantity)||input.quantity<1||input.quantity>10)return reply({error:'Choose a configured sandbox pilot and valid quantity'},400);
-      const option=printOptions(product,config,papers).find(o=>o.key===input.sizeKey);
-      if(!option?.paper||!option.amount||option.image.width>inches(product.dimensions).width||option.image.height>inches(product.dimensions).height)return reply({error:'An exact-size priced print is required'},400);
+      const baseOption=printOptions(product,config,papers).find(o=>o.key===input.sizeKey);
+      const option=input.finishKey==='snow-white'?baseOption?.matOptions?.find(o=>o.finishKey==='snow-white'):input.finishKey&&input.finishKey!=='none'?null:baseOption;
+      if(!option?.paper?.sku||!option.amount||option.image.width>inches(product.dimensions).width||option.image.height>inches(product.dimensions).height)return reply({error:'An exact-size priced print is required'},400);
       // Client prices, file URLs, dimensions, and product codes are intentionally ignored.
-      const item={id:option.id,provider:'finerworks',sku:option.paper.sku,title:product.title,quantity:input.quantity,amount:option.amount,assetUrl:new URL(product.image.src,'https://vermillionaurora.com').href,imageSize:option.image,paperSize:{width:option.paper.width,height:option.paper.height}};
+      const item={id:option.id,provider:'finerworks',sku:option.paper.sku,title:product.title,quantity:input.quantity,amount:option.amount,assetUrl:new URL(product.image.src,'https://vermillionaurora.com').href,imageSize:option.image,paperSize:{width:option.paper.width,height:option.paper.height},...(option.mat?{mat:option.mat,baseSku:option.baseSku}:{})};
       const quote=await quoteFinerWorksPrints(env,[item],input.address);
       if(task==='shipping')return reply({provider:'finerworks',readOnly:true,productId:product.id,sizeKey:option.key,...quote});
       return reply(await validateFinerWorksPrintOrder(env,[item],input.address,quote));
