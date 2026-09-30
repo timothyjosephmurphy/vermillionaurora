@@ -49,7 +49,7 @@ const facts=painting ? [
     </div>}
     {availablePrints.length>0 && <div class="product-print-action">
       <button type="button" class="button button-ghost" data-print-open aria-haspopup="dialog" aria-controls="print-purchase-dialog">Buy a print</button>
-      <p class="product-print-availability">{availablePrints.some(o=>o.sampleOnly)?'Print samples':'Fine art prints'} from ${printFrom.toFixed(2)} · Choose size &amp; framing</p>
+      <p class="product-print-availability">Print available from ${printFrom.toFixed(2)}</p>
     </div>}
   </section>}
       {p.listing.price && <p class="product-detail-price">{priceLabel(p,painting)}</p>}
