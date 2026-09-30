@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
   const catalog=await window.vaCartReady;
   const choices=[...form.querySelectorAll('select')];
   const ids=choices.flatMap(s=>[...s.options].map(o=>o.value).filter(Boolean));
-  if(!catalog?.enabled||!ids.every(id=>catalog.products.some(p=>p.id===id&&p.sampleOnly&&p.status==='available'&&p.methods.includes('paypal')))){message.textContent='Sample checkout is not available yet. Please refresh in a moment.';return;}
+  if(!catalog?.enabled||!ids.length||!catalog.version?.endsWith('-'+form.dataset.printVersion)||!ids.every(id=>catalog.products.some(p=>p.id===id&&p.sampleOnly&&p.status==='available'&&p.methods.includes('paypal')))){message.textContent='Sample checkout is not available yet. Please refresh in a moment.';return;}
   button.disabled=false;message.textContent='Choose one copy of either or both paintings.';
   form.addEventListener('submit',event=>{
     event.preventDefault();const selected=choices.map(s=>s.value).filter(Boolean);

@@ -27,7 +27,8 @@
       root.querySelector('[data-print-own-frame]').hidden=!!o.frame;
       for(const option of finish.options){const candidate=option.value==='none'?sizeOption:[...(sizeOption.matOptions||[]),...(sizeOption.frameOptions||[])].find(o=>o.finishKey===option.value);option.disabled=!preview&&!candidate?.ready;}
       const list=root.querySelector('[data-print-readiness]');if(list){list.replaceChildren();for(const reason of o.reasons||[]){const li=document.createElement('li');li.textContent=reason;list.append(li);}if(!o.reasons?.length)list.textContent='This size is ready for final release review.';}
-      button.disabled=preview||!selected?.ready||!capabilities?.products?.some(p=>p.id===selected.id&&p.status==='available');
+      const samePrintRelease=capabilities?.version?.endsWith('-'+root.dataset.printVersion);
+      button.disabled=preview||!selected?.ready||!samePrintRelease||!capabilities?.products?.some(p=>p.id===selected.id&&p.status==='available');
       if(!preview)button.textContent=selected?.frame?'Add framed print to cart':'Add print to cart';
       message.textContent=!preview&&button.disabled?'This print is not currently available to order.':'';
       root.dispatchEvent(new Event('print:selectionchange',{bubbles:true}));

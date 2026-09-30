@@ -38,7 +38,7 @@ try{
     await page.goto(origin+preview);
     const recommendations=page.locator('[data-frame-recommendations]');
     await page.waitForFunction(()=>document.querySelector('[data-frame-recommendations]').dataset.frameInitialized==='true');
-    // FinerWorks uses the exact 15-by-12-inch sheet, not the old 16-by-12 Prodigi sheet.
+    // The exact sheet follows the confirmed 12-wide by 15-high original.
     assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0FJLR7MTQ$/);
     await page.locator('input[value$="-small"]').check();
     assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0B1CNJL7N$/);
@@ -52,7 +52,7 @@ try{
     assert.match(await recommendations.locator('.frame-fit').first().textContent(),/custom mat/);
     await page.locator('input[value$="-medium"]').check();
     assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0BQR2BQYZ$/);
-    assert.match(await recommendations.locator('[data-frame-size]').textContent(),/11.25 × 9/);
+    assert.match(await recommendations.locator('[data-frame-size]').textContent(),/9 × 11.25/);
     await page.locator('input[value$="-full"]').check();
     assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0FJLR7MTQ$/);
     await page.evaluate(()=>{

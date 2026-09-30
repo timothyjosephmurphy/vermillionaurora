@@ -2,7 +2,7 @@ import {chromium} from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import prints from '../cloudflare/print-catalog.mjs';
+import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 const origin='https://vermillionaurora.com',root=path.resolve('dist'),id='aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key='b'.repeat(64),products=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),methods:['paypal'],status:'available'}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
@@ -14,7 +14,7 @@ try {
     if(u.hostname==='www.paypal.com')return route.fulfill({contentType:'text/html',body:'Real PayPal handoff (mocked)'});
     if(u.pathname.startsWith('/checkout/cart/')) {
       const action=u.pathname.split('/').at(-1),body=route.request().postDataJSON();calls.push({action,body});
-      if(action==='catalog')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'sample-test',products}});
+      if(action==='catalog')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'sample-test-'+printVersion,products}});
       if(action==='quote'){quote={items:body.items.map(i=>({...products.find(p=>p.id===i.id),quantity:i.quantity})),base:'50.00',shipping:'8.95',tax:'5.00',total:'63.95'};}
       if(action==='capture')captured=true;
       const json=action==='quote'?{orderId:id,key,status:'quoted',methods:['paypal'],quote}:action==='start'?{orderId:id,status:'pending',method:'paypal',quote,url:'https://www.paypal.com/checkoutnow?token=MOCK'}:{orderId:id,status:captured?'paid':'pending',method:'paypal',quote,...(captured?{printStatus:'in-production'}:{})};
@@ -27,7 +27,7 @@ try {
   });
   for(const width of [1280,390]){
     await page.setViewportSize({width,height:900});await page.goto(origin+'/print-test/');await page.waitForFunction(()=>!document.querySelector('[data-print-samples] button').disabled);
-    await page.waitForFunction(()=>[...document.querySelectorAll('[data-print-samples] img')].every(i=>i.complete&&i.naturalWidth===1250));
+    await page.waitForFunction(()=>[...document.querySelectorAll('[data-print-samples] img')].every(i=>i.complete&&i.naturalWidth===1000&&i.naturalHeight===1250));
     assert.equal(await page.locator('select').count(),2);assert.equal(await page.locator('select option').count(),8);
     assert.match(await page.locator('.sample-note').textContent(),/real purchase/);assert.equal(await page.locator('img').count(),2);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await page.screenshot({path:`/tmp/live-print-samples-${width}.png`,fullPage:true});

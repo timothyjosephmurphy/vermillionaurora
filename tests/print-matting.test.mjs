@@ -20,7 +20,7 @@ test('unknown, oversized and invalid paper never produce a false fit',()=>{
   assert.equal(matLayout({width:11,height:14},undefined,material),null);
 });
 test('mat variants have separate identities, prices and proof gates',()=>{
-  const id='painting-portrait-in-green',p={id,type:'painting',dimensions:{width:15,height:12,unit:'in'}};
+  const id='painting-portrait-in-green',p={id,type:'painting',dimensions:config.artworks[id].dimensions};
   const options=printOptions(p,config,papers);
   for(const base of options){
     const mat=base.matOptions[0];assert.equal(mat.id,`${base.id}-mat-snow-white`);assert.equal(mat.baseSku,base.paper.sku);assert.equal(mat.ready,false);

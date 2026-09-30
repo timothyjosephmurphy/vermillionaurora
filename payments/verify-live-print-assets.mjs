@@ -16,6 +16,10 @@ export async function verifyLivePrintAssets() {
     const r=await fetch(url,{signal:AbortSignal.timeout(15000)});assert.equal(r.status,200);assert.match(r.headers.get('content-type'),/^image\/jpeg/);
     assert.equal(createHash('sha256').update(Buffer.from(await r.arrayBuffer())).digest('hex'),prints.find(p=>p.assetUrl===url).assetSha256);
   }
+  for(const sha of ['1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514','787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765']){
+    const r=await fetch(`${site}/print-samples/${sha}.jpg`,{signal:AbortSignal.timeout(15000)});assert.equal(r.status,200);
+    assert.equal(createHash('sha256').update(Buffer.from(await r.arrayBuffer())).digest('hex'),sha,'Keep previous paid orders backed by their exact original file');
+  }
 }
 if(process.argv[1]?.endsWith('/verify-live-print-assets.mjs')||process.argv[1]==='payments/verify-live-print-assets.mjs') {
   let ready=false;

@@ -1,8 +1,8 @@
 name: Verify FinerWorks framing in sandbox
 on:
   push:
-    branches: [finerworks-framing]
-    paths: ['cloudflare/**', 'catalog/**', 'payments/inspect-finerworks-frames.mjs', '.github/workflows/verify-finerworks-framing.yml']
+    branches: [finerworks-framing, portrait-print-layout]
+    paths: ['cloudflare/**', 'catalog/**', 'src/pages/print-test/**', 'payments/inspect-finerworks-frames.mjs', '.github/workflows/verify-finerworks-framing.yml']
 permissions:
   contents: read
 concurrency:

@@ -9,14 +9,14 @@ one-copy-per-artwork limits continue to apply.
 The three frame choices are FinerWorks Gallery Economy IDs 1, 2, and 7, verified
 through the authenticated catalog on September 30, 2026. Framed prints include
 Snow White 4-ply matting (ID 1) and Premium Clear acrylic glazing (ID 1). The frame
-fit follows the mat outer dimensions: 10 × 8, 14 × 11, or 20 × 16 inches. These are
+fit follows the mat outer dimensions: 8 × 10, 11 × 14, or 16 × 20 inches. These are
 frame opening dimensions, not exterior moulding dimensions.
 
 | Print size | Unframed | Black or white frame | Natural wood frame |
 | --- | ---: | ---: | ---: |
-| 7.5 × 6 in | $25 | $150 | $180 |
-| 11.25 × 9 in | $45 | $205 | $245 |
-| 15 × 12 in | $75 | $335 | $385 |
+| 6 × 7.5 in | $25 | $150 | $180 |
+| 9 × 11.25 in | $45 | $205 | $245 |
+| 12 × 15 in | $75 | $335 | $385 |
 
 Prices use the existing approved rule: 3.5 times the complete manufacturing cost,
 rounded up to $5, with a $25 minimum. Destination shipping is quoted separately
@@ -29,12 +29,19 @@ public order summaries, and the private fulfillment record retain the selected
 frame, mat, glazing, and size. Saved orders retain their original configuration.
 The existing idempotent payment/fulfillment flow is unchanged.
 
-The current sample files retain 32 pixels of clear edge space on a 1250 × 1000
-sheet. At the smallest print size the clear margin is at least 0.192 inch per
-edge. FinerWorks describes its nominal mat window as approximately 1/8 inch
-smaller than the print; the sample artwork therefore remains inside the window.
-This layout check applies only to the exact approved sample hashes. New print
-masters and other artworks still need their own file and layout approval.
+The owner corrected both original measurements to 12 inches wide by 15 inches
+high on September 30, 2026. Current sample files fill a 1000 × 1250 portrait
+sheet without added white margins. The source photographs are center-cropped
+to 4:5 without stretching: Dorian removes 24 source pixels from each side;
+Chase removes 16. The product preview uses that exact print file and discloses
+the crop, normal borderless trimming and slight mat overlap. Higher-resolution
+masters still need a new file and layout review.
+
+Previously paid orders retain their saved product code, orientation and file
+URL. The asset builder reproduces both old bordered sheets byte-for-byte at
+their original content-addressed URLs so a new release cannot change an
+existing order's image or interrupt its download. No existing order is changed
+or resubmitted by this catalog correction.
 
 Standalone mat variants remain behind their separate layout gate. Amazon frame
 suggestions are retained under "Prefer to buy your own frame?" for unframed

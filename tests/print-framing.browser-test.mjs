@@ -2,19 +2,19 @@ import {chromium} from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import prints from '../cloudflare/print-catalog.mjs';
+import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 const origin='https://vermillionaurora.com',root=path.resolve('dist');
 const available=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['paypal']}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
 try{
-  const page=await browser.newPage(),errors=[],quotes=[];let unavailable=false;
+  const page=await browser.newPage(),errors=[],quotes=[];let unavailable=false,stale=false;
   page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',async route=>{
     const u=new URL(route.request().url());
     if(u.pathname.startsWith('/checkout/cart/')){
       const action=u.pathname.split('/').at(-1),headers={'Access-Control-Allow-Origin':origin};
-      if(action==='catalog')return route.fulfill({headers,json:{enabled:true,version:'framed-test',products:unavailable?available.filter(p=>!p.frame):available}});
+      if(action==='catalog')return route.fulfill({headers,json:{enabled:true,version:'framed-test-'+(stale?'old-layout':printVersion),products:unavailable?available.filter(p=>!p.frame):available}});
       assert.equal(action,'quote','The test must not start, capture or submit an order');
       const input=route.request().postDataJSON();quotes.push(input);
       const items=input.items.map(i=>({...available.find(p=>p.id===i.id),quantity:i.quantity}));
@@ -38,12 +38,14 @@ try{
     assert(await selector.locator('[data-print-sheet]').evaluate(el=>el.classList.contains('is-framed')));
     await selector.locator('input[value$="-medium"]').check();
     assert.match(await selector.locator('[data-print-total]').textContent(),/\$205.00/);
-    assert.match(await selector.locator('[data-print-dimensions]').textContent(),/14 × 11/);
+    assert.match(await selector.locator('[data-print-dimensions]').textContent(),/11 × 14/);
     await selector.locator('[data-print-finish]').selectOption('frame-natural');
     assert.match(await selector.locator('[data-print-total]').textContent(),/\$245.00/);
     await selector.locator('input[value$="-full"]').check();
     assert.match(await selector.locator('[data-print-total]').textContent(),/\$385.00/);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+    const shape=await selector.locator('[data-print-sheet]').boundingBox();assert(shape.height>shape.width);
+    await page.waitForFunction(()=>{const image=document.querySelector('[data-print-image-area] img');return image.complete&&image.naturalWidth===1000&&image.naturalHeight===1250;});
     await selector.screenshot({path:`/tmp/framed-print-${width}.png`,style:'.site-header{visibility:hidden!important}'});
     await selector.locator('[data-print-finish]').selectOption('none');
     assert.match(await selector.locator('[data-print-total]').textContent(),/Print: \$75.00/);
@@ -63,10 +65,12 @@ try{
   assert.match(await page.locator('[data-cart-items]').textContent(),/Premium Clear acrylic/);
   for(const [name,value]of Object.entries({email:'buyer@example.test',name:'Test Buyer',street1:'600 4th Ave',city:'Seattle',state:'WA',zip:'98104'}))await page.locator(`[name="${name}"]`).fill(value);
   await page.locator('[data-cart-quote]').click();await page.locator('[data-cart-payments]').waitFor({state:'visible'});
-  assert.deepEqual(quotes[0].items,cart);assert.equal(quotes[0].catalogVersion,'framed-test');
+  assert.deepEqual(quotes[0].items,cart);assert.equal(quotes[0].catalogVersion,'framed-test-'+printVersion);
   assert.match(await page.locator('[data-cart-total]').textContent(),/416.95/);
   unavailable=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.locator('[data-print-finish]').selectOption('frame-black');
   assert(await page.locator('[data-print-add]').isDisabled());
+  unavailable=false;stale=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.locator('[data-print-finish]').selectOption('frame-black');
+  assert(await page.locator('[data-print-add]').isDisabled(),'An old backend must not sell a different print layout than the page preview');
   await page.goto(origin+'/products/painting-beach-walk/');assert.equal(await page.locator('[data-print-options]').count(),0);assert.match(await page.locator('.product-print-availability').textContent(),/not yet available/);
   assert.deepEqual(errors,[]);console.log('PASS: product-page sizes, frame prices, mobile layout, selection replacement, cart details and exact quote IDs; no payments or print orders.');
 }finally{await browser.close();}

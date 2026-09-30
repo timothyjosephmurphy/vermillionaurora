@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="7cafe43a9a81cb48331e";
+export const printVersion="a2d68a21ed97cd062707";
 export default {
   "print-painting-portrait-in-gold-full": {
     "id": "print-painting-portrait-in-gold-full",
@@ -10,23 +10,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S15X12",
+    "sku": "5M144M8S12X15",
     "scale": 1,
     "imageSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -46,23 +46,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "335.00",
     "currency": "USD",
-    "sku": "5M144M8S15X12F1S20X16J1S15X12G1",
+    "sku": "5M144M8S12X15F1S16X20J1S12X15G1",
     "scale": 1,
     "imageSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -77,18 +77,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "window": {
-        "width": 15,
-        "height": 12,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S15X12",
+    "baseSku": "5M144M8S12X15",
     "frame": {
       "key": "black",
       "id": 1,
@@ -98,8 +98,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "glazing": {
@@ -117,23 +117,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "335.00",
     "currency": "USD",
-    "sku": "5M144M8S15X12F2S20X16J1S15X12G1",
+    "sku": "5M144M8S12X15F2S16X20J1S12X15G1",
     "scale": 1,
     "imageSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -148,18 +148,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "window": {
-        "width": 15,
-        "height": 12,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S15X12",
+    "baseSku": "5M144M8S12X15",
     "frame": {
       "key": "white",
       "id": 2,
@@ -169,8 +169,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "glazing": {
@@ -188,23 +188,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "385.00",
     "currency": "USD",
-    "sku": "5M144M8S15X12F7S20X16J1S15X12G1",
+    "sku": "5M144M8S12X15F7S16X20J1S12X15G1",
     "scale": 1,
     "imageSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -219,18 +219,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "window": {
-        "width": 15,
-        "height": 12,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S15X12",
+    "baseSku": "5M144M8S12X15",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -240,8 +240,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "glazing": {
@@ -259,23 +259,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S11.25X9",
+    "sku": "5M144M8S9X11.25",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -295,23 +295,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "205.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD25X9F1S14X11J1S11DD25X9G1",
+    "sku": "5M144M8S9X11DD25F1S11X14J1S9X11DD25G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -326,18 +326,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "window": {
-        "width": 11.25,
-        "height": 9,
+        "width": 9,
+        "height": 11.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S11.25X9",
+    "baseSku": "5M144M8S9X11.25",
     "frame": {
       "key": "black",
       "id": 1,
@@ -347,8 +347,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "glazing": {
@@ -366,23 +366,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "205.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD25X9F2S14X11J1S11DD25X9G1",
+    "sku": "5M144M8S9X11DD25F2S11X14J1S9X11DD25G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -397,18 +397,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "window": {
-        "width": 11.25,
-        "height": 9,
+        "width": 9,
+        "height": 11.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S11.25X9",
+    "baseSku": "5M144M8S9X11.25",
     "frame": {
       "key": "white",
       "id": 2,
@@ -418,8 +418,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "glazing": {
@@ -437,23 +437,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "245.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD25X9F7S14X11J1S11DD25X9G1",
+    "sku": "5M144M8S9X11DD25F7S11X14J1S9X11DD25G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -468,18 +468,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "window": {
-        "width": 11.25,
-        "height": 9,
+        "width": 9,
+        "height": 11.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S11.25X9",
+    "baseSku": "5M144M8S9X11.25",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -489,8 +489,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "glazing": {
@@ -508,23 +508,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.5X6",
+    "sku": "5M144M8S6X7.5",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -544,23 +544,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "150.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD5X6F1S10X8J1S7DD5X6G1",
+    "sku": "5M144M8S6X7DD5F1S8X10J1S6X7DD5G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -575,18 +575,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "window": {
-        "width": 7.5,
-        "height": 6,
+        "width": 6,
+        "height": 7.5,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.5X6",
+    "baseSku": "5M144M8S6X7.5",
     "frame": {
       "key": "black",
       "id": 1,
@@ -596,8 +596,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {
@@ -615,23 +615,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "150.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD5X6F2S10X8J1S7DD5X6G1",
+    "sku": "5M144M8S6X7DD5F2S8X10J1S6X7DD5G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -646,18 +646,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "window": {
-        "width": 7.5,
-        "height": 6,
+        "width": 6,
+        "height": 7.5,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.5X6",
+    "baseSku": "5M144M8S6X7.5",
     "frame": {
       "key": "white",
       "id": 2,
@@ -667,8 +667,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {
@@ -686,23 +686,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "180.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD5X6F7S10X8J1S7DD5X6G1",
+    "sku": "5M144M8S6X7DD5F7S8X10J1S6X7DD5G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
-    "assetSha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
+    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
     "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
     "layoutApproved": true,
     "preview": {
@@ -717,18 +717,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "window": {
-        "width": 7.5,
-        "height": 6,
+        "width": 6,
+        "height": 7.5,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.5X6",
+    "baseSku": "5M144M8S6X7.5",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -738,8 +738,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {
@@ -757,23 +757,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S15X12",
+    "sku": "5M144M8S12X15",
     "scale": 1,
     "imageSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -793,23 +793,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "335.00",
     "currency": "USD",
-    "sku": "5M144M8S15X12F1S20X16J1S15X12G1",
+    "sku": "5M144M8S12X15F1S16X20J1S12X15G1",
     "scale": 1,
     "imageSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -824,18 +824,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "window": {
-        "width": 15,
-        "height": 12,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S15X12",
+    "baseSku": "5M144M8S12X15",
     "frame": {
       "key": "black",
       "id": 1,
@@ -845,8 +845,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "glazing": {
@@ -864,23 +864,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "335.00",
     "currency": "USD",
-    "sku": "5M144M8S15X12F2S20X16J1S15X12G1",
+    "sku": "5M144M8S12X15F2S16X20J1S12X15G1",
     "scale": 1,
     "imageSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -895,18 +895,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "window": {
-        "width": 15,
-        "height": 12,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S15X12",
+    "baseSku": "5M144M8S12X15",
     "frame": {
       "key": "white",
       "id": 2,
@@ -916,8 +916,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "glazing": {
@@ -935,23 +935,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "385.00",
     "currency": "USD",
-    "sku": "5M144M8S15X12F7S20X16J1S15X12G1",
+    "sku": "5M144M8S12X15F7S16X20J1S12X15G1",
     "scale": 1,
     "imageSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15,
-      "height": 12,
+      "width": 12,
+      "height": 15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -966,18 +966,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "window": {
-        "width": 15,
-        "height": 12,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S15X12",
+    "baseSku": "5M144M8S12X15",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -987,8 +987,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 16,
+        "height": 20,
         "unit": "in"
       },
       "glazing": {
@@ -1006,23 +1006,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S11.25X9",
+    "sku": "5M144M8S9X11.25",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -1042,23 +1042,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "205.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD25X9F1S14X11J1S11DD25X9G1",
+    "sku": "5M144M8S9X11DD25F1S11X14J1S9X11DD25G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -1073,18 +1073,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "window": {
-        "width": 11.25,
-        "height": 9,
+        "width": 9,
+        "height": 11.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S11.25X9",
+    "baseSku": "5M144M8S9X11.25",
     "frame": {
       "key": "black",
       "id": 1,
@@ -1094,8 +1094,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "glazing": {
@@ -1113,23 +1113,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "205.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD25X9F2S14X11J1S11DD25X9G1",
+    "sku": "5M144M8S9X11DD25F2S11X14J1S9X11DD25G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -1144,18 +1144,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "window": {
-        "width": 11.25,
-        "height": 9,
+        "width": 9,
+        "height": 11.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S11.25X9",
+    "baseSku": "5M144M8S9X11.25",
     "frame": {
       "key": "white",
       "id": 2,
@@ -1165,8 +1165,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "glazing": {
@@ -1184,23 +1184,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "245.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD25X9F7S14X11J1S11DD25X9G1",
+    "sku": "5M144M8S9X11DD25F7S11X14J1S9X11DD25G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.25,
-      "height": 9,
+      "width": 9,
+      "height": 11.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -1215,18 +1215,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "window": {
-        "width": 11.25,
-        "height": 9,
+        "width": 9,
+        "height": 11.25,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S11.25X9",
+    "baseSku": "5M144M8S9X11.25",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -1236,8 +1236,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11,
+        "height": 14,
         "unit": "in"
       },
       "glazing": {
@@ -1255,23 +1255,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.5X6",
+    "sku": "5M144M8S6X7.5",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -1291,23 +1291,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "150.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD5X6F1S10X8J1S7DD5X6G1",
+    "sku": "5M144M8S6X7DD5F1S8X10J1S6X7DD5G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -1322,18 +1322,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "window": {
-        "width": 7.5,
-        "height": 6,
+        "width": 6,
+        "height": 7.5,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.5X6",
+    "baseSku": "5M144M8S6X7.5",
     "frame": {
       "key": "black",
       "id": 1,
@@ -1343,8 +1343,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {
@@ -1362,23 +1362,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "150.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD5X6F2S10X8J1S7DD5X6G1",
+    "sku": "5M144M8S6X7DD5F2S8X10J1S6X7DD5G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -1393,18 +1393,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "window": {
-        "width": 7.5,
-        "height": 6,
+        "width": 6,
+        "height": 7.5,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.5X6",
+    "baseSku": "5M144M8S6X7.5",
     "frame": {
       "key": "white",
       "id": 2,
@@ -1414,8 +1414,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {
@@ -1433,23 +1433,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "180.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD5X6F7S10X8J1S7DD5X6G1",
+    "sku": "5M144M8S6X7DD5F7S8X10J1S6X7DD5G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.5,
-      "height": 6,
+      "width": 6,
+      "height": 7.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
-    "assetSha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
+    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
     "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
     "layoutApproved": true,
     "preview": {
@@ -1464,18 +1464,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "window": {
-        "width": 7.5,
-        "height": 6,
+        "width": 6,
+        "height": 7.5,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.5X6",
+    "baseSku": "5M144M8S6X7.5",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -1485,8 +1485,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {

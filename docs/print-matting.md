@@ -34,9 +34,9 @@ Verified 2026-09-30 for both configured pilots on Watercolor Bright White:
 
 | Print size | Mat outer / frame size | Print with mat |
 | --- | --- | --- |
-| 7.5 × 6 in | 10 × 8 in | $50 |
-| 11.25 × 9 in | 14 × 11 in | $75 |
-| 15 × 12 in | 20 × 16 in | $135 |
+| 6 × 7.5 in | 8 × 10 in | $50 |
+| 9 × 11.25 in | 11 × 14 in | $75 |
+| 12 × 15 in | 16 × 20 in | $135 |
 
 Prices include one Snow White 4-ply mat. Frames, shipping and tax are separate.
 The supplier's product validation currently returns HTTP/status 404 with an

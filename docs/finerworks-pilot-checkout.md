@@ -5,14 +5,17 @@
 The owner approved real sample purchases on 2026-09-30 using the existing
 lower-resolution images. `/print-test/` offers Dorian and Chase in three sizes,
 $25 / $45 / $75, one copy and one size per painting. The page and cart disclose
-that these are real paid samples, printed with white margins, not finished
-editions. Public product pages do not advertise these sample variants.
+that these are real paid samples, not finished editions. Product pages now offer
+three portrait sizes, unframed or with black, white, or natural wood framing.
+The confirmed 12-wide by 15-high measurements replace the reversed dimensions.
+Current files are cropped to fill the paper without added white margins. See
+`print-framing.md` for the exact crop and preservation of previous order files.
 
 The approved images are built deterministically to `/print-samples/<sha256>.jpg`
 on the production website. Deployment checks their bytes and matching page/catalog
 before enabling API purchases. Sandbox images remain isolated by URL policy.
 `sampleOnly` and explicit `liveSampleApproved` preserve the normal quality gate;
-runtime `LIVE_PRINT_SAMPLE_ENABLED` and six exact `PRINT_CHECKOUT_IDS` limit the
+runtime `LIVE_PRINT_SAMPLE_ENABLED` and 24 exact `PRINT_CHECKOUT_IDS` limit the
 release. `testOnly` files remain blocked from all live fulfillment. Mat variants
 remain unavailable pending their separate layout approval.
 
