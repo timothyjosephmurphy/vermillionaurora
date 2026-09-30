@@ -16,24 +16,25 @@ try{
     return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.jpg':'image/jpeg'})[path.extname(file)]||'application/octet-stream'});
   });
   await page.goto(origin+'/products/painting-portrait-in-green/');
-  const frames=page.locator('[data-frame-recommendations][data-frame-context="original"]');
-  assert.equal(await frames.locator('.frame-link').count(),2);
-  assert.match(await frames.locator('.frame-link').first().getAttribute('href'),/\/dp\/B0FJLR7MTQ$/);
-  assert.match(await frames.textContent(),/purchased separately/);
-  assert.equal(await frames.locator('.frame-affiliate').count(),0);
+  const frames=page.locator('.product-frame-action'),frameLink=frames.locator('[data-original-frame]');
+  assert.equal(await frameLink.count(),1);
+  assert.equal(await frameLink.textContent(),'Find a matching frame on Amazon');
+  assert.equal(new URL(await frameLink.getAttribute('href')).searchParams.get('k'),'12 x 15 inch picture frame');
+  assert.equal(await page.locator('.product-inquiry a').count(),0);
+  assert.equal(await page.locator('.product-inquiry').isVisible(),false);
+  assert.equal(await page.locator('[data-frame-recommendations][data-frame-context="original"]').count(),0);
   await frames.screenshot({path:'/tmp/frames-desktop.png'});
   await page.setViewportSize({width:390,height:844});
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-  await frames.locator('.frame-link').first().focus();
-  assert(await frames.locator('.frame-link').first().evaluate(el=>el===document.activeElement));
+  await frameLink.focus();
+  assert(await frameLink.evaluate(el=>el===document.activeElement));
   await frames.screenshot({path:'/tmp/frames-mobile.png'});
   await page.goto(origin+'/products/painting-portrait-with-hat/');
-  assert.equal(await page.locator('[data-frame-recommendations]').count(),0);
+  assert.equal(await page.locator('[data-original-frame]').count(),0);
   await page.goto(origin+'/products/el-zonte-at-sunrise/');
-  assert.equal(await page.locator('[data-frame-recommendations] a').count(),0);
-  assert.match(await page.locator('[data-frame-empty]').textContent(),/custom frame/);
+  assert.equal(new URL(await page.locator('[data-original-frame]').getAttribute('href')).searchParams.get('k'),'24 x 48 inch picture frame');
   await page.goto(origin+'/products/painting-guitarist/');
-  assert.equal(await page.locator('[data-frame-recommendations]').count(),0);
+  assert.equal(await page.locator('[data-original-frame]').count(),0);
 
   const preview='/print-preview/painting-portrait-in-green/';
   if(fs.existsSync(path.join(root,preview,'index.html'))){

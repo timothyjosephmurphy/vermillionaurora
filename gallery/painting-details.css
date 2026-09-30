@@ -44,5 +44,8 @@
 .product-purchase-actions .cart-product-message:empty{display:none}
 .product-print-availability{font-size:.8rem;line-height:1.5;color:var(--muted,#65574d)}
 .product-print-action .product-print-availability{margin:.5rem 0 0;max-width:23rem}
+.product-inquiry:empty{display:none}
+.product-frame-action{margin:1.75rem 0}
+.product-frame-action .button{max-width:100%;min-height:44px;white-space:normal;text-align:center;font-size:.78rem;letter-spacing:.04em;line-height:1.5}
 .product-purchase-actions button:disabled{opacity:.5;cursor:not-allowed}
 @media(max-width:600px){.product-purchase-actions{gap:1rem}.product-purchase-actions>[data-original-purchase],.product-print-action{width:100%}.product-purchase-actions .cart-product-actions>.button,.product-print-action>.button{width:100%}.product-purchase-actions .cart-product-actions{gap:.5rem}.product-purchase-actions .cart-text-link{margin:0 auto}}

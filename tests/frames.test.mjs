@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {matchingFrames,originalFrameEligible,amazonFrameUrl} from '../catalog/frame-matching.mjs';
+import {matchingFrames,originalFrameEligible,amazonFrameUrl,amazonFrameSearchUrl} from '../catalog/frame-matching.mjs';
 const size=(width,height,unit='in')=>({width,height,unit});
 
 test('frames match the physical sheet, with orientation independent of the image',()=>{
@@ -32,4 +32,7 @@ test('Amazon links stay on the verified product and only use an explicitly confi
   assert.equal(new URL(amazonFrameUrl('B0FJLR7MTQ','example-20')).searchParams.get('tag'),'example-20');
   assert.throws(()=>amazonFrameUrl('https://example.com'));
   assert.throws(()=>amazonFrameUrl('B0FJLR7MTQ','?bad'));
+  assert.equal(new URL(amazonFrameSearchUrl(size(15,12))).searchParams.get('k'),'12 x 15 inch picture frame');
+  assert.equal(new URL(amazonFrameSearchUrl(size(38.1,30.48,'cm'))).searchParams.get('k'),'30.48 x 38.1 cm picture frame');
+  assert.equal(amazonFrameSearchUrl(null),null);
 });

@@ -20,6 +20,13 @@ export function amazonFrameUrl(asin, tag = catalog.affiliateTag) {
   }
   return url.href;
 }
+export function amazonFrameSearchUrl(size) {
+  if (!frameSizeInches(size)) return null;
+  const [short,long] = [size.width,size.height].sort((a,b)=>a-b);
+  const url = new URL('https://www.amazon.com/s');
+  url.searchParams.set('k',`${short} x ${long} ${size.unit==='cm'?'cm':'inch'} picture frame`);
+  return url.href;
+}
 // Match the physical sheet, never just the image or a rounded nominal size.
 // A larger frame needs room for a mat on all four sides. No trimming is assumed.
 export function matchingFrames(paper, image = paper) {

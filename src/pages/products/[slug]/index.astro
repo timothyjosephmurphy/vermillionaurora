@@ -3,13 +3,13 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
 import PaintingImage from '../../../components/PaintingImage.astro';
 import CommissionProcess from '../../../components/CommissionProcess.astro';
 import PrintPurchaseDialog from '../../../components/PrintPurchaseDialog.astro';
-import FrameRecommendations from '../../../components/FrameRecommendations.astro';
-import {originalFrameEligible} from '../../../../catalog/frame-matching.mjs';
+import {originalFrameEligible,amazonFrameSearchUrl} from '../../../../catalog/frame-matching.mjs';
 import {printOptions,config,papers} from '../../../../catalog/prints.mjs';
 import { products, priceLabel, statusLabel, dimensionLabel } from '../../../../catalog/catalog.mjs';
 export function getStaticPaths() { return products.map(product=>({params:{slug:product.slug},props:{product}})); }
 const {product:p}=Astro.props;
 const painting=p.type==='painting';
+const originalFrameHref=originalFrameEligible(p)?amazonFrameSearchUrl(p.dimensions):null;
 const availablePrints=painting?printOptions(p,config,papers).filter(o=>o.ready&&!o.testOnly):[];
 const printFrom=availablePrints.length?Math.min(...availablePrints.map(o=>Number(o.amount))):null;
 const facts=painting ? [
@@ -58,8 +58,8 @@ const facts=painting ? [
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}
       {p.type==='commission' && <CommissionProcess />}
-      <div class="product-inquiry"><a class="button button-solid" href={p.inquiryHref||`/?product=${p.slug}#contact`}>{p.inquiry.label}</a>{p.inquiry.note && <p>{p.inquiry.note}</p>}</div>
-      {originalFrameEligible(p)&&<FrameRecommendations paper={p.dimensions}/>}
+      <div class="product-inquiry">{!painting&&<a class="button button-solid" href={p.inquiryHref||`/?product=${p.slug}#contact`}>{p.inquiry.label}</a>}{p.inquiry.note && <p>{p.inquiry.note}</p>}</div>
+      {originalFrameHref&&<div class="product-frame-action"><a class="button button-ghost" data-original-frame href={originalFrameHref} target="_blank" rel="noopener noreferrer">Find a matching frame on Amazon</a></div>}
       <a class="product-back" href={p.back.href}>{p.back.label}</a>
     </div>
   </article>
