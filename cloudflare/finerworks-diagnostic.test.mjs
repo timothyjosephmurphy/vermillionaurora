@@ -10,9 +10,9 @@ test('rejects unauthenticated diagnostics before calling provider',async()=>{
   globalThis.fetch=()=>assert.fail('Must not fetch');
   assert.equal((await finerworksDiagnostic(new Request('https://worker/checkout/prints/verify',{method:'POST',body:'{}'}),env,products)).status,404);
 });
-test('refuses live checkout and enabled print purchases',async()=>{
+test('refuses live checkout diagnostics',async()=>{
   globalThis.fetch=()=>assert.fail('Must not fetch');
-  for(const settings of [{...env,PAYPAL_MODE:'live'},{...env,PRINT_CHECKOUT_ENABLED:'true'}])assert.equal((await finerworksDiagnostic(req(),settings,products)).status,409);
+  assert.equal((await finerworksDiagnostic(req(),{...env,PAYPAL_MODE:'live'},products)).status,409);
 });
 test('credential check returns no key, account, billing details or upstream debug',async()=>{
   globalThis.fetch=async()=>Response.json({status:{success:true,debug:{key:env.FINERWORKS_APP_KEY}},user_account:{web_api_key:env.FINERWORKS_WEB_API_KEY,billing_info:{address_1:'private'}}});

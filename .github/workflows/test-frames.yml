@@ -13,6 +13,8 @@ on:
       - 'src/scripts/frame-recommendations.js'
       - 'tests/frames*'
       - 'tests/print-matting*'
+      - 'tests/print-checkout*'
+      - 'cloudflare/print-test-page.mjs'
       - '.github/workflows/test-frames.yml'
 permissions:
   contents: read
@@ -32,6 +34,7 @@ jobs:
       - run: node tests/frames.browser-test.mjs
       - run: node --test tests/print-matting.test.mjs
       - run: node tests/print-matting.browser-test.mjs
+      - run: node tests/print-checkout.browser-test.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -39,3 +42,4 @@ jobs:
           path: |
             /tmp/frames-*.png
             /tmp/matting-*.png
+            /tmp/print-checkout-*.png

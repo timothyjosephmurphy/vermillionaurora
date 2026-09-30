@@ -2,6 +2,7 @@ import catalog, {catalogVersion as originalVersion} from './checkout-catalog.mjs
 import prints, {printVersion} from './print-catalog.mjs';
 export const catalogVersion=`${originalVersion}-${printVersion}`;
 import {bitcoinOffered} from './bitcoin-api.mjs';
+import {finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 export const MAX_ITEMS=12;
 export const ORDER_ID=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 export const ACCESS_KEY=/^[a-f0-9]{64}$/;
@@ -17,11 +18,10 @@ export function paymentMethods(env,id) {
   const print=Object.hasOwn(prints,id)?prints[id]:null;
   if(!env.STRIPE_SECRET_KEY||!['live','sandbox'].includes(env.PAYPAL_MODE))return [];
   if(print) {
-    // Quotes/preflight are ready for development, but automatic FinerWorks order
-    // submission and reconciliation must be implemented before accepting payment.
-    if(print.provider==='finerworks'||env.PRINT_PROVIDER==='finerworks')return [];
     if(print.testOnly&&env.PAYPAL_MODE!=='sandbox')return [];
-    if(env.PRINT_CHECKOUT_ENABLED!=='true'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.PAYPAL_MODE||!listed(env.PRINT_CHECKOUT_IDS,id))return [];
+    if(env.PRINT_CHECKOUT_ENABLED!=='true'||!listed(env.PRINT_CHECKOUT_IDS,id))return [];
+    if(print.provider==='finerworks') {if(!finerworksOrderingReady(env))return [];}
+    else if(env.PRINT_PROVIDER==='finerworks'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.PAYPAL_MODE)return [];
   } else if(!env.SHIPPO_TOKEN||!env.SHIP_FROM_STREET||!catalog[id]||catalog[id].available===false)return [];
   const methods=[];
   if(env.PAYPAL_CHECKOUT_ENABLED==='true'&&(print||listed(env.PAYPAL_CHECKOUT_SLUGS,id))&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');

@@ -5,3 +5,4 @@ node_modules/
 payments/generated-links.local
 dist/
 .astro/
+cloudflare/print-test-assets.generated.mjs

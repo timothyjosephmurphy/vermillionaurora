@@ -46,7 +46,7 @@ jobs:
           node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
           node payments/build-checkout-catalog.mjs
           git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
-          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.PAYPAL_CHECKOUT_ENABLED!=='true'||c.vars.PRINT_PROVIDER!=='finerworks'||c.vars.PRINT_CHECKOUT_ENABLED!=='false'||c.main!=='checkout-sandbox.mjs')process.exit(1)"
+          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.PAYPAL_CHECKOUT_ENABLED!=='true'||c.vars.PRINT_PROVIDER!=='finerworks'||c.vars.PRINT_CHECKOUT_ENABLED!=='true'||c.vars.FINERWORKS_ORDER_ENABLED!=='true'||c.main!=='checkout-sandbox.mjs')process.exit(1)"
       - name: Build production Worker without deploying
         run: |
           node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.PAYPAL_MODE!=='live'||c.vars.PRODIGI_ENV!=='live'||c.vars.PRINT_CHECKOUT_ENABLED!=='false'||!['false','true'].includes(c.vars.PAYPAL_CHECKOUT_ENABLED))process.exit(1)"
@@ -63,7 +63,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           DEPLOYED_SHA: ${{ github.sha }}
-        run: node payments/verify-print-sandbox.mjs
+        run: node payments/verify-print-sandbox.mjs --test-orders --pilot-checkout
       - name: Preserve encrypted FinerWorks audit
         if: always()
         uses: actions/upload-artifact@v4

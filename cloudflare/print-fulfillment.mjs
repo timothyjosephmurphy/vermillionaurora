@@ -1,6 +1,7 @@
 import {prodigiEnvironment,prodigiRequest,quotePrints,validateProdigiOrder} from './prodigi-api.mjs';
+import {newFinerWorksJob,fulfillFinerWorks,finerworksFulfillmentRecord} from './finerworks-fulfillment.mjs';
 export function newPrintJob(env,order,items) {
-  if(order.quote?.printQuote?.provider==='finerworks'||items.some(i=>i.provider==='finerworks'))throw Error('Automatic FinerWorks fulfillment has not been enabled');
+  if(order.quote?.printQuote?.provider==='finerworks'||items.some(i=>i.provider==='finerworks'))return newFinerWorksJob(env,order,items);
   const q=order.quote,a=q.address,mode=order.mode,key=crypto.randomUUID(),callbackKey=[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('');
   const origin=mode==='sandbox'?env.SANDBOX_RETURN_ORIGIN:'https://vermillion-commissions.timothyjosephmurphy.workers.dev';
   const request={idempotencyKey:key,merchantReference:`va-cart-${order.id}-prints`,shippingMethod:q.printQuote.shippingMethod,
@@ -10,6 +11,7 @@ export function newPrintJob(env,order,items) {
   return {provider:'prodigi',status:'pending',mode,callbackKey,request,items,maximumProviderCost:q.printQuote.maximumProviderCost,quotedProductionCost:q.printQuote.productionCost,quotedShipping:q.printQuote.shipping,shipments:[]};
 }
 export async function fulfillPrints(env,job,persist) {
+  if(job.provider==='finerworks')return fulfillFinerWorks(env,job,persist);
   prodigiEnvironment(env,job.mode);
   if(['complete','review','cancelled'].includes(job.status))return true;
   if(job.checkedAt&&Date.now()-job.checkedAt<60000)return false;
@@ -41,6 +43,7 @@ export async function fulfillPrints(env,job,persist) {
 }
 function safeTrackingUrl(value){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password?u.href:'';}catch{return '';}}
 export function printFulfillmentRecord(job) {
+  if(job.provider==='finerworks')return finerworksFulfillmentRecord(job);
   return {id:job.request.merchantReference,provider:'prodigi',providerOrderId:job.providerId||'',status:job.status,
     productionCost:job.quotedProductionCost,shippingCost:job.quotedShipping,currency:'USD',charges:job.charges||[],items:job.items.map(i=>({id:i.id,quantity:i.quantity,sku:i.sku,imageSize:i.imageSize,paperSize:i.paperSize})),shipments:job.shipments||[],reason:job.reason||''};
 }

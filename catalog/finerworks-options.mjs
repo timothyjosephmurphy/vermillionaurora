@@ -1,5 +1,6 @@
 import {finerworksProductCode} from './finerworks-products.mjs';
 import {publishedPrintPrice} from './print-pricing.mjs';
+import {printAssetUrl} from '../cloudflare/print-asset-policy.mjs';
 import {withMatOptions} from './matted-options.mjs';
 // Geometry functions are injected to keep this module independent of the legacy provider.
 export function finerworksOptions(product, config, papers, geometry) {
@@ -21,14 +22,14 @@ export function finerworksOptions(product, config, papers, geometry) {
     } catch {reasons.push('No verified exact-size FinerWorks paper mapping or valid price');}
     if (!amount) reasons.push('Retrieve and approve the FinerWorks retail price');
     if (!resolution) reasons.push('Add a high-resolution source image');
-    else {
+    else if(!(testOnly&&art.sandboxQualityTestApproved===true&&variant.asset?.sandboxOnly===true&&variant.asset?.layout==='contain-with-clear-trim-margin')) {
       if (resolution.aspectError>0.01) reasons.push('Source image proportions do not match the artwork measurements');
       if (resolution.dpi<config.minimumDpi) reasons.push(`Source resolution is below ${config.minimumDpi} dpi at this size`);
     }
     const asset=variant.asset;
     if (!asset?.url || asset.provider!=='finerworks' || asset.approved!==true || asset.layoutApproved!==true || !/^[a-f0-9]{64}$/.test(asset.sha256||'') || !/^[a-f0-9]{64}$/.test(art.source?.sha256||'') || asset.sourceSha256!==art.source.sha256 || asset.productCode!==paper?.sku || asset.imageWidthIn!==image.width || asset.imageHeightIn!==image.height || asset.paperWidthIn!==paper?.width || asset.paperHeightIn!==paper?.height) reasons.push('Prepare and approve the exact FinerWorks print file, including trimming bleed');
     if (asset?.url) {
-      try {const u=new URL(asset.url); if(u.protocol!=='https:'||u.username||u.password||u.search||u.hash||!['media.vermillionaurora.com','vermillionaurora.com'].includes(u.hostname)||! /\.(jpe?g|png)$/i.test(u.pathname)) throw Error();}
+      try {printAssetUrl(asset.url,testOnly?'sandbox':'live');if(asset.sandboxOnly&&!testOnly)throw Error();}
       catch {reasons.push('Use a full-resolution JPG or PNG hosted on your artwork media domain');}
     }
     return withMatOptions({...choice,scale,id:`print-${product.id}-${choice.key}`,productId:product.id,provider:'finerworks',image,paper,resolution,amount,asset:asset||null,testOnly,

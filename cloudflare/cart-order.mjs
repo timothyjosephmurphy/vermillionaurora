@@ -108,7 +108,14 @@ export class CartOrder extends DurableObject {
     for(const i of d.quote.items.filter(i=>i.type!=='print'))if(!await this.stock(i.id).completeCart(d.id,captureId))throw Error('Could not complete inventory');
     const jobs=d.jobs||d.quote.shipments.map(s=>newShippingJob(this.env,`cart:${d.id}`,{...s,tax:'0.00',total:(Number(s.base)+Number(s.shipping)).toFixed(2),orderTax:d.quote.tax,orderTotal:d.quote.total}));
     const prints=d.quote.items.filter(i=>i.type==='print');
-    this.save({...d,status:'paid',jobs,...(prints.length?{printJob:d.printJob||newPrintJob(this.env,d,prints)}:{})});await this.schedule(1000);
+    let printJob=d.printJob;
+    if(prints.length&&!printJob)try {printJob=newPrintJob(this.env,d,prints);}catch {
+      // A configuration change after approval must never prevent recording payment.
+      printJob={provider:d.quote.printQuote?.provider||prints[0].provider,status:'review',mode:d.mode,items:prints,shipments:[],
+        request:{merchantReference:`va-cart-${d.id}-prints`},quotedProductionCost:d.quote.printQuote?.productionCost,quotedShipping:d.quote.printQuote?.shipping,
+        reason:'The payment is recorded, but print fulfillment settings changed. Review before placing a print order.'};
+    }
+    this.save({...d,status:'paid',jobs,...(printJob?{printJob}:{})});await this.schedule(1000);
   }
   validateBitcoin(d,invoice) {
     if(this.env.PAYPAL_MODE!==d.mode||bitcoinServer(this.env)!==d.server||this.env.BTCPAY_STORE_ID!==d.storeId||
@@ -190,7 +197,7 @@ export class CartOrder extends DurableObject {
     const printStatus=d.printJob?.status;
     const originalReady=shipments.length===0||shipments.every(s=>s.labelStatus==='ready');
     const originalReview=shipments.some(s=>s.labelStatus==='review');
-    const printReady=!d.printJob||printStatus==='complete';
+    const printReady=!d.printJob||printStatus==='complete'||d.mode==='sandbox'&&printStatus==='test-complete';
     const printReview=['review','cancelled'].includes(printStatus);
     const labelStatus=originalReview||printReview?'review':(originalReady&&printReady)?'ready':'pending';
     return {schemaVersion:3,id:`payment:${d.captureId}`,kind:'sale',mode:d.mode,source:'checkout',provider:d.method==='bitcoin'?'btcpay':'paypal',
