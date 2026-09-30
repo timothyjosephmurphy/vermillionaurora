@@ -62,7 +62,8 @@ try{
   const button=await buyNow.boundingBox(),price=page.locator('[data-original-purchase] .product-detail-price'),bounds=await price.boundingBox();
   assert.equal(await page.locator('.product-detail-price').count(),1,'The original price appears once');
   assert(bounds.y>=button.y+button.height&&bounds.y<button.y+button.height+16,`${width}: original price sits directly below Buy now`);
-  assert(Math.abs(bounds.x-button.x)<2,`${width}: original price aligns with Buy now`);
+  const priceCenter=await price.evaluate(el=>{const range=document.createRange();range.selectNodeContents(el);const r=range.getBoundingClientRect();return r.x+r.width/2;});
+  assert(Math.abs(priceCenter-(button.x+button.width/2))<2,`${width}: original price is centered beneath Buy now`);
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width}: product page fits the viewport`);
   await page.locator('.product-purchase-actions').screenshot({path:`/tmp/cart-preview/original-price-${width}.png`});
  }

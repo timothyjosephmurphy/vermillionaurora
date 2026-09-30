@@ -38,9 +38,10 @@
 .product-purchase-actions .cart-product-actions{display:grid;grid-template-columns:minmax(180px,auto) auto;margin:0;align-items:center;gap:.5rem 1.25rem}
 .product-purchase-actions [data-cart-buy]{grid-column:1;grid-row:1}
 .product-purchase-actions [data-cart-add]{grid-column:2;grid-row:1}
-.product-purchase-actions .product-detail-price{grid-column:1;grid-row:2;margin:.5rem 0 0;line-height:1.5}
+.product-purchase-actions .product-detail-price{grid-column:1;grid-row:2;margin:.5rem 0 0;line-height:1.5;text-align:center}
 .product-purchase-actions .cart-product-actions .product-detail-price{margin:0}
 .product-purchase-actions .button{min-width:180px;min-height:54px;justify-content:center;font-size:.85rem}
+.product-purchase-actions [data-original-purchase]>.button{width:100%}
 .product-purchase-actions [data-original-purchase] .button-solid{background:#d34220;border-color:#d34220;color:#fff}
 .product-purchase-actions [data-original-purchase] .button-solid:hover{background:#b83518;border-color:#b83518}
 .product-purchase-actions [data-original-purchase] .button-solid:focus-visible{outline:3px solid #d34220;outline-offset:4px}
