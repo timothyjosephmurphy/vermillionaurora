@@ -6,7 +6,13 @@ const env={PAYPAL_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_
 const a={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
 const item={id:'test-print',provider:'finerworks',sku:'5M144M8S7.5X6',quantity:1,amount:'25.00',imageSize:{width:7.5,height:6},paperSize:{width:7.5,height:6},assetUrl:'https://vermillionaurora.com/gallery-images/portrait-in-gold.jpg'};
 const products=groupPrintProducts([item],'po');
-function reply(po='po',qty=1){return {status:{success:true},orders:[{order_po:po,options:[{id:42,rate:8.95,shipping_method:'Ground',carrier:'UPS',calculated_total:{order_po:po,order_subtotal:7*qty,order_shipping_rate:8.95,order_sales_tax:0,order_discount:0,order_expedite_fee:0,order_credits_used:0,order_grand_total:7*qty+8.95,product_pricing:[{product_sku:item.sku,product_qty:qty,total_price:7*qty}]}}]}]};}
+function reply(po='po',qty=1){return {status:{success:true},orders:[{order_po:po,options:[{id:42,rate:8.95,shipping_method:'Ground',carrier:'UPS',calculated_total:{order_po:po,order_subtotal:7*qty,order_shipping_rate:8.95,order_sales_tax:0,order_discount:0,order_expedite_fee:0,order_credits_used:0,order_grand_total:7*qty+8.95,product_pricing:[{product_sku:item.sku,product_qty:qty,total_price:7}]}}]}]};}
+test('multiplies per-copy provider prices and still rejects inconsistent two-copy totals',()=>{
+  const grouped=groupPrintProducts([item,{...item,id:'other-artwork'}],'po'),data=reply('po',2);
+  const q=shippingOptions(data,'po',grouped)[0];assert.equal(q.productionCost,'14.00');assert.equal(q.maximumProviderCost,'22.95');
+  data.orders[0].options[0].calculated_total.product_pricing[0].total_price=14;
+  assert.throws(()=>shippingOptions(data,'po',grouped));
+});
 test('keeps shipping unmarked-up and accounts for supplier tax separately',()=>{
   let data=reply();data.orders[0].options[0].calculated_total.order_sales_tax=1.23;data.orders[0].options[0].calculated_total.order_grand_total=17.18;
   const q=shippingOptions(data,'po',products)[0];assert.equal(q.shipping,'8.95');assert.equal(q.productionCost,'7.00');assert.equal(q.supplierTax,'1.23');assert.equal(q.maximumProviderCost,'17.18');assert.equal(q.shippingMethod,'42');

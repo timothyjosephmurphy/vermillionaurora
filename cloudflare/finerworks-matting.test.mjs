@@ -18,7 +18,7 @@ function mockProvider(t,{valid=true,code=sku}={}){
     if(endpoint.endsWith('get_prices'))return Response.json([{product_code:code,product_qty:1,product_price:7,add_mat_1_price:5,total_price:12}]);
     if(endpoint.endsWith('list_shipping_options_multiple')){
       const order=body.orders[0],qty=order.order_items[0].product_qty;
-      return Response.json({status:{success:true},orders:[{order_po:order.order_po,options:[{id:42,rate:9.95,shipping_method:'Ground',carrier:'UPS',calculated_total:{order_po:order.order_po,order_subtotal:12*qty,order_shipping_rate:9.95,order_sales_tax:0,order_grand_total:12*qty+9.95,product_pricing:[{product_code:code,product_qty:qty,total_price:12*qty}]}}]}]});
+      return Response.json({status:{success:true},orders:[{order_po:order.order_po,options:[{id:42,rate:9.95,shipping_method:'Ground',carrier:'UPS',calculated_total:{order_po:order.order_po,order_subtotal:12*qty,order_shipping_rate:9.95,order_sales_tax:0,order_grand_total:12*qty+9.95,product_pricing:[{product_code:code,product_qty:qty,total_price:12}]}}]}]});
     }
     if(endpoint.endsWith('submit_orders_v2'))return Response.json({status:{success:true}});
     throw Error('Unexpected endpoint');

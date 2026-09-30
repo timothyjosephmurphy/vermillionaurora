@@ -18,7 +18,7 @@ beforeEach(()=>{
       if(u.pathname.endsWith('get_prices'))return Response.json(body.products.map(p=>({...p,product_code:p.product_sku,product_price:unitCost,total_price:unitCost})));
       if(u.pathname.endsWith('list_shipping_options_multiple')) {
         const order=body.orders[0],total=order.order_items.reduce((n,p)=>n+p.product_qty*unitCost,0);
-        return Response.json({status:{success:true},orders:[{order_po:order.order_po,options:[{id:42,rate:8.95,shipping_method:'Ground',carrier:'UPS',calculated_total:{order_po:order.order_po,order_subtotal:total,order_shipping_rate:8.95,order_sales_tax:0,order_discount:0,order_grand_total:total+8.95,product_pricing:order.order_items.map(p=>({product_sku:p.product_sku,product_qty:p.product_qty,total_price:p.product_qty*unitCost}))}}]}]});
+        return Response.json({status:{success:true},orders:[{order_po:order.order_po,options:[{id:42,rate:8.95,shipping_method:'Ground',carrier:'UPS',calculated_total:{order_po:order.order_po,order_subtotal:total,order_shipping_rate:8.95,order_sales_tax:0,order_discount:0,order_grand_total:total+8.95,product_pricing:order.order_items.map(p=>({product_sku:p.product_sku,product_qty:p.product_qty,total_price:unitCost}))}}]}]});
       }
       if(u.pathname.endsWith('submit_orders_v2')) {
         expect(body.validate_only).toBe(false);expect(body.payment_token).toBe('xxxx');expect(body.orders[0].test_mode).toBe(true);expect(body.orders[0].order_po.length).toBeLessThanOrEqual(50);
