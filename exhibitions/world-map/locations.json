@@ -29,6 +29,12 @@
         "name": "Victrola Coffee Shop, Seattle, Washington",
         "slug": "victrola",
         "date": "2025"
+      },
+      {
+        "name": "Cormorant Presiding over Sunset on Puget Sound",
+        "href": "/murals/#garden-mural",
+        "date": "2026",
+        "type": "mural"
       }
     ]
   },
@@ -83,6 +89,25 @@
         "name": "Adopting Bitcoin Cape Town, South Africa",
         "slug": "cape-town",
         "date": "2025"
+      }
+    ]
+  },
+  {
+    "id": "lillooet",
+    "number": 5,
+    "city": "Lillooet",
+    "country": "British Columbia, Canada",
+    "coordinates": [
+      50.693611,
+      -121.933611
+    ],
+    "labelClass": "lillooet",
+    "exhibitions": [
+      {
+        "name": "Friends Club",
+        "href": "/murals/#friends-story",
+        "date": "2026",
+        "type": "mural"
       }
     ]
   }
