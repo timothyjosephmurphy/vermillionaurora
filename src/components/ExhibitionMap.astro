@@ -24,7 +24,7 @@ const leaderEnds: Record<string,string> = { seattle:'210,242', 'el-salvador':'21
   {!compact && <div class="atlas-labels">
     {locations.map(place => <section id={`map-${place.id}`} class:list={['atlas-label',place.labelClass]} aria-labelledby={`map-${place.id}-title`}>
       <h2 id={`map-${place.id}-title`}><span class="pin-number" aria-label={`Pin ${place.number}`}>{place.number}</span>{place.city}<small>{place.country}</small></h2>
-      <ul>{place.exhibitions.map(exhibition => <li><a href={`/exhibitions/${exhibition.slug}/`}>{exhibition.name}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
+      <ul>{place.exhibitions.map(exhibition => <li><a href={`/exhibitions/${exhibition.slug}/`}>{exhibition.name}<span class="exhibition-date"> · {exhibition.date}</span><span aria-hidden="true"> ↗</span></a></li>)}</ul>
     </section>)}
   </div>}
 </div>
@@ -40,6 +40,6 @@ const leaderEnds: Record<string,string> = { seattle:'210,242', 'el-salvador':'21
   .atlas-label ul{margin:0;padding:0;list-style:none}.atlas-label li+li{margin-top:9px}
   .atlas-label a{font-size:.8rem;line-height:1.5;text-decoration:underline;text-underline-offset:3px;display:inline-block}
   .atlas-label a:hover{color:#ad321b}.atlas-label a:focus-visible{outline:3px solid #bd381c;outline-offset:4px}
-  @media(max-width:850px){.atlas-expanded{display:none}.atlas-small{display:block}.atlas-labels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:0 18px 20px}.atlas-label.seattle,.atlas-label.warsaw,.atlas-label.salvador,.atlas-label.cape{position:static;width:auto}.atlas-label a{font-size:.85rem}}
+  @media(max-width:1050px){.atlas-expanded{display:none}.atlas-small{display:block}.atlas-labels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:0 18px 20px}.atlas-label.seattle,.atlas-label.warsaw,.atlas-label.salvador,.atlas-label.cape{position:static;width:auto}.atlas-label a{font-size:.85rem}}
   @media(max-width:560px){.atlas-labels{grid-template-columns:1fr}.atlas-label{padding:18px}.atlas-label h2{font-size:1.7rem}}
 </style>

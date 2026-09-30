@@ -165,7 +165,8 @@
         "key": "images/Ex-Cape-Town/IMG_9913.jpeg",
         "video": false
       }
-    ]
+    ],
+    "date": "2025"
   },
   {
     "name": "Adopting Bitcoin El Salvador",
@@ -268,7 +269,8 @@
         "key": "images/Ex-El-Salvador/IMG_5539.MOV",
         "video": true
       }
-    ]
+    ],
+    "date": "2024"
   },
   {
     "name": "My Living Room, Seattle, Washington",
@@ -541,7 +543,8 @@
         "key": "images/Ex-Living Room/IMG_4395.jpeg",
         "video": false
       }
-    ]
+    ],
+    "date": "Current"
   },
   {
     "name": "Studio 601, Seattle, Washington",
@@ -819,7 +822,8 @@
         "key": "images/Ex-Studio-601/image000000.jpg",
         "video": false
       }
-    ]
+    ],
+    "date": "2022"
   },
   {
     "name": "Victrola Coffee Shop, Seattle, Washington",
@@ -927,7 +931,8 @@
         "key": "images/Ex-Victrola/IMG_1630.jpeg",
         "video": false
       }
-    ]
+    ],
+    "date": "2025"
   },
   {
     "name": "Paul Murphy",
@@ -1524,6 +1529,7 @@
         "key": "exhibitions/bitcoin-film-festival-warsaw/images/outside-kinoteka.jpeg",
         "video": false
       }
-    ]
+    ],
+    "date": "2025"
   }
 ]

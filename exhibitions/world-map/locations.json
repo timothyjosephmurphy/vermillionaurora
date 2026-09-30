@@ -12,19 +12,23 @@
     "exhibitions": [
       {
         "name": "Intiman Theater Seattle Auction",
-        "slug": "intiman-auction"
+        "slug": "intiman-auction",
+        "date": "2023"
       },
       {
         "name": "My Living Room, Seattle, Washington",
-        "slug": "living-room"
+        "slug": "living-room",
+        "date": "Current"
       },
       {
         "name": "Studio 601, Seattle, Washington",
-        "slug": "studio-601"
+        "slug": "studio-601",
+        "date": "2022"
       },
       {
         "name": "Victrola Coffee Shop, Seattle, Washington",
-        "slug": "victrola"
+        "slug": "victrola",
+        "date": "2025"
       }
     ]
   },
@@ -41,7 +45,8 @@
     "exhibitions": [
       {
         "name": "Adopting Bitcoin El Salvador",
-        "slug": "el-salvador"
+        "slug": "el-salvador",
+        "date": "2024"
       }
     ]
   },
@@ -58,7 +63,8 @@
     "exhibitions": [
       {
         "name": "Bitcoin Film Festival Warsaw, Poland",
-        "slug": "bitcoin-film-festival-warsaw"
+        "slug": "bitcoin-film-festival-warsaw",
+        "date": "2025"
       }
     ]
   },
@@ -75,7 +81,8 @@
     "exhibitions": [
       {
         "name": "Adopting Bitcoin Cape Town, South Africa",
-        "slug": "cape-town"
+        "slug": "cape-town",
+        "date": "2025"
       }
     ]
   }
