@@ -64,8 +64,11 @@ try {
     report.credentialsOk=false;report.credentialTestError=error.message;
     console.log('Credential test did not pass; checking independent read-only catalog/pricing endpoints.');
   }
-  const materials=await verify({task:'materials'});report.materials=materials;
+  const materials=await verify({task:'materials'});
   assert.ok(materials.media?.length&&materials.styles?.length,'FinerWorks returned no material/style catalog');
+  // Retain counts plus the exact quoted material/style records below, rather than
+  // flooding the encrypted audit with every unrelated frame/canvas specification.
+  report.materials={mediaCount:materials.media.length,styleCount:materials.styles.length};
   console.log(`PASS: retrieved ${materials.media.length} media and ${materials.styles.length} styles.`);
   const productIds=[...new Set(Object.values(prints).filter(p=>p.testOnly).map(p=>p.productId))].slice(0,10);
   assert.ok(productIds.length,'No pilot artwork identities found');
