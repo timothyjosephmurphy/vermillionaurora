@@ -18,7 +18,7 @@ async function verify(body){
    // Provider diagnostics have already redacted credential values and emails.
    const detail=d.diagnostic||{};
    console.log('MAT_CHECK_FAILURE '+JSON.stringify({task:body.task,http:r.status,error:d.error,endpoint:detail.endpoint,providerCode:detail.providerStatusCode,
-    ...(['/v3/list_mats','/v3/build_product_code','/v3/validate_product'].includes(detail.endpoint)?{message:detail.providerMessage,rootKind:detail.rootKind,fields:detail.rootFields,firstItemFields:detail.firstItemFields,envelopeFields:detail.envelopeFields,encodedShape:detail.encodedShape}:{})}));
+    ...(['/v3/list_mats','/v3/build_product_code','/v3/validate_product'].includes(detail.endpoint)?{message:detail.providerMessage,rootKind:detail.rootKind,fields:detail.rootFields,firstItemFields:detail.firstItemFields,envelopeFields:detail.envelopeFields,encodedShape:detail.encodedShape,validationErrors:detail.validationErrors}:{})}));
    throw Error('FinerWorks mat configuration did not pass validation');
   }
   return d;
