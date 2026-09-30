@@ -668,15 +668,12 @@
     "slug": "painting-festival-portrait",
     "type": "painting",
     "title": "Wonder",
-    "description": "Wonder by TJ Murphy. Watercolor pastel. Available.",
+    "description": "Wonder by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
-      "status": "available",
-      "price": {
-        "amount": "2000.00",
-        "currency": "USD"
-      }
+      "status": "not-for-sale",
+      "price": null
     },
     "medium": "Watercolor pastel",
     "surface": "Arches Coldpress Paper",
@@ -694,7 +691,7 @@
       "This painting grew out of concept work for a project to monumentalize the origin story of Bitcoin. It depicts wonder at the beauty of nature and awe at technological achievement."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/?buy=painting-festival-portrait#contact",
+    "inquiryHref": "/#services",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/festival-portrait.jpg",
@@ -702,7 +699,7 @@
       "caption": "Wonder"
     },
     "checkout": {
-      "mode": "integrated",
+      "mode": "inquiry",
       "shipping": {
         "length": 24,
         "width": 4,
@@ -715,7 +712,7 @@
       }
     },
     "inquiry": {
-      "label": "Inquire about this painting",
+      "label": "Commission a painting",
       "note": ""
     },
     "back": {
@@ -987,15 +984,12 @@
     "slug": "painting-lightburst",
     "type": "painting",
     "title": "Revelation",
-    "description": "Revelation by TJ Murphy. Watercolor pastel. Available.",
+    "description": "Revelation by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
-      "status": "available",
-      "price": {
-        "amount": "2000.00",
-        "currency": "USD"
-      }
+      "status": "not-for-sale",
+      "price": null
     },
     "medium": "Watercolor pastel",
     "surface": "Arches Coldpress Paper",
@@ -1013,7 +1007,7 @@
       "As part of my project to monumentalize the origin story of Bitcoin, this painting represents the revelation of the Bitcoin white paper—and the forces of evil striking back to prevent it from being revealed."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/?product=painting-lightburst#contact",
+    "inquiryHref": "/#services",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/lightburst.jpg",
@@ -1021,7 +1015,7 @@
       "caption": "Revelation"
     },
     "checkout": {
-      "mode": "integrated",
+      "mode": "inquiry",
       "shipping": {
         "length": 24,
         "width": 4,
@@ -1034,7 +1028,7 @@
       }
     },
     "inquiry": {
-      "label": "Inquire about this painting",
+      "label": "Commission a painting",
       "note": ""
     },
     "back": {
@@ -1157,15 +1151,12 @@
     "slug": "painting-phoenix-rising",
     "type": "painting",
     "title": "Achievement",
-    "description": "Achievement by TJ Murphy. Watercolor pastel. Available.",
+    "description": "Achievement by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
-      "status": "available",
-      "price": {
-        "amount": "2000.00",
-        "currency": "USD"
-      }
+      "status": "not-for-sale",
+      "price": null
     },
     "medium": "Watercolor pastel",
     "surface": "Arches Coldpress Paper",
@@ -1183,7 +1174,7 @@
       "I made this as concept art for a project to monumentalize the origin story of Bitcoin. It represents the birth of the network: the moment its challenges are overcome and its dangers are faced."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/?product=painting-phoenix-rising#contact",
+    "inquiryHref": "/#services",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/phoenix-rising.jpg",
@@ -1191,7 +1182,7 @@
       "caption": "Achievement"
     },
     "checkout": {
-      "mode": "integrated",
+      "mode": "inquiry",
       "shipping": {
         "length": 24,
         "width": 4,
@@ -1204,7 +1195,7 @@
       }
     },
     "inquiry": {
-      "label": "Inquire about this painting",
+      "label": "Commission a painting",
       "note": ""
     },
     "back": {

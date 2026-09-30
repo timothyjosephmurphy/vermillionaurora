@@ -1,18 +1,6 @@
 {
   "home": [
     {
-      "product": "painting-phoenix-rising",
-      "variant": "carousel"
-    },
-    {
-      "product": "painting-festival-portrait",
-      "variant": "carousel"
-    },
-    {
-      "product": "painting-lightburst",
-      "variant": "carousel"
-    },
-    {
       "product": "warszawska-syrenka",
       "variant": "carousel"
     },
@@ -146,6 +134,18 @@
     },
     {
       "product": "painting-portrait-with-hat",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-phoenix-rising",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-festival-portrait",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-lightburst",
       "variant": "carousel"
     },
     {
@@ -263,14 +263,6 @@
       "variant": "gallery"
     },
     {
-      "product": "painting-phoenix-rising",
-      "variant": "gallery"
-    },
-    {
-      "product": "painting-festival-portrait",
-      "variant": "gallery"
-    },
-    {
       "product": "painting-portrait-with-cheese",
       "variant": "gallery"
     },
@@ -295,10 +287,6 @@
       "variant": "gallery"
     },
     {
-      "product": "painting-lightburst",
-      "variant": "gallery"
-    },
-    {
       "product": "painting-insect-garden",
       "variant": "gallery"
     },
@@ -320,6 +308,18 @@
     },
     {
       "product": "painting-portrait-with-hat",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-phoenix-rising",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-festival-portrait",
+      "variant": "gallery"
+    },
+    {
+      "product": "painting-lightburst",
       "variant": "gallery"
     }
   ],
