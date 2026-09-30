@@ -1,6 +1,7 @@
 // Read-only migration adapter. Order submission is deliberately not allowlisted.
 // Contract: https://v2.api.finerworks.com/Documentation
 import {finerworksFailureDetails} from './finerworks-response.mjs';
+import {finerworksListEnvelope} from './finerworks-list.mjs';
 export const PRINT_PROVIDER='finerworks';
 const READS=new Map([
   ['/v3/test_my_credentials','GET'],
@@ -30,8 +31,9 @@ export async function finerworksRequest(env,path,body,method='POST') {
   try{data=JSON.parse(raw);}catch{
     throw failure(response.status,/text\/html/i.test(response.headers.get('content-type')||'')?'html':'non-json',failureHint(raw));
   }
-  // Diagnostic details go only to the authenticated audit and are encrypted by its runner.
-  // Never relax success validation or forward upstream debug/account objects.
+  // Observed catalog replies are bare lists. Accept only endpoint-specific typed
+  // lists on successful HTTP responses; never weaken authentication/error gates.
+  if(response.ok){const list=finerworksListEnvelope(path,data);if(list)return list;}
   if(!response.ok||data?.status?.success!==true){
     const error=failure(response.status,'json',failureHint(data?.status?.message||''));
     error.details=finerworksFailureDetails(path,data,[webKey,appKey]);

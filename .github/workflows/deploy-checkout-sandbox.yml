@@ -40,7 +40,7 @@ jobs:
           npm ci
           npm run build
           npm test
-          node --test tests/prints.test.mjs cloudflare/finerworks-api.test.mjs cloudflare/finerworks-diagnostic.test.mjs
+          node --test tests/prints.test.mjs cloudflare/finerworks-*.test.mjs
           npm --prefix cloudflare/test ci
           npm run test:worker
           node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs

@@ -9,7 +9,7 @@ export function finerworksFailureDetails(path, data, secrets = []) {
     return text.replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, '[email redacted]').replace(/[\r\n\t]/g, ' ').slice(0, 400);
   };
   const kind = value => Array.isArray(value) ? `array:${value.length}` : value === null ? 'null' : typeof value;
-  const shape = value => value && typeof value === 'object' && !Array.isArray(value) ? Object.fromEntries(Object.keys(value).slice(0, 40).map(key => [redact(key), kind(value[key])])) : {};
+  const shape = value => value && typeof value === 'object' && !Array.isArray(value) ? Object.fromEntries(Object.keys(value).filter(key => !/debug|account|credential|key|billing|customer|user/i.test(key)).slice(0, 40).map(key => [redact(key), kind(value[key])])) : {};
   const status = data && typeof data.status === 'object' && data.status !== null ? data.status : {};
   const success = typeof status.success === 'boolean' ? status.success : null;
   let encodedShape = null;
