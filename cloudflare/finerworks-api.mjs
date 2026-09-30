@@ -2,7 +2,7 @@
 // Real order submission is deliberately NOT permitted by this adapter.
 // Contract: https://v2.api.finerworks.com/Documentation
 import {finerworksFailureDetails} from './finerworks-response.mjs';
-import {finerworksListEnvelope} from './finerworks-list.mjs';
+import {finerworksListEnvelope,finerworksValidationEnvelope} from './finerworks-list.mjs';
 export {finerworksSizeAllowed,finerworksProductCode} from '../catalog/finerworks-products.mjs';
 export const PRINT_PROVIDER='finerworks';
 const READS=new Map([
@@ -43,6 +43,8 @@ export async function finerworksRequest(env,path,body,method='POST') {
     throw failure(response.status,/text\/html/i.test(response.headers.get('content-type')||'')?'html':'non-json',failureHint(raw));
   }
   if(response.ok){const list=finerworksListEnvelope(path,data);if(list)return list;}
+  const validation=finerworksValidationEnvelope(path,response.status,data,body);
+  if(validation)return validation;
   if(!response.ok||data?.status?.success!==true){
     const error=failure(response.status,'json',failureHint(data?.status?.message||''));
     error.details=finerworksFailureDetails(path,data,[webKey,appKey]);

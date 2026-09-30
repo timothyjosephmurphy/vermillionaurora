@@ -24,6 +24,8 @@ provider test orders. Test references are stable per release/artwork. These
 unpaid tests have explicit private test records, never fake sale records.
 The mat-option diagnostics remain available without `--pilot-checkout` and are
 separate from this unframed pilot. Mat purchases remain gated by their approvals.
+Push deployments use read-only quotes and preflight. A manual workflow run can
+explicitly set `test_print_orders` to exercise unbilled provider test orders.
 
 The provider adapter supports a later live release only with explicit
 `FINERWORKS_ORDER_ENABLED=true`, a configured `FINERWORKS_PAYMENT_TOKEN`, live
