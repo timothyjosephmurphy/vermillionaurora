@@ -46,8 +46,8 @@ Verified 2026-09-30 on deployed release `f5d51db`:
   $0 sandbox tax) for the Seattle test address and reached PayPal sandbox
   approval. The unpaid checkout was then canceled; no payment was captured.
 - The Worker suite passed all 88 tests. Desktop and mobile checkout tests passed.
-- The broader deployment audit still fails the separate two-copy mat preflight;
-  unframed checks passed and mat variants remain unavailable for purchase.
+- Mat-inclusive shipping and two-copy preflight subsequently passed on `256be33`.
+  Mat variants remain unavailable for purchase until their layout is approved.
 
 The production readiness check found no `FINERWORKS_WEB_API_KEY`,
 `FINERWORKS_APP_KEY`, or `FINERWORKS_PAYMENT_TOKEN` binding on

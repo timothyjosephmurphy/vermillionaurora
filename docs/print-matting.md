@@ -48,3 +48,10 @@ Checks: `node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs`,
 `node tests/print-matting.browser-test.mjs`, and the sandbox workflow. Its
 VERIFIED_MAT_OPTION output contains public catalog fields and retail prices;
 supplier costs remain in the existing encrypted audit artifact.
+
+Sandbox release `256be33` passed the full checkout deployment audit on
+2026-09-30, including all three mat-inclusive shipping quotes and a two-copy
+validation-only order. No mat orders were submitted. Fractional-cent supplier
+volume prices are summed before subtotal rounding, avoiding a one-cent mismatch
+when multiple copies are selected. Desktop/mobile selection and frame checks
+also passed. Saved mat layouts still have no approval asset and remain gated.

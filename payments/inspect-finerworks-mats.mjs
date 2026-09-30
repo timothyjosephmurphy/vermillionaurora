@@ -1,16 +1,9 @@
 // A read-only check of the already deployed sandbox; no build or deployment.
-import {randomBytes,createCipheriv,publicEncrypt} from 'node:crypto';
-import {readFileSync} from 'node:fs';
+import {randomBytes} from 'node:crypto';
 import assert from 'node:assert/strict';
 const base='https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev';
 const cf='https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/vermillion-checkout-sandbox/secrets';
 const name='FINERWORKS_AUDIT_TOKEN',token=`${Date.now()+15*60000}.${randomBytes(32).toString('hex')}`;
-function privateFailure(data){
- const aes=randomBytes(32),iv=randomBytes(12),cipher=createCipheriv('aes-256-gcm',aes,iv);
- const encrypted=Buffer.concat([cipher.update(JSON.stringify(data)),cipher.final()]);
- const key=readFileSync(new URL('./finerworks-mat-report-public.pem',import.meta.url));
- console.log('ENCRYPTED_MAT_FAILURE '+JSON.stringify({key:publicEncrypt({key,oaepHash:'sha256'},aes).toString('base64'),iv:iv.toString('base64'),tag:cipher.getAuthTag().toString('base64'),data:encrypted.toString('base64')}));
-}
 async function secret(method){
  const r=await fetch(cf+(method==='DELETE'?'/'+name:''),{method,redirect:'error',headers:{Authorization:`Bearer ${process.env.CLOUDFLARE_API_TOKEN}`,'Content-Type':'application/json'},...(method==='PUT'?{body:JSON.stringify({name,text:token,type:'secret_text'})}:{}),signal:AbortSignal.timeout(30000)});
  const d=await r.json();if(!r.ok||d.success!==true)throw Error('Sandbox audit credential operation failed');
@@ -21,7 +14,6 @@ async function verify(body){
   if(r.status===404&&i<6){await new Promise(resolve=>setTimeout(resolve,5000));continue;}
   const d=await r.json();
   if(!r.ok){
-   privateFailure({task:body.task,error:d.error,diagnostic:d.diagnostic});
    // These catalog-only requests contain no customer, order or billing data.
    // Provider diagnostics have already redacted credential values and emails.
    const detail=d.diagnostic||{};
