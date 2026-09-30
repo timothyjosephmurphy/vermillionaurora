@@ -57,6 +57,15 @@ try{
  const buyBounds=await buyNow.boundingBox(),titleBounds=await page.locator('.product-summary h1').boundingBox();
  assert(buyBounds.y>=titleBounds.y+titleBounds.height,'Buy now appears below the artwork title');
  assert.equal(await buyNow.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(211, 66, 32)','Buy now is vermilion orange');
+ for(const width of [1440,390]){
+  await page.setViewportSize({width,height:1050});
+  const button=await buyNow.boundingBox(),price=page.locator('[data-original-purchase] .product-detail-price'),bounds=await price.boundingBox();
+  assert.equal(await page.locator('.product-detail-price').count(),1,'The original price appears once');
+  assert(bounds.y>=button.y+button.height&&bounds.y<button.y+button.height+16,`${width}: original price sits directly below Buy now`);
+  assert(Math.abs(bounds.x-button.x)<2,`${width}: original price aligns with Buy now`);
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width}: product page fits the viewport`);
+  await page.locator('.product-purchase-actions').screenshot({path:`/tmp/cart-preview/original-price-${width}.png`});
+ }
  await buyNow.click();await page.waitForURL(origin+'/cart/?buy='+ids[0]);
  await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual((await cartStored()).map(i=>i.id),[ids[1]]);

@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         form.querySelector('input').focus({preventScroll:true});
       });
       const purchaseSlot = document.querySelector('[data-original-purchase]');
-      if (purchaseSlot) purchaseSlot.replaceChildren(buy);
+      if (purchaseSlot) purchaseSlot.replaceChildren(buy,...purchaseSlot.querySelectorAll('.product-detail-price'));
       else { cta.append(prompt,buy); document.querySelector('.product-layout').before(cta); }
       return;
     }
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     link.textContent = 'Buy now';
     link.setAttribute('aria-label', `Buy ${title} with PayPal`);
     const purchaseSlot = document.querySelector('[data-original-purchase]');
-    if (purchaseSlot) purchaseSlot.replaceChildren(link);
+    if (purchaseSlot) purchaseSlot.replaceChildren(link,...purchaseSlot.querySelectorAll('.product-detail-price'));
     else inquiry.prepend(link);
   } catch (_) {
     // The existing purchase inquiry remains available if links are not configured.

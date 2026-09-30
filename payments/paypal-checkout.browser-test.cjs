@@ -44,6 +44,7 @@ fs.mkdirSync(output,{recursive:true});
   await pay.waitFor();
   assert(await pay.isVisible());assert(await pay.isDisabled());
   assert(await page.locator('.checkout-address-form').isVisible());
+  assert.equal(await page.locator('[data-original-purchase] .product-detail-price').textContent(),'$20 USD','The original price remains visible when checkout replaces the Buy now control');
   assert(await page.locator('.product-purchase-actions').evaluate(el=>el.previousElementSibling?.matches('h1')), 'Purchase options follow the artwork title');
   assert(await page.locator('.purchase-panel').evaluate(el=>el.compareDocumentPosition(document.querySelector('.painting-facts'))&Node.DOCUMENT_POSITION_FOLLOWING));
   await page.screenshot({path:path.join(output,'checkout-desktop.png'),fullPage:true});

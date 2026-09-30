@@ -35,7 +35,11 @@
 .product-purchase-actions{display:flex;flex-wrap:wrap;align-items:flex-start;gap:1rem 1.5rem;margin:1.25rem 0 1.5rem;padding:0 0 1.25rem;border-bottom:1px solid var(--line,#d6c9bc)}
 .product-purchase-actions:has(>[data-original-purchase]:only-child>[data-cart-product][hidden]),.product-purchase-actions:has(>[data-original-purchase][hidden]:only-child){display:none}
 .product-purchase-actions [hidden]{display:none!important}
-.product-purchase-actions .cart-product-actions{margin:0;align-items:center;gap:1.25rem}
+.product-purchase-actions .cart-product-actions{display:grid;grid-template-columns:minmax(180px,auto) auto;margin:0;align-items:center;gap:.5rem 1.25rem}
+.product-purchase-actions [data-cart-buy]{grid-column:1;grid-row:1}
+.product-purchase-actions [data-cart-add]{grid-column:2;grid-row:1}
+.product-purchase-actions .product-detail-price{grid-column:1;grid-row:2;margin:.5rem 0 0;line-height:1.5}
+.product-purchase-actions .cart-product-actions .product-detail-price{margin:0}
 .product-purchase-actions .button{min-width:180px;min-height:54px;justify-content:center;font-size:.85rem}
 .product-purchase-actions [data-original-purchase] .button-solid{background:#d34220;border-color:#d34220;color:#fff}
 .product-purchase-actions [data-original-purchase] .button-solid:hover{background:#b83518;border-color:#b83518}
@@ -48,4 +52,4 @@
 .product-frame-action{margin:1.75rem 0}
 .product-frame-action .button{max-width:100%;min-height:44px;white-space:normal;text-align:center;font-size:.78rem;letter-spacing:.04em;line-height:1.5}
 .product-purchase-actions button:disabled{opacity:.5;cursor:not-allowed}
-@media(max-width:600px){.product-purchase-actions{gap:1rem}.product-purchase-actions>[data-original-purchase],.product-print-action{width:100%}.product-purchase-actions .cart-product-actions>.button,.product-print-action>.button{width:100%}.product-purchase-actions .cart-product-actions{gap:.5rem}.product-purchase-actions .cart-text-link{margin:0 auto}}
+@media(max-width:600px){.product-purchase-actions{gap:1rem}.product-purchase-actions>[data-original-purchase],.product-print-action{width:100%}.product-purchase-actions .cart-product-actions>.button,.product-print-action>.button{width:100%}.product-purchase-actions .cart-product-actions{grid-template-columns:1fr;gap:.5rem}.product-purchase-actions [data-cart-add]{grid-column:1;grid-row:3}.product-purchase-actions .cart-text-link{margin:0 auto}}
