@@ -1,0 +1,10 @@
+/* Venue maps below the artwork carousel. */
+.exhibition-location{margin:32px 0;display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.6fr);gap:24px;align-items:center;padding:24px;background:#f4eee6;border:1px solid #ded3c6;border-radius:12px}
+.exhibition-location-copy{min-width:0}
+.exhibition-location-copy .eyebrow{margin:0 0 8px}
+.exhibition-location-copy h2{font-size:clamp(1.5rem,2.5vw,2rem);line-height:1.15;margin:0 0 12px}
+.exhibition-location-copy p{margin:0 0 8px}
+.exhibition-location-copy address{font-style:normal;line-height:1.6;margin-bottom:20px}
+.exhibition-location-copy .button{white-space:normal;text-align:center}
+.exhibition-location-map{display:block;width:100%;height:360px;border:0;border-radius:8px;background:#e8e2da}
+@media(max-width:700px){.exhibition-location{grid-template-columns:minmax(0,1fr);gap:20px;padding:18px}.exhibition-location-map{height:300px}}
