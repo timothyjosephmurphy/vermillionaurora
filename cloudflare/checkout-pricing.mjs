@@ -73,7 +73,12 @@ export async function priceOrder(env,slug,input) {
 export async function priceCart(env,items,input,email) {
   const address=cleanAddress(input),shipments=[];
   // Each original is packed separately. No speculative combined-parcel dimensions.
-  for(const item of items.filter(i=>i.type!=='print'))shipments.push(await priceShipment(env,item.id,address));
+  for(const item of items.filter(i=>i.type!=='print')) {
+    const shipment=await priceShipment(env,item.id,address);
+    // The normal delivery payment becomes a credit if framing is arranged. Its
+    // saved rate is never purchased automatically for an opted-in original.
+    shipments.push({...shipment,...(item.framing?{framing:{...item.framing,shippingCredit:shipment.shipping}}:{})});
+  }
   const printItems=items.filter(i=>i.type==='print'),printQuote=printItems.length?await quotePrints(env,printItems,address):null;
   const totals=await calculateTax(env,items,address,shipments.reduce((sum,s)=>sum+cents(s.shipping),0)+(printQuote?cents(printQuote.shipping):0));
   return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments,...(printQuote?{printQuote}:{}),...totals,quotedAt:Date.now()};

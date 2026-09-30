@@ -28,7 +28,7 @@ export class CartOrder extends DurableObject {
     return {orderId:d.id,status:d.status,expiresAt:d.expiresAt,method:d.method,methods:d.methods,
       ...(['pending','processing'].includes(d.status)&&d.url?{url:d.url}:{}),
       quote:{items:d.quote.items.map(publicCartItem),base:d.quote.base,shipping:d.quote.shipping,tax:d.quote.tax,total:d.quote.total,
-        shipments:[...d.quote.shipments.map(s=>({id:s.slug,title:s.title,shipping:s.shipping,carrier:s.carrier,service:s.service})),...(d.quote.printQuote?[{id:'prints',title:'Fine-art prints',shipping:d.quote.printQuote.shipping,carrier:d.quote.printQuote.carrier,service:d.quote.printQuote.service}]:[])]},
+        shipments:[...d.quote.shipments.map(s=>({id:s.slug,title:s.title,shipping:s.shipping,carrier:s.carrier,service:s.service,...(s.framing?{framing:s.framing}:{})})),...(d.quote.printQuote?[{id:'prints',title:'Fine-art prints',shipping:d.quote.printQuote.shipping,carrier:d.quote.printQuote.carrier,service:d.quote.printQuote.service}]:[])]},
       ...(d.unavailable?{unavailable:d.unavailable}:{}),
       ...(d.status==='paid'?{paidAt:d.paidAt,shipments:[...(d.jobs||[]).map(j=>({id:j.quote.slug,trackingNumber:j.trackingNumber||'',trackingUrl:j.trackingUrl||''})),...(d.printJob?.shipments||[])],...(d.printJob?{printStatus:d.printJob.status}:{}),confirmation:d.customerMail?.status||'pending'}:{})};
   }
@@ -199,7 +199,8 @@ export class CartOrder extends DurableObject {
     const originalReview=shipments.some(s=>s.labelStatus==='review');
     const printReady=!d.printJob||printStatus==='complete'||d.mode==='sandbox'&&printStatus==='test-complete';
     const printReview=['review','cancelled'].includes(printStatus);
-    const labelStatus=originalReview||printReview?'review':(originalReady&&printReady)?'ready':'pending';
+    const framingRequested=shipments.some(s=>s.labelStatus==='framing-requested');
+    const labelStatus=originalReview||printReview?'review':framingRequested?'framing-requested':(originalReady&&printReady)?'ready':'pending';
     return {schemaVersion:3,id:`payment:${d.captureId}`,kind:'sale',mode:d.mode,source:'checkout',provider:d.method==='bitcoin'?'btcpay':'paypal',
       transactionId:d.captureId,orderId:`cart:${d.id}`,parentTransactionId:'',status:'COMPLETED',paidAt:d.paidAt,recordedAt:d.paidAt,
       title:q.items.map(i=>i.title).join('; '),slug:'',currency:'USD',items:q.items,shipments,...(d.printJob?{printFulfillment:printFulfillmentRecord(d.printJob)}:{}),itemAmount:q.base,shipping:q.shipping,tax:q.tax,gross:q.total,
@@ -212,7 +213,7 @@ export class CartOrder extends DurableObject {
   async archiveSale() {
     const d=this.read();if(d?.status!=='paid')return {recorded:false};
     const receipt=this.receipt();await ledgerFor(this.env,receipt).record(receipt);
-    await this.env.SALES_ARCHIVE.put(`orders/${d.mode}/${d.id}.json`,JSON.stringify({receipt,fulfillment:d.jobs,printFulfillment:d.printJob,confirmation:d.customerMail},null,2),{httpMetadata:{contentType:'application/json'}});
+    await this.env.SALES_ARCHIVE.put(`orders/${d.mode}/${d.id}.json`,JSON.stringify({receipt,fulfillment:d.jobs,printFulfillment:d.printJob,confirmation:d.customerMail,framingNotification:d.framingSellerMail},null,2),{httpMetadata:{contentType:'application/json'}});
     return {recorded:true,period:d.paidAt.slice(0,7)};
   }
   async fulfill() {
@@ -235,6 +236,7 @@ export class CartOrder extends DurableObject {
         if(job.status==='complete')await this.mail('printShipmentMail','print-shipped');
       }catch{done=false;}
     }
+    if(d.quote.items.some(i=>i.framing))try{await this.mail('framingSellerMail','framing-seller');}catch{done=false;}
     try{await this.mail('customerMail','confirmation');}catch{done=false;}
     try{await this.archiveSale();}catch{done=false;}
     if(done)await this.ctx.storage.deleteAlarm();

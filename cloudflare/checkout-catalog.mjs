@@ -261,7 +261,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "400.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "painting-chef-in-white": {
     "title": "Jimmy Song at Pacific Bitcoin Festival",
@@ -273,7 +286,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "210.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "painting-clouds-over-water": {
     "title": "Sunset in Atami, El Salvador",
@@ -285,7 +311,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "painting-emergence": {
     "title": "El Salvador: Present - Chase Toole Collab",
@@ -345,7 +384,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "210.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "painting-phoenix-rising": {
     "title": "Achievement",
@@ -370,7 +422,20 @@ export default {
       "weight": 0.25
     },
     "packaging": "flat",
-    "insuranceRequested": true
+    "insuranceRequested": true,
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "painting-portrait-in-green": {
     "title": "Chase Toole",
@@ -383,7 +448,20 @@ export default {
       "weight": 0.25
     },
     "packaging": "flat",
-    "insuranceRequested": true
+    "insuranceRequested": true,
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "painting-portrait-with-cheese": {
     "title": "Brekkie Finishing Orange Calcite B",
@@ -395,7 +473,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "210.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "painting-portrait-with-hat": {
     "title": "Sunrise on Rainier from Denny Blaine with Eagle Catching Fish",
@@ -443,7 +534,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "210.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "painting-twin-dragons": {
     "title": "El Salvador: Future - Chase Toole Collab",
@@ -467,7 +571,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-11": {
     "title": "Puerto Rico Beach",
@@ -491,7 +608,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-15": {
     "title": "Eagle from photo 2",
@@ -503,7 +633,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-2": {
     "title": "Leo/Bear Constilation",
@@ -527,7 +670,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-24": {
     "title": "Beach Egland AFB",
@@ -539,7 +695,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "210.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-25": {
     "title": "Spiritual Sedona Mountains 1",
@@ -551,7 +720,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-27": {
     "title": "Spiritual Sedona Mountains 2",
@@ -563,7 +745,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-28": {
     "title": "Spiritual Sedona Mountains 3",
@@ -575,7 +770,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-3": {
     "title": "Rebel Loon/MN ICE Protest",
@@ -587,7 +795,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-34": {
     "title": "Spiritual Sedona Mountains 4",
@@ -599,7 +820,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-35": {
     "title": "Spiritual Sedona Mountains 5",
@@ -611,7 +845,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-38": {
     "title": "Spiritual Sedona Mountains 6",
@@ -623,7 +870,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-39": {
     "title": "Spiritual Sedona Mountains 7",
@@ -635,7 +895,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-40": {
     "title": "Spiritual Sedona Mountains 8",
@@ -647,7 +920,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-41": {
     "title": "Spiritual Sedona Mountains 9",
@@ -659,7 +945,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-43": {
     "title": "Spiritual Sedona Mountains 10",
@@ -671,7 +970,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-44": {
     "title": "Spiritual Sedona Mountains 11",
@@ -683,7 +995,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-45": {
     "title": "Spiritual Sedona Mountains 12",
@@ -695,7 +1020,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-51": {
     "title": "Puerto Rico Waterfront",
@@ -707,7 +1045,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-56": {
     "title": "Peach Preserves",
@@ -719,7 +1070,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "210.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-57": {
     "title": "Lady in Gold",
@@ -743,7 +1107,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-62": {
     "title": "Waiting on your ship",
@@ -791,7 +1168,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-7": {
     "title": "Slot Canyon",
@@ -803,7 +1193,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-72": {
     "title": "Dancing Wolf on Moon",
@@ -815,7 +1218,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "210.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-73": {
     "title": "Sunset Tree",
@@ -827,7 +1243,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-74": {
     "title": "Music Notes of the Universe",
@@ -839,7 +1268,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "210.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-8": {
     "title": "Arixona Slot Cave",
@@ -851,7 +1293,20 @@ export default {
       "height": 2,
       "weight": 2
     },
-    "packaging": "flat"
+    "packaging": "flat",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "160.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-82": {
     "title": "Angies' Eyes",
@@ -863,7 +1318,20 @@ export default {
       "height": 4,
       "weight": 2
     },
-    "packaging": "tube"
+    "packaging": "tube",
+    "framingOffer": {
+      "provider": "framebridge",
+      "termsVersion": "framebridge-request-2026-09-30",
+      "currency": "USD",
+      "estimate": "210.00",
+      "pricingAsOf": "2026-09-30",
+      "styles": {
+        "black": "Black",
+        "white": "White",
+        "natural": "Natural wood",
+        "advice": "Help me choose"
+      }
+    }
   },
   "paul-murphy-painting-83": {
     "title": "Soul Connections 1",

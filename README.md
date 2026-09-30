@@ -51,6 +51,11 @@ Rollback content and templates together with the generated Worker catalog. Do no
 
 See [the cart review](docs/cart-review.md) for customer behavior, recovery rules, validation, and the decisions required before deployment. `payments/cart.js` provides the browser cart, `/cart/` is the checkout page, and `cloudflare/cart-order.mjs` coordinates one payment across several originals. Prints are the next phase.
 
+Eligible originals can include an optional [Framebridge framing request](docs/original-framing.md).
+The buyer sees an estimate and pays for framing separately after approving the
+final quote. Paid requests hold only that original's automatic shipping label
+and notify the seller to arrange framing, crediting its delivery payment.
+
 ## Inventory, payments, and commissions
 
 - `cloudflare/commission-worker.js`: API entry point and Gmail/R2 commission form integration.

@@ -16,13 +16,14 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
   <noscript><p>Please enable JavaScript to use the cart, or <a href="/#contact">contact TJ to arrange a purchase</a>.</p></noscript>
   <section data-order-panel hidden aria-labelledby="order-title" class="cart-order-panel">
     <p class="eyebrow dark">Your order</p><h2 id="order-title">Checking payment</h2><p data-order-message role="status"></p>
-    <p data-order-reference></p><div data-order-items></div><dl class="cart-order-breakdown" data-order-breakdown></dl><p class="cart-paid-total" data-order-total></p><div data-order-tracking></div>
+    <p data-order-reference></p><div data-order-items></div><div data-order-framing></div><dl class="cart-order-breakdown" data-order-breakdown></dl><p class="cart-paid-total" data-order-total></p><div data-order-tracking></div>
     <div class="cart-order-actions"><a class="button button-solid" data-order-resume hidden>Continue payment</a><button class="button button-ghost" data-order-check type="button">Check payment status</button><button class="cart-text-link" data-order-cancel type="button" hidden>Cancel checkout</button><button class="button button-ghost" data-order-back type="button" hidden>Return to cart</button><button class="button button-ghost" data-order-print type="button" hidden>Print confirmation</button></div>
   </section>
   <div class="cart-layout" data-cart-layout hidden>
     <section class="cart-artworks" aria-label="Selected artworks"><div data-cart-items></div><p class="cart-footnote">Adding an original to your cart does not reserve it. Availability is confirmed when you continue to payment.</p></section>
     <aside class="cart-checkout" aria-labelledby="checkout-title"><p class="eyebrow dark">Art for your space</p><h2 id="checkout-title">Order summary</h2>
       <dl class="cart-totals"><div><dt>Artwork subtotal</dt><dd data-cart-subtotal>—</dd></div><div><dt>Shipping</dt><dd data-cart-shipping>Calculated below</dd></div><div><dt>Tax</dt><dd data-cart-tax>Calculated below</dd></div><div class="cart-total"><dt>Total <small>USD</small></dt><dd data-cart-total>—</dd></div></dl>
+      <div data-cart-framing aria-live="polite"></div>
       <form data-cart-form>
         <fieldset><legend>Contact &amp; delivery</legend>
           <label>Email<input type="email" name="email" autocomplete="email" maxlength="254" required/></label>

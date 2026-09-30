@@ -30,7 +30,8 @@ export function fulfillmentRecord(row,job) {
     carrier:job?.quote?.carrier || '',service:job?.quote?.service || '',shippoTransactionId:job?.transactionId || '',
     trackingNumber:job?.trackingNumber || '',insuranceAmount:job?.quote?.insurance?.amount || null,
     insuranceConfirmed:!!job?.insuranceConfirmed,insuranceFee:job?.quote?.insurance?.fee || null,
-    emailId:job?.emailId || '',emailSentAt:job?.emailedAt ? new Date(job.emailedAt).toISOString() : null};
+    emailId:job?.emailId || '',emailSentAt:job?.emailedAt ? new Date(job.emailedAt).toISOString() : null,
+    ...(job?.quote?.framing?{framing:job.quote.framing}:{})};
 }
 export function ipnRecord(env,fields) {
   const status=fields.get('payment_status');

@@ -11,7 +11,7 @@ export async function cartCheckout(request,env) {
   if(request.headers.get('Origin')&&request.headers.get('Origin')!==cartOrigin(env))return reply({error:'Origin not allowed'},403);
   if(action==='catalog'&&request.method==='GET') {
     if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS)return reply({enabled:false,version:catalogVersion,products:[]});
-    const products=await Promise.all(Object.entries(catalog).filter(([id])=>paymentMethods(env,id).length).map(async([id,p])=>({id,title:p.title,amount:p.amount,methods:paymentMethods(env,id),status:await env.PAINTING_STOCK.getByName(id).status()})));
+    const products=await Promise.all(Object.entries(catalog).filter(([id])=>paymentMethods(env,id).length).map(async([id,p])=>({id,title:p.title,amount:p.amount,methods:paymentMethods(env,id),status:await env.PAINTING_STOCK.getByName(id).status(),...(p.framingOffer?{framingOffer:p.framingOffer}:{})})));
     for(const [id,p] of Object.entries(prints))if(paymentMethods(env,id).length)products.push({...publicCartItem({...p,quantity:1}),methods:paymentMethods(env,id),status:'available'});
     return reply({enabled:true,version:catalogVersion,products});
   }

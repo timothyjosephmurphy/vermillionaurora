@@ -7,7 +7,7 @@ const shippoHeaders = env => ({Authorization:`ShippoToken ${env.SHIPPO_TOKEN}`,
 
 export function newShippingJob(env, orderId, quote) {
   return {orderId,mode:env.PAYPAL_MODE,quote,
-    status:env.SHIPPO_AUTO_LABEL_ENABLED === 'true' ? 'pending' : 'disabled'};
+    status:quote.framing ? 'framing-requested' : env.SHIPPO_AUTO_LABEL_ENABLED === 'true' ? 'pending' : 'disabled'};
 }
 
 function configurationIssue(env, job) {
@@ -44,7 +44,7 @@ function transactionState(job, transaction) {
 export async function fulfillSale(env, sale, initialJob, save) {
   let job = initialJob;
   if (!job || job.orderId !== sale.order_id || sale.state !== 'sold' || !sale.capture_id ||
-      job.status === 'disabled' || job.emailId) return true;
+      job.status === 'disabled' || job.status === 'framing-requested' || job.emailId) return true;
   const persist = async next => { await save(next); job = next; };
   // Verify email authorization before buying postage, then reuse it for this attempt.
   const emailToken = await sellerMailToken(env);

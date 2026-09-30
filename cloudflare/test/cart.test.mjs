@@ -7,6 +7,7 @@ import {cartCheckout} from '../cart-checkout.mjs';
 import {priceCart} from '../checkout-pricing.mjs';
 import {backfillCheckoutSale,checkoutWebhook} from '../paypal-orders.mjs';
 import {bitcoinWebhook} from '../bitcoin-checkout.mjs';
+import {framingTermsVersion} from '../../catalog/original-framing.mjs';
 const ids=['honeybadger-and-cub-with-genesis-block','painting-portrait-in-green'].sort();
 const address={name:'Test Buyer',street1:'123 Main St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
 const config={CART_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_SLUGS:ids.join(','),PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://shop.example.test',SHIPPO_AUTO_LABEL_ENABLED:'false'};
@@ -63,6 +64,41 @@ it('quotes separate parcels and one tax calculation with all items, without rese
   expect(q.shipments).toHaveLength(2);expect(q.shipping).toBe('12.00');expect(q.tax).toBe('5.00');
   expect(calls.filter(c=>c.url.endsWith('/v1/tax/calculations'))).toHaveLength(1);expect(calls.at(-1).body.get('line_items[1][reference]')).toBe('el-zonte-at-sunrise');
   for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('available');expect(paypalOrders.size).toBe(0);
+});
+it('quotes framing as an unpaid request, preserving the delivery credit without changing payment or tax',async()=>{
+  const lines=[{id:'honeybadger-and-cub-with-genesis-block',quantity:1},{id:'el-zonte-at-sunrise',quantity:1}];
+  const plain=await priceCart({...env,...config},cartItems(lines),address,'buyer@example.test');
+  lines[0].framing={style:'natural',termsVersion:framingTermsVersion,estimate:'0.01'};
+  const q=await priceCart({...env,...config},cartItems(lines),address,'buyer@example.test');
+  expect(q.total).toBe(plain.total);expect(q.tax).toBe(plain.tax);expect(q.shipping).toBe(plain.shipping);
+  expect(q.shipments.find(s=>s.slug===lines[0].id).framing).toMatchObject({estimate:'400.00',shippingCredit:'6.00',style:'natural',mode:'quote-request'});
+  expect(q.shipments.find(s=>s.slug===lines[1].id).framing).toBeUndefined();
+  expect(paypalOrders.size).toBe(0);
+});
+it('settles an original framing purchase once, holds its label, ships the other original, and notifies both parties',async()=>{
+  const {order,id}=await setup('paypal',{SHIPPO_AUTO_LABEL_ENABLED:'true'});
+  const selected=cartItems([{id:'painting-portrait-in-green',quantity:1,framing:{style:'black',termsVersion:framingTermsVersion}}])[0];
+  await runInDurableObject(order,i=>{
+    const d=i.read();d.quote.items=d.quote.items.map(item=>item.id===selected.id?selected:item);
+    d.quote.shipments=d.quote.shipments.map(s=>s.slug===selected.id?{...s,framing:{...selected.framing,shippingCredit:s.shipping}}:s);i.save(d);
+  });
+  await order.start('paypal');approve();await order.capture();await order.refresh();await order.refresh();
+  const d=await read(order);
+  expect(d.status).toBe('paid');expect(d.jobs.find(j=>j.quote.slug===selected.id).status).toBe('framing-requested');
+  expect(d.jobs.find(j=>j.quote.slug!==selected.id).status).toBe('ready');
+  expect(calls.filter(c=>new URL(c.url).pathname==='/transactions/'&&c.method==='POST')).toHaveLength(1);
+  expect(d.framingSellerMail.status).toBe('sent');expect(d.customerMail.status).toBe('sent');expect(mailCount).toBe(3);
+  expect((await order.publicStatus()).quote.items.find(i=>i.id===selected.id).framing.style).toBe('black');
+  expect((await order.publicStatus()).quote.shipments.find(s=>s.id===selected.id).framing.shippingCredit).toBe('6.00');
+  const archive=await (await env.SALES_ARCHIVE.get(`orders/sandbox/${id}.json`)).json();
+  expect(archive.receipt.fulfillment.labelStatus).toBe('framing-requested');expect(archive.framingNotification.status).toBe('sent');
+  const mails=calls.filter(c=>c.url.includes('gmail.googleapis.com')).map(c=>atob(c.body.raw.replaceAll('-','+').replaceAll('_','/'))).filter(mime=>mime.includes(`Message-ID: <cart-${id}-`)).map(mime=>{
+    return {to:mime.match(/^To: (.+)$/m)[1].trim(),body:new TextDecoder().decode(Uint8Array.from(atob(mime.split('\r\n\r\n')[1]),c=>c.charCodeAt(0)))};
+  });
+  expect(mails.find(m=>m.to==='buyer@example.test').body).toContain('FRAMING REQUEST — NOT CHARGED');
+  expect(mails.find(m=>m.body.includes('NEXT STEPS')).body).toContain('Delivery credit already paid: $6.00');
+  expect(mails.find(m=>m.body.includes('NEXT STEPS')).to).toBe('tj@vermillionaurora.com');
+  for(const slug of ids)expect(await env.PAINTING_STOCK.getByName(slug).status()).toBe('sold');
 });
 it('reserves every original against competing carts and legacy checkout, with conditional cleanup',async()=>{
   const a=await setup(),b=await setup();

@@ -1,6 +1,7 @@
 import catalog, {catalogVersion as originalVersion} from './checkout-catalog.mjs';
 import prints, {printVersion} from './print-catalog.mjs';
-export const catalogVersion=`${originalVersion}-${printVersion}`;
+import {framingTermsVersion,originalFramingRequest} from '../catalog/original-framing.mjs';
+export const catalogVersion=`${originalVersion}-${printVersion}-${framingTermsVersion}`;
 import {bitcoinOffered} from './bitcoin-api.mjs';
 import {finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 export const MAX_ITEMS=12;
@@ -36,13 +37,15 @@ export function cartItems(input) {
     if(!line||typeof line.id!=='string'||seen.has(line.id))throw Error('An item is unavailable or its quantity is invalid.');
     seen.add(line.id);
     if(Object.hasOwn(prints,line.id)) {
+      if(line.framing!=null)throw Error('Original framing is not available for prints.');
       if(!Number.isSafeInteger(line.quantity)||line.quantity<1||line.quantity>10)throw Error('Choose between 1 and 10 copies per print.');
       const p=prints[line.id];
       if(p.sampleOnly){if(line.quantity!==1||sampleArtworks.has(p.productId))throw Error('Choose one sample size and one copy per painting.');sampleArtworks.add(p.productId);}
       return {...prints[line.id],quantity:line.quantity};
     }
     if(line.quantity!==1||!Object.hasOwn(catalog,line.id)||catalog[line.id].available===false)throw Error('An item is unavailable or its quantity is invalid.');
-    return {id:line.id,type:'original',quantity:1,title:catalog[line.id].title,amount:catalog[line.id].amount};
+    const framing=originalFramingRequest(line.framing,catalog[line.id].framingOffer);
+    return {id:line.id,type:'original',quantity:1,title:catalog[line.id].title,amount:catalog[line.id].amount,...(framing?{framing}:{})};
   }).sort((a,b)=>a.id.localeCompare(b.id));
 }
 export function commonMethods(env,items) { return ['paypal','bitcoin'].filter(method=>items.every(item=>paymentMethods(env,item.id).includes(method))); }
@@ -55,6 +58,6 @@ function printBitcoinOffered(env) {
   try {const u=new URL(env.BTCPAY_URL);return env.PAYPAL_MODE==='live'&&env.BTCPAY_CHECKOUT_ENABLED==='true'&&u.protocol==='https:'&&!u.username&&!u.password&&!!env.BTCPAY_STORE_ID&&!!env.BTCPAY_API_KEY&&!!env.BTCPAY_WEBHOOK_SECRET&&!!env.BITCOIN_ORDERS;}catch{return false;}
 }
 export function publicCartItem(item) {
-  const {id,type,productId,title,amount,quantity,imageSize,paperSize,paper,preview,mat,frame,sampleOnly}=item;
-  return {id,type,title,amount,quantity,...(type==='print'?{productId,imageSize,paperSize,paper,preview,...(sampleOnly?{sampleOnly:true}:{}),...(mat?{mat:{name:mat.name,outer:mat.outer,window:mat.window}}:{}),...(frame?{frame:{name:frame.name,size:frame.size,glazing:{name:frame.glazing.name}}}:{})}:{})};
+  const {id,type,productId,title,amount,quantity,imageSize,paperSize,paper,preview,mat,frame,sampleOnly,framing}=item;
+  return {id,type,title,amount,quantity,...(type==='print'?{productId,imageSize,paperSize,paper,preview,...(sampleOnly?{sampleOnly:true}:{}),...(mat?{mat:{name:mat.name,outer:mat.outer,window:mat.window}}:{}),...(frame?{frame:{name:frame.name,size:frame.size,glazing:{name:frame.glazing.name}}}:{})}:framing?{framing}:{})};
 }

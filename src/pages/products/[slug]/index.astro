@@ -46,6 +46,7 @@ const facts=painting ? [
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}
       {painting && p.checkout?.mode==='integrated' && p.listing.status==='available' && <div data-cart-product hidden>
+        <div data-original-framing></div>
         <div class="cart-product-actions"><button type="button" class="button button-solid" data-cart-add>Add to cart</button><button type="button" class="button button-ghost" data-cart-buy>Buy now</button></div>
         <p class="cart-product-message" data-cart-added role="status" aria-live="polite"></p>
       </div>}
