@@ -1482,5 +1482,48 @@
         "material": "Canvas"
       }
     ]
+  },
+  {
+    "name": "Bitcoin Film Festival Warsaw, Poland",
+    "slug": "bitcoin-film-festival-warsaw",
+    "folder": "exhibitions/bitcoin-film-festival-warsaw/images/",
+    "hero": "/exhibitions/bitcoin-film-festival-warsaw/images/display-at-kinoteka.jpeg",
+    "files": [
+      {
+        "url": "/exhibitions/bitcoin-film-festival-warsaw/images/warsaw-syrenka.jpeg",
+        "key": "exhibitions/bitcoin-film-festival-warsaw/images/warsaw-syrenka.jpeg",
+        "video": false
+      },
+      {
+        "url": "/exhibitions/bitcoin-film-festival-warsaw/images/three-festival-paintings.jpeg",
+        "key": "exhibitions/bitcoin-film-festival-warsaw/images/three-festival-paintings.jpeg",
+        "video": false
+      },
+      {
+        "url": "/exhibitions/bitcoin-film-festival-warsaw/images/honey-badger-and-cub.jpeg",
+        "key": "exhibitions/bitcoin-film-festival-warsaw/images/honey-badger-and-cub.jpeg",
+        "video": false
+      },
+      {
+        "url": "/exhibitions/bitcoin-film-festival-warsaw/images/palace-of-culture-and-science.jpeg",
+        "key": "exhibitions/bitcoin-film-festival-warsaw/images/palace-of-culture-and-science.jpeg",
+        "video": false
+      },
+      {
+        "url": "/exhibitions/bitcoin-film-festival-warsaw/images/display-at-kinoteka.jpeg",
+        "key": "exhibitions/bitcoin-film-festival-warsaw/images/display-at-kinoteka.jpeg",
+        "video": false
+      },
+      {
+        "url": "/exhibitions/bitcoin-film-festival-warsaw/images/coined-in-watercolor-at-festival.jpeg",
+        "key": "exhibitions/bitcoin-film-festival-warsaw/images/coined-in-watercolor-at-festival.jpeg",
+        "video": false
+      },
+      {
+        "url": "/exhibitions/bitcoin-film-festival-warsaw/images/outside-kinoteka.jpeg",
+        "key": "exhibitions/bitcoin-film-festival-warsaw/images/outside-kinoteka.jpeg",
+        "video": false
+      }
+    ]
   }
 ]
