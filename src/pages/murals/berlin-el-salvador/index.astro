@@ -27,6 +27,7 @@ const imageRoot='/murals/images/berlin-el-salvador/';
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/site-header.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   </head>
   <body>
     <div class="page-shell">
@@ -65,12 +66,26 @@ const imageRoot='/murals/images/berlin-el-salvador/';
             <a href="https://www.openstreetmap.org/way/745434044" target="_blank" rel="noopener noreferrer">Explore the main square on OpenStreetMap ↗</a>
             <a href="https://www.google.com/maps/search/?api=1&amp;query=Bitcoin+Community+Center&amp;query_place_id=ChIJEbH-DaJLe48RLF8bM7SqnAw" target="_blank" rel="noopener noreferrer">Find the Bitcoin Community Center ↗</a>
           </div>
-          <iframe title="Map of the main-square area in Berlín, El Salvador" src="https://www.openstreetmap.org/export/embed.html?bbox=-88.5340%2C13.4960%2C-88.5276%2C13.5012&amp;layer=mapnik&amp;marker=13.4986%2C-88.5308" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <div id="berlin-map" role="region" aria-label="Map of the main-square area in Berlín, El Salvador"><p class="map-fallback"><a href="https://www.openstreetmap.org/way/745434044">View the main-square area on OpenStreetMap ↗</a></p></div>
         </section>
         <nav class="more-murals" aria-label="More murals"><a href="/murals/">← Explore all murals</a><a href="/#murals">Back to the murals carousel</a></nav>
       </main>
       <SiteFooter />
     </div>
+    <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script is:inline>
+      if (window.L) {
+        const element = document.getElementById('berlin-map');
+        element.querySelector('.map-fallback').hidden = true;
+        const map = L.map(element, {scrollWheelZoom:false}).setView([13.4986, -88.5308], 17);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom:19,
+          attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.circleMarker([13.4986, -88.5308], {radius:8,color:'#9e3218',fillColor:'#d34220',fillOpacity:1})
+          .addTo(map).bindPopup('<strong>Main square · Berlín</strong><br>The sign is at the nearby basketball court.').openPopup();
+      }
+    </script>
   </body>
 </html>
 <style>
@@ -94,8 +109,9 @@ const imageRoot='/murals/images/berlin-el-salvador/';
   .mural-location{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:36px;align-items:center;border-top:1px solid var(--line);padding-top:40px;margin-top:52px}
   .location-copy p{line-height:1.7}.location-copy .eyebrow{margin:0 0 10px}.location-copy a{display:block;margin-top:14px;font-size:.85rem}
   .map-note{font-size:.85rem;color:var(--muted)}
-  iframe{width:100%;height:360px;border:1px solid var(--line);border-radius:8px;background:#e8dfd3}
+  #berlin-map{width:100%;height:360px;border:1px solid var(--line);border-radius:8px;background:#e8dfd3;z-index:0}
+  .map-fallback{padding:24px;font-size:.9rem}.map-fallback[hidden]{display:none}
   .more-murals{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;border-top:1px solid var(--line);padding-top:24px;margin-top:40px;font-size:.9rem}
   a:focus-visible{outline:3px solid #9e4936;outline-offset:5px}
-  @media(max-width:700px){.photo-grid{grid-template-columns:1fr;gap:28px}.mural-location{grid-template-columns:1fr;gap:22px}.photo-grid a{aspect-ratio:auto}.photo-grid img{height:auto}.mural-story{margin-block:30px 40px}.mural-location{margin-top:40px}iframe{height:320px}}
+  @media(max-width:700px){.photo-grid{grid-template-columns:1fr;gap:28px}.mural-location{grid-template-columns:1fr;gap:22px}.photo-grid a{aspect-ratio:auto}.photo-grid img{height:auto}.mural-story{margin-block:30px 40px}.mural-location{margin-top:40px}#berlin-map{height:320px}}
 </style>
