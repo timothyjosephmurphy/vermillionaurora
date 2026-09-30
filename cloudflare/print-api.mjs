@@ -22,6 +22,6 @@ export async function printApi(request,env) {
     const product=await prodigiProduct(env,sku);
     const quote=await quotePrints(env,[{sku,quantity:1,paperSize:product,attributes:{}}]);
     results.push({sku,ok:true,product,quote});
-  }catch(error){results.push({sku,ok:false,error:error.message});}
+  }catch(error){results.push({sku,ok:false,error:error.message,...(error.productOptions?{productOptions:error.productOptions}:{})});}
   return reply({mode:'sandbox',results});
 }

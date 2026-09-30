@@ -88,3 +88,8 @@ it('requires an audit credential for provider verification and never exposes it 
   const response=await printApi(new Request('https://worker/checkout/prints/verify',{method:'POST',body:'{}'}),{...env,...settings});expect(response.status).toBe(404);expect(calls).toHaveLength(0);
   const health=await printApi(new Request('https://worker/checkout/prints/health'),{...env,...settings});expect(await health.json()).toEqual({provider:'prodigi',mode:'sandbox',keyConfigured:true,enabled:true});
 });
+it('reports paper options only through the authenticated sandbox verifier without placing orders',async()=>{
+  fetch.mockImplementationOnce(async()=>Response.json({outcome:'Ok',product:{sku:item.sku,description:'Fine art paper',productDimensions:{width:12,height:16,units:'in'},attributes:{finish:['matte']},printAreas:{default:{required:true}},variants:[{attributes:{finish:'matte'},shipsTo:['US'],printAreaSizes:{default:{horizontalResolution:3600,verticalResolution:4800}}}]}}));
+  const response=await printApi(new Request('https://worker/checkout/prints/verify',{method:'POST',headers:{Authorization:'Bearer audit'},body:JSON.stringify({skus:[item.sku]})}),{...env,...settings,CHECKOUT_AUDIT_TOKEN:'audit'});
+  const data=await response.json();expect(data.results[0].ok).toBe(false);expect(data.results[0].productOptions.variants).toEqual([{attributes:{finish:'matte'},shipsToUS:true,printAreaSizes:{default:{horizontalResolution:3600,verticalResolution:4800}}}]);expect(orders.size).toBe(0);
+});

@@ -26,7 +26,13 @@ export async function prodigiProduct(env,sku) {
   const {product}=await prodigiRequest(env,`/products/${sku}`);
   if(product?.sku?.toUpperCase()!==sku||!product.printAreas?.default?.required)throw Error('Unexpected print product');
   const variants=(product.variants||[]).filter(v=>v.shipsTo?.includes('US')&&Object.keys(v.attributes||{}).length===0);
-  if(!variants.length)throw Error('This paper is not available without additional options for US delivery');
+  if(!variants.length){
+    const error=Error('This paper is not available without additional options for US delivery');
+    // Product metadata only; exposed solely by the authenticated sandbox verifier.
+    error.productOptions={sku,description:product.description,dimensions:product.productDimensions,attributes:product.attributes,
+      variants:(product.variants||[]).map(v=>({attributes:v.attributes,shipsToUS:v.shipsTo?.includes('US')===true,printAreaSizes:v.printAreaSizes}))};
+    throw error;
+  }
   const d=product.productDimensions;
   if(!d||!['in','cm','mm'].includes(d.units)||!['width','height'].every(k=>Number.isFinite(d[k])&&d[k]>0))throw Error('Invalid print product dimensions');
   const divisor=d.units==='in'?1:d.units==='cm'?2.54:25.4;
