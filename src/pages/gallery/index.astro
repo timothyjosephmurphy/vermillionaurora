@@ -1,8 +1,7 @@
 ---
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import { byId, catalogVersion } from '../../../catalog/catalog.mjs';
+import { byId, catalogVersion, urlFor, priceLabel, statusLabel, dimensionLabel } from '../../../catalog/catalog.mjs';
 import collections from '../../../catalog/collections.json';
 ---
 <!DOCTYPE html><html lang="en"><head>
@@ -15,6 +14,7 @@ import collections from '../../../catalog/collections.json';
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/exhibitions/viewer.css"><link rel="stylesheet" href="/site-header.css">
+  <link rel="stylesheet" href="/gallery/painting-list.css">
 <meta name="catalog-version" content={catalogVersion} /></head>
   <body class="painting-gallery-page">
     <div class="page-shell">
@@ -28,8 +28,34 @@ import collections from '../../../catalog/collections.json';
               <h2>Paintings</h2>
             </div>
 
-            <div class="gallery-filter" hidden=""><label><input type="checkbox" id="available-only"> Available works only</label><span id="gallery-result-count" role="status" aria-live="polite"></span></div>
-<div class="product-grid">{collections.gallery.map(entry=><ProductCard product={byId[entry.product]} variant={entry.variant} />)}</div>
+            <div data-gallery-list>
+              <div class="gallery-filter" hidden>
+                <label class="gallery-sort" for="gallery-sort">Sort by
+                  <select id="gallery-sort" aria-describedby="gallery-size-note">
+                    <option value="price-desc">Price: high to low</option>
+                    <option value="price-asc">Price: low to high</option>
+                    <option value="size-desc">Size: largest first</option>
+                    <option value="size-asc">Size: smallest first</option>
+                  </select>
+                </label>
+                <label><input type="checkbox" id="available-only"> Available only</label>
+                <span id="gallery-result-count" role="status" aria-live="polite"></span>
+                <p id="gallery-size-note">Size is sorted by painted area.</p>
+              </div>
+              <ul class="painting-list" aria-label="Paintings">
+                {collections.gallery.map(entry=>{
+                  const p=byId[entry.product],status=statusLabel(p),url=urlFor(p);
+                  const area=p.dimensions?p.dimensions.width*p.dimensions.height/(p.dimensions.unit==='cm'?2.54**2:1):undefined;
+                  return <li class="painting-list-row" data-product-id={p.id} data-availability={status} data-price={p.listing.price?.amount} data-area={area}>
+                    <a href={url} class="gallery-product-image" aria-label={`View ${p.title}`} tabindex="-1"><img src={p.image.src} alt="" loading="lazy" decoding="async" /></a>
+                    <h3><a href={url} class="product-title-link">{p.title}</a></h3>
+                    <p class="painting-list-dimensions">{dimensionLabel(p)}</p>
+                    <p class="painting-list-price" data-card-price>{p.listing.status==='available'?priceLabel(p):status}</p>
+                  </li>;
+                })}
+              </ul>
+              <p class="gallery-empty" hidden>No paintings are currently available. Uncheck “Available only” to see the full collection.</p>
+            </div>
 
           </div>
           </section></main></div>

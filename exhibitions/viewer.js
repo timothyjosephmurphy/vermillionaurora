@@ -1,5 +1,5 @@
 // Enhance the existing gallery; keep its links available if JavaScript is disabled.
-document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-grid').forEach(grid => {
+document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-grid, .painting-gallery-page .painting-list').forEach(grid => {
   let items = [...grid.children].map(node => {
     const img = node.querySelector('img');
     const product = node.querySelector('.product-title-link');
@@ -7,7 +7,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
       const imageLink = node.querySelector('.gallery-product-image, .product-image');
       const background = imageLink && getComputedStyle(imageLink).backgroundImage.match(/url\(["']?(.*?)["']?\)/);
       const src = img?.src || background?.[1];
-      return src ? {id:node.dataset.productId,src, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
+      return src ? {id:node.dataset.productId,node,price:Number(node.dataset.price)||null,area:Number(node.dataset.area)||null,src, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
     }
     const video = node.querySelector('video');
     return img ? {id:node.dataset.productId,src: img.src, alt: img.alt, caption: node.dataset.caption, product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), video: true} : null;
@@ -18,7 +18,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const box = document.createElement('section');
   box.className = 'exhibition-viewer' + (threeUp ? ' ev-three-up' : '');
-  box.setAttribute('aria-label', 'Exhibition gallery');
+  box.setAttribute('aria-label', grid.closest('.painting-gallery-page')?'Paintings carousel':'Exhibition gallery');
   box.setAttribute('aria-roledescription', 'carousel');
   box.innerHTML = `<div class="ev-stage"></div><div class="ev-controls"><button type="button" data-prev aria-label="Previous image">←</button><button type="button" data-play>Pause</button><span class="ev-count"></span><button type="button" data-next aria-label="Next image">→</button><a class="ev-original" target="_blank" rel="noopener">Open full size ↗</a></div><div class="ev-thumbs" aria-label="Choose an image"></div><label class="ev-slider">Browse images<input type="range" min="1" max="${items.length}" value="1" aria-label="Choose gallery image"></label>`;
   const stage = box.querySelector('.ev-stage');
@@ -149,7 +149,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   stage.addEventListener('pointercancel', () => { gesture = null; schedule(); });
   stage.addEventListener('lostpointercapture', () => { gesture = null; });
 
-  grid.before(box);
+  (grid.closest('[data-gallery-list]')||grid).before(box);
   grid.hidden = !grid.closest('.painting-gallery-page');
   const page = grid.closest('.exhibition-page');
   const hero = page?.querySelector('.exhibition-hero');
@@ -162,19 +162,38 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   const filter = document.querySelector('#available-only');
   if (filter && grid.closest('.painting-gallery-page')) {
     const count = document.querySelector('#gallery-result-count');
+    const sort = document.querySelector('#gallery-sort');
+    const empty = document.querySelector('.gallery-empty');
     const available = value => value === 'Available' || value === 'Available by inquiry';
+    // Sold and not-for-sale works have no current sale price and follow priced
+    // works. Size sorting compares area across inches and centimetres.
+    const priceGroup = item => available(item.availability)&&item.price!==null?0:item.availability==='Sold'?2:item.availability==='Not for sale'?3:1;
+    function sortedItems() {
+      if(!sort)return allItems;
+      const [kind,direction]=sort.value.split('-'),field=kind==='size'?'area':'price',sign=direction==='asc'?1:-1;
+      return [...allItems].sort((a,b)=>{
+        if(field==='price'&&priceGroup(a)!==priceGroup(b))return priceGroup(a)-priceGroup(b);
+        if(field==='price'&&priceGroup(a)!==0)return 0;
+        if(a[field]===null||b[field]===null)return (a[field]===null)-(b[field]===null);
+        return sign*(a[field]-b[field]);
+      });
+    }
     function applyFilter() {
-      items = filter.checked ? allItems.filter(item => available(item.availability)) : allItems;
-      [...grid.children].forEach(card => { card.hidden = filter.checked && !available(card.dataset.availability); });
+      const ordered=sortedItems();
+      if(sort)ordered.forEach(item=>grid.append(item.node));
+      items = filter.checked ? ordered.filter(item => available(item.availability)) : ordered;
+      [...grid.children].forEach(row => { row.hidden = filter.checked && !available(row.dataset.availability); });
       index = 0; autoPosition = 0; autoDirection = 1;
       buildItems(); slider.max = String(Math.max(1, items.length));
       box.hidden = !items.length;
       count.textContent = `${items.length} of ${allItems.length} paintings`;
+      if(empty)empty.hidden=items.length>0;
       if (items.length) show(0);
     }
     refreshFilter=applyFilter;
     filter.closest('.gallery-filter').hidden = false;
     filter.addEventListener('change', applyFilter);
+    sort?.addEventListener('change',applyFilter);
     applyFilter();
   }
   document.addEventListener('catalog:availability',()=>{
