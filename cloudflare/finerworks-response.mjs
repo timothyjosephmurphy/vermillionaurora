@@ -8,11 +8,17 @@ export function finerworksFailureDetails(path, data, secrets = []) {
     }
     return text.replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, '[email redacted]').replace(/[\r\n\t]/g, ' ').slice(0, 400);
   };
+  const kind = value => Array.isArray(value) ? `array:${value.length}` : value === null ? 'null' : typeof value;
+  const shape = value => value && typeof value === 'object' && !Array.isArray(value) ? Object.fromEntries(Object.keys(value).slice(0, 40).map(key => [redact(key), kind(value[key])])) : {};
   const status = data && typeof data.status === 'object' && data.status !== null ? data.status : {};
   const success = typeof status.success === 'boolean' ? status.success : null;
+  let encodedShape = null;
+  if (typeof data === 'string') {
+    try { const inner = JSON.parse(data); encodedShape = {kind:kind(inner),fields:shape(inner),firstItem:Array.isArray(inner)?shape(inner[0]):null}; } catch {}
+  }
   const shapes = {};
   for (const key of ['status', 'Status', 'success', 'Success', 'media_types', 'style_types', 'prices', 'error', 'Message', 'message']) {
-    if (data && Object.hasOwn(data, key)) shapes[key] = Array.isArray(data[key]) ? `array:${data[key].length}` : data[key] === null ? 'null' : typeof data[key];
+    if (data && Object.hasOwn(data, key)) shapes[key] = kind(data[key]);
   }
   return {
     endpoint: path,
@@ -21,6 +27,11 @@ export function finerworksFailureDetails(path, data, secrets = []) {
     successType: typeof status.success,
     referenceId: redact(status.reference_id),
     providerMessage: redact(status.message ?? data?.Message ?? data?.message),
-    responseShape: shapes
+    responseShape: shapes,
+    rootKind: kind(data),
+    rootFields: shape(data),
+    firstItemFields: Array.isArray(data) ? shape(data[0]) : null,
+    envelopeFields: data && typeof data === 'object' && !Array.isArray(data) ? Object.fromEntries(Object.keys(data).filter(key => !/debug|account|credential|key|billing|customer|user/i.test(key)).slice(0, 12).map(key => [redact(key), shape(Array.isArray(data[key])?data[key][0]:data[key])])) : null,
+    encodedShape
   };
 }
