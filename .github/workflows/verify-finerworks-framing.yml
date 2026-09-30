@@ -1,0 +1,35 @@
+name: Verify FinerWorks framing in sandbox
+on:
+  push:
+    branches: [finerworks-framing]
+    paths: ['cloudflare/**', 'catalog/**', 'payments/inspect-finerworks-frames.mjs', '.github/workflows/verify-finerworks-framing.yml']
+permissions:
+  contents: read
+concurrency:
+  group: checkout-sandbox
+  cancel-in-progress: false
+jobs:
+  framing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm ci
+          npm run build
+          node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
+      - name: Deploy isolated sandbox
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
+      - name: Verify frame materials and prices without ordering
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+        run: node payments/inspect-finerworks-frames.mjs

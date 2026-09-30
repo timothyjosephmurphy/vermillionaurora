@@ -6,6 +6,7 @@ import config from '../catalog/prints.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {newFinerWorksJob,fulfillFinerWorks,finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 import {quoteMattedOption,finerworksMats} from './finerworks-matting.mjs';
+import {finerworksFrames,finerworksGlazing} from './finerworks-framing.mjs';
 import {cartItems} from './cart-policy.mjs';
 import {priceCart} from './checkout-pricing.mjs';
 const reply=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
@@ -20,13 +21,18 @@ export async function finerworksDiagnostic(request,env,products) {
   let input;try{input=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   if(!input||Array.isArray(input)||typeof input!=='object')return reply({error:'Invalid request'},400);
   const task=input.task||'credentials';
-  if(!['credentials','materials','prices','shipping','preflight','test-order','cart-quote','matting','mats'].includes(task))return reply({error:'Unknown diagnostic task'},400);
+  if(!['credentials','materials','prices','shipping','preflight','test-order','cart-quote','matting','mats','framing-materials'].includes(task))return reply({error:'Unknown diagnostic task'},400);
   try {
     if(task==='credentials'){
       await finerworksRequest(env,'/v3/test_my_credentials',undefined,'GET');
       return reply({provider:'finerworks',mode:'sandbox',readOnly:true,credentialsOk:true,providerAppMode:'not-verified'});
     }
     if(task==='materials')return reply({provider:'finerworks',mode:'sandbox',readOnly:true,...await finerworksMaterials(env)});
+    if(task==='framing-materials') {
+      const art=config.artworks[input.productId],sku=art?.variants?.[input.sizeKey]?.sku;
+      if(!sku||!(art.testOnly||art.sampleOnly))return reply({error:'Choose a configured sample print'},400);
+      return reply({readOnly:true,ordersSubmitted:false,collections:await finerworksFrames(env,sku,input.collectionId),...(input.collectionId?{}:{glazing:await finerworksGlazing(env)})});
+    }
     if(task==='cart-quote') {
       if(!Array.isArray(input.productIds)||input.productIds.length<1||input.productIds.length>2||input.productIds.some(id=>!(config.artworks[id]?.testOnly||config.artworks[id]?.sampleOnly))||!['small','medium','full'].includes(input.sizeKey))return reply({error:'Choose configured sandbox pilots'},400);
       const items=cartItems(input.productIds.map(id=>({id:`print-${id}-${input.sizeKey}`,quantity:1})));
