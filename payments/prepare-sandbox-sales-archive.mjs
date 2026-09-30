@@ -6,6 +6,7 @@ const bucket=config.r2_buckets.find(b=>b.binding==='SALES_ARCHIVE')?.bucket_name
 assert.equal(config.name,'vermillion-checkout-sandbox');
 assert.equal(config.vars.PAYPAL_MODE,'sandbox');
 assert.equal(bucket,'test-sales-records');
+assert.ok(process.env.CLOUDFLARE_API_TOKEN,'Configure the CLOUDFLARE_SANDBOX_API_TOKEN GitHub Actions secret before deploying the sandbox');
 const base='https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/r2/buckets';
 const headers={Authorization:`Bearer ${process.env.CLOUDFLARE_API_TOKEN}`,'Content-Type':'application/json'};
 async function api(path,options={}) {
