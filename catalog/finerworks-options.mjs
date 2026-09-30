@@ -1,5 +1,6 @@
 import {finerworksProductCode} from './finerworks-products.mjs';
 import {publishedPrintPrice} from './print-pricing.mjs';
+import {withMatOptions} from './matted-options.mjs';
 // Geometry functions are injected to keep this module independent of the legacy provider.
 export function finerworksOptions(product, config, papers, geometry) {
   if (product.type !== 'painting' || !product.dimensions) return [];
@@ -30,7 +31,7 @@ export function finerworksOptions(product, config, papers, geometry) {
       try {const u=new URL(asset.url); if(u.protocol!=='https:'||u.username||u.password||u.search||u.hash||!['media.vermillionaurora.com','vermillionaurora.com'].includes(u.hostname)||! /\.(jpe?g|png)$/i.test(u.pathname)) throw Error();}
       catch {reasons.push('Use a full-resolution JPG or PNG hosted on your artwork media domain');}
     }
-    return {...choice,scale,id:`print-${product.id}-${choice.key}`,productId:product.id,provider:'finerworks',image,paper,resolution,amount,asset:asset||null,testOnly,
-      paperLabel:config.papers[art.paper||config.defaultPaper]?.label||'',reasons,ready:art.enabled===true&&reasons.length===0};
+    return withMatOptions({...choice,scale,id:`print-${product.id}-${choice.key}`,productId:product.id,provider:'finerworks',image,paper,resolution,amount,asset:asset||null,testOnly,
+      paperLabel:config.papers[art.paper||config.defaultPaper]?.label||'',reasons,ready:art.enabled===true&&reasons.length===0},variant);
   });
 }

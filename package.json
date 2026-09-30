@@ -8,7 +8,7 @@
     "preview": "astro preview",
     "test": "node --test tests/catalog.test.mjs cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs",
     "test:worker": "npm --prefix cloudflare/test test",
-    "test:browser": "node tests/catalog.browser-test.mjs && node payments/paypal-checkout.browser-test.cjs && node payments/bitcoin-checkout.browser-test.cjs && node tests/cart.browser-test.mjs"
+    "test:browser": "node tests/catalog.browser-test.mjs && node payments/paypal-checkout.browser-test.cjs && node payments/bitcoin-checkout.browser-test.cjs && node tests/cart.browser-test.mjs && node tests/print-matting.browser-test.mjs"
   },
   "license": "ISC",
   "type": "module",

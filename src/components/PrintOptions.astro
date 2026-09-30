@@ -3,7 +3,8 @@ import {printOptions,config,papers,sizeLabel} from '../../catalog/prints.mjs';
 import FrameRecommendations from './FrameRecommendations.astro';
 const {product,preview=false}=Astro.props;
 const options=printOptions(product,config,papers);
-const publicOptions=options.map(({id,label,scale,image,paper,amount,ready,paperLabel,reasons,testOnly})=>({id,label,scale,image,paper,amount,ready,paperLabel,testOnly,...(preview?{reasons}:{})}));
+const publicOption=({id,label,scale,image,paper,amount,ready,paperLabel,reasons,testOnly,mat,finishKey,matOptions})=>({id,label,scale,image,paper,amount,ready,paperLabel,testOnly,...(mat?{mat,finishKey}:{}),...(matOptions?{matOptions:matOptions.map(publicOption)}:{}),...(preview?{reasons}:{})});
+const publicOptions=options.map(publicOption);
 const visible=preview||options.some(o=>o.ready&&!o.testOnly);
 ---
 {visible&&<section class="print-options" data-print-options data-preview={preview?'true':'false'} data-options={JSON.stringify(publicOptions)} aria-label="Fine art print options">
@@ -13,8 +14,15 @@ const visible=preview||options.some(o=>o.ready&&!o.testOnly);
   <fieldset class="print-sizes"><legend>Choose your image size</legend>
     {options.map((o,i)=><label class:list={['print-choice',{'is-selected':i===0}]}><input type="radio" name={`print-size-${product.id}`} value={o.id} checked={i===0} disabled={!preview&&!o.ready}/><span><strong>{o.label}</strong><span>{sizeLabel(o.image)}</span><small>{Math.round(o.scale*100)}% of the original width and height</small></span><b>{o.amount?`$${Number(o.amount).toFixed(2)}`:preview?'Price pending':'Coming soon'}</b></label>)}
   </fieldset>
+  <label class="print-mat-label">Presentation
+    <select data-print-finish aria-describedby={`mat-description-${product.id}`}>
+      <option value="none">Print only</option>
+      <option value="snow-white" disabled={!preview&&!options.some(o=>o.matOptions?.some(m=>m.ready))}>Print with white conservation mat</option>
+    </select>
+  </label>
+  <p id={`mat-description-${product.id}`} class="print-border-note" data-print-mat-note>A mat adds a white border around your print, sized to fit a standard frame. Frame purchased separately.</p>
   <figure class="print-sheet-figure"><div class="print-sheet" data-print-sheet><div class="print-image-area" data-print-image-area><img src={product.image.src} alt={`Illustrative print preview of ${product.title}`} loading="lazy"/></div></div><figcaption data-print-dimensions></figcaption></figure>
-  <p class="print-paper" data-print-paper></p><p class="print-border-note">Unframed. Shipping is quoted separately at checkout without a markup. Applicable tax is additional.</p>
+  <p class="print-paper" data-print-paper></p><p class="print-total" data-print-total aria-live="polite"></p><p class="print-border-note">Frame not included. Shipping is quoted separately at checkout without a markup. Applicable tax is additional.</p>
   {preview&&<p class="print-border-note">Borderless printing uses a small trimming bleed. This illustration is not an approved edge-trimming proof.</p>}
   <FrameRecommendations context="print" paper={options[0]?.paper} image={options[0]?.image}/>
   {preview&&<details class="print-readiness"><summary>Preparation for this size</summary><ul data-print-readiness></ul></details>}

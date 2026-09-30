@@ -5,6 +5,8 @@ const id = value => Number.isSafeInteger(value) && value >= 0;
 const row = value => value !== null && typeof value === 'object' && !Array.isArray(value)
   && !Object.hasOwn(value, 'status') && !Object.hasOwn(value, 'error');
 const contracts = new Map([
+  ['/v3/list_mats', ['mats', value => row(value) && id(value.id) && typeof value.name === 'string']],
+  ['/v3/validate_product', ['product_validations', value => row(value) && typeof value.valid === 'boolean' && (typeof value.product_code === 'string' || typeof value.product_sku === 'string')]],
   ['/v3/list_media_types', ['media_types', value => row(value) && id(value.id)
     && id(value.product_type_id) && typeof value.name === 'string'
     && Array.isArray(value.style_ids) && value.style_ids.every(id)]],

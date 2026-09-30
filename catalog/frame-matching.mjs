@@ -45,7 +45,13 @@ export function originalFrameEligible(product) {
     /paper/i.test(product.surface||'') && !/\bframed\b/i.test(product.framing||'') &&
     !!frameSizeInches(product.dimensions);
 }
-export function frameSelection(paper, image, context='original') {
+export function frameSelection(paper, image, context='original',mat=null) {
+  if(mat){
+    const outer=frameSizeInches(mat.outer),art=frameSizeInches(image);
+    return {summary:outer?`Mat / frame: ${frameSizeLabel(outer)}${art?` · Image: ${frameSizeLabel(art)}`:''}`:'Mat size awaiting confirmation',
+      options:outer?matchingFrames(outer,outer).filter(f=>f.fit==='direct').map(f=>({...f,label:'Fits the selected mat',detail:`Use the ${frameSizeLabel(outer)} FinerWorks mat with this frame. Remove the frame’s supplied mat.`})):[],
+      empty:'No checked frame matches the selected mat size.'};
+  }
   const sheet=frameSizeInches(paper), art=frameSizeInches(image||paper);
   return {
     summary:sheet ? `${context==='print'?'Print paper':'Artwork'}: ${frameSizeLabel(sheet)}${art&&(art.width!==sheet.width||art.height!==sheet.height)?` · Image: ${frameSizeLabel(art)}`:''}` : 'Paper size awaiting confirmation',
