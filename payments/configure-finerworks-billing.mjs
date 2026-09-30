@@ -21,7 +21,15 @@ let installed=false;
 try {
   assert.ok(process.env.CLOUDFLARE_SANDBOX_API_TOKEN);assert.ok(process.env.CLOUDFLARE_PRODUCTION_API_TOKEN);
   assert.match(process.env.DEPLOYED_SHA||'',/^[a-f0-9]{40}$/);
-  const health=await (await fetch(origin+'/checkout/health')).json();assert.equal(health.mode,'sandbox');assert.equal(health.release,process.env.DEPLOYED_SHA);
+  // Cloudflare can briefly serve the previous release after a successful deploy.
+  let health;
+  for(let i=0;i<18;i++) {
+    const response=await fetch(origin+'/checkout/health?billing_setup='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(10000)});
+    health=await response.json();assert.equal(health.mode,'sandbox');
+    if(health.release===process.env.DEPLOYED_SHA)break;
+    await new Promise(resolve=>setTimeout(resolve,5000));
+  }
+  assert.equal(health.release,process.env.DEPLOYED_SHA,'The expected sandbox deployment is not available yet');
   await productionSettings();
   installed=true;
   await cloudflare(sandbox,process.env.CLOUDFLARE_SANDBOX_API_TOKEN,'secrets','PUT',{name:setupName,type:'secret_text',text:JSON.stringify({token:setupToken,publicKey:publicKey.export({format:'jwk'})})});

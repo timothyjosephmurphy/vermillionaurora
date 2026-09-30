@@ -1,7 +1,7 @@
 name: Inspect live print configuration
 on:
   push:
-    branches: [prodigi-print-ordering]
+    branches: [finerworks-print-ordering]
     paths: ['payments/check-print-readiness.mjs', '.github/workflows/check-print-readiness.yml']
   workflow_dispatch:
 permissions:

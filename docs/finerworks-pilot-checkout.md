@@ -1,5 +1,10 @@
 # Dorian and Chase checkout pilot
 
+Active print development uses `finerworks-print-ordering`. It replaces the old
+`prodigi-print-ordering` branch name; FinerWorks is the selected provider.
+The old reference remains available for other open work, but deployment and
+verification workflows follow the FinerWorks branch. Continue changes there.
+
 The sandbox page is `/checkout/print-test` on `vermillion-checkout-sandbox`.
 It offers one copy of either or both paintings at $25 / $45 / $75 on Watercolor
 Bright White paper. PayPal uses sandbox funds; FinerWorks uses both `test_mode`
@@ -54,3 +59,11 @@ The production readiness check found no `FINERWORKS_WEB_API_KEY`,
 `vermillion-commissions`. Its print provider and enablement flags are also unset.
 Configure those secrets before a controlled paid sample release. This check
 only reports binding presence; it neither reads secret values nor enables sales.
+
+Saved-card setup uses `payments/configure-finerworks-billing.mjs`, explicitly
+requested by the `[configure-finerworks-billing]` commit marker. It retrieves the
+sole or default payment method from the authenticated FinerWorks account,
+transfers its token with session-bound RSA encryption, and stores it only as
+the production `FINERWORKS_PAYMENT_TOKEN` secret. The temporary sandbox setup
+credential is deleted in `finally`. No token or private key is logged or saved
+as an artifact. This operation does not enable purchases or submit an order.

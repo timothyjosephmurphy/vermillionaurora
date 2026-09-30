@@ -1,7 +1,7 @@
 name: Inspect FinerWorks mat configuration
 on:
   push:
-    branches: [prodigi-print-ordering]
+    branches: [finerworks-print-ordering]
     paths: ['payments/inspect-finerworks-mats.mjs', '.github/workflows/inspect-finerworks-mats.yml']
   workflow_dispatch:
 permissions:

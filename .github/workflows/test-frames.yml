@@ -1,7 +1,7 @@
 name: Verify frame recommendations
 on:
   push:
-    branches: [main, amazon-frame-recommendations, prodigi-print-ordering]
+    branches: [main, amazon-frame-recommendations, finerworks-print-ordering]
     paths:
       - 'catalog/frames.json'
       - 'catalog/frame-matching.mjs'
