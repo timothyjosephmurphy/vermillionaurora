@@ -1,6 +1,7 @@
 ---
 import ProductLayout from '../../../layouts/ProductLayout.astro';
 import PaintingImage from '../../../components/PaintingImage.astro';
+import PrintOptions from '../../../components/PrintOptions.astro';
 import FrameRecommendations from '../../../components/FrameRecommendations.astro';
 import {originalFrameEligible} from '../../../../catalog/frame-matching.mjs';
 import { products, priceLabel, statusLabel, dimensionLabel } from '../../../../catalog/catalog.mjs';
@@ -45,6 +46,7 @@ const facts=painting ? [
       </div>}
       <div class="product-inquiry"><a class="button button-solid" href={p.inquiryHref||`/?product=${p.slug}#contact`}>{p.inquiry.label}</a>{p.inquiry.note && <p>{p.inquiry.note}</p>}</div>
       {originalFrameEligible(p)&&<FrameRecommendations paper={p.dimensions}/>}
+      {painting&&<PrintOptions product={p}/>}
       <a class="product-back" href={p.back.href}>{p.back.label}</a>
     </div>
   </article>

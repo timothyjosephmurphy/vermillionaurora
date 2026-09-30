@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 2,
+  "provider": "finerworks",
+  "defaultPaper": "watercolor-bright-white",
+  "minimumDpi": 300,
+  "pricingRule": "finerworks-3.5x-v1",
+  "shippingPolicy": "quoted-separately-no-markup",
+  "papers": {
+    "archival-matte": {
+      "label": "Archival Matte Paper"
+    },
+    "watercolor-bright-white": {
+      "label": "Watercolor Bright White"
+    },
+    "photo-rag": {
+      "label": "Hahnemühle Photo Rag"
+    }
+  },
+  "artworks": {
+    "painting-portrait-in-green": {
+      "dimensions": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "dimensionsVerified": true,
+      "source": {
+        "widthPx": 808,
+        "heightPx": 970,
+        "sha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2"
+      },
+      "testOnly": false,
+      "enabled": true,
+      "variants": {
+        "full": {
+          "amount": "75.00",
+          "sku": "5M144M8S15X12",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-09-30",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
+            "sha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+            "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+            "productCode": "5M144M8S15X12",
+            "imageWidthIn": 15,
+            "imageHeightIn": 12,
+            "paperWidthIn": 15,
+            "paperHeightIn": 12,
+            "approved": true,
+            "layoutApproved": true,
+            "sampleOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S15X12F0S20X16J1S15X12",
+              "baseSku": "5M144M8S15X12",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 20,
+                  "height": 16,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15,
+                  "height": 12,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "135.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:46.291Z",
+              "asset": null
+            }
+          }
+        },
+        "medium": {
+          "amount": "45.00",
+          "sku": "5M144M8S11.25X9",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-09-30",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
+            "sha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+            "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+            "productCode": "5M144M8S11.25X9",
+            "imageWidthIn": 11.25,
+            "imageHeightIn": 9,
+            "paperWidthIn": 11.25,
+            "paperHeightIn": 9,
+            "approved": true,
+            "layoutApproved": true,
+            "sampleOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S11DD25X9F0S14X11J1S11DD25X9",
+              "baseSku": "5M144M8S11.25X9",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 14,
+                  "height": 11,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 11.25,
+                  "height": 9,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "75.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:44.938Z",
+              "asset": null
+            }
+          }
+        },
+        "small": {
+          "amount": "25.00",
+          "sku": "5M144M8S7.5X6",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-09-30",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-samples/787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765.jpg",
+            "sha256": "787d8ece2ad8e68971a89d559bd910cbca4049e2ff1afc3e1bda567b11173765",
+            "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+            "productCode": "5M144M8S7.5X6",
+            "imageWidthIn": 7.5,
+            "imageHeightIn": 6,
+            "paperWidthIn": 7.5,
+            "paperHeightIn": 6,
+            "approved": true,
+            "layoutApproved": true,
+            "sampleOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S7DD5X6F0S10X8J1S7DD5X6",
+              "baseSku": "5M144M8S7.5X6",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 10,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 7.5,
+                  "height": 6,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "50.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:43.650Z",
+              "asset": null
+            }
+          }
+        }
+      },
+      "sampleOnly": true,
+      "liveSampleApproved": true
+    },
+    "painting-portrait-in-gold": {
+      "dimensions": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "dimensionsVerified": true,
+      "source": {
+        "widthPx": 360,
+        "heightPx": 390,
+        "sha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4"
+      },
+      "testOnly": false,
+      "enabled": true,
+      "variants": {
+        "full": {
+          "amount": "75.00",
+          "sku": "5M144M8S15X12",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-09-30",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
+            "sha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+            "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+            "productCode": "5M144M8S15X12",
+            "imageWidthIn": 15,
+            "imageHeightIn": 12,
+            "paperWidthIn": 15,
+            "paperHeightIn": 12,
+            "approved": true,
+            "layoutApproved": true,
+            "sampleOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S15X12F0S20X16J1S15X12",
+              "baseSku": "5M144M8S15X12",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 20,
+                  "height": 16,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15,
+                  "height": 12,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "135.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:46.291Z",
+              "asset": null
+            }
+          }
+        },
+        "medium": {
+          "amount": "45.00",
+          "sku": "5M144M8S11.25X9",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-09-30",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
+            "sha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+            "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+            "productCode": "5M144M8S11.25X9",
+            "imageWidthIn": 11.25,
+            "imageHeightIn": 9,
+            "paperWidthIn": 11.25,
+            "paperHeightIn": 9,
+            "approved": true,
+            "layoutApproved": true,
+            "sampleOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S11DD25X9F0S14X11J1S11DD25X9",
+              "baseSku": "5M144M8S11.25X9",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 14,
+                  "height": 11,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 11.25,
+                  "height": 9,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "75.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:44.938Z",
+              "asset": null
+            }
+          }
+        },
+        "small": {
+          "amount": "25.00",
+          "sku": "5M144M8S7.5X6",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-09-30",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-samples/1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514.jpg",
+            "sha256": "1b2ecbeb6d8c7ce0f1ab3ea91b0da547efc6d31fb5de30aa2eba858f0138b514",
+            "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+            "productCode": "5M144M8S7.5X6",
+            "imageWidthIn": 7.5,
+            "imageHeightIn": 6,
+            "paperWidthIn": 7.5,
+            "paperHeightIn": 6,
+            "approved": true,
+            "layoutApproved": true,
+            "sampleOnly": true,
+            "layout": "contain-with-clear-trim-margin",
+            "widthPx": 1250,
+            "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S7DD5X6F0S10X8J1S7DD5X6",
+              "baseSku": "5M144M8S7.5X6",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 10,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 7.5,
+                  "height": 6,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "50.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:43.650Z",
+              "asset": null
+            }
+          }
+        }
+      },
+      "sampleOnly": true,
+      "liveSampleApproved": true
+    }
+  }
+}

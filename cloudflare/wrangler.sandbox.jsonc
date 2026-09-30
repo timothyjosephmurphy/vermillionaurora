@@ -11,47 +11,32 @@
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "SHIPPO_CARRIER_ALLOWLIST": "UPS",
     "PAYPAL_MERCHANT_ID": "QRRG2GBRVB8DN",
+    "CART_CHECKOUT_ENABLED": "true",
+    "PRINT_CHECKOUT_ENABLED": "true",
+    "FINERWORKS_ORDER_ENABLED": "true",
+    "PRINT_PROVIDER": "finerworks",
+    "PRODIGI_ENV": "sandbox",
+    "PRINT_CHECKOUT_IDS": "print-painting-portrait-in-green-full,print-painting-portrait-in-green-medium,print-painting-portrait-in-green-small,print-painting-portrait-in-gold-full,print-painting-portrait-in-gold-medium,print-painting-portrait-in-gold-small",
     "SANDBOX_RETURN_ORIGIN": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev"
   },
   "durable_objects": {
     "bindings": [
-      {
-        "name": "PAINTING_STOCK",
-        "class_name": "PaintingStock"
-      },
-      {
-        "name": "SHIPPING_CHECK",
-        "class_name": "ShippingCheck"
-      },
-      {
-        "name": "SALES_LEDGER",
-        "class_name": "SalesLedger"
-      }
+      {"name": "PAINTING_STOCK", "class_name": "PaintingStock"},
+      {"name": "SHIPPING_CHECK", "class_name": "ShippingCheck"},
+      {"name": "SALES_LEDGER", "class_name": "SalesLedger"},
+      {"name": "BITCOIN_ORDERS", "class_name": "BitcoinOrder"},
+      {"name": "CART_ORDERS", "class_name": "CartOrder"}
     ]
   },
   "migrations": [
-    {
-      "tag": "painting-stock-sandbox-v1",
-      "new_sqlite_classes": [
-        "PaintingStock"
-      ]
-    },
-    {
-      "tag": "shipping-check-v1",
-      "new_sqlite_classes": [
-        "ShippingCheck"
-      ]
-    },
-    {
-      "tag": "sales-ledger-v1",
-      "new_sqlite_classes": [
-        "SalesLedger"
-      ]
-    }
+    {"tag": "painting-stock-sandbox-v1", "new_sqlite_classes": ["PaintingStock"]},
+    {"tag": "shipping-check-v1", "new_sqlite_classes": ["ShippingCheck"]},
+    {"tag": "sales-ledger-v1", "new_sqlite_classes": ["SalesLedger"]},
+    {"tag": "bitcoin-orders-v1", "new_sqlite_classes": ["BitcoinOrder"]},
+    {"tag": "cart-orders-v1", "new_sqlite_classes": ["CartOrder"]}
   ],
-  "observability": {
-    "logs": {
-      "enabled": true
-    }
-  }
+  "r2_buckets": [
+    {"binding": "SALES_ARCHIVE", "bucket_name": "test-sales-records"}
+  ],
+  "observability": {"logs": {"enabled": true}}
 }

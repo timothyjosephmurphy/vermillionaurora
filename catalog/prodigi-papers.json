@@ -1,0 +1,578 @@
+[
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-4X6",
+    "width": 4,
+    "height": 6,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-5X7",
+    "width": 5,
+    "height": 7,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-8X10",
+    "width": 8,
+    "height": 10,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-8X12",
+    "width": 8,
+    "height": 12,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-10X20",
+    "width": 10,
+    "height": 20,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-11X14",
+    "width": 11,
+    "height": 14,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-12X16",
+    "width": 12,
+    "height": 16,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-12X24",
+    "width": 12,
+    "height": 24,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-16X20",
+    "width": 16,
+    "height": 20,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-16X24",
+    "width": 16,
+    "height": 24,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-16X32",
+    "width": 16,
+    "height": 32,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-18X24",
+    "width": 18,
+    "height": 24,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-18X36",
+    "width": 18,
+    "height": 36,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-20X28",
+    "width": 20,
+    "height": 28,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-20X40",
+    "width": 20,
+    "height": 40,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-24X36",
+    "width": 24,
+    "height": 36,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-24X48",
+    "width": 24,
+    "height": 48,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-24X60",
+    "width": 24,
+    "height": 60,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-30X40",
+    "width": 30,
+    "height": 40,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-30X60",
+    "width": 30,
+    "height": 60,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-36X48",
+    "width": 36,
+    "height": 48,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-40X60",
+    "width": 40,
+    "height": 60,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-40X80",
+    "width": 40,
+    "height": 80,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "enhanced-matte",
+    "sku": "GLOBAL-FAP-50X100",
+    "width": 50,
+    "height": 100,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-4X6",
+    "width": 4,
+    "height": 6,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-5X7",
+    "width": 5,
+    "height": 7,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-8X10",
+    "width": 8,
+    "height": 10,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-8X12",
+    "width": 8,
+    "height": 12,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-10X20",
+    "width": 10,
+    "height": 20,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-11X14",
+    "width": 11,
+    "height": 14,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-12X16",
+    "width": 12,
+    "height": 16,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-12X24",
+    "width": 12,
+    "height": 24,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-16X20",
+    "width": 16,
+    "height": 20,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-16X24",
+    "width": 16,
+    "height": 24,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-16X32",
+    "width": 16,
+    "height": 32,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-18X24",
+    "width": 18,
+    "height": 24,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-18X36",
+    "width": 18,
+    "height": 36,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-20X28",
+    "width": 20,
+    "height": 28,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-20X40",
+    "width": 20,
+    "height": 40,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-24X36",
+    "width": 24,
+    "height": 36,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-24X48",
+    "width": 24,
+    "height": 48,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-24X60",
+    "width": 24,
+    "height": 60,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-30X40",
+    "width": 30,
+    "height": 40,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-30X60",
+    "width": 30,
+    "height": 60,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-36X48",
+    "width": 36,
+    "height": 48,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-40X60",
+    "width": 40,
+    "height": 60,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-40X80",
+    "width": 40,
+    "height": 80,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "cold-press",
+    "sku": "ART-FAP-CPWP-50X100",
+    "width": 50,
+    "height": 100,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-4X6",
+    "width": 4,
+    "height": 6,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-5X7",
+    "width": 5,
+    "height": 7,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-8X10",
+    "width": 8,
+    "height": 10,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-8X12",
+    "width": 8,
+    "height": 12,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-10X20",
+    "width": 10,
+    "height": 20,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-11X14",
+    "width": 11,
+    "height": 14,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-12X16",
+    "width": 12,
+    "height": 16,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-12X24",
+    "width": 12,
+    "height": 24,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-16X20",
+    "width": 16,
+    "height": 20,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-16X24",
+    "width": 16,
+    "height": 24,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-16X32",
+    "width": 16,
+    "height": 32,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-18X24",
+    "width": 18,
+    "height": 24,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-18X36",
+    "width": 18,
+    "height": 36,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-20X28",
+    "width": 20,
+    "height": 28,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-20X40",
+    "width": 20,
+    "height": 40,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-24X36",
+    "width": 24,
+    "height": 36,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-24X48",
+    "width": 24,
+    "height": 48,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-24X60",
+    "width": 24,
+    "height": 60,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-30X40",
+    "width": 30,
+    "height": 40,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-30X60",
+    "width": 30,
+    "height": 60,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-36X48",
+    "width": 36,
+    "height": 48,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-40X60",
+    "width": 40,
+    "height": 60,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-40X80",
+    "width": 40,
+    "height": 80,
+    "unit": "in",
+    "verifiedUS": false
+  },
+  {
+    "paper": "german-etching",
+    "sku": "GLOBAL-HGE-50X100",
+    "width": 50,
+    "height": 100,
+    "unit": "in",
+    "verifiedUS": false
+  }
+]

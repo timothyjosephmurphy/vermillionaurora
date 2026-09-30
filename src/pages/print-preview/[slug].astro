@@ -1,0 +1,9 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import PrintOptions from '../../components/PrintOptions.astro';
+import {proposals} from '../../../catalog/prints.mjs';
+export function getStaticPaths(){return proposals.map(({product})=>({params:{slug:product.slug},props:{product}}));}
+const {product}=Astro.props;
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Print preview — {product.title}</title><link rel="stylesheet" href="/styles.css"/><link rel="stylesheet" href="/site-header.css"/></head><body><SiteHeader/><div class="print-review-banner">Print collection preview · No orders or payments are enabled here.</div><main class="print-review-main"><p class="eyebrow dark">A print in the proportions of the original</p><h1>{product.title}</h1><label>Preview another painting <select class="print-review-select" onchange="location.assign(this.value)">{proposals.map(({product:p})=><option value={`/print-preview/${p.slug}/`} selected={p.id===product.id}>{p.title}</option>)}</select></label><div class="print-review-grid"><div><div class="print-review-art"><img {...product.image}/></div><p>{product.medium}</p><a href={`/products/${product.slug}/`}>View the original painting ↗</a></div><PrintOptions product={product} preview={true}/></div></main><SiteFooter/></body></html>

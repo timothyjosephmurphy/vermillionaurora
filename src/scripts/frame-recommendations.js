@@ -1,8 +1,8 @@
 import {frameCatalog,frameSelection} from '../../catalog/frame-matching.mjs';
 
 const element=(tag,text,className)=>{const el=document.createElement(tag);el.textContent=text;if(className)el.className=className;return el;};
-function render(root,paper,image){
-  const selection=frameSelection(paper,image,'print'),list=root.querySelector('[data-frame-list]');
+function render(root,paper,image,mat=null){
+  const selection=frameSelection(paper,image,'print',mat),list=root.querySelector('[data-frame-list]');
   root.querySelector('[data-frame-size]').textContent=selection.summary;
   list.replaceChildren(...selection.options.map(frame=>{
     const card=element('article','','frame-option');
@@ -21,11 +21,13 @@ export function initializeFrameRecommendations(){
     const update=()=>{
       let options;try{options=JSON.parse(selector.dataset.options||'[]');}catch{options=[];}
       const value=selector.querySelector('input[type="radio"]:checked')?.value;
-      const selected=Array.isArray(options)?options.find(option=>option.id===value):null;
+      const base=Array.isArray(options)?options.find(option=>option.id===value):null;
+      const finish=selector.querySelector('[data-print-finish]')?.value||'none';
+      const selected=finish==='none'?base:base?.matOptions?.find(o=>o.finishKey===finish);
       // Never substitute image dimensions when the physical sheet is unknown.
-      render(root,selected?.paper||selected?.paperSize||null,selected?.image||selected?.imageSize||null);
+      render(root,selected?.paper||selected?.paperSize||null,selected?.image||selected?.imageSize||null,selected?.mat);
     };
-    selector.addEventListener('change',event=>{if(event.target.matches('input[type="radio"]'))update();});
+    selector.addEventListener('change',event=>{if(event.target.matches('input[type="radio"], [data-print-finish]'))update();});
     selector.addEventListener('print:selectionchange',update);
     update();
   });

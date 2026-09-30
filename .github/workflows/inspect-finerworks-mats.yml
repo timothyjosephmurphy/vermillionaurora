@@ -1,0 +1,24 @@
+name: Inspect FinerWorks mat configuration
+on:
+  push:
+    branches: [finerworks-print-ordering]
+    paths: ['payments/inspect-finerworks-mats.mjs', '.github/workflows/inspect-finerworks-mats.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checkout-sandbox
+  cancel-in-progress: false
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Inspect the deployed sandbox mat catalog without deploying or ordering
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+        run: node payments/inspect-finerworks-mats.mjs
