@@ -31,7 +31,7 @@ try {
   const framedIds=['print-painting-portrait-in-gold-small-frame-white','print-painting-portrait-in-green-medium-frame-natural'];
   const q=await api('quote',{catalogVersion:catalog.version,items:framedIds.map(id=>({id,quantity:1})),email:'checkout-verification@example.test',address:{name:'Checkout Verification',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'}});
   framedOrder={orderId:q.orderId,key:q.key};
-  assert.equal(q.quote.base,'395.00');assert(Number(q.quote.shipping)>0);
+  assert.equal(q.quote.base,'161.63');assert(Number(q.quote.shipping)>0);
   assert.deepEqual(q.quote.items.map(item=>item.id).sort(),framedIds.sort());
   assert(q.quote.items.every(item=>item.frame&&item.mat&&item.frame.glazing?.name==='Premium Clear'));
   console.log('PASS: live framed selections, full framed prices, glazing and destination shipping; payment not started.');

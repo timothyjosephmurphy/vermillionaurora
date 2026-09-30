@@ -123,8 +123,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "335.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "149.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:49.802Z",
               "asset": {
                 "provider": "finerworks",
@@ -183,7 +183,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "75.00"
             },
             "white": {
               "sku": "5M144M8S12X15F2S16X20J1S12X15G1",
@@ -222,8 +223,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "335.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "149.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:54.600Z",
               "asset": {
                 "provider": "finerworks",
@@ -282,7 +283,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "75.00"
             },
             "natural": {
               "sku": "5M144M8S12X15F7S16X20J1S12X15G1",
@@ -321,8 +323,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "385.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "164.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:59.457Z",
               "asset": {
                 "provider": "finerworks",
@@ -381,7 +383,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "75.00"
             }
           },
           "quotedAt": "2026-09-30T22:27:40.915Z"
@@ -477,8 +480,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "205.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "91.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:48.104Z",
               "asset": {
                 "provider": "finerworks",
@@ -537,7 +540,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "45.00"
             },
             "white": {
               "sku": "5M144M8S9X11DD25F2S11X14J1S9X11DD25G1",
@@ -576,8 +580,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "205.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "91.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:52.918Z",
               "asset": {
                 "provider": "finerworks",
@@ -636,7 +640,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "45.00"
             },
             "natural": {
               "sku": "5M144M8S9X11DD25F7S11X14J1S9X11DD25G1",
@@ -675,8 +680,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "245.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "102.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:57.909Z",
               "asset": {
                 "provider": "finerworks",
@@ -735,7 +740,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "45.00"
             }
           },
           "quotedAt": "2026-09-30T22:27:40.915Z"
@@ -831,8 +837,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "150.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "59.63",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:46.510Z",
               "asset": {
                 "provider": "finerworks",
@@ -891,7 +897,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "25.00"
             },
             "white": {
               "sku": "5M144M8S6X7DD5F2S8X10J1S6X7DD5G1",
@@ -930,8 +937,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "150.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "59.63",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:51.369Z",
               "asset": {
                 "provider": "finerworks",
@@ -990,7 +997,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "25.00"
             },
             "natural": {
               "sku": "5M144M8S6X7DD5F7S8X10J1S6X7DD5G1",
@@ -1029,8 +1037,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "180.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "68.63",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:56.210Z",
               "asset": {
                 "provider": "finerworks",
@@ -1089,7 +1097,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "25.00"
             }
           },
           "quotedAt": "2026-09-30T22:27:40.915Z"
@@ -1204,8 +1213,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "335.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "149.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:49.802Z",
               "asset": {
                 "provider": "finerworks",
@@ -1264,7 +1273,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "75.00"
             },
             "white": {
               "sku": "5M144M8S12X15F2S16X20J1S12X15G1",
@@ -1303,8 +1313,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "335.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "149.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:54.600Z",
               "asset": {
                 "provider": "finerworks",
@@ -1363,7 +1373,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "75.00"
             },
             "natural": {
               "sku": "5M144M8S12X15F7S16X20J1S12X15G1",
@@ -1402,8 +1413,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "385.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "164.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:59.457Z",
               "asset": {
                 "provider": "finerworks",
@@ -1462,7 +1473,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "75.00"
             }
           },
           "quotedAt": "2026-09-30T22:27:40.915Z"
@@ -1558,8 +1570,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "205.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "91.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:48.104Z",
               "asset": {
                 "provider": "finerworks",
@@ -1618,7 +1630,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "45.00"
             },
             "white": {
               "sku": "5M144M8S9X11DD25F2S11X14J1S9X11DD25G1",
@@ -1657,8 +1670,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "205.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "91.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:52.918Z",
               "asset": {
                 "provider": "finerworks",
@@ -1717,7 +1730,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "45.00"
             },
             "natural": {
               "sku": "5M144M8S9X11DD25F7S11X14J1S9X11DD25G1",
@@ -1756,8 +1770,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "245.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "102.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:57.909Z",
               "asset": {
                 "provider": "finerworks",
@@ -1816,7 +1830,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "45.00"
             }
           },
           "quotedAt": "2026-09-30T22:27:40.915Z"
@@ -1912,8 +1927,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "150.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "59.63",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:46.510Z",
               "asset": {
                 "provider": "finerworks",
@@ -1972,7 +1987,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "25.00"
             },
             "white": {
               "sku": "5M144M8S6X7DD5F2S8X10J1S6X7DD5G1",
@@ -2011,8 +2027,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "150.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "59.63",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:51.369Z",
               "asset": {
                 "provider": "finerworks",
@@ -2071,7 +2087,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "25.00"
             },
             "natural": {
               "sku": "5M144M8S6X7DD5F7S8X10J1S6X7DD5G1",
@@ -2110,8 +2127,8 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "180.00",
-              "pricingRule": "finerworks-3.5x-v1",
+              "amount": "68.63",
+              "pricingRule": "finerworks-frame-at-cost-v1",
               "quotedAt": "2026-09-30T22:27:56.210Z",
               "asset": {
                 "provider": "finerworks",
@@ -2170,7 +2187,8 @@
                   }
                 },
                 "layoutReview": "portrait-borderless-center-crop-with-mat-overlap"
-              }
+              },
+              "unframedAmount": "25.00"
             }
           },
           "quotedAt": "2026-09-30T22:27:40.915Z"

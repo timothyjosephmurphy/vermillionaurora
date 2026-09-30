@@ -3,6 +3,8 @@
 ## Approved retail policy
 USD retail = manufacturing-only single-copy cost multiplied by 3.5, rounded UP to the next $5, with a $25 minimum. Shipping is quoted for the destination and charged separately without markup. Customer sales tax is calculated separately by the existing checkout tax service; supplier sales tax is a fulfillment cost, not a second customer tax.
 
+For framed prints, that multiplier applies only to the unframed artwork. Add the exact supplier frame, mat and glazing costs to the saved unframed selling price, with no markup or further rounding. `catalog/frame-pricing.mjs` validates the complete component breakdown and checkout requires the saved price to equal this total. Supplier cost changes in either direction require review. Previously paid orders keep their saved totals.
+
 `catalog/print-pricing.mjs` uses integer cents. `reviewPrintPrice` returns recommendations and flags changes; it never changes a published retail price. Saved amounts and their exact FinerWorks codes live in `catalog/prints.json`. An explicit `priceOverride` requires an amount at least $25 and a reason. Changing media or dimensions requires requoting and reapproval. The quote guard pauses checkout rather than silently reducing the standard margin after a provider cost increase.
 
 The Watercolor Bright White pilots (Dorian Nakamoto and Chase Toole) have saved small/medium/full retail prices of $25/$45/$75 based on the September 30 provider quotes. The code mapping is product type 5, media 144, style 8. No supplier costs are exposed in public HTML, cart responses or repository pricing snapshots.

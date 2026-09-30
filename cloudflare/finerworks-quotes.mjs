@@ -1,6 +1,7 @@
 import {finerworksRequest,finerworksMaterials,finerworksPrices,finerworksEnvironment} from './finerworks-api.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
 import {moneyCents,moneyString,printRetailPrice} from '../catalog/print-pricing.mjs';
+import {framedRetailPrice} from '../catalog/frame-pricing.mjs';
 import {printAssetUrl} from './print-asset-policy.mjs';
 import {quoteMattedOption} from './finerworks-matting.mjs';
 import {sameMat} from '../catalog/matting.mjs';
@@ -81,7 +82,7 @@ export async function quoteFinerWorksPrints(env,items,address) {
   const materials=await finerworksMaterials(env);
   for(const item of items) {
     if(item.frame){
-      const quoted=await quoteFramedOption(env,materials,{id:item.id,image:item.imageSize,paper:{...item.paperSize,sku:item.baseSku}},item.frame.key);
+      const quoted=await quoteFramedOption(env,materials,{id:item.id,amount:item.unframedAmount,image:item.imageSize,paper:{...item.paperSize,sku:item.baseSku}},item.frame.key);
       if(quoted.sku!==item.sku||!sameMat(quoted.mat,item.mat)||!sameFrame(quoted.frame,item.frame))throw Error('FinerWorks frame or product configuration changed; review before checkout');
       continue;
     }
@@ -96,7 +97,7 @@ export async function quoteFinerWorksPrints(env,items,address) {
   const units=await finerworksPrices(env,products.map(p=>p.product_sku));
   for(const item of items) {
     const q=units.find(q=>q.code===item.sku);
-    if(!q?.ok||moneyCents(item.amount)<moneyCents(printRetailPrice(q.productionCost)))throw Error('Print production cost changed; review the saved retail price before checkout');
+    if(!q?.ok||(item.frame?item.amount!==framedRetailPrice(q,item.unframedAmount):moneyCents(item.amount)<moneyCents(printRetailPrice(q.productionCost))))throw Error('Print production cost changed; review the saved retail price before checkout');
   }
   // The shipping endpoint validates the order model, including the image object.
   for(const product of products) {

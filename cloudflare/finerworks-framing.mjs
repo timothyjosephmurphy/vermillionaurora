@@ -2,7 +2,7 @@ import {finerworksRequest,finerworksPrices} from './finerworks-api.mjs';
 import {matProductBuild,finerworksMats} from './finerworks-matting.mjs';
 import {matLayout} from '../catalog/matting.mjs';
 import {frameFinish} from '../catalog/framing.mjs';
-import {reviewPrintPrice} from '../catalog/print-pricing.mjs';
+import {reviewFramedPrice} from '../catalog/frame-pricing.mjs';
 import frames from '../catalog/finerworks-frames.json' with {type:'json'};
 const text = (v, max = 160) => typeof v === 'string' ? v.slice(0, max) : '';
 const number = v => Number.isFinite(v) ? v : null;
@@ -48,5 +48,5 @@ export async function quoteFramedOption(env,materials,option,frameKey,published=
   const [price]=await finerworksPrices(env,[sku]);
   if(!price?.ok||Number(price.matCost)<=0||Number(price.frameCost)<=0||Number(price.glazingCost)<=0||Number(price.secondMatCost)!==0)throw Error('No verified complete framed print price');
   return {id:`${option.id}-frame-${frameKey}`,baseId:option.id,key:option.key,finishKey:`frame-${frameKey}`,mat,frame,sku,baseSku:option.paper.sku,image:option.image,paper:{...option.paper,sku},
-    quote:price,pricing:reviewPrintPrice(price,published?.sku===sku?published:{}),quotedAt:new Date().toISOString(),sellable:false};
+    quote:price,pricing:reviewFramedPrice(price,option.amount,published?.sku===sku?published:{}),quotedAt:new Date().toISOString(),sellable:false};
 }

@@ -27,13 +27,13 @@ function provider(t,{valid=true,missingGlazing=false,frameCost=21}={}) {
     throw Error('Unexpected provider request');
   });return calls;
 }
-const option=()=>({id:'print-test-small',key:'small',image,paper});
+const option=()=>({id:'print-test-small',key:'small',amount:'25.00',image,paper});
 test('framed checkout uses the complete configured code through pricing, shipping, fulfillment and records',async t=>{
   const calls=provider(t),o=await quoteFramedOption(env,{media:[media],styles:[style]},option(),'black');
-  assert.equal(o.pricing.recommendedAmount,'140.00');
+  assert.equal(o.pricing.recommendedAmount,'58.00');
   const build=calls.find(c=>c.endpoint.endsWith('build_product_code')).body.build;
   assert.deepEqual([build.FrameID,build.GlassID,build.MatID,build.FrameW,build.FrameH,build.PrintW,build.PrintH],[1,1,1,10,8,7.5,6]);
-  const item={id:o.id,type:'print',title:'Test framed print',provider:'finerworks',sku:o.sku,baseSku:o.baseSku,frame:o.frame,mat:o.mat,imageSize:image,paperSize:image,quantity:2,amount:'140.00',assetUrl:'https://media.vermillionaurora.com/prints/test.jpg'};
+  const item={id:o.id,type:'print',title:'Test framed print',provider:'finerworks',sku:o.sku,baseSku:o.baseSku,frame:o.frame,mat:o.mat,imageSize:image,paperSize:image,quantity:2,amount:'58.00',unframedAmount:'25.00',assetUrl:'https://media.vermillionaurora.com/prints/test.jpg'};
   const quote=await quoteFinerWorksPrints(env,[item],address);assert.equal(quote.productionCost,'80.00');assert.equal(quote.shipping,'12.95');
   await validateFinerWorksPrintOrder(env,[item],address,quote);
   const submission=calls.find(c=>c.endpoint.endsWith('submit_orders_v2')).body;
@@ -41,6 +41,7 @@ test('framed checkout uses the complete configured code through pricing, shippin
   await assert.rejects(validateFinerWorksPrintOrder(env,[{...item,frame:{...item.frame,id:2}}],address,quote),/Refresh/);
   await assert.rejects(quoteFinerWorksPrints(env,[{...item,frame:{...item.frame,glazing:{id:2}}}],address),/configuration changed/);
   await assert.rejects(quoteFinerWorksPrints(env,[{...item,amount:'25.00'}],address),/cost changed/);
+  await assert.rejects(quoteFinerWorksPrints(env,[{...item,amount:'140.00'}],address),/cost changed/);
   assert.throws(()=>groupPrintProducts([{...item,frame:{...item.frame,size:{width:8,height:10}}}],'test'),/frame/);
   const job=newFinerWorksJob(env,{id:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',mode:'sandbox',quote:{address,printQuote:quote}},[item]);
   assert.equal(job.request.orders[0].order_items[0].product_sku,sku);assert.deepEqual(finerworksFulfillmentRecord(job).items[0].frame,item.frame);

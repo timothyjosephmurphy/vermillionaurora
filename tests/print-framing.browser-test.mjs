@@ -18,7 +18,7 @@ try{
       assert.equal(action,'quote','The test must not start, capture or submit an order');
       const input=route.request().postDataJSON();quotes.push(input);
       const items=input.items.map(i=>({...available.find(p=>p.id===i.id),quantity:i.quantity}));
-      return route.fulfill({headers,json:{orderId:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key:'b'.repeat(64),status:'quoted',methods:['paypal'],quote:{items,base:'395.00',shipping:'21.95',tax:'0.00',total:'416.95'}}});
+      return route.fulfill({headers,json:{orderId:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key:'b'.repeat(64),status:'quoted',methods:['paypal'],quote:{items,base:'161.63',shipping:'21.95',tax:'0.00',total:'183.58'}}});
     }
     if(u.hostname!==new URL(origin).hostname)return route.fulfill({json:{products:[],availability:{}}});
     const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
@@ -32,17 +32,17 @@ try{
     assert.equal(await selector.locator('.print-choice').count(),3);
     await selector.locator('[data-print-finish]').selectOption('frame-black');
     await page.waitForFunction(()=>!document.querySelector('[data-print-add]').disabled);
-    assert.match(await selector.locator('[data-print-total]').textContent(),/Framed print: \$150.00/);
+    assert.match(await selector.locator('[data-print-total]').textContent(),/Framed print: \$59.63/);
     assert.match(await selector.locator('[data-print-inclusions]').textContent(),/print, frame, white mat and glazing/);
     assert(await selector.locator('[data-print-own-frame]').isHidden());
     assert(await selector.locator('[data-print-sheet]').evaluate(el=>el.classList.contains('is-framed')));
     await selector.locator('input[value$="-medium"]').check();
-    assert.match(await selector.locator('[data-print-total]').textContent(),/\$205.00/);
+    assert.match(await selector.locator('[data-print-total]').textContent(),/\$91.00/);
     assert.match(await selector.locator('[data-print-dimensions]').textContent(),/11 × 14/);
     await selector.locator('[data-print-finish]').selectOption('frame-natural');
-    assert.match(await selector.locator('[data-print-total]').textContent(),/\$245.00/);
+    assert.match(await selector.locator('[data-print-total]').textContent(),/\$102.00/);
     await selector.locator('input[value$="-full"]').check();
-    assert.match(await selector.locator('[data-print-total]').textContent(),/\$385.00/);
+    assert.match(await selector.locator('[data-print-total]').textContent(),/\$164.00/);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     const shape=await selector.locator('[data-print-sheet]').boundingBox();assert(shape.height>shape.width);
     await page.waitForFunction(()=>{const image=document.querySelector('[data-print-image-area] img');return image.complete&&image.naturalWidth===1000&&image.naturalHeight===1250;});
@@ -66,7 +66,7 @@ try{
   for(const [name,value]of Object.entries({email:'buyer@example.test',name:'Test Buyer',street1:'600 4th Ave',city:'Seattle',state:'WA',zip:'98104'}))await page.locator(`[name="${name}"]`).fill(value);
   await page.locator('[data-cart-quote]').click();await page.locator('[data-cart-payments]').waitFor({state:'visible'});
   assert.deepEqual(quotes[0].items,cart);assert.equal(quotes[0].catalogVersion,'framed-test-'+printVersion);
-  assert.match(await page.locator('[data-cart-total]').textContent(),/416.95/);
+  assert.match(await page.locator('[data-cart-total]').textContent(),/183.58/);
   unavailable=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.locator('[data-print-finish]').selectOption('frame-black');
   assert(await page.locator('[data-print-add]').isDisabled());
   unavailable=false;stale=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.locator('[data-print-finish]').selectOption('frame-black');

@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="a2d68a21ed97cd062707";
+export const printVersion="e7bf635328b251dded87";
 export default {
   "print-painting-portrait-in-gold-full": {
     "id": "print-painting-portrait-in-gold-full",
@@ -44,7 +44,7 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Original-size print — Black frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "335.00",
+    "amount": "149.00",
     "currency": "USD",
     "sku": "5M144M8S12X15F1S16X20J1S12X15G1",
     "scale": 1,
@@ -106,7 +106,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "75.00"
   },
   "print-painting-portrait-in-gold-full-frame-white": {
     "id": "print-painting-portrait-in-gold-full-frame-white",
@@ -115,7 +116,7 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Original-size print — White frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "335.00",
+    "amount": "149.00",
     "currency": "USD",
     "sku": "5M144M8S12X15F2S16X20J1S12X15G1",
     "scale": 1,
@@ -177,7 +178,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "75.00"
   },
   "print-painting-portrait-in-gold-full-frame-natural": {
     "id": "print-painting-portrait-in-gold-full-frame-natural",
@@ -186,7 +188,7 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Original-size print — Natural wood frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "385.00",
+    "amount": "164.00",
     "currency": "USD",
     "sku": "5M144M8S12X15F7S16X20J1S12X15G1",
     "scale": 1,
@@ -248,7 +250,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "75.00"
   },
   "print-painting-portrait-in-gold-medium": {
     "id": "print-painting-portrait-in-gold-medium",
@@ -293,7 +296,7 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Medium print — Black frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "205.00",
+    "amount": "91.00",
     "currency": "USD",
     "sku": "5M144M8S9X11DD25F1S11X14J1S9X11DD25G1",
     "scale": 0.75,
@@ -355,7 +358,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "45.00"
   },
   "print-painting-portrait-in-gold-medium-frame-white": {
     "id": "print-painting-portrait-in-gold-medium-frame-white",
@@ -364,7 +368,7 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Medium print — White frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "205.00",
+    "amount": "91.00",
     "currency": "USD",
     "sku": "5M144M8S9X11DD25F2S11X14J1S9X11DD25G1",
     "scale": 0.75,
@@ -426,7 +430,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "45.00"
   },
   "print-painting-portrait-in-gold-medium-frame-natural": {
     "id": "print-painting-portrait-in-gold-medium-frame-natural",
@@ -435,7 +440,7 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Medium print — Natural wood frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "245.00",
+    "amount": "102.00",
     "currency": "USD",
     "sku": "5M144M8S9X11DD25F7S11X14J1S9X11DD25G1",
     "scale": 0.75,
@@ -497,7 +502,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "45.00"
   },
   "print-painting-portrait-in-gold-small": {
     "id": "print-painting-portrait-in-gold-small",
@@ -542,7 +548,7 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Small print — Black frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "150.00",
+    "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6X7DD5F1S8X10J1S6X7DD5G1",
     "scale": 0.5,
@@ -604,7 +610,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "25.00"
   },
   "print-painting-portrait-in-gold-small-frame-white": {
     "id": "print-painting-portrait-in-gold-small-frame-white",
@@ -613,7 +620,7 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Small print — White frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "150.00",
+    "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6X7DD5F2S8X10J1S6X7DD5G1",
     "scale": 0.5,
@@ -675,7 +682,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "25.00"
   },
   "print-painting-portrait-in-gold-small-frame-natural": {
     "id": "print-painting-portrait-in-gold-small-frame-natural",
@@ -684,7 +692,7 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Small print — Natural wood frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "180.00",
+    "amount": "68.63",
     "currency": "USD",
     "sku": "5M144M8S6X7DD5F7S8X10J1S6X7DD5G1",
     "scale": 0.5,
@@ -746,7 +754,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "25.00"
   },
   "print-painting-portrait-in-green-full": {
     "id": "print-painting-portrait-in-green-full",
@@ -791,7 +800,7 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Original-size print — Black frame",
     "artworkTitle": "Chase Toole",
-    "amount": "335.00",
+    "amount": "149.00",
     "currency": "USD",
     "sku": "5M144M8S12X15F1S16X20J1S12X15G1",
     "scale": 1,
@@ -853,7 +862,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "75.00"
   },
   "print-painting-portrait-in-green-full-frame-white": {
     "id": "print-painting-portrait-in-green-full-frame-white",
@@ -862,7 +872,7 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Original-size print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "335.00",
+    "amount": "149.00",
     "currency": "USD",
     "sku": "5M144M8S12X15F2S16X20J1S12X15G1",
     "scale": 1,
@@ -924,7 +934,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "75.00"
   },
   "print-painting-portrait-in-green-full-frame-natural": {
     "id": "print-painting-portrait-in-green-full-frame-natural",
@@ -933,7 +944,7 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Original-size print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "385.00",
+    "amount": "164.00",
     "currency": "USD",
     "sku": "5M144M8S12X15F7S16X20J1S12X15G1",
     "scale": 1,
@@ -995,7 +1006,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "75.00"
   },
   "print-painting-portrait-in-green-medium": {
     "id": "print-painting-portrait-in-green-medium",
@@ -1040,7 +1052,7 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print — Black frame",
     "artworkTitle": "Chase Toole",
-    "amount": "205.00",
+    "amount": "91.00",
     "currency": "USD",
     "sku": "5M144M8S9X11DD25F1S11X14J1S9X11DD25G1",
     "scale": 0.75,
@@ -1102,7 +1114,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "45.00"
   },
   "print-painting-portrait-in-green-medium-frame-white": {
     "id": "print-painting-portrait-in-green-medium-frame-white",
@@ -1111,7 +1124,7 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "205.00",
+    "amount": "91.00",
     "currency": "USD",
     "sku": "5M144M8S9X11DD25F2S11X14J1S9X11DD25G1",
     "scale": 0.75,
@@ -1173,7 +1186,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "45.00"
   },
   "print-painting-portrait-in-green-medium-frame-natural": {
     "id": "print-painting-portrait-in-green-medium-frame-natural",
@@ -1182,7 +1196,7 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "245.00",
+    "amount": "102.00",
     "currency": "USD",
     "sku": "5M144M8S9X11DD25F7S11X14J1S9X11DD25G1",
     "scale": 0.75,
@@ -1244,7 +1258,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "45.00"
   },
   "print-painting-portrait-in-green-small": {
     "id": "print-painting-portrait-in-green-small",
@@ -1289,7 +1304,7 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Small print — Black frame",
     "artworkTitle": "Chase Toole",
-    "amount": "150.00",
+    "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6X7DD5F1S8X10J1S6X7DD5G1",
     "scale": 0.5,
@@ -1351,7 +1366,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "25.00"
   },
   "print-painting-portrait-in-green-small-frame-white": {
     "id": "print-painting-portrait-in-green-small-frame-white",
@@ -1360,7 +1376,7 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Small print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "150.00",
+    "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6X7DD5F2S8X10J1S6X7DD5G1",
     "scale": 0.5,
@@ -1422,7 +1438,8 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "25.00"
   },
   "print-painting-portrait-in-green-small-frame-natural": {
     "id": "print-painting-portrait-in-green-small-frame-natural",
@@ -1431,7 +1448,7 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Small print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "180.00",
+    "amount": "68.63",
     "currency": "USD",
     "sku": "5M144M8S6X7DD5F7S8X10J1S6X7DD5G1",
     "scale": 0.5,
@@ -1493,6 +1510,7 @@ export default {
         "id": 1,
         "name": "Premium Clear"
       }
-    }
+    },
+    "unframedAmount": "25.00"
   }
 };

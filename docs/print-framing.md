@@ -14,15 +14,20 @@ frame opening dimensions, not exterior moulding dimensions.
 
 | Print size | Unframed | Black or white frame | Natural wood frame |
 | --- | ---: | ---: | ---: |
-| 6 × 7.5 in | $25 | $150 | $180 |
-| 9 × 11.25 in | $45 | $205 | $245 |
-| 12 × 15 in | $75 | $335 | $385 |
+| 6 × 7.5 in | $25 | $59.63 | $68.63 |
+| 9 × 11.25 in | $45 | $91 | $102 |
+| 12 × 15 in | $75 | $149 | $164 |
 
-Prices use the existing approved rule: 3.5 times the complete manufacturing cost,
-rounded up to $5, with a $25 minimum. Destination shipping is quoted separately
+The unframed artwork price retains the approved rule: 3.5 times print production
+cost, rounded up to $5, with a $25 minimum. At the owner's direction, framed
+prices add the exact frame, mat and glazing costs to that unframed selling price.
+There is no markup or additional rounding on framing. For example, the small
+black frame is $25 + $34.63 = $59.63. Destination shipping is quoted separately
 without markup; applicable tax is separate. Checkout revalidates materials,
 dimensions, complete product codes, pricing and shipping. It cannot silently
 replace a frame or charge an unframed price for a framed order.
+Any change to the quoted framing cost pauses checkout for a price review, so
+lower supplier costs cannot turn into an unapproved framing margin either.
 
 Each finish has a separate catalog/cart ID. Orders, customer and seller emails,
 public order summaries, and the private fulfillment record retain the selected
