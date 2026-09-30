@@ -36,6 +36,15 @@ try{
  for(const sizeKey of ['small','medium','full']){
   const o=await verify({task:'matting',productId:'painting-portrait-in-green',sizeKey});
   assert.equal(o.sellable,false);assert.equal(o.ordersSubmitted,false);
+  assert.equal(o.pricing.amount,o.pricing.recommendedAmount);assert.equal(o.pricing.needsReview,false);
   console.log('VERIFIED_MAT_OPTION '+JSON.stringify({key:sizeKey,sku:o.sku,baseSku:o.baseSku,mat:o.mat,material:o.material,amount:o.pricing.recommendedAmount,pricingRule:o.pricing.ruleId,quotedAt:o.quotedAt}));
  }
+ const address={name:'Sandbox Test',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'};
+ for(const sizeKey of ['small','medium','full']){
+  const q=await verify({task:'shipping',productId:'painting-portrait-in-green',sizeKey,finishKey:'snow-white',quantity:1,address});
+  assert.equal(q.readOnly,true);assert.equal(q.provider,'finerworks');assert.equal(q.shippingMarkup,'0.00');
+ }
+ const preflight=await verify({task:'preflight',productId:'painting-portrait-in-green',sizeKey:'small',finishKey:'snow-white',quantity:2,address});
+ assert.equal(preflight.validated,true);assert.equal(preflight.ordersSubmitted,false);
+ console.log('PASS: all three saved mat prices, mat-inclusive shipping, and two-copy validation. No orders submitted.');
 }finally{if(installed)await secret('DELETE');}
