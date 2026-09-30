@@ -4398,6 +4398,10 @@
     ],
     "examples": [
       {
+        "src": "/gallery-images/portrait-in-blue.jpg",
+        "alt": "Grandpa Howard by TJ Murphy"
+      },
+      {
         "src": "https://media.vermillionaurora.com/images/Single%20Portraits/IMG_2221.jpeg",
         "alt": "Single Portraits example 18 by TJ Murphy"
       },
