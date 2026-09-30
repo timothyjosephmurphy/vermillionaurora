@@ -2,3 +2,16 @@
 .print-mat-label{display:grid;gap:.5rem;font-size:.9rem;font-weight:600;margin:1.3rem 0 .6rem}.print-mat-label select{width:100%;min-height:44px;padding:.7rem;border:1px solid #b8a794;border-radius:8px;background:#fffdf9;font:inherit;color:#302b25}.print-mat-label select:focus-visible{outline:3px solid #855942;outline-offset:3px}.print-sheet.is-matted .print-image-area{box-shadow:0 0 0 1px #d8d2cb,0 2px 5px #392d2933}.print-total{font-size:1.05rem;font-weight:600;margin:1rem 0}.print-sheet{max-height:none}
 .print-options{scroll-margin-top:100px}.print-options [hidden]{display:none!important}.print-sheet.is-framed{outline:12px solid var(--print-frame-color,#262321);box-shadow:0 12px 25px #392d2955}.print-preview-caption{font-size:.72rem;color:#71685e;text-align:center;margin:.5rem 0 0}.print-own-frame{margin-top:1.2rem;font-size:.85rem}.print-own-frame summary{cursor:pointer;min-height:44px;padding:.7rem 0}.product-print-availability{font-size:.88rem;line-height:1.5;color:#66584c}.product-print-availability a{color:#754b33;font-weight:600;text-underline-offset:4px}
 @media(max-width:980px){.print-options{scroll-margin-top:180px}}
+.print-purchase-dialog{position:fixed;inset:0;margin:auto;width:min(760px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 40px);padding:0;border:1px solid var(--line,#d9d0c7);border-radius:14px;background:var(--bg,#f7f1e9);color:var(--ink,#231e19);overflow:auto;overscroll-behavior:contain;box-shadow:0 22px 80px #0005}
+.print-purchase-dialog:not([open]){display:none}
+.print-purchase-dialog::backdrop{background:#171310b3}
+.print-dialog-header{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:18px 24px;border-bottom:1px solid var(--line,#d9d0c7);background:var(--bg,#f7f1e9)}
+.print-dialog-header h2{margin:0;font:600 1.55rem/1.15 'Cormorant Garamond',Georgia,serif;overflow-wrap:anywhere}
+.print-dialog-close{display:flex;align-items:center;gap:.6rem;min-height:44px;flex-shrink:0;padding:.5rem .8rem;border:1px solid var(--line,#d9d0c7);border-radius:6px;background:var(--paper,#fffaf4);color:inherit;font:inherit;font-size:.85rem;cursor:pointer}
+.print-dialog-close span{font-size:1.4rem;line-height:1}
+.print-dialog-close:focus-visible{outline:2px solid var(--accent-dark,#874c33);outline-offset:3px}
+.print-dialog-content{padding:8px 28px 24px}
+.print-dialog-content .print-options{margin:0;padding:0;border:0}
+html.print-dialog-open{overflow:hidden}
+html.print-dialog-open body{position:fixed;top:var(--print-dialog-scroll);width:100%;overflow:hidden}
+@media(max-width:600px){.print-purchase-dialog{width:calc(100% - 20px);max-height:calc(100dvh - 24px)}.print-dialog-header{padding:12px 16px}.print-dialog-content{padding:8px 16px 20px}}
