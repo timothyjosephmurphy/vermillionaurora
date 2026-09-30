@@ -4,8 +4,42 @@
 
 The owner requires a vendor API integration as part of the finished feature.
 The manual Framebridge flow below is an unpublished prototype, not the completed
-feature. Do not publish it as the final framing integration. Vendor choice is
-pending confirmation of direct API access for this custom Cloudflare website.
+feature. Do not publish it as the final framing integration. The owner selected
+Northwest Framing / NW Art + Framing as the preferred candidate to pursue on
+September 30, 2026. Final integration depends on confirmation that its API
+supports mailed-in originals for this custom Cloudflare website.
+
+### Northwest Framing partnership and integration
+
+- [Getting started](https://www.nwframing.com/ifs/home/features): contact
+  **ifs_contact@nwframing.com** first. Establish a fulfillment partnership before
+  registering with IFS; an administrator then grants dashboard/API permissions.
+- [Public API documentation](https://www.nwframing.com/ifs/help/apiexplorer)
+  documents custom orders, order retrieval/status, shipping quotes, packaging,
+  and inventory. A shipping quote is not a complete framing-price quote.
+- [Authentication and sandbox](https://www.nwframing.com/ifs/help/intro): HTTPS
+  Basic authentication with an account username/password and a vendor-assigned
+  business role. The documented sandbox is https://nwframing.com/ifs.test and
+  shares account membership. Request sandbox access before testing any orders.
+- [CustomOrder](https://www.nwframing.com/ifs/Help/Api/post-api-role-customorder)
+  includes dimensions, frame/mat components, and a delivery address. The
+  [artwork component model](https://www.nwframing.com/ifs/Help/ResourceModel?modelName=IFSOrderComponentDTO)
+  specifies an artwork URL; it does not establish how to register an inbound
+  physical original. Obtain the supported workflow and an example payload.
+- [Webhooks](https://www.nwframing.com/ifs/help/webhooks) document order-status
+  and shipment-tracking updates. Confirm authentication, retries, and delivery
+  guarantees before using callbacks to update customer orders.
+- The API introduction describes advance SKU setup and imports at 30-minute
+  intervals. Confirm whether both apply to one-off CustomOrder submissions, how
+  imports are reconciled, and how duplicate submissions are prevented.
+
+The next step is a partnership inquiry covering one-off original watercolors
+on paper, conservation mounting, frame/mat choices, pre-payment pricing, inbound
+shipping/insurance, and direct delivery to the buyer. Confirm minimum volumes,
+fees, credentials, and sandbox access. Do not reuse Framebridge estimates or
+replace its name in the prototype without implementing the confirmed workflow.
+No inquiry has been sent, account registered, supplier order created, or
+Northwest integration deployed.
 
 Research findings:
 
@@ -19,12 +53,12 @@ Research findings:
   specifically describes automated mail-in framing, prepaid inbound labels, and
   direct delivery to customers. This verifies the mail-in automation workflow on
   Shopify, not access to the same capabilities from a custom website.
-- No public direct-API documentation, credentials process, sandbox, access fees,
+- For Simply Framed, no public direct-API documentation, credentials process, sandbox, access fees,
   or volume requirements were found. Request those from Simply Framed's
   [sales team](https://simplyframed.com/pages/contact-sales),
   hello@simplyframed.com. No company has been contacted on the owner's behalf.
 
-Before implementing or choosing a vendor, obtain confirmation of:
+Before implementing the chosen supplier, obtain confirmation of:
 
 1. Direct API access for a small independent artist using a custom website,
    including eligibility, setup/usage fees, and any order minimums.
@@ -40,7 +74,7 @@ save the supplier quote, submit a vendor order only after verified payment,
 provide the inbound label to the artist, and return production/tracking updates
 to the customer. Unknown submission outcomes require reconciliation rather than
 blind retries. Do not substitute undocumented storefront endpoints or assume
-Framebridge's estimates apply to Simply Framed. Keep API credentials in the
+Framebridge's estimates apply to another supplier. Keep API credentials in the
 server-side Worker. No live supplier calls or secret names are invented here.
 
 ## Existing prototype
