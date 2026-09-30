@@ -3,6 +3,7 @@ export {CartOrder} from './cart-order.mjs';
 export { BitcoinOrder } from './bitcoin-order.mjs';
 import {cartCheckout} from './cart-checkout.mjs';
 import {printApi} from './print-api.mjs';
+import {finerworksBillingSetup} from './finerworks-billing-setup.mjs';
 import catalog from './checkout-catalog.mjs';
 import { checkout, checkoutWebhook } from './paypal-orders.mjs';
 import { verifySandbox } from './checkout-verification.mjs';
@@ -44,6 +45,7 @@ export default {
       if(p)return Response.redirect(p.assetUrl,302);
       return new Response('Not found',{status:404});
     }
+    if (path==='/checkout/prints/billing-setup')return finerworksBillingSetup(request,env);
     if (path.startsWith('/checkout/prints/')) return printApi(request,env);
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path==='/checkout/shipping-check') return shippingCheck(request,env);
