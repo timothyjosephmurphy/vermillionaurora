@@ -13,6 +13,16 @@ test('multiplies per-copy provider prices and still rejects inconsistent two-cop
   data.orders[0].options[0].calculated_total.product_pricing[0].total_price=14;
   assert.throws(()=>shippingOptions(data,'po',grouped));
 });
+test('retains fractional-cent volume pricing until the manufacturing subtotal is rounded',()=>{
+  const data=reply('po',2),total=data.orders[0].options[0].calculated_total;
+  total.product_pricing[0].total_price=7.333;
+  total.order_subtotal=14.666;total.order_grand_total=23.616;
+  const grouped=groupPrintProducts([{...item,quantity:2}],'po');
+  const q=shippingOptions(data,'po',grouped)[0];
+  assert.equal(q.productionCost,'14.67');assert.equal(q.maximumProviderCost,'23.62');
+  total.product_pricing[0].total_price=7.35;
+  assert.throws(()=>shippingOptions(data,'po',grouped));
+});
 test('keeps shipping unmarked-up and accounts for supplier tax separately',()=>{
   let data=reply();data.orders[0].options[0].calculated_total.order_sales_tax=1.23;data.orders[0].options[0].calculated_total.order_grand_total=17.18;
   const q=shippingOptions(data,'po',products)[0];assert.equal(q.shipping,'8.95');assert.equal(q.productionCost,'7.00');assert.equal(q.supplierTax,'1.23');assert.equal(q.maximumProviderCost,'17.18');assert.equal(q.shippingMethod,'42');

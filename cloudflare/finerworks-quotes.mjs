@@ -48,7 +48,10 @@ export function shippingOptions(data,po,products) {
       const shipping=cost(r.rate),production=cost(total.order_subtotal),supplierTax=cost(total.order_sales_tax),grand=cost(total.order_grand_total);
       const discount=cost(total.order_discount??0),expedite=cost(total.order_expedite_fee??0),credits=cost(total.order_credits_used??0);
       // FinerWorks total_price is the per-copy configured price, including options.
-      if(shipping!==cost(total.order_shipping_rate)||production<=0||credits!==0||grand!==production+shipping+supplierTax+expedite-discount||production!==prices.reduce((sum,p)=>sum+cost(p.total_price)*p.product_qty,0))continue;
+      // Volume prices contain fractional cents. Validate each amount, then round
+      // the summed manufacturing total once, matching the provider's subtotal.
+      const productTotal=prices.reduce((sum,p)=>{cost(p.total_price);return sum+p.total_price*p.product_qty;},0);
+      if(shipping!==cost(total.order_shipping_rate)||production<=0||credits!==0||grand!==production+shipping+supplierTax+expedite-discount||production!==cost(productTotal))continue;
       options.push({shippingMethod:String(r.id),shipping:moneyString(shipping),productionCost:moneyString(production),supplierTax:moneyString(supplierTax),maximumProviderCost:moneyString(grand),
         service:typeof r.shipping_method==='string'?r.shipping_method.slice(0,100):'Print-lab delivery',carrier:typeof r.carrier==='string'?r.carrier.slice(0,80):'FinerWorks',quotedAt:Date.now()});
     }catch{/* A malformed option is never replaced with an estimated rate. */}
