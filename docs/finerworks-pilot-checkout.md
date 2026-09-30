@@ -38,3 +38,19 @@ Validation: print/pricing/mat unit suites, FinerWorks durable checkout tests
 (capture, combined order, records, email mocks, lost-response reconciliation,
 cost changes, configuration changes), and browser checkout/return/mobile tests.
 Completing the deployed PayPal checkout requires a sandbox buyer login.
+
+Verified 2026-09-30 on deployed release `f5d51db`:
+- Six unframed shipping quotes and both image hashes/preflights passed.
+- FinerWorks accepted an unbilled test order for each painting on `154bbfa`.
+- The combined small-print cart quoted $50 plus $6.95 shipping ($56.95 total,
+  $0 sandbox tax) for the Seattle test address and reached PayPal sandbox
+  approval. The unpaid checkout was then canceled; no payment was captured.
+- The Worker suite passed all 88 tests. Desktop and mobile checkout tests passed.
+- The broader deployment audit still fails the separate two-copy mat preflight;
+  unframed checks passed and mat variants remain unavailable for purchase.
+
+The production readiness check found no `FINERWORKS_WEB_API_KEY`,
+`FINERWORKS_APP_KEY`, or `FINERWORKS_PAYMENT_TOKEN` binding on
+`vermillion-commissions`. Its print provider and enablement flags are also unset.
+Configure those secrets before a controlled paid sample release. This check
+only reports binding presence; it neither reads secret values nor enables sales.
