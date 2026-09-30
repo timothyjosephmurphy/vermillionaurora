@@ -5,10 +5,13 @@ import CommissionProcess from '../../../components/CommissionProcess.astro';
 import PrintOptions from '../../../components/PrintOptions.astro';
 import FrameRecommendations from '../../../components/FrameRecommendations.astro';
 import {originalFrameEligible} from '../../../../catalog/frame-matching.mjs';
+import {printOptions,config,papers} from '../../../../catalog/prints.mjs';
 import { products, priceLabel, statusLabel, dimensionLabel } from '../../../../catalog/catalog.mjs';
 export function getStaticPaths() { return products.map(product=>({params:{slug:product.slug},props:{product}})); }
 const {product:p}=Astro.props;
 const painting=p.type==='painting';
+const availablePrints=painting?printOptions(p,config,papers).filter(o=>o.ready&&!o.testOnly):[];
+const printFrom=availablePrints.length?Math.min(...availablePrints.map(o=>Number(o.amount))):null;
 const facts=painting ? [
   {label:'Dimensions',value:dimensionLabel(p)},
   ...(p.medium?[{label:'Medium',value:p.medium}]:[]),
@@ -39,6 +42,7 @@ const facts=painting ? [
     <div class="product-summary"><p class="eyebrow dark">{p.eyebrow}</p><h1>{p.title}</h1>
       {p.listing.price && <p class="product-detail-price">{priceLabel(p,painting)}</p>}
       {painting && <p class="product-availability" data-live-status>{statusLabel(p)}</p>}
+      {painting&&<p class="product-print-availability">{availablePrints.length?<a href="#print-options">{availablePrints.some(o=>o.sampleOnly)?'Print samples':'Fine art prints'} from ${printFrom.toFixed(2)} · Choose size &amp; framing ↓</a>:'Prints not yet available for this painting.'}</p>}
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}
       {painting && p.checkout?.mode==='integrated' && p.listing.status==='available' && <div data-cart-product hidden>
@@ -47,8 +51,8 @@ const facts=painting ? [
       </div>}
       {p.type==='commission' && <CommissionProcess />}
       <div class="product-inquiry"><a class="button button-solid" href={p.inquiryHref||`/?product=${p.slug}#contact`}>{p.inquiry.label}</a>{p.inquiry.note && <p>{p.inquiry.note}</p>}</div>
-      {originalFrameEligible(p)&&<FrameRecommendations paper={p.dimensions}/>}
       {painting&&<PrintOptions product={p}/>}
+      {originalFrameEligible(p)&&<FrameRecommendations paper={p.dimensions}/>}
       <a class="product-back" href={p.back.href}>{p.back.label}</a>
     </div>
   </article>

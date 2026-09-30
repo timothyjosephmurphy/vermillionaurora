@@ -4,6 +4,8 @@ import {moneyCents,moneyString,printRetailPrice} from '../catalog/print-pricing.
 import {printAssetUrl} from './print-asset-policy.mjs';
 import {quoteMattedOption} from './finerworks-matting.mjs';
 import {sameMat} from '../catalog/matting.mjs';
+import {quoteFramedOption} from './finerworks-framing.mjs';
+import {sameFrame} from '../catalog/framing.mjs';
 // No order creation, payment, email or Shippo calls. Wholesale totals remain server-side.
 const codePattern=/^(\d+)M(\d+)M(\d+)S(\d+(?:\.\d+)?)X(\d+(?:\.\d+)?)$/;
 const clean=(value,max,required=true)=>{
@@ -25,6 +27,7 @@ export function groupPrintProducts(items,po) {
     const [, , , ,w,h]=(item.mat?item.baseSku:item.sku).match(codePattern);
     if(Number(w)!==item.imageSize?.width||Number(h)!==item.imageSize?.height||Number(w)!==item.paperSize?.width||Number(h)!==item.paperSize?.height)throw Error('FinerWorks product dimensions do not match the print');
     if(item.mat&&(!Number.isSafeInteger(item.mat.id)||item.mat.id<=0||item.mat.key!=='snow-white'||item.mat.window?.width!==Number(w)||item.mat.window?.height!==Number(h)||![item.mat.outer?.width,item.mat.outer?.height].every(n=>Number.isFinite(n))||item.mat.outer.width<Number(w)+2||item.mat.outer.height<Number(h)+2))throw Error('Invalid FinerWorks mat dimensions');
+    if(item.frame&&(!item.mat||!Number.isSafeInteger(item.frame.id)||item.frame.id<=0||!Number.isSafeInteger(item.frame.glazing?.id)||item.frame.glazing.id<=0||item.frame.size?.width!==item.mat.outer.width||item.frame.size?.height!==item.mat.outer.height))throw Error('Invalid FinerWorks frame dimensions or glazing');
     const group=groups.get(item.sku)||{product_order_po:po,product_sku:item.sku,product_qty:0};group.product_qty+=item.quantity;groups.set(item.sku,group);
   }
   return [...groups.values()];
@@ -68,7 +71,7 @@ export function shippingOptions(data,po,products) {
 }
 async function selectionHash(items,address) {
   const recipient=finerworksRecipient(address,'');delete recipient.address_order_po;
-  const selection={items:items.map(i=>({id:i.id,sku:i.sku,quantity:i.quantity,...(i.mat?{baseSku:i.baseSku,mat:i.mat}: {})})).sort((a,b)=>a.id.localeCompare(b.id)),recipient};
+  const selection={items:items.map(i=>({id:i.id,sku:i.sku,quantity:i.quantity,...(i.mat?{baseSku:i.baseSku,mat:i.mat}: {}),...(i.frame?{frame:i.frame}:{})})).sort((a,b)=>a.id.localeCompare(b.id)),recipient};
   const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(selection)));
   return [...new Uint8Array(bytes)].map(n=>n.toString(16).padStart(2,'0')).join('');
 }
@@ -77,6 +80,11 @@ export async function quoteFinerWorksPrints(env,items,address) {
   const po=`va-quote-${crypto.randomUUID()}`,products=groupPrintProducts(items,po),recipient=finerworksRecipient(address,po);
   const materials=await finerworksMaterials(env);
   for(const item of items) {
+    if(item.frame){
+      const quoted=await quoteFramedOption(env,materials,{id:item.id,image:item.imageSize,paper:{...item.paperSize,sku:item.baseSku}},item.frame.key);
+      if(quoted.sku!==item.sku||!sameMat(quoted.mat,item.mat)||!sameFrame(quoted.frame,item.frame))throw Error('FinerWorks frame or product configuration changed; review before checkout');
+      continue;
+    }
     if(item.mat){
       const quoted=await quoteMattedOption(env,materials,{id:item.id,image:item.imageSize,paper:{...item.paperSize,sku:item.baseSku}});
       if(quoted.sku!==item.sku||!sameMat(quoted.mat,item.mat))throw Error('FinerWorks mat or product configuration changed; review before checkout');

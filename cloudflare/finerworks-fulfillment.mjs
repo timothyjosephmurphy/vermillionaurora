@@ -85,5 +85,5 @@ export async function fulfillFinerWorks(env,job,persist) {
 export function finerworksFulfillmentRecord(job) {
   return {id:job.request.merchantReference,provider:'finerworks',providerOrderId:job.providerId||'',status:job.status,
     productionCost:job.quotedProductionCost,shippingCost:job.quotedShipping,currency:'USD',
-    items:job.items.map(i=>({id:i.id,quantity:i.quantity,sku:i.sku,imageSize:i.imageSize,paperSize:i.paperSize,...(i.mat?{mat:i.mat,baseSku:i.baseSku}:{})})),shipments:job.shipments||[],reason:job.reason||''};
+    items:job.items.map(i=>({id:i.id,quantity:i.quantity,sku:i.sku,imageSize:i.imageSize,paperSize:i.paperSize,...(i.mat?{mat:i.mat,baseSku:i.baseSku}:{}),...(i.frame?{frame:i.frame}:{})})),shipments:job.shipments||[],reason:job.reason||''};
 }

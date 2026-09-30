@@ -17,8 +17,8 @@ async function verify(input={}){
 let installed=false;
 try{
   installed=true;await secret('PUT');
-  const d=await verify();console.log('FRAME_MATERIALS '+JSON.stringify(d));
-  for(const c of d.collections.sort((a,b)=>(a.startingPrice??Infinity)-(b.startingPrice??Infinity)).slice(0,5)){
-    console.log('FRAME_COLLECTION '+JSON.stringify(await verify({collectionId:c.id})));
+  for(const frameKey of ['black','white','natural'])for(const sizeKey of ['small','medium','full']){
+    const q=await verify({task:'framing',frameKey,sizeKey});
+    console.log('VERIFIED_FRAME_OPTION '+JSON.stringify({frameKey,key:sizeKey,sku:q.sku,baseSku:q.baseSku,mat:q.mat,frame:q.frame,amount:q.pricing.recommendedAmount,pricingRule:q.pricing.ruleId,quotedAt:q.quotedAt,cost:q.quote}));
   }
 }finally{if(installed)await secret('DELETE');}

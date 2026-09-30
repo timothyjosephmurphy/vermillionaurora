@@ -6,7 +6,7 @@ import config from '../catalog/prints.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {newFinerWorksJob,fulfillFinerWorks,finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 import {quoteMattedOption,finerworksMats} from './finerworks-matting.mjs';
-import {finerworksFrames,finerworksGlazing} from './finerworks-framing.mjs';
+import {finerworksFrames,finerworksGlazing,quoteFramedOption} from './finerworks-framing.mjs';
 import {cartItems} from './cart-policy.mjs';
 import {priceCart} from './checkout-pricing.mjs';
 const reply=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
@@ -21,7 +21,7 @@ export async function finerworksDiagnostic(request,env,products) {
   let input;try{input=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   if(!input||Array.isArray(input)||typeof input!=='object')return reply({error:'Invalid request'},400);
   const task=input.task||'credentials';
-  if(!['credentials','materials','prices','shipping','preflight','test-order','cart-quote','matting','mats','framing-materials'].includes(task))return reply({error:'Unknown diagnostic task'},400);
+  if(!['credentials','materials','prices','shipping','preflight','test-order','cart-quote','matting','mats','framing-materials','framing'].includes(task))return reply({error:'Unknown diagnostic task'},400);
   try {
     if(task==='credentials'){
       await finerworksRequest(env,'/v3/test_my_credentials',undefined,'GET');
@@ -40,23 +40,23 @@ export async function finerworksDiagnostic(request,env,products) {
       return reply({provider:'finerworks',readOnly:true,ordersSubmitted:false,base:q.base,shipping:q.shipping,tax:q.tax,total:q.total});
     }
     if(task==='mats')return reply({provider:'finerworks',mode:'sandbox',readOnly:true,materials:await finerworksMats(env)});
-    if(task==='matting') {
+    if(task==='matting'||task==='framing') {
       const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];
       if(!product||!(art?.testOnly||art?.sampleOnly))return reply({error:'Choose a configured sandbox pilot'},400);
       const option=printOptions(product,config,papers).find(o=>o.key===input.sizeKey);
       if(!option?.paper)return reply({error:'Choose a supported print size'},400);
       const materials=await finerworksMaterials(env);
-      const matted=await quoteMattedOption(env,materials,option,art.variants?.[option.key]?.matOptions?.['snow-white']);
+      const matted=task==='framing'?await quoteFramedOption(env,materials,option,input.frameKey,art.variants?.[option.key]?.frameOptions?.[input.frameKey]):await quoteMattedOption(env,materials,option,art.variants?.[option.key]?.matOptions?.['snow-white']);
       return reply({provider:'finerworks',readOnly:true,ordersSubmitted:false,...matted});
     }
     if(['shipping','preflight','test-order'].includes(task)) {
       const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];
       if(!product||!(art?.testOnly||art?.sampleOnly)||!Number.isSafeInteger(input.quantity)||input.quantity<1||input.quantity>10)return reply({error:'Choose a configured sandbox pilot and valid quantity'},400);
       const baseOption=printOptions(product,config,papers).find(o=>o.key===input.sizeKey);
-      const option=input.finishKey==='snow-white'?baseOption?.matOptions?.find(o=>o.finishKey==='snow-white'):input.finishKey&&input.finishKey!=='none'?null:baseOption;
+      const option=input.finishKey&&input.finishKey!=='none'?[...(baseOption?.matOptions||[]),...(baseOption?.frameOptions||[])].find(o=>o.finishKey===input.finishKey):baseOption;
       if(!option?.paper?.sku||!option.amount||option.image.width>inches(product.dimensions).width||option.image.height>inches(product.dimensions).height)return reply({error:'An exact-size priced print is required'},400);
       // Client prices, file URLs, dimensions, and product codes are intentionally ignored.
-      const item={id:option.id,provider:'finerworks',sku:option.paper.sku,title:product.title,testOnly:true,quantity:input.quantity,amount:option.amount,assetUrl:option.asset?.url||new URL(product.image.src,'https://vermillionaurora.com').href,imageSize:option.image,paperSize:{width:option.paper.width,height:option.paper.height},...(option.mat?{mat:option.mat,baseSku:option.baseSku}:{})};
+      const item={id:option.id,provider:'finerworks',sku:option.paper.sku,title:product.title,testOnly:true,quantity:input.quantity,amount:option.amount,assetUrl:option.asset?.url||new URL(product.image.src,'https://vermillionaurora.com').href,imageSize:option.image,paperSize:{width:option.paper.width,height:option.paper.height},...(option.mat?{mat:option.mat,baseSku:option.baseSku}:{}),...(option.frame?{frame:option.frame}:{})};
       const quote=await quoteFinerWorksPrints(env,[item],input.address);
       if(task==='shipping')return reply({provider:'finerworks',readOnly:true,productId:product.id,sizeKey:option.key,...quote});
       if(task==='test-order') {
