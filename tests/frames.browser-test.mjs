@@ -38,11 +38,11 @@ try{
     await page.goto(origin+preview);
     const recommendations=page.locator('[data-frame-recommendations]');
     await page.waitForFunction(()=>document.querySelector('[data-frame-recommendations]').dataset.frameInitialized==='true');
-    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0BQQYRMX7$/);
+    // FinerWorks uses the exact 15-by-12-inch sheet, not the old 16-by-12 Prodigi sheet.
+    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0FJLR7MTQ$/);
     await page.locator('input[value$="-small"]').check();
     assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0B1CNJL7N$/);
-    // FinerWorks borderless sheets keep the image dimensions, unlike the prior
-    // larger Prodigi sheets. Verify this catalog transition without a purchase.
+    // Verify selection-change handling with exact-size borderless sheets.
     await page.evaluate(()=>{
       const selector=document.querySelector('[data-print-options]');
       const options=JSON.parse(selector.dataset.options).map(o=>({...o,paper:{...o.image}}));
