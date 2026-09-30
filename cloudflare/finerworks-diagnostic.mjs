@@ -4,7 +4,7 @@ import {PRINT_SCALES,scaledDimensions,inches,printOptions} from '../catalog/prin
 import {reviewPrintPrice} from '../catalog/print-pricing.mjs';
 import config from '../catalog/prints.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
-import {quoteMattedOption} from './finerworks-matting.mjs';
+import {quoteMattedOption,finerworksMats} from './finerworks-matting.mjs';
 const reply=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 export async function finerworksDiagnostic(request,env,products) {
   const action=new URL(request.url).pathname.split('/').at(-1);
@@ -17,13 +17,14 @@ export async function finerworksDiagnostic(request,env,products) {
   let input;try{input=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   if(!input||Array.isArray(input)||typeof input!=='object')return reply({error:'Invalid request'},400);
   const task=input.task||'credentials';
-  if(!['credentials','materials','prices','shipping','preflight','matting'].includes(task))return reply({error:'Unknown read-only diagnostic task'},400);
+  if(!['credentials','materials','prices','shipping','preflight','matting','mats'].includes(task))return reply({error:'Unknown read-only diagnostic task'},400);
   try {
     if(task==='credentials'){
       await finerworksRequest(env,'/v3/test_my_credentials',undefined,'GET');
       return reply({provider:'finerworks',mode:'sandbox',readOnly:true,credentialsOk:true,providerAppMode:'not-verified'});
     }
     if(task==='materials')return reply({provider:'finerworks',mode:'sandbox',readOnly:true,...await finerworksMaterials(env)});
+    if(task==='mats')return reply({provider:'finerworks',mode:'sandbox',readOnly:true,materials:await finerworksMats(env)});
     if(task==='matting') {
       const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];
       if(!product||!art?.testOnly)return reply({error:'Choose a configured sandbox pilot'},400);

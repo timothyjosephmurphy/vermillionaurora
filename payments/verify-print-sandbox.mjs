@@ -20,7 +20,11 @@ async function read(path,body) {
     const r=await fetch(base+path,{method:body?'POST':'GET',redirect:'error',headers:body?{Authorization:`Bearer ${secret}`,'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(150000)});
     if(r.status===404&&body&&i<5){await new Promise(resolve=>setTimeout(resolve,5000));continue;}
     const d=await r.json();
-    if(!r.ok){report.failures.push({task:body?.task,path,httpStatus:r.status,error:d.error,diagnostic:d.diagnostic||null});throw Error(`FinerWorks ${body?.task||'health'} verification failed: HTTP ${r.status}`);}
+    if(!r.ok){report.failures.push({task:body?.task,path,httpStatus:r.status,error:d.error,diagnostic:d.diagnostic||null});
+      // Only our fixed mat error messages may appear in public logs.
+      const matErrors=['Unexpected FinerWorks mat catalog','White 4-ply FinerWorks mat is not confirmed','No supported standard mat size fits this print','Invalid FinerWorks print and mat geometry','FinerWorks did not return a valid mat product code','FinerWorks did not validate the exact print and mat combination','No verified single-mat, unframed price for this print'];
+      if(body?.task==='matting'&&matErrors.includes(d.error))console.log('MAT_VALIDATION: '+d.error);
+      throw Error(`FinerWorks ${body?.task||'health'} verification failed: HTTP ${r.status}`);}
     return d;
   }
 }
@@ -53,6 +57,8 @@ try {
   assert.equal(watercolor.length,pilots.length*3);assert.ok(watercolor.every(p=>p.pricing.amount===p.pricing.recommendedAmount&&!p.pricing.needsReview));
   console.log('PASS: all six pilot retail prices match the approved 3.5x / round-up-$5 / $25-floor rule.');
   report.matting=[];
+  const matMaterials=await verify({task:'mats'});
+  console.log('VERIFIED_WHITE_MATS '+JSON.stringify(matMaterials.materials.filter(m=>/white/i.test(m.name))));
   for(const sizeKey of ['small','medium','full']) {
     const option=await verify({task:'matting',productId:pilots[0],sizeKey});
     assert.equal(option.readOnly,true);assert.equal(option.ordersSubmitted,false);assert.equal(option.sellable,false);

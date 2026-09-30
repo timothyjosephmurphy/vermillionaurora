@@ -13,7 +13,7 @@ export function matLayout(paper, image = paper, material = null) {
   return {key:'snow-white',name:'White conservation mat',color:'#fff',outer:candidates[0],window:{width:image.width,height:image.height,unit:'in'},...(material?{id:material.id,name:material.name}: {})};
 }
 export function matSizeAllowed(mat,size) {
-  if(!mat||!Number.isSafeInteger(mat.id)||mat.id<=0||![mat.minWidth,mat.minHeight,mat.maxWidth,mat.maxHeight,size?.width,size?.height].every(n=>Number.isFinite(n)&&n>0))return false;
+  if(!mat||!Number.isSafeInteger(mat.id)||mat.id<=0||![mat.minWidth,mat.minHeight].every(n=>Number.isFinite(n)&&n>=0)||![mat.maxWidth,mat.maxHeight,size?.width,size?.height].every(n=>Number.isFinite(n)&&n>0))return false;
   const fits=(w,h)=>w>=mat.minWidth&&h>=mat.minHeight&&w<=mat.maxWidth&&h<=mat.maxHeight;
   return fits(size.width,size.height)||fits(size.height,size.width);
 }

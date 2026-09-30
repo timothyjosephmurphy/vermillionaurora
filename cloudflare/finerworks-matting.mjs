@@ -7,7 +7,7 @@ export async function finerworksMats(env) {
   return data.mats.filter(m=>Number.isSafeInteger(m.id)&&m.id>0&&typeof m.name==='string').map(m=>({
     id:m.id,name:m.name.slice(0,100),color:typeof m.color==='string'?m.color.slice(0,60):'',thickness:m.thickness,
     minWidth:m.min_width,minHeight:m.min_height,maxWidth:m.max_width,maxHeight:m.max_height
-  })).filter(m=>[m.minWidth,m.minHeight,m.maxWidth,m.maxHeight].every(n=>Number.isFinite(n)&&n>0));
+  })).filter(m=>[m.minWidth,m.minHeight].every(n=>Number.isFinite(n)&&n>=0)&&[m.maxWidth,m.maxHeight].every(n=>Number.isFinite(n)&&n>0));
 }
 export function matProductBuild(media,style,image,paper,mat) {
   finerworksProductCode(media,style,image);
