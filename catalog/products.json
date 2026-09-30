@@ -61,7 +61,7 @@
     "listing": {
       "status": "inquiry",
       "price": {
-        "amount": "200.00",
+        "amount": "400.00",
         "currency": "USD",
         "from": false
       }
@@ -4388,7 +4388,7 @@
     "listing": {
       "status": "inquiry",
       "price": {
-        "amount": "100.00",
+        "amount": "200.00",
         "currency": "USD",
         "from": false
       }
