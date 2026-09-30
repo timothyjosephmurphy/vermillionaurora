@@ -87,9 +87,12 @@ try {
   }
   assert.ok(report.shipping.every(q=>q.shippingMarkup==='0.00'&&q.provider==='finerworks'));
   console.log('PASS: six destination-based FinerWorks shipping quotes; shipping markup is zero.');
-  report.cartQuote=await verify({task:'cart-quote',productIds:pilots,sizeKey:'small',address});
-  assert.equal(report.cartQuote.base,'50.00');assert.equal(report.cartQuote.ordersSubmitted,false);
-  console.log('PASS: combined Dorian and Chase cart shipping and tax.');
+  let cartError;
+  try {
+    report.cartQuote=await verify({task:'cart-quote',productIds:pilots,sizeKey:'small',address});
+    assert.equal(report.cartQuote.base,'50.00');assert.equal(report.cartQuote.ordersSubmitted,false);
+    console.log('PASS: combined Dorian and Chase cart shipping and tax.');
+  } catch(error) {cartError=error;}
   report.preflight=[];
   for(const productId of pilots) {
     const p=await verify({task:'preflight',productId,sizeKey:'small',quantity:1,address});
@@ -103,7 +106,7 @@ try {
     console.log(`PASS: ${productId} accepted by FinerWorks in test mode; private test record saved.`);
   }
   console.log('No real payment, printing, shipping, or customer email occurred in this provider test.');
-  if(config.artworks[pilots[0]].variants.small.matOptions?.['snow-white']?.sku){
+  if(!process.argv.includes('--pilot-checkout')&&config.artworks[pilots[0]].variants.small.matOptions?.['snow-white']?.sku){
     report.matShipping=[];
     for(const sizeKey of ['small','medium','full'])report.matShipping.push(await verify({task:'shipping',productId:pilots[0],sizeKey,finishKey:'snow-white',quantity:1,address}));
     assert.ok(report.matShipping.every(q=>q.shippingMarkup==='0.00'));
@@ -111,6 +114,7 @@ try {
     assert.equal(report.matPreflight.ordersSubmitted,false);assert.equal(report.matPreflight.validated,true);
     console.log('PASS: three mat-inclusive shipping quotes and two-copy print-with-mat validation. No orders submitted.');
   }
+  if(cartError)throw cartError;
 }catch(error){report.error=error.message;throw error;}
 finally {
   try {if(installed){await cloudflare('DELETE','/'+name);console.log('Temporary FinerWorks audit credential removed.');}}

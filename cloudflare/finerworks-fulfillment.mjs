@@ -12,7 +12,7 @@ export function finerworksOrderingReady(env,mode=env.PAYPAL_MODE) {
 }
 export function newFinerWorksJob(env,order,items) {
   // The provider rejects the 51-character UUID reference. Keep all UUID bits in 47 characters.
-  const q=order.quote,mode=order.mode,po=`va-cart-${order.id.replaceAll('-','')}-prints`;
+  const q=order.quote,mode=order.mode,po=`va-cart-${String(order.id||'').replaceAll('-','')}-prints`;
   if(!finerworksOrderingReady(env,mode)||!reference.test(po)||q.printQuote?.provider!=='finerworks'||q.printQuote.mode!==mode||
     !/^\d+$/.test(q.printQuote.shippingMethod||'')||items.some(i=>mode==='live'&&i.testOnly))throw Error('FinerWorks fulfillment is not enabled for this order');
   groupPrintProducts(items,po);
