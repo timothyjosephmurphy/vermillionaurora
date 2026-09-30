@@ -1,6 +1,7 @@
 ---
 import ProductLayout from '../../../layouts/ProductLayout.astro';
 import PaintingImage from '../../../components/PaintingImage.astro';
+import CommissionProcess from '../../../components/CommissionProcess.astro';
 import PrintOptions from '../../../components/PrintOptions.astro';
 import FrameRecommendations from '../../../components/FrameRecommendations.astro';
 import {originalFrameEligible} from '../../../../catalog/frame-matching.mjs';
@@ -44,6 +45,7 @@ const facts=painting ? [
         <div class="cart-product-actions"><button type="button" class="button button-solid" data-cart-add>Add to cart</button><button type="button" class="button button-ghost" data-cart-buy>Buy now</button></div>
         <p class="cart-product-message" data-cart-added role="status" aria-live="polite"></p>
       </div>}
+      {p.type==='commission' && <CommissionProcess />}
       <div class="product-inquiry"><a class="button button-solid" href={p.inquiryHref||`/?product=${p.slug}#contact`}>{p.inquiry.label}</a>{p.inquiry.note && <p>{p.inquiry.note}</p>}</div>
       {originalFrameEligible(p)&&<FrameRecommendations paper={p.dimensions}/>}
       {painting&&<PrintOptions product={p}/>}

@@ -1,0 +1,41 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CommissionProcess from '../../components/CommissionProcess.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Commission process | TJ Murphy</title>
+  <meta name="description" content="How TJ Murphy creates watercolor commissions from photographs: projection, a restricted palette, watercolor pastels, layered washes, wax highlights, and expressive texture." />
+  <link rel="canonical" href="https://vermillionaurora.com/commissions/process/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/site-header.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <SiteHeader />
+    <main class="container process-page">
+      <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/#services">Commissions</a><span>/</span><span aria-current="page">My process</span></nav>
+      <CommissionProcess standalone />
+      <div class="process-actions">
+        <a class="button button-solid" href="/#contact">Discuss a commission</a>
+        <a class="button button-ghost" href="/#services">Explore commissions</a>
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</body>
+</html>
+<style>
+  .process-page { max-width: 860px; padding-top: 2rem; padding-bottom: 4rem; }
+  .process-page .product-breadcrumb { margin-bottom: 2rem; }
+  .process-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+  .process-actions .button { text-align: center; }
+  @media (max-width: 600px) { .process-actions .button { width: 100%; } }
+</style>

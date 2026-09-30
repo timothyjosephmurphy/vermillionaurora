@@ -1,0 +1,55 @@
+---
+const { standalone = false } = Astro.props;
+const Heading = standalone ? 'h1' : 'h2';
+const StepHeading = standalone ? 'h2' : 'h3';
+const steps = [
+  {
+    title: 'From reference to paper',
+    text: 'I use projection to transfer a photograph or prepared composition onto watercolor paper. For this drawing stage, I typically use Caran d’Ache crayon pastels or watercolor pencils, and Daniel Smith pastels for larger formats.'
+  },
+  {
+    title: 'A restricted palette',
+    text: 'I usually work with three or four primary colors and a tone color, building the other colors through mixing and layering.'
+  },
+  {
+    title: 'Water and layered washes',
+    text: 'After transferring the composition, I wet it to let the pigments mingle. I then apply layers of Daniel Smith watercolor washes to build contours and depth.'
+  },
+  {
+    title: 'Light and texture',
+    text: 'I sometimes use wax to mask highlights, including colored wax for especially luminous passages. The texture of the watercolor paper can give the pigment a grainy, almost pixelated quality.'
+  },
+  {
+    title: 'Finding the finish',
+    text: 'Sometimes I leave a painting rough and open, with very little brushwork, letting the water and pigment produce beautiful effects by chance. For a more closely rendered result, I build on that base, smoothing the granulated texture and bringing the painting closer to the reference and to photorealism.'
+  }
+];
+---
+<section id="commission-process" class:list={['commission-process', { 'commission-process-standalone': standalone }]} aria-labelledby="commission-process-heading">
+  <p class="eyebrow dark">My watercolor process</p>
+  <Heading id="commission-process-heading">How I create your painting</Heading>
+  <p class="process-intro">My commissions combine the structure of a photograph or prepared composition with the movement of water and pigment. Watercolor pastels, pencils, and layered washes let me work from loose, textured impressions toward a more closely rendered likeness.</p>
+  <div class="process-steps">
+    {steps.map(step => <div class="process-step">
+      <StepHeading>{step.title}</StepHeading>
+      <p>{step.text}</p>
+    </div>)}
+  </div>
+  <p class="process-conversation">When we discuss your commission, tell me whether you’re drawn to a loose, textured interpretation or a more closely rendered finish.</p>
+</section>
+<style>
+  .commission-process { margin: 2.5rem 0 0; padding-top: 2rem; border-top: 1px solid var(--line, #d6c9bc); scroll-margin-top: 8rem; }
+  .commission-process-standalone { margin: 0; padding: 0; border: 0; }
+  .commission-process .eyebrow { margin: 0 0 .65rem; font-size: .75rem; }
+  .commission-process h1, .commission-process h2, .commission-process h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; }
+  .commission-process > h2 { margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 2.7rem); line-height: 1.12; }
+  .commission-process > h1 { margin: 0 0 1.25rem; font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1.08; }
+  .commission-process p { line-height: 1.8; }
+  .commission-process .process-intro { margin: 0 0 1.75rem; font-size: 1.1rem; }
+  .process-steps { display: grid; gap: 1.5rem; }
+  .process-step { border-left: 2px solid var(--line, #d6c9bc); padding-left: 1.25rem; }
+  .process-step h2, .process-step h3 { margin: 0 0 .5rem; font-size: 1.65rem; line-height: 1.2; }
+  .process-step p { margin: 0; }
+  .commission-process .process-conversation { margin: 2rem 0 0; padding: 1.25rem; border-radius: 12px; background: var(--paper, #f4ebdf); }
+  @media (max-width: 600px) { .commission-process { scroll-margin-top: 6rem; } .process-step { padding-left: 1rem; } }
+</style>
