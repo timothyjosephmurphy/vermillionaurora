@@ -17,6 +17,9 @@ export function paymentMethods(env,id) {
   const print=Object.hasOwn(prints,id)?prints[id]:null;
   if(!env.STRIPE_SECRET_KEY||!['live','sandbox'].includes(env.PAYPAL_MODE))return [];
   if(print) {
+    // Quotes/preflight are ready for development, but automatic FinerWorks order
+    // submission and reconciliation must be implemented before accepting payment.
+    if(print.provider==='finerworks'||env.PRINT_PROVIDER==='finerworks')return [];
     if(print.testOnly&&env.PAYPAL_MODE!=='sandbox')return [];
     if(env.PRINT_CHECKOUT_ENABLED!=='true'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.PAYPAL_MODE||!listed(env.PRINT_CHECKOUT_IDS,id))return [];
   } else if(!env.SHIPPO_TOKEN||!env.SHIP_FROM_STREET||!catalog[id]||catalog[id].available===false)return [];

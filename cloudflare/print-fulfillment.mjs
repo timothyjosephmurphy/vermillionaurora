@@ -1,5 +1,6 @@
 import {prodigiEnvironment,prodigiRequest,quotePrints,validateProdigiOrder} from './prodigi-api.mjs';
 export function newPrintJob(env,order,items) {
+  if(order.quote?.printQuote?.provider==='finerworks'||items.some(i=>i.provider==='finerworks'))throw Error('Automatic FinerWorks fulfillment has not been enabled');
   const q=order.quote,a=q.address,mode=order.mode,key=crypto.randomUUID(),callbackKey=[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('');
   const origin=mode==='sandbox'?env.SANDBOX_RETURN_ORIGIN:'https://vermillion-commissions.timothyjosephmurphy.workers.dev';
   const request={idempotencyKey:key,merchantReference:`va-cart-${order.id}-prints`,shippingMethod:q.printQuote.shippingMethod,

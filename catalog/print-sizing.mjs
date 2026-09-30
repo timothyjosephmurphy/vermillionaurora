@@ -1,3 +1,4 @@
+import {finerworksOptions} from './finerworks-options.mjs';
 // Image measurements are independent of the vendor's paper measurements.
 export const PRINT_SCALES = [
   {key:'full',label:'Original-size print',scale:1},
@@ -27,6 +28,7 @@ export function resolutionFor(source,image) {
 }
 export function sizeLabel(size) {return `${Number(size.width.toFixed(2))} × ${Number(size.height.toFixed(2))} in`;}
 export function printOptions(product,config,papers) {
+  if(config.provider==='finerworks')return finerworksOptions(product,config,papers,{PRINT_SCALES,scaledDimensions,inches,resolutionFor});
   if(product.type!=='painting'||!product.dimensions)return [];
   const art=config.artworks[product.id]||{},testOnly=art.testOnly===true,dimensions=art.dimensions||product.dimensions;
   return PRINT_SCALES.map(choice=>{

@@ -1,13 +1,16 @@
-// Read-only migration adapter. Order submission is deliberately not allowlisted.
+// Read-only catalog/shipping adapter plus sandbox validation-only preflight.
+// Real order submission is deliberately NOT permitted by this adapter.
 // Contract: https://v2.api.finerworks.com/Documentation
 import {finerworksFailureDetails} from './finerworks-response.mjs';
 import {finerworksListEnvelope} from './finerworks-list.mjs';
+export {finerworksSizeAllowed,finerworksProductCode} from '../catalog/finerworks-products.mjs';
 export const PRINT_PROVIDER='finerworks';
 const READS=new Map([
   ['/v3/test_my_credentials','GET'],
   ['/v3/list_media_types','POST'],
   ['/v3/list_style_types','POST'],
-  ['/v3/get_prices','POST']
+  ['/v3/get_prices','POST'],
+  ['/v3/list_shipping_options_multiple','POST']
 ]);
 export function finerworksEnvironment(env,requireKeys=true) {
   const mode=['sandbox','live'].includes(env.PAYPAL_MODE)?env.PAYPAL_MODE:null;
@@ -16,7 +19,8 @@ export function finerworksEnvironment(env,requireKeys=true) {
 }
 export async function finerworksRequest(env,path,body,method='POST') {
   finerworksEnvironment(env);
-  if(READS.get(path)!==method||(method==='GET'&&body!==undefined))throw Error('FinerWorks migration permits only approved read-only requests');
+  const validationOnly=path==='/v3/submit_orders_v2'&&method==='POST'&&env.PAYPAL_MODE==='sandbox'&&body?.validate_only===true&&body?.payment_token==='xxxx'&&Array.isArray(body.orders)&&body.orders.length===1&&body.orders.every(o=>o.test_mode===true);
+  if((READS.get(path)!==method&&!validationOnly)||(method==='GET'&&body!==undefined))throw Error('FinerWorks migration permits only approved read-only requests');
   const webKey=String(env.FINERWORKS_WEB_API_KEY).trim(),appKey=String(env.FINERWORKS_APP_KEY).trim();
   if(!webKey||!appKey||/[\r\n]/.test(webKey+appKey))throw Error('FinerWorks credentials contain invalid whitespace');
   let response,data,raw;
@@ -31,8 +35,6 @@ export async function finerworksRequest(env,path,body,method='POST') {
   try{data=JSON.parse(raw);}catch{
     throw failure(response.status,/text\/html/i.test(response.headers.get('content-type')||'')?'html':'non-json',failureHint(raw));
   }
-  // Observed catalog replies are bare lists. Accept only endpoint-specific typed
-  // lists on successful HTTP responses; never weaken authentication/error gates.
   if(response.ok){const list=finerworksListEnvelope(path,data);if(list)return list;}
   if(!response.ok||data?.status?.success!==true){
     const error=failure(response.status,'json',failureHint(data?.status?.message||''));
@@ -66,20 +68,6 @@ export async function finerworksMaterials(env) {
     media:media.media_types.filter(m=>positive(m.id)&&positive(m.product_type_id)).map(m=>({id:m.id,productTypeId:m.product_type_id,name:text(m.name),description:text(m.description),styleIds:(m.style_ids||[]).filter(positive)})),
     styles:styles.style_types.filter(s=>positive(s.id)).map(s=>({id:s.id,name:text(s.name),description:text(s.description),customSizing:s.custom_sizing===true,allowDecimal:s.allow_decimal===true,allowRotate:s.allow_rotate===true,min:dimensions(s.min),max:dimensions(s.max),availableSizes:(s.available_sizes||[]).map(dimensions).filter(Boolean),borderSize:typeof s.border_size==='number'?s.border_size:null,bleed:typeof s.bleed_amt==='number'?s.bleed_amt:null}))
   };
-}
-export function finerworksSizeAllowed(style,size) {
-  if(!dimensions(size)||size.width<=0||size.height<=0)return false;
-  if(!style.allowDecimal&&(!Number.isInteger(size.width)||!Number.isInteger(size.height)))return false;
-  const fits=d=>{
-    if(!style.customSizing)return style.availableSizes.some(a=>Math.abs(a.width-d.width)<0.00001&&Math.abs(a.height-d.height)<0.00001);
-    if(!style.min||!style.max)return false;
-    return d.width>=style.min.width&&d.height>=style.min.height&&d.width<=style.max.width&&d.height<=style.max.height;
-  };
-  return fits(size)||(style.allowRotate&&fits({width:size.height,height:size.width}));
-}
-export function finerworksProductCode(media,style,size) {
-  if(!positive(media.id)||!positive(media.productTypeId)||!positive(style.id)||!media.styleIds.includes(style.id)||!finerworksSizeAllowed(style,size))throw Error('FinerWorks does not confirm this exact material, style, and size');
-  return `${media.productTypeId}M${media.id}M${style.id}S${size.width}X${size.height}`;
 }
 function cost(value) {
   if(typeof value!=='number'||!Number.isFinite(value)||value<0||value>1000000)throw Error('Invalid FinerWorks price');

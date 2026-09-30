@@ -1,0 +1,95 @@
+[
+  {
+    "paper": "archival-matte",
+    "verifiedAt": "2026-09-30",
+    "media": {
+      "id": 6,
+      "productTypeId": 5,
+      "name": "Archival Matte Paper",
+      "styleIds": [
+        8
+      ]
+    },
+    "style": {
+      "id": 8,
+      "name": "Borderless",
+      "description": "The image will go to the edge of the print. In order to accomplish borderless printing, the image will be enlarged approximately by 1/10 to 1/8 of an inch to give the appropriate amount of bleed necessary for cutting.\r\n",
+      "customSizing": true,
+      "allowDecimal": true,
+      "allowRotate": true,
+      "min": {
+        "width": 4,
+        "height": 4
+      },
+      "max": {
+        "width": 40,
+        "height": 90
+      },
+      "availableSizes": [],
+      "borderSize": 0,
+      "bleed": 0.06
+    }
+  },
+  {
+    "paper": "watercolor-bright-white",
+    "verifiedAt": "2026-09-30",
+    "media": {
+      "id": 144,
+      "productTypeId": 5,
+      "name": "Watercolor Bright White",
+      "styleIds": [
+        8
+      ]
+    },
+    "style": {
+      "id": 8,
+      "name": "Borderless",
+      "description": "The image will go to the edge of the print. In order to accomplish borderless printing, the image will be enlarged approximately by 1/10 to 1/8 of an inch to give the appropriate amount of bleed necessary for cutting.\r\n",
+      "customSizing": true,
+      "allowDecimal": true,
+      "allowRotate": true,
+      "min": {
+        "width": 4,
+        "height": 4
+      },
+      "max": {
+        "width": 40,
+        "height": 90
+      },
+      "availableSizes": [],
+      "borderSize": 0,
+      "bleed": 0.06
+    }
+  },
+  {
+    "paper": "photo-rag",
+    "verifiedAt": "2026-09-30",
+    "media": {
+      "id": 200,
+      "productTypeId": 11,
+      "name": "Hahnemühle Photo Rag",
+      "styleIds": [
+        8
+      ]
+    },
+    "style": {
+      "id": 8,
+      "name": "Borderless",
+      "description": "The image will go to the edge of the print. In order to accomplish borderless printing, the image will be enlarged approximately by 1/10 to 1/8 of an inch to give the appropriate amount of bleed necessary for cutting.\r\n",
+      "customSizing": true,
+      "allowDecimal": true,
+      "allowRotate": true,
+      "min": {
+        "width": 4,
+        "height": 4
+      },
+      "max": {
+        "width": 40,
+        "height": 90
+      },
+      "availableSizes": [],
+      "borderSize": 0,
+      "bleed": 0.06
+    }
+  }
+]

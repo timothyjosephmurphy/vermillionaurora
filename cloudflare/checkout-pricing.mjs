@@ -1,7 +1,7 @@
 import catalog, {catalogVersion} from './checkout-catalog.mjs';
 import { insuranceRequest, insuredShipmentMatches, insuredRateMatches } from './shipping-insurance.mjs';
 import {catalogVersion as cartVersion} from './cart-policy.mjs';
-import {quotePrints} from './prodigi-api.mjs';
+import {quotePrints} from './print-provider.mjs';
 
 const cents = value => Math.round(Number(value) * 100);
 const dollars = value => (value / 100).toFixed(2);
@@ -74,7 +74,7 @@ export async function priceCart(env,items,input,email) {
   const address=cleanAddress(input),shipments=[];
   // Each original is packed separately. No speculative combined-parcel dimensions.
   for(const item of items.filter(i=>i.type!=='print'))shipments.push(await priceShipment(env,item.id,address));
-  const printItems=items.filter(i=>i.type==='print'),printQuote=printItems.length?await quotePrints(env,printItems):null;
+  const printItems=items.filter(i=>i.type==='print'),printQuote=printItems.length?await quotePrints(env,printItems,address):null;
   const totals=await calculateTax(env,items,address,shipments.reduce((sum,s)=>sum+cents(s.shipping),0)+(printQuote?cents(printQuote.shipping):0));
   return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments,...(printQuote?{printQuote}:{}),...totals,quotedAt:Date.now()};
 }

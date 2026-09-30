@@ -1,5 +1,9 @@
 import {finerworksEnvironment,finerworksRequest,finerworksMaterials,finerworksProductCode,finerworksPrices} from './finerworks-api.mjs';
-import {PRINT_SCALES,scaledDimensions,inches} from '../catalog/print-sizing.mjs';
+import {quoteFinerWorksPrints,validateFinerWorksPrintOrder} from './finerworks-quotes.mjs';
+import {PRINT_SCALES,scaledDimensions,inches,printOptions} from '../catalog/print-sizing.mjs';
+import {reviewPrintPrice} from '../catalog/print-pricing.mjs';
+import config from '../catalog/prints.json' with {type:'json'};
+import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 const reply=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 export async function finerworksDiagnostic(request,env,products) {
   const action=new URL(request.url).pathname.split('/').at(-1);
@@ -12,13 +16,25 @@ export async function finerworksDiagnostic(request,env,products) {
   let input;try{input=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   if(!input||Array.isArray(input)||typeof input!=='object')return reply({error:'Invalid request'},400);
   const task=input.task||'credentials';
-  if(!['credentials','materials','prices'].includes(task))return reply({error:'Unknown read-only diagnostic task'},400);
+  if(!['credentials','materials','prices','shipping','preflight'].includes(task))return reply({error:'Unknown read-only diagnostic task'},400);
   try {
     if(task==='credentials'){
       await finerworksRequest(env,'/v3/test_my_credentials',undefined,'GET');
       return reply({provider:'finerworks',mode:'sandbox',readOnly:true,credentialsOk:true,providerAppMode:'not-verified'});
     }
     if(task==='materials')return reply({provider:'finerworks',mode:'sandbox',readOnly:true,...await finerworksMaterials(env)});
+    if(task==='shipping'||task==='preflight') {
+      const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];
+      if(!product||!art?.testOnly||!Number.isSafeInteger(input.quantity)||input.quantity<1||input.quantity>10)return reply({error:'Choose a configured sandbox pilot and valid quantity'},400);
+      const option=printOptions(product,config,papers).find(o=>o.key===input.sizeKey);
+      if(!option?.paper||!option.amount||option.image.width>inches(product.dimensions).width||option.image.height>inches(product.dimensions).height)return reply({error:'An exact-size priced print is required'},400);
+      // Client prices, file URLs, dimensions, and product codes are intentionally ignored.
+      const item={id:option.id,provider:'finerworks',sku:option.paper.sku,title:product.title,quantity:input.quantity,amount:option.amount,imageSize:option.image,paperSize:{width:option.paper.width,height:option.paper.height}};
+      const quote=await quoteFinerWorksPrints(env,[item],input.address);
+      if(task==='shipping')return reply({provider:'finerworks',readOnly:true,productId:product.id,sizeKey:option.key,...quote});
+      item.assetUrl=new URL(product.image.src,'https://vermillionaurora.com').href;
+      return reply(await validateFinerWorksPrintOrder(env,[item],input.address,quote));
+    }
     const ids=input.productIds;
     if(!Array.isArray(ids)||ids.length<1||ids.length>10||new Set(ids).size!==ids.length||!Number.isSafeInteger(input.mediaId)||!Number.isSafeInteger(input.styleId))return reply({error:'Choose up to ten catalog paintings and a material/style pair'},400);
     const artworks=ids.map(id=>products.find(p=>p.id===id&&p.type==='painting'&&p.dimensions));
@@ -33,10 +49,11 @@ export async function finerworksDiagnostic(request,env,products) {
       try{return {...result,code:finerworksProductCode(media,style,size)};}
       catch{return {...result,ok:false,error:'Exact size is not supported by this FinerWorks style; not rounded up or enlarged'};}
     }));
-    const codes=candidates.filter(c=>c.code).map(c=>c.code);
-    const prices=codes.length?await finerworksPrices(env,codes):[];
-    return reply({provider:'finerworks',mode:'sandbox',readOnly:true,quotedAt:new Date().toISOString(),shippingIncluded:false,taxIncluded:false,candidates:candidates.map(c=>c.code?{...c,...prices.find(p=>p.code===c.code)}:c)});
-  }catch(error){
-    return reply({provider:'finerworks',mode:'sandbox',readOnly:true,error:error.message,diagnostic:error.details||null},502);
-  }
+    const codes=candidates.filter(c=>c.code).map(c=>c.code),prices=codes.length?await finerworksPrices(env,codes):[];
+    return reply({provider:'finerworks',mode:'sandbox',readOnly:true,quotedAt:new Date().toISOString(),shippingIncluded:false,taxIncluded:false,candidates:candidates.map(c=>{
+      if(!c.code)return c;
+      const q=prices.find(p=>p.code===c.code),published=config.artworks[c.productId]?.variants?.[c.sizeKey];
+      return {...c,...q,...(q?.ok?{pricing:reviewPrintPrice(q,published?.sku===c.code?published:{})}:{})};
+    })});
+  }catch(error){return reply({provider:'finerworks',mode:'sandbox',readOnly:true,error:error.message,diagnostic:error.details||null},502);}
 }

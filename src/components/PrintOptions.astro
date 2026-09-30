@@ -7,14 +7,15 @@ const publicOptions=options.map(({id,label,scale,image,paper,amount,ready,paperL
 const visible=preview||options.some(o=>o.ready&&!o.testOnly);
 ---
 {visible&&<section class="print-options" data-print-options data-preview={preview?'true':'false'} data-options={JSON.stringify(publicOptions)} aria-label="Fine art print options">
-  <div class="print-heading"><p class="eyebrow dark">The work, in your space</p><h2>Fine art prints</h2><p>The complete painting, reproduced at its original size or scaled down with the same proportions.</p></div>
-  {preview&&<p class="print-preview-note">Preview · Sizes shown below are proposed. Ordering opens after the paper, print file, and price are confirmed.</p>}
-  {preview&&options.some(o=>o.testOnly)&&<p class="print-preview-note print-test-note">Sandbox test only · These variants intentionally use the current low-resolution web image. Do not enable them for live sales.</p>}
+  <div class="print-heading"><p class="eyebrow dark">The work, in your space</p><h2>Fine art prints</h2><p>Reproductions at the original artwork dimensions or smaller, with the same proportions.</p></div>
+  {preview&&<p class="print-preview-note">Preview · Saved retail prices are shown where quoted. Ordering opens only after the print file, trimming layout, and fulfillment flow are approved.</p>}
+  {preview&&options.some(o=>o.testOnly)&&<p class="print-preview-note print-test-note">Sandbox preview only · The current web images are not approved print masters. These prints are not available for purchase.</p>}
   <fieldset class="print-sizes"><legend>Choose your image size</legend>
     {options.map((o,i)=><label class:list={['print-choice',{'is-selected':i===0}]}><input type="radio" name={`print-size-${product.id}`} value={o.id} checked={i===0} disabled={!preview&&!o.ready}/><span><strong>{o.label}</strong><span>{sizeLabel(o.image)}</span><small>{Math.round(o.scale*100)}% of the original width and height</small></span><b>{o.amount?`$${Number(o.amount).toFixed(2)}`:preview?'Price pending':'Coming soon'}</b></label>)}
   </fieldset>
-  <figure class="print-sheet-figure"><div class="print-sheet" data-print-sheet><div class="print-image-area" data-print-image-area><img src={product.image.src} alt={`Print layout preview of ${product.title}`} loading="lazy"/></div></div><figcaption data-print-dimensions></figcaption></figure>
-  <p class="print-paper" data-print-paper></p><p class="print-border-note">Unframed. Any white margin shown is included in the paper dimensions.</p>
+  <figure class="print-sheet-figure"><div class="print-sheet" data-print-sheet><div class="print-image-area" data-print-image-area><img src={product.image.src} alt={`Illustrative print preview of ${product.title}`} loading="lazy"/></div></div><figcaption data-print-dimensions></figcaption></figure>
+  <p class="print-paper" data-print-paper></p><p class="print-border-note">Unframed. Shipping is quoted separately at checkout without a markup. Applicable tax is additional.</p>
+  {preview&&<p class="print-border-note">Borderless printing uses a small trimming bleed. This illustration is not an approved edge-trimming proof.</p>}
   <FrameRecommendations context="print" paper={options[0]?.paper} image={options[0]?.image}/>
   {preview&&<details class="print-readiness"><summary>Preparation for this size</summary><ul data-print-readiness></ul></details>}
   <div class="print-actions"><label>Quantity <input data-print-quantity type="number" min="1" max="10" step="1" value="1" inputmode="numeric"/></label><button data-print-add class="button button-solid" type="button" disabled>{preview?'Ordering not yet open':'Add print to cart'}</button></div>

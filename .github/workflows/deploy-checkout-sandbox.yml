@@ -40,7 +40,7 @@ jobs:
           npm ci
           npm run build
           npm test
-          node --test tests/prints.test.mjs cloudflare/finerworks-*.test.mjs
+          node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
           npm --prefix cloudflare/test ci
           npm run test:worker
           node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
@@ -59,11 +59,19 @@ jobs:
           wranglerVersion: '4.143.0'
           workingDirectory: cloudflare
           command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
-      - name: Verify FinerWorks connection and retrieve pilot prices without purchasing
+      - name: Verify FinerWorks prices shipping and validation-only preflight
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           DEPLOYED_SHA: ${{ github.sha }}
         run: node payments/verify-print-sandbox.mjs
+      - name: Preserve encrypted FinerWorks audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: finerworks-audit-${{ github.sha }}
+          path: /tmp/finerworks-audit.encrypted.json
+          retention-days: 1
+          if-no-files-found: ignore
       - name: Confirm recorded sandbox payment, webhook receipt, and tax record
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
