@@ -51,8 +51,9 @@ const positive=n=>Number.isSafeInteger(n)&&n>0;
 const text=v=>typeof v==='string'?v.slice(0,500):'';
 const dimensions=d=>d&&['width','height'].every(k=>typeof d[k]==='number'&&Number.isFinite(d[k])&&d[k]>=0)?{width:d.width,height:d.height}:null;
 export async function finerworksMaterials(env) {
-  const media=await finerworksRequest(env,'/v3/list_media_types',{});
-  const styles=await finerworksRequest(env,'/v3/list_style_types',{});
+  // Send explicit optional filters/default site rather than relying on null/default binding.
+  const media=await finerworksRequest(env,'/v3/list_media_types',{ids:[],site_id:2});
+  const styles=await finerworksRequest(env,'/v3/list_style_types',{ids:[]});
   if(!Array.isArray(media.media_types)||!Array.isArray(styles.style_types))throw Error('Unexpected FinerWorks materials response');
   return {
     media:media.media_types.filter(m=>positive(m.id)&&positive(m.product_type_id)).map(m=>({id:m.id,productTypeId:m.product_type_id,name:text(m.name),description:text(m.description),styleIds:(m.style_ids||[]).filter(positive)})),
