@@ -54,11 +54,13 @@ Verified 2026-09-30 on deployed release `f5d51db`:
 - Mat-inclusive shipping and two-copy preflight subsequently passed on `256be33`.
   Mat variants remain unavailable for purchase until their layout is approved.
 
-The production readiness check found no `FINERWORKS_WEB_API_KEY`,
-`FINERWORKS_APP_KEY`, or `FINERWORKS_PAYMENT_TOKEN` binding on
-`vermillion-commissions`. Its print provider and enablement flags are also unset.
-Configure those secrets before a controlled paid sample release. This check
-only reports binding presence; it neither reads secret values nor enables sales.
+Production credential setup completed on 2026-09-30: `FINERWORKS_WEB_API_KEY`,
+`FINERWORKS_APP_KEY`, and `FINERWORKS_PAYMENT_TOKEN` are present on
+`vermillion-commissions`. The saved-card token was retrieved from FinerWorks and
+stored by the encrypted setup workflow on `c2fe673`; temporary setup credentials
+were removed. Production print checkout and fulfillment remain disabled.
+Credential presence is verified, but a paid production print order has not been
+submitted. A controlled sample still needs an approved live print file/release.
 
 Saved-card setup uses `payments/configure-finerworks-billing.mjs`, explicitly
 requested by the `[configure-finerworks-billing]` commit marker. It retrieves the
