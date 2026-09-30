@@ -1,6 +1,51 @@
 # Original artwork framing requests
 
-This release offers Framebridge mail-in framing alongside an eligible original
+## Current requirement — September 30, 2026
+
+The owner requires a vendor API integration as part of the finished feature.
+The manual Framebridge flow below is an unpublished prototype, not the completed
+feature. Do not publish it as the final framing integration. Vendor choice is
+pending confirmation of direct API access for this custom Cloudflare website.
+
+Research findings:
+
+- Framebridge's [artist program](https://www.framebridge.com/pages/artists-program)
+  advertises Shopify Collective print-shop integration. A publicly documented
+  partner ordering API for mailed originals could not be verified. This does not
+  establish that a private partner API is unavailable.
+- Simply Framed explicitly advertises [custom API integrations](https://simplyframed.com/)
+  and [API integration with production](https://simplyframed.com/pages/for-business).
+  Its [own Shopify app listing](https://apps.shopify.com/simply-framed-print-frame)
+  specifically describes automated mail-in framing, prepaid inbound labels, and
+  direct delivery to customers. This verifies the mail-in automation workflow on
+  Shopify, not access to the same capabilities from a custom website.
+- No public direct-API documentation, credentials process, sandbox, access fees,
+  or volume requirements were found. Request those from Simply Framed's
+  [sales team](https://simplyframed.com/pages/contact-sales),
+  hello@simplyframed.com. No company has been contacted on the owner's behalf.
+
+Before implementing or choosing a vendor, obtain confirmation of:
+
+1. Direct API access for a small independent artist using a custom website,
+   including eligibility, setup/usage fees, and any order minimums.
+2. Supported frame/mat options and dimensions, binding quotes for original-art
+   mail-in framing, delivery/insurance costs, and quote validity.
+3. Order creation for a physical original: seller/inbound-label address separate
+   from the customer's final delivery address, plus label retrieval.
+4. Credentials, documentation, test environment, safe retry/idempotency behavior,
+   cancellation, production status, and tracking via webhook or polling.
+
+The completed purchase flow must show confirmed framing prices before payment,
+save the supplier quote, submit a vendor order only after verified payment,
+provide the inbound label to the artist, and return production/tracking updates
+to the customer. Unknown submission outcomes require reconciliation rather than
+blind retries. Do not substitute undocumented storefront endpoints or assume
+Framebridge's estimates apply to Simply Framed. Keep API credentials in the
+server-side Worker. No live supplier calls or secret names are invented here.
+
+## Existing prototype
+
+The prototype offers Framebridge mail-in framing alongside an eligible original
 purchase. It is a request for a final quote, not a charge for framing and not an
 automatic supplier order. Production deployment has not been performed.
 
