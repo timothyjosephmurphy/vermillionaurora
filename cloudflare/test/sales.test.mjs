@@ -4,6 +4,7 @@ import { it, expect, afterEach, vi } from 'vitest';
 import { salesCsv, ipnRecord } from '../sales-records.mjs';
 import { salesMaintenance } from '../sales-maintenance.mjs';
 import { handlePaypalIpn } from '../paypal-inventory.mjs';
+import {backfillCheckoutSale} from '../paypal-orders.mjs';
 
 const objects=[];
 afterEach(async()=>{
@@ -15,6 +16,17 @@ const receipt=(extra={})=>({schemaVersion:1,id:'payment:CAP1',kind:'sale',mode:'
   title:'Chase Toole',buyerEmail:'private@example.test',...extra});
 function ledger(){const stub=env.SALES_LEDGER.getByName(crypto.randomUUID());objects.push(stub);return stub;}
 const read=stub=>runInDurableObject(stub,(_,ctx)=>ctx.storage.sql.exec('SELECT data FROM sales').toArray().map(x=>JSON.parse(x.data)));
+it('verifies legacy IPN receipts from the ledger without sending transaction IDs to PayPal Orders',async()=>{
+  const period=new Date().toISOString().slice(0,7),stub=env.SALES_LEDGER.getByName(`live:${period}`);objects.push(stub);
+  await runInDurableObject(stub,i=>{i.env={...i.env,PAYPAL_MODE:'live'};});
+  const record=ipnRecord({},new URLSearchParams({payment_status:'Completed',txn_id:'LEGACYARCHIVE1',mc_currency:'USD',mc_gross:'20.00',payment_date:new Date().toISOString()}));
+  await stub.record(record);
+  const fetch=vi.fn(()=>{throw Error('No provider call is permitted');});vi.stubGlobal('fetch',fetch);
+  const stock={getByName:()=>({order:async()=>({state:'sold',captureId:'LEGACYARCHIVE1',orderId:'ipn:LEGACYARCHIVE1'})})};
+  expect(await backfillCheckoutSale({...env,PAYPAL_MODE:'live',PAINTING_STOCK:stock},'legacy-work')).toEqual({recorded:true,period});expect(fetch).not.toHaveBeenCalled();
+  expect((await stub.archiveNow()).archived).toBe(true);
+  expect(await stub.hasRecordedIpnSale('MISSING')).toBe(false);
+});
 it('keeps one financial receipt across retries and eviction, with retained fulfillment history',async()=>{
   const stub=ledger();await stub.record(receipt());await stub.record(receipt());
   expect((await stub.summary()).records).toBe(1);

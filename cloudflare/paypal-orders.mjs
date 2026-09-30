@@ -199,6 +199,23 @@ export async function backfillCheckoutSale(env,slug) {
   // order IDs to PayPal during accounting maintenance or relisting.
   if(expected.orderId?.startsWith('cart:'))return env.CART_ORDERS.getByName(expected.orderId.slice(5)).archiveSale();
   if(expected.orderId?.startsWith('btcpay:'))return stub.archiveSale();
+  if(expected.orderId===`ipn:${expected.captureId}`) {
+    // Legacy payment links have transaction IDs, not Orders API IDs. The signed
+    // IPN handler already saved their receipts before updating inventory.
+    const current=new Date().toISOString().slice(0,7),periods=new Set([current]);
+    const recorded=period=>env.SALES_LEDGER.getByName(`live:${period}`).hasRecordedIpnSale(expected.captureId);
+    if(await recorded(current))return {recorded:true,period:current};
+    let cursor;
+    do {
+      const page=await env.SALES_ARCHIVE.list({prefix:'sales/live/',delimiter:'/',...(cursor?{cursor}:{})});
+      for(const prefix of page.delimitedPrefixes||[]) {
+        const period=prefix.match(/^sales\/live\/(\d{4}-\d{2})\/$/)?.[1];
+        if(period&&!periods.has(period)){periods.add(period);if(await recorded(period))return {recorded:true,period};}
+      }
+      cursor=page.truncated?page.cursor:null;
+    }while(cursor);
+    throw Error('Verified IPN sale receipt is missing from the ledger');
+  }
   const accessToken=await token(env);
   const order=await paypal(env,`/v2/checkout/orders/${expected.orderId}`,accessToken);
   const captureId=validateCapture(order,slug,env,expected);

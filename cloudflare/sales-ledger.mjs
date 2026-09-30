@@ -36,6 +36,13 @@ export class SalesLedger extends DurableObject {
       withLabel:this.ctx.storage.sql.exec("SELECT count(*) AS n FROM sales WHERE json_extract(data,'$.fulfillment.labelStatus')='ready'").one().n,archived:!!meta&&meta.exported===meta.revision,
       period:meta?.period||null,revision:meta?.revision||0,path:meta?`sales/${meta.mode}/${meta.period}/sales.csv`:null};
   }
+  hasRecordedIpnSale(transactionId) {
+    if(typeof transactionId!=='string'||!/^[A-Z0-9]{1,100}$/.test(transactionId))return false;
+    const row=this.ctx.storage.sql.exec('SELECT data FROM sales WHERE id=?',`payment:${transactionId}`).toArray()[0];
+    if(!row)return false;
+    const record=JSON.parse(row.data);
+    return record.mode===this.env.PAYPAL_MODE&&record.kind==='sale'&&record.source==='ipn'&&record.transactionId===transactionId&&record.status==='Completed';
+  }
   async archiveNow() { await this.alarm(); return this.summary(); }
   async alarm() {
     if(this.exporting)return this.exporting;

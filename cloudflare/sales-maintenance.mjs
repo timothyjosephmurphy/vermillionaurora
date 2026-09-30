@@ -20,15 +20,20 @@ export async function salesMaintenance(request,env) {
     }
   }
 
+  let stage='inventory',product=null,checked=0;
   try {
     const periods=new Set();let backfilled=0;
     for(const slug of Object.keys(catalog)) {
+      stage='inventory';product=slug;checked++;
       if(await env.PAINTING_STOCK.getByName(slug).status()!=='sold')continue;
+      stage='backfill';
       const result=await backfillCheckoutSale(env,slug);
       if(result.recorded){periods.add(result.period);backfilled++;}
     }
     const archives=[];
+    stage='archive';product=null;
     for(const period of periods)archives.push(await env.SALES_LEDGER.getByName(`live:${period}`).archiveNow());
     return reply({ready:archives.every(x=>x.archived),backfilled,archives});
-  }catch{ return reply({error:'Sales archive verification failed; existing payment records are preserved'},503); }
+  }catch(error){ return reply({error:'Sales archive verification failed; existing payment records are preserved',stage,product,checked,
+    failure:/Verified IPN sale receipt/.test(error.message)?'missing-ipn-receipt':/Historical capture validation/.test(error.message)?'historical-capture-mismatch':/Too many/.test(error.message)?'request-limit':/Conflicting payment/.test(error.message)?'conflicting-payment':Number.isInteger(error.status)?`provider-http-${error.status}`:'archive-operation-failed'},503); }
 }
