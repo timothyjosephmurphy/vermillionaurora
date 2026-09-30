@@ -1,5 +1,6 @@
 // Read-only migration adapter. Order submission is deliberately not allowlisted.
 // Contract: https://v2.api.finerworks.com/Documentation
+import {finerworksFailureDetails} from './finerworks-response.mjs';
 export const PRINT_PROVIDER='finerworks';
 const READS=new Map([
   ['/v3/test_my_credentials','GET'],
@@ -29,8 +30,13 @@ export async function finerworksRequest(env,path,body,method='POST') {
   try{data=JSON.parse(raw);}catch{
     throw failure(response.status,/text\/html/i.test(response.headers.get('content-type')||'')?'html':'non-json',failureHint(raw));
   }
-  // Classify failures without forwarding upstream error messages, bodies, account records, or credentials.
-  if(!response.ok||data?.status?.success!==true)throw failure(response.status,'json',failureHint(data?.status?.message||''));
+  // Diagnostic details go only to the authenticated audit and are encrypted by its runner.
+  // Never relax success validation or forward upstream debug/account objects.
+  if(!response.ok||data?.status?.success!==true){
+    const error=failure(response.status,'json',failureHint(data?.status?.message||''));
+    error.details=finerworksFailureDetails(path,data,[webKey,appKey]);
+    throw error;
+  }
   return data;
 }
 function failure(status,format,hint){
@@ -51,7 +57,6 @@ const positive=n=>Number.isSafeInteger(n)&&n>0;
 const text=v=>typeof v==='string'?v.slice(0,500):'';
 const dimensions=d=>d&&['width','height'].every(k=>typeof d[k]==='number'&&Number.isFinite(d[k])&&d[k]>=0)?{width:d.width,height:d.height}:null;
 export async function finerworksMaterials(env) {
-  // Send explicit optional filters/default site rather than relying on null/default binding.
   const media=await finerworksRequest(env,'/v3/list_media_types',{ids:[],site_id:2});
   const styles=await finerworksRequest(env,'/v3/list_style_types',{ids:[]});
   if(!Array.isArray(media.media_types)||!Array.isArray(styles.style_types))throw Error('Unexpected FinerWorks materials response');
@@ -72,7 +77,6 @@ export function finerworksSizeAllowed(style,size) {
 }
 export function finerworksProductCode(media,style,size) {
   if(!positive(media.id)||!positive(media.productTypeId)||!positive(style.id)||!media.styleIds.includes(style.id)||!finerworksSizeAllowed(style,size))throw Error('FinerWorks does not confirm this exact material, style, and size');
-  // Unframed product-code grammar documented by FinerWorks; no inferred product IDs.
   return `${media.productTypeId}M${media.id}M${style.id}S${size.width}X${size.height}`;
 }
 function cost(value) {

@@ -16,7 +16,6 @@ export async function finerworksDiagnostic(request,env,products) {
   try {
     if(task==='credentials'){
       await finerworksRequest(env,'/v3/test_my_credentials',undefined,'GET');
-      // The account response contains keys and billing data: never return or log it.
       return reply({provider:'finerworks',mode:'sandbox',readOnly:true,credentialsOk:true,providerAppMode:'not-verified'});
     }
     if(task==='materials')return reply({provider:'finerworks',mode:'sandbox',readOnly:true,...await finerworksMaterials(env)});
@@ -38,6 +37,6 @@ export async function finerworksDiagnostic(request,env,products) {
     const prices=codes.length?await finerworksPrices(env,codes):[];
     return reply({provider:'finerworks',mode:'sandbox',readOnly:true,quotedAt:new Date().toISOString(),shippingIncluded:false,taxIncluded:false,candidates:candidates.map(c=>c.code?{...c,...prices.find(p=>p.code===c.code)}:c)});
   }catch(error){
-    return reply({provider:'finerworks',mode:'sandbox',readOnly:true,error:error.message},502);
+    return reply({provider:'finerworks',mode:'sandbox',readOnly:true,error:error.message,diagnostic:error.details||null},502);
   }
 }

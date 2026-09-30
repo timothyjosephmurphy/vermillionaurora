@@ -1,5 +1,5 @@
 // Read-only FinerWorks connection/material/price audit. No order or payment calls.
-// Detailed account pricing is encrypted before logging in this public repository.
+// Detailed account pricing and redacted failure diagnostics are encrypted before logging.
 import {randomBytes,createCipheriv,publicEncrypt} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {gzipSync} from 'node:zlib';
@@ -11,7 +11,7 @@ const base=`https://${worker}.timothyjosephmurphy.workers.dev`;
 const cf=`https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/${worker}/secrets`;
 const key='FINERWORKS_AUDIT_TOKEN',secret=`${Date.now()+15*60*1000}.${randomBytes(32).toString('hex')}`;
 const publicKey=readFileSync(new URL('./finerworks-report-public.pem',import.meta.url),'utf8');
-const report={provider:'finerworks',release:process.env.DEPLOYED_SHA,createdAt:new Date().toISOString(),readOnly:true,prices:[]};
+const report={provider:'finerworks',release:process.env.DEPLOYED_SHA,createdAt:new Date().toISOString(),readOnly:true,prices:[],failures:[]};
 const cloudflare=async(method,path='',body)=>{
   const response=await fetch(cf+path,{method,redirect:'error',headers:{Authorization:`Bearer ${process.env.CLOUDFLARE_API_TOKEN}`,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(30000)});
   const data=await response.json();
@@ -23,7 +23,7 @@ const read=async(path,options={},notFoundRetries=0)=>{
     if(response.status===404&&attempt<notFoundRetries){await new Promise(resolve=>setTimeout(resolve,5000));continue;}
     let data;try{data=await response.json();}catch{throw Error(`Sandbox ${path} returned a non-JSON response`);}
     if(!response.ok){
-      // Preserve only adapter-generated diagnostics, never raw vendor messages or bodies.
+      report.failures.push({path,httpStatus:response.status,diagnostic:data?.diagnostic||null});
       const message=typeof data?.error==='string'?data.error:'';
       const safe=/^(?:FinerWorks read-only request failed \(HTTP \d{3}(?:; [a-z-]+; [a-z-]+)?\)|FinerWorks connection failed or returned an unreadable response|Unexpected FinerWorks (?:materials|pricing) response)$/.test(message)?message:'Provider diagnostic unavailable';
       throw Error(`Sandbox ${path} failed: HTTP ${response.status}; ${safe}`);
@@ -61,9 +61,6 @@ try {
     assert.equal(credentials.credentialsOk,true);report.credentialsOk=true;
     console.log('PASS: FinerWorks credential test accepted both keys; print ordering remains disabled.');
   }catch(error){
-    // FinerWorks documents a GET-with-body credential test, unsupported by Worker fetch.
-    // Continue only read-only metadata/pricing calls using the documented header authentication.
-    // A failed dedicated credential test remains explicit in the report; this is not an ordering gate bypass.
     report.credentialsOk=false;report.credentialTestError=error.message;
     console.log('Credential test did not pass; checking independent read-only catalog/pricing endpoints.');
   }
