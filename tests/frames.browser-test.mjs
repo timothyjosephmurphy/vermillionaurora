@@ -28,6 +28,8 @@ try{
   assert(await frames.locator('.frame-link').first().evaluate(el=>el===document.activeElement));
   await frames.screenshot({path:'/tmp/frames-mobile.png'});
   await page.goto(origin+'/products/painting-portrait-with-hat/');
+  assert.equal(await page.locator('[data-frame-recommendations]').count(),0);
+  await page.goto(origin+'/products/el-zonte-at-sunrise/');
   assert.equal(await page.locator('[data-frame-recommendations] a').count(),0);
   assert.match(await page.locator('[data-frame-empty]').textContent(),/custom frame/);
   await page.goto(origin+'/products/painting-guitarist/');

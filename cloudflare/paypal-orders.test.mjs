@@ -13,8 +13,9 @@ test('catalog preserves existing explicit shipping profiles', () => {
   assert.equal(catalog['paul-murphy-painting-1'].packaging,'flat');
   assert.equal(catalog['paul-murphy-painting-57'].packaging,'flat', 'framed paintings cannot be rolled');
   assert.equal(catalog['paul-murphy-painting-55'],undefined, 'measurements are required before automatic shipping');
-  assert.deepEqual(catalog['painting-portrait-with-hat'].parcel,{length:22,width:4,height:4,weight:2});
-  assert.equal(catalog['painting-portrait-with-hat'].packaging,'tube');
+  assert.deepEqual(catalog['el-zonte-at-sunrise'].parcel,{length:24,width:4,height:4,weight:2});
+  assert.equal(catalog['el-zonte-at-sunrise'].packaging,'tube');
+  assert.equal(catalog['painting-portrait-with-hat'],undefined,'Not-for-sale originals cannot be purchased');
 });
 
 test('one original is reserved for only one buyer, and a completed capture sells it', async t => {

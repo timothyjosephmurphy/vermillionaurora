@@ -1490,16 +1490,13 @@
     "id": "painting-portrait-with-hat",
     "slug": "painting-portrait-with-hat",
     "type": "painting",
-    "title": "Sunrise on Rainier from Denny Blaine with Eagle Catching Fish",
-    "description": "Sunrise on Rainier from Denny Blaine with Eagle Catching Fish by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Sunrise on Rainier with Eagle",
+    "description": "Sunrise on Rainier with Eagle by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "",
     "artist": "TJ Murphy",
     "listing": {
-      "status": "available",
-      "price": {
-        "amount": "3000.00",
-        "currency": "USD"
-      }
+      "status": "not-for-sale",
+      "price": null
     },
     "medium": "Watercolor pastel",
     "surface": "Arches Coldpress Paper",
@@ -1520,15 +1517,15 @@
       "I’ve painted this view dozens of times. This is the last iteration."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/?product=painting-portrait-with-hat#contact",
+    "inquiryHref": "/#services",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-with-hat.jpg",
-      "alt": "Sunrise on Rainier from Denny Blaine with Eagle Catching Fish by TJ Murphy",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
     "checkout": {
-      "mode": "integrated",
+      "mode": "inquiry",
       "shipping": {
         "length": 22,
         "width": 4,
@@ -1541,7 +1538,7 @@
       }
     },
     "inquiry": {
-      "label": "Inquire about this painting",
+      "label": "Commission a painting",
       "note": ""
     },
     "back": {
