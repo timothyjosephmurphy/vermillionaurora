@@ -98,7 +98,8 @@ export async function validateFinerWorksPrintOrder(env,items,address,quote) {
     if(u.protocol!=='https:'||u.username||u.password||u.search||u.hash||!['vermillionaurora.com','media.vermillionaurora.com'].includes(u.hostname)||! /\.(jpg|jpeg|png)$/i.test(u.pathname))throw Error('Invalid FinerWorks image URL');
     return {product_order_po:po,product_sku:item.sku,product_qty:item.quantity,product_title:String(item.title||'Art print').slice(0,50),product_image:{product_url_file:u.href,product_url_thumbnail:u.href}};
   });
-  const body={orders:[{order_po:po,order_key:null,recipient:finerworksRecipient(address,po),order_items,shipping_code:quote.shippingMethod,test_mode:true,source:'TJM.art sandbox'}],validate_only:true,payment_token:'xxxx'};
+  // Omit the optional source label: the live validator rejected it despite its documented text type.
+  const body={orders:[{order_po:po,order_key:null,recipient:finerworksRecipient(address,po),order_items,shipping_code:quote.shippingMethod,test_mode:true}],validate_only:true,payment_token:'xxxx'};
   const data=await finerworksRequest(env,'/v3/submit_orders_v2',body);
   if(data.status?.success!==true||Array.isArray(data.orders)&&data.orders.length)throw Error('FinerWorks preflight did not confirm validation-only success');
   return {provider:'finerworks',validationOnly:true,testMode:true,validated:true,ordersSubmitted:false};
