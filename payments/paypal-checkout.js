@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     liveStock=event.detail?.[slug];
     if(['sold','reserved','retired','not-for-sale'].includes(liveStock)){
       document.querySelectorAll('.purchase-panel,.product-purchase-cta,.paypal-checkout-link').forEach(el=>el.remove());
+      document.querySelector('[data-original-purchase]')?.setAttribute('hidden','');
     }
   });
   const catalogVersion = document.querySelector('meta[name="catalog-version"]')?.content;
@@ -267,15 +268,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       const buy = document.createElement('a');
       buy.href = '#buy-painting';
       buy.className = 'button button-solid';
-      buy.textContent = 'Buy this painting';
+      buy.textContent = 'Buy now';
       buy.setAttribute('aria-label',`Enter shipping details to buy ${title}`);
       buy.addEventListener('click',event => {
         event.preventDefault();
         panel.scrollIntoView({block:'start'});
         form.querySelector('input').focus({preventScroll:true});
       });
-      cta.append(prompt,buy);
-      document.querySelector('.product-layout').before(cta);
+      const purchaseSlot = document.querySelector('[data-original-purchase]');
+      if (purchaseSlot) purchaseSlot.replaceChildren(buy);
+      else { cta.append(prompt,buy); document.querySelector('.product-layout').before(cta); }
       return;
     }
   } catch (_) { /* Leave the existing inquiry action available. */ }
@@ -305,9 +307,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const link = document.createElement('a');
     link.className = 'button button-solid paypal-checkout-link';
     link.href = checkout.href;
-    link.textContent = 'Buy with PayPal';
+    link.textContent = 'Buy now';
     link.setAttribute('aria-label', `Buy ${title} with PayPal`);
-    inquiry.prepend(link);
+    const purchaseSlot = document.querySelector('[data-original-purchase]');
+    if (purchaseSlot) purchaseSlot.replaceChildren(link);
+    else inquiry.prepend(link);
   } catch (_) {
     // The existing purchase inquiry remains available if links are not configured.
   }

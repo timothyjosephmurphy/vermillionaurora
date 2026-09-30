@@ -24,6 +24,7 @@ jobs:
         run: |
           node tests/catalog.browser-test.mjs
           node tests/cart.browser-test.mjs
+          node tests/print-framing.browser-test.mjs
           node payments/paypal-checkout.browser-test.cjs
           node payments/bitcoin-checkout.browser-test.cjs
       - uses: actions/upload-artifact@v4

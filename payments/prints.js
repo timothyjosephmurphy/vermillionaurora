@@ -1,5 +1,31 @@
 (() => {
   const size=d=>`${Number(d.width.toFixed(2))} × ${Number(d.height.toFixed(2))} in`;
+  document.addEventListener('DOMContentLoaded',()=>{
+    const dialog=document.querySelector('[data-print-dialog]'),trigger=document.querySelector('[data-print-open]');
+    if(!dialog||!trigger)return;
+    let scrollX=0,scrollY=0,startedOnBackdrop=false;
+    const open=()=>{
+      if(dialog.open)return;
+      scrollX=window.scrollX;scrollY=window.scrollY;
+      dialog.showModal();dialog.scrollTop=0;
+      document.documentElement.style.setProperty('--print-dialog-scroll',`-${scrollY}px`);
+      document.documentElement.classList.add('print-dialog-open');
+    };
+    trigger.addEventListener('click',open);
+    dialog.querySelector('[data-print-close]').addEventListener('click',()=>dialog.close());
+    const outside=event=>{const r=dialog.getBoundingClientRect();return event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom;};
+    dialog.addEventListener('pointerdown',event=>{startedOnBackdrop=event.target===dialog&&outside(event);});
+    dialog.addEventListener('click',event=>{if(startedOnBackdrop&&event.target===dialog&&outside(event))dialog.close();startedOnBackdrop=false;});
+    dialog.addEventListener('close',()=>{
+      document.documentElement.classList.remove('print-dialog-open');
+      document.documentElement.style.removeProperty('--print-dialog-scroll');
+      window.scrollTo({left:scrollX,top:scrollY,behavior:'instant'});
+      trigger.focus({preventScroll:true});
+    });
+    // Preserve links shared before the print selector moved into a dialog.
+    const openFromHash=()=>{if(location.hash==='#print-options')open();};
+    window.addEventListener('hashchange',openFromHash);openFromHash();
+  });
   document.addEventListener('DOMContentLoaded',()=>document.querySelectorAll('[data-print-options]').forEach(async root=>{
     const options=JSON.parse(root.dataset.options),preview=root.dataset.preview==='true',button=root.querySelector('[data-print-add]'),message=root.querySelector('[data-print-message]');
     let sizeOption=options.find(o=>o.id===root.querySelector('input[type="radio"]:checked')?.value)||options[0],selected=sizeOption,capabilities=null;

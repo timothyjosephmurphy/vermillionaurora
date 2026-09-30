@@ -1,0 +1,11 @@
+---
+import PrintOptions from './PrintOptions.astro';
+const {product}=Astro.props;
+---
+<dialog id="print-purchase-dialog" class="print-purchase-dialog" data-print-dialog aria-labelledby="print-dialog-title">
+  <div class="print-dialog-header">
+    <h2 id="print-dialog-title">Print of {product.title}</h2>
+    <button type="button" class="print-dialog-close" data-print-close autofocus aria-label="Close print options">Close <span aria-hidden="true">×</span></button>
+  </div>
+  <div class="print-dialog-content"><PrintOptions product={product}/></div>
+</dialog>

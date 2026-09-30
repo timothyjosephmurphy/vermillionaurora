@@ -28,6 +28,16 @@ try{
   for(const width of [1400,390]){
     await page.setViewportSize({width,height:1000});await page.goto(origin+'/products/painting-portrait-in-green/');
     const selector=page.locator('[data-print-options]');
+    const trigger=page.getByRole('button',{name:'Buy a print',exact:true}),dialog=page.locator('[data-print-dialog]');
+    assert(await dialog.isHidden(),'Print options are hidden until requested');
+    await trigger.click();await dialog.waitFor({state:'visible'});
+    assert(await page.getByRole('button',{name:'Close print options'}).evaluate(el=>el===document.activeElement));
+    await page.keyboard.press('Tab');
+    assert(await dialog.evaluate(el=>el.contains(document.activeElement)),'Keyboard focus stays inside the print dialog');
+    await page.keyboard.press('Escape');await dialog.waitFor({state:'hidden'});
+    assert(await trigger.evaluate(el=>el===document.activeElement),'Closing returns focus to Buy a print');
+    await trigger.click();await page.getByRole('button',{name:'Close print options'}).click();
+    assert(await dialog.isHidden());await trigger.click();
     assert.match(await page.locator('.product-print-availability').textContent(),/Print samples from \$25.00/);
     assert.equal(await selector.locator('.print-choice').count(),3);
     await selector.locator('[data-print-finish]').selectOption('frame-black');
@@ -44,6 +54,7 @@ try{
     await selector.locator('input[value$="-full"]').check();
     assert.match(await selector.locator('[data-print-total]').textContent(),/\$164.00/);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+    assert(await dialog.evaluate(el=>el.scrollWidth<=el.clientWidth+1),'Print dialog has no horizontal overflow');
     const shape=await selector.locator('[data-print-sheet]').boundingBox();assert(shape.height>shape.width);
     await page.waitForFunction(()=>{const image=document.querySelector('[data-print-image-area] img');return image.complete&&image.naturalWidth===1000&&image.naturalHeight===1250;});
     await selector.screenshot({path:`/tmp/framed-print-${width}.png`,style:'.site-header{visibility:hidden!important}'});
@@ -56,6 +67,7 @@ try{
   await page.locator('[data-print-finish]').selectOption('frame-natural');
   await page.locator('input[value$="-medium"]').check();await page.locator('[data-print-add]').click();
   await page.goto(origin+'/products/painting-portrait-in-gold/');
+  await page.getByRole('button',{name:'Buy a print',exact:true}).click();
   await page.locator('[data-print-finish]').selectOption('frame-white');await page.locator('[data-print-add]').click();
   const cart=await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-v1')));
   assert.deepEqual(cart,[{id:'print-painting-portrait-in-green-medium-frame-natural',quantity:1},{id:'print-painting-portrait-in-gold-small-frame-white',quantity:1}]);
@@ -67,9 +79,9 @@ try{
   await page.locator('[data-cart-quote]').click();await page.locator('[data-cart-payments]').waitFor({state:'visible'});
   assert.deepEqual(quotes[0].items,cart);assert.equal(quotes[0].catalogVersion,'framed-test-'+printVersion);
   assert.match(await page.locator('[data-cart-total]').textContent(),/183.58/);
-  unavailable=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.locator('[data-print-finish]').selectOption('frame-black');
+  unavailable=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.getByRole('button',{name:'Buy a print',exact:true}).click();await page.locator('[data-print-finish]').selectOption('frame-black');
   assert(await page.locator('[data-print-add]').isDisabled());
-  unavailable=false;stale=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.locator('[data-print-finish]').selectOption('frame-black');
+  unavailable=false;stale=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.getByRole('button',{name:'Buy a print',exact:true}).click();await page.locator('[data-print-finish]').selectOption('frame-black');
   assert(await page.locator('[data-print-add]').isDisabled(),'An old backend must not sell a different print layout than the page preview');
   await page.goto(origin+'/products/painting-beach-walk/');assert.equal(await page.locator('[data-print-options]').count(),0);assert.match(await page.locator('.product-print-availability').textContent(),/not yet available/);
   assert.deepEqual(errors,[]);console.log('PASS: product-page sizes, frame prices, mobile layout, selection replacement, cart details and exact quote IDs; no payments or print orders.');

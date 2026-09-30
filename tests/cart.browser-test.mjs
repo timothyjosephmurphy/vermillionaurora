@@ -52,7 +52,12 @@ try{
  availability='sold';await page.reload();await page.getByText('Sold',{exact:true}).waitFor();assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isDisabled());await page.getByRole('button',{name:'Remove Chase Toole'}).click();await page.getByRole('heading',{name:'A place for the work you love.'}).waitFor();availability='available';
  // Buy now buys just that artwork without dropping other cart selections.
  await page.evaluate(ids=>localStorage.setItem('va-cart-v1',JSON.stringify(ids.map(id=>({id,quantity:1})))),ids);
- await page.goto(origin+'/cart/?buy='+ids[0]);await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
+ await page.goto(`${origin}/products/${ids[0]}/`);
+ const buyNow=page.getByRole('button',{name:'Buy now',exact:true});await buyNow.waitFor();
+ const buyBounds=await buyNow.boundingBox(),paintingBounds=await page.locator('.product-figure').boundingBox();
+ assert(buyBounds.y+buyBounds.height<=paintingBounds.y,'Buy now appears above the painting');
+ await buyNow.click();await page.waitForURL(origin+'/cart/?buy='+ids[0]);
+ await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual((await cartStored()).map(i=>i.id),[ids[1]]);
  assert.deepEqual(errors,[]);console.log('PASS: desktop/mobile cart, persistent selections, quantity-one originals, invalidation, payment recovery, receipt, unavailable stock, corrupted storage, and Buy now preserving other selections.');
 }finally{await browser.close();}
