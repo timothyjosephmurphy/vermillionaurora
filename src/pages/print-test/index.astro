@@ -2,13 +2,14 @@
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import {readyPrints,printVersion} from '../../../catalog/prints.mjs';
-const paintings=[['painting-portrait-in-gold','Dorian Nakamoto'],['painting-portrait-in-green','Chase Toole']].map(([id,name])=>({id,name,options:Object.values(readyPrints).filter(p=>p.productId===id&&p.sampleOnly&&!p.mat)}));
+const paintings=[['painting-portrait-in-gold','Dorian Nakamoto'],['painting-portrait-in-green','Chase Toole']].map(([id,name])=>({id,name,options:Object.values(readyPrints).filter(p=>p.productId===id&&p.sampleOnly&&!p.mat)})).filter(p=>p.options.length);
 ---
 <!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
 <title>Dorian and Chase print samples | TJM.art</title><meta name="print-catalog-version" content={printVersion}/><link rel="stylesheet" href="/styles.css"/><link rel="stylesheet" href="/site-header.css"/>
 </head><body><div class="page-shell"><SiteHeader/>
 <main class="container sample-page"><p class="eyebrow dark">FinerWorks · Watercolor Bright White paper</p><h1>Order a print sample</h1>
-<p class="sample-note"><strong>This is a real purchase.</strong> These samples use the existing lower-resolution images, with white margins to preserve the whole painting. They will be printed and shipped. They are not finished print editions.</p>
+<p class="sample-note"><strong>This is a real purchase.</strong> These samples use the existing lower-resolution images, cropped to fill portrait paper without added white margins. The previews show the crop; trimming covers a small amount at the edges. They will be printed and shipped. They are not finished print editions.</p>
+{!paintings.length&&<p>Print samples are temporarily unavailable.</p>}
 <form data-print-samples><div class="sample-grid">{paintings.map(p=><fieldset><legend>{p.name}</legend><a href={p.options[0].assetUrl} target="_blank" rel="noopener"><img src={p.options[0].assetUrl} alt={`Actual sample sheet for ${p.name}`}/></a><label>Paper size<select name={p.id}><option value="">Do not include</option>{p.options.map(o=><option value={o.id} selected={o.id.endsWith('-small')}>{o.paperSize.width} × {o.paperSize.height} in — ${o.amount}</option>)}</select></label><p>One copy. Print only; mat and frame not included.</p></fieldset>)}</div>
 <p>Shipping and applicable tax are calculated in your cart. United States delivery.</p><button class="button button-solid" type="submit" disabled>Continue to cart</button><p data-sample-status role="status" aria-live="polite">Checking sample availability…</p></form>
 </main><SiteFooter/></div><script is:inline src="/payments/print-samples.js" defer></script></body></html>
