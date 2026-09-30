@@ -85,11 +85,13 @@ it('records tracking and sends one shipment notification even when callbacks rep
   expect(await order.printCallback('b'.repeat(64))).toBe(false);expect(await order.printCallback((await inspect(order)).printJob.callbackKey)).toBe(true);
 });
 it('requires an audit credential for provider verification and never exposes it in health',async()=>{
-  const response=await printApi(new Request('https://worker/checkout/prints/verify',{method:'POST',body:'{}'}),{...env,...settings});expect(response.status).toBe(404);expect(calls).toHaveLength(0);
-  const health=await printApi(new Request('https://worker/checkout/prints/health'),{...env,...settings});expect(await health.json()).toEqual({provider:'prodigi',mode:'sandbox',keyConfigured:true,enabled:true});
+  const diagnosticEnv={...env,...settings,PRINT_CHECKOUT_ENABLED:'false',FINERWORKS_WEB_API_KEY:'private-web',FINERWORKS_APP_KEY:'private-app'};
+  const response=await printApi(new Request('https://worker/checkout/prints/verify',{method:'POST',body:'{}'}),diagnosticEnv);expect(response.status).toBe(404);expect(calls).toHaveLength(0);
+  const health=await printApi(new Request('https://worker/checkout/prints/health'),diagnosticEnv);expect(await health.json()).toEqual({provider:'finerworks',mode:'sandbox',webApiKeyConfigured:true,appKeyConfigured:true,enabled:false,readOnly:true});
 });
-it('reports paper options only through the authenticated sandbox verifier without placing orders',async()=>{
-  fetch.mockImplementationOnce(async()=>Response.json({outcome:'Ok',product:{sku:item.sku,description:'Fine art paper',productDimensions:{width:12,height:16,units:'in'},attributes:{finish:['matte']},printAreas:{default:{required:true}},variants:[{attributes:{finish:'matte'},shipsTo:['US'],printAreaSizes:{default:{horizontalResolution:3600,verticalResolution:4800}}}]}}));
-  const response=await printApi(new Request('https://worker/checkout/prints/verify',{method:'POST',headers:{Authorization:'Bearer audit'},body:JSON.stringify({skus:[item.sku]})}),{...env,...settings,CHECKOUT_AUDIT_TOKEN:'audit'});
-  const data=await response.json();expect(data.results[0].ok).toBe(false);expect(data.results[0].productOptions.variants).toEqual([{attributes:{finish:'matte'},shipsToUS:true,printAreaSizes:{default:{horizontalResolution:3600,verticalResolution:4800}}}]);expect(orders.size).toBe(0);
+it('verifies FinerWorks without exposing account details or placing an order',async()=>{
+  fetch.mockImplementationOnce(async()=>Response.json({status:{success:true,debug:{secret:'private-app'}},user_account:{web_api_key:'private-web',billing_info:{address_1:'private-address'}}}));
+  const token=`${Date.now()+600000}.${'a'.repeat(64)}`;
+  const response=await printApi(new Request('https://worker/checkout/prints/verify',{method:'POST',headers:{Authorization:`Bearer ${token}`},body:JSON.stringify({task:'credentials'})}),{...env,...settings,PRINT_CHECKOUT_ENABLED:'false',FINERWORKS_WEB_API_KEY:'private-web',FINERWORKS_APP_KEY:'private-app',FINERWORKS_AUDIT_TOKEN:token});
+  const data=await response.json();expect(response.status).toBe(200);expect(data.credentialsOk).toBe(true);expect(JSON.stringify(data)).not.toContain('private-');expect(data.providerAppMode).toBe('not-verified');expect(orders.size).toBe(0);
 });
