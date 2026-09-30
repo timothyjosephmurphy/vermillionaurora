@@ -1,0 +1,89 @@
+[
+  {
+    "id": "seattle",
+    "number": 1,
+    "city": "Seattle",
+    "country": "Washington, USA",
+    "coordinates": [
+      47.6062,
+      -122.3321
+    ],
+    "labelClass": "seattle",
+    "exhibitions": [
+      {
+        "name": "Intiman Theater Seattle Auction",
+        "slug": "intiman-auction",
+        "date": "2023"
+      },
+      {
+        "name": "My Living Room, Seattle, Washington",
+        "slug": "living-room",
+        "date": "Current"
+      },
+      {
+        "name": "Studio 601, Seattle, Washington",
+        "slug": "studio-601",
+        "date": "2022"
+      },
+      {
+        "name": "Victrola Coffee Shop, Seattle, Washington",
+        "slug": "victrola",
+        "date": "2025"
+      }
+    ]
+  },
+  {
+    "id": "el-salvador",
+    "number": 2,
+    "city": "San Salvador area",
+    "country": "El Salvador",
+    "coordinates": [
+      13.6294151,
+      -89.2508188
+    ],
+    "labelClass": "salvador",
+    "exhibitions": [
+      {
+        "name": "Adopting Bitcoin El Salvador",
+        "slug": "el-salvador",
+        "date": "2024"
+      }
+    ]
+  },
+  {
+    "id": "warsaw",
+    "number": 3,
+    "city": "Warsaw",
+    "country": "Poland",
+    "coordinates": [
+      52.2311858,
+      21.0065384
+    ],
+    "labelClass": "warsaw",
+    "exhibitions": [
+      {
+        "name": "Bitcoin Film Festival Warsaw, Poland",
+        "slug": "bitcoin-film-festival-warsaw",
+        "date": "2025"
+      }
+    ]
+  },
+  {
+    "id": "cape-town",
+    "number": 4,
+    "city": "Cape Town",
+    "country": "South Africa",
+    "coordinates": [
+      -33.9069434,
+      18.4186408
+    ],
+    "labelClass": "cape",
+    "exhibitions": [
+      {
+        "name": "Adopting Bitcoin Cape Town, South Africa",
+        "slug": "cape-town",
+        "date": "2025"
+      }
+    ]
+  }
+]

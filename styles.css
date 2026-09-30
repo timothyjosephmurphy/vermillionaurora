@@ -88,17 +88,13 @@ textarea {
 }
 
 .brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--sand));
-  color: #fff;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
-  font-weight: 700;
+  display: block;
+  flex-shrink: 0;
+  width: 52px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
 }
 
 .main-nav {

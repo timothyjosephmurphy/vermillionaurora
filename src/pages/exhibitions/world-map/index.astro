@@ -1,0 +1,54 @@
+---
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import ExhibitionMap from '../../../components/ExhibitionMap.astro';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exhibitions Around the World | Vermillion Aurora</title>
+    <meta name="description" content="Explore TJ Murphy’s exhibitions in Seattle, El Salvador, Cape Town, and Warsaw. A world map connects each location to its exhibition gallery." />
+    <link rel="canonical" href="https://vermillionaurora.com/exhibitions/world-map/" />
+    <meta property="og:title" content="Exhibitions Around the World" />
+    <meta property="og:description" content="From Seattle galleries to international conferences: explore the places where I have shown my artwork." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vermillionaurora.com/exhibitions/world-map/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/site-header.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader />
+      <main class="container world-exhibitions">
+        <nav class="map-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/exhibitions/">Exhibitions</a></nav>
+        <header class="map-heading">
+          <p class="eyebrow dark">Art across borders</p>
+          <h1>Exhibitions Around the World</h1>
+          <p class="map-story">I have shown and sold artwork in several locations internationally and here in Seattle. I travel with my artwork to conferences, then frame and display it there. Closer to home, I also exhibit in local Seattle galleries.</p>
+        </header>
+        <figure class="world-map">
+          <ExhibitionMap />
+          <figcaption>Follow an exhibition name to see its photographs and story. Seattle exhibitions share a city pin; venue details are available in the individual galleries. Map: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a>.</figcaption>
+        </figure>
+        <nav class="map-more" aria-label="More exhibitions"><a href="/exhibitions/">← All exhibitions</a><a href="/#exhibitions">Back to the exhibitions carousel</a></nav>
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
+<style>
+  .world-exhibitions{max-width:1200px;padding-block:24px 56px}.map-breadcrumb{display:flex;gap:10px;font-size:.8rem}
+  .map-heading{margin:36px 0 30px}.map-heading .eyebrow{margin:0 0 12px}
+  h1{font:600 clamp(2.5rem,5vw,4.2rem)/1.05 "Cormorant Garamond",serif;margin:0 0 22px}
+  .map-story{font-size:1.05rem;line-height:1.8;max-width:810px;margin:0;color:#5e554b}
+  .world-map{margin:0}.world-map figcaption{font-size:.75rem;line-height:1.7;color:#776356;margin-top:14px;max-width:850px}
+  .world-map figcaption a,.map-more a{text-decoration:underline;text-underline-offset:4px}
+  .map-more{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;border-top:1px solid var(--line);padding-top:24px;margin-top:32px;font-size:.9rem}
+  a:focus-visible{outline:3px solid #bd381c;outline-offset:4px}
+  @media(max-width:560px){.map-heading{margin-top:26px}.map-story{font-size:1rem}}
+</style>
