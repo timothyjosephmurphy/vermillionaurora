@@ -27,7 +27,9 @@ async function verify(body){
 let installed=false;
 try{
  assert(process.env.CLOUDFLARE_API_TOKEN);
- const h=await (await fetch(base+'/checkout/prints/health')).json();assert.equal(h.mode,'sandbox');assert.equal(h.enabled,false);assert.equal(h.readOnly,true);
+ const h=await (await fetch(base+'/checkout/prints/health')).json();assert.equal(h.mode,'sandbox');assert.equal(h.provider,'finerworks');
+ // The unframed sandbox pilot may be enabled independently. This script only
+ // calls catalog/matting tasks and never the test-order task.
  installed=true;await secret('PUT');
  const mats=await verify({task:'mats'});console.log('VERIFIED_WHITE_MATS '+JSON.stringify(mats.materials.filter(m=>/white/i.test(m.name))));
  const materials=await verify({task:'materials'});console.log('VERIFIED_MAT_STYLES '+JSON.stringify(materials.styles.filter(s=>s.canMat||s.id===8)));
