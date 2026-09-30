@@ -4,7 +4,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 
 const origin='https://vermillionaurora.com',root=path.resolve('dist');
-const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox','--disable-dev-shm-usage']});
 try{
   const page=await browser.newPage({viewport:{width:1400,height:1000}}),errors=[];
   page.on('pageerror',error=>errors.push(error.message));
@@ -16,7 +16,7 @@ try{
     return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.jpg':'image/jpeg'})[path.extname(file)]||'application/octet-stream'});
   });
   await page.goto(origin+'/products/painting-portrait-in-green/');
-  const frames=page.locator('[data-frame-recommendations]').first();
+  const frames=page.locator('[data-frame-recommendations][data-frame-context="original"]');
   assert.equal(await frames.locator('.frame-link').count(),2);
   assert.match(await frames.locator('.frame-link').first().getAttribute('href'),/\/dp\/B0FJLR7MTQ$/);
   assert.match(await frames.textContent(),/purchased separately/);
