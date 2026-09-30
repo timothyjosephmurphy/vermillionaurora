@@ -25,7 +25,7 @@ const read=async(path,options={},notFoundRetries=0)=>{
     if(!response.ok){
       // Preserve only adapter-generated diagnostics, never raw vendor messages or bodies.
       const message=typeof data?.error==='string'?data.error:'';
-      const safe=/^(?:FinerWorks read-only request failed \(HTTP \d{3}\)|FinerWorks connection failed or returned an unreadable response|Unexpected FinerWorks (?:materials|pricing) response)$/.test(message)?message:'Provider diagnostic unavailable';
+      const safe=/^(?:FinerWorks read-only request failed \(HTTP \d{3}(?:; [a-z-]+; [a-z-]+)?\)|FinerWorks connection failed or returned an unreadable response|Unexpected FinerWorks (?:materials|pricing) response)$/.test(message)?message:'Provider diagnostic unavailable';
       throw Error(`Sandbox ${path} failed: HTTP ${response.status}; ${safe}`);
     }
     return data;

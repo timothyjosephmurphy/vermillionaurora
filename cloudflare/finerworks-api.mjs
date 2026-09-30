@@ -15,20 +15,37 @@ export function finerworksEnvironment(env,requireKeys=true) {
 export async function finerworksRequest(env,path,body,method='POST') {
   finerworksEnvironment(env);
   if(READS.get(path)!==method||(method==='GET'&&body!==undefined))throw Error('FinerWorks migration permits only approved read-only requests');
-  let response,data;
+  const webKey=String(env.FINERWORKS_WEB_API_KEY).trim(),appKey=String(env.FINERWORKS_APP_KEY).trim();
+  if(!webKey||!appKey||/[\r\n]/.test(webKey+appKey))throw Error('FinerWorks credentials contain invalid whitespace');
+  let response,data,raw;
   try {
     response=await fetch(`https://v2.api.finerworks.com${path}`,{
-      method,redirect:'error',headers:{'Accept':'application/json','Content-Type':'application/json',web_api_key:env.FINERWORKS_WEB_API_KEY,app_key:env.FINERWORKS_APP_KEY},
+      method,redirect:'manual',headers:{'Accept':'application/json','Content-Type':'application/json',web_api_key:webKey,app_key:appKey},
       signal:AbortSignal.timeout(30000),...(body===undefined?{}:{body:JSON.stringify(body)})
     });
-    data=await response.json();
   }catch{throw Error('FinerWorks connection failed or returned an unreadable response');}
-  // Never forward upstream error messages, debug objects, account records, or credentials.
-  if(!response.ok||data?.status?.success!==true){
-    const error=Error(`FinerWorks read-only request failed (HTTP ${response.status})`);
-    error.status=response.status;throw error;
+  if(response.status>=300&&response.status<400)throw failure(response.status,'redirect','none');
+  try{raw=await response.text();}catch{throw failure(response.status,'body-read-failed','none');}
+  try{data=JSON.parse(raw);}catch{
+    throw failure(response.status,/text\/html/i.test(response.headers.get('content-type')||'')?'html':'non-json',failureHint(raw));
   }
+  // Classify failures without forwarding upstream error messages, bodies, account records, or credentials.
+  if(!response.ok||data?.status?.success!==true)throw failure(response.status,'json',failureHint(data?.status?.message||''));
   return data;
+}
+function failure(status,format,hint){
+  const error=Error(`FinerWorks read-only request failed (HTTP ${status}; ${format}; ${hint})`);
+  error.status=status;return error;
+}
+function failureHint(value){
+  const message=typeof value==='string'?value.slice(0,20000):'';
+  if(/(?:invalid|missing|incorrect|expired|disabled|not found)/i.test(message)){
+    if(/app[_ -]?key/i.test(message))return 'app-key-rejected';
+    if(/web[_ -]?api[_ -]?key/i.test(message))return 'web-key-rejected';
+  }
+  if(/credential|authenticat|authoriz/i.test(message))return 'authentication';
+  if(/firewall|blocked|challenge/i.test(message))return 'access-policy';
+  return 'none';
 }
 const positive=n=>Number.isSafeInteger(n)&&n>0;
 const text=v=>typeof v==='string'?v.slice(0,500):'';
