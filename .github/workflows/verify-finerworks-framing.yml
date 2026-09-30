@@ -20,6 +20,7 @@ jobs:
       - run: |
           npm ci
           npm run build
+          node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
       - name: Deploy isolated sandbox
         uses: cloudflare/wrangler-action@v4
         with:
@@ -31,4 +32,4 @@ jobs:
       - name: Verify frame materials and prices without ordering
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
-        run: node payments/inspect-finerworks-frames.mjs --quotes-only
+        run: node payments/inspect-finerworks-frames.mjs

@@ -38,12 +38,14 @@ try{
     assert(await selector.locator('[data-print-sheet]').evaluate(el=>el.classList.contains('is-framed')));
     await selector.locator('input[value$="-medium"]').check();
     assert.match(await selector.locator('[data-print-total]').textContent(),/\$205.00/);
-    assert.match(await selector.locator('[data-print-dimensions]').textContent(),/14 × 11/);
+    assert.match(await selector.locator('[data-print-dimensions]').textContent(),/11 × 14/);
     await selector.locator('[data-print-finish]').selectOption('frame-natural');
     assert.match(await selector.locator('[data-print-total]').textContent(),/\$245.00/);
     await selector.locator('input[value$="-full"]').check();
     assert.match(await selector.locator('[data-print-total]').textContent(),/\$385.00/);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+    const shape=await selector.locator('[data-print-sheet]').boundingBox();assert(shape.height>shape.width);
+    await page.waitForFunction(()=>{const image=document.querySelector('[data-print-image-area] img');return image.complete&&image.naturalWidth===1000&&image.naturalHeight===1250;});
     await selector.screenshot({path:`/tmp/framed-print-${width}.png`,style:'.site-header{visibility:hidden!important}'});
     await selector.locator('[data-print-finish]').selectOption('none');
     assert.match(await selector.locator('[data-print-total]').textContent(),/Print: \$75.00/);

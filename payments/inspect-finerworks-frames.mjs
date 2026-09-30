@@ -1,6 +1,7 @@
 // Catalog requests only. No order submission or customer information.
-import {randomBytes} from 'node:crypto';
+import {randomBytes,createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
+import config from '../catalog/prints.json' with {type:'json'};
 const base='https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev';
 const cf='https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/vermillion-checkout-sandbox/secrets';
 const name='FINERWORKS_AUDIT_TOKEN',token=`${Date.now()+15*60000}.${randomBytes(32).toString('hex')}`;
@@ -19,6 +20,10 @@ let installed=false;
 try{
   installed=true;await secret('PUT');
   const quotesOnly=process.argv.includes('--quotes-only');
+  if(!quotesOnly)for(const art of Object.values(config.artworks).filter(a=>a.sampleOnly)){
+    const sha=art.variants.small.asset.sha256,r=await fetch(`${base}/checkout/print-assets/${sha}.jpg`);
+    assert.equal(r.status,200);assert.equal(createHash('sha256').update(Buffer.from(await r.arrayBuffer())).digest('hex'),sha);
+  }
   const prices=await verify({task:'prices',productIds:['painting-portrait-in-green','painting-portrait-in-gold'],mediaId:144,styleId:8});
   console.log('VERIFIED_PORTRAIT_PRICES '+JSON.stringify(prices));
   for(const sizeKey of ['small','medium','full'])console.log('VERIFIED_MAT_OPTION '+JSON.stringify(await verify({task:'matting',sizeKey})));
@@ -37,5 +42,5 @@ try{
       console.log('VERIFIED_FRAME_PREFLIGHT '+JSON.stringify({productId,frameKey,validated:true,ordersSubmitted:false}));
     }
   }
-  console.log('PASS: saved framed prices, destination shipping and validation-only preflight. No orders placed.');
+  console.log(quotesOnly?'PASS: portrait product codes and supplier prices retrieved. No orders placed.':'PASS: exact portrait files, saved framed prices, destination shipping and validation-only preflight. No orders placed.');
 }finally{if(installed)await secret('DELETE');}

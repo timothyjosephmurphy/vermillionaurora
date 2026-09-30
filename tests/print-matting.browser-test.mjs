@@ -29,7 +29,7 @@ try{
   assert.match(await page.locator('[data-print-dimensions]').textContent(),/Mat \/ frame size: 20 × 16/);
   assert.equal(await frames.locator('.frame-link').count(),1);assert.match(await frames.locator('.frame-link').getAttribute('href'),/B0BQQY92LH/);
   await page.locator('input[value$="-small"]').check();
-  assert.match(await page.locator('[data-print-dimensions]').textContent(),/Image: 7.5 × 6.*Mat \/ frame size: 10 × 8/);
+  assert.match(await page.locator('[data-print-dimensions]').textContent(),/Image: 6 × 7.5.*Mat \/ frame size: 8 × 10/);
   assert.match(await frames.locator('.frame-link').getAttribute('href'),/B0B1CNJL7N/);
   assert.match(await frames.locator('.frame-fit').textContent(),/Fits the selected mat/);
   assert(await page.locator('[data-print-add]').isDisabled());
