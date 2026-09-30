@@ -1,4 +1,5 @@
 import {cartCheckout} from './cart-checkout.mjs';
+import {printApi} from './print-api.mjs';
 export {CartOrder} from './cart-order.mjs';
 import { inventoryStatus } from './inventory-api.mjs';
 import { catalogVersion } from './checkout-catalog.mjs';
@@ -18,6 +19,7 @@ const ALLOWED_TYPES = new Set(["image/jpeg","image/png","image/webp","image/heic
 export default {
   async fetch(request, env) {
     const path = new URL(request.url).pathname;
+    if (path.startsWith('/checkout/prints/')) return printApi(request,env);
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path === '/inventory/status') return inventoryStatus(request,env);
     if (path === '/checkout/bitcoin/webhook') return bitcoinWebhook(request,env);

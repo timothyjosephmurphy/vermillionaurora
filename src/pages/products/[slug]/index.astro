@@ -1,6 +1,7 @@
 ---
 import ProductLayout from '../../../layouts/ProductLayout.astro';
 import PaintingImage from '../../../components/PaintingImage.astro';
+import PrintOptions from '../../../components/PrintOptions.astro';
 import { products, priceLabel, statusLabel, dimensionLabel } from '../../../../catalog/catalog.mjs';
 export function getStaticPaths() { return products.map(product=>({params:{slug:product.slug},props:{product}})); }
 const {product:p}=Astro.props;
@@ -42,6 +43,7 @@ const facts=painting ? [
         <p class="cart-product-message" data-cart-added role="status" aria-live="polite"></p>
       </div>}
       <div class="product-inquiry"><a class="button button-solid" href={p.inquiryHref||`/?product=${p.slug}#contact`}>{p.inquiry.label}</a>{p.inquiry.note && <p>{p.inquiry.note}</p>}</div>
+      {painting&&<PrintOptions product={p}/>}
       <a class="product-back" href={p.back.href}>{p.back.label}</a>
     </div>
   </article>

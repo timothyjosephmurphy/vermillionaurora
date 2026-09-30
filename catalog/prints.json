@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "defaultPaper": "enhanced-matte",
+  "minimumDpi": 300,
+  "papers": {
+    "enhanced-matte": {"label":"Enhanced matte fine-art paper · 200gsm","skuPrefix":"GLOBAL-FAP"},
+    "cold-press": {"label":"Cold press watercolour paper · 315gsm","skuPrefix":"ART-FAP-CPWP"},
+    "german-etching": {"label":"Hahnemühle German Etching · 310gsm","skuPrefix":"GLOBAL-HGE"}
+  },
+  "artworks": {
+    "painting-portrait-in-green": {
+      "dimensions": {"width": 15, "height": 12, "unit": "in"},
+      "dimensionsVerified": true,
+      "source": {"widthPx": 808, "heightPx": 970, "sha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2"},
+      "testOnly": true,
+      "enabled": true,
+      "variants": {
+        "full": {"amount": "120.00", "sku": "GLOBAL-FAP-12X16", "asset": {"url": "https://vermillionaurora.com/prints/test/painting-portrait-in-green-full.pdf", "approved": true, "sha256": "cbc55d88319abddc832f6d5b83e6c8596cd94a6be8276cc3577679c7103554c2", "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2", "imageWidthIn": 15, "imageHeightIn": 12, "paperWidthIn": 16, "paperHeightIn": 12}},
+        "medium": {"amount": "80.00", "sku": "GLOBAL-FAP-11X14", "asset": {"url": "https://vermillionaurora.com/prints/test/painting-portrait-in-green-medium.pdf", "approved": true, "sha256": "3f7ec7b7950e22ad0a060b3bffc027bb04a78aea5535deff2c02b82cf0098d78", "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2", "imageWidthIn": 11.25, "imageHeightIn": 9, "paperWidthIn": 14, "paperHeightIn": 11}},
+        "small": {"amount": "50.00", "sku": "GLOBAL-FAP-8X10", "asset": {"url": "https://vermillionaurora.com/prints/test/painting-portrait-in-green-small.pdf", "approved": true, "sha256": "ea3c6be4a7297301def607384524605a7129ca8c12e79279be8203a6c71cc2a7", "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2", "imageWidthIn": 7.5, "imageHeightIn": 6, "paperWidthIn": 8, "paperHeightIn": 10}}
+      }
+    },
+    "painting-portrait-in-gold": {
+      "dimensions": {"width": 15, "height": 12, "unit": "in"},
+      "dimensionsVerified": true,
+      "source": {"widthPx": 360, "heightPx": 390, "sha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4"},
+      "testOnly": true,
+      "enabled": true,
+      "variants": {
+        "full": {"amount": "120.00", "sku": "GLOBAL-FAP-12X16", "asset": {"url": "https://vermillionaurora.com/prints/test/painting-portrait-in-gold-full.pdf", "approved": true, "sha256": "3a9174de6fa5fe4f0a8d809258e1eb48f7b5fe91a0a61572db71b1f7ed146910", "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4", "imageWidthIn": 15, "imageHeightIn": 12, "paperWidthIn": 16, "paperHeightIn": 12}},
+        "medium": {"amount": "80.00", "sku": "GLOBAL-FAP-11X14", "asset": {"url": "https://vermillionaurora.com/prints/test/painting-portrait-in-gold-medium.pdf", "approved": true, "sha256": "52dce4595c5d48c1803c2eb7aeddb38a40fcaa8fb2df1169124e848e9cd303f3", "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4", "imageWidthIn": 11.25, "imageHeightIn": 9, "paperWidthIn": 14, "paperHeightIn": 11}},
+        "small": {"amount": "50.00", "sku": "GLOBAL-FAP-8X10", "asset": {"url": "https://vermillionaurora.com/prints/test/painting-portrait-in-gold-small.pdf", "approved": true, "sha256": "b56868a0c442961e74e78e7dd7732bbc91ce1e4c81f57606db477cd96582bb9f", "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4", "imageWidthIn": 7.5, "imageHeightIn": 6, "paperWidthIn": 8, "paperHeightIn": 10}}
+      }
+    }
+  }
+}

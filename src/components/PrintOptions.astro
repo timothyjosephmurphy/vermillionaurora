@@ -1,0 +1,22 @@
+---
+import {printOptions,config,papers,sizeLabel} from '../../catalog/prints.mjs';
+const {product,preview=false}=Astro.props;
+const options=printOptions(product,config,papers);
+const publicOptions=options.map(({id,label,scale,image,paper,amount,ready,paperLabel,reasons,testOnly})=>({id,label,scale,image,paper,amount,ready,paperLabel,testOnly,...(preview?{reasons}:{})}));
+const visible=preview||options.some(o=>o.ready&&!o.testOnly);
+---
+{visible&&<section class="print-options" data-print-options data-preview={preview?'true':'false'} data-options={JSON.stringify(publicOptions)} aria-label="Fine art print options">
+  <div class="print-heading"><p class="eyebrow dark">The work, in your space</p><h2>Fine art prints</h2><p>The complete painting, reproduced at its original size or scaled down with the same proportions.</p></div>
+  {preview&&<p class="print-preview-note">Preview · Sizes shown below are proposed. Ordering opens after the paper, print file, and price are confirmed.</p>}
+  {preview&&options.some(o=>o.testOnly)&&<p class="print-preview-note print-test-note">Sandbox test only · These variants intentionally use the current low-resolution web image. Do not enable them for live sales.</p>}
+  <fieldset class="print-sizes"><legend>Choose your image size</legend>
+    {options.map((o,i)=><label class:list={['print-choice',{'is-selected':i===0}]}><input type="radio" name={`print-size-${product.id}`} value={o.id} checked={i===0} disabled={!preview&&!o.ready}/><span><strong>{o.label}</strong><span>{sizeLabel(o.image)}</span><small>{Math.round(o.scale*100)}% of the original width and height</small></span><b>{o.amount?`$${Number(o.amount).toFixed(2)}`:preview?'Price pending':'Coming soon'}</b></label>)}
+  </fieldset>
+  <figure class="print-sheet-figure"><div class="print-sheet" data-print-sheet><div class="print-image-area" data-print-image-area><img src={product.image.src} alt={`Print layout preview of ${product.title}`} loading="lazy"/></div></div><figcaption data-print-dimensions></figcaption></figure>
+  <p class="print-paper" data-print-paper></p><p class="print-border-note">Unframed. Any white margin shown is included in the paper dimensions.</p>
+  {preview&&<details class="print-readiness"><summary>Preparation for this size</summary><ul data-print-readiness></ul></details>}
+  <div class="print-actions"><label>Quantity <input data-print-quantity type="number" min="1" max="10" step="1" value="1" inputmode="numeric"/></label><button data-print-add class="button button-solid" type="button" disabled>{preview?'Ordering not yet open':'Add print to cart'}</button></div>
+  <p data-print-message class="print-message" role="status" aria-live="polite"></p>
+</section>}
+<link rel="stylesheet" href="/payments/prints.css"/>
+<script is:inline src="/payments/prints.js" defer></script>

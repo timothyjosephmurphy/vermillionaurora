@@ -1,4 +1,8 @@
 export { SalesLedger } from './sales-ledger.mjs';
+export {CartOrder} from './cart-order.mjs';
+export { BitcoinOrder } from './bitcoin-order.mjs';
+import {cartCheckout} from './cart-checkout.mjs';
+import {printApi} from './print-api.mjs';
 import catalog from './checkout-catalog.mjs';
 import { checkout, checkoutWebhook } from './paypal-orders.mjs';
 import { verifySandbox } from './checkout-verification.mjs';
@@ -27,10 +31,12 @@ export default {
   fetch(request,env) {
     if (env.PAYPAL_MODE !== 'sandbox' || env.GITHUB_TOKEN) return new Response('Sandbox isolation failure',{status:503});
     const path=new URL(request.url).pathname;
+    if (path.startsWith('/checkout/prints/')) return printApi(request,env);
+    if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path==='/checkout/shipping-check') return shippingCheck(request,env);
     if (path==='/checkout/verification') return verifySandbox(request,env);
     if (path==='/checkout/test' && request.method==='GET') return new Response(page,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
-    if (path==='/checkout/health' && request.method==='GET') return Response.json({mode:'sandbox',enabled:env.PAYPAL_CHECKOUT_ENABLED==='true'});
+    if (path==='/checkout/health' && request.method==='GET') return Response.json({mode:'sandbox',enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE||null},{headers:{'Cache-Control':'no-store'}});
     if (path==='/checkout/webhook') return checkoutWebhook(request,env);
     if (path.startsWith('/checkout/')) return checkout(request,env);
     return new Response('Not found',{status:404});

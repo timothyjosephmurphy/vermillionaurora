@@ -14,7 +14,10 @@
     "CHECKOUT_PILOT_ENABLED": "true",
     "BTCPAY_URL": "https://btcpay884215.lndyn.com",
     "BTCPAY_CHECKOUT_SLUGS": "painting-portrait-in-green,painting-portrait-in-gold",
-    "CART_CHECKOUT_ENABLED": "true"
+    "CART_CHECKOUT_ENABLED": "true",
+    "PRINT_CHECKOUT_ENABLED": "false",
+    "PRODIGI_ENV": "live",
+    "PRINT_CHECKOUT_IDS": ""
   },
   "durable_objects": {
     "bindings": [

@@ -4,7 +4,7 @@
   "description": "Static website for Vermillion Aurora Productions, with an art portfolio, commission/contact interface, and the Neural Dance interactive demo.",
   "scripts": {
     "dev": "npm run build && astro preview",
-    "build": "node payments/build-checkout-catalog.mjs && astro build && node scripts/copy-assets.mjs",
+    "build": "node payments/build-print-catalog.mjs && node payments/build-checkout-catalog.mjs && astro build && node scripts/copy-assets.mjs",
     "preview": "astro preview",
     "test": "node --test tests/catalog.test.mjs cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs",
     "test:worker": "npm --prefix cloudflare/test test",

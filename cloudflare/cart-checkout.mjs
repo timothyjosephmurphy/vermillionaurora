@@ -1,4 +1,6 @@
 import catalog from './checkout-catalog.mjs';
+import prints from './print-catalog.mjs';
+import {publicCartItem} from './cart-policy.mjs';
 import {cartOrigin,cartItems,commonMethods,paymentMethods,cleanEmail,ORDER_ID,ACCESS_KEY,catalogVersion,keyHash} from './cart-policy.mjs';
 import {priceCart} from './checkout-pricing.mjs';
 export async function cartCheckout(request,env) {
@@ -10,6 +12,7 @@ export async function cartCheckout(request,env) {
   if(action==='catalog'&&request.method==='GET') {
     if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS)return reply({enabled:false,version:catalogVersion,products:[]});
     const products=await Promise.all(Object.entries(catalog).filter(([id])=>paymentMethods(env,id).length).map(async([id,p])=>({id,title:p.title,amount:p.amount,methods:paymentMethods(env,id),status:await env.PAINTING_STOCK.getByName(id).status()})));
+    for(const [id,p] of Object.entries(prints))if(paymentMethods(env,id).length)products.push({...publicCartItem({...p,quantity:1}),methods:paymentMethods(env,id),status:'available'});
     return reply({enabled:true,version:catalogVersion,products});
   }
   if(request.method!=='POST'||!['quote','start','status','capture','cancel'].includes(action)||!env.CART_ORDERS)return reply({error:'Not found'},404);
@@ -21,7 +24,7 @@ export async function cartCheckout(request,env) {
       if(body.catalogVersion!==catalogVersion)return reply({error:'The catalog has changed. Refresh your cart.'},409);
       const items=cartItems(body.items),methods=commonMethods(env,items),email=cleanEmail(body.email);
       if(!methods.length)return reply({error:'These items do not share an available payment method. Please review your cart.'},409);
-      for(const item of items)if(await env.PAINTING_STOCK.getByName(item.id).status()!=='available')return reply({error:`${item.title} is reserved or sold. Please remove it from your cart.`,unavailable:item.id},409);
+      for(const item of items.filter(i=>i.type!=='print'))if(await env.PAINTING_STOCK.getByName(item.id).status()!=='available')return reply({error:`${item.title} is reserved or sold. Please remove it from your cart.`,unavailable:item.id},409);
       const quote=await priceCart(env,items,body.address,email),id=crypto.randomUUID();
       const key=[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('');
       const result=await env.CART_ORDERS.getByName(id).createQuote(id,await keyHash(key),quote,methods);
