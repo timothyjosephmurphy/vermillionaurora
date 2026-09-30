@@ -66,18 +66,22 @@ try {
   }
   const materials=await verify({task:'materials'});
   assert.ok(materials.media?.length&&materials.styles?.length,'FinerWorks returned no material/style catalog');
-  // Retain counts plus the exact quoted material/style records below, rather than
-  // flooding the encrypted audit with every unrelated frame/canvas specification.
-  report.materials={mediaCount:materials.media.length,styleCount:materials.styles.length};
+  // Retain only relevant specifications, not every unrelated frame/canvas option.
+  const standardStyle=/^(?:borderless|no border|unmounted|unframed|loose(?: print)?|no mount)$/i;
+  report.materials={mediaCount:materials.media.length,styleCount:materials.styles.length,standardStyles:materials.styles.filter(s=>standardStyle.test(s.name))};
   console.log(`PASS: retrieved ${materials.media.length} media and ${materials.styles.length} styles.`);
   const productIds=[...new Set(Object.values(prints).filter(p=>p.testOnly).map(p=>p.productId))].slice(0,10);
   assert.ok(productIds.length,'No pilot artwork identities found');
-  const paperPattern=/archival matte|watercolou?r|cold press|etching|torchon|cotton|photo rag/i;
-  const papers=materials.media.filter(m=>paperPattern.test(m.name)).sort((a,b)=>Number(/archival matte/i.test(b.name))-Number(/archival matte/i.test(a.name))).slice(0,3);
+  // Resolve IDs from the actual provider response, never guessed static IDs.
+  // Compare the economical matte stock, watercolor stock and cotton Photo Rag.
+  const names=['Archival Matte Paper','Watercolor Bright White','Hahnemühle Photo Rag'];
+  const papers=names.map(name=>materials.media.find(m=>m.name.toLowerCase()===name.toLowerCase())).filter(Boolean);
+  report.unmatchedPapers=names.filter(name=>!papers.some(p=>p.name.toLowerCase()===name.toLowerCase()));
+  assert.ok(papers.length,'No requested fine-art papers matched the provider catalog');
   for(const paper of papers){
-    const styles=materials.styles.filter(s=>paper.styleIds.includes(s.id)&&s.customSizing&&/unmounted|unframed|loose|no mount|no border/i.test(s.name));
-    const style=styles.find(s=>s.borderSize===0)||styles[0];
-    if(!style){report.prices.push({mediaId:paper.id,mediaName:paper.name,error:'No unmounted/unframed custom-size style matched; review provider catalog'});continue;}
+    const styles=materials.styles.filter(s=>paper.styleIds.includes(s.id)&&s.customSizing&&standardStyle.test(s.name));
+    const style=styles.find(s=>/^(?:borderless|no border)$/i.test(s.name)&&s.borderSize===0)||styles.find(s=>s.borderSize===0);
+    if(!style){report.prices.push({mediaId:paper.id,mediaName:paper.name,error:'No standard zero-border custom-size style matched; no decorative finish substituted'});continue;}
     const result=await verify({task:'prices',productIds,mediaId:paper.id,styleId:style.id});
     report.prices.push(result);
   }
