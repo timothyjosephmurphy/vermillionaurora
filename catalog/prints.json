@@ -13,7 +13,7 @@
       "label": "Watercolor Bright White"
     },
     "photo-rag": {
-      "label": "Hahnemühle Photo Rag"
+      "label": "Hahnem\u00fchle Photo Rag"
     }
   },
   "artworks": {
@@ -53,6 +53,32 @@
             "layout": "contain-with-clear-trim-margin",
             "widthPx": 1250,
             "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S15X12F0S20X16J1S15X12",
+              "baseSku": "5M144M8S15X12",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 20,
+                  "height": 16,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15,
+                  "height": 12,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "135.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:46.291Z",
+              "asset": null
+            }
           }
         },
         "medium": {
@@ -76,6 +102,32 @@
             "layout": "contain-with-clear-trim-margin",
             "widthPx": 1250,
             "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S11DD25X9F0S14X11J1S11DD25X9",
+              "baseSku": "5M144M8S11.25X9",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 14,
+                  "height": 11,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 11.25,
+                  "height": 9,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "75.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:44.938Z",
+              "asset": null
+            }
           }
         },
         "small": {
@@ -99,6 +151,32 @@
             "layout": "contain-with-clear-trim-margin",
             "widthPx": 1250,
             "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S7DD5X6F0S10X8J1S7DD5X6",
+              "baseSku": "5M144M8S7.5X6",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 10,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 7.5,
+                  "height": 6,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "50.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:43.650Z",
+              "asset": null
+            }
           }
         }
       },
@@ -140,6 +218,32 @@
             "layout": "contain-with-clear-trim-margin",
             "widthPx": 1250,
             "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S15X12F0S20X16J1S15X12",
+              "baseSku": "5M144M8S15X12",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 20,
+                  "height": 16,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15,
+                  "height": 12,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "135.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:46.291Z",
+              "asset": null
+            }
           }
         },
         "medium": {
@@ -163,6 +267,32 @@
             "layout": "contain-with-clear-trim-margin",
             "widthPx": 1250,
             "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S11DD25X9F0S14X11J1S11DD25X9",
+              "baseSku": "5M144M8S11.25X9",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 14,
+                  "height": 11,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 11.25,
+                  "height": 9,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "75.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:44.938Z",
+              "asset": null
+            }
           }
         },
         "small": {
@@ -186,6 +316,32 @@
             "layout": "contain-with-clear-trim-margin",
             "widthPx": 1250,
             "heightPx": 1000
+          },
+          "matOptions": {
+            "snow-white": {
+              "sku": "5M144M8S7DD5X6F0S10X8J1S7DD5X6",
+              "baseSku": "5M144M8S7.5X6",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 10,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 7.5,
+                  "height": 6,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "amount": "50.00",
+              "pricingRule": "finerworks-3.5x-v1",
+              "quotedAt": "2026-09-30T20:31:43.650Z",
+              "asset": null
+            }
           }
         }
       },

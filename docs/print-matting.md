@@ -25,10 +25,24 @@ its price, and uses that exact code for shipping and validation-only preflight.
 Client prices, codes and mat geometry cannot replace the catalog values. A fresh
 quote is required after configuration, quantity or destination changes.
 
-Existing FinerWorks purchase and automatic-fulfillment gates remain closed.
-Production print masters and print/mat layout approvals remain required; the
-current low-resolution pilot files are only for sandbox checks. No paid print or
-mat order is submitted by the verification script.
+Production print purchasing and mat layout approval remain gated. The separate
+unframed Dorian/Chase sandbox pilot can be tested independently; no mat variant
+is enabled by that approval. Production print masters and print/mat layout
+approvals remain required. Mat verification only quotes and validates orders.
+
+Verified 2026-09-30 for both configured pilots on Watercolor Bright White:
+
+| Print size | Mat outer / frame size | Print with mat |
+| --- | --- | --- |
+| 7.5 × 6 in | 10 × 8 in | $50 |
+| 11.25 × 9 in | 14 × 11 in | $75 |
+| 15 × 12 in | 20 × 16 in | $135 |
+
+Prices include one Snow White 4-ply mat. Frames, shipping and tax are separate.
+The supplier's product validation currently returns HTTP/status 404 with an
+empty status message even for valid codes. Compatibility handling accepts only
+explicit `valid:true` rows matching every requested code exactly; invalid rows,
+auth errors and other HTTP failures still fail closed.
 
 Checks: `node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs`,
 `node tests/print-matting.browser-test.mjs`, and the sandbox workflow. Its

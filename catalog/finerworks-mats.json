@@ -1,1 +1,17 @@
-{"schemaVersion":1,"materials":[]}
+{
+  "schemaVersion": 1,
+  "materials": [
+    {
+      "key": "snow-white",
+      "id": 1,
+      "name": "Snow White",
+      "color": "#ffffff",
+      "thickness": 4,
+      "minWidth": 8,
+      "minHeight": 8,
+      "maxWidth": 38,
+      "maxHeight": 58,
+      "verifiedAt": "2026-09-30T20:31:43.650Z"
+    }
+  ]
+}
