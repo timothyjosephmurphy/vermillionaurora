@@ -14,11 +14,20 @@ const cloudflare=async(method,path='',body)=>{
   const data=await response.json();
   if(!response.ok||!data.success)throw Error(`Sandbox diagnostic credential ${method} failed: HTTP ${response.status}`);
 };
-const read=async(path,options={})=>{
-  const response=await fetch(base+path,{...options,signal:AbortSignal.timeout(150000)});
-  const data=await response.json();
-  if(!response.ok)throw Error(`${path} failed: HTTP ${response.status}`);
-  return data;
+const read=async(path,options={},notFoundRetries=0)=>{
+  for(let attempt=0;;attempt++){
+    const response=await fetch(base+path,{...options,signal:AbortSignal.timeout(150000)});
+    // A newly installed audit secret may not be visible at every edge immediately.
+    // Retry only this expected 404, with the same credential and a fixed bound.
+    if(response.status===404&&attempt<notFoundRetries){
+      console.log('Waiting for temporary sandbox diagnostic credential propagation');
+      await new Promise(resolve=>setTimeout(resolve,5000));
+      continue;
+    }
+    const data=await response.json();
+    if(!response.ok)throw Error(`${path} failed: HTTP ${response.status}`);
+    return data;
+  }
 };
 let installed=false;
 try {
@@ -44,7 +53,7 @@ try {
   for(const item of actual){assert.equal(item.amount,prints[item.id].amount);assert.ok(item.methods.includes('paypal'));}
   await cloudflare('PUT','',{name:key,text:secret,type:'secret_text'});installed=true;
   const skus=[...new Set(expected.map(p=>p.sku))];
-  const verification=await read('/checkout/prints/verify',{method:'POST',headers:{Authorization:`Bearer ${secret}`,'Content-Type':'application/json'},body:JSON.stringify({skus})});
+  const verification=await read('/checkout/prints/verify',{method:'POST',headers:{Authorization:`Bearer ${secret}`,'Content-Type':'application/json'},body:JSON.stringify({skus})},5);
   console.log('Prodigi sandbox product and quote verification:',JSON.stringify(verification));
   assert.equal(verification.mode,'sandbox');
   assert.equal(verification.results.length,skus.length);
