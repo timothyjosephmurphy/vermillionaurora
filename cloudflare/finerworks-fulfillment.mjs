@@ -4,14 +4,15 @@ import {moneyCents} from '../catalog/print-pricing.mjs';
 import {printAssetUrl} from './print-asset-policy.mjs';
 
 const terminal=new Set(['complete','review','cancelled','test-complete']);
-const reference=/^va-cart-[0-9a-f-]{36}-prints$/;
+const reference=/^va-cart-[0-9a-f]{32}-prints$/;
 export function finerworksOrderingReady(env,mode=env.PAYPAL_MODE) {
   return ['sandbox','live'].includes(mode)&&env.PAYPAL_MODE===mode&&env.PRINT_PROVIDER==='finerworks'&&env.FINERWORKS_ORDER_ENABLED==='true'&&
     !!env.FINERWORKS_WEB_API_KEY&&!!env.FINERWORKS_APP_KEY&&
     (mode==='sandbox'||!!env.FINERWORKS_PAYMENT_TOKEN&&env.FINERWORKS_PAYMENT_TOKEN!=='xxxx');
 }
 export function newFinerWorksJob(env,order,items) {
-  const q=order.quote,mode=order.mode,po=`va-cart-${order.id}-prints`;
+  // The provider rejects the 51-character UUID reference. Keep all UUID bits in 47 characters.
+  const q=order.quote,mode=order.mode,po=`va-cart-${order.id.replaceAll('-','')}-prints`;
   if(!finerworksOrderingReady(env,mode)||!reference.test(po)||q.printQuote?.provider!=='finerworks'||q.printQuote.mode!==mode||
     !/^\d+$/.test(q.printQuote.shippingMethod||'')||items.some(i=>mode==='live'&&i.testOnly))throw Error('FinerWorks fulfillment is not enabled for this order');
   groupPrintProducts(items,po);

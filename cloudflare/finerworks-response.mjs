@@ -21,6 +21,7 @@ export function finerworksFailureDetails(path, data, secrets = []) {
     if (data && Object.hasOwn(data, key)) shapes[key] = kind(data[key]);
   }
   return {
+    ...(data?.ModelState&&typeof data.ModelState==='object'?{modelErrors:Object.entries(data.ModelState).filter(([k])=>/^request\.orders\[\d+\]\.(order_po|recipient\.address_order_po|order_items\[\d+\]\.product_order_po)$/.test(k)).map(([field,messages])=>({field,messages:Array.isArray(messages)?messages.slice(0,3).map(redact):[]}))}:{}),
     ...(path==='/v3/validate_product'&&Array.isArray(data?.product_validations)?{validationErrors:data.product_validations.slice(0,50).map(v=>({code:typeof v.product_code==='string'&&/^[A-Za-z0-9._-]{1,160}$/.test(v.product_code)?v.product_code:null,valid:typeof v.valid==='boolean'?v.valid:null,message:redact(v.validation_message)}))}:{}),
     endpoint: path,
     providerStatusCode: Number.isInteger(status.status_code) ? status.status_code : null,

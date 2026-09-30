@@ -6,6 +6,8 @@ import config from '../catalog/prints.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {newFinerWorksJob,fulfillFinerWorks,finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 import {quoteMattedOption,finerworksMats} from './finerworks-matting.mjs';
+import {cartItems} from './cart-policy.mjs';
+import {priceCart} from './checkout-pricing.mjs';
 const reply=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 export async function finerworksDiagnostic(request,env,products) {
   const action=new URL(request.url).pathname.split('/').at(-1);
@@ -18,13 +20,19 @@ export async function finerworksDiagnostic(request,env,products) {
   let input;try{input=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   if(!input||Array.isArray(input)||typeof input!=='object')return reply({error:'Invalid request'},400);
   const task=input.task||'credentials';
-  if(!['credentials','materials','prices','shipping','preflight','test-order','matting','mats'].includes(task))return reply({error:'Unknown diagnostic task'},400);
+  if(!['credentials','materials','prices','shipping','preflight','test-order','cart-quote','matting','mats'].includes(task))return reply({error:'Unknown diagnostic task'},400);
   try {
     if(task==='credentials'){
       await finerworksRequest(env,'/v3/test_my_credentials',undefined,'GET');
       return reply({provider:'finerworks',mode:'sandbox',readOnly:true,credentialsOk:true,providerAppMode:'not-verified'});
     }
     if(task==='materials')return reply({provider:'finerworks',mode:'sandbox',readOnly:true,...await finerworksMaterials(env)});
+    if(task==='cart-quote') {
+      if(!Array.isArray(input.productIds)||input.productIds.length<1||input.productIds.length>2||input.productIds.some(id=>!config.artworks[id]?.testOnly)||!['small','medium','full'].includes(input.sizeKey))return reply({error:'Choose configured sandbox pilots'},400);
+      const items=cartItems(input.productIds.map(id=>({id:`print-${id}-${input.sizeKey}`,quantity:1})));
+      const q=await priceCart(env,items,input.address,'buyer@example.test');
+      return reply({provider:'finerworks',readOnly:true,ordersSubmitted:false,base:q.base,shipping:q.shipping,tax:q.tax,total:q.total});
+    }
     if(task==='mats')return reply({provider:'finerworks',mode:'sandbox',readOnly:true,materials:await finerworksMats(env)});
     if(task==='matting') {
       const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];

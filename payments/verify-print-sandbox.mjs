@@ -87,6 +87,9 @@ try {
   }
   assert.ok(report.shipping.every(q=>q.shippingMarkup==='0.00'&&q.provider==='finerworks'));
   console.log('PASS: six destination-based FinerWorks shipping quotes; shipping markup is zero.');
+  report.cartQuote=await verify({task:'cart-quote',productIds:pilots,sizeKey:'small',address});
+  assert.equal(report.cartQuote.base,'50.00');assert.equal(report.cartQuote.ordersSubmitted,false);
+  console.log('PASS: combined Dorian and Chase cart shipping and tax.');
   report.preflight=[];
   for(const productId of pilots) {
     const p=await verify({task:'preflight',productId,sizeKey:'small',quantity:1,address});

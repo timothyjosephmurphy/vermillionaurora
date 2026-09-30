@@ -21,7 +21,7 @@ beforeEach(()=>{
         return Response.json({status:{success:true},orders:[{order_po:order.order_po,options:[{id:42,rate:8.95,shipping_method:'Ground',carrier:'UPS',calculated_total:{order_po:order.order_po,order_subtotal:total,order_shipping_rate:8.95,order_sales_tax:0,order_discount:0,order_grand_total:total+8.95,product_pricing:order.order_items.map(p=>({product_sku:p.product_sku,product_qty:p.product_qty,total_price:p.product_qty*unitCost}))}}]}]});
       }
       if(u.pathname.endsWith('submit_orders_v2')) {
-        expect(body.validate_only).toBe(false);expect(body.payment_token).toBe('xxxx');expect(body.orders[0].test_mode).toBe(true);
+        expect(body.validate_only).toBe(false);expect(body.payment_token).toBe('xxxx');expect(body.orders[0].test_mode).toBe(true);expect(body.orders[0].order_po.length).toBeLessThanOrEqual(50);
         submission=body.orders[0];if(loseReply)throw Error('Provider accepted the order but response was lost');
         return Response.json({status:{success:true},orders:[{order_po:submission.order_po,order_id:123456,order_status:'Accepted'}]});
       }
