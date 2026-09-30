@@ -1,0 +1,117 @@
+---
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+const photos = [
+  {file:'community-center.jpeg',width:1024,height:768,alt:'Orange facade of the Bitcoin Community Center in Berlín, with a Bitcoin symbol and honey badger mural.',caption:'The Bitcoin Community Center in Berlín.'},
+  {file:'artist-with-sign.jpeg',width:782,height:359,alt:'TJ Murphy standing beside the completed orange Berlín El Salvador sign at the basketball court.',caption:'With the finished sign at the basketball court.'},
+  {file:'painting-at-the-center.jpeg',width:480,height:360,alt:'The Berlín sign being painted in the community center courtyard, with a projector, laptop and paint supplies in the foreground.',caption:'Making the sign with borrowed materials and the center’s projector.'},
+];
+const imageRoot='/murals/images/berlin-el-salvador/';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Berlin, El Salvador — Bitcoin Festival Mural | Vermillion Aurora</title>
+    <meta name="description" content="An impromptu sign painted by TJ Murphy at the Bitcoin Community Center for the Bitcoin Festival in Berlín, El Salvador. Photographs, the story, and a location map." />
+    <link rel="canonical" href="https://vermillionaurora.com/murals/berlin-el-salvador/" />
+    <meta property="og:title" content="Berlin, El Salvador — Bitcoin Festival Mural" />
+    <meta property="og:description" content="An offer to help with festival preparations became an impromptu painting project at the Bitcoin Community Center." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vermillionaurora.com/murals/berlin-el-salvador/" />
+    <meta property="og:image" content={`https://vermillionaurora.com${imageRoot}hero.jpeg`} />
+    <meta property="og:image:alt" content="The orange Berlín El Salvador sign displayed beside the basketball court." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/site-header.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader />
+      <main class="container berlin-mural">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/murals/">Murals</a></nav>
+        <header class="mural-heading">
+          <p class="eyebrow dark">Bitcoin Festival · Community mural</p>
+          <h1>Berlin, El Salvador</h1>
+          <p class="intro">An offer to lend a hand became a sign for the festival.</p>
+        </header>
+        <figure class="mural-hero">
+          <a href={`${imageRoot}hero.jpeg`} aria-label="Open the Berlin mural hero photograph full size">
+            <img src={`${imageRoot}hero.jpeg`} width="556" height="310" alt="The completed orange Berlín El Salvador sign displayed at the basketball court, with a football on the left and a basketball player on the right." fetchpriority="high" />
+          </a>
+          <figcaption>The finished sign at the basketball court just outside Berlín’s main town square.</figcaption>
+        </figure>
+        <section class="mural-story" aria-labelledby="story-title">
+          <h2 id="story-title">A sign, made on the spot</h2>
+          <p>I made this mural at the Bitcoin Community Center in Berlín, El Salvador, for the Bitcoin Festival. I showed up and asked if there was anything I could do to help them get ready for the festival that was about to happen. They asked if I could paint a sign.</p>
+          <p>So, on the spot, I gathered some materials from them, bought paint, and used their projector to make the sign. It is displayed at a basketball court just outside the main town square.</p>
+          <a class="community-link" href="https://www.bitcoinberlinsv.com/" target="_blank" rel="noopener noreferrer">Visit Bitcoin Berlín’s website ↗</a>
+        </section>
+        <section class="mural-photos" aria-labelledby="photos-title">
+          <div class="section-heading"><p class="eyebrow dark">The place &amp; the process</p><h2 id="photos-title">From the community center to the court</h2></div>
+          <div class="photo-grid">
+            {photos.map(photo=><figure><a href={`${imageRoot}${photo.file}`} aria-label={`Open full-size photo: ${photo.caption}`}><img src={`${imageRoot}${photo.file}`} width={photo.width} height={photo.height} alt={photo.alt} loading="lazy" decoding="async" /></a><figcaption>{photo.caption}</figcaption></figure>)}
+          </div>
+        </section>
+        <section id="location" class="mural-location" aria-labelledby="location-title">
+          <div class="location-copy">
+            <p class="eyebrow dark">Art in place</p>
+            <h2 id="location-title">Berlín, El Salvador</h2>
+            <p>The sign is displayed at the basketball court just outside the main town square.</p>
+            <p class="map-note">The map shows the main-square area, rather than an exact pin for the sign.</p>
+            <a href="https://www.openstreetmap.org/way/745434044" target="_blank" rel="noopener noreferrer">Explore the main square on OpenStreetMap ↗</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Bitcoin+Community+Center&amp;query_place_id=ChIJEbH-DaJLe48RLF8bM7SqnAw" target="_blank" rel="noopener noreferrer">Find the Bitcoin Community Center ↗</a>
+          </div>
+          <div id="berlin-map" role="region" aria-label="Map of the main-square area in Berlín, El Salvador"><p class="map-fallback"><a href="https://www.openstreetmap.org/way/745434044">View the main-square area on OpenStreetMap ↗</a></p></div>
+        </section>
+        <nav class="more-murals" aria-label="More murals"><a href="/murals/">← Explore all murals</a><a href="/#murals">Back to the murals carousel</a></nav>
+      </main>
+      <SiteFooter />
+    </div>
+    <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script is:inline>
+      if (window.L) {
+        const element = document.getElementById('berlin-map');
+        element.querySelector('.map-fallback').hidden = true;
+        const map = L.map(element, {scrollWheelZoom:false}).setView([13.4986, -88.5308], 17);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom:19,
+          attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.circleMarker([13.4986, -88.5308], {radius:8,color:'#9e3218',fillColor:'#d34220',fillOpacity:1})
+          .addTo(map).bindPopup('<strong>Main square · Berlín</strong><br>The sign is at the nearby basketball court.').openPopup();
+      }
+    </script>
+  </body>
+</html>
+<style>
+  .berlin-mural{padding-block:24px 64px;max-width:1200px}
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:10px;font-size:.8rem;margin-bottom:28px}
+  .mural-heading .eyebrow{margin:0 0 8px}
+  h1{font:600 clamp(2.5rem,6vw,4.6rem)/1.08 "Cormorant Garamond",serif;margin:0 0 12px}
+  .intro{font:400 clamp(1.25rem,2.5vw,1.6rem)/1.4 "Cormorant Garamond",serif;margin:0 0 28px}
+  figure{margin:0}img{display:block;max-width:100%;height:auto}
+  .mural-hero{max-width:960px;margin-inline:auto}
+  .mural-hero img{width:100%;border-radius:8px}
+  figcaption{font-size:.82rem;line-height:1.6;color:var(--muted);padding-top:12px}
+  .mural-story{max-width:740px;margin:40px auto 52px;font-size:1.03rem;line-height:1.8}
+  h2{font:600 clamp(1.8rem,3.5vw,2.5rem)/1.15 "Cormorant Garamond",serif;margin:0 0 18px}
+  .mural-story p{margin:0 0 18px}
+  .community-link,.location-copy a,.more-murals a{text-decoration:underline;text-underline-offset:4px}
+  .mural-photos .section-heading{margin-bottom:22px}
+  .photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .photo-grid a{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:#e8dfd3;border-radius:8px;overflow:hidden}
+  .photo-grid img{width:100%;height:100%;object-fit:contain}
+  .mural-location{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:36px;align-items:center;border-top:1px solid var(--line);padding-top:40px;margin-top:52px}
+  .location-copy p{line-height:1.7}.location-copy .eyebrow{margin:0 0 10px}.location-copy a{display:block;margin-top:14px;font-size:.85rem}
+  .map-note{font-size:.85rem;color:var(--muted)}
+  #berlin-map{width:100%;height:360px;border:1px solid var(--line);border-radius:8px;background:#e8dfd3;z-index:0}
+  .map-fallback{padding:24px;font-size:.9rem}.map-fallback[hidden]{display:none}
+  .more-murals{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;border-top:1px solid var(--line);padding-top:24px;margin-top:40px;font-size:.9rem}
+  a:focus-visible{outline:3px solid #9e4936;outline-offset:5px}
+  @media(max-width:700px){.photo-grid{grid-template-columns:1fr;gap:28px}.mural-location{grid-template-columns:1fr;gap:22px}.photo-grid a{aspect-ratio:auto}.photo-grid img{height:auto}.mural-story{margin-block:30px 40px}.mural-location{margin-top:40px}#berlin-map{height:320px}}
+</style>

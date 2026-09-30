@@ -38,7 +38,7 @@ try{
     assert(await trigger.evaluate(el=>el===document.activeElement),'Closing returns focus to Buy a print');
     await trigger.click();await page.getByRole('button',{name:'Close print options'}).click();
     assert(await dialog.isHidden());await trigger.click();
-    assert.match(await page.locator('.product-print-availability').textContent(),/Print samples from \$25.00/);
+    assert.match(await page.locator('.product-print-availability').textContent(),/Print available from \$25.00/);
     assert.equal(await selector.locator('.print-choice').count(),3);
     await selector.locator('[data-print-finish]').selectOption('frame-black');
     await page.waitForFunction(()=>!document.querySelector('[data-print-add]').disabled);

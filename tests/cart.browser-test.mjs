@@ -54,8 +54,9 @@ try{
  await page.evaluate(ids=>localStorage.setItem('va-cart-v1',JSON.stringify(ids.map(id=>({id,quantity:1})))),ids);
  await page.goto(`${origin}/products/${ids[0]}/`);
  const buyNow=page.getByRole('button',{name:'Buy now',exact:true});await buyNow.waitFor();
- const buyBounds=await buyNow.boundingBox(),paintingBounds=await page.locator('.product-figure').boundingBox();
- assert(buyBounds.y+buyBounds.height<=paintingBounds.y,'Buy now appears above the painting');
+ const buyBounds=await buyNow.boundingBox(),titleBounds=await page.locator('.product-summary h1').boundingBox();
+ assert(buyBounds.y>=titleBounds.y+titleBounds.height,'Buy now appears below the artwork title');
+ assert.equal(await buyNow.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(211, 66, 32)','Buy now is vermilion orange');
  await buyNow.click();await page.waitForURL(origin+'/cart/?buy='+ids[0]);
  await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual((await cartStored()).map(i=>i.id),[ids[1]]);
