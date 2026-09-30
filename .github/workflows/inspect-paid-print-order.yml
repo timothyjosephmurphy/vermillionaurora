@@ -1,0 +1,59 @@
+name: Read paid print test record
+on:
+  push:
+    branches: [inspect-paid-print-test]
+    paths: [.github/workflows/inspect-paid-print-order.yml]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Read only the paid test order and its ledger entry
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          node --input-type=module <<'NODE'
+          const orderId = 'df57129f-4d2f-46bf-8461-60bd8ee22dd1';
+          const base = 'https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/r2/buckets/vermillion-sales-records/objects/';
+          async function read(key) {
+            const response = await fetch(base + encodeURIComponent(key), {
+              method: 'GET',
+              headers: { Authorization: `Bearer ${process.env.CLOUDFLARE_API_TOKEN}` },
+              signal: AbortSignal.timeout(30000)
+            });
+            if (!response.ok) {
+              console.log(JSON.stringify({ archiveRead: false, httpStatus: response.status }));
+              process.exit(1);
+            }
+            return response.json();
+          }
+          try {
+            const saved = await read(`orders/live/${orderId}.json`);
+            const receipt = saved.receipt;
+            if (receipt?.orderId !== `cart:${orderId}` || receipt.mode !== 'live') throw Error();
+            const job = saved.printFulfillment;
+            console.log(JSON.stringify({
+              orderId, archived: true, paymentStatus: receipt.status,
+              paidAt: receipt.paidAt, currency: receipt.currency, total: receipt.gross,
+              items: receipt.items?.map(i => ({ title: i.title, quantity: i.quantity, amount: i.amount })),
+              printProvider: job?.provider, printStatus: job?.status,
+              printOrderId: job?.providerId || null, printStage: job?.stage || null,
+              printCheckedAt: job?.checkedAt || null,
+              printError: job?.lastError || null,
+              shipmentCount: job?.shipments?.length || 0,
+              customerEmailStatus: saved.confirmation?.status || null
+            }));
+            const period = receipt.paidAt.slice(0, 7);
+            if (!/^\d{4}-\d{2}$/.test(period)) throw Error();
+            const ledger = await read(`sales/live/${period}/sales.json`);
+            const matching = ledger.records?.filter(r => r.orderId === `cart:${orderId}`) || [];
+            console.log(JSON.stringify({ orderId, ledgerPeriod: period,
+              ledgerRecorded: matching.some(r => r.id === receipt.id && r.gross === receipt.gross),
+              matchingLedgerEntries: matching.length }));
+          } catch {
+            console.log('The read-only order check could not complete; no order or payment changes were made.');
+            process.exitCode = 1;
+          }
+          NODE
