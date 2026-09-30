@@ -2,6 +2,7 @@ import {finerworksProductCode} from './finerworks-products.mjs';
 import {publishedPrintPrice} from './print-pricing.mjs';
 import {printAssetUrl} from '../cloudflare/print-asset-policy.mjs';
 import {withMatOptions} from './matted-options.mjs';
+import {withFrameOptions} from './framed-options.mjs';
 // Geometry functions are injected to keep this module independent of the legacy provider.
 export function finerworksOptions(product, config, papers, geometry) {
   if (product.type !== 'painting' || !product.dimensions) return [];
@@ -33,7 +34,7 @@ export function finerworksOptions(product, config, papers, geometry) {
       catch {reasons.push('Use a full-resolution JPG or PNG hosted on your artwork media domain');}
     }
     if(sampleOnly&&art.liveSampleApproved!==true)reasons.push('Approve this low-resolution sample for a live test');
-    return withMatOptions({...choice,scale,id:`print-${product.id}-${choice.key}`,productId:product.id,provider:'finerworks',image,paper,resolution,amount,asset:asset||null,testOnly,sampleOnly,
-      paperLabel:config.papers[art.paper||config.defaultPaper]?.label||'',reasons,ready:art.enabled===true&&reasons.length===0},variant);
+    return withFrameOptions(withMatOptions({...choice,scale,id:`print-${product.id}-${choice.key}`,productId:product.id,provider:'finerworks',image,paper,resolution,amount,asset:asset||null,testOnly,sampleOnly,
+      paperLabel:config.papers[art.paper||config.defaultPaper]?.label||'',reasons,ready:art.enabled===true&&reasons.length===0},variant),variant);
   });
 }

@@ -17,7 +17,7 @@ try{
   if(simulatedSale&&url.pathname.endsWith('/payments/cart.js'))return route.fulfill({contentType:'application/javascript',body:`window.vaCartReady=Promise.resolve({products:[{id:'print-painting-portrait-in-green-small-mat-snow-white',status:'available'}]});document.addEventListener('cart:add-print',e=>{window.testMatSelection={id:e.detail.id,quantity:e.detail.quantity};e.detail.onResult({ok:true,message:'Added'});});`});
   if(simulatedSale&&url.pathname.startsWith('/print-preview/')&&url.pathname.endsWith('/')){
    const $=load(body.toString()),section=$('[data-print-options]'),options=JSON.parse(section.attr('data-options'));
-   for(const o of options){o.ready=true;for(const m of o.matOptions){m.ready=true;m.amount='45.00';}}
+   for(const o of options){o.ready=true;o.sampleOnly=false;for(const m of o.matOptions){m.ready=true;m.sampleOnly=false;m.amount='45.00';}}
    section.attr('data-preview','false').attr('data-options',JSON.stringify(options));body=$.html();
   }
   return route.fulfill({body,contentType:({'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg'})[path.extname(file)]||'application/octet-stream'});

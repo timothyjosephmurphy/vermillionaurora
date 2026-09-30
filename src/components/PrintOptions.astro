@@ -3,31 +3,36 @@ import {printOptions,config,papers,sizeLabel} from '../../catalog/prints.mjs';
 import FrameRecommendations from './FrameRecommendations.astro';
 const {product,preview=false}=Astro.props;
 const options=printOptions(product,config,papers);
-const publicOption=({id,label,scale,image,paper,amount,ready,paperLabel,reasons,testOnly,mat,finishKey,matOptions})=>({id,label,scale,image,paper,amount,ready,paperLabel,testOnly,...(mat?{mat,finishKey}:{}),...(matOptions?{matOptions:matOptions.map(publicOption)}:{}),...(preview?{reasons}:{})});
+const publicOption=({id,label,scale,image,paper,amount,ready,paperLabel,reasons,testOnly,sampleOnly,mat,frame,finishKey,asset,matOptions,frameOptions})=>({id,label,scale,image,paper,amount,ready,paperLabel,testOnly,sampleOnly,finishKey,previewUrl:asset?.url,...(mat?{mat}:{}),...(frame?{frame}:{}),...(matOptions?{matOptions:matOptions.map(publicOption)}:{}),...(frameOptions?{frameOptions:frameOptions.map(publicOption)}:{}),...(preview?{reasons}:{})});
 const publicOptions=options.map(publicOption);
-const visible=preview||options.some(o=>o.ready&&!o.testOnly&&!o.sampleOnly);
+const visible=preview||options.some(o=>o.ready&&!o.testOnly);
+const sample=options.some(o=>o.sampleOnly);
+const initial=preview?options[0]:options.find(o=>o.key==='small'&&o.ready)||options.find(o=>o.ready)||options[0];
+const frameChoices=[...new Map(options.flatMap(o=>o.frameOptions||[]).map(o=>[o.finishKey,o.frame])).entries()];
 ---
-{visible&&<section class="print-options" data-print-options data-preview={preview?'true':'false'} data-options={JSON.stringify(publicOptions)} aria-label="Fine art print options">
-  <div class="print-heading"><p class="eyebrow dark">The work, in your space</p><h2>Fine art prints</h2><p>Reproductions at the original artwork dimensions or smaller, with the same proportions.</p></div>
+{visible&&<section id="print-options" class="print-options" data-print-options data-preview={preview?'true':'false'} data-options={JSON.stringify(publicOptions)} aria-label="Fine art print options">
+  <div class="print-heading"><p class="eyebrow dark">The work, in your space</p><h2>{sample?'Order a print sample':'Order a fine art print'}</h2><p>Choose your size and presentation. Printed on textured watercolor paper by FinerWorks.</p></div>
+  {sample&&!preview&&<p class="print-preview-note print-test-note">Sample-quality prints · These use the current low-resolution image, with white margins to preserve the whole painting. This is a real purchase and shipment. One copy per painting per order.</p>}
   {preview&&<p class="print-preview-note">Preview · Saved retail prices are shown where quoted. Ordering opens only after the print file, trimming layout, and fulfillment flow are approved.</p>}
   {preview&&options.some(o=>o.testOnly)&&<p class="print-preview-note print-test-note">Sandbox preview only · The current web images are not approved print masters. These prints are not available for purchase.</p>}
   <fieldset class="print-sizes"><legend>Choose your image size</legend>
-    {options.map((o,i)=><label class:list={['print-choice',{'is-selected':i===0}]}><input type="radio" name={`print-size-${product.id}`} value={o.id} checked={i===0} disabled={!preview&&!o.ready}/><span><strong>{o.label}</strong><span>{sizeLabel(o.image)}</span><small>{Math.round(o.scale*100)}% of the original width and height</small></span><b>{o.amount?`$${Number(o.amount).toFixed(2)}`:preview?'Price pending':'Coming soon'}</b></label>)}
+    {options.map(o=><label class:list={['print-choice',{'is-selected':o.id===initial?.id}]}><input type="radio" name={`print-size-${product.id}`} value={o.id} checked={o.id===initial?.id} disabled={!preview&&!o.ready}/><span><strong>{o.label}</strong><span>{sizeLabel(o.image)}</span><small>{Math.round(o.scale*100)}% of the original width and height</small></span><b>{o.amount?`$${Number(o.amount).toFixed(2)}`:preview?'Price pending':'Coming soon'}</b></label>)}
   </fieldset>
   <label class="print-mat-label">Presentation
     <select data-print-finish aria-describedby={`mat-description-${product.id}`}>
-      <option value="none">Print only</option>
-      <option value="snow-white" disabled={!preview&&!options.some(o=>o.matOptions?.some(m=>m.ready))}>Print with white conservation mat</option>
+      <option value="none">Unframed print</option>
+      {(preview||options.some(o=>o.matOptions?.some(m=>m.ready)))&&<option value="snow-white">Print with white conservation mat</option>}
+      {frameChoices.map(([key,frame])=><option value={key}>{frame.name} frame + white mat</option>)}
     </select>
   </label>
   <p id={`mat-description-${product.id}`} class="print-border-note" data-print-mat-note>A mat adds a white border around your print, sized to fit a standard frame. Frame purchased separately.</p>
-  <figure class="print-sheet-figure"><div class="print-sheet" data-print-sheet><div class="print-image-area" data-print-image-area><img src={product.image.src} alt={`Illustrative print preview of ${product.title}`} loading="lazy"/></div></div><figcaption data-print-dimensions></figcaption></figure>
-  <p class="print-paper" data-print-paper></p><p class="print-total" data-print-total aria-live="polite"></p><p class="print-border-note">Frame not included. Shipping is quoted separately at checkout without a markup. Applicable tax is additional.</p>
+  <figure class="print-sheet-figure"><div class="print-sheet" data-print-sheet><div class="print-image-area" data-print-image-area><img src={initial?.asset?.url||product.image.src} alt={`Illustrative print preview of ${product.title}`} loading="lazy"/></div></div><figcaption data-print-dimensions></figcaption><p class="print-preview-caption">Illustrative preview. Colors and frame details may vary.</p></figure>
+  <p class="print-paper" data-print-paper></p><p class="print-total" data-print-total aria-live="polite"></p><p class="print-border-note" data-print-inclusions>Print only; frame not included.</p><p class="print-border-note">Shipping is quoted separately at checkout without a markup. Applicable tax is additional.</p>
   {preview&&<p class="print-border-note">Borderless printing uses a small trimming bleed. This illustration is not an approved edge-trimming proof.</p>}
-  <FrameRecommendations context="print" paper={options[0]?.paper} image={options[0]?.image}/>
   {preview&&<details class="print-readiness"><summary>Preparation for this size</summary><ul data-print-readiness></ul></details>}
-  <div class="print-actions"><label>Quantity <input data-print-quantity type="number" min="1" max="10" step="1" value="1" inputmode="numeric"/></label><button data-print-add class="button button-solid" type="button" disabled>{preview?'Ordering not yet open':'Add print to cart'}</button></div>
+  <div class="print-actions"><label hidden={sample&&!preview}>Quantity <input data-print-quantity type="number" min="1" max={sample&&!preview?'1':'10'} step="1" value="1" inputmode="numeric"/></label><button data-print-add class="button button-solid" type="button" disabled>{preview?'Ordering not yet open':'Add print to cart'}</button></div>
   <p data-print-message class="print-message" role="status" aria-live="polite"></p>
+  <details class="print-own-frame" data-print-own-frame><summary>Prefer to buy your own frame?</summary><FrameRecommendations context="print" paper={initial?.paper} image={initial?.image}/></details>
 </section>}
 <link rel="stylesheet" href="/payments/prints.css"/>
 <script is:inline src="/payments/prints.js" defer></script>

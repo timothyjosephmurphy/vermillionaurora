@@ -24,6 +24,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
       - run: node tests/live-print-samples.browser-test.mjs
+      - run: node tests/print-framing.browser-test.mjs
       - run: npm --prefix cloudflare/test ci
       - run: npm --prefix cloudflare/test test
       - name: Verify production checkout

@@ -1,0 +1,72 @@
+import {chromium} from 'playwright';
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import prints from '../cloudflare/print-catalog.mjs';
+import {publicCartItem} from '../cloudflare/cart-policy.mjs';
+const origin='https://vermillionaurora.com',root=path.resolve('dist');
+const available=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['paypal']}));
+const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
+try{
+  const page=await browser.newPage(),errors=[],quotes=[];let unavailable=false;
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.route('**/*',async route=>{
+    const u=new URL(route.request().url());
+    if(u.pathname.startsWith('/checkout/cart/')){
+      const action=u.pathname.split('/').at(-1),headers={'Access-Control-Allow-Origin':origin};
+      if(action==='catalog')return route.fulfill({headers,json:{enabled:true,version:'framed-test',products:unavailable?available.filter(p=>!p.frame):available}});
+      assert.equal(action,'quote','The test must not start, capture or submit an order');
+      const input=route.request().postDataJSON();quotes.push(input);
+      const items=input.items.map(i=>({...available.find(p=>p.id===i.id),quantity:i.quantity}));
+      return route.fulfill({headers,json:{orderId:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key:'b'.repeat(64),status:'quoted',methods:['paypal'],quote:{items,base:'395.00',shipping:'21.95',tax:'0.00',total:'416.95'}}});
+    }
+    if(u.hostname!==new URL(origin).hostname)return route.fulfill({json:{products:[],availability:{}}});
+    const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
+    if(!fs.existsSync(file))return route.fulfill({status:404});
+    return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg','.jpeg':'image/jpeg'})[path.extname(file)]||'application/octet-stream'});
+  });
+  for(const width of [1400,390]){
+    await page.setViewportSize({width,height:1000});await page.goto(origin+'/products/painting-portrait-in-green/');
+    const selector=page.locator('[data-print-options]');
+    assert.match(await page.locator('.product-print-availability').textContent(),/Print samples from \$25.00/);
+    assert.equal(await selector.locator('.print-choice').count(),3);
+    await selector.locator('[data-print-finish]').selectOption('frame-black');
+    await page.waitForFunction(()=>!document.querySelector('[data-print-add]').disabled);
+    assert.match(await selector.locator('[data-print-total]').textContent(),/Framed print: \$150.00/);
+    assert.match(await selector.locator('[data-print-inclusions]').textContent(),/print, frame, white mat and glazing/);
+    assert(await selector.locator('[data-print-own-frame]').isHidden());
+    assert(await selector.locator('[data-print-sheet]').evaluate(el=>el.classList.contains('is-framed')));
+    await selector.locator('input[value$="-medium"]').check();
+    assert.match(await selector.locator('[data-print-total]').textContent(),/\$205.00/);
+    assert.match(await selector.locator('[data-print-dimensions]').textContent(),/14 × 11/);
+    await selector.locator('[data-print-finish]').selectOption('frame-natural');
+    assert.match(await selector.locator('[data-print-total]').textContent(),/\$245.00/);
+    await selector.locator('input[value$="-full"]').check();
+    assert.match(await selector.locator('[data-print-total]').textContent(),/\$385.00/);
+    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+    await selector.screenshot({path:`/tmp/framed-print-${width}.png`,style:'.site-header{visibility:hidden!important}'});
+    await selector.locator('[data-print-finish]').selectOption('none');
+    assert.match(await selector.locator('[data-print-total]').textContent(),/Print: \$75.00/);
+    assert(await selector.locator('[data-print-own-frame]').isVisible());
+  }
+  await page.locator('[data-print-finish]').selectOption('frame-black');
+  await page.locator('input[value$="-small"]').check();await page.locator('[data-print-add]').click();
+  await page.locator('[data-print-finish]').selectOption('frame-natural');
+  await page.locator('input[value$="-medium"]').check();await page.locator('[data-print-add]').click();
+  await page.goto(origin+'/products/painting-portrait-in-gold/');
+  await page.locator('[data-print-finish]').selectOption('frame-white');await page.locator('[data-print-add]').click();
+  const cart=await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-v1')));
+  assert.deepEqual(cart,[{id:'print-painting-portrait-in-green-medium-frame-natural',quantity:1},{id:'print-painting-portrait-in-gold-small-frame-white',quantity:1}]);
+  await page.goto(origin+'/cart/');await page.locator('.cart-line').first().waitFor();
+  assert.equal(await page.locator('.cart-line').count(),2);assert.equal(await page.locator('.cart-frame-description').count(),2);
+  assert.match(await page.locator('[data-cart-items]').textContent(),/Natural wood frame/);
+  assert.match(await page.locator('[data-cart-items]').textContent(),/Premium Clear acrylic/);
+  for(const [name,value]of Object.entries({email:'buyer@example.test',name:'Test Buyer',street1:'600 4th Ave',city:'Seattle',state:'WA',zip:'98104'}))await page.locator(`[name="${name}"]`).fill(value);
+  await page.locator('[data-cart-quote]').click();await page.locator('[data-cart-payments]').waitFor({state:'visible'});
+  assert.deepEqual(quotes[0].items,cart);assert.equal(quotes[0].catalogVersion,'framed-test');
+  assert.match(await page.locator('[data-cart-total]').textContent(),/416.95/);
+  unavailable=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.locator('[data-print-finish]').selectOption('frame-black');
+  assert(await page.locator('[data-print-add]').isDisabled());
+  await page.goto(origin+'/products/painting-beach-walk/');assert.equal(await page.locator('[data-print-options]').count(),0);assert.match(await page.locator('.product-print-availability').textContent(),/not yet available/);
+  assert.deepEqual(errors,[]);console.log('PASS: product-page sizes, frame prices, mobile layout, selection replacement, cart details and exact quote IDs; no payments or print orders.');
+}finally{await browser.close();}

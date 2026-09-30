@@ -23,7 +23,7 @@ export function initializeFrameRecommendations(){
       const value=selector.querySelector('input[type="radio"]:checked')?.value;
       const base=Array.isArray(options)?options.find(option=>option.id===value):null;
       const finish=selector.querySelector('[data-print-finish]')?.value||'none';
-      const selected=finish==='none'?base:base?.matOptions?.find(o=>o.finishKey===finish);
+      const selected=finish==='none'?base:[...(base?.matOptions||[]),...(base?.frameOptions||[])].find(o=>o.finishKey===finish);
       // Never substitute image dimensions when the physical sheet is unknown.
       render(root,selected?.paper||selected?.paperSize||null,selected?.image||selected?.imageSize||null,selected?.mat);
     };
