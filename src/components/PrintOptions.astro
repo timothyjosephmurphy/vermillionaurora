@@ -21,7 +21,7 @@ const frameChoices=[...new Map(options.flatMap(o=>o.frameOptions||[]).map(o=>[o.
   <label class="print-mat-label">Presentation
     <select data-print-finish aria-describedby={`mat-description-${product.id}`}>
       <option value="none">Unframed print</option>
-      <option value="snow-white" disabled={!preview&&!options.some(o=>o.matOptions?.some(m=>m.ready))}>Print with white conservation mat</option>
+      {(preview||options.some(o=>o.matOptions?.some(m=>m.ready)))&&<option value="snow-white">Print with white conservation mat</option>}
       {frameChoices.map(([key,frame])=><option value={key}>{frame.name} frame + white mat</option>)}
     </select>
   </label>

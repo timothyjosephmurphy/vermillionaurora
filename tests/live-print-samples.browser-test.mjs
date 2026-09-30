@@ -40,6 +40,6 @@ try {
   await page.locator('[data-cart-methods] button').click();await page.waitForURL('https://www.paypal.com/**');
   await page.goto(origin+'/cart/?order='+id+'&result=return');await page.waitForFunction(()=>document.querySelector('[data-order-tracking]').textContent.includes('In production'));
   assert(calls.some(c=>c.action==='capture'&&c.body.orderId===id));
-  await page.goto(origin+'/products/painting-portrait-in-green/');assert.equal(await page.locator('[data-print-options]').count(),0);
+  await page.goto(origin+'/products/painting-portrait-in-green/');assert.equal(await page.locator('[data-print-options]').count(),1);assert.match(await page.locator('.print-test-note').textContent(),/low-resolution/);
   assert.deepEqual(errors,[]);console.log('PASS: sample disclosures, sizes, desktop/mobile layout, normal cart, live PayPal handoff and return; all provider calls mocked.');
 }finally{await browser.close();}

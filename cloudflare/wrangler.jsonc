@@ -16,7 +16,7 @@
     "BTCPAY_CHECKOUT_SLUGS": "painting-portrait-in-green,painting-portrait-in-gold",
     "CART_CHECKOUT_ENABLED": "true",
     "PRINT_CHECKOUT_ENABLED": "true",
-    "PRINT_CHECKOUT_IDS": "print-painting-portrait-in-green-full,print-painting-portrait-in-green-medium,print-painting-portrait-in-green-small,print-painting-portrait-in-gold-full,print-painting-portrait-in-gold-medium,print-painting-portrait-in-gold-small",
+    "PRINT_CHECKOUT_IDS": "print-painting-portrait-in-gold-full,print-painting-portrait-in-gold-full-frame-black,print-painting-portrait-in-gold-full-frame-white,print-painting-portrait-in-gold-full-frame-natural,print-painting-portrait-in-gold-medium,print-painting-portrait-in-gold-medium-frame-black,print-painting-portrait-in-gold-medium-frame-white,print-painting-portrait-in-gold-medium-frame-natural,print-painting-portrait-in-gold-small,print-painting-portrait-in-gold-small-frame-black,print-painting-portrait-in-gold-small-frame-white,print-painting-portrait-in-gold-small-frame-natural,print-painting-portrait-in-green-full,print-painting-portrait-in-green-full-frame-black,print-painting-portrait-in-green-full-frame-white,print-painting-portrait-in-green-full-frame-natural,print-painting-portrait-in-green-medium,print-painting-portrait-in-green-medium-frame-black,print-painting-portrait-in-green-medium-frame-white,print-painting-portrait-in-green-medium-frame-natural,print-painting-portrait-in-green-small,print-painting-portrait-in-green-small-frame-black,print-painting-portrait-in-green-small-frame-white,print-painting-portrait-in-green-small-frame-natural",
     "PRINT_PROVIDER": "finerworks",
     "FINERWORKS_ORDER_ENABLED": "true",
     "LIVE_PRINT_SAMPLE_ENABLED": "true"
