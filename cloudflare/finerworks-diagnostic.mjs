@@ -78,6 +78,17 @@ export async function finerworksDiagnostic(request,env,products) {
       const matted=task==='framing'?await quoteFramedOption(env,materials,option,input.frameKey,art.variants?.[option.key]?.frameOptions?.[input.frameKey]):await quoteMattedOption(env,materials,option,art.variants?.[option.key]?.matOptions?.['snow-white']);
       return reply({provider:'finerworks',readOnly:true,ordersSubmitted:false,...matted});
     }
+    if(['shipping','preflight'].includes(task)&&config.artworks[input.productId]?.sizing==='image-proportional') {
+      const product=products.find(p=>p.id===input.productId&&p.type==='painting');
+      if(!product||!Number.isSafeInteger(input.quantity)||input.quantity<1||input.quantity>10)return reply({error:'Choose an approved edition and valid quantity'},400);
+      const baseOption=printOptions(product,config,papers).find(o=>o.key===input.sizeKey);
+      const option=input.finishKey&&input.finishKey!=='none'?[...(baseOption?.matOptions||[]),...(baseOption?.frameOptions||[])].find(o=>o.finishKey===input.finishKey):baseOption;
+      if(!option?.ready)return reply({error:'Choose a ready edition size and finish'},400);
+      const items=cartItems([{id:option.id,quantity:input.quantity}]),quote=await quoteFinerWorksPrints(env,items,input.address);
+      if(task==='shipping')return reply({provider:'finerworks',readOnly:true,ordersSubmitted:false,...quote});
+      // This branch only validates; edition test-order submission stays unavailable.
+      return reply(await validateFinerWorksPrintOrder(env,items,input.address,quote));
+    }
     if(['shipping','preflight','test-order'].includes(task)) {
       const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];
       if(!product||!(art?.testOnly||art?.sampleOnly)||!Number.isSafeInteger(input.quantity)||input.quantity<1||input.quantity>10)return reply({error:'Choose a configured sandbox pilot and valid quantity'},400);
