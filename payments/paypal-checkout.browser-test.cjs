@@ -53,7 +53,7 @@ fs.mkdirSync(output,{recursive:true});
   assert(await pay.isDisabled());
   await quoteRequests[0].finish();await wait(async()=>!await pay.isDisabled());
   assert.equal(await pay.textContent(),'Buy with PayPal · $26.01');
-  const calculateButton=page.getByRole('button',{name:'Shipping & tax calculated',exact:true});assert(await calculateButton.isDisabled());assert.equal(await calculateButton.evaluate(el=>el.style.getPropertyValue('background-color')),'#dedbd7');assert.equal(await calculateButton.evaluate(el=>el.style.getPropertyPriority('background-color')),'important');
+  const calculateButton=page.getByRole('button',{name:'Shipping & tax calculated',exact:true});assert(await calculateButton.isDisabled());assert.equal(await calculateButton.evaluate(el=>el.style.getPropertyValue('background-color')),'rgb(222, 219, 215)');assert.equal(await calculateButton.evaluate(el=>el.style.getPropertyPriority('background-color')),'important');
   assert.equal(quoteRequests[0].data.address.state,'WA');
   assert((await page.locator('.checkout-total').innerText()).includes('26.01'));
   await page.locator('[name="city"]').fill('Tacoma');assert(await pay.isDisabled());assert(await page.getByRole('button',{name:'Calculate shipping & tax',exact:true}).isEnabled());
