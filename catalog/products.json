@@ -1338,14 +1338,15 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 12,
-        "width": 4,
-        "height": 4,
-        "weight": 2,
-        "packaging": "tube",
+        "length": 15,
+        "width": 12,
+        "height": 0.125,
+        "weight": 0.25,
+        "packaging": "flat",
         "insuranceRequested": true,
         "verification": "estimated",
-        "notes": "Parcel dimensions derived from painting dimensions; rolled into a tube when the larger side exceeds 12 inches; packed weight estimated at 2 lb."
+        "notes": "Owner selected the same flat-envelope shipping profile as Chase Toole on 2026-09-29: 12 by 15 inch envelope exterior, estimated thickness of 1/8 inch and packed weight of 4 oz (0.25 lb) for one sheet of watercolor paper in an envelope. Parcel dimensions use inches and weight uses pounds. Insure for the actual sale value; the pilot price is $20. Insurance is requested through the Shippo shipment and included in the selected shipping rate; the label integration verifies the insured rate before purchase.",
+        "packageOverride": true
       }
     },
     "inquiry": {
@@ -1398,14 +1399,15 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 12,
-        "width": 4,
-        "height": 4,
-        "weight": 2,
-        "packaging": "tube",
+        "length": 15,
+        "width": 12,
+        "height": 0.125,
+        "weight": 0.25,
+        "packaging": "flat",
         "insuranceRequested": true,
         "verification": "estimated",
-        "notes": "Parcel dimensions derived from painting dimensions; rolled into a tube when the larger side exceeds 12 inches; packed weight estimated at 2 lb."
+        "notes": "Envelope exterior is 12 by 15 inches, confirmed by the owner. Thickness of 1/8 inch and weight of 4 oz (0.25 lb) are estimates authorized by the owner on 2026-09-29 for one sheet of watercolor paper in an envelope. Parcel dimensions use inches and weight uses pounds. Insure for the actual sale value; the planned test price is $20. Insurance is requested through the Shippo shipment and included in the selected shipping rate; the label integration verifies the insured rate before purchase.",
+        "packageOverride": true
       }
     },
     "inquiry": {
