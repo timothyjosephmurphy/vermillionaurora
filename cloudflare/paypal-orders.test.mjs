@@ -8,11 +8,14 @@ const item = catalog[slug];
 const origin = 'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev';
 const orderId = 'ABC123456789';
 
-test('catalog preserves existing explicit shipping profiles', () => {
+test('catalog derives parcels from painting dimensions and keeps framed art flat', () => {
   assert.deepEqual(catalog['paul-murphy-painting-1'].parcel,{length:14,width:12,height:2,weight:2});
   assert.equal(catalog['paul-murphy-painting-1'].packaging,'flat');
-  assert.equal(catalog['paul-murphy-painting-57'].packaging,'flat', 'framed paintings cannot be rolled');
-  assert.equal(catalog['paul-murphy-painting-55'],undefined, 'measurements are required before automatic shipping');
+  assert.deepEqual(catalog['paul-murphy-painting-57'].parcel,{length:38,width:18,height:2,weight:2});
+  assert.equal(catalog['paul-murphy-painting-57'].packaging,'flat','framed paintings stay flat');
+  assert.equal(catalog['paul-murphy-painting-55'],undefined,'measurements are required before automatic shipping');
+  assert.deepEqual(catalog['painting-portrait-in-green'].parcel,{length:15,width:12,height:0.125,weight:0.25});
+  assert.equal(catalog['painting-portrait-in-green'].packaging,'flat');
   assert.deepEqual(catalog['el-zonte-at-sunrise'].parcel,{length:24,width:4,height:4,weight:2});
   assert.equal(catalog['el-zonte-at-sunrise'].packaging,'tube');
   assert.equal(catalog['painting-portrait-with-hat'],undefined,'Not-for-sale originals cannot be purchased');

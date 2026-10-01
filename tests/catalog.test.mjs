@@ -30,3 +30,27 @@ test('live availability works independently of payment providers and exposes onl
  assert.equal((await inventoryStatus(new Request('https://worker/inventory/status?ids=unknown'),env)).status,400);
  assert.equal((await inventoryStatus(new Request(`https://worker/inventory/status?ids=${id}`),{})).status,503);
 });
+
+import {deriveParcel} from '../catalog/shipping.mjs';
+test('dimensioned available paintings receive parcels from the flat-at-12-inch rule',()=>{
+ const originals=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price);
+ const missing=originals.filter(p=>!p.dimensions);
+ assert.deepEqual(missing.map(p=>p.id),['paul-murphy-painting-55']);
+ const ready=originals.filter(p=>p.dimensions);
+ assert.equal(ready.length,52);
+ for(const p of ready){
+  assert.equal(p.checkout.mode,'integrated',p.id);
+  const s=p.checkout.shipping;
+  const pkg=s.packageOverride?{length:s.length,width:s.width,height:s.height,weight:s.weight,packaging:s.packaging}:deriveParcel(p.dimensions,s.weight,s.height,{rollable:!(p.framing&&!/unframed/i.test(p.framing))});
+  assert.deepEqual(checkout[p.id].parcel,{length:pkg.length,width:pkg.width,height:pkg.height,weight:pkg.weight},p.id);
+  assert.equal(checkout[p.id].packaging,pkg.packaging,p.id);
+ }
+});
+test('flat packaging is used only when the larger painting side is at most 12 inches',()=>{
+ assert.deepEqual(deriveParcel({width:8,height:12,unit:'in'},2),{length:14,width:10,height:2,weight:2,packaging:'flat'});
+ assert.deepEqual(deriveParcel({width:8,height:16,unit:'in'},2),{length:8,width:4,height:4,weight:2,packaging:'tube'});
+ assert.deepEqual(deriveParcel({width:24,height:48,unit:'in'},2),{length:24,width:4,height:4,weight:2,packaging:'tube'});
+ assert.deepEqual(deriveParcel({width:100,height:70,unit:'cm'},2),{length:28,width:4,height:4,weight:2,packaging:'tube'});
+ assert.deepEqual(deriveParcel({width:30.48,height:25,unit:'cm'},2),{length:14,width:12,height:2,weight:2,packaging:'flat'});
+ assert.deepEqual(deriveParcel({width:36,height:16,unit:'in'},2,2,{rollable:false}),{length:38,width:18,height:2,weight:2,packaging:'flat'});
+});
