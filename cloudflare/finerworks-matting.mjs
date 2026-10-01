@@ -10,9 +10,11 @@ export async function finerworksMats(env) {
   })).filter(m=>[m.minWidth,m.minHeight].every(n=>Number.isFinite(n)&&n>=0)&&[m.maxWidth,m.maxHeight].every(n=>Number.isFinite(n)&&n>0));
 }
 export function matProductBuild(media,style,image,paper,mat) {
-  finerworksProductCode(media,style,image);
-  if(style.canMat!==true||paper.width!==image.width||paper.height!==image.height||!Number.isSafeInteger(mat?.id)||mat.id<=0||mat.window?.width!==image.width||mat.window?.height!==image.height||mat.outer?.width<paper.width+2||mat.outer?.height<paper.height+2||![mat.outer?.width,mat.outer?.height].every(n=>Number.isFinite(n)&&n>0))throw Error('Invalid FinerWorks print and mat geometry');
-  return {PrintProductTypeID:media.productTypeId,MediaID:media.id,MountingID:style.id,PrintW:image.width,PrintH:image.height,SheetW:paper.width,SheetH:paper.height,FrameID:0,FrameW:mat.outer.width,FrameH:mat.outer.height,MatID:mat.id,Mat1WindowW:mat.window.width,Mat1WindowH:mat.window.height,MatID2:0,GlassID:0,Units:0};
+  finerworksProductCode(media,style,paper);
+  if(style.canMat!==true||![image?.width,image?.height].every(n=>Number.isFinite(n)&&n>0)||paper.width<image.width||paper.height<image.height||!Number.isSafeInteger(mat?.id)||mat.id<=0||mat.window?.width!==paper.width||mat.window?.height!==paper.height||mat.outer?.width<paper.width+2||mat.outer?.height<paper.height+2||![mat.outer?.width,mat.outer?.height].every(n=>Number.isFinite(n)&&n>0))throw Error('Invalid FinerWorks print and mat geometry');
+  // The uploaded raster already includes its white border. Print the whole file
+  // at the physical sheet size; do not scale that file down to the inner image.
+  return {PrintProductTypeID:media.productTypeId,MediaID:media.id,MountingID:style.id,PrintW:paper.width,PrintH:paper.height,SheetW:paper.width,SheetH:paper.height,FrameID:0,FrameW:mat.outer.width,FrameH:mat.outer.height,MatID:mat.id,Mat1WindowW:mat.window.width,Mat1WindowH:mat.window.height,MatID2:0,GlassID:0,Units:0};
 }
 export async function buildMattedProduct(env,media,style,image,paper,mat) {
   const build=matProductBuild(media,style,image,paper,mat);
