@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import {catalogVersion,byId} from '../catalog/catalog.mjs';
 const root=path.resolve('dist'),origin='https://vermillionaurora.com',ids=['painting-portrait-in-green','painting-portrait-in-gold'];
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']}:{})});
-const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,method='paypal';
+const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,method='paypal';const reservations=new Map();
 page.on('pageerror',e=>errors.push(e.message));
 const product=id=>({id,title:byId[id].title,amount:byId[id].listing.price.amount,methods:['paypal','bitcoin'],status:availability});
 await page.route('**/*',async route=>{
@@ -15,7 +15,8 @@ await page.route('**/*',async route=>{
   const action=url.pathname.split('/').at(-1);const body=req.method()==='POST'?req.postDataJSON():null;calls.push({action,body});let result;
   if(action==='catalog')result={enabled,version:catalogVersion,products:ids.map(product)};
   if(action==='hold'){
-   const originals=body.items.filter(i=>!i.id.startsWith('print-')).map(i=>i.id),unavailable=availability==='available'?null:originals.find(id=>ids.includes(id));
+   const originals=body.items.filter(i=>!i.id.startsWith('print-')).map(i=>i.id),previous=reservations.get(body.holdId)||new Set(),unavailable=availability==='available'?null:originals.find(id=>ids.includes(id)&&!previous.has(id));
+   if(!unavailable)reservations.set(body.holdId,new Set(originals));
    result={orderId:body.holdId,status:unavailable?'unavailable':'holding',heldIds:unavailable?[]:originals,expiresAt:Date.now()+15*60*1000,...(unavailable?{unavailable}:{})};
   }
   if(action==='quote'){
@@ -54,7 +55,7 @@ try{
  await page.getByRole('button',{name:'Return to cart'}).click();await page.getByRole('heading',{name:'A place for the work you love.'}).waitFor();
  // Invalid persisted data cannot inject markup or alter quantities/prices.
  await page.evaluate(()=>localStorage.setItem('va-cart-v1',JSON.stringify([{id:'<script>alert(1)</script>',quantity:1},{id:'painting-portrait-in-green',quantity:99},{id:'painting-portrait-in-green',quantity:1,amount:'.01'}])));await page.reload();await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);assert.match(await page.locator('.cart-line-price').textContent(),/20.00/);
- availability='sold';await page.reload();await page.getByText('Sold',{exact:true}).waitFor();assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isDisabled());await page.getByRole('button',{name:'Remove Chase Toole'}).click();await page.getByRole('heading',{name:'A place for the work you love.'}).waitFor();availability='available';
+ availability='sold';await page.reload();await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line-unavailable').count(),0,'The active reservation keeps the original available in this cart despite later inventory changes.');await page.getByRole('button',{name:'Remove Chase Toole'}).click();await page.getByRole('heading',{name:'A place for the work you love.'}).waitFor();availability='available';
  // A lone item keeps the expedited one-item checkout.
  await page.evaluate(id=>localStorage.setItem('va-cart-v1',JSON.stringify([{id,quantity:1}])),ids[0]);
  await page.goto(`${origin}/products/${ids[0]}/`);
