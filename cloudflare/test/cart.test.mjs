@@ -56,6 +56,28 @@ const request=(action,body)=>new Request(`https://worker/checkout/cart/${action}
 it('rejects duplicated originals, quantities, unknown products and client price substitutions',()=>{
   expect(()=>cartItems([{id:ids[0],quantity:2}])).toThrow();expect(()=>cartItems([{id:ids[0],quantity:1},{id:ids[0],quantity:1}])).toThrow();expect(()=>cartItems([{id:'__proto__',quantity:1}])).toThrow();expect(cartItems([{id:ids[0],quantity:1,amount:'0.01'}])[0].amount).toBe(catalog[ids[0]].amount);
 });
+it('reserves originals when added, reuses the hold for a quote, releases removals, and expires abandoned carts',async()=>{
+  const id=crypto.randomUUID(),key='c'.repeat(64),order=env.CART_ORDERS.getByName(id);objects.push(order);
+  const held=await cartCheckout(request('hold',{holdId:id,key,items:[{id:ids[0],quantity:1}]}),{...env,...config});
+  expect(held.status).toBe(200);expect((await held.json()).heldIds).toEqual([ids[0]]);expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
+  const competitor=crypto.randomUUID(),otherKey='d'.repeat(64),other=env.CART_ORDERS.getByName(competitor);objects.push(other);
+  const denied=await cartCheckout(request('hold',{holdId:competitor,key:otherKey,items:[{id:ids[0],quantity:1}]}),{...env,...config});expect((await denied.json()).status).toBe('unavailable');
+  const quoteResponse=await cartCheckout(request('quote',{items:[{id:ids[0],quantity:1}],address,email:'buyer@example.test',catalogVersion,holdId:id,key}),{...env,...config});
+  expect(quoteResponse.status).toBe(200);expect((await quoteResponse.json()).status).toBe('quoted');expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
+  const removed=await cartCheckout(request('hold',{holdId:id,key,items:[]}),{...env,...config});expect((await removed.json()).heldIds).toEqual([]);expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('available');
+  const abandoned=crypto.randomUUID(),abandonedOrder=env.CART_ORDERS.getByName(abandoned);objects.push(abandonedOrder);
+  await abandonedOrder.syncCart(abandoned,await keyHash('e'.repeat(64)),cartItems([{id:ids[1],quantity:1}]));
+  await runInDurableObject(abandonedOrder,i=>i.save({...i.read(),expiresAt:0}));await abandonedOrder.refresh();
+  expect((await runInDurableObject(abandonedOrder,i=>i.read())).status).toBe('expired');expect(await env.PAINTING_STOCK.getByName(ids[1]).status()).toBe('available');
+});
+it('keeps the cart hold through payment setup and releases it when PayPal checkout is cancelled',async()=>{
+  const id=crypto.randomUUID(),key='f'.repeat(64),order=env.CART_ORDERS.getByName(id);objects.push(order);
+  await runInDurableObject(order,i=>{i.env={...i.env,...config};});
+  await cartCheckout(request('hold',{holdId:id,key,items:[{id:ids[0],quantity:1}]}),{...env,...config});
+  const quoted=await cartCheckout(request('quote',{items:[{id:ids[0],quantity:1}],address,email:'buyer@example.test',catalogVersion,holdId:id,key}),{...env,...config});expect(quoted.status).toBe(200);
+  const started=await cartCheckout(request('start',{orderId:id,key,method:'paypal'}),{...env,...config});expect((await started.json()).status).toBe('pending');expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
+  const cancelled=await cartCheckout(request('cancel',{orderId:id,key}),{...env,...config});expect((await cancelled.json()).status).toBe('cancelled');expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('available');
+});
 it('quotes separate parcels and one tax calculation with all items, without reserving or charging',async()=>{
   const items=quote().items.filter(i=>i.id!== 'painting-portrait-in-green'); // The pilot has insured shipping, tested separately by insurance tests.
   items.push({...items[0],id:'el-zonte-at-sunrise',amount:catalog['el-zonte-at-sunrise'].amount});

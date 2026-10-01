@@ -20,7 +20,7 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
     <div class="cart-order-actions"><a class="button button-solid" data-order-resume hidden>Continue payment</a><button class="button button-ghost" data-order-check type="button">Check payment status</button><button class="cart-text-link" data-order-cancel type="button" hidden>Cancel checkout</button><button class="button button-ghost" data-order-back type="button" hidden>Return to cart</button><button class="button button-ghost" data-order-print type="button" hidden>Print confirmation</button></div>
   </section>
   <div class="cart-layout" data-cart-layout hidden>
-    <section class="cart-artworks" aria-label="Selected artworks"><div data-cart-items></div><p class="cart-footnote">Adding an original to your cart does not reserve it. Availability is confirmed when you continue to payment.</p></section>
+    <section class="cart-artworks" aria-label="Selected artworks"><div data-cart-items></div><p class="cart-footnote" data-cart-reservation hidden></p><p class="cart-footnote">Originals are held for 15 minutes after you add them to your cart. Complete checkout before the hold expires.</p></section>
     <aside class="cart-checkout" aria-labelledby="checkout-title"><p class="eyebrow dark">Art for your space</p><h2 id="checkout-title">Order summary</h2>
       <dl class="cart-totals"><div><dt>Artwork subtotal</dt><dd data-cart-subtotal>—</dd></div><div><dt>Shipping</dt><dd data-cart-shipping>Calculated below</dd></div><div><dt>Tax</dt><dd data-cart-tax>Calculated below</dd></div><div class="cart-total"><dt>Total <small>USD</small></dt><dd data-cart-total>—</dd></div></dl>
       <form data-cart-form>

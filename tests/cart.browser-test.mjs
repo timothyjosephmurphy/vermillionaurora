@@ -11,15 +11,19 @@ const product=id=>({id,title:byId[id].title,amount:byId[id].listing.price.amount
 await page.route('**/*',async route=>{
  const req=route.request(),url=new URL(req.url());
  if(req.method()==='OPTIONS')return route.fulfill({status:204,headers:{'Access-Control-Allow-Origin':origin,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type'}});
- if(url.pathname.startsWith('/checkout/cart/')){
+  if(url.pathname.startsWith('/checkout/cart/')){
   const action=url.pathname.split('/').at(-1);const body=req.method()==='POST'?req.postDataJSON():null;calls.push({action,body});let result;
   if(action==='catalog')result={enabled,version:catalogVersion,products:ids.map(product)};
+  if(action==='hold'){
+   const originals=body.items.filter(i=>!i.id.startsWith('print-')).map(i=>i.id),unavailable=availability==='available'?null:originals.find(id=>ids.includes(id));
+   result={orderId:body.holdId,status:unavailable?'unavailable':'holding',heldIds:unavailable?[]:originals,expiresAt:Date.now()+15*60*1000,...(unavailable?{unavailable}:{})};
+  }
   if(action==='quote'){
    assert.equal(body.catalogVersion,catalogVersion);assert.equal(body.address.city,'Seattle');
    const items=body.items.map(i=>({...product(i.id),quantity:i.quantity})),base=items.reduce((s,i)=>s+Number(i.amount),0);
-   result={orderId:'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',key:'a'.repeat(64),status:'quoted',methods:['paypal','bitcoin'],quote:{items,base:base.toFixed(2),shipping:'12.00',tax:'5.00',total:(base+17).toFixed(2),shipments:items.map(i=>({id:i.id,title:i.title,shipping:'6.00',carrier:'UPS',service:'Ground'}))}};order=result;
+   result={orderId:body.holdId,key:body.key,expiresAt:Date.now()+10*60*1000,status:'quoted',methods:['paypal','bitcoin'],quote:{items,base:base.toFixed(2),shipping:'12.00',tax:'5.00',total:(base+17).toFixed(2),shipments:items.map(i=>({id:i.id,title:i.title,shipping:'6.00',carrier:'UPS',service:'Ground'}))}};order=result;
   }
-  if(action==='start'){assert.equal(body.key,'a'.repeat(64));method=body.method;result={...order,method,status:method==='bitcoin'?'processing':'capturing'};order=result;}
+  if(action==='start'){assert.equal(body.key,order.key);method=body.method;result={...order,method,status:method==='bitcoin'?'processing':'capturing'};order=result;}
   if(action==='status'){if(failStatus)return route.fulfill({status:503,headers:{'Access-Control-Allow-Origin':origin},json:{error:'Payment status is temporarily unavailable. Please check again.'}});result=order;}
   if(action==='capture'){result={...order,status:'paid'};order=result;}
   if(action==='cancel'){result={...order,status:'cancelled'};order=result;}
