@@ -39,12 +39,13 @@ try{
  for(const id of ids){await page.goto(`${origin}/products/${id}/`);await page.getByRole('button',{name:'Add to cart',exact:true}).click();await page.getByRole('button',{name:'Added to cart',exact:true}).click();}
  assert.equal((await cartStored()).length,2);
  await page.goto(origin+'/cart/');await page.locator('.cart-line').nth(1).waitFor();await page.reload();await page.locator('.cart-line').nth(1).waitFor();
- assert.equal(await page.locator('[data-cart-count]').textContent(),'2');await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Continue with PayPal'}).waitFor();
+ assert.equal(await page.locator('[data-cart-count]').textContent(),'2');await page.getByRole('button',{name:'Continue with PayPal'}).waitFor();assert(await page.getByRole('button',{name:'Continue with PayPal'}).isDisabled());assert.equal(await page.getByRole('button',{name:'Continue with PayPal'}).evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(222, 219, 215)');
+ await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Continue with PayPal'}).waitFor();assert(await page.getByRole('button',{name:'Continue with PayPal'}).isEnabled());assert(await page.getByRole('button',{name:'Shipping & tax calculated'}).isDisabled());
  for(const width of [1440,390]){await page.setViewportSize({width,height:1050});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width} cart overflow`);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.waitForFunction(()=>scrollY===0);await page.screenshot({path:`/tmp/cart-preview/cart-${width}.png`,fullPage:true});}
- // Editing the address invalidates the accepted quote and hides payment controls.
- await page.locator('[name="street1"]').fill('124 Main St');assert(await page.locator('[data-cart-payments]').isHidden());await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Continue with PayPal'}).click();
+ // Editing the address invalidates the quote; payment stays visible but gray until recalculated.
+ await page.locator('[name="street1"]').fill('124 Main St');assert(await page.locator('[data-cart-payments]').isVisible());assert(await page.getByRole('button',{name:'Continue with PayPal'}).isDisabled());await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Continue with PayPal'}).click();
  await page.getByRole('heading',{name:'Confirming your payment'}).waitFor();assert.equal(calls.filter(c=>c.action==='start').length,1);
- await page.reload();await page.getByRole('heading',{name:'Confirming your payment'}).waitFor();
+ await page.reload();await page.locator('.cart-line').nth(1).waitFor();assert.equal(await page.locator('.cart-line').count(),2,'The cart stays visible while an earlier order is pending.');await page.getByRole('link',{name:'Review existing order'}).click();await page.getByRole('heading',{name:'Confirming your payment'}).waitFor();
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual(await cartStored(),[]);await page.screenshot({path:'/tmp/cart-preview/confirmation-mobile.png',fullPage:true});
  await page.getByRole('button',{name:'Return to cart'}).click();await page.getByRole('heading',{name:'A place for the work you love.'}).waitFor();
  // Invalid persisted data cannot inject markup or alter quantities/prices.
@@ -68,7 +69,7 @@ try{
   await page.locator('.product-purchase-actions').screenshot({path:`/tmp/cart-preview/original-price-${width}.png`});
  }
  await buyNow.click();await page.waitForURL(origin+'/cart/?buy='+ids[0]);
- await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
+ await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);assert.match(await page.locator('[data-cart-notice]').textContent(),/one-item checkout/i);await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual((await cartStored()).map(i=>i.id),[ids[1]]);
  assert.deepEqual(errors,[]);console.log('PASS: desktop/mobile cart, persistent selections, quantity-one originals, invalidation, payment recovery, receipt, unavailable stock, corrupted storage, and Buy now preserving other selections.');
 }finally{await browser.close();}
