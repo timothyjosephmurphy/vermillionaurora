@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="9ebc284ce4c82767cdb4";
+export const printVersion="2a7ea8e1e4cc4456ef47";
 export default {
   "print-painting-portrait-in-gold-full": {
     "id": "print-painting-portrait-in-gold-full",

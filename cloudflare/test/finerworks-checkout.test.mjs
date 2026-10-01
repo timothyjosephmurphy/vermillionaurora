@@ -39,14 +39,26 @@ beforeEach(()=>{
 });
 afterEach(async()=>{for(const o of objects)await runInDurableObject(o,(_,ctx)=>ctx.storage.deleteAlarm());vi.unstubAllGlobals();});
 const inspect=o=>runInDurableObject(o,i=>i.read());
-async function setup(overrides={}) {
+async function setup(overrides={},selection=ids) {
   const config={...settings,...overrides};activeMode=config.PAYPAL_MODE;
   const orderId=crypto.randomUUID(),order=env.CART_ORDERS.getByName(orderId);objects.push(order);
   await runInDurableObject(order,i=>{i.env={...i.env,...config};});
-  const quote=await priceCart({...env,...config},cartItems(ids.map(id=>({id,quantity:1}))),address,'buyer@example.test');
+  const quote=await priceCart({...env,...config},cartItems(selection.map(id=>({id,quantity:1}))),address,'buyer@example.test');
   await order.createQuote(orderId,await keyHash('a'.repeat(64)),quote,['paypal']);return {orderId,order,quote};
 }
 async function pay(order){await order.start('paypal');payment.status='APPROVED';await order.capture();}
+it('full-image editions preserve paper geometry and exact files through paid fulfillment without changing original stock',async()=>{
+  const selection=['print-paul-murphy-painting-55-full','print-paul-murphy-painting-86-small','print-paul-murphy-painting-72-medium'];
+  const stock=env.PAINTING_STOCK.getByName('paul-murphy-painting-86'),before=await stock.status();
+  const {order,quote}=await setup({PRINT_CHECKOUT_IDS:selection.join(',')},selection);
+  expect(quote.items.every(i=>i.imageSize.width<i.paperSize.width&&i.layoutApproved&&!i.sampleOnly)).toBe(true);expect(submission).toBeNull();
+  await pay(order);await order.refresh();await order.refresh();
+  const saved=await inspect(order);expect(saved.status).toBe('paid');expect(saved.printJob.status).toBe('test-complete');
+  expect(submission.order_items).toHaveLength(3);
+  for(const id of selection){const p=prints[id];expect(submission.order_items.some(i=>i.product_sku===p.sku&&i.product_image.product_url_file===p.assetUrl)).toBe(true);}
+  expect(calls.filter(c=>c.url.endsWith('submit_orders_v2'))).toHaveLength(1);expect(await stock.status()).toBe(before);
+  expect(calls.findIndex(c=>c.url.endsWith('/capture'))).toBeLessThan(calls.findIndex(c=>c.url.endsWith('submit_orders_v2')));
+});
 it('allows sandbox pilots while live samples require their separate enablement flag',()=>{
   for(const id of ids){expect(paymentMethods({...env,...settings},id)).toEqual(['paypal']);expect(paymentMethods({...env,...settings,PAYPAL_MODE:'live',FINERWORKS_PAYMENT_TOKEN:'invoice'},id)).toEqual([]);expect(paymentMethods({...env,...settings,FINERWORKS_ORDER_ENABLED:'false'},id)).toEqual([]);}
 });

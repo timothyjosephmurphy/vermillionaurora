@@ -20,11 +20,17 @@ await Promise.all(Array.from({length:4},async()=>{
     if(u.origin!=='https://media.vermillionaurora.com'||u.username||u.password||u.search||u.hash)throw Error('Edition sources must be hosted on the artwork media domain');
     let bytes;
     if(old?.source?.sha256)try{bytes=await readFile(new URL(`${old.source.sha256}.jpg`,cache));}catch{}
-    if(!bytes){const result=await run('curl',['--fail','--silent','--show-error','--location','--max-time','60','--retry','2',sourceUrl],{encoding:'buffer',maxBuffer:30*1024*1024});bytes=result.stdout;}
+    if(!bytes)for(let attempt=0;attempt<3;attempt++){
+      try {
+        // A fresh process discards partial output; curl --retry can concatenate
+        // incomplete responses when its destination is stdout.
+        const result=await run('curl',['--fail','--silent','--show-error','--location','--connect-timeout','15','--max-time','180',sourceUrl],{encoding:'buffer',maxBuffer:30*1024*1024});bytes=result.stdout;break;
+      }catch(error){if(attempt===2||![6,7,18,28,52,56].includes(error.code))throw Error(`Could not download approved print source: ${product.id} (curl ${error.code})`);}
+    }
     const sha256=digest(bytes);
     if(old?.source?.sha256&&old.source.sha256!==sha256)throw Error(`Print source changed: ${product.id}`);
     await writeFile(new URL(`${sha256}.jpg`,cache),bytes);
-    const {data:normalized,info}=await sharp(bytes).rotate().toBuffer({resolveWithObject:true});
+    const {data:normalized,info}=await sharp(bytes).rotate().removeAlpha().raw().toBuffer({resolveWithObject:true});
     const source={url:sourceUrl,widthPx:info.width,heightPx:info.height,sha256};
     if(!prepare&&JSON.stringify(old.source)!==JSON.stringify(source))throw Error(`Source measurements changed: ${product.id}`);
     const art=old||{enabled:false,sizing:'image-proportional',sizingApproved:true,paper:config.defaultPaper,source,variants:{}};
@@ -34,9 +40,9 @@ await Promise.all(Array.from({length:4},async()=>{
       // Contain the complete source; fit:inside and no enlargement preserve every edge.
       const border=Math.ceil(EDITION_BORDER_IN*layoutSpec.dpi);
       const widthLimited=(layoutSpec.widthPx-2*border)/info.width<=(layoutSpec.heightPx-2*border)/info.height;
-      const resized=await sharp(normalized).resize({...widthLimited?{width:c.width}:{height:c.height},withoutEnlargement:true}).toBuffer({resolveWithObject:true});
+      const resized=await sharp(normalized,{raw:{width:info.width,height:info.height,channels:info.channels}}).resize({...widthLimited?{width:c.width}:{height:c.height},withoutEnlargement:true}).raw().toBuffer({resolveWithObject:true});
       if(resized.info.width!==c.width||resized.info.height!==c.height)throw Error(`Unexpected fitted dimensions: ${product.id}`);
-      const data=await sharp({create:{width:layoutSpec.widthPx,height:layoutSpec.heightPx,channels:3,background:'#ffffff'}}).composite([{input:resized.data,left:c.left,top:c.top}]).jpeg({quality:95,chromaSubsampling:'4:4:4'}).toBuffer();
+      const data=await sharp({create:{width:layoutSpec.widthPx,height:layoutSpec.heightPx,channels:3,background:'#ffffff'}}).composite([{input:resized.data,raw:{width:c.width,height:c.height,channels:resized.info.channels},left:c.left,top:c.top}]).jpeg({quality:95,chromaSubsampling:'4:4:4'}).toBuffer();
       const hash=digest(data),sku=finerworksProductCode(stock.media,stock.style,paper);
       const asset={provider:'finerworks',url:`https://vermillionaurora.com/print-editions/${hash}.jpg`,sha256:hash,sourceSha256:sha256,productCode:sku,imageWidthIn:image.width,imageHeightIn:image.height,paperWidthIn:paper.width,paperHeightIn:paper.height,approved:true,layoutApproved:true,layout:EDITION_LAYOUT,layoutSpec};
       if(prepare)art.variants[key]={...art.variants[key],sku,asset};

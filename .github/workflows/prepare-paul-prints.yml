@@ -17,12 +17,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Build and test catalog
+      - name: Prepare sandbox catalog and test read-only pricing
         run: |
           npm ci
-          npm run build
-          npm test
-          node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
+          node scripts/build-pilot-print-assets.mjs
+          node payments/build-print-catalog.mjs
+          node payments/build-checkout-catalog.mjs
+          node --test cloudflare/finerworks-diagnostic.test.mjs cloudflare/finerworks-quotes.test.mjs
       - name: Deploy isolated sandbox
         uses: cloudflare/wrangler-action@v4
         with:

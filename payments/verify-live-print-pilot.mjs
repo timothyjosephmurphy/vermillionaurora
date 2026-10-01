@@ -12,7 +12,8 @@ async function api(action,body) {
 await verifyLivePrintAssets();
 const catalog=await api('catalog'),live=catalog.products.filter(p=>p.type==='print');
 assert.equal(catalog.enabled,true);assert.deepEqual(live.map(p=>p.id).sort(),Object.keys(prints).sort());
-assert(live.every(p=>p.sampleOnly&&p.methods.length===1&&p.methods[0]==='paypal'));
+assert(live.filter(p=>p.sampleOnly).every(p=>p.methods.length===1&&p.methods[0]==='paypal'));
+assert(live.every(p=>p.methods.includes('paypal')));
 let order;
 try {
   const q=await api('quote',{catalogVersion:catalog.version,items:ids.map(id=>({id,quantity:1})),email:'checkout-verification@example.test',address:{name:'Checkout Verification',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'}});
