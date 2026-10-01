@@ -1,0 +1,44 @@
+name: Quote Paul Murphy framed prints
+on:
+  push:
+    branches: [codex/paul-print-framing]
+    paths: ['payments/quote-paul-frames.mjs', '.github/workflows/prepare-paul-frames.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checkout-sandbox
+  cancel-in-progress: false
+jobs:
+  quote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm ci
+          node scripts/build-pilot-print-assets.mjs
+          node payments/build-print-catalog.mjs
+          node payments/build-checkout-catalog.mjs
+          node --test cloudflare/finerworks-framing.test.mjs cloudflare/finerworks-matting.test.mjs cloudflare/finerworks-diagnostic.test.mjs
+      - name: Deploy isolated sandbox for read-only frame quotes
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
+      - name: Retrieve and validate all frame products and retail prices
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          DEPLOYED_SHA: ${{ github.sha }}
+        run: node payments/quote-paul-frames.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paul-frame-quotes
+          path: paul-frame-quotes.json
+          retention-days: 7

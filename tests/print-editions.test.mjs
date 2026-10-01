@@ -23,7 +23,14 @@ test('all 39 paintings have 115 image-proportional, uncropped, 300-DPI layouts',
       // Only sub-pixel resampling rounding; no forced aspect-ratio stretch.
       assert(Math.abs(c.width-c.height*s.widthPx/s.heightPx)<1.5);
       assert(o.image.width<o.paper.width&&o.image.height<o.paper.height);
-      assert.equal(o.matOptions.length,0);assert.equal(o.frameOptions.length,0);
+      assert.equal(o.frameOptions.length,3);
+      for(const framed of o.frameOptions){
+        assert(framed.ready,`${framed.id}: ${framed.reasons.join(', ')}`);
+        assert.equal(framed.asset.url,o.asset.url);assert.equal(framed.asset.sha256,o.asset.sha256);
+        assert.equal(framed.mat.window.width,o.paper.width);assert.equal(framed.mat.window.height,o.paper.height);
+        assert(framed.mat.outer.width>=o.paper.width+2&&framed.mat.outer.height>=o.paper.height+2);
+        assert.equal(framed.unframedAmount,o.amount);assert(Number(framed.amount)>Number(o.amount));
+      }
       if(art.enabled)assert(o.ready,`${p.id}/${o.key}: ${o.reasons.join(', ')}`);
     }
   }

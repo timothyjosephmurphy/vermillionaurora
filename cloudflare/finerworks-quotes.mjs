@@ -27,7 +27,7 @@ export function groupPrintProducts(items,po) {
     if(!item||typeof item.id!=='string'||ids.has(item.id)||item.provider!=='finerworks'||!codePattern.test((item.mat?item.baseSku:item.sku)||'')||!/^[A-Za-z0-9._-]{1,160}$/.test(item.sku||'')||!Number.isSafeInteger(item.quantity)||item.quantity<1||item.quantity>10)throw Error('Invalid FinerWorks print selection');
     ids.add(item.id);
     const [, , , ,w,h]=(item.mat?item.baseSku:item.sku).match(codePattern);
-    const inset=item.layout===EDITION_LAYOUT&&item.sizeBasis==='image-proportional'&&item.layoutApproved===true&&!item.mat&&!item.frame;
+    const inset=item.layout===EDITION_LAYOUT&&item.sizeBasis==='image-proportional'&&item.layoutApproved===true;
     const imageFits=inset?[item.imageSize?.width,item.imageSize?.height].every(n=>Number.isFinite(n)&&n>0)&&item.imageSize.width<Number(w)&&item.imageSize.height<Number(h):Number(w)===item.imageSize?.width&&Number(h)===item.imageSize?.height;
     if(!imageFits||Number(w)!==item.paperSize?.width||Number(h)!==item.paperSize?.height)throw Error('FinerWorks product dimensions do not match the print');
     if(item.mat&&(!Number.isSafeInteger(item.mat.id)||item.mat.id<=0||item.mat.key!=='snow-white'||item.mat.window?.width!==Number(w)||item.mat.window?.height!==Number(h)||![item.mat.outer?.width,item.mat.outer?.height].every(n=>Number.isFinite(n))||item.mat.outer.width<Number(w)+2||item.mat.outer.height<Number(h)+2))throw Error('Invalid FinerWorks mat dimensions');

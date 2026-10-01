@@ -6,7 +6,7 @@ import config from '../catalog/prints.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {newFinerWorksJob,fulfillFinerWorks,finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 import {quoteMattedOption,finerworksMats} from './finerworks-matting.mjs';
-import {finerworksFrames,finerworksGlazing,quoteFramedOption} from './finerworks-framing.mjs';
+import {finerworksFrames,finerworksGlazing,quoteFramedOption,quoteFramedOptions} from './finerworks-framing.mjs';
 import {cartItems} from './cart-policy.mjs';
 import {priceCart} from './checkout-pricing.mjs';
 const reply=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
@@ -21,8 +21,19 @@ export async function finerworksDiagnostic(request,env,products) {
   let input;try{input=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   if(!input||Array.isArray(input)||typeof input!=='object')return reply({error:'Invalid request'},400);
   const task=input.task||'credentials';
-  if(!['credentials','materials','prices','edition-prices','shipping','preflight','test-order','cart-quote','matting','mats','framing-materials','framing'].includes(task))return reply({error:'Unknown diagnostic task'},400);
+  if(!['credentials','materials','prices','edition-prices','edition-framing','shipping','preflight','test-order','cart-quote','matting','mats','framing-materials','framing'].includes(task))return reply({error:'Unknown diagnostic task'},400);
   try {
+    if(task==='edition-framing') {
+      const product=products.find(p=>p.id===input.productId&&p.type==='painting'&&p.artist==='Paul Murphy'),art=config.artworks[input.productId];
+      if(!product||art?.sizing!=='image-proportional'||art.sizingApproved!==true)return reply({error:'Choose a configured Paul Murphy edition'},400);
+      const options=printOptions(product,config,papers),materials=await finerworksMaterials(env),variants=[];
+      if(!options.length||options.some(o=>!o.ready))throw Error('The unframed edition must be ready before framing');
+      for(const option of options){
+        const quoted=await quoteFramedOptions(env,materials,option,['black','white','natural'],art.variants[option.key]?.frameOptions);
+        for(const q of quoted)variants.push({productId:product.id,key:option.key,frameKey:q.frame.key,sku:q.sku,baseSku:q.baseSku,mat:q.mat,frame:q.frame,amount:q.pricing.recommendedAmount,unframedAmount:option.amount,pricingRule:q.pricing.ruleId,quotedAt:q.quotedAt,sourceSha256:art.source.sha256,assetSha256:option.asset.sha256});
+      }
+      return reply({provider:'finerworks',mode:'sandbox',readOnly:true,ordersSubmitted:false,variants});
+    }
     if(task==='edition-prices') {
       const ids=input.productIds;
       if(!Array.isArray(ids)||ids.length<1||ids.length>10||new Set(ids).size!==ids.length)return reply({error:'Choose up to ten configured edition paintings'},400);
