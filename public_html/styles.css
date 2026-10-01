@@ -180,7 +180,7 @@ textarea {
   inset: 0;
   background:
     linear-gradient(110deg, rgba(10, 9, 9, 0.26), rgba(117, 77, 52, 0.18)),
-    url('https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/4b3b6300-d4e4-43fd-b12b-2121ee8d47f1/Esperanza+16x9.png') center/cover no-repeat;
+    url('/gallery-images/esperanza-hero.png') center/cover no-repeat;
   filter: saturate(0.8) contrast(1.05);
 }
 
