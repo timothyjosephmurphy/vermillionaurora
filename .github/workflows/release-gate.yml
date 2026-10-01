@@ -2,7 +2,7 @@ name: Release gate
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, release]
   workflow_call:
   workflow_dispatch:
 
