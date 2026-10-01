@@ -6,7 +6,7 @@ import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 const origin='https://vermillionaurora.com',root=path.resolve('dist');
 const editions=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional');
-const ids=[...new Set(editions.map(p=>p.productId))];assert.equal(ids.length,39);assert.equal(editions.filter(p=>!p.frame).length,115);assert.equal(editions.filter(p=>p.frame).length,345);
+const ids=[...new Set(editions.map(p=>p.productId))];assert.equal(ids.length,57);assert.equal(editions.filter(p=>!p.frame).length,152);assert.equal(editions.filter(p=>p.frame).length,456);
 const available=editions.map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['paypal','bitcoin']}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
 try {
@@ -36,7 +36,7 @@ try {
   });
   await page.goto(origin+'/exhibitions/paul-murphy/');
   assert.match(await page.locator('.section-heading').textContent(),/prints are available for every painting/);
-  for(const id of ids)assert(await page.locator(`a[href="/products/${id}/"]`).count(),`Gallery link: ${id}`);
+  for(const id of ids.filter(id=>id.startsWith('paul-murphy-')))assert(await page.locator(`a[href="/products/${id}/"]`).count(),`Gallery link: ${id}`);
   for(const width of [1280,390]){
     await page.setViewportSize({width,height:900});
     for(const id of ids){
@@ -73,5 +73,5 @@ try {
   }
   stale=true;await page.goto(origin+'/products/paul-murphy-painting-55/#print-options');
   assert(await page.locator('[data-print-dialog]').isVisible());assert(await page.locator('[data-print-add]').isDisabled());
-  assert.deepEqual(errors,[]);console.log('PASS: all 39 gallery links, 115 print sizes and 345 framed variants, desktop/mobile dialogs and framed cart selections; providers mocked.');
+  assert.deepEqual(errors,[]);console.log('PASS: all 57 paintings, 152 print sizes and 456 framed variants, desktop/mobile dialogs and framed cart selections; providers mocked.');
 } finally {await browser.close();}

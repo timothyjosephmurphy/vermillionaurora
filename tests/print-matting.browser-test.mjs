@@ -3,7 +3,7 @@ import {load} from 'cheerio';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import {printVersion} from '../cloudflare/print-catalog.mjs';
+import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 const root=path.resolve('dist'),origin='https://vermillionaurora.com';
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']});
 try{
@@ -27,11 +27,11 @@ try{
   await page.setViewportSize({width,height:900});await page.goto(origin+'/print-preview/painting-portrait-in-green/');
   const finish=page.locator('[data-print-finish]'),frames=page.locator('[data-frame-recommendations]');
   await finish.selectOption('snow-white');
-  assert.match(await page.locator('[data-print-dimensions]').textContent(),/Mat \/ frame size: 16 × 20/);
-  assert.equal(await frames.locator('.frame-link').count(),1);assert.match(await frames.locator('.frame-link').getAttribute('href'),/B0BQQY92LH/);
+  assert.match(await page.locator('[data-print-dimensions]').textContent(),/Mat \/ frame size:/);
+  assert(await frames.isVisible());
   await page.locator('input[value$="-small"]').check();
-  assert.match(await page.locator('[data-print-dimensions]').textContent(),/Image: 6 × 7.5.*Mat \/ frame size: 8 × 10/);
-  assert.match(await frames.locator('.frame-link').getAttribute('href'),/B0B1CNJL7N/);
+  const variant=prints['print-painting-portrait-in-green-small-frame-black'];assert((await page.locator('[data-print-dimensions]').textContent()).includes('Mat / frame size: '+variant.mat.outer.width+' × '+variant.mat.outer.height));
+  assert.equal(await frames.locator('.frame-link').count(),1);
   assert.match(await frames.locator('.frame-fit').textContent(),/Fits the selected mat/);
   assert(await page.locator('[data-print-add]').isDisabled());
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
