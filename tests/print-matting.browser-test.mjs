@@ -28,7 +28,7 @@ try{
   const finish=page.locator('[data-print-finish]'),frames=page.locator('[data-frame-recommendations]');
   await finish.selectOption('snow-white');
   assert.match(await page.locator('[data-print-dimensions]').textContent(),/Mat \/ frame size:/);
-  assert(await frames.isVisible());
+  assert(await frames.isHidden(),'No third-party frame link is approved for the 12 × 15 mat');
   await page.locator('input[value$="-small"]').check();
   const variant=prints['print-painting-portrait-in-green-small-frame-black'];assert((await page.locator('[data-print-dimensions]').textContent()).includes('Mat / frame size: '+variant.mat.outer.width+' × '+variant.mat.outer.height));
   assert.equal(await frames.locator('.frame-link').count(),1);
