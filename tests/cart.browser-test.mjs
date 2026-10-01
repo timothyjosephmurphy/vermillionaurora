@@ -69,7 +69,7 @@ try{
   await page.locator('.product-purchase-actions').screenshot({path:`/tmp/cart-preview/original-price-${width}.png`});
  }
  await buyNow.click();await page.waitForURL(origin+'/cart/?buy='+ids[0]);
- await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);assert.match(await page.locator('[data-cart-notice]').textContent(),/one-item checkout/i);await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
+ await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);assert.match(await page.locator('[data-cart-notice]').textContent(),/one-item checkout/i);assert.equal(await page.getByRole('link',{name:'View full cart'}).getAttribute('href'),'/cart/');await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual((await cartStored()).map(i=>i.id),[ids[1]]);
  assert.deepEqual(errors,[]);console.log('PASS: desktop/mobile cart, persistent selections, quantity-one originals, invalidation, payment recovery, receipt, unavailable stock, corrupted storage, and Buy now preserving other selections.');
 }finally{await browser.close();}
