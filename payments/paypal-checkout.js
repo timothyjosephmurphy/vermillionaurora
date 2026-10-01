@@ -165,10 +165,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       const setQuoteButtonDisabled = disabled => {
         submit.disabled = disabled;
         if (disabled) {
-          submit.style.setProperty('background-color','#dedbd7');
-          submit.style.setProperty('border-color','#d0cbc5');
-          submit.style.setProperty('color','#66615c');
-          submit.style.setProperty('opacity','1');
+          submit.style.setProperty('background-color','#dedbd7','important');
+          submit.style.setProperty('border-color','#d0cbc5','important');
+          submit.style.setProperty('color','#66615c','important');
+          submit.style.setProperty('opacity','1','important');
         } else {
           for (const property of ['background-color','border-color','color','opacity']) submit.style.removeProperty(property);
         }
