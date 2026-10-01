@@ -30,7 +30,7 @@ jobs:
           body=$(cat <<EOF
           The reusable Release gate passed for commit $RELEASE_SHA.
 
-          Merge this promotion only after the website Worker’s Cloudflare Workers Builds production branch is configured as `release`. Merging publishes the website first; the release deployment then waits for the matching catalog version before deploying the checkout API.
+          Merge this promotion only after the website Worker's Cloudflare Workers Builds production branch is configured as release. Merging publishes the website first; the release deployment then waits for the matching catalog version before deploying the checkout API.
           EOF
           )
           pr=$(gh pr list --repo "${{ github.repository }}" --base release --head main --state open --json number --jq '.[0].number // empty')
