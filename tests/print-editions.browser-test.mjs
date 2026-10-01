@@ -14,11 +14,7 @@ try {
   page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',async route=>{
     const u=new URL(route.request().url());
-    if(u.pathname.startsWith('/checkout/cart/')){
-      assert.equal(u.pathname.split('/').at(-1),'catalog','Browsing and adding prints must not create payments or orders');
-      return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'edition-test-'+(stale?'old':printVersion),products:available}});
-    }
-    if(u.hostname!==new URL(origin).hostname)return route.fulfill({json:{products:[],availability:{}}});
+    if(u.pathname.startsWith('/checkout/cart/')){\n      const action=u.pathname.split('/').at(-1);\n      assert(['catalog','hold'].includes(action),'Browsing and adding prints must not create payments or orders');\n      if(action==='hold')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{status:'held',heldIds:[],expiresAt:new Date(Date.now()+900000).toISOString()}});\n      return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'edition-test-'+(stale?'old':printVersion),products:available}});\n    }\n    if(u.hostname!==new URL(origin).hostname)return route.fulfill({json:{products:[],availability:{}}});
     const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
     if(!fs.existsSync(file))return route.fulfill({status:404});
     return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg'})[path.extname(file)]||'application/octet-stream'});
