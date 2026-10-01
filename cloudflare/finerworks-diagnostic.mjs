@@ -24,8 +24,8 @@ export async function finerworksDiagnostic(request,env,products) {
   if(!['credentials','materials','prices','edition-prices','edition-framing','shipping','preflight','test-order','cart-quote','matting','mats','framing-materials','framing'].includes(task))return reply({error:'Unknown diagnostic task'},400);
   try {
     if(task==='edition-framing') {
-      const product=products.find(p=>p.id===input.productId&&p.type==='painting'&&p.artist==='Paul Murphy'),art=config.artworks[input.productId];
-      if(!product||art?.sizing!=='image-proportional'||art.sizingApproved!==true)return reply({error:'Choose a configured Paul Murphy edition'},400);
+      const product=products.find(p=>p.id===input.productId&&p.type==='painting'),art=config.artworks[input.productId];
+      if(!product||art?.sizing!=='image-proportional'||art.sizingApproved!==true)return reply({error:'Choose a configured artwork edition'},400);
       const options=printOptions(product,config,papers),materials=await finerworksMaterials(env),variants=[];
       if(!options.length||options.some(o=>!o.ready))throw Error('The unframed edition must be ready before framing');
       for(const option of options){

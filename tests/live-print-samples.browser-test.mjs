@@ -27,19 +27,19 @@ try {
   });
   for(const width of [1280,390]){
     await page.setViewportSize({width,height:900});await page.goto(origin+'/print-test/');await page.waitForFunction(()=>!document.querySelector('[data-print-samples] button').disabled);
-    await page.waitForFunction(()=>[...document.querySelectorAll('[data-print-samples] img')].every(i=>i.complete&&i.naturalWidth===1000&&i.naturalHeight===1250));
+    await page.waitForFunction(()=>[...document.querySelectorAll('[data-print-samples] img')].every(i=>i.complete&&i.naturalWidth>1000&&i.naturalHeight>1000));
     assert.equal(await page.locator('select').count(),2);assert.equal(await page.locator('select option').count(),8);
     assert.match(await page.locator('.sample-note').textContent(),/real purchase/);assert.equal(await page.locator('[data-print-samples] img').count(),2);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await page.screenshot({path:`/tmp/live-print-samples-${width}.png`,fullPage:true});
   }
   await page.locator('[data-print-samples] button').click();await page.waitForURL(origin+'/cart/');await page.locator('[data-cart-form]').waitFor({state:'visible'});
-  assert.equal(await page.locator('.cart-line').count(),2);assert.equal(await page.locator('.cart-line input').count(),0);assert.equal(await page.locator('.cart-line').filter({hasText:'Low-resolution sample'}).count(),2);
+  assert.equal(await page.locator('.cart-line').count(),2);assert.equal(await page.locator('.cart-line input').count(),2);assert.equal(await page.locator('.cart-line').filter({hasText:'Low-resolution sample'}).count(),0);
   for(const [name,value] of Object.entries({email:'buyer@example.test',name:'Test Buyer',street1:'600 4th Ave',city:'Seattle',state:'WA',zip:'98104'}))await page.locator(`[name="${name}"]`).fill(value);
   await page.locator('[data-cart-quote]').click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.locator('[data-cart-payments]').waitFor({state:'visible'});assert.match(await page.locator('[data-cart-total]').textContent(),/63.95/);
   assert(calls.find(c=>c.action==='quote').body.items.every(i=>i.quantity===1&&i.id.endsWith('-small')));
   await page.locator('[data-cart-methods] button').click();await page.waitForURL('https://www.paypal.com/**');
   await page.goto(origin+'/cart/?order='+id+'&result=return');await page.waitForFunction(()=>document.querySelector('[data-order-tracking]').textContent.includes('In production'));
   assert(calls.some(c=>c.action==='capture'&&c.body.orderId===id));
-  await page.goto(origin+'/products/painting-portrait-in-green/');assert.equal(await page.locator('[data-print-options]').count(),1);assert.match(await page.locator('.print-test-note').textContent(),/low-resolution/);
-  assert.deepEqual(errors,[]);console.log('PASS: sample disclosures, sizes, desktop/mobile layout, normal cart, live PayPal handoff and return; all provider calls mocked.');
+  await page.goto(origin+'/products/painting-portrait-in-green/');assert.equal(await page.locator('[data-print-options]').count(),1);assert.equal(await page.locator('.print-test-note').count(),0);
+  assert.deepEqual(errors,[]);console.log('PASS: edition disclosures, sizes, desktop/mobile layout, normal cart, live PayPal handoff and return; all provider calls mocked.');
 }finally{await browser.close();}

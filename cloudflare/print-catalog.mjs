@@ -1,329 +1,81 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="180a4fb249a7a1a59fa1";
+export const printVersion="598b1130883dfe5dd7dd";
 export default {
-  "print-painting-portrait-in-gold-full": {
-    "id": "print-painting-portrait-in-gold-full",
+  "print-el-zonte-at-sunrise-full": {
+    "id": "print-el-zonte-at-sunrise-full",
     "type": "print",
     "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Original-size print",
-    "artworkTitle": "Dorian Nakamoto",
-    "amount": "75.00",
+    "productId": "el-zonte-at-sunrise",
+    "title": "El Zonte at Sunrise, El Salvador — Large print",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S12X15",
+    "sku": "5M144M8S5.41X10.52",
     "scale": 1,
     "imageSize": {
-      "width": 12,
-      "height": 15,
+      "width": 5.1533,
+      "height": 10.2667,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12,
-      "height": 15,
+      "width": 5.41,
+      "height": 10.52,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e242de2228f8a51a80a533f2fe058e6360e9c8f0a049a3bf8eb77a36705d433b.jpg",
+    "assetSha256": "e242de2228f8a51a80a533f2fe058e6360e9c8f0a049a3bf8eb77a36705d433b",
+    "sourceSha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
-    },
-    "attributes": {},
-    "minimumDpi": 300
-  },
-  "print-painting-portrait-in-gold-full-frame-black": {
-    "id": "print-painting-portrait-in-gold-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Original-size print — Black frame",
-    "artworkTitle": "Dorian Nakamoto",
-    "amount": "149.00",
-    "currency": "USD",
-    "sku": "5M144M8S12X15F1S16X20J1S12X15G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 12,
-      "height": 15,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 12,
-      "height": 15,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
+      "src": "/gallery-images/el-salvador-sunrise.jpeg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 16,
-        "height": 20,
-        "unit": "in"
-      },
-      "window": {
-        "width": 12,
-        "height": 15,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S12X15",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 16,
-        "height": 20,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "75.00"
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
   },
-  "print-painting-portrait-in-gold-full-frame-white": {
-    "id": "print-painting-portrait-in-gold-full-frame-white",
+  "print-el-zonte-at-sunrise-full-frame-black": {
+    "id": "print-el-zonte-at-sunrise-full-frame-black",
     "type": "print",
     "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Original-size print — White frame",
-    "artworkTitle": "Dorian Nakamoto",
-    "amount": "149.00",
+    "productId": "el-zonte-at-sunrise",
+    "title": "El Zonte at Sunrise, El Salvador — Large print — Black frame",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S12X15F2S16X20J1S12X15G1",
+    "sku": "5M144M8S5DD41X10DD52F1S11X14J1S5DD41X10DD52G1",
     "scale": 1,
     "imageSize": {
-      "width": 12,
-      "height": 15,
+      "width": 5.1533,
+      "height": 10.2667,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12,
-      "height": 15,
+      "width": 5.41,
+      "height": 10.52,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e242de2228f8a51a80a533f2fe058e6360e9c8f0a049a3bf8eb77a36705d433b.jpg",
+    "assetSha256": "e242de2228f8a51a80a533f2fe058e6360e9c8f0a049a3bf8eb77a36705d433b",
+    "sourceSha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
+      "src": "/gallery-images/el-salvador-sunrise.jpeg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 16,
-        "height": 20,
-        "unit": "in"
-      },
-      "window": {
-        "width": 12,
-        "height": 15,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S12X15",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 16,
-        "height": 20,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "75.00"
-  },
-  "print-painting-portrait-in-gold-full-frame-natural": {
-    "id": "print-painting-portrait-in-gold-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Original-size print — Natural wood frame",
-    "artworkTitle": "Dorian Nakamoto",
-    "amount": "164.00",
-    "currency": "USD",
-    "sku": "5M144M8S12X15F7S16X20J1S12X15G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 12,
-      "height": 15,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 12,
-      "height": 15,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 16,
-        "height": 20,
-        "unit": "in"
-      },
-      "window": {
-        "width": 12,
-        "height": 15,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S12X15",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 16,
-        "height": 20,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "75.00"
-  },
-  "print-painting-portrait-in-gold-medium": {
-    "id": "print-painting-portrait-in-gold-medium",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Medium print",
-    "artworkTitle": "Dorian Nakamoto",
-    "amount": "45.00",
-    "currency": "USD",
-    "sku": "5M144M8S9X11.25",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 9,
-      "height": 11.25,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 9,
-      "height": 11.25,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
-    },
-    "attributes": {},
-    "minimumDpi": 300
-  },
-  "print-painting-portrait-in-gold-medium-frame-black": {
-    "id": "print-painting-portrait-in-gold-medium-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Medium print — Black frame",
-    "artworkTitle": "Dorian Nakamoto",
-    "amount": "91.00",
-    "currency": "USD",
-    "sku": "5M144M8S9X11DD25F1S11X14J1S9X11DD25G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 9,
-      "height": 11.25,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 9,
-      "height": 11.25,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -334,13 +86,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 9,
-        "height": 11.25,
+        "width": 5.41,
+        "height": 10.52,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9X11.25",
+    "baseSku": "5M144M8S5.41X10.52",
     "frame": {
       "key": "black",
       "id": 1,
@@ -359,43 +111,45 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "45.00"
+    "unframedAmount": "35.00"
   },
-  "print-painting-portrait-in-gold-medium-frame-white": {
-    "id": "print-painting-portrait-in-gold-medium-frame-white",
+  "print-el-zonte-at-sunrise-full-frame-white": {
+    "id": "print-el-zonte-at-sunrise-full-frame-white",
     "type": "print",
     "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Medium print — White frame",
-    "artworkTitle": "Dorian Nakamoto",
-    "amount": "91.00",
+    "productId": "el-zonte-at-sunrise",
+    "title": "El Zonte at Sunrise, El Salvador — Large print — White frame",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S9X11DD25F2S11X14J1S9X11DD25G1",
-    "scale": 0.75,
+    "sku": "5M144M8S5DD41X10DD52F2S11X14J1S5DD41X10DD52G1",
+    "scale": 1,
     "imageSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 5.1533,
+      "height": 10.2667,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 5.41,
+      "height": 10.52,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e242de2228f8a51a80a533f2fe058e6360e9c8f0a049a3bf8eb77a36705d433b.jpg",
+    "assetSha256": "e242de2228f8a51a80a533f2fe058e6360e9c8f0a049a3bf8eb77a36705d433b",
+    "sourceSha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
+      "src": "/gallery-images/el-salvador-sunrise.jpeg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -406,13 +160,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 9,
-        "height": 11.25,
+        "width": 5.41,
+        "height": 10.52,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9X11.25",
+    "baseSku": "5M144M8S5.41X10.52",
     "frame": {
       "key": "white",
       "id": 2,
@@ -431,43 +185,45 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "45.00"
+    "unframedAmount": "35.00"
   },
-  "print-painting-portrait-in-gold-medium-frame-natural": {
-    "id": "print-painting-portrait-in-gold-medium-frame-natural",
+  "print-el-zonte-at-sunrise-full-frame-natural": {
+    "id": "print-el-zonte-at-sunrise-full-frame-natural",
     "type": "print",
     "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Medium print — Natural wood frame",
-    "artworkTitle": "Dorian Nakamoto",
-    "amount": "102.00",
+    "productId": "el-zonte-at-sunrise",
+    "title": "El Zonte at Sunrise, El Salvador — Large print — Natural wood frame",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S9X11DD25F7S11X14J1S9X11DD25G1",
-    "scale": 0.75,
+    "sku": "5M144M8S5DD41X10DD52F7S11X14J1S5DD41X10DD52G1",
+    "scale": 1,
     "imageSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 5.1533,
+      "height": 10.2667,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 5.41,
+      "height": 10.52,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e242de2228f8a51a80a533f2fe058e6360e9c8f0a049a3bf8eb77a36705d433b.jpg",
+    "assetSha256": "e242de2228f8a51a80a533f2fe058e6360e9c8f0a049a3bf8eb77a36705d433b",
+    "sourceSha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
+      "src": "/gallery-images/el-salvador-sunrise.jpeg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -478,13 +234,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 9,
-        "height": 11.25,
+        "width": 5.41,
+        "height": 10.52,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9X11.25",
+    "baseSku": "5M144M8S5.41X10.52",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -503,79 +259,83 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "45.00"
+    "unframedAmount": "35.00"
   },
-  "print-painting-portrait-in-gold-small": {
-    "id": "print-painting-portrait-in-gold-small",
+  "print-el-zonte-at-sunrise-medium": {
+    "id": "print-el-zonte-at-sunrise-medium",
     "type": "print",
     "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Small print",
-    "artworkTitle": "Dorian Nakamoto",
+    "productId": "el-zonte-at-sunrise",
+    "title": "El Zonte at Sunrise, El Salvador — Medium print",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6X7.5",
-    "scale": 0.5,
+    "sku": "5M144M8S4.12X7.95",
+    "scale": 0.75,
     "imageSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 3.8633,
+      "height": 7.6967,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.12,
+      "height": 7.95,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ac9292e8bba4b4da61965bbf85a3cfb802650bae736685903a0dc64eeabe38cb.jpg",
+    "assetSha256": "ac9292e8bba4b4da61965bbf85a3cfb802650bae736685903a0dc64eeabe38cb",
+    "sourceSha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
-    },
-    "attributes": {},
-    "minimumDpi": 300
-  },
-  "print-painting-portrait-in-gold-small-frame-black": {
-    "id": "print-painting-portrait-in-gold-small-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "painting-portrait-in-gold",
-    "title": "Dorian Nakamoto — Small print — Black frame",
-    "artworkTitle": "Dorian Nakamoto",
-    "amount": "59.63",
-    "currency": "USD",
-    "sku": "5M144M8S6X7DD5F1S8X10J1S6X7DD5G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 6,
-      "height": 7.5,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 6,
-      "height": 7.5,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/portrait-in-gold.jpg",
-      "alt": "Dorian Nakamoto by TJ Murphy",
-      "caption": "Dorian Nakamoto"
+      "src": "/gallery-images/el-salvador-sunrise.jpeg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-el-zonte-at-sunrise-medium-frame-black": {
+    "id": "print-el-zonte-at-sunrise-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "El Zonte at Sunrise, El Salvador — Medium print — Black frame",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD12X7DD95F1S8X10J1S4DD12X7DD95G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 3.8633,
+      "height": 7.6967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.12,
+      "height": 7.95,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ac9292e8bba4b4da61965bbf85a3cfb802650bae736685903a0dc64eeabe38cb.jpg",
+    "assetSha256": "ac9292e8bba4b4da61965bbf85a3cfb802650bae736685903a0dc64eeabe38cb",
+    "sourceSha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-salvador-sunrise.jpeg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -586,13 +346,4953 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 6,
-        "height": 7.5,
+        "width": 4.12,
+        "height": 7.95,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S6X7.5",
+    "baseSku": "5M144M8S4.12X7.95",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-el-zonte-at-sunrise-medium-frame-white": {
+    "id": "print-el-zonte-at-sunrise-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "El Zonte at Sunrise, El Salvador — Medium print — White frame",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD12X7DD95F2S8X10J1S4DD12X7DD95G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 3.8633,
+      "height": 7.6967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.12,
+      "height": 7.95,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ac9292e8bba4b4da61965bbf85a3cfb802650bae736685903a0dc64eeabe38cb.jpg",
+    "assetSha256": "ac9292e8bba4b4da61965bbf85a3cfb802650bae736685903a0dc64eeabe38cb",
+    "sourceSha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-salvador-sunrise.jpeg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.12,
+        "height": 7.95,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.12X7.95",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-el-zonte-at-sunrise-medium-frame-natural": {
+    "id": "print-el-zonte-at-sunrise-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "El Zonte at Sunrise, El Salvador — Medium print — Natural wood frame",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD12X7DD95F7S8X10J1S4DD12X7DD95G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 3.8633,
+      "height": 7.6967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.12,
+      "height": 7.95,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ac9292e8bba4b4da61965bbf85a3cfb802650bae736685903a0dc64eeabe38cb.jpg",
+    "assetSha256": "ac9292e8bba4b4da61965bbf85a3cfb802650bae736685903a0dc64eeabe38cb",
+    "sourceSha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-salvador-sunrise.jpeg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.12,
+        "height": 7.95,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.12X7.95",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-full": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Large print",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M8S8.58X12.82",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.3267,
+      "height": 12.5633,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.58,
+      "height": 12.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2.jpg",
+    "assetSha256": "95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-full-frame-black": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Large print — Black frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "101.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD58X12DD82F1S12X15J1S8DD58X12DD82G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.3267,
+      "height": 12.5633,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.58,
+      "height": 12.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2.jpg",
+    "assetSha256": "95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.58,
+        "height": 12.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.58X12.82",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-full-frame-white": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Large print — White frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "101.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD58X12DD82F2S12X15J1S8DD58X12DD82G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.3267,
+      "height": 12.5633,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.58,
+      "height": 12.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2.jpg",
+    "assetSha256": "95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.58,
+        "height": 12.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.58X12.82",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-full-frame-natural": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Large print — Natural wood frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "113.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD58X12DD82F7S12X15J1S8DD58X12DD82G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.3267,
+      "height": 12.5633,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.58,
+      "height": 12.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2.jpg",
+    "assetSha256": "95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.58,
+        "height": 12.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.58X12.82",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-medium": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Medium print",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.5X9.68",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.2467,
+      "height": 9.4233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.5,
+      "height": 9.68,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509.jpg",
+    "assetSha256": "354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-medium-frame-black": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Medium print — Black frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD5X9DD68F1S9X12J1S6DD5X9DD68G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.2467,
+      "height": 9.4233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.5,
+      "height": 9.68,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509.jpg",
+    "assetSha256": "354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.5,
+        "height": 9.68,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.5X9.68",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-medium-frame-white": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Medium print — White frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD5X9DD68F2S9X12J1S6DD5X9DD68G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.2467,
+      "height": 9.4233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.5,
+      "height": 9.68,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509.jpg",
+    "assetSha256": "354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.5,
+        "height": 9.68,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.5X9.68",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-medium-frame-natural": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Medium print — Natural wood frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD5X9DD68F7S9X12J1S6DD5X9DD68G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.2467,
+      "height": 9.4233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.5,
+      "height": 9.68,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509.jpg",
+    "assetSha256": "354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.5,
+        "height": 9.68,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.5X9.68",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-small": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Small print",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S4.41X6.53",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1567,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.41,
+      "height": 6.53,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2.jpg",
+    "assetSha256": "719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-small-frame-black": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Small print — Black frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD41X6DD53F1S8X10J1S4DD41X6DD53G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1567,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.41,
+      "height": 6.53,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2.jpg",
+    "assetSha256": "719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.41,
+        "height": 6.53,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.41X6.53",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-small-frame-white": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Small print — White frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD41X6DD53F2S8X10J1S4DD41X6DD53G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1567,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.41,
+      "height": 6.53,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2.jpg",
+    "assetSha256": "719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.41,
+        "height": 6.53,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.41X6.53",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-honeybadger-and-cub-with-genesis-block-small-frame-natural": {
+    "id": "print-honeybadger-and-cub-with-genesis-block-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block — Small print — Natural wood frame",
+    "artworkTitle": "Honeybadger and Cub with Genesis Block",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD41X6DD53F7S8X10J1S4DD41X6DD53G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1567,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.41,
+      "height": 6.53,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2.jpg",
+    "assetSha256": "719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2",
+    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
+      "caption": "Honeybadger and Cub with Genesis Block"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.41,
+        "height": 6.53,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.41X6.53",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-couple-in-color-full": {
+    "id": "print-painting-couple-in-color-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Large print",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "55.00",
+    "currency": "USD",
+    "sku": "5M144M8S14.1X9.37",
+    "scale": 1,
+    "imageSize": {
+      "width": 13.8467,
+      "height": 9.1133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.1,
+      "height": 9.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b.jpg",
+    "assetSha256": "cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-couple-in-color-full-frame-black": {
+    "id": "print-painting-couple-in-color-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Large print — Black frame",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "129.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD1X9DD37F1S20X16J1S14DD1X9DD37G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 13.8467,
+      "height": 9.1133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.1,
+      "height": 9.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b.jpg",
+    "assetSha256": "cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.1,
+        "height": 9.37,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.1X9.37",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-painting-couple-in-color-full-frame-white": {
+    "id": "print-painting-couple-in-color-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Large print — White frame",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "129.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD1X9DD37F2S20X16J1S14DD1X9DD37G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 13.8467,
+      "height": 9.1133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.1,
+      "height": 9.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b.jpg",
+    "assetSha256": "cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.1,
+        "height": 9.37,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.1X9.37",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-painting-couple-in-color-full-frame-natural": {
+    "id": "print-painting-couple-in-color-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Large print — Natural wood frame",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD1X9DD37F7S20X16J1S14DD1X9DD37G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 13.8467,
+      "height": 9.1133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.1,
+      "height": 9.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b.jpg",
+    "assetSha256": "cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.1,
+        "height": 9.37,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.1X9.37",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-painting-couple-in-color-medium": {
+    "id": "print-painting-couple-in-color-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Medium print",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S10.64X7.09",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 10.3867,
+      "height": 6.8367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.64,
+      "height": 7.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585.jpg",
+    "assetSha256": "cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-couple-in-color-medium-frame-black": {
+    "id": "print-painting-couple-in-color-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Medium print — Black frame",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD64X7DD09F1S14X11J1S10DD64X7DD09G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 10.3867,
+      "height": 6.8367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.64,
+      "height": 7.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585.jpg",
+    "assetSha256": "cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.64,
+        "height": 7.09,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.64X7.09",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-couple-in-color-medium-frame-white": {
+    "id": "print-painting-couple-in-color-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Medium print — White frame",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD64X7DD09F2S14X11J1S10DD64X7DD09G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 10.3867,
+      "height": 6.8367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.64,
+      "height": 7.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585.jpg",
+    "assetSha256": "cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.64,
+        "height": 7.09,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.64X7.09",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-couple-in-color-medium-frame-natural": {
+    "id": "print-painting-couple-in-color-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Medium print — Natural wood frame",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD64X7DD09F7S14X11J1S10DD64X7DD09G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 10.3867,
+      "height": 6.8367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.64,
+      "height": 7.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585.jpg",
+    "assetSha256": "cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.64,
+        "height": 7.09,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.64X7.09",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-couple-in-color-small": {
+    "id": "print-painting-couple-in-color-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Small print",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S7.17X4.81",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.9167,
+      "height": 4.5533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.17,
+      "height": 4.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2.jpg",
+    "assetSha256": "2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-couple-in-color-small-frame-black": {
+    "id": "print-painting-couple-in-color-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Small print — Black frame",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S7DD17X4DD81F1S10X8J1S7DD17X4DD81G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.9167,
+      "height": 4.5533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.17,
+      "height": 4.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2.jpg",
+    "assetSha256": "2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.17,
+        "height": 4.81,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.17X4.81",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-couple-in-color-small-frame-white": {
+    "id": "print-painting-couple-in-color-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Small print — White frame",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S7DD17X4DD81F2S10X8J1S7DD17X4DD81G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.9167,
+      "height": 4.5533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.17,
+      "height": 4.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2.jpg",
+    "assetSha256": "2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.17,
+        "height": 4.81,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.17X4.81",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-couple-in-color-small-frame-natural": {
+    "id": "print-painting-couple-in-color-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary — Small print — Natural wood frame",
+    "artworkTitle": "Aunt Fran and Hillary",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S7DD17X4DD81F7S10X8J1S7DD17X4DD81G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.9167,
+      "height": 4.5533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.17,
+      "height": 4.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2.jpg",
+    "assetSha256": "2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2",
+    "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/couple-in-color.jpg",
+      "alt": "Aunt Fran and Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Hillary"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.17,
+        "height": 4.81,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.17X4.81",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-festival-portrait-full": {
+    "id": "print-painting-festival-portrait-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-festival-portrait",
+    "title": "Wonder — Large print",
+    "artworkTitle": "Wonder",
+    "amount": "30.00",
+    "currency": "USD",
+    "sku": "5M144M8S4.46X8.82",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2067,
+      "height": 8.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.46,
+      "height": 8.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52.jpg",
+    "assetSha256": "30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52",
+    "sourceSha256": "5a93fb9dae1591564ffabae3ec7eb4e3474858bad0c8c0c34ea878f467462e04",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/festival-portrait.jpg",
+      "alt": "Wonder by TJ Murphy",
+      "caption": "Wonder"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-festival-portrait-full-frame-black": {
+    "id": "print-painting-festival-portrait-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-festival-portrait",
+    "title": "Wonder — Large print — Black frame",
+    "artworkTitle": "Wonder",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD46X8DD82F1S9X12J1S4DD46X8DD82G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2067,
+      "height": 8.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.46,
+      "height": 8.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52.jpg",
+    "assetSha256": "30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52",
+    "sourceSha256": "5a93fb9dae1591564ffabae3ec7eb4e3474858bad0c8c0c34ea878f467462e04",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/festival-portrait.jpg",
+      "alt": "Wonder by TJ Murphy",
+      "caption": "Wonder"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.46,
+        "height": 8.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.46X8.82",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-festival-portrait-full-frame-white": {
+    "id": "print-painting-festival-portrait-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-festival-portrait",
+    "title": "Wonder — Large print — White frame",
+    "artworkTitle": "Wonder",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD46X8DD82F2S9X12J1S4DD46X8DD82G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2067,
+      "height": 8.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.46,
+      "height": 8.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52.jpg",
+    "assetSha256": "30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52",
+    "sourceSha256": "5a93fb9dae1591564ffabae3ec7eb4e3474858bad0c8c0c34ea878f467462e04",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/festival-portrait.jpg",
+      "alt": "Wonder by TJ Murphy",
+      "caption": "Wonder"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.46,
+        "height": 8.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.46X8.82",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-festival-portrait-full-frame-natural": {
+    "id": "print-painting-festival-portrait-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-festival-portrait",
+    "title": "Wonder — Large print — Natural wood frame",
+    "artworkTitle": "Wonder",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD46X8DD82F7S9X12J1S4DD46X8DD82G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2067,
+      "height": 8.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.46,
+      "height": 8.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52.jpg",
+    "assetSha256": "30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52",
+    "sourceSha256": "5a93fb9dae1591564ffabae3ec7eb4e3474858bad0c8c0c34ea878f467462e04",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/festival-portrait.jpg",
+      "alt": "Wonder by TJ Murphy",
+      "caption": "Wonder"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.46,
+        "height": 8.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.46X8.82",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-figures-in-wheatfield-full": {
+    "id": "print-painting-figures-in-wheatfield-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-figures-in-wheatfield",
+    "title": "The Mother of Kiev — Large print",
+    "artworkTitle": "The Mother of Kiev",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S4X6.79",
+    "scale": 1,
+    "imageSize": {
+      "width": 3.53,
+      "height": 6.5367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4,
+      "height": 6.79,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834.jpg",
+    "assetSha256": "44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834",
+    "sourceSha256": "a97a42644b7c84e4693e2af671f49e0daf4f16a662d7ac9796fe5e2d67c055aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/figures-in-wheatfield.jpg",
+      "alt": "The Mother of Kiev by TJ Murphy",
+      "caption": "The Mother of Kiev"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-figures-in-wheatfield-full-frame-black": {
+    "id": "print-painting-figures-in-wheatfield-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-figures-in-wheatfield",
+    "title": "The Mother of Kiev — Large print — Black frame",
+    "artworkTitle": "The Mother of Kiev",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4X6DD79F1S8X10J1S4X6DD79G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 3.53,
+      "height": 6.5367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4,
+      "height": 6.79,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834.jpg",
+    "assetSha256": "44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834",
+    "sourceSha256": "a97a42644b7c84e4693e2af671f49e0daf4f16a662d7ac9796fe5e2d67c055aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/figures-in-wheatfield.jpg",
+      "alt": "The Mother of Kiev by TJ Murphy",
+      "caption": "The Mother of Kiev"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4,
+        "height": 6.79,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4X6.79",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-figures-in-wheatfield-full-frame-white": {
+    "id": "print-painting-figures-in-wheatfield-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-figures-in-wheatfield",
+    "title": "The Mother of Kiev — Large print — White frame",
+    "artworkTitle": "The Mother of Kiev",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4X6DD79F2S8X10J1S4X6DD79G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 3.53,
+      "height": 6.5367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4,
+      "height": 6.79,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834.jpg",
+    "assetSha256": "44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834",
+    "sourceSha256": "a97a42644b7c84e4693e2af671f49e0daf4f16a662d7ac9796fe5e2d67c055aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/figures-in-wheatfield.jpg",
+      "alt": "The Mother of Kiev by TJ Murphy",
+      "caption": "The Mother of Kiev"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4,
+        "height": 6.79,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4X6.79",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-figures-in-wheatfield-full-frame-natural": {
+    "id": "print-painting-figures-in-wheatfield-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-figures-in-wheatfield",
+    "title": "The Mother of Kiev — Large print — Natural wood frame",
+    "artworkTitle": "The Mother of Kiev",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4X6DD79F7S8X10J1S4X6DD79G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 3.53,
+      "height": 6.5367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4,
+      "height": 6.79,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834.jpg",
+    "assetSha256": "44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834",
+    "sourceSha256": "a97a42644b7c84e4693e2af671f49e0daf4f16a662d7ac9796fe5e2d67c055aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/figures-in-wheatfield.jpg",
+      "alt": "The Mother of Kiev by TJ Murphy",
+      "caption": "The Mother of Kiev"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4,
+        "height": 6.79,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4X6.79",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-golden-coast-full": {
+    "id": "print-painting-golden-coast-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-golden-coast",
+    "title": "Sunset in Puget Sound from San Juan Island — Large print",
+    "artworkTitle": "Sunset in Puget Sound from San Juan Island",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S5.18X9.46",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.9267,
+      "height": 9.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.18,
+      "height": 9.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef.jpg",
+    "assetSha256": "af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef",
+    "sourceSha256": "9f3f1c8a20548e3041ad3062bf8879b280a5b26a63d3b6784f891c1f251e18e1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/golden-coast.jpg",
+      "alt": "Sunset in Puget Sound from San Juan Island by TJ Murphy",
+      "caption": "Sunset in Puget Sound from San Juan Island"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-golden-coast-full-frame-black": {
+    "id": "print-painting-golden-coast-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-golden-coast",
+    "title": "Sunset in Puget Sound from San Juan Island — Large print — Black frame",
+    "artworkTitle": "Sunset in Puget Sound from San Juan Island",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD18X9DD46F1S9X12J1S5DD18X9DD46G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.9267,
+      "height": 9.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.18,
+      "height": 9.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef.jpg",
+    "assetSha256": "af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef",
+    "sourceSha256": "9f3f1c8a20548e3041ad3062bf8879b280a5b26a63d3b6784f891c1f251e18e1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/golden-coast.jpg",
+      "alt": "Sunset in Puget Sound from San Juan Island by TJ Murphy",
+      "caption": "Sunset in Puget Sound from San Juan Island"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.18,
+        "height": 9.46,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.18X9.46",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-golden-coast-full-frame-white": {
+    "id": "print-painting-golden-coast-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-golden-coast",
+    "title": "Sunset in Puget Sound from San Juan Island — Large print — White frame",
+    "artworkTitle": "Sunset in Puget Sound from San Juan Island",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD18X9DD46F2S9X12J1S5DD18X9DD46G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.9267,
+      "height": 9.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.18,
+      "height": 9.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef.jpg",
+    "assetSha256": "af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef",
+    "sourceSha256": "9f3f1c8a20548e3041ad3062bf8879b280a5b26a63d3b6784f891c1f251e18e1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/golden-coast.jpg",
+      "alt": "Sunset in Puget Sound from San Juan Island by TJ Murphy",
+      "caption": "Sunset in Puget Sound from San Juan Island"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.18,
+        "height": 9.46,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.18X9.46",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-golden-coast-full-frame-natural": {
+    "id": "print-painting-golden-coast-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-golden-coast",
+    "title": "Sunset in Puget Sound from San Juan Island — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in Puget Sound from San Juan Island",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD18X9DD46F7S9X12J1S5DD18X9DD46G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.9267,
+      "height": 9.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.18,
+      "height": 9.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef.jpg",
+    "assetSha256": "af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef",
+    "sourceSha256": "9f3f1c8a20548e3041ad3062bf8879b280a5b26a63d3b6784f891c1f251e18e1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/golden-coast.jpg",
+      "alt": "Sunset in Puget Sound from San Juan Island by TJ Murphy",
+      "caption": "Sunset in Puget Sound from San Juan Island"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.18,
+        "height": 9.46,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.18X9.46",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-guitarist-full": {
+    "id": "print-painting-guitarist-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Large print",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S9.09X10.4",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.8367,
+      "height": 10.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.09,
+      "height": 10.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b.jpg",
+    "assetSha256": "8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-guitarist-full-frame-black": {
+    "id": "print-painting-guitarist-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Large print — Black frame",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD09X10DD4F1S12X15J1S9DD09X10DD4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.8367,
+      "height": 10.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.09,
+      "height": 10.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b.jpg",
+    "assetSha256": "8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.09,
+        "height": 10.4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.09X10.4",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-painting-guitarist-full-frame-white": {
+    "id": "print-painting-guitarist-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Large print — White frame",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD09X10DD4F2S12X15J1S9DD09X10DD4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.8367,
+      "height": 10.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.09,
+      "height": 10.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b.jpg",
+    "assetSha256": "8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.09,
+        "height": 10.4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.09X10.4",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-painting-guitarist-full-frame-natural": {
+    "id": "print-painting-guitarist-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Large print — Natural wood frame",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "103.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD09X10DD4F7S12X15J1S9DD09X10DD4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.8367,
+      "height": 10.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.09,
+      "height": 10.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b.jpg",
+    "assetSha256": "8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.09,
+        "height": 10.4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.09X10.4",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-painting-guitarist-medium": {
+    "id": "print-painting-guitarist-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Medium print",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.88X7.86",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.6233,
+      "height": 7.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.88,
+      "height": 7.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0.jpg",
+    "assetSha256": "e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-guitarist-medium-frame-black": {
+    "id": "print-painting-guitarist-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Medium print — Black frame",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD88X7DD86F1S9X12J1S6DD88X7DD86G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.6233,
+      "height": 7.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.88,
+      "height": 7.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0.jpg",
+    "assetSha256": "e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.88,
+        "height": 7.86,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.88X7.86",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-guitarist-medium-frame-white": {
+    "id": "print-painting-guitarist-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Medium print — White frame",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD88X7DD86F2S9X12J1S6DD88X7DD86G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.6233,
+      "height": 7.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.88,
+      "height": 7.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0.jpg",
+    "assetSha256": "e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.88,
+        "height": 7.86,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.88X7.86",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-guitarist-medium-frame-natural": {
+    "id": "print-painting-guitarist-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Medium print — Natural wood frame",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD88X7DD86F7S9X12J1S6DD88X7DD86G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.6233,
+      "height": 7.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.88,
+      "height": 7.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0.jpg",
+    "assetSha256": "e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.88,
+        "height": 7.86,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.88X7.86",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-guitarist-small": {
+    "id": "print-painting-guitarist-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Small print",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S4.67X5.32",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.4133,
+      "height": 5.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.67,
+      "height": 5.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358.jpg",
+    "assetSha256": "1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-guitarist-small-frame-black": {
+    "id": "print-painting-guitarist-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Small print — Black frame",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD67X5DD32F1S8X10J1S4DD67X5DD32G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.4133,
+      "height": 5.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.67,
+      "height": 5.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358.jpg",
+    "assetSha256": "1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.67,
+        "height": 5.32,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.67X5.32",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-guitarist-small-frame-white": {
+    "id": "print-painting-guitarist-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Small print — White frame",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD67X5DD32F2S8X10J1S4DD67X5DD32G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.4133,
+      "height": 5.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.67,
+      "height": 5.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358.jpg",
+    "assetSha256": "1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.67,
+        "height": 5.32,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.67X5.32",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-guitarist-small-frame-natural": {
+    "id": "print-painting-guitarist-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-guitarist",
+    "title": "Girl Tuning Guitar — Small print — Natural wood frame",
+    "artworkTitle": "Girl Tuning Guitar",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD67X5DD32F7S8X10J1S4DD67X5DD32G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.4133,
+      "height": 5.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.67,
+      "height": 5.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358.jpg",
+    "assetSha256": "1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358",
+    "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/guitarist.jpg",
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.67,
+        "height": 5.32,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.67X5.32",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-phoenix-rising-full": {
+    "id": "print-painting-phoenix-rising-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-phoenix-rising",
+    "title": "Achievement — Large print",
+    "artworkTitle": "Achievement",
+    "amount": "30.00",
+    "currency": "USD",
+    "sku": "5M144M8S4.37X8.72",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1167,
+      "height": 8.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.37,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b.jpg",
+    "assetSha256": "c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b",
+    "sourceSha256": "3ae03c4519694354f32fd4500c9b80d14213531c3e37ed74b2e5a6bb9206b69e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/phoenix-rising.jpg",
+      "alt": "Achievement by TJ Murphy",
+      "caption": "Achievement"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-phoenix-rising-full-frame-black": {
+    "id": "print-painting-phoenix-rising-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-phoenix-rising",
+    "title": "Achievement — Large print — Black frame",
+    "artworkTitle": "Achievement",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD37X8DD72F1S9X12J1S4DD37X8DD72G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1167,
+      "height": 8.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.37,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b.jpg",
+    "assetSha256": "c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b",
+    "sourceSha256": "3ae03c4519694354f32fd4500c9b80d14213531c3e37ed74b2e5a6bb9206b69e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/phoenix-rising.jpg",
+      "alt": "Achievement by TJ Murphy",
+      "caption": "Achievement"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.37,
+        "height": 8.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.37X8.72",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-phoenix-rising-full-frame-white": {
+    "id": "print-painting-phoenix-rising-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-phoenix-rising",
+    "title": "Achievement — Large print — White frame",
+    "artworkTitle": "Achievement",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD37X8DD72F2S9X12J1S4DD37X8DD72G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1167,
+      "height": 8.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.37,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b.jpg",
+    "assetSha256": "c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b",
+    "sourceSha256": "3ae03c4519694354f32fd4500c9b80d14213531c3e37ed74b2e5a6bb9206b69e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/phoenix-rising.jpg",
+      "alt": "Achievement by TJ Murphy",
+      "caption": "Achievement"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.37,
+        "height": 8.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.37X8.72",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-phoenix-rising-full-frame-natural": {
+    "id": "print-painting-phoenix-rising-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-phoenix-rising",
+    "title": "Achievement — Large print — Natural wood frame",
+    "artworkTitle": "Achievement",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD37X8DD72F7S9X12J1S4DD37X8DD72G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1167,
+      "height": 8.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.37,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b.jpg",
+    "assetSha256": "c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b",
+    "sourceSha256": "3ae03c4519694354f32fd4500c9b80d14213531c3e37ed74b2e5a6bb9206b69e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/phoenix-rising.jpg",
+      "alt": "Achievement by TJ Murphy",
+      "caption": "Achievement"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.37,
+        "height": 8.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.37X8.72",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-portrait-in-blue-light-full": {
+    "id": "print-painting-portrait-in-blue-light-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Large print",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "70.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.25X13.85",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.9933,
+      "height": 13.5967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.25,
+      "height": 13.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0.jpg",
+    "assetSha256": "defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-in-blue-light-full-frame-black": {
+    "id": "print-painting-portrait-in-blue-light-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Large print — Black frame",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD25X13DD85F1S16X20J1S12DD25X13DD85G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.9933,
+      "height": 13.5967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.25,
+      "height": 13.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0.jpg",
+    "assetSha256": "defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.25,
+        "height": 13.85,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.25X13.85",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-painting-portrait-in-blue-light-full-frame-white": {
+    "id": "print-painting-portrait-in-blue-light-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Large print — White frame",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD25X13DD85F2S16X20J1S12DD25X13DD85G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.9933,
+      "height": 13.5967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.25,
+      "height": 13.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0.jpg",
+    "assetSha256": "defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.25,
+        "height": 13.85,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.25X13.85",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-painting-portrait-in-blue-light-full-frame-natural": {
+    "id": "print-painting-portrait-in-blue-light-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Large print — Natural wood frame",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "159.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD25X13DD85F7S16X20J1S12DD25X13DD85G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.9933,
+      "height": 13.5967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.25,
+      "height": 13.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0.jpg",
+    "assetSha256": "defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.25,
+        "height": 13.85,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.25X13.85",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-painting-portrait-in-blue-light-medium": {
+    "id": "print-painting-portrait-in-blue-light-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Medium print",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S9.25X10.45",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.9933,
+      "height": 10.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.25,
+      "height": 10.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d.jpg",
+    "assetSha256": "be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-in-blue-light-medium-frame-black": {
+    "id": "print-painting-portrait-in-blue-light-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Medium print — Black frame",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD25X10DD45F1S12X15J1S9DD25X10DD45G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.9933,
+      "height": 10.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.25,
+      "height": 10.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d.jpg",
+    "assetSha256": "be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.25,
+        "height": 10.45,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.25X10.45",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-painting-portrait-in-blue-light-medium-frame-white": {
+    "id": "print-painting-portrait-in-blue-light-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Medium print — White frame",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD25X10DD45F2S12X15J1S9DD25X10DD45G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.9933,
+      "height": 10.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.25,
+      "height": 10.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d.jpg",
+    "assetSha256": "be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.25,
+        "height": 10.45,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.25X10.45",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-painting-portrait-in-blue-light-medium-frame-natural": {
+    "id": "print-painting-portrait-in-blue-light-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Medium print — Natural wood frame",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "103.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD25X10DD45F7S12X15J1S9DD25X10DD45G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.9933,
+      "height": 10.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.25,
+      "height": 10.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d.jpg",
+    "assetSha256": "be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.25,
+        "height": 10.45,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.25X10.45",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-painting-portrait-in-blue-light-small": {
+    "id": "print-painting-portrait-in-blue-light-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Small print",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.25X7.05",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.9967,
+      "height": 6.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.25,
+      "height": 7.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa.jpg",
+    "assetSha256": "979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-in-blue-light-small-frame-black": {
+    "id": "print-painting-portrait-in-blue-light-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Small print — Black frame",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD25X7DD05F1S9X12J1S6DD25X7DD05G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.9967,
+      "height": 6.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.25,
+      "height": 7.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa.jpg",
+    "assetSha256": "979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.25,
+        "height": 7.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.25X7.05",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-portrait-in-blue-light-small-frame-white": {
+    "id": "print-painting-portrait-in-blue-light-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Small print — White frame",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD25X7DD05F2S9X12J1S6DD25X7DD05G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.9967,
+      "height": 6.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.25,
+      "height": 7.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa.jpg",
+    "assetSha256": "979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.25,
+        "height": 7.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.25X7.05",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-portrait-in-blue-light-small-frame-natural": {
+    "id": "print-painting-portrait-in-blue-light-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet — Small print — Natural wood frame",
+    "artworkTitle": "MJ Spinning at Chalet",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD25X7DD05F7S9X12J1S6DD25X7DD05G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.9967,
+      "height": 6.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.25,
+      "height": 7.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa.jpg",
+    "assetSha256": "979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa",
+    "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-blue-light.jpg",
+      "alt": "MJ Spinning at Chalet by TJ Murphy",
+      "caption": "MJ Spinning at Chalet"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.25,
+        "height": 7.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.25X7.05",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-portrait-in-gold-full": {
+    "id": "print-painting-portrait-in-gold-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Large print",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S8.38X9.03",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1267,
+      "height": 8.7767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.38,
+      "height": 9.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373.jpg",
+    "assetSha256": "49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-in-gold-full-frame-black": {
+    "id": "print-painting-portrait-in-gold-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Large print — Black frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD38X9DD03F1S11X14J1S8DD38X9DD03G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1267,
+      "height": 8.7767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.38,
+      "height": 9.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373.jpg",
+    "assetSha256": "49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.38,
+        "height": 9.03,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.38X9.03",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-portrait-in-gold-full-frame-white": {
+    "id": "print-painting-portrait-in-gold-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Large print — White frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD38X9DD03F2S11X14J1S8DD38X9DD03G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1267,
+      "height": 8.7767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.38,
+      "height": 9.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373.jpg",
+    "assetSha256": "49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.38,
+        "height": 9.03,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.38X9.03",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-portrait-in-gold-full-frame-natural": {
+    "id": "print-painting-portrait-in-gold-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Large print — Natural wood frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD38X9DD03F7S11X14J1S8DD38X9DD03G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1267,
+      "height": 8.7767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.38,
+      "height": 9.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373.jpg",
+    "assetSha256": "49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.38,
+        "height": 9.03,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.38X9.03",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-portrait-in-gold-medium": {
+    "id": "print-painting-portrait-in-gold-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Medium print",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.35X6.83",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.09,
+      "height": 6.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.35,
+      "height": 6.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251.jpg",
+    "assetSha256": "62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-in-gold-medium-frame-black": {
+    "id": "print-painting-portrait-in-gold-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Medium print — Black frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD35X6DD83F1S9X12J1S6DD35X6DD83G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.09,
+      "height": 6.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.35,
+      "height": 6.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251.jpg",
+    "assetSha256": "62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.35,
+        "height": 6.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.35X6.83",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-portrait-in-gold-medium-frame-white": {
+    "id": "print-painting-portrait-in-gold-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Medium print — White frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD35X6DD83F2S9X12J1S6DD35X6DD83G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.09,
+      "height": 6.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.35,
+      "height": 6.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251.jpg",
+    "assetSha256": "62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.35,
+        "height": 6.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.35X6.83",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-portrait-in-gold-medium-frame-natural": {
+    "id": "print-painting-portrait-in-gold-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Medium print — Natural wood frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD35X6DD83F7S9X12J1S6DD35X6DD83G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.09,
+      "height": 6.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.35,
+      "height": 6.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251.jpg",
+    "assetSha256": "62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.35,
+        "height": 6.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.35X6.83",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-portrait-in-gold-small": {
+    "id": "print-painting-portrait-in-gold-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Small print",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S4.31X4.64",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.0567,
+      "height": 4.38,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.31,
+      "height": 4.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266.jpg",
+    "assetSha256": "98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-in-gold-small-frame-black": {
+    "id": "print-painting-portrait-in-gold-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto — Small print — Black frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD31X4DD64F1S8X10J1S4DD31X4DD64G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.0567,
+      "height": 4.38,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.31,
+      "height": 4.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266.jpg",
+    "assetSha256": "98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-gold.jpg",
+      "alt": "Dorian Nakamoto by TJ Murphy",
+      "caption": "Dorian Nakamoto"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.31,
+        "height": 4.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.31X4.64",
     "frame": {
       "key": "black",
       "id": 1,
@@ -622,24 +5322,24 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6X7DD5F2S8X10J1S6X7DD5G1",
+    "sku": "5M144M8S4DD31X4DD64F2S8X10J1S4DD31X4DD64G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.0567,
+      "height": 4.38,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.31,
+      "height": 4.64,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266.jpg",
+    "assetSha256": "98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-gold.jpg",
@@ -648,6 +5348,8 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -658,13 +5360,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 6,
-        "height": 7.5,
+        "width": 4.31,
+        "height": 4.64,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S6X7.5",
+    "baseSku": "5M144M8S4.31X4.64",
     "frame": {
       "key": "white",
       "id": 2,
@@ -694,24 +5396,24 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S6X7DD5F7S8X10J1S6X7DD5G1",
+    "sku": "5M144M8S4DD31X4DD64F7S8X10J1S4DD31X4DD64G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.0567,
+      "height": 4.38,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.31,
+      "height": 4.64,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990.jpg",
-    "assetSha256": "e583220706d4a7bec0a30207f986ed7cfcb31f22688a997ce7c9847fafce8990",
-    "sourceSha256": "382e3f4bf8181459e542157c7707ada775c6654c7c313ac3ffac1c965f7fc4f4",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266.jpg",
+    "assetSha256": "98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266",
+    "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-gold.jpg",
@@ -720,6 +5422,8 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -730,13 +5434,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 6,
-        "height": 7.5,
+        "width": 4.31,
+        "height": 4.64,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S6X7.5",
+    "baseSku": "5M144M8S4.31X4.64",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -762,64 +5466,28 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-green",
-    "title": "Chase Toole — Original-size print",
+    "title": "Chase Toole — Large print",
     "artworkTitle": "Chase Toole",
-    "amount": "75.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S12X15",
+    "sku": "5M144M8S9.46X11.3",
     "scale": 1,
     "imageSize": {
-      "width": 12,
-      "height": 15,
+      "width": 9.2067,
+      "height": 11.0433,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12,
-      "height": 15,
+      "width": 9.46,
+      "height": 11.3,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/portrait-in-green.jpg",
-      "alt": "Chase Toole by TJ Murphy",
-      "caption": "Chase Toole"
-    },
-    "attributes": {},
-    "minimumDpi": 300
-  },
-  "print-painting-portrait-in-green-full-frame-black": {
-    "id": "print-painting-portrait-in-green-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "painting-portrait-in-green",
-    "title": "Chase Toole — Original-size print — Black frame",
-    "artworkTitle": "Chase Toole",
-    "amount": "149.00",
-    "currency": "USD",
-    "sku": "5M144M8S12X15F1S16X20J1S12X15G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 12,
-      "height": 15,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 12,
-      "height": 15,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd.jpg",
+    "assetSha256": "d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -828,23 +5496,63 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-in-green-full-frame-black": {
+    "id": "print-painting-portrait-in-green-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-green",
+    "title": "Chase Toole — Large print — Black frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD46X11DD3F1S12X15J1S9DD46X11DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.2067,
+      "height": 11.0433,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.46,
+      "height": 11.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd.jpg",
+    "assetSha256": "d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-green.jpg",
+      "alt": "Chase Toole by TJ Murphy",
+      "caption": "Chase Toole"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
-        "unit": "in"
-      },
-      "window": {
         "width": 12,
         "height": 15,
         "unit": "in"
       },
+      "window": {
+        "width": 9.46,
+        "height": 11.3,
+        "unit": "in"
+      },
       "id": 1
     },
-    "baseSku": "5M144M8S12X15",
+    "baseSku": "5M144M8S9.46X11.3",
     "frame": {
       "key": "black",
       "id": 1,
@@ -854,8 +5562,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "glazing": {
@@ -863,35 +5571,35 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "75.00"
+    "unframedAmount": "45.00"
   },
   "print-painting-portrait-in-green-full-frame-white": {
     "id": "print-painting-portrait-in-green-full-frame-white",
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-green",
-    "title": "Chase Toole — Original-size print — White frame",
+    "title": "Chase Toole — Large print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "149.00",
+    "amount": "96.00",
     "currency": "USD",
-    "sku": "5M144M8S12X15F2S16X20J1S12X15G1",
+    "sku": "5M144M8S9DD46X11DD3F2S12X15J1S9DD46X11DD3G1",
     "scale": 1,
     "imageSize": {
-      "width": 12,
-      "height": 15,
+      "width": 9.2067,
+      "height": 11.0433,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12,
-      "height": 15,
+      "width": 9.46,
+      "height": 11.3,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd.jpg",
+    "assetSha256": "d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -900,23 +5608,25 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
-        "unit": "in"
-      },
-      "window": {
         "width": 12,
         "height": 15,
         "unit": "in"
       },
+      "window": {
+        "width": 9.46,
+        "height": 11.3,
+        "unit": "in"
+      },
       "id": 1
     },
-    "baseSku": "5M144M8S12X15",
+    "baseSku": "5M144M8S9.46X11.3",
     "frame": {
       "key": "white",
       "id": 2,
@@ -926,8 +5636,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "glazing": {
@@ -935,35 +5645,35 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "75.00"
+    "unframedAmount": "45.00"
   },
   "print-painting-portrait-in-green-full-frame-natural": {
     "id": "print-painting-portrait-in-green-full-frame-natural",
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-green",
-    "title": "Chase Toole — Original-size print — Natural wood frame",
+    "title": "Chase Toole — Large print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "164.00",
+    "amount": "108.00",
     "currency": "USD",
-    "sku": "5M144M8S12X15F7S16X20J1S12X15G1",
+    "sku": "5M144M8S9DD46X11DD3F7S12X15J1S9DD46X11DD3G1",
     "scale": 1,
     "imageSize": {
-      "width": 12,
-      "height": 15,
+      "width": 9.2067,
+      "height": 11.0433,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12,
-      "height": 15,
+      "width": 9.46,
+      "height": 11.3,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd.jpg",
+    "assetSha256": "d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -972,23 +5682,25 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
-        "unit": "in"
-      },
-      "window": {
         "width": 12,
         "height": 15,
         "unit": "in"
       },
+      "window": {
+        "width": 9.46,
+        "height": 11.3,
+        "unit": "in"
+      },
       "id": 1
     },
-    "baseSku": "5M144M8S12X15",
+    "baseSku": "5M144M8S9.46X11.3",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -998,8 +5710,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 12,
+        "height": 15,
         "unit": "in"
       },
       "glazing": {
@@ -1007,7 +5719,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "75.00"
+    "unframedAmount": "45.00"
   },
   "print-painting-portrait-in-green-medium": {
     "id": "print-painting-portrait-in-green-medium",
@@ -1016,62 +5728,26 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print",
     "artworkTitle": "Chase Toole",
-    "amount": "45.00",
+    "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9X11.25",
+    "sku": "5M144M8S7.16X8.54",
     "scale": 0.75,
     "imageSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 6.9067,
+      "height": 8.2867,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 7.16,
+      "height": 8.54,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/portrait-in-green.jpg",
-      "alt": "Chase Toole by TJ Murphy",
-      "caption": "Chase Toole"
-    },
-    "attributes": {},
-    "minimumDpi": 300
-  },
-  "print-painting-portrait-in-green-medium-frame-black": {
-    "id": "print-painting-portrait-in-green-medium-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "painting-portrait-in-green",
-    "title": "Chase Toole — Medium print — Black frame",
-    "artworkTitle": "Chase Toole",
-    "amount": "91.00",
-    "currency": "USD",
-    "sku": "5M144M8S9X11DD25F1S11X14J1S9X11DD25G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 9,
-      "height": 11.25,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 9,
-      "height": 11.25,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301.jpg",
+    "assetSha256": "9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -1080,6 +5756,46 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-in-green-medium-frame-black": {
+    "id": "print-painting-portrait-in-green-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-in-green",
+    "title": "Chase Toole — Medium print — Black frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD16X8DD54F1S11X14J1S7DD16X8DD54G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.9067,
+      "height": 8.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.16,
+      "height": 8.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301.jpg",
+    "assetSha256": "9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-in-green.jpg",
+      "alt": "Chase Toole by TJ Murphy",
+      "caption": "Chase Toole"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -1090,13 +5806,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 9,
-        "height": 11.25,
+        "width": 7.16,
+        "height": 8.54,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9X11.25",
+    "baseSku": "5M144M8S7.16X8.54",
     "frame": {
       "key": "black",
       "id": 1,
@@ -1115,7 +5831,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "45.00"
+    "unframedAmount": "30.00"
   },
   "print-painting-portrait-in-green-medium-frame-white": {
     "id": "print-painting-portrait-in-green-medium-frame-white",
@@ -1124,26 +5840,26 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "91.00",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S9X11DD25F2S11X14J1S9X11DD25G1",
+    "sku": "5M144M8S7DD16X8DD54F2S11X14J1S7DD16X8DD54G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 6.9067,
+      "height": 8.2867,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 7.16,
+      "height": 8.54,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301.jpg",
+    "assetSha256": "9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -1152,6 +5868,8 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -1162,13 +5880,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 9,
-        "height": 11.25,
+        "width": 7.16,
+        "height": 8.54,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9X11.25",
+    "baseSku": "5M144M8S7.16X8.54",
     "frame": {
       "key": "white",
       "id": 2,
@@ -1187,7 +5905,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "45.00"
+    "unframedAmount": "30.00"
   },
   "print-painting-portrait-in-green-medium-frame-natural": {
     "id": "print-painting-portrait-in-green-medium-frame-natural",
@@ -1196,26 +5914,26 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "102.00",
+    "amount": "87.00",
     "currency": "USD",
-    "sku": "5M144M8S9X11DD25F7S11X14J1S9X11DD25G1",
+    "sku": "5M144M8S7DD16X8DD54F7S11X14J1S7DD16X8DD54G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 6.9067,
+      "height": 8.2867,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9,
-      "height": 11.25,
+      "width": 7.16,
+      "height": 8.54,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301.jpg",
+    "assetSha256": "9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -1224,6 +5942,8 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -1234,13 +5954,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 9,
-        "height": 11.25,
+        "width": 7.16,
+        "height": 8.54,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9X11.25",
+    "baseSku": "5M144M8S7.16X8.54",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -1259,7 +5979,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "45.00"
+    "unframedAmount": "30.00"
   },
   "print-painting-portrait-in-green-small": {
     "id": "print-painting-portrait-in-green-small",
@@ -1270,24 +5990,24 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6X7.5",
+    "sku": "5M144M8S4.85X5.77",
     "scale": 0.5,
     "imageSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.5967,
+      "height": 5.5133,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.85,
+      "height": 5.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3.jpg",
+    "assetSha256": "fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -1295,7 +6015,9 @@ export default {
       "caption": "Chase Toole"
     },
     "attributes": {},
-    "minimumDpi": 300
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
   },
   "print-painting-portrait-in-green-small-frame-black": {
     "id": "print-painting-portrait-in-green-small-frame-black",
@@ -1306,24 +6028,24 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6X7DD5F1S8X10J1S6X7DD5G1",
+    "sku": "5M144M8S4DD85X5DD77F1S8X10J1S4DD85X5DD77G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.5967,
+      "height": 5.5133,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.85,
+      "height": 5.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3.jpg",
+    "assetSha256": "fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -1332,6 +6054,8 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -1342,13 +6066,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 6,
-        "height": 7.5,
+        "width": 4.85,
+        "height": 5.77,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S6X7.5",
+    "baseSku": "5M144M8S4.85X5.77",
     "frame": {
       "key": "black",
       "id": 1,
@@ -1378,24 +6102,24 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6X7DD5F2S8X10J1S6X7DD5G1",
+    "sku": "5M144M8S4DD85X5DD77F2S8X10J1S4DD85X5DD77G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.5967,
+      "height": 5.5133,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.85,
+      "height": 5.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3.jpg",
+    "assetSha256": "fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -1404,6 +6128,8 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -1414,13 +6140,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 6,
-        "height": 7.5,
+        "width": 4.85,
+        "height": 5.77,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S6X7.5",
+    "baseSku": "5M144M8S4.85X5.77",
     "frame": {
       "key": "white",
       "id": 2,
@@ -1450,24 +6176,24 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S6X7DD5F7S8X10J1S6X7DD5G1",
+    "sku": "5M144M8S4DD85X5DD77F7S8X10J1S4DD85X5DD77G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.5967,
+      "height": 5.5133,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6,
-      "height": 7.5,
+      "width": 4.85,
+      "height": 5.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
-    "sampleOnly": true,
-    "assetUrl": "https://vermillionaurora.com/print-samples/b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313.jpg",
-    "assetSha256": "b02b8567fdc23f1504a47c5bc92186fd44fb17c939b40186168fb480c14fc313",
-    "sourceSha256": "741421bc8012f0e4ed752f935a99bac6d1eaa1055dd5e54fc4c8ce66d1d8e8d2",
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3.jpg",
+    "assetSha256": "fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3",
+    "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -1476,6 +6202,8 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
     "mat": {
       "key": "snow-white",
       "name": "Snow White",
@@ -1486,13 +6214,13 @@ export default {
         "unit": "in"
       },
       "window": {
-        "width": 6,
-        "height": 7.5,
+        "width": 4.85,
+        "height": 5.77,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S6X7.5",
+    "baseSku": "5M144M8S4.85X5.77",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -1504,6 +6232,2606 @@ export default {
       "size": {
         "width": 8,
         "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-portrait-with-hat-full": {
+    "id": "print-painting-portrait-with-hat-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Large print",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "30.00",
+    "currency": "USD",
+    "sku": "5M144M8S9.31X4",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.0567,
+      "height": 2.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.31,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe.jpg",
+    "assetSha256": "d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe",
+    "sourceSha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-hat.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-with-hat-full-frame-black": {
+    "id": "print-painting-portrait-with-hat-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Large print — Black frame",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD31X4F1S12X9J1S9DD31X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.0567,
+      "height": 2.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.31,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe.jpg",
+    "assetSha256": "d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe",
+    "sourceSha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-hat.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.31,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.31X4",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-portrait-with-hat-full-frame-white": {
+    "id": "print-painting-portrait-with-hat-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Large print — White frame",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD31X4F2S12X9J1S9DD31X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.0567,
+      "height": 2.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.31,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe.jpg",
+    "assetSha256": "d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe",
+    "sourceSha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-hat.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.31,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.31X4",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-portrait-with-hat-full-frame-natural": {
+    "id": "print-painting-portrait-with-hat-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD31X4F7S12X9J1S9DD31X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.0567,
+      "height": 2.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.31,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe.jpg",
+    "assetSha256": "d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe",
+    "sourceSha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-hat.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.31,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.31X4",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-portrait-with-scarf-full": {
+    "id": "print-painting-portrait-with-scarf-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Large print",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "85.00",
+    "currency": "USD",
+    "sku": "5M144M8S10.92X18.92",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.6667,
+      "height": 18.6667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.92,
+      "height": 18.92,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/591c9bd46e627ac0f9c7c0e7e82830778e06c9a379b89cd3a325ba140b75141c.jpg",
+    "assetSha256": "591c9bd46e627ac0f9c7c0e7e82830778e06c9a379b89cd3a325ba140b75141c",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-with-scarf-full-frame-black": {
+    "id": "print-painting-portrait-with-scarf-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Large print — Black frame",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "171.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD92X18DD92F1S16X24J1S10DD92X18DD92G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.6667,
+      "height": 18.6667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.92,
+      "height": 18.92,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/591c9bd46e627ac0f9c7c0e7e82830778e06c9a379b89cd3a325ba140b75141c.jpg",
+    "assetSha256": "591c9bd46e627ac0f9c7c0e7e82830778e06c9a379b89cd3a325ba140b75141c",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 24,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.92,
+        "height": 18.92,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.92X18.92",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 24,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-painting-portrait-with-scarf-full-frame-white": {
+    "id": "print-painting-portrait-with-scarf-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Large print — White frame",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "171.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD92X18DD92F2S16X24J1S10DD92X18DD92G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.6667,
+      "height": 18.6667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.92,
+      "height": 18.92,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/591c9bd46e627ac0f9c7c0e7e82830778e06c9a379b89cd3a325ba140b75141c.jpg",
+    "assetSha256": "591c9bd46e627ac0f9c7c0e7e82830778e06c9a379b89cd3a325ba140b75141c",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 24,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.92,
+        "height": 18.92,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.92X18.92",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 24,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-painting-portrait-with-scarf-full-frame-natural": {
+    "id": "print-painting-portrait-with-scarf-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Large print — Natural wood frame",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "188.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD92X18DD92F7S16X24J1S10DD92X18DD92G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.6667,
+      "height": 18.6667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.92,
+      "height": 18.92,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/591c9bd46e627ac0f9c7c0e7e82830778e06c9a379b89cd3a325ba140b75141c.jpg",
+    "assetSha256": "591c9bd46e627ac0f9c7c0e7e82830778e06c9a379b89cd3a325ba140b75141c",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 24,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.92,
+        "height": 18.92,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.92X18.92",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 24,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-painting-portrait-with-scarf-medium": {
+    "id": "print-painting-portrait-with-scarf-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Medium print",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M8S8.25X14.25",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.9967,
+      "height": 13.9933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.25,
+      "height": 14.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ee087241d61d71632778fd321dfa8b1e9febad63ebd8164ddd41e77fba51a446.jpg",
+    "assetSha256": "ee087241d61d71632778fd321dfa8b1e9febad63ebd8164ddd41e77fba51a446",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-with-scarf-medium-frame-black": {
+    "id": "print-painting-portrait-with-scarf-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Medium print — Black frame",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD25X14DD25F1S16X20J1S8DD25X14DD25G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.9967,
+      "height": 13.9933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.25,
+      "height": 14.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ee087241d61d71632778fd321dfa8b1e9febad63ebd8164ddd41e77fba51a446.jpg",
+    "assetSha256": "ee087241d61d71632778fd321dfa8b1e9febad63ebd8164ddd41e77fba51a446",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.25,
+        "height": 14.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.25X14.25",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-painting-portrait-with-scarf-medium-frame-white": {
+    "id": "print-painting-portrait-with-scarf-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Medium print — White frame",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD25X14DD25F2S16X20J1S8DD25X14DD25G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.9967,
+      "height": 13.9933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.25,
+      "height": 14.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ee087241d61d71632778fd321dfa8b1e9febad63ebd8164ddd41e77fba51a446.jpg",
+    "assetSha256": "ee087241d61d71632778fd321dfa8b1e9febad63ebd8164ddd41e77fba51a446",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.25,
+        "height": 14.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.25X14.25",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-painting-portrait-with-scarf-medium-frame-natural": {
+    "id": "print-painting-portrait-with-scarf-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Medium print — Natural wood frame",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "139.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD25X14DD25F7S16X20J1S8DD25X14DD25G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.9967,
+      "height": 13.9933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.25,
+      "height": 14.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ee087241d61d71632778fd321dfa8b1e9febad63ebd8164ddd41e77fba51a446.jpg",
+    "assetSha256": "ee087241d61d71632778fd321dfa8b1e9febad63ebd8164ddd41e77fba51a446",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.25,
+        "height": 14.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.25X14.25",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-painting-portrait-with-scarf-small": {
+    "id": "print-painting-portrait-with-scarf-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Small print",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S5.58X9.58",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.3267,
+      "height": 9.32,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.58,
+      "height": 9.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/268e89d46ee1645d6286ce68744b4d987ef1a831dba11d87e3e6fbdb9a3498c8.jpg",
+    "assetSha256": "268e89d46ee1645d6286ce68744b4d987ef1a831dba11d87e3e6fbdb9a3498c8",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-with-scarf-small-frame-black": {
+    "id": "print-painting-portrait-with-scarf-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Small print — Black frame",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD58X9DD58F1S9X12J1S5DD58X9DD58G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.3267,
+      "height": 9.32,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.58,
+      "height": 9.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/268e89d46ee1645d6286ce68744b4d987ef1a831dba11d87e3e6fbdb9a3498c8.jpg",
+    "assetSha256": "268e89d46ee1645d6286ce68744b4d987ef1a831dba11d87e3e6fbdb9a3498c8",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.58,
+        "height": 9.58,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.58X9.58",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-portrait-with-scarf-small-frame-white": {
+    "id": "print-painting-portrait-with-scarf-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Small print — White frame",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD58X9DD58F2S9X12J1S5DD58X9DD58G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.3267,
+      "height": 9.32,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.58,
+      "height": 9.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/268e89d46ee1645d6286ce68744b4d987ef1a831dba11d87e3e6fbdb9a3498c8.jpg",
+    "assetSha256": "268e89d46ee1645d6286ce68744b4d987ef1a831dba11d87e3e6fbdb9a3498c8",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.58,
+        "height": 9.58,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.58X9.58",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-portrait-with-scarf-small-frame-natural": {
+    "id": "print-painting-portrait-with-scarf-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad — Small print — Natural wood frame",
+    "artworkTitle": "Paul Murphy: my Dad",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD58X9DD58F7S9X12J1S5DD58X9DD58G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.3267,
+      "height": 9.32,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.58,
+      "height": 9.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/268e89d46ee1645d6286ce68744b4d987ef1a831dba11d87e3e6fbdb9a3498c8.jpg",
+    "assetSha256": "268e89d46ee1645d6286ce68744b4d987ef1a831dba11d87e3e6fbdb9a3498c8",
+    "sourceSha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/portrait-with-scarf.jpg",
+      "alt": "Paul Murphy: my Dad by TJ Murphy",
+      "caption": "Paul Murphy: my Dad"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.58,
+        "height": 9.58,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.58X9.58",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-red-horizon-full": {
+    "id": "print-painting-red-horizon-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Maui Sunset from Kihei — Large print",
+    "artworkTitle": "Maui Sunset from Kihei",
+    "amount": "45.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.67X12.77",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4167,
+      "height": 12.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.67,
+      "height": 12.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27.jpg",
+    "assetSha256": "e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27",
+    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/red-horizon.jpg",
+      "alt": "Maui Sunset from Kihei by TJ Murphy",
+      "caption": "Maui Sunset from Kihei"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-red-horizon-full-frame-black": {
+    "id": "print-painting-red-horizon-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Maui Sunset from Kihei — Large print — Black frame",
+    "artworkTitle": "Maui Sunset from Kihei",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD67X12DD77F1S12X15J1S6DD67X12DD77G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4167,
+      "height": 12.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.67,
+      "height": 12.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27.jpg",
+    "assetSha256": "e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27",
+    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/red-horizon.jpg",
+      "alt": "Maui Sunset from Kihei by TJ Murphy",
+      "caption": "Maui Sunset from Kihei"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.67,
+        "height": 12.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.67X12.77",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-painting-red-horizon-full-frame-white": {
+    "id": "print-painting-red-horizon-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Maui Sunset from Kihei — Large print — White frame",
+    "artworkTitle": "Maui Sunset from Kihei",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD67X12DD77F2S12X15J1S6DD67X12DD77G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4167,
+      "height": 12.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.67,
+      "height": 12.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27.jpg",
+    "assetSha256": "e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27",
+    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/red-horizon.jpg",
+      "alt": "Maui Sunset from Kihei by TJ Murphy",
+      "caption": "Maui Sunset from Kihei"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.67,
+        "height": 12.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.67X12.77",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-painting-red-horizon-full-frame-natural": {
+    "id": "print-painting-red-horizon-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Maui Sunset from Kihei — Large print — Natural wood frame",
+    "artworkTitle": "Maui Sunset from Kihei",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD67X12DD77F7S12X15J1S6DD67X12DD77G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4167,
+      "height": 12.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.67,
+      "height": 12.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27.jpg",
+    "assetSha256": "e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27",
+    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/red-horizon.jpg",
+      "alt": "Maui Sunset from Kihei by TJ Murphy",
+      "caption": "Maui Sunset from Kihei"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.67,
+        "height": 12.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.67X12.77",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-painting-red-horizon-medium": {
+    "id": "print-painting-red-horizon-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Maui Sunset from Kihei — Medium print",
+    "artworkTitle": "Maui Sunset from Kihei",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S5.07X9.64",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8167,
+      "height": 9.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.07,
+      "height": 9.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0.jpg",
+    "assetSha256": "8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0",
+    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/red-horizon.jpg",
+      "alt": "Maui Sunset from Kihei by TJ Murphy",
+      "caption": "Maui Sunset from Kihei"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-red-horizon-medium-frame-black": {
+    "id": "print-painting-red-horizon-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Maui Sunset from Kihei — Medium print — Black frame",
+    "artworkTitle": "Maui Sunset from Kihei",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD07X9DD64F1S9X12J1S5DD07X9DD64G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8167,
+      "height": 9.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.07,
+      "height": 9.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0.jpg",
+    "assetSha256": "8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0",
+    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/red-horizon.jpg",
+      "alt": "Maui Sunset from Kihei by TJ Murphy",
+      "caption": "Maui Sunset from Kihei"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.07,
+        "height": 9.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.07X9.64",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-red-horizon-medium-frame-white": {
+    "id": "print-painting-red-horizon-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Maui Sunset from Kihei — Medium print — White frame",
+    "artworkTitle": "Maui Sunset from Kihei",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD07X9DD64F2S9X12J1S5DD07X9DD64G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8167,
+      "height": 9.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.07,
+      "height": 9.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0.jpg",
+    "assetSha256": "8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0",
+    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/red-horizon.jpg",
+      "alt": "Maui Sunset from Kihei by TJ Murphy",
+      "caption": "Maui Sunset from Kihei"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.07,
+        "height": 9.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.07X9.64",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-red-horizon-medium-frame-natural": {
+    "id": "print-painting-red-horizon-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Maui Sunset from Kihei — Medium print — Natural wood frame",
+    "artworkTitle": "Maui Sunset from Kihei",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD07X9DD64F7S9X12J1S5DD07X9DD64G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8167,
+      "height": 9.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.07,
+      "height": 9.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0.jpg",
+    "assetSha256": "8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0",
+    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/red-horizon.jpg",
+      "alt": "Maui Sunset from Kihei by TJ Murphy",
+      "caption": "Maui Sunset from Kihei"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.07,
+        "height": 9.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.07X9.64",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-shoreline-at-dusk-full": {
+    "id": "print-painting-shoreline-at-dusk-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Sunrise, El Salvador — Large print",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.22X4",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.9667,
+      "height": 2.8467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.22,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg",
+    "assetSha256": "64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc",
+    "sourceSha256": "c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/shoreline-at-dusk.jpg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-shoreline-at-dusk-full-frame-black": {
+    "id": "print-painting-shoreline-at-dusk-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Sunrise, El Salvador — Large print — Black frame",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD22X4F1S10X8J1S6DD22X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.9667,
+      "height": 2.8467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.22,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg",
+    "assetSha256": "64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc",
+    "sourceSha256": "c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/shoreline-at-dusk.jpg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.22,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.22X4",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-shoreline-at-dusk-full-frame-white": {
+    "id": "print-painting-shoreline-at-dusk-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Sunrise, El Salvador — Large print — White frame",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD22X4F2S10X8J1S6DD22X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.9667,
+      "height": 2.8467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.22,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg",
+    "assetSha256": "64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc",
+    "sourceSha256": "c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/shoreline-at-dusk.jpg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.22,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.22X4",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-shoreline-at-dusk-full-frame-natural": {
+    "id": "print-painting-shoreline-at-dusk-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Sunrise, El Salvador — Large print — Natural wood frame",
+    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD22X4F7S10X8J1S6DD22X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.9667,
+      "height": 2.8467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.22,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg",
+    "assetSha256": "64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc",
+    "sourceSha256": "c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/shoreline-at-dusk.jpg",
+      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
+      "caption": "El Zonte at Sunrise, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.22,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.22X4",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-sunflower-woman-full": {
+    "id": "print-painting-sunflower-woman-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunflower-woman",
+    "title": "Mother and Child on the Ukrainian Plain — Large print",
+    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S11.3X6.27",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.0367,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.3,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117.jpg",
+    "assetSha256": "40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117",
+    "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunflower-woman.jpg",
+      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
+      "caption": "Mother and Child on the Ukrainian Plain"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-sunflower-woman-full-frame-black": {
+    "id": "print-painting-sunflower-woman-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunflower-woman",
+    "title": "Mother and Child on the Ukrainian Plain — Large print — Black frame",
+    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD3X6DD27F1S14X11J1S11DD3X6DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.0367,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.3,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117.jpg",
+    "assetSha256": "40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117",
+    "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunflower-woman.jpg",
+      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
+      "caption": "Mother and Child on the Ukrainian Plain"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.3,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.3X6.27",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-sunflower-woman-full-frame-white": {
+    "id": "print-painting-sunflower-woman-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunflower-woman",
+    "title": "Mother and Child on the Ukrainian Plain — Large print — White frame",
+    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD3X6DD27F2S14X11J1S11DD3X6DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.0367,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.3,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117.jpg",
+    "assetSha256": "40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117",
+    "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunflower-woman.jpg",
+      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
+      "caption": "Mother and Child on the Ukrainian Plain"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.3,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.3X6.27",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-sunflower-woman-full-frame-natural": {
+    "id": "print-painting-sunflower-woman-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunflower-woman",
+    "title": "Mother and Child on the Ukrainian Plain — Large print — Natural wood frame",
+    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD3X6DD27F7S14X11J1S11DD3X6DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.0367,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.3,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117.jpg",
+    "assetSha256": "40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117",
+    "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunflower-woman.jpg",
+      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
+      "caption": "Mother and Child on the Ukrainian Plain"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.3,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.3X6.27",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-sunflower-woman-medium": {
+    "id": "print-painting-sunflower-woman-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunflower-woman",
+    "title": "Mother and Child on the Ukrainian Plain — Medium print",
+    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "amount": "30.00",
+    "currency": "USD",
+    "sku": "5M144M8S8.54X4.77",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.2867,
+      "height": 4.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.54,
+      "height": 4.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163.jpg",
+    "assetSha256": "9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163",
+    "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunflower-woman.jpg",
+      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
+      "caption": "Mother and Child on the Ukrainian Plain"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-sunflower-woman-medium-frame-black": {
+    "id": "print-painting-sunflower-woman-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunflower-woman",
+    "title": "Mother and Child on the Ukrainian Plain — Medium print — Black frame",
+    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD54X4DD77F1S12X9J1S8DD54X4DD77G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.2867,
+      "height": 4.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.54,
+      "height": 4.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163.jpg",
+    "assetSha256": "9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163",
+    "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunflower-woman.jpg",
+      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
+      "caption": "Mother and Child on the Ukrainian Plain"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.54,
+        "height": 4.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.54X4.77",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-sunflower-woman-medium-frame-white": {
+    "id": "print-painting-sunflower-woman-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunflower-woman",
+    "title": "Mother and Child on the Ukrainian Plain — Medium print — White frame",
+    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD54X4DD77F2S12X9J1S8DD54X4DD77G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.2867,
+      "height": 4.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.54,
+      "height": 4.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163.jpg",
+    "assetSha256": "9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163",
+    "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunflower-woman.jpg",
+      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
+      "caption": "Mother and Child on the Ukrainian Plain"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.54,
+        "height": 4.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.54X4.77",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-sunflower-woman-medium-frame-natural": {
+    "id": "print-painting-sunflower-woman-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunflower-woman",
+    "title": "Mother and Child on the Ukrainian Plain — Medium print — Natural wood frame",
+    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD54X4DD77F7S12X9J1S8DD54X4DD77G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.2867,
+      "height": 4.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.54,
+      "height": 4.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163.jpg",
+    "assetSha256": "9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163",
+    "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunflower-woman.jpg",
+      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
+      "caption": "Mother and Child on the Ukrainian Plain"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.54,
+        "height": 4.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.54X4.77",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-painting-sunset-silhouette-full": {
+    "id": "print-painting-sunset-silhouette-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunset-silhouette",
+    "title": "Sunset on Sucia Island in Puget Sound — Large print",
+    "artworkTitle": "Sunset on Sucia Island in Puget Sound",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S5.4X4",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.1467,
+      "height": 2.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.4,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718.jpg",
+    "assetSha256": "3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718",
+    "sourceSha256": "75de88bb244df1dc710367f6eef13734be24c732398f783551c78e31674bca91",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunset-silhouette.jpg",
+      "alt": "Sunset on Sucia Island in Puget Sound by TJ Murphy",
+      "caption": "Sunset on Sucia Island in Puget Sound"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-sunset-silhouette-full-frame-black": {
+    "id": "print-painting-sunset-silhouette-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunset-silhouette",
+    "title": "Sunset on Sucia Island in Puget Sound — Large print — Black frame",
+    "artworkTitle": "Sunset on Sucia Island in Puget Sound",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD4X4F1S10X8J1S5DD4X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.1467,
+      "height": 2.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.4,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718.jpg",
+    "assetSha256": "3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718",
+    "sourceSha256": "75de88bb244df1dc710367f6eef13734be24c732398f783551c78e31674bca91",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunset-silhouette.jpg",
+      "alt": "Sunset on Sucia Island in Puget Sound by TJ Murphy",
+      "caption": "Sunset on Sucia Island in Puget Sound"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.4,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.4X4",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-sunset-silhouette-full-frame-white": {
+    "id": "print-painting-sunset-silhouette-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunset-silhouette",
+    "title": "Sunset on Sucia Island in Puget Sound — Large print — White frame",
+    "artworkTitle": "Sunset on Sucia Island in Puget Sound",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD4X4F2S10X8J1S5DD4X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.1467,
+      "height": 2.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.4,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718.jpg",
+    "assetSha256": "3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718",
+    "sourceSha256": "75de88bb244df1dc710367f6eef13734be24c732398f783551c78e31674bca91",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunset-silhouette.jpg",
+      "alt": "Sunset on Sucia Island in Puget Sound by TJ Murphy",
+      "caption": "Sunset on Sucia Island in Puget Sound"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.4,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.4X4",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-painting-sunset-silhouette-full-frame-natural": {
+    "id": "print-painting-sunset-silhouette-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-sunset-silhouette",
+    "title": "Sunset on Sucia Island in Puget Sound — Large print — Natural wood frame",
+    "artworkTitle": "Sunset on Sucia Island in Puget Sound",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD4X4F7S10X8J1S5DD4X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.1467,
+      "height": 2.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.4,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718.jpg",
+    "assetSha256": "3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718",
+    "sourceSha256": "75de88bb244df1dc710367f6eef13734be24c732398f783551c78e31674bca91",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunset-silhouette.jpg",
+      "alt": "Sunset on Sucia Island in Puget Sound by TJ Murphy",
+      "caption": "Sunset on Sucia Island in Puget Sound"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.4,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.4X4",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -31404,6 +38732,786 @@ export default {
       "size": {
         "width": 9,
         "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-warszawska-syrenka-full": {
+    "id": "print-warszawska-syrenka-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Large print",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M8S8.58X12.99",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.3267,
+      "height": 12.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.58,
+      "height": 12.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf.jpg",
+    "assetSha256": "10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-warszawska-syrenka-full-frame-black": {
+    "id": "print-warszawska-syrenka-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Large print — Black frame",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "101.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD58X12DD99F1S12X15J1S8DD58X12DD99G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.3267,
+      "height": 12.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.58,
+      "height": 12.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf.jpg",
+    "assetSha256": "10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.58,
+        "height": 12.99,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.58X12.99",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-warszawska-syrenka-full-frame-white": {
+    "id": "print-warszawska-syrenka-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Large print — White frame",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "101.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD58X12DD99F2S12X15J1S8DD58X12DD99G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.3267,
+      "height": 12.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.58,
+      "height": 12.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf.jpg",
+    "assetSha256": "10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.58,
+        "height": 12.99,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.58X12.99",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-warszawska-syrenka-full-frame-natural": {
+    "id": "print-warszawska-syrenka-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Large print — Natural wood frame",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "113.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD58X12DD99F7S12X15J1S8DD58X12DD99G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.3267,
+      "height": 12.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.58,
+      "height": 12.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf.jpg",
+    "assetSha256": "10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.58,
+        "height": 12.99,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.58X12.99",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-warszawska-syrenka-medium": {
+    "id": "print-warszawska-syrenka-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Medium print",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.5X9.81",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.2467,
+      "height": 9.5533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.5,
+      "height": 9.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e.jpg",
+    "assetSha256": "c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-warszawska-syrenka-medium-frame-black": {
+    "id": "print-warszawska-syrenka-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Medium print — Black frame",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD5X9DD81F1S9X12J1S6DD5X9DD81G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.2467,
+      "height": 9.5533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.5,
+      "height": 9.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e.jpg",
+    "assetSha256": "c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.5,
+        "height": 9.81,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.5X9.81",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-warszawska-syrenka-medium-frame-white": {
+    "id": "print-warszawska-syrenka-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Medium print — White frame",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD5X9DD81F2S9X12J1S6DD5X9DD81G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.2467,
+      "height": 9.5533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.5,
+      "height": 9.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e.jpg",
+    "assetSha256": "c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.5,
+        "height": 9.81,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.5X9.81",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-warszawska-syrenka-medium-frame-natural": {
+    "id": "print-warszawska-syrenka-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Medium print — Natural wood frame",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD5X9DD81F7S9X12J1S6DD5X9DD81G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.2467,
+      "height": 9.5533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.5,
+      "height": 9.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e.jpg",
+    "assetSha256": "c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.5,
+        "height": 9.81,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.5X9.81",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-warszawska-syrenka-small": {
+    "id": "print-warszawska-syrenka-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Small print",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S4.41X6.62",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1567,
+      "height": 6.3567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.41,
+      "height": 6.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7.jpg",
+    "assetSha256": "d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-warszawska-syrenka-small-frame-black": {
+    "id": "print-warszawska-syrenka-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Small print — Black frame",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD41X6DD62F1S8X10J1S4DD41X6DD62G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1567,
+      "height": 6.3567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.41,
+      "height": 6.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7.jpg",
+    "assetSha256": "d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.41,
+        "height": 6.62,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.41X6.62",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-warszawska-syrenka-small-frame-white": {
+    "id": "print-warszawska-syrenka-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Small print — White frame",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD41X6DD62F2S8X10J1S4DD41X6DD62G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1567,
+      "height": 6.3567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.41,
+      "height": 6.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7.jpg",
+    "assetSha256": "d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.41,
+        "height": 6.62,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.41X6.62",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-warszawska-syrenka-small-frame-natural": {
+    "id": "print-warszawska-syrenka-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "warszawska-syrenka",
+    "title": "Warszawska Syrenka — Small print — Natural wood frame",
+    "artworkTitle": "Warszawska Syrenka",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD41X6DD62F7S8X10J1S4DD41X6DD62G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1567,
+      "height": 6.3567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.41,
+      "height": 6.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7.jpg",
+    "assetSha256": "d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7",
+    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "alt": "Warszawska Syrenka by TJ Murphy",
+      "caption": "Warszawska Syrenka"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.41,
+        "height": 6.62,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.41X6.62",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {

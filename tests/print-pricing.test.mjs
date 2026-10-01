@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {PRINT_PRICING,printRetailPrice,reviewPrintPrice,publishedPrintPrice} from '../catalog/print-pricing.mjs';
 import {printOptions} from '../catalog/print-sizing.mjs';
-import config from '../catalog/prints.json' with {type:'json'};
+import config from '../catalog/legacy-print-samples.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 test('3.5x manufacturing cost, rounded UP to $5, minimum $25',()=>{
   for(const [cost,expected] of [['7.00','25.00'],['12.00','45.00'],['21.00','75.00'],['20.00','70.00'],['20.01','75.00'],['0.01','25.00'],['15.00','55.00']]) assert.equal(printRetailPrice(cost),expected);

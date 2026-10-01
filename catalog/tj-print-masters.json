@@ -1,0 +1,233 @@
+[
+  {
+    "id": "warszawska-syrenka",
+    "title": "Warszawska Syrenka",
+    "sha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "local": "gallery-images/warszawska-syrenka.jpeg"
+  },
+  {
+    "id": "honeybadger-and-cub-with-genesis-block",
+    "title": "Honeybadger and Cub with Genesis Block",
+    "sha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "local": "gallery-images/honeybadger-and-cub.jpeg"
+  },
+  {
+    "id": "el-zonte-at-sunrise",
+    "title": "El Zonte at Sunrise, El Salvador",
+    "sha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
+    "local": "gallery-images/el-salvador-sunrise.jpeg"
+  },
+  {
+    "id": "painting-red-horizon",
+    "title": "Maui Sunset from Kihei",
+    "sha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 805,
+    "page": 57
+  },
+  {
+    "id": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Sunrise, El Salvador",
+    "sha256": "a6c58cca2d1dc02439c225b44c1564cab09010fe53dc1f0c5382f3f5295a90c8",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 585,
+    "page": 41,
+    "corners": [
+      [
+        254.60000610351562,
+        265.70001220703125
+      ],
+      [
+        2048.0,
+        261.20001220703125
+      ],
+      [
+        2068.39990234375,
+        1126.9000244140625
+      ],
+      [
+        235.8000030517578,
+        1120.5999755859375
+      ]
+    ],
+    "widthPx": 1793,
+    "heightPx": 855,
+    "layoutOptions": {
+      "padPaperToMinimum": true,
+      "sizeKeys": [
+        "full"
+      ]
+    }
+  },
+  {
+    "id": "painting-sunset-silhouette",
+    "title": "Sunset on Sucia Island in Puget Sound",
+    "sha256": "75de88bb244df1dc710367f6eef13734be24c732398f783551c78e31674bca91",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 343,
+    "page": 25,
+    "layoutOptions": {
+      "padPaperToMinimum": true,
+      "sizeKeys": [
+        "full"
+      ]
+    }
+  },
+  {
+    "id": "painting-golden-coast",
+    "title": "Sunset in Puget Sound from San Juan Island",
+    "sha256": "9f3f1c8a20548e3041ad3062bf8879b280a5b26a63d3b6784f891c1f251e18e1",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 358,
+    "page": 26
+  },
+  {
+    "id": "painting-sunflower-woman",
+    "title": "Mother and Child on the Ukrainian Plain",
+    "sha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 853,
+    "page": 61
+  },
+  {
+    "id": "painting-figures-in-wheatfield",
+    "title": "The Mother of Kiev",
+    "sha256": "0b35d28256297dac5d66a49a1ea79e52d5db0fd6d19488e5050a7282b4106c1d",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 868,
+    "page": 62,
+    "corners": [
+      [
+        183.0,
+        120.19999694824219
+      ],
+      [
+        1243.699951171875,
+        120.5
+      ],
+      [
+        1243.699951171875,
+        2083.39990234375
+      ],
+      [
+        183.39999389648438,
+        2083.89990234375
+      ]
+    ],
+    "widthPx": 1060,
+    "heightPx": 1962,
+    "layoutOptions": {
+      "padPaperToMinimum": true,
+      "sizeKeys": [
+        "full"
+      ]
+    }
+  },
+  {
+    "id": "painting-couple-in-color",
+    "title": "Aunt Fran and Hillary",
+    "sha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
+    "url": "https://media.vermillionaurora.com/images/Double%20Portraits/IMG_1391.jpeg"
+  },
+  {
+    "id": "painting-portrait-with-scarf",
+    "title": "Paul Murphy: my Dad",
+    "sha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371",
+    "url": "https://media.vermillionaurora.com/images/Single%20Portraits/IMG_2223.jpeg"
+  },
+  {
+    "id": "painting-portrait-in-green",
+    "title": "Chase Toole",
+    "sha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
+    "url": "https://media.vermillionaurora.com/images/Art-Book-Portraits/Portraits%20art%20book%20third%20draft.pdf",
+    "pdfSha256": "3f4670159c51714b6368c83cf2aa609d3833623e6969f5f9a561d172315da2d1",
+    "xref": 111,
+    "page": 8
+  },
+  {
+    "id": "painting-portrait-in-gold",
+    "title": "Dorian Nakamoto",
+    "sha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 1050,
+    "page": 73
+  },
+  {
+    "id": "painting-guitarist",
+    "title": "Girl Tuning Guitar",
+    "sha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
+    "url": "https://media.vermillionaurora.com/images/Art-Book-Portraits/Portraits%20art%20book%20third%20draft.pdf",
+    "pdfSha256": "3f4670159c51714b6368c83cf2aa609d3833623e6969f5f9a561d172315da2d1",
+    "xref": 366,
+    "page": 25
+  },
+  {
+    "id": "painting-portrait-in-blue-light",
+    "title": "MJ Spinning at Chalet",
+    "sha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
+    "url": "https://media.vermillionaurora.com/images/Art-Book-Portraits/Portraits%20art%20book%20third%20draft.pdf",
+    "pdfSha256": "3f4670159c51714b6368c83cf2aa609d3833623e6969f5f9a561d172315da2d1",
+    "xref": 350,
+    "page": 24
+  },
+  {
+    "id": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle",
+    "sha256": "0002b816708471c1008a8cccbe7cb7e0080a4341fc8c772780b7df47839f0303",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 193,
+    "page": 14,
+    "corners": [
+      [
+        90.0,
+        163.89999389648438
+      ],
+      [
+        2810.5,
+        153.10000610351562
+      ],
+      [
+        2831.699951171875,
+        920.7000122070312
+      ],
+      [
+        65.4000015258789,
+        930.2999877929688
+      ]
+    ],
+    "widthPx": 2720,
+    "heightPx": 766,
+    "layoutOptions": {
+      "padPaperToMinimum": true,
+      "sizeKeys": [
+        "full"
+      ]
+    }
+  },
+  {
+    "id": "painting-phoenix-rising",
+    "title": "Achievement",
+    "sha256": "3ae03c4519694354f32fd4500c9b80d14213531c3e37ed74b2e5a6bb9206b69e",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 1073,
+    "page": 75
+  },
+  {
+    "id": "painting-festival-portrait",
+    "title": "Wonder",
+    "sha256": "5a93fb9dae1591564ffabae3ec7eb4e3474858bad0c8c0c34ea878f467462e04",
+    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
+    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
+    "xref": 1058,
+    "page": 74
+  }
+]

@@ -6,7 +6,7 @@ import {EDITION_LAYOUT} from '../catalog/edition-layout.mjs';
 import {catalogVersion} from '../catalog/catalog.mjs';
 const prints=Object.values(readyPrints),site='https://vermillionaurora.com';
 const samples=prints.filter(p=>p.sampleOnly),editions=prints.filter(p=>!p.sampleOnly);
-assert.equal(samples.filter(p=>!p.mat&&!p.frame).length,6);
+assert.equal(samples.length,0);
 assert(samples.every(p=>!p.testOnly&&['painting-portrait-in-green','painting-portrait-in-gold'].includes(p.productId)));
 assert(editions.every(p=>!p.testOnly&&p.layout===EDITION_LAYOUT&&p.layoutApproved&&p.minimumDpi>=300));
 assert.deepEqual([...new Set(editions.map(p=>p.productId))].sort(),Object.entries(config.artworks).filter(([,a])=>a.enabled&&a.sizing==='image-proportional').map(([id])=>id).sort());
