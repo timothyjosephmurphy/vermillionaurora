@@ -45,7 +45,7 @@
         update();message.replaceChildren(node('span','Added. '));const view=node('a','View your cart');view.href='/cart/';view.className='cart-text-link';message.append(view);return true;
       };
       add.addEventListener('click',addItem);
-      buy.addEventListener('click',()=>{if(addItem())location.assign(`/cart/?buy=${encodeURIComponent(slug)}`);});
+      buy.addEventListener('click',()=>{const hasOtherItems=cart.some(item=>item.id!==slug);if(addItem())location.assign(hasOtherItems?'/cart/':`/cart/?buy=${encodeURIComponent(slug)}`);});
       document.addEventListener('catalog:availability',e=>{if(e.detail?.[slug]&&e.detail[slug]!=='available'){add.disabled=true;buy.disabled=true;message.textContent='This original is currently reserved or sold.';}});
     }
     window.addEventListener('storage',event=>{if(event.key===CART){cart=clean(read(CART));counts();if(root&&!busy&&!pending(current)){invalidate();render();}}});

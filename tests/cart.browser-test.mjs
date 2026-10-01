@@ -51,8 +51,8 @@ try{
  // Invalid persisted data cannot inject markup or alter quantities/prices.
  await page.evaluate(()=>localStorage.setItem('va-cart-v1',JSON.stringify([{id:'<script>alert(1)</script>',quantity:1},{id:'painting-portrait-in-green',quantity:99},{id:'painting-portrait-in-green',quantity:1,amount:'.01'}])));await page.reload();await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);assert.match(await page.locator('.cart-line-price').textContent(),/20.00/);
  availability='sold';await page.reload();await page.getByText('Sold',{exact:true}).waitFor();assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isDisabled());await page.getByRole('button',{name:'Remove Chase Toole'}).click();await page.getByRole('heading',{name:'A place for the work you love.'}).waitFor();availability='available';
- // Buy now buys just that artwork without dropping other cart selections.
- await page.evaluate(ids=>localStorage.setItem('va-cart-v1',JSON.stringify(ids.map(id=>({id,quantity:1})))),ids);
+ // A lone item keeps the expedited one-item checkout.
+ await page.evaluate(id=>localStorage.setItem('va-cart-v1',JSON.stringify([{id,quantity:1}])),ids[0]);
  await page.goto(`${origin}/products/${ids[0]}/`);
  const buyNow=page.getByRole('button',{name:'Buy now',exact:true});await buyNow.waitFor();
  const buyBounds=await buyNow.boundingBox(),titleBounds=await page.locator('.product-summary h1').boundingBox();
@@ -69,7 +69,17 @@ try{
   await page.locator('.product-purchase-actions').screenshot({path:`/tmp/cart-preview/original-price-${width}.png`});
  }
  await buyNow.click();await page.waitForURL(origin+'/cart/?buy='+ids[0]);
- await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);assert.match(await page.locator('[data-cart-notice]').textContent(),/one-item checkout/i);assert.equal(await page.getByRole('link',{name:'View full cart'}).getAttribute('href'),'/cart/');await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
- order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual((await cartStored()).map(i=>i.id),[ids[1]]);
- assert.deepEqual(errors,[]);console.log('PASS: desktop/mobile cart, persistent selections, quantity-one originals, invalidation, payment recovery, receipt, unavailable stock, corrupted storage, and Buy now preserving other selections.');
+ await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);assert.match(await page.locator('[data-cart-notice]').textContent(),/one-item checkout/i);
+ assert.equal(await page.getByRole('link',{name:'View full cart'}).getAttribute('href'),'/cart/');
+ // When a different item is already saved, Buy Now opens the entire cart.
+ await page.evaluate(ids=>localStorage.setItem('va-cart-v1',JSON.stringify(ids.map(id=>({id,quantity:1})))),ids);
+ await page.goto(`${origin}/products/${ids[0]}/`);
+ await page.getByRole('button',{name:'Buy now',exact:true}).click();await page.waitForURL(origin+'/cart/');
+ await page.locator('.cart-line').nth(1).waitFor();assert.equal(await page.locator('.cart-line').count(),2);
+ assert.deepEqual((await cartStored()).map(i=>i.id),ids);
+ await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();
+ assert.equal(calls.filter(c=>c.action==='quote').at(-1).body.items.length,2,'Buy Now with other saved items quotes the full cart');
+ await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
+ order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual(await cartStored(),[]);
+ assert.deepEqual(errors,[]);console.log('PASS: desktop/mobile cart, persistent selections, quantity-one originals, invalidation, payment recovery, receipt, unavailable stock, corrupted storage, and Buy Now choosing one-item or full-cart checkout correctly.');
 }finally{await browser.close();}
