@@ -207,7 +207,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -269,7 +269,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -379,7 +379,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -439,7 +439,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -599,7 +599,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -962,7 +962,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -1084,7 +1084,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -1338,14 +1338,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 15,
-        "width": 12,
-        "height": 0.125,
-        "weight": 0.25,
-        "packaging": "flat",
+        "length": 12,
+        "width": 4,
+        "height": 4,
+        "weight": 2,
+        "packaging": "tube",
         "insuranceRequested": true,
         "verification": "estimated",
-        "notes": "Owner selected the same flat-envelope shipping profile as Chase Toole on 2026-09-29: 12 by 15 inch envelope exterior, estimated thickness of 1/8 inch and packed weight of 4 oz (0.25 lb) for one sheet of watercolor paper in an envelope. Parcel dimensions use inches and weight uses pounds. Insure for the actual sale value; the pilot price is $20. Insurance is requested through the Shippo shipment and included in the selected shipping rate; the label integration verifies the insured rate before purchase."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -1398,14 +1398,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 15,
-        "width": 12,
-        "height": 0.125,
-        "weight": 0.25,
-        "packaging": "flat",
+        "length": 12,
+        "width": 4,
+        "height": 4,
+        "weight": 2,
+        "packaging": "tube",
         "insuranceRequested": true,
         "verification": "estimated",
-        "notes": "Envelope exterior is 12 by 15 inches, confirmed by the owner. Thickness of 1/8 inch and weight of 4 oz (0.25 lb) are estimates authorized by the owner on 2026-09-29 for one sheet of watercolor paper in an envelope. Parcel dimensions use inches and weight uses pounds. Insure for the actual sale value; the planned test price is $20. Insurance is requested through the Shippo shipment and included in the selected shipping rate; the label integration verifies the insured rate before purchase."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -1465,7 +1465,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -1632,7 +1632,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -1692,7 +1692,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -1752,7 +1752,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2009,7 +2009,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2112,14 +2112,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2177,7 +2177,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2228,14 +2228,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2286,14 +2286,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2344,14 +2344,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 38,
-        "width": 18,
-        "height": 2,
+        "length": 16,
+        "width": 4,
+        "height": 4,
         "weight": 2,
-        "packaging": "flat",
+        "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2402,14 +2402,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2467,7 +2467,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2518,14 +2518,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2576,14 +2576,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2634,14 +2634,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2692,14 +2692,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2750,14 +2750,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2808,14 +2808,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2866,14 +2866,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2924,14 +2924,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -2982,14 +2982,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3040,14 +3040,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3098,14 +3098,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3156,14 +3156,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3214,14 +3214,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3272,14 +3272,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3381,7 +3381,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3432,14 +3432,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 38,
-        "width": 18,
-        "height": 2,
+        "length": 16,
+        "width": 4,
+        "height": 4,
         "weight": 2,
-        "packaging": "flat",
+        "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3490,14 +3490,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3548,14 +3548,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 19,
-        "width": 16,
-        "height": 2,
+        "length": 14,
+        "width": 4,
+        "height": 4,
         "weight": 2,
-        "packaging": "flat",
+        "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3606,14 +3606,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3664,14 +3664,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3729,7 +3729,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3780,14 +3780,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3845,7 +3845,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3896,14 +3896,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -3961,7 +3961,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -4012,14 +4012,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 14,
-        "width": 12,
+        "length": 12,
+        "width": 10,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -4077,7 +4077,7 @@
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -4128,14 +4128,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 12,
-        "width": 10,
+        "length": 10,
+        "width": 8,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -4186,14 +4186,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 12,
-        "width": 10,
+        "length": 10,
+        "width": 8,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -4244,14 +4244,14 @@
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 12,
-        "width": 10,
+        "length": 10,
+        "width": 8,
         "height": 2,
         "weight": 2,
         "packaging": "flat",
         "insuranceRequested": false,
         "verification": "estimated",
-        "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
@@ -4622,12 +4622,16 @@
       "caption": "Warszawska Syrenka"
     },
     "checkout": {
-      "mode": "paypal-link",
-      "link": {
-        "title": "Warszawska Syrenka",
-        "amount": "1200.00",
-        "currency": "USD",
-        "url": "https://www.paypal.com/ncp/payment/T27GYZKUZSYMC"
+      "mode": "integrated",
+      "shipping": {
+        "length": 28,
+        "width": 4,
+        "height": 4,
+        "weight": 2,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Parcel dimensions derived from painting dimensions; packed weight remains estimated at 2 lb."
       }
     },
     "inquiry": {
