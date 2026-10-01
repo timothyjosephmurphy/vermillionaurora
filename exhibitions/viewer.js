@@ -165,7 +165,8 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   const hero = page?.querySelector('.exhibition-hero');
   if (hero && !hero.hasAttribute('data-featured-hero')) hero.hidden = true;
   const description = box.previousElementSibling?.querySelector('p');
-  // Keep page-specific guidance (such as the Paul Murphy print-ordering note)\n  // intact; only add the carousel hint where the description is generic.\n  if (description && grid.classList.contains('exhibition-grid') && !/prints are available/i.test(description.textContent)) description.textContent = 'Swipe to browse or choose a thumbnail.';
+  // Preserve print-ordering guidance while keeping the hint on other galleries.
+  if (description && grid.classList.contains('exhibition-grid') && !/prints are available/i.test(description.textContent)) description.textContent = 'Swipe to browse or choose a thumbnail.';
   new IntersectionObserver(entries => { visible = entries[0].isIntersecting; schedule(); }, {threshold:0.1}).observe(box);
   show(0); updatePlay();
   let refreshFilter;

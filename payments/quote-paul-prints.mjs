@@ -12,7 +12,14 @@ async function credential(method,body){
 let installed=false;
 try {
   assert(process.env.CLOUDFLARE_API_TOKEN);assert.match(process.env.DEPLOYED_SHA||'',/^[a-f0-9]{40}$/);
-  const health=await (await fetch(base+'/checkout/health')).json();assert.equal(health.mode,'sandbox');assert.equal(health.release,process.env.DEPLOYED_SHA);
+  let ready=false;
+  for(let attempt=0;attempt<12;attempt++){
+    const response=await fetch(base+'/checkout/health',{cache:'no-store',signal:AbortSignal.timeout(15000)});
+    const health=await response.json();assert.equal(health.mode,'sandbox');
+    if(response.ok&&health.release===process.env.DEPLOYED_SHA){ready=true;break;}
+    await new Promise(resolve=>setTimeout(resolve,5000));
+  }
+  assert(ready,'Expected sandbox release did not become ready; no audit credential installed');
   installed=true;await credential('PUT',{name,text:secret,type:'secret_text'});
   const ids=Object.keys(config.artworks).filter(id=>config.artworks[id].sizing==='image-proportional');assert.equal(ids.length,39);
   let count=0;
