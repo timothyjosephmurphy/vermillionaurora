@@ -3,6 +3,7 @@ import SiteHeader from '../../../components/SiteHeader.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 const imageRoot='/exhibitions/bitcoin-film-festival-warsaw/images/';
 const photos=[
+  {file:'coined-in-watercolor-film-poster.jpg',src:'/gallery-images/coined-in-watercolor-film-poster.jpg',width:724,height:1084,alt:'Coined in Watercolor Film Poster by TJ Murphy, watercolor pastels on Arches cold press watercolor paper.',caption:'Coined in Watercolor Film Poster · created for Gavin Robertson’s documentary premiere.'},
   {file:'display-at-kinoteka.jpeg',width:480,height:360,alt:'Warsaw Syrenka, the Coined in Watercolor poster, and the honey badger with cub framed and illuminated outside the Kinoteka theater.',caption:'The artworks displayed outside the theater entrance.'},
   {file:'three-festival-paintings.jpeg',width:1024,height:768,alt:'The three paintings made for Bitcoin Film Festival hanging together: Warsaw Syrenka, Coined in Watercolor, and the honey badger with cub.',caption:'The three works made for the festival.'},
   {file:'warsaw-syrenka.jpeg',width:360,height:550,alt:'Watercolor of the Warsaw Syrenka holding a sword and a Bitcoin shield, with orange hussar wings behind her.',caption:'Warsaw Syrenka.'},
@@ -45,7 +46,7 @@ const photos=[
         </header>
         <section class="warsaw-photos" aria-label="Bitcoin Film Festival photographs">
           <div class="exhibition-grid">
-            {photos.map((photo,index)=><a class="ex-photo" href={`${imageRoot}${photo.file}`} data-caption={photo.caption}><img src={`${imageRoot}${photo.file}`} width={photo.width} height={photo.height} alt={photo.alt} loading={index<3?'eager':'lazy'} decoding="async" /></a>)}
+            {photos.map((photo,index)=>{const src=photo.src||`${imageRoot}${photo.file}`;return <a class="ex-photo" href={src} data-caption={photo.caption}><img src={src} width={photo.width} height={photo.height} alt={photo.alt} loading={index<3?'eager':'lazy'} decoding="async" /></a>;})}
           </div>
         </section>
         <section class="warsaw-story" aria-labelledby="warsaw-story-title">
