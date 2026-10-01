@@ -47,6 +47,8 @@ Production uses a protected two-stage release. `main` is the integration branch.
 
 Configure the website Worker’s Cloudflare Workers Builds production branch to `release`. Merge the promotion pull request only after that setting is in place. Workers Builds then publishes the website from the reviewed release commit. `.github/workflows/deploy-checkout-production.yml` listens only to `release`, waits for the website to expose the same catalog hash, and then deploys the checkout API with the matching release SHA. The existing `CLOUDFLARE_API_TOKEN` remains scoped to API deployment; it does not need permission to upload website assets. This is coordinated rather than atomic across two Workers, so the release workflow verifies both versions before declaring success.
 
+In GitHub repository Settings → Actions → General, keep workflow permissions at least Read and write and enable “Allow GitHub Actions to create and approve pull requests.” The promotion workflow needs that repository-level setting to create the next `main` → `release` pull request after a release is merged.
+
 Protect both `main` and `release` in GitHub. Require pull requests for `main`, require the `Release gate / gate` check, and prevent direct pushes to `release`; the promotion pull request is the deliberate production approval step. Keep the existing checkout pause flags available for emergency shutdowns.
 
 Rollback content and templates together with the generated Worker catalog. Do not roll back or delete Durable Object data. A failed release leaves CI visibly failed; investigate the failing deployment instead of clearing stock or replaying payments.
