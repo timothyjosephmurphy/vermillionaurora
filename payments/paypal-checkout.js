@@ -213,12 +213,15 @@ document.addEventListener('DOMContentLoaded', async () => {
           bitcoin.disabled = !bitcoinReady;
           bitcoin.textContent = `Buy with Bitcoin · $${quote.total}`;
           help.textContent = bitcoinReady ? 'Your total includes shipping and tax. Bitcoin payment opens in BTCPay, with Lightning available when enabled there.' : 'Your total includes shipping and tax. Continue to PayPal to pay securely.';
+          submit.disabled = true;
+          submit.textContent = 'Shipping & tax calculated';
         } catch (error) {
           if (revision === requestRevision) details.textContent = error.message;
         } finally {
           if (revision === requestRevision) {
-            submit.disabled = false;
-            submit.textContent = 'Calculate shipping & tax';
+            const quoteIsCurrent = !!quote && !!quotedAddress && JSON.stringify(address()) === JSON.stringify(quotedAddress);
+            submit.disabled = quoteIsCurrent;
+            submit.textContent = quoteIsCurrent ? 'Shipping & tax calculated' : 'Calculate shipping & tax';
           }
         }
       });
