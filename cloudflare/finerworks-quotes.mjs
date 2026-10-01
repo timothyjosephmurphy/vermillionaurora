@@ -7,6 +7,7 @@ import {quoteMattedOption} from './finerworks-matting.mjs';
 import {sameMat} from '../catalog/matting.mjs';
 import {quoteFramedOption} from './finerworks-framing.mjs';
 import {sameFrame} from '../catalog/framing.mjs';
+import {EDITION_LAYOUT} from '../catalog/edition-layout.mjs';
 // No order creation, payment, email or Shippo calls. Wholesale totals remain server-side.
 const codePattern=/^(\d+)M(\d+)M(\d+)S(\d+(?:\.\d+)?)X(\d+(?:\.\d+)?)$/;
 const clean=(value,max,required=true)=>{
@@ -26,7 +27,9 @@ export function groupPrintProducts(items,po) {
     if(!item||typeof item.id!=='string'||ids.has(item.id)||item.provider!=='finerworks'||!codePattern.test((item.mat?item.baseSku:item.sku)||'')||!/^[A-Za-z0-9._-]{1,160}$/.test(item.sku||'')||!Number.isSafeInteger(item.quantity)||item.quantity<1||item.quantity>10)throw Error('Invalid FinerWorks print selection');
     ids.add(item.id);
     const [, , , ,w,h]=(item.mat?item.baseSku:item.sku).match(codePattern);
-    if(Number(w)!==item.imageSize?.width||Number(h)!==item.imageSize?.height||Number(w)!==item.paperSize?.width||Number(h)!==item.paperSize?.height)throw Error('FinerWorks product dimensions do not match the print');
+    const inset=item.layout===EDITION_LAYOUT&&item.sizeBasis==='image-proportional'&&item.layoutApproved===true&&!item.mat&&!item.frame;
+    const imageFits=inset?[item.imageSize?.width,item.imageSize?.height].every(n=>Number.isFinite(n)&&n>0)&&item.imageSize.width<Number(w)&&item.imageSize.height<Number(h):Number(w)===item.imageSize?.width&&Number(h)===item.imageSize?.height;
+    if(!imageFits||Number(w)!==item.paperSize?.width||Number(h)!==item.paperSize?.height)throw Error('FinerWorks product dimensions do not match the print');
     if(item.mat&&(!Number.isSafeInteger(item.mat.id)||item.mat.id<=0||item.mat.key!=='snow-white'||item.mat.window?.width!==Number(w)||item.mat.window?.height!==Number(h)||![item.mat.outer?.width,item.mat.outer?.height].every(n=>Number.isFinite(n))||item.mat.outer.width<Number(w)+2||item.mat.outer.height<Number(h)+2))throw Error('Invalid FinerWorks mat dimensions');
     if(item.frame&&(!item.mat||!Number.isSafeInteger(item.frame.id)||item.frame.id<=0||!Number.isSafeInteger(item.frame.glazing?.id)||item.frame.glazing.id<=0||item.frame.size?.width!==item.mat.outer.width||item.frame.size?.height!==item.mat.outer.height))throw Error('Invalid FinerWorks frame dimensions or glazing');
     const group=groups.get(item.sku)||{product_order_po:po,product_sku:item.sku,product_qty:0};group.product_qty+=item.quantity;groups.set(item.sku,group);
@@ -92,7 +95,7 @@ export async function quoteFinerWorksPrints(env,items,address) {
       continue;
     }
     const [,tid,mid,sid]=item.sku.match(codePattern),media=materials.media.find(m=>m.id===Number(mid)),style=materials.styles.find(s=>s.id===Number(sid));
-    if(!media||media.productTypeId!==Number(tid)||!style||finerworksProductCode(media,style,item.imageSize)!==item.sku)throw Error('FinerWorks material or size needs review');
+    if(!media||media.productTypeId!==Number(tid)||!style||finerworksProductCode(media,style,item.paperSize)!==item.sku)throw Error('FinerWorks material or size needs review');
   }
   const units=await finerworksPrices(env,products.map(p=>p.product_sku));
   for(const item of items) {

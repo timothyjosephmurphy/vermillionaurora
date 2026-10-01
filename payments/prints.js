@@ -44,11 +44,12 @@
       sheet.classList.toggle('is-framed',!!selected?.frame);
       sheet.style.setProperty('--print-frame-color',selected?.frame?.color||'#262321');
       const previewUrl=o.previewUrl||sizeOption.previewUrl;if(previewUrl)area.querySelector('img').src=previewUrl;
-      sheet.style.aspectRatio=`${p.width} / ${p.height}`;area.style.width=`${o.image.width/p.width*100}%`;area.style.height=`${o.image.height/p.height*100}%`;
+      const shown=o.previewIncludesPaper?o.paper:o.image;
+      sheet.style.aspectRatio=`${p.width} / ${p.height}`;area.style.width=`${shown.width/p.width*100}%`;area.style.height=`${shown.height/p.height*100}%`;
       root.querySelector('[data-print-dimensions]').textContent=`Image: ${size(o.image)}${o.paper?` · Paper: ${size(o.paper)}`:' · Paper size to be confirmed'}${o.mat?` · Mat / frame size: ${size(o.mat.outer)}`:''}`;
       root.querySelector('[data-print-paper]').textContent=o.paperLabel;
       root.querySelector('[data-print-total]').textContent=selected?.amount?`${selected.frame?'Framed print':selected.mat?'Print + mat':'Print'}: $${Number(selected.amount).toFixed(2)}`:finish.value!=='none'&&!selected?'This presentation is unavailable in the selected size.':'Price pending';
-      root.querySelector('[data-print-mat-note]').textContent=o.frame?`${o.frame.name} frame with white conservation mat and ${o.frame.glazing.name}. Assembled and shipped by FinerWorks.`:o.mat?`White conservation mat · Fits a ${size(o.mat.outer)} frame. The window overlaps the print edges slightly. Frame purchased separately.`:finish.value!=='none'?'Choose another print size or Unframed print.':'An unframed print lets you choose your own frame. Add a white mat or have FinerWorks frame it for you.';
+      root.querySelector('[data-print-mat-note]').textContent=o.frame?`${o.frame.name} frame with white conservation mat and ${o.frame.glazing.name}. Assembled and shipped by FinerWorks.`:o.mat?`White conservation mat · Fits a ${size(o.mat.outer)} frame. The window overlaps the print edges slightly. Frame purchased separately.`:finish.value!=='none'?'Choose another print size or Unframed print.':o.sizeBasis==='image-proportional'?'Unframed watercolor-paper print with a narrow white margin. Choose a frame or custom mat to fit the paper dimensions shown.':'An unframed print lets you choose your own frame. Add a white mat or have FinerWorks frame it for you.';
       root.querySelector('[data-print-inclusions]').textContent=o.frame?'Price includes the print, frame, white mat and glazing.':o.mat?'Price includes the print and mat. Frame not included.':'Print only; frame not included.';
       root.querySelector('[data-print-own-frame]').hidden=!!o.frame;
       for(const option of finish.options){const candidate=option.value==='none'?sizeOption:[...(sizeOption.matOptions||[]),...(sizeOption.frameOptions||[])].find(o=>o.finishKey===option.value);option.disabled=!preview&&!candidate?.ready;}

@@ -48,6 +48,7 @@ const advance=order=>runInDurableObject(order,i=>i.save({...i.read(),printJob:{.
 it('isolates environments and requires separate print allowlisting; client prices and assets are ignored',()=>{
   expect(()=>prodigiEnvironment({...settings,PRODIGI_ENV:'live'})).toThrow();
   expect(paymentMethods({...env,...settings,PRINT_CHECKOUT_IDS:''},id)).toEqual([]);
+  expect(paymentMethods({...env,...settings,PRINT_CHECKOUT_IDS:'',PRINT_CHECKOUT_ALL:'true'},id)).toEqual(['paypal']);
   expect(cartItems([{id,quantity:2,amount:'.01',assetUrl:'https://attacker.test/x'}])[0]).toEqual(item);
   expect(()=>cartItems([{id,quantity:11}])).toThrow();expect(()=>cartItems([{id:art,quantity:2}])).toThrow();
 });

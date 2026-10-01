@@ -5,6 +5,19 @@ const originalFetch=globalThis.fetch;
 const env={PAYPAL_MODE:'sandbox',PRINT_CHECKOUT_ENABLED:'false',FINERWORKS_WEB_API_KEY:'private-web',FINERWORKS_APP_KEY:'private-app',FINERWORKS_AUDIT_TOKEN:`${Date.now()+600000}.${'a'.repeat(64)}`};
 const products=[{id:'test-art',type:'painting',title:'Test Art',dimensions:{width:15,height:12,unit:'in'}}];
 const req=(body={})=>new Request('https://worker/checkout/prints/verify',{method:'POST',headers:{Authorization:`Bearer ${env.FINERWORKS_AUDIT_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify(body)});
+test('edition quotes use approved paper geometry and expose retail prices only',async t=>{
+  const {default:catalog}=await import('../catalog/products.json',{with:{type:'json'}}),calls=[];
+  t.mock.method(globalThis,'fetch',async(url,init)=>{
+    const body=JSON.parse(init.body);calls.push(url);
+    if(url.endsWith('list_media_types'))return Response.json([{id:144,product_type_id:5,name:'Watercolor Bright White',style_ids:[8]}]);
+    if(url.endsWith('list_style_types'))return Response.json([{id:8,name:'Borderless',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90},border_size:0,bleed_amt:0.06}]);
+    assert(url.endsWith('get_prices'));assert.deepEqual(body.products.map(p=>p.product_sku),['5M144M8S4.76X4.52']);
+    return Response.json(body.products.map(p=>({...p,product_code:p.product_sku,product_price:7,total_price:7})));
+  });
+  const r=await finerworksDiagnostic(req({task:'edition-prices',productIds:['paul-murphy-painting-55'],width:100,assetUrl:'https://example.com/injected.jpg'}),env,catalog);
+  assert.equal(r.status,200);const data=await r.json();assert.equal(data.ordersSubmitted,false);assert.equal(data.readOnly,true);
+  assert.equal(data.variants.length,1);assert.equal(data.variants[0].amount,'25.00');assert(!JSON.stringify(data).includes('productionCost'));assert(!calls.some(c=>c.includes('order')));
+});
 afterEach(()=>{globalThis.fetch=originalFetch;});
 test('rejects unauthenticated diagnostics before calling provider',async()=>{
   globalThis.fetch=()=>assert.fail('Must not fetch');

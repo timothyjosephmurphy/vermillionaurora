@@ -76,3 +76,5 @@ jobs:
         run: node scripts/verify-release.mjs
       - name: Verify limited live print checkout without taking payment
         run: node payments/verify-live-print-pilot.mjs
+      - name: Verify Paul Murphy editions without starting payment
+        run: node payments/verify-paul-print-checkout.mjs
