@@ -8,10 +8,10 @@ const portrait = byId['painting-portrait-in-green'];
 ---
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chase Tool Collab | Vermillion Aurora</title>
+<title>Chase Toole Collab | Vermillion Aurora</title>
 <meta name="description" content="Nearly a decade of friendship and art mentorship: a portrait of Chase Toole and three paintings created in collaboration with TJ Murphy.">
 <link rel="canonical" href="https://vermillionaurora.com/exhibitions/chase-toole/">
-<meta property="og:title" content="Chase Tool Collab"><meta property="og:description" content="El Salvador: Past, Present &amp; Future. Three collaborative paintings by Chase Toole and TJ Murphy."><meta property="og:type" content="website"><meta property="og:url" content="https://vermillionaurora.com/exhibitions/chase-toole/"><meta property="og:image" content="https://vermillionaurora.com/gallery-images/insect-garden.jpg">
+<meta property="og:title" content="Chase Toole Collab"><meta property="og:description" content="El Salvador: Past, Present &amp; Future. Three collaborative paintings by Chase Toole and TJ Murphy."><meta property="og:type" content="website"><meta property="og:url" content="https://vermillionaurora.com/exhibitions/chase-toole/"><meta property="og:image" content="https://vermillionaurora.com/gallery-images/insect-garden.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/site-header.css">
 <style is:inline>
@@ -50,8 +50,8 @@ const portrait = byId['painting-portrait-in-green'];
 @media(max-width:800px){.collaboration-intro{grid-template-columns:1fr;gap:28px;margin-bottom:36px}.collaboration-portrait{max-width:280px;margin-inline:auto}.collaboration-story{max-width:650px;margin-inline:auto}}
 </style><meta name="catalog-version" content={catalogVersion} /></head><body><div class="page-shell"><SiteHeader />
 <main class="container collaboration-page" id="top">
-<nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/#featured-artists">Featured Artists and Collaborations</a><span aria-hidden="true">/</span><span aria-current="page">Chase Tool Collab</span></nav>
-<div class="collaboration-heading"><p class="eyebrow accent">Featured artist · In collaboration with TJ Murphy</p><h1>Chase Tool Collab</h1></div>
+<nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/#featured-artists">Featured Artists and Collaborations</a><span aria-hidden="true">/</span><span aria-current="page">Chase Toole Collab</span></nav>
+<div class="collaboration-heading"><p class="eyebrow accent">Featured artist · In collaboration with TJ Murphy</p><h1>Chase Toole Collab</h1></div>
 <section class="collaboration-intro" aria-labelledby="collaboration-story-title">
   <article class="product-card collaboration-portrait" data-product-id={portrait.id} data-availability={statusLabel(portrait)}>
     <a href={urlFor(portrait)} aria-label={`View ${portrait.title}`}><img src={portrait.image.src} alt={portrait.image.alt} width="808" height="970" fetchpriority="high" decoding="async" /></a>
@@ -73,5 +73,5 @@ const portrait = byId['painting-portrait-in-green'];
 {collections.chase.map(entry=><ProductCard product={byId[entry.product]} variant={entry.variant} />)}
 </section>
 <nav class="collaboration-more" aria-label="Explore more artwork"><a href="/#featured-artists">All featured artists</a><a href="/exhibitions/paul-murphy/">Explore Paul Murphy’s gallery</a><a href="/gallery/">Browse all paintings</a></nav>
-</main><SiteFooter showDestroy /></div>
+</main><SiteFooter /></div>
 <script is:inline src="/catalog/availability.js" defer=""></script></body></html>
