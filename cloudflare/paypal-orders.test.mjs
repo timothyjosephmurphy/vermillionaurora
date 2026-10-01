@@ -9,9 +9,9 @@ const origin = 'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.
 const orderId = 'ABC123456789';
 
 test('catalog derives parcels from painting dimensions and keeps framed art flat', () => {
-  assert.deepEqual(catalog['paul-murphy-painting-1'].parcel,{length:12,width:10,height:2,weight:2});
+  assert.deepEqual(catalog['paul-murphy-painting-1'].parcel,{length:14,width:12,height:2,weight:2});
   assert.equal(catalog['paul-murphy-painting-1'].packaging,'flat');
-  assert.deepEqual(catalog['paul-murphy-painting-57'].parcel,{length:36,width:16,height:2,weight:2});
+  assert.deepEqual(catalog['paul-murphy-painting-57'].parcel,{length:38,width:18,height:2,weight:2});
   assert.equal(catalog['paul-murphy-painting-57'].packaging,'flat','framed paintings stay flat');
   assert.equal(catalog['paul-murphy-painting-55'],undefined,'measurements are required before automatic shipping');
   assert.deepEqual(catalog['painting-portrait-in-green'].parcel,{length:15,width:12,height:0.125,weight:0.25});
