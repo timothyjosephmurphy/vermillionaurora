@@ -285,8 +285,8 @@
     "id": "painting-beach-walk",
     "slug": "painting-beach-walk",
     "type": "painting",
-    "title": "Sunset from Atami, El Slalvador",
-    "description": "Sunset from Atami, El Slalvador by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Sunset from Atami, El Salvador",
+    "description": "Sunset from Atami, El Salvador by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -316,8 +316,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/beach-walk.jpg",
-      "alt": "Sunset from Atami, El Slalvador by TJ Murphy",
-      "caption": "Sunset from Atami, El Slalvador"
+      "alt": "Sunset from Atami, El Salvador by TJ Murphy",
+      "caption": "Sunset from Atami, El Salvador"
     },
     "checkout": {
       "mode": "inquiry"
