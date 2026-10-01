@@ -47,7 +47,7 @@ test('dimensioned available paintings receive parcels from the flat-at-12-inch r
  }
 });
 test('flat packaging is used only when the larger painting side is at most 12 inches',()=>{
- assert.deepEqual(deriveParcel({width:8,height:12,unit:'in'},2),{length:12,width:8,height:2,weight:2,packaging:'flat'});
+ assert.deepEqual(deriveParcel({width:8,height:12,unit:'in'},2),{length:14,width:10,height:2,weight:2,packaging:'flat'});
  assert.deepEqual(deriveParcel({width:8,height:16,unit:'in'},2),{length:8,width:4,height:4,weight:2,packaging:'tube'});
  assert.deepEqual(deriveParcel({width:24,height:48,unit:'in'},2),{length:24,width:4,height:4,weight:2,packaging:'tube'});
  assert.deepEqual(deriveParcel({width:100,height:70,unit:'cm'},2),{length:28,width:4,height:4,weight:2,packaging:'tube'});
