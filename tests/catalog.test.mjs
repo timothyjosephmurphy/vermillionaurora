@@ -41,7 +41,7 @@ test('dimensioned available paintings receive parcels from the flat-at-12-inch r
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
-  const pkg=deriveParcel(p.dimensions,s.weight,s.height);
+  const pkg=deriveParcel(p.dimensions,s.weight,s.height,{rollable:!(p.framing&&!/unframed/i.test(p.framing))});
   assert.deepEqual(checkout[p.id].parcel,{length:pkg.length,width:pkg.width,height:pkg.height,weight:pkg.weight},p.id);
   assert.equal(checkout[p.id].packaging,pkg.packaging,p.id);
  }
@@ -51,5 +51,5 @@ test('flat packaging is used only when the larger painting side is at most 12 in
  assert.deepEqual(deriveParcel({width:8,height:16,unit:'in'},2),{length:8,width:4,height:4,weight:2,packaging:'tube'});
  assert.deepEqual(deriveParcel({width:24,height:48,unit:'in'},2),{length:24,width:4,height:4,weight:2,packaging:'tube'});
  assert.deepEqual(deriveParcel({width:100,height:70,unit:'cm'},2),{length:28,width:4,height:4,weight:2,packaging:'tube'});
- assert.deepEqual(deriveParcel({width:30.48,height:25,unit:'cm'},2),{length:12,width:10,height:2,weight:2,packaging:'flat'});
+ assert.deepEqual(deriveParcel({width:30.48,height:25,unit:'cm'},2),{length:12,width:10,height:2,weight:2,packaging:'flat'});\n assert.deepEqual(deriveParcel({width:36,height:16,unit:'in'},2,2,{rollable:false}),{length:36,width:16,height:2,weight:2,packaging:'flat'});
 });
