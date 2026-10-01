@@ -67,7 +67,7 @@
       const quantity=Number(root.querySelector('[data-print-quantity]').value);
       if(!Number.isSafeInteger(quantity)||quantity<1||quantity>(selected.sampleOnly?1:10)){message.textContent=selected.sampleOnly?'Choose one sample copy per painting.':'Choose between 1 and 10 copies.';return;}
       document.dispatchEvent(new CustomEvent('cart:add-print',{detail:{id:selected.id,quantity,onResult:result=>{
-        message.replaceChildren(document.createTextNode(result.message));if(result.ok){const link=document.createElement('a');link.href='/cart/';link.textContent=' View your cart';message.append(link);}
+        message.textContent=result.message;if(result.ok)location.assign('/cart/');
       }}}));
     });
     update();capabilities=await window.vaCartReady;update();

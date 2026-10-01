@@ -15,7 +15,7 @@ try{
   const file=path.join(root,decodeURIComponent(url.pathname),url.pathname.endsWith('/')?'index.html':'');
   if(!fs.existsSync(file))return route.fulfill({status:404});
   let body=fs.readFileSync(file);
-  if(simulatedSale&&url.pathname.endsWith('/payments/cart.js'))return route.fulfill({contentType:'application/javascript',body:`window.vaCartReady=Promise.resolve({version:'test-${printVersion}',products:[{id:'print-painting-portrait-in-green-small-mat-snow-white',status:'available'}]});document.addEventListener('cart:add-print',e=>{window.testMatSelection={id:e.detail.id,quantity:e.detail.quantity};e.detail.onResult({ok:true,message:'Added'});});`});
+  if(simulatedSale&&url.pathname.endsWith('/payments/cart.js'))return route.fulfill({contentType:'application/javascript',body:`window.vaCartReady=Promise.resolve({version:'test-${printVersion}',products:[{id:'print-painting-portrait-in-green-small-mat-snow-white',status:'available'}]});document.addEventListener('cart:add-print',e=>{sessionStorage.setItem('testMatSelection',JSON.stringify({id:e.detail.id,quantity:e.detail.quantity}));e.detail.onResult({ok:true,message:'Added'});});`});
   if(simulatedSale&&url.pathname.startsWith('/print-preview/')&&url.pathname.endsWith('/')){
    const $=load(body.toString()),section=$('[data-print-options]'),options=JSON.parse(section.attr('data-options'));
    for(const o of options){o.ready=true;o.sampleOnly=false;for(const m of o.matOptions){m.ready=true;m.sampleOnly=false;m.amount='45.00';}}
@@ -42,8 +42,9 @@ try{
  }
  simulatedSale=true;await page.goto(origin+'/print-preview/painting-portrait-in-green/');
  await page.locator('input[value$="-small"]').check();await page.locator('[data-print-finish]').selectOption('snow-white');
- await page.locator('[data-print-quantity]').fill('2');await page.locator('[data-print-add]').click();
- assert.deepEqual(await page.evaluate(()=>window.testMatSelection),{id:'print-painting-portrait-in-green-small-mat-snow-white',quantity:2});
+ await page.locator('[data-print-quantity]').fill('2');
+ await Promise.all([page.waitForURL(origin+'/cart/'),page.locator('[data-print-add]').click()]);
+ assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('testMatSelection'))),{id:'print-painting-portrait-in-green-small-mat-snow-white',quantity:2});
  assert.deepEqual(errors,[]);
  console.log('PASS: mat selector, sizes, frame links, mobile layout, sale gates and separate mat cart identity; providers mocked.');
 }finally{await browser.close();}
