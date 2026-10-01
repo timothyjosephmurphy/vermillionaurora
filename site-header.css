@@ -98,8 +98,19 @@
 }
 
 .site-header .button-solid {
-  background: var(--ink);
+  background: var(--cta, #d34220);
+  border-color: var(--cta, #d34220);
   color: #fff;
+}
+
+.site-header .button-solid:hover {
+  background: var(--cta-hover, #b83518);
+  border-color: var(--cta-hover, #b83518);
+}
+
+.site-header .button-solid:focus-visible {
+  outline: 3px solid var(--cta, #d34220);
+  outline-offset: 4px;
 }
 
 

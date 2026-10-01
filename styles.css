@@ -8,6 +8,8 @@
   --line: rgba(25, 19, 15, 0.14);
   --accent: #8c4d39;
   --accent-dark: #5c2d21;
+  --cta: #d34220;
+  --cta-hover: #b83518;
   --sand: #d4b48a;
   --terracotta: #a7603d;
   --shadow: rgba(20, 15, 14, 0.12);
@@ -155,8 +157,19 @@ textarea {
 }
 
 .button-solid {
-  background: var(--ink);
+  background: var(--cta);
+  border-color: var(--cta);
   color: #fff;
+}
+
+.button-solid:hover:not(:disabled) {
+  background: var(--cta-hover);
+  border-color: var(--cta-hover);
+}
+
+.button-solid:focus-visible {
+  outline: 3px solid var(--cta);
+  outline-offset: 4px;
 }
 
 .button-ghost {

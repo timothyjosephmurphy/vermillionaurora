@@ -4,7 +4,7 @@
 /* Purchase details appear before the painting's story and specifications. */
 .product-purchase-cta{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;padding:1.1rem 1.4rem;margin:-.5rem 0 2rem;border:1px solid var(--line,#d6c9bc);border-radius:12px;background:var(--paper,#fffaf4)}
 .product-purchase-cta p{margin:0;font-weight:600;line-height:1.5}
-.product-purchase-cta .button{flex-shrink:0;background:var(--accent-dark,#874c33);font-size:.85rem}
+.product-purchase-cta .button{flex-shrink:0;background:var(--cta,#d34220);font-size:.85rem}
 .purchase-panel{padding:1.5rem;margin:1.25rem 0 2rem;border:1px solid var(--line,#d6c9bc);border-top:3px solid var(--accent-dark,#874c33);border-radius:12px;background:var(--paper,#fffaf4);scroll-margin-top:9rem}
 .purchase-panel h2{margin:0 0 .5rem;font:600 2rem/1.15 "Cormorant Garamond",serif}
 .purchase-panel>p{font-size:.9rem;line-height:1.5;margin:0 0 1rem}
@@ -16,7 +16,8 @@
 .purchase-panel input[name=state]{text-transform:uppercase}
 .checkout-address-form .checkout-country{margin:0;color:var(--muted,#65574d);font-size:.8rem}
 .purchase-panel .checkout-address-form button{width:100%;min-height:44px;font-size:.78rem;letter-spacing:.06em}
-.purchase-panel .checkout-pay{width:100%;min-height:54px;font-size:.95rem;letter-spacing:.04em;cursor:pointer;background:var(--accent-dark,#874c33)}
+.purchase-panel .checkout-pay{width:100%;min-height:54px;font-size:.95rem;letter-spacing:.04em;cursor:pointer;background:var(--cta,#d34220)}
+.product-purchase-cta .button:hover:not(:disabled),.purchase-panel .checkout-pay:hover:not(:disabled){background:var(--cta-hover,#b83518);border-color:var(--cta-hover,#b83518)}
 .purchase-panel button:disabled,.purchase-panel button:disabled:hover{background:#dedbd7;color:#66615c;border-color:#d0cbc5;cursor:not-allowed;transform:none;box-shadow:none;opacity:1}
 .purchase-panel .checkout-payment-help{margin:.65rem 0 0;font-size:.8rem;color:var(--muted,#65574d)}
 .checkout-total:not(:empty){padding:1rem 0;margin:0 0 1rem;border-top:1px solid var(--line,#d6c9bc);font-size:.9rem;line-height:1.5}
