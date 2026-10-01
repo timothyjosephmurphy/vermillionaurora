@@ -44,5 +44,5 @@ jobs:
           }
           NODE
       - name: Install Chromium for browser checks
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --only-shell chromium
       - run: npm run test:browser
