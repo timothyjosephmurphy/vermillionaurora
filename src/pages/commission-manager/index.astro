@@ -2,7 +2,6 @@
 import PolicyLayout from '../../layouts/PolicyLayout.astro';
 ---
 <PolicyLayout title="Private commission references" description="Owner access to private commission uploads and retention dates." noindex>
-<p>First-time setup: add an encrypted secret named <code>COMMISSION_MANAGER_TOKEN</code> to the <code>vermillion-commissions</code> Worker in Cloudflare. Use a unique password of at least 32 random characters and save it in your password manager.</p>
 <p>Owner access only. Use the dedicated commission management credential from the Worker’s secrets. It stays in memory for this page and is never included in a link or saved in browser storage.</p>
 <form id="manager-login"><label>Management credential <input id="manager-token" type="password" autocomplete="off" required/></label><button class="button button-solid" type="submit">Open references</button></form>
 <div id="manager-controls" hidden><button type="button" id="manager-refresh">Current references</button><button type="button" id="manager-legacy">Review older uploads</button><button type="button" id="manager-lock">Lock</button></div>
