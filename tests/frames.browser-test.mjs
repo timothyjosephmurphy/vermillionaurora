@@ -41,8 +41,8 @@ try{
     await page.goto(origin+preview);
     const recommendations=page.locator('[data-frame-recommendations]');
     await page.waitForFunction(()=>document.querySelector('[data-frame-recommendations]').dataset.frameInitialized==='true');
-    // The exact sheet follows the confirmed 12-wide by 15-high original.
-    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0FJLR7MTQ$/);
+    // Match the new print sheet, independently of the original painting size.
+    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0BQR2BQYZ$/);
     await page.locator('input[value$="-small"]').check();
     assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0B1CNJL7N$/);
     // Verify selection-change handling with exact-size borderless sheets.
@@ -54,10 +54,10 @@ try{
     });
     assert.match(await recommendations.locator('.frame-fit').first().textContent(),/custom mat/);
     await page.locator('input[value$="-medium"]').check();
-    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0BQR2BQYZ$/);
-    assert.match(await recommendations.locator('[data-frame-size]').textContent(),/9 × 11.25/);
+    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0B1CNJL7N$/);
+    assert.match(await recommendations.locator('[data-frame-size]').textContent(),/6.91 × 8.29/);
     await page.locator('input[value$="-full"]').check();
-    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0FJLR7MTQ$/);
+    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0BQR2BQYZ$/);
     await page.evaluate(()=>{
       const selector=document.querySelector('[data-print-options]');
       selector.dataset.options=JSON.stringify(JSON.parse(selector.dataset.options).map(o=>({...o,paper:null})));
