@@ -2198,7 +2198,7 @@
       "liveSampleApproved": true
     },
     "paul-murphy-painting-1": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -2235,7 +2235,10 @@
                 "height": 3598
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S7.33X9.25",
@@ -2263,7 +2266,10 @@
                 "height": 2698
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S4.97X6.25",
@@ -2291,12 +2297,15 @@
                 "height": 1798
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-11": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -2333,7 +2342,10 @@
                 "height": 3494
               }
             }
-          }
+          },
+          "amount": "55.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S8X8.99",
@@ -2361,7 +2373,10 @@
                 "height": 2621
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S5.41X6.07",
@@ -2389,12 +2404,15 @@
                 "height": 1745
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-14": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -2431,7 +2449,10 @@
                 "height": 2705
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S9.25X7.01",
@@ -2459,7 +2480,10 @@
                 "height": 2027
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S6.25X4.76",
@@ -2487,12 +2511,15 @@
                 "height": 1352
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-15": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -2529,7 +2556,10 @@
                 "height": 3598
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S6.79X9.25",
@@ -2557,7 +2587,10 @@
                 "height": 2695
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S4.61X6.25",
@@ -2585,12 +2618,15 @@
                 "height": 1796
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-2": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -2627,7 +2663,10 @@
                 "height": 5049
               }
             }
-          }
+          },
+          "amount": "95.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S10.02X12.88",
@@ -2655,7 +2694,10 @@
                 "height": 3786
               }
             }
-          }
+          },
+          "amount": "55.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S6.76X8.67",
@@ -2683,12 +2725,15 @@
                 "height": 2522
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-23": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -2725,7 +2770,10 @@
                 "height": 3597
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S6.81X9.25",
@@ -2753,7 +2801,10 @@
                 "height": 2696
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S4.62X6.25",
@@ -2781,12 +2832,15 @@
                 "height": 1796
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-24": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -2823,7 +2877,10 @@
                 "height": 5020
               }
             }
-          }
+          },
+          "amount": "65.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S6.97X12.81",
@@ -2851,7 +2908,10 @@
                 "height": 3765
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S4.73X8.62",
@@ -2879,12 +2939,15 @@
                 "height": 2509
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-25": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -2921,7 +2984,10 @@
                 "height": 2993
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S8.5X7.73",
@@ -2949,7 +3015,10 @@
                 "height": 2243
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S5.75X5.24",
@@ -2977,12 +3046,15 @@
                 "height": 1495
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-27": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3019,7 +3091,10 @@
                 "height": 2983
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S9.17X7.71",
@@ -3047,7 +3122,10 @@
                 "height": 2237
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S6.19X5.22",
@@ -3075,12 +3153,15 @@
                 "height": 1490
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-28": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3117,7 +3198,10 @@
                 "height": 2810
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "medium": {
           "sku": "5M144M8S9.25X7.28",
@@ -3145,7 +3229,10 @@
                 "height": 2108
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         },
         "small": {
           "sku": "5M144M8S6.25X4.93",
@@ -3173,12 +3260,15 @@
                 "height": 1403
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:07.353Z"
         }
       }
     },
     "paul-murphy-painting-3": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3215,7 +3305,10 @@
                 "height": 2573
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S9.25X6.69",
@@ -3243,7 +3336,10 @@
                 "height": 1931
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S6.25X4.54",
@@ -3271,12 +3367,15 @@
                 "height": 1286
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-34": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3313,7 +3412,10 @@
                 "height": 3050
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S7.75X7.88",
@@ -3341,7 +3443,10 @@
                 "height": 2288
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S5.25X5.33",
@@ -3369,12 +3474,15 @@
                 "height": 1523
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-35": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3411,7 +3519,10 @@
                 "height": 2997
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S8.63X7.75",
@@ -3439,7 +3550,10 @@
                 "height": 2248
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S5.83X5.25",
@@ -3467,12 +3581,15 @@
                 "height": 1497
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-38": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3509,7 +3626,10 @@
                 "height": 3088
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S7.66X7.97",
@@ -3537,7 +3657,10 @@
                 "height": 2315
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S5.19X5.4",
@@ -3565,12 +3688,15 @@
                 "height": 1543
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-39": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3607,7 +3733,10 @@
                 "height": 2762
               }
             }
-          }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S7.31X7.16",
@@ -3635,7 +3764,10 @@
                 "height": 2072
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S4.95X4.85",
@@ -3663,12 +3795,15 @@
                 "height": 1379
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-40": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3705,7 +3840,10 @@
                 "height": 3236
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S7.75X8.34",
@@ -3733,7 +3871,10 @@
                 "height": 2426
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S5.25X5.64",
@@ -3761,12 +3902,15 @@
                 "height": 1616
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-41": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3803,7 +3947,10 @@
                 "height": 3119
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S7.75X8.05",
@@ -3831,7 +3978,10 @@
                 "height": 2339
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S5.25X5.45",
@@ -3859,12 +4009,15 @@
                 "height": 1559
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-43": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3901,7 +4054,10 @@
                 "height": 2997
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S8.41X7.75",
@@ -3929,7 +4085,10 @@
                 "height": 2248
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S5.69X5.25",
@@ -3957,12 +4116,15 @@
                 "height": 1498
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-44": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -3999,7 +4161,10 @@
                 "height": 2998
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S7.82X7.75",
@@ -4027,7 +4192,10 @@
                 "height": 2249
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S5.29X5.25",
@@ -4055,12 +4223,15 @@
                 "height": 1497
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-45": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4097,7 +4268,10 @@
                 "height": 2998
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "medium": {
           "sku": "5M144M8S7.85X7.75",
@@ -4125,7 +4299,10 @@
                 "height": 2247
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         },
         "small": {
           "sku": "5M144M8S5.32X5.25",
@@ -4153,12 +4330,15 @@
                 "height": 1498
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.162Z"
         }
       }
     },
     "paul-murphy-painting-51": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4195,7 +4375,10 @@
                 "height": 3197
               }
             }
-          }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "medium": {
           "sku": "5M144M8S6.25X8.24",
@@ -4223,7 +4406,10 @@
                 "height": 2396
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "small": {
           "sku": "5M144M8S4.25X5.58",
@@ -4251,12 +4437,15 @@
                 "height": 1598
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-55": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4293,12 +4482,15 @@
                 "height": 1280
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-56": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4335,7 +4527,10 @@
                 "height": 3722
               }
             }
-          }
+          },
+          "amount": "60.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "medium": {
           "sku": "5M144M8S8.92X9.56",
@@ -4363,7 +4558,10 @@
                 "height": 2790
               }
             }
-          }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "small": {
           "sku": "5M144M8S6.03X6.45",
@@ -4391,12 +4589,15 @@
                 "height": 1859
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-57": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4433,7 +4634,10 @@
                 "height": 4409
               }
             }
-          }
+          },
+          "amount": "75.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "medium": {
           "sku": "5M144M8S9.01X11.27",
@@ -4461,7 +4665,10 @@
                 "height": 3303
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "small": {
           "sku": "5M144M8S6.09X7.6",
@@ -4489,12 +4696,15 @@
                 "height": 2202
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-6": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4531,7 +4741,10 @@
                 "height": 2997
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "medium": {
           "sku": "5M144M8S9.13X7.75",
@@ -4559,7 +4772,10 @@
                 "height": 2247
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "small": {
           "sku": "5M144M8S6.17X5.25",
@@ -4587,12 +4803,15 @@
                 "height": 1498
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-62": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4629,7 +4848,10 @@
                 "height": 2834
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "medium": {
           "sku": "5M144M8S9.28X7.34",
@@ -4657,7 +4879,10 @@
                 "height": 2126
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "small": {
           "sku": "5M144M8S6.27X4.97",
@@ -4685,12 +4910,15 @@
                 "height": 1415
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-63": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4727,7 +4955,10 @@
                 "height": 3250
               }
             }
-          }
+          },
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "medium": {
           "sku": "5M144M8S6.45X8.38",
@@ -4755,7 +4986,10 @@
                 "height": 2436
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "small": {
           "sku": "5M144M8S4.38X5.67",
@@ -4783,12 +5017,15 @@
                 "height": 1622
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-64": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4825,7 +5062,10 @@
                 "height": 3326
               }
             }
-          }
+          },
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "medium": {
           "sku": "5M144M8S6.49X8.57",
@@ -4853,7 +5093,10 @@
                 "height": 2495
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "small": {
           "sku": "5M144M8S4.41X5.79",
@@ -4881,12 +5124,15 @@
                 "height": 1661
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-65": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -4923,7 +5169,10 @@
                 "height": 4289
               }
             }
-          }
+          },
+          "amount": "60.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "medium": {
           "sku": "5M144M8S7.17X10.98",
@@ -4951,7 +5200,10 @@
                 "height": 3215
               }
             }
-          }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "small": {
           "sku": "5M144M8S4.86X7.4",
@@ -4979,12 +5231,15 @@
                 "height": 2141
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-7": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5021,7 +5276,10 @@
                 "height": 3029
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "medium": {
           "sku": "5M144M8S7.75X7.83",
@@ -5049,7 +5307,10 @@
                 "height": 2273
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         },
         "small": {
           "sku": "5M144M8S5.25X5.3",
@@ -5077,12 +5338,15 @@
                 "height": 1514
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:08.930Z"
         }
       }
     },
     "paul-murphy-painting-72": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5119,7 +5383,10 @@
                 "height": 3248
               }
             }
-          }
+          },
+          "amount": "80.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "medium": {
           "sku": "5M144M8S12.71X8.37",
@@ -5147,7 +5414,10 @@
                 "height": 2435
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "small": {
           "sku": "5M144M8S8.55X5.66",
@@ -5175,12 +5445,15 @@
                 "height": 1622
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         }
       }
     },
     "paul-murphy-painting-73": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5217,7 +5490,10 @@
                 "height": 3200
               }
             }
-          }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "medium": {
           "sku": "5M144M8S6.09X8.25",
@@ -5245,7 +5521,10 @@
                 "height": 2399
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "small": {
           "sku": "5M144M8S4.14X5.58",
@@ -5273,12 +5552,15 @@
                 "height": 1598
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         }
       }
     },
     "paul-murphy-painting-74": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5315,7 +5597,10 @@
                 "height": 3272
               }
             }
-          }
+          },
+          "amount": "70.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "medium": {
           "sku": "5M144M8S11.5X8.43",
@@ -5343,7 +5628,10 @@
                 "height": 2453
               }
             }
-          }
+          },
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "small": {
           "sku": "5M144M8S7.75X5.7",
@@ -5371,12 +5659,15 @@
                 "height": 1634
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         }
       }
     },
     "paul-murphy-painting-8": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5413,7 +5704,10 @@
                 "height": 2997
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "medium": {
           "sku": "5M144M8S8.35X7.75",
@@ -5441,7 +5735,10 @@
                 "height": 2247
               }
             }
-          }
+          },
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "small": {
           "sku": "5M144M8S5.65X5.25",
@@ -5469,12 +5766,15 @@
                 "height": 1498
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         }
       }
     },
     "paul-murphy-painting-82": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5511,7 +5811,10 @@
                 "height": 2699
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "medium": {
           "sku": "5M144M8S9.57X7",
@@ -5539,7 +5842,10 @@
                 "height": 2024
               }
             }
-          }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "small": {
           "sku": "5M144M8S6.46X4.75",
@@ -5567,12 +5873,15 @@
                 "height": 1348
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         }
       }
     },
     "paul-murphy-painting-83": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5609,7 +5918,10 @@
                 "height": 2999
               }
             }
-          }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "medium": {
           "sku": "5M144M8S6.13X7.75",
@@ -5637,7 +5949,10 @@
                 "height": 2246
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "small": {
           "sku": "5M144M8S4.17X5.25",
@@ -5665,12 +5980,15 @@
                 "height": 1497
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         }
       }
     },
     "paul-murphy-painting-84": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5707,7 +6025,10 @@
                 "height": 2249
               }
             }
-          }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "medium": {
           "sku": "5M144M8S7.75X5.87",
@@ -5735,7 +6056,10 @@
                 "height": 1685
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "small": {
           "sku": "5M144M8S5.25X4",
@@ -5763,12 +6087,15 @@
                 "height": 1124
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         }
       }
     },
     "paul-murphy-painting-85": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5805,7 +6132,10 @@
                 "height": 2398
               }
             }
-          }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "medium": {
           "sku": "5M144M8S7.7X6.25",
@@ -5833,7 +6163,10 @@
                 "height": 1799
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "small": {
           "sku": "5M144M8S5.21X4.25",
@@ -5861,12 +6194,15 @@
                 "height": 1197
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         }
       }
     },
     "paul-murphy-painting-86": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -5903,7 +6239,10 @@
                 "height": 4761
               }
             }
-          }
+          },
+          "amount": "85.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "medium": {
           "sku": "5M144M8S9.45X12.16",
@@ -5931,7 +6270,10 @@
                 "height": 3570
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         },
         "small": {
           "sku": "5M144M8S6.38X8.19",
@@ -5959,7 +6301,10 @@
                 "height": 2378
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-01T20:08:09.685Z"
         }
       }
     }
