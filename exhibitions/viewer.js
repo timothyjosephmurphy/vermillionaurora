@@ -43,7 +43,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
       if (item.product) { cell.href = item.product; cell.setAttribute('aria-label', `View ${item.alt}`); }
       const media = document.createElement(item.video ? 'video' : 'img');
       media.src = item.src;
-      if (item.video) { media.controls = true; media.playsInline = true; media.preload = 'none'; }
+      if (item.video) { media.controls = true; media.playsInline = true; media.preload = 'metadata'; }
       else { media.alt = item.alt || 'Exhibition image'; media.loading = 'lazy'; media.decoding = 'async'; }
       cell.append(media);
       if (item.caption) { const caption = document.createElement('span'); caption.className = 'ev-caption'; caption.textContent = item.caption; cell.append(caption); }
