@@ -12,6 +12,7 @@ const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXEC
 try {
   const page=await browser.newPage(),errors=[];let stale=false;
   await page.addInitScript(()=>{
+    if(!location.pathname.startsWith('/products/'))return;
     for(const key of ['va-cart-v1','va-cart-order-v1','va-cart-reservation-v1'])localStorage.removeItem(key);
   });
   page.on('pageerror',e=>errors.push(e.message));
@@ -53,18 +54,19 @@ try {
       }
       assert(await dialog.evaluate(el=>el.scrollWidth<=el.clientWidth+1));
       assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-      await page.locator('[data-print-add]').click();
-      await page.waitForFunction(()=>document.querySelector('[data-print-message]').textContent.includes('Print added to your cart.'));
-      const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-v1')));assert.deepEqual(saved,[{id:variants.at(-1).id,quantity:1}]);
       if(id.endsWith('-55')){
         assert.equal(variants.length,1);assert.match(await page.locator('[data-print-dimensions]').textContent(),/Paper: 4.76 × 4.52/);
         await page.waitForFunction(()=>{const image=document.querySelector('[data-print-image-area] img');return image.complete&&image.naturalWidth>0;});
         await dialog.screenshot({path:`/tmp/paul-55-${width}.png`});
       }
       await page.keyboard.press('Escape');assert(await dialog.isHidden());assert(await trigger.evaluate(el=>el===document.activeElement));
+      await trigger.click();
+      await Promise.all([page.waitForURL(origin+'/cart/'),page.locator('[data-print-add]').click()]);
+      await page.locator('.cart-line').waitFor();
+      const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-v1')));assert.deepEqual(saved,[{id:variants.at(-1).id,quantity:1}]);
     }
   }
   stale=true;await page.goto(origin+'/products/paul-murphy-painting-55/#print-options');
   assert(await page.locator('[data-print-dialog]').isVisible());assert(await page.locator('[data-print-add]').isDisabled());
-  assert.deepEqual(errors,[]);console.log('PASS: all 39 gallery links, 115 print sizes/prices, desktop/mobile dialogs, cart adds and stale-release protection; providers mocked.');
+  assert.deepEqual(errors,[]);console.log('PASS: all 39 gallery links, 115 print sizes/prices, desktop/mobile dialogs, automatic cart navigation with saved selections and stale-release protection; providers mocked.');
 } finally {await browser.close();}

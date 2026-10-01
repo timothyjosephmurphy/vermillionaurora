@@ -64,15 +64,19 @@ try{
     assert(await selector.locator('[data-print-own-frame]').isVisible());
   }
   await page.locator('[data-print-finish]').selectOption('frame-black');
-  await page.locator('input[value$="-small"]').check();await page.locator('[data-print-add]').click();
+  await page.locator('input[value$="-small"]').check();
+  await Promise.all([page.waitForURL(origin+'/cart/'),page.locator('[data-print-add]').click()]);
+  await page.goto(origin+'/products/painting-portrait-in-green/#print-options');
   await page.locator('[data-print-finish]').selectOption('frame-natural');
-  await page.locator('input[value$="-medium"]').check();await page.locator('[data-print-add]').click();
+  await page.locator('input[value$="-medium"]').check();
+  await Promise.all([page.waitForURL(origin+'/cart/'),page.locator('[data-print-add]').click()]);
   await page.goto(origin+'/products/painting-portrait-in-gold/');
   await page.getByRole('button',{name:'Buy a print',exact:true}).click();
-  await page.locator('[data-print-finish]').selectOption('frame-white');await page.locator('[data-print-add]').click();
+  await page.locator('[data-print-finish]').selectOption('frame-white');
+  await Promise.all([page.waitForURL(origin+'/cart/'),page.locator('[data-print-add]').click()]);
   const cart=await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-v1')));
   assert.deepEqual(cart,[{id:'print-painting-portrait-in-green-medium-frame-natural',quantity:1},{id:'print-painting-portrait-in-gold-small-frame-white',quantity:1}]);
-  await page.goto(origin+'/cart/');await page.locator('.cart-line').first().waitFor();
+  await page.locator('.cart-line').first().waitFor();
   assert.equal(await page.locator('.cart-line').count(),2);assert.equal(await page.locator('.cart-frame-description').count(),2);
   assert.match(await page.locator('[data-cart-items]').textContent(),/Natural wood frame/);
   assert.match(await page.locator('[data-cart-items]').textContent(),/Premium Clear acrylic/);
