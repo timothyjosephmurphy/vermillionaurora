@@ -72,6 +72,10 @@
     {
       "binding": "SALES_ARCHIVE",
       "bucket_name": "test-sales-records"
+    },
+    {
+      "binding": "COMMISSION_UPLOADS",
+      "bucket_name": "test-commission-uploads"
     }
   ]
 }
