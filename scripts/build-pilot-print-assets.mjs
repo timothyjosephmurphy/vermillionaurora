@@ -3,7 +3,7 @@
 import sharp from 'sharp';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import config from '../catalog/prints.json' with {type:'json'};
+import config from '../catalog/legacy-print-samples.json' with {type:'json'};
 import products from '../catalog/products.json' with {type:'json'};
 import {portraitSampleCrop} from '../catalog/sample-layout.mjs';
 const digest=b=>createHash('sha256').update(b).digest('hex'),assets={};
@@ -34,5 +34,5 @@ for(const id of ['painting-portrait-in-green','painting-portrait-in-gold']) {
   }
 }
 await writeFile(new URL('../cloudflare/print-test-assets.generated.mjs',import.meta.url),'// Generated sample sheets.\nexport default '+JSON.stringify(assets)+';\n');
-if(process.argv.includes('--write-config'))await writeFile(new URL('../catalog/prints.json',import.meta.url),JSON.stringify(config,null,2)+'\n');
+if(process.argv.includes('--write-config'))await writeFile(new URL('../catalog/legacy-print-samples.json',import.meta.url),JSON.stringify(config,null,2)+'\n');
 console.log('Built two borderless portrait sample sheets and retained both legacy order files.');

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {matLayout,matSizeAllowed} from '../catalog/matting.mjs';
 import {frameSelection} from '../catalog/frame-matching.mjs';
 import {printOptions} from '../catalog/print-sizing.mjs';
-import config from '../catalog/prints.json' with {type:'json'};
+import config from '../catalog/legacy-print-samples.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 test('mat follows orientation and fits an existing frame without trimming the sheet',()=>{
   for(const [paper,outer] of [[{width:7.5,height:6},{width:10,height:8}],[{width:11.25,height:9},{width:14,height:11}],[{width:15,height:12},{width:20,height:16}],[{width:12,height:15},{width:16,height:20}]]){

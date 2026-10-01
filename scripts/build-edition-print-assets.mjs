@@ -8,18 +8,20 @@ import products from '../catalog/products.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {editionLayouts,EDITION_LAYOUT,EDITION_BORDER_IN} from '../catalog/edition-layout.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
-const prepare=process.argv.includes('--prepare'),digest=b=>createHash('sha256').update(b).digest('hex'),run=promisify(execFile);
+const prepareTJ=process.argv.includes('--prepare-tj'),prepare=process.argv.includes('--prepare')||prepareTJ,digest=b=>createHash('sha256').update(b).digest('hex'),run=promisify(execFile);
 const root=new URL('../',import.meta.url),cache=new URL('.cache/edition-sources/',root),output=new URL('static/print-editions/',root);
 await mkdir(cache,{recursive:true});await mkdir(output,{recursive:true});
-const selected=products.filter(p=>prepare?p.artist==='Paul Murphy':config.artworks[p.id]?.sizing==='image-proportional');
+const tjIds=prepareTJ?JSON.parse(await readFile(new URL('catalog/tj-print-masters.json',root),'utf8')).map(r=>r.id):[];
+const selected=products.filter(p=>prepareTJ?tjIds.includes(p.id):prepare?p.artist==='Paul Murphy':config.artworks[p.id]?.sizing==='image-proportional');
 let cursor=0,count=0;
 await Promise.all(Array.from({length:4},async()=>{
   while(cursor<selected.length){
     const product=selected[cursor++],old=config.artworks[product.id];
     const sourceUrl=old?.source?.url||product.image.src,u=new URL(sourceUrl);
-    if(u.origin!=='https://media.vermillionaurora.com'||u.username||u.password||u.search||u.hash)throw Error('Edition sources must be hosted on the artwork media domain');
-    let bytes;
-    if(old?.source?.sha256)try{bytes=await readFile(new URL(`${old.source.sha256}.jpg`,cache));}catch{}
+    const localMaster=u.origin==='https://vermillionaurora.com'&&/^\/print-masters\/[a-f0-9]{64}\.jpg$/.test(u.pathname);
+    if((!localMaster&&u.origin!=='https://media.vermillionaurora.com')||u.username||u.password||u.search||u.hash)throw Error('Use an approved edition source');
+    let bytes=localMaster?await readFile(new URL('static'+u.pathname,root)):undefined;
+    if(!bytes&&old?.source?.sha256)try{bytes=await readFile(new URL(`${old.source.sha256}.jpg`,cache));}catch{}
     if(!bytes)for(let attempt=0;attempt<3;attempt++){
       try {
         // A fresh process discards partial output; curl --retry can concatenate
@@ -35,7 +37,7 @@ await Promise.all(Array.from({length:4},async()=>{
     if(!prepare&&JSON.stringify(old.source)!==JSON.stringify(source))throw Error(`Source measurements changed: ${product.id}`);
     const art=old||{enabled:false,sizing:'image-proportional',sizingApproved:true,paper:config.defaultPaper,source,variants:{}};
     const stock=papers.find(p=>p.paper===(art.paper||config.defaultPaper));
-    for(const choice of editionLayouts(source,product.dimensions,config.minimumDpi)){
+    for(const choice of editionLayouts(source,product.dimensions,config.minimumDpi,art.layoutOptions)){
       const {layoutSpec,image,paper,key}=choice,c=layoutSpec.content;
       // Contain the complete source; fit:inside and no enlargement preserve every edge.
       const border=Math.ceil(EDITION_BORDER_IN*layoutSpec.dpi);

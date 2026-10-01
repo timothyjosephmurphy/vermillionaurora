@@ -7,7 +7,7 @@ async function api(action,body){
   const r=await fetch(`${base}/${action}`,{method:body?'POST':'GET',redirect:'error',headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(120000)});
   assert(r.ok,`Edition ${action} verification failed: HTTP ${r.status}`);return r.json();
 }
-const expected=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'),catalog=await api('catalog');
+const expected=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&p.productId.startsWith('paul-murphy-')),catalog=await api('catalog');
 assert.equal(expected.filter(p=>!p.frame).length,115);assert.equal(expected.filter(p=>p.frame).length,345);assert.equal(new Set(expected.map(p=>p.productId)).size,39);assert(catalog.version.endsWith('-'+printVersion));
 for(const p of expected){
   const live=catalog.products.find(i=>i.id===p.id);assert(live,`Missing edition: ${p.id}`);assert.equal(live.amount,p.amount);assert.equal(live.status,'available');assert(live.methods.includes('paypal'));assert(!live.sampleOnly);

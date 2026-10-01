@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import config from '../catalog/prints.json' with {type:'json'};
+import config from '../catalog/legacy-print-samples.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {printOptions} from '../catalog/print-sizing.mjs';
 test('framed samples require their exact approved frame, mat, file, dimensions and saved price',()=>{
