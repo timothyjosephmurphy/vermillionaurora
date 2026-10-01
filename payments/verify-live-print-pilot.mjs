@@ -17,7 +17,7 @@ assert(live.every(p=>p.methods.includes('paypal')));
 let order;
 try {
   const q=await api('quote',{catalogVersion:catalog.version,items:ids.map(id=>({id,quantity:1})),email:'checkout-verification@example.test',address:{name:'Checkout Verification',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'}});
-  order={orderId:q.orderId,key:q.key};assert.equal(q.quote.base,'50.00');assert(Number(q.quote.shipping)>0);assert(Number(q.quote.total)>=50);
+  order={orderId:q.orderId,key:q.key};assert.equal(q.quote.base,(ids.reduce((s,id)=>s+Number(prints[id].amount),0)).toFixed(2));assert(Number(q.quote.shipping)>0);assert(Number(q.quote.total)>=50);
   const started=await api('start',{...order,method:'paypal'});assert.equal(started.status,'pending');
   const u=new URL(started.url);assert(['www.paypal.com','paypal.com'].includes(u.hostname));assert.equal(u.protocol,'https:');
   console.log('PASS: live catalog, FinerWorks shipping, Stripe tax and unpaid PayPal handoff.');
@@ -32,7 +32,7 @@ try {
   const framedIds=['print-painting-portrait-in-gold-small-frame-white','print-painting-portrait-in-green-medium-frame-natural'];
   const q=await api('quote',{catalogVersion:catalog.version,items:framedIds.map(id=>({id,quantity:1})),email:'checkout-verification@example.test',address:{name:'Checkout Verification',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'}});
   framedOrder={orderId:q.orderId,key:q.key};
-  assert.equal(q.quote.base,'161.63');assert(Number(q.quote.shipping)>0);
+  assert.equal(q.quote.base,framedIds.reduce((s,id)=>s+Number(prints[id].amount),0).toFixed(2));assert(Number(q.quote.shipping)>0);
   assert.deepEqual(q.quote.items.map(item=>item.id).sort(),framedIds.sort());
   assert(q.quote.items.every(item=>item.frame&&item.mat&&item.frame.glazing?.name==='Premium Clear'));
   console.log('PASS: live framed selections, full framed prices, glazing and destination shipping; payment not started.');

@@ -62,7 +62,7 @@ test('approved inset layout uses exact paper SKU; other dimension mismatches sta
   for(const alter of [i=>i.layoutApproved=false,i=>delete i.layout,i=>i.imageSize.width=5,i=>i.imageSize.height=NaN,i=>i.paperSize.width=4.75]){const changed=structuredClone(item);alter(changed);assert.throws(()=>groupPrintProducts([changed],'test'));}
 });
 test('every generated print file matches its approved hash, paper dimensions and white safety edge',async()=>{
-  for(const p of paintings)for(const {asset} of Object.values(config.artworks[p.id].variants)){
+  for(const p of products.filter(p=>config.artworks[p.id]?.sizing==='image-proportional'))for(const {asset} of Object.values(config.artworks[p.id].variants)){
     const bytes=await readFile(new URL('../static/print-editions/'+asset.sha256+'.jpg',import.meta.url));
     assert.equal(createHash('sha256').update(bytes).digest('hex'),asset.sha256);
     const metadata=await sharp(bytes).metadata();assert.equal(metadata.width,asset.layoutSpec.widthPx);assert.equal(metadata.height,asset.layoutSpec.heightPx);

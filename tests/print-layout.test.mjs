@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import sharp from 'sharp';
-import config from '../catalog/prints.json' with {type:'json'};
+import config from '../catalog/legacy-print-samples.json' with {type:'json'};
 import products from '../catalog/products.json' with {type:'json'};
 import {portraitSampleCrop,reviewedPortraitSample} from '../catalog/sample-layout.mjs';
 

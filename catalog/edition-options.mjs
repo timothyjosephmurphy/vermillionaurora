@@ -6,7 +6,7 @@ import {withMatOptions} from './matted-options.mjs';
 import {withFrameOptions} from './framed-options.mjs';
 export function editionOptions(product,config,papers) {
   const art=config.artworks[product.id],stock=papers.find(p=>p.paper===(art.paper||config.defaultPaper));
-  return editionLayouts(art.source,product.dimensions,config.minimumDpi).map(choice=>{
+  return editionLayouts(art.source,product.dimensions,config.minimumDpi,art.layoutOptions).map(choice=>{
     const variant=art.variants?.[choice.key]||{},asset=variant.asset,reasons=[];
     let sku=null,amount=null;
     try {sku=finerworksProductCode(stock?.media,stock?.style,choice.paper);amount=publishedPrintPrice(variant,sku);}catch{}

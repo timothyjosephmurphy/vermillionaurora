@@ -43,24 +43,24 @@ try{
     assert.equal(await selector.locator('.print-choice').count(),3);
     await selector.locator('[data-print-finish]').selectOption('frame-black');
     await page.waitForFunction(()=>!document.querySelector('[data-print-add]').disabled);
-    assert.match(await selector.locator('[data-print-total]').textContent(),/Framed print: \$59.63/);
+    assert.equal(await selector.locator('[data-print-total]').textContent(),'Framed print: $'+prints['print-painting-portrait-in-green-small-frame-black'].amount);
     assert.match(await selector.locator('[data-print-inclusions]').textContent(),/print, frame, white mat and glazing/);
     assert(await selector.locator('[data-print-own-frame]').isHidden());
     assert(await selector.locator('[data-print-sheet]').evaluate(el=>el.classList.contains('is-framed')));
     await selector.locator('input[value$="-medium"]').check();
-    assert.match(await selector.locator('[data-print-total]').textContent(),/\$91.00/);
-    assert.match(await selector.locator('[data-print-dimensions]').textContent(),/11 × 14/);
+    assert.equal(await selector.locator('[data-print-total]').textContent(),'Framed print: $'+prints['print-painting-portrait-in-green-medium-frame-black'].amount);
+    assert((await selector.locator('[data-print-dimensions]').textContent()).includes('Mat / frame size: '+prints['print-painting-portrait-in-green-medium-frame-black'].mat.outer.width+' × '+prints['print-painting-portrait-in-green-medium-frame-black'].mat.outer.height));
     await selector.locator('[data-print-finish]').selectOption('frame-natural');
-    assert.match(await selector.locator('[data-print-total]').textContent(),/\$102.00/);
+    assert.equal(await selector.locator('[data-print-total]').textContent(),'Framed print: $'+prints['print-painting-portrait-in-green-medium-frame-natural'].amount);
     await selector.locator('input[value$="-full"]').check();
-    assert.match(await selector.locator('[data-print-total]').textContent(),/\$164.00/);
+    assert.equal(await selector.locator('[data-print-total]').textContent(),'Framed print: $'+prints['print-painting-portrait-in-green-full-frame-natural'].amount);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     assert(await dialog.evaluate(el=>el.scrollWidth<=el.clientWidth+1),'Print dialog has no horizontal overflow');
     const shape=await selector.locator('[data-print-sheet]').boundingBox();assert(shape.height>shape.width);
-    await page.waitForFunction(()=>{const image=document.querySelector('[data-print-image-area] img');return image.complete&&image.naturalWidth===1000&&image.naturalHeight===1250;});
+    await page.waitForFunction(()=>{const image=document.querySelector('[data-print-image-area] img');return image.complete&&image.naturalWidth>1000&&image.naturalHeight>1000;});
     await selector.screenshot({path:`/tmp/framed-print-${width}.png`,style:'.site-header{visibility:hidden!important}'});
     await selector.locator('[data-print-finish]').selectOption('none');
-    assert.match(await selector.locator('[data-print-total]').textContent(),/Print: \$75.00/);
+    assert.equal(await selector.locator('[data-print-total]').textContent(),'Print: $'+prints['print-painting-portrait-in-green-full'].amount);
     assert(await selector.locator('[data-print-own-frame]').isVisible());
   }
   await page.locator('[data-print-finish]').selectOption('frame-black');
@@ -75,9 +75,9 @@ try{
   await page.locator('[data-print-finish]').selectOption('frame-white');
   await Promise.all([page.waitForURL(origin+'/cart/'),page.locator('[data-print-add]').click()]);
   const cart=await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-v1')));
-  assert.deepEqual(cart,[{id:'print-painting-portrait-in-green-medium-frame-natural',quantity:1},{id:'print-painting-portrait-in-gold-small-frame-white',quantity:1}]);
+  assert.deepEqual(cart,[{id:'print-painting-portrait-in-green-small-frame-black',quantity:1},{id:'print-painting-portrait-in-green-medium-frame-natural',quantity:1},{id:'print-painting-portrait-in-gold-small-frame-white',quantity:1}]);
   await page.locator('.cart-line').first().waitFor();
-  assert.equal(await page.locator('.cart-line').count(),2);assert.equal(await page.locator('.cart-frame-description').count(),2);
+  assert.equal(await page.locator('.cart-line').count(),3);assert.equal(await page.locator('.cart-frame-description').count(),3);
   assert.match(await page.locator('[data-cart-items]').textContent(),/Natural wood frame/);
   assert.match(await page.locator('[data-cart-items]').textContent(),/Premium Clear acrylic/);
   for(const [name,value]of Object.entries({email:'buyer@example.test',name:'Test Buyer',street1:'600 4th Ave',city:'Seattle',state:'WA',zip:'98104'}))await page.locator(`[name="${name}"]`).fill(value);
@@ -89,5 +89,5 @@ try{
   unavailable=false;stale=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.getByRole('button',{name:'Buy a print',exact:true}).click();await page.locator('[data-print-finish]').selectOption('frame-black');
   assert(await page.locator('[data-print-add]').isDisabled(),'An old backend must not sell a different print layout than the page preview');
   await page.goto(origin+'/products/painting-beach-walk/');assert.equal(await page.locator('[data-print-options]').count(),0);assert.match(await page.locator('.product-print-availability').textContent(),/not yet available/);
-  assert.deepEqual(errors,[]);console.log('PASS: product-page sizes, frame prices, mobile layout, selection replacement, cart details and exact quote IDs; no payments or print orders.');
+  assert.deepEqual(errors,[]);console.log('PASS: product-page sizes, frame prices, mobile layout, multiple finish selections, cart details and exact quote IDs; no payments or print orders.');
 }finally{await browser.close();}

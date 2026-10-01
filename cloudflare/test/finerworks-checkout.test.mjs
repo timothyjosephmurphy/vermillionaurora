@@ -8,6 +8,10 @@ import prints from '../print-catalog.mjs';
 const ids=['print-painting-portrait-in-green-small','print-painting-portrait-in-gold-small'];
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
 const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),PAYPAL_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
+const originalPrints=structuredClone(prints);
+// Explicit sample fixtures keep the historical security gates covered after
+// Chase and Dorian graduate to normal full-resolution editions.
+function useSampleFixtures(){for(const id of ids){prints[id].sampleOnly=true;prints[id.replace('-small','-medium')].sampleOnly=true;}}
 let calls,payment,submission,loseReply,unitCost,objects,mailCount,activeMode,captureSequence=0;
 beforeEach(()=>{
   calls=[];payment=null;submission=null;loseReply=false;unitCost=7;objects=[];mailCount=0;activeMode='sandbox';
@@ -37,7 +41,7 @@ beforeEach(()=>{
     throw Error(`Unexpected external request: ${u.origin}${u.pathname}`);
   }));
 });
-afterEach(async()=>{for(const o of objects)await runInDurableObject(o,(_,ctx)=>ctx.storage.deleteAlarm());vi.unstubAllGlobals();});
+afterEach(async()=>{for(const o of objects)await runInDurableObject(o,(_,ctx)=>ctx.storage.deleteAlarm());vi.unstubAllGlobals();for(const id of Object.keys(originalPrints))prints[id]=structuredClone(originalPrints[id]);});
 const inspect=o=>runInDurableObject(o,i=>i.read());
 async function setup(overrides={},selection=ids) {
   const config={...settings,...overrides};activeMode=config.PAYPAL_MODE;
@@ -48,21 +52,23 @@ async function setup(overrides={},selection=ids) {
 }
 async function pay(order){await order.start('paypal');payment.status='APPROVED';await order.capture();}
 it('full-image editions preserve paper geometry and exact files through paid fulfillment without changing original stock',async()=>{
-  const selection=['print-paul-murphy-painting-55-full','print-paul-murphy-painting-86-small','print-paul-murphy-painting-72-medium'];
+  const selection=['print-paul-murphy-painting-55-full','print-paul-murphy-painting-86-small','print-paul-murphy-painting-72-medium','print-painting-portrait-in-green-small','print-painting-portrait-with-hat-full'];
   const stock=env.PAINTING_STOCK.getByName('paul-murphy-painting-86'),before=await stock.status();
   const {order,quote}=await setup({PRINT_CHECKOUT_IDS:selection.join(',')},selection);
   expect(quote.items.every(i=>i.imageSize.width<i.paperSize.width&&i.layoutApproved&&!i.sampleOnly)).toBe(true);expect(submission).toBeNull();
   await pay(order);await order.refresh();await order.refresh();
   const saved=await inspect(order);expect(saved.status).toBe('paid');expect(saved.printJob.status).toBe('test-complete');
-  expect(submission.order_items).toHaveLength(3);
+  expect(submission.order_items).toHaveLength(selection.length);
   for(const id of selection){const p=prints[id];expect(submission.order_items.some(i=>i.product_sku===p.sku&&i.product_image.product_url_file===p.assetUrl)).toBe(true);}
   expect(calls.filter(c=>c.url.endsWith('submit_orders_v2'))).toHaveLength(1);expect(await stock.status()).toBe(before);
   expect(calls.findIndex(c=>c.url.endsWith('/capture'))).toBeLessThan(calls.findIndex(c=>c.url.endsWith('submit_orders_v2')));
 });
 it('allows sandbox pilots while live samples require their separate enablement flag',()=>{
+  useSampleFixtures();
   for(const id of ids){expect(paymentMethods({...env,...settings},id)).toEqual(['paypal']);expect(paymentMethods({...env,...settings,PAYPAL_MODE:'live',FINERWORKS_PAYMENT_TOKEN:'invoice'},id)).toEqual([]);expect(paymentMethods({...env,...settings,FINERWORKS_ORDER_ENABLED:'false'},id)).toEqual([]);}
 });
 it('live sample gate never admits sandbox-only files or multiple copies of one painting',()=>{
+  useSampleFixtures();
   const live={...env,...settings,PAYPAL_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'};
   expect(paymentMethods(live,ids[0])).toEqual(['paypal']);
   expect(paymentMethods({...live,LIVE_PRINT_SAMPLE_ENABLED:'false'},ids[0])).toEqual([]);
@@ -70,14 +76,14 @@ it('live sample gate never admits sandbox-only files or multiple copies of one p
   expect(()=>cartItems([{id:ids[0],quantity:2}])).toThrow(/one copy/);
   expect(()=>cartItems([{id:ids[0],quantity:1},{id:ids[0].replace('-small','-medium'),quantity:1}])).toThrow(/one copy/);
 });
-it('live payment precedes one billed sample submission and archives the sale without billing credentials',async()=>{
+it('live payment precedes one billed full-resolution edition submission and archives the sale without billing credentials',async()=>{
   const ledger=env.SALES_LEDGER.getByName('live:2026-09');objects.push(ledger);await runInDurableObject(ledger,i=>{i.env={...i.env,PAYPAL_MODE:'live'};});
   const {order,orderId}=await setup({PAYPAL_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'});
   await order.start('paypal');expect(submission).toBeNull();payment.status='APPROVED';await order.capture();await order.refresh();await order.refresh();
   const saved=await inspect(order);expect(saved.status).toBe('paid');expect(saved.printJob.status).toBe('in-production');
   expect(submission.order_items).toHaveLength(2);expect(calls.filter(c=>c.url.endsWith('submit_orders_v2'))).toHaveLength(1);
   expect(calls.findIndex(c=>c.url.endsWith('/capture'))).toBeLessThan(calls.findIndex(c=>c.url.endsWith('submit_orders_v2')));
-  expect(submission.order_items.every(i=>i.product_image.product_url_file.startsWith('https://vermillionaurora.com/print-samples/'))).toBe(true);
+  expect(submission.order_items.every(i=>i.product_image.product_url_file.startsWith('https://vermillionaurora.com/print-editions/'))).toBe(true);
   const archived=await (await env.SALES_ARCHIVE.get(`orders/live/${orderId}.json`)).text();expect(archived).not.toContain('fake-live-payment-token');expect(JSON.parse(archived).receipt.mode).toBe('live');
 });
 it('records one payment and one FinerWorks order containing both paintings without touching originals',async()=>{
