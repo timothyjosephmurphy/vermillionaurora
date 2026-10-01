@@ -181,6 +181,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         revision += 1;
         quote = null;
         quotedAddress = null;
+        setQuoteButtonDisabled(false);
+        submit.textContent = 'Calculate shipping & tax';
         pay.disabled = true;
         pay.textContent = 'Buy with PayPal';
         bitcoin.disabled = true;bitcoin.textContent = 'Buy with Bitcoin';
