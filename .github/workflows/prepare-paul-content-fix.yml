@@ -70,8 +70,9 @@ jobs:
           assert.equal(bookLink.text(),'You can also explore Reflections on Time here.');
           assert.match(gallery('style').text(),/\.paul-introduction a\{[^}]*text-decoration:underline/);
           const paintingLink=gallery('.paul-gallery a[href="/products/paul-murphy-painting-8/"]');
-          assert.ok(paintingLink.length>0);
-          assert.match(paintingLink.text(),/Arizona Slot Cave/);
+          assert.equal(paintingLink.length,1);
+          assert.match(paintingLink.attr('data-caption'),/Arizona Slot Cave/);
+          assert.equal(paintingLink.find('img').attr('alt'),'Arizona Slot Cave by Paul Murphy');
           assert.ok(!gallery.html().includes('Arixona'));
           const painting=load(readFileSync('dist/products/paul-murphy-painting-8/index.html','utf8'));
           assert.equal(painting('h1').text(),'Arizona Slot Cave');
@@ -81,11 +82,12 @@ jobs:
           assert.equal(book('#read-book iframe').length,1);
           assert.ok(book('#read-book iframe').attr('src').startsWith('https://'));
           assert.ok(book('#read-book a').attr('href').startsWith('https://'));
-          console.log('PASS: full-sentence underlined book link, PDF viewer, gallery title, product title/metadata and checkout title.');
+          console.log('PASS: full-sentence underlined book link, PDF viewer, gallery caption/alt, product title/metadata and checkout title.');
           NODE
       - name: Commit only source corrections and generated checkout catalog
         run: |
           git diff --check
+          git diff --exit-code -- cloudflare/print-catalog.mjs
           git add catalog/products.json src/pages/exhibitions/paul-murphy/index.astro cloudflare/checkout-catalog.mjs
           git diff --cached --stat
           git config user.name 'github-actions[bot]'
