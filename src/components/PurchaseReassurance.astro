@@ -1,0 +1,10 @@
+---
+const {kind='all'}=Astro.props;
+---
+<aside class="purchase-reassurance" aria-label="Shipping and returns information">
+{kind!=='print'&&<p>Originals dispatch in 3–5 business days. Request a return within 14 days of delivery.</p>}
+{kind!=='original'&&<p>Prints dispatch in 3–5 business days; framed or matted prints in 7–12. Made to order; change-of-mind returns close when production starts.</p>}
+<p>Carrier transit is additional. Help with damage, defects, or delivery issues is included.</p>
+<p><a href="/shipping-returns/">Shipping &amp; returns</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:tj@vermillionaurora.com?subject=Order%20help">Ask TJ</a></p>
+</aside>
+<style>.purchase-reassurance{margin:16px 0;font-size:.82rem;line-height:1.6}.purchase-reassurance p{margin:6px 0}.purchase-reassurance a{text-decoration:underline;text-underline-offset:3px}</style>

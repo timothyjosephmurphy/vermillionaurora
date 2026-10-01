@@ -1,0 +1,49 @@
+---
+import PolicyLayout from '../../layouts/PolicyLayout.astro';
+---
+<PolicyLayout title="Private commission references" description="Owner access to private commission uploads and retention dates." noindex>
+<p>First-time setup: add an encrypted secret named <code>COMMISSION_MANAGER_TOKEN</code> to the <code>vermillion-commissions</code> Worker in Cloudflare. Use a unique password of at least 32 random characters and save it in your password manager.</p>
+<p>Owner access only. Use the dedicated commission management credential from the Worker’s secrets. It stays in memory for this page and is never included in a link or saved in browser storage.</p>
+<form id="manager-login"><label>Management credential <input id="manager-token" type="password" autocomplete="off" required/></label><button class="button button-solid" type="submit">Open references</button></form>
+<div id="manager-controls" hidden><button type="button" id="manager-refresh">Current references</button><button type="button" id="manager-legacy">Review older uploads</button><button type="button" id="manager-lock">Lock</button></div>
+<p id="manager-status" role="status" aria-live="polite"></p><div id="manager-records"></div><button type="button" id="manager-more" hidden>Load more</button>
+<p>Match the request ID to the commission notification email. Set an agreed review date when accepting a commission, then record the actual completion or cancellation date. Image deletion is scheduled 90 days later. Delete any older email attachments and local working copies separately. Keep only necessary transaction records.</p>
+<script>
+const api='https://vermillion-commissions.timothyjosephmurphy.workers.dev/commission-privacy';
+const $=id=>document.getElementById(id);
+let token='',cursor=null,mode='list';
+const status=$('manager-status'),records=$('manager-records');
+async function request(body,download=false){
+ const response=await fetch(api,{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`},body:JSON.stringify(body)});
+ if(!response.ok){const data=await response.json().catch(()=>({}));throw Error(data.error||'Unable to open references');}
+ return download?response.blob():response.json();
+}
+function text(tag,value,parent){const el=document.createElement(tag);el.textContent=value;parent.append(el);return el;}
+function button(label,parent,action){const b=text('button',label,parent);b.type='button';b.addEventListener('click',async()=>{b.disabled=true;try{await action();}catch(error){status.textContent=error.message;}finally{b.disabled=false;}});return b;}
+function render(record){
+ const article=document.createElement('article');records.append(article);
+ text('h2',record.id,article);text('p',`Status: ${record.status}${record.expiresAt?' · Scheduled deletion: '+new Date(record.expiresAt).toLocaleDateString():''}`,article);
+ if(record.status==='legacy-review'){
+  text('p','Older upload: its project dates must be reviewed. Importing it starts a 90-day schedule; then enter the correct completion date or an agreed active-project date.',article);
+  button('Manage this older reference',article,async()=>{await request({action:'adopt',id:record.id});await load('list');});return;
+ }
+ for(const file of record.files)button('Download '+file.originalName,article,async()=>{const blob=await request({action:'download',id:record.id,key:file.key},true);const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=file.originalName;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+ const form=document.createElement('form');article.append(form);
+ const label=text('label','Project status ',form),select=document.createElement('select');label.append(select);
+ for(const [value,title] of [['complete','Completed'],['cancelled','Cancelled'],['active','Active commission'],['agreed-extension','Agreed extended retention']]){const option=text('option',title,select);option.value=value;}
+ const dateLabel=text('label',' Completion / cancellation date ',form),date=document.createElement('input');date.type='date';date.required=true;date.value=new Date().toLocaleDateString('en-CA');dateLabel.append(date);
+ const agreedLabel=text('label','',form),agreed=document.createElement('input');agreed.type='checkbox';agreedLabel.append(agreed,document.createTextNode(' This retention date was agreed with the customer; the agreement is saved in correspondence.'));agreedLabel.hidden=true;
+ select.addEventListener('change',()=>{const extend=['active','agreed-extension'].includes(select.value);dateLabel.firstChild.textContent=extend?' Agreed retention / deletion date ':' Completion / cancellation date ';agreedLabel.hidden=!extend;agreed.required=extend;});
+ const save=text('button','Save retention schedule',form);save.type='submit';
+ form.addEventListener('submit',async event=>{event.preventDefault();if(!form.reportValidity())return;save.disabled=true;try{const extend=['active','agreed-extension'].includes(select.value);await request({action:'update',id:record.id,status:select.value,...(extend?{expiresAt:new Date(date.value+'T00:00:00').toISOString(),agreed:agreed.checked}:{completedAt:new Date(date.value+'T00:00:00').toISOString()})});await load('list');status.textContent='Retention schedule saved.';}catch(error){status.textContent=error.message;}finally{save.disabled=false;}});
+ button('Delete private reference files now',article,async()=>{if(!confirm('Permanently delete these private images? Sales records and email copies are not changed.'))return;await request({action:'delete',id:record.id,confirm:record.id});await load('list');status.textContent='Private reference files deleted. Review any email or local copies separately.';});
+}
+async function load(nextMode=mode,more=false){mode=nextMode;if(!more){records.replaceChildren();cursor=null;}status.textContent='Loading private references…';$('manager-more').hidden=true;const result=await request({action:mode,...(cursor?{cursor}:{})});result.records.forEach(render);cursor=result.cursor;$('manager-more').hidden=!cursor;status.textContent=result.records.length?'References loaded.':'No references on this page.';$('manager-controls').hidden=false;}
+$('manager-login').addEventListener('submit',async event=>{event.preventDefault();token=$('manager-token').value;$('manager-token').value='';try{await load('list');$('manager-login').hidden=true;}catch(error){token='';status.textContent=error.message;}});
+$('manager-refresh').addEventListener('click',()=>load('list').catch(e=>status.textContent=e.message));
+$('manager-legacy').addEventListener('click',()=>load('legacy').catch(e=>status.textContent=e.message));
+$('manager-more').addEventListener('click',()=>load(mode,true).catch(e=>status.textContent=e.message));
+$('manager-lock').addEventListener('click',()=>{token='';records.replaceChildren();$('manager-controls').hidden=true;$('manager-more').hidden=true;$('manager-login').hidden=false;status.textContent='Locked.';});
+window.addEventListener('pagehide',()=>{token='';records.replaceChildren();$('manager-controls').hidden=true;$('manager-more').hidden=true;$('manager-login').hidden=false;status.textContent='Locked.';});
+</script>
+</PolicyLayout>
