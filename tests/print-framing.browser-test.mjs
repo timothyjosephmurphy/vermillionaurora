@@ -76,7 +76,7 @@ try{
   assert.match(await page.locator('[data-cart-items]').textContent(),/Natural wood frame/);
   assert.match(await page.locator('[data-cart-items]').textContent(),/Premium Clear acrylic/);
   for(const [name,value]of Object.entries({email:'buyer@example.test',name:'Test Buyer',street1:'600 4th Ave',city:'Seattle',state:'WA',zip:'98104'}))await page.locator(`[name="${name}"]`).fill(value);
-  await page.locator('[data-cart-quote]').click();await page.locator('[data-cart-payments]').waitFor({state:'visible'});
+  await page.locator('[data-cart-quote]').click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.locator('[data-cart-payments]').waitFor({state:'visible'});
   assert.deepEqual(quotes[0].items,cart);assert.equal(quotes[0].catalogVersion,'framed-test-'+printVersion);
   assert.match(await page.locator('[data-cart-total]').textContent(),/183.58/);
   unavailable=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.getByRole('button',{name:'Buy a print',exact:true}).click();await page.locator('[data-print-finish]').selectOption('frame-black');
