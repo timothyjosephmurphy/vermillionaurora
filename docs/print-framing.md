@@ -2,14 +2,31 @@
 
 Painting product pages show print availability independently of original-artwork
 availability. Configured live samples for Dorian Nakamoto and Chase Toole offer
-three sizes, with unframed, black, white, or natural wood framing. Other paintings
-show that prints are not yet available. Existing sample-quality disclosures and
-one-copy-per-artwork limits continue to apply.
+three sizes, with unframed, black, white, or natural wood framing. All 39 Paul
+Murphy paintings also offer these three frame finishes across their 115 approved
+print sizes (345 framed variants). Existing sample-quality disclosures and
+one-copy-per-artwork limits apply only to the two portrait samples.
+
+Paul Murphy editions retain their existing full-image, 300-DPI files and narrow
+white safety margin. Both the physical print size and nominal mat opening use
+the complete paper size; the supplier's small mat overlap falls on the white
+margin. The print is not resized to its inner image dimensions or cropped to
+fit a standard frame. Each mat fits the smallest supported standard frame with
+at least one inch of board around the paper. The preview and cart show that
+frame opening size and the selected finish. Original artwork dimensions,
+availability and prices are independent of these print products.
+
+`payments/quote-paul-frames.mjs` retrieves authenticated, read-only supplier
+validation and pricing in the existing isolated sandbox. Its temporary audit
+credential is removed afterward. `payments/apply-paul-frame-quotes.mjs` applies
+only a complete current result that matches every source hash, print-file hash,
+base product code, mat, frame and unframed price. No print order is placed.
 
 The three frame choices are FinerWorks Gallery Economy IDs 1, 2, and 7, verified
 through the authenticated catalog on September 30, 2026. Framed prints include
 Snow White 4-ply matting (ID 1) and Premium Clear acrylic glazing (ID 1). The frame
-fit follows the mat outer dimensions: 8 × 10, 11 × 14, or 16 × 20 inches. These are
+fit follows the mat outer dimensions: 8 × 10, 11 × 14, or 16 × 20 inches for the
+portrait samples, with other supported sizes for the Paul Murphy editions. These are
 frame opening dimensions, not exterior moulding dimensions.
 
 | Print size | Unframed | Black or white frame | Natural wood frame |

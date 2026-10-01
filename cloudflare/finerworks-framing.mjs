@@ -26,27 +26,39 @@ export async function finerworksGlazing(env) {
   return data.glazing.filter(g=>Number.isSafeInteger(g.id)&&g.id>0).map(g=>({id:g.id,name:text(g.name),description:text(g.description,600),composite:g.composite,startingPrice:number(g.starting_price)}));
 }
 export async function quoteFramedOption(env,materials,option,frameKey,published={}) {
-  const saved=frames.frames.find(f=>f.key===frameKey);
-  if(!saved)throw Error('Frame style is not offered');
-  const collections=await finerworksFrames(env,option.paper.sku,saved.collectionId);
-  const active=collections.find(c=>c.id===saved.collectionId)?.frames.find(f=>f.id===saved.id);
-  const glazing=(await finerworksGlazing(env)).find(g=>g.id===frames.glazing.id&&g.name===frames.glazing.name);
-  const matMaterial=(await finerworksMats(env)).find(m=>m.name==='Snow White'&&m.thickness===4);
+  return (await quoteFramedOptions(env,materials,option,[frameKey],{[frameKey]:published}))[0];
+}
+// Batch the three finishes so catalog preparation does not repeatedly request
+// identical material lists, and validate every complete code before pricing.
+export async function quoteFramedOptions(env,materials,option,frameKeys,published={}) {
+  if(!Array.isArray(frameKeys)||!frameKeys.length||frameKeys.length>3||new Set(frameKeys).size!==frameKeys.length)throw Error('Choose up to three frame styles');
+  const savedFrames=frameKeys.map(key=>frames.frames.find(f=>f.key===key));
+  if(savedFrames.some(f=>!f)||new Set(savedFrames.map(f=>f.collectionId)).size!==1)throw Error('Frame style is not offered');
+  const [collections,glazingOptions,matMaterials]=await Promise.all([finerworksFrames(env,option.paper.sku,savedFrames[0].collectionId),finerworksGlazing(env),finerworksMats(env)]);
+  const glazing=glazingOptions.find(g=>g.id===frames.glazing.id&&g.name===frames.glazing.name);
+  const matMaterial=matMaterials.find(m=>m.name==='Snow White'&&m.thickness===4);
   const mat=matMaterial&&matLayout(option.paper,option.image,matMaterial);
-  if(!active||active.name!==saved.name||active.composite!==saved.composite||active.width!==saved.width||!mat)throw Error('FinerWorks frame material needs review');
-  const frame=frameFinish({...active,key:saved.key,collectionId:saved.collectionId,label:saved.label,previewColor:saved.previewColor},glazing,mat);
-  if(!frame)throw Error('FinerWorks frame size or glazing needs review');
   const match=option.paper.sku.match(/^(\d+)M(\d+)M(\d+)S/);
   const media=materials.media.find(m=>m.id===Number(match?.[2])),style=materials.styles.find(s=>s.id===Number(match?.[3]));
-  const build={...matProductBuild(media,style,option.image,option.paper,mat),FrameID:frame.id,GlassID:frame.glazing.id};
-  const result=await finerworksRequest(env,'/v3/build_product_code',{build});
-  const sku=result.product_code;
-  if(typeof sku!=='string'||!/^[A-Za-z0-9._-]{1,160}$/.test(sku))throw Error('FinerWorks did not return a valid framed product code');
-  const validation=await finerworksRequest(env,'/v3/validate_product',{skus_or_codes:[sku]});
+  const options=await Promise.all(savedFrames.map(async saved=>{
+    const active=collections.find(c=>c.id===saved.collectionId)?.frames.find(f=>f.id===saved.id);
+    if(!active||active.name!==saved.name||active.composite!==saved.composite||active.width!==saved.width||!mat)throw Error('FinerWorks frame material needs review');
+    const frame=frameFinish({...active,key:saved.key,collectionId:saved.collectionId,label:saved.label,previewColor:saved.previewColor},glazing,mat);
+    if(!frame)throw Error('FinerWorks frame size or glazing needs review');
+    const build={...matProductBuild(media,style,option.image,option.paper,mat),FrameID:frame.id,GlassID:frame.glazing.id};
+    const result=await finerworksRequest(env,'/v3/build_product_code',{build}),sku=result.product_code;
+    if(typeof sku!=='string'||!/^[A-Za-z0-9._-]{1,160}$/.test(sku))throw Error('FinerWorks did not return a valid framed product code');
+    return {sku,frame};
+  }));
+  const codes=options.map(o=>o.sku);
+  if(new Set(codes).size!==codes.length)throw Error('FinerWorks returned duplicate frame product codes');
+  const validation=await finerworksRequest(env,'/v3/validate_product',{skus_or_codes:codes});
   const rows=validation.product_validations;
-  if(!Array.isArray(rows)||rows.length!==1||rows[0].valid!==true||!(rows[0].product_code===sku||rows[0].product_sku===sku))throw Error('FinerWorks did not validate the exact framed print');
-  const [price]=await finerworksPrices(env,[sku]);
-  if(!price?.ok||Number(price.matCost)<=0||Number(price.frameCost)<=0||Number(price.glazingCost)<=0||Number(price.secondMatCost)!==0)throw Error('No verified complete framed print price');
-  return {id:`${option.id}-frame-${frameKey}`,baseId:option.id,key:option.key,finishKey:`frame-${frameKey}`,mat,frame,sku,baseSku:option.paper.sku,image:option.image,paper:{...option.paper,sku},
-    quote:price,pricing:reviewFramedPrice(price,option.amount,published?.sku===sku?published:{}),quotedAt:new Date().toISOString(),sellable:false};
+  if(!Array.isArray(rows)||rows.length!==codes.length||codes.some(sku=>rows.filter(r=>r.valid===true&&(r.product_code===sku||r.product_sku===sku)).length!==1))throw Error('FinerWorks did not validate the exact framed print');
+  const prices=await finerworksPrices(env,codes),quotedAt=new Date().toISOString();
+  return options.map(({sku,frame})=>{
+    const price=prices.find(p=>p.code===sku),saved=published[frame.key];
+    if(!price?.ok||Number(price.matCost)<=0||Number(price.frameCost)<=0||Number(price.glazingCost)<=0||Number(price.secondMatCost)!==0)throw Error('No verified complete framed print price');
+    return {id:`${option.id}-frame-${frame.key}`,baseId:option.id,key:option.key,finishKey:`frame-${frame.key}`,mat,frame,sku,baseSku:option.paper.sku,image:option.image,paper:{...option.paper,sku},quote:price,pricing:reviewFramedPrice(price,option.amount,saved?.sku===sku?saved:{}),quotedAt,sellable:false};
+  });
 }

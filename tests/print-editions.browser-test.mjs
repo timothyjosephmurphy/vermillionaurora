@@ -6,7 +6,7 @@ import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 const origin='https://vermillionaurora.com',root=path.resolve('dist');
 const editions=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional');
-const ids=[...new Set(editions.map(p=>p.productId))];assert.equal(ids.length,39);assert.equal(editions.length,115);
+const ids=[...new Set(editions.map(p=>p.productId))];assert.equal(ids.length,39);assert.equal(editions.filter(p=>!p.frame).length,115);assert.equal(editions.filter(p=>p.frame).length,345);
 const available=editions.map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['paypal','bitcoin']}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
 try {
@@ -44,8 +44,8 @@ try {
       const dialog=page.locator('[data-print-dialog]'),trigger=page.getByRole('button',{name:'Buy a print',exact:true});
       assert(await dialog.isHidden());await trigger.click();
       assert.match(await dialog.textContent(),/without cropping or stretching/);assert.doesNotMatch(await dialog.textContent(),/% of the original/);
-      assert.equal(await page.locator('[data-print-finish] option').count(),1);
-      const variants=editions.filter(p=>p.productId===id);assert.equal(await page.locator('.print-choice').count(),variants.length);
+      assert.equal(await page.locator('[data-print-finish] option').count(),4);
+      const variants=editions.filter(p=>p.productId===id&&!p.frame);assert.equal(await page.locator('.print-choice').count(),variants.length);
       for(const variant of variants){
         await page.locator(`input[value="${variant.id}"]`).check();
         await page.waitForFunction(()=>!document.querySelector('[data-print-add]').disabled);
@@ -61,12 +61,17 @@ try {
       }
       await page.keyboard.press('Escape');assert(await dialog.isHidden());assert(await trigger.evaluate(el=>el===document.activeElement));
       await trigger.click();
+      const frameKey=['black','white','natural'][ids.indexOf(id)%3],framed=editions.find(p=>p.id===`${variants.at(-1).id}-frame-${frameKey}`);
+      await page.locator('[data-print-finish]').selectOption(`frame-${frameKey}`);
+      assert.equal(await page.locator('[data-print-total]').textContent(),`Framed print: $${Number(framed.amount).toFixed(2)}`);
+      assert(await page.locator('[data-print-add]').isEnabled());
       await Promise.all([page.waitForURL(origin+'/cart/'),page.locator('[data-print-add]').click()]);
       await page.locator('.cart-line').waitFor();
-      const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-v1')));assert.deepEqual(saved,[{id:variants.at(-1).id,quantity:1}]);
+      const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-v1')));assert.deepEqual(saved,[{id:framed.id,quantity:1}]);
+      assert.match(await page.locator('.cart-frame-description').textContent(),new RegExp(framed.frame.name));
     }
   }
   stale=true;await page.goto(origin+'/products/paul-murphy-painting-55/#print-options');
   assert(await page.locator('[data-print-dialog]').isVisible());assert(await page.locator('[data-print-add]').isDisabled());
-  assert.deepEqual(errors,[]);console.log('PASS: all 39 gallery links, 115 print sizes/prices, desktop/mobile dialogs, automatic cart navigation with saved selections and stale-release protection; providers mocked.');
+  assert.deepEqual(errors,[]);console.log('PASS: all 39 gallery links, 115 print sizes and 345 framed variants, desktop/mobile dialogs and framed cart selections; providers mocked.');
 } finally {await browser.close();}
