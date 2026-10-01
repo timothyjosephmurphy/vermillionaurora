@@ -1,7 +1,7 @@
 import {finerworksEnvironment,finerworksRequest,finerworksMaterials,finerworksProductCode,finerworksPrices} from './finerworks-api.mjs';
 import {quoteFinerWorksPrints,validateFinerWorksPrintOrder} from './finerworks-quotes.mjs';
 import {PRINT_SCALES,scaledDimensions,inches,printOptions} from '../catalog/print-sizing.mjs';
-import {reviewPrintPrice} from '../catalog/print-pricing.mjs';
+import {reviewPrintPrice,printRetailPrice,PRINT_PRICING} from '../catalog/print-pricing.mjs';
 import config from '../catalog/prints.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {newFinerWorksJob,fulfillFinerWorks,finerworksOrderingReady} from './finerworks-fulfillment.mjs';
@@ -21,8 +21,26 @@ export async function finerworksDiagnostic(request,env,products) {
   let input;try{input=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   if(!input||Array.isArray(input)||typeof input!=='object')return reply({error:'Invalid request'},400);
   const task=input.task||'credentials';
-  if(!['credentials','materials','prices','shipping','preflight','test-order','cart-quote','matting','mats','framing-materials','framing'].includes(task))return reply({error:'Unknown diagnostic task'},400);
+  if(!['credentials','materials','prices','edition-prices','shipping','preflight','test-order','cart-quote','matting','mats','framing-materials','framing'].includes(task))return reply({error:'Unknown diagnostic task'},400);
   try {
+    if(task==='edition-prices') {
+      const ids=input.productIds;
+      if(!Array.isArray(ids)||ids.length<1||ids.length>10||new Set(ids).size!==ids.length)return reply({error:'Choose up to ten configured edition paintings'},400);
+      const artworks=ids.map(id=>products.find(p=>p.id===id&&p.type==='painting'&&config.artworks[id]?.sizing==='image-proportional'&&config.artworks[id]?.sizingApproved===true));
+      if(artworks.some(p=>!p))return reply({error:'Choose configured edition paintings'},400);
+      const materials=await finerworksMaterials(env),candidates=artworks.flatMap(p=>printOptions(p,config,papers));
+      for(const o of candidates){
+        const saved=papers.find(p=>p.paper===o.paper.paper),media=materials.media.find(m=>m.id===saved.media.id),style=materials.styles.find(s=>s.id===saved.style.id);
+        if(!media||!style||finerworksProductCode(media,style,o.paper)!==o.paper.sku)throw Error('Edition material or exact paper size needs review');
+      }
+      const prices=await finerworksPrices(env,[...new Set(candidates.map(o=>o.paper.sku))]),quotedAt=new Date().toISOString();
+      const variants=candidates.map(o=>{
+        const q=prices.find(p=>p.code===o.paper.sku);
+        if(!q?.ok||q.quantity!==1||q.shippingIncluded!==false||q.taxIncluded!==false)throw Error('An exact edition price could not be verified');
+        return {productId:o.productId,key:o.key,sku:o.paper.sku,amount:printRetailPrice(q.productionCost),pricingRule:PRINT_PRICING.id,quotedAt};
+      });
+      return reply({provider:'finerworks',mode:'sandbox',readOnly:true,ordersSubmitted:false,variants});
+    }
     if(task==='credentials'){
       await finerworksRequest(env,'/v3/test_my_credentials',undefined,'GET');
       return reply({provider:'finerworks',mode:'sandbox',readOnly:true,credentialsOk:true,providerAppMode:'not-verified'});

@@ -25,7 +25,7 @@ test('explicit overrides survive refresh and require a reason and $25 floor',()=
   assert.equal(publishedPrintPrice({sku:'old',pricingRule:PRINT_PRICING.id,amount:'25.00',quotedAt:'2026-09-30'},'new'),null);
 });
 test('both pilot paintings use saved $75/$45/$25 FinerWorks prices, never legacy PDF approvals',()=>{
-  for(const [id,art] of Object.entries(config.artworks)) {
+  for(const [id,art] of Object.entries(config.artworks).filter(([,a])=>a.sampleOnly)) {
     const product={id,type:'painting',dimensions:art.dimensions};
     const options=printOptions(product,config,papers);
     assert.deepEqual(options.map(o=>o.amount),['75.00','45.00','25.00']);

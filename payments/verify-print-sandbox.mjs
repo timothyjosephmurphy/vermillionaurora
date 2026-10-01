@@ -43,8 +43,8 @@ try {
   for(let i=0;i<18;i++){health=await read('/checkout/health');if(health.mode==='sandbox'&&health.release===process.env.DEPLOYED_SHA)break;await new Promise(r=>setTimeout(r,5000));}
   assert.equal(health.mode,'sandbox');assert.equal(health.release,process.env.DEPLOYED_SHA);
   const provider=await read('/checkout/prints/health');assert.equal(provider.provider,'finerworks');assert.equal(provider.enabled,true);assert.equal(provider.readOnly,false);
-  const cart=await read('/checkout/cart/catalog');assert.equal(cart.products.filter(p=>p.type==='print'&&!p.mat&&!p.frame&&p.methods.includes('paypal')).length,6);
-  for(const art of Object.values(config.artworks)) {
+  const cart=await read('/checkout/cart/catalog');assert.equal(cart.products.filter(p=>p.type==='print'&&p.sampleOnly&&!p.mat&&!p.frame&&p.methods.includes('paypal')).length,6);
+  for(const art of Object.values(config.artworks).filter(a=>a.testOnly||a.sampleOnly)) {
     const file=art.variants.small.asset;const r=await fetch(file.url);assert.equal(r.status,200);
     const {createHash}=await import('node:crypto');assert.equal(createHash('sha256').update(Buffer.from(await r.arrayBuffer())).digest('hex'),file.sha256);
   }

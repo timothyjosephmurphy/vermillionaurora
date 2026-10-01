@@ -3,20 +3,22 @@ import {printOptions,config,papers,sizeLabel,printVersion} from '../../catalog/p
 import FrameRecommendations from './FrameRecommendations.astro';
 const {product,preview=false}=Astro.props;
 const options=printOptions(product,config,papers);
-const publicOption=({id,label,scale,image,paper,amount,ready,paperLabel,reasons,testOnly,sampleOnly,mat,frame,finishKey,asset,matOptions,frameOptions})=>({id,label,scale,image,paper,amount,ready,paperLabel,testOnly,sampleOnly,finishKey,previewUrl:asset?.url,...(mat?{mat}:{}),...(frame?{frame}:{}),...(matOptions?{matOptions:matOptions.map(publicOption)}:{}),...(frameOptions?{frameOptions:frameOptions.map(publicOption)}:{}),...(preview?{reasons}:{})});
+const publicOption=({id,label,scale,image,paper,amount,ready,paperLabel,reasons,testOnly,sampleOnly,mat,frame,finishKey,asset,matOptions,frameOptions,sizeBasis,previewIncludesPaper})=>({id,label,scale,image,paper,amount,ready,paperLabel,testOnly,sampleOnly,finishKey,sizeBasis,previewIncludesPaper,previewUrl:asset?.url,...(mat?{mat}:{}),...(frame?{frame}:{}),...(matOptions?{matOptions:matOptions.map(publicOption)}:{}),...(frameOptions?{frameOptions:frameOptions.map(publicOption)}:{}),...(preview?{reasons}:{})});
 const publicOptions=options.map(publicOption);
 const visible=preview||options.some(o=>o.ready&&!o.testOnly);
 const sample=options.some(o=>o.sampleOnly);
+const edition=options.some(o=>o.sizeBasis==='image-proportional');
 const initial=preview?options[0]:options.find(o=>o.key==='small'&&o.ready)||options.find(o=>o.ready)||options[0];
 const frameChoices=[...new Map(options.flatMap(o=>o.frameOptions||[]).map(o=>[o.finishKey,o.frame])).entries()];
 ---
 {visible&&<section id="print-options" class="print-options" data-print-options data-print-version={printVersion} data-preview={preview?'true':'false'} data-options={JSON.stringify(publicOptions)} aria-label="Fine art print options">
   <div class="print-heading"><p class="eyebrow dark">The work, in your space</p><h2>{sample?'Order a print sample':'Order a fine art print'}</h2><p>Choose your size and presentation. Printed on textured watercolor paper by FinerWorks.</p></div>
   {sample&&!preview&&<p class="print-preview-note print-test-note">Sample-quality prints · These use the current low-resolution image, cropped to fill the portrait paper without added white margins. The preview shows the crop; trimming and matting cover a small amount at the edges. This is a real purchase and shipment. One copy per painting per order.</p>}
+  {edition&&<p class="print-preview-note">The full painting is reproduced without cropping or stretching, at 300 DPI or better. A narrow white margin protects the image during trimming. Sizes below are the paper dimensions, not measurements of the original painting. Mat and frame not included.</p>}
   {preview&&<p class="print-preview-note">Preview · Saved retail prices are shown where quoted. Ordering opens only after the print file, trimming layout, and fulfillment flow are approved.</p>}
   {preview&&options.some(o=>o.testOnly)&&<p class="print-preview-note print-test-note">Sandbox preview only · The current web images are not approved print masters. These prints are not available for purchase.</p>}
-  <fieldset class="print-sizes"><legend>Choose your image size</legend>
-    {options.map(o=><label class:list={['print-choice',{'is-selected':o.id===initial?.id}]}><input type="radio" name={`print-size-${product.id}`} value={o.id} checked={o.id===initial?.id} disabled={!preview&&!o.ready}/><span><strong>{o.label}</strong><span>{sizeLabel(o.image)}</span><small>{Math.round(o.scale*100)}% of the original width and height</small></span><b>{o.amount?`$${Number(o.amount).toFixed(2)}`:preview?'Price pending':'Coming soon'}</b></label>)}
+  <fieldset class="print-sizes"><legend>{edition?'Choose your print size':'Choose your image size'}</legend>
+    {options.map(o=><label class:list={['print-choice',{'is-selected':o.id===initial?.id}]}><input type="radio" name={`print-size-${product.id}`} value={o.id} checked={o.id===initial?.id} disabled={!preview&&!o.ready}/><span><strong>{o.label}</strong><span>{sizeLabel(edition?o.paper:o.image)}</span><small>{edition?`Image: ${sizeLabel(o.image)}`:`${Math.round(o.scale*100)}% of the original width and height`}</small></span><b>{o.amount?`$${Number(o.amount).toFixed(2)}`:preview?'Price pending':'Coming soon'}</b></label>)}
   </fieldset>
   <label class="print-mat-label">Presentation
     <select data-print-finish aria-describedby={`mat-description-${product.id}`}>
