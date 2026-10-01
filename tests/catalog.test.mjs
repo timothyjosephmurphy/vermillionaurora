@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {load} from 'cheerio';
 import {products,collections,byId,catalogVersion,validateCatalog,priceLabel,dimensionLabel} from '../catalog/catalog.mjs';
+import {estimatePaperParcelWeightLb} from '../catalog/shipping-estimates.mjs';
 import checkout,{catalogVersion as workerVersion} from '../cloudflare/checkout-catalog.mjs';
 import {inventoryStatus} from '../cloudflare/inventory-api.mjs';
 test('every product renders at its stable URL with matching content and checkout price',()=>{
@@ -18,6 +19,20 @@ test('gallery rows and shared cards use the catalog and preserve collection orde
 test('invalid identities, missing assets, unsafe prices and shipping stop the build',()=>{
  const change=fn=>{const copy=structuredClone(products);fn(copy);assert.throws(()=>validateCatalog(copy,collections));};
  change(p=>p.push(p[0]));change(p=>p[0].image.src='/missing-artwork.jpg');change(p=>p.find(x=>x.checkout?.mode==='integrated').listing.price.amount='-1.00');change(p=>p.find(x=>x.checkout?.mode==='integrated').checkout.shipping.weight=0);change(p=>p[0].slug='renamed-without-migration');
+});
+test('integrated checkout profiles use dimension-based packed-weight estimates',()=>{
+ const integrated=products.filter(p=>p.checkout?.mode==='integrated');
+ assert.equal(integrated.length,Object.keys(checkout).length);
+ for(const p of integrated){
+  const s=p.checkout.shipping;
+  if(['painting-portrait-in-green','painting-portrait-in-gold'].includes(p.id)){
+   assert.equal(s.weight,0.25,p.id);
+   assert.equal(s.height,0.125,p.id);
+   assert.equal(s.insuranceRequested,true,p.id);
+   continue;
+  }
+  assert.equal(s.weight,estimatePaperParcelWeightLb(p),p.id);
+ }
 });
 test('public output excludes source code, credentials and shipping notes',()=>{
  for(const path of ['cloudflare','node_modules','src','catalog/catalog.mjs','catalog/collections.json','payments/verify-production.mjs','package.json','.git'])assert.equal(fs.existsSync(`dist/${path}`),false,path);
