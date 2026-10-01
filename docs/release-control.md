@@ -5,16 +5,18 @@ This repository uses a protected two-stage release so the public website and che
 ## One-time human setup
 
 1. In Cloudflare, open the vermillionaurora Worker’s Workers Builds settings and set its production branch to release. Keep the repository root and the existing npx wrangler deploy build configuration.
-2. In GitHub, protect main:
+2. In GitHub repository Settings → Actions → General, keep workflow permissions at least Read and write and enable “Allow GitHub Actions to create and approve pull requests.” The promotion workflow uses this permission to open or update the main → release pull request after each successful main gate.
+3. In GitHub, protect main:
    - require pull requests;
    - require the Release gate / gate status check;
    - require the branch to be current before merging;
    - prevent direct pushes.
-3. Protect release:
+4. Protect release:
    - require a pull request;
+   - require the Release gate / gate status check;
    - prevent direct pushes;
    - allow the repository owner to merge the promotion pull request.
-4. After the first merge to main, wait for Propose production release to open the main → release promotion pull request. Merge it only after the Cloudflare branch setting is correct.
+5. After the first merge to main, wait for Propose production release to open the main → release promotion pull request. Merge it only after the Cloudflare branch setting is correct.
 
 ## Normal release sequence
 
