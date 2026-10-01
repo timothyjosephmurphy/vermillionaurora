@@ -69,8 +69,7 @@ try{
   await page.locator('.product-purchase-actions').screenshot({path:`/tmp/cart-preview/original-price-${width}.png`});
  }
  await buyNow.click();await page.waitForURL(origin+'/cart/?buy='+ids[0]);
- await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);assert.match(await page.locator('[data-cart-notice]').textContent(),/one-item checkout/i);
- assert.equal(await page.getByRole('link',{name:'View full cart'}).getAttribute('href'),'/cart/');
+ await page.locator('.cart-line').waitFor();assert.equal(await page.locator('.cart-line').count(),1);assert.equal(await page.locator('[data-cart-notice]').textContent().then(text=>text.trim()),'','No one-item explanatory banner is shown');assert.equal(await page.getByRole('link',{name:'View full cart'}).count(),0);
  // When a different item is already saved, Buy Now opens the entire cart.
  await page.evaluate(ids=>localStorage.setItem('va-cart-v1',JSON.stringify(ids.map(id=>({id,quantity:1})))),ids);
  await page.goto(`${origin}/products/${ids[0]}/`);

@@ -113,7 +113,7 @@
     layout.hidden=!cart.length||active;root.querySelector('[data-cart-empty]').hidden=!!cart.length||active;
     form.querySelector('[data-cart-quote]').disabled=invalid||!capabilities?.enabled||!methodIntersection().length||!!(pendingOrder&&pending(pendingOrder));
     updatePaymentControls(false);
-    if(!active){announce(!capabilities?'Availability could not be verified. Please refresh before checkout.':!capabilities.enabled?'Cart checkout is not available yet. Please contact TJ to arrange a purchase.':invalid?'Please remove unavailable items before checking out.':cart.length&&!methodIntersection().length?'These artworks do not share a payment method. Please contact TJ.':'');if(buyOnly&&cart.length&&capabilities?.enabled&&!invalid&&methodIntersection().length){notice.replaceChildren(document.createTextNode('Buy Now is a one-item checkout. Other cart selections remain saved. '));const fullCart=node('a','View full cart');fullCart.href='/cart/';fullCart.className='cart-text-link';notice.append(fullCart);}}
+    if(!active){announce(!capabilities?'Availability could not be verified. Please refresh before checkout.':!capabilities.enabled?'Cart checkout is not available yet. Please contact TJ to arrange a purchase.':invalid?'Please remove unavailable items before checking out.':cart.length&&!methodIntersection().length?'These artworks do not share a payment method. Please contact TJ.':'');}
   }
   function showQuote(q){
     quoted=q;root.querySelector('[data-cart-shipping]').textContent=money(q.quote.shipping);root.querySelector('[data-cart-tax]').textContent=money(q.quote.tax);root.querySelector('[data-cart-total]').textContent=money(q.quote.total);
