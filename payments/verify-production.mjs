@@ -21,8 +21,18 @@ try{
  const denied=await fetch(base+'/checkout/sales-maintenance',{method:'POST'});if(denied.status!==404)throw Error('Unauthenticated accounting access was not denied');
  if(!audit.enabled){for(const item of eligible){const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(item.id));if(r.status!==503)throw Error('A painting is purchasable while checkout is disabled');}}
  else{
-  for(let i=0;i<eligible.length;i+=8){const results=await Promise.all(eligible.slice(i,i+8).map(async item=>{const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(item.id));return{item,status:r.status,state:await r.json()};}));
-   for(const {item,status,state} of results){console.log('Live painting checkout status:',item.id,JSON.stringify(state));if(status!==200||!['available','reserved','sold'].includes(state.status)||state.amount!==item.listing.price.amount)throw Error(`Checkout status or listed price mismatch for ${item.id}`);}
+  for(const item of eligible){
+   let status=0,state=null,lastBody='';
+   for(let attempt=0;attempt<3;attempt++){
+    const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(item.id),{signal:AbortSignal.timeout(30000)});
+    status=r.status;lastBody=await r.text();
+    try{state=JSON.parse(lastBody);}catch{state=null;}
+    if(status===200&&state)break;
+    if(attempt<2&&(status>=500||!state)){await new Promise(resolve=>setTimeout(resolve,1000*(attempt+1)));continue;}
+    throw Error(`Checkout status response invalid for ${item.id}: HTTP ${status}; body ${lastBody.slice(0,160)}`);
+   }
+   console.log('Live painting checkout status:',item.id,JSON.stringify(state));
+   if(status!==200||!['available','reserved','sold'].includes(state.status)||state.amount!==item.listing.price.amount)throw Error(`Checkout status or listed price mismatch for ${item.id}`);
   }
   const unconfigured=products.find(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price&&!eligible.includes(p));
   if(unconfigured){const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(unconfigured.id));if(r.status!==404)throw Error('Painting without a shipping profile unexpectedly has checkout');}
