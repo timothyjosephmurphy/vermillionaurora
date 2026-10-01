@@ -2,49 +2,63 @@
 import locations from '../../exhibitions/world-map/locations.json';
 const { compact = false } = Astro.props;
 const point = ([lat,lon]: number[]) => ({ x:24+(lon+180)*3.2, y:30+(90-lat)*3.2 });
-const leaderEnds: Record<string,string> = { seattle:'210,242', 'el-salvador':'215,690', warsaw:'825,176', 'cape-town':'835,690', lillooet:'190,515' };
 ---
-<div class:list={['exhibition-atlas', { 'atlas-compact': compact }]}>
-  {[...(compact ? [false] : [true,false])].map(expanded =>
-    <svg class:list={['atlas-art',expanded?'atlas-expanded':'atlas-small']} viewBox={`0 0 1200 ${expanded?870:650}`} role="img" aria-label="World map of exhibitions and murals in Seattle, Lillooet, the San Salvador area, Warsaw, and Cape Town">
-      <image href="/exhibitions/world-map/land.svg" x="0" y={expanded?190:0} width="1200" height="650" />
-      {locations.map(place => {
-        const {x:locationX,y:originalY}=point(place.coordinates);
-        const locationY=originalY+(expanded?190:0);
-        // Separate the nearby Pacific Northwest pins, with a line to the actual city point.
-        const offset=place.id==='lillooet';
-        const x=locationX-(offset?60:0),y=locationY+(offset?12:0);
-        return <g>
-          {offset && <><line x1={locationX} y1={locationY} x2={x} y2={y} stroke="#ad8673" stroke-width="1.5"/><circle cx={locationX} cy={locationY} r="3" fill="#bd381c"/></>}
-          {expanded && <polyline points={`${x},${y} ${leaderEnds[place.id]}`} fill="none" stroke="#ad8673" stroke-width="1.5" />}
-          <circle cx={x} cy={y} r="23" fill="#d34220" opacity=".13" />
-          <path d={`M ${x} ${y+10} C ${x-4} ${y+4},${x-15} ${y-5},${x-15} ${y-16} A 15 15 0 1 1 ${x+15} ${y-16} C ${x+15} ${y-5},${x+4} ${y+4},${x} ${y+10} Z`} fill="#bd381c" stroke="#fffaf2" stroke-width="2" />
-          <text x={x} y={y-11} text-anchor="middle" fill="white" font-size="15" font-weight="700">{place.number}</text>
-          {!expanded && <text x={x+(offset?-25:25)} y={y-5} text-anchor={offset?'end':'start'} fill="#3d3027" font-size="22" font-weight="600" paint-order="stroke" stroke="#f3eee5" stroke-width="5" stroke-linejoin="round">{place.city}</text>}
-        </g>;
-      })}
-    </svg>
-  )}
-  {!compact && <div class="atlas-labels">
-    {locations.map(place => <section id={`map-${place.id}`} class:list={['atlas-label',place.labelClass]} aria-labelledby={`map-${place.id}-title`}>
-      <h2 id={`map-${place.id}-title`}><span class="pin-number" aria-label={`Pin ${place.number}`}>{place.number}</span>{place.city}<small>{place.country}</small></h2>
-      <ul>{place.exhibitions.map(exhibition => <li><a href={exhibition.href||`/exhibitions/${exhibition.slug}/`}>{exhibition.name}{exhibition.type==='mural'&&<span> · Mural</span>}<span class="exhibition-date"> · {exhibition.date}</span><span aria-hidden="true"> ↗</span></a></li>)}</ul>
-    </section>)}
-  </div>}
-</div>
+{compact ? <div class="exhibition-atlas atlas-compact">
+  <svg class="atlas-art" viewBox="0 0 1200 650" role="img" aria-label="World map of exhibitions and murals in Seattle, Lillooet, San Salvador, Berlín in El Salvador, Warsaw, and Cape Town">
+    <image href="/exhibitions/world-map/land.svg" width="1200" height="650" />
+    {locations.map(place => {const {x,y}=point(place.coordinates);return <circle cx={x} cy={y} r="5" fill="#bd381c" stroke="#fffaf2" stroke-width="1.5"/>;})}
+    <g class="atlas-preview-labels">
+      <text x="270" y="116" text-anchor="middle">Seattle · Lillooet</text>
+      <text x="290" y="320" text-anchor="middle">San Salvador · Berlín</text>
+      <text x="695" y="151">Warsaw</text>
+      <text x="690" y="430">Cape Town</text>
+    </g>
+  </svg>
+</div> : <div class="exhibition-atlas" data-exhibition-atlas>
+  <div class="atlas-toolbar" aria-label="Map views" hidden>
+    <button type="button" data-map-view="world" aria-pressed="true">World view</button>
+    <button type="button" data-map-view="northwest" aria-pressed="false">Seattle &amp; Lillooet</button>
+    <button type="button" data-map-view="salvador" aria-pressed="false">San Salvador &amp; Berlín</button>
+  </div>
+  <div class="atlas-layout">
+    <div class="atlas-canvas" role="region" aria-label="Interactive map of exhibitions and murals">
+      <div class="atlas-fallback"><img src="/exhibitions/world-map/land.svg" alt="World map"/><p>Choose a city to explore its exhibitions and murals.</p></div>
+    </div>
+    <div class="atlas-places" aria-label="Exhibitions and murals by location">
+      <h2>Explore a place</h2>
+      <p class="atlas-instructions" role="status">Choose a city to see its exhibitions and murals.</p>
+      {locations.map(place => <details id={`map-${place.id}`} class="atlas-place" data-place={place.id} data-city={place.city} data-lat={place.coordinates[0]} data-lng={place.coordinates[1]} data-region={place.region || place.id} data-number={place.number}>
+        <summary><span class="pin-number" aria-hidden="true">{place.number}</span><span>{place.city}<small>{place.country}</small></span></summary>
+        <ul>{place.exhibitions.map(exhibition => <li><a href={exhibition.href||`/exhibitions/${exhibition.slug}/`}>{exhibition.name}{exhibition.type==='mural'&&<span> · Mural</span>}{exhibition.date&&<span class="exhibition-date"> · {exhibition.date}</span>}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
+      </details>)}
+    </div>
+  </div>
+</div>}
 <style>
-  .exhibition-atlas{position:relative;background:#f3eee5;border-radius:8px;color:#3d3027;isolation:isolate}
-  .atlas-art{display:block;width:100%;height:auto;font-family:Inter,Arial,sans-serif}
-  .atlas-small{display:none}.atlas-compact .atlas-small{display:block}.atlas-compact{border-radius:0}
-  .atlas-label{position:absolute;background:rgba(255,252,246,.96);border:1px solid #d7ccba;border-radius:6px;padding:18px 20px;width:30%;box-shadow:0 5px 20px #55432a08}
-  .atlas-label.seattle{left:2%;top:3%;width:35%}.atlas-label.warsaw{right:2%;top:3%}.atlas-label.salvador{left:2%;bottom:3%;width:35%}.atlas-label.cape{right:2%;bottom:3%}
-  .atlas-label.lillooet{left:2%;top:57%;width:30%}
-  .atlas-label h2{font:600 1.65rem/1.1 "Cormorant Garamond",serif;margin:0 0 14px;padding-left:36px;position:relative}
-  .atlas-label h2 small{display:block;font:500 .67rem/1.5 Inter,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;color:#776356}
-  .pin-number{position:absolute;left:0;top:1px;display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#bd381c;color:white;font:600 .78rem/1 Inter,Arial,sans-serif}
-  .atlas-label ul{margin:0;padding:0;list-style:none}.atlas-label li+li{margin-top:9px}
-  .atlas-label a{font-size:.8rem;line-height:1.5;text-decoration:underline;text-underline-offset:3px;display:inline-block}
-  .atlas-label a:hover{color:#ad321b}.atlas-label a:focus-visible{outline:3px solid #bd381c;outline-offset:4px}
-  @media(max-width:1200px){.atlas-expanded{display:none}.atlas-small{display:block}.atlas-labels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:0 18px 20px}.atlas-label.seattle,.atlas-label.warsaw,.atlas-label.salvador,.atlas-label.cape,.atlas-label.lillooet{position:static;width:auto}.atlas-label a{font-size:.85rem}}
-  @media(max-width:560px){.atlas-labels{grid-template-columns:1fr}.atlas-label{padding:18px}.atlas-label h2{font-size:1.7rem}}
+  .exhibition-atlas{background:#f3eee5;border-radius:8px;color:#3d3027;isolation:isolate;overflow:hidden}
+  .atlas-art{display:block;width:100%;height:auto;font-family:Inter,Arial,sans-serif}.atlas-compact{border-radius:0}
+  .atlas-preview-labels{fill:#3d3027;font-size:25px;font-weight:600;paint-order:stroke;stroke:#f3eee5;stroke-width:5px;stroke-linejoin:round}
+  .atlas-toolbar{display:flex;flex-wrap:wrap;gap:8px;padding:16px;border-bottom:1px solid #d7ccba}.atlas-toolbar[hidden]{display:none}
+  .atlas-toolbar button{font:500 .82rem/1.4 Inter,Arial,sans-serif;min-height:42px;padding:9px 14px;border:1px solid #cdbfae;border-radius:24px;background:#fffcf6;color:#3d3027;cursor:pointer}
+  .atlas-toolbar button[aria-pressed="true"]{background:#bd381c;border-color:#bd381c;color:white}
+  .atlas-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;align-items:stretch}
+  .atlas-canvas{min-height:570px;min-width:0;background:#f3eee5;z-index:0}
+  .atlas-fallback img{width:100%}.atlas-fallback p{padding:16px;font-size:.9rem}
+  .atlas-places{padding:22px 18px}.atlas-places h2{font:600 1.7rem/1.1 "Cormorant Garamond",serif;margin:0 0 9px}
+  .atlas-instructions{font-size:.8rem;line-height:1.6;color:#776356;margin:0 0 18px}
+  .atlas-place{background:#fffcf6;border:1px solid #d7ccba;border-radius:6px;scroll-margin-top:150px}.atlas-place+.atlas-place{margin-top:8px}
+  .atlas-place summary{display:flex;align-items:center;gap:10px;position:relative;padding:13px 28px 13px 12px;cursor:pointer;list-style:none;font:600 1rem/1.3 Inter,Arial,sans-serif}
+  .atlas-place summary::-webkit-details-marker{display:none}.atlas-place summary::after{content:'+';position:absolute;right:12px;color:#9e3218;font-size:1.2rem}.atlas-place[open] summary::after{content:'−'}
+  .atlas-place[open]{border-color:#bd381c}.atlas-place summary small{display:block;font:400 .7rem/1.5 Inter,Arial,sans-serif;margin-top:3px;color:#776356}
+  .pin-number{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#bd381c;color:white;font:600 .78rem/1 Inter,Arial,sans-serif}
+  .atlas-place ul{margin:0;padding:0 14px 16px;list-style:none}.atlas-place li+li{margin-top:12px}
+  .atlas-place a{font-size:.82rem;line-height:1.6;text-decoration:underline;text-underline-offset:3px;display:inline-block}.atlas-place a:hover{color:#ad321b}
+  .exhibition-atlas :is(a,button,summary):focus-visible{outline:3px solid #bd381c;outline-offset:3px}
+  .atlas-canvas :global(.atlas-marker){border:0;background:none}.atlas-canvas :global(.atlas-marker svg){display:block;overflow:visible}
+  .atlas-canvas :global(.atlas-marker[aria-expanded="true"] path){fill:#63220f;stroke-width:3}
+  .atlas-canvas :global(.atlas-cluster){display:grid;place-items:center;border:3px solid #fffcf6;border-radius:50%;background:#bd381c;color:white;box-shadow:0 0 0 5px #bd381c26;font:700 16px/1 Inter,Arial,sans-serif}
+  .atlas-canvas :global(.leaflet-marker-icon:focus-visible){outline:3px solid #63220f;outline-offset:5px}
+  .atlas-canvas :global(.leaflet-tooltip){font:500 12px/1.4 Inter,Arial,sans-serif}
+  @media(max-width:850px){.atlas-layout{grid-template-columns:1fr}.atlas-canvas{height:430px;min-height:0}.atlas-places{padding:22px 16px}.atlas-place summary{min-height:70px}.atlas-place ul{padding-left:48px}.atlas-toolbar{padding:12px}.atlas-toolbar button{font-size:.76rem;padding-inline:11px}}
+  @media(max-width:420px){.atlas-canvas{height:360px}}
 </style>
