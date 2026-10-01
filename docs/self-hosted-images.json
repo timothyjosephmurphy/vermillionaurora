@@ -1,0 +1,32 @@
+[
+  {
+    "source": "https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/343aef82-fcdc-42bf-b8ad-7777eac3bc65/El+Salvador+Sunrise.jpeg",
+    "path": "/gallery-images/el-salvador-sunrise.jpeg",
+    "bytes": 809252,
+    "sha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462"
+  },
+  {
+    "source": "https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/3d5953fe-7eae-43dc-8e11-ec9363fbfa8f/Honeybadger.jpeg",
+    "path": "/gallery-images/honeybadger-and-cub.jpeg",
+    "bytes": 1585423,
+    "sha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8"
+  },
+  {
+    "source": "https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/4b3b6300-d4e4-43fd-b12b-2121ee8d47f1/Esperanza+16x9.png",
+    "path": "/gallery-images/esperanza-hero.png",
+    "bytes": 1196251,
+    "sha256": "209d06c424cc741cee3b422407c8f84ee1307d9f518820eabb84b6de04d5e959"
+  },
+  {
+    "source": "https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/6cf3a871-327a-4fcf-83d8-82246c275eec/Syrenka.jpeg",
+    "path": "/gallery-images/warszawska-syrenka.jpeg",
+    "bytes": 2381161,
+    "sha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7"
+  },
+  {
+    "source": "https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/888527b2-bc28-41f3-94ae-3ce0775b39a3/Chloe.jpg",
+    "path": "/gallery-images/chloe.jpg",
+    "bytes": 1755694,
+    "sha256": "2773f444dba9eea570277485ac52fe5a1e692f52247ba40e8cceed5fd82a0b10"
+  }
+]
