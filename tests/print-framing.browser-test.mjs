@@ -15,6 +15,7 @@ try{
     if(u.pathname.startsWith('/checkout/cart/')){
       const action=u.pathname.split('/').at(-1),headers={'Access-Control-Allow-Origin':origin};
       if(action==='catalog')return route.fulfill({headers,json:{enabled:true,version:'framed-test-'+(stale?'old-layout':printVersion),products:unavailable?available.filter(p=>!p.frame):available}});
+      if(action==='hold'){const body=route.request().postDataJSON();return route.fulfill({headers,json:{orderId:body.holdId,status:'holding',heldIds:[],expiresAt:Date.now()+15*60*1000}});}
       assert.equal(action,'quote','The test must not start, capture or submit an order');
       const input=route.request().postDataJSON();quotes.push(input);
       const items=input.items.map(i=>({...available.find(p=>p.id===i.id),quantity:i.quantity}));
