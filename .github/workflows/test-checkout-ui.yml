@@ -19,7 +19,7 @@ jobs:
           node-version: '22'
       - run: npm ci
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps --only-shell chromium
       - name: Check address, quote and payment states without contacting providers
         run: |
           node tests/catalog.browser-test.mjs
