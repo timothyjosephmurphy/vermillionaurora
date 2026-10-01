@@ -1,4 +1,5 @@
 ---
+import PurchaseReassurance from '../../../components/PurchaseReassurance.astro';
 import ProductLayout from '../../../layouts/ProductLayout.astro';
 import PaintingImage from '../../../components/PaintingImage.astro';
 import CommissionProcess from '../../../components/CommissionProcess.astro';
@@ -51,6 +52,7 @@ const facts=painting ? [
       <button type="button" class="button button-ghost" data-print-open aria-haspopup="dialog" aria-controls="print-purchase-dialog">Buy a print</button>
       <p class="product-print-availability">Print available from ${printFrom.toFixed(2)}</p>
     </div>}
+    <PurchaseReassurance kind={p.listing.status==='available'?(availablePrints.length?'all':'original'):'print'}/>
   </section>}
       {p.listing.price && (!painting||p.listing.status!=='available') && <p class="product-detail-price">{priceLabel(p,painting)}</p>}
       {painting && <p class="product-availability" data-live-status>{statusLabel(p)}</p>}
