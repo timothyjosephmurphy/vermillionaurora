@@ -169,8 +169,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           submit.style.setProperty('border-color','#d0cbc5','important');
           submit.style.setProperty('color','#66615c','important');
           submit.style.setProperty('opacity','1','important');
+          submit.style.setProperty('appearance','none','important');
+          submit.style.setProperty('-webkit-appearance','none','important');
         } else {
-          for (const property of ['background-color','border-color','color','opacity']) submit.style.removeProperty(property);
+          for (const property of ['background-color','border-color','color','opacity','appearance','-webkit-appearance']) submit.style.removeProperty(property);
         }
       };
       const address = () => Object.fromEntries([...new FormData(form)].map(([key,value]) =>
