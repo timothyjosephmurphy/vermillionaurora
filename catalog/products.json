@@ -193,7 +193,7 @@
     "inquiryHref": "/?buy=el-zonte-at-sunrise#contact",
     "dimensionOrder": "width-height",
     "image": {
-      "src": "https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/343aef82-fcdc-42bf-b8ad-7777eac3bc65/El+Salvador+Sunrise.jpeg",
+      "src": "/gallery-images/el-salvador-sunrise.jpeg",
       "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
       "caption": "El Zonte at Sunrise, El Salvador"
     },
@@ -255,7 +255,7 @@
     "inquiryHref": "/?buy=honeybadger-and-cub-with-genesis-block#contact",
     "dimensionOrder": "width-height",
     "image": {
-      "src": "https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/3d5953fe-7eae-43dc-8e11-ec9363fbfa8f/Honeybadger.jpeg",
+      "src": "/gallery-images/honeybadger-and-cub.jpeg",
       "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
       "caption": "Honeybadger and Cub with Genesis Block"
     },
@@ -4619,7 +4619,7 @@
     "inquiryHref": "/?product=warszawska-syrenka#contact",
     "dimensionOrder": "width-height",
     "image": {
-      "src": "https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/6cf3a871-327a-4fcf-83d8-82246c275eec/Syrenka.jpeg",
+      "src": "/gallery-images/warszawska-syrenka.jpeg",
       "alt": "Warszawska Syrenka by TJ Murphy",
       "caption": "Warszawska Syrenka"
     },

@@ -189,7 +189,7 @@ textarea {
   inset: 0;
   background:
     linear-gradient(110deg, rgba(10, 9, 9, 0.26), rgba(117, 77, 52, 0.18)),
-    url('https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/4b3b6300-d4e4-43fd-b12b-2121ee8d47f1/Esperanza+16x9.png') center/cover no-repeat;
+    url('/gallery-images/esperanza-hero.png') center/cover no-repeat;
   filter: saturate(0.8) contrast(1.05);
 }
 
@@ -279,7 +279,7 @@ textarea {
 }
 
 .art-1 {
-  background-image: url('https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/6cf3a871-327a-4fcf-83d8-82246c275eec/Syrenka.jpeg');
+  background-image: url('/gallery-images/warszawska-syrenka.jpeg');
 }
 
 .art-meta {
@@ -371,15 +371,15 @@ textarea {
 }
 
 .image-one {
-  background-image: url('https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/6cf3a871-327a-4fcf-83d8-82246c275eec/Syrenka.jpeg');
+  background-image: url('/gallery-images/warszawska-syrenka.jpeg');
 }
 
 .image-two {
-  background-image: url('https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/3d5953fe-7eae-43dc-8e11-ec9363fbfa8f/Honeybadger.jpeg');
+  background-image: url('/gallery-images/honeybadger-and-cub.jpeg');
 }
 
 .image-three {
-  background-image: url('https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/343aef82-fcdc-42bf-b8ad-7777eac3bc65/El+Salvador+Sunrise.jpeg');
+  background-image: url('/gallery-images/el-salvador-sunrise.jpeg');
 }
 
 .product-info {
@@ -457,7 +457,7 @@ textarea {
   width: 100%;
   min-height: 560px;
   border-radius: 24px;
-  background-image: url('https://images.squarespace-cdn.com/content/v1/687c550c6b7a8c0a7bdf8fa8/888527b2-bc28-41f3-94ae-3ce0775b39a3/Chloe.jpg');
+  background-image: url('/gallery-images/chloe.jpg');
   background-size: cover;
   background-position: center;
   box-shadow: 0 24px 44px rgba(28, 18, 12, 0.12);

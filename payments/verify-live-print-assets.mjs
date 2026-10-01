@@ -2,11 +2,15 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readyPrints,printVersion} from '../catalog/prints.mjs';
+import {catalogVersion} from '../catalog/catalog.mjs';
 const prints=Object.values(readyPrints),site='https://vermillionaurora.com';
 assert.equal(prints.filter(p=>!p.mat&&!p.frame).length,6);
 assert(prints.every(p=>p.sampleOnly&&!p.testOnly&&['painting-portrait-in-green','painting-portrait-in-gold'].includes(p.productId)));
 assert(prints.filter(p=>p.frame).every(p=>p.mat&&p.frame.glazing?.id===1&&p.baseSku));
 export async function verifyLivePrintAssets() {
+  const release=await fetch(`${site}/catalog/version.json?release=${catalogVersion}`,{cache:'no-store',signal:AbortSignal.timeout(15000)});
+  assert.equal(release.status,200);
+  assert.equal((await release.json()).version,catalogVersion,'The website must expose the promoted catalog before the API deploy');
   const page=await fetch(`${site}/print-test/?release=${printVersion}`,{cache:'no-store',signal:AbortSignal.timeout(15000)});
   assert.equal(page.status,200);assert((await page.text()).includes(printVersion));
   const catalog=await (await fetch(`${site}/catalog/products.json?prints=${printVersion}`,{cache:'no-store',signal:AbortSignal.timeout(15000)})).json();

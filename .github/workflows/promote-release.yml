@@ -1,0 +1,41 @@
+name: Propose production release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release-promotion
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    uses: ./.github/workflows/release-gate.yml
+
+  propose:
+    if: github.ref == 'refs/heads/main'
+    needs: gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open or update the release promotion pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_SHA: ${{ github.sha }}
+        run: |
+          body=$(cat <<EOF
+          The reusable Release gate passed for commit $RELEASE_SHA.
+
+          Merge this promotion only after the website Worker's Cloudflare Workers Builds production branch is configured as release. Merging publishes the website first; the release deployment then waits for the matching catalog version before deploying the checkout API.
+          EOF
+          )
+          pr=$(gh pr list --repo "${{ github.repository }}" --base release --head main --state open --json number --jq '.[0].number // empty')
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --repo "${{ github.repository }}" --title "Promote main to production release" --body "$body"
+          else
+            gh pr create --repo "${{ github.repository }}" --base release --head main --title "Promote main to production release" --body "$body"
+          fi

@@ -1,0 +1,48 @@
+name: Release gate
+
+on:
+  pull_request:
+    branches: [main, release]
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-gate-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            cloudflare/test/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - name: Confirm generated catalogs are committed
+        run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
+      - run: npm test
+      - run: node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
+      - run: npm --prefix cloudflare/test ci
+      - run: npm run test:worker
+      - name: Validate production Worker configuration
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const config=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc','utf8'));
+          if(config.name!=='vermillion-commissions'||config.vars.PAYPAL_MODE!=='live') {
+            throw new Error('Unexpected production Worker configuration');
+          }
+          NODE
+      - name: Install Chromium for browser checks
+        run: npx playwright install --only-shell chromium
+      - run: npm run test:browser
