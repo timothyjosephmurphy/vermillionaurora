@@ -13,6 +13,10 @@ export function cents(value) {
   const result=Number(value.replace('.',''));if(!Number.isSafeInteger(result))throw Error('Invalid amount');return result;
 }
 export const listed=(list,id)=>!!list?.split(',').map(s=>s.trim()).includes(id);
+// Keep the explicit legacy/sample list for staged rollouts, while allowing the
+// generated, server-owned catalog to scale past Wrangler's 5.1 kB text-binding
+// limit. This flag never admits an ID absent from the generated print catalog.
+export const printCheckoutListed=(env,id)=>env.PRINT_CHECKOUT_ALL==='true'?Object.hasOwn(prints,id):listed(env.PRINT_CHECKOUT_IDS,id);
 export function paymentMethods(env,id) {
   if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS||!env.PAINTING_STOCK||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return [];
   const print=Object.hasOwn(prints,id)?prints[id]:null;
@@ -20,7 +24,7 @@ export function paymentMethods(env,id) {
   if(print) {
     if(print.testOnly&&env.PAYPAL_MODE!=='sandbox')return [];
     if(print.sampleOnly&&env.PAYPAL_MODE==='live'&&env.LIVE_PRINT_SAMPLE_ENABLED!=='true')return [];
-    if(env.PRINT_CHECKOUT_ENABLED!=='true'||!listed(env.PRINT_CHECKOUT_IDS,id))return [];
+    if(env.PRINT_CHECKOUT_ENABLED!=='true'||!printCheckoutListed(env,id))return [];
     if(print.provider==='finerworks') {if(!finerworksOrderingReady(env))return [];}
     else if(env.PRINT_PROVIDER==='finerworks'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.PAYPAL_MODE)return [];
   } else if(!env.SHIPPO_TOKEN||!env.SHIP_FROM_STREET||!catalog[id]||catalog[id].available===false)return [];
