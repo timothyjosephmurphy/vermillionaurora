@@ -35,7 +35,7 @@ try {
   await page.locator('[data-print-samples] button').click();await page.waitForURL(origin+'/cart/');await page.locator('[data-cart-form]').waitFor({state:'visible'});
   assert.equal(await page.locator('.cart-line').count(),2);assert.equal(await page.locator('.cart-line input').count(),0);assert.equal(await page.locator('.cart-line').filter({hasText:'Low-resolution sample'}).count(),2);
   for(const [name,value] of Object.entries({email:'buyer@example.test',name:'Test Buyer',street1:'600 4th Ave',city:'Seattle',state:'WA',zip:'98104'}))await page.locator(`[name="${name}"]`).fill(value);
-  await page.locator('[data-cart-quote]').click();await page.locator('[data-cart-payments]').waitFor({state:'visible'});assert.match(await page.locator('[data-cart-total]').textContent(),/63.95/);
+  await page.locator('[data-cart-quote]').click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.locator('[data-cart-payments]').waitFor({state:'visible'});assert.match(await page.locator('[data-cart-total]').textContent(),/63.95/);
   assert(calls.find(c=>c.action==='quote').body.items.every(i=>i.quantity===1&&i.id.endsWith('-small')));
   await page.locator('[data-cart-methods] button').click();await page.waitForURL('https://www.paypal.com/**');
   await page.goto(origin+'/cart/?order='+id+'&result=return');await page.waitForFunction(()=>document.querySelector('[data-order-tracking]').textContent.includes('In production'));
