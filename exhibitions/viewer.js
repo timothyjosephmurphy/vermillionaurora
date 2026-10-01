@@ -153,7 +153,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   grid.hidden = !grid.closest('.painting-gallery-page');
   const page = grid.closest('.exhibition-page');
   const hero = page?.querySelector('.exhibition-hero');
-  if (hero) hero.hidden = true;
+  if (hero && !hero.hasAttribute('data-featured-hero')) hero.hidden = true;
   const description = box.previousElementSibling?.querySelector('p');
   if (description && grid.classList.contains('exhibition-grid')) description.textContent = 'Swipe to browse or choose a thumbnail.';
   new IntersectionObserver(entries => { visible = entries[0].isIntersecting; schedule(); }, {threshold:0.1}).observe(box);
