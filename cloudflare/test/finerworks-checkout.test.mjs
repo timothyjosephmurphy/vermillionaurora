@@ -8,7 +8,7 @@ import prints from '../print-catalog.mjs';
 const ids=['print-painting-portrait-in-green-small','print-painting-portrait-in-gold-small'];
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
 const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),PAYPAL_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
-let calls,payment,submission,loseReply,unitCost,objects,mailCount,activeMode;
+let calls,payment,submission,loseReply,unitCost,objects,mailCount,activeMode,captureSequence=0;
 beforeEach(()=>{
   calls=[];payment=null;submission=null;loseReply=false;unitCost=7;objects=[];mailCount=0;activeMode='sandbox';
   vi.stubGlobal('fetch',vi.fn(async(input,init={})=>{
@@ -30,7 +30,7 @@ beforeEach(()=>{
     }
     if(u.pathname==='/v1/oauth2/token'||u.hostname==='oauth2.googleapis.com')return Response.json({access_token:'FAKE'});
     if(u.pathname==='/v2/checkout/orders'){payment={...body,id:'ORDER1',status:'CREATED',links:[{rel:'approve',href:`https://www.${activeMode==='sandbox'?'sandbox.':''}paypal.com/checkoutnow?token=ORDER1`}]};return Response.json(payment);}
-    if(u.pathname.startsWith('/v2/checkout/orders/')){if(u.pathname.endsWith('/capture')){payment.status='COMPLETED';payment.purchase_units[0].payments={captures:[{id:'FWCAPTURE',status:'COMPLETED',amount:payment.purchase_units[0].amount,create_time:'2026-09-30T12:00:00Z'}]};}return Response.json(payment);}
+    if(u.pathname.startsWith('/v2/checkout/orders/')){if(u.pathname.endsWith('/capture')){payment.status='COMPLETED';payment.purchase_units[0].payments={captures:[{id:`FWCAPTURE${++captureSequence}`,status:'COMPLETED',amount:payment.purchase_units[0].amount,create_time:'2026-09-30T12:00:00Z'}]};}return Response.json(payment);}
     if(u.pathname==='/v1/tax/calculations'){let total=Number(body.get('shipping_cost[amount]'));for(const [key,value] of body)if(/^line_items\[\d+\]\[amount\]$/.test(key))total+=Number(value);return Response.json({id:'taxcalc_FW',currency:'usd',amount_total:total+500});}
     if(u.pathname==='/v1/tax/transactions/create_from_calculation')return Response.json({id:'tax_FW'});
     if(u.hostname==='gmail.googleapis.com')return Response.json({id:`MAIL${++mailCount}`});
@@ -39,14 +39,26 @@ beforeEach(()=>{
 });
 afterEach(async()=>{for(const o of objects)await runInDurableObject(o,(_,ctx)=>ctx.storage.deleteAlarm());vi.unstubAllGlobals();});
 const inspect=o=>runInDurableObject(o,i=>i.read());
-async function setup(overrides={}) {
+async function setup(overrides={},selection=ids) {
   const config={...settings,...overrides};activeMode=config.PAYPAL_MODE;
   const orderId=crypto.randomUUID(),order=env.CART_ORDERS.getByName(orderId);objects.push(order);
   await runInDurableObject(order,i=>{i.env={...i.env,...config};});
-  const quote=await priceCart({...env,...config},cartItems(ids.map(id=>({id,quantity:1}))),address,'buyer@example.test');
+  const quote=await priceCart({...env,...config},cartItems(selection.map(id=>({id,quantity:1}))),address,'buyer@example.test');
   await order.createQuote(orderId,await keyHash('a'.repeat(64)),quote,['paypal']);return {orderId,order,quote};
 }
 async function pay(order){await order.start('paypal');payment.status='APPROVED';await order.capture();}
+it('full-image editions preserve paper geometry and exact files through paid fulfillment without changing original stock',async()=>{
+  const selection=['print-paul-murphy-painting-55-full','print-paul-murphy-painting-86-small','print-paul-murphy-painting-72-medium'];
+  const stock=env.PAINTING_STOCK.getByName('paul-murphy-painting-86'),before=await stock.status();
+  const {order,quote}=await setup({PRINT_CHECKOUT_IDS:selection.join(',')},selection);
+  expect(quote.items.every(i=>i.imageSize.width<i.paperSize.width&&i.layoutApproved&&!i.sampleOnly)).toBe(true);expect(submission).toBeNull();
+  await pay(order);await order.refresh();await order.refresh();
+  const saved=await inspect(order);expect(saved.status).toBe('paid');expect(saved.printJob.status).toBe('test-complete');
+  expect(submission.order_items).toHaveLength(3);
+  for(const id of selection){const p=prints[id];expect(submission.order_items.some(i=>i.product_sku===p.sku&&i.product_image.product_url_file===p.assetUrl)).toBe(true);}
+  expect(calls.filter(c=>c.url.endsWith('submit_orders_v2'))).toHaveLength(1);expect(await stock.status()).toBe(before);
+  expect(calls.findIndex(c=>c.url.endsWith('/capture'))).toBeLessThan(calls.findIndex(c=>c.url.endsWith('submit_orders_v2')));
+});
 it('allows sandbox pilots while live samples require their separate enablement flag',()=>{
   for(const id of ids){expect(paymentMethods({...env,...settings},id)).toEqual(['paypal']);expect(paymentMethods({...env,...settings,PAYPAL_MODE:'live',FINERWORKS_PAYMENT_TOKEN:'invoice'},id)).toEqual([]);expect(paymentMethods({...env,...settings,FINERWORKS_ORDER_ENABLED:'false'},id)).toEqual([]);}
 });

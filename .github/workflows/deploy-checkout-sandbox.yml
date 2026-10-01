@@ -54,7 +54,7 @@ jobs:
           node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.PAYPAL_CHECKOUT_ENABLED!=='true'||c.vars.PRINT_PROVIDER!=='finerworks'||c.vars.PRINT_CHECKOUT_ENABLED!=='true'||c.vars.FINERWORKS_ORDER_ENABLED!=='true'||c.main!=='checkout-sandbox.mjs')process.exit(1)"
       - name: Build production Worker without deploying
         run: |
-          node --input-type=module -e "import fs from 'node:fs';import prints from './cloudflare/print-catalog.mjs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.PAYPAL_MODE!=='live'||c.vars.PRINT_PROVIDER!=='finerworks'||c.vars.LIVE_PRINT_SAMPLE_ENABLED!=='true'||JSON.stringify(c.vars.PRINT_CHECKOUT_IDS.split(',').sort())!==JSON.stringify(Object.keys(prints).sort()))process.exit(1)"
+          node --input-type=module -e "import fs from 'node:fs';import prints from './cloudflare/print-catalog.mjs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));const listed=c.vars.PRINT_CHECKOUT_IDS.split(',').filter(Boolean);if(c.name!=='vermillion-commissions'||c.vars.PAYPAL_MODE!=='live'||c.vars.PRINT_PROVIDER!=='finerworks'||c.vars.LIVE_PRINT_SAMPLE_ENABLED!=='true'||c.vars.PRINT_CHECKOUT_ALL!=='true'||listed.some(id=>!Object.hasOwn(prints,id)))process.exit(1)"
           npx --yes wrangler@4.143.0 deploy --dry-run --config cloudflare/wrangler.jsonc --outdir /tmp/production-worker
       - name: Deploy sandbox Worker
         uses: cloudflare/wrangler-action@v4

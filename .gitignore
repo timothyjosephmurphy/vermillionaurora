@@ -8,3 +8,5 @@ dist/
 cloudflare/print-test-assets.generated.mjs
 public/print-samples/
 static/print-samples/
+static/print-editions/
+.cache/

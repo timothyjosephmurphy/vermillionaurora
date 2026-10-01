@@ -4,8 +4,10 @@ import {printAssetUrl} from '../cloudflare/print-asset-policy.mjs';
 import {withMatOptions} from './matted-options.mjs';
 import {withFrameOptions} from './framed-options.mjs';
 import {reviewedPortraitSample} from './sample-layout.mjs';
+import {editionOptions} from './edition-options.mjs';
 // Geometry functions are injected to keep this module independent of the legacy provider.
 export function finerworksOptions(product, config, papers, geometry) {
+  if(product.type==='painting'&&config.artworks[product.id]?.sizing==='image-proportional')return editionOptions(product,config,papers);
   if (product.type !== 'painting' || !product.dimensions) return [];
   const {PRINT_SCALES,scaledDimensions,inches,resolutionFor} = geometry;
   const art=config.artworks[product.id]||{}, original=inches(product.dimensions), dimensions=art.dimensions||product.dimensions;
