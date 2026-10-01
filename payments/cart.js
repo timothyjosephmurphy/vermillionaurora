@@ -2,29 +2,59 @@
    Prices, availability, reservations and totals always come from the server. */
 (() => {
   const API='https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/cart';
-  const CART='va-cart-v1',ATTEMPT='va-cart-order-v1',MAX=12;
+  const CART='va-cart-v1',ATTEMPT='va-cart-order-v1',HOLD='va-cart-reservation-v1',MAX=12;
   const read=key=>{try{return JSON.parse(localStorage.getItem(key));}catch{return null;}};
   const write=(key,value)=>{try{if(value===null)localStorage.removeItem(key);else localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
   const clean=value=>Array.isArray(value)?[...new Map(value.filter(x=>x&&/^[a-z0-9-]+$/.test(x.id||'')&&Number.isSafeInteger(x.quantity)&&x.quantity>=1&&x.quantity<=(x.id.startsWith('print-')?10:1)).map(x=>[x.id,{id:x.id,quantity:x.quantity}])).values()].slice(0,MAX):[];
-  let cart=clean(read(CART)),meta={},capabilities=null,busy=false,quoted=null,current=null,timer,buyOnly=null;
+  let cart=clean(read(CART)),meta={},capabilities=null,busy=false,quoted=null,current=null,timer,buyOnly=null,holdSession=null,heldIds=new Set(),holdQueue=Promise.resolve();
   const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
   const money=value=>`$${Number(value).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
   const api=async(action,body)=>{
-    const response=await fetch(`${API}/${action}`,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(60000)}:{cache:'no-store',signal:AbortSignal.timeout(15000)});
-    const value=await response.json();if(!response.ok)throw Error(value.error||'Checkout is temporarily unavailable.');return value;
+    const response=await fetch(`${API}/${action}`,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(action==='hold'?10000:60000)}:{cache:'no-store',signal:AbortSignal.timeout(15000)});
+    const value=await response.json();if(!response.ok){const error=Error(value.error||'Checkout is temporarily unavailable.');error.data=value;throw error;}return value;
   };
   const capabilitiesPromise=api('catalog').catch(()=>null);
   window.vaCartReady=capabilitiesPromise;
   const counts=()=>document.querySelectorAll('[data-cart-count]').forEach(el=>{const count=(buyOnly?clean(read(CART)):cart).reduce((n,i)=>n+i.quantity,0);el.textContent=String(count);el.closest('a')?.setAttribute('aria-label',`Cart, ${count} item${count===1?'':'s'}`);});
-  function saveCart(){if(buyOnly){const rest=clean(read(CART)).filter(i=>i.id!==buyOnly);write(CART,[...rest,...cart]);}else write(CART,cart);counts();document.dispatchEvent(new CustomEvent('cart:changed'));}
+  function persistCart(){if(buyOnly){const rest=clean(read(CART)).filter(i=>i.id!==buyOnly);write(CART,[...rest,...cart]);}else write(CART,cart);counts();document.dispatchEvent(new CustomEvent('cart:changed'));}
   const methodIntersection=()=>['paypal','bitcoin'].filter(m=>cart.length&&cart.every(line=>capabilities?.products.find(p=>p.id===line.id)?.methods.includes(m)));
-  const eligible=id=>capabilities?.enabled&&capabilities.products.find(p=>p.id===id&&p.status==='available');
+  const eligible=id=>capabilities?.enabled&&capabilities.products.find(p=>p.id===id&&(p.status==='available'||heldIds.has(id)));
   const pending=d=>d&&!['quoted','paid','cancelled','expired','unavailable','missing'].includes(d.status);
+  const makeHold=()=>({holdId:crypto.randomUUID(),key:[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('')});
+  function holdCredentials(){if(!holdSession||!/^[0-9a-f-]{36}$/.test(holdSession.holdId||'')||!/^[a-f0-9]{64}$/.test(holdSession.key||'')){holdSession=makeHold();write(HOLD,holdSession);}return holdSession;}
+  function applyHeldState(result){
+    const previous=heldIds;heldIds=new Set(result?.heldIds||[]);
+    for(const product of capabilities?.products||[])if(product.type!=='print'){
+      if(heldIds.has(product.id))product.status='available';
+      else if(previous.has(product.id))product.status='reserved';
+    }
+    const slug=location.pathname.match(/^\/products\/([a-z0-9-]+)\/?$/)?.[1],area=document.querySelector('[data-cart-product]');
+    if(slug&&heldIds.has(slug)&&area){area.querySelector('[data-cart-add]').disabled=false;area.querySelector('[data-cart-buy]').disabled=false;}
+    const note=document.querySelector('[data-cart-reservation]');
+    if(note){const hasOriginal=cart.some(item=>!item.id.startsWith('print-'));note.hidden=!hasOriginal;note.textContent=hasOriginal?`Originals in your cart are reserved until ${new Date(result.expiresAt).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}. Complete checkout before then to keep the reservation.`:'';}
+  }
+  function syncHold(items=cart){
+    if(!capabilities?.enabled)return Promise.resolve(null);
+    const snapshot=clean(items),identity=holdCredentials();
+    holdQueue=holdQueue.catch(()=>{}).then(async()=>{
+      const result=await api('hold',{holdId:identity.holdId,key:identity.key,items:snapshot});
+      if(result.status==='unavailable'){
+        const product=capabilities?.products.find(item=>item.id===result.unavailable);if(product)product.status='reserved';
+        heldIds=new Set(result.heldIds||[]);
+        const error=Error('That original was reserved by another buyer. Remove it from the cart to continue.');error.data=result;throw error;
+      }
+      applyHeldState(result);return result;
+    });
+    return holdQueue;
+  }
+  function saveCart(){persistCart();return syncHold(cart);}
   document.addEventListener('DOMContentLoaded',async()=>{
     const nav=document.querySelector('.main-nav');
     if(nav&&!nav.querySelector('[data-cart-link]')){const a=node('a',undefined,'cart-nav');a.href='/cart/';a.dataset.cartLink='';a.append(node('span','Cart'));const count=node('span',String(cart.length),'cart-count');count.dataset.cartCount='';a.append(count);nav.append(a);}counts();
     const root=document.querySelector('[data-cart-page]');
     capabilities=await capabilitiesPromise;
+    holdSession=read(HOLD);
+    if(!root&&cart.length&&capabilities?.enabled)try{await syncHold(cart);}catch{}
     if(root) {
       try{const r=await fetch('/catalog/products.json');const data=await r.json();meta=Object.fromEntries([...data.products,...(data.prints||[])].map(p=>[p.id,p]));}catch{}
       initializePage(root);
@@ -40,15 +70,16 @@
       if(fallback)fallback.hidden=true;
       add.hidden=false;buy.hidden=false;
       const update=()=>{add.textContent=cart.some(i=>i.id===slug)?'Added to cart':'Add to cart';};update();
-      const addItem=()=>{
-        if(!cart.some(i=>i.id===slug)){if(cart.length>=MAX){message.textContent=`Your cart holds up to ${MAX} different items.`;return false;}cart.push({id:slug,quantity:1});saveCart();}
-        update();message.replaceChildren(node('span','Added. '));const view=node('a','View your cart');view.href='/cart/';view.className='cart-text-link';message.append(view);return true;
+      const addItem=async()=>{
+        if(!cart.some(i=>i.id===slug)){if(cart.length>=MAX){message.textContent=`Your cart holds up to ${MAX} different items.`;return false;}cart.push({id:slug,quantity:1});persistCart();try{await syncHold(cart);}catch(error){cart=cart.filter(i=>i.id!==slug);persistCart();message.textContent=error.message;return false;}}
+        else try{await syncHold(cart);}catch(error){message.textContent=error.message;return false;}
+        update();message.replaceChildren(node('span','Added and reserved for 15 minutes. '));const view=node('a','View your cart');view.href='/cart/';view.className='cart-text-link';message.append(view);return true;
       };
-      add.addEventListener('click',addItem);
-      buy.addEventListener('click',()=>{const hasOtherItems=cart.some(item=>item.id!==slug);if(addItem())location.assign(hasOtherItems?'/cart/':`/cart/?buy=${encodeURIComponent(slug)}`);});
-      document.addEventListener('catalog:availability',e=>{if(e.detail?.[slug]&&e.detail[slug]!=='available'){add.disabled=true;buy.disabled=true;message.textContent='This original is currently reserved or sold.';}});
+      add.addEventListener('click',async()=>{add.disabled=true;buy.disabled=true;await addItem();add.disabled=!eligible(slug);buy.disabled=!eligible(slug);});
+      buy.addEventListener('click',async()=>{const hasOtherItems=cart.some(item=>item.id!==slug);add.disabled=true;buy.disabled=true;if(await addItem())location.assign(hasOtherItems?'/cart/':`/cart/?buy=${encodeURIComponent(slug)}`);else{add.disabled=!eligible(slug);buy.disabled=!eligible(slug);}});
+      document.addEventListener('catalog:availability',e=>{const status=e.detail?.[slug];if(!status||heldIds.has(slug))return;const product=capabilities?.products.find(item=>item.id===slug);if(product)product.status=status;if(status==='available'){add.disabled=false;buy.disabled=false;message.textContent='';}else{add.disabled=true;buy.disabled=true;message.textContent=status==='sold'?'This original has sold.':'This original is currently reserved.';}});
     }
-    window.addEventListener('storage',event=>{if(event.key===CART){cart=clean(read(CART));counts();if(root&&!busy&&!pending(current)){invalidate();render();}}});
+    window.addEventListener('storage',event=>{if(event.key===CART){cart=clean(read(CART));counts();if(root&&!busy&&!pending(current)){syncHold(cart).catch(()=>{});invalidate();render();}}if(event.key===HOLD)holdSession=read(HOLD);});
   });
   document.addEventListener('cart:add-print',event=>{
     const {id,quantity,onResult}=event.detail||{},product=eligible(id);
@@ -61,7 +92,7 @@
     const existing=cart.find(i=>i.id===id);
     if(existing&&existing.quantity+quantity>10)return respond(false,'Your cart can hold up to 10 copies of this print.');
     if(!existing&&cart.length>=MAX)return respond(false,`Your cart holds up to ${MAX} different items.`);
-    if(existing)existing.quantity+=quantity;else cart.push({id,quantity});saveCart();respond(true,'Print added to your cart.');
+    if(existing)existing.quantity+=quantity;else cart.push({id,quantity});persistCart();syncHold(cart).then(()=>respond(true,'Print added to your cart.')).catch(error=>respond(false,error.message));
   });
   let root,notice,layout,orderPanel,form,pendingOrder=null;
   function announce(text){notice.textContent=text;}
@@ -106,7 +137,7 @@
       if(isPrint&&details.frame)info.append(node('p',`${details.frame.name} frame · ${details.frame.glazing.name} acrylic · Assembled by FinerWorks`,'cart-frame-description'));
       if(!eligible(line.id)){invalid=true;info.append(node('p',live?.status==='sold'?'Sold':live?.status==='reserved'?'Temporarily reserved':'Checkout unavailable — please inquire','cart-line-unavailable'));}
       if(details?.sampleOnly)info.append(node('p','Low-resolution sample · Real printed order · One copy','cart-footnote'));
-      if(isPrint&&!details.sampleOnly){const label=node('label','Quantity '),quantity=node('input');quantity.type='number';quantity.min='1';quantity.max='10';quantity.step='1';quantity.value=String(line.quantity);quantity.setAttribute('aria-label',`Quantity of ${details.title}`);quantity.style.width='70px';quantity.addEventListener('change',()=>{const n=Number(quantity.value);if(!Number.isSafeInteger(n)||n<1||n>10){quantity.value=String(line.quantity);announce('Choose between 1 and 10 copies.');return;}line.quantity=n;saveCart();invalidate();render();});label.append(quantity);info.append(label);}const remove=node('button','Remove','cart-text-link');remove.type='button';remove.setAttribute('aria-label',`Remove ${p?.title||live?.title||'artwork'}`);remove.addEventListener('click',()=>{cart=cart.filter(i=>i.id!==line.id);saveCart();invalidate();render();announce('Artwork removed from your cart.');});info.append(remove);row.append(info);list.append(row);
+      if(isPrint&&!details.sampleOnly){const label=node('label','Quantity '),quantity=node('input');quantity.type='number';quantity.min='1';quantity.max='10';quantity.step='1';quantity.value=String(line.quantity);quantity.setAttribute('aria-label',`Quantity of ${details.title}`);quantity.style.width='70px';quantity.addEventListener('change',()=>{const n=Number(quantity.value);if(!Number.isSafeInteger(n)||n<1||n>10){quantity.value=String(line.quantity);announce('Choose between 1 and 10 copies.');return;}line.quantity=n;saveCart().catch(error=>announce(error.message));invalidate();render();});label.append(quantity);info.append(label);}const remove=node('button','Remove','cart-text-link');remove.type='button';remove.setAttribute('aria-label',`Remove ${p?.title||live?.title||'artwork'}`);remove.addEventListener('click',()=>{cart=cart.filter(i=>i.id!==line.id);saveCart().catch(error=>announce(`The item was removed here, but its reservation could not be updated yet: ${error.message}`));invalidate();render();announce('Artwork removed from your cart.');});info.append(remove);row.append(info);list.append(row);
     }
     root.querySelector('[data-cart-subtotal]').textContent=money(subtotal);
     const active=!!current&&(pending(current)||current.status==='paid');
@@ -117,6 +148,7 @@
   }
   function showQuote(q){
     quoted=q;root.querySelector('[data-cart-shipping]').textContent=money(q.quote.shipping);root.querySelector('[data-cart-tax]').textContent=money(q.quote.tax);root.querySelector('[data-cart-total]').textContent=money(q.quote.total);
+    applyHeldState({heldIds:cart.filter(i=>!i.id.startsWith('print-')).map(i=>i.id),expiresAt:q.expiresAt});
     const quoteButton=form.querySelector('[data-cart-quote]');quoteButton.disabled=true;quoteButton.textContent='Shipping & tax calculated';
     updatePaymentControls(true,q.methods);
   }
@@ -148,7 +180,7 @@
     root.querySelector('[data-order-cancel]').hidden=current.method!=='paypal'||current.status!=='pending';
     root.querySelector('[data-order-check]').hidden=['paid','expired','cancelled','unavailable','missing','quoted'].includes(current.status);
     root.querySelector('[data-order-back]').hidden=pending(current);root.querySelector('[data-order-print]').hidden=current.status!=='paid';
-    if(current.status==='paid'){const saved=read(ATTEMPT);if(!saved?.cartAdjusted){const purchased=new Map(current.quote.items.map(i=>[i.id,i.quantity]));cart=clean(read(CART)).map(i=>({...i,quantity:i.quantity-(purchased.get(i.id)||0)})).filter(i=>i.quantity>0);buyOnly=null;saveCart();write(ATTEMPT,{orderId:current.orderId,key:current.key,cartAdjusted:true});}const tracking=root.querySelector('[data-order-tracking]');if(tracking){tracking.replaceChildren();if(current.printStatus)tracking.append(node('p',`Print fulfillment: ${{'in-production':'In production',complete:'Shipped',pending:'Preparing your print order',creating:'Preparing your print order',review:'TJ is reviewing your print order',cancelled:'TJ is reviewing your print order'}[current.printStatus]||'Processing'}`));for(const shipment of current.shipments||[]){if(shipment.trackingUrl&&/^https:\/\//.test(shipment.trackingUrl)){const link=node('a',`Track shipment${shipment.trackingNumber?' '+shipment.trackingNumber:''}`);link.href=shipment.trackingUrl;link.target='_blank';link.rel='noopener noreferrer';tracking.append(link);}}}announce('');}
+    if(current.status==='paid'){const saved=read(ATTEMPT);if(!saved?.cartAdjusted){const purchased=new Map(current.quote.items.map(i=>[i.id,i.quantity]));cart=clean(read(CART)).map(i=>({...i,quantity:i.quantity-(purchased.get(i.id)||0)})).filter(i=>i.quantity>0);buyOnly=null;holdSession=null;write(HOLD,null);heldIds=new Set();saveCart().catch(()=>{});write(ATTEMPT,{orderId:current.orderId,key:current.key,cartAdjusted:true});}const tracking=root.querySelector('[data-order-tracking]');if(tracking){tracking.replaceChildren();if(current.printStatus)tracking.append(node('p',`Print fulfillment: ${{'in-production':'In production',complete:'Shipped',pending:'Preparing your print order',creating:'Preparing your print order',review:'TJ is reviewing your print order',cancelled:'TJ is reviewing your print order'}[current.printStatus]||'Processing'}`));for(const shipment of current.shipments||[]){if(shipment.trackingUrl&&/^https:\/\//.test(shipment.trackingUrl)){const link=node('a',`Track shipment${shipment.trackingNumber?' '+shipment.trackingNumber:''}`);link.href=shipment.trackingUrl;link.target='_blank';link.rel='noopener noreferrer';tracking.append(link);}}}announce('');}
   }
   async function updateOrder(action='status'){
     if(!current||busy)return;busy=true;root.querySelector('[data-order-check]').disabled=true;
@@ -161,7 +193,7 @@
     root=el;notice=root.querySelector('[data-cart-notice]');layout=root.querySelector('[data-cart-layout]');orderPanel=root.querySelector('[data-order-panel]');form=root.querySelector('[data-cart-form]');
     const params=new URLSearchParams(location.search),buy=params.get('buy');
     // Buy now is a one-item checkout; existing cart contents remain for a later order.
-    if(buy&&eligible(buy)&&eligible(buy).type!=='print'){buyOnly=buy;cart=[{id:buy,quantity:1}]; /* view only; do not overwrite a saved multi-item cart */}
+    if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;cart=[{id:buy,quantity:1}]; /* view only; do not overwrite a saved multi-item cart */}
     form.addEventListener('input',()=>{if(quoted)invalidate();});
     form.addEventListener('submit',async event=>{
       event.preventDefault();if(busy)return;if(pendingOrder&&pending(pendingOrder)){showPendingNotice(pendingOrder,buyOnly);return;}if(!form.reportValidity())return;busy=true;setDisabled(true);form.querySelector('[data-cart-quote]').textContent='Calculating…';announce('Calculating shipping and tax…');
@@ -169,22 +201,22 @@
       // FormData omits disabled controls; collect from named elements explicitly.
       for(const input of form.querySelectorAll('input[name]'))values[input.name]=input.value.trim();
       const {email,...address}=values;
-      try{const q=await api('quote',{items:cart,address,email,catalogVersion:capabilities.version});showQuote(q);announce('Your total is ready. Choose a payment method below.');}
+      try{await syncHold(cart);const identity=holdCredentials();const q=await api('quote',{items:cart,address,email,catalogVersion:capabilities.version,holdId:identity.holdId,key:identity.key});showQuote(q);announce('Your total is ready. Choose a payment method below.');}
       catch(error){announce(error.message);invalidate();}
       finally{busy=false;setDisabled(false);}
     });
     root.querySelector('[data-order-check]').addEventListener('click',()=>updateOrder());root.querySelector('[data-order-cancel]').addEventListener('click',()=>updateOrder('cancel'));
     root.querySelector('[data-order-print]').addEventListener('click',()=>window.print());
     root.querySelector('[data-order-back]').addEventListener('click',async()=>{
-      write(ATTEMPT,null);current=null;quoted=null;pendingOrder=null;buyOnly=null;clearTimeout(timer);orderPanel.hidden=true;history.replaceState(null,'','/cart/');cart=clean(read(CART));
-      try{capabilities=await api('catalog');}catch{capabilities=null;}invalidate();render();root.querySelector('h1').focus();
+      write(ATTEMPT,null);write(HOLD,null);holdSession=null;heldIds=new Set();current=null;quoted=null;pendingOrder=null;buyOnly=null;clearTimeout(timer);orderPanel.hidden=true;history.replaceState(null,'','/cart/');cart=clean(read(CART));
+      try{capabilities=await api('catalog');await syncHold(cart);}catch{capabilities=null;}invalidate();render();root.querySelector('h1').focus();
     });
     const saved=read(ATTEMPT),id=params.get('order');
     if(id&&(!saved||saved.orderId!==id)){render();announce('This order belongs to another browser session. Please contact TJ with your order reference if you have paid.');return;}
     if(saved){
       try{
         const result=await api('status',saved),restored={...result,key:saved.key};
-        if(result.status==='quoted'&&!id){write(ATTEMPT,null);current=null;render();}
+        if(result.status==='quoted'&&!id){write(ATTEMPT,null);current=null;await syncHold(cart);render();}
         else if(id===saved.orderId){
           current=restored;showOrder();
           if(params.get('result')==='return')await updateOrder('capture');else if(params.get('result')==='cancel')await updateOrder('cancel');else if(pending(current))poll();
@@ -192,12 +224,12 @@
         }else{
           current=null;
           if(pending(restored)){pendingOrder=restored;render();showPendingNotice(restored,buy);}
-          else {write(ATTEMPT,null);render();}
+          else {write(ATTEMPT,null);write(HOLD,null);holdSession=null;heldIds=new Set();await syncHold(cart);render();}
         }
       }catch(error){
         current=null;pendingOrder={...saved};render();showPendingNotice(pendingOrder,buy,'The existing order status could not be checked ('+error.message+').');
       }
-    }else render();
+    }else {try{await syncHold(cart);}catch(error){announce(error.message);}render();}
     document.addEventListener('visibilitychange',()=>{if(!document.hidden&&pending(current))updateOrder();});
   }
 })();
