@@ -28,6 +28,21 @@ function provider(t,{valid=true,missingGlazing=false,frameCost=21}={}) {
   });return calls;
 }
 const option=()=>({id:'print-test-small',key:'small',amount:'25.00',image,paper});
+test('inset editions retain the whole bordered sheet through framed quoting and fulfillment',async t=>{
+  const calls=provider(t),inset={width:7.2467,height:5.7467};
+  const o=await quoteFramedOption(env,{media:[media],styles:[style]},{...option(),image:inset},'black');
+  const build=calls.find(c=>c.endpoint.endsWith('build_product_code')).body.build;
+  assert.deepEqual([build.PrintW,build.PrintH,build.SheetW,build.SheetH,build.Mat1WindowW,build.Mat1WindowH],[7.5,6,7.5,6,7.5,6]);
+  const item={id:o.id,type:'print',title:'Framed edition',provider:'finerworks',sku:o.sku,baseSku:o.baseSku,frame:o.frame,mat:o.mat,imageSize:inset,paperSize:image,quantity:1,amount:'58.00',unframedAmount:'25.00',assetUrl:'https://vermillionaurora.com/print-editions/'+ 'a'.repeat(64)+'.jpg',layout:'full-image-white-border-v1',sizeBasis:'image-proportional',layoutApproved:true};
+  const quote=await quoteFinerWorksPrints(env,[item],address);
+  assert.equal((await validateFinerWorksPrintOrder(env,[item],address,quote)).ordersSubmitted,false);
+  const submission=calls.find(c=>c.endpoint.endsWith('submit_orders_v2')).body;
+  assert.equal(submission.validate_only,true);assert.equal(submission.orders[0].order_items[0].product_sku,sku);
+  assert.equal(submission.orders[0].order_items[0].product_image.product_url_file,item.assetUrl);
+  for(const alter of [i=>i.layoutApproved=false,i=>delete i.layout,i=>i.imageSize.width=8,i=>i.mat.window.width=7.2467]){
+    const changed=structuredClone(item);alter(changed);assert.throws(()=>groupPrintProducts([changed],'test'));
+  }
+});
 test('framed checkout uses the complete configured code through pricing, shipping, fulfillment and records',async t=>{
   const calls=provider(t),o=await quoteFramedOption(env,{media:[media],styles:[style]},option(),'black');
   assert.equal(o.pricing.recommendedAmount,'58.00');
