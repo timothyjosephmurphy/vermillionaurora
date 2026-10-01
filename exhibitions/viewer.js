@@ -25,6 +25,16 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   const thumbs = box.querySelector('.ev-thumbs');
   const slider = box.querySelector('input');
   const play = box.querySelector('[data-play]');
+  function primeVideoFrame(video) {
+    video.preload = 'metadata';
+    const showFirstFrame = () => {
+      if (video.duration > 0 && video.currentTime === 0) {
+        try { video.currentTime = Math.min(0.01, video.duration / 2); } catch {}
+      }
+    };
+    if (video.readyState >= 1) showFirstFrame();
+    else video.addEventListener('loadedmetadata', showFirstFrame, {once:true});
+  }
   let index = 0, paused = motion.matches, visible = false, hovered = false, focused = false, timer;
   function buildItems() {
     stage.replaceChildren(); thumbs.replaceChildren();
@@ -43,7 +53,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
       if (item.product) { cell.href = item.product; cell.setAttribute('aria-label', `View ${item.alt}`); }
       const media = document.createElement(item.video ? 'video' : 'img');
       media.src = item.src;
-      if (item.video) { media.controls = true; media.playsInline = true; media.preload = 'metadata'; }
+      if (item.video) { media.controls = true; media.playsInline = true; primeVideoFrame(media); }
       else { media.alt = item.alt || 'Exhibition image'; media.loading = 'lazy'; media.decoding = 'async'; }
       cell.append(media);
       if (item.caption) { const caption = document.createElement('span'); caption.className = 'ev-caption'; caption.textContent = item.caption; cell.append(caption); }
@@ -100,7 +110,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
     stage.querySelector('video')?.pause();
     const media = document.createElement(item.video ? 'video' : 'img');
     media.src = item.src;
-    if (item.video) { media.controls = true; media.playsInline = true; media.preload = 'metadata'; media.setAttribute('aria-label', item.alt || 'Exhibition video'); media.addEventListener('ended', () => { if (!paused) show(index + 1); }); }
+    if (item.video) { media.controls = true; media.playsInline = true; primeVideoFrame(media); media.setAttribute('aria-label', item.alt || 'Exhibition video'); media.addEventListener('ended', () => { if (!paused) show(index + 1); }); }
     else { media.alt = item.alt || `Exhibition image ${index + 1}`; media.decoding = 'async'; }
     stage.replaceChildren(media);
     if (!motion.matches && media.animate) media.animate([{opacity:0},{opacity:1}], {duration:250});
