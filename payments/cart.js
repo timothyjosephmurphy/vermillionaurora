@@ -35,6 +35,8 @@
     let legacyBitcoin;try{legacyBitcoin=sessionStorage.getItem(`bitcoin-order:${slug}`);}catch{}
     if(area&&eligible(slug)&&!new URLSearchParams(location.search).has('checkout')&&!new URLSearchParams(location.search).has('bitcoin')&&!legacyBitcoin) {
       area.hidden=false;
+      const fallback=area.parentElement?.querySelector('[data-purchase-fallback]');
+      if(fallback)fallback.hidden=true;
       const add=area.querySelector('[data-cart-add]'),buy=area.querySelector('[data-cart-buy]'),message=area.querySelector('[data-cart-added]');
       const update=()=>{add.textContent=cart.some(i=>i.id===slug)?'Added to cart':'Add to cart';};update();
       const addItem=()=>{
