@@ -4,5 +4,5 @@ export function deriveParcel(dimensions, weight=2, flatThickness=2, {rollable=tr
  if(!Number.isFinite(weight)||weight<=0||!Number.isFinite(flatThickness)||flatThickness<=0)throw new Error('Positive package weight and flat thickness are required.');
  const factor=dimensions.unit==='cm'?1/2.54:1,a=dimensions.width*factor,b=dimensions.height*factor,shorter=Math.min(a,b),longer=Math.max(a,b);
  if(rollable&&longer>12)return {length:ceilInches(shorter),width:4,height:4,weight,packaging:'tube'};
- return {length:ceilInches(longer),width:ceilInches(shorter),height:flatThickness,weight,packaging:'flat'};
+ return {length:ceilInches(longer)+2,width:ceilInches(shorter)+2,height:flatThickness,weight,packaging:'flat'};
 }
