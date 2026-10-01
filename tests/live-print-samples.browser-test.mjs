@@ -29,7 +29,7 @@ try {
     await page.setViewportSize({width,height:900});await page.goto(origin+'/print-test/');await page.waitForFunction(()=>!document.querySelector('[data-print-samples] button').disabled);
     await page.waitForFunction(()=>[...document.querySelectorAll('[data-print-samples] img')].every(i=>i.complete&&i.naturalWidth===1000&&i.naturalHeight===1250));
     assert.equal(await page.locator('select').count(),2);assert.equal(await page.locator('select option').count(),8);
-    assert.match(await page.locator('.sample-note').textContent(),/real purchase/);assert.equal(await page.locator('img').count(),2);
+    assert.match(await page.locator('.sample-note').textContent(),/real purchase/);assert.equal(await page.locator('[data-print-samples] img').count(),2);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await page.screenshot({path:`/tmp/live-print-samples-${width}.png`,fullPage:true});
   }
   await page.locator('[data-print-samples] button').click();await page.waitForURL(origin+'/cart/');await page.locator('[data-cart-form]').waitFor({state:'visible'});
