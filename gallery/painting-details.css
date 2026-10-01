@@ -18,7 +18,7 @@
 .purchase-panel .checkout-address-form button{width:100%;min-height:44px;font-size:.78rem;letter-spacing:.06em}
 .purchase-panel .checkout-pay{width:100%;min-height:54px;font-size:.95rem;letter-spacing:.04em;cursor:pointer;background:var(--cta,#d34220)}
 .product-purchase-cta .button:hover:not(:disabled),.purchase-panel .checkout-pay:hover:not(:disabled){background:var(--cta-hover,#b83518);border-color:var(--cta-hover,#b83518)}
-.purchase-panel button:disabled,.purchase-panel button:disabled:hover{background:#dedbd7;color:#66615c;border-color:#d0cbc5;cursor:not-allowed;transform:none;box-shadow:none;opacity:1}
+.purchase-panel .checkout-address-form button:disabled,.purchase-panel .checkout-address-form button:disabled:hover,.purchase-panel button:disabled,.purchase-panel button:disabled:hover{background:#dedbd7!important;color:#66615c!important;border-color:#d0cbc5!important;cursor:not-allowed;transform:none;box-shadow:none;opacity:1!important}
 .purchase-panel .checkout-payment-help{margin:.65rem 0 0;font-size:.8rem;color:var(--muted,#65574d)}
 .checkout-total:not(:empty){padding:1rem 0;margin:0 0 1rem;border-top:1px solid var(--line,#d6c9bc);font-size:.9rem;line-height:1.5}
 .checkout-total dl{display:grid;grid-template-columns:1fr auto;gap:.4rem 1rem;margin:0}

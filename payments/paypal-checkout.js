@@ -162,12 +162,27 @@ document.addEventListener('DOMContentLoaded', async () => {
       help.className = 'checkout-payment-help';
       help.textContent = 'Calculate your total above to enable payment.';
       let quote = null, quotedAddress = null, revision = 0, creating = false;
+      const setQuoteButtonDisabled = disabled => {
+        submit.disabled = disabled;
+        if (disabled) {
+          submit.style.setProperty('background-color','#dedbd7','important');
+          submit.style.setProperty('border-color','#d0cbc5','important');
+          submit.style.setProperty('color','#66615c','important');
+          submit.style.setProperty('opacity','1','important');
+          submit.style.setProperty('appearance','none','important');
+          submit.style.setProperty('-webkit-appearance','none','important');
+        } else {
+          for (const property of ['background-color','border-color','color','opacity','appearance','-webkit-appearance']) submit.style.removeProperty(property);
+        }
+      };
       const address = () => Object.fromEntries([...new FormData(form)].map(([key,value]) =>
         [key,key === 'state' ? value.trim().toUpperCase() : value.trim()]));
       const invalidateQuote = () => {
         revision += 1;
         quote = null;
         quotedAddress = null;
+        setQuoteButtonDisabled(false);
+        submit.textContent = 'Calculate shipping & tax';
         pay.disabled = true;
         pay.textContent = 'Buy with PayPal';
         bitcoin.disabled = true;bitcoin.textContent = 'Buy with Bitcoin';
@@ -178,7 +193,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         invalidateQuote();
         // The address can be edited while a quote is loading. Its eventual
         // response must not enable payment or overwrite a newer quote.
-        submit.disabled = false;
+        setQuoteButtonDisabled(false);
         submit.textContent = 'Calculate shipping & tax';
         notice.textContent = '';
       });
@@ -189,7 +204,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const requestRevision = revision;
         const requestAddress = address();
         const fingerprint = JSON.stringify(requestAddress);
-        submit.disabled = true;
+        setQuoteButtonDisabled(true);
         submit.textContent = 'Calculating…';
         details.textContent = 'Calculating shipping and tax…';
         notice.textContent = '';
@@ -213,12 +228,15 @@ document.addEventListener('DOMContentLoaded', async () => {
           bitcoin.disabled = !bitcoinReady;
           bitcoin.textContent = `Buy with Bitcoin · $${quote.total}`;
           help.textContent = bitcoinReady ? 'Your total includes shipping and tax. Bitcoin payment opens in BTCPay, with Lightning available when enabled there.' : 'Your total includes shipping and tax. Continue to PayPal to pay securely.';
+          setQuoteButtonDisabled(true);
+          submit.textContent = 'Shipping & tax calculated';
         } catch (error) {
           if (revision === requestRevision) details.textContent = error.message;
         } finally {
           if (revision === requestRevision) {
-            submit.disabled = false;
-            submit.textContent = 'Calculate shipping & tax';
+            const quoteIsCurrent = !!quote && !!quotedAddress && JSON.stringify(address()) === JSON.stringify(quotedAddress);
+            setQuoteButtonDisabled(quoteIsCurrent);
+            submit.textContent = quoteIsCurrent ? 'Shipping & tax calculated' : 'Calculate shipping & tax';
           }
         }
       });

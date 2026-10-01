@@ -63,9 +63,37 @@
     if(!existing&&cart.length>=MAX)return respond(false,`Your cart holds up to ${MAX} different items.`);
     if(existing)existing.quantity+=quantity;else cart.push({id,quantity});saveCart();respond(true,'Print added to your cart.');
   });
-  let root,notice,layout,orderPanel,form;
+  let root,notice,layout,orderPanel,form,pendingOrder=null;
   function announce(text){notice.textContent=text;}
-  function invalidate(){quoted=null;root.querySelector('[data-cart-payments]').hidden=true;root.querySelector('[data-cart-shipping]').textContent='Calculated below';root.querySelector('[data-cart-tax]').textContent='Calculated below';root.querySelector('[data-cart-total]').textContent='—';}
+  function invalidate(){
+    quoted=null;
+    const button=form?.querySelector('[data-cart-quote]');
+    if(button){button.disabled=!!(pendingOrder&&pending(pendingOrder));button.textContent='Calculate shipping & tax';}
+    updatePaymentControls(false);
+    root.querySelector('[data-cart-shipping]').textContent='Calculated below';root.querySelector('[data-cart-tax]').textContent='Calculated below';root.querySelector('[data-cart-total]').textContent='—';
+  }
+  function updatePaymentControls(enabled=false,methods=methodIntersection()){
+    const box=root.querySelector('[data-cart-payments]'),host=root.querySelector('[data-cart-methods]');
+    host.replaceChildren();
+    for(const method of methods){
+      const button=node('button',method==='paypal'?'Continue with PayPal':'Pay with Bitcoin / Lightning','button button-solid');
+      button.type='button';button.disabled=!enabled||busy||!!(pendingOrder&&pending(pendingOrder));
+      button.addEventListener('click',()=>startPayment(method));host.append(button);
+    }
+    box.hidden=!methods.length;
+    const help=box.querySelector('[data-cart-payment-help]');
+    if(help)help.textContent=enabled?'Your total is ready. Choose how you would like to pay.':'Calculate shipping and tax to enable payment.';
+  }
+  function showPendingNotice(order,requestedBuy=buyOnly,errorMessage=''){
+    const items=order?.quote?.items||[],names=items.map(item=>item.title).filter(Boolean).join(', ');
+    const requested=requestedBuy&&(capabilities?.products.find(item=>item.id===requestedBuy)?.title||meta[requestedBuy]?.title);
+    const isDifferent=requested&&!items.some(item=>item.id===requestedBuy);
+    const lead=isDifferent?'Buy Now for '+requested+' has not started. ':'Your cart is shown below. ';
+    const detail=errorMessage?errorMessage+' ':'There is an unfinished checkout'+(names?' for '+names:'')+'. Review or cancel it before starting another checkout. ';
+    notice.replaceChildren(document.createTextNode(lead+detail));
+    const link=node('a','Review existing order');link.href='/cart/?order='+encodeURIComponent(order?.orderId||'');link.className='cart-text-link';notice.append(link);
+    if(requestedBuy){notice.append(document.createTextNode(' '));const fullCart=node('a','View full cart');fullCart.href='/cart/';fullCart.className='cart-text-link';notice.append(fullCart);}
+  }
   function render(){
     const list=root.querySelector('[data-cart-items]');list.replaceChildren();
     let subtotal=0,invalid=false;
@@ -83,14 +111,14 @@
     root.querySelector('[data-cart-subtotal]').textContent=money(subtotal);
     const active=!!current&&(pending(current)||current.status==='paid');
     layout.hidden=!cart.length||active;root.querySelector('[data-cart-empty]').hidden=!!cart.length||active;
-    form.querySelector('[data-cart-quote]').disabled=invalid||!capabilities?.enabled||!methodIntersection().length;
-    if(!active)announce(!capabilities?'Availability could not be verified. Please refresh before checkout.':!capabilities.enabled?'Cart checkout is not available yet. Please contact TJ to arrange a purchase.':invalid?'Please remove unavailable items before checking out.':cart.length&&!methodIntersection().length?'These artworks do not share a payment method. Please contact TJ.':'');
+    form.querySelector('[data-cart-quote]').disabled=invalid||!capabilities?.enabled||!methodIntersection().length||!!(pendingOrder&&pending(pendingOrder));
+    updatePaymentControls(false);
+    if(!active){announce(!capabilities?'Availability could not be verified. Please refresh before checkout.':!capabilities.enabled?'Cart checkout is not available yet. Please contact TJ to arrange a purchase.':invalid?'Please remove unavailable items before checking out.':cart.length&&!methodIntersection().length?'These artworks do not share a payment method. Please contact TJ.':'');if(buyOnly&&cart.length&&capabilities?.enabled&&!invalid&&methodIntersection().length){notice.replaceChildren(document.createTextNode('Buy Now is a one-item checkout. Other cart selections remain saved. '));const fullCart=node('a','View full cart');fullCart.href='/cart/';fullCart.className='cart-text-link';notice.append(fullCart);}}
   }
   function showQuote(q){
     quoted=q;root.querySelector('[data-cart-shipping]').textContent=money(q.quote.shipping);root.querySelector('[data-cart-tax]').textContent=money(q.quote.tax);root.querySelector('[data-cart-total]').textContent=money(q.quote.total);
-    const buttons=root.querySelector('[data-cart-methods]');buttons.replaceChildren();
-    for(const method of q.methods){const button=node('button',method==='paypal'?'Continue with PayPal':'Pay with Bitcoin / Lightning','button button-solid');button.type='button';button.addEventListener('click',()=>startPayment(method));buttons.append(button);}
-    root.querySelector('[data-cart-payments]').hidden=false;
+    const quoteButton=form.querySelector('[data-cart-quote]');quoteButton.disabled=true;quoteButton.textContent='Shipping & tax calculated';
+    updatePaymentControls(true,q.methods);
   }
   const credentials=()=>({orderId:current.orderId,key:current.key});
   function remember(q){const value={orderId:q.orderId,key:q.key};if(!write(ATTEMPT,value))throw Error('Your browser could not save this checkout. Enable site storage before continuing.');}
@@ -104,7 +132,11 @@
     }catch(error){announce(error.message);if(current){showOrder();poll();}}
     finally{busy=false;setDisabled(false);}
   }
-  function setDisabled(value){form.querySelectorAll('input,button').forEach(el=>el.disabled=value);root.querySelectorAll('[data-cart-methods] button').forEach(el=>el.disabled=value);root.querySelectorAll('[data-cart-items] button, [data-cart-items] input').forEach(el=>el.disabled=value);}
+  function setDisabled(value){
+    form.querySelectorAll('input,button').forEach(el=>{el.disabled=value||(el.matches('[data-cart-quote]')&&!!quoted)||(el.matches('[data-cart-quote]')&&!!(pendingOrder&&pending(pendingOrder)));});
+    root.querySelectorAll('[data-cart-methods] button').forEach(el=>el.disabled=value||!quoted||!!(pendingOrder&&pending(pendingOrder)));
+    root.querySelectorAll('[data-cart-items] button, [data-cart-items] input').forEach(el=>el.disabled=value);
+  }
   const messages={quoted:['Ready to check out','Enter your delivery details to calculate a fresh total.'],reserving:['Reserving your originals','Please keep this page open while we confirm availability.'],creating:['Preparing your payment','We are checking with the payment provider. Please wait before starting another order.'],pending:['Payment pending','Continue to the secure payment page, or check here after paying.'],capturing:['Confirming your payment','Your originals remain reserved while we confirm payment. Please do not pay again.'],processing:['Bitcoin payment received','Waiting for payment confirmation. Your originals remain reserved.'],settling:['Confirming your order','Your payment has been received. We are updating the inventory.'],paid:['Thank you for collecting my work.','Your payment is confirmed. Prints ship from the print lab, separately from any originals.'],expired:['Checkout expired','Your cart has been kept. Review availability and begin a new checkout when ready.'],cancelled:['Checkout cancelled','Your cart has been kept. No payment was captured through this checkout.'],unavailable:['An original is no longer available','No payment was started. Return to your cart to review availability.'],review:['Your payment needs a closer look','TJ will review this order. Please do not pay again. Contact tj@vermillionaurora.com with the order reference below.'],missing:['Order not found','Please contact TJ if you have already paid.']};
   function showOrder(){
     if(!current)return;orderPanel.hidden=false;layout.hidden=true;root.querySelector('[data-cart-empty]').hidden=true;
@@ -132,7 +164,7 @@
     if(buy&&eligible(buy)&&eligible(buy).type!=='print'){buyOnly=buy;cart=[{id:buy,quantity:1}]; /* view only; do not overwrite a saved multi-item cart */}
     form.addEventListener('input',()=>{if(quoted)invalidate();});
     form.addEventListener('submit',async event=>{
-      event.preventDefault();if(busy||!form.reportValidity())return;busy=true;setDisabled(true);announce('Calculating shipping and tax…');
+      event.preventDefault();if(busy)return;if(pendingOrder&&pending(pendingOrder)){showPendingNotice(pendingOrder,buyOnly);return;}if(!form.reportValidity())return;busy=true;setDisabled(true);form.querySelector('[data-cart-quote]').textContent='Calculating…';announce('Calculating shipping and tax…');
       const values=Object.fromEntries(new FormData(form));
       // FormData omits disabled controls; collect from named elements explicitly.
       for(const input of form.querySelectorAll('input[name]'))values[input.name]=input.value.trim();
@@ -144,17 +176,27 @@
     root.querySelector('[data-order-check]').addEventListener('click',()=>updateOrder());root.querySelector('[data-order-cancel]').addEventListener('click',()=>updateOrder('cancel'));
     root.querySelector('[data-order-print]').addEventListener('click',()=>window.print());
     root.querySelector('[data-order-back]').addEventListener('click',async()=>{
-      write(ATTEMPT,null);current=null;quoted=null;buyOnly=null;clearTimeout(timer);orderPanel.hidden=true;history.replaceState(null,'','/cart/');cart=clean(read(CART));
+      write(ATTEMPT,null);current=null;quoted=null;pendingOrder=null;buyOnly=null;clearTimeout(timer);orderPanel.hidden=true;history.replaceState(null,'','/cart/');cart=clean(read(CART));
       try{capabilities=await api('catalog');}catch{capabilities=null;}invalidate();render();root.querySelector('h1').focus();
     });
     const saved=read(ATTEMPT),id=params.get('order');
     if(id&&(!saved||saved.orderId!==id)){render();announce('This order belongs to another browser session. Please contact TJ with your order reference if you have paid.');return;}
     if(saved){
-      current=saved;try{const result=await api('status',saved);current={...result,key:saved.key};
-        if(result.status==='quoted'&&!id){current=null;write(ATTEMPT,null);render();}
-        else {showOrder();if(params.get('result')==='return')await updateOrder('capture');else if(params.get('result')==='cancel')await updateOrder('cancel');else if(pending(current))poll();}
-      }catch(error){showOrder();announce(error.message);poll();}
-      history.replaceState(null,'','/cart/');
+      try{
+        const result=await api('status',saved),restored={...result,key:saved.key};
+        if(result.status==='quoted'&&!id){write(ATTEMPT,null);current=null;render();}
+        else if(id===saved.orderId){
+          current=restored;showOrder();
+          if(params.get('result')==='return')await updateOrder('capture');else if(params.get('result')==='cancel')await updateOrder('cancel');else if(pending(current))poll();
+          history.replaceState(null,'','/cart/');
+        }else{
+          current=null;
+          if(pending(restored)){pendingOrder=restored;render();showPendingNotice(restored,buy);}
+          else {write(ATTEMPT,null);render();}
+        }
+      }catch(error){
+        current=null;pendingOrder={...saved};render();showPendingNotice(pendingOrder,buy,'The existing order status could not be checked ('+error.message+').');
+      }
     }else render();
     document.addEventListener('visibilitychange',()=>{if(!document.hidden&&pending(current))updateOrder();});
   }
