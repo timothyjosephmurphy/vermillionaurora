@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="ef652daedbc5c35d6720";
+export const printVersion="829ce98a48ad9124342d";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -39559,6 +39559,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-9ae261289a3bce952c6f-full-frame-black": {
+    "id": "print-book-art-9ae261289a3bce952c6f-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-9ae261289a3bce952c6f",
+    "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Large print — Black frame",
+    "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+    "amount": "129.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD79X6DD21F1S20X16J1S15DD79X6DD21G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.5367,
+      "height": 5.9567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.79,
+      "height": 6.21,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9.jpg",
+    "assetSha256": "a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.79,
+        "height": 6.21,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.79X6.21",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-book-art-9ae261289a3bce952c6f-full-frame-white": {
+    "id": "print-book-art-9ae261289a3bce952c6f-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-9ae261289a3bce952c6f",
+    "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Large print — White frame",
+    "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+    "amount": "129.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD79X6DD21F2S20X16J1S15DD79X6DD21G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.5367,
+      "height": 5.9567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.79,
+      "height": 6.21,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9.jpg",
+    "assetSha256": "a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.79,
+        "height": 6.21,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.79X6.21",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-book-art-9ae261289a3bce952c6f-full-frame-natural": {
+    "id": "print-book-art-9ae261289a3bce952c6f-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-9ae261289a3bce952c6f",
+    "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Large print — Natural wood frame",
+    "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD79X6DD21F7S20X16J1S15DD79X6DD21G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.5367,
+      "height": 5.9567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.79,
+      "height": 6.21,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9.jpg",
+    "assetSha256": "a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.79,
+        "height": 6.21,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.79X6.21",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
   "print-book-art-9ae261289a3bce952c6f-medium": {
     "id": "print-book-art-9ae261289a3bce952c6f-medium",
     "type": "print",
@@ -39596,6 +39818,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-9ae261289a3bce952c6f-medium-frame-black": {
+    "id": "print-book-art-9ae261289a3bce952c6f-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-9ae261289a3bce952c6f",
+    "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Medium print — Black frame",
+    "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+    "amount": "86.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD91X4DD72F1S14X11J1S11DD91X4DD72G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.65,
+      "height": 4.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.91,
+      "height": 4.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64.jpg",
+    "assetSha256": "f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.91,
+        "height": 4.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.91X4.72",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-9ae261289a3bce952c6f-medium-frame-white": {
+    "id": "print-book-art-9ae261289a3bce952c6f-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-9ae261289a3bce952c6f",
+    "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Medium print — White frame",
+    "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+    "amount": "86.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD91X4DD72F2S14X11J1S11DD91X4DD72G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.65,
+      "height": 4.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.91,
+      "height": 4.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64.jpg",
+    "assetSha256": "f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.91,
+        "height": 4.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.91X4.72",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-9ae261289a3bce952c6f-medium-frame-natural": {
+    "id": "print-book-art-9ae261289a3bce952c6f-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-9ae261289a3bce952c6f",
+    "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Medium print — Natural wood frame",
+    "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+    "amount": "97.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD91X4DD72F7S14X11J1S11DD91X4DD72G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.65,
+      "height": 4.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.91,
+      "height": 4.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64.jpg",
+    "assetSha256": "f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64",
+    "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp",
+      "alt": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.91,
+        "height": 4.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.91X4.72",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
   },
   "print-book-art-deb3358c321671dae1fc-full": {
     "id": "print-book-art-deb3358c321671dae1fc-full",
@@ -39635,6 +40079,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-deb3358c321671dae1fc-full-frame-black": {
+    "id": "print-book-art-deb3358c321671dae1fc-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb3358c321671dae1fc",
+    "title": "Sunrise on Tahoma with motorcycles — Large print — Black frame",
+    "artworkTitle": "Sunrise on Tahoma with motorcycles",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD66X12DD09F1S12X15J1S6DD66X12DD09G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4067,
+      "height": 11.8267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.66,
+      "height": 12.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b.jpg",
+    "assetSha256": "27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b",
+    "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.webp",
+      "alt": "Sunrise on Tahoma with motorcycles",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.66,
+        "height": 12.09,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.66X12.09",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-deb3358c321671dae1fc-full-frame-white": {
+    "id": "print-book-art-deb3358c321671dae1fc-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb3358c321671dae1fc",
+    "title": "Sunrise on Tahoma with motorcycles — Large print — White frame",
+    "artworkTitle": "Sunrise on Tahoma with motorcycles",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD66X12DD09F2S12X15J1S6DD66X12DD09G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4067,
+      "height": 11.8267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.66,
+      "height": 12.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b.jpg",
+    "assetSha256": "27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b",
+    "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.webp",
+      "alt": "Sunrise on Tahoma with motorcycles",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.66,
+        "height": 12.09,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.66X12.09",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-deb3358c321671dae1fc-full-frame-natural": {
+    "id": "print-book-art-deb3358c321671dae1fc-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb3358c321671dae1fc",
+    "title": "Sunrise on Tahoma with motorcycles — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise on Tahoma with motorcycles",
+    "amount": "103.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD66X12DD09F7S12X15J1S6DD66X12DD09G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4067,
+      "height": 11.8267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.66,
+      "height": 12.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b.jpg",
+    "assetSha256": "27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b",
+    "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.webp",
+      "alt": "Sunrise on Tahoma with motorcycles",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.66,
+        "height": 12.09,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.66X12.09",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
   "print-book-art-deb3358c321671dae1fc-medium": {
     "id": "print-book-art-deb3358c321671dae1fc-medium",
     "type": "print",
@@ -39672,6 +40338,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-deb3358c321671dae1fc-medium-frame-black": {
+    "id": "print-book-art-deb3358c321671dae1fc-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb3358c321671dae1fc",
+    "title": "Sunrise on Tahoma with motorcycles — Medium print — Black frame",
+    "artworkTitle": "Sunrise on Tahoma with motorcycles",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD06X9DD13F1S9X12J1S5DD06X9DD13G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8067,
+      "height": 8.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.06,
+      "height": 9.13,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07.jpg",
+    "assetSha256": "50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07",
+    "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.webp",
+      "alt": "Sunrise on Tahoma with motorcycles",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.06,
+        "height": 9.13,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.06X9.13",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-deb3358c321671dae1fc-medium-frame-white": {
+    "id": "print-book-art-deb3358c321671dae1fc-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb3358c321671dae1fc",
+    "title": "Sunrise on Tahoma with motorcycles — Medium print — White frame",
+    "artworkTitle": "Sunrise on Tahoma with motorcycles",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD06X9DD13F2S9X12J1S5DD06X9DD13G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8067,
+      "height": 8.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.06,
+      "height": 9.13,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07.jpg",
+    "assetSha256": "50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07",
+    "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.webp",
+      "alt": "Sunrise on Tahoma with motorcycles",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.06,
+        "height": 9.13,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.06X9.13",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-deb3358c321671dae1fc-medium-frame-natural": {
+    "id": "print-book-art-deb3358c321671dae1fc-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb3358c321671dae1fc",
+    "title": "Sunrise on Tahoma with motorcycles — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise on Tahoma with motorcycles",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD06X9DD13F7S9X12J1S5DD06X9DD13G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8067,
+      "height": 8.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.06,
+      "height": 9.13,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07.jpg",
+    "assetSha256": "50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07",
+    "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.webp",
+      "alt": "Sunrise on Tahoma with motorcycles",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.06,
+        "height": 9.13,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.06X9.13",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-f56007f6a7d6ee955caf-full": {
     "id": "print-book-art-f56007f6a7d6ee955caf-full",
@@ -39711,6 +40599,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-f56007f6a7d6ee955caf-full-frame-black": {
+    "id": "print-book-art-f56007f6a7d6ee955caf-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f56007f6a7d6ee955caf",
+    "title": "Sunset in the Straight of Juan Defuca, Pathos island 1 — Large print — Black frame",
+    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD18X9DD46F1S9X12J1S5DD18X9DD46G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.9267,
+      "height": 9.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.18,
+      "height": 9.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733.jpg",
+    "assetSha256": "7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733",
+    "sourceSha256": "f4e436a33f9a8b3e24e1c83ac157ca4b4ad2a65d08f84a68e85ef5e409a2578e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.webp",
+      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.18,
+        "height": 9.46,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.18X9.46",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-f56007f6a7d6ee955caf-full-frame-white": {
+    "id": "print-book-art-f56007f6a7d6ee955caf-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f56007f6a7d6ee955caf",
+    "title": "Sunset in the Straight of Juan Defuca, Pathos island 1 — Large print — White frame",
+    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD18X9DD46F2S9X12J1S5DD18X9DD46G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.9267,
+      "height": 9.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.18,
+      "height": 9.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733.jpg",
+    "assetSha256": "7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733",
+    "sourceSha256": "f4e436a33f9a8b3e24e1c83ac157ca4b4ad2a65d08f84a68e85ef5e409a2578e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.webp",
+      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.18,
+        "height": 9.46,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.18X9.46",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-f56007f6a7d6ee955caf-full-frame-natural": {
+    "id": "print-book-art-f56007f6a7d6ee955caf-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f56007f6a7d6ee955caf",
+    "title": "Sunset in the Straight of Juan Defuca, Pathos island 1 — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD18X9DD46F7S9X12J1S5DD18X9DD46G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.9267,
+      "height": 9.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.18,
+      "height": 9.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733.jpg",
+    "assetSha256": "7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733",
+    "sourceSha256": "f4e436a33f9a8b3e24e1c83ac157ca4b4ad2a65d08f84a68e85ef5e409a2578e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.webp",
+      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.18,
+        "height": 9.46,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.18X9.46",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-d1399111a441ed91feaa-full": {
     "id": "print-book-art-d1399111a441ed91feaa-full",
     "type": "print",
@@ -39748,6 +40858,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-d1399111a441ed91feaa-full-frame-black": {
+    "id": "print-book-art-d1399111a441ed91feaa-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-d1399111a441ed91feaa",
+    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print — Black frame",
+    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S5DD64X10DD06F1S11X14J1S5DD64X10DD06G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.3867,
+      "height": 9.7933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.64,
+      "height": 10.06,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7.jpg",
+    "assetSha256": "cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7",
+    "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
+      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.64,
+        "height": 10.06,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.64X10.06",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-d1399111a441ed91feaa-full-frame-white": {
+    "id": "print-book-art-d1399111a441ed91feaa-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-d1399111a441ed91feaa",
+    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print — White frame",
+    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S5DD64X10DD06F2S11X14J1S5DD64X10DD06G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.3867,
+      "height": 9.7933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.64,
+      "height": 10.06,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7.jpg",
+    "assetSha256": "cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7",
+    "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
+      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.64,
+        "height": 10.06,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.64X10.06",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-d1399111a441ed91feaa-full-frame-natural": {
+    "id": "print-book-art-d1399111a441ed91feaa-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-d1399111a441ed91feaa",
+    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S5DD64X10DD06F7S11X14J1S5DD64X10DD06G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.3867,
+      "height": 9.7933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.64,
+      "height": 10.06,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7.jpg",
+    "assetSha256": "cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7",
+    "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
+      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.64,
+        "height": 10.06,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.64X10.06",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-d1399111a441ed91feaa-medium": {
     "id": "print-book-art-d1399111a441ed91feaa-medium",
@@ -39787,6 +41119,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-d1399111a441ed91feaa-medium-frame-black": {
+    "id": "print-book-art-d1399111a441ed91feaa-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-d1399111a441ed91feaa",
+    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print — Black frame",
+    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD29X7DD6F1S8X10J1S4DD29X7DD6G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.0367,
+      "height": 7.3367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.29,
+      "height": 7.6,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde.jpg",
+    "assetSha256": "c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde",
+    "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
+      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.29,
+        "height": 7.6,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.29X7.6",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-d1399111a441ed91feaa-medium-frame-white": {
+    "id": "print-book-art-d1399111a441ed91feaa-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-d1399111a441ed91feaa",
+    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print — White frame",
+    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD29X7DD6F2S8X10J1S4DD29X7DD6G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.0367,
+      "height": 7.3367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.29,
+      "height": 7.6,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde.jpg",
+    "assetSha256": "c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde",
+    "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
+      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.29,
+        "height": 7.6,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.29X7.6",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-d1399111a441ed91feaa-medium-frame-natural": {
+    "id": "print-book-art-d1399111a441ed91feaa-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-d1399111a441ed91feaa",
+    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD29X7DD6F7S8X10J1S4DD29X7DD6G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.0367,
+      "height": 7.3367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.29,
+      "height": 7.6,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde.jpg",
+    "assetSha256": "c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde",
+    "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
+      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.29,
+        "height": 7.6,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.29X7.6",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-c198f09bc8ddad18ed1e-full": {
     "id": "print-book-art-c198f09bc8ddad18ed1e-full",
     "type": "print",
@@ -39824,6 +41378,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-c198f09bc8ddad18ed1e-full-frame-black": {
+    "id": "print-book-art-c198f09bc8ddad18ed1e-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c198f09bc8ddad18ed1e",
+    "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD96X4DD99F1S12X9J1S8DD96X4DD99G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.69,
+      "height": 4.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.96,
+      "height": 4.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606.jpg",
+    "assetSha256": "65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606",
+    "sourceSha256": "0c8fd2894a6db45e93c583b935be0a98eaf8a004d4b0e93e9888e2fa67d00003",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.webp",
+      "alt": "Sunrise at Bass Coast, Merit, BC 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.96,
+        "height": 4.99,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.96X4.99",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-c198f09bc8ddad18ed1e-full-frame-white": {
+    "id": "print-book-art-c198f09bc8ddad18ed1e-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c198f09bc8ddad18ed1e",
+    "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD96X4DD99F2S12X9J1S8DD96X4DD99G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.69,
+      "height": 4.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.96,
+      "height": 4.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606.jpg",
+    "assetSha256": "65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606",
+    "sourceSha256": "0c8fd2894a6db45e93c583b935be0a98eaf8a004d4b0e93e9888e2fa67d00003",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.webp",
+      "alt": "Sunrise at Bass Coast, Merit, BC 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.96,
+        "height": 4.99,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.96X4.99",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-c198f09bc8ddad18ed1e-full-frame-natural": {
+    "id": "print-book-art-c198f09bc8ddad18ed1e-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c198f09bc8ddad18ed1e",
+    "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD96X4DD99F7S12X9J1S8DD96X4DD99G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.69,
+      "height": 4.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.96,
+      "height": 4.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606.jpg",
+    "assetSha256": "65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606",
+    "sourceSha256": "0c8fd2894a6db45e93c583b935be0a98eaf8a004d4b0e93e9888e2fa67d00003",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.webp",
+      "alt": "Sunrise at Bass Coast, Merit, BC 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.96,
+        "height": 4.99,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.96X4.99",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-87cf2a732259b313f5ab-full": {
     "id": "print-book-art-87cf2a732259b313f5ab-full",
@@ -39863,6 +41639,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-87cf2a732259b313f5ab-full-frame-black": {
+    "id": "print-book-art-87cf2a732259b313f5ab-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-87cf2a732259b313f5ab",
+    "title": "Sunrise in Puerta Vallarta — Large print — Black frame",
+    "artworkTitle": "Sunrise in Puerta Vallarta",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD7X8DD09F1S9X12J1S4DD7X8DD09G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.4467,
+      "height": 7.8267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.7,
+      "height": 8.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881.jpg",
+    "assetSha256": "103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881",
+    "sourceSha256": "ef0e6f808609f9dd3dcec88b6161cb14825b8080efd74c9f023ed3571587aa6c",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.webp",
+      "alt": "Sunrise in Puerta Vallarta",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.7,
+        "height": 8.09,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.7X8.09",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-87cf2a732259b313f5ab-full-frame-white": {
+    "id": "print-book-art-87cf2a732259b313f5ab-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-87cf2a732259b313f5ab",
+    "title": "Sunrise in Puerta Vallarta — Large print — White frame",
+    "artworkTitle": "Sunrise in Puerta Vallarta",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD7X8DD09F2S9X12J1S4DD7X8DD09G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.4467,
+      "height": 7.8267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.7,
+      "height": 8.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881.jpg",
+    "assetSha256": "103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881",
+    "sourceSha256": "ef0e6f808609f9dd3dcec88b6161cb14825b8080efd74c9f023ed3571587aa6c",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.webp",
+      "alt": "Sunrise in Puerta Vallarta",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.7,
+        "height": 8.09,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.7X8.09",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-87cf2a732259b313f5ab-full-frame-natural": {
+    "id": "print-book-art-87cf2a732259b313f5ab-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-87cf2a732259b313f5ab",
+    "title": "Sunrise in Puerta Vallarta — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise in Puerta Vallarta",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD7X8DD09F7S9X12J1S4DD7X8DD09G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.4467,
+      "height": 7.8267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.7,
+      "height": 8.09,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881.jpg",
+    "assetSha256": "103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881",
+    "sourceSha256": "ef0e6f808609f9dd3dcec88b6161cb14825b8080efd74c9f023ed3571587aa6c",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.webp",
+      "alt": "Sunrise in Puerta Vallarta",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.7,
+        "height": 8.09,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.7X8.09",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-471daf14a8bb7883f114-full": {
     "id": "print-book-art-471daf14a8bb7883f114-full",
     "type": "print",
@@ -39900,6 +41898,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-471daf14a8bb7883f114-full-frame-black": {
+    "id": "print-book-art-471daf14a8bb7883f114-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-471daf14a8bb7883f114",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print — Black frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "amount": "86.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD57X6DD33F1S14X11J1S11DD57X6DD33G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.3067,
+      "height": 6.0767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.57,
+      "height": 6.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f.jpg",
+    "assetSha256": "5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f",
+    "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.57,
+        "height": 6.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.57X6.33",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-471daf14a8bb7883f114-full-frame-white": {
+    "id": "print-book-art-471daf14a8bb7883f114-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-471daf14a8bb7883f114",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print — White frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "amount": "86.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD57X6DD33F2S14X11J1S11DD57X6DD33G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.3067,
+      "height": 6.0767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.57,
+      "height": 6.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f.jpg",
+    "assetSha256": "5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f",
+    "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.57,
+        "height": 6.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.57X6.33",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-471daf14a8bb7883f114-full-frame-natural": {
+    "id": "print-book-art-471daf14a8bb7883f114-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-471daf14a8bb7883f114",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print — Natural wood frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "amount": "97.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD57X6DD33F7S14X11J1S11DD57X6DD33G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.3067,
+      "height": 6.0767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.57,
+      "height": 6.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f.jpg",
+    "assetSha256": "5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f",
+    "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.57,
+        "height": 6.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.57X6.33",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
   },
   "print-book-art-471daf14a8bb7883f114-medium": {
     "id": "print-book-art-471daf14a8bb7883f114-medium",
@@ -39939,6 +42159,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-471daf14a8bb7883f114-medium-frame-black": {
+    "id": "print-book-art-471daf14a8bb7883f114-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-471daf14a8bb7883f114",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print — Black frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD74X4DD81F1S12X9J1S8DD74X4DD81G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.48,
+      "height": 4.5567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.74,
+      "height": 4.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27.jpg",
+    "assetSha256": "d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27",
+    "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.74,
+        "height": 4.81,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.74X4.81",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-471daf14a8bb7883f114-medium-frame-white": {
+    "id": "print-book-art-471daf14a8bb7883f114-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-471daf14a8bb7883f114",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print — White frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD74X4DD81F2S12X9J1S8DD74X4DD81G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.48,
+      "height": 4.5567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.74,
+      "height": 4.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27.jpg",
+    "assetSha256": "d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27",
+    "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.74,
+        "height": 4.81,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.74X4.81",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-471daf14a8bb7883f114-medium-frame-natural": {
+    "id": "print-book-art-471daf14a8bb7883f114-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-471daf14a8bb7883f114",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print — Natural wood frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD74X4DD81F7S12X9J1S8DD74X4DD81G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.48,
+      "height": 4.5567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.74,
+      "height": 4.81,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27.jpg",
+    "assetSha256": "d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27",
+    "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.74,
+        "height": 4.81,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.74X4.81",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
   "print-book-art-e3293c73dbb01f94b39b-full": {
     "id": "print-book-art-e3293c73dbb01f94b39b-full",
     "type": "print",
@@ -39976,6 +42418,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-e3293c73dbb01f94b39b-full-frame-black": {
+    "id": "print-book-art-e3293c73dbb01f94b39b-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e3293c73dbb01f94b39b",
+    "title": "Untitled — El Salvador, page 46 — Large print — Black frame",
+    "artworkTitle": "Untitled — El Salvador, page 46",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD57X4DD48F1S10X8J1S5DD57X4DD48G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.3167,
+      "height": 4.2233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.57,
+      "height": 4.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67.jpg",
+    "assetSha256": "4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67",
+    "sourceSha256": "b95f74d6d3a6f6d8a6e0343f81d98b66152b453f30cb26ecc95457c88a39f17b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.webp",
+      "alt": "Untitled — El Salvador, page 46",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.57,
+        "height": 4.48,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.57X4.48",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-e3293c73dbb01f94b39b-full-frame-white": {
+    "id": "print-book-art-e3293c73dbb01f94b39b-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e3293c73dbb01f94b39b",
+    "title": "Untitled — El Salvador, page 46 — Large print — White frame",
+    "artworkTitle": "Untitled — El Salvador, page 46",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD57X4DD48F2S10X8J1S5DD57X4DD48G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.3167,
+      "height": 4.2233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.57,
+      "height": 4.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67.jpg",
+    "assetSha256": "4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67",
+    "sourceSha256": "b95f74d6d3a6f6d8a6e0343f81d98b66152b453f30cb26ecc95457c88a39f17b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.webp",
+      "alt": "Untitled — El Salvador, page 46",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.57,
+        "height": 4.48,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.57X4.48",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-e3293c73dbb01f94b39b-full-frame-natural": {
+    "id": "print-book-art-e3293c73dbb01f94b39b-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e3293c73dbb01f94b39b",
+    "title": "Untitled — El Salvador, page 46 — Large print — Natural wood frame",
+    "artworkTitle": "Untitled — El Salvador, page 46",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD57X4DD48F7S10X8J1S5DD57X4DD48G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.3167,
+      "height": 4.2233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.57,
+      "height": 4.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67.jpg",
+    "assetSha256": "4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67",
+    "sourceSha256": "b95f74d6d3a6f6d8a6e0343f81d98b66152b453f30cb26ecc95457c88a39f17b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.webp",
+      "alt": "Untitled — El Salvador, page 46",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.57,
+        "height": 4.48,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.57X4.48",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-a2e53a8418a8d84f3dc5-full": {
     "id": "print-book-art-a2e53a8418a8d84f3dc5-full",
@@ -40015,6 +42679,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-a2e53a8418a8d84f3dc5-full-frame-black": {
+    "id": "print-book-art-a2e53a8418a8d84f3dc5-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a2e53a8418a8d84f3dc5",
+    "title": "Untitled — El Salvador, page 47 — Large print — Black frame",
+    "artworkTitle": "Untitled — El Salvador, page 47",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD08X4DD73F1S10X8J1S6DD08X4DD73G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.8167,
+      "height": 4.4767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.08,
+      "height": 4.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5.jpg",
+    "assetSha256": "cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5",
+    "sourceSha256": "195cdad363efab3f28a46926c4e9cf2a4804b05f799f23350f4a4bc120690193",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.webp",
+      "alt": "Untitled — El Salvador, page 47",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.08,
+        "height": 4.73,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.08X4.73",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-a2e53a8418a8d84f3dc5-full-frame-white": {
+    "id": "print-book-art-a2e53a8418a8d84f3dc5-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a2e53a8418a8d84f3dc5",
+    "title": "Untitled — El Salvador, page 47 — Large print — White frame",
+    "artworkTitle": "Untitled — El Salvador, page 47",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD08X4DD73F2S10X8J1S6DD08X4DD73G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.8167,
+      "height": 4.4767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.08,
+      "height": 4.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5.jpg",
+    "assetSha256": "cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5",
+    "sourceSha256": "195cdad363efab3f28a46926c4e9cf2a4804b05f799f23350f4a4bc120690193",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.webp",
+      "alt": "Untitled — El Salvador, page 47",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.08,
+        "height": 4.73,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.08X4.73",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-a2e53a8418a8d84f3dc5-full-frame-natural": {
+    "id": "print-book-art-a2e53a8418a8d84f3dc5-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a2e53a8418a8d84f3dc5",
+    "title": "Untitled — El Salvador, page 47 — Large print — Natural wood frame",
+    "artworkTitle": "Untitled — El Salvador, page 47",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD08X4DD73F7S10X8J1S6DD08X4DD73G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.8167,
+      "height": 4.4767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.08,
+      "height": 4.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5.jpg",
+    "assetSha256": "cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5",
+    "sourceSha256": "195cdad363efab3f28a46926c4e9cf2a4804b05f799f23350f4a4bc120690193",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.webp",
+      "alt": "Untitled — El Salvador, page 47",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.08,
+        "height": 4.73,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.08X4.73",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-27fee33e69f262ecfacb-full": {
     "id": "print-book-art-27fee33e69f262ecfacb-full",
     "type": "print",
@@ -40052,6 +42938,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-27fee33e69f262ecfacb-full-frame-black": {
+    "id": "print-book-art-27fee33e69f262ecfacb-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-27fee33e69f262ecfacb",
+    "title": "Sedona: Bell Rock 2 — Large print — Black frame",
+    "artworkTitle": "Sedona: Bell Rock 2",
+    "amount": "134.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD33X13DD52F1S16X20J1S10DD33X13DD52G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.0733,
+      "height": 13.2667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.33,
+      "height": 13.52,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0.jpg",
+    "assetSha256": "5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0",
+    "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp",
+      "alt": "Sedona: Bell Rock 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.33,
+        "height": 13.52,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.33X13.52",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-book-art-27fee33e69f262ecfacb-full-frame-white": {
+    "id": "print-book-art-27fee33e69f262ecfacb-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-27fee33e69f262ecfacb",
+    "title": "Sedona: Bell Rock 2 — Large print — White frame",
+    "artworkTitle": "Sedona: Bell Rock 2",
+    "amount": "134.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD33X13DD52F2S16X20J1S10DD33X13DD52G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.0733,
+      "height": 13.2667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.33,
+      "height": 13.52,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0.jpg",
+    "assetSha256": "5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0",
+    "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp",
+      "alt": "Sedona: Bell Rock 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.33,
+        "height": 13.52,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.33X13.52",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-book-art-27fee33e69f262ecfacb-full-frame-natural": {
+    "id": "print-book-art-27fee33e69f262ecfacb-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-27fee33e69f262ecfacb",
+    "title": "Sedona: Bell Rock 2 — Large print — Natural wood frame",
+    "artworkTitle": "Sedona: Bell Rock 2",
+    "amount": "149.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD33X13DD52F7S16X20J1S10DD33X13DD52G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.0733,
+      "height": 13.2667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.33,
+      "height": 13.52,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0.jpg",
+    "assetSha256": "5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0",
+    "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp",
+      "alt": "Sedona: Bell Rock 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.33,
+        "height": 13.52,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.33X13.52",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
   },
   "print-book-art-27fee33e69f262ecfacb-medium": {
     "id": "print-book-art-27fee33e69f262ecfacb-medium",
@@ -40091,6 +43199,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-27fee33e69f262ecfacb-medium-frame-black": {
+    "id": "print-book-art-27fee33e69f262ecfacb-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-27fee33e69f262ecfacb",
+    "title": "Sedona: Bell Rock 2 — Medium print — Black frame",
+    "artworkTitle": "Sedona: Bell Rock 2",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD81X10DD2F1S11X14J1S7DD81X10DD2G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.5533,
+      "height": 9.9467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.81,
+      "height": 10.2,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a.jpg",
+    "assetSha256": "c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a",
+    "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp",
+      "alt": "Sedona: Bell Rock 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.81,
+        "height": 10.2,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.81X10.2",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-27fee33e69f262ecfacb-medium-frame-white": {
+    "id": "print-book-art-27fee33e69f262ecfacb-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-27fee33e69f262ecfacb",
+    "title": "Sedona: Bell Rock 2 — Medium print — White frame",
+    "artworkTitle": "Sedona: Bell Rock 2",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD81X10DD2F2S11X14J1S7DD81X10DD2G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.5533,
+      "height": 9.9467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.81,
+      "height": 10.2,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a.jpg",
+    "assetSha256": "c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a",
+    "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp",
+      "alt": "Sedona: Bell Rock 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.81,
+        "height": 10.2,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.81X10.2",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-27fee33e69f262ecfacb-medium-frame-natural": {
+    "id": "print-book-art-27fee33e69f262ecfacb-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-27fee33e69f262ecfacb",
+    "title": "Sedona: Bell Rock 2 — Medium print — Natural wood frame",
+    "artworkTitle": "Sedona: Bell Rock 2",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD81X10DD2F7S11X14J1S7DD81X10DD2G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.5533,
+      "height": 9.9467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.81,
+      "height": 10.2,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a.jpg",
+    "assetSha256": "c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a",
+    "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp",
+      "alt": "Sedona: Bell Rock 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.81,
+        "height": 10.2,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.81X10.2",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-27fee33e69f262ecfacb-small": {
     "id": "print-book-art-27fee33e69f262ecfacb-small",
     "type": "print",
@@ -40128,6 +43458,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-27fee33e69f262ecfacb-small-frame-black": {
+    "id": "print-book-art-27fee33e69f262ecfacb-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-27fee33e69f262ecfacb",
+    "title": "Sedona: Bell Rock 2 — Small print — Black frame",
+    "artworkTitle": "Sedona: Bell Rock 2",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD29X6DD88F1S8X10J1S5DD29X6DD88G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.03,
+      "height": 6.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.29,
+      "height": 6.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246.jpg",
+    "assetSha256": "b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246",
+    "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp",
+      "alt": "Sedona: Bell Rock 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.29,
+        "height": 6.88,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.29X6.88",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-27fee33e69f262ecfacb-small-frame-white": {
+    "id": "print-book-art-27fee33e69f262ecfacb-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-27fee33e69f262ecfacb",
+    "title": "Sedona: Bell Rock 2 — Small print — White frame",
+    "artworkTitle": "Sedona: Bell Rock 2",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD29X6DD88F2S8X10J1S5DD29X6DD88G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.03,
+      "height": 6.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.29,
+      "height": 6.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246.jpg",
+    "assetSha256": "b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246",
+    "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp",
+      "alt": "Sedona: Bell Rock 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.29,
+        "height": 6.88,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.29X6.88",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-27fee33e69f262ecfacb-small-frame-natural": {
+    "id": "print-book-art-27fee33e69f262ecfacb-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-27fee33e69f262ecfacb",
+    "title": "Sedona: Bell Rock 2 — Small print — Natural wood frame",
+    "artworkTitle": "Sedona: Bell Rock 2",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD29X6DD88F7S8X10J1S5DD29X6DD88G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.03,
+      "height": 6.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.29,
+      "height": 6.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246.jpg",
+    "assetSha256": "b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246",
+    "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp",
+      "alt": "Sedona: Bell Rock 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.29,
+        "height": 6.88,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.29X6.88",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-ff6db6906f0ed48ccc3a-full": {
     "id": "print-book-art-ff6db6906f0ed48ccc3a-full",
@@ -40167,6 +43719,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-ff6db6906f0ed48ccc3a-full-frame-black": {
+    "id": "print-book-art-ff6db6906f0ed48ccc3a-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ff6db6906f0ed48ccc3a",
+    "title": "Sedona Monuments — Large print — Black frame",
+    "artworkTitle": "Sedona Monuments",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S13DD24X9DD96F1S16X12J1S13DD24X9DD96G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.98,
+      "height": 9.7067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 13.24,
+      "height": 9.96,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57.jpg",
+    "assetSha256": "e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57",
+    "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp",
+      "alt": "Sedona Monuments",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 13.24,
+        "height": 9.96,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S13.24X9.96",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-book-art-ff6db6906f0ed48ccc3a-full-frame-white": {
+    "id": "print-book-art-ff6db6906f0ed48ccc3a-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ff6db6906f0ed48ccc3a",
+    "title": "Sedona Monuments — Large print — White frame",
+    "artworkTitle": "Sedona Monuments",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S13DD24X9DD96F2S16X12J1S13DD24X9DD96G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.98,
+      "height": 9.7067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 13.24,
+      "height": 9.96,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57.jpg",
+    "assetSha256": "e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57",
+    "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp",
+      "alt": "Sedona Monuments",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 13.24,
+        "height": 9.96,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S13.24X9.96",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-book-art-ff6db6906f0ed48ccc3a-full-frame-natural": {
+    "id": "print-book-art-ff6db6906f0ed48ccc3a-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ff6db6906f0ed48ccc3a",
+    "title": "Sedona Monuments — Large print — Natural wood frame",
+    "artworkTitle": "Sedona Monuments",
+    "amount": "120.00",
+    "currency": "USD",
+    "sku": "5M144M8S13DD24X9DD96F7S16X12J1S13DD24X9DD96G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.98,
+      "height": 9.7067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 13.24,
+      "height": 9.96,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57.jpg",
+    "assetSha256": "e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57",
+    "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp",
+      "alt": "Sedona Monuments",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 13.24,
+        "height": 9.96,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S13.24X9.96",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
   "print-book-art-ff6db6906f0ed48ccc3a-medium": {
     "id": "print-book-art-ff6db6906f0ed48ccc3a-medium",
     "type": "print",
@@ -40204,6 +43978,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-ff6db6906f0ed48ccc3a-medium-frame-black": {
+    "id": "print-book-art-ff6db6906f0ed48ccc3a-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ff6db6906f0ed48ccc3a",
+    "title": "Sedona Monuments — Medium print — Black frame",
+    "artworkTitle": "Sedona Monuments",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD99X7DD53F1S14X11J1S9DD99X7DD53G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.73,
+      "height": 7.2767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.99,
+      "height": 7.53,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34.jpg",
+    "assetSha256": "0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34",
+    "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp",
+      "alt": "Sedona Monuments",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.99,
+        "height": 7.53,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.99X7.53",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-ff6db6906f0ed48ccc3a-medium-frame-white": {
+    "id": "print-book-art-ff6db6906f0ed48ccc3a-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ff6db6906f0ed48ccc3a",
+    "title": "Sedona Monuments — Medium print — White frame",
+    "artworkTitle": "Sedona Monuments",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD99X7DD53F2S14X11J1S9DD99X7DD53G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.73,
+      "height": 7.2767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.99,
+      "height": 7.53,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34.jpg",
+    "assetSha256": "0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34",
+    "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp",
+      "alt": "Sedona Monuments",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.99,
+        "height": 7.53,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.99X7.53",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-ff6db6906f0ed48ccc3a-medium-frame-natural": {
+    "id": "print-book-art-ff6db6906f0ed48ccc3a-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ff6db6906f0ed48ccc3a",
+    "title": "Sedona Monuments — Medium print — Natural wood frame",
+    "artworkTitle": "Sedona Monuments",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD99X7DD53F7S14X11J1S9DD99X7DD53G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.73,
+      "height": 7.2767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.99,
+      "height": 7.53,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34.jpg",
+    "assetSha256": "0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34",
+    "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp",
+      "alt": "Sedona Monuments",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.99,
+        "height": 7.53,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.99X7.53",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-ff6db6906f0ed48ccc3a-small": {
     "id": "print-book-art-ff6db6906f0ed48ccc3a-small",
@@ -40243,6 +44239,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-ff6db6906f0ed48ccc3a-small-frame-black": {
+    "id": "print-book-art-ff6db6906f0ed48ccc3a-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ff6db6906f0ed48ccc3a",
+    "title": "Sedona Monuments — Small print — Black frame",
+    "artworkTitle": "Sedona Monuments",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD74X5DD1F1S10X8J1S6DD74X5DD1G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.48,
+      "height": 4.8467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.74,
+      "height": 5.1,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d.jpg",
+    "assetSha256": "cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d",
+    "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp",
+      "alt": "Sedona Monuments",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.74,
+        "height": 5.1,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.74X5.1",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-ff6db6906f0ed48ccc3a-small-frame-white": {
+    "id": "print-book-art-ff6db6906f0ed48ccc3a-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ff6db6906f0ed48ccc3a",
+    "title": "Sedona Monuments — Small print — White frame",
+    "artworkTitle": "Sedona Monuments",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD74X5DD1F2S10X8J1S6DD74X5DD1G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.48,
+      "height": 4.8467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.74,
+      "height": 5.1,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d.jpg",
+    "assetSha256": "cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d",
+    "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp",
+      "alt": "Sedona Monuments",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.74,
+        "height": 5.1,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.74X5.1",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-ff6db6906f0ed48ccc3a-small-frame-natural": {
+    "id": "print-book-art-ff6db6906f0ed48ccc3a-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ff6db6906f0ed48ccc3a",
+    "title": "Sedona Monuments — Small print — Natural wood frame",
+    "artworkTitle": "Sedona Monuments",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD74X5DD1F7S10X8J1S6DD74X5DD1G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.48,
+      "height": 4.8467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.74,
+      "height": 5.1,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d.jpg",
+    "assetSha256": "cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d",
+    "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp",
+      "alt": "Sedona Monuments",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.74,
+        "height": 5.1,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.74X5.1",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-55829535637cd4974a88-full": {
     "id": "print-book-art-55829535637cd4974a88-full",
     "type": "print",
@@ -40280,6 +44498,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-55829535637cd4974a88-full-frame-black": {
+    "id": "print-book-art-55829535637cd4974a88-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-55829535637cd4974a88",
+    "title": "Untitled — Hawaii, page 56 — Large print — Black frame",
+    "artworkTitle": "Untitled — Hawaii, page 56",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD94X4DD7F1S10X8J1S5DD94X4DD7G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.6867,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.94,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4.jpg",
+    "assetSha256": "d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4",
+    "sourceSha256": "a85207826c8015a22a24b624e5a9b54a7acefb349d4fe188e0c3f0c8c959ead3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.webp",
+      "alt": "Untitled — Hawaii, page 56",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.94,
+        "height": 4.7,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.94X4.7",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-55829535637cd4974a88-full-frame-white": {
+    "id": "print-book-art-55829535637cd4974a88-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-55829535637cd4974a88",
+    "title": "Untitled — Hawaii, page 56 — Large print — White frame",
+    "artworkTitle": "Untitled — Hawaii, page 56",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD94X4DD7F2S10X8J1S5DD94X4DD7G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.6867,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.94,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4.jpg",
+    "assetSha256": "d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4",
+    "sourceSha256": "a85207826c8015a22a24b624e5a9b54a7acefb349d4fe188e0c3f0c8c959ead3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.webp",
+      "alt": "Untitled — Hawaii, page 56",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.94,
+        "height": 4.7,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.94X4.7",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-55829535637cd4974a88-full-frame-natural": {
+    "id": "print-book-art-55829535637cd4974a88-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-55829535637cd4974a88",
+    "title": "Untitled — Hawaii, page 56 — Large print — Natural wood frame",
+    "artworkTitle": "Untitled — Hawaii, page 56",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD94X4DD7F7S10X8J1S5DD94X4DD7G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.6867,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.94,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4.jpg",
+    "assetSha256": "d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4",
+    "sourceSha256": "a85207826c8015a22a24b624e5a9b54a7acefb349d4fe188e0c3f0c8c959ead3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.webp",
+      "alt": "Untitled — Hawaii, page 56",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.94,
+        "height": 4.7,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.94X4.7",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-04a049ea60a5a09e6873-full": {
     "id": "print-book-art-04a049ea60a5a09e6873-full",
@@ -40319,6 +44759,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-04a049ea60a5a09e6873-full-frame-black": {
+    "id": "print-book-art-04a049ea60a5a09e6873-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-04a049ea60a5a09e6873",
+    "title": "Untitled — Hawaii, page 57 — Large print — Black frame",
+    "artworkTitle": "Untitled — Hawaii, page 57",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD67X12DD77F1S12X15J1S6DD67X12DD77G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4167,
+      "height": 12.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.67,
+      "height": 12.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee.jpg",
+    "assetSha256": "c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee",
+    "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
+      "alt": "Untitled — Hawaii, page 57",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.67,
+        "height": 12.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.67X12.77",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-04a049ea60a5a09e6873-full-frame-white": {
+    "id": "print-book-art-04a049ea60a5a09e6873-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-04a049ea60a5a09e6873",
+    "title": "Untitled — Hawaii, page 57 — Large print — White frame",
+    "artworkTitle": "Untitled — Hawaii, page 57",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD67X12DD77F2S12X15J1S6DD67X12DD77G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4167,
+      "height": 12.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.67,
+      "height": 12.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee.jpg",
+    "assetSha256": "c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee",
+    "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
+      "alt": "Untitled — Hawaii, page 57",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.67,
+        "height": 12.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.67X12.77",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-04a049ea60a5a09e6873-full-frame-natural": {
+    "id": "print-book-art-04a049ea60a5a09e6873-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-04a049ea60a5a09e6873",
+    "title": "Untitled — Hawaii, page 57 — Large print — Natural wood frame",
+    "artworkTitle": "Untitled — Hawaii, page 57",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD67X12DD77F7S12X15J1S6DD67X12DD77G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4167,
+      "height": 12.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.67,
+      "height": 12.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee.jpg",
+    "assetSha256": "c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee",
+    "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
+      "alt": "Untitled — Hawaii, page 57",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.67,
+        "height": 12.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.67X12.77",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
   "print-book-art-04a049ea60a5a09e6873-medium": {
     "id": "print-book-art-04a049ea60a5a09e6873-medium",
     "type": "print",
@@ -40356,6 +45018,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-04a049ea60a5a09e6873-medium-frame-black": {
+    "id": "print-book-art-04a049ea60a5a09e6873-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-04a049ea60a5a09e6873",
+    "title": "Untitled — Hawaii, page 57 — Medium print — Black frame",
+    "artworkTitle": "Untitled — Hawaii, page 57",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD07X9DD64F1S9X12J1S5DD07X9DD64G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8167,
+      "height": 9.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.07,
+      "height": 9.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941.jpg",
+    "assetSha256": "7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941",
+    "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
+      "alt": "Untitled — Hawaii, page 57",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.07,
+        "height": 9.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.07X9.64",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-04a049ea60a5a09e6873-medium-frame-white": {
+    "id": "print-book-art-04a049ea60a5a09e6873-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-04a049ea60a5a09e6873",
+    "title": "Untitled — Hawaii, page 57 — Medium print — White frame",
+    "artworkTitle": "Untitled — Hawaii, page 57",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD07X9DD64F2S9X12J1S5DD07X9DD64G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8167,
+      "height": 9.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.07,
+      "height": 9.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941.jpg",
+    "assetSha256": "7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941",
+    "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
+      "alt": "Untitled — Hawaii, page 57",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.07,
+        "height": 9.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.07X9.64",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-04a049ea60a5a09e6873-medium-frame-natural": {
+    "id": "print-book-art-04a049ea60a5a09e6873-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-04a049ea60a5a09e6873",
+    "title": "Untitled — Hawaii, page 57 — Medium print — Natural wood frame",
+    "artworkTitle": "Untitled — Hawaii, page 57",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD07X9DD64F7S9X12J1S5DD07X9DD64G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8167,
+      "height": 9.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.07,
+      "height": 9.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941.jpg",
+    "assetSha256": "7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941",
+    "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
+      "alt": "Untitled — Hawaii, page 57",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.07,
+        "height": 9.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.07X9.64",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-e589c9375e23d1de4748-full": {
     "id": "print-book-art-e589c9375e23d1de4748-full",
@@ -40395,6 +45279,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-e589c9375e23d1de4748-full-frame-black": {
+    "id": "print-book-art-e589c9375e23d1de4748-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e589c9375e23d1de4748",
+    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — Black frame",
+    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD25X5DD77F1S14X11J1S10DD25X5DD77G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.99,
+      "height": 5.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.25,
+      "height": 5.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e.jpg",
+    "assetSha256": "1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e",
+    "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
+      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.25,
+        "height": 5.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.25X5.77",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-e589c9375e23d1de4748-full-frame-white": {
+    "id": "print-book-art-e589c9375e23d1de4748-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e589c9375e23d1de4748",
+    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — White frame",
+    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD25X5DD77F2S14X11J1S10DD25X5DD77G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.99,
+      "height": 5.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.25,
+      "height": 5.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e.jpg",
+    "assetSha256": "1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e",
+    "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
+      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.25,
+        "height": 5.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.25X5.77",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-e589c9375e23d1de4748-full-frame-natural": {
+    "id": "print-book-art-e589c9375e23d1de4748-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e589c9375e23d1de4748",
+    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD25X5DD77F7S14X11J1S10DD25X5DD77G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.99,
+      "height": 5.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.25,
+      "height": 5.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e.jpg",
+    "assetSha256": "1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e",
+    "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
+      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.25,
+        "height": 5.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.25X5.77",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-e589c9375e23d1de4748-medium": {
     "id": "print-book-art-e589c9375e23d1de4748-medium",
     "type": "print",
@@ -40432,6 +45538,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-e589c9375e23d1de4748-medium-frame-black": {
+    "id": "print-book-art-e589c9375e23d1de4748-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e589c9375e23d1de4748",
+    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — Black frame",
+    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S7DD75X4DD39F1S10X8J1S7DD75X4DD39G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.4933,
+      "height": 4.1367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.75,
+      "height": 4.39,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b.jpg",
+    "assetSha256": "b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b",
+    "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
+      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.75,
+        "height": 4.39,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.75X4.39",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-e589c9375e23d1de4748-medium-frame-white": {
+    "id": "print-book-art-e589c9375e23d1de4748-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e589c9375e23d1de4748",
+    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — White frame",
+    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S7DD75X4DD39F2S10X8J1S7DD75X4DD39G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.4933,
+      "height": 4.1367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.75,
+      "height": 4.39,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b.jpg",
+    "assetSha256": "b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b",
+    "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
+      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.75,
+        "height": 4.39,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.75X4.39",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-e589c9375e23d1de4748-medium-frame-natural": {
+    "id": "print-book-art-e589c9375e23d1de4748-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e589c9375e23d1de4748",
+    "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S7DD75X4DD39F7S10X8J1S7DD75X4DD39G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.4933,
+      "height": 4.1367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.75,
+      "height": 4.39,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b.jpg",
+    "assetSha256": "b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b",
+    "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp",
+      "alt": "Sunset in Greece, Photo Credit: Chelsea Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.75,
+        "height": 4.39,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.75X4.39",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-f2025e5a72f4a70866c6-full": {
     "id": "print-book-art-f2025e5a72f4a70866c6-full",
@@ -40471,6 +45799,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-f2025e5a72f4a70866c6-full-frame-black": {
+    "id": "print-book-art-f2025e5a72f4a70866c6-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f2025e5a72f4a70866c6",
+    "title": "Untitled — Assorted Adventures, page 59 — Large print — Black frame",
+    "artworkTitle": "Untitled — Assorted Adventures, page 59",
+    "amount": "86.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD83X8DD75F1S14X11J1S10DD83X8DD75G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.5767,
+      "height": 8.4967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.83,
+      "height": 8.75,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291.jpg",
+    "assetSha256": "9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291",
+    "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp",
+      "alt": "Untitled — Assorted Adventures, page 59",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.83,
+        "height": 8.75,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.83X8.75",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-f2025e5a72f4a70866c6-full-frame-white": {
+    "id": "print-book-art-f2025e5a72f4a70866c6-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f2025e5a72f4a70866c6",
+    "title": "Untitled — Assorted Adventures, page 59 — Large print — White frame",
+    "artworkTitle": "Untitled — Assorted Adventures, page 59",
+    "amount": "86.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD83X8DD75F2S14X11J1S10DD83X8DD75G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.5767,
+      "height": 8.4967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.83,
+      "height": 8.75,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291.jpg",
+    "assetSha256": "9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291",
+    "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp",
+      "alt": "Untitled — Assorted Adventures, page 59",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.83,
+        "height": 8.75,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.83X8.75",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-f2025e5a72f4a70866c6-full-frame-natural": {
+    "id": "print-book-art-f2025e5a72f4a70866c6-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f2025e5a72f4a70866c6",
+    "title": "Untitled — Assorted Adventures, page 59 — Large print — Natural wood frame",
+    "artworkTitle": "Untitled — Assorted Adventures, page 59",
+    "amount": "97.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD83X8DD75F7S14X11J1S10DD83X8DD75G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.5767,
+      "height": 8.4967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.83,
+      "height": 8.75,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291.jpg",
+    "assetSha256": "9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291",
+    "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp",
+      "alt": "Untitled — Assorted Adventures, page 59",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.83,
+        "height": 8.75,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.83X8.75",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
   "print-book-art-f2025e5a72f4a70866c6-medium": {
     "id": "print-book-art-f2025e5a72f4a70866c6-medium",
     "type": "print",
@@ -40508,6 +46058,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-f2025e5a72f4a70866c6-medium-frame-black": {
+    "id": "print-book-art-f2025e5a72f4a70866c6-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f2025e5a72f4a70866c6",
+    "title": "Untitled — Assorted Adventures, page 59 — Medium print — Black frame",
+    "artworkTitle": "Untitled — Assorted Adventures, page 59",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD18X6DD62F1S12X9J1S8DD18X6DD62G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.9233,
+      "height": 6.3667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.18,
+      "height": 6.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a.jpg",
+    "assetSha256": "39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a",
+    "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp",
+      "alt": "Untitled — Assorted Adventures, page 59",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.18,
+        "height": 6.62,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.18X6.62",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-f2025e5a72f4a70866c6-medium-frame-white": {
+    "id": "print-book-art-f2025e5a72f4a70866c6-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f2025e5a72f4a70866c6",
+    "title": "Untitled — Assorted Adventures, page 59 — Medium print — White frame",
+    "artworkTitle": "Untitled — Assorted Adventures, page 59",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD18X6DD62F2S12X9J1S8DD18X6DD62G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.9233,
+      "height": 6.3667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.18,
+      "height": 6.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a.jpg",
+    "assetSha256": "39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a",
+    "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp",
+      "alt": "Untitled — Assorted Adventures, page 59",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.18,
+        "height": 6.62,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.18X6.62",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-f2025e5a72f4a70866c6-medium-frame-natural": {
+    "id": "print-book-art-f2025e5a72f4a70866c6-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f2025e5a72f4a70866c6",
+    "title": "Untitled — Assorted Adventures, page 59 — Medium print — Natural wood frame",
+    "artworkTitle": "Untitled — Assorted Adventures, page 59",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD18X6DD62F7S12X9J1S8DD18X6DD62G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.9233,
+      "height": 6.3667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.18,
+      "height": 6.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a.jpg",
+    "assetSha256": "39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a",
+    "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp",
+      "alt": "Untitled — Assorted Adventures, page 59",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.18,
+        "height": 6.62,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.18X6.62",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-f2025e5a72f4a70866c6-small": {
     "id": "print-book-art-f2025e5a72f4a70866c6-small",
@@ -40547,6 +46319,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-f2025e5a72f4a70866c6-small-frame-black": {
+    "id": "print-book-art-f2025e5a72f4a70866c6-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f2025e5a72f4a70866c6",
+    "title": "Untitled — Assorted Adventures, page 59 — Small print — Black frame",
+    "artworkTitle": "Untitled — Assorted Adventures, page 59",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD54X4DD5F1S10X8J1S5DD54X4DD5G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.2867,
+      "height": 4.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.54,
+      "height": 4.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8.jpg",
+    "assetSha256": "8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8",
+    "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp",
+      "alt": "Untitled — Assorted Adventures, page 59",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.54,
+        "height": 4.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.54X4.5",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-f2025e5a72f4a70866c6-small-frame-white": {
+    "id": "print-book-art-f2025e5a72f4a70866c6-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f2025e5a72f4a70866c6",
+    "title": "Untitled — Assorted Adventures, page 59 — Small print — White frame",
+    "artworkTitle": "Untitled — Assorted Adventures, page 59",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD54X4DD5F2S10X8J1S5DD54X4DD5G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.2867,
+      "height": 4.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.54,
+      "height": 4.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8.jpg",
+    "assetSha256": "8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8",
+    "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp",
+      "alt": "Untitled — Assorted Adventures, page 59",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.54,
+        "height": 4.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.54X4.5",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-f2025e5a72f4a70866c6-small-frame-natural": {
+    "id": "print-book-art-f2025e5a72f4a70866c6-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-f2025e5a72f4a70866c6",
+    "title": "Untitled — Assorted Adventures, page 59 — Small print — Natural wood frame",
+    "artworkTitle": "Untitled — Assorted Adventures, page 59",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD54X4DD5F7S10X8J1S5DD54X4DD5G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.2867,
+      "height": 4.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.54,
+      "height": 4.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8.jpg",
+    "assetSha256": "8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8",
+    "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp",
+      "alt": "Untitled — Assorted Adventures, page 59",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.54,
+        "height": 4.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.54X4.5",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-82ab8d65fb50fe0d096a-full": {
     "id": "print-book-art-82ab8d65fb50fe0d096a-full",
     "type": "print",
@@ -40584,6 +46578,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-82ab8d65fb50fe0d096a-full-frame-black": {
+    "id": "print-book-art-82ab8d65fb50fe0d096a-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82ab8d65fb50fe0d096a",
+    "title": "Vision of Ukraine at Peace — Large print — Black frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD3X6DD27F1S14X11J1S11DD3X6DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.0367,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.3,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214.jpg",
+    "assetSha256": "02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214",
+    "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.webp",
+      "alt": "Vision of Ukraine at Peace",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.3,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.3X6.27",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-82ab8d65fb50fe0d096a-full-frame-white": {
+    "id": "print-book-art-82ab8d65fb50fe0d096a-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82ab8d65fb50fe0d096a",
+    "title": "Vision of Ukraine at Peace — Large print — White frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD3X6DD27F2S14X11J1S11DD3X6DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.0367,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.3,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214.jpg",
+    "assetSha256": "02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214",
+    "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.webp",
+      "alt": "Vision of Ukraine at Peace",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.3,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.3X6.27",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-82ab8d65fb50fe0d096a-full-frame-natural": {
+    "id": "print-book-art-82ab8d65fb50fe0d096a-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82ab8d65fb50fe0d096a",
+    "title": "Vision of Ukraine at Peace — Large print — Natural wood frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD3X6DD27F7S14X11J1S11DD3X6DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.0367,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.3,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214.jpg",
+    "assetSha256": "02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214",
+    "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.webp",
+      "alt": "Vision of Ukraine at Peace",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.3,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.3X6.27",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-82ab8d65fb50fe0d096a-medium": {
     "id": "print-book-art-82ab8d65fb50fe0d096a-medium",
@@ -40623,6 +46839,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-82ab8d65fb50fe0d096a-medium-frame-black": {
+    "id": "print-book-art-82ab8d65fb50fe0d096a-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82ab8d65fb50fe0d096a",
+    "title": "Vision of Ukraine at Peace — Medium print — Black frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD54X4DD77F1S12X9J1S8DD54X4DD77G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.2867,
+      "height": 4.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.54,
+      "height": 4.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0.jpg",
+    "assetSha256": "d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0",
+    "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.webp",
+      "alt": "Vision of Ukraine at Peace",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.54,
+        "height": 4.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.54X4.77",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-82ab8d65fb50fe0d096a-medium-frame-white": {
+    "id": "print-book-art-82ab8d65fb50fe0d096a-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82ab8d65fb50fe0d096a",
+    "title": "Vision of Ukraine at Peace — Medium print — White frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD54X4DD77F2S12X9J1S8DD54X4DD77G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.2867,
+      "height": 4.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.54,
+      "height": 4.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0.jpg",
+    "assetSha256": "d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0",
+    "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.webp",
+      "alt": "Vision of Ukraine at Peace",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.54,
+        "height": 4.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.54X4.77",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-82ab8d65fb50fe0d096a-medium-frame-natural": {
+    "id": "print-book-art-82ab8d65fb50fe0d096a-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82ab8d65fb50fe0d096a",
+    "title": "Vision of Ukraine at Peace — Medium print — Natural wood frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD54X4DD77F7S12X9J1S8DD54X4DD77G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.2867,
+      "height": 4.5167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.54,
+      "height": 4.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0.jpg",
+    "assetSha256": "d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0",
+    "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.webp",
+      "alt": "Vision of Ukraine at Peace",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.54,
+        "height": 4.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.54X4.77",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
   "print-book-art-94e2edf9a24c90950489-full": {
     "id": "print-book-art-94e2edf9a24c90950489-full",
     "type": "print",
@@ -40660,6 +47098,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-94e2edf9a24c90950489-full-frame-black": {
+    "id": "print-book-art-94e2edf9a24c90950489-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-94e2edf9a24c90950489",
+    "title": "Inside album cover for Yes: Close to the Edge — Large print — Black frame",
+    "artworkTitle": "Inside album cover for Yes: Close to the Edge",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD56X6DD27F1S15X12J1S12DD56X6DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.3067,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.56,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792.jpg",
+    "assetSha256": "691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792",
+    "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.webp",
+      "alt": "Inside album cover for Yes: Close to the Edge",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.56,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.56X6.27",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-94e2edf9a24c90950489-full-frame-white": {
+    "id": "print-book-art-94e2edf9a24c90950489-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-94e2edf9a24c90950489",
+    "title": "Inside album cover for Yes: Close to the Edge — Large print — White frame",
+    "artworkTitle": "Inside album cover for Yes: Close to the Edge",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD56X6DD27F2S15X12J1S12DD56X6DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.3067,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.56,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792.jpg",
+    "assetSha256": "691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792",
+    "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.webp",
+      "alt": "Inside album cover for Yes: Close to the Edge",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.56,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.56X6.27",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-94e2edf9a24c90950489-full-frame-natural": {
+    "id": "print-book-art-94e2edf9a24c90950489-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-94e2edf9a24c90950489",
+    "title": "Inside album cover for Yes: Close to the Edge — Large print — Natural wood frame",
+    "artworkTitle": "Inside album cover for Yes: Close to the Edge",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD56X6DD27F7S15X12J1S12DD56X6DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.3067,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.56,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792.jpg",
+    "assetSha256": "691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792",
+    "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.webp",
+      "alt": "Inside album cover for Yes: Close to the Edge",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.56,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.56X6.27",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
   },
   "print-book-art-94e2edf9a24c90950489-medium": {
     "id": "print-book-art-94e2edf9a24c90950489-medium",
@@ -40699,6 +47359,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-94e2edf9a24c90950489-medium-frame-black": {
+    "id": "print-book-art-94e2edf9a24c90950489-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-94e2edf9a24c90950489",
+    "title": "Inside album cover for Yes: Close to the Edge — Medium print — Black frame",
+    "artworkTitle": "Inside album cover for Yes: Close to the Edge",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD48X4DD76F1S12X9J1S9DD48X4DD76G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.2167,
+      "height": 4.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.48,
+      "height": 4.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b.jpg",
+    "assetSha256": "19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b",
+    "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.webp",
+      "alt": "Inside album cover for Yes: Close to the Edge",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.48,
+        "height": 4.76,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.48X4.76",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-94e2edf9a24c90950489-medium-frame-white": {
+    "id": "print-book-art-94e2edf9a24c90950489-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-94e2edf9a24c90950489",
+    "title": "Inside album cover for Yes: Close to the Edge — Medium print — White frame",
+    "artworkTitle": "Inside album cover for Yes: Close to the Edge",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD48X4DD76F2S12X9J1S9DD48X4DD76G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.2167,
+      "height": 4.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.48,
+      "height": 4.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b.jpg",
+    "assetSha256": "19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b",
+    "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.webp",
+      "alt": "Inside album cover for Yes: Close to the Edge",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.48,
+        "height": 4.76,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.48X4.76",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-94e2edf9a24c90950489-medium-frame-natural": {
+    "id": "print-book-art-94e2edf9a24c90950489-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-94e2edf9a24c90950489",
+    "title": "Inside album cover for Yes: Close to the Edge — Medium print — Natural wood frame",
+    "artworkTitle": "Inside album cover for Yes: Close to the Edge",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD48X4DD76F7S12X9J1S9DD48X4DD76G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.2167,
+      "height": 4.5067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.48,
+      "height": 4.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b.jpg",
+    "assetSha256": "19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b",
+    "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.webp",
+      "alt": "Inside album cover for Yes: Close to the Edge",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.48,
+        "height": 4.76,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.48X4.76",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-6e6d7ac51608e0b7f10f-full": {
     "id": "print-book-art-6e6d7ac51608e0b7f10f-full",
     "type": "print",
@@ -40736,6 +47618,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-6e6d7ac51608e0b7f10f-full-frame-black": {
+    "id": "print-book-art-6e6d7ac51608e0b7f10f-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-6e6d7ac51608e0b7f10f",
+    "title": "Moonrise in Santa Monica, photo credit: Paul Murphy — Large print — Black frame",
+    "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD73X8DD98F1S9X12J1S5DD73X8DD98G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.4767,
+      "height": 8.7133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.73,
+      "height": 8.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf.jpg",
+    "assetSha256": "0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf",
+    "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.webp",
+      "alt": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.73,
+        "height": 8.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.73X8.98",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-6e6d7ac51608e0b7f10f-full-frame-white": {
+    "id": "print-book-art-6e6d7ac51608e0b7f10f-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-6e6d7ac51608e0b7f10f",
+    "title": "Moonrise in Santa Monica, photo credit: Paul Murphy — Large print — White frame",
+    "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD73X8DD98F2S9X12J1S5DD73X8DD98G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.4767,
+      "height": 8.7133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.73,
+      "height": 8.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf.jpg",
+    "assetSha256": "0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf",
+    "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.webp",
+      "alt": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.73,
+        "height": 8.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.73X8.98",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-6e6d7ac51608e0b7f10f-full-frame-natural": {
+    "id": "print-book-art-6e6d7ac51608e0b7f10f-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-6e6d7ac51608e0b7f10f",
+    "title": "Moonrise in Santa Monica, photo credit: Paul Murphy — Large print — Natural wood frame",
+    "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD73X8DD98F7S9X12J1S5DD73X8DD98G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.4767,
+      "height": 8.7133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.73,
+      "height": 8.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf.jpg",
+    "assetSha256": "0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf",
+    "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.webp",
+      "alt": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.73,
+        "height": 8.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.73X8.98",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-6e6d7ac51608e0b7f10f-medium": {
     "id": "print-book-art-6e6d7ac51608e0b7f10f-medium",
@@ -40775,6 +47879,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-6e6d7ac51608e0b7f10f-medium-frame-black": {
+    "id": "print-book-art-6e6d7ac51608e0b7f10f-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-6e6d7ac51608e0b7f10f",
+    "title": "Moonrise in Santa Monica, photo credit: Paul Murphy — Medium print — Black frame",
+    "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD36X6DD79F1S8X10J1S4DD36X6DD79G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 6.5333,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 6.79,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090.jpg",
+    "assetSha256": "fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090",
+    "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.webp",
+      "alt": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.36,
+        "height": 6.79,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.36X6.79",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-6e6d7ac51608e0b7f10f-medium-frame-white": {
+    "id": "print-book-art-6e6d7ac51608e0b7f10f-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-6e6d7ac51608e0b7f10f",
+    "title": "Moonrise in Santa Monica, photo credit: Paul Murphy — Medium print — White frame",
+    "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD36X6DD79F2S8X10J1S4DD36X6DD79G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 6.5333,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 6.79,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090.jpg",
+    "assetSha256": "fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090",
+    "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.webp",
+      "alt": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.36,
+        "height": 6.79,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.36X6.79",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-6e6d7ac51608e0b7f10f-medium-frame-natural": {
+    "id": "print-book-art-6e6d7ac51608e0b7f10f-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-6e6d7ac51608e0b7f10f",
+    "title": "Moonrise in Santa Monica, photo credit: Paul Murphy — Medium print — Natural wood frame",
+    "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD36X6DD79F7S8X10J1S4DD36X6DD79G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 6.5333,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 6.79,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090.jpg",
+    "assetSha256": "fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090",
+    "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.webp",
+      "alt": "Moonrise in Santa Monica, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.36,
+        "height": 6.79,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.36X6.79",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-e97329411fa8b273b508-full": {
     "id": "print-book-art-e97329411fa8b273b508-full",
     "type": "print",
@@ -40812,6 +48138,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-e97329411fa8b273b508-full-frame-black": {
+    "id": "print-book-art-e97329411fa8b273b508-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e97329411fa8b273b508",
+    "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Large print — Black frame",
+    "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD06X9DD73F1S9X12J1S6DD06X9DD73G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.8067,
+      "height": 9.4733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.06,
+      "height": 9.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e.jpg",
+    "assetSha256": "de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e",
+    "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.webp",
+      "alt": "Sunrise in Traverse City, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.06,
+        "height": 9.73,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.06X9.73",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-e97329411fa8b273b508-full-frame-white": {
+    "id": "print-book-art-e97329411fa8b273b508-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e97329411fa8b273b508",
+    "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Large print — White frame",
+    "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD06X9DD73F2S9X12J1S6DD06X9DD73G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.8067,
+      "height": 9.4733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.06,
+      "height": 9.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e.jpg",
+    "assetSha256": "de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e",
+    "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.webp",
+      "alt": "Sunrise in Traverse City, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.06,
+        "height": 9.73,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.06X9.73",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-e97329411fa8b273b508-full-frame-natural": {
+    "id": "print-book-art-e97329411fa8b273b508-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e97329411fa8b273b508",
+    "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD06X9DD73F7S9X12J1S6DD06X9DD73G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.8067,
+      "height": 9.4733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.06,
+      "height": 9.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e.jpg",
+    "assetSha256": "de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e",
+    "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.webp",
+      "alt": "Sunrise in Traverse City, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.06,
+        "height": 9.73,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.06X9.73",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-e97329411fa8b273b508-medium": {
     "id": "print-book-art-e97329411fa8b273b508-medium",
@@ -40851,6 +48399,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-e97329411fa8b273b508-medium-frame-black": {
+    "id": "print-book-art-e97329411fa8b273b508-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e97329411fa8b273b508",
+    "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Medium print — Black frame",
+    "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD6X7DD36F1S8X10J1S4DD6X7DD36G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.3467,
+      "height": 7.0933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.6,
+      "height": 7.36,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39.jpg",
+    "assetSha256": "894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39",
+    "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.webp",
+      "alt": "Sunrise in Traverse City, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.6,
+        "height": 7.36,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.6X7.36",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-e97329411fa8b273b508-medium-frame-white": {
+    "id": "print-book-art-e97329411fa8b273b508-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e97329411fa8b273b508",
+    "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Medium print — White frame",
+    "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD6X7DD36F2S8X10J1S4DD6X7DD36G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.3467,
+      "height": 7.0933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.6,
+      "height": 7.36,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39.jpg",
+    "assetSha256": "894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39",
+    "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.webp",
+      "alt": "Sunrise in Traverse City, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.6,
+        "height": 7.36,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.6X7.36",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-e97329411fa8b273b508-medium-frame-natural": {
+    "id": "print-book-art-e97329411fa8b273b508-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-e97329411fa8b273b508",
+    "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD6X7DD36F7S8X10J1S4DD6X7DD36G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.3467,
+      "height": 7.0933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.6,
+      "height": 7.36,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39.jpg",
+    "assetSha256": "894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39",
+    "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.webp",
+      "alt": "Sunrise in Traverse City, photo credit: Paul Murphy",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.6,
+        "height": 7.36,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.6X7.36",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-2136f2260225dd8ef20a-full": {
     "id": "print-book-art-2136f2260225dd8ef20a-full",
     "type": "print",
@@ -40888,6 +48658,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-2136f2260225dd8ef20a-full-frame-black": {
+    "id": "print-book-art-2136f2260225dd8ef20a-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-2136f2260225dd8ef20a",
+    "title": "Dorian Nakamoto — Large print — Black frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD38X9DD03F1S11X14J1S8DD38X9DD03G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1267,
+      "height": 8.7767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.38,
+      "height": 9.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3.jpg",
+    "assetSha256": "b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3",
+    "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp",
+      "alt": "Dorian Nakamoto",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.38,
+        "height": 9.03,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.38X9.03",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-2136f2260225dd8ef20a-full-frame-white": {
+    "id": "print-book-art-2136f2260225dd8ef20a-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-2136f2260225dd8ef20a",
+    "title": "Dorian Nakamoto — Large print — White frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD38X9DD03F2S11X14J1S8DD38X9DD03G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1267,
+      "height": 8.7767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.38,
+      "height": 9.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3.jpg",
+    "assetSha256": "b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3",
+    "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp",
+      "alt": "Dorian Nakamoto",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.38,
+        "height": 9.03,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.38X9.03",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-2136f2260225dd8ef20a-full-frame-natural": {
+    "id": "print-book-art-2136f2260225dd8ef20a-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-2136f2260225dd8ef20a",
+    "title": "Dorian Nakamoto — Large print — Natural wood frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD38X9DD03F7S11X14J1S8DD38X9DD03G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1267,
+      "height": 8.7767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.38,
+      "height": 9.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3.jpg",
+    "assetSha256": "b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3",
+    "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp",
+      "alt": "Dorian Nakamoto",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.38,
+        "height": 9.03,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.38X9.03",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-2136f2260225dd8ef20a-medium": {
     "id": "print-book-art-2136f2260225dd8ef20a-medium",
@@ -40927,6 +48919,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-2136f2260225dd8ef20a-medium-frame-black": {
+    "id": "print-book-art-2136f2260225dd8ef20a-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-2136f2260225dd8ef20a",
+    "title": "Dorian Nakamoto — Medium print — Black frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD35X6DD83F1S9X12J1S6DD35X6DD83G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.09,
+      "height": 6.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.35,
+      "height": 6.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574.jpg",
+    "assetSha256": "76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574",
+    "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp",
+      "alt": "Dorian Nakamoto",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.35,
+        "height": 6.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.35X6.83",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-2136f2260225dd8ef20a-medium-frame-white": {
+    "id": "print-book-art-2136f2260225dd8ef20a-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-2136f2260225dd8ef20a",
+    "title": "Dorian Nakamoto — Medium print — White frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD35X6DD83F2S9X12J1S6DD35X6DD83G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.09,
+      "height": 6.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.35,
+      "height": 6.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574.jpg",
+    "assetSha256": "76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574",
+    "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp",
+      "alt": "Dorian Nakamoto",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.35,
+        "height": 6.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.35X6.83",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-2136f2260225dd8ef20a-medium-frame-natural": {
+    "id": "print-book-art-2136f2260225dd8ef20a-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-2136f2260225dd8ef20a",
+    "title": "Dorian Nakamoto — Medium print — Natural wood frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD35X6DD83F7S9X12J1S6DD35X6DD83G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.09,
+      "height": 6.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.35,
+      "height": 6.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574.jpg",
+    "assetSha256": "76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574",
+    "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp",
+      "alt": "Dorian Nakamoto",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.35,
+        "height": 6.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.35X6.83",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-2136f2260225dd8ef20a-small": {
     "id": "print-book-art-2136f2260225dd8ef20a-small",
     "type": "print",
@@ -40964,6 +49178,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-2136f2260225dd8ef20a-small-frame-black": {
+    "id": "print-book-art-2136f2260225dd8ef20a-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-2136f2260225dd8ef20a",
+    "title": "Dorian Nakamoto — Small print — Black frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD31X4DD64F1S8X10J1S4DD31X4DD64G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.0567,
+      "height": 4.38,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.31,
+      "height": 4.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2.jpg",
+    "assetSha256": "ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2",
+    "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp",
+      "alt": "Dorian Nakamoto",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.31,
+        "height": 4.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.31X4.64",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-2136f2260225dd8ef20a-small-frame-white": {
+    "id": "print-book-art-2136f2260225dd8ef20a-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-2136f2260225dd8ef20a",
+    "title": "Dorian Nakamoto — Small print — White frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD31X4DD64F2S8X10J1S4DD31X4DD64G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.0567,
+      "height": 4.38,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.31,
+      "height": 4.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2.jpg",
+    "assetSha256": "ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2",
+    "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp",
+      "alt": "Dorian Nakamoto",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.31,
+        "height": 4.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.31X4.64",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-2136f2260225dd8ef20a-small-frame-natural": {
+    "id": "print-book-art-2136f2260225dd8ef20a-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-2136f2260225dd8ef20a",
+    "title": "Dorian Nakamoto — Small print — Natural wood frame",
+    "artworkTitle": "Dorian Nakamoto",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD31X4DD64F7S8X10J1S4DD31X4DD64G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.0567,
+      "height": 4.38,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.31,
+      "height": 4.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2.jpg",
+    "assetSha256": "ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2",
+    "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp",
+      "alt": "Dorian Nakamoto",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.31,
+        "height": 4.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.31X4.64",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-29b3572972c367d351d1-full": {
     "id": "print-book-art-29b3572972c367d351d1-full",
@@ -41003,6 +49439,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-29b3572972c367d351d1-full-frame-black": {
+    "id": "print-book-art-29b3572972c367d351d1-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-29b3572972c367d351d1",
+    "title": "The Bounty of Satoshi: Wonder — Large print — Black frame",
+    "artworkTitle": "The Bounty of Satoshi: Wonder",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD46X8DD82F1S9X12J1S4DD46X8DD82G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2067,
+      "height": 8.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.46,
+      "height": 8.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b.jpg",
+    "assetSha256": "611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b",
+    "sourceSha256": "33094144963f5f4fc7e2fe15e8f1958fb407edfd1e63d5b91b668d96e31381e9",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/29b3572972c367d351d1.webp",
+      "alt": "The Bounty of Satoshi: Wonder",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/29b3572972c367d351d1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.46,
+        "height": 8.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.46X8.82",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-29b3572972c367d351d1-full-frame-white": {
+    "id": "print-book-art-29b3572972c367d351d1-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-29b3572972c367d351d1",
+    "title": "The Bounty of Satoshi: Wonder — Large print — White frame",
+    "artworkTitle": "The Bounty of Satoshi: Wonder",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD46X8DD82F2S9X12J1S4DD46X8DD82G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2067,
+      "height": 8.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.46,
+      "height": 8.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b.jpg",
+    "assetSha256": "611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b",
+    "sourceSha256": "33094144963f5f4fc7e2fe15e8f1958fb407edfd1e63d5b91b668d96e31381e9",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/29b3572972c367d351d1.webp",
+      "alt": "The Bounty of Satoshi: Wonder",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/29b3572972c367d351d1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.46,
+        "height": 8.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.46X8.82",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-29b3572972c367d351d1-full-frame-natural": {
+    "id": "print-book-art-29b3572972c367d351d1-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-29b3572972c367d351d1",
+    "title": "The Bounty of Satoshi: Wonder — Large print — Natural wood frame",
+    "artworkTitle": "The Bounty of Satoshi: Wonder",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD46X8DD82F7S9X12J1S4DD46X8DD82G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2067,
+      "height": 8.55,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.46,
+      "height": 8.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b.jpg",
+    "assetSha256": "611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b",
+    "sourceSha256": "33094144963f5f4fc7e2fe15e8f1958fb407edfd1e63d5b91b668d96e31381e9",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/29b3572972c367d351d1.webp",
+      "alt": "The Bounty of Satoshi: Wonder",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/29b3572972c367d351d1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.46,
+        "height": 8.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.46X8.82",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
   "print-book-art-8ff9ac182d32fa228450-full": {
     "id": "print-book-art-8ff9ac182d32fa228450-full",
     "type": "print",
@@ -41040,6 +49698,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-8ff9ac182d32fa228450-full-frame-black": {
+    "id": "print-book-art-8ff9ac182d32fa228450-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-8ff9ac182d32fa228450",
+    "title": "The Bounty of Satoshi: Achievement — Large print — Black frame",
+    "artworkTitle": "The Bounty of Satoshi: Achievement",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD37X8DD72F1S9X12J1S4DD37X8DD72G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1167,
+      "height": 8.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.37,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9.jpg",
+    "assetSha256": "d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9",
+    "sourceSha256": "feca1831b68b4619f2e32e9ce4845e1f5b82ee19f9c56f20fede898dcdb9e5d8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8ff9ac182d32fa228450.webp",
+      "alt": "The Bounty of Satoshi: Achievement",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/8ff9ac182d32fa228450.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.37,
+        "height": 8.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.37X8.72",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-8ff9ac182d32fa228450-full-frame-white": {
+    "id": "print-book-art-8ff9ac182d32fa228450-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-8ff9ac182d32fa228450",
+    "title": "The Bounty of Satoshi: Achievement — Large print — White frame",
+    "artworkTitle": "The Bounty of Satoshi: Achievement",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD37X8DD72F2S9X12J1S4DD37X8DD72G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1167,
+      "height": 8.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.37,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9.jpg",
+    "assetSha256": "d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9",
+    "sourceSha256": "feca1831b68b4619f2e32e9ce4845e1f5b82ee19f9c56f20fede898dcdb9e5d8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8ff9ac182d32fa228450.webp",
+      "alt": "The Bounty of Satoshi: Achievement",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/8ff9ac182d32fa228450.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.37,
+        "height": 8.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.37X8.72",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-8ff9ac182d32fa228450-full-frame-natural": {
+    "id": "print-book-art-8ff9ac182d32fa228450-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-8ff9ac182d32fa228450",
+    "title": "The Bounty of Satoshi: Achievement — Large print — Natural wood frame",
+    "artworkTitle": "The Bounty of Satoshi: Achievement",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD37X8DD72F7S9X12J1S4DD37X8DD72G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1167,
+      "height": 8.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.37,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9.jpg",
+    "assetSha256": "d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9",
+    "sourceSha256": "feca1831b68b4619f2e32e9ce4845e1f5b82ee19f9c56f20fede898dcdb9e5d8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8ff9ac182d32fa228450.webp",
+      "alt": "The Bounty of Satoshi: Achievement",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/8ff9ac182d32fa228450.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.37,
+        "height": 8.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.37X8.72",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-ccff23f1e469654faa05-full": {
     "id": "print-book-art-ccff23f1e469654faa05-full",
@@ -41079,6 +49959,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-ccff23f1e469654faa05-full-frame-black": {
+    "id": "print-book-art-ccff23f1e469654faa05-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ccff23f1e469654faa05",
+    "title": "Chase Toole — Large print — Black frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD46X11DD3F1S12X15J1S9DD46X11DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.2067,
+      "height": 11.0433,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.46,
+      "height": 11.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d.jpg",
+    "assetSha256": "277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d",
+    "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp",
+      "alt": "Chase Toole",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.46,
+        "height": 11.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.46X11.3",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-ccff23f1e469654faa05-full-frame-white": {
+    "id": "print-book-art-ccff23f1e469654faa05-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ccff23f1e469654faa05",
+    "title": "Chase Toole — Large print — White frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD46X11DD3F2S12X15J1S9DD46X11DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.2067,
+      "height": 11.0433,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.46,
+      "height": 11.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d.jpg",
+    "assetSha256": "277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d",
+    "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp",
+      "alt": "Chase Toole",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.46,
+        "height": 11.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.46X11.3",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-ccff23f1e469654faa05-full-frame-natural": {
+    "id": "print-book-art-ccff23f1e469654faa05-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ccff23f1e469654faa05",
+    "title": "Chase Toole — Large print — Natural wood frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD46X11DD3F7S12X15J1S9DD46X11DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.2067,
+      "height": 11.0433,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.46,
+      "height": 11.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d.jpg",
+    "assetSha256": "277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d",
+    "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp",
+      "alt": "Chase Toole",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.46,
+        "height": 11.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.46X11.3",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
   "print-book-art-ccff23f1e469654faa05-medium": {
     "id": "print-book-art-ccff23f1e469654faa05-medium",
     "type": "print",
@@ -41116,6 +50218,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-ccff23f1e469654faa05-medium-frame-black": {
+    "id": "print-book-art-ccff23f1e469654faa05-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ccff23f1e469654faa05",
+    "title": "Chase Toole — Medium print — Black frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD16X8DD54F1S11X14J1S7DD16X8DD54G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.9067,
+      "height": 8.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.16,
+      "height": 8.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359.jpg",
+    "assetSha256": "112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359",
+    "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp",
+      "alt": "Chase Toole",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.16,
+        "height": 8.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.16X8.54",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-ccff23f1e469654faa05-medium-frame-white": {
+    "id": "print-book-art-ccff23f1e469654faa05-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ccff23f1e469654faa05",
+    "title": "Chase Toole — Medium print — White frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD16X8DD54F2S11X14J1S7DD16X8DD54G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.9067,
+      "height": 8.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.16,
+      "height": 8.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359.jpg",
+    "assetSha256": "112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359",
+    "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp",
+      "alt": "Chase Toole",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.16,
+        "height": 8.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.16X8.54",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-ccff23f1e469654faa05-medium-frame-natural": {
+    "id": "print-book-art-ccff23f1e469654faa05-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ccff23f1e469654faa05",
+    "title": "Chase Toole — Medium print — Natural wood frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "87.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD16X8DD54F7S11X14J1S7DD16X8DD54G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.9067,
+      "height": 8.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.16,
+      "height": 8.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359.jpg",
+    "assetSha256": "112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359",
+    "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp",
+      "alt": "Chase Toole",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.16,
+        "height": 8.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.16X8.54",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-ccff23f1e469654faa05-small": {
     "id": "print-book-art-ccff23f1e469654faa05-small",
@@ -41155,6 +50479,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-ccff23f1e469654faa05-small-frame-black": {
+    "id": "print-book-art-ccff23f1e469654faa05-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ccff23f1e469654faa05",
+    "title": "Chase Toole — Small print — Black frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD85X5DD77F1S8X10J1S4DD85X5DD77G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.5967,
+      "height": 5.5133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.85,
+      "height": 5.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc.jpg",
+    "assetSha256": "cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc",
+    "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp",
+      "alt": "Chase Toole",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.85,
+        "height": 5.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.85X5.77",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-ccff23f1e469654faa05-small-frame-white": {
+    "id": "print-book-art-ccff23f1e469654faa05-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ccff23f1e469654faa05",
+    "title": "Chase Toole — Small print — White frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD85X5DD77F2S8X10J1S4DD85X5DD77G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.5967,
+      "height": 5.5133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.85,
+      "height": 5.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc.jpg",
+    "assetSha256": "cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc",
+    "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp",
+      "alt": "Chase Toole",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.85,
+        "height": 5.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.85X5.77",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-ccff23f1e469654faa05-small-frame-natural": {
+    "id": "print-book-art-ccff23f1e469654faa05-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ccff23f1e469654faa05",
+    "title": "Chase Toole — Small print — Natural wood frame",
+    "artworkTitle": "Chase Toole",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD85X5DD77F7S8X10J1S4DD85X5DD77G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.5967,
+      "height": 5.5133,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.85,
+      "height": 5.77,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc.jpg",
+    "assetSha256": "cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc",
+    "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp",
+      "alt": "Chase Toole",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.85,
+        "height": 5.77,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.85X5.77",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-db933efcbc4fbe01c841-full": {
     "id": "print-book-art-db933efcbc4fbe01c841-full",
     "type": "print",
@@ -41192,6 +50738,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-db933efcbc4fbe01c841-full-frame-black": {
+    "id": "print-book-art-db933efcbc4fbe01c841-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-db933efcbc4fbe01c841",
+    "title": "Steve — Large print — Black frame",
+    "artworkTitle": "Steve",
+    "amount": "134.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD53X14DD48F1S16X20J1S9DD53X14DD48G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.2767,
+      "height": 14.2267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.53,
+      "height": 14.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e.jpg",
+    "assetSha256": "b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e",
+    "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp",
+      "alt": "Steve",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.53,
+        "height": 14.48,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.53X14.48",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-book-art-db933efcbc4fbe01c841-full-frame-white": {
+    "id": "print-book-art-db933efcbc4fbe01c841-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-db933efcbc4fbe01c841",
+    "title": "Steve — Large print — White frame",
+    "artworkTitle": "Steve",
+    "amount": "134.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD53X14DD48F2S16X20J1S9DD53X14DD48G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.2767,
+      "height": 14.2267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.53,
+      "height": 14.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e.jpg",
+    "assetSha256": "b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e",
+    "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp",
+      "alt": "Steve",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.53,
+        "height": 14.48,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.53X14.48",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-book-art-db933efcbc4fbe01c841-full-frame-natural": {
+    "id": "print-book-art-db933efcbc4fbe01c841-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-db933efcbc4fbe01c841",
+    "title": "Steve — Large print — Natural wood frame",
+    "artworkTitle": "Steve",
+    "amount": "149.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD53X14DD48F7S16X20J1S9DD53X14DD48G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.2767,
+      "height": 14.2267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.53,
+      "height": 14.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e.jpg",
+    "assetSha256": "b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e",
+    "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp",
+      "alt": "Steve",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.53,
+        "height": 14.48,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.53X14.48",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
   },
   "print-book-art-db933efcbc4fbe01c841-medium": {
     "id": "print-book-art-db933efcbc4fbe01c841-medium",
@@ -41231,6 +50999,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-db933efcbc4fbe01c841-medium-frame-black": {
+    "id": "print-book-art-db933efcbc4fbe01c841-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-db933efcbc4fbe01c841",
+    "title": "Steve — Medium print — Black frame",
+    "artworkTitle": "Steve",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD21X10DD92F1S11X14J1S7DD21X10DD92G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.9533,
+      "height": 10.6667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.21,
+      "height": 10.92,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d.jpg",
+    "assetSha256": "7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d",
+    "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp",
+      "alt": "Steve",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.21,
+        "height": 10.92,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.21X10.92",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-db933efcbc4fbe01c841-medium-frame-white": {
+    "id": "print-book-art-db933efcbc4fbe01c841-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-db933efcbc4fbe01c841",
+    "title": "Steve — Medium print — White frame",
+    "artworkTitle": "Steve",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD21X10DD92F2S11X14J1S7DD21X10DD92G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.9533,
+      "height": 10.6667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.21,
+      "height": 10.92,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d.jpg",
+    "assetSha256": "7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d",
+    "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp",
+      "alt": "Steve",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.21,
+        "height": 10.92,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.21X10.92",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-db933efcbc4fbe01c841-medium-frame-natural": {
+    "id": "print-book-art-db933efcbc4fbe01c841-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-db933efcbc4fbe01c841",
+    "title": "Steve — Medium print — Natural wood frame",
+    "artworkTitle": "Steve",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD21X10DD92F7S11X14J1S7DD21X10DD92G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.9533,
+      "height": 10.6667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.21,
+      "height": 10.92,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d.jpg",
+    "assetSha256": "7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d",
+    "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp",
+      "alt": "Steve",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.21,
+        "height": 10.92,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.21X10.92",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-db933efcbc4fbe01c841-small": {
     "id": "print-book-art-db933efcbc4fbe01c841-small",
     "type": "print",
@@ -41268,6 +51258,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-db933efcbc4fbe01c841-small-frame-black": {
+    "id": "print-book-art-db933efcbc4fbe01c841-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-db933efcbc4fbe01c841",
+    "title": "Steve — Small print — Black frame",
+    "artworkTitle": "Steve",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD89X7DD36F1S8X10J1S4DD89X7DD36G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.6333,
+      "height": 7.1067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.89,
+      "height": 7.36,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8.jpg",
+    "assetSha256": "3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8",
+    "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp",
+      "alt": "Steve",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.89,
+        "height": 7.36,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.89X7.36",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-db933efcbc4fbe01c841-small-frame-white": {
+    "id": "print-book-art-db933efcbc4fbe01c841-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-db933efcbc4fbe01c841",
+    "title": "Steve — Small print — White frame",
+    "artworkTitle": "Steve",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD89X7DD36F2S8X10J1S4DD89X7DD36G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.6333,
+      "height": 7.1067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.89,
+      "height": 7.36,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8.jpg",
+    "assetSha256": "3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8",
+    "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp",
+      "alt": "Steve",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.89,
+        "height": 7.36,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.89X7.36",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-db933efcbc4fbe01c841-small-frame-natural": {
+    "id": "print-book-art-db933efcbc4fbe01c841-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-db933efcbc4fbe01c841",
+    "title": "Steve — Small print — Natural wood frame",
+    "artworkTitle": "Steve",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD89X7DD36F7S8X10J1S4DD89X7DD36G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.6333,
+      "height": 7.1067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.89,
+      "height": 7.36,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8.jpg",
+    "assetSha256": "3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8",
+    "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp",
+      "alt": "Steve",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.89,
+        "height": 7.36,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.89X7.36",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-74a736000a32427842b1-full": {
     "id": "print-book-art-74a736000a32427842b1-full",
@@ -41307,6 +51519,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-74a736000a32427842b1-full-frame-black": {
+    "id": "print-book-art-74a736000a32427842b1-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-74a736000a32427842b1",
+    "title": "Laura and Cafécito on paddleboard in Lake Washington — Large print — Black frame",
+    "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD39X10DD18F1S20X16J1S11DD39X10DD18G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.1367,
+      "height": 9.9267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.39,
+      "height": 10.18,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd.jpg",
+    "assetSha256": "14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd",
+    "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp",
+      "alt": "Laura and Cafécito on paddleboard in Lake Washington",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.39,
+        "height": 10.18,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.39X10.18",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-book-art-74a736000a32427842b1-full-frame-white": {
+    "id": "print-book-art-74a736000a32427842b1-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-74a736000a32427842b1",
+    "title": "Laura and Cafécito on paddleboard in Lake Washington — Large print — White frame",
+    "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD39X10DD18F2S20X16J1S11DD39X10DD18G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.1367,
+      "height": 9.9267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.39,
+      "height": 10.18,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd.jpg",
+    "assetSha256": "14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd",
+    "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp",
+      "alt": "Laura and Cafécito on paddleboard in Lake Washington",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.39,
+        "height": 10.18,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.39X10.18",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-book-art-74a736000a32427842b1-full-frame-natural": {
+    "id": "print-book-art-74a736000a32427842b1-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-74a736000a32427842b1",
+    "title": "Laura and Cafécito on paddleboard in Lake Washington — Large print — Natural wood frame",
+    "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
+    "amount": "139.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD39X10DD18F7S20X16J1S11DD39X10DD18G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.1367,
+      "height": 9.9267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.39,
+      "height": 10.18,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd.jpg",
+    "assetSha256": "14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd",
+    "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp",
+      "alt": "Laura and Cafécito on paddleboard in Lake Washington",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.39,
+        "height": 10.18,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.39X10.18",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
   "print-book-art-74a736000a32427842b1-medium": {
     "id": "print-book-art-74a736000a32427842b1-medium",
     "type": "print",
@@ -41344,6 +51778,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-74a736000a32427842b1-medium-frame-black": {
+    "id": "print-book-art-74a736000a32427842b1-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-74a736000a32427842b1",
+    "title": "Laura and Cafécito on paddleboard in Lake Washington — Medium print — Black frame",
+    "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD6X7DD69F1S14X11J1S8DD6X7DD69G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.3433,
+      "height": 7.4367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.6,
+      "height": 7.69,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d.jpg",
+    "assetSha256": "75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d",
+    "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp",
+      "alt": "Laura and Cafécito on paddleboard in Lake Washington",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.6,
+        "height": 7.69,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.6X7.69",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-74a736000a32427842b1-medium-frame-white": {
+    "id": "print-book-art-74a736000a32427842b1-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-74a736000a32427842b1",
+    "title": "Laura and Cafécito on paddleboard in Lake Washington — Medium print — White frame",
+    "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD6X7DD69F2S14X11J1S8DD6X7DD69G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.3433,
+      "height": 7.4367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.6,
+      "height": 7.69,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d.jpg",
+    "assetSha256": "75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d",
+    "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp",
+      "alt": "Laura and Cafécito on paddleboard in Lake Washington",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.6,
+        "height": 7.69,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.6X7.69",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-74a736000a32427842b1-medium-frame-natural": {
+    "id": "print-book-art-74a736000a32427842b1-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-74a736000a32427842b1",
+    "title": "Laura and Cafécito on paddleboard in Lake Washington — Medium print — Natural wood frame",
+    "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
+    "amount": "87.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD6X7DD69F7S14X11J1S8DD6X7DD69G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.3433,
+      "height": 7.4367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.6,
+      "height": 7.69,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d.jpg",
+    "assetSha256": "75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d",
+    "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp",
+      "alt": "Laura and Cafécito on paddleboard in Lake Washington",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.6,
+        "height": 7.69,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.6X7.69",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-74a736000a32427842b1-small": {
     "id": "print-book-art-74a736000a32427842b1-small",
@@ -41383,6 +52039,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-74a736000a32427842b1-small-frame-black": {
+    "id": "print-book-art-74a736000a32427842b1-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-74a736000a32427842b1",
+    "title": "Laura and Cafécito on paddleboard in Lake Washington — Small print — Black frame",
+    "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD82X5DD21F1S10X8J1S5DD82X5DD21G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.56,
+      "height": 4.9567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.82,
+      "height": 5.21,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce.jpg",
+    "assetSha256": "351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce",
+    "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp",
+      "alt": "Laura and Cafécito on paddleboard in Lake Washington",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.82,
+        "height": 5.21,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.82X5.21",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-74a736000a32427842b1-small-frame-white": {
+    "id": "print-book-art-74a736000a32427842b1-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-74a736000a32427842b1",
+    "title": "Laura and Cafécito on paddleboard in Lake Washington — Small print — White frame",
+    "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD82X5DD21F2S10X8J1S5DD82X5DD21G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.56,
+      "height": 4.9567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.82,
+      "height": 5.21,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce.jpg",
+    "assetSha256": "351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce",
+    "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp",
+      "alt": "Laura and Cafécito on paddleboard in Lake Washington",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.82,
+        "height": 5.21,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.82X5.21",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-74a736000a32427842b1-small-frame-natural": {
+    "id": "print-book-art-74a736000a32427842b1-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-74a736000a32427842b1",
+    "title": "Laura and Cafécito on paddleboard in Lake Washington — Small print — Natural wood frame",
+    "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD82X5DD21F7S10X8J1S5DD82X5DD21G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.56,
+      "height": 4.9567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.82,
+      "height": 5.21,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce.jpg",
+    "assetSha256": "351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce",
+    "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp",
+      "alt": "Laura and Cafécito on paddleboard in Lake Washington",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.82,
+        "height": 5.21,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.82X5.21",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-9209f1fd7d47f373597f-full": {
     "id": "print-book-art-9209f1fd7d47f373597f-full",
     "type": "print",
@@ -41420,6 +52298,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-9209f1fd7d47f373597f-full-frame-black": {
+    "id": "print-book-art-9209f1fd7d47f373597f-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-9209f1fd7d47f373597f",
+    "title": "Catherine dance series — study 1 — Large print — Black frame",
+    "artworkTitle": "Catherine dance series — study 1",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S4DD82X11DD01F1S11X14J1S4DD82X11DD01G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5667,
+      "height": 10.7567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.82,
+      "height": 11.01,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79.jpg",
+    "assetSha256": "41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79",
+    "sourceSha256": "ecb81d17191279e61bd833cd5ae946aef1a66692e5d0d33e38684f9ed682cf0e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9209f1fd7d47f373597f.webp",
+      "alt": "Catherine dance series — study 1",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/9209f1fd7d47f373597f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.82,
+        "height": 11.01,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.82X11.01",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-9209f1fd7d47f373597f-full-frame-white": {
+    "id": "print-book-art-9209f1fd7d47f373597f-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-9209f1fd7d47f373597f",
+    "title": "Catherine dance series — study 1 — Large print — White frame",
+    "artworkTitle": "Catherine dance series — study 1",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S4DD82X11DD01F2S11X14J1S4DD82X11DD01G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5667,
+      "height": 10.7567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.82,
+      "height": 11.01,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79.jpg",
+    "assetSha256": "41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79",
+    "sourceSha256": "ecb81d17191279e61bd833cd5ae946aef1a66692e5d0d33e38684f9ed682cf0e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9209f1fd7d47f373597f.webp",
+      "alt": "Catherine dance series — study 1",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/9209f1fd7d47f373597f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.82,
+        "height": 11.01,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.82X11.01",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-9209f1fd7d47f373597f-full-frame-natural": {
+    "id": "print-book-art-9209f1fd7d47f373597f-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-9209f1fd7d47f373597f",
+    "title": "Catherine dance series — study 1 — Large print — Natural wood frame",
+    "artworkTitle": "Catherine dance series — study 1",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S4DD82X11DD01F7S11X14J1S4DD82X11DD01G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5667,
+      "height": 10.7567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.82,
+      "height": 11.01,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79.jpg",
+    "assetSha256": "41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79",
+    "sourceSha256": "ecb81d17191279e61bd833cd5ae946aef1a66692e5d0d33e38684f9ed682cf0e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9209f1fd7d47f373597f.webp",
+      "alt": "Catherine dance series — study 1",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/9209f1fd7d47f373597f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.82,
+        "height": 11.01,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.82X11.01",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-a61c71e5de8cc1b71500-full": {
     "id": "print-book-art-a61c71e5de8cc1b71500-full",
@@ -41459,6 +52559,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-a61c71e5de8cc1b71500-full-frame-black": {
+    "id": "print-book-art-a61c71e5de8cc1b71500-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a61c71e5de8cc1b71500",
+    "title": "Catherine dance series — study 2 — Large print — Black frame",
+    "artworkTitle": "Catherine dance series — study 2",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD7X10DD44F1S11X14J1S6DD7X10DD44G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4467,
+      "height": 10.1833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.7,
+      "height": 10.44,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e.jpg",
+    "assetSha256": "53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e",
+    "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.webp",
+      "alt": "Catherine dance series — study 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.7,
+        "height": 10.44,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.7X10.44",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-a61c71e5de8cc1b71500-full-frame-white": {
+    "id": "print-book-art-a61c71e5de8cc1b71500-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a61c71e5de8cc1b71500",
+    "title": "Catherine dance series — study 2 — Large print — White frame",
+    "artworkTitle": "Catherine dance series — study 2",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD7X10DD44F2S11X14J1S6DD7X10DD44G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4467,
+      "height": 10.1833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.7,
+      "height": 10.44,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e.jpg",
+    "assetSha256": "53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e",
+    "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.webp",
+      "alt": "Catherine dance series — study 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.7,
+        "height": 10.44,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.7X10.44",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-a61c71e5de8cc1b71500-full-frame-natural": {
+    "id": "print-book-art-a61c71e5de8cc1b71500-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a61c71e5de8cc1b71500",
+    "title": "Catherine dance series — study 2 — Large print — Natural wood frame",
+    "artworkTitle": "Catherine dance series — study 2",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD7X10DD44F7S11X14J1S6DD7X10DD44G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.4467,
+      "height": 10.1833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.7,
+      "height": 10.44,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e.jpg",
+    "assetSha256": "53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e",
+    "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.webp",
+      "alt": "Catherine dance series — study 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.7,
+        "height": 10.44,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.7X10.44",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-a61c71e5de8cc1b71500-medium": {
     "id": "print-book-art-a61c71e5de8cc1b71500-medium",
     "type": "print",
@@ -41496,6 +52818,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-a61c71e5de8cc1b71500-medium-frame-black": {
+    "id": "print-book-art-a61c71e5de8cc1b71500-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a61c71e5de8cc1b71500",
+    "title": "Catherine dance series — study 2 — Medium print — Black frame",
+    "artworkTitle": "Catherine dance series — study 2",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD08X7DD89F1S8X10J1S5DD08X7DD89G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8267,
+      "height": 7.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.08,
+      "height": 7.89,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6.jpg",
+    "assetSha256": "ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6",
+    "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.webp",
+      "alt": "Catherine dance series — study 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.08,
+        "height": 7.89,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.08X7.89",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-a61c71e5de8cc1b71500-medium-frame-white": {
+    "id": "print-book-art-a61c71e5de8cc1b71500-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a61c71e5de8cc1b71500",
+    "title": "Catherine dance series — study 2 — Medium print — White frame",
+    "artworkTitle": "Catherine dance series — study 2",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD08X7DD89F2S8X10J1S5DD08X7DD89G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8267,
+      "height": 7.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.08,
+      "height": 7.89,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6.jpg",
+    "assetSha256": "ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6",
+    "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.webp",
+      "alt": "Catherine dance series — study 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.08,
+        "height": 7.89,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.08X7.89",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-a61c71e5de8cc1b71500-medium-frame-natural": {
+    "id": "print-book-art-a61c71e5de8cc1b71500-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a61c71e5de8cc1b71500",
+    "title": "Catherine dance series — study 2 — Medium print — Natural wood frame",
+    "artworkTitle": "Catherine dance series — study 2",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD08X7DD89F7S8X10J1S5DD08X7DD89G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8267,
+      "height": 7.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.08,
+      "height": 7.89,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6.jpg",
+    "assetSha256": "ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6",
+    "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.webp",
+      "alt": "Catherine dance series — study 2",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.08,
+        "height": 7.89,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.08X7.89",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-596837cb5ff533c620dd-full": {
     "id": "print-book-art-596837cb5ff533c620dd-full",
@@ -41535,6 +53079,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-596837cb5ff533c620dd-full-frame-black": {
+    "id": "print-book-art-596837cb5ff533c620dd-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-596837cb5ff533c620dd",
+    "title": "Catherine dance series — study 3 — Large print — Black frame",
+    "artworkTitle": "Catherine dance series — study 3",
+    "amount": "86.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD79X11DD54F1S11X14J1S6DD79X11DD54G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.5367,
+      "height": 11.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.79,
+      "height": 11.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad.jpg",
+    "assetSha256": "b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad",
+    "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.webp",
+      "alt": "Catherine dance series — study 3",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.79,
+        "height": 11.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.79X11.54",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-596837cb5ff533c620dd-full-frame-white": {
+    "id": "print-book-art-596837cb5ff533c620dd-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-596837cb5ff533c620dd",
+    "title": "Catherine dance series — study 3 — Large print — White frame",
+    "artworkTitle": "Catherine dance series — study 3",
+    "amount": "86.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD79X11DD54F2S11X14J1S6DD79X11DD54G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.5367,
+      "height": 11.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.79,
+      "height": 11.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad.jpg",
+    "assetSha256": "b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad",
+    "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.webp",
+      "alt": "Catherine dance series — study 3",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.79,
+        "height": 11.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.79X11.54",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-596837cb5ff533c620dd-full-frame-natural": {
+    "id": "print-book-art-596837cb5ff533c620dd-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-596837cb5ff533c620dd",
+    "title": "Catherine dance series — study 3 — Large print — Natural wood frame",
+    "artworkTitle": "Catherine dance series — study 3",
+    "amount": "97.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD79X11DD54F7S11X14J1S6DD79X11DD54G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.5367,
+      "height": 11.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.79,
+      "height": 11.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad.jpg",
+    "assetSha256": "b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad",
+    "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.webp",
+      "alt": "Catherine dance series — study 3",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.79,
+        "height": 11.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.79X11.54",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
   "print-book-art-596837cb5ff533c620dd-medium": {
     "id": "print-book-art-596837cb5ff533c620dd-medium",
     "type": "print",
@@ -41572,6 +53338,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-596837cb5ff533c620dd-medium-frame-black": {
+    "id": "print-book-art-596837cb5ff533c620dd-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-596837cb5ff533c620dd",
+    "title": "Catherine dance series — study 3 — Medium print — Black frame",
+    "artworkTitle": "Catherine dance series — study 3",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD15X8DD72F1S9X12J1S5DD15X8DD72G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8967,
+      "height": 8.4567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.15,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf.jpg",
+    "assetSha256": "f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf",
+    "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.webp",
+      "alt": "Catherine dance series — study 3",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.15,
+        "height": 8.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.15X8.72",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-596837cb5ff533c620dd-medium-frame-white": {
+    "id": "print-book-art-596837cb5ff533c620dd-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-596837cb5ff533c620dd",
+    "title": "Catherine dance series — study 3 — Medium print — White frame",
+    "artworkTitle": "Catherine dance series — study 3",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD15X8DD72F2S9X12J1S5DD15X8DD72G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8967,
+      "height": 8.4567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.15,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf.jpg",
+    "assetSha256": "f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf",
+    "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.webp",
+      "alt": "Catherine dance series — study 3",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.15,
+        "height": 8.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.15X8.72",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-596837cb5ff533c620dd-medium-frame-natural": {
+    "id": "print-book-art-596837cb5ff533c620dd-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-596837cb5ff533c620dd",
+    "title": "Catherine dance series — study 3 — Medium print — Natural wood frame",
+    "artworkTitle": "Catherine dance series — study 3",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD15X8DD72F7S9X12J1S5DD15X8DD72G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.8967,
+      "height": 8.4567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.15,
+      "height": 8.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf.jpg",
+    "assetSha256": "f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf",
+    "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.webp",
+      "alt": "Catherine dance series — study 3",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.15,
+        "height": 8.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.15X8.72",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-7bce6e3509027d1f7a0b-full": {
     "id": "print-book-art-7bce6e3509027d1f7a0b-full",
@@ -41611,6 +53599,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-7bce6e3509027d1f7a0b-full-frame-black": {
+    "id": "print-book-art-7bce6e3509027d1f7a0b-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-7bce6e3509027d1f7a0b",
+    "title": "Catherine dance series — study 4 — Large print — Black frame",
+    "artworkTitle": "Catherine dance series — study 4",
+    "amount": "98.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD33X13DD25F1S12X16J1S6DD33X13DD25G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.0767,
+      "height": 12.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.33,
+      "height": 13.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b.jpg",
+    "assetSha256": "58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b",
+    "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.webp",
+      "alt": "Catherine dance series — study 4",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.33,
+        "height": 13.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.33X13.25",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-7bce6e3509027d1f7a0b-full-frame-white": {
+    "id": "print-book-art-7bce6e3509027d1f7a0b-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-7bce6e3509027d1f7a0b",
+    "title": "Catherine dance series — study 4 — Large print — White frame",
+    "artworkTitle": "Catherine dance series — study 4",
+    "amount": "98.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD33X13DD25F2S12X16J1S6DD33X13DD25G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.0767,
+      "height": 12.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.33,
+      "height": 13.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b.jpg",
+    "assetSha256": "58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b",
+    "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.webp",
+      "alt": "Catherine dance series — study 4",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.33,
+        "height": 13.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.33X13.25",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-7bce6e3509027d1f7a0b-full-frame-natural": {
+    "id": "print-book-art-7bce6e3509027d1f7a0b-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-7bce6e3509027d1f7a0b",
+    "title": "Catherine dance series — study 4 — Large print — Natural wood frame",
+    "artworkTitle": "Catherine dance series — study 4",
+    "amount": "110.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD33X13DD25F7S12X16J1S6DD33X13DD25G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.0767,
+      "height": 12.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.33,
+      "height": 13.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b.jpg",
+    "assetSha256": "58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b",
+    "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.webp",
+      "alt": "Catherine dance series — study 4",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.33,
+        "height": 13.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.33X13.25",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
   "print-book-art-7bce6e3509027d1f7a0b-medium": {
     "id": "print-book-art-7bce6e3509027d1f7a0b-medium",
     "type": "print",
@@ -41648,6 +53858,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-7bce6e3509027d1f7a0b-medium-frame-black": {
+    "id": "print-book-art-7bce6e3509027d1f7a0b-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-7bce6e3509027d1f7a0b",
+    "title": "Catherine dance series — study 4 — Medium print — Black frame",
+    "artworkTitle": "Catherine dance series — study 4",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD81X10F1S9X12J1S4DD81X10G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.5567,
+      "height": 9.7467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.81,
+      "height": 10,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da.jpg",
+    "assetSha256": "37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da",
+    "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.webp",
+      "alt": "Catherine dance series — study 4",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.81,
+        "height": 10,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.81X10",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-7bce6e3509027d1f7a0b-medium-frame-white": {
+    "id": "print-book-art-7bce6e3509027d1f7a0b-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-7bce6e3509027d1f7a0b",
+    "title": "Catherine dance series — study 4 — Medium print — White frame",
+    "artworkTitle": "Catherine dance series — study 4",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD81X10F2S9X12J1S4DD81X10G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.5567,
+      "height": 9.7467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.81,
+      "height": 10,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da.jpg",
+    "assetSha256": "37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da",
+    "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.webp",
+      "alt": "Catherine dance series — study 4",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.81,
+        "height": 10,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.81X10",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-7bce6e3509027d1f7a0b-medium-frame-natural": {
+    "id": "print-book-art-7bce6e3509027d1f7a0b-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-7bce6e3509027d1f7a0b",
+    "title": "Catherine dance series — study 4 — Medium print — Natural wood frame",
+    "artworkTitle": "Catherine dance series — study 4",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD81X10F7S9X12J1S4DD81X10G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.5567,
+      "height": 9.7467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.81,
+      "height": 10,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da.jpg",
+    "assetSha256": "37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da",
+    "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.webp",
+      "alt": "Catherine dance series — study 4",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.81,
+        "height": 10,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.81X10",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-3a9cba708a8045364e82-full": {
     "id": "print-book-art-3a9cba708a8045364e82-full",
@@ -41687,6 +54119,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-3a9cba708a8045364e82-full-frame-black": {
+    "id": "print-book-art-3a9cba708a8045364e82-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-3a9cba708a8045364e82",
+    "title": "Dawn and her father Pete at Burning Man — Large print — Black frame",
+    "artworkTitle": "Dawn and her father Pete at Burning Man",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD11X6DD55F1S15X12J1S12DD11X6DD55G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.8567,
+      "height": 6.2933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.11,
+      "height": 6.55,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede.jpg",
+    "assetSha256": "a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede",
+    "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.webp",
+      "alt": "Dawn and her father Pete at Burning Man",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.11,
+        "height": 6.55,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.11X6.55",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-3a9cba708a8045364e82-full-frame-white": {
+    "id": "print-book-art-3a9cba708a8045364e82-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-3a9cba708a8045364e82",
+    "title": "Dawn and her father Pete at Burning Man — Large print — White frame",
+    "artworkTitle": "Dawn and her father Pete at Burning Man",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD11X6DD55F2S15X12J1S12DD11X6DD55G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.8567,
+      "height": 6.2933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.11,
+      "height": 6.55,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede.jpg",
+    "assetSha256": "a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede",
+    "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.webp",
+      "alt": "Dawn and her father Pete at Burning Man",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.11,
+        "height": 6.55,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.11X6.55",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-3a9cba708a8045364e82-full-frame-natural": {
+    "id": "print-book-art-3a9cba708a8045364e82-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-3a9cba708a8045364e82",
+    "title": "Dawn and her father Pete at Burning Man — Large print — Natural wood frame",
+    "artworkTitle": "Dawn and her father Pete at Burning Man",
+    "amount": "103.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD11X6DD55F7S15X12J1S12DD11X6DD55G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.8567,
+      "height": 6.2933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.11,
+      "height": 6.55,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede.jpg",
+    "assetSha256": "a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede",
+    "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.webp",
+      "alt": "Dawn and her father Pete at Burning Man",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.11,
+        "height": 6.55,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.11X6.55",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
   "print-book-art-3a9cba708a8045364e82-medium": {
     "id": "print-book-art-3a9cba708a8045364e82-medium",
     "type": "print",
@@ -41724,6 +54378,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-3a9cba708a8045364e82-medium-frame-black": {
+    "id": "print-book-art-3a9cba708a8045364e82-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-3a9cba708a8045364e82",
+    "title": "Dawn and her father Pete at Burning Man — Medium print — Black frame",
+    "artworkTitle": "Dawn and her father Pete at Burning Man",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD15X4DD97F1S12X9J1S9DD15X4DD97G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.8833,
+      "height": 4.7167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.15,
+      "height": 4.97,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e.jpg",
+    "assetSha256": "d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e",
+    "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.webp",
+      "alt": "Dawn and her father Pete at Burning Man",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.15,
+        "height": 4.97,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.15X4.97",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-3a9cba708a8045364e82-medium-frame-white": {
+    "id": "print-book-art-3a9cba708a8045364e82-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-3a9cba708a8045364e82",
+    "title": "Dawn and her father Pete at Burning Man — Medium print — White frame",
+    "artworkTitle": "Dawn and her father Pete at Burning Man",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD15X4DD97F2S12X9J1S9DD15X4DD97G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.8833,
+      "height": 4.7167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.15,
+      "height": 4.97,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e.jpg",
+    "assetSha256": "d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e",
+    "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.webp",
+      "alt": "Dawn and her father Pete at Burning Man",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.15,
+        "height": 4.97,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.15X4.97",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-3a9cba708a8045364e82-medium-frame-natural": {
+    "id": "print-book-art-3a9cba708a8045364e82-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-3a9cba708a8045364e82",
+    "title": "Dawn and her father Pete at Burning Man — Medium print — Natural wood frame",
+    "artworkTitle": "Dawn and her father Pete at Burning Man",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD15X4DD97F7S12X9J1S9DD15X4DD97G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.8833,
+      "height": 4.7167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.15,
+      "height": 4.97,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e.jpg",
+    "assetSha256": "d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e",
+    "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.webp",
+      "alt": "Dawn and her father Pete at Burning Man",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.15,
+        "height": 4.97,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.15X4.97",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-1143b08e177333e43dc7-full": {
     "id": "print-book-art-1143b08e177333e43dc7-full",
@@ -41763,6 +54639,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-1143b08e177333e43dc7-full-frame-black": {
+    "id": "print-book-art-1143b08e177333e43dc7-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1143b08e177333e43dc7",
+    "title": "Kristine — Large print — Black frame",
+    "artworkTitle": "Kristine",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD98X9DD43F1S11X14J1S7DD98X9DD43G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.7267,
+      "height": 9.1767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.98,
+      "height": 9.43,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2.jpg",
+    "assetSha256": "b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2",
+    "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp",
+      "alt": "Kristine",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.98,
+        "height": 9.43,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.98X9.43",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-1143b08e177333e43dc7-full-frame-white": {
+    "id": "print-book-art-1143b08e177333e43dc7-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1143b08e177333e43dc7",
+    "title": "Kristine — Large print — White frame",
+    "artworkTitle": "Kristine",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD98X9DD43F2S11X14J1S7DD98X9DD43G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.7267,
+      "height": 9.1767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.98,
+      "height": 9.43,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2.jpg",
+    "assetSha256": "b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2",
+    "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp",
+      "alt": "Kristine",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.98,
+        "height": 9.43,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.98X9.43",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-1143b08e177333e43dc7-full-frame-natural": {
+    "id": "print-book-art-1143b08e177333e43dc7-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1143b08e177333e43dc7",
+    "title": "Kristine — Large print — Natural wood frame",
+    "artworkTitle": "Kristine",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD98X9DD43F7S11X14J1S7DD98X9DD43G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.7267,
+      "height": 9.1767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.98,
+      "height": 9.43,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2.jpg",
+    "assetSha256": "b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2",
+    "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp",
+      "alt": "Kristine",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.98,
+        "height": 9.43,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.98X9.43",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-1143b08e177333e43dc7-medium": {
     "id": "print-book-art-1143b08e177333e43dc7-medium",
     "type": "print",
@@ -41800,6 +54898,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-1143b08e177333e43dc7-medium-frame-black": {
+    "id": "print-book-art-1143b08e177333e43dc7-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1143b08e177333e43dc7",
+    "title": "Kristine — Medium print — Black frame",
+    "artworkTitle": "Kristine",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD04X7DD13F1S9X12J1S6DD04X7DD13G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.7867,
+      "height": 6.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.04,
+      "height": 7.13,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae.jpg",
+    "assetSha256": "f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae",
+    "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp",
+      "alt": "Kristine",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.04,
+        "height": 7.13,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.04X7.13",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-1143b08e177333e43dc7-medium-frame-white": {
+    "id": "print-book-art-1143b08e177333e43dc7-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1143b08e177333e43dc7",
+    "title": "Kristine — Medium print — White frame",
+    "artworkTitle": "Kristine",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD04X7DD13F2S9X12J1S6DD04X7DD13G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.7867,
+      "height": 6.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.04,
+      "height": 7.13,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae.jpg",
+    "assetSha256": "f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae",
+    "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp",
+      "alt": "Kristine",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.04,
+        "height": 7.13,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.04X7.13",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-1143b08e177333e43dc7-medium-frame-natural": {
+    "id": "print-book-art-1143b08e177333e43dc7-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1143b08e177333e43dc7",
+    "title": "Kristine — Medium print — Natural wood frame",
+    "artworkTitle": "Kristine",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD04X7DD13F7S9X12J1S6DD04X7DD13G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.7867,
+      "height": 6.8733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.04,
+      "height": 7.13,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae.jpg",
+    "assetSha256": "f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae",
+    "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp",
+      "alt": "Kristine",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.04,
+        "height": 7.13,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.04X7.13",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-1143b08e177333e43dc7-small": {
     "id": "print-book-art-1143b08e177333e43dc7-small",
@@ -41839,6 +55159,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-1143b08e177333e43dc7-small-frame-black": {
+    "id": "print-book-art-1143b08e177333e43dc7-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1143b08e177333e43dc7",
+    "title": "Kristine — Small print — Black frame",
+    "artworkTitle": "Kristine",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD11X4DD84F1S8X10J1S4DD11X4DD84G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.8567,
+      "height": 4.58,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.11,
+      "height": 4.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7.jpg",
+    "assetSha256": "0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7",
+    "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp",
+      "alt": "Kristine",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.11,
+        "height": 4.84,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.11X4.84",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-1143b08e177333e43dc7-small-frame-white": {
+    "id": "print-book-art-1143b08e177333e43dc7-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1143b08e177333e43dc7",
+    "title": "Kristine — Small print — White frame",
+    "artworkTitle": "Kristine",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD11X4DD84F2S8X10J1S4DD11X4DD84G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.8567,
+      "height": 4.58,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.11,
+      "height": 4.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7.jpg",
+    "assetSha256": "0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7",
+    "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp",
+      "alt": "Kristine",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.11,
+        "height": 4.84,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.11X4.84",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-1143b08e177333e43dc7-small-frame-natural": {
+    "id": "print-book-art-1143b08e177333e43dc7-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1143b08e177333e43dc7",
+    "title": "Kristine — Small print — Natural wood frame",
+    "artworkTitle": "Kristine",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD11X4DD84F7S8X10J1S4DD11X4DD84G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.8567,
+      "height": 4.58,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.11,
+      "height": 4.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7.jpg",
+    "assetSha256": "0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7",
+    "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp",
+      "alt": "Kristine",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.11,
+        "height": 4.84,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.11X4.84",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-18e4d05240ce63a1a44b-full": {
     "id": "print-book-art-18e4d05240ce63a1a44b-full",
     "type": "print",
@@ -41876,6 +55418,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-18e4d05240ce63a1a44b-full-frame-black": {
+    "id": "print-book-art-18e4d05240ce63a1a44b-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-18e4d05240ce63a1a44b",
+    "title": "MJ — Large print — Black frame",
+    "artworkTitle": "MJ",
+    "amount": "154.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD74X14DD41F1S16X20J1S12DD74X14DD41G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.4867,
+      "height": 14.1567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.74,
+      "height": 14.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637.jpg",
+    "assetSha256": "68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637",
+    "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp",
+      "alt": "MJ",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.74,
+        "height": 14.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.74X14.41",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-book-art-18e4d05240ce63a1a44b-full-frame-white": {
+    "id": "print-book-art-18e4d05240ce63a1a44b-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-18e4d05240ce63a1a44b",
+    "title": "MJ — Large print — White frame",
+    "artworkTitle": "MJ",
+    "amount": "154.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD74X14DD41F2S16X20J1S12DD74X14DD41G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.4867,
+      "height": 14.1567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.74,
+      "height": 14.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637.jpg",
+    "assetSha256": "68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637",
+    "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp",
+      "alt": "MJ",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.74,
+        "height": 14.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.74X14.41",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-book-art-18e4d05240ce63a1a44b-full-frame-natural": {
+    "id": "print-book-art-18e4d05240ce63a1a44b-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-18e4d05240ce63a1a44b",
+    "title": "MJ — Large print — Natural wood frame",
+    "artworkTitle": "MJ",
+    "amount": "169.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD74X14DD41F7S16X20J1S12DD74X14DD41G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.4867,
+      "height": 14.1567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.74,
+      "height": 14.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637.jpg",
+    "assetSha256": "68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637",
+    "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp",
+      "alt": "MJ",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.74,
+        "height": 14.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.74X14.41",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
   },
   "print-book-art-18e4d05240ce63a1a44b-medium": {
     "id": "print-book-art-18e4d05240ce63a1a44b-medium",
@@ -41915,6 +55679,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-18e4d05240ce63a1a44b-medium-frame-black": {
+    "id": "print-book-art-18e4d05240ce63a1a44b-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-18e4d05240ce63a1a44b",
+    "title": "MJ — Medium print — Black frame",
+    "artworkTitle": "MJ",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD62X10DD87F1S12X15J1S9DD62X10DD87G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.3633,
+      "height": 10.6167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.62,
+      "height": 10.87,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c.jpg",
+    "assetSha256": "f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c",
+    "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp",
+      "alt": "MJ",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.62,
+        "height": 10.87,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.62X10.87",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-18e4d05240ce63a1a44b-medium-frame-white": {
+    "id": "print-book-art-18e4d05240ce63a1a44b-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-18e4d05240ce63a1a44b",
+    "title": "MJ — Medium print — White frame",
+    "artworkTitle": "MJ",
+    "amount": "96.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD62X10DD87F2S12X15J1S9DD62X10DD87G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.3633,
+      "height": 10.6167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.62,
+      "height": 10.87,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c.jpg",
+    "assetSha256": "f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c",
+    "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp",
+      "alt": "MJ",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.62,
+        "height": 10.87,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.62X10.87",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-book-art-18e4d05240ce63a1a44b-medium-frame-natural": {
+    "id": "print-book-art-18e4d05240ce63a1a44b-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-18e4d05240ce63a1a44b",
+    "title": "MJ — Medium print — Natural wood frame",
+    "artworkTitle": "MJ",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD62X10DD87F7S12X15J1S9DD62X10DD87G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.3633,
+      "height": 10.6167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.62,
+      "height": 10.87,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c.jpg",
+    "assetSha256": "f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c",
+    "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp",
+      "alt": "MJ",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.62,
+        "height": 10.87,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.62X10.87",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
   "print-book-art-18e4d05240ce63a1a44b-small": {
     "id": "print-book-art-18e4d05240ce63a1a44b-small",
     "type": "print",
@@ -41952,6 +55938,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-18e4d05240ce63a1a44b-small-frame-black": {
+    "id": "print-book-art-18e4d05240ce63a1a44b-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-18e4d05240ce63a1a44b",
+    "title": "MJ — Small print — Black frame",
+    "artworkTitle": "MJ",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD49X7DD33F1S9X12J1S6DD49X7DD33G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.2367,
+      "height": 7.07,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.49,
+      "height": 7.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6.jpg",
+    "assetSha256": "5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6",
+    "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp",
+      "alt": "MJ",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.49,
+        "height": 7.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.49X7.33",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-18e4d05240ce63a1a44b-small-frame-white": {
+    "id": "print-book-art-18e4d05240ce63a1a44b-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-18e4d05240ce63a1a44b",
+    "title": "MJ — Small print — White frame",
+    "artworkTitle": "MJ",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD49X7DD33F2S9X12J1S6DD49X7DD33G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.2367,
+      "height": 7.07,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.49,
+      "height": 7.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6.jpg",
+    "assetSha256": "5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6",
+    "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp",
+      "alt": "MJ",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.49,
+        "height": 7.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.49X7.33",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-18e4d05240ce63a1a44b-small-frame-natural": {
+    "id": "print-book-art-18e4d05240ce63a1a44b-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-18e4d05240ce63a1a44b",
+    "title": "MJ — Small print — Natural wood frame",
+    "artworkTitle": "MJ",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD49X7DD33F7S9X12J1S6DD49X7DD33G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.2367,
+      "height": 7.07,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.49,
+      "height": 7.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6.jpg",
+    "assetSha256": "5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6",
+    "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp",
+      "alt": "MJ",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.49,
+        "height": 7.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.49X7.33",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-64cfd389b3dbb5cde532-full": {
     "id": "print-book-art-64cfd389b3dbb5cde532-full",
@@ -41991,6 +56199,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-64cfd389b3dbb5cde532-full-frame-black": {
+    "id": "print-book-art-64cfd389b3dbb5cde532-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-64cfd389b3dbb5cde532",
+    "title": "Loree — Large print — Black frame",
+    "artworkTitle": "Loree",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD44X9DD98F1S11X14J1S8DD44X9DD98G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1867,
+      "height": 9.72,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.44,
+      "height": 9.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7.jpg",
+    "assetSha256": "ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7",
+    "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp",
+      "alt": "Loree",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.44,
+        "height": 9.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.44X9.98",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-64cfd389b3dbb5cde532-full-frame-white": {
+    "id": "print-book-art-64cfd389b3dbb5cde532-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-64cfd389b3dbb5cde532",
+    "title": "Loree — Large print — White frame",
+    "artworkTitle": "Loree",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD44X9DD98F2S11X14J1S8DD44X9DD98G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1867,
+      "height": 9.72,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.44,
+      "height": 9.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7.jpg",
+    "assetSha256": "ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7",
+    "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp",
+      "alt": "Loree",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.44,
+        "height": 9.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.44X9.98",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-64cfd389b3dbb5cde532-full-frame-natural": {
+    "id": "print-book-art-64cfd389b3dbb5cde532-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-64cfd389b3dbb5cde532",
+    "title": "Loree — Large print — Natural wood frame",
+    "artworkTitle": "Loree",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD44X9DD98F7S11X14J1S8DD44X9DD98G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.1867,
+      "height": 9.72,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.44,
+      "height": 9.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7.jpg",
+    "assetSha256": "ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7",
+    "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp",
+      "alt": "Loree",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.44,
+        "height": 9.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.44X9.98",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-64cfd389b3dbb5cde532-medium": {
     "id": "print-book-art-64cfd389b3dbb5cde532-medium",
     "type": "print",
@@ -42028,6 +56458,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-64cfd389b3dbb5cde532-medium-frame-black": {
+    "id": "print-book-art-64cfd389b3dbb5cde532-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-64cfd389b3dbb5cde532",
+    "title": "Loree — Medium print — Black frame",
+    "artworkTitle": "Loree",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD39X7DD55F1S9X12J1S6DD39X7DD55G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.1367,
+      "height": 7.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.39,
+      "height": 7.55,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684.jpg",
+    "assetSha256": "9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684",
+    "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp",
+      "alt": "Loree",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.39,
+        "height": 7.55,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.39X7.55",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-64cfd389b3dbb5cde532-medium-frame-white": {
+    "id": "print-book-art-64cfd389b3dbb5cde532-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-64cfd389b3dbb5cde532",
+    "title": "Loree — Medium print — White frame",
+    "artworkTitle": "Loree",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD39X7DD55F2S9X12J1S6DD39X7DD55G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.1367,
+      "height": 7.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.39,
+      "height": 7.55,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684.jpg",
+    "assetSha256": "9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684",
+    "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp",
+      "alt": "Loree",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.39,
+        "height": 7.55,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.39X7.55",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-64cfd389b3dbb5cde532-medium-frame-natural": {
+    "id": "print-book-art-64cfd389b3dbb5cde532-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-64cfd389b3dbb5cde532",
+    "title": "Loree — Medium print — Natural wood frame",
+    "artworkTitle": "Loree",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD39X7DD55F7S9X12J1S6DD39X7DD55G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.1367,
+      "height": 7.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.39,
+      "height": 7.55,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684.jpg",
+    "assetSha256": "9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684",
+    "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp",
+      "alt": "Loree",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.39,
+        "height": 7.55,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.39X7.55",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-64cfd389b3dbb5cde532-small": {
     "id": "print-book-art-64cfd389b3dbb5cde532-small",
@@ -42067,6 +56719,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-64cfd389b3dbb5cde532-small-frame-black": {
+    "id": "print-book-art-64cfd389b3dbb5cde532-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-64cfd389b3dbb5cde532",
+    "title": "Loree — Small print — Black frame",
+    "artworkTitle": "Loree",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD34X5DD11F1S8X10J1S4DD34X5DD11G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.0867,
+      "height": 4.8533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.34,
+      "height": 5.11,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838.jpg",
+    "assetSha256": "9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838",
+    "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp",
+      "alt": "Loree",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.34,
+        "height": 5.11,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.34X5.11",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-64cfd389b3dbb5cde532-small-frame-white": {
+    "id": "print-book-art-64cfd389b3dbb5cde532-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-64cfd389b3dbb5cde532",
+    "title": "Loree — Small print — White frame",
+    "artworkTitle": "Loree",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD34X5DD11F2S8X10J1S4DD34X5DD11G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.0867,
+      "height": 4.8533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.34,
+      "height": 5.11,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838.jpg",
+    "assetSha256": "9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838",
+    "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp",
+      "alt": "Loree",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.34,
+        "height": 5.11,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.34X5.11",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-64cfd389b3dbb5cde532-small-frame-natural": {
+    "id": "print-book-art-64cfd389b3dbb5cde532-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-64cfd389b3dbb5cde532",
+    "title": "Loree — Small print — Natural wood frame",
+    "artworkTitle": "Loree",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD34X5DD11F7S8X10J1S4DD34X5DD11G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.0867,
+      "height": 4.8533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.34,
+      "height": 5.11,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838.jpg",
+    "assetSha256": "9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838",
+    "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp",
+      "alt": "Loree",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.34,
+        "height": 5.11,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.34X5.11",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-1708a7dca996aca40e6c-full": {
     "id": "print-book-art-1708a7dca996aca40e6c-full",
     "type": "print",
@@ -42104,6 +56978,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-1708a7dca996aca40e6c-full-frame-black": {
+    "id": "print-book-art-1708a7dca996aca40e6c-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1708a7dca996aca40e6c",
+    "title": "Malone — Large print — Black frame",
+    "artworkTitle": "Malone",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD09X10DD4F1S12X15J1S9DD09X10DD4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.8367,
+      "height": 10.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.09,
+      "height": 10.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54.jpg",
+    "assetSha256": "9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54",
+    "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
+      "alt": "Malone",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.09,
+        "height": 10.4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.09X10.4",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-1708a7dca996aca40e6c-full-frame-white": {
+    "id": "print-book-art-1708a7dca996aca40e6c-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1708a7dca996aca40e6c",
+    "title": "Malone — Large print — White frame",
+    "artworkTitle": "Malone",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD09X10DD4F2S12X15J1S9DD09X10DD4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.8367,
+      "height": 10.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.09,
+      "height": 10.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54.jpg",
+    "assetSha256": "9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54",
+    "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
+      "alt": "Malone",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.09,
+        "height": 10.4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.09X10.4",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-book-art-1708a7dca996aca40e6c-full-frame-natural": {
+    "id": "print-book-art-1708a7dca996aca40e6c-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1708a7dca996aca40e6c",
+    "title": "Malone — Large print — Natural wood frame",
+    "artworkTitle": "Malone",
+    "amount": "103.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD09X10DD4F7S12X15J1S9DD09X10DD4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.8367,
+      "height": 10.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.09,
+      "height": 10.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54.jpg",
+    "assetSha256": "9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54",
+    "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
+      "alt": "Malone",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.09,
+        "height": 10.4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.09X10.4",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 15,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
   },
   "print-book-art-1708a7dca996aca40e6c-medium": {
     "id": "print-book-art-1708a7dca996aca40e6c-medium",
@@ -42143,6 +57239,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-1708a7dca996aca40e6c-medium-frame-black": {
+    "id": "print-book-art-1708a7dca996aca40e6c-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1708a7dca996aca40e6c",
+    "title": "Malone — Medium print — Black frame",
+    "artworkTitle": "Malone",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD88X7DD86F1S9X12J1S6DD88X7DD86G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.6233,
+      "height": 7.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.88,
+      "height": 7.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936.jpg",
+    "assetSha256": "3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936",
+    "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
+      "alt": "Malone",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.88,
+        "height": 7.86,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.88X7.86",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-1708a7dca996aca40e6c-medium-frame-white": {
+    "id": "print-book-art-1708a7dca996aca40e6c-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1708a7dca996aca40e6c",
+    "title": "Malone — Medium print — White frame",
+    "artworkTitle": "Malone",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD88X7DD86F2S9X12J1S6DD88X7DD86G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.6233,
+      "height": 7.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.88,
+      "height": 7.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936.jpg",
+    "assetSha256": "3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936",
+    "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
+      "alt": "Malone",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.88,
+        "height": 7.86,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.88X7.86",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-1708a7dca996aca40e6c-medium-frame-natural": {
+    "id": "print-book-art-1708a7dca996aca40e6c-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1708a7dca996aca40e6c",
+    "title": "Malone — Medium print — Natural wood frame",
+    "artworkTitle": "Malone",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD88X7DD86F7S9X12J1S6DD88X7DD86G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.6233,
+      "height": 7.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.88,
+      "height": 7.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936.jpg",
+    "assetSha256": "3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936",
+    "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
+      "alt": "Malone",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.88,
+        "height": 7.86,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.88X7.86",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-1708a7dca996aca40e6c-small": {
     "id": "print-book-art-1708a7dca996aca40e6c-small",
     "type": "print",
@@ -42180,6 +57498,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-1708a7dca996aca40e6c-small-frame-black": {
+    "id": "print-book-art-1708a7dca996aca40e6c-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1708a7dca996aca40e6c",
+    "title": "Malone — Small print — Black frame",
+    "artworkTitle": "Malone",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD67X5DD32F1S8X10J1S4DD67X5DD32G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.4133,
+      "height": 5.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.67,
+      "height": 5.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e.jpg",
+    "assetSha256": "6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e",
+    "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
+      "alt": "Malone",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.67,
+        "height": 5.32,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.67X5.32",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-1708a7dca996aca40e6c-small-frame-white": {
+    "id": "print-book-art-1708a7dca996aca40e6c-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1708a7dca996aca40e6c",
+    "title": "Malone — Small print — White frame",
+    "artworkTitle": "Malone",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD67X5DD32F2S8X10J1S4DD67X5DD32G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.4133,
+      "height": 5.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.67,
+      "height": 5.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e.jpg",
+    "assetSha256": "6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e",
+    "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
+      "alt": "Malone",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.67,
+        "height": 5.32,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.67X5.32",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-1708a7dca996aca40e6c-small-frame-natural": {
+    "id": "print-book-art-1708a7dca996aca40e6c-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-1708a7dca996aca40e6c",
+    "title": "Malone — Small print — Natural wood frame",
+    "artworkTitle": "Malone",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD67X5DD32F7S8X10J1S4DD67X5DD32G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.4133,
+      "height": 5.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.67,
+      "height": 5.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e.jpg",
+    "assetSha256": "6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e",
+    "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
+      "alt": "Malone",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.67,
+        "height": 5.32,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.67X5.32",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-a627c7b7d19ace6b3e51-full": {
     "id": "print-book-art-a627c7b7d19ace6b3e51-full",
@@ -42219,6 +57759,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-a627c7b7d19ace6b3e51-full-frame-black": {
+    "id": "print-book-art-a627c7b7d19ace6b3e51-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a627c7b7d19ace6b3e51",
+    "title": "John — Large print — Black frame",
+    "artworkTitle": "John",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD48X9DD58F1S11X14J1S8DD48X9DD58G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.2233,
+      "height": 9.3267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.48,
+      "height": 9.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0.jpg",
+    "assetSha256": "cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0",
+    "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp",
+      "alt": "John",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.48,
+        "height": 9.58,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.48X9.58",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-a627c7b7d19ace6b3e51-full-frame-white": {
+    "id": "print-book-art-a627c7b7d19ace6b3e51-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a627c7b7d19ace6b3e51",
+    "title": "John — Large print — White frame",
+    "artworkTitle": "John",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD48X9DD58F2S11X14J1S8DD48X9DD58G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.2233,
+      "height": 9.3267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.48,
+      "height": 9.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0.jpg",
+    "assetSha256": "cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0",
+    "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp",
+      "alt": "John",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.48,
+        "height": 9.58,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.48X9.58",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-a627c7b7d19ace6b3e51-full-frame-natural": {
+    "id": "print-book-art-a627c7b7d19ace6b3e51-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a627c7b7d19ace6b3e51",
+    "title": "John — Large print — Natural wood frame",
+    "artworkTitle": "John",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD48X9DD58F7S11X14J1S8DD48X9DD58G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.2233,
+      "height": 9.3267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.48,
+      "height": 9.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0.jpg",
+    "assetSha256": "cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0",
+    "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp",
+      "alt": "John",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.48,
+        "height": 9.58,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.48X9.58",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-a627c7b7d19ace6b3e51-medium": {
     "id": "print-book-art-a627c7b7d19ace6b3e51-medium",
     "type": "print",
@@ -42256,6 +58018,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-a627c7b7d19ace6b3e51-medium-frame-black": {
+    "id": "print-book-art-a627c7b7d19ace6b3e51-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a627c7b7d19ace6b3e51",
+    "title": "John — Medium print — Black frame",
+    "artworkTitle": "John",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD42X7DD25F1S9X12J1S6DD42X7DD25G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.1667,
+      "height": 6.9933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.42,
+      "height": 7.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50.jpg",
+    "assetSha256": "d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50",
+    "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp",
+      "alt": "John",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.42,
+        "height": 7.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.42X7.25",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-a627c7b7d19ace6b3e51-medium-frame-white": {
+    "id": "print-book-art-a627c7b7d19ace6b3e51-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a627c7b7d19ace6b3e51",
+    "title": "John — Medium print — White frame",
+    "artworkTitle": "John",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD42X7DD25F2S9X12J1S6DD42X7DD25G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.1667,
+      "height": 6.9933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.42,
+      "height": 7.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50.jpg",
+    "assetSha256": "d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50",
+    "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp",
+      "alt": "John",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.42,
+        "height": 7.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.42X7.25",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-a627c7b7d19ace6b3e51-medium-frame-natural": {
+    "id": "print-book-art-a627c7b7d19ace6b3e51-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a627c7b7d19ace6b3e51",
+    "title": "John — Medium print — Natural wood frame",
+    "artworkTitle": "John",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD42X7DD25F7S9X12J1S6DD42X7DD25G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.1667,
+      "height": 6.9933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.42,
+      "height": 7.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50.jpg",
+    "assetSha256": "d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50",
+    "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp",
+      "alt": "John",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.42,
+        "height": 7.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.42X7.25",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-a627c7b7d19ace6b3e51-small": {
     "id": "print-book-art-a627c7b7d19ace6b3e51-small",
@@ -42295,6 +58279,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-a627c7b7d19ace6b3e51-small-frame-black": {
+    "id": "print-book-art-a627c7b7d19ace6b3e51-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a627c7b7d19ace6b3e51",
+    "title": "John — Small print — Black frame",
+    "artworkTitle": "John",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD36X4DD91F1S8X10J1S4DD36X4DD91G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 4.6567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 4.91,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962.jpg",
+    "assetSha256": "30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962",
+    "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp",
+      "alt": "John",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.36,
+        "height": 4.91,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.36X4.91",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-a627c7b7d19ace6b3e51-small-frame-white": {
+    "id": "print-book-art-a627c7b7d19ace6b3e51-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a627c7b7d19ace6b3e51",
+    "title": "John — Small print — White frame",
+    "artworkTitle": "John",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD36X4DD91F2S8X10J1S4DD36X4DD91G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 4.6567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 4.91,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962.jpg",
+    "assetSha256": "30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962",
+    "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp",
+      "alt": "John",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.36,
+        "height": 4.91,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.36X4.91",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-a627c7b7d19ace6b3e51-small-frame-natural": {
+    "id": "print-book-art-a627c7b7d19ace6b3e51-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-a627c7b7d19ace6b3e51",
+    "title": "John — Small print — Natural wood frame",
+    "artworkTitle": "John",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD36X4DD91F7S8X10J1S4DD36X4DD91G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 4.6567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 4.91,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962.jpg",
+    "assetSha256": "30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962",
+    "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp",
+      "alt": "John",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.36,
+        "height": 4.91,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.36X4.91",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-44161b6b117af79e3df4-full": {
     "id": "print-book-art-44161b6b117af79e3df4-full",
     "type": "print",
@@ -42332,6 +58538,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-44161b6b117af79e3df4-full-frame-black": {
+    "id": "print-book-art-44161b6b117af79e3df4-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-44161b6b117af79e3df4",
+    "title": "Sergey — Large print — Black frame",
+    "artworkTitle": "Sergey",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD89X9DD85F1S11X14J1S8DD89X9DD85G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.6367,
+      "height": 9.5967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.89,
+      "height": 9.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee.jpg",
+    "assetSha256": "7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee",
+    "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp",
+      "alt": "Sergey",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.89,
+        "height": 9.85,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.89X9.85",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-44161b6b117af79e3df4-full-frame-white": {
+    "id": "print-book-art-44161b6b117af79e3df4-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-44161b6b117af79e3df4",
+    "title": "Sergey — Large print — White frame",
+    "artworkTitle": "Sergey",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD89X9DD85F2S11X14J1S8DD89X9DD85G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.6367,
+      "height": 9.5967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.89,
+      "height": 9.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee.jpg",
+    "assetSha256": "7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee",
+    "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp",
+      "alt": "Sergey",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.89,
+        "height": 9.85,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.89X9.85",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-44161b6b117af79e3df4-full-frame-natural": {
+    "id": "print-book-art-44161b6b117af79e3df4-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-44161b6b117af79e3df4",
+    "title": "Sergey — Large print — Natural wood frame",
+    "artworkTitle": "Sergey",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD89X9DD85F7S11X14J1S8DD89X9DD85G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.6367,
+      "height": 9.5967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.89,
+      "height": 9.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee.jpg",
+    "assetSha256": "7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee",
+    "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp",
+      "alt": "Sergey",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.89,
+        "height": 9.85,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.89X9.85",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-44161b6b117af79e3df4-medium": {
     "id": "print-book-art-44161b6b117af79e3df4-medium",
@@ -42371,6 +58799,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-44161b6b117af79e3df4-medium-frame-black": {
+    "id": "print-book-art-44161b6b117af79e3df4-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-44161b6b117af79e3df4",
+    "title": "Sergey — Medium print — Black frame",
+    "artworkTitle": "Sergey",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD73X7DD45F1S9X12J1S6DD73X7DD45G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.4767,
+      "height": 7.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.73,
+      "height": 7.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135.jpg",
+    "assetSha256": "8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135",
+    "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp",
+      "alt": "Sergey",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.73,
+        "height": 7.45,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.73X7.45",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-44161b6b117af79e3df4-medium-frame-white": {
+    "id": "print-book-art-44161b6b117af79e3df4-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-44161b6b117af79e3df4",
+    "title": "Sergey — Medium print — White frame",
+    "artworkTitle": "Sergey",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD73X7DD45F2S9X12J1S6DD73X7DD45G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.4767,
+      "height": 7.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.73,
+      "height": 7.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135.jpg",
+    "assetSha256": "8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135",
+    "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp",
+      "alt": "Sergey",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.73,
+        "height": 7.45,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.73X7.45",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-44161b6b117af79e3df4-medium-frame-natural": {
+    "id": "print-book-art-44161b6b117af79e3df4-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-44161b6b117af79e3df4",
+    "title": "Sergey — Medium print — Natural wood frame",
+    "artworkTitle": "Sergey",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD73X7DD45F7S9X12J1S6DD73X7DD45G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.4767,
+      "height": 7.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.73,
+      "height": 7.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135.jpg",
+    "assetSha256": "8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135",
+    "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp",
+      "alt": "Sergey",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.73,
+        "height": 7.45,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.73X7.45",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-44161b6b117af79e3df4-small": {
     "id": "print-book-art-44161b6b117af79e3df4-small",
     "type": "print",
@@ -42408,6 +59058,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-44161b6b117af79e3df4-small-frame-black": {
+    "id": "print-book-art-44161b6b117af79e3df4-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-44161b6b117af79e3df4",
+    "title": "Sergey — Small print — Black frame",
+    "artworkTitle": "Sergey",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD57X5DD05F1S8X10J1S4DD57X5DD05G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.3167,
+      "height": 4.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.57,
+      "height": 5.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d.jpg",
+    "assetSha256": "86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d",
+    "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp",
+      "alt": "Sergey",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.57,
+        "height": 5.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.57X5.05",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-44161b6b117af79e3df4-small-frame-white": {
+    "id": "print-book-art-44161b6b117af79e3df4-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-44161b6b117af79e3df4",
+    "title": "Sergey — Small print — White frame",
+    "artworkTitle": "Sergey",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD57X5DD05F2S8X10J1S4DD57X5DD05G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.3167,
+      "height": 4.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.57,
+      "height": 5.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d.jpg",
+    "assetSha256": "86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d",
+    "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp",
+      "alt": "Sergey",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.57,
+        "height": 5.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.57X5.05",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-44161b6b117af79e3df4-small-frame-natural": {
+    "id": "print-book-art-44161b6b117af79e3df4-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-44161b6b117af79e3df4",
+    "title": "Sergey — Small print — Natural wood frame",
+    "artworkTitle": "Sergey",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD57X5DD05F7S8X10J1S4DD57X5DD05G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.3167,
+      "height": 4.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.57,
+      "height": 5.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d.jpg",
+    "assetSha256": "86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d",
+    "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp",
+      "alt": "Sergey",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.57,
+        "height": 5.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.57X5.05",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-029f45a5fbfd6c90212e-full": {
     "id": "print-book-art-029f45a5fbfd6c90212e-full",
@@ -42447,6 +59319,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-029f45a5fbfd6c90212e-full-frame-black": {
+    "id": "print-book-art-029f45a5fbfd6c90212e-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-029f45a5fbfd6c90212e",
+    "title": "Mikyla, Mandy, and Guin — Large print — Black frame",
+    "artworkTitle": "Mikyla, Mandy, and Guin",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD2X14DD58F1S16X20J1S8DD2X14DD58G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.9467,
+      "height": 14.3233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.2,
+      "height": 14.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d.jpg",
+    "assetSha256": "9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d",
+    "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp",
+      "alt": "Mikyla, Mandy, and Guin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.2,
+        "height": 14.58,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.2X14.58",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-book-art-029f45a5fbfd6c90212e-full-frame-white": {
+    "id": "print-book-art-029f45a5fbfd6c90212e-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-029f45a5fbfd6c90212e",
+    "title": "Mikyla, Mandy, and Guin — Large print — White frame",
+    "artworkTitle": "Mikyla, Mandy, and Guin",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD2X14DD58F2S16X20J1S8DD2X14DD58G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.9467,
+      "height": 14.3233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.2,
+      "height": 14.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d.jpg",
+    "assetSha256": "9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d",
+    "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp",
+      "alt": "Mikyla, Mandy, and Guin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.2,
+        "height": 14.58,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.2X14.58",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-book-art-029f45a5fbfd6c90212e-full-frame-natural": {
+    "id": "print-book-art-029f45a5fbfd6c90212e-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-029f45a5fbfd6c90212e",
+    "title": "Mikyla, Mandy, and Guin — Large print — Natural wood frame",
+    "artworkTitle": "Mikyla, Mandy, and Guin",
+    "amount": "139.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD2X14DD58F7S16X20J1S8DD2X14DD58G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.9467,
+      "height": 14.3233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.2,
+      "height": 14.58,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d.jpg",
+    "assetSha256": "9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d",
+    "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp",
+      "alt": "Mikyla, Mandy, and Guin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.2,
+        "height": 14.58,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.2X14.58",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
   "print-book-art-029f45a5fbfd6c90212e-medium": {
     "id": "print-book-art-029f45a5fbfd6c90212e-medium",
     "type": "print",
@@ -42484,6 +59578,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-029f45a5fbfd6c90212e-medium-frame-black": {
+    "id": "print-book-art-029f45a5fbfd6c90212e-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-029f45a5fbfd6c90212e",
+    "title": "Mikyla, Mandy, and Guin — Medium print — Black frame",
+    "artworkTitle": "Mikyla, Mandy, and Guin",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD21X10DD99F1S11X14J1S6DD21X10DD99G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.9567,
+      "height": 10.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.21,
+      "height": 10.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1.jpg",
+    "assetSha256": "d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1",
+    "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp",
+      "alt": "Mikyla, Mandy, and Guin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.21,
+        "height": 10.99,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.21X10.99",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-029f45a5fbfd6c90212e-medium-frame-white": {
+    "id": "print-book-art-029f45a5fbfd6c90212e-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-029f45a5fbfd6c90212e",
+    "title": "Mikyla, Mandy, and Guin — Medium print — White frame",
+    "artworkTitle": "Mikyla, Mandy, and Guin",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD21X10DD99F2S11X14J1S6DD21X10DD99G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.9567,
+      "height": 10.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.21,
+      "height": 10.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1.jpg",
+    "assetSha256": "d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1",
+    "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp",
+      "alt": "Mikyla, Mandy, and Guin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.21,
+        "height": 10.99,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.21X10.99",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-029f45a5fbfd6c90212e-medium-frame-natural": {
+    "id": "print-book-art-029f45a5fbfd6c90212e-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-029f45a5fbfd6c90212e",
+    "title": "Mikyla, Mandy, and Guin — Medium print — Natural wood frame",
+    "artworkTitle": "Mikyla, Mandy, and Guin",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD21X10DD99F7S11X14J1S6DD21X10DD99G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.9567,
+      "height": 10.7367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.21,
+      "height": 10.99,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1.jpg",
+    "assetSha256": "d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1",
+    "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp",
+      "alt": "Mikyla, Mandy, and Guin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.21,
+        "height": 10.99,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.21X10.99",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-book-art-029f45a5fbfd6c90212e-small": {
     "id": "print-book-art-029f45a5fbfd6c90212e-small",
@@ -42523,6 +59839,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-029f45a5fbfd6c90212e-small-frame-black": {
+    "id": "print-book-art-029f45a5fbfd6c90212e-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-029f45a5fbfd6c90212e",
+    "title": "Mikyla, Mandy, and Guin — Small print — Black frame",
+    "artworkTitle": "Mikyla, Mandy, and Guin",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD22X7DD41F1S8X10J1S4DD22X7DD41G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.9667,
+      "height": 7.15,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.22,
+      "height": 7.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb.jpg",
+    "assetSha256": "f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb",
+    "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp",
+      "alt": "Mikyla, Mandy, and Guin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.22,
+        "height": 7.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.22X7.41",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-029f45a5fbfd6c90212e-small-frame-white": {
+    "id": "print-book-art-029f45a5fbfd6c90212e-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-029f45a5fbfd6c90212e",
+    "title": "Mikyla, Mandy, and Guin — Small print — White frame",
+    "artworkTitle": "Mikyla, Mandy, and Guin",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD22X7DD41F2S8X10J1S4DD22X7DD41G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.9667,
+      "height": 7.15,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.22,
+      "height": 7.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb.jpg",
+    "assetSha256": "f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb",
+    "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp",
+      "alt": "Mikyla, Mandy, and Guin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.22,
+        "height": 7.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.22X7.41",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-029f45a5fbfd6c90212e-small-frame-natural": {
+    "id": "print-book-art-029f45a5fbfd6c90212e-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-029f45a5fbfd6c90212e",
+    "title": "Mikyla, Mandy, and Guin — Small print — Natural wood frame",
+    "artworkTitle": "Mikyla, Mandy, and Guin",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD22X7DD41F7S8X10J1S4DD22X7DD41G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.9667,
+      "height": 7.15,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.22,
+      "height": 7.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb.jpg",
+    "assetSha256": "f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb",
+    "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp",
+      "alt": "Mikyla, Mandy, and Guin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.22,
+        "height": 7.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.22X7.41",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-28bec44600b36ed0766f-full": {
     "id": "print-book-art-28bec44600b36ed0766f-full",
     "type": "print",
@@ -42560,6 +60098,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-28bec44600b36ed0766f-full-frame-black": {
+    "id": "print-book-art-28bec44600b36ed0766f-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-28bec44600b36ed0766f",
+    "title": "Julia's baby shower — Large print — Black frame",
+    "artworkTitle": "Julia's baby shower",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD6X9DD3F1S11X14J1S7DD6X9DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.3467,
+      "height": 9.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.6,
+      "height": 9.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa.jpg",
+    "assetSha256": "1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa",
+    "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.webp",
+      "alt": "Julia's baby shower",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.6,
+        "height": 9.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.6X9.3",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-28bec44600b36ed0766f-full-frame-white": {
+    "id": "print-book-art-28bec44600b36ed0766f-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-28bec44600b36ed0766f",
+    "title": "Julia's baby shower — Large print — White frame",
+    "artworkTitle": "Julia's baby shower",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD6X9DD3F2S11X14J1S7DD6X9DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.3467,
+      "height": 9.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.6,
+      "height": 9.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa.jpg",
+    "assetSha256": "1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa",
+    "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.webp",
+      "alt": "Julia's baby shower",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.6,
+        "height": 9.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.6X9.3",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-28bec44600b36ed0766f-full-frame-natural": {
+    "id": "print-book-art-28bec44600b36ed0766f-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-28bec44600b36ed0766f",
+    "title": "Julia's baby shower — Large print — Natural wood frame",
+    "artworkTitle": "Julia's baby shower",
+    "amount": "87.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD6X9DD3F7S11X14J1S7DD6X9DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.3467,
+      "height": 9.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.6,
+      "height": 9.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa.jpg",
+    "assetSha256": "1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa",
+    "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.webp",
+      "alt": "Julia's baby shower",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.6,
+        "height": 9.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.6X9.3",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-28bec44600b36ed0766f-medium": {
     "id": "print-book-art-28bec44600b36ed0766f-medium",
@@ -42599,6 +60359,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-28bec44600b36ed0766f-medium-frame-black": {
+    "id": "print-book-art-28bec44600b36ed0766f-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-28bec44600b36ed0766f",
+    "title": "Julia's baby shower — Medium print — Black frame",
+    "artworkTitle": "Julia's baby shower",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD76X7DD04F1S8X10J1S5DD76X7DD04G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.5067,
+      "height": 6.7833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.76,
+      "height": 7.04,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f.jpg",
+    "assetSha256": "5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f",
+    "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.webp",
+      "alt": "Julia's baby shower",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.76,
+        "height": 7.04,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.76X7.04",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-28bec44600b36ed0766f-medium-frame-white": {
+    "id": "print-book-art-28bec44600b36ed0766f-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-28bec44600b36ed0766f",
+    "title": "Julia's baby shower — Medium print — White frame",
+    "artworkTitle": "Julia's baby shower",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD76X7DD04F2S8X10J1S5DD76X7DD04G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.5067,
+      "height": 6.7833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.76,
+      "height": 7.04,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f.jpg",
+    "assetSha256": "5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f",
+    "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.webp",
+      "alt": "Julia's baby shower",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.76,
+        "height": 7.04,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.76X7.04",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-28bec44600b36ed0766f-medium-frame-natural": {
+    "id": "print-book-art-28bec44600b36ed0766f-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-28bec44600b36ed0766f",
+    "title": "Julia's baby shower — Medium print — Natural wood frame",
+    "artworkTitle": "Julia's baby shower",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD76X7DD04F7S8X10J1S5DD76X7DD04G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.5067,
+      "height": 6.7833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.76,
+      "height": 7.04,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f.jpg",
+    "assetSha256": "5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f",
+    "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.webp",
+      "alt": "Julia's baby shower",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.76,
+        "height": 7.04,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.76X7.04",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-14d2876a55c720cbc908-full": {
     "id": "print-book-art-14d2876a55c720cbc908-full",
     "type": "print",
@@ -42636,6 +60618,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-14d2876a55c720cbc908-full-frame-black": {
+    "id": "print-book-art-14d2876a55c720cbc908-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-14d2876a55c720cbc908",
+    "title": "Jane and Sid in Zihuatanejo — Large print — Black frame",
+    "artworkTitle": "Jane and Sid in Zihuatanejo",
+    "amount": "101.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD8X9DD12F1S15X12J1S12DD8X9DD12G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.54,
+      "height": 8.8667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.8,
+      "height": 9.12,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d.jpg",
+    "assetSha256": "64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d",
+    "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp",
+      "alt": "Jane and Sid in Zihuatanejo",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.8,
+        "height": 9.12,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.8X9.12",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-book-art-14d2876a55c720cbc908-full-frame-white": {
+    "id": "print-book-art-14d2876a55c720cbc908-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-14d2876a55c720cbc908",
+    "title": "Jane and Sid in Zihuatanejo — Large print — White frame",
+    "artworkTitle": "Jane and Sid in Zihuatanejo",
+    "amount": "101.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD8X9DD12F2S15X12J1S12DD8X9DD12G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.54,
+      "height": 8.8667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.8,
+      "height": 9.12,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d.jpg",
+    "assetSha256": "64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d",
+    "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp",
+      "alt": "Jane and Sid in Zihuatanejo",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.8,
+        "height": 9.12,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.8X9.12",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-book-art-14d2876a55c720cbc908-full-frame-natural": {
+    "id": "print-book-art-14d2876a55c720cbc908-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-14d2876a55c720cbc908",
+    "title": "Jane and Sid in Zihuatanejo — Large print — Natural wood frame",
+    "artworkTitle": "Jane and Sid in Zihuatanejo",
+    "amount": "113.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD8X9DD12F7S15X12J1S12DD8X9DD12G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.54,
+      "height": 8.8667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.8,
+      "height": 9.12,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d.jpg",
+    "assetSha256": "64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d",
+    "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp",
+      "alt": "Jane and Sid in Zihuatanejo",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.8,
+        "height": 9.12,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.8X9.12",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
   },
   "print-book-art-14d2876a55c720cbc908-medium": {
     "id": "print-book-art-14d2876a55c720cbc908-medium",
@@ -42675,6 +60879,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-14d2876a55c720cbc908-medium-frame-black": {
+    "id": "print-book-art-14d2876a55c720cbc908-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-14d2876a55c720cbc908",
+    "title": "Jane and Sid in Zihuatanejo — Medium print — Black frame",
+    "artworkTitle": "Jane and Sid in Zihuatanejo",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD66X6DD9F1S12X9J1S9DD66X6DD9G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.4,
+      "height": 6.6467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.66,
+      "height": 6.9,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23.jpg",
+    "assetSha256": "eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23",
+    "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp",
+      "alt": "Jane and Sid in Zihuatanejo",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.66,
+        "height": 6.9,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.66X6.9",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-14d2876a55c720cbc908-medium-frame-white": {
+    "id": "print-book-art-14d2876a55c720cbc908-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-14d2876a55c720cbc908",
+    "title": "Jane and Sid in Zihuatanejo — Medium print — White frame",
+    "artworkTitle": "Jane and Sid in Zihuatanejo",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD66X6DD9F2S12X9J1S9DD66X6DD9G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.4,
+      "height": 6.6467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.66,
+      "height": 6.9,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23.jpg",
+    "assetSha256": "eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23",
+    "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp",
+      "alt": "Jane and Sid in Zihuatanejo",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.66,
+        "height": 6.9,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.66X6.9",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-14d2876a55c720cbc908-medium-frame-natural": {
+    "id": "print-book-art-14d2876a55c720cbc908-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-14d2876a55c720cbc908",
+    "title": "Jane and Sid in Zihuatanejo — Medium print — Natural wood frame",
+    "artworkTitle": "Jane and Sid in Zihuatanejo",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD66X6DD9F7S12X9J1S9DD66X6DD9G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 9.4,
+      "height": 6.6467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.66,
+      "height": 6.9,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23.jpg",
+    "assetSha256": "eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23",
+    "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp",
+      "alt": "Jane and Sid in Zihuatanejo",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.66,
+        "height": 6.9,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.66X6.9",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-14d2876a55c720cbc908-small": {
     "id": "print-book-art-14d2876a55c720cbc908-small",
     "type": "print",
@@ -42712,6 +61138,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-14d2876a55c720cbc908-small-frame-black": {
+    "id": "print-book-art-14d2876a55c720cbc908-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-14d2876a55c720cbc908",
+    "title": "Jane and Sid in Zihuatanejo — Small print — Black frame",
+    "artworkTitle": "Jane and Sid in Zihuatanejo",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD52X4DD68F1S10X8J1S6DD52X4DD68G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.26,
+      "height": 4.4267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.52,
+      "height": 4.68,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35.jpg",
+    "assetSha256": "7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35",
+    "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp",
+      "alt": "Jane and Sid in Zihuatanejo",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.52,
+        "height": 4.68,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.52X4.68",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-14d2876a55c720cbc908-small-frame-white": {
+    "id": "print-book-art-14d2876a55c720cbc908-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-14d2876a55c720cbc908",
+    "title": "Jane and Sid in Zihuatanejo — Small print — White frame",
+    "artworkTitle": "Jane and Sid in Zihuatanejo",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD52X4DD68F2S10X8J1S6DD52X4DD68G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.26,
+      "height": 4.4267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.52,
+      "height": 4.68,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35.jpg",
+    "assetSha256": "7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35",
+    "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp",
+      "alt": "Jane and Sid in Zihuatanejo",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.52,
+        "height": 4.68,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.52X4.68",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-14d2876a55c720cbc908-small-frame-natural": {
+    "id": "print-book-art-14d2876a55c720cbc908-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-14d2876a55c720cbc908",
+    "title": "Jane and Sid in Zihuatanejo — Small print — Natural wood frame",
+    "artworkTitle": "Jane and Sid in Zihuatanejo",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD52X4DD68F7S10X8J1S6DD52X4DD68G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.26,
+      "height": 4.4267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.52,
+      "height": 4.68,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35.jpg",
+    "assetSha256": "7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35",
+    "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp",
+      "alt": "Jane and Sid in Zihuatanejo",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.52,
+        "height": 4.68,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.52X4.68",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-c347459aa3f77f7213ae-full": {
     "id": "print-book-art-c347459aa3f77f7213ae-full",
@@ -42751,6 +61399,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-c347459aa3f77f7213ae-full-frame-black": {
+    "id": "print-book-art-c347459aa3f77f7213ae-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c347459aa3f77f7213ae",
+    "title": "Mike and Julie in Leon — Large print — Black frame",
+    "artworkTitle": "Mike and Julie in Leon",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD04X6DD18F1S14X11J1S11DD04X6DD18G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.7733,
+      "height": 5.9267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.04,
+      "height": 6.18,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb.jpg",
+    "assetSha256": "ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb",
+    "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.webp",
+      "alt": "Mike and Julie in Leon",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.04,
+        "height": 6.18,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.04X6.18",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-c347459aa3f77f7213ae-full-frame-white": {
+    "id": "print-book-art-c347459aa3f77f7213ae-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c347459aa3f77f7213ae",
+    "title": "Mike and Julie in Leon — Large print — White frame",
+    "artworkTitle": "Mike and Julie in Leon",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD04X6DD18F2S14X11J1S11DD04X6DD18G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.7733,
+      "height": 5.9267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.04,
+      "height": 6.18,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb.jpg",
+    "assetSha256": "ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb",
+    "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.webp",
+      "alt": "Mike and Julie in Leon",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.04,
+        "height": 6.18,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.04X6.18",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-c347459aa3f77f7213ae-full-frame-natural": {
+    "id": "print-book-art-c347459aa3f77f7213ae-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c347459aa3f77f7213ae",
+    "title": "Mike and Julie in Leon — Large print — Natural wood frame",
+    "artworkTitle": "Mike and Julie in Leon",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD04X6DD18F7S14X11J1S11DD04X6DD18G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.7733,
+      "height": 5.9267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.04,
+      "height": 6.18,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb.jpg",
+    "assetSha256": "ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb",
+    "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.webp",
+      "alt": "Mike and Julie in Leon",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.04,
+        "height": 6.18,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.04X6.18",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-c347459aa3f77f7213ae-medium": {
     "id": "print-book-art-c347459aa3f77f7213ae-medium",
     "type": "print",
@@ -42788,6 +61658,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-c347459aa3f77f7213ae-medium-frame-black": {
+    "id": "print-book-art-c347459aa3f77f7213ae-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c347459aa3f77f7213ae",
+    "title": "Mike and Julie in Leon — Medium print — Black frame",
+    "artworkTitle": "Mike and Julie in Leon",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD34X4DD7F1S12X9J1S8DD34X4DD7G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.0833,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.34,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c.jpg",
+    "assetSha256": "1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c",
+    "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.webp",
+      "alt": "Mike and Julie in Leon",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.34,
+        "height": 4.7,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.34X4.7",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-c347459aa3f77f7213ae-medium-frame-white": {
+    "id": "print-book-art-c347459aa3f77f7213ae-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c347459aa3f77f7213ae",
+    "title": "Mike and Julie in Leon — Medium print — White frame",
+    "artworkTitle": "Mike and Julie in Leon",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD34X4DD7F2S12X9J1S8DD34X4DD7G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.0833,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.34,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c.jpg",
+    "assetSha256": "1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c",
+    "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.webp",
+      "alt": "Mike and Julie in Leon",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.34,
+        "height": 4.7,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.34X4.7",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-c347459aa3f77f7213ae-medium-frame-natural": {
+    "id": "print-book-art-c347459aa3f77f7213ae-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c347459aa3f77f7213ae",
+    "title": "Mike and Julie in Leon — Medium print — Natural wood frame",
+    "artworkTitle": "Mike and Julie in Leon",
+    "amount": "77.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD34X4DD7F7S12X9J1S8DD34X4DD7G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.0833,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.34,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c.jpg",
+    "assetSha256": "1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c",
+    "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.webp",
+      "alt": "Mike and Julie in Leon",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.34,
+        "height": 4.7,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.34X4.7",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-616ff8378f27047b4a91-full": {
     "id": "print-book-art-616ff8378f27047b4a91-full",
@@ -42827,6 +61919,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-616ff8378f27047b4a91-full-frame-black": {
+    "id": "print-book-art-616ff8378f27047b4a91-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-616ff8378f27047b4a91",
+    "title": "Jasmine in Austin — Large print — Black frame",
+    "artworkTitle": "Jasmine in Austin",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD84X5DD24F1S8X10J1S4DD84X5DD24G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5867,
+      "height": 4.9833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.84,
+      "height": 5.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0.jpg",
+    "assetSha256": "335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0",
+    "sourceSha256": "2ac7ebc0362dccb4541843ff4ee59ee8a340b977a81075bd80b59b18e2fd68c0",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/616ff8378f27047b4a91.webp",
+      "alt": "Jasmine in Austin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/616ff8378f27047b4a91.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.84,
+        "height": 5.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.84X5.24",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-616ff8378f27047b4a91-full-frame-white": {
+    "id": "print-book-art-616ff8378f27047b4a91-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-616ff8378f27047b4a91",
+    "title": "Jasmine in Austin — Large print — White frame",
+    "artworkTitle": "Jasmine in Austin",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD84X5DD24F2S8X10J1S4DD84X5DD24G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5867,
+      "height": 4.9833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.84,
+      "height": 5.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0.jpg",
+    "assetSha256": "335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0",
+    "sourceSha256": "2ac7ebc0362dccb4541843ff4ee59ee8a340b977a81075bd80b59b18e2fd68c0",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/616ff8378f27047b4a91.webp",
+      "alt": "Jasmine in Austin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/616ff8378f27047b4a91.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.84,
+        "height": 5.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.84X5.24",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-616ff8378f27047b4a91-full-frame-natural": {
+    "id": "print-book-art-616ff8378f27047b4a91-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-616ff8378f27047b4a91",
+    "title": "Jasmine in Austin — Large print — Natural wood frame",
+    "artworkTitle": "Jasmine in Austin",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD84X5DD24F7S8X10J1S4DD84X5DD24G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5867,
+      "height": 4.9833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.84,
+      "height": 5.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0.jpg",
+    "assetSha256": "335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0",
+    "sourceSha256": "2ac7ebc0362dccb4541843ff4ee59ee8a340b977a81075bd80b59b18e2fd68c0",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/616ff8378f27047b4a91.webp",
+      "alt": "Jasmine in Austin",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/616ff8378f27047b4a91.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.84,
+        "height": 5.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.84X5.24",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-8d1545e1ac13c99eb4ce-full": {
     "id": "print-book-art-8d1545e1ac13c99eb4ce-full",
     "type": "print",
@@ -42864,6 +62178,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-8d1545e1ac13c99eb4ce-full-frame-black": {
+    "id": "print-book-art-8d1545e1ac13c99eb4ce-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-8d1545e1ac13c99eb4ce",
+    "title": "Aunt Fran and Cousin Hillary — Large print — Black frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD16X5DD86F1S12X9J1S8DD16X5DD86G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.9067,
+      "height": 5.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.16,
+      "height": 5.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114.jpg",
+    "assetSha256": "f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114",
+    "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.webp",
+      "alt": "Aunt Fran and Cousin Hillary",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.16,
+        "height": 5.86,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.16X5.86",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-8d1545e1ac13c99eb4ce-full-frame-white": {
+    "id": "print-book-art-8d1545e1ac13c99eb4ce-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-8d1545e1ac13c99eb4ce",
+    "title": "Aunt Fran and Cousin Hillary — Large print — White frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD16X5DD86F2S12X9J1S8DD16X5DD86G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.9067,
+      "height": 5.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.16,
+      "height": 5.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114.jpg",
+    "assetSha256": "f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114",
+    "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.webp",
+      "alt": "Aunt Fran and Cousin Hillary",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.16,
+        "height": 5.86,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.16X5.86",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-8d1545e1ac13c99eb4ce-full-frame-natural": {
+    "id": "print-book-art-8d1545e1ac13c99eb4ce-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-8d1545e1ac13c99eb4ce",
+    "title": "Aunt Fran and Cousin Hillary — Large print — Natural wood frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD16X5DD86F7S12X9J1S8DD16X5DD86G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.9067,
+      "height": 5.6067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.16,
+      "height": 5.86,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114.jpg",
+    "assetSha256": "f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114",
+    "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.webp",
+      "alt": "Aunt Fran and Cousin Hillary",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.16,
+        "height": 5.86,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.16X5.86",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12,
+        "height": 9,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-8d1545e1ac13c99eb4ce-medium": {
     "id": "print-book-art-8d1545e1ac13c99eb4ce-medium",
@@ -42903,6 +62439,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-8d1545e1ac13c99eb4ce-medium-frame-black": {
+    "id": "print-book-art-8d1545e1ac13c99eb4ce-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-8d1545e1ac13c99eb4ce",
+    "title": "Aunt Fran and Cousin Hillary — Medium print — Black frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD18X4DD46F1S10X8J1S6DD18X4DD46G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.9267,
+      "height": 4.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.18,
+      "height": 4.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6.jpg",
+    "assetSha256": "7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6",
+    "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.webp",
+      "alt": "Aunt Fran and Cousin Hillary",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.18,
+        "height": 4.46,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.18X4.46",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-8d1545e1ac13c99eb4ce-medium-frame-white": {
+    "id": "print-book-art-8d1545e1ac13c99eb4ce-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-8d1545e1ac13c99eb4ce",
+    "title": "Aunt Fran and Cousin Hillary — Medium print — White frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD18X4DD46F2S10X8J1S6DD18X4DD46G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.9267,
+      "height": 4.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.18,
+      "height": 4.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6.jpg",
+    "assetSha256": "7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6",
+    "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.webp",
+      "alt": "Aunt Fran and Cousin Hillary",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.18,
+        "height": 4.46,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.18X4.46",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-8d1545e1ac13c99eb4ce-medium-frame-natural": {
+    "id": "print-book-art-8d1545e1ac13c99eb4ce-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-8d1545e1ac13c99eb4ce",
+    "title": "Aunt Fran and Cousin Hillary — Medium print — Natural wood frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD18X4DD46F7S10X8J1S6DD18X4DD46G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.9267,
+      "height": 4.2033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.18,
+      "height": 4.46,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6.jpg",
+    "assetSha256": "7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6",
+    "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.webp",
+      "alt": "Aunt Fran and Cousin Hillary",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.18,
+        "height": 4.46,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.18X4.46",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-466dc684227286c40502-full": {
     "id": "print-book-art-466dc684227286c40502-full",
     "type": "print",
@@ -42940,6 +62698,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-466dc684227286c40502-full-frame-black": {
+    "id": "print-book-art-466dc684227286c40502-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-466dc684227286c40502",
+    "title": "Sister Claire — Large print — Black frame",
+    "artworkTitle": "Sister Claire",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD36X7DD83F1S8X10J1S5DD36X7DD83G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.1067,
+      "height": 7.57,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.36,
+      "height": 7.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9.jpg",
+    "assetSha256": "623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9",
+    "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.webp",
+      "alt": "Sister Claire",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.36,
+        "height": 7.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.36X7.83",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-466dc684227286c40502-full-frame-white": {
+    "id": "print-book-art-466dc684227286c40502-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-466dc684227286c40502",
+    "title": "Sister Claire — Large print — White frame",
+    "artworkTitle": "Sister Claire",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD36X7DD83F2S8X10J1S5DD36X7DD83G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.1067,
+      "height": 7.57,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.36,
+      "height": 7.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9.jpg",
+    "assetSha256": "623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9",
+    "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.webp",
+      "alt": "Sister Claire",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.36,
+        "height": 7.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.36X7.83",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-466dc684227286c40502-full-frame-natural": {
+    "id": "print-book-art-466dc684227286c40502-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-466dc684227286c40502",
+    "title": "Sister Claire — Large print — Natural wood frame",
+    "artworkTitle": "Sister Claire",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD36X7DD83F7S8X10J1S5DD36X7DD83G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 5.1067,
+      "height": 7.57,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.36,
+      "height": 7.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9.jpg",
+    "assetSha256": "623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9",
+    "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.webp",
+      "alt": "Sister Claire",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.36,
+        "height": 7.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.36X7.83",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-466dc684227286c40502-medium": {
     "id": "print-book-art-466dc684227286c40502-medium",
@@ -42979,6 +62959,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-466dc684227286c40502-medium-frame-black": {
+    "id": "print-book-art-466dc684227286c40502-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-466dc684227286c40502",
+    "title": "Sister Claire — Medium print — Black frame",
+    "artworkTitle": "Sister Claire",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD08X5DD93F1S8X10J1S4DD08X5DD93G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 3.8267,
+      "height": 5.67,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.08,
+      "height": 5.93,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b.jpg",
+    "assetSha256": "dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b",
+    "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.webp",
+      "alt": "Sister Claire",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.08,
+        "height": 5.93,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.08X5.93",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-466dc684227286c40502-medium-frame-white": {
+    "id": "print-book-art-466dc684227286c40502-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-466dc684227286c40502",
+    "title": "Sister Claire — Medium print — White frame",
+    "artworkTitle": "Sister Claire",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD08X5DD93F2S8X10J1S4DD08X5DD93G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 3.8267,
+      "height": 5.67,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.08,
+      "height": 5.93,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b.jpg",
+    "assetSha256": "dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b",
+    "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.webp",
+      "alt": "Sister Claire",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.08,
+        "height": 5.93,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.08X5.93",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-466dc684227286c40502-medium-frame-natural": {
+    "id": "print-book-art-466dc684227286c40502-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-466dc684227286c40502",
+    "title": "Sister Claire — Medium print — Natural wood frame",
+    "artworkTitle": "Sister Claire",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD08X5DD93F7S8X10J1S4DD08X5DD93G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 3.8267,
+      "height": 5.67,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.08,
+      "height": 5.93,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b.jpg",
+    "assetSha256": "dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b",
+    "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.webp",
+      "alt": "Sister Claire",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.08,
+        "height": 5.93,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.08X5.93",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-82127d1886ae57d5cb6e-full": {
     "id": "print-book-art-82127d1886ae57d5cb6e-full",
     "type": "print",
@@ -43016,6 +63218,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-82127d1886ae57d5cb6e-full-frame-black": {
+    "id": "print-book-art-82127d1886ae57d5cb6e-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82127d1886ae57d5cb6e",
+    "title": "Father Paul — Large print — Black frame",
+    "artworkTitle": "Father Paul",
+    "amount": "134.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD08X14DD24F1S16X20J1S10DD08X14DD24G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.8267,
+      "height": 13.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.08,
+      "height": 14.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73.jpg",
+    "assetSha256": "4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73",
+    "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp",
+      "alt": "Father Paul",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.08,
+        "height": 14.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.08X14.24",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-book-art-82127d1886ae57d5cb6e-full-frame-white": {
+    "id": "print-book-art-82127d1886ae57d5cb6e-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82127d1886ae57d5cb6e",
+    "title": "Father Paul — Large print — White frame",
+    "artworkTitle": "Father Paul",
+    "amount": "134.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD08X14DD24F2S16X20J1S10DD08X14DD24G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.8267,
+      "height": 13.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.08,
+      "height": 14.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73.jpg",
+    "assetSha256": "4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73",
+    "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp",
+      "alt": "Father Paul",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.08,
+        "height": 14.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.08X14.24",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-book-art-82127d1886ae57d5cb6e-full-frame-natural": {
+    "id": "print-book-art-82127d1886ae57d5cb6e-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82127d1886ae57d5cb6e",
+    "title": "Father Paul — Large print — Natural wood frame",
+    "artworkTitle": "Father Paul",
+    "amount": "149.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD08X14DD24F7S16X20J1S10DD08X14DD24G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.8267,
+      "height": 13.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.08,
+      "height": 14.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73.jpg",
+    "assetSha256": "4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73",
+    "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp",
+      "alt": "Father Paul",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.08,
+        "height": 14.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.08X14.24",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
   },
   "print-book-art-82127d1886ae57d5cb6e-medium": {
     "id": "print-book-art-82127d1886ae57d5cb6e-medium",
@@ -43055,6 +63479,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-82127d1886ae57d5cb6e-medium-frame-black": {
+    "id": "print-book-art-82127d1886ae57d5cb6e-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82127d1886ae57d5cb6e",
+    "title": "Father Paul — Medium print — Black frame",
+    "artworkTitle": "Father Paul",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD62X10DD74F1S11X14J1S7DD62X10DD74G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.3667,
+      "height": 10.4833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.62,
+      "height": 10.74,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb.jpg",
+    "assetSha256": "a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb",
+    "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp",
+      "alt": "Father Paul",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.62,
+        "height": 10.74,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.62X10.74",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-82127d1886ae57d5cb6e-medium-frame-white": {
+    "id": "print-book-art-82127d1886ae57d5cb6e-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82127d1886ae57d5cb6e",
+    "title": "Father Paul — Medium print — White frame",
+    "artworkTitle": "Father Paul",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD62X10DD74F2S11X14J1S7DD62X10DD74G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.3667,
+      "height": 10.4833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.62,
+      "height": 10.74,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb.jpg",
+    "assetSha256": "a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb",
+    "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp",
+      "alt": "Father Paul",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.62,
+        "height": 10.74,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.62X10.74",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-82127d1886ae57d5cb6e-medium-frame-natural": {
+    "id": "print-book-art-82127d1886ae57d5cb6e-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82127d1886ae57d5cb6e",
+    "title": "Father Paul — Medium print — Natural wood frame",
+    "artworkTitle": "Father Paul",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD62X10DD74F7S11X14J1S7DD62X10DD74G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.3667,
+      "height": 10.4833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.62,
+      "height": 10.74,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb.jpg",
+    "assetSha256": "a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb",
+    "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp",
+      "alt": "Father Paul",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.62,
+        "height": 10.74,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.62X10.74",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-82127d1886ae57d5cb6e-small": {
     "id": "print-book-art-82127d1886ae57d5cb6e-small",
     "type": "print",
@@ -43092,6 +63738,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-82127d1886ae57d5cb6e-small-frame-black": {
+    "id": "print-book-art-82127d1886ae57d5cb6e-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82127d1886ae57d5cb6e",
+    "title": "Father Paul — Small print — Black frame",
+    "artworkTitle": "Father Paul",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD16X7DD24F1S8X10J1S5DD16X7DD24G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.9067,
+      "height": 6.9833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.16,
+      "height": 7.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1.jpg",
+    "assetSha256": "4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1",
+    "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp",
+      "alt": "Father Paul",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.16,
+        "height": 7.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.16X7.24",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-82127d1886ae57d5cb6e-small-frame-white": {
+    "id": "print-book-art-82127d1886ae57d5cb6e-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82127d1886ae57d5cb6e",
+    "title": "Father Paul — Small print — White frame",
+    "artworkTitle": "Father Paul",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD16X7DD24F2S8X10J1S5DD16X7DD24G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.9067,
+      "height": 6.9833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.16,
+      "height": 7.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1.jpg",
+    "assetSha256": "4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1",
+    "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp",
+      "alt": "Father Paul",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.16,
+        "height": 7.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.16X7.24",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-82127d1886ae57d5cb6e-small-frame-natural": {
+    "id": "print-book-art-82127d1886ae57d5cb6e-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-82127d1886ae57d5cb6e",
+    "title": "Father Paul — Small print — Natural wood frame",
+    "artworkTitle": "Father Paul",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD16X7DD24F7S8X10J1S5DD16X7DD24G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.9067,
+      "height": 6.9833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.16,
+      "height": 7.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1.jpg",
+    "assetSha256": "4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1",
+    "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp",
+      "alt": "Father Paul",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.16,
+        "height": 7.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.16X7.24",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-c04c7e48687fe35e65f5-full": {
     "id": "print-book-art-c04c7e48687fe35e65f5-full",
@@ -43131,6 +63999,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-c04c7e48687fe35e65f5-full-frame-black": {
+    "id": "print-book-art-c04c7e48687fe35e65f5-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c04c7e48687fe35e65f5",
+    "title": "Maya Parbhoe @MayaPar25 — Large print — Black frame",
+    "artworkTitle": "Maya Parbhoe @MayaPar25",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD77X5DD18F1S8X10J1S4DD77X5DD18G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5167,
+      "height": 4.9267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.77,
+      "height": 5.18,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047.jpg",
+    "assetSha256": "2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047",
+    "sourceSha256": "5f4a86b09b49d0134e2dac402eb65b5372711c23b0bb0c7a07a9862eab9e7163",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c04c7e48687fe35e65f5.webp",
+      "alt": "Maya Parbhoe @MayaPar25",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c04c7e48687fe35e65f5.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.77,
+        "height": 5.18,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.77X5.18",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-c04c7e48687fe35e65f5-full-frame-white": {
+    "id": "print-book-art-c04c7e48687fe35e65f5-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c04c7e48687fe35e65f5",
+    "title": "Maya Parbhoe @MayaPar25 — Large print — White frame",
+    "artworkTitle": "Maya Parbhoe @MayaPar25",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD77X5DD18F2S8X10J1S4DD77X5DD18G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5167,
+      "height": 4.9267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.77,
+      "height": 5.18,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047.jpg",
+    "assetSha256": "2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047",
+    "sourceSha256": "5f4a86b09b49d0134e2dac402eb65b5372711c23b0bb0c7a07a9862eab9e7163",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c04c7e48687fe35e65f5.webp",
+      "alt": "Maya Parbhoe @MayaPar25",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c04c7e48687fe35e65f5.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.77,
+        "height": 5.18,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.77X5.18",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-c04c7e48687fe35e65f5-full-frame-natural": {
+    "id": "print-book-art-c04c7e48687fe35e65f5-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-c04c7e48687fe35e65f5",
+    "title": "Maya Parbhoe @MayaPar25 — Large print — Natural wood frame",
+    "artworkTitle": "Maya Parbhoe @MayaPar25",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD77X5DD18F7S8X10J1S4DD77X5DD18G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5167,
+      "height": 4.9267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.77,
+      "height": 5.18,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047.jpg",
+    "assetSha256": "2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047",
+    "sourceSha256": "5f4a86b09b49d0134e2dac402eb65b5372711c23b0bb0c7a07a9862eab9e7163",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c04c7e48687fe35e65f5.webp",
+      "alt": "Maya Parbhoe @MayaPar25",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c04c7e48687fe35e65f5.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.77,
+        "height": 5.18,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.77X5.18",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-ec22daff29e72f16eb76-full": {
     "id": "print-book-art-ec22daff29e72f16eb76-full",
     "type": "print",
@@ -43168,6 +64258,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-ec22daff29e72f16eb76-full-frame-black": {
+    "id": "print-book-art-ec22daff29e72f16eb76-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ec22daff29e72f16eb76",
+    "title": "Tomer Strolight @TomerStrolight — Large print — Black frame",
+    "artworkTitle": "Tomer Strolight @TomerStrolight",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD83X5DD51F1S8X10J1S4DD83X5DD51G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5767,
+      "height": 5.25,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.83,
+      "height": 5.51,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82.jpg",
+    "assetSha256": "3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82",
+    "sourceSha256": "1904273e6e15dd884990184a7a6c577df6d6621be04a839e4f32223d6c3cbddc",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ec22daff29e72f16eb76.webp",
+      "alt": "Tomer Strolight @TomerStrolight",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ec22daff29e72f16eb76.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.83,
+        "height": 5.51,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.83X5.51",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-ec22daff29e72f16eb76-full-frame-white": {
+    "id": "print-book-art-ec22daff29e72f16eb76-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ec22daff29e72f16eb76",
+    "title": "Tomer Strolight @TomerStrolight — Large print — White frame",
+    "artworkTitle": "Tomer Strolight @TomerStrolight",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD83X5DD51F2S8X10J1S4DD83X5DD51G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5767,
+      "height": 5.25,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.83,
+      "height": 5.51,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82.jpg",
+    "assetSha256": "3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82",
+    "sourceSha256": "1904273e6e15dd884990184a7a6c577df6d6621be04a839e4f32223d6c3cbddc",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ec22daff29e72f16eb76.webp",
+      "alt": "Tomer Strolight @TomerStrolight",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ec22daff29e72f16eb76.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.83,
+        "height": 5.51,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.83X5.51",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-ec22daff29e72f16eb76-full-frame-natural": {
+    "id": "print-book-art-ec22daff29e72f16eb76-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-ec22daff29e72f16eb76",
+    "title": "Tomer Strolight @TomerStrolight — Large print — Natural wood frame",
+    "artworkTitle": "Tomer Strolight @TomerStrolight",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD83X5DD51F7S8X10J1S4DD83X5DD51G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.5767,
+      "height": 5.25,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.83,
+      "height": 5.51,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82.jpg",
+    "assetSha256": "3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82",
+    "sourceSha256": "1904273e6e15dd884990184a7a6c577df6d6621be04a839e4f32223d6c3cbddc",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ec22daff29e72f16eb76.webp",
+      "alt": "Tomer Strolight @TomerStrolight",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/ec22daff29e72f16eb76.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.83,
+        "height": 5.51,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.83X5.51",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-504e3fafdacd7c9bbcd0-full": {
     "id": "print-book-art-504e3fafdacd7c9bbcd0-full",
@@ -43207,6 +64519,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-504e3fafdacd7c9bbcd0-full-frame-black": {
+    "id": "print-book-art-504e3fafdacd7c9bbcd0-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-504e3fafdacd7c9bbcd0",
+    "title": "Osisipho Filane @FilaneSisipho — Large print — Black frame",
+    "artworkTitle": "Osisipho Filane @FilaneSisipho",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5X7DD07F1S8X10J1S5X7DD07G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.7467,
+      "height": 6.8167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5,
+      "height": 7.07,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c.jpg",
+    "assetSha256": "4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c",
+    "sourceSha256": "738cecea10878b15dfc3c165445da7359d3603c137d579322a64193be34628bc",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/504e3fafdacd7c9bbcd0.webp",
+      "alt": "Osisipho Filane @FilaneSisipho",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/504e3fafdacd7c9bbcd0.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5,
+        "height": 7.07,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5X7.07",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-504e3fafdacd7c9bbcd0-full-frame-white": {
+    "id": "print-book-art-504e3fafdacd7c9bbcd0-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-504e3fafdacd7c9bbcd0",
+    "title": "Osisipho Filane @FilaneSisipho — Large print — White frame",
+    "artworkTitle": "Osisipho Filane @FilaneSisipho",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5X7DD07F2S8X10J1S5X7DD07G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.7467,
+      "height": 6.8167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5,
+      "height": 7.07,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c.jpg",
+    "assetSha256": "4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c",
+    "sourceSha256": "738cecea10878b15dfc3c165445da7359d3603c137d579322a64193be34628bc",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/504e3fafdacd7c9bbcd0.webp",
+      "alt": "Osisipho Filane @FilaneSisipho",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/504e3fafdacd7c9bbcd0.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5,
+        "height": 7.07,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5X7.07",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-504e3fafdacd7c9bbcd0-full-frame-natural": {
+    "id": "print-book-art-504e3fafdacd7c9bbcd0-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-504e3fafdacd7c9bbcd0",
+    "title": "Osisipho Filane @FilaneSisipho — Large print — Natural wood frame",
+    "artworkTitle": "Osisipho Filane @FilaneSisipho",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5X7DD07F7S8X10J1S5X7DD07G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.7467,
+      "height": 6.8167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5,
+      "height": 7.07,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c.jpg",
+    "assetSha256": "4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c",
+    "sourceSha256": "738cecea10878b15dfc3c165445da7359d3603c137d579322a64193be34628bc",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/504e3fafdacd7c9bbcd0.webp",
+      "alt": "Osisipho Filane @FilaneSisipho",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/504e3fafdacd7c9bbcd0.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5,
+        "height": 7.07,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5X7.07",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-4a0bb9cdd6c404c4e77c-full": {
     "id": "print-book-art-4a0bb9cdd6c404c4e77c-full",
     "type": "print",
@@ -43244,6 +64778,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-4a0bb9cdd6c404c4e77c-full-frame-black": {
+    "id": "print-book-art-4a0bb9cdd6c404c4e77c-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-4a0bb9cdd6c404c4e77c",
+    "title": "Scarlette Melon @Scarlette_melon — Large print — Black frame",
+    "artworkTitle": "Scarlette Melon @Scarlette_melon",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD05X7DD07F1S8X10J1S5DD05X7DD07G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.7933,
+      "height": 6.8167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.05,
+      "height": 7.07,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99.jpg",
+    "assetSha256": "6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99",
+    "sourceSha256": "76d1b80563112ed04fff1f301964c36fe19cfbb0934e8bc763b1ea1d39f1ffce",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4a0bb9cdd6c404c4e77c.webp",
+      "alt": "Scarlette Melon @Scarlette_melon",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/4a0bb9cdd6c404c4e77c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.05,
+        "height": 7.07,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.05X7.07",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-4a0bb9cdd6c404c4e77c-full-frame-white": {
+    "id": "print-book-art-4a0bb9cdd6c404c4e77c-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-4a0bb9cdd6c404c4e77c",
+    "title": "Scarlette Melon @Scarlette_melon — Large print — White frame",
+    "artworkTitle": "Scarlette Melon @Scarlette_melon",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD05X7DD07F2S8X10J1S5DD05X7DD07G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.7933,
+      "height": 6.8167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.05,
+      "height": 7.07,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99.jpg",
+    "assetSha256": "6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99",
+    "sourceSha256": "76d1b80563112ed04fff1f301964c36fe19cfbb0934e8bc763b1ea1d39f1ffce",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4a0bb9cdd6c404c4e77c.webp",
+      "alt": "Scarlette Melon @Scarlette_melon",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/4a0bb9cdd6c404c4e77c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.05,
+        "height": 7.07,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.05X7.07",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-4a0bb9cdd6c404c4e77c-full-frame-natural": {
+    "id": "print-book-art-4a0bb9cdd6c404c4e77c-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-4a0bb9cdd6c404c4e77c",
+    "title": "Scarlette Melon @Scarlette_melon — Large print — Natural wood frame",
+    "artworkTitle": "Scarlette Melon @Scarlette_melon",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD05X7DD07F7S8X10J1S5DD05X7DD07G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.7933,
+      "height": 6.8167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.05,
+      "height": 7.07,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99.jpg",
+    "assetSha256": "6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99",
+    "sourceSha256": "76d1b80563112ed04fff1f301964c36fe19cfbb0934e8bc763b1ea1d39f1ffce",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4a0bb9cdd6c404c4e77c.webp",
+      "alt": "Scarlette Melon @Scarlette_melon",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/4a0bb9cdd6c404c4e77c.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.05,
+        "height": 7.07,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.05X7.07",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-0ee2717bc04e65d0507e-full": {
     "id": "print-book-art-0ee2717bc04e65d0507e-full",
@@ -43283,6 +65039,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-0ee2717bc04e65d0507e-full-frame-black": {
+    "id": "print-book-art-0ee2717bc04e65d0507e-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0ee2717bc04e65d0507e",
+    "title": "Kushboo Kullar @DrKhushboo_K — Large print — Black frame",
+    "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD31X11DD31F1S16X20J1S10DD31X11DD31G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.0567,
+      "height": 11.0533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.31,
+      "height": 11.31,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb.jpg",
+    "assetSha256": "0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb",
+    "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp",
+      "alt": "Kushboo Kullar @DrKhushboo_K",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.31,
+        "height": 11.31,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.31X11.31",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-book-art-0ee2717bc04e65d0507e-full-frame-white": {
+    "id": "print-book-art-0ee2717bc04e65d0507e-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0ee2717bc04e65d0507e",
+    "title": "Kushboo Kullar @DrKhushboo_K — Large print — White frame",
+    "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD31X11DD31F2S16X20J1S10DD31X11DD31G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.0567,
+      "height": 11.0533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.31,
+      "height": 11.31,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb.jpg",
+    "assetSha256": "0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb",
+    "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp",
+      "alt": "Kushboo Kullar @DrKhushboo_K",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.31,
+        "height": 11.31,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.31X11.31",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-book-art-0ee2717bc04e65d0507e-full-frame-natural": {
+    "id": "print-book-art-0ee2717bc04e65d0507e-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0ee2717bc04e65d0507e",
+    "title": "Kushboo Kullar @DrKhushboo_K — Large print — Natural wood frame",
+    "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
+    "amount": "139.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD31X11DD31F7S16X20J1S10DD31X11DD31G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 10.0567,
+      "height": 11.0533,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.31,
+      "height": 11.31,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb.jpg",
+    "assetSha256": "0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb",
+    "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp",
+      "alt": "Kushboo Kullar @DrKhushboo_K",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.31,
+        "height": 11.31,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.31X11.31",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16,
+        "height": 20,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
   "print-book-art-0ee2717bc04e65d0507e-medium": {
     "id": "print-book-art-0ee2717bc04e65d0507e-medium",
     "type": "print",
@@ -43320,6 +65298,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-0ee2717bc04e65d0507e-medium-frame-black": {
+    "id": "print-book-art-0ee2717bc04e65d0507e-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0ee2717bc04e65d0507e",
+    "title": "Kushboo Kullar @DrKhushboo_K — Medium print — Black frame",
+    "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD79X8DD54F1S11X14J1S7DD79X8DD54G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.5367,
+      "height": 8.2833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.79,
+      "height": 8.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99.jpg",
+    "assetSha256": "18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99",
+    "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp",
+      "alt": "Kushboo Kullar @DrKhushboo_K",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.79,
+        "height": 8.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.79X8.54",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-0ee2717bc04e65d0507e-medium-frame-white": {
+    "id": "print-book-art-0ee2717bc04e65d0507e-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0ee2717bc04e65d0507e",
+    "title": "Kushboo Kullar @DrKhushboo_K — Medium print — White frame",
+    "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD79X8DD54F2S11X14J1S7DD79X8DD54G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.5367,
+      "height": 8.2833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.79,
+      "height": 8.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99.jpg",
+    "assetSha256": "18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99",
+    "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp",
+      "alt": "Kushboo Kullar @DrKhushboo_K",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.79,
+        "height": 8.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.79X8.54",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-book-art-0ee2717bc04e65d0507e-medium-frame-natural": {
+    "id": "print-book-art-0ee2717bc04e65d0507e-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0ee2717bc04e65d0507e",
+    "title": "Kushboo Kullar @DrKhushboo_K — Medium print — Natural wood frame",
+    "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
+    "amount": "87.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD79X8DD54F7S11X14J1S7DD79X8DD54G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.5367,
+      "height": 8.2833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.79,
+      "height": 8.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99.jpg",
+    "assetSha256": "18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99",
+    "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp",
+      "alt": "Kushboo Kullar @DrKhushboo_K",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.79,
+        "height": 8.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.79X8.54",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
   },
   "print-book-art-0ee2717bc04e65d0507e-small": {
     "id": "print-book-art-0ee2717bc04e65d0507e-small",
@@ -43359,6 +65559,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-0ee2717bc04e65d0507e-small-frame-black": {
+    "id": "print-book-art-0ee2717bc04e65d0507e-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0ee2717bc04e65d0507e",
+    "title": "Kushboo Kullar @DrKhushboo_K — Small print — Black frame",
+    "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD28X5DD78F1S8X10J1S5DD28X5DD78G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.0267,
+      "height": 5.5233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.28,
+      "height": 5.78,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa.jpg",
+    "assetSha256": "3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa",
+    "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp",
+      "alt": "Kushboo Kullar @DrKhushboo_K",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.28,
+        "height": 5.78,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.28X5.78",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-0ee2717bc04e65d0507e-small-frame-white": {
+    "id": "print-book-art-0ee2717bc04e65d0507e-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0ee2717bc04e65d0507e",
+    "title": "Kushboo Kullar @DrKhushboo_K — Small print — White frame",
+    "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD28X5DD78F2S8X10J1S5DD28X5DD78G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.0267,
+      "height": 5.5233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.28,
+      "height": 5.78,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa.jpg",
+    "assetSha256": "3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa",
+    "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp",
+      "alt": "Kushboo Kullar @DrKhushboo_K",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.28,
+        "height": 5.78,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.28X5.78",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-0ee2717bc04e65d0507e-small-frame-natural": {
+    "id": "print-book-art-0ee2717bc04e65d0507e-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0ee2717bc04e65d0507e",
+    "title": "Kushboo Kullar @DrKhushboo_K — Small print — Natural wood frame",
+    "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD28X5DD78F7S8X10J1S5DD28X5DD78G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.0267,
+      "height": 5.5233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.28,
+      "height": 5.78,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa.jpg",
+    "assetSha256": "3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa",
+    "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp",
+      "alt": "Kushboo Kullar @DrKhushboo_K",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.28,
+        "height": 5.78,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.28X5.78",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-deb92de6e72f7b3ce951-full": {
     "id": "print-book-art-deb92de6e72f7b3ce951-full",
     "type": "print",
@@ -43396,6 +65818,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-deb92de6e72f7b3ce951-full-frame-black": {
+    "id": "print-book-art-deb92de6e72f7b3ce951-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb92de6e72f7b3ce951",
+    "title": "Untitled — Bitcoiners, page 64 — Large print — Black frame",
+    "artworkTitle": "Untitled — Bitcoiners, page 64",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD3X6DD9F1S9X12J1S6DD3X6DD9G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.0467,
+      "height": 6.6467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.3,
+      "height": 6.9,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4.jpg",
+    "assetSha256": "3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4",
+    "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.webp",
+      "alt": "Untitled — Bitcoiners, page 64",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.3,
+        "height": 6.9,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.3X6.9",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-deb92de6e72f7b3ce951-full-frame-white": {
+    "id": "print-book-art-deb92de6e72f7b3ce951-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb92de6e72f7b3ce951",
+    "title": "Untitled — Bitcoiners, page 64 — Large print — White frame",
+    "artworkTitle": "Untitled — Bitcoiners, page 64",
+    "amount": "62.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD3X6DD9F2S9X12J1S6DD3X6DD9G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.0467,
+      "height": 6.6467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.3,
+      "height": 6.9,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4.jpg",
+    "assetSha256": "3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4",
+    "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.webp",
+      "alt": "Untitled — Bitcoiners, page 64",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.3,
+        "height": 6.9,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.3X6.9",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-deb92de6e72f7b3ce951-full-frame-natural": {
+    "id": "print-book-art-deb92de6e72f7b3ce951-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb92de6e72f7b3ce951",
+    "title": "Untitled — Bitcoiners, page 64 — Large print — Natural wood frame",
+    "artworkTitle": "Untitled — Bitcoiners, page 64",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD3X6DD9F7S9X12J1S6DD3X6DD9G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.0467,
+      "height": 6.6467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.3,
+      "height": 6.9,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4.jpg",
+    "assetSha256": "3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4",
+    "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.webp",
+      "alt": "Untitled — Bitcoiners, page 64",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.3,
+        "height": 6.9,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.3X6.9",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9,
+        "height": 12,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-deb92de6e72f7b3ce951-medium": {
     "id": "print-book-art-deb92de6e72f7b3ce951-medium",
@@ -43435,6 +66079,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-deb92de6e72f7b3ce951-medium-frame-black": {
+    "id": "print-book-art-deb92de6e72f7b3ce951-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb92de6e72f7b3ce951",
+    "title": "Untitled — Bitcoiners, page 64 — Medium print — Black frame",
+    "artworkTitle": "Untitled — Bitcoiners, page 64",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD79X5DD24F1S8X10J1S4DD79X5DD24G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.5367,
+      "height": 4.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.79,
+      "height": 5.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5.jpg",
+    "assetSha256": "cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5",
+    "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.webp",
+      "alt": "Untitled — Bitcoiners, page 64",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.79,
+        "height": 5.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.79X5.24",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-deb92de6e72f7b3ce951-medium-frame-white": {
+    "id": "print-book-art-deb92de6e72f7b3ce951-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb92de6e72f7b3ce951",
+    "title": "Untitled — Bitcoiners, page 64 — Medium print — White frame",
+    "artworkTitle": "Untitled — Bitcoiners, page 64",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD79X5DD24F2S8X10J1S4DD79X5DD24G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.5367,
+      "height": 4.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.79,
+      "height": 5.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5.jpg",
+    "assetSha256": "cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5",
+    "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.webp",
+      "alt": "Untitled — Bitcoiners, page 64",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.79,
+        "height": 5.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.79X5.24",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-deb92de6e72f7b3ce951-medium-frame-natural": {
+    "id": "print-book-art-deb92de6e72f7b3ce951-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-deb92de6e72f7b3ce951",
+    "title": "Untitled — Bitcoiners, page 64 — Medium print — Natural wood frame",
+    "artworkTitle": "Untitled — Bitcoiners, page 64",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD79X5DD24F7S8X10J1S4DD79X5DD24G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.5367,
+      "height": 4.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.79,
+      "height": 5.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5.jpg",
+    "assetSha256": "cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5",
+    "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.webp",
+      "alt": "Untitled — Bitcoiners, page 64",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.79,
+        "height": 5.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.79X5.24",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-0f696788184bbba1d236-full": {
     "id": "print-book-art-0f696788184bbba1d236-full",
     "type": "print",
@@ -43472,6 +66338,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-0f696788184bbba1d236-full-frame-black": {
+    "id": "print-book-art-0f696788184bbba1d236-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0f696788184bbba1d236",
+    "title": "Myself — Large print — Black frame",
+    "artworkTitle": "Myself",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD49X7DD08F1S8X10J1S4DD49X7DD08G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2367,
+      "height": 6.82,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.49,
+      "height": 7.08,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72.jpg",
+    "assetSha256": "8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72",
+    "sourceSha256": "a87a784a8e3dcd764542faafaf1898e5397a7fb90a2f441c8eb728e36f3bf93a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0f696788184bbba1d236.webp",
+      "alt": "Myself",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0f696788184bbba1d236.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.49,
+        "height": 7.08,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.49X7.08",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-0f696788184bbba1d236-full-frame-white": {
+    "id": "print-book-art-0f696788184bbba1d236-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0f696788184bbba1d236",
+    "title": "Myself — Large print — White frame",
+    "artworkTitle": "Myself",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD49X7DD08F2S8X10J1S4DD49X7DD08G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2367,
+      "height": 6.82,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.49,
+      "height": 7.08,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72.jpg",
+    "assetSha256": "8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72",
+    "sourceSha256": "a87a784a8e3dcd764542faafaf1898e5397a7fb90a2f441c8eb728e36f3bf93a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0f696788184bbba1d236.webp",
+      "alt": "Myself",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0f696788184bbba1d236.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.49,
+        "height": 7.08,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.49X7.08",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-0f696788184bbba1d236-full-frame-natural": {
+    "id": "print-book-art-0f696788184bbba1d236-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-0f696788184bbba1d236",
+    "title": "Myself — Large print — Natural wood frame",
+    "artworkTitle": "Myself",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD49X7DD08F7S8X10J1S4DD49X7DD08G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2367,
+      "height": 6.82,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.49,
+      "height": 7.08,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72.jpg",
+    "assetSha256": "8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72",
+    "sourceSha256": "a87a784a8e3dcd764542faafaf1898e5397a7fb90a2f441c8eb728e36f3bf93a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0f696788184bbba1d236.webp",
+      "alt": "Myself",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/0f696788184bbba1d236.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.49,
+        "height": 7.08,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.49X7.08",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-50a7984f819bec72d1c7-full": {
     "id": "print-book-art-50a7984f819bec72d1c7-full",
@@ -43511,6 +66599,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-50a7984f819bec72d1c7-full-frame-black": {
+    "id": "print-book-art-50a7984f819bec72d1c7-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-50a7984f819bec72d1c7",
+    "title": "Myself Painting on Mt Baker near Goat Lake — Large print — Black frame",
+    "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD85X10DD35F1S11X14J1S7DD85X10DD35G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.5933,
+      "height": 10.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.85,
+      "height": 10.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09.jpg",
+    "assetSha256": "2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09",
+    "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
+      "alt": "Myself Painting on Mt Baker near Goat Lake",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.85,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.85X10.35",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-50a7984f819bec72d1c7-full-frame-white": {
+    "id": "print-book-art-50a7984f819bec72d1c7-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-50a7984f819bec72d1c7",
+    "title": "Myself Painting on Mt Baker near Goat Lake — Large print — White frame",
+    "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD85X10DD35F2S11X14J1S7DD85X10DD35G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.5933,
+      "height": 10.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.85,
+      "height": 10.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09.jpg",
+    "assetSha256": "2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09",
+    "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
+      "alt": "Myself Painting on Mt Baker near Goat Lake",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.85,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.85X10.35",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-book-art-50a7984f819bec72d1c7-full-frame-natural": {
+    "id": "print-book-art-50a7984f819bec72d1c7-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-50a7984f819bec72d1c7",
+    "title": "Myself Painting on Mt Baker near Goat Lake — Large print — Natural wood frame",
+    "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD85X10DD35F7S11X14J1S7DD85X10DD35G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.5933,
+      "height": 10.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.85,
+      "height": 10.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09.jpg",
+    "assetSha256": "2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09",
+    "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
+      "alt": "Myself Painting on Mt Baker near Goat Lake",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.85,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.85X10.35",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11,
+        "height": 14,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
   "print-book-art-50a7984f819bec72d1c7-medium": {
     "id": "print-book-art-50a7984f819bec72d1c7-medium",
     "type": "print",
@@ -43548,6 +66858,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-50a7984f819bec72d1c7-medium-frame-black": {
+    "id": "print-book-art-50a7984f819bec72d1c7-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-50a7984f819bec72d1c7",
+    "title": "Myself Painting on Mt Baker near Goat Lake — Medium print — Black frame",
+    "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD95X7DD82F1S8X10J1S5DD95X7DD82G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.6933,
+      "height": 7.5667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.95,
+      "height": 7.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a.jpg",
+    "assetSha256": "402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a",
+    "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
+      "alt": "Myself Painting on Mt Baker near Goat Lake",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.95,
+        "height": 7.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.95X7.82",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-50a7984f819bec72d1c7-medium-frame-white": {
+    "id": "print-book-art-50a7984f819bec72d1c7-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-50a7984f819bec72d1c7",
+    "title": "Myself Painting on Mt Baker near Goat Lake — Medium print — White frame",
+    "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD95X7DD82F2S8X10J1S5DD95X7DD82G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.6933,
+      "height": 7.5667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.95,
+      "height": 7.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a.jpg",
+    "assetSha256": "402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a",
+    "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
+      "alt": "Myself Painting on Mt Baker near Goat Lake",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.95,
+        "height": 7.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.95X7.82",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-50a7984f819bec72d1c7-medium-frame-natural": {
+    "id": "print-book-art-50a7984f819bec72d1c7-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-50a7984f819bec72d1c7",
+    "title": "Myself Painting on Mt Baker near Goat Lake — Medium print — Natural wood frame",
+    "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S5DD95X7DD82F7S8X10J1S5DD95X7DD82G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.6933,
+      "height": 7.5667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.95,
+      "height": 7.82,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a.jpg",
+    "assetSha256": "402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a",
+    "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
+      "alt": "Myself Painting on Mt Baker near Goat Lake",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.95,
+        "height": 7.82,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.95X7.82",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-book-art-50a7984f819bec72d1c7-small": {
     "id": "print-book-art-50a7984f819bec72d1c7-small",
@@ -43587,6 +67119,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-50a7984f819bec72d1c7-small-frame-black": {
+    "id": "print-book-art-50a7984f819bec72d1c7-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-50a7984f819bec72d1c7",
+    "title": "Myself Painting on Mt Baker near Goat Lake — Small print — Black frame",
+    "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD05X5DD3F1S8X10J1S4DD05X5DD3G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.7967,
+      "height": 5.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.05,
+      "height": 5.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2.jpg",
+    "assetSha256": "411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2",
+    "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
+      "alt": "Myself Painting on Mt Baker near Goat Lake",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.05,
+        "height": 5.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.05X5.3",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-50a7984f819bec72d1c7-small-frame-white": {
+    "id": "print-book-art-50a7984f819bec72d1c7-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-50a7984f819bec72d1c7",
+    "title": "Myself Painting on Mt Baker near Goat Lake — Small print — White frame",
+    "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD05X5DD3F2S8X10J1S4DD05X5DD3G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.7967,
+      "height": 5.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.05,
+      "height": 5.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2.jpg",
+    "assetSha256": "411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2",
+    "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
+      "alt": "Myself Painting on Mt Baker near Goat Lake",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.05,
+        "height": 5.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.05X5.3",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-50a7984f819bec72d1c7-small-frame-natural": {
+    "id": "print-book-art-50a7984f819bec72d1c7-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-50a7984f819bec72d1c7",
+    "title": "Myself Painting on Mt Baker near Goat Lake — Small print — Natural wood frame",
+    "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD05X5DD3F7S8X10J1S4DD05X5DD3G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.7967,
+      "height": 5.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.05,
+      "height": 5.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2.jpg",
+    "assetSha256": "411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2",
+    "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp",
+      "alt": "Myself Painting on Mt Baker near Goat Lake",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.05,
+        "height": 5.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.05X5.3",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 10,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-4c6fb3817fed4e5a6195-full": {
     "id": "print-book-art-4c6fb3817fed4e5a6195-full",
     "type": "print",
@@ -43625,6 +67379,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-book-art-4c6fb3817fed4e5a6195-full-frame-black": {
+    "id": "print-book-art-4c6fb3817fed4e5a6195-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-4c6fb3817fed4e5a6195",
+    "title": "Painting in Black Rock City — Large print — Black frame",
+    "artworkTitle": "Painting in Black Rock City",
+    "amount": "71.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD31X7DD28F1S14X11J1S8DD31X7DD28G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.05,
+      "height": 7.0267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.31,
+      "height": 7.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49.jpg",
+    "assetSha256": "2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49",
+    "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.webp",
+      "alt": "Painting in Black Rock City",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.31,
+        "height": 7.28,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.31X7.28",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-4c6fb3817fed4e5a6195-full-frame-white": {
+    "id": "print-book-art-4c6fb3817fed4e5a6195-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-4c6fb3817fed4e5a6195",
+    "title": "Painting in Black Rock City — Large print — White frame",
+    "artworkTitle": "Painting in Black Rock City",
+    "amount": "71.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD31X7DD28F2S14X11J1S8DD31X7DD28G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.05,
+      "height": 7.0267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.31,
+      "height": 7.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49.jpg",
+    "assetSha256": "2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49",
+    "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.webp",
+      "alt": "Painting in Black Rock City",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.31,
+        "height": 7.28,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.31X7.28",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-4c6fb3817fed4e5a6195-full-frame-natural": {
+    "id": "print-book-art-4c6fb3817fed4e5a6195-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-4c6fb3817fed4e5a6195",
+    "title": "Painting in Black Rock City — Large print — Natural wood frame",
+    "artworkTitle": "Painting in Black Rock City",
+    "amount": "82.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD31X7DD28F7S14X11J1S8DD31X7DD28G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 8.05,
+      "height": 7.0267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.31,
+      "height": 7.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49.jpg",
+    "assetSha256": "2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49",
+    "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.webp",
+      "alt": "Painting in Black Rock City",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.31,
+        "height": 7.28,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.31X7.28",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14,
+        "height": 11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-book-art-4c6fb3817fed4e5a6195-medium": {
     "id": "print-book-art-4c6fb3817fed4e5a6195-medium",
     "type": "print",
@@ -43662,5 +67638,227 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-book-art-4c6fb3817fed4e5a6195-medium-frame-black": {
+    "id": "print-book-art-4c6fb3817fed4e5a6195-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-4c6fb3817fed4e5a6195",
+    "title": "Painting in Black Rock City — Medium print — Black frame",
+    "artworkTitle": "Painting in Black Rock City",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD29X5DD52F1S10X8J1S6DD29X5DD52G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.0333,
+      "height": 5.2667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.29,
+      "height": 5.52,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872.jpg",
+    "assetSha256": "db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872",
+    "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.webp",
+      "alt": "Painting in Black Rock City",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.29,
+        "height": 5.52,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.29X5.52",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-4c6fb3817fed4e5a6195-medium-frame-white": {
+    "id": "print-book-art-4c6fb3817fed4e5a6195-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-4c6fb3817fed4e5a6195",
+    "title": "Painting in Black Rock City — Medium print — White frame",
+    "artworkTitle": "Painting in Black Rock City",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD29X5DD52F2S10X8J1S6DD29X5DD52G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.0333,
+      "height": 5.2667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.29,
+      "height": 5.52,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872.jpg",
+    "assetSha256": "db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872",
+    "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.webp",
+      "alt": "Painting in Black Rock City",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.29,
+        "height": 5.52,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.29X5.52",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-book-art-4c6fb3817fed4e5a6195-medium-frame-natural": {
+    "id": "print-book-art-4c6fb3817fed4e5a6195-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "book-art-4c6fb3817fed4e5a6195",
+    "title": "Painting in Black Rock City — Medium print — Natural wood frame",
+    "artworkTitle": "Painting in Black Rock City",
+    "amount": "68.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD29X5DD52F7S10X8J1S6DD29X5DD52G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 6.0333,
+      "height": 5.2667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.29,
+      "height": 5.52,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872.jpg",
+    "assetSha256": "db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872",
+    "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.webp",
+      "alt": "Painting in Black Rock City",
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.jpg"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.29,
+        "height": 5.52,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.29X5.52",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   }
 };
