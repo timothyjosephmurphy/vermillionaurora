@@ -1,5 +1,5 @@
 // Enhance the existing gallery; keep its links available if JavaScript is disabled.
-document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-grid, .painting-gallery-page .painting-list, .book-gallery-page .painting-list').forEach(grid => {
+document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .painting-gallery-page .product-grid, .painting-gallery-page .painting-list, .book-gallery-page .painting-list').forEach(grid => {
   let items = [...grid.children].map(node => {
     const img = node.querySelector('img');
     const product = node.querySelector('.product-title-link');
@@ -16,9 +16,10 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   const allItems = items;
   const threeUp = true;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const bookGalleryOverview = grid.closest('.book-gallery-overview');
   const box = document.createElement('section');
   box.className = 'exhibition-viewer' + (threeUp ? ' ev-three-up' : '');
-  box.setAttribute('aria-label', grid.closest('.book-gallery-page')?'Book gallery carousel':grid.closest('.painting-gallery-page')?'Paintings carousel':'Exhibition gallery');
+  box.setAttribute('aria-label', bookGalleryOverview ? 'Art book galleries carousel' : grid.closest('.book-gallery-page')?'Book gallery carousel':grid.closest('.painting-gallery-page')?'Paintings carousel':'Exhibition gallery');
   box.setAttribute('aria-roledescription', 'carousel');
   box.innerHTML = `<div class="ev-stage"></div><div class="ev-controls"><button type="button" data-prev aria-label="Previous image">←</button><button type="button" data-play>Pause</button><span class="ev-count"></span><button type="button" data-next aria-label="Next image">→</button><a class="ev-original" target="_blank" rel="noopener">Open full size ↗</a></div><div class="ev-thumbs" aria-label="Choose an image"></div><label class="ev-slider">Browse images<input type="range" min="1" max="${items.length}" value="1" aria-label="Choose gallery image"></label>`;
   const stage = box.querySelector('.ev-stage');
@@ -41,7 +42,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   items.forEach((item, i) => {
     const button = document.createElement('button');
     button.type = 'button';
-    button.setAttribute('aria-label', `${item.video ? 'Video' : 'Image'} ${i + 1}: ${item.alt || ''}${item.caption ? `, ${item.caption}` : ''}`);
+    button.setAttribute('aria-label', `${item.video ? 'Video' : bookGalleryOverview ? 'Gallery' : 'Image'} ${i + 1}: ${item.alt || ''}${item.caption ? `, ${item.caption}` : ''}`);
     if (item.video) button.textContent = `▶ Video ${i + 1}`;
     else { const img = document.createElement('img'); img.src = item.src; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async'; button.append(img); }
     button.addEventListener('click', () => show(i));
@@ -122,7 +123,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
     slider.setAttribute('aria-valuetext', `${index + 1} of ${items.length}`);
     box.querySelector('.ev-count').textContent = `${index + 1} / ${items.length}`;
     box.querySelector('.ev-original').href = item.product || item.src;
-    box.querySelector('.ev-original').textContent = item.product ? 'View painting ↗' : 'Open full size ↗';
+    box.querySelector('.ev-original').textContent = item.product ? (bookGalleryOverview ? 'View gallery ↗' : 'View painting ↗') : 'Open full size ↗';
     schedule();
   }
   function updatePlay() { play.textContent = paused ? 'Play' : 'Pause'; play.setAttribute('aria-label', `${paused ? 'Start' : 'Pause'} automatic slideshow`); schedule(); }
@@ -162,7 +163,7 @@ document.querySelectorAll('.exhibition-grid, .painting-gallery-page .product-gri
   (grid.closest('[data-gallery-list]')||grid).before(box);
   const paintingGallery = grid.closest('.painting-gallery-page');
   const bookGallery = grid.closest('.book-gallery-page');
-  grid.hidden = !paintingGallery && !bookGallery;
+  grid.hidden = !paintingGallery && !bookGallery && !bookGalleryOverview;
   const page = grid.closest('.exhibition-page');
   const hero = page?.querySelector('.exhibition-hero');
   if (hero && !hero.hasAttribute('data-featured-hero')) hero.hidden = true;

@@ -10,6 +10,7 @@ const gallerySummaries=manifest.sections.map(group=>({
   ...group,
   printReadyCount:group.artworks.filter(id=>printOptions(byId[id],config,papers).some(option=>option.ready)).length
 }));
+const bookTitles=Object.fromEntries(manifest.books.map(book=>[book.id,book.title]));
 ---
 
 <Layout title="Galleries from the art books" description="Explore TJ Murphy’s watercolor landscapes and portraits by book chapter, with selected fine-art prints.">
@@ -19,19 +20,22 @@ const gallerySummaries=manifest.sections.map(group=>({
     <h1>Galleries from the art books</h1>
     <p class="book-gallery-print-total" data-total-print-ready-count={totalPrintReady}>Travel through the landscapes, people, and stories collected in my watercolor books. {totalPrintReady} distinct works across these galleries currently have fine-art prints available.</p>
   </header>
-  {manifest.books.map(book=><section aria-labelledby={book.id}>
-    <h2 class="book-group-heading" id={book.id}>{book.title}</h2>
-    <ul class="book-gallery-grid">
-      {gallerySummaries.filter(group=>group.book===book.id).map(group=>
-        <li class="book-gallery-card">
+  <section class="book-gallery-overview" aria-labelledby="browse-galleries-heading">
+    <h2 class="book-group-heading" id="browse-galleries-heading">Browse the galleries</h2>
+    <ul class="book-gallery-grid book-gallery-carousel-grid" aria-label="Art book galleries">
+      {gallerySummaries.map(group=>{
+        const first=byId[group.artworks[0]];
+        return <li class="book-gallery-card" data-product={`/book-galleries/${group.id}/`} data-caption={`${bookTitles[group.book]} · ${group.artworks.length} works · ${group.printReadyCount} with fine-art prints`}>
           <a href={`/book-galleries/${group.id}/`}>
-            <img src={byId[group.artworks[0]].image.src} alt={byId[group.artworks[0]].title} loading="lazy" decoding="async"/>
+            <img src={first.image.src} alt={`${group.title} gallery — ${first.title}`} loading="lazy" decoding="async"/>
             <h3>{group.title}</h3>
-            <p data-print-ready-count={group.printReadyCount}>{group.artworks.length} {group.artworks.length===1?'work':'works'} · {group.printReadyCount} with fine-art prints · View gallery →</p>
+            <p data-print-ready-count={group.printReadyCount}>{bookTitles[group.book]} · {group.artworks.length} {group.artworks.length===1?'work':'works'} · {group.printReadyCount} with fine-art prints</p>
           </a>
-        </li>
-      )}
+        </li>;
+      })}
     </ul>
-    <p><a href={`/products/${book.id}/`}>Read {book.title} →</a></p>
-  </section>)}
+  </section>
+  <nav class="book-gallery-links" aria-label="Read the watercolor books">
+    {manifest.books.map(book=><a href={`/products/${book.id}/`}>Read {book.title} →</a>)}
+  </nav>
 </Layout>

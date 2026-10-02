@@ -33,8 +33,11 @@ test('book gallery sections are consolidated without changing painting inventory
     assert(pacific.artworks.includes(id));
 
   const friends=groups.get('watercolor-portraits-friends');
+  assert.equal(friends.artworks.length,41);
   assert(friends.artworks.includes('book-art-b7a9cd259d8ac51a236b'),'The rescued hummingbird belongs in Friends');
   assert.equal(new Set(friends.artworks).size,friends.artworks.length);
+  for(const id of ['book-art-9209f1fd7d47f373597f','book-art-a61c71e5de8cc1b71500','book-art-596837cb5ff533c620dd','book-art-7bce6e3509027d1f7a0b','book-art-3a9cba708a8045364e82','book-art-6bcf18417734a8e3010a','book-art-0d7df713c5f0f67733ae','book-art-0c4b161071524e23d519','book-art-b7410a9f4340e559e4f4'])
+    assert(!manifest.sections.some(group=>group.artworks.includes(id)),`${id} should be removed from the book galleries`);
   for(const id of ['book-art-2a670ca4f87a8cbd8b02','book-art-d78badff7e21472c00b8'])
     assert(!manifest.sections.some(group=>group.artworks.includes(id)),`${id} should be absent from every book gallery`);
 
@@ -68,6 +71,8 @@ test('book gallery sections are consolidated without changing painting inventory
   assert(viewer.includes("grid.closest('.book-gallery-page')"));
   assert(viewer.includes("box.className = 'exhibition-viewer' + (threeUp ? ' ev-three-up' : '')"));
   const overview=load(fs.readFileSync('dist/book-galleries/index.html','utf8'));
+  assert.equal(overview('.book-gallery-carousel-grid li').length,manifest.sections.length);
+  assert.equal(overview('.book-gallery-links a').length,manifest.books.length);
   const uniqueIds=[...new Set(manifest.sections.flatMap(group=>group.artworks))];
   const printReady=uniqueIds.filter(id=>printOptions(bookProducts.find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
   assert.equal(Number(overview('.book-gallery-print-total').attr('data-total-print-ready-count')),printReady);
