@@ -19,7 +19,7 @@
     {
       "id": "watercolor-landscapes-pacific-north-west",
       "book": "watercolor-landscapes",
-      "title": "Pacific North West",
+      "title": "Pacific Northwest",
       "startPage": 6,
       "endPage": 31,
       "artworks": [
@@ -41,35 +41,9 @@
         "book-art-5e4eb881d89ae9f5c635",
         "book-art-f56007f6a7d6ee955caf",
         "book-art-d1399111a441ed91feaa",
-        "book-art-c198f09bc8ddad18ed1e",
-        "book-art-9a4b9331f62350fa36fc",
         "book-art-b01b8695b2528cb850a3",
         "book-art-164299ae97e7b62137f5",
         "book-art-7a3ad7bacdb71faac1b8"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-tahoma",
-      "book": "watercolor-landscapes",
-      "title": "Tahoma",
-      "startPage": 8,
-      "endPage": 16,
-      "artworks": [
-        "book-art-e6068e265bfdc379526c",
-        "book-art-9ae261289a3bce952c6f",
-        "book-art-deb3358c321671dae1fc"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-san-juan-islands",
-      "book": "watercolor-landscapes",
-      "title": "San Juan Islands",
-      "startPage": 24,
-      "endPage": 27,
-      "artworks": [
-        "book-art-5e4eb881d89ae9f5c635",
-        "book-art-f56007f6a7d6ee955caf",
-        "book-art-d1399111a441ed91feaa"
       ]
     },
     {
@@ -77,7 +51,7 @@
       "book": "watercolor-landscapes",
       "title": "Travels",
       "startPage": 28,
-      "endPage": 67,
+      "endPage": 69,
       "artworks": [
         "book-art-c198f09bc8ddad18ed1e",
         "book-art-9a4b9331f62350fa36fc",
@@ -116,16 +90,7 @@
         "book-art-06b4b66f6389416c412c",
         "book-art-94e2edf9a24c90950489",
         "book-art-6e6d7ac51608e0b7f10f",
-        "book-art-e97329411fa8b273b508"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-miami",
-      "book": "watercolor-landscapes",
-      "title": "Miami",
-      "startPage": 68,
-      "endPage": 69,
-      "artworks": [
+        "book-art-e97329411fa8b273b508",
         "book-art-f91504eaa0ab6b936c29",
         "book-art-fb5eaeb2078ebf9c75f0",
         "book-art-4bb692457bed7cd4bb00"
@@ -250,24 +215,14 @@
       "book": "watercolor-portraits",
       "title": "Self Portraits",
       "startPage": 68,
-      "endPage": 73,
+      "endPage": 75,
       "artworks": [
         "book-art-0f696788184bbba1d236",
         "book-art-50a7984f819bec72d1c7",
         "book-art-4c6fb3817fed4e5a6195",
-        "book-art-471daf14a8bb7883f114",
         "book-art-19d9a8360c1f1df745d6",
         "book-art-ffffb682294d4b12c35e",
-        "book-art-bab6791e6223d24b9fbd"
-      ]
-    },
-    {
-      "id": "watercolor-portraits-about-the-author",
-      "book": "watercolor-portraits",
-      "title": "About the Author",
-      "startPage": 74,
-      "endPage": 75,
-      "artworks": [
+        "book-art-bab6791e6223d24b9fbd",
         "book-art-024a1e2da99a49b4438a",
         "book-art-02b06cbfebb63c2794d9",
         "book-art-311b1c39d98767f359b5",
@@ -297,9 +252,7 @@
       "captions": [],
       "title": "Untitled — Foreword, page 4",
       "measurements": [],
-      "sectionIds": [
-        "watercolor-landscapes-foreword"
-      ],
+      "sectionIds": [],
       "spread": false,
       "id": "book-art-66fa2eb4ccbaa13b172e",
       "printCandidate": false,
@@ -394,8 +347,7 @@
         "15 × 45"
       ],
       "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-tahoma"
+        "watercolor-landscapes-pacific-north-west"
       ],
       "spread": true,
       "id": "book-art-e6068e265bfdc379526c",
@@ -447,8 +399,7 @@
         "45 × 72"
       ],
       "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-tahoma"
+        "watercolor-landscapes-pacific-north-west"
       ],
       "spread": true,
       "id": "book-art-9ae261289a3bce952c6f",
@@ -499,10 +450,7 @@
       "measurements": [
         "45 × 72"
       ],
-      "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-tahoma"
-      ],
+      "sectionIds": [],
       "spread": true,
       "id": "book-art-2a670ca4f87a8cbd8b02",
       "printCandidate": false,
@@ -552,10 +500,7 @@
       "measurements": [
         "36 × 72"
       ],
-      "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-tahoma"
-      ],
+      "sectionIds": [],
       "spread": true,
       "id": "book-art-d78badff7e21472c00b8",
       "printCandidate": true,
@@ -605,8 +550,7 @@
         "24 × 45"
       ],
       "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-tahoma"
+        "watercolor-landscapes-pacific-north-west"
       ],
       "spread": false,
       "id": "book-art-deb3358c321671dae1fc",
@@ -1140,8 +1084,7 @@
         "15 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-san-juan-islands"
+        "watercolor-landscapes-pacific-north-west"
       ],
       "spread": false,
       "id": "book-art-5e4eb881d89ae9f5c635",
@@ -1191,8 +1134,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-san-juan-islands"
+        "watercolor-landscapes-pacific-north-west"
       ],
       "spread": false,
       "id": "book-art-f56007f6a7d6ee955caf",
@@ -1242,8 +1184,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-san-juan-islands"
+        "watercolor-landscapes-pacific-north-west"
       ],
       "spread": false,
       "id": "book-art-d1399111a441ed91feaa",
@@ -1293,8 +1234,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-bass-coast"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-c198f09bc8ddad18ed1e",
@@ -1344,8 +1284,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-pacific-north-west",
-        "watercolor-landscapes-bass-coast"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-9a4b9331f62350fa36fc",
@@ -1545,7 +1484,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-mexico"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-9c7b9d41bee5615f1d7f",
@@ -1595,7 +1534,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-mexico"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-87cf2a732259b313f5ab",
@@ -1645,7 +1584,7 @@
         "48 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-mexico"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-93957f4169bc931e0a52",
@@ -1695,7 +1634,7 @@
         "48 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-mexico"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-c4a5109c84daedd78291",
@@ -1746,7 +1685,7 @@
         "48 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-mexico"
+        "watercolor-landscapes-travels"
       ],
       "spread": true,
       "id": "book-art-471daf14a8bb7883f114",
@@ -1807,7 +1746,7 @@
       "title": "Untitled — El Salvador, page 38",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-ac338ff3806b66917b3c",
@@ -1852,7 +1791,7 @@
         "36 × 45"
       ],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-7599e02b4ff7013e7261",
@@ -1902,7 +1841,7 @@
         "8 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-1cc00425e5226b3aa20c",
@@ -1952,7 +1891,7 @@
         "25 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-1be48d404e2dbf547794",
@@ -2002,7 +1941,7 @@
         "24 × 45"
       ],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-9b6b4f1ce8b283e14b21",
@@ -2052,7 +1991,7 @@
         "24 × 45"
       ],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-7676696646b77fc3ca94",
@@ -2099,7 +2038,7 @@
       "title": "Sunset in Atami, El Salvador",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-e6f013fae1925ab77100",
@@ -2141,7 +2080,7 @@
       "title": "Untitled — El Salvador, page 44",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-c8da7882b2a3b7a36874",
@@ -2181,7 +2120,7 @@
       "title": "Untitled — El Salvador, page 45",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-103c2ba59ca485e56a86",
@@ -2225,7 +2164,7 @@
         "25 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-fc89b36cb40743a90fa8",
@@ -2269,7 +2208,7 @@
       "title": "Untitled — El Salvador, page 46",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-e3293c73dbb01f94b39b",
@@ -2309,7 +2248,7 @@
       "title": "Untitled — El Salvador, page 47",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-el-salvador"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-a2e53a8418a8d84f3dc5",
@@ -2354,7 +2293,7 @@
         "15 × 12"
       ],
       "sectionIds": [
-        "watercolor-landscapes-south-africa"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-56e40e02275a8767a802",
@@ -2404,7 +2343,7 @@
         "15 × 12"
       ],
       "sectionIds": [
-        "watercolor-landscapes-south-africa"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-fe853b565936ef8b2e73",
@@ -2454,7 +2393,7 @@
         "15 × 12"
       ],
       "sectionIds": [
-        "watercolor-landscapes-south-africa"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-f7e73a57e2af01359446",
@@ -2504,7 +2443,7 @@
         "15 × 12"
       ],
       "sectionIds": [
-        "watercolor-landscapes-south-africa"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-9f546bff5102042a3ad4",
@@ -2554,7 +2493,7 @@
         "15 × 12"
       ],
       "sectionIds": [
-        "watercolor-landscapes-south-africa"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-9fc2e730b10c7b8c333b",
@@ -2604,7 +2543,7 @@
         "12 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-sedona"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-27fee33e69f262ecfacb",
@@ -2654,7 +2593,7 @@
         "12 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-sedona"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-65bf0ecd265f1fd96e4a",
@@ -2704,7 +2643,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-sedona"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-ff6db6906f0ed48ccc3a",
@@ -2749,7 +2688,7 @@
       "title": "Untitled — Hawaii, page 56",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-hawaii"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-55829535637cd4974a88",
@@ -2789,7 +2728,7 @@
       "title": "Untitled — Hawaii, page 57",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-hawaii"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-04a049ea60a5a09e6873",
@@ -2834,7 +2773,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-assorted-adventures"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-e589c9375e23d1de4748",
@@ -2879,7 +2818,7 @@
       "title": "Untitled — Assorted Adventures, page 59",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-assorted-adventures"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-f2025e5a72f4a70866c6",
@@ -2924,7 +2863,7 @@
         "15 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-assorted-adventures"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-9f6386bac0e6198f6661",
@@ -2974,7 +2913,7 @@
         "15 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-assorted-adventures"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-82ab8d65fb50fe0d096a",
@@ -3024,7 +2963,7 @@
         "15 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-assorted-adventures"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-04de39dfa1817b8d1ed9",
@@ -3074,7 +3013,7 @@
         "15 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-assorted-adventures"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-06b4b66f6389416c412c",
@@ -3125,7 +3064,7 @@
         "24 × 45"
       ],
       "sectionIds": [
-        "watercolor-landscapes-assorted-adventures"
+        "watercolor-landscapes-travels"
       ],
       "spread": true,
       "id": "book-art-94e2edf9a24c90950489",
@@ -3176,7 +3115,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-assorted-adventures"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-6e6d7ac51608e0b7f10f",
@@ -3226,7 +3165,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-assorted-adventures"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-e97329411fa8b273b508",
@@ -3271,7 +3210,7 @@
       "title": "Untitled — Miami, page 68",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-miami"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-f91504eaa0ab6b936c29",
@@ -3311,7 +3250,7 @@
       "title": "Untitled — Miami, page 69",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-miami"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-fb5eaeb2078ebf9c75f0",
@@ -3351,7 +3290,7 @@
       "title": "Untitled — Miami, page 69 — 2",
       "measurements": [],
       "sectionIds": [
-        "watercolor-landscapes-miami"
+        "watercolor-landscapes-travels"
       ],
       "spread": false,
       "id": "book-art-4bb692457bed7cd4bb00",
@@ -3396,7 +3335,7 @@
         "15 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-about-the-author"
+        "watercolor-portraits-self-portraits"
       ],
       "spread": false,
       "id": "book-art-024a1e2da99a49b4438a",
@@ -3460,7 +3399,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-landscapes-about-the-author"
+        "watercolor-portraits-self-portraits"
       ],
       "spread": false,
       "id": "book-art-02b06cbfebb63c2794d9",
@@ -3524,7 +3463,7 @@
         "5 × 4"
       ],
       "sectionIds": [
-        "watercolor-landscapes-about-the-author"
+        "watercolor-portraits-self-portraits"
       ],
       "spread": false,
       "id": "book-art-311b1c39d98767f359b5",
@@ -3588,7 +3527,7 @@
         "8 × 6"
       ],
       "sectionIds": [
-        "watercolor-landscapes-about-the-author"
+        "watercolor-portraits-self-portraits"
       ],
       "spread": false,
       "id": "book-art-cb92d1d647c6f92403c7",
@@ -3652,7 +3591,7 @@
         "24 × 24"
       ],
       "sectionIds": [
-        "watercolor-landscapes-about-the-author"
+        "watercolor-portraits-self-portraits"
       ],
       "spread": false,
       "id": "book-art-64a80ece808ac08d4877",
@@ -3710,9 +3649,7 @@
       "captions": [],
       "title": "Dorian Nakamoto",
       "measurements": [],
-      "sectionIds": [
-        "watercolor-landscapes-afterword-who-is-satoshi-nakamoto"
-      ],
+      "sectionIds": [],
       "spread": false,
       "id": "book-art-2136f2260225dd8ef20a",
       "printCandidate": true,
@@ -3764,9 +3701,7 @@
       "measurements": [
         "45 × 24"
       ],
-      "sectionIds": [
-        "watercolor-landscapes-afterword-who-is-satoshi-nakamoto"
-      ],
+      "sectionIds": [],
       "spread": false,
       "id": "book-art-29b3572972c367d351d1",
       "printCandidate": true,
@@ -3828,9 +3763,7 @@
       "measurements": [
         "45 × 24"
       ],
-      "sectionIds": [
-        "watercolor-landscapes-afterword-who-is-satoshi-nakamoto"
-      ],
+      "sectionIds": [],
       "spread": false,
       "id": "book-art-8ff9ac182d32fa228450",
       "printCandidate": true,
@@ -3893,7 +3826,7 @@
         "15 × 24"
       ],
       "sectionIds": [
-        "watercolor-portraits-foreword"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-b7a9cd259d8ac51a236b",
@@ -4038,8 +3971,7 @@
       "title": "Chase Toole",
       "measurements": [],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-chase"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-ccff23f1e469654faa05",
@@ -4084,8 +4016,7 @@
         "24 × 35"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-lisa"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-9c77e540218eab97ba3d",
@@ -4130,8 +4061,7 @@
       "title": "Daniel — portrait 1",
       "measurements": [],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-daniel"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-a137dffe65723d0b5a07",
@@ -4171,8 +4101,7 @@
       "title": "Daniel — portrait 2",
       "measurements": [],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-daniel"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-7df006b029abcb751da2",
@@ -4217,8 +4146,7 @@
         "15 × 12"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-daniel"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-d1a4ee225dafe10ba934",
@@ -4268,8 +4196,7 @@
         "15 × 12"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-daniel"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-db933efcbc4fbe01c841",
@@ -4319,8 +4246,7 @@
         "15 × 24"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-daniel"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-8137549f4fe7a3a1b90d",
@@ -4370,8 +4296,7 @@
         "12 × 12"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-laura"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-edbfc2a7fff1189141f6",
@@ -4421,8 +4346,7 @@
         "12 × 12"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-laura"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-4bf5a04e40e7d8341378",
@@ -4472,8 +4396,7 @@
         "24 × 35"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-laura"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-74a736000a32427842b1",
@@ -4520,8 +4443,7 @@
         "96 × 24 (complete series)"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-catherine"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-9209f1fd7d47f373597f",
@@ -4565,8 +4487,7 @@
         "96 × 24 (complete series)"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-catherine"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-a61c71e5de8cc1b71500",
@@ -4610,8 +4531,7 @@
         "96 × 24 (complete series)"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-catherine"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-596837cb5ff533c620dd",
@@ -4655,8 +4575,7 @@
         "96 × 24 (complete series)"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-catherine"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-7bce6e3509027d1f7a0b",
@@ -4705,8 +4624,7 @@
         "24 × 24"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-catherine"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-b50262c37f44843487ae",
@@ -4756,8 +4674,7 @@
         "15 × 24"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-catherine"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-92fdb3112257f4fb66e8",
@@ -4807,8 +4724,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-dawn"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-3a9cba708a8045364e82",
@@ -4858,8 +4774,7 @@
         "12 × 15"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-dawn"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-6bcf18417734a8e3010a",
@@ -4909,8 +4824,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-dawn"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-0d7df713c5f0f67733ae",
@@ -4960,8 +4874,7 @@
         "12 × 15"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-dawn"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-0c4b161071524e23d519",
@@ -5011,8 +4924,7 @@
         "24 × 15"
       ],
       "sectionIds": [
-        "watercolor-portraits-friends",
-        "watercolor-portraits-dawn"
+        "watercolor-portraits-friends"
       ],
       "spread": false,
       "id": "book-art-b7410a9f4340e559e4f4",
@@ -6952,8 +6864,7 @@
         "24 × 24"
       ],
       "sectionIds": [
-        "watercolor-portraits-bitcoiners",
-        "watercolor-portraits-tomer-valerie-and-marisa"
+        "watercolor-portraits-bitcoiners"
       ],
       "spread": false,
       "id": "book-art-d6e03f6907615dac3797",
@@ -7003,8 +6914,7 @@
         "24 × 24"
       ],
       "sectionIds": [
-        "watercolor-portraits-bitcoiners",
-        "watercolor-portraits-tomer-valerie-and-marisa"
+        "watercolor-portraits-bitcoiners"
       ],
       "spread": false,
       "id": "book-art-ec22daff29e72f16eb76",
@@ -7054,8 +6964,7 @@
         "12 × 12"
       ],
       "sectionIds": [
-        "watercolor-portraits-bitcoiners",
-        "watercolor-portraits-tomer-valerie-and-marisa"
+        "watercolor-portraits-bitcoiners"
       ],
       "spread": false,
       "id": "book-art-43a3f16ac35df7262254",
