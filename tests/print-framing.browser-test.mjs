@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 const origin='https://vermillionaurora.com',root=path.resolve('dist');
-const available=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['paypal']}));
+const available=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['square']}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
 try{
   const page=await browser.newPage(),errors=[],quotes=[];let unavailable=false,stale=false;
@@ -14,13 +14,14 @@ try{
     const u=new URL(route.request().url());
     if(u.pathname.startsWith('/checkout/cart/')){
       const action=u.pathname.split('/').at(-1),headers={'Access-Control-Allow-Origin':origin};
-      if(action==='catalog')return route.fulfill({headers,json:{enabled:true,version:'framed-test-'+(stale?'old-layout':printVersion),products:unavailable?available.filter(p=>!p.frame):available}});
+      if(action==='catalog')return route.fulfill({headers,json:{enabled:true,version:'framed-test-'+(stale?'old-layout':printVersion),products:unavailable?available.filter(p=>!p.frame):available,square:{applicationId:'sq0idp-test',locationId:'LOCATION',mode:'live'}}});
       if(action==='hold'){const body=route.request().postDataJSON();return route.fulfill({headers,json:{orderId:body.holdId,status:'holding',heldIds:[],expiresAt:Date.now()+15*60*1000}});}
       assert.equal(action,'quote','The test must not start, capture or submit an order');
       const input=route.request().postDataJSON();quotes.push(input);
       const items=input.items.map(i=>({...available.find(p=>p.id===i.id),quantity:i.quantity}));
-      return route.fulfill({headers,json:{orderId:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key:'b'.repeat(64),status:'quoted',methods:['paypal'],quote:{items,base:'161.63',shipping:'21.95',tax:'0.00',total:'183.58'}}});
+      return route.fulfill({headers,json:{orderId:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key:'b'.repeat(64),status:'quoted',methods:['square'],quote:{items,base:'161.63',shipping:'21.95',tax:'0.00',total:'183.58'}}});
     }
+    if(u.hostname==='web.squarecdn.com')return route.fulfill({contentType:'application/javascript',body:"window.Square={payments:()=>({card:async()=>({attach:async()=>{},tokenize:async()=>({status:'OK',token:'cnon:test'})})})};"});
     if(u.hostname!==new URL(origin).hostname)return route.fulfill({json:{products:[],availability:{}}});
     const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
     if(!fs.existsSync(file))return route.fulfill({status:404});

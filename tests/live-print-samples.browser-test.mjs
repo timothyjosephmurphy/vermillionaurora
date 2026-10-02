@@ -4,20 +4,20 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
-const origin='https://vermillionaurora.com',root=path.resolve('dist'),id='aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key='b'.repeat(64),products=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),methods:['paypal'],status:'available'}));
+const origin='https://vermillionaurora.com',root=path.resolve('dist'),id='aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key='b'.repeat(64),products=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),methods:['square'],status:'available'}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
 try {
-  const page=await browser.newPage(),errors=[],calls=[];let quote,captured=false;
+  const page=await browser.newPage(),errors=[],calls=[];let quote;
   page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',async route=>{
     const u=new URL(route.request().url());
-    if(u.hostname==='www.paypal.com')return route.fulfill({contentType:'text/html',body:'Real PayPal handoff (mocked)'});
+    if(u.hostname==='web.squarecdn.com')return route.fulfill({contentType:'application/javascript',body:"window.Square={payments:()=>({card:async()=>({attach:async()=>{},tokenize:async()=>({status:'OK',token:'cnon:test'})})})};"});
     if(u.pathname.startsWith('/checkout/cart/')) {
       const action=u.pathname.split('/').at(-1),body=route.request().postDataJSON();calls.push({action,body});
-      if(action==='catalog')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'sample-test-'+printVersion,products}});
+      if(action==='catalog')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'sample-test-'+printVersion,products,square:{applicationId:'sq0idp-test',locationId:'LOCATION',mode:'live'}}});
       if(action==='quote'){quote={items:body.items.map(i=>({...products.find(p=>p.id===i.id),quantity:i.quantity})),base:'50.00',shipping:'8.95',tax:'5.00',total:'63.95'};}
-      if(action==='capture')captured=true;
-      const json=action==='quote'?{orderId:id,key,status:'quoted',methods:['paypal'],quote}:action==='start'?{orderId:id,status:'pending',method:'paypal',quote,url:'https://www.paypal.com/checkoutnow?token=MOCK'}:{orderId:id,status:captured?'paid':'pending',method:'paypal',quote,...(captured?{printStatus:'in-production'}:{})};
+      if(action==='start'){assert.equal(body.method,'square');assert.equal(body.sourceId,'cnon:test');}
+      const json=action==='quote'?{orderId:id,key,status:'quoted',methods:['square'],quote}:{orderId:id,status:'paid',method:'square',quote,printStatus:'in-production'};
       return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json});
     }
     if(u.hostname!==new URL(origin).hostname)return route.fulfill({json:{products:[],availability:{}}});
@@ -37,9 +37,8 @@ try {
   for(const [name,value] of Object.entries({email:'buyer@example.test',name:'Test Buyer',street1:'600 4th Ave',city:'Seattle',state:'WA',zip:'98104'}))await page.locator(`[name="${name}"]`).fill(value);
   await page.locator('[data-cart-quote]').click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.locator('[data-cart-payments]').waitFor({state:'visible'});assert.match(await page.locator('[data-cart-total]').textContent(),/63.95/);
   assert(calls.find(c=>c.action==='quote').body.items.every(i=>i.quantity===1&&i.id.endsWith('-small')));
-  await page.locator('[data-cart-methods] button').click();await page.waitForURL('https://www.paypal.com/**');
-  await page.goto(origin+'/cart/?order='+id+'&result=return');await page.waitForFunction(()=>document.querySelector('[data-order-tracking]').textContent.includes('In production'));
-  assert(calls.some(c=>c.action==='capture'&&c.body.orderId===id));
+  await page.getByRole('button',{name:'Pay with credit card'}).click();await page.waitForFunction(()=>document.querySelector('[data-order-tracking]').textContent.includes('In production'));
+  assert(calls.some(c=>c.action==='start'&&c.body.orderId===id&&c.body.method==='square'));
   await page.goto(origin+'/products/painting-portrait-in-green/');assert.equal(await page.locator('[data-print-options]').count(),1);assert.equal(await page.locator('.print-test-note').count(),0);
-  assert.deepEqual(errors,[]);console.log('PASS: edition disclosures, sizes, desktop/mobile layout, normal cart, live PayPal handoff and return; all provider calls mocked.');
+  assert.deepEqual(errors,[]);console.log('PASS: edition disclosures, sizes, desktop/mobile layout, normal cart, credit-card checkout and print confirmation; all provider calls mocked.');
 }finally{await browser.close();}
