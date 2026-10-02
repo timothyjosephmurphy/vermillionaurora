@@ -17,16 +17,6 @@
   ],
   "sections": [
     {
-      "id": "watercolor-landscapes-foreword",
-      "book": "watercolor-landscapes",
-      "title": "Foreword",
-      "startPage": 4,
-      "endPage": 5,
-      "artworks": [
-        "book-art-66fa2eb4ccbaa13b172e"
-      ]
-    },
-    {
       "id": "watercolor-landscapes-pacific-north-west",
       "book": "watercolor-landscapes",
       "title": "Pacific North West",
@@ -36,8 +26,6 @@
         "book-art-ded6b759e667e3c2a313",
         "book-art-e6068e265bfdc379526c",
         "book-art-9ae261289a3bce952c6f",
-        "book-art-2a670ca4f87a8cbd8b02",
-        "book-art-d78badff7e21472c00b8",
         "book-art-deb3358c321671dae1fc",
         "book-art-85d951d0a1ea09ef4aa6",
         "book-art-502372c530af5261540c",
@@ -69,8 +57,6 @@
       "artworks": [
         "book-art-e6068e265bfdc379526c",
         "book-art-9ae261289a3bce952c6f",
-        "book-art-2a670ca4f87a8cbd8b02",
-        "book-art-d78badff7e21472c00b8",
         "book-art-deb3358c321671dae1fc"
       ]
     },
@@ -87,37 +73,19 @@
       ]
     },
     {
-      "id": "watercolor-landscapes-bass-coast",
+      "id": "watercolor-landscapes-travels",
       "book": "watercolor-landscapes",
-      "title": "Bass Coast",
+      "title": "Travels",
       "startPage": 28,
-      "endPage": 29,
+      "endPage": 67,
       "artworks": [
         "book-art-c198f09bc8ddad18ed1e",
-        "book-art-9a4b9331f62350fa36fc"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-mexico",
-      "book": "watercolor-landscapes",
-      "title": "Mexico",
-      "startPage": 32,
-      "endPage": 37,
-      "artworks": [
+        "book-art-9a4b9331f62350fa36fc",
         "book-art-9c7b9d41bee5615f1d7f",
         "book-art-87cf2a732259b313f5ab",
         "book-art-93957f4169bc931e0a52",
         "book-art-c4a5109c84daedd78291",
-        "book-art-471daf14a8bb7883f114"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-el-salvador",
-      "book": "watercolor-landscapes",
-      "title": "El Salvador",
-      "startPage": 38,
-      "endPage": 47,
-      "artworks": [
+        "book-art-471daf14a8bb7883f114",
         "book-art-ac338ff3806b66917b3c",
         "book-art-7599e02b4ff7013e7261",
         "book-art-1cc00425e5226b3aa20c",
@@ -129,53 +97,17 @@
         "book-art-103c2ba59ca485e56a86",
         "book-art-fc89b36cb40743a90fa8",
         "book-art-e3293c73dbb01f94b39b",
-        "book-art-a2e53a8418a8d84f3dc5"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-south-africa",
-      "book": "watercolor-landscapes",
-      "title": "South Africa",
-      "startPage": 48,
-      "endPage": 53,
-      "artworks": [
+        "book-art-a2e53a8418a8d84f3dc5",
         "book-art-56e40e02275a8767a802",
         "book-art-fe853b565936ef8b2e73",
         "book-art-f7e73a57e2af01359446",
         "book-art-9f546bff5102042a3ad4",
-        "book-art-9fc2e730b10c7b8c333b"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-sedona",
-      "book": "watercolor-landscapes",
-      "title": "Sedona",
-      "startPage": 54,
-      "endPage": 55,
-      "artworks": [
+        "book-art-9fc2e730b10c7b8c333b",
         "book-art-27fee33e69f262ecfacb",
         "book-art-65bf0ecd265f1fd96e4a",
-        "book-art-ff6db6906f0ed48ccc3a"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-hawaii",
-      "book": "watercolor-landscapes",
-      "title": "Hawaii",
-      "startPage": 56,
-      "endPage": 57,
-      "artworks": [
+        "book-art-ff6db6906f0ed48ccc3a",
         "book-art-55829535637cd4974a88",
-        "book-art-04a049ea60a5a09e6873"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-assorted-adventures",
-      "book": "watercolor-landscapes",
-      "title": "Assorted Adventures",
-      "startPage": 58,
-      "endPage": 67,
-      "artworks": [
+        "book-art-04a049ea60a5a09e6873",
         "book-art-e589c9375e23d1de4748",
         "book-art-f2025e5a72f4a70866c6",
         "book-art-9f6386bac0e6198f6661",
@@ -200,48 +132,13 @@
       ]
     },
     {
-      "id": "watercolor-landscapes-about-the-author",
-      "book": "watercolor-landscapes",
-      "title": "About the Author",
-      "startPage": 70,
-      "endPage": 71,
-      "artworks": [
-        "book-art-024a1e2da99a49b4438a",
-        "book-art-02b06cbfebb63c2794d9",
-        "book-art-311b1c39d98767f359b5",
-        "book-art-cb92d1d647c6f92403c7",
-        "book-art-64a80ece808ac08d4877"
-      ]
-    },
-    {
-      "id": "watercolor-landscapes-afterword-who-is-satoshi-nakamoto",
-      "book": "watercolor-landscapes",
-      "title": "Afterword: Who is Satoshi Nakamoto?",
-      "startPage": 72,
-      "endPage": 75,
-      "artworks": [
-        "book-art-2136f2260225dd8ef20a",
-        "book-art-29b3572972c367d351d1",
-        "book-art-8ff9ac182d32fa228450"
-      ]
-    },
-    {
-      "id": "watercolor-portraits-foreword",
-      "book": "watercolor-portraits",
-      "title": "Foreword",
-      "startPage": 4,
-      "endPage": 5,
-      "artworks": [
-        "book-art-b7a9cd259d8ac51a236b"
-      ]
-    },
-    {
       "id": "watercolor-portraits-friends",
       "book": "watercolor-portraits",
       "title": "Friends",
-      "startPage": 6,
+      "startPage": 4,
       "endPage": 39,
       "artworks": [
+        "book-art-b7a9cd259d8ac51a236b",
         "book-art-c33709aeb2717b0c53de",
         "book-art-76b81da2337321bf158d",
         "book-art-ccff23f1e469654faa05",
@@ -291,81 +188,6 @@
         "book-art-f367882aaeb0e32471eb",
         "book-art-67cc9a4d5823eca2182e",
         "book-art-df8db0bc08adfeae5829"
-      ]
-    },
-    {
-      "id": "watercolor-portraits-chase",
-      "book": "watercolor-portraits",
-      "title": "Chase",
-      "startPage": 8,
-      "endPage": 8,
-      "artworks": [
-        "book-art-ccff23f1e469654faa05"
-      ]
-    },
-    {
-      "id": "watercolor-portraits-lisa",
-      "book": "watercolor-portraits",
-      "title": "Lisa",
-      "startPage": 9,
-      "endPage": 9,
-      "artworks": [
-        "book-art-9c77e540218eab97ba3d"
-      ]
-    },
-    {
-      "id": "watercolor-portraits-daniel",
-      "book": "watercolor-portraits",
-      "title": "Daniel",
-      "startPage": 10,
-      "endPage": 13,
-      "artworks": [
-        "book-art-a137dffe65723d0b5a07",
-        "book-art-7df006b029abcb751da2",
-        "book-art-d1a4ee225dafe10ba934",
-        "book-art-db933efcbc4fbe01c841",
-        "book-art-8137549f4fe7a3a1b90d"
-      ]
-    },
-    {
-      "id": "watercolor-portraits-laura",
-      "book": "watercolor-portraits",
-      "title": "Laura",
-      "startPage": 14,
-      "endPage": 15,
-      "artworks": [
-        "book-art-edbfc2a7fff1189141f6",
-        "book-art-4bf5a04e40e7d8341378",
-        "book-art-74a736000a32427842b1"
-      ]
-    },
-    {
-      "id": "watercolor-portraits-catherine",
-      "book": "watercolor-portraits",
-      "title": "Catherine",
-      "startPage": 16,
-      "endPage": 18,
-      "artworks": [
-        "book-art-9209f1fd7d47f373597f",
-        "book-art-a61c71e5de8cc1b71500",
-        "book-art-596837cb5ff533c620dd",
-        "book-art-7bce6e3509027d1f7a0b",
-        "book-art-b50262c37f44843487ae",
-        "book-art-92fdb3112257f4fb66e8"
-      ]
-    },
-    {
-      "id": "watercolor-portraits-dawn",
-      "book": "watercolor-portraits",
-      "title": "Dawn",
-      "startPage": 19,
-      "endPage": 23,
-      "artworks": [
-        "book-art-3a9cba708a8045364e82",
-        "book-art-6bcf18417734a8e3010a",
-        "book-art-0d7df713c5f0f67733ae",
-        "book-art-0c4b161071524e23d519",
-        "book-art-b7410a9f4340e559e4f4"
       ]
     },
     {
@@ -424,18 +246,6 @@
       ]
     },
     {
-      "id": "watercolor-portraits-tomer-valerie-and-marisa",
-      "book": "watercolor-portraits",
-      "title": "Tomer, Valerie, and Marisa",
-      "startPage": 54,
-      "endPage": 55,
-      "artworks": [
-        "book-art-d6e03f6907615dac3797",
-        "book-art-ec22daff29e72f16eb76",
-        "book-art-43a3f16ac35df7262254"
-      ]
-    },
-    {
       "id": "watercolor-portraits-self-portraits",
       "book": "watercolor-portraits",
       "title": "Self Portraits",
@@ -463,18 +273,6 @@
         "book-art-311b1c39d98767f359b5",
         "book-art-cb92d1d647c6f92403c7",
         "book-art-64a80ece808ac08d4877"
-      ]
-    },
-    {
-      "id": "watercolor-portraits-afterword-who-is-satoshi-nakamoto",
-      "book": "watercolor-portraits",
-      "title": "Afterword: Who is Satoshi Nakamoto?",
-      "startPage": 76,
-      "endPage": 79,
-      "artworks": [
-        "book-art-2136f2260225dd8ef20a",
-        "book-art-29b3572972c367d351d1",
-        "book-art-8ff9ac182d32fa228450"
       ]
     }
   ],
