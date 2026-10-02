@@ -12,8 +12,25 @@ export function etsyConnectPage(headers) {
 <p><a href="https://vermillionaurora.com">Return to Vermillion Aurora</a></p></main>
 <script nonce="${nonce}">
 const token=document.getElementById('token'),status=document.getElementById('status'),form=document.getElementById('connect');
-const messages={saved:'Authorization saved. Enter your manager token and check the connection to confirm the shop.',expired:'This connection attempt expired or was replaced. Please start again in this browser.',denied:'Etsy access was not approved. You can try again.',failed:'Etsy authorization could not be completed. Check your app credentials and callback URL, then try again.',unavailable:'The Worker is missing Etsy secrets or private storage.', 'wrong-shop':'Please sign in to the Etsy account that owns VermillionAurora and try again.'};
-status.textContent=messages[new URLSearchParams(location.search).get('result')]||'';
+const messages={
+ saved:'Authorization saved. Enter your manager token and check the connection to confirm the shop.',
+ expired:'This connection attempt expired or was replaced. Please start again in this browser.',
+ denied:'Etsy access was not approved. You can try again.',
+ unavailable:'The Worker is missing Etsy secrets or private storage.',
+ 'wrong-shop':'The approved Etsy account does not own the expected VermillionAurora shop.',
+ 'token-response':'Etsy returned an incomplete authorization response. Check that this Etsy app has the requested shop and listing permissions.',
+ 'token-scopes':'Etsy did not grant all requested permissions. Reauthorize and approve access to shop details and listings.',
+ 'shop-network':'Etsy approved the token, but its shop lookup could not be reached. Try again shortly.',
+ 'shop-response':'Etsy approved the token, but returned an unreadable shop response.',
+ 'storage-conflict':'The connection changed while Etsy was responding. Start again to retry.',
+ 'connection-internal':'The Worker could not safely save the Etsy connection. Try again; no provider details were exposed.'
+};
+const result=new URLSearchParams(location.search).get('result')||'';
+const tokenHttp=/^token-http-(400|401|403|429|\d{3})$/.exec(result);
+const shopHttp=/^shop-http-(400|401|403|404|429|\d{3})$/.exec(result);
+if(tokenHttp)messages[result]='Etsy rejected the authorization exchange (HTTP '+tokenHttp[1]+'). Check that the Etsy key string and shared secret belong to the same app, then start a fresh connection.';
+if(shopHttp)messages[result]='Etsy accepted authorization, but shop verification returned HTTP '+shopHttp[1]+'. Confirm the approved Etsy account owns VermillionAurora and that shop read permission was granted.';
+status.textContent=messages[result]||'';
 history.replaceState(null,'','/etsy/connect');
 async function act(path){
  if(!form.reportValidity())return;
