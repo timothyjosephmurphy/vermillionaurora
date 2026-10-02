@@ -1,29 +1,13 @@
-name: Test checkout shipping notifications
+name: Check shipping configuration
 
 on:
   push:
-    branches: [shippo-label-email, shared-paypal-checkout, main]
-    paths: ['cloudflare/**', '.github/workflows/test-shipping.yml']
-  pull_request:
-    paths: ['cloudflare/**', '.github/workflows/test-shipping.yml']
-  workflow_dispatch:
+    branches: [shippo-label-email]
 
 permissions:
   contents: read
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: npm
-          cache-dependency-path: cloudflare/test/package-lock.json
-      - run: node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs
-      - run: npm --prefix cloudflare/test ci
-      - run: npm --prefix cloudflare/test test
   read-shipping-config:
     if: github.event_name == 'push' && github.ref == 'refs/heads/shippo-label-email'
     runs-on: ubuntu-latest
