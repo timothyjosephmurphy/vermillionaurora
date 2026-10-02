@@ -44,7 +44,7 @@ function choices(data){
  return {
  shipping:rows(data[0]).map(x=>({id:x.shipping_profile_id,name:x.title||'Shipping profile '+x.shipping_profile_id})).filter(x=>Number.isSafeInteger(x.id)),
  readiness:rows(data[1]).map(x=>{const interval=x.processing_days_display_label||((x.min_processing_days??x.min_processing_time??'')+'–'+(x.max_processing_days??x.max_processing_time??'')+' '+(x.processing_time_unit||'days'));return {id:x.readiness_state_id,name:(x.readiness_state==='made_to_order'?'Made to order':'Ready to ship')+' · '+interval};}).filter(x=>Number.isSafeInteger(x.id)),
- partners:rows(data[2]).map(x=>({id:x.production_partner_id||x.partner_id,name:x.partner_name||x.name||''})).filter(x=>Number.isSafeInteger(x.id)),
+ partners:rows(data[2]).map(x=>({id:Number(x.production_partner_id??x.partner_id),name:String(x.partner_name??x.name??'').trim()})).filter(x=>Number.isSafeInteger(x.id)&&x.id>0&&x.name),
  taxonomy:flatten(data[3]).filter(x=>Number.isSafeInteger(x.id)&&/print|art|poster/i.test(x.name)).slice(0,500)
  };
 }
@@ -82,7 +82,7 @@ async function create(env,input,now){
  const pick=(items,id)=>items.find(x=>String(x.id)===String(id));
  const shipping=pick(setup.shipping,input.shippingProfileId),readiness=pick(setup.readiness,input.readinessStateId),taxonomy=pick(setup.taxonomy,input.taxonomyId),partner=setup.partners.find(x=>/finerworks/i.test(x.name));
  if(!shipping||!readiness||!taxonomy)throw Error('Choose a current shipping profile, processing profile, and print category.');
- if(!partner)throw Error('Add FinerWorks as a production partner in Etsy Shop Manager, then reload setup.');
+ if(!partner)throw Error('Etsy returned '+setup.partners.length+' production partner(s) for this shop, but none matched FinerWorks. Reload setup and check which partner names Etsy exposes.');
  let batch=record.etsyDraftBatch;
  if(batch?.status==='complete')return {batch:batchView(batch),resumed:true};
  const settings={shippingProfileId:shipping.id,readinessStateId:readiness.id,taxonomyId:taxonomy.id,partnerId:partner.id};
