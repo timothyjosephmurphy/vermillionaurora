@@ -1,0 +1,86 @@
+name: Prepare book gallery media and print prices
+on:
+  push:
+    branches: [codex/book-gallery-preparation]
+    paths: ['payments/quote-book-prints.mjs', '.github/workflows/prepare-book-galleries.yml']
+  workflow_dispatch:
+    inputs:
+      upload_media:
+        description: Upload R2 media after access is configured
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: checkout-sandbox
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: (github.event_name == 'workflow_dispatch' && inputs.upload_media) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[upload-book-media]'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Confirm upload credential is configured
+        env:
+          BOOK_UPLOAD_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: test -n "$BOOK_UPLOAD_TOKEN"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Reproduce reviewed extraction from existing book PDFs
+        run: |
+          pip install pymupdf==1.26.6 Pillow==12.3.0 pypdf==6.10.0
+          node scripts/download-book-sources.mjs .cache/book-sources
+          python scripts/extract-book-galleries.py .cache/book-sources .cache/book-work
+          node scripts/prepare-book-print-assets.mjs .cache/book-work
+          cp .cache/book-work/uploads.json scripts/book-media-upload/manifest.json
+      - name: Deploy bounded one-time R2 uploader
+        id: uploader
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          command: deploy --config scripts/book-media-upload/wrangler.jsonc
+      - name: Upload and verify book images in R2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/upload-book-media.mjs .cache/book-work
+      - name: Remove the temporary uploader
+        if: always() && steps.uploader.outcome == 'success'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/remove-book-uploader.mjs
+  quote:
+    if: (github.event_name == 'workflow_dispatch' && !inputs.upload_media) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[quote-book-prints]'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - name: Build read-only print pricing catalog
+        run: |
+          node scripts/build-pilot-print-assets.mjs
+          node payments/build-print-catalog.mjs
+          node payments/build-checkout-catalog.mjs
+      - name: Deploy isolated sandbox for print quotes
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
+      - name: Retrieve exact-size print prices without orders
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          DEPLOYED_SHA: ${{ github.sha }}
+        run: node payments/quote-book-prints.mjs

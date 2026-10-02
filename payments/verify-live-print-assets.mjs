@@ -21,7 +21,8 @@ export async function verifyLivePrintAssets() {
   assert.equal(catalog.printVersion,printVersion);assert.deepEqual(catalog.prints.map(p=>p.id).sort(),prints.map(p=>p.id).sort());
   const assets=[...new Set(prints.map(p=>p.assetUrl))];let cursor=0;
   await Promise.all(Array.from({length:4},async()=>{while(cursor<assets.length){
-    const url=assets[cursor++];assert.equal(new URL(url).origin,site);
+    const url=assets[cursor++],sha=prints.find(p=>p.assetUrl===url).assetSha256;
+    assert(new URL(url).origin===site||url===`https://media.vermillionaurora.com/images/book-galleries/v1/prints/${sha}.jpg`,'Unexpected print asset location');
     const r=await fetch(url,{signal:AbortSignal.timeout(30000)});assert.equal(r.status,200);assert.match(r.headers.get('content-type'),/^image\/jpeg/);
     assert.equal(createHash('sha256').update(Buffer.from(await r.arrayBuffer())).digest('hex'),prints.find(p=>p.assetUrl===url).assetSha256);
   }}));

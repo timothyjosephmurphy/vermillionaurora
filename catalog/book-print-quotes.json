@@ -1,0 +1,878 @@
+{
+  "workflowRun": 36941743051,
+  "ordersSubmitted": false,
+  "quotes": [
+    {
+      "productId": "book-art-9ae261289a3bce952c6f",
+      "key": "full",
+      "sku": "5M144M8S15.79X6.21",
+      "amount": "55.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-9ae261289a3bce952c6f",
+      "key": "medium",
+      "sku": "5M144M8S11.91X4.72",
+      "amount": "40.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-deb3358c321671dae1fc",
+      "key": "full",
+      "sku": "5M144M8S6.66X12.09",
+      "amount": "40.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-deb3358c321671dae1fc",
+      "key": "medium",
+      "sku": "5M144M8S5.06X9.13",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-f56007f6a7d6ee955caf",
+      "key": "full",
+      "sku": "5M144M8S5.18X9.46",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-d1399111a441ed91feaa",
+      "key": "full",
+      "sku": "5M144M8S5.64X10.06",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-d1399111a441ed91feaa",
+      "key": "medium",
+      "sku": "5M144M8S4.29X7.6",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-c198f09bc8ddad18ed1e",
+      "key": "full",
+      "sku": "5M144M8S8.96X4.99",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-87cf2a732259b313f5ab",
+      "key": "full",
+      "sku": "5M144M8S4.7X8.09",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-471daf14a8bb7883f114",
+      "key": "full",
+      "sku": "5M144M8S11.57X6.33",
+      "amount": "40.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-471daf14a8bb7883f114",
+      "key": "medium",
+      "sku": "5M144M8S8.74X4.81",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-e3293c73dbb01f94b39b",
+      "key": "full",
+      "sku": "5M144M8S5.57X4.48",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-a2e53a8418a8d84f3dc5",
+      "key": "full",
+      "sku": "5M144M8S6.08X4.73",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-27fee33e69f262ecfacb",
+      "key": "full",
+      "sku": "5M144M8S10.33X13.52",
+      "amount": "60.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-27fee33e69f262ecfacb",
+      "key": "medium",
+      "sku": "5M144M8S7.81X10.2",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-27fee33e69f262ecfacb",
+      "key": "small",
+      "sku": "5M144M8S5.29X6.88",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.094Z"
+    },
+    {
+      "productId": "book-art-ff6db6906f0ed48ccc3a",
+      "key": "full",
+      "sku": "5M144M8S13.24X9.96",
+      "amount": "55.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-ff6db6906f0ed48ccc3a",
+      "key": "medium",
+      "sku": "5M144M8S9.99X7.53",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-ff6db6906f0ed48ccc3a",
+      "key": "small",
+      "sku": "5M144M8S6.74X5.1",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-55829535637cd4974a88",
+      "key": "full",
+      "sku": "5M144M8S5.94X4.7",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-04a049ea60a5a09e6873",
+      "key": "full",
+      "sku": "5M144M8S6.67X12.77",
+      "amount": "45.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-04a049ea60a5a09e6873",
+      "key": "medium",
+      "sku": "5M144M8S5.07X9.64",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-e589c9375e23d1de4748",
+      "key": "full",
+      "sku": "5M144M8S10.25X5.77",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-e589c9375e23d1de4748",
+      "key": "medium",
+      "sku": "5M144M8S7.75X4.39",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-f2025e5a72f4a70866c6",
+      "key": "full",
+      "sku": "5M144M8S10.83X8.75",
+      "amount": "40.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-f2025e5a72f4a70866c6",
+      "key": "medium",
+      "sku": "5M144M8S8.18X6.62",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-f2025e5a72f4a70866c6",
+      "key": "small",
+      "sku": "5M144M8S5.54X4.5",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-82ab8d65fb50fe0d096a",
+      "key": "full",
+      "sku": "5M144M8S11.3X6.27",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-82ab8d65fb50fe0d096a",
+      "key": "medium",
+      "sku": "5M144M8S8.54X4.77",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-94e2edf9a24c90950489",
+      "key": "full",
+      "sku": "5M144M8S12.56X6.27",
+      "amount": "45.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-94e2edf9a24c90950489",
+      "key": "medium",
+      "sku": "5M144M8S9.48X4.76",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-6e6d7ac51608e0b7f10f",
+      "key": "full",
+      "sku": "5M144M8S5.73X8.98",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-6e6d7ac51608e0b7f10f",
+      "key": "medium",
+      "sku": "5M144M8S4.36X6.79",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-e97329411fa8b273b508",
+      "key": "full",
+      "sku": "5M144M8S6.06X9.73",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-e97329411fa8b273b508",
+      "key": "medium",
+      "sku": "5M144M8S4.6X7.36",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-2136f2260225dd8ef20a",
+      "key": "full",
+      "sku": "5M144M8S8.38X9.03",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-2136f2260225dd8ef20a",
+      "key": "medium",
+      "sku": "5M144M8S6.35X6.83",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-2136f2260225dd8ef20a",
+      "key": "small",
+      "sku": "5M144M8S4.31X4.64",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:43.965Z"
+    },
+    {
+      "productId": "book-art-29b3572972c367d351d1",
+      "key": "full",
+      "sku": "5M144M8S4.46X8.82",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-8ff9ac182d32fa228450",
+      "key": "full",
+      "sku": "5M144M8S4.37X8.72",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-ccff23f1e469654faa05",
+      "key": "full",
+      "sku": "5M144M8S9.46X11.3",
+      "amount": "45.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-ccff23f1e469654faa05",
+      "key": "medium",
+      "sku": "5M144M8S7.16X8.54",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-ccff23f1e469654faa05",
+      "key": "small",
+      "sku": "5M144M8S4.85X5.77",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-db933efcbc4fbe01c841",
+      "key": "full",
+      "sku": "5M144M8S9.53X14.48",
+      "amount": "60.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-db933efcbc4fbe01c841",
+      "key": "medium",
+      "sku": "5M144M8S7.21X10.92",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-db933efcbc4fbe01c841",
+      "key": "small",
+      "sku": "5M144M8S4.89X7.36",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-74a736000a32427842b1",
+      "key": "full",
+      "sku": "5M144M8S11.39X10.18",
+      "amount": "50.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-74a736000a32427842b1",
+      "key": "medium",
+      "sku": "5M144M8S8.6X7.69",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-74a736000a32427842b1",
+      "key": "small",
+      "sku": "5M144M8S5.82X5.21",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-9209f1fd7d47f373597f",
+      "key": "full",
+      "sku": "5M144M8S4.82X11.01",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-a61c71e5de8cc1b71500",
+      "key": "full",
+      "sku": "5M144M8S6.7X10.44",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-a61c71e5de8cc1b71500",
+      "key": "medium",
+      "sku": "5M144M8S5.08X7.89",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-596837cb5ff533c620dd",
+      "key": "full",
+      "sku": "5M144M8S6.79X11.54",
+      "amount": "40.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-596837cb5ff533c620dd",
+      "key": "medium",
+      "sku": "5M144M8S5.15X8.72",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-7bce6e3509027d1f7a0b",
+      "key": "full",
+      "sku": "5M144M8S6.33X13.25",
+      "amount": "45.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-7bce6e3509027d1f7a0b",
+      "key": "medium",
+      "sku": "5M144M8S4.81X10",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-3a9cba708a8045364e82",
+      "key": "full",
+      "sku": "5M144M8S12.11X6.55",
+      "amount": "40.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-3a9cba708a8045364e82",
+      "key": "medium",
+      "sku": "5M144M8S9.15X4.97",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.019Z"
+    },
+    {
+      "productId": "book-art-1143b08e177333e43dc7",
+      "key": "full",
+      "sku": "5M144M8S7.98X9.43",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-1143b08e177333e43dc7",
+      "key": "medium",
+      "sku": "5M144M8S6.04X7.13",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-1143b08e177333e43dc7",
+      "key": "small",
+      "sku": "5M144M8S4.11X4.84",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-18e4d05240ce63a1a44b",
+      "key": "full",
+      "sku": "5M144M8S12.74X14.41",
+      "amount": "80.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-18e4d05240ce63a1a44b",
+      "key": "medium",
+      "sku": "5M144M8S9.62X10.87",
+      "amount": "45.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-18e4d05240ce63a1a44b",
+      "key": "small",
+      "sku": "5M144M8S6.49X7.33",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-64cfd389b3dbb5cde532",
+      "key": "full",
+      "sku": "5M144M8S8.44X9.98",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-64cfd389b3dbb5cde532",
+      "key": "medium",
+      "sku": "5M144M8S6.39X7.55",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-64cfd389b3dbb5cde532",
+      "key": "small",
+      "sku": "5M144M8S4.34X5.11",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-1708a7dca996aca40e6c",
+      "key": "full",
+      "sku": "5M144M8S9.09X10.4",
+      "amount": "40.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-1708a7dca996aca40e6c",
+      "key": "medium",
+      "sku": "5M144M8S6.88X7.86",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-1708a7dca996aca40e6c",
+      "key": "small",
+      "sku": "5M144M8S4.67X5.32",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-a627c7b7d19ace6b3e51",
+      "key": "full",
+      "sku": "5M144M8S8.48X9.58",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-a627c7b7d19ace6b3e51",
+      "key": "medium",
+      "sku": "5M144M8S6.42X7.25",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-a627c7b7d19ace6b3e51",
+      "key": "small",
+      "sku": "5M144M8S4.36X4.91",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-44161b6b117af79e3df4",
+      "key": "full",
+      "sku": "5M144M8S8.89X9.85",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-44161b6b117af79e3df4",
+      "key": "medium",
+      "sku": "5M144M8S6.73X7.45",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-44161b6b117af79e3df4",
+      "key": "small",
+      "sku": "5M144M8S4.57X5.05",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-029f45a5fbfd6c90212e",
+      "key": "full",
+      "sku": "5M144M8S8.2X14.58",
+      "amount": "50.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-029f45a5fbfd6c90212e",
+      "key": "medium",
+      "sku": "5M144M8S6.21X10.99",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-029f45a5fbfd6c90212e",
+      "key": "small",
+      "sku": "5M144M8S4.22X7.41",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-28bec44600b36ed0766f",
+      "key": "full",
+      "sku": "5M144M8S7.6X9.3",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-28bec44600b36ed0766f",
+      "key": "medium",
+      "sku": "5M144M8S5.76X7.04",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-14d2876a55c720cbc908",
+      "key": "full",
+      "sku": "5M144M8S12.8X9.12",
+      "amount": "50.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-14d2876a55c720cbc908",
+      "key": "medium",
+      "sku": "5M144M8S9.66X6.9",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-14d2876a55c720cbc908",
+      "key": "small",
+      "sku": "5M144M8S6.52X4.68",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-c347459aa3f77f7213ae",
+      "key": "full",
+      "sku": "5M144M8S11.04X6.18",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-c347459aa3f77f7213ae",
+      "key": "medium",
+      "sku": "5M144M8S8.34X4.7",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:45.855Z"
+    },
+    {
+      "productId": "book-art-616ff8378f27047b4a91",
+      "key": "full",
+      "sku": "5M144M8S4.84X5.24",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-8d1545e1ac13c99eb4ce",
+      "key": "full",
+      "sku": "5M144M8S8.16X5.86",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-8d1545e1ac13c99eb4ce",
+      "key": "medium",
+      "sku": "5M144M8S6.18X4.46",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-466dc684227286c40502",
+      "key": "full",
+      "sku": "5M144M8S5.36X7.83",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-466dc684227286c40502",
+      "key": "medium",
+      "sku": "5M144M8S4.08X5.93",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-82127d1886ae57d5cb6e",
+      "key": "full",
+      "sku": "5M144M8S10.08X14.24",
+      "amount": "60.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-82127d1886ae57d5cb6e",
+      "key": "medium",
+      "sku": "5M144M8S7.62X10.74",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-82127d1886ae57d5cb6e",
+      "key": "small",
+      "sku": "5M144M8S5.16X7.24",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-c04c7e48687fe35e65f5",
+      "key": "full",
+      "sku": "5M144M8S4.77X5.18",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-ec22daff29e72f16eb76",
+      "key": "full",
+      "sku": "5M144M8S4.83X5.51",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-504e3fafdacd7c9bbcd0",
+      "key": "full",
+      "sku": "5M144M8S5X7.07",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-4a0bb9cdd6c404c4e77c",
+      "key": "full",
+      "sku": "5M144M8S5.05X7.07",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-0ee2717bc04e65d0507e",
+      "key": "full",
+      "sku": "5M144M8S10.31X11.31",
+      "amount": "50.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-0ee2717bc04e65d0507e",
+      "key": "medium",
+      "sku": "5M144M8S7.79X8.54",
+      "amount": "30.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-0ee2717bc04e65d0507e",
+      "key": "small",
+      "sku": "5M144M8S5.28X5.78",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-deb92de6e72f7b3ce951",
+      "key": "full",
+      "sku": "5M144M8S6.3X6.9",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-deb92de6e72f7b3ce951",
+      "key": "medium",
+      "sku": "5M144M8S4.79X5.24",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:46.642Z"
+    },
+    {
+      "productId": "book-art-0f696788184bbba1d236",
+      "key": "full",
+      "sku": "5M144M8S4.49X7.08",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:47.417Z"
+    },
+    {
+      "productId": "book-art-50a7984f819bec72d1c7",
+      "key": "full",
+      "sku": "5M144M8S7.85X10.35",
+      "amount": "35.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:47.417Z"
+    },
+    {
+      "productId": "book-art-50a7984f819bec72d1c7",
+      "key": "medium",
+      "sku": "5M144M8S5.95X7.82",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:47.417Z"
+    },
+    {
+      "productId": "book-art-50a7984f819bec72d1c7",
+      "key": "small",
+      "sku": "5M144M8S4.05X5.3",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:47.417Z"
+    },
+    {
+      "productId": "book-art-4c6fb3817fed4e5a6195",
+      "key": "full",
+      "sku": "5M144M8S8.31X7.28",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:47.417Z"
+    },
+    {
+      "productId": "book-art-4c6fb3817fed4e5a6195",
+      "key": "medium",
+      "sku": "5M144M8S6.29X5.52",
+      "amount": "25.00",
+      "pricingRule": "finerworks-3.5x-v1",
+      "quotedAt": "2026-10-01T23:38:47.417Z"
+    }
+  ]
+}

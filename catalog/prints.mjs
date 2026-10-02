@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 import {products} from './catalog.mjs';
-import config from './prints.json' with {type:'json'};
+import config from './print-config.mjs';
 import papers from './finerworks-papers.json' with {type:'json'};
 import mats from './finerworks-mats.json' with {type:'json'};
 import frames from './finerworks-frames.json' with {type:'json'};

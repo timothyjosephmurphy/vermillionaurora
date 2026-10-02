@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/BookGalleryLayout.astro';
+import manifest from '../../../catalog/book-galleries.json';
+import {byId,urlFor} from '../../../catalog/catalog.mjs';
+import {config,papers,printOptions} from '../../../catalog/prints.mjs';
+export function getStaticPaths(){return manifest.sections.map(g=>({params:{section:g.id},props:{group:g}}));}
+const {group:g}=Astro.props,book=manifest.books.find(b=>b.id===g.book);
+---
+<Layout title={`${g.title} — ${book.title}`} description={`${g.title}: watercolor artwork from ${book.title} by TJ Murphy.`}>
+<nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/book-galleries/">Art book galleries</a> / {g.title}</nav>
+<header class="book-gallery-intro"><p class="eyebrow dark">{book.title}</p><h1>{g.title}</h1><p>{g.artworks.length} {g.artworks.length===1?'work':'works'} from this section of the book. Select a painting to see it in detail and explore available prints.</p><div class="book-gallery-links"><a href={`${book.pdfUrl}#page=${g.startPage}`} target="_blank" rel="noopener noreferrer">See this section in the book ↗</a><a href="/book-galleries/">All book galleries →</a></div></header>
+<ul class="book-gallery-grid">{g.artworks.map(id=>{const p=byId[id],e=manifest.artworks.find(a=>a.id===id),options=printOptions(p,config,papers).filter(o=>o.ready);return <li class="book-gallery-card"><a href={urlFor(p)}><img src={p.image.src} alt={p.title} loading="lazy" decoding="async"/><h2>{p.title}</h2>{e.measurements.length>0&&<p>{e.measurements.join('; ')} · book measurements</p>}{options.length>0?<p class="print-available">Fine-art prints from ${Math.min(...options.map(o=>Number(o.amount))).toFixed(2)}</p>:<p>View artwork →</p>}</a></li>})}</ul>
+<p class="book-measurement-note">Measurements are transcribed from the book. Where the book does not state a unit, none is assumed. Available print dimensions are shown separately when ordering.</p>
+</Layout>
