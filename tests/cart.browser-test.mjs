@@ -5,15 +5,15 @@ import assert from 'node:assert/strict';
 import {catalogVersion,byId} from '../catalog/catalog.mjs';
 const root=path.resolve('dist'),origin='https://vermillionaurora.com',ids=['painting-portrait-in-green','painting-portrait-in-gold'];
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']}:{})});
-const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,method='paypal';const reservations=new Map();
+const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,method='square';const reservations=new Map();
 page.on('pageerror',e=>errors.push(e.message));
-const product=id=>({id,title:byId[id].title,amount:byId[id].listing.price.amount,methods:['paypal','bitcoin'],status:availability});
+const product=id=>({id,title:byId[id].title,amount:byId[id].listing.price.amount,methods:['paypal','square','bitcoin'],status:availability});
 await page.route('**/*',async route=>{
  const req=route.request(),url=new URL(req.url());
  if(req.method()==='OPTIONS')return route.fulfill({status:204,headers:{'Access-Control-Allow-Origin':origin,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type'}});
   if(url.pathname.startsWith('/checkout/cart/')){
   const action=url.pathname.split('/').at(-1);const body=req.method()==='POST'?req.postDataJSON():null;calls.push({action,body});let result;
-  if(action==='catalog')result={enabled,version:catalogVersion,products:ids.map(product)};
+  if(action==='catalog')result={enabled,version:catalogVersion,products:ids.map(product),square:{applicationId:'sq0idp-test',locationId:'LOCATION',mode:'live'}};
   if(action==='hold'){
    const originals=body.items.filter(i=>!i.id.startsWith('print-')).map(i=>i.id),previous=reservations.get(body.holdId)||new Set(),unavailable=availability==='available'?null:originals.find(id=>ids.includes(id)&&!previous.has(id));
    if(!unavailable)reservations.set(body.holdId,new Set(originals));
@@ -22,15 +22,16 @@ await page.route('**/*',async route=>{
   if(action==='quote'){
    assert.equal(body.catalogVersion,catalogVersion);assert.equal(body.address.city,'Seattle');
    const items=body.items.map(i=>({...product(i.id),quantity:i.quantity})),base=items.reduce((s,i)=>s+Number(i.amount),0);
-   result={orderId:body.holdId,key:body.key,expiresAt:Date.now()+10*60*1000,status:'quoted',methods:['paypal','bitcoin'],quote:{items,base:base.toFixed(2),shipping:'12.00',tax:'5.00',total:(base+17).toFixed(2),shipments:items.map(i=>({id:i.id,title:i.title,shipping:'6.00',carrier:'UPS',service:'Ground'}))}};order=result;
+   result={orderId:body.holdId,key:body.key,expiresAt:Date.now()+10*60*1000,status:'quoted',methods:['paypal','square','bitcoin'],quote:{items,base:base.toFixed(2),shipping:'12.00',tax:'5.00',total:(base+17).toFixed(2),shipments:items.map(i=>({id:i.id,title:i.title,shipping:'6.00',carrier:'UPS',service:'Ground'}))}};order=result;
   }
-  if(action==='start'){assert.equal(body.key,order.key);method=body.method;result={...order,method,status:method==='bitcoin'?'processing':'capturing'};order=result;}
+  if(action==='start'){assert.equal(body.key,order.key);method=body.method;if(method==='square')assert.equal(body.sourceId,'cnon:test');result={...order,method,status:method==='bitcoin'?'processing':'settling'};order=result;}
   if(action==='status'){if(failStatus)return route.fulfill({status:503,headers:{'Access-Control-Allow-Origin':origin},json:{error:'Payment status is temporarily unavailable. Please check again.'}});result=order;}
   if(action==='capture'){result={...order,status:'paid'};order=result;}
   if(action==='cancel'){result={...order,status:'cancelled'};order=result;}
   return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:result});
  }
  if(url.pathname==='/inventory/status')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{availability:Object.fromEntries(url.searchParams.get('ids').split(',').map(id=>[id,availability]))}});
+ if(url.hostname==='web.squarecdn.com')return route.fulfill({contentType:'application/javascript',body:"window.Square={payments:()=>({card:async()=>({attach:async()=>{},tokenize:async()=>({status:'OK',token:'cnon:test'})})})};"});
  if(url.hostname!==new URL(origin).hostname)return route.abort();
  const file=path.join(root,url.pathname,url.pathname.endsWith('/')?'index.html':'');
  if(fs.existsSync(file)&&fs.statSync(file).isFile())return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'})[path.extname(file)]||'application/octet-stream'});
@@ -44,13 +45,15 @@ try{
  for(const id of ids){await page.goto(`${origin}/products/${id}/`);await page.getByRole('button',{name:'Add to cart',exact:true}).click();await page.getByRole('button',{name:'Added to cart',exact:true}).click();}
  assert.equal((await cartStored()).length,2);
  await page.goto(origin+'/cart/');await page.locator('.cart-line').nth(1).waitFor();await page.reload();await page.locator('.cart-line').nth(1).waitFor();
- assert.equal(await page.locator('[data-cart-count]').textContent(),'2');await page.getByRole('button',{name:'Continue with PayPal'}).waitFor();assert(await page.getByRole('button',{name:'Continue with PayPal'}).isDisabled());assert.equal(await page.getByRole('button',{name:'Continue with PayPal'}).evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(222, 219, 215)');
- await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.getByRole('button',{name:'Continue with PayPal'}).waitFor();assert(await page.getByRole('button',{name:'Continue with PayPal'}).isEnabled());assert(await page.getByRole('button',{name:'Shipping & tax calculated'}).isDisabled());
+ assert.equal(await page.locator('[data-cart-count]').textContent(),'2');await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isDisabled());assert.equal(await page.getByRole('button',{name:'Pay with credit card'}).evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(222, 219, 215)');
+ assert.equal(await page.getByRole('button',{name:'Continue with PayPal'}).count(),0);
+ await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isEnabled());assert(await page.getByRole('button',{name:'Shipping & tax calculated'}).isDisabled());
+ assert.equal(await page.getByRole('button',{name:'Continue with PayPal'}).count(),0);
  for(const width of [1440,390]){await page.setViewportSize({width,height:1050});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width} cart overflow`);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.waitForFunction(()=>scrollY===0);await page.screenshot({path:`/tmp/cart-preview/cart-${width}.png`,fullPage:true});}
  // Editing the address invalidates the quote; payment stays visible but gray until recalculated.
- await page.locator('[name="street1"]').fill('124 Main St');assert(await page.locator('[data-cart-payments]').isVisible());assert(await page.getByRole('button',{name:'Continue with PayPal'}).isDisabled());await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.getByRole('button',{name:'Continue with PayPal'}).click();
- await page.getByRole('heading',{name:'Confirming your payment'}).waitFor();assert.equal(calls.filter(c=>c.action==='start').length,1);
- await page.reload();await page.locator('.cart-line').nth(1).waitFor();assert.equal(await page.locator('.cart-line').count(),2,'The cart stays visible while an earlier order is pending.');await page.getByRole('link',{name:'Review existing order'}).click();await page.getByRole('heading',{name:'Confirming your payment'}).waitFor();
+ await page.locator('[name="street1"]').fill('124 Main St');assert(await page.locator('[data-cart-payments]').isVisible());assert(await page.getByRole('button',{name:'Pay with credit card'}).isDisabled());await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.getByRole('button',{name:'Pay with credit card'}).click();
+ await page.getByRole('heading',{name:'Confirming your order'}).waitFor();assert.equal(calls.filter(c=>c.action==='start').length,1);
+ await page.reload();await page.locator('.cart-line').nth(1).waitFor();assert.equal(await page.locator('.cart-line').count(),2,'The cart stays visible while an earlier order is pending.');await page.getByRole('link',{name:'Review existing order'}).click();await page.getByRole('heading',{name:'Confirming your order'}).waitFor();
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual(await cartStored(),[]);await page.screenshot({path:'/tmp/cart-preview/confirmation-mobile.png',fullPage:true});
  await page.getByRole('button',{name:'Return to cart'}).click();await page.getByRole('heading',{name:'A place for the work you love.'}).waitFor();
  // Invalid persisted data cannot inject markup or alter quantities/prices.

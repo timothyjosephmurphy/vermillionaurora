@@ -1,6 +1,6 @@
 # Square checkout
 
-Square is an optional card processor alongside PayPal. The sandbox Worker has a tested one-item pilot. Production offers a separate “Pay with Square using credit card” button alongside PayPal for eligible originals and print editions. Square is offered only when its credentials, webhook settings, environment, and product eligibility are configured.
+Square provides the public credit-card checkout option. The sandbox Worker has a tested one-item pilot. Production shows “Pay with credit card” for eligible originals and print editions, plus Bitcoin where available. Square is offered only when its credentials, webhook settings, environment, and product eligibility are configured.
 
 ## Sandbox Worker variables
 
@@ -20,7 +20,7 @@ Set these as Cloudflare secrets:
 
 In Square Developer Console, add a Sandbox webhook subscription for `payment.updated` using the exact URL above. Copy its signature key into the Cloudflare secret. The Worker verifies the HMAC signature, retrieves the payment from Square, and checks payment status, order reference, location, currency, and amount before settling inventory.
 
-After adding the webhook secret, set `SQUARE_CHECKOUT_ENABLED=true` in the sandbox Worker to expose Square for the allowlisted pilot item. PayPal remains available as a separate checkout button. The sandbox Worker also exposes `/checkout/square-test`, a small same-origin test form that uses Square's sandbox Web Payments SDK without cloning the storefront. It is hidden unless sandbox mode, Square checkout, and `SQUARE_SANDBOX_NO_FULFILLMENT=true` are all active. A successful test marks the painting sold in sandbox inventory only; it does not record tax, purchase a label, submit print fulfillment, or send order email. The quote does send its sample shipping address to the configured shipping and tax quote providers. Test approved and declined card flows and verify the webhook before considering production.
+After adding the webhook secret, set `SQUARE_CHECKOUT_ENABLED=true` in the sandbox Worker to expose Square for the allowlisted pilot item. The sandbox Worker also exposes `/checkout/square-test`, a small same-origin test form that uses Square's sandbox Web Payments SDK without cloning the storefront. It is hidden unless sandbox mode, Square checkout, and `SQUARE_SANDBOX_NO_FULFILLMENT=true` are all active. A successful test marks the painting sold in sandbox inventory only; it does not record tax, purchase a label, submit print fulfillment, or send order email. The quote does send its sample shipping address to the configured shipping and tax quote providers. Test approved and declined card flows and verify the webhook before considering production.
 
 ## Production
 
@@ -39,7 +39,7 @@ The checked-in production configuration sets `SQUARE_MODE=live`, `SQUARE_CHECKOU
 
 The production deployment checks Square authentication, an active USD location enabled for credit card processing, and the matching enabled webhook subscription without taking payment. Missing credentials keep the Square option hidden and are reported by verification. Successful live Square payments use the existing reservation, tax recording, fulfillment, sales records, and customer email flow. The sandbox no-fulfillment guard cannot apply in live mode.
 
-Stripe Tax continues to calculate checkout tax. PayPal remains a separate payment option. Sandbox cards cannot be used in production; any deliberate live payment uses a real card and has normal fulfillment effects.
+Stripe Tax continues to calculate checkout tax. The public cart does not offer a new PayPal checkout. Saved PayPal order recovery, return handling, and webhooks remain supported. Sandbox cards cannot be used in production; any deliberate live payment uses a real card and has normal fulfillment effects.
 
 ## Local verification
 

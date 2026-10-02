@@ -17,7 +17,7 @@
   window.vaCartReady=capabilitiesPromise;
   const counts=()=>document.querySelectorAll('[data-cart-count]').forEach(el=>{const count=(buyOnly?clean(read(CART)):cart).reduce((n,i)=>n+i.quantity,0);el.textContent=String(count);el.closest('a')?.setAttribute('aria-label',`Cart, ${count} item${count===1?'':'s'}`);});
   function persistCart(){if(buyOnly){const rest=clean(read(CART)).filter(i=>i.id!==buyOnly);write(CART,[...rest,...cart]);}else write(CART,cart);counts();document.dispatchEvent(new CustomEvent('cart:changed'));}
-   const methodIntersection=()=>['paypal','square','bitcoin'].filter(m=>cart.length&&cart.every(line=>capabilities?.products.find(p=>p.id===line.id)?.methods.includes(m)));
+   const methodIntersection=()=>['square','bitcoin'].filter(m=>cart.length&&cart.every(line=>capabilities?.products.find(p=>p.id===line.id)?.methods.includes(m)));
   const eligible=id=>capabilities?.enabled&&capabilities.products.find(p=>p.id===id&&(p.status==='available'||heldIds.has(id)));
   const pending=d=>d&&!['quoted','paid','cancelled','expired','unavailable','missing'].includes(d.status);
   const makeHold=()=>({holdId:crypto.randomUUID(),key:[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('')});
@@ -104,13 +104,14 @@
     root.querySelector('[data-cart-shipping]').textContent='Calculated below';root.querySelector('[data-cart-tax]').textContent='Calculated below';root.querySelector('[data-cart-total]').textContent='—';
   }
   function updatePaymentControls(enabled=false,methods=methodIntersection()){
+    methods=methods.filter(method=>['square','bitcoin'].includes(method));
     const box=root.querySelector('[data-cart-payments]'),host=root.querySelector('[data-cart-methods]');
     const squareBox=root.querySelector('[data-square-card-box]');
     host.replaceChildren();
     if(squareBox)squareBox.hidden=!(enabled&&methods.includes('square'));
     if(enabled&&methods.includes('square'))ensureSquareCard().catch(error=>announce(`Square card entry could not load: ${error.message}`));
     for(const method of methods){
-      const button=node('button',method==='paypal'?'Continue with PayPal':method==='square'?'Pay with Square using credit card':'Pay with Bitcoin / Lightning','button button-solid');
+      const button=node('button',method==='square'?'Pay with credit card':'Pay with Bitcoin / Lightning','button button-solid');
       button.type='button';button.disabled=!enabled||busy||!!(pendingOrder&&pending(pendingOrder));
       button.addEventListener('click',()=>startPayment(method));host.append(button);
     }
