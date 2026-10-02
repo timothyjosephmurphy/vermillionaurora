@@ -1,5 +1,6 @@
 import prints, {sourcePrintVersion} from './etsy-print-source.mjs';
 import {ETSY_ORIGIN,authorized,json,read,write} from './etsy-connection.mjs';
+import {shippingChoice,shippingPackages,estimateShippingPackages} from './etsy-shipping.mjs';
 const API='https://api.etsy.com/v3/application', SITE='https://vermillionaurora.com';
 const SIZE=513, FRAME=514, QUANTITY=100;
 const labelOf=p=>p.id==='painting-shoreline-at-dusk'?p.title+' — Landscape':p.id==='el-zonte-at-sunrise'?p.title+' — Portrait':p.title;
@@ -52,7 +53,7 @@ async function call(url,env,token,options={}){
 function choices(data){
  const flatten=(nodes,parent='')=>rows(nodes).flatMap(n=>{const name=parent?parent+' › '+n.name:n.name;return rows(n.children).length?flatten(n.children,name):[{id:n.id,name}];});
  return {
- shipping:rows(data[0]).map(x=>({id:x.shipping_profile_id,name:x.title||'Shipping profile '+x.shipping_profile_id})).filter(x=>Number.isSafeInteger(x.id)),
+ shipping:rows(data[0]).map(shippingChoice).filter(x=>Number.isSafeInteger(x.id)),
  readiness:rows(data[1]).map(x=>{const interval=x.processing_days_display_label||((x.min_processing_days??x.min_processing_time??'')+'–'+(x.max_processing_days??x.max_processing_time??'')+' '+(x.processing_time_unit||'days'));return {id:x.readiness_state_id,name:(x.readiness_state==='made_to_order'?'Made to order':'Ready to ship')+' · '+interval};}).filter(x=>Number.isSafeInteger(x.id)),
  partners:rows(data[2]).map(x=>({id:Number(x.production_partner_id??x.partner_id),name:String(x.partner_name??x.name??'').trim()})).filter(x=>Number.isSafeInteger(x.id)&&x.id>0&&x.name),
  taxonomy:flatten(data[3]).filter(x=>Number.isSafeInteger(x.id)&&/\bprints\b|\bposters\b/i.test(x.name)),
@@ -63,13 +64,14 @@ async function preflight(env,token){
  const shop=token.shopId,paths=['/shops/'+shop+'/shipping-profiles','/shops/'+shop+'/readiness-state-definitions?legacy=false','/shops/'+shop+'/production-partners','/seller-taxonomy/nodes','/shops/'+shop+'/policies/return'];
  const data=await Promise.all(paths.map(path=>call(API+path,env,token,{action:'loading Etsy shop setup'})));
  const c=choices(data);
- return {...c,works:prints.map(p=>({id:p.id,title:labelOf(p),sizes:p.variants.map(v=>v.label)}))};
+ return {...c,estimatedShippingPackages:estimateShippingPackages(prints),works:prints.map(p=>({id:p.id,title:labelOf(p),sizes:p.variants.map(v=>v.label)}))};
 }
 const itemText=p=>p.title+' is an archival art print by TJ Murphy, reproduced from an original '+(p.medium||'watercolor pastel')+' painting.\n\n'+p.story.join('\n\n')+'\n\n'+p.variants.map(v=>v.label+' ('+v.paperSize.width+' × '+v.paperSize.height+' in): $'+v.price+' unframed; Black frame $'+v.frames[0].price+', White frame $'+v.frames[1].price+', Natural wood frame $'+v.frames[2].price+'.').join('\n')+'\n\nFramed options use a Snow White mat and Premium Clear acrylic glazing.';
 function createBody(p,s,partner){
  const f=new URLSearchParams();
  for(const [k,v] of Object.entries({quantity:QUANTITY,title:titleOf(p),description:labelOf(p)+'. '+itemText(p),price:Math.min(...p.variants.map(v=>Number(v.price))),who_made:'i_did',when_made:'made_to_order',taxonomy_id:s.taxonomyId,shipping_profile_id:s.shippingProfileId,readiness_state_id:s.readinessStateId,is_supply:'false',type:'physical',production_partner_ids:partner}))f.set(k,String(v));
  if(s.returnPolicyId)f.set('return_policy_id',String(s.returnPolicyId));
+ for(const [key,value] of Object.entries(s.shippingPackages?.[p.id]||{}))f.set(key,String(value));
  f.set('tags',['art print','watercolor art','bitcoin art','wall decor','fine art print','framed art','TJ Murphy'].join(','));
  return f;
 }
@@ -110,13 +112,14 @@ async function create(env,input,now){
  if(input.returnPolicyId&&!returnPolicy)throw Error('Choose a current return policy from your Etsy shop settings.');
  let batch=record.etsyDraftBatch;
  if(batch?.status==='complete')return {batch:batchView(batch),resumed:true};
- const settings={shippingProfileId:shipping.id,readinessStateId:readiness.id,taxonomyId:taxonomy.id,partnerId:partner.id,returnPolicyId:returnPolicy?.id??null};
+ const packages=shippingPackages(shipping.profileType,input.shippingPackages,prints.map(p=>({...p,title:labelOf(p)})));
+ const settings={shippingProfileId:shipping.id,readinessStateId:readiness.id,taxonomyId:taxonomy.id,partnerId:partner.id,returnPolicyId:returnPolicy?.id??null,shippingPackages:packages};
  if(batch?.status==='in_progress')throw Error('A draft batch is already in progress. Reload setup to check its status.');
  if(batch?.status==='needs_resume'){
   if(Object.values(batch.items).some(x=>x.creationUncertain))throw Error('Etsy did not confirm an earlier draft creation. Review the shop drafts before retrying to avoid a duplicate.');
   if(batch.sourcePrintVersion!==sourcePrintVersion)throw Error('Saved draft progress uses a different print catalog. Review the existing drafts before retrying.');
   await checkLegacyDrafts(env,token,batch);
-  if(Object.values(batch.items).some(x=>x.listingId)&&Object.keys(settings).some(k=>(batch.settings[k]??null)!==settings[k]))throw Error('Saved drafts use different shop settings. Keep their original settings when resuming.');
+  if(Object.values(batch.items).some(x=>x.listingId)&&Object.keys(settings).some(k=>JSON.stringify(batch.settings[k]??null)!==JSON.stringify(settings[k])))throw Error('Saved drafts use different shop settings. Keep their original settings when resuming.');
   batch.settings=settings;
   batch.status='in_progress';
  }else batch={sourcePrintVersion,status:'in_progress',items:Object.fromEntries(prints.map(p=>[p.id,{status:'not started'}])),settings};

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {etsyListings} from './etsy-listings.mjs';
 import {ETSY_ORIGIN,read,write} from './etsy-connection.mjs';
 import prints,{sourcePrintVersion} from './etsy-print-source.mjs';
+import {estimateShippingPackages} from './etsy-shipping.mjs';
 const now=Date.parse('2026-10-02T10:00:00Z');
 class Bucket{
  data=new Map();sequence=0;
@@ -18,7 +19,7 @@ function mockEtsy(t,{failFirstInventory=false,draftFailure=null,legacyDrafts=[]}
  t.mock.method(globalThis,'fetch',async(url,options={})=>{
   const target=String(url);calls.push({url:target,options});
   if(target.startsWith('https://vermillionaurora.com/'))return new Response(new Uint8Array([1,2,3]),{headers:{'Content-Type':'image/jpeg'}});
-  if(target.endsWith('/shipping-profiles'))return Response.json({results:[{shipping_profile_id:11,title:'US Shipping'}]});
+  if(target.endsWith('/shipping-profiles'))return Response.json({results:[{shipping_profile_id:11,title:'US Shipping',profile_type:'manual'},{shipping_profile_id:12,title:'US Calculated',profile_type:'calculated'}]});
   if(target.includes('/readiness-state-definitions?legacy=false'))return Response.json({results:[{readiness_state_id:22,readiness_state:'made_to_order',min_processing_days:3,max_processing_days:5,processing_days_display_label:'3–5 days'}]});
   if(target.endsWith('/production-partners'))return Response.json({results:[{production_partner_id:'33',partner_name:'A printing and framing shop'}]});
   if(target.endsWith('/seller-taxonomy/nodes'))return Response.json([{id:44,name:'Art & Collectibles',children:[{id:54,name:'Prints',children:[{id:55,name:'Giclée',children:[]},{id:57,name:'Other',children:[]}]},{id:56,name:'Sculpture',children:[]}]}]);
@@ -33,7 +34,11 @@ function mockEtsy(t,{failFirstInventory=false,draftFailure=null,legacyDrafts=[]}
    return Response.json({products:body.products});
   }
   if(target.endsWith('/images'))return Response.json({listing_image_id:++nextId});
-  if(target.includes('/listings?legacy=false')){if(draftFailure&&!failed){failed=true;return Response.json(draftFailure.body,{status:draftFailure.status});}return Response.json({listing_id:++nextId,state:'draft'});}
+  if(target.includes('/listings?legacy=false')){
+   const form=new URLSearchParams(options.body);
+   if(form.get('shipping_profile_id')==='12')for(const key of ['item_weight','item_length','item_width','item_height','item_weight_unit','item_dimensions_unit'])assert.ok(form.get(key),'Calculated shipping requires '+key);
+   if(draftFailure&&!failed){failed=true;return Response.json(draftFailure.body,{status:draftFailure.status});}return Response.json({listing_id:++nextId,state:'draft'});
+  }
   throw Error('Unexpected mocked Etsy URL '+target);
  });
  return {calls,inventoryCounts};
@@ -49,6 +54,9 @@ test('loads Etsy processing and a private production partner from the current re
  const res=await req(env,'/etsy/listings/preflight');assert.equal(res.status,200);
  const data=await res.json();assert.equal(data.readiness[0].name,'Made to order · 3–5 days');assert.deepEqual(data.partners,[{id:33,name:'A printing and framing shop'}]);
  assert.deepEqual(data.taxonomy.map(x=>x.id),[55,57]);
+ assert.equal(data.shipping[0].profileType,'manual');assert.match(data.shipping[0].name,/Fixed rate/);
+ assert.equal(data.shipping[1].profileType,'calculated');assert.match(data.shipping[1].name,/estimates provided/);
+ assert.equal(Object.keys(data.estimatedShippingPackages).length,5);
  assert.deepEqual(data.returnPolicies,[{id:66,name:'No returns · No exchanges'},{id:77,name:'Returns accepted · Exchanges accepted · 30 days'}]);
  assert.ok(calls.some(x=>x.url.endsWith('/readiness-state-definitions?legacy=false')));
 });
@@ -72,6 +80,7 @@ test('creates five saved drafts with the selected private production partner and
   assert.equal(form.get('production_partner_ids'),'33');
   assert.equal(form.get('return_policy_id'),'66');
   assert.equal(form.get('when_made'),'made_to_order');
+  assert.equal(form.has('item_weight'),false);
   assert.equal(form.getAll('tags').length,1);assert.equal(form.get('tags').split(',').length,7);
   assert.ok(form.get('description').includes('\n\n'));assert.ok(!form.get('description').includes('\\n'));
   assert.equal(Number(form.get('price')),Math.min(...prints[i].variants.map(v=>Number(v.price))));
@@ -171,4 +180,59 @@ test('rejects broad categories and unknown return policies before creating draft
  const env=setup();await connected(env);const {calls}=mockEtsy(t);
  for(const settings of [{...selection,taxonomyId:44},{...selection,returnPolicyId:999}])assert.equal((await req(env,'/etsy/listings/create-drafts',settings)).status,502);
  assert.equal(calls.filter(x=>x.options.method==='POST'||x.options.method==='PUT').length,0);
+});
+
+// Synthetic measurements exercise the API contract; they are not product shipping data.
+const measuredPackages=()=>Object.fromEntries(prints.map((p,i)=>[p.id,{item_weight:String(i+1.25),item_length:String(i+12),item_width:'9',item_height:'1.5',item_weight_unit:'lb',item_dimensions_unit:'in'}]));
+const remoteWrites=calls=>calls.filter(x=>x.options.method==='POST'||x.options.method==='PUT');
+test('calculated shipping validates measurements for every painting before any Etsy writes',async t=>{
+ const env=setup();await connected(env);const {calls}=mockEtsy(t);
+ for(const [field,value] of [['item_weight',0],['item_length',-1],['item_width','Infinity'],['item_height',null],['item_weight',true],['item_weight',[]],['item_weight_unit','stone'],['item_dimensions_unit','pixels']]){
+  const shippingPackages=measuredPackages();shippingPackages[prints.at(-1).id][field]=value;
+  const res=await req(env,'/etsy/listings/create-drafts',{...selection,shippingProfileId:12,shippingPackages});
+  assert.equal(res.status,502,field+' must be rejected');
+ }
+ assert.equal(remoteWrites(calls).length,0);
+ assert.equal((await read(env)).record.etsyDraftBatch,undefined);
+});
+
+test('reuses existing paper and framed parcel estimates and fills missing calculated-shipping values',async t=>{
+ const unframed={id:'paper',title:'Paper',variants:[{paperSize:{width:8,height:10,unit:'in'},frames:[]}]};
+ assert.deepEqual(estimateShippingPackages([unframed]).paper,{item_weight:0.375,item_length:12,item_width:10,item_height:2,item_weight_unit:'lb',item_dimensions_unit:'in'});
+ const framed={...unframed,id:'frame',variants:[{...unframed.variants[0],frames:[{outerSize:{width:12,height:15,unit:'in'}}]}]};
+ assert.deepEqual(estimateShippingPackages([framed]).frame,{item_weight:3,item_length:17,item_width:14,item_height:2,item_weight_unit:'lb',item_dimensions_unit:'in'});
+ const env=setup();await connected(env);const {calls}=mockEtsy(t);
+ const res=await req(env,'/etsy/listings/create-drafts',{...selection,shippingProfileId:12});
+ assert.equal(res.status,200,await res.clone().text());
+ const expected=estimateShippingPackages(prints);
+ const creates=calls.filter(x=>x.url.includes('/listings?legacy=false'));assert.equal(creates.length,5);
+ for(const [i,entry] of creates.entries())for(const [key,value] of Object.entries(expected[prints[i].id]))assert.equal(new URLSearchParams(entry.options.body).get(key),String(value));
+});
+test('sends each painting’s measured values and units to Etsy and resumes with saved measurements',async t=>{
+ const env=setup();await connected(env);const {calls}=mockEtsy(t,{failFirstInventory:true});
+ const settings={...selection,shippingProfileId:12,shippingPackages:measuredPackages()};
+ assert.equal((await req(env,'/etsy/listings/create-drafts',settings)).status,502);
+ const loaded=await (await req(env,'/etsy/listings/preflight')).json();
+ assert.equal(loaded.savedSettings.shippingPackages[prints[0].id].item_weight,1.25);
+ const before=remoteWrites(calls).length;
+ const changed=structuredClone(settings);changed.shippingPackages[prints[0].id].item_weight='999';
+ assert.match((await (await req(env,'/etsy/listings/create-drafts',changed)).json()).error,/Keep their original settings/);
+ assert.equal(remoteWrites(calls).length,before);
+ const res=await req(env,'/etsy/listings/create-drafts',settings);
+ assert.equal(res.status,200,await res.clone().text());
+ const creates=calls.filter(x=>x.url.includes('/listings?legacy=false'));assert.equal(creates.length,5);
+ for(const [i,entry] of creates.entries()){
+  const form=new URLSearchParams(entry.options.body);
+  for(const [key,value] of Object.entries(settings.shippingPackages[prints[i].id]))assert.equal(form.get(key),value);
+ }
+});
+test('a rejected calculated-shipping batch can switch to fixed rate without sending stale measurements',async t=>{
+ const env=setup();await connected(env);await legacyBatch(env);
+ const state=await read(env);state.record.etsyDraftBatch.settings={shippingProfileId:12,readinessStateId:22,taxonomyId:55,partnerId:33,returnPolicyId:66};
+ state.record.etsyDraftBatch.items[prints[0].id].creationRejected=true;
+ await write(env,state.record,state.etag);
+ const {calls}=mockEtsy(t);
+ const res=await req(env,'/etsy/listings/create-drafts',{...selection,shippingPackages:measuredPackages()});
+ assert.equal(res.status,200,await res.clone().text());
+ for(const entry of calls.filter(x=>x.url.includes('/listings?legacy=false'))){const form=new URLSearchParams(entry.options.body);assert.equal(form.get('shipping_profile_id'),'11');assert.equal(form.has('item_weight'),false);}
 });
