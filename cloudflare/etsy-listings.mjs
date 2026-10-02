@@ -111,7 +111,24 @@ async function create(env,input,now){
  if(!partner)throw Error('Choose a current FinerWorks production partner from the shop settings. Private partners may appear under their public description.');
  if(input.returnPolicyId&&!returnPolicy)throw Error('Choose a current return policy from your Etsy shop settings.');
  let batch=record.etsyDraftBatch;
- if(batch?.status==='complete')return {batch:batchView(batch),resumed:true};
+ if(batch?.status==='complete'){
+  let missing=false;
+  for(const p of prints){
+   const item=batch.items[p.id];
+   if(!item?.listingId)throw Error('The saved Etsy batch is incomplete. Reload setup and review its drafts before retrying.');
+   let listing;
+   try{listing=await call(API+'/listings/'+item.listingId,env,token,{action:'checking saved Etsy drafts'});}
+   catch(e){
+    if(e.etsyStatus!==404)throw e;
+    Object.assign(item,{listingId:null,imageUploaded:false,inventoryUploaded:false,listingSettingsApplied:false,status:'not started',creationRejected:undefined,creationUncertain:undefined});
+    missing=true;
+    continue;
+   }
+   if(listing?.state!=='draft')throw Error('A saved Etsy listing is no longer a draft. Review its status in Etsy before creating replacements.');
+  }
+  if(!missing)return {batch:batchView(batch),resumed:true};
+  batch.status='needs_resume';
+ }
  if(setup.currencyCode!=='USD')throw Error('The print catalog is priced in USD. Etsy shop currency must be verified as USD before these prices are sent.');
  const packages=shippingPackages(shipping.profileType,input.shippingPackages,prints.map(p=>({...p,title:labelOf(p)})));
  const settings={shippingProfileId:shipping.id,readinessStateId:readiness.id,taxonomyId:taxonomy.id,partnerId:partner.id,returnPolicyId:returnPolicy?.id??null,shippingPackages:packages};

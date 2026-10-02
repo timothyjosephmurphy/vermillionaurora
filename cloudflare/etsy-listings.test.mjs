@@ -14,7 +14,7 @@ class Bucket{
 const setup=()=>({ETSY_KEYSTRING:'test-key',ETSY_SHARED_SECRET:'test-secret',COMMISSION_MANAGER_TOKEN:'manager',COMMISSION_UPLOADS:new Bucket()});
 async function connected(env){await write(env,{connection:{shopId:42,shopName:'VermillionAurora',userId:'123',accessToken:'123.access',refreshToken:'123.refresh',expiresAt:now+3600000,scopes:['shops_r','listings_r','listings_w']},pending:null},null)}
 function req(env,path,body={},origin=ETSY_ORIGIN,authorization='Bearer manager'){return etsyListings(new Request(ETSY_ORIGIN+path,{method:'POST',headers:{Origin:origin,Authorization:authorization,'Content-Type':'application/json'},body:JSON.stringify(body)}),env,now)}
-function mockEtsy(t,{failFirstInventory=false,draftFailure=null,legacyDrafts=[],readinessProfiles=null,imageType='image/jpeg',rateLimited=false,currencyCode='USD'}={}){
+function mockEtsy(t,{failFirstInventory=false,draftFailure=null,legacyDrafts=[],readinessProfiles=null,imageType='image/jpeg',rateLimited=false,currencyCode='USD',listingStates={}}={}){
  let nextId=900,inventoryCounts=[],failed=false;
  const calls=[];
  t.mock.method(globalThis,'fetch',async(url,options={})=>{
@@ -28,6 +28,8 @@ function mockEtsy(t,{failFirstInventory=false,draftFailure=null,legacyDrafts=[],
   if(target.endsWith('/seller-taxonomy/nodes'))return Response.json([{id:44,name:'Art & Collectibles',children:[{id:54,name:'Prints',children:[{id:55,name:'Giclée',children:[]},{id:57,name:'Other',children:[]}]},{id:56,name:'Sculpture',children:[]}]}]);
   if(target.endsWith('/policies/return'))return Response.json({results:[{return_policy_id:66,accepts_returns:false,accepts_exchanges:false,return_deadline:null},{return_policy_id:77,accepts_returns:true,accepts_exchanges:true,return_deadline:30}]});
   if(target.includes('/listings?state=draft')){const offset=Number(new URL(target).searchParams.get('offset'));return Response.json({count:legacyDrafts.length,results:legacyDrafts.slice(offset,offset+100)});}
+  const listingPath=new URL(target).pathname.match(/\/application\/listings\/(\d+)$/);
+  if(listingPath&&(!options.method||options.method==='GET')){const state=listingStates[listingPath[1]];if(state==='deleted')return Response.json({error:'not found'},{status:404});return Response.json({listing_id:Number(listingPath[1]),state:state||'draft'});}
   if(target.includes('/inventory?')){
    const body=JSON.parse(options.body);inventoryCounts.push(body.products.length);
    // Etsy request prices are numbers in shop currency; its Money object is response-only.
@@ -102,6 +104,29 @@ test('creates five saved drafts with the selected private production partner and
  assert.equal((await again.json()).resumed,true);
  const after=calls.filter(x=>x.url.includes('/listings?legacy=false')||x.url.endsWith('/images')||x.url.includes('/inventory?')).length;
  assert.equal(after,before);
+});
+
+test('rerunning a completed batch recreates only drafts deleted from Etsy',async t=>{
+ const env=setup();await connected(env);const listingStates={};const {calls}=mockEtsy(t,{listingStates});
+ const settings={shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33',returnPolicyId:'66'};
+ const first=await req(env,'/etsy/listings/create-drafts',settings);assert.equal(first.status,200,await first.clone().text());
+ const prior=(await read(env)).record.etsyDraftBatch,deletedId=String(prior.items[prints[2].id].listingId);listingStates[deletedId]='deleted';
+ const retry=await req(env,'/etsy/listings/create-drafts',settings);assert.equal(retry.status,200,await retry.clone().text());
+ const saved=(await read(env)).record.etsyDraftBatch;
+ assert.equal(saved.status,'complete');assert.notEqual(saved.items[prints[2].id].listingId,Number(deletedId));
+ for(const p of prints)if(p.id!==prints[2].id)assert.equal(saved.items[p.id].listingId,prior.items[p.id].listingId);
+ assert.equal(calls.filter(x=>x.url.includes('/listings?legacy=false')).length,6);
+ assert.equal(calls.filter(x=>x.url.endsWith('/images')).length,6);
+ assert.equal(calls.filter(x=>x.url.includes('/inventory?')).length,6);
+});
+
+test('does not create replacements when a saved Etsy listing is active',async t=>{
+ const env=setup();await connected(env);const listingStates={};const {calls}=mockEtsy(t,{listingStates});
+ const settings={shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33',returnPolicyId:'66'};
+ assert.equal((await req(env,'/etsy/listings/create-drafts',settings)).status,200);
+ const saved=(await read(env)).record.etsyDraftBatch;listingStates[String(saved.items[prints[0].id].listingId)]='active';
+ const retry=await req(env,'/etsy/listings/create-drafts',settings);assert.match((await retry.json()).error,/no longer a draft/);
+ assert.equal(calls.filter(x=>x.url.includes('/listings?legacy=false')).length,5);
 });
 
 test('partial provider failure resumes saved progress without duplicating a listing',async t=>{
