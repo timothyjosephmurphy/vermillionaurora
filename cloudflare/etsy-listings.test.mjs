@@ -21,7 +21,7 @@ function mockEtsy(t,{failFirstInventory=false,draftFailure=null,legacyDrafts=[],
   const target=String(url);calls.push({url:target,options});
   if(rateLimited)return Response.json({error:'rate limit'},{status:429,headers:{'retry-after':'9'}});
   if(target.startsWith('https://vermillionaurora.com/'))return new Response(new Uint8Array([1,2,3]),{headers:{'Content-Type':imageType}});
-  if(target.endsWith('/shipping-profiles'))return Response.json({results:[{shipping_profile_id:11,title:'US Shipping',profile_type:'manual'},{shipping_profile_id:12,title:'US Calculated',profile_type:'calculated'}]});
+  if(target.endsWith('/shipping-profiles'))return Response.json({results:[{shipping_profile_id:11,title:'Prints Shipping',profile_type:'manual'},{shipping_profile_id:12,title:'US Calculated',profile_type:'calculated'}]});
   if(target.endsWith('/shops/42'))return Response.json({shop_id:42,currency_code:currencyCode});
   if(target.includes('/readiness-state-definitions?legacy=false')){const all=readinessProfiles||[{readiness_state_id:22,readiness_state:'made_to_order',min_processing_days:3,max_processing_days:5,processing_days_display_label:'3–5 days'}],offset=Number(new URL(target).searchParams.get('offset'));return Response.json({count:all.length,results:all.slice(offset,offset+100)});}
   if(target.endsWith('/production-partners'))return Response.json({results:[{production_partner_id:'33',partner_name:'A printing and framing shop'}]});
@@ -36,6 +36,7 @@ function mockEtsy(t,{failFirstInventory=false,draftFailure=null,legacyDrafts=[],
    if(failFirstInventory&&!failed){failed=true;return Response.json({error:'private provider error'},{status:500});}
    return Response.json({products:body.products});
   }
+  if(options.method==='PATCH'&&target.includes('/shops/42/listings/'))return Response.json({listing_id:Number(target.split('/').at(-1)),state:'draft'});
   if(target.endsWith('/images'))return Response.json({listing_image_id:++nextId});
   if(target.includes('/listings?legacy=false')){
    const form=new URLSearchParams(options.body);
@@ -60,7 +61,8 @@ test('loads Etsy processing and a private production partner from the current re
  assert.equal(data.shipping[0].profileType,'manual');assert.match(data.shipping[0].name,/Fixed rate/);
  assert.equal(data.shipping[1].profileType,'calculated');assert.match(data.shipping[1].name,/estimates provided/);
  assert.equal(Object.keys(data.estimatedShippingPackages).length,5);
- assert.deepEqual(data.returnPolicies,[{id:66,name:'No returns · No exchanges'},{id:77,name:'Returns accepted · Exchanges accepted · 30 days'}]);
+ assert.equal(data.defaultShippingProfileId,11);assert.equal(data.defaultReturnPolicyId,77);
+ assert.deepEqual(data.returnPolicies,[{id:66,acceptsReturns:false,acceptsExchanges:false,returnDeadline:null,name:'No returns · No exchanges'},{id:77,acceptsReturns:true,acceptsExchanges:true,returnDeadline:30,name:'Simple policy · 30 days'}]);
  assert.ok(calls.some(x=>x.url.endsWith('/readiness-state-definitions?legacy=false&limit=100&offset=0')));
 });
 
@@ -82,6 +84,7 @@ test('creates five saved drafts with the selected private production partner and
   assert.equal(form.get('shipping_profile_id'),'11');
   assert.equal(form.get('production_partner_ids'),'33');
   assert.equal(form.get('return_policy_id'),'66');
+  assert.equal(form.get('who_made'),'someone_else');
   assert.equal(form.get('when_made'),'made_to_order');
   assert.equal(form.has('item_weight'),false);
   assert.equal(form.getAll('tags').length,1);assert.equal(form.get('tags').split(',').length,7);
@@ -294,6 +297,29 @@ test('loads processing profiles beyond the first documented page',async t=>{
  const {calls}=mockEtsy(t,{readinessProfiles});const result=await (await req(env,'/etsy/listings/preflight')).json();
  assert.equal(result.readiness.length,101);assert.equal(result.readiness.at(-1).id,1100);
  assert.equal(calls.filter(x=>x.url.includes('readiness-state-definitions')).length,2);
+});
+test('uses the Prints Shipping and Simple policy defaults and marks FinerWorks as the maker',async t=>{
+ const env=setup();await connected(env);const {calls}=mockEtsy(t);
+ const result=await req(env,'/etsy/listings/create-drafts',{readinessStateId:22,taxonomyId:55,productionPartnerId:'33'});
+ assert.equal(result.status,200,await result.clone().text());
+ const requests=calls.filter(x=>x.url.includes('/listings?legacy=false'));
+ assert.equal(requests.length,5);
+ for(const request of requests){const form=new URLSearchParams(request.options.body);assert.equal(form.get('shipping_profile_id'),'11');assert.equal(form.get('return_policy_id'),'77');assert.equal(form.get('who_made'),'someone_else');}
+});
+test('resumes the Warsaw draft with default settings and updates its maker and return policy',async t=>{
+ const env=setup();await connected(env);
+ const {record,etag}=await read(env);
+ const items=Object.fromEntries(prints.map(p=>[p.id,{status:'not started'}]));
+ items[prints[0].id]={listingId:800,imageUploaded:true,inventoryUploaded:false,status:'draft needs attention'};
+ await write(env,{...record,etsyDraftBatch:{sourcePrintVersion,status:'needs_resume',settings:{shippingProfileId:11,readinessStateId:22,taxonomyId:55,partnerId:33,returnPolicyId:null,shippingPackages:null},items}},etag);
+ const {calls}=mockEtsy(t);
+ const result=await req(env,'/etsy/listings/create-drafts',{readinessStateId:22,taxonomyId:55,productionPartnerId:'33'});
+ assert.equal(result.status,200,await result.clone().text());
+ const update=calls.find(x=>x.options.method==='PATCH');assert.ok(update);
+ const changed=new URLSearchParams(update.options.body);assert.equal(changed.get('who_made'),'someone_else');assert.equal(changed.get('return_policy_id'),'77');assert.equal(changed.get('shipping_profile_id'),'11');assert.equal(changed.get('production_partner_ids'),'33');
+ assert.equal(calls.filter(x=>x.url.includes('/listings?legacy=false')).length,4);
+ assert.equal(calls.filter(x=>x.url.endsWith('/images')).length,4);
+ assert.equal(calls.filter(x=>x.url.includes('/listings/800/inventory?')).length,1);
 });
 test('rejects undocumented image formats before draft creation and explains rate-limit waits',async t=>{
  const env=setup();await connected(env);const mock=mockEtsy(t,{imageType:'image/webp'});
