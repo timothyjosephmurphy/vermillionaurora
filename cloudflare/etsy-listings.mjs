@@ -43,7 +43,7 @@ function choices(data){
  const flatten=(nodes,parent='')=>rows(nodes).flatMap(n=>{const name=parent?parent+' › '+n.name:n.name;return [{id:n.id,name}].concat(flatten(n.children||[],name));});
  return {
  shipping:rows(data[0]).map(x=>({id:x.shipping_profile_id,name:x.title||'Shipping profile '+x.shipping_profile_id})).filter(x=>Number.isSafeInteger(x.id)),
- readiness:rows(data[1]).map(x=>({id:x.readiness_state_id,name:(x.readiness_state==='made_to_order'?'Made to order':'Ready to ship')+' · '+(x.min_processing_time??'')+'–'+(x.max_processing_time??'')+' '+(x.processing_time_unit||'days')})).filter(x=>Number.isSafeInteger(x.id)),
+ readiness:rows(data[1]).map(x=>{const interval=x.processing_days_display_label||((x.min_processing_days??x.min_processing_time??'')+'–'+(x.max_processing_days??x.max_processing_time??'')+' '+(x.processing_time_unit||'days'));return {id:x.readiness_state_id,name:(x.readiness_state==='made_to_order'?'Made to order':'Ready to ship')+' · '+interval};}).filter(x=>Number.isSafeInteger(x.id)),
  partners:rows(data[2]).map(x=>({id:x.production_partner_id||x.partner_id,name:x.partner_name||x.name||''})).filter(x=>Number.isSafeInteger(x.id)),
  taxonomy:flatten(data[3]).filter(x=>Number.isSafeInteger(x.id)&&/print|art|poster/i.test(x.name)).slice(0,500)
  };
