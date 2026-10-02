@@ -62,3 +62,12 @@ test('expired diagnostic tokens cannot call the provider',async()=>{
   const request=new Request('https://worker/checkout/prints/verify',{method:'POST',headers:{Authorization:`Bearer ${token}`},body:'{}'});
   assert.equal((await finerworksDiagnostic(request,{...env,FINERWORKS_AUDIT_TOKEN:token},products)).status,404);
 });
+
+test('edition preflight rejects unapproved selections and cannot submit test orders',async()=>{
+  const {default:catalog}=await import('../catalog/products.json',{with:{type:'json'}});
+  globalThis.fetch=()=>assert.fail('Rejected editions must not contact the provider');
+  const base={task:'preflight',productId:'paul-murphy-painting-55',sizeKey:'full',quantity:1};
+  for(const change of [{quantity:0},{sizeKey:'unknown'},{finishKey:'unknown'},{task:'test-order'}]){
+    assert.equal((await finerworksDiagnostic(req({...base,...change}),env,catalog)).status,400);
+  }
+});

@@ -5,6 +5,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 import {gzipSync} from 'node:zlib';
 import assert from 'node:assert/strict';
 import config from '../catalog/prints.json' with {type:'json'};
+import prints from '../cloudflare/print-catalog.mjs';
 import products from '../catalog/products.json' with {type:'json'};
 const base='https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev';
 const cf='https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/vermillion-checkout-sandbox/secrets';
@@ -43,7 +44,38 @@ try {
   for(let i=0;i<18;i++){health=await read('/checkout/health');if(health.mode==='sandbox'&&health.release===process.env.DEPLOYED_SHA)break;await new Promise(r=>setTimeout(r,5000));}
   assert.equal(health.mode,'sandbox');assert.equal(health.release,process.env.DEPLOYED_SHA);
   const provider=await read('/checkout/prints/health');assert.equal(provider.provider,'finerworks');assert.equal(provider.enabled,true);assert.equal(provider.readOnly,false);
-  const cart=await read('/checkout/cart/catalog');assert.equal(cart.products.filter(p=>p.type==='print'&&p.sampleOnly&&!p.mat&&!p.frame&&p.methods.includes('paypal')).length,6);
+  const cart=await read('/checkout/cart/catalog');
+  if(!Object.values(config.artworks).some(a=>a.sampleOnly||a.testOnly)){
+    assert(!process.argv.includes('--test-orders'),'The low-resolution pilot is retired; this edition audit never submits print orders');
+    const expected=Object.values(prints),listed=cart.products.filter(p=>p.type==='print');
+    assert.deepEqual(listed.map(p=>p.id).sort(),expected.map(p=>p.id).sort());
+    assert(listed.every(p=>p.methods.includes('paypal')&&!p.sampleOnly));
+    const {createHash}=await import('node:crypto');
+    for(const art of Object.values(config.artworks).filter(a=>a.enabled))for(const v of Object.values(art.variants)){
+      const file=readFileSync(new URL('../static'+new URL(v.asset.url).pathname,import.meta.url));
+      assert.equal(createHash('sha256').update(file).digest('hex'),v.asset.sha256);
+    }
+    installed=true;await cloudflare('PUT','',{name,text:secret,type:'secret_text'});
+    report.credentialsOk=(await verify({task:'credentials'})).credentialsOk;assert(report.credentialsOk);
+    const ids=['painting-portrait-in-green','painting-portrait-in-gold'];
+    const prices=await verify({task:'edition-prices',productIds:ids});report.prices.push(prices);
+    assert.equal(prices.ordersSubmitted,false);assert.equal(prices.variants.length,6);
+    for(const p of prices.variants)assert.equal(p.amount,config.artworks[p.productId].variants[p.key].amount);
+    const address={name:'Sandbox Verification',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'};
+    // Use an already-published immutable file for provider validation before the
+    // new website release; every newly prepared file is verified locally above.
+    report.preflight=await verify({task:'preflight',productId:'paul-murphy-painting-55',sizeKey:'full',quantity:1,address});
+    assert.equal(report.preflight.validated,true);assert.equal(report.preflight.ordersSubmitted,false);
+    const selection=['print-painting-portrait-in-green-small','print-painting-portrait-in-gold-small','print-painting-portrait-with-hat-full-frame-black','print-warszawska-syrenka-small-frame-natural'];
+    let order;
+    try{
+      const q=await read('/checkout/cart/quote',{catalogVersion:cart.version,items:selection.map(id=>({id,quantity:1})),email:'checkout-verification@example.test',address});
+      order={orderId:q.orderId,key:q.key};report.cartQuote=q.quote;
+      assert.equal(q.quote.base,selection.reduce((sum,id)=>sum+Number(prints[id].amount),0).toFixed(2));assert(Number(q.quote.shipping)>0);
+    }finally{if(order)assert.equal((await read('/checkout/cart/cancel',order)).status,'cancelled');}
+    console.log(`PASS: ${listed.length} edition variants, exact generated files, current print prices, validation-only preflight and framed/unframed shipping/tax quotes. No payment or order submitted.`);
+  }else{
+    assert.equal(cart.products.filter(p=>p.type==='print'&&p.sampleOnly&&!p.mat&&!p.frame&&p.methods.includes('paypal')).length,6);
   for(const art of Object.values(config.artworks).filter(a=>a.testOnly||a.sampleOnly)) {
     const file=art.variants.small.asset;const r=await fetch(file.url);assert.equal(r.status,200);
     const {createHash}=await import('node:crypto');assert.equal(createHash('sha256').update(Buffer.from(await r.arrayBuffer())).digest('hex'),file.sha256);
@@ -115,6 +147,7 @@ try {
     console.log('PASS: three mat-inclusive shipping quotes and two-copy print-with-mat validation. No orders submitted.');
   }
   if(cartError)throw cartError;
+  }
 }catch(error){report.error=error.message;throw error;}
 finally {
   try {if(installed){await cloudflare('DELETE','/'+name);console.log('Temporary FinerWorks audit credential removed.');}}
