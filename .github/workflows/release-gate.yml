@@ -28,7 +28,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Confirm generated catalogs are committed
-        run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
+        run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs cloudflare/etsy-print-source.mjs
       - name: Validate production Worker configuration
         run: |
           node --input-type=module <<'NODE'
