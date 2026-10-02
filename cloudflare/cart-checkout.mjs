@@ -13,7 +13,8 @@ export async function cartCheckout(request,env) {
     if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS)return reply({enabled:false,version:catalogVersion,products:[]});
     const products=await Promise.all(Object.entries(catalog).filter(([id])=>paymentMethods(env,id).length).map(async([id,p])=>({id,title:p.title,amount:p.amount,methods:paymentMethods(env,id),status:await env.PAINTING_STOCK.getByName(id).status()})));
     for(const [id,p] of Object.entries(prints))if(paymentMethods(env,id).length)products.push({...publicCartItem({...p,quantity:1}),methods:paymentMethods(env,id),status:'available'});
-    return reply({enabled:true,version:catalogVersion,products});
+    const squareReady=products.some(product=>product.methods.includes('square'));
+    return reply({enabled:true,version:catalogVersion,products,...(squareReady?{square:{applicationId:env.SQUARE_APPLICATION_ID,locationId:env.SQUARE_LOCATION_ID,mode:env.SQUARE_MODE}}:{})});
   }
   if(request.method!=='POST'||!['hold','quote','start','status','capture','cancel'].includes(action)||!env.CART_ORDERS)return reply({error:'Not found'},404);
   const raw=await request.text();if(raw.length>12000)return reply({error:'Request too large'},413);
@@ -48,7 +49,7 @@ export async function cartCheckout(request,env) {
     if(!ORDER_ID.test(body.orderId||'')||!ACCESS_KEY.test(body.key||''))return reply({error:'Invalid order reference'},400);
     const order=env.CART_ORDERS.getByName(body.orderId);
     if(!await order.authorize(await keyHash(body.key)))return reply({error:'Order not found'},404);
-    if(action==='start')return reply(await order.start(body.method));
+    if(action==='start')return reply(await order.start(body.method,{sourceId:body.sourceId}));
     if(action==='capture')return reply(await order.capture());
     if(action==='cancel')return reply(await order.cancel());
     return reply(await order.publicStatus());

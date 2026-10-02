@@ -52,7 +52,7 @@ export function ipnRecord(env,fields) {
       state:text(fields.get('address_state')),zip:text(fields.get('address_zip')),country:text(fields.get('address_country_code'))}};
 }
 
-const columns=['paidAt','kind','status','title','slug','currency','itemAmount','shipping','tax','gross','paypalFee','feeCurrency','paypalNet','netCurrency',
+const columns=['paidAt','kind','status','title','slug','currency','itemAmount','shipping','tax','gross','paypalFee','providerFee','feeCurrency','paypalNet','netCurrency',
   'provider','invoiceId','transactionId','orderId','parentTransactionId','source','dateEstimated','buyerName','buyerEmail','labelStatus','carrier','trackingNumber','shippoTransactionId','insuranceAmount','insuranceConfirmed','taxRecorded','inventoryPublished','emailSentAt'];
 export function salesCsv(records) {
   const cell=value=>{

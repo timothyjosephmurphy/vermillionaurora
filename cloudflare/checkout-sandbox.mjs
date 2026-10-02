@@ -9,6 +9,7 @@ import { checkout, checkoutWebhook } from './paypal-orders.mjs';
 import { verifySandbox } from './checkout-verification.mjs';
 import { shippingCheck } from './shipping-check.mjs';
 import {printTestPage} from './print-test-page.mjs';
+import {squareWebhook} from './square-webhook.mjs';
 import printTestAssets from './print-test-assets.generated.mjs';
 import printCatalog from './print-catalog.mjs';
 export { PaintingStock } from './painting-stock.mjs';
@@ -48,6 +49,7 @@ export default {
     if (path==='/checkout/prints/billing-setup')return finerworksBillingSetup(request,env);
     if (path.startsWith('/checkout/prints/')) return printApi(request,env);
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
+    if (path==='/checkout/square/webhook')return squareWebhook(request,env);
     if (path==='/checkout/shipping-check') return shippingCheck(request,env);
     if (path==='/checkout/verification') return verifySandbox(request,env);
     if (path==='/checkout/test' && request.method==='GET') return new Response(page,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
