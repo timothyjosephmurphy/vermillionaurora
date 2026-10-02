@@ -1,11 +1,9 @@
 import prints, {sourcePrintVersion} from './etsy-print-source.mjs';
 import {ETSY_ORIGIN,authorized,json,read,write} from './etsy-connection.mjs';
 import {shippingChoice,shippingPackages,estimateShippingPackages} from './etsy-shipping.mjs';
+import {labelOf,titleOf,buildListingPlans} from './etsy-listing-plan.mjs';
 const API='https://api.etsy.com/v3/application', SITE='https://vermillionaurora.com';
-const SIZE=513, FRAME=514, QUANTITY=100;
-const labelOf=p=>p.id==='painting-shoreline-at-dusk'?p.title+' — Landscape':p.id==='el-zonte-at-sunrise'?p.title+' — Portrait':p.title;
 const rows=x=>Array.isArray(x?.results)?x.results:Array.isArray(x)?x:[];
-const titleOf=p=>labelOf(p)+' Art Print · Framed or Unframed';
 // Only expose validation messages to the authenticated owner; never dump a provider response.
 function validationDetail(data,env,token){
  const messages=[data?.error,data?.message,data?.error_description,...(Array.isArray(data?.errors)?data.errors:[])].map(x=>typeof x==='string'?x:typeof x?.message==='string'?x.message:'').filter(Boolean);
@@ -25,7 +23,7 @@ async function connection(env,now){
  if(record.etsyRefreshUntil>now)throw Error('Etsy authorization is refreshing. Retry in a few seconds.');
  etag=await persist(env,{...record,etsyRefreshUntil:now+30000},etag);
  let res;
- try{res=await fetch('https://api.etsy.com/v3/public/oauth/token',{method:'POST',redirect:'manual',signal:AbortSignal.timeout(15000),headers:{'Content-Type':'application/x-www-form-urlencoded','x-api-key':env.ETSY_KEYSTRING+':'+env.ETSY_SHARED_SECRET},body:new URLSearchParams({grant_type:'refresh_token',client_id:env.ETSY_KEYSTRING,refresh_token:token.refreshToken})});}
+ try{res=await fetch('https://api.etsy.com/v3/public/oauth/token',{method:'POST',redirect:'manual',signal:AbortSignal.timeout(15000),headers:{'Content-Type':'application/x-www-form-urlencoded; charset=utf-8','x-api-key':env.ETSY_KEYSTRING+':'+env.ETSY_SHARED_SECRET},body:new URLSearchParams({grant_type:'refresh_token',client_id:env.ETSY_KEYSTRING,refresh_token:token.refreshToken})});}
  catch{await write(env,{...record,etsyRefreshUntil:null},etag);throw Error('Etsy token refresh failed. Retry the connection check.');}
  if(res.status>=300&&res.status<400){await write(env,{...record,etsyRefreshUntil:null},etag);throw Error('Etsy redirected token refresh; stopped safely.');}
  let refreshed;
@@ -46,7 +44,9 @@ async function call(url,env,token,options={}){
  let data;try{data=await res.json();}catch{}
  if(!res.ok){
   const detail=[400,422].includes(res.status)?validationDetail(data,env,token):'';
-  throw Object.assign(Error('Etsy returned HTTP '+res.status+' during '+(action||'the request')+'.'+(detail?' '+detail:'')),{etsyStatus:res.status});
+  const retryAfter=Number(res.headers.get('retry-after'));
+  const retry=res.status===429&&Number.isFinite(retryAfter)&&retryAfter>0?' Wait at least '+Math.ceil(retryAfter)+' seconds before retrying.':'';
+  throw Object.assign(Error('Etsy returned HTTP '+res.status+' during '+(action||'the request')+'.'+(detail?' '+detail:'')+retry),{etsyStatus:res.status});
  }
  return data;
 }
@@ -57,31 +57,26 @@ function choices(data){
  readiness:rows(data[1]).map(x=>{const interval=x.processing_days_display_label||((x.min_processing_days??x.min_processing_time??'')+'–'+(x.max_processing_days??x.max_processing_time??'')+' '+(x.processing_time_unit||'days'));return {id:x.readiness_state_id,name:(x.readiness_state==='made_to_order'?'Made to order':'Ready to ship')+' · '+interval};}).filter(x=>Number.isSafeInteger(x.id)),
  partners:rows(data[2]).map(x=>({id:Number(x.production_partner_id??x.partner_id),name:String(x.partner_name??x.name??'').trim()})).filter(x=>Number.isSafeInteger(x.id)&&x.id>0&&x.name),
  taxonomy:flatten(data[3]).filter(x=>Number.isSafeInteger(x.id)&&/\bprints\b|\bposters\b/i.test(x.name)),
- returnPolicies:rows(data[4]).map(x=>({id:Number(x.return_policy_id),name:(x.accepts_returns?'Returns accepted':'No returns')+' · '+(x.accepts_exchanges?'Exchanges accepted':'No exchanges')+(x.return_deadline?' · '+x.return_deadline+' days':'')})).filter(x=>Number.isSafeInteger(x.id)&&x.id>0)
+ returnPolicies:rows(data[4]).map(x=>({id:Number(x.return_policy_id),name:(x.accepts_returns?'Returns accepted':'No returns')+' · '+(x.accepts_exchanges?'Exchanges accepted':'No exchanges')+(x.return_deadline?' · '+x.return_deadline+' days':'')})).filter(x=>Number.isSafeInteger(x.id)&&x.id>0),
+ currencyCode:String(data[5]?.currency_code||'').toUpperCase()
  };
 }
 async function preflight(env,token){
- const shop=token.shopId,paths=['/shops/'+shop+'/shipping-profiles','/shops/'+shop+'/readiness-state-definitions?legacy=false','/shops/'+shop+'/production-partners','/seller-taxonomy/nodes','/shops/'+shop+'/policies/return'];
+ const shop=token.shopId,paths=['/shops/'+shop+'/shipping-profiles','/shops/'+shop+'/readiness-state-definitions?legacy=false&limit=100&offset=0','/shops/'+shop+'/production-partners','/seller-taxonomy/nodes','/shops/'+shop+'/policies/return','/shops/'+shop];
  const data=await Promise.all(paths.map(path=>call(API+path,env,token,{action:'loading Etsy shop setup'})));
+ // Processing profiles are paginated (default 25, maximum page size 100).
+ if(Array.isArray(data[1]?.results)){
+  const profiles=[...data[1].results];let page=data[1];
+  for(let offset=100;page.results.length===100&&(!Number.isFinite(page.count)||offset<page.count);offset+=100){
+   if(offset>=10000)throw Error('Etsy returned too many processing profiles. Narrow the shop setup before retrying.');
+   page=await call(API+'/shops/'+shop+'/readiness-state-definitions?legacy=false&limit=100&offset='+offset,env,token,{action:'loading Etsy processing profiles'});
+   if(!Array.isArray(page?.results))throw Error('Etsy returned an unreadable processing profile page.');
+   profiles.push(...page.results);
+  }
+  data[1]={results:profiles};
+ }
  const c=choices(data);
  return {...c,estimatedShippingPackages:estimateShippingPackages(prints),works:prints.map(p=>({id:p.id,title:labelOf(p),sizes:p.variants.map(v=>v.label)}))};
-}
-const itemText=p=>p.title+' is an archival art print by TJ Murphy, reproduced from an original '+(p.medium||'watercolor pastel')+' painting.\n\n'+p.story.join('\n\n')+'\n\n'+p.variants.map(v=>v.label+' ('+v.paperSize.width+' × '+v.paperSize.height+' in): $'+v.price+' unframed; Black frame $'+v.frames[0].price+', White frame $'+v.frames[1].price+', Natural wood frame $'+v.frames[2].price+'.').join('\n')+'\n\nFramed options use a Snow White mat and Premium Clear acrylic glazing.';
-function createBody(p,s,partner){
- const f=new URLSearchParams();
- for(const [k,v] of Object.entries({quantity:QUANTITY,title:titleOf(p),description:labelOf(p)+'. '+itemText(p),price:Math.min(...p.variants.map(v=>Number(v.price))),who_made:'i_did',when_made:'made_to_order',taxonomy_id:s.taxonomyId,shipping_profile_id:s.shippingProfileId,readiness_state_id:s.readinessStateId,is_supply:'false',type:'physical',production_partner_ids:partner}))f.set(k,String(v));
- if(s.returnPolicyId)f.set('return_policy_id',String(s.returnPolicyId));
- for(const [key,value] of Object.entries(s.shippingPackages?.[p.id]||{}))f.set(key,String(value));
- f.set('tags',['art print','watercolor art','bitcoin art','wall decor','fine art print','framed art','TJ Murphy'].join(','));
- return f;
-}
-function inventory(p,readiness){
- const products=[];
- for(const size of p.variants){
-  const variants=[{name:'Unframed',price:size.price,sku:size.sku},...size.frames.map(f=>({name:f.label,price:f.price,sku:f.sku}))];
-  for(const v of variants)products.push({sku:v.sku,property_values:[{property_id:SIZE,property_name:'Print size',value_ids:[],values:[size.label],scale_id:null},{property_id:FRAME,property_name:'Frame',value_ids:[],values:[v.name],scale_id:null}],offerings:[{price:Number(v.price),quantity:QUANTITY,is_enabled:true,readiness_state_id:readiness}]});
- }
- return {products,price_on_property:[SIZE,FRAME],quantity_on_property:[],readiness_state_on_property:[],sku_on_property:[SIZE,FRAME]};
 }
 // Older batches did not record whether a failed POST reached Etsy. Check drafts before retrying them.
 async function checkLegacyDrafts(env,token,batch){
@@ -98,7 +93,7 @@ async function checkLegacyDrafts(env,token,batch){
 async function artwork(p){
  const url=new URL(p.image.src,SITE);if(url.origin!==SITE)throw Error('Selected artwork image is not hosted on Vermillion Aurora.');
  let r;try{r=await fetch(url,{redirect:'manual',signal:AbortSignal.timeout(15000)});}catch{throw Error('The painting image could not be fetched from the website.');}
- const type=(r.headers.get('content-type')||'').split(';')[0];if(!r.ok||r.status>=300||!['image/jpeg','image/png','image/webp'].includes(type))throw Error('The painting image could not be fetched as a supported image.');
+ const type=(r.headers.get('content-type')||'').split(';')[0];if(!r.ok||r.status>=300||!['image/jpeg','image/png'].includes(type))throw Error('The painting image must be a JPEG or PNG from the website.');
  const bytes=await r.arrayBuffer();if(!bytes.byteLength||bytes.byteLength>8*1024*1024)throw Error('The painting image is empty or exceeds 8 MB.');
  return {blob:new Blob([bytes],{type}),name:p.id+'.'+(type==='image/jpeg'?'jpg':type.slice(6))};
 }
@@ -112,8 +107,11 @@ async function create(env,input,now){
  if(input.returnPolicyId&&!returnPolicy)throw Error('Choose a current return policy from your Etsy shop settings.');
  let batch=record.etsyDraftBatch;
  if(batch?.status==='complete')return {batch:batchView(batch),resumed:true};
+ if(setup.currencyCode!=='USD')throw Error('The print catalog is priced in USD. Etsy shop currency must be verified as USD before these prices are sent.');
  const packages=shippingPackages(shipping.profileType,input.shippingPackages,prints.map(p=>({...p,title:labelOf(p)})));
  const settings={shippingProfileId:shipping.id,readinessStateId:readiness.id,taxonomyId:taxonomy.id,partnerId:partner.id,returnPolicyId:returnPolicy?.id??null,shippingPackages:packages};
+ const plans=await buildListingPlans(prints,settings);
+ const byId=new Map(plans.map(plan=>[plan.id,plan]));
  if(batch?.status==='in_progress')throw Error('A draft batch is already in progress. Reload setup to check its status.');
  if(batch?.status==='needs_resume'){
   if(Object.values(batch.items).some(x=>x.creationUncertain))throw Error('Etsy did not confirm an earlier draft creation. Review the shop drafts before retrying to avoid a duplicate.');
@@ -123,27 +121,30 @@ async function create(env,input,now){
   batch.settings=settings;
   batch.status='in_progress';
  }else batch={sourcePrintVersion,status:'in_progress',items:Object.fromEntries(prints.map(p=>[p.id,{status:'not started'}])),settings};
+ batch.skuMap=Object.assign({},...plans.map(plan=>plan.skuMap));batch.skuMapVersion=1;
  record={...record,etsyDraftBatch:batch};etag=await persist(env,record,etag);
  for(const p of prints){
-  const item=batch.items[p.id];
+  const item=batch.items[p.id],plan=byId.get(p.id);let creationAttempted=false;
   try{
+   const pic=!item.imageUploaded?await artwork(p):null;
    if(!item.listingId){
-    const d=await call(API+'/shops/'+token.shopId+'/listings?legacy=false',env,token,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:createBody(p,settings,partner.id),action:'creating a draft'});
+    creationAttempted=true;
+    const d=await call(API+'/shops/'+token.shopId+'/listings?legacy=false',env,token,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=utf-8'},body:plan.body,action:'creating a draft'});
     if(!Number.isSafeInteger(d?.listing_id))throw Error('Etsy returned no draft listing ID.');
     item.listingId=d.listing_id;item.status='draft created';etag=await persist(env,{...record,etsyDraftBatch:batch},etag);
    }
    if(!item.imageUploaded){
-    const pic=await artwork(p),form=new FormData();form.set('image',pic.blob,pic.name);
+    const form=new FormData();form.set('image',pic.blob,pic.name);form.set('rank','1');form.set('overwrite','true');form.set('alt_text',Array.from(p.image.alt||labelOf(p)).slice(0,500).join(''));
     await call(API+'/shops/'+token.shopId+'/listings/'+item.listingId+'/images',env,token,{method:'POST',body:form,action:'uploading artwork'});
     item.imageUploaded=true;etag=await persist(env,{...record,etsyDraftBatch:batch},etag);
    }
    if(!item.inventoryUploaded){
-    await call(API+'/listings/'+item.listingId+'/inventory?legacy=false',env,token,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(inventory(p,readiness.id)),action:'setting sizes and frame options'});
+    await call(API+'/listings/'+item.listingId+'/inventory?legacy=false&max_variations_supported=2',env,token,{method:'PUT',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify(plan.inventory),action:'setting sizes and frame options'});
     item.inventoryUploaded=true;item.status='draft ready';etag=await persist(env,{...record,etsyDraftBatch:batch},etag);
    }
   }catch(e){
    item.status=item.listingId?'draft needs attention':'creation failed';
-   if(!item.listingId){item.creationRejected=[400,401,403,404,422,429].includes(e.etsyStatus);item.creationUncertain=!item.creationRejected;}
+   if(!item.listingId){item.creationRejected=!creationAttempted||[400,401,403,404,422,429].includes(e.etsyStatus);item.creationUncertain=!item.creationRejected;}
    batch.status='needs_resume';try{await persist(env,{...record,etsyDraftBatch:batch},etag);}catch{}
    throw Error((e.message||'Etsy listing failed.')+' Batch stopped at '+p.title+'. '+(item.creationUncertain?'Etsy may have created a draft. Review the shop drafts before retrying.':'Partial progress is saved; reload setup to resume.'));
   }
