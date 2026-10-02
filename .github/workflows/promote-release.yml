@@ -14,12 +14,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  gate:
-    uses: ./.github/workflows/release-gate.yml
-
   propose:
     if: github.ref == 'refs/heads/main'
-    needs: gate
     runs-on: ubuntu-latest
     steps:
       - name: Open or update the release promotion pull request
@@ -28,7 +24,7 @@ jobs:
           RELEASE_SHA: ${{ github.sha }}
         run: |
           body=$(cat <<EOF
-          The reusable Release gate passed for commit $RELEASE_SHA.
+          Commit $RELEASE_SHA passed the required main pull request gate.
 
           Merge this promotion only after the website Worker's Cloudflare Workers Builds production branch is configured as release. Merging publishes the website first; the release deployment then waits for the matching catalog version before deploying the checkout API.
           EOF
