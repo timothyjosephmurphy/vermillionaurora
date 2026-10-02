@@ -16,7 +16,7 @@ test('every enabled book print size offers three ready, supplier-quoted frames',
       assert.deepEqual(option.frameOptions.map(f=>f.finishKey).sort(),['frame-black','frame-natural','frame-white']);
       for(const framed of option.frameOptions){
         assert(framed.ready,`${framed.id}: ${framed.reasons.join('; ')}`);
-        assert(framed.sku);assert(framed.mat&&framed.frame);
+        assert(framed.paper.sku);assert(framed.mat&&framed.frame);
         assert(Number(framed.amount)>Number(option.amount));
         assert.equal(framed.asset.url,option.asset.url);assert.equal(framed.asset.sha256,option.asset.sha256);
       }

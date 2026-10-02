@@ -6,6 +6,7 @@ on:
       - '.github/workflows/quote-book-frames.yml'
       - 'payments/quote-book-frames.mjs'
       - 'payments/apply-book-frame-quotes.mjs'
+      - 'tests/book-print-framing.test.mjs'
 permissions:
   contents: write
 concurrency:
