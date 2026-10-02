@@ -110,10 +110,12 @@
     const shape=(name,attrs)=>{const el=document.createElementNS(ns,name);for(const [key,value] of Object.entries(attrs))el.setAttribute(key,value);svg.append(el);return el;};
     if(kind==='bitcoin'){
       shape('circle',{cx:'12',cy:'12',r:'10',fill:'none',stroke:'currentColor','stroke-width':'1.8'});
-      const symbol=shape('text',{x:'12',y:'17','text-anchor':'middle','font-size':'14','font-family':'Arial, sans-serif','font-weight':'700',fill:'currentColor'});
-      symbol.textContent='₿';
-    }else{
+      shape('path',{d:'M8.2 5.2h4.9c2.6 0 4.2 1.2 4.2 3.2 0 1.1-.5 1.9-1.4 2.4 1.3.4 2.1 1.5 2.1 3 0 2.2-1.7 3.7-4.5 3.7H8.2V5.2zm2.2 1.9V10H13c1.3 0 2-.5 2-1.5 0-.9-.7-1.4-2-1.4h-2.6zm0 4.8v3.7h2.9c1.4 0 2.1-.7 2.1-1.9s-.7-1.8-2.1-1.8h-2.9z',fill:'currentColor'});
+      shape('path',{d:'M10.1 3.4v2M14.2 3.4v2M10.1 18.6v2M14.2 18.6v2',fill:'none',stroke:'currentColor','stroke-width':'1.3'});
+    }else if(kind==='lightning'){
       shape('path',{d:'M13.1 1.8 5.7 13h5l-.8 9.2L18.3 10.8h-5.1z',fill:'currentColor'});
+    }else{
+      shape('path',{d:'M4.01 0A4.01 4.01 0 000 4.01v15.98c0 2.21 1.8 4 4.01 4.01h15.98C22.2 24 24 22.2 24 19.99V4A4.01 4.01 0 0019.99 0H4zm1.62 4.36h12.74c.7 0 1.26.57 1.26 1.27v12.74c0 .7-.56 1.27-1.26 1.27H5.63c-.7 0-1.26-.57-1.26-1.27V5.63a1.27 1.27 0 011.26-1.27zm3.83 4.35a.73.73 0 00-.73.73v5.09c0 .4.32.72.72.72h5.1a.73.73 0 00.73-.72V9.44a.73.73 0 00-.73-.73h-5.1Z',fill:'currentColor'});
     }
     return svg;
   }
@@ -132,10 +134,8 @@
       button.type='button';button.disabled=!enabled||(method==='bitcoin'&&!bitcoinAvailable)||busy||!!(pendingOrder&&pending(pendingOrder));
       const content=node('span',undefined,'payment-button-content');
       if(method==='bitcoin'){
-        const icons=node('span',undefined,'payment-button-icons');
-        icons.append(paymentIcon('bitcoin'),paymentIcon('lightning'));
-        content.append(icons,node('span','Pay with Bitcoin'));
-      }else content.append(node('span','Pay with credit card'));
+        content.append(paymentIcon('bitcoin'),node('span','Pay with Bitcoin'),paymentIcon('lightning'));
+      }else content.append(paymentIcon('square'),node('span','Pay with credit card'));
       button.append(content);
       button.addEventListener('click',()=>startPayment(method));host.append(button);
     }
