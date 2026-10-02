@@ -10,7 +10,7 @@ button{margin:12px 0;cursor:pointer}.notice{background:#fff1eb;padding:12px;bord
 </style></head>
 <body>
 <h1>Square sandbox checkout test</h1>
-<p class="notice">Sandbox only. This test uses a test card and a sample order. It does not create a shipping label, record a tax transaction, or send order emails.</p>
+<p class="notice">Sandbox only. This uses the test card and sample address below. Shipping and tax providers process the address to calculate a quote; no tax transaction is recorded, shipping label is purchased, or order email is sent.</p>
 <form id="form">
 <label for="painting">Pilot painting</label><select id="painting" required></select>
 <label for="email">Test email</label><input id="email" type="email" value="square-test@example.test" required>
@@ -47,7 +47,6 @@ form.addEventListener('submit',async event=>{
  event.preventDefault();if(!form.reportValidity())return;
  quoteButton.disabled=true;payButton.hidden=true;payButton.disabled=true;status.textContent='Getting a sample quote…';total.textContent='';
  try{
-  const fields=Object.fromEntries(new FormData(form));
   const address={name:document.querySelector('#name').value.trim(),street1:document.querySelector('#street1').value.trim(),street2:document.querySelector('#street2').value.trim(),city:document.querySelector('#city').value.trim(),state:document.querySelector('#state').value.trim().toUpperCase(),zip:document.querySelector('#zip').value.trim()};
   quote=await api('quote',{items:[{id:select.value,quantity:1}],address,email:document.querySelector('#email').value.trim(),catalogVersion:capabilities.version});
   if(!quote.methods.includes('square'))throw Error('Square is not available for this painting.');
@@ -64,7 +63,7 @@ payButton.addEventListener('click',async()=>{
   status.textContent='Submitting sandbox payment…';
   let order=await api('start',{orderId:quote.orderId,key:quote.key,method:'square',sourceId:token.token});
   for(let i=0;i<15&&['reserving','creating','settling'].includes(order.status);i++){await new Promise(resolve=>setTimeout(resolve,1500));order=await api('status',{orderId:quote.orderId,key:quote.key});}
-  status.textContent=order.status==='paid'?'Sandbox payment succeeded. No fulfillment actions were run. Order reference: '+order.orderId:order.paymentError||('Sandbox order status: '+order.status+'. Reference: '+order.orderId);
+  status.textContent=order.status==='paid'&&order.sandboxTestOnly?'Sandbox payment succeeded. No fulfillment actions were run. Order reference: '+order.orderId:order.status==='paid'?'Payment succeeded but the sandbox safety marker is missing. Do not retry. Order reference: '+order.orderId:order.paymentError||('Sandbox order status: '+order.status+'. Reference: '+order.orderId);
  }catch(e){showError(e);}finally{payButton.disabled=false;quoteButton.disabled=false;}
 });
 init().catch(showError);
