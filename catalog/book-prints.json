@@ -1,0 +1,4123 @@
+{
+  "book-art-9ae261289a3bce952c6f": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.jpg",
+      "widthPx": 4664,
+      "heightPx": 1788,
+      "sha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S15.79X6.21",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9.jpg",
+          "sha256": "a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9",
+          "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+          "productCode": "5M144M8S15.79X6.21",
+          "imageWidthIn": 15.5367,
+          "imageHeightIn": 5.9567,
+          "paperWidthIn": 15.79,
+          "paperHeightIn": 6.21,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 4737,
+            "heightPx": 1863,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 4661,
+              "height": 1787
+            }
+          }
+        },
+        "amount": "55.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      },
+      "medium": {
+        "sku": "5M144M8S11.91X4.72",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64.jpg",
+          "sha256": "f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64",
+          "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+          "productCode": "5M144M8S11.91X4.72",
+          "imageWidthIn": 11.65,
+          "imageHeightIn": 4.4667,
+          "paperWidthIn": 11.91,
+          "paperHeightIn": 4.72,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3573,
+            "heightPx": 1416,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 3495,
+              "height": 1340
+            }
+          }
+        },
+        "amount": "40.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-deb3358c321671dae1fc": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.jpg",
+      "widthPx": 1924,
+      "heightPx": 3552,
+      "sha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S6.66X12.09",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b.jpg",
+          "sha256": "27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b",
+          "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+          "productCode": "5M144M8S6.66X12.09",
+          "imageWidthIn": 6.4067,
+          "imageHeightIn": 11.8267,
+          "paperWidthIn": 6.66,
+          "paperHeightIn": 12.09,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1998,
+            "heightPx": 3627,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1922,
+              "height": 3548
+            }
+          }
+        },
+        "amount": "40.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      },
+      "medium": {
+        "sku": "5M144M8S5.06X9.13",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07.jpg",
+          "sha256": "50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07",
+          "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+          "productCode": "5M144M8S5.06X9.13",
+          "imageWidthIn": 4.8067,
+          "imageHeightIn": 8.8733,
+          "paperWidthIn": 5.06,
+          "paperHeightIn": 9.13,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1518,
+            "heightPx": 2739,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1442,
+              "height": 2662
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-f56007f6a7d6ee955caf": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.jpg",
+      "widthPx": 1480,
+      "heightPx": 2765,
+      "sha256": "f4e436a33f9a8b3e24e1c83ac157ca4b4ad2a65d08f84a68e85ef5e409a2578e"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S5.18X9.46",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733.jpg",
+          "sha256": "7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733",
+          "sourceSha256": "f4e436a33f9a8b3e24e1c83ac157ca4b4ad2a65d08f84a68e85ef5e409a2578e",
+          "productCode": "5M144M8S5.18X9.46",
+          "imageWidthIn": 4.9267,
+          "imageHeightIn": 9.2033,
+          "paperWidthIn": 5.18,
+          "paperHeightIn": 9.46,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1554,
+            "heightPx": 2838,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1478,
+              "height": 2761
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-d1399111a441ed91feaa": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg",
+      "widthPx": 1619,
+      "heightPx": 2943,
+      "sha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S5.64X10.06",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7.jpg",
+          "sha256": "cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7",
+          "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+          "productCode": "5M144M8S5.64X10.06",
+          "imageWidthIn": 5.3867,
+          "imageHeightIn": 9.7933,
+          "paperWidthIn": 5.64,
+          "paperHeightIn": 10.06,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1692,
+            "heightPx": 3018,
+            "content": {
+              "left": 38,
+              "top": 40,
+              "width": 1616,
+              "height": 2938
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      },
+      "medium": {
+        "sku": "5M144M8S4.29X7.6",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde.jpg",
+          "sha256": "c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde",
+          "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+          "productCode": "5M144M8S4.29X7.6",
+          "imageWidthIn": 4.0367,
+          "imageHeightIn": 7.3367,
+          "paperWidthIn": 4.29,
+          "paperHeightIn": 7.6,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1287,
+            "heightPx": 2280,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1211,
+              "height": 2201
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-c198f09bc8ddad18ed1e": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.jpg",
+      "widthPx": 2613,
+      "heightPx": 1424,
+      "sha256": "0c8fd2894a6db45e93c583b935be0a98eaf8a004d4b0e93e9888e2fa67d00003"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S8.96X4.99",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606.jpg",
+          "sha256": "65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606",
+          "sourceSha256": "0c8fd2894a6db45e93c583b935be0a98eaf8a004d4b0e93e9888e2fa67d00003",
+          "productCode": "5M144M8S8.96X4.99",
+          "imageWidthIn": 8.69,
+          "imageHeightIn": 4.7367,
+          "paperWidthIn": 8.96,
+          "paperHeightIn": 4.99,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2688,
+            "heightPx": 1497,
+            "content": {
+              "left": 40,
+              "top": 38,
+              "width": 2607,
+              "height": 1421
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-87cf2a732259b313f5ab": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.jpg",
+      "widthPx": 1336,
+      "heightPx": 2352,
+      "sha256": "ef0e6f808609f9dd3dcec88b6161cb14825b8080efd74c9f023ed3571587aa6c"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S4.7X8.09",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881.jpg",
+          "sha256": "103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881",
+          "sourceSha256": "ef0e6f808609f9dd3dcec88b6161cb14825b8080efd74c9f023ed3571587aa6c",
+          "productCode": "5M144M8S4.7X8.09",
+          "imageWidthIn": 4.4467,
+          "imageHeightIn": 7.8267,
+          "paperWidthIn": 4.7,
+          "paperHeightIn": 8.09,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1410,
+            "heightPx": 2427,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1334,
+              "height": 2348
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-471daf14a8bb7883f114": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg",
+      "widthPx": 3396,
+      "heightPx": 1825,
+      "sha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S11.57X6.33",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f.jpg",
+          "sha256": "5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f",
+          "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+          "productCode": "5M144M8S11.57X6.33",
+          "imageWidthIn": 11.3067,
+          "imageHeightIn": 6.0767,
+          "paperWidthIn": 11.57,
+          "paperHeightIn": 6.33,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3471,
+            "heightPx": 1899,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 3392,
+              "height": 1823
+            }
+          }
+        },
+        "amount": "40.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      },
+      "medium": {
+        "sku": "5M144M8S8.74X4.81",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27.jpg",
+          "sha256": "d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27",
+          "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+          "productCode": "5M144M8S8.74X4.81",
+          "imageWidthIn": 8.48,
+          "imageHeightIn": 4.5567,
+          "paperWidthIn": 8.74,
+          "paperHeightIn": 4.81,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2622,
+            "heightPx": 1443,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 2544,
+              "height": 1367
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-e3293c73dbb01f94b39b": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.jpg",
+      "widthPx": 1598,
+      "heightPx": 1269,
+      "sha256": "b95f74d6d3a6f6d8a6e0343f81d98b66152b453f30cb26ecc95457c88a39f17b"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S5.57X4.48",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67.jpg",
+          "sha256": "4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67",
+          "sourceSha256": "b95f74d6d3a6f6d8a6e0343f81d98b66152b453f30cb26ecc95457c88a39f17b",
+          "productCode": "5M144M8S5.57X4.48",
+          "imageWidthIn": 5.3167,
+          "imageHeightIn": 4.2233,
+          "paperWidthIn": 5.57,
+          "paperHeightIn": 4.48,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1671,
+            "heightPx": 1344,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1595,
+              "height": 1267
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-a2e53a8418a8d84f3dc5": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.jpg",
+      "widthPx": 1749,
+      "heightPx": 1346,
+      "sha256": "195cdad363efab3f28a46926c4e9cf2a4804b05f799f23350f4a4bc120690193"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S6.08X4.73",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5.jpg",
+          "sha256": "cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5",
+          "sourceSha256": "195cdad363efab3f28a46926c4e9cf2a4804b05f799f23350f4a4bc120690193",
+          "productCode": "5M144M8S6.08X4.73",
+          "imageWidthIn": 5.8167,
+          "imageHeightIn": 4.4767,
+          "paperWidthIn": 6.08,
+          "paperHeightIn": 4.73,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1824,
+            "heightPx": 1419,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 1745,
+              "height": 1343
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-27fee33e69f262ecfacb": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.jpg",
+      "widthPx": 3024,
+      "heightPx": 3983,
+      "sha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S10.33X13.52",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0.jpg",
+          "sha256": "5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0",
+          "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+          "productCode": "5M144M8S10.33X13.52",
+          "imageWidthIn": 10.0733,
+          "imageHeightIn": 13.2667,
+          "paperWidthIn": 10.33,
+          "paperHeightIn": 13.52,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3099,
+            "heightPx": 4056,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 3022,
+              "height": 3980
+            }
+          }
+        },
+        "amount": "60.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      },
+      "medium": {
+        "sku": "5M144M8S7.81X10.2",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a.jpg",
+          "sha256": "c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a",
+          "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+          "productCode": "5M144M8S7.81X10.2",
+          "imageWidthIn": 7.5533,
+          "imageHeightIn": 9.9467,
+          "paperWidthIn": 7.81,
+          "paperHeightIn": 10.2,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2343,
+            "heightPx": 3060,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2266,
+              "height": 2984
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      },
+      "small": {
+        "sku": "5M144M8S5.29X6.88",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246.jpg",
+          "sha256": "b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246",
+          "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+          "productCode": "5M144M8S5.29X6.88",
+          "imageWidthIn": 5.03,
+          "imageHeightIn": 6.6267,
+          "paperWidthIn": 5.29,
+          "paperHeightIn": 6.88,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1587,
+            "heightPx": 2064,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 1509,
+              "height": 1988
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.094Z"
+      }
+    }
+  },
+  "book-art-ff6db6906f0ed48ccc3a": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.jpg",
+      "widthPx": 3897,
+      "heightPx": 2914,
+      "sha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S13.24X9.96",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57.jpg",
+          "sha256": "e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57",
+          "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+          "productCode": "5M144M8S13.24X9.96",
+          "imageWidthIn": 12.98,
+          "imageHeightIn": 9.7067,
+          "paperWidthIn": 13.24,
+          "paperHeightIn": 9.96,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3972,
+            "heightPx": 2988,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 3894,
+              "height": 2912
+            }
+          }
+        },
+        "amount": "55.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "medium": {
+        "sku": "5M144M8S9.99X7.53",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34.jpg",
+          "sha256": "0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34",
+          "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+          "productCode": "5M144M8S9.99X7.53",
+          "imageWidthIn": 9.73,
+          "imageHeightIn": 7.2767,
+          "paperWidthIn": 9.99,
+          "paperHeightIn": 7.53,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2997,
+            "heightPx": 2259,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 2919,
+              "height": 2183
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "small": {
+        "sku": "5M144M8S6.74X5.1",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d.jpg",
+          "sha256": "cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d",
+          "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+          "productCode": "5M144M8S6.74X5.1",
+          "imageWidthIn": 6.48,
+          "imageHeightIn": 4.8467,
+          "paperWidthIn": 6.74,
+          "paperHeightIn": 5.1,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2022,
+            "heightPx": 1530,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 1944,
+              "height": 1454
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-55829535637cd4974a88": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.jpg",
+      "widthPx": 1707,
+      "heightPx": 1335,
+      "sha256": "a85207826c8015a22a24b624e5a9b54a7acefb349d4fe188e0c3f0c8c959ead3"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S5.94X4.7",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4.jpg",
+          "sha256": "d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4",
+          "sourceSha256": "a85207826c8015a22a24b624e5a9b54a7acefb349d4fe188e0c3f0c8c959ead3",
+          "productCode": "5M144M8S5.94X4.7",
+          "imageWidthIn": 5.6867,
+          "imageHeightIn": 4.4467,
+          "paperWidthIn": 5.94,
+          "paperHeightIn": 4.7,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1782,
+            "heightPx": 1410,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1706,
+              "height": 1334
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-04a049ea60a5a09e6873": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg",
+      "widthPx": 1928,
+      "heightPx": 3758,
+      "sha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S6.67X12.77",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee.jpg",
+          "sha256": "c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee",
+          "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+          "productCode": "5M144M8S6.67X12.77",
+          "imageWidthIn": 6.4167,
+          "imageHeightIn": 12.5067,
+          "paperWidthIn": 6.67,
+          "paperHeightIn": 12.77,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2001,
+            "heightPx": 3831,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1925,
+              "height": 3752
+            }
+          }
+        },
+        "amount": "45.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "medium": {
+        "sku": "5M144M8S5.07X9.64",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941.jpg",
+          "sha256": "7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941",
+          "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+          "productCode": "5M144M8S5.07X9.64",
+          "imageWidthIn": 4.8167,
+          "imageHeightIn": 9.3867,
+          "paperWidthIn": 5.07,
+          "paperHeightIn": 9.64,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1521,
+            "heightPx": 2892,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1445,
+              "height": 2816
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-e589c9375e23d1de4748": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.jpg",
+      "widthPx": 3001,
+      "heightPx": 1657,
+      "sha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S10.25X5.77",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e.jpg",
+          "sha256": "1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e",
+          "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+          "productCode": "5M144M8S10.25X5.77",
+          "imageWidthIn": 9.99,
+          "imageHeightIn": 5.5167,
+          "paperWidthIn": 10.25,
+          "paperHeightIn": 5.77,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3075,
+            "heightPx": 1731,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 2997,
+              "height": 1655
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "medium": {
+        "sku": "5M144M8S7.75X4.39",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b.jpg",
+          "sha256": "b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b",
+          "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+          "productCode": "5M144M8S7.75X4.39",
+          "imageWidthIn": 7.4933,
+          "imageHeightIn": 4.1367,
+          "paperWidthIn": 7.75,
+          "paperHeightIn": 4.39,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2325,
+            "heightPx": 1317,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2248,
+              "height": 1241
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-f2025e5a72f4a70866c6": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.jpg",
+      "widthPx": 3175,
+      "heightPx": 2551,
+      "sha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S10.83X8.75",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291.jpg",
+          "sha256": "9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291",
+          "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+          "productCode": "5M144M8S10.83X8.75",
+          "imageWidthIn": 10.5767,
+          "imageHeightIn": 8.4967,
+          "paperWidthIn": 10.83,
+          "paperHeightIn": 8.75,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3249,
+            "heightPx": 2625,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 3173,
+              "height": 2549
+            }
+          }
+        },
+        "amount": "40.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "medium": {
+        "sku": "5M144M8S8.18X6.62",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a.jpg",
+          "sha256": "39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a",
+          "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+          "productCode": "5M144M8S8.18X6.62",
+          "imageWidthIn": 7.9233,
+          "imageHeightIn": 6.3667,
+          "paperWidthIn": 8.18,
+          "paperHeightIn": 6.62,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2454,
+            "heightPx": 1986,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2377,
+              "height": 1910
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "small": {
+        "sku": "5M144M8S5.54X4.5",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8.jpg",
+          "sha256": "8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8",
+          "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+          "productCode": "5M144M8S5.54X4.5",
+          "imageWidthIn": 5.2867,
+          "imageHeightIn": 4.2467,
+          "paperWidthIn": 5.54,
+          "paperHeightIn": 4.5,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1662,
+            "heightPx": 1350,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1586,
+              "height": 1274
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-82ab8d65fb50fe0d096a": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.jpg",
+      "widthPx": 3317,
+      "heightPx": 1808,
+      "sha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S11.3X6.27",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214.jpg",
+          "sha256": "02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214",
+          "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+          "productCode": "5M144M8S11.3X6.27",
+          "imageWidthIn": 11.0367,
+          "imageHeightIn": 6.0167,
+          "paperWidthIn": 11.3,
+          "paperHeightIn": 6.27,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3390,
+            "heightPx": 1881,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 3311,
+              "height": 1805
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "medium": {
+        "sku": "5M144M8S8.54X4.77",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0.jpg",
+          "sha256": "d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0",
+          "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+          "productCode": "5M144M8S8.54X4.77",
+          "imageWidthIn": 8.2867,
+          "imageHeightIn": 4.5167,
+          "paperWidthIn": 8.54,
+          "paperHeightIn": 4.77,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2562,
+            "heightPx": 1431,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2486,
+              "height": 1355
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-94e2edf9a24c90950489": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.jpg",
+      "widthPx": 3694,
+      "heightPx": 1806,
+      "sha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S12.56X6.27",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792.jpg",
+          "sha256": "691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792",
+          "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+          "productCode": "5M144M8S12.56X6.27",
+          "imageWidthIn": 12.3067,
+          "imageHeightIn": 6.0167,
+          "paperWidthIn": 12.56,
+          "paperHeightIn": 6.27,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3768,
+            "heightPx": 1881,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 3692,
+              "height": 1805
+            }
+          }
+        },
+        "amount": "45.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "medium": {
+        "sku": "5M144M8S9.48X4.76",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b.jpg",
+          "sha256": "19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b",
+          "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+          "productCode": "5M144M8S9.48X4.76",
+          "imageWidthIn": 9.2167,
+          "imageHeightIn": 4.5067,
+          "paperWidthIn": 9.48,
+          "paperHeightIn": 4.76,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2844,
+            "heightPx": 1428,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 2765,
+              "height": 1352
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-6e6d7ac51608e0b7f10f": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.jpg",
+      "widthPx": 1646,
+      "heightPx": 2619,
+      "sha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S5.73X8.98",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf.jpg",
+          "sha256": "0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf",
+          "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+          "productCode": "5M144M8S5.73X8.98",
+          "imageWidthIn": 5.4767,
+          "imageHeightIn": 8.7133,
+          "paperWidthIn": 5.73,
+          "paperHeightIn": 8.98,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1719,
+            "heightPx": 2694,
+            "content": {
+              "left": 38,
+              "top": 40,
+              "width": 1643,
+              "height": 2614
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "medium": {
+        "sku": "5M144M8S4.36X6.79",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090.jpg",
+          "sha256": "fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090",
+          "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+          "productCode": "5M144M8S4.36X6.79",
+          "imageWidthIn": 4.1067,
+          "imageHeightIn": 6.5333,
+          "paperWidthIn": 4.36,
+          "paperHeightIn": 6.79,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1308,
+            "heightPx": 2037,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1232,
+              "height": 1960
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-e97329411fa8b273b508": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.jpg",
+      "widthPx": 1743,
+      "heightPx": 2844,
+      "sha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S6.06X9.73",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e.jpg",
+          "sha256": "de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e",
+          "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+          "productCode": "5M144M8S6.06X9.73",
+          "imageWidthIn": 5.8067,
+          "imageHeightIn": 9.4733,
+          "paperWidthIn": 6.06,
+          "paperHeightIn": 9.73,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1818,
+            "heightPx": 2919,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1742,
+              "height": 2842
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "medium": {
+        "sku": "5M144M8S4.6X7.36",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39.jpg",
+          "sha256": "894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39",
+          "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+          "productCode": "5M144M8S4.6X7.36",
+          "imageWidthIn": 4.3467,
+          "imageHeightIn": 7.0933,
+          "paperWidthIn": 4.6,
+          "paperHeightIn": 7.36,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1380,
+            "heightPx": 2208,
+            "content": {
+              "left": 38,
+              "top": 40,
+              "width": 1304,
+              "height": 2128
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-2136f2260225dd8ef20a": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.jpg",
+      "widthPx": 2440,
+      "heightPx": 2635,
+      "sha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S8.38X9.03",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3.jpg",
+          "sha256": "b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3",
+          "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+          "productCode": "5M144M8S8.38X9.03",
+          "imageWidthIn": 8.1267,
+          "imageHeightIn": 8.7767,
+          "paperWidthIn": 8.38,
+          "paperHeightIn": 9.03,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2514,
+            "heightPx": 2709,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2438,
+              "height": 2633
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "medium": {
+        "sku": "5M144M8S6.35X6.83",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574.jpg",
+          "sha256": "76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574",
+          "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+          "productCode": "5M144M8S6.35X6.83",
+          "imageWidthIn": 6.09,
+          "imageHeightIn": 6.5767,
+          "paperWidthIn": 6.35,
+          "paperHeightIn": 6.83,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1905,
+            "heightPx": 2049,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 1827,
+              "height": 1973
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.31X4.64",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2.jpg",
+          "sha256": "ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2",
+          "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+          "productCode": "5M144M8S4.31X4.64",
+          "imageWidthIn": 4.0567,
+          "imageHeightIn": 4.38,
+          "paperWidthIn": 4.31,
+          "paperHeightIn": 4.64,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1293,
+            "heightPx": 1392,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1217,
+              "height": 1314
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:43.965Z"
+      }
+    }
+  },
+  "book-art-29b3572972c367d351d1": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/29b3572972c367d351d1.jpg",
+      "widthPx": 1265,
+      "heightPx": 2571,
+      "sha256": "33094144963f5f4fc7e2fe15e8f1958fb407edfd1e63d5b91b668d96e31381e9"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S4.46X8.82",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b.jpg",
+          "sha256": "611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b",
+          "sourceSha256": "33094144963f5f4fc7e2fe15e8f1958fb407edfd1e63d5b91b668d96e31381e9",
+          "productCode": "5M144M8S4.46X8.82",
+          "imageWidthIn": 4.2067,
+          "imageHeightIn": 8.55,
+          "paperWidthIn": 4.46,
+          "paperHeightIn": 8.82,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1338,
+            "heightPx": 2646,
+            "content": {
+              "left": 38,
+              "top": 40,
+              "width": 1262,
+              "height": 2565
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-8ff9ac182d32fa228450": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/8ff9ac182d32fa228450.jpg",
+      "widthPx": 1236,
+      "heightPx": 2542,
+      "sha256": "feca1831b68b4619f2e32e9ce4845e1f5b82ee19f9c56f20fede898dcdb9e5d8"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S4.37X8.72",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9.jpg",
+          "sha256": "d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9",
+          "sourceSha256": "feca1831b68b4619f2e32e9ce4845e1f5b82ee19f9c56f20fede898dcdb9e5d8",
+          "productCode": "5M144M8S4.37X8.72",
+          "imageWidthIn": 4.1167,
+          "imageHeightIn": 8.4667,
+          "paperWidthIn": 4.37,
+          "paperHeightIn": 8.72,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1311,
+            "heightPx": 2616,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1235,
+              "height": 2540
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-ccff23f1e469654faa05": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.jpg",
+      "widthPx": 2765,
+      "heightPx": 3317,
+      "sha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S9.46X11.3",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d.jpg",
+          "sha256": "277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d",
+          "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+          "productCode": "5M144M8S9.46X11.3",
+          "imageWidthIn": 9.2067,
+          "imageHeightIn": 11.0433,
+          "paperWidthIn": 9.46,
+          "paperHeightIn": 11.3,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2838,
+            "heightPx": 3390,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2762,
+              "height": 3313
+            }
+          }
+        },
+        "amount": "45.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "medium": {
+        "sku": "5M144M8S7.16X8.54",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359.jpg",
+          "sha256": "112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359",
+          "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+          "productCode": "5M144M8S7.16X8.54",
+          "imageWidthIn": 6.9067,
+          "imageHeightIn": 8.2867,
+          "paperWidthIn": 7.16,
+          "paperHeightIn": 8.54,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2148,
+            "heightPx": 2562,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2072,
+              "height": 2486
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.85X5.77",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc.jpg",
+          "sha256": "cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc",
+          "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+          "productCode": "5M144M8S4.85X5.77",
+          "imageWidthIn": 4.5967,
+          "imageHeightIn": 5.5133,
+          "paperWidthIn": 4.85,
+          "paperHeightIn": 5.77,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1455,
+            "heightPx": 1731,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1379,
+              "height": 1654
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-db933efcbc4fbe01c841": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.jpg",
+      "widthPx": 2784,
+      "heightPx": 4270,
+      "sha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S9.53X14.48",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e.jpg",
+          "sha256": "b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e",
+          "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+          "productCode": "5M144M8S9.53X14.48",
+          "imageWidthIn": 9.2767,
+          "imageHeightIn": 14.2267,
+          "paperWidthIn": 9.53,
+          "paperHeightIn": 14.48,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2859,
+            "heightPx": 4344,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2783,
+              "height": 4268
+            }
+          }
+        },
+        "amount": "60.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "medium": {
+        "sku": "5M144M8S7.21X10.92",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d.jpg",
+          "sha256": "7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d",
+          "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+          "productCode": "5M144M8S7.21X10.92",
+          "imageWidthIn": 6.9533,
+          "imageHeightIn": 10.6667,
+          "paperWidthIn": 7.21,
+          "paperHeightIn": 10.92,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2163,
+            "heightPx": 3276,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2086,
+              "height": 3200
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.89X7.36",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8.jpg",
+          "sha256": "3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8",
+          "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+          "productCode": "5M144M8S4.89X7.36",
+          "imageWidthIn": 4.6333,
+          "imageHeightIn": 7.1067,
+          "paperWidthIn": 4.89,
+          "paperHeightIn": 7.36,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1467,
+            "heightPx": 2208,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1390,
+              "height": 2132
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-74a736000a32427842b1": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.jpg",
+      "widthPx": 3342,
+      "heightPx": 2979,
+      "sha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S11.39X10.18",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd.jpg",
+          "sha256": "14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd",
+          "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+          "productCode": "5M144M8S11.39X10.18",
+          "imageWidthIn": 11.1367,
+          "imageHeightIn": 9.9267,
+          "paperWidthIn": 11.39,
+          "paperHeightIn": 10.18,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3417,
+            "heightPx": 3054,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 3341,
+              "height": 2978
+            }
+          }
+        },
+        "amount": "50.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "medium": {
+        "sku": "5M144M8S8.6X7.69",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d.jpg",
+          "sha256": "75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d",
+          "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+          "productCode": "5M144M8S8.6X7.69",
+          "imageWidthIn": 8.3433,
+          "imageHeightIn": 7.4367,
+          "paperWidthIn": 8.6,
+          "paperHeightIn": 7.69,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2580,
+            "heightPx": 2307,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2503,
+              "height": 2231
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "small": {
+        "sku": "5M144M8S5.82X5.21",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce.jpg",
+          "sha256": "351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce",
+          "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+          "productCode": "5M144M8S5.82X5.21",
+          "imageWidthIn": 5.56,
+          "imageHeightIn": 4.9567,
+          "paperWidthIn": 5.82,
+          "paperHeightIn": 5.21,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1746,
+            "heightPx": 1563,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 1668,
+              "height": 1487
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-9209f1fd7d47f373597f": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/9209f1fd7d47f373597f.jpg",
+      "widthPx": 1371,
+      "heightPx": 3229,
+      "sha256": "ecb81d17191279e61bd833cd5ae946aef1a66692e5d0d33e38684f9ed682cf0e"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S4.82X11.01",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79.jpg",
+          "sha256": "41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79",
+          "sourceSha256": "ecb81d17191279e61bd833cd5ae946aef1a66692e5d0d33e38684f9ed682cf0e",
+          "productCode": "5M144M8S4.82X11.01",
+          "imageWidthIn": 4.5667,
+          "imageHeightIn": 10.7567,
+          "paperWidthIn": 4.82,
+          "paperHeightIn": 11.01,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1446,
+            "heightPx": 3303,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1370,
+              "height": 3227
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-a61c71e5de8cc1b71500": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.jpg",
+      "widthPx": 1935,
+      "heightPx": 3057,
+      "sha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S6.7X10.44",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e.jpg",
+          "sha256": "53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e",
+          "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+          "productCode": "5M144M8S6.7X10.44",
+          "imageWidthIn": 6.4467,
+          "imageHeightIn": 10.1833,
+          "paperWidthIn": 6.7,
+          "paperHeightIn": 10.44,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2010,
+            "heightPx": 3132,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1934,
+              "height": 3055
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "medium": {
+        "sku": "5M144M8S5.08X7.89",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6.jpg",
+          "sha256": "ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6",
+          "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+          "productCode": "5M144M8S5.08X7.89",
+          "imageWidthIn": 4.8267,
+          "imageHeightIn": 7.6267,
+          "paperWidthIn": 5.08,
+          "paperHeightIn": 7.89,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1524,
+            "heightPx": 2367,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1448,
+              "height": 2288
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-596837cb5ff533c620dd": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.jpg",
+      "widthPx": 1962,
+      "heightPx": 3388,
+      "sha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S6.79X11.54",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad.jpg",
+          "sha256": "b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad",
+          "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+          "productCode": "5M144M8S6.79X11.54",
+          "imageWidthIn": 6.5367,
+          "imageHeightIn": 11.2867,
+          "paperWidthIn": 6.79,
+          "paperHeightIn": 11.54,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2037,
+            "heightPx": 3462,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1961,
+              "height": 3386
+            }
+          }
+        },
+        "amount": "40.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "medium": {
+        "sku": "5M144M8S5.15X8.72",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf.jpg",
+          "sha256": "f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf",
+          "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+          "productCode": "5M144M8S5.15X8.72",
+          "imageWidthIn": 4.8967,
+          "imageHeightIn": 8.4567,
+          "paperWidthIn": 5.15,
+          "paperHeightIn": 8.72,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1545,
+            "heightPx": 2616,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1469,
+              "height": 2537
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-7bce6e3509027d1f7a0b": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.jpg",
+      "widthPx": 1824,
+      "heightPx": 3901,
+      "sha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S6.33X13.25",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b.jpg",
+          "sha256": "58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b",
+          "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+          "productCode": "5M144M8S6.33X13.25",
+          "imageWidthIn": 6.0767,
+          "imageHeightIn": 12.9967,
+          "paperWidthIn": 6.33,
+          "paperHeightIn": 13.25,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1899,
+            "heightPx": 3975,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1823,
+              "height": 3899
+            }
+          }
+        },
+        "amount": "45.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "medium": {
+        "sku": "5M144M8S4.81X10",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da.jpg",
+          "sha256": "37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da",
+          "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+          "productCode": "5M144M8S4.81X10",
+          "imageWidthIn": 4.5567,
+          "imageHeightIn": 9.7467,
+          "paperWidthIn": 4.81,
+          "paperHeightIn": 10,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1443,
+            "heightPx": 3000,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1367,
+              "height": 2924
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-3a9cba708a8045364e82": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.jpg",
+      "widthPx": 3560,
+      "heightPx": 1890,
+      "sha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S12.11X6.55",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede.jpg",
+          "sha256": "a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede",
+          "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+          "productCode": "5M144M8S12.11X6.55",
+          "imageWidthIn": 11.8567,
+          "imageHeightIn": 6.2933,
+          "paperWidthIn": 12.11,
+          "paperHeightIn": 6.55,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3633,
+            "heightPx": 1965,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 3557,
+              "height": 1888
+            }
+          }
+        },
+        "amount": "40.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      },
+      "medium": {
+        "sku": "5M144M8S9.15X4.97",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e.jpg",
+          "sha256": "d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e",
+          "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+          "productCode": "5M144M8S9.15X4.97",
+          "imageWidthIn": 8.8833,
+          "imageHeightIn": 4.7167,
+          "paperWidthIn": 9.15,
+          "paperHeightIn": 4.97,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2745,
+            "heightPx": 1491,
+            "content": {
+              "left": 40,
+              "top": 38,
+              "width": 2665,
+              "height": 1415
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.019Z"
+      }
+    }
+  },
+  "book-art-1143b08e177333e43dc7": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.jpg",
+      "widthPx": 2319,
+      "heightPx": 2754,
+      "sha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S7.98X9.43",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2.jpg",
+          "sha256": "b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2",
+          "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+          "productCode": "5M144M8S7.98X9.43",
+          "imageWidthIn": 7.7267,
+          "imageHeightIn": 9.1767,
+          "paperWidthIn": 7.98,
+          "paperHeightIn": 9.43,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2394,
+            "heightPx": 2829,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2318,
+              "height": 2753
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S6.04X7.13",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae.jpg",
+          "sha256": "f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae",
+          "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+          "productCode": "5M144M8S6.04X7.13",
+          "imageWidthIn": 5.7867,
+          "imageHeightIn": 6.8733,
+          "paperWidthIn": 6.04,
+          "paperHeightIn": 7.13,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1812,
+            "heightPx": 2139,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1736,
+              "height": 2062
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.11X4.84",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7.jpg",
+          "sha256": "0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7",
+          "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+          "productCode": "5M144M8S4.11X4.84",
+          "imageWidthIn": 3.8567,
+          "imageHeightIn": 4.58,
+          "paperWidthIn": 4.11,
+          "paperHeightIn": 4.84,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1233,
+            "heightPx": 1452,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1157,
+              "height": 1374
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-18e4d05240ce63a1a44b": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.jpg",
+      "widthPx": 3748,
+      "heightPx": 4249,
+      "sha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S12.74X14.41",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637.jpg",
+          "sha256": "68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637",
+          "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+          "productCode": "5M144M8S12.74X14.41",
+          "imageWidthIn": 12.4867,
+          "imageHeightIn": 14.1567,
+          "paperWidthIn": 12.74,
+          "paperHeightIn": 14.41,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3822,
+            "heightPx": 4323,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 3746,
+              "height": 4247
+            }
+          }
+        },
+        "amount": "80.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S9.62X10.87",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c.jpg",
+          "sha256": "f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c",
+          "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+          "productCode": "5M144M8S9.62X10.87",
+          "imageWidthIn": 9.3633,
+          "imageHeightIn": 10.6167,
+          "paperWidthIn": 9.62,
+          "paperHeightIn": 10.87,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2886,
+            "heightPx": 3261,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2809,
+              "height": 3185
+            }
+          }
+        },
+        "amount": "45.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "small": {
+        "sku": "5M144M8S6.49X7.33",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6.jpg",
+          "sha256": "5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6",
+          "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+          "productCode": "5M144M8S6.49X7.33",
+          "imageWidthIn": 6.2367,
+          "imageHeightIn": 7.07,
+          "paperWidthIn": 6.49,
+          "paperHeightIn": 7.33,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1947,
+            "heightPx": 2199,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1871,
+              "height": 2121
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-64cfd389b3dbb5cde532": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.jpg",
+      "widthPx": 2459,
+      "heightPx": 2920,
+      "sha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S8.44X9.98",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7.jpg",
+          "sha256": "ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7",
+          "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+          "productCode": "5M144M8S8.44X9.98",
+          "imageWidthIn": 8.1867,
+          "imageHeightIn": 9.72,
+          "paperWidthIn": 8.44,
+          "paperHeightIn": 9.98,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2532,
+            "heightPx": 2994,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 2456,
+              "height": 2916
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S6.39X7.55",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684.jpg",
+          "sha256": "9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684",
+          "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+          "productCode": "5M144M8S6.39X7.55",
+          "imageWidthIn": 6.1367,
+          "imageHeightIn": 7.2867,
+          "paperWidthIn": 6.39,
+          "paperHeightIn": 7.55,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1917,
+            "heightPx": 2265,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1841,
+              "height": 2186
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.34X5.11",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838.jpg",
+          "sha256": "9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838",
+          "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+          "productCode": "5M144M8S4.34X5.11",
+          "imageWidthIn": 4.0867,
+          "imageHeightIn": 4.8533,
+          "paperWidthIn": 4.34,
+          "paperHeightIn": 5.11,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1302,
+            "heightPx": 1533,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1226,
+              "height": 1456
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-1708a7dca996aca40e6c": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg",
+      "widthPx": 2652,
+      "heightPx": 3045,
+      "sha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S9.09X10.4",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54.jpg",
+          "sha256": "9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54",
+          "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+          "productCode": "5M144M8S9.09X10.4",
+          "imageWidthIn": 8.8367,
+          "imageHeightIn": 10.1467,
+          "paperWidthIn": 9.09,
+          "paperHeightIn": 10.4,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2727,
+            "heightPx": 3120,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2651,
+              "height": 3044
+            }
+          }
+        },
+        "amount": "40.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S6.88X7.86",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936.jpg",
+          "sha256": "3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936",
+          "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+          "productCode": "5M144M8S6.88X7.86",
+          "imageWidthIn": 6.6233,
+          "imageHeightIn": 7.6067,
+          "paperWidthIn": 6.88,
+          "paperHeightIn": 7.86,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2064,
+            "heightPx": 2358,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1987,
+              "height": 2282
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.67X5.32",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e.jpg",
+          "sha256": "6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e",
+          "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+          "productCode": "5M144M8S4.67X5.32",
+          "imageWidthIn": 4.4133,
+          "imageHeightIn": 5.0667,
+          "paperWidthIn": 4.67,
+          "paperHeightIn": 5.32,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1401,
+            "heightPx": 1596,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1324,
+              "height": 1520
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-a627c7b7d19ace6b3e51": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.jpg",
+      "widthPx": 2469,
+      "heightPx": 2800,
+      "sha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S8.48X9.58",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0.jpg",
+          "sha256": "cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0",
+          "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+          "productCode": "5M144M8S8.48X9.58",
+          "imageWidthIn": 8.2233,
+          "imageHeightIn": 9.3267,
+          "paperWidthIn": 8.48,
+          "paperHeightIn": 9.58,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2544,
+            "heightPx": 2874,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2467,
+              "height": 2798
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S6.42X7.25",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50.jpg",
+          "sha256": "d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50",
+          "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+          "productCode": "5M144M8S6.42X7.25",
+          "imageWidthIn": 6.1667,
+          "imageHeightIn": 6.9933,
+          "paperWidthIn": 6.42,
+          "paperHeightIn": 7.25,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1926,
+            "heightPx": 2175,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1850,
+              "height": 2098
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.36X4.91",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962.jpg",
+          "sha256": "30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962",
+          "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+          "productCode": "5M144M8S4.36X4.91",
+          "imageWidthIn": 4.1067,
+          "imageHeightIn": 4.6567,
+          "paperWidthIn": 4.36,
+          "paperHeightIn": 4.91,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1308,
+            "heightPx": 1473,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1232,
+              "height": 1397
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-44161b6b117af79e3df4": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.jpg",
+      "widthPx": 2593,
+      "heightPx": 2881,
+      "sha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S8.89X9.85",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee.jpg",
+          "sha256": "7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee",
+          "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+          "productCode": "5M144M8S8.89X9.85",
+          "imageWidthIn": 8.6367,
+          "imageHeightIn": 9.5967,
+          "paperWidthIn": 8.89,
+          "paperHeightIn": 9.85,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2667,
+            "heightPx": 2955,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2591,
+              "height": 2879
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S6.73X7.45",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135.jpg",
+          "sha256": "8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135",
+          "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+          "productCode": "5M144M8S6.73X7.45",
+          "imageWidthIn": 6.4767,
+          "imageHeightIn": 7.1967,
+          "paperWidthIn": 6.73,
+          "paperHeightIn": 7.45,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2019,
+            "heightPx": 2235,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1943,
+              "height": 2159
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.57X5.05",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d.jpg",
+          "sha256": "86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d",
+          "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+          "productCode": "5M144M8S4.57X5.05",
+          "imageWidthIn": 4.3167,
+          "imageHeightIn": 4.7967,
+          "paperWidthIn": 4.57,
+          "paperHeightIn": 5.05,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1371,
+            "heightPx": 1515,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1295,
+              "height": 1439
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-029f45a5fbfd6c90212e": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.jpg",
+      "widthPx": 2385,
+      "heightPx": 4299,
+      "sha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S8.2X14.58",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d.jpg",
+          "sha256": "9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d",
+          "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+          "productCode": "5M144M8S8.2X14.58",
+          "imageWidthIn": 7.9467,
+          "imageHeightIn": 14.3233,
+          "paperWidthIn": 8.2,
+          "paperHeightIn": 14.58,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2460,
+            "heightPx": 4374,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2384,
+              "height": 4297
+            }
+          }
+        },
+        "amount": "50.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S6.21X10.99",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1.jpg",
+          "sha256": "d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1",
+          "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+          "productCode": "5M144M8S6.21X10.99",
+          "imageWidthIn": 5.9567,
+          "imageHeightIn": 10.7367,
+          "paperWidthIn": 6.21,
+          "paperHeightIn": 10.99,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1863,
+            "heightPx": 3297,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1787,
+              "height": 3221
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.22X7.41",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb.jpg",
+          "sha256": "f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb",
+          "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+          "productCode": "5M144M8S4.22X7.41",
+          "imageWidthIn": 3.9667,
+          "imageHeightIn": 7.15,
+          "paperWidthIn": 4.22,
+          "paperHeightIn": 7.41,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1266,
+            "heightPx": 2223,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1190,
+              "height": 2145
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-28bec44600b36ed0766f": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.jpg",
+      "widthPx": 2206,
+      "heightPx": 2717,
+      "sha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S7.6X9.3",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa.jpg",
+          "sha256": "1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa",
+          "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+          "productCode": "5M144M8S7.6X9.3",
+          "imageWidthIn": 7.3467,
+          "imageHeightIn": 9.0467,
+          "paperWidthIn": 7.6,
+          "paperHeightIn": 9.3,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2280,
+            "heightPx": 2790,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2204,
+              "height": 2714
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S5.76X7.04",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f.jpg",
+          "sha256": "5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f",
+          "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+          "productCode": "5M144M8S5.76X7.04",
+          "imageWidthIn": 5.5067,
+          "imageHeightIn": 6.7833,
+          "paperWidthIn": 5.76,
+          "paperHeightIn": 7.04,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1728,
+            "heightPx": 2112,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1652,
+              "height": 2035
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-14d2876a55c720cbc908": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.jpg",
+      "widthPx": 3766,
+      "heightPx": 2663,
+      "sha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S12.8X9.12",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d.jpg",
+          "sha256": "64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d",
+          "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+          "productCode": "5M144M8S12.8X9.12",
+          "imageWidthIn": 12.54,
+          "imageHeightIn": 8.8667,
+          "paperWidthIn": 12.8,
+          "paperHeightIn": 9.12,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3840,
+            "heightPx": 2736,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 3762,
+              "height": 2660
+            }
+          }
+        },
+        "amount": "50.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S9.66X6.9",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23.jpg",
+          "sha256": "eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23",
+          "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+          "productCode": "5M144M8S9.66X6.9",
+          "imageWidthIn": 9.4,
+          "imageHeightIn": 6.6467,
+          "paperWidthIn": 9.66,
+          "paperHeightIn": 6.9,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2898,
+            "heightPx": 2070,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 2820,
+              "height": 1994
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "small": {
+        "sku": "5M144M8S6.52X4.68",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35.jpg",
+          "sha256": "7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35",
+          "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+          "productCode": "5M144M8S6.52X4.68",
+          "imageWidthIn": 6.26,
+          "imageHeightIn": 4.4267,
+          "paperWidthIn": 6.52,
+          "paperHeightIn": 4.68,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1956,
+            "heightPx": 1404,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 1878,
+              "height": 1328
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-c347459aa3f77f7213ae": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.jpg",
+      "widthPx": 3237,
+      "heightPx": 1781,
+      "sha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S11.04X6.18",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb.jpg",
+          "sha256": "ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb",
+          "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+          "productCode": "5M144M8S11.04X6.18",
+          "imageWidthIn": 10.7733,
+          "imageHeightIn": 5.9267,
+          "paperWidthIn": 11.04,
+          "paperHeightIn": 6.18,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3312,
+            "heightPx": 1854,
+            "content": {
+              "left": 40,
+              "top": 38,
+              "width": 3232,
+              "height": 1778
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      },
+      "medium": {
+        "sku": "5M144M8S8.34X4.7",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c.jpg",
+          "sha256": "1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c",
+          "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+          "productCode": "5M144M8S8.34X4.7",
+          "imageWidthIn": 8.0833,
+          "imageHeightIn": 4.4467,
+          "paperWidthIn": 8.34,
+          "paperHeightIn": 4.7,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2502,
+            "heightPx": 1410,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2425,
+              "height": 1334
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:45.855Z"
+      }
+    }
+  },
+  "book-art-616ff8378f27047b4a91": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/616ff8378f27047b4a91.jpg",
+      "widthPx": 1379,
+      "heightPx": 1498,
+      "sha256": "2ac7ebc0362dccb4541843ff4ee59ee8a340b977a81075bd80b59b18e2fd68c0"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S4.84X5.24",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0.jpg",
+          "sha256": "335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0",
+          "sourceSha256": "2ac7ebc0362dccb4541843ff4ee59ee8a340b977a81075bd80b59b18e2fd68c0",
+          "productCode": "5M144M8S4.84X5.24",
+          "imageWidthIn": 4.5867,
+          "imageHeightIn": 4.9833,
+          "paperWidthIn": 4.84,
+          "paperHeightIn": 5.24,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1452,
+            "heightPx": 1572,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1376,
+              "height": 1495
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-8d1545e1ac13c99eb4ce": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.jpg",
+      "widthPx": 2375,
+      "heightPx": 1684,
+      "sha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S8.16X5.86",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114.jpg",
+          "sha256": "f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114",
+          "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+          "productCode": "5M144M8S8.16X5.86",
+          "imageWidthIn": 7.9067,
+          "imageHeightIn": 5.6067,
+          "paperWidthIn": 8.16,
+          "paperHeightIn": 5.86,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2448,
+            "heightPx": 1758,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2372,
+              "height": 1682
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      },
+      "medium": {
+        "sku": "5M144M8S6.18X4.46",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6.jpg",
+          "sha256": "7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6",
+          "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+          "productCode": "5M144M8S6.18X4.46",
+          "imageWidthIn": 5.9267,
+          "imageHeightIn": 4.2033,
+          "paperWidthIn": 6.18,
+          "paperHeightIn": 4.46,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1854,
+            "heightPx": 1338,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1778,
+              "height": 1261
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-466dc684227286c40502": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.jpg",
+      "widthPx": 1535,
+      "heightPx": 2275,
+      "sha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S5.36X7.83",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9.jpg",
+          "sha256": "623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9",
+          "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+          "productCode": "5M144M8S5.36X7.83",
+          "imageWidthIn": 5.1067,
+          "imageHeightIn": 7.57,
+          "paperWidthIn": 5.36,
+          "paperHeightIn": 7.83,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1608,
+            "heightPx": 2349,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1532,
+              "height": 2271
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      },
+      "medium": {
+        "sku": "5M144M8S4.08X5.93",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b.jpg",
+          "sha256": "dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b",
+          "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+          "productCode": "5M144M8S4.08X5.93",
+          "imageWidthIn": 3.8267,
+          "imageHeightIn": 5.67,
+          "paperWidthIn": 4.08,
+          "paperHeightIn": 5.93,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1224,
+            "heightPx": 1779,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1148,
+              "height": 1701
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-82127d1886ae57d5cb6e": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.jpg",
+      "widthPx": 2949,
+      "heightPx": 4197,
+      "sha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S10.08X14.24",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73.jpg",
+          "sha256": "4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73",
+          "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+          "productCode": "5M144M8S10.08X14.24",
+          "imageWidthIn": 9.8267,
+          "imageHeightIn": 13.9867,
+          "paperWidthIn": 10.08,
+          "paperHeightIn": 14.24,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3024,
+            "heightPx": 4272,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2948,
+              "height": 4196
+            }
+          }
+        },
+        "amount": "60.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      },
+      "medium": {
+        "sku": "5M144M8S7.62X10.74",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb.jpg",
+          "sha256": "a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb",
+          "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+          "productCode": "5M144M8S7.62X10.74",
+          "imageWidthIn": 7.3667,
+          "imageHeightIn": 10.4833,
+          "paperWidthIn": 7.62,
+          "paperHeightIn": 10.74,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2286,
+            "heightPx": 3222,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2210,
+              "height": 3145
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      },
+      "small": {
+        "sku": "5M144M8S5.16X7.24",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1.jpg",
+          "sha256": "4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1",
+          "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+          "productCode": "5M144M8S5.16X7.24",
+          "imageWidthIn": 4.9067,
+          "imageHeightIn": 6.9833,
+          "paperWidthIn": 5.16,
+          "paperHeightIn": 7.24,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1548,
+            "heightPx": 2172,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1472,
+              "height": 2095
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-c04c7e48687fe35e65f5": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/c04c7e48687fe35e65f5.jpg",
+      "widthPx": 1356,
+      "heightPx": 1479,
+      "sha256": "5f4a86b09b49d0134e2dac402eb65b5372711c23b0bb0c7a07a9862eab9e7163"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S4.77X5.18",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047.jpg",
+          "sha256": "2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047",
+          "sourceSha256": "5f4a86b09b49d0134e2dac402eb65b5372711c23b0bb0c7a07a9862eab9e7163",
+          "productCode": "5M144M8S4.77X5.18",
+          "imageWidthIn": 4.5167,
+          "imageHeightIn": 4.9267,
+          "paperWidthIn": 4.77,
+          "paperHeightIn": 5.18,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1431,
+            "heightPx": 1554,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1355,
+              "height": 1478
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-ec22daff29e72f16eb76": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/ec22daff29e72f16eb76.jpg",
+      "widthPx": 1376,
+      "heightPx": 1578,
+      "sha256": "1904273e6e15dd884990184a7a6c577df6d6621be04a839e4f32223d6c3cbddc"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S4.83X5.51",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82.jpg",
+          "sha256": "3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82",
+          "sourceSha256": "1904273e6e15dd884990184a7a6c577df6d6621be04a839e4f32223d6c3cbddc",
+          "productCode": "5M144M8S4.83X5.51",
+          "imageWidthIn": 4.5767,
+          "imageHeightIn": 5.25,
+          "paperWidthIn": 4.83,
+          "paperHeightIn": 5.51,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1449,
+            "heightPx": 1653,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1373,
+              "height": 1575
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-504e3fafdacd7c9bbcd0": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/504e3fafdacd7c9bbcd0.jpg",
+      "widthPx": 1426,
+      "heightPx": 2048,
+      "sha256": "738cecea10878b15dfc3c165445da7359d3603c137d579322a64193be34628bc"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S5X7.07",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c.jpg",
+          "sha256": "4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c",
+          "sourceSha256": "738cecea10878b15dfc3c165445da7359d3603c137d579322a64193be34628bc",
+          "productCode": "5M144M8S5X7.07",
+          "imageWidthIn": 4.7467,
+          "imageHeightIn": 6.8167,
+          "paperWidthIn": 5,
+          "paperHeightIn": 7.07,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1500,
+            "heightPx": 2121,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1424,
+              "height": 2045
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-4a0bb9cdd6c404c4e77c": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/4a0bb9cdd6c404c4e77c.jpg",
+      "widthPx": 1440,
+      "heightPx": 2048,
+      "sha256": "76d1b80563112ed04fff1f301964c36fe19cfbb0934e8bc763b1ea1d39f1ffce"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S5.05X7.07",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99.jpg",
+          "sha256": "6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99",
+          "sourceSha256": "76d1b80563112ed04fff1f301964c36fe19cfbb0934e8bc763b1ea1d39f1ffce",
+          "productCode": "5M144M8S5.05X7.07",
+          "imageWidthIn": 4.7933,
+          "imageHeightIn": 6.8167,
+          "paperWidthIn": 5.05,
+          "paperHeightIn": 7.07,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1515,
+            "heightPx": 2121,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1438,
+              "height": 2045
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-0ee2717bc04e65d0507e": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.jpg",
+      "widthPx": 3019,
+      "heightPx": 3318,
+      "sha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S10.31X11.31",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb.jpg",
+          "sha256": "0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb",
+          "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+          "productCode": "5M144M8S10.31X11.31",
+          "imageWidthIn": 10.0567,
+          "imageHeightIn": 11.0533,
+          "paperWidthIn": 10.31,
+          "paperHeightIn": 11.31,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 3093,
+            "heightPx": 3393,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 3017,
+              "height": 3316
+            }
+          }
+        },
+        "amount": "50.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      },
+      "medium": {
+        "sku": "5M144M8S7.79X8.54",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99.jpg",
+          "sha256": "18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99",
+          "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+          "productCode": "5M144M8S7.79X8.54",
+          "imageWidthIn": 7.5367,
+          "imageHeightIn": 8.2833,
+          "paperWidthIn": 7.79,
+          "paperHeightIn": 8.54,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2337,
+            "heightPx": 2562,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2261,
+              "height": 2485
+            }
+          }
+        },
+        "amount": "30.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      },
+      "small": {
+        "sku": "5M144M8S5.28X5.78",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa.jpg",
+          "sha256": "3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa",
+          "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+          "productCode": "5M144M8S5.28X5.78",
+          "imageWidthIn": 5.0267,
+          "imageHeightIn": 5.5233,
+          "paperWidthIn": 5.28,
+          "paperHeightIn": 5.78,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1584,
+            "heightPx": 1734,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1508,
+              "height": 1657
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-deb92de6e72f7b3ce951": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.jpg",
+      "widthPx": 1816,
+      "heightPx": 1996,
+      "sha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S6.3X6.9",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4.jpg",
+          "sha256": "3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4",
+          "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+          "productCode": "5M144M8S6.3X6.9",
+          "imageWidthIn": 6.0467,
+          "imageHeightIn": 6.6467,
+          "paperWidthIn": 6.3,
+          "paperHeightIn": 6.9,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1890,
+            "heightPx": 2070,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1814,
+              "height": 1994
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      },
+      "medium": {
+        "sku": "5M144M8S4.79X5.24",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5.jpg",
+          "sha256": "cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5",
+          "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+          "productCode": "5M144M8S4.79X5.24",
+          "imageWidthIn": 4.5367,
+          "imageHeightIn": 4.9867,
+          "paperWidthIn": 4.79,
+          "paperHeightIn": 5.24,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1437,
+            "heightPx": 1572,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1361,
+              "height": 1496
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:46.642Z"
+      }
+    }
+  },
+  "book-art-0f696788184bbba1d236": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/0f696788184bbba1d236.jpg",
+      "widthPx": 1274,
+      "heightPx": 2051,
+      "sha256": "a87a784a8e3dcd764542faafaf1898e5397a7fb90a2f441c8eb728e36f3bf93a"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S4.49X7.08",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72.jpg",
+          "sha256": "8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72",
+          "sourceSha256": "a87a784a8e3dcd764542faafaf1898e5397a7fb90a2f441c8eb728e36f3bf93a",
+          "productCode": "5M144M8S4.49X7.08",
+          "imageWidthIn": 4.2367,
+          "imageHeightIn": 6.82,
+          "paperWidthIn": 4.49,
+          "paperHeightIn": 7.08,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1347,
+            "heightPx": 2124,
+            "content": {
+              "left": 38,
+              "top": 39,
+              "width": 1271,
+              "height": 2046
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:47.417Z"
+      }
+    }
+  },
+  "book-art-50a7984f819bec72d1c7": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.jpg",
+      "widthPx": 2280,
+      "heightPx": 3031,
+      "sha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S7.85X10.35",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09.jpg",
+          "sha256": "2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09",
+          "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+          "productCode": "5M144M8S7.85X10.35",
+          "imageWidthIn": 7.5933,
+          "imageHeightIn": 10.0967,
+          "paperWidthIn": 7.85,
+          "paperHeightIn": 10.35,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2355,
+            "heightPx": 3105,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 2278,
+              "height": 3029
+            }
+          }
+        },
+        "amount": "35.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:47.417Z"
+      },
+      "medium": {
+        "sku": "5M144M8S5.95X7.82",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a.jpg",
+          "sha256": "402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a",
+          "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+          "productCode": "5M144M8S5.95X7.82",
+          "imageWidthIn": 5.6933,
+          "imageHeightIn": 7.5667,
+          "paperWidthIn": 5.95,
+          "paperHeightIn": 7.82,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1785,
+            "heightPx": 2346,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1708,
+              "height": 2270
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:47.417Z"
+      },
+      "small": {
+        "sku": "5M144M8S4.05X5.3",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2.jpg",
+          "sha256": "411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2",
+          "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+          "productCode": "5M144M8S4.05X5.3",
+          "imageWidthIn": 3.7967,
+          "imageHeightIn": 5.0467,
+          "paperWidthIn": 4.05,
+          "paperHeightIn": 5.3,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1215,
+            "heightPx": 1590,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1139,
+              "height": 1514
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:47.417Z"
+      }
+    }
+  },
+  "book-art-4c6fb3817fed4e5a6195": {
+    "enabled": true,
+    "sizing": "image-proportional",
+    "sizingApproved": true,
+    "paper": "watercolor-bright-white",
+    "source": {
+      "url": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.jpg",
+      "widthPx": 2418,
+      "heightPx": 2111,
+      "sha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56"
+    },
+    "variants": {
+      "full": {
+        "sku": "5M144M8S8.31X7.28",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49.jpg",
+          "sha256": "2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49",
+          "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+          "productCode": "5M144M8S8.31X7.28",
+          "imageWidthIn": 8.05,
+          "imageHeightIn": 7.0267,
+          "paperWidthIn": 8.31,
+          "paperHeightIn": 7.28,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 2493,
+            "heightPx": 2184,
+            "content": {
+              "left": 39,
+              "top": 38,
+              "width": 2415,
+              "height": 2108
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:47.417Z"
+      },
+      "medium": {
+        "sku": "5M144M8S6.29X5.52",
+        "asset": {
+          "provider": "finerworks",
+          "url": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872.jpg",
+          "sha256": "db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872",
+          "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+          "productCode": "5M144M8S6.29X5.52",
+          "imageWidthIn": 6.0333,
+          "imageHeightIn": 5.2667,
+          "paperWidthIn": 6.29,
+          "paperHeightIn": 5.52,
+          "approved": true,
+          "layoutApproved": true,
+          "layout": "full-image-white-border-v1",
+          "layoutSpec": {
+            "dpi": 300,
+            "widthPx": 1887,
+            "heightPx": 1656,
+            "content": {
+              "left": 38,
+              "top": 38,
+              "width": 1810,
+              "height": 1580
+            }
+          }
+        },
+        "amount": "25.00",
+        "pricingRule": "finerworks-3.5x-v1",
+        "quotedAt": "2026-10-01T23:38:47.417Z"
+      }
+    }
+  }
+}
