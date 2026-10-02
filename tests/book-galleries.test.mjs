@@ -11,7 +11,7 @@ import collections from '../catalog/collections.json' with {type:'json'};
 
 const groups=new Map(manifest.sections.map(group=>[group.id,group]));
 
-test('book gallery sections are consolidated without changing painting inventory',()=>{
+test('book gallery sections contain only the retained artwork inventory',()=>{
   const originalIds=new Set(originalProducts.map(product=>product.id));
   for(const product of bookProducts){
     assert(!originalIds.has(product.id));
@@ -28,7 +28,14 @@ test('book gallery sections are consolidated without changing painting inventory
 
   const pacific=groups.get('watercolor-landscapes-pacific-north-west');
   assert.equal(pacific.title,'Pacific Northwest');
-  assert.equal(pacific.artworks.length,21);
+  assert.equal(pacific.artworks.length,15);
+  const removedBookArt=['book-art-48cda66da2ff219fbb3f','book-art-543df2de766892143568','book-art-a572796512b8828b7333','book-art-dd27a2bc4247b8f9d49f','book-art-37da3c70d9d7750135e7','book-art-94962f025af06c2aa581'];
+  for(const id of removedBookArt){
+    assert(!manifest.artworks.some(art=>art.id===id),`${id} should be absent from the source manifest`);
+    assert(!manifest.sections.some(group=>group.artworks.includes(id)),`${id} should be absent from every book gallery`);
+    assert(!bookProducts.some(product=>product.id===id),`${id} should have no product page`);
+    assert(!(id in bookPrints),`${id} should have no print-ordering record`);
+  }
   for(const id of ['book-art-e6068e265bfdc379526c','book-art-9ae261289a3bce952c6f','book-art-deb3358c321671dae1fc','book-art-5e4eb881d89ae9f5c635','book-art-f56007f6a7d6ee955caf','book-art-d1399111a441ed91feaa'])
     assert(pacific.artworks.includes(id));
 
