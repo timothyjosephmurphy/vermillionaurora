@@ -23,6 +23,10 @@ const messages={
  'shop-network':'Etsy approved the token, but its shop lookup could not be reached. Try again shortly.',
  'shop-response':'Etsy approved the token, but returned an unreadable shop response.',
  'storage-conflict':'The connection changed while Etsy was responding. Start again to retry.',
+ 'storage-read':'The Worker could not read this attempt from private storage. Start a fresh connection.',
+ 'storage-pending-save':'The Worker could not update private storage before contacting Etsy. Start a fresh connection.',
+ 'token-network':'Etsy approved the request, but the Worker could not reach Etsy’s token service. Try again shortly.',
+ 'storage-save':'Etsy approved the connection, but the Worker could not save it to private storage. Start a fresh connection.',
  'connection-internal':'The Worker could not safely save the Etsy connection. Try again; no provider details were exposed.'
 };
 const result=new URLSearchParams(location.search).get('result')||'';
