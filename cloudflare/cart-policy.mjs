@@ -27,12 +27,13 @@ export function paymentMethods(env,id) {
     if(env.PRINT_CHECKOUT_ENABLED!=='true'||!printCheckoutListed(env,id))return [];
     if(print.provider==='finerworks') {if(!finerworksOrderingReady(env))return [];}
     else if(env.PRINT_PROVIDER==='finerworks'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.PAYPAL_MODE)return [];
-  } else if(!env.SHIPPO_TOKEN||!env.SHIP_FROM_STREET||!catalog[id]||catalog[id].available===false)return [];
+  } else if(!env.SHIPPO_TOKEN||!env.SHIP_FROM_STREET||!Object.hasOwn(catalog,id)||catalog[id].available===false)return [];
   const methods=[];
   if(env.PAYPAL_CHECKOUT_ENABLED==='true'&&(print||listed(env.PAYPAL_CHECKOUT_SLUGS,id))&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');
   if(print?!print.sampleOnly&&printBitcoinOffered(env):bitcoinOffered(env,id))methods.push('bitcoin');
   if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.PAYPAL_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&
-    listed(env.SQUARE_CHECKOUT_SLUGS,id)&&env.SQUARE_ACCESS_TOKEN&&env.SQUARE_APPLICATION_ID&&env.SQUARE_LOCATION_ID&&env.SQUARE_WEBHOOK_SIGNATURE_KEY&&env.SQUARE_WEBHOOK_URL)methods.push('square');
+    (env.SQUARE_CHECKOUT_ALL==='true'||listed(env.SQUARE_CHECKOUT_SLUGS,id))&&env.SQUARE_ACCESS_TOKEN&&env.SQUARE_APPLICATION_ID&&env.SQUARE_LOCATION_ID&&env.SQUARE_WEBHOOK_SIGNATURE_KEY&&env.SQUARE_WEBHOOK_URL&&
+    !(env.SQUARE_MODE==='live'&&env.SQUARE_APPLICATION_ID.startsWith('sandbox-')))methods.push('square');
   return methods;
 }
 export function cartItems(input) {
