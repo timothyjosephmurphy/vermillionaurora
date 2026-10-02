@@ -20,7 +20,7 @@ Set these as Cloudflare secrets:
 
 In Square Developer Console, add a Sandbox webhook subscription for `payment.updated` using the exact URL above. Copy its signature key into the Cloudflare secret. The Worker verifies the HMAC signature, retrieves the payment from Square, and checks payment status, order reference, location, currency, and amount before settling inventory.
 
-After adding the webhook secret, set `SQUARE_CHECKOUT_ENABLED=true` in the sandbox Worker to expose Square for the allowlisted pilot item. PayPal remains available as a separate checkout button. Test approved, declined, interrupted, duplicate-webhook, and multi-item cases before considering production.
+After adding the webhook secret, set `SQUARE_CHECKOUT_ENABLED=true` in the sandbox Worker to expose Square for the allowlisted pilot item. PayPal remains available as a separate checkout button. The sandbox Worker also exposes `/checkout/square-test`, a small same-origin test form that uses Square's sandbox Web Payments SDK without cloning the storefront. It is hidden unless sandbox mode, Square checkout, and `SQUARE_SANDBOX_NO_FULFILLMENT=true` are all active. A successful test marks the painting sold in sandbox inventory only; it does not record tax, purchase a label, submit print fulfillment, or send order email. The quote does send its sample shipping address to the configured shipping and tax quote providers. Test approved and declined card flows and verify the webhook before considering production.
 
 ## Production
 

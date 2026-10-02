@@ -69,7 +69,7 @@ export class CartOrder extends DurableObject {
         }:{}),
       ...(d.heldIds?{heldIds:d.heldIds}:{}),
       ...(d.unavailable?{unavailable:d.unavailable}:{}),
-      ...(d.paymentError?{paymentError:d.paymentError}:{}),
+      ...(d.paymentError?{paymentError:d.paymentError}:{}),...(d.squareSandboxNoFulfillment?{sandboxTestOnly:true}:{}),
       ...(d.status==='paid'?{paidAt:d.paidAt,shipments:[...(d.jobs||[]).map(j=>({id:j.quote.slug,trackingNumber:j.trackingNumber||'',trackingUrl:j.trackingUrl||''})),...(d.printJob?.shipments||[])],...(d.printJob?{printStatus:d.printJob.status}:{}),confirmation:d.customerMail?.status||'pending'}:{})};
   }
   async start(method,payment={}) {return this.exclusive(async()=>{
@@ -79,7 +79,7 @@ export class CartOrder extends DurableObject {
     if(d.quote.catalogVersion!==catalogVersion||this.env.PAYPAL_MODE!==d.mode||!d.methods.includes(method)||!commonMethods(this.env,d.quote.items).includes(method))throw Error('Refresh this cart before payment');
     if(method==='square'&&(typeof payment.sourceId!=='string'||!payment.sourceId||payment.sourceId.length>2000))throw Error('Enter valid card details before paying.');
     await this.schedule();
-    d=this.save({...d,status:'reserving',method,expiresAt:Date.now()+20*60000,paymentError:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,
+    d=this.save({...d,status:'reserving',method,squareSandboxNoFulfillment:method==='square'&&this.env.PAYPAL_MODE==='sandbox'&&this.env.SQUARE_MODE==='sandbox'&&this.env.SQUARE_SANDBOX_NO_FULFILLMENT==='true',expiresAt:Date.now()+20*60000,paymentError:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,
       merchantId:method==='paypal'?this.env.PAYPAL_MERCHANT_ID:null,
       ...(method==='square'?{squareMode:this.env.SQUARE_MODE,squareLocationId:this.env.SQUARE_LOCATION_ID,squareSourceId:payment.sourceId,
         squareAttempt:(d.squareAttempt||0)+1,squareIdempotencyKey:`${d.id}-${String((d.squareAttempt||0)+1).padStart(2,'0')}`,paymentError:undefined}:{}),
@@ -168,9 +168,9 @@ export class CartOrder extends DurableObject {
     await this.schedule();
     d=this.save({...d,status:'settling',captureId,details,paidAt:d.paidAt||details.paidAt||new Date().toISOString()});
     for(const i of d.quote.items.filter(i=>i.type!=='print'))if(!await this.stock(i.id).completeCart(d.id,captureId))throw Error('Could not complete inventory');
-    const jobs=d.jobs||d.quote.shipments.map(s=>newShippingJob(this.env,`cart:${d.id}`,{...s,tax:'0.00',total:(Number(s.base)+Number(s.shipping)).toFixed(2),orderTax:d.quote.tax,orderTotal:d.quote.total}));
-    const prints=d.quote.items.filter(i=>i.type==='print');
-    let printJob=d.printJob;
+    const jobs=d.squareSandboxNoFulfillment?[]:d.jobs||d.quote.shipments.map(s=>newShippingJob(this.env,`cart:${d.id}`,{...s,tax:'0.00',total:(Number(s.base)+Number(s.shipping)).toFixed(2),orderTax:d.quote.tax,orderTotal:d.quote.total}));
+    const prints=d.squareSandboxNoFulfillment?[]:d.quote.items.filter(i=>i.type==='print');
+    let printJob=d.squareSandboxNoFulfillment?undefined:d.printJob;
     if(prints.length&&!printJob)try {printJob=newPrintJob(this.env,d,prints);}catch {
       // A configuration change after approval must never prevent recording payment.
       printJob={provider:d.quote.printQuote?.provider||prints[0].provider,status:'review',mode:d.mode,items:prints,shipments:[],
@@ -285,7 +285,9 @@ export class CartOrder extends DurableObject {
     return {recorded:true,period:d.paidAt.slice(0,7)};
   }
   async fulfill() {
-    let d=this.read(),done=true;await this.schedule();
+    let d=this.read();
+    if(d?.squareSandboxNoFulfillment&&d.mode==='sandbox'&&d.method==='square'){await this.ctx.storage.deleteAlarm();return;}
+    let done=true;await this.schedule();
     try{await this.archiveSale();}catch{done=false;}
     if(!d.taxRecorded)try{await recordTax(this.env,d.quote.taxCalculationId,d.captureId);this.save({...this.read(),taxRecorded:true});}catch{done=false;}
     for(let i=0;i<d.jobs.length;i++)try {
