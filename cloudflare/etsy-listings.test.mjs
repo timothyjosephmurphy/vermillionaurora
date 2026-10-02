@@ -34,7 +34,14 @@ test('owner token and exact origin guard setup endpoints',async t=>{
  assert.equal((await req(env,'/etsy/listings/preflight',{},'https://evil.test')).status,403);
  assert.equal((await req(env,'/etsy/listings/preflight')).status,200);
 });
-test('loads the Etsy processing interval using the non-legacy profile response',async t=>{\n const env=setup();await connected(env);const {calls}=mockEtsy(t);\n const res=await req(env,'/etsy/listings/preflight');assert.equal(res.status,200);\n const data=await res.json();assert.equal(data.readiness[0].name,'Made to order · 5–8 days');\n assert.ok(calls.some(x=>x.url.endsWith('/readiness-state-definitions?legacy=false')));\n});\n\ntest('creates exactly five saved drafts with ready size and frame combinations, never activating them',async t=>{
+test('loads the Etsy processing interval using the non-legacy profile response',async t=>{
+ const env=setup();await connected(env);const {calls}=mockEtsy(t);
+ const res=await req(env,'/etsy/listings/preflight');assert.equal(res.status,200);
+ const data=await res.json();assert.equal(data.readiness[0].name,'Made to order · 5–8 days');
+ assert.ok(calls.some(x=>x.url.endsWith('/readiness-state-definitions?legacy=false')));
+});
+
+test('creates exactly five saved drafts with ready size and frame combinations, never activating them',async t=>{
  const env=setup();await connected(env);const {calls,inventoryCounts}=mockEtsy(t);
  const res=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55});
  assert.equal(res.status,200,await res.clone().text());
