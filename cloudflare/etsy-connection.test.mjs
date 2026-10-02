@@ -114,6 +114,15 @@ test('denial consumes state; provider failures never leak raw errors and never s
   assert.equal(outcome(redirected), 'token-redirect');
   assert.doesNotMatch(await redirected.text(), /policy\.etsy\.com|restriction/);
 
+  globalThis.fetch = async (url, options) => {
+    if (String(url).endsWith('/oauth/token')) return Response.json(token);
+    assert.equal(options.redirect, 'manual');
+    return new Response(null, { status: 302, headers: { Location: 'https://policy.etsy.com/restriction' } });
+  };
+  const shopRedirected = await callback(env, await start(env));
+  assert.equal(outcome(shopRedirected), 'shop-redirect');
+  assert.doesNotMatch(await shopRedirected.text(), /policy\.etsy\.com|restriction/);
+
   globalThis.fetch = async () => { throw Error('secret-provider-body'); };
   const failed = await callback(env, await start(env));
   assert.equal(outcome(failed), 'token-network');
