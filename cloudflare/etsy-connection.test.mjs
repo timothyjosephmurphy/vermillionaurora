@@ -102,9 +102,13 @@ test('denial consumes state; provider failures never leak raw errors and never s
   assert.equal(outcome(await callback(env, attempt, { query: 'error=access_denied' })), 'denied');
   assert.equal(outcome(await callback(env, attempt)), 'expired');
   assert.equal(calls.length, 0);
+  globalThis.fetch = async () => Response.json({ error: 'private-provider-detail' }, { status: 401 });
+  const rejected = await callback(env, await start(env));
+  assert.equal(outcome(rejected), 'token-http-401');
+  assert.doesNotMatch(await rejected.text(), /private-provider-detail/);
   globalThis.fetch = async () => { throw Error('secret-provider-body'); };
   const failed = await callback(env, await start(env));
-  assert.equal(outcome(failed), 'failed');
+  assert.equal(outcome(failed), 'connection-internal');
   assert.doesNotMatch(await failed.text(), /secret-provider/);
   assert.equal((await (await post(env, '/etsy/status')).json()).connected, false);
 });
@@ -112,7 +116,7 @@ test('denial consumes state; provider failures never leak raw errors and never s
 test('incomplete scopes, mismatched owner and storage failure cannot report a saved connection', async t => {
   const env = setup();
   t.mock.method(globalThis, 'fetch', async () => Response.json({ ...token, scope: 'shops_r' }));
-  assert.equal(outcome(await callback(env, await start(env))), 'failed');
+  assert.equal(outcome(await callback(env, await start(env))), 'token-scopes');
   globalThis.fetch = async url => Response.json(String(url).endsWith('/oauth/token') ? token : { shop_id: 42, user_id: 999, shop_name: 'VermillionAurora' });
   assert.equal(outcome(await callback(env, await start(env))), 'wrong-shop');
   env.COMMISSION_UPLOADS.get = async () => { throw Error('storage secret'); };
@@ -126,5 +130,8 @@ test('connection page is uncacheable, blocks framing and has no reflected query 
   assert.equal(response.status, 200);
   assert.equal(response.headers.get('Cache-Control'), 'no-store');
   assert.match(response.headers.get('Content-Security-Policy'), /frame-ancestors 'none'/);
-  assert.doesNotMatch(await response.text(), /<script>evil|test-manager|test-shared/);
+  const html = await response.text();
+  assert.doesNotMatch(html, /<script>evil|test-manager|test-shared/);
+  assert.match(html, /token-http-/);
+  assert.match(html, /shop-http-/);
 });

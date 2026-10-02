@@ -78,23 +78,29 @@ async function callback(request, env, now) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'x-api-key': apiKey },
     body: new URLSearchParams({ grant_type: 'authorization_code', client_id: env.ETSY_KEYSTRING, redirect_uri: ETSY_CALLBACK, code, code_verifier: pending.verifier })
   });
-  if (!tokenResponse.ok) return redirect('failed');
-  const tokens = await tokenResponse.json();
+  if (!tokenResponse.ok) return redirect(`token-http-${tokenResponse.status}`);
+  let tokens;
+  try { tokens = await tokenResponse.json(); } catch { return redirect('token-response'); }
   const userId = typeof tokens.access_token === 'string' && /^(\d+)\./.exec(tokens.access_token)?.[1];
   const scopes = typeof tokens.scope === 'string' ? tokens.scope.split(/\s+/) : SCOPES.split(' ');
-  if (!userId || tokens.token_type?.toLowerCase() !== 'bearer' || typeof tokens.refresh_token !== 'string' || !tokens.refresh_token || !Number.isFinite(tokens.expires_in) || tokens.expires_in <= 0 || !SCOPES.split(' ').every(s => scopes.includes(s))) return redirect('failed');
-  const shopResponse = await fetch(`https://openapi.etsy.com/v3/application/users/${userId}/shops`, {
-    redirect: 'error', signal: AbortSignal.timeout(15000), headers: { 'x-api-key': apiKey, Authorization: `Bearer ${tokens.access_token}` }
-  });
-  if (!shopResponse.ok) return redirect('failed');
-  const shop = await shopResponse.json();
+  if (!userId || tokens.token_type?.toLowerCase() !== 'bearer' || typeof tokens.refresh_token !== 'string' || !tokens.refresh_token || !Number.isFinite(tokens.expires_in) || tokens.expires_in <= 0) return redirect('token-response');
+  if (!SCOPES.split(' ').every(s => scopes.includes(s))) return redirect('token-scopes');
+  let shopResponse;
+  try {
+    shopResponse = await fetch(`https://openapi.etsy.com/v3/application/users/${userId}/shops`, {
+      redirect: 'error', signal: AbortSignal.timeout(15000), headers: { 'x-api-key': apiKey, Authorization: `Bearer ${tokens.access_token}` }
+    });
+  } catch { return redirect('shop-network'); }
+  if (!shopResponse.ok) return redirect(`shop-http-${shopResponse.status}`);
+  let shop;
+  try { shop = await shopResponse.json(); } catch { return redirect('shop-response'); }
   if (!Number.isSafeInteger(shop.shop_id) || shop.shop_id <= 0 || String(shop.user_id) !== userId || shop.shop_name?.toLowerCase() !== SHOP.toLowerCase()) return redirect('wrong-shop');
   const connection = {
     shopId: shop.shop_id, shopName: shop.shop_name, userId, scopes,
     authorizedAt: new Date(now).toISOString(), expiresAt: now + tokens.expires_in * 1000,
     accessToken: tokens.access_token, refreshToken: tokens.refresh_token
   };
-  if (!await write(env, { pending: null, connection }, consumed.etag)) return redirect('expired');
+  if (!await write(env, { pending: null, connection }, consumed.etag)) return redirect('storage-conflict');
   return redirect('saved');
 }
 
@@ -118,6 +124,6 @@ export async function etsyConnection(request, env, now = Date.now()) {
     } : {}) });
   } catch {
     // Provider bodies and exceptions can contain credentials. Never log or return them.
-    return isCallback ? redirect('failed') : json({ error: 'Connection storage is unavailable. Please try again.' }, 503);
+    return isCallback ? redirect('connection-internal') : json({ error: 'Connection storage is unavailable. Please try again.' }, 503);
   }
 }
