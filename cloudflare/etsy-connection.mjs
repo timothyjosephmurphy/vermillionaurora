@@ -112,7 +112,7 @@ async function callback(request, env, now) {
     accessToken: tokens.access_token, refreshToken: tokens.refresh_token
   };
   let saved;
-  try { saved = await write(env, { pending: null, connection }, consumed.etag); } catch { return redirect('storage-save'); }
+  try { saved = await write(env, { ...record, pending: null, connection }, consumed.etag); } catch { return redirect('storage-save'); }
   if (!saved) return redirect('storage-conflict');
   return redirect('saved');
 }
