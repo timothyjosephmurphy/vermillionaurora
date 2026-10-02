@@ -62,7 +62,7 @@ test('authorization uses PKCE, exact callback and limited scopes; tokens stay en
   assert.equal(exchange.body.get('redirect_uri'), ETSY_CALLBACK);
   const challenge = Buffer.from(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(exchange.body.get('code_verifier')))).toString('base64url');
   assert.equal(challenge, attempt.url.searchParams.get('code_challenge'));
-  assert.equal(calls[1].url, 'https://openapi.etsy.com/v3/application/users/123/shops');
+  assert.equal(calls[1].url, 'https://api.etsy.com/v3/application/users/123/shops');
   assert.equal(calls[1].options.headers['x-api-key'], 'test-keystring:test-shared-secret');
   const status = await post(env, '/etsy/status'), body = await status.text();
   assert.deepEqual(JSON.parse(body), { ready: true, connected: true, shopId: 42, shopName: 'VermillionAurora', scopes: token.scope.split(' '), authorizedAt: new Date(now).toISOString() });
@@ -113,6 +113,15 @@ test('denial consumes state; provider failures never leak raw errors and never s
   const redirected = await callback(env, await start(env));
   assert.equal(outcome(redirected), 'token-redirect');
   assert.doesNotMatch(await redirected.text(), /policy\.etsy\.com|restriction/);
+
+  globalThis.fetch = async (url, options) => {
+    if (String(url).endsWith('/oauth/token')) return Response.json(token);
+    assert.equal(options.redirect, 'manual');
+    return new Response(null, { status: 302, headers: { Location: 'https://policy.etsy.com/restriction' } });
+  };
+  const shopRedirected = await callback(env, await start(env));
+  assert.equal(outcome(shopRedirected), 'shop-redirect');
+  assert.doesNotMatch(await shopRedirected.text(), /policy\.etsy\.com|restriction/);
 
   globalThis.fetch = async () => { throw Error('secret-provider-body'); };
   const failed = await callback(env, await start(env));
