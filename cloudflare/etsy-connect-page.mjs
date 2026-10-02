@@ -25,7 +25,8 @@ const messages={
  'storage-conflict':'The connection changed while Etsy was responding. Start again to retry.',
  'storage-read':'The Worker could not read this attempt from private storage. Start a fresh connection.',
  'storage-pending-save':'The Worker could not update private storage before contacting Etsy. Start a fresh connection.',
- 'token-network':'Etsy approved the request, but the Worker could not reach Etsy’s token service. Try again shortly.',
+ 'token-network':'The Worker could not reach Etsy’s token service. Start a fresh connection attempt; if this keeps happening, Etsy may be having an API issue.',
+ 'token-redirect':'Etsy redirected the token request, so the Worker stopped without following it. Start a fresh connection attempt; if Etsy keeps redirecting, contact Etsy API support.',
  'storage-save':'Etsy approved the connection, but the Worker could not save it to private storage. Start a fresh connection.',
  'connection-internal':'The Worker could not safely save the Etsy connection. Try again; no provider details were exposed.'
 };
