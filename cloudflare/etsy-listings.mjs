@@ -49,7 +49,7 @@ function choices(data){
  };
 }
 async function preflight(env,token){
- const shop=token.shopId,paths=['/shops/'+shop+'/shipping-profiles','/shops/'+shop+'/readiness-state-definitions','/shops/'+shop+'/production-partners','/seller-taxonomy/nodes'];
+ const shop=token.shopId,paths=['/shops/'+shop+'/shipping-profiles','/shops/'+shop+'/readiness-state-definitions?legacy=false','/shops/'+shop+'/production-partners','/seller-taxonomy/nodes'];
  const data=await Promise.all(paths.map(path=>call(API+path,env,token,{action:'loading Etsy shop setup'})));
  const c=choices(data);
  return {...c,works:prints.map(p=>({id:p.id,title:labelOf(p),sizes:p.variants.map(v=>v.label)}))};
