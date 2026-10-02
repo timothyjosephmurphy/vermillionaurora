@@ -16,3 +16,6 @@
 
 @media(max-width:980px){.site-header .main-nav .cart-nav{order:-1}}
 .cart-checkout [data-square-card-box]{margin:1rem 0;padding:1rem;border:1px solid #c8c1b6;border-radius:4px;background:#fff}
+
+[data-cart-methods] .payment-button-content{display:inline-flex;align-items:center;justify-content:center;gap:.6rem}
+[data-cart-methods] .payment-button-icon{display:block;width:1.15rem;height:1.15rem;flex:0 0 auto}

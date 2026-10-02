@@ -86,7 +86,7 @@ try{
  assert.deepEqual((await cartStored()).map(i=>i.id),ids);
  await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();
  assert.equal(calls.filter(c=>c.action==='quote').at(-1).body.items.length,2,'Buy Now with other saved items quotes the full cart');
- await page.getByRole('button',{name:'Pay with Bitcoin / Lightning'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
+ await page.getByRole('button',{name:'Pay with Bitcoin'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual(await cartStored(),[]);
  assert.deepEqual(errors,[]);console.log('PASS: desktop/mobile cart, persistent selections, quantity-one originals, invalidation, payment recovery, receipt, unavailable stock, corrupted storage, and Buy Now choosing one-item or full-cart checkout correctly.');
 }finally{await browser.close();}
