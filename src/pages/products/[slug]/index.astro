@@ -52,13 +52,13 @@ const facts=painting ? [
       <button type="button" class="button button-ghost" data-print-open aria-haspopup="dialog" aria-controls="print-purchase-dialog">Buy a print</button>
       <p class="product-print-availability">Print available from ${printFrom.toFixed(2)}</p>
     </div>}
-    <PurchaseReassurance kind={p.listing.status==='available'?(availablePrints.length?'all':'original'):'print'}/>
   </section>}
       {p.listing.price && (!painting||p.listing.status!=='available') && <p class="product-detail-price">{priceLabel(p,painting)}</p>}
       {painting && <p class="product-availability" data-live-status>{p.bookGallery?'From the book collection':statusLabel(p)}</p>}
       {painting&&availablePrints.length===0&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}
+      {painting && (p.listing.status==='available' || availablePrints.length>0) && <PurchaseReassurance kind={p.listing.status==='available'?(availablePrints.length?'all':'original'):'print'}/>}
       {p.type==='commission' && <CommissionProcess />}
       <div class="product-inquiry">{!painting&&<a class="button button-solid" href={p.inquiryHref||`/?product=${p.slug}#contact`}>{p.inquiry.label}</a>}{p.inquiry.note && <p>{p.inquiry.note}</p>}</div>
       {originalFrameHref&&<div class="product-frame-action"><a class="button button-ghost" data-original-frame href={originalFrameHref} target="_blank" rel="noopener noreferrer">Find a matching frame on Amazon</a></div>}
