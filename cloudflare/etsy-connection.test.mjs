@@ -108,7 +108,7 @@ test('denial consumes state; provider failures never leak raw errors and never s
   assert.doesNotMatch(await rejected.text(), /private-provider-detail/);
   globalThis.fetch = async () => { throw Error('secret-provider-body'); };
   const failed = await callback(env, await start(env));
-  assert.equal(outcome(failed), 'connection-internal');
+  assert.equal(outcome(failed), 'token-network');
   assert.doesNotMatch(await failed.text(), /secret-provider/);
   assert.equal((await (await post(env, '/etsy/status')).json()).connected, false);
 });
@@ -119,10 +119,22 @@ test('incomplete scopes, mismatched owner and storage failure cannot report a sa
   assert.equal(outcome(await callback(env, await start(env))), 'token-scopes');
   globalThis.fetch = async url => Response.json(String(url).endsWith('/oauth/token') ? token : { shop_id: 42, user_id: 999, shop_name: 'VermillionAurora' });
   assert.equal(outcome(await callback(env, await start(env))), 'wrong-shop');
+  const attempt = await start(env);
   env.COMMISSION_UPLOADS.get = async () => { throw Error('storage secret'); };
+  assert.equal(outcome(await callback(env, attempt)), 'storage-read');
   const response = await post(env, '/etsy/status');
   assert.equal(response.status, 503);
   assert.doesNotMatch(await response.text(), /storage secret/);
+
+  const saveEnv = setup(), saveAttempt = await start(saveEnv);
+  globalThis.fetch = async url => Response.json(String(url).endsWith('/oauth/token') ? token : { shop_id: 42, user_id: 123, shop_name: 'VermillionAurora' });
+  const put = saveEnv.COMMISSION_UPLOADS.put.bind(saveEnv.COMMISSION_UPLOADS);
+  let writes = 0;
+  saveEnv.COMMISSION_UPLOADS.put = async (...args) => {
+    if (++writes === 2) throw Error('storage secret');
+    return put(...args);
+  };
+  assert.equal(outcome(await callback(saveEnv, saveAttempt)), 'storage-save');
 });
 
 test('connection page is uncacheable, blocks framing and has no reflected query HTML', async () => {
@@ -134,4 +146,6 @@ test('connection page is uncacheable, blocks framing and has no reflected query 
   assert.doesNotMatch(html, /<script>evil|test-manager|test-shared/);
   assert.match(html, /token-http-/);
   assert.match(html, /shop-http-/);
+  assert.match(html, /storage-read/);
+  assert.match(html, /storage-save/);
 });
