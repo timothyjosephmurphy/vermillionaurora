@@ -96,10 +96,12 @@ async function callback(request, env, now) {
   if (!SCOPES.split(' ').every(s => scopes.includes(s))) return redirect('token-scopes');
   let shopResponse;
   try {
-    shopResponse = await fetch(`https://openapi.etsy.com/v3/application/users/${userId}/shops`, {
-      redirect: 'error', signal: AbortSignal.timeout(15000), headers: { 'x-api-key': apiKey, Authorization: `Bearer ${tokens.access_token}` }
+    shopResponse = await fetch(`https://api.etsy.com/v3/application/users/${userId}/shops`, {
+      // Keep the OAuth token on Etsy's shop endpoint; do not forward it through redirects.
+      method: 'GET', redirect: 'manual', signal: AbortSignal.timeout(15000), headers: { 'x-api-key': apiKey, Authorization: `Bearer ${tokens.access_token}` }
     });
   } catch { return redirect('shop-network'); }
+  if (shopResponse.status >= 300 && shopResponse.status < 400) return redirect('shop-redirect');
   if (!shopResponse.ok) return redirect(`shop-http-${shopResponse.status}`);
   let shop;
   try { shop = await shopResponse.json(); } catch { return redirect('shop-response'); }
