@@ -17,7 +17,7 @@
   window.vaCartReady=capabilitiesPromise;
   const counts=()=>document.querySelectorAll('[data-cart-count]').forEach(el=>{const count=(buyOnly?clean(read(CART)):cart).reduce((n,i)=>n+i.quantity,0);el.textContent=String(count);el.closest('a')?.setAttribute('aria-label',`Cart, ${count} item${count===1?'':'s'}`);});
   function persistCart(){if(buyOnly){const rest=clean(read(CART)).filter(i=>i.id!==buyOnly);write(CART,[...rest,...cart]);}else write(CART,cart);counts();document.dispatchEvent(new CustomEvent('cart:changed'));}
-  const methodIntersection=()=>['paypal','bitcoin'].filter(m=>cart.length&&cart.every(line=>capabilities?.products.find(p=>p.id===line.id)?.methods.includes(m)));
+   const methodIntersection=()=>['paypal','square','bitcoin'].filter(m=>cart.length&&cart.every(line=>capabilities?.products.find(p=>p.id===line.id)?.methods.includes(m)));
   const eligible=id=>capabilities?.enabled&&capabilities.products.find(p=>p.id===id&&(p.status==='available'||heldIds.has(id)));
   const pending=d=>d&&!['quoted','paid','cancelled','expired','unavailable','missing'].includes(d.status);
   const makeHold=()=>({holdId:crypto.randomUUID(),key:[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('')});
@@ -105,15 +105,32 @@
   }
   function updatePaymentControls(enabled=false,methods=methodIntersection()){
     const box=root.querySelector('[data-cart-payments]'),host=root.querySelector('[data-cart-methods]');
+    const squareBox=root.querySelector('[data-square-card-box]');
     host.replaceChildren();
+    if(squareBox)squareBox.hidden=!(enabled&&methods.includes('square'));
+    if(enabled&&methods.includes('square'))ensureSquareCard().catch(error=>announce(`Square card entry could not load: ${error.message}`));
     for(const method of methods){
-      const button=node('button',method==='paypal'?'Continue with PayPal':'Pay with Bitcoin / Lightning','button button-solid');
+      const button=node('button',method==='paypal'?'Continue with PayPal':method==='square'?'Pay with Square using credit card':'Pay with Bitcoin / Lightning','button button-solid');
       button.type='button';button.disabled=!enabled||busy||!!(pendingOrder&&pending(pendingOrder));
       button.addEventListener('click',()=>startPayment(method));host.append(button);
     }
     box.hidden=!methods.length;
     const help=box.querySelector('[data-cart-payment-help]');
     if(help)help.textContent=enabled?'Your total is ready. Choose how you would like to pay.':'Calculate shipping and tax to enable payment.';
+  }
+  let squareCard=null,squareCardReady=null;
+  function ensureSquareCard(){
+    if(squareCard)return Promise.resolve(squareCard);
+    if(squareCardReady)return squareCardReady;
+    const config=capabilities?.square;if(!config) return Promise.reject(Error('Square card details are not configured.'));
+    squareCardReady=(async()=>{
+      if(!window.Square){await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=config.mode==='sandbox'?'https://sandbox.web.squarecdn.com/v1/square.js':'https://web.squarecdn.com/v1/square.js';script.onload=resolve;script.onerror=()=>reject(Error('Square payment form could not be loaded.'));document.head.append(script);});}
+      if(!window.Square)throw Error('Square payment form is unavailable.');
+      const payments=window.Square.payments(config.applicationId,config.locationId),card=await payments.card();
+      const mount=root.querySelector('[data-square-card]');if(!mount.id)mount.id=`square-card-${crypto.randomUUID()}`;
+      await card.attach(`#${mount.id}`);squareCard=card;return card;
+    })().finally(()=>{squareCardReady=null;});
+    return squareCardReady;
   }
   function showPendingNotice(order,requestedBuy=buyOnly,errorMessage=''){
     const items=order?.quote?.items||[],names=items.map(item=>item.title).filter(Boolean).join(', ');
@@ -157,8 +174,18 @@
   async function startPayment(method){
     if(busy||!quoted)return;busy=true;setDisabled(true);announce('Checking your items and preparing payment…');
     try{
+      let sourceId;
+      if(method==='square'){
+        const card=await ensureSquareCard(),values=Object.fromEntries(new FormData(form));
+        const names=String(values.name||'').trim().split(/\s+/),token=await card.tokenize({amount:quoted.quote.total,currencyCode:'USD',intent:'CHARGE',customerInitiated:true,sellerKeyedIn:false,
+          billingContact:{givenName:names.shift()||'',familyName:names.join(' '),email:String(values.email||''),countryCode:'US'}});
+        if(token.status!=='OK'||!token.token)throw Error('Square could not tokenize these card details. Check them and try again.');
+        sourceId=token.token;
+      }
       remember(quoted);current={...quoted,status:'creating',method};
-      const result=await api('start',{...credentials(),method});current={...result,key:current.key};showOrder();
+      const previousKey=current.key,result=await api('start',{...credentials(),method,...(sourceId?{sourceId}:{})});current={...result,key:previousKey};
+      if(result.status==='quoted'&&result.paymentError){quoted={...result,key:previousKey};current=null;orderPanel.hidden=true;layout.hidden=false;showQuote(quoted);announce(result.paymentError);return;}
+      showOrder();
       if(result.url&&result.status==='pending'){location.assign(result.url);return;}
       poll();
     }catch(error){announce(error.message);if(current){showOrder();poll();}}

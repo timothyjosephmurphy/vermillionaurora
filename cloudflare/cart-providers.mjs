@@ -33,3 +33,5 @@ export function approvalUrl(env,order) {
   const u=new URL(value),hosts=env.PAYPAL_MODE==='sandbox'?['sandbox.paypal.com','www.sandbox.paypal.com']:['paypal.com','www.paypal.com'];
   if(u.protocol!=='https:'||u.username||u.password||!hosts.includes(u.hostname))throw Error('Invalid approval URL');return u.href;
 }
+
+export {squareRequest,squarePaymentBody,validateSquarePayment,squarePaymentDetails} from './square-provider.mjs';

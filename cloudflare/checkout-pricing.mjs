@@ -81,9 +81,10 @@ export async function priceCart(env,items,input,email) {
 
 export async function recordTax(env,calculationId,captureId) {
   if (!calculationId || !env.STRIPE_SECRET_KEY) throw new Error('Tax record is not configured');
+  const reference=captureId.startsWith('btcpay:')?captureId:captureId.startsWith('square:')?`square-${captureId.slice(7)}`:`paypal-${captureId}`;
   const response = await fetch('https://api.stripe.com/v1/tax/transactions/create_from_calculation',{
-    method:'POST',headers:{Authorization:`Bearer ${env.STRIPE_SECRET_KEY}`,'Idempotency-Key':captureId.startsWith('btcpay:')?captureId:`paypal-${captureId}`,'Content-Type':'application/x-www-form-urlencoded'},
-    body:new URLSearchParams({calculation:calculationId,reference:captureId.startsWith('btcpay:')?captureId:`paypal-${captureId}`})
+    method:'POST',headers:{Authorization:`Bearer ${env.STRIPE_SECRET_KEY}`,'Idempotency-Key':reference,'Content-Type':'application/x-www-form-urlencoded'},
+    body:new URLSearchParams({calculation:calculationId,reference})
   });
   if (!response.ok) throw new Error(`Tax transaction recording failed (${response.status})`);
 }

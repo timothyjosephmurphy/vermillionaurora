@@ -1,5 +1,6 @@
 import { sellerMailToken } from './shipping-email.mjs';
 import { priceOrder } from './checkout-pricing.mjs';
+import { squareRequest } from './square-provider.mjs';
 
 // Administrative provider checks without payments or label purchases. The deployment job creates and removes
 // this random credential; public callers cannot trigger provider requests.
@@ -35,6 +36,24 @@ export async function checkoutReadiness(request,env) {
     checks.shippoAuthentication=true;
     checks.activeCarriers=(accounts.results||[]).filter(x=>x.active===true).map(x=>x.carrier);
   }catch(error){checks.shippoError=error.message;}
+  if(env.SQUARE_CHECKOUT_ENABLED==='true') {
+    try {
+      const required=['SQUARE_ACCESS_TOKEN','SQUARE_APPLICATION_ID','SQUARE_LOCATION_ID','SQUARE_WEBHOOK_SIGNATURE_KEY','SQUARE_WEBHOOK_URL'];
+      const missing=required.filter(name=>!env[name]);
+      if(missing.length)throw Error('Missing production Square settings: '+missing.join(', '));
+      checks.squareConfiguration=env.SQUARE_MODE==='live'&&!env.SQUARE_APPLICATION_ID.startsWith('sandbox-')&&
+        env.SQUARE_WEBHOOK_URL==='https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/square/webhook'&&
+        (env.SQUARE_CHECKOUT_ALL==='true'||!!env.SQUARE_CHECKOUT_SLUGS);
+      if(!checks.squareConfiguration)throw Error('Expected production Square mode, application, webhook URL, and eligible items');
+      const [locationResult,webhooks]=await Promise.all([
+        squareRequest(env,'/v2/locations/'+encodeURIComponent(env.SQUARE_LOCATION_ID)),
+        squareRequest(env,'/v2/webhooks/subscriptions?limit=100')
+      ]);
+      const location=locationResult.location;
+      checks.squareLocation=location?.id===env.SQUARE_LOCATION_ID&&location.status==='ACTIVE'&&location.currency==='USD'&&location.capabilities?.includes('CREDIT_CARD_PROCESSING')===true;
+      checks.squareWebhook=webhooks.subscriptions?.some(h=>h.enabled===true&&h.notification_url===env.SQUARE_WEBHOOK_URL&&h.event_types?.includes('payment.updated'))===true;
+    } catch(error) { checks.squareError=error.message; }
+  }
   checks.inventoryBinding=!!env.PAINTING_STOCK;
   checks.salesLedger=!!env.SALES_LEDGER&&!!env.SALES_ARCHIVE;
   checks.shippingOrigin=!!env.SHIP_FROM_STREET;
@@ -61,6 +80,7 @@ export async function checkoutReadiness(request,env) {
   }
   const pilotReady=env.CHECKOUT_PILOT_ENABLED!=='true' ||
     (checks.pilotRestriction&&checks.automaticLabels&&checks.sellerEmail&&(checks.completedPilot||(checks.insuredQuote&&checks.pilotStock==='available')));
-  const ready=checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
+  const squareReady=env.SQUARE_CHECKOUT_ENABLED!=='true'||(checks.squareConfiguration&&checks.squareLocation&&checks.squareWebhook);
+  const ready=squareReady&&checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
   return reply({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE||null,ready:!!ready,checks},ready?200:503);
 }

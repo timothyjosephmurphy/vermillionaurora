@@ -8,6 +8,11 @@
   "vars": {
     "PAYPAL_CHECKOUT_ENABLED": "true",
     "PAYPAL_MODE": "sandbox",
+    "SQUARE_CHECKOUT_ENABLED": "true",
+    "SQUARE_MODE": "sandbox",
+    "SQUARE_SANDBOX_NO_FULFILLMENT": "true",
+    "SQUARE_CHECKOUT_SLUGS": "painting-portrait-in-green",
+    "SQUARE_WEBHOOK_URL": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/square/webhook",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "SHIPPO_CARRIER_ALLOWLIST": "UPS",
     "PAYPAL_MERCHANT_ID": "QRRG2GBRVB8DN",

@@ -1,6 +1,6 @@
 import {DurableObject} from 'cloudflare:workers';
 import {catalogVersion,commonMethods,cartOrigin,publicCartItem} from './cart-policy.mjs';
-import {paypalRequest,paypalBody,validatePaypal,approvalUrl} from './cart-providers.mjs';
+import {paypalRequest,paypalBody,validatePaypal,approvalUrl,squareRequest,squarePaymentBody,validateSquarePayment,squarePaymentDetails} from './cart-providers.mjs';
 import {bitcoinApi,bitcoinServer,checkoutUrl} from './bitcoin-api.mjs';
 import {captureDetails,ledgerFor,fulfillmentRecord} from './sales-records.mjs';
 import {recordTax} from './checkout-pricing.mjs';
@@ -69,16 +69,20 @@ export class CartOrder extends DurableObject {
         }:{}),
       ...(d.heldIds?{heldIds:d.heldIds}:{}),
       ...(d.unavailable?{unavailable:d.unavailable}:{}),
+      ...(d.paymentError?{paymentError:d.paymentError}:{}),...(d.squareSandboxNoFulfillment?{sandboxTestOnly:true}:{}),
       ...(d.status==='paid'?{paidAt:d.paidAt,shipments:[...(d.jobs||[]).map(j=>({id:j.quote.slug,trackingNumber:j.trackingNumber||'',trackingUrl:j.trackingUrl||''})),...(d.printJob?.shipments||[])],...(d.printJob?{printStatus:d.printJob.status}:{}),confirmation:d.customerMail?.status||'pending'}:{})};
   }
-  async start(method) {return this.exclusive(async()=>{
+  async start(method,payment={}) {return this.exclusive(async()=>{
     let d=this.read();if(!d)throw Error('Order missing');
     if(d.status!=='quoted')return this.result(); // Retries reuse the same attempt, never create a second payment.
     if(Date.now()>d.expiresAt){if(d.heldIds?.length)await this.expireCartHold();else this.save({...d,status:'expired'});return this.result();}
     if(d.quote.catalogVersion!==catalogVersion||this.env.PAYPAL_MODE!==d.mode||!d.methods.includes(method)||!commonMethods(this.env,d.quote.items).includes(method))throw Error('Refresh this cart before payment');
+    if(method==='square'&&(typeof payment.sourceId!=='string'||!payment.sourceId||payment.sourceId.length>2000))throw Error('Enter valid card details before paying.');
     await this.schedule();
-    d=this.save({...d,status:'reserving',method,expiresAt:Date.now()+20*60000,
+    d=this.save({...d,status:'reserving',method,squareSandboxNoFulfillment:method==='square'&&this.env.PAYPAL_MODE==='sandbox'&&this.env.SQUARE_MODE==='sandbox'&&this.env.SQUARE_SANDBOX_NO_FULFILLMENT==='true',expiresAt:Date.now()+20*60000,paymentError:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,
       merchantId:method==='paypal'?this.env.PAYPAL_MERCHANT_ID:null,
+      ...(method==='square'?{squareMode:this.env.SQUARE_MODE,squareLocationId:this.env.SQUARE_LOCATION_ID,squareSourceId:payment.sourceId,
+        squareAttempt:(d.squareAttempt||0)+1,squareIdempotencyKey:`${d.id}-${String((d.squareAttempt||0)+1).padStart(2,'0')}`,paymentError:undefined}:{}),
       ...(method==='bitcoin'?{server:bitcoinServer(this.env),storeId:this.env.BTCPAY_STORE_ID}:{})});
     for(const item of d.quote.items.filter(i=>i.type!=='print')) {
       if(!await this.stock(item.id).ownsCart(d.id)&&!await this.stock(item.id).reserveCart(d.id)) {
@@ -88,11 +92,21 @@ export class CartOrder extends DurableObject {
     }
     // Persist before asking the provider to create anything. No automatic lock expiry.
     d=this.save({...d,status:'creating',createAttemptedAt:Date.now()});
-    try{await this.createPayment(d);}catch(error){console.error('Cart payment creation needs reconciliation',d.id,error.message);}
+    try{await this.createPayment(d);}catch(error){
+      if(d.method==='square'&&error.definiteFailure){const latest=this.read();this.save({...latest,status:'quoted',method:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,paymentError:'Square did not complete this card payment. Check the card details or choose another payment method.'});await this.schedule(Math.max(1000,latest.expiresAt-Date.now()));}
+      else console.error('Cart payment creation needs reconciliation',d.id,error.message);
+    }
     return this.result();
   });}
   async createPayment(d) {
-    if(d.method==='paypal') {
+    if(d.method==='square') {
+      const result=await squareRequest(this.env,'/v2/payments',squarePaymentBody(this.env,d));
+      const payment=result.payment;
+      const captureId=validateSquarePayment(this.env,d,payment);
+      this.save({...d,providerId:payment.id,squareSourceId:undefined,status:'settling',captureId,
+        details:squarePaymentDetails(payment),paidAt:payment.updated_at||payment.created_at||new Date().toISOString()});
+      await this.settle(captureId,squarePaymentDetails(payment));
+    } else if(d.method==='paypal') {
       const order=await paypalRequest(this.env,'/v2/checkout/orders',paypalBody(this.env,d),d.id);
       validatePaypal(this.env,d,order);
       // A repeated create can return an already-approved or completed order.
@@ -132,6 +146,15 @@ export class CartOrder extends DurableObject {
     const d=this.read(),captureId=validatePaypal(this.env,d,order,true);
     await this.settle(captureId,captureDetails(order));
   }
+  async acceptSquare(paymentId) {
+    const d=this.read();if(!d||d.method!=='square'||!d.squareLocationId)return;
+    if(d.status==='paid'){await this.fulfill();return;}
+    const result=await squareRequest(this.env,`/v2/payments/${encodeURIComponent(paymentId)}`),payment=result.payment;
+    const captureId=validateSquarePayment(this.env,d,payment);
+    this.save({...d,providerId:payment.id,squareSourceId:undefined,status:'settling',captureId,
+      details:squarePaymentDetails(payment),paidAt:payment.updated_at||payment.created_at||new Date().toISOString()});
+    await this.settle(captureId,squarePaymentDetails(payment));
+  }
   async settle(captureId,details) {
     let d=this.read();
     if(d.captureId&&d.captureId!==captureId)throw Error('Conflicting capture');
@@ -145,9 +168,9 @@ export class CartOrder extends DurableObject {
     await this.schedule();
     d=this.save({...d,status:'settling',captureId,details,paidAt:d.paidAt||details.paidAt||new Date().toISOString()});
     for(const i of d.quote.items.filter(i=>i.type!=='print'))if(!await this.stock(i.id).completeCart(d.id,captureId))throw Error('Could not complete inventory');
-    const jobs=d.jobs||d.quote.shipments.map(s=>newShippingJob(this.env,`cart:${d.id}`,{...s,tax:'0.00',total:(Number(s.base)+Number(s.shipping)).toFixed(2),orderTax:d.quote.tax,orderTotal:d.quote.total}));
-    const prints=d.quote.items.filter(i=>i.type==='print');
-    let printJob=d.printJob;
+    const jobs=d.squareSandboxNoFulfillment?[]:d.jobs||d.quote.shipments.map(s=>newShippingJob(this.env,`cart:${d.id}`,{...s,tax:'0.00',total:(Number(s.base)+Number(s.shipping)).toFixed(2),orderTax:d.quote.tax,orderTotal:d.quote.total}));
+    const prints=d.squareSandboxNoFulfillment?[]:d.quote.items.filter(i=>i.type==='print');
+    let printJob=d.squareSandboxNoFulfillment?undefined:d.printJob;
     if(prints.length&&!printJob)try {printJob=newPrintJob(this.env,d,prints);}catch {
       // A configuration change after approval must never prevent recording payment.
       printJob={provider:d.quote.printQuote?.provider||prints[0].provider,status:'review',mode:d.mode,items:prints,shipments:[],
@@ -187,6 +210,13 @@ export class CartOrder extends DurableObject {
     if(['cancelled','unavailable'].includes(d.status)&&!invoiceId){await this.ctx.storage.deleteAlarm();return;}
     if(d.status==='expired'&&(!d.providerId||d.method!=='bitcoin')&&!invoiceId){await this.ctx.storage.deleteAlarm();return;}
     if(d.status==='review'){await this.reviewNotice();await this.schedule(15*60000);}
+    if(d.method==='square') {
+      if(!d.providerId) {
+        if(Date.now()-d.createAttemptedAt>30*60000){this.save({...d,status:'review',reason:'Square payment creation could not be confirmed. Check Square before releasing inventory.'});await this.reviewNotice();return;}
+        await this.createPayment(d);return;
+      }
+      await this.acceptSquare(d.providerId);return;
+    }
     if(d.method==='paypal') {
       if(!d.providerId) {
         // PayPal-Request-Id safely recovers an interrupted create within its retention window.
@@ -239,10 +269,10 @@ export class CartOrder extends DurableObject {
     const printReady=!d.printJob||printStatus==='complete'||d.mode==='sandbox'&&printStatus==='test-complete';
     const printReview=['review','cancelled'].includes(printStatus);
     const labelStatus=originalReview||printReview?'review':(originalReady&&printReady)?'ready':'pending';
-    return {schemaVersion:3,id:`payment:${d.captureId}`,kind:'sale',mode:d.mode,source:'checkout',provider:d.method==='bitcoin'?'btcpay':'paypal',
+    return {schemaVersion:3,id:`payment:${d.captureId}`,kind:'sale',mode:d.mode,source:'checkout',provider:d.method==='bitcoin'?'btcpay':d.method==='square'?'square':'paypal',
       transactionId:d.captureId,orderId:`cart:${d.id}`,parentTransactionId:'',status:'COMPLETED',paidAt:d.paidAt,recordedAt:d.paidAt,
       title:q.items.map(i=>i.title).join('; '),slug:'',currency:'USD',items:q.items,shipments,...(d.printJob?{printFulfillment:printFulfillmentRecord(d.printJob)}:{}),itemAmount:q.base,shipping:q.shipping,tax:q.tax,gross:q.total,
-      paypalFee:details.fee??null,paypalNet:details.net??null,feeCurrency:details.feeCurrency||'',netCurrency:details.netCurrency||'',
+      ...(d.method==='paypal'?{paypalFee:details.fee??null,paypalNet:details.net??null}:{}),providerFee:details.fee??null,feeCurrency:details.feeCurrency||'',netCurrency:details.netCurrency||'',
       buyerName:q.address.name,buyerEmail:q.email,shippingAddress:q.address,taxCalculationId:q.taxCalculationId,
       ...(d.method==='bitcoin'?{invoiceId:d.providerId,bitcoinPayments:details.bitcoinPayments||[]} : {}),
       fulfillment:{inventoryPublished:true,taxRecorded:!!d.taxRecorded,labelStatus,
@@ -255,7 +285,9 @@ export class CartOrder extends DurableObject {
     return {recorded:true,period:d.paidAt.slice(0,7)};
   }
   async fulfill() {
-    let d=this.read(),done=true;await this.schedule();
+    let d=this.read();
+    if(d?.squareSandboxNoFulfillment&&d.mode==='sandbox'&&d.method==='square'){await this.ctx.storage.deleteAlarm();return;}
+    let done=true;await this.schedule();
     try{await this.archiveSale();}catch{done=false;}
     if(!d.taxRecorded)try{await recordTax(this.env,d.quote.taxCalculationId,d.captureId);this.save({...this.read(),taxRecorded:true});}catch{done=false;}
     for(let i=0;i<d.jobs.length;i++)try {
