@@ -1,9 +1,9 @@
-// Owner-only Etsy authorization. Listing publication and order handling are separate work.
+// Owner-only Etsy authorization, including shipment tracking updates.
 import { etsyConnectPage } from './etsy-connect-page.mjs';
 
 export const ETSY_ORIGIN = 'https://vermillion-commissions.timothyjosephmurphy.workers.dev';
 export const ETSY_CALLBACK = `${ETSY_ORIGIN}/etsy/callback`;
-const SCOPES = 'shops_r listings_r listings_w transactions_r';
+const SCOPES = 'shops_r listings_r listings_w transactions_r transactions_w';
 const SHOP = 'VermillionAurora';
 const KEY = 'etsy/connection.json';
 const COOKIE = '__Host-etsy-state';

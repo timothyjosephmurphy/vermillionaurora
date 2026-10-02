@@ -198,3 +198,5 @@ export async function etsyListings(request,env,now=Date.now()){
   return json(await create(env,input,now));
  }catch(e){return json({error:e.message||'Etsy draft setup failed safely.'},502);}
 }
+
+export {connection as etsyApiConnection,call as etsyApiCall};
