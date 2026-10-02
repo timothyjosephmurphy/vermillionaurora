@@ -80,9 +80,9 @@ const batchView=b=>({status:b.status,items:prints.map(p=>({id:p.id,title:p.title
 async function create(env,input,now){
  let {record,etag,token}=await connection(env,now);const setup=await preflight(env,token);
  const pick=(items,id)=>items.find(x=>String(x.id)===String(id));
- const shipping=pick(setup.shipping,input.shippingProfileId),readiness=pick(setup.readiness,input.readinessStateId),taxonomy=pick(setup.taxonomy,input.taxonomyId),partner=setup.partners.find(x=>/finerworks/i.test(x.name));
+ const shipping=pick(setup.shipping,input.shippingProfileId),readiness=pick(setup.readiness,input.readinessStateId),taxonomy=pick(setup.taxonomy,input.taxonomyId),partner=pick(setup.partners,input.productionPartnerId);
  if(!shipping||!readiness||!taxonomy)throw Error('Choose a current shipping profile, processing profile, and print category.');
- if(!partner)throw Error('Etsy returned '+setup.partners.length+' production partner(s) for this shop, but none matched FinerWorks. Reload setup and check which partner names Etsy exposes.');
+ if(!partner)throw Error('Choose a current FinerWorks production partner from the shop settings. Private partners may appear under their public description.');
  let batch=record.etsyDraftBatch;
  if(batch?.status==='complete')return {batch:batchView(batch),resumed:true};
  const settings={shippingProfileId:shipping.id,readinessStateId:readiness.id,taxonomyId:taxonomy.id,partnerId:partner.id};

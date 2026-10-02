@@ -19,7 +19,7 @@ function mockEtsy(t,{failFirstInventory=false}={}){
   if(target.startsWith('https://vermillionaurora.com/'))return new Response(new Uint8Array([1,2,3]),{headers:{'Content-Type':'image/jpeg'}});
   if(target.endsWith('/shipping-profiles'))return Response.json({results:[{shipping_profile_id:11,title:'US Shipping'}]});
   if(target.includes('/readiness-state-definitions?legacy=false'))return Response.json({results:[{readiness_state_id:22,readiness_state:'made_to_order',min_processing_days:3,max_processing_days:5,processing_days_display_label:'3–5 days'}]});
-  if(target.endsWith('/production-partners'))return Response.json({results:[{production_partner_id:'33',partner_name:'FinerWorks'}]});
+  if(target.endsWith('/production-partners'))return Response.json({results:[{production_partner_id:'33',partner_name:'A printing and framing shop'}]});
   if(target.endsWith('/seller-taxonomy/nodes'))return Response.json([{id:44,name:'Art & Collectibles',children:[{id:55,name:'Prints',children:[]}]}]);
   if(target.includes('/inventory?')){const body=JSON.parse(options.body);inventoryCounts.push(body.products.length);if(failFirstInventory&&!failed){failed=true;return new Response(JSON.stringify({error:'private provider error'}),{status:500,headers:{'Content-Type':'application/json'}})}return Response.json({products:body.products})}
   if(target.endsWith('/images'))return Response.json({listing_image_id:++nextId});
@@ -34,16 +34,16 @@ test('owner token and exact origin guard setup endpoints',async t=>{
  assert.equal((await req(env,'/etsy/listings/preflight',{},'https://evil.test')).status,403);
  assert.equal((await req(env,'/etsy/listings/preflight')).status,200);
 });
-test('loads the Etsy processing interval from the current profile response',async t=>{
+test('loads Etsy processing and a private production partner from the current responses',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t);
  const res=await req(env,'/etsy/listings/preflight');assert.equal(res.status,200);
- const data=await res.json();assert.equal(data.readiness[0].name,'Made to order · 3–5 days');assert.deepEqual(data.partners,[{id:33,name:'FinerWorks'}]);
+ const data=await res.json();assert.equal(data.readiness[0].name,'Made to order · 3–5 days');assert.deepEqual(data.partners,[{id:33,name:'A printing and framing shop'}]);
  assert.ok(calls.some(x=>x.url.endsWith('/readiness-state-definitions?legacy=false')));
 });
 
-test('creates exactly five saved drafts with ready size and frame combinations, never activating them',async t=>{
+test('creates five saved drafts with the selected private production partner and all ready print variations',async t=>{
  const env=setup();await connected(env);const {calls,inventoryCounts}=mockEtsy(t);
- const res=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55});
+ const res=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33'});
  assert.equal(res.status,200,await res.clone().text());
  const data=await res.json();
  assert.equal(data.batch.status,'complete');
@@ -61,7 +61,7 @@ test('creates exactly five saved drafts with ready size and frame combinations, 
   assert.notEqual(form.get('state'),'active');
  }
  const before=calls.filter(x=>x.url.includes('/listings?legacy=false')||x.url.endsWith('/images')||x.url.includes('/inventory?')).length;
- const again=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55});
+ const again=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33'});
  assert.equal(again.status,200);
  assert.equal((await again.json()).resumed,true);
  const after=calls.filter(x=>x.url.includes('/listings?legacy=false')||x.url.endsWith('/images')||x.url.includes('/inventory?')).length;
@@ -70,7 +70,7 @@ test('creates exactly five saved drafts with ready size and frame combinations, 
 
 test('partial provider failure resumes saved progress without duplicating a listing',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t,{failFirstInventory:true});
- const settings={shippingProfileId:11,readinessStateId:22,taxonomyId:55};
+ const settings={shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33'};
  const first=await req(env,'/etsy/listings/create-drafts',settings);
  assert.equal(first.status,502);
  const failure=await first.json();assert.doesNotMatch(failure.error,/private provider error/);
@@ -82,4 +82,14 @@ test('partial provider failure resumes saved progress without duplicating a list
  assert.equal(retry.status,200,await retry.clone().text());
  assert.equal((await retry.json()).batch.status,'complete');
  assert.equal(creates(),5);assert.equal(images(),5);
+});
+
+test('rejects missing or unknown production partner IDs before creating drafts',async t=>{
+ const env=setup();await connected(env);const {calls}=mockEtsy(t);
+ for(const productionPartnerId of [undefined,'999']){
+  const res=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId});
+  assert.equal(res.status,502);
+  assert.match((await res.json()).error,/Choose a current FinerWorks production partner/);
+ }
+ assert.equal(calls.filter(x=>x.options.method==='POST'||x.options.method==='PUT').length,0);
 });
