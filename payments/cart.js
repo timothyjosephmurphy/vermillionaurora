@@ -118,15 +118,18 @@
     return svg;
   }
   function updatePaymentControls(enabled=false,methods=methodIntersection()){
-    methods=['bitcoin','square'].filter(method=>methods.includes(method));
+    const availableMethods=methods.filter(method=>['square','bitcoin'].includes(method));
+    const bitcoinAvailable=availableMethods.includes('bitcoin');
+    const showBitcoin=bitcoinAvailable||availableMethods.includes('square');
+    methods=['bitcoin','square'].filter(method=>method==='bitcoin'?showBitcoin:availableMethods.includes(method));
     const box=root.querySelector('[data-cart-payments]'),host=root.querySelector('[data-cart-methods]');
     const squareBox=root.querySelector('[data-square-card-box]');
     host.replaceChildren();
-    if(squareBox)squareBox.hidden=!(enabled&&methods.includes('square'));
-    if(enabled&&methods.includes('square'))ensureSquareCard().catch(error=>announce(`Square card entry could not load: ${error.message}`));
+    if(squareBox)squareBox.hidden=!(enabled&&availableMethods.includes('square'));
+    if(enabled&&availableMethods.includes('square'))ensureSquareCard().catch(error=>announce(`Square card entry could not load: ${error.message}`));
     for(const method of methods){
       const button=node('button',undefined,'button button-solid');
-      button.type='button';button.disabled=!enabled||busy||!!(pendingOrder&&pending(pendingOrder));
+      button.type='button';button.disabled=!enabled||(method==='bitcoin'&&!bitcoinAvailable)||busy||!!(pendingOrder&&pending(pendingOrder));
       const content=node('span',undefined,'payment-button-content');
       if(method==='bitcoin'){
         const icons=node('span',undefined,'payment-button-icons');
