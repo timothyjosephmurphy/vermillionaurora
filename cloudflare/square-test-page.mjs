@@ -1,3 +1,5 @@
+export const squareTestPageEnabled = env => env.PAYPAL_MODE === 'sandbox' && env.SQUARE_MODE === 'sandbox' && env.SQUARE_CHECKOUT_ENABLED === 'true' && env.SQUARE_SANDBOX_NO_FULFILLMENT === 'true';
+
 export const squareTestPage = `<!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
