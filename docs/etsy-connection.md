@@ -1,6 +1,6 @@
 # Etsy owner authorization
 
-The production commission Worker serves `/etsy/connect`. This phase saves authorization for the **VermillionAurora** shop only. It does not create/publish listings, synchronize stock, read customer orders, or send print fulfillment requests.
+The production commission Worker serves `/etsy/connect`. This phase saves authorization for the **VermillionAurora** shop only. It does not create/publish listings, synchronize stock, or send print fulfillment requests. It requests transaction-read permission as preparation for the next order-sync phase; order reads are not implemented yet.
 
 ## Human setup
 
@@ -13,7 +13,7 @@ Etsy keys are entered only in Cloudflare, never in chat, source control, or the 
 
 ## Boundaries and storage
 
-- Scope: `shops_r listings_r listings_w`, sufficient for the next phase of listing preparation. Additional features may require fresh consent.
+- Scope: `shops_r listings_r listings_w transactions_r`. The transaction-read permission is preparation for order syncing; this phase still makes no transaction API calls. Additional features may require fresh consent.
 - Fixed production origin/callback: preview and sandbox hostnames cannot use these endpoints.
 - Initiation and status require an authenticated, same-origin POST. Callback requires matching single-use state, a Secure/HttpOnly/SameSite=Lax browser cookie, PKCE, and a ten-minute deadline.
 - A single encrypted record, `etsy/connection.json`, lives in the existing **private** `COMMISSION_UPLOADS` R2 bucket. AES-GCM uses an HKDF key derived from the Etsy app credentials. Keep this bucket private. Commission cleanup and download routes cannot access this prefix.
