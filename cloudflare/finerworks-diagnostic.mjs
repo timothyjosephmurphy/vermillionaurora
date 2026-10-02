@@ -2,7 +2,7 @@ import {finerworksEnvironment,finerworksRequest,finerworksMaterials,finerworksPr
 import {quoteFinerWorksPrints,validateFinerWorksPrintOrder} from './finerworks-quotes.mjs';
 import {PRINT_SCALES,scaledDimensions,inches,printOptions} from '../catalog/print-sizing.mjs';
 import {reviewPrintPrice,printRetailPrice,PRINT_PRICING} from '../catalog/print-pricing.mjs';
-import config from '../catalog/prints.json' with {type:'json'};
+import config from '../catalog/print-config.mjs';
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {newFinerWorksJob,fulfillFinerWorks,finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 import {quoteMattedOption,finerworksMats} from './finerworks-matting.mjs';

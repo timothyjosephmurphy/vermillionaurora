@@ -2,7 +2,7 @@
 const { image, title } = Astro.props;
 ---
 <figure class="product-figure">
-  <a class="painting-image-trigger" href={image.src} aria-label={`View ${title} full screen`} aria-haspopup="dialog" aria-controls="painting-lightbox">
+  <a class="painting-image-trigger" href={image.fullSrc||image.src} aria-label={`View ${title} full screen`} aria-haspopup="dialog" aria-controls="painting-lightbox">
     <img src={image.src} alt={image.alt} width={image.width} height={image.height} fetchpriority="high" />
     <span class="painting-image-hint">View full screen <span aria-hidden="true">⤢</span></span>
   </a>
@@ -10,7 +10,7 @@ const { image, title } = Astro.props;
 </figure>
 <dialog id="painting-lightbox" class="painting-lightbox" aria-label={`${title} — full-screen painting`}>
   <button class="painting-lightbox-close" type="button" autofocus>Close <span aria-hidden="true">×</span></button>
-  <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+  <img src={image.fullSrc||image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
 </dialog>
 
 <script>

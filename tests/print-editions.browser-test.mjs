@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 const origin='https://vermillionaurora.com',root=path.resolve('dist');
-const editions=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional');
+const editions=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.productId.startsWith('book-art-'));
 const ids=[...new Set(editions.map(p=>p.productId))];assert.equal(ids.length,57);assert.equal(editions.filter(p=>!p.frame).length,152);assert.equal(editions.filter(p=>p.frame).length,456);
 const available=editions.map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['paypal','bitcoin']}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});

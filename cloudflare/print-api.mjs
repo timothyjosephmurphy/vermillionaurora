@@ -1,5 +1,5 @@
 import {finerworksDiagnostic} from './finerworks-diagnostic.mjs';
-import products from '../catalog/products.json' with {type:'json'};
+import products from '../catalog/all-products.mjs';
 import {ORDER_ID,ACCESS_KEY} from './cart-policy.mjs';
 
 export async function printApi(request,env) {

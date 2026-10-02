@@ -1,6 +1,6 @@
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import productData from './products.json' with {type:'json'};
+import productData from './all-products.mjs';
 import collectionData from './collections.json' with {type:'json'};
 import { createHash } from 'node:crypto';
 
