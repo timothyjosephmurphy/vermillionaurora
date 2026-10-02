@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {etsyListings} from './etsy-listings.mjs';
 import {ETSY_ORIGIN,read,write} from './etsy-connection.mjs';
 import prints,{sourcePrintVersion} from './etsy-print-source.mjs';
+import {estimateShippingPackages} from './etsy-shipping.mjs';
 const now=Date.parse('2026-10-02T10:00:00Z');
 class Bucket{
  data=new Map();sequence=0;
@@ -54,7 +55,8 @@ test('loads Etsy processing and a private production partner from the current re
  const data=await res.json();assert.equal(data.readiness[0].name,'Made to order · 3–5 days');assert.deepEqual(data.partners,[{id:33,name:'A printing and framing shop'}]);
  assert.deepEqual(data.taxonomy.map(x=>x.id),[55,57]);
  assert.equal(data.shipping[0].profileType,'manual');assert.match(data.shipping[0].name,/Fixed rate/);
- assert.equal(data.shipping[1].profileType,'calculated');assert.match(data.shipping[1].name,/measurements required/);
+ assert.equal(data.shipping[1].profileType,'calculated');assert.match(data.shipping[1].name,/estimates provided/);
+ assert.equal(Object.keys(data.estimatedShippingPackages).length,5);
  assert.deepEqual(data.returnPolicies,[{id:66,name:'No returns · No exchanges'},{id:77,name:'Returns accepted · Exchanges accepted · 30 days'}]);
  assert.ok(calls.some(x=>x.url.endsWith('/readiness-state-definitions?legacy=false')));
 });
@@ -185,8 +187,6 @@ const measuredPackages=()=>Object.fromEntries(prints.map((p,i)=>[p.id,{item_weig
 const remoteWrites=calls=>calls.filter(x=>x.options.method==='POST'||x.options.method==='PUT');
 test('calculated shipping validates measurements for every painting before any Etsy writes',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t);
- const missing=await req(env,'/etsy/listings/create-drafts',{...selection,shippingProfileId:12});
- assert.match((await missing.json()).error,/Calculated shipping requires.*Warszawska Syrenka/);
  for(const [field,value] of [['item_weight',0],['item_length',-1],['item_width','Infinity'],['item_height',null],['item_weight',true],['item_weight',[]],['item_weight_unit','stone'],['item_dimensions_unit','pixels']]){
   const shippingPackages=measuredPackages();shippingPackages[prints.at(-1).id][field]=value;
   const res=await req(env,'/etsy/listings/create-drafts',{...selection,shippingProfileId:12,shippingPackages});
@@ -194,6 +194,19 @@ test('calculated shipping validates measurements for every painting before any E
  }
  assert.equal(remoteWrites(calls).length,0);
  assert.equal((await read(env)).record.etsyDraftBatch,undefined);
+});
+
+test('reuses existing paper and framed parcel estimates and fills missing calculated-shipping values',async t=>{
+ const unframed={id:'paper',title:'Paper',variants:[{paperSize:{width:8,height:10,unit:'in'},frames:[]}]};
+ assert.deepEqual(estimateShippingPackages([unframed]).paper,{item_weight:0.375,item_length:12,item_width:10,item_height:2,item_weight_unit:'lb',item_dimensions_unit:'in'});
+ const framed={...unframed,id:'frame',variants:[{...unframed.variants[0],frames:[{outerSize:{width:12,height:15,unit:'in'}}]}]};
+ assert.deepEqual(estimateShippingPackages([framed]).frame,{item_weight:3,item_length:17,item_width:14,item_height:2,item_weight_unit:'lb',item_dimensions_unit:'in'});
+ const env=setup();await connected(env);const {calls}=mockEtsy(t);
+ const res=await req(env,'/etsy/listings/create-drafts',{...selection,shippingProfileId:12});
+ assert.equal(res.status,200,await res.clone().text());
+ const expected=estimateShippingPackages(prints);
+ const creates=calls.filter(x=>x.url.includes('/listings?legacy=false'));assert.equal(creates.length,5);
+ for(const [i,entry] of creates.entries())for(const [key,value] of Object.entries(expected[prints[i].id]))assert.equal(new URLSearchParams(entry.options.body).get(key),String(value));
 });
 test('sends each painting’s measured values and units to Etsy and resumes with saved measurements',async t=>{
  const env=setup();await connected(env);const {calls}=mockEtsy(t,{failFirstInventory:true});

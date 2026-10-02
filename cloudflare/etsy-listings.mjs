@@ -1,6 +1,6 @@
 import prints, {sourcePrintVersion} from './etsy-print-source.mjs';
 import {ETSY_ORIGIN,authorized,json,read,write} from './etsy-connection.mjs';
-import {shippingChoice,shippingPackages} from './etsy-shipping.mjs';
+import {shippingChoice,shippingPackages,estimateShippingPackages} from './etsy-shipping.mjs';
 const API='https://api.etsy.com/v3/application', SITE='https://vermillionaurora.com';
 const SIZE=513, FRAME=514, QUANTITY=100;
 const labelOf=p=>p.id==='painting-shoreline-at-dusk'?p.title+' — Landscape':p.id==='el-zonte-at-sunrise'?p.title+' — Portrait':p.title;
@@ -64,7 +64,7 @@ async function preflight(env,token){
  const shop=token.shopId,paths=['/shops/'+shop+'/shipping-profiles','/shops/'+shop+'/readiness-state-definitions?legacy=false','/shops/'+shop+'/production-partners','/seller-taxonomy/nodes','/shops/'+shop+'/policies/return'];
  const data=await Promise.all(paths.map(path=>call(API+path,env,token,{action:'loading Etsy shop setup'})));
  const c=choices(data);
- return {...c,works:prints.map(p=>({id:p.id,title:labelOf(p),sizes:p.variants.map(v=>v.label)}))};
+ return {...c,estimatedShippingPackages:estimateShippingPackages(prints),works:prints.map(p=>({id:p.id,title:labelOf(p),sizes:p.variants.map(v=>v.label)}))};
 }
 const itemText=p=>p.title+' is an archival art print by TJ Murphy, reproduced from an original '+(p.medium||'watercolor pastel')+' painting.\n\n'+p.story.join('\n\n')+'\n\n'+p.variants.map(v=>v.label+' ('+v.paperSize.width+' × '+v.paperSize.height+' in): $'+v.price+' unframed; Black frame $'+v.frames[0].price+', White frame $'+v.frames[1].price+', Natural wood frame $'+v.frames[2].price+'.').join('\n')+'\n\nFramed options use a Snow White mat and Premium Clear acrylic glazing.';
 function createBody(p,s,partner){
@@ -112,7 +112,7 @@ async function create(env,input,now){
  if(input.returnPolicyId&&!returnPolicy)throw Error('Choose a current return policy from your Etsy shop settings.');
  let batch=record.etsyDraftBatch;
  if(batch?.status==='complete')return {batch:batchView(batch),resumed:true};
- const packages=shippingPackages(shipping.profileType,input.shippingPackages,prints.map(p=>({id:p.id,title:labelOf(p)})));
+ const packages=shippingPackages(shipping.profileType,input.shippingPackages,prints.map(p=>({...p,title:labelOf(p)})));
  const settings={shippingProfileId:shipping.id,readinessStateId:readiness.id,taxonomyId:taxonomy.id,partnerId:partner.id,returnPolicyId:returnPolicy?.id??null,shippingPackages:packages};
  if(batch?.status==='in_progress')throw Error('A draft batch is already in progress. Reload setup to check its status.');
  if(batch?.status==='needs_resume'){
