@@ -52,12 +52,17 @@ async function call(url,env,token,options={}){
 }
 function choices(data){
  const flatten=(nodes,parent='')=>rows(nodes).flatMap(n=>{const name=parent?parent+' › '+n.name:n.name;return rows(n.children).length?flatten(n.children,name):[{id:n.id,name}];});
+ const shipping=rows(data[0]).map(shippingChoice).filter(x=>Number.isSafeInteger(x.id));
+ const returnPolicies=rows(data[4]).map(x=>({id:Number(x.return_policy_id),acceptsReturns:x.accepts_returns===true,acceptsExchanges:x.accepts_exchanges===true,returnDeadline:x.return_deadline??null,name:x.accepts_returns&&x.accepts_exchanges&&x.return_deadline===30?'Simple policy · 30 days':(x.accepts_returns?'Returns accepted':'No returns')+' · '+(x.accepts_exchanges?'Exchanges accepted':'No exchanges')+(x.return_deadline?' · '+x.return_deadline+' days':'')})).filter(x=>Number.isSafeInteger(x.id)&&x.id>0);
+ const defaultReturnPolicies=returnPolicies.filter(x=>x.acceptsReturns&&x.acceptsExchanges&&x.returnDeadline===30);
  return {
- shipping:rows(data[0]).map(shippingChoice).filter(x=>Number.isSafeInteger(x.id)),
+ shipping,
+ defaultShippingProfileId:shipping.find(x=>/^Prints Shipping\b/i.test(x.name))?.id??null,
  readiness:rows(data[1]).map(x=>{const interval=x.processing_days_display_label||((x.min_processing_days??x.min_processing_time??'')+'–'+(x.max_processing_days??x.max_processing_time??'')+' '+(x.processing_time_unit||'days'));return {id:x.readiness_state_id,name:(x.readiness_state==='made_to_order'?'Made to order':'Ready to ship')+' · '+interval};}).filter(x=>Number.isSafeInteger(x.id)),
  partners:rows(data[2]).map(x=>({id:Number(x.production_partner_id??x.partner_id),name:String(x.partner_name??x.name??'').trim()})).filter(x=>Number.isSafeInteger(x.id)&&x.id>0&&x.name),
  taxonomy:flatten(data[3]).filter(x=>Number.isSafeInteger(x.id)&&/\bprints\b|\bposters\b/i.test(x.name)),
- returnPolicies:rows(data[4]).map(x=>({id:Number(x.return_policy_id),name:(x.accepts_returns?'Returns accepted':'No returns')+' · '+(x.accepts_exchanges?'Exchanges accepted':'No exchanges')+(x.return_deadline?' · '+x.return_deadline+' days':'')})).filter(x=>Number.isSafeInteger(x.id)&&x.id>0),
+ returnPolicies,
+ defaultReturnPolicyId:defaultReturnPolicies.length===1?defaultReturnPolicies[0].id:returnPolicies.length===1?returnPolicies[0].id:null,
  currencyCode:String(data[5]?.currency_code||'').toUpperCase()
  };
 }
@@ -101,7 +106,7 @@ const batchView=b=>({status:b.status,items:prints.map(p=>({id:p.id,title:p.title
 async function create(env,input,now){
  let {record,etag,token}=await connection(env,now);const setup=await preflight(env,token);
  const pick=(items,id)=>items.find(x=>String(x.id)===String(id));
- const shipping=pick(setup.shipping,input.shippingProfileId),readiness=pick(setup.readiness,input.readinessStateId),taxonomy=pick(setup.taxonomy,input.taxonomyId),partner=pick(setup.partners,input.productionPartnerId),returnPolicy=pick(setup.returnPolicies,input.returnPolicyId);
+ const shipping=pick(setup.shipping,input.shippingProfileId||setup.defaultShippingProfileId),readiness=pick(setup.readiness,input.readinessStateId),taxonomy=pick(setup.taxonomy,input.taxonomyId),partner=pick(setup.partners,input.productionPartnerId),returnPolicy=pick(setup.returnPolicies,input.returnPolicyId||setup.defaultReturnPolicyId);
  if(!shipping||!readiness||!taxonomy)throw Error('Choose a current shipping profile, processing profile, and print category.');
  if(!partner)throw Error('Choose a current FinerWorks production partner from the shop settings. Private partners may appear under their public description.');
  if(input.returnPolicyId&&!returnPolicy)throw Error('Choose a current return policy from your Etsy shop settings.');
@@ -117,7 +122,11 @@ async function create(env,input,now){
   if(Object.values(batch.items).some(x=>x.creationUncertain))throw Error('Etsy did not confirm an earlier draft creation. Review the shop drafts before retrying to avoid a duplicate.');
   if(batch.sourcePrintVersion!==sourcePrintVersion)throw Error('Saved draft progress uses a different print catalog. Review the existing drafts before retrying.');
   await checkLegacyDrafts(env,token,batch);
-  if(Object.values(batch.items).some(x=>x.listingId)&&Object.keys(settings).some(k=>JSON.stringify(batch.settings[k]??null)!==JSON.stringify(settings[k])))throw Error('Saved drafts use different shop settings. Keep their original settings when resuming.');
+  if(Object.values(batch.items).some(x=>x.listingId)){
+   const changed=Object.keys(settings).filter(k=>JSON.stringify(batch.settings[k]??null)!==JSON.stringify(settings[k]));
+   const applyingDefaultReturnPolicy=changed.length===1&&changed[0]==='returnPolicyId'&&(batch.settings.returnPolicyId??null)===null&&settings.returnPolicyId===setup.defaultReturnPolicyId;
+   if(changed.length&&!applyingDefaultReturnPolicy)throw Error('Saved drafts use different shop settings. Keep their original settings when resuming.');
+  }
   batch.settings=settings;
   batch.status='in_progress';
  }else batch={sourcePrintVersion,status:'in_progress',items:Object.fromEntries(prints.map(p=>[p.id,{status:'not started'}])),settings};
@@ -131,7 +140,13 @@ async function create(env,input,now){
     creationAttempted=true;
     const d=await call(API+'/shops/'+token.shopId+'/listings?legacy=false',env,token,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=utf-8'},body:plan.body,action:'creating a draft'});
     if(!Number.isSafeInteger(d?.listing_id))throw Error('Etsy returned no draft listing ID.');
-    item.listingId=d.listing_id;item.status='draft created';etag=await persist(env,{...record,etsyDraftBatch:batch},etag);
+    item.listingId=d.listing_id;item.status='draft created';item.listingSettingsApplied=true;etag=await persist(env,{...record,etsyDraftBatch:batch},etag);
+   }
+   if(!item.listingSettingsApplied){
+    const patch=new URLSearchParams();
+    for(const key of ['who_made','when_made','is_supply','type','shipping_profile_id','return_policy_id','taxonomy_id','production_partner_ids','item_weight','item_length','item_width','item_height','item_weight_unit','item_dimensions_unit'])if(plan.body.has(key))patch.set(key,plan.body.get(key));
+    await call(API+'/shops/'+token.shopId+'/listings/'+item.listingId,env,token,{method:'PATCH',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=utf-8'},body:patch,action:'applying print listing settings'});
+    item.listingSettingsApplied=true;etag=await persist(env,{...record,etsyDraftBatch:batch},etag);
    }
    if(!item.imageUploaded){
     const form=new FormData();form.set('image',pic.blob,pic.name);form.set('rank','1');form.set('overwrite','true');form.set('alt_text',Array.from(p.image.alt||labelOf(p)).slice(0,500).join(''));

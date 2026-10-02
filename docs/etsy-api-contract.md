@@ -18,18 +18,18 @@ Reviewed 2026-10-02 against the current official reference, OpenAPI schema, tuto
 | --- | --- | --- |
 | SKU | The live API rejected `/sku` over 32 characters. The downloaded schema only says string and does **not** encode this limit. | 27-character, artwork-specific aliases; exact provider codes retained separately. All 44 identities validated before writes. |
 | Titles and tags | Title at most 140 characters; character restrictions; at most 13 tags, each at most 20 characters. | Validate length, characters, restricted punctuation, and comma-separated tag encoding. |
-| Draft | Required physical-listing fields, shipping profile, and readiness ID. | Build all five complete payloads before the first write; preserve draft-only behavior. |
+| Draft | Physical listings require a shipping profile and readiness ID; `who_made` accepts `someone_else`. | Build all five complete payloads before the first write; create made-to-order drafts with FinerWorks as production partner and “Another company or person” maker selection. |
 | Inventory | Requests use numeric prices, not response Money objects. Send the complete variation set; exclude response IDs/deletion fields. | Validate outgoing products and offerings. |
 | Currency | Listing amounts use the shop's currency. | Verify the shop is USD before submitting the USD catalog amounts; do not silently convert or change shop settings. |
 | Variations | Custom IDs 513 and 514 cover the two choices. Values cannot contain parentheses. Dependency arrays must match the fields that vary. | Validate property IDs, unique combinations, and SKU/price/quantity/readiness consistency. Explicit two-variation query parameter. |
 | Processing profiles | Readiness IDs appear on each offering. Collection is paginated. | Apply the selected ID throughout and read subsequent pages when needed. |
 | Production partner | The shop may return a public description instead of its private partner name. | Select and validate its saved ID, never infer identity from the name. |
-| Shipping | Calculated profiles require four positive measurements and units; measurements belong to the listing. | Reuse existing paper/frame parcel estimates, retain owner overrides, and validate before writes. Largest framed option covers combined listings; smaller variants may be overestimated. |
-| Return policy | A saved shop policy can be supplied by ID. | Validate the owner's selected ID; do not invent policy terms. |
+| Shipping | Calculated profiles require four positive measurements and units; measurements belong to the listing. | Preselect the owner's `Prints Shipping` profile, reuse existing paper/frame parcel estimates if calculated, retain owner overrides, and validate before writes. Largest framed option covers combined listings; smaller variants may be overestimated. |
+| Return policy | A saved shop policy can be supplied by ID; the API schema has no default-policy flag. | Preselect the unique 30-day returns-and-exchanges policy, or the sole shop policy when only one exists. Send its ID explicitly; do not invent policy terms. |
 | Images | Upload binary multipart data. WebP is absent from Etsy's documented formats. | This integration accepts JPEG/PNG, fetches before creating a new draft, and sets rank 1 with overwrite and bounded alt text. The 8 MB cap is our own limit, not an asserted Etsy limit. |
 | Authorization | Shop reads and listing reads/writes require their respective scopes. | Existing `shops_r listings_r listings_w`, keystring:secret header, PKCE, state, refresh, and encrypted storage reviewed. No new scopes needed for this listing fix. |
 | Rate limits | HTTP 429 supplies `retry-after`. | Stop the batch and show Etsy's wait interval. No immediate automatic write retry. |
-| Retry | A POST with uncertain outcome must not be blindly repeated. | Preserve listing IDs and completed steps. Reuse the existing Warsaw draft/image after the SKU rejection. |
+| Retry | A POST with uncertain outcome must not be blindly repeated. | Preserve listing IDs and completed steps. Reuse the existing Warsaw draft/image after the SKU rejection; update its maker, shipping, production partner, and return-policy fields through the documented listing PATCH before inventory resume. |
 
 ## SKU mapping and future fulfillment
 

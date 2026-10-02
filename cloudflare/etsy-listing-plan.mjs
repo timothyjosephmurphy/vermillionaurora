@@ -21,7 +21,7 @@ const itemText=p=>p.title+' is an archival art print by TJ Murphy, reproduced fr
 
 function createBody(p,s){
  const f=new URLSearchParams();
- for(const [k,v] of Object.entries({quantity:QUANTITY,title:titleOf(p),description:labelOf(p)+'. '+itemText(p),price:Math.min(...p.variants.map(v=>Number(v.price))),who_made:'i_did',when_made:'made_to_order',taxonomy_id:s.taxonomyId,shipping_profile_id:s.shippingProfileId,readiness_state_id:s.readinessStateId,is_supply:'false',type:'physical',production_partner_ids:s.partnerId}))f.set(k,String(v));
+ for(const [k,v] of Object.entries({quantity:QUANTITY,title:titleOf(p),description:labelOf(p)+'. '+itemText(p),price:Math.min(...p.variants.map(v=>Number(v.price))),who_made:'someone_else',when_made:'made_to_order',taxonomy_id:s.taxonomyId,shipping_profile_id:s.shippingProfileId,readiness_state_id:s.readinessStateId,is_supply:'false',type:'physical',production_partner_ids:s.partnerId}))f.set(k,String(v));
  if(s.returnPolicyId)f.set('return_policy_id',String(s.returnPolicyId));
  for(const [key,value] of Object.entries(s.shippingPackages?.[p.id]||{}))f.set(key,String(value));
  f.set('tags',TAGS.join(','));
@@ -36,7 +36,7 @@ export function validateListingPlan({body,inventory,skuMap}){
  for(const key of ['quantity','taxonomy_id','shipping_profile_id','readiness_state_id','production_partner_ids'])requireValue(id(Number(body.get(key))),key+' must be a positive integer.');
  requireValue(!body.has('return_policy_id')||id(Number(body.get('return_policy_id'))),'return_policy_id must be a positive integer.');
  requireValue(positive(Number(body.get('price'))),'listing price must be positive.');
- requireValue(body.get('type')==='physical'&&body.get('who_made')==='i_did'&&body.get('when_made')==='made_to_order'&&body.get('is_supply')==='false'&&!body.has('state'),'these requests must create physical, made-to-order drafts.');
+ requireValue(body.get('type')==='physical'&&body.get('who_made')==='someone_else'&&body.get('when_made')==='made_to_order'&&body.get('is_supply')==='false'&&!body.has('state'),'these requests must create physical, made-to-order drafts marked as made by another company or person.');
  const tags=(body.get('tags')||'').split(',');
  requireValue(body.getAll('tags').length===1&&tags.length<=13&&tags.every(t=>t.trim()&&length(t)<=20&&!/[^\p{L}\p{Nd}\p{Zs}\-'™©®]/u.test(t)&&!/^[-']/.test(t)),'use at most 13 comma-separated tags of at most 20 characters each.');
  const packageFields=['item_weight','item_length','item_width','item_height'];
