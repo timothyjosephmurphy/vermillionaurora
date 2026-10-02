@@ -1,6 +1,7 @@
 import {it as test,expect,vi} from 'vitest';
 import {squarePaymentBody,validateSquarePayment,squareRequest} from '../square-provider.mjs';
 import {squareWebhook} from '../square-webhook.mjs';
+import {squareTestPageEnabled} from '../square-test-page.mjs';
 
 const id='9f928d6c-a40a-4c9d-980b-2096fe17c568';
 const env={SQUARE_MODE:'sandbox',SQUARE_LOCATION_ID:'LOCATION',SQUARE_ACCESS_TOKEN:'test-token'};
@@ -54,4 +55,14 @@ test('Square webhook validates the configured URL and HMAC before touching an or
   const invalid=new Request(url,{method:'POST',headers:{'x-square-hmacsha256-signature':'invalid'},body});
   expect((await squareWebhook(invalid,webhookEnv)).status).toBe(403);
   expect(accepted).toHaveLength(1);
+});
+
+
+test('Square sandbox test page requires enabled sandbox checkout and the no-fulfillment guard',()=>{
+  const base={PAYPAL_MODE:'sandbox',SQUARE_MODE:'sandbox',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_SANDBOX_NO_FULFILLMENT:'true'};
+  expect(squareTestPageEnabled(base)).toBe(true);
+  expect(squareTestPageEnabled({...base,PAYPAL_MODE:'live'})).toBe(false);
+  expect(squareTestPageEnabled({...base,SQUARE_MODE:'live'})).toBe(false);
+  expect(squareTestPageEnabled({...base,SQUARE_CHECKOUT_ENABLED:'false'})).toBe(false);
+  expect(squareTestPageEnabled({...base,SQUARE_SANDBOX_NO_FULFILLMENT:'false'})).toBe(false);
 });
