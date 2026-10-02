@@ -64,20 +64,26 @@ async function callback(request, env, now) {
   const url = new URL(request.url), state = url.searchParams.get('state');
   const browserState = (request.headers.get('Cookie') || '').split(';').map(v => v.trim()).find(v => v.startsWith(`${COOKIE}=`))?.slice(COOKIE.length + 1);
   if (!state || !/^[A-Za-z0-9_-]{43}$/.test(state) || state !== browserState) return redirect('expired');
-  const { record, etag } = await read(env), pending = record.pending;
+  let record, etag;
+  try { ({ record, etag } = await read(env)); } catch { return redirect('storage-read'); }
+  const pending = record.pending;
   if (!pending || pending.state !== state || pending.expiresAt <= now) return redirect('expired');
   // Consume the attempt atomically before any network call. Concurrent callbacks cannot exchange twice.
-  const consumed = await write(env, { ...record, pending: null }, etag);
+  let consumed;
+  try { consumed = await write(env, { ...record, pending: null }, etag); } catch { return redirect('storage-pending-save'); }
   if (!consumed) return redirect('expired');
   if (url.searchParams.has('error')) return redirect('denied');
   const code = url.searchParams.get('code');
   if (!code || code.length > 4096) return redirect('failed');
   const apiKey = `${env.ETSY_KEYSTRING}:${env.ETSY_SHARED_SECRET}`;
-  const tokenResponse = await fetch('https://api.etsy.com/v3/public/oauth/token', {
-    method: 'POST', redirect: 'error', signal: AbortSignal.timeout(15000),
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'x-api-key': apiKey },
-    body: new URLSearchParams({ grant_type: 'authorization_code', client_id: env.ETSY_KEYSTRING, redirect_uri: ETSY_CALLBACK, code, code_verifier: pending.verifier })
-  });
+  let tokenResponse;
+  try {
+    tokenResponse = await fetch('https://api.etsy.com/v3/public/oauth/token', {
+      method: 'POST', redirect: 'error', signal: AbortSignal.timeout(15000),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'x-api-key': apiKey },
+      body: new URLSearchParams({ grant_type: 'authorization_code', client_id: env.ETSY_KEYSTRING, redirect_uri: ETSY_CALLBACK, code, code_verifier: pending.verifier })
+    });
+  } catch { return redirect('token-network'); }
   if (!tokenResponse.ok) return redirect(`token-http-${tokenResponse.status}`);
   let tokens;
   try { tokens = await tokenResponse.json(); } catch { return redirect('token-response'); }
@@ -100,7 +106,9 @@ async function callback(request, env, now) {
     authorizedAt: new Date(now).toISOString(), expiresAt: now + tokens.expires_in * 1000,
     accessToken: tokens.access_token, refreshToken: tokens.refresh_token
   };
-  if (!await write(env, { pending: null, connection }, consumed.etag)) return redirect('storage-conflict');
+  let saved;
+  try { saved = await write(env, { pending: null, connection }, consumed.etag); } catch { return redirect('storage-save'); }
+  if (!saved) return redirect('storage-conflict');
   return redirect('saved');
 }
 
