@@ -3,6 +3,7 @@ import {commissionPrivacy,purgeCommissionReferences} from './commission-privacy.
 import {cartCheckout} from './cart-checkout.mjs';
 import {printApi} from './print-api.mjs';
 import {etsyConnection} from './etsy-connection.mjs';
+import {etsyListings} from './etsy-listings.mjs';
 export {CartOrder} from './cart-order.mjs';
 import { inventoryStatus } from './inventory-api.mjs';
 import { catalogVersion } from './checkout-catalog.mjs';
@@ -19,6 +20,7 @@ export default {
   async scheduled(event,env,ctx) { ctx.waitUntil(purgeCommissionReferences(env)); },
   async fetch(request, env) {
     const path = new URL(request.url).pathname;
+    if (path.startsWith('/etsy/listings/')) return etsyListings(request,env);
     if (path.startsWith('/etsy/')) return etsyConnection(request,env);
     if (path === '/commission-privacy') return commissionPrivacy(request,env);
     if (path.startsWith('/checkout/prints/')) return printApi(request,env);

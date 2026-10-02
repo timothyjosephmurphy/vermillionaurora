@@ -10,7 +10,7 @@ const COOKIE = '__Host-etsy-state';
 const TTL = 10 * 60 * 1000;
 const encoder = new TextEncoder();
 const headers = { 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer', 'X-Content-Type-Options': 'nosniff', 'X-Robots-Tag': 'noindex, nofollow' };
-const json = (body, status = 200, extra = {}) => Response.json(body, { status, headers: { ...headers, ...extra } });
+export const json = (body, status = 200, extra = {}) => Response.json(body, { status, headers: { ...headers, ...extra } });
 const base64 = bytes => btoa(String.fromCharCode(...new Uint8Array(bytes)));
 const unbase64 = value => Uint8Array.from(atob(value), c => c.charCodeAt(0));
 const base64url = bytes => base64(bytes).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -19,7 +19,7 @@ const digest = value => crypto.subtle.digest('SHA-256', encoder.encode(value));
 const cookie = (value, age = 600) => `${COOKIE}=${value}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=${age}`;
 const redirect = result => new Response(null, { status: 303, headers: { ...headers, Location: `/etsy/connect?result=${result}`, 'Set-Cookie': cookie('', 0) } });
 
-async function authorized(request, env) {
+export async function authorized(request, env) {
   if (!env.COMMISSION_MANAGER_TOKEN) return false;
   const actual = new Uint8Array(await digest(request.headers.get('Authorization') || ''));
   const expected = new Uint8Array(await digest(`Bearer ${env.COMMISSION_MANAGER_TOKEN}`));
@@ -34,14 +34,14 @@ async function encryptionKey(env) {
   const material = await crypto.subtle.importKey('raw', encoder.encode(env.ETSY_SHARED_SECRET), 'HKDF', false, ['deriveKey']);
   return crypto.subtle.deriveKey({ name: 'HKDF', hash: 'SHA-256', salt: encoder.encode(env.ETSY_KEYSTRING), info: encoder.encode('vermillion-etsy-connection-v1') }, material, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
 }
-async function read(env) {
+export async function read(env) {
   const object = await env.COMMISSION_UPLOADS.get(KEY);
   if (!object) return { record: {}, etag: null };
   const sealed = await object.json();
   const clear = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unbase64(sealed.iv), additionalData: encoder.encode(KEY) }, await encryptionKey(env), unbase64(sealed.data));
   return { record: JSON.parse(new TextDecoder().decode(clear)), etag: object.etag };
 }
-async function write(env, record, etag) {
+export async function write(env, record, etag) {
   const iv = crypto.getRandomValues(new Uint8Array(12));
   const data = await crypto.subtle.encrypt({ name: 'AES-GCM', iv, additionalData: encoder.encode(KEY) }, await encryptionKey(env), encoder.encode(JSON.stringify(record)));
   return env.COMMISSION_UPLOADS.put(KEY, JSON.stringify({ version: 1, iv: base64(iv), data: base64(data) }), {
@@ -112,7 +112,7 @@ async function callback(request, env, now) {
     accessToken: tokens.access_token, refreshToken: tokens.refresh_token
   };
   let saved;
-  try { saved = await write(env, { pending: null, connection }, consumed.etag); } catch { return redirect('storage-save'); }
+  try { saved = await write(env, { ...record, pending: null, connection }, consumed.etag); } catch { return redirect('storage-save'); }
   if (!saved) return redirect('storage-conflict');
   return redirect('saved');
 }

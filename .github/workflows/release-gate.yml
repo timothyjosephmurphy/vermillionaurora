@@ -28,11 +28,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Confirm generated catalogs are committed
-        run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
-      - run: npm test
-      - run: node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
-      - run: npm --prefix cloudflare/test ci
-      - run: npm run test:worker
+        run: git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs cloudflare/etsy-print-source.mjs
       - name: Validate production Worker configuration
         run: |
           node --input-type=module <<'NODE'
@@ -42,10 +38,29 @@ jobs:
             throw new Error('Unexpected production Worker configuration');
           }
           NODE
+      # Main PRs and manual runs execute the full suite. A main-to-release
+      # promotion reruns the build and production-config checks above against
+      # the exact release PR commit, without repeating the full suite.
+      - name: Run application tests
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: npm test
+      - name: Run print unit tests
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
+      - name: Install Cloudflare Worker test dependencies
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: npm --prefix cloudflare/test ci
+      - name: Run Cloudflare Worker tests
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: npm run test:worker
       - name: Install Chromium for browser checks
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
         run: npx playwright install --only-shell chromium
-      - run: npm run test:browser
+      - name: Run browser tests
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: npm run test:browser
       - name: Check print framing and print samples
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
         run: |
           node tests/print-framing.browser-test.mjs
           node tests/live-print-samples.browser-test.mjs

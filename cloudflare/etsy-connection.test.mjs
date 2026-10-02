@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { etsyConnection, ETSY_ORIGIN, ETSY_CALLBACK } from './etsy-connection.mjs';
+import { etsyConnection, ETSY_ORIGIN, ETSY_CALLBACK, read, write } from './etsy-connection.mjs';
 
 const now = Date.parse('2026-10-02T01:00:00Z');
 class Bucket {
@@ -165,4 +165,14 @@ test('connection page is uncacheable, blocks framing and has no reflected query 
   assert.match(html, /shop-http-/);
   assert.match(html, /storage-read/);
   assert.match(html, /storage-save/);
+});
+
+test('reauthorization preserves resumable listing progress in encrypted storage',async t=>{
+ const env=setup(),batch={status:'needs_resume',items:{'painting-one':{status:'draft ready',listingId:123,imageUploaded:true}}};
+ await write(env,{etsyDraftBatch:batch},null);
+ const attempt=await start(env);provider(t);
+ const result=await callback(env,attempt);
+ assert.equal(outcome(result),'saved');
+ const saved=await read(env);
+ assert.deepEqual(saved.record.etsyDraftBatch,batch);
 });
