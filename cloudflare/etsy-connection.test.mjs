@@ -27,7 +27,7 @@ async function start(env) {
 }
 const callback = (env, attempt, { state = attempt.state, cookie = attempt.cookie, time = now, query = 'code=test-code' } = {}) => etsyConnection(new Request(`${ETSY_CALLBACK}?state=${state}&${query}`, { headers: { Cookie: cookie } }), env, time);
 const outcome = response => new URL(response.headers.get('Location'), ETSY_ORIGIN).searchParams.get('result');
-const token = { access_token: '123.test-access-token', refresh_token: '123.test-refresh-token', expires_in: 3600, token_type: 'Bearer', scope: 'shops_r listings_r listings_w' };
+const token = { access_token: '123.test-access-token', refresh_token: '123.test-refresh-token', expires_in: 3600, token_type: 'Bearer', scope: 'shops_r listings_r listings_w transactions_r' };
 function provider(t, shop = { shop_id: 42, user_id: 123, shop_name: 'VermillionAurora' }) {
   const calls = [];
   t.mock.method(globalThis, 'fetch', async (url, options) => {
