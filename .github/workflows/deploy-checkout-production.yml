@@ -19,14 +19,6 @@ jobs:
           node-version: '22'
       - run: npm ci
       - run: npm run build
-      - run: npm test
-      - run: node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
-      - run: npx playwright install --with-deps chromium
-      - run: npm run test:browser
-      - run: node tests/live-print-samples.browser-test.mjs
-      - run: node tests/print-framing.browser-test.mjs
-      - run: npm --prefix cloudflare/test ci
-      - run: npm --prefix cloudflare/test test
       - name: Verify production checkout
         run: |
           node payments/build-checkout-catalog.mjs

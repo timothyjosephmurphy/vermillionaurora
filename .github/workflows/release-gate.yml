@@ -3,7 +3,6 @@ name: Release gate
 on:
   pull_request:
     branches: [main, release]
-  workflow_call:
   workflow_dispatch:
 
 permissions:
@@ -46,3 +45,7 @@ jobs:
       - name: Install Chromium for browser checks
         run: npx playwright install --only-shell chromium
       - run: npm run test:browser
+      - name: Check print framing and print samples
+        run: |
+          node tests/print-framing.browser-test.mjs
+          node tests/live-print-samples.browser-test.mjs
