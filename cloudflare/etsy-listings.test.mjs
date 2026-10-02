@@ -18,7 +18,7 @@ function mockEtsy(t,{failFirstInventory=false}={}){
   const target=String(url);calls.push({url:target,options});
   if(target.startsWith('https://vermillionaurora.com/'))return new Response(new Uint8Array([1,2,3]),{headers:{'Content-Type':'image/jpeg'}});
   if(target.endsWith('/shipping-profiles'))return Response.json({results:[{shipping_profile_id:11,title:'US Shipping'}]});
-  if(target.endsWith('/readiness-state-definitions'))return Response.json({results:[{readiness_state_id:22,readiness_state:'made_to_order',min_processing_time:5,max_processing_time:8,processing_time_unit:'days'}]});
+  if(target.includes('/readiness-state-definitions?legacy=false'))return Response.json({results:[{readiness_state_id:22,readiness_state:'made_to_order',min_processing_time:5,max_processing_time:8,processing_time_unit:'days'}]});
   if(target.endsWith('/production-partners'))return Response.json({results:[{production_partner_id:33,partner_name:'FinerWorks'}]});
   if(target.endsWith('/seller-taxonomy/nodes'))return Response.json([{id:44,name:'Art & Collectibles',children:[{id:55,name:'Prints',children:[]}]}]);
   if(target.includes('/inventory?')){const body=JSON.parse(options.body);inventoryCounts.push(body.products.length);if(failFirstInventory&&!failed){failed=true;return new Response(JSON.stringify({error:'private provider error'}),{status:500,headers:{'Content-Type':'application/json'}})}return Response.json({products:body.products})}
@@ -34,7 +34,7 @@ test('owner token and exact origin guard setup endpoints',async t=>{
  assert.equal((await req(env,'/etsy/listings/preflight',{},'https://evil.test')).status,403);
  assert.equal((await req(env,'/etsy/listings/preflight')).status,200);
 });
-test('creates exactly five saved drafts with ready size and frame combinations, never activating them',async t=>{
+test('loads the Etsy processing interval using the non-legacy profile response',async t=>{\n const env=setup();await connected(env);const {calls}=mockEtsy(t);\n const res=await req(env,'/etsy/listings/preflight');assert.equal(res.status,200);\n const data=await res.json();assert.equal(data.readiness[0].name,'Made to order · 5–8 days');\n assert.ok(calls.some(x=>x.url.endsWith('/readiness-state-definitions?legacy=false')));\n});\n\ntest('creates exactly five saved drafts with ready size and frame combinations, never activating them',async t=>{
  const env=setup();await connected(env);const {calls,inventoryCounts}=mockEtsy(t);
  const res=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55});
  assert.equal(res.status,200,await res.clone().text());
