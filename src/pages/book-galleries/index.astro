@@ -2,9 +2,36 @@
 import Layout from '../../layouts/BookGalleryLayout.astro';
 import manifest from '../../../catalog/book-galleries.json';
 import {byId} from '../../../catalog/catalog.mjs';
+import {config,papers,printOptions} from '../../../catalog/prints.mjs';
+
+const galleryArtworks=[...new Set(manifest.sections.flatMap(group=>group.artworks))];
+const totalPrintReady=galleryArtworks.filter(id=>printOptions(byId[id],config,papers).some(option=>option.ready)).length;
+const gallerySummaries=manifest.sections.map(group=>({
+  ...group,
+  printReadyCount:group.artworks.filter(id=>printOptions(byId[id],config,papers).some(option=>option.ready)).length
+}));
 ---
+
 <Layout title="Galleries from the art books" description="Explore TJ Murphy’s watercolor landscapes and portraits by book chapter, with selected fine-art prints.">
-<nav aria-label="Breadcrumb"><a href="/">Home</a> / Art book galleries</nav>
-<header class="book-gallery-intro"><p class="eyebrow dark">The book collections</p><h1>Galleries from the art books</h1><p>Travel through the landscapes, people, and stories collected in my watercolor books. Each gallery follows a labeled section of the book, including its smaller collections.</p></header>
-{manifest.books.map(book=><section aria-labelledby={book.id}><h2 class="book-group-heading" id={book.id}>{book.title}</h2><ul class="book-gallery-grid">{manifest.sections.filter(g=>g.book===book.id).map(g=><li class="book-gallery-card"><a href={`/book-galleries/${g.id}/`}><img src={byId[g.artworks[0]].image.src} alt={byId[g.artworks[0]].title} loading="lazy" decoding="async"/><h3>{g.title}</h3><p>{g.artworks.length} {g.artworks.length===1?'work':'works'} · View gallery →</p></a></li>)}</ul><p><a href={`/products/${book.id}/`}>Read {book.title} →</a></p></section>)}
+  <nav aria-label="Breadcrumb"><a href="/">Home</a> / Art book galleries</nav>
+  <header class="book-gallery-intro">
+    <p class="eyebrow dark">The book collections</p>
+    <h1>Galleries from the art books</h1>
+    <p class="book-gallery-print-total" data-total-print-ready-count={totalPrintReady}>Travel through the landscapes, people, and stories collected in my watercolor books. {totalPrintReady} distinct works across these galleries currently have fine-art prints available.</p>
+  </header>
+  {manifest.books.map(book=><section aria-labelledby={book.id}>
+    <h2 class="book-group-heading" id={book.id}>{book.title}</h2>
+    <ul class="book-gallery-grid">
+      {gallerySummaries.filter(group=>group.book===book.id).map(group=>
+        <li class="book-gallery-card">
+          <a href={`/book-galleries/${group.id}/`}>
+            <img src={byId[group.artworks[0]].image.src} alt={byId[group.artworks[0]].title} loading="lazy" decoding="async"/>
+            <h3>{group.title}</h3>
+            <p data-print-ready-count={group.printReadyCount}>{group.artworks.length} {group.artworks.length===1?'work':'works'} · {group.printReadyCount} with fine-art prints · View gallery →</p>
+          </a>
+        </li>
+      )}
+    </ul>
+    <p><a href={`/products/${book.id}/`}>Read {book.title} →</a></p>
+  </section>)}
 </Layout>
