@@ -3,6 +3,7 @@ import {runInDurableObject,runDurableObjectAlarm,evictDurableObject} from 'cloud
 import {it,expect,beforeEach,afterEach,vi} from 'vitest';
 import {catalogVersion,cartItems,keyHash,paymentMethods} from '../cart-policy.mjs';
 import catalog from '../checkout-catalog.mjs';
+import prints from '../print-catalog.mjs';
 import {cartCheckout} from '../cart-checkout.mjs';
 import {priceCart} from '../checkout-pricing.mjs';
 import {backfillCheckoutSale,checkoutWebhook} from '../paypal-orders.mjs';
@@ -70,6 +71,30 @@ it('keeps PayPal available independently and requires an explicit Square item al
   const withAllowlist={...withoutAllowlist,SQUARE_CHECKOUT_SLUGS:ids[0]};
   expect(paymentMethods(withAllowlist,ids[0])).toContain('paypal');expect(paymentMethods(withAllowlist,ids[0])).toContain('square');
 });
+
+it('offers production Square across eligible originals and prints, preserving PayPal and fulfillment gates',()=>{
+  const square={...env,...config,PAYPAL_MODE:'live',SQUARE_MODE:'live',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_CHECKOUT_ALL:'true',
+    SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'sq0idp-APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',
+    SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook',
+    PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_ALL:'true',PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',
+    FINERWORKS_WEB_API_KEY:'fake',FINERWORKS_APP_KEY:'fake',FINERWORKS_PAYMENT_TOKEN:'billing-token'};
+  const print=Object.values(prints).find(p=>p.provider==='finerworks'&&!p.testOnly&&!p.sampleOnly);
+  expect(print).toBeDefined();
+  for(const id of [...ids,print.id])expect(paymentMethods(square,id)).toEqual(expect.arrayContaining(['paypal','square']));
+  for(const id of ['not-a-product','__proto__','toString'])expect(paymentMethods(square,id)).toEqual([]);
+  for(const key of ['SQUARE_ACCESS_TOKEN','SQUARE_APPLICATION_ID','SQUARE_LOCATION_ID','SQUARE_WEBHOOK_SIGNATURE_KEY','SQUARE_WEBHOOK_URL']){
+    expect(paymentMethods({...square,[key]:''},ids[0])).not.toContain('square');
+    expect(paymentMethods({...square,[key]:''},ids[0])).toContain('paypal');
+  }
+  expect(paymentMethods({...square,SQUARE_CHECKOUT_ENABLED:'false'},ids[0])).not.toContain('square');
+  expect(paymentMethods({...square,SQUARE_MODE:'sandbox'},ids[0])).not.toContain('square');
+  expect(paymentMethods({...square,SQUARE_APPLICATION_ID:'sandbox-sq0idb-APP'},ids[0])).not.toContain('square');
+  expect(paymentMethods({...square,FINERWORKS_PAYMENT_TOKEN:''},print.id)).toEqual([]);
+  expect(paymentMethods({...square,PRINT_CHECKOUT_ENABLED:'false'},print.id)).toEqual([]);
+  const testPrint=Object.values(prints).find(p=>p.testOnly);
+  if(testPrint)expect(paymentMethods(square,testPrint.id)).toEqual([]);
+});
+
 it('rejects duplicated originals, quantities, unknown products and client price substitutions',()=>{
   expect(()=>cartItems([{id:ids[0],quantity:2}])).toThrow();expect(()=>cartItems([{id:ids[0],quantity:1},{id:ids[0],quantity:1}])).toThrow();expect(()=>cartItems([{id:'__proto__',quantity:1}])).toThrow();expect(cartItems([{id:ids[0],quantity:1,amount:'0.01'}])[0].amount).toBe(catalog[ids[0]].amount);
 });

@@ -1,6 +1,6 @@
 # Square checkout
 
-Square is an optional card processor alongside PayPal. The sandbox Worker is configured for a one-item pilot; Square stays disabled until its sandbox credentials and webhook are configured. Production Square remains disabled.
+Square is an optional card processor alongside PayPal. The sandbox Worker has a tested one-item pilot. Production offers a separate “Pay with Square using credit card” button alongside PayPal for eligible originals and print editions. Square is offered only when its credentials, webhook settings, environment, and product eligibility are configured.
 
 ## Sandbox Worker variables
 
@@ -24,7 +24,22 @@ After adding the webhook secret, set `SQUARE_CHECKOUT_ENABLED=true` in the sandb
 
 ## Production
 
-Production has separate credentials and webhook signature key. Keep `SQUARE_CHECKOUT_ENABLED=false` until sandbox testing is complete and production credentials are deliberately configured. Stripe Tax continues to calculate checkout tax; this integration does not change tax or shipping calculation.
+The production Worker is **vermillion-commissions**. In Square Developer Console, select the same application and switch to **Production**. Configure the following in Cloudflare → Workers & Pages → vermillion-commissions → Settings → Variables and Secrets:
+
+| Name | Cloudflare type | Value |
+| --- | --- | --- |
+| `SQUARE_ACCESS_TOKEN` | Secret | Production access token |
+| `SQUARE_WEBHOOK_SIGNATURE_KEY` | Secret | Signature key for the production webhook subscription |
+| `SQUARE_APPLICATION_ID` | Text | Production application ID |
+| `SQUARE_LOCATION_ID` | Text | Production location ID |
+
+Create an enabled Production webhook subscription for `payment.updated` at the exact notification URL `https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/square/webhook`. Its signature key is separate from the application ID and Sandbox subscription.
+
+The checked-in production configuration sets `SQUARE_MODE=live`, `SQUARE_CHECKOUT_ENABLED=true`, `SQUARE_CHECKOUT_ALL=true`, and `SQUARE_WEBHOOK_URL` to that production URL. The all-catalog setting admits only known, eligible products; print fulfillment and availability restrictions still apply. Sandbox keeps its pilot allowlist.
+
+The production deployment checks Square authentication, an active USD location enabled for credit card processing, and the matching enabled webhook subscription without taking payment. Missing credentials keep the Square option hidden and are reported by verification. Successful live Square payments use the existing reservation, tax recording, fulfillment, sales records, and customer email flow. The sandbox no-fulfillment guard cannot apply in live mode.
+
+Stripe Tax continues to calculate checkout tax. PayPal remains a separate payment option. Sandbox cards cannot be used in production; any deliberate live payment uses a real card and has normal fulfillment effects.
 
 ## Local verification
 
