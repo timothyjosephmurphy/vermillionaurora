@@ -4,7 +4,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
-const origin='https://vermillionaurora.com',root=path.resolve('dist'),id='aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key='b'.repeat(64),products=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),methods:['square'],status:'available'}));
+const origin='https://vermillionaurora.com',root=path.resolve('dist'),id='aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',key='b'.repeat(64),products=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),methods:['paypal','square'],status:'available'}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
 try {
   const page=await browser.newPage(),errors=[],calls=[];let quote;
@@ -17,7 +17,7 @@ try {
       if(action==='catalog')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'sample-test-'+printVersion,products,square:{applicationId:'sq0idp-test',locationId:'LOCATION',mode:'live'}}});
       if(action==='quote'){quote={items:body.items.map(i=>({...products.find(p=>p.id===i.id),quantity:i.quantity})),base:'50.00',shipping:'8.95',tax:'5.00',total:'63.95'};}
       if(action==='start'){assert.equal(body.method,'square');assert.equal(body.sourceId,'cnon:test');}
-      const json=action==='quote'?{orderId:id,key,status:'quoted',methods:['square'],quote}:{orderId:id,status:'paid',method:'square',quote,printStatus:'in-production'};
+      const json=action==='quote'?{orderId:id,key,status:'quoted',methods:['paypal','square'],quote}:{orderId:id,status:'paid',method:'square',quote,printStatus:'in-production'};
       return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json});
     }
     if(u.hostname!==new URL(origin).hostname)return route.fulfill({json:{products:[],availability:{}}});
