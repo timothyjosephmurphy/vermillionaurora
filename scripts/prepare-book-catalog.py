@@ -11,7 +11,9 @@ for book,refs in [('watercolor-landscapes',[977,1003]),('watercolor-portraits',[
 # Shared captions are ambiguous in these collages; keep numbered works without guessing names.
 for n,x in enumerate([1037,1036,1034,1038],1):names['watercolor-portraits',x]=f'Benny and Kermit, P, Culhane, Bob — portrait {n}'
 unique={};occurrences=[]
+removed={('watercolor-landscapes',300),('watercolor-landscapes',298),('watercolor-landscapes',301),('watercolor-landscapes',317),('watercolor-landscapes',315),('watercolor-landscapes',318)}
 for e in raw['artworks']:
+ if (e['book'],e['xref']) in removed:continue
  title=names.get((e['book'],e['xref']),e['title']);title=title if title!='____' else ''
  if not title:title=f"Untitled — {next(s['title'] for s in raw['sections'] if s['id']==e['sectionIds'][-1])}, page {e['pages'][0]}"
  # Deduplicate byte-identical images across both books, retaining all source references.
