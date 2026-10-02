@@ -12,7 +12,7 @@ button{margin:12px 0;cursor:pointer}.notice{background:#fff1eb;padding:12px;bord
 </style></head>
 <body>
 <h1>Square sandbox checkout test</h1>
-<p class="notice">Sandbox only. This uses the test card and sample address below. Shipping and tax providers process the address to calculate a quote; no tax transaction is recorded, shipping label is purchased, or order email is sent.</p>
+<p class="notice">Sandbox only. This uses the test card and sample address below. Shipping and tax providers process the address to calculate a quote; no tax transaction is recorded, shipping label is purchased, or order email is sent. A successful test marks the painting sold in the sandbox inventory only.</p>
 <form id="form">
 <label for="painting">Pilot painting</label><select id="painting" required></select>
 <label for="email">Test email</label><input id="email" type="email" value="square-test@example.test" required>
