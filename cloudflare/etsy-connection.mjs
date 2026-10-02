@@ -79,11 +79,14 @@ async function callback(request, env, now) {
   let tokenResponse;
   try {
     tokenResponse = await fetch('https://api.etsy.com/v3/public/oauth/token', {
-      method: 'POST', redirect: 'error', signal: AbortSignal.timeout(15000),
+      // Do not follow redirects: OAuth codes and app credentials must stay on Etsy's token endpoint.
+      // Etsy has intermittently redirected this endpoint; classify that separately from network failure.
+      method: 'POST', redirect: 'manual', signal: AbortSignal.timeout(15000),
       headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'x-api-key': apiKey },
       body: new URLSearchParams({ grant_type: 'authorization_code', client_id: env.ETSY_KEYSTRING, redirect_uri: ETSY_CALLBACK, code, code_verifier: pending.verifier })
     });
   } catch { return redirect('token-network'); }
+  if (tokenResponse.status >= 300 && tokenResponse.status < 400) return redirect('token-redirect');
   if (!tokenResponse.ok) return redirect(`token-http-${tokenResponse.status}`);
   let tokens;
   try { tokens = await tokenResponse.json(); } catch { return redirect('token-response'); }

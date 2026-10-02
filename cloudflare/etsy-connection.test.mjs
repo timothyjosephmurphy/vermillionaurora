@@ -106,6 +106,14 @@ test('denial consumes state; provider failures never leak raw errors and never s
   const rejected = await callback(env, await start(env));
   assert.equal(outcome(rejected), 'token-http-401');
   assert.doesNotMatch(await rejected.text(), /private-provider-detail/);
+  globalThis.fetch = async (_url, options) => {
+    assert.equal(options.redirect, 'manual');
+    return new Response(null, { status: 302, headers: { Location: 'https://policy.etsy.com/restriction' } });
+  };
+  const redirected = await callback(env, await start(env));
+  assert.equal(outcome(redirected), 'token-redirect');
+  assert.doesNotMatch(await redirected.text(), /policy\.etsy\.com|restriction/);
+
   globalThis.fetch = async () => { throw Error('secret-provider-body'); };
   const failed = await callback(env, await start(env));
   assert.equal(outcome(failed), 'token-network');
