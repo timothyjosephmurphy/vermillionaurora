@@ -103,16 +103,37 @@
     updatePaymentControls(false);
     root.querySelector('[data-cart-shipping]').textContent='Calculated below';root.querySelector('[data-cart-tax]').textContent='Calculated below';root.querySelector('[data-cart-total]').textContent='—';
   }
+  function paymentIcon(kind){
+    const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');
+    svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('class','payment-button-icon');
+    svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');
+    const shape=(name,attrs)=>{const el=document.createElementNS(ns,name);for(const [key,value] of Object.entries(attrs))el.setAttribute(key,value);svg.append(el);return el;};
+    if(kind==='bitcoin'){
+      shape('circle',{cx:'12',cy:'12',r:'10',fill:'none',stroke:'currentColor','stroke-width':'1.8'});
+      const symbol=shape('text',{x:'12',y:'17','text-anchor':'middle','font-size':'14','font-family':'Arial, sans-serif','font-weight':'700',fill:'currentColor'});
+      symbol.textContent='₿';
+    }else{
+      shape('path',{d:'M13.1 1.8 5.7 13h5l-.8 9.2L18.3 10.8h-5.1z',fill:'currentColor'});
+    }
+    return svg;
+  }
   function updatePaymentControls(enabled=false,methods=methodIntersection()){
-    methods=methods.filter(method=>['square','bitcoin'].includes(method));
+    methods=['bitcoin','square'].filter(method=>methods.includes(method));
     const box=root.querySelector('[data-cart-payments]'),host=root.querySelector('[data-cart-methods]');
     const squareBox=root.querySelector('[data-square-card-box]');
     host.replaceChildren();
     if(squareBox)squareBox.hidden=!(enabled&&methods.includes('square'));
     if(enabled&&methods.includes('square'))ensureSquareCard().catch(error=>announce(`Square card entry could not load: ${error.message}`));
     for(const method of methods){
-      const button=node('button',method==='square'?'Pay with credit card':'Pay with Bitcoin / Lightning','button button-solid');
+      const button=node('button',undefined,'button button-solid');
       button.type='button';button.disabled=!enabled||busy||!!(pendingOrder&&pending(pendingOrder));
+      const content=node('span',undefined,'payment-button-content');
+      if(method==='bitcoin'){
+        const icons=node('span',undefined,'payment-button-icons');
+        icons.append(paymentIcon('bitcoin'),paymentIcon('lightning'));
+        content.append(icons,node('span','Pay with Bitcoin'));
+      }else content.append(node('span','Pay with credit card'));
+      button.append(content);
       button.addEventListener('click',()=>startPayment(method));host.append(button);
     }
     box.hidden=!methods.length;
