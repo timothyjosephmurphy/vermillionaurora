@@ -12,9 +12,20 @@ const artworks=g.artworks.map(id=>{
   const product=byId[id];
   const source=manifest.artworks.find(art=>art.id===id);
   const options=printOptions(product,config,papers).filter(option=>option.ready);
-  return {id,product,source,options};
+  const printPrice=options.length?Math.min(...options.map(option=>Number(option.amount))):null;
+  const printArea=options.length?Math.max(...options.map(option=>Number(option.image.width)*Number(option.image.height))):null;
+  return {id,product,source,options,printPrice,printArea};
 });
 const printReadyCount=artworks.filter(art=>art.options.length>0).length;
+const bookPages=new Map();
+for(const {source} of artworks){
+  for(const reference of source?.sources||[{book:source?.book,pages:source?.pages||[]}]){
+    if(!reference.book)continue;
+    const pages=bookPages.get(reference.book)||new Set();
+    for(const page of reference.pages||[])pages.add(page);
+    bookPages.set(reference.book,pages);
+  }
+}
 ---
 
 <Layout title={`${g.title} — ${book.title}`} description={`${g.title}: watercolor artwork from ${book.title} by TJ Murphy.`}>
@@ -24,33 +35,40 @@ const printReadyCount=artworks.filter(art=>art.options.length>0).length;
     <h1>{g.title}</h1>
     <p class="book-gallery-stats" data-print-ready-count={printReadyCount}>{artworks.length} {artworks.length===1?'work':'works'} · {printReadyCount} {printReadyCount===1?'has':'have'} fine-art prints available.</p>
     <div class="book-gallery-links">
-      <a href={`${book.pdfUrl}#page=${g.startPage}`} target="_blank" rel="noopener noreferrer">See this section in the book ↗</a>
+      {[...bookPages].map(([bookId,pages])=>{
+        const sourceBook=manifest.books.find(entry=>entry.id===bookId);
+        const pageNumbers=[...pages].sort((a,b)=>a-b);
+        const pageLabel=pageNumbers.length>1?`${pageNumbers[0]}–${pageNumbers.at(-1)}`:String(pageNumbers[0]||g.startPage);
+        return <a href={`${sourceBook.pdfUrl}#page=${pageNumbers[0]||g.startPage}`} target="_blank" rel="noopener noreferrer">See pages {pageLabel} in {sourceBook.title} ↗</a>;
+      })}
       <a href="/book-galleries/">All book galleries →</a>
     </div>
   </header>
 
-  <section class="ex-carousel book-art-carousel" role="region" aria-roledescription="carousel" aria-label={`${g.title} gallery`}>
-    <div class="ex-track" tabindex="0" aria-label={`Swipe or use arrow keys to browse ${g.title}`}>
-      {artworks.map(({id,product,source,options},index)=>
-        <article class="ex-slide product-card book-art-slide" aria-label={`${index+1} of ${artworks.length}`}>
-          <a href={urlFor(product)}>
-            <img class="book-art-image" src={product.image.src} alt={product.title} loading={index===0?'eager':'lazy'} decoding="async"/>
-            <div class="ex-slide-caption product-info">
-              <h3>{product.title}</h3>
-              {source?.measurements?.length>0&&<p class="book-art-measurements">{source.measurements.join('; ')}</p>}
-              {options.length>0
-                ? <p class="print-available">Fine-art prints from ${Math.min(...options.map(option=>Number(option.amount))).toFixed(2)}</p>
-                : <p>View artwork →</p>}
-            </div>
-          </a>
-        </article>
+  <div data-gallery-list>
+    <h2 class="book-group-heading">All works</h2>
+    <div class="gallery-filter" hidden>
+      <label class="gallery-sort" for="gallery-sort">Sort by
+        <select id="gallery-sort" aria-label="Sort works">
+          <option value="price-desc">Price: high to low</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="size-desc">Size: largest first</option>
+          <option value="size-asc">Size: smallest first</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="available-for-prints"> Available for prints</label>
+      <span id="gallery-result-count" role="status" aria-live="polite"></span>
+    </div>
+    <ul class="painting-list" aria-label="All works">
+      {artworks.map(({id,product,source,printPrice,printArea})=>
+        <li class="painting-list-row" data-product-id={id} data-print-ready={printPrice!==null?'true':'false'} data-price={printPrice??undefined} data-area={printArea??undefined}>
+          <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt="" loading="lazy" decoding="async"/></a>
+          <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a></h3>
+          <p class="painting-list-dimensions">{source?.measurements?.join('; ')||''}</p>
+          <p class="painting-list-price">{printPrice!==null?`Fine-art prints from $${printPrice.toFixed(2)}`:'No fine-art prints currently available'}</p>
+        </li>
       )}
-    </div>
-    <div class="ex-controls" hidden>
-      <button type="button" class="ex-autoplay" aria-label={`Pause automatic ${g.title} scrolling`}>Pause</button>
-      <button type="button" data-direction="-1" aria-label="Previous artwork">←</button>
-      <p class="ex-position" role="status">1 / {artworks.length}</p>
-      <button type="button" data-direction="1" aria-label="Next artwork">→</button>
-    </div>
-  </section>
+    </ul>
+    <p class="gallery-empty" hidden>No works have fine-art prints available. Uncheck “Available for prints” to see all works.</p>
+  </div>
 </Layout>
