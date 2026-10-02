@@ -10,7 +10,7 @@ import { verifySandbox } from './checkout-verification.mjs';
 import { shippingCheck } from './shipping-check.mjs';
 import {printTestPage} from './print-test-page.mjs';
 import {squareWebhook} from './square-webhook.mjs';
-import {squareTestPage} from './square-test-page.mjs';
+import {squareTestPage,squareTestPageEnabled} from './square-test-page.mjs';
 import printTestAssets from './print-test-assets.generated.mjs';
 import printCatalog from './print-catalog.mjs';
 export { PaintingStock } from './painting-stock.mjs';
@@ -54,7 +54,7 @@ export default {
     if (path==='/checkout/shipping-check') return shippingCheck(request,env);
     if (path==='/checkout/verification') return verifySandbox(request,env);
     if (path==='/checkout/square-test' && request.method==='GET') {
-      if (env.SQUARE_MODE !== 'sandbox' || env.SQUARE_CHECKOUT_ENABLED !== 'true' || env.SQUARE_SANDBOX_NO_FULFILLMENT !== 'true') return new Response('Not found',{status:404});
+      if (!squareTestPageEnabled(env)) return new Response('Not found',{status:404});
       return new Response(squareTestPage,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
     }
     if (path==='/checkout/test' && request.method==='GET') return new Response(page,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
