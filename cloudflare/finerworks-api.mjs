@@ -26,9 +26,15 @@ export function finerworksEnvironment(env,requireKeys=true) {
 export async function finerworksRequest(env,path,body,method='POST') {
   finerworksEnvironment(env);
   const validationOnly=path==='/v3/submit_orders_v2'&&method==='POST'&&env.PAYPAL_MODE==='sandbox'&&body?.validate_only===true&&body?.payment_token==='xxxx'&&Array.isArray(body.orders)&&body.orders.length===1&&body.orders.every(o=>o.test_mode===true);
-  const submission=path==='/v3/submit_orders_v2'&&method==='POST'&&env.PRINT_PROVIDER==='finerworks'&&env.FINERWORKS_ORDER_ENABLED==='true'&&body?.validate_only===false&&
+  const cartSubmission=path==='/v3/submit_orders_v2'&&method==='POST'&&env.PRINT_PROVIDER==='finerworks'&&env.FINERWORKS_ORDER_ENABLED==='true'&&body?.validate_only===false&&
     Array.isArray(body.orders)&&body.orders.length===1&&body.orders.every(o=>/^va-cart-[0-9a-f]{32}-prints$/.test(o.order_po||'')&&o.test_mode===(env.PAYPAL_MODE==='sandbox'))&&
     (env.PAYPAL_MODE==='sandbox'?body.payment_token==='xxxx':env.PAYPAL_MODE==='live'&&!!env.FINERWORKS_PAYMENT_TOKEN&&env.FINERWORKS_PAYMENT_TOKEN!=='xxxx'&&body.payment_token===env.FINERWORKS_PAYMENT_TOKEN);
+  const etsyMode=env.ETSY_FINERWORKS_MODE;
+  const etsySubmission=path==='/v3/submit_orders_v2'&&method==='POST'&&env.PRINT_PROVIDER==='finerworks'&&env.FINERWORKS_ORDER_ENABLED==='true'&&env.ETSY_AUTO_FULFILLMENT_ENABLED==='true'&&
+    ['sandbox','live'].includes(etsyMode)&&body?.validate_only===false&&Array.isArray(body.orders)&&body.orders.length===1&&
+    body.orders.every(o=>/^va-etsy-[0-9a-f]{32}$/.test(o.order_po||'')&&o.test_mode===(etsyMode==='sandbox'))&&
+    (etsyMode==='sandbox'?body.payment_token==='xxxx':!!env.FINERWORKS_PAYMENT_TOKEN&&env.FINERWORKS_PAYMENT_TOKEN!=='xxxx'&&body.payment_token===env.FINERWORKS_PAYMENT_TOKEN);
+  const submission=cartSubmission||etsySubmission;
   if((READS.get(path)!==method&&!validationOnly&&!submission)||(method==='GET'&&body!==undefined))throw Error('FinerWorks request is not enabled for this environment');
   const webKey=String(env.FINERWORKS_WEB_API_KEY).trim(),appKey=String(env.FINERWORKS_APP_KEY).trim();
   if(!webKey||!appKey||/[\r\n]/.test(webKey+appKey))throw Error('FinerWorks credentials contain invalid whitespace');

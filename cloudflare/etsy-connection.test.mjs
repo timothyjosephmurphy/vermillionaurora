@@ -27,7 +27,7 @@ async function start(env) {
 }
 const callback = (env, attempt, { state = attempt.state, cookie = attempt.cookie, time = now, query = 'code=test-code' } = {}) => etsyConnection(new Request(`${ETSY_CALLBACK}?state=${state}&${query}`, { headers: { Cookie: cookie } }), env, time);
 const outcome = response => new URL(response.headers.get('Location'), ETSY_ORIGIN).searchParams.get('result');
-const token = { access_token: '123.test-access-token', refresh_token: '123.test-refresh-token', expires_in: 3600, token_type: 'Bearer', scope: 'shops_r listings_r listings_w transactions_r' };
+const token = { access_token: '123.test-access-token', refresh_token: '123.test-refresh-token', expires_in: 3600, token_type: 'Bearer', scope: 'shops_r listings_r listings_w transactions_r transactions_w' };
 function provider(t, shop = { shop_id: 42, user_id: 123, shop_name: 'VermillionAurora' }) {
   const calls = [];
   t.mock.method(globalThis, 'fetch', async (url, options) => {
@@ -48,10 +48,10 @@ test('owner token, exact origin and server credentials are required; sandbox fai
   assert.equal(env.COMMISSION_UPLOADS.data.size, 0);
 });
 
-test('authorization uses PKCE, exact callback and limited scopes; tokens stay encrypted and server-side', async t => {
+test('authorization uses PKCE, exact callback and shipment tracking scopes; tokens stay encrypted and server-side', async t => {
   const env = setup(), calls = provider(t), attempt = await start(env);
   assert.equal(attempt.url.searchParams.get('redirect_uri'), ETSY_CALLBACK);
-  assert.equal(attempt.url.searchParams.get('scope'), token.scope);
+  assert.equal(attempt.url.searchParams.get('scope'), 'shops_r listings_r listings_w transactions_r transactions_w');
   assert.equal(attempt.url.searchParams.get('code_challenge_method'), 'S256');
   const result = await callback(env, attempt);
   assert.equal(outcome(result), 'saved');
@@ -132,7 +132,7 @@ test('denial consumes state; provider failures never leak raw errors and never s
 
 test('incomplete scopes, mismatched owner and storage failure cannot report a saved connection', async t => {
   const env = setup();
-  t.mock.method(globalThis, 'fetch', async () => Response.json({ ...token, scope: 'shops_r' }));
+  t.mock.method(globalThis, 'fetch', async () => Response.json({ ...token, scope: 'shops_r listings_r listings_w transactions_r' }));
   assert.equal(outcome(await callback(env, await start(env))), 'token-scopes');
   globalThis.fetch = async url => Response.json(String(url).endsWith('/oauth/token') ? token : { shop_id: 42, user_id: 999, shop_name: 'VermillionAurora' });
   assert.equal(outcome(await callback(env, await start(env))), 'wrong-shop');
