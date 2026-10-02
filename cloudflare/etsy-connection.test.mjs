@@ -62,7 +62,7 @@ test('authorization uses PKCE, exact callback and limited scopes; tokens stay en
   assert.equal(exchange.body.get('redirect_uri'), ETSY_CALLBACK);
   const challenge = Buffer.from(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(exchange.body.get('code_verifier')))).toString('base64url');
   assert.equal(challenge, attempt.url.searchParams.get('code_challenge'));
-  assert.equal(calls[1].url, 'https://openapi.etsy.com/v3/application/users/123/shops');
+  assert.equal(calls[1].url, 'https://api.etsy.com/v3/application/users/123/shops');
   assert.equal(calls[1].options.headers['x-api-key'], 'test-keystring:test-shared-secret');
   const status = await post(env, '/etsy/status'), body = await status.text();
   assert.deepEqual(JSON.parse(body), { ready: true, connected: true, shopId: 42, shopName: 'VermillionAurora', scopes: token.scope.split(' '), authorizedAt: new Date(now).toISOString() });
