@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import {catalogVersion,byId} from '../catalog/catalog.mjs';
 const root=path.resolve('dist'),origin='https://vermillionaurora.com',ids=['painting-portrait-in-green','painting-portrait-in-gold'];
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']}:{})});
-const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,startedHold=false,method='square',productMethods=['paypal','square','bitcoin'];const reservations=new Map();
+const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,startedHold=false,deferBitcoin=false,method='square',productMethods=['paypal','square','bitcoin'];const reservations=new Map();
 page.on('pageerror',e=>errors.push(e.message));
 const product=id=>({id,title:byId[id].title,amount:byId[id].listing.price.amount,methods:productMethods,status:availability});
 await page.route('**/*',async route=>{
@@ -25,7 +25,7 @@ await page.route('**/*',async route=>{
    const items=body.items.map(i=>({...product(i.id),quantity:i.quantity})),base=items.reduce((s,i)=>s+Number(i.amount),0);
    result={orderId:body.holdId,key:body.key,expiresAt:Date.now()+10*60*1000,status:'quoted',methods:productMethods,quote:{items,base:base.toFixed(2),shipping:'12.00',tax:'5.00',total:(base+17).toFixed(2),shipments:items.map(i=>({id:i.id,title:i.title,shipping:'6.00',carrier:'UPS',service:'Ground'}))}};order=result;
   }
-  if(action==='start'){assert.equal(body.key,order.key);method=body.method;if(method==='square')assert.equal(body.sourceId,'cnon:test');result={...order,method,status:method==='bitcoin'?'processing':'settling'};order=result;}
+  if(action==='start'){assert.equal(body.key,order.key);method=body.method;if(method==='square')assert.equal(body.sourceId,'cnon:test');result={...order,method,status:method==='bitcoin'?(deferBitcoin?'creating':'processing'):'settling'};order=result;}
   if(action==='status'){if(failStatus)return route.fulfill({status:503,headers:{'Access-Control-Allow-Origin':origin},json:{error:'Payment status is temporarily unavailable. Please check again.'}});result=order;}
   if(action==='capture'){result={...order,status:'paid'};order=result;}
   if(action==='cancel'){result={...order,status:'cancelled'};order=result;}
@@ -33,6 +33,7 @@ await page.route('**/*',async route=>{
  }
  if(url.pathname==='/inventory/status')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{availability:Object.fromEntries(url.searchParams.get('ids').split(',').map(id=>[id,availability]))}});
  if(url.hostname==='web.squarecdn.com')return route.fulfill({contentType:'application/javascript',body:"window.Square={payments:()=>({card:async()=>({attach:async()=>{},tokenize:async()=>({status:'OK',token:'cnon:test'})})})};"});
+ if(url.hostname==='btcpay.example.test')return route.fulfill({contentType:'text/html',body:'<h1>BTCPay payment page</h1>'});
  if(url.hostname!==new URL(origin).hostname)return route.abort();
  const file=path.join(root,url.pathname,url.pathname.endsWith('/')?'index.html':'');
  if(fs.existsSync(file)&&fs.statSync(file).isFile())return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'})[path.extname(file)]||'application/octet-stream'});
@@ -46,9 +47,11 @@ try{
  for(const id of ids){await page.goto(`${origin}/products/${id}/`);await page.getByRole('button',{name:'Add to cart',exact:true}).click();await page.getByRole('button',{name:'Added to cart',exact:true}).click();}
  assert.equal((await cartStored()).length,2);
  await page.goto(origin+'/cart/');await page.locator('.cart-line').nth(1).waitFor();await page.reload();await page.locator('.cart-line').nth(1).waitFor();
- assert.equal(await page.locator('[data-cart-count]').textContent(),'2');await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isDisabled());assert.equal(await page.getByRole('button',{name:'Pay with credit card'}).evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(222, 219, 215)');assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isDisabled(),'quote waits for required delivery details');
+ assert.equal(await page.locator('[data-cart-count]').textContent(),'2');await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isDisabled());assert.equal(await page.getByRole('button',{name:'Pay with credit card'}).evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(222, 219, 215)');assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'quote submit remains clickable to explain missing delivery details');
+ await page.getByRole('button',{name:'Calculate shipping & tax'}).click();assert.equal(calls.filter(c=>c.action==='quote').length,0,'invalid delivery details never reach the quote API');assert.equal(await page.evaluate(()=>document.activeElement.name),'email');assert.match(await page.locator('[data-cart-notice]').textContent(),/highlighted delivery field/);
  assert.equal(await page.getByRole('button',{name:'Continue with PayPal'}).count(),0);
- await fill();assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'valid delivery details activate the quote button');await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isEnabled());assert(await page.getByRole('button',{name:'Shipping & tax calculated'}).isDisabled());
+ // Simulate browser autofill that supplies valid values without input/change events.
+ await page.evaluate(()=>{for(const [name,value] of Object.entries({email:'buyer@example.test',name:'Test Buyer',street1:'123 Main St',city:'Seattle',state:'WA',zip:'98122'}))document.querySelector(`[name="${name}"]`).value=value;});assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'autofilled delivery details can be submitted without waiting for input events');await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isEnabled());assert(await page.getByRole('button',{name:'Shipping & tax calculated'}).isDisabled());
  assert.equal(await page.getByRole('button',{name:'Continue with PayPal'}).count(),0);
  for(const width of [1440,390]){await page.setViewportSize({width,height:1050});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width} cart overflow`);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.waitForFunction(()=>scrollY===0);await page.screenshot({path:`/tmp/cart-preview/cart-${width}.png`,fullPage:true});}
  // Editing the address invalidates the quote; payment stays visible but gray until recalculated.
@@ -99,6 +102,16 @@ try{
  await page.getByRole('button',{name:'Buy now',exact:true}).click();await page.waitForURL(origin+'/cart/');
  assert.deepEqual((await cartStored()).map(i=>i.id),ids);
  startedHold=false;
+ // A delayed invoice response must still take the buyer to BTCPay once ready.
+ await page.evaluate(()=>localStorage.removeItem('va-cart-order-v1'));
+ await page.goto(origin+'/cart/');await page.locator('.cart-line').nth(1).waitFor();await fill();
+ await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();
+ deferBitcoin=true;const startsBefore=calls.filter(c=>c.action==='start').length;
+ await page.getByRole('button',{name:'Pay with Bitcoin'}).click();await page.getByRole('heading',{name:'Preparing your payment'}).waitFor();
+ order={...order,status:'pending',url:'https://btcpay.example.test/i/regression'};
+ await page.waitForURL('https://btcpay.example.test/i/regression');
+ assert.equal(calls.filter(c=>c.action==='start').length,startsBefore+1,'polling resumes the invoice without creating another payment');
+ deferBitcoin=false;order={...order,status:'expired'};await page.goto(origin+'/cart/');await page.locator('.cart-line').nth(1).waitFor();
  productMethods=[];await page.evaluate(id=>localStorage.setItem('va-cart-v1',JSON.stringify([{id,quantity:1}])),ids[0]);await page.goto(origin+'/cart/');await page.locator('.cart-line').waitFor();await fill();assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'payment-method availability does not block a shipping/tax quote');
- assert.deepEqual(errors,[]);console.log('PASS: cart quote activates only after valid address entry, remains independent of payment-method availability, and existing desktop/mobile checkout behavior passes.');
+ assert.deepEqual(errors,[]);console.log('PASS: cart submit explains invalid fields, accepts autofill, resumes delayed Bitcoin handoffs, and preserves desktop/mobile checkout behavior.');
 }finally{await browser.close();}
