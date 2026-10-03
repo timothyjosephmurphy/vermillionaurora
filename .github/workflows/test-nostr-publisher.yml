@@ -1,0 +1,34 @@
+name: Verify Nostr publisher
+
+on:
+  pull_request:
+    branches: [main, release]
+    paths:
+      - 'nostr-publisher/**'
+      - '.github/workflows/test-nostr-publisher.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'nostr-publisher/**'
+      - '.github/workflows/test-nostr-publisher.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: nostr-publisher/package-lock.json
+      - run: npm ci --prefix nostr-publisher
+      - run: npm --prefix nostr-publisher test
+      - name: Check the Cloudflare Worker bundle
+        working-directory: nostr-publisher
+        run: npx wrangler deploy --dry-run --outdir /tmp/nostr-publisher-dry-run
