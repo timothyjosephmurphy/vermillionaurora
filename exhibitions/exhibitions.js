@@ -1,7 +1,7 @@
 // Native scrolling keeps the exhibition links usable without JavaScript.
 document.querySelectorAll('.ex-carousel').forEach(carousel => {
   const track = carousel.querySelector('.ex-track');
-  const slides = [...track.children];
+  const slides = () => [...track.children];
   const status = carousel.querySelector('.ex-position');
   const toggle = carousel.querySelector('.ex-autoplay');
   const label = carousel.getAttribute('aria-label').toLowerCase();
@@ -15,15 +15,26 @@ document.querySelectorAll('.ex-carousel').forEach(carousel => {
   let position = track.scrollLeft;
   let lastTime = 0;
   let resumeAt = 0;
-  const maxScroll = () => track.scrollWidth - track.clientWidth;
-  const current = () => slides.reduce((best, slide, i) => Math.abs(slide.offsetLeft - track.scrollLeft) < Math.abs(slides[best].offsetLeft - track.scrollLeft) ? i : best, 0);
+  const maxScroll = () => Math.max(0, track.scrollWidth - track.clientWidth);
+  const current = () => {
+    const currentSlides = slides();
+    if (!currentSlides.length) return 0;
+    return currentSlides.reduce((best, slide, i) => Math.abs(slide.offsetLeft - track.scrollLeft) < Math.abs(currentSlides[best].offsetLeft - track.scrollLeft) ? i : best, 0);
+  };
+  function updateStatus() {
+    const count = slides().length;
+    status.textContent = count ? `${Math.min(current() + 1, count)} / ${count}` : '0 / 0';
+    carousel.querySelector('.ex-controls').hidden = count === 0;
+  }
   function updateToggle() {
     toggle.textContent = paused ? 'Play' : 'Pause';
     toggle.setAttribute('aria-label', `${paused ? 'Start' : 'Pause'} automatic ${label} scrolling`);
   }
   function move(step) {
+    const currentSlides = slides();
+    if (currentSlides.length < 2) return;
     resumeAt = performance.now() + 5000;
-    const distance = slides[1].offsetLeft - slides[0].offsetLeft;
+    const distance = currentSlides[1].offsetLeft - currentSlides[0].offsetLeft;
     let target = track.scrollLeft + step * distance;
     if (step > 0 && track.scrollLeft >= maxScroll() - 2) target = 0;
     if (step < 0 && track.scrollLeft <= 2) target = maxScroll();
@@ -43,7 +54,11 @@ document.querySelectorAll('.ex-carousel').forEach(carousel => {
   track.addEventListener('keydown', event => {
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1);}
   });
-  track.addEventListener('scroll', () => {status.textContent = `${current() + 1} / ${slides.length}`;}, {passive: true});
+  track.addEventListener('scroll', updateStatus, {passive: true});
+  new MutationObserver(() => {
+    position = Math.min(track.scrollLeft, maxScroll());
+    updateStatus();
+  }).observe(track, {childList:true});
   function animate(time) {
     const elapsed = lastTime ? Math.min(time - lastTime, 50) : 0;
     lastTime = time;
@@ -60,6 +75,7 @@ document.querySelectorAll('.ex-carousel').forEach(carousel => {
     requestAnimationFrame(animate);
   }
   updateToggle();
+  updateStatus();
   requestAnimationFrame(animate);
 });
 const viewer = document.querySelector('.ex-lightbox');

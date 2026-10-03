@@ -1,17 +1,19 @@
 (() => {
   const card = document.querySelector('.featured-art');
-  const products = [...document.querySelectorAll('.painting-carousel .product-card')];
-  if (!card || products.length < 2) return;
+  let products = [...document.querySelectorAll('.available-paintings-carousel .product-card')];
+  if (!card || !products.length) return;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const items = products.map(product => {
+  const itemFor = product => {
     const link = product.querySelector('.product-title-link');
     const image = product.querySelector('img');
     const background = product.querySelector('.product-image');
     const source = image ? image.src : getComputedStyle(background).backgroundImage.replace(/^url\(["']?|["']?\)$/g, '');
     return {id:product.dataset.productId,href:link.href, title:link.textContent, source, detail:product.querySelector('.product-info p').textContent};
-  });
+  };
+  let items = products.map(itemFor);
   let index = Math.max(0, items.findIndex(item => item.href === card.querySelector('a').href));
   let busy = false;
+  let pendingSync = false;
   let paused = motion.matches;
   let hovered = false;
   let focused = false;
@@ -52,6 +54,12 @@
   card.replaceChildren(stage, controls);
   const toggle = controls.querySelector('[data-toggle]');
   function update() {
+    if (!items.length) {
+      controls.querySelector('.featured-position').textContent = '0 / 0';
+      toggle.disabled = true;
+      return;
+    }
+    toggle.disabled = false;
     toggle.textContent = paused ? 'Play' : 'Pause';
     toggle.setAttribute('aria-label', `${paused ? 'Start' : 'Pause'} featured painting slideshow`);
     controls.querySelector('.featured-position').textContent = `${index + 1} / ${items.length}`;
@@ -59,7 +67,7 @@
     preload.src = items[(index + 1) % items.length].source;
   }
   async function advance(direction) {
-    if (busy) return;
+    if (busy || !items.length) return;
     busy = true;
     const target = (index + direction + items.length) % items.length;
     const outgoing = stage.firstElementChild;
@@ -77,8 +85,12 @@
     incoming.classList.remove('featured-entering');
     incoming.inert = false;
     animations.forEach(animation => animation.cancel());
-    index = target;
+    index = items.length ? target % items.length : 0;
     busy = false;
+    if (pendingSync) {
+      pendingSync = false;
+      if (items.length) stage.replaceChildren(slide(items[index]));
+    }
     update();
   }
   let timer;
@@ -98,8 +110,15 @@
   motion.addEventListener('change', () => {paused = motion.matches; update(); schedule();});
   new IntersectionObserver(entries => {visible = entries[0].isIntersecting; schedule();}).observe(card);
   document.addEventListener('catalog:availability',()=>{
-    items.forEach((item,i)=>{item.detail=products[i].querySelector('.product-info p').textContent;});
-    if(!busy)stage.replaceChildren(slide(items[index]));
+    const currentId=items[index]?.id;
+    products=[...document.querySelectorAll('.available-paintings-carousel .product-card')];
+    items=products.map(itemFor);
+    card.hidden=items.length===0;
+    index=Math.max(0,items.findIndex(item=>item.id===currentId));
+    if(busy)pendingSync=true;
+    else if(items.length)stage.replaceChildren(slide(items[index]));
+    update();
+    schedule();
   });
   update();
   schedule();
