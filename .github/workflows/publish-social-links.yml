@@ -1,0 +1,53 @@
+name: Publish reviewed social links page
+on:
+  push:
+    branches: [ops/publish-social-links]
+    paths: ['.github/workflows/publish-social-links.yml']
+permissions:
+  contents: read
+concurrency:
+  group: website-production-retry
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: d832c92fee2092016583d146f9f4272651a4ec81
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Confirm reviewed release
+        run: |
+          test "$(git ls-remote origin refs/heads/release | cut -f1)" = "$(git rev-parse HEAD)"
+          test -f src/pages/links.astro
+      - name: Publish website from approved release
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          command: deploy --config wrangler.jsonc
+      - name: Confirm live social landing page
+        run: |
+          node --input-type=module <<'NODE'
+          const {load}=await import('cheerio');
+          let ready=false;
+          for(let i=0;i<18;i++){
+            try{
+              const responses=await Promise.all(['/links/','/sitemap.xml'].map(path=>fetch('https://vermillionaurora.com'+path+'?verify=d832c92fee2092016583d146f9f4272651a4ec81-'+i,{cache:'no-store',signal:AbortSignal.timeout(15000)})));
+              if(!responses.every(r=>r.ok))throw Error('Page request failed');
+              const [html,sitemap]=await Promise.all(responses.map(r=>r.text()));
+              const $=load(html);
+              if($('h1').text()==='TJ Murphy'&&$('.social-primary-links>a').length===4&&$('.social-print').length===4&&$('a[href="/gallery/available/"]').length===1&&$('link[rel="canonical"]').attr('href')==='https://vermillionaurora.com/links/'&&sitemap.includes('https://vermillionaurora.com/links/')){
+                ready=true;console.log('Social profile landing page and sitemap verified live.');break;
+              }
+            }catch(error){console.log(error.message);}
+            await new Promise(resolve=>setTimeout(resolve,5000));
+          }
+          if(!ready)throw Error('Social landing page not live yet');
+          NODE
