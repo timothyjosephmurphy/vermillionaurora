@@ -11,10 +11,10 @@ import {bitcoinWebhook} from '../bitcoin-checkout.mjs';
 const ids=['honeybadger-and-cub-with-genesis-block','painting-portrait-in-green'].sort();
 const address={name:'Test Buyer',street1:'123 Main St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
 const config={CART_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_SLUGS:ids.join(','),PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://shop.example.test',SHIPPO_AUTO_LABEL_ENABLED:'false'};
-let paypalOrders,invoices,squarePayments,calls,failCreate,failCapture,failRelease,objects,shipCount,mailCount;
+let paypalOrders,invoices,squarePayments,calls,failCreate,failCapture,failRelease,failInvoiceRead,objects,shipCount,mailCount;
 function quote(){const items=ids.map(id=>({id,type:'original',quantity:1,title:catalog[id].title,amount:catalog[id].amount})),base=items.reduce((s,i)=>s+Number(i.amount),0).toFixed(2);return {catalogVersion,items,base,shipping:'12.00',tax:'5.00',total:(Number(base)+17).toFixed(2),email:'buyer@example.test',address,taxCalculationId:'taxcalc_CART',quotedAt:Date.now(),shipments:items.map((i,n)=>({slug:i.id,title:i.title,base:i.amount,shipping:'6.00',parcel:{length:16,width:12,height:1,weight:1},packaging:'flat',address,carrier:'UPS',service:'Ground',rateId:`RATE${n}`,quotedAt:Date.now()}))};}
 beforeEach(async()=>{
-  paypalOrders=new Map();invoices=[];squarePayments=new Map();calls=[];objects=[];failCreate=failCapture=failRelease=false;shipCount=mailCount=0;
+  paypalOrders=new Map();invoices=[];squarePayments=new Map();calls=[];objects=[];failCreate=failCapture=failRelease=failInvoiceRead=false;shipCount=mailCount=0;
   for(const id of ids){const stock=env.PAINTING_STOCK.getByName(id);objects.push(stock);await runInDurableObject(stock,(_,ctx)=>{ctx.storage.sql.exec('DELETE FROM stock');ctx.storage.sql.exec('DELETE FROM shipping_job');ctx.storage.sql.exec('DELETE FROM sale_receipt');return ctx.storage.deleteAlarm();});}
   vi.stubGlobal('fetch',vi.fn(async(input,init={})=>{
     const url=new URL(input),body=typeof init.body==='string'&&init.body.startsWith('{')?JSON.parse(init.body):init.body;
@@ -39,6 +39,7 @@ beforeEach(async()=>{
       const payment=[...squarePayments.values()].find(p=>p.id===url.pathname.split('/').at(-1));if(!payment)throw Error('Unknown Square payment');return Response.json({payment});
     }
     if(url.hostname==='btcpay.example.test') {
+      if(failInvoiceRead&&init.method!=='POST'&&url.searchParams.has('orderId'))return new Response('Forbidden',{status:403});
       if(init.method==='POST'){const invoice={...body,id:'INV'+invoices.length,storeId:'STORE',status:'New',additionalStatus:'None',checkoutLink:'https://btcpay.example.test/i/INV0',monitoringExpiration:Date.now()/1000+86400,payments:[]};invoices.push(invoice);if(failCreate)throw Error('Response lost after invoice');return Response.json(invoice);}
       if(url.searchParams.has('orderId'))return Response.json(invoices.filter(i=>i.metadata.orderId===url.searchParams.get('orderId')));
       const invoice=invoices.find(i=>i.id===url.pathname.split('/')[6]);if(!invoice)throw Error('Unknown invoice');return Response.json(url.pathname.endsWith('/payment-methods')?[{currency:'BTC',paymentMethodId:'BTC',payments:invoice.payments}]:invoice);
@@ -195,6 +196,11 @@ it('releases a verified missing Bitcoin invoice and reuses the cart reservation 
   await order.refresh();
   expect((await read(order)).status).toBe('creating');
   expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
+  const firstCheck=Date.now()-30_000;
+  await runInDurableObject(order,i=>i.save({...i.read(),noInvoiceCheckedAt:firstCheck}));
+  await order.refresh();await order.refresh();
+  expect((await read(order)).noInvoiceCheckedAt).toBe(firstCheck);
+  expect((await read(order)).status).toBe('creating');
   await runInDurableObject(order,i=>i.save({...i.read(),noInvoiceCheckedAt:Date.now()-61_000}));
   await order.refresh();
   expect((await read(order)).status).toBe('expired');
@@ -203,6 +209,32 @@ it('releases a verified missing Bitcoin invoice and reuses the cart reservation 
   await order.syncCart(id,await keyHash('a'.repeat(64)),[{id:ids[0],quantity:1}]);
   expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
   expect(invoices).toHaveLength(0);
+});
+it('reports an existing payment attempt to product-page cart additions without changing its stock',async()=>{
+  const {id,order}=await setup('bitcoin');await order.start('bitcoin');
+  const response=await cartCheckout(request('hold',{holdId:id,key:'a'.repeat(64),items:[{id:ids[0],quantity:1}]}),{...env,...config});
+  expect(response.status).toBe(409);
+  expect((await response.json()).code).toBe('CHECKOUT_STARTED');
+  expect((await read(order)).status).toBe('pending');
+  for(const slug of ids)expect(await env.PAINTING_STOCK.getByName(slug).status()).toBe('reserved');
+});
+it('explains BTCPay invoice permission failures and keeps stock reserved',async()=>{
+  const {id,order}=await setup('bitcoin');failCreate=true;await order.start('bitcoin');failCreate=false;failInvoiceRead=true;
+  const statusRequest=request('status',{orderId:id,key:'a'.repeat(64)});statusRequest.headers.set('Origin','https://vermillionaurora.com');
+  const response=await cartCheckout(statusRequest,{...env,...config,PAYPAL_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'});
+  expect(response.status).toBe(503);expect((await response.json()).error).toMatch(/View invoices permission/);
+  expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
+});
+it('continues Bitcoin review reconciliation and retains notification delivery state',async()=>{
+  const {order}=await setup('bitcoin');await order.start('bitcoin');
+  await runInDurableObject(order,i=>i.save({...i.read(),status:'review',reason:'Recover an uncertain invoice'}));
+  await order.refresh();
+  expect((await read(order)).status).toBe('pending');
+  expect((await read(order)).reviewMail.status).toBe('sent');
+  expect(mailCount).toBe(1);
+  await runInDurableObject(order,i=>i.save({...i.read(),status:'review'}));
+  await order.refresh();
+  expect(mailCount).toBe(1);
 });
 it('recovers a lost Bitcoin invoice reply without creating a second invoice, and keeps locks during confirmation',async()=>{
   const {order,settings}=await setup('bitcoin');failCreate=true;await order.start('bitcoin');failCreate=false;await order.refresh();expect((await read(order)).status).toBe('pending');expect(invoices).toHaveLength(1);
