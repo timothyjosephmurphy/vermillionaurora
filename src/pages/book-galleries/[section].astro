@@ -64,7 +64,7 @@ for(const {source} of artworks){
     <ul class="painting-list" aria-label="All works">
       {artworks.map(({id,product,original,source,printPrice,printArea})=>
         <li class="painting-list-row" data-product-id={id} data-print-ready={printPrice!==null?'true':'false'} data-price={printPrice??undefined} data-area={printArea??undefined}>
-          <a href={urlFor(original||product)} class="gallery-product-image" aria-label={`View ${(original||product).title}`} tabindex="-1"><img src={(original||product).image.src} alt="" loading="lazy" decoding="async"/></a>
+          <a href={urlFor(original||product)} class="gallery-product-image" aria-label={`View ${(original||product).title}`} tabindex="-1"><img src={(original||product).image.src} alt={(original||product).image.alt||(original||product).title} loading="lazy" decoding="async" width={(original||product).image.width} height={(original||product).image.height}/></a>
           <h3><a href={urlFor(original||product)} class="product-title-link">{(original||product).title}</a></h3>
           <p class="painting-list-dimensions">{original?dimensionLabel(original):source?.measurements?.join('; ')||''}</p>
           <p class="painting-list-price">{original&&<><a href={urlFor(original)}>Original · {priceLabel(original)}</a><br/></>}{printPrice!==null?<a href={urlFor(product)}>Fine-art prints from ${printPrice.toFixed(2)}</a>:'No fine-art prints currently available'}</p>
