@@ -1,0 +1,38 @@
+name: Deploy Nostr publisher
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'nostr-publisher/**'
+      - '.github/workflows/deploy-nostr-publisher.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nostr-publisher-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: nostr-publisher/package-lock.json
+      - run: npm ci --prefix nostr-publisher
+      - run: npm --prefix nostr-publisher test
+      - name: Deploy the paused Nostr publisher
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: nostr-publisher
+          command: deploy

@@ -1,0 +1,14 @@
+{
+  "name": "vermillion-aurora-nostr-publisher",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "nostr-tools": "2.25.2"
+  },
+  "devDependencies": {
+    "wrangler": "4.143.0"
+  }
+}
