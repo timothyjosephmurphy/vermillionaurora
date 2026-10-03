@@ -209,7 +209,7 @@ export class CartOrder extends DurableObject {
     if(invoiceId&&d.providerId&&invoiceId!==d.providerId)throw Error('Provider reference mismatch');
     if(['cancelled','unavailable'].includes(d.status)&&!invoiceId){await this.ctx.storage.deleteAlarm();return;}
     if(d.status==='expired'&&(!d.providerId||d.method!=='bitcoin')&&!invoiceId){await this.ctx.storage.deleteAlarm();return;}
-    if(d.status==='review'){await this.reviewNotice();await this.schedule(15*60000);}
+    if(d.status==='review'){try{await this.reviewNotice();}catch(error){console.error('Checkout review notice failed',d.id,error.message);}await this.schedule(60000);}
     if(d.method==='square') {
       if(!d.providerId) {
         if(Date.now()-d.createAttemptedAt>30*60000){this.save({...d,status:'review',reason:'Square payment creation could not be confirmed. Check Square before releasing inventory.'});await this.reviewNotice();return;}
