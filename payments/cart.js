@@ -6,7 +6,7 @@
   const read=key=>{try{return JSON.parse(localStorage.getItem(key));}catch{return null;}};
   const write=(key,value)=>{try{if(value===null)localStorage.removeItem(key);else localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
   const clean=value=>Array.isArray(value)?[...new Map(value.filter(x=>x&&/^[a-z0-9-]+$/.test(x.id||'')&&Number.isSafeInteger(x.quantity)&&x.quantity>=1&&x.quantity<=(x.id.startsWith('print-')?10:1)).map(x=>[x.id,{id:x.id,quantity:x.quantity}])).values()].slice(0,MAX):[];
-  let cart=clean(read(CART)),meta={},capabilities=null,busy=false,quoted=null,current=null,timer,buyOnly=null,holdSession=null,heldIds=new Set(),holdQueue=Promise.resolve();
+  let cart=clean(read(CART)),meta={},capabilities=null,busy=false,quoted=null,current=null,timer,buyOnly=null,holdSession=null,heldIds=new Set(),holdQueue=Promise.resolve(),awaitingBitcoinRedirect=false;
   const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
   const money=value=>`$${Number(value).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
   const api=async(action,body)=>{
@@ -103,7 +103,9 @@
   let root,notice,layout,orderPanel,form,pendingOrder=null;
   function announce(text){notice.textContent=text;}
   function quoteAllowed(){
-    return !!(form&&cart.length&&capabilities?.enabled&&form.checkValidity()&&cart.every(item=>!!eligible(item.id))&&!(pendingOrder&&pending(pendingOrder))&&!busy&&!quoted);
+    // Keep submit available so native validation can explain missing details.
+    // Browser autofill does not always emit input/change events.
+    return !!(form&&cart.length&&capabilities?.enabled&&cart.every(item=>!!eligible(item.id))&&!(pendingOrder&&pending(pendingOrder))&&!busy&&!quoted);
   }
   function updateQuoteButton(){
     const button=form?.querySelector('[data-cart-quote]');if(!button)return;
@@ -225,11 +227,11 @@
         if(token.status!=='OK'||!token.token)throw Error('Square could not tokenize these card details. Check them and try again.');
         sourceId=token.token;
       }
-      remember(quoted);current={...quoted,status:'creating',method};
+      remember(quoted);current={...quoted,status:'creating',method};awaitingBitcoinRedirect=method==='bitcoin';
       const previousKey=current.key,result=await api('start',{...credentials(),method,...(sourceId?{sourceId}:{})});current={...result,key:previousKey};
       if(result.status==='quoted'&&result.paymentError){quoted={...result,key:previousKey};current=null;orderPanel.hidden=true;layout.hidden=false;showQuote(quoted);announce(result.paymentError);return;}
       showOrder();
-      if(result.url&&result.status==='pending'){location.assign(result.url);return;}
+      if(result.url&&result.status==='pending'){awaitingBitcoinRedirect=false;location.assign(result.url);return;}
       poll();
     }catch(error){announce(error.message);if(current){showOrder();poll();}}
     finally{busy=false;setDisabled(false);}
@@ -254,7 +256,10 @@
   }
   async function updateOrder(action='status'){
     if(!current||busy)return;busy=true;root.querySelector('[data-order-check]').disabled=true;
-    try{const result=await api(action,credentials());current={...result,key:current.key};showOrder();announce('');if(pending(current)&&current.status!=='review')poll();}
+    try{const result=await api(action,credentials());current={...result,key:current.key};showOrder();announce('');
+      if(awaitingBitcoinRedirect&&current.method==='bitcoin'&&current.status==='pending'&&current.url){awaitingBitcoinRedirect=false;location.assign(current.url);return;}
+      if(!pending(current)||current.status==='review')awaitingBitcoinRedirect=false;
+      if(pending(current)&&current.status!=='review')poll();}
     catch(error){announce(error.message);poll();}
     finally{busy=false;root.querySelector('[data-order-check]').disabled=false;}
   }
@@ -266,6 +271,7 @@
     if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;cart=[{id:buy,quantity:1}]; /* view only; do not overwrite a saved multi-item cart */}
     const addressChanged=()=>{if(quoted)invalidate();else updateQuoteButton();};
     form.addEventListener('input',addressChanged);form.addEventListener('change',addressChanged);
+    form.addEventListener('invalid',()=>announce('Check the highlighted delivery field. Enter your email, name, street, city, two-letter state and ZIP code.'),true);
     form.addEventListener('submit',async event=>{
       event.preventDefault();if(busy)return;if(pendingOrder&&pending(pendingOrder)){showPendingNotice(pendingOrder,buyOnly);return;}if(!form.reportValidity())return;busy=true;setDisabled(true);form.querySelector('[data-cart-quote]').textContent='Calculating…';announce('Calculating shipping and tax…');
       const values=Object.fromEntries(new FormData(form));
