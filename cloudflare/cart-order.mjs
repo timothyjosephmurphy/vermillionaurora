@@ -114,7 +114,7 @@ export class CartOrder extends DurableObject {
       if(order.status==='COMPLETED')await this.acceptPaypal(order);
     } else {
       const invoice=await bitcoinApi(this.env,'/invoices',{amount:d.quote.total,currency:'USD',metadata:{orderId:`va-cart-${d.id}`,itemDesc:`${d.quote.items.length} artwork items — Vermillion Aurora`},
-        checkout:{paymentMethods:['BTC','BTC-LightningNetwork'],speedPolicy:'MediumSpeed',paymentTolerance:0,expirationMinutes:15,monitoringMinutes:1440,redirectAutomatically:true,redirectURL:`${cartOrigin(this.env)}/cart/?order=${d.id}`}});
+        checkout:{paymentMethods:['BTC-CHAIN','BTC-LN'],speedPolicy:'MediumSpeed',paymentTolerance:0,expirationMinutes:15,monitoringMinutes:1440,redirectAutomatically:true,redirectURL:`${cartOrigin(this.env)}/cart/?order=${d.id}`}});
       this.validateBitcoin(d,invoice);this.save({...d,providerId:invoice.id,url:checkoutUrl(this.env,invoice.checkoutLink),status:'pending'});
     }
   }
@@ -240,7 +240,19 @@ export class CartOrder extends DurableObject {
     else {
       const matches=await bitcoinApi(this.env,`/invoices?orderId=${encodeURIComponent('va-cart-'+d.id)}&take=2`);
       if(!Array.isArray(matches))throw Error('Invalid invoice search');
-      if(matches.length!==1){if(matches.length>1||Date.now()-d.createAttemptedAt>120000){this.save({...d,status:'review',reason:'Bitcoin invoice creation needs review. No second invoice was created.'});await this.reviewNotice();}return;}
+      if(matches.length>1){this.save({...d,status:'review',reason:'Multiple Bitcoin invoices match this order. Inventory remains reserved for review.'});await this.reviewNotice();return;}
+      if(matches.length===0){
+        if(Date.now()-d.createAttemptedAt<120000)return;
+        if(!d.noInvoiceCheckedAt||Date.now()-d.noInvoiceCheckedAt<60000){this.save({...d,noInvoiceCheckedAt:Date.now()});return;}
+        // Two authoritative BTCPay searches found no invoice. Release only this
+        // order's stock; do not retry invoice creation or risk duplicate payment.
+        this.save({...d,status:'releasing',releaseStatus:'expired'});
+        await this.releaseAll();
+        const released=this.read();
+        this.save({...released,status:'expired',method:undefined,providerId:undefined,url:undefined,
+          reason:undefined,releaseStatus:undefined,noInvoiceCheckedAt:undefined,heldIds:[]});
+        return;
+      }
       invoice=matches[0];
     }
     this.validateBitcoin(d,invoice);
