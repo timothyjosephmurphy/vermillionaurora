@@ -1,0 +1,71 @@
+name: Retry reviewed website publication
+on:
+  push:
+    branches: [ops/publish-cart-count-icons]
+    paths: ['.github/workflows/retry-website-publish.yml']
+permissions:
+  contents: read
+concurrency:
+  group: website-production-retry
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Confirm existing website credential
+        env:
+          WEBSITE_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: test -n "$WEBSITE_TOKEN"
+      - uses: actions/checkout@v4
+        with:
+          ref: 1ade2851850c241f8a218d8b92e617fbefd4836f
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Confirm reviewed release and gallery membership
+        run: |
+          test "$(git ls-remote origin refs/heads/release | cut -f1)" = "$(git rev-parse HEAD)"
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const m=JSON.parse(fs.readFileSync('catalog/book-galleries.json','utf8'));
+          const g=m.sections.find(s=>s.id==='watercolor-landscapes-travels');
+          if(!g.artworks.slice(0,11).every(id=>m.artworks.find(a=>a.id===id).title.includes('El Salvador')))throw Error('El Salvador must lead the gallery');
+          if(g.artworks.some(id=>m.artworks.find(a=>a.id===id).title.includes('Untitled')))throw Error('Unclean gallery titles');
+          if(g.artworks.length!==31||g.artworks.includes('book-art-87cf2a732259b313f5ab'))throw Error('Unexpected Travels inventory');
+          const pacific=m.sections.find(s=>s.id==='watercolor-landscapes-pacific-north-west');
+          const friends=m.sections.find(s=>s.id==='watercolor-portraits-friends');
+          if(pacific.artworks.length!==8||friends.artworks[0]!=='book-art-614d5b68dbe5052e302a')throw Error('Unexpected gallery curation');
+          NODE
+      - name: Publish existing website Worker from approved release
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          command: deploy --config wrangler.jsonc
+      - name: Confirm live cart icons
+        run: |
+          node --input-type=module <<'NODE'
+          const {load}=await import('cheerio');
+          let ready=false;
+          for(let i=0;i<18;i++){
+            try{
+              const paths=['/','/cart/','/gallery/','/products/painting-portrait-in-green/','/book-galleries/watercolor-portraits-friends/','/payments/cart.js','/payments/cart.css'];
+              const responses=await Promise.all(paths.map(path=>fetch('https://vermillionaurora.com'+path+'?verify=1ade2851850c241f8a218d8b92e617fbefd4836f-'+i,{cache:'no-store',signal:AbortSignal.timeout(15000)})));
+              if(!responses.every(r=>r.ok))throw Error('Page request failed');
+              const content=await Promise.all(responses.map(r=>r.text()));
+              const pagesReady=content.slice(0,5).every(html=>{
+                const $=load(html),link=$('[data-cart-count]').closest('[data-cart-link]');
+                return link.find('.cart-bitcoin-icon').length===1&&link.find('.cart-lightning-icon').length===1;
+              });
+              if(pagesReady&&content[5].includes('a.append(count,cartPaymentIcons())')&&content[6].includes('.cart-payment-icons svg{display:block;width:14px;height:14px;flex-shrink:0}')){
+                ready=true;console.log('Live Bitcoin and Lightning icons verified beside cart counts across page types and legacy navigation.');break;
+              }
+            }catch(error){console.log(error.message);}
+            await new Promise(resolve=>setTimeout(resolve,5000));
+          }
+          if(!ready)throw Error('Live cart icons have not updated');
+          NODE
