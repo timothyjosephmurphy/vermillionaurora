@@ -28,7 +28,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
 
   const pacific=groups.get('watercolor-landscapes-pacific-north-west');
   assert.equal(pacific.title,'Pacific Northwest');
-  assert.equal(pacific.artworks.length,15);
+  assert.equal(pacific.artworks.length,8);
   const removedBookArt=['book-art-48cda66da2ff219fbb3f','book-art-543df2de766892143568','book-art-a572796512b8828b7333','book-art-dd27a2bc4247b8f9d49f','book-art-37da3c70d9d7750135e7','book-art-94962f025af06c2aa581'];
   for(const id of removedBookArt){
     assert(!manifest.artworks.some(art=>art.id===id),`${id} should be absent from the source manifest`);
@@ -36,11 +36,17 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
     assert(!bookProducts.some(product=>product.id===id),`${id} should have no product page`);
     assert(!(id in bookPrints),`${id} should have no print-ordering record`);
   }
-  for(const id of ['book-art-e6068e265bfdc379526c','book-art-9ae261289a3bce952c6f','book-art-deb3358c321671dae1fc','book-art-5e4eb881d89ae9f5c635','book-art-f56007f6a7d6ee955caf','book-art-d1399111a441ed91feaa'])
+  for(const id of ['book-art-e6068e265bfdc379526c','book-art-5e4eb881d89ae9f5c635','book-art-f56007f6a7d6ee955caf','book-art-d1399111a441ed91feaa'])
     assert(pacific.artworks.includes(id));
+
+  for(const id of ['book-art-9ae261289a3bce952c6f', 'book-art-deb3358c321671dae1fc', 'book-art-164f60d23032b0f718de', 'book-art-aa4dcced8a2ae6a8111c', 'book-art-8fde7c978d6cd5d53727', 'book-art-b01b8695b2528cb850a3', 'book-art-7a3ad7bacdb71faac1b8']) {
+    assert(!pacific.artworks.includes(id));
+    assert(bookProducts.some(product=>product.id===id));
+  }
 
   const friends=groups.get('watercolor-portraits-friends');
   assert.equal(friends.artworks.length,41);
+  assert.equal(friends.artworks[0],'book-art-614d5b68dbe5052e302a');
   assert(friends.artworks.includes('book-art-b7a9cd259d8ac51a236b'),'The rescued hummingbird belongs in Friends');
   assert.equal(new Set(friends.artworks).size,friends.artworks.length);
   for(const id of ['book-art-9209f1fd7d47f373597f','book-art-a61c71e5de8cc1b71500','book-art-596837cb5ff533c620dd','book-art-7bce6e3509027d1f7a0b','book-art-3a9cba708a8045364e82','book-art-6bcf18417734a8e3010a','book-art-0d7df713c5f0f67733ae','book-art-0c4b161071524e23d519','book-art-b7410a9f4340e559e4f4'])
@@ -85,6 +91,18 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   assert.equal(Number(overview('.book-gallery-print-total').attr('data-total-print-ready-count')),printReady);
   const home=load(fs.readFileSync('dist/index.html','utf8'));
   assert.equal(home('.book-section-carousel .ex-slide').length,manifest.sections.length);
+  assert.equal(home('#book-galleries h2').text(),'Selected Galleries');
+  assert.equal(home('#gallery h2').text(),'Featured Paintings');
+  const devo=bookProducts.find(p=>p.id===friends.artworks[0]);
+  assert.equal(home('.book-section-carousel a[href="/book-galleries/watercolor-portraits-friends/"] img').attr('src'),devo.image.src);
+  const bitcoiners=load(fs.readFileSync('dist/book-galleries/watercolor-portraits-bitcoiners/index.html','utf8'));
+  for(const source of manifest.artworks.filter(art=>art.originalProductId)) {
+    const row=bitcoiners(`[data-product-id="${source.id}"]`);
+    assert.equal(row.find('.product-title-link').attr('href'),`/products/${source.originalProductId}/`);
+    const ready=printOptions(bookProducts.find(product=>product.id===source.id),config,papers).some(option=>option.ready);
+    assert.equal(row.find(`a[href="/products/${source.id}/"]`).length,ready?1:0);
+    for(const group of ['home','gallery'])assert(!collections[group].some(e=>e.product===source.originalProductId));
+  }
 });
 
 test('book print files preserve native resolution and use content-addressed R2 assets',()=>{

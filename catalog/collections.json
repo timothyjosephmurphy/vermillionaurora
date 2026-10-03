@@ -25,18 +25,6 @@
       "variant": "carousel"
     },
     {
-      "product": "painting-chef-in-white",
-      "variant": "carousel"
-    },
-    {
-      "product": "painting-portrait-with-cheese",
-      "variant": "carousel"
-    },
-    {
-      "product": "painting-studio-figure",
-      "variant": "carousel"
-    },
-    {
       "product": "painting-portrait-in-gold",
       "variant": "carousel"
     },
@@ -243,19 +231,7 @@
       "variant": "gallery"
     },
     {
-      "product": "painting-chef-in-white",
-      "variant": "gallery"
-    },
-    {
       "product": "painting-couple-in-color",
-      "variant": "gallery"
-    },
-    {
-      "product": "painting-portrait-with-cheese",
-      "variant": "gallery"
-    },
-    {
-      "product": "painting-studio-figure",
       "variant": "gallery"
     },
     {

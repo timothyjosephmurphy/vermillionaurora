@@ -772,3 +772,8 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 .contact-form.purchase-mode .purchase-summary {
   display: block;
 }
+
+/* Book tiles follow their portrait covers rather than the painting card width. */
+.book-carousel .ex-slide { flex-basis:min(260px, 82vw); }
+.book-carousel .ex-slide a { height:auto; }
+.book-carousel .book-tile { padding:1.25rem; }
