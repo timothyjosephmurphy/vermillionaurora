@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import listings,{sourcePrintVersion} from './etsy-print-source.mjs';
+import {printVersion} from './print-catalog.mjs';
 
 test('Etsy draft source contains only the five requested prepared print paintings',()=>{
-  assert.equal(sourcePrintVersion,'829ce98a48ad9124342d');
+  assert.equal(sourcePrintVersion,printVersion);
   assert.deepEqual(listings.map(item=>item.id),[
     'warszawska-syrenka',
     'honeybadger-and-cub-with-genesis-block',

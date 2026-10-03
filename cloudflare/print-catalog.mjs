@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="829ce98a48ad9124342d";
+export const printVersion="527b868fe77b34ef6820";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -42386,8 +42386,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e3293c73dbb01f94b39b",
-    "title": "Untitled — El Salvador, page 46 — Large print",
-    "artworkTitle": "Untitled — El Salvador, page 46",
+    "title": "El Salvador — Large print",
+    "artworkTitle": "El Salvador",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S5.57X4.48",
@@ -42411,7 +42411,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.webp",
-      "alt": "Untitled — El Salvador, page 46",
+      "alt": "El Salvador",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.jpg"
     },
     "attributes": {},
@@ -42424,8 +42424,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e3293c73dbb01f94b39b",
-    "title": "Untitled — El Salvador, page 46 — Large print — Black frame",
-    "artworkTitle": "Untitled — El Salvador, page 46",
+    "title": "El Salvador — Large print — Black frame",
+    "artworkTitle": "El Salvador",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S5DD57X4DD48F1S10X8J1S5DD57X4DD48G1",
@@ -42449,7 +42449,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.webp",
-      "alt": "Untitled — El Salvador, page 46",
+      "alt": "El Salvador",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.jpg"
     },
     "attributes": {},
@@ -42498,8 +42498,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e3293c73dbb01f94b39b",
-    "title": "Untitled — El Salvador, page 46 — Large print — White frame",
-    "artworkTitle": "Untitled — El Salvador, page 46",
+    "title": "El Salvador — Large print — White frame",
+    "artworkTitle": "El Salvador",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S5DD57X4DD48F2S10X8J1S5DD57X4DD48G1",
@@ -42523,7 +42523,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.webp",
-      "alt": "Untitled — El Salvador, page 46",
+      "alt": "El Salvador",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.jpg"
     },
     "attributes": {},
@@ -42572,8 +42572,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-e3293c73dbb01f94b39b",
-    "title": "Untitled — El Salvador, page 46 — Large print — Natural wood frame",
-    "artworkTitle": "Untitled — El Salvador, page 46",
+    "title": "El Salvador — Large print — Natural wood frame",
+    "artworkTitle": "El Salvador",
     "amount": "68.63",
     "currency": "USD",
     "sku": "5M144M8S5DD57X4DD48F7S10X8J1S5DD57X4DD48G1",
@@ -42597,7 +42597,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.webp",
-      "alt": "Untitled — El Salvador, page 46",
+      "alt": "El Salvador",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.jpg"
     },
     "attributes": {},
@@ -42646,8 +42646,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-a2e53a8418a8d84f3dc5",
-    "title": "Untitled — El Salvador, page 47 — Large print",
-    "artworkTitle": "Untitled — El Salvador, page 47",
+    "title": "El Salvador — Large print",
+    "artworkTitle": "El Salvador",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.08X4.73",
@@ -42671,7 +42671,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.webp",
-      "alt": "Untitled — El Salvador, page 47",
+      "alt": "El Salvador",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.jpg"
     },
     "attributes": {},
@@ -42684,8 +42684,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-a2e53a8418a8d84f3dc5",
-    "title": "Untitled — El Salvador, page 47 — Large print — Black frame",
-    "artworkTitle": "Untitled — El Salvador, page 47",
+    "title": "El Salvador — Large print — Black frame",
+    "artworkTitle": "El Salvador",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD08X4DD73F1S10X8J1S6DD08X4DD73G1",
@@ -42709,7 +42709,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.webp",
-      "alt": "Untitled — El Salvador, page 47",
+      "alt": "El Salvador",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.jpg"
     },
     "attributes": {},
@@ -42758,8 +42758,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-a2e53a8418a8d84f3dc5",
-    "title": "Untitled — El Salvador, page 47 — Large print — White frame",
-    "artworkTitle": "Untitled — El Salvador, page 47",
+    "title": "El Salvador — Large print — White frame",
+    "artworkTitle": "El Salvador",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD08X4DD73F2S10X8J1S6DD08X4DD73G1",
@@ -42783,7 +42783,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.webp",
-      "alt": "Untitled — El Salvador, page 47",
+      "alt": "El Salvador",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.jpg"
     },
     "attributes": {},
@@ -42832,8 +42832,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-a2e53a8418a8d84f3dc5",
-    "title": "Untitled — El Salvador, page 47 — Large print — Natural wood frame",
-    "artworkTitle": "Untitled — El Salvador, page 47",
+    "title": "El Salvador — Large print — Natural wood frame",
+    "artworkTitle": "El Salvador",
     "amount": "68.63",
     "currency": "USD",
     "sku": "5M144M8S6DD08X4DD73F7S10X8J1S6DD08X4DD73G1",
@@ -42857,7 +42857,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.webp",
-      "alt": "Untitled — El Salvador, page 47",
+      "alt": "El Salvador",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.jpg"
     },
     "attributes": {},
@@ -44466,8 +44466,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-55829535637cd4974a88",
-    "title": "Untitled — Hawaii, page 56 — Large print",
-    "artworkTitle": "Untitled — Hawaii, page 56",
+    "title": "Hawaii — Large print",
+    "artworkTitle": "Hawaii",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S5.94X4.7",
@@ -44491,7 +44491,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.webp",
-      "alt": "Untitled — Hawaii, page 56",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.jpg"
     },
     "attributes": {},
@@ -44504,8 +44504,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-55829535637cd4974a88",
-    "title": "Untitled — Hawaii, page 56 — Large print — Black frame",
-    "artworkTitle": "Untitled — Hawaii, page 56",
+    "title": "Hawaii — Large print — Black frame",
+    "artworkTitle": "Hawaii",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S5DD94X4DD7F1S10X8J1S5DD94X4DD7G1",
@@ -44529,7 +44529,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.webp",
-      "alt": "Untitled — Hawaii, page 56",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.jpg"
     },
     "attributes": {},
@@ -44578,8 +44578,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-55829535637cd4974a88",
-    "title": "Untitled — Hawaii, page 56 — Large print — White frame",
-    "artworkTitle": "Untitled — Hawaii, page 56",
+    "title": "Hawaii — Large print — White frame",
+    "artworkTitle": "Hawaii",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S5DD94X4DD7F2S10X8J1S5DD94X4DD7G1",
@@ -44603,7 +44603,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.webp",
-      "alt": "Untitled — Hawaii, page 56",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.jpg"
     },
     "attributes": {},
@@ -44652,8 +44652,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-55829535637cd4974a88",
-    "title": "Untitled — Hawaii, page 56 — Large print — Natural wood frame",
-    "artworkTitle": "Untitled — Hawaii, page 56",
+    "title": "Hawaii — Large print — Natural wood frame",
+    "artworkTitle": "Hawaii",
     "amount": "68.63",
     "currency": "USD",
     "sku": "5M144M8S5DD94X4DD7F7S10X8J1S5DD94X4DD7G1",
@@ -44677,7 +44677,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.webp",
-      "alt": "Untitled — Hawaii, page 56",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.jpg"
     },
     "attributes": {},
@@ -44726,8 +44726,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Untitled — Hawaii, page 57 — Large print",
-    "artworkTitle": "Untitled — Hawaii, page 57",
+    "title": "Hawaii — Large print",
+    "artworkTitle": "Hawaii",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S6.67X12.77",
@@ -44751,7 +44751,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
-      "alt": "Untitled — Hawaii, page 57",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
     },
     "attributes": {},
@@ -44764,8 +44764,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Untitled — Hawaii, page 57 — Large print — Black frame",
-    "artworkTitle": "Untitled — Hawaii, page 57",
+    "title": "Hawaii — Large print — Black frame",
+    "artworkTitle": "Hawaii",
     "amount": "96.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD77F1S12X15J1S6DD67X12DD77G1",
@@ -44789,7 +44789,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
-      "alt": "Untitled — Hawaii, page 57",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
     },
     "attributes": {},
@@ -44838,8 +44838,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Untitled — Hawaii, page 57 — Large print — White frame",
-    "artworkTitle": "Untitled — Hawaii, page 57",
+    "title": "Hawaii — Large print — White frame",
+    "artworkTitle": "Hawaii",
     "amount": "96.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD77F2S12X15J1S6DD67X12DD77G1",
@@ -44863,7 +44863,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
-      "alt": "Untitled — Hawaii, page 57",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
     },
     "attributes": {},
@@ -44912,8 +44912,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Untitled — Hawaii, page 57 — Large print — Natural wood frame",
-    "artworkTitle": "Untitled — Hawaii, page 57",
+    "title": "Hawaii — Large print — Natural wood frame",
+    "artworkTitle": "Hawaii",
     "amount": "108.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD77F7S12X15J1S6DD67X12DD77G1",
@@ -44937,7 +44937,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
-      "alt": "Untitled — Hawaii, page 57",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
     },
     "attributes": {},
@@ -44986,8 +44986,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Untitled — Hawaii, page 57 — Medium print",
-    "artworkTitle": "Untitled — Hawaii, page 57",
+    "title": "Hawaii — Medium print",
+    "artworkTitle": "Hawaii",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S5.07X9.64",
@@ -45011,7 +45011,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
-      "alt": "Untitled — Hawaii, page 57",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
     },
     "attributes": {},
@@ -45024,8 +45024,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Untitled — Hawaii, page 57 — Medium print — Black frame",
-    "artworkTitle": "Untitled — Hawaii, page 57",
+    "title": "Hawaii — Medium print — Black frame",
+    "artworkTitle": "Hawaii",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD07X9DD64F1S9X12J1S5DD07X9DD64G1",
@@ -45049,7 +45049,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
-      "alt": "Untitled — Hawaii, page 57",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
     },
     "attributes": {},
@@ -45098,8 +45098,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Untitled — Hawaii, page 57 — Medium print — White frame",
-    "artworkTitle": "Untitled — Hawaii, page 57",
+    "title": "Hawaii — Medium print — White frame",
+    "artworkTitle": "Hawaii",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD07X9DD64F2S9X12J1S5DD07X9DD64G1",
@@ -45123,7 +45123,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
-      "alt": "Untitled — Hawaii, page 57",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
     },
     "attributes": {},
@@ -45172,8 +45172,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Untitled — Hawaii, page 57 — Medium print — Natural wood frame",
-    "artworkTitle": "Untitled — Hawaii, page 57",
+    "title": "Hawaii — Medium print — Natural wood frame",
+    "artworkTitle": "Hawaii",
     "amount": "82.63",
     "currency": "USD",
     "sku": "5M144M8S5DD07X9DD64F7S9X12J1S5DD07X9DD64G1",
@@ -45197,7 +45197,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp",
-      "alt": "Untitled — Hawaii, page 57",
+      "alt": "Hawaii",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.jpg"
     },
     "attributes": {},
