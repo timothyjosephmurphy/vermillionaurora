@@ -1,7 +1,7 @@
 // Apply only supplier-verified framing snapshots to the matching approved files.
 import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
-import {matLayout,sameMat} from '../catalog/matting.mjs';
+import {framedMatLayout as matLayout,sameMat} from '../catalog/matting.mjs';
 import {frameFinish,sameFrame} from '../catalog/framing.mjs';
 import frames from '../catalog/finerworks-frames.json' with {type:'json'};
 import mats from '../catalog/finerworks-mats.json' with {type:'json'};

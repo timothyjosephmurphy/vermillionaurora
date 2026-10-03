@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="8d96b487fa801e2dba9b";
+export const printVersion="147538e310b8184036e7";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -46,9 +46,9 @@ export default {
     "productId": "el-zonte-at-sunrise",
     "title": "El Zonte at Sunrise, El Salvador — Large print — Black frame",
     "artworkTitle": "El Zonte at Sunrise, El Salvador",
-    "amount": "81.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S5DD41X10DD52F1S11X14J1S5DD41X10DD52G1",
+    "sku": "5M144M8S5DD41X10DD52F1S8DD41X13DD52J1S5DD41X10DD52G1",
     "scale": 1,
     "imageSize": {
       "width": 5.1533,
@@ -81,8 +81,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 8.41,
+        "height": 13.52,
         "unit": "in"
       },
       "window": {
@@ -102,8 +102,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 8.41,
+        "height": 13.52,
         "unit": "in"
       },
       "glazing": {
@@ -120,9 +120,9 @@ export default {
     "productId": "el-zonte-at-sunrise",
     "title": "El Zonte at Sunrise, El Salvador — Large print — White frame",
     "artworkTitle": "El Zonte at Sunrise, El Salvador",
-    "amount": "81.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S5DD41X10DD52F2S11X14J1S5DD41X10DD52G1",
+    "sku": "5M144M8S5DD41X10DD52F2S8DD41X13DD52J1S5DD41X10DD52G1",
     "scale": 1,
     "imageSize": {
       "width": 5.1533,
@@ -155,8 +155,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 8.41,
+        "height": 13.52,
         "unit": "in"
       },
       "window": {
@@ -176,8 +176,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 8.41,
+        "height": 13.52,
         "unit": "in"
       },
       "glazing": {
@@ -194,9 +194,9 @@ export default {
     "productId": "el-zonte-at-sunrise",
     "title": "El Zonte at Sunrise, El Salvador — Large print — Natural wood frame",
     "artworkTitle": "El Zonte at Sunrise, El Salvador",
-    "amount": "92.00",
+    "amount": "84.00",
     "currency": "USD",
-    "sku": "5M144M8S5DD41X10DD52F7S11X14J1S5DD41X10DD52G1",
+    "sku": "5M144M8S5DD41X10DD52F7S8DD41X13DD52J1S5DD41X10DD52G1",
     "scale": 1,
     "imageSize": {
       "width": 5.1533,
@@ -229,8 +229,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 8.41,
+        "height": 13.52,
         "unit": "in"
       },
       "window": {
@@ -250,8 +250,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 8.41,
+        "height": 13.52,
         "unit": "in"
       },
       "glazing": {
@@ -306,9 +306,9 @@ export default {
     "productId": "el-zonte-at-sunrise",
     "title": "El Zonte at Sunrise, El Salvador — Medium print — Black frame",
     "artworkTitle": "El Zonte at Sunrise, El Salvador",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD12X7DD95F1S8X10J1S4DD12X7DD95G1",
+    "sku": "5M144M8S4DD12X7DD95F1S8X11DD83J1S4DD12X7DD95G1",
     "scale": 0.75,
     "imageSize": {
       "width": 3.8633,
@@ -342,7 +342,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 11.83,
         "unit": "in"
       },
       "window": {
@@ -363,7 +363,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 11.83,
         "unit": "in"
       },
       "glazing": {
@@ -380,9 +380,9 @@ export default {
     "productId": "el-zonte-at-sunrise",
     "title": "El Zonte at Sunrise, El Salvador — Medium print — White frame",
     "artworkTitle": "El Zonte at Sunrise, El Salvador",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD12X7DD95F2S8X10J1S4DD12X7DD95G1",
+    "sku": "5M144M8S4DD12X7DD95F2S8X11DD83J1S4DD12X7DD95G1",
     "scale": 0.75,
     "imageSize": {
       "width": 3.8633,
@@ -416,7 +416,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 11.83,
         "unit": "in"
       },
       "window": {
@@ -437,7 +437,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 11.83,
         "unit": "in"
       },
       "glazing": {
@@ -454,9 +454,9 @@ export default {
     "productId": "el-zonte-at-sunrise",
     "title": "El Zonte at Sunrise, El Salvador — Medium print — Natural wood frame",
     "artworkTitle": "El Zonte at Sunrise, El Salvador",
-    "amount": "68.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD12X7DD95F7S8X10J1S4DD12X7DD95G1",
+    "sku": "5M144M8S4DD12X7DD95F7S8X11DD83J1S4DD12X7DD95G1",
     "scale": 0.75,
     "imageSize": {
       "width": 3.8633,
@@ -490,7 +490,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 11.83,
         "unit": "in"
       },
       "window": {
@@ -511,7 +511,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 11.83,
         "unit": "in"
       },
       "glazing": {
@@ -566,9 +566,9 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Large print — Black frame",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "101.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD82F1S12X15J1S8DD58X12DD82G1",
+    "sku": "5M144M8S8DD58X12DD82F1S11DD58X15DD82J1S8DD58X12DD82G1",
     "scale": 1,
     "imageSize": {
       "width": 8.3267,
@@ -601,8 +601,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.82,
         "unit": "in"
       },
       "window": {
@@ -622,8 +622,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.82,
         "unit": "in"
       },
       "glazing": {
@@ -640,9 +640,9 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Large print — White frame",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "101.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD82F2S12X15J1S8DD58X12DD82G1",
+    "sku": "5M144M8S8DD58X12DD82F2S11DD58X15DD82J1S8DD58X12DD82G1",
     "scale": 1,
     "imageSize": {
       "width": 8.3267,
@@ -675,8 +675,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.82,
         "unit": "in"
       },
       "window": {
@@ -696,8 +696,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.82,
         "unit": "in"
       },
       "glazing": {
@@ -714,9 +714,9 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Large print — Natural wood frame",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "113.00",
+    "amount": "114.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD82F7S12X15J1S8DD58X12DD82G1",
+    "sku": "5M144M8S8DD58X12DD82F7S11DD58X15DD82J1S8DD58X12DD82G1",
     "scale": 1,
     "imageSize": {
       "width": 8.3267,
@@ -749,8 +749,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.82,
         "unit": "in"
       },
       "window": {
@@ -770,8 +770,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.82,
         "unit": "in"
       },
       "glazing": {
@@ -826,9 +826,9 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Medium print — Black frame",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "72.63",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD68F1S9X12J1S6DD5X9DD68G1",
+    "sku": "5M144M8S6DD5X9DD68F1S9DD5X12DD68J1S6DD5X9DD68G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.2467,
@@ -861,8 +861,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.68,
         "unit": "in"
       },
       "window": {
@@ -882,8 +882,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.68,
         "unit": "in"
       },
       "glazing": {
@@ -900,9 +900,9 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Medium print — White frame",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "72.63",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD68F2S9X12J1S6DD5X9DD68G1",
+    "sku": "5M144M8S6DD5X9DD68F2S9DD5X12DD68J1S6DD5X9DD68G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.2467,
@@ -935,8 +935,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.68,
         "unit": "in"
       },
       "window": {
@@ -956,8 +956,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.68,
         "unit": "in"
       },
       "glazing": {
@@ -974,9 +974,9 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Medium print — Natural wood frame",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "82.63",
+    "amount": "84.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD68F7S9X12J1S6DD5X9DD68G1",
+    "sku": "5M144M8S6DD5X9DD68F7S9DD5X12DD68J1S6DD5X9DD68G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.2467,
@@ -1009,8 +1009,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.68,
         "unit": "in"
       },
       "window": {
@@ -1030,8 +1030,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.68,
         "unit": "in"
       },
       "glazing": {
@@ -1088,7 +1088,7 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD53F1S8X10J1S4DD41X6DD53G1",
+    "sku": "5M144M8S4DD41X6DD53F1S8DD01X10DD13J1S4DD41X6DD53G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1567,
@@ -1121,8 +1121,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.13,
         "unit": "in"
       },
       "window": {
@@ -1142,8 +1142,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.13,
         "unit": "in"
       },
       "glazing": {
@@ -1162,7 +1162,7 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD53F2S8X10J1S4DD41X6DD53G1",
+    "sku": "5M144M8S4DD41X6DD53F2S8DD01X10DD13J1S4DD41X6DD53G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1567,
@@ -1195,8 +1195,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.13,
         "unit": "in"
       },
       "window": {
@@ -1216,8 +1216,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.13,
         "unit": "in"
       },
       "glazing": {
@@ -1236,7 +1236,7 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD53F7S8X10J1S4DD41X6DD53G1",
+    "sku": "5M144M8S4DD41X6DD53F7S8DD01X10DD13J1S4DD41X6DD53G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1567,
@@ -1269,8 +1269,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.13,
         "unit": "in"
       },
       "window": {
@@ -1290,8 +1290,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.13,
         "unit": "in"
       },
       "glazing": {
@@ -1346,9 +1346,9 @@ export default {
     "productId": "painting-couple-in-color",
     "title": "Aunt Fran and Hillary — Large print — Black frame",
     "artworkTitle": "Aunt Fran and Hillary",
-    "amount": "129.00",
+    "amount": "112.00",
     "currency": "USD",
-    "sku": "5M144M8S14DD1X9DD37F1S20X16J1S14DD1X9DD37G1",
+    "sku": "5M144M8S14DD1X9DD37F1S17DD1X12DD37J1S14DD1X9DD37G1",
     "scale": 1,
     "imageSize": {
       "width": 13.8467,
@@ -1381,8 +1381,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 17.1,
+        "height": 12.37,
         "unit": "in"
       },
       "window": {
@@ -1402,8 +1402,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 17.1,
+        "height": 12.37,
         "unit": "in"
       },
       "glazing": {
@@ -1420,9 +1420,9 @@ export default {
     "productId": "painting-couple-in-color",
     "title": "Aunt Fran and Hillary — Large print — White frame",
     "artworkTitle": "Aunt Fran and Hillary",
-    "amount": "129.00",
+    "amount": "112.00",
     "currency": "USD",
-    "sku": "5M144M8S14DD1X9DD37F2S20X16J1S14DD1X9DD37G1",
+    "sku": "5M144M8S14DD1X9DD37F2S17DD1X12DD37J1S14DD1X9DD37G1",
     "scale": 1,
     "imageSize": {
       "width": 13.8467,
@@ -1455,8 +1455,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 17.1,
+        "height": 12.37,
         "unit": "in"
       },
       "window": {
@@ -1476,8 +1476,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 17.1,
+        "height": 12.37,
         "unit": "in"
       },
       "glazing": {
@@ -1494,9 +1494,9 @@ export default {
     "productId": "painting-couple-in-color",
     "title": "Aunt Fran and Hillary — Large print — Natural wood frame",
     "artworkTitle": "Aunt Fran and Hillary",
-    "amount": "144.00",
+    "amount": "124.00",
     "currency": "USD",
-    "sku": "5M144M8S14DD1X9DD37F7S20X16J1S14DD1X9DD37G1",
+    "sku": "5M144M8S14DD1X9DD37F7S17DD1X12DD37J1S14DD1X9DD37G1",
     "scale": 1,
     "imageSize": {
       "width": 13.8467,
@@ -1529,8 +1529,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 17.1,
+        "height": 12.37,
         "unit": "in"
       },
       "window": {
@@ -1550,8 +1550,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 17.1,
+        "height": 12.37,
         "unit": "in"
       },
       "glazing": {
@@ -1606,9 +1606,9 @@ export default {
     "productId": "painting-couple-in-color",
     "title": "Aunt Fran and Hillary — Medium print — Black frame",
     "artworkTitle": "Aunt Fran and Hillary",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD64X7DD09F1S14X11J1S10DD64X7DD09G1",
+    "sku": "5M144M8S10DD64X7DD09F1S13DD64X10DD09J1S10DD64X7DD09G1",
     "scale": 0.75,
     "imageSize": {
       "width": 10.3867,
@@ -1641,8 +1641,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.64,
+        "height": 10.09,
         "unit": "in"
       },
       "window": {
@@ -1662,8 +1662,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.64,
+        "height": 10.09,
         "unit": "in"
       },
       "glazing": {
@@ -1680,9 +1680,9 @@ export default {
     "productId": "painting-couple-in-color",
     "title": "Aunt Fran and Hillary — Medium print — White frame",
     "artworkTitle": "Aunt Fran and Hillary",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD64X7DD09F2S14X11J1S10DD64X7DD09G1",
+    "sku": "5M144M8S10DD64X7DD09F2S13DD64X10DD09J1S10DD64X7DD09G1",
     "scale": 0.75,
     "imageSize": {
       "width": 10.3867,
@@ -1715,8 +1715,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.64,
+        "height": 10.09,
         "unit": "in"
       },
       "window": {
@@ -1736,8 +1736,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.64,
+        "height": 10.09,
         "unit": "in"
       },
       "glazing": {
@@ -1754,9 +1754,9 @@ export default {
     "productId": "painting-couple-in-color",
     "title": "Aunt Fran and Hillary — Medium print — Natural wood frame",
     "artworkTitle": "Aunt Fran and Hillary",
-    "amount": "92.00",
+    "amount": "89.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD64X7DD09F7S14X11J1S10DD64X7DD09G1",
+    "sku": "5M144M8S10DD64X7DD09F7S13DD64X10DD09J1S10DD64X7DD09G1",
     "scale": 0.75,
     "imageSize": {
       "width": 10.3867,
@@ -1789,8 +1789,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.64,
+        "height": 10.09,
         "unit": "in"
       },
       "window": {
@@ -1810,8 +1810,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.64,
+        "height": 10.09,
         "unit": "in"
       },
       "glazing": {
@@ -1866,9 +1866,9 @@ export default {
     "productId": "painting-couple-in-color",
     "title": "Aunt Fran and Hillary — Small print — Black frame",
     "artworkTitle": "Aunt Fran and Hillary",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD17X4DD81F1S10X8J1S7DD17X4DD81G1",
+    "sku": "5M144M8S7DD17X4DD81F1S10DD37X8DD01J1S7DD17X4DD81G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.9167,
@@ -1901,8 +1901,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 10.37,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -1922,8 +1922,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 10.37,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -1940,9 +1940,9 @@ export default {
     "productId": "painting-couple-in-color",
     "title": "Aunt Fran and Hillary — Small print — White frame",
     "artworkTitle": "Aunt Fran and Hillary",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD17X4DD81F2S10X8J1S7DD17X4DD81G1",
+    "sku": "5M144M8S7DD17X4DD81F2S10DD37X8DD01J1S7DD17X4DD81G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.9167,
@@ -1975,8 +1975,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 10.37,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -1996,8 +1996,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 10.37,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -2016,7 +2016,7 @@ export default {
     "artworkTitle": "Aunt Fran and Hillary",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD17X4DD81F7S10X8J1S7DD17X4DD81G1",
+    "sku": "5M144M8S7DD17X4DD81F7S10DD37X8DD01J1S7DD17X4DD81G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.9167,
@@ -2049,8 +2049,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 10.37,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -2070,8 +2070,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 10.37,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -2128,7 +2128,7 @@ export default {
     "artworkTitle": "Wonder",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD46X8DD82F1S9X12J1S4DD46X8DD82G1",
+    "sku": "5M144M8S4DD46X8DD82F1S8X12DD36J1S4DD46X8DD82G1",
     "scale": 1,
     "imageSize": {
       "width": 4.2067,
@@ -2161,8 +2161,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -2182,8 +2182,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -2202,7 +2202,7 @@ export default {
     "artworkTitle": "Wonder",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD46X8DD82F2S9X12J1S4DD46X8DD82G1",
+    "sku": "5M144M8S4DD46X8DD82F2S8X12DD36J1S4DD46X8DD82G1",
     "scale": 1,
     "imageSize": {
       "width": 4.2067,
@@ -2235,8 +2235,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -2256,8 +2256,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -2274,9 +2274,9 @@ export default {
     "productId": "painting-festival-portrait",
     "title": "Wonder — Large print — Natural wood frame",
     "artworkTitle": "Wonder",
-    "amount": "77.63",
+    "amount": "76.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD46X8DD82F7S9X12J1S4DD46X8DD82G1",
+    "sku": "5M144M8S4DD46X8DD82F7S8X12DD36J1S4DD46X8DD82G1",
     "scale": 1,
     "imageSize": {
       "width": 4.2067,
@@ -2309,8 +2309,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -2330,8 +2330,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -2386,9 +2386,9 @@ export default {
     "productId": "painting-figures-in-wheatfield",
     "title": "The Mother of Kiev — Large print — Black frame",
     "artworkTitle": "The Mother of Kiev",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4X6DD79F1S8X10J1S4X6DD79G1",
+    "sku": "5M144M8S4X6DD79F1S8X10DD79J1S4X6DD79G1",
     "scale": 1,
     "imageSize": {
       "width": 3.53,
@@ -2422,7 +2422,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.79,
         "unit": "in"
       },
       "window": {
@@ -2443,7 +2443,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.79,
         "unit": "in"
       },
       "glazing": {
@@ -2460,9 +2460,9 @@ export default {
     "productId": "painting-figures-in-wheatfield",
     "title": "The Mother of Kiev — Large print — White frame",
     "artworkTitle": "The Mother of Kiev",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4X6DD79F2S8X10J1S4X6DD79G1",
+    "sku": "5M144M8S4X6DD79F2S8X10DD79J1S4X6DD79G1",
     "scale": 1,
     "imageSize": {
       "width": 3.53,
@@ -2496,7 +2496,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.79,
         "unit": "in"
       },
       "window": {
@@ -2517,7 +2517,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.79,
         "unit": "in"
       },
       "glazing": {
@@ -2534,9 +2534,9 @@ export default {
     "productId": "painting-figures-in-wheatfield",
     "title": "The Mother of Kiev — Large print — Natural wood frame",
     "artworkTitle": "The Mother of Kiev",
-    "amount": "68.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S4X6DD79F7S8X10J1S4X6DD79G1",
+    "sku": "5M144M8S4X6DD79F7S8X10DD79J1S4X6DD79G1",
     "scale": 1,
     "imageSize": {
       "width": 3.53,
@@ -2570,7 +2570,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.79,
         "unit": "in"
       },
       "window": {
@@ -2591,7 +2591,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.79,
         "unit": "in"
       },
       "glazing": {
@@ -2648,7 +2648,7 @@ export default {
     "artworkTitle": "Sunset in Puget Sound from San Juan Island",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD18X9DD46F1S9X12J1S5DD18X9DD46G1",
+    "sku": "5M144M8S5DD18X9DD46F1S8DD18X12DD46J1S5DD18X9DD46G1",
     "scale": 1,
     "imageSize": {
       "width": 4.9267,
@@ -2681,8 +2681,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "window": {
@@ -2702,8 +2702,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "glazing": {
@@ -2722,7 +2722,7 @@ export default {
     "artworkTitle": "Sunset in Puget Sound from San Juan Island",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD18X9DD46F2S9X12J1S5DD18X9DD46G1",
+    "sku": "5M144M8S5DD18X9DD46F2S8DD18X12DD46J1S5DD18X9DD46G1",
     "scale": 1,
     "imageSize": {
       "width": 4.9267,
@@ -2755,8 +2755,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "window": {
@@ -2776,8 +2776,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "glazing": {
@@ -2794,9 +2794,9 @@ export default {
     "productId": "painting-golden-coast",
     "title": "Sunset in Puget Sound from San Juan Island — Large print — Natural wood frame",
     "artworkTitle": "Sunset in Puget Sound from San Juan Island",
-    "amount": "82.63",
+    "amount": "81.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD18X9DD46F7S9X12J1S5DD18X9DD46G1",
+    "sku": "5M144M8S5DD18X9DD46F7S8DD18X12DD46J1S5DD18X9DD46G1",
     "scale": 1,
     "imageSize": {
       "width": 4.9267,
@@ -2829,8 +2829,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "window": {
@@ -2850,8 +2850,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "glazing": {
@@ -2906,9 +2906,9 @@ export default {
     "productId": "painting-guitarist",
     "title": "Girl Tuning Guitar — Large print — Black frame",
     "artworkTitle": "Girl Tuning Guitar",
-    "amount": "91.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD09X10DD4F1S12X15J1S9DD09X10DD4G1",
+    "sku": "5M144M8S9DD09X10DD4F1S12DD09X13DD4J1S9DD09X10DD4G1",
     "scale": 1,
     "imageSize": {
       "width": 8.8367,
@@ -2941,8 +2941,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "window": {
@@ -2962,8 +2962,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "glazing": {
@@ -2980,9 +2980,9 @@ export default {
     "productId": "painting-guitarist",
     "title": "Girl Tuning Guitar — Large print — White frame",
     "artworkTitle": "Girl Tuning Guitar",
-    "amount": "91.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD09X10DD4F2S12X15J1S9DD09X10DD4G1",
+    "sku": "5M144M8S9DD09X10DD4F2S12DD09X13DD4J1S9DD09X10DD4G1",
     "scale": 1,
     "imageSize": {
       "width": 8.8367,
@@ -3015,8 +3015,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "window": {
@@ -3036,8 +3036,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "glazing": {
@@ -3054,9 +3054,9 @@ export default {
     "productId": "painting-guitarist",
     "title": "Girl Tuning Guitar — Large print — Natural wood frame",
     "artworkTitle": "Girl Tuning Guitar",
-    "amount": "103.00",
+    "amount": "99.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD09X10DD4F7S12X15J1S9DD09X10DD4G1",
+    "sku": "5M144M8S9DD09X10DD4F7S12DD09X13DD4J1S9DD09X10DD4G1",
     "scale": 1,
     "imageSize": {
       "width": 8.8367,
@@ -3089,8 +3089,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "window": {
@@ -3110,8 +3110,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "glazing": {
@@ -3168,7 +3168,7 @@ export default {
     "artworkTitle": "Girl Tuning Guitar",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD88X7DD86F1S9X12J1S6DD88X7DD86G1",
+    "sku": "5M144M8S6DD88X7DD86F1S9DD88X10DD86J1S6DD88X7DD86G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.6233,
@@ -3201,8 +3201,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "window": {
@@ -3222,8 +3222,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "glazing": {
@@ -3242,7 +3242,7 @@ export default {
     "artworkTitle": "Girl Tuning Guitar",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD88X7DD86F2S9X12J1S6DD88X7DD86G1",
+    "sku": "5M144M8S6DD88X7DD86F2S9DD88X10DD86J1S6DD88X7DD86G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.6233,
@@ -3275,8 +3275,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "window": {
@@ -3296,8 +3296,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "glazing": {
@@ -3314,9 +3314,9 @@ export default {
     "productId": "painting-guitarist",
     "title": "Girl Tuning Guitar — Medium print — Natural wood frame",
     "artworkTitle": "Girl Tuning Guitar",
-    "amount": "72.63",
+    "amount": "71.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD88X7DD86F7S9X12J1S6DD88X7DD86G1",
+    "sku": "5M144M8S6DD88X7DD86F7S9DD88X10DD86J1S6DD88X7DD86G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.6233,
@@ -3349,8 +3349,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "window": {
@@ -3370,8 +3370,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "glazing": {
@@ -3426,9 +3426,9 @@ export default {
     "productId": "painting-guitarist",
     "title": "Girl Tuning Guitar — Small print — Black frame",
     "artworkTitle": "Girl Tuning Guitar",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD67X5DD32F1S8X10J1S4DD67X5DD32G1",
+    "sku": "5M144M8S4DD67X5DD32F1S8DD01X8DD66J1S4DD67X5DD32G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.4133,
@@ -3461,8 +3461,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "window": {
@@ -3482,8 +3482,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "glazing": {
@@ -3500,9 +3500,9 @@ export default {
     "productId": "painting-guitarist",
     "title": "Girl Tuning Guitar — Small print — White frame",
     "artworkTitle": "Girl Tuning Guitar",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD67X5DD32F2S8X10J1S4DD67X5DD32G1",
+    "sku": "5M144M8S4DD67X5DD32F2S8DD01X8DD66J1S4DD67X5DD32G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.4133,
@@ -3535,8 +3535,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "window": {
@@ -3556,8 +3556,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "glazing": {
@@ -3574,9 +3574,9 @@ export default {
     "productId": "painting-guitarist",
     "title": "Girl Tuning Guitar — Small print — Natural wood frame",
     "artworkTitle": "Girl Tuning Guitar",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD67X5DD32F7S8X10J1S4DD67X5DD32G1",
+    "sku": "5M144M8S4DD67X5DD32F7S8DD01X8DD66J1S4DD67X5DD32G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.4133,
@@ -3609,8 +3609,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "window": {
@@ -3630,8 +3630,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "glazing": {
@@ -3688,7 +3688,7 @@ export default {
     "artworkTitle": "Achievement",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD37X8DD72F1S9X12J1S4DD37X8DD72G1",
+    "sku": "5M144M8S4DD37X8DD72F1S8DD01X12DD36J1S4DD37X8DD72G1",
     "scale": 1,
     "imageSize": {
       "width": 4.1167,
@@ -3721,8 +3721,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -3742,8 +3742,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -3762,7 +3762,7 @@ export default {
     "artworkTitle": "Achievement",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD37X8DD72F2S9X12J1S4DD37X8DD72G1",
+    "sku": "5M144M8S4DD37X8DD72F2S8DD01X12DD36J1S4DD37X8DD72G1",
     "scale": 1,
     "imageSize": {
       "width": 4.1167,
@@ -3795,8 +3795,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -3816,8 +3816,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -3834,9 +3834,9 @@ export default {
     "productId": "painting-phoenix-rising",
     "title": "Achievement — Large print — Natural wood frame",
     "artworkTitle": "Achievement",
-    "amount": "77.63",
+    "amount": "76.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD37X8DD72F7S9X12J1S4DD37X8DD72G1",
+    "sku": "5M144M8S4DD37X8DD72F7S8DD01X12DD36J1S4DD37X8DD72G1",
     "scale": 1,
     "imageSize": {
       "width": 4.1167,
@@ -3869,8 +3869,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -3890,8 +3890,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -3946,9 +3946,9 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ Spinning at Chalet — Large print — Black frame",
     "artworkTitle": "MJ Spinning at Chalet",
-    "amount": "144.00",
+    "amount": "134.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X13DD85F1S16X20J1S12DD25X13DD85G1",
+    "sku": "5M144M8S12DD25X13DD85F1S15DD25X16DD85J1S12DD25X13DD85G1",
     "scale": 1,
     "imageSize": {
       "width": 11.9933,
@@ -3981,8 +3981,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 15.25,
+        "height": 16.85,
         "unit": "in"
       },
       "window": {
@@ -4002,8 +4002,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 15.25,
+        "height": 16.85,
         "unit": "in"
       },
       "glazing": {
@@ -4020,9 +4020,9 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ Spinning at Chalet — Large print — White frame",
     "artworkTitle": "MJ Spinning at Chalet",
-    "amount": "144.00",
+    "amount": "134.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X13DD85F2S16X20J1S12DD25X13DD85G1",
+    "sku": "5M144M8S12DD25X13DD85F2S15DD25X16DD85J1S12DD25X13DD85G1",
     "scale": 1,
     "imageSize": {
       "width": 11.9933,
@@ -4055,8 +4055,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 15.25,
+        "height": 16.85,
         "unit": "in"
       },
       "window": {
@@ -4076,8 +4076,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 15.25,
+        "height": 16.85,
         "unit": "in"
       },
       "glazing": {
@@ -4094,9 +4094,9 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ Spinning at Chalet — Large print — Natural wood frame",
     "artworkTitle": "MJ Spinning at Chalet",
-    "amount": "159.00",
+    "amount": "148.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X13DD85F7S16X20J1S12DD25X13DD85G1",
+    "sku": "5M144M8S12DD25X13DD85F7S15DD25X16DD85J1S12DD25X13DD85G1",
     "scale": 1,
     "imageSize": {
       "width": 11.9933,
@@ -4129,8 +4129,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 15.25,
+        "height": 16.85,
         "unit": "in"
       },
       "window": {
@@ -4150,8 +4150,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 15.25,
+        "height": 16.85,
         "unit": "in"
       },
       "glazing": {
@@ -4206,9 +4206,9 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ Spinning at Chalet — Medium print — Black frame",
     "artworkTitle": "MJ Spinning at Chalet",
-    "amount": "91.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X10DD45F1S12X15J1S9DD25X10DD45G1",
+    "sku": "5M144M8S9DD25X10DD45F1S12DD25X13DD45J1S9DD25X10DD45G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9933,
@@ -4241,8 +4241,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.25,
+        "height": 13.45,
         "unit": "in"
       },
       "window": {
@@ -4262,8 +4262,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.25,
+        "height": 13.45,
         "unit": "in"
       },
       "glazing": {
@@ -4280,9 +4280,9 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ Spinning at Chalet — Medium print — White frame",
     "artworkTitle": "MJ Spinning at Chalet",
-    "amount": "91.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X10DD45F2S12X15J1S9DD25X10DD45G1",
+    "sku": "5M144M8S9DD25X10DD45F2S12DD25X13DD45J1S9DD25X10DD45G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9933,
@@ -4315,8 +4315,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.25,
+        "height": 13.45,
         "unit": "in"
       },
       "window": {
@@ -4336,8 +4336,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.25,
+        "height": 13.45,
         "unit": "in"
       },
       "glazing": {
@@ -4354,9 +4354,9 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ Spinning at Chalet — Medium print — Natural wood frame",
     "artworkTitle": "MJ Spinning at Chalet",
-    "amount": "103.00",
+    "amount": "99.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X10DD45F7S12X15J1S9DD25X10DD45G1",
+    "sku": "5M144M8S9DD25X10DD45F7S12DD25X13DD45J1S9DD25X10DD45G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9933,
@@ -4389,8 +4389,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.25,
+        "height": 13.45,
         "unit": "in"
       },
       "window": {
@@ -4410,8 +4410,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.25,
+        "height": 13.45,
         "unit": "in"
       },
       "glazing": {
@@ -4466,9 +4466,9 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ Spinning at Chalet — Small print — Black frame",
     "artworkTitle": "MJ Spinning at Chalet",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X7DD05F1S9X12J1S6DD25X7DD05G1",
+    "sku": "5M144M8S6DD25X7DD05F1S9DD25X10DD05J1S6DD25X7DD05G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9967,
@@ -4501,8 +4501,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 10.05,
         "unit": "in"
       },
       "window": {
@@ -4522,8 +4522,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 10.05,
         "unit": "in"
       },
       "glazing": {
@@ -4540,9 +4540,9 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ Spinning at Chalet — Small print — White frame",
     "artworkTitle": "MJ Spinning at Chalet",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X7DD05F2S9X12J1S6DD25X7DD05G1",
+    "sku": "5M144M8S6DD25X7DD05F2S9DD25X10DD05J1S6DD25X7DD05G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9967,
@@ -4575,8 +4575,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 10.05,
         "unit": "in"
       },
       "window": {
@@ -4596,8 +4596,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 10.05,
         "unit": "in"
       },
       "glazing": {
@@ -4614,9 +4614,9 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ Spinning at Chalet — Small print — Natural wood frame",
     "artworkTitle": "MJ Spinning at Chalet",
-    "amount": "72.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X7DD05F7S9X12J1S6DD25X7DD05G1",
+    "sku": "5M144M8S6DD25X7DD05F7S9DD25X10DD05J1S6DD25X7DD05G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9967,
@@ -4649,8 +4649,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 10.05,
         "unit": "in"
       },
       "window": {
@@ -4670,8 +4670,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 10.05,
         "unit": "in"
       },
       "glazing": {
@@ -4726,9 +4726,9 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Large print — Black frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD38X9DD03F1S11X14J1S8DD38X9DD03G1",
+    "sku": "5M144M8S8DD38X9DD03F1S11DD38X12DD03J1S8DD38X9DD03G1",
     "scale": 1,
     "imageSize": {
       "width": 8.1267,
@@ -4761,8 +4761,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "window": {
@@ -4782,8 +4782,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "glazing": {
@@ -4800,9 +4800,9 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Large print — White frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD38X9DD03F2S11X14J1S8DD38X9DD03G1",
+    "sku": "5M144M8S8DD38X9DD03F2S11DD38X12DD03J1S8DD38X9DD03G1",
     "scale": 1,
     "imageSize": {
       "width": 8.1267,
@@ -4835,8 +4835,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "window": {
@@ -4856,8 +4856,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "glazing": {
@@ -4874,9 +4874,9 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Large print — Natural wood frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "92.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD38X9DD03F7S11X14J1S8DD38X9DD03G1",
+    "sku": "5M144M8S8DD38X9DD03F7S11DD38X12DD03J1S8DD38X9DD03G1",
     "scale": 1,
     "imageSize": {
       "width": 8.1267,
@@ -4909,8 +4909,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "window": {
@@ -4930,8 +4930,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "glazing": {
@@ -4986,9 +4986,9 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Medium print — Black frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "62.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD35X6DD83F1S9X12J1S6DD35X6DD83G1",
+    "sku": "5M144M8S6DD35X6DD83F1S9DD35X9DD83J1S6DD35X6DD83G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.09,
@@ -5021,8 +5021,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "window": {
@@ -5042,8 +5042,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "glazing": {
@@ -5060,9 +5060,9 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Medium print — White frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "62.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD35X6DD83F2S9X12J1S6DD35X6DD83G1",
+    "sku": "5M144M8S6DD35X6DD83F2S9DD35X9DD83J1S6DD35X6DD83G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.09,
@@ -5095,8 +5095,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "window": {
@@ -5116,8 +5116,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "glazing": {
@@ -5134,9 +5134,9 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Medium print — Natural wood frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "72.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD35X6DD83F7S9X12J1S6DD35X6DD83G1",
+    "sku": "5M144M8S6DD35X6DD83F7S9DD35X9DD83J1S6DD35X6DD83G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.09,
@@ -5169,8 +5169,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "window": {
@@ -5190,8 +5190,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "glazing": {
@@ -5246,9 +5246,9 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Small print — Black frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD31X4DD64F1S8X10J1S4DD31X4DD64G1",
+    "sku": "5M144M8S4DD31X4DD64F1S8DD01X8DD34J1S4DD31X4DD64G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.0567,
@@ -5281,8 +5281,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "window": {
@@ -5302,8 +5302,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "glazing": {
@@ -5320,9 +5320,9 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Small print — White frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD31X4DD64F2S8X10J1S4DD31X4DD64G1",
+    "sku": "5M144M8S4DD31X4DD64F2S8DD01X8DD34J1S4DD31X4DD64G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.0567,
@@ -5355,8 +5355,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "window": {
@@ -5376,8 +5376,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "glazing": {
@@ -5394,9 +5394,9 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Small print — Natural wood frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "68.63",
+    "amount": "65.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD31X4DD64F7S8X10J1S4DD31X4DD64G1",
+    "sku": "5M144M8S4DD31X4DD64F7S8DD01X8DD34J1S4DD31X4DD64G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.0567,
@@ -5429,8 +5429,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "window": {
@@ -5450,8 +5450,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "glazing": {
@@ -5506,9 +5506,9 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Large print — Black frame",
     "artworkTitle": "Chase Toole",
-    "amount": "96.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD46X11DD3F1S12X15J1S9DD46X11DD3G1",
+    "sku": "5M144M8S9DD46X11DD3F1S12DD46X14DD3J1S9DD46X11DD3G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2067,
@@ -5541,8 +5541,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "window": {
@@ -5562,8 +5562,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "glazing": {
@@ -5580,9 +5580,9 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Large print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "96.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD46X11DD3F2S12X15J1S9DD46X11DD3G1",
+    "sku": "5M144M8S9DD46X11DD3F2S12DD46X14DD3J1S9DD46X11DD3G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2067,
@@ -5615,8 +5615,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "window": {
@@ -5636,8 +5636,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "glazing": {
@@ -5654,9 +5654,9 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Large print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "108.00",
+    "amount": "107.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD46X11DD3F7S12X15J1S9DD46X11DD3G1",
+    "sku": "5M144M8S9DD46X11DD3F7S12DD46X14DD3J1S9DD46X11DD3G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2067,
@@ -5689,8 +5689,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "window": {
@@ -5710,8 +5710,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "glazing": {
@@ -5766,9 +5766,9 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print — Black frame",
     "artworkTitle": "Chase Toole",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD16X8DD54F1S11X14J1S7DD16X8DD54G1",
+    "sku": "5M144M8S7DD16X8DD54F1S10DD16X11DD54J1S7DD16X8DD54G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9067,
@@ -5801,8 +5801,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "window": {
@@ -5822,8 +5822,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "glazing": {
@@ -5840,9 +5840,9 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD16X8DD54F2S11X14J1S7DD16X8DD54G1",
+    "sku": "5M144M8S7DD16X8DD54F2S10DD16X11DD54J1S7DD16X8DD54G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9067,
@@ -5875,8 +5875,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "window": {
@@ -5896,8 +5896,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "glazing": {
@@ -5914,9 +5914,9 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "87.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD16X8DD54F7S11X14J1S7DD16X8DD54G1",
+    "sku": "5M144M8S7DD16X8DD54F7S10DD16X11DD54J1S7DD16X8DD54G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9067,
@@ -5949,8 +5949,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "window": {
@@ -5970,8 +5970,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "glazing": {
@@ -6026,9 +6026,9 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Small print — Black frame",
     "artworkTitle": "Chase Toole",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD85X5DD77F1S8X10J1S4DD85X5DD77G1",
+    "sku": "5M144M8S4DD85X5DD77F1S8DD01X8DD93J1S4DD85X5DD77G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.5967,
@@ -6061,8 +6061,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "window": {
@@ -6082,8 +6082,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "glazing": {
@@ -6100,9 +6100,9 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Small print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD85X5DD77F2S8X10J1S4DD85X5DD77G1",
+    "sku": "5M144M8S4DD85X5DD77F2S8DD01X8DD93J1S4DD85X5DD77G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.5967,
@@ -6135,8 +6135,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "window": {
@@ -6156,8 +6156,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "glazing": {
@@ -6174,9 +6174,9 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Small print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD85X5DD77F7S8X10J1S4DD85X5DD77G1",
+    "sku": "5M144M8S4DD85X5DD77F7S8DD01X8DD93J1S4DD85X5DD77G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.5967,
@@ -6209,8 +6209,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "window": {
@@ -6230,8 +6230,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "glazing": {
@@ -6286,9 +6286,9 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Large print — Black frame",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "67.63",
+    "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S9DD31X4F1S12X9J1S9DD31X4G1",
+    "sku": "5M144M8S9DD31X4F1S13DD31X8J1S9DD31X4G1",
     "scale": 1,
     "imageSize": {
       "width": 9.0567,
@@ -6321,8 +6321,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 13.31,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -6342,8 +6342,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 13.31,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -6360,9 +6360,9 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Large print — White frame",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "67.63",
+    "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S9DD31X4F2S12X9J1S9DD31X4G1",
+    "sku": "5M144M8S9DD31X4F2S13DD31X8J1S9DD31X4G1",
     "scale": 1,
     "imageSize": {
       "width": 9.0567,
@@ -6395,8 +6395,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 13.31,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -6416,8 +6416,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 13.31,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -6436,7 +6436,7 @@ export default {
     "artworkTitle": "Sunrise on Rainier with Eagle",
     "amount": "77.63",
     "currency": "USD",
-    "sku": "5M144M8S9DD31X4F7S12X9J1S9DD31X4G1",
+    "sku": "5M144M8S9DD31X4F7S13DD31X8J1S9DD31X4G1",
     "scale": 1,
     "imageSize": {
       "width": 9.0567,
@@ -6469,8 +6469,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 13.31,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -6490,8 +6490,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 13.31,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -6546,9 +6546,9 @@ export default {
     "productId": "painting-portrait-with-scarf",
     "title": "Paul Murphy: my Dad — Large print — Black frame",
     "artworkTitle": "Paul Murphy: my Dad",
-    "amount": "171.00",
+    "amount": "159.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD92X18DD92F1S16X24J1S10DD92X18DD92G1",
+    "sku": "5M144M8S10DD92X18DD92F1S13DD92X21DD92J1S10DD92X18DD92G1",
     "scale": 1,
     "imageSize": {
       "width": 10.6667,
@@ -6581,8 +6581,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 24,
+        "width": 13.92,
+        "height": 21.92,
         "unit": "in"
       },
       "window": {
@@ -6602,8 +6602,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 24,
+        "width": 13.92,
+        "height": 21.92,
         "unit": "in"
       },
       "glazing": {
@@ -6620,9 +6620,9 @@ export default {
     "productId": "painting-portrait-with-scarf",
     "title": "Paul Murphy: my Dad — Large print — White frame",
     "artworkTitle": "Paul Murphy: my Dad",
-    "amount": "171.00",
+    "amount": "159.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD92X18DD92F2S16X24J1S10DD92X18DD92G1",
+    "sku": "5M144M8S10DD92X18DD92F2S13DD92X21DD92J1S10DD92X18DD92G1",
     "scale": 1,
     "imageSize": {
       "width": 10.6667,
@@ -6655,8 +6655,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 24,
+        "width": 13.92,
+        "height": 21.92,
         "unit": "in"
       },
       "window": {
@@ -6676,8 +6676,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 24,
+        "width": 13.92,
+        "height": 21.92,
         "unit": "in"
       },
       "glazing": {
@@ -6694,9 +6694,9 @@ export default {
     "productId": "painting-portrait-with-scarf",
     "title": "Paul Murphy: my Dad — Large print — Natural wood frame",
     "artworkTitle": "Paul Murphy: my Dad",
-    "amount": "188.00",
+    "amount": "174.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD92X18DD92F7S16X24J1S10DD92X18DD92G1",
+    "sku": "5M144M8S10DD92X18DD92F7S13DD92X21DD92J1S10DD92X18DD92G1",
     "scale": 1,
     "imageSize": {
       "width": 10.6667,
@@ -6729,8 +6729,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 24,
+        "width": 13.92,
+        "height": 21.92,
         "unit": "in"
       },
       "window": {
@@ -6750,8 +6750,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 24,
+        "width": 13.92,
+        "height": 21.92,
         "unit": "in"
       },
       "glazing": {
@@ -6806,9 +6806,9 @@ export default {
     "productId": "painting-portrait-with-scarf",
     "title": "Paul Murphy: my Dad — Medium print — Black frame",
     "artworkTitle": "Paul Murphy: my Dad",
-    "amount": "124.00",
+    "amount": "104.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD25X14DD25F1S16X20J1S8DD25X14DD25G1",
+    "sku": "5M144M8S8DD25X14DD25F1S11DD25X17DD25J1S8DD25X14DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.9967,
@@ -6841,8 +6841,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 11.25,
+        "height": 17.25,
         "unit": "in"
       },
       "window": {
@@ -6862,8 +6862,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 11.25,
+        "height": 17.25,
         "unit": "in"
       },
       "glazing": {
@@ -6880,9 +6880,9 @@ export default {
     "productId": "painting-portrait-with-scarf",
     "title": "Paul Murphy: my Dad — Medium print — White frame",
     "artworkTitle": "Paul Murphy: my Dad",
-    "amount": "124.00",
+    "amount": "104.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD25X14DD25F2S16X20J1S8DD25X14DD25G1",
+    "sku": "5M144M8S8DD25X14DD25F2S11DD25X17DD25J1S8DD25X14DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.9967,
@@ -6915,8 +6915,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 11.25,
+        "height": 17.25,
         "unit": "in"
       },
       "window": {
@@ -6936,8 +6936,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 11.25,
+        "height": 17.25,
         "unit": "in"
       },
       "glazing": {
@@ -6954,9 +6954,9 @@ export default {
     "productId": "painting-portrait-with-scarf",
     "title": "Paul Murphy: my Dad — Medium print — Natural wood frame",
     "artworkTitle": "Paul Murphy: my Dad",
-    "amount": "139.00",
+    "amount": "116.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD25X14DD25F7S16X20J1S8DD25X14DD25G1",
+    "sku": "5M144M8S8DD25X14DD25F7S11DD25X17DD25J1S8DD25X14DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.9967,
@@ -6989,8 +6989,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 11.25,
+        "height": 17.25,
         "unit": "in"
       },
       "window": {
@@ -7010,8 +7010,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 11.25,
+        "height": 17.25,
         "unit": "in"
       },
       "glazing": {
@@ -7068,7 +7068,7 @@ export default {
     "artworkTitle": "Paul Murphy: my Dad",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD58X9DD58F1S9X12J1S5DD58X9DD58G1",
+    "sku": "5M144M8S5DD58X9DD58F1S8DD58X12DD58J1S5DD58X9DD58G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.3267,
@@ -7101,8 +7101,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.58,
+        "height": 12.58,
         "unit": "in"
       },
       "window": {
@@ -7122,8 +7122,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.58,
+        "height": 12.58,
         "unit": "in"
       },
       "glazing": {
@@ -7142,7 +7142,7 @@ export default {
     "artworkTitle": "Paul Murphy: my Dad",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD58X9DD58F2S9X12J1S5DD58X9DD58G1",
+    "sku": "5M144M8S5DD58X9DD58F2S8DD58X12DD58J1S5DD58X9DD58G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.3267,
@@ -7175,8 +7175,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.58,
+        "height": 12.58,
         "unit": "in"
       },
       "window": {
@@ -7196,8 +7196,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.58,
+        "height": 12.58,
         "unit": "in"
       },
       "glazing": {
@@ -7216,7 +7216,7 @@ export default {
     "artworkTitle": "Paul Murphy: my Dad",
     "amount": "82.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD58X9DD58F7S9X12J1S5DD58X9DD58G1",
+    "sku": "5M144M8S5DD58X9DD58F7S8DD58X12DD58J1S5DD58X9DD58G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.3267,
@@ -7249,8 +7249,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.58,
+        "height": 12.58,
         "unit": "in"
       },
       "window": {
@@ -7270,8 +7270,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.58,
+        "height": 12.58,
         "unit": "in"
       },
       "glazing": {
@@ -7326,9 +7326,9 @@ export default {
     "productId": "painting-red-horizon",
     "title": "Maui Sunset from Kihei — Large print — Black frame",
     "artworkTitle": "Maui Sunset from Kihei",
-    "amount": "96.00",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD67X12DD77F1S12X15J1S6DD67X12DD77G1",
+    "sku": "5M144M8S6DD67X12DD77F1S9DD67X15DD77J1S6DD67X12DD77G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4167,
@@ -7361,8 +7361,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "window": {
@@ -7382,8 +7382,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "glazing": {
@@ -7400,9 +7400,9 @@ export default {
     "productId": "painting-red-horizon",
     "title": "Maui Sunset from Kihei — Large print — White frame",
     "artworkTitle": "Maui Sunset from Kihei",
-    "amount": "96.00",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD67X12DD77F2S12X15J1S6DD67X12DD77G1",
+    "sku": "5M144M8S6DD67X12DD77F2S9DD67X15DD77J1S6DD67X12DD77G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4167,
@@ -7435,8 +7435,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "window": {
@@ -7456,8 +7456,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "glazing": {
@@ -7474,9 +7474,9 @@ export default {
     "productId": "painting-red-horizon",
     "title": "Maui Sunset from Kihei — Large print — Natural wood frame",
     "artworkTitle": "Maui Sunset from Kihei",
-    "amount": "108.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD67X12DD77F7S12X15J1S6DD67X12DD77G1",
+    "sku": "5M144M8S6DD67X12DD77F7S9DD67X15DD77J1S6DD67X12DD77G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4167,
@@ -7509,8 +7509,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "window": {
@@ -7530,8 +7530,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "glazing": {
@@ -7588,7 +7588,7 @@ export default {
     "artworkTitle": "Maui Sunset from Kihei",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD07X9DD64F1S9X12J1S5DD07X9DD64G1",
+    "sku": "5M144M8S5DD07X9DD64F1S8DD07X12DD64J1S5DD07X9DD64G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8167,
@@ -7621,8 +7621,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "window": {
@@ -7642,8 +7642,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "glazing": {
@@ -7662,7 +7662,7 @@ export default {
     "artworkTitle": "Maui Sunset from Kihei",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD07X9DD64F2S9X12J1S5DD07X9DD64G1",
+    "sku": "5M144M8S5DD07X9DD64F2S8DD07X12DD64J1S5DD07X9DD64G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8167,
@@ -7695,8 +7695,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "window": {
@@ -7716,8 +7716,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "glazing": {
@@ -7734,9 +7734,9 @@ export default {
     "productId": "painting-red-horizon",
     "title": "Maui Sunset from Kihei — Medium print — Natural wood frame",
     "artworkTitle": "Maui Sunset from Kihei",
-    "amount": "82.63",
+    "amount": "81.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD07X9DD64F7S9X12J1S5DD07X9DD64G1",
+    "sku": "5M144M8S5DD07X9DD64F7S8DD07X12DD64J1S5DD07X9DD64G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8167,
@@ -7769,8 +7769,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "window": {
@@ -7790,8 +7790,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "glazing": {
@@ -7846,9 +7846,9 @@ export default {
     "productId": "painting-shoreline-at-dusk",
     "title": "El Zonte at Dusk, El Salvador — Large print — Black frame",
     "artworkTitle": "El Zonte at Dusk, El Salvador",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD22X4F1S10X8J1S6DD22X4G1",
+    "sku": "5M144M8S6DD22X4F1S10DD22X8J1S6DD22X4G1",
     "scale": 1,
     "imageSize": {
       "width": 5.9667,
@@ -7881,7 +7881,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 10.22,
         "height": 8,
         "unit": "in"
       },
@@ -7902,7 +7902,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 10.22,
         "height": 8,
         "unit": "in"
       },
@@ -7920,9 +7920,9 @@ export default {
     "productId": "painting-shoreline-at-dusk",
     "title": "El Zonte at Dusk, El Salvador — Large print — White frame",
     "artworkTitle": "El Zonte at Dusk, El Salvador",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD22X4F2S10X8J1S6DD22X4G1",
+    "sku": "5M144M8S6DD22X4F2S10DD22X8J1S6DD22X4G1",
     "scale": 1,
     "imageSize": {
       "width": 5.9667,
@@ -7955,7 +7955,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 10.22,
         "height": 8,
         "unit": "in"
       },
@@ -7976,7 +7976,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 10.22,
         "height": 8,
         "unit": "in"
       },
@@ -7996,7 +7996,7 @@ export default {
     "artworkTitle": "El Zonte at Dusk, El Salvador",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD22X4F7S10X8J1S6DD22X4G1",
+    "sku": "5M144M8S6DD22X4F7S10DD22X8J1S6DD22X4G1",
     "scale": 1,
     "imageSize": {
       "width": 5.9667,
@@ -8029,7 +8029,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 10.22,
         "height": 8,
         "unit": "in"
       },
@@ -8050,7 +8050,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 10.22,
         "height": 8,
         "unit": "in"
       },
@@ -8106,9 +8106,9 @@ export default {
     "productId": "painting-sunflower-woman",
     "title": "Mother and Child on the Ukrainian Plain — Large print — Black frame",
     "artworkTitle": "Mother and Child on the Ukrainian Plain",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD3X6DD27F1S14X11J1S11DD3X6DD27G1",
+    "sku": "5M144M8S11DD3X6DD27F1S14DD3X9DD27J1S11DD3X6DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 11.0367,
@@ -8141,8 +8141,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "window": {
@@ -8162,8 +8162,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "glazing": {
@@ -8180,9 +8180,9 @@ export default {
     "productId": "painting-sunflower-woman",
     "title": "Mother and Child on the Ukrainian Plain — Large print — White frame",
     "artworkTitle": "Mother and Child on the Ukrainian Plain",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD3X6DD27F2S14X11J1S11DD3X6DD27G1",
+    "sku": "5M144M8S11DD3X6DD27F2S14DD3X9DD27J1S11DD3X6DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 11.0367,
@@ -8215,8 +8215,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "window": {
@@ -8236,8 +8236,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "glazing": {
@@ -8254,9 +8254,9 @@ export default {
     "productId": "painting-sunflower-woman",
     "title": "Mother and Child on the Ukrainian Plain — Large print — Natural wood frame",
     "artworkTitle": "Mother and Child on the Ukrainian Plain",
-    "amount": "92.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD3X6DD27F7S14X11J1S11DD3X6DD27G1",
+    "sku": "5M144M8S11DD3X6DD27F7S14DD3X9DD27J1S11DD3X6DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 11.0367,
@@ -8289,8 +8289,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "window": {
@@ -8310,8 +8310,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "glazing": {
@@ -8366,9 +8366,9 @@ export default {
     "productId": "painting-sunflower-woman",
     "title": "Mother and Child on the Ukrainian Plain — Medium print — Black frame",
     "artworkTitle": "Mother and Child on the Ukrainian Plain",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD54X4DD77F1S12X9J1S8DD54X4DD77G1",
+    "sku": "5M144M8S8DD54X4DD77F1S11DD78X8DD01J1S8DD54X4DD77G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.2867,
@@ -8401,8 +8401,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -8422,8 +8422,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -8440,9 +8440,9 @@ export default {
     "productId": "painting-sunflower-woman",
     "title": "Mother and Child on the Ukrainian Plain — Medium print — White frame",
     "artworkTitle": "Mother and Child on the Ukrainian Plain",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD54X4DD77F2S12X9J1S8DD54X4DD77G1",
+    "sku": "5M144M8S8DD54X4DD77F2S11DD78X8DD01J1S8DD54X4DD77G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.2867,
@@ -8475,8 +8475,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -8496,8 +8496,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -8514,9 +8514,9 @@ export default {
     "productId": "painting-sunflower-woman",
     "title": "Mother and Child on the Ukrainian Plain — Medium print — Natural wood frame",
     "artworkTitle": "Mother and Child on the Ukrainian Plain",
-    "amount": "77.63",
+    "amount": "75.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD54X4DD77F7S12X9J1S8DD54X4DD77G1",
+    "sku": "5M144M8S8DD54X4DD77F7S11DD78X8DD01J1S8DD54X4DD77G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.2867,
@@ -8549,8 +8549,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -8570,8 +8570,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -8628,7 +8628,7 @@ export default {
     "artworkTitle": "Sunset on Sucia Island in Puget Sound",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD4X4F1S10X8J1S5DD4X4G1",
+    "sku": "5M144M8S5DD4X4F1S9DD4X8J1S5DD4X4G1",
     "scale": 1,
     "imageSize": {
       "width": 5.1467,
@@ -8661,7 +8661,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.4,
         "height": 8,
         "unit": "in"
       },
@@ -8682,7 +8682,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.4,
         "height": 8,
         "unit": "in"
       },
@@ -8702,7 +8702,7 @@ export default {
     "artworkTitle": "Sunset on Sucia Island in Puget Sound",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD4X4F2S10X8J1S5DD4X4G1",
+    "sku": "5M144M8S5DD4X4F2S9DD4X8J1S5DD4X4G1",
     "scale": 1,
     "imageSize": {
       "width": 5.1467,
@@ -8735,7 +8735,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.4,
         "height": 8,
         "unit": "in"
       },
@@ -8756,7 +8756,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.4,
         "height": 8,
         "unit": "in"
       },
@@ -8774,9 +8774,9 @@ export default {
     "productId": "painting-sunset-silhouette",
     "title": "Sunset on Sucia Island in Puget Sound — Large print — Natural wood frame",
     "artworkTitle": "Sunset on Sucia Island in Puget Sound",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD4X4F7S10X8J1S5DD4X4G1",
+    "sku": "5M144M8S5DD4X4F7S9DD4X8J1S5DD4X4G1",
     "scale": 1,
     "imageSize": {
       "width": 5.1467,
@@ -8809,7 +8809,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.4,
         "height": 8,
         "unit": "in"
       },
@@ -8830,7 +8830,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.4,
         "height": 8,
         "unit": "in"
       },
@@ -8886,9 +8886,9 @@ export default {
     "productId": "paul-murphy-painting-1",
     "title": "Tipi — Large print — Black frame",
     "artworkTitle": "Tipi",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD69X12DD25F1S12X15J1S9DD69X12DD25G1",
+    "sku": "5M144M8S9DD69X12DD25F1S12DD69X15DD25J1S9DD69X12DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 9.4367,
@@ -8921,8 +8921,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.69,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
@@ -8942,8 +8942,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.69,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -8960,9 +8960,9 @@ export default {
     "productId": "paul-murphy-painting-1",
     "title": "Tipi — Large print — White frame",
     "artworkTitle": "Tipi",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD69X12DD25F2S12X15J1S9DD69X12DD25G1",
+    "sku": "5M144M8S9DD69X12DD25F2S12DD69X15DD25J1S9DD69X12DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 9.4367,
@@ -8995,8 +8995,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.69,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
@@ -9016,8 +9016,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.69,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -9034,9 +9034,9 @@ export default {
     "productId": "paul-murphy-painting-1",
     "title": "Tipi — Large print — Natural wood frame",
     "artworkTitle": "Tipi",
-    "amount": "113.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD69X12DD25F7S12X15J1S9DD69X12DD25G1",
+    "sku": "5M144M8S9DD69X12DD25F7S12DD69X15DD25J1S9DD69X12DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 9.4367,
@@ -9069,8 +9069,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.69,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
@@ -9090,8 +9090,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.69,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -9146,9 +9146,9 @@ export default {
     "productId": "paul-murphy-painting-1",
     "title": "Tipi — Medium print — Black frame",
     "artworkTitle": "Tipi",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD33X9DD25F1S11X14J1S7DD33X9DD25G1",
+    "sku": "5M144M8S7DD33X9DD25F1S10DD33X12DD25J1S7DD33X9DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.0767,
@@ -9181,8 +9181,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.33,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -9202,8 +9202,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.33,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -9220,9 +9220,9 @@ export default {
     "productId": "paul-murphy-painting-1",
     "title": "Tipi — Medium print — White frame",
     "artworkTitle": "Tipi",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD33X9DD25F2S11X14J1S7DD33X9DD25G1",
+    "sku": "5M144M8S7DD33X9DD25F2S10DD33X12DD25J1S7DD33X9DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.0767,
@@ -9255,8 +9255,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.33,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -9276,8 +9276,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.33,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -9294,9 +9294,9 @@ export default {
     "productId": "paul-murphy-painting-1",
     "title": "Tipi — Medium print — Natural wood frame",
     "artworkTitle": "Tipi",
-    "amount": "87.00",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD33X9DD25F7S11X14J1S7DD33X9DD25G1",
+    "sku": "5M144M8S7DD33X9DD25F7S10DD33X12DD25J1S7DD33X9DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.0767,
@@ -9329,8 +9329,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.33,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -9350,8 +9350,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.33,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -9408,7 +9408,7 @@ export default {
     "artworkTitle": "Tipi",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD97X6DD25F1S8X10J1S4DD97X6DD25G1",
+    "sku": "5M144M8S4DD97X6DD25F1S8DD01X9DD29J1S4DD97X6DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.7167,
@@ -9441,8 +9441,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.29,
         "unit": "in"
       },
       "window": {
@@ -9462,8 +9462,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.29,
         "unit": "in"
       },
       "glazing": {
@@ -9482,7 +9482,7 @@ export default {
     "artworkTitle": "Tipi",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD97X6DD25F2S8X10J1S4DD97X6DD25G1",
+    "sku": "5M144M8S4DD97X6DD25F2S8DD01X9DD29J1S4DD97X6DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.7167,
@@ -9515,8 +9515,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.29,
         "unit": "in"
       },
       "window": {
@@ -9536,8 +9536,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.29,
         "unit": "in"
       },
       "glazing": {
@@ -9554,9 +9554,9 @@ export default {
     "productId": "paul-murphy-painting-1",
     "title": "Tipi — Small print — Natural wood frame",
     "artworkTitle": "Tipi",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD97X6DD25F7S8X10J1S4DD97X6DD25G1",
+    "sku": "5M144M8S4DD97X6DD25F7S8DD01X9DD29J1S4DD97X6DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.7167,
@@ -9589,8 +9589,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.29,
         "unit": "in"
       },
       "window": {
@@ -9610,8 +9610,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.29,
         "unit": "in"
       },
       "glazing": {
@@ -9666,9 +9666,9 @@ export default {
     "productId": "paul-murphy-painting-11",
     "title": "Puerto Rico Beach — Large print — Black frame",
     "artworkTitle": "Puerto Rico Beach",
-    "amount": "129.00",
+    "amount": "110.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD58X11DD9F1S16X20J1S10DD58X11DD9G1",
+    "sku": "5M144M8S10DD58X11DD9F1S13DD58X14DD9J1S10DD58X11DD9G1",
     "scale": 1,
     "imageSize": {
       "width": 10.3267,
@@ -9701,8 +9701,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.58,
+        "height": 14.9,
         "unit": "in"
       },
       "window": {
@@ -9722,8 +9722,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.58,
+        "height": 14.9,
         "unit": "in"
       },
       "glazing": {
@@ -9740,9 +9740,9 @@ export default {
     "productId": "paul-murphy-painting-11",
     "title": "Puerto Rico Beach — Large print — White frame",
     "artworkTitle": "Puerto Rico Beach",
-    "amount": "129.00",
+    "amount": "110.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD58X11DD9F2S16X20J1S10DD58X11DD9G1",
+    "sku": "5M144M8S10DD58X11DD9F2S13DD58X14DD9J1S10DD58X11DD9G1",
     "scale": 1,
     "imageSize": {
       "width": 10.3267,
@@ -9775,8 +9775,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.58,
+        "height": 14.9,
         "unit": "in"
       },
       "window": {
@@ -9796,8 +9796,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.58,
+        "height": 14.9,
         "unit": "in"
       },
       "glazing": {
@@ -9814,9 +9814,9 @@ export default {
     "productId": "paul-murphy-painting-11",
     "title": "Puerto Rico Beach — Large print — Natural wood frame",
     "artworkTitle": "Puerto Rico Beach",
-    "amount": "144.00",
+    "amount": "122.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD58X11DD9F7S16X20J1S10DD58X11DD9G1",
+    "sku": "5M144M8S10DD58X11DD9F7S13DD58X14DD9J1S10DD58X11DD9G1",
     "scale": 1,
     "imageSize": {
       "width": 10.3267,
@@ -9849,8 +9849,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.58,
+        "height": 14.9,
         "unit": "in"
       },
       "window": {
@@ -9870,8 +9870,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.58,
+        "height": 14.9,
         "unit": "in"
       },
       "glazing": {
@@ -9926,9 +9926,9 @@ export default {
     "productId": "paul-murphy-painting-11",
     "title": "Puerto Rico Beach — Medium print — Black frame",
     "artworkTitle": "Puerto Rico Beach",
-    "amount": "76.00",
+    "amount": "72.00",
     "currency": "USD",
-    "sku": "5M144M8S8X8DD99F1S11X14J1S8X8DD99G1",
+    "sku": "5M144M8S8X8DD99F1S11X11DD99J1S8X8DD99G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.7467,
@@ -9962,7 +9962,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 11,
-        "height": 14,
+        "height": 11.99,
         "unit": "in"
       },
       "window": {
@@ -9983,7 +9983,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 11,
-        "height": 14,
+        "height": 11.99,
         "unit": "in"
       },
       "glazing": {
@@ -10000,9 +10000,9 @@ export default {
     "productId": "paul-murphy-painting-11",
     "title": "Puerto Rico Beach — Medium print — White frame",
     "artworkTitle": "Puerto Rico Beach",
-    "amount": "76.00",
+    "amount": "72.00",
     "currency": "USD",
-    "sku": "5M144M8S8X8DD99F2S11X14J1S8X8DD99G1",
+    "sku": "5M144M8S8X8DD99F2S11X11DD99J1S8X8DD99G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.7467,
@@ -10036,7 +10036,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 11,
-        "height": 14,
+        "height": 11.99,
         "unit": "in"
       },
       "window": {
@@ -10057,7 +10057,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 11,
-        "height": 14,
+        "height": 11.99,
         "unit": "in"
       },
       "glazing": {
@@ -10074,9 +10074,9 @@ export default {
     "productId": "paul-murphy-painting-11",
     "title": "Puerto Rico Beach — Medium print — Natural wood frame",
     "artworkTitle": "Puerto Rico Beach",
-    "amount": "87.00",
+    "amount": "82.00",
     "currency": "USD",
-    "sku": "5M144M8S8X8DD99F7S11X14J1S8X8DD99G1",
+    "sku": "5M144M8S8X8DD99F7S11X11DD99J1S8X8DD99G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.7467,
@@ -10110,7 +10110,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 11,
-        "height": 14,
+        "height": 11.99,
         "unit": "in"
       },
       "window": {
@@ -10131,7 +10131,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 11,
-        "height": 14,
+        "height": 11.99,
         "unit": "in"
       },
       "glazing": {
@@ -10188,7 +10188,7 @@ export default {
     "artworkTitle": "Puerto Rico Beach",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD41X6DD07F1S8X10J1S5DD41X6DD07G1",
+    "sku": "5M144M8S5DD41X6DD07F1S8DD41X9DD07J1S5DD41X6DD07G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.1567,
@@ -10221,8 +10221,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.41,
+        "height": 9.07,
         "unit": "in"
       },
       "window": {
@@ -10242,8 +10242,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.41,
+        "height": 9.07,
         "unit": "in"
       },
       "glazing": {
@@ -10262,7 +10262,7 @@ export default {
     "artworkTitle": "Puerto Rico Beach",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD41X6DD07F2S8X10J1S5DD41X6DD07G1",
+    "sku": "5M144M8S5DD41X6DD07F2S8DD41X9DD07J1S5DD41X6DD07G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.1567,
@@ -10295,8 +10295,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.41,
+        "height": 9.07,
         "unit": "in"
       },
       "window": {
@@ -10316,8 +10316,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.41,
+        "height": 9.07,
         "unit": "in"
       },
       "glazing": {
@@ -10334,9 +10334,9 @@ export default {
     "productId": "paul-murphy-painting-11",
     "title": "Puerto Rico Beach — Small print — Natural wood frame",
     "artworkTitle": "Puerto Rico Beach",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD41X6DD07F7S8X10J1S5DD41X6DD07G1",
+    "sku": "5M144M8S5DD41X6DD07F7S8DD41X9DD07J1S5DD41X6DD07G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.1567,
@@ -10369,8 +10369,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.41,
+        "height": 9.07,
         "unit": "in"
       },
       "window": {
@@ -10390,8 +10390,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.41,
+        "height": 9.07,
         "unit": "in"
       },
       "glazing": {
@@ -10446,9 +10446,9 @@ export default {
     "productId": "paul-murphy-painting-14",
     "title": "Eagle from photo 1 — Large print — Black frame",
     "artworkTitle": "Eagle from photo 1",
-    "amount": "101.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X9DD27F1S15X12J1S12DD25X9DD27G1",
+    "sku": "5M144M8S12DD25X9DD27F1S15DD25X12DD27J1S12DD25X9DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 11.9933,
@@ -10481,8 +10481,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.27,
         "unit": "in"
       },
       "window": {
@@ -10502,8 +10502,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.27,
         "unit": "in"
       },
       "glazing": {
@@ -10520,9 +10520,9 @@ export default {
     "productId": "paul-murphy-painting-14",
     "title": "Eagle from photo 1 — Large print — White frame",
     "artworkTitle": "Eagle from photo 1",
-    "amount": "101.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X9DD27F2S15X12J1S12DD25X9DD27G1",
+    "sku": "5M144M8S12DD25X9DD27F2S15DD25X12DD27J1S12DD25X9DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 11.9933,
@@ -10555,8 +10555,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.27,
         "unit": "in"
       },
       "window": {
@@ -10576,8 +10576,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.27,
         "unit": "in"
       },
       "glazing": {
@@ -10594,9 +10594,9 @@ export default {
     "productId": "paul-murphy-painting-14",
     "title": "Eagle from photo 1 — Large print — Natural wood frame",
     "artworkTitle": "Eagle from photo 1",
-    "amount": "113.00",
+    "amount": "114.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X9DD27F7S15X12J1S12DD25X9DD27G1",
+    "sku": "5M144M8S12DD25X9DD27F7S15DD25X12DD27J1S12DD25X9DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 11.9933,
@@ -10629,8 +10629,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.27,
         "unit": "in"
       },
       "window": {
@@ -10650,8 +10650,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.27,
         "unit": "in"
       },
       "glazing": {
@@ -10706,9 +10706,9 @@ export default {
     "productId": "paul-murphy-painting-14",
     "title": "Eagle from photo 1 — Medium print — Black frame",
     "artworkTitle": "Eagle from photo 1",
-    "amount": "76.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X7DD01F1S14X11J1S9DD25X7DD01G1",
+    "sku": "5M144M8S9DD25X7DD01F1S12DD25X10DD01J1S9DD25X7DD01G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9867,
@@ -10741,8 +10741,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.01,
         "unit": "in"
       },
       "window": {
@@ -10762,8 +10762,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.01,
         "unit": "in"
       },
       "glazing": {
@@ -10780,9 +10780,9 @@ export default {
     "productId": "paul-murphy-painting-14",
     "title": "Eagle from photo 1 — Medium print — White frame",
     "artworkTitle": "Eagle from photo 1",
-    "amount": "76.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X7DD01F2S14X11J1S9DD25X7DD01G1",
+    "sku": "5M144M8S9DD25X7DD01F2S12DD25X10DD01J1S9DD25X7DD01G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9867,
@@ -10815,8 +10815,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.01,
         "unit": "in"
       },
       "window": {
@@ -10836,8 +10836,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.01,
         "unit": "in"
       },
       "glazing": {
@@ -10854,9 +10854,9 @@ export default {
     "productId": "paul-murphy-painting-14",
     "title": "Eagle from photo 1 — Medium print — Natural wood frame",
     "artworkTitle": "Eagle from photo 1",
-    "amount": "87.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X7DD01F7S14X11J1S9DD25X7DD01G1",
+    "sku": "5M144M8S9DD25X7DD01F7S12DD25X10DD01J1S9DD25X7DD01G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9867,
@@ -10889,8 +10889,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.01,
         "unit": "in"
       },
       "window": {
@@ -10910,8 +10910,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.01,
         "unit": "in"
       },
       "glazing": {
@@ -10968,7 +10968,7 @@ export default {
     "artworkTitle": "Eagle from photo 1",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X4DD76F1S10X8J1S6DD25X4DD76G1",
+    "sku": "5M144M8S6DD25X4DD76F1S9DD49X8J1S6DD25X4DD76G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9933,
@@ -11001,7 +11001,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.49,
         "height": 8,
         "unit": "in"
       },
@@ -11022,7 +11022,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.49,
         "height": 8,
         "unit": "in"
       },
@@ -11042,7 +11042,7 @@ export default {
     "artworkTitle": "Eagle from photo 1",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X4DD76F2S10X8J1S6DD25X4DD76G1",
+    "sku": "5M144M8S6DD25X4DD76F2S9DD49X8J1S6DD25X4DD76G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9933,
@@ -11075,7 +11075,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.49,
         "height": 8,
         "unit": "in"
       },
@@ -11096,7 +11096,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.49,
         "height": 8,
         "unit": "in"
       },
@@ -11114,9 +11114,9 @@ export default {
     "productId": "paul-murphy-painting-14",
     "title": "Eagle from photo 1 — Small print — Natural wood frame",
     "artworkTitle": "Eagle from photo 1",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X4DD76F7S10X8J1S6DD25X4DD76G1",
+    "sku": "5M144M8S6DD25X4DD76F7S9DD49X8J1S6DD25X4DD76G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9933,
@@ -11149,7 +11149,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.49,
         "height": 8,
         "unit": "in"
       },
@@ -11170,7 +11170,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.49,
         "height": 8,
         "unit": "in"
       },
@@ -11228,7 +11228,7 @@ export default {
     "artworkTitle": "Eagle from photo 2",
     "amount": "101.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD98X12DD25F1S12X15J1S8DD98X12DD25G1",
+    "sku": "5M144M8S8DD98X12DD25F1S11DD98X15DD25J1S8DD98X12DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 8.7267,
@@ -11261,8 +11261,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 11.98,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
@@ -11282,8 +11282,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 11.98,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -11302,7 +11302,7 @@ export default {
     "artworkTitle": "Eagle from photo 2",
     "amount": "101.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD98X12DD25F2S12X15J1S8DD98X12DD25G1",
+    "sku": "5M144M8S8DD98X12DD25F2S11DD98X15DD25J1S8DD98X12DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 8.7267,
@@ -11335,8 +11335,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 11.98,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
@@ -11356,8 +11356,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 11.98,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -11376,7 +11376,7 @@ export default {
     "artworkTitle": "Eagle from photo 2",
     "amount": "113.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD98X12DD25F7S12X15J1S8DD98X12DD25G1",
+    "sku": "5M144M8S8DD98X12DD25F7S11DD98X15DD25J1S8DD98X12DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 8.7267,
@@ -11409,8 +11409,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 11.98,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
@@ -11430,8 +11430,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 11.98,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -11486,9 +11486,9 @@ export default {
     "productId": "paul-murphy-painting-15",
     "title": "Eagle from photo 2 — Medium print — Black frame",
     "artworkTitle": "Eagle from photo 2",
-    "amount": "67.63",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD79X9DD25F1S9X12J1S6DD79X9DD25G1",
+    "sku": "5M144M8S6DD79X9DD25F1S9DD79X12DD25J1S6DD79X9DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.5367,
@@ -11521,8 +11521,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.79,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -11542,8 +11542,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.79,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -11560,9 +11560,9 @@ export default {
     "productId": "paul-murphy-painting-15",
     "title": "Eagle from photo 2 — Medium print — White frame",
     "artworkTitle": "Eagle from photo 2",
-    "amount": "67.63",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD79X9DD25F2S9X12J1S6DD79X9DD25G1",
+    "sku": "5M144M8S6DD79X9DD25F2S9DD79X12DD25J1S6DD79X9DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.5367,
@@ -11595,8 +11595,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.79,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -11616,8 +11616,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.79,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -11634,9 +11634,9 @@ export default {
     "productId": "paul-murphy-painting-15",
     "title": "Eagle from photo 2 — Medium print — Natural wood frame",
     "artworkTitle": "Eagle from photo 2",
-    "amount": "77.63",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD79X9DD25F7S9X12J1S6DD79X9DD25G1",
+    "sku": "5M144M8S6DD79X9DD25F7S9DD79X12DD25J1S6DD79X9DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.5367,
@@ -11669,8 +11669,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.79,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -11690,8 +11690,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.79,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -11748,7 +11748,7 @@ export default {
     "artworkTitle": "Eagle from photo 2",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD61X6DD25F1S8X10J1S4DD61X6DD25G1",
+    "sku": "5M144M8S4DD61X6DD25F1S8DD01X9DD65J1S4DD61X6DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.3567,
@@ -11781,8 +11781,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.65,
         "unit": "in"
       },
       "window": {
@@ -11802,8 +11802,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.65,
         "unit": "in"
       },
       "glazing": {
@@ -11822,7 +11822,7 @@ export default {
     "artworkTitle": "Eagle from photo 2",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD61X6DD25F2S8X10J1S4DD61X6DD25G1",
+    "sku": "5M144M8S4DD61X6DD25F2S8DD01X9DD65J1S4DD61X6DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.3567,
@@ -11855,8 +11855,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.65,
         "unit": "in"
       },
       "window": {
@@ -11876,8 +11876,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.65,
         "unit": "in"
       },
       "glazing": {
@@ -11894,9 +11894,9 @@ export default {
     "productId": "paul-murphy-painting-15",
     "title": "Eagle from photo 2 — Small print — Natural wood frame",
     "artworkTitle": "Eagle from photo 2",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD61X6DD25F7S8X10J1S4DD61X6DD25G1",
+    "sku": "5M144M8S4DD61X6DD25F7S8DD01X9DD65J1S4DD61X6DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.3567,
@@ -11929,8 +11929,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.65,
         "unit": "in"
       },
       "window": {
@@ -11950,8 +11950,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.65,
         "unit": "in"
       },
       "glazing": {
@@ -12006,9 +12006,9 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constilation — Large print — Black frame",
     "artworkTitle": "Leo/Bear Constilation",
-    "amount": "169.00",
+    "amount": "172.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD28X17DD09F1S16X20J1S13DD28X17DD09G1",
+    "sku": "5M144M8S13DD28X17DD09F1S16DD28X20DD09J1S13DD28X17DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 13.0267,
@@ -12041,8 +12041,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 16.28,
+        "height": 20.09,
         "unit": "in"
       },
       "window": {
@@ -12062,8 +12062,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 16.28,
+        "height": 20.09,
         "unit": "in"
       },
       "glazing": {
@@ -12080,9 +12080,9 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constilation — Large print — White frame",
     "artworkTitle": "Leo/Bear Constilation",
-    "amount": "169.00",
+    "amount": "172.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD28X17DD09F2S16X20J1S13DD28X17DD09G1",
+    "sku": "5M144M8S13DD28X17DD09F2S16DD28X20DD09J1S13DD28X17DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 13.0267,
@@ -12115,8 +12115,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 16.28,
+        "height": 20.09,
         "unit": "in"
       },
       "window": {
@@ -12136,8 +12136,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 16.28,
+        "height": 20.09,
         "unit": "in"
       },
       "glazing": {
@@ -12154,9 +12154,9 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constilation — Large print — Natural wood frame",
     "artworkTitle": "Leo/Bear Constilation",
-    "amount": "184.00",
+    "amount": "187.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD28X17DD09F7S16X20J1S13DD28X17DD09G1",
+    "sku": "5M144M8S13DD28X17DD09F7S16DD28X20DD09J1S13DD28X17DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 13.0267,
@@ -12189,8 +12189,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 16.28,
+        "height": 20.09,
         "unit": "in"
       },
       "window": {
@@ -12210,8 +12210,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 16.28,
+        "height": 20.09,
         "unit": "in"
       },
       "glazing": {
@@ -12266,9 +12266,9 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constilation — Medium print — Black frame",
     "artworkTitle": "Leo/Bear Constilation",
-    "amount": "129.00",
+    "amount": "110.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD02X12DD88F1S16X20J1S10DD02X12DD88G1",
+    "sku": "5M144M8S10DD02X12DD88F1S13DD02X15DD88J1S10DD02X12DD88G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.7667,
@@ -12301,8 +12301,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.02,
+        "height": 15.88,
         "unit": "in"
       },
       "window": {
@@ -12322,8 +12322,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.02,
+        "height": 15.88,
         "unit": "in"
       },
       "glazing": {
@@ -12340,9 +12340,9 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constilation — Medium print — White frame",
     "artworkTitle": "Leo/Bear Constilation",
-    "amount": "129.00",
+    "amount": "110.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD02X12DD88F2S16X20J1S10DD02X12DD88G1",
+    "sku": "5M144M8S10DD02X12DD88F2S13DD02X15DD88J1S10DD02X12DD88G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.7667,
@@ -12375,8 +12375,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.02,
+        "height": 15.88,
         "unit": "in"
       },
       "window": {
@@ -12396,8 +12396,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.02,
+        "height": 15.88,
         "unit": "in"
       },
       "glazing": {
@@ -12414,9 +12414,9 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constilation — Medium print — Natural wood frame",
     "artworkTitle": "Leo/Bear Constilation",
-    "amount": "144.00",
+    "amount": "123.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD02X12DD88F7S16X20J1S10DD02X12DD88G1",
+    "sku": "5M144M8S10DD02X12DD88F7S13DD02X15DD88J1S10DD02X12DD88G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.7667,
@@ -12449,8 +12449,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.02,
+        "height": 15.88,
         "unit": "in"
       },
       "window": {
@@ -12470,8 +12470,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.02,
+        "height": 15.88,
         "unit": "in"
       },
       "glazing": {
@@ -12526,9 +12526,9 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constilation — Small print — Black frame",
     "artworkTitle": "Leo/Bear Constilation",
-    "amount": "67.63",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD76X8DD67F1S9X12J1S6DD76X8DD67G1",
+    "sku": "5M144M8S6DD76X8DD67F1S9DD76X11DD67J1S6DD76X8DD67G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.5067,
@@ -12561,8 +12561,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.76,
+        "height": 11.67,
         "unit": "in"
       },
       "window": {
@@ -12582,8 +12582,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.76,
+        "height": 11.67,
         "unit": "in"
       },
       "glazing": {
@@ -12600,9 +12600,9 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constilation — Small print — White frame",
     "artworkTitle": "Leo/Bear Constilation",
-    "amount": "67.63",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD76X8DD67F2S9X12J1S6DD76X8DD67G1",
+    "sku": "5M144M8S6DD76X8DD67F2S9DD76X11DD67J1S6DD76X8DD67G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.5067,
@@ -12635,8 +12635,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.76,
+        "height": 11.67,
         "unit": "in"
       },
       "window": {
@@ -12656,8 +12656,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.76,
+        "height": 11.67,
         "unit": "in"
       },
       "glazing": {
@@ -12674,9 +12674,9 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constilation — Small print — Natural wood frame",
     "artworkTitle": "Leo/Bear Constilation",
-    "amount": "77.63",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD76X8DD67F7S9X12J1S6DD76X8DD67G1",
+    "sku": "5M144M8S6DD76X8DD67F7S9DD76X11DD67J1S6DD76X8DD67G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.5067,
@@ -12709,8 +12709,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.76,
+        "height": 11.67,
         "unit": "in"
       },
       "window": {
@@ -12730,8 +12730,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.76,
+        "height": 11.67,
         "unit": "in"
       },
       "glazing": {
@@ -12788,7 +12788,7 @@ export default {
     "artworkTitle": "My Ego",
     "amount": "101.00",
     "currency": "USD",
-    "sku": "5M144M8S9X12DD25F1S12X15J1S9X12DD25G1",
+    "sku": "5M144M8S9X12DD25F1S12X15DD25J1S9X12DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 8.7467,
@@ -12822,7 +12822,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 12,
-        "height": 15,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
@@ -12843,7 +12843,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 12,
-        "height": 15,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -12862,7 +12862,7 @@ export default {
     "artworkTitle": "My Ego",
     "amount": "101.00",
     "currency": "USD",
-    "sku": "5M144M8S9X12DD25F2S12X15J1S9X12DD25G1",
+    "sku": "5M144M8S9X12DD25F2S12X15DD25J1S9X12DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 8.7467,
@@ -12896,7 +12896,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 12,
-        "height": 15,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
@@ -12917,7 +12917,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 12,
-        "height": 15,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -12936,7 +12936,7 @@ export default {
     "artworkTitle": "My Ego",
     "amount": "113.00",
     "currency": "USD",
-    "sku": "5M144M8S9X12DD25F7S12X15J1S9X12DD25G1",
+    "sku": "5M144M8S9X12DD25F7S12X15DD25J1S9X12DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 8.7467,
@@ -12970,7 +12970,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 12,
-        "height": 15,
+        "height": 15.25,
         "unit": "in"
       },
       "window": {
@@ -12991,7 +12991,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 12,
-        "height": 15,
+        "height": 15.25,
         "unit": "in"
       },
       "glazing": {
@@ -13046,9 +13046,9 @@ export default {
     "productId": "paul-murphy-painting-23",
     "title": "My Ego — Medium print — Black frame",
     "artworkTitle": "My Ego",
-    "amount": "67.63",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD81X9DD25F1S9X12J1S6DD81X9DD25G1",
+    "sku": "5M144M8S6DD81X9DD25F1S9DD81X12DD25J1S6DD81X9DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.5567,
@@ -13081,8 +13081,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.81,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -13102,8 +13102,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.81,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -13120,9 +13120,9 @@ export default {
     "productId": "paul-murphy-painting-23",
     "title": "My Ego — Medium print — White frame",
     "artworkTitle": "My Ego",
-    "amount": "67.63",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD81X9DD25F2S9X12J1S6DD81X9DD25G1",
+    "sku": "5M144M8S6DD81X9DD25F2S9DD81X12DD25J1S6DD81X9DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.5567,
@@ -13155,8 +13155,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.81,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -13176,8 +13176,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.81,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -13194,9 +13194,9 @@ export default {
     "productId": "paul-murphy-painting-23",
     "title": "My Ego — Medium print — Natural wood frame",
     "artworkTitle": "My Ego",
-    "amount": "77.63",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD81X9DD25F7S9X12J1S6DD81X9DD25G1",
+    "sku": "5M144M8S6DD81X9DD25F7S9DD81X12DD25J1S6DD81X9DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.5567,
@@ -13229,8 +13229,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.81,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -13250,8 +13250,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.81,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -13308,7 +13308,7 @@ export default {
     "artworkTitle": "My Ego",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD62X6DD25F1S8X10J1S4DD62X6DD25G1",
+    "sku": "5M144M8S4DD62X6DD25F1S8X9DD63J1S4DD62X6DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.3667,
@@ -13342,7 +13342,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 9.63,
         "unit": "in"
       },
       "window": {
@@ -13363,7 +13363,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 9.63,
         "unit": "in"
       },
       "glazing": {
@@ -13382,7 +13382,7 @@ export default {
     "artworkTitle": "My Ego",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD62X6DD25F2S8X10J1S4DD62X6DD25G1",
+    "sku": "5M144M8S4DD62X6DD25F2S8X9DD63J1S4DD62X6DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.3667,
@@ -13416,7 +13416,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 9.63,
         "unit": "in"
       },
       "window": {
@@ -13437,7 +13437,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 9.63,
         "unit": "in"
       },
       "glazing": {
@@ -13454,9 +13454,9 @@ export default {
     "productId": "paul-murphy-painting-23",
     "title": "My Ego — Small print — Natural wood frame",
     "artworkTitle": "My Ego",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD62X6DD25F7S8X10J1S4DD62X6DD25G1",
+    "sku": "5M144M8S4DD62X6DD25F7S8X9DD63J1S4DD62X6DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.3667,
@@ -13490,7 +13490,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 9.63,
         "unit": "in"
       },
       "window": {
@@ -13511,7 +13511,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 9.63,
         "unit": "in"
       },
       "glazing": {
@@ -13566,9 +13566,9 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Egland AFB — Large print — Black frame",
     "artworkTitle": "Beach Egland AFB",
-    "amount": "139.00",
+    "amount": "127.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD21X17F1S16X20J1S9DD21X17G1",
+    "sku": "5M144M8S9DD21X17F1S12DD21X20J1S9DD21X17G1",
     "scale": 1,
     "imageSize": {
       "width": 8.9567,
@@ -13601,7 +13601,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
+        "width": 12.21,
         "height": 20,
         "unit": "in"
       },
@@ -13622,7 +13622,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
+        "width": 12.21,
         "height": 20,
         "unit": "in"
       },
@@ -13640,9 +13640,9 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Egland AFB — Large print — White frame",
     "artworkTitle": "Beach Egland AFB",
-    "amount": "139.00",
+    "amount": "127.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD21X17F2S16X20J1S9DD21X17G1",
+    "sku": "5M144M8S9DD21X17F2S12DD21X20J1S9DD21X17G1",
     "scale": 1,
     "imageSize": {
       "width": 8.9567,
@@ -13675,7 +13675,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
+        "width": 12.21,
         "height": 20,
         "unit": "in"
       },
@@ -13696,7 +13696,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
+        "width": 12.21,
         "height": 20,
         "unit": "in"
       },
@@ -13714,9 +13714,9 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Egland AFB — Large print — Natural wood frame",
     "artworkTitle": "Beach Egland AFB",
-    "amount": "154.00",
+    "amount": "141.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD21X17F7S16X20J1S9DD21X17G1",
+    "sku": "5M144M8S9DD21X17F7S12DD21X20J1S9DD21X17G1",
     "scale": 1,
     "imageSize": {
       "width": 8.9567,
@@ -13749,7 +13749,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
+        "width": 12.21,
         "height": 20,
         "unit": "in"
       },
@@ -13770,7 +13770,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
+        "width": 12.21,
         "height": 20,
         "unit": "in"
       },
@@ -13826,9 +13826,9 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Egland AFB — Medium print — Black frame",
     "artworkTitle": "Beach Egland AFB",
-    "amount": "96.00",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD97X12DD81F1S12X15J1S6DD97X12DD81G1",
+    "sku": "5M144M8S6DD97X12DD81F1S9DD97X15DD81J1S6DD97X12DD81G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.7167,
@@ -13861,8 +13861,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.97,
+        "height": 15.81,
         "unit": "in"
       },
       "window": {
@@ -13882,8 +13882,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.97,
+        "height": 15.81,
         "unit": "in"
       },
       "glazing": {
@@ -13900,9 +13900,9 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Egland AFB — Medium print — White frame",
     "artworkTitle": "Beach Egland AFB",
-    "amount": "96.00",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD97X12DD81F2S12X15J1S6DD97X12DD81G1",
+    "sku": "5M144M8S6DD97X12DD81F2S9DD97X15DD81J1S6DD97X12DD81G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.7167,
@@ -13935,8 +13935,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.97,
+        "height": 15.81,
         "unit": "in"
       },
       "window": {
@@ -13956,8 +13956,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.97,
+        "height": 15.81,
         "unit": "in"
       },
       "glazing": {
@@ -13974,9 +13974,9 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Egland AFB — Medium print — Natural wood frame",
     "artworkTitle": "Beach Egland AFB",
-    "amount": "108.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD97X12DD81F7S12X15J1S6DD97X12DD81G1",
+    "sku": "5M144M8S6DD97X12DD81F7S9DD97X15DD81J1S6DD97X12DD81G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.7167,
@@ -14009,8 +14009,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.97,
+        "height": 15.81,
         "unit": "in"
       },
       "window": {
@@ -14030,8 +14030,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.97,
+        "height": 15.81,
         "unit": "in"
       },
       "glazing": {
@@ -14086,9 +14086,9 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Egland AFB — Small print — Black frame",
     "artworkTitle": "Beach Egland AFB",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD73X8DD62F1S9X12J1S4DD73X8DD62G1",
+    "sku": "5M144M8S4DD73X8DD62F1S8DD01X11DD9J1S4DD73X8DD62G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.4767,
@@ -14121,8 +14121,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 11.9,
         "unit": "in"
       },
       "window": {
@@ -14142,8 +14142,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 11.9,
         "unit": "in"
       },
       "glazing": {
@@ -14160,9 +14160,9 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Egland AFB — Small print — White frame",
     "artworkTitle": "Beach Egland AFB",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD73X8DD62F2S9X12J1S4DD73X8DD62G1",
+    "sku": "5M144M8S4DD73X8DD62F2S8DD01X11DD9J1S4DD73X8DD62G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.4767,
@@ -14195,8 +14195,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 11.9,
         "unit": "in"
       },
       "window": {
@@ -14216,8 +14216,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 11.9,
         "unit": "in"
       },
       "glazing": {
@@ -14234,9 +14234,9 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Egland AFB — Small print — Natural wood frame",
     "artworkTitle": "Beach Egland AFB",
-    "amount": "77.63",
+    "amount": "75.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD73X8DD62F7S9X12J1S4DD73X8DD62G1",
+    "sku": "5M144M8S4DD73X8DD62F7S8DD01X11DD9J1S4DD73X8DD62G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.4767,
@@ -14269,8 +14269,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 11.9,
         "unit": "in"
       },
       "window": {
@@ -14290,8 +14290,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 11.9,
         "unit": "in"
       },
       "glazing": {
@@ -14346,9 +14346,9 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "124.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD26X10DD23F1S20X16J1S11DD26X10DD23G1",
+    "sku": "5M144M8S11DD26X10DD23F1S14DD26X13DD23J1S11DD26X10DD23G1",
     "scale": 1,
     "imageSize": {
       "width": 11.0067,
@@ -14381,8 +14381,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.26,
+        "height": 13.23,
         "unit": "in"
       },
       "window": {
@@ -14402,8 +14402,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.26,
+        "height": 13.23,
         "unit": "in"
       },
       "glazing": {
@@ -14420,9 +14420,9 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "124.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD26X10DD23F2S20X16J1S11DD26X10DD23G1",
+    "sku": "5M144M8S11DD26X10DD23F2S14DD26X13DD23J1S11DD26X10DD23G1",
     "scale": 1,
     "imageSize": {
       "width": 11.0067,
@@ -14455,8 +14455,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.26,
+        "height": 13.23,
         "unit": "in"
       },
       "window": {
@@ -14476,8 +14476,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.26,
+        "height": 13.23,
         "unit": "in"
       },
       "glazing": {
@@ -14494,9 +14494,9 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "139.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD26X10DD23F7S20X16J1S11DD26X10DD23G1",
+    "sku": "5M144M8S11DD26X10DD23F7S14DD26X13DD23J1S11DD26X10DD23G1",
     "scale": 1,
     "imageSize": {
       "width": 11.0067,
@@ -14529,8 +14529,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.26,
+        "height": 13.23,
         "unit": "in"
       },
       "window": {
@@ -14550,8 +14550,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.26,
+        "height": 13.23,
         "unit": "in"
       },
       "glazing": {
@@ -14606,9 +14606,9 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "76.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD5X7DD73F1S14X11J1S8DD5X7DD73G1",
+    "sku": "5M144M8S8DD5X7DD73F1S11DD5X10DD73J1S8DD5X7DD73G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.2467,
@@ -14641,8 +14641,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.5,
+        "height": 10.73,
         "unit": "in"
       },
       "window": {
@@ -14662,8 +14662,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.5,
+        "height": 10.73,
         "unit": "in"
       },
       "glazing": {
@@ -14680,9 +14680,9 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "76.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD5X7DD73F2S14X11J1S8DD5X7DD73G1",
+    "sku": "5M144M8S8DD5X7DD73F2S11DD5X10DD73J1S8DD5X7DD73G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.2467,
@@ -14715,8 +14715,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.5,
+        "height": 10.73,
         "unit": "in"
       },
       "window": {
@@ -14736,8 +14736,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.5,
+        "height": 10.73,
         "unit": "in"
       },
       "glazing": {
@@ -14754,9 +14754,9 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "87.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD5X7DD73F7S14X11J1S8DD5X7DD73G1",
+    "sku": "5M144M8S8DD5X7DD73F7S11DD5X10DD73J1S8DD5X7DD73G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.2467,
@@ -14789,8 +14789,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.5,
+        "height": 10.73,
         "unit": "in"
       },
       "window": {
@@ -14810,8 +14810,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.5,
+        "height": 10.73,
         "unit": "in"
       },
       "glazing": {
@@ -14866,9 +14866,9 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD75X5DD24F1S10X8J1S5DD75X5DD24G1",
+    "sku": "5M144M8S5DD75X5DD24F1S8DD75X8DD24J1S5DD75X5DD24G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.4967,
@@ -14901,8 +14901,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.75,
+        "height": 8.24,
         "unit": "in"
       },
       "window": {
@@ -14922,8 +14922,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.75,
+        "height": 8.24,
         "unit": "in"
       },
       "glazing": {
@@ -14940,9 +14940,9 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD75X5DD24F2S10X8J1S5DD75X5DD24G1",
+    "sku": "5M144M8S5DD75X5DD24F2S8DD75X8DD24J1S5DD75X5DD24G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.4967,
@@ -14975,8 +14975,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.75,
+        "height": 8.24,
         "unit": "in"
       },
       "window": {
@@ -14996,8 +14996,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.75,
+        "height": 8.24,
         "unit": "in"
       },
       "glazing": {
@@ -15014,9 +15014,9 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD75X5DD24F7S10X8J1S5DD75X5DD24G1",
+    "sku": "5M144M8S5DD75X5DD24F7S8DD75X8DD24J1S5DD75X5DD24G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.4967,
@@ -15049,8 +15049,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.75,
+        "height": 8.24,
         "unit": "in"
       },
       "window": {
@@ -15070,8 +15070,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.75,
+        "height": 8.24,
         "unit": "in"
       },
       "glazing": {
@@ -15126,9 +15126,9 @@ export default {
     "productId": "paul-murphy-painting-27",
     "title": "Spiritual Sedona Mountains 2 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 2",
-    "amount": "124.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD14X10DD2F1S20X16J1S12DD14X10DD2G1",
+    "sku": "5M144M8S12DD14X10DD2F1S15DD14X13DD2J1S12DD14X10DD2G1",
     "scale": 1,
     "imageSize": {
       "width": 11.8867,
@@ -15161,8 +15161,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 15.14,
+        "height": 13.2,
         "unit": "in"
       },
       "window": {
@@ -15182,8 +15182,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 15.14,
+        "height": 13.2,
         "unit": "in"
       },
       "glazing": {
@@ -15200,9 +15200,9 @@ export default {
     "productId": "paul-murphy-painting-27",
     "title": "Spiritual Sedona Mountains 2 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 2",
-    "amount": "124.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD14X10DD2F2S20X16J1S12DD14X10DD2G1",
+    "sku": "5M144M8S12DD14X10DD2F2S15DD14X13DD2J1S12DD14X10DD2G1",
     "scale": 1,
     "imageSize": {
       "width": 11.8867,
@@ -15235,8 +15235,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 15.14,
+        "height": 13.2,
         "unit": "in"
       },
       "window": {
@@ -15256,8 +15256,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 15.14,
+        "height": 13.2,
         "unit": "in"
       },
       "glazing": {
@@ -15274,9 +15274,9 @@ export default {
     "productId": "paul-murphy-painting-27",
     "title": "Spiritual Sedona Mountains 2 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 2",
-    "amount": "139.00",
+    "amount": "117.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD14X10DD2F7S20X16J1S12DD14X10DD2G1",
+    "sku": "5M144M8S12DD14X10DD2F7S15DD14X13DD2J1S12DD14X10DD2G1",
     "scale": 1,
     "imageSize": {
       "width": 11.8867,
@@ -15309,8 +15309,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 15.14,
+        "height": 13.2,
         "unit": "in"
       },
       "window": {
@@ -15330,8 +15330,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 15.14,
+        "height": 13.2,
         "unit": "in"
       },
       "glazing": {
@@ -15386,9 +15386,9 @@ export default {
     "productId": "paul-murphy-painting-27",
     "title": "Spiritual Sedona Mountains 2 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 2",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD17X7DD71F1S14X11J1S9DD17X7DD71G1",
+    "sku": "5M144M8S9DD17X7DD71F1S12DD17X10DD71J1S9DD17X7DD71G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9133,
@@ -15421,8 +15421,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.17,
+        "height": 10.71,
         "unit": "in"
       },
       "window": {
@@ -15442,8 +15442,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.17,
+        "height": 10.71,
         "unit": "in"
       },
       "glazing": {
@@ -15460,9 +15460,9 @@ export default {
     "productId": "paul-murphy-painting-27",
     "title": "Spiritual Sedona Mountains 2 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 2",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD17X7DD71F2S14X11J1S9DD17X7DD71G1",
+    "sku": "5M144M8S9DD17X7DD71F2S12DD17X10DD71J1S9DD17X7DD71G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9133,
@@ -15495,8 +15495,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.17,
+        "height": 10.71,
         "unit": "in"
       },
       "window": {
@@ -15516,8 +15516,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.17,
+        "height": 10.71,
         "unit": "in"
       },
       "glazing": {
@@ -15534,9 +15534,9 @@ export default {
     "productId": "paul-murphy-painting-27",
     "title": "Spiritual Sedona Mountains 2 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 2",
-    "amount": "87.00",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD17X7DD71F7S14X11J1S9DD17X7DD71G1",
+    "sku": "5M144M8S9DD17X7DD71F7S12DD17X10DD71J1S9DD17X7DD71G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9133,
@@ -15569,8 +15569,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.17,
+        "height": 10.71,
         "unit": "in"
       },
       "window": {
@@ -15590,8 +15590,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.17,
+        "height": 10.71,
         "unit": "in"
       },
       "glazing": {
@@ -15648,7 +15648,7 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 2",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD19X5DD22F1S10X8J1S6DD19X5DD22G1",
+    "sku": "5M144M8S6DD19X5DD22F1S9DD19X8DD22J1S6DD19X5DD22G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9367,
@@ -15681,8 +15681,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.19,
+        "height": 8.22,
         "unit": "in"
       },
       "window": {
@@ -15702,8 +15702,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.19,
+        "height": 8.22,
         "unit": "in"
       },
       "glazing": {
@@ -15722,7 +15722,7 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 2",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD19X5DD22F2S10X8J1S6DD19X5DD22G1",
+    "sku": "5M144M8S6DD19X5DD22F2S9DD19X8DD22J1S6DD19X5DD22G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9367,
@@ -15755,8 +15755,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.19,
+        "height": 8.22,
         "unit": "in"
       },
       "window": {
@@ -15776,8 +15776,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.19,
+        "height": 8.22,
         "unit": "in"
       },
       "glazing": {
@@ -15794,9 +15794,9 @@ export default {
     "productId": "paul-murphy-painting-27",
     "title": "Spiritual Sedona Mountains 2 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 2",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD19X5DD22F7S10X8J1S6DD19X5DD22G1",
+    "sku": "5M144M8S6DD19X5DD22F7S9DD19X8DD22J1S6DD19X5DD22G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9367,
@@ -15829,8 +15829,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.19,
+        "height": 8.22,
         "unit": "in"
       },
       "window": {
@@ -15850,8 +15850,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.19,
+        "height": 8.22,
         "unit": "in"
       },
       "glazing": {
@@ -15906,9 +15906,9 @@ export default {
     "productId": "paul-murphy-painting-28",
     "title": "Spiritual Sedona Mountains 3 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 3",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X9DD62F1S15X12J1S12DD25X9DD62G1",
+    "sku": "5M144M8S12DD25X9DD62F1S15DD25X12DD62J1S12DD25X9DD62G1",
     "scale": 1,
     "imageSize": {
       "width": 11.99,
@@ -15941,8 +15941,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.62,
         "unit": "in"
       },
       "window": {
@@ -15962,8 +15962,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.62,
         "unit": "in"
       },
       "glazing": {
@@ -15980,9 +15980,9 @@ export default {
     "productId": "paul-murphy-painting-28",
     "title": "Spiritual Sedona Mountains 3 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 3",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X9DD62F2S15X12J1S12DD25X9DD62G1",
+    "sku": "5M144M8S12DD25X9DD62F2S15DD25X12DD62J1S12DD25X9DD62G1",
     "scale": 1,
     "imageSize": {
       "width": 11.99,
@@ -16015,8 +16015,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.62,
         "unit": "in"
       },
       "window": {
@@ -16036,8 +16036,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.62,
         "unit": "in"
       },
       "glazing": {
@@ -16054,9 +16054,9 @@ export default {
     "productId": "paul-murphy-painting-28",
     "title": "Spiritual Sedona Mountains 3 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 3",
-    "amount": "113.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X9DD62F7S15X12J1S12DD25X9DD62G1",
+    "sku": "5M144M8S12DD25X9DD62F7S15DD25X12DD62J1S12DD25X9DD62G1",
     "scale": 1,
     "imageSize": {
       "width": 11.99,
@@ -16089,8 +16089,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.62,
         "unit": "in"
       },
       "window": {
@@ -16110,8 +16110,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 12.62,
         "unit": "in"
       },
       "glazing": {
@@ -16166,9 +16166,9 @@ export default {
     "productId": "paul-murphy-painting-28",
     "title": "Spiritual Sedona Mountains 3 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 3",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X7DD28F1S14X11J1S9DD25X7DD28G1",
+    "sku": "5M144M8S9DD25X7DD28F1S12DD25X10DD28J1S9DD25X7DD28G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9967,
@@ -16201,8 +16201,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.28,
         "unit": "in"
       },
       "window": {
@@ -16222,8 +16222,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.28,
         "unit": "in"
       },
       "glazing": {
@@ -16240,9 +16240,9 @@ export default {
     "productId": "paul-murphy-painting-28",
     "title": "Spiritual Sedona Mountains 3 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 3",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X7DD28F2S14X11J1S9DD25X7DD28G1",
+    "sku": "5M144M8S9DD25X7DD28F2S12DD25X10DD28J1S9DD25X7DD28G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9967,
@@ -16275,8 +16275,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.28,
         "unit": "in"
       },
       "window": {
@@ -16296,8 +16296,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.28,
         "unit": "in"
       },
       "glazing": {
@@ -16314,9 +16314,9 @@ export default {
     "productId": "paul-murphy-painting-28",
     "title": "Spiritual Sedona Mountains 3 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 3",
-    "amount": "87.00",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X7DD28F7S14X11J1S9DD25X7DD28G1",
+    "sku": "5M144M8S9DD25X7DD28F7S12DD25X10DD28J1S9DD25X7DD28G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9967,
@@ -16349,8 +16349,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.28,
         "unit": "in"
       },
       "window": {
@@ -16370,8 +16370,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.25,
+        "height": 10.28,
         "unit": "in"
       },
       "glazing": {
@@ -16428,7 +16428,7 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 3",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X4DD93F1S10X8J1S6DD25X4DD93G1",
+    "sku": "5M144M8S6DD25X4DD93F1S9DD33X8DD01J1S6DD25X4DD93G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9867,
@@ -16461,8 +16461,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.33,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -16482,8 +16482,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.33,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -16502,7 +16502,7 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 3",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X4DD93F2S10X8J1S6DD25X4DD93G1",
+    "sku": "5M144M8S6DD25X4DD93F2S9DD33X8DD01J1S6DD25X4DD93G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9867,
@@ -16535,8 +16535,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.33,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -16556,8 +16556,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.33,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -16574,9 +16574,9 @@ export default {
     "productId": "paul-murphy-painting-28",
     "title": "Spiritual Sedona Mountains 3 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 3",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X4DD93F7S10X8J1S6DD25X4DD93G1",
+    "sku": "5M144M8S6DD25X4DD93F7S9DD33X8DD01J1S6DD25X4DD93G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9867,
@@ -16609,8 +16609,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.33,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -16630,8 +16630,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.33,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -16688,7 +16688,7 @@ export default {
     "artworkTitle": "Rebel Loon/MN ICE Protest",
     "amount": "96.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X8DD83F1S15X12J1S12DD25X8DD83G1",
+    "sku": "5M144M8S12DD25X8DD83F1S15DD25X11DD83J1S12DD25X8DD83G1",
     "scale": 1,
     "imageSize": {
       "width": 11.9833,
@@ -16721,8 +16721,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 11.83,
         "unit": "in"
       },
       "window": {
@@ -16742,8 +16742,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 11.83,
         "unit": "in"
       },
       "glazing": {
@@ -16762,7 +16762,7 @@ export default {
     "artworkTitle": "Rebel Loon/MN ICE Protest",
     "amount": "96.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X8DD83F2S15X12J1S12DD25X8DD83G1",
+    "sku": "5M144M8S12DD25X8DD83F2S15DD25X11DD83J1S12DD25X8DD83G1",
     "scale": 1,
     "imageSize": {
       "width": 11.9833,
@@ -16795,8 +16795,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 11.83,
         "unit": "in"
       },
       "window": {
@@ -16816,8 +16816,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 11.83,
         "unit": "in"
       },
       "glazing": {
@@ -16836,7 +16836,7 @@ export default {
     "artworkTitle": "Rebel Loon/MN ICE Protest",
     "amount": "108.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD25X8DD83F7S15X12J1S12DD25X8DD83G1",
+    "sku": "5M144M8S12DD25X8DD83F7S15DD25X11DD83J1S12DD25X8DD83G1",
     "scale": 1,
     "imageSize": {
       "width": 11.9833,
@@ -16869,8 +16869,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 11.83,
         "unit": "in"
       },
       "window": {
@@ -16890,8 +16890,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.25,
+        "height": 11.83,
         "unit": "in"
       },
       "glazing": {
@@ -16946,9 +16946,9 @@ export default {
     "productId": "paul-murphy-painting-3",
     "title": "Rebel Loon/MN ICE Protest — Medium print — Black frame",
     "artworkTitle": "Rebel Loon/MN ICE Protest",
-    "amount": "67.63",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X6DD69F1S12X9J1S9DD25X6DD69G1",
+    "sku": "5M144M8S9DD25X6DD69F1S12DD25X9DD69J1S9DD25X6DD69G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9933,
@@ -16981,8 +16981,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.25,
+        "height": 9.69,
         "unit": "in"
       },
       "window": {
@@ -17002,8 +17002,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.25,
+        "height": 9.69,
         "unit": "in"
       },
       "glazing": {
@@ -17020,9 +17020,9 @@ export default {
     "productId": "paul-murphy-painting-3",
     "title": "Rebel Loon/MN ICE Protest — Medium print — White frame",
     "artworkTitle": "Rebel Loon/MN ICE Protest",
-    "amount": "67.63",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X6DD69F2S12X9J1S9DD25X6DD69G1",
+    "sku": "5M144M8S9DD25X6DD69F2S12DD25X9DD69J1S9DD25X6DD69G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9933,
@@ -17055,8 +17055,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.25,
+        "height": 9.69,
         "unit": "in"
       },
       "window": {
@@ -17076,8 +17076,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.25,
+        "height": 9.69,
         "unit": "in"
       },
       "glazing": {
@@ -17094,9 +17094,9 @@ export default {
     "productId": "paul-murphy-painting-3",
     "title": "Rebel Loon/MN ICE Protest — Medium print — Natural wood frame",
     "artworkTitle": "Rebel Loon/MN ICE Protest",
-    "amount": "77.63",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD25X6DD69F7S12X9J1S9DD25X6DD69G1",
+    "sku": "5M144M8S9DD25X6DD69F7S12DD25X9DD69J1S9DD25X6DD69G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.9933,
@@ -17129,8 +17129,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.25,
+        "height": 9.69,
         "unit": "in"
       },
       "window": {
@@ -17150,8 +17150,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.25,
+        "height": 9.69,
         "unit": "in"
       },
       "glazing": {
@@ -17208,7 +17208,7 @@ export default {
     "artworkTitle": "Rebel Loon/MN ICE Protest",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X4DD54F1S10X8J1S6DD25X4DD54G1",
+    "sku": "5M144M8S6DD25X4DD54F1S9DD71X8J1S6DD25X4DD54G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.99,
@@ -17241,7 +17241,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.71,
         "height": 8,
         "unit": "in"
       },
@@ -17262,7 +17262,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.71,
         "height": 8,
         "unit": "in"
       },
@@ -17282,7 +17282,7 @@ export default {
     "artworkTitle": "Rebel Loon/MN ICE Protest",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X4DD54F2S10X8J1S6DD25X4DD54G1",
+    "sku": "5M144M8S6DD25X4DD54F2S9DD71X8J1S6DD25X4DD54G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.99,
@@ -17315,7 +17315,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.71,
         "height": 8,
         "unit": "in"
       },
@@ -17336,7 +17336,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.71,
         "height": 8,
         "unit": "in"
       },
@@ -17354,9 +17354,9 @@ export default {
     "productId": "paul-murphy-painting-3",
     "title": "Rebel Loon/MN ICE Protest — Small print — Natural wood frame",
     "artworkTitle": "Rebel Loon/MN ICE Protest",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X4DD54F7S10X8J1S6DD25X4DD54G1",
+    "sku": "5M144M8S6DD25X4DD54F7S9DD71X8J1S6DD25X4DD54G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.99,
@@ -17389,7 +17389,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.71,
         "height": 8,
         "unit": "in"
       },
@@ -17410,7 +17410,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.71,
         "height": 8,
         "unit": "in"
       },
@@ -17466,9 +17466,9 @@ export default {
     "productId": "paul-murphy-painting-34",
     "title": "Spiritual Sedona Mountains 4 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 4",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X10DD42F1S16X20J1S10DD25X10DD42G1",
+    "sku": "5M144M8S10DD25X10DD42F1S13DD25X13DD42J1S10DD25X10DD42G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9933,
@@ -17501,8 +17501,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.42,
         "unit": "in"
       },
       "window": {
@@ -17522,8 +17522,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.42,
         "unit": "in"
       },
       "glazing": {
@@ -17540,9 +17540,9 @@ export default {
     "productId": "paul-murphy-painting-34",
     "title": "Spiritual Sedona Mountains 4 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 4",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X10DD42F2S16X20J1S10DD25X10DD42G1",
+    "sku": "5M144M8S10DD25X10DD42F2S13DD25X13DD42J1S10DD25X10DD42G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9933,
@@ -17575,8 +17575,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.42,
         "unit": "in"
       },
       "window": {
@@ -17596,8 +17596,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.42,
         "unit": "in"
       },
       "glazing": {
@@ -17614,9 +17614,9 @@ export default {
     "productId": "paul-murphy-painting-34",
     "title": "Spiritual Sedona Mountains 4 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 4",
-    "amount": "134.00",
+    "amount": "107.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X10DD42F7S16X20J1S10DD25X10DD42G1",
+    "sku": "5M144M8S10DD25X10DD42F7S13DD25X13DD42J1S10DD25X10DD42G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9933,
@@ -17649,8 +17649,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.42,
         "unit": "in"
       },
       "window": {
@@ -17670,8 +17670,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.42,
         "unit": "in"
       },
       "glazing": {
@@ -17726,9 +17726,9 @@ export default {
     "productId": "paul-murphy-painting-34",
     "title": "Spiritual Sedona Mountains 4 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 4",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X7DD88F1S11X14J1S7DD75X7DD88G1",
+    "sku": "5M144M8S7DD75X7DD88F1S10DD75X10DD88J1S7DD75X7DD88G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4967,
@@ -17761,8 +17761,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.88,
         "unit": "in"
       },
       "window": {
@@ -17782,8 +17782,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.88,
         "unit": "in"
       },
       "glazing": {
@@ -17800,9 +17800,9 @@ export default {
     "productId": "paul-murphy-painting-34",
     "title": "Spiritual Sedona Mountains 4 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 4",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X7DD88F2S11X14J1S7DD75X7DD88G1",
+    "sku": "5M144M8S7DD75X7DD88F2S10DD75X10DD88J1S7DD75X7DD88G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4967,
@@ -17835,8 +17835,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.88,
         "unit": "in"
       },
       "window": {
@@ -17856,8 +17856,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.88,
         "unit": "in"
       },
       "glazing": {
@@ -17874,9 +17874,9 @@ export default {
     "productId": "paul-murphy-painting-34",
     "title": "Spiritual Sedona Mountains 4 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 4",
-    "amount": "82.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X7DD88F7S11X14J1S7DD75X7DD88G1",
+    "sku": "5M144M8S7DD75X7DD88F7S10DD75X10DD88J1S7DD75X7DD88G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4967,
@@ -17909,8 +17909,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.88,
         "unit": "in"
       },
       "window": {
@@ -17930,8 +17930,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.88,
         "unit": "in"
       },
       "glazing": {
@@ -17986,9 +17986,9 @@ export default {
     "productId": "paul-murphy-painting-34",
     "title": "Spiritual Sedona Mountains 4 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 4",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD33F1S8X10J1S5DD25X5DD33G1",
+    "sku": "5M144M8S5DD25X5DD33F1S8DD25X8DD33J1S5DD25X5DD33G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
@@ -18021,8 +18021,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.33,
         "unit": "in"
       },
       "window": {
@@ -18042,8 +18042,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.33,
         "unit": "in"
       },
       "glazing": {
@@ -18060,9 +18060,9 @@ export default {
     "productId": "paul-murphy-painting-34",
     "title": "Spiritual Sedona Mountains 4 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 4",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD33F2S8X10J1S5DD25X5DD33G1",
+    "sku": "5M144M8S5DD25X5DD33F2S8DD25X8DD33J1S5DD25X5DD33G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
@@ -18095,8 +18095,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.33,
         "unit": "in"
       },
       "window": {
@@ -18116,8 +18116,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.33,
         "unit": "in"
       },
       "glazing": {
@@ -18134,9 +18134,9 @@ export default {
     "productId": "paul-murphy-painting-34",
     "title": "Spiritual Sedona Mountains 4 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 4",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD33F7S8X10J1S5DD25X5DD33G1",
+    "sku": "5M144M8S5DD25X5DD33F7S8DD25X8DD33J1S5DD25X5DD33G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
@@ -18169,8 +18169,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.33,
         "unit": "in"
       },
       "window": {
@@ -18190,8 +18190,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.33,
         "unit": "in"
       },
       "glazing": {
@@ -18246,9 +18246,9 @@ export default {
     "productId": "paul-murphy-painting-35",
     "title": "Spiritual Sedona Mountains 5 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 5",
-    "amount": "124.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD42X10DD25F1S20X16J1S11DD42X10DD25G1",
+    "sku": "5M144M8S11DD42X10DD25F1S14DD42X13DD25J1S11DD42X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 11.1667,
@@ -18281,8 +18281,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.42,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -18302,8 +18302,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.42,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -18320,9 +18320,9 @@ export default {
     "productId": "paul-murphy-painting-35",
     "title": "Spiritual Sedona Mountains 5 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 5",
-    "amount": "124.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD42X10DD25F2S20X16J1S11DD42X10DD25G1",
+    "sku": "5M144M8S11DD42X10DD25F2S14DD42X13DD25J1S11DD42X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 11.1667,
@@ -18355,8 +18355,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.42,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -18376,8 +18376,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.42,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -18394,9 +18394,9 @@ export default {
     "productId": "paul-murphy-painting-35",
     "title": "Spiritual Sedona Mountains 5 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 5",
-    "amount": "139.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD42X10DD25F7S20X16J1S11DD42X10DD25G1",
+    "sku": "5M144M8S11DD42X10DD25F7S14DD42X13DD25J1S11DD42X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 11.1667,
@@ -18429,8 +18429,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.42,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -18450,8 +18450,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.42,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -18506,9 +18506,9 @@ export default {
     "productId": "paul-murphy-painting-35",
     "title": "Spiritual Sedona Mountains 5 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 5",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD63X7DD75F1S14X11J1S8DD63X7DD75G1",
+    "sku": "5M144M8S8DD63X7DD75F1S11DD63X10DD75J1S8DD63X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.3767,
@@ -18541,8 +18541,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.63,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -18562,8 +18562,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.63,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -18580,9 +18580,9 @@ export default {
     "productId": "paul-murphy-painting-35",
     "title": "Spiritual Sedona Mountains 5 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 5",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD63X7DD75F2S14X11J1S8DD63X7DD75G1",
+    "sku": "5M144M8S8DD63X7DD75F2S11DD63X10DD75J1S8DD63X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.3767,
@@ -18615,8 +18615,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.63,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -18636,8 +18636,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.63,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -18654,9 +18654,9 @@ export default {
     "productId": "paul-murphy-painting-35",
     "title": "Spiritual Sedona Mountains 5 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 5",
-    "amount": "87.00",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD63X7DD75F7S14X11J1S8DD63X7DD75G1",
+    "sku": "5M144M8S8DD63X7DD75F7S11DD63X10DD75J1S8DD63X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.3767,
@@ -18689,8 +18689,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.63,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -18710,8 +18710,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.63,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -18766,9 +18766,9 @@ export default {
     "productId": "paul-murphy-painting-35",
     "title": "Spiritual Sedona Mountains 5 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 5",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD83X5DD25F1S10X8J1S5DD83X5DD25G1",
+    "sku": "5M144M8S5DD83X5DD25F1S8DD83X8DD25J1S5DD83X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.5767,
@@ -18801,8 +18801,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.83,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -18822,8 +18822,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.83,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -18840,9 +18840,9 @@ export default {
     "productId": "paul-murphy-painting-35",
     "title": "Spiritual Sedona Mountains 5 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 5",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD83X5DD25F2S10X8J1S5DD83X5DD25G1",
+    "sku": "5M144M8S5DD83X5DD25F2S8DD83X8DD25J1S5DD83X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.5767,
@@ -18875,8 +18875,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.83,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -18896,8 +18896,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.83,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -18914,9 +18914,9 @@ export default {
     "productId": "paul-murphy-painting-35",
     "title": "Spiritual Sedona Mountains 5 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 5",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD83X5DD25F7S10X8J1S5DD83X5DD25G1",
+    "sku": "5M144M8S5DD83X5DD25F7S8DD83X8DD25J1S5DD83X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.5767,
@@ -18949,8 +18949,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.83,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -18970,8 +18970,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.83,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -19026,9 +19026,9 @@ export default {
     "productId": "paul-murphy-painting-38",
     "title": "Spiritual Sedona Mountains 6 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 6",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD13X10DD55F1S16X20J1S10DD13X10DD55G1",
+    "sku": "5M144M8S10DD13X10DD55F1S13DD13X13DD55J1S10DD13X10DD55G1",
     "scale": 1,
     "imageSize": {
       "width": 9.8767,
@@ -19061,8 +19061,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.13,
+        "height": 13.55,
         "unit": "in"
       },
       "window": {
@@ -19082,8 +19082,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.13,
+        "height": 13.55,
         "unit": "in"
       },
       "glazing": {
@@ -19100,9 +19100,9 @@ export default {
     "productId": "paul-murphy-painting-38",
     "title": "Spiritual Sedona Mountains 6 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 6",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD13X10DD55F2S16X20J1S10DD13X10DD55G1",
+    "sku": "5M144M8S10DD13X10DD55F2S13DD13X13DD55J1S10DD13X10DD55G1",
     "scale": 1,
     "imageSize": {
       "width": 9.8767,
@@ -19135,8 +19135,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.13,
+        "height": 13.55,
         "unit": "in"
       },
       "window": {
@@ -19156,8 +19156,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.13,
+        "height": 13.55,
         "unit": "in"
       },
       "glazing": {
@@ -19174,9 +19174,9 @@ export default {
     "productId": "paul-murphy-painting-38",
     "title": "Spiritual Sedona Mountains 6 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 6",
-    "amount": "134.00",
+    "amount": "107.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD13X10DD55F7S16X20J1S10DD13X10DD55G1",
+    "sku": "5M144M8S10DD13X10DD55F7S13DD13X13DD55J1S10DD13X10DD55G1",
     "scale": 1,
     "imageSize": {
       "width": 9.8767,
@@ -19209,8 +19209,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.13,
+        "height": 13.55,
         "unit": "in"
       },
       "window": {
@@ -19230,8 +19230,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.13,
+        "height": 13.55,
         "unit": "in"
       },
       "glazing": {
@@ -19286,9 +19286,9 @@ export default {
     "productId": "paul-murphy-painting-38",
     "title": "Spiritual Sedona Mountains 6 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 6",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD66X7DD97F1S11X14J1S7DD66X7DD97G1",
+    "sku": "5M144M8S7DD66X7DD97F1S10DD66X10DD97J1S7DD66X7DD97G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4033,
@@ -19321,8 +19321,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.66,
+        "height": 10.97,
         "unit": "in"
       },
       "window": {
@@ -19342,8 +19342,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.66,
+        "height": 10.97,
         "unit": "in"
       },
       "glazing": {
@@ -19360,9 +19360,9 @@ export default {
     "productId": "paul-murphy-painting-38",
     "title": "Spiritual Sedona Mountains 6 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 6",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD66X7DD97F2S11X14J1S7DD66X7DD97G1",
+    "sku": "5M144M8S7DD66X7DD97F2S10DD66X10DD97J1S7DD66X7DD97G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4033,
@@ -19395,8 +19395,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.66,
+        "height": 10.97,
         "unit": "in"
       },
       "window": {
@@ -19416,8 +19416,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.66,
+        "height": 10.97,
         "unit": "in"
       },
       "glazing": {
@@ -19434,9 +19434,9 @@ export default {
     "productId": "paul-murphy-painting-38",
     "title": "Spiritual Sedona Mountains 6 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 6",
-    "amount": "82.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD66X7DD97F7S11X14J1S7DD66X7DD97G1",
+    "sku": "5M144M8S7DD66X7DD97F7S10DD66X10DD97J1S7DD66X7DD97G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4033,
@@ -19469,8 +19469,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.66,
+        "height": 10.97,
         "unit": "in"
       },
       "window": {
@@ -19490,8 +19490,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.66,
+        "height": 10.97,
         "unit": "in"
       },
       "glazing": {
@@ -19546,9 +19546,9 @@ export default {
     "productId": "paul-murphy-painting-38",
     "title": "Spiritual Sedona Mountains 6 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 6",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD19X5DD4F1S8X10J1S5DD19X5DD4G1",
+    "sku": "5M144M8S5DD19X5DD4F1S8DD19X8DD4J1S5DD19X5DD4G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9367,
@@ -19581,8 +19581,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.19,
+        "height": 8.4,
         "unit": "in"
       },
       "window": {
@@ -19602,8 +19602,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.19,
+        "height": 8.4,
         "unit": "in"
       },
       "glazing": {
@@ -19620,9 +19620,9 @@ export default {
     "productId": "paul-murphy-painting-38",
     "title": "Spiritual Sedona Mountains 6 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 6",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD19X5DD4F2S8X10J1S5DD19X5DD4G1",
+    "sku": "5M144M8S5DD19X5DD4F2S8DD19X8DD4J1S5DD19X5DD4G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9367,
@@ -19655,8 +19655,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.19,
+        "height": 8.4,
         "unit": "in"
       },
       "window": {
@@ -19676,8 +19676,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.19,
+        "height": 8.4,
         "unit": "in"
       },
       "glazing": {
@@ -19694,9 +19694,9 @@ export default {
     "productId": "paul-murphy-painting-38",
     "title": "Spiritual Sedona Mountains 6 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 6",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD19X5DD4F7S8X10J1S5DD19X5DD4G1",
+    "sku": "5M144M8S5DD19X5DD4F7S8DD19X8DD4J1S5DD19X5DD4G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9367,
@@ -19729,8 +19729,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.19,
+        "height": 8.4,
         "unit": "in"
       },
       "window": {
@@ -19750,8 +19750,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.19,
+        "height": 8.4,
         "unit": "in"
       },
       "glazing": {
@@ -19806,9 +19806,9 @@ export default {
     "productId": "paul-murphy-painting-39",
     "title": "Spiritual Sedona Mountains 7 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 7",
-    "amount": "86.00",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD66X9DD46F1S15X12J1S9DD66X9DD46G1",
+    "sku": "5M144M8S9DD66X9DD46F1S12DD66X12DD46J1S9DD66X9DD46G1",
     "scale": 1,
     "imageSize": {
       "width": 9.4067,
@@ -19841,8 +19841,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 12.66,
+        "height": 12.46,
         "unit": "in"
       },
       "window": {
@@ -19862,8 +19862,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 12.66,
+        "height": 12.46,
         "unit": "in"
       },
       "glazing": {
@@ -19880,9 +19880,9 @@ export default {
     "productId": "paul-murphy-painting-39",
     "title": "Spiritual Sedona Mountains 7 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 7",
-    "amount": "86.00",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD66X9DD46F2S15X12J1S9DD66X9DD46G1",
+    "sku": "5M144M8S9DD66X9DD46F2S12DD66X12DD46J1S9DD66X9DD46G1",
     "scale": 1,
     "imageSize": {
       "width": 9.4067,
@@ -19915,8 +19915,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 12.66,
+        "height": 12.46,
         "unit": "in"
       },
       "window": {
@@ -19936,8 +19936,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 12.66,
+        "height": 12.46,
         "unit": "in"
       },
       "glazing": {
@@ -19954,9 +19954,9 @@ export default {
     "productId": "paul-murphy-painting-39",
     "title": "Spiritual Sedona Mountains 7 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 7",
-    "amount": "98.00",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD66X9DD46F7S15X12J1S9DD66X9DD46G1",
+    "sku": "5M144M8S9DD66X9DD46F7S12DD66X12DD46J1S9DD66X9DD46G1",
     "scale": 1,
     "imageSize": {
       "width": 9.4067,
@@ -19989,8 +19989,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 12.66,
+        "height": 12.46,
         "unit": "in"
       },
       "window": {
@@ -20010,8 +20010,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 12.66,
+        "height": 12.46,
         "unit": "in"
       },
       "glazing": {
@@ -20066,9 +20066,9 @@ export default {
     "productId": "paul-murphy-painting-39",
     "title": "Spiritual Sedona Mountains 7 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 7",
-    "amount": "71.00",
+    "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD31X7DD16F1S14X11J1S7DD31X7DD16G1",
+    "sku": "5M144M8S7DD31X7DD16F1S10DD31X10DD16J1S7DD31X7DD16G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.0567,
@@ -20101,8 +20101,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 10.31,
+        "height": 10.16,
         "unit": "in"
       },
       "window": {
@@ -20122,8 +20122,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 10.31,
+        "height": 10.16,
         "unit": "in"
       },
       "glazing": {
@@ -20140,9 +20140,9 @@ export default {
     "productId": "paul-murphy-painting-39",
     "title": "Spiritual Sedona Mountains 7 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 7",
-    "amount": "71.00",
+    "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD31X7DD16F2S14X11J1S7DD31X7DD16G1",
+    "sku": "5M144M8S7DD31X7DD16F2S10DD31X10DD16J1S7DD31X7DD16G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.0567,
@@ -20175,8 +20175,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 10.31,
+        "height": 10.16,
         "unit": "in"
       },
       "window": {
@@ -20196,8 +20196,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 10.31,
+        "height": 10.16,
         "unit": "in"
       },
       "glazing": {
@@ -20214,9 +20214,9 @@ export default {
     "productId": "paul-murphy-painting-39",
     "title": "Spiritual Sedona Mountains 7 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 7",
-    "amount": "82.00",
+    "amount": "71.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD31X7DD16F7S14X11J1S7DD31X7DD16G1",
+    "sku": "5M144M8S7DD31X7DD16F7S10DD31X10DD16J1S7DD31X7DD16G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.0567,
@@ -20249,8 +20249,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 10.31,
+        "height": 10.16,
         "unit": "in"
       },
       "window": {
@@ -20270,8 +20270,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 10.31,
+        "height": 10.16,
         "unit": "in"
       },
       "glazing": {
@@ -20326,9 +20326,9 @@ export default {
     "productId": "paul-murphy-painting-39",
     "title": "Spiritual Sedona Mountains 7 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 7",
-    "amount": "59.63",
+    "amount": "57.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD95X4DD85F1S10X8J1S4DD95X4DD85G1",
+    "sku": "5M144M8S4DD95X4DD85F1S8DD11X8DD01J1S4DD95X4DD85G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.6967,
@@ -20361,8 +20361,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.11,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -20382,8 +20382,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.11,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -20400,9 +20400,9 @@ export default {
     "productId": "paul-murphy-painting-39",
     "title": "Spiritual Sedona Mountains 7 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 7",
-    "amount": "59.63",
+    "amount": "57.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD95X4DD85F2S10X8J1S4DD95X4DD85G1",
+    "sku": "5M144M8S4DD95X4DD85F2S8DD11X8DD01J1S4DD95X4DD85G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.6967,
@@ -20435,8 +20435,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.11,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -20456,8 +20456,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.11,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -20474,9 +20474,9 @@ export default {
     "productId": "paul-murphy-painting-39",
     "title": "Spiritual Sedona Mountains 7 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 7",
-    "amount": "68.63",
+    "amount": "65.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD95X4DD85F7S10X8J1S4DD95X4DD85G1",
+    "sku": "5M144M8S4DD95X4DD85F7S8DD11X8DD01J1S4DD95X4DD85G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.6967,
@@ -20509,8 +20509,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.11,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -20530,8 +20530,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.11,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -20586,9 +20586,9 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "124.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X11DD04F1S16X20J1S10DD25X11DD04G1",
+    "sku": "5M144M8S10DD25X11DD04F1S13DD25X14DD04J1S10DD25X11DD04G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9933,
@@ -20621,8 +20621,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 14.04,
         "unit": "in"
       },
       "window": {
@@ -20642,8 +20642,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 14.04,
         "unit": "in"
       },
       "glazing": {
@@ -20660,9 +20660,9 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "124.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X11DD04F2S16X20J1S10DD25X11DD04G1",
+    "sku": "5M144M8S10DD25X11DD04F2S13DD25X14DD04J1S10DD25X11DD04G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9933,
@@ -20695,8 +20695,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 14.04,
         "unit": "in"
       },
       "window": {
@@ -20716,8 +20716,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 14.04,
         "unit": "in"
       },
       "glazing": {
@@ -20734,9 +20734,9 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "139.00",
+    "amount": "113.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X11DD04F7S16X20J1S10DD25X11DD04G1",
+    "sku": "5M144M8S10DD25X11DD04F7S13DD25X14DD04J1S10DD25X11DD04G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9933,
@@ -20769,8 +20769,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 14.04,
         "unit": "in"
       },
       "window": {
@@ -20790,8 +20790,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 14.04,
         "unit": "in"
       },
       "glazing": {
@@ -20846,9 +20846,9 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X8DD34F1S11X14J1S7DD75X8DD34G1",
+    "sku": "5M144M8S7DD75X8DD34F1S10DD75X11DD34J1S7DD75X8DD34G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4933,
@@ -20881,8 +20881,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.34,
         "unit": "in"
       },
       "window": {
@@ -20902,8 +20902,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.34,
         "unit": "in"
       },
       "glazing": {
@@ -20920,9 +20920,9 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X8DD34F2S11X14J1S7DD75X8DD34G1",
+    "sku": "5M144M8S7DD75X8DD34F2S10DD75X11DD34J1S7DD75X8DD34G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4933,
@@ -20955,8 +20955,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.34,
         "unit": "in"
       },
       "window": {
@@ -20976,8 +20976,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.34,
         "unit": "in"
       },
       "glazing": {
@@ -20994,9 +20994,9 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "87.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X8DD34F7S11X14J1S7DD75X8DD34G1",
+    "sku": "5M144M8S7DD75X8DD34F7S10DD75X11DD34J1S7DD75X8DD34G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4933,
@@ -21029,8 +21029,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.34,
         "unit": "in"
       },
       "window": {
@@ -21050,8 +21050,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.34,
         "unit": "in"
       },
       "glazing": {
@@ -21106,9 +21106,9 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD64F1S8X10J1S5DD25X5DD64G1",
+    "sku": "5M144M8S5DD25X5DD64F1S8DD25X8DD64J1S5DD25X5DD64G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
@@ -21141,8 +21141,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.64,
         "unit": "in"
       },
       "window": {
@@ -21162,8 +21162,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.64,
         "unit": "in"
       },
       "glazing": {
@@ -21180,9 +21180,9 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD64F2S8X10J1S5DD25X5DD64G1",
+    "sku": "5M144M8S5DD25X5DD64F2S8DD25X8DD64J1S5DD25X5DD64G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
@@ -21215,8 +21215,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.64,
         "unit": "in"
       },
       "window": {
@@ -21236,8 +21236,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.64,
         "unit": "in"
       },
       "glazing": {
@@ -21254,9 +21254,9 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD64F7S8X10J1S5DD25X5DD64G1",
+    "sku": "5M144M8S5DD25X5DD64F7S8DD25X8DD64J1S5DD25X5DD64G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
@@ -21289,8 +21289,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.64,
         "unit": "in"
       },
       "window": {
@@ -21310,8 +21310,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.64,
         "unit": "in"
       },
       "glazing": {
@@ -21366,9 +21366,9 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "124.00",
+    "amount": "101.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X10DD65F1S16X20J1S10DD25X10DD65G1",
+    "sku": "5M144M8S10DD25X10DD65F1S13DD25X13DD65J1S10DD25X10DD65G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9967,
@@ -21401,8 +21401,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.65,
         "unit": "in"
       },
       "window": {
@@ -21422,8 +21422,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.65,
         "unit": "in"
       },
       "glazing": {
@@ -21440,9 +21440,9 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "124.00",
+    "amount": "101.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X10DD65F2S16X20J1S10DD25X10DD65G1",
+    "sku": "5M144M8S10DD25X10DD65F2S13DD25X13DD65J1S10DD25X10DD65G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9967,
@@ -21475,8 +21475,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.65,
         "unit": "in"
       },
       "window": {
@@ -21496,8 +21496,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.65,
         "unit": "in"
       },
       "glazing": {
@@ -21514,9 +21514,9 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "139.00",
+    "amount": "113.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X10DD65F7S16X20J1S10DD25X10DD65G1",
+    "sku": "5M144M8S10DD25X10DD65F7S13DD25X13DD65J1S10DD25X10DD65G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9967,
@@ -21549,8 +21549,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.65,
         "unit": "in"
       },
       "window": {
@@ -21570,8 +21570,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.65,
         "unit": "in"
       },
       "glazing": {
@@ -21626,9 +21626,9 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X8DD05F1S11X14J1S7DD75X8DD05G1",
+    "sku": "5M144M8S7DD75X8DD05F1S10DD75X11DD05J1S7DD75X8DD05G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4967,
@@ -21661,8 +21661,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.05,
         "unit": "in"
       },
       "window": {
@@ -21682,8 +21682,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.05,
         "unit": "in"
       },
       "glazing": {
@@ -21700,9 +21700,9 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X8DD05F2S11X14J1S7DD75X8DD05G1",
+    "sku": "5M144M8S7DD75X8DD05F2S10DD75X11DD05J1S7DD75X8DD05G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4967,
@@ -21735,8 +21735,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.05,
         "unit": "in"
       },
       "window": {
@@ -21756,8 +21756,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.05,
         "unit": "in"
       },
       "glazing": {
@@ -21774,9 +21774,9 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "82.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X8DD05F7S11X14J1S7DD75X8DD05G1",
+    "sku": "5M144M8S7DD75X8DD05F7S10DD75X11DD05J1S7DD75X8DD05G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4967,
@@ -21809,8 +21809,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.05,
         "unit": "in"
       },
       "window": {
@@ -21830,8 +21830,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 11.05,
         "unit": "in"
       },
       "glazing": {
@@ -21886,9 +21886,9 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD45F1S8X10J1S5DD25X5DD45G1",
+    "sku": "5M144M8S5DD25X5DD45F1S8DD25X8DD45J1S5DD25X5DD45G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9967,
@@ -21921,8 +21921,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.45,
         "unit": "in"
       },
       "window": {
@@ -21942,8 +21942,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.45,
         "unit": "in"
       },
       "glazing": {
@@ -21960,9 +21960,9 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD45F2S8X10J1S5DD25X5DD45G1",
+    "sku": "5M144M8S5DD25X5DD45F2S8DD25X8DD45J1S5DD25X5DD45G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9967,
@@ -21995,8 +21995,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.45,
         "unit": "in"
       },
       "window": {
@@ -22016,8 +22016,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.45,
         "unit": "in"
       },
       "glazing": {
@@ -22034,9 +22034,9 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD45F7S8X10J1S5DD25X5DD45G1",
+    "sku": "5M144M8S5DD25X5DD45F7S8DD25X8DD45J1S5DD25X5DD45G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9967,
@@ -22069,8 +22069,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.45,
         "unit": "in"
       },
       "window": {
@@ -22090,8 +22090,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.45,
         "unit": "in"
       },
       "glazing": {
@@ -22146,9 +22146,9 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "124.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD13X10DD25F1S20X16J1S11DD13X10DD25G1",
+    "sku": "5M144M8S11DD13X10DD25F1S14DD13X13DD25J1S11DD13X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.8767,
@@ -22181,8 +22181,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.13,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -22202,8 +22202,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.13,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -22220,9 +22220,9 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "124.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD13X10DD25F2S20X16J1S11DD13X10DD25G1",
+    "sku": "5M144M8S11DD13X10DD25F2S14DD13X13DD25J1S11DD13X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.8767,
@@ -22255,8 +22255,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.13,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -22276,8 +22276,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.13,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -22294,9 +22294,9 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "139.00",
+    "amount": "114.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD13X10DD25F7S20X16J1S11DD13X10DD25G1",
+    "sku": "5M144M8S11DD13X10DD25F7S14DD13X13DD25J1S11DD13X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.8767,
@@ -22329,8 +22329,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.13,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -22350,8 +22350,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.13,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -22406,9 +22406,9 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD41X7DD75F1S14X11J1S8DD41X7DD75G1",
+    "sku": "5M144M8S8DD41X7DD75F1S11DD41X10DD75J1S8DD41X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.1567,
@@ -22441,8 +22441,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.41,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -22462,8 +22462,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.41,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -22480,9 +22480,9 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD41X7DD75F2S14X11J1S8DD41X7DD75G1",
+    "sku": "5M144M8S8DD41X7DD75F2S11DD41X10DD75J1S8DD41X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.1567,
@@ -22515,8 +22515,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.41,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -22536,8 +22536,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.41,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -22554,9 +22554,9 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "87.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD41X7DD75F7S14X11J1S8DD41X7DD75G1",
+    "sku": "5M144M8S8DD41X7DD75F7S11DD41X10DD75J1S8DD41X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.1567,
@@ -22589,8 +22589,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.41,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -22610,8 +22610,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.41,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -22666,9 +22666,9 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD69X5DD25F1S10X8J1S5DD69X5DD25G1",
+    "sku": "5M144M8S5DD69X5DD25F1S8DD69X8DD25J1S5DD69X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.4367,
@@ -22701,8 +22701,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.69,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -22722,8 +22722,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.69,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -22740,9 +22740,9 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD69X5DD25F2S10X8J1S5DD69X5DD25G1",
+    "sku": "5M144M8S5DD69X5DD25F2S8DD69X8DD25J1S5DD69X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.4367,
@@ -22775,8 +22775,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.69,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -22796,8 +22796,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.69,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -22814,9 +22814,9 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD69X5DD25F7S10X8J1S5DD69X5DD25G1",
+    "sku": "5M144M8S5DD69X5DD25F7S8DD69X8DD25J1S5DD69X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.4367,
@@ -22849,8 +22849,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.69,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -22870,8 +22870,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.69,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -22926,9 +22926,9 @@ export default {
     "productId": "paul-murphy-painting-44",
     "title": "Spiritual Sedona Mountains 11 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 11",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD34X10DD25F1S20X16J1S10DD34X10DD25G1",
+    "sku": "5M144M8S10DD34X10DD25F1S13DD34X13DD25J1S10DD34X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.0867,
@@ -22961,8 +22961,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 13.34,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -22982,8 +22982,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 13.34,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -23000,9 +23000,9 @@ export default {
     "productId": "paul-murphy-painting-44",
     "title": "Spiritual Sedona Mountains 11 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 11",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD34X10DD25F2S20X16J1S10DD34X10DD25G1",
+    "sku": "5M144M8S10DD34X10DD25F2S13DD34X13DD25J1S10DD34X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.0867,
@@ -23035,8 +23035,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 13.34,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -23056,8 +23056,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 13.34,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -23074,9 +23074,9 @@ export default {
     "productId": "paul-murphy-painting-44",
     "title": "Spiritual Sedona Mountains 11 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 11",
-    "amount": "134.00",
+    "amount": "106.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD34X10DD25F7S20X16J1S10DD34X10DD25G1",
+    "sku": "5M144M8S10DD34X10DD25F7S13DD34X13DD25J1S10DD34X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.0867,
@@ -23109,8 +23109,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 13.34,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -23130,8 +23130,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 13.34,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -23186,9 +23186,9 @@ export default {
     "productId": "paul-murphy-painting-44",
     "title": "Spiritual Sedona Mountains 11 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 11",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD82X7DD75F1S14X11J1S7DD82X7DD75G1",
+    "sku": "5M144M8S7DD82X7DD75F1S10DD82X10DD75J1S7DD82X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5667,
@@ -23221,8 +23221,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 10.82,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -23242,8 +23242,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 10.82,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -23260,9 +23260,9 @@ export default {
     "productId": "paul-murphy-painting-44",
     "title": "Spiritual Sedona Mountains 11 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 11",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD82X7DD75F2S14X11J1S7DD82X7DD75G1",
+    "sku": "5M144M8S7DD82X7DD75F2S10DD82X10DD75J1S7DD82X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5667,
@@ -23295,8 +23295,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 10.82,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -23316,8 +23316,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 10.82,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -23334,9 +23334,9 @@ export default {
     "productId": "paul-murphy-painting-44",
     "title": "Spiritual Sedona Mountains 11 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 11",
-    "amount": "82.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD82X7DD75F7S14X11J1S7DD82X7DD75G1",
+    "sku": "5M144M8S7DD82X7DD75F7S10DD82X10DD75J1S7DD82X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5667,
@@ -23369,8 +23369,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 10.82,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -23390,8 +23390,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 10.82,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -23446,9 +23446,9 @@ export default {
     "productId": "paul-murphy-painting-44",
     "title": "Spiritual Sedona Mountains 11 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 11",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD29X5DD25F1S10X8J1S5DD29X5DD25G1",
+    "sku": "5M144M8S5DD29X5DD25F1S8DD29X8DD25J1S5DD29X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.0367,
@@ -23481,8 +23481,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.29,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -23502,8 +23502,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.29,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -23520,9 +23520,9 @@ export default {
     "productId": "paul-murphy-painting-44",
     "title": "Spiritual Sedona Mountains 11 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 11",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD29X5DD25F2S10X8J1S5DD29X5DD25G1",
+    "sku": "5M144M8S5DD29X5DD25F2S8DD29X8DD25J1S5DD29X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.0367,
@@ -23555,8 +23555,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.29,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -23576,8 +23576,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.29,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -23594,9 +23594,9 @@ export default {
     "productId": "paul-murphy-painting-44",
     "title": "Spiritual Sedona Mountains 11 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 11",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD29X5DD25F7S10X8J1S5DD29X5DD25G1",
+    "sku": "5M144M8S5DD29X5DD25F7S8DD29X8DD25J1S5DD29X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.0367,
@@ -23629,8 +23629,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.29,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -23650,8 +23650,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.29,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -23706,9 +23706,9 @@ export default {
     "productId": "paul-murphy-painting-45",
     "title": "Spiritual Sedona Mountains 12 — Large print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 12",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD39X10DD25F1S20X16J1S10DD39X10DD25G1",
+    "sku": "5M144M8S10DD39X10DD25F1S13DD39X13DD25J1S10DD39X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.1367,
@@ -23741,8 +23741,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 13.39,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -23762,8 +23762,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 13.39,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -23780,9 +23780,9 @@ export default {
     "productId": "paul-murphy-painting-45",
     "title": "Spiritual Sedona Mountains 12 — Large print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 12",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD39X10DD25F2S20X16J1S10DD39X10DD25G1",
+    "sku": "5M144M8S10DD39X10DD25F2S13DD39X13DD25J1S10DD39X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.1367,
@@ -23815,8 +23815,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 13.39,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -23836,8 +23836,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 13.39,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -23854,9 +23854,9 @@ export default {
     "productId": "paul-murphy-painting-45",
     "title": "Spiritual Sedona Mountains 12 — Large print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 12",
-    "amount": "134.00",
+    "amount": "107.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD39X10DD25F7S20X16J1S10DD39X10DD25G1",
+    "sku": "5M144M8S10DD39X10DD25F7S13DD39X13DD25J1S10DD39X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.1367,
@@ -23889,8 +23889,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 13.39,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -23910,8 +23910,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 13.39,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -23966,9 +23966,9 @@ export default {
     "productId": "paul-murphy-painting-45",
     "title": "Spiritual Sedona Mountains 12 — Medium print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 12",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD85X7DD75F1S14X11J1S7DD85X7DD75G1",
+    "sku": "5M144M8S7DD85X7DD75F1S10DD85X10DD75J1S7DD85X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5967,
@@ -24001,8 +24001,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 10.85,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -24022,8 +24022,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 10.85,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -24040,9 +24040,9 @@ export default {
     "productId": "paul-murphy-painting-45",
     "title": "Spiritual Sedona Mountains 12 — Medium print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 12",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD85X7DD75F2S14X11J1S7DD85X7DD75G1",
+    "sku": "5M144M8S7DD85X7DD75F2S10DD85X10DD75J1S7DD85X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5967,
@@ -24075,8 +24075,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 10.85,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -24096,8 +24096,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 10.85,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -24114,9 +24114,9 @@ export default {
     "productId": "paul-murphy-painting-45",
     "title": "Spiritual Sedona Mountains 12 — Medium print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 12",
-    "amount": "82.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD85X7DD75F7S14X11J1S7DD85X7DD75G1",
+    "sku": "5M144M8S7DD85X7DD75F7S10DD85X10DD75J1S7DD85X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5967,
@@ -24149,8 +24149,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 10.85,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -24170,8 +24170,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 10.85,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -24226,9 +24226,9 @@ export default {
     "productId": "paul-murphy-painting-45",
     "title": "Spiritual Sedona Mountains 12 — Small print — Black frame",
     "artworkTitle": "Spiritual Sedona Mountains 12",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD32X5DD25F1S10X8J1S5DD32X5DD25G1",
+    "sku": "5M144M8S5DD32X5DD25F1S8DD32X8DD25J1S5DD32X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.0667,
@@ -24261,8 +24261,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.32,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -24282,8 +24282,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.32,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -24300,9 +24300,9 @@ export default {
     "productId": "paul-murphy-painting-45",
     "title": "Spiritual Sedona Mountains 12 — Small print — White frame",
     "artworkTitle": "Spiritual Sedona Mountains 12",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD32X5DD25F2S10X8J1S5DD32X5DD25G1",
+    "sku": "5M144M8S5DD32X5DD25F2S8DD32X8DD25J1S5DD32X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.0667,
@@ -24335,8 +24335,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.32,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -24356,8 +24356,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.32,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -24374,9 +24374,9 @@ export default {
     "productId": "paul-murphy-painting-45",
     "title": "Spiritual Sedona Mountains 12 — Small print — Natural wood frame",
     "artworkTitle": "Spiritual Sedona Mountains 12",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD32X5DD25F7S10X8J1S5DD32X5DD25G1",
+    "sku": "5M144M8S5DD32X5DD25F7S8DD32X8DD25J1S5DD32X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.0667,
@@ -24409,8 +24409,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.32,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -24430,8 +24430,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.32,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -24488,7 +24488,7 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD25X10DD91F1S11X14J1S8DD25X10DD91G1",
+    "sku": "5M144M8S8DD25X10DD91F1S11DD25X13DD91J1S8DD25X10DD91G1",
     "scale": 1,
     "imageSize": {
       "width": 7.9967,
@@ -24521,8 +24521,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.25,
+        "height": 13.91,
         "unit": "in"
       },
       "window": {
@@ -24542,8 +24542,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.25,
+        "height": 13.91,
         "unit": "in"
       },
       "glazing": {
@@ -24562,7 +24562,7 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD25X10DD91F2S11X14J1S8DD25X10DD91G1",
+    "sku": "5M144M8S8DD25X10DD91F2S11DD25X13DD91J1S8DD25X10DD91G1",
     "scale": 1,
     "imageSize": {
       "width": 7.9967,
@@ -24595,8 +24595,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.25,
+        "height": 13.91,
         "unit": "in"
       },
       "window": {
@@ -24616,8 +24616,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.25,
+        "height": 13.91,
         "unit": "in"
       },
       "glazing": {
@@ -24636,7 +24636,7 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD25X10DD91F7S11X14J1S8DD25X10DD91G1",
+    "sku": "5M144M8S8DD25X10DD91F7S11DD25X13DD91J1S8DD25X10DD91G1",
     "scale": 1,
     "imageSize": {
       "width": 7.9967,
@@ -24669,8 +24669,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.25,
+        "height": 13.91,
         "unit": "in"
       },
       "window": {
@@ -24690,8 +24690,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.25,
+        "height": 13.91,
         "unit": "in"
       },
       "glazing": {
@@ -24748,7 +24748,7 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X8DD24F1S9X12J1S6DD25X8DD24G1",
+    "sku": "5M144M8S6DD25X8DD24F1S9DD25X11DD24J1S6DD25X8DD24G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.9933,
@@ -24781,8 +24781,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 11.24,
         "unit": "in"
       },
       "window": {
@@ -24802,8 +24802,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 11.24,
         "unit": "in"
       },
       "glazing": {
@@ -24822,7 +24822,7 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X8DD24F2S9X12J1S6DD25X8DD24G1",
+    "sku": "5M144M8S6DD25X8DD24F2S9DD25X11DD24J1S6DD25X8DD24G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.9933,
@@ -24855,8 +24855,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 11.24,
         "unit": "in"
       },
       "window": {
@@ -24876,8 +24876,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 11.24,
         "unit": "in"
       },
       "glazing": {
@@ -24894,9 +24894,9 @@ export default {
     "productId": "paul-murphy-painting-51",
     "title": "Puerto Rico Waterfront — Medium print — Natural wood frame",
     "artworkTitle": "Puerto Rico Waterfront",
-    "amount": "72.63",
+    "amount": "71.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD25X8DD24F7S9X12J1S6DD25X8DD24G1",
+    "sku": "5M144M8S6DD25X8DD24F7S9DD25X11DD24J1S6DD25X8DD24G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.9933,
@@ -24929,8 +24929,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 11.24,
         "unit": "in"
       },
       "window": {
@@ -24950,8 +24950,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.25,
+        "height": 11.24,
         "unit": "in"
       },
       "glazing": {
@@ -25008,7 +25008,7 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD25X5DD58F1S8X10J1S4DD25X5DD58G1",
+    "sku": "5M144M8S4DD25X5DD58F1S8DD01X9DD34J1S4DD25X5DD58G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.9967,
@@ -25041,8 +25041,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.34,
         "unit": "in"
       },
       "window": {
@@ -25062,8 +25062,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.34,
         "unit": "in"
       },
       "glazing": {
@@ -25082,7 +25082,7 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD25X5DD58F2S8X10J1S4DD25X5DD58G1",
+    "sku": "5M144M8S4DD25X5DD58F2S8DD01X9DD34J1S4DD25X5DD58G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.9967,
@@ -25115,8 +25115,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.34,
         "unit": "in"
       },
       "window": {
@@ -25136,8 +25136,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.34,
         "unit": "in"
       },
       "glazing": {
@@ -25154,9 +25154,9 @@ export default {
     "productId": "paul-murphy-painting-51",
     "title": "Puerto Rico Waterfront — Small print — Natural wood frame",
     "artworkTitle": "Puerto Rico Waterfront",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD25X5DD58F7S8X10J1S4DD25X5DD58G1",
+    "sku": "5M144M8S4DD25X5DD58F7S8DD01X9DD34J1S4DD25X5DD58G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.9967,
@@ -25189,8 +25189,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.34,
         "unit": "in"
       },
       "window": {
@@ -25210,8 +25210,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.34,
         "unit": "in"
       },
       "glazing": {
@@ -25266,9 +25266,9 @@ export default {
     "productId": "paul-murphy-painting-55",
     "title": "Pyrimid from photo — Large print — Black frame",
     "artworkTitle": "Pyrimid from photo",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD76X4DD52F1S10X8J1S4DD76X4DD52G1",
+    "sku": "5M144M8S4DD76X4DD52F1S8DD26X8DD02J1S4DD76X4DD52G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5,
@@ -25301,8 +25301,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.26,
+        "height": 8.02,
         "unit": "in"
       },
       "window": {
@@ -25322,8 +25322,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.26,
+        "height": 8.02,
         "unit": "in"
       },
       "glazing": {
@@ -25340,9 +25340,9 @@ export default {
     "productId": "paul-murphy-painting-55",
     "title": "Pyrimid from photo — Large print — White frame",
     "artworkTitle": "Pyrimid from photo",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD76X4DD52F2S10X8J1S4DD76X4DD52G1",
+    "sku": "5M144M8S4DD76X4DD52F2S8DD26X8DD02J1S4DD76X4DD52G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5,
@@ -25375,8 +25375,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.26,
+        "height": 8.02,
         "unit": "in"
       },
       "window": {
@@ -25396,8 +25396,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.26,
+        "height": 8.02,
         "unit": "in"
       },
       "glazing": {
@@ -25414,9 +25414,9 @@ export default {
     "productId": "paul-murphy-painting-55",
     "title": "Pyrimid from photo — Large print — Natural wood frame",
     "artworkTitle": "Pyrimid from photo",
-    "amount": "68.63",
+    "amount": "65.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD76X4DD52F7S10X8J1S4DD76X4DD52G1",
+    "sku": "5M144M8S4DD76X4DD52F7S8DD26X8DD02J1S4DD76X4DD52G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5,
@@ -25449,8 +25449,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.26,
+        "height": 8.02,
         "unit": "in"
       },
       "window": {
@@ -25470,8 +25470,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.26,
+        "height": 8.02,
         "unit": "in"
       },
       "glazing": {
@@ -25526,9 +25526,9 @@ export default {
     "productId": "paul-murphy-painting-56",
     "title": "Peach Preserves — Large print — Black frame",
     "artworkTitle": "Peach Preserves",
-    "amount": "134.00",
+    "amount": "120.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD82X12DD66F1S16X20J1S11DD82X12DD66G1",
+    "sku": "5M144M8S11DD82X12DD66F1S14DD82X15DD66J1S11DD82X12DD66G1",
     "scale": 1,
     "imageSize": {
       "width": 11.5633,
@@ -25561,8 +25561,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 14.82,
+        "height": 15.66,
         "unit": "in"
       },
       "window": {
@@ -25582,8 +25582,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 14.82,
+        "height": 15.66,
         "unit": "in"
       },
       "glazing": {
@@ -25600,9 +25600,9 @@ export default {
     "productId": "paul-murphy-painting-56",
     "title": "Peach Preserves — Large print — White frame",
     "artworkTitle": "Peach Preserves",
-    "amount": "134.00",
+    "amount": "120.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD82X12DD66F2S16X20J1S11DD82X12DD66G1",
+    "sku": "5M144M8S11DD82X12DD66F2S14DD82X15DD66J1S11DD82X12DD66G1",
     "scale": 1,
     "imageSize": {
       "width": 11.5633,
@@ -25635,8 +25635,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 14.82,
+        "height": 15.66,
         "unit": "in"
       },
       "window": {
@@ -25656,8 +25656,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 14.82,
+        "height": 15.66,
         "unit": "in"
       },
       "glazing": {
@@ -25674,9 +25674,9 @@ export default {
     "productId": "paul-murphy-painting-56",
     "title": "Peach Preserves — Large print — Natural wood frame",
     "artworkTitle": "Peach Preserves",
-    "amount": "149.00",
+    "amount": "133.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD82X12DD66F7S16X20J1S11DD82X12DD66G1",
+    "sku": "5M144M8S11DD82X12DD66F7S14DD82X15DD66J1S11DD82X12DD66G1",
     "scale": 1,
     "imageSize": {
       "width": 11.5633,
@@ -25709,8 +25709,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 14.82,
+        "height": 15.66,
         "unit": "in"
       },
       "window": {
@@ -25730,8 +25730,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 14.82,
+        "height": 15.66,
         "unit": "in"
       },
       "glazing": {
@@ -25786,9 +25786,9 @@ export default {
     "productId": "paul-murphy-painting-56",
     "title": "Peach Preserves — Medium print — Black frame",
     "artworkTitle": "Peach Preserves",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD92X9DD56F1S11X14J1S8DD92X9DD56G1",
+    "sku": "5M144M8S8DD92X9DD56F1S11DD92X12DD56J1S8DD92X9DD56G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.6667,
@@ -25821,8 +25821,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.92,
+        "height": 12.56,
         "unit": "in"
       },
       "window": {
@@ -25842,8 +25842,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.92,
+        "height": 12.56,
         "unit": "in"
       },
       "glazing": {
@@ -25860,9 +25860,9 @@ export default {
     "productId": "paul-murphy-painting-56",
     "title": "Peach Preserves — Medium print — White frame",
     "artworkTitle": "Peach Preserves",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD92X9DD56F2S11X14J1S8DD92X9DD56G1",
+    "sku": "5M144M8S8DD92X9DD56F2S11DD92X12DD56J1S8DD92X9DD56G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.6667,
@@ -25895,8 +25895,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.92,
+        "height": 12.56,
         "unit": "in"
       },
       "window": {
@@ -25916,8 +25916,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.92,
+        "height": 12.56,
         "unit": "in"
       },
       "glazing": {
@@ -25934,9 +25934,9 @@ export default {
     "productId": "paul-murphy-painting-56",
     "title": "Peach Preserves — Medium print — Natural wood frame",
     "artworkTitle": "Peach Preserves",
-    "amount": "92.00",
+    "amount": "91.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD92X9DD56F7S11X14J1S8DD92X9DD56G1",
+    "sku": "5M144M8S8DD92X9DD56F7S11DD92X12DD56J1S8DD92X9DD56G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.6667,
@@ -25969,8 +25969,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.92,
+        "height": 12.56,
         "unit": "in"
       },
       "window": {
@@ -25990,8 +25990,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.92,
+        "height": 12.56,
         "unit": "in"
       },
       "glazing": {
@@ -26046,9 +26046,9 @@ export default {
     "productId": "paul-murphy-painting-56",
     "title": "Peach Preserves — Small print — Black frame",
     "artworkTitle": "Peach Preserves",
-    "amount": "62.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD03X6DD45F1S9X12J1S6DD03X6DD45G1",
+    "sku": "5M144M8S6DD03X6DD45F1S9DD03X9DD45J1S6DD03X6DD45G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.7767,
@@ -26081,8 +26081,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.03,
+        "height": 9.45,
         "unit": "in"
       },
       "window": {
@@ -26102,8 +26102,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.03,
+        "height": 9.45,
         "unit": "in"
       },
       "glazing": {
@@ -26120,9 +26120,9 @@ export default {
     "productId": "paul-murphy-painting-56",
     "title": "Peach Preserves — Small print — White frame",
     "artworkTitle": "Peach Preserves",
-    "amount": "62.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD03X6DD45F2S9X12J1S6DD03X6DD45G1",
+    "sku": "5M144M8S6DD03X6DD45F2S9DD03X9DD45J1S6DD03X6DD45G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.7767,
@@ -26155,8 +26155,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.03,
+        "height": 9.45,
         "unit": "in"
       },
       "window": {
@@ -26176,8 +26176,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.03,
+        "height": 9.45,
         "unit": "in"
       },
       "glazing": {
@@ -26194,9 +26194,9 @@ export default {
     "productId": "paul-murphy-painting-56",
     "title": "Peach Preserves — Small print — Natural wood frame",
     "artworkTitle": "Peach Preserves",
-    "amount": "72.63",
+    "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD03X6DD45F7S9X12J1S6DD03X6DD45G1",
+    "sku": "5M144M8S6DD03X6DD45F7S9DD03X9DD45J1S6DD03X6DD45G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.7767,
@@ -26229,8 +26229,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.03,
+        "height": 9.45,
         "unit": "in"
       },
       "window": {
@@ -26250,8 +26250,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.03,
+        "height": 9.45,
         "unit": "in"
       },
       "glazing": {
@@ -26306,9 +26306,9 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Large print — Black frame",
     "artworkTitle": "Lady in Gold",
-    "amount": "149.00",
+    "amount": "142.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD94X14DD95F1S16X20J1S11DD94X14DD95G1",
+    "sku": "5M144M8S11DD94X14DD95F1S14DD94X17DD95J1S11DD94X14DD95G1",
     "scale": 1,
     "imageSize": {
       "width": 11.6867,
@@ -26341,8 +26341,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 14.94,
+        "height": 17.95,
         "unit": "in"
       },
       "window": {
@@ -26362,8 +26362,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 14.94,
+        "height": 17.95,
         "unit": "in"
       },
       "glazing": {
@@ -26380,9 +26380,9 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Large print — White frame",
     "artworkTitle": "Lady in Gold",
-    "amount": "149.00",
+    "amount": "142.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD94X14DD95F2S16X20J1S11DD94X14DD95G1",
+    "sku": "5M144M8S11DD94X14DD95F2S14DD94X17DD95J1S11DD94X14DD95G1",
     "scale": 1,
     "imageSize": {
       "width": 11.6867,
@@ -26415,8 +26415,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 14.94,
+        "height": 17.95,
         "unit": "in"
       },
       "window": {
@@ -26436,8 +26436,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 14.94,
+        "height": 17.95,
         "unit": "in"
       },
       "glazing": {
@@ -26454,9 +26454,9 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Large print — Natural wood frame",
     "artworkTitle": "Lady in Gold",
-    "amount": "164.00",
+    "amount": "156.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD94X14DD95F7S16X20J1S11DD94X14DD95G1",
+    "sku": "5M144M8S11DD94X14DD95F7S14DD94X17DD95J1S11DD94X14DD95G1",
     "scale": 1,
     "imageSize": {
       "width": 11.6867,
@@ -26489,8 +26489,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 14.94,
+        "height": 17.95,
         "unit": "in"
       },
       "window": {
@@ -26510,8 +26510,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 14.94,
+        "height": 17.95,
         "unit": "in"
       },
       "glazing": {
@@ -26566,9 +26566,9 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Medium print — Black frame",
     "artworkTitle": "Lady in Gold",
-    "amount": "96.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD01X11DD27F1S12X15J1S9DD01X11DD27G1",
+    "sku": "5M144M8S9DD01X11DD27F1S12DD01X14DD27J1S9DD01X11DD27G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.7567,
@@ -26601,8 +26601,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.01,
+        "height": 14.27,
         "unit": "in"
       },
       "window": {
@@ -26622,8 +26622,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.01,
+        "height": 14.27,
         "unit": "in"
       },
       "glazing": {
@@ -26640,9 +26640,9 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Medium print — White frame",
     "artworkTitle": "Lady in Gold",
-    "amount": "96.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD01X11DD27F2S12X15J1S9DD01X11DD27G1",
+    "sku": "5M144M8S9DD01X11DD27F2S12DD01X14DD27J1S9DD01X11DD27G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.7567,
@@ -26675,8 +26675,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.01,
+        "height": 14.27,
         "unit": "in"
       },
       "window": {
@@ -26696,8 +26696,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.01,
+        "height": 14.27,
         "unit": "in"
       },
       "glazing": {
@@ -26714,9 +26714,9 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Medium print — Natural wood frame",
     "artworkTitle": "Lady in Gold",
-    "amount": "108.00",
+    "amount": "106.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD01X11DD27F7S12X15J1S9DD01X11DD27G1",
+    "sku": "5M144M8S9DD01X11DD27F7S12DD01X14DD27J1S9DD01X11DD27G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.7567,
@@ -26749,8 +26749,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.01,
+        "height": 14.27,
         "unit": "in"
       },
       "window": {
@@ -26770,8 +26770,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.01,
+        "height": 14.27,
         "unit": "in"
       },
       "glazing": {
@@ -26826,9 +26826,9 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Small print — Black frame",
     "artworkTitle": "Lady in Gold",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD09X7DD6F1S9X12J1S6DD09X7DD6G1",
+    "sku": "5M144M8S6DD09X7DD6F1S9DD09X10DD6J1S6DD09X7DD6G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.8367,
@@ -26861,8 +26861,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 10.6,
         "unit": "in"
       },
       "window": {
@@ -26882,8 +26882,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 10.6,
         "unit": "in"
       },
       "glazing": {
@@ -26900,9 +26900,9 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Small print — White frame",
     "artworkTitle": "Lady in Gold",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD09X7DD6F2S9X12J1S6DD09X7DD6G1",
+    "sku": "5M144M8S6DD09X7DD6F2S9DD09X10DD6J1S6DD09X7DD6G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.8367,
@@ -26935,8 +26935,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 10.6,
         "unit": "in"
       },
       "window": {
@@ -26956,8 +26956,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 10.6,
         "unit": "in"
       },
       "glazing": {
@@ -26974,9 +26974,9 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Small print — Natural wood frame",
     "artworkTitle": "Lady in Gold",
-    "amount": "72.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD09X7DD6F7S9X12J1S6DD09X7DD6G1",
+    "sku": "5M144M8S6DD09X7DD6F7S9DD09X10DD6J1S6DD09X7DD6G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.8367,
@@ -27009,8 +27009,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 10.6,
         "unit": "in"
       },
       "window": {
@@ -27030,8 +27030,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 10.6,
         "unit": "in"
       },
       "glazing": {
@@ -27086,9 +27086,9 @@ export default {
     "productId": "paul-murphy-painting-6",
     "title": "Son TJ Sedona — Large print — Black frame",
     "artworkTitle": "Son TJ Sedona",
-    "amount": "124.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD09X10DD25F1S20X16J1S12DD09X10DD25G1",
+    "sku": "5M144M8S12DD09X10DD25F1S15DD09X13DD25J1S12DD09X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 11.8367,
@@ -27121,8 +27121,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 15.09,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -27142,8 +27142,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 15.09,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -27160,9 +27160,9 @@ export default {
     "productId": "paul-murphy-painting-6",
     "title": "Son TJ Sedona — Large print — White frame",
     "artworkTitle": "Son TJ Sedona",
-    "amount": "124.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD09X10DD25F2S20X16J1S12DD09X10DD25G1",
+    "sku": "5M144M8S12DD09X10DD25F2S15DD09X13DD25J1S12DD09X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 11.8367,
@@ -27195,8 +27195,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 15.09,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -27216,8 +27216,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 15.09,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -27234,9 +27234,9 @@ export default {
     "productId": "paul-murphy-painting-6",
     "title": "Son TJ Sedona — Large print — Natural wood frame",
     "artworkTitle": "Son TJ Sedona",
-    "amount": "139.00",
+    "amount": "117.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD09X10DD25F7S20X16J1S12DD09X10DD25G1",
+    "sku": "5M144M8S12DD09X10DD25F7S15DD09X13DD25J1S12DD09X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 11.8367,
@@ -27269,8 +27269,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 15.09,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -27290,8 +27290,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 15.09,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -27346,9 +27346,9 @@ export default {
     "productId": "paul-murphy-painting-6",
     "title": "Son TJ Sedona — Medium print — Black frame",
     "artworkTitle": "Son TJ Sedona",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD13X7DD75F1S14X11J1S9DD13X7DD75G1",
+    "sku": "5M144M8S9DD13X7DD75F1S12DD13X10DD75J1S9DD13X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.8767,
@@ -27381,8 +27381,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.13,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -27402,8 +27402,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.13,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -27420,9 +27420,9 @@ export default {
     "productId": "paul-murphy-painting-6",
     "title": "Son TJ Sedona — Medium print — White frame",
     "artworkTitle": "Son TJ Sedona",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD13X7DD75F2S14X11J1S9DD13X7DD75G1",
+    "sku": "5M144M8S9DD13X7DD75F2S12DD13X10DD75J1S9DD13X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.8767,
@@ -27455,8 +27455,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.13,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -27476,8 +27476,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.13,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -27494,9 +27494,9 @@ export default {
     "productId": "paul-murphy-painting-6",
     "title": "Son TJ Sedona — Medium print — Natural wood frame",
     "artworkTitle": "Son TJ Sedona",
-    "amount": "87.00",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD13X7DD75F7S14X11J1S9DD13X7DD75G1",
+    "sku": "5M144M8S9DD13X7DD75F7S12DD13X10DD75J1S9DD13X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.8767,
@@ -27529,8 +27529,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.13,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -27550,8 +27550,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.13,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -27608,7 +27608,7 @@ export default {
     "artworkTitle": "Son TJ Sedona",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD17X5DD25F1S10X8J1S6DD17X5DD25G1",
+    "sku": "5M144M8S6DD17X5DD25F1S9DD17X8DD25J1S6DD17X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9167,
@@ -27641,8 +27641,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.17,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -27662,8 +27662,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.17,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -27682,7 +27682,7 @@ export default {
     "artworkTitle": "Son TJ Sedona",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD17X5DD25F2S10X8J1S6DD17X5DD25G1",
+    "sku": "5M144M8S6DD17X5DD25F2S9DD17X8DD25J1S6DD17X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9167,
@@ -27715,8 +27715,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.17,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -27736,8 +27736,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.17,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -27754,9 +27754,9 @@ export default {
     "productId": "paul-murphy-painting-6",
     "title": "Son TJ Sedona — Small print — Natural wood frame",
     "artworkTitle": "Son TJ Sedona",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD17X5DD25F7S10X8J1S6DD17X5DD25G1",
+    "sku": "5M144M8S6DD17X5DD25F7S9DD17X8DD25J1S6DD17X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.9167,
@@ -27789,8 +27789,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.17,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -27810,8 +27810,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.17,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -27866,9 +27866,9 @@ export default {
     "productId": "paul-murphy-painting-62",
     "title": "Waiting on your ship — Large print — Black frame",
     "artworkTitle": "Waiting on your ship",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD29X9DD7F1S15X12J1S12DD29X9DD7G1",
+    "sku": "5M144M8S12DD29X9DD7F1S15DD29X12DD7J1S12DD29X9DD7G1",
     "scale": 1,
     "imageSize": {
       "width": 12.0333,
@@ -27901,8 +27901,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.29,
+        "height": 12.7,
         "unit": "in"
       },
       "window": {
@@ -27922,8 +27922,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.29,
+        "height": 12.7,
         "unit": "in"
       },
       "glazing": {
@@ -27940,9 +27940,9 @@ export default {
     "productId": "paul-murphy-painting-62",
     "title": "Waiting on your ship — Large print — White frame",
     "artworkTitle": "Waiting on your ship",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD29X9DD7F2S15X12J1S12DD29X9DD7G1",
+    "sku": "5M144M8S12DD29X9DD7F2S15DD29X12DD7J1S12DD29X9DD7G1",
     "scale": 1,
     "imageSize": {
       "width": 12.0333,
@@ -27975,8 +27975,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.29,
+        "height": 12.7,
         "unit": "in"
       },
       "window": {
@@ -27996,8 +27996,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.29,
+        "height": 12.7,
         "unit": "in"
       },
       "glazing": {
@@ -28014,9 +28014,9 @@ export default {
     "productId": "paul-murphy-painting-62",
     "title": "Waiting on your ship — Large print — Natural wood frame",
     "artworkTitle": "Waiting on your ship",
-    "amount": "113.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD29X9DD7F7S15X12J1S12DD29X9DD7G1",
+    "sku": "5M144M8S12DD29X9DD7F7S15DD29X12DD7J1S12DD29X9DD7G1",
     "scale": 1,
     "imageSize": {
       "width": 12.0333,
@@ -28049,8 +28049,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.29,
+        "height": 12.7,
         "unit": "in"
       },
       "window": {
@@ -28070,8 +28070,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.29,
+        "height": 12.7,
         "unit": "in"
       },
       "glazing": {
@@ -28126,9 +28126,9 @@ export default {
     "productId": "paul-murphy-painting-62",
     "title": "Waiting on your ship — Medium print — Black frame",
     "artworkTitle": "Waiting on your ship",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD28X7DD34F1S14X11J1S9DD28X7DD34G1",
+    "sku": "5M144M8S9DD28X7DD34F1S12DD28X10DD34J1S9DD28X7DD34G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.0267,
@@ -28161,8 +28161,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.28,
+        "height": 10.34,
         "unit": "in"
       },
       "window": {
@@ -28182,8 +28182,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.28,
+        "height": 10.34,
         "unit": "in"
       },
       "glazing": {
@@ -28200,9 +28200,9 @@ export default {
     "productId": "paul-murphy-painting-62",
     "title": "Waiting on your ship — Medium print — White frame",
     "artworkTitle": "Waiting on your ship",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD28X7DD34F2S14X11J1S9DD28X7DD34G1",
+    "sku": "5M144M8S9DD28X7DD34F2S12DD28X10DD34J1S9DD28X7DD34G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.0267,
@@ -28235,8 +28235,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.28,
+        "height": 10.34,
         "unit": "in"
       },
       "window": {
@@ -28256,8 +28256,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.28,
+        "height": 10.34,
         "unit": "in"
       },
       "glazing": {
@@ -28274,9 +28274,9 @@ export default {
     "productId": "paul-murphy-painting-62",
     "title": "Waiting on your ship — Medium print — Natural wood frame",
     "artworkTitle": "Waiting on your ship",
-    "amount": "87.00",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD28X7DD34F7S14X11J1S9DD28X7DD34G1",
+    "sku": "5M144M8S9DD28X7DD34F7S12DD28X10DD34J1S9DD28X7DD34G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.0267,
@@ -28309,8 +28309,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.28,
+        "height": 10.34,
         "unit": "in"
       },
       "window": {
@@ -28330,8 +28330,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.28,
+        "height": 10.34,
         "unit": "in"
       },
       "glazing": {
@@ -28388,7 +28388,7 @@ export default {
     "artworkTitle": "Waiting on your ship",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD27X4DD97F1S10X8J1S6DD27X4DD97G1",
+    "sku": "5M144M8S6DD27X4DD97F1S9DD31X8DD01J1S6DD27X4DD97G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.01,
@@ -28421,8 +28421,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.31,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -28442,8 +28442,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.31,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -28462,7 +28462,7 @@ export default {
     "artworkTitle": "Waiting on your ship",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD27X4DD97F2S10X8J1S6DD27X4DD97G1",
+    "sku": "5M144M8S6DD27X4DD97F2S9DD31X8DD01J1S6DD27X4DD97G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.01,
@@ -28495,8 +28495,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.31,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -28516,8 +28516,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.31,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -28534,9 +28534,9 @@ export default {
     "productId": "paul-murphy-painting-62",
     "title": "Waiting on your ship — Small print — Natural wood frame",
     "artworkTitle": "Waiting on your ship",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD27X4DD97F7S10X8J1S6DD27X4DD97G1",
+    "sku": "5M144M8S6DD27X4DD97F7S9DD31X8DD01J1S6DD27X4DD97G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.01,
@@ -28569,8 +28569,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.31,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -28590,8 +28590,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.31,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -28646,9 +28646,9 @@ export default {
     "productId": "paul-murphy-painting-63",
     "title": "Slot Canyon Face — Large print — Black frame",
     "artworkTitle": "Slot Canyon Face",
-    "amount": "86.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD52X11DD09F1S11X14J1S8DD52X11DD09G1",
+    "sku": "5M144M8S8DD52X11DD09F1S11DD52X14DD09J1S8DD52X11DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 8.2667,
@@ -28681,8 +28681,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.52,
+        "height": 14.09,
         "unit": "in"
       },
       "window": {
@@ -28702,8 +28702,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.52,
+        "height": 14.09,
         "unit": "in"
       },
       "glazing": {
@@ -28720,9 +28720,9 @@ export default {
     "productId": "paul-murphy-painting-63",
     "title": "Slot Canyon Face — Large print — White frame",
     "artworkTitle": "Slot Canyon Face",
-    "amount": "86.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD52X11DD09F2S11X14J1S8DD52X11DD09G1",
+    "sku": "5M144M8S8DD52X11DD09F2S11DD52X14DD09J1S8DD52X11DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 8.2667,
@@ -28755,8 +28755,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.52,
+        "height": 14.09,
         "unit": "in"
       },
       "window": {
@@ -28776,8 +28776,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.52,
+        "height": 14.09,
         "unit": "in"
       },
       "glazing": {
@@ -28794,9 +28794,9 @@ export default {
     "productId": "paul-murphy-painting-63",
     "title": "Slot Canyon Face — Large print — Natural wood frame",
     "artworkTitle": "Slot Canyon Face",
-    "amount": "97.00",
+    "amount": "99.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD52X11DD09F7S11X14J1S8DD52X11DD09G1",
+    "sku": "5M144M8S8DD52X11DD09F7S11DD52X14DD09J1S8DD52X11DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 8.2667,
@@ -28829,8 +28829,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.52,
+        "height": 14.09,
         "unit": "in"
       },
       "window": {
@@ -28850,8 +28850,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.52,
+        "height": 14.09,
         "unit": "in"
       },
       "glazing": {
@@ -28908,7 +28908,7 @@ export default {
     "artworkTitle": "Slot Canyon Face",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD45X8DD38F1S9X12J1S6DD45X8DD38G1",
+    "sku": "5M144M8S6DD45X8DD38F1S9DD45X11DD38J1S6DD45X8DD38G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.1967,
@@ -28941,8 +28941,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.45,
+        "height": 11.38,
         "unit": "in"
       },
       "window": {
@@ -28962,8 +28962,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.45,
+        "height": 11.38,
         "unit": "in"
       },
       "glazing": {
@@ -28982,7 +28982,7 @@ export default {
     "artworkTitle": "Slot Canyon Face",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD45X8DD38F2S9X12J1S6DD45X8DD38G1",
+    "sku": "5M144M8S6DD45X8DD38F2S9DD45X11DD38J1S6DD45X8DD38G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.1967,
@@ -29015,8 +29015,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.45,
+        "height": 11.38,
         "unit": "in"
       },
       "window": {
@@ -29036,8 +29036,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.45,
+        "height": 11.38,
         "unit": "in"
       },
       "glazing": {
@@ -29054,9 +29054,9 @@ export default {
     "productId": "paul-murphy-painting-63",
     "title": "Slot Canyon Face — Medium print — Natural wood frame",
     "artworkTitle": "Slot Canyon Face",
-    "amount": "77.63",
+    "amount": "76.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD45X8DD38F7S9X12J1S6DD45X8DD38G1",
+    "sku": "5M144M8S6DD45X8DD38F7S9DD45X11DD38J1S6DD45X8DD38G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.1967,
@@ -29089,8 +29089,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.45,
+        "height": 11.38,
         "unit": "in"
       },
       "window": {
@@ -29110,8 +29110,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.45,
+        "height": 11.38,
         "unit": "in"
       },
       "glazing": {
@@ -29168,7 +29168,7 @@ export default {
     "artworkTitle": "Slot Canyon Face",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD38X5DD67F1S8X10J1S4DD38X5DD67G1",
+    "sku": "5M144M8S4DD38X5DD67F1S8X9DD29J1S4DD38X5DD67G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1267,
@@ -29202,7 +29202,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 9.29,
         "unit": "in"
       },
       "window": {
@@ -29223,7 +29223,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 9.29,
         "unit": "in"
       },
       "glazing": {
@@ -29242,7 +29242,7 @@ export default {
     "artworkTitle": "Slot Canyon Face",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD38X5DD67F2S8X10J1S4DD38X5DD67G1",
+    "sku": "5M144M8S4DD38X5DD67F2S8X9DD29J1S4DD38X5DD67G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1267,
@@ -29276,7 +29276,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 9.29,
         "unit": "in"
       },
       "window": {
@@ -29297,7 +29297,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 9.29,
         "unit": "in"
       },
       "glazing": {
@@ -29314,9 +29314,9 @@ export default {
     "productId": "paul-murphy-painting-63",
     "title": "Slot Canyon Face — Small print — Natural wood frame",
     "artworkTitle": "Slot Canyon Face",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD38X5DD67F7S8X10J1S4DD38X5DD67G1",
+    "sku": "5M144M8S4DD38X5DD67F7S8X9DD29J1S4DD38X5DD67G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1267,
@@ -29350,7 +29350,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 9.29,
         "unit": "in"
       },
       "window": {
@@ -29371,7 +29371,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 9.29,
         "unit": "in"
       },
       "glazing": {
@@ -29426,9 +29426,9 @@ export default {
     "productId": "paul-murphy-painting-64",
     "title": "Slot Canyon Arizona — Large print — Black frame",
     "artworkTitle": "Slot Canyon Arizona",
-    "amount": "86.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD57X11DD34F1S11X14J1S8DD57X11DD34G1",
+    "sku": "5M144M8S8DD57X11DD34F1S11DD57X14DD34J1S8DD57X11DD34G1",
     "scale": 1,
     "imageSize": {
       "width": 8.3133,
@@ -29461,8 +29461,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.57,
+        "height": 14.34,
         "unit": "in"
       },
       "window": {
@@ -29482,8 +29482,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.57,
+        "height": 14.34,
         "unit": "in"
       },
       "glazing": {
@@ -29500,9 +29500,9 @@ export default {
     "productId": "paul-murphy-painting-64",
     "title": "Slot Canyon Arizona — Large print — White frame",
     "artworkTitle": "Slot Canyon Arizona",
-    "amount": "86.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD57X11DD34F2S11X14J1S8DD57X11DD34G1",
+    "sku": "5M144M8S8DD57X11DD34F2S11DD57X14DD34J1S8DD57X11DD34G1",
     "scale": 1,
     "imageSize": {
       "width": 8.3133,
@@ -29535,8 +29535,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.57,
+        "height": 14.34,
         "unit": "in"
       },
       "window": {
@@ -29556,8 +29556,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.57,
+        "height": 14.34,
         "unit": "in"
       },
       "glazing": {
@@ -29574,9 +29574,9 @@ export default {
     "productId": "paul-murphy-painting-64",
     "title": "Slot Canyon Arizona — Large print — Natural wood frame",
     "artworkTitle": "Slot Canyon Arizona",
-    "amount": "97.00",
+    "amount": "100.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD57X11DD34F7S11X14J1S8DD57X11DD34G1",
+    "sku": "5M144M8S8DD57X11DD34F7S11DD57X14DD34J1S8DD57X11DD34G1",
     "scale": 1,
     "imageSize": {
       "width": 8.3133,
@@ -29609,8 +29609,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.57,
+        "height": 14.34,
         "unit": "in"
       },
       "window": {
@@ -29630,8 +29630,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.57,
+        "height": 14.34,
         "unit": "in"
       },
       "glazing": {
@@ -29688,7 +29688,7 @@ export default {
     "artworkTitle": "Slot Canyon Arizona",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD49X8DD57F1S9X12J1S6DD49X8DD57G1",
+    "sku": "5M144M8S6DD49X8DD57F1S9DD49X11DD57J1S6DD49X8DD57G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.2367,
@@ -29721,8 +29721,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 11.57,
         "unit": "in"
       },
       "window": {
@@ -29742,8 +29742,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 11.57,
         "unit": "in"
       },
       "glazing": {
@@ -29762,7 +29762,7 @@ export default {
     "artworkTitle": "Slot Canyon Arizona",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD49X8DD57F2S9X12J1S6DD49X8DD57G1",
+    "sku": "5M144M8S6DD49X8DD57F2S9DD49X11DD57J1S6DD49X8DD57G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.2367,
@@ -29795,8 +29795,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 11.57,
         "unit": "in"
       },
       "window": {
@@ -29816,8 +29816,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 11.57,
         "unit": "in"
       },
       "glazing": {
@@ -29836,7 +29836,7 @@ export default {
     "artworkTitle": "Slot Canyon Arizona",
     "amount": "77.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD49X8DD57F7S9X12J1S6DD49X8DD57G1",
+    "sku": "5M144M8S6DD49X8DD57F7S9DD49X11DD57J1S6DD49X8DD57G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.2367,
@@ -29869,8 +29869,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 11.57,
         "unit": "in"
       },
       "window": {
@@ -29890,8 +29890,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 11.57,
         "unit": "in"
       },
       "glazing": {
@@ -29948,7 +29948,7 @@ export default {
     "artworkTitle": "Slot Canyon Arizona",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD41X5DD79F1S8X10J1S4DD41X5DD79G1",
+    "sku": "5M144M8S4DD41X5DD79F1S8DD01X9DD39J1S4DD41X5DD79G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.15,
@@ -29981,8 +29981,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.39,
         "unit": "in"
       },
       "window": {
@@ -30002,8 +30002,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.39,
         "unit": "in"
       },
       "glazing": {
@@ -30022,7 +30022,7 @@ export default {
     "artworkTitle": "Slot Canyon Arizona",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD41X5DD79F2S8X10J1S4DD41X5DD79G1",
+    "sku": "5M144M8S4DD41X5DD79F2S8DD01X9DD39J1S4DD41X5DD79G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.15,
@@ -30055,8 +30055,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.39,
         "unit": "in"
       },
       "window": {
@@ -30076,8 +30076,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.39,
         "unit": "in"
       },
       "glazing": {
@@ -30094,9 +30094,9 @@ export default {
     "productId": "paul-murphy-painting-64",
     "title": "Slot Canyon Arizona — Small print — Natural wood frame",
     "artworkTitle": "Slot Canyon Arizona",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD41X5DD79F7S8X10J1S4DD41X5DD79G1",
+    "sku": "5M144M8S4DD41X5DD79F7S8DD01X9DD39J1S4DD41X5DD79G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.15,
@@ -30129,8 +30129,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.39,
         "unit": "in"
       },
       "window": {
@@ -30150,8 +30150,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.39,
         "unit": "in"
       },
       "glazing": {
@@ -30206,9 +30206,9 @@ export default {
     "productId": "paul-murphy-painting-65",
     "title": "Phoenix — Large print — Black frame",
     "artworkTitle": "Phoenix",
-    "amount": "134.00",
+    "amount": "118.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD48X14DD55F1S16X20J1S9DD48X14DD55G1",
+    "sku": "5M144M8S9DD48X14DD55F1S12DD48X17DD55J1S9DD48X14DD55G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2267,
@@ -30241,8 +30241,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 12.48,
+        "height": 17.55,
         "unit": "in"
       },
       "window": {
@@ -30262,8 +30262,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 12.48,
+        "height": 17.55,
         "unit": "in"
       },
       "glazing": {
@@ -30280,9 +30280,9 @@ export default {
     "productId": "paul-murphy-painting-65",
     "title": "Phoenix — Large print — White frame",
     "artworkTitle": "Phoenix",
-    "amount": "134.00",
+    "amount": "118.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD48X14DD55F2S16X20J1S9DD48X14DD55G1",
+    "sku": "5M144M8S9DD48X14DD55F2S12DD48X17DD55J1S9DD48X14DD55G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2267,
@@ -30315,8 +30315,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 12.48,
+        "height": 17.55,
         "unit": "in"
       },
       "window": {
@@ -30336,8 +30336,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 12.48,
+        "height": 17.55,
         "unit": "in"
       },
       "glazing": {
@@ -30354,9 +30354,9 @@ export default {
     "productId": "paul-murphy-painting-65",
     "title": "Phoenix — Large print — Natural wood frame",
     "artworkTitle": "Phoenix",
-    "amount": "149.00",
+    "amount": "131.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD48X14DD55F7S16X20J1S9DD48X14DD55G1",
+    "sku": "5M144M8S9DD48X14DD55F7S12DD48X17DD55J1S9DD48X14DD55G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2267,
@@ -30389,8 +30389,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 12.48,
+        "height": 17.55,
         "unit": "in"
       },
       "window": {
@@ -30410,8 +30410,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 12.48,
+        "height": 17.55,
         "unit": "in"
       },
       "glazing": {
@@ -30466,9 +30466,9 @@ export default {
     "productId": "paul-murphy-painting-65",
     "title": "Phoenix — Medium print — Black frame",
     "artworkTitle": "Phoenix",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD17X10DD98F1S11X14J1S7DD17X10DD98G1",
+    "sku": "5M144M8S7DD17X10DD98F1S10DD17X13DD98J1S7DD17X10DD98G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9167,
@@ -30501,8 +30501,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.17,
+        "height": 13.98,
         "unit": "in"
       },
       "window": {
@@ -30522,8 +30522,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.17,
+        "height": 13.98,
         "unit": "in"
       },
       "glazing": {
@@ -30540,9 +30540,9 @@ export default {
     "productId": "paul-murphy-painting-65",
     "title": "Phoenix — Medium print — White frame",
     "artworkTitle": "Phoenix",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD17X10DD98F2S11X14J1S7DD17X10DD98G1",
+    "sku": "5M144M8S7DD17X10DD98F2S10DD17X13DD98J1S7DD17X10DD98G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9167,
@@ -30575,8 +30575,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.17,
+        "height": 13.98,
         "unit": "in"
       },
       "window": {
@@ -30596,8 +30596,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.17,
+        "height": 13.98,
         "unit": "in"
       },
       "glazing": {
@@ -30614,9 +30614,9 @@ export default {
     "productId": "paul-murphy-painting-65",
     "title": "Phoenix — Medium print — Natural wood frame",
     "artworkTitle": "Phoenix",
-    "amount": "92.00",
+    "amount": "89.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD17X10DD98F7S11X14J1S7DD17X10DD98G1",
+    "sku": "5M144M8S7DD17X10DD98F7S10DD17X13DD98J1S7DD17X10DD98G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9167,
@@ -30649,8 +30649,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.17,
+        "height": 13.98,
         "unit": "in"
       },
       "window": {
@@ -30670,8 +30670,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.17,
+        "height": 13.98,
         "unit": "in"
       },
       "glazing": {
@@ -30726,9 +30726,9 @@ export default {
     "productId": "paul-murphy-painting-65",
     "title": "Phoenix — Small print — Black frame",
     "artworkTitle": "Phoenix",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD86X7DD4F1S8X10J1S4DD86X7DD4G1",
+    "sku": "5M144M8S4DD86X7DD4F1S8X10DD54J1S4DD86X7DD4G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.6067,
@@ -30762,7 +30762,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.54,
         "unit": "in"
       },
       "window": {
@@ -30783,7 +30783,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.54,
         "unit": "in"
       },
       "glazing": {
@@ -30800,9 +30800,9 @@ export default {
     "productId": "paul-murphy-painting-65",
     "title": "Phoenix — Small print — White frame",
     "artworkTitle": "Phoenix",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD86X7DD4F2S8X10J1S4DD86X7DD4G1",
+    "sku": "5M144M8S4DD86X7DD4F2S8X10DD54J1S4DD86X7DD4G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.6067,
@@ -30836,7 +30836,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.54,
         "unit": "in"
       },
       "window": {
@@ -30857,7 +30857,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.54,
         "unit": "in"
       },
       "glazing": {
@@ -30876,7 +30876,7 @@ export default {
     "artworkTitle": "Phoenix",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD86X7DD4F7S8X10J1S4DD86X7DD4G1",
+    "sku": "5M144M8S4DD86X7DD4F7S8X10DD54J1S4DD86X7DD4G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.6067,
@@ -30910,7 +30910,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.54,
         "unit": "in"
       },
       "window": {
@@ -30931,7 +30931,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.54,
         "unit": "in"
       },
       "glazing": {
@@ -30986,9 +30986,9 @@ export default {
     "productId": "paul-murphy-painting-7",
     "title": "Slot Canyon — Large print — Black frame",
     "artworkTitle": "Slot Canyon",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X10DD35F1S16X20J1S10DD25X10DD35G1",
+    "sku": "5M144M8S10DD25X10DD35F1S13DD25X13DD35J1S10DD25X10DD35G1",
     "scale": 1,
     "imageSize": {
       "width": 9.99,
@@ -31021,8 +31021,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.35,
         "unit": "in"
       },
       "window": {
@@ -31042,8 +31042,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.35,
         "unit": "in"
       },
       "glazing": {
@@ -31060,9 +31060,9 @@ export default {
     "productId": "paul-murphy-painting-7",
     "title": "Slot Canyon — Large print — White frame",
     "artworkTitle": "Slot Canyon",
-    "amount": "119.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X10DD35F2S16X20J1S10DD25X10DD35G1",
+    "sku": "5M144M8S10DD25X10DD35F2S13DD25X13DD35J1S10DD25X10DD35G1",
     "scale": 1,
     "imageSize": {
       "width": 9.99,
@@ -31095,8 +31095,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.35,
         "unit": "in"
       },
       "window": {
@@ -31116,8 +31116,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.35,
         "unit": "in"
       },
       "glazing": {
@@ -31134,9 +31134,9 @@ export default {
     "productId": "paul-murphy-painting-7",
     "title": "Slot Canyon — Large print — Natural wood frame",
     "artworkTitle": "Slot Canyon",
-    "amount": "134.00",
+    "amount": "106.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X10DD35F7S16X20J1S10DD25X10DD35G1",
+    "sku": "5M144M8S10DD25X10DD35F7S13DD25X13DD35J1S10DD25X10DD35G1",
     "scale": 1,
     "imageSize": {
       "width": 9.99,
@@ -31169,8 +31169,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.35,
         "unit": "in"
       },
       "window": {
@@ -31190,8 +31190,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.25,
+        "height": 13.35,
         "unit": "in"
       },
       "glazing": {
@@ -31246,9 +31246,9 @@ export default {
     "productId": "paul-murphy-painting-7",
     "title": "Slot Canyon — Medium print — Black frame",
     "artworkTitle": "Slot Canyon",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X7DD83F1S11X14J1S7DD75X7DD83G1",
+    "sku": "5M144M8S7DD75X7DD83F1S10DD75X10DD83J1S7DD75X7DD83G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4967,
@@ -31281,8 +31281,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.83,
         "unit": "in"
       },
       "window": {
@@ -31302,8 +31302,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.83,
         "unit": "in"
       },
       "glazing": {
@@ -31320,9 +31320,9 @@ export default {
     "productId": "paul-murphy-painting-7",
     "title": "Slot Canyon — Medium print — White frame",
     "artworkTitle": "Slot Canyon",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X7DD83F2S11X14J1S7DD75X7DD83G1",
+    "sku": "5M144M8S7DD75X7DD83F2S10DD75X10DD83J1S7DD75X7DD83G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4967,
@@ -31355,8 +31355,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.83,
         "unit": "in"
       },
       "window": {
@@ -31376,8 +31376,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.83,
         "unit": "in"
       },
       "glazing": {
@@ -31394,9 +31394,9 @@ export default {
     "productId": "paul-murphy-painting-7",
     "title": "Slot Canyon — Medium print — Natural wood frame",
     "artworkTitle": "Slot Canyon",
-    "amount": "82.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X7DD83F7S11X14J1S7DD75X7DD83G1",
+    "sku": "5M144M8S7DD75X7DD83F7S10DD75X10DD83J1S7DD75X7DD83G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4967,
@@ -31429,8 +31429,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.83,
         "unit": "in"
       },
       "window": {
@@ -31450,8 +31450,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.75,
+        "height": 10.83,
         "unit": "in"
       },
       "glazing": {
@@ -31506,9 +31506,9 @@ export default {
     "productId": "paul-murphy-painting-7",
     "title": "Slot Canyon — Small print — Black frame",
     "artworkTitle": "Slot Canyon",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD3F1S8X10J1S5DD25X5DD3G1",
+    "sku": "5M144M8S5DD25X5DD3F1S8DD25X8DD3J1S5DD25X5DD3G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9933,
@@ -31541,8 +31541,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.3,
         "unit": "in"
       },
       "window": {
@@ -31562,8 +31562,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.3,
         "unit": "in"
       },
       "glazing": {
@@ -31580,9 +31580,9 @@ export default {
     "productId": "paul-murphy-painting-7",
     "title": "Slot Canyon — Small print — White frame",
     "artworkTitle": "Slot Canyon",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD3F2S8X10J1S5DD25X5DD3G1",
+    "sku": "5M144M8S5DD25X5DD3F2S8DD25X8DD3J1S5DD25X5DD3G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9933,
@@ -31615,8 +31615,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.3,
         "unit": "in"
       },
       "window": {
@@ -31636,8 +31636,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.3,
         "unit": "in"
       },
       "glazing": {
@@ -31654,9 +31654,9 @@ export default {
     "productId": "paul-murphy-painting-7",
     "title": "Slot Canyon — Small print — Natural wood frame",
     "artworkTitle": "Slot Canyon",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X5DD3F7S8X10J1S5DD25X5DD3G1",
+    "sku": "5M144M8S5DD25X5DD3F7S8DD25X8DD3J1S5DD25X5DD3G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9933,
@@ -31689,8 +31689,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.3,
         "unit": "in"
       },
       "window": {
@@ -31710,8 +31710,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.25,
+        "height": 8.3,
         "unit": "in"
       },
       "glazing": {
@@ -31766,9 +31766,9 @@ export default {
     "productId": "paul-murphy-painting-72",
     "title": "Dancing Wolf on Moon — Large print — Black frame",
     "artworkTitle": "Dancing Wolf on Moon",
-    "amount": "154.00",
+    "amount": "148.00",
     "currency": "USD",
-    "sku": "5M144M8S16DD86X11DD08F1S20X16J1S16DD86X11DD08G1",
+    "sku": "5M144M8S16DD86X11DD08F1S19DD86X14DD08J1S16DD86X11DD08G1",
     "scale": 1,
     "imageSize": {
       "width": 16.6,
@@ -31801,8 +31801,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 19.86,
+        "height": 14.08,
         "unit": "in"
       },
       "window": {
@@ -31822,8 +31822,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 19.86,
+        "height": 14.08,
         "unit": "in"
       },
       "glazing": {
@@ -31840,9 +31840,9 @@ export default {
     "productId": "paul-murphy-painting-72",
     "title": "Dancing Wolf on Moon — Large print — White frame",
     "artworkTitle": "Dancing Wolf on Moon",
-    "amount": "154.00",
+    "amount": "148.00",
     "currency": "USD",
-    "sku": "5M144M8S16DD86X11DD08F2S20X16J1S16DD86X11DD08G1",
+    "sku": "5M144M8S16DD86X11DD08F2S19DD86X14DD08J1S16DD86X11DD08G1",
     "scale": 1,
     "imageSize": {
       "width": 16.6,
@@ -31875,8 +31875,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 19.86,
+        "height": 14.08,
         "unit": "in"
       },
       "window": {
@@ -31896,8 +31896,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 19.86,
+        "height": 14.08,
         "unit": "in"
       },
       "glazing": {
@@ -31914,9 +31914,9 @@ export default {
     "productId": "paul-murphy-painting-72",
     "title": "Dancing Wolf on Moon — Large print — Natural wood frame",
     "artworkTitle": "Dancing Wolf on Moon",
-    "amount": "169.00",
+    "amount": "163.00",
     "currency": "USD",
-    "sku": "5M144M8S16DD86X11DD08F7S20X16J1S16DD86X11DD08G1",
+    "sku": "5M144M8S16DD86X11DD08F7S19DD86X14DD08J1S16DD86X11DD08G1",
     "scale": 1,
     "imageSize": {
       "width": 16.6,
@@ -31949,8 +31949,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 19.86,
+        "height": 14.08,
         "unit": "in"
       },
       "window": {
@@ -31970,8 +31970,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 19.86,
+        "height": 14.08,
         "unit": "in"
       },
       "glazing": {
@@ -32028,7 +32028,7 @@ export default {
     "artworkTitle": "Dancing Wolf on Moon",
     "amount": "96.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD71X8DD37F1S15X12J1S12DD71X8DD37G1",
+    "sku": "5M144M8S12DD71X8DD37F1S15DD71X11DD37J1S12DD71X8DD37G1",
     "scale": 0.75,
     "imageSize": {
       "width": 12.4467,
@@ -32061,8 +32061,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.71,
+        "height": 11.37,
         "unit": "in"
       },
       "window": {
@@ -32082,8 +32082,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.71,
+        "height": 11.37,
         "unit": "in"
       },
       "glazing": {
@@ -32102,7 +32102,7 @@ export default {
     "artworkTitle": "Dancing Wolf on Moon",
     "amount": "96.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD71X8DD37F2S15X12J1S12DD71X8DD37G1",
+    "sku": "5M144M8S12DD71X8DD37F2S15DD71X11DD37J1S12DD71X8DD37G1",
     "scale": 0.75,
     "imageSize": {
       "width": 12.4467,
@@ -32135,8 +32135,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.71,
+        "height": 11.37,
         "unit": "in"
       },
       "window": {
@@ -32156,8 +32156,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.71,
+        "height": 11.37,
         "unit": "in"
       },
       "glazing": {
@@ -32176,7 +32176,7 @@ export default {
     "artworkTitle": "Dancing Wolf on Moon",
     "amount": "108.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD71X8DD37F7S15X12J1S12DD71X8DD37G1",
+    "sku": "5M144M8S12DD71X8DD37F7S15DD71X11DD37J1S12DD71X8DD37G1",
     "scale": 0.75,
     "imageSize": {
       "width": 12.4467,
@@ -32209,8 +32209,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.71,
+        "height": 11.37,
         "unit": "in"
       },
       "window": {
@@ -32230,8 +32230,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.71,
+        "height": 11.37,
         "unit": "in"
       },
       "glazing": {
@@ -32288,7 +32288,7 @@ export default {
     "artworkTitle": "Dancing Wolf on Moon",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD55X5DD66F1S12X9J1S8DD55X5DD66G1",
+    "sku": "5M144M8S8DD55X5DD66F1S11DD55X8DD66J1S8DD55X5DD66G1",
     "scale": 0.5,
     "imageSize": {
       "width": 8.29,
@@ -32321,8 +32321,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.55,
+        "height": 8.66,
         "unit": "in"
       },
       "window": {
@@ -32342,8 +32342,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.55,
+        "height": 8.66,
         "unit": "in"
       },
       "glazing": {
@@ -32362,7 +32362,7 @@ export default {
     "artworkTitle": "Dancing Wolf on Moon",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD55X5DD66F2S12X9J1S8DD55X5DD66G1",
+    "sku": "5M144M8S8DD55X5DD66F2S11DD55X8DD66J1S8DD55X5DD66G1",
     "scale": 0.5,
     "imageSize": {
       "width": 8.29,
@@ -32395,8 +32395,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.55,
+        "height": 8.66,
         "unit": "in"
       },
       "window": {
@@ -32416,8 +32416,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.55,
+        "height": 8.66,
         "unit": "in"
       },
       "glazing": {
@@ -32434,9 +32434,9 @@ export default {
     "productId": "paul-murphy-painting-72",
     "title": "Dancing Wolf on Moon — Small print — Natural wood frame",
     "artworkTitle": "Dancing Wolf on Moon",
-    "amount": "77.63",
+    "amount": "76.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD55X5DD66F7S12X9J1S8DD55X5DD66G1",
+    "sku": "5M144M8S8DD55X5DD66F7S11DD55X8DD66J1S8DD55X5DD66G1",
     "scale": 0.5,
     "imageSize": {
       "width": 8.29,
@@ -32469,8 +32469,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.55,
+        "height": 8.66,
         "unit": "in"
       },
       "window": {
@@ -32490,8 +32490,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.55,
+        "height": 8.66,
         "unit": "in"
       },
       "glazing": {
@@ -32548,7 +32548,7 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD04X10DD92F1S11X14J1S8DD04X10DD92G1",
+    "sku": "5M144M8S8DD04X10DD92F1S11DD04X13DD92J1S8DD04X10DD92G1",
     "scale": 1,
     "imageSize": {
       "width": 7.7867,
@@ -32581,8 +32581,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.04,
+        "height": 13.92,
         "unit": "in"
       },
       "window": {
@@ -32602,8 +32602,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.04,
+        "height": 13.92,
         "unit": "in"
       },
       "glazing": {
@@ -32622,7 +32622,7 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD04X10DD92F2S11X14J1S8DD04X10DD92G1",
+    "sku": "5M144M8S8DD04X10DD92F2S11DD04X13DD92J1S8DD04X10DD92G1",
     "scale": 1,
     "imageSize": {
       "width": 7.7867,
@@ -32655,8 +32655,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.04,
+        "height": 13.92,
         "unit": "in"
       },
       "window": {
@@ -32676,8 +32676,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.04,
+        "height": 13.92,
         "unit": "in"
       },
       "glazing": {
@@ -32696,7 +32696,7 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD04X10DD92F7S11X14J1S8DD04X10DD92G1",
+    "sku": "5M144M8S8DD04X10DD92F7S11DD04X13DD92J1S8DD04X10DD92G1",
     "scale": 1,
     "imageSize": {
       "width": 7.7867,
@@ -32729,8 +32729,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.04,
+        "height": 13.92,
         "unit": "in"
       },
       "window": {
@@ -32750,8 +32750,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.04,
+        "height": 13.92,
         "unit": "in"
       },
       "glazing": {
@@ -32808,7 +32808,7 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD09X8DD25F1S9X12J1S6DD09X8DD25G1",
+    "sku": "5M144M8S6DD09X8DD25F1S9DD09X11DD25J1S6DD09X8DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.8367,
@@ -32841,8 +32841,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 11.25,
         "unit": "in"
       },
       "window": {
@@ -32862,8 +32862,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 11.25,
         "unit": "in"
       },
       "glazing": {
@@ -32882,7 +32882,7 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD09X8DD25F2S9X12J1S6DD09X8DD25G1",
+    "sku": "5M144M8S6DD09X8DD25F2S9DD09X11DD25J1S6DD09X8DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.8367,
@@ -32915,8 +32915,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 11.25,
         "unit": "in"
       },
       "window": {
@@ -32936,8 +32936,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 11.25,
         "unit": "in"
       },
       "glazing": {
@@ -32954,9 +32954,9 @@ export default {
     "productId": "paul-murphy-painting-73",
     "title": "Sunset Tree — Medium print — Natural wood frame",
     "artworkTitle": "Sunset Tree",
-    "amount": "72.63",
+    "amount": "71.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD09X8DD25F7S9X12J1S6DD09X8DD25G1",
+    "sku": "5M144M8S6DD09X8DD25F7S9DD09X11DD25J1S6DD09X8DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.8367,
@@ -32989,8 +32989,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 11.25,
         "unit": "in"
       },
       "window": {
@@ -33010,8 +33010,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.09,
+        "height": 11.25,
         "unit": "in"
       },
       "glazing": {
@@ -33068,7 +33068,7 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD14X5DD58F1S8X10J1S4DD14X5DD58G1",
+    "sku": "5M144M8S4DD14X5DD58F1S8DD02X9DD46J1S4DD14X5DD58G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.8867,
@@ -33101,8 +33101,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 9.46,
         "unit": "in"
       },
       "window": {
@@ -33122,8 +33122,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 9.46,
         "unit": "in"
       },
       "glazing": {
@@ -33142,7 +33142,7 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD14X5DD58F2S8X10J1S4DD14X5DD58G1",
+    "sku": "5M144M8S4DD14X5DD58F2S8DD02X9DD46J1S4DD14X5DD58G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.8867,
@@ -33175,8 +33175,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 9.46,
         "unit": "in"
       },
       "window": {
@@ -33196,8 +33196,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 9.46,
         "unit": "in"
       },
       "glazing": {
@@ -33214,9 +33214,9 @@ export default {
     "productId": "paul-murphy-painting-73",
     "title": "Sunset Tree — Small print — Natural wood frame",
     "artworkTitle": "Sunset Tree",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD14X5DD58F7S8X10J1S4DD14X5DD58G1",
+    "sku": "5M144M8S4DD14X5DD58F7S8DD02X9DD46J1S4DD14X5DD58G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.8867,
@@ -33249,8 +33249,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 9.46,
         "unit": "in"
       },
       "window": {
@@ -33270,8 +33270,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 9.46,
         "unit": "in"
       },
       "glazing": {
@@ -33326,9 +33326,9 @@ export default {
     "productId": "paul-murphy-painting-74",
     "title": "Music Notes of the Universe — Large print — Black frame",
     "artworkTitle": "Music Notes of the Universe",
-    "amount": "144.00",
+    "amount": "135.00",
     "currency": "USD",
-    "sku": "5M144M8S15DD25X11DD16F1S20X16J1S15DD25X11DD16G1",
+    "sku": "5M144M8S15DD25X11DD16F1S18DD25X14DD16J1S15DD25X11DD16G1",
     "scale": 1,
     "imageSize": {
       "width": 14.9867,
@@ -33361,8 +33361,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 18.25,
+        "height": 14.16,
         "unit": "in"
       },
       "window": {
@@ -33382,8 +33382,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 18.25,
+        "height": 14.16,
         "unit": "in"
       },
       "glazing": {
@@ -33400,9 +33400,9 @@ export default {
     "productId": "paul-murphy-painting-74",
     "title": "Music Notes of the Universe — Large print — White frame",
     "artworkTitle": "Music Notes of the Universe",
-    "amount": "144.00",
+    "amount": "135.00",
     "currency": "USD",
-    "sku": "5M144M8S15DD25X11DD16F2S20X16J1S15DD25X11DD16G1",
+    "sku": "5M144M8S15DD25X11DD16F2S18DD25X14DD16J1S15DD25X11DD16G1",
     "scale": 1,
     "imageSize": {
       "width": 14.9867,
@@ -33435,8 +33435,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 18.25,
+        "height": 14.16,
         "unit": "in"
       },
       "window": {
@@ -33456,8 +33456,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 18.25,
+        "height": 14.16,
         "unit": "in"
       },
       "glazing": {
@@ -33474,9 +33474,9 @@ export default {
     "productId": "paul-murphy-painting-74",
     "title": "Music Notes of the Universe — Large print — Natural wood frame",
     "artworkTitle": "Music Notes of the Universe",
-    "amount": "159.00",
+    "amount": "149.00",
     "currency": "USD",
-    "sku": "5M144M8S15DD25X11DD16F7S20X16J1S15DD25X11DD16G1",
+    "sku": "5M144M8S15DD25X11DD16F7S18DD25X14DD16J1S15DD25X11DD16G1",
     "scale": 1,
     "imageSize": {
       "width": 14.9867,
@@ -33509,8 +33509,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 18.25,
+        "height": 14.16,
         "unit": "in"
       },
       "window": {
@@ -33530,8 +33530,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 18.25,
+        "height": 14.16,
         "unit": "in"
       },
       "glazing": {
@@ -33586,9 +33586,9 @@ export default {
     "productId": "paul-murphy-painting-74",
     "title": "Music Notes of the Universe — Medium print — Black frame",
     "artworkTitle": "Music Notes of the Universe",
-    "amount": "86.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD5X8DD43F1S14X11J1S11DD5X8DD43G1",
+    "sku": "5M144M8S11DD5X8DD43F1S14DD5X11DD43J1S11DD5X8DD43G1",
     "scale": 0.75,
     "imageSize": {
       "width": 11.2333,
@@ -33621,8 +33621,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.5,
+        "height": 11.43,
         "unit": "in"
       },
       "window": {
@@ -33642,8 +33642,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.5,
+        "height": 11.43,
         "unit": "in"
       },
       "glazing": {
@@ -33660,9 +33660,9 @@ export default {
     "productId": "paul-murphy-painting-74",
     "title": "Music Notes of the Universe — Medium print — White frame",
     "artworkTitle": "Music Notes of the Universe",
-    "amount": "86.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD5X8DD43F2S14X11J1S11DD5X8DD43G1",
+    "sku": "5M144M8S11DD5X8DD43F2S14DD5X11DD43J1S11DD5X8DD43G1",
     "scale": 0.75,
     "imageSize": {
       "width": 11.2333,
@@ -33695,8 +33695,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.5,
+        "height": 11.43,
         "unit": "in"
       },
       "window": {
@@ -33716,8 +33716,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.5,
+        "height": 11.43,
         "unit": "in"
       },
       "glazing": {
@@ -33734,9 +33734,9 @@ export default {
     "productId": "paul-murphy-painting-74",
     "title": "Music Notes of the Universe — Medium print — Natural wood frame",
     "artworkTitle": "Music Notes of the Universe",
-    "amount": "97.00",
+    "amount": "100.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD5X8DD43F7S14X11J1S11DD5X8DD43G1",
+    "sku": "5M144M8S11DD5X8DD43F7S14DD5X11DD43J1S11DD5X8DD43G1",
     "scale": 0.75,
     "imageSize": {
       "width": 11.2333,
@@ -33769,8 +33769,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.5,
+        "height": 11.43,
         "unit": "in"
       },
       "window": {
@@ -33790,8 +33790,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.5,
+        "height": 11.43,
         "unit": "in"
       },
       "glazing": {
@@ -33846,9 +33846,9 @@ export default {
     "productId": "paul-murphy-painting-74",
     "title": "Music Notes of the Universe — Small print — Black frame",
     "artworkTitle": "Music Notes of the Universe",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X5DD7F1S10X8J1S7DD75X5DD7G1",
+    "sku": "5M144M8S7DD75X5DD7F1S10DD75X8DD7J1S7DD75X5DD7G1",
     "scale": 0.5,
     "imageSize": {
       "width": 7.4833,
@@ -33881,8 +33881,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.7,
         "unit": "in"
       },
       "window": {
@@ -33902,8 +33902,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.7,
         "unit": "in"
       },
       "glazing": {
@@ -33920,9 +33920,9 @@ export default {
     "productId": "paul-murphy-painting-74",
     "title": "Music Notes of the Universe — Small print — White frame",
     "artworkTitle": "Music Notes of the Universe",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X5DD7F2S10X8J1S7DD75X5DD7G1",
+    "sku": "5M144M8S7DD75X5DD7F2S10DD75X8DD7J1S7DD75X5DD7G1",
     "scale": 0.5,
     "imageSize": {
       "width": 7.4833,
@@ -33955,8 +33955,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.7,
         "unit": "in"
       },
       "window": {
@@ -33976,8 +33976,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.7,
         "unit": "in"
       },
       "glazing": {
@@ -33994,9 +33994,9 @@ export default {
     "productId": "paul-murphy-painting-74",
     "title": "Music Notes of the Universe — Small print — Natural wood frame",
     "artworkTitle": "Music Notes of the Universe",
-    "amount": "68.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X5DD7F7S10X8J1S7DD75X5DD7G1",
+    "sku": "5M144M8S7DD75X5DD7F7S10DD75X8DD7J1S7DD75X5DD7G1",
     "scale": 0.5,
     "imageSize": {
       "width": 7.4833,
@@ -34029,8 +34029,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.7,
         "unit": "in"
       },
       "window": {
@@ -34050,8 +34050,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.7,
         "unit": "in"
       },
       "glazing": {
@@ -34106,9 +34106,9 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Large print — Black frame",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "124.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD05X10DD25F1S20X16J1S11DD05X10DD25G1",
+    "sku": "5M144M8S11DD05X10DD25F1S14DD05X13DD25J1S11DD05X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.7967,
@@ -34141,8 +34141,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.05,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -34162,8 +34162,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.05,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -34180,9 +34180,9 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Large print — White frame",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "124.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD05X10DD25F2S20X16J1S11DD05X10DD25G1",
+    "sku": "5M144M8S11DD05X10DD25F2S14DD05X13DD25J1S11DD05X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.7967,
@@ -34215,8 +34215,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.05,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -34236,8 +34236,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.05,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -34254,9 +34254,9 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Large print — Natural wood frame",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "139.00",
+    "amount": "113.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD05X10DD25F7S20X16J1S11DD05X10DD25G1",
+    "sku": "5M144M8S11DD05X10DD25F7S14DD05X13DD25J1S11DD05X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 10.7967,
@@ -34289,8 +34289,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.05,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -34310,8 +34310,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.05,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -34366,9 +34366,9 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Medium print — Black frame",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD35X7DD75F1S14X11J1S8DD35X7DD75G1",
+    "sku": "5M144M8S8DD35X7DD75F1S11DD35X10DD75J1S8DD35X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.0967,
@@ -34401,8 +34401,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.35,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -34422,8 +34422,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.35,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -34440,9 +34440,9 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Medium print — White frame",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD35X7DD75F2S14X11J1S8DD35X7DD75G1",
+    "sku": "5M144M8S8DD35X7DD75F2S11DD35X10DD75J1S8DD35X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.0967,
@@ -34475,8 +34475,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.35,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -34496,8 +34496,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.35,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -34514,9 +34514,9 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Medium print — Natural wood frame",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "87.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD35X7DD75F7S14X11J1S8DD35X7DD75G1",
+    "sku": "5M144M8S8DD35X7DD75F7S11DD35X10DD75J1S8DD35X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.0967,
@@ -34549,8 +34549,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.35,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -34570,8 +34570,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.35,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -34626,9 +34626,9 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Small print — Black frame",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD65X5DD25F1S10X8J1S5DD65X5DD25G1",
+    "sku": "5M144M8S5DD65X5DD25F1S8DD65X8DD25J1S5DD65X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.3967,
@@ -34661,8 +34661,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.65,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -34682,8 +34682,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.65,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -34700,9 +34700,9 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Small print — White frame",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD65X5DD25F2S10X8J1S5DD65X5DD25G1",
+    "sku": "5M144M8S5DD65X5DD25F2S8DD65X8DD25J1S5DD65X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.3967,
@@ -34735,8 +34735,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.65,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -34756,8 +34756,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.65,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -34774,9 +34774,9 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Small print — Natural wood frame",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD65X5DD25F7S10X8J1S5DD65X5DD25G1",
+    "sku": "5M144M8S5DD65X5DD25F7S8DD65X8DD25J1S5DD65X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.3967,
@@ -34809,8 +34809,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.65,
+        "height": 8.25,
         "unit": "in"
       },
       "window": {
@@ -34830,8 +34830,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.65,
+        "height": 8.25,
         "unit": "in"
       },
       "glazing": {
@@ -34886,9 +34886,9 @@ export default {
     "productId": "paul-murphy-painting-82",
     "title": "Angies' Eyes — Large print — Black frame",
     "artworkTitle": "Angies' Eyes",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD68X9DD25F1S15X12J1S12DD68X9DD25G1",
+    "sku": "5M144M8S12DD68X9DD25F1S15DD68X12DD25J1S12DD68X9DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 12.4233,
@@ -34921,8 +34921,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.68,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -34942,8 +34942,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.68,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -34960,9 +34960,9 @@ export default {
     "productId": "paul-murphy-painting-82",
     "title": "Angies' Eyes — Large print — White frame",
     "artworkTitle": "Angies' Eyes",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD68X9DD25F2S15X12J1S12DD68X9DD25G1",
+    "sku": "5M144M8S12DD68X9DD25F2S15DD68X12DD25J1S12DD68X9DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 12.4233,
@@ -34995,8 +34995,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.68,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -35016,8 +35016,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.68,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -35034,9 +35034,9 @@ export default {
     "productId": "paul-murphy-painting-82",
     "title": "Angies' Eyes — Large print — Natural wood frame",
     "artworkTitle": "Angies' Eyes",
-    "amount": "113.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD68X9DD25F7S15X12J1S12DD68X9DD25G1",
+    "sku": "5M144M8S12DD68X9DD25F7S15DD68X12DD25J1S12DD68X9DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 12.4233,
@@ -35069,8 +35069,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.68,
+        "height": 12.25,
         "unit": "in"
       },
       "window": {
@@ -35090,8 +35090,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.68,
+        "height": 12.25,
         "unit": "in"
       },
       "glazing": {
@@ -35146,9 +35146,9 @@ export default {
     "productId": "paul-murphy-painting-82",
     "title": "Angies' Eyes — Medium print — Black frame",
     "artworkTitle": "Angies' Eyes",
-    "amount": "72.63",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD57X7F1S12X9J1S9DD57X7G1",
+    "sku": "5M144M8S9DD57X7F1S12DD57X10J1S9DD57X7G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.3167,
@@ -35181,8 +35181,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.57,
+        "height": 10,
         "unit": "in"
       },
       "window": {
@@ -35202,8 +35202,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.57,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {
@@ -35220,9 +35220,9 @@ export default {
     "productId": "paul-murphy-painting-82",
     "title": "Angies' Eyes — Medium print — White frame",
     "artworkTitle": "Angies' Eyes",
-    "amount": "72.63",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD57X7F2S12X9J1S9DD57X7G1",
+    "sku": "5M144M8S9DD57X7F2S12DD57X10J1S9DD57X7G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.3167,
@@ -35255,8 +35255,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.57,
+        "height": 10,
         "unit": "in"
       },
       "window": {
@@ -35276,8 +35276,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.57,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {
@@ -35294,9 +35294,9 @@ export default {
     "productId": "paul-murphy-painting-82",
     "title": "Angies' Eyes — Medium print — Natural wood frame",
     "artworkTitle": "Angies' Eyes",
-    "amount": "82.63",
+    "amount": "86.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD57X7F7S12X9J1S9DD57X7G1",
+    "sku": "5M144M8S9DD57X7F7S12DD57X10J1S9DD57X7G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.3167,
@@ -35329,8 +35329,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.57,
+        "height": 10,
         "unit": "in"
       },
       "window": {
@@ -35350,8 +35350,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.57,
+        "height": 10,
         "unit": "in"
       },
       "glazing": {
@@ -35408,7 +35408,7 @@ export default {
     "artworkTitle": "Angies' Eyes",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD46X4DD75F1S10X8J1S6DD46X4DD75G1",
+    "sku": "5M144M8S6DD46X4DD75F1S9DD72X8DD01J1S6DD46X4DD75G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.2067,
@@ -35441,8 +35441,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.72,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -35462,8 +35462,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.72,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -35482,7 +35482,7 @@ export default {
     "artworkTitle": "Angies' Eyes",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD46X4DD75F2S10X8J1S6DD46X4DD75G1",
+    "sku": "5M144M8S6DD46X4DD75F2S9DD72X8DD01J1S6DD46X4DD75G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.2067,
@@ -35515,8 +35515,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.72,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -35536,8 +35536,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.72,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -35554,9 +35554,9 @@ export default {
     "productId": "paul-murphy-painting-82",
     "title": "Angies' Eyes — Small print — Natural wood frame",
     "artworkTitle": "Angies' Eyes",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD46X4DD75F7S10X8J1S6DD46X4DD75G1",
+    "sku": "5M144M8S6DD46X4DD75F7S9DD72X8DD01J1S6DD46X4DD75G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.2067,
@@ -35589,8 +35589,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.72,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -35610,8 +35610,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.72,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -35666,9 +35666,9 @@ export default {
     "productId": "paul-murphy-painting-83",
     "title": "Soul Connections 1 — Large print — Black frame",
     "artworkTitle": "Soul Connections 1",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD1X10DD25F1S11X14J1S8DD1X10DD25G1",
+    "sku": "5M144M8S8DD1X10DD25F1S11DD1X13DD25J1S8DD1X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 7.8467,
@@ -35701,8 +35701,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.1,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -35722,8 +35722,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.1,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -35740,9 +35740,9 @@ export default {
     "productId": "paul-murphy-painting-83",
     "title": "Soul Connections 1 — Large print — White frame",
     "artworkTitle": "Soul Connections 1",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD1X10DD25F2S11X14J1S8DD1X10DD25G1",
+    "sku": "5M144M8S8DD1X10DD25F2S11DD1X13DD25J1S8DD1X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 7.8467,
@@ -35775,8 +35775,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.1,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -35796,8 +35796,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.1,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -35814,9 +35814,9 @@ export default {
     "productId": "paul-murphy-painting-83",
     "title": "Soul Connections 1 — Large print — Natural wood frame",
     "artworkTitle": "Soul Connections 1",
-    "amount": "92.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD1X10DD25F7S11X14J1S8DD1X10DD25G1",
+    "sku": "5M144M8S8DD1X10DD25F7S11DD1X13DD25J1S8DD1X10DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 7.8467,
@@ -35849,8 +35849,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.1,
+        "height": 13.25,
         "unit": "in"
       },
       "window": {
@@ -35870,8 +35870,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.1,
+        "height": 13.25,
         "unit": "in"
       },
       "glazing": {
@@ -35926,9 +35926,9 @@ export default {
     "productId": "paul-murphy-painting-83",
     "title": "Soul Connections 1 — Medium print — Black frame",
     "artworkTitle": "Soul Connections 1",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD13X7DD75F1S9X12J1S6DD13X7DD75G1",
+    "sku": "5M144M8S6DD13X7DD75F1S9DD13X10DD75J1S6DD13X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.8767,
@@ -35961,8 +35961,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.13,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -35982,8 +35982,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.13,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -36000,9 +36000,9 @@ export default {
     "productId": "paul-murphy-painting-83",
     "title": "Soul Connections 1 — Medium print — White frame",
     "artworkTitle": "Soul Connections 1",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD13X7DD75F2S9X12J1S6DD13X7DD75G1",
+    "sku": "5M144M8S6DD13X7DD75F2S9DD13X10DD75J1S6DD13X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.8767,
@@ -36035,8 +36035,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.13,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -36056,8 +36056,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.13,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -36074,9 +36074,9 @@ export default {
     "productId": "paul-murphy-painting-83",
     "title": "Soul Connections 1 — Medium print — Natural wood frame",
     "artworkTitle": "Soul Connections 1",
-    "amount": "72.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD13X7DD75F7S9X12J1S6DD13X7DD75G1",
+    "sku": "5M144M8S6DD13X7DD75F7S9DD13X10DD75J1S6DD13X7DD75G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.8767,
@@ -36109,8 +36109,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.13,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -36130,8 +36130,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.13,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -36186,9 +36186,9 @@ export default {
     "productId": "paul-murphy-painting-83",
     "title": "Soul Connections 1 — Small print — Black frame",
     "artworkTitle": "Soul Connections 1",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD17X5DD25F1S8X10J1S4DD17X5DD25G1",
+    "sku": "5M144M8S4DD17X5DD25F1S8DD01X9DD09J1S4DD17X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.9167,
@@ -36221,8 +36221,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.09,
         "unit": "in"
       },
       "window": {
@@ -36242,8 +36242,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.09,
         "unit": "in"
       },
       "glazing": {
@@ -36260,9 +36260,9 @@ export default {
     "productId": "paul-murphy-painting-83",
     "title": "Soul Connections 1 — Small print — White frame",
     "artworkTitle": "Soul Connections 1",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD17X5DD25F2S8X10J1S4DD17X5DD25G1",
+    "sku": "5M144M8S4DD17X5DD25F2S8DD01X9DD09J1S4DD17X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.9167,
@@ -36295,8 +36295,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.09,
         "unit": "in"
       },
       "window": {
@@ -36316,8 +36316,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.09,
         "unit": "in"
       },
       "glazing": {
@@ -36334,9 +36334,9 @@ export default {
     "productId": "paul-murphy-painting-83",
     "title": "Soul Connections 1 — Small print — Natural wood frame",
     "artworkTitle": "Soul Connections 1",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD17X5DD25F7S8X10J1S4DD17X5DD25G1",
+    "sku": "5M144M8S4DD17X5DD25F7S8DD01X9DD09J1S4DD17X5DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.9167,
@@ -36369,8 +36369,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.09,
         "unit": "in"
       },
       "window": {
@@ -36390,8 +36390,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.09,
         "unit": "in"
       },
       "glazing": {
@@ -36446,9 +36446,9 @@ export default {
     "productId": "paul-murphy-painting-84",
     "title": "Soul Connections 2 — Large print — Black frame",
     "artworkTitle": "Soul Connections 2",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X7DD75F1S14X11J1S10DD25X7DD75G1",
+    "sku": "5M144M8S10DD25X7DD75F1S13DD25X10DD75J1S10DD25X7DD75G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9867,
@@ -36481,8 +36481,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -36502,8 +36502,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -36520,9 +36520,9 @@ export default {
     "productId": "paul-murphy-painting-84",
     "title": "Soul Connections 2 — Large print — White frame",
     "artworkTitle": "Soul Connections 2",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X7DD75F2S14X11J1S10DD25X7DD75G1",
+    "sku": "5M144M8S10DD25X7DD75F2S13DD25X10DD75J1S10DD25X7DD75G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9867,
@@ -36555,8 +36555,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -36576,8 +36576,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -36594,9 +36594,9 @@ export default {
     "productId": "paul-murphy-painting-84",
     "title": "Soul Connections 2 — Large print — Natural wood frame",
     "artworkTitle": "Soul Connections 2",
-    "amount": "92.00",
+    "amount": "89.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X7DD75F7S14X11J1S10DD25X7DD75G1",
+    "sku": "5M144M8S10DD25X7DD75F7S13DD25X10DD75J1S10DD25X7DD75G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9867,
@@ -36629,8 +36629,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 10.75,
         "unit": "in"
       },
       "window": {
@@ -36650,8 +36650,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 10.75,
         "unit": "in"
       },
       "glazing": {
@@ -36706,9 +36706,9 @@ export default {
     "productId": "paul-murphy-painting-84",
     "title": "Soul Connections 2 — Medium print — Black frame",
     "artworkTitle": "Soul Connections 2",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X5DD87F1S10X8J1S7DD75X5DD87G1",
+    "sku": "5M144M8S7DD75X5DD87F1S10DD75X8DD87J1S7DD75X5DD87G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4833,
@@ -36741,8 +36741,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.87,
         "unit": "in"
       },
       "window": {
@@ -36762,8 +36762,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.87,
         "unit": "in"
       },
       "glazing": {
@@ -36780,9 +36780,9 @@ export default {
     "productId": "paul-murphy-painting-84",
     "title": "Soul Connections 2 — Medium print — White frame",
     "artworkTitle": "Soul Connections 2",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X5DD87F2S10X8J1S7DD75X5DD87G1",
+    "sku": "5M144M8S7DD75X5DD87F2S10DD75X8DD87J1S7DD75X5DD87G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4833,
@@ -36815,8 +36815,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.87,
         "unit": "in"
       },
       "window": {
@@ -36836,8 +36836,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.87,
         "unit": "in"
       },
       "glazing": {
@@ -36854,9 +36854,9 @@ export default {
     "productId": "paul-murphy-painting-84",
     "title": "Soul Connections 2 — Medium print — Natural wood frame",
     "artworkTitle": "Soul Connections 2",
-    "amount": "68.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X5DD87F7S10X8J1S7DD75X5DD87G1",
+    "sku": "5M144M8S7DD75X5DD87F7S10DD75X8DD87J1S7DD75X5DD87G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4833,
@@ -36889,8 +36889,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.87,
         "unit": "in"
       },
       "window": {
@@ -36910,8 +36910,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 10.75,
+        "height": 8.87,
         "unit": "in"
       },
       "glazing": {
@@ -36968,7 +36968,7 @@ export default {
     "artworkTitle": "Soul Connections 2",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X4F1S10X8J1S5DD25X4G1",
+    "sku": "5M144M8S5DD25X4F1S9DD25X8J1S5DD25X4G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
@@ -37001,7 +37001,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.25,
         "height": 8,
         "unit": "in"
       },
@@ -37022,7 +37022,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.25,
         "height": 8,
         "unit": "in"
       },
@@ -37042,7 +37042,7 @@ export default {
     "artworkTitle": "Soul Connections 2",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X4F2S10X8J1S5DD25X4G1",
+    "sku": "5M144M8S5DD25X4F2S9DD25X8J1S5DD25X4G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
@@ -37075,7 +37075,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.25,
         "height": 8,
         "unit": "in"
       },
@@ -37096,7 +37096,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.25,
         "height": 8,
         "unit": "in"
       },
@@ -37114,9 +37114,9 @@ export default {
     "productId": "paul-murphy-painting-84",
     "title": "Soul Connections 2 — Small print — Natural wood frame",
     "artworkTitle": "Soul Connections 2",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD25X4F7S10X8J1S5DD25X4G1",
+    "sku": "5M144M8S5DD25X4F7S9DD25X8J1S5DD25X4G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
@@ -37149,7 +37149,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.25,
         "height": 8,
         "unit": "in"
       },
@@ -37170,7 +37170,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.25,
         "height": 8,
         "unit": "in"
       },
@@ -37226,9 +37226,9 @@ export default {
     "productId": "paul-murphy-painting-85",
     "title": "Soul Connections 3 — Large print — Black frame",
     "artworkTitle": "Soul Connections 3",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD18X8DD25F1S14X11J1S10DD18X8DD25G1",
+    "sku": "5M144M8S10DD18X8DD25F1S13DD18X11DD25J1S10DD18X8DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9267,
@@ -37261,8 +37261,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.18,
+        "height": 11.25,
         "unit": "in"
       },
       "window": {
@@ -37282,8 +37282,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.18,
+        "height": 11.25,
         "unit": "in"
       },
       "glazing": {
@@ -37300,9 +37300,9 @@ export default {
     "productId": "paul-murphy-painting-85",
     "title": "Soul Connections 3 — Large print — White frame",
     "artworkTitle": "Soul Connections 3",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD18X8DD25F2S14X11J1S10DD18X8DD25G1",
+    "sku": "5M144M8S10DD18X8DD25F2S13DD18X11DD25J1S10DD18X8DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9267,
@@ -37335,8 +37335,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.18,
+        "height": 11.25,
         "unit": "in"
       },
       "window": {
@@ -37356,8 +37356,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.18,
+        "height": 11.25,
         "unit": "in"
       },
       "glazing": {
@@ -37374,9 +37374,9 @@ export default {
     "productId": "paul-murphy-painting-85",
     "title": "Soul Connections 3 — Large print — Natural wood frame",
     "artworkTitle": "Soul Connections 3",
-    "amount": "92.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD18X8DD25F7S14X11J1S10DD18X8DD25G1",
+    "sku": "5M144M8S10DD18X8DD25F7S13DD18X11DD25J1S10DD18X8DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 9.9267,
@@ -37409,8 +37409,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.18,
+        "height": 11.25,
         "unit": "in"
       },
       "window": {
@@ -37430,8 +37430,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.18,
+        "height": 11.25,
         "unit": "in"
       },
       "glazing": {
@@ -37486,9 +37486,9 @@ export default {
     "productId": "paul-murphy-painting-85",
     "title": "Soul Connections 3 — Medium print — Black frame",
     "artworkTitle": "Soul Connections 3",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD7X6DD25F1S12X9J1S7DD7X6DD25G1",
+    "sku": "5M144M8S7DD7X6DD25F1S10DD7X9DD25J1S7DD7X6DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4467,
@@ -37521,8 +37521,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 10.7,
+        "height": 9.25,
         "unit": "in"
       },
       "window": {
@@ -37542,8 +37542,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 10.7,
+        "height": 9.25,
         "unit": "in"
       },
       "glazing": {
@@ -37560,9 +37560,9 @@ export default {
     "productId": "paul-murphy-painting-85",
     "title": "Soul Connections 3 — Medium print — White frame",
     "artworkTitle": "Soul Connections 3",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD7X6DD25F2S12X9J1S7DD7X6DD25G1",
+    "sku": "5M144M8S7DD7X6DD25F2S10DD7X9DD25J1S7DD7X6DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4467,
@@ -37595,8 +37595,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 10.7,
+        "height": 9.25,
         "unit": "in"
       },
       "window": {
@@ -37616,8 +37616,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 10.7,
+        "height": 9.25,
         "unit": "in"
       },
       "glazing": {
@@ -37634,9 +37634,9 @@ export default {
     "productId": "paul-murphy-painting-85",
     "title": "Soul Connections 3 — Medium print — Natural wood frame",
     "artworkTitle": "Soul Connections 3",
-    "amount": "72.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD7X6DD25F7S12X9J1S7DD7X6DD25G1",
+    "sku": "5M144M8S7DD7X6DD25F7S10DD7X9DD25J1S7DD7X6DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4467,
@@ -37669,8 +37669,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 10.7,
+        "height": 9.25,
         "unit": "in"
       },
       "window": {
@@ -37690,8 +37690,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 10.7,
+        "height": 9.25,
         "unit": "in"
       },
       "glazing": {
@@ -37746,9 +37746,9 @@ export default {
     "productId": "paul-murphy-painting-85",
     "title": "Soul Connections 3 — Small print — Black frame",
     "artworkTitle": "Soul Connections 3",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD21X4DD25F1S10X8J1S5DD21X4DD25G1",
+    "sku": "5M144M8S5DD21X4DD25F1S8DD97X8DD01J1S5DD21X4DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9567,
@@ -37781,8 +37781,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.97,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -37802,8 +37802,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.97,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -37820,9 +37820,9 @@ export default {
     "productId": "paul-murphy-painting-85",
     "title": "Soul Connections 3 — Small print — White frame",
     "artworkTitle": "Soul Connections 3",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD21X4DD25F2S10X8J1S5DD21X4DD25G1",
+    "sku": "5M144M8S5DD21X4DD25F2S8DD97X8DD01J1S5DD21X4DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9567,
@@ -37855,8 +37855,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.97,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -37876,8 +37876,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.97,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -37894,9 +37894,9 @@ export default {
     "productId": "paul-murphy-painting-85",
     "title": "Soul Connections 3 — Small print — Natural wood frame",
     "artworkTitle": "Soul Connections 3",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD21X4DD25F7S10X8J1S5DD21X4DD25G1",
+    "sku": "5M144M8S5DD21X4DD25F7S8DD97X8DD01J1S5DD21X4DD25G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9567,
@@ -37929,8 +37929,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.97,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -37950,8 +37950,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.97,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -38006,9 +38006,9 @@ export default {
     "productId": "paul-murphy-painting-86",
     "title": "My tipi, on Grand Traverse Bay — Large print — Black frame",
     "artworkTitle": "My tipi, on Grand Traverse Bay",
-    "amount": "159.00",
+    "amount": "156.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD52X16DD13F1S16X20J1S12DD52X16DD13G1",
+    "sku": "5M144M8S12DD52X16DD13F1S15DD52X19DD13J1S12DD52X16DD13G1",
     "scale": 1,
     "imageSize": {
       "width": 12.2667,
@@ -38041,8 +38041,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 15.52,
+        "height": 19.13,
         "unit": "in"
       },
       "window": {
@@ -38062,8 +38062,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 15.52,
+        "height": 19.13,
         "unit": "in"
       },
       "glazing": {
@@ -38080,9 +38080,9 @@ export default {
     "productId": "paul-murphy-painting-86",
     "title": "My tipi, on Grand Traverse Bay — Large print — White frame",
     "artworkTitle": "My tipi, on Grand Traverse Bay",
-    "amount": "159.00",
+    "amount": "156.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD52X16DD13F2S16X20J1S12DD52X16DD13G1",
+    "sku": "5M144M8S12DD52X16DD13F2S15DD52X19DD13J1S12DD52X16DD13G1",
     "scale": 1,
     "imageSize": {
       "width": 12.2667,
@@ -38115,8 +38115,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 15.52,
+        "height": 19.13,
         "unit": "in"
       },
       "window": {
@@ -38136,8 +38136,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 15.52,
+        "height": 19.13,
         "unit": "in"
       },
       "glazing": {
@@ -38154,9 +38154,9 @@ export default {
     "productId": "paul-murphy-painting-86",
     "title": "My tipi, on Grand Traverse Bay — Large print — Natural wood frame",
     "artworkTitle": "My tipi, on Grand Traverse Bay",
-    "amount": "174.00",
+    "amount": "171.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD52X16DD13F7S16X20J1S12DD52X16DD13G1",
+    "sku": "5M144M8S12DD52X16DD13F7S15DD52X19DD13J1S12DD52X16DD13G1",
     "scale": 1,
     "imageSize": {
       "width": 12.2667,
@@ -38189,8 +38189,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 15.52,
+        "height": 19.13,
         "unit": "in"
       },
       "window": {
@@ -38210,8 +38210,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 15.52,
+        "height": 19.13,
         "unit": "in"
       },
       "glazing": {
@@ -38266,9 +38266,9 @@ export default {
     "productId": "paul-murphy-painting-86",
     "title": "My tipi, on Grand Traverse Bay — Medium print — Black frame",
     "artworkTitle": "My tipi, on Grand Traverse Bay",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD45X12DD16F1S12X15J1S9DD45X12DD16G1",
+    "sku": "5M144M8S9DD45X12DD16F1S12DD45X15DD16J1S9DD45X12DD16G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.1967,
@@ -38301,8 +38301,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.45,
+        "height": 15.16,
         "unit": "in"
       },
       "window": {
@@ -38322,8 +38322,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.45,
+        "height": 15.16,
         "unit": "in"
       },
       "glazing": {
@@ -38340,9 +38340,9 @@ export default {
     "productId": "paul-murphy-painting-86",
     "title": "My tipi, on Grand Traverse Bay — Medium print — White frame",
     "artworkTitle": "My tipi, on Grand Traverse Bay",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD45X12DD16F2S12X15J1S9DD45X12DD16G1",
+    "sku": "5M144M8S9DD45X12DD16F2S12DD45X15DD16J1S9DD45X12DD16G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.1967,
@@ -38375,8 +38375,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.45,
+        "height": 15.16,
         "unit": "in"
       },
       "window": {
@@ -38396,8 +38396,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.45,
+        "height": 15.16,
         "unit": "in"
       },
       "glazing": {
@@ -38414,9 +38414,9 @@ export default {
     "productId": "paul-murphy-painting-86",
     "title": "My tipi, on Grand Traverse Bay — Medium print — Natural wood frame",
     "artworkTitle": "My tipi, on Grand Traverse Bay",
-    "amount": "113.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD45X12DD16F7S12X15J1S9DD45X12DD16G1",
+    "sku": "5M144M8S9DD45X12DD16F7S12DD45X15DD16J1S9DD45X12DD16G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.1967,
@@ -38449,8 +38449,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.45,
+        "height": 15.16,
         "unit": "in"
       },
       "window": {
@@ -38470,8 +38470,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.45,
+        "height": 15.16,
         "unit": "in"
       },
       "glazing": {
@@ -38528,7 +38528,7 @@ export default {
     "artworkTitle": "My tipi, on Grand Traverse Bay",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD38X8DD19F1S9X12J1S6DD38X8DD19G1",
+    "sku": "5M144M8S6DD38X8DD19F1S9DD38X11DD19J1S6DD38X8DD19G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.1267,
@@ -38561,8 +38561,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.38,
+        "height": 11.19,
         "unit": "in"
       },
       "window": {
@@ -38582,8 +38582,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.38,
+        "height": 11.19,
         "unit": "in"
       },
       "glazing": {
@@ -38602,7 +38602,7 @@ export default {
     "artworkTitle": "My tipi, on Grand Traverse Bay",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD38X8DD19F2S9X12J1S6DD38X8DD19G1",
+    "sku": "5M144M8S6DD38X8DD19F2S9DD38X11DD19J1S6DD38X8DD19G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.1267,
@@ -38635,8 +38635,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.38,
+        "height": 11.19,
         "unit": "in"
       },
       "window": {
@@ -38656,8 +38656,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.38,
+        "height": 11.19,
         "unit": "in"
       },
       "glazing": {
@@ -38674,9 +38674,9 @@ export default {
     "productId": "paul-murphy-painting-86",
     "title": "My tipi, on Grand Traverse Bay — Small print — Natural wood frame",
     "artworkTitle": "My tipi, on Grand Traverse Bay",
-    "amount": "72.63",
+    "amount": "71.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD38X8DD19F7S9X12J1S6DD38X8DD19G1",
+    "sku": "5M144M8S6DD38X8DD19F7S9DD38X11DD19J1S6DD38X8DD19G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.1267,
@@ -38709,8 +38709,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.38,
+        "height": 11.19,
         "unit": "in"
       },
       "window": {
@@ -38730,8 +38730,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.38,
+        "height": 11.19,
         "unit": "in"
       },
       "glazing": {
@@ -38786,9 +38786,9 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Large print — Black frame",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "101.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD99F1S12X15J1S8DD58X12DD99G1",
+    "sku": "5M144M8S8DD58X12DD99F1S11DD58X15DD99J1S8DD58X12DD99G1",
     "scale": 1,
     "imageSize": {
       "width": 8.3267,
@@ -38821,8 +38821,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.99,
         "unit": "in"
       },
       "window": {
@@ -38842,8 +38842,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.99,
         "unit": "in"
       },
       "glazing": {
@@ -38860,9 +38860,9 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Large print — White frame",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "101.00",
+    "amount": "102.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD99F2S12X15J1S8DD58X12DD99G1",
+    "sku": "5M144M8S8DD58X12DD99F2S11DD58X15DD99J1S8DD58X12DD99G1",
     "scale": 1,
     "imageSize": {
       "width": 8.3267,
@@ -38895,8 +38895,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.99,
         "unit": "in"
       },
       "window": {
@@ -38916,8 +38916,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.99,
         "unit": "in"
       },
       "glazing": {
@@ -38934,9 +38934,9 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Large print — Natural wood frame",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "113.00",
+    "amount": "114.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD99F7S12X15J1S8DD58X12DD99G1",
+    "sku": "5M144M8S8DD58X12DD99F7S11DD58X15DD99J1S8DD58X12DD99G1",
     "scale": 1,
     "imageSize": {
       "width": 8.3267,
@@ -38969,8 +38969,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.99,
         "unit": "in"
       },
       "window": {
@@ -38990,8 +38990,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 11.58,
+        "height": 15.99,
         "unit": "in"
       },
       "glazing": {
@@ -39046,9 +39046,9 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Medium print — Black frame",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "72.63",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD81F1S9X12J1S6DD5X9DD81G1",
+    "sku": "5M144M8S6DD5X9DD81F1S9DD5X12DD81J1S6DD5X9DD81G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.2467,
@@ -39081,8 +39081,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.81,
         "unit": "in"
       },
       "window": {
@@ -39102,8 +39102,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.81,
         "unit": "in"
       },
       "glazing": {
@@ -39120,9 +39120,9 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Medium print — White frame",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "72.63",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD81F2S9X12J1S6DD5X9DD81G1",
+    "sku": "5M144M8S6DD5X9DD81F2S9DD5X12DD81J1S6DD5X9DD81G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.2467,
@@ -39155,8 +39155,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.81,
         "unit": "in"
       },
       "window": {
@@ -39176,8 +39176,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.81,
         "unit": "in"
       },
       "glazing": {
@@ -39194,9 +39194,9 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Medium print — Natural wood frame",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "82.63",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD81F7S9X12J1S6DD5X9DD81G1",
+    "sku": "5M144M8S6DD5X9DD81F7S9DD5X12DD81J1S6DD5X9DD81G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.2467,
@@ -39229,8 +39229,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.81,
         "unit": "in"
       },
       "window": {
@@ -39250,8 +39250,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.5,
+        "height": 12.81,
         "unit": "in"
       },
       "glazing": {
@@ -39306,9 +39306,9 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Small print — Black frame",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD62F1S8X10J1S4DD41X6DD62G1",
+    "sku": "5M144M8S4DD41X6DD62F1S8DD01X10DD22J1S4DD41X6DD62G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1567,
@@ -39341,8 +39341,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.22,
         "unit": "in"
       },
       "window": {
@@ -39362,8 +39362,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.22,
         "unit": "in"
       },
       "glazing": {
@@ -39380,9 +39380,9 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Small print — White frame",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD62F2S8X10J1S4DD41X6DD62G1",
+    "sku": "5M144M8S4DD41X6DD62F2S8DD01X10DD22J1S4DD41X6DD62G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1567,
@@ -39415,8 +39415,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.22,
         "unit": "in"
       },
       "window": {
@@ -39436,8 +39436,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.22,
         "unit": "in"
       },
       "glazing": {
@@ -39456,7 +39456,7 @@ export default {
     "artworkTitle": "Warszawska Syrenka",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD62F7S8X10J1S4DD41X6DD62G1",
+    "sku": "5M144M8S4DD41X6DD62F7S8DD01X10DD22J1S4DD41X6DD62G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1567,
@@ -39489,8 +39489,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.22,
         "unit": "in"
       },
       "window": {
@@ -39510,8 +39510,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.22,
         "unit": "in"
       },
       "glazing": {
@@ -39566,9 +39566,9 @@ export default {
     "productId": "book-art-9ae261289a3bce952c6f",
     "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Large print — Black frame",
     "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
-    "amount": "129.00",
+    "amount": "106.00",
     "currency": "USD",
-    "sku": "5M144M8S15DD79X6DD21F1S20X16J1S15DD79X6DD21G1",
+    "sku": "5M144M8S15DD79X6DD21F1S18DD79X9DD21J1S15DD79X6DD21G1",
     "scale": 1,
     "imageSize": {
       "width": 15.5367,
@@ -39601,8 +39601,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 18.79,
+        "height": 9.21,
         "unit": "in"
       },
       "window": {
@@ -39622,8 +39622,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 18.79,
+        "height": 9.21,
         "unit": "in"
       },
       "glazing": {
@@ -39640,9 +39640,9 @@ export default {
     "productId": "book-art-9ae261289a3bce952c6f",
     "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Large print — White frame",
     "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
-    "amount": "129.00",
+    "amount": "106.00",
     "currency": "USD",
-    "sku": "5M144M8S15DD79X6DD21F2S20X16J1S15DD79X6DD21G1",
+    "sku": "5M144M8S15DD79X6DD21F2S18DD79X9DD21J1S15DD79X6DD21G1",
     "scale": 1,
     "imageSize": {
       "width": 15.5367,
@@ -39675,8 +39675,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 18.79,
+        "height": 9.21,
         "unit": "in"
       },
       "window": {
@@ -39696,8 +39696,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 18.79,
+        "height": 9.21,
         "unit": "in"
       },
       "glazing": {
@@ -39714,9 +39714,9 @@ export default {
     "productId": "book-art-9ae261289a3bce952c6f",
     "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Large print — Natural wood frame",
     "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
-    "amount": "144.00",
+    "amount": "118.00",
     "currency": "USD",
-    "sku": "5M144M8S15DD79X6DD21F7S20X16J1S15DD79X6DD21G1",
+    "sku": "5M144M8S15DD79X6DD21F7S18DD79X9DD21J1S15DD79X6DD21G1",
     "scale": 1,
     "imageSize": {
       "width": 15.5367,
@@ -39749,8 +39749,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 18.79,
+        "height": 9.21,
         "unit": "in"
       },
       "window": {
@@ -39770,8 +39770,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 18.79,
+        "height": 9.21,
         "unit": "in"
       },
       "glazing": {
@@ -39826,9 +39826,9 @@ export default {
     "productId": "book-art-9ae261289a3bce952c6f",
     "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Medium print — Black frame",
     "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
-    "amount": "86.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD91X4DD72F1S14X11J1S11DD91X4DD72G1",
+    "sku": "5M144M8S11DD91X4DD72F1S15DD19X8J1S11DD91X4DD72G1",
     "scale": 0.75,
     "imageSize": {
       "width": 11.65,
@@ -39861,8 +39861,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 15.19,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -39882,8 +39882,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 15.19,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -39900,9 +39900,9 @@ export default {
     "productId": "book-art-9ae261289a3bce952c6f",
     "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Medium print — White frame",
     "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
-    "amount": "86.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD91X4DD72F2S14X11J1S11DD91X4DD72G1",
+    "sku": "5M144M8S11DD91X4DD72F2S15DD19X8J1S11DD91X4DD72G1",
     "scale": 0.75,
     "imageSize": {
       "width": 11.65,
@@ -39935,8 +39935,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 15.19,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -39956,8 +39956,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 15.19,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -39974,9 +39974,9 @@ export default {
     "productId": "book-art-9ae261289a3bce952c6f",
     "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Medium print — Natural wood frame",
     "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
-    "amount": "97.00",
+    "amount": "91.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD91X4DD72F7S14X11J1S11DD91X4DD72G1",
+    "sku": "5M144M8S11DD91X4DD72F7S15DD19X8J1S11DD91X4DD72G1",
     "scale": 0.75,
     "imageSize": {
       "width": 11.65,
@@ -40009,8 +40009,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 15.19,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -40030,8 +40030,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 15.19,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -40086,9 +40086,9 @@ export default {
     "productId": "book-art-deb3358c321671dae1fc",
     "title": "Sunrise on Tahoma with motorcycles — Large print — Black frame",
     "artworkTitle": "Sunrise on Tahoma with motorcycles",
-    "amount": "91.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD66X12DD09F1S12X15J1S6DD66X12DD09G1",
+    "sku": "5M144M8S6DD66X12DD09F1S9DD66X15DD09J1S6DD66X12DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4067,
@@ -40121,8 +40121,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.66,
+        "height": 15.09,
         "unit": "in"
       },
       "window": {
@@ -40142,8 +40142,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.66,
+        "height": 15.09,
         "unit": "in"
       },
       "glazing": {
@@ -40160,9 +40160,9 @@ export default {
     "productId": "book-art-deb3358c321671dae1fc",
     "title": "Sunrise on Tahoma with motorcycles — Large print — White frame",
     "artworkTitle": "Sunrise on Tahoma with motorcycles",
-    "amount": "91.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD66X12DD09F2S12X15J1S6DD66X12DD09G1",
+    "sku": "5M144M8S6DD66X12DD09F2S9DD66X15DD09J1S6DD66X12DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4067,
@@ -40195,8 +40195,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.66,
+        "height": 15.09,
         "unit": "in"
       },
       "window": {
@@ -40216,8 +40216,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.66,
+        "height": 15.09,
         "unit": "in"
       },
       "glazing": {
@@ -40234,9 +40234,9 @@ export default {
     "productId": "book-art-deb3358c321671dae1fc",
     "title": "Sunrise on Tahoma with motorcycles — Large print — Natural wood frame",
     "artworkTitle": "Sunrise on Tahoma with motorcycles",
-    "amount": "103.00",
+    "amount": "96.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD66X12DD09F7S12X15J1S6DD66X12DD09G1",
+    "sku": "5M144M8S6DD66X12DD09F7S9DD66X15DD09J1S6DD66X12DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4067,
@@ -40269,8 +40269,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.66,
+        "height": 15.09,
         "unit": "in"
       },
       "window": {
@@ -40290,8 +40290,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.66,
+        "height": 15.09,
         "unit": "in"
       },
       "glazing": {
@@ -40346,9 +40346,9 @@ export default {
     "productId": "book-art-deb3358c321671dae1fc",
     "title": "Sunrise on Tahoma with motorcycles — Medium print — Black frame",
     "artworkTitle": "Sunrise on Tahoma with motorcycles",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD06X9DD13F1S9X12J1S5DD06X9DD13G1",
+    "sku": "5M144M8S5DD06X9DD13F1S8DD06X12DD13J1S5DD06X9DD13G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8067,
@@ -40381,8 +40381,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.06,
+        "height": 12.13,
         "unit": "in"
       },
       "window": {
@@ -40402,8 +40402,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.06,
+        "height": 12.13,
         "unit": "in"
       },
       "glazing": {
@@ -40420,9 +40420,9 @@ export default {
     "productId": "book-art-deb3358c321671dae1fc",
     "title": "Sunrise on Tahoma with motorcycles — Medium print — White frame",
     "artworkTitle": "Sunrise on Tahoma with motorcycles",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD06X9DD13F2S9X12J1S5DD06X9DD13G1",
+    "sku": "5M144M8S5DD06X9DD13F2S8DD06X12DD13J1S5DD06X9DD13G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8067,
@@ -40455,8 +40455,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.06,
+        "height": 12.13,
         "unit": "in"
       },
       "window": {
@@ -40476,8 +40476,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.06,
+        "height": 12.13,
         "unit": "in"
       },
       "glazing": {
@@ -40494,9 +40494,9 @@ export default {
     "productId": "book-art-deb3358c321671dae1fc",
     "title": "Sunrise on Tahoma with motorcycles — Medium print — Natural wood frame",
     "artworkTitle": "Sunrise on Tahoma with motorcycles",
-    "amount": "77.63",
+    "amount": "76.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD06X9DD13F7S9X12J1S5DD06X9DD13G1",
+    "sku": "5M144M8S5DD06X9DD13F7S8DD06X12DD13J1S5DD06X9DD13G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8067,
@@ -40529,8 +40529,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.06,
+        "height": 12.13,
         "unit": "in"
       },
       "window": {
@@ -40550,8 +40550,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.06,
+        "height": 12.13,
         "unit": "in"
       },
       "glazing": {
@@ -40608,7 +40608,7 @@ export default {
     "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD18X9DD46F1S9X12J1S5DD18X9DD46G1",
+    "sku": "5M144M8S5DD18X9DD46F1S8DD18X12DD46J1S5DD18X9DD46G1",
     "scale": 1,
     "imageSize": {
       "width": 4.9267,
@@ -40641,8 +40641,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "window": {
@@ -40662,8 +40662,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "glazing": {
@@ -40682,7 +40682,7 @@ export default {
     "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD18X9DD46F2S9X12J1S5DD18X9DD46G1",
+    "sku": "5M144M8S5DD18X9DD46F2S8DD18X12DD46J1S5DD18X9DD46G1",
     "scale": 1,
     "imageSize": {
       "width": 4.9267,
@@ -40715,8 +40715,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "window": {
@@ -40736,8 +40736,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "glazing": {
@@ -40754,9 +40754,9 @@ export default {
     "productId": "book-art-f56007f6a7d6ee955caf",
     "title": "Sunset in the Straight of Juan Defuca, Pathos island 1 — Large print — Natural wood frame",
     "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
-    "amount": "82.63",
+    "amount": "81.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD18X9DD46F7S9X12J1S5DD18X9DD46G1",
+    "sku": "5M144M8S5DD18X9DD46F7S8DD18X12DD46J1S5DD18X9DD46G1",
     "scale": 1,
     "imageSize": {
       "width": 4.9267,
@@ -40789,8 +40789,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "window": {
@@ -40810,8 +40810,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.18,
+        "height": 12.46,
         "unit": "in"
       },
       "glazing": {
@@ -40866,9 +40866,9 @@ export default {
     "productId": "book-art-d1399111a441ed91feaa",
     "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print — Black frame",
     "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
-    "amount": "81.00",
+    "amount": "73.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD64X10DD06F1S11X14J1S5DD64X10DD06G1",
+    "sku": "5M144M8S5DD64X10DD06F1S8DD64X13DD06J1S5DD64X10DD06G1",
     "scale": 1,
     "imageSize": {
       "width": 5.3867,
@@ -40901,8 +40901,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 8.64,
+        "height": 13.06,
         "unit": "in"
       },
       "window": {
@@ -40922,8 +40922,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 8.64,
+        "height": 13.06,
         "unit": "in"
       },
       "glazing": {
@@ -40940,9 +40940,9 @@ export default {
     "productId": "book-art-d1399111a441ed91feaa",
     "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print — White frame",
     "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
-    "amount": "81.00",
+    "amount": "73.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD64X10DD06F2S11X14J1S5DD64X10DD06G1",
+    "sku": "5M144M8S5DD64X10DD06F2S8DD64X13DD06J1S5DD64X10DD06G1",
     "scale": 1,
     "imageSize": {
       "width": 5.3867,
@@ -40975,8 +40975,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 8.64,
+        "height": 13.06,
         "unit": "in"
       },
       "window": {
@@ -40996,8 +40996,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 8.64,
+        "height": 13.06,
         "unit": "in"
       },
       "glazing": {
@@ -41014,9 +41014,9 @@ export default {
     "productId": "book-art-d1399111a441ed91feaa",
     "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print — Natural wood frame",
     "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
-    "amount": "92.00",
+    "amount": "83.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD64X10DD06F7S11X14J1S5DD64X10DD06G1",
+    "sku": "5M144M8S5DD64X10DD06F7S8DD64X13DD06J1S5DD64X10DD06G1",
     "scale": 1,
     "imageSize": {
       "width": 5.3867,
@@ -41049,8 +41049,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 8.64,
+        "height": 13.06,
         "unit": "in"
       },
       "window": {
@@ -41070,8 +41070,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 8.64,
+        "height": 13.06,
         "unit": "in"
       },
       "glazing": {
@@ -41126,9 +41126,9 @@ export default {
     "productId": "book-art-d1399111a441ed91feaa",
     "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print — Black frame",
     "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD29X7DD6F1S8X10J1S4DD29X7DD6G1",
+    "sku": "5M144M8S4DD29X7DD6F1S8DD01X11DD32J1S4DD29X7DD6G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.0367,
@@ -41161,8 +41161,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 11.32,
         "unit": "in"
       },
       "window": {
@@ -41182,8 +41182,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 11.32,
         "unit": "in"
       },
       "glazing": {
@@ -41200,9 +41200,9 @@ export default {
     "productId": "book-art-d1399111a441ed91feaa",
     "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print — White frame",
     "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD29X7DD6F2S8X10J1S4DD29X7DD6G1",
+    "sku": "5M144M8S4DD29X7DD6F2S8DD01X11DD32J1S4DD29X7DD6G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.0367,
@@ -41235,8 +41235,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 11.32,
         "unit": "in"
       },
       "window": {
@@ -41256,8 +41256,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 11.32,
         "unit": "in"
       },
       "glazing": {
@@ -41274,9 +41274,9 @@ export default {
     "productId": "book-art-d1399111a441ed91feaa",
     "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print — Natural wood frame",
     "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
-    "amount": "68.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD29X7DD6F7S8X10J1S4DD29X7DD6G1",
+    "sku": "5M144M8S4DD29X7DD6F7S8DD01X11DD32J1S4DD29X7DD6G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.0367,
@@ -41309,8 +41309,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 11.32,
         "unit": "in"
       },
       "window": {
@@ -41330,8 +41330,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 11.32,
         "unit": "in"
       },
       "glazing": {
@@ -41386,9 +41386,9 @@ export default {
     "productId": "book-art-c198f09bc8ddad18ed1e",
     "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print — Black frame",
     "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD96X4DD99F1S12X9J1S8DD96X4DD99G1",
+    "sku": "5M144M8S8DD96X4DD99F1S11DD98X8DD01J1S8DD96X4DD99G1",
     "scale": 1,
     "imageSize": {
       "width": 8.69,
@@ -41421,8 +41421,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.98,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -41442,8 +41442,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.98,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -41460,9 +41460,9 @@ export default {
     "productId": "book-art-c198f09bc8ddad18ed1e",
     "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print — White frame",
     "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD96X4DD99F2S12X9J1S8DD96X4DD99G1",
+    "sku": "5M144M8S8DD96X4DD99F2S11DD98X8DD01J1S8DD96X4DD99G1",
     "scale": 1,
     "imageSize": {
       "width": 8.69,
@@ -41495,8 +41495,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.98,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -41516,8 +41516,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.98,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -41534,9 +41534,9 @@ export default {
     "productId": "book-art-c198f09bc8ddad18ed1e",
     "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print — Natural wood frame",
     "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
-    "amount": "77.63",
+    "amount": "75.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD96X4DD99F7S12X9J1S8DD96X4DD99G1",
+    "sku": "5M144M8S8DD96X4DD99F7S11DD98X8DD01J1S8DD96X4DD99G1",
     "scale": 1,
     "imageSize": {
       "width": 8.69,
@@ -41569,8 +41569,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.98,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -41590,8 +41590,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.98,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -41646,9 +41646,9 @@ export default {
     "productId": "book-art-87cf2a732259b313f5ab",
     "title": "Sunrise in Puerta Vallarta — Large print — Black frame",
     "artworkTitle": "Sunrise in Puerta Vallarta",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD7X8DD09F1S9X12J1S4DD7X8DD09G1",
+    "sku": "5M144M8S4DD7X8DD09F1S8X11DD39J1S4DD7X8DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 4.4467,
@@ -41681,8 +41681,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 11.39,
         "unit": "in"
       },
       "window": {
@@ -41702,8 +41702,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 11.39,
         "unit": "in"
       },
       "glazing": {
@@ -41720,9 +41720,9 @@ export default {
     "productId": "book-art-87cf2a732259b313f5ab",
     "title": "Sunrise in Puerta Vallarta — Large print — White frame",
     "artworkTitle": "Sunrise in Puerta Vallarta",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD7X8DD09F2S9X12J1S4DD7X8DD09G1",
+    "sku": "5M144M8S4DD7X8DD09F2S8X11DD39J1S4DD7X8DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 4.4467,
@@ -41755,8 +41755,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 11.39,
         "unit": "in"
       },
       "window": {
@@ -41776,8 +41776,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 11.39,
         "unit": "in"
       },
       "glazing": {
@@ -41794,9 +41794,9 @@ export default {
     "productId": "book-art-87cf2a732259b313f5ab",
     "title": "Sunrise in Puerta Vallarta — Large print — Natural wood frame",
     "artworkTitle": "Sunrise in Puerta Vallarta",
-    "amount": "72.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD7X8DD09F7S9X12J1S4DD7X8DD09G1",
+    "sku": "5M144M8S4DD7X8DD09F7S8X11DD39J1S4DD7X8DD09G1",
     "scale": 1,
     "imageSize": {
       "width": 4.4467,
@@ -41829,8 +41829,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 11.39,
         "unit": "in"
       },
       "window": {
@@ -41850,8 +41850,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 11.39,
         "unit": "in"
       },
       "glazing": {
@@ -41906,9 +41906,9 @@ export default {
     "productId": "book-art-471daf14a8bb7883f114",
     "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print — Black frame",
     "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
-    "amount": "86.00",
+    "amount": "83.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD57X6DD33F1S14X11J1S11DD57X6DD33G1",
+    "sku": "5M144M8S11DD57X6DD33F1S14DD57X9DD33J1S11DD57X6DD33G1",
     "scale": 1,
     "imageSize": {
       "width": 11.3067,
@@ -41941,8 +41941,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.57,
+        "height": 9.33,
         "unit": "in"
       },
       "window": {
@@ -41962,8 +41962,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.57,
+        "height": 9.33,
         "unit": "in"
       },
       "glazing": {
@@ -41980,9 +41980,9 @@ export default {
     "productId": "book-art-471daf14a8bb7883f114",
     "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print — White frame",
     "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
-    "amount": "86.00",
+    "amount": "83.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD57X6DD33F2S14X11J1S11DD57X6DD33G1",
+    "sku": "5M144M8S11DD57X6DD33F2S14DD57X9DD33J1S11DD57X6DD33G1",
     "scale": 1,
     "imageSize": {
       "width": 11.3067,
@@ -42015,8 +42015,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.57,
+        "height": 9.33,
         "unit": "in"
       },
       "window": {
@@ -42036,8 +42036,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.57,
+        "height": 9.33,
         "unit": "in"
       },
       "glazing": {
@@ -42054,9 +42054,9 @@ export default {
     "productId": "book-art-471daf14a8bb7883f114",
     "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print — Natural wood frame",
     "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
-    "amount": "97.00",
+    "amount": "94.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD57X6DD33F7S14X11J1S11DD57X6DD33G1",
+    "sku": "5M144M8S11DD57X6DD33F7S14DD57X9DD33J1S11DD57X6DD33G1",
     "scale": 1,
     "imageSize": {
       "width": 11.3067,
@@ -42089,8 +42089,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.57,
+        "height": 9.33,
         "unit": "in"
       },
       "window": {
@@ -42110,8 +42110,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.57,
+        "height": 9.33,
         "unit": "in"
       },
       "glazing": {
@@ -42166,9 +42166,9 @@ export default {
     "productId": "book-art-471daf14a8bb7883f114",
     "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print — Black frame",
     "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD74X4DD81F1S12X9J1S8DD74X4DD81G1",
+    "sku": "5M144M8S8DD74X4DD81F1S11DD94X8DD01J1S8DD74X4DD81G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.48,
@@ -42201,8 +42201,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.94,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -42222,8 +42222,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.94,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -42240,9 +42240,9 @@ export default {
     "productId": "book-art-471daf14a8bb7883f114",
     "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print — White frame",
     "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD74X4DD81F2S12X9J1S8DD74X4DD81G1",
+    "sku": "5M144M8S8DD74X4DD81F2S11DD94X8DD01J1S8DD74X4DD81G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.48,
@@ -42275,8 +42275,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.94,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -42296,8 +42296,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.94,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -42314,9 +42314,9 @@ export default {
     "productId": "book-art-471daf14a8bb7883f114",
     "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print — Natural wood frame",
     "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
-    "amount": "77.63",
+    "amount": "75.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD74X4DD81F7S12X9J1S8DD74X4DD81G1",
+    "sku": "5M144M8S8DD74X4DD81F7S11DD94X8DD01J1S8DD74X4DD81G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.48,
@@ -42349,8 +42349,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.94,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -42370,8 +42370,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.94,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -42426,9 +42426,9 @@ export default {
     "productId": "book-art-e3293c73dbb01f94b39b",
     "title": "El Salvador — Large print — Black frame",
     "artworkTitle": "El Salvador",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD57X4DD48F1S10X8J1S5DD57X4DD48G1",
+    "sku": "5M144M8S5DD57X4DD48F1S9DD09X8J1S5DD57X4DD48G1",
     "scale": 1,
     "imageSize": {
       "width": 5.3167,
@@ -42461,7 +42461,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.09,
         "height": 8,
         "unit": "in"
       },
@@ -42482,7 +42482,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.09,
         "height": 8,
         "unit": "in"
       },
@@ -42500,9 +42500,9 @@ export default {
     "productId": "book-art-e3293c73dbb01f94b39b",
     "title": "El Salvador — Large print — White frame",
     "artworkTitle": "El Salvador",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD57X4DD48F2S10X8J1S5DD57X4DD48G1",
+    "sku": "5M144M8S5DD57X4DD48F2S9DD09X8J1S5DD57X4DD48G1",
     "scale": 1,
     "imageSize": {
       "width": 5.3167,
@@ -42535,7 +42535,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.09,
         "height": 8,
         "unit": "in"
       },
@@ -42556,7 +42556,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.09,
         "height": 8,
         "unit": "in"
       },
@@ -42574,9 +42574,9 @@ export default {
     "productId": "book-art-e3293c73dbb01f94b39b",
     "title": "El Salvador — Large print — Natural wood frame",
     "artworkTitle": "El Salvador",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD57X4DD48F7S10X8J1S5DD57X4DD48G1",
+    "sku": "5M144M8S5DD57X4DD48F7S9DD09X8J1S5DD57X4DD48G1",
     "scale": 1,
     "imageSize": {
       "width": 5.3167,
@@ -42609,7 +42609,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.09,
         "height": 8,
         "unit": "in"
       },
@@ -42630,7 +42630,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.09,
         "height": 8,
         "unit": "in"
       },
@@ -42688,7 +42688,7 @@ export default {
     "artworkTitle": "El Salvador",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD08X4DD73F1S10X8J1S6DD08X4DD73G1",
+    "sku": "5M144M8S6DD08X4DD73F1S9DD36X8DD01J1S6DD08X4DD73G1",
     "scale": 1,
     "imageSize": {
       "width": 5.8167,
@@ -42721,8 +42721,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.36,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -42742,8 +42742,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.36,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -42762,7 +42762,7 @@ export default {
     "artworkTitle": "El Salvador",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD08X4DD73F2S10X8J1S6DD08X4DD73G1",
+    "sku": "5M144M8S6DD08X4DD73F2S9DD36X8DD01J1S6DD08X4DD73G1",
     "scale": 1,
     "imageSize": {
       "width": 5.8167,
@@ -42795,8 +42795,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.36,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -42816,8 +42816,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.36,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -42834,9 +42834,9 @@ export default {
     "productId": "book-art-a2e53a8418a8d84f3dc5",
     "title": "El Salvador — Large print — Natural wood frame",
     "artworkTitle": "El Salvador",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD08X4DD73F7S10X8J1S6DD08X4DD73G1",
+    "sku": "5M144M8S6DD08X4DD73F7S9DD36X8DD01J1S6DD08X4DD73G1",
     "scale": 1,
     "imageSize": {
       "width": 5.8167,
@@ -42869,8 +42869,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.36,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -42890,8 +42890,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.36,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -42946,9 +42946,9 @@ export default {
     "productId": "book-art-27fee33e69f262ecfacb",
     "title": "Sedona: Bell Rock 2 — Large print — Black frame",
     "artworkTitle": "Sedona: Bell Rock 2",
-    "amount": "134.00",
+    "amount": "118.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD33X13DD52F1S16X20J1S10DD33X13DD52G1",
+    "sku": "5M144M8S10DD33X13DD52F1S13DD33X16DD52J1S10DD33X13DD52G1",
     "scale": 1,
     "imageSize": {
       "width": 10.0733,
@@ -42981,8 +42981,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.33,
+        "height": 16.52,
         "unit": "in"
       },
       "window": {
@@ -43002,8 +43002,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.33,
+        "height": 16.52,
         "unit": "in"
       },
       "glazing": {
@@ -43020,9 +43020,9 @@ export default {
     "productId": "book-art-27fee33e69f262ecfacb",
     "title": "Sedona: Bell Rock 2 — Large print — White frame",
     "artworkTitle": "Sedona: Bell Rock 2",
-    "amount": "134.00",
+    "amount": "118.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD33X13DD52F2S16X20J1S10DD33X13DD52G1",
+    "sku": "5M144M8S10DD33X13DD52F2S13DD33X16DD52J1S10DD33X13DD52G1",
     "scale": 1,
     "imageSize": {
       "width": 10.0733,
@@ -43055,8 +43055,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.33,
+        "height": 16.52,
         "unit": "in"
       },
       "window": {
@@ -43076,8 +43076,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.33,
+        "height": 16.52,
         "unit": "in"
       },
       "glazing": {
@@ -43094,9 +43094,9 @@ export default {
     "productId": "book-art-27fee33e69f262ecfacb",
     "title": "Sedona: Bell Rock 2 — Large print — Natural wood frame",
     "artworkTitle": "Sedona: Bell Rock 2",
-    "amount": "149.00",
+    "amount": "131.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD33X13DD52F7S16X20J1S10DD33X13DD52G1",
+    "sku": "5M144M8S10DD33X13DD52F7S13DD33X16DD52J1S10DD33X13DD52G1",
     "scale": 1,
     "imageSize": {
       "width": 10.0733,
@@ -43129,8 +43129,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.33,
+        "height": 16.52,
         "unit": "in"
       },
       "window": {
@@ -43150,8 +43150,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.33,
+        "height": 16.52,
         "unit": "in"
       },
       "glazing": {
@@ -43206,9 +43206,9 @@ export default {
     "productId": "book-art-27fee33e69f262ecfacb",
     "title": "Sedona: Bell Rock 2 — Medium print — Black frame",
     "artworkTitle": "Sedona: Bell Rock 2",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD81X10DD2F1S11X14J1S7DD81X10DD2G1",
+    "sku": "5M144M8S7DD81X10DD2F1S10DD81X13DD2J1S7DD81X10DD2G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5533,
@@ -43241,8 +43241,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.81,
+        "height": 13.2,
         "unit": "in"
       },
       "window": {
@@ -43262,8 +43262,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.81,
+        "height": 13.2,
         "unit": "in"
       },
       "glazing": {
@@ -43280,9 +43280,9 @@ export default {
     "productId": "book-art-27fee33e69f262ecfacb",
     "title": "Sedona: Bell Rock 2 — Medium print — White frame",
     "artworkTitle": "Sedona: Bell Rock 2",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD81X10DD2F2S11X14J1S7DD81X10DD2G1",
+    "sku": "5M144M8S7DD81X10DD2F2S10DD81X13DD2J1S7DD81X10DD2G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5533,
@@ -43315,8 +43315,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.81,
+        "height": 13.2,
         "unit": "in"
       },
       "window": {
@@ -43336,8 +43336,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.81,
+        "height": 13.2,
         "unit": "in"
       },
       "glazing": {
@@ -43354,9 +43354,9 @@ export default {
     "productId": "book-art-27fee33e69f262ecfacb",
     "title": "Sedona: Bell Rock 2 — Medium print — Natural wood frame",
     "artworkTitle": "Sedona: Bell Rock 2",
-    "amount": "92.00",
+    "amount": "89.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD81X10DD2F7S11X14J1S7DD81X10DD2G1",
+    "sku": "5M144M8S7DD81X10DD2F7S10DD81X13DD2J1S7DD81X10DD2G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5533,
@@ -43389,8 +43389,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.81,
+        "height": 13.2,
         "unit": "in"
       },
       "window": {
@@ -43410,8 +43410,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.81,
+        "height": 13.2,
         "unit": "in"
       },
       "glazing": {
@@ -43468,7 +43468,7 @@ export default {
     "artworkTitle": "Sedona: Bell Rock 2",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD29X6DD88F1S8X10J1S5DD29X6DD88G1",
+    "sku": "5M144M8S5DD29X6DD88F1S8DD29X9DD88J1S5DD29X6DD88G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.03,
@@ -43501,8 +43501,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.29,
+        "height": 9.88,
         "unit": "in"
       },
       "window": {
@@ -43522,8 +43522,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.29,
+        "height": 9.88,
         "unit": "in"
       },
       "glazing": {
@@ -43542,7 +43542,7 @@ export default {
     "artworkTitle": "Sedona: Bell Rock 2",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD29X6DD88F2S8X10J1S5DD29X6DD88G1",
+    "sku": "5M144M8S5DD29X6DD88F2S8DD29X9DD88J1S5DD29X6DD88G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.03,
@@ -43575,8 +43575,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.29,
+        "height": 9.88,
         "unit": "in"
       },
       "window": {
@@ -43596,8 +43596,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.29,
+        "height": 9.88,
         "unit": "in"
       },
       "glazing": {
@@ -43616,7 +43616,7 @@ export default {
     "artworkTitle": "Sedona: Bell Rock 2",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD29X6DD88F7S8X10J1S5DD29X6DD88G1",
+    "sku": "5M144M8S5DD29X6DD88F7S8DD29X9DD88J1S5DD29X6DD88G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.03,
@@ -43649,8 +43649,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.29,
+        "height": 9.88,
         "unit": "in"
       },
       "window": {
@@ -43670,8 +43670,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.29,
+        "height": 9.88,
         "unit": "in"
       },
       "glazing": {
@@ -43726,9 +43726,9 @@ export default {
     "productId": "book-art-ff6db6906f0ed48ccc3a",
     "title": "Sedona Monuments — Large print — Black frame",
     "artworkTitle": "Sedona Monuments",
-    "amount": "108.00",
+    "amount": "111.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD24X9DD96F1S16X12J1S13DD24X9DD96G1",
+    "sku": "5M144M8S13DD24X9DD96F1S16DD24X12DD96J1S13DD24X9DD96G1",
     "scale": 1,
     "imageSize": {
       "width": 12.98,
@@ -43761,8 +43761,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 12,
+        "width": 16.24,
+        "height": 12.96,
         "unit": "in"
       },
       "window": {
@@ -43782,8 +43782,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 12,
+        "width": 16.24,
+        "height": 12.96,
         "unit": "in"
       },
       "glazing": {
@@ -43800,9 +43800,9 @@ export default {
     "productId": "book-art-ff6db6906f0ed48ccc3a",
     "title": "Sedona Monuments — Large print — White frame",
     "artworkTitle": "Sedona Monuments",
-    "amount": "108.00",
+    "amount": "111.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD24X9DD96F2S16X12J1S13DD24X9DD96G1",
+    "sku": "5M144M8S13DD24X9DD96F2S16DD24X12DD96J1S13DD24X9DD96G1",
     "scale": 1,
     "imageSize": {
       "width": 12.98,
@@ -43835,8 +43835,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 12,
+        "width": 16.24,
+        "height": 12.96,
         "unit": "in"
       },
       "window": {
@@ -43856,8 +43856,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 12,
+        "width": 16.24,
+        "height": 12.96,
         "unit": "in"
       },
       "glazing": {
@@ -43874,9 +43874,9 @@ export default {
     "productId": "book-art-ff6db6906f0ed48ccc3a",
     "title": "Sedona Monuments — Large print — Natural wood frame",
     "artworkTitle": "Sedona Monuments",
-    "amount": "120.00",
+    "amount": "124.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD24X9DD96F7S16X12J1S13DD24X9DD96G1",
+    "sku": "5M144M8S13DD24X9DD96F7S16DD24X12DD96J1S13DD24X9DD96G1",
     "scale": 1,
     "imageSize": {
       "width": 12.98,
@@ -43909,8 +43909,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 12,
+        "width": 16.24,
+        "height": 12.96,
         "unit": "in"
       },
       "window": {
@@ -43930,8 +43930,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 12,
+        "width": 16.24,
+        "height": 12.96,
         "unit": "in"
       },
       "glazing": {
@@ -43986,9 +43986,9 @@ export default {
     "productId": "book-art-ff6db6906f0ed48ccc3a",
     "title": "Sedona Monuments — Medium print — Black frame",
     "artworkTitle": "Sedona Monuments",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD99X7DD53F1S14X11J1S9DD99X7DD53G1",
+    "sku": "5M144M8S9DD99X7DD53F1S12DD99X10DD53J1S9DD99X7DD53G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.73,
@@ -44021,8 +44021,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.99,
+        "height": 10.53,
         "unit": "in"
       },
       "window": {
@@ -44042,8 +44042,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.99,
+        "height": 10.53,
         "unit": "in"
       },
       "glazing": {
@@ -44060,9 +44060,9 @@ export default {
     "productId": "book-art-ff6db6906f0ed48ccc3a",
     "title": "Sedona Monuments — Medium print — White frame",
     "artworkTitle": "Sedona Monuments",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD99X7DD53F2S14X11J1S9DD99X7DD53G1",
+    "sku": "5M144M8S9DD99X7DD53F2S12DD99X10DD53J1S9DD99X7DD53G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.73,
@@ -44095,8 +44095,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.99,
+        "height": 10.53,
         "unit": "in"
       },
       "window": {
@@ -44116,8 +44116,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.99,
+        "height": 10.53,
         "unit": "in"
       },
       "glazing": {
@@ -44134,9 +44134,9 @@ export default {
     "productId": "book-art-ff6db6906f0ed48ccc3a",
     "title": "Sedona Monuments — Medium print — Natural wood frame",
     "artworkTitle": "Sedona Monuments",
-    "amount": "92.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD99X7DD53F7S14X11J1S9DD99X7DD53G1",
+    "sku": "5M144M8S9DD99X7DD53F7S12DD99X10DD53J1S9DD99X7DD53G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.73,
@@ -44169,8 +44169,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 12.99,
+        "height": 10.53,
         "unit": "in"
       },
       "window": {
@@ -44190,8 +44190,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 12.99,
+        "height": 10.53,
         "unit": "in"
       },
       "glazing": {
@@ -44248,7 +44248,7 @@ export default {
     "artworkTitle": "Sedona Monuments",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD74X5DD1F1S10X8J1S6DD74X5DD1G1",
+    "sku": "5M144M8S6DD74X5DD1F1S9DD74X8DD1J1S6DD74X5DD1G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.48,
@@ -44281,8 +44281,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.74,
+        "height": 8.1,
         "unit": "in"
       },
       "window": {
@@ -44302,8 +44302,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.74,
+        "height": 8.1,
         "unit": "in"
       },
       "glazing": {
@@ -44322,7 +44322,7 @@ export default {
     "artworkTitle": "Sedona Monuments",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD74X5DD1F2S10X8J1S6DD74X5DD1G1",
+    "sku": "5M144M8S6DD74X5DD1F2S9DD74X8DD1J1S6DD74X5DD1G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.48,
@@ -44355,8 +44355,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.74,
+        "height": 8.1,
         "unit": "in"
       },
       "window": {
@@ -44376,8 +44376,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.74,
+        "height": 8.1,
         "unit": "in"
       },
       "glazing": {
@@ -44394,9 +44394,9 @@ export default {
     "productId": "book-art-ff6db6906f0ed48ccc3a",
     "title": "Sedona Monuments — Small print — Natural wood frame",
     "artworkTitle": "Sedona Monuments",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD74X5DD1F7S10X8J1S6DD74X5DD1G1",
+    "sku": "5M144M8S6DD74X5DD1F7S9DD74X8DD1J1S6DD74X5DD1G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.48,
@@ -44429,8 +44429,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.74,
+        "height": 8.1,
         "unit": "in"
       },
       "window": {
@@ -44450,8 +44450,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.74,
+        "height": 8.1,
         "unit": "in"
       },
       "glazing": {
@@ -44508,7 +44508,7 @@ export default {
     "artworkTitle": "Hawaii",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD94X4DD7F1S10X8J1S5DD94X4DD7G1",
+    "sku": "5M144M8S5DD94X4DD7F1S9DD24X8J1S5DD94X4DD7G1",
     "scale": 1,
     "imageSize": {
       "width": 5.6867,
@@ -44541,7 +44541,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.24,
         "height": 8,
         "unit": "in"
       },
@@ -44562,7 +44562,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.24,
         "height": 8,
         "unit": "in"
       },
@@ -44582,7 +44582,7 @@ export default {
     "artworkTitle": "Hawaii",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD94X4DD7F2S10X8J1S5DD94X4DD7G1",
+    "sku": "5M144M8S5DD94X4DD7F2S9DD24X8J1S5DD94X4DD7G1",
     "scale": 1,
     "imageSize": {
       "width": 5.6867,
@@ -44615,7 +44615,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.24,
         "height": 8,
         "unit": "in"
       },
@@ -44636,7 +44636,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.24,
         "height": 8,
         "unit": "in"
       },
@@ -44654,9 +44654,9 @@ export default {
     "productId": "book-art-55829535637cd4974a88",
     "title": "Hawaii — Large print — Natural wood frame",
     "artworkTitle": "Hawaii",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD94X4DD7F7S10X8J1S5DD94X4DD7G1",
+    "sku": "5M144M8S5DD94X4DD7F7S9DD24X8J1S5DD94X4DD7G1",
     "scale": 1,
     "imageSize": {
       "width": 5.6867,
@@ -44689,7 +44689,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.24,
         "height": 8,
         "unit": "in"
       },
@@ -44710,7 +44710,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.24,
         "height": 8,
         "unit": "in"
       },
@@ -44766,9 +44766,9 @@ export default {
     "productId": "book-art-04a049ea60a5a09e6873",
     "title": "Hawaii — Large print — Black frame",
     "artworkTitle": "Hawaii",
-    "amount": "96.00",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD67X12DD77F1S12X15J1S6DD67X12DD77G1",
+    "sku": "5M144M8S6DD67X12DD77F1S9DD67X15DD77J1S6DD67X12DD77G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4167,
@@ -44801,8 +44801,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "window": {
@@ -44822,8 +44822,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "glazing": {
@@ -44840,9 +44840,9 @@ export default {
     "productId": "book-art-04a049ea60a5a09e6873",
     "title": "Hawaii — Large print — White frame",
     "artworkTitle": "Hawaii",
-    "amount": "96.00",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD67X12DD77F2S12X15J1S6DD67X12DD77G1",
+    "sku": "5M144M8S6DD67X12DD77F2S9DD67X15DD77J1S6DD67X12DD77G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4167,
@@ -44875,8 +44875,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "window": {
@@ -44896,8 +44896,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "glazing": {
@@ -44914,9 +44914,9 @@ export default {
     "productId": "book-art-04a049ea60a5a09e6873",
     "title": "Hawaii — Large print — Natural wood frame",
     "artworkTitle": "Hawaii",
-    "amount": "108.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD67X12DD77F7S12X15J1S6DD67X12DD77G1",
+    "sku": "5M144M8S6DD67X12DD77F7S9DD67X15DD77J1S6DD67X12DD77G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4167,
@@ -44949,8 +44949,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "window": {
@@ -44970,8 +44970,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 9.67,
+        "height": 15.77,
         "unit": "in"
       },
       "glazing": {
@@ -45028,7 +45028,7 @@ export default {
     "artworkTitle": "Hawaii",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD07X9DD64F1S9X12J1S5DD07X9DD64G1",
+    "sku": "5M144M8S5DD07X9DD64F1S8DD07X12DD64J1S5DD07X9DD64G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8167,
@@ -45061,8 +45061,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "window": {
@@ -45082,8 +45082,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "glazing": {
@@ -45102,7 +45102,7 @@ export default {
     "artworkTitle": "Hawaii",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD07X9DD64F2S9X12J1S5DD07X9DD64G1",
+    "sku": "5M144M8S5DD07X9DD64F2S8DD07X12DD64J1S5DD07X9DD64G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8167,
@@ -45135,8 +45135,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "window": {
@@ -45156,8 +45156,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "glazing": {
@@ -45174,9 +45174,9 @@ export default {
     "productId": "book-art-04a049ea60a5a09e6873",
     "title": "Hawaii — Medium print — Natural wood frame",
     "artworkTitle": "Hawaii",
-    "amount": "82.63",
+    "amount": "81.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD07X9DD64F7S9X12J1S5DD07X9DD64G1",
+    "sku": "5M144M8S5DD07X9DD64F7S8DD07X12DD64J1S5DD07X9DD64G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8167,
@@ -45209,8 +45209,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "window": {
@@ -45230,8 +45230,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.07,
+        "height": 12.64,
         "unit": "in"
       },
       "glazing": {
@@ -45286,9 +45286,9 @@ export default {
     "productId": "book-art-e589c9375e23d1de4748",
     "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — Black frame",
     "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
-    "amount": "81.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X5DD77F1S14X11J1S10DD25X5DD77G1",
+    "sku": "5M144M8S10DD25X5DD77F1S13DD25X8DD77J1S10DD25X5DD77G1",
     "scale": 1,
     "imageSize": {
       "width": 9.99,
@@ -45321,8 +45321,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 8.77,
         "unit": "in"
       },
       "window": {
@@ -45342,8 +45342,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 8.77,
         "unit": "in"
       },
       "glazing": {
@@ -45360,9 +45360,9 @@ export default {
     "productId": "book-art-e589c9375e23d1de4748",
     "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — White frame",
     "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
-    "amount": "81.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X5DD77F2S14X11J1S10DD25X5DD77G1",
+    "sku": "5M144M8S10DD25X5DD77F2S13DD25X8DD77J1S10DD25X5DD77G1",
     "scale": 1,
     "imageSize": {
       "width": 9.99,
@@ -45395,8 +45395,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 8.77,
         "unit": "in"
       },
       "window": {
@@ -45416,8 +45416,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 8.77,
         "unit": "in"
       },
       "glazing": {
@@ -45434,9 +45434,9 @@ export default {
     "productId": "book-art-e589c9375e23d1de4748",
     "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Large print — Natural wood frame",
     "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
-    "amount": "92.00",
+    "amount": "84.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD25X5DD77F7S14X11J1S10DD25X5DD77G1",
+    "sku": "5M144M8S10DD25X5DD77F7S13DD25X8DD77J1S10DD25X5DD77G1",
     "scale": 1,
     "imageSize": {
       "width": 9.99,
@@ -45469,8 +45469,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 8.77,
         "unit": "in"
       },
       "window": {
@@ -45490,8 +45490,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.25,
+        "height": 8.77,
         "unit": "in"
       },
       "glazing": {
@@ -45546,9 +45546,9 @@ export default {
     "productId": "book-art-e589c9375e23d1de4748",
     "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — Black frame",
     "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X4DD39F1S10X8J1S7DD75X4DD39G1",
+    "sku": "5M144M8S7DD75X4DD39F1S11DD37X8DD01J1S7DD75X4DD39G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4933,
@@ -45581,8 +45581,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 11.37,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -45602,8 +45602,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 11.37,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -45620,9 +45620,9 @@ export default {
     "productId": "book-art-e589c9375e23d1de4748",
     "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — White frame",
     "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X4DD39F2S10X8J1S7DD75X4DD39G1",
+    "sku": "5M144M8S7DD75X4DD39F2S11DD37X8DD01J1S7DD75X4DD39G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4933,
@@ -45655,8 +45655,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 11.37,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -45676,8 +45676,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 11.37,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -45694,9 +45694,9 @@ export default {
     "productId": "book-art-e589c9375e23d1de4748",
     "title": "Sunset in Greece, Photo Credit: Chelsea Murphy — Medium print — Natural wood frame",
     "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
-    "amount": "68.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X4DD39F7S10X8J1S7DD75X4DD39G1",
+    "sku": "5M144M8S7DD75X4DD39F7S11DD37X8DD01J1S7DD75X4DD39G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.4933,
@@ -45729,8 +45729,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 11.37,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -45750,8 +45750,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 11.37,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -45806,9 +45806,9 @@ export default {
     "productId": "book-art-f2025e5a72f4a70866c6",
     "title": "Untitled — Assorted Adventures, page 59 — Large print — Black frame",
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
-    "amount": "86.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD83X8DD75F1S14X11J1S10DD83X8DD75G1",
+    "sku": "5M144M8S10DD83X8DD75F1S13DD83X11DD75J1S10DD83X8DD75G1",
     "scale": 1,
     "imageSize": {
       "width": 10.5767,
@@ -45841,8 +45841,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.83,
+        "height": 11.75,
         "unit": "in"
       },
       "window": {
@@ -45862,8 +45862,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.83,
+        "height": 11.75,
         "unit": "in"
       },
       "glazing": {
@@ -45880,9 +45880,9 @@ export default {
     "productId": "book-art-f2025e5a72f4a70866c6",
     "title": "Untitled — Assorted Adventures, page 59 — Large print — White frame",
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
-    "amount": "86.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD83X8DD75F2S14X11J1S10DD83X8DD75G1",
+    "sku": "5M144M8S10DD83X8DD75F2S13DD83X11DD75J1S10DD83X8DD75G1",
     "scale": 1,
     "imageSize": {
       "width": 10.5767,
@@ -45915,8 +45915,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.83,
+        "height": 11.75,
         "unit": "in"
       },
       "window": {
@@ -45936,8 +45936,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.83,
+        "height": 11.75,
         "unit": "in"
       },
       "glazing": {
@@ -45954,9 +45954,9 @@ export default {
     "productId": "book-art-f2025e5a72f4a70866c6",
     "title": "Untitled — Assorted Adventures, page 59 — Large print — Natural wood frame",
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
-    "amount": "97.00",
+    "amount": "99.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD83X8DD75F7S14X11J1S10DD83X8DD75G1",
+    "sku": "5M144M8S10DD83X8DD75F7S13DD83X11DD75J1S10DD83X8DD75G1",
     "scale": 1,
     "imageSize": {
       "width": 10.5767,
@@ -45989,8 +45989,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 13.83,
+        "height": 11.75,
         "unit": "in"
       },
       "window": {
@@ -46010,8 +46010,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 13.83,
+        "height": 11.75,
         "unit": "in"
       },
       "glazing": {
@@ -46068,7 +46068,7 @@ export default {
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD18X6DD62F1S12X9J1S8DD18X6DD62G1",
+    "sku": "5M144M8S8DD18X6DD62F1S11DD18X9DD62J1S8DD18X6DD62G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.9233,
@@ -46101,8 +46101,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.18,
+        "height": 9.62,
         "unit": "in"
       },
       "window": {
@@ -46122,8 +46122,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.18,
+        "height": 9.62,
         "unit": "in"
       },
       "glazing": {
@@ -46142,7 +46142,7 @@ export default {
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD18X6DD62F2S12X9J1S8DD18X6DD62G1",
+    "sku": "5M144M8S8DD18X6DD62F2S11DD18X9DD62J1S8DD18X6DD62G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.9233,
@@ -46175,8 +46175,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.18,
+        "height": 9.62,
         "unit": "in"
       },
       "window": {
@@ -46196,8 +46196,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.18,
+        "height": 9.62,
         "unit": "in"
       },
       "glazing": {
@@ -46214,9 +46214,9 @@ export default {
     "productId": "book-art-f2025e5a72f4a70866c6",
     "title": "Untitled — Assorted Adventures, page 59 — Medium print — Natural wood frame",
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
-    "amount": "72.63",
+    "amount": "71.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD18X6DD62F7S12X9J1S8DD18X6DD62G1",
+    "sku": "5M144M8S8DD18X6DD62F7S11DD18X9DD62J1S8DD18X6DD62G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.9233,
@@ -46249,8 +46249,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.18,
+        "height": 9.62,
         "unit": "in"
       },
       "window": {
@@ -46270,8 +46270,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.18,
+        "height": 9.62,
         "unit": "in"
       },
       "glazing": {
@@ -46326,9 +46326,9 @@ export default {
     "productId": "book-art-f2025e5a72f4a70866c6",
     "title": "Untitled — Assorted Adventures, page 59 — Small print — Black frame",
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD54X4DD5F1S10X8J1S5DD54X4DD5G1",
+    "sku": "5M144M8S5DD54X4DD5F1S9DD04X8J1S5DD54X4DD5G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.2867,
@@ -46361,7 +46361,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.04,
         "height": 8,
         "unit": "in"
       },
@@ -46382,7 +46382,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.04,
         "height": 8,
         "unit": "in"
       },
@@ -46400,9 +46400,9 @@ export default {
     "productId": "book-art-f2025e5a72f4a70866c6",
     "title": "Untitled — Assorted Adventures, page 59 — Small print — White frame",
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD54X4DD5F2S10X8J1S5DD54X4DD5G1",
+    "sku": "5M144M8S5DD54X4DD5F2S9DD04X8J1S5DD54X4DD5G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.2867,
@@ -46435,7 +46435,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.04,
         "height": 8,
         "unit": "in"
       },
@@ -46456,7 +46456,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.04,
         "height": 8,
         "unit": "in"
       },
@@ -46474,9 +46474,9 @@ export default {
     "productId": "book-art-f2025e5a72f4a70866c6",
     "title": "Untitled — Assorted Adventures, page 59 — Small print — Natural wood frame",
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD54X4DD5F7S10X8J1S5DD54X4DD5G1",
+    "sku": "5M144M8S5DD54X4DD5F7S9DD04X8J1S5DD54X4DD5G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.2867,
@@ -46509,7 +46509,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.04,
         "height": 8,
         "unit": "in"
       },
@@ -46530,7 +46530,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.04,
         "height": 8,
         "unit": "in"
       },
@@ -46586,9 +46586,9 @@ export default {
     "productId": "book-art-82ab8d65fb50fe0d096a",
     "title": "Vision of Ukraine at Peace — Large print — Black frame",
     "artworkTitle": "Vision of Ukraine at Peace",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD3X6DD27F1S14X11J1S11DD3X6DD27G1",
+    "sku": "5M144M8S11DD3X6DD27F1S14DD3X9DD27J1S11DD3X6DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 11.0367,
@@ -46621,8 +46621,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "window": {
@@ -46642,8 +46642,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "glazing": {
@@ -46660,9 +46660,9 @@ export default {
     "productId": "book-art-82ab8d65fb50fe0d096a",
     "title": "Vision of Ukraine at Peace — Large print — White frame",
     "artworkTitle": "Vision of Ukraine at Peace",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD3X6DD27F2S14X11J1S11DD3X6DD27G1",
+    "sku": "5M144M8S11DD3X6DD27F2S14DD3X9DD27J1S11DD3X6DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 11.0367,
@@ -46695,8 +46695,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "window": {
@@ -46716,8 +46716,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "glazing": {
@@ -46734,9 +46734,9 @@ export default {
     "productId": "book-art-82ab8d65fb50fe0d096a",
     "title": "Vision of Ukraine at Peace — Large print — Natural wood frame",
     "artworkTitle": "Vision of Ukraine at Peace",
-    "amount": "92.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD3X6DD27F7S14X11J1S11DD3X6DD27G1",
+    "sku": "5M144M8S11DD3X6DD27F7S14DD3X9DD27J1S11DD3X6DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 11.0367,
@@ -46769,8 +46769,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "window": {
@@ -46790,8 +46790,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.3,
+        "height": 9.27,
         "unit": "in"
       },
       "glazing": {
@@ -46846,9 +46846,9 @@ export default {
     "productId": "book-art-82ab8d65fb50fe0d096a",
     "title": "Vision of Ukraine at Peace — Medium print — Black frame",
     "artworkTitle": "Vision of Ukraine at Peace",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD54X4DD77F1S12X9J1S8DD54X4DD77G1",
+    "sku": "5M144M8S8DD54X4DD77F1S11DD78X8DD01J1S8DD54X4DD77G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.2867,
@@ -46881,8 +46881,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -46902,8 +46902,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -46920,9 +46920,9 @@ export default {
     "productId": "book-art-82ab8d65fb50fe0d096a",
     "title": "Vision of Ukraine at Peace — Medium print — White frame",
     "artworkTitle": "Vision of Ukraine at Peace",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD54X4DD77F2S12X9J1S8DD54X4DD77G1",
+    "sku": "5M144M8S8DD54X4DD77F2S11DD78X8DD01J1S8DD54X4DD77G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.2867,
@@ -46955,8 +46955,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -46976,8 +46976,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -46994,9 +46994,9 @@ export default {
     "productId": "book-art-82ab8d65fb50fe0d096a",
     "title": "Vision of Ukraine at Peace — Medium print — Natural wood frame",
     "artworkTitle": "Vision of Ukraine at Peace",
-    "amount": "77.63",
+    "amount": "75.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD54X4DD77F7S12X9J1S8DD54X4DD77G1",
+    "sku": "5M144M8S8DD54X4DD77F7S11DD78X8DD01J1S8DD54X4DD77G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.2867,
@@ -47029,8 +47029,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -47050,8 +47050,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.78,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -47106,9 +47106,9 @@ export default {
     "productId": "book-art-94e2edf9a24c90950489",
     "title": "Inside album cover for Yes: Close to the Edge — Large print — Black frame",
     "artworkTitle": "Inside album cover for Yes: Close to the Edge",
-    "amount": "96.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD56X6DD27F1S15X12J1S12DD56X6DD27G1",
+    "sku": "5M144M8S12DD56X6DD27F1S15DD56X9DD27J1S12DD56X6DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 12.3067,
@@ -47141,8 +47141,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.56,
+        "height": 9.27,
         "unit": "in"
       },
       "window": {
@@ -47162,8 +47162,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.56,
+        "height": 9.27,
         "unit": "in"
       },
       "glazing": {
@@ -47180,9 +47180,9 @@ export default {
     "productId": "book-art-94e2edf9a24c90950489",
     "title": "Inside album cover for Yes: Close to the Edge — Large print — White frame",
     "artworkTitle": "Inside album cover for Yes: Close to the Edge",
-    "amount": "96.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD56X6DD27F2S15X12J1S12DD56X6DD27G1",
+    "sku": "5M144M8S12DD56X6DD27F2S15DD56X9DD27J1S12DD56X6DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 12.3067,
@@ -47215,8 +47215,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.56,
+        "height": 9.27,
         "unit": "in"
       },
       "window": {
@@ -47236,8 +47236,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.56,
+        "height": 9.27,
         "unit": "in"
       },
       "glazing": {
@@ -47254,9 +47254,9 @@ export default {
     "productId": "book-art-94e2edf9a24c90950489",
     "title": "Inside album cover for Yes: Close to the Edge — Large print — Natural wood frame",
     "artworkTitle": "Inside album cover for Yes: Close to the Edge",
-    "amount": "108.00",
+    "amount": "101.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD56X6DD27F7S15X12J1S12DD56X6DD27G1",
+    "sku": "5M144M8S12DD56X6DD27F7S15DD56X9DD27J1S12DD56X6DD27G1",
     "scale": 1,
     "imageSize": {
       "width": 12.3067,
@@ -47289,8 +47289,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.56,
+        "height": 9.27,
         "unit": "in"
       },
       "window": {
@@ -47310,8 +47310,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.56,
+        "height": 9.27,
         "unit": "in"
       },
       "glazing": {
@@ -47368,7 +47368,7 @@ export default {
     "artworkTitle": "Inside album cover for Yes: Close to the Edge",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S9DD48X4DD76F1S12X9J1S9DD48X4DD76G1",
+    "sku": "5M144M8S9DD48X4DD76F1S12DD72X8J1S9DD48X4DD76G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.2167,
@@ -47401,8 +47401,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.72,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -47422,8 +47422,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.72,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -47442,7 +47442,7 @@ export default {
     "artworkTitle": "Inside album cover for Yes: Close to the Edge",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S9DD48X4DD76F2S12X9J1S9DD48X4DD76G1",
+    "sku": "5M144M8S9DD48X4DD76F2S12DD72X8J1S9DD48X4DD76G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.2167,
@@ -47475,8 +47475,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.72,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -47496,8 +47496,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.72,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -47514,9 +47514,9 @@ export default {
     "productId": "book-art-94e2edf9a24c90950489",
     "title": "Inside album cover for Yes: Close to the Edge — Medium print — Natural wood frame",
     "artworkTitle": "Inside album cover for Yes: Close to the Edge",
-    "amount": "82.63",
+    "amount": "81.63",
     "currency": "USD",
-    "sku": "5M144M8S9DD48X4DD76F7S12X9J1S9DD48X4DD76G1",
+    "sku": "5M144M8S9DD48X4DD76F7S12DD72X8J1S9DD48X4DD76G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.2167,
@@ -47549,8 +47549,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.72,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -47570,8 +47570,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.72,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -47628,7 +47628,7 @@ export default {
     "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD73X8DD98F1S9X12J1S5DD73X8DD98G1",
+    "sku": "5M144M8S5DD73X8DD98F1S8DD73X11DD98J1S5DD73X8DD98G1",
     "scale": 1,
     "imageSize": {
       "width": 5.4767,
@@ -47661,8 +47661,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.73,
+        "height": 11.98,
         "unit": "in"
       },
       "window": {
@@ -47682,8 +47682,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.73,
+        "height": 11.98,
         "unit": "in"
       },
       "glazing": {
@@ -47702,7 +47702,7 @@ export default {
     "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD73X8DD98F2S9X12J1S5DD73X8DD98G1",
+    "sku": "5M144M8S5DD73X8DD98F2S8DD73X11DD98J1S5DD73X8DD98G1",
     "scale": 1,
     "imageSize": {
       "width": 5.4767,
@@ -47735,8 +47735,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.73,
+        "height": 11.98,
         "unit": "in"
       },
       "window": {
@@ -47756,8 +47756,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.73,
+        "height": 11.98,
         "unit": "in"
       },
       "glazing": {
@@ -47774,9 +47774,9 @@ export default {
     "productId": "book-art-6e6d7ac51608e0b7f10f",
     "title": "Moonrise in Santa Monica, photo credit: Paul Murphy — Large print — Natural wood frame",
     "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
-    "amount": "77.63",
+    "amount": "76.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD73X8DD98F7S9X12J1S5DD73X8DD98G1",
+    "sku": "5M144M8S5DD73X8DD98F7S8DD73X11DD98J1S5DD73X8DD98G1",
     "scale": 1,
     "imageSize": {
       "width": 5.4767,
@@ -47809,8 +47809,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.73,
+        "height": 11.98,
         "unit": "in"
       },
       "window": {
@@ -47830,8 +47830,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.73,
+        "height": 11.98,
         "unit": "in"
       },
       "glazing": {
@@ -47886,9 +47886,9 @@ export default {
     "productId": "book-art-6e6d7ac51608e0b7f10f",
     "title": "Moonrise in Santa Monica, photo credit: Paul Murphy — Medium print — Black frame",
     "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD36X6DD79F1S8X10J1S4DD36X6DD79G1",
+    "sku": "5M144M8S4DD36X6DD79F1S8X10DD43J1S4DD36X6DD79G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.1067,
@@ -47922,7 +47922,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.43,
         "unit": "in"
       },
       "window": {
@@ -47943,7 +47943,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.43,
         "unit": "in"
       },
       "glazing": {
@@ -47960,9 +47960,9 @@ export default {
     "productId": "book-art-6e6d7ac51608e0b7f10f",
     "title": "Moonrise in Santa Monica, photo credit: Paul Murphy — Medium print — White frame",
     "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD36X6DD79F2S8X10J1S4DD36X6DD79G1",
+    "sku": "5M144M8S4DD36X6DD79F2S8X10DD43J1S4DD36X6DD79G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.1067,
@@ -47996,7 +47996,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.43,
         "unit": "in"
       },
       "window": {
@@ -48017,7 +48017,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.43,
         "unit": "in"
       },
       "glazing": {
@@ -48036,7 +48036,7 @@ export default {
     "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD36X6DD79F7S8X10J1S4DD36X6DD79G1",
+    "sku": "5M144M8S4DD36X6DD79F7S8X10DD43J1S4DD36X6DD79G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.1067,
@@ -48070,7 +48070,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.43,
         "unit": "in"
       },
       "window": {
@@ -48091,7 +48091,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.43,
         "unit": "in"
       },
       "glazing": {
@@ -48146,9 +48146,9 @@ export default {
     "productId": "book-art-e97329411fa8b273b508",
     "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Large print — Black frame",
     "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
-    "amount": "72.63",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD06X9DD73F1S9X12J1S6DD06X9DD73G1",
+    "sku": "5M144M8S6DD06X9DD73F1S9DD06X12DD73J1S6DD06X9DD73G1",
     "scale": 1,
     "imageSize": {
       "width": 5.8067,
@@ -48181,8 +48181,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.06,
+        "height": 12.73,
         "unit": "in"
       },
       "window": {
@@ -48202,8 +48202,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.06,
+        "height": 12.73,
         "unit": "in"
       },
       "glazing": {
@@ -48220,9 +48220,9 @@ export default {
     "productId": "book-art-e97329411fa8b273b508",
     "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Large print — White frame",
     "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
-    "amount": "72.63",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD06X9DD73F2S9X12J1S6DD06X9DD73G1",
+    "sku": "5M144M8S6DD06X9DD73F2S9DD06X12DD73J1S6DD06X9DD73G1",
     "scale": 1,
     "imageSize": {
       "width": 5.8067,
@@ -48255,8 +48255,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.06,
+        "height": 12.73,
         "unit": "in"
       },
       "window": {
@@ -48276,8 +48276,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.06,
+        "height": 12.73,
         "unit": "in"
       },
       "glazing": {
@@ -48294,9 +48294,9 @@ export default {
     "productId": "book-art-e97329411fa8b273b508",
     "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Large print — Natural wood frame",
     "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
-    "amount": "82.63",
+    "amount": "84.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD06X9DD73F7S9X12J1S6DD06X9DD73G1",
+    "sku": "5M144M8S6DD06X9DD73F7S9DD06X12DD73J1S6DD06X9DD73G1",
     "scale": 1,
     "imageSize": {
       "width": 5.8067,
@@ -48329,8 +48329,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.06,
+        "height": 12.73,
         "unit": "in"
       },
       "window": {
@@ -48350,8 +48350,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.06,
+        "height": 12.73,
         "unit": "in"
       },
       "glazing": {
@@ -48406,9 +48406,9 @@ export default {
     "productId": "book-art-e97329411fa8b273b508",
     "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Medium print — Black frame",
     "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD6X7DD36F1S8X10J1S4DD6X7DD36G1",
+    "sku": "5M144M8S4DD6X7DD36F1S8DD02X10DD78J1S4DD6X7DD36G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.3467,
@@ -48441,8 +48441,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 10.78,
         "unit": "in"
       },
       "window": {
@@ -48462,8 +48462,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 10.78,
         "unit": "in"
       },
       "glazing": {
@@ -48480,9 +48480,9 @@ export default {
     "productId": "book-art-e97329411fa8b273b508",
     "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Medium print — White frame",
     "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD6X7DD36F2S8X10J1S4DD6X7DD36G1",
+    "sku": "5M144M8S4DD6X7DD36F2S8DD02X10DD78J1S4DD6X7DD36G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.3467,
@@ -48515,8 +48515,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 10.78,
         "unit": "in"
       },
       "window": {
@@ -48536,8 +48536,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 10.78,
         "unit": "in"
       },
       "glazing": {
@@ -48554,9 +48554,9 @@ export default {
     "productId": "book-art-e97329411fa8b273b508",
     "title": "Sunrise in Traverse City, photo credit: Paul Murphy — Medium print — Natural wood frame",
     "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
-    "amount": "68.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD6X7DD36F7S8X10J1S4DD6X7DD36G1",
+    "sku": "5M144M8S4DD6X7DD36F7S8DD02X10DD78J1S4DD6X7DD36G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.3467,
@@ -48589,8 +48589,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 10.78,
         "unit": "in"
       },
       "window": {
@@ -48610,8 +48610,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.02,
+        "height": 10.78,
         "unit": "in"
       },
       "glazing": {
@@ -48666,9 +48666,9 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Large print — Black frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD38X9DD03F1S11X14J1S8DD38X9DD03G1",
+    "sku": "5M144M8S8DD38X9DD03F1S11DD38X12DD03J1S8DD38X9DD03G1",
     "scale": 1,
     "imageSize": {
       "width": 8.1267,
@@ -48701,8 +48701,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "window": {
@@ -48722,8 +48722,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "glazing": {
@@ -48740,9 +48740,9 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Large print — White frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD38X9DD03F2S11X14J1S8DD38X9DD03G1",
+    "sku": "5M144M8S8DD38X9DD03F2S11DD38X12DD03J1S8DD38X9DD03G1",
     "scale": 1,
     "imageSize": {
       "width": 8.1267,
@@ -48775,8 +48775,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "window": {
@@ -48796,8 +48796,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "glazing": {
@@ -48814,9 +48814,9 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Large print — Natural wood frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "92.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD38X9DD03F7S11X14J1S8DD38X9DD03G1",
+    "sku": "5M144M8S8DD38X9DD03F7S11DD38X12DD03J1S8DD38X9DD03G1",
     "scale": 1,
     "imageSize": {
       "width": 8.1267,
@@ -48849,8 +48849,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "window": {
@@ -48870,8 +48870,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.38,
+        "height": 12.03,
         "unit": "in"
       },
       "glazing": {
@@ -48926,9 +48926,9 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Medium print — Black frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "62.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD35X6DD83F1S9X12J1S6DD35X6DD83G1",
+    "sku": "5M144M8S6DD35X6DD83F1S9DD35X9DD83J1S6DD35X6DD83G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.09,
@@ -48961,8 +48961,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "window": {
@@ -48982,8 +48982,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "glazing": {
@@ -49000,9 +49000,9 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Medium print — White frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "62.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD35X6DD83F2S9X12J1S6DD35X6DD83G1",
+    "sku": "5M144M8S6DD35X6DD83F2S9DD35X9DD83J1S6DD35X6DD83G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.09,
@@ -49035,8 +49035,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "window": {
@@ -49056,8 +49056,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "glazing": {
@@ -49074,9 +49074,9 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Medium print — Natural wood frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "72.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD35X6DD83F7S9X12J1S6DD35X6DD83G1",
+    "sku": "5M144M8S6DD35X6DD83F7S9DD35X9DD83J1S6DD35X6DD83G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.09,
@@ -49109,8 +49109,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "window": {
@@ -49130,8 +49130,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.35,
+        "height": 9.83,
         "unit": "in"
       },
       "glazing": {
@@ -49186,9 +49186,9 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Small print — Black frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD31X4DD64F1S8X10J1S4DD31X4DD64G1",
+    "sku": "5M144M8S4DD31X4DD64F1S8DD01X8DD34J1S4DD31X4DD64G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.0567,
@@ -49221,8 +49221,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "window": {
@@ -49242,8 +49242,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "glazing": {
@@ -49260,9 +49260,9 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Small print — White frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD31X4DD64F2S8X10J1S4DD31X4DD64G1",
+    "sku": "5M144M8S4DD31X4DD64F2S8DD01X8DD34J1S4DD31X4DD64G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.0567,
@@ -49295,8 +49295,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "window": {
@@ -49316,8 +49316,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "glazing": {
@@ -49334,9 +49334,9 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Small print — Natural wood frame",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "68.63",
+    "amount": "65.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD31X4DD64F7S8X10J1S4DD31X4DD64G1",
+    "sku": "5M144M8S4DD31X4DD64F7S8DD01X8DD34J1S4DD31X4DD64G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.0567,
@@ -49369,8 +49369,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "window": {
@@ -49390,8 +49390,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.34,
         "unit": "in"
       },
       "glazing": {
@@ -49448,7 +49448,7 @@ export default {
     "artworkTitle": "The Bounty of Satoshi: Wonder",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD46X8DD82F1S9X12J1S4DD46X8DD82G1",
+    "sku": "5M144M8S4DD46X8DD82F1S8X12DD36J1S4DD46X8DD82G1",
     "scale": 1,
     "imageSize": {
       "width": 4.2067,
@@ -49481,8 +49481,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -49502,8 +49502,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -49522,7 +49522,7 @@ export default {
     "artworkTitle": "The Bounty of Satoshi: Wonder",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD46X8DD82F2S9X12J1S4DD46X8DD82G1",
+    "sku": "5M144M8S4DD46X8DD82F2S8X12DD36J1S4DD46X8DD82G1",
     "scale": 1,
     "imageSize": {
       "width": 4.2067,
@@ -49555,8 +49555,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -49576,8 +49576,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -49594,9 +49594,9 @@ export default {
     "productId": "book-art-29b3572972c367d351d1",
     "title": "The Bounty of Satoshi: Wonder — Large print — Natural wood frame",
     "artworkTitle": "The Bounty of Satoshi: Wonder",
-    "amount": "77.63",
+    "amount": "76.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD46X8DD82F7S9X12J1S4DD46X8DD82G1",
+    "sku": "5M144M8S4DD46X8DD82F7S8X12DD36J1S4DD46X8DD82G1",
     "scale": 1,
     "imageSize": {
       "width": 4.2067,
@@ -49629,8 +49629,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -49650,8 +49650,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -49708,7 +49708,7 @@ export default {
     "artworkTitle": "The Bounty of Satoshi: Achievement",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD37X8DD72F1S9X12J1S4DD37X8DD72G1",
+    "sku": "5M144M8S4DD37X8DD72F1S8DD01X12DD36J1S4DD37X8DD72G1",
     "scale": 1,
     "imageSize": {
       "width": 4.1167,
@@ -49741,8 +49741,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -49762,8 +49762,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -49782,7 +49782,7 @@ export default {
     "artworkTitle": "The Bounty of Satoshi: Achievement",
     "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD37X8DD72F2S9X12J1S4DD37X8DD72G1",
+    "sku": "5M144M8S4DD37X8DD72F2S8DD01X12DD36J1S4DD37X8DD72G1",
     "scale": 1,
     "imageSize": {
       "width": 4.1167,
@@ -49815,8 +49815,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -49836,8 +49836,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -49854,9 +49854,9 @@ export default {
     "productId": "book-art-8ff9ac182d32fa228450",
     "title": "The Bounty of Satoshi: Achievement — Large print — Natural wood frame",
     "artworkTitle": "The Bounty of Satoshi: Achievement",
-    "amount": "77.63",
+    "amount": "76.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD37X8DD72F7S9X12J1S4DD37X8DD72G1",
+    "sku": "5M144M8S4DD37X8DD72F7S8DD01X12DD36J1S4DD37X8DD72G1",
     "scale": 1,
     "imageSize": {
       "width": 4.1167,
@@ -49889,8 +49889,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "window": {
@@ -49910,8 +49910,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 12.36,
         "unit": "in"
       },
       "glazing": {
@@ -49966,9 +49966,9 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Large print — Black frame",
     "artworkTitle": "Chase Toole",
-    "amount": "96.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD46X11DD3F1S12X15J1S9DD46X11DD3G1",
+    "sku": "5M144M8S9DD46X11DD3F1S12DD46X14DD3J1S9DD46X11DD3G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2067,
@@ -50001,8 +50001,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "window": {
@@ -50022,8 +50022,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "glazing": {
@@ -50040,9 +50040,9 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Large print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "96.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD46X11DD3F2S12X15J1S9DD46X11DD3G1",
+    "sku": "5M144M8S9DD46X11DD3F2S12DD46X14DD3J1S9DD46X11DD3G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2067,
@@ -50075,8 +50075,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "window": {
@@ -50096,8 +50096,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "glazing": {
@@ -50114,9 +50114,9 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Large print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "108.00",
+    "amount": "107.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD46X11DD3F7S12X15J1S9DD46X11DD3G1",
+    "sku": "5M144M8S9DD46X11DD3F7S12DD46X14DD3J1S9DD46X11DD3G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2067,
@@ -50149,8 +50149,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "window": {
@@ -50170,8 +50170,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.46,
+        "height": 14.3,
         "unit": "in"
       },
       "glazing": {
@@ -50226,9 +50226,9 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Medium print — Black frame",
     "artworkTitle": "Chase Toole",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD16X8DD54F1S11X14J1S7DD16X8DD54G1",
+    "sku": "5M144M8S7DD16X8DD54F1S10DD16X11DD54J1S7DD16X8DD54G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9067,
@@ -50261,8 +50261,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "window": {
@@ -50282,8 +50282,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "glazing": {
@@ -50300,9 +50300,9 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Medium print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "76.00",
+    "amount": "69.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD16X8DD54F2S11X14J1S7DD16X8DD54G1",
+    "sku": "5M144M8S7DD16X8DD54F2S10DD16X11DD54J1S7DD16X8DD54G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9067,
@@ -50335,8 +50335,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "window": {
@@ -50356,8 +50356,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "glazing": {
@@ -50374,9 +50374,9 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Medium print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "87.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD16X8DD54F7S11X14J1S7DD16X8DD54G1",
+    "sku": "5M144M8S7DD16X8DD54F7S10DD16X11DD54J1S7DD16X8DD54G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9067,
@@ -50409,8 +50409,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "window": {
@@ -50430,8 +50430,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.16,
+        "height": 11.54,
         "unit": "in"
       },
       "glazing": {
@@ -50486,9 +50486,9 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Small print — Black frame",
     "artworkTitle": "Chase Toole",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD85X5DD77F1S8X10J1S4DD85X5DD77G1",
+    "sku": "5M144M8S4DD85X5DD77F1S8DD01X8DD93J1S4DD85X5DD77G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.5967,
@@ -50521,8 +50521,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "window": {
@@ -50542,8 +50542,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "glazing": {
@@ -50560,9 +50560,9 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Small print — White frame",
     "artworkTitle": "Chase Toole",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD85X5DD77F2S8X10J1S4DD85X5DD77G1",
+    "sku": "5M144M8S4DD85X5DD77F2S8DD01X8DD93J1S4DD85X5DD77G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.5967,
@@ -50595,8 +50595,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "window": {
@@ -50616,8 +50616,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "glazing": {
@@ -50634,9 +50634,9 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Small print — Natural wood frame",
     "artworkTitle": "Chase Toole",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD85X5DD77F7S8X10J1S4DD85X5DD77G1",
+    "sku": "5M144M8S4DD85X5DD77F7S8DD01X8DD93J1S4DD85X5DD77G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.5967,
@@ -50669,8 +50669,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "window": {
@@ -50690,8 +50690,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.93,
         "unit": "in"
       },
       "glazing": {
@@ -50746,9 +50746,9 @@ export default {
     "productId": "book-art-db933efcbc4fbe01c841",
     "title": "Steve — Large print — Black frame",
     "artworkTitle": "Steve",
-    "amount": "134.00",
+    "amount": "118.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD53X14DD48F1S16X20J1S9DD53X14DD48G1",
+    "sku": "5M144M8S9DD53X14DD48F1S12DD53X17DD48J1S9DD53X14DD48G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2767,
@@ -50781,8 +50781,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 12.53,
+        "height": 17.48,
         "unit": "in"
       },
       "window": {
@@ -50802,8 +50802,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 12.53,
+        "height": 17.48,
         "unit": "in"
       },
       "glazing": {
@@ -50820,9 +50820,9 @@ export default {
     "productId": "book-art-db933efcbc4fbe01c841",
     "title": "Steve — Large print — White frame",
     "artworkTitle": "Steve",
-    "amount": "134.00",
+    "amount": "118.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD53X14DD48F2S16X20J1S9DD53X14DD48G1",
+    "sku": "5M144M8S9DD53X14DD48F2S12DD53X17DD48J1S9DD53X14DD48G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2767,
@@ -50855,8 +50855,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 12.53,
+        "height": 17.48,
         "unit": "in"
       },
       "window": {
@@ -50876,8 +50876,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 12.53,
+        "height": 17.48,
         "unit": "in"
       },
       "glazing": {
@@ -50894,9 +50894,9 @@ export default {
     "productId": "book-art-db933efcbc4fbe01c841",
     "title": "Steve — Large print — Natural wood frame",
     "artworkTitle": "Steve",
-    "amount": "149.00",
+    "amount": "131.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD53X14DD48F7S16X20J1S9DD53X14DD48G1",
+    "sku": "5M144M8S9DD53X14DD48F7S12DD53X17DD48J1S9DD53X14DD48G1",
     "scale": 1,
     "imageSize": {
       "width": 9.2767,
@@ -50929,8 +50929,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 12.53,
+        "height": 17.48,
         "unit": "in"
       },
       "window": {
@@ -50950,8 +50950,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 12.53,
+        "height": 17.48,
         "unit": "in"
       },
       "glazing": {
@@ -51006,9 +51006,9 @@ export default {
     "productId": "book-art-db933efcbc4fbe01c841",
     "title": "Steve — Medium print — Black frame",
     "artworkTitle": "Steve",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD21X10DD92F1S11X14J1S7DD21X10DD92G1",
+    "sku": "5M144M8S7DD21X10DD92F1S10DD21X13DD92J1S7DD21X10DD92G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9533,
@@ -51041,8 +51041,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.21,
+        "height": 13.92,
         "unit": "in"
       },
       "window": {
@@ -51062,8 +51062,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.21,
+        "height": 13.92,
         "unit": "in"
       },
       "glazing": {
@@ -51080,9 +51080,9 @@ export default {
     "productId": "book-art-db933efcbc4fbe01c841",
     "title": "Steve — Medium print — White frame",
     "artworkTitle": "Steve",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD21X10DD92F2S11X14J1S7DD21X10DD92G1",
+    "sku": "5M144M8S7DD21X10DD92F2S10DD21X13DD92J1S7DD21X10DD92G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9533,
@@ -51115,8 +51115,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.21,
+        "height": 13.92,
         "unit": "in"
       },
       "window": {
@@ -51136,8 +51136,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.21,
+        "height": 13.92,
         "unit": "in"
       },
       "glazing": {
@@ -51154,9 +51154,9 @@ export default {
     "productId": "book-art-db933efcbc4fbe01c841",
     "title": "Steve — Medium print — Natural wood frame",
     "artworkTitle": "Steve",
-    "amount": "92.00",
+    "amount": "89.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD21X10DD92F7S11X14J1S7DD21X10DD92G1",
+    "sku": "5M144M8S7DD21X10DD92F7S10DD21X13DD92J1S7DD21X10DD92G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.9533,
@@ -51189,8 +51189,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.21,
+        "height": 13.92,
         "unit": "in"
       },
       "window": {
@@ -51210,8 +51210,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.21,
+        "height": 13.92,
         "unit": "in"
       },
       "glazing": {
@@ -51266,9 +51266,9 @@ export default {
     "productId": "book-art-db933efcbc4fbe01c841",
     "title": "Steve — Small print — Black frame",
     "artworkTitle": "Steve",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD89X7DD36F1S8X10J1S4DD89X7DD36G1",
+    "sku": "5M144M8S4DD89X7DD36F1S8DD01X10DD48J1S4DD89X7DD36G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.6333,
@@ -51301,8 +51301,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.48,
         "unit": "in"
       },
       "window": {
@@ -51322,8 +51322,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.48,
         "unit": "in"
       },
       "glazing": {
@@ -51340,9 +51340,9 @@ export default {
     "productId": "book-art-db933efcbc4fbe01c841",
     "title": "Steve — Small print — White frame",
     "artworkTitle": "Steve",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD89X7DD36F2S8X10J1S4DD89X7DD36G1",
+    "sku": "5M144M8S4DD89X7DD36F2S8DD01X10DD48J1S4DD89X7DD36G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.6333,
@@ -51375,8 +51375,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.48,
         "unit": "in"
       },
       "window": {
@@ -51396,8 +51396,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.48,
         "unit": "in"
       },
       "glazing": {
@@ -51416,7 +51416,7 @@ export default {
     "artworkTitle": "Steve",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD89X7DD36F7S8X10J1S4DD89X7DD36G1",
+    "sku": "5M144M8S4DD89X7DD36F7S8DD01X10DD48J1S4DD89X7DD36G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.6333,
@@ -51449,8 +51449,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.48,
         "unit": "in"
       },
       "window": {
@@ -51470,8 +51470,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.48,
         "unit": "in"
       },
       "glazing": {
@@ -51526,9 +51526,9 @@ export default {
     "productId": "book-art-74a736000a32427842b1",
     "title": "Laura and Cafécito on paddleboard in Lake Washington — Large print — Black frame",
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
-    "amount": "124.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD39X10DD18F1S20X16J1S11DD39X10DD18G1",
+    "sku": "5M144M8S11DD39X10DD18F1S14DD39X13DD18J1S11DD39X10DD18G1",
     "scale": 1,
     "imageSize": {
       "width": 11.1367,
@@ -51561,8 +51561,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.39,
+        "height": 13.18,
         "unit": "in"
       },
       "window": {
@@ -51582,8 +51582,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.39,
+        "height": 13.18,
         "unit": "in"
       },
       "glazing": {
@@ -51600,9 +51600,9 @@ export default {
     "productId": "book-art-74a736000a32427842b1",
     "title": "Laura and Cafécito on paddleboard in Lake Washington — Large print — White frame",
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
-    "amount": "124.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD39X10DD18F2S20X16J1S11DD39X10DD18G1",
+    "sku": "5M144M8S11DD39X10DD18F2S14DD39X13DD18J1S11DD39X10DD18G1",
     "scale": 1,
     "imageSize": {
       "width": 11.1367,
@@ -51635,8 +51635,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.39,
+        "height": 13.18,
         "unit": "in"
       },
       "window": {
@@ -51656,8 +51656,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.39,
+        "height": 13.18,
         "unit": "in"
       },
       "glazing": {
@@ -51674,9 +51674,9 @@ export default {
     "productId": "book-art-74a736000a32427842b1",
     "title": "Laura and Cafécito on paddleboard in Lake Washington — Large print — Natural wood frame",
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
-    "amount": "139.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD39X10DD18F7S20X16J1S11DD39X10DD18G1",
+    "sku": "5M144M8S11DD39X10DD18F7S14DD39X13DD18J1S11DD39X10DD18G1",
     "scale": 1,
     "imageSize": {
       "width": 11.1367,
@@ -51709,8 +51709,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 20,
-        "height": 16,
+        "width": 14.39,
+        "height": 13.18,
         "unit": "in"
       },
       "window": {
@@ -51730,8 +51730,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 20,
-        "height": 16,
+        "width": 14.39,
+        "height": 13.18,
         "unit": "in"
       },
       "glazing": {
@@ -51786,9 +51786,9 @@ export default {
     "productId": "book-art-74a736000a32427842b1",
     "title": "Laura and Cafécito on paddleboard in Lake Washington — Medium print — Black frame",
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
-    "amount": "76.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD6X7DD69F1S14X11J1S8DD6X7DD69G1",
+    "sku": "5M144M8S8DD6X7DD69F1S11DD6X10DD69J1S8DD6X7DD69G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.3433,
@@ -51821,8 +51821,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.6,
+        "height": 10.69,
         "unit": "in"
       },
       "window": {
@@ -51842,8 +51842,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.6,
+        "height": 10.69,
         "unit": "in"
       },
       "glazing": {
@@ -51860,9 +51860,9 @@ export default {
     "productId": "book-art-74a736000a32427842b1",
     "title": "Laura and Cafécito on paddleboard in Lake Washington — Medium print — White frame",
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
-    "amount": "76.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD6X7DD69F2S14X11J1S8DD6X7DD69G1",
+    "sku": "5M144M8S8DD6X7DD69F2S11DD6X10DD69J1S8DD6X7DD69G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.3433,
@@ -51895,8 +51895,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.6,
+        "height": 10.69,
         "unit": "in"
       },
       "window": {
@@ -51916,8 +51916,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.6,
+        "height": 10.69,
         "unit": "in"
       },
       "glazing": {
@@ -51934,9 +51934,9 @@ export default {
     "productId": "book-art-74a736000a32427842b1",
     "title": "Laura and Cafécito on paddleboard in Lake Washington — Medium print — Natural wood frame",
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
-    "amount": "87.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD6X7DD69F7S14X11J1S8DD6X7DD69G1",
+    "sku": "5M144M8S8DD6X7DD69F7S11DD6X10DD69J1S8DD6X7DD69G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.3433,
@@ -51969,8 +51969,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.6,
+        "height": 10.69,
         "unit": "in"
       },
       "window": {
@@ -51990,8 +51990,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.6,
+        "height": 10.69,
         "unit": "in"
       },
       "glazing": {
@@ -52046,9 +52046,9 @@ export default {
     "productId": "book-art-74a736000a32427842b1",
     "title": "Laura and Cafécito on paddleboard in Lake Washington — Small print — Black frame",
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD82X5DD21F1S10X8J1S5DD82X5DD21G1",
+    "sku": "5M144M8S5DD82X5DD21F1S8DD82X8DD21J1S5DD82X5DD21G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.56,
@@ -52081,8 +52081,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.82,
+        "height": 8.21,
         "unit": "in"
       },
       "window": {
@@ -52102,8 +52102,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.82,
+        "height": 8.21,
         "unit": "in"
       },
       "glazing": {
@@ -52120,9 +52120,9 @@ export default {
     "productId": "book-art-74a736000a32427842b1",
     "title": "Laura and Cafécito on paddleboard in Lake Washington — Small print — White frame",
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD82X5DD21F2S10X8J1S5DD82X5DD21G1",
+    "sku": "5M144M8S5DD82X5DD21F2S8DD82X8DD21J1S5DD82X5DD21G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.56,
@@ -52155,8 +52155,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.82,
+        "height": 8.21,
         "unit": "in"
       },
       "window": {
@@ -52176,8 +52176,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.82,
+        "height": 8.21,
         "unit": "in"
       },
       "glazing": {
@@ -52194,9 +52194,9 @@ export default {
     "productId": "book-art-74a736000a32427842b1",
     "title": "Laura and Cafécito on paddleboard in Lake Washington — Small print — Natural wood frame",
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD82X5DD21F7S10X8J1S5DD82X5DD21G1",
+    "sku": "5M144M8S5DD82X5DD21F7S8DD82X8DD21J1S5DD82X5DD21G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.56,
@@ -52229,8 +52229,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 8.82,
+        "height": 8.21,
         "unit": "in"
       },
       "window": {
@@ -52250,8 +52250,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 8.82,
+        "height": 8.21,
         "unit": "in"
       },
       "glazing": {
@@ -52306,9 +52306,9 @@ export default {
     "productId": "book-art-9209f1fd7d47f373597f",
     "title": "Catherine dance series — study 1 — Large print — Black frame",
     "artworkTitle": "Catherine dance series — study 1",
-    "amount": "81.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S4DD82X11DD01F1S11X14J1S4DD82X11DD01G1",
+    "sku": "5M144M8S4DD82X11DD01F1S8X14DD19J1S4DD82X11DD01G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5667,
@@ -52341,8 +52341,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 8,
+        "height": 14.19,
         "unit": "in"
       },
       "window": {
@@ -52362,8 +52362,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 8,
+        "height": 14.19,
         "unit": "in"
       },
       "glazing": {
@@ -52380,9 +52380,9 @@ export default {
     "productId": "book-art-9209f1fd7d47f373597f",
     "title": "Catherine dance series — study 1 — Large print — White frame",
     "artworkTitle": "Catherine dance series — study 1",
-    "amount": "81.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S4DD82X11DD01F2S11X14J1S4DD82X11DD01G1",
+    "sku": "5M144M8S4DD82X11DD01F2S8X14DD19J1S4DD82X11DD01G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5667,
@@ -52415,8 +52415,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 8,
+        "height": 14.19,
         "unit": "in"
       },
       "window": {
@@ -52436,8 +52436,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 8,
+        "height": 14.19,
         "unit": "in"
       },
       "glazing": {
@@ -52454,9 +52454,9 @@ export default {
     "productId": "book-art-9209f1fd7d47f373597f",
     "title": "Catherine dance series — study 1 — Large print — Natural wood frame",
     "artworkTitle": "Catherine dance series — study 1",
-    "amount": "92.00",
+    "amount": "84.00",
     "currency": "USD",
-    "sku": "5M144M8S4DD82X11DD01F7S11X14J1S4DD82X11DD01G1",
+    "sku": "5M144M8S4DD82X11DD01F7S8X14DD19J1S4DD82X11DD01G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5667,
@@ -52489,8 +52489,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 8,
+        "height": 14.19,
         "unit": "in"
       },
       "window": {
@@ -52510,8 +52510,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 8,
+        "height": 14.19,
         "unit": "in"
       },
       "glazing": {
@@ -52566,9 +52566,9 @@ export default {
     "productId": "book-art-a61c71e5de8cc1b71500",
     "title": "Catherine dance series — study 2 — Large print — Black frame",
     "artworkTitle": "Catherine dance series — study 2",
-    "amount": "81.00",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD7X10DD44F1S11X14J1S6DD7X10DD44G1",
+    "sku": "5M144M8S6DD7X10DD44F1S9DD7X13DD44J1S6DD7X10DD44G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4467,
@@ -52601,8 +52601,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 9.7,
+        "height": 13.44,
         "unit": "in"
       },
       "window": {
@@ -52622,8 +52622,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 9.7,
+        "height": 13.44,
         "unit": "in"
       },
       "glazing": {
@@ -52640,9 +52640,9 @@ export default {
     "productId": "book-art-a61c71e5de8cc1b71500",
     "title": "Catherine dance series — study 2 — Large print — White frame",
     "artworkTitle": "Catherine dance series — study 2",
-    "amount": "81.00",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD7X10DD44F2S11X14J1S6DD7X10DD44G1",
+    "sku": "5M144M8S6DD7X10DD44F2S9DD7X13DD44J1S6DD7X10DD44G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4467,
@@ -52675,8 +52675,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 9.7,
+        "height": 13.44,
         "unit": "in"
       },
       "window": {
@@ -52696,8 +52696,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 9.7,
+        "height": 13.44,
         "unit": "in"
       },
       "glazing": {
@@ -52714,9 +52714,9 @@ export default {
     "productId": "book-art-a61c71e5de8cc1b71500",
     "title": "Catherine dance series — study 2 — Large print — Natural wood frame",
     "artworkTitle": "Catherine dance series — study 2",
-    "amount": "92.00",
+    "amount": "87.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD7X10DD44F7S11X14J1S6DD7X10DD44G1",
+    "sku": "5M144M8S6DD7X10DD44F7S9DD7X13DD44J1S6DD7X10DD44G1",
     "scale": 1,
     "imageSize": {
       "width": 6.4467,
@@ -52749,8 +52749,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 9.7,
+        "height": 13.44,
         "unit": "in"
       },
       "window": {
@@ -52770,8 +52770,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 9.7,
+        "height": 13.44,
         "unit": "in"
       },
       "glazing": {
@@ -52826,9 +52826,9 @@ export default {
     "productId": "book-art-a61c71e5de8cc1b71500",
     "title": "Catherine dance series — study 2 — Medium print — Black frame",
     "artworkTitle": "Catherine dance series — study 2",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD08X7DD89F1S8X10J1S5DD08X7DD89G1",
+    "sku": "5M144M8S5DD08X7DD89F1S8DD08X10DD89J1S5DD08X7DD89G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8267,
@@ -52861,8 +52861,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.08,
+        "height": 10.89,
         "unit": "in"
       },
       "window": {
@@ -52882,8 +52882,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.08,
+        "height": 10.89,
         "unit": "in"
       },
       "glazing": {
@@ -52900,9 +52900,9 @@ export default {
     "productId": "book-art-a61c71e5de8cc1b71500",
     "title": "Catherine dance series — study 2 — Medium print — White frame",
     "artworkTitle": "Catherine dance series — study 2",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD08X7DD89F2S8X10J1S5DD08X7DD89G1",
+    "sku": "5M144M8S5DD08X7DD89F2S8DD08X10DD89J1S5DD08X7DD89G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8267,
@@ -52935,8 +52935,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.08,
+        "height": 10.89,
         "unit": "in"
       },
       "window": {
@@ -52956,8 +52956,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.08,
+        "height": 10.89,
         "unit": "in"
       },
       "glazing": {
@@ -52974,9 +52974,9 @@ export default {
     "productId": "book-art-a61c71e5de8cc1b71500",
     "title": "Catherine dance series — study 2 — Medium print — Natural wood frame",
     "artworkTitle": "Catherine dance series — study 2",
-    "amount": "68.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD08X7DD89F7S8X10J1S5DD08X7DD89G1",
+    "sku": "5M144M8S5DD08X7DD89F7S8DD08X10DD89J1S5DD08X7DD89G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8267,
@@ -53009,8 +53009,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.08,
+        "height": 10.89,
         "unit": "in"
       },
       "window": {
@@ -53030,8 +53030,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.08,
+        "height": 10.89,
         "unit": "in"
       },
       "glazing": {
@@ -53086,9 +53086,9 @@ export default {
     "productId": "book-art-596837cb5ff533c620dd",
     "title": "Catherine dance series — study 3 — Large print — Black frame",
     "artworkTitle": "Catherine dance series — study 3",
-    "amount": "86.00",
+    "amount": "84.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD79X11DD54F1S11X14J1S6DD79X11DD54G1",
+    "sku": "5M144M8S6DD79X11DD54F1S9DD79X14DD54J1S6DD79X11DD54G1",
     "scale": 1,
     "imageSize": {
       "width": 6.5367,
@@ -53121,8 +53121,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 9.79,
+        "height": 14.54,
         "unit": "in"
       },
       "window": {
@@ -53142,8 +53142,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 9.79,
+        "height": 14.54,
         "unit": "in"
       },
       "glazing": {
@@ -53160,9 +53160,9 @@ export default {
     "productId": "book-art-596837cb5ff533c620dd",
     "title": "Catherine dance series — study 3 — Large print — White frame",
     "artworkTitle": "Catherine dance series — study 3",
-    "amount": "86.00",
+    "amount": "84.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD79X11DD54F2S11X14J1S6DD79X11DD54G1",
+    "sku": "5M144M8S6DD79X11DD54F2S9DD79X14DD54J1S6DD79X11DD54G1",
     "scale": 1,
     "imageSize": {
       "width": 6.5367,
@@ -53195,8 +53195,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 9.79,
+        "height": 14.54,
         "unit": "in"
       },
       "window": {
@@ -53216,8 +53216,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 9.79,
+        "height": 14.54,
         "unit": "in"
       },
       "glazing": {
@@ -53234,9 +53234,9 @@ export default {
     "productId": "book-art-596837cb5ff533c620dd",
     "title": "Catherine dance series — study 3 — Large print — Natural wood frame",
     "artworkTitle": "Catherine dance series — study 3",
-    "amount": "97.00",
+    "amount": "94.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD79X11DD54F7S11X14J1S6DD79X11DD54G1",
+    "sku": "5M144M8S6DD79X11DD54F7S9DD79X14DD54J1S6DD79X11DD54G1",
     "scale": 1,
     "imageSize": {
       "width": 6.5367,
@@ -53269,8 +53269,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 9.79,
+        "height": 14.54,
         "unit": "in"
       },
       "window": {
@@ -53290,8 +53290,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 9.79,
+        "height": 14.54,
         "unit": "in"
       },
       "glazing": {
@@ -53346,9 +53346,9 @@ export default {
     "productId": "book-art-596837cb5ff533c620dd",
     "title": "Catherine dance series — study 3 — Medium print — Black frame",
     "artworkTitle": "Catherine dance series — study 3",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD15X8DD72F1S9X12J1S5DD15X8DD72G1",
+    "sku": "5M144M8S5DD15X8DD72F1S8DD15X11DD72J1S5DD15X8DD72G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8967,
@@ -53381,8 +53381,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.15,
+        "height": 11.72,
         "unit": "in"
       },
       "window": {
@@ -53402,8 +53402,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.15,
+        "height": 11.72,
         "unit": "in"
       },
       "glazing": {
@@ -53420,9 +53420,9 @@ export default {
     "productId": "book-art-596837cb5ff533c620dd",
     "title": "Catherine dance series — study 3 — Medium print — White frame",
     "artworkTitle": "Catherine dance series — study 3",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD15X8DD72F2S9X12J1S5DD15X8DD72G1",
+    "sku": "5M144M8S5DD15X8DD72F2S8DD15X11DD72J1S5DD15X8DD72G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8967,
@@ -53455,8 +53455,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.15,
+        "height": 11.72,
         "unit": "in"
       },
       "window": {
@@ -53476,8 +53476,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.15,
+        "height": 11.72,
         "unit": "in"
       },
       "glazing": {
@@ -53494,9 +53494,9 @@ export default {
     "productId": "book-art-596837cb5ff533c620dd",
     "title": "Catherine dance series — study 3 — Medium print — Natural wood frame",
     "artworkTitle": "Catherine dance series — study 3",
-    "amount": "77.63",
+    "amount": "75.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD15X8DD72F7S9X12J1S5DD15X8DD72G1",
+    "sku": "5M144M8S5DD15X8DD72F7S8DD15X11DD72J1S5DD15X8DD72G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.8967,
@@ -53529,8 +53529,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.15,
+        "height": 11.72,
         "unit": "in"
       },
       "window": {
@@ -53550,8 +53550,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.15,
+        "height": 11.72,
         "unit": "in"
       },
       "glazing": {
@@ -53606,9 +53606,9 @@ export default {
     "productId": "book-art-7bce6e3509027d1f7a0b",
     "title": "Catherine dance series — study 4 — Large print — Black frame",
     "artworkTitle": "Catherine dance series — study 4",
-    "amount": "98.00",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD33X13DD25F1S12X16J1S6DD33X13DD25G1",
+    "sku": "5M144M8S6DD33X13DD25F1S9DD33X16DD25J1S6DD33X13DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 6.0767,
@@ -53641,8 +53641,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 16,
+        "width": 9.33,
+        "height": 16.25,
         "unit": "in"
       },
       "window": {
@@ -53662,8 +53662,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 16,
+        "width": 9.33,
+        "height": 16.25,
         "unit": "in"
       },
       "glazing": {
@@ -53680,9 +53680,9 @@ export default {
     "productId": "book-art-7bce6e3509027d1f7a0b",
     "title": "Catherine dance series — study 4 — Large print — White frame",
     "artworkTitle": "Catherine dance series — study 4",
-    "amount": "98.00",
+    "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD33X13DD25F2S12X16J1S6DD33X13DD25G1",
+    "sku": "5M144M8S6DD33X13DD25F2S9DD33X16DD25J1S6DD33X13DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 6.0767,
@@ -53715,8 +53715,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 16,
+        "width": 9.33,
+        "height": 16.25,
         "unit": "in"
       },
       "window": {
@@ -53736,8 +53736,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 16,
+        "width": 9.33,
+        "height": 16.25,
         "unit": "in"
       },
       "glazing": {
@@ -53754,9 +53754,9 @@ export default {
     "productId": "book-art-7bce6e3509027d1f7a0b",
     "title": "Catherine dance series — study 4 — Large print — Natural wood frame",
     "artworkTitle": "Catherine dance series — study 4",
-    "amount": "110.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD33X13DD25F7S12X16J1S6DD33X13DD25G1",
+    "sku": "5M144M8S6DD33X13DD25F7S9DD33X16DD25J1S6DD33X13DD25G1",
     "scale": 1,
     "imageSize": {
       "width": 6.0767,
@@ -53789,8 +53789,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 16,
+        "width": 9.33,
+        "height": 16.25,
         "unit": "in"
       },
       "window": {
@@ -53810,8 +53810,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 16,
+        "width": 9.33,
+        "height": 16.25,
         "unit": "in"
       },
       "glazing": {
@@ -53868,7 +53868,7 @@ export default {
     "artworkTitle": "Catherine dance series — study 4",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD81X10F1S9X12J1S4DD81X10G1",
+    "sku": "5M144M8S4DD81X10F1S8DD01X13DD2J1S4DD81X10G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.5567,
@@ -53901,8 +53901,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 13.2,
         "unit": "in"
       },
       "window": {
@@ -53922,8 +53922,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 13.2,
         "unit": "in"
       },
       "glazing": {
@@ -53942,7 +53942,7 @@ export default {
     "artworkTitle": "Catherine dance series — study 4",
     "amount": "72.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD81X10F2S9X12J1S4DD81X10G1",
+    "sku": "5M144M8S4DD81X10F2S8DD01X13DD2J1S4DD81X10G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.5567,
@@ -53975,8 +53975,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 13.2,
         "unit": "in"
       },
       "window": {
@@ -53996,8 +53996,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 13.2,
         "unit": "in"
       },
       "glazing": {
@@ -54016,7 +54016,7 @@ export default {
     "artworkTitle": "Catherine dance series — study 4",
     "amount": "82.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD81X10F7S9X12J1S4DD81X10G1",
+    "sku": "5M144M8S4DD81X10F7S8DD01X13DD2J1S4DD81X10G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.5567,
@@ -54049,8 +54049,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 13.2,
         "unit": "in"
       },
       "window": {
@@ -54070,8 +54070,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 8.01,
+        "height": 13.2,
         "unit": "in"
       },
       "glazing": {
@@ -54126,9 +54126,9 @@ export default {
     "productId": "book-art-3a9cba708a8045364e82",
     "title": "Dawn and her father Pete at Burning Man — Large print — Black frame",
     "artworkTitle": "Dawn and her father Pete at Burning Man",
-    "amount": "91.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD11X6DD55F1S15X12J1S12DD11X6DD55G1",
+    "sku": "5M144M8S12DD11X6DD55F1S15DD11X9DD55J1S12DD11X6DD55G1",
     "scale": 1,
     "imageSize": {
       "width": 11.8567,
@@ -54161,8 +54161,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.11,
+        "height": 9.55,
         "unit": "in"
       },
       "window": {
@@ -54182,8 +54182,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.11,
+        "height": 9.55,
         "unit": "in"
       },
       "glazing": {
@@ -54200,9 +54200,9 @@ export default {
     "productId": "book-art-3a9cba708a8045364e82",
     "title": "Dawn and her father Pete at Burning Man — Large print — White frame",
     "artworkTitle": "Dawn and her father Pete at Burning Man",
-    "amount": "91.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD11X6DD55F2S15X12J1S12DD11X6DD55G1",
+    "sku": "5M144M8S12DD11X6DD55F2S15DD11X9DD55J1S12DD11X6DD55G1",
     "scale": 1,
     "imageSize": {
       "width": 11.8567,
@@ -54235,8 +54235,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.11,
+        "height": 9.55,
         "unit": "in"
       },
       "window": {
@@ -54256,8 +54256,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.11,
+        "height": 9.55,
         "unit": "in"
       },
       "glazing": {
@@ -54274,9 +54274,9 @@ export default {
     "productId": "book-art-3a9cba708a8045364e82",
     "title": "Dawn and her father Pete at Burning Man — Large print — Natural wood frame",
     "artworkTitle": "Dawn and her father Pete at Burning Man",
-    "amount": "103.00",
+    "amount": "96.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD11X6DD55F7S15X12J1S12DD11X6DD55G1",
+    "sku": "5M144M8S12DD11X6DD55F7S15DD11X9DD55J1S12DD11X6DD55G1",
     "scale": 1,
     "imageSize": {
       "width": 11.8567,
@@ -54309,8 +54309,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.11,
+        "height": 9.55,
         "unit": "in"
       },
       "window": {
@@ -54330,8 +54330,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.11,
+        "height": 9.55,
         "unit": "in"
       },
       "glazing": {
@@ -54386,9 +54386,9 @@ export default {
     "productId": "book-art-3a9cba708a8045364e82",
     "title": "Dawn and her father Pete at Burning Man — Medium print — Black frame",
     "artworkTitle": "Dawn and her father Pete at Burning Man",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S9DD15X4DD97F1S12X9J1S9DD15X4DD97G1",
+    "sku": "5M144M8S9DD15X4DD97F1S12DD19X8DD01J1S9DD15X4DD97G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.8833,
@@ -54421,8 +54421,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.19,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -54442,8 +54442,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.19,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -54460,9 +54460,9 @@ export default {
     "productId": "book-art-3a9cba708a8045364e82",
     "title": "Dawn and her father Pete at Burning Man — Medium print — White frame",
     "artworkTitle": "Dawn and her father Pete at Burning Man",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S9DD15X4DD97F2S12X9J1S9DD15X4DD97G1",
+    "sku": "5M144M8S9DD15X4DD97F2S12DD19X8DD01J1S9DD15X4DD97G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.8833,
@@ -54495,8 +54495,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.19,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -54516,8 +54516,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.19,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -54534,9 +54534,9 @@ export default {
     "productId": "book-art-3a9cba708a8045364e82",
     "title": "Dawn and her father Pete at Burning Man — Medium print — Natural wood frame",
     "artworkTitle": "Dawn and her father Pete at Burning Man",
-    "amount": "77.63",
+    "amount": "76.63",
     "currency": "USD",
-    "sku": "5M144M8S9DD15X4DD97F7S12X9J1S9DD15X4DD97G1",
+    "sku": "5M144M8S9DD15X4DD97F7S12DD19X8DD01J1S9DD15X4DD97G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.8833,
@@ -54569,8 +54569,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.19,
+        "height": 8.01,
         "unit": "in"
       },
       "window": {
@@ -54590,8 +54590,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.19,
+        "height": 8.01,
         "unit": "in"
       },
       "glazing": {
@@ -54646,9 +54646,9 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Large print — Black frame",
     "artworkTitle": "Kristine",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD98X9DD43F1S11X14J1S7DD98X9DD43G1",
+    "sku": "5M144M8S7DD98X9DD43F1S10DD98X12DD43J1S7DD98X9DD43G1",
     "scale": 1,
     "imageSize": {
       "width": 7.7267,
@@ -54681,8 +54681,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.98,
+        "height": 12.43,
         "unit": "in"
       },
       "window": {
@@ -54702,8 +54702,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.98,
+        "height": 12.43,
         "unit": "in"
       },
       "glazing": {
@@ -54720,9 +54720,9 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Large print — White frame",
     "artworkTitle": "Kristine",
-    "amount": "81.00",
+    "amount": "78.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD98X9DD43F2S11X14J1S7DD98X9DD43G1",
+    "sku": "5M144M8S7DD98X9DD43F2S10DD98X12DD43J1S7DD98X9DD43G1",
     "scale": 1,
     "imageSize": {
       "width": 7.7267,
@@ -54755,8 +54755,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.98,
+        "height": 12.43,
         "unit": "in"
       },
       "window": {
@@ -54776,8 +54776,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.98,
+        "height": 12.43,
         "unit": "in"
       },
       "glazing": {
@@ -54794,9 +54794,9 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Large print — Natural wood frame",
     "artworkTitle": "Kristine",
-    "amount": "92.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD98X9DD43F7S11X14J1S7DD98X9DD43G1",
+    "sku": "5M144M8S7DD98X9DD43F7S10DD98X12DD43J1S7DD98X9DD43G1",
     "scale": 1,
     "imageSize": {
       "width": 7.7267,
@@ -54829,8 +54829,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.98,
+        "height": 12.43,
         "unit": "in"
       },
       "window": {
@@ -54850,8 +54850,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.98,
+        "height": 12.43,
         "unit": "in"
       },
       "glazing": {
@@ -54906,9 +54906,9 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Medium print — Black frame",
     "artworkTitle": "Kristine",
-    "amount": "62.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD04X7DD13F1S9X12J1S6DD04X7DD13G1",
+    "sku": "5M144M8S6DD04X7DD13F1S9DD04X10DD13J1S6DD04X7DD13G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.7867,
@@ -54941,8 +54941,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.04,
+        "height": 10.13,
         "unit": "in"
       },
       "window": {
@@ -54962,8 +54962,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.04,
+        "height": 10.13,
         "unit": "in"
       },
       "glazing": {
@@ -54980,9 +54980,9 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Medium print — White frame",
     "artworkTitle": "Kristine",
-    "amount": "62.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD04X7DD13F2S9X12J1S6DD04X7DD13G1",
+    "sku": "5M144M8S6DD04X7DD13F2S9DD04X10DD13J1S6DD04X7DD13G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.7867,
@@ -55015,8 +55015,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.04,
+        "height": 10.13,
         "unit": "in"
       },
       "window": {
@@ -55036,8 +55036,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.04,
+        "height": 10.13,
         "unit": "in"
       },
       "glazing": {
@@ -55054,9 +55054,9 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Medium print — Natural wood frame",
     "artworkTitle": "Kristine",
-    "amount": "72.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD04X7DD13F7S9X12J1S6DD04X7DD13G1",
+    "sku": "5M144M8S6DD04X7DD13F7S9DD04X10DD13J1S6DD04X7DD13G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.7867,
@@ -55089,8 +55089,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.04,
+        "height": 10.13,
         "unit": "in"
       },
       "window": {
@@ -55110,8 +55110,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.04,
+        "height": 10.13,
         "unit": "in"
       },
       "glazing": {
@@ -55166,9 +55166,9 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Small print — Black frame",
     "artworkTitle": "Kristine",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD11X4DD84F1S8X10J1S4DD11X4DD84G1",
+    "sku": "5M144M8S4DD11X4DD84F1S8DD01X8DD74J1S4DD11X4DD84G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.8567,
@@ -55201,8 +55201,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.74,
         "unit": "in"
       },
       "window": {
@@ -55222,8 +55222,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.74,
         "unit": "in"
       },
       "glazing": {
@@ -55240,9 +55240,9 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Small print — White frame",
     "artworkTitle": "Kristine",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD11X4DD84F2S8X10J1S4DD11X4DD84G1",
+    "sku": "5M144M8S4DD11X4DD84F2S8DD01X8DD74J1S4DD11X4DD84G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.8567,
@@ -55275,8 +55275,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.74,
         "unit": "in"
       },
       "window": {
@@ -55296,8 +55296,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.74,
         "unit": "in"
       },
       "glazing": {
@@ -55314,9 +55314,9 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Small print — Natural wood frame",
     "artworkTitle": "Kristine",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD11X4DD84F7S8X10J1S4DD11X4DD84G1",
+    "sku": "5M144M8S4DD11X4DD84F7S8DD01X8DD74J1S4DD11X4DD84G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.8567,
@@ -55349,8 +55349,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.74,
         "unit": "in"
       },
       "window": {
@@ -55370,8 +55370,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.74,
         "unit": "in"
       },
       "glazing": {
@@ -55426,9 +55426,9 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Large print — Black frame",
     "artworkTitle": "MJ",
-    "amount": "154.00",
+    "amount": "147.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD74X14DD41F1S16X20J1S12DD74X14DD41G1",
+    "sku": "5M144M8S12DD74X14DD41F1S15DD74X17DD41J1S12DD74X14DD41G1",
     "scale": 1,
     "imageSize": {
       "width": 12.4867,
@@ -55461,8 +55461,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 15.74,
+        "height": 17.41,
         "unit": "in"
       },
       "window": {
@@ -55482,8 +55482,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 15.74,
+        "height": 17.41,
         "unit": "in"
       },
       "glazing": {
@@ -55500,9 +55500,9 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Large print — White frame",
     "artworkTitle": "MJ",
-    "amount": "154.00",
+    "amount": "147.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD74X14DD41F2S16X20J1S12DD74X14DD41G1",
+    "sku": "5M144M8S12DD74X14DD41F2S15DD74X17DD41J1S12DD74X14DD41G1",
     "scale": 1,
     "imageSize": {
       "width": 12.4867,
@@ -55535,8 +55535,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 15.74,
+        "height": 17.41,
         "unit": "in"
       },
       "window": {
@@ -55556,8 +55556,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 15.74,
+        "height": 17.41,
         "unit": "in"
       },
       "glazing": {
@@ -55574,9 +55574,9 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Large print — Natural wood frame",
     "artworkTitle": "MJ",
-    "amount": "169.00",
+    "amount": "162.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD74X14DD41F7S16X20J1S12DD74X14DD41G1",
+    "sku": "5M144M8S12DD74X14DD41F7S15DD74X17DD41J1S12DD74X14DD41G1",
     "scale": 1,
     "imageSize": {
       "width": 12.4867,
@@ -55609,8 +55609,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 15.74,
+        "height": 17.41,
         "unit": "in"
       },
       "window": {
@@ -55630,8 +55630,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 15.74,
+        "height": 17.41,
         "unit": "in"
       },
       "glazing": {
@@ -55686,9 +55686,9 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Medium print — Black frame",
     "artworkTitle": "MJ",
-    "amount": "96.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD62X10DD87F1S12X15J1S9DD62X10DD87G1",
+    "sku": "5M144M8S9DD62X10DD87F1S12DD62X13DD87J1S9DD62X10DD87G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.3633,
@@ -55721,8 +55721,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.62,
+        "height": 13.87,
         "unit": "in"
       },
       "window": {
@@ -55742,8 +55742,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.62,
+        "height": 13.87,
         "unit": "in"
       },
       "glazing": {
@@ -55760,9 +55760,9 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Medium print — White frame",
     "artworkTitle": "MJ",
-    "amount": "96.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD62X10DD87F2S12X15J1S9DD62X10DD87G1",
+    "sku": "5M144M8S9DD62X10DD87F2S12DD62X13DD87J1S9DD62X10DD87G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.3633,
@@ -55795,8 +55795,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.62,
+        "height": 13.87,
         "unit": "in"
       },
       "window": {
@@ -55816,8 +55816,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.62,
+        "height": 13.87,
         "unit": "in"
       },
       "glazing": {
@@ -55834,9 +55834,9 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Medium print — Natural wood frame",
     "artworkTitle": "MJ",
-    "amount": "108.00",
+    "amount": "106.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD62X10DD87F7S12X15J1S9DD62X10DD87G1",
+    "sku": "5M144M8S9DD62X10DD87F7S12DD62X13DD87J1S9DD62X10DD87G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.3633,
@@ -55869,8 +55869,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.62,
+        "height": 13.87,
         "unit": "in"
       },
       "window": {
@@ -55890,8 +55890,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.62,
+        "height": 13.87,
         "unit": "in"
       },
       "glazing": {
@@ -55946,9 +55946,9 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Small print — Black frame",
     "artworkTitle": "MJ",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD49X7DD33F1S9X12J1S6DD49X7DD33G1",
+    "sku": "5M144M8S6DD49X7DD33F1S9DD49X10DD33J1S6DD49X7DD33G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.2367,
@@ -55981,8 +55981,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 10.33,
         "unit": "in"
       },
       "window": {
@@ -56002,8 +56002,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 10.33,
         "unit": "in"
       },
       "glazing": {
@@ -56020,9 +56020,9 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Small print — White frame",
     "artworkTitle": "MJ",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD49X7DD33F2S9X12J1S6DD49X7DD33G1",
+    "sku": "5M144M8S6DD49X7DD33F2S9DD49X10DD33J1S6DD49X7DD33G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.2367,
@@ -56055,8 +56055,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 10.33,
         "unit": "in"
       },
       "window": {
@@ -56076,8 +56076,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 10.33,
         "unit": "in"
       },
       "glazing": {
@@ -56094,9 +56094,9 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Small print — Natural wood frame",
     "artworkTitle": "MJ",
-    "amount": "72.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD49X7DD33F7S9X12J1S6DD49X7DD33G1",
+    "sku": "5M144M8S6DD49X7DD33F7S9DD49X10DD33J1S6DD49X7DD33G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.2367,
@@ -56129,8 +56129,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 10.33,
         "unit": "in"
       },
       "window": {
@@ -56150,8 +56150,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.49,
+        "height": 10.33,
         "unit": "in"
       },
       "glazing": {
@@ -56206,9 +56206,9 @@ export default {
     "productId": "book-art-64cfd389b3dbb5cde532",
     "title": "Loree — Large print — Black frame",
     "artworkTitle": "Loree",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD44X9DD98F1S11X14J1S8DD44X9DD98G1",
+    "sku": "5M144M8S8DD44X9DD98F1S11DD44X12DD98J1S8DD44X9DD98G1",
     "scale": 1,
     "imageSize": {
       "width": 8.1867,
@@ -56241,8 +56241,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.44,
+        "height": 12.98,
         "unit": "in"
       },
       "window": {
@@ -56262,8 +56262,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.44,
+        "height": 12.98,
         "unit": "in"
       },
       "glazing": {
@@ -56280,9 +56280,9 @@ export default {
     "productId": "book-art-64cfd389b3dbb5cde532",
     "title": "Loree — Large print — White frame",
     "artworkTitle": "Loree",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD44X9DD98F2S11X14J1S8DD44X9DD98G1",
+    "sku": "5M144M8S8DD44X9DD98F2S11DD44X12DD98J1S8DD44X9DD98G1",
     "scale": 1,
     "imageSize": {
       "width": 8.1867,
@@ -56315,8 +56315,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.44,
+        "height": 12.98,
         "unit": "in"
       },
       "window": {
@@ -56336,8 +56336,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.44,
+        "height": 12.98,
         "unit": "in"
       },
       "glazing": {
@@ -56354,9 +56354,9 @@ export default {
     "productId": "book-art-64cfd389b3dbb5cde532",
     "title": "Loree — Large print — Natural wood frame",
     "artworkTitle": "Loree",
-    "amount": "92.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD44X9DD98F7S11X14J1S8DD44X9DD98G1",
+    "sku": "5M144M8S8DD44X9DD98F7S11DD44X12DD98J1S8DD44X9DD98G1",
     "scale": 1,
     "imageSize": {
       "width": 8.1867,
@@ -56389,8 +56389,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.44,
+        "height": 12.98,
         "unit": "in"
       },
       "window": {
@@ -56410,8 +56410,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.44,
+        "height": 12.98,
         "unit": "in"
       },
       "glazing": {
@@ -56466,9 +56466,9 @@ export default {
     "productId": "book-art-64cfd389b3dbb5cde532",
     "title": "Loree — Medium print — Black frame",
     "artworkTitle": "Loree",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD39X7DD55F1S9X12J1S6DD39X7DD55G1",
+    "sku": "5M144M8S6DD39X7DD55F1S9DD39X10DD55J1S6DD39X7DD55G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.1367,
@@ -56501,8 +56501,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.39,
+        "height": 10.55,
         "unit": "in"
       },
       "window": {
@@ -56522,8 +56522,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.39,
+        "height": 10.55,
         "unit": "in"
       },
       "glazing": {
@@ -56540,9 +56540,9 @@ export default {
     "productId": "book-art-64cfd389b3dbb5cde532",
     "title": "Loree — Medium print — White frame",
     "artworkTitle": "Loree",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD39X7DD55F2S9X12J1S6DD39X7DD55G1",
+    "sku": "5M144M8S6DD39X7DD55F2S9DD39X10DD55J1S6DD39X7DD55G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.1367,
@@ -56575,8 +56575,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.39,
+        "height": 10.55,
         "unit": "in"
       },
       "window": {
@@ -56596,8 +56596,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.39,
+        "height": 10.55,
         "unit": "in"
       },
       "glazing": {
@@ -56614,9 +56614,9 @@ export default {
     "productId": "book-art-64cfd389b3dbb5cde532",
     "title": "Loree — Medium print — Natural wood frame",
     "artworkTitle": "Loree",
-    "amount": "72.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD39X7DD55F7S9X12J1S6DD39X7DD55G1",
+    "sku": "5M144M8S6DD39X7DD55F7S9DD39X10DD55J1S6DD39X7DD55G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.1367,
@@ -56649,8 +56649,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.39,
+        "height": 10.55,
         "unit": "in"
       },
       "window": {
@@ -56670,8 +56670,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.39,
+        "height": 10.55,
         "unit": "in"
       },
       "glazing": {
@@ -56726,9 +56726,9 @@ export default {
     "productId": "book-art-64cfd389b3dbb5cde532",
     "title": "Loree — Small print — Black frame",
     "artworkTitle": "Loree",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD34X5DD11F1S8X10J1S4DD34X5DD11G1",
+    "sku": "5M144M8S4DD34X5DD11F1S8X8DD77J1S4DD34X5DD11G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.0867,
@@ -56762,7 +56762,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 8.77,
         "unit": "in"
       },
       "window": {
@@ -56783,7 +56783,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 8.77,
         "unit": "in"
       },
       "glazing": {
@@ -56800,9 +56800,9 @@ export default {
     "productId": "book-art-64cfd389b3dbb5cde532",
     "title": "Loree — Small print — White frame",
     "artworkTitle": "Loree",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD34X5DD11F2S8X10J1S4DD34X5DD11G1",
+    "sku": "5M144M8S4DD34X5DD11F2S8X8DD77J1S4DD34X5DD11G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.0867,
@@ -56836,7 +56836,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 8.77,
         "unit": "in"
       },
       "window": {
@@ -56857,7 +56857,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 8.77,
         "unit": "in"
       },
       "glazing": {
@@ -56874,9 +56874,9 @@ export default {
     "productId": "book-art-64cfd389b3dbb5cde532",
     "title": "Loree — Small print — Natural wood frame",
     "artworkTitle": "Loree",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD34X5DD11F7S8X10J1S4DD34X5DD11G1",
+    "sku": "5M144M8S4DD34X5DD11F7S8X8DD77J1S4DD34X5DD11G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.0867,
@@ -56910,7 +56910,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 8.77,
         "unit": "in"
       },
       "window": {
@@ -56931,7 +56931,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 8.77,
         "unit": "in"
       },
       "glazing": {
@@ -56986,9 +56986,9 @@ export default {
     "productId": "book-art-1708a7dca996aca40e6c",
     "title": "Malone — Large print — Black frame",
     "artworkTitle": "Malone",
-    "amount": "91.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD09X10DD4F1S12X15J1S9DD09X10DD4G1",
+    "sku": "5M144M8S9DD09X10DD4F1S12DD09X13DD4J1S9DD09X10DD4G1",
     "scale": 1,
     "imageSize": {
       "width": 8.8367,
@@ -57021,8 +57021,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "window": {
@@ -57042,8 +57042,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "glazing": {
@@ -57060,9 +57060,9 @@ export default {
     "productId": "book-art-1708a7dca996aca40e6c",
     "title": "Malone — Large print — White frame",
     "artworkTitle": "Malone",
-    "amount": "91.00",
+    "amount": "88.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD09X10DD4F2S12X15J1S9DD09X10DD4G1",
+    "sku": "5M144M8S9DD09X10DD4F2S12DD09X13DD4J1S9DD09X10DD4G1",
     "scale": 1,
     "imageSize": {
       "width": 8.8367,
@@ -57095,8 +57095,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "window": {
@@ -57116,8 +57116,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "glazing": {
@@ -57134,9 +57134,9 @@ export default {
     "productId": "book-art-1708a7dca996aca40e6c",
     "title": "Malone — Large print — Natural wood frame",
     "artworkTitle": "Malone",
-    "amount": "103.00",
+    "amount": "99.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD09X10DD4F7S12X15J1S9DD09X10DD4G1",
+    "sku": "5M144M8S9DD09X10DD4F7S12DD09X13DD4J1S9DD09X10DD4G1",
     "scale": 1,
     "imageSize": {
       "width": 8.8367,
@@ -57169,8 +57169,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "window": {
@@ -57190,8 +57190,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 15,
+        "width": 12.09,
+        "height": 13.4,
         "unit": "in"
       },
       "glazing": {
@@ -57248,7 +57248,7 @@ export default {
     "artworkTitle": "Malone",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD88X7DD86F1S9X12J1S6DD88X7DD86G1",
+    "sku": "5M144M8S6DD88X7DD86F1S9DD88X10DD86J1S6DD88X7DD86G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.6233,
@@ -57281,8 +57281,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "window": {
@@ -57302,8 +57302,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "glazing": {
@@ -57322,7 +57322,7 @@ export default {
     "artworkTitle": "Malone",
     "amount": "62.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD88X7DD86F2S9X12J1S6DD88X7DD86G1",
+    "sku": "5M144M8S6DD88X7DD86F2S9DD88X10DD86J1S6DD88X7DD86G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.6233,
@@ -57355,8 +57355,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "window": {
@@ -57376,8 +57376,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "glazing": {
@@ -57394,9 +57394,9 @@ export default {
     "productId": "book-art-1708a7dca996aca40e6c",
     "title": "Malone — Medium print — Natural wood frame",
     "artworkTitle": "Malone",
-    "amount": "72.63",
+    "amount": "71.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD88X7DD86F7S9X12J1S6DD88X7DD86G1",
+    "sku": "5M144M8S6DD88X7DD86F7S9DD88X10DD86J1S6DD88X7DD86G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.6233,
@@ -57429,8 +57429,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "window": {
@@ -57450,8 +57450,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.88,
+        "height": 10.86,
         "unit": "in"
       },
       "glazing": {
@@ -57506,9 +57506,9 @@ export default {
     "productId": "book-art-1708a7dca996aca40e6c",
     "title": "Malone — Small print — Black frame",
     "artworkTitle": "Malone",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD67X5DD32F1S8X10J1S4DD67X5DD32G1",
+    "sku": "5M144M8S4DD67X5DD32F1S8DD01X8DD66J1S4DD67X5DD32G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.4133,
@@ -57541,8 +57541,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "window": {
@@ -57562,8 +57562,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "glazing": {
@@ -57580,9 +57580,9 @@ export default {
     "productId": "book-art-1708a7dca996aca40e6c",
     "title": "Malone — Small print — White frame",
     "artworkTitle": "Malone",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD67X5DD32F2S8X10J1S4DD67X5DD32G1",
+    "sku": "5M144M8S4DD67X5DD32F2S8DD01X8DD66J1S4DD67X5DD32G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.4133,
@@ -57615,8 +57615,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "window": {
@@ -57636,8 +57636,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "glazing": {
@@ -57654,9 +57654,9 @@ export default {
     "productId": "book-art-1708a7dca996aca40e6c",
     "title": "Malone — Small print — Natural wood frame",
     "artworkTitle": "Malone",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD67X5DD32F7S8X10J1S4DD67X5DD32G1",
+    "sku": "5M144M8S4DD67X5DD32F7S8DD01X8DD66J1S4DD67X5DD32G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.4133,
@@ -57689,8 +57689,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "window": {
@@ -57710,8 +57710,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.66,
         "unit": "in"
       },
       "glazing": {
@@ -57766,9 +57766,9 @@ export default {
     "productId": "book-art-a627c7b7d19ace6b3e51",
     "title": "John — Large print — Black frame",
     "artworkTitle": "John",
-    "amount": "81.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD48X9DD58F1S11X14J1S8DD48X9DD58G1",
+    "sku": "5M144M8S8DD48X9DD58F1S11DD48X12DD58J1S8DD48X9DD58G1",
     "scale": 1,
     "imageSize": {
       "width": 8.2233,
@@ -57801,8 +57801,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.48,
+        "height": 12.58,
         "unit": "in"
       },
       "window": {
@@ -57822,8 +57822,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.48,
+        "height": 12.58,
         "unit": "in"
       },
       "glazing": {
@@ -57840,9 +57840,9 @@ export default {
     "productId": "book-art-a627c7b7d19ace6b3e51",
     "title": "John — Large print — White frame",
     "artworkTitle": "John",
-    "amount": "81.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD48X9DD58F2S11X14J1S8DD48X9DD58G1",
+    "sku": "5M144M8S8DD48X9DD58F2S11DD48X12DD58J1S8DD48X9DD58G1",
     "scale": 1,
     "imageSize": {
       "width": 8.2233,
@@ -57875,8 +57875,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.48,
+        "height": 12.58,
         "unit": "in"
       },
       "window": {
@@ -57896,8 +57896,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.48,
+        "height": 12.58,
         "unit": "in"
       },
       "glazing": {
@@ -57914,9 +57914,9 @@ export default {
     "productId": "book-art-a627c7b7d19ace6b3e51",
     "title": "John — Large print — Natural wood frame",
     "artworkTitle": "John",
-    "amount": "92.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD48X9DD58F7S11X14J1S8DD48X9DD58G1",
+    "sku": "5M144M8S8DD48X9DD58F7S11DD48X12DD58J1S8DD48X9DD58G1",
     "scale": 1,
     "imageSize": {
       "width": 8.2233,
@@ -57949,8 +57949,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.48,
+        "height": 12.58,
         "unit": "in"
       },
       "window": {
@@ -57970,8 +57970,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.48,
+        "height": 12.58,
         "unit": "in"
       },
       "glazing": {
@@ -58026,9 +58026,9 @@ export default {
     "productId": "book-art-a627c7b7d19ace6b3e51",
     "title": "John — Medium print — Black frame",
     "artworkTitle": "John",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD42X7DD25F1S9X12J1S6DD42X7DD25G1",
+    "sku": "5M144M8S6DD42X7DD25F1S9DD42X10DD25J1S6DD42X7DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.1667,
@@ -58061,8 +58061,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.42,
+        "height": 10.25,
         "unit": "in"
       },
       "window": {
@@ -58082,8 +58082,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.42,
+        "height": 10.25,
         "unit": "in"
       },
       "glazing": {
@@ -58100,9 +58100,9 @@ export default {
     "productId": "book-art-a627c7b7d19ace6b3e51",
     "title": "John — Medium print — White frame",
     "artworkTitle": "John",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD42X7DD25F2S9X12J1S6DD42X7DD25G1",
+    "sku": "5M144M8S6DD42X7DD25F2S9DD42X10DD25J1S6DD42X7DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.1667,
@@ -58135,8 +58135,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.42,
+        "height": 10.25,
         "unit": "in"
       },
       "window": {
@@ -58156,8 +58156,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.42,
+        "height": 10.25,
         "unit": "in"
       },
       "glazing": {
@@ -58174,9 +58174,9 @@ export default {
     "productId": "book-art-a627c7b7d19ace6b3e51",
     "title": "John — Medium print — Natural wood frame",
     "artworkTitle": "John",
-    "amount": "72.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD42X7DD25F7S9X12J1S6DD42X7DD25G1",
+    "sku": "5M144M8S6DD42X7DD25F7S9DD42X10DD25J1S6DD42X7DD25G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.1667,
@@ -58209,8 +58209,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.42,
+        "height": 10.25,
         "unit": "in"
       },
       "window": {
@@ -58230,8 +58230,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.42,
+        "height": 10.25,
         "unit": "in"
       },
       "glazing": {
@@ -58286,9 +58286,9 @@ export default {
     "productId": "book-art-a627c7b7d19ace6b3e51",
     "title": "John — Small print — Black frame",
     "artworkTitle": "John",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD36X4DD91F1S8X10J1S4DD36X4DD91G1",
+    "sku": "5M144M8S4DD36X4DD91F1S8X8DD55J1S4DD36X4DD91G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1067,
@@ -58322,7 +58322,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 8.55,
         "unit": "in"
       },
       "window": {
@@ -58343,7 +58343,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 8.55,
         "unit": "in"
       },
       "glazing": {
@@ -58360,9 +58360,9 @@ export default {
     "productId": "book-art-a627c7b7d19ace6b3e51",
     "title": "John — Small print — White frame",
     "artworkTitle": "John",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD36X4DD91F2S8X10J1S4DD36X4DD91G1",
+    "sku": "5M144M8S4DD36X4DD91F2S8X8DD55J1S4DD36X4DD91G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1067,
@@ -58396,7 +58396,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 8.55,
         "unit": "in"
       },
       "window": {
@@ -58417,7 +58417,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 8.55,
         "unit": "in"
       },
       "glazing": {
@@ -58434,9 +58434,9 @@ export default {
     "productId": "book-art-a627c7b7d19ace6b3e51",
     "title": "John — Small print — Natural wood frame",
     "artworkTitle": "John",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD36X4DD91F7S8X10J1S4DD36X4DD91G1",
+    "sku": "5M144M8S4DD36X4DD91F7S8X8DD55J1S4DD36X4DD91G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.1067,
@@ -58470,7 +58470,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 8.55,
         "unit": "in"
       },
       "window": {
@@ -58491,7 +58491,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 8.55,
         "unit": "in"
       },
       "glazing": {
@@ -58548,7 +58548,7 @@ export default {
     "artworkTitle": "Sergey",
     "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD89X9DD85F1S11X14J1S8DD89X9DD85G1",
+    "sku": "5M144M8S8DD89X9DD85F1S11DD89X12DD85J1S8DD89X9DD85G1",
     "scale": 1,
     "imageSize": {
       "width": 8.6367,
@@ -58581,8 +58581,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.89,
+        "height": 12.85,
         "unit": "in"
       },
       "window": {
@@ -58602,8 +58602,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.89,
+        "height": 12.85,
         "unit": "in"
       },
       "glazing": {
@@ -58622,7 +58622,7 @@ export default {
     "artworkTitle": "Sergey",
     "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD89X9DD85F2S11X14J1S8DD89X9DD85G1",
+    "sku": "5M144M8S8DD89X9DD85F2S11DD89X12DD85J1S8DD89X9DD85G1",
     "scale": 1,
     "imageSize": {
       "width": 8.6367,
@@ -58655,8 +58655,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.89,
+        "height": 12.85,
         "unit": "in"
       },
       "window": {
@@ -58676,8 +58676,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.89,
+        "height": 12.85,
         "unit": "in"
       },
       "glazing": {
@@ -58696,7 +58696,7 @@ export default {
     "artworkTitle": "Sergey",
     "amount": "92.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD89X9DD85F7S11X14J1S8DD89X9DD85G1",
+    "sku": "5M144M8S8DD89X9DD85F7S11DD89X12DD85J1S8DD89X9DD85G1",
     "scale": 1,
     "imageSize": {
       "width": 8.6367,
@@ -58729,8 +58729,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 11.89,
+        "height": 12.85,
         "unit": "in"
       },
       "window": {
@@ -58750,8 +58750,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 11.89,
+        "height": 12.85,
         "unit": "in"
       },
       "glazing": {
@@ -58806,9 +58806,9 @@ export default {
     "productId": "book-art-44161b6b117af79e3df4",
     "title": "Sergey — Medium print — Black frame",
     "artworkTitle": "Sergey",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD73X7DD45F1S9X12J1S6DD73X7DD45G1",
+    "sku": "5M144M8S6DD73X7DD45F1S9DD73X10DD45J1S6DD73X7DD45G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.4767,
@@ -58841,8 +58841,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.73,
+        "height": 10.45,
         "unit": "in"
       },
       "window": {
@@ -58862,8 +58862,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.73,
+        "height": 10.45,
         "unit": "in"
       },
       "glazing": {
@@ -58880,9 +58880,9 @@ export default {
     "productId": "book-art-44161b6b117af79e3df4",
     "title": "Sergey — Medium print — White frame",
     "artworkTitle": "Sergey",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD73X7DD45F2S9X12J1S6DD73X7DD45G1",
+    "sku": "5M144M8S6DD73X7DD45F2S9DD73X10DD45J1S6DD73X7DD45G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.4767,
@@ -58915,8 +58915,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.73,
+        "height": 10.45,
         "unit": "in"
       },
       "window": {
@@ -58936,8 +58936,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.73,
+        "height": 10.45,
         "unit": "in"
       },
       "glazing": {
@@ -58954,9 +58954,9 @@ export default {
     "productId": "book-art-44161b6b117af79e3df4",
     "title": "Sergey — Medium print — Natural wood frame",
     "artworkTitle": "Sergey",
-    "amount": "72.63",
+    "amount": "71.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD73X7DD45F7S9X12J1S6DD73X7DD45G1",
+    "sku": "5M144M8S6DD73X7DD45F7S9DD73X10DD45J1S6DD73X7DD45G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.4767,
@@ -58989,8 +58989,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.73,
+        "height": 10.45,
         "unit": "in"
       },
       "window": {
@@ -59010,8 +59010,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.73,
+        "height": 10.45,
         "unit": "in"
       },
       "glazing": {
@@ -59066,9 +59066,9 @@ export default {
     "productId": "book-art-44161b6b117af79e3df4",
     "title": "Sergey — Small print — Black frame",
     "artworkTitle": "Sergey",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD57X5DD05F1S8X10J1S4DD57X5DD05G1",
+    "sku": "5M144M8S4DD57X5DD05F1S8DD01X8DD49J1S4DD57X5DD05G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.3167,
@@ -59101,8 +59101,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.49,
         "unit": "in"
       },
       "window": {
@@ -59122,8 +59122,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.49,
         "unit": "in"
       },
       "glazing": {
@@ -59140,9 +59140,9 @@ export default {
     "productId": "book-art-44161b6b117af79e3df4",
     "title": "Sergey — Small print — White frame",
     "artworkTitle": "Sergey",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD57X5DD05F2S8X10J1S4DD57X5DD05G1",
+    "sku": "5M144M8S4DD57X5DD05F2S8DD01X8DD49J1S4DD57X5DD05G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.3167,
@@ -59175,8 +59175,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.49,
         "unit": "in"
       },
       "window": {
@@ -59196,8 +59196,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.49,
         "unit": "in"
       },
       "glazing": {
@@ -59214,9 +59214,9 @@ export default {
     "productId": "book-art-44161b6b117af79e3df4",
     "title": "Sergey — Small print — Natural wood frame",
     "artworkTitle": "Sergey",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD57X5DD05F7S8X10J1S4DD57X5DD05G1",
+    "sku": "5M144M8S4DD57X5DD05F7S8DD01X8DD49J1S4DD57X5DD05G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.3167,
@@ -59249,8 +59249,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.49,
         "unit": "in"
       },
       "window": {
@@ -59270,8 +59270,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.49,
         "unit": "in"
       },
       "glazing": {
@@ -59326,9 +59326,9 @@ export default {
     "productId": "book-art-029f45a5fbfd6c90212e",
     "title": "Mikyla, Mandy, and Guin — Large print — Black frame",
     "artworkTitle": "Mikyla, Mandy, and Guin",
-    "amount": "124.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD2X14DD58F1S16X20J1S8DD2X14DD58G1",
+    "sku": "5M144M8S8DD2X14DD58F1S11DD2X17DD58J1S8DD2X14DD58G1",
     "scale": 1,
     "imageSize": {
       "width": 7.9467,
@@ -59361,8 +59361,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 11.2,
+        "height": 17.58,
         "unit": "in"
       },
       "window": {
@@ -59382,8 +59382,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 11.2,
+        "height": 17.58,
         "unit": "in"
       },
       "glazing": {
@@ -59400,9 +59400,9 @@ export default {
     "productId": "book-art-029f45a5fbfd6c90212e",
     "title": "Mikyla, Mandy, and Guin — Large print — White frame",
     "artworkTitle": "Mikyla, Mandy, and Guin",
-    "amount": "124.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD2X14DD58F2S16X20J1S8DD2X14DD58G1",
+    "sku": "5M144M8S8DD2X14DD58F2S11DD2X17DD58J1S8DD2X14DD58G1",
     "scale": 1,
     "imageSize": {
       "width": 7.9467,
@@ -59435,8 +59435,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 11.2,
+        "height": 17.58,
         "unit": "in"
       },
       "window": {
@@ -59456,8 +59456,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 11.2,
+        "height": 17.58,
         "unit": "in"
       },
       "glazing": {
@@ -59474,9 +59474,9 @@ export default {
     "productId": "book-art-029f45a5fbfd6c90212e",
     "title": "Mikyla, Mandy, and Guin — Large print — Natural wood frame",
     "artworkTitle": "Mikyla, Mandy, and Guin",
-    "amount": "139.00",
+    "amount": "117.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD2X14DD58F7S16X20J1S8DD2X14DD58G1",
+    "sku": "5M144M8S8DD2X14DD58F7S11DD2X17DD58J1S8DD2X14DD58G1",
     "scale": 1,
     "imageSize": {
       "width": 7.9467,
@@ -59509,8 +59509,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 11.2,
+        "height": 17.58,
         "unit": "in"
       },
       "window": {
@@ -59530,8 +59530,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 11.2,
+        "height": 17.58,
         "unit": "in"
       },
       "glazing": {
@@ -59586,9 +59586,9 @@ export default {
     "productId": "book-art-029f45a5fbfd6c90212e",
     "title": "Mikyla, Mandy, and Guin — Medium print — Black frame",
     "artworkTitle": "Mikyla, Mandy, and Guin",
-    "amount": "81.00",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD21X10DD99F1S11X14J1S6DD21X10DD99G1",
+    "sku": "5M144M8S6DD21X10DD99F1S9DD21X13DD99J1S6DD21X10DD99G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.9567,
@@ -59621,8 +59621,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 9.21,
+        "height": 13.99,
         "unit": "in"
       },
       "window": {
@@ -59642,8 +59642,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 9.21,
+        "height": 13.99,
         "unit": "in"
       },
       "glazing": {
@@ -59660,9 +59660,9 @@ export default {
     "productId": "book-art-029f45a5fbfd6c90212e",
     "title": "Mikyla, Mandy, and Guin — Medium print — White frame",
     "artworkTitle": "Mikyla, Mandy, and Guin",
-    "amount": "81.00",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD21X10DD99F2S11X14J1S6DD21X10DD99G1",
+    "sku": "5M144M8S6DD21X10DD99F2S9DD21X13DD99J1S6DD21X10DD99G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.9567,
@@ -59695,8 +59695,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 9.21,
+        "height": 13.99,
         "unit": "in"
       },
       "window": {
@@ -59716,8 +59716,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 9.21,
+        "height": 13.99,
         "unit": "in"
       },
       "glazing": {
@@ -59734,9 +59734,9 @@ export default {
     "productId": "book-art-029f45a5fbfd6c90212e",
     "title": "Mikyla, Mandy, and Guin — Medium print — Natural wood frame",
     "artworkTitle": "Mikyla, Mandy, and Guin",
-    "amount": "92.00",
+    "amount": "87.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD21X10DD99F7S11X14J1S6DD21X10DD99G1",
+    "sku": "5M144M8S6DD21X10DD99F7S9DD21X13DD99J1S6DD21X10DD99G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.9567,
@@ -59769,8 +59769,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 9.21,
+        "height": 13.99,
         "unit": "in"
       },
       "window": {
@@ -59790,8 +59790,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 9.21,
+        "height": 13.99,
         "unit": "in"
       },
       "glazing": {
@@ -59846,9 +59846,9 @@ export default {
     "productId": "book-art-029f45a5fbfd6c90212e",
     "title": "Mikyla, Mandy, and Guin — Small print — Black frame",
     "artworkTitle": "Mikyla, Mandy, and Guin",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD22X7DD41F1S8X10J1S4DD22X7DD41G1",
+    "sku": "5M144M8S4DD22X7DD41F1S8X11DD19J1S4DD22X7DD41G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.9667,
@@ -59882,7 +59882,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 11.19,
         "unit": "in"
       },
       "window": {
@@ -59903,7 +59903,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 11.19,
         "unit": "in"
       },
       "glazing": {
@@ -59920,9 +59920,9 @@ export default {
     "productId": "book-art-029f45a5fbfd6c90212e",
     "title": "Mikyla, Mandy, and Guin — Small print — White frame",
     "artworkTitle": "Mikyla, Mandy, and Guin",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD22X7DD41F2S8X10J1S4DD22X7DD41G1",
+    "sku": "5M144M8S4DD22X7DD41F2S8X11DD19J1S4DD22X7DD41G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.9667,
@@ -59956,7 +59956,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 11.19,
         "unit": "in"
       },
       "window": {
@@ -59977,7 +59977,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 11.19,
         "unit": "in"
       },
       "glazing": {
@@ -59994,9 +59994,9 @@ export default {
     "productId": "book-art-029f45a5fbfd6c90212e",
     "title": "Mikyla, Mandy, and Guin — Small print — Natural wood frame",
     "artworkTitle": "Mikyla, Mandy, and Guin",
-    "amount": "68.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD22X7DD41F7S8X10J1S4DD22X7DD41G1",
+    "sku": "5M144M8S4DD22X7DD41F7S8X11DD19J1S4DD22X7DD41G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.9667,
@@ -60030,7 +60030,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 11.19,
         "unit": "in"
       },
       "window": {
@@ -60051,7 +60051,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 11.19,
         "unit": "in"
       },
       "glazing": {
@@ -60106,9 +60106,9 @@ export default {
     "productId": "book-art-28bec44600b36ed0766f",
     "title": "Julia's baby shower — Large print — Black frame",
     "artworkTitle": "Julia's baby shower",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD6X9DD3F1S11X14J1S7DD6X9DD3G1",
+    "sku": "5M144M8S7DD6X9DD3F1S10DD6X12DD3J1S7DD6X9DD3G1",
     "scale": 1,
     "imageSize": {
       "width": 7.3467,
@@ -60141,8 +60141,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.6,
+        "height": 12.3,
         "unit": "in"
       },
       "window": {
@@ -60162,8 +60162,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.6,
+        "height": 12.3,
         "unit": "in"
       },
       "glazing": {
@@ -60180,9 +60180,9 @@ export default {
     "productId": "book-art-28bec44600b36ed0766f",
     "title": "Julia's baby shower — Large print — White frame",
     "artworkTitle": "Julia's baby shower",
-    "amount": "76.00",
+    "amount": "71.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD6X9DD3F2S11X14J1S7DD6X9DD3G1",
+    "sku": "5M144M8S7DD6X9DD3F2S10DD6X12DD3J1S7DD6X9DD3G1",
     "scale": 1,
     "imageSize": {
       "width": 7.3467,
@@ -60215,8 +60215,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.6,
+        "height": 12.3,
         "unit": "in"
       },
       "window": {
@@ -60236,8 +60236,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.6,
+        "height": 12.3,
         "unit": "in"
       },
       "glazing": {
@@ -60254,9 +60254,9 @@ export default {
     "productId": "book-art-28bec44600b36ed0766f",
     "title": "Julia's baby shower — Large print — Natural wood frame",
     "artworkTitle": "Julia's baby shower",
-    "amount": "87.00",
+    "amount": "81.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD6X9DD3F7S11X14J1S7DD6X9DD3G1",
+    "sku": "5M144M8S7DD6X9DD3F7S10DD6X12DD3J1S7DD6X9DD3G1",
     "scale": 1,
     "imageSize": {
       "width": 7.3467,
@@ -60289,8 +60289,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.6,
+        "height": 12.3,
         "unit": "in"
       },
       "window": {
@@ -60310,8 +60310,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.6,
+        "height": 12.3,
         "unit": "in"
       },
       "glazing": {
@@ -60366,9 +60366,9 @@ export default {
     "productId": "book-art-28bec44600b36ed0766f",
     "title": "Julia's baby shower — Medium print — Black frame",
     "artworkTitle": "Julia's baby shower",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD76X7DD04F1S8X10J1S5DD76X7DD04G1",
+    "sku": "5M144M8S5DD76X7DD04F1S8DD76X10DD04J1S5DD76X7DD04G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.5067,
@@ -60401,8 +60401,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.76,
+        "height": 10.04,
         "unit": "in"
       },
       "window": {
@@ -60422,8 +60422,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.76,
+        "height": 10.04,
         "unit": "in"
       },
       "glazing": {
@@ -60440,9 +60440,9 @@ export default {
     "productId": "book-art-28bec44600b36ed0766f",
     "title": "Julia's baby shower — Medium print — White frame",
     "artworkTitle": "Julia's baby shower",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD76X7DD04F2S8X10J1S5DD76X7DD04G1",
+    "sku": "5M144M8S5DD76X7DD04F2S8DD76X10DD04J1S5DD76X7DD04G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.5067,
@@ -60475,8 +60475,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.76,
+        "height": 10.04,
         "unit": "in"
       },
       "window": {
@@ -60496,8 +60496,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.76,
+        "height": 10.04,
         "unit": "in"
       },
       "glazing": {
@@ -60514,9 +60514,9 @@ export default {
     "productId": "book-art-28bec44600b36ed0766f",
     "title": "Julia's baby shower — Medium print — Natural wood frame",
     "artworkTitle": "Julia's baby shower",
-    "amount": "68.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD76X7DD04F7S8X10J1S5DD76X7DD04G1",
+    "sku": "5M144M8S5DD76X7DD04F7S8DD76X10DD04J1S5DD76X7DD04G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.5067,
@@ -60549,8 +60549,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.76,
+        "height": 10.04,
         "unit": "in"
       },
       "window": {
@@ -60570,8 +60570,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.76,
+        "height": 10.04,
         "unit": "in"
       },
       "glazing": {
@@ -60626,9 +60626,9 @@ export default {
     "productId": "book-art-14d2876a55c720cbc908",
     "title": "Jane and Sid in Zihuatanejo — Large print — Black frame",
     "artworkTitle": "Jane and Sid in Zihuatanejo",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD8X9DD12F1S15X12J1S12DD8X9DD12G1",
+    "sku": "5M144M8S12DD8X9DD12F1S15DD8X12DD12J1S12DD8X9DD12G1",
     "scale": 1,
     "imageSize": {
       "width": 12.54,
@@ -60661,8 +60661,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.8,
+        "height": 12.12,
         "unit": "in"
       },
       "window": {
@@ -60682,8 +60682,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.8,
+        "height": 12.12,
         "unit": "in"
       },
       "glazing": {
@@ -60700,9 +60700,9 @@ export default {
     "productId": "book-art-14d2876a55c720cbc908",
     "title": "Jane and Sid in Zihuatanejo — Large print — White frame",
     "artworkTitle": "Jane and Sid in Zihuatanejo",
-    "amount": "101.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD8X9DD12F2S15X12J1S12DD8X9DD12G1",
+    "sku": "5M144M8S12DD8X9DD12F2S15DD8X12DD12J1S12DD8X9DD12G1",
     "scale": 1,
     "imageSize": {
       "width": 12.54,
@@ -60735,8 +60735,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.8,
+        "height": 12.12,
         "unit": "in"
       },
       "window": {
@@ -60756,8 +60756,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.8,
+        "height": 12.12,
         "unit": "in"
       },
       "glazing": {
@@ -60774,9 +60774,9 @@ export default {
     "productId": "book-art-14d2876a55c720cbc908",
     "title": "Jane and Sid in Zihuatanejo — Large print — Natural wood frame",
     "artworkTitle": "Jane and Sid in Zihuatanejo",
-    "amount": "113.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S12DD8X9DD12F7S15X12J1S12DD8X9DD12G1",
+    "sku": "5M144M8S12DD8X9DD12F7S15DD8X12DD12J1S12DD8X9DD12G1",
     "scale": 1,
     "imageSize": {
       "width": 12.54,
@@ -60809,8 +60809,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 15,
-        "height": 12,
+        "width": 15.8,
+        "height": 12.12,
         "unit": "in"
       },
       "window": {
@@ -60830,8 +60830,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 15,
-        "height": 12,
+        "width": 15.8,
+        "height": 12.12,
         "unit": "in"
       },
       "glazing": {
@@ -60886,9 +60886,9 @@ export default {
     "productId": "book-art-14d2876a55c720cbc908",
     "title": "Jane and Sid in Zihuatanejo — Medium print — Black frame",
     "artworkTitle": "Jane and Sid in Zihuatanejo",
-    "amount": "72.63",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD66X6DD9F1S12X9J1S9DD66X6DD9G1",
+    "sku": "5M144M8S9DD66X6DD9F1S12DD66X9DD9J1S9DD66X6DD9G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.4,
@@ -60921,8 +60921,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.66,
+        "height": 9.9,
         "unit": "in"
       },
       "window": {
@@ -60942,8 +60942,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.66,
+        "height": 9.9,
         "unit": "in"
       },
       "glazing": {
@@ -60960,9 +60960,9 @@ export default {
     "productId": "book-art-14d2876a55c720cbc908",
     "title": "Jane and Sid in Zihuatanejo — Medium print — White frame",
     "artworkTitle": "Jane and Sid in Zihuatanejo",
-    "amount": "72.63",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD66X6DD9F2S12X9J1S9DD66X6DD9G1",
+    "sku": "5M144M8S9DD66X6DD9F2S12DD66X9DD9J1S9DD66X6DD9G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.4,
@@ -60995,8 +60995,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.66,
+        "height": 9.9,
         "unit": "in"
       },
       "window": {
@@ -61016,8 +61016,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.66,
+        "height": 9.9,
         "unit": "in"
       },
       "glazing": {
@@ -61034,9 +61034,9 @@ export default {
     "productId": "book-art-14d2876a55c720cbc908",
     "title": "Jane and Sid in Zihuatanejo — Medium print — Natural wood frame",
     "artworkTitle": "Jane and Sid in Zihuatanejo",
-    "amount": "82.63",
+    "amount": "86.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD66X6DD9F7S12X9J1S9DD66X6DD9G1",
+    "sku": "5M144M8S9DD66X6DD9F7S12DD66X9DD9J1S9DD66X6DD9G1",
     "scale": 0.75,
     "imageSize": {
       "width": 9.4,
@@ -61069,8 +61069,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 12.66,
+        "height": 9.9,
         "unit": "in"
       },
       "window": {
@@ -61090,8 +61090,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 12.66,
+        "height": 9.9,
         "unit": "in"
       },
       "glazing": {
@@ -61148,7 +61148,7 @@ export default {
     "artworkTitle": "Jane and Sid in Zihuatanejo",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD52X4DD68F1S10X8J1S6DD52X4DD68G1",
+    "sku": "5M144M8S6DD52X4DD68F1S9DD84X8J1S6DD52X4DD68G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.26,
@@ -61181,7 +61181,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.84,
         "height": 8,
         "unit": "in"
       },
@@ -61202,7 +61202,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.84,
         "height": 8,
         "unit": "in"
       },
@@ -61222,7 +61222,7 @@ export default {
     "artworkTitle": "Jane and Sid in Zihuatanejo",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD52X4DD68F2S10X8J1S6DD52X4DD68G1",
+    "sku": "5M144M8S6DD52X4DD68F2S9DD84X8J1S6DD52X4DD68G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.26,
@@ -61255,7 +61255,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.84,
         "height": 8,
         "unit": "in"
       },
@@ -61276,7 +61276,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.84,
         "height": 8,
         "unit": "in"
       },
@@ -61294,9 +61294,9 @@ export default {
     "productId": "book-art-14d2876a55c720cbc908",
     "title": "Jane and Sid in Zihuatanejo — Small print — Natural wood frame",
     "artworkTitle": "Jane and Sid in Zihuatanejo",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD52X4DD68F7S10X8J1S6DD52X4DD68G1",
+    "sku": "5M144M8S6DD52X4DD68F7S9DD84X8J1S6DD52X4DD68G1",
     "scale": 0.5,
     "imageSize": {
       "width": 6.26,
@@ -61329,7 +61329,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.84,
         "height": 8,
         "unit": "in"
       },
@@ -61350,7 +61350,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.84,
         "height": 8,
         "unit": "in"
       },
@@ -61406,9 +61406,9 @@ export default {
     "productId": "book-art-c347459aa3f77f7213ae",
     "title": "Mike and Julie in Leon — Large print — Black frame",
     "artworkTitle": "Mike and Julie in Leon",
-    "amount": "81.00",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD04X6DD18F1S14X11J1S11DD04X6DD18G1",
+    "sku": "5M144M8S11DD04X6DD18F1S14DD04X9DD18J1S11DD04X6DD18G1",
     "scale": 1,
     "imageSize": {
       "width": 10.7733,
@@ -61441,8 +61441,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.04,
+        "height": 9.18,
         "unit": "in"
       },
       "window": {
@@ -61462,8 +61462,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.04,
+        "height": 9.18,
         "unit": "in"
       },
       "glazing": {
@@ -61480,9 +61480,9 @@ export default {
     "productId": "book-art-c347459aa3f77f7213ae",
     "title": "Mike and Julie in Leon — Large print — White frame",
     "artworkTitle": "Mike and Julie in Leon",
-    "amount": "81.00",
+    "amount": "76.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD04X6DD18F2S14X11J1S11DD04X6DD18G1",
+    "sku": "5M144M8S11DD04X6DD18F2S14DD04X9DD18J1S11DD04X6DD18G1",
     "scale": 1,
     "imageSize": {
       "width": 10.7733,
@@ -61515,8 +61515,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.04,
+        "height": 9.18,
         "unit": "in"
       },
       "window": {
@@ -61536,8 +61536,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.04,
+        "height": 9.18,
         "unit": "in"
       },
       "glazing": {
@@ -61554,9 +61554,9 @@ export default {
     "productId": "book-art-c347459aa3f77f7213ae",
     "title": "Mike and Julie in Leon — Large print — Natural wood frame",
     "artworkTitle": "Mike and Julie in Leon",
-    "amount": "92.00",
+    "amount": "87.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD04X6DD18F7S14X11J1S11DD04X6DD18G1",
+    "sku": "5M144M8S11DD04X6DD18F7S14DD04X9DD18J1S11DD04X6DD18G1",
     "scale": 1,
     "imageSize": {
       "width": 10.7733,
@@ -61589,8 +61589,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 14.04,
+        "height": 9.18,
         "unit": "in"
       },
       "window": {
@@ -61610,8 +61610,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 14.04,
+        "height": 9.18,
         "unit": "in"
       },
       "glazing": {
@@ -61666,9 +61666,9 @@ export default {
     "productId": "book-art-c347459aa3f77f7213ae",
     "title": "Mike and Julie in Leon — Medium print — Black frame",
     "artworkTitle": "Mike and Julie in Leon",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD34X4DD7F1S12X9J1S8DD34X4DD7G1",
+    "sku": "5M144M8S8DD34X4DD7F1S11DD64X8J1S8DD34X4DD7G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.0833,
@@ -61701,8 +61701,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.64,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -61722,8 +61722,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.64,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -61740,9 +61740,9 @@ export default {
     "productId": "book-art-c347459aa3f77f7213ae",
     "title": "Mike and Julie in Leon — Medium print — White frame",
     "artworkTitle": "Mike and Julie in Leon",
-    "amount": "67.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD34X4DD7F2S12X9J1S8DD34X4DD7G1",
+    "sku": "5M144M8S8DD34X4DD7F2S11DD64X8J1S8DD34X4DD7G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.0833,
@@ -61775,8 +61775,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.64,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -61796,8 +61796,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.64,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -61814,9 +61814,9 @@ export default {
     "productId": "book-art-c347459aa3f77f7213ae",
     "title": "Mike and Julie in Leon — Medium print — Natural wood frame",
     "artworkTitle": "Mike and Julie in Leon",
-    "amount": "77.63",
+    "amount": "75.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD34X4DD7F7S12X9J1S8DD34X4DD7G1",
+    "sku": "5M144M8S8DD34X4DD7F7S11DD64X8J1S8DD34X4DD7G1",
     "scale": 0.75,
     "imageSize": {
       "width": 8.0833,
@@ -61849,8 +61849,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.64,
+        "height": 8,
         "unit": "in"
       },
       "window": {
@@ -61870,8 +61870,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.64,
+        "height": 8,
         "unit": "in"
       },
       "glazing": {
@@ -61926,9 +61926,9 @@ export default {
     "productId": "book-art-616ff8378f27047b4a91",
     "title": "Jasmine in Austin — Large print — Black frame",
     "artworkTitle": "Jasmine in Austin",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD84X5DD24F1S8X10J1S4DD84X5DD24G1",
+    "sku": "5M144M8S4DD84X5DD24F1S8X8DD4J1S4DD84X5DD24G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5867,
@@ -61962,7 +61962,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 8.4,
         "unit": "in"
       },
       "window": {
@@ -61983,7 +61983,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 8.4,
         "unit": "in"
       },
       "glazing": {
@@ -62000,9 +62000,9 @@ export default {
     "productId": "book-art-616ff8378f27047b4a91",
     "title": "Jasmine in Austin — Large print — White frame",
     "artworkTitle": "Jasmine in Austin",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD84X5DD24F2S8X10J1S4DD84X5DD24G1",
+    "sku": "5M144M8S4DD84X5DD24F2S8X8DD4J1S4DD84X5DD24G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5867,
@@ -62036,7 +62036,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 8.4,
         "unit": "in"
       },
       "window": {
@@ -62057,7 +62057,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 8.4,
         "unit": "in"
       },
       "glazing": {
@@ -62074,9 +62074,9 @@ export default {
     "productId": "book-art-616ff8378f27047b4a91",
     "title": "Jasmine in Austin — Large print — Natural wood frame",
     "artworkTitle": "Jasmine in Austin",
-    "amount": "68.63",
+    "amount": "65.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD84X5DD24F7S8X10J1S4DD84X5DD24G1",
+    "sku": "5M144M8S4DD84X5DD24F7S8X8DD4J1S4DD84X5DD24G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5867,
@@ -62110,7 +62110,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 8.4,
         "unit": "in"
       },
       "window": {
@@ -62131,7 +62131,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 8.4,
         "unit": "in"
       },
       "glazing": {
@@ -62186,9 +62186,9 @@ export default {
     "productId": "book-art-8d1545e1ac13c99eb4ce",
     "title": "Aunt Fran and Cousin Hillary — Large print — Black frame",
     "artworkTitle": "Aunt Fran and Cousin Hillary",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD16X5DD86F1S12X9J1S8DD16X5DD86G1",
+    "sku": "5M144M8S8DD16X5DD86F1S11DD16X8DD86J1S8DD16X5DD86G1",
     "scale": 1,
     "imageSize": {
       "width": 7.9067,
@@ -62221,8 +62221,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.16,
+        "height": 8.86,
         "unit": "in"
       },
       "window": {
@@ -62242,8 +62242,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.16,
+        "height": 8.86,
         "unit": "in"
       },
       "glazing": {
@@ -62260,9 +62260,9 @@ export default {
     "productId": "book-art-8d1545e1ac13c99eb4ce",
     "title": "Aunt Fran and Cousin Hillary — Large print — White frame",
     "artworkTitle": "Aunt Fran and Cousin Hillary",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD16X5DD86F2S12X9J1S8DD16X5DD86G1",
+    "sku": "5M144M8S8DD16X5DD86F2S11DD16X8DD86J1S8DD16X5DD86G1",
     "scale": 1,
     "imageSize": {
       "width": 7.9067,
@@ -62295,8 +62295,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.16,
+        "height": 8.86,
         "unit": "in"
       },
       "window": {
@@ -62316,8 +62316,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.16,
+        "height": 8.86,
         "unit": "in"
       },
       "glazing": {
@@ -62334,9 +62334,9 @@ export default {
     "productId": "book-art-8d1545e1ac13c99eb4ce",
     "title": "Aunt Fran and Cousin Hillary — Large print — Natural wood frame",
     "artworkTitle": "Aunt Fran and Cousin Hillary",
-    "amount": "72.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S8DD16X5DD86F7S12X9J1S8DD16X5DD86G1",
+    "sku": "5M144M8S8DD16X5DD86F7S11DD16X8DD86J1S8DD16X5DD86G1",
     "scale": 1,
     "imageSize": {
       "width": 7.9067,
@@ -62369,8 +62369,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 12,
-        "height": 9,
+        "width": 11.16,
+        "height": 8.86,
         "unit": "in"
       },
       "window": {
@@ -62390,8 +62390,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 12,
-        "height": 9,
+        "width": 11.16,
+        "height": 8.86,
         "unit": "in"
       },
       "glazing": {
@@ -62448,7 +62448,7 @@ export default {
     "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD18X4DD46F1S10X8J1S6DD18X4DD46G1",
+    "sku": "5M144M8S6DD18X4DD46F1S9DD72X8J1S6DD18X4DD46G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.9267,
@@ -62481,7 +62481,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.72,
         "height": 8,
         "unit": "in"
       },
@@ -62502,7 +62502,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.72,
         "height": 8,
         "unit": "in"
       },
@@ -62522,7 +62522,7 @@ export default {
     "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD18X4DD46F2S10X8J1S6DD18X4DD46G1",
+    "sku": "5M144M8S6DD18X4DD46F2S9DD72X8J1S6DD18X4DD46G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.9267,
@@ -62555,7 +62555,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.72,
         "height": 8,
         "unit": "in"
       },
@@ -62576,7 +62576,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.72,
         "height": 8,
         "unit": "in"
       },
@@ -62594,9 +62594,9 @@ export default {
     "productId": "book-art-8d1545e1ac13c99eb4ce",
     "title": "Aunt Fran and Cousin Hillary — Medium print — Natural wood frame",
     "artworkTitle": "Aunt Fran and Cousin Hillary",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD18X4DD46F7S10X8J1S6DD18X4DD46G1",
+    "sku": "5M144M8S6DD18X4DD46F7S9DD72X8J1S6DD18X4DD46G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.9267,
@@ -62629,7 +62629,7 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.72,
         "height": 8,
         "unit": "in"
       },
@@ -62650,7 +62650,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.72,
         "height": 8,
         "unit": "in"
       },
@@ -62706,9 +62706,9 @@ export default {
     "productId": "book-art-466dc684227286c40502",
     "title": "Sister Claire — Large print — Black frame",
     "artworkTitle": "Sister Claire",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD36X7DD83F1S8X10J1S5DD36X7DD83G1",
+    "sku": "5M144M8S5DD36X7DD83F1S8DD36X10DD83J1S5DD36X7DD83G1",
     "scale": 1,
     "imageSize": {
       "width": 5.1067,
@@ -62741,8 +62741,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.36,
+        "height": 10.83,
         "unit": "in"
       },
       "window": {
@@ -62762,8 +62762,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.36,
+        "height": 10.83,
         "unit": "in"
       },
       "glazing": {
@@ -62780,9 +62780,9 @@ export default {
     "productId": "book-art-466dc684227286c40502",
     "title": "Sister Claire — Large print — White frame",
     "artworkTitle": "Sister Claire",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD36X7DD83F2S8X10J1S5DD36X7DD83G1",
+    "sku": "5M144M8S5DD36X7DD83F2S8DD36X10DD83J1S5DD36X7DD83G1",
     "scale": 1,
     "imageSize": {
       "width": 5.1067,
@@ -62815,8 +62815,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.36,
+        "height": 10.83,
         "unit": "in"
       },
       "window": {
@@ -62836,8 +62836,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.36,
+        "height": 10.83,
         "unit": "in"
       },
       "glazing": {
@@ -62854,9 +62854,9 @@ export default {
     "productId": "book-art-466dc684227286c40502",
     "title": "Sister Claire — Large print — Natural wood frame",
     "artworkTitle": "Sister Claire",
-    "amount": "68.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD36X7DD83F7S8X10J1S5DD36X7DD83G1",
+    "sku": "5M144M8S5DD36X7DD83F7S8DD36X10DD83J1S5DD36X7DD83G1",
     "scale": 1,
     "imageSize": {
       "width": 5.1067,
@@ -62889,8 +62889,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.36,
+        "height": 10.83,
         "unit": "in"
       },
       "window": {
@@ -62910,8 +62910,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.36,
+        "height": 10.83,
         "unit": "in"
       },
       "glazing": {
@@ -62968,7 +62968,7 @@ export default {
     "artworkTitle": "Sister Claire",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD08X5DD93F1S8X10J1S4DD08X5DD93G1",
+    "sku": "5M144M8S4DD08X5DD93F1S8X9DD85J1S4DD08X5DD93G1",
     "scale": 0.75,
     "imageSize": {
       "width": 3.8267,
@@ -63002,7 +63002,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 9.85,
         "unit": "in"
       },
       "window": {
@@ -63023,7 +63023,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 9.85,
         "unit": "in"
       },
       "glazing": {
@@ -63042,7 +63042,7 @@ export default {
     "artworkTitle": "Sister Claire",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD08X5DD93F2S8X10J1S4DD08X5DD93G1",
+    "sku": "5M144M8S4DD08X5DD93F2S8X9DD85J1S4DD08X5DD93G1",
     "scale": 0.75,
     "imageSize": {
       "width": 3.8267,
@@ -63076,7 +63076,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 9.85,
         "unit": "in"
       },
       "window": {
@@ -63097,7 +63097,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 9.85,
         "unit": "in"
       },
       "glazing": {
@@ -63114,9 +63114,9 @@ export default {
     "productId": "book-art-466dc684227286c40502",
     "title": "Sister Claire — Medium print — Natural wood frame",
     "artworkTitle": "Sister Claire",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD08X5DD93F7S8X10J1S4DD08X5DD93G1",
+    "sku": "5M144M8S4DD08X5DD93F7S8X9DD85J1S4DD08X5DD93G1",
     "scale": 0.75,
     "imageSize": {
       "width": 3.8267,
@@ -63150,7 +63150,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 9.85,
         "unit": "in"
       },
       "window": {
@@ -63171,7 +63171,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 9.85,
         "unit": "in"
       },
       "glazing": {
@@ -63226,9 +63226,9 @@ export default {
     "productId": "book-art-82127d1886ae57d5cb6e",
     "title": "Father Paul — Large print — Black frame",
     "artworkTitle": "Father Paul",
-    "amount": "134.00",
+    "amount": "119.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD08X14DD24F1S16X20J1S10DD08X14DD24G1",
+    "sku": "5M144M8S10DD08X14DD24F1S13DD08X17DD24J1S10DD08X14DD24G1",
     "scale": 1,
     "imageSize": {
       "width": 9.8267,
@@ -63261,8 +63261,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.08,
+        "height": 17.24,
         "unit": "in"
       },
       "window": {
@@ -63282,8 +63282,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.08,
+        "height": 17.24,
         "unit": "in"
       },
       "glazing": {
@@ -63300,9 +63300,9 @@ export default {
     "productId": "book-art-82127d1886ae57d5cb6e",
     "title": "Father Paul — Large print — White frame",
     "artworkTitle": "Father Paul",
-    "amount": "134.00",
+    "amount": "119.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD08X14DD24F2S16X20J1S10DD08X14DD24G1",
+    "sku": "5M144M8S10DD08X14DD24F2S13DD08X17DD24J1S10DD08X14DD24G1",
     "scale": 1,
     "imageSize": {
       "width": 9.8267,
@@ -63335,8 +63335,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.08,
+        "height": 17.24,
         "unit": "in"
       },
       "window": {
@@ -63356,8 +63356,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.08,
+        "height": 17.24,
         "unit": "in"
       },
       "glazing": {
@@ -63374,9 +63374,9 @@ export default {
     "productId": "book-art-82127d1886ae57d5cb6e",
     "title": "Father Paul — Large print — Natural wood frame",
     "artworkTitle": "Father Paul",
-    "amount": "149.00",
+    "amount": "132.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD08X14DD24F7S16X20J1S10DD08X14DD24G1",
+    "sku": "5M144M8S10DD08X14DD24F7S13DD08X17DD24J1S10DD08X14DD24G1",
     "scale": 1,
     "imageSize": {
       "width": 9.8267,
@@ -63409,8 +63409,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.08,
+        "height": 17.24,
         "unit": "in"
       },
       "window": {
@@ -63430,8 +63430,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.08,
+        "height": 17.24,
         "unit": "in"
       },
       "glazing": {
@@ -63486,9 +63486,9 @@ export default {
     "productId": "book-art-82127d1886ae57d5cb6e",
     "title": "Father Paul — Medium print — Black frame",
     "artworkTitle": "Father Paul",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD62X10DD74F1S11X14J1S7DD62X10DD74G1",
+    "sku": "5M144M8S7DD62X10DD74F1S10DD62X13DD74J1S7DD62X10DD74G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.3667,
@@ -63521,8 +63521,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.62,
+        "height": 13.74,
         "unit": "in"
       },
       "window": {
@@ -63542,8 +63542,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.62,
+        "height": 13.74,
         "unit": "in"
       },
       "glazing": {
@@ -63560,9 +63560,9 @@ export default {
     "productId": "book-art-82127d1886ae57d5cb6e",
     "title": "Father Paul — Medium print — White frame",
     "artworkTitle": "Father Paul",
-    "amount": "81.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD62X10DD74F2S11X14J1S7DD62X10DD74G1",
+    "sku": "5M144M8S7DD62X10DD74F2S10DD62X13DD74J1S7DD62X10DD74G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.3667,
@@ -63595,8 +63595,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.62,
+        "height": 13.74,
         "unit": "in"
       },
       "window": {
@@ -63616,8 +63616,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.62,
+        "height": 13.74,
         "unit": "in"
       },
       "glazing": {
@@ -63634,9 +63634,9 @@ export default {
     "productId": "book-art-82127d1886ae57d5cb6e",
     "title": "Father Paul — Medium print — Natural wood frame",
     "artworkTitle": "Father Paul",
-    "amount": "92.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD62X10DD74F7S11X14J1S7DD62X10DD74G1",
+    "sku": "5M144M8S7DD62X10DD74F7S10DD62X13DD74J1S7DD62X10DD74G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.3667,
@@ -63669,8 +63669,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.62,
+        "height": 13.74,
         "unit": "in"
       },
       "window": {
@@ -63690,8 +63690,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.62,
+        "height": 13.74,
         "unit": "in"
       },
       "glazing": {
@@ -63746,9 +63746,9 @@ export default {
     "productId": "book-art-82127d1886ae57d5cb6e",
     "title": "Father Paul — Small print — Black frame",
     "artworkTitle": "Father Paul",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD16X7DD24F1S8X10J1S5DD16X7DD24G1",
+    "sku": "5M144M8S5DD16X7DD24F1S8DD16X10DD24J1S5DD16X7DD24G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9067,
@@ -63781,8 +63781,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.16,
+        "height": 10.24,
         "unit": "in"
       },
       "window": {
@@ -63802,8 +63802,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.16,
+        "height": 10.24,
         "unit": "in"
       },
       "glazing": {
@@ -63820,9 +63820,9 @@ export default {
     "productId": "book-art-82127d1886ae57d5cb6e",
     "title": "Father Paul — Small print — White frame",
     "artworkTitle": "Father Paul",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD16X7DD24F2S8X10J1S5DD16X7DD24G1",
+    "sku": "5M144M8S5DD16X7DD24F2S8DD16X10DD24J1S5DD16X7DD24G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9067,
@@ -63855,8 +63855,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.16,
+        "height": 10.24,
         "unit": "in"
       },
       "window": {
@@ -63876,8 +63876,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.16,
+        "height": 10.24,
         "unit": "in"
       },
       "glazing": {
@@ -63896,7 +63896,7 @@ export default {
     "artworkTitle": "Father Paul",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD16X7DD24F7S8X10J1S5DD16X7DD24G1",
+    "sku": "5M144M8S5DD16X7DD24F7S8DD16X10DD24J1S5DD16X7DD24G1",
     "scale": 0.5,
     "imageSize": {
       "width": 4.9067,
@@ -63929,8 +63929,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.16,
+        "height": 10.24,
         "unit": "in"
       },
       "window": {
@@ -63950,8 +63950,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.16,
+        "height": 10.24,
         "unit": "in"
       },
       "glazing": {
@@ -64006,9 +64006,9 @@ export default {
     "productId": "book-art-c04c7e48687fe35e65f5",
     "title": "Maya Parbhoe @MayaPar25 — Large print — Black frame",
     "artworkTitle": "Maya Parbhoe @MayaPar25",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD77X5DD18F1S8X10J1S4DD77X5DD18G1",
+    "sku": "5M144M8S4DD77X5DD18F1S8DD01X8DD42J1S4DD77X5DD18G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5167,
@@ -64041,8 +64041,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.42,
         "unit": "in"
       },
       "window": {
@@ -64062,8 +64062,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.42,
         "unit": "in"
       },
       "glazing": {
@@ -64080,9 +64080,9 @@ export default {
     "productId": "book-art-c04c7e48687fe35e65f5",
     "title": "Maya Parbhoe @MayaPar25 — Large print — White frame",
     "artworkTitle": "Maya Parbhoe @MayaPar25",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD77X5DD18F2S8X10J1S4DD77X5DD18G1",
+    "sku": "5M144M8S4DD77X5DD18F2S8DD01X8DD42J1S4DD77X5DD18G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5167,
@@ -64115,8 +64115,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.42,
         "unit": "in"
       },
       "window": {
@@ -64136,8 +64136,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.42,
         "unit": "in"
       },
       "glazing": {
@@ -64154,9 +64154,9 @@ export default {
     "productId": "book-art-c04c7e48687fe35e65f5",
     "title": "Maya Parbhoe @MayaPar25 — Large print — Natural wood frame",
     "artworkTitle": "Maya Parbhoe @MayaPar25",
-    "amount": "68.63",
+    "amount": "65.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD77X5DD18F7S8X10J1S4DD77X5DD18G1",
+    "sku": "5M144M8S4DD77X5DD18F7S8DD01X8DD42J1S4DD77X5DD18G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5167,
@@ -64189,8 +64189,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.42,
         "unit": "in"
       },
       "window": {
@@ -64210,8 +64210,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.42,
         "unit": "in"
       },
       "glazing": {
@@ -64266,9 +64266,9 @@ export default {
     "productId": "book-art-ec22daff29e72f16eb76",
     "title": "Tomer Strolight @TomerStrolight — Large print — Black frame",
     "artworkTitle": "Tomer Strolight @TomerStrolight",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD83X5DD51F1S8X10J1S4DD83X5DD51G1",
+    "sku": "5M144M8S4DD83X5DD51F1S8DD01X8DD69J1S4DD83X5DD51G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5767,
@@ -64301,8 +64301,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.69,
         "unit": "in"
       },
       "window": {
@@ -64322,8 +64322,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.69,
         "unit": "in"
       },
       "glazing": {
@@ -64340,9 +64340,9 @@ export default {
     "productId": "book-art-ec22daff29e72f16eb76",
     "title": "Tomer Strolight @TomerStrolight — Large print — White frame",
     "artworkTitle": "Tomer Strolight @TomerStrolight",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD83X5DD51F2S8X10J1S4DD83X5DD51G1",
+    "sku": "5M144M8S4DD83X5DD51F2S8DD01X8DD69J1S4DD83X5DD51G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5767,
@@ -64375,8 +64375,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.69,
         "unit": "in"
       },
       "window": {
@@ -64396,8 +64396,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.69,
         "unit": "in"
       },
       "glazing": {
@@ -64414,9 +64414,9 @@ export default {
     "productId": "book-art-ec22daff29e72f16eb76",
     "title": "Tomer Strolight @TomerStrolight — Large print — Natural wood frame",
     "artworkTitle": "Tomer Strolight @TomerStrolight",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD83X5DD51F7S8X10J1S4DD83X5DD51G1",
+    "sku": "5M144M8S4DD83X5DD51F7S8DD01X8DD69J1S4DD83X5DD51G1",
     "scale": 1,
     "imageSize": {
       "width": 4.5767,
@@ -64449,8 +64449,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.69,
         "unit": "in"
       },
       "window": {
@@ -64470,8 +64470,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.69,
         "unit": "in"
       },
       "glazing": {
@@ -64528,7 +64528,7 @@ export default {
     "artworkTitle": "Osisipho Filane @FilaneSisipho",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5X7DD07F1S8X10J1S5X7DD07G1",
+    "sku": "5M144M8S5X7DD07F1S8X10DD07J1S5X7DD07G1",
     "scale": 1,
     "imageSize": {
       "width": 4.7467,
@@ -64562,7 +64562,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.07,
         "unit": "in"
       },
       "window": {
@@ -64583,7 +64583,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.07,
         "unit": "in"
       },
       "glazing": {
@@ -64602,7 +64602,7 @@ export default {
     "artworkTitle": "Osisipho Filane @FilaneSisipho",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5X7DD07F2S8X10J1S5X7DD07G1",
+    "sku": "5M144M8S5X7DD07F2S8X10DD07J1S5X7DD07G1",
     "scale": 1,
     "imageSize": {
       "width": 4.7467,
@@ -64636,7 +64636,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.07,
         "unit": "in"
       },
       "window": {
@@ -64657,7 +64657,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.07,
         "unit": "in"
       },
       "glazing": {
@@ -64676,7 +64676,7 @@ export default {
     "artworkTitle": "Osisipho Filane @FilaneSisipho",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S5X7DD07F7S8X10J1S5X7DD07G1",
+    "sku": "5M144M8S5X7DD07F7S8X10DD07J1S5X7DD07G1",
     "scale": 1,
     "imageSize": {
       "width": 4.7467,
@@ -64710,7 +64710,7 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 8,
-        "height": 10,
+        "height": 10.07,
         "unit": "in"
       },
       "window": {
@@ -64731,7 +64731,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 8,
-        "height": 10,
+        "height": 10.07,
         "unit": "in"
       },
       "glazing": {
@@ -64788,7 +64788,7 @@ export default {
     "artworkTitle": "Scarlette Melon @Scarlette_melon",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD05X7DD07F1S8X10J1S5DD05X7DD07G1",
+    "sku": "5M144M8S5DD05X7DD07F1S8DD05X10DD07J1S5DD05X7DD07G1",
     "scale": 1,
     "imageSize": {
       "width": 4.7933,
@@ -64821,8 +64821,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.05,
+        "height": 10.07,
         "unit": "in"
       },
       "window": {
@@ -64842,8 +64842,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.05,
+        "height": 10.07,
         "unit": "in"
       },
       "glazing": {
@@ -64862,7 +64862,7 @@ export default {
     "artworkTitle": "Scarlette Melon @Scarlette_melon",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD05X7DD07F2S8X10J1S5DD05X7DD07G1",
+    "sku": "5M144M8S5DD05X7DD07F2S8DD05X10DD07J1S5DD05X7DD07G1",
     "scale": 1,
     "imageSize": {
       "width": 4.7933,
@@ -64895,8 +64895,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.05,
+        "height": 10.07,
         "unit": "in"
       },
       "window": {
@@ -64916,8 +64916,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.05,
+        "height": 10.07,
         "unit": "in"
       },
       "glazing": {
@@ -64936,7 +64936,7 @@ export default {
     "artworkTitle": "Scarlette Melon @Scarlette_melon",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD05X7DD07F7S8X10J1S5DD05X7DD07G1",
+    "sku": "5M144M8S5DD05X7DD07F7S8DD05X10DD07J1S5DD05X7DD07G1",
     "scale": 1,
     "imageSize": {
       "width": 4.7933,
@@ -64969,8 +64969,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.05,
+        "height": 10.07,
         "unit": "in"
       },
       "window": {
@@ -64990,8 +64990,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.05,
+        "height": 10.07,
         "unit": "in"
       },
       "glazing": {
@@ -65046,9 +65046,9 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Large print — Black frame",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "124.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD31X11DD31F1S16X20J1S10DD31X11DD31G1",
+    "sku": "5M144M8S10DD31X11DD31F1S13DD31X14DD31J1S10DD31X11DD31G1",
     "scale": 1,
     "imageSize": {
       "width": 10.0567,
@@ -65081,8 +65081,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.31,
+        "height": 14.31,
         "unit": "in"
       },
       "window": {
@@ -65102,8 +65102,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.31,
+        "height": 14.31,
         "unit": "in"
       },
       "glazing": {
@@ -65120,9 +65120,9 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Large print — White frame",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "124.00",
+    "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD31X11DD31F2S16X20J1S10DD31X11DD31G1",
+    "sku": "5M144M8S10DD31X11DD31F2S13DD31X14DD31J1S10DD31X11DD31G1",
     "scale": 1,
     "imageSize": {
       "width": 10.0567,
@@ -65155,8 +65155,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.31,
+        "height": 14.31,
         "unit": "in"
       },
       "window": {
@@ -65176,8 +65176,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.31,
+        "height": 14.31,
         "unit": "in"
       },
       "glazing": {
@@ -65194,9 +65194,9 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Large print — Natural wood frame",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "139.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD31X11DD31F7S16X20J1S10DD31X11DD31G1",
+    "sku": "5M144M8S10DD31X11DD31F7S13DD31X14DD31J1S10DD31X11DD31G1",
     "scale": 1,
     "imageSize": {
       "width": 10.0567,
@@ -65229,8 +65229,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16,
-        "height": 20,
+        "width": 13.31,
+        "height": 14.31,
         "unit": "in"
       },
       "window": {
@@ -65250,8 +65250,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16,
-        "height": 20,
+        "width": 13.31,
+        "height": 14.31,
         "unit": "in"
       },
       "glazing": {
@@ -65306,9 +65306,9 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Medium print — Black frame",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "76.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD79X8DD54F1S11X14J1S7DD79X8DD54G1",
+    "sku": "5M144M8S7DD79X8DD54F1S10DD79X11DD54J1S7DD79X8DD54G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5367,
@@ -65341,8 +65341,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.79,
+        "height": 11.54,
         "unit": "in"
       },
       "window": {
@@ -65362,8 +65362,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.79,
+        "height": 11.54,
         "unit": "in"
       },
       "glazing": {
@@ -65380,9 +65380,9 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Medium print — White frame",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "76.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD79X8DD54F2S11X14J1S7DD79X8DD54G1",
+    "sku": "5M144M8S7DD79X8DD54F2S10DD79X11DD54J1S7DD79X8DD54G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5367,
@@ -65415,8 +65415,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.79,
+        "height": 11.54,
         "unit": "in"
       },
       "window": {
@@ -65436,8 +65436,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.79,
+        "height": 11.54,
         "unit": "in"
       },
       "glazing": {
@@ -65454,9 +65454,9 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Medium print — Natural wood frame",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "87.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD79X8DD54F7S11X14J1S7DD79X8DD54G1",
+    "sku": "5M144M8S7DD79X8DD54F7S10DD79X11DD54J1S7DD79X8DD54G1",
     "scale": 0.75,
     "imageSize": {
       "width": 7.5367,
@@ -65489,8 +65489,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.79,
+        "height": 11.54,
         "unit": "in"
       },
       "window": {
@@ -65510,8 +65510,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.79,
+        "height": 11.54,
         "unit": "in"
       },
       "glazing": {
@@ -65566,9 +65566,9 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Small print — Black frame",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD28X5DD78F1S8X10J1S5DD28X5DD78G1",
+    "sku": "5M144M8S5DD28X5DD78F1S8DD28X8DD78J1S5DD28X5DD78G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.0267,
@@ -65601,8 +65601,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.28,
+        "height": 8.78,
         "unit": "in"
       },
       "window": {
@@ -65622,8 +65622,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.28,
+        "height": 8.78,
         "unit": "in"
       },
       "glazing": {
@@ -65640,9 +65640,9 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Small print — White frame",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD28X5DD78F2S8X10J1S5DD28X5DD78G1",
+    "sku": "5M144M8S5DD28X5DD78F2S8DD28X8DD78J1S5DD28X5DD78G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.0267,
@@ -65675,8 +65675,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.28,
+        "height": 8.78,
         "unit": "in"
       },
       "window": {
@@ -65696,8 +65696,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.28,
+        "height": 8.78,
         "unit": "in"
       },
       "glazing": {
@@ -65714,9 +65714,9 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Small print — Natural wood frame",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "68.63",
+    "amount": "66.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD28X5DD78F7S8X10J1S5DD28X5DD78G1",
+    "sku": "5M144M8S5DD28X5DD78F7S8DD28X8DD78J1S5DD28X5DD78G1",
     "scale": 0.5,
     "imageSize": {
       "width": 5.0267,
@@ -65749,8 +65749,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.28,
+        "height": 8.78,
         "unit": "in"
       },
       "window": {
@@ -65770,8 +65770,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.28,
+        "height": 8.78,
         "unit": "in"
       },
       "glazing": {
@@ -65826,9 +65826,9 @@ export default {
     "productId": "book-art-deb92de6e72f7b3ce951",
     "title": "Untitled — Bitcoiners, page 64 — Large print — Black frame",
     "artworkTitle": "Untitled — Bitcoiners, page 64",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD3X6DD9F1S9X12J1S6DD3X6DD9G1",
+    "sku": "5M144M8S6DD3X6DD9F1S9DD3X9DD9J1S6DD3X6DD9G1",
     "scale": 1,
     "imageSize": {
       "width": 6.0467,
@@ -65861,8 +65861,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.3,
+        "height": 9.9,
         "unit": "in"
       },
       "window": {
@@ -65882,8 +65882,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.3,
+        "height": 9.9,
         "unit": "in"
       },
       "glazing": {
@@ -65900,9 +65900,9 @@ export default {
     "productId": "book-art-deb92de6e72f7b3ce951",
     "title": "Untitled — Bitcoiners, page 64 — Large print — White frame",
     "artworkTitle": "Untitled — Bitcoiners, page 64",
-    "amount": "62.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD3X6DD9F2S9X12J1S6DD3X6DD9G1",
+    "sku": "5M144M8S6DD3X6DD9F2S9DD3X9DD9J1S6DD3X6DD9G1",
     "scale": 1,
     "imageSize": {
       "width": 6.0467,
@@ -65935,8 +65935,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.3,
+        "height": 9.9,
         "unit": "in"
       },
       "window": {
@@ -65956,8 +65956,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.3,
+        "height": 9.9,
         "unit": "in"
       },
       "glazing": {
@@ -65974,9 +65974,9 @@ export default {
     "productId": "book-art-deb92de6e72f7b3ce951",
     "title": "Untitled — Bitcoiners, page 64 — Large print — Natural wood frame",
     "artworkTitle": "Untitled — Bitcoiners, page 64",
-    "amount": "72.63",
+    "amount": "69.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD3X6DD9F7S9X12J1S6DD3X6DD9G1",
+    "sku": "5M144M8S6DD3X6DD9F7S9DD3X9DD9J1S6DD3X6DD9G1",
     "scale": 1,
     "imageSize": {
       "width": 6.0467,
@@ -66009,8 +66009,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9,
-        "height": 12,
+        "width": 9.3,
+        "height": 9.9,
         "unit": "in"
       },
       "window": {
@@ -66030,8 +66030,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9,
-        "height": 12,
+        "width": 9.3,
+        "height": 9.9,
         "unit": "in"
       },
       "glazing": {
@@ -66086,9 +66086,9 @@ export default {
     "productId": "book-art-deb92de6e72f7b3ce951",
     "title": "Untitled — Bitcoiners, page 64 — Medium print — Black frame",
     "artworkTitle": "Untitled — Bitcoiners, page 64",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD79X5DD24F1S8X10J1S4DD79X5DD24G1",
+    "sku": "5M144M8S4DD79X5DD24F1S8DD01X8DD46J1S4DD79X5DD24G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.5367,
@@ -66121,8 +66121,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.46,
         "unit": "in"
       },
       "window": {
@@ -66142,8 +66142,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.46,
         "unit": "in"
       },
       "glazing": {
@@ -66160,9 +66160,9 @@ export default {
     "productId": "book-art-deb92de6e72f7b3ce951",
     "title": "Untitled — Bitcoiners, page 64 — Medium print — White frame",
     "artworkTitle": "Untitled — Bitcoiners, page 64",
-    "amount": "59.63",
+    "amount": "58.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD79X5DD24F2S8X10J1S4DD79X5DD24G1",
+    "sku": "5M144M8S4DD79X5DD24F2S8DD01X8DD46J1S4DD79X5DD24G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.5367,
@@ -66195,8 +66195,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.46,
         "unit": "in"
       },
       "window": {
@@ -66216,8 +66216,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.46,
         "unit": "in"
       },
       "glazing": {
@@ -66234,9 +66234,9 @@ export default {
     "productId": "book-art-deb92de6e72f7b3ce951",
     "title": "Untitled — Bitcoiners, page 64 — Medium print — Natural wood frame",
     "artworkTitle": "Untitled — Bitcoiners, page 64",
-    "amount": "68.63",
+    "amount": "65.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD79X5DD24F7S8X10J1S4DD79X5DD24G1",
+    "sku": "5M144M8S4DD79X5DD24F7S8DD01X8DD46J1S4DD79X5DD24G1",
     "scale": 0.75,
     "imageSize": {
       "width": 4.5367,
@@ -66269,8 +66269,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.46,
         "unit": "in"
       },
       "window": {
@@ -66290,8 +66290,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 8.46,
         "unit": "in"
       },
       "glazing": {
@@ -66346,9 +66346,9 @@ export default {
     "productId": "book-art-0f696788184bbba1d236",
     "title": "Myself — Large print — Black frame",
     "artworkTitle": "Myself",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD49X7DD08F1S8X10J1S4DD49X7DD08G1",
+    "sku": "5M144M8S4DD49X7DD08F1S8DD01X10DD6J1S4DD49X7DD08G1",
     "scale": 1,
     "imageSize": {
       "width": 4.2367,
@@ -66381,8 +66381,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.6,
         "unit": "in"
       },
       "window": {
@@ -66402,8 +66402,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.6,
         "unit": "in"
       },
       "glazing": {
@@ -66420,9 +66420,9 @@ export default {
     "productId": "book-art-0f696788184bbba1d236",
     "title": "Myself — Large print — White frame",
     "artworkTitle": "Myself",
-    "amount": "59.63",
+    "amount": "60.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD49X7DD08F2S8X10J1S4DD49X7DD08G1",
+    "sku": "5M144M8S4DD49X7DD08F2S8DD01X10DD6J1S4DD49X7DD08G1",
     "scale": 1,
     "imageSize": {
       "width": 4.2367,
@@ -66455,8 +66455,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.6,
         "unit": "in"
       },
       "window": {
@@ -66476,8 +66476,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.6,
         "unit": "in"
       },
       "glazing": {
@@ -66496,7 +66496,7 @@ export default {
     "artworkTitle": "Myself",
     "amount": "68.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD49X7DD08F7S8X10J1S4DD49X7DD08G1",
+    "sku": "5M144M8S4DD49X7DD08F7S8DD01X10DD6J1S4DD49X7DD08G1",
     "scale": 1,
     "imageSize": {
       "width": 4.2367,
@@ -66529,8 +66529,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.6,
         "unit": "in"
       },
       "window": {
@@ -66550,8 +66550,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 10.6,
         "unit": "in"
       },
       "glazing": {
@@ -66606,9 +66606,9 @@ export default {
     "productId": "book-art-50a7984f819bec72d1c7",
     "title": "Myself Painting on Mt Baker near Goat Lake — Large print — Black frame",
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
-    "amount": "81.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD85X10DD35F1S11X14J1S7DD85X10DD35G1",
+    "sku": "5M144M8S7DD85X10DD35F1S10DD85X13DD35J1S7DD85X10DD35G1",
     "scale": 1,
     "imageSize": {
       "width": 7.5933,
@@ -66641,8 +66641,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.85,
+        "height": 13.35,
         "unit": "in"
       },
       "window": {
@@ -66662,8 +66662,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.85,
+        "height": 13.35,
         "unit": "in"
       },
       "glazing": {
@@ -66680,9 +66680,9 @@ export default {
     "productId": "book-art-50a7984f819bec72d1c7",
     "title": "Myself Painting on Mt Baker near Goat Lake — Large print — White frame",
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
-    "amount": "81.00",
+    "amount": "79.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD85X10DD35F2S11X14J1S7DD85X10DD35G1",
+    "sku": "5M144M8S7DD85X10DD35F2S10DD85X13DD35J1S7DD85X10DD35G1",
     "scale": 1,
     "imageSize": {
       "width": 7.5933,
@@ -66715,8 +66715,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.85,
+        "height": 13.35,
         "unit": "in"
       },
       "window": {
@@ -66736,8 +66736,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.85,
+        "height": 13.35,
         "unit": "in"
       },
       "glazing": {
@@ -66754,9 +66754,9 @@ export default {
     "productId": "book-art-50a7984f819bec72d1c7",
     "title": "Myself Painting on Mt Baker near Goat Lake — Large print — Natural wood frame",
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
-    "amount": "92.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD85X10DD35F7S11X14J1S7DD85X10DD35G1",
+    "sku": "5M144M8S7DD85X10DD35F7S10DD85X13DD35J1S7DD85X10DD35G1",
     "scale": 1,
     "imageSize": {
       "width": 7.5933,
@@ -66789,8 +66789,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 11,
-        "height": 14,
+        "width": 10.85,
+        "height": 13.35,
         "unit": "in"
       },
       "window": {
@@ -66810,8 +66810,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 11,
-        "height": 14,
+        "width": 10.85,
+        "height": 13.35,
         "unit": "in"
       },
       "glazing": {
@@ -66866,9 +66866,9 @@ export default {
     "productId": "book-art-50a7984f819bec72d1c7",
     "title": "Myself Painting on Mt Baker near Goat Lake — Medium print — Black frame",
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD95X7DD82F1S8X10J1S5DD95X7DD82G1",
+    "sku": "5M144M8S5DD95X7DD82F1S8DD95X10DD82J1S5DD95X7DD82G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.6933,
@@ -66901,8 +66901,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.95,
+        "height": 10.82,
         "unit": "in"
       },
       "window": {
@@ -66922,8 +66922,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.95,
+        "height": 10.82,
         "unit": "in"
       },
       "glazing": {
@@ -66940,9 +66940,9 @@ export default {
     "productId": "book-art-50a7984f819bec72d1c7",
     "title": "Myself Painting on Mt Baker near Goat Lake — Medium print — White frame",
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
-    "amount": "59.63",
+    "amount": "61.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD95X7DD82F2S8X10J1S5DD95X7DD82G1",
+    "sku": "5M144M8S5DD95X7DD82F2S8DD95X10DD82J1S5DD95X7DD82G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.6933,
@@ -66975,8 +66975,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.95,
+        "height": 10.82,
         "unit": "in"
       },
       "window": {
@@ -66996,8 +66996,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.95,
+        "height": 10.82,
         "unit": "in"
       },
       "glazing": {
@@ -67014,9 +67014,9 @@ export default {
     "productId": "book-art-50a7984f819bec72d1c7",
     "title": "Myself Painting on Mt Baker near Goat Lake — Medium print — Natural wood frame",
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
-    "amount": "68.63",
+    "amount": "70.63",
     "currency": "USD",
-    "sku": "5M144M8S5DD95X7DD82F7S8X10J1S5DD95X7DD82G1",
+    "sku": "5M144M8S5DD95X7DD82F7S8DD95X10DD82J1S5DD95X7DD82G1",
     "scale": 0.75,
     "imageSize": {
       "width": 5.6933,
@@ -67049,8 +67049,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.95,
+        "height": 10.82,
         "unit": "in"
       },
       "window": {
@@ -67070,8 +67070,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.95,
+        "height": 10.82,
         "unit": "in"
       },
       "glazing": {
@@ -67128,7 +67128,7 @@ export default {
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD05X5DD3F1S8X10J1S4DD05X5DD3G1",
+    "sku": "5M144M8S4DD05X5DD3F1S8DD01X9DD26J1S4DD05X5DD3G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.7967,
@@ -67161,8 +67161,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.26,
         "unit": "in"
       },
       "window": {
@@ -67182,8 +67182,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.26,
         "unit": "in"
       },
       "glazing": {
@@ -67202,7 +67202,7 @@ export default {
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD05X5DD3F2S8X10J1S4DD05X5DD3G1",
+    "sku": "5M144M8S4DD05X5DD3F2S8DD01X9DD26J1S4DD05X5DD3G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.7967,
@@ -67235,8 +67235,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.26,
         "unit": "in"
       },
       "window": {
@@ -67256,8 +67256,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.26,
         "unit": "in"
       },
       "glazing": {
@@ -67274,9 +67274,9 @@ export default {
     "productId": "book-art-50a7984f819bec72d1c7",
     "title": "Myself Painting on Mt Baker near Goat Lake — Small print — Natural wood frame",
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S4DD05X5DD3F7S8X10J1S4DD05X5DD3G1",
+    "sku": "5M144M8S4DD05X5DD3F7S8DD01X9DD26J1S4DD05X5DD3G1",
     "scale": 0.5,
     "imageSize": {
       "width": 3.7967,
@@ -67309,8 +67309,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.26,
         "unit": "in"
       },
       "window": {
@@ -67330,8 +67330,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8,
-        "height": 10,
+        "width": 8.01,
+        "height": 9.26,
         "unit": "in"
       },
       "glazing": {
@@ -67386,9 +67386,9 @@ export default {
     "productId": "book-art-4c6fb3817fed4e5a6195",
     "title": "Painting in Black Rock City — Large print — Black frame",
     "artworkTitle": "Painting in Black Rock City",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD31X7DD28F1S14X11J1S8DD31X7DD28G1",
+    "sku": "5M144M8S8DD31X7DD28F1S11DD31X10DD28J1S8DD31X7DD28G1",
     "scale": 1,
     "imageSize": {
       "width": 8.05,
@@ -67421,8 +67421,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.31,
+        "height": 10.28,
         "unit": "in"
       },
       "window": {
@@ -67442,8 +67442,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.31,
+        "height": 10.28,
         "unit": "in"
       },
       "glazing": {
@@ -67460,9 +67460,9 @@ export default {
     "productId": "book-art-4c6fb3817fed4e5a6195",
     "title": "Painting in Black Rock City — Large print — White frame",
     "artworkTitle": "Painting in Black Rock City",
-    "amount": "71.00",
+    "amount": "64.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD31X7DD28F2S14X11J1S8DD31X7DD28G1",
+    "sku": "5M144M8S8DD31X7DD28F2S11DD31X10DD28J1S8DD31X7DD28G1",
     "scale": 1,
     "imageSize": {
       "width": 8.05,
@@ -67495,8 +67495,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.31,
+        "height": 10.28,
         "unit": "in"
       },
       "window": {
@@ -67516,8 +67516,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.31,
+        "height": 10.28,
         "unit": "in"
       },
       "glazing": {
@@ -67534,9 +67534,9 @@ export default {
     "productId": "book-art-4c6fb3817fed4e5a6195",
     "title": "Painting in Black Rock City — Large print — Natural wood frame",
     "artworkTitle": "Painting in Black Rock City",
-    "amount": "82.00",
+    "amount": "74.00",
     "currency": "USD",
-    "sku": "5M144M8S8DD31X7DD28F7S14X11J1S8DD31X7DD28G1",
+    "sku": "5M144M8S8DD31X7DD28F7S11DD31X10DD28J1S8DD31X7DD28G1",
     "scale": 1,
     "imageSize": {
       "width": 8.05,
@@ -67569,8 +67569,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14,
-        "height": 11,
+        "width": 11.31,
+        "height": 10.28,
         "unit": "in"
       },
       "window": {
@@ -67590,8 +67590,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14,
-        "height": 11,
+        "width": 11.31,
+        "height": 10.28,
         "unit": "in"
       },
       "glazing": {
@@ -67648,7 +67648,7 @@ export default {
     "artworkTitle": "Painting in Black Rock City",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD29X5DD52F1S10X8J1S6DD29X5DD52G1",
+    "sku": "5M144M8S6DD29X5DD52F1S9DD29X8DD52J1S6DD29X5DD52G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.0333,
@@ -67681,8 +67681,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.29,
+        "height": 8.52,
         "unit": "in"
       },
       "window": {
@@ -67702,8 +67702,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.29,
+        "height": 8.52,
         "unit": "in"
       },
       "glazing": {
@@ -67722,7 +67722,7 @@ export default {
     "artworkTitle": "Painting in Black Rock City",
     "amount": "59.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD29X5DD52F2S10X8J1S6DD29X5DD52G1",
+    "sku": "5M144M8S6DD29X5DD52F2S9DD29X8DD52J1S6DD29X5DD52G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.0333,
@@ -67755,8 +67755,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.29,
+        "height": 8.52,
         "unit": "in"
       },
       "window": {
@@ -67776,8 +67776,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.29,
+        "height": 8.52,
         "unit": "in"
       },
       "glazing": {
@@ -67794,9 +67794,9 @@ export default {
     "productId": "book-art-4c6fb3817fed4e5a6195",
     "title": "Painting in Black Rock City — Medium print — Natural wood frame",
     "artworkTitle": "Painting in Black Rock City",
-    "amount": "68.63",
+    "amount": "67.63",
     "currency": "USD",
-    "sku": "5M144M8S6DD29X5DD52F7S10X8J1S6DD29X5DD52G1",
+    "sku": "5M144M8S6DD29X5DD52F7S9DD29X8DD52J1S6DD29X5DD52G1",
     "scale": 0.75,
     "imageSize": {
       "width": 6.0333,
@@ -67829,8 +67829,8 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
-        "height": 8,
+        "width": 9.29,
+        "height": 8.52,
         "unit": "in"
       },
       "window": {
@@ -67850,8 +67850,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
-        "height": 8,
+        "width": 9.29,
+        "height": 8.52,
         "unit": "in"
       },
       "glazing": {

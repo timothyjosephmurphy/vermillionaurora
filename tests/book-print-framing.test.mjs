@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {products} from '../catalog/catalog.mjs';
 import {config,papers,printOptions} from '../catalog/prints.mjs';
 import artworks from '../catalog/book-prints.json' with {type:'json'};
+import {framedMatLayout} from '../catalog/matting.mjs';
+import mats from '../catalog/finerworks-mats.json' with {type:'json'};
 
 test('every enabled book print size offers three ready, supplier-quoted frames',()=>{
   const ids=Object.keys(artworks).filter(id=>artworks[id].enabled);
@@ -17,6 +19,7 @@ test('every enabled book print size offers three ready, supplier-quoted frames',
       for(const framed of option.frameOptions){
         assert(framed.ready,`${framed.id}: ${framed.reasons.join('; ')}`);
         assert(framed.paper.sku);assert(framed.mat&&framed.frame);
+        assert.deepEqual(framed.mat,framedMatLayout(option.paper,option.image,mats.materials[0]));
         assert(Number(framed.amount)>Number(option.amount));
         assert.equal(framed.asset.url,option.asset.url);assert.equal(framed.asset.sha256,option.asset.sha256);
       }
