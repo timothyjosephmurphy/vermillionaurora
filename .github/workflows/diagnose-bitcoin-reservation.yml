@@ -1,0 +1,21 @@
+name: Diagnose pending Bitcoin reservation
+on:
+  push:
+    branches: [ops/diagnose-bitcoin-reservation]
+    paths: ['.github/workflows/diagnose-bitcoin-reservation.yml']
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Read Worker exception categories without request or customer data
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 3c1fddf0f4f4fc9c84594757d2e1bda0
+        run: python3 scripts/diagnose-bitcoin-reservation.py
