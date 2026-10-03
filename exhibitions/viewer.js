@@ -1,16 +1,18 @@
 // Enhance the existing gallery; keep its links available if JavaScript is disabled.
 document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .painting-gallery-page .product-grid, .painting-gallery-page .painting-list, .book-gallery-page .painting-list').forEach(grid => {
   let items = [...grid.children].map(node => {
-    const img = node.querySelector('img');
+    const img = node.querySelector('img, svg[data-image-src]');
+    const orientedImage = img?.matches('svg[data-image-src]') ? img : null;
+    const imageSrc = orientedImage?.dataset.imageSrc || img?.src;
     const product = node.querySelector('.product-title-link');
     if (product) {
       const imageLink = node.querySelector('.gallery-product-image, .product-image');
       const background = imageLink && getComputedStyle(imageLink).backgroundImage.match(/url\(["']?(.*?)["']?\)/);
-      const src = img?.src || background?.[1];
-      return src ? {id:node.dataset.productId,node,price:Number(node.dataset.price)||null,area:Number(node.dataset.area)||null,printReady:node.dataset.printReady==='true',src, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
+      const src = imageSrc || background?.[1];
+      return src ? {id:node.dataset.productId,node,price:Number(node.dataset.price)||null,area:Number(node.dataset.area)||null,printReady:node.dataset.printReady==='true',src, orientedImage, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
     }
     const video = node.querySelector('video');
-    return img ? {id:node.dataset.productId,src: img.src, alt: img.alt, caption: node.dataset.caption, product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), caption: video.dataset.caption || '', lazyPreview: video.dataset.previewLazy === 'true', video: true} : null;
+    return img ? {id:node.dataset.productId,src: imageSrc, orientedImage, alt: img.dataset.imageAlt || img.alt, caption: node.dataset.caption, product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), caption: video.dataset.caption || '', lazyPreview: video.dataset.previewLazy === 'true', video: true} : null;
   }).filter(Boolean);
   if (!items.length) return;
   const allItems = items;
@@ -37,6 +39,17 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
     else video.addEventListener('loadedmetadata', showFirstFrame, {once:true});
   }
   let index = 0, paused = motion.matches, visible = false, hovered = false, focused = false, timer;
+  function createImage(item, alt) {
+    if (item.orientedImage) {
+      const image = item.orientedImage.cloneNode(true);
+      image.setAttribute('aria-label', alt);
+      if (!alt) image.setAttribute('aria-hidden', 'true');
+      return image;
+    }
+    const image = document.createElement('img');
+    image.src = item.src; image.alt = alt; image.loading = 'lazy'; image.decoding = 'async';
+    return image;
+  }
   function buildItems() {
     stage.replaceChildren(); thumbs.replaceChildren();
   items.forEach((item, i) => {
@@ -51,7 +64,7 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
       label.textContent = item.caption || item.alt || `Exhibition video ${i + 1}`;
       button.append(label);
       item.thumbButton = button;
-    } else { const img = document.createElement('img'); img.src = item.src; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async'; button.append(img); }
+    } else { button.append(createImage(item, '')); }
     button.addEventListener('click', () => show(i));
     thumbs.append(button);
   });
@@ -82,8 +95,8 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
         });
         cell.append(preview);
       } else {
-        const media = document.createElement(item.video ? 'video' : 'img');
-        media.src = item.src;
+        const media = item.video ? document.createElement('video') : createImage(item, item.alt || 'Exhibition image');
+        if (item.video) media.src = item.src;
         if (item.video) { media.controls = true; media.playsInline = true; primeVideoFrame(media); }
         else { media.alt = item.alt || 'Exhibition image'; media.loading = 'lazy'; media.decoding = 'async'; }
         cell.append(media);
@@ -140,8 +153,8 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
     }
     if (!threeUp) {
     stage.querySelector('video')?.pause();
-    const media = document.createElement(item.video ? 'video' : 'img');
-    media.src = item.src;
+    const media = item.video ? document.createElement('video') : createImage(item, item.alt || `Exhibition image ${index + 1}`);
+    if (item.video) media.src = item.src;
     if (item.video) { media.controls = true; media.playsInline = true; primeVideoFrame(media); media.setAttribute('aria-label', item.alt || 'Exhibition video'); media.addEventListener('ended', () => { if (!paused) show(index + 1); }); }
     else { media.alt = item.alt || `Exhibition image ${index + 1}`; media.decoding = 'async'; }
     stage.replaceChildren(media);
