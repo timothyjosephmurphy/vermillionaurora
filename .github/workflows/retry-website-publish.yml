@@ -19,7 +19,7 @@ jobs:
         run: test -n "$WEBSITE_TOKEN"
       - uses: actions/checkout@v4
         with:
-          ref: 5380e5ca66124f604e07133219fb87696b8ddd5c
+          ref: 993760040164ea9dabcc9f440bc94e23a0695565
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -32,7 +32,9 @@ jobs:
           import fs from 'node:fs';
           const m=JSON.parse(fs.readFileSync('catalog/book-galleries.json','utf8'));
           const g=m.sections.find(s=>s.id==='watercolor-landscapes-travels');
-          if(g.artworks.length!==40||g.artworks.includes('book-art-87cf2a732259b313f5ab'))throw Error('Unexpected Travels inventory');
+          if(!g.artworks.slice(0,11).every(id=>m.artworks.find(a=>a.id===id).title.includes('El Salvador')))throw Error('El Salvador must lead the gallery');
+          if(g.artworks.some(id=>m.artworks.find(a=>a.id===id).title.includes('Untitled')))throw Error('Unclean gallery titles');
+          if(g.artworks.length!==31||g.artworks.includes('book-art-87cf2a732259b313f5ab'))throw Error('Unexpected Travels inventory');
           NODE
       - name: Publish existing website Worker from approved release
         uses: cloudflare/wrangler-action@v4
@@ -46,10 +48,10 @@ jobs:
           node --input-type=module <<'NODE'
           let ready=false;
           for(let i=0;i<18;i++){
-            const r=await fetch('https://vermillionaurora.com/book-galleries/watercolor-landscapes-travels/?verify=5380e5ca66124f604e07133219fb87696b8ddd5c-'+i,{cache:'no-store',signal:AbortSignal.timeout(15000)});
+            const r=await fetch('https://vermillionaurora.com/book-galleries/watercolor-landscapes-travels/?verify=993760040164ea9dabcc9f440bc94e23a0695565-'+i,{cache:'no-store',signal:AbortSignal.timeout(15000)});
             const html=await r.text();
             const count=(html.match(/class="painting-list-row"/g)||[]).length;
-            if(r.ok&&count===40&&!html.includes('book-art-87cf2a732259b313f5ab')){ready=true;console.log('Live Travels gallery verified: 40 works; Puerto Vallarta sunrise absent.');break;}
+            if(r.ok&&count===31&&!html.includes('Untitled')&&!html.includes('book-art-87cf2a732259b313f5ab')&&html.includes('book-art-7599e02b4ff7013e7261')){ready=true;console.log('Live Travels gallery verified: 31 works; requested gallery curation deployed.');break;}
             await new Promise(resolve=>setTimeout(resolve,5000));
           }
           if(!ready)throw Error('Live Travels gallery still serves the previous content');
