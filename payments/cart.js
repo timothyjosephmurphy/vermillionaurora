@@ -251,7 +251,11 @@
     const items=root.querySelector('[data-order-items]');items.replaceChildren();for(const i of current.quote?.items||[]){const row=node('div',undefined,'cart-order-item');row.append(node('span',`${i.title}${i.quantity>1?` × ${i.quantity}`:''}`),node('span',money(Number(i.amount)*i.quantity)));items.append(row);}
     const breakdown=root.querySelector('[data-order-breakdown]');breakdown.replaceChildren();if(current.quote)for(const [label,value] of [['Artwork',current.quote.base],['Shipping',current.quote.shipping],['Tax',current.quote.tax]]){const line=node('div');line.append(node('dt',label),node('dd',money(value)));breakdown.append(line);}
     root.querySelector('[data-order-total]').textContent=current.quote?`${current.status==='paid'?'Total paid':'Order total'}: ${money(current.quote.total)} USD · Includes shipping and tax`:'';
-    const resume=root.querySelector('[data-order-resume]');resume.hidden=!(current.url&&['pending','processing'].includes(current.status));if(!resume.hidden)resume.href=current.url;
+    const resume=root.querySelector('[data-order-resume]');
+    const receivedBitcoin=current.method==='bitcoin'&&['processing','settling','paid'].includes(current.status);
+    resume.hidden=!(current.url&&(current.status==='pending'||receivedBitcoin));
+    resume.textContent=receivedBitcoin?(current.status==='processing'?'View received payment':'View successful payment'):'Continue payment';
+    if(!resume.hidden)resume.href=current.url;else resume.removeAttribute('href');
     root.querySelector('[data-order-cancel]').hidden=current.method!=='paypal'||current.status!=='pending';
     root.querySelector('[data-order-check]').hidden=['paid','expired','cancelled','unavailable','missing','quoted'].includes(current.status);
     root.querySelector('[data-order-back]').hidden=pending(current);root.querySelector('[data-order-print]').hidden=current.status!=='paid';
