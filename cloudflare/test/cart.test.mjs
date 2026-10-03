@@ -241,6 +241,7 @@ it('diagnoses a reserved Bitcoin invoice without exposing private payment or buy
   invoices[0].amount=quote().total+'000000';
   const result=await order.bitcoinDiagnostics();
   expect(result.matches).toBe(1);expect(result.checks.amount).toBe(true);expect(result.checks.amountFormat).toBe(false);
+  expect(result.hasAlarm).toBe(true);expect(result.paymentMethodsValid).toBe(true);expect(result.paymentCount).toBe(0);
   const text=JSON.stringify(result);for(const privateValue of [id,'INV0','buyer@example.test','123 Main St','STORE'])expect(text).not.toContain(privateValue);
   expect((await read(order)).status).toBe('pending');expect(mailCount).toBe(0);
 });
