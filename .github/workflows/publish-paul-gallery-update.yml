@@ -1,0 +1,92 @@
+name: Publish reviewed Paul Murphy gallery update
+on:
+  push:
+    branches: [ops/publish-paul-gallery-update]
+    paths: ['.github/workflows/publish-paul-gallery-update.yml']
+permissions:
+  contents: read
+concurrency:
+  group: website-production-retry
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 0cb6af9a9c38b226068b6fc76b486664db7365cb
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Confirm reviewed release
+        run: |
+          test "$(git ls-remote origin refs/heads/release | cut -f1)" = "$(git rev-parse HEAD)"
+      - name: Publish approved website release
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          command: deploy --config wrangler.jsonc
+      - name: Install browser for the visual check
+        run: npx playwright install --only-shell chromium
+      - name: Verify live gallery and full-screen image
+        run: |
+          cat > /tmp/verify-paul-gallery.mjs <<'NODE'
+          import assert from 'node:assert/strict';
+          import { chromium } from '/home/runner/work/vermillionaurora/vermillionaurora/node_modules/playwright/index.mjs';
+          import fs from 'node:fs';
+          const browser=await chromium.launch();
+          const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+          const base='https://vermillionaurora.com';
+          const version='04d7acca2bc6a25e2c53';
+          const removed=['paul-murphy-painting-28','paul-murphy-painting-38','paul-murphy-painting-44','paul-murphy-painting-82'];
+          fs.mkdirSync('/tmp/gallery-verification',{recursive:true});
+          await page.goto(base+'/exhibitions/paul-murphy/?gallery-release=0cb6af9a9c38b226068b6fc76b486664db7365cb',{waitUntil:'domcontentloaded'});
+          await page.locator('.ev-stage').waitFor();
+          assert.equal(await page.locator('meta[name="catalog-version"]').getAttribute('content'),version);
+          for(const id of removed)assert.equal(await page.locator('.exhibition-grid [data-product-id="'+id+'"]').count(),0,id);
+          for(const id of ['paul-murphy-painting-72','paul-murphy-painting-74'])assert((await page.locator('.exhibition-grid [data-product-id="'+id+'"]').getAttribute('data-caption')).endsWith('$300 USD'),id);
+          for(const selector of ['.ev-stage .oriented-painting-image','.ev-thumbs .oriented-painting-image']){
+           const image=page.locator(selector);
+           assert.equal(await image.count(),1,selector);
+           assert.equal(await image.locator('image').getAttribute('transform'),'translate(0 3450) rotate(-90)');
+          }
+          await page.locator('.ev-thumbs button').nth(8).click();
+          await page.screenshot({path:'/tmp/gallery-verification/gallery.png'});
+          await page.goto(base+'/products/paul-murphy-painting-8/?gallery-release=0cb6af9a9c38b226068b6fc76b486664db7365cb',{waitUntil:'domcontentloaded'});
+          for(const width of [1440,390]){
+           await page.setViewportSize({width,height:width===390?844:1000});
+           const trigger=page.locator('.painting-image-trigger');
+           await trigger.click();
+           const dialog=page.locator('.painting-lightbox');
+           await dialog.waitFor({state:'visible'});
+           const fits=await dialog.locator('svg').evaluate(svg=>{
+            const image=svg.querySelector('image'),box=image.getBBox(),matrix=image.getScreenCTM();
+            const points=[[box.x,box.y],[box.x+box.width,box.y],[box.x,box.y+box.height],[box.x+box.width,box.y+box.height]].map(([x,y])=>new DOMPoint(x,y).matrixTransform(matrix));
+            const rect=svg.getBoundingClientRect();
+            return points.every(p=>p.x>=rect.left-1&&p.x<=rect.right+1&&p.y>=rect.top-1&&p.y<=rect.bottom+1);
+           });
+           assert(fits,'Complete image fits the viewer at width '+width);
+           await page.screenshot({path:'/tmp/gallery-verification/viewer-'+width+'.png'});
+           await dialog.locator('image').click();
+           assert(await dialog.isVisible(),'Clicking artwork keeps the viewer open');
+           await page.mouse.click(5,width===390?400:500);
+           await dialog.waitFor({state:'hidden'});
+           assert(await trigger.evaluate(el=>el===document.activeElement),'Focus returns to the painting link');
+          }
+          await browser.close();
+          console.log('Verified gallery removals, $300 prices, rotation, and complete desktop/mobile full-screen viewing.');
+          
+          NODE
+          node /tmp/verify-paul-gallery.mjs
+      - name: Save visual verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: paul-gallery-verification
+          path: /tmp/gallery-verification
+          retention-days: 3
