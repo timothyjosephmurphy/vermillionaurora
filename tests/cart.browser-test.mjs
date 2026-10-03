@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import {catalogVersion,byId} from '../catalog/catalog.mjs';
 const root=path.resolve('dist'),origin='https://vermillionaurora.com',ids=['painting-portrait-in-green','painting-portrait-in-gold'];
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']}:{})});
-const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,startedHold=false,deferBitcoin=false,method='square',productMethods=['paypal','square','bitcoin'];const reservations=new Map();
+const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,failCatalog=0,startedHold=false,deferBitcoin=false,method='square',productMethods=['paypal','square','bitcoin'];const reservations=new Map();
 page.on('pageerror',e=>errors.push(e.message));
 const product=id=>({id,title:byId[id].title,amount:byId[id].listing.price.amount,methods:productMethods,status:availability});
 await page.route('**/*',async route=>{
@@ -13,6 +13,7 @@ await page.route('**/*',async route=>{
  if(req.method()==='OPTIONS')return route.fulfill({status:204,headers:{'Access-Control-Allow-Origin':origin,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type'}});
   if(url.pathname.startsWith('/checkout/cart/')){
   const action=url.pathname.split('/').at(-1);const body=req.method()==='POST'?req.postDataJSON():null;calls.push({action,body});let result;
+  if(action==='catalog'&&failCatalog>0){failCatalog--;return route.fulfill({status:503,headers:{'Access-Control-Allow-Origin':origin},json:{error:'Availability is temporarily unavailable.'}});}
   if(action==='catalog')result={enabled,version:catalogVersion,products:ids.map(product),square:{applicationId:'sq0idp-test',locationId:'LOCATION',mode:'live'}};
   if(action==='hold'){
    if(startedHold)return route.fulfill({status:409,headers:{'Access-Control-Allow-Origin':origin},json:{error:'Checkout has already started.',code:'CHECKOUT_STARTED'}});
@@ -113,5 +114,31 @@ try{
  assert.equal(calls.filter(c=>c.action==='start').length,startsBefore+1,'polling resumes the invoice without creating another payment');
  deferBitcoin=false;order={...order,status:'expired'};await page.goto(origin+'/cart/');await page.locator('.cart-line').nth(1).waitFor();
  productMethods=[];await page.evaluate(id=>localStorage.setItem('va-cart-v1',JSON.stringify([{id,quantity:1}])),ids[0]);await page.goto(origin+'/cart/');await page.locator('.cart-line').waitFor();await fill();assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'payment-method availability does not block a shipping/tax quote');
- assert.deepEqual(errors,[]);console.log('PASS: cart submit explains invalid fields, accepts autofill, resumes delayed Bitcoin handoffs, and preserves desktop/mobile checkout behavior.');
+ // Failed and unfinished prior checkouts keep their payment identity, but never
+ // leave Calculate disabled. A retry can recover an expired order and quote.
+ productMethods=['paypal','square','bitcoin'];order={...order,status:'pending',method:'bitcoin'};
+ const savedAttempt={orderId:order.orderId,key:order.key};
+ await page.evaluate(saved=>localStorage.setItem('va-cart-order-v1',JSON.stringify(saved)),savedAttempt);
+ failStatus=true;await page.goto(origin+'/cart/');await page.locator('.cart-line').waitFor();await fill();
+ const quoteCount=calls.filter(c=>c.action==='quote').length;
+ assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'a failed status lookup can be retried without clearing the invoice');
+ await page.getByRole('button',{name:'Calculate shipping & tax'}).click();
+ await page.locator('[data-cart-quote-feedback]').getByText('Payment status is temporarily unavailable. Please check again.').waitFor();
+ assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'a failed retry restores the original button label and enabled state');
+ assert.equal(calls.filter(c=>c.action==='quote').length,quoteCount);
+ assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-order-v1'))),savedAttempt);
+ failStatus=false;await page.getByRole('button',{name:'Calculate shipping & tax'}).click();
+ await page.getByRole('link',{name:'Open existing checkout',exact:true}).waitFor();
+ assert.equal(calls.filter(c=>c.action==='quote').length,quoteCount,'an active invoice blocks a duplicate quote');
+ assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-order-v1'))),savedAttempt);
+ order={...order,status:'expired'};await page.getByRole('button',{name:'Calculate shipping & tax'}).click();
+ await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();
+ assert.equal(calls.filter(c=>c.action==='quote').length,quoteCount+1,'an expired invoice recovers on the same button click');
+ assert.notEqual(order.orderId,savedAttempt.orderId,'the completed checkout identity is not reused');
+ // A temporary catalog failure also recovers on submit, without a page reload.
+ failCatalog=1;await page.goto(origin+'/cart/');await page.locator('.cart-line').waitFor();await fill();
+ assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'a failed availability check does not disable retry');
+ await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();
+ assert.equal(calls.filter(c=>c.action==='quote').length,quoteCount+2);
+ assert.deepEqual(errors,[]);console.log('PASS: quote retries recover failed availability and expired checkouts, preserve active invoices, validate autofill, and resume Bitcoin handoffs.');
 }finally{await browser.close();}

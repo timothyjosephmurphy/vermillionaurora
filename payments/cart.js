@@ -100,12 +100,14 @@
     if(!existing&&cart.length>=MAX)return respond(false,`Your cart holds up to ${MAX} different items.`);
     if(existing)existing.quantity+=quantity;else cart.push({id,quantity});persistCart();syncHold(cart).then(()=>respond(true,'Print added to your cart.')).catch(error=>respond(false,error.message));
   });
-  let root,notice,layout,orderPanel,form,pendingOrder=null;
+  let root,notice,layout,orderPanel,form,quoteFeedback,pendingOrder=null;
   function announce(text){notice.textContent=text;}
   function quoteAllowed(){
     // Keep submit available so native validation can explain missing details.
     // Browser autofill does not always emit input/change events.
-    return !!(form&&cart.length&&capabilities?.enabled&&cart.every(item=>!!eligible(item.id))&&!(pendingOrder&&pending(pendingOrder))&&!busy&&!quoted);
+    // Availability and earlier orders can need a retry. Explain those on submit
+    // instead of leaving a filled form with an unusable button.
+    return !!(form&&cart.length&&!busy&&!quoted);
   }
   function updateQuoteButton(){
     const button=form?.querySelector('[data-cart-quote]');if(!button)return;
@@ -185,6 +187,7 @@
     const detail=errorMessage?errorMessage+' ':'There is an unfinished checkout'+(names?' for '+names:'')+'. Review or cancel it before starting another checkout. ';
     notice.replaceChildren(document.createTextNode(lead+detail));
     const link=node('a','Review existing order');link.href='/cart/?order='+encodeURIComponent(order?.orderId||'');link.className='cart-text-link';notice.append(link);
+    if(quoteFeedback){quoteFeedback.replaceChildren(node('span','An earlier checkout needs a status check. Calculate shipping & tax will check it again. '));const open=node('a','Open existing checkout');open.href=link.href;open.className='cart-text-link';quoteFeedback.append(open);}
     if(requestedBuy){notice.append(document.createTextNode(' '));const fullCart=node('a','View full cart');fullCart.href='/cart/';fullCart.className='cart-text-link';notice.append(fullCart);}
   }
   function render(){
@@ -237,7 +240,7 @@
     finally{busy=false;setDisabled(false);}
   }
   function setDisabled(value){
-    form.querySelectorAll('input,button').forEach(el=>{if(el.matches('[data-cart-quote]'))el.disabled=value||!quoteAllowed();else el.disabled=value||(!!(pendingOrder&&pending(pendingOrder)));});
+    form.querySelectorAll('input,button').forEach(el=>{if(el.matches('[data-cart-quote]'))el.disabled=value||!quoteAllowed();else el.disabled=value;});
     root.querySelectorAll('[data-cart-methods] button').forEach(el=>el.disabled=value||!quoted||!!(pendingOrder&&pending(pendingOrder)));
     root.querySelectorAll('[data-cart-items] button, [data-cart-items] input').forEach(el=>el.disabled=value);
   }
@@ -266,21 +269,36 @@
   function poll(){clearTimeout(timer);if(!document.hidden)timer=setTimeout(()=>updateOrder(),6000);}
   async function initializePage(el){
     root=el;notice=root.querySelector('[data-cart-notice]');layout=root.querySelector('[data-cart-layout]');orderPanel=root.querySelector('[data-order-panel]');form=root.querySelector('[data-cart-form]');
+    quoteFeedback=node('p',undefined,'cart-footnote');quoteFeedback.dataset.cartQuoteFeedback='';quoteFeedback.setAttribute('role','status');quoteFeedback.setAttribute('aria-live','polite');form.querySelector('[data-cart-quote]').after(quoteFeedback);
     const params=new URLSearchParams(location.search),buy=params.get('buy');
     // Buy now is a one-item checkout; existing cart contents remain for a later order.
     if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;cart=[{id:buy,quantity:1}]; /* view only; do not overwrite a saved multi-item cart */}
     const addressChanged=()=>{if(quoted)invalidate();else updateQuoteButton();};
     form.addEventListener('input',addressChanged);form.addEventListener('change',addressChanged);
-    form.addEventListener('invalid',()=>announce('Check the highlighted delivery field. Enter your email, name, street, city, two-letter state and ZIP code.'),true);
+    form.addEventListener('invalid',()=>{const message='Check the highlighted delivery field. Enter your email, name, street, city, two-letter state and ZIP code.';announce(message);quoteFeedback.textContent=message;},true);
     form.addEventListener('submit',async event=>{
-      event.preventDefault();if(busy)return;if(pendingOrder&&pending(pendingOrder)){showPendingNotice(pendingOrder,buyOnly);return;}if(!form.reportValidity())return;busy=true;setDisabled(true);form.querySelector('[data-cart-quote]').textContent='Calculating…';announce('Calculating shipping and tax…');
+      event.preventDefault();if(busy)return;if(!form.reportValidity())return;busy=true;setDisabled(true);form.querySelector('[data-cart-quote]').textContent='Calculating…';announce('Calculating shipping and tax…');quoteFeedback.textContent='Checking your cart and calculating shipping and tax…';
       const values=Object.fromEntries(new FormData(form));
       // FormData omits disabled controls; collect from named elements explicitly.
       for(const input of form.querySelectorAll('input[name]'))values[input.name]=input.value.trim();
       const {email,...address}=values;
-      try{await syncHold(cart);const identity=holdCredentials();const q=await api('quote',{items:cart,address,email,catalogVersion:capabilities.version,holdId:identity.holdId,key:identity.key});showQuote(q);announce('Your total is ready. Choose a payment method below.');}
-      catch(error){announce(error.message);invalidate();}
-      finally{busy=false;setDisabled(false);}
+      try{
+        if(pendingOrder&&pending(pendingOrder)){
+          const result=await api('status',{orderId:pendingOrder.orderId,key:pendingOrder.key}),restored={...result,key:pendingOrder.key};
+          if(result.status==='paid'){current=restored;pendingOrder=null;showOrder();return;}
+          if(pending(restored)){pendingOrder=restored;showPendingNotice(restored,buyOnly);return;}
+          write(ATTEMPT,null);pendingOrder=null;current=null;quoted=null;
+          if(result.status!=='quoted'){write(HOLD,null);holdSession=null;heldIds=new Set();}
+          capabilities=null;
+        }
+        if(!capabilities)capabilities=await api('catalog').catch(()=>{throw Error('Availability could not be refreshed. Click Calculate shipping & tax to try again.');});
+        if(!capabilities?.enabled)throw Error('Checkout is temporarily unavailable. Please try again or contact TJ.');
+        await syncHold(cart);
+        const unavailable=cart.find(item=>!eligible(item.id));if(unavailable)throw Error('An item is no longer available for checkout. Review the items in your cart.');
+        const identity=holdCredentials(),q=await api('quote',{items:cart,address,email,catalogVersion:capabilities.version,holdId:identity.holdId,key:identity.key});showQuote(q);announce('Your total is ready. Choose a payment method below.');quoteFeedback.textContent='Your shipping and tax are calculated. Choose a payment method below.';
+      }
+      catch(error){announce(error.message);invalidate();quoteFeedback.textContent=error.message;}
+      finally{busy=false;setDisabled(false);updateQuoteButton();}
     });
     root.querySelector('[data-order-check]').addEventListener('click',()=>updateOrder());root.querySelector('[data-order-cancel]').addEventListener('click',()=>updateOrder('cancel'));
     root.querySelector('[data-order-print]').addEventListener('click',()=>window.print());
