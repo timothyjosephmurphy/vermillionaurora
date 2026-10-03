@@ -76,6 +76,8 @@ async function create(env,input,all,now){
  if(!pending)throw fail('This operation is already in progress.',409);
  // Once reserved, never automatically repeat a provider mutation after timeout or storage failure.
  const fields=[`text:${quote(value.text)}`,`channelId:${quote(channel.id)}`,'schedulingType:automatic',`mode:${value.saveToDraft?'addToQueue':'customScheduled'}`,`saveToDraft:${value.saveToDraft}`];
+ if(channel.service==='facebook')fields.push('metadata:{facebook:{type:post}}');
+ if(channel.service==='instagram')fields.push('metadata:{instagram:{type:post,shouldShareToFeed:true}}');
  if(value.dueAt)fields.push(`dueAt:${quote(value.dueAt)}`);
  if(value.imageUrls.length)fields.push(`assets:[${value.imageUrls.map(url=>`{image:{url:${quote(url)}}}`).join(',')}]`);
  const data=await graphql(env,`mutation { createPost(input:{${fields.join(',')}}) { __typename ... on PostActionSuccess { post { id text channelId dueAt status } } ... on MutationError { message } } }`);
