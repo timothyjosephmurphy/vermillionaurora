@@ -4,7 +4,19 @@
  const ids=[...new Set(nodes.map(node=>node.dataset.productId))];
  if(!ids.length)return;
  const endpoint='https://vermillion-commissions.timothyjosephmurphy.workers.dev/inventory/status';
- const labels={available:'Available',reserved:'Temporarily reserved',sold:'Sold','not-for-sale':'Not for sale',retired:'Unavailable'};
+ const labels={available:'Available',inquiry:'Available by inquiry',reserved:'Temporarily reserved',sold:'Sold','not-for-sale':'Not for sale',retired:'Unavailable'};
+ const availableTrack=document.querySelector('[data-available-paintings]');
+ const collectorTrack=document.querySelector('[data-collector-paintings]');
+ function moveHomepagePainting(node,value){
+  if(!availableTrack||!collectorTrack||!node.matches('.product-card'))return;
+  if(node.parentElement!==availableTrack&&node.parentElement!==collectorTrack)return;
+  const target=['available','inquiry'].includes(value)?availableTrack:collectorTrack;
+  if(node.parentElement!==target)target.append(node);
+ }
+ function updateHomepageEmptyMessages(){
+  if(availableTrack){const empty=document.querySelector('[data-available-empty]');if(empty)empty.hidden=availableTrack.children.length>0;}
+  if(collectorTrack){const empty=document.querySelector('[data-collector-empty]');if(empty)empty.hidden=collectorTrack.children.length>0;}
+ }
  for(const node of nodes){
   node.querySelectorAll('[data-live-status]').forEach(el=>{el.dataset.initialText=el.textContent;});
   node.querySelectorAll('[data-card-price]').forEach(el=>{el.dataset.price=el.textContent;});
@@ -23,7 +35,9 @@
     node.querySelectorAll('[data-live-status]').forEach(el=>{el.textContent=value==='available'?el.dataset.initialText:label;if(value!=='available')el.hidden=false;});
     node.querySelectorAll('[data-card-price]').forEach(el=>{el.textContent=value==='available'?el.dataset.price:label;});
     if(node.dataset.caption){node.dataset.caption=value==='available'?node.dataset.initialCaption:node.dataset.initialCaption.replace(/ · [^]*$/,' · '+label);}
+    moveHomepagePainting(node,value);
    }
+   updateHomepageEmptyMessages();
    document.dispatchEvent(new CustomEvent('catalog:availability',{detail:status}));
   }catch { /* Keep inquiry links and server-authoritative checkout available. */ }
   finally{busy=false;}
