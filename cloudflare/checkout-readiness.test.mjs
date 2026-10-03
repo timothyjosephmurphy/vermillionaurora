@@ -32,7 +32,7 @@ test('production readiness requires authentication and only reads provider confi
   const bitcoinReady=await checkoutReadiness(request(),btcpay);assert.equal(bitcoinReady.status,200);assert.equal((await bitcoinReady.json()).checks.bitcoinInvoiceAccess,true);
   bitcoinInvoiceAllowed=false;
   const bitcoinDenied=await checkoutReadiness(request(),btcpay);assert.equal(bitcoinDenied.status,503);
-  const deniedBody=await bitcoinDenied.text();assert.match(deniedBody,/HTTP 403/);assert.ok(!deniedBody.includes('btcpay-secret'));
+  const deniedBody=await bitcoinDenied.text();assert.match(deniedBody,/BTCPay API 403/);assert.ok(!deniedBody.includes('btcpay-secret'));
   bitcoinInvoiceAllowed=true;
   const testKey=await checkoutReadiness(request(),{...env,STRIPE_SECRET_KEY:'sk_test_fake'});assert.equal(testKey.status,503);
   const pilot={...env,CHECKOUT_PILOT_ENABLED:'true',SHIP_FROM_PHONE:'+12065550100',PAYPAL_CHECKOUT_SLUGS:'painting-portrait-in-green',SHIPPO_CARRIER_ALLOWLIST:'UPS',SHIPPO_AUTO_LABEL_ENABLED:'true',
