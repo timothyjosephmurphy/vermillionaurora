@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import {catalogVersion,byId} from '../catalog/catalog.mjs';
 const root=path.resolve('dist'),origin='https://vermillionaurora.com',ids=['painting-portrait-in-green','painting-portrait-in-gold'];
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']}:{})});
-const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,method='square',productMethods=['paypal','square','bitcoin'];const reservations=new Map();
+const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,startedHold=false,method='square',productMethods=['paypal','square','bitcoin'];const reservations=new Map();
 page.on('pageerror',e=>errors.push(e.message));
 const product=id=>({id,title:byId[id].title,amount:byId[id].listing.price.amount,methods:productMethods,status:availability});
 await page.route('**/*',async route=>{
@@ -15,6 +15,7 @@ await page.route('**/*',async route=>{
   const action=url.pathname.split('/').at(-1);const body=req.method()==='POST'?req.postDataJSON():null;calls.push({action,body});let result;
   if(action==='catalog')result={enabled,version:catalogVersion,products:ids.map(product),square:{applicationId:'sq0idp-test',locationId:'LOCATION',mode:'live'}};
   if(action==='hold'){
+   if(startedHold)return route.fulfill({status:409,headers:{'Access-Control-Allow-Origin':origin},json:{error:'Checkout has already started.',code:'CHECKOUT_STARTED'}});
    const originals=body.items.filter(i=>!i.id.startsWith('print-')).map(i=>i.id),previous=reservations.get(body.holdId)||new Set(),unavailable=availability==='available'?null:originals.find(id=>ids.includes(id)&&!previous.has(id));
    if(!unavailable)reservations.set(body.holdId,new Set(originals));
    result={orderId:body.holdId,status:unavailable?'unavailable':'holding',heldIds:unavailable?[]:originals,expiresAt:Date.now()+15*60*1000,...(unavailable?{unavailable}:{})};
@@ -88,6 +89,16 @@ try{
  assert.equal(calls.filter(c=>c.action==='quote').at(-1).body.items.length,2,'Buy Now with other saved items quotes the full cart');
  await page.getByRole('button',{name:'Pay with Bitcoin'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual(await cartStored(),[]);
+ // A pending Chase attempt must not silently discard Dorian or disable Buy now.
+ startedHold=true;
+ await page.evaluate(id=>localStorage.setItem('va-cart-v1',JSON.stringify([{id,quantity:1}])),ids[0]);
+ await page.goto(`${origin}/products/${ids[1]}/`);
+ await page.getByRole('button',{name:'Add to cart',exact:true}).click();
+ await page.getByText('Added locally. Finish the current checkout before reserving or paying for another order.').waitFor();
+ assert.deepEqual((await cartStored()).map(i=>i.id),ids);
+ await page.getByRole('button',{name:'Buy now',exact:true}).click();await page.waitForURL(origin+'/cart/');
+ assert.deepEqual((await cartStored()).map(i=>i.id),ids);
+ startedHold=false;
  productMethods=[];await page.evaluate(id=>localStorage.setItem('va-cart-v1',JSON.stringify([{id,quantity:1}])),ids[0]);await page.goto(origin+'/cart/');await page.locator('.cart-line').waitFor();await fill();assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'payment-method availability does not block a shipping/tax quote');
  assert.deepEqual(errors,[]);console.log('PASS: cart quote activates only after valid address entry, remains independent of payment-method availability, and existing desktop/mobile checkout behavior passes.');
 }finally{await browser.close();}
