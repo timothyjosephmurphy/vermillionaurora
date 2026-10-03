@@ -207,7 +207,8 @@ it('releases a verified missing Bitcoin invoice and reuses the cart reservation 
 });
 it('explains BTCPay invoice permission failures and keeps stock reserved',async()=>{
   const {id,order}=await setup('bitcoin');failCreate=true;await order.start('bitcoin');failCreate=false;failInvoiceRead=true;
-  const response=await cartCheckout(request('status',{orderId:id,key:'a'.repeat(64)}),{...env,...config,PAYPAL_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'});
+  const statusRequest=request('status',{orderId:id,key:'a'.repeat(64)});statusRequest.headers.set('Origin','https://vermillionaurora.com');
+  const response=await cartCheckout(statusRequest,{...env,...config,PAYPAL_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'});
   expect(response.status).toBe(503);expect((await response.json()).error).toMatch(/View invoices permission/);
   expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
 });
