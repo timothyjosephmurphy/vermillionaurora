@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="527b868fe77b34ef6820";
+export const printVersion="8d96b487fa801e2dba9b";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -7806,8 +7806,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Sunrise, El Salvador — Large print",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "El Zonte at Dusk, El Salvador — Large print",
+    "artworkTitle": "El Zonte at Dusk, El Salvador",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.22X4",
@@ -7831,8 +7831,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/shoreline-at-dusk.jpg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "El Zonte shoreline at dusk by TJ Murphy",
+      "caption": "El Zonte at Dusk, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7844,8 +7844,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Sunrise, El Salvador — Large print — Black frame",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "El Zonte at Dusk, El Salvador — Large print — Black frame",
+    "artworkTitle": "El Zonte at Dusk, El Salvador",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD22X4F1S10X8J1S6DD22X4G1",
@@ -7869,8 +7869,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/shoreline-at-dusk.jpg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "El Zonte shoreline at dusk by TJ Murphy",
+      "caption": "El Zonte at Dusk, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7918,8 +7918,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Sunrise, El Salvador — Large print — White frame",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "El Zonte at Dusk, El Salvador — Large print — White frame",
+    "artworkTitle": "El Zonte at Dusk, El Salvador",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD22X4F2S10X8J1S6DD22X4G1",
@@ -7943,8 +7943,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/shoreline-at-dusk.jpg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "El Zonte shoreline at dusk by TJ Murphy",
+      "caption": "El Zonte at Dusk, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7992,8 +7992,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Sunrise, El Salvador — Large print — Natural wood frame",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "El Zonte at Dusk, El Salvador — Large print — Natural wood frame",
+    "artworkTitle": "El Zonte at Dusk, El Salvador",
     "amount": "68.63",
     "currency": "USD",
     "sku": "5M144M8S6DD22X4F7S10X8J1S6DD22X4G1",
@@ -8017,8 +8017,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/shoreline-at-dusk.jpg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "El Zonte shoreline at dusk by TJ Murphy",
+      "caption": "El Zonte at Dusk, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
