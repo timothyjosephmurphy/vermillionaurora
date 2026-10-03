@@ -1,0 +1,113 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import {products,collections,byId,urlFor,catalogVersion} from '../../catalog/catalog.mjs';
+import {config,papers,printOptions} from '../../catalog/prints.mjs';
+import exhibitions from '../../exhibitions/catalog.json';
+
+const promoted=collections.home.filter(entry=>entry.variant==='carousel').map(entry=>byId[entry.product]);
+const originals=promoted.filter(product=>product.artist==='TJ Murphy'&&product.listing.status==='available');
+const printProducts=[...new Map([...promoted,...products].filter(product=>product.type==='painting'&&product.artist==='TJ Murphy').map(product=>[product.id,product])).values()]
+  .map(product=>({product,options:printOptions(product,config,papers).filter(option=>option.ready&&!option.testOnly&&!option.sampleOnly)}))
+  .filter(entry=>entry.options.length>0);
+const featuredPrints=printProducts.slice(0,4).map(({product,options})=>({product,from:Math.min(...options.map(option=>Number(option.amount)))}));
+const datedExhibitions=exhibitions.filter(exhibition=>/^\d{4}$/.test(exhibition.date||''));
+const newestYear=Math.max(...datedExhibitions.map(exhibition=>Number(exhibition.date)));
+const latestExhibitions=datedExhibitions.filter(exhibition=>Number(exhibition.date)===newestYear);
+const links=[
+  {href:'/gallery/available/',title:'Shop available originals',description:'Watercolor landscapes and expressive portraits.',image:originals[0]?.image.src},
+  ...(featuredPrints.length?[{href:'#prints',title:'Shop fine-art prints',description:'Choose your size, paper, and framing.',image:featuredPrints[0].product.image.src}]:[]),
+  {href:'/#contact',title:'Commission a painting',description:'A portrait, a meaningful place, or a mural made for you.',image:byId['personal-portrait']?.examples?.[0]?.src},
+  {href:latestExhibitions.length?'#exhibitions':'/exhibitions/',title:'Explore the exhibitions',description:'Paintings, people, and the places they meet.',image:latestExhibitions[0]?.hero}
+];
+const canonical='https://vermillionaurora.com/links/';
+const description='Explore original paintings, fine-art prints, commissions, and the latest exhibitions by Seattle artist TJ Murphy.';
+const shareImage=new URL(originals[0]?.image.src||'/about/images/tj-murphy-portrait.jpg',canonical).href;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TJ Murphy — Paintings, Prints &amp; Commissions | TJM.art</title>
+  <meta name="description" content={description}/><meta name="catalog-version" content={catalogVersion}/>
+  <link rel="canonical" href={canonical}/>
+  <meta property="og:type" content="website"/><meta property="og:title" content="TJ Murphy — Paintings, Prints & Commissions"/>
+  <meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={shareImage}/>
+  <meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content={shareImage}/>
+  <link rel="stylesheet" href="/styles.css"/><link rel="stylesheet" href="/site-header.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="social-links-page">
+  <SiteHeader/>
+  <main class="social-links-main" id="top">
+    <header class="social-profile">
+      <img src="/about/images/tj-murphy-portrait.jpg" alt="TJ Murphy" width="424" height="360" fetchpriority="high"/>
+      <h1>TJ Murphy</h1>
+      <p class="social-profile-tagline">Natural beauty. Independent spirit.</p>
+      <p>Watercolor, portraits &amp; murals · Seattle</p>
+    </header>
+    <nav aria-label="Explore my artwork" class="social-primary-links">
+      {links.map(link=><a href={link.href} class="social-link">
+        {link.image&&<img src={link.image} alt="" width="64" height="74" loading="lazy" decoding="async"/>}
+        <span class="social-link-copy"><strong>{link.title}</strong><span>{link.description}</span></span>
+        <span class="social-link-arrow" aria-hidden="true">↗</span>
+      </a>)}
+    </nav>
+    {featuredPrints.length>0&&<section id="prints" aria-labelledby="prints-heading" class="social-collection">
+      <h2 id="prints-heading">Selected fine-art prints</h2>
+      <div class="social-print-grid">
+        {featuredPrints.map(({product,from})=><a href={urlFor(product)} class="social-print" data-product-id={product.id}>
+          <img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async"/>
+          <h3>{product.title}</h3><p>Prints from ${from.toFixed(2)}</p>
+        </a>)}
+      </div>
+      <a class="social-more-link" href="/book-galleries/">Explore more print collections →</a>
+    </section>}
+    {latestExhibitions.length>0&&<section id="exhibitions" aria-labelledby="exhibitions-heading" class="social-collection">
+      <h2 id="exhibitions-heading">Latest exhibitions <span>{newestYear}</span></h2>
+      <div class="social-exhibition-links">
+        {latestExhibitions.map(exhibition=><a href={`/exhibitions/${exhibition.slug}/`} class="social-link">
+          <img src={exhibition.hero} alt="" width="64" height="74" loading="lazy" decoding="async"/>
+          <span class="social-link-copy"><strong>{exhibition.name}</strong><span>View the exhibition photos</span></span>
+          <span class="social-link-arrow" aria-hidden="true">↗</span>
+        </a>)}
+      </div>
+      <a class="social-more-link" href="/exhibitions/">All exhibitions →</a>
+    </section>}
+    <footer class="social-footer"><a href="/">Visit the full website</a><a href="/about/">About TJ</a><a href="/#contact">Get in touch</a></footer>
+  </main>
+</body>
+</html>
+<style is:global>
+.social-links-page .site-header .main-nav>a:not(.cart-nav),.social-links-page .site-header .header-actions{display:none}
+.social-links-page .site-header .header-inner{min-height:76px}
+.social-links-page .site-header .main-nav{margin-left:auto}
+.social-links-main{width:min(100% - 32px,620px);margin:0 auto;padding:30px 0 40px}
+.social-profile{text-align:center;margin-bottom:26px}
+.social-profile>img{width:110px;height:auto;display:block;margin:0 auto 14px;border-radius:12px}
+.social-profile h1{font:600 clamp(2.6rem,8vw,3.5rem)/1.05 'Cormorant Garamond',Georgia,serif;margin:0 0 10px}
+.social-profile p{margin:7px 0;color:var(--muted);font-size:.88rem}
+.social-profile .social-profile-tagline{color:var(--ink);font-size:1rem}
+.social-primary-links,.social-exhibition-links{display:grid;gap:12px}
+.social-link{display:flex;align-items:center;gap:15px;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--paper);text-decoration:none;color:var(--ink);min-height:86px;transition:border-color .15s}
+.social-primary-links .social-link:first-child{border:2px solid var(--accent)}
+.social-link:hover{border-color:var(--accent)}
+.social-link>img{display:block;width:64px;height:74px;flex:0 0 64px;object-fit:contain;background:#e8dfd3;border-radius:4px}
+.social-link-copy{display:grid;gap:6px;min-width:0}
+.social-link-copy strong{font-size:1rem;line-height:1.35}
+.social-link-copy>span{font-size:.8rem;line-height:1.45;color:var(--muted)}
+.social-link-arrow{margin-left:auto;color:var(--accent);flex-shrink:0;font-size:1.3rem}
+.social-collection{margin-top:34px;scroll-margin-top:100px}
+.social-collection h2{font:600 1.9rem/1.15 'Cormorant Garamond',Georgia,serif;margin:0 0 16px}
+.social-collection h2>span{font:400 .8rem/1.2 Inter,sans-serif;color:var(--muted);margin-left:8px}
+.social-print-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
+.social-print{min-width:0;color:var(--ink);text-decoration:none}
+.social-print>img{display:block;width:100%;height:190px;object-fit:contain;background:var(--paper);border-radius:8px;padding:10px}
+.social-print h3{font-size:.88rem;line-height:1.4;margin:10px 0 5px;font-weight:600}
+.social-print p{font-size:.8rem;color:var(--accent-dark);margin:0}
+.social-more-link{display:inline-block;margin-top:18px;text-decoration:underline;text-underline-offset:4px;font-size:.85rem}
+.social-footer{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+.social-links-main a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media(max-width:420px){.social-link{gap:12px;padding:12px}.social-link>img{width:52px;height:64px;flex-basis:52px}.social-link-copy strong{font-size:.93rem}.social-print>img{height:165px}}
+@media(prefers-reduced-motion:reduce){.social-link{transition:none}}
+</style>
