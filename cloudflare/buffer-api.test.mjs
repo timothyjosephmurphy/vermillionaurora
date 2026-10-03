@@ -48,6 +48,7 @@ test('defaults to a draft and replays receipt without creating another post',asy
  const queries=mock(),env=setup();const first=await req(env,'/buffer/posts/create',input);assert.equal(first.status,200);
  assert.equal((await first.json()).saveToDraft,true);const mutation=queries.find(q=>q.startsWith('mutation'));
  assert.match(mutation,/saveToDraft:true/);assert.match(mutation,/mode:addToQueue/);assert.match(mutation,/assets:\[\{image:\{url:/);
+ assert.match(mutation,/metadata:\{facebook:\{type:post\}\}/);
  assert.equal((await (await req(env,'/buffer/posts/create',input)).json()).replayed,true);
  assert.equal(queries.filter(q=>q.startsWith('mutation')).length,1);
  assert.equal((await req(env,'/buffer/posts/create',{...input,text:'Different'})).status,409);
@@ -58,6 +59,10 @@ test('validates channel ownership, Instagram media and public image hosts',async
  assert.equal((await req(env,'/buffer/posts/create',{...input,imageUrls:[]})).status,400);
  assert.equal((await req(env,'/buffer/posts/create',{...input,imageUrls:['https://evil.test/art.jpg']})).status,400);
  assert.equal(queries.filter(q=>q.startsWith('mutation')).length,0);
+});
+test('creates Instagram feed posts with required platform metadata',async()=>{
+ const queries=mock('instagram');const r=await req(setup(),'/buffer/posts/create',input);
+ assert.equal(r.status,200);assert.match(queries.find(q=>q.startsWith('mutation')),/metadata:\{instagram:\{type:post,shouldShareToFeed:true\}\}/);
 });
 test('requires explicit scheduling, a future UTC date, and enforces X length',async()=>{
  const queries=mock('twitter'),env=setup();
