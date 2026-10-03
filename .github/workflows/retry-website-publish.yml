@@ -19,7 +19,7 @@ jobs:
         run: test -n "$WEBSITE_TOKEN"
       - uses: actions/checkout@v4
         with:
-          ref: 993760040164ea9dabcc9f440bc94e23a0695565
+          ref: e4267b493ea7d87954052ce16baba7fc261e44d3
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -35,6 +35,9 @@ jobs:
           if(!g.artworks.slice(0,11).every(id=>m.artworks.find(a=>a.id===id).title.includes('El Salvador')))throw Error('El Salvador must lead the gallery');
           if(g.artworks.some(id=>m.artworks.find(a=>a.id===id).title.includes('Untitled')))throw Error('Unclean gallery titles');
           if(g.artworks.length!==31||g.artworks.includes('book-art-87cf2a732259b313f5ab'))throw Error('Unexpected Travels inventory');
+          const pacific=m.sections.find(s=>s.id==='watercolor-landscapes-pacific-north-west');
+          const friends=m.sections.find(s=>s.id==='watercolor-portraits-friends');
+          if(pacific.artworks.length!==8||friends.artworks[0]!=='book-art-614d5b68dbe5052e302a')throw Error('Unexpected gallery curation');
           NODE
       - name: Publish existing website Worker from approved release
         uses: cloudflare/wrangler-action@v4
@@ -43,16 +46,25 @@ jobs:
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           wranglerVersion: '4.143.0'
           command: deploy --config wrangler.jsonc
-      - name: Confirm live Travels removal
+      - name: Confirm live gallery and homepage changes
         run: |
           node --input-type=module <<'NODE'
+          const {load}=await import('cheerio');
           let ready=false;
           for(let i=0;i<18;i++){
-            const r=await fetch('https://vermillionaurora.com/book-galleries/watercolor-landscapes-travels/?verify=993760040164ea9dabcc9f440bc94e23a0695565-'+i,{cache:'no-store',signal:AbortSignal.timeout(15000)});
-            const html=await r.text();
-            const count=(html.match(/class="painting-list-row"/g)||[]).length;
-            if(r.ok&&count===31&&!html.includes('Untitled')&&!html.includes('book-art-87cf2a732259b313f5ab')&&html.includes('book-art-7599e02b4ff7013e7261')){ready=true;console.log('Live Travels gallery verified: 31 works; requested gallery curation deployed.');break;}
+            try{
+              const paths=['/','/book-galleries/watercolor-landscapes-pacific-north-west/','/book-galleries/watercolor-portraits-friends/','/book-galleries/watercolor-portraits-bitcoiners/','/styles.css'];
+              const responses=await Promise.all(paths.map(path=>fetch('https://vermillionaurora.com'+path+'?verify=e4267b493ea7d87954052ce16baba7fc261e44d3-'+i,{cache:'no-store',signal:AbortSignal.timeout(15000)})));
+              if(!responses.every(r=>r.ok))throw Error('Page request failed');
+              const [home,pacific,friends,bitcoiners,css]=await Promise.all(responses.map(r=>r.text()));
+              const $=load(home),p=load(pacific),f=load(friends),b=load(bitcoiners);
+              const originals=['painting-chef-in-white','painting-studio-figure','painting-portrait-with-cheese'];
+              const bitcoinLinks=originals.every(id=>b('.product-title-link[href="/products/'+id+'/"]').length===1&&!$('.painting-carousel [data-product-id="'+id+'"]').length);
+              if($('#gallery h2').text()==='Featured Paintings'&&$('#book-galleries h2').text()==='Selected Galleries'&&p('.painting-list-row').length===8&&f('.painting-list-row').first().attr('data-product-id')==='book-art-614d5b68dbe5052e302a'&&$('a[href="/murals/berlin-el-salvador/"] img').attr('style')?.includes('object-fit:contain')&&css.includes('.book-carousel .ex-slide { flex-basis:min(260px, 82vw); }')&&bitcoinLinks){
+                ready=true;console.log('Live gallery curation, originals, labels, book widths and Berlin image fit verified.');break;
+              }
+            }catch(error){console.log(error.message);}
             await new Promise(resolve=>setTimeout(resolve,5000));
           }
-          if(!ready)throw Error('Live Travels gallery still serves the previous content');
+          if(!ready)throw Error('Live website still serves previous content');
           NODE
