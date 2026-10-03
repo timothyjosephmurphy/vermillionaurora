@@ -249,7 +249,7 @@ export class CartOrder extends DurableObject {
         this.save({...d,status:'releasing',releaseStatus:'expired'});
         await this.releaseAll();
         const released=this.read();
-        this.save({...released,status:'expired',method:undefined,providerId:undefined,url:undefined,
+        this.save({...released,status:'expired',method:undefined,providerId:undefined,url:undefined,quote:undefined,methods:undefined,
           reason:undefined,releaseStatus:undefined,noInvoiceCheckedAt:undefined,heldIds:[]});
         return;
       }
