@@ -189,7 +189,7 @@ it('rejects mismatched merchant, amount, address and items without capturing',as
   }
   expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(0);for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('reserved');
 });
-it('releases a verified missing Bitcoin invoice and reuses the cart reservation for another painting',async()=>{
+it('keeps a recovered missing Bitcoin checkout expired and reserves the next cart under a new identity',async()=>{
   const {id,order}=await setup('bitcoin');await order.start('bitcoin');
   invoices.length=0;
   await runInDurableObject(order,i=>i.save({...i.read(),status:'creating',providerId:undefined,url:undefined,createAttemptedAt:Date.now()-180_000}));
@@ -206,7 +206,13 @@ it('releases a verified missing Bitcoin invoice and reuses the cart reservation 
   expect((await read(order)).status).toBe('expired');
   expect((await read(order)).method).toBeUndefined();
   for(const slug of ids)expect(await env.PAINTING_STOCK.getByName(slug).status()).toBe('available');
-  await order.syncCart(id,await keyHash('a'.repeat(64)),[{id:ids[0],quantity:1}]);
+  const retry=await cartCheckout(request('hold',{holdId:id,key:'a'.repeat(64),items:[{id:ids[0],quantity:1}]}),{...env,...config});
+  expect(retry.status).toBe(409);expect((await retry.json()).code).toBe('CHECKOUT_STARTED');
+  expect((await order.publicStatus()).status).toBe('expired');
+  const nextId=crypto.randomUUID(),nextOrder=env.CART_ORDERS.getByName(nextId);objects.push(nextOrder);
+  await nextOrder.syncCart(nextId,await keyHash('b'.repeat(64)),[{id:ids[0],quantity:1}]);
+  expect((await nextOrder.result()).status).toBe('holding');
+  expect((await order.publicStatus()).status).toBe('expired');
   expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
   expect(invoices).toHaveLength(0);
 });
@@ -258,6 +264,7 @@ it('recovers a lost Bitcoin invoice reply without creating a second invoice, and
 });
 it('releases an unpaid expired Bitcoin invoice but routes late payment to review without selling another buyer’s stock',async()=>{
   const {order}=await setup('bitcoin');await order.start('bitcoin');invoices[0].status='Expired';await order.refresh();expect((await read(order)).status).toBe('expired');
+  expect((await order.publicStatus()).status).toBe('expired');expect((await order.result()).url).toBeUndefined();
   for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).reserve('new-buyer')).toBe(true);
   invoices[0].status='Settled';invoices[0].payments=[{id:'TX',value:'0.01',status:'Settled'}];await order.refresh();expect((await read(order)).status).toBe('review');for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('reserved');
   expect(calls.filter(c=>c.url.endsWith('/transactions/'))).toHaveLength(0);
