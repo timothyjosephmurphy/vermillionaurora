@@ -1,0 +1,330 @@
+{
+  "campaign": "artist_launch_oct_2026",
+  "timezone": "America/Los_Angeles",
+  "posts": [
+    {
+      "idempotencyKey": "artist-launch-facebook-20261006",
+      "service": "facebook",
+      "text": "I'm TJ Murphy, a Seattle artist. I started painting in 2020, following a desire to capture the light and color I kept noticing around me. That practice has grown into watercolor landscapes, portraits, and murals.\n\nNatural beauty and the freedom to choose our own path run through the work. This page is where I'll share the paintings, the process, and the places and people behind them.\n\nWhat would you like to see more of: landscapes, portraits, or murals?\n\nhttps://vermillionaurora.com/links/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=meet-tj",
+      "imageUrls": [
+        "https://vermillionaurora.com/about/images/tj-murphy-portrait.jpg"
+      ],
+      "dueAt": "2026-10-06T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261009",
+      "service": "facebook",
+      "text": "How much color can come from a small palette?\n\nFor my watercolor pastel portraits, I usually begin with three primaries and a dark tone. Changing those primaries changes the possibilities of the whole painting. I love the deep saturation and the way pigment settles into the paper.\n\nThis is Girl Tuning Guitar. The quiet attention of the subject gives the color somewhere to go.\n\nWould you like a closer look at this technique?\n\nhttps://vermillionaurora.com/products/painting-guitarist/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=limited-palette",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/guitarist.jpg"
+      ],
+      "dueAt": "2026-10-09T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261011",
+      "service": "facebook",
+      "text": "El Zonte at Dusk, El Salvador.\n\nA shoreline gives light somewhere to gather: across the sky, across the water, and along the breaking waves. In this watercolor pastel, color carries the atmosphere.\n\nFine-art prints are available through my website. Open the painting page to see the current size, paper, and framing options. If you have a wall in mind, start with its measurements.\n\nhttps://vermillionaurora.com/products/painting-shoreline-at-dusk/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=shore-print",
+      "imageUrls": [
+        "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg"
+      ],
+      "dueAt": "2026-10-11T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261013",
+      "service": "facebook",
+      "text": "Sunset on Sucia Island in Puget Sound.\n\nSometimes the dark shapes are what make the light visible. Here, the shoreline and silhouettes hold the sunset's color. Painting gives me a way to keep paying attention to that relationship.\n\nThe original has sold, but it remains part of the collection and the story of the work. What place keeps pulling you back to look again?\n\nhttps://vermillionaurora.com/products/painting-sunset-silhouette/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=sucia-light",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/sunset-silhouette.jpg"
+      ],
+      "dueAt": "2026-10-13T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261016",
+      "service": "facebook",
+      "text": "A closer way to look at El Zonte at Dusk: follow the painting from the bright horizon down into the waves.\n\nThe sky and water have different rhythms. One opens outward; the other breaks into repeated marks. I enjoy what happens when those rhythms meet in watercolor pastel.\n\nWhere does your eye settle first: the light on the horizon or the water in the foreground?\n\nhttps://vermillionaurora.com/products/painting-shoreline-at-dusk/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=shore-composition",
+      "imageUrls": [
+        "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg"
+      ],
+      "dueAt": "2026-10-16T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261018",
+      "service": "facebook",
+      "text": "Some places deserve a painting of their own.\n\nThis garden mural brings together a cormorant, Puget Sound, the Olympic Mountains, and sunset color. A commission can begin with a place you return to, a view from home, or a landscape that carries a memory.\n\nIf you have a place in mind, tell me about it. Share a reference image, your preferred size, and any colors you'd like to explore through the commission form.\n\nhttps://vermillionaurora.com/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=place-commission#contact",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/cormorant-hero.jpg"
+      ],
+      "dueAt": "2026-10-18T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261020",
+      "service": "facebook",
+      "text": "MJ Spinning at Chalet.\n\nPortraiture is a way to pay attention to someone: their expression, their energy, and the details that make them recognizable. In this watercolor pastel, headphones and a slight smile carry part of that story.\n\nMusic and painting both leave room for feeling that doesn't need a full explanation. What detail in a portrait makes a person feel present to you?\n\nhttps://vermillionaurora.com/products/painting-portrait-in-blue-light/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=music-portrait",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/portrait-in-blue-light.jpg"
+      ],
+      "dueAt": "2026-10-20T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261023",
+      "service": "facebook",
+      "text": "A portrait can hold more than one person's likeness. It can hold the space between people: a glance, laughter, or the way they lean toward one another.\n\nIn watercolor, I enjoy letting those expressions share the page with lively color and the texture of the paper. The picture can feel alive without every detail being spelled out.\n\nWould you choose a quiet portrait or an animated moment like this one?\n\nhttps://vermillionaurora.com/about/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=shared-expression",
+      "imageUrls": [
+        "https://vermillionaurora.com/about/images/portrait-together.jpg"
+      ],
+      "dueAt": "2026-10-23T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261025",
+      "service": "facebook",
+      "text": "A portrait commission starts with someone who matters to you.\n\nIt could be one person, a couple, or a shared moment. My watercolor pastel approach uses a limited palette to explore expression, saturated color, and the texture of the paper. Girl Tuning Guitar offers a glimpse of that approach.\n\nTell me who you'd like painted and what you want the portrait to hold. The commission form accepts an optional reference image, desired size, and palette swatch.\n\nhttps://vermillionaurora.com/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=portrait-commission#contact",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/guitarist.jpg"
+      ],
+      "dueAt": "2026-10-25T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261027",
+      "service": "facebook",
+      "text": "A garden can have a window into another landscape.\n\nFor this mural, I brought together a cormorant on a piling, sunset over Puget Sound, the Olympic Mountains, and sailboats. The painting also needed to belong among the plants around it.\n\nWorking at mural scale changes the relationship between a picture and its setting. Where would you put a painted view: a garden, a room, or a shared public space?\n\nhttps://vermillionaurora.com/murals/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=garden-mural#garden",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/cormorant-hero.jpg"
+      ],
+      "dueAt": "2026-10-27T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261030",
+      "service": "facebook",
+      "text": "Berlín, El Salvador: a mural becomes part of the everyday life around it.\n\nThe finished sign sits beside a basketball court. People, play, and a place's identity meet in the same scene. This is one of the things I value about mural work: a painting can live where a community gathers.\n\nNatural beauty and self-sovereignty are threads through my practice, alongside the people who give a place its character. Explore this project and its photographs on the site.\n\nhttps://vermillionaurora.com/murals/berlin-el-salvador/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=berlin-community",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/berlin-el-salvador/hero.jpeg"
+      ],
+      "dueAt": "2026-10-30T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-facebook-20261101",
+      "service": "facebook",
+      "text": "Have a wall, garden, or shared space that could use a painting?\n\nI work on murals as well as watercolor portraits and landscapes. A mural project begins with the setting, the people who use it, and the feeling you want the space to carry. This garden piece offers one example.\n\nSend me a photograph of the space, its approximate dimensions, and your idea through the commission form. We can start a conversation about what belongs there.\n\nhttps://vermillionaurora.com/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=mural-commission#contact",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/cormorant-hero.jpg"
+      ],
+      "dueAt": "2026-11-01T18:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261006",
+      "service": "instagram",
+      "text": "I'm TJ Murphy, a Seattle artist working in watercolor, watercolor pastels, and murals. I started painting in 2020. Natural beauty, human connection, and the freedom to choose our own path keep bringing me back to it.\n\nI'll share finished work and a closer look at how it happens. What brings you here: landscapes, portraits, or murals?\n\nExplore the work through the link in my bio.\n\n#SeattleArtist #WatercolorArt #ArtistIntroduction",
+      "imageUrls": [
+        "https://vermillionaurora.com/about/images/tj-murphy-portrait.jpg"
+      ],
+      "dueAt": "2026-10-06T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261009",
+      "service": "instagram",
+      "text": "Three primaries and a dark tone: a small starting point with a lot of possibilities.\n\nMy watercolor pastel portraits explore saturation, granulation, and the relationships between colors. The primaries change from painting to painting or series to series.\n\nGirl Tuning Guitar. Which color catches your eye first?\n\n#WatercolorPastel #LimitedPalette #PortraitPainting",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/guitarist.jpg"
+      ],
+      "dueAt": "2026-10-09T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261011",
+      "service": "instagram",
+      "text": "El Zonte at Dusk, El Salvador.\n\nLight across the sky, color across the water, and the rhythm of breaking waves. A watercolor pastel for anyone who keeps returning to the sea.\n\nFine-art prints are available. Follow the link in my bio, then choose Shop fine-art prints to explore the work and options.\n\n#ElSalvador #SeascapePainting #FineArtPrints",
+      "imageUrls": [
+        "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg"
+      ],
+      "dueAt": "2026-10-11T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261013",
+      "service": "instagram",
+      "text": "Sunset on Sucia Island in Puget Sound.\n\nThe dark shapes hold the light. A shoreline, a horizon, and a few minutes of color become something worth returning to.\n\nThe original has sold; I'm sharing it as part of the collection. What place makes you stop and look?\n\n#PugetSound #PacificNorthwestArt #WatercolorLandscape",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/sunset-silhouette.jpg"
+      ],
+      "dueAt": "2026-10-13T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261016",
+      "service": "instagram",
+      "text": "Follow the light from the horizon into the waves.\n\nIn El Zonte at Dusk, the open sky meets the repeated marks of the water. Two rhythms, held together by color.\n\nWhere does your eye settle first?\n\n#WatercolorComposition #SeascapeArt #PaintingPractice",
+      "imageUrls": [
+        "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg"
+      ],
+      "dueAt": "2026-10-16T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261018",
+      "service": "instagram",
+      "text": "A place you return to. A view from home. A landscape that holds a memory.\n\nThis garden mural brings Puget Sound, the Olympic Mountains, and a cormorant into one setting. Your own commission can begin with a place that matters to you.\n\nUse Commission a painting through the link in my bio to share your idea.\n\n#LandscapeCommission #PugetSoundArt #SeattleArtist",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/cormorant-hero.jpg"
+      ],
+      "dueAt": "2026-10-18T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261020",
+      "service": "instagram",
+      "text": "MJ Spinning at Chalet.\n\nHeadphones, a slight smile, and color moving through the face. Portraits give me a way to pay attention to the small details that make someone feel present.\n\nWhat detail makes a portrait come alive for you?\n\n#WatercolorPortrait #MusicAndArt #PortraitArtist",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/portrait-in-blue-light.jpg"
+      ],
+      "dueAt": "2026-10-20T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261023",
+      "service": "instagram",
+      "text": "A glance. A laugh. The way people lean toward one another.\n\nA group portrait can hold the connection between its subjects as well as their faces. Watercolor leaves room for that energy and for the paper to breathe.\n\nWould you choose a quiet portrait or an animated moment?\n\n#GroupPortrait #WatercolorPortraits #HumanConnection",
+      "imageUrls": [
+        "https://vermillionaurora.com/about/images/portrait-together.jpg"
+      ],
+      "dueAt": "2026-10-23T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261025",
+      "service": "instagram",
+      "text": "Who would you like to see in a painting?\n\nA portrait commission can begin with a person, a shared moment, or a photograph you keep returning to. Girl Tuning Guitar offers a glimpse of my watercolor pastel approach.\n\nChoose Commission a painting through the link in my bio. You can include a reference image, preferred size, and palette swatch.\n\n#PortraitCommission #CustomPortrait #WatercolorArtist",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/guitarist.jpg"
+      ],
+      "dueAt": "2026-10-25T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261027",
+      "service": "instagram",
+      "text": "A cormorant, Puget Sound, the Olympic Mountains, and sunset color: a painted view made for a garden.\n\nAt mural scale, the setting becomes part of the composition. The plants, the light, and the painting all share the same space.\n\nWhere would you put a painted view?\n\n#GardenMural #SeattleMural #PublicArt",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/cormorant-hero.jpg"
+      ],
+      "dueAt": "2026-10-27T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261030",
+      "service": "instagram",
+      "text": "Berlín, El Salvador.\n\nA finished sign beside a basketball court, with everyday life continuing around it. Murals let a painting become part of a place where people gather.\n\nPeople, play, and a place's identity share the scene. Explore the mural projects through the link in my bio.\n\n#BerlinElSalvador #CommunityArt #MuralPainting",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/berlin-el-salvador/hero.jpeg"
+      ],
+      "dueAt": "2026-10-30T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-instagram-20261101",
+      "service": "instagram",
+      "text": "A garden, a room, or a place where people gather. What could a painting bring to that space?\n\nI take inquiries for murals as well as watercolor portraits and landscapes. Share a photograph, approximate dimensions, and your idea through Commission a painting in my bio link.\n\nLet's begin with the setting and the feeling you want it to carry.\n\n#MuralCommission #CommissionAnArtist #SeattleArt",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/cormorant-hero.jpg"
+      ],
+      "dueAt": "2026-11-01T18:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261006",
+      "service": "twitter",
+      "text": "I started painting in 2020. Now my work moves between landscapes, portraits, and murals, with natural beauty and self-sovereignty running through it. I'm TJ Murphy, a Seattle artist. What do you look for in a painting?\n\nhttps://vermillionaurora.com/links/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=meet-tj",
+      "imageUrls": [
+        "https://vermillionaurora.com/about/images/tj-murphy-portrait.jpg"
+      ],
+      "dueAt": "2026-10-06T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261009",
+      "service": "twitter",
+      "text": "Three primaries and a dark tone can open an entire world of color. I change the starting palette between paintings or series. Girl Tuning Guitar is a look into that watercolor pastel practice. Which color catches your eye first?\n\nhttps://vermillionaurora.com/products/painting-guitarist/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=limited-palette",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/guitarist.jpg"
+      ],
+      "dueAt": "2026-10-09T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261011",
+      "service": "twitter",
+      "text": "El Zonte at Dusk, El Salvador. Light across the sky and color across the breaking waves. Fine-art prints are available; current size, paper, and framing choices are on the painting page.\n\nhttps://vermillionaurora.com/products/painting-shoreline-at-dusk/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=shore-print",
+      "imageUrls": [
+        "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg"
+      ],
+      "dueAt": "2026-10-11T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261013",
+      "service": "twitter",
+      "text": "Sunset on Sucia Island in Puget Sound. The dark shapes hold the light. This original has sold, but its place in the collection remains. What landscape keeps pulling you back to look again?\n\nhttps://vermillionaurora.com/products/painting-sunset-silhouette/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=sucia-light",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/sunset-silhouette.jpg"
+      ],
+      "dueAt": "2026-10-13T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261016",
+      "service": "twitter",
+      "text": "In El Zonte at Dusk, the open sky meets the repeated marks of the waves. Two rhythms, held together by color. Where does your eye settle first: the horizon or the water in the foreground?\n\nhttps://vermillionaurora.com/products/painting-shoreline-at-dusk/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=shore-composition",
+      "imageUrls": [
+        "https://vermillionaurora.com/print-editions/64f214c928adc07dafc52ae549449f37b2c5d0eb6ef2d9baaef46f47ad8d9fdc.jpg"
+      ],
+      "dueAt": "2026-10-16T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261018",
+      "service": "twitter",
+      "text": "A place you return to can become a painting you live with. This garden mural brings Puget Sound, the Olympic Mountains, and a cormorant together. Have a meaningful landscape in mind? Tell me about it through the commission form.\n\nhttps://vermillionaurora.com/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=place-commission#contact",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/cormorant-hero.jpg"
+      ],
+      "dueAt": "2026-10-18T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261020",
+      "service": "twitter",
+      "text": "MJ Spinning at Chalet. Headphones, a slight smile, and color moving through the face. Portraits are a way to pay attention to someone. What detail makes a painted person feel present to you?\n\nhttps://vermillionaurora.com/products/painting-portrait-in-blue-light/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=music-portrait",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/portrait-in-blue-light.jpg"
+      ],
+      "dueAt": "2026-10-20T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261023",
+      "service": "twitter",
+      "text": "A group portrait can hold the space between people: a glance, laughter, the way they lean toward one another. Would you choose a quiet portrait or an animated moment?\n\nhttps://vermillionaurora.com/about/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=shared-expression",
+      "imageUrls": [
+        "https://vermillionaurora.com/about/images/portrait-together.jpg"
+      ],
+      "dueAt": "2026-10-23T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261025",
+      "service": "twitter",
+      "text": "A portrait commission starts with someone who matters to you. Share a reference image, a preferred size, and an optional palette swatch. Girl Tuning Guitar offers a glimpse of my watercolor pastel approach.\n\nhttps://vermillionaurora.com/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=portrait-commission#contact",
+      "imageUrls": [
+        "https://vermillionaurora.com/gallery-images/guitarist.jpg"
+      ],
+      "dueAt": "2026-10-25T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261027",
+      "service": "twitter",
+      "text": "A garden can have a window into another landscape. This mural brings a cormorant, Puget Sound, the Olympic Mountains, and sunset color into the setting. Where would you put a painted view?\n\nhttps://vermillionaurora.com/murals/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=garden-mural#garden",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/cormorant-hero.jpg"
+      ],
+      "dueAt": "2026-10-27T17:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261030",
+      "service": "twitter",
+      "text": "Berlín, El Salvador. A painted sign beside a basketball court, with everyday life continuing around it. A mural can live where a community gathers. People and a place's identity become part of the work.\n\nhttps://vermillionaurora.com/murals/berlin-el-salvador/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=berlin-community",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/berlin-el-salvador/hero.jpeg"
+      ],
+      "dueAt": "2026-10-30T01:00:00Z"
+    },
+    {
+      "idempotencyKey": "artist-launch-x-20261101",
+      "service": "twitter",
+      "text": "Have a wall, garden, or shared space that could use a painting? Send a photograph, approximate dimensions, and your idea through my commission form. Let's begin with the setting and the feeling you want it to carry.\n\nhttps://vermillionaurora.com/?utm_source=x&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=mural-commission#contact",
+      "imageUrls": [
+        "https://vermillionaurora.com/murals/images/cormorant-hero.jpg"
+      ],
+      "dueAt": "2026-11-01T18:00:00Z"
+    }
+  ]
+}
