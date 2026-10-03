@@ -1,4 +1,4 @@
-name: Publish verified checkout handoff fixes
+name: Publish verified checkout fixes
 on:
   push:
     branches: [ops/publish-checkout-handoff-fixes]
@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 27944bda5b78a04d8fe5ed79caa8d0b2d05604ca
+          ref: b9a3431dee81035c19299fca320cbbdeeffcebef
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -40,8 +40,8 @@ jobs:
           const expected=fs.readFileSync('payments/cart.js','utf8');
           let ready=false;
           for(let attempt=0;attempt<18;attempt++){
-            const r=await fetch('https://vermillionaurora.com/payments/cart.js?verified-release=27944bda5b78a04d8fe5ed79caa8d0b2d05604ca-'+attempt,{cache:'no-store',signal:AbortSignal.timeout(15000)});
-            if(r.ok&&await r.text()===expected){ready=true;console.log('Verified live cart: delayed Bitcoin redirect and address validation fixes.');break;}
+            const r=await fetch('https://vermillionaurora.com/payments/cart.js?verified-release=b9a3431dee81035c19299fca320cbbdeeffcebef-'+attempt,{cache:'no-store',signal:AbortSignal.timeout(15000)});
+            if(r.ok&&await r.text()===expected){ready=true;console.log('Verified live cart: shipping quote retry and checkout-state recovery.');break;}
             await new Promise(resolve=>setTimeout(resolve,5000));
           }
           if(!ready)throw Error('The tested cart script is not live');

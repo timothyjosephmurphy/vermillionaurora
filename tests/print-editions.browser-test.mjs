@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
+import {collections} from '../catalog/catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 const origin='https://vermillionaurora.com',root=path.resolve('dist');
 const editions=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.productId.startsWith('book-art-'));
@@ -36,7 +37,7 @@ try {
   });
   await page.goto(origin+'/exhibitions/paul-murphy/');
   assert.match(await page.locator('.section-heading').textContent(),/prints are available for every painting/);
-  for(const id of ids.filter(id=>id.startsWith('paul-murphy-')))assert(await page.locator(`a[href="/products/${id}/"]`).count(),`Gallery link: ${id}`);
+  for(const id of collections.paul.map(entry=>entry.product).filter(id=>ids.includes(id)))assert(await page.locator(`a[href="/products/${id}/"]`).count(),`Gallery link: ${id}`);
   for(const width of [1280,390]){
     await page.setViewportSize({width,height:900});
     for(const id of ids){
