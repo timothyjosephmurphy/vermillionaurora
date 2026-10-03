@@ -16,7 +16,9 @@ export const bitcoinOffered = (env,slug) => env.BTCPAY_CHECKOUT_ENABLED === 'tru
   !!env.BTCPAY_CHECKOUT_SLUGS?.split(',').map(s=>s.trim()).includes(slug);
 export async function bitcoinApi(env,path,body) {
   const response = await fetch(`${bitcoinServer(env)}/api/v1/stores/${encodeURIComponent(env.BTCPAY_STORE_ID)}${path}`,{
-    method:body === undefined ? 'GET' : 'POST',redirect:'error',signal:AbortSignal.timeout(20_000),
+    // Workers rejects redirect:'error' before sending the request. Manual mode
+    // leaves redirects as non-OK responses without forwarding credentials.
+    method:body === undefined ? 'GET' : 'POST',redirect:'manual',signal:AbortSignal.timeout(20_000),
     headers:{Authorization:`token ${env.BTCPAY_API_KEY}`,'Content-Type':'application/json'},
     body:body === undefined ? undefined : JSON.stringify(body)
   });
