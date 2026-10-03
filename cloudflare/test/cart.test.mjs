@@ -188,6 +188,22 @@ it('rejects mismatched merchant, amount, address and items without capturing',as
   }
   expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(0);for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('reserved');
 });
+it('releases a verified missing Bitcoin invoice and reuses the cart reservation for another painting',async()=>{
+  const {id,order}=await setup('bitcoin');await order.start('bitcoin');
+  invoices.length=0;
+  await runInDurableObject(order,i=>i.save({...i.read(),status:'creating',providerId:undefined,url:undefined,createAttemptedAt:Date.now()-180_000}));
+  await order.refresh();
+  expect((await read(order)).status).toBe('creating');
+  expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
+  await runInDurableObject(order,i=>i.save({...i.read(),noInvoiceCheckedAt:Date.now()-61_000}));
+  await order.refresh();
+  expect((await read(order)).status).toBe('expired');
+  expect((await read(order)).method).toBeUndefined();
+  for(const slug of ids)expect(await env.PAINTING_STOCK.getByName(slug).status()).toBe('available');
+  await order.syncCart(id,await keyHash('a'.repeat(64)),[{id:ids[0],quantity:1}]);
+  expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
+  expect(invoices).toHaveLength(0);
+});
 it('recovers a lost Bitcoin invoice reply without creating a second invoice, and keeps locks during confirmation',async()=>{
   const {order,settings}=await setup('bitcoin');failCreate=true;await order.start('bitcoin');failCreate=false;await order.refresh();expect((await read(order)).status).toBe('pending');expect(invoices).toHaveLength(1);
   invoices[0].status='Processing';invoices[0].payments=[{id:'TX',value:'0.01',status:'Processing'}];await order.refresh();expect((await read(order)).status).toBe('processing');
