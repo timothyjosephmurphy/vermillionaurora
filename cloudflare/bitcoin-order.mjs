@@ -33,7 +33,7 @@ export class BitcoinOrder extends DurableObject {
       try {
         const invoice=await bitcoinApi(this.env,'/invoices',{
           amount:quote.total,currency:'USD',metadata:{orderId:`va-btc-${id}`,itemCode:slug,itemDesc:quote.title},
-          checkout:{paymentMethods:['BTC','BTC-LightningNetwork'],speedPolicy:'MediumSpeed',paymentTolerance:0,
+          checkout:{paymentMethods:['BTC-CHAIN','BTC-LN'],speedPolicy:'MediumSpeed',paymentTolerance:0,
             expirationMinutes:15,monitoringMinutes:1440,redirectAutomatically:true,
             redirectURL:`${SITE}/products/${slug}/?bitcoin=${id}`}
         });
@@ -77,13 +77,20 @@ export class BitcoinOrder extends DurableObject {
     else {
       const invoices=await bitcoinApi(this.env,`/invoices?orderId=${encodeURIComponent('va-btc-'+data.id)}&take=2`);
       if(!Array.isArray(invoices))throw Error('Invalid invoice search');
-      if(invoices.length!==1) {
-        if(invoices.length>1 || Date.now()-data.createdAt>120_000) {
-          data=this.save({...data,status:'review',reason:'Invoice creation could not be reconciled. Check BTCPay before releasing the painting.',checkedAt:Date.now()});
-          await this.notifyReview(data);
-          await this.ctx.storage.setAlarm(Date.now()+15*60_000);
+      if(invoices.length>1) {
+        data=this.save({...data,status:'review',reason:'Multiple BTCPay invoices match this order. Check BTCPay before releasing the painting.',checkedAt:Date.now()});
+        await this.notifyReview(data);await this.ctx.storage.setAlarm(Date.now()+15*60_000);return;
+      }
+      if(invoices.length===0) {
+        if(Date.now()-data.createdAt<=120_000)return;
+        if(!data.noInvoiceCheckedAt||Date.now()-data.noInvoiceCheckedAt<60_000){
+          data=this.save({...data,noInvoiceCheckedAt:Date.now(),checkedAt:Date.now()});return;
         }
-        return;
+        // Release only after two successful BTCPay searches show that no
+        // invoice was created. An API failure still leaves the reservation held.
+        await this.stock(data).releaseBitcoinOrder(data.id);await this.stock(data).release(data.id);
+        data=this.save({...data,status:'expired',invoiceId:undefined,url:undefined,noInvoiceCheckedAt:undefined,checkedAt:Date.now()});
+        await this.archive(data);await this.ctx.storage.deleteAlarm();return;
       }
       invoice=invoices[0];
     }
