@@ -50,7 +50,7 @@
   function saveCart(){persistCart();return syncHold(cart);}
   document.addEventListener('DOMContentLoaded',async()=>{
     const nav=document.querySelector('.main-nav');
-    if(nav&&!nav.querySelector('[data-cart-link]')){const a=node('a',undefined,'cart-nav');a.href='/cart/';a.dataset.cartLink='';a.append(node('span','Cart'));const count=node('span',String(cart.length),'cart-count');count.dataset.cartCount='';a.append(count);nav.append(a);}counts();
+    if(nav&&!nav.querySelector('[data-cart-link]')){const a=node('a',undefined,'cart-nav');a.href='/cart/';a.dataset.cartLink='';a.append(node('span','Cart'));const count=node('span',String(cart.length),'cart-count');count.dataset.cartCount='';a.append(count,cartPaymentIcons());nav.append(a);}counts();
     const root=document.querySelector('[data-cart-page]');
     capabilities=await capabilitiesPromise;
     holdSession=read(HOLD);
@@ -109,6 +109,11 @@
     updateQuoteButton();
     updatePaymentControls(false);
     root.querySelector('[data-cart-shipping]').textContent='Calculated below';root.querySelector('[data-cart-tax]').textContent='Calculated below';root.querySelector('[data-cart-total]').textContent='—';
+  }
+  function cartPaymentIcons(){
+    const icons=node('span',undefined,'cart-payment-icons');icons.setAttribute('aria-hidden','true');
+    for(const kind of ['bitcoin','lightning']){const icon=paymentIcon(kind);icon.setAttribute('class',`cart-${kind}-icon`);icon.setAttribute('width','14');icon.setAttribute('height','14');icons.append(icon);}
+    return icons;
   }
   function paymentIcon(kind){
     const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');
