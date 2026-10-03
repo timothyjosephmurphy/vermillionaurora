@@ -30,7 +30,8 @@ try{
   assert.match(await page.locator('[data-print-dimensions]').textContent(),/Mat \/ frame size:/);
   assert(await frames.isHidden(),'No third-party frame link is approved for the 12 × 15 mat');
   await page.locator('input[value$="-small"]').check();
-  const variant=prints['print-painting-portrait-in-green-small-frame-black'];assert((await page.locator('[data-print-dimensions]').textContent()).includes('Mat / frame size: '+variant.mat.outer.width+' × '+variant.mat.outer.height));
+  const options=JSON.parse(await page.locator('[data-print-options]').getAttribute('data-options'));
+  const variant=options.find(o=>o.id==='print-painting-portrait-in-green-small').matOptions[0];assert((await page.locator('[data-print-dimensions]').textContent()).includes('Mat / frame size: '+variant.mat.outer.width+' × '+variant.mat.outer.height));
   assert.equal(await frames.locator('.frame-link').count(),1);
   assert.match(await frames.locator('.frame-fit').textContent(),/Fits the selected mat/);
   assert(await page.locator('[data-print-add]').isDisabled());

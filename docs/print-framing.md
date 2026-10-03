@@ -11,9 +11,14 @@ Paul Murphy editions retain their existing full-image, 300-DPI files and narrow
 white safety margin. Both the physical print size and nominal mat opening use
 the complete paper size; the supplier's small mat overlap falls on the white
 margin. The print is not resized to its inner image dimensions or cropped to
-fit a standard frame. Each mat fits the smallest supported standard frame with
-at least one inch of board around the paper. The preview and cart show that
-frame opening size and the selected finish. Original artwork dimensions,
+fit a standard frame. Assembled FinerWorks frames are custom sized to the selected
+print with a 1.5-inch mat border on all four sides. Very small prints use the
+smallest equal border that satisfies the mat's 8-inch minimum (up to about
+2 inches). The full paper and its safety margin remain intact. The frame changes
+with the print size, and the preview uses a common physical scale so small prints
+also appear smaller. The preview and cart show the frame opening size and
+selected finish. Standalone mats for customer-supplied frames retain their stock
+frame sizes. Original artwork dimensions,
 availability and prices are independent of these print products.
 
 `payments/quote-paul-frames.mjs` retrieves authenticated, read-only supplier
@@ -25,8 +30,9 @@ base product code, mat, frame and unframed price. No print order is placed.
 The three frame choices are FinerWorks Gallery Economy IDs 1, 2, and 7, verified
 through the authenticated catalog on September 30, 2026. Framed prints include
 Snow White 4-ply matting (ID 1) and Premium Clear acrylic glazing (ID 1). The frame
-fit follows the mat outer dimensions: 8 × 10, 11 × 14, or 16 × 20 inches for the
-portrait samples, with other supported sizes for the Paul Murphy editions. These are
+fit follows the custom mat outer dimensions for current print editions.
+The retired portrait sample configurations retain their original stock-frame
+dimensions for historical validation. These are
 frame opening dimensions, not exterior moulding dimensions.
 
 | Print size | Unframed | Black or white frame | Natural wood frame |
@@ -34,6 +40,9 @@ frame opening dimensions, not exterior moulding dimensions.
 | 6 × 7.5 in | $25 | $59.63 | $68.63 |
 | 9 × 11.25 in | $45 | $91 | $102 |
 | 12 × 15 in | $75 | $149 | $164 |
+
+The table above describes the retired portrait samples. Current edition sizes
+use exact, newly quoted custom frame dimensions and prices.
 
 The unframed artwork price retains the approved rule: 3.5 times print production
 cost, rounded up to $5, with a $25 minimum. At the owner's direction, framed
@@ -50,6 +59,12 @@ Each finish has a separate catalog/cart ID. Orders, customer and seller emails,
 public order summaries, and the private fulfillment record retain the selected
 frame, mat, glazing, and size. Saved orders retain their original configuration.
 The existing idempotent payment/fulfillment flow is unchanged.
+
+`payments/refresh-print-frame-quotes.mjs` refreshes all currently enabled print
+editions through authenticated, read-only sandbox diagnostics. It verifies every
+exact frame/mat size, source and file hash, product code, and retail price before
+updating either catalog. It never submits orders. Its temporary credential is
+rotated between settled batches when needed and removed after completion.
 
 The owner corrected both original measurements to 12 inches wide by 15 inches
 high on September 30, 2026. Current sample files fill a 1000 × 1250 portrait

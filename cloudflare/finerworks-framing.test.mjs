@@ -8,7 +8,8 @@ const env={PAYPAL_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_
 const media={id:144,productTypeId:5,styleIds:[8]},style={id:8,canMat:true,allowDecimal:true,customSizing:true,allowRotate:true,min:{width:4,height:4},max:{width:40,height:90}};
 const image={width:7.5,height:6},paper={...image,sku:'5M144M8S7.5X6'},sku='5M144M8S7DD5X6F1S10X8J1S7DD5X6G1';
 const address={name:'Sandbox Test',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'};
-function provider(t,{valid=true,missingGlazing=false,frameCost=21}={}) {
+function provider(t,{valid=true,missingGlazing=false,frameCost=21,productCode=sku}={}) {
+  const sku=productCode;
   const calls=[];t.mock.method(globalThis,'fetch',async(url,init)=>{
     const endpoint=new URL(url).pathname,body=JSON.parse(init.body);calls.push({endpoint,body});
     if(endpoint.endsWith('list_media_types'))return Response.json([{id:144,product_type_id:5,name:'Watercolor Bright White',style_ids:[8]}]);
@@ -29,10 +30,12 @@ function provider(t,{valid=true,missingGlazing=false,frameCost=21}={}) {
 }
 const option=()=>({id:'print-test-small',key:'small',amount:'25.00',image,paper});
 test('inset editions retain the whole bordered sheet through framed quoting and fulfillment',async t=>{
-  const calls=provider(t),inset={width:7.2467,height:5.7467};
-  const o=await quoteFramedOption(env,{media:[media],styles:[style]},{...option(),image:inset},'black');
+  const sku='5M144M8S7DD5X6F1S10DD5X9J1S7DD5X6G1';
+  const calls=provider(t,{productCode:sku}),inset={width:7.2467,height:5.7467};
+  const o=await quoteFramedOption(env,{media:[media],styles:[style]},{...option(),image:inset,sizeBasis:'image-proportional'},'black');
   const build=calls.find(c=>c.endpoint.endsWith('build_product_code')).body.build;
   assert.deepEqual([build.PrintW,build.PrintH,build.SheetW,build.SheetH,build.Mat1WindowW,build.Mat1WindowH],[7.5,6,7.5,6,7.5,6]);
+  assert.deepEqual([build.FrameW,build.FrameH],[10.5,9]);
   const item={id:o.id,type:'print',title:'Framed edition',provider:'finerworks',sku:o.sku,baseSku:o.baseSku,frame:o.frame,mat:o.mat,imageSize:inset,paperSize:image,quantity:1,amount:'58.00',unframedAmount:'25.00',assetUrl:'https://vermillionaurora.com/print-editions/'+ 'a'.repeat(64)+'.jpg',layout:'full-image-white-border-v1',sizeBasis:'image-proportional',layoutApproved:true};
   const quote=await quoteFinerWorksPrints(env,[item],address);
   assert.equal((await validateFinerWorksPrintOrder(env,[item],address,quote)).ordersSubmitted,false);

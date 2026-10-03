@@ -85,7 +85,7 @@ export async function quoteFinerWorksPrints(env,items,address) {
   const materials=await finerworksMaterials(env);
   for(const item of items) {
     if(item.frame){
-      const quoted=await quoteFramedOption(env,materials,{id:item.id,amount:item.unframedAmount,image:item.imageSize,paper:{...item.paperSize,sku:item.baseSku}},item.frame.key);
+      const quoted=await quoteFramedOption(env,materials,{id:item.id,amount:item.unframedAmount,image:item.imageSize,paper:{...item.paperSize,sku:item.baseSku},sizeBasis:item.sizeBasis},item.frame.key);
       if(quoted.sku!==item.sku||!sameMat(quoted.mat,item.mat)||!sameFrame(quoted.frame,item.frame))throw Error('FinerWorks frame or product configuration changed; review before checkout');
       continue;
     }

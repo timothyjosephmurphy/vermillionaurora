@@ -1,10 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {matLayout,matSizeAllowed} from '../catalog/matting.mjs';
+import {matLayout,matSizeAllowed,framedMatLayout} from '../catalog/matting.mjs';
 import {frameSelection} from '../catalog/frame-matching.mjs';
 import {printOptions} from '../catalog/print-sizing.mjs';
 import config from '../catalog/legacy-print-samples.json' with {type:'json'};
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
+test('custom framed prints follow their paper size with equal borders and respect mat limits',()=>{
+  const material={id:1,name:'Snow White',minWidth:8,minHeight:8,maxWidth:38,maxHeight:58};
+  for(const paper of [{width:6,height:7.5},{width:9,height:11.25},{width:12,height:15},{width:14,height:8},{width:8,height:8}]){
+    const mat=framedMatLayout(paper,paper,material);
+    assert.deepEqual(mat.outer,{width:paper.width+3,height:paper.height+3,unit:'in'});
+    assert.deepEqual(mat.window,{...paper,unit:'in'});
+  }
+  assert.deepEqual(framedMatLayout({width:4,height:4.5},undefined,material).outer,{width:8,height:8.5,unit:'in'});
+  for(const paper of [null,{width:0,height:10},{width:NaN,height:10},{width:40,height:90}])assert.equal(framedMatLayout(paper,undefined,material),null);
+  assert.equal(framedMatLayout({width:8,height:10},{width:9,height:10},material),null);
+});
 test('mat follows orientation and fits an existing frame without trimming the sheet',()=>{
   for(const [paper,outer] of [[{width:7.5,height:6},{width:10,height:8}],[{width:11.25,height:9},{width:14,height:11}],[{width:15,height:12},{width:20,height:16}],[{width:12,height:15},{width:16,height:20}]]){
     const mat=matLayout(paper);assert.deepEqual(mat.outer,{...outer,unit:'in'});assert.deepEqual(mat.window,{...paper,unit:'in'});
