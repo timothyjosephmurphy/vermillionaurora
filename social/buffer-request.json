@@ -1,0 +1,9 @@
+{
+  "operation": "list",
+  "input": {
+    "channelId": "6ac0b1e7ea19ca0bde612916",
+    "status": [
+      "draft"
+    ]
+  }
+}
