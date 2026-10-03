@@ -1,6 +1,7 @@
 import { sellerMailToken } from './shipping-email.mjs';
 import { priceOrder } from './checkout-pricing.mjs';
 import { squareRequest } from './square-provider.mjs';
+import { bitcoinApi } from './bitcoin-api.mjs';
 
 // Administrative provider checks without payments or label purchases. The deployment job creates and removes
 // this random credential; public callers cannot trigger provider requests.
@@ -39,9 +40,7 @@ export async function checkoutReadiness(request,env) {
   if(env.BTCPAY_CHECKOUT_ENABLED==='true') {
     try {
       if(!env.BTCPAY_API_KEY||!env.BTCPAY_STORE_ID)throw Error('Missing BTCPay API key or store ID');
-      const base=new URL(env.BTCPAY_URL);
-      if(base.protocol!=='https:'||base.username||base.password||base.pathname!=='/'||base.search||base.hash)throw Error('Invalid BTCPay server URL');
-      const invoices=await get(`${base.origin}/api/v1/stores/${encodeURIComponent(env.BTCPAY_STORE_ID)}/invoices?take=1`,`token ${env.BTCPAY_API_KEY}`);
+      const invoices=await bitcoinApi(env,'/invoices?take=1');
       if(!Array.isArray(invoices))throw Error('Invalid BTCPay invoice response');
       checks.bitcoinInvoiceAccess=true;
       checks.bitcoinReservedOrders=[];
