@@ -36,6 +36,19 @@ export async function checkoutReadiness(request,env) {
     checks.shippoAuthentication=true;
     checks.activeCarriers=(accounts.results||[]).filter(x=>x.active===true).map(x=>x.carrier);
   }catch(error){checks.shippoError=error.message;}
+  if(env.BTCPAY_CHECKOUT_ENABLED==='true') {
+    try {
+      if(!env.BTCPAY_API_KEY||!env.BTCPAY_STORE_ID)throw Error('Missing BTCPay API key or store ID');
+      const base=new URL(env.BTCPAY_URL);
+      if(base.protocol!=='https:'||base.username||base.password||base.pathname!=='/'||base.search||base.hash)throw Error('Invalid BTCPay server URL');
+      const invoices=await get(`${base.origin}/api/v1/stores/${encodeURIComponent(env.BTCPAY_STORE_ID)}/invoices?take=1`,`token ${env.BTCPAY_API_KEY}`);
+      if(!Array.isArray(invoices))throw Error('Invalid BTCPay invoice response');
+      checks.bitcoinInvoiceAccess=true;
+    } catch(error) {
+      checks.bitcoinInvoiceAccess=false;
+      checks.bitcoinInvoiceAccessError=error.message;
+    }
+  }
   if(env.SQUARE_CHECKOUT_ENABLED==='true') {
     try {
       const required=['SQUARE_ACCESS_TOKEN','SQUARE_APPLICATION_ID','SQUARE_LOCATION_ID','SQUARE_WEBHOOK_SIGNATURE_KEY','SQUARE_WEBHOOK_URL'];
@@ -81,6 +94,7 @@ export async function checkoutReadiness(request,env) {
   const pilotReady=env.CHECKOUT_PILOT_ENABLED!=='true' ||
     (checks.pilotRestriction&&checks.automaticLabels&&checks.sellerEmail&&(checks.completedPilot||(checks.insuredQuote&&checks.pilotStock==='available')));
   const squareReady=env.SQUARE_CHECKOUT_ENABLED!=='true'||(checks.squareConfiguration&&checks.squareLocation&&checks.squareWebhook);
-  const ready=squareReady&&checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
+  const bitcoinReady=env.BTCPAY_CHECKOUT_ENABLED!=='true'||checks.bitcoinInvoiceAccess===true;
+  const ready=bitcoinReady&&squareReady&&checks.paypalAuthentication&&checks.paypalWebhook&&checks.merchantMatchesConfirmedAccount&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
   return reply({mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE||null,ready:!!ready,checks},ready?200:503);
 }
