@@ -183,6 +183,24 @@ export class CartOrder extends DurableObject {
     if(this.env.PAYPAL_MODE!==d.mode||bitcoinServer(this.env)!==d.server||this.env.BTCPAY_STORE_ID!==d.storeId||
       !/^[a-zA-Z0-9]{1,100}$/.test(invoice.id||'')||(d.providerId&&d.providerId!==invoice.id)||invoice.storeId!==d.storeId||invoice.metadata?.orderId!==`va-cart-${d.id}`||invoice.currency!=='USD'||!/^\d+(\.\d{1,2})?$/.test(invoice.amount||'')||Number(invoice.amount).toFixed(2)!==d.quote.total)throw Error('Bitcoin invoice does not match the saved order');
   }
+  // Deployment-only diagnostics: expose comparison flags, never invoice IDs,
+  // checkout links, credentials, buyer details, or raw provider responses.
+  async bitcoinDiagnostics() {
+    const d=this.read();if(!d||d.method!=='bitcoin')return {bitcoin:false};
+    const result={bitcoin:true,status:d.status,configurationMatches:this.env.PAYPAL_MODE===d.mode&&bitcoinServer(this.env)===d.server&&this.env.BTCPAY_STORE_ID===d.storeId};
+    if(!result.configurationMatches)return result;
+    try {
+      const invoices=d.providerId?[await bitcoinApi(this.env,`/invoices/${encodeURIComponent(d.providerId)}`)]:await bitcoinApi(this.env,`/invoices?orderId=${encodeURIComponent('va-cart-'+d.id)}&take=2`);
+      if(!Array.isArray(invoices))return {...result,error:'invalid-invoice-response'};
+      result.matches=invoices.length;if(invoices.length!==1)return result;
+      const invoice=invoices[0];
+      result.invoiceStatus=['New','Processing','Settled','Expired','Invalid'].includes(invoice.status)?invoice.status:'unknown';
+      result.checks={id:/^[a-zA-Z0-9]{1,100}$/.test(invoice.id||''),providerId:!d.providerId||d.providerId===invoice.id,
+        store:invoice.storeId===d.storeId,order:invoice.metadata?.orderId===`va-cart-${d.id}`,currency:invoice.currency==='USD',
+        amountFormat:/^\d+(\.\d{1,2})?$/.test(invoice.amount||''),amount:Number(invoice.amount).toFixed(2)===d.quote.total};
+      return result;
+    }catch(error){return {...result,error:/^BTCPay API \d{3}$/.test(error.message)?error.message:'invoice-check-failed'};}
+  }
   async cancel(){return this.exclusive(async()=>{
     let d=this.read();if(!d)return this.result();
     if(d.status==='quoted'||d.status==='holding'){await this.expireCartHold('cancelled');return this.result();}
