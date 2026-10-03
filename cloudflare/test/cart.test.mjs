@@ -225,6 +225,17 @@ it('explains BTCPay invoice permission failures and keeps stock reserved',async(
   expect(response.status).toBe(503);expect((await response.json()).error).toMatch(/View invoices permission/);
   expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
 });
+it('continues Bitcoin review reconciliation and retains notification delivery state',async()=>{
+  const {order}=await setup('bitcoin');await order.start('bitcoin');
+  await runInDurableObject(order,i=>i.save({...i.read(),status:'review',reason:'Recover an uncertain invoice'}));
+  await order.refresh();
+  expect((await read(order)).status).toBe('pending');
+  expect((await read(order)).reviewMail.status).toBe('sent');
+  expect(mailCount).toBe(1);
+  await runInDurableObject(order,i=>i.save({...i.read(),status:'review'}));
+  await order.refresh();
+  expect(mailCount).toBe(1);
+});
 it('recovers a lost Bitcoin invoice reply without creating a second invoice, and keeps locks during confirmation',async()=>{
   const {order,settings}=await setup('bitcoin');failCreate=true;await order.start('bitcoin');failCreate=false;await order.refresh();expect((await read(order)).status).toBe('pending');expect(invoices).toHaveLength(1);
   invoices[0].status='Processing';invoices[0].payments=[{id:'TX',value:'0.01',status:'Processing'}];await order.refresh();expect((await read(order)).status).toBe('processing');
