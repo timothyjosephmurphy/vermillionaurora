@@ -71,9 +71,15 @@
       add.hidden=false;buy.hidden=false;
       const update=()=>{add.textContent=cart.some(i=>i.id===slug)?'Added to cart':'Add to cart';};update();
       const addItem=async()=>{
-        if(!cart.some(i=>i.id===slug)){if(cart.length>=MAX){message.textContent=`Your cart holds up to ${MAX} different items.`;return false;}cart.push({id:slug,quantity:1});persistCart();try{await syncHold(cart);}catch(error){cart=cart.filter(i=>i.id!==slug);persistCart();message.textContent=error.message;return false;}}
-        else try{await syncHold(cart);}catch(error){message.textContent=error.message;return false;}
-        update();message.replaceChildren(node('span','Added and reserved for 15 minutes. '));const view=node('a','View your cart');view.href='/cart/';view.className='cart-text-link';message.append(view);return true;
+        let added=false,holdDeferred=false;
+        if(!cart.some(i=>i.id===slug)){if(cart.length>=MAX){message.textContent=`Your cart holds up to ${MAX} different items.`;return false;}cart.push({id:slug,quantity:1});persistCart();added=true;}
+        try{await syncHold(cart);}catch(error){
+          if(error.message==='Checkout has already started.')holdDeferred=true;
+          else {if(added){cart=cart.filter(i=>i.id!==slug);persistCart();}message.textContent=error.message;return false;}
+        }
+        update();
+        message.replaceChildren(node('span',holdDeferred?'Added locally. Finish the current checkout before reserving or paying for another order. ':'Added and reserved for 15 minutes. '));
+        const view=node('a','View your cart');view.href='/cart/';view.className='cart-text-link';message.append(view);return true;
       };
       add.addEventListener('click',async()=>{add.disabled=true;buy.disabled=true;await addItem();add.disabled=!eligible(slug);buy.disabled=!eligible(slug);});
       buy.addEventListener('click',async()=>{const hasOtherItems=cart.some(item=>item.id!==slug);add.disabled=true;buy.disabled=true;if(await addItem())location.assign(hasOtherItems?'/cart/':`/cart/?buy=${encodeURIComponent(slug)}`);else{add.disabled=!eligible(slug);buy.disabled=!eligible(slug);}});
