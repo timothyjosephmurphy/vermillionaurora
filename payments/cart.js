@@ -19,7 +19,8 @@
   function persistCart(){if(buyOnly){const rest=clean(read(CART)).filter(i=>i.id!==buyOnly);write(CART,[...rest,...cart]);}else write(CART,cart);counts();document.dispatchEvent(new CustomEvent('cart:changed'));}
    const methodIntersection=()=>['square','bitcoin'].filter(m=>cart.length&&cart.every(line=>capabilities?.products.find(p=>p.id===line.id)?.methods.includes(m)));
   const eligible=id=>capabilities?.enabled&&capabilities.products.find(p=>p.id===id&&(p.status==='available'||heldIds.has(id)));
-  const pending=d=>d&&!['quoted','paid','cancelled','expired','unavailable','missing'].includes(d.status);
+  const reservation=d=>d&&['holding','quoted'].includes(d.status);
+  const pending=d=>d&&!['holding','quoted','paid','cancelled','expired','unavailable','missing'].includes(d.status);
   const makeHold=()=>({holdId:crypto.randomUUID(),key:[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('')});
   function holdCredentials(){if(!holdSession||!/^[0-9a-f-]{36}$/.test(holdSession.holdId||'')||!/^[a-f0-9]{64}$/.test(holdSession.key||'')){holdSession=makeHold();write(HOLD,holdSession);}return holdSession;}
   function applyHeldState(result){
@@ -100,7 +101,7 @@
     if(!existing&&cart.length>=MAX)return respond(false,`Your cart holds up to ${MAX} different items.`);
     if(existing)existing.quantity+=quantity;else cart.push({id,quantity});persistCart();syncHold(cart).then(()=>respond(true,'Print added to your cart.')).catch(error=>respond(false,error.message));
   });
-  let root,notice,layout,orderPanel,form,quoteFeedback,pendingOrder=null;
+  let root,notice,layout,orderPanel,form,quoteFeedback,orderFeedback,pendingOrder=null;
   function announce(text){notice.textContent=text;}
   function quoteAllowed(){
     // Keep submit available so native validation can explain missing details.
@@ -245,6 +246,16 @@
     root.querySelectorAll('[data-cart-items] button, [data-cart-items] input').forEach(el=>el.disabled=value);
   }
   const messages={quoted:['Ready to check out','Enter your delivery details to calculate a fresh total.'],reserving:['Reserving your originals','Please keep this page open while we confirm availability.'],creating:['Preparing your payment','We are checking with the payment provider. Please wait before starting another order.'],pending:['Payment pending','Continue to the secure payment page, or check here after paying.'],capturing:['Confirming your payment','Your originals remain reserved while we confirm payment. Please do not pay again.'],processing:['Bitcoin payment received','Waiting for payment confirmation. Your originals remain reserved.'],settling:['Confirming your order','Your payment has been received. We are updating the inventory.'],paid:['Thank you for collecting my work.','Your payment is confirmed. Prints ship from the print lab, separately from any originals.'],expired:['Checkout expired','Your cart has been kept. Review availability and begin a new checkout when ready.'],cancelled:['Checkout cancelled','Your cart has been kept. No payment was captured through this checkout.'],unavailable:['An original is no longer available','No payment was started. Return to your cart to review availability.'],review:['Your payment needs a closer look','TJ will review this order. Please do not pay again. Contact tj@vermillionaurora.com with the order reference below.'],missing:['Order not found','Please contact TJ if you have already paid.']};
+  async function restoreReservation(order){
+    // Older sessions can retain an order pointer after that identity became a
+    // plain cart hold. There is no payment to poll; resume the quote form.
+    if(read(ATTEMPT)?.orderId===order.orderId)write(ATTEMPT,null);
+    if(!holdSession||holdSession.holdId===order.orderId){holdSession={holdId:order.orderId,key:order.key};write(HOLD,holdSession);}
+    current=null;pendingOrder=null;quoted=null;awaitingBitcoinRedirect=false;clearTimeout(timer);orderPanel.hidden=true;history.replaceState(null,'','/cart/');
+    let message='Your cart is ready. Calculate shipping and tax to continue.';
+    try{if(!capabilities)capabilities=await api('catalog');await syncHold(cart);}catch(error){message=error.message;}
+    invalidate();render();announce(message);quoteFeedback.textContent=message;
+  }
   function showOrder(){
     if(!current)return;orderPanel.hidden=false;layout.hidden=true;root.querySelector('[data-cart-empty]').hidden=true;
     const message=messages[current.status]||['Checking your order','Please wait.'];root.querySelector('#order-title').textContent=message[0];root.querySelector('[data-order-message]').textContent=message[1];root.querySelector('[data-order-reference]').textContent=`Order reference: ${current.orderId}`;
@@ -262,18 +273,21 @@
     if(current.status==='paid'){const saved=read(ATTEMPT);if(!saved?.cartAdjusted){const purchased=new Map(current.quote.items.map(i=>[i.id,i.quantity]));cart=clean(read(CART)).map(i=>({...i,quantity:i.quantity-(purchased.get(i.id)||0)})).filter(i=>i.quantity>0);buyOnly=null;holdSession=null;write(HOLD,null);heldIds=new Set();saveCart().catch(()=>{});write(ATTEMPT,{orderId:current.orderId,key:current.key,cartAdjusted:true});}const tracking=root.querySelector('[data-order-tracking]');if(tracking){tracking.replaceChildren();if(current.printStatus)tracking.append(node('p',`Print fulfillment: ${{'in-production':'In production',complete:'Shipped',pending:'Preparing your print order',creating:'Preparing your print order',review:'TJ is reviewing your print order',cancelled:'TJ is reviewing your print order'}[current.printStatus]||'Processing'}`));for(const shipment of current.shipments||[]){if(shipment.trackingUrl&&/^https:\/\//.test(shipment.trackingUrl)){const link=node('a',`Track shipment${shipment.trackingNumber?' '+shipment.trackingNumber:''}`);link.href=shipment.trackingUrl;link.target='_blank';link.rel='noopener noreferrer';tracking.append(link);}}}announce('');}
   }
   async function updateOrder(action='status'){
-    if(!current||busy)return;busy=true;root.querySelector('[data-order-check]').disabled=true;
-    try{const result=await api(action,credentials());current={...result,key:current.key};showOrder();announce('');
+    if(!current||busy)return;busy=true;clearTimeout(timer);const check=root.querySelector('[data-order-check]');check.disabled=true;check.textContent='Checking payment status…';orderFeedback.textContent='Checking payment status…';
+    try{const result=await api(action,credentials());current={...result,key:current.key};
+      if(reservation(current)){await restoreReservation(current);return;}
+      showOrder();announce('');orderFeedback.textContent=messages[current.status]?.[1]||'The order is still being checked. Please try again shortly.';
       if(awaitingBitcoinRedirect&&current.method==='bitcoin'&&current.status==='pending'&&current.url){awaitingBitcoinRedirect=false;location.assign(current.url);return;}
       if(!pending(current)||current.status==='review')awaitingBitcoinRedirect=false;
       if(pending(current)&&current.status!=='review')poll();}
-    catch(error){announce(error.message);poll();}
-    finally{busy=false;root.querySelector('[data-order-check]').disabled=false;}
+    catch(error){announce(error.message);orderFeedback.textContent=error.message;poll();}
+    finally{busy=false;check.disabled=false;check.textContent='Check payment status';updateQuoteButton();}
   }
   function poll(){clearTimeout(timer);if(!document.hidden)timer=setTimeout(()=>updateOrder(),6000);}
   async function initializePage(el){
     root=el;notice=root.querySelector('[data-cart-notice]');layout=root.querySelector('[data-cart-layout]');orderPanel=root.querySelector('[data-order-panel]');form=root.querySelector('[data-cart-form]');
     quoteFeedback=node('p',undefined,'cart-footnote');quoteFeedback.dataset.cartQuoteFeedback='';quoteFeedback.setAttribute('role','status');quoteFeedback.setAttribute('aria-live','polite');form.querySelector('[data-cart-quote]').after(quoteFeedback);
+    orderFeedback=node('p',undefined,'cart-footnote');orderFeedback.dataset.orderFeedback='';orderFeedback.setAttribute('role','status');orderFeedback.setAttribute('aria-live','polite');root.querySelector('.cart-order-actions').after(orderFeedback);
     const params=new URLSearchParams(location.search),buy=params.get('buy');
     // Buy now is a one-item checkout; existing cart contents remain for a later order.
     if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;cart=[{id:buy,quantity:1}]; /* view only; do not overwrite a saved multi-item cart */}
@@ -292,7 +306,8 @@
           if(result.status==='paid'){current=restored;pendingOrder=null;showOrder();return;}
           if(pending(restored)){pendingOrder=restored;showPendingNotice(restored,buyOnly);return;}
           write(ATTEMPT,null);pendingOrder=null;current=null;quoted=null;
-          if(result.status!=='quoted'){write(HOLD,null);holdSession=null;heldIds=new Set();}
+          if(!reservation(result)){write(HOLD,null);holdSession=null;heldIds=new Set();}
+          else if(!holdSession){holdSession={holdId:result.orderId,key:restored.key};write(HOLD,holdSession);}
           capabilities=null;
         }
         if(!capabilities)capabilities=await api('catalog').catch(()=>{throw Error('Availability could not be refreshed. Click Calculate shipping & tax to try again.');});
@@ -315,9 +330,9 @@
     if(saved){
       try{
         const result=await api('status',saved),restored={...result,key:saved.key};
-        if(result.status==='quoted'&&!id){write(ATTEMPT,null);current=null;await syncHold(cart);render();}
+        if(reservation(restored)){await restoreReservation(restored);}
         else if(id===saved.orderId){
-          current=restored;showOrder();
+          current=restored;showOrder();announce('');
           if(params.get('result')==='return')await updateOrder('capture');else if(params.get('result')==='cancel')await updateOrder('cancel');else if(pending(current))poll();
           history.replaceState(null,'','/cart/');
         }else{

@@ -29,7 +29,9 @@ export class CartOrder extends DurableObject {
     let d=this.read();
     if(d&&d.keyHash!==keyHash)throw Error('Cart reservation not found');
     if(d&&!['holding','quoted','expired','cancelled','unavailable'].includes(d.status))throw Error('Checkout has already started.');
-    if(d&&['expired','cancelled','unavailable'].includes(d.status)&&(d.method||d.providerId))throw Error('Checkout has already started.');
+    // A completed payment attempt keeps its identity even when invoice recovery
+    // cleared provider fields. A new reservation must use a new coordinator.
+    if(d&&['expired','cancelled','unavailable'].includes(d.status)&&(d.method||d.providerId||d.createAttemptedAt))throw Error('Checkout has already started.');
     const previous=d?.heldIds||d?.quote?.items.filter(i=>i.type!=='print').map(i=>i.id)||[];
     const target=[...new Set(items.filter(i=>i.type!=='print').map(i=>i.id))].sort();
     const union=[...new Set([...previous,...target])].sort();
