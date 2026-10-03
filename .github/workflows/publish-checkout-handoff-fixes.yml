@@ -1,0 +1,48 @@
+name: Publish verified checkout handoff fixes
+on:
+  push:
+    branches: [ops/publish-checkout-handoff-fixes]
+    paths: ['.github/workflows/publish-checkout-handoff-fixes.yml']
+permissions:
+  contents: read
+concurrency:
+  group: website-production-retry
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 27944bda5b78a04d8fe5ed79caa8d0b2d05604ca
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Confirm the verified release is still current
+        run: |
+          test "$(git ls-remote origin refs/heads/release | cut -f1)" = "$(git rev-parse HEAD)"
+          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('wrangler.jsonc'));delete c.build;fs.writeFileSync('wrangler.publish.jsonc',JSON.stringify(c));"
+      - name: Publish the verified website assets
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          command: deploy --config wrangler.publish.jsonc
+      - name: Verify the live cart is the tested file
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const expected=fs.readFileSync('payments/cart.js','utf8');
+          let ready=false;
+          for(let attempt=0;attempt<18;attempt++){
+            const r=await fetch('https://vermillionaurora.com/payments/cart.js?verified-release=27944bda5b78a04d8fe5ed79caa8d0b2d05604ca-'+attempt,{cache:'no-store',signal:AbortSignal.timeout(15000)});
+            if(r.ok&&await r.text()===expected){ready=true;console.log('Verified live cart: delayed Bitcoin redirect and address validation fixes.');break;}
+            await new Promise(resolve=>setTimeout(resolve,5000));
+          }
+          if(!ready)throw Error('The tested cart script is not live');
+          NODE
