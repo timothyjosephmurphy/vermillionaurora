@@ -2318,7 +2318,7 @@
     "listing": {
       "status": "available",
       "price": {
-        "amount": "50.00",
+        "amount": "100.00",
         "currency": "USD"
       }
     },
