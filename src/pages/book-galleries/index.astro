@@ -13,16 +13,16 @@ const gallerySummaries=manifest.sections.map(group=>({
 const bookTitles=Object.fromEntries(manifest.books.map(book=>[book.id,book.title]));
 ---
 
-<Layout title="Galleries from the art books" description="Explore TJ Murphy’s watercolor landscapes and portraits by book chapter, with selected fine-art prints.">
-  <nav aria-label="Breadcrumb"><a href="/">Home</a> / Art book galleries</nav>
+<Layout title="Selected Galleries" description="Explore TJ Murphy’s watercolor landscapes and portraits by book chapter, with selected fine-art prints.">
+  <nav aria-label="Breadcrumb"><a href="/">Home</a> / Selected Galleries</nav>
   <header class="book-gallery-intro">
     <p class="eyebrow dark">The book collections</p>
-    <h1>Galleries from the art books</h1>
+    <h1>Selected Galleries</h1>
     <p class="book-gallery-print-total" data-total-print-ready-count={totalPrintReady}>Travel through the landscapes, people, and stories collected in my watercolor books. {totalPrintReady} distinct works across these galleries currently have fine-art prints available.</p>
   </header>
   <section class="book-gallery-overview" aria-labelledby="browse-galleries-heading">
     <h2 class="book-group-heading" id="browse-galleries-heading">Browse the galleries</h2>
-    <ul class="book-gallery-grid book-gallery-carousel-grid" aria-label="Art book galleries">
+    <ul class="book-gallery-grid book-gallery-carousel-grid" aria-label="Selected Galleries">
       {gallerySummaries.map(group=>{
         const first=byId[group.artworks[0]];
         return <li class="book-gallery-card" data-product={`/book-galleries/${group.id}/`} data-caption={`${bookTitles[group.book]} · ${group.artworks.length} works · ${group.printReadyCount} with fine-art prints`}>

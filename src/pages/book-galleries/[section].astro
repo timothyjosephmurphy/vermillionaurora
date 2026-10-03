@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/BookGalleryLayout.astro';
 import manifest from '../../../catalog/book-galleries.json';
-import {byId,urlFor} from '../../../catalog/catalog.mjs';
+import {byId,urlFor,priceLabel,dimensionLabel} from '../../../catalog/catalog.mjs';
 import {config,papers,printOptions} from '../../../catalog/prints.mjs';
 
 export function getStaticPaths(){return manifest.sections.map(group=>({params:{section:group.id},props:{group}}));}
@@ -11,10 +11,11 @@ const book=manifest.books.find(entry=>entry.id===g.book);
 const artworks=g.artworks.map(id=>{
   const product=byId[id];
   const source=manifest.artworks.find(art=>art.id===id);
+  const original=source?.originalProductId?byId[source.originalProductId]:null;
   const options=printOptions(product,config,papers).filter(option=>option.ready);
   const printPrice=options.length?Math.min(...options.map(option=>Number(option.amount))):null;
   const printArea=options.length?Math.max(...options.map(option=>Number(option.image.width)*Number(option.image.height))):null;
-  return {id,product,source,options,printPrice,printArea};
+  return {id,product,original,source,options,printPrice,printArea};
 });
 const printReadyCount=artworks.filter(art=>art.options.length>0).length;
 const bookPages=new Map();
@@ -29,7 +30,7 @@ for(const {source} of artworks){
 ---
 
 <Layout title={`${g.title} — ${book.title}`} description={`${g.title}: watercolor artwork from ${book.title} by TJ Murphy.`}>
-  <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/book-galleries/">Art book galleries</a> / {g.title}</nav>
+  <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/book-galleries/">Selected Galleries</a> / {g.title}</nav>
   <header class="book-gallery-intro">
     <p class="eyebrow dark">{book.title}</p>
     <h1>{g.title}</h1>
@@ -41,7 +42,7 @@ for(const {source} of artworks){
         const pageLabel=pageNumbers.length>1?`${pageNumbers[0]}–${pageNumbers.at(-1)}`:String(pageNumbers[0]||g.startPage);
         return <a href={`${sourceBook.pdfUrl}#page=${pageNumbers[0]||g.startPage}`} target="_blank" rel="noopener noreferrer">See pages {pageLabel} in {sourceBook.title} ↗</a>;
       })}
-      <a href="/book-galleries/">All book galleries →</a>
+      <a href="/book-galleries/">All galleries →</a>
     </div>
   </header>
 
@@ -50,7 +51,7 @@ for(const {source} of artworks){
     <div class="gallery-filter" hidden>
       <label class="gallery-sort" for="gallery-sort">Sort by
         <select id="gallery-sort" aria-label="Sort works">
-          {g.id==='watercolor-landscapes-travels' && <option value="gallery-order" selected>Gallery order</option>}
+          {['watercolor-landscapes-travels','watercolor-portraits-friends'].includes(g.id) && <option value="gallery-order" selected>Gallery order</option>}
           <option value="price-desc">Price: high to low</option>
           <option value="price-asc">Price: low to high</option>
           <option value="size-desc">Size: largest first</option>
@@ -61,12 +62,12 @@ for(const {source} of artworks){
       <span id="gallery-result-count" role="status" aria-live="polite"></span>
     </div>
     <ul class="painting-list" aria-label="All works">
-      {artworks.map(({id,product,source,printPrice,printArea})=>
+      {artworks.map(({id,product,original,source,printPrice,printArea})=>
         <li class="painting-list-row" data-product-id={id} data-print-ready={printPrice!==null?'true':'false'} data-price={printPrice??undefined} data-area={printArea??undefined}>
-          <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt="" loading="lazy" decoding="async"/></a>
-          <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a></h3>
-          <p class="painting-list-dimensions">{source?.measurements?.join('; ')||''}</p>
-          <p class="painting-list-price">{printPrice!==null?`Fine-art prints from $${printPrice.toFixed(2)}`:'No fine-art prints currently available'}</p>
+          <a href={urlFor(original||product)} class="gallery-product-image" aria-label={`View ${(original||product).title}`} tabindex="-1"><img src={(original||product).image.src} alt="" loading="lazy" decoding="async"/></a>
+          <h3><a href={urlFor(original||product)} class="product-title-link">{(original||product).title}</a></h3>
+          <p class="painting-list-dimensions">{original?dimensionLabel(original):source?.measurements?.join('; ')||''}</p>
+          <p class="painting-list-price">{original&&<><a href={urlFor(original)}>Original · {priceLabel(original)}</a><br/></>}{printPrice!==null?<a href={urlFor(product)}>Fine-art prints from ${printPrice.toFixed(2)}</a>:'No fine-art prints currently available'}</p>
         </li>
       )}
     </ul>

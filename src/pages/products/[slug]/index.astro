@@ -1,4 +1,6 @@
 ---
+import manifest from '../../../../catalog/book-galleries.json';
+import {byId,urlFor} from '../../../../catalog/catalog.mjs';
 import PurchaseReassurance from '../../../components/PurchaseReassurance.astro';
 import ProductLayout from '../../../layouts/ProductLayout.astro';
 import PaintingImage from '../../../components/PaintingImage.astro';
@@ -10,6 +12,9 @@ import { products, priceLabel, statusLabel, dimensionLabel } from '../../../../c
 export function getStaticPaths() { return products.map(product=>({params:{slug:product.slug},props:{product}})); }
 const {product:p}=Astro.props;
 const painting=p.type==='painting';
+const relatedSource=manifest.artworks.find(art=>(art.id===p.id&&art.originalProductId)||art.originalProductId===p.id);
+const relatedProduct=relatedSource?byId[relatedSource.id===p.id?relatedSource.originalProductId:relatedSource.id]:null;
+const relatedPrints=relatedProduct?printOptions(relatedProduct,config,papers).some(option=>option.ready&&!option.testOnly):false;
 const originalFrameHref=originalFrameEligible(p)?amazonFrameSearchUrl(p.dimensions):null;
 const availablePrints=painting?printOptions(p,config,papers).filter(o=>o.ready&&!o.testOnly):[];
 const printFrom=availablePrints.length?Math.min(...availablePrints.map(o=>Number(o.amount))):null;
@@ -53,9 +58,10 @@ const facts=painting ? [
       <p class="product-print-availability">Print available from ${printFrom.toFixed(2)}</p>
     </div>}
   </section>}
+      {relatedProduct&&<p class="product-print-availability"><a href={urlFor(relatedProduct)}>{p.bookGallery?'View the original painting':(relatedPrints?'View fine-art print options':'View in the book collection')} →</a></p>}
       {p.listing.price && (!painting||p.listing.status!=='available') && <p class="product-detail-price">{priceLabel(p,painting)}</p>}
       {painting && <p class="product-availability" data-live-status>{p.bookGallery?'From the book collection':statusLabel(p)}</p>}
-      {painting&&availablePrints.length===0&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
+      {painting&&availablePrints.length===0&&!relatedPrints&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}
       {painting && (p.listing.status==='available' || availablePrints.length>0) && <PurchaseReassurance kind={p.listing.status==='available'?(availablePrints.length?'all':'original'):'print'}/>}
