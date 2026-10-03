@@ -25,19 +25,12 @@
       "artworks": [
         "book-art-ded6b759e667e3c2a313",
         "book-art-e6068e265bfdc379526c",
-        "book-art-9ae261289a3bce952c6f",
-        "book-art-deb3358c321671dae1fc",
         "book-art-85d951d0a1ea09ef4aa6",
         "book-art-502372c530af5261540c",
-        "book-art-164f60d23032b0f718de",
-        "book-art-aa4dcced8a2ae6a8111c",
-        "book-art-8fde7c978d6cd5d53727",
         "book-art-5e4eb881d89ae9f5c635",
         "book-art-f56007f6a7d6ee955caf",
         "book-art-d1399111a441ed91feaa",
-        "book-art-b01b8695b2528cb850a3",
-        "book-art-164299ae97e7b62137f5",
-        "book-art-7a3ad7bacdb71faac1b8"
+        "book-art-164299ae97e7b62137f5"
       ]
     },
     {
@@ -87,6 +80,7 @@
       "startPage": 4,
       "endPage": 39,
       "artworks": [
+        "book-art-614d5b68dbe5052e302a",
         "book-art-b7a9cd259d8ac51a236b",
         "book-art-c33709aeb2717b0c53de",
         "book-art-76b81da2337321bf158d",
@@ -122,7 +116,6 @@
         "book-art-37fe572d9bb47cab3bc7",
         "book-art-3cd6b3fb3e356c4b1d1d",
         "book-art-04f4a52773ffd19b4f67",
-        "book-art-614d5b68dbe5052e302a",
         "book-art-54ff45104a57a68d4beb",
         "book-art-4350a257e5a6a5e75a31",
         "book-art-f367882aaeb0e32471eb",
@@ -6509,7 +6502,8 @@
             "15 x 24"
           ]
         }
-      ]
+      ],
+      "originalProductId": "painting-chef-in-white"
     },
     {
       "key": "c04c7e48687fe35e65f5",
@@ -7209,7 +7203,8 @@
             "12 x 15"
           ]
         }
-      ]
+      ],
+      "originalProductId": "painting-studio-figure"
     },
     {
       "key": "ef24f49017a62819330d",
@@ -7259,7 +7254,8 @@
             "24 x 15"
           ]
         }
-      ]
+      ],
+      "originalProductId": "painting-portrait-with-cheese"
     },
     {
       "key": "504e3fafdacd7c9bbcd0",
