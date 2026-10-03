@@ -44,6 +44,13 @@ export async function checkoutReadiness(request,env) {
       const invoices=await get(`${base.origin}/api/v1/stores/${encodeURIComponent(env.BTCPAY_STORE_ID)}/invoices?take=1`,`token ${env.BTCPAY_API_KEY}`);
       if(!Array.isArray(invoices))throw Error('Invalid BTCPay invoice response');
       checks.bitcoinInvoiceAccess=true;
+      checks.bitcoinReservedOrders=[];
+      for(const slug of (env.BTCPAY_CHECKOUT_SLUGS||'').split(',').map(s=>s.trim()).filter(Boolean)){
+        const stock=await env.PAINTING_STOCK.getByName(slug).order();
+        if(stock?.state==='cart-held'&&stock.orderId?.startsWith('cart:')){
+          checks.bitcoinReservedOrders.push({slug,...await env.CART_ORDERS.getByName(stock.orderId.slice(5)).bitcoinDiagnostics()});
+        }
+      }
     } catch(error) {
       checks.bitcoinInvoiceAccess=false;
       checks.bitcoinInvoiceAccessError=error.message;

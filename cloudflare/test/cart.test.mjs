@@ -236,6 +236,14 @@ it('continues Bitcoin review reconciliation and retains notification delivery st
   await order.refresh();
   expect(mailCount).toBe(1);
 });
+it('diagnoses a reserved Bitcoin invoice without exposing private payment or buyer data',async()=>{
+  const {id,order}=await setup('bitcoin');await order.start('bitcoin');
+  invoices[0].amount=quote().total+'000000';
+  const result=await order.bitcoinDiagnostics();
+  expect(result.matches).toBe(1);expect(result.checks.amount).toBe(true);expect(result.checks.amountFormat).toBe(false);
+  const text=JSON.stringify(result);for(const privateValue of [id,'INV0','buyer@example.test','123 Main St','STORE'])expect(text).not.toContain(privateValue);
+  expect((await read(order)).status).toBe('pending');expect(mailCount).toBe(0);
+});
 it('recovers a lost Bitcoin invoice reply without creating a second invoice, and keeps locks during confirmation',async()=>{
   const {order,settings}=await setup('bitcoin');failCreate=true;await order.start('bitcoin');failCreate=false;await order.refresh();expect((await read(order)).status).toBe('pending');expect(invoices).toHaveLength(1);
   invoices[0].status='Processing';invoices[0].payments=[{id:'TX',value:'0.01',status:'Processing'}];await order.refresh();expect((await read(order)).status).toBe('processing');
