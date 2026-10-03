@@ -56,6 +56,8 @@ export async function cartCheckout(request,env) {
   } catch(error) {
     console.error('Cart checkout failed:',action,error.message);
     const reservationError=/^(Your cart reservation expired|Your cart changed while calculating shipping|An original in your cart is no longer reserved)/.test(error.message||'');
-    return reply({error:action==='quote'&&reservationError?error.message:action==='quote'?'Could not calculate this cart. Check the items and US address, then try again.':'The cart could not be updated yet. Keep your cart open and try again.'},action==='quote'?422:503);
+    const bitcoinPermissionError=action==='status'&&/^BTCPay API (401|403)$/.test(error.message||'');
+    const safeError=bitcoinPermissionError?'BTCPay denied invoice status access. Its API key needs View invoices permission for this store. Your reservation is being kept safe.':action==='quote'&&reservationError?error.message:action==='quote'?'Could not calculate this cart. Check the items and US address, then try again.':'The cart could not be updated yet. Keep your cart open and try again.';
+    return reply({error:safeError},action==='quote'?422:503);
   }
 }
