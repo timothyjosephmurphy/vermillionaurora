@@ -26,7 +26,7 @@ await page.route('**/*',async route=>{
    const items=body.items.map(i=>({...product(i.id),quantity:i.quantity})),base=items.reduce((s,i)=>s+Number(i.amount),0);
    result={orderId:body.holdId,key:body.key,expiresAt:Date.now()+10*60*1000,status:'quoted',methods:productMethods,quote:{items,base:base.toFixed(2),shipping:'12.00',tax:'5.00',total:(base+17).toFixed(2),shipments:items.map(i=>({id:i.id,title:i.title,shipping:'6.00',carrier:'UPS',service:'Ground'}))}};order=result;
   }
-  if(action==='start'){assert.equal(body.key,order.key);method=body.method;if(method==='square')assert.equal(body.sourceId,'cnon:test');result={...order,method,status:method==='bitcoin'?(deferBitcoin?'creating':'processing'):'settling'};order=result;}
+  if(action==='start'){assert.equal(body.key,order.key);method=body.method;if(method==='square')assert.equal(body.sourceId,'cnon:test');result={...order,method,status:method==='bitcoin'?(deferBitcoin?'creating':'processing'):'settling',...(method==='bitcoin'&&!deferBitcoin?{url:'https://btcpay.example.test/i/received'}:{})};order=result;}
   if(action==='status'){if(failStatus)return route.fulfill({status:503,headers:{'Access-Control-Allow-Origin':origin},json:{error:'Payment status is temporarily unavailable. Please check again.'}});result=order;}
   if(action==='capture'){result={...order,status:'paid'};order=result;}
   if(action==='cancel'){result={...order,status:'cancelled'};order=result;}
@@ -92,7 +92,18 @@ try{
  await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();
  assert.equal(calls.filter(c=>c.action==='quote').at(-1).body.items.length,2,'Buy Now with other saved items quotes the full cart');
  await page.getByRole('button',{name:'Pay with Bitcoin'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
+ // Received Bitcoin is a receipt/status link, never an invitation to pay again.
+ const invoiceUrl=order.url,bitcoinStarts=calls.filter(c=>c.action==='start').length;
+ assert.equal(await page.getByRole('link',{name:'Continue payment',exact:true}).count(),0);
+ assert.equal(await page.getByRole('link',{name:'View received payment',exact:true}).getAttribute('href'),invoiceUrl);
+ order={...order,status:'settling'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Confirming your order'}).waitFor();
+ assert.equal(await page.getByRole('link',{name:'View successful payment',exact:true}).getAttribute('href'),invoiceUrl);
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual(await cartStored(),[]);
+ await page.goto(`${origin}/cart/?order=${order.orderId}`);await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();
+ assert.equal(await page.getByRole('link',{name:'Continue payment',exact:true}).count(),0);
+ assert.equal(await page.getByRole('link',{name:'View successful payment',exact:true}).getAttribute('href'),invoiceUrl);
+ assert.equal(calls.filter(c=>c.action==='start').length,bitcoinStarts,'viewing a paid order never starts another payment');
+ await page.screenshot({path:'/tmp/cart-preview/bitcoin-confirmation-mobile.png',fullPage:true});
  // A pending Chase attempt must not silently discard Dorian or disable Buy now.
  startedHold=true;
  await page.evaluate(id=>localStorage.setItem('va-cart-v1',JSON.stringify([{id,quantity:1}])),ids[0]);

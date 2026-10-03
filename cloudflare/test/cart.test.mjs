@@ -248,11 +248,13 @@ it('diagnoses a reserved Bitcoin invoice without exposing private payment or buy
 it('recovers a lost Bitcoin invoice reply without creating a second invoice, and keeps locks during confirmation',async()=>{
   const {order,settings}=await setup('bitcoin');failCreate=true;await order.start('bitcoin');failCreate=false;await order.refresh();expect((await read(order)).status).toBe('pending');expect(invoices).toHaveLength(1);
   invoices[0].status='Processing';invoices[0].payments=[{id:'TX',value:'0.01',status:'Processing'}];await order.refresh();expect((await read(order)).status).toBe('processing');
+  const invoiceUrl=(await order.result()).url;expect(invoiceUrl).toBe(invoices[0].checkoutLink);
   await runInDurableObject(order,i=>i.save({...i.read(),expiresAt:0}));await order.refresh();for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('reserved');
   invoices[0].status='Settled';
   const raw=JSON.stringify({storeId:'STORE',invoiceId:'INV0'}),key=await crypto.subtle.importKey('raw',new TextEncoder().encode('fake'),{name:'HMAC',hash:'SHA-256'},false,['sign']);
   const sig=[...new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(raw)))].map(n=>n.toString(16).padStart(2,'0')).join('');
   expect((await bitcoinWebhook(new Request('https://worker/checkout/bitcoin/webhook',{method:'POST',headers:{'BTCPay-Sig':'sha256='+sig},body:raw}),{...env,...settings})).status).toBe(200);expect((await read(order)).status).toBe('paid');
+  expect((await order.result()).url).toBe(invoiceUrl);expect(invoices).toHaveLength(1);
 });
 it('releases an unpaid expired Bitcoin invoice but routes late payment to review without selling another buyer’s stock',async()=>{
   const {order}=await setup('bitcoin');await order.start('bitcoin');invoices[0].status='Expired';await order.refresh();expect((await read(order)).status).toBe('expired');
