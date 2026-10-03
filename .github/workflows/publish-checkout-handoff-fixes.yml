@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: b9a3431dee81035c19299fca320cbbdeeffcebef
+          ref: 086bedb84ddf31f946afa3621f62b0dc85a2deab
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -40,8 +40,8 @@ jobs:
           const expected=fs.readFileSync('payments/cart.js','utf8');
           let ready=false;
           for(let attempt=0;attempt<18;attempt++){
-            const r=await fetch('https://vermillionaurora.com/payments/cart.js?verified-release=b9a3431dee81035c19299fca320cbbdeeffcebef-'+attempt,{cache:'no-store',signal:AbortSignal.timeout(15000)});
-            if(r.ok&&await r.text()===expected){ready=true;console.log('Verified live cart: shipping quote retry and checkout-state recovery.');break;}
+            const r=await fetch('https://vermillionaurora.com/payments/cart.js?verified-release=086bedb84ddf31f946afa3621f62b0dc85a2deab-'+attempt,{cache:'no-store',signal:AbortSignal.timeout(15000)});
+            if(r.ok&&await r.text()===expected){ready=true;console.log('Verified live cart: received and confirmed Bitcoin receipt links.');break;}
             await new Promise(resolve=>setTimeout(resolve,5000));
           }
           if(!ready)throw Error('The tested cart script is not live');
