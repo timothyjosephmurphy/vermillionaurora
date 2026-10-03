@@ -12,8 +12,20 @@ test('every product renders at its stable URL with matching content and checkout
 });
 test('gallery rows and shared cards use the catalog and preserve collection order',()=>{
  for(const [key,path] of Object.entries({home:'index.html',gallery:'gallery/index.html',paul:'exhibitions/paul-murphy/index.html',chase:'exhibitions/chase-toole/index.html',gavin:'exhibitions/gavin-robertson/index.html'})){
- const $=load(fs.readFileSync(`dist/${path}`,'utf8'));const scope=({home:'.painting-carousel',gallery:'.painting-list',paul:'.exhibition-grid',chase:'.collaboration-grid',gavin:'.film-collaboration-gallery'})[key];const expected=collections[key].filter(e=>byId[e.product].type==='painting').map(e=>e.product);assert.deepEqual($(`${scope} [data-product-id]`).map((i,e)=>$(e).attr('data-product-id')).get(),expected);for(const node of $('[data-product-id]').toArray()){const id=$(node).attr('data-product-id');assert.ok(byId[id],id);assert.equal($(node).find('img').attr('src'),byId[id].image.src);if(key==='gallery')assert.equal($(node).find('.painting-list-dimensions').text(),dimensionLabel(byId[id]));}
- if(key==='home')assert.equal($('.painting-carousel .product-card').filter((i,e)=>$(e).text().includes('Available')).length,0);
+ const $=load(fs.readFileSync(`dist/${path}`,'utf8'));const expected=collections[key].filter(e=>byId[e.product].type==='painting').map(e=>e.product);
+ if(key==='home'){
+  const available=collections.home.filter(e=>e.variant==='carousel'&&['available','inquiry'].includes(byId[e.product].listing?.status)).map(e=>e.product);
+  const collectors=collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).map(e=>e.product);
+  assert.deepEqual($('.available-paintings-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),available);
+  assert.deepEqual($('.collector-items-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),collectors);
+  assert.equal($('.available-paintings-carousel [data-product-id]').length+$('.collector-items-carousel [data-product-id]').length,expected.length);
+  assert.equal($('#gallery h2').text(),'Available Paintings');
+  assert.equal($('#collectors-items h2').text(),'Collector’s Items');
+ }else{
+  const scope=({gallery:'.painting-list',paul:'.exhibition-grid',chase:'.collaboration-grid',gavin:'.film-collaboration-gallery'})[key];
+  assert.deepEqual($(`${scope} [data-product-id]`).map((i,e)=>$(e).attr('data-product-id')).get(),expected);
+ }
+ for(const node of $('[data-product-id]').toArray()){const id=$(node).attr('data-product-id');assert.ok(byId[id],id);assert.equal($(node).find('img').attr('src'),byId[id].image.src);if(key==='gallery')assert.equal($(node).find('.painting-list-dimensions').text(),dimensionLabel(byId[id]));}
  }
 });
 test('invalid identities, missing assets, unsafe prices and shipping stop the build',()=>{
@@ -68,4 +80,27 @@ test('flat packaging is used only when the larger painting side is at most 12 in
  assert.deepEqual(deriveParcel({width:100,height:70,unit:'cm'},2),{length:28,width:4,height:4,weight:2,packaging:'tube'});
  assert.deepEqual(deriveParcel({width:30.48,height:25,unit:'cm'},2),{length:14,width:12,height:2,weight:2,packaging:'flat'});
  assert.deepEqual(deriveParcel({width:36,height:16,unit:'in'},2,2,{rollable:false}),{length:38,width:18,height:2,weight:2,packaging:'flat'});
+});
+
+test('exhibition years match the artist’s confirmed dates across the site',()=>{
+ const locations=JSON.parse(fs.readFileSync('exhibitions/world-map/locations.json','utf8'));
+ const mapDate=slug=>locations.flatMap(place=>place.exhibitions).find(item=>item.slug===slug)?.date;
+ const expected={ 'cape-town':'2025','studio-601':'2023','bitcoin-film-festival-warsaw':'2026','victrola':'2025' };
+ for(const [slug,date] of Object.entries(expected))assert.equal(mapDate(slug),date,slug+' map date');
+ const home=load(fs.readFileSync('dist/index.html','utf8'));
+ const index=load(fs.readFileSync('dist/exhibitions/index.html','utf8'));
+ for(const [slug,date] of Object.entries(expected)){
+  const card=home(`a[href="/exhibitions/${slug}/"]`).first().closest('.ex-slide');
+  assert.ok(card.text().includes(date),slug+' homepage date');
+  const listing=index(`a[href="/exhibitions/${slug}/"]`).first().closest('article');
+  assert.equal(listing.find('.exhibition-date').text(),date,slug+' exhibition index date');
+ }
+ for(const [slug,date] of Object.entries(expected)){
+  const path=slug==='bitcoin-film-festival-warsaw'?'dist/exhibitions/bitcoin-film-festival-warsaw/index.html':`dist/exhibitions/${slug}/index.html`;
+  const detail=load(fs.readFileSync(path,'utf8'));
+  assert.equal(detail('time[datetime]').first().attr('datetime'),date,slug+' detail date');
+ }
+ const studio=load(fs.readFileSync('dist/exhibitions/studio-601/index.html','utf8'));
+ assert.equal(studio('[data-caption*="Studio 601"][data-caption*="2022"]').length,0,'Studio 601 captions use 2023');
+ assert.equal(studio('img[alt*="Studio 601"][alt*="2022"]').length,0,'Studio 601 image descriptions use 2023');
 });
