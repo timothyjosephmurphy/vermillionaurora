@@ -25,8 +25,8 @@ async function walk(directory) {
     let description = attr(descTag || '', 'content');
     if (!description) description = text(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || '').slice(0, 180);
     if (!description) description = 'Original paintings, fine-art prints, exhibitions, and commissions by TJ Murphy.';
-    const imageTag = html.match(/<main\b[^>]*>[\s\S]*?<img\b[^>]*>/i)?.[0] || html.match(/<img\b[^>]*>/i)?.[0];
-    const imageSrc = attr(imageTag || '', 'src');
+    const imageTag = html.match(/<main\b[^>]*>[\s\S]*?(?:<img\b[^>]*>|<svg\b[^>]*data-image-src[^>]*>)/i)?.[0] || html.match(/<img\b[^>]*>/i)?.[0];
+    const imageSrc = attr(imageTag || '', 'data-image-src') || attr(imageTag || '', 'src');
     const image = imageSrc && !imageSrc.startsWith('data:') ? new URL(imageSrc, `${site}/`).href : '';
     const canonical = `${site}${route}`;
     const tags = [];

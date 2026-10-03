@@ -8,7 +8,7 @@ import checkout,{catalogVersion as workerVersion} from '../cloudflare/checkout-c
 import {inventoryStatus} from '../cloudflare/inventory-api.mjs';
 test('every product renders at its stable URL with matching content and checkout price',()=>{
  assert.equal(catalogVersion,workerVersion);
- for(const p of products){const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));assert.equal($('h1').text(),p.title);assert.equal($('meta[name=catalog-version]').attr('content'),catalogVersion);assert.equal($('link[rel=canonical]').attr('href'),`https://vermillionaurora.com/products/${p.slug}/`);for(const paragraph of p.story)assert.ok($('main').text().includes(paragraph),p.slug);if(p.image)assert.equal($('main img').first().attr('src'),p.image.src);if(checkout[p.id]){assert.equal(checkout[p.id].amount,p.listing.price.amount);assert.equal($('.product-detail-price').text(),priceLabel(p));}}
+ for(const p of products){const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));assert.equal($('h1').text(),p.title);assert.equal($('meta[name=catalog-version]').attr('content'),catalogVersion);assert.equal($('link[rel=canonical]').attr('href'),`https://vermillionaurora.com/products/${p.slug}/`);for(const paragraph of p.story)assert.ok($('main').text().includes(paragraph),p.slug);if(p.image)assert.equal(($('main img, main svg[data-image-src]').first().attr('data-image-src') || $('main img, main svg[data-image-src]').first().attr('src')),p.image.src);if(checkout[p.id]){assert.equal(checkout[p.id].amount,p.listing.price.amount);assert.equal($('.product-detail-price').text(),priceLabel(p));}}
 });
 test('gallery rows and shared cards use the catalog and preserve collection order',()=>{
  for(const [key,path] of Object.entries({home:'index.html',gallery:'gallery/index.html',paul:'exhibitions/paul-murphy/index.html',chase:'exhibitions/chase-toole/index.html',gavin:'exhibitions/gavin-robertson/index.html'})){
@@ -25,7 +25,7 @@ test('gallery rows and shared cards use the catalog and preserve collection orde
   const scope=({gallery:'.painting-list',paul:'.exhibition-grid',chase:'.collaboration-grid',gavin:'.film-collaboration-gallery'})[key];
   assert.deepEqual($(`${scope} [data-product-id]`).map((i,e)=>$(e).attr('data-product-id')).get(),expected);
  }
- for(const node of $('[data-product-id]').toArray()){const id=$(node).attr('data-product-id');assert.ok(byId[id],id);assert.equal($(node).find('img').attr('src'),byId[id].image.src);if(key==='gallery')assert.equal($(node).find('.painting-list-dimensions').text(),dimensionLabel(byId[id]));}
+ for(const node of $('[data-product-id]').toArray()){const id=$(node).attr('data-product-id');assert.ok(byId[id],id);assert.equal(($(node).find('img, svg[data-image-src]').first().attr('data-image-src') || $(node).find('img, svg[data-image-src]').first().attr('src')),byId[id].image.src);if(key==='gallery')assert.equal($(node).find('.painting-list-dimensions').text(),dimensionLabel(byId[id]));}
  }
 });
 test('invalid identities, missing assets, unsafe prices and shipping stop the build',()=>{
@@ -103,4 +103,13 @@ test('exhibition years match the artist’s confirmed dates across the site',()=
  const studio=load(fs.readFileSync('dist/exhibitions/studio-601/index.html','utf8'));
  assert.equal(studio('[data-caption*="Studio 601"][data-caption*="2022"]').length,0,'Studio 601 captions use 2023');
  assert.equal(studio('img[alt*="Studio 601"][alt*="2022"]').length,0,'Studio 601 image descriptions use 2023');
+});
+
+test('Arizona Slot Cave uses the complete left-rotated image in its gallery and full-screen product view',()=>{
+ const check=image=>{assert.equal(image.attr('viewBox'),'0 0 3192 3450');assert.equal(image.find('image').attr('transform'),'translate(0 3450) rotate(-90)');assert.equal(image.find('image').attr('href'),byId['paul-murphy-painting-8'].image.src);};
+ const page=load(fs.readFileSync('dist/products/paul-murphy-painting-8/index.html','utf8'));
+ check(page('.painting-image-trigger svg'));check(page('.painting-lightbox svg'));
+ assert.equal(page('meta[property="og:image"]').attr('content'),byId['paul-murphy-painting-8'].image.src);
+ const gallery=load(fs.readFileSync('dist/exhibitions/paul-murphy/index.html','utf8'));
+ check(gallery('[data-product-id="paul-murphy-painting-8"] svg'));
 });
