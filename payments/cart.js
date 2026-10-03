@@ -74,7 +74,7 @@
         let added=false,holdDeferred=false;
         if(!cart.some(i=>i.id===slug)){if(cart.length>=MAX){message.textContent=`Your cart holds up to ${MAX} different items.`;return false;}cart.push({id:slug,quantity:1});persistCart();added=true;}
         try{await syncHold(cart);}catch(error){
-          if(error.message==='Checkout has already started.')holdDeferred=true;
+          if(error.data?.code==='CHECKOUT_STARTED'||error.message==='Checkout has already started.')holdDeferred=true;
           else {if(added){cart=cart.filter(i=>i.id!==slug);persistCart();}message.textContent=error.message;return false;}
         }
         update();

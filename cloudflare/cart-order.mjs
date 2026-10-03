@@ -243,7 +243,9 @@ export class CartOrder extends DurableObject {
       if(matches.length>1){this.save({...d,status:'review',reason:'Multiple Bitcoin invoices match this order. Inventory remains reserved for review.'});await this.reviewNotice();return;}
       if(matches.length===0){
         if(Date.now()-d.createAttemptedAt<120000)return;
-        if(!d.noInvoiceCheckedAt||Date.now()-d.noInvoiceCheckedAt<60000){this.save({...d,noInvoiceCheckedAt:Date.now()});return;}
+        if(!d.noInvoiceCheckedAt){this.save({...d,noInvoiceCheckedAt:Date.now()});return;}
+        // Customer polling must not restart the gap between the two checks.
+        if(Date.now()-d.noInvoiceCheckedAt<60000)return;
         // Two authoritative BTCPay searches found no invoice. Release only this
         // order's stock; do not retry invoice creation or risk duplicate payment.
         this.save({...d,status:'releasing',releaseStatus:'expired'});

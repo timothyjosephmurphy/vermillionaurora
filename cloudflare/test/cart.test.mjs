@@ -196,6 +196,11 @@ it('releases a verified missing Bitcoin invoice and reuses the cart reservation 
   await order.refresh();
   expect((await read(order)).status).toBe('creating');
   expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
+  const firstCheck=Date.now()-30_000;
+  await runInDurableObject(order,i=>i.save({...i.read(),noInvoiceCheckedAt:firstCheck}));
+  await order.refresh();await order.refresh();
+  expect((await read(order)).noInvoiceCheckedAt).toBe(firstCheck);
+  expect((await read(order)).status).toBe('creating');
   await runInDurableObject(order,i=>i.save({...i.read(),noInvoiceCheckedAt:Date.now()-61_000}));
   await order.refresh();
   expect((await read(order)).status).toBe('expired');
@@ -204,6 +209,14 @@ it('releases a verified missing Bitcoin invoice and reuses the cart reservation 
   await order.syncCart(id,await keyHash('a'.repeat(64)),[{id:ids[0],quantity:1}]);
   expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
   expect(invoices).toHaveLength(0);
+});
+it('reports an existing payment attempt to product-page cart additions without changing its stock',async()=>{
+  const {id,order}=await setup('bitcoin');await order.start('bitcoin');
+  const response=await cartCheckout(request('hold',{holdId:id,key:'a'.repeat(64),items:[{id:ids[0],quantity:1}]}),{...env,...config});
+  expect(response.status).toBe(409);
+  expect((await response.json()).code).toBe('CHECKOUT_STARTED');
+  expect((await read(order)).status).toBe('pending');
+  for(const slug of ids)expect(await env.PAINTING_STOCK.getByName(slug).status()).toBe('reserved');
 });
 it('explains BTCPay invoice permission failures and keeps stock reserved',async()=>{
   const {id,order}=await setup('bitcoin');failCreate=true;await order.start('bitcoin');failCreate=false;failInvoiceRead=true;
