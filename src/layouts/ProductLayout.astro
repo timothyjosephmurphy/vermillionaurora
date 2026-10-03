@@ -3,15 +3,20 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { catalogVersion, urlFor } from '../../catalog/catalog.mjs';
 const { product } = Astro.props;
+const structuredData = product.type === 'painting'
+  ? { '@context':'https://schema.org', '@type':'VisualArtwork', name:product.title, creator:{'@type':'Person',name:product.artist||'TJ Murphy'}, artMedium:product.medium, artworkSurface:product.surface, image:new URL(product.image.src, Astro.site).href, description:product.description }
+  : product.type === 'book'
+    ? { '@context':'https://schema.org', '@type':'Book', name:product.title, author:{'@type':'Person',name:product.author||'TJ Murphy'}, image:new URL(product.image.src, Astro.site).href, description:product.description||product.story?.join(' ') } : null;
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{product.title} | Vermillion Aurora</title>
+  <title>{product.title}{product.bookGallery ? ' — Book gallery artwork' : ''} | Vermillion Aurora</title>
   <meta name="description" content={product.description} />
   <meta name="catalog-version" content={catalogVersion} />
   <link rel="canonical" href={`https://vermillionaurora.com${urlFor(product)}`} />
+  {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g,'\\u003c')} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />

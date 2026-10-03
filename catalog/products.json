@@ -1650,8 +1650,8 @@
     "id": "painting-shoreline-at-dusk",
     "slug": "painting-shoreline-at-dusk",
     "type": "painting",
-    "title": "El Zonte at Sunrise, El Salvador",
-    "description": "El Zonte at Sunrise, El Salvador by TJ Murphy. Watercolor pastel. Available.",
+    "title": "El Zonte at Dusk, El Salvador",
+    "description": "El Zonte at Dusk, El Salvador by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1681,8 +1681,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/shoreline-at-dusk.jpg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "El Zonte shoreline at dusk by TJ Murphy",
+      "caption": "El Zonte at Dusk, El Salvador"
     },
     "checkout": {
       "mode": "integrated",
@@ -1870,8 +1870,8 @@
     "id": "painting-sunset-shore",
     "slug": "painting-sunset-shore",
     "type": "painting",
-    "title": "Daniel being Repremanded in Vietnam",
-    "description": "Daniel being Repremanded in Vietnam by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Daniel being Reprimanded in Vietnam",
+    "description": "Daniel being Reprimanded in Vietnam by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1898,8 +1898,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunset-shore.jpg",
-      "alt": "Daniel being Repremanded in Vietnam by TJ Murphy",
-      "caption": "Daniel being Repremanded in Vietnam"
+      "alt": "Daniel being Reprimanded in Vietnam by TJ Murphy",
+      "caption": "Daniel being Reprimanded in Vietnam"
     },
     "checkout": {
       "mode": "inquiry"
@@ -2032,8 +2032,8 @@
     "id": "painting-two-soldiers",
     "slug": "painting-two-soldiers",
     "type": "painting",
-    "title": "Ricepaddy in Vietnam",
-    "description": "Ricepaddy in Vietnam by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Rice Paddy in Vietnam",
+    "description": "Rice Paddy in Vietnam by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -2060,8 +2060,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/two-soldiers.jpg",
-      "alt": "Ricepaddy in Vietnam by TJ Murphy",
-      "caption": "Ricepaddy in Vietnam"
+      "alt": "Rice Paddy in Vietnam by TJ Murphy by TJ Murphy",
+      "caption": "Rice Paddy in Vietnam"
     },
     "checkout": {
       "mode": "inquiry"
