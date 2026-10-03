@@ -1,0 +1,25 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { products, urlFor, priceLabel, statusLabel, dimensionLabel } from '../../../catalog/catalog.mjs';
+const availablePaintings = products
+  .filter(product => product.type === 'painting' && product.listing.status === 'available')
+  .sort((a,b) => Number(b.listing.price?.amount||0) - Number(a.listing.price?.amount||0) || a.title.localeCompare(b.title));
+---
+<!doctype html><html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Available Paintings | Vermillion Aurora</title>
+  <meta name="description" content="Browse original paintings currently available from TJ Murphy, sorted by price. Explore landscapes and portraits.">
+  <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/site-header.css"><link rel="stylesheet" href="/gallery/painting-list.css">
+</head><body class="painting-gallery-page"><div class="page-shell"><SiteHeader/><main><section class="section section-light"><div class="container">
+  <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/gallery/">Gallery</a><span>/ Available paintings</span></nav>
+  <header class="section-heading"><p class="eyebrow dark">Original artwork</p><h1>Available Paintings</h1><p>Currently available originals, ordered from highest to lowest listed price. <a href="/gallery/">Browse all paintings, including sold and archived works →</a></p></header>
+  <ul class="painting-list" aria-label="Available paintings">
+    {availablePaintings.map(product => <li class="painting-list-row" data-product-id={product.id}>
+      <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
+      <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a></h3>
+      <p class="painting-list-dimensions">{dimensionLabel(product)}</p>
+      <p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>
+    </li>)}
+  </ul>
+</div></section></main><SiteFooter/></div></body></html>
