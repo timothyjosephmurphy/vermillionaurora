@@ -63,7 +63,7 @@ export class CartOrder extends DurableObject {
   result() {
     const d=this.read();if(!d)return {status:'missing'};
     return {orderId:d.id,status:d.status,expiresAt:d.expiresAt,method:d.method,methods:d.methods,
-      ...(['pending','processing'].includes(d.status)&&d.url?{url:d.url}:{}),
+      ...((['pending','processing'].includes(d.status)||d.method==='bitcoin'&&['settling','paid'].includes(d.status))&&d.url?{url:d.url}:{}),
       ...(d.quote?{quote:{items:d.quote.items.map(publicCartItem),base:d.quote.base,shipping:d.quote.shipping,tax:d.quote.tax,total:d.quote.total,
         shipments:[...d.quote.shipments.map(s=>({id:s.slug,title:s.title,shipping:s.shipping,carrier:s.carrier,service:s.service})),...(d.quote.printQuote?[{id:'prints',title:'Fine-art prints',shipping:d.quote.printQuote.shipping,carrier:d.quote.printQuote.carrier,service:d.quote.printQuote.service}]:[])]},
         }:{}),
