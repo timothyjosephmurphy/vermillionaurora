@@ -183,7 +183,7 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
     // works. Size sorting compares area across inches and centimetres.
     const priceGroup = item => bookGallery ? (item.printReady ? 0 : 1) : available(item.availability)&&item.price!==null?0:item.availability==='Sold'?2:item.availability==='Not for sale'?3:1;
     function sortedItems() {
-      if(!sort)return allItems;
+      if(!sort||sort.value==='gallery-order')return allItems;
       const [kind,direction]=sort.value.split('-'),field=kind==='size'?'area':'price',sign=direction==='asc'?1:-1;
       return [...allItems].sort((a,b)=>{
         if(field==='price'&&priceGroup(a)!==priceGroup(b))return priceGroup(a)-priceGroup(b);

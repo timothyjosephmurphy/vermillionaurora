@@ -50,6 +50,7 @@ for(const {source} of artworks){
     <div class="gallery-filter" hidden>
       <label class="gallery-sort" for="gallery-sort">Sort by
         <select id="gallery-sort" aria-label="Sort works">
+          {g.id==='watercolor-landscapes-travels' && <option value="gallery-order" selected>Gallery order</option>}
           <option value="price-desc">Price: high to low</option>
           <option value="price-asc">Price: low to high</option>
           <option value="size-desc">Size: largest first</option>
