@@ -5,9 +5,9 @@ import assert from 'node:assert/strict';
 import {catalogVersion,byId} from '../catalog/catalog.mjs';
 const root=path.resolve('dist'),origin='https://vermillionaurora.com',ids=['painting-portrait-in-green','painting-portrait-in-gold'];
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote']}:{})});
-const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,method='square';const reservations=new Map();
+const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[],calls=[];let order,availability='available',enabled=true,failStatus=false,method='square',productMethods=['paypal','square','bitcoin'];const reservations=new Map();
 page.on('pageerror',e=>errors.push(e.message));
-const product=id=>({id,title:byId[id].title,amount:byId[id].listing.price.amount,methods:['paypal','square','bitcoin'],status:availability});
+const product=id=>({id,title:byId[id].title,amount:byId[id].listing.price.amount,methods:productMethods,status:availability});
 await page.route('**/*',async route=>{
  const req=route.request(),url=new URL(req.url());
  if(req.method()==='OPTIONS')return route.fulfill({status:204,headers:{'Access-Control-Allow-Origin':origin,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type'}});
@@ -22,7 +22,7 @@ await page.route('**/*',async route=>{
   if(action==='quote'){
    assert.equal(body.catalogVersion,catalogVersion);assert.equal(body.address.city,'Seattle');
    const items=body.items.map(i=>({...product(i.id),quantity:i.quantity})),base=items.reduce((s,i)=>s+Number(i.amount),0);
-   result={orderId:body.holdId,key:body.key,expiresAt:Date.now()+10*60*1000,status:'quoted',methods:['paypal','square','bitcoin'],quote:{items,base:base.toFixed(2),shipping:'12.00',tax:'5.00',total:(base+17).toFixed(2),shipments:items.map(i=>({id:i.id,title:i.title,shipping:'6.00',carrier:'UPS',service:'Ground'}))}};order=result;
+   result={orderId:body.holdId,key:body.key,expiresAt:Date.now()+10*60*1000,status:'quoted',methods:productMethods,quote:{items,base:base.toFixed(2),shipping:'12.00',tax:'5.00',total:(base+17).toFixed(2),shipments:items.map(i=>({id:i.id,title:i.title,shipping:'6.00',carrier:'UPS',service:'Ground'}))}};order=result;
   }
   if(action==='start'){assert.equal(body.key,order.key);method=body.method;if(method==='square')assert.equal(body.sourceId,'cnon:test');result={...order,method,status:method==='bitcoin'?'processing':'settling'};order=result;}
   if(action==='status'){if(failStatus)return route.fulfill({status:503,headers:{'Access-Control-Allow-Origin':origin},json:{error:'Payment status is temporarily unavailable. Please check again.'}});result=order;}
@@ -45,9 +45,9 @@ try{
  for(const id of ids){await page.goto(`${origin}/products/${id}/`);await page.getByRole('button',{name:'Add to cart',exact:true}).click();await page.getByRole('button',{name:'Added to cart',exact:true}).click();}
  assert.equal((await cartStored()).length,2);
  await page.goto(origin+'/cart/');await page.locator('.cart-line').nth(1).waitFor();await page.reload();await page.locator('.cart-line').nth(1).waitFor();
- assert.equal(await page.locator('[data-cart-count]').textContent(),'2');await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isDisabled());assert.equal(await page.getByRole('button',{name:'Pay with credit card'}).evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(222, 219, 215)');
+ assert.equal(await page.locator('[data-cart-count]').textContent(),'2');await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isDisabled());assert.equal(await page.getByRole('button',{name:'Pay with credit card'}).evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(222, 219, 215)');assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isDisabled(),'quote waits for required delivery details');
  assert.equal(await page.getByRole('button',{name:'Continue with PayPal'}).count(),0);
- await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isEnabled());assert(await page.getByRole('button',{name:'Shipping & tax calculated'}).isDisabled());
+ await fill();assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'valid delivery details activate the quote button');await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();await page.getByRole('button',{name:'Pay with credit card'}).waitFor();assert(await page.getByRole('button',{name:'Pay with credit card'}).isEnabled());assert(await page.getByRole('button',{name:'Shipping & tax calculated'}).isDisabled());
  assert.equal(await page.getByRole('button',{name:'Continue with PayPal'}).count(),0);
  for(const width of [1440,390]){await page.setViewportSize({width,height:1050});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width} cart overflow`);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.waitForFunction(()=>scrollY===0);await page.screenshot({path:`/tmp/cart-preview/cart-${width}.png`,fullPage:true});}
  // Editing the address invalidates the quote; payment stays visible but gray until recalculated.
@@ -88,5 +88,6 @@ try{
  assert.equal(calls.filter(c=>c.action==='quote').at(-1).body.items.length,2,'Buy Now with other saved items quotes the full cart');
  await page.getByRole('button',{name:'Pay with Bitcoin'}).click();await page.getByRole('heading',{name:'Bitcoin payment received'}).waitFor();assert.equal((await cartStored()).length,2);
  order={...order,status:'paid'};await page.getByRole('button',{name:'Check payment status'}).click();await page.getByRole('heading',{name:'Thank you for collecting my work.'}).waitFor();assert.deepEqual(await cartStored(),[]);
- assert.deepEqual(errors,[]);console.log('PASS: desktop/mobile cart, persistent selections, quantity-one originals, invalidation, payment recovery, receipt, unavailable stock, corrupted storage, and Buy Now choosing one-item or full-cart checkout correctly.');
+ productMethods=[];await page.evaluate(id=>localStorage.setItem('va-cart-v1',JSON.stringify([{id,quantity:1}])),ids[0]);await page.goto(origin+'/cart/');await page.locator('.cart-line').waitFor();await fill();assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'payment-method availability does not block a shipping/tax quote');
+ assert.deepEqual(errors,[]);console.log('PASS: cart quote activates only after valid address entry, remains independent of payment-method availability, and existing desktop/mobile checkout behavior passes.');
 }finally{await browser.close();}

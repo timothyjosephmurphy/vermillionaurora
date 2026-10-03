@@ -96,10 +96,17 @@
   });
   let root,notice,layout,orderPanel,form,pendingOrder=null;
   function announce(text){notice.textContent=text;}
+  function quoteAllowed(){
+    return !!(form&&cart.length&&capabilities?.enabled&&form.checkValidity()&&cart.every(item=>!!eligible(item.id))&&!(pendingOrder&&pending(pendingOrder))&&!busy&&!quoted);
+  }
+  function updateQuoteButton(){
+    const button=form?.querySelector('[data-cart-quote]');if(!button)return;
+    button.textContent=quoted?'Shipping & tax calculated':busy?'Calculating…':'Calculate shipping & tax';
+    button.disabled=!quoteAllowed();
+  }
   function invalidate(){
     quoted=null;
-    const button=form?.querySelector('[data-cart-quote]');
-    if(button){button.disabled=!!(pendingOrder&&pending(pendingOrder));button.textContent='Calculate shipping & tax';}
+    updateQuoteButton();
     updatePaymentControls(false);
     root.querySelector('[data-cart-shipping]').textContent='Calculated below';root.querySelector('[data-cart-tax]').textContent='Calculated below';root.querySelector('[data-cart-total]').textContent='—';
   }
@@ -184,7 +191,7 @@
     root.querySelector('[data-cart-subtotal]').textContent=money(subtotal);
     const active=!!current&&(pending(current)||current.status==='paid');
     layout.hidden=!cart.length||active;root.querySelector('[data-cart-empty]').hidden=!!cart.length||active;
-    form.querySelector('[data-cart-quote]').disabled=invalid||!capabilities?.enabled||!methodIntersection().length||!!(pendingOrder&&pending(pendingOrder));
+    updateQuoteButton();
     updatePaymentControls(false);
     if(!active){announce(!capabilities?'Availability could not be verified. Please refresh before checkout.':!capabilities.enabled?'Cart checkout is not available yet. Please contact TJ to arrange a purchase.':invalid?'Please remove unavailable items before checking out.':cart.length&&!methodIntersection().length?'These artworks do not share a payment method. Please contact TJ.':'');}
   }
@@ -217,7 +224,7 @@
     finally{busy=false;setDisabled(false);}
   }
   function setDisabled(value){
-    form.querySelectorAll('input,button').forEach(el=>{el.disabled=value||(el.matches('[data-cart-quote]')&&!!quoted)||(el.matches('[data-cart-quote]')&&!!(pendingOrder&&pending(pendingOrder)));});
+    form.querySelectorAll('input,button').forEach(el=>{if(el.matches('[data-cart-quote]'))el.disabled=value||!quoteAllowed();else el.disabled=value||(!!(pendingOrder&&pending(pendingOrder)));});
     root.querySelectorAll('[data-cart-methods] button').forEach(el=>el.disabled=value||!quoted||!!(pendingOrder&&pending(pendingOrder)));
     root.querySelectorAll('[data-cart-items] button, [data-cart-items] input').forEach(el=>el.disabled=value);
   }
@@ -246,7 +253,8 @@
     const params=new URLSearchParams(location.search),buy=params.get('buy');
     // Buy now is a one-item checkout; existing cart contents remain for a later order.
     if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;cart=[{id:buy,quantity:1}]; /* view only; do not overwrite a saved multi-item cart */}
-    form.addEventListener('input',()=>{if(quoted)invalidate();});
+    const addressChanged=()=>{if(quoted)invalidate();else updateQuoteButton();};
+    form.addEventListener('input',addressChanged);form.addEventListener('change',addressChanged);
     form.addEventListener('submit',async event=>{
       event.preventDefault();if(busy)return;if(pendingOrder&&pending(pendingOrder)){showPendingNotice(pendingOrder,buyOnly);return;}if(!form.reportValidity())return;busy=true;setDisabled(true);form.querySelector('[data-cart-quote]').textContent='Calculating…';announce('Calculating shipping and tax…');
       const values=Object.fromEntries(new FormData(form));
