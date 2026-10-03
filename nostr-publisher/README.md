@@ -1,12 +1,22 @@
 # Vermillion Aurora Nostr publisher
 
-This isolated Cloudflare Worker publishes the 12 approved X-campaign captions to Nostr at their existing Seattle schedule: Tuesdays 10:00 a.m., Thursdays 6:00 p.m., and Sundays 10:00 a.m. It runs from October 6 through November 1, 2026. Each note includes its campaign link and the same public image URL. Link attribution is changed to `utm_source=nostr`.
+The campaign schedule is empty. All 12 October/November campaign entries were removed at the artist's request on October 3, 2026.
 
-The worker is deployed paused (`NOSTR_PUBLISH_ENABLED=false`). To activate after deployment, in the Cloudflare dashboard open **Workers & Pages → vermillion-nostr-publisher → Settings → Variables and Secrets**:
+One requested connection test is defined as `testPost` in `src/posts.mjs`. It features Warszawska Syrenka with its public image and product link. The next enabled five-minute scheduler tick publishes it. A stored signed event and delivery receipt prevent repeats across retries, concurrent runs, and redeployments. Once a relay accepts it, subsequent ticks are idle.
 
-1. Add `NOSTR_NSEC` as a **secret**, using the Nostr account's `nsec` private key. Never put it in the repository or chat.
-2. Change `NOSTR_PUBLISH_ENABLED` to the text value `true`.
+## Configuration
 
-The Worker checks every five minutes and publishes due notes to the three relays in `wrangler.jsonc`. A Durable Object records accepted event IDs so retries do not create duplicate notes. Turning the switch on records the activation time; posts scheduled before activation are skipped, and the scheduler does not backfill old campaign entries.
+In Cloudflare, use **Workers & Pages → vermillion-nostr-publisher → Settings → Variables and Secrets**:
 
-The schedule ends November 1. Later posts require adding reviewed entries to `src/posts.mjs` and deploying an update.
+- `NOSTR_NSEC`: secret containing the Nostr account's private key.
+- `NOSTR_PUBLISH_ENABLED`: text value `true` to allow publishing, or `false` to pause.
+
+Deployment preserves dashboard variables with `keep_vars: true`. A missing enabled variable pauses publishing. The private key stays in Cloudflare.
+
+## Check the test
+
+Read-only status: https://vermillion-nostr-publisher.timothyjosephmurphy.workers.dev/status
+
+The response reports the empty campaign count, enabled state, and test receipt, including the accepted relay and a public note URL. This endpoint cannot trigger publishing. There is no public write endpoint.
+
+To prepare another test, explicitly approve its content and use a new test ID. Keep the current ID stable on routine deployments. New campaign entries require a reviewed change to the empty `posts` array.
