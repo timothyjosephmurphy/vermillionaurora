@@ -151,5 +151,41 @@ try{
  assert(await page.getByRole('button',{name:'Calculate shipping & tax'}).isEnabled(),'a failed availability check does not disable retry');
  await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();
  assert.equal(calls.filter(c=>c.action==='quote').length,quoteCount+2);
- assert.deepEqual(errors,[]);console.log('PASS: quote retries recover failed availability and expired checkouts, preserve active invoices, validate autofill, and resume Bitcoin handoffs.');
+ // Older sessions may retain an order pointer after its coordinator became a
+ // plain hold. Both cart entry points must resume quoting instead of polling it.
+ const startsBeforeRecovery=calls.filter(c=>c.action==='start').length;
+ for(const directOrder of [false,true]){
+  order={orderId:order.orderId,key:order.key,status:'holding',heldIds:[ids[0]],expiresAt:Date.now()+15*60000};
+  const heldAttempt={orderId:order.orderId,key:order.key};
+  await page.evaluate(saved=>{localStorage.setItem('va-cart-order-v1',JSON.stringify(saved));localStorage.setItem('va-cart-reservation-v1',JSON.stringify({holdId:saved.orderId,key:saved.key}));},heldAttempt);
+  await page.goto(origin+'/cart/'+(directOrder?'?order='+heldAttempt.orderId:''));
+  await page.getByText('Your cart is ready. Calculate shipping and tax to continue.',{exact:true}).first().waitFor();
+  assert(await page.locator('[data-order-panel]').isHidden(),'a plain reservation is not an order awaiting payment');
+  assert.equal(await page.evaluate(()=>localStorage.getItem('va-cart-order-v1')),null);
+  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-reservation-v1')).holdId),heldAttempt.orderId,'keep the still-active reservation');
+  assert.equal(await page.getByRole('link',{name:'Open existing checkout',exact:true}).count(),0);
+  await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();
+  assert.equal(order.orderId,heldAttempt.orderId,'the restored reservation can receive a fresh quote');
+ }
+ // Status retries explain failures beside the button, then visibly expire the
+ // order and let the same browser begin a new checkout without losing its cart.
+ order={...order,status:'pending',method:'bitcoin',url:'https://btcpay.example.test/i/expired-recovery'};
+ const expiredAttempt={orderId:order.orderId,key:order.key};
+ await page.evaluate(saved=>localStorage.setItem('va-cart-order-v1',JSON.stringify(saved)),expiredAttempt);
+ await page.goto(origin+'/cart/?order='+expiredAttempt.orderId);await page.getByRole('heading',{name:'Payment pending',exact:true}).waitFor();
+ assert.equal((await page.locator('[data-cart-notice]').textContent()).trim(),'','Loading your cart is cleared on restored order pages');
+ failStatus=true;await page.getByRole('button',{name:'Check payment status',exact:true}).click();
+ await page.locator('[data-order-feedback]').getByText('Payment status is temporarily unavailable. Please check again.').waitFor();
+ assert(await page.getByRole('button',{name:'Check payment status',exact:true}).isEnabled());
+ assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-order-v1'))),expiredAttempt);
+ failStatus=false;order={...order,status:'expired'};await page.getByRole('button',{name:'Check payment status',exact:true}).click();
+ await page.getByRole('heading',{name:'Checkout expired',exact:true}).waitFor();
+ assert.equal(await page.getByRole('button',{name:'Check payment status',exact:true}).count(),0);
+ assert.equal(await page.getByRole('link',{name:'Continue payment',exact:true}).count(),0);
+ await page.getByRole('button',{name:'Return to cart',exact:true}).click();await page.locator('.cart-line').waitFor();
+ assert.equal(await page.evaluate(()=>localStorage.getItem('va-cart-order-v1')),null);
+ assert.notEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-reservation-v1')).holdId),expiredAttempt.orderId);
+ await fill();await page.getByRole('button',{name:'Calculate shipping & tax'}).click();await page.getByRole('button',{name:'Shipping & tax calculated'}).waitFor();
+ assert.notEqual(order.orderId,expiredAttempt.orderId);assert.equal(calls.filter(c=>c.action==='start').length,startsBeforeRecovery);
+ assert.deepEqual(errors,[]);console.log('PASS: stale order pointers resume cart reservations, expired invoices unblock checkout, and payment status retries show visible feedback.');
 }finally{await browser.close();}
