@@ -17,7 +17,16 @@ const cf=async(method,body)=>{
 let installed=false;
 try{
  await cf('PUT',{name,text:token,type:'secret_text'});installed=true;
- const response=await fetch(origin+routes[request.operation],{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify(request.input??{}),redirect:'error',signal:AbortSignal.timeout(90000)});
+ const call=(path,input={})=>fetch(origin+path,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify(input),redirect:'error',signal:AbortSignal.timeout(90000)});
+ // Secret updates may take a few seconds to reach the serving Worker. Probe
+ // with a read-only request; never retry an unconfirmed post mutation.
+ let ready;
+ for(let attempt=0;attempt<10;attempt++){
+  ready=await call('/buffer/status');
+  if(ready.status!==404)break;
+  if(attempt<9)await new Promise(resolve=>setTimeout(resolve,2000));
+ }
+ const response=request.operation==='status'||!ready.ok?ready:await call(routes[request.operation],request.input??{});
  const data=await response.json();
  console.log(JSON.stringify({operation:request.operation,status:response.status,result:data},null,2));
  if(!response.ok)throw Error('Buffer operation was not confirmed; inspect the result before retrying.');

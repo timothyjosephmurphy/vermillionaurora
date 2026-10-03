@@ -18,9 +18,10 @@ function clean(message,env){
 async function graphql(env,query){
  let response,data;
  try{
-  response=await fetch('https://api.buffer.com',{method:'POST',redirect:'error',headers:{Authorization:`Bearer ${env.BUFFER_API_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify({query}),signal:AbortSignal.timeout(20000)});
-  data=await response.json();
- }catch{throw fail('Buffer response could not be confirmed. Check the queue before repeating a write.',502);}
+  response=await fetch('https://api.buffer.com',{method:'POST',redirect:'manual',headers:{Authorization:`Bearer ${env.BUFFER_API_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify({query}),signal:AbortSignal.timeout(20000)});
+ }catch{throw fail('Buffer network response could not be confirmed. Check the queue before repeating a write.',502);}
+ if(response.status>=300&&response.status<400)throw fail(`Buffer returned an unexpected HTTP ${response.status} redirect.`,502);
+ try{data=await response.json();}catch{throw fail(`Buffer returned a non-JSON response: HTTP ${response.status}, content type ${response.headers.get('Content-Type')||'unknown'}.`,502);}
  if(!response.ok||data.errors?.length)throw fail(clean(data.errors?.[0]?.message||`Buffer returned HTTP ${response.status}.`,env),502);
  if(!data.data)throw fail('Buffer returned an invalid response.',502);
  return data.data;

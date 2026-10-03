@@ -40,6 +40,10 @@ test('lists connected channels with owner or temporary operations credential',as
  mock();const env=setup();const r=await req(env,'/buffer/status',{}, {Authorization:'Bearer ops'});
  assert.equal(r.status,200);const d=await r.json();assert.equal(d.channels[0].organizationId,'org');assert(!JSON.stringify(d).includes('buffer-secret'));
 });
+test('reports provider HTTP failures without exposing non-JSON response bodies',async()=>{
+ globalThis.fetch=async()=>new Response('buffer-secret should not be returned',{status:403,headers:{'Content-Type':'text/html'}});
+ const r=await req(setup(),'/buffer/status');assert.equal(r.status,502);const text=await r.text();assert.match(text,/HTTP 403/);assert(!text.includes('buffer-secret'));
+});
 test('defaults to a draft and replays receipt without creating another post',async()=>{
  const queries=mock(),env=setup();const first=await req(env,'/buffer/posts/create',input);assert.equal(first.status,200);
  assert.equal((await first.json()).saveToDraft,true);const mutation=queries.find(q=>q.startsWith('mutation'));
