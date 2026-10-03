@@ -1,0 +1,12 @@
+{
+  "operation": "create",
+  "input": {
+    "channelId": "6ac0b1e7ea19ca0bde612916",
+    "text": "I'm TJ Murphy, a Seattle artist. I started painting in 2020, following a desire to capture the light and color I kept noticing around me. That practice has grown into watercolor landscapes, portraits, and murals.\n\nNatural beauty and the freedom to choose our own path run through the work. This page is where I'll share the paintings, the process, and the places and people behind them.\n\nWhat would you like to see more of: landscapes, portraits, or murals?\n\nhttps://vermillionaurora.com/links/?utm_source=facebook&utm_medium=social&utm_campaign=artist_launch_oct_2026&utm_content=meet-tj",
+    "imageUrls": [
+      "https://vermillionaurora.com/about/images/tj-murphy-portrait.jpg"
+    ],
+    "idempotencyKey": "artist-launch-facebook-20261006",
+    "saveToDraft": true
+  }
+}
