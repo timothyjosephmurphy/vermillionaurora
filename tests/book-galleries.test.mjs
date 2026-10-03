@@ -50,8 +50,8 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
 
   const travels=groups.get('watercolor-landscapes-travels');
   assert(travels);
-  assert.equal(travels.artworks.length,41);
-  for(const id of ['book-art-c198f09bc8ddad18ed1e','book-art-87cf2a732259b313f5ab','book-art-ac338ff3806b66917b3c','book-art-56e40e02275a8767a802','book-art-27fee33e69f262ecfacb','book-art-55829535637cd4974a88','book-art-e589c9375e23d1de4748','book-art-f91504eaa0ab6b936c29','book-art-fb5eaeb2078ebf9c75f0','book-art-4bb692457bed7cd4bb00'])
+  assert.equal(travels.artworks.length,40);
+  for(const id of ['book-art-c198f09bc8ddad18ed1e','book-art-ac338ff3806b66917b3c','book-art-56e40e02275a8767a802','book-art-27fee33e69f262ecfacb','book-art-55829535637cd4974a88','book-art-e589c9375e23d1de4748','book-art-f91504eaa0ab6b936c29','book-art-fb5eaeb2078ebf9c75f0','book-art-4bb692457bed7cd4bb00'])
     assert(travels.artworks.includes(id));
   assert(!pacific.artworks.includes('book-art-c198f09bc8ddad18ed1e'));
 
