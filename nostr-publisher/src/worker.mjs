@@ -1,8 +1,8 @@
 import * as nip19 from 'nostr-tools/nip19';
 import { SimplePool } from 'nostr-tools/pool';
 import { finalizeEvent } from 'nostr-tools/pure';
-import { posts } from './posts.mjs';
-import { duePosts, eventContent, scheduledSeconds } from './scheduler-core.mjs';
+import { posts, testPost } from './posts.mjs';
+import { pendingPosts, eventContent, scheduledSeconds } from './scheduler-core.mjs';
 
 const PUBLISHER_NAME = 'Vermillion Aurora';
 
@@ -25,7 +25,23 @@ export class NostrSchedule {
   }
 
   async fetch(request) {
-    if (new URL(request.url).pathname !== '/run' || request.method !== 'POST') {
+    const pathname = new URL(request.url).pathname;
+    if (pathname === '/status' && request.method === 'GET') {
+      const receipt = await this.state.storage.get(`nostr:sent:${testPost.id}`);
+      const attempt = await this.state.storage.get(`nostr:attempt:${testPost.id}`);
+      return Response.json({
+        enabled: this.env.NOSTR_PUBLISH_ENABLED === 'true',
+        keyConfigured: Boolean(this.env.NOSTR_NSEC),
+        scheduledPosts: posts.length,
+        test: {
+          id: testPost.id,
+          status: receipt ? 'published' : (attempt?.status || 'pending'),
+          ...(receipt || attempt || {}),
+          noteUrl: receipt ? `https://njump.me/${nip19.noteEncode(receipt.eventId)}` : null
+        }
+      }, { headers: { 'cache-control': 'no-store' } });
+    }
+    if (pathname !== '/run' || request.method !== 'POST') {
       return new Response('Not found', { status: 404 });
     }
     if (this.env.NOSTR_PUBLISH_ENABLED !== 'true') {
@@ -46,10 +62,16 @@ export class NostrSchedule {
 
     const sent = new Set(await this.state.storage.list({ prefix: 'nostr:sent:' }).then((entries) =>
       [...entries.keys()].map((key) => key.slice('nostr:sent:'.length))));
-    const due = duePosts(posts, now, activatedAt, sent);
+    const due = pendingPosts(posts, testPost, now, activatedAt, sent);
     if (!due.length) return Response.json({ status: 'idle', sent: 0 });
 
-    const key = secretKey(this.env.NOSTR_NSEC);
+    let key;
+    try {
+      key = secretKey(this.env.NOSTR_NSEC);
+    } catch {
+      await this.state.storage.put(`nostr:attempt:${testPost.id}`, { status: 'invalid-key', attemptedAt: now });
+      return Response.json({ status: 'invalid-key' }, { status: 503 });
+    }
     const relays = String(this.env.NOSTR_RELAYS || '').split(',').map((relay) => relay.trim()).filter(Boolean);
     if (!relays.length) throw new Error('No Nostr relays are configured');
 
@@ -69,17 +91,27 @@ export class NostrSchedule {
         if (!acquired) continue;
 
         try {
-          const event = finalizeEvent({
-            kind: 1,
-            created_at: scheduledSeconds(post),
-            tags: [],
-            content: eventContent(post)
-          }, key);
-          await Promise.any(pool.publish(relays, event));
-          await this.state.storage.put(sentKey, { eventId: event.id, acceptedAt: now, publisher: PUBLISHER_NAME });
+          const eventKey = `nostr:event:${post.id}`;
+          // Persist the signed event before any network I/O. Retries and restarts
+          // reuse its timestamp and ID even if a relay accepted it before a crash.
+          let event = await this.state.storage.get(eventKey);
+          if (!event) {
+            event = finalizeEvent({
+              kind: 1,
+              created_at: post.scheduledAt ? scheduledSeconds(post) : Math.floor(now / 1000),
+              tags: [],
+              content: eventContent(post)
+            }, key);
+            await this.state.storage.put(eventKey, event);
+          }
+          await this.state.storage.put(`nostr:attempt:${post.id}`, { status: 'sending', attemptedAt: now });
+          const relay = await Promise.any(pool.publish(relays, event).map((result, index) =>
+            result.then(() => relays[index])));
+          await this.state.storage.put(sentKey, { eventId: event.id, acceptedAt: now, relay, publisher: PUBLISHER_NAME });
           published += 1;
           console.log(JSON.stringify({ eventId: event.id, postId: post.id, status: 'published' }));
         } catch (error) {
+          await this.state.storage.put(`nostr:attempt:${post.id}`, { status: 'retry-pending', attemptedAt: now });
           console.error(JSON.stringify({ postId: post.id, status: 'publish-failed', message: String(error?.message || error) }));
         } finally {
           await this.state.storage.delete(leaseKey);
@@ -93,7 +125,11 @@ export class NostrSchedule {
 }
 
 export default {
-  async fetch() {
+  async fetch(request, env) {
+    if (new URL(request.url).pathname === '/status' && request.method === 'GET') {
+      const id = env.NOSTR_SCHEDULE.idFromName('vermillion-aurora');
+      return env.NOSTR_SCHEDULE.get(id).fetch('https://nostr-scheduler.internal/status');
+    }
     return new Response('Nostr publisher is schedule-only.', { status: 404 });
   },
 

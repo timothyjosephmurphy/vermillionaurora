@@ -28,7 +28,7 @@ jobs:
           cache-dependency-path: nostr-publisher/package-lock.json
       - run: npm ci --prefix nostr-publisher
       - run: npm --prefix nostr-publisher test
-      - name: Deploy the paused Nostr publisher
+      - name: Deploy the Nostr publisher
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_NOSTR_API_TOKEN }}
