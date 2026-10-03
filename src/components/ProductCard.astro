@@ -1,23 +1,23 @@
 ---
 import { urlFor, priceLabel, statusLabel, dimensionLabel } from '../../catalog/catalog.mjs';
-const {product:p,variant='gallery'}=Astro.props;
+const {product:p,variant='gallery',priority=false}=Astro.props;
 const url=urlFor(p), status=statusLabel(p);
 const caption=`${p.title} · ${p.listing?.status==='available'?priceLabel(p):status}`;
 ---
-{variant==='artist' ? <a class="ex-photo" data-product-id={p.id} data-availability={status} data-caption={caption} data-product={url} href={url}><img src={p.image.src} alt={p.image.alt} loading="lazy" decoding="async" /></a> :
+{variant==='artist' ? <a class="ex-photo" data-product-id={p.id} data-availability={status} data-caption={caption} data-product={url} href={url}><img src={p.image.src} alt={p.image.alt||p.title} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" /></a> :
 variant==='service' ? <article class="service-card">
   {p.examples?.length>0 && <div class="portrait-preview" data-portrait={p.slug} aria-label={`${p.title} examples`}><a class="portrait-preview-stage" href={url}><img src={p.examples[0].src} alt={p.examples[0].alt} loading="lazy" /></a></div>}
   <h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.story[0]}</p><span class="price">{priceLabel(p,false)}</span>
 </article> : variant==='book' ? <article class="product-card ex-slide">
-  <a href={url} aria-label={`Explore ${p.title}`} style="display:block;background:#e8dfd3;padding:16px"><img src={p.image.src} alt={p.image.alt} width={p.image.width} height={p.image.height} loading="lazy" style="display:block;width:100%;height:220px;object-fit:contain" /></a>
+  <a href={url} aria-label={`Explore ${p.title}`} style="display:block;background:#e8dfd3;padding:16px"><img src={p.image.src} alt={p.image.alt||p.title} width={p.image.width} height={p.image.height} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" style="display:block;width:100%;height:220px;object-fit:contain" /></a>
   <div class="product-info book-tile"><p class="eyebrow dark">{p.card.eyebrow}</p><h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.card.description}</p><a class="button button-ghost" href={url}>Explore the book</a></div>
 </article> : variant==='collaboration' ? <article class="product-card collaboration-card" data-product-id={p.id} data-availability={status}>
-  <a class="collaboration-image" href={url} aria-label={`View ${p.collaboration.title}`}><img src={p.image.src} alt={`${p.collaboration.title} — collaborative painting by ${p.collaboration.credit}`} loading="lazy" decoding="async" /></a>
+  <a class="collaboration-image" href={url} aria-label={`View ${p.collaboration.title}`}><img src={p.image.src} alt={`${p.collaboration.title} — collaborative painting by ${p.collaboration.credit}`} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" /></a>
   <div class="product-info"><p class="eyebrow dark">{p.collaboration.chapter}</p><h2><a class="product-title-link" href={url}>{p.collaboration.title}</a></h2><p>{p.collaboration.credit}</p><p class="collaboration-medium">{p.medium} · {p.year}</p><p data-live-status hidden></p><a class="button button-ghost" href={url}>View painting</a></div>
 </article> : variant==='poster' ? <article class="product-card film-collaboration-poster" data-product-id={p.id} data-availability={status}>
-  <a href={url} aria-label={`View ${p.title}`}><img src={p.image.src} alt={p.image.alt} width={p.image.width} height={p.image.height} loading="lazy" decoding="async" /></a>
+  <a href={url} aria-label={`View ${p.title}`}><img src={p.image.src} alt={p.image.alt||p.title} width={p.image.width} height={p.image.height} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" decoding="async" /></a>
   <div class="product-info"><p class="eyebrow dark">Original painting · {p.artist}</p><h2><a class="product-title-link" href={url}>{p.title}</a></h2><p>{dimensionLabel(p)}<br />{p.medium} on {p.surface}</p><p class="product-availability" data-live-status>{status}{p.gifted?' · Gifted':''}</p><a class="button button-ghost" href={url}>View painting and story</a></div>
 </article> : <article class:list={['product-card',{'ex-slide':variant==='carousel'}]} data-product-id={p.id} data-availability={status}>
-  <a href={url} class="gallery-product-image"><img src={p.image.src} alt={p.title} loading="lazy" /></a>
+  <a href={url} class="gallery-product-image"><img src={p.image.src} alt={p.image.alt||p.title} loading={priority?'eager':'lazy'} decoding="async" fetchpriority={priority?'high':'auto'} width={p.image.width} height={p.image.height} /></a>
   <div class="product-info"><h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.medium && <>{p.medium} · </>}<span data-card-price>{p.listing.status==='available'?priceLabel(p):status}</span></p></div>
 </article>}

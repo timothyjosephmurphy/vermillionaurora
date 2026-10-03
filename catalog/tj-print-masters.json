@@ -28,7 +28,7 @@
   },
   {
     "id": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Sunrise, El Salvador",
+    "title": "El Zonte at Dusk, El Salvador",
     "sha256": "a6c58cca2d1dc02439c225b44c1564cab09010fe53dc1f0c5382f3f5295a90c8",
     "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
     "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
@@ -40,7 +40,7 @@
         265.70001220703125
       ],
       [
-        2048.0,
+        2048,
         261.20001220703125
       ],
       [
@@ -104,7 +104,7 @@
     "page": 62,
     "corners": [
       [
-        183.0,
+        183,
         120.19999694824219
       ],
       [
@@ -187,7 +187,7 @@
     "page": 14,
     "corners": [
       [
-        90.0,
+        90,
         163.89999389648438
       ],
       [
