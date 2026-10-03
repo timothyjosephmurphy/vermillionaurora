@@ -23,7 +23,7 @@
       {
         "name": "Studio 601, Seattle, Washington",
         "slug": "studio-601",
-        "date": "2022"
+        "date": "2023"
       },
       {
         "name": "Victrola Coffee Shop, Seattle, Washington",
@@ -114,7 +114,10 @@
     "number": 6,
     "city": "Berlín",
     "country": "El Salvador",
-    "coordinates": [13.4986, -88.5308],
+    "coordinates": [
+      13.4986,
+      -88.5308
+    ],
     "region": "salvador",
     "exhibitions": [
       {

@@ -67,6 +67,6 @@ See [the cart review](docs/cart-review.md) for customer behavior, recovery rules
 
 Sales no longer mutate GitHub files, and the live Worker no longer requires a repository-write token. The obsolete `GITHUB_TOKEN` secret may be removed separately after deployment; this migration does not rotate or delete secrets.
 
-PayPal remains restricted to the existing Chase Toole $20 pilot. Bitcoin enablement remains unchanged. Existing estimated parcels are carried forward explicitly, including the owner-authorized portrait envelope. Verify each physical parcel before adding products to the production allowlists. No new payment methods, shipping profiles, or live purchases are enabled by this migration.
+PayPal remains restricted to the existing Chase Toole $20 pilot. BTCPay accepts on-chain Bitcoin and Lightning for the two $20 portrait pilots: Chase Toole and Dorian Nakamoto. Existing estimated parcels are carried forward explicitly, including the owner-authorized portrait envelope. Verify each physical parcel before adding more products to the production allowlists. No new payment methods, shipping profiles, or live purchases are enabled by this migration.
 
 The Warsaw Syrenka stock-limited PayPal link remains a legacy exception. It has not been silently opted into automatic inventory matching; unmatched verified IPN payments are still archived. Use shared checkout for new original-art sales. Books continue to Amazon, commissions continue to inquiries, and paintings without measurements remain inquiry-only.
