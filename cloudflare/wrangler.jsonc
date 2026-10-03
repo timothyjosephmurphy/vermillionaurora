@@ -24,7 +24,8 @@
     "PRINT_PROVIDER": "finerworks",
     "FINERWORKS_ORDER_ENABLED": "true",
     "LIVE_PRINT_SAMPLE_ENABLED": "true",
-    "PRINT_CHECKOUT_ALL": "true"
+    "PRINT_CHECKOUT_ALL": "true",
+    "BTCPAY_CHECKOUT_ENABLED": "true"
   },
   "durable_objects": {
     "bindings": [
