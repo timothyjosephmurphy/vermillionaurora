@@ -1,0 +1,100 @@
+name: Publish reviewed print frame sizing
+on:
+  push:
+    branches: [ops/publish-print-frame-fit]
+    paths: ['.github/workflows/publish-print-frame-fit.yml']
+permissions:
+  contents: read
+concurrency:
+  group: website-production-retry
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 294a4559472ebe44d089c25d87feeb8466d291a9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Confirm reviewed release
+        run: test "$(git ls-remote origin refs/heads/release | cut -f1)" = "$(git rev-parse HEAD)"
+      - name: Publish approved website release
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          command: deploy --config wrangler.jsonc
+      - name: Install browser for live visual verification
+        run: npx playwright install --only-shell chromium
+      - name: Verify custom frame sizes and preview on the live site
+        run: |
+          cat > /tmp/verify-print-frame-fit.mjs <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          import {pathToFileURL} from 'node:url';
+          const {chromium}=await import(pathToFileURL(process.cwd()+'/node_modules/playwright/index.mjs'));
+          const {default:prints,printVersion}=await import(pathToFileURL(process.cwd()+'/cloudflare/print-catalog.mjs'));
+          const base='https://vermillionaurora.com';
+          let catalog;
+          for(let attempt=0;attempt<60;attempt++){
+            const response=await fetch('https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/cart/catalog',{cache:'no-store',signal:AbortSignal.timeout(15000)});
+            const data=await response.json();
+            if(response.ok&&data.version?.endsWith('-'+printVersion)){catalog=data;break;}
+            await new Promise(resolve=>setTimeout(resolve,5000));
+          }
+          assert(catalog,'Live frontend and checkout must share the new print catalog');
+          const expected=Object.values(prints).filter(p=>p.frame);
+          assert.equal(expected.length,783);
+          for(const p of expected){
+            const live=catalog.products.find(i=>i.id===p.id);
+            assert(live&&live.status==='available',p.id);
+            assert.equal(live.amount,p.amount,p.id);
+            assert.deepEqual(live.frame.size,p.frame.size,p.id);
+            assert(Math.abs((p.mat.outer.width-p.paperSize.width)-(p.mat.outer.height-p.paperSize.height))<0.001,p.id);
+          }
+          fs.mkdirSync('/tmp/print-frame-verification',{recursive:true});
+          const browser=await chromium.launch();
+          try{
+            const page=await browser.newPage({reducedMotion:'reduce'}),errors=[];
+            page.on('pageerror',error=>errors.push(error.message));
+            await page.route('**/*',route=>route.request().method()==='GET'?route.continue():route.abort());
+            for(const width of [1440,390]){
+              await page.setViewportSize({width,height:width===390?844:1000});
+              await page.goto(base+'/products/painting-portrait-in-green/?frame-fit='+printVersion,{waitUntil:'domcontentloaded'});
+              await page.getByRole('button',{name:'Buy a print',exact:true}).click();
+              const selector=page.locator('[data-print-options]');
+              assert.equal(await selector.getAttribute('data-print-version'),printVersion);
+              await selector.locator('[data-print-finish]').selectOption('frame-black');
+              let previous=0;
+              for(const key of ['small','medium','full']){
+                await selector.locator('input[value$="-'+key+'"]').check();
+                await page.waitForFunction(()=>!document.querySelector('[data-print-add]').disabled);
+                const print=prints['print-painting-portrait-in-green-'+key+'-frame-black'];
+                assert.equal(await selector.locator('[data-print-total]').textContent(),'Framed print: $'+print.amount);
+                assert((await selector.locator('[data-print-dimensions]').textContent()).includes(print.mat.outer.width+' × '+print.mat.outer.height));
+                const sheet=selector.locator('[data-print-sheet]'),box=await sheet.boundingBox();
+                assert(box.width>previous,'Frame preview grows with print size');previous=box.width;
+                assert(Math.abs(box.width/box.height-print.mat.outer.width/print.mat.outer.height)<0.02);
+                await page.waitForFunction(()=>{const img=document.querySelector('[data-print-image-area] img');return img.complete&&img.naturalWidth>1000;});
+                await selector.locator('.print-sheet-figure').screenshot({path:'/tmp/print-frame-verification/'+key+'-'+width+'.png'});
+              }
+              assert(await page.locator('[data-print-dialog]').evaluate(el=>el.scrollWidth<=el.clientWidth+1),'No horizontal overflow');
+            }
+            assert.deepEqual(errors,[]);
+          }finally{await browser.close();}
+          console.log('PASS: all 783 live framed variants agree with checkout; desktop/mobile previews change size, retain equal mat borders, and allow ordering. No payment or order created.');
+          NODE
+          node /tmp/verify-print-frame-fit.mjs
+      - name: Save visual verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: print-frame-verification
+          path: /tmp/print-frame-verification
+          retention-days: 3
