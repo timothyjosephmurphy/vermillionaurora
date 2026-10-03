@@ -71,9 +71,10 @@ body.full #original-simulation .prototype-note{display:none}
 
 <section id="nd-mural-mapped" aria-labelledby="mural-simulation-title">
   <div class="viz-row"><h2 id="mural-simulation-title">Dance across the mural</h2><button class="btn btn-primary" data-action="play">Start simulation</button><button class="btn" data-action="audio" aria-pressed="false">Audio off</button><button class="btn" data-action="reset">Reset placement</button></div>
-  <p class="mural-help">Start the simulation to see 28 dancers mapped onto the mural’s silhouette stickers. Zoom in to explore; drag a marker to adjust its placement, click to add a dancer, or Shift-click to remove one.</p>
+  <p class="mural-help">Start the simulation to see 28 dancers mapped onto the mural’s silhouette stickers. Zoners hear every rhythm and send a strong pulse to one randomly chosen dancer anywhere on the floor on each musical activation without listening to neighbors; activation builds more slowly as it rises, and strongly activated leaders can send pulses to up to five nearby dancers while retaining one or two favorites, which change when a favorite tires or the leader recovers from fatigue; followers have a gentler influence. Zoom in to explore; drag a marker to adjust its placement, click to add a dancer, or Shift-click to remove one.</p>
   <div class="viz-controls">
-    <label class="form-label">New dancer rhythm<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Mid</option><option value="3">Treble</option></select></label>
+    <label class="form-label">New dancer role<select class="form-select" data-control="role"><option value="zoner">Zoner</option><option value="leader">Leader</option><option value="follower" selected>Follower</option></select></label>
+    <label class="form-label">Music channel<select class="form-select" data-control="type"><option value="0">Kick</option><option value="1" selected>Bass</option><option value="2">Mid</option><option value="3">Treble</option></select></label>
     <label class="form-label">Tempo <output data-value="bpm">120 BPM</output><input class="form-range" data-control="bpm" type="range" min="70" max="180" value="120"></label>
     <label class="form-label">Zoom <output data-value="zoom">1×</output><input class="form-range" data-control="zoom" type="range" min="1" max="3" step=".1" value="1"></label>
     <label class="form-label">View center<input class="form-range" data-control="pan" aria-label="Horizontal view center" type="range" min="0" max="1" step=".01" value=".5"></label>
@@ -106,6 +107,8 @@ const root=document.getElementById('nd-mural-mapped');
 const canvas=root.querySelector('[data-stage]'),ctx=canvas.getContext('2d'),photo=root.querySelector('[data-mural]');
 const el=s=>root.querySelector(s),play=el('[data-action="play"]'),audioButton=el('[data-action="audio"]'),status=el('[data-status]');
 const W=882,H=196,R=82,MAX=48,MAX_PULSES=48,rates=[1,.5,1.5,2];
+const roles={zoner:1.55,leader:1.2,follower:.5};
+function addActivation(n,amount){n.a=Math.min(2,n.a+amount*Math.exp(-n.a/1.35));}
 let nodes=[],pulses=[],id=0,bpm=120,zoom=1,pan=.5,running=false,audio=false,low=false;
 let timer=0,raf=0,last=0,started=0,slow=0,time=0,lastReport=0,pointer=null;
 let ac=null,master=null,voices=new Set(),lastTone=[-99,-99,-99,-99],toneWindow=0,toneCount=0;
@@ -122,11 +125,18 @@ function theme(){
   }
   still();
 }
-function add(x,y,k){if(nodes.length>=MAX){report('48-dancer limit · remove one to add another');return;}nodes.push({id:++id,x,y,k,phase:(id%7)*.047,a:0,rest:0,peak:0,ref:0});}
+function add(x,y,k,role='follower'){if(nodes.length>=MAX){report('48-dancer limit · remove one to add another');return;}nodes.push({id:++id,x,y,k,role,favorites:new Set(),phase:(id%7)*.047,a:0,rest:0,peak:0,ref:0});}
+function rotateFavorites(n){if(n.role!=='leader')return;const nearby=nodes.filter(b=>b!==n&&b.role!=='zoner'&&!b.rest&&Math.hypot(n.x-b.x,n.y-b.y)<R);const previous=n.favorites;const fresh=nearby.filter(b=>!previous.has(b.id));const pool=(fresh.length?fresh:nearby).sort(()=>Math.random()-.5);n.favorites=new Set(pool.slice(0,Math.min(nearby.length,1+(n.id%2))).map(b=>b.id));}
+function refreshFavorites(n){if(n.role!=='leader')return;
+ for(const favorite of [...n.favorites]){const target=nodes.find(b=>b.id===favorite);if(!target||target.rest>0)n.favorites.delete(favorite);}
+ const desired=1+(n.id%2);
+ const choices=nodes.filter(b=>b!==n&&b.role!=='zoner'&&!b.rest&&!n.favorites.has(b.id)&&Math.hypot(n.x-b.x,n.y-b.y)<R).sort(()=>Math.random()-.5);
+ while(n.favorites.size<desired&&choices.length)n.favorites.add(choices.pop().id);
+}
 // Manually traced sticker centers, in source-photo pixels (882 x 196).
 // Blurred centers remain approximate; drag markers for individual corrections.
 const positions=[[122.8,75.0],[124.8,98.5],[134.6,68.6],[141.8,49.0],[141.4,99.5],[154.7,75.0],[162.8,71.0],[163.0,100.6],[183.0,105.5],[203.2,74.3],[202.9,109.8],[208.7,99.5],[222.9,51.3],[222.8,123.6],[235.1,124.4],[244.0,98.7],[255.7,123.4],[283.0,123.8],[288.7,131.2],[349.0,48.5],[351.2,123.6],[366.6,127.6],[357.6,162.7],[473.0,51.0],[654.5,130.2],[703.0,46.0],[755.6,117.3],[768.6,106.0]];
-function reset(){stop('Placement reset');nodes=[];pulses=[];id=0;time=0;positions.forEach(([x,y],i)=>add(x,y,i%4));still();report('Ready · '+nodes.length+' dancers');}
+function reset(){stop('Placement reset');nodes=[];pulses=[];id=0;time=0;positions.forEach(([x,y],i)=>add(x,y,i%4,i%9===0?'zoner':i%5===0?'leader':'follower'));still();report('Ready · '+nodes.length+' dancers');}
 function view(){const scale=canvas.width/W*zoom;return {scale,x:canvas.width/2-pan*W*scale,y:canvas.height/2-H*scale/2};}
 function transform(n){const v=view();return {x:v.x+n.x*v.scale,y:v.y+n.y*v.scale};}
 function report(text){status.textContent=text;}
@@ -143,16 +153,23 @@ function tone(k){if(!audio||!ac||voices.size>=8)return;const now=ac.currentTime;
  g.gain.setValueAtTime(.001,now);g.gain.exponentialRampToValueAtTime([.65,.22,.15,.09][k],now+.008);g.gain.exponentialRampToValueAtTime(.001,now+.18);o.connect(g).connect(master);
  const voice={o,release(){o.disconnect();g.disconnect();o.onended=null;voices.delete(voice);}};voices.add(voice);o.onended=voice.release;o.start(now);o.stop(now+.2);
 }
-function update(dt){time+=dt;const queue=[],emitted=new Set(),received=new Map();
- function emit(n){if(!emitted.has(n.id)){emitted.add(n.id);queue.push(n);}}
- for(const n of nodes){n.a=Math.max(0,n.a-dt*1.5);n.phase+=dt*bpm/60*rates[n.k];n.rest=Math.max(0,n.rest-dt);if(n.phase>=1){n.phase%=1;if(!n.rest){n.a=Math.min(2,Math.max(.95,n.a+.25));emit(n);}}}
- for(let i=0;i<queue.length&&i<MAX;i++){const a=queue[i];tone(a.k);let trails=0;
-  for(const b of nodes){const distance=Math.hypot(a.x-b.x,a.y-b.y);if(a===b||distance>=R||b.rest)continue;
-   const used=received.get(b.id)||0,amount=Math.min(.65-used,.2+.25*(1-distance/R));if(amount>0){received.set(b.id,used+amount);b.a=Math.min(2,b.a+amount);if(b.a>=1.4&&time>=b.ref){b.ref=time+.2;emit(b);}}
-   if(trails<2&&pulses.length<(low?24:MAX_PULSES)){pulses.push({a,b,k:a.k,age:0,duration:.3+distance/170,trail:[]});trails++;}
+function update(dt){const before=time;time+=dt;const queue=[],emitted=new Set(),received=new Map();
+ function emit(n,k=n.k){if(!emitted.has(n.id)){emitted.add(n.id);queue.push({n,k});}}
+ for(const n of nodes){n.a=Math.max(0,n.a-dt*1.5);if(n.role==='zoner'){n.rest=0;n.peak=0;}const wasResting=n.rest>0;n.rest=Math.max(0,n.rest-dt);if(wasResting&&!n.rest&&n.role==='leader')rotateFavorites(n);if(n.role==='leader'&&!n.favorites.size)rotateFavorites(n);
+  const channels=n.role==='zoner'?[0,1,2,3]:[n.k];
+  for(const k of channels){const start=before*bpm/60*rates[k]+n.phase,end=time*bpm/60*rates[k]+n.phase;
+   if(Math.floor(end)>Math.floor(start)&&!n.rest){addActivation(n,n.a<.95?.95:.25);emit(n,k);}}
+ }
+ for(let i=0;i<queue.length&&i<MAX;i++){const {n:a,k}=queue[i];tone(k);let trails=0;
+  const nearby=nodes.filter(b=>b!==a&&(a.role==='zoner'||(b.role!=='zoner'&&!b.rest&&Math.hypot(a.x-b.x,a.y-b.y)<R)));
+  const neighbors=a.role==='zoner'?(nearby.length?[nearby[Math.floor(Math.random()*nearby.length)]]:[]):nearby.sort((b,c)=>Number(a.favorites.has(c.id))-Number(a.favorites.has(b.id)));
+  for(const b of neighbors){const distance=Math.hypot(a.x-b.x,a.y-b.y),favorite=a.role==='leader'&&a.favorites.has(b.id),strength=roles[a.role]*(favorite?1.65:1);
+   if(b.role!=='zoner'&&!b.rest){const used=received.get(b.id)||0,amount=Math.min(.95-used,(.16+.22*(a.role==='zoner'?1:Math.max(0,1-distance/R)))*strength);if(amount>0){received.set(b.id,used+amount);addActivation(b,amount);if(b.a>=1.4&&time>=b.ref){b.ref=time+.2;emit(b);}}}
+   if(trails<(a.role==='leader'&&a.a>=1.4?5:2)&&pulses.length<(low?24:MAX_PULSES)){pulses.push({a,b,k,age:0,duration:a.role==='zoner'?.35+Math.min(1.4,distance/350):.3+distance/170,trail:[],favorite});trails++;}
   }
  }
- for(const n of nodes){n.peak=n.a>1.75?n.peak+dt:Math.max(0,n.peak-dt*.6);if(n.peak>2.8){n.rest=1.6;n.peak=0;n.a=.4;}}
+ for(const n of nodes){if(n.role==='zoner'){n.peak=0;n.rest=0;continue;}n.peak=n.a>1.75?n.peak+dt:Math.max(0,n.peak-dt*.6);if(n.peak>(n.role==='leader'?5.6:1.8)){n.rest=n.role==='leader'?2.2:1.4;n.peak=0;n.a=.4;}}
+ for(const n of nodes)refreshFavorites(n);
  for(let i=pulses.length-1;i>=0;i--){const p=pulses[i];p.age+=dt;if(p.age>=p.duration){pulses.splice(i,1);continue;}const q=path(p.a,p.b,p.age/p.duration);p.trail.push(q);if(p.trail.length>10)p.trail.shift();}
 }
 function path(a,b,t){return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t-Math.sin(Math.PI*t)*Math.min(18,Math.abs(b.x-a.x)*.15)};}
@@ -161,12 +178,12 @@ function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);const v=view();ctx
  if(photo.complete&&photo.naturalWidth)ctx.drawImage(photo,v.x,v.y,W*v.scale,H*v.scale);
  ctx.save();ctx.beginPath();ctx.rect(Math.max(0,v.x),Math.max(0,v.y),Math.min(canvas.width,W*v.scale),Math.min(canvas.height,H*v.scale));ctx.clip();
  ctx.lineWidth=1.5;ctx.strokeStyle=foreground;
- for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j];if(Math.hypot(a.x-b.x,a.y-b.y)>R)continue;const activity=Math.min(a.a,b.a);if(activity<.25)continue;ctx.globalAlpha=.08+.15*Math.min(1,activity);const p=transform(a),q=transform(b),mid=transform(path(a,b,.5));ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(mid.x,mid.y-(p.y+q.y)/2+mid.y,q.x,q.y);ctx.stroke();}
+ for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j];if(Math.hypot(a.x-b.x,a.y-b.y)>R||(a.role==='leader'&&b.role==='zoner')||(a.role==='zoner'&&b.role==='leader'))continue;const activity=Math.min(a.a,b.a);if(activity<.25)continue;ctx.globalAlpha=.08+.15*Math.min(1,activity);const p=transform(a),q=transform(b),mid=transform(path(a,b,.5));ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(mid.x,mid.y-(p.y+q.y)/2+mid.y,q.x,q.y);ctx.stroke();}
  ctx.globalAlpha=1;
- for(const pulse of pulses){ctx.strokeStyle=colors[pulse.k];for(let j=1;j<pulse.trail.length;j++){ctx.globalAlpha=.6*j/pulse.trail.length;ctx.lineWidth=2+j/4;const a=transform(pulse.trail[j-1]),b=transform(pulse.trail[j]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=transform(path(pulse.a,pulse.b,pulse.age/pulse.duration));ctx.fillStyle=colors[pulse.k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
- for(const n of nodes){const p=transform(n),q=Math.min(1,n.a/1.4),radius=(5+11*q)*Math.min(2,zoom);ctx.globalAlpha=n.rest?.4:1;
+ for(const pulse of pulses){ctx.strokeStyle=colors[pulse.k];for(let j=1;j<pulse.trail.length;j++){ctx.globalAlpha=.6*j/pulse.trail.length;ctx.lineWidth=(pulse.favorite?3:2)+j/4;const a=transform(pulse.trail[j-1]),b=transform(pulse.trail[j]);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}ctx.globalAlpha=1;const p=transform(path(pulse.a,pulse.b,pulse.age/pulse.duration));ctx.fillStyle=colors[pulse.k];ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();}
+ for(const n of nodes){const p=transform(n),q=Math.min(1,n.a/1.4),radius=(5+11*q)*Math.min(2,zoom);ctx.globalAlpha=n.role==='zoner'?1:n.rest?.4:1;
   if(q>.05&&!low){ctx.globalAlpha=.7*q;ctx.drawImage(glows[n.k],p.x-radius*2,p.y-radius*2,radius*4,radius*4);ctx.globalAlpha=1;}
-  ctx.strokeStyle=colors[n.k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[n.k];shape(n,p,3+2*q);
+  ctx.strokeStyle=colors[n.k];ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.stroke();ctx.fillStyle=colors[n.k];shape(n,p,3+2*q);ctx.fillStyle=foreground;ctx.font=`bold ${Math.max(11,13*zoom)}px sans-serif`;ctx.fillText(n.role==='zoner'?'Z':n.role==='leader'?'L':'F',p.x+radius+2,p.y+4);
  }
  ctx.restore();ctx.globalAlpha=1;
 }
@@ -182,7 +199,7 @@ canvas.addEventListener('pointerdown',e=>{const p=pointerWorld(e);if(p.x<0||p.x>
  pointer={node:near,x:e.clientX,y:e.clientY,moved:false};canvas.setPointerCapture(e.pointerId);
 });
 canvas.addEventListener('pointermove',e=>{if(!pointer)return;pointer.moved=pointer.moved||Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y)>3;if(pointer.node&&pointer.moved){const p=pointerWorld(e);pointer.node.x=Math.max(0,Math.min(W,p.x));pointer.node.y=Math.max(0,Math.min(H,p.y));still();}});
-canvas.addEventListener('pointerup',e=>{if(!pointer)return;if(!pointer.node&&!pointer.moved){const p=pointerWorld(e);if(p.x>=0&&p.x<=W&&p.y>=0&&p.y<=H)add(p.x,p.y,+el('[data-control="type"]').value);}pointer=null;still();});
+canvas.addEventListener('pointerup',e=>{if(!pointer)return;if(!pointer.node&&!pointer.moved){const p=pointerWorld(e);if(p.x>=0&&p.x<=W&&p.y>=0&&p.y<=H)add(p.x,p.y,+el('[data-control="type"]').value,el('[data-control="role"]').value);}pointer=null;still();});
 canvas.addEventListener('pointercancel',()=>pointer=null);
 play.onclick=()=>running?stop():start();audioButton.onclick=toggleAudio;el('[data-action="reset"]').onclick=reset;
 el('[data-control="bpm"]').oninput=e=>{bpm=+e.target.value;el('[data-value="bpm"]').textContent=bpm+' BPM';};
@@ -218,12 +235,13 @@ photo.onload=still;theme();reset();play.textContent='Start simulation';
     <section class="prototype-note" aria-labelledby="prototype-use">
       <h2 id="prototype-use">Explore the original prototype</h2>
       <p>The interactive sketch below explores the light, rhythm, and network behavior. Its colored points stand in for dancer silhouettes. It generates its own rhythmic audio; the photo booth, physical mural, and camera-to-projector installation are the next context for this idea.</p>
-      <p>Select <strong>Start simulation</strong> to begin. The demo pauses when you switch tabs or scroll away, and after five minutes of playback. You can resume whenever you’re ready. Choose a rhythm under <strong>Type</strong>, then click or tap the stage to add a dancer. Place dancers close together or farther apart and watch how the network changes. Select <strong>Start audio</strong> to hear it, adjust <strong>BPM</strong> to change the tempo, or use <strong>Seed pulse</strong> to start a wave. Shift-click removes a nearby dancer; <strong>Reset</strong> creates a new arrangement.</p>
+      <p>Select <strong>Start simulation</strong> to begin. The demo pauses when you switch tabs or scroll away, and after five minutes of playback. You can resume whenever you’re ready. Choose a <strong>Role</strong> and <strong>Music channel</strong>, then click or tap the stage to add a dancer. Place dancers close together or farther apart and watch how the network changes. Select <strong>Start audio</strong> to hear it, adjust <strong>BPM</strong> to change the tempo, or use <strong>Seed pulse</strong> to start a wave. Shift-click removes a nearby dancer; <strong>Reset</strong> creates a new arrangement.</p>
     </section>
   <div class="controls">
     <button id="audio" class="primary">Start audio</button>
     <label>Volume<input id="vol" type="range" min="0" max="1" step=".01" value=".48"><output id="volv">48%</output></label>
-    <label>Type<select id="kind"><option value="kick">Kick</option><option value="bass" selected>Bass</option><option value="mid">Mid</option><option value="treble">Treble</option></select></label>
+    <label>Role<select id="role"><option value="zoner">Zoner</option><option value="leader">Leader</option><option value="follower" selected>Follower</option></select></label>
+    <label>Music channel<select id="kind"><option value="kick">Kick</option><option value="bass" selected>Bass</option><option value="mid">Mid</option><option value="treble">Treble</option></select></label>
     <label>BPM<input id="bpm" type="range" min="70" max="180" value="120"><output id="bpmv">120</output></label>
     <label>Gravity<input id="gravity" type="range" min="0" max="6" step=".1" value="2.5"><output id="gravityv">2.5×</output></label>
     <label>Wander<input id="wander" type="range" min="0" max=".8" step=".05" value=".25"><output id="wanderv">0.25</output></label>
@@ -250,18 +268,20 @@ let bpm=120,TH=1.4,WANDER=.25,WOBBLE=1,GRAVITY=2.5,BLOOM=1.4,HALO_BLOOM=1.5,STAM
 const MAX_NODES=48,MAX_PULSES=48,MAX_LINKS=96,MAX_TRAIL=10,MAX_VOICES=8;
 let nodes=[],pulses=[],links=new Map();
 const activationQueue=[],queuedDancers=new Set();
+const roles={zoner:1.55,leader:1.2,follower:.5};
+function addActivation(n,amount){n.a=Math.min(2,n.a+amount*Math.exp(-n.a/1.35));}
 function queueActivation(n){if(!queuedDancers.has(n.id)&&activationQueue.length<MAX_NODES){queuedDancers.add(n.id);activationQueue.push(n);}}
 function reinforceNeighbors(){
   const received=new Map();
   // At most one emission per dancer per step, with bounded incoming reinforcement.
   for(let i=0;i<activationQueue.length&&i<MAX_NODES;i++){
     const source=activationQueue[i];if(source.tired||!nodes.includes(source))continue;
-    sound(source.k);spread(source,null,.76,80);
-    for(const neighbor of nodes){
+    sound(source.k);const chosen=spread(source,null,.76*roles[source.role],80);
+    for(const neighbor of (source.role==='zoner'?chosen:nodes)){
       const distance=D(source,neighbor);
-      if(neighbor===source||neighbor.tired||distance>=R)continue;
+      if(neighbor===source||neighbor.tired||neighbor.role==='zoner'||(source.role!=='zoner'&&distance>=R))continue;
       const used=received.get(neighbor.id)||0;
-      const amount=Math.min(.65-used,.2+.25*(1-distance/R));
+      const amount=Math.min(.95-used,(.16+.22*(source.role==='zoner'?1:Math.max(0,1-distance/R)))*roles[source.role]*(source.role==='leader'&&source.favorites.has(neighbor.id)?1.65:1));
       if(amount<=0)continue;
       received.set(neighbor.id,used+amount);fire(neighbor,amount);
     }
@@ -338,37 +358,48 @@ function sound(k){
   voices.add(voice);source.onended=voice.release;source.start(x);source.stop(x+duration);
 }
 const D=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),K=(a,b)=>a.id<b.id?`${a.id}:${b.id}`:`${b.id}:${a.id}`;
-function add(x,y,k){if(nodes.length>=MAX_NODES){showNotice("Dancer limit reached (48). Remove a dancer or reset to add more.");return;}nodes.push({id:id++,x,y,k,a:0,last:-99,phase:((id-1)%7)*.047,ref:0,tired:false,fatigue:0,peak:0})}
-function reset(){nodes=[];pulses=[];links.clear();activationQueue.length=0;queuedDancers.clear();id=1;let ks=Object.keys(T);for(let i=0;i<24;i++){let a=Math.random()*Math.PI*2,r=50+Math.random()*260;add(CX+Math.cos(a)*r*SX*.94,CY+Math.sin(a)*r*SY*.94,ks[i%4])}}
+function add(x,y,k,role='follower'){if(nodes.length>=MAX_NODES){showNotice("Dancer limit reached (48). Remove a dancer or reset to add more.");return;}nodes.push({id:id++,x,y,k,role,favorites:new Set(),a:0,last:-99,phase:((id-1)%7)*.047,ref:0,tired:false,fatigue:0,peak:0})}
+function rotateFavorites(n){if(n.role!=='leader')return;const nearby=nodes.filter(b=>b!==n&&b.role!=='zoner'&&!b.tired&&D(n,b)<R),fresh=nearby.filter(b=>!n.favorites.has(b.id)),pool=(fresh.length?fresh:nearby).sort(()=>Math.random()-.5);n.favorites=new Set(pool.slice(0,Math.min(nearby.length,1+(n.id%2))).map(b=>b.id));}
+function refreshFavorites(n){if(n.role!=='leader')return;
+ for(const favorite of [...n.favorites]){const target=nodes.find(b=>b.id===favorite);if(!target||target.tired)n.favorites.delete(favorite);}
+ const desired=1+(n.id%2);
+ const choices=nodes.filter(b=>b!==n&&b.role!=='zoner'&&!b.tired&&!n.favorites.has(b.id)&&D(n,b)<R).sort(()=>Math.random()-.5);
+ while(n.favorites.size<desired&&choices.length)n.favorites.add(choices.pop().id);
+}
+function reset(){nodes=[];pulses=[];links.clear();activationQueue.length=0;queuedDancers.clear();id=1;let ks=Object.keys(T);for(let i=0;i<24;i++){let a=Math.random()*Math.PI*2,r=50+Math.random()*260;add(CX+Math.cos(a)*r*SX*.94,CY+Math.sin(a)*r*SY*.94,ks[i%4],i%9===0?'zoner':i%5===0?'leader':'follower')}}
 function fc(p){let x=(p.x-CX)/SX,y=(p.y-CY)/SY;return{r:Math.hypot(x,y),a:Math.atan2(y,x)}}
 function ad(a,b){let d=b-a;while(d>Math.PI)d-=Math.PI*2;while(d<-Math.PI)d+=Math.PI*2;return d}const sm=z=>z*z*(3-2*z);
 function topo(a,b,z){let A=fc(a),B=fc(b),s=sm(z),ang=A.a+ad(A.a,B.a)*s,rad=A.r+(B.r-A.r)*s,rings=[105,185,265],avg=(A.r+B.r)/2,target=rings.reduce((u,v)=>Math.abs(v-avg)<Math.abs(u-avg)?v:u);rad+=(target-rad)*.2*Math.max(0,1-Math.abs(A.r-B.r)/160)*Math.sin(Math.PI*z);return{x:CX+Math.cos(ang)*rad*SX,y:CY+Math.sin(ang)*rad*SY}}
 function plen(a,b){let p=topo(a,b,0),L=0;for(let i=1;i<=25;i++){let q=topo(a,b,i/25);L+=D(p,q);p=q}return Math.max(1,L)}
 function quad(a,q,b,z){let u=1-z;return{x:u*u*a.x+2*u*z*q.x+z*z*b.x,y:u*u*a.y+2*u*z*q.y+z*z*b.y}}
-function fire(n,s){if(n.tired)return false;n.a=Math.min(2,n.a+s*(1-.42*n.fatigue));if(n.a>=TH&&t>n.ref){n.last=t;n.ref=t+.18;queueActivation(n);return true}return false}
-function launch(a,b,str=.85,v=0,k=null,parent=null){if(pulses.length>=pulseLimit())return;let q=parent||{};pulses.push({mode:'edge',a:a.id,b:b.id,d:0,len:plen(a,b),v:Math.max(330,v+BOOST),str,age:0,kind:k||a.k,phase:q.phase??Math.random()*6.28,freq:q.freq??10+Math.random()*8,amp:q.amp??3+Math.random()*3,noise:q.noise??Math.random()*100,trail:[],hit:new Set([a.id]),gx:0,gy:0,gvx:0,gvy:0,wander:false})}
-function spread(n,exclude,str,v,k=null,parent=null){nodes.filter(o=>o.id!==n.id&&o.id!==exclude&&D(n,o)<R).sort(()=>Math.random()-.5).slice(0,2).forEach(o=>launch(n,o,str,v,k,parent))}
-function maybeWander(p,dt){if(p.mode!=='edge'||p.wander||Math.random()>WANDER*dt)return;let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return;let z=Math.min(1,p.d/p.len),here=topo(a,b,z),cand=nodes.filter(n=>n.id!==p.a&&n.id!==p.b&&D(here,n)<190);if(!cand.length)return;let target=cand[Math.floor(Math.random()*cand.length)],dx=target.x-here.x,dy=target.y-here.y,L=Math.max(1,Math.hypot(dx,dy)),nx=-dy/L,ny=dx/L,bend=(Math.random()-.5)*120;p.mode='wander';p.wander=true;p.sx=here.x;p.sy=here.y;p.tx=target.x;p.ty=target.y;p.ctrl={x:(here.x+target.x)/2+nx*bend,y:(here.y+target.y)/2+ny*bend};p.len=Math.max(1,D(here,target)*1.08);p.d=0;p.target=target.id;p.v*=.92;p.gx=0;p.gy=0}
+function fire(n,s){if(n.role==='zoner'||n.tired)return false;addActivation(n,s*(1-.42*n.fatigue));if(n.a>=TH&&t>n.ref){n.last=t;n.ref=t+.18;queueActivation(n);return true}return false}
+function launch(a,b,str=.85,v=0,k=null,parent=null){if((a.role!=='zoner'&&b.role==='zoner')||pulses.length>=pulseLimit())return;let q=parent||{},length=plen(a,b);pulses.push({mode:'edge',a:a.id,b:b.id,d:0,len:length,v:Math.max(330,v+BOOST,a.role==='zoner'?length*2.5:0),str,age:0,kind:k||a.k,phase:q.phase??Math.random()*6.28,freq:q.freq??10+Math.random()*8,amp:q.amp??3+Math.random()*3,noise:q.noise??Math.random()*100,trail:[],hit:new Set([a.id]),gx:0,gy:0,gvx:0,gvy:0,wander:false,zonerBroadcast:a.role==='zoner'})}
+function spread(n,exclude,str,v,k=null,parent=null){const nearby=nodes.filter(o=>o.id!==n.id&&o.id!==exclude&&(n.role==='zoner'||(o.role!=='zoner'&&D(n,o)<R)));const chosen=n.role==='zoner'?(nearby.length?[nearby[Math.floor(Math.random()*nearby.length)]]:[]):nearby.sort((a,b)=>Number(n.favorites.has(b.id))-Number(n.favorites.has(a.id))).slice(0,n.role==='leader'&&n.a>=TH?5:2);chosen.forEach(o=>launch(n,o,str*(n.role==='leader'&&n.favorites.has(o.id)?1.65:1),v,k,parent));return chosen;}
+function maybeWander(p,dt){if(p.zonerBroadcast||p.mode!=='edge'||p.wander||Math.random()>WANDER*dt)return;let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return;let z=Math.min(1,p.d/p.len),here=topo(a,b,z),cand=nodes.filter(n=>n.id!==p.a&&n.id!==p.b&&(a.role==='zoner'||n.role!=='zoner')&&D(here,n)<190);if(!cand.length)return;let target=cand[Math.floor(Math.random()*cand.length)],dx=target.x-here.x,dy=target.y-here.y,L=Math.max(1,Math.hypot(dx,dy)),nx=-dy/L,ny=dx/L,bend=(Math.random()-.5)*120;p.mode='wander';p.wander=true;p.sx=here.x;p.sy=here.y;p.tx=target.x;p.ty=target.y;p.ctrl={x:(here.x+target.x)/2+nx*bend,y:(here.y+target.y)/2+ny*bend};p.len=Math.max(1,D(here,target)*1.08);p.d=0;p.target=target.id;p.v*=.92;p.gx=0;p.gy=0}
 function basePos(p){if(p.mode==='edge'){let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return null;return topo(a,b,Math.min(1,p.d/p.len))}if(p.mode==='wander')return quad({x:p.sx,y:p.sy},p.ctrl,{x:p.tx,y:p.ty},Math.min(1,p.d/p.len));return{x:p.x+p.ux*p.d,y:p.y+p.uy*p.d}}
 function tangent(p){const e=.008;if(p.mode==='edge'){let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(!a||!b)return{x:1,y:0};let u=Math.min(1,p.d/p.len),q0=topo(a,b,Math.max(0,u-e)),q1=topo(a,b,Math.min(1,u+e)),dx=q1.x-q0.x,dy=q1.y-q0.y,L=Math.max(.001,Math.hypot(dx,dy));return{x:dx/L,y:dy/L}}if(p.mode==='wander'){let u=Math.min(1,p.d/p.len),q0=quad({x:p.sx,y:p.sy},p.ctrl,{x:p.tx,y:p.ty},Math.max(0,u-e)),q1=quad({x:p.sx,y:p.sy},p.ctrl,{x:p.tx,y:p.ty},Math.min(1,u+e)),dx=q1.x-q0.x,dy=q1.y-q0.y,L=Math.max(.001,Math.hypot(dx,dy));return{x:dx/L,y:dy/L}}return{x:p.ux,y:p.uy}}
 function rawPos(p){let b=basePos(p);if(!b)return null;return{x:b.x+p.gx,y:b.y+p.gy}}
 function pos(p){let b=rawPos(p);if(!b)return null;let tg=tangent(p),nx=-tg.y,ny=tg.x,s=Math.max(0,Math.min(1,(p.v-MINV)/500)),f=p.freq*(.62+s*.9),amp=p.amp*(1.42-s*.55)*WOBBLE,irr=Math.sin(t*f*.37+p.noise+Math.sin(t*1.7+p.noise)*.85)*.3,w=(Math.sin(t*f+p.phase)+irr)*amp;return{x:b.x+nx*w,y:b.y+ny*w}}
-function applyGravity(p,dt){let z=rawPos(p);if(!z||GRAVITY<=0)return;let ax=0,ay=0;for(let n of nodes){if(p.hit.has(n.id))continue;let dx=n.x-z.x,dy=n.y-z.y,d=Math.hypot(dx,dy);if(d<4||d>GRAV_R)continue;let fall=1-d/GRAV_R,force=GRAVITY*150*fall*fall;ax+=dx/d*force;ay+=dy/d*force}p.gvx=(p.gvx+ax*dt)*Math.exp(-2.4*dt);p.gvy=(p.gvy+ay*dt)*Math.exp(-2.4*dt);let gm=Math.hypot(p.gvx,p.gvy);if(gm>95){p.gvx=p.gvx/gm*95;p.gvy=p.gvy/gm*95}p.gx+=p.gvx*dt;p.gy+=p.gvy*dt;let off=Math.hypot(p.gx,p.gy);if(off>85){p.gx=p.gx/off*85;p.gy=p.gy/off*85}}
-function collide(p,z){if(!z)return;for(let n of nodes){if(p.hit.has(n.id)||D(z,n)>HIT_R)continue;p.hit.add(n.id);if(n.tired)continue;let fresh=fire(n,.48*p.str);sound(n.k);if(fresh&&Math.random()<.52)spread(n,null,p.str*.62,p.v,p.kind,p);p.str*=.9;p.v=Math.max(MINV,p.v*.94)}}
-function update(dt){t+=dt;for(let n of nodes){if(n.tired){n.fatigue=Math.max(0,n.fatigue-.24*dt);n.a=Math.max(0,n.a-3.1*dt);n.peak=Math.max(0,n.peak-2*dt);if(n.fatigue<.2){n.tired=false;n.ref=t+.25}}else{if(n.a>1.76)n.peak+=dt;else if(n.a>1.56)n.peak+=dt*.22;else n.peak=Math.max(0,n.peak-dt*.65);n.fatigue=Math.min(1,n.peak/STAMINA);if(n.peak>=STAMINA){n.tired=true;n.fatigue=1;n.a=Math.min(n.a,TH*.78);n.ref=t+.9}}}
+function applyGravity(p,dt){if(p.zonerBroadcast)return;let z=rawPos(p);if(!z||GRAVITY<=0)return;let ax=0,ay=0;for(let n of nodes){if(p.hit.has(n.id))continue;let dx=n.x-z.x,dy=n.y-z.y,d=Math.hypot(dx,dy);if(d<4||d>GRAV_R)continue;let fall=1-d/GRAV_R,force=GRAVITY*150*fall*fall;ax+=dx/d*force;ay+=dy/d*force}p.gvx=(p.gvx+ax*dt)*Math.exp(-2.4*dt);p.gvy=(p.gvy+ay*dt)*Math.exp(-2.4*dt);let gm=Math.hypot(p.gvx,p.gvy);if(gm>95){p.gvx=p.gvx/gm*95;p.gvy=p.gvy/gm*95}p.gx+=p.gvx*dt;p.gy+=p.gvy*dt;let off=Math.hypot(p.gx,p.gy);if(off>85){p.gx=p.gx/off*85;p.gy=p.gy/off*85}}
+function collide(p,z){if(!z)return;for(let n of nodes){if(p.hit.has(n.id)||n.role==='zoner'||(p.zonerBroadcast&&n.id!==p.b)||D(z,n)>HIT_R)continue;p.hit.add(n.id);if(n.tired)continue;let fresh=n.role==='zoner'?false:fire(n,.48*p.str);if(fresh)sound(n.k);if(fresh&&Math.random()<.52)spread(n,null,p.str*.62,p.v,p.kind,p);p.str*=.9;p.v=Math.max(MINV,p.v*.94)}}
+function update(dt){t+=dt;for(let n of nodes){
+ if(n.role==='zoner'){n.tired=false;n.fatigue=0;n.peak=0;n.ref=0;continue;}
+ const limit=STAMINA*(n.role==='leader'?2:.65);
+ if(n.tired){n.fatigue=Math.max(0,n.fatigue-.24*dt);n.a=Math.max(0,n.a-3.1*dt);n.peak=Math.max(0,n.peak-2*dt);if(n.fatigue<.2){n.tired=false;n.ref=t+.25;if(n.role==='leader')rotateFavorites(n);}}
+ else{if(n.a>1.76)n.peak+=dt;else if(n.a>1.56)n.peak+=dt*.22;else n.peak=Math.max(0,n.peak-dt*.65);n.fatigue=Math.min(1,n.peak/limit);if(n.peak>=limit){n.tired=true;n.fatigue=1;n.a=Math.min(n.a,TH*.78);n.ref=t+.9;}}
+ }
 for(const n of nodes){
-  // Integrate phase instead of sampling a narrow beat window: works at 15 or 30 FPS.
-  n.phase+=dt*bpm/60*T[n.k].m;
-  if(n.phase>=1){
-    n.phase%=1;
-    if(n.tired)continue;
-    n.a=Math.min(2,Math.max(.95,n.a+.25));n.last=t;
-    queueActivation(n);
+  if(n.role==='leader'){if(!n.favorites.size)rotateFavorites(n);refreshFavorites(n);}
+  // Independent musical channels; zoners listen to every one.
+  for(const k of (n.role==='zoner'?Object.keys(T):[n.k])){
+    const phase=n.phase+T[k].m*(t-dt)*bpm/60, next=n.phase+T[k].m*t*bpm/60;
+    if(Math.floor(next)<=Math.floor(phase)||n.tired)continue;
+    addActivation(n,n.a<.95?.95:.25);n.last=t;queueActivation(n);sound(k);
   }
 }
-for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){let a=nodes[i],b=nodes[j];if(a.tired||b.tired||D(a,b)>R)continue;if(t-a.last<.14&&t-b.last<.14){let k=K(a,b);if(links.has(k)||links.size<MAX_LINKS)links.set(k,Math.min(2.2,(links.get(k)||.1)+.015));if(Math.random()<.04){launch(a,b,.8,90);launch(b,a,.8,90)}}}
+for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){let a=nodes[i],b=nodes[j];if(a.tired||b.tired||a.role==='zoner'||b.role==='zoner'||D(a,b)>R)continue;if(t-a.last<.14&&t-b.last<.14){let k=K(a,b);if(links.has(k)||links.size<MAX_LINKS)links.set(k,Math.min(2.2,(links.get(k)||.1)+.015));if(Math.random()<.04){launch(a,b,.8,90);launch(b,a,.8,90)}}}
 for(let [k,w] of [...links]){let q=w*Math.pow(.996,dt*60);if(q<.035)links.delete(k);else links.set(k,q)}
-for(let i=pulses.length-1;i>=0;i--){let p=pulses[i];p.age+=dt;p.v=Math.max(MINV,p.v*Math.exp(-DRAG*dt));p.d+=p.v*dt;maybeWander(p,dt);applyGravity(p,dt);let z=pos(p);if(z){p.trail.push({x:z.x,y:z.y});if(p.trail.length>MAX_TRAIL)p.trail.shift();collide(p,z)}if(p.d>=p.len){if(p.mode==='edge'){let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(a&&b&&b.tired){let tg=tangent(p);p.mode='free';p.x=b.x+p.gx;p.y=b.y+p.gy;p.ux=tg.x;p.uy=tg.y;p.d=0;p.len=140;p.age=0;p.gx=0;p.gy=0;continue}}pulses.splice(i,1)}else if(p.age>2.1)pulses.splice(i,1)}
+for(let i=pulses.length-1;i>=0;i--){let p=pulses[i];p.age+=dt;p.v=Math.max(MINV,p.v*Math.exp(-DRAG*dt));p.d+=p.v*dt;maybeWander(p,dt);applyGravity(p,dt);let z=pos(p);if(z){p.trail.push({x:z.x,y:z.y});if(p.trail.length>MAX_TRAIL)p.trail.shift();collide(p,z)}if(p.d>=p.len){if(p.mode==='edge'&&!p.zonerBroadcast){let a=nodes.find(n=>n.id===p.a),b=nodes.find(n=>n.id===p.b);if(a&&b&&b.tired){let tg=tangent(p);p.mode='free';p.x=b.x+p.gx;p.y=b.y+p.gy;p.ux=tg.x;p.uy=tg.y;p.d=0;p.len=140;p.age=0;p.gx=0;p.gy=0;continue}}pulses.splice(i,1)}else if(p.age>2.1)pulses.splice(i,1)}
 reinforceNeighbors();
 for(let n of nodes)if(!n.tired)n.a=Math.max(0,n.a-1.7*dt)}
 function sacred(){ctx.strokeStyle='rgba(145,150,180,.22)';ctx.lineWidth=1.4;for(let r of [105,185,265]){ctx.beginPath();for(let i=0;i<=100;i++){let a=i/100*Math.PI*2,x=CX+Math.cos(a)*r*SX,y=CY+Math.sin(a)*r*SY;i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke()}for(let a=0;a<Math.PI;a+=Math.PI/4){ctx.beginPath();ctx.moveTo(CX-Math.cos(a)*360,CY-Math.sin(a)*230);ctx.lineTo(CX+Math.cos(a)*360,CY+Math.sin(a)*230);ctx.stroke()}}
@@ -383,12 +414,13 @@ function glow(h){
 }
 function pulseBloom(p,z,h){if(lowPower||BLOOM<=0)return;const r=Math.min(40,18*BLOOM);ctx.drawImage(glow(h),z.x-r,z.y-r,r*2,r*2);}
 function haloBloom(n,q,h){if(lowPower||HALO_BLOOM<=0||n.tired||q<=.02)return;const r=Math.min(60,(18+24*q)*HALO_BLOOM);ctx.drawImage(glow(h),n.x-r,n.y-r,r*2,r*2);}
-function draw(){ctx.fillStyle='#080910';ctx.fillRect(0,0,c.width,c.height);ctx.lineCap='round';sacred();for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){let a=nodes[i],b=nodes[j],w=links.get(K(a,b))||0;if(w>.04){ctx.strokeStyle=`rgba(180,190,225,${Math.min(.45,.04+w*.2)})`;ctx.lineWidth=1+w;ctx.beginPath();for(let u=0;u<=20;u++){let q=topo(a,b,u/20);u?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y)}ctx.stroke()}}
+function draw(){ctx.fillStyle='#080910';ctx.fillRect(0,0,c.width,c.height);ctx.lineCap='round';sacred();for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){let a=nodes[i],b=nodes[j],w=links.get(K(a,b))||0;if(a.role==='zoner'||b.role==='zoner')continue;if(w>.04){ctx.strokeStyle=`rgba(180,190,225,${Math.min(.45,.04+w*.2)})`;ctx.lineWidth=1+w;ctx.beginPath();for(let u=0;u<=20;u++){let q=topo(a,b,u/20);u?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y)}ctx.stroke()}}
+for(const n of nodes)if(n.role==='leader')for(const target of nodes)if(target.role!=='zoner'&&n.favorites.has(target.id)&&D(n,target)<R){ctx.strokeStyle='rgba(255,220,125,.5)';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(n.x,n.y);ctx.lineTo(target.x,target.y);ctx.stroke()}
 for(let p of pulses){let z=pos(p);if(!z)continue;let h=T[p.kind].h,N=p.trail.length;ctx.save();ctx.globalCompositeOperation='lighter';for(let j=1;j<N;j+=lowPower?2:1){let f=j/(N-1),a=p.trail[j-1],b=p.trail[j],hh=(h+(1-f)*125)%360;ctx.shadowColor=`hsla(${hh},100%,65%,.5)`;ctx.shadowBlur=0;ctx.strokeStyle=`hsla(${hh},100%,65%,${.03+.48*f*f})`;ctx.lineWidth=1+5*f;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}ctx.restore();pulseBloom(p,z,h);let s=Math.max(0,Math.min(1,(p.v-MINV)/500));ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowBlur=0;ctx.shadowColor=`hsl(${h},100%,70%)`;ctx.fillStyle=`hsl(${h},100%,88%)`;ctx.beginPath();ctx.arc(z.x,z.y,4.5+2.8*s,0,Math.PI*2);ctx.fill();ctx.restore();ctx.strokeStyle=`hsla(${(h+55)%360},100%,78%,${.55+.25*s})`;ctx.lineWidth=1.6;ctx.beginPath();ctx.arc(z.x,z.y,10+6*s,0,Math.PI*2);ctx.stroke()}
-for(let n of nodes){let q=Math.min(1,n.a/TH),h=T[n.k].h;haloBloom(n,q,h);if(q>.04){ctx.strokeStyle=n.tired?'rgba(125,135,160,.28)':`hsla(${h},95%,70%,${.14+.7*q})`;ctx.lineWidth=2;ctx.beginPath();ctx.arc(n.x,n.y,18+36*q,0,Math.PI*2);ctx.stroke()}ctx.fillStyle=n.tired?'rgba(125,135,160,.55)':`hsl(${h},85%,76%)`;ctx.beginPath();ctx.arc(n.x,n.y,8+3*q,0,Math.PI*2);ctx.fill();if(n.tired){ctx.strokeStyle='rgba(255,180,90,.55)';ctx.lineWidth=2;ctx.beginPath();ctx.arc(n.x,n.y,14,-Math.PI/2,-Math.PI/2+Math.PI*2*n.fatigue);ctx.stroke()}}
-let resting=nodes.filter(n=>n.tired).length,wandering=pulses.filter(p=>p.mode==='wander').length;document.getElementById('status').textContent=`${nodes.length} dancers · ${pulses.length} pulses · ${wandering} wandering · ${resting} resting · gravity ${GRAVITY.toFixed(1)}× · pulse bloom ${BLOOM.toFixed(1)}× · halo bloom ${HALO_BLOOM.toFixed(1)}×`}
+for(let n of nodes){let q=Math.min(1,n.a/TH),h=T[n.k].h;haloBloom(n,q,h);if(q>.04){ctx.strokeStyle=n.role!=='zoner'&&n.tired?'rgba(125,135,160,.28)':`hsla(${h},95%,70%,${.14+.7*q})`;ctx.lineWidth=2;ctx.beginPath();ctx.arc(n.x,n.y,18+36*q,0,Math.PI*2);ctx.stroke()}ctx.fillStyle=n.role!=='zoner'&&n.tired?'rgba(125,135,160,.55)':`hsl(${h},85%,76%)`;ctx.beginPath();ctx.arc(n.x,n.y,8+3*q,0,Math.PI*2);ctx.fill();ctx.fillStyle='#fff';ctx.font='bold 14px sans-serif';ctx.fillText(n.role==='zoner'?'Z':n.role==='leader'?'L':'F',n.x+13,n.y-9);if(n.role!=='zoner'&&n.tired){ctx.strokeStyle='rgba(255,180,90,.55)';ctx.lineWidth=2;ctx.beginPath();ctx.arc(n.x,n.y,14,-Math.PI/2,-Math.PI/2+Math.PI*2*n.fatigue);ctx.stroke()}}
+let resting=nodes.filter(n=>n.role!=='zoner'&&n.tired).length,wandering=pulses.filter(p=>p.mode==='wander').length;document.getElementById('status').textContent=`${nodes.length} dancers · ${pulses.length} pulses · ${wandering} wandering · ${resting} resting · gravity ${GRAVITY.toFixed(1)}× · pulse bloom ${BLOOM.toFixed(1)}× · halo bloom ${HALO_BLOOM.toFixed(1)}×`}
 function point(e){let r=c.getBoundingClientRect();return{x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height}}
-c.addEventListener('click',e=>{let p=point(e);if(e.shiftKey){let nearest=null,best=60;for(let n of nodes){let d=Math.hypot(n.x-p.x,n.y-p.y);if(d<best){best=d;nearest=n}}if(nearest){nodes=nodes.filter(n=>n.id!==nearest.id);for(let k of [...links.keys()])if(k.startsWith(nearest.id+':')||k.endsWith(':'+nearest.id))links.delete(k)}return}add(p.x,p.y,document.getElementById('kind').value)});
+c.addEventListener('click',e=>{let p=point(e);if(e.shiftKey){let nearest=null,best=60;for(let n of nodes){let d=Math.hypot(n.x-p.x,n.y-p.y);if(d<best){best=d;nearest=n}}if(nearest){nodes=nodes.filter(n=>n.id!==nearest.id);for(let k of [...links.keys()])if(k.startsWith(nearest.id+':')||k.endsWith(':'+nearest.id))links.delete(k)}return}add(p.x,p.y,document.getElementById('kind').value,document.getElementById('role').value)});
 document.getElementById('audio').onclick=()=>{if(!audioOn)ensureAudio();else stopAudio();};
 for(let [idn,varname,fmt] of [['bpm','bpm',v=>v],['gravity','GRAVITY',v=>(+v).toFixed(1)+'×'],['wander','WANDER',v=>(+v).toFixed(2)],['bloom','BLOOM',v=>(+v).toFixed(1)+'×'],['halobloom','HALO_BLOOM',v=>(+v).toFixed(1)+'×'],['thr','TH',v=>(+v).toFixed(2)],['stamina','STAMINA',v=>(+v).toFixed(1)+' s'],['wobble','WOBBLE',v=>(+v).toFixed(1)+'×']]){document.getElementById(idn).addEventListener('input',e=>{let v=+e.target.value;if(varname==='bpm')bpm=v;if(varname==='GRAVITY')GRAVITY=v;if(varname==='WANDER')WANDER=v;if(varname==='BLOOM')BLOOM=v;if(varname==='HALO_BLOOM')HALO_BLOOM=v;if(varname==='TH')TH=v;if(varname==='STAMINA')STAMINA=v;if(varname==='WOBBLE')WOBBLE=v;document.getElementById(idn+'v').textContent=fmt(v)})}
 document.getElementById('vol').oninput=e=>{let v=+e.target.value;if(master)master.gain.value=v;document.getElementById('volv').textContent=Math.round(v*100)+'%'};
