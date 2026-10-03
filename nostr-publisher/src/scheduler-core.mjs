@@ -18,3 +18,8 @@ export function scheduledSeconds(post) {
   if (!Number.isFinite(millis)) throw new Error(`Invalid schedule for ${post.id}`);
   return Math.floor(millis / 1000);
 }
+
+export function pendingPosts(posts, testPost, nowMs, activatedAtMs, deliveredIds = new Set()) {
+  const pendingTest = testPost && !deliveredIds.has(testPost.id) ? [testPost] : [];
+  return [...pendingTest, ...duePosts(posts, nowMs, activatedAtMs, deliveredIds)];
+}
