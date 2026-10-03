@@ -1,4 +1,16 @@
 import frames from './frames.json' with {type:'json'};
+export const FRAMED_MAT_BORDER_IN = 1.5;
+// FinerWorks assembles custom frames: keep the same modest mat border at every
+// print size instead of padding small prints out to a stock frame size.
+export function framedMatLayout(paper, image = paper, material = null) {
+  if (!paper || !image || ![paper.width,paper.height,image.width,image.height].every(n=>Number.isFinite(n)&&n>0) || image.width>paper.width || image.height>paper.height) return null;
+  // The supplier's conservation mat has an 8-inch minimum. If needed on a tiny
+  // print, enlarge all four borders equally rather than distorting the opening.
+  const border=Math.ceil(Math.max(FRAMED_MAT_BORDER_IN,material?(material.minWidth-paper.width)/2:0,material?(material.minHeight-paper.height)/2:0)*100)/100;
+  const outer={width:Number((paper.width+2*border).toFixed(2)),height:Number((paper.height+2*border).toFixed(2)),unit:'in'};
+  if(material&&!matSizeAllowed(material,outer))return null;
+  return {key:'snow-white',name:'White conservation mat',color:'#fff',outer,window:{width:paper.width,height:paper.height,unit:'in'},...(material?{id:material.id,name:material.name}: {})};
+}
 // Keep the physical paper intact. The mat uses an existing standard frame size,
 // with at least one inch of board on every side, and follows the image orientation.
 export function matLayout(paper, image = paper, material = null) {

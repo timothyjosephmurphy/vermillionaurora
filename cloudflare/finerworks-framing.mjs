@@ -1,6 +1,6 @@
 import {finerworksRequest,finerworksPrices} from './finerworks-api.mjs';
 import {matProductBuild,finerworksMats} from './finerworks-matting.mjs';
-import {matLayout} from '../catalog/matting.mjs';
+import {matLayout,framedMatLayout} from '../catalog/matting.mjs';
 import {frameFinish} from '../catalog/framing.mjs';
 import {reviewFramedPrice} from '../catalog/frame-pricing.mjs';
 import frames from '../catalog/finerworks-frames.json' with {type:'json'};
@@ -37,7 +37,8 @@ export async function quoteFramedOptions(env,materials,option,frameKeys,publishe
   const [collections,glazingOptions,matMaterials]=await Promise.all([finerworksFrames(env,option.paper.sku,savedFrames[0].collectionId),finerworksGlazing(env),finerworksMats(env)]);
   const glazing=glazingOptions.find(g=>g.id===frames.glazing.id&&g.name===frames.glazing.name);
   const matMaterial=matMaterials.find(m=>m.name==='Snow White'&&m.thickness===4);
-  const mat=matMaterial&&matLayout(option.paper,option.image,matMaterial);
+  const layout=option.sizeBasis==='image-proportional'?framedMatLayout:matLayout;
+  const mat=matMaterial&&layout(option.paper,option.image,matMaterial);
   const match=option.paper.sku.match(/^(\d+)M(\d+)M(\d+)S/);
   const media=materials.media.find(m=>m.id===Number(match?.[2])),style=materials.styles.find(s=>s.id===Number(match?.[3]));
   const options=await Promise.all(savedFrames.map(async saved=>{

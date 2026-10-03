@@ -1,9 +1,11 @@
 import frames from './finerworks-frames.json' with {type:'json'};
 import {frameFinish,sameFrame} from './framing.mjs';
-import {sameMat} from './matting.mjs';
+import {sameMat,framedMatLayout} from './matting.mjs';
+import mats from './finerworks-mats.json' with {type:'json'};
 import {publishedFramedPrice} from './frame-pricing.mjs';
 export function withFrameOptions(option,variant={}) {
-  const mat=option.matOptions?.[0]?.mat;
+  // Retain the old stock-frame geometry for retired sample configurations.
+  const mat=option.sizeBasis==='image-proportional'?framedMatLayout(option.paper,option.image,mats.materials[0]):option.matOptions?.[0]?.mat;
   const frameOptions=frames.frames.flatMap(material=>{
     const frame=frameFinish(material,frames.glazing,mat);if(!frame)return [];
     const saved=variant.frameOptions?.[material.key]||{},reasons=[...option.reasons];let amount=null;
