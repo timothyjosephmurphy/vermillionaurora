@@ -3,6 +3,12 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { catalogVersion, urlFor } from '../../catalog/catalog.mjs';
 const { product } = Astro.props;
+const canonical = new URL(urlFor(product), Astro.site || 'https://vermillionaurora.com').href;
+const shareTitle = `${product.title} — ${product.artist || product.author || 'TJ Murphy'}`;
+const shareDescription = product.description || product.story?.join(' ').slice(0, 180) || shareTitle;
+const shareImageSrc = product.image?.src || product.examples?.[0]?.src;
+const shareImage = shareImageSrc ? new URL(shareImageSrc, canonical).href : null;
+const shareImageAlt = product.image?.alt || shareTitle;
 const structuredData = product.type === 'painting'
   ? { '@context':'https://schema.org', '@type':'VisualArtwork', name:product.title, creator:{'@type':'Person',name:product.artist||'TJ Murphy'}, artMedium:product.medium, artworkSurface:product.surface, image:new URL(product.image.src, Astro.site).href, description:product.description }
   : product.type === 'book'
@@ -13,9 +19,18 @@ const structuredData = product.type === 'painting'
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{product.title}{product.bookGallery ? ' — Book gallery artwork' : ''} | Vermillion Aurora</title>
-  <meta name="description" content={product.description} />
+  <meta name="description" content={shareDescription} />
   <meta name="catalog-version" content={catalogVersion} />
-  <link rel="canonical" href={`https://vermillionaurora.com${urlFor(product)}`} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={shareTitle} />
+  <meta property="og:description" content={shareDescription} />
+  <meta property="og:url" content={canonical} />
+  {shareImage && <><meta property="og:image" content={shareImage} /><meta property="og:image:alt" content={shareImageAlt} /></>}
+  <meta name="twitter:card" content={shareImage ? 'summary_large_image' : 'summary'} />
+  <meta name="twitter:title" content={shareTitle} />
+  <meta name="twitter:description" content={shareDescription} />
+  {shareImage && <><meta name="twitter:image" content={shareImage} /><meta name="twitter:image:alt" content={shareImageAlt} /></>}
   {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g,'\\u003c')} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

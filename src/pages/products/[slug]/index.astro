@@ -1,6 +1,7 @@
 ---
 import manifest from '../../../../catalog/book-galleries.json';
 import {byId,urlFor} from '../../../../catalog/catalog.mjs';
+import ProductShare from '../../../components/ProductShare.astro';
 import PurchaseReassurance from '../../../components/PurchaseReassurance.astro';
 import ProductLayout from '../../../layouts/ProductLayout.astro';
 import PaintingImage from '../../../components/PaintingImage.astro';
@@ -36,6 +37,7 @@ const facts=painting ? [
     <div class="book-summary"><p class="eyebrow dark">{p.eyebrow}</p><h1 id="book-title">{p.title}</h1><p class="book-author">{p.author}</p>
       {p.story.map(text=><p class="book-description">{text}</p>)}
       <div class="book-actions"><a class="button button-solid" href={p.book.purchaseUrl} target="_blank" rel="noopener noreferrer">Buy on Amazon ↗</a><a class="button button-ghost" href="#read-book">Read the book</a></div><p class="book-purchase-note">Pricing and formats on Amazon.</p>
+      <ProductShare product={p}/>
     </div>
   </section>
   <section id="read-book" class="book-preview" aria-labelledby="book-preview-title"><div class="book-preview-heading"><h2 id="book-preview-title">Inside the book</h2><a href={p.book.pdfUrl} target="_blank" rel="noopener noreferrer">Open PDF ↗ <span>({p.book.pdfSize})</span></a></div><iframe src={`${p.book.pdfUrl}#view=FitH`} title={`${p.title} — full book PDF viewer`} loading="lazy"></iframe></section>
@@ -65,9 +67,11 @@ const facts=painting ? [
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}
       {painting && (p.listing.status==='available' || availablePrints.length>0) && <PurchaseReassurance kind={p.listing.status==='available'?(availablePrints.length?'all':'original'):'print'}/>}
+      {painting && <ProductShare product={p}/>}
       {p.type==='commission' && <CommissionProcess />}
       <div class="product-inquiry">{!painting&&<a class="button button-solid" href={p.inquiryHref||`/?product=${p.slug}#contact`}>{p.inquiry.label}</a>}{p.inquiry.note && <p>{p.inquiry.note}</p>}</div>
       {originalFrameHref&&<div class="product-frame-action"><a class="button button-ghost" data-original-frame href={originalFrameHref} target="_blank" rel="noopener noreferrer">Find a matching frame on Amazon</a></div>}
+      {!painting && <ProductShare product={p}/>}
       <a class="product-back" href={p.back.href}>{p.back.label}</a>
     </div>
   </article>
