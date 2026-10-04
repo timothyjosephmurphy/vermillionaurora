@@ -1,0 +1,25 @@
+name: One-time Bitcoin Film Festival R2 bucket permission check
+
+on:
+  push:
+    branches:
+      - codex/try-create-bff-r2-bucket
+    paths:
+      - .github/workflows/check-bff-r2-bucket.yml
+
+permissions:
+  contents: read
+
+jobs:
+  create-private-bucket:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create the dedicated R2 bucket
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: cloudflare/media-index
+          command: r2 bucket create bitcoin-film-festival-photos
