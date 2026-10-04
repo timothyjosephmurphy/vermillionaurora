@@ -1,0 +1,14 @@
+{
+  "operation": "create",
+  "confirmSchedule": true,
+  "input": {
+    "channelId": "6ac0ac34ea19ca0bde6105f1",
+    "text": "Warszawska Syrenka, painted for Bitcoin Film Festival Warsaw: the city’s guardian, hussar wings, and a Bitcoin shield. Originals, fine-art prints and commissions: https://vermillionaurora.com/products/warszawska-syrenka/",
+    "imageUrls": [
+      "https://vermillionaurora.com/gallery-images/warszawska-syrenka.jpeg"
+    ],
+    "saveToDraft": false,
+    "dueAt": "2026-10-04T06:00:00.000Z",
+    "idempotencyKey": "launch-warszawska-syrenka-2026-10-03-twitter-duplicate"
+  }
+}
