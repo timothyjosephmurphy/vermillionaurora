@@ -1,0 +1,118 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stories from the Studio | Vermillion Aurora</title>
+    <meta name="description" content="A running journal of paintings, the places behind them, and new work by TJ Murphy." />
+    <link rel="canonical" href="https://vermillionaurora.com/blog/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/site-header.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader />
+      <main class="container journal">
+        <header class="journal-heading">
+          <p class="eyebrow dark">Stories from the studio</p>
+          <h1>A painting is a place to begin.</h1>
+          <p>Notes about the paintings, travels, and people behind my work. New stories appear here when they go out on Nostr.</p>
+        </header>
+        <p id="journal-status" class="journal-status" role="status" aria-live="polite">Checking for the latest story…</p>
+        <section id="journal-entries" class="journal-entries" aria-label="Stories"></section>
+      </main>
+      <SiteFooter />
+    </div>
+    <script is:inline>
+      const statusNode = document.getElementById('journal-status');
+      const entriesNode = document.getElementById('journal-entries');
+      const feedUrl = 'https://vermillion-nostr-publisher.timothyjosephmurphy.workers.dev/blog';
+
+      function makeEntry(post) {
+        const article = document.createElement('article');
+        article.className = 'journal-entry';
+        const header = document.createElement('header');
+        const title = document.createElement('h2');
+        title.textContent = post.title;
+        const date = document.createElement('time');
+        date.dateTime = post.publishedAt;
+        date.textContent = new Intl.DateTimeFormat(undefined, { dateStyle: 'long' }).format(new Date(post.publishedAt));
+        header.append(title, date);
+        const imageLink = document.createElement('a');
+        imageLink.className = 'journal-image-link';
+        imageLink.href = post.productUrl || post.imageUrl;
+        imageLink.setAttribute('aria-label', 'View ' + post.title);
+        const image = document.createElement('img');
+        image.src = post.imageUrl;
+        image.alt = post.title;
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        imageLink.append(image);
+        const story = document.createElement('div');
+        story.className = 'journal-copy';
+        for (const paragraphText of post.text.split(/\n\s*\n/).filter(Boolean)) {
+          const paragraph = document.createElement('p');
+          paragraph.textContent = paragraphText;
+          story.append(paragraph);
+        }
+        const links = document.createElement('div');
+        links.className = 'journal-links';
+        const product = document.createElement('a');
+        product.href = post.productUrl;
+        product.textContent = 'View this painting →';
+        links.append(product);
+        if (post.noteUrl) {
+          const note = document.createElement('a');
+          note.href = post.noteUrl;
+          note.target = '_blank';
+          note.rel = 'noopener noreferrer';
+          note.textContent = 'Read the Nostr post ↗';
+          links.append(note);
+        }
+        article.append(header, imageLink, story, links);
+        return article;
+      }
+
+      fetch(feedUrl, { headers: { Accept: 'application/json' } })
+        .then(response => {
+          if (!response.ok) throw new Error('feed unavailable');
+          return response.json();
+        })
+        .then(data => {
+          const stories = Array.isArray(data.posts) ? data.posts : [];
+          entriesNode.replaceChildren(...stories.map(makeEntry));
+          statusNode.textContent = stories.length ? '' : 'The first story will appear here when it is released on Nostr.';
+        })
+        .catch(() => {
+          statusNode.textContent = 'The story feed is temporarily unavailable. Please check back shortly.';
+        });
+    </script>
+  </body>
+</html>
+<style>
+  .journal{max-width:980px;padding-block:40px 72px}
+  .journal-heading{max-width:760px;margin:0 auto 38px;text-align:center}
+  .journal-heading .eyebrow{margin:0 0 10px}
+  .journal-heading h1{font:600 clamp(2.5rem,6vw,4.6rem)/1.04 "Cormorant Garamond",serif;margin:0 0 16px}
+  .journal-heading>p:last-child{max-width:620px;margin:0 auto;color:var(--muted);line-height:1.75}
+  .journal-status{min-height:1.5em;text-align:center;color:var(--muted);font-size:.92rem}
+  .journal-entries{display:grid;gap:36px}
+  .journal-entry{display:grid;grid-template-columns:minmax(220px,.82fr) minmax(0,1.18fr);gap:14px 28px;align-items:start;padding:26px 0;border-top:1px solid var(--line)}
+  .journal-entry>header{grid-column:2;display:grid;gap:6px}
+  .journal-entry h2{font:600 clamp(1.8rem,3.5vw,2.6rem)/1.1 "Cormorant Garamond",serif;margin:0}
+  .journal-entry time{font-size:.82rem;color:var(--muted)}
+  .journal-image-link{grid-column:1;grid-row:1 / span 3;display:block;background:#eee7dd;border-radius:8px;overflow:hidden}
+  .journal-image-link img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain}
+  .journal-copy{grid-column:2;line-height:1.8}
+  .journal-copy p{margin:0 0 16px}
+  .journal-links{grid-column:2;display:flex;flex-wrap:wrap;gap:18px;font-size:.9rem}
+  .journal-links a{text-decoration:underline;text-underline-offset:4px}
+  @media(max-width:680px){.journal{padding-block:24px 52px}.journal-entry{grid-template-columns:1fr;gap:14px}.journal-entry>header,.journal-image-link,.journal-copy,.journal-links{grid-column:1}.journal-image-link{grid-row:auto;max-width:480px}.journal-entry h2{font-size:2.05rem}}
+</style>
