@@ -26,6 +26,22 @@ export class NostrSchedule {
 
   async fetch(request) {
     const pathname = new URL(request.url).pathname;
+    if (pathname === '/blog' && request.method === 'GET') {
+      const entries = [];
+      for (const post of posts) {
+        const receipt = await this.state.storage.get(`nostr:sent:${post.id}`);
+        if (receipt) entries.push({
+          ...post,
+          publishedAt: new Date(receipt.acceptedAt).toISOString(),
+          noteUrl: `https://njump.me/${nip19.noteEncode(receipt.eventId)}`
+        });
+      }
+      entries.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+      return Response.json({ posts: entries }, { headers: {
+        'cache-control': 'no-store',
+        'access-control-allow-origin': 'https://vermillionaurora.com'
+      } });
+    }
     if (pathname === '/status' && request.method === 'GET') {
       const receipt = await this.state.storage.get(`nostr:sent:${testPost.id}`);
       const attempt = await this.state.storage.get(`nostr:attempt:${testPost.id}`);
@@ -126,9 +142,10 @@ export class NostrSchedule {
 
 export default {
   async fetch(request, env) {
-    if (new URL(request.url).pathname === '/status' && request.method === 'GET') {
+    const pathname = new URL(request.url).pathname;
+    if ((pathname === '/status' || pathname === '/blog') && request.method === 'GET') {
       const id = env.NOSTR_SCHEDULE.idFromName('vermillion-aurora');
-      return env.NOSTR_SCHEDULE.get(id).fetch('https://nostr-scheduler.internal/status');
+      return env.NOSTR_SCHEDULE.get(id).fetch(`https://nostr-scheduler.internal${pathname}`);
     }
     return new Response('Nostr publisher is schedule-only.', { status: 404 });
   },

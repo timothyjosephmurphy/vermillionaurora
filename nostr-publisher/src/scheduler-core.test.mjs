@@ -9,9 +9,10 @@ const fixture = [
   { id: 'future', scheduledAt: '2026-10-11T10:00:00-07:00' }
 ];
 
-test('campaign queue is empty even after all former campaign dates', () => {
-  assert.deepEqual(posts, []);
-  assert.deepEqual(duePosts(posts, Date.parse('2026-12-01'), 0), []);
+test('campaign queue contains the three approved stories in the Pacific-time slots', () => {
+  assert.deepEqual(posts.map(post => post.id), ['launch-warszawska-syrenka-2026-10-06', 'launch-honeybadger-cub-2026-10-08', 'launch-el-zonte-at-dusk-2026-10-11']);
+  assert.deepEqual(posts.map(post => post.scheduledAt), ['2026-10-06T10:00:00-07:00', '2026-10-08T18:00:00-07:00', '2026-10-11T10:00:00-07:00']);
+  assert.equal(duePosts(posts, Date.parse('2026-10-04T12:00:00Z'), Date.parse('2026-10-03T20:00:00Z')).length, 0);
 });
 
 test('only due, not-yet-sent posts after activation are selected', () => {
@@ -28,6 +29,12 @@ test('single test is independent of campaign dates and stops after its receipt',
   const now = Date.parse('2026-10-03T20:00:00Z');
   assert.deepEqual(pendingPosts(posts, testPost, now, now).map(post => post.id), [testPost.id]);
   assert.deepEqual(pendingPosts(posts, testPost, now + 300000, now, new Set([testPost.id])), []);
+});
+
+test('campaign event content includes its product link and image after the story', () => {
+  const content = eventContent(posts[0]);
+  assert.ok(content.includes('https://vermillionaurora.com/products/warszawska-syrenka/'));
+  assert.ok(content.endsWith(posts[0].imageUrl));
 });
 
 test('test note includes painting link, Nostr attribution and image', () => {

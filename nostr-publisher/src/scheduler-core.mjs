@@ -10,7 +10,8 @@ export function duePosts(posts, nowMs, activatedAtMs, deliveredIds = new Set()) 
 
 export function eventContent(post) {
   const text = post.text.replace(/([?&])utm_source=x\b/g, '$1utm_source=nostr');
-  return `${text.trim()}\n\n${post.imageUrl}`;
+  const productLink = post.productUrl ? `https://vermillionaurora.com${post.productUrl}` : '';
+  return [text.trim(), productLink, post.imageUrl].filter(Boolean).join('\n\n');
 }
 
 export function scheduledSeconds(post) {
