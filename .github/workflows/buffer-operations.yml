@@ -7,7 +7,6 @@ on:
 permissions:
   contents: read
 concurrency:
-  # Serialize credential changes with production Worker deployment.
   group: checkout-production-release
   cancel-in-progress: false
 jobs:
@@ -23,4 +22,10 @@ jobs:
       - name: Execute the reviewed request through the private Worker
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: node payments/buffer-operation.mjs social/buffer-request.json
+        run: |
+          operation="$(node -e "console.log(JSON.parse(require('fs').readFileSync('social/buffer-request.json','utf8')).operation)")"
+          if [ "$operation" = "nostr-status" ]; then
+            curl --fail --silent --show-error https://vermillion-nostr-publisher.timothyjosephmurphy.workers.dev/status
+          else
+            node payments/buffer-operation.mjs social/buffer-request.json
+          fi
