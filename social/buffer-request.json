@@ -1,0 +1,14 @@
+{
+  "operation": "create",
+  "confirmSchedule": true,
+  "input": {
+    "channelId": "6ac0ad31ea19ca0bde610d47",
+    "text": "In Honeybadger and Cub with Genesis Block, a fierce protector turns toward the future with tenderness. Behind them is Bitcoin’s Genesis block—the beginning of the chain. I built that pattern into the painting with clear-wax resist before adding watercolor.\n\nFor me, the painting brings together protection, care for future generations, and the freedom to build for the long term.\n\nMy new website is launching, with original paintings, fine-art prints, and commissions available to explore. Visit vermillionaurora.com — link in bio.",
+    "imageUrls": [
+      "https://vermillionaurora.com/gallery-images/honeybadger-and-cub.jpeg"
+    ],
+    "saveToDraft": false,
+    "dueAt": "2026-10-06T14:00:00.000Z",
+    "idempotencyKey": "launch-honeybadger-cub-2026-10-06-instagram-duplicate"
+  }
+}
