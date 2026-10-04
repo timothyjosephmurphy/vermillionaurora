@@ -1,9 +1,3 @@
 {
-  "operation": "list",
-  "input": {
-    "channelId": "6ac0ac34ea19ca0bde6105f1",
-    "status": [
-      "scheduled"
-    ]
-  }
+  "operation": "nostr-status"
 }
