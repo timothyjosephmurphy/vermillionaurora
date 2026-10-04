@@ -10,9 +10,9 @@ const fixture = [
 ];
 
 test('campaign queue contains the three approved stories in the Pacific-time slots', () => {
-  assert.deepEqual(posts.map(post => post.id), ['launch-warszawska-syrenka-2026-10-06', 'launch-honeybadger-cub-2026-10-08', 'launch-el-zonte-at-dusk-2026-10-11']);
-  assert.deepEqual(posts.map(post => post.scheduledAt), ['2026-10-06T10:00:00-07:00', '2026-10-08T18:00:00-07:00', '2026-10-11T10:00:00-07:00']);
-  assert.equal(duePosts(posts, Date.parse('2026-10-04T12:00:00Z'), Date.parse('2026-10-03T20:00:00Z')).length, 0);
+  assert.deepEqual(posts.map(post => post.id), ['launch-warszawska-syrenka-2026-10-03', 'launch-honeybadger-cub-2026-10-06', 'launch-sunrise-el-zonte-bitcoin-beach-2026-10-08']);
+  assert.deepEqual(posts.map(post => post.scheduledAt), ['2026-10-03T23:00:00-07:00', '2026-10-06T07:00:00-07:00', '2026-10-08T23:00:00-07:00']);
+  assert.equal(duePosts(posts, Date.parse('2026-10-04T05:00:00Z'), Date.parse('2026-10-03T20:00:00Z')).length, 0);
 });
 
 test('only due, not-yet-sent posts after activation are selected', () => {
