@@ -1,0 +1,51 @@
+name: Upload Bitcoin Film Festival blog photos
+
+on:
+  push:
+    branches: [codex/bitcoin-film-festival-blog]
+    paths:
+      - '.github/workflows/upload-blog-photos.yml'
+      - 'scripts/blog-media-upload/**'
+      - 'scripts/upload-blog-media.mjs'
+      - 'scripts/remove-blog-media-uploader.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: blog-photo-upload
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[upload-blog-photos]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Confirm the dedicated Cloudflare credential is configured
+        env:
+          BLOG_UPLOAD_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: test -n "$BLOG_UPLOAD_TOKEN"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Deploy temporary prefix-limited R2 uploader
+        id: uploader
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          workingDirectory: scripts/blog-media-upload
+          wranglerVersion: '4.143.0'
+          command: deploy --config wrangler.jsonc
+      - name: Upload photos and verify every public object
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/upload-blog-media.mjs scripts/blog-media-upload/assets
+      - name: Remove temporary uploader
+        if: always() && steps.uploader.outcome == 'success'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/remove-blog-media-uploader.mjs
