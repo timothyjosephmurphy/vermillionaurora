@@ -38,6 +38,8 @@ jobs:
         run: node payments/verify-commission-privacy.mjs
       - name: Verify promoted website release before enabling purchases
         run: node payments/verify-live-print-assets.mjs
+      - name: Verify published blog cards, articles, and photos
+        run: node scripts/verify-blog-pages.mjs --live
       - name: Deploy the production Worker with the checked-in checkout settings
         uses: cloudflare/wrangler-action@v4
         with:
