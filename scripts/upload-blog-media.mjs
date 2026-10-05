@@ -27,7 +27,7 @@ try {
         body: bytes,
         signal: AbortSignal.timeout(90000),
       });
-      assert(response.ok, `R2 upload failed for ${spec.key}: ${response.status}`);
+      if (!response.ok) throw new Error(`R2 upload failed for ${spec.key}: ${response.status} ${await response.text()}`);
       const result = await response.json();
       assert.equal(result.sha256, spec.sha256);
       uploaded += 1;

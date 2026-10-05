@@ -7,9 +7,10 @@ export default {
   async fetch(request, env) {
     const token = env.BLOG_MEDIA_UPLOAD_TOKEN || '';
     const expiry = Number(token.split('.')[0]);
-    if (request.method !== 'PUT' || !/^\d{13}\.[a-f0-9]{64}$/.test(token) || expiry < Date.now() || expiry > Date.now() + 31 * 60000 || request.headers.get('Authorization') !== `Bearer ${token}`) {
-      return new Response('Not found', { status: 404 });
-    }
+    if (request.method !== 'PUT') return new Response('Upload requires PUT', { status: 404 });
+    if (!/^\d{13}\.[a-f0-9]{64}$/.test(token)) return new Response('Temporary credential missing or malformed', { status: 404 });
+    if (expiry < Date.now() || expiry > Date.now() + 31 * 60000) return new Response('Temporary credential expired', { status: 404 });
+    if (request.headers.get('Authorization') !== `Bearer ${token}`) return new Response('Temporary credential does not match', { status: 404 });
 
     const key = new URL(request.url).pathname.slice(1);
     const spec = expected.get(key);
