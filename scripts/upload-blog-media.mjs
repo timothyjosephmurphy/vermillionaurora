@@ -21,15 +21,27 @@ try {
       const bytes = await readFile(path.join(assetDirectory, spec.file));
       assert.equal(bytes.length, spec.size);
       assert.equal(createHash('sha256').update(bytes).digest('hex'), spec.sha256);
-      const response = await fetch(`https://vermillion-blog-media-upload.timothyjosephmurphy.workers.dev/${spec.key}`, {
-        method: 'PUT',
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': spec.contentType },
-        body: bytes,
-        signal: AbortSignal.timeout(90000),
-      });
-      if (!response.ok) throw new Error(`R2 upload failed for ${spec.key}: ${response.status} ${await response.text()}`);
-      const result = await response.json();
-      assert.equal(result.sha256, spec.sha256);
+      let uploadedThisObject = false;
+      for (let attempt = 0; attempt < 6; attempt += 1) {
+        const response = await fetch(`https://vermillion-blog-media-upload.timothyjosephmurphy.workers.dev/${spec.key}`, {
+          method: 'PUT',
+          headers: { Authorization: `Bearer ${token}`, 'Content-Type': spec.contentType },
+          body: bytes,
+          signal: AbortSignal.timeout(90000),
+        });
+        if (response.ok) {
+          const result = await response.json();
+          assert.equal(result.sha256, spec.sha256);
+          uploadedThisObject = true;
+          break;
+        }
+        const detail = await response.text();
+        if (![404, 429, 502, 503, 504].includes(response.status) || attempt === 5) {
+          throw new Error(`R2 upload failed for ${spec.key}: ${response.status} ${detail}`);
+        }
+        await new Promise((resolve) => setTimeout(resolve, 3000 * (attempt + 1)));
+      }
+      assert(uploadedThisObject, `Upload failed: ${spec.key}`);
       uploaded += 1;
     }
   }
