@@ -36,7 +36,7 @@ try {
           break;
         }
         const detail = await response.text();
-        if (![404, 429, 502, 503, 504].includes(response.status) || attempt === 5) {
+        if (![404, 429, 500, 502, 503, 504].includes(response.status) || attempt === 5) {
           throw new Error(`R2 upload failed for ${spec.key}: ${response.status} ${detail}`);
         }
         await new Promise((resolve) => setTimeout(resolve, 3000 * (attempt + 1)));
