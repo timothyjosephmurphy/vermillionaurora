@@ -26,7 +26,21 @@ import SiteFooter from '../../components/SiteFooter.astro';
           <p>Notes about the paintings, travels, and people behind my work. New stories appear here when they go out on Nostr.</p>
         </header>
         <p id="journal-status" class="journal-status" role="status" aria-live="polite">Checking for the latest story…</p>
-        <section id="journal-entries" class="journal-entries" aria-label="Stories"></section>
+        <section id="journal-entries" class="journal-entries" aria-label="Stories">
+        <article class="journal-entry" data-static-story>
+          <header>
+            <h2><a href="/blog/bitcoin-film-festival/">Coined in Watercolor: Warsaw, Kraków, and Prague</a></h2>
+            <time datetime="2026-10-04">October 4, 2026</time>
+          </header>
+          <a class="journal-image-link" href="/blog/bitcoin-film-festival/" aria-label="Read Coined in Watercolor: Warsaw, Kraków, and Prague">
+            <img src="https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/005.jpg" alt="The finished Coined in Watercolor poster, painted for the Warsaw Film Festival" loading="lazy" decoding="async">
+          </a>
+          <div class="journal-copy">
+            <p>Three paintings made for Warsaw, Polish phrases, street sketches, a lively artists’ community, and a train ride through Kraków on the way to Prague.</p>
+            <p><a href="/blog/bitcoin-film-festival/">Read the story →</a></p>
+          </div>
+        </article>
+        </section>
       </main>
       <SiteFooter />
     </div>
@@ -87,11 +101,12 @@ import SiteFooter from '../../components/SiteFooter.astro';
         })
         .then(data => {
           const stories = Array.isArray(data.posts) ? data.posts : [];
-          entriesNode.replaceChildren(...stories.map(makeEntry));
-          statusNode.textContent = stories.length ? '' : 'The first story will appear here when it is released on Nostr.';
+          const staticStories = Array.from(entriesNode.querySelectorAll('[data-static-story]'));
+          entriesNode.replaceChildren(...staticStories, ...stories.map(makeEntry));
+          statusNode.textContent = stories.length || staticStories.length ? '' : 'The first story will appear here when it is released on Nostr.';
         })
         .catch(() => {
-          statusNode.textContent = 'The story feed is temporarily unavailable. Please check back shortly.';
+          statusNode.textContent = entriesNode.querySelector('[data-static-story]') ? '' : 'The story feed is temporarily unavailable. Please check back shortly.';
         });
     </script>
   </body>
