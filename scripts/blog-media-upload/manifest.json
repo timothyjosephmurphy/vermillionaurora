@@ -1,0 +1,659 @@
+[
+  {
+    "id": "001",
+    "file": "001.jpg",
+    "key": "images/blog/bitcoin-film-festival/001.jpg",
+    "size": 29631,
+    "sha256": "27948d6232b2b9736aecb04232cf254640c1cab20415dee9a119d0e27ffda7f9",
+    "contentType": "image/jpeg",
+    "alt": "TJM and Gavin at the Palace of Culture and Science"
+  },
+  {
+    "id": "002",
+    "file": "002.jpg",
+    "key": "images/blog/bitcoin-film-festival/002.jpg",
+    "size": 37160,
+    "sha256": "fc0486cc74fce72324efb23d322fd0723a272f0db4136f240c3d99e5e340586e",
+    "contentType": "image/jpeg",
+    "alt": "early watercolor for the Coined in Watercolor poster"
+  },
+  {
+    "id": "003",
+    "file": "003.jpg",
+    "key": "images/blog/bitcoin-film-festival/003.jpg",
+    "size": 50495,
+    "sha256": "ccdf9a4c9e6e82b8882670b02fcb115fe59e175ed8c332a386151ab04a09e802",
+    "contentType": "image/jpeg",
+    "alt": "a more saturated watercolor layer"
+  },
+  {
+    "id": "004",
+    "file": "004.jpg",
+    "key": "images/blog/bitcoin-film-festival/004.jpg",
+    "size": 45974,
+    "sha256": "8b9e8b4fcf595f8409cc8aa689c7a38cb227fbc8b4d99f185a0c5a871885e598",
+    "contentType": "image/jpeg",
+    "alt": "the painted Coined in Watercolor poster"
+  },
+  {
+    "id": "005",
+    "file": "005.jpg",
+    "key": "images/blog/bitcoin-film-festival/005.jpg",
+    "size": 206726,
+    "sha256": "750d129bf08aa49e4d3571b01876bba2919d9b73b8cf3aaf57a2bdee96534e48",
+    "contentType": "image/jpeg",
+    "alt": "the finished festival poster"
+  },
+  {
+    "id": "006",
+    "file": "006.jpg",
+    "key": "images/blog/bitcoin-film-festival/006.jpg",
+    "size": 58126,
+    "sha256": "fadd47b65579bb56e7577ea8ec97ae6611433274b9f72056070208a1cca1e8ba",
+    "contentType": "image/jpeg",
+    "alt": "a Warsaw statue reference"
+  },
+  {
+    "id": "007",
+    "file": "007.jpg",
+    "key": "images/blog/bitcoin-film-festival/007.jpg",
+    "size": 61747,
+    "sha256": "74bf2dccbc49fa0afce7daca60c501905167e1f032188380ada5a8f8e5c3f534",
+    "contentType": "image/jpeg",
+    "alt": "another Warsaw Syrenka reference"
+  },
+  {
+    "id": "008",
+    "file": "008.jpg",
+    "key": "images/blog/bitcoin-film-festival/008.jpg",
+    "size": 45113,
+    "sha256": "1c3817b454dd8f1d3da9098af3f8b97a8bd31bd175ba9ca61a52bdd17c5045bf",
+    "contentType": "image/jpeg",
+    "alt": "a Warsaw street sketch"
+  },
+  {
+    "id": "009",
+    "file": "009.jpg",
+    "key": "images/blog/bitcoin-film-festival/009.jpg",
+    "size": 34947,
+    "sha256": "77929bb56781a040ee89f6726aa91be0fd9d90be3acbefca28533bdc19786324",
+    "contentType": "image/jpeg",
+    "alt": "the first Warsaw Syrenka drawing"
+  },
+  {
+    "id": "010",
+    "file": "010.jpg",
+    "key": "images/blog/bitcoin-film-festival/010.jpg",
+    "size": 45184,
+    "sha256": "1d59ab6ba45ca743437b9867886ea0378bc0d041c3e3d4b555e465f363d3e5a9",
+    "contentType": "image/jpeg",
+    "alt": "a later Syrenka design iteration"
+  },
+  {
+    "id": "011",
+    "file": "011.jpg",
+    "key": "images/blog/bitcoin-film-festival/011.jpg",
+    "size": 69046,
+    "sha256": "0e7517e92cb007295e1df91d693cc88b6729158649d32013ee99e1ee8d60b513",
+    "contentType": "image/jpeg",
+    "alt": "a Syrenka watercolor study"
+  },
+  {
+    "id": "012",
+    "file": "012.jpg",
+    "key": "images/blog/bitcoin-film-festival/012.jpg",
+    "size": 67159,
+    "sha256": "ef996e42a285ad08b29546fe0a0d71e035151f441a933409dce2c01d31721c2e",
+    "contentType": "image/jpeg",
+    "alt": "the finished Warsaw Syrenka"
+  },
+  {
+    "id": "013",
+    "file": "013.jpg",
+    "key": "images/blog/bitcoin-film-festival/013.jpg",
+    "size": 30015,
+    "sha256": "fd5f0c998c87582cbe91806ec02fe4bdec2d17871d0df47cd7da717fa97172db",
+    "contentType": "image/jpeg",
+    "alt": "Puget Sound from the flight north"
+  },
+  {
+    "id": "014",
+    "file": "014.jpg",
+    "key": "images/blog/bitcoin-film-festival/014.jpg",
+    "size": 25894,
+    "sha256": "97d5e36907e4352c6278c2984573b95c57f47795623ac758a3f4519b16dd2215",
+    "contentType": "image/jpeg",
+    "alt": "Puget Sound and the wing of the plane"
+  },
+  {
+    "id": "015",
+    "file": "015.jpg",
+    "key": "images/blog/bitcoin-film-festival/015.jpg",
+    "size": 27097,
+    "sha256": "50709df83205ac7606c5b9965e2c0078a442c2f1d7c489844bfd53e659683032",
+    "contentType": "image/jpeg",
+    "alt": "sunset over the clouds on the flight to Warsaw"
+  },
+  {
+    "id": "016",
+    "file": "016.jpg",
+    "key": "images/blog/bitcoin-film-festival/016.jpg",
+    "size": 54895,
+    "sha256": "46ceff8ab01cd352fe5a5d063323ae1231c673e4cdf82632a0f9d07e24001397",
+    "contentType": "image/jpeg",
+    "alt": "the Tomb of the Unknown Soldier in Warsaw"
+  },
+  {
+    "id": "017",
+    "file": "017.jpg",
+    "key": "images/blog/bitcoin-film-festival/017.jpg",
+    "size": 67986,
+    "sha256": "642cdbc8bd6ce7e0f12c121386ffd1a039b1bca7c16d2153210e8713154d04d5",
+    "contentType": "image/jpeg",
+    "alt": "an accordionist playing in Warsaw"
+  },
+  {
+    "id": "018",
+    "file": "018.jpg",
+    "key": "images/blog/bitcoin-film-festival/018.jpg",
+    "size": 60206,
+    "sha256": "a84c6e44d8b78fa229d111631071554ea4d53614e92f0c6e8c3508ada1ce108a",
+    "contentType": "image/jpeg",
+    "alt": "TJ holding a live sketch of a Warsaw accordionist"
+  },
+  {
+    "id": "019",
+    "file": "019.jpg",
+    "key": "images/blog/bitcoin-film-festival/019.jpg",
+    "size": 58567,
+    "sha256": "32e7164a1e3a8d215ec9fb939438a01396acdc80ffd8294581e85fe7476401c9",
+    "contentType": "image/jpeg",
+    "alt": "accordionists playing together in Warsaw"
+  },
+  {
+    "id": "020",
+    "file": "020.jpg",
+    "key": "images/blog/bitcoin-film-festival/020.jpg",
+    "size": 181953,
+    "sha256": "558632fb42f9e6ea23c04b85fdbe1c21a9a19167ed7aaf88dd2ca19856f1e040",
+    "contentType": "image/jpeg",
+    "alt": "a watercolor sketch of a Warsaw fountain"
+  },
+  {
+    "id": "021",
+    "file": "021.jpg",
+    "key": "images/blog/bitcoin-film-festival/021.jpg",
+    "size": 45098,
+    "sha256": "74284493fe59500c755e4e74b1445f7c924d0c295bf8f568e79ed5c3882d471d",
+    "contentType": "image/jpeg",
+    "alt": "a Warsaw monument seen in the street"
+  },
+  {
+    "id": "022",
+    "file": "022.jpg",
+    "key": "images/blog/bitcoin-film-festival/022.jpg",
+    "size": 53805,
+    "sha256": "e6a982b23eb5e6ee29a615cf94dd9c45503f95f68bf219ca227c1a800972b444",
+    "contentType": "image/jpeg",
+    "alt": "a view across Warsaw\u2019s Old Town square"
+  },
+  {
+    "id": "023",
+    "file": "023.jpg",
+    "key": "images/blog/bitcoin-film-festival/023.jpg",
+    "size": 40591,
+    "sha256": "e3eb3e6aeb1e82f486b674a1a2f7dce2caba6793d8eb7278bc22e7358c7cd91d",
+    "contentType": "image/jpeg",
+    "alt": "the Palace of Culture and Science"
+  },
+  {
+    "id": "024",
+    "file": "024.jpg",
+    "key": "images/blog/bitcoin-film-festival/024.jpg",
+    "size": 29570,
+    "sha256": "5751b21695215ce5205ca358e3de9b0db8333a4723535a25b7e466e934a02459",
+    "contentType": "image/jpeg",
+    "alt": "the Palace of Culture and Science from the street"
+  },
+  {
+    "id": "025",
+    "file": "025.jpg",
+    "key": "images/blog/bitcoin-film-festival/025.jpg",
+    "size": 59695,
+    "sha256": "6687c6b350a93c62567df6a87194e2dd94436e00c27460a80a1c93917b2d2aee",
+    "contentType": "image/jpeg",
+    "alt": "TJ with a festival friend holding her portrait"
+  },
+  {
+    "id": "026",
+    "file": "026.jpg",
+    "key": "images/blog/bitcoin-film-festival/026.jpg",
+    "size": 29058,
+    "sha256": "4ba4776084502c0305414579b8b46f255601474e30089433d2093894f2c1ff08",
+    "contentType": "image/jpeg",
+    "alt": "film posters displayed at the festival"
+  },
+  {
+    "id": "027",
+    "file": "027.jpg",
+    "key": "images/blog/bitcoin-film-festival/027.jpg",
+    "size": 45286,
+    "sha256": "415890a86cd4a1a510438768a3d010f674fadba34d86655228588f6c82cacd6e",
+    "contentType": "image/jpeg",
+    "alt": "paintings installed among festival posters"
+  },
+  {
+    "id": "028",
+    "file": "028.jpg",
+    "key": "images/blog/bitcoin-film-festival/028.jpg",
+    "size": 68047,
+    "sha256": "d3cf6fdf68cf5f731d608175211e4210a5787036d4ffd9c5941a7782567e6ec5",
+    "contentType": "image/jpeg",
+    "alt": "handwritten Polish phrases with phonetic spellings"
+  },
+  {
+    "id": "029",
+    "file": "029.jpg",
+    "key": "images/blog/bitcoin-film-festival/029.jpg",
+    "size": 45303,
+    "sha256": "7138f5e0660b43941c38cc9b0a8aae1009d6d176836fb5a77f6ebed04389fd8f",
+    "contentType": "image/jpeg",
+    "alt": "TJ and Gavin outside the Palace of Culture and Science"
+  },
+  {
+    "id": "030",
+    "file": "030.jpg",
+    "key": "images/blog/bitcoin-film-festival/030.jpg",
+    "size": 32385,
+    "sha256": "475c891a33209d4ab288cfff02f89ea4214a3ac921b5abce5326f8ee13f691b6",
+    "contentType": "image/jpeg",
+    "alt": "the Palace of Culture and Science interior during the festival"
+  },
+  {
+    "id": "031",
+    "file": "031.jpg",
+    "key": "images/blog/bitcoin-film-festival/031.jpg",
+    "size": 46401,
+    "sha256": "8b4754278a0ea15f61c08532d9f17205fea05b3e0c62b39fab51f78b5a122612",
+    "contentType": "image/jpeg",
+    "alt": "a talk on AI and film at the festival"
+  },
+  {
+    "id": "032",
+    "file": "032.jpg",
+    "key": "images/blog/bitcoin-film-festival/032.jpg",
+    "size": 64065,
+    "sha256": "ec5ee09cc5e686f7366ba6ff953e349c762259a9a1e1f2a3d55019da431d0963",
+    "contentType": "image/jpeg",
+    "alt": "a Warsaw stroll with a new friend"
+  },
+  {
+    "id": "033",
+    "file": "033.jpg",
+    "key": "images/blog/bitcoin-film-festival/033.jpg",
+    "size": 54569,
+    "sha256": "d66cc8112afa57c0cb66e51668ed3afc6bcf8fda9f0ae5043be7be16e8bdfb33",
+    "contentType": "image/jpeg",
+    "alt": "a festival portrait presented to its recipient"
+  },
+  {
+    "id": "034",
+    "file": "034.jpg",
+    "key": "images/blog/bitcoin-film-festival/034.jpg",
+    "size": 53832,
+    "sha256": "f36b2728d27773bac51d0abe080f0b07e30c26c8f541cf9dd2c10d532fa8d85b",
+    "contentType": "image/jpeg",
+    "alt": "a conversation beside the river"
+  },
+  {
+    "id": "035",
+    "file": "035.jpg",
+    "key": "images/blog/bitcoin-film-festival/035.jpg",
+    "size": 41406,
+    "sha256": "b09de71d80386139871d4bfd97e4babfad05cefc037f6f86ae2f1d7345425adf",
+    "contentType": "image/jpeg",
+    "alt": "a monumental sculpted head in Krak\u00f3w"
+  },
+  {
+    "id": "036",
+    "file": "036.jpg",
+    "key": "images/blog/bitcoin-film-festival/036.jpg",
+    "size": 85136,
+    "sha256": "07a072ba8ac14d4ff0ab491f53122d5475543bba17ea9a90cef90783ad902eac",
+    "contentType": "image/jpeg",
+    "alt": "a sketch of the monumental head"
+  },
+  {
+    "id": "037",
+    "file": "037.jpg",
+    "key": "images/blog/bitcoin-film-festival/037.jpg",
+    "size": 48744,
+    "sha256": "c2ea392bc5b27a72bd335e8cae944c329298f956707883bddf22c370af7ef963",
+    "contentType": "image/jpeg",
+    "alt": "musicians playing beneath an old-city arch"
+  },
+  {
+    "id": "038",
+    "file": "038.jpg",
+    "key": "images/blog/bitcoin-film-festival/038.jpg",
+    "size": 57527,
+    "sha256": "067d91af1048cc55cdd923ac7156bbe600ea79696c7b81ab54362be0d72c539f",
+    "contentType": "image/jpeg",
+    "alt": "at a Krak\u00f3w shooting academy"
+  },
+  {
+    "id": "039",
+    "file": "039.jpg",
+    "key": "images/blog/bitcoin-film-festival/039.jpg",
+    "size": 53569,
+    "sha256": "70837f6b91782985a6236f74b4fe1b06f4ce70ddf0ffec4a5d4d2ab9489613f4",
+    "contentType": "image/jpeg",
+    "alt": "a visit to the Krak\u00f3w shooting academy"
+  },
+  {
+    "id": "040",
+    "file": "040.jpg",
+    "key": "images/blog/bitcoin-film-festival/040.jpg",
+    "size": 68994,
+    "sha256": "ed969f05ee7e5cd9111e0659f1ac0f6a7db66f20403f2d657e7236096b58c62e",
+    "contentType": "image/jpeg",
+    "alt": "TJ and Gavin by Krak\u00f3w\u2019s fire-breathing dragon"
+  },
+  {
+    "id": "041",
+    "file": "041.jpg",
+    "key": "images/blog/bitcoin-film-festival/041.jpg",
+    "size": 48989,
+    "sha256": "17ce24c2d552c348506bde62914688837c2259a699f2cbe30bb2483395c17957",
+    "contentType": "image/jpeg",
+    "alt": "armor in a Krak\u00f3w museum"
+  },
+  {
+    "id": "042",
+    "file": "042.jpg",
+    "key": "images/blog/bitcoin-film-festival/042.jpg",
+    "size": 39245,
+    "sha256": "100d4da5b69b406c0517e822a0474438ab51faadfd9eec2b0a457b82bd3a4862",
+    "contentType": "image/jpeg",
+    "alt": "equestrian armor in a museum"
+  },
+  {
+    "id": "043",
+    "file": "043.jpg",
+    "key": "images/blog/bitcoin-film-festival/043.jpg",
+    "size": 50322,
+    "sha256": "8c4579541d785d139274d2ceb008d92dd965a2dfe6d03b974bb21ad1f4b515a1",
+    "contentType": "image/jpeg",
+    "alt": "a statue in Krak\u00f3w"
+  },
+  {
+    "id": "044",
+    "file": "044.jpg",
+    "key": "images/blog/bitcoin-film-festival/044.jpg",
+    "size": 52833,
+    "sha256": "d5d27142f3c13e0d9069532ffdcb7d80fa5448bfb03fda08138568f9647a6333",
+    "contentType": "image/jpeg",
+    "alt": "conference friends gathered around a guitar"
+  },
+  {
+    "id": "045",
+    "file": "045.jpg",
+    "key": "images/blog/bitcoin-film-festival/045.jpg",
+    "size": 29255,
+    "sha256": "3a23f6b2643185f7cc0a3925f3c903d8d7d89c2f6178265a3c314bb4ef3033bd",
+    "contentType": "image/jpeg",
+    "alt": "a live sketch of a seated guitarist"
+  },
+  {
+    "id": "046",
+    "file": "046.jpg",
+    "key": "images/blog/bitcoin-film-festival/046.jpg",
+    "size": 175803,
+    "sha256": "23bf070493ad2fbd52ad2c83a0af2abfd567ba0d7963c579b278205fd0ce97ab",
+    "contentType": "image/jpeg",
+    "alt": "a musician and a drawing from the lounge"
+  },
+  {
+    "id": "047",
+    "file": "047.jpg",
+    "key": "images/blog/bitcoin-film-festival/047.jpg",
+    "size": 142272,
+    "sha256": "f46400e3d0c22fd22638280e07ad335f636d2ea3e6defb51c4acc08d126dbbbc",
+    "contentType": "image/jpeg",
+    "alt": "a close view of a conference guitarist"
+  },
+  {
+    "id": "048",
+    "file": "048.jpg",
+    "key": "images/blog/bitcoin-film-festival/048.jpg",
+    "size": 181133,
+    "sha256": "e23c58f340d77be95885a4815afdefad84d35d010db0851170e36737452093f1",
+    "contentType": "image/jpeg",
+    "alt": "a guitarist playing in the Bitcoin conference lounge"
+  },
+  {
+    "id": "049",
+    "file": "049.jpg",
+    "key": "images/blog/bitcoin-film-festival/049.jpg",
+    "size": 26383,
+    "sha256": "60e50fa3fb6b238aaefb0a9a829926694eea458633d75eea19ea8ba2a76709f4",
+    "contentType": "image/jpeg",
+    "alt": "a sketch of a guitarist"
+  },
+  {
+    "id": "050",
+    "file": "050.jpg",
+    "key": "images/blog/bitcoin-film-festival/050.jpg",
+    "size": 25658,
+    "sha256": "1d4e86034b278c15d8496057ade5ec5009a41fd7e1926f27f07b63a55064cd12",
+    "contentType": "image/jpeg",
+    "alt": "a late-night festival gathering"
+  },
+  {
+    "id": "051",
+    "file": "051.jpg",
+    "key": "images/blog/bitcoin-film-festival/051.jpg",
+    "size": 51765,
+    "sha256": "ee0a4489bfe9b3c7ad90e7720357f3e8874f7df34da49032b45245b18ba3a043",
+    "contentType": "image/jpeg",
+    "alt": "a rock band performing after the conference"
+  },
+  {
+    "id": "052",
+    "file": "052.jpg",
+    "key": "images/blog/bitcoin-film-festival/052.jpg",
+    "size": 64860,
+    "sha256": "620543d5191930742f5854d3fd32774443fed74d9be1e1d9bdf68969d6ab1750",
+    "contentType": "image/jpeg",
+    "alt": "a peacock roaming a Prague park"
+  },
+  {
+    "id": "053",
+    "file": "053.jpg",
+    "key": "images/blog/bitcoin-film-festival/053.jpg",
+    "size": 29964,
+    "sha256": "b63b410829c90f1f5888e9c6007e965703c2250c68fca85dde7100cb4776694a",
+    "contentType": "image/jpeg",
+    "alt": "a sketch of a peacock from life"
+  },
+  {
+    "id": "054",
+    "file": "054.jpg",
+    "key": "images/blog/bitcoin-film-festival/054.jpg",
+    "size": 71773,
+    "sha256": "088b25e75d34809be7f8db73f1b200d5cb55041cbb7e26c3b96180cabada1b5e",
+    "contentType": "image/jpeg",
+    "alt": "a muskrat coming out of the river"
+  },
+  {
+    "id": "055",
+    "file": "055.jpg",
+    "key": "images/blog/bitcoin-film-festival/055.jpg",
+    "size": 49031,
+    "sha256": "e1b35c9a56c1ad82ba2699dcfe132b54160e56faf900c21367855c0f110bfcd6",
+    "contentType": "image/jpeg",
+    "alt": "TJ and Gavin in Krak\u00f3w\u2019s main square"
+  },
+  {
+    "id": "056",
+    "file": "056.jpg",
+    "key": "images/blog/bitcoin-film-festival/056.jpg",
+    "size": 31400,
+    "sha256": "7af91c7e9311329d5d344133cdf7f5ff841d6b4234df13dcc06513520ab06ccc",
+    "contentType": "image/jpeg",
+    "alt": "a conference speaker onstage"
+  },
+  {
+    "id": "057",
+    "file": "057.jpg",
+    "key": "images/blog/bitcoin-film-festival/057.jpg",
+    "size": 27535,
+    "sha256": "83460d5761da1849423393996fb9cb5e98124bbecbc2ff49be5a939f0b84c5af",
+    "contentType": "image/jpeg",
+    "alt": "a sketch of a conference speaker"
+  },
+  {
+    "id": "058",
+    "file": "058.jpg",
+    "key": "images/blog/bitcoin-film-festival/058.jpg",
+    "size": 68791,
+    "sha256": "f1fe3c1fcad7a0e98a4252d62155eb6e6d798647e06dc208fcef8edaa274e704",
+    "contentType": "image/jpeg",
+    "alt": "a portrait sketch from the conference"
+  },
+  {
+    "id": "059",
+    "file": "059.jpg",
+    "key": "images/blog/bitcoin-film-festival/059.jpg",
+    "size": 32504,
+    "sha256": "9914d178bbe72035c5320564ed378bade82db9f4f1e02ecd9921516f36dc66f0",
+    "contentType": "image/jpeg",
+    "alt": "a portrait of a musician at the conference"
+  },
+  {
+    "id": "060",
+    "file": "060.jpg",
+    "key": "images/blog/bitcoin-film-festival/060.jpg",
+    "size": 72610,
+    "sha256": "027cd11f255d03cba060a0aca3feafc0b8996d8f3bd69ca207a6df3d54471fa2",
+    "contentType": "image/jpeg",
+    "alt": "a musician singing at an after-party"
+  },
+  {
+    "id": "061",
+    "file": "061.jpg",
+    "key": "images/blog/bitcoin-film-festival/061.jpg",
+    "size": 26857,
+    "sha256": "01634ab87794416aef9f7e5a6d150b90135b9076883b98b12a8f15352271ec02",
+    "contentType": "image/jpeg",
+    "alt": "a quick sketch of a seated musician"
+  },
+  {
+    "id": "062",
+    "file": "062.jpg",
+    "key": "images/blog/bitcoin-film-festival/062.jpg",
+    "size": 52727,
+    "sha256": "bb08fcb0845b02fa15ce55c682df4ab53199a6085cee1ff1252c56edd520f571",
+    "contentType": "image/jpeg",
+    "alt": "a guitarist performing at the conference"
+  },
+  {
+    "id": "063",
+    "file": "063.jpg",
+    "key": "images/blog/bitcoin-film-festival/063.jpg",
+    "size": 27232,
+    "sha256": "02f8890de4473a596432695e0472214148570551d0cd6998c01fe22d149fa634",
+    "contentType": "image/jpeg",
+    "alt": "another live sketch from the music lounge"
+  },
+  {
+    "id": "064",
+    "file": "064.jpg",
+    "key": "images/blog/bitcoin-film-festival/064.jpg",
+    "size": 76347,
+    "sha256": "7efc9b28bd0720a3a7a824ceb36f1ca15ff7e40bfb06ceb949e6233c846f0887",
+    "contentType": "image/jpeg",
+    "alt": "TJ in Prague"
+  },
+  {
+    "id": "065",
+    "file": "065.jpg",
+    "key": "images/blog/bitcoin-film-festival/065.jpg",
+    "size": 30539,
+    "sha256": "a3119c7ff8f21f06f63f4dfcd09bf9ef1bfe80084fff59a0b13268be458d6833",
+    "contentType": "image/jpeg",
+    "alt": "a portrait sketch from the conference"
+  },
+  {
+    "id": "066",
+    "file": "066.jpg",
+    "key": "images/blog/bitcoin-film-festival/066.jpg",
+    "size": 47092,
+    "sha256": "cf0416f3adfcfa9535b86c12184c4178fce8d2a600ca4cdd26f9242b8db5e9b2",
+    "contentType": "image/jpeg",
+    "alt": "a city monument among the festival crowds"
+  },
+  {
+    "id": "067",
+    "file": "067.jpg",
+    "key": "images/blog/bitcoin-film-festival/067.jpg",
+    "size": 32486,
+    "sha256": "93cb876ab32b8613584e2819ab57aed5abe815d2246b52bdb8ebc2cfdefd0efa",
+    "contentType": "image/jpeg",
+    "alt": "a bearded conference guest in the sketchbook"
+  },
+  {
+    "id": "068",
+    "file": "068.jpg",
+    "key": "images/blog/bitcoin-film-festival/068.jpg",
+    "size": 46049,
+    "sha256": "1316f35f13d7568cb185853ba5e82a4eb08ed58f0b71ce31e53a8283faed719d",
+    "contentType": "image/jpeg",
+    "alt": "a festival conversation with a friend"
+  },
+  {
+    "id": "069",
+    "file": "069.jpg",
+    "key": "images/blog/bitcoin-film-festival/069.jpg",
+    "size": 26973,
+    "sha256": "6d0f69bc3ad37a9925d979338b864a2b6e8e190d6a5a86b9151c9eb403672f91",
+    "contentType": "image/jpeg",
+    "alt": "a portrait study from life"
+  },
+  {
+    "id": "070",
+    "file": "070.jpg",
+    "key": "images/blog/bitcoin-film-festival/070.jpg",
+    "size": 51356,
+    "sha256": "ecf152d4c4692c9d26e99bbb1114fb5424d93c155a5b3b7e2335a1af56a5e6c9",
+    "contentType": "image/jpeg",
+    "alt": "a musician on a Warsaw street"
+  },
+  {
+    "id": "071",
+    "file": "071.jpg",
+    "key": "images/blog/bitcoin-film-festival/071.jpg",
+    "size": 27321,
+    "sha256": "c0f3cfca0867d6d1269beb7d33cce54d6076f5455d732e9a8662633d86129580",
+    "contentType": "image/jpeg",
+    "alt": "a bearded musician in the sketchbook"
+  },
+  {
+    "id": "072",
+    "file": "072.jpg",
+    "key": "images/blog/bitcoin-film-festival/072.jpg",
+    "size": 69137,
+    "sha256": "64a8a5003e230db4fbab4e1798198eb3bb36b19788258de171369cf62e6021fc",
+    "contentType": "image/jpeg",
+    "alt": "a classical music performance in Warsaw"
+  },
+  {
+    "id": "073",
+    "file": "073.jpg",
+    "key": "images/blog/bitcoin-film-festival/073.jpg",
+    "size": 55719,
+    "sha256": "ecbfe45a6bde9abc2d66aea2ce923023f7e960b8f5e0d37a1b903d35da684ba1",
+    "contentType": "image/jpeg",
+    "alt": "a Proof of Walk gathering in Prague"
+  }
+]
