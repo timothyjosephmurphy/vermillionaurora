@@ -121,3 +121,13 @@ body.full .site-header{display:none}
 
 /* Film now lives in the homepage About carousel; keep shared top navigation consistent. */
 .site-header .main-nav a[href$="#film"] { display:none; }
+
+/* Mobile: the whole header (title, nav, and commission button) hides while scrolling
+   down and returns on scroll up; site-header.js toggles .is-scroll-hidden. The sticky
+   header keeps its place in the page flow, so content never jumps. Desktop is unchanged. */
+@media(max-width:980px){
+  .site-header{transition:transform .28s ease}
+  .site-header.is-scroll-hidden{transform:translateY(-100%)}
+  .site-header.is-scroll-hidden:has(:focus-visible){transform:none}
+}
+@media(max-width:980px) and (prefers-reduced-motion:reduce){.site-header{transition:none}}
