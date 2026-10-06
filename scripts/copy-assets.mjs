@@ -46,7 +46,12 @@ async function addCartAssets(dir) {
     if(entry.isDirectory())await addCartAssets(path);
     else if(entry.name.endsWith('.html')) {
       const html=await readFile(path,'utf8');
-      if(html.includes('class="site-header"')&&!html.includes('src="/payments/cart.js"'))await writeFile(path,html.replace('</head>','<link rel="stylesheet" href="/payments/cart.css"><script src="/payments/cart.js" defer></script></head>'));
+      if(!html.includes('class="site-header"'))continue;
+      let next=html;
+      if(!next.includes('src="/payments/cart.js"'))next=next.replace('</head>','<link rel="stylesheet" href="/payments/cart.css"><script src="/payments/cart.js" defer></script></head>');
+      // Remaining static pages also get the shared mobile hide-on-scroll header script.
+      if(!next.includes('src="/site-header.js"'))next=next.replace('</head>','<script src="/site-header.js" defer></script></head>');
+      if(next!==html)await writeFile(path,next);
     }
   }
 }
