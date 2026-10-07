@@ -2,13 +2,14 @@
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { byId, catalogVersion, urlFor, priceLabel, statusLabel, dimensionLabel } from '../../../catalog/catalog.mjs';
+import { artworkAlt } from '../../data/artwork-alt.mjs';
 import collections from '../../../catalog/collections.json';
 ---
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Vermillion Aurora Productions</title>
-    <meta name="description" content="Vermillion Aurora Productions creates fine art, custom portrait commissions, and collectible original works.">
+    <title>Gallery | Watercolor Paintings by TJ Murphy, Seattle Artist</title>
+    <meta name="description" content="Watercolor pastel paintings by Seattle artist TJ Murphy: Pacific Northwest landscapes, portraits and travel scenes, with originals, prints and commissions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -25,7 +26,7 @@ import collections from '../../../catalog/collections.json';
           <div class="container">
             <div class="section-heading">
               <p class="eyebrow dark">Gallery</p>
-              <h1>Paintings</h1>
+              <h1>Paintings by TJ Murphy</h1>
             </div>
 
             <div data-gallery-list>
@@ -47,7 +48,7 @@ import collections from '../../../catalog/collections.json';
                   const p=byId[entry.product],status=statusLabel(p),url=urlFor(p);
                   const area=p.dimensions?p.dimensions.width*p.dimensions.height/(p.dimensions.unit==='cm'?2.54**2:1):undefined;
                   return <li class="painting-list-row" data-product-id={p.id} data-availability={status} data-price={p.listing.price?.amount} data-area={area}>
-                    <a href={url} class="gallery-product-image" aria-label={`View ${p.title}`} tabindex="-1"><img src={p.image.src} alt={p.image.alt||p.title} loading="lazy" decoding="async" width={p.image.width} height={p.image.height} /></a>
+                    <a href={url} class="gallery-product-image" aria-label={`View ${p.title}`} tabindex="-1"><img src={p.image.src} alt={artworkAlt(p)} loading="lazy" decoding="async" width={p.image.width} height={p.image.height} /></a>
                     <h3><a href={url} class="product-title-link">{p.title}</a></h3>
                     <p class="painting-list-dimensions">{dimensionLabel(p)}</p>
                     <p class="painting-list-price" data-card-price>{p.listing.status==='available'?priceLabel(p):status}</p>

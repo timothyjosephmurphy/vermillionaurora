@@ -2,7 +2,8 @@
 <html lang="en"><head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About TJ Murphy | Vermillion Aurora studio</title>
+    <script type="application/ld+json" data-source="src/data/structured-data.mjs">{"@context":"https://schema.org","@type":["Person","VisualArtist"],"@id":"https://vermillionaurora.com/#tj-murphy","name":"TJ Murphy","alternateName":"Timothy Joseph Murphy","jobTitle":"Watercolor artist","description":"Seattle watercolor artist TJ Murphy paints Pacific Northwest light, travel scenes, portraits and murals in watercolor pastel.","url":"https://vermillionaurora.com/about/","image":"https://vermillionaurora.com/about/images/tj-murphy-portrait.jpg","homeLocation":{"@type":"Place","name":"Seattle, Washington"},"brand":{"@type":"Brand","name":"Vermillion Aurora"},"sameAs":["https://www.instagram.com/tj_de_la_playa/","https://www.facebook.com/profile.php?id=61594734493796","https://x.com/tj_de_la_playa","https://njump.me/npub10m0uf224v7tly6k6h8gl6kkmuhmx7969gmudmmhqj5pv65e03r9sxsumee"]}</script>
+    <title>About TJ Murphy | Seattle Watercolor Artist</title>
     <meta
       name="description"
       content="Meet TJ Murphy, a Seattle artist exploring light, color, and expression through watercolor, portraits, and outdoor acrylic murals."
@@ -122,13 +123,13 @@
   </div>
   <details class="portfolio-reader">
     <summary>Read the portfolio on this page</summary>
-    <iframe src="/about/portfolio/TJ-Murphy-Artist-Portfolio-2026.pdf#view=FitH" title="TJ Murphy artist portfolio, 2026" loading="lazy"></iframe>
+    <iframe data-src="/about/portfolio/TJ-Murphy-Artist-Portfolio-2026.pdf#view=FitH" title="TJ Murphy artist portfolio, 2026" loading="lazy"></iframe>
   </details>
 </section>
 <div class="documentary-feature">
 <h2>Coined in Watercolor</h2>
 <p>Gavin Robertson’s documentary, <em>Coined in Watercolor: The Art of Going All In</em>, follows my journey into art.</p>
-<div class="video-frame"><iframe src="https://www.youtube.com/embed/i7tvzE_bqM8" title="Coined in Watercolor: The Art of Going All In" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="video-frame"><button type="button" class="video-facade" data-youtube="i7tvzE_bqM8" data-title="Coined in Watercolor: The Art of Going All In" aria-label="Play video: Coined in Watercolor: The Art of Going All In"><img src="https://i.ytimg.com/vi/i7tvzE_bqM8/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360"><span class="video-facade-play" aria-hidden="true"></span></button><noscript><a href="https://www.youtube.com/watch?v=i7tvzE_bqM8">Watch Coined in Watercolor on YouTube</a></noscript></div>
 </div>
 </section><div class="artist-links"><a class="button button-solid" href="/commissions/#form">Discuss a commission</a><a class="button button-ghost" href="/murals/">Explore the murals</a></div>
 </article></main><footer class="site-footer">
@@ -144,4 +145,10 @@
             <a href="/commissions/#form">Contact</a><a href="/shipping-returns/">Shipping &amp; returns</a><a href="/privacy/">Privacy</a>
           </div>
         </div>
-      </footer></div></body></html>
+      </footer></div><style>.video-facade{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#1d1a17;cursor:pointer;overflow:hidden;border-radius:inherit}.video-facade img{width:100%;height:100%;object-fit:cover;display:block}.video-facade-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#d34220}.video-facade-play::after{content:"";position:absolute;left:28px;top:14px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}.video-facade:focus-visible{outline:3px solid #d34220;outline-offset:3px}</style>
+<script>
+// Load heavy embeds only when asked: the portfolio PDF when its reader opens, YouTube on play.
+document.querySelectorAll('.portfolio-reader').forEach(d=>d.addEventListener('toggle',()=>{const f=d.querySelector('iframe[data-src]');if(d.open&&f&&!f.src)f.src=f.dataset.src;}));
+document.querySelectorAll('.video-facade').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src=`https://www.youtube-nocookie.com/embed/${b.dataset.youtube}?autoplay=1`;f.title=b.dataset.title;f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.style.cssText='width:100%;aspect-ratio:16/9;border:0;display:block';b.replaceWith(f);f.focus();}));
+</script>
+</body></html>
