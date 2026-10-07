@@ -56,8 +56,10 @@ try {
  await page.locator('#available-only').check();assert.equal(await page.locator('.painting-list-row:visible').count(),0);assert(await page.locator('.gallery-empty').isVisible());assert(await page.locator('.exhibition-viewer').isHidden());
  await page.locator('#available-only').uncheck();assert(await page.locator('.exhibition-viewer').isVisible());
  await page.goto(origin+'/');await page.waitForFunction(()=>document.querySelector('.available-paintings-carousel .ex-track').children.length===0);
- const homeCarousel=collections.home.filter(e=>e.variant==='carousel').length;
- assert.equal(await page.locator('.collector-items-carousel .product-card').count(),Math.min(8,homeCarousel));
+ const availableCount=collections.home.filter(e=>e.variant==='carousel'&&['available','inquiry'].includes(byId[e.product].listing?.status)).length;
+ const collectorPreview=Math.min(8,collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).length);
+ // Live availability moves sold available cards into the collectors track; preview cap only limits the static sold set.
+ assert.equal(await page.locator('.collector-items-carousel .product-card').count(),collectorPreview+availableCount);
  assert(await page.locator('.collector-archive-link a[href="/gallery/"]').count());
  allSold=false;
  await page.goto(origin+'/products/painting-portrait-in-green/');await page.getByText('Sold',{exact:true}).waitFor();await page.screenshot({path:'/tmp/catalog-preview/product-mobile.png',fullPage:true});
