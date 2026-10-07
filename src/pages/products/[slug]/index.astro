@@ -5,6 +5,8 @@ import ProductShare from '../../../components/ProductShare.astro';
 import PurchaseReassurance from '../../../components/PurchaseReassurance.astro';
 import ProductLayout from '../../../layouts/ProductLayout.astro';
 import PaintingImage from '../../../components/PaintingImage.astro';
+import ReferencePhoto from '../../../components/ReferencePhoto.astro';
+import referenceMedia from '../../../../catalog/reference-media.json';
 import CommissionProcess from '../../../components/CommissionProcess.astro';
 import PrintPurchaseDialog from '../../../components/PrintPurchaseDialog.astro';
 import {originalFrameEligible,amazonFrameSearchUrl} from '../../../../catalog/frame-matching.mjs';
@@ -66,6 +68,7 @@ const facts=painting ? [
       {painting&&availablePrints.length===0&&!relatedPrints&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}
+      {painting && referenceMedia[p.id] && <ReferencePhoto media={referenceMedia[p.id]} />}
       {painting && (p.listing.status==='available' || availablePrints.length>0) && <PurchaseReassurance kind={p.listing.status==='available'?(availablePrints.length?'all':'original'):'print'}/>}
       {painting && <ProductShare product={p}/>}
       {p.type==='commission' && <CommissionProcess />}
