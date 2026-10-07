@@ -1353,55 +1353,6 @@
     ]
   },
   {
-    "id": "book-art-1be48d404e2dbf547794",
-    "slug": "book-art-1be48d404e2dbf547794",
-    "title": "Sunrise in El Zonte , El Salvador",
-    "type": "painting",
-    "artist": "TJ Murphy",
-    "bookGallery": true,
-    "eyebrow": "Travels",
-    "description": "Sunrise in El Zonte , El Salvador from TJ Murphy’s watercolor art books.",
-    "image": {
-      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1be48d404e2dbf547794.webp",
-      "alt": "Sunrise in El Zonte , El Salvador",
-      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1be48d404e2dbf547794.jpg"
-    },
-    "listing": {
-      "status": "not-for-sale"
-    },
-    "facts": [
-      {
-        "label": "Book measurements",
-        "value": "25 × 15 — unit not specified in book"
-      }
-    ],
-    "story": [],
-    "back": {
-      "href": "/book-galleries/watercolor-landscapes-travels/",
-      "label": "← Back to Travels"
-    },
-    "inquiry": {
-      "label": "Contact the artist",
-      "note": ""
-    },
-    "bookSources": [
-      {
-        "book": "watercolor-landscapes",
-        "pages": [
-          41
-        ],
-        "xref": 585,
-        "captions": [
-          "Sunrise in El Zonte , El Salvador",
-          "25x15"
-        ],
-        "measurements": [
-          "25x15"
-        ]
-      }
-    ]
-  },
-  {
     "id": "book-art-9b6b4f1ce8b283e14b21",
     "slug": "book-art-9b6b4f1ce8b283e14b21",
     "title": "Sunrise from Punto El Zonte Hostel, El Salvador — 2",

@@ -19,7 +19,7 @@ let objects, insuredRate, insuredShipment;
 beforeEach(() => {
   calls = []; objects = []; transaction = success; pollTransaction = success;
   insuredRate = {object_id:'INS_RATE',shipment:'INS_SHIPMENT',currency:'USD',amount:'5.75',included_insurance_price:'0.75',provider:'USPS',servicelevel:{name:'Ground Advantage'}};
-  insuredShipment = {object_id:'INS_SHIPMENT',extra:{insurance:{amount:'20.00',currency:'USD',content:'Original painting: Chase Toole'}}};
+  insuredShipment = {object_id:'INS_SHIPMENT',extra:{insurance:{amount:'200.00',currency:'USD',content:'Original painting: Chase Toole'}}};
   failEmail = failPurchase = failTax = failPdf = false;
   pdfRedirect = null;
   vi.stubGlobal('fetch', vi.fn(async (url, options = {}) => {
@@ -252,7 +252,7 @@ it('keeps the insured Chase diagnostic separate and confirms its coverage withou
   const stub = env.SHIPPING_CHECK.getByName(crypto.randomUUID()); objects.push(stub);
   await stub.start('chase-insurance');
   await runDurableObjectAlarm(stub);
-  expect(await stub.status()).toMatchObject({status:'ready',insuranceRequested:true,insuranceConfirmed:true,insuranceAmount:'20.00',pdfAttached:true});
+  expect(await stub.status()).toMatchObject({status:'ready',insuranceRequested:true,insuranceConfirmed:true,insuranceAmount:'200.00',pdfAttached:true});
   await stub.start('chase-insurance');
   expect(await runDurableObjectAlarm(stub)).toBe(false);
   expect(purchases()).toHaveLength(1);
