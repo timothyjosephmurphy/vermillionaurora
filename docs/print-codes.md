@@ -24,3 +24,7 @@ created. Not valid on commission deposits. To rotate it, replace `OWNER_CODE_HAS
 
 Print-lab orders are still placed and checked at the listed retail price, so the provider price guard is unchanged; the
 receipt records `printCode.kind` and the list total.
+
+## PayPal
+PayPal is hidden by `PAYPAL_DEPRECATED: "true"` in both Worker configs (the sandbox keeps `PAYPAL_CHECKOUT_ENABLED: "true"` because its
+deploy workflow requires it). Remove `PAYPAL_DEPRECATED` (and set production `PAYPAL_CHECKOUT_ENABLED` back to `"true"`) to restore PayPal.

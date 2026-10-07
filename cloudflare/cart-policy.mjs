@@ -31,7 +31,8 @@ export function paymentMethods(env,id) {
     else if(env.PRINT_PROVIDER==='finerworks'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.PAYPAL_MODE)return [];
   } else if(!env.SHIPPO_TOKEN||!env.SHIP_FROM_STREET||!Object.hasOwn(catalog,id)||catalog[id].available===false)return [];
   const methods=[];
-  if(env.PAYPAL_CHECKOUT_ENABLED==='true'&&(print||listed(env.PAYPAL_CHECKOUT_SLUGS,id))&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');
+  // PAYPAL_DEPRECATED="true" hides PayPal everywhere (cards via Square, Bitcoin via BTCPay) without touching credentials.
+  if(env.PAYPAL_DEPRECATED!=='true'&&env.PAYPAL_CHECKOUT_ENABLED==='true'&&(print||listed(env.PAYPAL_CHECKOUT_SLUGS,id))&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');
   if(print?!print.sampleOnly&&printBitcoinOffered(env):bitcoinOffered(env,id))methods.push('bitcoin');
   if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.PAYPAL_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&
     (env.SQUARE_CHECKOUT_ALL==='true'||listed(env.SQUARE_CHECKOUT_SLUGS,id))&&env.SQUARE_ACCESS_TOKEN&&env.SQUARE_APPLICATION_ID&&env.SQUARE_LOCATION_ID&&env.SQUARE_WEBHOOK_SIGNATURE_KEY&&env.SQUARE_WEBHOOK_URL&&
@@ -43,7 +44,7 @@ export function paymentMethods(env,id) {
 export function depositMethods(env) {
   if(env.COMMISSION_DEPOSITS_ENABLED!=='true'||env.COMMISSION_DEPOSITS_PAUSED==='true')return [];
   const methods=[];
-  if(env.PAYPAL_CHECKOUT_ENABLED==='true'&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');
+  if(env.PAYPAL_DEPRECATED!=='true'&&env.PAYPAL_CHECKOUT_ENABLED==='true'&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');
   if(printBitcoinOffered(env))methods.push('bitcoin');
   if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.PAYPAL_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&env.SQUARE_CHECKOUT_ALL==='true'&&
     env.SQUARE_ACCESS_TOKEN&&env.SQUARE_APPLICATION_ID&&env.SQUARE_LOCATION_ID&&env.SQUARE_WEBHOOK_SIGNATURE_KEY&&env.SQUARE_WEBHOOK_URL&&
