@@ -13,13 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const packageDefaults = {
     'single-portrait': { size: '9 × 12 inches', label: 'Single portrait' },
     'double-portrait': { size: '12 × 9 inches', label: 'Double portrait' },
-    'small-landscape': { size: '12 × 15 inches', label: 'Small landscape' }
+    'small-landscape-12x15': { size: '12 × 15 inches', label: 'Landscape (12 × 15 in)' },
+    'small-landscape-24x15': { size: '24 × 15 inches', label: 'Landscape (24 × 15 in)' },
+    'small-landscape-24x48': { size: '24 × 48 inches', label: 'Landscape (24 × 48 in)' }
   };
+  // Sized packages use "<package>-<size>" option values; ?package=small-landscape&size=24x15 selects one.
+  const sizeParam = params.get('size');
+  const packageValue = packageSlug && packageSelect && ![...packageSelect.options].some(o => o.value === packageSlug)
+    ? ([...packageSelect.options].find(o => o.value === packageSlug + '-' + (sizeParam || ''))
+      || [...packageSelect.options].find(o => o.value.startsWith(packageSlug + '-')))?.value
+    : packageSlug;
 
-  if (packageSlug && packageSelect) {
-    const option = [...packageSelect.options].find(entry => entry.value === packageSlug);
-    if (option) packageSelect.value = packageSlug;
-    const defaults = packageDefaults[packageSlug];
+  if (packageValue && packageSelect) {
+    const option = [...packageSelect.options].find(entry => entry.value === packageValue);
+    if (option) packageSelect.value = packageValue;
+    const defaults = packageDefaults[packageValue];
     if (defaults) {
       if (sizeInput && !sizeInput.value) sizeInput.value = defaults.size;
       if (message && !message.value) {
@@ -61,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (packageSelect && message) {
     packageSelect.addEventListener('change', () => {
       const defaults = packageDefaults[packageSelect.value];
-      if (defaults && sizeInput && !sizeInput.value) sizeInput.value = defaults.size;
+      // Sized packages always show their own size; other packages only fill an empty field.
+      if (defaults && sizeInput && (!sizeInput.value || /^Landscape/.test(defaults.label) || Object.values(packageDefaults).some(d => d.size === sizeInput.value))) sizeInput.value = defaults.size;
     });
   }
 

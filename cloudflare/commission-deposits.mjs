@@ -18,13 +18,34 @@ export default {
     "amount": "100.00",
     "currency": "USD"
   },
-  "deposit-small-landscape": {
+  "deposit-small-landscape-12x15": {
     "type": "deposit",
     "package": "small-landscape",
-    "title": "Commission deposit – Small landscape (50%)",
-    "packageTitle": "Small landscape",
-    "packagePrice": "199.00",
-    "amount": "99.50",
+    "option": "12x15",
+    "title": "Commission deposit – Landscape 12 × 15 in (50%)",
+    "packageTitle": "Landscape 12 × 15 in",
+    "packagePrice": "250.00",
+    "amount": "125.00",
+    "currency": "USD"
+  },
+  "deposit-small-landscape-24x15": {
+    "type": "deposit",
+    "package": "small-landscape",
+    "option": "24x15",
+    "title": "Commission deposit – Landscape 24 × 15 in (50%)",
+    "packageTitle": "Landscape 24 × 15 in",
+    "packagePrice": "450.00",
+    "amount": "225.00",
+    "currency": "USD"
+  },
+  "deposit-small-landscape-24x48": {
+    "type": "deposit",
+    "package": "small-landscape",
+    "option": "24x48",
+    "title": "Commission deposit – Landscape 24 × 48 in (50%)",
+    "packageTitle": "Landscape 24 × 48 in",
+    "packagePrice": "1000.00",
+    "amount": "500.00",
     "currency": "USD"
   }
 };

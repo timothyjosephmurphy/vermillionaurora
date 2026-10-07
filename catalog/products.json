@@ -4501,22 +4501,72 @@
     "id": "small-landscape",
     "slug": "small-landscape",
     "type": "commission",
-    "title": "Small landscape",
-    "description": "12\u00d715 landscape featuring atmosphere, horizon, and emotional context.",
+    "title": "Landscape",
+    "description": "Watercolor pastel landscape featuring atmosphere, horizon, and emotional context, in three sizes.",
     "eyebrow": "Commission",
     "artist": "TJ Murphy",
     "listing": {
       "status": "inquiry",
       "price": {
-        "amount": "199.00",
+        "amount": "250.00",
         "currency": "USD",
-        "from": false
+        "from": true
       }
     },
-    "story": [
-      "12\u00d715 landscape featuring atmosphere, horizon, and emotional context."
+    "options": [
+      {
+        "id": "12x15",
+        "label": "12 \u00d7 15 in",
+        "amount": "250.00"
+      },
+      {
+        "id": "24x15",
+        "label": "24 \u00d7 15 in",
+        "amount": "450.00"
+      },
+      {
+        "id": "24x48",
+        "label": "24 \u00d7 48 in",
+        "amount": "1000.00"
+      }
     ],
-    "examples": [],
+    "story": [
+      "Watercolor pastel landscape featuring atmosphere, horizon, and emotional context. Choose 12\u00d715 in ($250), 24\u00d715 in ($450), or 24\u00d748 in ($1,000)."
+    ],
+    "examples": [
+      {
+        "src": "/gallery-images/golden-coast.jpg",
+        "alt": "Sunset in Puget Sound from San Juan Island, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/moonlit-water.jpg",
+        "alt": "Moonrise in the North Cascades, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/portrait-with-hat.jpg",
+        "alt": "Sunrise on Rainier with Eagle, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/sunset-silhouette.jpg",
+        "alt": "Sunset on Sucia Island in Puget Sound, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/el-salvador-sunrise.jpeg",
+        "alt": "El Zonte at Sunrise, El Salvador, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/golden-reflection.jpg",
+        "alt": "Sunset from La Libertad, El Salvador, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/red-horizon.jpg",
+        "alt": "Maui Sunset from Kihei, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/two-soldiers.jpg",
+        "alt": "Rice Paddy in Vietnam, watercolor pastel landscape by TJ Murphy"
+      }
+    ],
     "galleryDescription": "",
     "inquiry": {
       "label": "Discuss this commission",
