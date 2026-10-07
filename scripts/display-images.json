@@ -1,17 +1,48 @@
 {
+ "/exhibitions/bitcoin-film-festival-warsaw/images/three-festival-paintings.jpeg": {
+  "original": 216659,
+  "width": 1024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/three-festival-paintings-a32cf5c6b9-160.webp",
+    "bytes": 2788
+   },
+   {
+    "w": 480,
+    "src": "/display/three-festival-paintings-a32cf5c6b9-480.webp",
+    "bytes": 16222
+   },
+   {
+    "w": 960,
+    "src": "/display/three-festival-paintings-a32cf5c6b9-960.webp",
+    "bytes": 45144
+   },
+   {
+    "w": 1024,
+    "src": "/display/three-festival-paintings-a32cf5c6b9-1024.webp",
+    "bytes": 50308
+   }
+  ]
+ },
  "/exhibitions/studio-601-hero.png": {
   "original": 685232,
   "width": 586,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/studio-601-hero-13846b0f0d-160.webp",
+    "bytes": 5786
+   },
+   {
     "w": 480,
     "src": "/display/studio-601-hero-13846b0f0d-480.webp",
-    "bytes": 28654
+    "bytes": 25204
    },
    {
     "w": 586,
     "src": "/display/studio-601-hero-13846b0f0d-586.webp",
-    "bytes": 36748
+    "bytes": 31804
    }
   ]
  },
@@ -20,14 +51,19 @@
   "width": 770,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/victrola-hero-0bc3d16596-160.webp",
+    "bytes": 4120
+   },
+   {
     "w": 480,
     "src": "/display/victrola-hero-0bc3d16596-480.webp",
-    "bytes": 25316
+    "bytes": 21784
    },
    {
     "w": 770,
     "src": "/display/victrola-hero-0bc3d16596-770.webp",
-    "bytes": 49480
+    "bytes": 41828
    }
   ]
  },
@@ -36,14 +72,19 @@
   "width": 724,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/coined-in-watercolor-film-poster-7c882f193a-160.webp",
+    "bytes": 6538
+   },
+   {
     "w": 480,
     "src": "/display/coined-in-watercolor-film-poster-7c882f193a-480.webp",
-    "bytes": 43378
+    "bytes": 34988
    },
    {
     "w": 724,
     "src": "/display/coined-in-watercolor-film-poster-7c882f193a-724.webp",
-    "bytes": 85724
+    "bytes": 68506
    }
   ]
  },
@@ -52,19 +93,24 @@
   "width": 1092,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/couple-in-color-98b1df4998-160.webp",
+    "bytes": 4040
+   },
+   {
     "w": 480,
     "src": "/display/couple-in-color-98b1df4998-480.webp",
-    "bytes": 37214
+    "bytes": 31070
    },
    {
     "w": 960,
     "src": "/display/couple-in-color-98b1df4998-960.webp",
-    "bytes": 110408
+    "bytes": 91386
    },
    {
     "w": 1092,
     "src": "/display/couple-in-color-98b1df4998-1092.webp",
-    "bytes": 133954
+    "bytes": 110406
    }
   ]
  },
@@ -73,14 +119,19 @@
   "width": 803,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/el-salvador-sunrise-73351c7989-160.webp",
+    "bytes": 4852
+   },
+   {
     "w": 480,
     "src": "/display/el-salvador-sunrise-73351c7989-480.webp",
-    "bytes": 63388
+    "bytes": 49406
    },
    {
     "w": 803,
     "src": "/display/el-salvador-sunrise-73351c7989-803.webp",
-    "bytes": 147242
+    "bytes": 124844
    }
   ]
  },
@@ -89,14 +140,19 @@
   "width": 744,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/embrace-b27514e878-160.webp",
+    "bytes": 7094
+   },
+   {
     "w": 480,
     "src": "/display/embrace-b27514e878-480.webp",
-    "bytes": 71554
+    "bytes": 58942
    },
    {
     "w": 744,
     "src": "/display/embrace-b27514e878-744.webp",
-    "bytes": 145438
+    "bytes": 122984
    }
   ]
  },
@@ -105,19 +161,45 @@
   "width": 1134,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/esperanza-hero-aba277665d-160.webp",
+    "bytes": 3528
+   },
+   {
     "w": 480,
     "src": "/display/esperanza-hero-aba277665d-480.webp",
-    "bytes": 28356
+    "bytes": 22970
    },
    {
     "w": 960,
     "src": "/display/esperanza-hero-aba277665d-960.webp",
-    "bytes": 76006
+    "bytes": 64774
    },
    {
     "w": 1134,
     "src": "/display/esperanza-hero-aba277665d-1134.webp",
-    "bytes": 91792
+    "bytes": 78528
+   }
+  ]
+ },
+ "/gallery-images/gavin-and-i-in-cape-town.png": {
+  "original": 1035410,
+  "width": 776,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/gavin-and-i-in-cape-town-d1d48a99f9-160.webp",
+    "bytes": 3252
+   },
+   {
+    "w": 480,
+    "src": "/display/gavin-and-i-in-cape-town-d1d48a99f9-480.webp",
+    "bytes": 31484
+   },
+   {
+    "w": 776,
+    "src": "/display/gavin-and-i-in-cape-town-d1d48a99f9-776.webp",
+    "bytes": 74656
    }
   ]
  },
@@ -126,19 +208,24 @@
   "width": 1060,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/honeybadger-and-cub-ae2a98cf59-160.webp",
+    "bytes": 5034
+   },
+   {
     "w": 480,
     "src": "/display/honeybadger-and-cub-ae2a98cf59-480.webp",
-    "bytes": 52506
+    "bytes": 41852
    },
    {
     "w": 960,
     "src": "/display/honeybadger-and-cub-ae2a98cf59-960.webp",
-    "bytes": 181456
+    "bytes": 148080
    },
    {
     "w": 1060,
     "src": "/display/honeybadger-and-cub-ae2a98cf59-1060.webp",
-    "bytes": 212754
+    "bytes": 178446
    }
   ]
  },
@@ -147,14 +234,19 @@
   "width": 618,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/phoenix-rising-2640661d6a-160.webp",
+    "bytes": 7908
+   },
+   {
     "w": 480,
     "src": "/display/phoenix-rising-2640661d6a-480.webp",
-    "bytes": 66446
+    "bytes": 50950
    },
    {
     "w": 618,
     "src": "/display/phoenix-rising-2640661d6a-618.webp",
-    "bytes": 111628
+    "bytes": 86996
    }
   ]
  },
@@ -163,14 +255,19 @@
   "width": 808,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/portrait-in-green-f8263a9d41-160.webp",
+    "bytes": 5586
+   },
+   {
     "w": 480,
     "src": "/display/portrait-in-green-f8263a9d41-480.webp",
-    "bytes": 70558
+    "bytes": 59192
    },
    {
     "w": 808,
     "src": "/display/portrait-in-green-f8263a9d41-808.webp",
-    "bytes": 166846
+    "bytes": 143058
    }
   ]
  },
@@ -179,19 +276,24 @@
   "width": 1186,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/sunset-silhouette-a29846643f-160.webp",
+    "bytes": 1682
+   },
+   {
     "w": 480,
     "src": "/display/sunset-silhouette-a29846643f-480.webp",
-    "bytes": 15024
+    "bytes": 11550
    },
    {
     "w": 960,
     "src": "/display/sunset-silhouette-a29846643f-960.webp",
-    "bytes": 46458
+    "bytes": 36494
    },
    {
     "w": 1186,
     "src": "/display/sunset-silhouette-a29846643f-1186.webp",
-    "bytes": 65364
+    "bytes": 52010
    }
   ]
  },
@@ -200,19 +302,24 @@
   "width": 1046,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/warszawska-syrenka-34226c70a3-160.webp",
+    "bytes": 5990
+   },
+   {
     "w": 480,
     "src": "/display/warszawska-syrenka-34226c70a3-480.webp",
-    "bytes": 71080
+    "bytes": 42996
    },
    {
     "w": 960,
     "src": "/display/warszawska-syrenka-34226c70a3-960.webp",
-    "bytes": 312762
+    "bytes": 209892
    },
    {
     "w": 1046,
     "src": "/display/warszawska-syrenka-34226c70a3-1046.webp",
-    "bytes": 354036
+    "bytes": 254142
    }
   ]
  },
@@ -221,14 +328,19 @@
   "width": 600,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/cover-2d93b7edbc-160.webp",
+    "bytes": 7042
+   },
+   {
     "w": 480,
     "src": "/display/cover-2d93b7edbc-480.webp",
-    "bytes": 80022
+    "bytes": 66626
    },
    {
     "w": 600,
     "src": "/display/cover-2d93b7edbc-600.webp",
-    "bytes": 123584
+    "bytes": 103308
    }
   ]
  },
@@ -237,14 +349,19 @@
   "width": 686,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/cover-834e2de94a-160.webp",
+    "bytes": 6756
+   },
+   {
     "w": 480,
     "src": "/display/cover-834e2de94a-480.webp",
-    "bytes": 51302
+    "bytes": 43314
    },
    {
     "w": 686,
     "src": "/display/cover-834e2de94a-686.webp",
-    "bytes": 80060
+    "bytes": 68450
    }
   ]
  },
@@ -253,19 +370,24 @@
   "width": 2853,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-3616ce0fc2-160.webp",
+    "bytes": 3320
+   },
+   {
     "w": 480,
     "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-3616ce0fc2-480.webp",
-    "bytes": 30968
+    "bytes": 25012
    },
    {
     "w": 960,
     "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-3616ce0fc2-960.webp",
-    "bytes": 119610
+    "bytes": 98710
    },
    {
     "w": 1600,
     "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-3616ce0fc2-1600.webp",
-    "bytes": 248690
+    "bytes": 206044
    }
   ]
  },
@@ -274,19 +396,622 @@
   "width": 4284,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/img-0102-3de0be0118-160.webp",
+    "bytes": 6558
+   },
+   {
     "w": 480,
     "src": "/display/img-0102-3de0be0118-480.webp",
-    "bytes": 47358
+    "bytes": 39226
    },
    {
     "w": 960,
     "src": "/display/img-0102-3de0be0118-960.webp",
-    "bytes": 159170
+    "bytes": 130452
    },
    {
     "w": 1600,
     "src": "/display/img-0102-3de0be0118-1600.webp",
-    "bytes": 360136
+    "bytes": 298178
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0107.jpeg": {
+  "original": 4453741,
+  "width": 4284,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0107-9b4e24da78-160.webp",
+    "bytes": 6488
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0107-9b4e24da78-480.webp",
+    "bytes": 39570
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0107-9b4e24da78-960.webp",
+    "bytes": 130040
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0107-9b4e24da78-1600.webp",
+    "bytes": 269604
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0313.jpeg": {
+  "original": 6933244,
+  "width": 4284,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0313-2540ce39a1-160.webp",
+    "bytes": 7190
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0313-2540ce39a1-480.webp",
+    "bytes": 52988
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0313-2540ce39a1-960.webp",
+    "bytes": 200146
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0313-2540ce39a1-1600.webp",
+    "bytes": 524850
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0383.jpeg": {
+  "original": 4185382,
+  "width": 4284,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0383-eb98bff04c-160.webp",
+    "bytes": 8022
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0383-eb98bff04c-480.webp",
+    "bytes": 41672
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0383-eb98bff04c-960.webp",
+    "bytes": 108836
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0383-eb98bff04c-1600.webp",
+    "bytes": 211350
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0496.jpeg": {
+  "original": 5682427,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0496-51188a0a3a-160.webp",
+    "bytes": 4196
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0496-51188a0a3a-480.webp",
+    "bytes": 25690
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0496-51188a0a3a-960.webp",
+    "bytes": 89952
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0496-51188a0a3a-1600.webp",
+    "bytes": 239866
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0959.jpeg": {
+  "original": 3472028,
+  "width": 3684,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0959-3b93a59bf3-160.webp",
+    "bytes": 4188
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0959-3b93a59bf3-480.webp",
+    "bytes": 29876
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0959-3b93a59bf3-960.webp",
+    "bytes": 103446
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0959-3b93a59bf3-1600.webp",
+    "bytes": 228444
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0960.jpeg": {
+  "original": 4561253,
+  "width": 3664,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0960-f0b5d53cec-160.webp",
+    "bytes": 7368
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0960-f0b5d53cec-480.webp",
+    "bytes": 61980
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0960-f0b5d53cec-960.webp",
+    "bytes": 208826
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0960-f0b5d53cec-1600.webp",
+    "bytes": 468532
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0961.jpeg": {
+  "original": 4953897,
+  "width": 3712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0961-1b65849d59-160.webp",
+    "bytes": 6400
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0961-1b65849d59-480.webp",
+    "bytes": 63488
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0961-1b65849d59-960.webp",
+    "bytes": 230068
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0961-1b65849d59-1600.webp",
+    "bytes": 535154
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0962.jpeg": {
+  "original": 3256814,
+  "width": 2845,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0962-6dac6ad702-160.webp",
+    "bytes": 4608
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0962-6dac6ad702-480.webp",
+    "bytes": 51286
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0962-6dac6ad702-960.webp",
+    "bytes": 188596
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0962-6dac6ad702-1600.webp",
+    "bytes": 396386
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0968.jpeg": {
+  "original": 3419412,
+  "width": 3963,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0968-e6b87a9077-160.webp",
+    "bytes": 2482
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0968-e6b87a9077-480.webp",
+    "bytes": 32066
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0968-e6b87a9077-960.webp",
+    "bytes": 122262
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0968-e6b87a9077-1600.webp",
+    "bytes": 270980
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0969.jpeg": {
+  "original": 5753400,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0969-a55e517f0b-160.webp",
+    "bytes": 3022
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0969-a55e517f0b-480.webp",
+    "bytes": 29782
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0969-a55e517f0b-960.webp",
+    "bytes": 113014
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0969-a55e517f0b-1600.webp",
+    "bytes": 288282
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0971.jpeg": {
+  "original": 6326532,
+  "width": 3921,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0971-27924773c5-160.webp",
+    "bytes": 8334
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0971-27924773c5-480.webp",
+    "bytes": 81002
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0971-27924773c5-960.webp",
+    "bytes": 301828
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0971-27924773c5-1600.webp",
+    "bytes": 711054
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0976.jpeg": {
+  "original": 5085625,
+  "width": 5031,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0976-67a26f31fc-160.webp",
+    "bytes": 2870
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0976-67a26f31fc-480.webp",
+    "bytes": 32606
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0976-67a26f31fc-960.webp",
+    "bytes": 130924
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0976-67a26f31fc-1600.webp",
+    "bytes": 354072
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0977.jpeg": {
+  "original": 6114377,
+  "width": 5270,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0977-408430771d-160.webp",
+    "bytes": 3342
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0977-408430771d-480.webp",
+    "bytes": 38200
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0977-408430771d-960.webp",
+    "bytes": 148790
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0977-408430771d-1600.webp",
+    "bytes": 389566
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0978.jpeg": {
+  "original": 6498705,
+  "width": 5599,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0978-d3c56b526f-160.webp",
+    "bytes": 3388
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0978-d3c56b526f-480.webp",
+    "bytes": 36360
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0978-d3c56b526f-960.webp",
+    "bytes": 138344
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0978-d3c56b526f-1600.webp",
+    "bytes": 359468
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0980.jpeg": {
+  "original": 3740343,
+  "width": 3984,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0980-e4247a7d6f-160.webp",
+    "bytes": 2524
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0980-e4247a7d6f-480.webp",
+    "bytes": 31900
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0980-e4247a7d6f-960.webp",
+    "bytes": 128124
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0980-e4247a7d6f-1600.webp",
+    "bytes": 301756
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0999.jpeg": {
+  "original": 5433856,
+  "width": 3545,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-0999-b48c8f335c-160.webp",
+    "bytes": 5230
+   },
+   {
+    "w": 480,
+    "src": "/display/img-0999-b48c8f335c-480.webp",
+    "bytes": 63138
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0999-b48c8f335c-960.webp",
+    "bytes": 274516
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0999-b48c8f335c-1600.webp",
+    "bytes": 713054
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9094.jpeg": {
+  "original": 3642128,
+  "width": 2757,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9094-6de2e0f189-160.webp",
+    "bytes": 5080
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9094-6de2e0f189-480.webp",
+    "bytes": 65268
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9094-6de2e0f189-960.webp",
+    "bytes": 291654
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9094-6de2e0f189-1600.webp",
+    "bytes": 692902
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9095.jpeg": {
+  "original": 3095953,
+  "width": 2677,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9095-48ba98275a-160.webp",
+    "bytes": 4282
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9095-48ba98275a-480.webp",
+    "bytes": 56256
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9095-48ba98275a-960.webp",
+    "bytes": 247332
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9095-48ba98275a-1600.webp",
+    "bytes": 567342
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9101.jpeg": {
+  "original": 4510176,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9101-c47c3c0390-160.webp",
+    "bytes": 6016
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9101-c47c3c0390-480.webp",
+    "bytes": 53000
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9101-c47c3c0390-960.webp",
+    "bytes": 188658
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9101-c47c3c0390-1600.webp",
+    "bytes": 452792
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9102.jpeg": {
+  "original": 3573143,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9102-4f176f5d3a-160.webp",
+    "bytes": 3998
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9102-4f176f5d3a-480.webp",
+    "bytes": 30738
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9102-4f176f5d3a-960.webp",
+    "bytes": 93534
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9102-4f176f5d3a-1600.webp",
+    "bytes": 214300
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9103.jpeg": {
+  "original": 3649524,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9103-26677c13f1-160.webp",
+    "bytes": 3534
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9103-26677c13f1-480.webp",
+    "bytes": 33926
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9103-26677c13f1-960.webp",
+    "bytes": 128620
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9103-26677c13f1-1600.webp",
+    "bytes": 314184
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9104.jpeg": {
+  "original": 3538884,
+  "width": 3019,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9104-b8bda03ba4-160.webp",
+    "bytes": 5804
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9104-b8bda03ba4-480.webp",
+    "bytes": 55880
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9104-b8bda03ba4-960.webp",
+    "bytes": 197226
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9104-b8bda03ba4-1600.webp",
+    "bytes": 452852
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9105.jpeg": {
+  "original": 2891780,
+  "width": 2783,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9105-a3cb4cebd3-160.webp",
+    "bytes": 2764
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9105-a3cb4cebd3-480.webp",
+    "bytes": 33708
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9105-a3cb4cebd3-960.webp",
+    "bytes": 136982
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9105-a3cb4cebd3-1600.webp",
+    "bytes": 323386
    }
   ]
  },
@@ -295,19 +1020,232 @@
   "width": 5477,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/img-9174-9656460b95-160.webp",
+    "bytes": 3160
+   },
+   {
     "w": 480,
     "src": "/display/img-9174-9656460b95-480.webp",
-    "bytes": 21716
+    "bytes": 18974
    },
    {
     "w": 960,
     "src": "/display/img-9174-9656460b95-960.webp",
-    "bytes": 69128
+    "bytes": 59920
    },
    {
     "w": 1600,
     "src": "/display/img-9174-9656460b95-1600.webp",
-    "bytes": 163466
+    "bytes": 140690
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9178.jpeg": {
+  "original": 2898972,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9178-1a75e2a3f9-160.webp",
+    "bytes": 7020
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9178-1a75e2a3f9-480.webp",
+    "bytes": 44892
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9178-1a75e2a3f9-960.webp",
+    "bytes": 155622
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9178-1a75e2a3f9-1600.webp",
+    "bytes": 353660
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9885.jpeg": {
+  "original": 5426472,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9885-697aafb02f-160.webp",
+    "bytes": 3780
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9885-697aafb02f-480.webp",
+    "bytes": 24568
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9885-697aafb02f-960.webp",
+    "bytes": 79806
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9885-697aafb02f-1600.webp",
+    "bytes": 192396
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9896.jpeg": {
+  "original": 3901158,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9896-acfc25ab9f-160.webp",
+    "bytes": 3294
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9896-acfc25ab9f-480.webp",
+    "bytes": 21452
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9896-acfc25ab9f-960.webp",
+    "bytes": 70936
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9896-acfc25ab9f-1600.webp",
+    "bytes": 164052
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9903.jpeg": {
+  "original": 2575078,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9903-ee0f34b3c1-160.webp",
+    "bytes": 2938
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9903-ee0f34b3c1-480.webp",
+    "bytes": 13438
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9903-ee0f34b3c1-960.webp",
+    "bytes": 37826
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9903-ee0f34b3c1-1600.webp",
+    "bytes": 80646
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9907.jpeg": {
+  "original": 4294461,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9907-5f9ae38285-160.webp",
+    "bytes": 5604
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9907-5f9ae38285-480.webp",
+    "bytes": 32742
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9907-5f9ae38285-960.webp",
+    "bytes": 87568
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9907-5f9ae38285-1600.webp",
+    "bytes": 179946
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9912.jpeg": {
+  "original": 4667460,
+  "width": 4284,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9912-5d15c598f4-160.webp",
+    "bytes": 7438
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9912-5d15c598f4-480.webp",
+    "bytes": 43586
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9912-5d15c598f4-960.webp",
+    "bytes": 131060
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9912-5d15c598f4-1600.webp",
+    "bytes": 270900
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9913.jpeg": {
+  "original": 5398032,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-9913-30fdfaf731-160.webp",
+    "bytes": 3952
+   },
+   {
+    "w": 480,
+    "src": "/display/img-9913-30fdfaf731-480.webp",
+    "bytes": 27158
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9913-30fdfaf731-960.webp",
+    "bytes": 89024
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9913-30fdfaf731-1600.webp",
+    "bytes": 202986
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_4050.jpeg": {
+  "original": 2601863,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4050-738a342ea1-160.webp",
+    "bytes": 4528
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4050-738a342ea1-480.webp",
+    "bytes": 29540
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4050-738a342ea1-960.webp",
+    "bytes": 80178
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4050-738a342ea1-1600.webp",
+    "bytes": 167642
    }
   ]
  },
@@ -316,19 +1254,440 @@
   "width": 4563,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/img-5441-69b2c7c8e5-160.webp",
+    "bytes": 2012
+   },
+   {
     "w": 480,
     "src": "/display/img-5441-69b2c7c8e5-480.webp",
-    "bytes": 11296
+    "bytes": 9424
    },
    {
     "w": 960,
     "src": "/display/img-5441-69b2c7c8e5-960.webp",
-    "bytes": 35352
+    "bytes": 29344
    },
    {
     "w": 1600,
     "src": "/display/img-5441-69b2c7c8e5-1600.webp",
-    "bytes": 81842
+    "bytes": 67684
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5448.jpeg": {
+  "original": 1987006,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5448-507f66d4fc-160.webp",
+    "bytes": 4416
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5448-507f66d4fc-480.webp",
+    "bytes": 20978
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5448-507f66d4fc-960.webp",
+    "bytes": 54320
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5448-507f66d4fc-1600.webp",
+    "bytes": 111684
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5455.jpeg": {
+  "original": 4238266,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5455-75db453389-160.webp",
+    "bytes": 2962
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5455-75db453389-480.webp",
+    "bytes": 15794
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5455-75db453389-960.webp",
+    "bytes": 49206
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5455-75db453389-1600.webp",
+    "bytes": 114474
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5467.jpeg": {
+  "original": 6256094,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5467-0d5a578a98-160.webp",
+    "bytes": 3914
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5467-0d5a578a98-480.webp",
+    "bytes": 25836
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5467-0d5a578a98-960.webp",
+    "bytes": 83636
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5467-0d5a578a98-1600.webp",
+    "bytes": 211064
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5471.jpeg": {
+  "original": 4270333,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5471-8ffbc9c33d-160.webp",
+    "bytes": 2494
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5471-8ffbc9c33d-480.webp",
+    "bytes": 14968
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5471-8ffbc9c33d-960.webp",
+    "bytes": 47330
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5471-8ffbc9c33d-1600.webp",
+    "bytes": 105458
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5559.jpeg": {
+  "original": 1095232,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5559-7e2b8e7de4-160.webp",
+    "bytes": 1074
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5559-7e2b8e7de4-480.webp",
+    "bytes": 8726
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5559-7e2b8e7de4-960.webp",
+    "bytes": 26598
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5559-7e2b8e7de4-1600.webp",
+    "bytes": 54872
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5602.jpeg": {
+  "original": 4269215,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5602-e09faa9b87-160.webp",
+    "bytes": 4598
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5602-e09faa9b87-480.webp",
+    "bytes": 29026
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5602-e09faa9b87-960.webp",
+    "bytes": 78342
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5602-e09faa9b87-1600.webp",
+    "bytes": 154232
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5607.jpeg": {
+  "original": 3910730,
+  "width": 4284,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5607-ddff173492-160.webp",
+    "bytes": 5160
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5607-ddff173492-480.webp",
+    "bytes": 27254
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5607-ddff173492-960.webp",
+    "bytes": 76496
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5607-ddff173492-1600.webp",
+    "bytes": 156582
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5652.PNG": {
+  "original": 11945605,
+  "width": 2622,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5652-f139c4cc9a-160.webp",
+    "bytes": 2428
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5652-f139c4cc9a-480.webp",
+    "bytes": 13416
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5652-f139c4cc9a-960.webp",
+    "bytes": 43860
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5652-f139c4cc9a-1600.webp",
+    "bytes": 110920
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5708.jpeg": {
+  "original": 2533240,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5708-39686d1df9-160.webp",
+    "bytes": 4370
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5708-39686d1df9-480.webp",
+    "bytes": 25944
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5708-39686d1df9-960.webp",
+    "bytes": 73504
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5708-39686d1df9-1600.webp",
+    "bytes": 142382
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5711.jpeg": {
+  "original": 2664710,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5711-ced913c233-160.webp",
+    "bytes": 2532
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5711-ced913c233-480.webp",
+    "bytes": 14032
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5711-ced913c233-960.webp",
+    "bytes": 41642
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5711-ced913c233-1600.webp",
+    "bytes": 89166
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7577.jpeg": {
+  "original": 6086957,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7577-7ae05c32a6-160.webp",
+    "bytes": 7720
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7577-7ae05c32a6-480.webp",
+    "bytes": 61338
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7577-7ae05c32a6-960.webp",
+    "bytes": 237634
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7577-7ae05c32a6-1600.webp",
+    "bytes": 601038
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7580.jpeg": {
+  "original": 4601937,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7580-d80a7ef609-160.webp",
+    "bytes": 4576
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7580-d80a7ef609-480.webp",
+    "bytes": 53880
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7580-d80a7ef609-960.webp",
+    "bytes": 203654
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7580-d80a7ef609-1600.webp",
+    "bytes": 463854
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7581.jpeg": {
+  "original": 3917692,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7581-692e1f1a09-160.webp",
+    "bytes": 3414
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7581-692e1f1a09-480.webp",
+    "bytes": 41536
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7581-692e1f1a09-960.webp",
+    "bytes": 165032
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7581-692e1f1a09-1600.webp",
+    "bytes": 372834
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7693.jpeg": {
+  "original": 5462993,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7693-c3e3a97813-160.webp",
+    "bytes": 5792
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7693-c3e3a97813-480.webp",
+    "bytes": 46054
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7693-c3e3a97813-960.webp",
+    "bytes": 207334
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7693-c3e3a97813-1600.webp",
+    "bytes": 548324
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7701.jpeg": {
+  "original": 3513619,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7701-f4f3ce615e-160.webp",
+    "bytes": 3936
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7701-f4f3ce615e-480.webp",
+    "bytes": 22314
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7701-f4f3ce615e-960.webp",
+    "bytes": 88886
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7701-f4f3ce615e-1600.webp",
+    "bytes": 243168
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_7725.jpeg": {
+  "original": 3782869,
+  "width": 3857,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7725-ca659e8559-160.webp",
+    "bytes": 5634
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7725-ca659e8559-480.webp",
+    "bytes": 43622
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7725-ca659e8559-960.webp",
+    "bytes": 175936
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7725-ca659e8559-1600.webp",
+    "bytes": 440364
    }
   ]
  },
@@ -337,19 +1696,1012 @@
   "width": 3825,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/img-7409-0fa34a2167-160.webp",
+    "bytes": 4244
+   },
+   {
     "w": 480,
     "src": "/display/img-7409-0fa34a2167-480.webp",
-    "bytes": 42256
+    "bytes": 32958
    },
    {
     "w": 960,
     "src": "/display/img-7409-0fa34a2167-960.webp",
-    "bytes": 186506
+    "bytes": 148452
    },
    {
     "w": 1600,
     "src": "/display/img-7409-0fa34a2167-1600.webp",
-    "bytes": 470516
+    "bytes": 375464
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg": {
+  "original": 5860152,
+  "width": 3910,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7410-584f64c8bd-160.webp",
+    "bytes": 7224
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7410-584f64c8bd-480.webp",
+    "bytes": 63928
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7410-584f64c8bd-960.webp",
+    "bytes": 302196
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7410-584f64c8bd-1600.webp",
+    "bytes": 748136
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7411.jpeg": {
+  "original": 2943886,
+  "width": 4859,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7411-63efce1364-160.webp",
+    "bytes": 3134
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7411-63efce1364-480.webp",
+    "bytes": 16050
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7411-63efce1364-960.webp",
+    "bytes": 58132
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7411-63efce1364-1600.webp",
+    "bytes": 151910
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7414.jpeg": {
+  "original": 3840817,
+  "width": 4396,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7414-8e4a2838e2-160.webp",
+    "bytes": 5094
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7414-8e4a2838e2-480.webp",
+    "bytes": 39020
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7414-8e4a2838e2-960.webp",
+    "bytes": 148128
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7414-8e4a2838e2-1600.webp",
+    "bytes": 334148
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7415.jpeg": {
+  "original": 2062923,
+  "width": 3255,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7415-ee306ee6e3-160.webp",
+    "bytes": 5318
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7415-ee306ee6e3-480.webp",
+    "bytes": 35090
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7415-ee306ee6e3-960.webp",
+    "bytes": 105586
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7415-ee306ee6e3-1600.webp",
+    "bytes": 219828
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7416.jpeg": {
+  "original": 2570591,
+  "width": 3450,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7416-e5a91e0a1b-160.webp",
+    "bytes": 3652
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7416-e5a91e0a1b-480.webp",
+    "bytes": 34104
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7416-e5a91e0a1b-960.webp",
+    "bytes": 134464
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7416-e5a91e0a1b-1600.webp",
+    "bytes": 305260
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7419.jpeg": {
+  "original": 2119774,
+  "width": 3101,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7419-557227faa6-160.webp",
+    "bytes": 3118
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7419-557227faa6-480.webp",
+    "bytes": 26296
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7419-557227faa6-960.webp",
+    "bytes": 110694
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7419-557227faa6-1600.webp",
+    "bytes": 258332
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg": {
+  "original": 3370935,
+  "width": 4397,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7422-aae68ef946-160.webp",
+    "bytes": 4004
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7422-aae68ef946-480.webp",
+    "bytes": 30458
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7422-aae68ef946-960.webp",
+    "bytes": 121966
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7422-aae68ef946-1600.webp",
+    "bytes": 279978
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg": {
+  "original": 4271983,
+  "width": 3497,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7423-5b3a3b962b-160.webp",
+    "bytes": 6406
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7423-5b3a3b962b-480.webp",
+    "bytes": 61100
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7423-5b3a3b962b-960.webp",
+    "bytes": 235840
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7423-5b3a3b962b-1600.webp",
+    "bytes": 519644
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7431.jpeg": {
+  "original": 3696844,
+  "width": 3377,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7431-2474d1c98b-160.webp",
+    "bytes": 5024
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7431-2474d1c98b-480.webp",
+    "bytes": 59414
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7431-2474d1c98b-960.webp",
+    "bytes": 236476
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7431-2474d1c98b-1600.webp",
+    "bytes": 494400
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg": {
+  "original": 2839871,
+  "width": 2690,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7432-208d146577-160.webp",
+    "bytes": 5878
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7432-208d146577-480.webp",
+    "bytes": 60998
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7432-208d146577-960.webp",
+    "bytes": 235282
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7432-208d146577-1600.webp",
+    "bytes": 469536
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7433.jpeg": {
+  "original": 2582577,
+  "width": 3303,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7433-2454c1f02f-160.webp",
+    "bytes": 4334
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7433-2454c1f02f-480.webp",
+    "bytes": 44952
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7433-2454c1f02f-960.webp",
+    "bytes": 168974
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7433-2454c1f02f-1600.webp",
+    "bytes": 372544
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7435.jpeg": {
+  "original": 2385423,
+  "width": 3569,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7435-eaa5241813-160.webp",
+    "bytes": 4268
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7435-eaa5241813-480.webp",
+    "bytes": 37312
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7435-eaa5241813-960.webp",
+    "bytes": 126388
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7435-eaa5241813-1600.webp",
+    "bytes": 264596
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7436.jpeg": {
+  "original": 2064224,
+  "width": 3651,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7436-d0f3d8e306-160.webp",
+    "bytes": 3428
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7436-d0f3d8e306-480.webp",
+    "bytes": 26748
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7436-d0f3d8e306-960.webp",
+    "bytes": 94110
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7436-d0f3d8e306-1600.webp",
+    "bytes": 200044
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7442.jpeg": {
+  "original": 3397295,
+  "width": 3104,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7442-285a0903a5-160.webp",
+    "bytes": 4710
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7442-285a0903a5-480.webp",
+    "bytes": 47570
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7442-285a0903a5-960.webp",
+    "bytes": 199386
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7442-285a0903a5-1600.webp",
+    "bytes": 525744
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7443.jpeg": {
+  "original": 3032159,
+  "width": 3398,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7443-24dfc6ae02-160.webp",
+    "bytes": 5096
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7443-24dfc6ae02-480.webp",
+    "bytes": 44602
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7443-24dfc6ae02-960.webp",
+    "bytes": 167566
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7443-24dfc6ae02-1600.webp",
+    "bytes": 404620
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7446.jpeg": {
+  "original": 2805444,
+  "width": 2966,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7446-542b8b7c1b-160.webp",
+    "bytes": 5284
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7446-542b8b7c1b-480.webp",
+    "bytes": 42566
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7446-542b8b7c1b-960.webp",
+    "bytes": 169110
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7446-542b8b7c1b-1600.webp",
+    "bytes": 414592
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7447.jpeg": {
+  "original": 2621757,
+  "width": 2825,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7447-e980d52fb3-160.webp",
+    "bytes": 4098
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7447-e980d52fb3-480.webp",
+    "bytes": 39452
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7447-e980d52fb3-960.webp",
+    "bytes": 182680
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7447-e980d52fb3-1600.webp",
+    "bytes": 455478
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7448.jpeg": {
+  "original": 2660866,
+  "width": 3002,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7448-f5733b0a94-160.webp",
+    "bytes": 4482
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7448-f5733b0a94-480.webp",
+    "bytes": 37128
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7448-f5733b0a94-960.webp",
+    "bytes": 149302
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7448-f5733b0a94-1600.webp",
+    "bytes": 349438
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7449.jpeg": {
+  "original": 2713898,
+  "width": 3139,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7449-5cad476c77-160.webp",
+    "bytes": 3394
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7449-5cad476c77-480.webp",
+    "bytes": 36400
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7449-5cad476c77-960.webp",
+    "bytes": 143006
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7449-5cad476c77-1600.webp",
+    "bytes": 340452
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7451.jpeg": {
+  "original": 3022064,
+  "width": 3391,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7451-29fd462229-160.webp",
+    "bytes": 3568
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7451-29fd462229-480.webp",
+    "bytes": 31880
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7451-29fd462229-960.webp",
+    "bytes": 133898
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7451-29fd462229-1600.webp",
+    "bytes": 341318
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7452.jpeg": {
+  "original": 3366656,
+  "width": 3434,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7452-ed4f351eae-160.webp",
+    "bytes": 5492
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7452-ed4f351eae-480.webp",
+    "bytes": 43074
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7452-ed4f351eae-960.webp",
+    "bytes": 160422
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7452-ed4f351eae-1600.webp",
+    "bytes": 388432
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7453.jpeg": {
+  "original": 2624378,
+  "width": 3227,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7453-a44f71e3b3-160.webp",
+    "bytes": 4454
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7453-a44f71e3b3-480.webp",
+    "bytes": 38890
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7453-a44f71e3b3-960.webp",
+    "bytes": 145048
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7453-a44f71e3b3-1600.webp",
+    "bytes": 329410
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7459.jpeg": {
+  "original": 1942641,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7459-b83c215765-160.webp",
+    "bytes": 6318
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7459-b83c215765-480.webp",
+    "bytes": 48090
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7459-b83c215765-960.webp",
+    "bytes": 167304
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7459-b83c215765-1600.webp",
+    "bytes": 349338
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg": {
+  "original": 630968,
+  "width": 1353,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7463-30bf7a842e-160.webp",
+    "bytes": 4642
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7463-30bf7a842e-480.webp",
+    "bytes": 40862
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7463-30bf7a842e-960.webp",
+    "bytes": 114322
+   },
+   {
+    "w": 1353,
+    "src": "/display/img-7463-30bf7a842e-1353.webp",
+    "bytes": 176896
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7464.jpeg": {
+  "original": 3252084,
+  "width": 3471,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7464-0e8746b5fb-160.webp",
+    "bytes": 5426
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7464-0e8746b5fb-480.webp",
+    "bytes": 43448
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7464-0e8746b5fb-960.webp",
+    "bytes": 155228
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7464-0e8746b5fb-1600.webp",
+    "bytes": 344242
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7466.jpeg": {
+  "original": 4459444,
+  "width": 3507,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7466-a004ca0ed5-160.webp",
+    "bytes": 10846
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7466-a004ca0ed5-480.webp",
+    "bytes": 80392
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7466-a004ca0ed5-960.webp",
+    "bytes": 269650
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7466-a004ca0ed5-1600.webp",
+    "bytes": 556522
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg": {
+  "original": 1705181,
+  "width": 3614,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7471-4f2f69a7aa-160.webp",
+    "bytes": 1866
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7471-4f2f69a7aa-480.webp",
+    "bytes": 15500
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7471-4f2f69a7aa-960.webp",
+    "bytes": 50306
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7471-4f2f69a7aa-1600.webp",
+    "bytes": 105772
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7472.jpeg": {
+  "original": 1182050,
+  "width": 2483,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7472-a572b95e53-160.webp",
+    "bytes": 3794
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7472-a572b95e53-480.webp",
+    "bytes": 18464
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7472-a572b95e53-960.webp",
+    "bytes": 51234
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7472-a572b95e53-1600.webp",
+    "bytes": 103816
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7473.jpeg": {
+  "original": 1330179,
+  "width": 2496,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7473-3c89a12cfa-160.webp",
+    "bytes": 2998
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7473-3c89a12cfa-480.webp",
+    "bytes": 16366
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7473-3c89a12cfa-960.webp",
+    "bytes": 51520
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7473-3c89a12cfa-1600.webp",
+    "bytes": 114332
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7474.jpeg": {
+  "original": 3608029,
+  "width": 2770,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7474-463fba5d9c-160.webp",
+    "bytes": 4330
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7474-463fba5d9c-480.webp",
+    "bytes": 55862
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7474-463fba5d9c-960.webp",
+    "bytes": 272774
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7474-463fba5d9c-1600.webp",
+    "bytes": 633858
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7481.jpeg": {
+  "original": 3151456,
+  "width": 4985,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7481-5a3cacb17d-160.webp",
+    "bytes": 2236
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7481-5a3cacb17d-480.webp",
+    "bytes": 13220
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7481-5a3cacb17d-960.webp",
+    "bytes": 52822
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7481-5a3cacb17d-1600.webp",
+    "bytes": 133290
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7482.jpeg": {
+  "original": 1935023,
+  "width": 2337,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7482-dfc3cb6316-160.webp",
+    "bytes": 4690
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7482-dfc3cb6316-480.webp",
+    "bytes": 43512
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7482-dfc3cb6316-960.webp",
+    "bytes": 158070
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7482-dfc3cb6316-1600.webp",
+    "bytes": 335186
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7483.jpeg": {
+  "original": 4384894,
+  "width": 4989,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7483-8b73fe88bb-160.webp",
+    "bytes": 3084
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7483-8b73fe88bb-480.webp",
+    "bytes": 24624
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7483-8b73fe88bb-960.webp",
+    "bytes": 94754
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7483-8b73fe88bb-1600.webp",
+    "bytes": 236322
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg": {
+  "original": 1738857,
+  "width": 3730,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7491-e4a4d96623-160.webp",
+    "bytes": 1252
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7491-e4a4d96623-480.webp",
+    "bytes": 7708
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7491-e4a4d96623-960.webp",
+    "bytes": 29518
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7491-e4a4d96623-1600.webp",
+    "bytes": 74040
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7492.jpeg": {
+  "original": 2903615,
+  "width": 2669,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7492-63df2f1329-160.webp",
+    "bytes": 6600
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7492-63df2f1329-480.webp",
+    "bytes": 76936
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7492-63df2f1329-960.webp",
+    "bytes": 290918
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7492-63df2f1329-1600.webp",
+    "bytes": 568966
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7493.jpeg": {
+  "original": 3476459,
+  "width": 4127,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7493-3c3ea31e09-160.webp",
+    "bytes": 2476
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7493-3c3ea31e09-480.webp",
+    "bytes": 27174
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7493-3c3ea31e09-960.webp",
+    "bytes": 146092
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7493-3c3ea31e09-1600.webp",
+    "bytes": 354156
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7494.jpeg": {
+  "original": 3893876,
+  "width": 3729,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7494-b3703fb35e-160.webp",
+    "bytes": 3496
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7494-b3703fb35e-480.webp",
+    "bytes": 43820
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7494-b3703fb35e-960.webp",
+    "bytes": 213500
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7494-b3703fb35e-1600.webp",
+    "bytes": 512878
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg": {
+  "original": 5422669,
+  "width": 3683,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-7496-2761ee4fe6-160.webp",
+    "bytes": 5856
+   },
+   {
+    "w": 480,
+    "src": "/display/img-7496-2761ee4fe6-480.webp",
+    "bytes": 59124
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7496-2761ee4fe6-960.webp",
+    "bytes": 258350
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7496-2761ee4fe6-1600.webp",
+    "bytes": 656860
    }
   ]
  },
@@ -358,19 +2710,284 @@
   "width": 4032,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/img-4483-4d30bdceb6-160.webp",
+    "bytes": 4726
+   },
+   {
     "w": 480,
     "src": "/display/img-4483-4d30bdceb6-480.webp",
-    "bytes": 32010
+    "bytes": 27290
    },
    {
     "w": 960,
     "src": "/display/img-4483-4d30bdceb6-960.webp",
-    "bytes": 88346
+    "bytes": 74970
    },
    {
     "w": 1600,
     "src": "/display/img-4483-4d30bdceb6-1600.webp",
-    "bytes": 193262
+    "bytes": 157754
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4488.jpeg": {
+  "original": 2906782,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4488-20dc2ccff0-160.webp",
+    "bytes": 4996
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4488-20dc2ccff0-480.webp",
+    "bytes": 27084
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4488-20dc2ccff0-960.webp",
+    "bytes": 77544
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4488-20dc2ccff0-1600.webp",
+    "bytes": 164062
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4490.jpeg": {
+  "original": 2332844,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4490-3241fea493-160.webp",
+    "bytes": 6790
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4490-3241fea493-480.webp",
+    "bytes": 33092
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4490-3241fea493-960.webp",
+    "bytes": 82216
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4490-3241fea493-1600.webp",
+    "bytes": 162868
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4491.jpeg": {
+  "original": 2950220,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4491-b744627d7d-160.webp",
+    "bytes": 4956
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4491-b744627d7d-480.webp",
+    "bytes": 27292
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4491-b744627d7d-960.webp",
+    "bytes": 80044
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4491-b744627d7d-1600.webp",
+    "bytes": 176372
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4495.jpeg": {
+  "original": 2847244,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4495-a43bf90024-160.webp",
+    "bytes": 4706
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4495-a43bf90024-480.webp",
+    "bytes": 28734
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4495-a43bf90024-960.webp",
+    "bytes": 87518
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4495-a43bf90024-1600.webp",
+    "bytes": 185016
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4496.jpeg": {
+  "original": 3104207,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4496-02a49e1d15-160.webp",
+    "bytes": 3830
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4496-02a49e1d15-480.webp",
+    "bytes": 21972
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4496-02a49e1d15-960.webp",
+    "bytes": 77314
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4496-02a49e1d15-1600.webp",
+    "bytes": 189726
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4497.jpeg": {
+  "original": 3385950,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4497-46933e4898-160.webp",
+    "bytes": 5940
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4497-46933e4898-480.webp",
+    "bytes": 37276
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4497-46933e4898-960.webp",
+    "bytes": 126382
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4497-46933e4898-1600.webp",
+    "bytes": 290960
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4498.jpeg": {
+  "original": 3650479,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4498-b1308d4a83-160.webp",
+    "bytes": 4146
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4498-b1308d4a83-480.webp",
+    "bytes": 31230
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4498-b1308d4a83-960.webp",
+    "bytes": 108200
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4498-b1308d4a83-1600.webp",
+    "bytes": 244986
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4499.jpeg": {
+  "original": 3046178,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4499-d11c004b76-160.webp",
+    "bytes": 6012
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4499-d11c004b76-480.webp",
+    "bytes": 29958
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4499-d11c004b76-960.webp",
+    "bytes": 70782
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4499-d11c004b76-1600.webp",
+    "bytes": 135478
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4505.jpeg": {
+  "original": 4100182,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4505-324d30bb1a-160.webp",
+    "bytes": 6076
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4505-324d30bb1a-480.webp",
+    "bytes": 33516
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4505-324d30bb1a-960.webp",
+    "bytes": 121090
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4505-324d30bb1a-1600.webp",
+    "bytes": 330198
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4509.jpeg": {
+  "original": 2258862,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4509-9f77607fa8-160.webp",
+    "bytes": 3656
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4509-9f77607fa8-480.webp",
+    "bytes": 22438
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4509-9f77607fa8-960.webp",
+    "bytes": 63702
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4509-9f77607fa8-1600.webp",
+    "bytes": 140736
    }
   ]
  },
@@ -379,19 +2996,778 @@
   "width": 4032,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/img-4341-47bc0d03f9-160.webp",
+    "bytes": 3422
+   },
+   {
     "w": 480,
     "src": "/display/img-4341-47bc0d03f9-480.webp",
-    "bytes": 21298
+    "bytes": 17902
    },
    {
     "w": 960,
     "src": "/display/img-4341-47bc0d03f9-960.webp",
-    "bytes": 62056
+    "bytes": 51356
    },
    {
     "w": 1600,
     "src": "/display/img-4341-47bc0d03f9-1600.webp",
-    "bytes": 149816
+    "bytes": 118358
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4343.jpeg": {
+  "original": 1118348,
+  "width": 3410,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4343-470d438eaa-160.webp",
+    "bytes": 1908
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4343-470d438eaa-480.webp",
+    "bytes": 9808
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4343-470d438eaa-960.webp",
+    "bytes": 29836
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4343-470d438eaa-1600.webp",
+    "bytes": 68400
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4344.jpeg": {
+  "original": 1715908,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4344-50b36423cc-160.webp",
+    "bytes": 2722
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4344-50b36423cc-480.webp",
+    "bytes": 14556
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4344-50b36423cc-960.webp",
+    "bytes": 38688
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4344-50b36423cc-1600.webp",
+    "bytes": 75804
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4345.jpeg": {
+  "original": 1961530,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4345-ad668f263b-160.webp",
+    "bytes": 3152
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4345-ad668f263b-480.webp",
+    "bytes": 16674
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4345-ad668f263b-960.webp",
+    "bytes": 43430
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4345-ad668f263b-1600.webp",
+    "bytes": 86890
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4346.jpeg": {
+  "original": 3004609,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4346-aaeb1f1855-160.webp",
+    "bytes": 3498
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4346-aaeb1f1855-480.webp",
+    "bytes": 18172
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4346-aaeb1f1855-960.webp",
+    "bytes": 52372
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4346-aaeb1f1855-1600.webp",
+    "bytes": 116632
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4347.jpeg": {
+  "original": 3032648,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4347-ad91b5fde5-160.webp",
+    "bytes": 4484
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4347-ad91b5fde5-480.webp",
+    "bytes": 27340
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4347-ad91b5fde5-960.webp",
+    "bytes": 82396
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4347-ad91b5fde5-1600.webp",
+    "bytes": 178188
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4348.jpeg": {
+  "original": 1789931,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4348-1c34ae5d11-160.webp",
+    "bytes": 2524
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4348-1c34ae5d11-480.webp",
+    "bytes": 13950
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4348-1c34ae5d11-960.webp",
+    "bytes": 37630
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4348-1c34ae5d11-1600.webp",
+    "bytes": 74954
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4352.jpeg": {
+  "original": 2391204,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4352-b54848f0e6-160.webp",
+    "bytes": 2434
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4352-b54848f0e6-480.webp",
+    "bytes": 11780
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4352-b54848f0e6-960.webp",
+    "bytes": 32094
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4352-b54848f0e6-1600.webp",
+    "bytes": 67300
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4353.jpeg": {
+  "original": 2326342,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4353-dc546f8cfc-160.webp",
+    "bytes": 2642
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4353-dc546f8cfc-480.webp",
+    "bytes": 14162
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4353-dc546f8cfc-960.webp",
+    "bytes": 43310
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4353-dc546f8cfc-1600.webp",
+    "bytes": 102858
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4359.jpeg": {
+  "original": 2913320,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4359-a9b5d26c72-160.webp",
+    "bytes": 4574
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4359-a9b5d26c72-480.webp",
+    "bytes": 25372
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4359-a9b5d26c72-960.webp",
+    "bytes": 82108
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4359-a9b5d26c72-1600.webp",
+    "bytes": 196808
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4360.jpeg": {
+  "original": 2358463,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4360-81aedb8508-160.webp",
+    "bytes": 2732
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4360-81aedb8508-480.webp",
+    "bytes": 14300
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4360-81aedb8508-960.webp",
+    "bytes": 41226
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4360-81aedb8508-1600.webp",
+    "bytes": 88030
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4366.jpeg": {
+  "original": 6960861,
+  "width": 10670,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4366-ef1587049f-160.webp",
+    "bytes": 2316
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4366-ef1587049f-480.webp",
+    "bytes": 12010
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4366-ef1587049f-960.webp",
+    "bytes": 33586
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4366-ef1587049f-1600.webp",
+    "bytes": 70792
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4370.jpeg": {
+  "original": 1964046,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4370-76dc244d9e-160.webp",
+    "bytes": 2834
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4370-76dc244d9e-480.webp",
+    "bytes": 14554
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4370-76dc244d9e-960.webp",
+    "bytes": 37438
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4370-76dc244d9e-1600.webp",
+    "bytes": 73422
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4372.jpeg": {
+  "original": 1978319,
+  "width": 3911,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4372-98a77fe48b-160.webp",
+    "bytes": 1372
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4372-98a77fe48b-480.webp",
+    "bytes": 7354
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4372-98a77fe48b-960.webp",
+    "bytes": 28454
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4372-98a77fe48b-1600.webp",
+    "bytes": 85408
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4375.jpeg": {
+  "original": 2131122,
+  "width": 2869,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4375-b675be888c-160.webp",
+    "bytes": 3840
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4375-b675be888c-480.webp",
+    "bytes": 21736
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4375-b675be888c-960.webp",
+    "bytes": 81422
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4375-b675be888c-1600.webp",
+    "bytes": 209316
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4377.jpeg": {
+  "original": 3086049,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4377-becbfb5945-160.webp",
+    "bytes": 3376
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4377-becbfb5945-480.webp",
+    "bytes": 17782
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4377-becbfb5945-960.webp",
+    "bytes": 52302
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4377-becbfb5945-1600.webp",
+    "bytes": 118204
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4380.jpeg": {
+  "original": 3450738,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4380-6dc6223452-160.webp",
+    "bytes": 1822
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4380-6dc6223452-480.webp",
+    "bytes": 9018
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4380-6dc6223452-960.webp",
+    "bytes": 36540
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4380-6dc6223452-1600.webp",
+    "bytes": 107576
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4384.jpeg": {
+  "original": 2470045,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4384-4e5e7036a9-160.webp",
+    "bytes": 5594
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4384-4e5e7036a9-480.webp",
+    "bytes": 30164
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4384-4e5e7036a9-960.webp",
+    "bytes": 98132
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4384-4e5e7036a9-1600.webp",
+    "bytes": 222174
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4388.jpeg": {
+  "original": 1760216,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4388-f8ff8fc546-160.webp",
+    "bytes": 2470
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4388-f8ff8fc546-480.webp",
+    "bytes": 11134
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4388-f8ff8fc546-960.webp",
+    "bytes": 30714
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4388-f8ff8fc546-1600.webp",
+    "bytes": 71706
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4389.jpeg": {
+  "original": 1835024,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4389-6b554b0be9-160.webp",
+    "bytes": 2288
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4389-6b554b0be9-480.webp",
+    "bytes": 10890
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4389-6b554b0be9-960.webp",
+    "bytes": 28284
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4389-6b554b0be9-1600.webp",
+    "bytes": 58594
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4391.jpeg": {
+  "original": 2139727,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4391-02da6ddf79-160.webp",
+    "bytes": 2442
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4391-02da6ddf79-480.webp",
+    "bytes": 10160
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4391-02da6ddf79-960.webp",
+    "bytes": 25298
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4391-02da6ddf79-1600.webp",
+    "bytes": 56128
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4392.jpeg": {
+  "original": 2309381,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4392-a4dd6cd5d0-160.webp",
+    "bytes": 3820
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4392-a4dd6cd5d0-480.webp",
+    "bytes": 16564
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4392-a4dd6cd5d0-960.webp",
+    "bytes": 42092
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4392-a4dd6cd5d0-1600.webp",
+    "bytes": 104676
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4393.jpeg": {
+  "original": 3129151,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4393-00858eefbd-160.webp",
+    "bytes": 1934
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4393-00858eefbd-480.webp",
+    "bytes": 12936
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4393-00858eefbd-960.webp",
+    "bytes": 62248
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4393-00858eefbd-1600.webp",
+    "bytes": 163136
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4394.jpeg": {
+  "original": 3155850,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4394-bc3499a7f2-160.webp",
+    "bytes": 1842
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4394-bc3499a7f2-480.webp",
+    "bytes": 13258
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4394-bc3499a7f2-960.webp",
+    "bytes": 60942
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4394-bc3499a7f2-1600.webp",
+    "bytes": 165560
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4395.jpeg": {
+  "original": 3251033,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4395-58c7ab61e7-160.webp",
+    "bytes": 2382
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4395-58c7ab61e7-480.webp",
+    "bytes": 14532
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4395-58c7ab61e7-960.webp",
+    "bytes": 67606
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4395-58c7ab61e7-1600.webp",
+    "bytes": 197660
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/72064089526__670907BA-6F07-4A76-B462-99F35ADAFBB5.jpeg": {
+  "original": 3643362,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-d712e2c63f-160.webp",
+    "bytes": 3300
+   },
+   {
+    "w": 480,
+    "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-d712e2c63f-480.webp",
+    "bytes": 19316
+   },
+   {
+    "w": 960,
+    "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-d712e2c63f-960.webp",
+    "bytes": 76926
+   },
+   {
+    "w": 1600,
+    "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-d712e2c63f-1600.webp",
+    "bytes": 192188
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_3425.jpeg": {
+  "original": 3130022,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-3425-9c9dfb46f3-160.webp",
+    "bytes": 5092
+   },
+   {
+    "w": 480,
+    "src": "/display/img-3425-9c9dfb46f3-480.webp",
+    "bytes": 30818
+   },
+   {
+    "w": 960,
+    "src": "/display/img-3425-9c9dfb46f3-960.webp",
+    "bytes": 92518
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-3425-9c9dfb46f3-1600.webp",
+    "bytes": 193258
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_3443.jpeg": {
+  "original": 3200325,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-3443-d402cd8c3a-160.webp",
+    "bytes": 9410
+   },
+   {
+    "w": 480,
+    "src": "/display/img-3443-d402cd8c3a-480.webp",
+    "bytes": 66678
+   },
+   {
+    "w": 960,
+    "src": "/display/img-3443-d402cd8c3a-960.webp",
+    "bytes": 212406
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-3443-d402cd8c3a-1600.webp",
+    "bytes": 433736
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4331.jpeg": {
+  "original": 921531,
+  "width": 1154,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4331-91063e5686-160.webp",
+    "bytes": 5566
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4331-91063e5686-480.webp",
+    "bytes": 26974
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4331-91063e5686-960.webp",
+    "bytes": 56290
+   },
+   {
+    "w": 1154,
+    "src": "/display/img-4331-91063e5686-1154.webp",
+    "bytes": 67020
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4470.jpeg": {
+  "original": 3366294,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4470-16ee80e135-160.webp",
+    "bytes": 5568
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4470-16ee80e135-480.webp",
+    "bytes": 34816
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4470-16ee80e135-960.webp",
+    "bytes": 103056
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4470-16ee80e135-1600.webp",
+    "bytes": 228394
    }
   ]
  },
@@ -400,19 +3776,1376 @@
   "width": 4032,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/img-4532-64ca839052-160.webp",
+    "bytes": 3476
+   },
+   {
     "w": 480,
     "src": "/display/img-4532-64ca839052-480.webp",
-    "bytes": 20820
+    "bytes": 17666
    },
    {
     "w": 960,
     "src": "/display/img-4532-64ca839052-960.webp",
-    "bytes": 61178
+    "bytes": 51216
    },
    {
     "w": 1600,
     "src": "/display/img-4532-64ca839052-1600.webp",
-    "bytes": 147452
+    "bytes": 118370
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4533.jpeg": {
+  "original": 3321003,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4533-1a85477718-160.webp",
+    "bytes": 3400
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4533-1a85477718-480.webp",
+    "bytes": 17170
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4533-1a85477718-960.webp",
+    "bytes": 50116
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4533-1a85477718-1600.webp",
+    "bytes": 114184
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4534.jpeg": {
+  "original": 2999913,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4534-1877f998a9-160.webp",
+    "bytes": 3848
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4534-1877f998a9-480.webp",
+    "bytes": 21394
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4534-1877f998a9-960.webp",
+    "bytes": 64078
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4534-1877f998a9-1600.webp",
+    "bytes": 134240
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4535.jpeg": {
+  "original": 3155693,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4535-2c4d30d19d-160.webp",
+    "bytes": 3872
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4535-2c4d30d19d-480.webp",
+    "bytes": 21872
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4535-2c4d30d19d-960.webp",
+    "bytes": 67210
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4535-2c4d30d19d-1600.webp",
+    "bytes": 151250
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4540.jpeg": {
+  "original": 3607275,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4540-fc0f7d6063-160.webp",
+    "bytes": 3510
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4540-fc0f7d6063-480.webp",
+    "bytes": 16688
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4540-fc0f7d6063-960.webp",
+    "bytes": 43924
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4540-fc0f7d6063-1600.webp",
+    "bytes": 88506
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4541.jpeg": {
+  "original": 3156612,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4541-466f6cb47c-160.webp",
+    "bytes": 2994
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4541-466f6cb47c-480.webp",
+    "bytes": 14352
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4541-466f6cb47c-960.webp",
+    "bytes": 39650
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4541-466f6cb47c-1600.webp",
+    "bytes": 88724
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4542.jpeg": {
+  "original": 3686882,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4542-6c1df4fb01-160.webp",
+    "bytes": 3252
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4542-6c1df4fb01-480.webp",
+    "bytes": 16438
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4542-6c1df4fb01-960.webp",
+    "bytes": 47326
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4542-6c1df4fb01-1600.webp",
+    "bytes": 107560
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4543.jpeg": {
+  "original": 3687628,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4543-62d75d397c-160.webp",
+    "bytes": 3086
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4543-62d75d397c-480.webp",
+    "bytes": 17428
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4543-62d75d397c-960.webp",
+    "bytes": 53974
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4543-62d75d397c-1600.webp",
+    "bytes": 131018
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4546.jpeg": {
+  "original": 3740932,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4546-de4bfbf12b-160.webp",
+    "bytes": 3004
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4546-de4bfbf12b-480.webp",
+    "bytes": 15862
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4546-de4bfbf12b-960.webp",
+    "bytes": 53762
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4546-de4bfbf12b-1600.webp",
+    "bytes": 140320
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4547.jpeg": {
+  "original": 3438192,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4547-ef7572cf08-160.webp",
+    "bytes": 3716
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4547-ef7572cf08-480.webp",
+    "bytes": 19970
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4547-ef7572cf08-960.webp",
+    "bytes": 57088
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4547-ef7572cf08-1600.webp",
+    "bytes": 122504
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4548.jpeg": {
+  "original": 3230126,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4548-d13661d137-160.webp",
+    "bytes": 3508
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4548-d13661d137-480.webp",
+    "bytes": 18380
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4548-d13661d137-960.webp",
+    "bytes": 54178
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4548-d13661d137-1600.webp",
+    "bytes": 118608
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4549.jpeg": {
+  "original": 3258255,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4549-a39b411f03-160.webp",
+    "bytes": 3646
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4549-a39b411f03-480.webp",
+    "bytes": 18564
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4549-a39b411f03-960.webp",
+    "bytes": 51386
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4549-a39b411f03-1600.webp",
+    "bytes": 107340
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4551.jpeg": {
+  "original": 3776004,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4551-d15b51ba75-160.webp",
+    "bytes": 3692
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4551-d15b51ba75-480.webp",
+    "bytes": 19614
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4551-d15b51ba75-960.webp",
+    "bytes": 64922
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4551-d15b51ba75-1600.webp",
+    "bytes": 151774
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4552.jpeg": {
+  "original": 3628291,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4552-e8a09c5fc0-160.webp",
+    "bytes": 2622
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4552-e8a09c5fc0-480.webp",
+    "bytes": 12074
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4552-e8a09c5fc0-960.webp",
+    "bytes": 44522
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4552-e8a09c5fc0-1600.webp",
+    "bytes": 144654
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4553.jpeg": {
+  "original": 2660922,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4553-4fc3cb17d7-160.webp",
+    "bytes": 2180
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4553-4fc3cb17d7-480.webp",
+    "bytes": 8806
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4553-4fc3cb17d7-960.webp",
+    "bytes": 23090
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4553-4fc3cb17d7-1600.webp",
+    "bytes": 69720
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4554.jpeg": {
+  "original": 3957379,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4554-0354d61dc6-160.webp",
+    "bytes": 3768
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4554-0354d61dc6-480.webp",
+    "bytes": 20240
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4554-0354d61dc6-960.webp",
+    "bytes": 67966
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4554-0354d61dc6-1600.webp",
+    "bytes": 167676
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4555.jpeg": {
+  "original": 3711131,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4555-c5c67d133a-160.webp",
+    "bytes": 2638
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4555-c5c67d133a-480.webp",
+    "bytes": 15208
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4555-c5c67d133a-960.webp",
+    "bytes": 51658
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4555-c5c67d133a-1600.webp",
+    "bytes": 141630
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4556.jpeg": {
+  "original": 3634305,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4556-c5bcb4bf0a-160.webp",
+    "bytes": 3094
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4556-c5bcb4bf0a-480.webp",
+    "bytes": 15810
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4556-c5bcb4bf0a-960.webp",
+    "bytes": 46382
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4556-c5bcb4bf0a-1600.webp",
+    "bytes": 98480
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4557.jpeg": {
+  "original": 4163206,
+  "width": 7242,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4557-de7c25d62f-160.webp",
+    "bytes": 2822
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4557-de7c25d62f-480.webp",
+    "bytes": 14816
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4557-de7c25d62f-960.webp",
+    "bytes": 42614
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4557-de7c25d62f-1600.webp",
+    "bytes": 93140
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4788.jpeg": {
+  "original": 3555340,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4788-ce81ed3b36-160.webp",
+    "bytes": 4614
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4788-ce81ed3b36-480.webp",
+    "bytes": 27576
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4788-ce81ed3b36-960.webp",
+    "bytes": 85512
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4788-ce81ed3b36-1600.webp",
+    "bytes": 208590
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4790.jpeg": {
+  "original": 3093322,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4790-4c8b9b6992-160.webp",
+    "bytes": 4198
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4790-4c8b9b6992-480.webp",
+    "bytes": 24294
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4790-4c8b9b6992-960.webp",
+    "bytes": 70510
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4790-4c8b9b6992-1600.webp",
+    "bytes": 150134
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4791.jpeg": {
+  "original": 2635542,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4791-b6975ccd2e-160.webp",
+    "bytes": 3642
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4791-b6975ccd2e-480.webp",
+    "bytes": 18356
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4791-b6975ccd2e-960.webp",
+    "bytes": 46108
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4791-b6975ccd2e-1600.webp",
+    "bytes": 90160
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4792.jpeg": {
+  "original": 3381066,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4792-8f4d129688-160.webp",
+    "bytes": 6440
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4792-8f4d129688-480.webp",
+    "bytes": 44812
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4792-8f4d129688-960.webp",
+    "bytes": 143982
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4792-8f4d129688-1600.webp",
+    "bytes": 317992
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4802.jpeg": {
+  "original": 3280451,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4802-7a8f27a135-160.webp",
+    "bytes": 7740
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4802-7a8f27a135-480.webp",
+    "bytes": 42632
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4802-7a8f27a135-960.webp",
+    "bytes": 124222
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4802-7a8f27a135-1600.webp",
+    "bytes": 306542
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4806.jpeg": {
+  "original": 2446097,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4806-39eff57b99-160.webp",
+    "bytes": 5262
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4806-39eff57b99-480.webp",
+    "bytes": 20930
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4806-39eff57b99-960.webp",
+    "bytes": 53650
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4806-39eff57b99-1600.webp",
+    "bytes": 148712
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4807.jpeg": {
+  "original": 4604966,
+  "width": 7356,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4807-60b48486bf-160.webp",
+    "bytes": 2984
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4807-60b48486bf-480.webp",
+    "bytes": 15140
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4807-60b48486bf-960.webp",
+    "bytes": 42042
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4807-60b48486bf-1600.webp",
+    "bytes": 90462
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4938.jpeg": {
+  "original": 2922255,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4938-ff9e952b33-160.webp",
+    "bytes": 3256
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4938-ff9e952b33-480.webp",
+    "bytes": 17620
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4938-ff9e952b33-960.webp",
+    "bytes": 50190
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4938-ff9e952b33-1600.webp",
+    "bytes": 113110
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4940.jpeg": {
+  "original": 3005215,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4940-e9e2e165e5-160.webp",
+    "bytes": 3172
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4940-e9e2e165e5-480.webp",
+    "bytes": 16112
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4940-e9e2e165e5-960.webp",
+    "bytes": 46330
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4940-e9e2e165e5-1600.webp",
+    "bytes": 104200
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4945.jpeg": {
+  "original": 2945700,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4945-db2a52ac96-160.webp",
+    "bytes": 3022
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4945-db2a52ac96-480.webp",
+    "bytes": 13978
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4945-db2a52ac96-960.webp",
+    "bytes": 39754
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4945-db2a52ac96-1600.webp",
+    "bytes": 90628
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4955.jpeg": {
+  "original": 2070906,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4955-9c035bd296-160.webp",
+    "bytes": 2954
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4955-9c035bd296-480.webp",
+    "bytes": 13424
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4955-9c035bd296-960.webp",
+    "bytes": 35654
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4955-9c035bd296-1600.webp",
+    "bytes": 88354
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4960.jpeg": {
+  "original": 2497078,
+  "width": 3024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4960-c1b48d8601-160.webp",
+    "bytes": 7204
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4960-c1b48d8601-480.webp",
+    "bytes": 41976
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4960-c1b48d8601-960.webp",
+    "bytes": 115336
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4960-c1b48d8601-1600.webp",
+    "bytes": 232466
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4968.jpeg": {
+  "original": 3604829,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4968-52e3fb74b1-160.webp",
+    "bytes": 5660
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4968-52e3fb74b1-480.webp",
+    "bytes": 35166
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4968-52e3fb74b1-960.webp",
+    "bytes": 103378
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4968-52e3fb74b1-1600.webp",
+    "bytes": 211528
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4974.jpeg": {
+  "original": 3064631,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4974-1c84ec89db-160.webp",
+    "bytes": 3934
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4974-1c84ec89db-480.webp",
+    "bytes": 19206
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4974-1c84ec89db-960.webp",
+    "bytes": 53074
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4974-1c84ec89db-1600.webp",
+    "bytes": 109434
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4975.jpeg": {
+  "original": 2996636,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4975-bd6fc0b865-160.webp",
+    "bytes": 3560
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4975-bd6fc0b865-480.webp",
+    "bytes": 16776
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4975-bd6fc0b865-960.webp",
+    "bytes": 47822
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4975-bd6fc0b865-1600.webp",
+    "bytes": 100956
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4976.jpeg": {
+  "original": 535923,
+  "width": 1469,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4976-ac9240eef3-160.webp",
+    "bytes": 4094
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4976-ac9240eef3-480.webp",
+    "bytes": 22574
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4976-ac9240eef3-960.webp",
+    "bytes": 57552
+   },
+   {
+    "w": 1469,
+    "src": "/display/img-4976-ac9240eef3-1469.webp",
+    "bytes": 99108
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4977.jpeg": {
+  "original": 1511325,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4977-c1b195d288-160.webp",
+    "bytes": 2244
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4977-c1b195d288-480.webp",
+    "bytes": 9394
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4977-c1b195d288-960.webp",
+    "bytes": 24736
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4977-c1b195d288-1600.webp",
+    "bytes": 47502
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4981.PNG": {
+  "original": 10198609,
+  "width": 2532,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4981-073df83a4b-160.webp",
+    "bytes": 2410
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4981-073df83a4b-480.webp",
+    "bytes": 12660
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4981-073df83a4b-960.webp",
+    "bytes": 35844
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4981-073df83a4b-1600.webp",
+    "bytes": 70588
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4982.jpeg": {
+  "original": 2862569,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-4982-27eaaec423-160.webp",
+    "bytes": 3048
+   },
+   {
+    "w": 480,
+    "src": "/display/img-4982-27eaaec423-480.webp",
+    "bytes": 14784
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4982-27eaaec423-960.webp",
+    "bytes": 41054
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4982-27eaaec423-1600.webp",
+    "bytes": 87250
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_5003.jpeg": {
+  "original": 2999423,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-5003-96c8b84023-160.webp",
+    "bytes": 4182
+   },
+   {
+    "w": 480,
+    "src": "/display/img-5003-96c8b84023-480.webp",
+    "bytes": 21386
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5003-96c8b84023-960.webp",
+    "bytes": 55480
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5003-96c8b84023-1600.webp",
+    "bytes": 118566
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_8403.jpeg": {
+  "original": 2223563,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-8403-7ce3abb3b5-160.webp",
+    "bytes": 2104
+   },
+   {
+    "w": 480,
+    "src": "/display/img-8403-7ce3abb3b5-480.webp",
+    "bytes": 13754
+   },
+   {
+    "w": 960,
+    "src": "/display/img-8403-7ce3abb3b5-960.webp",
+    "bytes": 45494
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-8403-7ce3abb3b5-1600.webp",
+    "bytes": 100596
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_8404.jpeg": {
+  "original": 2378382,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-8404-19714e6d8c-160.webp",
+    "bytes": 3790
+   },
+   {
+    "w": 480,
+    "src": "/display/img-8404-19714e6d8c-480.webp",
+    "bytes": 19660
+   },
+   {
+    "w": 960,
+    "src": "/display/img-8404-19714e6d8c-960.webp",
+    "bytes": 55478
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-8404-19714e6d8c-1600.webp",
+    "bytes": 111944
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_8405.jpeg": {
+  "original": 2723086,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-8405-df8e58421c-160.webp",
+    "bytes": 3550
+   },
+   {
+    "w": 480,
+    "src": "/display/img-8405-df8e58421c-480.webp",
+    "bytes": 16794
+   },
+   {
+    "w": 960,
+    "src": "/display/img-8405-df8e58421c-960.webp",
+    "bytes": 48014
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-8405-df8e58421c-1600.webp",
+    "bytes": 103626
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_8406.jpeg": {
+  "original": 3769011,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-8406-9184984b8c-160.webp",
+    "bytes": 3020
+   },
+   {
+    "w": 480,
+    "src": "/display/img-8406-9184984b8c-480.webp",
+    "bytes": 16870
+   },
+   {
+    "w": 960,
+    "src": "/display/img-8406-9184984b8c-960.webp",
+    "bytes": 50782
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-8406-9184984b8c-1600.webp",
+    "bytes": 114620
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/image000000.jpg": {
+  "original": 243146,
+  "width": 1204,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/image000000-08b22deb8f-160.webp",
+    "bytes": 4908
+   },
+   {
+    "w": 480,
+    "src": "/display/image000000-08b22deb8f-480.webp",
+    "bytes": 27256
+   },
+   {
+    "w": 960,
+    "src": "/display/image000000-08b22deb8f-960.webp",
+    "bytes": 81286
+   },
+   {
+    "w": 1204,
+    "src": "/display/image000000-08b22deb8f-1204.webp",
+    "bytes": 120806
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1591.jpeg": {
+  "original": 4179780,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1591-350ba177b9-160.webp",
+    "bytes": 2584
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1591-350ba177b9-480.webp",
+    "bytes": 12416
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1591-350ba177b9-960.webp",
+    "bytes": 35794
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1591-350ba177b9-1600.webp",
+    "bytes": 82694
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1592.jpeg": {
+  "original": 4258354,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1592-1fec824e35-160.webp",
+    "bytes": 2554
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1592-1fec824e35-480.webp",
+    "bytes": 12250
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1592-1fec824e35-960.webp",
+    "bytes": 36200
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1592-1fec824e35-1600.webp",
+    "bytes": 86868
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1593.jpeg": {
+  "original": 4120618,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1593-e5e4870e22-160.webp",
+    "bytes": 3852
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1593-e5e4870e22-480.webp",
+    "bytes": 19716
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1593-e5e4870e22-960.webp",
+    "bytes": 55350
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1593-e5e4870e22-1600.webp",
+    "bytes": 114844
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1594.jpeg": {
+  "original": 3950257,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1594-aa3b7097fe-160.webp",
+    "bytes": 3716
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1594-aa3b7097fe-480.webp",
+    "bytes": 18788
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1594-aa3b7097fe-960.webp",
+    "bytes": 50398
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1594-aa3b7097fe-1600.webp",
+    "bytes": 102718
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1595.jpeg": {
+  "original": 4859145,
+  "width": 4284,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1595-00a9766ff5-160.webp",
+    "bytes": 4326
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1595-00a9766ff5-480.webp",
+    "bytes": 21428
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1595-00a9766ff5-960.webp",
+    "bytes": 71262
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1595-00a9766ff5-1600.webp",
+    "bytes": 177100
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1596.jpeg": {
+  "original": 3747645,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1596-ae0d1dd820-160.webp",
+    "bytes": 2980
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1596-ae0d1dd820-480.webp",
+    "bytes": 14344
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1596-ae0d1dd820-960.webp",
+    "bytes": 40662
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1596-ae0d1dd820-1600.webp",
+    "bytes": 90698
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1597.jpeg": {
+  "original": 3761947,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1597-3022ae9267-160.webp",
+    "bytes": 3650
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1597-3022ae9267-480.webp",
+    "bytes": 17186
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1597-3022ae9267-960.webp",
+    "bytes": 48092
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1597-3022ae9267-1600.webp",
+    "bytes": 103072
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1598.jpeg": {
+  "original": 3596851,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1598-59a6be5f8d-160.webp",
+    "bytes": 3090
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1598-59a6be5f8d-480.webp",
+    "bytes": 15426
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1598-59a6be5f8d-960.webp",
+    "bytes": 40216
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1598-59a6be5f8d-1600.webp",
+    "bytes": 82830
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1599.jpeg": {
+  "original": 3706570,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1599-ca85a46cc3-160.webp",
+    "bytes": 2880
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1599-ca85a46cc3-480.webp",
+    "bytes": 12964
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1599-ca85a46cc3-960.webp",
+    "bytes": 35576
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1599-ca85a46cc3-1600.webp",
+    "bytes": 77284
    }
   ]
  },
@@ -421,19 +5154,357 @@
   "width": 5712,
   "variants": [
    {
+    "w": 160,
+    "src": "/display/img-1600-39778d6bb5-160.webp",
+    "bytes": 2824
+   },
+   {
     "w": 480,
     "src": "/display/img-1600-39778d6bb5-480.webp",
-    "bytes": 16046
+    "bytes": 13642
    },
    {
     "w": 960,
     "src": "/display/img-1600-39778d6bb5-960.webp",
-    "bytes": 41762
+    "bytes": 35120
    },
    {
     "w": 1600,
     "src": "/display/img-1600-39778d6bb5-1600.webp",
-    "bytes": 83632
+    "bytes": 71352
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1601.jpeg": {
+  "original": 2929306,
+  "width": 5368,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1601-eb96a952a9-160.webp",
+    "bytes": 2202
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1601-eb96a952a9-480.webp",
+    "bytes": 11242
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1601-eb96a952a9-960.webp",
+    "bytes": 29866
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1601-eb96a952a9-1600.webp",
+    "bytes": 60586
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1602.jpeg": {
+  "original": 4156202,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1602-17bb18a29b-160.webp",
+    "bytes": 1810
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1602-17bb18a29b-480.webp",
+    "bytes": 7998
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1602-17bb18a29b-960.webp",
+    "bytes": 20342
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1602-17bb18a29b-1600.webp",
+    "bytes": 43394
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1604.jpeg": {
+  "original": 701690,
+  "width": 2472,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1604-f4e0f2c634-160.webp",
+    "bytes": 1696
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1604-f4e0f2c634-480.webp",
+    "bytes": 8820
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1604-f4e0f2c634-960.webp",
+    "bytes": 25754
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1604-f4e0f2c634-1600.webp",
+    "bytes": 54868
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1605.jpeg": {
+  "original": 1537847,
+  "width": 3103,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1605-c4d1f84339-160.webp",
+    "bytes": 2900
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1605-c4d1f84339-480.webp",
+    "bytes": 15558
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1605-c4d1f84339-960.webp",
+    "bytes": 43102
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1605-c4d1f84339-1600.webp",
+    "bytes": 92420
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1607.jpeg": {
+  "original": 2353753,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1607-36b41d8a4f-160.webp",
+    "bytes": 3440
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1607-36b41d8a4f-480.webp",
+    "bytes": 18422
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1607-36b41d8a4f-960.webp",
+    "bytes": 54582
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1607-36b41d8a4f-1600.webp",
+    "bytes": 114608
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1608.jpeg": {
+  "original": 1940133,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1608-e2e0ecb134-160.webp",
+    "bytes": 3722
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1608-e2e0ecb134-480.webp",
+    "bytes": 20278
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1608-e2e0ecb134-960.webp",
+    "bytes": 57014
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1608-e2e0ecb134-1600.webp",
+    "bytes": 114976
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1609.jpeg": {
+  "original": 2311968,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1609-2a6a2b932d-160.webp",
+    "bytes": 2984
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1609-2a6a2b932d-480.webp",
+    "bytes": 13966
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1609-2a6a2b932d-960.webp",
+    "bytes": 36194
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1609-2a6a2b932d-1600.webp",
+    "bytes": 72156
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1610.jpeg": {
+  "original": 5462083,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1610-f3213e52e9-160.webp",
+    "bytes": 3278
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1610-f3213e52e9-480.webp",
+    "bytes": 16816
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1610-f3213e52e9-960.webp",
+    "bytes": 58148
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1610-f3213e52e9-1600.webp",
+    "bytes": 156626
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1611.jpeg": {
+  "original": 4612301,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1611-28fd8f6482-160.webp",
+    "bytes": 2840
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1611-28fd8f6482-480.webp",
+    "bytes": 14500
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1611-28fd8f6482-960.webp",
+    "bytes": 45476
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1611-28fd8f6482-1600.webp",
+    "bytes": 112410
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1630.jpeg": {
+  "original": 3139061,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/img-1630-7803e13bb2-160.webp",
+    "bytes": 4456
+   },
+   {
+    "w": 480,
+    "src": "/display/img-1630-7803e13bb2-480.webp",
+    "bytes": 29514
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1630-7803e13bb2-960.webp",
+    "bytes": 100322
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1630-7803e13bb2-1600.webp",
+    "bytes": 234742
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/005.jpg": {
+  "original": 206726,
+  "width": 724,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/005-87639f7adc-160.webp",
+    "bytes": 6310
+   },
+   {
+    "w": 480,
+    "src": "/display/005-87639f7adc-480.webp",
+    "bytes": 34108
+   },
+   {
+    "w": 724,
+    "src": "/display/005-87639f7adc-724.webp",
+    "bytes": 71058
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/020.jpg": {
+  "original": 181953,
+  "width": 1024,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/020-2e5660ad19-160.webp",
+    "bytes": 2560
+   },
+   {
+    "w": 480,
+    "src": "/display/020-2e5660ad19-480.webp",
+    "bytes": 17474
+   },
+   {
+    "w": 960,
+    "src": "/display/020-2e5660ad19-960.webp",
+    "bytes": 52836
+   },
+   {
+    "w": 1024,
+    "src": "/display/020-2e5660ad19-1024.webp",
+    "bytes": 60246
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/047.jpg": {
+  "original": 142272,
+  "width": 1182,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/047-4d5f9ebf90-160.webp",
+    "bytes": 2148
+   },
+   {
+    "w": 480,
+    "src": "/display/047-4d5f9ebf90-480.webp",
+    "bytes": 10552
+   },
+   {
+    "w": 960,
+    "src": "/display/047-4d5f9ebf90-960.webp",
+    "bytes": 27918
+   },
+   {
+    "w": 1182,
+    "src": "/display/047-4d5f9ebf90-1182.webp",
+    "bytes": 39100
    }
   ]
  }
