@@ -91,7 +91,7 @@ test('discovery endpoints must be Intuit HTTPS URLs; authorization uses the acco
   const url = new URL(authorizationUrl(env, endpoints, 'STATE'));
   assert.equal(url.searchParams.get('scope'), 'com.intuit.quickbooks.accounting');
   assert.equal(url.searchParams.get('redirect_uri'), 'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/quickbooks/callback');
-  assert.equal(callbackUrl({ ...env, QBO_ENVIRONMENT: 'production' }), 'https://vermillion-commissions.timothyjosephmurphy.workers.dev/quickbooks/callback');
+  assert.equal(callbackUrl({ ...env, QBO_ENVIRONMENT: 'production' }), 'https://tjm.art/quickbooks/callback');
 });
 test('refresh rotates tokens and invalid_grant is reported for reconnection', async () => {
   const endpoints = { token_endpoint: 'https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer' };

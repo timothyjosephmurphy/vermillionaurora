@@ -20,13 +20,13 @@ $("disconnect").onclick=async()=>{if(!confirm("Disconnect QuickBooks? Sales will
 const result=new URLSearchParams(location.search).get("result");if(result){$("result").hidden=false;$("result").textContent=({connected:"QuickBooks is connected.",denied:"Authorization was cancelled in QuickBooks.",expired:"That connection attempt expired. Start again.","not-usd":"This QuickBooks company does not use US dollars; it was not connected."})[result]||("Connection did not complete ("+result+"). Check the log.");}`;
   const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
 <title>QuickBooks connection · Vermillion Aurora</title><style nonce="${nonce}">${style}</style></head><body><main>
-<h1>QuickBooks connection</h1><p class="note">Owner only. Records completed vermillionaurora.com sales in TJ Murphy’s QuickBooks Online${environment === 'sandbox' ? ' <strong>(sandbox)</strong>' : ''}. Support: <a href="mailto:tj@vermillionaurora.com">tj@vermillionaurora.com</a>.</p>
+<h1>QuickBooks connection</h1><p class="note">Owner only. Records completed Vermillion Aurora sales in TJ Murphy’s QuickBooks Online${environment === 'sandbox' ? ' <strong>(sandbox)</strong>' : ''}. Support: <a href="mailto:tj@vermillionaurora.com">tj@vermillionaurora.com</a>.</p>
 <p id="result" class="result" role="status" hidden></p>
 <label for="token">Manager token</label><input id="token" type="password" autocomplete="off">
 <div><button id="connect" type="button">Connect to QuickBooks</button><button id="status" class="secondary" type="button">Status</button><button id="sync" class="secondary" type="button">Sync now</button>
 <button id="logs" class="secondary" type="button">API log</button><button id="retry" class="secondary" type="button">Retry an order</button><button id="disconnect" class="secondary" type="button">Disconnect</button></div>
 <p><a id="download" download="quickbooks-log.json" hidden>Download log (JSON)</a></p><pre id="out" aria-live="polite"></pre>
-<p class="note"><a href="https://vermillionaurora.com/quickbooks/">About this integration</a> · <a href="https://vermillionaurora.com/privacy/">Privacy</a> · <a href="https://vermillionaurora.com/terms/">Terms</a></p>
+<p class="note"><a href="https://tjm.art/quickbooks/">About this integration</a> · <a href="https://tjm.art/privacy/">Privacy</a> · <a href="https://tjm.art/terms/">Terms</a></p>
 </main><script nonce="${nonce}">${script}</script></body></html>`;
   return new Response(html, { headers: { ...headers, 'Content-Type': 'text/html; charset=utf-8',
     'Content-Security-Policy': `default-src 'none'; style-src 'nonce-${nonce}'; script-src 'nonce-${nonce}'; connect-src 'self'; img-src 'self' blob:; form-action 'none'; frame-ancestors 'none'; base-uri 'none'` } });

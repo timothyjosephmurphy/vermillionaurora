@@ -10,15 +10,16 @@ export const DISCOVERY = {
 };
 export const API_BASE = { production: 'https://quickbooks.api.intuit.com', sandbox: 'https://sandbox-quickbooks.api.intuit.com' };
 // Redirect URIs registered with Intuit; the callback must match exactly.
+// Production is served on tjm.art: the website Worker forwards /quickbooks/* API paths to this Worker (service binding).
 export const QBO_ORIGINS = {
-  production: 'https://vermillion-commissions.timothyjosephmurphy.workers.dev',
+  production: 'https://tjm.art',
   sandbox: 'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'
 };
 export const environment = env => env.QBO_ENVIRONMENT === 'sandbox' ? 'sandbox' : 'production';
 export const callbackUrl = env => `${QBO_ORIGINS[environment(env)]}/quickbooks/callback`;
 export const configured = env => Boolean(env.QBO_CLIENT_ID && env.QBO_CLIENT_SECRET);
 export const syncEnabled = env => env.QBO_SYNC_ENABLED === 'true' && configured(env);
-export const DISCONNECTED_PAGE = 'https://vermillionaurora.com/quickbooks/disconnected/';
+export const DISCONNECTED_PAGE = 'https://tjm.art/quickbooks/disconnected/';
 
 const encoder = new TextEncoder();
 const b64 = bytes => btoa(String.fromCharCode(...new Uint8Array(bytes)));
@@ -249,7 +250,7 @@ export function salesReceiptPayload(receipt, refs) {
     CustomerRef: { value: refs.customerId },
     DepositToAccountRef: { value: refs.depositAccountId },
     PaymentRefNum: String(receipt.transactionId || '').slice(-21),
-    PrivateNote: `vermillionaurora.com order ${receipt.orderId}; ${receipt.provider === 'btcpay' ? 'BTCPay invoice' : 'Square payment'} ${receipt.transactionId}`.slice(0, 4000),
+    PrivateNote: `Vermillion Aurora order ${receipt.orderId}; ${receipt.provider === 'btcpay' ? 'BTCPay invoice' : 'Square payment'} ${receipt.transactionId}`.slice(0, 4000),
     ...(receipt.buyerEmail ? { BillEmail: { Address: String(receipt.buyerEmail).slice(0, 100) } } : {}),
     ...(address.street1 ? { ShipAddr: { Line1: String(address.street1).slice(0, 500), ...(address.street2 ? { Line2: String(address.street2).slice(0, 500) } : {}),
       City: String(address.city || '').slice(0, 255), CountrySubDivisionCode: String(address.state || '').slice(0, 255), PostalCode: String(address.zip || '').slice(0, 30), Country: String(address.country || 'US').slice(0, 255) } } : {}),

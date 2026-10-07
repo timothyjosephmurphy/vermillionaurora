@@ -1,7 +1,7 @@
 import { DurableObject } from 'cloudflare:workers';
 import { sellerMailToken } from './shipping-email.mjs';
 import {
-  QboError, environment, configured, syncEnabled, discover, authorizationUrl, exchangeCode, refreshTokens, revokeToken,
+  QboError, QBO_ORIGINS, environment, configured, syncEnabled, discover, authorizationUrl, exchangeCode, refreshTokens, revokeToken,
   accountingClient, signState, verifyState, seal, unseal, randomToken, sha256Hex, qboString, qboName, salesReceiptPayload,
   validateReceipt, depositAccountKey, docNumberFor, accountName, itemName, ACCOUNT_DEFAULTS, ITEM_DEFAULTS, queueDelayMs
 } from './quickbooks-core.mjs';
@@ -136,7 +136,7 @@ export class QuickbooksSync extends DurableObject {
       'QuickBooks rejected the saved authorization (expired or revoked), so website sales are no longer being recorded in QuickBooks.\n\n' +
       `Reconnect here: ${this.connectPage()}\n\nSales completed meanwhile stay queued and will be recorded after you reconnect.`);
   }
-  connectPage() { return `https://vermillionaurora.com/quickbooks/`; }
+  connectPage() { return `${QBO_ORIGINS[environment(this.env)]}/quickbooks/connect`; }
   async alert(kind, subject, text) {
     const last = this.get(`alert:${kind}`);
     if (last && Date.now() - last < 24 * 3600 * 1000) return;
