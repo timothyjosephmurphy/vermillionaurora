@@ -1,5 +1,5 @@
 // BTCPay Greenfield API. Credentials remain in Worker secrets.
-export const SITE = 'https://vermillionaurora.com';
+export { PRIMARY_SITE as SITE } from './site-origins.mjs';
 export const ORDER = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 export function bitcoinServer(env) {
   const url = new URL(env.BTCPAY_URL);
