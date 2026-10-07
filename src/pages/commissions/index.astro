@@ -11,6 +11,11 @@ const packages = collections.home
   .map(entry => byId[entry.product])
   .filter(Boolean);
 import { person, ld } from '../../data/structured-data.mjs';
+// Section anchors; the old package pages 301 here (static/_redirects).
+const anchors = { 'small-landscape': 'landscape', 'single-portrait': 'portrait' };
+const headings = { 'small-landscape': 'Landscape commissions', 'single-portrait': 'Portrait commissions · single & double' };
+const order = ['small-landscape', 'single-portrait'];
+packages.sort((a, b) => (order.indexOf(a.slug) + 1 || 99) - (order.indexOf(b.slug) + 1 || 99));
 const service = { '@context':'https://schema.org', '@type':'Service', name:'Watercolor portrait and landscape commissions', serviceType:'Commissioned watercolor pastel artwork',
   provider:{ '@type':'Person', '@id':person['@id'], name:person.name }, areaServed:'Worldwide', url:'https://vermillionaurora.com/commissions/',
   offers: packages.flatMap(p => (p.options?.length ? p.options : [{label:'', amount:p.listing?.price?.amount}]).filter(o=>o.amount).map(o => ({ '@type':'Offer', name:`${p.title}${o.label?` — ${o.label}`:''}`, price:o.amount, priceCurrency:'USD' }))) };
@@ -30,6 +35,12 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/site-header.css" />
   <link rel="stylesheet" href="/portrait-preview.css" />
+  <style is:global>
+    .commission-package{scroll-margin-top:110px}
+    .commission-package-heading{font:600 1.5rem/1.2 "Cormorant Garamond",serif;margin:0 0 12px}
+    .service-grid.commission-packages{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;max-width:960px;margin-inline:auto}
+    @media(max-width:760px){.service-grid.commission-packages{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <div class="page-shell">
@@ -54,8 +65,11 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
             <h2 id="packages-heading">Packages</h2>
             <p>Starting points for watercolor commissions. Each includes conversation about reference photos, size, and finish.</p>
           </div>
-          <div class="service-grid">
-            {packages.map(product => <ProductCard product={product} variant="service" />)}
+          <div class="service-grid commission-packages">
+            {packages.map(product => <div id={anchors[product.slug] || product.slug} class="commission-package">
+              <h3 class="commission-package-heading">{headings[product.slug] || product.title}</h3>
+              <ProductCard product={product} variant="service" />
+            </div>)}
           </div>
         </div>
       </section>

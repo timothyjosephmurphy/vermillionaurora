@@ -3,7 +3,9 @@ import ArtworkImage from './ArtworkImage.astro';
 import { urlFor, priceLabel, statusLabel, dimensionLabel, byId } from '../../catalog/catalog.mjs';
 import { artworkAlt } from '../data/artwork-alt.mjs';
 const {product:p,variant='gallery',priority=false}=Astro.props;
-const url=urlFor(p), status=statusLabel(p);
+// Commission packages live on the merged /commissions/ page; their old product pages 301 there.
+const commissionAnchors={'single-portrait':'portrait','double-portrait':'portrait','small-landscape':'landscape'};
+const url=commissionAnchors[p.slug]?`/commissions/#${commissionAnchors[p.slug]}`:urlFor(p), status=statusLabel(p);
 const caption=`${p.title} · ${p.listing?.status==='available'?priceLabel(p):status}`;
 const packageHref=`/commissions/?package=${encodeURIComponent(p.slug)}#form`;
 // Sized/faced packages link with every axis, e.g. ?package=single-portrait&size=12x15&faces=2f.

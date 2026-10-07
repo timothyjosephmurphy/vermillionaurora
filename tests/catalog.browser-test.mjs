@@ -16,7 +16,7 @@ try {
   if(fs.existsSync(file)&&fs.statSync(file).isFile())return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'})[path.extname(file)]||'application/octet-stream'});
   missing.push(url.pathname);return route.fulfill({status:404});
  });
- const routes=['/','/gallery/','/exhibitions/paul-murphy/','/exhibitions/chase-toole/','/exhibitions/gavin-robertson/','/products/painting-portrait-in-green/','/products/paul-murphy-painting-1/','/products/coined-in-watercolor-film-poster/','/products/single-portrait/','/products/watercolor-portraits/'];
+ const routes=['/','/gallery/','/exhibitions/paul-murphy/','/exhibitions/chase-toole/','/exhibitions/gavin-robertson/','/products/painting-portrait-in-green/','/products/paul-murphy-painting-1/','/products/coined-in-watercolor-film-poster/','/commissions/','/products/watercolor-portraits/'];
  fs.mkdirSync('/tmp/catalog-preview',{recursive:true});
  for(const width of [1440,390]){
   await page.setViewportSize({width,height:900});
