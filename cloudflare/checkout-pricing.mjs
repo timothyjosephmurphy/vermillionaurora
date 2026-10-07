@@ -73,7 +73,7 @@ export async function priceOrder(env,slug,input) {
 export async function priceCart(env,items,input,email) {
   const address=cleanAddress(input),shipments=[];
   // Each original is packed separately. No speculative combined-parcel dimensions.
-  for(const item of items.filter(i=>i.type!=='print'))shipments.push(await priceShipment(env,item.id,address));
+  for(const item of items.filter(i=>(i.type!=='print'&&i.type!=='deposit')))shipments.push(await priceShipment(env,item.id,address));
   const printItems=items.filter(i=>i.type==='print'),printQuote=printItems.length?await quotePrints(env,printItems,address):null;
   const totals=await calculateTax(env,items,address,shipments.reduce((sum,s)=>sum+cents(s.shipping),0)+(printQuote?cents(printQuote.shipping):0));
   return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments,...(printQuote?{printQuote}:{}),...totals,quotedAt:Date.now()};

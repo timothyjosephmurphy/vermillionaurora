@@ -285,3 +285,34 @@ it('buys and tracks two parcel labels once while recording the payment only once
   expect((await read(order)).jobs.map(j=>j.status)).toEqual(['ready','ready']);expect(calls.filter(c=>c.url.endsWith('/create_from_calculation'))).toHaveLength(1);expect(mailCount).toBe(3);
   const messages=calls.filter(c=>c.url.includes('gmail.googleapis.com')).map(c=>atob(c.body.raw.replaceAll('-','+').replaceAll('_','/')));expect(messages.filter(m=>m.includes('To: buyer@example.test'))).toHaveLength(1);
 });
+it('checks out a 50% commission deposit alone: no shipping, stock or labels; linked to the request; seller and buyer emails',async()=>{
+  const on={...env,...config,COMMISSION_DEPOSITS_ENABLED:'true'};
+  expect(paymentMethods({...env,...config},'deposit-small-landscape')).toEqual([]);
+  expect(paymentMethods({...on,COMMISSION_DEPOSITS_PAUSED:'true'},'deposit-small-landscape')).toEqual([]);
+  expect(paymentMethods(on,'deposit-small-landscape')).toEqual(['paypal']);
+  const btc={...on,PAYPAL_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'};
+  expect(paymentMethods(btc,'deposit-double-portrait')).toEqual(['paypal','bitcoin']);
+  expect(cartItems([{id:'deposit-small-landscape',quantity:1,amount:'0.01'}])[0].amount).toBe('99.50');
+  expect(cartItems([{id:'deposit-single-portrait',quantity:1}])[0].amount).toBe('100.00');
+  expect(cartItems([{id:'deposit-double-portrait',quantity:1}])[0]).toMatchObject({amount:'200.00',type:'deposit',commission:{balance:'200.00'}});
+  expect(()=>cartItems([{id:'deposit-single-portrait',quantity:1},{id:ids[0],quantity:1}])).toThrow();
+  expect(()=>cartItems([{id:'deposit-single-portrait',quantity:2}])).toThrow();
+  expect(()=>cartItems([{id:'deposit-single-portrait',quantity:1,requestId:'x'}])).toThrow();
+  const catalogReply=await (await cartCheckout(new Request('https://worker/checkout/cart/catalog'),on)).json();
+  expect(catalogReply.products.find(p=>p.id==='deposit-small-landscape')).toMatchObject({type:'deposit',amount:'99.50',methods:['paypal']});
+  const requestId=crypto.randomUUID(),id=crypto.randomUUID(),key='d'.repeat(64),order=env.CART_ORDERS.getByName(id);objects.push(order);
+  await runInDurableObject(order,i=>{i.env={...i.env,...on};});
+  const items=[{id:'deposit-small-landscape',quantity:1,requestId}];
+  expect((await cartCheckout(request('hold',{holdId:id,key,items}),on)).status).toBe(200);
+  const quoted=await cartCheckout(request('quote',{items,address,email:'buyer@example.test',catalogVersion,holdId:id,key}),on);expect(quoted.status).toBe(200);
+  const q=await quoted.json();expect(q.quote.shipping).toBe('0.00');expect(q.quote.base).toBe('99.50');
+  expect(calls.some(c=>c.url.includes('goshippo')||c.url.endsWith('/shipments/'))).toBe(false);
+  expect((await (await cartCheckout(request('start',{orderId:id,key,method:'paypal'}),on)).json()).status).toBe('pending');
+  approve();await order.capture();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
+  const d=await read(order);expect(d.jobs).toEqual([]);expect(d.printJob).toBeUndefined();expect(d.depositSellerMail.status).toBe('sent');expect(d.customerMail.status).toBe('sent');
+  expect(calls.some(c=>c.url.endsWith('/transactions/'))).toBe(false);
+  // The mocked PayPal capture ID is shared across tests, so check the order's own receipt.
+  const archived=await runInDurableObject(order,instance=>instance.receipt());
+  expect(archived.gross).toBe(d.quote.total);expect(archived.items[0].commission.requestId).toBe(requestId);
+  expect(archived.commissionDeposit[0]).toMatchObject({package:'small-landscape',requestId,balance:'99.50'});expect(archived.fulfillment.labelStatus).toBe('ready');
+});
