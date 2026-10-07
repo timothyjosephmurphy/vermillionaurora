@@ -15,7 +15,12 @@
     "GOOGLE_REFRESH_TOKEN": "fake",
     "STRIPE_SECRET_KEY": "sk_test_fake",
     "SHIP_FROM_PHONE": "+12065550123",
-    "CART_CHECKOUT_ENABLED": "true"
+    "CART_CHECKOUT_ENABLED": "true",
+    "QBO_CLIENT_ID": "test-client",
+    "QBO_CLIENT_SECRET": "test-secret",
+    "QBO_ENVIRONMENT": "sandbox",
+    "QBO_SYNC_ENABLED": "true",
+    "COMMISSION_MANAGER_TOKEN": "manager-test-token"
   },
   "durable_objects": {
     "bindings": [
@@ -38,6 +43,10 @@
       {
         "name": "CART_ORDERS",
         "class_name": "CartOrder"
+      },
+      {
+        "name": "QUICKBOOKS",
+        "class_name": "QuickbooksSync"
       }
     ]
   },
@@ -65,6 +74,12 @@
       "tag": "cart-orders-v1",
       "new_sqlite_classes": [
         "CartOrder"
+      ]
+    },
+    {
+      "tag": "quickbooks-sync-v1",
+      "new_sqlite_classes": [
+        "QuickbooksSync"
       ]
     }
   ],

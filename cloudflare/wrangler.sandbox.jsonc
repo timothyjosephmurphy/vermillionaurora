@@ -26,7 +26,9 @@
     "PRODIGI_ENV": "sandbox",
     "PRINT_CHECKOUT_IDS": "print-painting-portrait-in-gold-full,print-painting-portrait-in-gold-full-frame-black,print-painting-portrait-in-gold-full-frame-white,print-painting-portrait-in-gold-full-frame-natural,print-painting-portrait-in-gold-medium,print-painting-portrait-in-gold-medium-frame-black,print-painting-portrait-in-gold-medium-frame-white,print-painting-portrait-in-gold-medium-frame-natural,print-painting-portrait-in-gold-small,print-painting-portrait-in-gold-small-frame-black,print-painting-portrait-in-gold-small-frame-white,print-painting-portrait-in-gold-small-frame-natural,print-painting-portrait-in-green-full,print-painting-portrait-in-green-full-frame-black,print-painting-portrait-in-green-full-frame-white,print-painting-portrait-in-green-full-frame-natural,print-painting-portrait-in-green-medium,print-painting-portrait-in-green-medium-frame-black,print-painting-portrait-in-green-medium-frame-white,print-painting-portrait-in-green-medium-frame-natural,print-painting-portrait-in-green-small,print-painting-portrait-in-green-small-frame-black,print-painting-portrait-in-green-small-frame-white,print-painting-portrait-in-green-small-frame-natural",
     "SANDBOX_RETURN_ORIGIN": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev",
-    "PRINT_CHECKOUT_ALL": "true"
+    "PRINT_CHECKOUT_ALL": "true",
+    "QBO_ENVIRONMENT": "sandbox",
+    "QBO_SYNC_ENABLED": "false"
   },
   "durable_objects": {
     "bindings": [
@@ -49,6 +51,10 @@
       {
         "name": "CART_ORDERS",
         "class_name": "CartOrder"
+      },
+      {
+        "name": "QUICKBOOKS",
+        "class_name": "QuickbooksSync"
       }
     ]
   },
@@ -81,6 +87,12 @@
       "tag": "cart-orders-v1",
       "new_sqlite_classes": [
         "CartOrder"
+      ]
+    },
+    {
+      "tag": "quickbooks-sync-v1",
+      "new_sqlite_classes": [
+        "QuickbooksSync"
       ]
     }
   ],

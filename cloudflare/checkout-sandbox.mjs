@@ -16,6 +16,8 @@ import printTestAssets from './print-test-assets.generated.mjs';
 import printCatalog from './print-catalog.mjs';
 export { PaintingStock } from './painting-stock.mjs';
 export { ShippingCheck } from './shipping-check.mjs';
+export { QuickbooksSync } from './quickbooks-sync.mjs';
+import { quickbooksApi } from './quickbooks-api.mjs';
 
 const page = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vermillion Aurora sandbox checkout</title>
 <style>body{font:16px system-ui;max-width:600px;margin:40px auto;padding:0 16px}label{display:block;margin:12px 0}input,select,button{font:inherit;padding:8px;width:100%;box-sizing:border-box}button{margin:12px 0}pre{white-space:pre-wrap}</style>
@@ -51,6 +53,7 @@ export default {
     if (path==='/checkout/prints/billing-setup')return finerworksBillingSetup(request,env);
     if (path.startsWith('/checkout/prints/')) return printApi(request,env);
     if (path === '/checkout/print-codes/issue') return printCodesApi(request,env);
+    if (path.startsWith('/quickbooks/')) return quickbooksApi(request,env);
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path==='/checkout/square/webhook')return squareWebhook(request,env);
     if (path==='/checkout/shipping-check') return shippingCheck(request,env);
