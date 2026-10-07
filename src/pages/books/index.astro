@@ -1,0 +1,61 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { byId, catalogVersion } from '../../../catalog/catalog.mjs';
+import collections from '../../../catalog/collections.json';
+
+const books = collections.home
+  .filter(entry => entry.variant === 'book')
+  .map(entry => byId[entry.product])
+  .filter(Boolean);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Books | TJ Murphy</title>
+  <meta name="description" content="Art books and illustrated poetry by TJ Murphy: Watercolor Portraits, Watercolor Landscapes, and Reflections on Time." />
+  <meta name="catalog-version" content={catalogVersion} />
+  <link rel="canonical" href="https://vermillionaurora.com/books/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/site-header.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <SiteHeader />
+    <main id="main-content" class="container books-page">
+      <p class="eyebrow dark">Books</p>
+      <h1>Art books &amp; illustrated poetry</h1>
+      <p class="books-intro">Collections of watercolor portraits and landscapes, plus illustrated poetry created with family.</p>
+      <div class="books-grid">
+        {books.map(product => <ProductCard product={product} variant="book" />)}
+      </div>
+      <p class="books-more"><a href="/book-galleries/">Explore print collections from the books →</a></p>
+    </main>
+    <SiteFooter />
+  </div>
+</body>
+</html>
+<style>
+  .books-page { padding-top: 2.5rem; padding-bottom: 4rem; max-width: 1100px; }
+  .books-page h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    line-height: 1.08;
+    margin: 0 0 1rem;
+  }
+  .books-intro { max-width: 40rem; line-height: 1.75; margin: 0 0 2rem; }
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .books-grid .product-card { margin: 0; }
+  .books-more { margin-top: 2rem; }
+  .books-more a { text-decoration: underline; text-underline-offset: 0.2em; }
+</style>
