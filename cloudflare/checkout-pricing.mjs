@@ -2,6 +2,7 @@ import catalog, {catalogVersion} from './checkout-catalog.mjs';
 import { insuranceRequest, insuredShipmentMatches, insuredRateMatches } from './shipping-insurance.mjs';
 import {catalogVersion as cartVersion} from './cart-policy.mjs';
 import {quotePrints} from './print-provider.mjs';
+import {applyCode} from './print-codes.mjs';
 
 const cents = value => Math.round(Number(value) * 100);
 const dollars = value => (value / 100).toFixed(2);
@@ -70,13 +71,15 @@ export async function priceOrder(env,slug,input) {
   const shipment=await priceShipment(env,slug,input);
   return {...shipment,catalogVersion,...await calculateTax(env,[{id:slug,amount:shipment.base}],shipment.address,cents(shipment.shipping))};
 }
-export async function priceCart(env,items,input,email) {
+export async function priceCart(env,items,input,email,code=null) {
   const address=cleanAddress(input),shipments=[];
   // Each original is packed separately. No speculative combined-parcel dimensions.
   for(const item of items.filter(i=>(i.type!=='print'&&i.type!=='deposit')))shipments.push(await priceShipment(env,item.id,address));
   const printItems=items.filter(i=>i.type==='print'),printQuote=printItems.length?await quotePrints(env,printItems,address):null;
+  // A code reprices only after the provider has validated the listed retail prices.
+  if(code){items=applyCode(items,code,printQuote?.unitCosts);if(printQuote)delete printQuote.unitCosts;}
   const totals=await calculateTax(env,items,address,shipments.reduce((sum,s)=>sum+cents(s.shipping),0)+(printQuote?cents(printQuote.shipping):0));
-  return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments,...(printQuote?{printQuote}:{}),...totals,quotedAt:Date.now()};
+  return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments,...(printQuote?{printQuote}:{}),...(code?{printCode:{kind:code.kind,hash:code.hash}}:{}),...totals,quotedAt:Date.now()};
 }
 
 export async function recordTax(env,calculationId,captureId) {

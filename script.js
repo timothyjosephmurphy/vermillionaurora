@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const catalog = response.ok ? await response.json() : null;
       const deposit = catalog?.enabled && catalog.products?.find(p => p.id === 'deposit-' + packageId && p.methods?.length);
       if (!deposit) return;
-      const methods = deposit.methods.map(m => m === 'bitcoin' ? 'Bitcoin' : m === 'square' ? 'card' : 'PayPal or card');
+      const methods = deposit.methods.map(m => m === 'bitcoin' ? 'Bitcoin' : m === 'square' ? 'card' : 'card');
       const box = document.createElement('div');
       box.className = 'deposit-offer';
       const heading = document.createElement('p');

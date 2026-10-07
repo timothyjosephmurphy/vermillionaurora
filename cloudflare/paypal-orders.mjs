@@ -45,7 +45,7 @@ export async function checkout(request, env) {
   if (!configured(env)) return respond({error:'Checkout is being set up.'},503,env);
   // Pausing new purchases must still let existing orders settle and reconcile.
   const finishing = ['/checkout/capture','/checkout/cancel'].includes(url.pathname);
-  if (!finishing && env.PAYPAL_CHECKOUT_ENABLED !== 'true') return respond({error:'Checkout is being set up.'},503);
+  if (!finishing && (env.PAYPAL_CHECKOUT_ENABLED !== 'true' || env.PAYPAL_DEPRECATED === 'true')) return respond({error:'Checkout is being set up.'},503);
   const origin = request.headers.get('Origin');
   if (origin && origin !== site(env)) return respond({error:'Origin not allowed.'},403,env);
 

@@ -32,6 +32,8 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
           <label>Apartment, suite, etc. <span>(optional)</span><input name="street2" autocomplete="shipping address-line2" maxlength="100"/></label>
           <label>City<input name="city" autocomplete="shipping address-level2" maxlength="100" required/></label>
           <div class="cart-address-row"><label>State<input name="state" autocomplete="shipping address-level1" pattern="[A-Za-z]{2}" maxlength="2" placeholder="WA" required/></label><label>ZIP code<input name="zip" autocomplete="shipping postal-code" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" required/></label></div>
+          <label>Code <span>(optional)</span><input name="printCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Print code"/></label>
+          <p class="cart-footnote" data-cart-code-note hidden></p>
           <p class="cart-footnote">United States delivery. Prints ship from the print lab, separately from originals. Shipping includes all shipments.</p>
         </fieldset>
         <p class="cart-footnote">Your details are used to quote and fulfill this order. <a href="/privacy/">How your information is handled</a>.</p>
