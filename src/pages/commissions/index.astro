@@ -17,7 +17,7 @@ const headings = { 'small-landscape': 'Landscape commissions', 'single-portrait'
 const order = ['small-landscape', 'single-portrait'];
 packages.sort((a, b) => (order.indexOf(a.slug) + 1 || 99) - (order.indexOf(b.slug) + 1 || 99));
 const service = { '@context':'https://schema.org', '@type':'Service', name:'Watercolor portrait and landscape commissions', serviceType:'Commissioned watercolor pastel artwork',
-  provider:{ '@type':'Person', '@id':person['@id'], name:person.name }, areaServed:'Worldwide', url:'https://vermillionaurora.com/commissions/',
+  provider:{ '@type':'Person', '@id':person['@id'], name:person.name }, areaServed:'Worldwide', url:'https://tjm.art/commissions/',
   offers: packages.flatMap(p => (p.options?.length ? p.options : [{label:'', amount:p.listing?.price?.amount}]).filter(o=>o.amount).map(o => ({ '@type':'Offer', name:`${p.title}${o.label?` — ${o.label}`:''}`, price:o.amount, priceCurrency:'USD' }))) };
 ---
 <!doctype html>
@@ -28,7 +28,7 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
   <script type="application/ld+json" set:html={ld(service)} />
   <title>Watercolor Portrait &amp; Landscape Commissions | Seattle Watercolor Artist TJ Murphy</title>
   <meta name="description" content="Commission a watercolor portrait or landscape by Seattle artist TJ Murphy. Packages from $200, 50% deposit to start, typical turnaround 2–4 weeks." />
-  <link rel="canonical" href="https://vermillionaurora.com/commissions/" />
+  <link rel="canonical" href="https://tjm.art/commissions/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />

@@ -2,7 +2,7 @@ import prints, {sourcePrintVersion} from './etsy-print-source.mjs';
 import {ETSY_ORIGIN,authorized,json,read,write} from './etsy-connection.mjs';
 import {shippingChoice,shippingPackages,estimateShippingPackages} from './etsy-shipping.mjs';
 import {labelOf,titleOf,buildListingPlans} from './etsy-listing-plan.mjs';
-const API='https://api.etsy.com/v3/application', SITE='https://vermillionaurora.com';
+const API='https://api.etsy.com/v3/application', SITE='https://tjm.art';
 const rows=x=>Array.isArray(x?.results)?x.results:Array.isArray(x)?x:[];
 // Only expose validation messages to the authenticated owner; never dump a provider response.
 function validationDetail(data,env,token){
