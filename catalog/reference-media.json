@@ -1,28 +1,4 @@
 {
-  "book-art-7599e02b4ff7013e7261": {
-    "base": "/reference-photos/el-salvador-sunrise-reference",
-    "widths": [
-      480,
-      768,
-      1080
-    ],
-    "width": 1080,
-    "height": 1440,
-    "alt": "Photograph of sunrise over the Pacific at Punta El Zonte, El Salvador: the sun sits on the horizon beside a dark headland on the left, with smooth wet stones covering the beach in the foreground.",
-    "caption": "Reference photo — the sunrise that inspired this painting",
-    "video": {
-      "sources": [
-        {
-          "src": "/reference-photos/el-salvador-sunrise-live-768.webm",
-          "type": "video/webm"
-        },
-        {
-          "src": "/reference-photos/el-salvador-sunrise-live-768.mp4",
-          "type": "video/mp4"
-        }
-      ]
-    }
-  },
   "painting-shoreline-at-dusk": {
     "base": "/reference-photos/el-salvador-sunrise-reference",
     "widths": [

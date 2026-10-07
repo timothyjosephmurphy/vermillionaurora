@@ -9,8 +9,8 @@ test('production readiness requires authentication and only reads provider confi
     calls++;
     if(url.endsWith('/oauth2/token'))return Response.json({access_token:'token'});
     if(url==='https://oauth2.googleapis.com/token')return Response.json({access_token:'gmail-token'});
-    if(url==='https://api.goshippo.com/shipments/')return Response.json({object_id:'SHIP1',extra:{insurance:{amount:'20.00',currency:'USD',content:'Original painting: Chase Toole'}},rates:[{object_id:'RATE1',shipment:'SHIP1',provider:'UPS',currency:'USD',amount:'6.50',included_insurance_price:'1.50'}]});
-    if(url==='https://api.stripe.com/v1/tax/calculations')return Response.json({id:'taxcalc_live',currency:'usd',amount_total:2650});
+    if(url==='https://api.goshippo.com/shipments/')return Response.json({object_id:'SHIP1',extra:{insurance:{amount:'200.00',currency:'USD',content:'Original painting: Chase Toole'}},rates:[{object_id:'RATE1',shipment:'SHIP1',provider:'UPS',currency:'USD',amount:'6.50',included_insurance_price:'1.50'}]});
+    if(url==='https://api.stripe.com/v1/tax/calculations')return Response.json({id:'taxcalc_live',currency:'usd',amount_total:20650});
     assert.notEqual(options.method,'POST');
     if(url==='https://connect.squareup.com/v2/locations/LOCATION')return Response.json({location:{id:'LOCATION',status:'ACTIVE',currency:'USD',capabilities:squareCardProcessing?['CREDIT_CARD_PROCESSING']:[]}});
     if(url==='https://connect.squareup.com/v2/webhooks/subscriptions?limit=100')return Response.json({subscriptions:[{enabled:squareWebhookEnabled,notification_url:'https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/square/webhook',event_types:['payment.updated']}]});
@@ -41,7 +41,7 @@ test('production readiness requires authentication and only reads provider confi
   assert.equal(verified.status,200);
   const audit=await verified.json();
   assert.equal(audit.checks.sellerEmail,true);assert.equal(audit.checks.insuredQuote,true);
-  assert.deepEqual(audit.checks.pilotQuote,{base:'20.00',shipping:'6.50',tax:'0.00',total:'26.50',carrier:'UPS',insurance:'20.00',insuranceFee:'1.50'});
+  assert.deepEqual(audit.checks.pilotQuote,{base:'200.00',shipping:'6.50',tax:'0.00',total:'206.50',carrier:'UPS',insurance:'200.00',insuranceFee:'1.50'});
   const cartPilot={...pilot,PAYPAL_CHECKOUT_SLUGS:'painting-portrait-in-green,painting-portrait-in-gold'};
   assert.equal((await checkoutReadiness(request(),cartPilot)).status,200);
   assert.equal((await checkoutReadiness(request(),{...cartPilot,PAYPAL_CHECKOUT_SLUGS:cartPilot.PAYPAL_CHECKOUT_SLUGS+',el-zonte-at-sunrise'})).status,503);
