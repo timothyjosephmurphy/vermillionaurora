@@ -12,15 +12,17 @@ document.querySelectorAll('[data-portrait]').forEach(box => {
  const motion=matchMedia('(prefers-reduced-motion: reduce)');
  let index=0, paused=motion.matches, visible=false, hover=false, focus=false, busy=false, timer;
  function schedule(){clearTimeout(timer);if(!paused && visible && !hover && !focus && !document.hidden)timer=setTimeout(()=>move(1),5000);}
+ // Fetch and decode the next slide ahead of time so auto-advance never stalls on a large image.
+ const ready=new Map();function preload(){const src=images[(index+1)%images.length];if(src&&!ready.has(src)){const img=new Image();img.src=src;ready.set(src,img.decode().catch(()=>{}));}}
  async function move(step){
   if(busy)return;busy=true;index=(index+step+images.length)%images.length;
   const old=stage.querySelector('img'), next=new Image();next.src=images[index];next.alt=portraitAlts[box.dataset.portrait]?.[index]||box.dataset.portrait.replaceAll('-',' ')+' example '+(index+1)+' by TJ Murphy';
   try{await next.decode();}catch{}stage.append(next);
   const duration=motion.matches?0:350;
-  const animations=[old.animate([{transform:'translateX(0)'},{transform:`translateX(${-step*100}%)`}],{duration,fill:'forwards'}),next.animate([{transform:`translateX(${step*100}%)`},{transform:'translateX(0)'}],{duration,fill:'forwards'})];
-  await Promise.allSettled(animations.map(a=>a.finished));old.remove();animations.forEach(a=>a.cancel());busy=false;schedule();
+  const animations=[old.animate([{transform:'translateX(0)'},{transform:`translateX(${-step*100}%)`}],{duration,easing:'ease-in-out',fill:'forwards'}),next.animate([{transform:`translateX(${step*100}%)`},{transform:'translateX(0)'}],{duration,easing:'ease-in-out',fill:'forwards'})];
+  await Promise.allSettled(animations.map(a=>a.finished));old.remove();animations.forEach(a=>a.cancel());busy=false;preload();schedule();
  }
- box.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch')hover=true;schedule();});box.addEventListener('pointerleave',()=>{hover=false;schedule();});
+ box.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch')hover=true;schedule();});box.addEventListener('pointerleave',e=>{if(e.pointerType!=='touch'){hover=false;schedule();}});
  box.addEventListener('focusin',()=>{focus=true;schedule();});box.addEventListener('focusout',e=>{focus=box.contains(e.relatedTarget);schedule();});
  let start=null,suppress=false;stage.style.touchAction='pan-y pinch-zoom';
  stage.addEventListener('pointerdown',e=>{if(!e.isPrimary || e.button!==0)return;clearTimeout(timer);start={x:e.clientX,y:e.clientY};suppress=false;stage.setPointerCapture(e.pointerId);});
@@ -28,7 +30,10 @@ document.querySelectorAll('[data-portrait]').forEach(box => {
  stage.addEventListener('pointercancel',()=>{start=null;schedule();});
  stage.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();move(e.key==='ArrowLeft'?-1:1);}else if(e.key===' '){e.preventDefault();paused=!paused;schedule();}});stage.addEventListener('click',e=>{if(suppress){e.preventDefault();suppress=false;}});stage.addEventListener('dragstart',e=>e.preventDefault());
  document.addEventListener('visibilitychange',schedule);motion.addEventListener('change',()=>{paused=motion.matches;schedule();});
- new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule();}).observe(box);schedule();
+ // Touch, like the featured carousel: hold the current slide while touched and for 5 seconds afterwards.
+ let touchTimer;box.addEventListener('pointerdown',e=>{if(e.pointerType==='touch'){clearTimeout(touchTimer);hover=true;schedule();}});
+ const releaseTouch=e=>{if(e.pointerType==='touch'){clearTimeout(touchTimer);touchTimer=setTimeout(()=>{hover=false;schedule();},5000);}};box.addEventListener('pointerup',releaseTouch);box.addEventListener('pointercancel',releaseTouch);
+ new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)preload();schedule();}).observe(box);schedule();
 });
 
 // Sized/faced package cards: selectors update the live price and the "Start a commission" link.
