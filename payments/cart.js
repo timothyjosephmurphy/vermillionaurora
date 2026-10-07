@@ -215,6 +215,9 @@
     if(!active){announce(!capabilities?'Availability could not be verified. Please refresh before checkout.':!capabilities.enabled?'Cart checkout is not available yet. Please contact TJ to arrange a purchase.':invalid?'Please remove unavailable items before checking out.':cart.length&&!methodIntersection().length?'These artworks do not share a payment method. Please contact TJ.':'');}
   }
   function showQuote(q){
+    const codeNote=document.querySelector('[data-cart-code-note]');
+    if(codeNote){const coded=(q.quote?.items||[]).filter(i=>i.listAmount);codeNote.hidden=!coded.length;
+      codeNote.textContent=coded.length?`Code applied: ${coded.map(i=>`${i.title} $${i.amount} (was $${i.listAmount})`).join('; ')}.`:'';}
     quoted=q;root.querySelector('[data-cart-shipping]').textContent=money(q.quote.shipping);root.querySelector('[data-cart-tax]').textContent=money(q.quote.tax);root.querySelector('[data-cart-total]').textContent=money(q.quote.total);
     applyHeldState({heldIds:cart.filter(i=>!i.id.startsWith('print-')&&!i.id.startsWith('deposit-')).map(i=>i.id),expiresAt:q.expiresAt});
     const quoteButton=form.querySelector('[data-cart-quote]');quoteButton.disabled=true;quoteButton.textContent='Shipping & tax calculated';
@@ -301,7 +304,7 @@
       const values=Object.fromEntries(new FormData(form));
       // FormData omits disabled controls; collect from named elements explicitly.
       for(const input of form.querySelectorAll('input[name]'))values[input.name]=input.value.trim();
-      const {email,...address}=values;
+      const {email,printCode,...address}=values;
       try{
         if(pendingOrder&&pending(pendingOrder)){
           const result=await api('status',{orderId:pendingOrder.orderId,key:pendingOrder.key}),restored={...result,key:pendingOrder.key};
@@ -316,7 +319,7 @@
         if(!capabilities?.enabled)throw Error('Checkout is temporarily unavailable. Please try again or contact TJ.');
         await syncHold(cart);
         const unavailable=cart.find(item=>!eligible(item.id));if(unavailable)throw Error('An item is no longer available for checkout. Review the items in your cart.');
-        const identity=holdCredentials(),q=await api('quote',{items:cart,address,email,catalogVersion:capabilities.version,holdId:identity.holdId,key:identity.key});showQuote(q);announce('Your total is ready. Choose a payment method below.');quoteFeedback.textContent='Your shipping and tax are calculated. Choose a payment method below.';
+        const identity=holdCredentials(),q=await api('quote',{items:cart,address,email,...(printCode?{code:printCode}:{}),catalogVersion:capabilities.version,holdId:identity.holdId,key:identity.key});showQuote(q);announce('Your total is ready. Choose a payment method below.');quoteFeedback.textContent='Your shipping and tax are calculated. Choose a payment method below.';
       }
       catch(error){announce(error.message);invalidate();quoteFeedback.textContent=error.message;}
       finally{busy=false;setDisabled(false);updateQuoteButton();}

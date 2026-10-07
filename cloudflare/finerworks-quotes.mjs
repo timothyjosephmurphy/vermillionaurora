@@ -110,7 +110,8 @@ export async function quoteFinerWorksPrints(env,items,address) {
   const body={orders:[{order_po:po,order_key:null,recipient,order_items:products,shipping_code:'EC',test_mode:env.PAYPAL_MODE==='sandbox'}]};
   const data=await finerworksRequest(env,'/v3/list_shipping_options_multiple',body);
   const options=shippingOptions(data,po,products),selected=options[0];
-  return {provider:'finerworks',mode:finerworksEnvironment(env),currency:'USD',...selected,selectionHash:await selectionHash(items,address),shippingMarkup:'0.00',options};
+  // unitCosts (dollars per copy by SKU) let at-cost print codes price prints after the retail check above.
+  return {provider:'finerworks',mode:finerworksEnvironment(env),currency:'USD',...selected,selectionHash:await selectionHash(items,address),shippingMarkup:'0.00',options,unitCosts:Object.fromEntries(units.filter(q=>q.ok).map(q=>[q.code,q.productionCost]))};
 }
 export async function validateFinerWorksPrintOrder(env,items,address,quote) {
   if(env.PAYPAL_MODE!=='sandbox'||quote?.provider!=='finerworks'||quote.mode!=='sandbox'||!/^\d+$/.test(quote.shippingMethod||''))throw Error('Order preflight requires a sandbox FinerWorks quote');

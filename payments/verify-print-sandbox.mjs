@@ -49,7 +49,7 @@ try {
     assert(!process.argv.includes('--test-orders'),'The low-resolution pilot is retired; this edition audit never submits print orders');
     const expected=Object.values(prints),listed=cart.products.filter(p=>p.type==='print');
     assert.deepEqual(listed.map(p=>p.id).sort(),expected.map(p=>p.id).sort());
-    assert(listed.every(p=>p.methods.includes('paypal')&&!p.sampleOnly));
+    assert(listed.every(p=>p.methods.includes('square')&&!p.methods.includes('paypal')&&!p.sampleOnly));
     const {createHash}=await import('node:crypto');
     for(const art of Object.values(config.artworks).filter(a=>a.enabled))for(const v of Object.values(art.variants)){
       const file=readFileSync(new URL('../static'+new URL(v.asset.url).pathname,import.meta.url));
@@ -75,7 +75,7 @@ try {
     }finally{if(order)assert.equal((await read('/checkout/cart/cancel',order)).status,'cancelled');}
     console.log(`PASS: ${listed.length} edition variants, exact generated files, current print prices, validation-only preflight and framed/unframed shipping/tax quotes. No payment or order submitted.`);
   }else{
-    assert.equal(cart.products.filter(p=>p.type==='print'&&p.sampleOnly&&!p.mat&&!p.frame&&p.methods.includes('paypal')).length,6);
+    assert.equal(cart.products.filter(p=>p.type==='print'&&p.sampleOnly&&!p.mat&&!p.frame&&p.methods.includes('square')).length,6);
   for(const art of Object.values(config.artworks).filter(a=>a.testOnly||a.sampleOnly)) {
     const file=art.variants.small.asset;const r=await fetch(file.url);assert.equal(r.status,200);
     const {createHash}=await import('node:crypto');assert.equal(createHash('sha256').update(Buffer.from(await r.arrayBuffer())).digest('hex'),file.sha256);

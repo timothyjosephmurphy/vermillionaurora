@@ -15,7 +15,7 @@ assert.equal(new Set(tj.map(p=>p.productId)).size,18);assert.equal(tj.filter(p=>
 const expected=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&p.productId.startsWith('paul-murphy-')),catalog=await api('catalog');
 assert.equal(expected.filter(p=>!p.frame).length,115);assert.equal(expected.filter(p=>p.frame).length,345);assert.equal(new Set(expected.map(p=>p.productId)).size,39);assert(catalog.version.endsWith('-'+printVersion));
 for(const p of [...expected,...tj,...books]){
-  const live=catalog.products.find(i=>i.id===p.id);assert(live,`Missing edition: ${p.id}`);assert.equal(live.amount,p.amount);assert.equal(live.status,'available');assert(live.methods.includes('paypal'));assert(!live.sampleOnly);
+  const live=catalog.products.find(i=>i.id===p.id);assert(live,`Missing edition: ${p.id}`);assert.equal(live.amount,p.amount);assert.equal(live.status,'available');assert(live.methods.includes('square')&&!live.methods.includes('paypal'));assert(!live.sampleOnly);
 }
 const bookFrame=books.find(p=>p.frame),bookUnframed=books.find(p=>!p.frame);assert(bookFrame&&bookUnframed);
 const ids=['print-paul-murphy-painting-57-small-frame-black','print-paul-murphy-painting-55-full-frame-white','print-paul-murphy-painting-72-medium-frame-natural','print-paul-murphy-painting-86-small','print-painting-portrait-with-hat-full-frame-black','print-painting-figures-in-wheatfield-full-frame-white','print-warszawska-syrenka-small-frame-natural','print-painting-sunset-silhouette-full',bookFrame.id,bookUnframed.id];let order;
