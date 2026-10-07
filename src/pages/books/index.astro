@@ -1,6 +1,7 @@
 ---
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
+import EmailSignup from '../../components/EmailSignup.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import { byId, catalogVersion } from '../../../catalog/catalog.mjs';
 import collections from '../../../catalog/collections.json';
@@ -36,6 +37,7 @@ const books = collections.home
         {books.map(product => <ProductCard product={product} variant="book" />)}
       </div>
       <p class="books-more"><a href="/book-galleries/">Explore print collections from the books →</a></p>
+      <EmailSignup heading="Hear about new books" />
     </main>
     <SiteFooter />
   </div>
