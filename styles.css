@@ -288,6 +288,7 @@ textarea {
 
 .art-1 {
   background-image: url('/gallery-images/warszawska-syrenka.jpeg');
+  background-image: image-set(url('/display/warszawska-syrenka-34226c70a3-960.webp') type('image/webp'), url('/gallery-images/warszawska-syrenka.jpeg') type('image/jpeg'));
 }
 
 .art-meta {
@@ -381,6 +382,7 @@ textarea {
 
 .image-one {
   background-image: url('/gallery-images/warszawska-syrenka.jpeg');
+  background-image: image-set(url('/display/warszawska-syrenka-34226c70a3-960.webp') type('image/webp'), url('/gallery-images/warszawska-syrenka.jpeg') type('image/jpeg'));
 }
 
 .image-two {

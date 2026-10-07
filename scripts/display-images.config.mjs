@@ -1,4 +1,28 @@
-export const DISPLAY_PAGES = ['/', '/gallery/', '/exhibitions/', '/about/', '/books/', '/commissions/'];
+// Pages whose HTML gets responsive WebP display images. Product pages, print previews,
+// and print-test pages are deliberately excluded (print/checkout assets stay untouched).
+export const DISPLAY_PAGES = ['/', '/gallery/', '/gallery/available/', '/exhibitions/', '/about/', '/books/', '/commissions/',
+  '/exhibitions/gavin-robertson/', '/exhibitions/paul-murphy/', '/exhibitions/chase-toole/', '/exhibitions/bitcoin-film-festival-warsaw/',
+  '/exhibitions/cape-town/', '/exhibitions/el-salvador/', '/exhibitions/intiman-auction/', '/exhibitions/living-room/',
+  '/exhibitions/studio-601/', '/exhibitions/victrola/', '/links/', '/blog/', '/blog/bitcoin-film-festival/'];
 export const MIN_BYTES = 120000;
-export const WIDTHS = [480, 960, 1600];
-export const EXTRA_SOURCES = ['/gallery-images/esperanza-hero.png'];
+export const WIDTHS = [160, 480, 960, 1600];
+export const DEFAULT_QUALITY = 75;
+// Very textured paintings need a lower quality to get real savings; visually equivalent at display size.
+export const QUALITY = { '/gallery-images/warszawska-syrenka.jpeg': 60 };
+// CSS/inline backgrounds that the img scan cannot see.
+export const EXTRA_SOURCES = ['/gallery-images/esperanza-hero.png', '/gallery-images/warszawska-syrenka.jpeg'];
+// sizes by layout: the nearest matching container class before the img wins.
+export const SIZES = [
+  ['painting-list-row', '64px'],
+  ['ev-thumbs', '76px'],
+  ['gallery-product-image', '(max-width: 980px) 164px, 224px'],
+  ['featured-slide', '(max-width: 980px) 90vw, 340px'],
+  ['portrait-preview', '(max-width: 600px) 80vw, 340px'],
+  ['ex-slide', '(max-width: 600px) 75vw, 390px'],
+  ['exhibition-index-grid', '(max-width: 600px) 90vw, 400px'],
+  ['books-grid', '(max-width: 600px) 90vw, 320px'],
+  ['ex-track', '(max-width: 600px) 70vw, 520px'],
+];
+export const DEFAULT_SIZES = '(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px';
+// Page-specific overrides (the gallery list shows small row thumbnails).
+export const PAGE_SIZES = { '/gallery/': { 'gallery-product-image': '64px' }, '/gallery/available/': { 'gallery-product-image': '64px' } };
