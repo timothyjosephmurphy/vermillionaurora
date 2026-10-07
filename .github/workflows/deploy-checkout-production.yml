@@ -47,6 +47,13 @@ jobs:
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           workingDirectory: cloudflare
           command: deploy --config wrangler.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
+          # QuickBooks Online app credentials (repository secrets), uploaded as Worker secrets.
+          secrets: |
+            QBO_CLIENT_ID
+            QBO_CLIENT_SECRET
+        env:
+          QBO_CLIENT_ID: ${{ secrets.QBO_CLIENT_ID }}
+          QBO_CLIENT_SECRET: ${{ secrets.QBO_CLIENT_SECRET }}
       - name: Verify the deployed production revision
         env:
           DEPLOYED_SHA: ${{ github.sha }}

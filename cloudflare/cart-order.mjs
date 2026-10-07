@@ -3,6 +3,8 @@ import {catalogVersion,commonMethods,cartOrigin,publicCartItem} from './cart-pol
 import {paypalRequest,paypalBody,validatePaypal,approvalUrl,squareRequest,squarePaymentBody,validateSquarePayment,squarePaymentDetails} from './cart-providers.mjs';
 import {bitcoinApi,bitcoinServer,checkoutUrl} from './bitcoin-api.mjs';
 import {captureDetails,ledgerFor,fulfillmentRecord} from './sales-records.mjs';
+import {queueQuickbooks} from './quickbooks-sync.mjs';
+import {syncEnabled as quickbooksEnabled} from './quickbooks-core.mjs';
 import {recordTax} from './checkout-pricing.mjs';
 import {newShippingJob,fulfillSale} from './shipping-fulfillment.mjs';
 import {sendCartEmail} from './cart-email.mjs';
@@ -345,6 +347,9 @@ export class CartOrder extends DurableObject {
     if(d?.squareSandboxNoFulfillment&&d.mode==='sandbox'&&d.method==='square'){await this.ctx.storage.deleteAlarm();return;}
     let done=true;await this.schedule();
     try{await this.archiveSale();}catch{done=false;}
+    // QuickBooks: queue the completed sale (idempotent per order). The sync itself runs in its own Durable Object
+    // and never blocks fulfillment; a failed enqueue is retried on the next pass.
+    if(!this.read().quickbooksQueued&&quickbooksEnabled(this.env)&&['square','bitcoin'].includes(d.method))try{await queueQuickbooks(this.env,this.receipt());this.save({...this.read(),quickbooksQueued:true});}catch(error){console.error('QuickBooks queue failed',d.id,error.message);done=false;}
     if(!d.taxRecorded)try{await recordTax(this.env,d.quote.taxCalculationId,d.captureId);this.save({...this.read(),taxRecorded:true});}catch{done=false;}
     for(let i=0;i<d.jobs.length;i++)try {
       const job=this.read().jobs[i];

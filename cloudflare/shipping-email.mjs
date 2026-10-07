@@ -84,8 +84,8 @@ export async function sendShippingEmail(token, sale, job) {
     integrationTest ? 'INTEGRATION TEST — sample order, no PayPal charge. This label is not valid for shipping.' :
       job.mode === 'sandbox' ? 'TEST SALE — this label is not valid for shipping.' : 'Payment confirmed.', '',
     'Dispatch originals within 3–5 business days of payment confirmation. Send the customer tracking at dispatch. If delayed, contact the customer with a revised date and cancellation/refund option.',
-    'Order support: https://vermillionaurora.com/shipping-returns/',
-    `Painting: ${quote.title || sale.slug}`, `Product: https://vermillionaurora.com/products/${sale.slug}/`,
+    'Order support: https://tjm.art/shipping-returns/',
+    `Painting: ${quote.title || sale.slug}`, `Product: https://tjm.art/products/${sale.slug}/`,
     `${integrationTest ? 'Sample order' : bitcoin ? 'Bitcoin order' : 'PayPal order'}: ${sale.order_id}`, `${integrationTest ? 'Test reference' : bitcoin ? 'BTCPay invoice' : 'PayPal capture'}: ${sale.capture_id}`,
     ...(quote.orderTotal ? [`This parcel: artwork $${quote.base} | Shipping $${quote.shipping}`,`Whole order: tax $${quote.orderTax} | Total $${quote.orderTotal}`] : [`Painting: $${quote.base} | Shipping: $${quote.shipping} | Tax: $${quote.tax} | Total: $${quote.total}`]), '',
     'Ship to:', address.name, address.street1, address.street2,
