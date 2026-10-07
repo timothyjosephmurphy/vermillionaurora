@@ -1,7 +1,7 @@
 ---
 import {urlFor} from '../../catalog/catalog.mjs';
 const {product}=Astro.props;
-const url=new URL(urlFor(product),Astro.site||'https://vermillionaurora.com').href;
+const url=new URL(urlFor(product),Astro.site||'https://tjm.art').href;
 const title=`${product.title} by ${product.artist||product.author||'TJ Murphy'}`;
 const post=`${title}\n${url}`;
 const imageSrc=product.image?.src||product.examples?.[0]?.src;

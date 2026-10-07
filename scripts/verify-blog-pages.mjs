@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { load } from 'cheerio';
 
-const site = 'https://vermillionaurora.com';
+const site = 'https://tjm.art';
 const dist = resolve('dist');
 const normalize = value => value.replace(/\s+/g, ' ').trim();
 const parse = html => {

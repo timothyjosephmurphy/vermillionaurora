@@ -3,7 +3,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { catalogVersion, urlFor } from '../../catalog/catalog.mjs';
 const { product } = Astro.props;
-const canonical = new URL(urlFor(product), Astro.site || 'https://vermillionaurora.com').href;
+const canonical = new URL(urlFor(product), Astro.site || 'https://tjm.art').href;
 const shareTitle = `${product.title} — ${product.artist || product.author || 'TJ Murphy'}`;
 const shareDescription = product.description || product.story?.join(' ').slice(0, 180) || shareTitle;
 const shareImageSrc = product.image?.src || product.examples?.[0]?.src;
@@ -11,7 +11,7 @@ const shareImage = shareImageSrc ? new URL(shareImageSrc, canonical).href : null
 const shareImageAlt = product.image?.alt || shareTitle;
 const structuredData = product.type === 'painting'
   ? { '@context':'https://schema.org', '@type':'VisualArtwork', name:product.title,
-      creator:(product.artist||'TJ Murphy')==='TJ Murphy'?{'@type':'Person','@id':'https://vermillionaurora.com/#tj-murphy',name:'TJ Murphy'}:{'@type':'Person',name:product.artist},
+      creator:(product.artist||'TJ Murphy')==='TJ Murphy'?{'@type':'Person','@id':'https://tjm.art/#tj-murphy',name:'TJ Murphy'}:{'@type':'Person',name:product.artist},
       artMedium:product.medium, artworkSurface:product.surface, image:new URL(product.image.src, Astro.site).href, description:product.description, url:canonical,
       ...(product.year?{dateCreated:String(product.year)}:{}),
       ...(product.dimensions?.width&&product.dimensions?.height?{width:{'@type':'Distance',name:`${product.dimensions.width} ${product.dimensions.unit||'in'}`},height:{'@type':'Distance',name:`${product.dimensions.height} ${product.dimensions.unit||'in'}`}}:{}),
