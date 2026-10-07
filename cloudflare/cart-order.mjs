@@ -13,7 +13,16 @@ const CART_HOLD_MS=15*60_000;
 // One durable coordinator per checkout. Per-original stock IDs remain unchanged.
 // Every network side effect has a preceding durable state and a recovery path.
 export class CartOrder extends DurableObject {
-  constructor(ctx,env) {super(ctx,env);ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS cart_order(id INTEGER PRIMARY KEY CHECK(id=1),data TEXT NOT NULL)');}
+  constructor(ctx,env) {super(ctx,env);ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS cart_order(id INTEGER PRIMARY KEY CHECK(id=1),data TEXT NOT NULL)');ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS print_code(id INTEGER PRIMARY KEY CHECK(id=1),data TEXT NOT NULL)');}
+  // Single-use print code state (only in instances named print-code:<hash>). Each method runs atomically in this object.
+  codeRead(){const row=this.ctx.storage.sql.exec('SELECT data FROM print_code WHERE id=1').toArray()[0];return row?JSON.parse(row.data):null;}
+  codeSave(data){this.ctx.storage.sql.exec('INSERT OR REPLACE INTO print_code(id,data) VALUES(1,?)',JSON.stringify(data));return data;}
+  async codeIssue(hash,record){if(this.codeRead())throw Error('Code already exists');this.codeSave({hash,...record,status:'available'});return {status:'available'};}
+  async codeState(){const c=this.codeRead();return c?{status:c.status,...(c.orderId?{orderId:c.orderId}:{})}:null;}
+  async codeClaim(orderId){const c=this.codeRead();if(!c)return false;if(c.status==='claimed'&&c.orderId===orderId)return true;if(c.status!=='available')return false;this.codeSave({...c,status:'claimed',orderId,claimedAt:Date.now()});return true;}
+  async codeRelease(orderId){const c=this.codeRead();if(c?.status==='claimed'&&c.orderId===orderId)this.codeSave({...c,status:'available',orderId:undefined,claimedAt:undefined});return true;}
+  async codeRedeem(orderId){const c=this.codeRead();if(!c)return false;if(c.status==='redeemed')return c.orderId===orderId;if(c.status==='claimed'&&c.orderId!==orderId)return false;this.codeSave({...c,status:'redeemed',orderId,redeemedAt:Date.now()});return true;}
+  codeOrder(d){return d?.quote?.printCode?.kind==='collector'?this.env.CART_ORDERS.getByName('print-code:'+d.quote.printCode.hash):null;}
   read(){const row=this.ctx.storage.sql.exec('SELECT data FROM cart_order WHERE id=1').toArray()[0];return row?JSON.parse(row.data):null;}
   save(data){this.ctx.storage.sql.exec('INSERT OR REPLACE INTO cart_order(id,data) VALUES(1,?)',JSON.stringify(data));return data;}
   async exclusive(action){while(this.running)await this.running.catch(()=>{});const task=action();this.running=task;try{return await task;}finally{this.running=null;}}
@@ -80,6 +89,8 @@ export class CartOrder extends DurableObject {
     if(Date.now()>d.expiresAt){if(d.heldIds?.length)await this.expireCartHold();else this.save({...d,status:'expired'});return this.result();}
     if(d.quote.catalogVersion!==catalogVersion||this.env.PAYPAL_MODE!==d.mode||!d.methods.includes(method)||!commonMethods(this.env,d.quote.items).includes(method))throw Error('Refresh this cart before payment');
     if(method==='square'&&(typeof payment.sourceId!=='string'||!payment.sourceId||payment.sourceId.length>2000))throw Error('Enter valid card details before paying.');
+    const code=this.codeOrder(d);
+    if(code&&!await code.codeClaim(d.id))return {...this.result(),codeError:'That print code has already been used.'};
     await this.schedule();
     d=this.save({...d,status:'reserving',method,squareSandboxNoFulfillment:method==='square'&&this.env.PAYPAL_MODE==='sandbox'&&this.env.SQUARE_MODE==='sandbox'&&this.env.SQUARE_SANDBOX_NO_FULFILLMENT==='true',expiresAt:Date.now()+20*60000,paymentError:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,
       merchantId:method==='paypal'?this.env.PAYPAL_MERCHANT_ID:null,
@@ -95,7 +106,7 @@ export class CartOrder extends DurableObject {
     // Persist before asking the provider to create anything. No automatic lock expiry.
     d=this.save({...d,status:'creating',createAttemptedAt:Date.now()});
     try{await this.createPayment(d);}catch(error){
-      if(d.method==='square'&&error.definiteFailure){const latest=this.read();this.save({...latest,status:'quoted',method:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,paymentError:'Square did not complete this card payment. Check the card details or choose another payment method.'});await this.schedule(Math.max(1000,latest.expiresAt-Date.now()));}
+      if(d.method==='square'&&error.definiteFailure){const latest=this.read();await this.codeOrder(latest)?.codeRelease(latest.id);this.save({...latest,status:'quoted',method:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,paymentError:'Square did not complete this card payment. Check the card details or choose another payment method.'});await this.schedule(Math.max(1000,latest.expiresAt-Date.now()));}
       else console.error('Cart payment creation needs reconciliation',d.id,error.message);
     }
     return this.result();
@@ -124,6 +135,7 @@ export class CartOrder extends DurableObject {
     const d=this.read();
     // releaseCart is conditional on the coordinator identity. Never unlock another buyer.
     for(const id of new Set([...(d.heldIds||[]),...(d.quote?.items.filter(i=>(i.type!=='print'&&i.type!=='deposit')).map(i=>i.id)||[])]))await this.stock(id).releaseCart(d.id);
+    await this.codeOrder(d)?.codeRelease(d.id);
     this.save({...d,status:d.releaseStatus||'cancelled'});
     if(d.method==='bitcoin'&&d.providerId)await this.schedule(15*60000);else await this.ctx.storage.deleteAlarm();
   }
@@ -170,8 +182,10 @@ export class CartOrder extends DurableObject {
     await this.schedule();
     d=this.save({...d,status:'settling',captureId,details,paidAt:d.paidAt||details.paidAt||new Date().toISOString()});
     for(const i of d.quote.items.filter(i=>(i.type!=='print'&&i.type!=='deposit')))if(!await this.stock(i.id).completeCart(d.id,captureId))throw Error('Could not complete inventory');
+    const code=this.codeOrder(d);
+    if(code&&!d.codeRedeemed){d=this.save({...d,codeRedeemed:true,...(await code.codeRedeem(d.id)?{}:{codeConflict:true})});}
     const jobs=d.squareSandboxNoFulfillment?[]:d.jobs||d.quote.shipments.map(s=>newShippingJob(this.env,`cart:${d.id}`,{...s,tax:'0.00',total:(Number(s.base)+Number(s.shipping)).toFixed(2),orderTax:d.quote.tax,orderTotal:d.quote.total}));
-    const prints=d.squareSandboxNoFulfillment?[]:d.quote.items.filter(i=>i.type==='print');
+    const prints=d.squareSandboxNoFulfillment?[]:d.quote.items.filter(i=>i.type==='print').map(({listAmount,priceCode,...i})=>listAmount?{...i,amount:listAmount}:i);
     let printJob=d.squareSandboxNoFulfillment?undefined:d.printJob;
     if(prints.length&&!printJob)try {printJob=newPrintJob(this.env,d,prints);}catch {
       // A configuration change after approval must never prevent recording payment.
@@ -313,6 +327,7 @@ export class CartOrder extends DurableObject {
       transactionId:d.captureId,orderId:`cart:${d.id}`,parentTransactionId:'',status:'COMPLETED',paidAt:d.paidAt,recordedAt:d.paidAt,
       title:q.items.map(i=>i.title).join('; '),slug:'',currency:'USD',items:q.items,shipments,...(d.printJob?{printFulfillment:printFulfillmentRecord(d.printJob)}:{}),itemAmount:q.base,shipping:q.shipping,tax:q.tax,gross:q.total,
       ...(d.method==='paypal'?{paypalFee:details.fee??null,paypalNet:details.net??null}:{}),providerFee:details.fee??null,feeCurrency:details.feeCurrency||'',netCurrency:details.netCurrency||'',
+      ...(q.printCode?{printCode:{kind:q.printCode.kind,hash:q.printCode.hash.slice(0,12)},listAmount:q.items.reduce((s,i)=>s+Number(i.listAmount||i.amount)*(i.quantity||1),0).toFixed(2)}:{}),
       buyerName:q.address.name,buyerEmail:q.email,shippingAddress:q.address,taxCalculationId:q.taxCalculationId,
       ...(q.items.some(i=>i.type==='deposit')?{commissionDeposit:q.items.filter(i=>i.type==='deposit').map(i=>({id:i.id,...i.commission}))}:{}),
       ...(d.method==='bitcoin'?{invoiceId:d.providerId,bitcoinPayments:details.bitcoinPayments||[]} : {}),
@@ -371,6 +386,7 @@ export class CartOrder extends DurableObject {
   async expireCartHold(status='expired') {
     const d=this.read();if(!d)return;
     for(const id of new Set([...(d.heldIds||[]),...(d.targetHeldIds||[])]))await this.stock(id).releaseCart(d.id);
+    await this.codeOrder(d)?.codeRelease(d.id);
     this.save({...d,status,heldIds:[],targetHeldIds:undefined});await this.ctx.storage.deleteAlarm();
   }
 }

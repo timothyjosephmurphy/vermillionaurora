@@ -4,6 +4,7 @@ import deposits from './commission-deposits.mjs';
 import {publicCartItem} from './cart-policy.mjs';
 import {cartOrigin,cartItems,commonMethods,paymentMethods,cleanEmail,ORDER_ID,ACCESS_KEY,catalogVersion,keyHash} from './cart-policy.mjs';
 import {priceCart} from './checkout-pricing.mjs';
+import {resolveCode} from './print-codes.mjs';
 export async function cartCheckout(request,env) {
   const url=new URL(request.url),action=url.pathname.split('/').at(-1);
   const headers={'Access-Control-Allow-Origin':cartOrigin(env),'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Cache-Control':'no-store','Vary':'Origin'};
@@ -36,7 +37,9 @@ export async function cartCheckout(request,env) {
       if(body.catalogVersion!==catalogVersion)return reply({error:'The catalog has changed. Refresh your cart.'},409);
       const items=cartItems(body.items),methods=commonMethods(env,items),email=cleanEmail(body.email);
       if(!methods.length)return reply({error:'These items do not share an available payment method. Please review your cart.'},409);
-      const quote=await priceCart(env,items,body.address,email),id=crypto.randomUUID();
+      let code=null;
+      try{code=await resolveCode(env,body.code,items);}catch(error){return reply({error:error.message,code:'PRINT_CODE'},422);}
+      const quote=await priceCart(env,items,body.address,email,code),id=crypto.randomUUID();
       if(ORDER_ID.test(body.holdId||'')&&ACCESS_KEY.test(body.key||'')) {
         const holdId=body.holdId,keyHashValue=await keyHash(body.key),order=env.CART_ORDERS.getByName(holdId);
         if(!await order.authorize(keyHashValue))return reply({error:'Your cart reservation expired. Refresh your cart and try again.'},409);
@@ -51,7 +54,7 @@ export async function cartCheckout(request,env) {
     if(!ORDER_ID.test(body.orderId||'')||!ACCESS_KEY.test(body.key||''))return reply({error:'Invalid order reference'},400);
     const order=env.CART_ORDERS.getByName(body.orderId);
     if(!await order.authorize(await keyHash(body.key)))return reply({error:'Order not found'},404);
-    if(action==='start')return reply(await order.start(body.method,{sourceId:body.sourceId}));
+    if(action==='start'){const started=await order.start(body.method,{sourceId:body.sourceId});return started.codeError?reply({error:started.codeError,code:'PRINT_CODE'},409):reply(started);}
     if(action==='capture')return reply(await order.capture());
     if(action==='cancel')return reply(await order.cancel());
     return reply(await order.publicStatus());

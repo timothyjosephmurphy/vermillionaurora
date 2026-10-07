@@ -1,6 +1,7 @@
 export { SalesLedger } from './sales-ledger.mjs';
 export {CartOrder} from './cart-order.mjs';
 export { BitcoinOrder } from './bitcoin-order.mjs';
+import {printCodesApi} from './print-codes.mjs';
 import {cartCheckout} from './cart-checkout.mjs';
 import {printApi} from './print-api.mjs';
 import {finerworksBillingSetup} from './finerworks-billing-setup.mjs';
@@ -49,6 +50,7 @@ export default {
     }
     if (path==='/checkout/prints/billing-setup')return finerworksBillingSetup(request,env);
     if (path.startsWith('/checkout/prints/')) return printApi(request,env);
+    if (path === '/checkout/print-codes/issue') return printCodesApi(request,env);
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path==='/checkout/square/webhook')return squareWebhook(request,env);
     if (path==='/checkout/shipping-check') return shippingCheck(request,env);
