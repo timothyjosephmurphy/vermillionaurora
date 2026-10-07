@@ -2,11 +2,12 @@ import catalog, {catalogVersion} from './checkout-catalog.mjs';
 import { priceOrder } from './checkout-pricing.mjs';
 import { captureDetails } from './sales-records.mjs';
 
-const SITE = 'https://vermillionaurora.com';
+import { PRIMARY_SITE as SITE, SITE_ORIGINS, isSiteOrigin, withCors } from './site-origins.mjs';
 const ORDER_ID = /^[A-Z0-9]{1,36}$/;
 const HOLD_ID = /^[0-9a-f-]{36}$/;
 const SLUG = /^[a-z0-9-]+$/;
 const site = env => env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN : SITE;
+const siteOrigins = env => env.PAYPAL_MODE === 'sandbox' ? [env.SANDBOX_RETURN_ORIGIN] : SITE_ORIGINS;
 const cors = env => ({ 'Access-Control-Allow-Origin':site(env), 'Access-Control-Allow-Methods':'GET, POST, OPTIONS', 'Access-Control-Allow-Headers':'Content-Type', 'Vary':'Origin', 'Cache-Control':'no-store' });
 const json = (body, status=200, env={}) => new Response(JSON.stringify(body), {status, headers:{...cors(env),'Content-Type':'application/json'}});
 const configured = env => ['live','sandbox'].includes(env.PAYPAL_MODE) && env.PAYPAL_CLIENT_ID && env.PAYPAL_CLIENT_SECRET && env.PAYPAL_MERCHANT_ID && (env.PAYPAL_MODE === 'sandbox' ? env.SANDBOX_RETURN_ORIGIN && !env.GITHUB_TOKEN : true) && env.PAINTING_STOCK && env.SHIPPO_TOKEN && env.STRIPE_SECRET_KEY && env.SHIP_FROM_STREET && env.PAYPAL_WEBHOOK_ID;
@@ -39,6 +40,9 @@ async function paypal(env, path, accessToken, body, requestId) {
   return result;
 }
 export async function checkout(request, env) {
+  return withCors(request, await checkoutRequest(request, env), siteOrigins(env));
+}
+async function checkoutRequest(request, env) {
   const url = new URL(request.url);
   const respond = (body,status=200) => json(body,status,env);
   if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:cors(env)});
@@ -47,7 +51,7 @@ export async function checkout(request, env) {
   const finishing = ['/checkout/capture','/checkout/cancel'].includes(url.pathname);
   if (!finishing && (env.PAYPAL_CHECKOUT_ENABLED !== 'true' || env.PAYPAL_DEPRECATED === 'true')) return respond({error:'Checkout is being set up.'},503);
   const origin = request.headers.get('Origin');
-  if (origin && origin !== site(env)) return respond({error:'Origin not allowed.'},403,env);
+  if (origin && !isSiteOrigin(origin, siteOrigins(env))) return respond({error:'Origin not allowed.'},403,env);
 
   if (url.pathname === '/checkout/status' && request.method === 'GET') {
     const slug = url.searchParams.get('slug');
