@@ -56,7 +56,9 @@ try {
  await page.locator('#available-only').check();assert.equal(await page.locator('.painting-list-row:visible').count(),0);assert(await page.locator('.gallery-empty').isVisible());assert(await page.locator('.exhibition-viewer').isHidden());
  await page.locator('#available-only').uncheck();assert(await page.locator('.exhibition-viewer').isVisible());
  await page.goto(origin+'/');await page.waitForFunction(()=>document.querySelector('.available-paintings-carousel .ex-track').children.length===0);
- assert.equal(await page.locator('.collector-items-carousel .product-card').count(),collections.home.filter(e=>e.variant==='carousel').length);
+ const homeCarousel=collections.home.filter(e=>e.variant==='carousel').length;
+ assert.equal(await page.locator('.collector-items-carousel .product-card').count(),Math.min(8,homeCarousel));
+ assert(await page.locator('.collector-archive-link a[href="/gallery/"]').count());
  allSold=false;
  await page.goto(origin+'/products/painting-portrait-in-green/');await page.getByText('Sold',{exact:true}).waitFor();await page.screenshot({path:'/tmp/catalog-preview/product-mobile.png',fullPage:true});
  await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:'/tmp/catalog-preview/product-desktop.png',fullPage:true});
