@@ -28,7 +28,7 @@ beforeEach(()=>{
       expect(url.searchParams.get('minorversion')).toBe('75');
       if(path.startsWith('companyinfo/'))return reply(200,{CompanyInfo:{CompanyName:'Sandbox Company_US_1',Country:'US'}});
       if(path==='preferences')return reply(200,{Preferences:{CurrencyPrefs:{HomeCurrency:{value:mode.currency||'USD'},MultiCurrencyEnabled:false}}});
-      if(path==='query'){const q=url.searchParams.get('query');const entity=q.match(/from (\w+)/)[1];return reply(200,{QueryResponse:entity==='SalesReceipt'&&mode.existing?{SalesReceipt:[{Id:'900',DocNumber:'VA-x',PrivateNote:`order ${mode.existing}`}]}:{}});}
+      if(path==='query'){const q=url.searchParams.get('query');const entity=q.match(/from (\w+)/)[1];if(mode.preflight&&entity==='Account'&&q.includes("'Art sales'"))return reply(200,{QueryResponse:{Account:[{Id:'81',Name:'Art sales',AccountType:'Income',AccountSubType:'SalesOfProductIncome',Active:true}]}});if(mode.preflight&&entity==='Item'&&q.includes("'Shipping'"))return reply(200,{QueryResponse:{Item:[{Id:'7',Name:'Shipping',Type:'Category',Active:true}]}});return reply(200,{QueryResponse:entity==='SalesReceipt'&&mode.existing?{SalesReceipt:[{Id:'900',DocNumber:'VA-x',PrivateNote:`order ${mode.existing}`}]}:{}});}
       if(path==='salesreceipt'){
         if(mode.transient)return reply(503,{Fault:{Error:[{Message:'Service unavailable',code:'503'}],type:'SystemFault'}});
         if(mode.validation)return reply(400,{Fault:{Error:[{Message:'A business validation error has occurred',Detail:'Business Validation Error: Unexpected Element',code:'6000'}],type:'ValidationFault'}});
@@ -145,4 +145,18 @@ it('owner routes: origin, manager token, and callback CSRF checks',async()=>{
   expect(forged.headers.get('Location')).toBe('/quickbooks/connect?result=expired');
   const page=await quickbooksApi(new Request(`${origin}/quickbooks/connect`),env);
   expect(await page.text()).toContain('Connect to QuickBooks');
+});
+
+it('preflight reports the account and item mapping without writing to QuickBooks',async()=>{
+  const stub=await connected();mode.preflight=true;
+  const writesBefore=calls.filter(c=>c.init.method==='POST'&&c.url.hostname.includes('quickbooks')).length;
+  const r=await stub.preflight();
+  expect(r).toMatchObject({company:'Sandbox Company_US_1',homeCurrency:'USD',multiCurrency:false,depositTo:{square:'Square clearing',btcpay:'Bitcoin clearing'},problems:1});
+  expect(r.accounts.income).toMatchObject({id:'81',action:'use existing'});
+  expect(r.accounts.square.action).toBe('will be created (Other Current Asset)');
+  expect(r.items.shipping.action).toMatch(/^PROBLEM: existing item type Category/);
+  expect(r.items.original.action).toBe('will be created (Service item posting to Art sales)');
+  expect(calls.filter(c=>c.init.method==='POST'&&c.url.hostname.includes('quickbooks')).length).toBe(writesBefore);
+  const response=await quickbooksApi(new Request(`${origin}/quickbooks/preflight`,{method:'POST',headers:{Origin:'https://evil.example',Authorization:'Bearer manager-test-token'}}),env);
+  expect(response.status).toBe(403);
 });
