@@ -55,19 +55,19 @@
     "slug": "double-portrait",
     "type": "commission",
     "title": "Double portrait",
-    "description": "Two faces, 12\u00d79 in. Crafted for anniversaries, family, and memories.",
+    "description": "Two faces in one watercolor pastel portrait. Now part of the Portrait package (2 faces, from $200).",
     "eyebrow": "Commission",
     "artist": "TJ Murphy",
     "listing": {
       "status": "inquiry",
       "price": {
-        "amount": "400.00",
+        "amount": "200.00",
         "currency": "USD",
         "from": false
       }
     },
     "story": [
-      "Two faces, 12\u00d79 in. Crafted for anniversaries, family, and memories."
+      "Two faces in one watercolor pastel portrait. Now ordered as the Portrait package with 2 faces (from $200)."
     ],
     "examples": [
       {
@@ -160,7 +160,8 @@
       "href": "/commissions/",
       "label": "View all commissions"
     },
-    "inquiryHref": "/commissions/?package=double-portrait#form"
+    "inquiryHref": "/commissions/?package=single-portrait&faces=2#form",
+    "mergedInto": "single-portrait"
   },
   {
     "id": "el-zonte-at-sunrise",
@@ -4373,20 +4374,116 @@
     "id": "single-portrait",
     "slug": "single-portrait",
     "type": "commission",
-    "title": "Single portrait",
-    "description": "One face, 9\u00d712 inches. A personal keepsake designed to feel timeless.",
+    "title": "Portrait",
+    "description": "Watercolor pastel portrait with one to four faces. A personal keepsake designed to feel timeless.",
     "eyebrow": "Commission",
     "artist": "TJ Murphy",
     "listing": {
       "status": "inquiry",
       "price": {
-        "amount": "200.00",
+        "amount": "100.00",
         "currency": "USD",
-        "from": false
+        "from": true
       }
     },
+    "options": [
+      {
+        "id": "7-5x12-1f",
+        "label": "1 face, 7.5 \u00d7 12 in",
+        "size": "7.5 \u00d7 12 in",
+        "faces": 1,
+        "amount": "100.00"
+      },
+      {
+        "id": "7-5x12-2f",
+        "label": "2 faces, 7.5 \u00d7 12 in",
+        "size": "7.5 \u00d7 12 in",
+        "faces": 2,
+        "amount": "200.00"
+      },
+      {
+        "id": "7-5x12-3f",
+        "label": "3 faces, 7.5 \u00d7 12 in",
+        "size": "7.5 \u00d7 12 in",
+        "faces": 3,
+        "amount": "300.00"
+      },
+      {
+        "id": "7-5x12-4f",
+        "label": "4 faces, 7.5 \u00d7 12 in",
+        "size": "7.5 \u00d7 12 in",
+        "faces": 4,
+        "amount": "400.00"
+      },
+      {
+        "id": "12x15-1f",
+        "label": "1 face, 12 \u00d7 15 in",
+        "size": "12 \u00d7 15 in",
+        "faces": 1,
+        "amount": "150.00"
+      },
+      {
+        "id": "12x15-2f",
+        "label": "2 faces, 12 \u00d7 15 in",
+        "size": "12 \u00d7 15 in",
+        "faces": 2,
+        "amount": "300.00"
+      },
+      {
+        "id": "12x15-3f",
+        "label": "3 faces, 12 \u00d7 15 in",
+        "size": "12 \u00d7 15 in",
+        "faces": 3,
+        "amount": "450.00"
+      },
+      {
+        "id": "12x15-4f",
+        "label": "4 faces, 12 \u00d7 15 in",
+        "size": "12 \u00d7 15 in",
+        "faces": 4,
+        "amount": "600.00"
+      },
+      {
+        "id": "24x15-1f",
+        "label": "1 face, 24 \u00d7 15 in",
+        "size": "24 \u00d7 15 in",
+        "faces": 1,
+        "amount": "250.00"
+      },
+      {
+        "id": "24x15-2f",
+        "label": "2 faces, 24 \u00d7 15 in",
+        "size": "24 \u00d7 15 in",
+        "faces": 2,
+        "amount": "500.00"
+      },
+      {
+        "id": "24x15-3f",
+        "label": "3 faces, 24 \u00d7 15 in",
+        "size": "24 \u00d7 15 in",
+        "faces": 3,
+        "amount": "750.00"
+      },
+      {
+        "id": "24x15-4f",
+        "label": "4 faces, 24 \u00d7 15 in",
+        "size": "24 \u00d7 15 in",
+        "faces": 4,
+        "amount": "1000.00"
+      }
+    ],
+    "exampleGroups": [
+      {
+        "label": "Single portraits",
+        "portrait": "single-portrait"
+      },
+      {
+        "label": "Double portraits",
+        "portrait": "double-portrait"
+      }
+    ],
     "story": [
-      "One face, 9\u00d712 inches. A personal keepsake designed to feel timeless."
+      "Watercolor pastel portrait with one to four faces. Priced per face by size: 7.5\u00d712 in $100, 12\u00d715 in $150, or 24\u00d715 in $250 per face. A personal keepsake designed to feel timeless."
     ],
     "examples": [
       {
@@ -4495,28 +4592,127 @@
       "href": "/commissions/",
       "label": "View all commissions"
     },
-    "inquiryHref": "/commissions/?package=single-portrait#form"
+    "inquiryHref": "/commissions/?package=single-portrait#form",
+    "optionAxes": [
+      {
+        "param": "faces",
+        "label": "Faces",
+        "values": [
+          {
+            "id": "1f",
+            "label": "1 face"
+          },
+          {
+            "id": "2f",
+            "label": "2 faces"
+          },
+          {
+            "id": "3f",
+            "label": "3 faces"
+          },
+          {
+            "id": "4f",
+            "label": "4 faces"
+          }
+        ]
+      },
+      {
+        "param": "size",
+        "label": "Size",
+        "values": [
+          {
+            "id": "7-5x12",
+            "label": "7.5 \u00d7 12 in"
+          },
+          {
+            "id": "12x15",
+            "label": "12 \u00d7 15 in"
+          },
+          {
+            "id": "24x15",
+            "label": "24 \u00d7 15 in"
+          }
+        ]
+      }
+    ],
+    "optionOrder": [
+      "size",
+      "faces"
+    ]
   },
   {
     "id": "small-landscape",
     "slug": "small-landscape",
     "type": "commission",
-    "title": "Small landscape",
-    "description": "12\u00d715 landscape featuring atmosphere, horizon, and emotional context.",
+    "title": "Landscape",
+    "description": "Watercolor pastel landscape featuring atmosphere, horizon, and emotional context, in three sizes.",
     "eyebrow": "Commission",
     "artist": "TJ Murphy",
     "listing": {
       "status": "inquiry",
       "price": {
-        "amount": "199.00",
+        "amount": "250.00",
         "currency": "USD",
-        "from": false
+        "from": true
       }
     },
-    "story": [
-      "12\u00d715 landscape featuring atmosphere, horizon, and emotional context."
+    "options": [
+      {
+        "id": "12x15",
+        "label": "12 \u00d7 15 in",
+        "amount": "250.00",
+        "size": "12 \u00d7 15 in"
+      },
+      {
+        "id": "24x15",
+        "label": "24 \u00d7 15 in",
+        "amount": "450.00",
+        "size": "24 \u00d7 15 in"
+      },
+      {
+        "id": "24x48",
+        "label": "24 \u00d7 48 in",
+        "amount": "1000.00",
+        "size": "24 \u00d7 48 in"
+      }
     ],
-    "examples": [],
+    "story": [
+      "Watercolor pastel landscape featuring atmosphere, horizon, and emotional context. Choose 12\u00d715 in ($250), 24\u00d715 in ($450), or 24\u00d748 in ($1,000)."
+    ],
+    "examples": [
+      {
+        "src": "/gallery-images/golden-coast.jpg",
+        "alt": "Sunset in Puget Sound from San Juan Island, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/moonlit-water.jpg",
+        "alt": "Moonrise in the North Cascades, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/portrait-with-hat.jpg",
+        "alt": "Sunrise on Rainier with Eagle, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/sunset-silhouette.jpg",
+        "alt": "Sunset on Sucia Island in Puget Sound, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/el-salvador-sunrise.jpeg",
+        "alt": "El Zonte at Sunrise, El Salvador, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/golden-reflection.jpg",
+        "alt": "Sunset from La Libertad, El Salvador, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/red-horizon.jpg",
+        "alt": "Maui Sunset from Kihei, watercolor pastel landscape by TJ Murphy"
+      },
+      {
+        "src": "/gallery-images/two-soldiers.jpg",
+        "alt": "Rice Paddy in Vietnam, watercolor pastel landscape by TJ Murphy"
+      }
+    ],
     "galleryDescription": "",
     "inquiry": {
       "label": "Discuss this commission",
@@ -4526,7 +4722,30 @@
       "href": "/commissions/",
       "label": "View all commissions"
     },
-    "inquiryHref": "/commissions/?package=small-landscape#form"
+    "inquiryHref": "/commissions/?package=small-landscape#form",
+    "optionAxes": [
+      {
+        "param": "size",
+        "label": "Size",
+        "values": [
+          {
+            "id": "12x15",
+            "label": "12 \u00d7 15 in"
+          },
+          {
+            "id": "24x15",
+            "label": "24 \u00d7 15 in"
+          },
+          {
+            "id": "24x48",
+            "label": "24 \u00d7 48 in"
+          }
+        ]
+      }
+    ],
+    "optionOrder": [
+      "size"
+    ]
   },
   {
     "id": "sunset-over-water",

@@ -106,6 +106,12 @@
   card.addEventListener('pointerenter', event => {if (event.pointerType !== 'touch') hovered = true;});
   card.addEventListener('pointerleave', () => {hovered = false; schedule();});
   card.addEventListener('focusin', () => {focused = true;});
+  // Touch: hold the current painting while touched and for 5 seconds afterwards.
+  let touchTimer;
+  card.addEventListener('pointerdown', event => {if (event.pointerType === 'touch') {clearTimeout(touchTimer); hovered = true;}});
+  const releaseTouch = event => {if (event.pointerType === 'touch') {clearTimeout(touchTimer); touchTimer = setTimeout(() => {hovered = false; schedule();}, 5000);}};
+  card.addEventListener('pointerup', releaseTouch);
+  card.addEventListener('pointercancel', releaseTouch);
   card.addEventListener('focusout', event => {focused = card.contains(event.relatedTarget); schedule();});
   motion.addEventListener('change', () => {paused = motion.matches; update(); schedule();});
   new IntersectionObserver(entries => {visible = entries[0].isIntersecting; schedule();}).observe(card);

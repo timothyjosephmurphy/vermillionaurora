@@ -203,6 +203,38 @@
    }
   ]
  },
+ "/gallery-images/golden-coast.jpg": {
+  "original": 49784,
+  "width": 310,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/golden-coast-158e812f2a-160.webp",
+    "bytes": 5742
+   },
+   {
+    "w": 310,
+    "src": "/display/golden-coast-158e812f2a-310.webp",
+    "bytes": 22986
+   }
+  ]
+ },
+ "/gallery-images/golden-reflection.jpg": {
+  "original": 45672,
+  "width": 290,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/golden-reflection-96abad4e39-160.webp",
+    "bytes": 7256
+   },
+   {
+    "w": 290,
+    "src": "/display/golden-reflection-96abad4e39-290.webp",
+    "bytes": 19362
+   }
+  ]
+ },
  "/gallery-images/honeybadger-and-cub.jpeg": {
   "original": 261515,
   "width": 1060,
@@ -226,6 +258,22 @@
     "w": 1060,
     "src": "/display/honeybadger-and-cub-ae2a98cf59-1060.webp",
     "bytes": 178446
+   }
+  ]
+ },
+ "/gallery-images/moonlit-water.jpg": {
+  "original": 40914,
+  "width": 308,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/moonlit-water-2d5761a881-160.webp",
+    "bytes": 3934
+   },
+   {
+    "w": 308,
+    "src": "/display/moonlit-water-2d5761a881-308.webp",
+    "bytes": 15800
    }
   ]
  },
@@ -271,6 +319,43 @@
    }
   ]
  },
+ "/gallery-images/portrait-with-hat.jpg": {
+  "original": 33347,
+  "width": 784,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/portrait-with-hat-ec28072b66-160.webp",
+    "bytes": 1264
+   },
+   {
+    "w": 480,
+    "src": "/display/portrait-with-hat-ec28072b66-480.webp",
+    "bytes": 6172
+   },
+   {
+    "w": 784,
+    "src": "/display/portrait-with-hat-ec28072b66-784.webp",
+    "bytes": 11482
+   }
+  ]
+ },
+ "/gallery-images/red-horizon.jpg": {
+  "original": 82730,
+  "width": 296,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/red-horizon-9f049eb26b-160.webp",
+    "bytes": 6308
+   },
+   {
+    "w": 296,
+    "src": "/display/red-horizon-9f049eb26b-296.webp",
+    "bytes": 16144
+   }
+  ]
+ },
  "/gallery-images/sunset-silhouette.jpg": {
   "original": 155829,
   "width": 1186,
@@ -294,6 +379,27 @@
     "w": 1186,
     "src": "/display/sunset-silhouette-a29846643f-1186.webp",
     "bytes": 52010
+   }
+  ]
+ },
+ "/gallery-images/two-soldiers.jpg": {
+  "original": 50907,
+  "width": 558,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/two-soldiers-6d91f5f3d2-160.webp",
+    "bytes": 2858
+   },
+   {
+    "w": 480,
+    "src": "/display/two-soldiers-6d91f5f3d2-480.webp",
+    "bytes": 18214
+   },
+   {
+    "w": 558,
+    "src": "/display/two-soldiers-6d91f5f3d2-558.webp",
+    "bytes": 23500
    }
   ]
  },
