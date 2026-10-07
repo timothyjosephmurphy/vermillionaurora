@@ -11,11 +11,13 @@ const availablePaintings=homePaintings.filter(product=>['available','inquiry'].i
 const collectorPaintings=homePaintings.filter(product=>!['available','inquiry'].includes(product.listing?.status));
 const collectorPreview=collectorPaintings.slice(0,8);
 const featured=availablePaintings[0]||homePaintings[0];
+import { person, ld } from '../data/structured-data.mjs';
 ---
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TJ Murphy | Paintings, Murals &amp; Commissions</title>
+    <script type="application/ld+json" set:html={ld(person)} />
+    <title>TJ Murphy | Seattle Watercolor Artist — Paintings, Murals &amp; Commissions</title>
     <meta name="description" content="Paintings and murals by TJ Murphy, celebrating natural beauty and self-sovereignty through Pacific Northwest landscapes, expressive portraits, and a limited palette.">
     <link rel="preload" as="image" href={featured.image.src} fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">

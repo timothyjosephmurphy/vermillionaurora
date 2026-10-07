@@ -65,6 +65,8 @@ async function addCartAssets(dir) {
       if(!next.includes('src="/payments/cart.js"'))next=next.replace('</head>','<link rel="stylesheet" href="/payments/cart.css"><script src="/payments/cart.js" defer></script></head>');
       // Remaining static pages also get the shared mobile hide-on-scroll header script.
       if(!next.includes('src="/site-header.js"'))next=next.replace('</head>','<script src="/site-header.js" defer></script></head>');
+      // Film links point at the dedicated /film/ page.
+      next=next.replaceAll('href="/#film"','href="/film/"');
       // Remaining static pages also get the shared mobile hamburger menu markup.
       if(!next.includes('class="nav-toggle"'))next=addMobileMenu(next);
       if(next!==html)await writeFile(path,next);
