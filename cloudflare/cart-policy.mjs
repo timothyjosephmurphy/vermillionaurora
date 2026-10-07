@@ -1,5 +1,6 @@
 import catalog, {catalogVersion as originalVersion} from './checkout-catalog.mjs';
 import prints, {printVersion} from './print-catalog.mjs';
+import deposits from './commission-deposits.mjs';
 export const catalogVersion=`${originalVersion}-${printVersion}`;
 import {bitcoinOffered} from './bitcoin-api.mjs';
 import {finerworksOrderingReady} from './finerworks-fulfillment.mjs';
@@ -21,6 +22,7 @@ export function paymentMethods(env,id) {
   if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS||!env.PAINTING_STOCK||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return [];
   const print=Object.hasOwn(prints,id)?prints[id]:null;
   if(!env.STRIPE_SECRET_KEY||!['live','sandbox'].includes(env.PAYPAL_MODE))return [];
+  if(Object.hasOwn(deposits,id))return depositMethods(env);
   if(print) {
     if(print.testOnly&&env.PAYPAL_MODE!=='sandbox')return [];
     if(print.sampleOnly&&env.PAYPAL_MODE==='live'&&env.LIVE_PRINT_SAMPLE_ENABLED!=='true')return [];
@@ -36,7 +38,28 @@ export function paymentMethods(env,id) {
     !(env.SQUARE_MODE==='live'&&env.SQUARE_APPLICATION_ID.startsWith('sandbox-')))methods.push('square');
   return methods;
 }
+// Commission deposits are non-shippable service lines (50% of a fixed package price).
+// They are off unless COMMISSION_DEPOSITS_ENABLED is "true", and COMMISSION_DEPOSITS_PAUSED stops them.
+export function depositMethods(env) {
+  if(env.COMMISSION_DEPOSITS_ENABLED!=='true'||env.COMMISSION_DEPOSITS_PAUSED==='true')return [];
+  const methods=[];
+  if(env.PAYPAL_CHECKOUT_ENABLED==='true'&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');
+  if(printBitcoinOffered(env))methods.push('bitcoin');
+  if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.PAYPAL_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&env.SQUARE_CHECKOUT_ALL==='true'&&
+    env.SQUARE_ACCESS_TOKEN&&env.SQUARE_APPLICATION_ID&&env.SQUARE_LOCATION_ID&&env.SQUARE_WEBHOOK_SIGNATURE_KEY&&env.SQUARE_WEBHOOK_URL&&
+    !(env.SQUARE_MODE==='live'&&env.SQUARE_APPLICATION_ID.startsWith('sandbox-')))methods.push('square');
+  return methods;
+}
+const REQUEST_ID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 export function cartItems(input) {
+  if(Array.isArray(input)&&input.some(line=>line&&Object.hasOwn(deposits,line.id))) {
+    // A deposit is checked out on its own so no shipping or inventory rules mix in.
+    if(input.length!==1||input[0].quantity!==1)throw Error('Pay a commission deposit on its own, one at a time.');
+    const line=input[0],d=deposits[line.id];
+    if(line.requestId!==undefined&&!REQUEST_ID.test(line.requestId))throw Error('The commission request reference is invalid.');
+    return [{id:line.id,type:'deposit',quantity:1,title:d.title,amount:d.amount,commission:{package:d.package,packageTitle:d.packageTitle,packagePrice:d.packagePrice,
+      ...(line.requestId?{requestId:line.requestId}:{}),balance:(Number(d.packagePrice)-Number(d.amount)).toFixed(2)}}];
+  }
   if(!Array.isArray(input)||input.length<1||input.length>MAX_ITEMS)throw Error(`Choose between 1 and ${MAX_ITEMS} items.`);
   const seen=new Set(),sampleArtworks=new Set();
   return input.map(line=>{
@@ -62,6 +85,6 @@ function printBitcoinOffered(env) {
   try {const u=new URL(env.BTCPAY_URL);return env.PAYPAL_MODE==='live'&&env.BTCPAY_CHECKOUT_ENABLED==='true'&&u.protocol==='https:'&&!u.username&&!u.password&&!!env.BTCPAY_STORE_ID&&!!env.BTCPAY_API_KEY&&!!env.BTCPAY_WEBHOOK_SECRET&&!!env.BITCOIN_ORDERS;}catch{return false;}
 }
 export function publicCartItem(item) {
-  const {id,type,productId,title,amount,quantity,imageSize,paperSize,paper,preview,mat,frame,sampleOnly}=item;
-  return {id,type,title,amount,quantity,...(type==='print'?{productId,imageSize,paperSize,paper,preview,...(sampleOnly?{sampleOnly:true}:{}),...(mat?{mat:{name:mat.name,outer:mat.outer,window:mat.window}}:{}),...(frame?{frame:{name:frame.name,size:frame.size,glazing:{name:frame.glazing.name}}}:{})}:{})};
+  const {id,type,productId,title,amount,quantity,imageSize,paperSize,paper,preview,mat,frame,sampleOnly,commission}=item;
+  return {id,type,title,amount,quantity,...(type==='deposit'&&commission?{commission}:{}),...(type==='print'?{productId,imageSize,paperSize,paper,preview,...(sampleOnly?{sampleOnly:true}:{}),...(mat?{mat:{name:mat.name,outer:mat.outer,window:mat.window}}:{}),...(frame?{frame:{name:frame.name,size:frame.size,glazing:{name:frame.glazing.name}}}:{})}:{})};
 }
