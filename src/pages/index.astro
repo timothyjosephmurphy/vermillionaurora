@@ -27,7 +27,15 @@ import { person, ld } from '../data/structured-data.mjs';
   <link rel="stylesheet" href="/featured-carousel/carousel.css">
   <link rel="stylesheet" href="/home-compact.css">
   <link rel="stylesheet" href="/portrait-preview.css"><link rel="stylesheet" href="/site-header.css">
-<meta name="catalog-version" content={catalogVersion} /></head>
+<meta name="catalog-version" content={catalogVersion} />  <style is:global>
+    .commission-mix{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;max-width:980px;margin:0 auto}
+    .commission-mix-carousel{max-width:460px;width:100%;margin:0 auto}
+    .commission-mix-copy h3{font:600 1.8rem/1.2 "Cormorant Garamond",serif;margin:0 0 10px}
+    .commission-mix-prices{list-style:none;padding:0;margin:12px 0;line-height:1.9}
+    .commission-mix-prices a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.commission-mix{grid-template-columns:1fr;gap:20px}}
+  </style>
+</head>
   <body class="home-page">
     <div class="page-shell">
       <SiteHeader />
@@ -123,9 +131,21 @@ import { person, ld } from '../data/structured-data.mjs';
               <p><a href="/commissions/" style="text-decoration:underline;text-underline-offset:.2em">View packages, FAQ &amp; form →</a> · <a href="/commissions/process/" style="text-decoration:underline;text-underline-offset:.2em">How I create your painting →</a></p>
             </div>
 
-            <div class="service-grid">
-              {collections.home.filter(entry=>entry.variant==='service').map(entry=><ProductCard product={byId[entry.product]} variant={entry.variant} />)}
-</div>
+            <div class="commission-mix">
+              <div class="portrait-preview commission-mix-carousel" data-portrait="commissions-mix" data-mix="small-landscape,single-portrait,double-portrait" aria-label="Commission examples: landscapes and portraits">
+                <a class="portrait-preview-stage" href="/commissions/"><img src={byId['small-landscape'].examples[0].src} alt={byId['small-landscape'].examples[0].alt} loading="lazy" /></a>
+              </div>
+              <div class="commission-mix-copy">
+                <h3>Landscapes &amp; portraits, painted for you</h3>
+                <p>A meaningful place or the people you love, in watercolor pastel.</p>
+                <ul class="commission-mix-prices">
+                  <li><a href="/commissions/#landscape">Landscapes</a> from ${Math.min(...byId['small-landscape'].options.map(o=>Number(o.amount))).toLocaleString('en-US')}</li>
+                  <li><a href="/commissions/#portrait">Portraits</a>, 1–4 faces, from ${Math.min(...byId['single-portrait'].options.map(o=>Number(o.amount))).toLocaleString('en-US')}</li>
+                </ul>
+                <p class="service-terms">50% deposit to start · Typical turnaround 2–4 weeks</p>
+                <a class="button button-solid" href="/commissions/">See packages &amp; start a commission</a>
+              </div>
+            </div>
           </div>
         </section>
 

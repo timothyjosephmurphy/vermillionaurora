@@ -8,6 +8,7 @@ import bookPrints from '../catalog/book-prints.json' with {type:'json'};
 import {printOptions,config,papers} from '../catalog/prints.mjs';
 import originalProducts from '../catalog/products.json' with {type:'json'};
 import collections from '../catalog/collections.json' with {type:'json'};
+import {canonicalArtwork,sectionAdditions} from '../src/data/canonical-artworks.mjs';
 
 const groups=new Map(manifest.sections.map(group=>[group.id,group]));
 
@@ -70,13 +71,14 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   for(const group of manifest.sections){
     const $=load(fs.readFileSync(`dist/book-galleries/${group.id}/index.html`,'utf8'));
     assert.equal($('h1').text(),group.title);
-    assert.equal($('.painting-list-row').length,group.artworks.length);
+    const shown=[...new Set([...group.artworks,...(sectionAdditions[group.id]||[])].map(id=>canonicalArtwork[id]||id))];
+    assert.deepEqual($('.painting-list-row').map((_,row)=>$(row).attr('data-product-id')).get(),shown);
     assert.equal($('#available-for-prints').length,1);
     assert($('#available-for-prints').parent().text().includes('Available for prints'));
     assert.equal($('script[src="/exhibitions/viewer.js"]').length,1);
     assert.equal($('.book-measurement-note').length,0);
     assert(!$('[data-gallery-list]').text().toLowerCase().includes('book measurements'));
-    const expected=group.artworks.filter(id=>printOptions(bookProducts.find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
+    const expected=shown.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||originalProducts.find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
     assert.equal(Number($('.book-gallery-stats').attr('data-print-ready-count')),expected);
     for(const id of group.artworks)assert(bookProducts.some(product=>product.id===id));
   }
@@ -93,6 +95,12 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   assert.equal(home('.book-section-carousel .ex-slide').length,manifest.sections.length);
   assert.equal(home('#book-galleries h2').text(),'Selected Galleries');
   assert.equal(home('#gallery h2').text(),'Featured works');
+  for(const id of ['painting-portrait-in-green','painting-portrait-in-gold'])
+    assert(!collections.home.some(entry=>entry.product===id),`${id} belongs in the Portraits gallery, not Featured works`);
+  for(const [scan,canonical] of Object.entries(canonicalArtwork)){
+    assert(originalProducts.some(product=>product.id===canonical));
+    assert(fs.readFileSync('static/_redirects','utf8').includes(`/products/${scan}/ /products/${canonical}/ 301`));
+  }
   const devo=bookProducts.find(p=>p.id===friends.artworks[0]);
   assert.equal(home('.book-section-carousel a[href="/book-galleries/watercolor-portraits-friends/"] img').attr('src'),devo.image.src);
   const bitcoiners=load(fs.readFileSync('dist/book-galleries/watercolor-portraits-bitcoiners/index.html','utf8'));
