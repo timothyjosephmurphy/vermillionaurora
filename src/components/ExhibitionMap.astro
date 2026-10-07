@@ -1,5 +1,6 @@
 ---
 import locations from '../../exhibitions/world-map/locations.json';
+import { testimonialPins } from '../data/testimonials.mjs';
 const { compact = false } = Astro.props;
 const point = ([lat,lon]: number[]) => ({ x:24+(lon+180)*3.2, y:30+(90-lat)*3.2 });
 const kind = (place: typeof locations[number]) => place.exhibitions.every(item => item.type === 'mural') ? 'mural' : place.exhibitions.some(item => item.type === 'mural') ? 'mixed' : 'exhibition';
@@ -27,7 +28,9 @@ const color = (place: typeof locations[number]) => kind(place) === 'mural' ? '#2
     <li data-kind="exhibition"><span class="legend-dot" aria-hidden="true"></span>Exhibitions</li>
     <li data-kind="mural"><span class="legend-dot" aria-hidden="true"></span>Murals</li>
     <li data-kind="mixed"><span class="legend-dot" aria-hidden="true"></span>Both</li>
+    {testimonialPins.length > 0 && <li data-kind="testimonial"><span class="legend-dot" aria-hidden="true"></span><a href="/testimonials/">Collector testimonials</a></li>}
   </ul>
+  <script type="application/json" data-testimonial-pins set:html={JSON.stringify(testimonialPins).replace(/</g,'\\u003c')} />
   <div class="atlas-layout">
     <div class="atlas-canvas" role="region" aria-label="Interactive map of exhibitions and murals">
       <div class="atlas-fallback"><img src="/exhibitions/world-map/land.svg" alt="World map"/><p>Choose a city to explore its exhibitions and murals.</p></div>
@@ -52,6 +55,8 @@ const color = (place: typeof locations[number]) => kind(place) === 'mural' ? '#2
   .atlas-legend{display:flex;flex-wrap:wrap;gap:12px 22px;list-style:none;padding:12px 18px;margin:0;border-bottom:1px solid #d7ccba;font:.8rem/1.4 Inter,Arial,sans-serif}
   .atlas-legend li{display:flex;align-items:center;gap:7px}.legend-dot{display:inline-block;width:14px;height:14px;border-radius:50%;background:#d34220}
   [data-kind="mural"] :is(.pin-number,.legend-dot){background:#236fa1}
+  [data-kind="testimonial"] .legend-dot{background:#2f8a4c}
+  .atlas-canvas :global(.atlas-testimonial){width:14px;height:14px;border-radius:50%;background:#2f8a4c;border:2px solid #fffcf6;box-shadow:0 0 0 1px #2f8a4c}
   [data-kind="mixed"] :is(.pin-number,.legend-dot){background:linear-gradient(90deg,#d34220 50%,#236fa1 50%)}
   .atlas-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;align-items:stretch}
   .atlas-canvas{min-height:570px;min-width:0;background:#f3eee5;z-index:0}

@@ -1,0 +1,70 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { testimonials } from '../data/testimonials.mjs';
+import { ld, person } from '../data/structured-data.mjs';
+const share = 'mailto:tj@vermillionaurora.com?subject=' + encodeURIComponent('My TJ Murphy painting — testimonial');
+const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Person',name:t.name}, reviewBody:t.quote, itemReviewed:{'@type':'VisualArtwork',name:t.painting||'Painting by TJ Murphy',creator:{'@id':person['@id']}} }));
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collector Testimonials | Seattle watercolor artist TJ Murphy</title>
+  <meta name="description" content="Words and photos from people who live with paintings and commissions by Seattle watercolor artist TJ Murphy." />
+  <link rel="canonical" href="https://vermillionaurora.com/testimonials/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/site-header.css" />
+  {reviews.length > 0 && <script type="application/ld+json" set:html={ld({'@context':'https://schema.org','@graph':reviews})} />}
+</head>
+<body>
+  <div class="page-shell">
+    <SiteHeader />
+    <main id="main-content" class="container testimonials-page">
+      <p class="eyebrow dark">Collectors</p>
+      <h1>Testimonials</h1>
+      {testimonials.length === 0 ? (
+        <section class="testimonials-empty" aria-labelledby="coming-soon">
+          <h2 id="coming-soon">Coming soon</h2>
+          <p>Stories and photos from people who live with my paintings will appear here.</p>
+          <h3>Own one of my paintings or prints?</h3>
+          <p>I’d love to hear how it lives in your space. Send a few words, a photo of the painting where it hangs, and (if you like) a photo of you with it. Tell me what I may share: your name or anonymous, your city, and whether to add a pin to the <a href="/exhibitions/world-map/">exhibitions map</a>.</p>
+          <p><a class="button button-solid" href={share}>Share your story</a> <a class="button button-ghost" href="/commissions/">Commission a painting</a></p>
+        </section>
+      ) : (
+        <>
+          <ul class="testimonial-list">
+            {testimonials.map(t => (
+              <li class="testimonial" id={t.id}>
+                {t.photo && <img src={t.photo} alt={`${t.painting || 'Painting by TJ Murphy'} in ${t.name === 'A collector' ? 'a collector' : t.name + '’s'} home`} loading="lazy" decoding="async" />}
+                <blockquote><p>“{t.quote}”</p></blockquote>
+                <p class="testimonial-meta">
+                  {t.selfie && <img class="testimonial-selfie" src={t.selfie} alt="" width="48" height="48" loading="lazy" decoding="async" />}
+                  <span><strong>{t.name}</strong>{t.city && <> · {t.city}</>}{t.painting && <><br />{t.paintingHref ? <a href={t.paintingHref}>{t.painting}</a> : t.painting}</>}</span>
+                </p>
+              </li>
+            ))}
+          </ul>
+          <p class="testimonials-share">Own one of my paintings? <a href={share}>Share your story</a>.</p>
+        </>
+      )}
+    </main>
+    <SiteFooter />
+  </div>
+  <style is:global>
+    .testimonials-page{padding:48px 0 64px;max-width:1040px}
+    .testimonials-empty{max-width:680px;line-height:1.7}
+    .testimonials-empty .button{margin:6px 8px 0 0}
+    .testimonial-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+    .testimonial{background:#fffcf6;border:1px solid var(--line,#d7ccba);border-radius:12px;padding:18px}
+    .testimonial>img{width:100%;height:auto;border-radius:8px;margin-bottom:12px}
+    .testimonial blockquote{margin:0;font:500 1.25rem/1.45 "Cormorant Garamond",serif}
+    .testimonial-meta{display:flex;gap:10px;align-items:center;font-size:.85rem;margin:12px 0 0}
+    .testimonial-selfie{border-radius:50%;object-fit:cover;width:48px;height:48px}
+  </style>
+</body>
+</html>
