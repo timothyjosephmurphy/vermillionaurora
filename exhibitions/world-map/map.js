@@ -123,6 +123,16 @@
     event.preventDefault();
     select(place);
   }));
+  // Collector testimonial pins (green), separate from exhibition markers and clustering.
+  try {
+    const pins = JSON.parse(root.querySelector('[data-testimonial-pins]')?.textContent || '[]');
+    const testimonials = L.layerGroup().addTo(map);
+    pins.forEach(pin => {
+      const label = [pin.name, pin.city, pin.painting].filter(Boolean).join(' · ');
+      L.marker([pin.lat, pin.lng], {icon: L.divIcon({className: 'atlas-testimonial', iconSize: [14, 14]}), title: label, keyboard: false})
+        .bindTooltip(label, {direction: 'top'}).on('click', () => { location.href = '/testimonials/'; }).addTo(testimonials);
+    });
+  } catch {}
   root.querySelector('.atlas-toolbar').hidden = false;
   draw();
   status.textContent = 'Click a numbered circle to zoom, or choose a city.';
