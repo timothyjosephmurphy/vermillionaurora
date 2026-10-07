@@ -16,7 +16,7 @@ const latestExhibitions=datedExhibitions.filter(exhibition=>Number(exhibition.da
 const links=[
   {href:'/gallery/available/',title:'Shop available originals',description:'Watercolor landscapes and expressive portraits.',image:originals[0]?.image.src},
   ...(featuredPrints.length?[{href:'#prints',title:'Shop fine-art prints',description:'Choose your size, paper, and framing.',image:byId['honeybadger-and-cub-with-genesis-block'].image.src}]:[]),
-  {href:'/#contact',title:'Commission a painting',description:'A portrait, a meaningful place, or a mural made for you.',image:byId['personal-portrait']?.examples?.[0]?.src},
+  {href:'/commissions/',title:'Commission a painting',description:'A portrait, a meaningful place, or a mural made for you.',image:byId['personal-portrait']?.examples?.[0]?.src},
   {href:latestExhibitions.length?'#exhibitions':'/exhibitions/',title:'Explore the exhibitions',description:'Paintings, people, and the places they meet.',image:latestExhibitions[0]?.hero}
 ];
 const canonical='https://vermillionaurora.com/links/';
@@ -93,7 +93,7 @@ const shareImage=new URL(originals[0]?.image.src||'/about/images/tj-murphy-portr
       </div>
       <a class="social-more-link" href="/exhibitions/">All exhibitions →</a>
     </section>}
-    <footer class="social-footer"><a href="/">Visit the full website</a><a href="/about/">About TJ</a><a href="/#contact">Get in touch</a></footer>
+    <footer class="social-footer"><a href="/">Visit the full website</a><a href="/about/">About TJ</a><a href="/commissions/#form">Get in touch</a></footer>
   </main>
 </body>
 </html>
