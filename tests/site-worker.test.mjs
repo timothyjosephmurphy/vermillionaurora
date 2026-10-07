@@ -32,3 +32,7 @@ test('QuickBooks API paths on tjm.art go to the checkout Worker; public pages st
   assert.equal(await (await worker.fetch(new Request('https://vermillionaurora.com/quickbooks/callback'),env)).text(),'asset');
   assert.equal((await worker.fetch(new Request('https://tjm.art/quickbooks/connect'),{...env,CHECKOUT:undefined})).status,503);
 });
+test('http on tjm.art upgrades to https with the same path and query',()=>{
+  assert.deepEqual(loc('http://tjm.art/about/?a=1',off),[301,'https://tjm.art/about/?a=1']);
+  assert.equal(loc('https://tjm.art/about/',off),null);
+});
