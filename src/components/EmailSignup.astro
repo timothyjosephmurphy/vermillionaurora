@@ -1,0 +1,23 @@
+---
+import { newsletterAction } from '../data/newsletter.mjs';
+const { heading = 'Studio notes by email', text = 'New paintings, prints, exhibitions, and books, a few times a year. Unsubscribe anytime.' } = Astro.props;
+---
+{newsletterAction && <section class="email-signup" aria-labelledby="email-signup-heading">
+  <h2 id="email-signup-heading">{heading}</h2>
+  <p>{text}</p>
+  <form action={newsletterAction} method="post" target="_blank" class="email-signup-form">
+    <label for="bd-email">Email address</label>
+    <div class="email-signup-row">
+      <input type="email" name="email" id="bd-email" autocomplete="email" required placeholder="you@example.com" />
+      <input type="hidden" name="embed" value="1" />
+      <button type="submit" class="button button-solid">Subscribe</button>
+    </div>
+  </form>
+</section>}
+<style is:global>
+  .email-signup{max-width:640px;margin:48px auto;padding:24px;border:1px solid var(--line,#d7ccba);border-radius:12px;background:#fffcf6}
+  .email-signup h2{margin:0 0 8px;font-size:1.8rem}.email-signup p{margin:0 0 14px;line-height:1.6}
+  .email-signup label{display:block;font-size:.8rem;margin-bottom:6px}
+  .email-signup-row{display:flex;gap:10px;flex-wrap:wrap}
+  .email-signup input[type=email]{flex:1 1 220px;min-height:44px;padding:10px 12px;border:1px solid #cdbfae;border-radius:6px;font:inherit}
+</style>
