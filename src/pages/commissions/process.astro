@@ -20,12 +20,12 @@ import CommissionProcess from '../../components/CommissionProcess.astro';
 <body>
   <div class="page-shell">
     <SiteHeader />
-    <main class="container process-page">
-      <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/#services">Commissions</a><span>/</span><span aria-current="page">My process</span></nav>
+    <main id="main-content" class="container process-page">
+      <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/commissions/">Commissions</a><span>/</span><span aria-current="page">My process</span></nav>
       <CommissionProcess standalone />
       <div class="process-actions">
-        <a class="button button-solid" href="/#contact">Discuss a commission</a>
-        <a class="button button-ghost" href="/#services">Explore commissions</a>
+        <a class="button button-solid" href="/commissions/#form">Discuss a commission</a>
+        <a class="button button-ghost" href="/commissions/#packages">Explore packages</a>
       </div>
     </main>
     <SiteFooter />

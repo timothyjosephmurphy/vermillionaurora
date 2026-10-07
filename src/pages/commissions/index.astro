@@ -1,0 +1,250 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CommissionProcess from '../../components/CommissionProcess.astro';
+import { byId } from '../../../catalog/catalog.mjs';
+import collections from '../../../catalog/collections.json';
+
+const packages = collections.home
+  .filter(entry => entry.variant === 'service')
+  .map(entry => byId[entry.product])
+  .filter(Boolean);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Commissions | TJ Murphy</title>
+  <meta name="description" content="Commission a watercolor portrait or landscape by Seattle artist TJ Murphy. Packages from $199, 50% deposit to start, typical turnaround 2–4 weeks." />
+  <link rel="canonical" href="https://vermillionaurora.com/commissions/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/site-header.css" />
+  <link rel="stylesheet" href="/portrait-preview.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <SiteHeader />
+    <main id="main-content" class="commissions-hub">
+      <section class="section section-light commissions-intro">
+        <div class="container">
+          <p class="eyebrow dark">Commissions</p>
+          <h1>Let’s make something for you</h1>
+          <p class="lede">A portrait of someone you love, a landscape that holds a memory, or a mural for a shared space. Choose a package below, or tell me what you have in mind—we’ll shape the details together.</p>
+          <p class="commissions-terms-banner"><strong>50% deposit</strong> to start · Typical turnaround <strong>2–4 weeks</strong></p>
+          <div class="hero-actions">
+            <a class="button button-solid" href="#form">Start a commission</a>
+            <a class="button button-ghost" href="/commissions/process/">How I create your painting</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="packages" class="section section-contrast" aria-labelledby="packages-heading">
+        <div class="container">
+          <div class="section-heading narrow">
+            <h2 id="packages-heading">Packages</h2>
+            <p>Starting points for watercolor commissions. Each includes conversation about reference photos, size, and finish.</p>
+          </div>
+          <div class="service-grid">
+            {packages.map(product => <ProductCard product={product} variant="service" />)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container process-embed">
+          <CommissionProcess />
+          <p class="process-more"><a href="/commissions/process/">Read the full process →</a></p>
+        </div>
+      </section>
+
+      <section id="faq" class="section section-plain" aria-labelledby="faq-heading">
+        <div class="container faq-wrap">
+          <div class="section-heading narrow">
+            <h2 id="faq-heading">Commission FAQ</h2>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>How do deposits and payment work?</summary>
+              <p>A <strong>50% deposit</strong> starts the commission. The balance is due when the painting is finished, before shipping or pickup.</p>
+            </details>
+            <details>
+              <summary>How long does a commission take?</summary>
+              <p>Typical turnaround is <strong>2–4 weeks</strong> from when we agree on the approach and the deposit is received. Timing can vary with size, complexity, and my current schedule—I’ll share a clear estimate when we discuss your project.</p>
+            </details>
+            <details>
+              <summary>What reference photos work best?</summary>
+              <p>Clear, well-lit photos help most. For portraits, a sharp face and natural expression matter more than a perfect studio shot. For landscapes, share the mood and place you want to hold. You can upload images with the form or send them later by email.</p>
+            </details>
+            <details>
+              <summary>Can I choose a loose or more rendered finish?</summary>
+              <p>Yes. My watercolor process can stay open and textured or move closer to the reference. Tell me which direction you’re drawn to when we talk—details are on the <a href="/commissions/process/">process page</a>.</p>
+            </details>
+            <details>
+              <summary>Do you offer revisions?</summary>
+              <p>We’ll agree on the composition and approach before painting begins. If something needs a small adjustment while the work is in progress, say so early—watercolor is layered and timing matters. Major redesigns after substantial work may need a new conversation about scope.</p>
+            </details>
+            <details>
+              <summary>How is shipping handled?</summary>
+              <p>Finished works ship carefully packaged from Seattle. Domestic and international options are available; cost depends on size and destination. Local pickup can be arranged. See <a href="/shipping-returns/">shipping &amp; returns</a> for general guidance.</p>
+            </details>
+            <details>
+              <summary>What about murals or custom sizes?</summary>
+              <p>The packages above are watercolor starting points. For murals, larger formats, or something outside these sizes, use the form and describe the space or idea—we’ll price and schedule that separately.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="form" class="section section-contact" aria-labelledby="form-heading">
+        <div class="container contact-grid">
+          <div class="contact-copy">
+            <p class="eyebrow dark">Request a commission</p>
+            <h2 id="form-heading">Tell me about your idea</h2>
+            <p>Share a few details and optional reference images. This is an inquiry—no payment until we agree on the approach.</p>
+            <ul class="contact-list">
+              <li>Seattle, WA</li>
+              <li><a href="mailto:TJ@VermillionAurora.com">TJ@VermillionAurora.com</a></li>
+              <li>50% deposit to start</li>
+              <li>Typical turnaround 2–4 weeks</li>
+            </ul>
+          </div>
+
+          <form class="contact-form" action="https://vermillion-commissions.timothyjosephmurphy.workers.dev" method="POST">
+            <div class="purchase-summary" hidden="">
+              <p class="eyebrow dark">Purchase inquiry</p>
+              <h3 class="purchase-title"></h3>
+              <p class="purchase-price"></p>
+            </div>
+            <div class="package-summary" hidden="">
+              <p class="eyebrow dark">Selected package</p>
+              <h3 class="package-title"></h3>
+              <p class="package-price"></p>
+            </div>
+            <input type="hidden" name="inquiryType" value="commission">
+            <input type="hidden" name="paintingSlug" value="">
+            <input type="hidden" name="paintingTitle" value="">
+            <input type="hidden" name="paintingPrice" value="">
+            <div class="field-row">
+              <label>
+                <span>First Name</span>
+                <input type="text" name="firstName" placeholder="First Name" autocomplete="given-name">
+              </label>
+              <label>
+                <span>Last Name</span>
+                <input type="text" name="lastName" placeholder="Last Name" autocomplete="family-name">
+              </label>
+            </div>
+
+            <label>
+              <span>Email (required)</span>
+              <input type="email" name="email" placeholder="Email" autocomplete="email" required="">
+            </label>
+
+            <label class="commission-only">
+              <span>Package</span>
+              <select name="package">
+                <option value="">Choose a package (optional)</option>
+                {packages.map(product => (
+                  <option value={product.slug}>{product.title} — {product.listing?.price?.from ? 'from ' : ''}${Number(product.listing?.price?.amount || 0).toFixed(0)}</option>
+                ))}
+                <option value="custom">Custom / mural / other</option>
+              </select>
+            </label>
+
+            <label class="commission-only">
+              <span>Desired size</span>
+              <input type="text" name="size" placeholder="For example: 9 × 12 inches">
+            </label>
+
+            <label class="commission-only">
+              <span>Reference image (optional)</span>
+              <input type="file" name="referenceImage" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+            </label>
+
+            <label class="commission-only">
+              <span>Color palette / swatch (optional)</span>
+              <input type="file" name="paletteImage" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+            </label>
+
+            <label>
+              <span>Message (required)</span>
+              <textarea name="message" required="" rows="5" placeholder="Tell me about your vision"></textarea>
+            </label>
+
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
+
+            <p class="form-privacy-note">Your details and optional images are used to respond to your request and plan your commission. This does not subscribe you to marketing or authorize public use of your photos. <a href="/privacy/">Privacy &amp; image retention</a>.</p>
+            <button type="submit" class="button button-solid">Send commission request</button>
+            <p class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <SiteFooter />
+  </div>
+  <script is:inline src="/script.js"></script>
+  <script is:inline src="/portrait-preview.js" defer></script>
+</body>
+</html>
+<style>
+  .commissions-hub .commissions-intro { padding-top: 2.5rem; }
+  .commissions-hub h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    line-height: 1.08;
+    margin: 0 0 1rem;
+  }
+  .commissions-hub .lede { max-width: 42rem; font-size: 1.1rem; line-height: 1.75; }
+  .commissions-terms-banner {
+    margin: 1.25rem 0 1.5rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: 12px;
+    background: var(--paper, #f4ebdf);
+    border: 1px solid var(--line, #d6c9bc);
+    max-width: 36rem;
+  }
+  .commissions-hub .hero-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+  .process-embed { max-width: 860px; }
+  .process-more { margin: 1.5rem 0 0; }
+  .process-more a { text-decoration: underline; text-underline-offset: 0.2em; }
+  .faq-wrap { max-width: 760px; }
+  .faq-list { display: grid; gap: 0.75rem; }
+  .faq-list details {
+    border: 1px solid var(--line, #d6c9bc);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.45);
+    padding: 0.85rem 1.1rem;
+  }
+  .faq-list summary {
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .faq-list details p { margin: 0.75rem 0 0.25rem; line-height: 1.75; color: var(--ink); }
+  .faq-list a { text-decoration: underline; text-underline-offset: 0.2em; }
+  .package-summary {
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: var(--paper, #f4ebdf);
+    border: 1px solid var(--line, #d6c9bc);
+  }
+  .package-summary h3 { margin: 0.25rem 0; font-size: 1.25rem; }
+  .package-summary p { margin: 0; }
+  .service-terms {
+    margin: 0.65rem 0 1rem;
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .service-cta { display: inline-flex; margin-top: 0.25rem; text-align: center; }
+  #form, #packages, #faq { scroll-margin-top: 6.5rem; }
+  @media (max-width: 600px) {
+    .commissions-hub .hero-actions .button { width: 100%; text-align: center; }
+    #form, #packages, #faq { scroll-margin-top: 5rem; }
+  }
+</style>

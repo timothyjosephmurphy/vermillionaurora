@@ -24,11 +24,11 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "I made this poster for the premiere of Gavin Robertson’s documentary, Coined in Watercolor, at the Bitcoin Film Festival in Poland. It is based on a frame from the documentary showing me meditating on top of Table Mountain in Cape Town, South Africa.",
+      "I made this poster for the premiere of Gavin Robertson\u2019s documentary, Coined in Watercolor, at the Bitcoin Film Festival in Poland. It is based on a frame from the documentary showing me meditating on top of Table Mountain in Cape Town, South Africa.",
       "I gave the painting as a gift to the organizer of the Bitcoin Film Festival."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "height-width",
     "image": {
       "src": "/gallery-images/coined-in-watercolor-film-poster.jpg",
@@ -55,7 +55,7 @@
     "slug": "double-portrait",
     "type": "commission",
     "title": "Double portrait",
-    "description": "Two faces, 12×9 in. Crafted for anniversaries, family, and memories.",
+    "description": "Two faces, 12\u00d79 in. Crafted for anniversaries, family, and memories.",
     "eyebrow": "Commission",
     "artist": "TJ Murphy",
     "listing": {
@@ -67,7 +67,7 @@
       }
     },
     "story": [
-      "Two faces, 12×9 in. Crafted for anniversaries, family, and memories."
+      "Two faces, 12\u00d79 in. Crafted for anniversaries, family, and memories."
     ],
     "examples": [
       {
@@ -157,9 +157,10 @@
       "note": "Tell me about your idea, reference photos, and any dates you have in mind."
     },
     "back": {
-      "href": "/#services",
+      "href": "/commissions/",
       "label": "View all commissions"
-    }
+    },
+    "inquiryHref": "/commissions/?package=double-portrait#form"
   },
   {
     "id": "el-zonte-at-sunrise",
@@ -190,7 +191,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=el-zonte-at-sunrise#contact",
+    "inquiryHref": "/commissions/?buy=el-zonte-at-sunrise#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
@@ -247,12 +248,12 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "I displayed this painting at the 2026 Bitcoin Film Festival. For me, it represents Bitcoin’s protective and caring nature. The honey badger is often used as a Bitcoin mascot because it is fierce and undeterred by opposition. Here, the honey badger protects its cub.",
+      "I displayed this painting at the 2026 Bitcoin Film Festival. For me, it represents Bitcoin\u2019s protective and caring nature. The honey badger is often used as a Bitcoin mascot because it is fierce and undeterred by opposition. Here, the honey badger protects its cub.",
       "There is a strong thread of pronatalism in the Bitcoin movement. I think that may come from a long-term outlook and a low time preference: a concern for the future and for the next generation.",
       "Behind the honey badger is the Genesis block. I wrote it in clear wax before applying the watercolor, using the wax as a resist."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/?buy=honeybadger-and-cub-with-genesis-block#contact",
+    "inquiryHref": "/commissions/?buy=honeybadger-and-cub-with-genesis-block#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/honeybadger-and-cub.jpeg",
@@ -309,10 +310,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/beach-walk.jpg",
@@ -359,10 +360,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?buy=painting-chef-in-white#contact",
+    "inquiryHref": "/commissions/?buy=painting-chef-in-white#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/chef-in-white.jpg",
@@ -419,10 +420,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?buy=painting-clouds-over-water#contact",
+    "inquiryHref": "/commissions/?buy=painting-clouds-over-water#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/clouds-over-water.jpg",
@@ -479,10 +480,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/couple-in-color.jpg",
@@ -529,10 +530,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/embrace.jpg",
@@ -579,10 +580,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?buy=painting-emergence#contact",
+    "inquiryHref": "/commissions/?buy=painting-emergence#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/emergence.jpg",
@@ -641,10 +642,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/family-portrait.jpg",
@@ -691,7 +692,7 @@
       "This painting grew out of concept work for a project to monumentalize the origin story of Bitcoin. It depicts wonder at the beauty of nature and awe at technological achievement."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/festival-portrait.jpg",
@@ -748,10 +749,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/figures-in-wheatfield.jpg",
@@ -798,10 +799,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/golden-coast.jpg",
@@ -845,10 +846,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/golden-reflection.jpg",
@@ -892,10 +893,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/guitarist.jpg",
@@ -942,10 +943,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?product=painting-insect-garden#contact",
+    "inquiryHref": "/commissions/?product=painting-insect-garden#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/insect-garden.jpg",
@@ -1004,10 +1005,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "As part of my project to monumentalize the origin story of Bitcoin, this painting represents the revelation of the Bitcoin white paper—and the forces of evil striking back to prevent it from being revealed."
+      "As part of my project to monumentalize the origin story of Bitcoin, this painting represents the revelation of the Bitcoin white paper\u2014and the forces of evil striking back to prevent it from being revealed."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/lightburst.jpg",
@@ -1064,10 +1065,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?product=painting-moonlit-water#contact",
+    "inquiryHref": "/commissions/?product=painting-moonlit-water#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/moonlit-water.jpg",
@@ -1124,10 +1125,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/mount-rainier-at-sunset.jpg",
@@ -1174,7 +1175,7 @@
       "I made this as concept art for a project to monumentalize the origin story of Bitcoin. It represents the birth of the network: the moment its challenges are overcome and its dangers are faced."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/phoenix-rising.jpg",
@@ -1228,10 +1229,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-in-blue.jpg",
@@ -1275,10 +1276,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
@@ -1325,10 +1326,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?product=painting-portrait-in-gold#contact",
+    "inquiryHref": "/commissions/?product=painting-portrait-in-gold#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-in-gold.jpg",
@@ -1386,10 +1387,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?product=painting-portrait-in-green#contact",
+    "inquiryHref": "/commissions/?product=painting-portrait-in-green#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-in-green.jpg",
@@ -1447,10 +1448,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?product=painting-portrait-with-cheese#contact",
+    "inquiryHref": "/commissions/?product=painting-portrait-with-cheese#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-with-cheese.jpg",
@@ -1507,10 +1508,10 @@
       "This is the view from my favorite place: a beach on Lake Washington looking south toward Mount Rainier. A few times a week, I bring a blanket to the flat rocks at the north corner of the shore. I sit there, stare at the mountain, meditate, and practice breathing exercises.",
       "This view inspired me to learn to paint with watercolors. I had filled my journal with ink sketches, but I wanted to capture the luminosity of the sky. Watercolor was how I began to learn.",
       "Bald eagles sometimes fly overhead and catch fish in the water. One day I saw an eagle begin to swoop down and pointed it out. Everyone on the beach watched. When it caught the fish, we all cheered. The eagle turned and gave a cry.",
-      "I’ve painted this view dozens of times. This is the last iteration."
+      "I\u2019ve painted this view dozens of times. This is the last iteration."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-with-hat.jpg",
@@ -1564,10 +1565,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
@@ -1614,10 +1615,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?product=painting-red-horizon#contact",
+    "inquiryHref": "/commissions/?product=painting-red-horizon#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/red-horizon.jpg",
@@ -1674,10 +1675,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?product=painting-shoreline-at-dusk#contact",
+    "inquiryHref": "/commissions/?product=painting-shoreline-at-dusk#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/shoreline-at-dusk.jpg",
@@ -1734,10 +1735,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?product=painting-studio-figure#contact",
+    "inquiryHref": "/commissions/?product=painting-studio-figure#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/studio-figure.jpg",
@@ -1794,10 +1795,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunflower-woman.jpg",
@@ -1844,10 +1845,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunset-reflection.jpg",
@@ -1891,10 +1892,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunset-shore.jpg",
@@ -1941,10 +1942,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunset-silhouette.jpg",
@@ -1991,10 +1992,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/?product=painting-twin-dragons#contact",
+    "inquiryHref": "/commissions/?product=painting-twin-dragons#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/twin-dragons.jpg",
@@ -2053,10 +2054,10 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
     "storyHeading": null,
-    "inquiryHref": "/#services",
+    "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/two-soldiers.jpg",
@@ -2081,7 +2082,7 @@
     "type": "painting",
     "title": "Tipi",
     "description": "Tipi by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2104,7 +2105,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-1#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-1#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg",
@@ -2139,7 +2140,7 @@
     "type": "painting",
     "title": "Puerto Rico Beach",
     "description": "Puerto Rico Beach by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2162,7 +2163,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-11#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-11#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7419.jpeg",
@@ -2197,7 +2198,7 @@
     "type": "painting",
     "title": "Eagle from photo 1",
     "description": "Eagle from photo 1 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2220,7 +2221,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-14#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-14#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
@@ -2255,7 +2256,7 @@
     "type": "painting",
     "title": "Eagle from photo 2",
     "description": "Eagle from photo 2 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2278,7 +2279,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-15#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-15#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
@@ -2313,7 +2314,7 @@
     "type": "painting",
     "title": "Leo/Bear Constilation",
     "description": "Leo/Bear Constilation by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2336,7 +2337,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-2#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-2#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
@@ -2371,7 +2372,7 @@
     "type": "painting",
     "title": "My Ego",
     "description": "My Ego by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2394,7 +2395,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-23#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-23#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7431.jpeg",
@@ -2429,7 +2430,7 @@
     "type": "painting",
     "title": "Beach Egland AFB",
     "description": "Beach Egland AFB by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2452,7 +2453,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-24#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-24#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
@@ -2487,7 +2488,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 1",
     "description": "Spiritual Sedona Mountains 1 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2510,7 +2511,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-25#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-25#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7433.jpeg",
@@ -2545,7 +2546,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 2",
     "description": "Spiritual Sedona Mountains 2 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2568,7 +2569,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-27#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-27#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7435.jpeg",
@@ -2603,7 +2604,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 3",
     "description": "Spiritual Sedona Mountains 3 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2626,7 +2627,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-28#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-28#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7436.jpeg",
@@ -2661,7 +2662,7 @@
     "type": "painting",
     "title": "Rebel Loon/MN ICE Protest",
     "description": "Rebel Loon/MN ICE Protest by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2684,7 +2685,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-3#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-3#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7411.jpeg",
@@ -2719,7 +2720,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 4",
     "description": "Spiritual Sedona Mountains 4 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2742,7 +2743,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-34#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-34#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7442.jpeg",
@@ -2777,7 +2778,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 5",
     "description": "Spiritual Sedona Mountains 5 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2800,7 +2801,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-35#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-35#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7443.jpeg",
@@ -2835,7 +2836,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 6",
     "description": "Spiritual Sedona Mountains 6 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2858,7 +2859,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-38#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-38#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7446.jpeg",
@@ -2893,7 +2894,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 7",
     "description": "Spiritual Sedona Mountains 7 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2916,7 +2917,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-39#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-39#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7447.jpeg",
@@ -2951,7 +2952,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 8",
     "description": "Spiritual Sedona Mountains 8 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -2974,7 +2975,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-40#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-40#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7448.jpeg",
@@ -3009,7 +3010,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 9",
     "description": "Spiritual Sedona Mountains 9 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3032,7 +3033,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-41#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-41#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7449.jpeg",
@@ -3067,7 +3068,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 10",
     "description": "Spiritual Sedona Mountains 10 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3090,7 +3091,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-43#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-43#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7451.jpeg",
@@ -3125,7 +3126,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 11",
     "description": "Spiritual Sedona Mountains 11 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3148,7 +3149,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-44#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-44#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7452.jpeg",
@@ -3183,7 +3184,7 @@
     "type": "painting",
     "title": "Spiritual Sedona Mountains 12",
     "description": "Spiritual Sedona Mountains 12 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3206,7 +3207,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-45#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-45#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7453.jpeg",
@@ -3241,7 +3242,7 @@
     "type": "painting",
     "title": "Puerto Rico Waterfront",
     "description": "Puerto Rico Waterfront by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3264,7 +3265,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-51#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-51#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7459.jpeg",
@@ -3299,7 +3300,7 @@
     "type": "painting",
     "title": "Pyrimid from photo",
     "description": "Pyrimid from photo by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3318,7 +3319,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-55#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-55#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
@@ -3343,7 +3344,7 @@
     "type": "painting",
     "title": "Peach Preserves",
     "description": "Peach Preserves by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3366,7 +3367,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-56#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-56#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7464.jpeg",
@@ -3401,7 +3402,7 @@
     "type": "painting",
     "title": "Lady in Gold",
     "description": "Lady in Gold by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3424,7 +3425,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-57#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-57#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7466.jpeg",
@@ -3459,7 +3460,7 @@
     "type": "painting",
     "title": "Son TJ Sedona",
     "description": "Son TJ Sedona by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3482,7 +3483,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-6#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-6#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7414.jpeg",
@@ -3517,7 +3518,7 @@
     "type": "painting",
     "title": "Waiting on your ship",
     "description": "Waiting on your ship by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3540,7 +3541,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-62#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-62#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
@@ -3575,7 +3576,7 @@
     "type": "painting",
     "title": "Slot Canyon Face",
     "description": "Slot Canyon Face by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3598,7 +3599,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-63#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-63#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7472.jpeg",
@@ -3633,7 +3634,7 @@
     "type": "painting",
     "title": "Slot Canyon Arizona",
     "description": "Slot Canyon Arizona by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3656,7 +3657,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-64#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-64#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7473.jpeg",
@@ -3691,7 +3692,7 @@
     "type": "painting",
     "title": "Phoenix",
     "description": "Phoenix by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3714,7 +3715,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-65#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-65#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7474.jpeg",
@@ -3749,7 +3750,7 @@
     "type": "painting",
     "title": "Slot Canyon",
     "description": "Slot Canyon by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3772,7 +3773,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-7#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-7#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7415.jpeg",
@@ -3807,7 +3808,7 @@
     "type": "painting",
     "title": "Dancing Wolf on Moon",
     "description": "Dancing Wolf on Moon by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3830,7 +3831,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-72#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-72#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7481.jpeg",
@@ -3865,7 +3866,7 @@
     "type": "painting",
     "title": "Sunset Tree",
     "description": "Sunset Tree by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3888,7 +3889,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-73#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-73#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7482.jpeg",
@@ -3923,7 +3924,7 @@
     "type": "painting",
     "title": "Music Notes of the Universe",
     "description": "Music Notes of the Universe by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -3946,7 +3947,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-74#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-74#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7483.jpeg",
@@ -3981,7 +3982,7 @@
     "type": "painting",
     "title": "Arizona Slot Cave",
     "description": "Arizona Slot Cave by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -4004,7 +4005,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-8#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-8#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7416.jpeg",
@@ -4039,7 +4040,7 @@
     "type": "painting",
     "title": "Angies' Eyes",
     "description": "Angies' Eyes by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -4062,7 +4063,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-82#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-82#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
@@ -4097,7 +4098,7 @@
     "type": "painting",
     "title": "Soul Connections 1",
     "description": "Soul Connections 1 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -4120,7 +4121,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-83#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-83#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7492.jpeg",
@@ -4155,7 +4156,7 @@
     "type": "painting",
     "title": "Soul Connections 2",
     "description": "Soul Connections 2 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -4178,7 +4179,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-84#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-84#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7493.jpeg",
@@ -4213,7 +4214,7 @@
     "type": "painting",
     "title": "Soul Connections 3",
     "description": "Soul Connections 3 by Paul Murphy. Available.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "available",
@@ -4236,7 +4237,7 @@
     "facts": [],
     "story": [],
     "storyHeading": null,
-    "inquiryHref": "/?buy=paul-murphy-painting-85#contact",
+    "inquiryHref": "/commissions/?buy=paul-murphy-painting-85#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7494.jpeg",
@@ -4271,7 +4272,7 @@
     "type": "painting",
     "title": "My tipi, on Grand Traverse Bay",
     "description": "My tipi, on Grand Traverse Bay by Paul Murphy. Not for sale.",
-    "eyebrow": "Featured artist · Paul Murphy",
+    "eyebrow": "Featured artist \u00b7 Paul Murphy",
     "artist": "Paul Murphy",
     "listing": {
       "status": "not-for-sale",
@@ -4335,9 +4336,10 @@
       "note": "Tell me about your idea, reference photos, and any dates you have in mind."
     },
     "back": {
-      "href": "/#services",
+      "href": "/commissions/",
       "label": "View all commissions"
-    }
+    },
+    "inquiryHref": "/commissions/#form"
   },
   {
     "id": "reflections-on-time",
@@ -4353,7 +4355,7 @@
       "width": 600,
       "height": 900
     },
-    "author": "Poems by Paul Michael Murphy · Art by TJ Murphy",
+    "author": "Poems by Paul Michael Murphy \u00b7 Art by TJ Murphy",
     "story": [
       "Twelve poems illustrated with watercolors, each accompanied by a song sung by Suno."
     ],
@@ -4364,7 +4366,7 @@
     },
     "card": {
       "eyebrow": "Illustrated poetry book",
-      "description": "Paul Michael Murphy’s twelve poems, illustrated by TJ Murphy, with connected songs sung by Suno."
+      "description": "Paul Michael Murphy\u2019s twelve poems, illustrated by TJ Murphy, with connected songs sung by Suno."
     }
   },
   {
@@ -4372,7 +4374,7 @@
     "slug": "single-portrait",
     "type": "commission",
     "title": "Single portrait",
-    "description": "One face, 9×12 inches. A personal keepsake designed to feel timeless.",
+    "description": "One face, 9\u00d712 inches. A personal keepsake designed to feel timeless.",
     "eyebrow": "Commission",
     "artist": "TJ Murphy",
     "listing": {
@@ -4384,7 +4386,7 @@
       }
     },
     "story": [
-      "One face, 9×12 inches. A personal keepsake designed to feel timeless."
+      "One face, 9\u00d712 inches. A personal keepsake designed to feel timeless."
     ],
     "examples": [
       {
@@ -4490,16 +4492,17 @@
       "note": "Tell me about your idea, reference photos, and any dates you have in mind."
     },
     "back": {
-      "href": "/#services",
+      "href": "/commissions/",
       "label": "View all commissions"
-    }
+    },
+    "inquiryHref": "/commissions/?package=single-portrait#form"
   },
   {
     "id": "small-landscape",
     "slug": "small-landscape",
     "type": "commission",
     "title": "Small landscape",
-    "description": "12×15 landscape featuring atmosphere, horizon, and emotional context.",
+    "description": "12\u00d715 landscape featuring atmosphere, horizon, and emotional context.",
     "eyebrow": "Commission",
     "artist": "TJ Murphy",
     "listing": {
@@ -4511,7 +4514,7 @@
       }
     },
     "story": [
-      "12×15 landscape featuring atmosphere, horizon, and emotional context."
+      "12\u00d715 landscape featuring atmosphere, horizon, and emotional context."
     ],
     "examples": [],
     "galleryDescription": "",
@@ -4520,9 +4523,10 @@
       "note": "Tell me about your idea, reference photos, and any dates you have in mind."
     },
     "back": {
-      "href": "/#services",
+      "href": "/commissions/",
       "label": "View all commissions"
-    }
+    },
+    "inquiryHref": "/commissions/?package=small-landscape#form"
   },
   {
     "id": "sunset-over-water",
@@ -4612,11 +4616,11 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "I made this poster for the Bitcoin Film Festival in Warsaw, Poland. It depicts the Syrenka, Warsaw’s protector spirit. Her statue stands in the Old Town Market Square. The Old Town was devastated during the war, then rebuilt from paintings and photographs to resemble its prewar form as closely as possible.",
+      "I made this poster for the Bitcoin Film Festival in Warsaw, Poland. It depicts the Syrenka, Warsaw\u2019s protector spirit. Her statue stands in the Old Town Market Square. The Old Town was devastated during the war, then rebuilt from paintings and photographs to resemble its prewar form as closely as possible.",
       "The hussar wings behind her represent Polish valor. The Bitcoin logo on her shield represents the tools we now have to liberate humanity from oppression."
     ],
     "storyHeading": "The story behind this painting",
-    "inquiryHref": "/?product=warszawska-syrenka#contact",
+    "inquiryHref": "/commissions/?product=warszawska-syrenka#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/warszawska-syrenka.jpeg",
@@ -4669,7 +4673,7 @@
       "pdfSize": "105 MB"
     },
     "card": {
-      "eyebrow": "Art book · TJ Murphy",
+      "eyebrow": "Art book \u00b7 TJ Murphy",
       "description": "A collection of landscapes exploring changing skies, shorelines, and reflected light."
     }
   },
@@ -4697,7 +4701,7 @@
       "pdfSize": "159 MB"
     },
     "card": {
-      "eyebrow": "Art book · TJ Murphy",
+      "eyebrow": "Art book \u00b7 TJ Murphy",
       "description": "A collection of portraits exploring expression, rich color, and the texture of watercolor pastel."
     }
   }

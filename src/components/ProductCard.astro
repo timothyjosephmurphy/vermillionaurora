@@ -4,11 +4,14 @@ import { urlFor, priceLabel, statusLabel, dimensionLabel } from '../../catalog/c
 const {product:p,variant='gallery',priority=false}=Astro.props;
 const url=urlFor(p), status=statusLabel(p);
 const caption=`${p.title} · ${p.listing?.status==='available'?priceLabel(p):status}`;
+const packageHref=`/commissions/?package=${encodeURIComponent(p.slug)}#form`;
 ---
 {variant==='artist' ? <a class="ex-photo" data-product-id={p.id} data-availability={status} data-caption={caption} data-product={url} href={url}><ArtworkImage src={p.image.src} alt={p.image.alt||p.title} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" /></a> :
 variant==='service' ? <article class="service-card">
   {p.examples?.length>0 && <div class="portrait-preview" data-portrait={p.slug} aria-label={`${p.title} examples`}><a class="portrait-preview-stage" href={url}><img src={p.examples[0].src} alt={p.examples[0].alt} loading="lazy" /></a></div>}
   <h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.story[0]}</p><span class="price">{priceLabel(p,false)}</span>
+  <p class="service-terms">50% deposit to start · Typical turnaround 2–4 weeks</p>
+  <a class="button button-solid service-cta" href={packageHref}>Start a commission</a>
 </article> : variant==='book' ? <article class="product-card ex-slide">
   <a href={url} aria-label={`Explore ${p.title}`} style="display:block;background:#e8dfd3;padding:16px"><ArtworkImage src={p.image.src} alt={p.image.alt||p.title} width={p.image.width} height={p.image.height} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" style="display:block;width:100%;height:220px;object-fit:contain" /></a>
   <div class="product-info book-tile"><p class="eyebrow dark">{p.card.eyebrow}</p><h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.card.description}</p><a class="button button-ghost" href={url}>Explore the book</a></div>

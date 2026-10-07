@@ -5,7 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const productSlug = params.get('product');
   const purchaseSlug = params.get('buy');
+  const packageSlug = params.get('package');
   const message = form.querySelector('[name="message"]');
+  const packageSelect = form.querySelector('[name="package"]');
+  const sizeInput = form.querySelector('[name="size"]');
+
+  const packageDefaults = {
+    'single-portrait': { size: '9 × 12 inches', label: 'Single portrait' },
+    'double-portrait': { size: '12 × 9 inches', label: 'Double portrait' },
+    'small-landscape': { size: '12 × 15 inches', label: 'Small landscape' }
+  };
+
+  if (packageSlug && packageSelect) {
+    const option = [...packageSelect.options].find(entry => entry.value === packageSlug);
+    if (option) packageSelect.value = packageSlug;
+    const defaults = packageDefaults[packageSlug];
+    if (defaults) {
+      if (sizeInput && !sizeInput.value) sizeInput.value = defaults.size;
+      if (message && !message.value) {
+        message.value = 'Hello, I’d like to commission a ' + defaults.label + '.\n\n';
+      }
+      const summary = form.querySelector('.package-summary');
+      if (summary) {
+        summary.hidden = false;
+        const title = summary.querySelector('.package-title');
+        const price = summary.querySelector('.package-price');
+        if (title) title.textContent = option?.textContent?.split('—')[0]?.trim() || defaults.label;
+        if (price) price.textContent = '50% deposit to start · Typical turnaround 2–4 weeks';
+      }
+    }
+  }
 
   if (purchaseSlug || productSlug) {
     fetch('/catalog/products.json').then(response=>response.json()).then(async catalog=>{
@@ -29,6 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }).catch(()=>{});
   }
 
+  if (packageSelect && message) {
+    packageSelect.addEventListener('change', () => {
+      const defaults = packageDefaults[packageSelect.value];
+      if (defaults && sizeInput && !sizeInput.value) sizeInput.value = defaults.size;
+    });
+  }
+
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector('.form-status');
   const originalText = button.textContent;
@@ -49,7 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const firstName = (data.get('firstName') || '').toString().trim();
       const lastName = (data.get('lastName') || '').toString().trim();
       data.set('name', [firstName, lastName].filter(Boolean).join(' ') || 'Website visitor');
-      data.set('description', (data.get('message') || '').toString());
+      const packageLabel = packageSelect?.selectedOptions?.[0]?.textContent?.trim();
+      let description = (data.get('message') || '').toString();
+      if (packageLabel && packageSelect?.value) {
+        description = 'Package: ' + packageLabel + '\n\n' + description;
+      }
+      data.set('description', description);
 
       for (const fieldName of ['referenceImage', 'paletteImage']) {
         const file = data.get(fieldName);
