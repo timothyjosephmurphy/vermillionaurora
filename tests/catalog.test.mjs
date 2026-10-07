@@ -20,7 +20,8 @@ test('gallery rows and shared cards use the catalog and preserve collection orde
   assert.deepEqual($('.available-paintings-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),available);
   assert.deepEqual($('.collector-items-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),collectorPreview);
   assert.equal($('.available-paintings-carousel [data-product-id]').length+collectors.length,expected.length);
-  assert.ok($('.collector-archive-link a[href="/gallery/"]').length);
+  assert.equal($('.collector-archive-link').length,0);
+  assert.ok($('.painting-discovery-actions a.button[href="/gallery/"]').length);
   assert.equal($('#gallery h2').text(),'Featured works');
   assert.equal($('#collectors-items h2').text(),'Collector’s Items');
  }else{

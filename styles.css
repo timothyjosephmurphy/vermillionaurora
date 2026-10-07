@@ -790,14 +790,6 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 .book-carousel .book-tile { padding:1.25rem; }
 
 
-.collector-archive-link {
-  margin: 1.25rem 0 0;
-  text-align: center;
-}
-.collector-archive-link a {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
 .service-terms {
   margin: 0.65rem 0 1rem;
   font-size: 0.82rem;

@@ -60,7 +60,8 @@ try {
  const collectorPreview=Math.min(8,collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).length);
  // Live availability moves sold available cards into the collectors track; preview cap only limits the static sold set.
  assert.equal(await page.locator('.collector-items-carousel .product-card').count(),collectorPreview+availableCount);
- assert(await page.locator('.collector-archive-link a[href="/gallery/"]').count());
+ assert.equal(await page.locator('.collector-archive-link').count(),0);
+ assert(await page.locator('.painting-discovery-actions a.button[href="/gallery/"]').count());
  allSold=false;
  await page.goto(origin+'/products/painting-portrait-in-green/');await page.getByText('Sold',{exact:true}).waitFor();await page.screenshot({path:'/tmp/catalog-preview/product-mobile.png',fullPage:true});
  await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:'/tmp/catalog-preview/product-desktop.png',fullPage:true});
