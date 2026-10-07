@@ -13,6 +13,8 @@ export function hostRedirect(request, env = {}) {
   const url = new URL(request.url);
   const primary = env.PRIMARY_HOST || 'tjm.art';
   if (url.hostname === `www.${primary}`) return moved(`https://${primary}${url.pathname}${url.search}`);
+  // Plain http on the primary host upgrades to https (same path and query).
+  if (url.protocol === 'http:' && url.hostname === primary) return moved(`https://${primary}${url.pathname}${url.search}`);
   if (env.LEGACY_REDIRECT !== 'true' || !LEGACY_HOSTS.has(url.hostname)) return null;
   if (KEEP_ON_LEGACY.some((prefix) => url.pathname.startsWith(prefix))) return null;
   return moved(`https://${primary}${url.pathname}${url.search}`);
