@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="147538e310b8184036e7";
+export const sourcePrintVersion="022c1997b1f7920736e4";
 export default [
   {
     "id": "warszawska-syrenka",
@@ -488,7 +488,7 @@ export default [
   },
   {
     "id": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dusk, El Salvador",
+    "title": "El Zonte at Dawn, El Salvador",
     "artist": "TJ Murphy",
     "year": 2023,
     "medium": "Watercolor pastel",
@@ -503,7 +503,7 @@ export default [
     ],
     "image": {
       "src": "/gallery-images/shoreline-at-dusk.jpg",
-      "alt": "El Zonte shoreline at dusk by TJ Murphy"
+      "alt": "El Zonte shoreline at dawn by TJ Murphy"
     },
     "variants": [
       {

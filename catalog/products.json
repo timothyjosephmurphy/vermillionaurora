@@ -1652,8 +1652,8 @@
     "id": "painting-shoreline-at-dusk",
     "slug": "painting-shoreline-at-dusk",
     "type": "painting",
-    "title": "El Zonte at Dusk, El Salvador",
-    "description": "El Zonte at Dusk, El Salvador by TJ Murphy. Watercolor pastel. Available.",
+    "title": "El Zonte at Dawn, El Salvador",
+    "description": "El Zonte at Dawn, El Salvador by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1683,8 +1683,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/shoreline-at-dusk.jpg",
-      "alt": "El Zonte shoreline at dusk by TJ Murphy",
-      "caption": "El Zonte at Dusk, El Salvador"
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
     },
     "checkout": {
       "mode": "integrated",
