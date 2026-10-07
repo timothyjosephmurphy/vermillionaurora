@@ -70,6 +70,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const originalText = button.textContent;
   let sending = false;
 
+  // After a request is sent for a fixed-price package, offer the 50% deposit through the
+  // site checkout when the checkout service lists it (deposits can be switched off server-side).
+  async function offerDeposit(packageId, requestId) {
+    form.querySelector('.deposit-offer')?.remove();
+    if (!/^[a-z0-9-]+$/.test(packageId || '')) return;
+    try {
+      const response = await fetch('https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/cart/catalog', { cache: 'no-store' });
+      const catalog = response.ok ? await response.json() : null;
+      const deposit = catalog?.enabled && catalog.products?.find(p => p.id === 'deposit-' + packageId && p.methods?.length);
+      if (!deposit) return;
+      const methods = deposit.methods.map(m => m === 'bitcoin' ? 'Bitcoin' : m === 'square' ? 'card' : 'PayPal or card');
+      const box = document.createElement('div');
+      box.className = 'deposit-offer';
+      const heading = document.createElement('p');
+      heading.className = 'deposit-offer-title';
+      heading.textContent = 'Ready to reserve your spot?';
+      const text = document.createElement('p');
+      text.textContent = 'Pay the 50% deposit of $' + Number(deposit.amount).toFixed(2) + ' (' + [...new Set(methods)].join(', ') + '). The balance is due before the finished work ships.';
+      const link = document.createElement('a');
+      link.className = 'button button-solid';
+      const params = new URLSearchParams({ buy: deposit.id });
+      if (/^[0-9a-f-]{36}$/.test(requestId || '')) params.set('request', requestId);
+      link.href = '/cart/?' + params;
+      link.textContent = 'Pay deposit';
+      box.append(heading, text, link);
+      status.after(box);
+    } catch (_) {}
+  }
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (sending || !form.reportValidity()) return;
@@ -128,7 +157,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       status.textContent = 'Thank you! Your message has been submitted.';
+      const chosenPackage = packageSelect?.value || '';
       form.reset();
+      offerDeposit(chosenPackage, result.requestId);
     } catch (error) {
       status.textContent = 'We could not confirm your submission. Please check your connection and try again, or email TJ@VermillionAurora.com directly.';
     } finally {
