@@ -218,6 +218,7 @@
     const codeNote=document.querySelector('[data-cart-code-note]');
     if(codeNote){const coded=(q.quote?.items||[]).filter(i=>i.listAmount);codeNote.hidden=!coded.length;
       codeNote.textContent=coded.length?`Code applied: ${coded.map(i=>`${i.title} $${i.amount} (was $${i.listAmount})`).join('; ')}.`:'';}
+    if(q.quote?.base)root.querySelector('[data-cart-subtotal]').textContent=money(q.quote.base);
     quoted=q;root.querySelector('[data-cart-shipping]').textContent=money(q.quote.shipping);root.querySelector('[data-cart-tax]').textContent=money(q.quote.tax);root.querySelector('[data-cart-total]').textContent=money(q.quote.total);
     applyHeldState({heldIds:cart.filter(i=>!i.id.startsWith('print-')&&!i.id.startsWith('deposit-')).map(i=>i.id),expiresAt:q.expiresAt});
     const quoteButton=form.querySelector('[data-cart-quote]');quoteButton.disabled=true;quoteButton.textContent='Shipping & tax calculated';
