@@ -6,7 +6,8 @@
   "keep_vars": true,
   "vars": {
     "PAYPAL_IPN_ENABLED": "true",
-    "PAYPAL_CHECKOUT_ENABLED": "true",
+    "PAYPAL_CHECKOUT_ENABLED": "false",
+    "PAYPAL_DEPRECATED": "true",
     "PAYPAL_MODE": "live",
     "SQUARE_CHECKOUT_ENABLED": "true",
     "SQUARE_CHECKOUT_ALL": "true",
