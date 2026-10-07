@@ -8,7 +8,7 @@ Edit `src/data/testimonials.json` (an array). Nothing appears unless `consent.pu
   "name": "Jane Doe",
   "anonymous": false,
   "painting": "Portrait of Jane's grandmother",
-  "paintingHref": "/products/single-portrait/",
+  "paintingHref": "/commissions/#portrait",
   "quote": "It captures her exactly.",
   "photo": "/testimonials/images/jane-painting.webp",
   "selfie": "/testimonials/images/jane-selfie.webp",

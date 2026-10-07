@@ -4,6 +4,10 @@ import { join, relative, resolve, sep } from 'node:path';
 const site = 'https://vermillionaurora.com';
 const dist = resolve('dist');
 const excluded = new Set(['cart', 'commission-manager', 'print-preview', 'print-test']);
+// Old commission package pages 301 to /commissions/ (static/_redirects).
+const redirected = new Set(['single-portrait', 'double-portrait', 'small-landscape']);
+// Book scans that duplicate a catalog painting 301 to it (src/data/canonical-artworks.mjs).
+redirected.add('book-art-ccff23f1e469654faa05').add('book-art-2136f2260225dd8ef20a');
 const pages = [];
 
 async function walk(directory) {
@@ -20,6 +24,7 @@ async function walk(directory) {
       ? '/'
       : `/${rel.slice(0, -'/index.html'.length).split(sep).join('/')}/`;
     if (route.split('/').some((part) => excluded.has(part))) continue;
+    if (route.split('/').some((part) => redirected.has(part))) continue;
 
     const html = await readFile(file, 'utf8');
     const hasNoindex = [...html.matchAll(/<meta\b[^>]*>/gi)].some(([tag]) =>
