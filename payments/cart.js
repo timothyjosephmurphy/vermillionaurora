@@ -58,7 +58,8 @@
     holdSession=read(HOLD);
     if(!root&&cart.length&&capabilities?.enabled)try{await syncHold(cart);}catch{}
     if(root) {
-      try{const r=await fetch('/catalog/products.json');const data=await r.json();meta=Object.fromEntries([...data.products,...(data.prints||[])].map(p=>[p.id,p]));}catch{}
+      // An empty cart has nothing to describe, so skip the ~850KB catalog download.
+      if(cart.length||location.search||location.hash)try{const r=await fetch('/catalog/products.json');const data=await r.json();meta=Object.fromEntries([...data.products,...(data.prints||[])].map(p=>[p.id,p]));}catch{}
       initializePage(root);
     }
     const slug=location.pathname.match(/^\/products\/([a-z0-9-]+)\/?$/)?.[1];

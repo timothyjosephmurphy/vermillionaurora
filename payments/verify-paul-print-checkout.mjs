@@ -1,10 +1,11 @@
 // Read-only pricing/shipping quotes, cancelled immediately. Never starts payment.
 import assert from 'node:assert/strict';
 import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
+import {fetchWithRetry} from './retry-fetch.mjs';
 const base='https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/cart';
 async function api(action,body){
   assert(['catalog','quote','cancel'].includes(action));
-  const r=await fetch(`${base}/${action}`,{method:body?'POST':'GET',redirect:'error',headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(120000)});
+  const r=await fetchWithRetry(`${base}/${action}`,{method:body?'POST':'GET',redirect:'error',headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined},{label:`Edition ${action}`,timeout:120000});
   assert(r.ok,`Edition ${action} verification failed: HTTP ${r.status}`);return r.json();
 }
 const tj=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.productId.startsWith('paul-murphy-')&&!p.productId.startsWith('book-art-'));

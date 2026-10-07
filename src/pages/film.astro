@@ -1,0 +1,60 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { ld } from '../data/structured-data.mjs';
+const video = { '@context':'https://schema.org', '@type':'VideoObject', name:'Coined in Watercolor: The Art of Going All In',
+  description:'Documentary by Gavin Robertson following Seattle watercolor artist TJ Murphy from Seattle to Cape Town.',
+  thumbnailUrl:'https://i.ytimg.com/vi/i7tvzE_bqM8/hqdefault.jpg', embedUrl:'https://www.youtube-nocookie.com/embed/i7tvzE_bqM8',
+  contentUrl:'https://www.youtube.com/watch?v=i7tvzE_bqM8', uploadDate:'2026-01-01', director:{'@type':'Person',name:'Gavin Robertson'},
+  actor:{'@type':'Person','@id':'https://vermillionaurora.com/#tj-murphy',name:'TJ Murphy'} };
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coined in Watercolor — Documentary about Seattle watercolor artist TJ Murphy</title>
+  <meta name="description" content="Coined in Watercolor: The Art of Going All In, a documentary by Gavin Robertson following TJ Murphy from Seattle to Cape Town. Premiered at the Bitcoin Film Festival in Warsaw, 2026." />
+  <link rel="canonical" href="https://vermillionaurora.com/film/" />
+  <meta property="og:image" content="https://i.ytimg.com/vi/i7tvzE_bqM8/hqdefault.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/site-header.css" />
+  <script type="application/ld+json" set:html={ld(video)} />
+</head>
+<body>
+  <div class="page-shell">
+    <SiteHeader />
+    <main id="main-content" class="container film-page">
+      <p class="eyebrow dark">A documentary by Gavin Robertson</p>
+      <h1>Coined in Watercolor: The Art of Going All In</h1>
+      <button type="button" class="video-facade" data-youtube="i7tvzE_bqM8" data-title="Coined in Watercolor: The Art of Going All In — documentary by Gavin Robertson" aria-label="Play the documentary Coined in Watercolor">
+        <img src="https://i.ytimg.com/vi/i7tvzE_bqM8/hqdefault.jpg" alt="" width="480" height="360" decoding="async" /><span class="video-facade-play" aria-hidden="true"></span>
+      </button>
+      <noscript><p><a href="https://www.youtube.com/watch?v=i7tvzE_bqM8">Watch on YouTube</a></p></noscript>
+      <div class="film-copy">
+        <p>Gavin Robertson follows my journey of becoming an artist, from Seattle to Cape Town. The film features my artwork at home and on display at the Bitcoin conference in Cape Town.</p>
+        <p>Gavin’s debut documentary premiered at the Bitcoin Film Festival in Warsaw, Poland, in 2026.</p>
+        <p class="film-actions"><a class="button button-ghost" href="https://www.youtube.com/watch?v=i7tvzE_bqM8" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a> <a class="button button-ghost" href="/exhibitions/gavin-robertson/">Gavin Robertson collaboration</a> <a class="button button-solid" href="/gallery/">Explore the paintings</a></p>
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+  <style is:global>
+    .film-page { padding: 48px 0 64px; max-width: 960px; }
+    .film-page h1 { margin: 0 0 24px; }
+    .film-copy { margin-top: 24px; font-size: 1.05rem; line-height: 1.7; }
+    .film-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .video-facade{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#1d1a17;cursor:pointer;overflow:hidden;border-radius:16px}
+    .video-facade img{width:100%;height:100%;object-fit:cover;display:block}
+    .video-facade-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#d34220}
+    .video-facade-play::after{content:"";position:absolute;left:28px;top:14px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}
+    .video-facade:focus-visible{outline:3px solid #d34220;outline-offset:3px}
+  </style>
+  <script is:inline>
+    document.querySelectorAll('.video-facade').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src=`https://www.youtube-nocookie.com/embed/${b.dataset.youtube}?autoplay=1&playsinline=1`;f.title=b.dataset.title;f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.style.cssText='width:100%;aspect-ratio:16/9;border:0;display:block;border-radius:16px';b.replaceWith(f);f.focus();}));
+  </script>
+</body>
+</html>

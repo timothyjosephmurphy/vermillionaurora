@@ -2,11 +2,12 @@
 import assert from 'node:assert/strict';
 import prints from '../cloudflare/print-catalog.mjs';
 import {verifyLivePrintAssets} from './verify-live-print-assets.mjs';
+import {fetchWithRetry} from './retry-fetch.mjs';
 const base='https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/cart';
 const ids=['print-painting-portrait-in-gold-small','print-painting-portrait-in-green-small'];
 async function api(action,body) {
   assert(['catalog','quote','start','cancel'].includes(action));
-  const r=await fetch(`${base}/${action}`,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(90000)}:{cache:'no-store',signal:AbortSignal.timeout(15000)});
+  const r=await fetchWithRetry(`${base}/${action}`,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{cache:'no-store'},{label:`Live sample ${action}`,retry:action!=='start',timeout:body?90000:15000});
   if(!r.ok)throw Error(`Live sample ${action} check failed (HTTP ${r.status})`);return r.json();
 }
 await verifyLivePrintAssets();
