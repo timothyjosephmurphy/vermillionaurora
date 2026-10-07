@@ -1,0 +1,39 @@
+---
+// Reference photo for a painting. Optional `video` ({sources:[{src,type}]}) renders a looping,
+// muted clip (e.g. a Live Photo) with the still as poster. The still <picture> is always
+// rendered and is what shows without video support or with prefers-reduced-motion.
+const { media } = Astro.props;
+const { base, widths, width, height, alt, caption, video } = media;
+const set = ext => widths.map(w => `${base}-${w}.${ext} ${w}w`).join(', ');
+const sizes = '(max-width: 600px) calc(100vw - 2.5rem), 420px';
+const poster = `${base}-${widths[1] ?? widths[0]}.jpg`;
+---
+<figure class:list={['reference-photo', { 'has-video': video }]}>
+  <div class="reference-photo-frame">
+    <picture>
+      <source type="image/avif" srcset={set('avif')} sizes={sizes} />
+      <source type="image/webp" srcset={set('webp')} sizes={sizes} />
+      <img src={poster} srcset={set('jpg')} sizes={sizes} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+    </picture>
+    {video && <video class="reference-photo-video" autoplay muted loop playsinline preload="metadata" poster={poster} width={width} height={height} aria-hidden="true" tabindex="-1" data-reference-video>
+      {video.sources.map(s => <source src={s.src} type={s.type} />)}
+    </video>}
+  </div>
+  <figcaption><span class="reference-photo-label">Reference photo</span>{caption.replace(/^Reference photo\s*—\s*/, '— ')}</figcaption>
+</figure>
+<script>
+  // Reduced motion: drop the clip entirely so only the still shows and nothing downloads.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('[data-reference-video]').forEach(v => v.remove());
+  }
+</script>
+<style>
+  .reference-photo { margin: 2.5rem 0 0; max-width: 420px; }
+  .reference-photo-frame { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 6px; background: #d9d2c8; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+  .reference-photo img, .reference-photo video { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .reference-photo video { position: absolute; inset: 0; }
+  .reference-photo figcaption { margin-top: .75rem; color: var(--muted); font-size: .875rem; line-height: 1.5; }
+  .reference-photo-label { margin-right: .35rem; color: var(--ink, inherit); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; }
+  @media (prefers-reduced-motion: reduce) { .reference-photo video { display: none; } }
+  @media (max-width: 600px) { .reference-photo { max-width: none; margin-top: 2rem; } }
+</style>
