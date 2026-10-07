@@ -1310,7 +1310,7 @@
     "listing": {
       "status": "available",
       "price": {
-        "amount": "20.00",
+        "amount": "200.00",
         "currency": "USD"
       }
     },
@@ -1371,7 +1371,7 @@
     "listing": {
       "status": "available",
       "price": {
-        "amount": "20.00",
+        "amount": "200.00",
         "currency": "USD"
       }
     },

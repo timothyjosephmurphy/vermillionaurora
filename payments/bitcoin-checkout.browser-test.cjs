@@ -12,9 +12,9 @@ const root=path.resolve(__dirname,'../dist');
     const req=route.request(),url=new URL(req.url()),p=url.pathname;
     if(req.method()==='OPTIONS')return route.fulfill({status:204,headers:cors});
     if(url.hostname==='btcpay.example.test'){redirect=true;return route.fulfill({body:'Mock BTCPay'});}
-    if(p==='/checkout/status')return route.fulfill({status:paypal?200:503,headers:cors,json:{status:'available',title:'Chase Toole',amount:'20.00',currency:'USD'}});
-    if(p==='/checkout/bitcoin/status')return route.fulfill({headers:cors,json:enabled?{enabled:true,status:'available',title:'Chase Toole',amount:'20.00',currency:'USD'}:{enabled:false}});
-    if(p.endsWith('/quote')){quotes++;return route.fulfill({headers:cors,json:{base:'20.00',shipping:'6.00',tax:'1.00',total:'27.00',carrier:'UPS',service:'Ground',packaging:'flat'}});}
+    if(p==='/checkout/status')return route.fulfill({status:paypal?200:503,headers:cors,json:{status:'available',title:'Chase Toole',amount:'200.00',currency:'USD'}});
+    if(p==='/checkout/bitcoin/status')return route.fulfill({headers:cors,json:enabled?{enabled:true,status:'available',title:'Chase Toole',amount:'200.00',currency:'USD'}:{enabled:false}});
+    if(p.endsWith('/quote')){quotes++;return route.fulfill({headers:cors,json:{base:'200.00',shipping:'6.00',tax:'1.00',total:'207.00',carrier:'UPS',service:'Ground',packaging:'flat'}});}
     if(p==='/checkout/bitcoin/create'){created=req.postDataJSON();return route.fulfill({headers:cors,json:{status:'pending',orderId:id,url:'https://btcpay.example.test/i/INV1'}});}
     if(p==='/checkout/bitcoin/order')return route.fulfill({headers:cors,json:{status:state.toLowerCase(),orderId:id}});
     if(p==='/products/painting-portrait-in-green/') {
@@ -35,11 +35,11 @@ const root=path.resolve(__dirname,'../dist');
   for(const [name,value]of Object.entries({name:'Buyer',street1:'123 Main St',city:'Seattle',state:'wa',zip:'98122'}))await page.locator(`[name="${name}"]`).fill(value);
   await page.getByRole('button',{name:'Calculate shipping & tax'}).click();
   await page.waitForFunction(()=>!document.querySelector('.checkout-bitcoin').disabled);
-  assert.equal(await bitcoin.textContent(),'Buy with Bitcoin · $27.00');
+  assert.equal(await bitcoin.textContent(),'Buy with Bitcoin · $207.00');
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   fs.mkdirSync('/tmp/checkout-ui',{recursive:true});await page.screenshot({path:'/tmp/checkout-ui/bitcoin-mobile.png',fullPage:true});
   await bitcoin.click();await page.waitForURL('https://btcpay.example.test/**');
-  assert(redirect);assert.equal(created.expectedTotal,'27.00');assert.equal(created.address.state,'WA');
+  assert(redirect);assert.equal(created.expectedTotal,'207.00');assert.equal(created.address.state,'WA');
   await page.goto(base+'?bitcoin='+id);
   await page.getByText('Bitcoin payment received and awaiting confirmation. Your painting remains reserved.').waitFor();
   assert.equal(await page.getByText(/Bitcoin payment confirmed/).count(),0);

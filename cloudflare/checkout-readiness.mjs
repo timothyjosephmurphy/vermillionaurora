@@ -1,5 +1,6 @@
 import { sellerMailToken } from './shipping-email.mjs';
 import { priceOrder } from './checkout-pricing.mjs';
+import catalog from './checkout-catalog.mjs';
 import { squareRequest } from './square-provider.mjs';
 import { bitcoinApi } from './bitcoin-api.mjs';
 
@@ -93,7 +94,8 @@ export async function checkoutReadiness(request,env) {
       const quote=await priceOrder(env,slug,{name:'Live checkout verification',street1:env.SHIP_FROM_STREET,city:'Seattle',state:'WA',zip:'98122'});
       checks.pilotQuote={base:quote.base,shipping:quote.shipping,tax:quote.tax,total:quote.total,carrier:quote.carrier,
         insurance:quote.insurance?.amount||null,insuranceFee:quote.insurance?.fee||null};
-      checks.insuredQuote=quote.base==='20.00'&&quote.insurance?.amount==='20.00'&&quote.carrier==='UPS';
+      const listed=catalog[slug]?.amount;
+      checks.insuredQuote=!!listed&&quote.base===listed&&quote.insurance?.amount===listed&&quote.carrier==='UPS';
       }
     } catch(error) { checks.pilotQuoteError=error.message; }
   }

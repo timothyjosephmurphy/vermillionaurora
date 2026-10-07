@@ -8,14 +8,14 @@ let calls, rate, shipment, transaction, objects;
 beforeEach(() => {
   calls=[];objects=[];
   rate={object_id:'INS_RATE',shipment:'INS_SHIPMENT',currency:'USD',amount:'5.75',included_insurance_price:'0.75',provider:'USPS',servicelevel:{name:'Ground Advantage'}};
-  shipment={object_id:'INS_SHIPMENT',extra:{insurance:{amount:'20.00',currency:'USD',content:'Original painting: Chase Toole'}}};
+  shipment={object_id:'INS_SHIPMENT',extra:{insurance:{amount:'200.00',currency:'USD',content:'Original painting: Chase Toole'}}};
   transaction={object_id:'INS_TX',test:true,status:'SUCCESS',rate:'INS_RATE',label_url:'https://deliver.goshippo.com/insured.pdf'};
   vi.stubGlobal('fetch',vi.fn(async(url,options={})=>{
     calls.push({url,...options});
     if(url==='https://api.goshippo.com/shipments/')return Response.json({...shipment,rates:[{object_id:'UNINSURED',currency:'USD',amount:'1.00'},rate]});
     if(url==='https://api.goshippo.com/rates/INS_RATE/')return Response.json(rate);
     if(url==='https://api.goshippo.com/shipments/INS_SHIPMENT/')return Response.json(shipment);
-    if(url==='https://api.stripe.com/v1/tax/calculations')return Response.json({id:'taxcalc_INSURED',currency:'usd',amount_total:2575});
+    if(url==='https://api.stripe.com/v1/tax/calculations')return Response.json({id:'taxcalc_INSURED',currency:'usd',amount_total:20575});
     if(url.endsWith('/tax/transactions/create_from_calculation'))return Response.json({id:'TAX1'});
     if(url==='https://oauth2.googleapis.com/token')return Response.json({access_token:'EMAIL'});
     if(url==='https://api.goshippo.com/transactions/')return Response.json(transaction);
@@ -37,13 +37,13 @@ async function paid(quote){
   return stub;
 }
 
-it('quotes the flat envelope with $20 insurance and includes its fee only once',async()=>{
+it('quotes the flat envelope with $200 insurance and includes its fee only once',async()=>{
   const quote=await pricing();
   const request=JSON.parse(calls.find(c=>c.url.endsWith('/shipments/')).body);
   expect(request.extra.insurance).toEqual(shipment.extra.insurance);
   expect(request.address_from.phone).toBe('+12065550123');
   expect(request.parcels).toEqual([{length:'15',width:'12',height:'0.125',weight:'0.25',distance_unit:'in',mass_unit:'lb'}]);
-  expect(quote).toMatchObject({base:'20.00',shipping:'5.75',total:'25.75',rateId:'INS_RATE',insurance:{amount:'20.00',fee:'0.75'}});
+  expect(quote).toMatchObject({base:'200.00',shipping:'5.75',total:'205.75',rateId:'INS_RATE',insurance:{amount:'200.00',fee:'0.75'}});
   expect(calls.find(c=>c.url.endsWith('/tax/calculations')).body.get('shipping_cost[amount]')).toBe('575');
 });
 
@@ -51,7 +51,7 @@ it('uses only an allowed carrier even when another insured rate is cheaper',asyn
   rate.provider='UPS';
   fetch.mockImplementationOnce(async()=>Response.json({...shipment,rates:[{...rate,object_id:'USPS_RATE',provider:'USPS',amount:'2.00'},rate]}));
   const quote=await priceOrder({...env,SHIPPO_CARRIER_ALLOWLIST:'UPS'},slug,{name:'Test Buyer',street1:'123 Main St',city:'Seattle',state:'WA',zip:'98122'});
-  expect(quote).toMatchObject({carrier:'UPS',rateId:'INS_RATE',shipping:'5.75',insurance:{amount:'20.00'}});
+  expect(quote).toMatchObject({carrier:'UPS',rateId:'INS_RATE',shipping:'5.75',insurance:{amount:'200.00'}});
 });
 
 it('does not substitute a disallowed carrier when the selected carrier has no rate',async()=>{
@@ -78,7 +78,7 @@ it('purchases the verified insured rate, includes insurance in the email, and su
   const email=calls.find(c=>c.url.endsWith('/messages/send'));
   const mime=atob(JSON.parse(email.body).raw.replaceAll('-','+').replaceAll('_','/'));
   const text=atob(mime.split('Content-Transfer-Encoding: base64\r\n\r\n')[1].split('\r\n--')[0].replaceAll('\r\n',''));
-  expect(text).toContain('Insurance: $20.00 USD');expect(text).toContain('premium $0.75 included');
+  expect(text).toContain('Insurance: $200.00 USD');expect(text).toContain('premium $0.75 included');
   await evictDurableObject(stub);await stub.complete('ORDER','CAPTURE');await runInDurableObject(stub,instance=>instance.alarm());
   expect(purchases()).toHaveLength(1);
 });
