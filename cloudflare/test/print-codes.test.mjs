@@ -67,7 +67,7 @@ it('collector code prices prints at provider cost and is single use: claim at st
   expect(first.quote.base).toBe('14.00');expect(first.quote.printCode.kind).toBe('collector');
   const second=await quoteWith(code);
   await first.order.start('paypal');
-  expect((await second.order.start('paypal')).codeError).toBe('That print code has already been used.');expect((await inspect(second.order)).status).toBe('quoted');
+  expect((await second.order.start('paypal')).codeError).toBe('That discount code has already been used.');expect((await inspect(second.order)).status).toBe('quoted');
   await first.order.cancel();
   const third=await quoteWith(code);
   await third.order.start('paypal');payment.status='APPROVED';await third.order.capture();await third.order.refresh();
