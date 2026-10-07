@@ -46,7 +46,11 @@ function addMobileMenu(html) {
   const cart=astro.match(/<a href="\/cart\/" class="cart-nav cart-nav-mobile"[^]*?<\/a>/)[0];
   const tail=astro.match(/<button type="button" class="nav-toggle"[^]*?<\/noscript>/)[0];
   if(!/<nav class="main-nav"/.test(html)||!html.includes('<div class="header-actions">'))return html;
+  // Older pages still carry the pre-#208 "TJM.art by Vermillion Aurora Productions" brand,
+  // which wraps to three lines on phones; use the shared TJ Murphy brand block instead.
+  const brand=astro.match(/<div class="brand-block">[^]*?<\/div>/)[0];
   return html
+    .replace(/<div class="brand-block">[^]*?<\/div>/,brand)
     .replace(/<nav class="main-nav"(?![^>]*\bid=)/,'<nav class="main-nav" id="site-menu"')
     .replace(/(<div class="header-actions">)([^]*?)(<\/div>)/,(m,open,body,close)=>`${open}${cart}${body}${tail}${close}`);
 }
