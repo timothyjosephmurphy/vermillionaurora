@@ -315,4 +315,28 @@ export class QuickbooksSync extends DurableObject {
     return { retried: Boolean(changed) };
   }
   async syncNow() { return this.processQueue(); }
+  // Read-only setup check: which accounts and items the sync would use, or create on the first sale, in the
+  // connected company, plus the currency and sales-tax preferences. Queries only; never writes to QuickBooks.
+  async preflight() {
+    return this.withClient('preflight', async (client, current) => {
+      const preferences = await client.read('preferences', 'Preferences');
+      const accounts = {}, items = {};
+      for (const [key, spec] of Object.entries(ACCOUNT_DEFAULTS)) {
+        const name = accountName(this.env, key);
+        const found = (await client.query(`select Id, Name, AccountType, AccountSubType, Active from Account where Name = ${qboString(name)} and Active in (true, false)`, 'Account'))[0];
+        accounts[key] = { name, expectedType: spec.type, ...(found ? { id: String(found.Id), type: found.AccountType, subType: found.AccountSubType, active: found.Active !== false } : {}),
+          action: !found ? `will be created (${spec.type})` : found.Active === false ? 'PROBLEM: inactive account with this name; reactivate it or set another name' : found.AccountType !== spec.type ? `CHECK: existing account is ${found.AccountType}` : 'use existing' };
+      }
+      for (const [key, spec] of Object.entries(ITEM_DEFAULTS)) {
+        const name = itemName(this.env, key);
+        const found = (await client.query(`select Id, Name, Type, Active, IncomeAccountRef from Item where Name = ${qboString(name)} and Active in (true, false)`, 'Item'))[0];
+        items[key] = { name, ...(found ? { id: String(found.Id), type: found.Type, active: found.Active !== false, incomeAccount: found.IncomeAccountRef?.name || null } : { incomeAccount: accounts[spec.account].name }),
+          action: !found ? `will be created (Service item posting to ${accounts[spec.account].name})` : found.Active === false ? 'PROBLEM: inactive item with this name; reactivate it or set another name' : !['Service', 'NonInventory', 'Inventory'].includes(found.Type) ? `PROBLEM: existing item type ${found.Type} cannot be used` : 'use existing' };
+      }
+      const problems = [...Object.values(accounts), ...Object.values(items)].filter(e => e.action.startsWith('PROBLEM')).length;
+      return { company: current.companyName, homeCurrency: preferences?.CurrencyPrefs?.HomeCurrency?.value || null, multiCurrency: Boolean(preferences?.CurrencyPrefs?.MultiCurrencyEnabled),
+        salesTax: { usingSalesTax: preferences?.TaxPrefs?.UsingSalesTax ?? null, automatedSalesTax: preferences?.TaxPrefs?.PartnerTaxEnabled ?? null },
+        customTxnNumbers: preferences?.SalesFormsPrefs?.CustomTxnNumbers ?? null, depositTo: { square: accounts.square.name, btcpay: accounts.bitcoin.name }, accounts, items, problems };
+    });
+  }
 }
