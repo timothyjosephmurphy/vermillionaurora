@@ -99,9 +99,9 @@ export async function commissionForm(request,env) {
             `Email: ${email}`,
             `Requested size: ${size || "Not specified"}`,"",
             ...uploadLines,"",
-            "Manage private references: https://vermillionaurora.com/commission-manager/",
+            "Manage private references: https://tjm.art/commission-manager/",
             "Unaccepted inquiries expire after 90 days. Mark accepted work active and record its agreed retention date. Mark completed/cancelled work promptly for deletion after 90 days.",
-            "Privacy: https://vermillionaurora.com/privacy/","",
+            "Privacy: https://tjm.art/privacy/","",
             "Project description:",description
           ].join("\r\n");
 

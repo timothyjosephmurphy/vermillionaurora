@@ -19,6 +19,8 @@ import { checkout, checkoutWebhook } from "./paypal-orders.mjs";
 import { salesMaintenance } from './sales-maintenance.mjs';
 import { checkoutReadiness } from './checkout-readiness.mjs';
 export { PaintingStock } from './painting-stock.mjs';
+export { QuickbooksSync } from './quickbooks-sync.mjs';
+import { quickbooksApi } from './quickbooks-api.mjs';
 export default {
   async scheduled(event,env,ctx) { ctx.waitUntil(purgeCommissionReferences(env)); },
   async fetch(request, env) {
@@ -26,6 +28,7 @@ export default {
     if (path.startsWith('/buffer/')) return bufferApi(request,env);
     if (path.startsWith('/etsy/listings/')) return etsyListings(request,env);
     if (path.startsWith('/etsy/')) return etsyConnection(request,env);
+    if (path.startsWith('/quickbooks/')) return quickbooksApi(request,env);
     if (path === '/commission-privacy') return commissionPrivacy(request,env);
     if (path.startsWith('/checkout/prints/')) return printApi(request,env);
     if (path === '/checkout/print-codes/issue') return printCodesApi(request,env);

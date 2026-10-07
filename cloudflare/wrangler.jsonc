@@ -27,7 +27,9 @@
     "FINERWORKS_ORDER_ENABLED": "true",
     "LIVE_PRINT_SAMPLE_ENABLED": "true",
     "PRINT_CHECKOUT_ALL": "true",
-    "BTCPAY_CHECKOUT_ENABLED": "true"
+    "BTCPAY_CHECKOUT_ENABLED": "true",
+    "QBO_ENVIRONMENT": "production",
+    "QBO_SYNC_ENABLED": "false"
   },
   "durable_objects": {
     "bindings": [
@@ -46,6 +48,10 @@
       {
         "name": "CART_ORDERS",
         "class_name": "CartOrder"
+      },
+      {
+        "name": "QUICKBOOKS",
+        "class_name": "QuickbooksSync"
       }
     ]
   },
@@ -72,6 +78,12 @@
       "tag": "cart-orders-v1",
       "new_sqlite_classes": [
         "CartOrder"
+      ]
+    },
+    {
+      "tag": "quickbooks-sync-v1",
+      "new_sqlite_classes": [
+        "QuickbooksSync"
       ]
     }
   ],

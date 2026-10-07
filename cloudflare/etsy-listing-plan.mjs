@@ -71,8 +71,8 @@ export function validateListingPlan({body,inventory,skuMap}){
 export async function buildListingPlans(works,settings){
  const plans=await Promise.all(works.map(async p=>{
   requireValue(p.variants?.length&&p.variants.every(v=>v.frames?.length===3),'each selected print size requires three frame options.');
-  const image=new URL(p.image.src,'https://vermillionaurora.com');
-  requireValue(image.origin==='https://vermillionaurora.com','artwork images must use the approved website.');
+  const image=new URL(p.image.src,'https://tjm.art');
+  requireValue(image.origin==='https://tjm.art','artwork images must use the approved website.');
   const products=[],skuMap={};
   for(const size of p.variants){
    const variants=[{key:null,name:'Unframed',price:size.price,sku:size.sku},...size.frames.map(f=>({...f,name:f.label}))];

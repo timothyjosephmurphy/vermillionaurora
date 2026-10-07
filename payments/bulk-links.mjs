@@ -26,7 +26,7 @@ async function paypalFetch(url, options) {
 }
 
 export async function candidates() {
-  const rows = products.filter(p=>p.type==='painting' && p.listing.status==='available' && p.checkout?.mode!=='paypal-link').map(p=>({slug:p.slug,title:p.title,paypalTitle:p.title,amount:p.listing.price.amount,currency:p.listing.price.currency,artist:p.artist,productPage:`https://vermillionaurora.com/products/${p.slug}/`}));
+  const rows = products.filter(p=>p.type==='painting' && p.listing.status==='available' && p.checkout?.mode!=='paypal-link').map(p=>({slug:p.slug,title:p.title,paypalTitle:p.title,amount:p.listing.price.amount,currency:p.listing.price.currency,artist:p.artist,productPage:`https://tjm.art/products/${p.slug}/`}));
   // PayPal's IPN identifies a product by its item name; make repeated titles unique.
   const counts = new Map();
   for (const row of rows) counts.set(row.title, (counts.get(row.title) ?? 0) + 1);

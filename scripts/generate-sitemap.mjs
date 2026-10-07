@@ -1,7 +1,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative, resolve, sep } from 'node:path';
 
-const site = 'https://vermillionaurora.com';
+const site = 'https://tjm.art';
 const dist = resolve('dist');
 const excluded = new Set(['cart', 'commission-manager', 'print-preview', 'print-test']);
 // Old commission package pages 301 to /commissions/ (static/_redirects).

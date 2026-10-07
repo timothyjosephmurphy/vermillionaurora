@@ -20,7 +20,7 @@ function mockEtsy(t,{failFirstInventory=false,draftFailure=null,legacyDrafts=[],
  t.mock.method(globalThis,'fetch',async(url,options={})=>{
   const target=String(url);calls.push({url:target,options});
   if(rateLimited)return Response.json({error:'rate limit'},{status:429,headers:{'retry-after':'9'}});
-  if(target.startsWith('https://vermillionaurora.com/'))return new Response(new Uint8Array([1,2,3]),{headers:{'Content-Type':imageType}});
+  if(target.startsWith('https://tjm.art/'))return new Response(new Uint8Array([1,2,3]),{headers:{'Content-Type':imageType}});
   if(target.endsWith('/shipping-profiles'))return Response.json({results:[{shipping_profile_id:11,title:'Prints Shipping',profile_type:'manual'},{shipping_profile_id:12,title:'US Calculated',profile_type:'calculated'}]});
   if(target.endsWith('/shops/42'))return Response.json({shop_id:42,currency_code:currencyCode});
   if(target.includes('/readiness-state-definitions?legacy=false')){const all=readinessProfiles||[{readiness_state_id:22,readiness_state:'made_to_order',min_processing_days:3,max_processing_days:5,processing_days_display_label:'3–5 days'}],offset=Number(new URL(target).searchParams.get('offset'));return Response.json({count:all.length,results:all.slice(offset,offset+100)});}
