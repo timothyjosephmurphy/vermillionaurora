@@ -10,7 +10,7 @@ try {
  const errors=[],missing=[];let status='sold',allSold=false;page.on('pageerror',e=>errors.push(e.message));
  await page.route('**/*',async route=>{
   const url=new URL(route.request().url());
-  if(url.pathname==='/inventory/status'){const ids=url.searchParams.get('ids').split(',');return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{version:catalogVersion,availability:Object.fromEntries(ids.map(id=>[id,allSold?'sold':['painting-portrait-in-green','paul-murphy-painting-1'].includes(id)?status:byId[id]?.listing.status||'available']))}});}
+  if(url.pathname==='/inventory/status'){const ids=url.searchParams.get('ids').split(',');return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{version:catalogVersion,availability:Object.fromEntries(ids.map(id=>[id,allSold?'sold':['painting-portrait-in-green','painting-moonlit-water','paul-murphy-painting-1'].includes(id)?status:byId[id]?.listing.status||'available']))}});}
   if(url.hostname!==new URL(origin).hostname)return route.abort();
   const file=path.join(root,decodeURIComponent(url.pathname),url.pathname.endsWith('/')?'index.html':'');
   if(fs.existsSync(file)&&fs.statSync(file).isFile())return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'})[path.extname(file)]||'application/octet-stream'});
@@ -22,9 +22,9 @@ try {
   await page.setViewportSize({width,height:900});
   for(const route of routes){console.log('Preview',width,route);await page.goto(origin+route);await page.locator('main').first().waitFor();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width} overflow ${route}`);}
  }
- await page.goto(origin+'/');await page.waitForFunction(()=>document.querySelector('.collector-items-carousel [data-product-id="painting-portrait-in-green"] [data-card-price]')?.textContent==='Sold');
- assert.equal(await page.locator('.available-paintings-carousel [data-product-id="painting-portrait-in-green"]').count(),0);
- assert.equal(await page.locator('.collector-items-carousel [data-product-id="painting-portrait-in-green"]').count(),1);
+ await page.goto(origin+'/');await page.waitForFunction(()=>document.querySelector('.collector-items-carousel [data-product-id="painting-moonlit-water"] [data-card-price]')?.textContent==='Sold');
+ assert.equal(await page.locator('.available-paintings-carousel [data-product-id="painting-moonlit-water"]').count(),0);
+ assert.equal(await page.locator('.collector-items-carousel [data-product-id="painting-moonlit-water"]').count(),1);
  assert.equal(await page.locator('.available-paintings-carousel [data-availability="Sold"]').count(),0);
  await page.goto(origin+'/exhibitions/paul-murphy/');await page.waitForFunction(()=>[...document.querySelectorAll('.ev-caption')].some(el=>el.textContent==='Tipi · Sold'));
  await page.goto(origin+'/gallery/');const card=page.locator('[data-product-id="painting-portrait-in-green"]');await page.waitForFunction(()=>document.querySelector('[data-product-id="painting-portrait-in-green"]').dataset.availability==='Sold');await page.locator('#available-only').check();assert(await card.isHidden());
