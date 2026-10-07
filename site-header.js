@@ -20,7 +20,7 @@
     queued = false;
     const y = currentY();
     // Only hide once the header's own space has scrolled past, so nothing blank shows.
-    if (!mobile.matches || y <= header.offsetHeight) {
+    if (!mobile.matches || y <= header.offsetHeight || header.classList.contains('is-menu-open')) {
       setHidden(false);
       lastY = y;
       return;
@@ -38,4 +38,36 @@
   window.addEventListener('scroll', queue, { passive: true });
   window.addEventListener('resize', queue, { passive: true });
   mobile.addEventListener('change', update);
+
+  // Mobile hamburger menu: brand, Cart and "Book a commission" stay in the row,
+  // the rest of the main navigation opens in a panel under the header.
+  const toggle = header.querySelector('.nav-toggle');
+  const menu = toggle && document.getElementById(toggle.getAttribute('aria-controls'));
+  if (!toggle || !menu) return;
+  const links = () => [...menu.querySelectorAll('a[href]')].filter(a => a.offsetParent !== null);
+  const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
+  const setOpen = (open, { focus = true } = {}) => {
+    toggle.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('is-menu-open', open);
+    if (open) {
+      setHidden(false);
+      if (focus) links()[0]?.focus();
+    } else if (focus) {
+      toggle.focus();
+    }
+  };
+  toggle.addEventListener('click', () => setOpen(!isOpen()));
+  menu.addEventListener('click', event => {
+    if (event.target.closest('a') && isOpen()) setOpen(false, { focus: false });
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && isOpen()) { event.preventDefault(); setOpen(false); }
+  });
+  document.addEventListener('click', event => {
+    if (isOpen() && !header.contains(event.target)) setOpen(false, { focus: false });
+  });
+  header.addEventListener('focusout', event => {
+    if (isOpen() && event.relatedTarget && !header.contains(event.relatedTarget)) setOpen(false, { focus: false });
+  });
+  mobile.addEventListener('change', () => { if (!mobile.matches && isOpen()) setOpen(false, { focus: false }); });
 })();

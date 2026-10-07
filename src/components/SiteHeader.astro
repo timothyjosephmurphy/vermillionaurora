@@ -8,7 +8,7 @@
             </a>
           </div>
 
-          <nav class="main-nav" aria-label="Main navigation">
+          <nav class="main-nav" id="site-menu" aria-label="Main navigation">
             <a href="/gallery/">Gallery</a>
             <a href="/#exhibitions">Exhibitions</a>
             <a href="/murals/">Murals</a>
@@ -24,7 +24,10 @@
           </nav>
 
           <div class="header-actions">
+            <a href="/cart/" class="cart-nav cart-nav-mobile" data-cart-link aria-label="Cart"><span>Cart</span><span class="cart-count" data-cart-count>0</span></a>
             <a href="/commissions/#form" class="button button-solid">Book a commission</a>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu"><span class="nav-toggle-bars" aria-hidden="true"></span></button>
+            <noscript><style>.site-header .nav-toggle{display:none!important}@media(max-width:979.98px){.site-header .header-inner{flex-wrap:wrap!important}.site-header .main-nav{display:flex!important;position:static!important;flex:0 0 100%;order:3;flex-flow:row wrap!important;justify-content:center;box-shadow:none!important;border:0!important;background:none!important;padding:6px 0 10px!important}}</style></noscript>
           </div>
         </div>
       </header>
