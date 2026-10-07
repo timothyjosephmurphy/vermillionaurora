@@ -24,8 +24,19 @@ document.querySelectorAll('[data-portrait]').forEach(box => {
  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule();}).observe(box);schedule();
 });
 
-// Sized package cards: the size selector updates the "Start a commission" link (?package=&size=).
-document.querySelectorAll('[data-package-size]').forEach(select => {
- const cta = document.querySelector(`[data-package-cta="${select.dataset.packageSize}"]`);
- select.addEventListener('change', () => { const href = select.selectedOptions[0]?.dataset.href; if (cta && href) cta.href = href; });
+// Sized/faced package cards: selectors update the live price and the "Start a commission" link.
+document.querySelectorAll('[data-package-options]').forEach(box => {
+ const slug = box.dataset.packageOptions, prices = JSON.parse(box.dataset.prices), order = box.dataset.order.split(',');
+ const cta = document.querySelector(`[data-package-cta="${slug}"]`), out = box.querySelector('.service-option-price');
+ const money = n => '$' + Number(n).toLocaleString('en-US', {maximumFractionDigits: 2});
+ const update = () => {
+  const value = axis => box.querySelector(`[data-axis="${axis}"]`)?.value;
+  const id = order.map(value).join('-'), amount = prices[id];
+  if (!amount) return;
+  out.textContent = `${money(amount)} total · deposit ${money(Number(amount) / 2)}`;
+  const params = new URLSearchParams({package: slug, size: value('size')});
+  if (value('faces')) params.set('faces', value('faces').replace(/f$/, ''));
+  if (cta) cta.href = `/commissions/?${params}#form`;
+ };
+ box.addEventListener('change', update); update();
 });

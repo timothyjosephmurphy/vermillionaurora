@@ -17,7 +17,7 @@ await writeFile(new URL('../cloudflare/checkout-catalog.mjs',import.meta.url),`/
 const deposits={};
 for(const p of products) {
  const price=p.listing?.price;
- if(p.type!=='commission'||!price||price.currency!=='USD')continue;
+ if(p.type!=='commission'||!price||price.currency!=='USD'||p.mergedInto)continue;
  // Packages with size options get one deposit per size; otherwise only fixed (non "from") prices qualify.
  const choices=Array.isArray(p.options)&&p.options.length?p.options.map(o=>({id:`deposit-${p.id}-${o.id}`,title:`${p.title} ${o.label}`,amount:o.amount,option:o.id})):price.from?[]:[{id:`deposit-${p.id}`,title:p.title,amount:price.amount}];
  for(const c of choices) {

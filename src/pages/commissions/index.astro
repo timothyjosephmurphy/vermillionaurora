@@ -150,7 +150,7 @@ const packages = collections.home
               <select name="package">
                 <option value="">Choose a package (optional)</option>
                 {packages.flatMap(product => product.options?.length
-                  ? product.options.map(o => <option value={`${product.slug}-${o.id}`} data-size={o.label}>{product.title} {o.label} — ${Number(o.amount).toLocaleString('en-US')}</option>)
+                  ? product.options.map(o => <option value={`${product.slug}-${o.id}`} data-size={o.size||o.label}>{product.title} {o.label} — ${Number(o.amount).toLocaleString('en-US')}</option>)
                   : [<option value={product.slug}>{product.title} — {product.listing?.price?.from ? 'from ' : ''}${Number(product.listing?.price?.amount || 0).toFixed(0)}</option>])}
                 <option value="custom">Custom / mural / other</option>
               </select>

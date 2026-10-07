@@ -1,18 +1,23 @@
 ---
 import ArtworkImage from './ArtworkImage.astro';
-import { urlFor, priceLabel, statusLabel, dimensionLabel } from '../../catalog/catalog.mjs';
+import { urlFor, priceLabel, statusLabel, dimensionLabel, byId } from '../../catalog/catalog.mjs';
 const {product:p,variant='gallery',priority=false}=Astro.props;
 const url=urlFor(p), status=statusLabel(p);
 const caption=`${p.title} · ${p.listing?.status==='available'?priceLabel(p):status}`;
 const packageHref=`/commissions/?package=${encodeURIComponent(p.slug)}#form`;
+// Sized/faced packages link with every axis, e.g. ?package=single-portrait&size=12x15&faces=2f.
+const optionHref=o=>{const parts=o.id.split('-'),faces=parts.at(-1).endsWith('f')&&p.optionOrder?.includes('faces')?parts.pop():null;return `/commissions/?package=${encodeURIComponent(p.slug)}&size=${encodeURIComponent(parts.join('-'))}${faces?`&faces=${faces.slice(0,-1)}`:''}#form`;};
+// Merged packages (Portrait) show each source carousel, labeled, using that product's examples.
+const exampleGroups=(p.exampleGroups||[]).map(g=>({...g,examples:byId[g.portrait]?.examples||[]})).filter(g=>g.examples.length);
 ---
 {variant==='artist' ? <a class="ex-photo" data-product-id={p.id} data-availability={status} data-caption={caption} data-product={url} href={url}><ArtworkImage src={p.image.src} alt={p.image.alt||p.title} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" /></a> :
 variant==='service' ? <article class="service-card">
-  {p.examples?.length>0 && <div class="portrait-preview" data-portrait={p.slug} aria-label={`${p.title} examples`}><a class="portrait-preview-stage" href={url}><img src={p.examples[0].src} alt={p.examples[0].alt} loading="lazy" /></a></div>}
+  {exampleGroups.length>0 ? exampleGroups.map(g=><figure class="portrait-preview-group"><figcaption>{g.label}</figcaption><div class="portrait-preview" data-portrait={g.portrait} aria-label={`${g.label} examples`}><a class="portrait-preview-stage" href={url}><img src={g.examples[0].src} alt={g.examples[0].alt} loading="lazy" /></a></div></figure>) :
+   p.examples?.length>0 && <div class="portrait-preview" data-portrait={p.slug} aria-label={`${p.title} examples`}><a class="portrait-preview-stage" href={url}><img src={p.examples[0].src} alt={p.examples[0].alt} loading="lazy" /></a></div>}
   <h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.story[0]}</p><span class="price">{priceLabel(p,false)}</span>
-  {p.options?.length>0 && <label class="service-size"><span>Size</span><select data-package-size={p.slug}>{p.options.map(o=><option value={o.id} data-href={`/commissions/?package=${encodeURIComponent(p.slug)}&size=${encodeURIComponent(o.id)}#form`}>{o.label} — ${Number(o.amount).toLocaleString('en-US')}</option>)}</select></label>}
+  {p.options?.length>0 && <div class="service-options" data-package-options={p.slug} data-order={(p.optionOrder||[]).join(',')} data-prices={JSON.stringify(Object.fromEntries(p.options.map(o=>[o.id,o.amount])))}>{(p.optionAxes||[]).map(axis=><label class="service-size"><span>{axis.label}</span><select data-axis={axis.param}>{axis.values.map(v=><option value={v.id}>{v.label}</option>)}</select></label>)}<p class="service-option-price" aria-live="polite">${Number(p.options[0].amount).toLocaleString('en-US')} total · deposit ${(Number(p.options[0].amount)/2).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2})}</p></div>}
   <p class="service-terms">50% deposit to start · Typical turnaround 2–4 weeks</p>
-  <a class="button button-solid service-cta" href={p.options?.length?`/commissions/?package=${encodeURIComponent(p.slug)}&size=${encodeURIComponent(p.options[0].id)}#form`:packageHref} data-package-cta={p.slug}>Start a commission</a>
+  <a class="button button-solid service-cta" href={p.options?.length?optionHref(p.options[0]):packageHref} data-package-cta={p.slug}>Start a commission</a>
 </article> : variant==='book' ? <article class="product-card ex-slide">
   <a href={url} aria-label={`Explore ${p.title}`} style="display:block;background:#e8dfd3;padding:16px"><ArtworkImage src={p.image.src} alt={p.image.alt||p.title} width={p.image.width} height={p.image.height} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" style="display:block;width:100%;height:220px;object-fit:contain" /></a>
   <div class="product-info book-tile"><p class="eyebrow dark">{p.card.eyebrow}</p><h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.card.description}</p><a class="button button-ghost" href={url}>Explore the book</a></div>
