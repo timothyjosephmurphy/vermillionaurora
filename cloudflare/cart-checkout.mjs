@@ -1,5 +1,6 @@
 import catalog from './checkout-catalog.mjs';
 import prints from './print-catalog.mjs';
+import deposits from './commission-deposits.mjs';
 import {publicCartItem} from './cart-policy.mjs';
 import {cartOrigin,cartItems,commonMethods,paymentMethods,cleanEmail,ORDER_ID,ACCESS_KEY,catalogVersion,keyHash} from './cart-policy.mjs';
 import {priceCart} from './checkout-pricing.mjs';
@@ -13,6 +14,7 @@ export async function cartCheckout(request,env) {
     if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS)return reply({enabled:false,version:catalogVersion,products:[]});
     const products=await Promise.all(Object.entries(catalog).filter(([id])=>paymentMethods(env,id).length).map(async([id,p])=>({id,title:p.title,amount:p.amount,methods:paymentMethods(env,id),status:await env.PAINTING_STOCK.getByName(id).status()})));
     for(const [id,p] of Object.entries(prints))if(paymentMethods(env,id).length)products.push({...publicCartItem({...p,quantity:1}),methods:paymentMethods(env,id),status:'available'});
+    for(const [id,d] of Object.entries(deposits))if(paymentMethods(env,id).length)products.push({id,type:'deposit',title:d.title,amount:d.amount,quantity:1,commission:{package:d.package,packageTitle:d.packageTitle,packagePrice:d.packagePrice},methods:paymentMethods(env,id),status:'available'});
     const squareReady=products.some(product=>product.methods.includes('square'));
     return reply({enabled:true,version:catalogVersion,products,...(squareReady?{square:{applicationId:env.SQUARE_APPLICATION_ID,locationId:env.SQUARE_LOCATION_ID,mode:env.SQUARE_MODE}}:{})});
   }
@@ -24,7 +26,7 @@ export async function cartCheckout(request,env) {
       if(env.CART_CHECKOUT_ENABLED!=='true')return reply({error:'Cart checkout is not available yet.'},503);
       if(!ORDER_ID.test(body.holdId||'')||!ACCESS_KEY.test(body.key||'')||!Array.isArray(body.items)||body.items.length>12)return reply({error:'Invalid cart reservation'},400);
       const items=body.items.length?cartItems(body.items):[];
-      for(const item of items.filter(i=>i.type!=='print'))if(!paymentMethods(env,item.id).length)return reply({error:`${item.title} cannot be reserved for checkout.`,unavailable:item.id},409);
+      for(const item of items.filter(i=>(i.type!=='print'&&i.type!=='deposit')))if(!paymentMethods(env,item.id).length)return reply({error:`${item.title} cannot be reserved for checkout.`,unavailable:item.id},409);
       const holdId=body.holdId,keyHashValue=await keyHash(body.key);
       const result=await env.CART_ORDERS.getByName(holdId).syncCart(holdId,keyHashValue,items);
       return reply(result);
@@ -38,10 +40,10 @@ export async function cartCheckout(request,env) {
       if(ORDER_ID.test(body.holdId||'')&&ACCESS_KEY.test(body.key||'')) {
         const holdId=body.holdId,keyHashValue=await keyHash(body.key),order=env.CART_ORDERS.getByName(holdId);
         if(!await order.authorize(keyHashValue))return reply({error:'Your cart reservation expired. Refresh your cart and try again.'},409);
-        const result=await order.createHeldQuote(holdId,keyHashValue,quote,methods,items.filter(i=>i.type!=='print').map(i=>i.id));
+        const result=await order.createHeldQuote(holdId,keyHashValue,quote,methods,items.filter(i=>(i.type!=='print'&&i.type!=='deposit')).map(i=>i.id));
         return reply({...result,key:body.key});
       }
-      for(const item of items.filter(i=>i.type!=='print'))if(await env.PAINTING_STOCK.getByName(item.id).status()!=='available')return reply({error:`${item.title} is reserved or sold. Please remove it from your cart.`,unavailable:item.id},409);
+      for(const item of items.filter(i=>(i.type!=='print'&&i.type!=='deposit')))if(await env.PAINTING_STOCK.getByName(item.id).status()!=='available')return reply({error:`${item.title} is reserved or sold. Please remove it from your cart.`,unavailable:item.id},409);
       const key=[...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('');
       const result=await env.CART_ORDERS.getByName(id).createQuote(id,await keyHash(key),quote,methods);
       return reply({...result,key});
