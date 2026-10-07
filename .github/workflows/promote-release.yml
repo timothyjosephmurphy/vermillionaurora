@@ -29,6 +29,13 @@ jobs:
           Merge this promotion only after the website Worker's Cloudflare Workers Builds production branch is configured as release. Merging publishes the website first; the release deployment then waits for the matching catalog version before deploying the checkout API.
           EOF
           )
+          # Nothing to promote when release already contains this main commit (for example after a
+          # manual codex/release-* merge). Avoids empty promotion PRs whose gate runs fail with no jobs.
+          ahead=$(gh api "repos/${{ github.repository }}/compare/release...$RELEASE_SHA" --jq '.ahead_by')
+          if [ "$ahead" = "0" ]; then
+            echo "release already contains $RELEASE_SHA; no promotion pull request needed."
+            exit 0
+          fi
           pr=$(gh pr list --repo "${{ github.repository }}" --base release --head main --state open --json number --jq '.[0].number // empty')
           if [ -n "$pr" ]; then
             gh pr edit "$pr" --repo "${{ github.repository }}" --title "Promote main to production release" --body "$body"
