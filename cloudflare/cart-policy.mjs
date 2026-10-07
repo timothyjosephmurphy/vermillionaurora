@@ -1,3 +1,4 @@
+import {PRIMARY_SITE,SITE_ORIGINS} from './site-origins.mjs';
 import catalog, {catalogVersion as originalVersion} from './checkout-catalog.mjs';
 import prints, {printVersion} from './print-catalog.mjs';
 import deposits from './commission-deposits.mjs';
@@ -7,7 +8,9 @@ import {finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 export const MAX_ITEMS=12;
 export const ORDER_ID=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 export const ACCESS_KEY=/^[a-f0-9]{64}$/;
-export const cartOrigin=env=>env.PAYPAL_MODE==='sandbox'?env.SANDBOX_RETURN_ORIGIN:'https://vermillionaurora.com';
+export const cartOrigin=env=>env.PAYPAL_MODE==='sandbox'?env.SANDBOX_RETURN_ORIGIN:PRIMARY_SITE;
+// Origins allowed to call the cart API (both website domains in production).
+export const cartOrigins=env=>env.PAYPAL_MODE==='sandbox'?[env.SANDBOX_RETURN_ORIGIN]:SITE_ORIGINS;
 export const dollars=n=>(n/100).toFixed(2);
 export function cents(value) {
   if(typeof value!=='string'||!/^\d+\.\d{2}$/.test(value))throw Error('Invalid amount');

@@ -2,6 +2,7 @@
 import ArtworkImage from './ArtworkImage.astro';
 import { urlFor, priceLabel, statusLabel, dimensionLabel, byId } from '../../catalog/catalog.mjs';
 import { artworkAlt } from '../data/artwork-alt.mjs';
+import { commissionExampleGroups, interleave } from '../data/commission-examples.mjs';
 const {product:p,variant='gallery',priority=false}=Astro.props;
 // Commission packages live on the merged /commissions/ page; their old product pages 301 there.
 const commissionAnchors={'single-portrait':'portrait','double-portrait':'portrait','small-landscape':'landscape'};
@@ -10,12 +11,12 @@ const caption=`${p.title} · ${p.listing?.status==='available'?priceLabel(p):sta
 const packageHref=`/commissions/?package=${encodeURIComponent(p.slug)}#form`;
 // Sized/faced packages link with every axis, e.g. ?package=single-portrait&size=12x15&faces=2f.
 const optionHref=o=>{const parts=o.id.split('-'),faces=parts.at(-1).endsWith('f')&&p.optionOrder?.includes('faces')?parts.pop():null;return `/commissions/?package=${encodeURIComponent(p.slug)}&size=${encodeURIComponent(parts.join('-'))}${faces?`&faces=${faces.slice(0,-1)}`:''}#form`;};
-// Merged packages (Portrait) show each source carousel, labeled, using that product's examples.
-const exampleGroups=(p.exampleGroups||[]).map(g=>({...g,examples:byId[g.portrait]?.examples||[]})).filter(g=>g.examples.length);
+// Merged packages (Portrait) show one labeled carousel; "mix" groups alternate single and double examples (src/data/commission-examples.mjs).
+const exampleGroups=(commissionExampleGroups[p.slug]||p.exampleGroups||[]).map(g=>({...g,examples:g.mix?interleave(g.mix.map(id=>byId[id]?.examples||[])):byId[g.portrait]?.examples||[]})).filter(g=>g.examples.length);
 ---
 {variant==='artist' ? <a class="ex-photo" data-product-id={p.id} data-availability={status} data-caption={caption} data-product={url} href={url}><ArtworkImage src={p.image.src} alt={artworkAlt(p)} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" /></a> :
 variant==='service' ? <article class="service-card">
-  {exampleGroups.length>0 ? exampleGroups.map(g=><figure class="portrait-preview-group"><figcaption>{g.label}</figcaption><div class="portrait-preview" data-portrait={g.portrait} aria-label={`${g.label} examples`}><a class="portrait-preview-stage" href={url}><img src={g.examples[0].src} alt={g.examples[0].alt} loading="lazy" /></a></div></figure>) :
+  {exampleGroups.length>0 ? exampleGroups.map(g=><figure class="portrait-preview-group"><figcaption>{g.label}</figcaption><div class="portrait-preview" data-portrait={g.portrait} data-mix={g.mix?.join(',')} aria-label={`${g.label} examples`}><a class="portrait-preview-stage" href={url}><img src={g.examples[0].src} alt={g.examples[0].alt} loading="lazy" /></a></div></figure>) :
    p.examples?.length>0 && <div class="portrait-preview" data-portrait={p.slug} aria-label={`${p.title} examples`}><a class="portrait-preview-stage" href={url}><img src={p.examples[0].src} alt={p.examples[0].alt} loading="lazy" /></a></div>}
   <h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.story[0]}</p><span class="price">{priceLabel(p,false)}</span>
   {p.options?.length>0 && <div class="service-options" data-package-options={p.slug} data-order={(p.optionOrder||[]).join(',')} data-prices={JSON.stringify(Object.fromEntries(p.options.map(o=>[o.id,o.amount])))}>{(p.optionAxes||[]).map(axis=><label class="service-size"><span>{axis.label}</span><select data-axis={axis.param}>{axis.values.map(v=><option value={v.id}>{v.label}</option>)}</select></label>)}<p class="service-option-price" aria-live="polite">${Number(p.options[0].amount).toLocaleString('en-US')} total · deposit ${(Number(p.options[0].amount)/2).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2})}</p></div>}

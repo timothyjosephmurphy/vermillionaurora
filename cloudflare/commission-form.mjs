@@ -1,11 +1,11 @@
 import {saveCommissionReferences,removeCommissionReferences} from './commission-privacy.mjs';
-const ALLOWED_ORIGIN = "https://vermillionaurora.com";
+import {corsOrigin,isSiteOrigin} from './site-origins.mjs';
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ALLOWED_TYPES = new Set(["image/jpeg","image/png","image/webp","image/heic","image/heif"]);
 
 export async function commissionForm(request,env) {
     const cors = {
-      "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+      "Access-Control-Allow-Origin": corsOrigin(request),
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       "Vary": "Origin"
@@ -13,7 +13,7 @@ export async function commissionForm(request,env) {
     if (request.method === "OPTIONS") return new Response(null,{status:204,headers:cors});
     if (request.method !== "POST") return json({success:false,error:"Method not allowed"},405,cors);
     const origin=request.headers.get("Origin");
-    if (origin && origin !== ALLOWED_ORIGIN) return json({success:false,error:"Origin not allowed"},403,cors);
+    if (origin && !isSiteOrigin(origin)) return json({success:false,error:"Origin not allowed"},403,cors);
 
     let pendingReferences=null;
     let sent=false;
