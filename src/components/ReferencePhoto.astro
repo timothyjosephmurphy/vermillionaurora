@@ -1,0 +1,28 @@
+---
+// Reference photo for a painting. Optional `video` ({src, type?}) renders a looping,
+// muted clip (e.g. a Live Photo) with the still as poster and as the no-video fallback.
+const { media } = Astro.props;
+const { base, widths, width, height, alt, caption, video } = media;
+const set = ext => widths.map(w => `${base}-${w}.${ext} ${w}w`).join(', ');
+const sizes = '(max-width: 600px) calc(100vw - 2.5rem), 420px';
+const poster = `${base}-${widths[1] ?? widths[0]}.jpg`;
+---
+<figure class="reference-photo">
+  {video ? <video autoplay muted loop playsinline preload="metadata" poster={poster} width={width} height={height} aria-label={alt}>
+      <source src={video.src} type={video.type || 'video/mp4'} />
+      <img src={poster} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+    </video>
+  : <picture>
+      <source type="image/avif" srcset={set('avif')} sizes={sizes} />
+      <source type="image/webp" srcset={set('webp')} sizes={sizes} />
+      <img src={poster} srcset={set('jpg')} sizes={sizes} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+    </picture>}
+  <figcaption><span class="reference-photo-label">Reference photo</span>{caption.replace(/^Reference photo\s*—\s*/, '— ')}</figcaption>
+</figure>
+<style>
+  .reference-photo { margin: 2.5rem 0 0; max-width: 420px; }
+  .reference-photo img, .reference-photo video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; background: #d9d2c8; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+  .reference-photo figcaption { margin-top: .75rem; color: var(--muted); font-size: .875rem; line-height: 1.5; }
+  .reference-photo-label { margin-right: .35rem; color: var(--ink, inherit); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; }
+  @media (max-width: 600px) { .reference-photo { max-width: none; margin-top: 2rem; } }
+</style>
