@@ -192,6 +192,13 @@ textarea {
     url('/gallery-images/esperanza-hero.png') center/cover no-repeat;
   filter: saturate(0.8) contrast(1.05);
 }
+@supports (background-image: image-set(url('x.webp') type('image/webp'))) {
+  .hero-background {
+    background:
+      linear-gradient(110deg, rgba(10, 9, 9, 0.26), rgba(117, 77, 52, 0.18)),
+      image-set(url('/display/esperanza-hero-aba277665d-1134.webp') type('image/webp'), url('/gallery-images/esperanza-hero.png') type('image/png')) center/cover no-repeat;
+  }
+}
 
 .hero-grid {
   position: relative;

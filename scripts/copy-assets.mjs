@@ -1,3 +1,4 @@
+import {readFileSync} from 'node:fs';
 import { readdir, mkdir, copyFile, writeFile, readFile } from 'node:fs/promises';
 import {readyPrints,printVersion} from '../catalog/prints.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
@@ -40,6 +41,15 @@ await copyFile('payments/cart.css','dist/payments/cart.css');
 await copyFile('payments/prints.js','dist/payments/prints.js');
 await copyFile('payments/prints.css','dist/payments/prints.css');
 await copyFile('payments/print-samples.js','dist/payments/print-samples.js');
+function addMobileMenu(html) {
+  const astro=readFileSync('src/components/SiteHeader.astro','utf8');
+  const cart=astro.match(/<a href="\/cart\/" class="cart-nav cart-nav-mobile"[^]*?<\/a>/)[0];
+  const tail=astro.match(/<button type="button" class="nav-toggle"[^]*?<\/noscript>/)[0];
+  if(!/<nav class="main-nav"/.test(html)||!html.includes('<div class="header-actions">'))return html;
+  return html
+    .replace(/<nav class="main-nav"(?![^>]*\bid=)/,'<nav class="main-nav" id="site-menu"')
+    .replace(/(<div class="header-actions">)([^]*?)(<\/div>)/,(m,open,body,close)=>`${open}${cart}${body}${tail}${close}`);
+}
 async function addCartAssets(dir) {
   for(const entry of await readdir(dir,{withFileTypes:true})) {
     const path=`${dir}/${entry.name}`;
@@ -51,6 +61,8 @@ async function addCartAssets(dir) {
       if(!next.includes('src="/payments/cart.js"'))next=next.replace('</head>','<link rel="stylesheet" href="/payments/cart.css"><script src="/payments/cart.js" defer></script></head>');
       // Remaining static pages also get the shared mobile hide-on-scroll header script.
       if(!next.includes('src="/site-header.js"'))next=next.replace('</head>','<script src="/site-header.js" defer></script></head>');
+      // Remaining static pages also get the shared mobile hamburger menu markup.
+      if(!next.includes('class="nav-toggle"'))next=addMobileMenu(next);
       if(next!==html)await writeFile(path,next);
     }
   }

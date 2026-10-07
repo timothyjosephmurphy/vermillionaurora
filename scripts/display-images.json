@@ -1,0 +1,440 @@
+{
+ "/exhibitions/studio-601-hero.png": {
+  "original": 685232,
+  "width": 586,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/studio-601-hero-13846b0f0d-480.webp",
+    "bytes": 28654
+   },
+   {
+    "w": 586,
+    "src": "/display/studio-601-hero-13846b0f0d-586.webp",
+    "bytes": 36748
+   }
+  ]
+ },
+ "/exhibitions/victrola-hero.png": {
+  "original": 930628,
+  "width": 770,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/victrola-hero-0bc3d16596-480.webp",
+    "bytes": 25316
+   },
+   {
+    "w": 770,
+    "src": "/display/victrola-hero-0bc3d16596-770.webp",
+    "bytes": 49480
+   }
+  ]
+ },
+ "/gallery-images/coined-in-watercolor-film-poster.jpg": {
+  "original": 275969,
+  "width": 724,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/coined-in-watercolor-film-poster-7c882f193a-480.webp",
+    "bytes": 43378
+   },
+   {
+    "w": 724,
+    "src": "/display/coined-in-watercolor-film-poster-7c882f193a-724.webp",
+    "bytes": 85724
+   }
+  ]
+ },
+ "/gallery-images/couple-in-color.jpg": {
+  "original": 233545,
+  "width": 1092,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/couple-in-color-98b1df4998-480.webp",
+    "bytes": 37214
+   },
+   {
+    "w": 960,
+    "src": "/display/couple-in-color-98b1df4998-960.webp",
+    "bytes": 110408
+   },
+   {
+    "w": 1092,
+    "src": "/display/couple-in-color-98b1df4998-1092.webp",
+    "bytes": 133954
+   }
+  ]
+ },
+ "/gallery-images/el-salvador-sunrise.jpeg": {
+  "original": 185924,
+  "width": 803,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/el-salvador-sunrise-73351c7989-480.webp",
+    "bytes": 63388
+   },
+   {
+    "w": 803,
+    "src": "/display/el-salvador-sunrise-73351c7989-803.webp",
+    "bytes": 147242
+   }
+  ]
+ },
+ "/gallery-images/embrace.jpg": {
+  "original": 240254,
+  "width": 744,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/embrace-b27514e878-480.webp",
+    "bytes": 71554
+   },
+   {
+    "w": 744,
+    "src": "/display/embrace-b27514e878-744.webp",
+    "bytes": 145438
+   }
+  ]
+ },
+ "/gallery-images/esperanza-hero.png": {
+  "original": 1196251,
+  "width": 1134,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/esperanza-hero-aba277665d-480.webp",
+    "bytes": 28356
+   },
+   {
+    "w": 960,
+    "src": "/display/esperanza-hero-aba277665d-960.webp",
+    "bytes": 76006
+   },
+   {
+    "w": 1134,
+    "src": "/display/esperanza-hero-aba277665d-1134.webp",
+    "bytes": 91792
+   }
+  ]
+ },
+ "/gallery-images/honeybadger-and-cub.jpeg": {
+  "original": 261515,
+  "width": 1060,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/honeybadger-and-cub-ae2a98cf59-480.webp",
+    "bytes": 52506
+   },
+   {
+    "w": 960,
+    "src": "/display/honeybadger-and-cub-ae2a98cf59-960.webp",
+    "bytes": 181456
+   },
+   {
+    "w": 1060,
+    "src": "/display/honeybadger-and-cub-ae2a98cf59-1060.webp",
+    "bytes": 212754
+   }
+  ]
+ },
+ "/gallery-images/phoenix-rising.jpg": {
+  "original": 210987,
+  "width": 618,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/phoenix-rising-2640661d6a-480.webp",
+    "bytes": 66446
+   },
+   {
+    "w": 618,
+    "src": "/display/phoenix-rising-2640661d6a-618.webp",
+    "bytes": 111628
+   }
+  ]
+ },
+ "/gallery-images/portrait-in-green.jpg": {
+  "original": 262525,
+  "width": 808,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/portrait-in-green-f8263a9d41-480.webp",
+    "bytes": 70558
+   },
+   {
+    "w": 808,
+    "src": "/display/portrait-in-green-f8263a9d41-808.webp",
+    "bytes": 166846
+   }
+  ]
+ },
+ "/gallery-images/sunset-silhouette.jpg": {
+  "original": 155829,
+  "width": 1186,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/sunset-silhouette-a29846643f-480.webp",
+    "bytes": 15024
+   },
+   {
+    "w": 960,
+    "src": "/display/sunset-silhouette-a29846643f-960.webp",
+    "bytes": 46458
+   },
+   {
+    "w": 1186,
+    "src": "/display/sunset-silhouette-a29846643f-1186.webp",
+    "bytes": 65364
+   }
+  ]
+ },
+ "/gallery-images/warszawska-syrenka.jpeg": {
+  "original": 367674,
+  "width": 1046,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/warszawska-syrenka-34226c70a3-480.webp",
+    "bytes": 71080
+   },
+   {
+    "w": 960,
+    "src": "/display/warszawska-syrenka-34226c70a3-960.webp",
+    "bytes": 312762
+   },
+   {
+    "w": 1046,
+    "src": "/display/warszawska-syrenka-34226c70a3-1046.webp",
+    "bytes": 354036
+   }
+  ]
+ },
+ "/products/reflections-on-time/images/cover.jpg": {
+  "original": 209645,
+  "width": 600,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/cover-2d93b7edbc-480.webp",
+    "bytes": 80022
+   },
+   {
+    "w": 600,
+    "src": "/display/cover-2d93b7edbc-600.webp",
+    "bytes": 123584
+   }
+  ]
+ },
+ "/products/watercolor-landscapes/images/cover.jpg": {
+  "original": 140022,
+  "width": 686,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/cover-834e2de94a-480.webp",
+    "bytes": 51302
+   },
+   {
+    "w": 686,
+    "src": "/display/cover-834e2de94a-686.webp",
+    "bytes": 80060
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Double%20Portraits/72064089526__670907BA-6F07-4A76-B462-99F35ADAFBB5.jpeg": {
+  "original": 1423333,
+  "width": 2853,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-3616ce0fc2-480.webp",
+    "bytes": 30968
+   },
+   {
+    "w": 960,
+    "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-3616ce0fc2-960.webp",
+    "bytes": 119610
+   },
+   {
+    "w": 1600,
+    "src": "/display/72064089526-670907ba-6f07-4a76-b462-99f35adafbb5-3616ce0fc2-1600.webp",
+    "bytes": 248690
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_0102.jpeg": {
+  "original": 5002120,
+  "width": 4284,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/img-0102-3de0be0118-480.webp",
+    "bytes": 47358
+   },
+   {
+    "w": 960,
+    "src": "/display/img-0102-3de0be0118-960.webp",
+    "bytes": 159170
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-0102-3de0be0118-1600.webp",
+    "bytes": 360136
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Cape-Town/IMG_9174.jpeg": {
+  "original": 2609284,
+  "width": 5477,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/img-9174-9656460b95-480.webp",
+    "bytes": 21716
+   },
+   {
+    "w": 960,
+    "src": "/display/img-9174-9656460b95-960.webp",
+    "bytes": 69128
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-9174-9656460b95-1600.webp",
+    "bytes": 163466
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-El-Salvador/IMG_5441.jpeg": {
+  "original": 1605215,
+  "width": 4563,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/img-5441-69b2c7c8e5-480.webp",
+    "bytes": 11296
+   },
+   {
+    "w": 960,
+    "src": "/display/img-5441-69b2c7c8e5-960.webp",
+    "bytes": 35352
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-5441-69b2c7c8e5-1600.webp",
+    "bytes": 81842
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7409.jpeg": {
+  "original": 3996300,
+  "width": 3825,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/img-7409-0fa34a2167-480.webp",
+    "bytes": 42256
+   },
+   {
+    "w": 960,
+    "src": "/display/img-7409-0fa34a2167-960.webp",
+    "bytes": 186506
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-7409-0fa34a2167-1600.webp",
+    "bytes": 470516
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Intiman-Auction/IMG_4483.jpeg": {
+  "original": 2667003,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/img-4483-4d30bdceb6-480.webp",
+    "bytes": 32010
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4483-4d30bdceb6-960.webp",
+    "bytes": 88346
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4483-4d30bdceb6-1600.webp",
+    "bytes": 193262
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Living%20Room/IMG_4341.jpeg": {
+  "original": 2966232,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/img-4341-47bc0d03f9-480.webp",
+    "bytes": 21298
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4341-47bc0d03f9-960.webp",
+    "bytes": 62056
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4341-47bc0d03f9-1600.webp",
+    "bytes": 149816
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Studio-601/IMG_4532.jpeg": {
+  "original": 3000569,
+  "width": 4032,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/img-4532-64ca839052-480.webp",
+    "bytes": 20820
+   },
+   {
+    "w": 960,
+    "src": "/display/img-4532-64ca839052-960.webp",
+    "bytes": 61178
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-4532-64ca839052-1600.webp",
+    "bytes": 147452
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Ex-Victrola/IMG_1600.jpeg": {
+  "original": 3703319,
+  "width": 5712,
+  "variants": [
+   {
+    "w": 480,
+    "src": "/display/img-1600-39778d6bb5-480.webp",
+    "bytes": 16046
+   },
+   {
+    "w": 960,
+    "src": "/display/img-1600-39778d6bb5-960.webp",
+    "bytes": 41762
+   },
+   {
+    "w": 1600,
+    "src": "/display/img-1600-39778d6bb5-1600.webp",
+    "bytes": 83632
+   }
+  ]
+ }
+}
