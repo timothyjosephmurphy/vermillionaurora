@@ -27,7 +27,7 @@ export async function quickbooksApi(request, env) {
       return toPage(result);
     } catch { return toPage('internal'); }
   }
-  const routes = ['/quickbooks/start', '/quickbooks/status', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry'];
+  const routes = ['/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry'];
   if (request.method !== 'POST' || !routes.includes(path)) return json({ error: 'Not found' }, 404);
   if (request.headers.get('Origin') !== origin || !await authorized(request, env)) return json({ error: 'Invalid management credential or origin.' }, 403);
   if (!configured(env)) return json({ error: 'QuickBooks credentials are missing from this Worker.' }, 503);
@@ -35,6 +35,7 @@ export async function quickbooksApi(request, env) {
   try {
     if (path === '/quickbooks/start') { const { url: target, nonce } = await sync.beginConnect(); return json({ url: target }, 200, { 'Set-Cookie': cookie(nonce) }); }
     if (path === '/quickbooks/status') return json(await sync.status());
+    if (path === '/quickbooks/preflight') return json(await sync.preflight());
     if (path === '/quickbooks/disconnect') return json({ ...(await sync.disconnect('owner')), redirect: DISCONNECTED_PAGE });
     if (path === '/quickbooks/sync') return json(await sync.syncNow());
     if (path === '/quickbooks/retry') { const body = await request.json().catch(() => ({})); return json(await sync.retry(String(body.orderId || ''))); }
