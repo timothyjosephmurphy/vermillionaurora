@@ -17,7 +17,7 @@ const packages = collections.home
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Commissions | TJ Murphy</title>
-  <meta name="description" content="Commission a watercolor portrait or landscape by Seattle artist TJ Murphy. Packages from $199, 50% deposit to start, typical turnaround 2–4 weeks." />
+  <meta name="description" content="Commission a watercolor portrait or landscape by Seattle artist TJ Murphy. Packages from $200, 50% deposit to start, typical turnaround 2–4 weeks." />
   <link rel="canonical" href="https://vermillionaurora.com/commissions/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -149,9 +149,9 @@ const packages = collections.home
               <span>Package</span>
               <select name="package">
                 <option value="">Choose a package (optional)</option>
-                {packages.map(product => (
-                  <option value={product.slug}>{product.title} — {product.listing?.price?.from ? 'from ' : ''}${Number(product.listing?.price?.amount || 0).toFixed(0)}</option>
-                ))}
+                {packages.flatMap(product => product.options?.length
+                  ? product.options.map(o => <option value={`${product.slug}-${o.id}`} data-size={o.size||o.label}>{product.title} {o.label} — ${Number(o.amount).toLocaleString('en-US')}</option>)
+                  : [<option value={product.slug}>{product.title} — {product.listing?.price?.from ? 'from ' : ''}${Number(product.listing?.price?.amount || 0).toFixed(0)}</option>])}
                 <option value="custom">Custom / mural / other</option>
               </select>
             </label>
