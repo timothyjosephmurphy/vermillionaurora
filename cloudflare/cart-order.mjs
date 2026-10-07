@@ -90,7 +90,7 @@ export class CartOrder extends DurableObject {
     if(d.quote.catalogVersion!==catalogVersion||this.env.PAYPAL_MODE!==d.mode||!d.methods.includes(method)||!commonMethods(this.env,d.quote.items).includes(method))throw Error('Refresh this cart before payment');
     if(method==='square'&&(typeof payment.sourceId!=='string'||!payment.sourceId||payment.sourceId.length>2000))throw Error('Enter valid card details before paying.');
     const code=this.codeOrder(d);
-    if(code&&!await code.codeClaim(d.id))return {...this.result(),codeError:'That print code has already been used.'};
+    if(code&&!await code.codeClaim(d.id))return {...this.result(),codeError:'That discount code has already been used.'};
     await this.schedule();
     d=this.save({...d,status:'reserving',method,squareSandboxNoFulfillment:method==='square'&&this.env.PAYPAL_MODE==='sandbox'&&this.env.SQUARE_MODE==='sandbox'&&this.env.SQUARE_SANDBOX_NO_FULFILLMENT==='true',expiresAt:Date.now()+20*60000,paymentError:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,
       merchantId:method==='paypal'?this.env.PAYPAL_MERCHANT_ID:null,
