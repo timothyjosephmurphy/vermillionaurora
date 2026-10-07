@@ -92,7 +92,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   const home=load(fs.readFileSync('dist/index.html','utf8'));
   assert.equal(home('.book-section-carousel .ex-slide').length,manifest.sections.length);
   assert.equal(home('#book-galleries h2').text(),'Selected Galleries');
-  assert.equal(home('#gallery h2').text(),'Available Paintings');
+  assert.equal(home('#gallery h2').text(),'Featured works');
   const devo=bookProducts.find(p=>p.id===friends.artworks[0]);
   assert.equal(home('.book-section-carousel a[href="/book-galleries/watercolor-portraits-friends/"] img').attr('src'),devo.image.src);
   const bitcoiners=load(fs.readFileSync('dist/book-galleries/watercolor-portraits-bitcoiners/index.html','utf8'));

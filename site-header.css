@@ -188,3 +188,6 @@ body.full .site-header{display:none}
   .site-header .brand small{font-size:.5rem;letter-spacing:.06em}
 }
 @media(max-width:980px) and (prefers-reduced-motion:reduce){.site-header .nav-toggle-bars,.site-header .nav-toggle-bars::before,.site-header .nav-toggle-bars::after{transition:none}}
+@media(max-width:980px){.site-header .cart-nav-mobile{gap:4px}.site-header .cart-nav-mobile .cart-payment-icons svg{width:12px;height:12px}}
+@media(max-width:420px){.site-header .cart-nav-mobile .cart-payment-icons{gap:1px}.site-header .cart-nav-mobile .cart-payment-icons svg{width:11px;height:11px}}
+@media(max-width:420px){.site-header .header-inner{gap:6px}.site-header .header-actions{gap:5px}.site-header .cart-nav-mobile{padding:0 2px;gap:3px}.site-header .header-actions .button{padding:.6rem .55rem;letter-spacing:.04em}.site-header .brand{gap:5px}.site-header .brand-mark{width:34px;height:40px}}

@@ -287,25 +287,25 @@ it('buys and tracks two parcel labels once while recording the payment only once
 });
 it('checks out a 50% commission deposit alone: no shipping, stock or labels; linked to the request; seller and buyer emails',async()=>{
   const on={...env,...config,COMMISSION_DEPOSITS_ENABLED:'true'};
-  expect(paymentMethods({...env,...config},'deposit-small-landscape')).toEqual([]);
-  expect(paymentMethods({...on,COMMISSION_DEPOSITS_PAUSED:'true'},'deposit-small-landscape')).toEqual([]);
-  expect(paymentMethods(on,'deposit-small-landscape')).toEqual(['paypal']);
+  expect(paymentMethods({...env,...config},'deposit-small-landscape-12x15')).toEqual([]);
+  expect(paymentMethods({...on,COMMISSION_DEPOSITS_PAUSED:'true'},'deposit-small-landscape-12x15')).toEqual([]);
+  expect(paymentMethods(on,'deposit-small-landscape-12x15')).toEqual(['paypal']);
   const btc={...on,PAYPAL_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'};
-  expect(paymentMethods(btc,'deposit-double-portrait')).toEqual(['paypal','bitcoin']);
-  expect(cartItems([{id:'deposit-small-landscape',quantity:1,amount:'0.01'}])[0].amount).toBe('99.50');
-  expect(cartItems([{id:'deposit-single-portrait',quantity:1}])[0].amount).toBe('100.00');
-  expect(cartItems([{id:'deposit-double-portrait',quantity:1}])[0]).toMatchObject({amount:'200.00',type:'deposit',commission:{balance:'200.00'}});
-  expect(()=>cartItems([{id:'deposit-single-portrait',quantity:1},{id:ids[0],quantity:1}])).toThrow();
-  expect(()=>cartItems([{id:'deposit-single-portrait',quantity:2}])).toThrow();
-  expect(()=>cartItems([{id:'deposit-single-portrait',quantity:1,requestId:'x'}])).toThrow();
+  expect(paymentMethods(btc,'deposit-single-portrait-7-5x12-3f')).toEqual(['paypal','bitcoin']);
+  expect(cartItems([{id:'deposit-small-landscape-12x15',quantity:1,amount:'0.01'}])[0].amount).toBe('125.00');
+  expect(cartItems([{id:'deposit-single-portrait-7-5x12-1f',quantity:1}])[0].amount).toBe('50.00');
+  expect(cartItems([{id:'deposit-single-portrait-7-5x12-4f',quantity:1}])[0]).toMatchObject({amount:'200.00',type:'deposit',commission:{balance:'200.00'}});
+  expect(()=>cartItems([{id:'deposit-single-portrait-7-5x12-1f',quantity:1},{id:ids[0],quantity:1}])).toThrow();
+  expect(()=>cartItems([{id:'deposit-single-portrait-7-5x12-1f',quantity:2}])).toThrow();
+  expect(()=>cartItems([{id:'deposit-single-portrait-7-5x12-1f',quantity:1,requestId:'x'}])).toThrow();
   const catalogReply=await (await cartCheckout(new Request('https://worker/checkout/cart/catalog'),on)).json();
-  expect(catalogReply.products.find(p=>p.id==='deposit-small-landscape')).toMatchObject({type:'deposit',amount:'99.50',methods:['paypal']});
+  expect(catalogReply.products.find(p=>p.id==='deposit-small-landscape-12x15')).toMatchObject({type:'deposit',amount:'125.00',methods:['paypal']});
   const requestId=crypto.randomUUID(),id=crypto.randomUUID(),key='d'.repeat(64),order=env.CART_ORDERS.getByName(id);objects.push(order);
   await runInDurableObject(order,i=>{i.env={...i.env,...on};});
-  const items=[{id:'deposit-small-landscape',quantity:1,requestId}];
+  const items=[{id:'deposit-small-landscape-12x15',quantity:1,requestId}];
   expect((await cartCheckout(request('hold',{holdId:id,key,items}),on)).status).toBe(200);
   const quoted=await cartCheckout(request('quote',{items,address,email:'buyer@example.test',catalogVersion,holdId:id,key}),on);expect(quoted.status).toBe(200);
-  const q=await quoted.json();expect(q.quote.shipping).toBe('0.00');expect(q.quote.base).toBe('99.50');
+  const q=await quoted.json();expect(q.quote.shipping).toBe('0.00');expect(q.quote.base).toBe('125.00');
   expect(calls.some(c=>c.url.includes('goshippo')||c.url.endsWith('/shipments/'))).toBe(false);
   expect((await (await cartCheckout(request('start',{orderId:id,key,method:'paypal'}),on)).json()).status).toBe('pending');
   approve();await order.capture();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
@@ -314,5 +314,5 @@ it('checks out a 50% commission deposit alone: no shipping, stock or labels; lin
   // The mocked PayPal capture ID is shared across tests, so check the order's own receipt.
   const archived=await runInDurableObject(order,instance=>instance.receipt());
   expect(archived.gross).toBe(d.quote.total);expect(archived.items[0].commission.requestId).toBe(requestId);
-  expect(archived.commissionDeposit[0]).toMatchObject({package:'small-landscape',requestId,balance:'99.50'});expect(archived.fulfillment.labelStatus).toBe('ready');
+  expect(archived.commissionDeposit[0]).toMatchObject({package:'small-landscape',option:'12x15',requestId,balance:'125.00'});expect(archived.fulfillment.labelStatus).toBe('ready');
 });

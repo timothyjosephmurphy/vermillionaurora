@@ -57,12 +57,12 @@ const featured=availablePaintings[0]||homePaintings[0];
         <section id="gallery" class="section section-light">
           <div class="container">
             <div class="section-heading">
-              <h2>Available Paintings</h2>
+              <h2>Featured works</h2>
             </div>
             <div class="painting-discovery-actions"><a href="/gallery/available/" class="button button-solid">Shop available paintings</a><a href="/gallery/" class="button button-ghost">Browse the full gallery</a></div>
             <p class="painting-empty-message" data-available-empty hidden={availablePaintings.length > 0}>No original paintings are available right now. Browse the collector’s items or ask about a commission.</p>
-            <div class="ex-carousel painting-carousel available-paintings-carousel" data-painting-group="available" role="region" aria-roledescription="carousel" aria-label="Available Paintings">
-              <div class="ex-track" data-available-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse available paintings">{availablePaintings.map((product,index)=><ProductCard product={product} variant="carousel" priority={index===0} />)}</div>
+            <div class="ex-carousel painting-carousel available-paintings-carousel" data-painting-group="available" role="region" aria-roledescription="carousel" aria-label="Featured works">
+              <div class="ex-track" data-available-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse featured works">{availablePaintings.map((product,index)=><ProductCard product={product} variant="carousel" priority={index===0} />)}</div>
               <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic available paintings scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous available painting">←</button><p class="ex-position" role="status">1 / {availablePaintings.length}</p><button type="button" data-direction="1" aria-label="Next available painting">→</button><a href="/gallery/available/" class="button button-solid carousel-view-all">View available paintings</a></div>
             </div>
             <noscript><p><a href="/gallery/available/">Shop available paintings</a></p></noscript>
@@ -263,4 +263,10 @@ const featured=availablePaintings[0]||homePaintings[0];
   <script is:inline src="/portrait-preview.js" defer=""></script>
   <script is:inline src="/artist-film-carousel.js" defer=""></script>
 
-<script is:inline src="/catalog/availability.js" defer=""></script></body></html>
+<script is:inline src="/catalog/availability.js" defer=""></script>  <style is:global>
+    /* Homepage carousels: no Pause/arrow/counter controls. Auto-advance continues, pauses on
+       hover, focus and touch, and stays off for prefers-reduced-motion (exhibitions.js and
+       featured-carousel/carousel.js). Swipe, scroll and keyboard arrows on the track still work. */
+    .ex-controls .ex-autoplay, .ex-controls [data-direction], .ex-controls .ex-position, .featured-controls { display: none !important; }
+  </style>
+</body></html>

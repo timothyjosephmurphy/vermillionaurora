@@ -10,18 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const packageSelect = form.querySelector('[name="package"]');
   const sizeInput = form.querySelector('[name="size"]');
 
-  const packageDefaults = {
-    'single-portrait': { size: '9 × 12 inches', label: 'Single portrait' },
-    'double-portrait': { size: '12 × 9 inches', label: 'Double portrait' },
-    'small-landscape': { size: '12 × 15 inches', label: 'Small landscape' }
-  };
+  // Package options carry their own size (data-size). Sized/faced packages use
+  // "<package>-<size>[-<faces>f]" values, e.g. ?package=single-portrait&size=12x15&faces=2.
+  // Old links: Double portrait is now Portrait with 2 faces.
+  const legacyPackages = { 'double-portrait': ['single-portrait', '2'] };
+  const [packageSlugResolved, legacyFaces] = legacyPackages[packageSlug] || [packageSlug, null];
+  const facesParam = params.get('faces') || legacyFaces;
+  const tokens = [params.get('size'), facesParam && facesParam.replace(/f$/, '') + 'f'].filter(Boolean);
+  const options = packageSelect ? [...packageSelect.options] : [];
+  const packageValue = !packageSlugResolved ? null : options.some(o => o.value === packageSlugResolved) ? packageSlugResolved
+    : (options.find(o => o.value === [packageSlugResolved, ...tokens].join('-'))
+      || options.find(o => o.value.startsWith(packageSlugResolved + '-') && tokens.every(t => o.value.split('-').includes(t) || o.value.includes('-' + t)))
+      || options.find(o => o.value.startsWith(packageSlugResolved + '-')))?.value;
+  const optionFor = value => options.find(o => o.value === value);
+  const defaultsFor = value => { const o = optionFor(value); return o && o.value !== 'custom' ? { size: o.dataset.size || '', label: o.textContent.split('—')[0].trim() } : null; };
 
-  if (packageSlug && packageSelect) {
-    const option = [...packageSelect.options].find(entry => entry.value === packageSlug);
-    if (option) packageSelect.value = packageSlug;
-    const defaults = packageDefaults[packageSlug];
+  if (packageValue && packageSelect) {
+    const option = [...packageSelect.options].find(entry => entry.value === packageValue);
+    if (option) packageSelect.value = packageValue;
+    const defaults = defaultsFor(packageValue);
     if (defaults) {
-      if (sizeInput && !sizeInput.value) sizeInput.value = defaults.size;
+      if (sizeInput && !sizeInput.value && defaults.size) sizeInput.value = defaults.size;
       if (message && !message.value) {
         message.value = 'Hello, I’d like to commission a ' + defaults.label + '.\n\n';
       }
@@ -60,8 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (packageSelect && message) {
     packageSelect.addEventListener('change', () => {
-      const defaults = packageDefaults[packageSelect.value];
-      if (defaults && sizeInput && !sizeInput.value) sizeInput.value = defaults.size;
+      const defaults = defaultsFor(packageSelect.value);
+      // Packages with a fixed size always show it; keep anything the client typed for custom work.
+      const known = options.some(o => o.dataset.size && o.dataset.size === sizeInput?.value);
+      if (defaults?.size && sizeInput && (!sizeInput.value || known)) sizeInput.value = defaults.size;
     });
   }
 

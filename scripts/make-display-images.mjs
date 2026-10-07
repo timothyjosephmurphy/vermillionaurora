@@ -22,7 +22,7 @@ const load = async src => {
 for (const src of EXTRA_SOURCES) srcs.add(src);
 const work = async src => {
   if (!/\.(jpe?g|png)$/i.test(src)) return;
-  const buf = await load(src); if (!buf || buf.length < MIN_BYTES) return;
+  const buf = await load(src); if (!buf || (buf.length < MIN_BYTES && !EXTRA_SOURCES.includes(src))) return;
   const meta = await sharp(buf).metadata();
   const w0 = (meta.orientation >= 5 ? meta.height : meta.width);
   const id = createHash('sha1').update(src).digest('hex').slice(0, 10);

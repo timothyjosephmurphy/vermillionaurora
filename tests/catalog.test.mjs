@@ -21,7 +21,7 @@ test('gallery rows and shared cards use the catalog and preserve collection orde
   assert.deepEqual($('.collector-items-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),collectorPreview);
   assert.equal($('.available-paintings-carousel [data-product-id]').length+collectors.length,expected.length);
   assert.ok($('.collector-archive-link a[href="/gallery/"]').length);
-  assert.equal($('#gallery h2').text(),'Available Paintings');
+  assert.equal($('#gallery h2').text(),'Featured works');
   assert.equal($('#collectors-items h2').text(),'Collector’s Items');
  }else{
   const scope=({gallery:'.painting-list',paul:'.exhibition-grid',chase:'.collaboration-grid',gavin:'.film-collaboration-gallery'})[key];
