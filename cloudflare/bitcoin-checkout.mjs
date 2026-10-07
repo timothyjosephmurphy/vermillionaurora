@@ -1,14 +1,18 @@
 import catalog, {catalogVersion} from './checkout-catalog.mjs';
 import { priceOrder } from './checkout-pricing.mjs';
 import { SITE, ORDER, bitcoinApi, bitcoinOffered, validBitcoinSignature } from './bitcoin-api.mjs';
+import { isSiteOrigin, withCors } from './site-origins.mjs';
 
 const cors = {'Access-Control-Allow-Origin':SITE,'Access-Control-Allow-Methods':'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers':'Content-Type','Vary':'Origin','Cache-Control':'no-store'};
 const json = (body,status=200) => Response.json(body,{status,headers:cors});
 export async function bitcoinCheckout(request,env) {
+  return withCors(request,await bitcoinRequest(request,env));
+}
+async function bitcoinRequest(request,env) {
   const url = new URL(request.url), path = url.pathname;
   if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:cors});
-  if (request.headers.get('Origin') && request.headers.get('Origin') !== SITE) return json({error:'Origin not allowed.'},403);
+  if (request.headers.get('Origin') && !isSiteOrigin(request.headers.get('Origin'))) return json({error:'Origin not allowed.'},403);
   if (path === '/checkout/bitcoin/status' && request.method === 'GET') {
     const slug = url.searchParams.get('slug'), item = catalog[slug];
     if (!item || !bitcoinOffered(env,slug)) return json({enabled:false});

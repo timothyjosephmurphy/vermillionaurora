@@ -3,8 +3,8 @@ const DAY=86400000;
 const PREFIX='commission-retention/';
 const CURSOR='commission-maintenance/cursor.json';
 const ID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-const ORIGIN='https://vermillionaurora.com';
-const headers={'Cache-Control':'no-store','Access-Control-Allow-Origin':ORIGIN,'Vary':'Origin','X-Content-Type-Options':'nosniff'};
+import {PRIMARY_SITE,isSiteOrigin,withCors} from './site-origins.mjs';
+const headers={'Cache-Control':'no-store','Access-Control-Allow-Origin':PRIMARY_SITE,'Vary':'Origin','X-Content-Type-Options':'nosniff'};
 const reply=(body,status=200)=>Response.json(body,{status,headers});
 const keyFor=id=>PREFIX+id+'.json';
 const allowedKey=(id,key)=>typeof key==='string'&&new RegExp(`^commissions/${id}/(referenceImage|paletteImage)\\.(jpg|png|webp|heic|heif)$`,'i').test(key);
@@ -51,10 +51,13 @@ export async function purgeCommissionReferences(env,now=Date.now()) {
   return {checked:page.objects.length,removed,more:page.truncated};
 }
 export async function commissionPrivacy(request,env,now=Date.now()) {
+  return withCors(request,await privacyRequest(request,env,now));
+}
+async function privacyRequest(request,env,now) {
   if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{...headers,'Access-Control-Allow-Methods':'POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Authorization'}});
   if(request.method!=='POST'||!env.COMMISSION_MANAGER_TOKEN||request.headers.get('Authorization')!==`Bearer ${env.COMMISSION_MANAGER_TOKEN}`)return reply({error:'Not found'},404);
   const origin=request.headers.get('Origin');
-  if(origin&&origin!==ORIGIN)return reply({error:'Not found'},404);
+  if(origin&&!isSiteOrigin(origin))return reply({error:'Not found'},404);
   if(!env.COMMISSION_UPLOADS)return reply({error:'Private storage unavailable'},503);
   let input;try{input=await request.json();}catch{return reply({error:'Invalid request'},400);}
   const bucket=env.COMMISSION_UPLOADS;

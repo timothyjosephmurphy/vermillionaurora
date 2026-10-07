@@ -279,6 +279,14 @@ it('requires the order access key and permits existing orders to finish when new
   const response=await cartCheckout(request('capture',{orderId:id,key:'a'.repeat(64)}),{...env,...config,CART_CHECKOUT_ENABLED:'false'});expect(response.status).toBe(200);expect((await response.json()).status).toBe('paid');
   expect((await cartCheckout(new Request('https://worker/checkout/cart/catalog',{headers:{Origin:'https://other.example'}}),{...env,...config})).status).toBe(403);
 });
+it('accepts both website domains in production and echoes the caller origin',async()=>{
+  const live={...env,...config,PAYPAL_MODE:'live'};
+  for(const origin of ['https://tjm.art','https://vermillionaurora.com']){
+    const response=await cartCheckout(new Request('https://worker/checkout/cart/catalog',{headers:{Origin:origin}}),live);
+    expect(response.status).toBe(200);expect(response.headers.get('Access-Control-Allow-Origin')).toBe(origin);
+  }
+  expect((await cartCheckout(new Request('https://worker/checkout/cart/catalog',{headers:{Origin:'https://www.tjm.art.evil.example'}}),live)).status).toBe(403);
+});
 it('buys and tracks two parcel labels once while recording the payment only once',async()=>{
   const {order}=await setup('paypal',{SHIPPO_AUTO_LABEL_ENABLED:'true'});await order.start('paypal');approve();await order.capture();await order.refresh();await order.refresh();
   expect(calls.filter(c=>c.url==='https://api.goshippo.com/transactions/')).toHaveLength(2);
