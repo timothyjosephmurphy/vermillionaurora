@@ -4,4 +4,4 @@ Disallow: /commission-manager/
 Disallow: /print-preview/
 Disallow: /print-test/
 
-Sitemap: https://vermillionaurora.com/sitemap.xml
+Sitemap: https://tjm.art/sitemap.xml

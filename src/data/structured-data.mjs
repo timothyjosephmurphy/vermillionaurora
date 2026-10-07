@@ -1,5 +1,5 @@
 // Shared schema.org data. Social profiles mirror /links/.
-export const SITE = 'https://vermillionaurora.com';
+export const SITE = 'https://tjm.art';
 export const sameAs = [
   'https://www.instagram.com/tj_de_la_playa/',
   'https://www.facebook.com/profile.php?id=61594734493796',
