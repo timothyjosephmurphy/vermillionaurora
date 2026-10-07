@@ -1,0 +1,89 @@
+---
+const { class: className = '', label = 'Follow TJ Murphy' } = Astro.props;
+const links = [
+  {
+    href: 'https://www.instagram.com/tj_de_la_playa/',
+    name: 'Instagram',
+    title: '@tj_de_la_playa',
+    aria: 'TJ Murphy on Instagram: @tj_de_la_playa (opens in a new tab)',
+    svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>'
+  },
+  {
+    href: 'https://www.facebook.com/profile.php?id=61594734493796',
+    name: 'Facebook',
+    aria: 'TJ Murphy on Facebook (opens in a new tab)',
+    svg: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.5 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.8 1.8-1.8H17V2.4c-.8-.1-1.7-.2-2.6-.2-2.7 0-4.4 1.6-4.4 4.5v2.8H7V13h3v9z"/></svg>'
+  },
+  {
+    href: 'https://x.com/tj_de_la_playa',
+    name: 'X',
+    title: '@tj_de_la_playa',
+    aria: 'TJ Murphy on X: @tj_de_la_playa (opens in a new tab)',
+    svg: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.49h2.039L6.487 3.24H4.3l13.31 17.403Z"/></svg>'
+  },
+  {
+    href: 'https://njump.me/npub10m0uf224v7tly6k6h8gl6kkmuhmx7969gmudmmhqj5pv65e03r9sxsumee',
+    name: 'Nostr',
+    title: 'tjdelaplaya',
+    aria: 'TJ Murphy on Nostr: tjdelaplaya (opens in a new tab)',
+    svg: '<svg viewBox="40 40 180 180" fill="currentColor" aria-hidden="true" focusable="false"><path d="M210.8 199.4c0 3.1-2.5 5.7-5.7 5.7h-68c-3.1 0-5.7-2.5-5.7-5.7v-15.5c.3-19 2.3-37.2 6.5-45.5 2.5-5 6.7-7.7 11.5-9.1 9.1-2.7 24.9-.9 31.7-1.2 0 0 20.4.8 20.4-10.7s-9.1-8.6-9.1-8.6c-10 .3-17.7-.4-22.6-2.4-8.3-3.3-8.6-9.2-8.6-11.2-.4-23.1-34.5-25.9-64.5-20.1-32.8 6.2.4 53.3.4 116.1v8.4c0 3.1-2.6 5.6-5.7 5.6H57.7c-3.1 0-5.7-2.5-5.7-5.7v-144c0-3.1 2.5-5.7 5.7-5.7h31.7c3.1 0 5.7 2.5 5.7 5.7 0 4.7 5.2 7.2 9 4.5 11.4-8.2 26-12.5 42.4-12.5 36.6 0 64.4 21.4 64.4 68.7v83.2ZM150 99.3c0-6.7-5.4-12.1-12.1-12.1s-12.1 5.4-12.1 12.1 5.4 12.1 12.1 12.1S150 106 150 99.3Z"/></svg>'
+  }
+];
+---
+<nav class:list={['social-links-row', className]} aria-label={label}>
+  {links.map(link => (
+    <a href={link.href} target="_blank" rel="me noopener noreferrer" aria-label={link.aria} title={link.title || link.name}>
+      <span class="social-links-icon" set:html={link.svg}></span>
+      <span class="social-links-label">{link.name}</span>
+    </a>
+  ))}
+</nav>
+<style>
+  .social-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    align-items: center;
+  }
+  .social-links-row > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+  .social-links-icon {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--cta);
+    color: #111;
+    flex-shrink: 0;
+  }
+  .social-links-icon :global(svg) {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+  .social-links-row > a:hover .social-links-icon,
+  .social-links-row > a:focus-visible .social-links-icon {
+    background: var(--cta-hover);
+    color: #fff;
+  }
+  .social-links-row > a:hover .social-links-label {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .social-links-row > a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .social-links-compact .social-links-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .social-links-compact > a { position: relative; }
+  .social-links-compact .social-links-icon { width: 40px; height: 40px; }
+  .social-links-compact .social-links-icon :global(svg) { width: 20px; height: 20px; }
+</style>

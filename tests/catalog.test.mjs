@@ -16,9 +16,11 @@ test('gallery rows and shared cards use the catalog and preserve collection orde
  if(key==='home'){
   const available=collections.home.filter(e=>e.variant==='carousel'&&['available','inquiry'].includes(byId[e.product].listing?.status)).map(e=>e.product);
   const collectors=collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).map(e=>e.product);
+  const collectorPreview=collectors.slice(0,8);
   assert.deepEqual($('.available-paintings-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),available);
-  assert.deepEqual($('.collector-items-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),collectors);
-  assert.equal($('.available-paintings-carousel [data-product-id]').length+$('.collector-items-carousel [data-product-id]').length,expected.length);
+  assert.deepEqual($('.collector-items-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),collectorPreview);
+  assert.equal($('.available-paintings-carousel [data-product-id]').length+collectors.length,expected.length);
+  assert.ok($('.collector-archive-link a[href="/gallery/"]').length);
   assert.equal($('#gallery h2').text(),'Available Paintings');
   assert.equal($('#collectors-items h2').text(),'Collector’s Items');
  }else{

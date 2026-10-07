@@ -18,7 +18,7 @@ const structuredData = product.type === 'painting'
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{product.title}{product.bookGallery ? ' — Book gallery artwork' : ''} | Vermillion Aurora</title>
+  <title>{product.title}{product.bookGallery ? ' — Book gallery artwork' : ''} | TJ Murphy</title>
   <meta name="description" content={shareDescription} />
   <meta name="catalog-version" content={catalogVersion} />
   <link rel="canonical" href={canonical} />
@@ -42,7 +42,7 @@ const structuredData = product.type === 'painting'
   {product.examples?.length>0 && <link rel="stylesheet" href="/exhibitions/viewer.css" />}
   <style is:global>.commission-gallery{margin-top:28px}.commission-gallery .section-heading{margin-bottom:12px}.commission-gallery h2{font-size:2rem;margin:0 0 6px}.commission-gallery .section-heading p{font-size:.9rem;margin:0}</style>
 </head>
-<body><div class="page-shell"><SiteHeader /><slot /><SiteFooter /></div>
+<body><div class="page-shell"><SiteHeader /><div id="main-content" tabindex="-1"><slot /></div><SiteFooter /></div>
 {product.type==='painting' && <><script is:inline src="/payments/cart.js" defer></script><script is:inline src="/payments/paypal-checkout.js" defer></script><script is:inline src="/catalog/availability.js" defer></script></>}
 {product.type==='book' && <script is:inline src="/book-viewer/viewer.js" defer></script>}
 {product.examples?.length>0 && <script is:inline src="/exhibitions/viewer.js" defer></script>}
