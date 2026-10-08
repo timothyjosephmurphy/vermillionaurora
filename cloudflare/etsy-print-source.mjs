@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="6bf8a430b6dff505af07";
+export const sourcePrintVersion="9634efe28d81e4a454e3";
 export default [
   {
     "id": "warszawska-syrenka",
@@ -499,7 +499,7 @@ export default [
       "unit": "in"
     },
     "story": [
-      "The sun was just up over the water at El Zonte, and the surfers were still paddling out, diving through the waves and riding them in. I watched from the Punto El Zonte hostel, where the river runs into the beach, and the big round stones tumbled and knocked together every time a wave crashed. The tropical air makes the light especially luminous. I painted it back in my Seattle studio, from the photos I took that morning."
+      "The sun was just up over the water at El Zonte, and the surfers were still paddling out, diving through the waves and riding them in. I watched from the Punta El Zonte hostel, where the river runs into the beach, and the big round stones tumbled and knocked together every time a wave crashed. The tropical air makes the light especially luminous. I painted it back in my Seattle studio, from the photos I took that morning."
     ],
     "image": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
@@ -666,7 +666,7 @@ export default [
   },
   {
     "id": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel",
     "artist": "TJ Murphy",
     "year": 2023,
     "medium": "Watercolor pastel",
@@ -677,11 +677,11 @@ export default [
       "unit": "in"
     },
     "story": [
-      "This is the view from the Punto El Zonte hostel, where I stayed on the corner of the river that runs through town and the beach the surfers use. I woke before dawn, sat and meditated, and watched the sunrise and the surfers paddling out through the waves. The beach is all big round stones, and they tumble and rumble as each wave hits. The tropical air makes the light especially luminous. I painted it in my Seattle studio, from the photos I took that morning."
+      "This is the view from the Punta El Zonte hostel, where I stayed on the corner of the river that runs through town and the beach the surfers use. I woke before dawn, sat and meditated, and watched the sunrise and the surfers paddling out through the waves. The beach is all big round stones, and they tumble and rumble as each wave hits. The tropical air makes the light especially luminous. I painted it in my Seattle studio, from the photos I took that morning."
     ],
     "image": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy"
     },
     "variants": [
       {

@@ -14,7 +14,7 @@ import {readyPrints} from '../catalog/prints.mjs';
 // catalog page. The catalog page survives (it carries the stock record, cart/PayPal identity and slug-derived
 // print IDs) and shows the book title; the scan keeps its data so its own book print IDs stay valid, but its page 301s.
 const MERGED={
-  'book-art-9b6b4f1ce8b283e14b21':['el-zonte-at-sunrise','Sunrise from Punto El Zonte Hostel, El Salvador'],
+  'book-art-9b6b4f1ce8b283e14b21':['el-zonte-at-sunrise','Sunrise from Punta El Zonte Hostel'],
   'book-art-024a1e2da99a49b4438a':['myself-my-mother-ruth-my-grandpa-howard','Myself, my mother Ruth, my grandpa Howard'],
   'book-art-ad30c3da712401606ea6':['michael-and-katie-in-yelapa','Michael and Katie in Yelapa'],
   'book-art-1708a7dca996aca40e6c':['painting-guitarist','Girl Tuning Guitar'],
