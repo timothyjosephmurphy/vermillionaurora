@@ -48,7 +48,7 @@ test('failed attempt retries the same signed event, then subsequent runs stay id
     assert.equal((await (await run(restarted, now + 600000)).json()).status, 'idle');
     assert.equal(events.length, 2);
     const status = await (await restarted.fetch(new Request('https://internal/status'))).json();
-    assert.equal(status.scheduledPosts, 3);
+    assert.equal(status.scheduledPosts, posts.length);
     assert.equal(status.test.status, 'published');
     assert.equal(status.test.eventId, events[1].id);
     assert.ok(status.test.noteUrl.startsWith('https://njump.me/note1'));
@@ -100,4 +100,25 @@ test('public blog feed answers CORS for tjm.art and the legacy domain only', asy
   assert.equal((await origin('https://vermillionaurora.com')).get('access-control-allow-origin'), 'https://vermillionaurora.com');
   assert.equal((await origin('https://evil.example')).get('access-control-allow-origin'), 'https://tjm.art');
   assert.equal((await origin('https://tjm.art')).get('vary'), 'Origin');
+});
+
+test('deploying with existing receipts stays idle on Oct 8 and sends El Zonte once on Oct 11 at 10 AM PT', async () => {
+  const original = SimplePool.prototype.publish;
+  const events = [];
+  SimplePool.prototype.publish = function (relays, event) { events.push(event); return [Promise.resolve('accepted')]; };
+  try {
+    const state = { storage: storageDouble() };
+    await state.storage.put('nostr:activatedAt', Date.parse('2026-10-03T20:00:00Z'));
+    for (const id of [testPost.id, posts[0].id, posts[1].id])
+      await state.storage.put(`nostr:sent:${id}`, { eventId: 'ab'.repeat(32), acceptedAt: Date.parse('2026-10-06T14:00:37Z'), relay: 'wss://relay.example' });
+    const instance = new NostrSchedule(state, env);
+    for (const now of ['2026-10-08T23:00:00-07:00', '2026-10-08T23:05:00-07:00', '2026-10-11T09:55:00-07:00'])
+      assert.equal((await (await run(instance, Date.parse(now))).json()).status, 'idle', now);
+    assert.equal((await (await run(instance, Date.parse('2026-10-11T10:00:00-07:00'))).json()).sent, 1);
+    assert.equal((await (await run(instance, Date.parse('2026-10-11T10:05:00-07:00'))).json()).status, 'idle');
+    assert.equal(events.length, 1);
+    assert.match(events[0].content, /^El Zonte at Dawn/);
+    assert.equal(events[0].created_at, Date.parse('2026-10-11T10:00:00-07:00') / 1000);
+    assert.ok(await state.storage.get('nostr:sent:launch-sunrise-el-zonte-bitcoin-beach-2026-10-08'));
+  } finally { SimplePool.prototype.publish = original; }
 });

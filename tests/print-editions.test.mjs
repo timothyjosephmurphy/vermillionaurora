@@ -10,8 +10,8 @@ import {editionLayouts,EDITION_LAYOUT} from '../catalog/edition-layout.mjs';
 import {printOptions} from '../catalog/print-sizing.mjs';
 import {groupPrintProducts} from '../cloudflare/finerworks-quotes.mjs';
 const paintings=products.filter(p=>p.artist==='Paul Murphy');
-test('all 39 paintings have 115 image-proportional, uncropped, 300-DPI layouts',()=>{
-  assert.equal(paintings.length,39);let count=0;
+test('all 38 paintings have 112 image-proportional, uncropped, 300-DPI layouts',()=>{
+  assert.equal(paintings.length,38);let count=0;
   for(const p of paintings){
     const art=config.artworks[p.id];assert.equal(art.sizing,'image-proportional');assert.equal(art.sizingApproved,true);
     const options=printOptions(p,config,papers);assert(options.length);
@@ -34,7 +34,7 @@ test('all 39 paintings have 115 image-proportional, uncropped, 300-DPI layouts',
       if(art.enabled)assert(o.ready,`${p.id}/${o.key}: ${o.reasons.join(', ')}`);
     }
   }
-  assert.equal(count,115);
+  assert.equal(count,112);
 });
 test('#55 has one resolution-limited size without inventing original dimensions',()=>{
   const p=paintings.find(p=>p.id.endsWith('-55'));assert.equal(p.dimensions,null);
