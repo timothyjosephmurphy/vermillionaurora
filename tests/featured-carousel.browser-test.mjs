@@ -190,6 +190,19 @@ const clearanceTargets = [
   'Moonrise over lake in the North Cascades', // 2-line title on mobile
 ];
 const narrowWidths = [375, 390, 414, 430];
+async function launchEngine(engine) {
+  try {
+    return await engine.launch();
+  } catch (err) {
+    const msg = String(err && err.message || err);
+    if (!/Executable doesn't exist|Host system is missing dependencies/i.test(msg)) throw err;
+    const {spawnSync} = await import('node:child_process');
+    const r = spawnSync('npx', ['playwright', 'install', '--with-deps', 'webkit'], {stdio: 'inherit'});
+    if (r.status !== 0) throw err;
+    return engine.launch();
+  }
+}
+
 const engineRuns = [
   ['chromium', chromium, narrowWidths.map(w => ({label:`chromium-${w}`, opts:{viewport:{width:w,height:844}, isMobile:true, hasTouch:true}}))],
   ['webkit', webkit, [
@@ -201,7 +214,7 @@ const engineRuns = [
 ];
 
 for (const [engineName, engine, runs] of engineRuns) {
-  const browser = await engine.launch();
+  const browser = engineName === 'webkit' ? await launchEngine(engine) : await engine.launch();
   for (const {label, opts} of runs) {
     const ctx = await browser.newContext(opts);
     const page = await ctx.newPage();
