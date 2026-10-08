@@ -25,6 +25,10 @@ export function hostRedirect(request, env = {}) {
 // The public pages /quickbooks/ and /quickbooks/disconnected/ stay static.
 export const QUICKBOOKS_API = new Set(['/quickbooks/connect', '/quickbooks/callback', '/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry']);
 
+// Testimonial submission, the approved list, approved photos and the owner moderation API also live in the checkout
+// Worker (private R2 storage); forwarding keeps them same-origin with /testimonials/ and /testimonial-manager/.
+export const TESTIMONIALS_API = '/testimonials/api/';
+
 export default {
   async fetch(request, env) {
     const redirect = hostRedirect(request, env);
@@ -32,6 +36,9 @@ export default {
     const url = new URL(request.url);
     if (QUICKBOOKS_API.has(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : new Response('QuickBooks connection unavailable', { status: 503 });
+    }
+    if (url.pathname.startsWith(TESTIMONIALS_API) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
+      return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ success: false, error: 'Testimonials are temporarily unavailable.' }, { status: 503 });
     }
     return env.ASSETS.fetch(request);
   },
