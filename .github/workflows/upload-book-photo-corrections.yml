@@ -1,0 +1,47 @@
+name: Upload corrected book-gallery photos
+# Uploads only the committed, perspective-corrected display photos listed in
+# scripts/book-photo-corrections/uploads.json (new immutable keys under images/book-galleries/v1/),
+# through the same bounded one-time uploader as prepare-book-galleries.yml, then verifies the public bytes.
+on:
+  push:
+    branches: ['codex/book-photo-**']
+    paths: ['scripts/book-photo-corrections/**', '.github/workflows/upload-book-photo-corrections.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checkout-sandbox
+  cancel-in-progress: false
+jobs:
+  upload:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[upload-book-photos]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Confirm upload credential is configured
+        env:
+          BOOK_UPLOAD_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: test -n "$BOOK_UPLOAD_TOKEN"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Limit the uploader to the corrected photos
+        run: cp scripts/book-photo-corrections/uploads.json scripts/book-media-upload/manifest.json
+      - name: Deploy bounded one-time R2 uploader
+        id: uploader
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          command: deploy --config scripts/book-media-upload/wrangler.jsonc
+      - name: Upload and verify corrected photos in R2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/upload-book-media.mjs scripts/book-photo-corrections
+      - name: Remove the temporary uploader
+        if: always() && steps.uploader.outcome == 'success'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/remove-book-uploader.mjs
