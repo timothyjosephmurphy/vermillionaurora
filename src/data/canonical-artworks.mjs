@@ -7,7 +7,7 @@ export const canonicalArtwork = {
   'book-art-ccff23f1e469654faa05': 'painting-portrait-in-green', // Chase Toole
   'book-art-2136f2260225dd8ef20a': 'painting-portrait-in-gold',  // Dorian Nakamoto
   // Oct 2026 merge (TJ: "Merge the duplicates and keep the book titles"): the catalog page survives with the book title.
-  'book-art-9b6b4f1ce8b283e14b21': 'el-zonte-at-sunrise', // Sunrise from Punto El Zonte Hostel, El Salvador
+  'book-art-9b6b4f1ce8b283e14b21': 'el-zonte-at-sunrise', // Sunrise from Punta El Zonte Hostel
   'book-art-024a1e2da99a49b4438a': 'myself-my-mother-ruth-my-grandpa-howard', // Myself, my mother Ruth, my grandpa Howard
   'book-art-ad30c3da712401606ea6': 'michael-and-katie-in-yelapa', // Michael and Katie in Yelapa
   'book-art-1708a7dca996aca40e6c': 'painting-guitarist', // Girl Tuning Guitar (book title: Malone; TJ chose the catalog title)

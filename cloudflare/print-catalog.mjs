@@ -1,13 +1,13 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="6bf8a430b6dff505af07";
+export const printVersion="9634efe28d81e4a454e3";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Large print",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "125.00",
     "currency": "USD",
     "sku": "5M144M8S12.24X23.85",
@@ -30,9 +30,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -44,8 +44,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print — Black frame",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Large print — Black frame",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "215.00",
     "currency": "USD",
     "sku": "5M144M8S12DD24X23DD85F1S15DD24X26DD85J1S12DD24X23DD85G1",
@@ -68,9 +68,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -118,8 +118,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print — White frame",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Large print — White frame",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "215.00",
     "currency": "USD",
     "sku": "5M144M8S12DD24X23DD85F2S15DD24X26DD85J1S12DD24X23DD85G1",
@@ -142,9 +142,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -192,8 +192,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print — Natural wood frame",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "233.00",
     "currency": "USD",
     "sku": "5M144M8S12DD24X23DD85F7S15DD24X26DD85J1S12DD24X23DD85G1",
@@ -216,9 +216,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -266,8 +266,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Medium print",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "70.00",
     "currency": "USD",
     "sku": "5M144M8S9.24X17.95",
@@ -290,9 +290,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -304,8 +304,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print — Black frame",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Medium print — Black frame",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "135.00",
     "currency": "USD",
     "sku": "5M144M8S9DD24X17DD95F1S12DD24X20DD95J1S9DD24X17DD95G1",
@@ -328,9 +328,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -378,8 +378,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print — White frame",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Medium print — White frame",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "135.00",
     "currency": "USD",
     "sku": "5M144M8S9DD24X17DD95F2S12DD24X20DD95J1S9DD24X17DD95G1",
@@ -402,9 +402,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -452,8 +452,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print — Natural wood frame",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "150.00",
     "currency": "USD",
     "sku": "5M144M8S9DD24X17DD95F7S12DD24X20DD95J1S9DD24X17DD95G1",
@@ -476,9 +476,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -526,8 +526,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Small print",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Small print",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S6.24X12.05",
@@ -550,9 +550,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -564,8 +564,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Small print — Black frame",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Small print — Black frame",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "84.00",
     "currency": "USD",
     "sku": "5M144M8S6DD24X12DD05F1S9DD24X15DD05J1S6DD24X12DD05G1",
@@ -588,9 +588,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -638,8 +638,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Small print — White frame",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Small print — White frame",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "84.00",
     "currency": "USD",
     "sku": "5M144M8S6DD24X12DD05F2S9DD24X15DD05J1S6DD24X12DD05G1",
@@ -662,9 +662,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -712,8 +712,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Small print — Natural wood frame",
-    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "title": "Sunrise from Punta El Zonte Hostel — Small print — Natural wood frame",
+    "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "94.00",
     "currency": "USD",
     "sku": "5M144M8S6DD24X12DD05F7S9DD24X15DD05J1S6DD24X12DD05G1",
@@ -736,9 +736,9 @@ export default {
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "attributes": {},
     "minimumDpi": 300,
