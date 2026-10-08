@@ -30,12 +30,12 @@ export const posts = [
   },
   {
     "id": "launch-sunrise-el-zonte-bitcoin-beach-2026-10-08",
-    "title": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn",
     "scheduledAt": "2026-10-11T10:00:00-07:00",
-    "text": "El Zonte at Dawn recalls my first Bitcoin conference in El Salvador: a hostel in Bitcoin Beach, the river meeting the ocean, and morning surf. Originals, prints, commissions:",
-    "imageUrl": "https://tjm.art/gallery-images/shoreline-at-dusk.jpg",
+    "text": "Before dawn at the Punta El Zonte hostel, where the river meets the surf. Surfers paddling out, round stones tumbling in the waves, and that luminous tropical light. I painted it back in my Seattle studio. El Zonte at Dawn, original and prints:",
+    "imageUrl": "https://tjm.art/gallery-images/el-zonte-at-dawn-2026.jpg",
     "productUrl": "/products/painting-shoreline-at-dusk/",
-    "xText": "El Zonte at Dawn recalls my first Bitcoin conference in El Salvador: a hostel in Bitcoin Beach, the river meeting the ocean, and morning surf. Originals, prints, commissions: https://tjm.art/products/painting-shoreline-at-dusk/"
+    "xText": "Before dawn at the Punta El Zonte hostel, where the river meets the surf. Surfers paddling out, round stones tumbling in the waves, and that luminous tropical light. I painted it back in my Seattle studio. El Zonte at Dawn, original and prints: https://tjm.art/products/painting-shoreline-at-dusk/"
   },
   {
     "id": "campaign-chase-toole-triptych-2026-10-13",
