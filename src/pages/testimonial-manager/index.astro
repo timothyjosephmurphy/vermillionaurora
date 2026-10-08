@@ -1,0 +1,114 @@
+---
+import PolicyLayout from '../../layouts/PolicyLayout.astro';
+---
+<PolicyLayout title="Testimonial moderation" description="Owner review of collector testimonials before they are published." noindex>
+<p>Owner access only. Enter the commission management credential (the Worker’s <code>COMMISSION_MANAGER_TOKEN</code>). It stays in memory for this page and is never saved or put in a link.</p>
+<form id="tm-login"><label>Management credential <input id="tm-token" type="password" autocomplete="off" required/></label><button class="button button-solid" type="submit">Open testimonials</button></form>
+<div id="tm-controls" hidden>
+  <button type="button" data-filter="pending" aria-pressed="true">Pending</button><button type="button" data-filter="approved" aria-pressed="false">Published</button><button type="button" data-filter="all" aria-pressed="false">All</button>
+  <button type="button" id="tm-refresh">Refresh</button><button type="button" id="tm-lock">Lock</button>
+</div>
+<p id="tm-status" role="status" aria-live="polite"></p>
+<div id="tm-records"></div>
+<details class="tm-help"><summary>How this works</summary>
+<p>New submissions arrive here as <strong>Pending</strong> and you get an email at tj@vermillionaurora.com. Nothing is public until you press <strong>Approve &amp; publish</strong>. Edit the display name, wording, painting, city or map pin first if needed, and untick any photo you don’t want shown. Published testimonials appear on <a href="/testimonials/">/testimonials/</a> and, if they have a pin, on the <a href="/exhibitions/world-map/">exhibitions map</a> within about a minute; no rebuild is needed.</p>
+<p><strong>Delete</strong> permanently removes the submission and its photos (use it to reject). <strong>Unpublish</strong> takes a published testimonial down but keeps it here. After approval, <strong>Issue at-cost print code</strong> creates their single-use print code; nothing is emailed automatically, so copy the code and send it yourself.</p>
+<p>Photos have location (GPS) and other EXIF metadata removed on upload. HEIC photos that the visitor’s browser could not convert are kept private and can’t be published.</p>
+</details>
+<style is:global>
+.policy-page .tm-card{display:grid;gap:12px}
+.tm-card .tm-meta{font-size:.9rem;color:#5e554d;margin:0}
+.tm-card label{display:grid;gap:4px;font-size:.85rem}
+.tm-card input[type=text],.tm-card input[type=number],.tm-card textarea{width:100%;padding:10px;border:1px solid #bcb4a8;border-radius:8px;font:inherit}
+.tm-card textarea{min-height:120px}
+.tm-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.tm-photos{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:0}
+.tm-photos li{width:150px;font-size:.78rem}.tm-photos img{width:150px;height:150px;object-fit:cover;border-radius:8px;display:block;background:#e8dfd3}
+.tm-photos label{display:flex;gap:6px;align-items:center;margin-top:4px}
+.tm-badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:600;background:#efe0cd}.tm-badge.approved{background:#2f8a4c;color:#fff}
+.tm-code{background:#fffcf6;border:2px dashed #2f8a4c;border-radius:10px;padding:12px}.tm-code code{font-size:1.2rem;font-weight:700}
+#tm-controls button[aria-pressed=true]{background:#1d1a17;color:#fff}
+.tm-quote{white-space:pre-line;font-style:italic}
+.tm-pinrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.tm-pinrow label{display:block}
+</style>
+<script>
+const api='/testimonials/api/owner';
+const $=id=>document.getElementById(id);
+let token='',filter='pending',records=[];
+const status=$('tm-status'),list=$('tm-records');
+const say=text=>{status.textContent=text;};
+async function call(body,blob=false){
+  const r=await fetch(api,{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`},body:JSON.stringify(body)});
+  if(!r.ok){const d=await r.json().catch(()=>({}));const e=Error(d.error||`Request failed (${r.status})`);e.data=d;throw e;}
+  return blob?r.blob():r.json();
+}
+const el=(tag,props={},...kids)=>{const n=Object.assign(document.createElement(tag),props);n.append(...kids.filter(k=>k!=null&&k!==false));return n;};
+const field=(label,input)=>el('label',{},label,input);
+const btn=(label,action,cls='')=>{const b=el('button',{type:'button',textContent:label,className:cls});b.addEventListener('click',async()=>{b.disabled=true;try{await action(b);}catch(e){say(e.message);}finally{b.disabled=false;}});return b;};
+const fmt=iso=>iso?new Date(iso).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'}):'';
+function render(){
+  const shown=records.filter(r=>filter==='all'||r.status===filter);
+  list.replaceChildren(...shown.map(card));
+  const pending=records.filter(r=>r.status==='pending').length,approved=records.filter(r=>r.status==='approved').length;
+  say(`${pending} pending · ${approved} published${shown.length?'':' · nothing in this view'}`);
+}
+function card(r){
+  const pub=r.published||{};
+  const a=el('article',{className:'tm-card',id:r.id});
+  a.append(el('h2',{},`${r.name} `,el('span',{className:'tm-badge '+r.status,textContent:r.status==='approved'?'Published':'Pending'})));
+  a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,el('a',{href:`mailto:${r.email}`,textContent:r.email}),` (private) · ${r.id}`,r.codeIssuedAt?` · Print code issued ${fmt(r.codeIssuedAt)}`:''));
+  const name=el('input',{type:'text',value:pub.name||r.name,maxLength:80});
+  const quote=el('textarea',{value:pub.quote||r.quote,maxLength:2000});
+  const painting=el('input',{type:'text',value:pub.painting??r.paintingTitle??'',maxLength:200});
+  const slug=el('input',{type:'text',value:pub.paintingSlug??r.paintingSlug??'',placeholder:'e.g. painting-emergence',maxLength:150});
+  const city=el('input',{type:'text',value:pub.city??r.city??'',maxLength:100});
+  const pin=pub.pin||(r.geo?[r.geo.lat,r.geo.lng]:null);
+  const lat=el('input',{type:'number',step:'0.01',min:-90,max:90,value:pin?pin[0]:''});
+  const lng=el('input',{type:'number',step:'0.01',min:-180,max:180,value:pin?pin[1]:''});
+  const map=el('input',{type:'checkbox',checked:r.status==='approved'?Boolean(pub.pin):Boolean(pin)});
+  const geoNote=el('small',{textContent:r.geo?`Suggested from “${r.city}”: ${r.geo.label}`:(r.city?'No automatic match; use Look up or type coordinates (city centre, 2 decimals).':'No city given.')});
+  a.append(el('p',{className:'tm-quote',textContent:`“${r.quote}”`}));
+  a.append(field('Display name',name),field('Testimonial text (as published)',quote));
+  a.append(el('div',{className:'tm-row'},field('Painting title',painting),field('Painting page slug (links to /products/<slug>/)',slug)));
+  a.append(el('div',{className:'tm-row'},field('City',city),field('Pin latitude',lat),field('Pin longitude',lng)));
+  a.append(el('div',{className:'tm-pinrow'},el('label',{},el('span',{},map,' Show a pin on the exhibitions map')),btn('Look up city',async()=>{const {geo}=await call({action:'geocode',city:city.value});if(!geo){say('No match for that city.');return;}lat.value=geo.lat;lng.value=geo.lng;map.checked=true;geoNote.textContent=`Found: ${geo.label}`;})),geoNote);
+  const photoBoxes=[];
+  if(r.photos.length){
+    const ul=el('ul',{className:'tm-photos'});
+    for(const p of r.photos){
+      const img=el('img',{alt:`Photo ${p.n+1} from ${r.name}`});
+      call({action:'photo',id:r.id,n:p.n},true).then(b=>{img.src=URL.createObjectURL(b);}).catch(()=>{img.alt='Preview unavailable';});
+      const box=el('input',{type:'checkbox',checked:p.publishable&&(r.status!=='approved'||(pub.photos||[]).includes(p.n)),disabled:!p.publishable});box.dataset.n=p.n;photoBoxes.push(box);
+      ul.append(el('li',{},img,el('label',{},box,p.publishable?' Publish':' Private (HEIC)'),el('span',{textContent:`${Math.round(p.bytes/1024)} KB${p.removed?.length?' · removed: '+p.removed.join(', '):''}`})));
+    }
+    a.append(ul);
+  } else a.append(el('p',{className:'tm-meta',textContent:'No photos.'}));
+  const actions=el('div',{}),out=el('div',{});
+  const approve=()=>call({action:'approve',id:r.id,name:name.value,quote:quote.value,painting:painting.value,paintingSlug:slug.value.trim(),city:city.value,lat:lat.value,lng:lng.value,map:map.checked,photos:photoBoxes.filter(b=>b.checked).map(b=>Number(b.dataset.n))});
+  if(r.status==='pending')actions.append(btn('Approve & publish',async()=>{await approve();await load();say(`Published ${r.name}’s testimonial.`);},'button button-solid'));
+  else {
+    actions.append(btn('Save changes',async()=>{await approve();await load();say('Saved.');}));
+    actions.append(btn('Unpublish',async()=>{await call({action:'unpublish',id:r.id});await load();say('Unpublished; it is back in Pending.');}));
+    actions.append(btn(r.codeIssuedAt?'Issue another print code':'Issue at-cost print code',async()=>{
+      if(!confirm(`Issue a single-use at-cost print code for ${r.name} <${r.email}>? Nothing is emailed; you send it yourself.`))return;
+      let d;try{d=await call({action:'issueCode',id:r.id,again:Boolean(r.codeIssuedAt)});}catch(e){if(e.data?.alreadyIssued&&confirm(e.message)){d=await call({action:'issueCode',id:r.id,again:true});}else throw e;}
+      const note=`Hi ${r.name.split(' ')[0]},\n\nThank you so much for your testimonial. As a thank-you, here is your personal code for a print of any of my paintings at cost: ${d.code}\n\nAdd a print to your cart on https://tjm.art and enter the code in the Code field before calculating shipping. It works once, on prints only.\n\nWith gratitude,\nTJ`;
+      const ta=el('textarea',{value:note,readOnly:true,rows:9});
+      out.replaceChildren(el('div',{className:'tm-code'},el('p',{},'Code: ',el('code',{textContent:d.code})),el('p',{className:'tm-meta',textContent:d.usage+' Shown once; only its hash is stored.'}),ta,
+        btn('Copy note',async()=>{await navigator.clipboard.writeText(note);say('Thank-you note copied.');}),
+        el('a',{href:`mailto:${encodeURIComponent(r.email)}?subject=${encodeURIComponent('Thank you for your testimonial')}&body=${encodeURIComponent(note)}`,textContent:'Open in my email app'})));
+      r.codeIssuedAt=d.issuedAt;
+    }));
+  }
+  actions.append(btn('Delete (reject)',async()=>{if(!confirm(`Permanently delete ${r.name}’s testimonial and photos?`))return;await call({action:'delete',id:r.id,confirm:r.id});await load();say('Deleted.');}));
+  a.append(actions,out);
+  return a;
+}
+async function load(){const d=await call({action:'list'});records=d.records;render();$('tm-controls').hidden=false;}
+$('tm-login').addEventListener('submit',async e=>{e.preventDefault();token=$('tm-token').value;$('tm-token').value='';say('Loading…');try{await load();$('tm-login').hidden=true;}catch(err){token='';say(err.message);}});
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();}));
+$('tm-refresh').addEventListener('click',()=>load().catch(e=>say(e.message)));
+const lock=()=>{token='';records=[];list.replaceChildren();$('tm-controls').hidden=true;$('tm-login').hidden=false;say('Locked.');};
+$('tm-lock').addEventListener('click',lock);window.addEventListener('pagehide',lock);
+</script>
+</PolicyLayout>
