@@ -147,7 +147,7 @@ try{
   await page.goto(origin+'/testimonials/#share');await page.locator('[data-video-field]').waitFor();
   await page.locator('input[name=name]').fill('Sam');await page.locator('textarea[name=quote]').fill('Lovely in our hallway.');
   await page.locator('button[type=submit]').click();await page.locator('[data-thanks]').waitFor({timeout:30000});
-  assert(await page.locator('[data-thanks-code]').isHidden(),'no code promised without an email');
+  assert((await page.locator('[data-thanks-code]').evaluateAll(ns=>ns.map(n=>n.hidden))).every(Boolean),'no code promised (and no Promotions note) without an email');
   const sam=[...env.COMMISSION_UPLOADS.data.keys()].filter(k=>k.startsWith('testimonials/records/')).map(k=>JSON.parse(env.COMMISSION_UPLOADS.data.get(k).value)).find(r=>r.name==='Sam');
   assert.equal(sam.email,'');
   const before=mails.length;

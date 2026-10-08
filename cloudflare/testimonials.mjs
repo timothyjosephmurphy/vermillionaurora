@@ -65,8 +65,9 @@ function wantsHtml(request) {
   const accept = request.headers.get('Accept') || '';
   return accept.includes('text/html') && !accept.includes('application/json');
 }
-function done(request, ok, payload, status) {
-  if (wantsHtml(request)) return new Response(null, {status: 303, headers: {...privateHeaders, Location: `${OWNER_ORIGIN}/testimonials/?${ok ? 'thanks=1' : 'error=' + encodeURIComponent(payload.error)}#share`}});
+// Non-JavaScript form posts are redirected back to the page; code=1 tells it an email was given (show the print-code lines).
+function done(request, ok, payload, status, {code = false} = {}) {
+  if (wantsHtml(request)) return new Response(null, {status: 303, headers: {...privateHeaders, Location: `${OWNER_ORIGIN}/testimonials/?${ok ? 'thanks=1' + (code ? '&code=1' : '') : 'error=' + encodeURIComponent(payload.error)}#share`}});
   return reply(payload, status);
 }
 
@@ -173,7 +174,7 @@ async function submit(request, env, ctx, now) {
     return mark({notifyError: String(error?.message || 'failed').slice(0, 120)});
   });
   if (ctx?.waitUntil) ctx.waitUntil(notify); else await notify;
-  return done(request, true, {success: true, id}, 200);
+  return done(request, true, {success: true, id}, 200, {code: Boolean(email)});
 }
 
 // City-level geocoding: visitor may type "City", "City, Country", "City, State" or "City, State, Country" (never a street address); coordinates are rounded to ~1 km.
@@ -458,40 +459,75 @@ async function thankCollector(env, start, {send, force = false, now}) {
   return {record, result};
 }
 
+// Written as a personal one-to-one note from TJ (plain text plus a minimal HTML mirror: no images, logo, buttons or
+// footer, and no List-Unsubscribe/bulk headers), so mailbox providers treat it like a person's email rather than a
+// promotion. Copy deliberately avoids promo wording ("discount", "offer", "deal", "% off", all caps, exclamation marks).
 export function thanksEmail(record) {
   // Greet by first name when there is one; otherwise a neutral greeting.
   const given = [record.published?.name, record.name].map(n => (n || '').trim()).find(n => n && n !== ANONYMOUS_NAME);
   const first = given ? given.split(/\s+/)[0] : '';
   const painting = record.published?.painting || record.paintingTitle;
-  const subject = 'Thank you, and a print code for you';
+  const subject = first ? `Thank you for your testimonial, ${first}` : 'Thank you for your testimonial';
   // A private video with no words or photos is not on the site, so the email doesn't link to it.
   const onSite = record.status !== 'approved' || hasPublicContent(publicEntry(record));
+  const link = `https://tjm.art/testimonials/#${record.id}`;
   const thanks = `Thank you so much for sharing what ${painting ? `“${painting}”` : 'my painting'} means to you. It means a lot to me that it has a good home with you.`;
-  const body = [
-    `Hi ${first || 'there'},`, '',
-    ...(onSite ? [`${thanks} Your testimonial is now on my site:`, `https://tjm.art/testimonials/#${record.id}`] : [thanks]), '',
-    'As a thank-you, here is your personal print code:', '',
-    `    ${record.thanks.code}`, '',
-    'It gets you fine-art prints of any of my paintings at the print lab’s cost plus shipping, with no markup. Put as many prints as you like in one order; the code works for one order. It doesn’t apply to original paintings or commission deposits.', '',
-    'To use it: choose a print on any painting’s page (https://tjm.art/gallery/), then go to your cart at https://tjm.art/cart/ and enter the code in the “Discount code” box before calculating shipping & tax.', '',
-    'Thank you again for being part of this.', '',
-    'With gratitude,', 'TJ Murphy', 'https://tjm.art',
-  ].join('\n');
-  return {subject, body};
+  const code = record.thanks.code;
+  const paragraphs = [
+    [{t: `Hi ${first || 'there'},`}],
+    onSite ? [{t: `${thanks} Your testimonial is now on my site:`}, {br: true}, {a: link}] : [{t: thanks}],
+    [{t: 'As a small thank-you, you can get a print of any of my paintings at cost. Use this at checkout:'}],
+    [{t: code}],
+    [{t: 'You pay only what the print lab charges, plus shipping; I don’t add anything on top. It works for one order, and you can put as many prints as you like in that order. It’s for prints only, not original paintings or commission deposits.'}],
+    [{t: 'To use it, choose a print on any painting’s page ('}, {a: 'https://tjm.art/gallery/'}, {t: '), then in your cart open “Have a code?” and paste it in before calculating shipping and tax.'}],
+    [{t: 'If you have any questions, just reply. It comes straight to me.'}],
+    [{t: 'Thank you again,'}, {br: true}, {t: 'TJ'}],
+  ];
+  return {subject, ...renderNote(paragraphs)};
+}
+
+// No submission confirmation email is sent today (the form only notifies TJ); the "watch Promotions" heads-up is shown
+// on the page after submitting, only when an email was given (src/pages/testimonials.astro, data-thanks-code).
+
+// Plain text and a minimal HTML mirror from the same paragraphs. Parts: {t: text}, {a: url}, {br: true}.
+const escapeHtml = v => String(v).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'})[c]);
+function renderNote(paragraphs) {
+  const text = paragraphs.map(p => p.map(x => x.br ? '\n' : x.a || x.t).join('')).join('\n\n') + '\n';
+  const html = '<!DOCTYPE html>\n<html><head><meta charset="utf-8"></head><body>\n'
+    + paragraphs.map(p => '<p>' + p.map(x => x.br ? '<br>' : x.a ? `<a href="${escapeHtml(x.a)}">${escapeHtml(x.a)}</a>` : escapeHtml(x.t)).join('') + '</p>').join('\n')
+    + '\n</body></html>\n';
+  return {text, html};
+}
+
+// Sender for the collector note: tj@tjm.art (alias domain of the same Google Workspace mailbox, configured as a Gmail
+// send-as address; SPF include:_spf.google.com, DKIM selector google._domainkey.tjm.art, DMARC p=quarantine).
+// TESTIMONIAL_EMAIL_FROM="tj@vermillionaurora.com" switches back to the mailbox's primary address without a deploy of code.
+export const THANKS_SENDERS = ['tj@tjm.art', 'tj@vermillionaurora.com'];
+export const thanksSender = env => THANKS_SENDERS.includes(env?.TESTIMONIAL_EMAIL_FROM) ? env.TESTIMONIAL_EMAIL_FROM : THANKS_SENDERS[0];
+const wrap76 = v => v.replace(/.{1,76}/g, '$&\r\n').trimEnd();
+// RFC 5322 multipart/alternative (text first, HTML last) with base64 parts wrapped at 76 columns.
+export function noteMime({from, to, replyTo, subject, messageId, text, html, date}) {
+  const boundary = 'tjm-' + [...crypto.getRandomValues(new Uint8Array(12))].map(n => n.toString(16).padStart(2, '0')).join('');
+  return [
+    `From: TJ Murphy <${from}>`, `To: ${to}`, ...(replyTo ? [`Reply-To: ${replyTo}`] : []),
+    `Subject: ${mimeHeader(subject)}`, ...(date ? [`Date: ${date}`] : []), ...(messageId ? [`Message-ID: ${messageId}`] : []),
+    'MIME-Version: 1.0', `Content-Type: multipart/alternative; boundary="${boundary}"`, '',
+    `--${boundary}`, 'Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: base64', '', wrap76(utf8b64(text.replace(/\r?\n/g, '\r\n'))),
+    `--${boundary}`, 'Content-Type: text/html; charset="UTF-8"', 'Content-Transfer-Encoding: base64', '', wrap76(utf8b64(html.replace(/\r?\n/g, '\r\n'))),
+    `--${boundary}--`, '',
+  ].join('\r\n');
+}
+export function thanksMime(env, record, extra = {}) {
+  const {subject, text, html} = thanksEmail(record);
+  return noteMime({from: thanksSender(env), to: record.email, replyTo: THANKS_REPLY_TO, subject, text, html,
+    messageId: `<testimonial-thanks-${record.id}@tjm.art>`, ...extra});
 }
 async function sendThanksEmail(env, record) {
   const token = await sellerMailToken(env);
-  const {subject, body} = thanksEmail(record);
-  const mime = [
-    'From: TJ Murphy <tj@vermillionaurora.com>', `To: ${record.email}`, `Reply-To: ${THANKS_REPLY_TO}`,
-    `Subject: ${mimeHeader(subject)}`, `Message-ID: <testimonial-thanks-${record.id}@tjm.art>`,
-    'MIME-Version: 1.0', 'Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: base64', '',
-    utf8b64(body + '\n\nPrivacy: https://tjm.art/privacy/'), '',
-  ].join('\r\n');
   const r = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
     method: 'POST', signal: AbortSignal.timeout(20000),
     headers: {Authorization: `Bearer ${token}`, 'Content-Type': 'application/json'},
-    body: JSON.stringify({raw: utf8b64(mime).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')}),
+    body: JSON.stringify({raw: base64url(thanksMime(env, record))}),
   });
   const data = await r.json().catch(() => ({}));
   if (!r.ok || !data.id) throw Error(`Gmail ${r.status}`);
