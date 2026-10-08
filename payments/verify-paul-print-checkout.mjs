@@ -13,7 +13,7 @@ const books=Object.values(prints).filter(p=>p.productId.startsWith('book-art-'))
 assert.equal(new Set(books.map(p=>p.productId)).size,53);assert.equal(books.filter(p=>!p.frame).length,109);assert.equal(books.filter(p=>p.frame).length,327);assert.equal(books.length,436);
 assert.equal(new Set(tj.map(p=>p.productId)).size,18);assert.equal(tj.filter(p=>!p.frame).length,37);assert.equal(tj.filter(p=>p.frame).length,111);
 const expected=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&p.productId.startsWith('paul-murphy-')),catalog=await api('catalog');
-assert.equal(expected.filter(p=>!p.frame).length,115);assert.equal(expected.filter(p=>p.frame).length,345);assert.equal(new Set(expected.map(p=>p.productId)).size,39);assert(catalog.version.endsWith('-'+printVersion));
+assert.equal(expected.filter(p=>!p.frame).length,112);assert.equal(expected.filter(p=>p.frame).length,336);assert.equal(new Set(expected.map(p=>p.productId)).size,38);assert(catalog.version.endsWith('-'+printVersion));
 for(const p of [...expected,...tj,...books]){
   const live=catalog.products.find(i=>i.id===p.id);assert(live,`Missing edition: ${p.id}`);assert.equal(live.amount,p.amount);assert.equal(live.status,'available');assert(live.methods.includes('square')&&!live.methods.includes('paypal'));assert(!live.sampleOnly);
 }

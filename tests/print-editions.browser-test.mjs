@@ -7,7 +7,7 @@ import {collections} from '../catalog/catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 const origin='https://vermillionaurora.com',root=path.resolve('dist');
 const editions=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.productId.startsWith('book-art-'));
-const ids=[...new Set(editions.map(p=>p.productId))];assert.equal(ids.length,57);assert.equal(editions.filter(p=>!p.frame).length,152);assert.equal(editions.filter(p=>p.frame).length,456);
+const ids=[...new Set(editions.map(p=>p.productId))];assert.equal(ids.length,56);assert.equal(editions.filter(p=>!p.frame).length,149);assert.equal(editions.filter(p=>p.frame).length,447);
 const available=editions.map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['paypal','bitcoin']}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']});
 try {
@@ -74,5 +74,5 @@ try {
   }
   stale=true;await page.goto(origin+'/products/paul-murphy-painting-55/#print-options');
   assert(await page.locator('[data-print-dialog]').isVisible());assert(await page.locator('[data-print-add]').isDisabled());
-  assert.deepEqual(errors,[]);console.log('PASS: all 57 paintings, 152 print sizes and 456 framed variants, desktop/mobile dialogs and framed cart selections; providers mocked.');
+  assert.deepEqual(errors,[]);console.log('PASS: all 56 paintings, 149 print sizes and 447 framed variants, desktop/mobile dialogs and framed cart selections; providers mocked.');
 } finally {await browser.close();}
