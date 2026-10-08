@@ -60,6 +60,14 @@ test('submission is stored pending with stripped photos, notifies TJ, and is not
   assert.equal((await testimonialsApi(new Request(`https://tjm.art/testimonials/api/photo/${id}/0`),env)).status,404);
 });
 
+test('painting is optional free text; submissions without it are accepted',async()=>{
+  const env=setup();
+  const t=await (await submit(env,form({paintingSlug:null,painting:'Sunset over the Sound',city:''}))).json();
+  assert.equal(JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+t.id+'.json').value).paintingTitle,'Sunset over the Sound');
+  const r=await submit(env,form({paintingSlug:null,painting:null,city:''}));assert.equal(r.status,200);
+  const {id}=await r.json();const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);assert.equal(rec.paintingSlug,'');assert.equal(rec.paintingTitle,'');
+});
+
 test('validation, honeypot, consent, file type and rate limit',async()=>{
   const env=setup();
   assert.equal((await submit(env,form({consent:null}))).status,400);
@@ -136,4 +144,5 @@ test('thank-you email copy',async()=>{
   assert.equal(subject,'Thank you, and a print code for you');
   assert.match(body,/^Hi Jane,/);assert.match(body,/VA-ABCD-EFGH-JKLM/);assert.match(body,/https:\/\/tjm.art\/cart\//);assert.match(body,/#t-20261007-abcdefabcdef/);
   assert.match(body,/doesn’t apply to original paintings or commission deposits/);
+  assert.match(thanksEmail({id:'t-20261007-abcdefabcdef',name:'Sam',thanks:{code:'VA-ABCD-EFGH-JKLM'}}).body,/sharing what my painting means to you/);
 });
