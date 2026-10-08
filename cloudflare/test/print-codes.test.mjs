@@ -65,6 +65,8 @@ it('collector code prices prints at provider cost and is single use: claim at st
   const first=await quoteWith(code);
   expect(first.quote.items.every(i=>i.amount==='7.00'&&i.listAmount===prints[i.id].amount&&i.priceCode==='collector')).toBe(true);
   expect(first.quote.base).toBe('14.00');expect(first.quote.printCode.kind).toBe('collector');
+  // Only the last group is kept, for a masked bookkeeping reference; never the full code.
+  expect(first.quote.printCode.suffix).toBe(code.slice(-4));expect(JSON.stringify(first.quote).includes(code.replace(/-/g,''))).toBe(false);expect(JSON.stringify(first.quote).includes(code)).toBe(false);
   const second=await quoteWith(code);
   await first.order.start('paypal');
   expect((await second.order.start('paypal')).codeError).toBe('That discount code has already been used.');expect((await inspect(second.order)).status).toBe('quoted');

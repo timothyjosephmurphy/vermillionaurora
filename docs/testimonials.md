@@ -92,3 +92,17 @@ City text only, never an address: OpenStreetMap Nominatim (settlement search), f
 }
 ```
 Put those images in `static/testimonials/images/` as WebP, ideally ≤ 1600px wide.
+
+## Thank-you print codes in QuickBooks
+
+Orders paid with a single-use at-cost collector code (`VA-XXXX-XXXX-XXXX`) are marketing spend. The QuickBooks sync
+starts the internal **Memo** (PrivateNote) of the order's Sales Receipt (`VA-…`) and of its production-cost Purchases
+(`VP-…` print lab, `VL-…` labels) with:
+
+    At-cost testimonial print code — marketing (code VA-…-WXYZ).
+
+Only the last group of the code is shown (orders paid before this was added show the marker without it). Amounts,
+accounts, items and the customer-facing message are unchanged, and nothing has to be set up in QuickBooks (no Class,
+Tag or custom field). Find them with QuickBooks search or a report filtered on Memo containing "testimonial print code".
+The owner code is never marked. Records synced earlier were backfilled once by the hourly cron (Memo-only sparse
+update); its report is in the sales-records bucket under `quickbooks/<environment>/at-cost-marker/`.

@@ -142,3 +142,70 @@ test('production-cost sources: placed print orders and finished labels only; dep
   const [labels] = costSources({ ...base, jobs: [ready, { status: 'review' }] });
   assert.equal(labels.type, 'label'); assert.equal(labels.labels.length, 1); assert.equal(labels.labels[0].quoted, '20.00');
 });
+
+// ---------- At-cost (collector) print code marker ----------
+const collector = { kind: 'collector', hash: '0123456789ab', suffix: 'V6DE' };
+const printOnly = over => receipt({ items: [{ id: 'print-x-small', type: 'print', title: 'Emergence — Small print', amount: '7.00', listAmount: '35.00', priceCode: 'collector', quantity: 2 }],
+  shipping: '7.95', tax: '1.98', gross: '23.93', printCode: collector, ...over });
+test('at-cost collector code: Memo marker with masked code, amounts and lines unchanged; owner code never marked', async () => {
+  const { AT_COST_MARKER, purchasePayload, withAtCostMarker } = await import('./quickbooks-core.mjs');
+  assert.equal(AT_COST_MARKER, 'At-cost testimonial print code — marketing');
+  const marked = salesReceiptPayload(printOnly(), refs), plain = salesReceiptPayload(printOnly({ printCode: { kind: 'owner', hash: 'abcdef123456' } }), refs);
+  assert.equal(marked.PrivateNote, 'At-cost testimonial print code — marketing (code VA-…-V6DE). Vermillion Aurora order cart:3f2a9c1e-1111-4222-8333-444455556666; Square payment SQUAREPAYMENTID1234567890');
+  assert.equal(plain.PrivateNote, 'Vermillion Aurora order cart:3f2a9c1e-1111-4222-8333-444455556666; Square payment SQUAREPAYMENTID1234567890', 'owner-code orders are not marked');
+  const { PrivateNote: _a, Line: linesA, ...restA } = marked, { PrivateNote: _b, Line: linesB, ...restB } = plain;
+  assert.deepEqual(restA, restB, 'only the Memo differs');
+  assert.deepEqual(linesA.map(l => [l.Amount, l.SalesItemLineDetail.ItemRef.value]), linesB.map(l => [l.Amount, l.SalesItemLineDetail.ItemRef.value]));
+  assert.equal(marked.CustomerMemo, undefined, 'customer-facing message untouched');
+  assert.equal(salesReceiptPayload(printOnly({ printCode: undefined }), refs).PrivateNote.includes(AT_COST_MARKER), false);
+  // Older sales (no stored suffix) and anything that is not a clean code group get the marker without a code reference.
+  assert.equal(salesReceiptPayload(printOnly({ printCode: { kind: 'collector', hash: 'x' } }), refs).PrivateNote.startsWith('At-cost testimonial print code — marketing. Vermillion'), true);
+  assert.equal(salesReceiptPayload(printOnly({ printCode: { kind: 'collector', suffix: 'VA-ABCD-EFGH-JKLM' } }), refs).PrivateNote.includes('ABCD'), false);
+  assert.equal(withAtCostMarker(marked.PrivateNote, collector), marked.PrivateNote, 'idempotent');
+  // Matching production-cost Purchase.
+  const cost = { kind: 'cost', type: 'print', vendor: 'finerworks', orderId: 'cart:3f2a9c1e-1111-4222-8333-444455556666', saleDocNumber: 'VA-3f2a9c1e1111422283' };
+  const resolved = { placedAt: '2026-10-08T03:20:00Z', totalCents: 1795, amountSource: 'actual', memo: 'Production cost for Vermillion Aurora order VA-3f2a9c1e1111422283 (cart:3f2a9c1e-1111-4222-8333-444455556666); FinerWorks order 1', lines: [{ account: 'cogsPrints', cents: 1400, description: 'Print production' }, { account: 'cogsShipping', cents: 395, description: 'Print-lab shipping' }] };
+  const prefs = { cardAccountId: '9', vendorId: '12', accounts: { cogsPrints: '20', cogsShipping: '21' } };
+  const p1 = purchasePayload(cost, resolved, prefs, collector), p0 = purchasePayload(cost, resolved, prefs);
+  assert.equal(p1.PrivateNote, `At-cost testimonial print code — marketing (code VA-…-V6DE). ${resolved.memo}`);
+  assert.equal(p0.PrivateNote, resolved.memo);
+  const { PrivateNote: _c, ...r1 } = p1, { PrivateNote: _d, ...r0 } = p0;
+  assert.deepEqual(r1, r0, 'Purchase amounts, accounts and lines unchanged');
+});
+test('backfill sparse-updates only PrivateNote, skips marked records and never touches another order', async () => {
+  const { markAtCostRecords } = await import('./quickbooks-markers.mjs');
+  const orderId = 'cart:3f2a9c1e-1111-4222-8333-444455556666';
+  const store = {
+    'salesreceipt/101': { Id: '101', SyncToken: '0', TotalAmt: 23.93, PrivateNote: `Vermillion Aurora order ${orderId}; Square payment X` },
+    'purchase/202': { Id: '202', SyncToken: '3', TotalAmt: 17.95, PrivateNote: `Production cost for Vermillion Aurora order VA-3f2a9c1e1111422283 (${orderId}); FinerWorks order 1` },
+    'salesreceipt/103': { Id: '103', SyncToken: '1', TotalAmt: 5, PrivateNote: 'At-cost testimonial print code — marketing. Vermillion Aurora order cart:other' },
+    'salesreceipt/104': { Id: '104', SyncToken: '1', TotalAmt: 5, PrivateNote: 'Typed by hand' }
+  };
+  const updates = [];
+  const client = { read: async path => store[path] ? { ...store[path] } : null,
+    update: async (entity, payload) => { updates.push([entity, payload]); const key = `${entity.toLowerCase()}/${payload.Id}`; store[key] = { ...store[key], ...payload, SyncToken: String(Number(payload.SyncToken) + 1) }; return store[key]; } };
+  const result = await markAtCostRecords(client, {
+    sales: [{ orderId, qboId: '101', docNumber: 'VA-3f2a9c1e1111422283', printCode: { kind: 'collector' } }, { orderId: 'cart:other', qboId: '103', docNumber: 'VA-other' }, { orderId: 'cart:third', qboId: '104', docNumber: 'VA-third' }],
+    costs: [{ orderId, qboId: '202', docNumber: 'VP-3f2a9c1e1111422283', printCode: { kind: 'collector' } }] });
+  assert.deepEqual(result.marked, ['SalesReceipt VA-3f2a9c1e1111422283', 'Purchase VP-3f2a9c1e1111422283']);
+  assert.deepEqual(result.already, ['SalesReceipt VA-other']);
+  assert.match(result.errors[0], /VA-third: memo does not name this order/);
+  assert.deepEqual(updates.map(([e, p]) => [e, Object.keys(p).sort()]), [['SalesReceipt', ['Id', 'PrivateNote', 'SyncToken', 'sparse']], ['Purchase', ['Id', 'PrivateNote', 'SyncToken', 'sparse']]]);
+  assert.equal(updates[1][1].SyncToken, '3'); assert.equal(updates[0][1].sparse, true);
+  assert.equal(store['salesreceipt/101'].PrivateNote, `At-cost testimonial print code — marketing. Vermillion Aurora order ${orderId}; Square payment X`);
+  // Running again changes nothing.
+  updates.length = 0;
+  const again = await markAtCostRecords(client, { sales: [{ orderId, qboId: '101', docNumber: 'VA-1', printCode: { kind: 'collector' } }], costs: [{ orderId, qboId: '202', docNumber: 'VP-1', printCode: { kind: 'collector' } }] });
+  assert.equal(updates.length, 0); assert.equal(again.already.length, 2);
+  // A changed total is reported, not hidden.
+  const bad = { read: async () => ({ Id: '9', SyncToken: '0', TotalAmt: 10, PrivateNote: `x ${orderId}` }), update: async (e, p) => ({ ...p, TotalAmt: 11 }) };
+  assert.match((await markAtCostRecords(bad, { sales: [{ orderId, qboId: '9', docNumber: 'VA-9', printCode: { kind: 'collector' } }] })).errors[0], /total changed/);
+});
+test('accounting client sparse update posts to the entity with operation=update', async () => {
+  const seen = [];
+  const client = accountingClient(env, { realmId: '9130354', accessToken: () => 'TOKEN', log: () => {}, fetcher: async (url, init) => { seen.push([url, init]); return response(200, { Purchase: { Id: '5', SyncToken: '2' } }, 'tid'); } });
+  assert.equal((await client.update('Purchase', { Id: '5', SyncToken: '1', sparse: true, PrivateNote: 'n' })).SyncToken, '2');
+  const u = new URL(seen[0][0]);
+  assert.equal(u.pathname, '/v3/company/9130354/purchase'); assert.equal(u.searchParams.get('operation'), 'update'); assert.equal(seen[0][1].method, 'POST');
+  assert.deepEqual(JSON.parse(seen[0][1].body), { Id: '5', SyncToken: '1', sparse: true, PrivateNote: 'n' });
+});

@@ -7,6 +7,7 @@ import {
   costSyncEnabled, vendorName, VENDOR_DEFAULTS, costDocNumber, costId, validateCost, purchasePayload
 } from './quickbooks-core.mjs';
 import { resolveCost, CostPending } from './quickbooks-costs.mjs';
+import { markAtCostRecords } from './quickbooks-markers.mjs';
 
 const OWNER = 'tj@vermillionaurora.com';
 const STATE_TTL = 10 * 60 * 1000;
@@ -28,6 +29,11 @@ export async function queueQuickbooksCost(env, cost) {
   return quickbooksFor(env).enqueueCost(cost);
 }
 const COST_PENDING_RETRY = 3600e3;
+// Hourly cron: one-time backfill of the at-cost code marker on already-synced records (no-op once done).
+export async function markAtCostOrders(env) {
+  if (!syncEnabled(env) || !env.QUICKBOOKS) return { skipped: 'disabled' };
+  return quickbooksFor(env).markAtCostOrders();
+}
 
 // One instance per QuickBooks environment: the connection (encrypted tokens), the sales queue and the API log.
 export class QuickbooksSync extends DurableObject {
@@ -284,7 +290,9 @@ export class QuickbooksSync extends DurableObject {
       const match = existing.find(r => String(r.PrivateNote || '').includes(cost.orderId));
       if (match) return String(match.Id);
       const refs = await this.costReferences(client, current.realmId, cost, resolved);
-      const payload = purchasePayload(cost, resolved, refs);
+      // Same at-cost code marker as the sale's Sales Receipt (the code lives on the queued sale).
+      const saleRow = this.ctx.storage.sql.exec('SELECT receipt FROM queue WHERE order_id=?', cost.orderId).toArray()[0];
+      const payload = purchasePayload(cost, resolved, refs, saleRow ? JSON.parse(saleRow.receipt).printCode || null : null);
       const requestId = (await sha256Hex(`va-qbo-cost:${environment(this.env)}:${current.realmId}:${cost.orderId}:${cost.type}`)).slice(0, 36);
       let created;
       try { created = await client.create('Purchase', payload, requestId); }
@@ -329,6 +337,26 @@ export class QuickbooksSync extends DurableObject {
     const vendorId = await this.vendorRef(client, refs, cost.vendor);
     this.set('refs', refs);
     return { accounts, cardAccountId, vendorId };
+  }
+  // Marks Sales Receipts (and their production-cost Purchases) synced before the at-cost marker existed. Runs until it
+  // completes without errors, then remembers that; writes a report to the private accounting bucket each time it acts.
+  async markAtCostOrders({ force = false } = {}) {
+    if (!this.get('connection')) return { skipped: 'not connected' };
+    const done = this.get('atCostBackfill');
+    if (done && !force) return { skipped: 'done', ...done };
+    const rows = this.ctx.storage.sql.exec("SELECT order_id, qbo_id, doc_number, receipt FROM queue WHERE status='synced' AND json_extract(receipt,'$.printCode.kind')='collector'").toArray();
+    const sales = rows.map(r => ({ orderId: r.order_id, qboId: r.qbo_id, docNumber: r.doc_number, printCode: JSON.parse(r.receipt).printCode }));
+    const byOrder = new Map(sales.map(s => [s.orderId, s.printCode]));
+    const costs = this.ctx.storage.sql.exec("SELECT order_id, qbo_id, doc_number FROM costs WHERE status='synced'").toArray()
+      .filter(c => byOrder.has(c.order_id)).map(c => ({ orderId: c.order_id, qboId: c.qbo_id, docNumber: c.doc_number, printCode: byOrder.get(c.order_id) }));
+    const result = sales.length ? await this.withClient('at-cost marker', client => markAtCostRecords(client, { sales, costs })) : { marked: [], already: [], errors: [] };
+    const summary = { at: new Date().toISOString(), salesChecked: sales.length, purchasesChecked: costs.length, marked: result.marked, already: result.already, errors: result.errors };
+    this.log({ level: result.errors.length ? 'error' : 'info', op: 'at-cost marker backfill',
+      message: `${sales.length} sale(s) and ${costs.length} purchase(s) paid with an at-cost code; marked ${result.marked.length}, already marked ${result.already.length}, errors ${result.errors.length}${result.errors.length ? `: ${result.errors.join('; ')}` : ''}` });
+    if (!result.errors.length) this.set('atCostBackfill', { at: summary.at, salesChecked: sales.length, purchasesChecked: costs.length, marked: result.marked.length });
+    if (this.env.SALES_ARCHIVE) await this.env.SALES_ARCHIVE.put(`quickbooks/${environment(this.env)}/at-cost-marker/${summary.at.replace(/[:.]/g, '-')}-checked-${sales.length + costs.length}-marked-${result.marked.length}-errors-${result.errors.length}.json`,
+      JSON.stringify(summary, null, 2), { httpMetadata: { contentType: 'application/json' } }).catch(() => {});
+    return summary;
   }
   costRows(limit = 200) {
     return this.ctx.storage.sql.exec('SELECT cost_id, order_id, type, status, attempts, next_at, qbo_id, doc_number, amount, amount_source, last_error, last_tid, created_at, updated_at FROM costs ORDER BY created_at DESC LIMIT ?', Math.min(limit | 0, 1000)).toArray();
