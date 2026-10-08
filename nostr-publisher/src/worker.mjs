@@ -5,6 +5,9 @@ import { posts, testPost } from './posts.mjs';
 import { pendingPosts, eventContent, scheduledSeconds } from './scheduler-core.mjs';
 
 const PUBLISHER_NAME = 'Vermillion Aurora';
+// Website origins allowed to read the public blog feed (tjm.art is primary; the legacy domain 301s to it).
+export const SITE_ORIGINS = ['https://tjm.art', 'https://vermillionaurora.com'];
+export const corsOrigin = (origin) => (SITE_ORIGINS.includes(origin) ? origin : SITE_ORIGINS[0]);
 
 function secretKey(value) {
   const raw = String(value || '').trim();
@@ -39,7 +42,8 @@ export class NostrSchedule {
       entries.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
       return Response.json({ posts: entries }, { headers: {
         'cache-control': 'no-store',
-        'access-control-allow-origin': 'https://vermillionaurora.com'
+        'access-control-allow-origin': SITE_ORIGINS[0],
+        vary: 'Origin'
       } });
     }
     if (pathname === '/status' && request.method === 'GET') {
@@ -145,7 +149,13 @@ export default {
     const pathname = new URL(request.url).pathname;
     if ((pathname === '/status' || pathname === '/blog') && request.method === 'GET') {
       const id = env.NOSTR_SCHEDULE.idFromName('vermillion-aurora');
-      return env.NOSTR_SCHEDULE.get(id).fetch(`https://nostr-scheduler.internal${pathname}`);
+      const response = await env.NOSTR_SCHEDULE.get(id).fetch(`https://nostr-scheduler.internal${pathname}`);
+      if (pathname !== '/blog') return response;
+      // Answer CORS with the caller's site origin when it is one of ours.
+      const headers = new Headers(response.headers);
+      headers.set('access-control-allow-origin', corsOrigin(request.headers.get('Origin')));
+      headers.set('vary', 'Origin');
+      return new Response(response.body, { status: response.status, headers });
     }
     return new Response('Nostr publisher is schedule-only.', { status: 404 });
   },

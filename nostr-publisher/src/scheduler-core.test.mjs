@@ -33,7 +33,7 @@ test('single test is independent of campaign dates and stops after its receipt',
 
 test('campaign event content includes its product link and image after the story', () => {
   const content = eventContent(posts[0]);
-  assert.ok(content.includes('https://vermillionaurora.com/products/warszawska-syrenka/'));
+  assert.ok(content.includes('https://tjm.art/products/warszawska-syrenka/'));
   assert.ok(content.endsWith(posts[0].imageUrl));
 });
 
