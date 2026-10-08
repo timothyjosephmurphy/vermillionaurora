@@ -172,13 +172,18 @@ try{
   assert(await m.locator('[data-video-record]').isVisible());
   assert.equal(await m.locator('[data-video-choose-label]').textContent(),'Choose from my videos');
   assert.equal(await m.locator('[data-video-capture]').getAttribute('capture'),'user');
+  // The buttons must still open the (hidden) file inputs: record opens the capture="user" input, choose opens the library input.
+  assert.deepEqual(await m.evaluate(()=>new Promise(resolve=>{const clicks=[];
+    for(const n of document.querySelectorAll('[data-video-capture],[data-video-input]'))n.addEventListener('click',e=>{clicks.push(e.currentTarget.dataset.videoCapture!==undefined?'capture':'library');e.preventDefault();});
+    document.querySelector('[data-video-record]').click();document.querySelector('[data-video-choose]').click();
+    setTimeout(()=>resolve(clicks),0);})),['capture','library']);
   await unstick(m);
   if(shots)await m.locator('.share-form-wrap').screenshot({path:path.join(shots,'form-mobile.png')});
   await m.locator('[data-video-capture]').setInputFiles({name:'IMG_0042.webm',mimeType:'video/webm',buffer:video});
   await m.locator('[data-video-consent]').waitFor();
   assert(await m.locator('[data-video-record]').isHidden());
   if(shots)await m.locator('.share-form-wrap').screenshot({path:path.join(shots,'form-mobile-video-selected.png')});
-  assert(await m.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal overflow on phones');
+  assert.equal(await m.evaluate(()=>document.documentElement.scrollWidth),375,'no horizontal overflow at 375px: document width must equal the viewport');
   assert.deepEqual(errors,[]);
   console.log('Video testimonial browser test passed');
 }finally{await browser.close();}

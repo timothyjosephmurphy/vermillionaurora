@@ -145,7 +145,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .testimonial-form .field-row{align-items:start}
     .testimonials-lede{font:500 1.35rem/1.55 "Cormorant Garamond",serif;color:var(--ink)}
     .testimonials-jump .button{margin:6px 8px 0 0}
-    .visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
     .testimonials-wall{margin:36px 0 12px}
     .testimonial-list{list-style:none;padding:0;margin:0;columns:3 280px;column-gap:24px}
     .testimonial{break-inside:avoid;background:#fffcf6;border:1px solid var(--line,#d7ccba);border-radius:14px;padding:18px;margin:0 0 24px;scroll-margin-top:120px}
@@ -182,7 +182,9 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .photo-previews img,.photo-previews .no-preview{width:92px;height:92px;object-fit:cover;border-radius:10px;display:grid;place-items:center;background:#e8dfd3;font-size:.7rem;text-align:center;color:var(--muted)}
     .photo-previews button{position:absolute;top:4px;right:4px;width:30px;height:30px;border-radius:50%;border:0;background:rgba(29,26,23,.78);color:#fff;font-size:1.1rem;line-height:1;cursor:pointer}
     .photo-previews button:focus-visible{outline:3px solid var(--cta);outline-offset:2px}
-    .video-field{border:0;padding:0;margin:0;display:grid;gap:.5rem;justify-items:start;min-width:0}
+    .video-field{position:relative;border:0;padding:0;margin:0;display:grid;gap:.5rem;justify-items:start;min-width:0}
+    /* Hidden video file inputs: beat .contact-form input{width:100%;padding} so they stay 1px, clipped inside the field (was 44px of sideways scroll at 375px). */
+    .testimonial-form input.visually-hidden{top:0;left:0;width:1px;height:1px;min-width:0;padding:0;border:0}
     .video-field legend{padding:0;margin-bottom:.5rem;color:#3f3832;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
     .video-buttons{display:flex;flex-wrap:wrap;gap:10px}
     .video-selected{display:flex;gap:14px;align-items:center;flex-wrap:wrap;width:100%}
