@@ -12,5 +12,12 @@
     "size": 13860615,
     "sha256": "7a78e4befcfd8f62f3fb0165bc7f36000aeb1135bf821eed2ca65e79be29eb10",
     "contentType": "video/mp4"
+  },
+  {
+    "file": "el-zonte-at-dawn-ig-1.91-048174be.jpg",
+    "key": "images/products/el-zonte/el-zonte-at-dawn-ig-1.91-048174be.jpg",
+    "size": 947519,
+    "sha256": "048174be173ba31da02cf656b6e6e8ba997610c9f755c4bdb926f496dbc323de",
+    "contentType": "image/jpeg"
   }
 ]

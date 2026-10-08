@@ -43,6 +43,8 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
         run: node scripts/remove-product-media-uploader.mjs
   quote-prints:
+    # Quotes are already applied (PR #375); later pushes only upload media.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     concurrency:
