@@ -71,7 +71,7 @@ test('dimensioned available paintings receive parcels from the flat-at-12-inch r
  const missing=originals.filter(p=>!p.dimensions);
  assert.deepEqual(missing.map(p=>p.id),['paul-murphy-painting-55']);
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,52);
+ assert.equal(ready.length,51); // 52 before paul-murphy-painting-82 was removed from the site
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
