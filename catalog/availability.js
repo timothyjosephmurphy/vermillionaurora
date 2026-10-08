@@ -4,7 +4,7 @@
  const ids=[...new Set(nodes.map(node=>node.dataset.productId))];
  if(!ids.length)return;
  const endpoint='https://vermillion-commissions.timothyjosephmurphy.workers.dev/inventory/status';
- const labels={available:'Available',inquiry:'Available by inquiry',reserved:'Temporarily reserved',sold:'Sold','not-for-sale':'Not for sale',retired:'Unavailable'};
+ const labels={available:'Available',inquiry:'Available by inquiry',reserved:'Temporarily reserved',sold:'Sold',unavailable:'Not currently available','not-for-sale':'Not for sale',retired:'Unavailable'};
  const availableTrack=document.querySelector('[data-available-paintings]');
  const collectorTrack=document.querySelector('[data-collector-paintings]');
  function moveHomepagePainting(node,value){
@@ -38,6 +38,7 @@
     node.querySelectorAll('[data-card-price]').forEach(el=>{el.textContent=value==='available'?el.dataset.price:label;});
     if(node.dataset.caption){node.dataset.caption=value==='available'?node.dataset.initialCaption:node.dataset.initialCaption.replace(/ · [^]*$/,' · '+label);}
     if(node.dataset.buy!==undefined){const buy=['available','inquiry'].includes(value)||!!node.dataset.printsFrom;node.dataset.buy=String(buy);node.querySelectorAll('[data-card-buy]').forEach(el=>{el.hidden=!buy;});}
+    node.querySelectorAll('[data-original-purchase]').forEach(el=>{el.hidden=!['available','inquiry'].includes(value);});
     moveHomepagePainting(node,value);
    }
    updateHomepageEmptyMessages();
