@@ -21,9 +21,9 @@ import { checkoutReadiness } from './checkout-readiness.mjs';
 export { PaintingStock } from './painting-stock.mjs';
 export { QuickbooksSync } from './quickbooks-sync.mjs';
 import { quickbooksApi } from './quickbooks-api.mjs';
-import { testimonialsApi, purgeTestimonialRateLimits } from './testimonials.mjs';
+import { testimonialsApi, purgeTestimonialRateLimits, purgeVideos as purgeTestimonialVideos } from './testimonials.mjs';
 export default {
-  async scheduled(event,env,ctx) { ctx.waitUntil(purgeCommissionReferences(env)); ctx.waitUntil(purgeTestimonialRateLimits(env).catch(()=>console.error('Testimonial rate-limit cleanup failed'))); },
+  async scheduled(event,env,ctx) { ctx.waitUntil(purgeCommissionReferences(env)); ctx.waitUntil(purgeTestimonialRateLimits(env).catch(()=>console.error('Testimonial rate-limit cleanup failed'))); ctx.waitUntil(purgeTestimonialVideos(env).catch(()=>console.error('Testimonial video cleanup failed'))); },
   async fetch(request, env, ctx) {
     const path = new URL(request.url).pathname;
     if (path.startsWith('/testimonials/api/')) return testimonialsApi(request,env,ctx);
