@@ -116,15 +116,21 @@ async function submit(request, env, ctx, now) {
     photos: photos.map(p => ({n: p.n, key: imageKey(id, p.n, p.type), type: p.type, bytes: p.bytes.byteLength, originalName: p.originalName, publishable: p.publishable, removed: p.removed})),
   };
   const written = [];
+  let stored;
   try {
     for (const p of photos) { const key = imageKey(id, p.n, p.type); await bucket.put(key, p.bytes, {httpMetadata: {contentType: p.type}}); written.push(key); }
-    await bucket.put(recordKey(id), JSON.stringify(record), {httpMetadata: {contentType: 'application/json'}});
+    stored = await bucket.put(recordKey(id), JSON.stringify(record), {httpMetadata: {contentType: 'application/json'}});
   } catch (error) {
     console.error('Testimonial storage failed');
     if (written.length) await bucket.delete(written).catch(() => {});
     return fail('Sorry, your testimonial could not be saved. Please try again.', 500);
   }
-  const notify = notifyOwner(env, record).catch(error => console.error('Testimonial notification failed', String(error?.message || '').slice(0, 120)));
+  // Record the notification outcome on the private record so the owner page can show it (skipped if TJ already acted).
+  const mark = extra => bucket.put(recordKey(id), JSON.stringify({...record, ...extra}), {onlyIf: {etagMatches: stored?.etag}, httpMetadata: {contentType: 'application/json'}}).catch(() => {});
+  const notify = notifyOwner(env, record).then(() => mark({notifiedAt: new Date().toISOString()}), error => {
+    console.error('Testimonial notification failed', String(error?.message || '').slice(0, 120));
+    return mark({notifyError: String(error?.message || 'failed').slice(0, 120)});
+  });
   if (ctx?.waitUntil) ctx.waitUntil(notify); else await notify;
   return done(request, true, {success: true, id}, 200);
 }

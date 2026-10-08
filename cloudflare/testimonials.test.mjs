@@ -54,6 +54,7 @@ test('submission is stored pending with stripped photos, notifies TJ, and is not
   const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);
   assert.equal(rec.status,'pending');assert.equal(rec.email,'jane@example.com');assert.deepEqual(rec.geo,{lat:47.25,lng:-122.44,label:'Tacoma, Pierce County, Washington, United States',source:'OpenStreetMap Nominatim'});
   const stored=env.COMMISSION_UPLOADS.data.get(rec.photos[0].key).value;assert.deepEqual(jpegExifTags(stored),[[0x0112]]);
+  assert.ok(JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value).notifiedAt);
   assert.equal(mails.length,1);const mail=atob(mails[0].raw.replace(/-/g,'+').replace(/_/g,'/'));assert.match(mail,/testimonial-manager/);assert.match(mail,/Reply-To: jane@example.com/);
   assert.deepEqual(await approved(env),[]);
   assert.equal((await testimonialsApi(new Request(`https://tjm.art/testimonials/api/photo/${id}/0`),env)).status,404);

@@ -57,7 +57,7 @@ function card(r){
   const pub=r.published||{};
   const a=el('article',{className:'tm-card',id:r.id});
   a.append(el('h2',{},`${r.name} `,el('span',{className:'tm-badge '+r.status,textContent:r.status==='approved'?'Published':'Pending'})));
-  a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,el('a',{href:`mailto:${r.email}`,textContent:r.email}),` (private) · ${r.id}`,r.thanks?.emailedAt?` · Thanked ${fmt(r.thanks.emailedAt)}`:r.thanks?.code?' · Code issued':''));
+  a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,el('a',{href:`mailto:${r.email}`,textContent:r.email}),` (private) · ${r.id}`,r.notifiedAt?' · Email alert sent':r.notifyError?` · Email alert failed (${r.notifyError})`:'',r.thanks?.emailedAt?` · Thanked ${fmt(r.thanks.emailedAt)}`:r.thanks?.code?' · Code issued':''));
   const name=el('input',{type:'text',value:pub.name||r.name,maxLength:80});
   const quote=el('textarea',{value:pub.quote||r.quote,maxLength:2000});
   const painting=el('input',{type:'text',value:pub.painting??r.paintingTitle??'',maxLength:200});
