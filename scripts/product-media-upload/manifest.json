@@ -1,0 +1,16 @@
+[
+  {
+    "file": "el-zonte-paintings-1080-568abb9e.mp4",
+    "key": "images/products/el-zonte/el-zonte-paintings-1080-568abb9e.mp4",
+    "size": 23646221,
+    "sha256": "568abb9e2e7d931b0b2409752e1e323ae69f2c7216afd9c29d13ec8b3f4d7d1b",
+    "contentType": "video/mp4"
+  },
+  {
+    "file": "el-zonte-paintings-720-7a78e4be.mp4",
+    "key": "images/products/el-zonte/el-zonte-paintings-720-7a78e4be.mp4",
+    "size": 13860615,
+    "sha256": "7a78e4befcfd8f62f3fb0165bc7f36000aeb1135bf821eed2ca65e79be29eb10",
+    "contentType": "video/mp4"
+  }
+]
