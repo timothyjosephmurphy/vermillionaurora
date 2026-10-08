@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="022c1997b1f7920736e4";
+export const printVersion="5e66f2765b92a8a53071";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -10406,8 +10406,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Large print",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Large print",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S12.25X9.27",
@@ -10431,8 +10431,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -10444,8 +10444,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Large print — Black frame",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Large print — Black frame",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "102.00",
     "currency": "USD",
     "sku": "5M144M8S12DD25X9DD27F1S15DD25X12DD27J1S12DD25X9DD27G1",
@@ -10469,8 +10469,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -10518,8 +10518,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Large print — White frame",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Large print — White frame",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "102.00",
     "currency": "USD",
     "sku": "5M144M8S12DD25X9DD27F2S15DD25X12DD27J1S12DD25X9DD27G1",
@@ -10543,8 +10543,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -10592,8 +10592,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Large print — Natural wood frame",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Large print — Natural wood frame",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "114.00",
     "currency": "USD",
     "sku": "5M144M8S12DD25X9DD27F7S15DD25X12DD27J1S12DD25X9DD27G1",
@@ -10617,8 +10617,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -10666,8 +10666,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Medium print",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Medium print",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S9.25X7.01",
@@ -10691,8 +10691,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -10704,8 +10704,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Medium print — Black frame",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Medium print — Black frame",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "70.00",
     "currency": "USD",
     "sku": "5M144M8S9DD25X7DD01F1S12DD25X10DD01J1S9DD25X7DD01G1",
@@ -10729,8 +10729,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -10778,8 +10778,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Medium print — White frame",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Medium print — White frame",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "70.00",
     "currency": "USD",
     "sku": "5M144M8S9DD25X7DD01F2S12DD25X10DD01J1S9DD25X7DD01G1",
@@ -10803,8 +10803,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -10852,8 +10852,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Medium print — Natural wood frame",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Medium print — Natural wood frame",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "79.00",
     "currency": "USD",
     "sku": "5M144M8S9DD25X7DD01F7S12DD25X10DD01J1S9DD25X7DD01G1",
@@ -10877,8 +10877,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -10926,8 +10926,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Small print",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Small print",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.25X4.76",
@@ -10951,8 +10951,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -10964,8 +10964,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Small print — Black frame",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Small print — Black frame",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD25X4DD76F1S9DD49X8J1S6DD25X4DD76G1",
@@ -10989,8 +10989,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11038,8 +11038,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Small print — White frame",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Small print — White frame",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD25X4DD76F2S9DD49X8J1S6DD25X4DD76G1",
@@ -11063,8 +11063,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11112,8 +11112,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-14",
-    "title": "Eagle from photo 1 — Small print — Natural wood frame",
-    "artworkTitle": "Eagle from photo 1",
+    "title": "Eagle from Photo 1 — Small print — Natural wood frame",
+    "artworkTitle": "Eagle from Photo 1",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S6DD25X4DD76F7S9DD49X8J1S6DD25X4DD76G1",
@@ -11137,8 +11137,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7422.jpeg",
-      "alt": "Eagle from photo 1 by Paul Murphy",
-      "caption": "Eagle from photo 1 by Paul Murphy"
+      "alt": "Eagle from Photo 1 by Paul Murphy",
+      "caption": "Eagle from Photo 1 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11186,8 +11186,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Large print",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Large print",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S8.98X12.25",
@@ -11211,8 +11211,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11224,8 +11224,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Large print — Black frame",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Large print — Black frame",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "101.00",
     "currency": "USD",
     "sku": "5M144M8S8DD98X12DD25F1S11DD98X15DD25J1S8DD98X12DD25G1",
@@ -11249,8 +11249,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11298,8 +11298,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Large print — White frame",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Large print — White frame",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "101.00",
     "currency": "USD",
     "sku": "5M144M8S8DD98X12DD25F2S11DD98X15DD25J1S8DD98X12DD25G1",
@@ -11323,8 +11323,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11372,8 +11372,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Large print — Natural wood frame",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Large print — Natural wood frame",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "113.00",
     "currency": "USD",
     "sku": "5M144M8S8DD98X12DD25F7S11DD98X15DD25J1S8DD98X12DD25G1",
@@ -11397,8 +11397,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11446,8 +11446,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Medium print",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Medium print",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S6.79X9.25",
@@ -11471,8 +11471,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11484,8 +11484,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Medium print — Black frame",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Medium print — Black frame",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "69.00",
     "currency": "USD",
     "sku": "5M144M8S6DD79X9DD25F1S9DD79X12DD25J1S6DD79X9DD25G1",
@@ -11509,8 +11509,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11558,8 +11558,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Medium print — White frame",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Medium print — White frame",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "69.00",
     "currency": "USD",
     "sku": "5M144M8S6DD79X9DD25F2S9DD79X12DD25J1S6DD79X9DD25G1",
@@ -11583,8 +11583,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11632,8 +11632,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Medium print — Natural wood frame",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Medium print — Natural wood frame",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "79.00",
     "currency": "USD",
     "sku": "5M144M8S6DD79X9DD25F7S9DD79X12DD25J1S6DD79X9DD25G1",
@@ -11657,8 +11657,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11706,8 +11706,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Small print",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Small print",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S4.61X6.25",
@@ -11731,8 +11731,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11744,8 +11744,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Small print — Black frame",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Small print — Black frame",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S4DD61X6DD25F1S8DD01X9DD65J1S4DD61X6DD25G1",
@@ -11769,8 +11769,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11818,8 +11818,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Small print — White frame",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Small print — White frame",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S4DD61X6DD25F2S8DD01X9DD65J1S4DD61X6DD25G1",
@@ -11843,8 +11843,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11892,8 +11892,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-15",
-    "title": "Eagle from photo 2 — Small print — Natural wood frame",
-    "artworkTitle": "Eagle from photo 2",
+    "title": "Eagle from Photo 2 — Small print — Natural wood frame",
+    "artworkTitle": "Eagle from Photo 2",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S4DD61X6DD25F7S8DD01X9DD65J1S4DD61X6DD25G1",
@@ -11917,8 +11917,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7423.jpeg",
-      "alt": "Eagle from photo 2 by Paul Murphy",
-      "caption": "Eagle from photo 2 by Paul Murphy"
+      "alt": "Eagle from Photo 2 by Paul Murphy",
+      "caption": "Eagle from Photo 2 by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -11966,8 +11966,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Large print",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Large print",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "95.00",
     "currency": "USD",
     "sku": "5M144M8S13.28X17.09",
@@ -11991,8 +11991,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12004,8 +12004,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Large print — Black frame",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Large print — Black frame",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "172.00",
     "currency": "USD",
     "sku": "5M144M8S13DD28X17DD09F1S16DD28X20DD09J1S13DD28X17DD09G1",
@@ -12029,8 +12029,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12078,8 +12078,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Large print — White frame",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Large print — White frame",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "172.00",
     "currency": "USD",
     "sku": "5M144M8S13DD28X17DD09F2S16DD28X20DD09J1S13DD28X17DD09G1",
@@ -12103,8 +12103,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12152,8 +12152,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Large print — Natural wood frame",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Large print — Natural wood frame",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "187.00",
     "currency": "USD",
     "sku": "5M144M8S13DD28X17DD09F7S16DD28X20DD09J1S13DD28X17DD09G1",
@@ -12177,8 +12177,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12226,8 +12226,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Medium print",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Medium print",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "55.00",
     "currency": "USD",
     "sku": "5M144M8S10.02X12.88",
@@ -12251,8 +12251,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12264,8 +12264,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Medium print — Black frame",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Medium print — Black frame",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "110.00",
     "currency": "USD",
     "sku": "5M144M8S10DD02X12DD88F1S13DD02X15DD88J1S10DD02X12DD88G1",
@@ -12289,8 +12289,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12338,8 +12338,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Medium print — White frame",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Medium print — White frame",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "110.00",
     "currency": "USD",
     "sku": "5M144M8S10DD02X12DD88F2S13DD02X15DD88J1S10DD02X12DD88G1",
@@ -12363,8 +12363,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12412,8 +12412,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Medium print — Natural wood frame",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Medium print — Natural wood frame",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "123.00",
     "currency": "USD",
     "sku": "5M144M8S10DD02X12DD88F7S13DD02X15DD88J1S10DD02X12DD88G1",
@@ -12437,8 +12437,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12486,8 +12486,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Small print",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Small print",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S6.76X8.67",
@@ -12511,8 +12511,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12524,8 +12524,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Small print — Black frame",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Small print — Black frame",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "69.00",
     "currency": "USD",
     "sku": "5M144M8S6DD76X8DD67F1S9DD76X11DD67J1S6DD76X8DD67G1",
@@ -12549,8 +12549,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12598,8 +12598,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Small print — White frame",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Small print — White frame",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "69.00",
     "currency": "USD",
     "sku": "5M144M8S6DD76X8DD67F2S9DD76X11DD67J1S6DD76X8DD67G1",
@@ -12623,8 +12623,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -12672,8 +12672,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-2",
-    "title": "Leo/Bear Constilation — Small print — Natural wood frame",
-    "artworkTitle": "Leo/Bear Constilation",
+    "title": "Leo/Bear Constellation — Small print — Natural wood frame",
+    "artworkTitle": "Leo/Bear Constellation",
     "amount": "78.00",
     "currency": "USD",
     "sku": "5M144M8S6DD76X8DD67F7S9DD76X11DD67J1S6DD76X8DD67G1",
@@ -12697,8 +12697,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7410.jpeg",
-      "alt": "Leo/Bear Constilation by Paul Murphy",
-      "caption": "Leo/Bear Constilation by Paul Murphy"
+      "alt": "Leo/Bear Constellation by Paul Murphy",
+      "caption": "Leo/Bear Constellation by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -13526,8 +13526,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Large print",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Large print",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "65.00",
     "currency": "USD",
     "sku": "5M144M8S9.21X17",
@@ -13551,8 +13551,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -13564,8 +13564,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Large print — Black frame",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Large print — Black frame",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "127.00",
     "currency": "USD",
     "sku": "5M144M8S9DD21X17F1S12DD21X20J1S9DD21X17G1",
@@ -13589,8 +13589,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -13638,8 +13638,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Large print — White frame",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Large print — White frame",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "127.00",
     "currency": "USD",
     "sku": "5M144M8S9DD21X17F2S12DD21X20J1S9DD21X17G1",
@@ -13663,8 +13663,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -13712,8 +13712,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Large print — Natural wood frame",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Large print — Natural wood frame",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "141.00",
     "currency": "USD",
     "sku": "5M144M8S9DD21X17F7S12DD21X20J1S9DD21X17G1",
@@ -13737,8 +13737,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -13786,8 +13786,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Medium print",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Medium print",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S6.97X12.81",
@@ -13811,8 +13811,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -13824,8 +13824,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Medium print — Black frame",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Medium print — Black frame",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S6DD97X12DD81F1S9DD97X15DD81J1S6DD97X12DD81G1",
@@ -13849,8 +13849,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -13898,8 +13898,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Medium print — White frame",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Medium print — White frame",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S6DD97X12DD81F2S9DD97X15DD81J1S6DD97X12DD81G1",
@@ -13923,8 +13923,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -13972,8 +13972,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Medium print — Natural wood frame",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Medium print — Natural wood frame",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S6DD97X12DD81F7S9DD97X15DD81J1S6DD97X12DD81G1",
@@ -13997,8 +13997,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -14046,8 +14046,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Small print",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Small print",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S4.73X8.62",
@@ -14071,8 +14071,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -14084,8 +14084,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Small print — Black frame",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Small print — Black frame",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S4DD73X8DD62F1S8DD01X11DD9J1S4DD73X8DD62G1",
@@ -14109,8 +14109,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -14158,8 +14158,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Small print — White frame",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Small print — White frame",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S4DD73X8DD62F2S8DD01X11DD9J1S4DD73X8DD62G1",
@@ -14183,8 +14183,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -14232,8 +14232,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-24",
-    "title": "Beach Egland AFB — Small print — Natural wood frame",
-    "artworkTitle": "Beach Egland AFB",
+    "title": "Beach Eglin AFB — Small print — Natural wood frame",
+    "artworkTitle": "Beach Eglin AFB",
     "amount": "75.63",
     "currency": "USD",
     "sku": "5M144M8S4DD73X8DD62F7S8DD01X11DD9J1S4DD73X8DD62G1",
@@ -14257,8 +14257,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7432.jpeg",
-      "alt": "Beach Egland AFB by Paul Murphy",
-      "caption": "Beach Egland AFB by Paul Murphy"
+      "alt": "Beach Eglin AFB by Paul Murphy",
+      "caption": "Beach Eglin AFB by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -25226,8 +25226,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-55",
-    "title": "Pyrimid from photo — Large print",
-    "artworkTitle": "Pyrimid from photo",
+    "title": "Pyramid from Photo — Large print",
+    "artworkTitle": "Pyramid from Photo",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S4.76X4.52",
@@ -25251,8 +25251,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
-      "alt": "Pyrimid from photo by Paul Murphy",
-      "caption": "Pyrimid from photo by Paul Murphy"
+      "alt": "Pyramid from Photo by Paul Murphy",
+      "caption": "Pyramid from Photo by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -25264,8 +25264,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-55",
-    "title": "Pyrimid from photo — Large print — Black frame",
-    "artworkTitle": "Pyrimid from photo",
+    "title": "Pyramid from Photo — Large print — Black frame",
+    "artworkTitle": "Pyramid from Photo",
     "amount": "58.63",
     "currency": "USD",
     "sku": "5M144M8S4DD76X4DD52F1S8DD26X8DD02J1S4DD76X4DD52G1",
@@ -25289,8 +25289,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
-      "alt": "Pyrimid from photo by Paul Murphy",
-      "caption": "Pyrimid from photo by Paul Murphy"
+      "alt": "Pyramid from Photo by Paul Murphy",
+      "caption": "Pyramid from Photo by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -25338,8 +25338,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-55",
-    "title": "Pyrimid from photo — Large print — White frame",
-    "artworkTitle": "Pyrimid from photo",
+    "title": "Pyramid from Photo — Large print — White frame",
+    "artworkTitle": "Pyramid from Photo",
     "amount": "58.63",
     "currency": "USD",
     "sku": "5M144M8S4DD76X4DD52F2S8DD26X8DD02J1S4DD76X4DD52G1",
@@ -25363,8 +25363,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
-      "alt": "Pyrimid from photo by Paul Murphy",
-      "caption": "Pyrimid from photo by Paul Murphy"
+      "alt": "Pyramid from Photo by Paul Murphy",
+      "caption": "Pyramid from Photo by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -25412,8 +25412,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-55",
-    "title": "Pyrimid from photo — Large print — Natural wood frame",
-    "artworkTitle": "Pyrimid from photo",
+    "title": "Pyramid from Photo — Large print — Natural wood frame",
+    "artworkTitle": "Pyramid from Photo",
     "amount": "65.63",
     "currency": "USD",
     "sku": "5M144M8S4DD76X4DD52F7S8DD26X8DD02J1S4DD76X4DD52G1",
@@ -25437,8 +25437,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7463.jpeg",
-      "alt": "Pyrimid from photo by Paul Murphy",
-      "caption": "Pyrimid from photo by Paul Murphy"
+      "alt": "Pyramid from Photo by Paul Murphy",
+      "caption": "Pyramid from Photo by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -27826,8 +27826,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Large print",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Large print",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S12.29X9.7",
@@ -27851,8 +27851,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -27864,8 +27864,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Large print — Black frame",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Large print — Black frame",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S12DD29X9DD7F1S15DD29X12DD7J1S12DD29X9DD7G1",
@@ -27889,8 +27889,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -27938,8 +27938,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Large print — White frame",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Large print — White frame",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S12DD29X9DD7F2S15DD29X12DD7J1S12DD29X9DD7G1",
@@ -27963,8 +27963,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -28012,8 +28012,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Large print — Natural wood frame",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Large print — Natural wood frame",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "115.00",
     "currency": "USD",
     "sku": "5M144M8S12DD29X9DD7F7S15DD29X12DD7J1S12DD29X9DD7G1",
@@ -28037,8 +28037,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -28086,8 +28086,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Medium print",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Medium print",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S9.28X7.34",
@@ -28111,8 +28111,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -28124,8 +28124,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Medium print — Black frame",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Medium print — Black frame",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "71.00",
     "currency": "USD",
     "sku": "5M144M8S9DD28X7DD34F1S12DD28X10DD34J1S9DD28X7DD34G1",
@@ -28149,8 +28149,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -28198,8 +28198,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Medium print — White frame",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Medium print — White frame",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "71.00",
     "currency": "USD",
     "sku": "5M144M8S9DD28X7DD34F2S12DD28X10DD34J1S9DD28X7DD34G1",
@@ -28223,8 +28223,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -28272,8 +28272,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Medium print — Natural wood frame",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Medium print — Natural wood frame",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "81.00",
     "currency": "USD",
     "sku": "5M144M8S9DD28X7DD34F7S12DD28X10DD34J1S9DD28X7DD34G1",
@@ -28297,8 +28297,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -28346,8 +28346,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Small print",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Small print",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.27X4.97",
@@ -28371,8 +28371,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -28384,8 +28384,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Small print — Black frame",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Small print — Black frame",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD27X4DD97F1S9DD31X8DD01J1S6DD27X4DD97G1",
@@ -28409,8 +28409,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -28458,8 +28458,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Small print — White frame",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Small print — White frame",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD27X4DD97F2S9DD31X8DD01J1S6DD27X4DD97G1",
@@ -28483,8 +28483,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -28532,8 +28532,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-62",
-    "title": "Waiting on your ship — Small print — Natural wood frame",
-    "artworkTitle": "Waiting on your ship",
+    "title": "Waiting on Your Ship — Small print — Natural wood frame",
+    "artworkTitle": "Waiting on Your Ship",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S6DD27X4DD97F7S9DD31X8DD01J1S6DD27X4DD97G1",
@@ -28557,8 +28557,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7471.jpeg",
-      "alt": "Waiting on your ship by Paul Murphy",
-      "caption": "Waiting on your ship by Paul Murphy"
+      "alt": "Waiting on Your Ship by Paul Murphy",
+      "caption": "Waiting on Your Ship by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -34846,8 +34846,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Large print",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Large print",
+    "artworkTitle": "Angie's Eyes",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S12.68X9.25",
@@ -34871,8 +34871,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -34884,8 +34884,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Large print — Black frame",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Large print — Black frame",
+    "artworkTitle": "Angie's Eyes",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S12DD68X9DD25F1S15DD68X12DD25J1S12DD68X9DD25G1",
@@ -34909,8 +34909,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -34958,8 +34958,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Large print — White frame",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Large print — White frame",
+    "artworkTitle": "Angie's Eyes",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S12DD68X9DD25F2S15DD68X12DD25J1S12DD68X9DD25G1",
@@ -34983,8 +34983,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -35032,8 +35032,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Large print — Natural wood frame",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Large print — Natural wood frame",
+    "artworkTitle": "Angie's Eyes",
     "amount": "115.00",
     "currency": "USD",
     "sku": "5M144M8S12DD68X9DD25F7S15DD68X12DD25J1S12DD68X9DD25G1",
@@ -35057,8 +35057,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -35106,8 +35106,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Medium print",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Medium print",
+    "artworkTitle": "Angie's Eyes",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S9.57X7",
@@ -35131,8 +35131,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -35144,8 +35144,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Medium print — Black frame",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Medium print — Black frame",
+    "artworkTitle": "Angie's Eyes",
     "amount": "76.00",
     "currency": "USD",
     "sku": "5M144M8S9DD57X7F1S12DD57X10J1S9DD57X7G1",
@@ -35169,8 +35169,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -35218,8 +35218,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Medium print — White frame",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Medium print — White frame",
+    "artworkTitle": "Angie's Eyes",
     "amount": "76.00",
     "currency": "USD",
     "sku": "5M144M8S9DD57X7F2S12DD57X10J1S9DD57X7G1",
@@ -35243,8 +35243,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -35292,8 +35292,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Medium print — Natural wood frame",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Medium print — Natural wood frame",
+    "artworkTitle": "Angie's Eyes",
     "amount": "86.00",
     "currency": "USD",
     "sku": "5M144M8S9DD57X7F7S12DD57X10J1S9DD57X7G1",
@@ -35317,8 +35317,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -35366,8 +35366,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Small print",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Small print",
+    "artworkTitle": "Angie's Eyes",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.46X4.75",
@@ -35391,8 +35391,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -35404,8 +35404,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Small print — Black frame",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Small print — Black frame",
+    "artworkTitle": "Angie's Eyes",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD46X4DD75F1S9DD72X8DD01J1S6DD46X4DD75G1",
@@ -35429,8 +35429,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -35478,8 +35478,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Small print — White frame",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Small print — White frame",
+    "artworkTitle": "Angie's Eyes",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S6DD46X4DD75F2S9DD72X8DD01J1S6DD46X4DD75G1",
@@ -35503,8 +35503,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -35552,8 +35552,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-82",
-    "title": "Angies' Eyes — Small print — Natural wood frame",
-    "artworkTitle": "Angies' Eyes",
+    "title": "Angie's Eyes — Small print — Natural wood frame",
+    "artworkTitle": "Angie's Eyes",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S6DD46X4DD75F7S9DD72X8DD01J1S6DD46X4DD75G1",
@@ -35577,8 +35577,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angies' Eyes by Paul Murphy",
-      "caption": "Angies' Eyes by Paul Murphy"
+      "alt": "Angie's Eyes by Paul Murphy",
+      "caption": "Angie's Eyes by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -37966,8 +37966,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Large print",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Large print",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S12.52X16.13",
@@ -37991,8 +37991,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38004,8 +38004,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Large print — Black frame",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Large print — Black frame",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "156.00",
     "currency": "USD",
     "sku": "5M144M8S12DD52X16DD13F1S15DD52X19DD13J1S12DD52X16DD13G1",
@@ -38029,8 +38029,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38078,8 +38078,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Large print — White frame",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Large print — White frame",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "156.00",
     "currency": "USD",
     "sku": "5M144M8S12DD52X16DD13F2S15DD52X19DD13J1S12DD52X16DD13G1",
@@ -38103,8 +38103,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38152,8 +38152,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Large print — Natural wood frame",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Large print — Natural wood frame",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "171.00",
     "currency": "USD",
     "sku": "5M144M8S12DD52X16DD13F7S15DD52X19DD13J1S12DD52X16DD13G1",
@@ -38177,8 +38177,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38226,8 +38226,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Medium print",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Medium print",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S9.45X12.16",
@@ -38251,8 +38251,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38264,8 +38264,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Medium print — Black frame",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Medium print — Black frame",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S9DD45X12DD16F1S12DD45X15DD16J1S9DD45X12DD16G1",
@@ -38289,8 +38289,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38338,8 +38338,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Medium print — White frame",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Medium print — White frame",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S9DD45X12DD16F2S12DD45X15DD16J1S9DD45X12DD16G1",
@@ -38363,8 +38363,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38412,8 +38412,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Medium print — Natural wood frame",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Medium print — Natural wood frame",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "115.00",
     "currency": "USD",
     "sku": "5M144M8S9DD45X12DD16F7S12DD45X15DD16J1S9DD45X12DD16G1",
@@ -38437,8 +38437,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38486,8 +38486,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Small print",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Small print",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.38X8.19",
@@ -38511,8 +38511,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38524,8 +38524,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Small print — Black frame",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Small print — Black frame",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S6DD38X8DD19F1S9DD38X11DD19J1S6DD38X8DD19G1",
@@ -38549,8 +38549,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38598,8 +38598,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Small print — White frame",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Small print — White frame",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S6DD38X8DD19F2S9DD38X11DD19J1S6DD38X8DD19G1",
@@ -38623,8 +38623,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -38672,8 +38672,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "paul-murphy-painting-86",
-    "title": "My tipi, on Grand Traverse Bay — Small print — Natural wood frame",
-    "artworkTitle": "My tipi, on Grand Traverse Bay",
+    "title": "My Tipi, on Grand Traverse Bay — Small print — Natural wood frame",
+    "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "71.63",
     "currency": "USD",
     "sku": "5M144M8S6DD38X8DD19F7S9DD38X11DD19J1S6DD38X8DD19G1",
@@ -38697,8 +38697,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7496.jpeg",
-      "alt": "My tipi, on Grand Traverse Bay by Paul Murphy",
-      "caption": "My tipi, on Grand Traverse Bay by Paul Murphy"
+      "alt": "My Tipi, on Grand Traverse Bay by Paul Murphy",
+      "caption": "My Tipi, on Grand Traverse Bay by Paul Murphy"
     },
     "attributes": {},
     "minimumDpi": 300,
