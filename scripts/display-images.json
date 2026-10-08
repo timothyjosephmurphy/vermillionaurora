@@ -3306,32 +3306,6 @@
    }
   ]
  },
- "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg": {
-  "original": 1738857,
-  "width": 3730,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/img-7491-e4a4d96623-160.webp",
-    "bytes": 1252
-   },
-   {
-    "w": 480,
-    "src": "/display/img-7491-e4a4d96623-480.webp",
-    "bytes": 7708
-   },
-   {
-    "w": 960,
-    "src": "/display/img-7491-e4a4d96623-960.webp",
-    "bytes": 29518
-   },
-   {
-    "w": 1600,
-    "src": "/display/img-7491-e4a4d96623-1600.webp",
-    "bytes": 74040
-   }
-  ]
- },
  "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7492.jpeg": {
   "original": 2903615,
   "width": 2669,

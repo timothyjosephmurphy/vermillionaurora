@@ -4032,64 +4032,6 @@
     }
   },
   {
-    "id": "paul-murphy-painting-82",
-    "slug": "paul-murphy-painting-82",
-    "type": "painting",
-    "title": "Angie's Eyes",
-    "description": "Angie's Eyes by Paul Murphy. Available.",
-    "eyebrow": "Featured artist \u00b7 Paul Murphy",
-    "artist": "Paul Murphy",
-    "listing": {
-      "status": "available",
-      "price": {
-        "amount": "150.00",
-        "currency": "USD"
-      }
-    },
-    "medium": null,
-    "surface": "Paper",
-    "year": null,
-    "framing": null,
-    "dimensions": {
-      "width": 13,
-      "height": 15,
-      "unit": "in"
-    },
-    "galleryReference": 82,
-    "gallerySequence": 38,
-    "facts": [],
-    "story": [],
-    "storyHeading": null,
-    "inquiryHref": "/commissions/?buy=paul-murphy-painting-82#form",
-    "dimensionOrder": "width-height",
-    "image": {
-      "src": "https://media.vermillionaurora.com/images/Ex-Featured-Artist-Paul-Murphy/IMG_7491.jpeg",
-      "alt": "Angie's Eyes by Paul Murphy",
-      "caption": "Angie's Eyes by Paul Murphy"
-    },
-    "checkout": {
-      "mode": "integrated",
-      "shipping": {
-        "length": 13,
-        "width": 4,
-        "height": 4,
-        "weight": 0.75,
-        "packaging": "tube",
-        "insuranceRequested": false,
-        "verification": "estimated",
-        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
-      }
-    },
-    "inquiry": {
-      "label": "Inquire about this painting",
-      "note": ""
-    },
-    "back": {
-      "href": "/exhibitions/paul-murphy/",
-      "label": "Back to Paul Murphy gallery"
-    }
-  },
-  {
     "id": "paul-murphy-painting-83",
     "slug": "paul-murphy-painting-83",
     "type": "painting",
