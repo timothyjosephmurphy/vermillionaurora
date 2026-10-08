@@ -120,3 +120,9 @@ test('Arizona Slot Cave uses the complete left-rotated image in its gallery and 
  const gallery=load(fs.readFileSync('dist/exhibitions/paul-murphy/index.html','utf8'));
  check(gallery('[data-product-id="paul-murphy-painting-8"] svg'));
 });
+test('checked-in PayPal allowlist matches every dimensioned, available, priced painting (deploy verifier rule)',()=>{
+ // payments/verify-production.mjs enforces this after deploying; catch a mismatch in the gate instead.
+ const vars=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc','utf8')).vars;
+ const eligible=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price&&p.dimensions&&p.checkout?.mode==='integrated').map(p=>p.id).sort();
+ assert.deepEqual((vars.PAYPAL_CHECKOUT_SLUGS||'').split(',').map(s=>s.trim()).filter(Boolean).sort(),eligible);
+});
