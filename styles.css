@@ -683,7 +683,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
 .product-breadcrumb a, .product-back { text-decoration: underline; text-underline-offset: 0.2em; }
 .product-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 .product-figure { margin: 0; padding: clamp(1rem, 3vw, 2rem); background: var(--paper); border: 1px solid var(--line); }
-.product-figure img { width: 100%; max-height: 75vh; object-fit: contain; }
+.product-figure img { width: 100%; height: auto; max-height: 75vh; object-fit: contain; }
 .product-figure figcaption { margin-top: 1rem; font-size: 0.875rem; color: var(--muted); }
 .product-summary { padding-top: 1rem; min-width: 0; }
 .product-summary .eyebrow { font-size: 0.875rem; }

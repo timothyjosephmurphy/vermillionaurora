@@ -157,6 +157,8 @@ test('perspective-corrected book photos replace the desk photo everywhere and st
     assert.equal($('meta[property="og:image"]').attr('content'),c.previewUrl);
     assert.equal(JSON.parse($('script[type="application/ld+json"]').first().html()).image,c.previewUrl);
     assert.equal($('.product-figure img').attr('width'),String(c.widthPx));
+    // Width/height reserve the aspect ratio only; height:auto keeps the frame from letterboxing to max-height.
+    assert.match(fs.readFileSync('styles.css','utf8'),/\.product-figure img \{[^}]*height: auto;/);
     assert.equal($('.painting-image-trigger').attr('href'),c.masterUrl);
     for(const section of art.sectionIds){
       const html=fs.readFileSync(`dist/book-galleries/${section}/index.html`,'utf8');
