@@ -34,6 +34,9 @@ const form=(fields={},photos=[])=>{const f=new FormData();for(const [k,v] of Obj
 const submit=(env,body,headers={})=>testimonialsApi(new Request('https://tjm.art/testimonials/api/submit',{method:'POST',body,headers:{Origin:'https://tjm.art','CF-Connecting-IP':'203.0.113.9',Accept:'application/json',...headers}}),env,null,now);
 const owner=(env,body,{token='owner-token',origin='https://tjm.art'}={})=>testimonialsApi(new Request('https://tjm.art/testimonials/api/owner',{method:'POST',headers:{Origin:origin,Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify(body)}),env,null,now);
 const approved=async env=>(await (await testimonialsApi(new Request('https://tjm.art/testimonials/api/approved'),env,null,now)).json()).testimonials;
+// Decode a Gmail API raw message and one of its multipart/alternative parts (base64, wrapped at 76 columns).
+const rawMime=m=>new TextDecoder().decode(Uint8Array.from(atob(m.raw.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0)));
+const mimePart=(mime,type)=>{const part=mime.split(/\r\n--tjm-[0-9a-f]+/).find(p=>p.includes('Content-Type: '+type));return new TextDecoder().decode(Uint8Array.from(atob(part.split('\r\n\r\n')[1].replace(/\s+/g,'')),c=>c.charCodeAt(0)));};
 
 test('metadata stripping removes GPS and keeps orientation, for baseline and progressive JPEG',()=>{
   for(const input of [GPS_JPEG,GPS_PROGRESSIVE]){
@@ -106,9 +109,11 @@ test('owner moderation: auth, approve with edits, public list and photos, unpubl
   // Approval issued one code and sent one thank-you email (sendThanks defaults to on).
   assert.equal(issued.length,1);assert.equal(issued[0].record.email,'jane@example.com');assert.equal(issued[0].record.note,'Testimonial '+id);
   assert.equal(mails.length,2);const thanks=atob(mails[1].raw.replace(/-/g,'+').replace(/_/g,'/'));
-  assert.match(thanks,/To: jane@example.com/);assert.match(thanks,/Reply-To: tj@tjm.art/);
+  assert.match(thanks,/To: jane@example.com/);assert.match(thanks,/Reply-To: tj@tjm.art/);assert.match(thanks,/^From: TJ Murphy <tj@tjm.art>\r\n/);
+  assert.match(thanks,/Content-Type: multipart\/alternative/);assert.doesNotMatch(thanks,/List-Unsubscribe|Precedence|<img/i);
   const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);
   assert.match(rec.thanks.code,/^VA-[A-Z2-9]{4}-[A-Z2-9]{4}-[A-Z2-9]{4}$/);assert.ok(rec.thanks.emailedAt);
+  assert.ok(mimePart(rawMime(mails[1]),'text/plain').includes(rec.thanks.code));assert.ok(mimePart(rawMime(mails[1]),'text/html').includes(rec.thanks.code));
   assert.equal(JSON.stringify(await approved(env)).includes(rec.thanks.code),false);
   // Idempotent: saving, re-sending, issuing again, unpublish + re-approve never add a code or an email.
   await owner(env,{action:'approve',id,name:'Jane'});
@@ -153,17 +158,40 @@ test('approve without email issues the code only; email can follow once; flag tu
   const second=await (await submit(off,form({city:''}))).json();mails=[];
   const r=await (await owner(off,{action:'approve',id:second.id})).json();assert.match(r.thanks.emailSkipped,/turned off/);assert.equal(mails.length,0);
 });
-test('thank-you email copy',async()=>{
-  const {thanksEmail}=await import('./testimonials.mjs');
-  const {subject,body}=thanksEmail({id:'t-20261007-abcdefabcdef',name:'Jane Doe',paintingTitle:'Emergence',thanks:{code:'VA-ABCD-EFGH-JKLM'}});
-  assert.equal(subject,'Thank you, and a print code for you');
-  assert.match(body,/^Hi Jane,/);assert.match(body,/VA-ABCD-EFGH-JKLM/);assert.match(body,/https:\/\/tjm.art\/cart\//);assert.match(body,/#t-20261007-abcdefabcdef/);
-  assert.match(body,/doesn’t apply to original paintings or commission deposits/);
-  assert.match(thanksEmail({id:'t-20261007-abcdefabcdef',name:'Sam',thanks:{code:'VA-ABCD-EFGH-JKLM'}}).body,/sharing what my painting means to you/);
+test('thank-you email copy: personal note, plain text + minimal HTML, no promo wording',async()=>{
+  const {thanksEmail,thanksMime,thanksSender}=await import('./testimonials.mjs');
+  const rec={id:'t-20261007-abcdefabcdef',name:'Jane Doe',email:'jane@example.com',paintingTitle:'Emergence',thanks:{code:'VA-ABCD-EFGH-JKLM'}};
+  const {subject,text,html}=thanksEmail(rec);
+  assert.equal(subject,'Thank you for your testimonial, Jane');
+  assert.equal(thanksEmail({...rec,name:''}).subject,'Thank you for your testimonial');
+  assert.match(text,/^Hi Jane,/);assert.match(text,/Use this at checkout:\n\nVA-ABCD-EFGH-JKLM\n/);assert.match(text,/#t-20261007-abcdefabcdef/);
+  assert.match(text,/a print of any of my paintings at cost/);assert.match(text,/as many prints as you like in that order/);assert.match(text,/works for one order/);
+  assert.match(text,/not original paintings or commission deposits/);assert.match(text,/https:\/\/tjm.art\/gallery\//);
+  assert.match(text,/If you have any questions, just reply\. It comes straight to me\./);assert.match(text,/\nTJ\n$/);
+  // Promo trigger wording stays out of the subject and the prose.
+  for(const v of [subject,text,html.replace(/<[^>]*>/g,'')]){
+    assert.doesNotMatch(v,/discount|offer|deal|exclusive|% off|free|sale|unsubscribe|privacy|!/i);
+    assert.doesNotMatch(v.replace(/VA-[A-Z0-9-]+/g,''),/\b[A-Z]{4,}\b/);
+  }
+  assert.doesNotMatch(subject,/code/i);
+  // Minimal HTML mirror: same words, plain links, no images, styles, tables or buttons.
+  assert.doesNotMatch(html,/<img|<table|style=|<button|class=|background/i);
+  assert.equal((html.match(/<a /g)||[]).length,2);assert.ok(html.includes('VA-ABCD-EFGH-JKLM'));assert.ok(html.includes('&ldquo;')||html.includes('“Emergence”'));
+  assert.match(thanksEmail({...rec,name:'Sam',paintingTitle:''}).text,/sharing what my painting means to you/);
   // No name: neutral greeting. Shown as “A collector” but the collector gave a name privately: greet them by it.
   for(const r of [{name:''},{name:'',published:{name:''}},{name:'',published:{name:'A collector'}}])
-    assert.match(thanksEmail({id:'t-20261007-abcdefabcdef',thanks:{code:'VA-ABCD-EFGH-JKLM'},...r}).body,/^Hi there,\n/);
-  assert.match(thanksEmail({id:'t-20261007-abcdefabcdef',name:'Jane Doe',published:{name:''},thanks:{code:'VA-ABCD-EFGH-JKLM'}}).body,/^Hi Jane,/);
+    assert.match(thanksEmail({...rec,...r}).text,/^Hi there,\n/);
+  assert.match(thanksEmail({...rec,published:{name:''}}).text,/^Hi Jane,/);
+  // MIME: From/Reply-To tj@tjm.art, multipart/alternative with text first, no bulk headers, lines within RFC limits.
+  const mime=thanksMime({},rec);
+  assert.match(mime,/^From: TJ Murphy <tj@tjm.art>\r\nTo: jane@example.com\r\nReply-To: tj@tjm.art\r\n/);
+  assert.ok(mime.indexOf('text/plain')<mime.indexOf('text/html'));
+  assert.doesNotMatch(mime,/List-Unsubscribe|Precedence|Auto-Submitted|X-Mailer/i);
+  assert.ok(mime.split('\r\n').every(l=>l.length<=998));
+  assert.equal(mimePart(mime,'text/plain').replace(/\r\n/g,'\n'),text);
+  assert.equal(thanksSender({TESTIMONIAL_EMAIL_FROM:'tj@vermillionaurora.com'}),'tj@vermillionaurora.com');
+  assert.equal(thanksSender({TESTIMONIAL_EMAIL_FROM:'someone@example.com'}),'tj@tjm.art');
+  assert.match(thanksMime({TESTIMONIAL_EMAIL_FROM:'tj@vermillionaurora.com'},rec),/^From: TJ Murphy <tj@vermillionaurora.com>/);
 });
 
 test('no consent checkbox: submitting records implied consent with the notice text; old consent field is ignored',async()=>{
@@ -188,7 +216,7 @@ test('name is optional: shown publicly as “A collector” (with city), TJ can 
   const ok=await owner(env,{action:'approve',id});assert.equal(ok.status,200);
   const [pub]=await approved(env);assert.equal(pub.name,'A collector');assert.equal(pub.city,'Tacoma, WA');
   assert.equal(issued.length,1);
-  assert.equal(mails.length,1);const thanks=new TextDecoder().decode(Uint8Array.from(atob(atob(mails[0].raw.replace(/-/g,'+').replace(/_/g,'/')).split('\r\n\r\n')[1].trim()),c=>c.charCodeAt(0)));
+  assert.equal(mails.length,1);const thanks=mimePart(rawMime(mails[0]),'text/plain');
   assert.match(thanks,/^Hi there,/);
   // A named submission can be shown anonymously by clearing the name on approval.
   const named=await (await submit(env,form({quote:'Second one.'}))).json();
@@ -367,8 +395,8 @@ test('video without the tjm.art permission stays private after approval; words s
   const res=await (await owner(env,{action:'approve',id:second.id,name:'Sam'})).json();
   assert.equal(res.thanks.emailed,true);
   assert.equal((await approved(env)).length,1);
-  const body=atob(atob(mails[0].raw.replace(/-/g,'+').replace(/_/g,'/')).split('\r\n\r\n')[1].trim());
-  assert.equal(body.includes('#'+second.id),false);assert.match(body,/print code/);
+  const body=mimePart(rawMime(mails[0]),'text/plain');
+  assert.equal(body.includes('#'+second.id),false);assert.match(body,/print of any of my paintings at cost/);assert.equal(mimePart(rawMime(mails[0]),'text/html').includes('#'+second.id),false);
 });
 
 test('honeypot deletes an uploaded video; retention sweeps unattached, orphaned and long-pending videos',async()=>{
@@ -403,4 +431,12 @@ test('site Worker forwards video upload and playback paths',async()=>{
   await site.fetch(new Request('https://tjm.art/testimonials/api/video/part?id=x&n=1',{method:'PUT',body:'x'}),env);
   await site.fetch(new Request('https://tjm.art/testimonials/api/video/t-20261007-abcdefabcdef'),env);
   assert.deepEqual(seen,['PUT /testimonials/api/video/part','GET /testimonials/api/video/t-20261007-abcdefabcdef']);
+});
+
+test('non-JavaScript submit redirects back with code=1 only when an email was given',async()=>{
+  const env=setup();
+  const withEmail=await submit(env,form(),{Accept:'text/html'});
+  assert.equal(withEmail.status,303);assert.equal(withEmail.headers.get('Location'),'https://tjm.art/testimonials/?thanks=1&code=1#share');
+  const without=await submit(env,form({email:null,quote:'No email here.'}),{Accept:'text/html','CF-Connecting-IP':'198.51.100.7'});
+  assert.equal(without.status,303);assert.equal(without.headers.get('Location'),'https://tjm.art/testimonials/?thanks=1#share');
 });
