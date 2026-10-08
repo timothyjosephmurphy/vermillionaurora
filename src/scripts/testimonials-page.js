@@ -115,8 +115,6 @@ function setupForm() {
     try {
       const data = new FormData(form);
       data.delete('photos');
-      const select = form.elements.paintingSlug;
-      if (!data.get('painting') && select.value) data.set('painting', select.selectedOptions[0].textContent);
       if (photos.length) say(`Preparing ${photos.length === 1 ? 'your photo' : photos.length + ' photos'}…`);
       for (const file of photos) data.append('photos', await prepare(file));
       say('Sending…');

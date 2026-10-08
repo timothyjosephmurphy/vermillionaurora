@@ -1,15 +1,10 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import products from '../../catalog/products.json';
 import { testimonials } from '../data/testimonials.mjs';
 import { ld, person } from '../data/structured-data.mjs';
 // Hand-curated entries (src/data/testimonials.json) render at build time; approved form submissions load at
 // request time from /testimonials/api/approved, so approving one on /testimonial-manager/ needs no rebuild.
-const paintings = (Array.isArray(products) ? products : products.products)
-  .filter(p => p.type === 'painting' && p.artist === 'TJ Murphy')
-  .map(p => ({ slug: p.slug, title: p.title }))
-  .sort((a, b) => a.title.localeCompare(b.title));
 const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Person',name:t.name}, reviewBody:t.quote, itemReviewed:{'@type':'VisualArtwork',name:t.painting||'Painting by TJ Murphy',creator:{'@id':person['@id']}} }));
 ---
 <!doctype html>
@@ -58,7 +53,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
       <section id="share" class="testimonial-share" aria-labelledby="share-heading">
         <div class="share-copy">
           <h2 id="share-heading">Share your story</h2>
-          <p>Tell me which painting you have, where it lives now, and what it means to you. I read every message personally and publish testimonials after I’ve had a chance to review them.</p>
+          <p>Tell me about the painting you have, where it lives now, and what it means to you. I read every message personally and publish testimonials after I’ve had a chance to review them.</p>
           <ul class="share-points">
             <li>Your email stays private. I use it only to send your thank-you print code.</li>
             <li>Location data is removed from photos before anything is published.</li>
@@ -81,19 +76,6 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
                 <span>Email (required, kept private)</span>
                 <input type="email" name="email" required maxlength="254" autocomplete="email" placeholder="you@example.com" aria-describedby="email-help" />
                 <small id="email-help" class="field-help">Only for sending your thank-you code. Never published.</small>
-              </label>
-            </div>
-            <div class="field-row">
-              <label>
-                <span>Which painting? (optional)</span>
-                <select name="paintingSlug">
-                  <option value="">Choose a painting, or describe it below</option>
-                  {paintings.map(p => <option value={p.slug}>{p.title}</option>)}
-                </select>
-              </label>
-              <label>
-                <span>Or describe it (optional)</span>
-                <input type="text" name="painting" maxlength="200" placeholder="e.g. Portrait of my grandmother, 2019" />
               </label>
             </div>
             <label>
@@ -146,7 +128,6 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .share-copy{line-height:1.75;color:#3f3832}.share-copy h2{font:600 clamp(2rem,4vw,2.6rem)/1.1 "Cormorant Garamond",serif;margin:0 0 14px;color:var(--ink)}
     .share-copy a,.form-privacy-note a,.form-thanks a{text-decoration:underline;text-underline-offset:3px}
     .share-points{padding-left:1.1rem;font-size:.92rem}.share-points li+li{margin-top:6px}
-    .testimonial-form select{width:100%;border:1px solid rgba(25,19,15,.14);border-radius:12px;background:rgba(255,255,255,.75);padding:.9rem 1rem;color:var(--ink);font:inherit;font-size:1rem;letter-spacing:0;text-transform:none}
     .testimonial-form input[type=file]{padding:.7rem;font-size:.9rem;letter-spacing:0;text-transform:none}
     .testimonial-form .field-help{font-size:.8rem;letter-spacing:0;text-transform:none;color:var(--muted)}
     .testimonial-form label.consent{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;letter-spacing:0;text-transform:none;line-height:1.55}
