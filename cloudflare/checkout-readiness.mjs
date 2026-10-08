@@ -6,6 +6,7 @@ import { bitcoinApi } from './bitcoin-api.mjs';
 
 // Administrative provider checks without payments or label purchases. The deployment job creates and removes
 // this random credential; public callers cannot trigger provider requests.
+const APPLE_PAY_DOMAIN='tjm.art';
 export async function checkoutReadiness(request,env) {
   const reply=(value,status=200)=>Response.json(value,{status,headers:{'Cache-Control':'no-store'}});
   if(request.method!=='POST'||!env.CHECKOUT_AUDIT_TOKEN||request.headers.get('Authorization')!==`Bearer ${env.CHECKOUT_AUDIT_TOKEN}`)return reply({error:'Not found'},404);
@@ -73,6 +74,19 @@ export async function checkoutReadiness(request,env) {
       checks.squareLocation=location?.id===env.SQUARE_LOCATION_ID&&location.status==='ACTIVE'&&location.currency==='USD'&&location.capabilities?.includes('CREDIT_CARD_PROCESSING')===true;
       checks.squareWebhook=webhooks.subscriptions?.some(h=>h.enabled===true&&h.notification_url===env.SQUARE_WEBHOOK_URL&&h.event_types?.includes('payment.updated'))===true;
     } catch(error) { checks.squareError=error.message; }
+    if(checks.squareConfiguration) {
+      // Apple Pay on the web: register the storefront domain with Square (idempotent; TJ approved).
+      // The association file is served by the site worker at /.well-known/. Informational only: never affects readiness.
+      try {
+        const response=await fetch('https://connect.squareup.com/v2/apple-pay/domains',{method:'POST',signal:AbortSignal.timeout(15000),
+          headers:{Authorization:`Bearer ${env.SQUARE_ACCESS_TOKEN}`,'Content-Type':'application/json','Square-Version':'2026-08-19'},
+          body:JSON.stringify({domain_name:APPLE_PAY_DOMAIN})});
+        const result=await response.json().catch(()=>({}));
+        checks.applePayDomain=response.ok?{domain:APPLE_PAY_DOMAIN,status:result.status||'UNKNOWN'}:
+          {domain:APPLE_PAY_DOMAIN,error:`HTTP ${response.status}`,codes:(result.errors||[]).map(e=>[e.category,e.code].filter(Boolean).join(':')).slice(0,3),
+            detail:String(result.errors?.[0]?.detail||'').slice(0,200)};
+      } catch(error) { checks.applePayDomain={domain:APPLE_PAY_DOMAIN,error:error.message}; }
+    }
   }
   checks.inventoryBinding=!!env.PAINTING_STOCK;
   checks.salesLedger=!!env.SALES_LEDGER&&!!env.SALES_ARCHIVE;
