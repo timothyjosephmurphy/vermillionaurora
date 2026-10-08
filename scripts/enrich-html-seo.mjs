@@ -8,7 +8,10 @@ const text = (value) => value.replace(/<[^>]*>/g, ' ').replace(/&amp;/g, '&').re
 const attr = (tag, name) => tag.match(new RegExp(`\\b${name}\\s*=\\s*(["'])(.*?)\\1`, 'i'))?.[2] ?? '';
 const hasTag = (html, key, value) => new RegExp(`<meta\\b(?=[^>]*\\b${key}\\s*=\\s*["']${value}["'])[^>]*>`, 'i').test(html);
 
-const ICONS = '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">';
+const DEFAULT_SHARE_IMAGE = 'https://tjm.art/brand/tj-murphy-share.jpg';
+// Bump ICON_VERSION whenever the favicon/manifest images change so browsers refetch them.
+const ICON_VERSION = '2';
+const ICONS = `<link rel="icon" href="/favicon.ico?v=${ICON_VERSION}" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=${ICON_VERSION}"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=${ICON_VERSION}"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=${ICON_VERSION}"><link rel="manifest" href="/site.webmanifest?v=${ICON_VERSION}">`;
 
 // Adds favicons and makes "Skip to content" land on the page's <main> (adding the link where a page lacks it).
 const SKIP_STYLE = '<style>.skip-link{position:absolute;left:12px;top:12px;z-index:100;padding:10px 14px;background:#1d1a17;color:#fff;border-radius:8px;text-decoration:none;font-size:.85rem;font-weight:600;transform:translateY(-160%)}.skip-link:focus,.skip-link:focus-visible{transform:translateY(0);outline:3px solid #8c4d39;outline-offset:3px}</style>';
@@ -54,9 +57,12 @@ async function walk(directory) {
     let description = attr(descTag || '', 'content');
     if (!description) description = text(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || '').slice(0, 180);
     if (!description) description = 'Original paintings, fine-art prints, exhibitions, and commissions by TJ Murphy.';
-    const imageTag = html.match(/<main\b[^>]*>[\s\S]*?(?:<img\b[^>]*>|<svg\b[^>]*data-image-src[^>]*>)/i)?.[0] || html.match(/<img\b[^>]*>/i)?.[0];
+    // Share image: the first artwork in <main>. Pages without one (policies, process, etc.) use the
+    // square TJ Murphy logo (orange-face mark) as a "summary" card, never the small header image.
+    const imageTag = html.match(/<main\b[^>]*>[\s\S]*?(?:<img\b[^>]*>|<svg\b[^>]*data-image-src[^>]*>)/i)?.[0];
     const imageSrc = attr(imageTag || '', 'data-image-src') || attr(imageTag || '', 'src');
-    const image = imageSrc && !imageSrc.startsWith('data:') ? new URL(imageSrc, `${site}/`).href : '';
+    const artwork = imageSrc && !imageSrc.startsWith('data:') && !/\/brand\//.test(imageSrc) ? new URL(imageSrc, `${site}/`).href : '';
+    const image = artwork || DEFAULT_SHARE_IMAGE;
     const canonical = `${site}${route}`;
     const tags = [];
 
@@ -70,7 +76,7 @@ async function walk(directory) {
     addMeta('property', 'og:description', description);
     addMeta('property', 'og:url', canonical);
     if (image) addMeta('property', 'og:image', image);
-    addMeta('name', 'twitter:card', image ? 'summary_large_image' : 'summary');
+    addMeta('name', 'twitter:card', artwork ? 'summary_large_image' : 'summary');
     addMeta('name', 'twitter:title', title);
     addMeta('name', 'twitter:description', description);
     if (image) addMeta('name', 'twitter:image', image);
