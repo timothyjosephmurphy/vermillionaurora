@@ -1,15 +1,7 @@
 {
   "home": [
     {
-      "product": "warszawska-syrenka",
-      "variant": "carousel"
-    },
-    {
-      "product": "honeybadger-and-cub-with-genesis-block",
-      "variant": "carousel"
-    },
-    {
-      "product": "painting-red-horizon",
+      "product": "el-zonte-before-dawn",
       "variant": "carousel"
     },
     {
@@ -21,7 +13,15 @@
       "variant": "carousel"
     },
     {
-      "product": "el-zonte-before-dawn",
+      "product": "warszawska-syrenka",
+      "variant": "carousel"
+    },
+    {
+      "product": "honeybadger-and-cub-with-genesis-block",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-red-horizon",
       "variant": "carousel"
     },
     {
