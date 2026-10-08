@@ -289,7 +289,14 @@ async function owner(request, env, now) {
     const next = {...record, status: 'approved', approvedAt: record.approvedAt || new Date(now).toISOString(),
       published: {name, quote, city, painting: oneLine(input.painting ?? record.paintingTitle, 200), paintingSlug: slug, photos, pin}};
     const saved = await save(next);
-    return saved ? reply({record: {...saved, public: forClient(publicEntry(saved))}}) : reply({error: 'Record changed; reload'}, 409);
+    if (!saved) return reply({error: 'Record changed; reload'}, 409);
+    const thanked = await thankCollector(env, saved, {send: input.sendThanks !== false, now});
+    return reply({record: {...thanked.record, public: forClient(publicEntry(thanked.record))}, thanks: thanked.result});
+  }
+  if (input.action === 'sendThanks') {
+    if (record.status !== 'approved') return reply({error: 'Approve the testimonial first'}, 409);
+    const thanked = await thankCollector(env, record, {send: true, force: input.force === true, now});
+    return reply({record: thanked.record, thanks: thanked.result}, thanked.result.error ? 409 : 200);
   }
   if (input.action === 'unpublish') {
     const {approvedAt, ...rest} = record;
@@ -306,14 +313,96 @@ async function owner(request, env, now) {
   }
   if (input.action === 'issueCode') {
     if (record.status !== 'approved') return reply({error: 'Approve the testimonial before issuing a code'}, 409);
-    if (record.codeIssuedAt && input.again !== true) return reply({error: `A code was already issued on ${record.codeIssuedAt.slice(0, 10)}. Confirm to issue another.`, alreadyIssued: true}, 409);
-    if (!env.CART_ORDERS) return reply({error: 'Print codes are unavailable on this Worker'}, 503);
-    const issued = await issueCollectorCode(env, {name: record.name, email: record.email, note: `Testimonial ${record.id}`});
-    // Store only the issue time; the code itself is shown once here (only its hash is kept, as with the script).
-    const ok = await bucket.put(recordKey(record.id), JSON.stringify({...record, codeIssuedAt: issued.issuedAt, codesIssued: (record.codesIssued || 0) + 1}), {httpMetadata: {contentType: 'application/json'}});
-    return reply({...issued, saved: Boolean(ok)});
+    const thanked = await thankCollector(env, record, {send: false, now});
+    return reply({record: thanked.record, thanks: thanked.result}, thanked.result.error ? 409 : 200);
   }
   return reply({error: 'Unknown action'}, 400);
+}
+
+// ---------- Thank-you code and email (on approval) ----------
+// Idempotent per submission: the code is issued once and stored on the private record (record.thanks.code), and the
+// email is sent at most once (record.thanks.emailAttemptAt is written before sending; a retry after an unknown outcome
+// needs force:true from the owner). Set TESTIMONIAL_THANKS_EMAIL="false" on the Worker to turn automatic emails off.
+export const THANKS_REPLY_TO = 'tj@tjm.art';
+async function writeRecord(env, record, etag) {
+  return env.COMMISSION_UPLOADS.put(recordKey(record.id), JSON.stringify(record), {...(etag ? {onlyIf: {etagMatches: etag}} : {}), httpMetadata: {contentType: 'application/json'}});
+}
+async function thankCollector(env, start, {send, force = false, now}) {
+  const bucket = env.COMMISSION_UPLOADS;
+  let object = await bucket.get(recordKey(start.id));
+  let record = object ? await object.json() : start;
+  let etag = object?.etag;
+  const result = {};
+  if (!record.thanks?.code) {
+    if (!env.CART_ORDERS) return {record, result: {error: 'Print codes are unavailable on this Worker'}};
+    // Claim issuance first so two approvals can never issue two codes.
+    if (record.thanks?.issuingAt && now - Date.parse(record.thanks.issuingAt) < 120000) return {record, result: {error: 'A code is being issued; reload in a moment'}};
+    const claimed = await writeRecord(env, {...record, thanks: {...record.thanks, issuingAt: new Date(now).toISOString()}}, etag);
+    if (!claimed) return {record, result: {error: 'Record changed; reload'}};
+    const issued = await issueCollectorCode(env, {name: record.name, email: record.email, note: `Testimonial ${record.id}`});
+    record = {...record, thanks: {code: issued.code, issuedAt: issued.issuedAt}};
+    const stored = await writeRecord(env, record, null); // we hold the claim; never lose an issued code
+    etag = stored?.etag;
+    result.issued = true;
+  }
+  result.code = record.thanks.code;
+  const enabled = env.TESTIMONIAL_THANKS_EMAIL !== 'false';
+  if (send && !record.thanks.emailedAt) {
+    if (!enabled) result.emailSkipped = 'Thank-you emails are turned off (TESTIMONIAL_THANKS_EMAIL=false)';
+    else if (record.thanks.emailAttemptAt && !force) result.error = `An email attempt was made at ${record.thanks.emailAttemptAt} with an unknown result. Check the Sent folder of tj@vermillionaurora.com, then confirm to resend.`;
+    else {
+      const attempt = await writeRecord(env, {...record, thanks: {...record.thanks, emailAttemptAt: new Date(now).toISOString()}}, etag);
+      if (!attempt) result.error = 'Record changed; reload';
+      else {
+        try {
+          const id = await sendThanksEmail(env, record);
+          record = {...record, thanks: {...record.thanks, emailAttemptAt: new Date(now).toISOString(), emailedAt: new Date(now).toISOString(), emailId: id, emailError: undefined}};
+          result.emailed = true;
+        } catch (error) {
+          record = {...record, thanks: {...record.thanks, emailAttemptAt: undefined, emailError: String(error?.message || 'Email failed').slice(0, 160)}};
+          result.error = 'The code was issued but the thank-you email could not be sent: ' + record.thanks.emailError;
+        }
+        await writeRecord(env, record, attempt.etag);
+      }
+    }
+  }
+  return {record, result};
+}
+
+export function thanksEmail(record) {
+  const first = (record.published?.name || record.name).split(/\s+/)[0];
+  const painting = record.published?.painting || record.paintingTitle;
+  const subject = 'Thank you, and a print code for you';
+  const body = [
+    `Hi ${first},`, '',
+    `Thank you so much for sharing what ${painting ? `“${painting}”` : 'my painting'} means to you. It means a lot to me that it has a good home with you. Your testimonial is now on my site:`,
+    `https://tjm.art/testimonials/#${record.id}`, '',
+    'As a thank-you, here is your personal print code:', '',
+    `    ${record.thanks.code}`, '',
+    'It gets you fine-art prints of any of my paintings at the print lab’s cost plus shipping, with no markup. Put as many prints as you like in one order; the code works for one order. It doesn’t apply to original paintings or commission deposits.', '',
+    'To use it: choose a print on any painting’s page (https://tjm.art/gallery/), then go to your cart at https://tjm.art/cart/ and enter the code in the “Discount code” box before calculating shipping & tax.', '',
+    'Thank you again for being part of this.', '',
+    'With gratitude,', 'TJ Murphy', 'https://tjm.art',
+  ].join('\n');
+  return {subject, body};
+}
+async function sendThanksEmail(env, record) {
+  const token = await sellerMailToken(env);
+  const {subject, body} = thanksEmail(record);
+  const mime = [
+    'From: TJ Murphy <tj@vermillionaurora.com>', `To: ${record.email}`, `Reply-To: ${THANKS_REPLY_TO}`,
+    `Subject: ${mimeHeader(subject)}`, `Message-ID: <testimonial-thanks-${record.id}@tjm.art>`,
+    'MIME-Version: 1.0', 'Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: base64', '',
+    utf8b64(body + '\n\nPrivacy: https://tjm.art/privacy/'), '',
+  ].join('\r\n');
+  const r = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
+    method: 'POST', signal: AbortSignal.timeout(20000),
+    headers: {Authorization: `Bearer ${token}`, 'Content-Type': 'application/json'},
+    body: JSON.stringify({raw: utf8b64(mime).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')}),
+  });
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok || !data.id) throw Error(`Gmail ${r.status}`);
+  return data.id;
 }
 
 // Hourly cron: delete rate-limit counters from previous days.
