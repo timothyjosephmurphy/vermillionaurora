@@ -347,8 +347,8 @@
     "id": "painting-chef-in-white",
     "slug": "painting-chef-in-white",
     "type": "painting",
-    "title": "Jimmy Song at Pacific Bitcoin Festival",
-    "description": "Jimmy Song at Pacific Bitcoin Festival by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Jimmy Song @jimmysong",
+    "description": "Jimmy Song @jimmysong by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -369,7 +369,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 52"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -378,8 +383,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/chef-in-white.jpg",
-      "alt": "Jimmy Song at Pacific Bitcoin Festival by TJ Murphy",
-      "caption": "Jimmy Song at Pacific Bitcoin Festival"
+      "alt": "Jimmy Song @jimmysong by TJ Murphy",
+      "caption": "Jimmy Song @jimmysong"
     },
     "checkout": {
       "mode": "integrated",
@@ -472,8 +477,8 @@
     "id": "painting-couple-in-color",
     "slug": "painting-couple-in-color",
     "type": "painting",
-    "title": "Aunt Fran and Hillary",
-    "description": "Aunt Fran and Hillary by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Aunt Fran and Cousin Hillary",
+    "description": "Aunt Fran and Cousin Hillary by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -490,7 +495,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 40"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -499,8 +509,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "checkout": {
       "mode": "inquiry"
@@ -690,8 +700,8 @@
     "id": "painting-festival-portrait",
     "slug": "painting-festival-portrait",
     "type": "painting",
-    "title": "Wonder",
-    "description": "Wonder by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "The Bounty of Satoshi: Wonder",
+    "description": "The Bounty of Satoshi: Wonder by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -709,7 +719,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 74; Watercolor Portraits, page 78"
+      }
+    ],
     "story": [
       "This painting grew out of concept work for a project to monumentalize the origin story of Bitcoin. It depicts wonder at the beauty of nature and awe at technological achievement."
     ],
@@ -718,8 +733,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/festival-portrait.jpg",
-      "alt": "Wonder by TJ Murphy",
-      "caption": "Wonder"
+      "alt": "The Bounty of Satoshi: Wonder by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Wonder"
     },
     "checkout": {
       "mode": "inquiry",
@@ -802,8 +817,8 @@
     "id": "painting-golden-coast",
     "slug": "painting-golden-coast",
     "type": "painting",
-    "title": "Sunset in Puget Sound from San Juan Island",
-    "description": "Sunset in Puget Sound from San Juan Island by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
+    "description": "Sunset in the Strait of Juan de Fuca, Patos Island 1 by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -824,7 +839,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 26"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -833,8 +853,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/golden-coast.jpg",
-      "alt": "Sunset in Puget Sound from San Juan Island by TJ Murphy",
-      "caption": "Sunset in Puget Sound from San Juan Island"
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1 by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Patos Island 1"
     },
     "checkout": {
       "mode": "inquiry"
@@ -904,8 +924,8 @@
     "id": "painting-guitarist",
     "slug": "painting-guitarist",
     "type": "painting",
-    "title": "Malone",
-    "description": "Malone by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Girl Tuning Guitar",
+    "description": "Girl Tuning Guitar by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -937,8 +957,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "checkout": {
       "mode": "inquiry"
@@ -1198,8 +1218,8 @@
     "id": "painting-phoenix-rising",
     "slug": "painting-phoenix-rising",
     "type": "painting",
-    "title": "Achievement",
-    "description": "Achievement by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "The Bounty of Satoshi: Achievement",
+    "description": "The Bounty of Satoshi: Achievement by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1217,7 +1237,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 75; Watercolor Portraits, page 79"
+      }
+    ],
     "story": [
       "I made this as concept art for a project to monumentalize the origin story of Bitcoin. It represents the birth of the network: the moment its challenges are overcome and its dangers are faced."
     ],
@@ -1226,8 +1251,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/phoenix-rising.jpg",
-      "alt": "Achievement by TJ Murphy",
-      "caption": "Achievement"
+      "alt": "The Bounty of Satoshi: Achievement by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Achievement"
     },
     "checkout": {
       "mode": "inquiry",
@@ -1274,7 +1299,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 41"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1302,8 +1332,8 @@
     "id": "painting-portrait-in-blue-light",
     "slug": "painting-portrait-in-blue-light",
     "type": "painting",
-    "title": "MJ Spinning at Chalet",
-    "description": "MJ Spinning at Chalet by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "MJ",
+    "description": "MJ by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1321,7 +1351,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 24"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1330,8 +1365,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "checkout": {
       "mode": "inquiry"
@@ -1596,8 +1631,8 @@
     "id": "painting-portrait-with-scarf",
     "slug": "painting-portrait-with-scarf",
     "type": "painting",
-    "title": "Paul Murphy: my Dad",
-    "description": "Paul Murphy: my Dad by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Father Paul",
+    "description": "Father Paul by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1615,7 +1650,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 46"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1624,8 +1664,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "checkout": {
       "mode": "inquiry"
@@ -1643,8 +1683,8 @@
     "id": "painting-red-horizon",
     "slug": "painting-red-horizon",
     "type": "painting",
-    "title": "Maui Sunset from Kihei",
-    "description": "Maui Sunset from Kihei by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Hawaii",
+    "description": "Hawaii by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1665,7 +1705,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 57"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1674,8 +1719,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy",
-      "caption": "Maui Sunset from Kihei"
+      "alt": "Hawaii by TJ Murphy",
+      "caption": "Hawaii"
     },
     "checkout": {
       "mode": "integrated",
@@ -4674,7 +4719,7 @@
     "examples": [
       {
         "src": "/gallery-images/golden-coast.jpg",
-        "alt": "Sunset in Puget Sound from San Juan Island, watercolor pastel landscape by TJ Murphy"
+        "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1, watercolor pastel landscape by TJ Murphy"
       },
       {
         "src": "/gallery-images/moonlit-water.jpg",
@@ -4698,7 +4743,7 @@
       },
       {
         "src": "/gallery-images/red-horizon.jpg",
-        "alt": "Maui Sunset from Kihei, watercolor pastel landscape by TJ Murphy"
+        "alt": "Hawaii, watercolor pastel landscape by TJ Murphy"
       },
       {
         "src": "/gallery-images/two-soldiers.jpg",

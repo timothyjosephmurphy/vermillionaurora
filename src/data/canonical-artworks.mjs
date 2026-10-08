@@ -10,7 +10,7 @@ export const canonicalArtwork = {
   'book-art-9b6b4f1ce8b283e14b21': 'el-zonte-at-sunrise', // Sunrise from Punto El Zonte Hostel, El Salvador
   'book-art-024a1e2da99a49b4438a': 'myself-my-mother-ruth-my-grandpa-howard', // Myself, my mother Ruth, my grandpa Howard
   'book-art-ad30c3da712401606ea6': 'michael-and-katie-in-yelapa', // Michael and Katie in Yelapa
-  'book-art-1708a7dca996aca40e6c': 'painting-guitarist', // Malone
+  'book-art-1708a7dca996aca40e6c': 'painting-guitarist', // Girl Tuning Guitar (book title: Malone; TJ chose the catalog title)
   'book-art-5e4eb881d89ae9f5c635': 'painting-sunset-silhouette', // Sunset in the Strait of Juan de Fuca, Sucia Island
   'book-art-7676696646b77fc3ca94': 'sunset-in-el-zonte-el-salvador', // Sunset in El Zonte, El Salvador
   'book-art-164299ae97e7b62137f5': 'painting-moonlit-water', // Moonrise over lake in the North Cascades
@@ -24,6 +24,15 @@ export const canonicalArtwork = {
   'book-art-ef24f49017a62819330d': 'painting-portrait-with-cheese', // Brekkie @BVBTC with polished Bitcoin B
   'book-art-06b4b66f6389416c412c': 'girl-wearing-flower-crown', // Girl Wearing Flower Crown
   'book-art-9f6386bac0e6198f6661': 'rice-paddies-in-vietnam', // Rice paddies in Vietnam, Photo Credit: Daniel Goldsmith
+  'book-art-e1fa746bb51029294a17': 'painting-chef-in-white', // Jimmy Song @jimmysong
+  'book-art-04a049ea60a5a09e6873': 'painting-red-horizon', // Hawaii
+  'book-art-8ff9ac182d32fa228450': 'painting-phoenix-rising', // The Bounty of Satoshi: Achievement
+  'book-art-18e4d05240ce63a1a44b': 'painting-portrait-in-blue-light', // MJ
+  'book-art-8d1545e1ac13c99eb4ce': 'painting-couple-in-color', // Aunt Fran and Cousin Hillary
+  'book-art-f56007f6a7d6ee955caf': 'painting-golden-coast', // Sunset in the Strait of Juan de Fuca, Patos Island 1
+  'book-art-29b3572972c367d351d1': 'painting-festival-portrait', // The Bounty of Satoshi: Wonder
+  'book-art-ea6e156a9a533d06f198': 'grandpa-howard', // Grandpa Howard
+  'book-art-82127d1886ae57d5cb6e': 'painting-portrait-with-scarf', // Father Paul
 };
 // Extra works shown in a book-gallery section (catalog ids or book-art ids).
 export const sectionAdditions = {
