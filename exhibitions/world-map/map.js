@@ -125,6 +125,7 @@
   }));
   // Collector testimonial pins (green), separate from exhibition markers and clustering.
   // Hand-curated pins are embedded at build time; approved form submissions load from /testimonials/api/approved.
+  // The homepage card and the testimonials page use the same endpoint (exhibitions/world-map/live-pins.js).
   const testimonials = L.layerGroup().addTo(map);
   const legend = root.querySelector('[data-testimonial-legend]');
   const testimonialIcon = L.divIcon({className: 'atlas-testimonial', iconSize: [26, 34], iconAnchor: [13, 34],
@@ -142,7 +143,7 @@
     if (legend) legend.hidden = false;
   });
   try { addPins(JSON.parse(root.querySelector('[data-testimonial-pins]')?.textContent || '[]')); } catch {}
-  fetch('/testimonials/api/approved', {cache: 'no-cache', headers: {Accept: 'application/json'}})
+  fetch('/testimonials/api/approved', {cache: 'no-store', headers: {Accept: 'application/json'}})
     .then(r => r.ok ? r.json() : {testimonials: []})
     .then(data => addPins((data.testimonials || []).filter(t => Array.isArray(t.pin)).map(t => ({id: t.id, name: t.name, city: t.city, painting: t.painting, lat: t.pin[0], lng: t.pin[1]}))))
     .catch(() => {});

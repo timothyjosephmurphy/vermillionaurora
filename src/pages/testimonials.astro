@@ -1,9 +1,10 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { testimonials } from '../data/testimonials.mjs';
+import { testimonials, testimonialPins } from '../data/testimonials.mjs';
 import { ld, person } from '../data/structured-data.mjs';
 import { PUBLISH_NOTICE, PUBLISH_NOTICE_VERSION } from '../../cloudflare/testimonial-notice.mjs';
+const pinSeed = JSON.stringify(testimonialPins.map(({id, city, lat, lng}) => ({id, city, lat, lng}))).replace(/</g, '\\u003c');
 // Hand-curated entries (src/data/testimonials.json) render at build time; approved form submissions load at
 // request time from /testimonials/api/approved, so approving one on /testimonial-manager/ needs no rebuild.
 const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Person',name:t.name}, reviewBody:t.quote, itemReviewed:{'@type':'VisualArtwork',name:t.painting||'Painting by TJ Murphy',creator:{'@id':person['@id']}} }));
@@ -60,6 +61,17 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
             <li>Location data is removed from photos and videos before anything is published.</li>
             <li>Your city, state and country are shown as an approximate pin on my <a href="/exhibitions/world-map/">exhibitions map</a>, never your address.</li>
           </ul>
+          <a class="share-map" href="/exhibitions/world-map/" data-live-map>
+            <span class="share-map-canvas">
+              <svg viewBox="0 0 1200 650" role="img" aria-label="World map of collector testimonials" data-pin-radius="8">
+                <image href="/exhibitions/world-map/land.svg" width="1200" height="650" />
+                <g data-live-pins pointer-events="none"></g>
+              </svg>
+            </span>
+            <span class="share-map-caption">Collectors around the world</span>
+            <script is:inline type="application/json" data-pin-seed set:html={pinSeed} />
+          </a>
+          <script is:inline type="module" src="/exhibitions/world-map/live-pins.js"></script>
         </div>
         <div class="share-form-wrap">
           <div class="form-thanks" data-thanks hidden tabindex="-1">
@@ -204,7 +216,13 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .testimonial-manager-link a{display:inline-block;padding:3px 9px;border:1px solid #ddd8d1;border-radius:6px;color:#a8a29b;font:400 .7rem/1.4 Inter,Arial,sans-serif;letter-spacing:.02em;text-decoration:none}
     .testimonial-manager-link a:hover,.testimonial-manager-link a:focus-visible{color:#77716a;border-color:#c9c3bb}
     .testimonial-manager-link a:focus-visible{outline:2px solid #9a948d;outline-offset:2px}
-    @media(max-width:860px){.testimonial-share{grid-template-columns:1fr;gap:20px}}
+    .share-copy{display:flex;flex-direction:column}
+    .share-copy a.share-map{flex:1 1 auto;display:flex;flex-direction:column;min-height:280px;margin-top:18px;position:sticky;top:92px;max-height:calc(100vh - 116px);background:#f3eee5;border-radius:12px;overflow:hidden;color:inherit;text-decoration:none}
+    .share-map-canvas{flex:1;min-height:180px}
+    .share-map-canvas svg{display:block;width:100%;height:100%}
+    .share-map-caption{margin:0;padding:7px 12px 9px;font:500 .78rem/1.3 Inter,Arial,sans-serif;color:#8a7b6c;letter-spacing:.01em}
+    .share-map:focus-visible{outline:3px solid #bd381c;outline-offset:3px}
+    @media(max-width:860px){.testimonial-share{grid-template-columns:1fr;gap:20px}.share-map{position:static;flex:none;max-height:none;min-height:0}.share-map-canvas{flex:none;height:190px;min-height:0}}
     @media(max-width:640px){.testimonials-page{padding-top:32px}.testimonial-form .field-row{grid-template-columns:1fr}.testimonial-form button[type=submit]{justify-self:stretch}}
   </style>
   <script src="../scripts/testimonials-page.js"></script>

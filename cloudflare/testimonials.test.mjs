@@ -122,6 +122,18 @@ test('owner moderation: auth, approve with edits, public list and photos, unpubl
   assert.equal([...env.COMMISSION_UPLOADS.data.keys()].filter(k=>k.includes(id)).length,0);
 });
 
+test('approved list cache is short enough that a new pin shows within a minute', async () => {
+  const env = setup();
+  const r = await testimonialsApi(new Request('https://tjm.art/testimonials/api/approved'), env, null, now);
+  const cache = r.headers.get('Cache-Control') || '';
+  const maxAge = Number(/max-age=(\d+)/.exec(cache)?.[1]);
+  assert.equal(r.status, 200);
+  assert.match(cache, /public/);
+  assert.match(cache, /must-revalidate/);
+  assert.ok(maxAge > 0 && maxAge <= 180, cache);
+  assert.equal(r.headers.get('CDN-Cache-Control'), 'public, max-age=60');
+});
+
 test('site Worker forwards the testimonials API to the checkout Worker on tjm.art only',async()=>{
   const seen=[];const env={PRIMARY_HOST:'tjm.art',LEGACY_REDIRECT:'true',ASSETS:{fetch:()=>new Response('asset')},CHECKOUT:{fetch:r=>{seen.push(r.url);return new Response('checkout');}}};
   assert.equal(await (await site.fetch(new Request('https://tjm.art/testimonials/api/approved'),env)).text(),'checkout');
