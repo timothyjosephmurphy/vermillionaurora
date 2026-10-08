@@ -1,18 +1,131 @@
-.featured-stage { position:relative; overflow:hidden; border-radius:18px; }
-.featured-slide { width:100%; }
-.featured-entering { position:absolute; inset:0; }
-.featured-painting { display:block; width:100%; height:440px; object-fit:contain; background:rgba(16,14,13,.3); border-radius:14px; }
-.featured-caption { color:#fff; padding:16px 2px 0; min-height:144px; }
-.featured-caption h2 { margin:0 0 8px; font:600 1.8rem/1.1 "Cormorant Garamond",serif; }
-.featured-caption p { margin:0; font-size:.85rem; }
-.featured-caption a:hover { text-decoration:underline; }
-.featured-controls { display:flex; align-items:center; justify-content:space-between; gap:10px; color:#fff; margin-top:12px; }
-.featured-controls button { min-height:40px; padding:7px 12px; border:1px solid #ffffff70; border-radius:8px; background:#201b1780; color:#fff; cursor:pointer; }
-.featured-position { font-size:.8rem; font-variant-numeric:tabular-nums; }
-@media(max-width:600px) { .featured-painting { height:360px; }.featured-caption { min-height:150px; } }
-/* Last caption line matches the other painting cards; the whole slide is one click target (stretched title link). */
-.featured-slide { position:relative; }
-.featured-caption h2 a::after { content:""; position:absolute; inset:0; z-index:1; }
-.featured-caption .card-buy-row { margin-top:4px; }
-.featured-caption .card-prints-from { font-size:inherit; color:rgba(255,255,255,.85); }
-.featured-slide:hover .card-buy { background:var(--cta-hover); }
+/* Fixed stage: both slides are stacked layers, so the card never reflows during a crossfade.
+   The painting box has a locked aspect ratio; wide/tall works letterbox inside it. */
+.featured-stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  /* Painting box + fixed caption. Never grows or shrinks between slides. */
+  height: calc(var(--featured-painting-h, 440px) + 7.25rem);
+  min-height: calc(var(--featured-painting-h, 440px) + 7.25rem);
+}
+.featured-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.featured-slide.featured-front {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 1;
+}
+.featured-slide.featured-entering {
+  visibility: visible;
+  z-index: 2;
+  pointer-events: none;
+}
+.featured-media {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  height: var(--featured-painting-h, 440px);
+  border-radius: 14px;
+  background: rgba(16, 14, 13, 0.3);
+  overflow: hidden;
+}
+.featured-painting {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+}
+.featured-caption {
+  color: #fff;
+  padding: 16px 2px 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  /* Fixed caption height: 2 title lines + price + prints/buy row. */
+  height: 7.25rem;
+  min-height: 7.25rem;
+  overflow: hidden;
+}
+.featured-caption h2 {
+  margin: 0 0 8px;
+  font: 600 1.8rem/1.1 "Cormorant Garamond", serif;
+  /* Always reserve two lines so 1-line and 2-line titles share one height. */
+  height: calc(1.1em * 2);
+  min-height: calc(1.1em * 2);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.featured-caption .featured-detail {
+  min-height: 1.35em;
+}
+.featured-caption p,
+.featured-caption .featured-detail {
+  margin: 0;
+  font-size: 0.85rem;
+}
+.featured-caption a:hover { text-decoration: underline; }
+/* Whole slide is one click target (stretched title link). */
+.featured-caption h2 a { position: static; }
+.featured-caption h2 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.featured-caption .card-buy-row {
+  margin-top: auto;
+  padding-top: 4px;
+  flex-shrink: 0;
+  min-height: 28px;
+}
+.featured-caption .card-prints-from {
+  font-size: inherit;
+  color: rgba(255, 255, 255, 0.85);
+  min-height: 1.2em;
+}
+.featured-caption .card-prints-from.is-empty {
+  visibility: hidden;
+}
+.featured-caption .card-buy {
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.featured-slide.featured-front:hover .card-buy { background: var(--cta-hover); }
+.featured-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #fff;
+  margin-top: 12px;
+}
+.featured-controls button {
+  min-height: 40px;
+  padding: 7px 12px;
+  border: 1px solid #ffffff70;
+  border-radius: 8px;
+  background: #201b1780;
+  color: #fff;
+  cursor: pointer;
+}
+.featured-position { font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) {
+  .featured-stage { --featured-painting-h: 360px; height: calc(360px + 7.25rem); min-height: calc(360px + 7.25rem); }
+  .featured-caption h2 { font-size: 1.55rem; }
+}
