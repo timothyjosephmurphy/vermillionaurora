@@ -30,7 +30,7 @@ const sections = [
         <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
         <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a>{product.artist && product.artist !== 'TJ Murphy' && <span class="painting-list-artist">by {product.artist}</span>}</h3>
         <p class="painting-list-dimensions">{dimensionLabel(product)}</p>
-        <div class="painting-list-commerce"><p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>{printsFromLabel(product)&&<p class="card-prints-from">{printsFromLabel(product)}</p>}<span class="card-buy" data-card-buy aria-hidden="true">Buy</span></div>
+        <div class="painting-list-commerce">{printsFromLabel(product)&&<p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>}<div class="card-buy-row">{printsFromLabel(product)?<p class="card-prints-from">{printsFromLabel(product)}</p>:<p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>}<span class="card-buy" data-card-buy aria-hidden="true">Buy</span></div></div>
       </li>)}
     </ul>
   </section>)}

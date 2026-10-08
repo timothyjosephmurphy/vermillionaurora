@@ -824,7 +824,12 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 .card-tile .product-title-link::after{content:"";position:absolute;inset:0;z-index:1}
 .card-tile:has(.product-title-link:focus-visible){outline:3px solid var(--cta);outline-offset:2px}
 .card-tile .product-title-link:focus-visible{outline:none}
-.card-prints-from{margin:.2rem 0 0;font-size:.85rem;color:var(--muted)}
-.card-buy{display:inline-flex;align-items:center;justify-content:center;min-height:36px;min-width:72px;margin-top:.6rem;padding:0 18px;border-radius:999px;background:var(--cta);color:#fff;font:600 .78rem/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+/* Last line of a painting card: its text (prints-from line, or the price line) with a compact Buy pill right-aligned and centered on that line. */
+.card-buy-row{display:flex;align-items:center;gap:10px}
+.card-buy-row>:first-child{flex:1 1 auto;min-width:0;margin:0}
+.product-info .card-buy-row{margin:.2rem 0 0}
+.product-info .card-buy-row .card-prints-from{font-size:inherit}
+.card-prints-from{font-size:.85rem;color:var(--muted)}
+.card-buy{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:28px;margin-left:auto;padding:0 12px;border-radius:999px;background:var(--cta);color:#fff;font:600 .68rem/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;pointer-events:none}
 .card-buy[hidden]{display:none}
 .card-tile:hover .card-buy{background:var(--cta-hover)}
