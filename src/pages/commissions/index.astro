@@ -5,6 +5,7 @@ import ProductCard from '../../components/ProductCard.astro';
 import CommissionProcess from '../../components/CommissionProcess.astro';
 import { byId } from '../../../catalog/catalog.mjs';
 import collections from '../../../catalog/collections.json';
+import { testimonials } from '../../data/testimonials.mjs';
 
 const packages = collections.home
   .filter(entry => entry.variant === 'service')
@@ -146,7 +147,12 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
               <p>The packages above are watercolor starting points. For murals, larger formats, or something outside these sizes, use the form and describe the space or idea—we’ll price and schedule that separately.</p>
             </details>
           </div>
-          <p class="commission-testimonials-link">See what collectors say on the <a href="/testimonials/">testimonials page</a>.</p>
+          {/* Shown only once at least one testimonial exists: hand-curated ones at build time, approved form submissions
+             at request time (filled in by the script below, so the empty page is never promoted in the HTML). */}
+          {testimonials.length > 0
+            ? <p class="commission-testimonials-link">See what collectors say on the <a href="/testimonials/">testimonials page</a>.</p>
+            : <p class="commission-testimonials-link" data-testimonials-cta hidden></p>}
+          {testimonials.length === 0 && <script is:inline>fetch('/testimonials/api/approved',{cache:'no-cache',headers:{Accept:'application/json'}}).then(r=>r.ok?r.json():null).then(d=>{if(!d||!Array.isArray(d.testimonials)||!d.testimonials.length)return;const p=document.querySelector('[data-testimonials-cta]');if(!p)return;const a=document.createElement('a');a.href='/testimonials/';a.textContent='testimonials page';p.append('See what collectors say on the ',a,'.');p.hidden=false;}).catch(()=>{});</script>}
         </div>
       </section>
 
@@ -158,7 +164,7 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
             <p>Share a few details and optional reference images. This is an inquiry—no payment until we agree on the approach.</p>
             <ul class="contact-list">
               <li>Seattle, WA</li>
-              <li><a href="mailto:TJ@VermillionAurora.com">TJ@VermillionAurora.com</a></li>
+              <li><a href="mailto:tj@tjm.art">tj@tjm.art</a></li>
               <li>50% deposit to start</li>
               <li>Typical turnaround 2–4 weeks</li>
             </ul>

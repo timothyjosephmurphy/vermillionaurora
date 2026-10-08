@@ -26,7 +26,8 @@ export function resolutionFor(source,image) {
   if(!source||!Number.isSafeInteger(source.widthPx)||!Number.isSafeInteger(source.heightPx)||source.widthPx<=0||source.heightPx<=0)return null;
   return {dpi:Math.floor(Math.min(source.widthPx/image.width,source.heightPx/image.height)),aspectError:Math.abs((source.widthPx/source.heightPx)/(image.width/image.height)-1)};
 }
-export function sizeLabel(size) {return `${Number(size.width.toFixed(2))} × ${Number(size.height.toFixed(2))} in`;}
+// Buyer-facing sizes show one decimal place; the catalog keeps exact values for fulfillment.
+export function sizeLabel(size) {return `${Number(size.width.toFixed(1))} × ${Number(size.height.toFixed(1))} in`;}
 export function printOptions(product,config,papers) {
   if(config.provider==='finerworks')return finerworksOptions(product,config,papers,{PRINT_SCALES,scaledDimensions,inches,resolutionFor});
   if(product.type!=='painting'||!product.dimensions)return [];

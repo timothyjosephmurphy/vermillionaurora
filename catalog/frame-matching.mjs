@@ -9,7 +9,7 @@ export function frameSizeInches(size) {
   return {width:size.width/divisor,height:size.height/divisor,unit:'in'};
 }
 export function frameSizeLabel(size) {
-  return `${Number(size.width.toFixed(2))} × ${Number(size.height.toFixed(2))} in`;
+  return `${Number(size.width.toFixed(1))} × ${Number(size.height.toFixed(1))} in`;
 }
 export function amazonFrameUrl(asin, tag = catalog.affiliateTag) {
   if (!/^[A-Z0-9]{10}$/.test(asin)) throw Error('Invalid frame ASIN');

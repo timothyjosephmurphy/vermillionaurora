@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           processing:'Bitcoin payment received and awaiting confirmation. Your painting remains reserved.',
           settled:'Bitcoin payment confirmed. Thank you for purchasing this painting!',
           expired:'This Bitcoin invoice expired without payment. Reload this page to start a new checkout.',
-          review:'Your Bitcoin payment needs review. Please contact tj@vermillionaurora.com with your invoice number before paying again.',
-          missing:'This Bitcoin order could not be found. Please contact tj@vermillionaurora.com if you sent a payment.',
+          review:'Your Bitcoin payment needs review. Please contact tj@tjm.art with your invoice number before paying again.',
+          missing:'This Bitcoin order could not be found. Please contact tj@tjm.art if you sent a payment.',
           unavailable:'This painting was reserved by another buyer before your invoice was created.'
         };
         notice.textContent = messages[result.status] || 'Your Bitcoin payment is being checked.';

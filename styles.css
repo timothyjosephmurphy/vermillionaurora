@@ -812,3 +812,9 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 .testimonial-cta a { color: var(--accent-dark, #5c2d21); font-weight: 600; text-decoration: underline; text-underline-offset: 0.2em; }
 .testimonial-cta a:hover { color: var(--cta-hover, #b83518); }
 .testimonial-cta a:focus-visible { outline: 3px solid var(--cta, #d34220); outline-offset: 3px; }
+
+/* Audit 4: the footer brand block never shrinks, so all four social icons stay on one row. */
+.site-footer .footer-brand-block { flex-shrink: 0; }
+.site-footer .footer-brand-block .footer-socials { flex-wrap: nowrap; }
+/* Screen-reader-only text (headings that keep the outline in order without changing the look). */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }

@@ -1,5 +1,5 @@
 (() => {
-  const size=d=>`${Number(d.width.toFixed(2))} × ${Number(d.height.toFixed(2))} in`;
+  const size=d=>`${Number(d.width.toFixed(1))} × ${Number(d.height.toFixed(1))} in`;// one decimal for buyers; exact values stay in the data
   document.addEventListener('DOMContentLoaded',()=>{
     const dialog=document.querySelector('[data-print-dialog]'),trigger=document.querySelector('[data-print-open]');
     if(!dialog||!trigger)return;
@@ -53,7 +53,7 @@
       root.querySelector('[data-print-dimensions]').textContent=`Image: ${size(o.image)}${o.paper?` · Paper: ${size(o.paper)}`:' · Paper size to be confirmed'}${o.mat?` · Mat / frame size: ${size(o.mat.outer)}`:''}`;
       root.querySelector('[data-print-paper]').textContent=o.paperLabel;
       root.querySelector('[data-print-total]').textContent=selected?.amount?`${selected.frame?'Framed print':selected.mat?'Print + mat':'Print'}: $${Number(selected.amount).toFixed(2)}`:finish.value!=='none'&&!selected?'This presentation is unavailable in the selected size.':'Price pending';
-      const border=o.frame?Number(((o.mat.outer.width-o.paper.width)/2).toFixed(2)):null;
+      const border=o.frame?Number(((o.mat.outer.width-o.paper.width)/2).toFixed(1)):null;
       root.querySelector('[data-print-mat-note]').textContent=o.frame?`${o.frame.name} custom frame with a ${border}-inch white conservation mat border and ${o.frame.glazing.name}. Sized for this print, assembled and shipped by FinerWorks.`:o.mat?`White conservation mat · Fits a ${size(o.mat.outer)} frame. The window overlaps the print edges slightly. Frame purchased separately.`:finish.value!=='none'?'Choose another print size or Unframed print.':o.sizeBasis==='image-proportional'?'Unframed watercolor-paper print with a narrow white margin. Choose a frame or custom mat to fit the paper dimensions shown.':'An unframed print lets you choose your own frame. Add a white mat or have FinerWorks frame it for you.';
       root.querySelector('[data-print-inclusions]').textContent=o.frame?'Price includes the print, frame, white mat and glazing.':o.mat?'Price includes the print and mat. Frame not included.':'Print only; frame not included.';
       root.querySelector('[data-print-own-frame]').hidden=!!o.frame;
