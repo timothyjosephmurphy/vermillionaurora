@@ -11,7 +11,8 @@ async function api(action,body){
 const tj=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.productId.startsWith('paul-murphy-')&&!p.productId.startsWith('book-art-'));
 const books=Object.values(prints).filter(p=>p.productId.startsWith('book-art-'));
 assert.equal(new Set(books.map(p=>p.productId)).size,53);assert.equal(books.filter(p=>!p.frame).length,109);assert.equal(books.filter(p=>p.frame).length,327);assert.equal(books.length,436);
-assert.equal(new Set(tj.map(p=>p.productId)).size,18);assert.equal(tj.filter(p=>!p.frame).length,37);assert.equal(tj.filter(p=>p.frame).length,111);
+// 19 TJ masters (El Zonte Before Dawn added and the two El Zonte masters replaced at full resolution, Oct 2026).
+assert.equal(new Set(tj.map(p=>p.productId)).size,19);assert.equal(tj.filter(p=>!p.frame).length,43);assert.equal(tj.filter(p=>p.frame).length,129);
 const expected=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&p.productId.startsWith('paul-murphy-')),catalog=await api('catalog');
 assert.equal(expected.filter(p=>!p.frame).length,112);assert.equal(expected.filter(p=>p.frame).length,336);assert.equal(new Set(expected.map(p=>p.productId)).size,38);assert(catalog.version.endsWith('-'+printVersion));
 for(const p of [...expected,...tj,...books]){
@@ -26,5 +27,6 @@ try {
   assert(q.quote.items.every(i=>i.imageSize.width<i.paperSize.width&&i.imageSize.height<i.paperSize.height));
   assert.equal(q.quote.items.filter(i=>i.frame&&i.mat&&i.frame.glazing?.name==='Premium Clear').length,7);
   assert(q.quote.items.some(i=>i.id===bookFrame.id&&i.frame&&i.mat),'The framed book edition must quote successfully');
-  console.log('PASS: 57 original-gallery paintings plus 53 book artworks / 261 unframed and 783 framed variants available; representative framed, unframed, and R2-backed book editions quoted with shipping and tax. No payment started or print submitted.');
+  const all=[...expected,...tj,...books];
+  console.log(`PASS: ${new Set([...expected,...tj].map(p=>p.productId)).size} original-gallery paintings plus ${new Set(books.map(p=>p.productId)).size} book artworks / ${all.filter(p=>!p.frame).length} unframed and ${all.filter(p=>p.frame).length} framed variants available; representative framed, unframed, and R2-backed book editions quoted with shipping and tax. No payment started or print submitted.`);
 } finally {if(order){const r=await api('cancel',order);assert.equal(r.status,'cancelled');}}
