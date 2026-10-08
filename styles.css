@@ -833,3 +833,10 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 .card-buy{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:28px;margin-left:auto;padding:0 12px;border-radius:999px;background:var(--cta);color:#fff;font:600 .68rem/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;pointer-events:none}
 .card-buy[hidden]{display:none}
 .card-tile:hover .card-buy{background:var(--cta-hover)}
+/* Carousel painting cards: equal height per row, last row (Prints from $X · Buy) pinned to the bottom so Buy pills line up bottom-right across cards. */
+.painting-carousel .ex-track{align-items:stretch}
+.painting-carousel .card-tile{display:flex;flex-direction:column}
+.painting-carousel .card-tile>.gallery-product-image{flex:0 0 auto}
+.painting-carousel .card-tile .product-info{flex:1 1 auto;display:flex;flex-direction:column}
+.painting-carousel .card-tile .card-buy-row{margin-top:auto;padding-top:.2rem}
+.card-buy-row .card-buy{align-self:flex-end}

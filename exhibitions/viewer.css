@@ -71,3 +71,7 @@
 .ev-buy{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:24px;margin-left:auto;padding:0 10px;border-radius:999px;background:var(--cta,#d34220);color:#fff;font:600 .66rem/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;opacity:1;pointer-events:none}
 .ev-cell[href]:hover .ev-buy{background:var(--cta-hover,#b83518)}
 @media(max-width:640px){.ev-caption{left:4px;bottom:4px;max-width:calc(100% - 8px);padding:3px 6px;font-size:.68rem}.ev-caption-has-buy{right:4px}.ev-caption-row{gap:5px}.ev-buy{min-height:24px;padding:0 7px;font-size:.58rem;letter-spacing:.05em}}
+/* Cells with Buy: the caption spans the cell so the pill sits bottom-right, level across the row. */
+.ev-caption-has-buy{right:8px}
+.ev-caption-row .ev-buy{align-self:flex-end}
+@media(max-width:640px){.ev-caption-has-buy{right:4px}}
