@@ -1,6 +1,6 @@
 {
   "masters": {
-    "sunrise-punto-el-zonte-hostel-master.jpg": {
+    "sunrise-punta-el-zonte-hostel-master.jpg": {
       "url": "https://vermillionaurora.com/print-masters/6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8.jpg",
       "widthPx": 3598,
       "heightPx": 7082,
@@ -20,8 +20,8 @@
     }
   },
   "mains": {
-    "sunrise-punto-el-zonte-hostel-master.jpg": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+    "sunrise-punta-el-zonte-hostel-master.jpg": {
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
       "width": 1219,
       "height": 2400,
       "bytes": 491625
