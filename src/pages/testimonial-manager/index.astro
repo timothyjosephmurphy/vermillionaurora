@@ -12,7 +12,7 @@ import PolicyLayout from '../../layouts/PolicyLayout.astro';
 <div id="tm-records"></div>
 <details class="tm-help"><summary>How this works</summary>
 <p>New submissions arrive here as <strong>Pending</strong> and you get an email at tj@vermillionaurora.com. Nothing is public until you press <strong>Approve &amp; publish</strong>. Edit the display name, wording, painting, city or map pin first if needed, and untick any photo you don’t want shown. Published testimonials appear on <a href="/testimonials/">/testimonials/</a> and, if they have a pin, on the <a href="/exhibitions/world-map/">exhibitions map</a> within about a minute; no rebuild is needed.</p>
-<p><strong>Delete</strong> permanently removes the submission and its photos (use it to reject). <strong>Unpublish</strong> takes a published testimonial down but keeps it here. When you approve with <strong>Send thank-you email</strong> ticked (the default), the site issues their single-use at-cost print code and emails it to them with a short thank-you from you (reply-to tj@tjm.art). Untick it to approve quietly; you can send it later. Each submission gets at most one code and one email, and the code is always shown here.</p>
+<p><strong>Delete</strong> permanently removes the submission and its photos (use it to reject). <strong>Unpublish</strong> takes a published testimonial down but keeps it here. When you approve with <strong>Send thank-you email</strong> ticked (the default), the site issues their single-use at-cost print code and emails it to them with a short thank-you from you (reply-to tj@tjm.art). Untick it to approve quietly; you can send it later. Each submission gets at most one code and one email, and the code is always shown here. Email is optional on the form: a testimonial sent without one publishes as usual, but no code is issued or sent (the card says “No email, so no code sent”).</p>
 <p><strong>Videos</strong> play right on each card (signed links that expire after a few hours; press Refresh if one stops loading). Each video carries the collector’s two separate, optional permissions: <strong>tjm.art</strong> (may be shown on /testimonials/) and <strong>Social media</strong> (may be shared on your social accounts). A video appears on the site only when it is approved, “Show the video on tjm.art” is ticked, and the collector gave the tjm.art permission; without it the video stays private even after approval (their words, if any, can still be published, and the thank-you email and print code work as usual). <strong>Videos OK for social media</strong> lists approved videos whose owners allowed social sharing, with download links for the marketing side. If a collector asks to take a video down, use the withdraw buttons on their card (or Delete to remove everything). iPhone videos recorded in HEVC may not play in Chrome or Firefox; download them or use Safari. Recording locations are blanked from video files on upload. Videos on testimonials that stay unapproved are deleted after 90 days.</p>
 <p>Photos have location (GPS) and other EXIF metadata removed on upload. HEIC photos that the visitor’s browser could not convert are kept private and can’t be published.</p>
 </details>
@@ -77,7 +77,7 @@ function card(r){
   const a=el('article',{className:'tm-card',id:r.id});
   const hidden=r.status==='approved'&&r.public&&!(r.public.quote||r.public.video||r.public.photos?.length);
   a.append(el('h2',{},`${who(r)} `,el('span',{className:'tm-badge '+r.status,textContent:r.status==='approved'?(hidden?'Approved · private (not on the site)':'Published'):'Pending'}),r.video?el('span',{className:'tm-badge',textContent:'Video'}):''));
-  a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,el('a',{href:`mailto:${r.email}`,textContent:r.email}),` (private) · ${r.id}`,r.notifiedAt?' · Email alert sent':r.notifyError?` · Email alert failed (${r.notifyError})`:'',r.thanks?.emailedAt?` · Thanked ${fmt(r.thanks.emailedAt)}`:r.thanks?.code?' · Code issued':''));
+  a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,...(r.email?[el('a',{href:`mailto:${r.email}`,textContent:r.email}),' (private)']:['No email given']),` · ${r.id}`,r.notifiedAt?' · Email alert sent':r.notifyError?` · Email alert failed (${r.notifyError})`:'',r.thanks?.emailedAt?` · Thanked ${fmt(r.thanks.emailedAt)}`:r.thanks?.code?' · Code issued':''));
   const name=el('input',{type:'text',value:'name' in pub?pub.name:r.name,maxLength:80,placeholder:'A collector'});
   const quote=el('textarea',{value:pub.quote??r.quote??'',maxLength:2000});
   const painting=el('input',{type:'text',value:pub.painting??r.paintingTitle??'',maxLength:200});
@@ -126,18 +126,19 @@ function card(r){
     a.append(ul);
   } else a.append(el('p',{className:'tm-meta',textContent:'No photos.'}));
   const actions=el('div',{}),out=el('div',{});
-  const t=r.thanks||{};
+  const t=r.thanks||{},noEmail=!r.email;
   const sendBox=el('input',{type:'checkbox',checked:!t.emailedAt});
-  const approve=()=>call({action:'approve',id:r.id,name:name.value,quote:quote.value,painting:painting.value,paintingSlug:slug.value.trim(),city:city.value,lat:lat.value,lng:lng.value,map:map.checked,video:videoBox?videoBox.checked:undefined,sendThanks:r.status==='pending'?sendBox.checked:false,photos:photoBoxes.filter(b=>b.checked).map(b=>Number(b.dataset.n))});
+  const approve=()=>call({action:'approve',id:r.id,name:name.value,quote:quote.value,painting:painting.value,paintingSlug:slug.value.trim(),city:city.value,lat:lat.value,lng:lng.value,map:map.checked,video:videoBox?videoBox.checked:undefined,sendThanks:r.status==='pending'&&!noEmail?sendBox.checked:false,photos:photoBoxes.filter(b=>b.checked).map(b=>Number(b.dataset.n))});
   const report=d=>{const x=d.thanks||{};return [x.issued?'Print code issued.':'',x.emailed?`Thank-you email sent to ${r.email}.`:'',x.emailSkipped||'',x.error||''].filter(Boolean).join(' ');};
+  if(noEmail)a.append(el('p',{className:'tm-meta tm-no-email',textContent:'No email, so no code sent.'}));
   if(r.status==='pending'){
-    if(!t.emailedAt)a.append(el('label',{className:'tm-send'},el('span',{},sendBox,` Send thank-you email with their at-cost print code to ${r.email}`)));
+    if(!t.emailedAt&&!noEmail)a.append(el('label',{className:'tm-send'},el('span',{},sendBox,` Send thank-you email with their at-cost print code to ${r.email}`)));
     actions.append(btn('Approve & publish',async()=>{const d=await approve();await load();say(`Published ${who(r)}’s testimonial. ${report(d)}`);},'button button-solid'));
   } else {
     actions.append(btn('Save changes',async()=>{await approve();await load();say('Saved.');}));
     actions.append(btn('Unpublish',async()=>{await call({action:'unpublish',id:r.id});await load();say('Unpublished; it is back in Pending.');}));
-    if(!t.code)actions.append(btn('Issue print code (no email)',async()=>{const d=await call({action:'issueCode',id:r.id});await load();say(report(d)||'Code ready.');}));
-    if(!t.emailedAt)actions.append(btn(t.code?'Send thank-you email':'Issue code & send thank-you email',async()=>{
+    if(!t.code&&!noEmail)actions.append(btn('Issue print code (no email)',async()=>{const d=await call({action:'issueCode',id:r.id});await load();say(report(d)||'Code ready.');}));
+    if(!t.emailedAt&&!noEmail)actions.append(btn(t.code?'Send thank-you email':'Issue code & send thank-you email',async()=>{
       if(!confirm(`Email ${r.name||'(no name)'} <${r.email}> their thank-you note and print code now?`))return;
       let d;try{d=await call({action:'sendThanks',id:r.id});}catch(e){if(/unknown result/.test(e.message)&&confirm(e.message)){d=await call({action:'sendThanks',id:r.id,force:true});}else throw e;}
       await load();say(report(d));}));

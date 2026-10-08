@@ -4,14 +4,17 @@ Collectors (people TJ has given or sold paintings to) share testimonials on http
 
 ## Flow
 1. **Form** on /testimonials/: name (optional, as shown; blank appears publicly as "A collector", plus the city if given),
-   email (private, required), painting (picker of TJ's paintings and/or free text), testimonial (required unless a video is
+   email (private, optional: only for the thank-you print code), painting (picker of TJ's paintings and/or free text), testimonial (required unless a video is
    attached), optional city, up to 4 photos (JPEG/PNG/WebP/HEIC, ≤10 MB each), then the optional video right below the photos.
    **No consent checkbox:** a short notice sits just above the submit button (text and version in
    `cloudflare/testimonial-notice.mjs`): "By sending this, you’re OK with TJ showing your name (if you give one), city, words and
-   photos on tjm.art. Videos are only shown if you tick the box above." Submitting is the consent; the record stores
+   photos on tjm.art." Submitting is the consent; the record stores
    `publishConsent: 'implied-by-submit'` and `consent: {publish: true, basis: 'implied-by-submit', notice, noticeVersion,
    shownVersion, scope, at}` (`shownVersion` is the version the page sent in the hidden `publishNotice` field). The two video
    permission boxes are unchanged and still separate. The thank-you email greets by first name, or "Hi there" without one.
+   **No email:** the testimonial is still saved, notified and publishable, but approval issues no code and sends nothing
+   (`thanks` result `{noEmail: true, emailSkipped: 'No email, so no code sent'}`; `issueCode`/`sendThanks` answer 409), and
+   the moderation card says "No email, so no code sent". Video upload tokens and rate limits never use the email.
    Honeypot field `website`; rate limit 5 per visitor
    (hashed IP) per UTC day and 60 total per day. Works without JavaScript (303 back to `/testimonials/?thanks=1`).
 2. **Photos**: the browser resizes to ≤2000 px JPEG, which drops all metadata (HEIC is converted with heic2any, lazy-loaded from
@@ -47,8 +50,10 @@ The optional video control sits directly below "Add photos" (no separate encoura
 buttons: **Record a selfie video** (`capture="user"`, front camera) and **Choose from my videos** (library, no `capture`).
 A video makes the written words optional; at least one of words or video is required.
 
-- **Formats and size:** MP4, MOV (iPhone) or WebM, up to **500 MB**. A 2-minute iPhone clip is about 80 MB at 1080p/30
-  and about 350–400 MB at 4K/60, so 500 MB covers any phone's default settings for a couple of minutes.
+- **Formats and size:** MP4, MOV (iPhone) or WebM, up to **50 MB** (lowered from 500 MB on 2026-10-08; roughly 1–3 minutes of
+  default 1080p phone video). There is no hint text under the photo or video buttons: format and size are only explained
+  in the error shown when a file doesn't fit ("Videos need to be MP4, MOV or WebM, up to 50 MB." / "That file type won’t
+  work. Please use JPEG, PNG, WebP or HEIC." / "… is too large. Photos need to be 10 MB or smaller.").
 - **Upload:** browser → Worker → R2 multipart (`POST /testimonials/api/video/start`, `PUT …/part?id=&n=` with 8 MiB parts
   and an HMAC upload token, `POST …/complete`, `POST …/abort`). The Worker relays each part, so no R2 API keys,
   presigned URLs or bucket CORS are needed. It checks the declared type and size, every part's exact length and the

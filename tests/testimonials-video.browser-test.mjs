@@ -5,6 +5,7 @@
 import {chromium} from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import assert from 'node:assert/strict';
 import {testimonialsApi} from '../cloudflare/testimonials.mjs';
 import {Bucket} from './r2-memory-bucket.mjs';
@@ -47,11 +48,14 @@ const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXEC
 try{
   const errors=[];
   const desktop=await browser.newContext({viewport:{width:1280,height:900}});await desktop.route('**/*',serve);
-  const page=await desktop.newPage();page.on('pageerror',e=>errors.push(e.message));
+  const page=await desktop.newPage();page.on('pageerror',e=>{errors.push(e.message);if(process.env.DEBUG)console.error('pageerror',e.message);});
   await page.goto(origin+'/testimonials/#share');
   await page.locator('[data-video-field]').waitFor();
   // Layout (2026-10-08): no encouragement box, video directly below the photos, no consent checkbox, notice above the button.
   assert.equal(await page.locator('.video-invite').count(),0,'encouragement box removed');
+  assert.equal(await page.getByText('Share a few words, a photo of the painting').count(),0,'old intro paragraph removed');
+  assert.equal(await page.getByText('Videos are only ever shown where you say they can be').count(),0,'sentence removed');
+  assert.equal((await page.locator('#share .share-copy [data-share-thanks]').textContent()).trim(),'As a thank-you, I’ll email you a personal code for a print of any of my paintings at cost.');
   assert.equal(await page.getByText('Got a minute?').count(),0);
   assert.deepEqual(await page.evaluate(()=>{const f=document.querySelector('[data-testimonial-form]');const kids=[...f.children].filter(n=>n.getClientRects().length||n.matches('ul'));
     const i=kids.indexOf(document.querySelector('[data-photo-field]'));
@@ -59,15 +63,29 @@ try{
     {next:['photo-previews','video-field'],publishBeforeSubmit:true});
   assert.equal(await page.locator('input[name=consent]').count(),0,'no publish consent checkbox');
   assert.equal(await page.locator('input[type=checkbox]:visible').count(),0,'no visible checkbox until a video is attached');
-  assert.equal((await page.locator('[data-publish-note]').textContent()).trim(),'By sending this, you’re OK with TJ showing your name (if you give one), city, words and photos on tjm.art. Videos are only shown if you tick the box above. Testimonials are reviewed before they appear. Privacy.');
+  assert.equal((await page.locator('[data-publish-note]').textContent()).trim(),'By sending this, you’re OK with TJ showing your name (if you give one), city, words and photos on tjm.art. Testimonials are reviewed before they appear. Privacy.');
   assert.equal(await page.locator('input[name=name]').evaluate(n=>n.required),false,'name is optional');
+  assert.equal(await page.locator('input[name=email]').evaluate(n=>n.required),false,'email is optional');
+  assert.match(await page.locator('label:has(input[name=email])').textContent(),/Email \(optional, kept private\).*Only if you’d like a thank-you discount code on prints\. Never published\./s);
   assert.match(await page.locator('label:has(input[name=name]) > span').first().textContent(),/Your name \(optional\)/);
   assert(await page.locator('[data-video-record]').isHidden(),'no record button on desktop');
   assert(await page.locator('[data-video-consent]').isHidden(),'permissions only appear with a video');
   assert.equal(await page.locator('[data-video-input]').getAttribute('capture'),null,'library input never forces the camera');
   // Wrong type and oversize are refused in the browser with a clear message.
   await page.locator('[data-video-input]').setInputFiles({name:'notes.txt',mimeType:'text/plain',buffer:Buffer.from('hello')});
-  assert.match(await page.locator('[data-form-status]').textContent(),/MP4, MOV or WebM/);
+  assert.equal((await page.locator('[data-form-status]').textContent()).trim(),'Videos need to be MP4, MOV or WebM, up to 50 MB.');
+  const longFile=path.join(fs.mkdtempSync(path.join(os.tmpdir(),'va-video-')),'long.mp4');fs.writeFileSync(longFile,Buffer.alloc(51*1024*1024));
+  await page.locator('[data-video-input]').setInputFiles(longFile);fs.rmSync(path.dirname(longFile),{recursive:true,force:true});
+  assert.match(await page.locator('[data-form-status]').textContent(),/^Videos need to be MP4, MOV or WebM, up to 50 MB\. That one is 51 MB; please trim it or record a shorter clip\.$/);
+  assert(await page.locator('[data-video-selected]').isHidden(),'oversize video refused');
+  // No format/size hints under the buttons; they only appear as errors.
+  assert.equal(await page.locator('#photo-help,#video-help').count(),0);
+  assert.equal(await page.getByText('up to 500 MB').count(),0);
+  await page.locator('[data-photo-input]').setInputFiles({name:'scan.pdf',mimeType:'application/pdf',buffer:Buffer.from('%PDF-1.4')});
+  assert.equal((await page.locator('[data-form-status]').textContent()).trim(),'That file type won’t work. Please use JPEG, PNG, WebP or HEIC.');
+  await page.locator('[data-photo-input]').setInputFiles({name:'huge.jpg',mimeType:'image/jpeg',buffer:Buffer.alloc(10*1024*1024+1)});
+  assert.equal((await page.locator('[data-form-status]').textContent()).trim(),'“huge.jpg” is too large. Photos need to be 10 MB or smaller.');
+  assert.equal(await page.locator('[data-photo-previews] li').count(),0);
   const video=await makeVideo(page);
   await page.locator('[data-video-input]').setInputFiles({name:'my-painting.webm',mimeType:'video/webm',buffer:video});
   await page.locator('[data-video-consent]').waitFor();
@@ -89,7 +107,7 @@ try{
   const records=[...env.COMMISSION_UPLOADS.data.keys()].filter(k=>k.startsWith('testimonials/records/'));
   assert.equal(records.length,1);
   const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get(records[0]).value);
-  assert.equal(rec.name,'');assert.equal(rec.publishConsent,'implied-by-submit');assert.equal(rec.consent.shownVersion,'2026-10-08');
+  assert.equal(rec.name,'');assert.equal(rec.publishConsent,'implied-by-submit');assert.equal(rec.consent.shownVersion,'2026-10-08b');
   assert.equal(rec.quote,'');assert.equal(rec.video.type,'video/webm');assert.equal(rec.video.bytes,video.length);
   assert.deepEqual([rec.video.consent.site,rec.video.consent.social],[true,false]);
   assert.ok(rec.video.poster,'poster frame captured and stored');
@@ -117,6 +135,28 @@ try{
   assert.equal(await page.locator(`#${rec.id} .testimonial-meta strong`).textContent(),'A collector');
   await player.evaluate(v=>{v.muted=true;return v.play();});await unstick(page);
   if(shots){await page.waitForTimeout(800);await page.locator(`#${rec.id}`).screenshot({path:path.join(shots,'public-card.png')});}
+
+  // No email: text-only testimonial sends fine, the thank-you doesn't promise a code, approval publishes but sends nothing.
+  await page.goto(origin+'/testimonials/#share');await page.locator('[data-video-field]').waitFor();
+  await page.locator('input[name=name]').fill('Sam');await page.locator('textarea[name=quote]').fill('Lovely in our hallway.');
+  await page.locator('button[type=submit]').click();await page.locator('[data-thanks]').waitFor({timeout:30000});
+  assert(await page.locator('[data-thanks-code]').isHidden(),'no code promised without an email');
+  const sam=[...env.COMMISSION_UPLOADS.data.keys()].filter(k=>k.startsWith('testimonials/records/')).map(k=>JSON.parse(env.COMMISSION_UPLOADS.data.get(k).value)).find(r=>r.name==='Sam');
+  assert.equal(sam.email,'');
+  const before=mails.length;
+  await page.goto(origin+'/testimonial-manager/');
+  await page.locator('#tm-token').fill('owner-token');await page.locator('#tm-login button').click();
+  const samCard=page.locator(`#${sam.id}`);await samCard.waitFor();
+  assert.match(await samCard.textContent(),/No email given/);assert.match(await samCard.textContent(),/No email, so no code sent\./);
+  assert.equal(await samCard.locator('.tm-send').count(),0,'no send-thank-you box without an email');
+  await samCard.getByRole('button',{name:'Approve & publish'}).click();
+  await page.waitForFunction(()=>/Published Sam’s testimonial\. No email, so no code sent/.test(document.getElementById('tm-status').textContent));
+  assert.equal(mails.length,before,'approval sends no thank-you email');
+  await page.locator('[data-filter="approved"]').click();
+  const samApproved=page.locator(`#${sam.id}`);await samApproved.waitFor();
+  assert.match(await samApproved.textContent(),/No email, so no code sent\./);
+  assert.equal(await samApproved.getByRole('button',{name:/print code|thank-you email/i}).count(),0);
+  assert.equal(await samApproved.locator('.tm-code').count(),0);
 
   // Phone: record (front camera) and library buttons.
   const phone=await browser.newContext({viewport:{width:375,height:812},isMobile:true,hasTouch:true,deviceScaleFactor:2});await phone.route('**/*',serve);
