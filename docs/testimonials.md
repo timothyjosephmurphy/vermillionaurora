@@ -29,9 +29,13 @@ Collectors (people TJ has given or sold paintings to) share testimonials on http
    (edit name, wording, painting, slug, city, pin, photos first), **Unpublish**, **Delete (reject)**. API:
    `POST /testimonials/api/owner` with `Origin: https://tjm.art` and `Authorization: Bearer $COMMISSION_MANAGER_TOKEN`
    (actions `list`, `photo`, `geocode`, `approve`, `unpublish`, `delete`, `issueCode`).
-6. **Display**: /testimonials/ and the /exhibitions/world-map/ map fetch `GET /testimonials/api/approved` at page load, so approval
-   is live within a minute with no rebuild. Approved photos are served from `/testimonials/api/photo/<id>/<n>`. Pins are green
-   speech-mark markers with a "Collector testimonials" legend entry.
+6. **Display**: /testimonials/, the /exhibitions/world-map/ map, the homepage exhibitions card, and the map beside “Share your story”
+   fetch `GET /testimonials/api/approved` at page load (`cache: no-store`; the response is `public, max-age=60, must-revalidate`),
+   so an approval or unpublish shows on the next view and within a minute where a shared cache keeps the JSON. No rebuild.
+   Approve, unpublish and delete rebuild `testimonials/approved.json`, which is what that endpoint reads. Approved photos are
+   served from `/testimonials/api/photo/<id>/<n>`. On the full map, pins are green speech-mark markers with a "Collector testimonials"
+   legend entry. The homepage card keeps its build-time exhibition dots and adds unlabeled green dots (nearby pins merged). The
+   testimonials page map is only those collector pins, captioned “Collectors around the world”, and links to the full map.
 7. **Thank-you code and email**: approving from Pending issues the person's single-use at-cost print code (same issuer as
    `scripts/issue-print-code.mjs`, note `Testimonial <id>`) and, if **Send thank-you email** is ticked (default), emails it to
    them from `TJ Murphy <tj@vermillionaurora.com>` (the site's existing Gmail identity, same as order emails) with
