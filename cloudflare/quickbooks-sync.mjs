@@ -3,8 +3,10 @@ import { sellerMailToken } from './shipping-email.mjs';
 import {
   QboError, QBO_ORIGINS, environment, configured, syncEnabled, discover, authorizationUrl, exchangeCode, refreshTokens, revokeToken,
   accountingClient, signState, verifyState, seal, unseal, randomToken, sha256Hex, qboString, qboName, salesReceiptPayload,
-  validateReceipt, depositAccountKey, docNumberFor, accountName, itemName, ACCOUNT_DEFAULTS, ITEM_DEFAULTS, queueDelayMs
+  validateReceipt, depositAccountKey, docNumberFor, accountName, itemName, ACCOUNT_DEFAULTS, ITEM_DEFAULTS, queueDelayMs,
+  costSyncEnabled, vendorName, VENDOR_DEFAULTS, costDocNumber, costId, validateCost, purchasePayload
 } from './quickbooks-core.mjs';
+import { resolveCost, CostPending } from './quickbooks-costs.mjs';
 
 const OWNER = 'tj@vermillionaurora.com';
 const STATE_TTL = 10 * 60 * 1000;
@@ -20,6 +22,12 @@ export async function queueQuickbooks(env, receipt) {
   if (!syncEnabled(env) || !env.QUICKBOOKS) return { queued: false, reason: 'disabled' };
   return quickbooksFor(env).enqueue(receipt);
 }
+// Queue the production cost of a synced sale (print lab or shipping labels). Idempotent per order and vendor.
+export async function queueQuickbooksCost(env, cost) {
+  if (!costSyncEnabled(env) || !env.QUICKBOOKS) return { queued: false, reason: 'disabled' };
+  return quickbooksFor(env).enqueueCost(cost);
+}
+const COST_PENDING_RETRY = 3600e3;
 
 // One instance per QuickBooks environment: the connection (encrypted tokens), the sales queue and the API log.
 export class QuickbooksSync extends DurableObject {
@@ -29,6 +37,9 @@ export class QuickbooksSync extends DurableObject {
     sql.exec('CREATE TABLE IF NOT EXISTS kv (key TEXT PRIMARY KEY, value TEXT NOT NULL)');
     sql.exec(`CREATE TABLE IF NOT EXISTS queue (order_id TEXT PRIMARY KEY, receipt TEXT NOT NULL, status TEXT NOT NULL, attempts INTEGER NOT NULL DEFAULT 0,
       next_at INTEGER NOT NULL DEFAULT 0, qbo_id TEXT, doc_number TEXT, last_error TEXT, last_tid TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL)`);
+    sql.exec(`CREATE TABLE IF NOT EXISTS costs (cost_id TEXT PRIMARY KEY, order_id TEXT NOT NULL, type TEXT NOT NULL, source TEXT NOT NULL, resolved TEXT,
+      status TEXT NOT NULL, attempts INTEGER NOT NULL DEFAULT 0, next_at INTEGER NOT NULL DEFAULT 0, qbo_id TEXT, doc_number TEXT, amount TEXT, amount_source TEXT,
+      last_error TEXT, last_tid TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL)`);
     sql.exec(`CREATE TABLE IF NOT EXISTS log (id INTEGER PRIMARY KEY AUTOINCREMENT, at TEXT NOT NULL, level TEXT NOT NULL, op TEXT NOT NULL, status INTEGER,
       intuit_tid TEXT, order_id TEXT, attempt INTEGER, fault_type TEXT, fault_code TEXT, message TEXT, ms INTEGER)`);
   }
@@ -162,9 +173,19 @@ export class QuickbooksSync extends DurableObject {
     if (inserted) await this.scheduleNext(1000);
     return { queued: true, duplicate: !inserted };
   }
+  async enqueueCost(cost) {
+    validateCost(cost);
+    const now = new Date().toISOString(), id = costId(cost.orderId, cost.type);
+    const inserted = this.ctx.storage.sql.exec(`INSERT INTO costs (cost_id,order_id,type,source,status,attempts,next_at,doc_number,created_at,updated_at)
+      VALUES (?,?,?,?,'queued',0,0,?,?,?) ON CONFLICT(cost_id) DO NOTHING`, id, cost.orderId, cost.type, JSON.stringify(cost), costDocNumber(cost.orderId, cost.type), now, now).rowsWritten;
+    if (inserted) { this.log({ level: 'info', op: 'queue Purchase', orderId: cost.orderId, message: `Production cost queued (${cost.type}, ${cost.vendor})` }); await this.scheduleNext(1000); }
+    return { queued: true, duplicate: !inserted };
+  }
   async scheduleNext(delay) {
     if (!syncEnabled(this.env) || !this.get('connection')) return;
-    const due = delay ?? Math.max(1000, (this.ctx.storage.sql.exec("SELECT min(next_at) AS t FROM queue WHERE status IN ('queued','sending')").one().t ?? Infinity) - Date.now());
+    const sales = this.ctx.storage.sql.exec("SELECT min(next_at) AS t FROM queue WHERE status IN ('queued','sending')").one().t ?? Infinity;
+    const costs = costSyncEnabled(this.env) ? this.ctx.storage.sql.exec("SELECT min(next_at) AS t FROM costs WHERE status IN ('queued','sending')").one().t ?? Infinity : Infinity;
+    const due = delay ?? Math.max(1000, Math.min(sales, costs) - Date.now());
     if (Number.isFinite(due)) await this.ctx.storage.setAlarm(Date.now() + due);
   }
   async alarm() { await this.processQueue(); }
@@ -180,7 +201,15 @@ export class QuickbooksSync extends DurableObject {
     for (const { order_id } of rows) {
       const outcome = await this.syncOne(order_id);
       processed++;
-      if (outcome === 'stop') break;
+      if (outcome === 'stop') { await this.scheduleNext(); return { processed }; }
+    }
+    if (costSyncEnabled(this.env)) {
+      const due = this.ctx.storage.sql.exec("SELECT cost_id FROM costs WHERE status IN ('queued','sending') AND next_at <= ? ORDER BY created_at LIMIT ?", Date.now(), BATCH).toArray();
+      for (const { cost_id } of due) {
+        const outcome = await this.syncCost(cost_id);
+        processed++;
+        if (outcome === 'stop') break;
+      }
     }
     await this.scheduleNext();
     return { processed };
@@ -207,6 +236,135 @@ export class QuickbooksSync extends DurableObject {
         `Order ${orderId} was not recorded in QuickBooks: ${error.message}${error.tid ? `\nintuit_tid: ${error.tid}` : ''}\n\nFix the cause in QuickBooks, then use “Retry” on the connection page.`);
       return 'continue';
     }
+  }
+  updateCost(id, fields) {
+    const keys = Object.keys(fields);
+    this.ctx.storage.sql.exec(`UPDATE costs SET ${keys.map(k => `${k}=?`).join(',')}, updated_at=? WHERE cost_id=?`, ...keys.map(k => fields[k]), new Date().toISOString(), id);
+  }
+  // One production-cost Purchase. Waits for its sale to be recorded, resolves the vendor's charged amount once
+  // (stored, so retries post the same numbers), then creates the Purchase idempotently.
+  async syncCost(id) {
+    const row = this.ctx.storage.sql.exec('SELECT * FROM costs WHERE cost_id=?', id).toArray()[0];
+    if (!row || !['queued', 'sending'].includes(row.status)) return 'skip';
+    const sale = this.ctx.storage.sql.exec('SELECT status FROM queue WHERE order_id=?', row.order_id).toArray()[0];
+    if (sale?.status !== 'synced') { this.updateCost(id, { status: 'queued', next_at: Date.now() + 300e3 }); return 'continue'; }
+    const cost = JSON.parse(row.source), attempts = row.attempts + 1;
+    this.updateCost(id, { status: 'sending', attempts });
+    try {
+      let resolved = row.resolved ? JSON.parse(row.resolved) : null;
+      if (!resolved) {
+        try { resolved = await resolveCost(this.env, cost); }
+        catch (error) {
+          if (!(error instanceof CostPending)) throw error;
+          this.log({ level: 'info', op: 'resolve cost', orderId: cost.orderId, message: `Waiting for the vendor charge: ${error.message}` });
+          this.updateCost(id, { status: 'queued', attempts: row.attempts, next_at: Date.now() + COST_PENDING_RETRY, last_error: String(error.message).slice(0, 500) });
+          return 'continue';
+        }
+        this.updateCost(id, { resolved: JSON.stringify(resolved), amount: (resolved.totalCents / 100).toFixed(2), amount_source: resolved.amountSource });
+      }
+      const qboId = await this.createPurchase(cost, resolved);
+      this.updateCost(id, { status: 'synced', qbo_id: qboId, last_error: null });
+      this.log({ level: 'info', op: 'Purchase recorded', orderId: cost.orderId,
+        message: `${costDocNumber(cost.orderId, cost.type)} id ${qboId}: $${(resolved.totalCents / 100).toFixed(2)} to ${vendorName(this.env, cost.vendor)} (${resolved.amountSource}) for ${cost.saleDocNumber}` });
+      return 'ok';
+    } catch (error) {
+      const kind = error instanceof QboError ? error.kind : 'transient';
+      this.updateCost(id, { last_error: String(error.message).slice(0, 500), last_tid: error.tid || null,
+        ...(kind === 'transient' || kind === 'auth' ? { status: 'queued', next_at: Date.now() + queueDelayMs(attempts) } : { status: 'review' }) });
+      if (kind === 'invalid_grant' || kind === 'config') { this.updateCost(id, { status: 'queued', next_at: 0 }); return 'stop'; }
+      if (kind === 'validation' || kind === 'error') await this.alert(`review:${id}`, 'QuickBooks could not record a production cost',
+        `The production cost (${cost.type}) for order ${cost.orderId} was not recorded in QuickBooks: ${error.message}${error.tid ? `\nintuit_tid: ${error.tid}` : ''}\n\nFix the cause in QuickBooks, then use “Retry” on the connection page.`);
+      return 'continue';
+    }
+  }
+  async createPurchase(cost, resolved) {
+    return this.withClient(cost.orderId, async (client, current) => {
+      const docNumber = costDocNumber(cost.orderId, cost.type);
+      const existing = await client.query(`select Id, DocNumber, PrivateNote from Purchase where DocNumber = ${qboString(docNumber)}`, 'Purchase');
+      const match = existing.find(r => String(r.PrivateNote || '').includes(cost.orderId));
+      if (match) return String(match.Id);
+      const refs = await this.costReferences(client, current.realmId, cost, resolved);
+      const payload = purchasePayload(cost, resolved, refs);
+      const requestId = (await sha256Hex(`va-qbo-cost:${environment(this.env)}:${current.realmId}:${cost.orderId}:${cost.type}`)).slice(0, 36);
+      let created;
+      try { created = await client.create('Purchase', payload, requestId); }
+      catch (error) {
+        if (error.kind === 'validation' && ['2500', '610', '2020'].includes(error.faultCode)) { this.set('refs', null); throw new QboError(error.message, { ...error, kind: 'transient' }); }
+        throw error;
+      }
+      if (!created?.Id) throw new QboError('Purchase response had no Id', { kind: 'transient' });
+      return String(created.Id);
+    });
+  }
+  // Find-or-create (by name, overridable via env) for accounts; vendors likewise.
+  async accountRef(client, refs, key) {
+    if (refs.accounts[key]) return refs.accounts[key];
+    const spec = ACCOUNT_DEFAULTS[key], name = accountName(this.env, key);
+    const found = await client.query(`select Id, Name, AccountType from Account where Name = ${qboString(name)}`, 'Account');
+    const id = found[0]?.Id || (await client.create('Account', { Name: name, AccountType: spec.type, AccountSubType: spec.subType })).Id;
+    refs.accounts[key] = String(id); return refs.accounts[key];
+  }
+  async vendorRef(client, refs, key) {
+    refs.vendors ||= {};
+    if (refs.vendors[key]) return refs.vendors[key];
+    const name = vendorName(this.env, key);
+    const found = await client.query(`select Id, DisplayName, Active from Vendor where DisplayName = ${qboString(name)} and Active in (true, false)`, 'Vendor');
+    if (found[0] && found[0].Active === false) throw new QboError(`Vendor "${name}" is inactive in QuickBooks; reactivate it or set another vendor name`, { kind: 'validation' });
+    let id = found[0]?.Id;
+    if (!id) {
+      try { id = (await client.create('Vendor', { DisplayName: name, CompanyName: name })).Id; }
+      catch (error) {
+        if (error.faultCode === '6240') throw new QboError(`The name "${name}" is already used by a customer or employee in QuickBooks; set QBO_${key === 'shippo' ? 'LABEL' : 'PRINT'}_VENDOR to another name`, { kind: 'validation', tid: error.tid });
+        throw error;
+      }
+    }
+    refs.vendors[key] = String(id); return refs.vendors[key];
+  }
+  async costReferences(client, realmId, cost, resolved) {
+    const cache = this.get('refs');
+    const refs = cache?.realmId === realmId ? cache : { realmId, accounts: {}, items: {} };
+    const accounts = {};
+    for (const key of new Set(resolved.lines.map(l => l.account))) accounts[key] = await this.accountRef(client, refs, key);
+    const cardAccountId = await this.accountRef(client, refs, 'vendorCard');
+    const vendorId = await this.vendorRef(client, refs, cost.vendor);
+    this.set('refs', refs);
+    return { accounts, cardAccountId, vendorId };
+  }
+  costRows(limit = 200) {
+    return this.ctx.storage.sql.exec('SELECT cost_id, order_id, type, status, attempts, next_at, qbo_id, doc_number, amount, amount_source, last_error, last_tid, created_at, updated_at FROM costs ORDER BY created_at DESC LIMIT ?', Math.min(limit | 0, 1000)).toArray();
+  }
+  // Read-only: what the production-cost Purchases for one synced order would contain. Vendor reads and QuickBooks queries only.
+  async previewCosts(orderId) {
+    const id = String(orderId || '');
+    const sale = this.ctx.storage.sql.exec('SELECT status, doc_number, qbo_id FROM queue WHERE order_id=?', id).toArray()[0];
+    if (!sale) return { orderId: id, error: 'This order is not in the QuickBooks sales queue.' };
+    const sources = await this.env.CART_ORDERS.getByName(id.replace(/^cart:/, '')).quickbooksCostSources();
+    const purchases = [];
+    for (const cost of sources) {
+      const queued = this.ctx.storage.sql.exec('SELECT status, qbo_id, amount, amount_source FROM costs WHERE cost_id=?', costId(cost.orderId, cost.type)).toArray()[0] || null;
+      let resolved;
+      try { resolved = await resolveCost(this.env, cost); }
+      catch (error) { purchases.push({ type: cost.type, vendor: vendorName(this.env, cost.vendor), docNumber: costDocNumber(cost.orderId, cost.type), queued, pending: error.message }); continue; }
+      const existing = await this.withClient('preview', client => client.query(`select Id, DocNumber, TotalAmt, PrivateNote from Purchase where DocNumber = ${qboString(costDocNumber(cost.orderId, cost.type))}`, 'Purchase'));
+      purchases.push({ type: cost.type, vendor: vendorName(this.env, cost.vendor), paymentAccount: accountName(this.env, 'vendorCard'), docNumber: costDocNumber(cost.orderId, cost.type),
+        txnDatePT: purchasePayload(cost, resolved, { cardAccountId: '0', vendorId: '0', accounts: Object.fromEntries(resolved.lines.map(l => [l.account, '0'])) }).TxnDate,
+        total: (resolved.totalCents / 100).toFixed(2), amountSource: resolved.amountSource, memo: resolved.memo,
+        lines: resolved.lines.map(l => ({ account: accountName(this.env, l.account), amount: (l.cents / 100).toFixed(2), description: l.description })),
+        queued, alreadyInQuickBooks: existing.filter(r => String(r.PrivateNote || '').includes(cost.orderId)).map(r => ({ id: String(r.Id), total: r.TotalAmt })) });
+    }
+    return { orderId: id, sale: { status: sale.status, docNumber: sale.doc_number, qboId: sale.qbo_id }, purchases, costSyncEnabled: costSyncEnabled(this.env) };
+  }
+  // Owner-requested backfill for already-synced sales (listed explicitly). Queues through the same idempotent path.
+  async backfillCosts(orderIds) {
+    if (!costSyncEnabled(this.env)) return { error: 'Production-cost sync is disabled (QBO_COST_SYNC_ENABLED).' };
+    const results = [];
+    for (const id of [...new Set((Array.isArray(orderIds) ? orderIds : []).map(String))].slice(0, 10)) {
+      const sale = this.ctx.storage.sql.exec('SELECT status FROM queue WHERE order_id=?', id).toArray()[0];
+      if (sale?.status !== 'synced') { results.push({ orderId: id, error: 'sale is not recorded in QuickBooks' }); continue; }
+      results.push({ orderId: id, ...(await this.env.CART_ORDERS.getByName(id.replace(/^cart:/, '')).queueQuickbooksCosts()) });
+    }
+    await this.scheduleNext(1000);
+    return { results };
   }
   // Calls with a 401 refresh the access token once and retry.
   async withClient(orderId, work) {
@@ -246,13 +404,7 @@ export class QuickbooksSync extends DurableObject {
   async references(client, realmId, receipt) {
     const cache = this.get('refs');
     const refs = cache?.realmId === realmId ? cache : { realmId, accounts: {}, items: {} };
-    const account = async key => {
-      if (refs.accounts[key]) return refs.accounts[key];
-      const spec = ACCOUNT_DEFAULTS[key], name = accountName(this.env, key);
-      const found = await client.query(`select Id, Name, AccountType from Account where Name = ${qboString(name)}`, 'Account');
-      const id = found[0]?.Id || (await client.create('Account', { Name: name, AccountType: spec.type, AccountSubType: spec.subType })).Id;
-      refs.accounts[key] = String(id); return refs.accounts[key];
-    };
+    const account = key => this.accountRef(client, refs, key);
     const item = async key => {
       if (refs.items[key]) return refs.items[key];
       const name = itemName(this.env, key);
@@ -301,7 +453,8 @@ export class QuickbooksSync extends DurableObject {
     return { environment: environment(this.env), configured: configured(this.env), syncEnabled: syncEnabled(this.env), connected: Boolean(current),
       ...(current ? { companyName: current.companyName, realmIdSuffix: String(current.realmId).slice(-4), connectedAt: current.connectedAt,
         refreshExpiresAt: current.refreshExpiresAt ? new Date(current.refreshExpiresAt).toISOString() : null } : {}),
-      disconnected: this.get('disconnected'), queue: counts, lastError };
+      disconnected: this.get('disconnected'), queue: counts, costSyncEnabled: costSyncEnabled(this.env),
+      costs: Object.fromEntries(this.ctx.storage.sql.exec('SELECT status, count(*) AS n FROM costs GROUP BY status').toArray().map(r => [r.status, r.n])), lastError };
   }
   logs(limit = 500) {
     return this.ctx.storage.sql.exec('SELECT * FROM log ORDER BY id DESC LIMIT ?', Math.min(Math.max(1, limit | 0), LOG_LIMIT)).toArray();
@@ -310,7 +463,8 @@ export class QuickbooksSync extends DurableObject {
     return this.ctx.storage.sql.exec("SELECT order_id, status, attempts, next_at, qbo_id, doc_number, last_error, last_tid, created_at, updated_at, json_extract(receipt,'$.paidAt') AS paid_at, json_extract(receipt,'$.provider') AS provider, json_extract(receipt,'$.gross') AS gross FROM queue ORDER BY created_at DESC LIMIT ?", Math.min(limit | 0, 1000)).toArray();
   }
   async retry(orderId) {
-    const changed = this.ctx.storage.sql.exec("UPDATE queue SET status='queued', next_at=0 WHERE order_id=? AND status IN ('review','queued')", String(orderId)).rowsWritten;
+    const changed = this.ctx.storage.sql.exec("UPDATE queue SET status='queued', next_at=0 WHERE order_id=? AND status IN ('review','queued')", String(orderId)).rowsWritten +
+      this.ctx.storage.sql.exec("UPDATE costs SET status='queued', next_at=0, resolved=CASE WHEN status='review' THEN NULL ELSE resolved END WHERE (cost_id=? OR order_id=?) AND status IN ('review','queued')", String(orderId), String(orderId)).rowsWritten;
     if (changed) await this.scheduleNext(1000);
     return { retried: Boolean(changed) };
   }
@@ -333,10 +487,19 @@ export class QuickbooksSync extends DurableObject {
         items[key] = { name, ...(found ? { id: String(found.Id), type: found.Type, active: found.Active !== false, incomeAccount: found.IncomeAccountRef?.name || null } : { incomeAccount: accounts[spec.account].name }),
           action: !found ? `will be created (Service item posting to ${accounts[spec.account].name})` : found.Active === false ? 'PROBLEM: inactive item with this name; reactivate it or set another name' : !['Service', 'NonInventory', 'Inventory'].includes(found.Type) ? `PROBLEM: existing item type ${found.Type} cannot be used` : 'use existing' };
       }
-      const problems = [...Object.values(accounts), ...Object.values(items)].filter(e => e.action.startsWith('PROBLEM')).length;
+      const vendors = {};
+      for (const key of ['finerworks', 'shippo']) {
+        const name = vendorName(this.env, key);
+        const found = (await client.query(`select Id, DisplayName, Active from Vendor where DisplayName = ${qboString(name)} and Active in (true, false)`, 'Vendor'))[0];
+        vendors[key] = { name, ...(found ? { id: String(found.Id), active: found.Active !== false } : {}),
+          action: !found ? 'will be created (Vendor)' : found.Active === false ? 'PROBLEM: inactive vendor with this name; reactivate it or set another name' : 'use existing' };
+      }
+      const problems = [...Object.values(accounts), ...Object.values(items), ...Object.values(vendors)].filter(e => e.action.startsWith('PROBLEM')).length;
       return { company: current.companyName, homeCurrency: preferences?.CurrencyPrefs?.HomeCurrency?.value || null, multiCurrency: Boolean(preferences?.CurrencyPrefs?.MultiCurrencyEnabled),
         salesTax: { usingSalesTax: preferences?.TaxPrefs?.UsingSalesTax ?? null, automatedSalesTax: preferences?.TaxPrefs?.PartnerTaxEnabled ?? null },
-        customTxnNumbers: preferences?.SalesFormsPrefs?.CustomTxnNumbers ?? null, depositTo: { square: accounts.square.name, btcpay: accounts.bitcoin.name }, accounts, items, problems };
+        customTxnNumbers: preferences?.SalesFormsPrefs?.CustomTxnNumbers ?? null, depositTo: { square: accounts.square.name, btcpay: accounts.bitcoin.name },
+        productionCosts: { enabled: costSyncEnabled(this.env), paidFrom: accounts.vendorCard.name, printVendor: vendors.finerworks.name, labelVendor: vendors.shippo.name },
+        accounts, items, vendors, problems };
     });
   }
 }

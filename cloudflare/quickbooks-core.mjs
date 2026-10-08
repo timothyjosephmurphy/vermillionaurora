@@ -1,5 +1,5 @@
 // QuickBooks Online (Accounting API only) helpers shared by the sync Durable Object and its routes.
-// Edition-neutral: only Customer, Item, Account, SalesReceipt, CompanyInfo and Preferences are used.
+// Edition-neutral: only Customer, Vendor, Item, Account, SalesReceipt, Purchase, CompanyInfo and Preferences are used.
 // USD only (no CurrencyRef / multicurrency), no automated sales-tax API (tax is a plain line), no webhooks, no CDC.
 // Never log tokens, client credentials or authorization codes.
 export const QBO_SCOPE = 'com.intuit.quickbooks.accounting';
@@ -204,8 +204,20 @@ export const ACCOUNT_DEFAULTS = {
   tax: { env: 'QBO_TAX_ACCOUNT', name: 'Sales tax collected', type: 'Other Current Liability', subType: 'OtherCurrentLiabilities' },
   discount: { env: 'QBO_DISCOUNT_ACCOUNT', name: 'Discounts given', type: 'Income', subType: 'DiscountsRefundsGiven' },
   square: { env: 'QBO_SQUARE_DEPOSIT_ACCOUNT', name: 'Square clearing', type: 'Other Current Asset', subType: 'OtherCurrentAssets' },
-  bitcoin: { env: 'QBO_BITCOIN_DEPOSIT_ACCOUNT', name: 'Bitcoin clearing', type: 'Other Current Asset', subType: 'OtherCurrentAssets' }
+  bitcoin: { env: 'QBO_BITCOIN_DEPOSIT_ACCOUNT', name: 'Bitcoin clearing', type: 'Other Current Asset', subType: 'OtherCurrentAssets' },
+  // Production costs (Purchases to the print lab and the label service)
+  cogsPrints: { env: 'QBO_COGS_PRINTS_ACCOUNT', name: 'Cost of goods sold – prints & framing', type: 'Cost of Goods Sold', subType: 'SuppliesMaterialsCogs' },
+  cogsShipping: { env: 'QBO_COGS_SHIPPING_ACCOUNT', name: 'Cost of goods sold – shipping', type: 'Cost of Goods Sold', subType: 'ShippingFreightDeliveryCos' },
+  vendorCard: { env: 'QBO_VENDOR_CARD_ACCOUNT', name: 'Print vendor card', type: 'Credit Card', subType: 'CreditCard' }
 };
+// Vendors that charge the owner's card for each order: the print lab (prints, framing, lab shipping) and the label service.
+export const VENDOR_DEFAULTS = {
+  finerworks: { env: 'QBO_PRINT_VENDOR', name: 'FinerWorks' },
+  prodigi: { env: 'QBO_PRINT_VENDOR', name: 'Prodigi' },
+  shippo: { env: 'QBO_LABEL_VENDOR', name: 'Shippo' }
+};
+export const vendorName = (env, key) => qboName(env[VENDOR_DEFAULTS[key].env] || VENDOR_DEFAULTS[key].name);
+export const costSyncEnabled = env => syncEnabled(env) && env.QBO_COST_SYNC_ENABLED === 'true';
 export const accountName = (env, key) => qboName(env[ACCOUNT_DEFAULTS[key].env] || ACCOUNT_DEFAULTS[key].name);
 export const itemName = (env, key) => qboName(env[ITEM_DEFAULTS[key].env] || ITEM_DEFAULTS[key].name);
 
@@ -258,3 +270,32 @@ export function salesReceiptPayload(receipt, refs) {
   };
 }
 export const depositAccountKey = receipt => receipt.provider === 'btcpay' ? 'bitcoin' : 'square';
+
+// Production-cost Purchases: one per order per vendor. VP- = print lab, VL- = shipping labels (21-character DocNumber limit).
+export const costDocNumber = (orderId, type) => `${type === 'label' ? 'VL' : 'VP'}-${String(orderId).replace(/^cart:/, '').replace(/[^A-Za-z0-9]/g, '').slice(0, 18)}`;
+export const costId = (orderId, type) => `${orderId}:${type}`;
+export function validateCost(cost) {
+  if (!cost || cost.kind !== 'cost' || !['print', 'label'].includes(cost.type)) throw new QboError('Not a production cost', { kind: 'validation' });
+  if (typeof cost.orderId !== 'string' || !/^cart:[A-Za-z0-9-]{1,80}$/.test(cost.orderId)) throw new QboError('Missing order id', { kind: 'validation' });
+  if (!VENDOR_DEFAULTS[cost.vendor]) throw new QboError(`Unknown vendor ${cost.vendor}`, { kind: 'validation' });
+  return cost;
+}
+// Pure mapping from a resolved cost ({placedAt, lines:[{account, cents, description}], amountSource, memo}) to a QuickBooks
+// Purchase paid by credit card. Lines are positive and must add up to the resolved total.
+export function purchasePayload(cost, resolved, refs) {
+  validateCost(cost);
+  const lines = resolved.lines.filter(l => l.cents > 0);
+  if (!lines.length || resolved.lines.some(l => !Number.isInteger(l.cents) || l.cents < 0)) throw new QboError('Production cost has no valid lines', { kind: 'validation' });
+  const total = lines.reduce((sum, l) => sum + l.cents, 0);
+  if (total !== resolved.totalCents) throw new QboError(`Cost lines ${dollars(total)} do not match the vendor total ${dollars(resolved.totalCents)}`, { kind: 'validation' });
+  return {
+    PaymentType: 'CreditCard',
+    AccountRef: { value: refs.cardAccountId },
+    EntityRef: { value: refs.vendorId, type: 'Vendor' },
+    TxnDate: pacificDate(resolved.placedAt),
+    DocNumber: costDocNumber(cost.orderId, cost.type),
+    PrivateNote: resolved.memo.slice(0, 4000),
+    Line: lines.map(l => ({ DetailType: 'AccountBasedExpenseLineDetail', Amount: Number(dollars(l.cents)), Description: String(l.description).slice(0, 4000),
+      AccountBasedExpenseLineDetail: { AccountRef: { value: refs.accounts[l.account] } } }))
+  };
+}
