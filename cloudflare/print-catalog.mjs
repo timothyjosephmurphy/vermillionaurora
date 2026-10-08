@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="5e66f2765b92a8a53071";
+export const printVersion="6dd7c5108003a18f025e";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -40566,8 +40566,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-f56007f6a7d6ee955caf",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 1 — Large print",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S5.18X9.46",
@@ -40591,7 +40591,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.jpg"
     },
     "attributes": {},
@@ -40604,8 +40604,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-f56007f6a7d6ee955caf",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 1 — Large print — Black frame",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print — Black frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD18X9DD46F1S8DD18X12DD46J1S5DD18X9DD46G1",
@@ -40629,7 +40629,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.jpg"
     },
     "attributes": {},
@@ -40678,8 +40678,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-f56007f6a7d6ee955caf",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 1 — Large print — White frame",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print — White frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD18X9DD46F2S8DD18X12DD46J1S5DD18X9DD46G1",
@@ -40703,7 +40703,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.jpg"
     },
     "attributes": {},
@@ -40752,8 +40752,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-f56007f6a7d6ee955caf",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 1 — Large print — Natural wood frame",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
     "amount": "81.63",
     "currency": "USD",
     "sku": "5M144M8S5DD18X9DD46F7S8DD18X12DD46J1S5DD18X9DD46G1",
@@ -40777,7 +40777,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 1",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.jpg"
     },
     "attributes": {},
@@ -40826,8 +40826,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-d1399111a441ed91feaa",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 2 — Large print",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S5.64X10.06",
@@ -40851,7 +40851,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
     },
     "attributes": {},
@@ -40864,8 +40864,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-d1399111a441ed91feaa",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print — Black frame",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 2 — Large print — Black frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "73.63",
     "currency": "USD",
     "sku": "5M144M8S5DD64X10DD06F1S8DD64X13DD06J1S5DD64X10DD06G1",
@@ -40889,7 +40889,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
     },
     "attributes": {},
@@ -40938,8 +40938,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-d1399111a441ed91feaa",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print — White frame",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 2 — Large print — White frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "73.63",
     "currency": "USD",
     "sku": "5M144M8S5DD64X10DD06F2S8DD64X13DD06J1S5DD64X10DD06G1",
@@ -40963,7 +40963,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
     },
     "attributes": {},
@@ -41012,8 +41012,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-d1399111a441ed91feaa",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Large print — Natural wood frame",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 2 — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "83.63",
     "currency": "USD",
     "sku": "5M144M8S5DD64X10DD06F7S8DD64X13DD06J1S5DD64X10DD06G1",
@@ -41037,7 +41037,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
     },
     "attributes": {},
@@ -41086,8 +41086,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-d1399111a441ed91feaa",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 2 — Medium print",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S4.29X7.6",
@@ -41111,7 +41111,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
     },
     "attributes": {},
@@ -41124,8 +41124,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-d1399111a441ed91feaa",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print — Black frame",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 2 — Medium print — Black frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "61.63",
     "currency": "USD",
     "sku": "5M144M8S4DD29X7DD6F1S8DD01X11DD32J1S4DD29X7DD6G1",
@@ -41149,7 +41149,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
     },
     "attributes": {},
@@ -41198,8 +41198,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-d1399111a441ed91feaa",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print — White frame",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 2 — Medium print — White frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "61.63",
     "currency": "USD",
     "sku": "5M144M8S4DD29X7DD6F2S8DD01X11DD32J1S4DD29X7DD6G1",
@@ -41223,7 +41223,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
     },
     "attributes": {},
@@ -41272,8 +41272,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-d1399111a441ed91feaa",
-    "title": "Sunset in the Straight of Juan Defuca, Pathos island 2 — Medium print — Natural wood frame",
-    "artworkTitle": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 2 — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S4DD29X7DD6F7S8DD01X11DD32J1S4DD29X7DD6G1",
@@ -41297,7 +41297,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp",
-      "alt": "Sunset in the Straight of Juan Defuca, Pathos island 2",
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.jpg"
     },
     "attributes": {},
@@ -41346,8 +41346,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-c198f09bc8ddad18ed1e",
-    "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print",
-    "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
+    "title": "Sunrise at Bass Coast, Merritt, BC 2 — Large print",
+    "artworkTitle": "Sunrise at Bass Coast, Merritt, BC 2",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S8.96X4.99",
@@ -41371,7 +41371,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.webp",
-      "alt": "Sunrise at Bass Coast, Merit, BC 2",
+      "alt": "Sunrise at Bass Coast, Merritt, BC 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.jpg"
     },
     "attributes": {},
@@ -41384,8 +41384,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-c198f09bc8ddad18ed1e",
-    "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print — Black frame",
-    "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
+    "title": "Sunrise at Bass Coast, Merritt, BC 2 — Large print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast, Merritt, BC 2",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S8DD96X4DD99F1S11DD98X8DD01J1S8DD96X4DD99G1",
@@ -41409,7 +41409,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.webp",
-      "alt": "Sunrise at Bass Coast, Merit, BC 2",
+      "alt": "Sunrise at Bass Coast, Merritt, BC 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.jpg"
     },
     "attributes": {},
@@ -41458,8 +41458,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-c198f09bc8ddad18ed1e",
-    "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print — White frame",
-    "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
+    "title": "Sunrise at Bass Coast, Merritt, BC 2 — Large print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast, Merritt, BC 2",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S8DD96X4DD99F2S11DD98X8DD01J1S8DD96X4DD99G1",
@@ -41483,7 +41483,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.webp",
-      "alt": "Sunrise at Bass Coast, Merit, BC 2",
+      "alt": "Sunrise at Bass Coast, Merritt, BC 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.jpg"
     },
     "attributes": {},
@@ -41532,8 +41532,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-c198f09bc8ddad18ed1e",
-    "title": "Sunrise at Bass Coast, Merit, BC 2 — Large print — Natural wood frame",
-    "artworkTitle": "Sunrise at Bass Coast, Merit, BC 2",
+    "title": "Sunrise at Bass Coast, Merritt, BC 2 — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast, Merritt, BC 2",
     "amount": "75.63",
     "currency": "USD",
     "sku": "5M144M8S8DD96X4DD99F7S11DD98X8DD01J1S8DD96X4DD99G1",
@@ -41557,7 +41557,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.webp",
-      "alt": "Sunrise at Bass Coast, Merit, BC 2",
+      "alt": "Sunrise at Bass Coast, Merritt, BC 2",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.jpg"
     },
     "attributes": {},
@@ -41606,8 +41606,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-87cf2a732259b313f5ab",
-    "title": "Sunrise in Puerta Vallarta — Large print",
-    "artworkTitle": "Sunrise in Puerta Vallarta",
+    "title": "Sunrise in Puerto Vallarta — Large print",
+    "artworkTitle": "Sunrise in Puerto Vallarta",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S4.7X8.09",
@@ -41631,7 +41631,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.webp",
-      "alt": "Sunrise in Puerta Vallarta",
+      "alt": "Sunrise in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.jpg"
     },
     "attributes": {},
@@ -41644,8 +41644,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-87cf2a732259b313f5ab",
-    "title": "Sunrise in Puerta Vallarta — Large print — Black frame",
-    "artworkTitle": "Sunrise in Puerta Vallarta",
+    "title": "Sunrise in Puerto Vallarta — Large print — Black frame",
+    "artworkTitle": "Sunrise in Puerto Vallarta",
     "amount": "61.63",
     "currency": "USD",
     "sku": "5M144M8S4DD7X8DD09F1S8X11DD39J1S4DD7X8DD09G1",
@@ -41669,7 +41669,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.webp",
-      "alt": "Sunrise in Puerta Vallarta",
+      "alt": "Sunrise in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.jpg"
     },
     "attributes": {},
@@ -41718,8 +41718,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-87cf2a732259b313f5ab",
-    "title": "Sunrise in Puerta Vallarta — Large print — White frame",
-    "artworkTitle": "Sunrise in Puerta Vallarta",
+    "title": "Sunrise in Puerto Vallarta — Large print — White frame",
+    "artworkTitle": "Sunrise in Puerto Vallarta",
     "amount": "61.63",
     "currency": "USD",
     "sku": "5M144M8S4DD7X8DD09F2S8X11DD39J1S4DD7X8DD09G1",
@@ -41743,7 +41743,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.webp",
-      "alt": "Sunrise in Puerta Vallarta",
+      "alt": "Sunrise in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.jpg"
     },
     "attributes": {},
@@ -41792,8 +41792,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-87cf2a732259b313f5ab",
-    "title": "Sunrise in Puerta Vallarta — Large print — Natural wood frame",
-    "artworkTitle": "Sunrise in Puerta Vallarta",
+    "title": "Sunrise in Puerto Vallarta — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise in Puerto Vallarta",
     "amount": "70.63",
     "currency": "USD",
     "sku": "5M144M8S4DD7X8DD09F7S8X11DD39J1S4DD7X8DD09G1",
@@ -41817,7 +41817,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.webp",
-      "alt": "Sunrise in Puerta Vallarta",
+      "alt": "Sunrise in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.jpg"
     },
     "attributes": {},
@@ -41866,8 +41866,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-471daf14a8bb7883f114",
-    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print",
-    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta — Large print",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S11.57X6.33",
@@ -41891,7 +41891,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
-      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
     },
     "attributes": {},
@@ -41904,8 +41904,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-471daf14a8bb7883f114",
-    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print — Black frame",
-    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta — Large print — Black frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
     "amount": "83.00",
     "currency": "USD",
     "sku": "5M144M8S11DD57X6DD33F1S14DD57X9DD33J1S11DD57X6DD33G1",
@@ -41929,7 +41929,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
-      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
     },
     "attributes": {},
@@ -41978,8 +41978,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-471daf14a8bb7883f114",
-    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print — White frame",
-    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta — Large print — White frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
     "amount": "83.00",
     "currency": "USD",
     "sku": "5M144M8S11DD57X6DD33F2S14DD57X9DD33J1S11DD57X6DD33G1",
@@ -42003,7 +42003,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
-      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
     },
     "attributes": {},
@@ -42052,8 +42052,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-471daf14a8bb7883f114",
-    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Large print — Natural wood frame",
-    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta — Large print — Natural wood frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
     "amount": "94.00",
     "currency": "USD",
     "sku": "5M144M8S11DD57X6DD33F7S14DD57X9DD33J1S11DD57X6DD33G1",
@@ -42077,7 +42077,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
-      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
     },
     "attributes": {},
@@ -42126,8 +42126,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-471daf14a8bb7883f114",
-    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print",
-    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta — Medium print",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S8.74X4.81",
@@ -42151,7 +42151,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
-      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
     },
     "attributes": {},
@@ -42164,8 +42164,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-471daf14a8bb7883f114",
-    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print — Black frame",
-    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta — Medium print — Black frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S8DD74X4DD81F1S11DD94X8DD01J1S8DD74X4DD81G1",
@@ -42189,7 +42189,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
-      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
     },
     "attributes": {},
@@ -42238,8 +42238,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-471daf14a8bb7883f114",
-    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print — White frame",
-    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta — Medium print — White frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S8DD74X4DD81F2S11DD94X8DD01J1S8DD74X4DD81G1",
@@ -42263,7 +42263,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
-      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
     },
     "attributes": {},
@@ -42312,8 +42312,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-471daf14a8bb7883f114",
-    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta — Medium print — Natural wood frame",
-    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+    "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta — Medium print — Natural wood frame",
+    "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
     "amount": "75.63",
     "currency": "USD",
     "sku": "5M144M8S8DD74X4DD81F7S11DD94X8DD01J1S8DD74X4DD81G1",
@@ -42337,7 +42337,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp",
-      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerta Vallarta",
+      "alt": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.jpg"
     },
     "attributes": {},
