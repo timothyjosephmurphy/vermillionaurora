@@ -98,6 +98,9 @@ test('creates original drafts at the site price plus the Etsy uplift and can pub
   const form = new URLSearchParams(calls.find(call => call.url.includes('/listings?legacy=false')).options.body);
   assert.equal(form.get('title'), 'El Zonte Before Dawn, Original Watercolor Pastel, 48 x 24 in');
   assert.equal(form.get('price'), '1100.00');
+  const priced = calls.find(call => call.url.includes('/inventory') && call.options.method === 'PUT');
+  assert.equal(JSON.parse(priced.options.body).products[0].offerings[0].price, 1100);
+  assert.equal(JSON.parse(priced.options.body).products[0].offerings[0].quantity, 1);
   assert.equal(form.get('quantity'), '1');
   assert.equal(form.get('who_made'), 'i_did');
   assert.equal(form.get('when_made'), '2020_2026');
