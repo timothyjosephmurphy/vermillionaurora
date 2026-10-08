@@ -36,3 +36,21 @@ test('http on tjm.art upgrades to https with the same path and query',()=>{
   assert.deepEqual(loc('http://tjm.art/about/?a=1',off),[301,'https://tjm.art/about/?a=1']);
   assert.equal(loc('https://tjm.art/about/',off),null);
 });
+test('Apple Pay domain association is served on tjm.art, from Square when reachable and the snapshot otherwise',async()=>{
+  const {applePayAssociation,APPLE_PAY_ASSOCIATION_PATH}=await import('../worker/site.mjs');
+  const {APPLE_PAY_DOMAIN_ASSOCIATION}=await import('../worker/apple-pay-domain-association.mjs');
+  assert.equal(APPLE_PAY_ASSOCIATION_PATH,'/.well-known/apple-developer-merchantid-domain-association');
+  assert.match(APPLE_PAY_DOMAIN_ASSOCIATION,/^[0-9A-F]{1000,}$/);
+  const fresh='AB'.repeat(600);
+  assert.equal(await (await applePayAssociation(async()=>new Response(fresh))).text(),fresh);
+  assert.equal(await (await applePayAssociation(async()=>{throw Error('offline');})).text(),APPLE_PAY_DOMAIN_ASSOCIATION);
+  assert.equal(await (await applePayAssociation(async()=>new Response('<html>error</html>'))).text(),APPLE_PAY_DOMAIN_ASSOCIATION);
+  const env={...off,ASSETS:{fetch:()=>new Response('asset')}};
+  const r=await worker.fetch(new Request('https://tjm.art'+APPLE_PAY_ASSOCIATION_PATH),env);
+  assert.equal(r.status,200);assert.match(r.headers.get('Content-Type'),/^text\/plain/);
+});
+test('fingerprinted /display/ and /_astro/ assets get a one-year immutable cache; pages keep the default',async()=>{
+  const env={...off,ASSETS:{fetch:r=>new URL(r.url).pathname==='/missing/'?new Response('nf',{status:404}):new Response('x',{headers:{'Cache-Control':'public, max-age=0, must-revalidate','Content-Type':'image/webp'}})}};
+  for(const p of ['/display/a-123-160.webp','/_astro/index.abc.css']){const r=await worker.fetch(new Request('https://tjm.art'+p),env);assert.equal(r.headers.get('Cache-Control'),'public, max-age=31536000, immutable',p);assert.equal(r.headers.get('Content-Type'),'image/webp');}
+  for(const p of ['/','/gallery/','/gallery-images/a.jpg','/missing/'])assert.notEqual((await worker.fetch(new Request('https://tjm.art'+p),env)).headers.get('Cache-Control'),'public, max-age=31536000, immutable',p);
+});

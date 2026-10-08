@@ -55,7 +55,7 @@ try{
     assert.match(await recommendations.locator('.frame-fit').first().textContent(),/custom mat/);
     await page.locator('input[value$="-medium"]').check();
     assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0B1CNJL7N$/);
-    assert.match(await recommendations.locator('[data-frame-size]').textContent(),/6.91 × 8.29/);
+    assert.match(await recommendations.locator('[data-frame-size]').textContent(),/6.9 × 8.3/);
     await page.locator('input[value$="-full"]').check();
     assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0BQR2BQYZ$/);
     await page.evaluate(()=>{

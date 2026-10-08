@@ -132,7 +132,7 @@ function setupForm() {
       say('Sending…');
       const r = await fetch(form.action, {method: 'POST', body: data, headers: {Accept: 'application/json'}});
       const result = await r.json().catch(() => ({}));
-      if (!r.ok || !result.success) throw Error(result.error || 'Sorry, something went wrong. Please try again, or email tj@vermillionaurora.com.');
+      if (!r.ok || !result.success) throw Error(result.error || 'Sorry, something went wrong. Please try again, or email tj@tjm.art.');
       form.hidden = true;
       const thanks = document.querySelector('[data-thanks]');
       thanks.hidden = false; thanks.focus();

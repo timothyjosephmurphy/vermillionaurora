@@ -4,7 +4,7 @@ export const DISPLAY_PAGES = ['/', '/gallery/', '/gallery/available/', '/exhibit
   '/exhibitions/gavin-robertson/', '/exhibitions/paul-murphy/', '/exhibitions/chase-toole/', '/exhibitions/bitcoin-film-festival-warsaw/',
   '/exhibitions/cape-town/', '/exhibitions/el-salvador/', '/exhibitions/intiman-auction/', '/exhibitions/living-room/',
   '/exhibitions/studio-601/', '/exhibitions/victrola/', '/links/', '/blog/', '/blog/bitcoin-film-festival/'];
-export const MIN_BYTES = 120000; // EXTRA_SOURCES are always converted
+export const MIN_BYTES = 30000; // EXTRA_SOURCES are always converted (lowered from 120 KB: small JPEGs still cost ~60 KB each as 64px list thumbnails)
 export const WIDTHS = [160, 480, 960, 1600];
 export const DEFAULT_QUALITY = 75;
 // Very textured paintings need a lower quality to get real savings; visually equivalent at display size.

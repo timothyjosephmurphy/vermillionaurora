@@ -2,21 +2,21 @@
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { catalogVersion, urlFor } from '../../catalog/catalog.mjs';
-const { product } = Astro.props;
+const { product, metaDescription } = Astro.props;
 const canonical = new URL(urlFor(product), Astro.site || 'https://tjm.art').href;
 const shareTitle = `${product.title} — ${product.artist || product.author || 'TJ Murphy'}`;
 const featuredArtist = product.artist && product.artist !== 'TJ Murphy' ? product.artist : null;
 const pageTitle = featuredArtist
   ? `${product.title} by ${featuredArtist} | TJM.art`
   : `${product.title}${product.bookGallery ? ' — Book gallery artwork' : ''} | TJ Murphy`;
-const shareDescription = product.description || product.story?.join(' ').slice(0, 180) || shareTitle;
+const shareDescription = metaDescription || product.description || product.story?.join(' ').slice(0, 180) || shareTitle;
 const shareImageSrc = product.image?.src || product.examples?.[0]?.src;
 const shareImage = shareImageSrc ? new URL(shareImageSrc, canonical).href : null;
 const shareImageAlt = product.image?.alt || shareTitle;
 const structuredData = product.type === 'painting'
   ? { '@context':'https://schema.org', '@type':'VisualArtwork', name:product.title,
       creator:(product.artist||'TJ Murphy')==='TJ Murphy'?{'@type':'Person','@id':'https://tjm.art/#tj-murphy',name:'TJ Murphy'}:{'@type':'Person',name:product.artist},
-      ...(product.medium?{artMedium:product.medium}:{}), ...(product.surface?{artworkSurface:product.surface}:{}), image:new URL(product.image.src, Astro.site).href, description:product.description, url:canonical,
+      ...(product.medium?{artMedium:product.medium}:{}), ...(product.surface?{artworkSurface:product.surface}:{}), image:new URL(product.image.src, Astro.site).href, description:metaDescription||product.description, url:canonical,
       ...(product.year?{dateCreated:String(product.year)}:{}),
       ...(product.dimensions?.width&&product.dimensions?.height?{width:{'@type':'Distance',name:`${product.dimensions.width} ${product.dimensions.unit||'in'}`},height:{'@type':'Distance',name:`${product.dimensions.height} ${product.dimensions.unit||'in'}`}}:{}),
       ...(product.listing?.price?.amount&&product.listing.status!=='not-for-sale'?{offers:{'@type':'Offer',price:product.listing.price.amount,priceCurrency:product.listing.price.currency||'USD',url:canonical,

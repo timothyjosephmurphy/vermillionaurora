@@ -1,4 +1,121 @@
 {
+ "/about/images/artist-portfolio-2026.jpg": {
+  "original": 73053,
+  "width": 900,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/artist-portfolio-2026-da60148434-160.webp",
+    "bytes": 2004
+   },
+   {
+    "w": 480,
+    "src": "/display/artist-portfolio-2026-da60148434-480.webp",
+    "bytes": 11874
+   },
+   {
+    "w": 900,
+    "src": "/display/artist-portfolio-2026-da60148434-900.webp",
+    "bytes": 27922
+   }
+  ]
+ },
+ "/about/images/tj-murphy-portrait.jpg": {
+  "original": 68449,
+  "width": 424,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/tj-murphy-portrait-0202c816ac-160.webp",
+    "bytes": 4294
+   },
+   {
+    "w": 424,
+    "src": "/display/tj-murphy-portrait-0202c816ac-424.webp",
+    "bytes": 14020
+   }
+  ]
+ },
+ "/exhibitions/bitcoin-film-festival-warsaw/images/coined-in-watercolor-at-festival.jpeg": {
+  "original": 69612,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/coined-in-watercolor-at-festival-7230eab4e8-160.webp",
+    "bytes": 3764
+   },
+   {
+    "w": 480,
+    "src": "/display/coined-in-watercolor-at-festival-7230eab4e8-480.webp",
+    "bytes": 15740
+   }
+  ]
+ },
+ "/exhibitions/bitcoin-film-festival-warsaw/images/display-at-kinoteka.jpeg": {
+  "original": 46552,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/display-at-kinoteka-cdfd124047-160.webp",
+    "bytes": 1810
+   },
+   {
+    "w": 480,
+    "src": "/display/display-at-kinoteka-cdfd124047-480.webp",
+    "bytes": 8320
+   }
+  ]
+ },
+ "/exhibitions/bitcoin-film-festival-warsaw/images/honey-badger-and-cub.jpeg": {
+  "original": 77167,
+  "width": 332,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/honey-badger-and-cub-e98baefb83-160.webp",
+    "bytes": 6224
+   },
+   {
+    "w": 332,
+    "src": "/display/honey-badger-and-cub-e98baefb83-332.webp",
+    "bytes": 21082
+   }
+  ]
+ },
+ "/exhibitions/bitcoin-film-festival-warsaw/images/outside-kinoteka.jpeg": {
+  "original": 73197,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/outside-kinoteka-c2b595d762-160.webp",
+    "bytes": 5350
+   },
+   {
+    "w": 360,
+    "src": "/display/outside-kinoteka-c2b595d762-360.webp",
+    "bytes": 17334
+   }
+  ]
+ },
+ "/exhibitions/bitcoin-film-festival-warsaw/images/palace-of-culture-and-science.jpeg": {
+  "original": 64720,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/palace-of-culture-and-science-cc08c215fa-160.webp",
+    "bytes": 4416
+   },
+   {
+    "w": 360,
+    "src": "/display/palace-of-culture-and-science-cc08c215fa-360.webp",
+    "bytes": 14992
+   }
+  ]
+ },
  "/exhibitions/bitcoin-film-festival-warsaw/images/three-festival-paintings.jpeg": {
   "original": 216659,
   "width": 1024,
@@ -22,6 +139,43 @@
     "w": 1024,
     "src": "/display/three-festival-paintings-a32cf5c6b9-1024.webp",
     "bytes": 50308
+   }
+  ]
+ },
+ "/exhibitions/bitcoin-film-festival-warsaw/images/warsaw-syrenka.jpeg": {
+  "original": 92761,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/warsaw-syrenka-6fe15fa398-160.webp",
+    "bytes": 8196
+   },
+   {
+    "w": 360,
+    "src": "/display/warsaw-syrenka-6fe15fa398-360.webp",
+    "bytes": 29018
+   }
+  ]
+ },
+ "/exhibitions/living-room/images/three-landscapes-in-living-room.jpg": {
+  "original": 78756,
+  "width": 778,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/three-landscapes-in-living-room-e666665215-160.webp",
+    "bytes": 2004
+   },
+   {
+    "w": 480,
+    "src": "/display/three-landscapes-in-living-room-e666665215-480.webp",
+    "bytes": 9798
+   },
+   {
+    "w": 778,
+    "src": "/display/three-landscapes-in-living-room-e666665215-778.webp",
+    "bytes": 19416
    }
   ]
  },
@@ -64,6 +218,59 @@
     "w": 770,
     "src": "/display/victrola-hero-0bc3d16596-770.webp",
     "bytes": 41828
+   }
+  ]
+ },
+ "/gallery-images/beach-walk.jpg": {
+  "original": 71040,
+  "width": 702,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/beach-walk-eb8da794ce-160.webp",
+    "bytes": 1566
+   },
+   {
+    "w": 480,
+    "src": "/display/beach-walk-eb8da794ce-480.webp",
+    "bytes": 10778
+   },
+   {
+    "w": 702,
+    "src": "/display/beach-walk-eb8da794ce-702.webp",
+    "bytes": 21536
+   }
+  ]
+ },
+ "/gallery-images/chef-in-white.jpg": {
+  "original": 57204,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/chef-in-white-9d08f26feb-160.webp",
+    "bytes": 6218
+   },
+   {
+    "w": 360,
+    "src": "/display/chef-in-white-9d08f26feb-360.webp",
+    "bytes": 22122
+   }
+  ]
+ },
+ "/gallery-images/clouds-over-water.jpg": {
+  "original": 43157,
+  "width": 320,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/clouds-over-water-7c8beab564-160.webp",
+    "bytes": 5024
+   },
+   {
+    "w": 320,
+    "src": "/display/clouds-over-water-7c8beab564-320.webp",
+    "bytes": 17760
    }
   ]
  },
@@ -156,6 +363,22 @@
    }
   ]
  },
+ "/gallery-images/emergence.jpg": {
+  "original": 69218,
+  "width": 434,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/emergence-d2e9acf66b-160.webp",
+    "bytes": 7698
+   },
+   {
+    "w": 434,
+    "src": "/display/emergence-d2e9acf66b-434.webp",
+    "bytes": 42282
+   }
+  ]
+ },
  "/gallery-images/esperanza-hero.png": {
   "original": 1196251,
   "width": 1134,
@@ -179,6 +402,59 @@
     "w": 1134,
     "src": "/display/esperanza-hero-aba277665d-1134.webp",
     "bytes": 78528
+   }
+  ]
+ },
+ "/gallery-images/family-portrait.jpg": {
+  "original": 42944,
+  "width": 558,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/family-portrait-b4f4a327dc-160.webp",
+    "bytes": 2196
+   },
+   {
+    "w": 480,
+    "src": "/display/family-portrait-b4f4a327dc-480.webp",
+    "bytes": 13464
+   },
+   {
+    "w": 558,
+    "src": "/display/family-portrait-b4f4a327dc-558.webp",
+    "bytes": 17590
+   }
+  ]
+ },
+ "/gallery-images/festival-portrait.jpg": {
+  "original": 59242,
+  "width": 286,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/festival-portrait-da0a461d13-160.webp",
+    "bytes": 12192
+   },
+   {
+    "w": 286,
+    "src": "/display/festival-portrait-da0a461d13-286.webp",
+    "bytes": 30882
+   }
+  ]
+ },
+ "/gallery-images/figures-in-wheatfield.jpg": {
+  "original": 60099,
+  "width": 304,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/figures-in-wheatfield-2d4cd7605e-160.webp",
+    "bytes": 9048
+   },
+   {
+    "w": 304,
+    "src": "/display/figures-in-wheatfield-2d4cd7605e-304.webp",
+    "bytes": 33706
    }
   ]
  },
@@ -235,6 +511,22 @@
    }
   ]
  },
+ "/gallery-images/guitarist.jpg": {
+  "original": 52051,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/guitarist-f86231eb42-160.webp",
+    "bytes": 5662
+   },
+   {
+    "w": 360,
+    "src": "/display/guitarist-f86231eb42-360.webp",
+    "bytes": 28334
+   }
+  ]
+ },
  "/gallery-images/honeybadger-and-cub.jpeg": {
   "original": 261515,
   "width": 1060,
@@ -261,6 +553,43 @@
    }
   ]
  },
+ "/gallery-images/insect-garden.jpg": {
+  "original": 63729,
+  "width": 578,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/insect-garden-db278aa68b-160.webp",
+    "bytes": 3724
+   },
+   {
+    "w": 480,
+    "src": "/display/insect-garden-db278aa68b-480.webp",
+    "bytes": 26404
+   },
+   {
+    "w": 578,
+    "src": "/display/insect-garden-db278aa68b-578.webp",
+    "bytes": 35230
+   }
+  ]
+ },
+ "/gallery-images/lightburst.jpg": {
+  "original": 56651,
+  "width": 288,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/lightburst-8d8ff65b66-160.webp",
+    "bytes": 11572
+   },
+   {
+    "w": 288,
+    "src": "/display/lightburst-8d8ff65b66-288.webp",
+    "bytes": 28784
+   }
+  ]
+ },
  "/gallery-images/moonlit-water.jpg": {
   "original": 40914,
   "width": 308,
@@ -274,6 +603,22 @@
     "w": 308,
     "src": "/display/moonlit-water-2d5761a881-308.webp",
     "bytes": 15800
+   }
+  ]
+ },
+ "/gallery-images/mount-rainier-at-sunset.jpg": {
+  "original": 50098,
+  "width": 308,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/mount-rainier-at-sunset-376096cbca-160.webp",
+    "bytes": 7632
+   },
+   {
+    "w": 308,
+    "src": "/display/mount-rainier-at-sunset-376096cbca-308.webp",
+    "bytes": 22954
    }
   ]
  },
@@ -298,6 +643,54 @@
    }
   ]
  },
+ "/gallery-images/portrait-in-blue-light.jpg": {
+  "original": 50044,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/portrait-in-blue-light-98f49f34f3-160.webp",
+    "bytes": 4446
+   },
+   {
+    "w": 360,
+    "src": "/display/portrait-in-blue-light-98f49f34f3-360.webp",
+    "bytes": 28562
+   }
+  ]
+ },
+ "/gallery-images/portrait-in-blue.jpg": {
+  "original": 59331,
+  "width": 308,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/portrait-in-blue-46bf3efba5-160.webp",
+    "bytes": 7628
+   },
+   {
+    "w": 308,
+    "src": "/display/portrait-in-blue-46bf3efba5-308.webp",
+    "bytes": 32462
+   }
+  ]
+ },
+ "/gallery-images/portrait-in-gold.jpg": {
+  "original": 43702,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/portrait-in-gold-9fc7b1786d-160.webp",
+    "bytes": 4314
+   },
+   {
+    "w": 360,
+    "src": "/display/portrait-in-gold-9fc7b1786d-360.webp",
+    "bytes": 22318
+   }
+  ]
+ },
  "/gallery-images/portrait-in-green.jpg": {
   "original": 262525,
   "width": 808,
@@ -316,6 +709,27 @@
     "w": 808,
     "src": "/display/portrait-in-green-f8263a9d41-808.webp",
     "bytes": 143058
+   }
+  ]
+ },
+ "/gallery-images/portrait-with-cheese.jpg": {
+  "original": 49027,
+  "width": 558,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/portrait-with-cheese-bf3c052505-160.webp",
+    "bytes": 2678
+   },
+   {
+    "w": 480,
+    "src": "/display/portrait-with-cheese-bf3c052505-480.webp",
+    "bytes": 15678
+   },
+   {
+    "w": 558,
+    "src": "/display/portrait-with-cheese-bf3c052505-558.webp",
+    "bytes": 21392
    }
   ]
  },
@@ -340,6 +754,22 @@
    }
   ]
  },
+ "/gallery-images/portrait-with-scarf.jpg": {
+  "original": 60454,
+  "width": 320,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/portrait-with-scarf-30b3b27ae7-160.webp",
+    "bytes": 6146
+   },
+   {
+    "w": 320,
+    "src": "/display/portrait-with-scarf-30b3b27ae7-320.webp",
+    "bytes": 33970
+   }
+  ]
+ },
  "/gallery-images/red-horizon.jpg": {
   "original": 82730,
   "width": 296,
@@ -353,6 +783,96 @@
     "w": 296,
     "src": "/display/red-horizon-9f049eb26b-296.webp",
     "bytes": 16144
+   }
+  ]
+ },
+ "/gallery-images/shoreline-at-dusk.jpg": {
+  "original": 42336,
+  "width": 600,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/shoreline-at-dusk-630dc611bd-160.webp",
+    "bytes": 1986
+   },
+   {
+    "w": 480,
+    "src": "/display/shoreline-at-dusk-630dc611bd-480.webp",
+    "bytes": 11972
+   },
+   {
+    "w": 600,
+    "src": "/display/shoreline-at-dusk-630dc611bd-600.webp",
+    "bytes": 17304
+   }
+  ]
+ },
+ "/gallery-images/studio-figure.jpg": {
+  "original": 54256,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/studio-figure-3c90792e0b-160.webp",
+    "bytes": 3148
+   },
+   {
+    "w": 480,
+    "src": "/display/studio-figure-3c90792e0b-480.webp",
+    "bytes": 27054
+   }
+  ]
+ },
+ "/gallery-images/sunflower-woman.jpg": {
+  "original": 51598,
+  "width": 556,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/sunflower-woman-a962ed62f4-160.webp",
+    "bytes": 2680
+   },
+   {
+    "w": 480,
+    "src": "/display/sunflower-woman-a962ed62f4-480.webp",
+    "bytes": 18452
+   },
+   {
+    "w": 556,
+    "src": "/display/sunflower-woman-a962ed62f4-556.webp",
+    "bytes": 24638
+   }
+  ]
+ },
+ "/gallery-images/sunset-reflection.jpg": {
+  "original": 45280,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/sunset-reflection-15ad2dd3d9-160.webp",
+    "bytes": 3172
+   },
+   {
+    "w": 360,
+    "src": "/display/sunset-reflection-15ad2dd3d9-360.webp",
+    "bytes": 19796
+   }
+  ]
+ },
+ "/gallery-images/sunset-shore.jpg": {
+  "original": 57944,
+  "width": 304,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/sunset-shore-87c43cefb7-160.webp",
+    "bytes": 9164
+   },
+   {
+    "w": 304,
+    "src": "/display/sunset-shore-87c43cefb7-304.webp",
+    "bytes": 28890
    }
   ]
  },
@@ -379,6 +899,27 @@
     "w": 1186,
     "src": "/display/sunset-silhouette-a29846643f-1186.webp",
     "bytes": 52010
+   }
+  ]
+ },
+ "/gallery-images/twin-dragons.jpg": {
+  "original": 53533,
+  "width": 578,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/twin-dragons-8c20e1289c-160.webp",
+    "bytes": 3104
+   },
+   {
+    "w": 480,
+    "src": "/display/twin-dragons-8c20e1289c-480.webp",
+    "bytes": 19266
+   },
+   {
+    "w": 578,
+    "src": "/display/twin-dragons-8c20e1289c-578.webp",
+    "bytes": 25778
    }
   ]
  },
@@ -429,6 +970,69 @@
    }
   ]
  },
+ "/murals/images/3886996e.jpg": {
+  "original": 40809,
+  "width": 882,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/3886996e-35e168a7f6-160.webp",
+    "bytes": 1478
+   },
+   {
+    "w": 480,
+    "src": "/display/3886996e-35e168a7f6-480.webp",
+    "bytes": 8722
+   },
+   {
+    "w": 882,
+    "src": "/display/3886996e-35e168a7f6-882.webp",
+    "bytes": 20104
+   }
+  ]
+ },
+ "/murals/images/berlin-el-salvador/hero.jpeg": {
+  "original": 71456,
+  "width": 556,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/hero-a7562636d0-160.webp",
+    "bytes": 3102
+   },
+   {
+    "w": 480,
+    "src": "/display/hero-a7562636d0-480.webp",
+    "bytes": 12312
+   },
+   {
+    "w": 556,
+    "src": "/display/hero-a7562636d0-556.webp",
+    "bytes": 15152
+   }
+  ]
+ },
+ "/murals/images/cormorant-hero.jpg": {
+  "original": 49185,
+  "width": 528,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/cormorant-hero-ca1cb31eea-160.webp",
+    "bytes": 1692
+   },
+   {
+    "w": 480,
+    "src": "/display/cormorant-hero-ca1cb31eea-480.webp",
+    "bytes": 7200
+   },
+   {
+    "w": 528,
+    "src": "/display/cormorant-hero-ca1cb31eea-528.webp",
+    "bytes": 8246
+   }
+  ]
+ },
  "/products/reflections-on-time/images/cover.jpg": {
   "original": 209645,
   "width": 600,
@@ -468,6 +1072,27 @@
     "w": 686,
     "src": "/display/cover-834e2de94a-686.webp",
     "bytes": 68450
+   }
+  ]
+ },
+ "/products/watercolor-portraits/images/cover.jpg": {
+  "original": 84792,
+  "width": 672,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/cover-acbf3adb60-160.webp",
+    "bytes": 2776
+   },
+   {
+    "w": 480,
+    "src": "/display/cover-acbf3adb60-480.webp",
+    "bytes": 12676
+   },
+   {
+    "w": 672,
+    "src": "/display/cover-acbf3adb60-672.webp",
+    "bytes": 20648
    }
   ]
  },
@@ -5541,6 +6166,54 @@
    }
   ]
  },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/002.jpg": {
+  "original": 37160,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/002-1c53ed3427-160.webp",
+    "bytes": 2450
+   },
+   {
+    "w": 360,
+    "src": "/display/002-1c53ed3427-360.webp",
+    "bytes": 12034
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/003.jpg": {
+  "original": 50495,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/003-bcfd178297-160.webp",
+    "bytes": 4838
+   },
+   {
+    "w": 360,
+    "src": "/display/003-bcfd178297-360.webp",
+    "bytes": 18842
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/004.jpg": {
+  "original": 45974,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/004-136f79a327-160.webp",
+    "bytes": 4584
+   },
+   {
+    "w": 360,
+    "src": "/display/004-136f79a327-360.webp",
+    "bytes": 15458
+   }
+  ]
+ },
  "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/005.jpg": {
   "original": 206726,
   "width": 724,
@@ -5559,6 +6232,102 @@
     "w": 724,
     "src": "/display/005-87639f7adc-724.webp",
     "bytes": 71058
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/009.jpg": {
+  "original": 34947,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/009-807265b533-160.webp",
+    "bytes": 1938
+   },
+   {
+    "w": 360,
+    "src": "/display/009-807265b533-360.webp",
+    "bytes": 9260
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/010.jpg": {
+  "original": 45184,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/010-c608316e3e-160.webp",
+    "bytes": 3248
+   },
+   {
+    "w": 360,
+    "src": "/display/010-c608316e3e-360.webp",
+    "bytes": 14892
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/011.jpg": {
+  "original": 69046,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/011-ccbf3e933c-160.webp",
+    "bytes": 7484
+   },
+   {
+    "w": 360,
+    "src": "/display/011-ccbf3e933c-360.webp",
+    "bytes": 31824
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/012.jpg": {
+  "original": 67159,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/012-8ed274b88d-160.webp",
+    "bytes": 7752
+   },
+   {
+    "w": 360,
+    "src": "/display/012-8ed274b88d-360.webp",
+    "bytes": 29346
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/013.jpg": {
+  "original": 30015,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/013-de21bf9927-160.webp",
+    "bytes": 1632
+   },
+   {
+    "w": 480,
+    "src": "/display/013-de21bf9927-480.webp",
+    "bytes": 7748
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/019.jpg": {
+  "original": 58567,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/019-d2850d08da-160.webp",
+    "bytes": 4118
+   },
+   {
+    "w": 480,
+    "src": "/display/019-d2850d08da-480.webp",
+    "bytes": 25768
    }
   ]
  },
@@ -5588,6 +6357,235 @@
    }
   ]
  },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/027.jpg": {
+  "original": 45286,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/027-d77f112227-160.webp",
+    "bytes": 3880
+   },
+   {
+    "w": 480,
+    "src": "/display/027-d77f112227-480.webp",
+    "bytes": 18318
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/028.jpg": {
+  "original": 68047,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/028-d81097bc96-160.webp",
+    "bytes": 9360
+   },
+   {
+    "w": 360,
+    "src": "/display/028-d81097bc96-360.webp",
+    "bytes": 34308
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/029.jpg": {
+  "original": 45303,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/029-ccd906f9d6-160.webp",
+    "bytes": 5206
+   },
+   {
+    "w": 360,
+    "src": "/display/029-ccd906f9d6-360.webp",
+    "bytes": 17720
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/030.jpg": {
+  "original": 32385,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/030-7da93c7d9c-160.webp",
+    "bytes": 3898
+   },
+   {
+    "w": 360,
+    "src": "/display/030-7da93c7d9c-360.webp",
+    "bytes": 10196
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/031.jpg": {
+  "original": 46401,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/031-bdc3337635-160.webp",
+    "bytes": 3896
+   },
+   {
+    "w": 360,
+    "src": "/display/031-bdc3337635-360.webp",
+    "bytes": 14250
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/033.jpg": {
+  "original": 54569,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/033-92479a02ed-160.webp",
+    "bytes": 3874
+   },
+   {
+    "w": 480,
+    "src": "/display/033-92479a02ed-480.webp",
+    "bytes": 22632
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/034.jpg": {
+  "original": 53832,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/034-831aaacabc-160.webp",
+    "bytes": 4132
+   },
+   {
+    "w": 480,
+    "src": "/display/034-831aaacabc-480.webp",
+    "bytes": 24006
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/035.jpg": {
+  "original": 41406,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/035-366346c39e-160.webp",
+    "bytes": 2384
+   },
+   {
+    "w": 480,
+    "src": "/display/035-366346c39e-480.webp",
+    "bytes": 14236
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/036.jpg": {
+  "original": 85136,
+  "width": 768,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/036-0b115a36d9-160.webp",
+    "bytes": 2092
+   },
+   {
+    "w": 480,
+    "src": "/display/036-0b115a36d9-480.webp",
+    "bytes": 8404
+   },
+   {
+    "w": 768,
+    "src": "/display/036-0b115a36d9-768.webp",
+    "bytes": 15590
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/038.jpg": {
+  "original": 57527,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/038-ba3af2a52f-160.webp",
+    "bytes": 7130
+   },
+   {
+    "w": 360,
+    "src": "/display/038-ba3af2a52f-360.webp",
+    "bytes": 26252
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/039.jpg": {
+  "original": 53569,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/039-8a4f81aad7-160.webp",
+    "bytes": 7118
+   },
+   {
+    "w": 360,
+    "src": "/display/039-8a4f81aad7-360.webp",
+    "bytes": 24078
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/040.jpg": {
+  "original": 68994,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/040-768fe47f12-160.webp",
+    "bytes": 5118
+   },
+   {
+    "w": 480,
+    "src": "/display/040-768fe47f12-480.webp",
+    "bytes": 35892
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/041.jpg": {
+  "original": 48989,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/041-e09c75ff1c-160.webp",
+    "bytes": 6814
+   },
+   {
+    "w": 360,
+    "src": "/display/041-e09c75ff1c-360.webp",
+    "bytes": 20978
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/042.jpg": {
+  "original": 39245,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/042-fca8168913-160.webp",
+    "bytes": 5048
+   },
+   {
+    "w": 360,
+    "src": "/display/042-fca8168913-360.webp",
+    "bytes": 15844
+   }
+  ]
+ },
  "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/047.jpg": {
   "original": 142272,
   "width": 1182,
@@ -5611,6 +6609,86 @@
     "w": 1182,
     "src": "/display/047-4d5f9ebf90-1182.webp",
     "bytes": 39100
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/051.jpg": {
+  "original": 51765,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/051-32b4086de2-160.webp",
+    "bytes": 5590
+   },
+   {
+    "w": 360,
+    "src": "/display/051-32b4086de2-360.webp",
+    "bytes": 21138
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/052.jpg": {
+  "original": 64860,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/052-3f615f8892-160.webp",
+    "bytes": 7178
+   },
+   {
+    "w": 360,
+    "src": "/display/052-3f615f8892-360.webp",
+    "bytes": 32898
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/054.jpg": {
+  "original": 71773,
+  "width": 360,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/054-4b5375db24-160.webp",
+    "bytes": 8564
+   },
+   {
+    "w": 360,
+    "src": "/display/054-4b5375db24-360.webp",
+    "bytes": 41114
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/062.jpg": {
+  "original": 52727,
+  "width": 359,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/062-2cd66820d4-160.webp",
+    "bytes": 5754
+   },
+   {
+    "w": 359,
+    "src": "/display/062-2cd66820d4-359.webp",
+    "bytes": 15516
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/blog/bitcoin-film-festival/072.jpg": {
+  "original": 69137,
+  "width": 480,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/072-dfc07ef6cc-160.webp",
+    "bytes": 5518
+   },
+   {
+    "w": 480,
+    "src": "/display/072-dfc07ef6cc-480.webp",
+    "bytes": 34664
    }
   ]
  }

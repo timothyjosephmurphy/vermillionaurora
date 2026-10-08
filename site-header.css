@@ -140,7 +140,7 @@
 
 .site-header{--ink:#1d1a17;--muted:#5e554d;--line:rgba(25,19,15,.14);--accent:#8c4d39;--sand:#d4b48a;color:var(--ink);font-family:Inter,sans-serif;font-size:16px;line-height:1.6;text-align:left;padding:0;margin:0;width:100%}.site-header *{box-sizing:border-box}.site-header a{color:inherit;text-decoration:none}.site-header .container{width:min(1200px,calc(100% - 40px));margin:0 auto}.site-header .button-solid{color:white}.site-header .header-actions .button{width:auto;padding:.9rem 1.5rem;white-space:nowrap}.site-header .main-nav{flex-wrap:wrap;gap:12px 18px;justify-content:center}.site-header .brand-block{flex-shrink:0}
 @media(max-width:980px){.site-header .header-inner{flex-wrap:wrap;padding:12px 0;gap:10px;justify-content:space-between}.site-header .main-nav{display:flex;order:3;flex:0 0 100%;flex-wrap:wrap;justify-content:center;overflow-x:visible;padding:6px 0 10px;gap:6px 16px}.site-header .main-nav a{white-space:nowrap}.site-header .header-actions{width:auto}.site-header .header-actions .button{font-size:.65rem;padding:.65rem .8rem}}
-@media(max-width:420px){.site-header .brand{font-size:.65rem;gap:6px}.site-header .brand-mark{width:40px;height:46px}.site-header .container{width:calc(100% - 24px)}}
+@media(max-width:599.98px){.site-header .brand{font-size:.65rem;gap:6px}.site-header .brand-mark{width:40px;height:46px}.site-header .container{width:calc(100% - 24px)}}
 body.full .site-header{display:none}
 
 /* Film now lives in the homepage About carousel; keep shared top navigation consistent. */
@@ -182,15 +182,15 @@ body.full .site-header{display:none}
   .site-header .main-nav a:focus-visible{outline:2px solid var(--accent);outline-offset:-4px;border-radius:8px}
   .site-header .main-nav .cart-nav{display:none}
 }
-@media(max-width:420px){
+@media(max-width:599.98px){
   .site-header .header-actions .button{font-size:.6rem;padding:.6rem .7rem;letter-spacing:.06em}
   .site-header .cart-nav-mobile{font-size:.64rem;letter-spacing:.04em}
   .site-header .brand small{font-size:.5rem;letter-spacing:.06em}
 }
 @media(max-width:980px) and (prefers-reduced-motion:reduce){.site-header .nav-toggle-bars,.site-header .nav-toggle-bars::before,.site-header .nav-toggle-bars::after{transition:none}}
 @media(max-width:980px){.site-header .cart-nav-mobile{gap:4px}.site-header .cart-nav-mobile .cart-payment-icons svg{width:12px;height:12px}}
-@media(max-width:420px){.site-header .cart-nav-mobile .cart-payment-icons{gap:1px}.site-header .cart-nav-mobile .cart-payment-icons svg{width:11px;height:11px}}
-@media(max-width:420px){.site-header .header-inner{gap:6px}.site-header .header-actions{gap:5px}.site-header .cart-nav-mobile{padding:0 2px;gap:3px}.site-header .header-actions .button{padding:.6rem .55rem;letter-spacing:.04em}.site-header .brand{gap:5px}.site-header .brand-mark{width:34px;height:40px}}
+@media(max-width:599.98px){.site-header .cart-nav-mobile .cart-payment-icons{gap:1px}.site-header .cart-nav-mobile .cart-payment-icons svg{width:11px;height:11px}}
+@media(max-width:599.98px){.site-header .header-inner{gap:6px}.site-header .header-actions{gap:5px}.site-header .cart-nav-mobile{padding:0 2px;gap:3px}.site-header .header-actions .button{padding:.6rem .55rem;letter-spacing:.04em}.site-header .brand{gap:5px}.site-header .brand-mark{width:34px;height:40px}}
 
 /* Desktop: keep the nine links and Cart on one row (Testimonials added Oct 2026) by tightening spacing, not dropping items. */
 @media(min-width:981px) and (max-width:1260px){
@@ -212,3 +212,11 @@ body.full .site-header{display:none}
   .site-header .main-nav{gap:10px 13px;font-size:.76rem;letter-spacing:.05em}
   .site-header .header-actions .button{padding:.85rem 1.25rem}
 }
+
+/* Audit 4: "TJ Murphy" never wraps, at any width. Phones up to 599px use the compact sizes above.
+   Below 430px the words "Book a" are visually hidden (screen readers still hear "Book a commission"),
+   and below 390px the cart's payment icons hide and spacing tightens so the row still fits at 320px. */
+.site-header .brand span{white-space:nowrap}
+@media(max-width:429.98px){.site-header .header-cta-lead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}}
+@media(max-width:389.98px){.site-header .cart-nav-mobile .cart-payment-icons{display:none}.site-header .container{width:calc(100% - 16px)}.site-header .header-actions{gap:4px}.site-header .header-actions .button{padding:.6rem .5rem}}
+@media(max-width:359.98px){.site-header .brand{gap:4px}.site-header .brand-mark{width:30px;height:35px}.site-header .brand small{font-size:.45rem;letter-spacing:.02em}.site-header .cart-nav-mobile{letter-spacing:0}}

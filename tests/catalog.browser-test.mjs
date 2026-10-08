@@ -12,6 +12,8 @@ try {
   const url=new URL(route.request().url());
   if(url.pathname==='/inventory/status'){const ids=url.searchParams.get('ids').split(',');return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{version:catalogVersion,availability:Object.fromEntries(ids.map(id=>[id,allSold?'sold':['painting-portrait-in-green','painting-moonlit-water','paul-murphy-painting-1'].includes(id)?status:byId[id]?.listing.status||'available']))}});}
   if(url.hostname!==new URL(origin).hostname)return route.abort();
+  // Approved testimonials come from the Worker at request time; the static preview has none.
+  if(url.pathname==='/testimonials/api/approved')return route.fulfill({json:{testimonials:[]}});
   const file=path.join(root,decodeURIComponent(url.pathname),url.pathname.endsWith('/')?'index.html':'');
   if(fs.existsSync(file)&&fs.statSync(file).isFile())return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'})[path.extname(file)]||'application/octet-stream'});
   missing.push(url.pathname);return route.fulfill({status:404});

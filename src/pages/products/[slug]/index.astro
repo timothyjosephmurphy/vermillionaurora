@@ -28,6 +28,21 @@ const relatedPrints=relatedProduct?printOptions(relatedProduct,config,papers).so
 const originalFrameHref=originalFrameEligible(p)?amazonFrameSearchUrl(p.dimensions):null;
 const availablePrints=painting?printOptions(p,config,papers).filter(o=>o.ready&&!o.testOnly):[];
 const printFrom=availablePrints.length?Math.min(...availablePrints.map(o=>Number(o.amount))):null;
+// Search/share description for original paintings, built only from catalog facts (no invented details).
+const metaDescription=(()=>{
+  if(!painting||p.bookGallery)return null;
+  const tj=!p.artist||p.artist==='TJ Murphy';
+  const d=p.dimensions,size=d?.width&&d?.height?(p.dimensionOrder==='height-width'?`${d.height} × ${d.width} ${d.unit}`:`${d.width} × ${d.height} ${d.unit}`):'';
+  const detail=[size,p.year].filter(Boolean).join(', ');
+  const medium=p.medium?`${p.medium.toLowerCase().replace(/pastels$/,'pastel')} painting`:'painting';
+  const lead=tj
+    ?`${p.title}: an original ${medium}${detail?` (${detail})`:''} by Seattle artist TJ Murphy.`
+    :`${p.title}: an original ${medium}${detail?` (${detail})`:''} by featured artist ${p.artist}, presented by Seattle artist TJ Murphy.`;
+  const price=p.listing?.price?.amount?`$${Number(p.listing.price.amount).toLocaleString('en-US',{maximumFractionDigits:2})}`:'';
+  const status={available:price?`Original available for ${price}.`:'Original available.',inquiry:'Original available by inquiry.',sold:'The original has sold.','not-for-sale':'The original is not for sale.',reserved:'The original is currently reserved.'}[p.listing?.status]||'';
+  const prints=printFrom?`Fine-art prints from $${Number(printFrom).toLocaleString('en-US',{minimumFractionDigits:printFrom%1?2:0,maximumFractionDigits:2})}.`:'';
+  return [lead,status,prints].filter(Boolean).join(' ');
+})();
 const facts=painting ? [
   ...(!p.bookGallery?[{label:'Dimensions',value:dimensionLabel(p)}]:[]),
   ...(p.medium?[{label:'Medium',value:p.medium}]:[]),
@@ -38,7 +53,7 @@ const facts=painting ? [
   ...(p.artist==='Paul Murphy'?[{label:'Artist',value:p.artist},{label:'Gallery reference',value:p.galleryReference}]:[])
 ] : [];
 ---
-<ProductLayout product={p}>
+<ProductLayout product={p} metaDescription={metaDescription}>
 {p.type==='book' ? <main class="container book-product">
   <nav class="book-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/books/">Books</a> / {p.title}</nav>
   <section class="book-intro" aria-labelledby="book-title">
