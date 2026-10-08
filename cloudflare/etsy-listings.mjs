@@ -2,6 +2,7 @@ import prints, {sourcePrintVersion} from './etsy-print-source.mjs';
 import {ETSY_ORIGIN,authorized,json,read,write} from './etsy-connection.mjs';
 import {shippingChoice,shippingPackages,estimateShippingPackages} from './etsy-shipping.mjs';
 import {labelOf,titleOf,buildListingPlans} from './etsy-listing-plan.mjs';
+import {etsyListingAdmin, ADMIN_PATHS} from './etsy-sync.mjs';
 const API='https://api.etsy.com/v3/application', SITE='https://tjm.art';
 const rows=x=>Array.isArray(x?.results)?x.results:Array.isArray(x)?x:[];
 // Only expose validation messages to the authenticated owner; never dump a provider response.
@@ -11,12 +12,12 @@ function validationDetail(data,env,token){
  for(const secret of [env.ETSY_KEYSTRING,env.ETSY_SHARED_SECRET,env.COMMISSION_MANAGER_TOKEN,token.accessToken,token.refreshToken].filter(Boolean))detail=detail.split(secret).join('[redacted]');
  return detail.replace(/Bearer\s+\S+/gi,'Bearer [redacted]').replace(/[\u0000-\u001f\u007f]/g,' ').slice(0,600);
 }
-async function persist(env,record,etag){
+export async function persist(env,record,etag){
  const saved=await write(env,record,etag);
  if(!saved)throw Error('Private listing state changed. Reload setup and retry.');
  return saved.etag;
 }
-async function connection(env,now){
+export async function connection(env,now){
  let state=await read(env),record=state.record,etag=state.etag,token=record.connection;
  if(!token?.accessToken||!token?.refreshToken)throw Error('Connect Etsy before preparing listings.');
  if(token.expiresAt>now+45000)return {record,etag,token};
@@ -36,9 +37,9 @@ async function connection(env,now){
  record={...record,connection:next,etsyRefreshUntil:null};etag=await persist(env,record,etag);
  return {record,etag,token:next};
 }
-async function call(url,env,token,options={}){
+export async function call(url,env,token,options={}){
  const {action,...requestOptions}=options;
- let res;try{res=await fetch(url,{...requestOptions,redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'x-api-key':env.ETSY_KEYSTRING+':'+env.ETSY_SHARED_SECRET,Authorization:'Bearer '+token.accessToken,...options.headers}});}
+ let res;try{res=await fetch(url,{...requestOptions,redirect:'manual',signal:AbortSignal.timeout(options.timeout||20000),headers:{'x-api-key':env.ETSY_KEYSTRING+':'+env.ETSY_SHARED_SECRET,Authorization:'Bearer '+token.accessToken,...options.headers}});}
  catch{throw Error('Etsy could not be reached.');}
  if(res.status>=300&&res.status<400)throw Error('Etsy redirected a protected request; it was stopped safely.');
  let data;try{data=await res.json();}catch{}
@@ -187,13 +188,14 @@ async function create(env,input,now){
 export async function etsyListings(request,env,now=Date.now()){
  const u=new URL(request.url),path=u.pathname;
  if(u.origin!==ETSY_ORIGIN)return json({error:'Not found'},404);
- if(request.method!=='POST'||!['/etsy/listings/preflight','/etsy/listings/status','/etsy/listings/create-drafts'].includes(path))return json({error:'Not found'},404);
+ if(request.method!=='POST'||!['/etsy/listings/preflight','/etsy/listings/status','/etsy/listings/create-drafts',...ADMIN_PATHS].includes(path))return json({error:'Not found'},404);
  if(request.headers.get('Origin')!==ETSY_ORIGIN||!await authorized(request,env))return json({error:'Invalid management credential or origin.'},403);
  if(!env.ETSY_KEYSTRING||!env.ETSY_SHARED_SECRET||!env.COMMISSION_UPLOADS||!env.COMMISSION_MANAGER_TOKEN)return json({error:'Etsy secrets or private storage are missing.'},503);
  try{
   const s=await connection(env,now);
   if(path==='/etsy/listings/status')return json({connected:true,shopName:s.token.shopName,batch:s.record.etsyDraftBatch?batchView(s.record.etsyDraftBatch):null});
   if(path==='/etsy/listings/preflight')return json({...await preflight(env,s.token),savedSettings:s.record.etsyDraftBatch?.settings??null});
+  if(ADMIN_PATHS.has(path))return json(await etsyListingAdmin(request,env,s,now));
   let input;try{input=await request.json();}catch{return json({error:'Choose Etsy shop settings before creating drafts.'},400);}
   return json(await create(env,input,now));
  }catch(e){return json({error:e.message||'Etsy draft setup failed safely.'},502);}

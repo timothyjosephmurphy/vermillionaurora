@@ -44,3 +44,7 @@ Order syncing is still separate work. Receipt reading and shipment updates need 
 Focused tests cover all real catalog combinations, the live 32-character regression, malformed request fields, validation before any listing write, SKU identity stability, saved-draft resume, profile pagination, shipping, and image rejection. These tests do not establish that every shop-specific restriction has been accepted by Etsy. Production deployment checks verify the Worker release; the authenticated owner retry confirms live listing acceptance.
 
 Future API changes should update this contract and its tests from authoritative documentation and observed responses. Schema validation alone is insufficient because some enforced constraints, including the observed SKU limit, are omitted from the schema.
+
+## Targeted El Zonte sync
+
+`POST /etsy/listings/sync`, `/media`, `/activate`, and `/verify` are owner-authenticated routes for an explicit product id list. The shipped list is the three El Zonte paintings. Other saved drafts, including the completed five-painting batch, are not patched. Print listings use the current catalog prices with no Etsy markup. Original listings are quantity 1, `who_made=i_did`, `when_made=2020_2026`, and stay drafts unless a later activate call names `kind=print`. Shop shipping profiles, processing profiles, and return policies are only read and attached; they are not created or edited. Listing videos follow the current 3–15 second, 100 MB limit. Provider errors are returned redacted and do not include tokens.
