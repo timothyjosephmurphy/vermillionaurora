@@ -162,7 +162,7 @@ test('painting cards: price without "USD", "Prints from" the cheapest ready prin
    assert.equal(tile.attr('data-buy')??String(showBuy(p)),String(showBuy(p)),`${path}: ${p.id}`);
    if(tile.attr('data-prints-from')!==undefined)assert.equal(tile.attr('data-prints-from'),printsFromLabel(p),`${path}: ${p.id}`);
    const buy=tile.find('[data-card-buy]');
-   if(buy.length){assert.equal(buy.text(),'Buy');assert.equal(buy.attr('aria-hidden'),'true');assert.equal(buy.attr('hidden')!==undefined,!showBuy(p)&&path!=='gallery/available/index.html',`${path}: ${p.id}`);}
+   if(buy.length){assert(buy.parent().is('.card-buy-row')&&buy.parent().children().length===2&&buy.is(':last-child'),`${path}: ${p.id} Buy must sit at the end of the card's last text line`);assert.equal(buy.text(),'Buy');assert.equal(buy.attr('aria-hidden'),'true');assert.equal(buy.attr('hidden')!==undefined,!showBuy(p)&&path!=='gallery/available/index.html',`${path}: ${p.id}`);}
    checked++;
   });
  }

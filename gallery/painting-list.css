@@ -1,5 +1,5 @@
 .painting-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.painting-list-row{display:grid;grid-template-columns:72px minmax(0,1fr) 190px 150px;gap:22px;align-items:center;min-height:108px;padding:14px 0;border-bottom:1px solid var(--line)}
+.painting-list-row{display:grid;grid-template-columns:72px minmax(0,1fr) 170px 190px;gap:22px;align-items:center;min-height:108px;padding:14px 0;border-bottom:1px solid var(--line)}
 .painting-list-row[hidden],.gallery-empty[hidden]{display:none!important}
 .painting-list-row .gallery-product-image{width:72px;height:80px;aspect-ratio:auto;padding:4px;border-radius:5px;background:var(--paper)}
 .painting-list-row .gallery-product-image img{width:100%;height:100%;object-fit:contain}
@@ -11,7 +11,8 @@
 .painting-list-price{text-align:right;font-weight:600}
 .painting-list-commerce{display:flex;flex-direction:column;align-items:flex-end;gap:4px;text-align:right}
 .painting-list-commerce .card-prints-from{margin:0;color:var(--muted)}
-.painting-list-commerce .card-buy{margin-top:4px}
+.painting-list-commerce .card-buy-row{justify-content:flex-end;width:100%}
+.painting-list-commerce .card-buy-row>:first-child{flex:0 1 auto;text-align:right}
 .painting-gallery-page .gallery-filter{gap:14px 24px;margin:24px 0 18px}
 .gallery-sort select{max-width:100%;min-height:44px;padding:8px 34px 8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
 .painting-gallery-page #gallery-result-count{margin-left:auto}
@@ -24,8 +25,9 @@
   .painting-list-row h3{grid-column:2/4;font-size:1.3rem}
   .painting-list-dimensions{grid-column:2/4}
   .painting-list-price{grid-column:2/4;text-align:left}
-  .painting-list-commerce{grid-column:2/4;flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 12px;text-align:left}
-  .painting-list-commerce .card-buy{margin:2px 0 0 auto}
+  .painting-list-commerce{grid-column:2/4;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:12px;text-align:left}
+  .painting-list-commerce .card-buy-row{flex:1 1 auto;min-width:0;justify-content:flex-start}
+  .painting-list-commerce .card-buy-row>:first-child{flex:1 1 auto;text-align:left}
   .painting-list-row p{font-size:.8rem}
   .painting-gallery-page .gallery-filter{gap:12px 20px}
   .gallery-sort{flex-basis:100%}
