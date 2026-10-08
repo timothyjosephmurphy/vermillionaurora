@@ -20,7 +20,7 @@ test.beforeEach(()=>{mails=[];issued.length=0;globalThis.fetch=async(url,init={}
   if(u.hostname==='gmail.googleapis.com'){mails.push(JSON.parse(init.body));return Response.json({id:'m'});}
   if(u.hostname==='nominatim.openstreetmap.org'){assert.equal(u.searchParams.get('q'),'Tacoma, WA');return Response.json([{lat:'47.2455013',lon:'-122.438329',display_name:'Tacoma, Pierce County, Washington, United States'}]);}
   throw Error('unexpected fetch '+url);};});
-const form=(fields={},photos=[])=>{const f=new FormData();for(const [k,v] of Object.entries({name:'Jane D.',email:'jane@example.com',quote:'It makes our kitchen glow.',city:'Tacoma, WA',paintingSlug:'painting-emergence',painting:'Emergence',publishNotice:'2026-10-08',...fields}))if(v!=null)f.set(k,v);photos.forEach(([bytes,name,type])=>f.append('photos',new File([bytes],name,{type})));return f;};
+const form=(fields={},photos=[])=>{const f=new FormData();for(const [k,v] of Object.entries({name:'Jane D.',email:'jane@example.com',quote:'It makes our kitchen glow.',city:'Tacoma, WA',paintingSlug:'painting-emergence',painting:'Emergence',publishNotice:'2026-10-08b',...fields}))if(v!=null)f.set(k,v);photos.forEach(([bytes,name,type])=>f.append('photos',new File([bytes],name,{type})));return f;};
 const submit=(env,body,headers={})=>testimonialsApi(new Request('https://tjm.art/testimonials/api/submit',{method:'POST',body,headers:{Origin:'https://tjm.art','CF-Connecting-IP':'203.0.113.9',Accept:'application/json',...headers}}),env,null,now);
 const owner=(env,body,{token='owner-token',origin='https://tjm.art'}={})=>testimonialsApi(new Request('https://tjm.art/testimonials/api/owner',{method:'POST',headers:{Origin:origin,Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify(body)}),env,null,now);
 const approved=async env=>(await (await testimonialsApi(new Request('https://tjm.art/testimonials/api/approved'),env,null,now)).json()).testimonials;
@@ -146,14 +146,14 @@ test('thank-you email copy',async()=>{
 
 test('no consent checkbox: submitting records implied consent with the notice text; old consent field is ignored',async()=>{
   const {PUBLISH_NOTICE,PUBLISH_NOTICE_VERSION}=await import('./testimonial-notice.mjs');
-  assert.match(PUBLISH_NOTICE,/^By sending this, you’re OK with TJ showing your name \(if you give one\), city, words and photos on tjm\.art\. Videos are only shown if you tick the box above\.$/);
+  assert.match(PUBLISH_NOTICE,/^By sending this, you’re OK with TJ showing your name \(if you give one\), city, words and photos on tjm\.art\.$/);assert.equal(PUBLISH_NOTICE_VERSION,'2026-10-08b');
   const env=setup();
   for(const extra of [{},{consent:'yes'}]){
     const r=await submit(env,form(extra));assert.equal(r.status,200);const {id}=await r.json();
     const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);
     assert.equal(rec.publishConsent,'implied-by-submit');
     assert.equal(rec.consent.publish,true);assert.equal(rec.consent.basis,'implied-by-submit');
-    assert.equal(rec.consent.notice,PUBLISH_NOTICE);assert.equal(rec.consent.noticeVersion,PUBLISH_NOTICE_VERSION);assert.equal(rec.consent.shownVersion,'2026-10-08');
+    assert.equal(rec.consent.notice,PUBLISH_NOTICE);assert.equal(rec.consent.noticeVersion,PUBLISH_NOTICE_VERSION);assert.equal(rec.consent.shownVersion,'2026-10-08b');
   }
 });
 
@@ -172,6 +172,25 @@ test('name is optional: shown publicly as “A collector” (with city), TJ can 
   const named=await (await submit(env,form({quote:'Second one.'}))).json();
   await owner(env,{action:'approve',id:named.id,name:''});
   assert.deepEqual((await approved(env)).map(t=>t.name).sort(),['A collector','A collector']);
+});
+
+test('email is optional: approval publishes but issues no code and sends nothing; code actions refuse; bad email still rejected',async()=>{
+  const env=setup();
+  assert.equal((await submit(env,form({email:'not-an-email'}))).status,400);
+  const r=await submit(env,form({email:''}));assert.equal(r.status,200);const {id}=await r.json();
+  const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);assert.equal(rec.email,'');
+  const alert=atob(mails[0].raw.replace(/-/g,'+').replace(/_/g,'/'));
+  assert.doesNotMatch(alert,/Reply-To:/);assert.match(alert,/Email \(private\): Not given/);
+  mails=[];
+  const ok=await (await owner(env,{action:'approve',id})).json();
+  assert.equal(ok.record.status,'approved');assert.deepEqual(ok.thanks,{noEmail:true,emailSkipped:'No email, so no code sent'});
+  assert.equal((await approved(env)).length,1,'published as usual');
+  assert.equal(issued.length,0,'no code issued');assert.equal(mails.length,0,'no thank-you email');
+  for(const action of ['issueCode','sendThanks']){
+    const res=await owner(env,{action,id});assert.equal(res.status,409);assert.equal((await res.json()).thanks.emailSkipped,'No email, so no code sent');
+  }
+  assert.equal(issued.length,0);assert.equal(mails.length,0);
+  assert.equal(JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value).thanks,undefined);
 });
 
 // ---------- Video testimonials ----------
@@ -193,7 +212,8 @@ async function uploadVideo(env,bytes,{type='video/mp4',name='me.mov',at=now,ip='
 test('video upload: multipart parts, size and type checks, magic bytes, location metadata blanked',async()=>{
   const env=setup();
   assert.equal((await api(env,'/testimonials/api/video/start',{body:{type:'video/x-msvideo',size:5000}})).status,415);
-  assert.equal((await api(env,'/testimonials/api/video/start',{body:{type:'video/mp4',size:MAX_VIDEO+1}})).status,413);
+  assert.equal(MAX_VIDEO,50*1024*1024,'50 MB video limit');
+  const big=await api(env,'/testimonials/api/video/start',{body:{type:'video/mp4',size:MAX_VIDEO+1}});assert.equal(big.status,413);assert.equal((await big.json()).error,'Videos need to be MP4, MOV or WebM, up to 50 MB.');
   assert.equal((await api(env,'/testimonials/api/video/start',{body:{type:'video/mp4',size:5000},headers:{Origin:'https://evil.example'}})).status,403);
   const bytes=fakeVideo(PART_BYTES*2+1234);
   const up=await uploadVideo(env,bytes);
@@ -271,6 +291,19 @@ test('video testimonial: text optional, two optional consents stored, private un
   // Delete removes record, video, poster and manifest.
   await owner(env,{action:'delete',id,confirm:id});
   assert.equal([...env.COMMISSION_UPLOADS.data.keys()].filter(k=>k.includes(id)).length,0);
+});
+
+test('video upload and submission work with no email and no name (token and rate limit never use the email)',async()=>{
+  const env=setup();
+  const up=await uploadVideo(env,fakeVideo(PART_BYTES+5000),{ip:'198.51.100.77'});
+  const r=await submit(env,form({name:'',email:'',quote:'',city:'',videoId:up.id,videoToken:up.token,videoSite:'yes'}),{'CF-Connecting-IP':'198.51.100.77'});
+  assert.equal(r.status,200);const {id}=await r.json();assert.equal(id,up.id);
+  const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);
+  assert.equal(rec.email,'');assert.equal(rec.name,'');assert.equal(rec.video.bytes,PART_BYTES+5000);
+  mails=[];
+  const ok=await (await owner(env,{action:'approve',id})).json();assert.equal(ok.thanks.emailSkipped,'No email, so no code sent');
+  const [pub]=await approved(env);assert.equal(pub.name,'A collector');assert.equal(pub.video.src,`/testimonials/api/video/${id}`);
+  assert.equal(issued.length,0);assert.equal(mails.length,0);
 });
 
 test('video without the tjm.art permission stays private after approval; words still show; email skips the link when nothing shows',async()=>{
