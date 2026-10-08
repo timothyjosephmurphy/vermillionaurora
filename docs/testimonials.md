@@ -3,9 +3,9 @@
 Collectors (people TJ has given or sold paintings to) share testimonials on https://tjm.art/testimonials/.
 
 ## Flow
-1. **Form** on /testimonials/: name (optional, as shown; blank appears publicly as "A collector", plus the city if given),
+1. **Form** on /testimonials/: name (optional, as shown; blank appears publicly as "A collector", plus the city/region if given),
    email (private, optional: only for the thank-you print code), painting (picker of TJ's paintings and/or free text), testimonial (required unless a video is
-   attached), optional city, up to 4 photos (JPEG/PNG/WebP/HEIC, ≤10 MB each), then the optional video right below the photos.
+   attached), optional city/state/country (never a street address), up to 4 photos (JPEG/PNG/WebP/HEIC, ≤10 MB each), then the optional video right below the photos.
    **No consent checkbox:** a short notice sits just above the submit button (text and version in
    `cloudflare/testimonial-notice.mjs`): "By sending this, you’re OK with TJ showing your name (if you give one), city, words and
    photos on tjm.art." Submitting is the consent; the record stores
@@ -79,7 +79,7 @@ A video makes the written words optional; at least one of words or video is requ
   `testimonials/uploads/<id>.json` in `COMMISSION_UPLOADS`.
 
 ## Geocoding
-City text only, never an address: OpenStreetMap Nominatim (settlement search), falling back to Open-Meteo/GeoNames, rounded to
+City, state and country text (e.g. “Seattle, WA, USA” or “Warsaw, Poland”), never a street address: OpenStreetMap Nominatim (settlement search), falling back to Open-Meteo/GeoNames, rounded to
 2 decimals (≈1 km). TJ can edit or clear the pin before approving.
 
 ## Hand-curated entries (optional)
@@ -96,7 +96,7 @@ City text only, never an address: OpenStreetMap Nominatim (settlement search), f
   "quote": "It captures her exactly.",
   "photo": "/testimonials/images/jane-painting.webp",
   "selfie": "/testimonials/images/jane-selfie.webp",
-  "city": "Tacoma, WA",
+  "city": "Tacoma, WA, USA",
   "lat": 47.25,
   "lng": -122.44,
   "consent": { "publish": true, "name": true, "photo": true, "selfie": false, "city": true, "map": true },
