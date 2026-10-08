@@ -126,3 +126,20 @@ test('checked-in PayPal allowlist matches every dimensioned, available, priced p
  const eligible=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price&&p.dimensions&&p.checkout?.mode==='integrated').map(p=>p.id).sort();
  assert.deepEqual((vars.PAYPAL_CHECKOUT_SLUGS||'').split(',').map(s=>s.trim()).filter(Boolean).sort(),eligible);
 });
+test('original purchase buttons say "Buy"; paintings without online checkout still link to the purchase inquiry form',()=>{
+ const html=[];
+ const walk=dir=>{for(const e of fs.readdirSync(dir,{withFileTypes:true})){const path=`${dir}/${e.name}`;if(e.isDirectory())walk(path);else if(e.name.endsWith('.html'))html.push(path);}};
+ walk('dist');
+ for(const path of html)assert(!/inquire to buy/i.test(fs.readFileSync(path,'utf8')),`${path} still says "Inquire to buy"`);
+ for(const p of products.filter(p=>p.type==='painting'&&p.listing.status==='available')){
+  const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));
+  const link=$('[data-original-purchase] [data-purchase-inquiry]');
+  assert.equal(link.length,1,p.id);
+  assert.equal(link.text(),'Buy',p.id);
+  assert.equal(link.attr('href'),p.inquiryHref||`/commissions/?product=${encodeURIComponent(p.slug)}#form`,p.id);
+  if(p.checkout?.mode==='integrated'){
+   assert.equal($('[data-cart-product] [data-cart-buy]').text(),'Buy now',p.id);
+   assert.equal($('[data-cart-product] [data-purchase-inquiry]').length,1,`${p.id}: fallback until the cart confirms stock`);
+  }
+ }
+});

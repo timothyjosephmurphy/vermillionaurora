@@ -75,9 +75,9 @@ const facts=painting ? [
   {painting && (p.listing.status==='available' || availablePrints.length>0) && <section class="product-purchase-actions" aria-label="Purchase options">
     {p.listing.status==='available' && <div data-original-purchase>
       {p.checkout?.mode==='integrated' ? <div data-cart-product>
-          <div class="cart-product-actions"><button type="button" class="button button-solid" data-cart-buy hidden>Buy now</button><button type="button" class="cart-text-link" data-cart-add hidden>Add to cart</button><a class="button button-solid" data-purchase-inquiry href={p.inquiryHref||`/commissions/?product=${encodeURIComponent(p.slug)}#form`}>Inquire to buy</a>{p.listing.price&&<p class="product-detail-price">{priceLabel(p,true)}</p>}</div>
+          <div class="cart-product-actions"><button type="button" class="button button-solid" data-cart-buy hidden>Buy now</button><button type="button" class="cart-text-link" data-cart-add hidden>Add to cart</button><a class="button button-solid" data-purchase-inquiry href={p.inquiryHref||`/commissions/?product=${encodeURIComponent(p.slug)}#form`}>Buy</a>{p.listing.price&&<p class="product-detail-price">{priceLabel(p,true)}</p>}</div>
           <p class="cart-product-message" data-cart-added role="status" aria-live="polite"></p>
-        </div> : <><a class="button button-solid" data-purchase-inquiry href={p.inquiryHref||`/commissions/?product=${encodeURIComponent(p.slug)}#form`}>Inquire to buy</a>{p.listing.price&&<p class="product-detail-price">{priceLabel(p,true)}</p>}</>}
+        </div> : <><a class="button button-solid" data-purchase-inquiry href={p.inquiryHref||`/commissions/?product=${encodeURIComponent(p.slug)}#form`}>Buy</a>{p.listing.price&&<p class="product-detail-price">{priceLabel(p,true)}</p>}</>}
     </div>}
     {availablePrints.length>0 && <div class="product-print-action">
       <button type="button" class="button button-ghost" data-print-open aria-haspopup="dialog" aria-controls="print-purchase-dialog">Buy a print</button>
