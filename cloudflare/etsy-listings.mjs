@@ -39,7 +39,7 @@ export async function connection(env,now){
 }
 export async function call(url,env,token,options={}){
  const {action,...requestOptions}=options;
- let res;try{res=await fetch(url,{...requestOptions,redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'x-api-key':env.ETSY_KEYSTRING+':'+env.ETSY_SHARED_SECRET,Authorization:'Bearer '+token.accessToken,...options.headers}});}
+ let res;try{res=await fetch(url,{...requestOptions,redirect:'manual',signal:AbortSignal.timeout(options.timeout||20000),headers:{'x-api-key':env.ETSY_KEYSTRING+':'+env.ETSY_SHARED_SECRET,Authorization:'Bearer '+token.accessToken,...options.headers}});}
  catch{throw Error('Etsy could not be reached.');}
  if(res.status>=300&&res.status<400)throw Error('Etsy redirected a protected request; it was stopped safely.');
  let data;try{data=await res.json();}catch{}
