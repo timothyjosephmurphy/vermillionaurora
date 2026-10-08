@@ -1,5 +1,5 @@
 {
-  "note": "Display corrections for book-gallery photos of paintings: perspective/deskew to the paper edges, then crop to the paper (white margin kept). Applied to the native PDF image by scripts/book_photo_corrections.py; outputs are new immutable media keys.",
+  "note": "Display corrections for book-gallery photos of paintings: perspective/deskew to the paper edges, then crop. `crop` is in the upright (warped) image; 'color' crops sit inside the painted area so no paper margin shows. Applied to the native PDF image by scripts/book_photo_corrections.py; outputs are new immutable media keys.",
   "corrections": [
     {
       "key": "e4bbfe556c3c847d9c90",
@@ -30,18 +30,19 @@
         726
       ],
       "crop": [
-        5,
-        11,
-        701,
-        720
+        41,
+        45,
+        654,
+        680
       ],
-      "output": "e4bbfe556c3c847d9c90-paper",
-      "widthPx": 696,
-      "heightPx": 709,
-      "masterUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/e4bbfe556c3c847d9c90-paper.jpg",
-      "previewUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/e4bbfe556c3c847d9c90-paper.webp",
-      "masterSha256": "23191a4dbe66d169b2c2b5f030ffe94cf790644d2fdaac71450a1575c6e6b087",
-      "previewSha256": "7e9a2261311da95ffea582366f2e14dab622dce495e4a80d410422e6a67da0eb"
+      "output": "e4bbfe556c3c847d9c90-color",
+      "cropTo": "color",
+      "widthPx": 613,
+      "heightPx": 635,
+      "masterUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/e4bbfe556c3c847d9c90-color.jpg",
+      "previewUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/e4bbfe556c3c847d9c90-color.webp",
+      "masterSha256": "dc028128a2190bdf7d5b29f26463f3bead326390b5fb1d00f6ceedd96c94fe2d",
+      "previewSha256": "5dfd60a16e5e03aba5647119dd99dc4a87317d42b3e399075b5cace574f03bda"
     }
   ]
 }
