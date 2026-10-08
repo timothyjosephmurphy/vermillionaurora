@@ -33,6 +33,9 @@ export const QUICKBOOKS_API = new Set(['/quickbooks/connect', '/quickbooks/callb
 // Worker (private R2 storage); forwarding keeps them same-origin with /testimonials/ and /testimonial-manager/.
 export const TESTIMONIALS_API = '/testimonials/api/';
 
+// Owner original-status page posts here; the checkout Worker holds stock and the Etsy token.
+export const ORIGINALS_API = '/inventory/originals';
+
 // Apple Pay on the Web (Square Web Payments SDK): Apple fetches this file to verify tjm.art. Serve Square's
 // current copy (Square asks sellers to keep it in sync and avoid long caches), falling back to the committed snapshot.
 export const APPLE_PAY_ASSOCIATION_PATH = '/.well-known/apple-developer-merchantid-domain-association';
@@ -67,6 +70,9 @@ export default {
     }
     if (url.pathname.startsWith(TESTIMONIALS_API) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ success: false, error: 'Testimonials are temporarily unavailable.' }, { status: 503 });
+    }
+    if (url.pathname === ORIGINALS_API && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
+      return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ error: 'Original inventory is temporarily unavailable.' }, { status: 503 });
     }
     if (url.pathname === APPLE_PAY_ASSOCIATION_PATH) return applePayAssociation();
     return withLongCache(await env.ASSETS.fetch(request), url.pathname);

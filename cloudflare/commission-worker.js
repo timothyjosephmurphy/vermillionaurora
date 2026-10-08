@@ -9,6 +9,8 @@ import {etsyListings} from './etsy-listings.mjs';
 import {bufferApi} from './buffer-api.mjs';
 export {CartOrder} from './cart-order.mjs';
 import { inventoryStatus } from './inventory-api.mjs';
+import { originalStatusApi } from './original-status.mjs';
+import { runOriginalInventorySync } from './etsy-original-sync.mjs';
 import { catalogVersion } from './checkout-catalog.mjs';
 export { SalesLedger } from './sales-ledger.mjs';
 export { BitcoinOrder } from './bitcoin-order.mjs';
@@ -24,7 +26,10 @@ import { markAtCostOrders } from './quickbooks-sync.mjs';
 import { quickbooksApi } from './quickbooks-api.mjs';
 import { testimonialsApi, purgeTestimonialRateLimits, purgeVideos as purgeTestimonialVideos } from './testimonials.mjs';
 export default {
-  async scheduled(event,env,ctx) { ctx.waitUntil(purgeCommissionReferences(env)); ctx.waitUntil(purgeTestimonialRateLimits(env).catch(()=>console.error('Testimonial rate-limit cleanup failed'))); ctx.waitUntil(purgeTestimonialVideos(env).catch(()=>console.error('Testimonial video cleanup failed'))); ctx.waitUntil(markAtCostOrders(env).catch(()=>console.error('QuickBooks at-cost marker backfill failed'))); },
+  async scheduled(event,env,ctx) {
+    if (event?.cron === '*/5 * * * *') { ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed'))); return; }
+    ctx.waitUntil(purgeCommissionReferences(env)); ctx.waitUntil(purgeTestimonialRateLimits(env).catch(()=>console.error('Testimonial rate-limit cleanup failed'))); ctx.waitUntil(purgeTestimonialVideos(env).catch(()=>console.error('Testimonial video cleanup failed'))); ctx.waitUntil(markAtCostOrders(env).catch(()=>console.error('QuickBooks at-cost marker backfill failed')));
+  },
   async fetch(request, env, ctx) {
     const path = new URL(request.url).pathname;
     if (path.startsWith('/testimonials/api/')) return testimonialsApi(request,env,ctx);
@@ -37,6 +42,7 @@ export default {
     if (path === '/checkout/print-codes/issue') return printCodesApi(request,env);
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path === '/checkout/square/webhook') return squareWebhook(request,env);
+    if (path === '/inventory/originals') return originalStatusApi(request,env);
     if (path === '/inventory/status') return inventoryStatus(request,env);
     if (path === '/checkout/bitcoin/webhook') return bitcoinWebhook(request,env);
     if (path.startsWith('/checkout/bitcoin/')) return bitcoinCheckout(request,env);

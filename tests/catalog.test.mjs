@@ -59,7 +59,7 @@ test('public output excludes source code, credentials and shipping notes',()=>{
 });
 test('live availability works independently of payment providers and exposes only status',async()=>{
  const id='painting-portrait-in-green',sold=products.find(p=>p.listing?.status==='sold').id;
- const env={PAINTING_STOCK:{getByName:name=>{assert.equal(name,id);return{status:async()=>'reserved'};}}};
+ const env={PAINTING_STOCK:{getByName:name=>({summary:async()=>name===id?{state:'held',expires_at:Date.now()+60_000,manual:null}:null,status:async()=>'reserved'})}};
  const r=await inventoryStatus(new Request(`https://worker/inventory/status?ids=${id},${sold}`),env);assert.equal(r.status,200);assert.equal(r.headers.get('Cache-Control'),'no-store');assert.deepEqual(await r.json(),{version:catalogVersion,availability:{[id]:'reserved',[sold]:'sold'}});
  assert.equal((await inventoryStatus(new Request('https://worker/inventory/status?ids=unknown'),env)).status,400);
  assert.equal((await inventoryStatus(new Request(`https://worker/inventory/status?ids=${id}`),{})).status,503);
