@@ -37,7 +37,10 @@ test('campaign queue follows the Buffer schedule in Pacific time, with DST-corre
 test('El Zonte keeps its id (at most one El Zonte note) and moved from Oct 8, 11 PM to Sun Oct 11, 10 AM', () => {
   const elZonte = posts.find(post => post.id === EL_ZONTE);
   assert.equal(elZonte.scheduledAt, '2026-10-11T10:00:00-07:00');
-  assert.equal(elZonte.title, 'El Zonte at Dawn, El Salvador');
+  assert.equal(elZonte.title, 'El Zonte at Dawn');
+  assert.equal(elZonte.imageUrl, 'https://tjm.art/gallery-images/el-zonte-at-dawn-2026.jpg');
+  assert.match(elZonte.text, /^Before dawn at the Punta El Zonte hostel/);
+  assert.ok(elZonte.text.endsWith('original and prints:'));
   assert.equal(elZonte.productUrl, '/products/painting-shoreline-at-dusk/');
   assert.ok(!posts.some(post => post.scheduledAt.startsWith('2026-10-08')));
 });

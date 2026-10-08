@@ -117,7 +117,9 @@ test('deploying with existing receipts stays idle on Oct 8 and sends El Zonte on
     assert.equal((await (await run(instance, Date.parse('2026-10-11T10:00:00-07:00'))).json()).sent, 1);
     assert.equal((await (await run(instance, Date.parse('2026-10-11T10:05:00-07:00'))).json()).status, 'idle');
     assert.equal(events.length, 1);
-    assert.match(events[0].content, /^El Zonte at Dawn/);
+    assert.match(events[0].content, /^Before dawn at the Punta El Zonte hostel/);
+    assert.ok(events[0].content.includes('https://tjm.art/products/painting-shoreline-at-dusk/'));
+    assert.ok(events[0].content.endsWith('https://tjm.art/gallery-images/el-zonte-at-dawn-2026.jpg'));
     assert.equal(events[0].created_at, Date.parse('2026-10-11T10:00:00-07:00') / 1000);
     assert.ok(await state.storage.get('nostr:sent:launch-sunrise-el-zonte-bitcoin-beach-2026-10-08'));
   } finally { SimplePool.prototype.publish = original; }
