@@ -153,7 +153,8 @@
     const squareBox=root.querySelector('[data-square-card-box]');
     host.replaceChildren();
     if(squareBox)squareBox.hidden=!(enabled&&availableMethods.includes('square'));
-    if(enabled&&availableMethods.includes('square'))ensureSquareCard().catch(error=>announce(`Square card entry could not load: ${error.message}`));
+    if(enabled&&availableMethods.includes('square')){ensureSquareCard().catch(error=>announce(`Square card entry could not load: ${error.message}`));if(quoted&&!(pendingOrder&&pending(pendingOrder)))setupWallets(quoted);}
+    else teardownWallets();
     for(const method of methods){
       const button=node('button',undefined,'button button-solid');
       button.type='button';button.disabled=!enabled||(method==='bitcoin'&&!bitcoinAvailable)||busy||!!(pendingOrder&&pending(pendingOrder));
@@ -168,19 +169,75 @@
     const help=box.querySelector('[data-cart-payment-help]');
     if(help)help.textContent=enabled?'Your total is ready. Choose how you would like to pay.':'Calculate shipping and tax to enable payment.';
   }
-  let squareCard=null,squareCardReady=null;
+  let squareCard=null,squareCardReady=null,squarePaymentsReady=null;
+  // One Square Web Payments instance serves the card form and the Apple Pay / Google Pay buttons.
+  function squarePayments(){
+    if(squarePaymentsReady)return squarePaymentsReady;
+    const config=capabilities?.square;if(!config) return Promise.reject(Error('Square card details are not configured.'));
+    squarePaymentsReady=(async()=>{
+      if(!window.Square){await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=config.mode==='sandbox'?'https://sandbox.web.squarecdn.com/v1/square.js':'https://web.squarecdn.com/v1/square.js';script.onload=resolve;script.onerror=()=>reject(Error('Square payment form could not be loaded.'));document.head.append(script);});}
+      if(!window.Square)throw Error('Square payment form is unavailable.');
+      return window.Square.payments(config.applicationId,config.locationId);
+    })();
+    squarePaymentsReady.catch(()=>{squarePaymentsReady=null;});
+    return squarePaymentsReady;
+  }
   function ensureSquareCard(){
     if(squareCard)return Promise.resolve(squareCard);
     if(squareCardReady)return squareCardReady;
-    const config=capabilities?.square;if(!config) return Promise.reject(Error('Square card details are not configured.'));
     squareCardReady=(async()=>{
-      if(!window.Square){await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=config.mode==='sandbox'?'https://sandbox.web.squarecdn.com/v1/square.js':'https://web.squarecdn.com/v1/square.js';script.onload=resolve;script.onerror=()=>reject(Error('Square payment form could not be loaded.'));document.head.append(script);});}
-      if(!window.Square)throw Error('Square payment form is unavailable.');
-      const payments=window.Square.payments(config.applicationId,config.locationId),card=await payments.card();
+      const payments=await squarePayments(),card=await payments.card();
       const mount=root.querySelector('[data-square-card]');if(!mount.id)mount.id=`square-card-${crypto.randomUUID()}`;
       await card.attach(`#${mount.id}`);squareCard=card;return card;
     })().finally(()=>{squareCardReady=null;});
     return squareCardReady;
+  }
+  /* Apple Pay and Google Pay (Square Web Payments SDK). The wallet sheet shows the exact server quote total;
+     its token goes through the same 'square' start path as a card token, so reservations, codes, tax,
+     fulfillment and accounting are unchanged. Buttons appear only where the browser and Square support them. */
+  let walletGeneration=0,walletInstances=[];
+  const walletAmount=value=>typeof value==='string'&&/^\d+\.\d{2}$/.test(value)?value:Number(value).toFixed(2);
+  function teardownWallets(){
+    walletGeneration++;
+    for(const wallet of walletInstances)try{wallet.destroy?.();}catch{}
+    walletInstances=[];
+    const host=root?.querySelector('[data-cart-wallets]');if(host){host.hidden=true;host.querySelector('[data-wallet-buttons]').replaceChildren();}
+  }
+  function walletRequest(payments,q){
+    const total=walletAmount(q.quote.total),cents=v=>Math.round(Number(v)*100);
+    const lines=[['Artwork',q.quote.base],['Shipping',q.quote.shipping],['Tax',q.quote.tax]].filter(([,v])=>v!==undefined&&v!==null);
+    // Itemize only when the parts add up exactly to the server total; the total itself is always the quote.
+    const itemized=lines.length===3&&lines.reduce((sum,[,v])=>sum+cents(v),0)===cents(total);
+    return payments.paymentRequest({countryCode:'US',currencyCode:'USD',total:{amount:total,label:'TJ Murphy'},
+      ...(itemized?{lineItems:lines.map(([label,v])=>({label,amount:walletAmount(v)}))}:{}),requestBillingContact:false,requestShippingContact:false});
+  }
+  async function setupWallets(q){
+    teardownWallets();
+    const generation=walletGeneration,host=root.querySelector('[data-cart-wallets]'),buttons=host?.querySelector('[data-wallet-buttons]');
+    if(!host||!q?.quote?.total)return;
+    let payments;try{payments=await squarePayments();}catch{return;}
+    const current=()=>generation===walletGeneration&&quoted===q;
+    if(!current())return;
+    const shown=()=>{host.hidden=!buttons.children.length;};
+    try{
+      const applePay=await payments.applePay(walletRequest(payments,q));
+      if(!current())return applePay.destroy?.();
+      walletInstances.push(applePay);
+      const button=node('button',undefined,'apple-pay-button');button.type='button';button.setAttribute('aria-label','Pay with Apple Pay');button.lang='en';
+      // Apple Pay must open from the click itself, so tokenize before any other await.
+      button.addEventListener('click',()=>{if(busy||!quoted)return;startPayment('square',applePay.tokenize());});
+      buttons.prepend(button);shown();
+    }catch{}
+    try{
+      const googlePay=await payments.googlePay(walletRequest(payments,q));
+      if(!current())return googlePay.destroy?.();
+      walletInstances.push(googlePay);
+      const mount=node('div',undefined,'google-pay-button');mount.id=`google-pay-${crypto.randomUUID()}`;buttons.append(mount);
+      await googlePay.attach(`#${mount.id}`,{buttonColor:'black',buttonSizeMode:'fill',buttonType:'buy'});
+      if(!current())return;
+      mount.addEventListener('click',()=>{if(busy||!quoted)return;startPayment('square',googlePay.tokenize());});
+      shown();
+    }catch{buttons.querySelector('.google-pay-button')?.remove();shown();}
   }
   function showPendingNotice(order,requestedBuy=buyOnly,errorMessage=''){
     const items=order?.quote?.items||[],names=items.map(item=>item.title).filter(Boolean).join(', ');
@@ -231,11 +288,16 @@
   }
   const credentials=()=>({orderId:current.orderId,key:current.key});
   function remember(q){const value={orderId:q.orderId,key:q.key};if(!write(ATTEMPT,value))throw Error('Your browser could not save this checkout. Enable site storage before continuing.');}
-  async function startPayment(method){
+  async function startPayment(method,walletToken){
     if(busy||!quoted)return;busy=true;setDisabled(true);announce('Checking your items and preparing payment…');
     try{
       let sourceId;
-      if(method==='square'){
+      if(method==='square'&&walletToken){
+        const token=await walletToken;
+        if(token?.status==='Cancel'||token?.status==='Abort'){announce('Payment cancelled. Your total is still ready.');return;}
+        if(token?.status!=='OK'||!token.token)throw Error('The wallet payment could not be started. Try again or pay with a card.');
+        sourceId=token.token;
+      }else if(method==='square'){
         const card=await ensureSquareCard(),values=Object.fromEntries(new FormData(form));
         const names=String(values.name||'').trim().split(/\s+/),token=await card.tokenize({amount:quoted.quote.total,currencyCode:'USD',intent:'CHARGE',customerInitiated:true,sellerKeyedIn:false,
           billingContact:{givenName:names.shift()||'',familyName:names.join(' '),email:String(values.email||''),countryCode:'US'}});
@@ -252,6 +314,7 @@
     finally{busy=false;setDisabled(false);}
   }
   function setDisabled(value){
+    const wallets=root.querySelector('[data-cart-wallets]');if(wallets){wallets.inert=value;wallets.classList.toggle('is-disabled',value);}
     form.querySelectorAll('input,button').forEach(el=>{if(el.matches('[data-cart-quote]'))el.disabled=value||!quoteAllowed();else el.disabled=value;});
     root.querySelectorAll('[data-cart-methods] button').forEach(el=>el.disabled=value||!quoted||!!(pendingOrder&&pending(pendingOrder)));
     root.querySelectorAll('[data-cart-items] button, [data-cart-items] input').forEach(el=>el.disabled=value);
@@ -299,6 +362,8 @@
     root=el;notice=root.querySelector('[data-cart-notice]');layout=root.querySelector('[data-cart-layout]');orderPanel=root.querySelector('[data-order-panel]');form=root.querySelector('[data-cart-form]');
     quoteFeedback=node('p',undefined,'cart-footnote');quoteFeedback.dataset.cartQuoteFeedback='';quoteFeedback.setAttribute('role','status');quoteFeedback.setAttribute('aria-live','polite');form.querySelector('[data-cart-quote]').after(quoteFeedback);
     orderFeedback=node('p',undefined,'cart-footnote');orderFeedback.dataset.orderFeedback='';orderFeedback.setAttribute('role','status');orderFeedback.setAttribute('aria-live','polite');root.querySelector('.cart-order-actions').after(orderFeedback);
+    const methodsHost=root.querySelector('[data-cart-methods]');
+    if(methodsHost&&!root.querySelector('[data-cart-wallets]')){const wallets=node('div',undefined,'cart-wallets');wallets.dataset.cartWallets='';wallets.hidden=true;const label=node('p','Express checkout','cart-wallets-label');const buttons=node('div',undefined,'cart-wallet-buttons');buttons.dataset.walletButtons='';wallets.append(label,buttons,node('p','or','cart-wallets-or'));methodsHost.before(wallets);}
     const params=new URLSearchParams(location.search),buy=params.get('buy');
     // Buy now is a one-item checkout; existing cart contents remain for a later order.
     if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;const requestId=params.get('request');cart=[{id:buy,quantity:1,...(buy.startsWith('deposit-')&&REQUEST.test(requestId||'')?{requestId}:{})}]; /* view only; do not overwrite a saved multi-item cart */}
