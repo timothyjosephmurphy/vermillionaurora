@@ -55,6 +55,7 @@ const el=(tag,props={},...kids)=>{const n=Object.assign(document.createElement(t
 const field=(label,input)=>el('label',{},label,input);
 const btn=(label,action,cls='')=>{const b=el('button',{type:'button',textContent:label,className:cls});b.addEventListener('click',async()=>{b.disabled=true;try{await action(b);}catch(e){say(e.message);}finally{b.disabled=false;}});return b;};
 const fmt=iso=>iso?new Date(iso).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'}):'';
+const who=r=>r.name||'A collector (no name given)';
 const socialOk=r=>r.status==='approved'&&r.video&&!r.video.expired&&r.video.consent?.social===true;
 const mb=n=>`${(n/1048576).toFixed(n<1048576*10?1:0)} MB`;
 function render(){
@@ -63,7 +64,7 @@ function render(){
   if(filter==='social'&&shown.length){
     const table=el('table',{className:'tm-social'},el('caption',{className:'tm-meta',textContent:'Approved videos whose owners ticked “TJ can share my video on his social media.”'}),
       el('tr',{},...['Name','Painting','Approved','Also on tjm.art','Video'].map(h=>el('th',{textContent:h}))),
-      ...shown.map(r=>el('tr',{},el('td',{},el('a',{href:'#'+r.id,textContent:r.published?.name||r.name})),el('td',{textContent:r.published?.painting||r.paintingTitle||''}),el('td',{textContent:fmt(r.approvedAt)}),el('td',{textContent:r.public?.video?'Yes':'No'}),el('td',{},r.videoUrls?el('a',{href:r.videoUrls.download,textContent:`Download (${mb(r.video.bytes)})`}):'Unavailable'))));
+      ...shown.map(r=>el('tr',{},el('td',{},el('a',{href:'#'+r.id,textContent:r.published?.name||r.name||'A collector (no name given)'})),el('td',{textContent:r.published?.painting||r.paintingTitle||''}),el('td',{textContent:fmt(r.approvedAt)}),el('td',{textContent:r.public?.video?'Yes':'No'}),el('td',{},r.videoUrls?el('a',{href:r.videoUrls.download,textContent:`Download (${mb(r.video.bytes)})`}):'Unavailable'))));
     kids.unshift(table);
   }
   list.replaceChildren(...kids);
@@ -75,9 +76,9 @@ function card(r){
   const pub=r.published||{};
   const a=el('article',{className:'tm-card',id:r.id});
   const hidden=r.status==='approved'&&r.public&&!(r.public.quote||r.public.video||r.public.photos?.length);
-  a.append(el('h2',{},`${r.name} `,el('span',{className:'tm-badge '+r.status,textContent:r.status==='approved'?(hidden?'Approved · private (not on the site)':'Published'):'Pending'}),r.video?el('span',{className:'tm-badge',textContent:'Video'}):''));
+  a.append(el('h2',{},`${who(r)} `,el('span',{className:'tm-badge '+r.status,textContent:r.status==='approved'?(hidden?'Approved · private (not on the site)':'Published'):'Pending'}),r.video?el('span',{className:'tm-badge',textContent:'Video'}):''));
   a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,el('a',{href:`mailto:${r.email}`,textContent:r.email}),` (private) · ${r.id}`,r.notifiedAt?' · Email alert sent':r.notifyError?` · Email alert failed (${r.notifyError})`:'',r.thanks?.emailedAt?` · Thanked ${fmt(r.thanks.emailedAt)}`:r.thanks?.code?' · Code issued':''));
-  const name=el('input',{type:'text',value:pub.name||r.name,maxLength:80});
+  const name=el('input',{type:'text',value:'name' in pub?pub.name:r.name,maxLength:80,placeholder:'A collector'});
   const quote=el('textarea',{value:pub.quote??r.quote??'',maxLength:2000});
   const painting=el('input',{type:'text',value:pub.painting??r.paintingTitle??'',maxLength:200});
   const slug=el('input',{type:'text',value:pub.paintingSlug??r.paintingSlug??'',placeholder:'e.g. painting-emergence',maxLength:150});
@@ -117,7 +118,7 @@ function card(r){
   if(r.photos.length){
     const ul=el('ul',{className:'tm-photos'});
     for(const p of r.photos){
-      const img=el('img',{alt:`Photo ${p.n+1} from ${r.name}`});
+      const img=el('img',{alt:`Photo ${p.n+1} from ${who(r)}`});
       call({action:'photo',id:r.id,n:p.n},true).then(b=>{img.src=URL.createObjectURL(b);}).catch(()=>{img.alt='Preview unavailable';});
       const box=el('input',{type:'checkbox',checked:p.publishable&&(r.status!=='approved'||(pub.photos||[]).includes(p.n)),disabled:!p.publishable});box.dataset.n=p.n;photoBoxes.push(box);
       ul.append(el('li',{},img,el('label',{},box,p.publishable?' Publish':' Private (HEIC)'),el('span',{textContent:`${Math.round(p.bytes/1024)} KB${p.removed?.length?' · removed: '+p.removed.join(', '):''}`})));
@@ -131,20 +132,20 @@ function card(r){
   const report=d=>{const x=d.thanks||{};return [x.issued?'Print code issued.':'',x.emailed?`Thank-you email sent to ${r.email}.`:'',x.emailSkipped||'',x.error||''].filter(Boolean).join(' ');};
   if(r.status==='pending'){
     if(!t.emailedAt)a.append(el('label',{className:'tm-send'},el('span',{},sendBox,` Send thank-you email with their at-cost print code to ${r.email}`)));
-    actions.append(btn('Approve & publish',async()=>{const d=await approve();await load();say(`Published ${r.name}’s testimonial. ${report(d)}`);},'button button-solid'));
+    actions.append(btn('Approve & publish',async()=>{const d=await approve();await load();say(`Published ${who(r)}’s testimonial. ${report(d)}`);},'button button-solid'));
   } else {
     actions.append(btn('Save changes',async()=>{await approve();await load();say('Saved.');}));
     actions.append(btn('Unpublish',async()=>{await call({action:'unpublish',id:r.id});await load();say('Unpublished; it is back in Pending.');}));
     if(!t.code)actions.append(btn('Issue print code (no email)',async()=>{const d=await call({action:'issueCode',id:r.id});await load();say(report(d)||'Code ready.');}));
     if(!t.emailedAt)actions.append(btn(t.code?'Send thank-you email':'Issue code & send thank-you email',async()=>{
-      if(!confirm(`Email ${r.name} <${r.email}> their thank-you note and print code now?`))return;
+      if(!confirm(`Email ${r.name||'(no name)'} <${r.email}> their thank-you note and print code now?`))return;
       let d;try{d=await call({action:'sendThanks',id:r.id});}catch(e){if(/unknown result/.test(e.message)&&confirm(e.message)){d=await call({action:'sendThanks',id:r.id,force:true});}else throw e;}
       await load();say(report(d));}));
   }
   if(t.code)out.append(el('div',{className:'tm-code'},el('p',{},'Print code: ',el('code',{textContent:t.code})),
     el('p',{className:'tm-meta',textContent:`Issued ${fmt(t.issuedAt)}. Single use, prints only, at print-lab cost plus shipping. `+(t.emailedAt?`Thank-you email sent ${fmt(t.emailedAt)}.`:t.emailError?`Email failed: ${t.emailError}.`:'Not emailed yet.')}),
     btn('Copy code',async()=>{await navigator.clipboard.writeText(t.code);say('Code copied.');})));
-  actions.append(btn('Delete (reject)',async()=>{if(!confirm(`Permanently delete ${r.name}’s testimonial, photos${r.video?' and video':''}?`))return;await call({action:'delete',id:r.id,confirm:r.id});await load();say('Deleted.');}));
+  actions.append(btn('Delete (reject)',async()=>{if(!confirm(`Permanently delete ${who(r)}’s testimonial, photos${r.video?' and video':''}?`))return;await call({action:'delete',id:r.id,confirm:r.id});await load();say('Deleted.');}));
   a.append(actions,out);
   return a;
 }
