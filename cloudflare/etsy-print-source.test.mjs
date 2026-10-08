@@ -12,7 +12,7 @@ test('Etsy draft source contains only the five requested prepared print painting
     'painting-shoreline-at-dusk',
     'el-zonte-at-sunrise'
   ]);
-  assert.deepEqual(listings.map(item=>item.variants.length),[3,3,2,1,2]);
+  assert.deepEqual(listings.map(item=>item.variants.length),[3,3,2,3,3]); // El Zonte pair: full-resolution masters (Oct 2026) give three sizes each
   for(const item of listings){
     assert.equal(item.artist,'TJ Murphy');
     assert.equal(item.variants.length>0,true);

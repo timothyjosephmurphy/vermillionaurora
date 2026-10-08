@@ -5,6 +5,7 @@ Astro generates the public website from a versioned JSON catalog. Cloudflare ser
 ## Editing through chat
 
 - `catalog/products.json`: one record per artwork, commission package, or book. Edit titles, stories, prices, media, dimensions, credits, and explicit shipping profiles here.
+- Optional painting fields `gallery` (extra photos such as room shots, shown as thumbnails after the main image; AVIF/WebP derivatives in `static/product-media/`) and `video` (a product video with label, poster and MP4 sources on `media.vermillionaurora.com`; files over the 25 MiB Workers asset limit belong in R2). See `scripts/make-product-media.mjs`.
 - `catalog/collections.json`: product IDs and display order for the homepage, gallery, and artist collaborations.
 - `src/pages/products/[slug]/index.astro`: shared product template, with painting, book, and commission layouts.
 - `src/components/ProductCard.astro`: shared gallery, carousel, book, commission, and collaboration cards.
