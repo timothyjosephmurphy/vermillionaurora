@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="2dcee9b9792427369d97";
+export const sourcePrintVersion="59df016cda486fc9238e";
 export default [
   {
     "id": "warszawska-syrenka",
@@ -562,7 +562,7 @@ export default [
   },
   {
     "id": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador",
     "artist": "TJ Murphy",
     "year": 2023,
     "medium": "Watercolor pastel",
@@ -575,7 +575,7 @@ export default [
     "story": [],
     "image": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy"
     },
     "variants": [
       {

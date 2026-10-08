@@ -1,6 +1,6 @@
 {
   "https://tjm.art/": {
-    "hash": "4faa21b126c9dde3",
+    "hash": "57da61a6d292cf49",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/about/": {
@@ -16,19 +16,19 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/": {
-    "hash": "bade4c4bea49bb87",
+    "hash": "2331b5cba1f5d790",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/watercolor-landscapes-pacific-north-west/": {
-    "hash": "7d65701a22cea13c",
+    "hash": "18672aada60bb65b",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/watercolor-landscapes-travels/": {
-    "hash": "8a629ae490732e41",
+    "hash": "18e42049e8dbe085",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-bitcoiners/": {
-    "hash": "97c5b32c1e597cdd",
+    "hash": "38a27b56b4f90202",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-family/": {
@@ -36,11 +36,11 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-friends/": {
-    "hash": "d1a7dc7a6efa05fb",
+    "hash": "e0f3755e03ebc67c",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-self-portraits/": {
-    "hash": "74197c1ec9f2d9f9",
+    "hash": "f4122d40a19064d4",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/books/": {
@@ -108,11 +108,11 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/gallery/": {
-    "hash": "bbe094303366b4a3",
+    "hash": "21a0ff64187c9468",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/gallery/available/": {
-    "hash": "c3d90ffa4261aadc",
+    "hash": "0ad73168373039d4",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/links/": {
@@ -135,10 +135,6 @@
     "hash": "ca887efda485c26b",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/book-art-024a1e2da99a49b4438a/": {
-    "hash": "43d3836634dad31f",
-    "lastmod": "2026-10-07"
-  },
   "https://tjm.art/products/book-art-029f45a5fbfd6c90212e/": {
     "hash": "1eb33dfc28099598",
     "lastmod": "2026-10-07"
@@ -159,16 +155,8 @@
     "hash": "e71301e32c89be53",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/book-art-04de39dfa1817b8d1ed9/": {
-    "hash": "27d0436dfaa4f892",
-    "lastmod": "2026-10-07"
-  },
   "https://tjm.art/products/book-art-04f4a52773ffd19b4f67/": {
     "hash": "bea12cb492b8e4dc",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/book-art-06b4b66f6389416c412c/": {
-    "hash": "3b3bd63eda76f615",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/book-art-0735a5fb0eb1c613b658/": {
@@ -211,20 +199,8 @@
     "hash": "e7bbbeb3f9212bff",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/book-art-159503a8e82d7b91c293/": {
-    "hash": "73662b9d83580b48",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/book-art-164299ae97e7b62137f5/": {
-    "hash": "4ef79fb962164214",
-    "lastmod": "2026-10-07"
-  },
   "https://tjm.art/products/book-art-164f60d23032b0f718de/": {
     "hash": "ecbd44f9ca5900d9",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/book-art-1708a7dca996aca40e6c/": {
-    "hash": "b7c29dc4cc46ba0a",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/book-art-18e4d05240ce63a1a44b/": {
@@ -237,10 +213,6 @@
   },
   "https://tjm.art/products/book-art-1a843fe4506374e2f33e/": {
     "hash": "53e975e234916c7c",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/book-art-1cc00425e5226b3aa20c/": {
-    "hash": "14d5e49f745c41dc",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/book-art-1d0517e85d349222c362/": {
@@ -379,10 +351,6 @@
     "hash": "ba16875f533347ab",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/book-art-5e4eb881d89ae9f5c635/": {
-    "hash": "4c473787c061e7a6",
-    "lastmod": "2026-10-07"
-  },
   "https://tjm.art/products/book-art-614d5b68dbe5052e302a/": {
     "hash": "c439238aa64c9cdc",
     "lastmod": "2026-10-07"
@@ -435,16 +403,8 @@
     "hash": "153a0befb9f335c7",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/book-art-7676696646b77fc3ca94/": {
-    "hash": "3b92ca6c678d3799",
-    "lastmod": "2026-10-07"
-  },
   "https://tjm.art/products/book-art-76b81da2337321bf158d/": {
     "hash": "fae5427687670dd1",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/book-art-7718008765132b8bc17f/": {
-    "hash": "eb3764728733c7eb",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/book-art-7a3ad7bacdb71faac1b8/": {
@@ -469,10 +429,6 @@
   },
   "https://tjm.art/products/book-art-82127d1886ae57d5cb6e/": {
     "hash": "d4e4dc3f99bfaf93",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/book-art-82ab8d65fb50fe0d096a/": {
-    "hash": "38449052e1d42284",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/book-art-85d951d0a1ea09ef4aa6/": {
@@ -519,10 +475,6 @@
     "hash": "5f3825cbd9cdf528",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/book-art-9b6b4f1ce8b283e14b21/": {
-    "hash": "445d0170f31ea632",
-    "lastmod": "2026-10-07"
-  },
   "https://tjm.art/products/book-art-9c77e540218eab97ba3d/": {
     "hash": "493850045f6c2e44",
     "lastmod": "2026-10-07"
@@ -535,16 +487,8 @@
     "hash": "06b94ac818012a7c",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/book-art-9f6386bac0e6198f6661/": {
-    "hash": "23c7c7909fe68552",
-    "lastmod": "2026-10-07"
-  },
   "https://tjm.art/products/book-art-9fc2e730b10c7b8c333b/": {
     "hash": "96749c165d4e8884",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/book-art-a137dffe65723d0b5a07/": {
-    "hash": "6c2e2c21102798d3",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/book-art-a26ad79970ed645ce1a9/": {
@@ -577,10 +521,6 @@
   },
   "https://tjm.art/products/book-art-ac338ff3806b66917b3c/": {
     "hash": "346ae897d7815996",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/book-art-ad30c3da712401606ea6/": {
-    "hash": "eaf758d3e24a3747",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/book-art-b01b8695b2528cb850a3/": {
@@ -629,10 +569,6 @@
   },
   "https://tjm.art/products/book-art-c4a5109c84daedd78291/": {
     "hash": "579f12a7573b71a6",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/book-art-c8da7882b2a3b7a36874/": {
-    "hash": "8fe2c89829b50f53",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/book-art-cb92d1d647c6f92403c7/": {
@@ -719,10 +655,6 @@
     "hash": "0bc54305f85faa55",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/book-art-ef24f49017a62819330d/": {
-    "hash": "96b390e5d37187d2",
-    "lastmod": "2026-10-07"
-  },
   "https://tjm.art/products/book-art-f2025e5a72f4a70866c6/": {
     "hash": "fef73491fe19bc93",
     "lastmod": "2026-10-07"
@@ -767,28 +699,36 @@
     "hash": "6cdd6293f177b0fd",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/daniel-being-reprimanded-in-vietnam/": {
-    "hash": "5b8044026ddd77c6",
+  "https://tjm.art/products/daniel-portrait-1/": {
+    "hash": "d826f31a464a8cbf",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/el-zonte-at-sunrise/": {
-    "hash": "5d3933d45ae5e600",
+    "hash": "1bcb048f82faf793",
+    "lastmod": "2026-10-07"
+  },
+  "https://tjm.art/products/girl-wearing-flower-crown/": {
+    "hash": "74a6405f5014e24f",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/grandpa-howard/": {
     "hash": "398f8376a9ed6f58",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/grandpa-mom-myself/": {
-    "hash": "67ce7d3e5ac8cde2",
-    "lastmod": "2026-10-07"
-  },
   "https://tjm.art/products/honeybadger-and-cub-with-genesis-block/": {
     "hash": "7cdddb36d4d4eefa",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/joachim-in-zihuatanejo/": {
-    "hash": "1fe11305458a2e9c",
+  "https://tjm.art/products/joaquim-in-zihuatanejo/": {
+    "hash": "686fc92685b0c3ec",
+    "lastmod": "2026-10-07"
+  },
+  "https://tjm.art/products/michael-and-katie-in-yelapa/": {
+    "hash": "d625525589253713",
+    "lastmod": "2026-10-07"
+  },
+  "https://tjm.art/products/myself-my-mother-ruth-my-grandpa-howard/": {
+    "hash": "31169ef8773e3876",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-chef-in-white/": {
@@ -796,15 +736,11 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-clouds-over-water/": {
-    "hash": "988155d1f6d287a7",
+    "hash": "c98d2a88de81d64a",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-couple-in-color/": {
     "hash": "ce1d1b834cbd7acf",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/painting-embrace/": {
-    "hash": "519f3d361345fa3f",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-emergence/": {
@@ -816,7 +752,7 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-figures-in-wheatfield/": {
-    "hash": "bd39ab5f7bb06d12",
+    "hash": "1e8817a43ad6a76b",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-golden-coast/": {
@@ -824,7 +760,7 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-guitarist/": {
-    "hash": "debd769f224c7550",
+    "hash": "94a67207b08a3222",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-insect-garden/": {
@@ -836,7 +772,7 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-moonlit-water/": {
-    "hash": "1bd394c83da1ff40",
+    "hash": "72fc49e1478b7999",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-phoenix-rising/": {
@@ -856,7 +792,7 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-portrait-with-cheese/": {
-    "hash": "8bee0a3f656ce2a3",
+    "hash": "1f697328fbbcfac1",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-portrait-with-hat/": {
@@ -876,15 +812,15 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-studio-figure/": {
-    "hash": "cf7acf234135e595",
+    "hash": "7a8f6216c6e7d6a2",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-sunflower-woman/": {
-    "hash": "70504e433878ced0",
+    "hash": "0e1e9f5d03788bf3",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-sunset-silhouette/": {
-    "hash": "9ed72f073431cc0b",
+    "hash": "65f5b099b30cf6ff",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-twin-dragons/": {
@@ -1047,20 +983,16 @@
     "hash": "aee9bf75524b2d5c",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/rice-paddy-in-vietnam/": {
-    "hash": "3119d8c5c28e5287",
+  "https://tjm.art/products/rice-paddies-in-vietnam/": {
+    "hash": "ab2256dc81ec1325",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/sunset-from-atami-el-salvador/": {
-    "hash": "f22aee59ec446e01",
+  "https://tjm.art/products/sunset-in-el-tunco-el-salvador/": {
+    "hash": "88edc34ffdcc1372",
     "lastmod": "2026-10-07"
   },
-  "https://tjm.art/products/sunset-from-la-libertad-el-salvador/": {
-    "hash": "96c17b5e94852d55",
-    "lastmod": "2026-10-07"
-  },
-  "https://tjm.art/products/ukrainian-woman-with-flower-crown/": {
-    "hash": "4ed8955585087df4",
+  "https://tjm.art/products/sunset-in-el-zonte-el-salvador/": {
+    "hash": "cb60302efa172f2d",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/warszawska-syrenka/": {

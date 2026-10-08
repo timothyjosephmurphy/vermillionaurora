@@ -1,13 +1,14 @@
 ---
 import manifest from '../../catalog/book-galleries.json';
 import {byId,urlFor} from '../../catalog/catalog.mjs';
+import {sectionArtworkIds} from '../data/canonical-artworks.mjs';
 const groups=manifest.sections;
 ---
 <section id="book-galleries" class="section section-light"><div class="container">
   <div class="section-heading"><h2>Selected Galleries</h2></div>
   <div class="ex-carousel book-section-carousel" role="region" aria-roledescription="carousel" aria-label="Selected Galleries">
     <div class="ex-track" tabindex="0" aria-label="Swipe or use arrow keys to browse galleries">
-      {groups.map(g=>{const p=byId[g.artworks[0]];return <article class="ex-slide product-card"><a href={`/book-galleries/${g.id}/`}><img src={p.image.src} alt={p.title} loading="lazy" decoding="async" style="object-fit:contain;background:#f4efe8"/><div class="ex-slide-caption product-info"><p>{g.book==='watercolor-landscapes'?'Landscapes':'Portraits'}</p><h3>{g.title}</h3><p>{g.artworks.length} {g.artworks.length===1?'work':'works'} · Explore gallery →</p></div></a></article>})}
+      {groups.map(g=>{const p=byId[sectionArtworkIds(g)[0]];return <article class="ex-slide product-card"><a href={`/book-galleries/${g.id}/`}><img src={p.image.src} alt={p.title} loading="lazy" decoding="async" style="object-fit:contain;background:#f4efe8"/><div class="ex-slide-caption product-info"><p>{g.book==='watercolor-landscapes'?'Landscapes':'Portraits'}</p><h3>{g.title}</h3><p>{g.artworks.length} {g.artworks.length===1?'work':'works'} · Explore gallery →</p></div></a></article>})}
     </div>
     <div class="ex-controls" hidden><button type="button" class="ex-autoplay" aria-label="Pause automatic gallery scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous gallery">←</button><p class="ex-position" role="status">1 / {groups.length}</p><button type="button" data-direction="1" aria-label="Next gallery">→</button><a href="/book-galleries/" class="button button-solid carousel-view-all">View all galleries</a></div>
   </div>
