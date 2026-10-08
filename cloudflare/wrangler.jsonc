@@ -30,7 +30,7 @@
     "BTCPAY_CHECKOUT_ENABLED": "true",
     "QBO_ENVIRONMENT": "production",
     "QBO_SYNC_ENABLED": "true",
-    "QBO_COST_SYNC_ENABLED": "false"
+    "QBO_COST_SYNC_ENABLED": "true"
   },
   "durable_objects": {
     "bindings": [
