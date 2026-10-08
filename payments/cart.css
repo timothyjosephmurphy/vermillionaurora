@@ -22,3 +22,4 @@
 
 [data-cart-methods] .payment-button-content{display:inline-flex;align-items:center;justify-content:center;gap:.6rem}
 [data-cart-methods] .payment-button-icon{display:block;width:1.15rem;height:1.15rem;flex:0 0 auto}
+.cart-code-toggle{margin:0 0 13px}.cart-code-toggle summary{display:inline-block;cursor:pointer;font-size:.82rem;text-decoration:underline;text-underline-offset:3px;color:var(--ink)}.cart-code-toggle summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.cart-code-toggle[open] summary{margin-bottom:10px}
