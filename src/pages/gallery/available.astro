@@ -5,21 +5,32 @@ import { products, urlFor, priceLabel, statusLabel, dimensionLabel } from '../..
 const availablePaintings = products
   .filter(product => product.type === 'painting' && product.listing.status === 'available')
   .sort((a,b) => Number(b.listing.price?.amount||0) - Number(a.listing.price?.amount||0) || a.title.localeCompare(b.title));
+// TJ's own originals come first; featured artist Paul Murphy's works follow in their own labelled section.
+const isTj = product => !product.artist || product.artist === 'TJ Murphy';
+const sections = [
+  { id: 'tj-murphy', heading: 'Original paintings by TJ Murphy', intro: '', items: availablePaintings.filter(isTj) },
+  { id: 'paul-murphy', heading: 'Featured artist: Paul Murphy', intro: 'Original paintings by Paul Murphy, presented by TJ Murphy.', items: availablePaintings.filter(product => !isTj(product)) },
+].filter(section => section.items.length);
 ---
 <!doctype html><html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Available Paintings | TJ Murphy</title>
   <meta name="description" content="Browse original paintings currently available from TJ Murphy and featured artist Paul Murphy, sorted by price. Explore landscapes and portraits.">
   <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/site-header.css"><link rel="stylesheet" href="/gallery/painting-list.css">
+  <style>.available-section{margin-top:2.5rem}.available-section+.available-section{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--line,#d9d0c7)}.available-section-heading{font:600 clamp(1.9rem,4vw,2.6rem)/1.1 "Cormorant Garamond",serif;margin:0 0 .4rem}.available-section-intro{margin:0 0 1rem;color:var(--muted)}</style>
 </head><body class="painting-gallery-page"><div class="page-shell"><SiteHeader/><main><section class="section section-light"><div class="container">
   <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/gallery/">Gallery</a><span>/ Available paintings</span></nav>
-  <header class="section-heading"><p class="eyebrow dark">Original artwork</p><h1>Available Paintings</h1><p>Currently available originals, ordered from highest to lowest listed price. <a href="/gallery/">Browse all paintings, including sold and archived works →</a></p></header>
-  <ul class="painting-list" aria-label="Available paintings">
-    {availablePaintings.map(product => <li class="painting-list-row" data-product-id={product.id}>
-      <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
-      <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a>{product.artist && product.artist !== 'TJ Murphy' && <span class="painting-list-artist">by {product.artist}</span>}</h3>
-      <p class="painting-list-dimensions">{dimensionLabel(product)}</p>
-      <p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>
-    </li>)}
-  </ul>
+  <header class="section-heading"><p class="eyebrow dark">Original artwork</p><h1>Available Paintings</h1><p>Currently available originals by TJ Murphy, followed by works from featured artist Paul Murphy. Each section is ordered from highest to lowest listed price. <a href="/gallery/">Browse all paintings, including sold and archived works →</a></p></header>
+  {sections.map(section => <section class="available-section" id={section.id} aria-labelledby={`${section.id}-heading`}>
+    <h2 id={`${section.id}-heading`} class="available-section-heading">{section.heading}</h2>
+    {section.intro && <p class="available-section-intro">{section.intro}</p>}
+    <ul class="painting-list" aria-label={section.heading}>
+      {section.items.map(product => <li class="painting-list-row" data-product-id={product.id}>
+        <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
+        <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a>{product.artist && product.artist !== 'TJ Murphy' && <span class="painting-list-artist">by {product.artist}</span>}</h3>
+        <p class="painting-list-dimensions">{dimensionLabel(product)}</p>
+        <p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>
+      </li>)}
+    </ul>
+  </section>)}
 </div></section></main><SiteFooter/></div></body></html>

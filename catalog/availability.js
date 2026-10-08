@@ -14,8 +14,10 @@
   if(node.parentElement!==target)target.append(node);
  }
  function updateHomepageEmptyMessages(){
-  if(availableTrack){const empty=document.querySelector('[data-available-empty]');if(empty)empty.hidden=availableTrack.children.length>0;}
-  if(collectorTrack){const empty=document.querySelector('[data-collector-empty]');if(empty)empty.hidden=collectorTrack.children.length>0;}
+  // The homepage only ships empty-state text when a track is really empty; add it here if live stock empties one.
+  const toggle=(empty,hasItems,text)=>{if(!empty)return;if(!hasItems&&!empty.textContent.trim())empty.textContent=text;empty.hidden=hasItems;};
+  if(availableTrack)toggle(document.querySelector('[data-available-empty]'),availableTrack.children.length>0,'No original paintings are available right now. Browse the collector\u2019s items or ask about a commission.');
+  if(collectorTrack)toggle(document.querySelector('[data-collector-empty]'),collectorTrack.children.length>0,'There are no sold or unavailable works in this selection right now.');
  }
  for(const node of nodes){
   node.querySelectorAll('[data-live-status]').forEach(el=>{el.dataset.initialText=el.textContent;});

@@ -56,7 +56,7 @@ try {
       assert(await dialog.evaluate(el=>el.scrollWidth<=el.clientWidth+1));
       assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
       if(id.endsWith('-55')){
-        assert.equal(variants.length,1);assert.match(await page.locator('[data-print-dimensions]').textContent(),/Paper: 4.76 × 4.52/);
+        assert.equal(variants.length,1);assert.match(await page.locator('[data-print-dimensions]').textContent(),/Paper: 4.8 × 4.5/);
         await page.waitForFunction(()=>{const image=document.querySelector('[data-print-image-area] img');return image.complete&&image.naturalWidth>0;});
         await dialog.screenshot({path:`/tmp/paul-55-${width}.png`});
       }

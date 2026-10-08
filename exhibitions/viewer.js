@@ -4,19 +4,23 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
     const img = node.querySelector('img, svg[data-image-src]');
     const orientedImage = img?.matches('svg[data-image-src]') ? img : null;
     const imageSrc = orientedImage?.dataset.imageSrc || img?.src;
+    // Keep the responsive WebP candidates so the carousel cells and thumbnails download small files.
+    const srcset = !orientedImage && img?.getAttribute('srcset') || '';
     const product = node.querySelector('.product-title-link');
     if (product) {
       const imageLink = node.querySelector('.gallery-product-image, .product-image');
       const background = imageLink && getComputedStyle(imageLink).backgroundImage.match(/url\(["']?(.*?)["']?\)/);
       const src = imageSrc || background?.[1];
-      return src ? {id:node.dataset.productId,node,price:Number(node.dataset.price)||null,area:Number(node.dataset.area)||null,printReady:node.dataset.printReady==='true',src, orientedImage, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
+      return src ? {id:node.dataset.productId,node,price:Number(node.dataset.price)||null,area:Number(node.dataset.area)||null,printReady:node.dataset.printReady==='true',src, srcset: imageSrc ? srcset : '', orientedImage, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
     }
     const video = node.querySelector('video');
-    return img ? {id:node.dataset.productId,src: imageSrc, orientedImage, alt: img.dataset.imageAlt || img.alt, caption: node.dataset.caption, product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), caption: video.dataset.caption || '', lazyPreview: video.dataset.previewLazy === 'true', video: true} : null;
+    return img ? {id:node.dataset.productId,src: imageSrc, srcset, orientedImage, alt: img.dataset.imageAlt || img.alt, caption: node.dataset.caption, product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), caption: video.dataset.caption || '', lazyPreview: video.dataset.previewLazy === 'true', video: true} : null;
   }).filter(Boolean);
   if (!items.length) return;
   const allItems = items;
   const threeUp = true;
+  // Rendered width of a three-up carousel cell (see .ev-three-up .ev-cell in viewer.css).
+  const CELL_SIZES = '(max-width: 600px) 34vw, (max-width: 980px) 32vw, 380px';
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const bookGalleryOverview = grid.closest('.book-gallery-overview');
   const box = document.createElement('section');
@@ -39,7 +43,7 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
     else video.addEventListener('loadedmetadata', showFirstFrame, {once:true});
   }
   let index = 0, paused = motion.matches, visible = false, hovered = false, focused = false, timer;
-  function createImage(item, alt) {
+  function createImage(item, alt, sizes) {
     if (item.orientedImage) {
       const image = item.orientedImage.cloneNode(true);
       image.setAttribute('aria-label', alt);
@@ -47,6 +51,7 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
       return image;
     }
     const image = document.createElement('img');
+    if (item.srcset && sizes) { image.srcset = item.srcset; image.sizes = sizes; }
     image.src = item.src; image.alt = alt; image.loading = 'lazy'; image.decoding = 'async';
     return image;
   }
@@ -64,7 +69,7 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
       label.textContent = item.caption || item.alt || `Exhibition video ${i + 1}`;
       button.append(label);
       item.thumbButton = button;
-    } else { button.append(createImage(item, '')); }
+    } else { button.append(createImage(item, '', '76px')); }
     button.addEventListener('click', () => show(i));
     thumbs.append(button);
   });
@@ -95,7 +100,7 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
         });
         cell.append(preview);
       } else {
-        const media = item.video ? document.createElement('video') : createImage(item, item.alt || 'Exhibition image');
+        const media = item.video ? document.createElement('video') : createImage(item, item.alt || 'Exhibition image', CELL_SIZES);
         if (item.video) media.src = item.src;
         if (item.video) { media.controls = true; media.playsInline = true; primeVideoFrame(media); }
         else { media.alt = item.alt || 'Exhibition image'; media.loading = 'lazy'; media.decoding = 'async'; }

@@ -15,3 +15,16 @@
 html.print-dialog-open{overflow:hidden}
 html.print-dialog-open body{position:fixed;top:var(--print-dialog-scroll);width:100%;overflow:hidden}
 @media(max-width:600px){.print-purchase-dialog{width:calc(100% - 20px);max-height:calc(100dvh - 24px)}.print-dialog-header{padding:12px 16px}.print-dialog-content{padding:8px 16px 20px}}
+/* Audit 4: the long size explanation sits behind a "Size details" toggle so the first size is visible on phones. */
+.print-size-details{margin:14px 0 0;font-size:.88rem}
+.print-size-details summary{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;cursor:pointer;font-weight:600;color:#6b4532;text-decoration:underline;text-underline-offset:3px}
+.print-size-details summary::marker{color:#855942}
+.print-size-details[open] summary{margin-bottom:6px}
+.print-size-details .print-preview-note{margin:0}
+.print-dialog-content .print-heading .eyebrow{display:none}
+.print-dialog-content .print-heading h2{font-size:1.75rem;margin:8px 0 6px}
+.print-dialog-content .print-sizes{margin-top:10px}
+@media(max-width:600px){.print-dialog-content .print-heading p{font-size:.88rem;margin:0}.print-dialog-content .print-sizes{margin:6px 0 16px}.print-dialog-content .print-sizes legend{margin-bottom:4px}}
+.print-size-details summary{list-style:none}.print-size-details summary::-webkit-details-marker{display:none}
+.print-size-details summary::after{content:"+";font-weight:700;text-decoration:none;display:inline-block;width:1em;text-align:center}
+.print-size-details[open] summary::after{content:"−"}
