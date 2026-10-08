@@ -1,6 +1,786 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="c51effddbf98ce3d8fb8";
+export const printVersion="6bf8a430b6dff505af07";
 export default {
+  "print-el-zonte-at-sunrise-full": {
+    "id": "print-el-zonte-at-sunrise-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "125.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.24X23.85",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.9867,
+      "height": 23.5933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.24,
+      "height": 23.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de.jpg",
+    "assetSha256": "df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-el-zonte-at-sunrise-full-frame-black": {
+    "id": "print-el-zonte-at-sunrise-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print — Black frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "215.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD24X23DD85F1S15DD24X26DD85J1S12DD24X23DD85G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.9867,
+      "height": 23.5933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.24,
+      "height": 23.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de.jpg",
+    "assetSha256": "df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.24,
+        "height": 26.85,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.24,
+        "height": 23.85,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.24X23.85",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.24,
+        "height": 26.85,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "125.00"
+  },
+  "print-el-zonte-at-sunrise-full-frame-white": {
+    "id": "print-el-zonte-at-sunrise-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print — White frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "215.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD24X23DD85F2S15DD24X26DD85J1S12DD24X23DD85G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.9867,
+      "height": 23.5933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.24,
+      "height": 23.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de.jpg",
+    "assetSha256": "df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.24,
+        "height": 26.85,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.24,
+        "height": 23.85,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.24X23.85",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.24,
+        "height": 26.85,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "125.00"
+  },
+  "print-el-zonte-at-sunrise-full-frame-natural": {
+    "id": "print-el-zonte-at-sunrise-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "233.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD24X23DD85F7S15DD24X26DD85J1S12DD24X23DD85G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.9867,
+      "height": 23.5933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.24,
+      "height": 23.85,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de.jpg",
+    "assetSha256": "df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.24,
+        "height": 26.85,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.24,
+        "height": 23.85,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.24X23.85",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.24,
+        "height": 26.85,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "125.00"
+  },
+  "print-el-zonte-at-sunrise-medium": {
+    "id": "print-el-zonte-at-sunrise-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "70.00",
+    "currency": "USD",
+    "sku": "5M144M8S9.24X17.95",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.9867,
+      "height": 17.69,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.24,
+      "height": 17.95,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21.jpg",
+    "assetSha256": "a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-el-zonte-at-sunrise-medium-frame-black": {
+    "id": "print-el-zonte-at-sunrise-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print — Black frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "135.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD24X17DD95F1S12DD24X20DD95J1S9DD24X17DD95G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.9867,
+      "height": 17.69,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.24,
+      "height": 17.95,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21.jpg",
+    "assetSha256": "a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12.24,
+        "height": 20.95,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.24,
+        "height": 17.95,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.24X17.95",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12.24,
+        "height": 20.95,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-el-zonte-at-sunrise-medium-frame-white": {
+    "id": "print-el-zonte-at-sunrise-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print — White frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "135.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD24X17DD95F2S12DD24X20DD95J1S9DD24X17DD95G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.9867,
+      "height": 17.69,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.24,
+      "height": 17.95,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21.jpg",
+    "assetSha256": "a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12.24,
+        "height": 20.95,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.24,
+        "height": 17.95,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.24X17.95",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12.24,
+        "height": 20.95,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-el-zonte-at-sunrise-medium-frame-natural": {
+    "id": "print-el-zonte-at-sunrise-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "150.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD24X17DD95F7S12DD24X20DD95J1S9DD24X17DD95G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.9867,
+      "height": 17.69,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.24,
+      "height": 17.95,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21.jpg",
+    "assetSha256": "a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12.24,
+        "height": 20.95,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.24,
+        "height": 17.95,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.24X17.95",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12.24,
+        "height": 20.95,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-el-zonte-at-sunrise-small": {
+    "id": "print-el-zonte-at-sunrise-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Small print",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.24X12.05",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.9867,
+      "height": 11.7833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.24,
+      "height": 12.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062.jpg",
+    "assetSha256": "88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-el-zonte-at-sunrise-small-frame-black": {
+    "id": "print-el-zonte-at-sunrise-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Small print — Black frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "84.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD24X12DD05F1S9DD24X15DD05J1S6DD24X12DD05G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.9867,
+      "height": 11.7833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.24,
+      "height": 12.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062.jpg",
+    "assetSha256": "88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.24,
+        "height": 15.05,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.24,
+        "height": 12.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.24X12.05",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.24,
+        "height": 15.05,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-el-zonte-at-sunrise-small-frame-white": {
+    "id": "print-el-zonte-at-sunrise-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Small print — White frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "84.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD24X12DD05F2S9DD24X15DD05J1S6DD24X12DD05G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.9867,
+      "height": 11.7833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.24,
+      "height": 12.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062.jpg",
+    "assetSha256": "88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.24,
+        "height": 15.05,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.24,
+        "height": 12.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.24X12.05",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.24,
+        "height": 15.05,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-el-zonte-at-sunrise-small-frame-natural": {
+    "id": "print-el-zonte-at-sunrise-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-at-sunrise",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Small print — Natural wood frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "amount": "94.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD24X12DD05F7S9DD24X15DD05J1S6DD24X12DD05G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 5.9867,
+      "height": 11.7833,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.24,
+      "height": 12.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062.jpg",
+    "assetSha256": "88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062",
+    "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.24,
+        "height": 15.05,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.24,
+        "height": 12.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.24X12.05",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.24,
+        "height": 15.05,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
   "print-honeybadger-and-cub-with-genesis-block-full": {
     "id": "print-honeybadger-and-cub-with-genesis-block-full",
     "type": "print",
@@ -7280,6 +8060,1566 @@ export default {
       }
     },
     "unframedAmount": "35.00"
+  },
+  "print-painting-shoreline-at-dusk-full": {
+    "id": "print-painting-shoreline-at-dusk-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Large print",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "130.00",
+    "currency": "USD",
+    "sku": "5M144M8S25.73X12.3",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.4767,
+      "height": 12.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.73,
+      "height": 12.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883.jpg",
+    "assetSha256": "168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-shoreline-at-dusk-full-frame-black": {
+    "id": "print-painting-shoreline-at-dusk-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Large print — Black frame",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "226.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD73X12DD3F1S28DD73X15DD3J1S25DD73X12DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.4767,
+      "height": 12.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.73,
+      "height": 12.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883.jpg",
+    "assetSha256": "168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.73,
+        "height": 15.3,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.73,
+        "height": 12.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.73X12.3",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.73,
+        "height": 15.3,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "130.00"
+  },
+  "print-painting-shoreline-at-dusk-full-frame-white": {
+    "id": "print-painting-shoreline-at-dusk-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Large print — White frame",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "226.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD73X12DD3F2S28DD73X15DD3J1S25DD73X12DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.4767,
+      "height": 12.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.73,
+      "height": 12.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883.jpg",
+    "assetSha256": "168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.73,
+        "height": 15.3,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.73,
+        "height": 12.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.73X12.3",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.73,
+        "height": 15.3,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "130.00"
+  },
+  "print-painting-shoreline-at-dusk-full-frame-natural": {
+    "id": "print-painting-shoreline-at-dusk-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Large print — Natural wood frame",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "245.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD73X12DD3F7S28DD73X15DD3J1S25DD73X12DD3G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.4767,
+      "height": 12.0467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.73,
+      "height": 12.3,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883.jpg",
+    "assetSha256": "168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.73,
+        "height": 15.3,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.73,
+        "height": 12.3,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.73X12.3",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.73,
+        "height": 15.3,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "130.00"
+  },
+  "print-painting-shoreline-at-dusk-medium": {
+    "id": "print-painting-shoreline-at-dusk-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Medium print",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "75.00",
+    "currency": "USD",
+    "sku": "5M144M8S19.36X9.28",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 19.09,
+      "height": 9.0267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.36,
+      "height": 9.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e.jpg",
+    "assetSha256": "5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-shoreline-at-dusk-medium-frame-black": {
+    "id": "print-painting-shoreline-at-dusk-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Medium print — Black frame",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD36X9DD28F1S22DD36X12DD28J1S19DD36X9DD28G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 19.09,
+      "height": 9.0267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.36,
+      "height": 9.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e.jpg",
+    "assetSha256": "5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.36,
+        "height": 12.28,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.36,
+        "height": 9.28,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.36X9.28",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.36,
+        "height": 12.28,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "75.00"
+  },
+  "print-painting-shoreline-at-dusk-medium-frame-white": {
+    "id": "print-painting-shoreline-at-dusk-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Medium print — White frame",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD36X9DD28F2S22DD36X12DD28J1S19DD36X9DD28G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 19.09,
+      "height": 9.0267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.36,
+      "height": 9.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e.jpg",
+    "assetSha256": "5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.36,
+        "height": 12.28,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.36,
+        "height": 9.28,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.36X9.28",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.36,
+        "height": 12.28,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "75.00"
+  },
+  "print-painting-shoreline-at-dusk-medium-frame-natural": {
+    "id": "print-painting-shoreline-at-dusk-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Medium print — Natural wood frame",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "159.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD36X9DD28F7S22DD36X12DD28J1S19DD36X9DD28G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 19.09,
+      "height": 9.0267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.36,
+      "height": 9.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e.jpg",
+    "assetSha256": "5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.36,
+        "height": 12.28,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.36,
+        "height": 9.28,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.36X9.28",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.36,
+        "height": 12.28,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "75.00"
+  },
+  "print-painting-shoreline-at-dusk-small": {
+    "id": "print-painting-shoreline-at-dusk-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Small print",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "45.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.99X6.27",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.7233,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.99,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2.jpg",
+    "assetSha256": "6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-shoreline-at-dusk-small-frame-black": {
+    "id": "print-painting-shoreline-at-dusk-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Small print — Black frame",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD99X6DD27F1S15DD99X9DD27J1S12DD99X6DD27G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.7233,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.99,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2.jpg",
+    "assetSha256": "6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.99,
+        "height": 9.27,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.99,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.99X6.27",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.99,
+        "height": 9.27,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-painting-shoreline-at-dusk-small-frame-white": {
+    "id": "print-painting-shoreline-at-dusk-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Small print — White frame",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD99X6DD27F2S15DD99X9DD27J1S12DD99X6DD27G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.7233,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.99,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2.jpg",
+    "assetSha256": "6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.99,
+        "height": 9.27,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.99,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.99X6.27",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.99,
+        "height": 9.27,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-painting-shoreline-at-dusk-small-frame-natural": {
+    "id": "print-painting-shoreline-at-dusk-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-shoreline-at-dusk",
+    "title": "El Zonte at Dawn, El Salvador — Small print — Natural wood frame",
+    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "amount": "102.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD99X6DD27F7S15DD99X9DD27J1S12DD99X6DD27G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.7233,
+      "height": 6.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.99,
+      "height": 6.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2.jpg",
+    "assetSha256": "6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2",
+    "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "alt": "El Zonte shoreline at dawn by TJ Murphy",
+      "caption": "El Zonte at Dawn, El Salvador"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.99,
+        "height": 9.27,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.99,
+        "height": 6.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.99X6.27",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.99,
+        "height": 9.27,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-el-zonte-before-dawn-full": {
+    "id": "print-el-zonte-before-dawn-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Large print",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "130.00",
+    "currency": "USD",
+    "sku": "5M144M8S25.39X12.25",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.1367,
+      "height": 11.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.39,
+      "height": 12.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047.jpg",
+    "assetSha256": "f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-el-zonte-before-dawn-full-frame-black": {
+    "id": "print-el-zonte-before-dawn-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Large print — Black frame",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "225.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD39X12DD25F1S28DD39X15DD25J1S25DD39X12DD25G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.1367,
+      "height": 11.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.39,
+      "height": 12.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047.jpg",
+    "assetSha256": "f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.39,
+        "height": 15.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.39,
+        "height": 12.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.39X12.25",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.39,
+        "height": 15.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "130.00"
+  },
+  "print-el-zonte-before-dawn-full-frame-white": {
+    "id": "print-el-zonte-before-dawn-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Large print — White frame",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "225.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD39X12DD25F2S28DD39X15DD25J1S25DD39X12DD25G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.1367,
+      "height": 11.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.39,
+      "height": 12.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047.jpg",
+    "assetSha256": "f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.39,
+        "height": 15.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.39,
+        "height": 12.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.39X12.25",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.39,
+        "height": 15.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "130.00"
+  },
+  "print-el-zonte-before-dawn-full-frame-natural": {
+    "id": "print-el-zonte-before-dawn-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Large print — Natural wood frame",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "243.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD39X12DD25F7S28DD39X15DD25J1S25DD39X12DD25G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.1367,
+      "height": 11.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.39,
+      "height": 12.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047.jpg",
+    "assetSha256": "f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.39,
+        "height": 15.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.39,
+        "height": 12.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.39X12.25",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.39,
+        "height": 15.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "130.00"
+  },
+  "print-el-zonte-before-dawn-medium": {
+    "id": "print-el-zonte-before-dawn-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Medium print",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "75.00",
+    "currency": "USD",
+    "sku": "5M144M8S19.11X9.25",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 18.8533,
+      "height": 8.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.11,
+      "height": 9.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17.jpg",
+    "assetSha256": "e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-el-zonte-before-dawn-medium-frame-black": {
+    "id": "print-el-zonte-before-dawn-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Medium print — Black frame",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD11X9DD25F1S22DD11X12DD25J1S19DD11X9DD25G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 18.8533,
+      "height": 8.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.11,
+      "height": 9.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17.jpg",
+    "assetSha256": "e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.11,
+        "height": 12.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.11,
+        "height": 9.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.11X9.25",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.11,
+        "height": 12.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "75.00"
+  },
+  "print-el-zonte-before-dawn-medium-frame-white": {
+    "id": "print-el-zonte-before-dawn-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Medium print — White frame",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD11X9DD25F2S22DD11X12DD25J1S19DD11X9DD25G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 18.8533,
+      "height": 8.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.11,
+      "height": 9.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17.jpg",
+    "assetSha256": "e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.11,
+        "height": 12.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.11,
+        "height": 9.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.11X9.25",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.11,
+        "height": 12.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "75.00"
+  },
+  "print-el-zonte-before-dawn-medium-frame-natural": {
+    "id": "print-el-zonte-before-dawn-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Medium print — Natural wood frame",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "158.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD11X9DD25F7S22DD11X12DD25J1S19DD11X9DD25G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 18.8533,
+      "height": 8.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.11,
+      "height": 9.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17.jpg",
+    "assetSha256": "e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.11,
+        "height": 12.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.11,
+        "height": 9.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.11X9.25",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.11,
+        "height": 12.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "75.00"
+  },
+  "print-el-zonte-before-dawn-small": {
+    "id": "print-el-zonte-before-dawn-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Small print",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "45.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.82X6.25",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.5667,
+      "height": 5.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.82,
+      "height": 6.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48.jpg",
+    "assetSha256": "846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-el-zonte-before-dawn-small-frame-black": {
+    "id": "print-el-zonte-before-dawn-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Small print — Black frame",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "90.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD82X6DD25F1S15DD82X9DD25J1S12DD82X6DD25G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.5667,
+      "height": 5.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.82,
+      "height": 6.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48.jpg",
+    "assetSha256": "846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.82,
+        "height": 9.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.82,
+        "height": 6.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.82X6.25",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.82,
+        "height": 9.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-el-zonte-before-dawn-small-frame-white": {
+    "id": "print-el-zonte-before-dawn-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Small print — White frame",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "90.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD82X6DD25F2S15DD82X9DD25J1S12DD82X6DD25G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.5667,
+      "height": 5.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.82,
+      "height": 6.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48.jpg",
+    "assetSha256": "846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.82,
+        "height": 9.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.82,
+        "height": 6.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.82X6.25",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.82,
+        "height": 9.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-el-zonte-before-dawn-small-frame-natural": {
+    "id": "print-el-zonte-before-dawn-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn — Small print — Natural wood frame",
+    "artworkTitle": "El Zonte Before Dawn",
+    "amount": "101.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD82X6DD25F7S15DD82X9DD25J1S12DD82X6DD25G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.5667,
+      "height": 5.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.82,
+      "height": 6.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48.jpg",
+    "assetSha256": "846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48",
+    "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "alt": "El Zonte Before Dawn by TJ Murphy",
+      "caption": "El Zonte Before Dawn"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.82,
+        "height": 9.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.82,
+        "height": 6.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.82X6.25",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.82,
+        "height": 9.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
   },
   "print-painting-sunflower-woman-full": {
     "id": "print-painting-sunflower-woman-full",

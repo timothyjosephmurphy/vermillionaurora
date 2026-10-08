@@ -342,6 +342,58 @@
    }
   ]
  },
+ "/gallery-images/el-zonte-at-dawn-2026.jpg": {
+  "original": 568940,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/el-zonte-at-dawn-2026-b6bb92e78d-160.webp",
+    "bytes": 2118
+   },
+   {
+    "w": 480,
+    "src": "/display/el-zonte-at-dawn-2026-b6bb92e78d-480.webp",
+    "bytes": 13264
+   },
+   {
+    "w": 960,
+    "src": "/display/el-zonte-at-dawn-2026-b6bb92e78d-960.webp",
+    "bytes": 66388
+   },
+   {
+    "w": 1600,
+    "src": "/display/el-zonte-at-dawn-2026-b6bb92e78d-1600.webp",
+    "bytes": 180604
+   }
+  ]
+ },
+ "/gallery-images/el-zonte-before-dawn.jpg": {
+  "original": 414261,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/el-zonte-before-dawn-71f9a2ec15-160.webp",
+    "bytes": 1548
+   },
+   {
+    "w": 480,
+    "src": "/display/el-zonte-before-dawn-71f9a2ec15-480.webp",
+    "bytes": 8942
+   },
+   {
+    "w": 960,
+    "src": "/display/el-zonte-before-dawn-71f9a2ec15-960.webp",
+    "bytes": 37846
+   },
+   {
+    "w": 1600,
+    "src": "/display/el-zonte-before-dawn-71f9a2ec15-1600.webp",
+    "bytes": 101640
+   }
+  ]
+ },
  "/gallery-images/embrace.jpg": {
   "original": 240254,
   "width": 744,
@@ -841,6 +893,32 @@
     "w": 556,
     "src": "/display/sunflower-woman-a962ed62f4-556.webp",
     "bytes": 24638
+   }
+  ]
+ },
+ "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg": {
+  "original": 491625,
+  "width": 1219,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-160.webp",
+    "bytes": 5338
+   },
+   {
+    "w": 480,
+    "src": "/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-480.webp",
+    "bytes": 44720
+   },
+   {
+    "w": 960,
+    "src": "/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-960.webp",
+    "bytes": 164414
+   },
+   {
+    "w": 1219,
+    "src": "/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-1219.webp",
+    "bytes": 245196
    }
   ]
  },
