@@ -74,6 +74,13 @@ function setupForm() {
   const form = document.querySelector('[data-testimonial-form]');
   if (!form) return;
   const input = form.querySelector('[data-photo-input]'), previews = form.querySelector('[data-photo-previews]');
+  const field = form.querySelector('[data-photo-field]'), add = form.querySelector('[data-photo-add]'), count = form.querySelector('[data-photo-count]');
+  // With JavaScript, a styled "Add photos" button replaces the native input (kept visually hidden, out of the tab order);
+  // without it, the native file input stays visible and submits normally.
+  field.classList.add('js-photos');
+  input.tabIndex = -1;
+  add.hidden = false;
+  add.addEventListener('click', () => input.click());
   const status = form.querySelector('[data-form-status]'), submit = form.querySelector('button[type=submit]');
   const say = (text, error = false) => { status.textContent = text; status.classList.toggle('error', error); };
   let photos = [];
@@ -82,9 +89,13 @@ function setupForm() {
       const li = el('li');
       if (isHeic(file)) li.append(el('span', {className: 'no-preview', textContent: 'HEIC photo'}));
       else { const url = URL.createObjectURL(file); li.append(el('img', {src: url, alt: `Selected photo ${i + 1}: ${file.name}`, onload: () => URL.revokeObjectURL(url)})); }
-      li.append(el('button', {type: 'button', textContent: '×', ariaLabel: `Remove photo ${i + 1} (${file.name})`, onclick: () => { photos.splice(i, 1); render(); input.focus(); }}));
+      li.append(el('button', {type: 'button', textContent: '×', ariaLabel: `Remove photo ${i + 1} (${file.name})`, onclick: () => { photos.splice(i, 1); render(); (previews.querySelector('li:last-child button') || add).focus(); }}));
       return li;
     }));
+    const full = photos.length >= MAX_PHOTOS;
+    add.hidden = full;
+    add.lastChild.textContent = photos.length ? ' Add more photos' : ' Add photos';
+    count.textContent = photos.length ? `${photos.length} of ${MAX_PHOTOS} photos added${full ? ' (maximum)' : ''}.` : '';
   };
   input.addEventListener('change', () => {
     const chosen = [...input.files];
@@ -94,6 +105,7 @@ function setupForm() {
     const room = MAX_PHOTOS - photos.length;
     photos = [...photos, ...ok.slice(0, Math.max(0, room))];
     render();
+    if (photos.length) (add.hidden ? previews.querySelector('li:last-child button') : add).focus();
     const notes = [];
     if (tooBig.length) notes.push(`${tooBig.map(f => f.name).join(', ')} ${tooBig.length > 1 ? 'are' : 'is'} over 10 MB.`);
     if (ok.length > room) notes.push(`You can add up to ${MAX_PHOTOS} photos.`);
@@ -115,8 +127,6 @@ function setupForm() {
     try {
       const data = new FormData(form);
       data.delete('photos');
-      const select = form.elements.paintingSlug;
-      if (!data.get('painting') && select.value) data.set('painting', select.selectedOptions[0].textContent);
       if (photos.length) say(`Preparing ${photos.length === 1 ? 'your photo' : photos.length + ' photos'}…`);
       for (const file of photos) data.append('photos', await prepare(file));
       say('Sending…');
