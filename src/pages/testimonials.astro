@@ -58,7 +58,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
           <ul class="share-points">
             <li>Your email is optional and stays private. I use it only to send your thank-you print code.</li>
             <li>Location data is removed from photos and videos before anything is published.</li>
-            <li>Your city is shown as an approximate pin on my <a href="/exhibitions/world-map/">exhibitions map</a>, never an address.</li>
+            <li>Your city, state and country are shown as an approximate pin on my <a href="/exhibitions/world-map/">exhibitions map</a>, never your address.</li>
           </ul>
         </div>
         <div class="share-form-wrap">
@@ -67,7 +67,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
             <p>Your testimonial is on its way to me<span data-thanks-video hidden>, video and all</span>. I’ll review it soon<span data-thanks-code> and email your thank-you print code</span>. It means a lot that you took the time.</p>
             <p><a href="/gallery/">Browse the gallery</a> · <a href="/commissions/">Commission a painting</a></p>
           </div>
-          <form class="contact-form testimonial-form" action="/testimonials/api/submit" method="POST" enctype="multipart/form-data" data-testimonial-form>
+          <form class="contact-form testimonial-form" action="/testimonials/api/submit" method="POST" enctype="multipart/form-data" data-testimonial-form novalidate>
             <div class="field-row">
               <label>
                 <span>Your name (optional)</span>
@@ -89,9 +89,9 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
               <textarea name="quote" required minlength="3" maxlength="2000" rows="6" placeholder="What does the painting mean to you? Where does it hang?"></textarea>
             </label>
             <label>
-              <span>City (optional)</span>
-              <input type="text" name="city" maxlength="100" autocomplete="address-level2" placeholder="e.g. Tacoma, WA" aria-describedby="city-help" />
-              <small id="city-help" class="field-help">City only, shown with your testimonial and as an approximate pin on the map.</small>
+              <span>City, state and country (optional)</span>
+              <input type="text" name="city" maxlength="100" autocomplete="address-level2" placeholder="e.g. Seattle, WA, USA" aria-describedby="city-help" />
+              <small id="city-help" class="field-help">Shown with your testimonial and as an approximate pin on the map. Never your address.</small>
             </label>
             <div class="photo-field" data-photo-field>
               <label for="testimonial-photos">Photos (optional, up to 4)</label>
