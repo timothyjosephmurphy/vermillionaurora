@@ -3440,7 +3440,11 @@
     "surface": "Paper",
     "year": null,
     "framing": null,
-    "dimensions": null,
+    "dimensions": {
+      "width": 12,
+      "height": 10,
+      "unit": "in"
+    },
     "galleryReference": 55,
     "gallerySequence": 10,
     "facts": [],
@@ -3454,7 +3458,17 @@
       "caption": "Pyramid from Photo by Paul Murphy"
     },
     "checkout": {
-      "mode": "inquiry"
+      "mode": "integrated",
+      "shipping": {
+        "length": 14,
+        "width": 12,
+        "height": 2,
+        "weight": 0.4375,
+        "packaging": "flat",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz for flat-mailer protection. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
     },
     "inquiry": {
       "label": "Inquire about this painting",

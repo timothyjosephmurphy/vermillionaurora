@@ -69,9 +69,9 @@ import {deriveParcel} from '../catalog/shipping.mjs';
 test('dimensioned available paintings receive parcels from the flat-at-12-inch rule',()=>{
  const originals=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price);
  const missing=originals.filter(p=>!p.dimensions);
- assert.deepEqual(missing.map(p=>p.id),['paul-murphy-painting-55']);
+ assert.deepEqual(missing.map(p=>p.id),[]); // paul-murphy-painting-55 was the last one, measured at 12 × 10 in
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,51); // 52 before paul-murphy-painting-82 was removed from the site
+ assert.equal(ready.length,52); // 52 before paul-murphy-painting-82 was removed, 51 after, 52 once paul-murphy-painting-55 was measured
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
