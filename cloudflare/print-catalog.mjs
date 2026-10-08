@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="9634efe28d81e4a454e3";
+export const printVersion="b070d042590d2b4002f3";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -8066,8 +8066,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Large print",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Large print",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "130.00",
     "currency": "USD",
     "sku": "5M144M8S25.73X12.3",
@@ -8092,7 +8092,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8104,8 +8104,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Large print — Black frame",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Large print — Black frame",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "226.00",
     "currency": "USD",
     "sku": "5M144M8S25DD73X12DD3F1S28DD73X15DD3J1S25DD73X12DD3G1",
@@ -8130,7 +8130,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8178,8 +8178,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Large print — White frame",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Large print — White frame",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "226.00",
     "currency": "USD",
     "sku": "5M144M8S25DD73X12DD3F2S28DD73X15DD3J1S25DD73X12DD3G1",
@@ -8204,7 +8204,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8252,8 +8252,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Large print — Natural wood frame",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Large print — Natural wood frame",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "245.00",
     "currency": "USD",
     "sku": "5M144M8S25DD73X12DD3F7S28DD73X15DD3J1S25DD73X12DD3G1",
@@ -8278,7 +8278,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8326,8 +8326,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Medium print",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Medium print",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "75.00",
     "currency": "USD",
     "sku": "5M144M8S19.36X9.28",
@@ -8352,7 +8352,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8364,8 +8364,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Medium print — Black frame",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Medium print — Black frame",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "144.00",
     "currency": "USD",
     "sku": "5M144M8S19DD36X9DD28F1S22DD36X12DD28J1S19DD36X9DD28G1",
@@ -8390,7 +8390,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8438,8 +8438,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Medium print — White frame",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Medium print — White frame",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "144.00",
     "currency": "USD",
     "sku": "5M144M8S19DD36X9DD28F2S22DD36X12DD28J1S19DD36X9DD28G1",
@@ -8464,7 +8464,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8512,8 +8512,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Medium print — Natural wood frame",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Medium print — Natural wood frame",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S19DD36X9DD28F7S22DD36X12DD28J1S19DD36X9DD28G1",
@@ -8538,7 +8538,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8586,8 +8586,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Small print",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Small print",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S12.99X6.27",
@@ -8612,7 +8612,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8624,8 +8624,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Small print — Black frame",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Small print — Black frame",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "91.00",
     "currency": "USD",
     "sku": "5M144M8S12DD99X6DD27F1S15DD99X9DD27J1S12DD99X6DD27G1",
@@ -8650,7 +8650,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8698,8 +8698,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Small print — White frame",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Small print — White frame",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "91.00",
     "currency": "USD",
     "sku": "5M144M8S12DD99X6DD27F2S15DD99X9DD27J1S12DD99X6DD27G1",
@@ -8724,7 +8724,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8772,8 +8772,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-shoreline-at-dusk",
-    "title": "El Zonte at Dawn, El Salvador — Small print — Natural wood frame",
-    "artworkTitle": "El Zonte at Dawn, El Salvador",
+    "title": "El Zonte at Dawn — Small print — Natural wood frame",
+    "artworkTitle": "El Zonte at Dawn",
     "amount": "102.00",
     "currency": "USD",
     "sku": "5M144M8S12DD99X6DD27F7S15DD99X9DD27J1S12DD99X6DD27G1",
@@ -8798,7 +8798,7 @@ export default {
     "preview": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "attributes": {},
     "minimumDpi": 300,
