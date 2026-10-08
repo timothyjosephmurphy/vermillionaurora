@@ -2,6 +2,7 @@
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { products, urlFor, priceLabel, statusLabel, dimensionLabel } from '../../../catalog/catalog.mjs';
+import { printsFromLabel } from '../../data/card-commerce.mjs';
 const availablePaintings = products
   .filter(product => product.type === 'painting' && product.listing.status === 'available')
   .sort((a,b) => Number(b.listing.price?.amount||0) - Number(a.listing.price?.amount||0) || a.title.localeCompare(b.title));
@@ -25,11 +26,11 @@ const sections = [
     <h2 id={`${section.id}-heading`} class="available-section-heading">{section.heading}</h2>
     {section.intro && <p class="available-section-intro">{section.intro}</p>}
     <ul class="painting-list" aria-label={section.heading}>
-      {section.items.map(product => <li class="painting-list-row" data-product-id={product.id}>
+      {section.items.map(product => <li class="painting-list-row card-tile" data-product-id={product.id}>
         <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
         <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a>{product.artist && product.artist !== 'TJ Murphy' && <span class="painting-list-artist">by {product.artist}</span>}</h3>
         <p class="painting-list-dimensions">{dimensionLabel(product)}</p>
-        <p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>
+        <div class="painting-list-commerce"><p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>{printsFromLabel(product)&&<p class="card-prints-from">{printsFromLabel(product)}</p>}<span class="card-buy" data-card-buy aria-hidden="true">Buy</span></div>
       </li>)}
     </ul>
   </section>)}

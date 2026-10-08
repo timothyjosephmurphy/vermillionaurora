@@ -3,6 +3,7 @@ import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { byId, catalogVersion, urlFor, priceLabel, statusLabel, dimensionLabel } from '../../../catalog/catalog.mjs';
 import { artworkAlt } from '../../data/artwork-alt.mjs';
+import { printsFromLabel, showBuy } from '../../data/card-commerce.mjs';
 import collections from '../../../catalog/collections.json';
 ---
 <!DOCTYPE html><html lang="en"><head>
@@ -48,13 +49,13 @@ import collections from '../../../catalog/collections.json';
               <h2 class="visually-hidden">All paintings</h2>
               <ul class="painting-list" aria-label="Paintings">
                 {collections.gallery.map(entry=>{
-                  const p=byId[entry.product],status=statusLabel(p),url=urlFor(p);
+                  const p=byId[entry.product],status=statusLabel(p),url=urlFor(p),printsFrom=printsFromLabel(p),buy=showBuy(p),price=p.listing.status==='available'?priceLabel(p):status;
                   const area=p.dimensions?p.dimensions.width*p.dimensions.height/(p.dimensions.unit==='cm'?2.54**2:1):undefined;
-                  return <li class="painting-list-row" data-product-id={p.id} data-availability={status} data-price={p.listing.price?.amount} data-area={area}>
+                  return <li class="painting-list-row card-tile" data-product-id={p.id} data-availability={status} data-price={p.listing.price?.amount} data-area={area} data-caption={`${p.title} · ${price}`} data-prints-from={printsFrom||undefined} data-buy={buy?'true':'false'}>
                     <a href={url} class="gallery-product-image" aria-label={`View ${p.title}`} tabindex="-1"><img src={p.image.src} alt={artworkAlt(p)} loading="lazy" decoding="async" width={p.image.width} height={p.image.height} /></a>
                     <h3><a href={url} class="product-title-link">{p.title}</a></h3>
                     <p class="painting-list-dimensions">{dimensionLabel(p)}</p>
-                    <p class="painting-list-price" data-card-price>{p.listing.status==='available'?priceLabel(p):status}</p>
+                    <div class="painting-list-commerce"><p class="painting-list-price" data-card-price>{price}</p>{printsFrom&&<p class="card-prints-from">{printsFrom}</p>}<span class="card-buy" data-card-buy aria-hidden="true" hidden={!buy}>Buy</span></div>
                   </li>;
                 })}
               </ul>

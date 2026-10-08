@@ -10,7 +10,8 @@ export const byId = Object.fromEntries(products.map(p => [p.id, p]));
 export const catalogVersion = createHash('sha256').update(JSON.stringify({products, collections})).digest('hex').slice(0, 20);
 export const urlFor = p => `/products/${p.slug}/`;
 export const statusLabel = p => ({available:'Available', sold:'Sold', 'not-for-sale':'Not for sale', inquiry:'Available by inquiry', retired:'Unavailable'})[p.listing?.status] || '';
-export const priceLabel = (p, currency=true) => p.listing?.price ? `${p.listing.price.from ? 'From ' : ''}$${Number(p.listing.price.amount).toLocaleString('en-US', {maximumFractionDigits:2})}${currency ? ` ${p.listing.price.currency}` : ''}` : '';
+// Visible price text omits the currency (all prices are USD); pass true where the code must be shown.
+export const priceLabel = (p, currency=false) => p.listing?.price ? `${p.listing.price.from ? 'From ' : ''}$${Number(p.listing.price.amount).toLocaleString('en-US', {maximumFractionDigits:2})}${currency ? ` ${p.listing.price.currency}` : ''}` : '';
 export function dimensionLabel(p) {
   if (!p.dimensions) return 'Measurements available on request';
   const {width, height, unit} = p.dimensions;
