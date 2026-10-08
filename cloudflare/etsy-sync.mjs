@@ -198,7 +198,7 @@ async function uploadMedia(request, env, record, etag, token) {
   const sync = indexOf(record);
   const listingId = owned(sync.listings?.[work.id]?.[kind] || (kind === 'print' ? EXISTING_PRINT_LISTINGS[work.id] : null));
   if (op === 'prune') {
-    const images = rows(await etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId + '/images', env, token, {action: 'reading listing images'}));
+    const images = rows(await etsyApiCall(API + '/listings/' + listingId + '/images', env, token, {action: 'reading listing images'}));
     let removed = 0;
     for (const image of images) if (Number(image.rank) > 4 && image.listing_image_id) {
       await etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId + '/images/' + image.listing_image_id, env, token, {method: 'DELETE', action: 'removing an extra image'});
@@ -207,14 +207,14 @@ async function uploadMedia(request, env, record, etag, token) {
     return {id: work.id, kind, listingId, removed};
   }
   if (op === 'video') {
-    const existing = await etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId + '/videos', env, token, {action: 'reading listing video'}).catch(error => error.etsyStatus === 404 ? {results: []} : Promise.reject(error));
+    const existing = await etsyApiCall(API + '/listings/' + listingId + '/videos', env, token, {action: 'reading listing video'}).catch(error => error.etsyStatus === 404 ? {results: []} : Promise.reject(error));
     if (rows(existing).some(video => !video.video_state || video.video_state === 'active')) return {id: work.id, kind, listingId, video: 'already attached'};
     const file = form.get('file');
     if (!file || typeof file.arrayBuffer !== 'function' || file.size <= 0 || file.size > 20 * 1024 * 1024) throw Error('The listing video must be a file under 20 MB.');
     const upload = new FormData();
     upload.set('video', new Blob([await file.arrayBuffer()], {type: 'video/mp4'}), 'etsy-video-15s.mp4');
     upload.set('name', 'etsy-video-15s.mp4');
-    await etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId + '/videos', env, token, {method: 'POST', body: upload, action: 'uploading a listing video'});
+    await etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId + '/videos', env, token, {method: 'POST', body: upload, timeout: 60000, action: 'uploading a listing video'});
     return {id: work.id, kind, listingId, video: 'uploaded'};
   }
   const slot = String(form.get('slot') || '');
@@ -257,8 +257,8 @@ async function verify(env, token, record, works, kindFilter) {
     if (!listingId) { results.push({id: work.id, kind, listingId: null, state: 'missing'}); continue; }
     owned(listingId);
     const listing = await readListing(env, token, listingId);
-    const images = rows(await etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId + '/images', env, token, {action: 'reading listing images'}).catch(error => error.etsyStatus === 404 ? {results: []} : Promise.reject(error)));
-    const videos = rows(await etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId + '/videos', env, token, {action: 'reading listing video'}).catch(error => error.etsyStatus === 404 ? {results: []} : Promise.reject(error)));
+    const images = rows(await etsyApiCall(API + '/listings/' + listingId + '/images', env, token, {action: 'reading listing images'}).catch(error => error.etsyStatus === 404 ? {results: []} : Promise.reject(error)));
+    const videos = rows(await etsyApiCall(API + '/listings/' + listingId + '/videos', env, token, {action: 'reading listing video'}).catch(error => error.etsyStatus === 404 ? {results: []} : Promise.reject(error)));
     let prices = [];
     if (kind === 'print') {
       const inventory = await etsyApiCall(API + '/listings/' + listingId + '/inventory?legacy=false', env, token, {action: 'reading listing prices'}).catch(() => null);
@@ -270,7 +270,7 @@ async function verify(env, token, record, works, kindFilter) {
       price: money(listing?.price), quantity: listing?.quantity ?? null,
       prices: prices.length ? [Math.min(...prices), Math.max(...prices)] : [],
       images: images.length, imageRanks: images.map(image => image.rank).sort((a, b) => a - b),
-      video: videos.some(video => !video.video_state || video.video_state === 'active')
+      video: videos.some(video => !['deleted','flagged'].includes(video.video_state)), videoState: videos.map(video => video.video_state || 'active')
     });
   }
   return {results};
