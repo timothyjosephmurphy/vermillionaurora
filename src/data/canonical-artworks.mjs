@@ -3,7 +3,7 @@
 // A scan whose book product was removed (El Zonte) is listed in book-galleries.json by its canonical id;
 // the mapping here keeps its book-page source attached.
 export const canonicalArtwork = {
-  'book-art-1be48d404e2dbf547794': 'painting-shoreline-at-dusk', // Sunrise in El Zonte -> El Zonte at Dawn, El Salvador
+  'book-art-1be48d404e2dbf547794': 'painting-shoreline-at-dusk', // Sunrise in El Zonte -> El Zonte at Dawn
   'book-art-ccff23f1e469654faa05': 'painting-portrait-in-green', // Chase Toole
   'book-art-2136f2260225dd8ef20a': 'painting-portrait-in-gold',  // Dorian Nakamoto
   // Oct 2026 merge (TJ: "Merge the duplicates and keep the book titles"): the catalog page survives with the book title.

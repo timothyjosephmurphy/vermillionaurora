@@ -1817,8 +1817,8 @@
     "id": "painting-shoreline-at-dusk",
     "slug": "painting-shoreline-at-dusk",
     "type": "painting",
-    "title": "El Zonte at Dawn, El Salvador",
-    "description": "El Zonte at Dawn, El Salvador by TJ Murphy. Watercolor pastel. Available.",
+    "title": "El Zonte at Dawn",
+    "description": "El Zonte at Dawn by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1849,7 +1849,7 @@
     "image": {
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy",
-      "caption": "El Zonte at Dawn, El Salvador"
+      "caption": "El Zonte at Dawn"
     },
     "checkout": {
       "mode": "integrated",
@@ -1884,7 +1884,7 @@
         "width": 2400,
         "height": 1800,
         "fallback": "/product-media/el-zonte/room-1-1600.jpg",
-        "alt": "El Zonte at Dawn, El Salvador hanging with two other El Zonte paintings in a living room",
+        "alt": "El Zonte at Dawn hanging with two other El Zonte paintings in a living room",
         "caption": "In a living room with the other two El Zonte paintings"
       },
       {
@@ -1898,7 +1898,7 @@
         "width": 2400,
         "height": 1800,
         "fallback": "/product-media/el-zonte/room-2-1600.jpg",
-        "alt": "El Zonte at Dawn, El Salvador hanging with two other El Zonte paintings in a living room",
+        "alt": "El Zonte at Dawn hanging with two other El Zonte paintings in a living room",
         "caption": "Hanging together: the three El Zonte paintings"
       },
       {
@@ -1912,7 +1912,7 @@
         "width": 2400,
         "height": 1800,
         "fallback": "/product-media/el-zonte/room-3-1600.jpg",
-        "alt": "El Zonte at Dawn, El Salvador hanging with two other El Zonte paintings in a living room",
+        "alt": "El Zonte at Dawn hanging with two other El Zonte paintings in a living room",
         "caption": "The three El Zonte paintings above the dining table"
       }
     ],
@@ -1937,7 +1937,7 @@
           "height": 720
         }
       ],
-      "label": "Video: El Zonte at Dawn, El Salvador and the other El Zonte paintings in a living room"
+      "label": "Video: El Zonte at Dawn and the other El Zonte paintings in a living room"
     }
   },
   {
