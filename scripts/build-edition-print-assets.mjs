@@ -12,7 +12,9 @@ const prepareTJ=process.argv.includes('--prepare-tj'),prepare=process.argv.inclu
 const root=new URL('../',import.meta.url),cache=new URL('.cache/edition-sources/',root),output=new URL('static/print-editions/',root);
 await mkdir(cache,{recursive:true});await mkdir(output,{recursive:true});
 const tjIds=prepareTJ?JSON.parse(await readFile(new URL('catalog/tj-print-masters.json',root),'utf8')).map(r=>r.id):[];
-const selected=products.filter(p=>prepareTJ?tjIds.includes(p.id):prepare?p.artist==='Paul Murphy':config.artworks[p.id]?.sizing==='image-proportional');
+// --only=id,id limits a preparation run to replaced or new masters so other approved files stay untouched.
+const only=process.argv.find(a=>a.startsWith('--only='))?.slice(7).split(',');
+const selected=products.filter(p=>prepareTJ?tjIds.includes(p.id):prepare?p.artist==='Paul Murphy':config.artworks[p.id]?.sizing==='image-proportional').filter(p=>!only||only.includes(p.id));
 let cursor=0,count=0;
 await Promise.all(Array.from({length:4},async()=>{
   while(cursor<selected.length){

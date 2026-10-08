@@ -21,6 +21,10 @@
       "variant": "carousel"
     },
     {
+      "product": "el-zonte-before-dawn",
+      "variant": "carousel"
+    },
+    {
       "product": "painting-moonlit-water",
       "variant": "carousel"
     },
@@ -168,6 +172,10 @@
     },
     {
       "product": "painting-shoreline-at-dusk",
+      "variant": "gallery"
+    },
+    {
+      "product": "el-zonte-before-dawn",
       "variant": "gallery"
     },
     {

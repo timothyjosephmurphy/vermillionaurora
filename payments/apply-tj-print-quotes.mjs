@@ -1,6 +1,10 @@
 import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
-import recipes from '../catalog/tj-print-masters.json' with {type:'json'};
+import allRecipes from '../catalog/tj-print-masters.json' with {type:'json'};
+// TJ_PRINT_IDS=id,id quotes or applies only replaced/new masters; other paintings keep their published prices.
+const onlyIds=process.env.TJ_PRINT_IDS?.split(',').map(s=>s.trim()).filter(Boolean);
+const recipes=onlyIds?allRecipes.filter(r=>onlyIds.includes(r.id)):allRecipes;
+if(onlyIds&&recipes.length!==onlyIds.length)throw Error('Unknown TJ_PRINT_IDS entry');
 import {publishedPrintPrice} from '../catalog/print-pricing.mjs';
 const url=new URL('../catalog/prints.json',import.meta.url),config=JSON.parse(await readFile(url,'utf8'));
 const report=JSON.parse(await readFile('tj-print-quotes.json','utf8'));
