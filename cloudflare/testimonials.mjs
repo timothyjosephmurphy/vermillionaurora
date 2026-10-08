@@ -290,6 +290,9 @@ async function owner(request, env, now) {
       published: {name, quote, city, painting: oneLine(input.painting ?? record.paintingTitle, 200), paintingSlug: slug, photos, pin}};
     const saved = await save(next);
     if (!saved) return reply({error: 'Record changed; reload'}, 409);
+    // Approval from Pending issues the code (once) and, unless unticked, sends the thank-you email (once). Edits to an
+    // already-published testimonial never issue or send anything.
+    if (record.status === 'approved') return reply({record: {...saved, public: forClient(publicEntry(saved))}, thanks: {}});
     const thanked = await thankCollector(env, saved, {send: input.sendThanks !== false, now});
     return reply({record: {...thanked.record, public: forClient(publicEntry(thanked.record))}, thanks: thanked.result});
   }
