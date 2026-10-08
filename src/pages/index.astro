@@ -11,15 +11,18 @@ const availablePaintings=homePaintings.filter(product=>['available','inquiry'].i
 const collectorPaintings=homePaintings.filter(product=>!['available','inquiry'].includes(product.listing?.status));
 const collectorPreview=collectorPaintings.slice(0,8);
 const featured=availablePaintings[0]||homePaintings[0];
-import { person, ld } from '../data/structured-data.mjs';
+import { person, website, ld } from '../data/structured-data.mjs';
 ---
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="application/ld+json" set:html={ld(person)} />
+    <script type="application/ld+json" set:html={ld(website)} />
     <title>TJ Murphy | Seattle Watercolor Artist — Paintings, Murals &amp; Commissions</title>
     <meta name="description" content="Paintings and murals by TJ Murphy, celebrating natural beauty and self-sovereignty through Pacific Northwest landscapes, expressive portraits, and a limited palette.">
-    <link rel="preload" as="image" href={featured.image.src} fetchpriority="high">
+    <!-- Hero background is the LCP element; keep this URL in sync with .hero-background in styles.css. -->
+    <link rel="preload" as="image" type="image/webp" href="/display/esperanza-hero-aba277665d-1134.webp" fetchpriority="high">
+    <link rel="preload" as="image" href={featured.image.src}>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -45,7 +48,7 @@ import { person, ld } from '../data/structured-data.mjs';
           <div class="hero-background" aria-hidden="true"></div>
           <div class="container hero-grid">
             <div class="hero-copy">
-              <p class="eyebrow">Timothy Joseph Murphy · Inspiring self-sovereignty</p>
+              <p class="eyebrow">Seattle watercolor &amp; pastel artist · Inspiring self-sovereignty</p>
               <h1>Natural beauty. Independent spirit.</h1>
               <p class="lede">
                 I paint the changing light of the Pacific Northwest, the places I travel, and the character of the people I meet. My work celebrates natural beauty and self-sovereignty, the freedom to think, create, and shape a life of your own.
@@ -209,8 +212,7 @@ import { person, ld } from '../data/structured-data.mjs';
               <h2>Reach out for custom artwork</h2>
               <p>
                 Whether you’re commissioning a portrait, purchasing a collectible, or planning a project,
-                let’s start the conversation. For packages, FAQ, and the full commissions hub, visit
-                <a href="/commissions/">/commissions/</a>.
+                let’s start the conversation. For packages, FAQ, and the full commissions hub, visit the <a href="/commissions/">commissions page</a>.
               </p>
               <ul class="contact-list">
                 <li>Seattle, WA</li>

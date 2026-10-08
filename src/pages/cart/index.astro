@@ -6,7 +6,7 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
 ---
 <!doctype html><html lang="en"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Your cart | Vermillion Aurora</title><meta property="og:type" content="website"/><meta property="og:site_name" content="Vermillion Aurora"/><meta property="og:title" content="Your cart | Vermillion Aurora"/><meta property="og:description" content="Original paintings, fine-art prints and commissions by Seattle watercolor artist TJ Murphy."/><meta property="og:url" content="https://tjm.art/cart/"/><meta property="og:image" content="https://tjm.art/gallery-images/warszawska-syrenka.jpeg"/><meta name="twitter:card" content="summary_large_image"/><meta name="robots" content="noindex"/><meta name="catalog-version" content={catalogVersion}/>
+<title>Your cart | TJ Murphy</title><meta property="og:type" content="website"/><meta property="og:site_name" content="TJ Murphy"/><meta property="og:title" content="Your cart | TJ Murphy"/><meta property="og:description" content="Original paintings, fine-art prints and commissions by Seattle watercolor artist TJ Murphy."/><meta property="og:url" content="https://tjm.art/cart/"/><meta property="og:image" content="https://tjm.art/gallery-images/warszawska-syrenka.jpeg"/><meta name="twitter:card" content="summary_large_image"/><meta name="robots" content="noindex"/><meta name="catalog-version" content={catalogVersion}/>
 <meta name="referrer" content="same-origin"/>
 <link rel="stylesheet" href="/styles.css"/><link rel="stylesheet" href="/site-header.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -21,7 +21,7 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
     <div class="cart-order-actions"><a class="button button-solid" data-order-resume hidden>Continue payment</a><button class="button button-ghost" data-order-check type="button">Check payment status</button><button class="cart-text-link" data-order-cancel type="button" hidden>Cancel checkout</button><button class="button button-ghost" data-order-back type="button" hidden>Return to cart</button><button class="button button-ghost" data-order-print type="button" hidden>Print confirmation</button></div>
   </section>
   <div class="cart-layout" data-cart-layout hidden>
-    <section class="cart-artworks" aria-label="Selected artworks"><div data-cart-items></div><p class="cart-footnote" data-cart-reservation hidden></p><p class="cart-footnote">Originals are held for 15 minutes after you add them to your cart. Complete checkout before the hold expires.</p></section>
+    <section class="cart-artworks" aria-label="Selected artworks"><div data-cart-items></div><p class="cart-footnote" data-cart-reservation hidden></p><p class="cart-footnote" data-cart-hold-note hidden>Originals are held for 15 minutes after you add them to your cart. Complete checkout before the hold expires.</p></section>
     <aside class="cart-checkout" aria-labelledby="checkout-title"><p class="eyebrow dark">Art for your space</p><h2 id="checkout-title">Order summary</h2>
       <dl class="cart-totals"><div><dt>Artwork subtotal</dt><dd data-cart-subtotal>—</dd></div><div><dt>Shipping</dt><dd data-cart-shipping>Calculated below</dd></div><div><dt>Tax</dt><dd data-cart-tax>Calculated below</dd></div><div class="cart-total"><dt>Total <small>USD</small></dt><dd data-cart-total>—</dd></div></dl>
       <form data-cart-form>
@@ -32,7 +32,7 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
           <label>Apartment, suite, etc. <span>(optional)</span><input name="street2" autocomplete="shipping address-line2" maxlength="100"/></label>
           <label>City<input name="city" autocomplete="shipping address-level2" maxlength="100" required/></label>
           <div class="cart-address-row"><label>State<input name="state" autocomplete="shipping address-level1" pattern="[A-Za-z]{2}" maxlength="2" placeholder="WA" required/></label><label>ZIP code<input name="zip" autocomplete="shipping postal-code" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" required/></label></div>
-          <label>Discount code <span>(optional)</span><input name="printCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Discount code"/></label>
+          <details class="cart-code-toggle"><summary>Have a code?</summary><label>Discount code<input name="printCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Discount code"/></label></details>
           <p class="cart-footnote" data-cart-code-note hidden></p>
           <p class="cart-footnote">United States delivery. Prints ship from the print lab, separately from originals. Shipping includes all shipments.</p>
         </fieldset>

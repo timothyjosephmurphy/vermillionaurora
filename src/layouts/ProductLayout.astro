@@ -5,6 +5,10 @@ import { catalogVersion, urlFor } from '../../catalog/catalog.mjs';
 const { product } = Astro.props;
 const canonical = new URL(urlFor(product), Astro.site || 'https://tjm.art').href;
 const shareTitle = `${product.title} — ${product.artist || product.author || 'TJ Murphy'}`;
+const featuredArtist = product.artist && product.artist !== 'TJ Murphy' ? product.artist : null;
+const pageTitle = featuredArtist
+  ? `${product.title} by ${featuredArtist} | TJM.art`
+  : `${product.title}${product.bookGallery ? ' — Book gallery artwork' : ''} | TJ Murphy`;
 const shareDescription = product.description || product.story?.join(' ').slice(0, 180) || shareTitle;
 const shareImageSrc = product.image?.src || product.examples?.[0]?.src;
 const shareImage = shareImageSrc ? new URL(shareImageSrc, canonical).href : null;
@@ -12,10 +16,10 @@ const shareImageAlt = product.image?.alt || shareTitle;
 const structuredData = product.type === 'painting'
   ? { '@context':'https://schema.org', '@type':'VisualArtwork', name:product.title,
       creator:(product.artist||'TJ Murphy')==='TJ Murphy'?{'@type':'Person','@id':'https://tjm.art/#tj-murphy',name:'TJ Murphy'}:{'@type':'Person',name:product.artist},
-      artMedium:product.medium, artworkSurface:product.surface, image:new URL(product.image.src, Astro.site).href, description:product.description, url:canonical,
+      ...(product.medium?{artMedium:product.medium}:{}), ...(product.surface?{artworkSurface:product.surface}:{}), image:new URL(product.image.src, Astro.site).href, description:product.description, url:canonical,
       ...(product.year?{dateCreated:String(product.year)}:{}),
       ...(product.dimensions?.width&&product.dimensions?.height?{width:{'@type':'Distance',name:`${product.dimensions.width} ${product.dimensions.unit||'in'}`},height:{'@type':'Distance',name:`${product.dimensions.height} ${product.dimensions.unit||'in'}`}}:{}),
-      ...(product.listing?.price?.amount?{offers:{'@type':'Offer',price:product.listing.price.amount,priceCurrency:product.listing.price.currency||'USD',url:canonical,
+      ...(product.listing?.price?.amount&&product.listing.status!=='not-for-sale'?{offers:{'@type':'Offer',price:product.listing.price.amount,priceCurrency:product.listing.price.currency||'USD',url:canonical,
         availability:product.listing.status==='available'?'https://schema.org/InStock':product.listing.status==='sold'?'https://schema.org/SoldOut':'https://schema.org/LimitedAvailability'}}:{}) }
   : product.type === 'book'
     ? { '@context':'https://schema.org', '@type':'Book', name:product.title, author:{'@type':'Person',name:product.author||'TJ Murphy'}, image:new URL(product.image.src, Astro.site).href, description:product.description||product.story?.join(' ') } : null;
@@ -24,7 +28,7 @@ const structuredData = product.type === 'painting'
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{product.title}{product.bookGallery ? ' — Book gallery artwork' : ''} | TJ Murphy</title>
+  <title>{pageTitle}</title>
   <meta name="description" content={shareDescription} />
   <meta name="catalog-version" content={catalogVersion} />
   <link rel="canonical" href={canonical} />

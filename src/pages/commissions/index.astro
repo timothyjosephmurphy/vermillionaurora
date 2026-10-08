@@ -13,7 +13,7 @@ const packages = collections.home
 import { person, ld } from '../../data/structured-data.mjs';
 // Section anchors; the old package pages 301 here (static/_redirects).
 const anchors = { 'small-landscape': 'landscape', 'single-portrait': 'portrait' };
-const headings = { 'small-landscape': 'Landscape commissions', 'single-portrait': 'Portrait commissions · single & double' };
+const headings = { 'small-landscape': 'Landscape commissions', 'single-portrait': 'Portrait commissions · 1–4 faces' };
 const order = ['small-landscape', 'single-portrait'];
 packages.sort((a, b) => (order.indexOf(a.slug) + 1 || 99) - (order.indexOf(b.slug) + 1 || 99));
 const service = { '@context':'https://schema.org', '@type':'Service', name:'Watercolor portrait and landscape commissions', serviceType:'Commissioned watercolor pastel artwork',
@@ -139,7 +139,7 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
             </details>
             <details>
               <summary>How is shipping handled?</summary>
-              <p>Finished works ship carefully packaged from Seattle. Domestic and international options are available; cost depends on size and destination. Local pickup can be arranged. See <a href="/shipping-returns/">shipping &amp; returns</a> for general guidance.</p>
+              <p>Finished works ship carefully packaged from Seattle. Checkout ships within the US; for international shipping, contact me for a quote. Local pickup can be arranged. See <a href="/shipping-returns/">shipping &amp; returns</a> for general guidance.</p>
             </details>
             <details>
               <summary>What about murals or custom sizes?</summary>
@@ -206,10 +206,8 @@ const service = { '@context':'https://schema.org', '@type':'Service', name:'Wate
               </select>
             </label>
 
-            <label class="commission-only">
-              <span>Desired size</span>
-              <input type="text" name="size" placeholder="For example: 9 × 12 inches">
-            </label>
+            <!-- Size comes from the chosen package (custom sizes go in the message). -->
+            <input type="hidden" name="size" value="">
 
             <label class="commission-only">
               <span>Reference image (optional)</span>

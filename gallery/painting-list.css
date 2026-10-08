@@ -7,6 +7,7 @@
 .painting-list-row .product-title-link:hover{text-decoration:underline;text-underline-offset:4px}
 .painting-list-row p{margin:0;font-size:.85rem;line-height:1.5}
 .painting-list-dimensions{color:var(--muted)}
+.painting-list-artist{display:block;margin-top:2px;font-family:Inter,system-ui,sans-serif;font-size:.85rem;font-weight:500;line-height:1.4;color:var(--muted)}
 .painting-list-price{text-align:right;font-weight:600}
 .painting-gallery-page .gallery-filter{gap:14px 24px;margin:24px 0 18px}
 .gallery-sort select{max-width:100%;min-height:44px;padding:8px 34px 8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
@@ -25,3 +26,8 @@
   .gallery-sort{flex-basis:100%}
   .gallery-sort select{flex:1;min-width:0}
 }
+/* Reserve the carousel and filter space before viewer.js runs (avoids layout shift on /gallery/). */
+.gallery-viewer-reserve{display:none}
+.js-gallery .gallery-viewer-reserve{display:block;height:calc(clamp(170px,30vw,420px) + 160.5px);margin:16px 0 28px}
+.js-gallery .painting-gallery-page .gallery-filter[hidden]{display:flex!important}
+@media(max-width:640px){.js-gallery .gallery-viewer-reserve{height:328.5px}}
