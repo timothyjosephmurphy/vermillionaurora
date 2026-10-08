@@ -106,9 +106,19 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
         else { media.alt = item.alt || 'Exhibition image'; media.loading = 'lazy'; media.decoding = 'async'; }
         cell.append(media);
       }
-      if (item.caption && !(item.video && item.lazyPreview)) { const caption = document.createElement('span'); caption.className = 'ev-caption'; const title = document.createElement('span'); title.className = 'ev-caption-title'; title.textContent = item.caption; caption.append(title); if (item.printsFrom) { const prints = document.createElement('span'); prints.className = 'ev-caption-prints'; prints.textContent = item.printsFrom; caption.append(prints); } cell.append(caption); }
-      // Visual cue only: the whole cell is already the link to the painting's page, so Buy is a span, not a nested control.
-      if (item.buy && item.product) { const buy = document.createElement('span'); buy.className = 'ev-buy'; buy.setAttribute('aria-hidden', 'true'); buy.textContent = 'Buy'; cell.append(buy); }
+      if (item.caption && !(item.video && item.lazyPreview)) {
+        const caption = document.createElement('span'); caption.className = 'ev-caption';
+        const title = document.createElement('span'); title.className = 'ev-caption-title'; title.textContent = item.caption;
+        const prints = item.printsFrom ? document.createElement('span') : null;
+        if (prints) { prints.className = 'ev-caption-prints'; prints.textContent = item.printsFrom; }
+        // Buy is a visual cue only (the whole cell is the link), placed inline at the end of the caption's last line.
+        const buy = item.buy && item.product ? document.createElement('span') : null;
+        if (buy) { buy.className = 'ev-buy'; buy.setAttribute('aria-hidden', 'true'); buy.textContent = 'Buy'; caption.classList.add('ev-caption-has-buy'); }
+        const last = prints || title;
+        if (prints) caption.append(title);
+        if (buy) { const row = document.createElement('span'); row.className = 'ev-caption-row'; row.append(last, buy); caption.append(row); } else caption.append(last);
+        cell.append(caption);
+      }
       stage.append(cell);
     });
   }
