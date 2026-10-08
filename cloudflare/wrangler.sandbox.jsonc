@@ -28,7 +28,8 @@
     "SANDBOX_RETURN_ORIGIN": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev",
     "PRINT_CHECKOUT_ALL": "true",
     "QBO_ENVIRONMENT": "sandbox",
-    "QBO_SYNC_ENABLED": "false"
+    "QBO_SYNC_ENABLED": "false",
+    "QBO_COST_SYNC_ENABLED": "false"
   },
   "durable_objects": {
     "bindings": [
