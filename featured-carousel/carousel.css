@@ -10,3 +10,9 @@
 .featured-controls button { min-height:40px; padding:7px 12px; border:1px solid #ffffff70; border-radius:8px; background:#201b1780; color:#fff; cursor:pointer; }
 .featured-position { font-size:.8rem; font-variant-numeric:tabular-nums; }
 @media(max-width:600px) { .featured-painting { height:360px; }.featured-caption { min-height:150px; } }
+/* Last caption line matches the other painting cards; the whole slide is one click target (stretched title link). */
+.featured-slide { position:relative; }
+.featured-caption h2 a::after { content:""; position:absolute; inset:0; z-index:1; }
+.featured-caption .card-buy-row { margin-top:4px; }
+.featured-caption .card-prints-from { font-size:inherit; color:rgba(255,255,255,.85); }
+.featured-slide:hover .card-buy { background:var(--cta-hover); }

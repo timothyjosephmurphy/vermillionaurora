@@ -10,7 +10,12 @@
     const background = product.querySelector('.product-image');
     const source = image ? image.src : getComputedStyle(background).backgroundImage.replace(/^url\(["']?|["']?\)$/g, '');
     // Carry the responsive WebP candidates so phones download a right-sized image, not the 960px file.
-    return {id:product.dataset.productId,href:link.href, title:link.textContent, source, srcset:image?.getAttribute('srcset')||'', detail:product.querySelector('.product-info p').textContent};
+    return {id:product.dataset.productId,href:link.href, title:link.textContent, source, srcset:image?.getAttribute('srcset')||'', detail:priceLine(product), printsFrom:product.dataset.printsFrom||'', buy:product.dataset.buy==='true'};
+  };
+  // The price line ("Watercolor pastel · $600") only, never the card's Buy cue: on cards without prints the price shares its row with the pill.
+  function priceLine(product) {
+    const price = product.querySelector('[data-card-price]');
+    return ((price && price.parentElement) || product.querySelector('.product-info p')).textContent.trim();
   };
   let items = products.map(itemFor);
   let index = Math.max(0, items.findIndex(item => item.href === card.querySelector('a').href));
@@ -44,9 +49,32 @@
     titleLink.href = item.href;
     titleLink.textContent = item.title;
     title.append(titleLink);
-    const detail = document.createElement('p');
+    const detail = document.createElement('span');
     detail.textContent = item.detail;
-    meta.append(title, detail);
+    // Same last line as every painting card: "Prints from $X" (or the price line when there are no prints) with the small vermillion Buy pill at its end.
+    const row = document.createElement('p');
+    row.className = 'card-buy-row';
+    if (item.printsFrom) {
+      const price = document.createElement('p');
+      price.className = 'featured-detail';
+      price.append(detail);
+      const prints = document.createElement('span');
+      prints.className = 'card-prints-from';
+      prints.textContent = item.printsFrom;
+      row.append(prints);
+      meta.append(title, price, row);
+    } else {
+      detail.className = 'featured-detail';
+      row.append(detail);
+      meta.append(title, row);
+    }
+    if (item.buy) {
+      const buy = document.createElement('span');
+      buy.className = 'card-buy';
+      buy.setAttribute('aria-hidden', 'true');
+      buy.textContent = 'Buy';
+      row.append(buy);
+    }
     panel.append(link, meta);
     return panel;
   }
