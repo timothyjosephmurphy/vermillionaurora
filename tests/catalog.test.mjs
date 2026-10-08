@@ -71,7 +71,7 @@ test('dimensioned available paintings receive parcels from the flat-at-12-inch r
  const missing=originals.filter(p=>!p.dimensions);
  assert.deepEqual(missing.map(p=>p.id),[]); // paul-murphy-painting-55 was the last one, measured at 12 × 10 in
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,52); // 52 before paul-murphy-painting-82 was removed, 51 after, 52 once paul-murphy-painting-55 was measured
+ assert.equal(ready.length,53); // 52 before paul-murphy-painting-82 was removed, 51 after, 52 once paul-murphy-painting-55 was measured, 53 with El Zonte Before Dawn
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
@@ -169,4 +169,22 @@ test('painting cards: price without "USD", "Prints from" the cheapest ready prin
  assert(checked>100,`checked ${checked} cards`);
  for(const p of products.filter(p=>p.type==='painting')){const low=lowestPrintPrice(p);if(low!==null)assert(low>0);if(p.listing.status==='available'||low!==null)assert(showBuy(p),p.id);else assert(!showBuy(p),p.id);}
  const css=fs.readFileSync('styles.css','utf8');assert.match(css,/\.card-buy\{[^}]*background:var\(--cta\)/);
+});
+test('painting pages render extra photos as thumbnails after the main image and an accessible product video',()=>{
+ const withMedia=products.filter(p=>p.type==='painting'&&(p.gallery?.length||p.video));
+ assert.deepEqual(withMedia.map(p=>p.id).sort(),['el-zonte-at-sunrise','el-zonte-before-dawn','painting-shoreline-at-dusk']);
+ for(const p of withMedia){
+  const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));
+  const thumbs=$('.product-media [data-product-thumbs] .product-thumb');
+  assert.equal(thumbs.length,p.gallery.length+1,p.id);
+  assert.equal(thumbs.first().attr('aria-pressed'),'true');
+  assert.match(thumbs.first().attr('aria-label'),new RegExp(`^Show photo 1 of ${p.gallery.length+1}: `));
+  p.gallery.forEach((g,i)=>{const t=thumbs.eq(i+1);assert.equal(t.attr('data-alt'),g.alt);assert.ok(g.alt.startsWith(p.title));assert.equal(t.find('source[type="image/avif"]').length,1);assert.equal(t.find('source[type="image/webp"]').length,1);});
+  const video=$('.product-media video[data-product-video]');
+  assert.equal(video.length,1,p.id);
+  for(const attr of ['controls','playsinline'])assert.ok(video.attr(attr)!==undefined,attr);
+  assert.equal(video.attr('preload'),'metadata');assert.equal(video.attr('aria-label'),p.video.label);assert.equal(video.attr('poster'),p.video.poster);
+  assert.equal(video.attr('autoplay'),undefined);
+  assert.deepEqual(video.find('source').map((i,e)=>$(e).attr('src')).get(),p.video.sources.map(s=>s.src));
+ }
 });

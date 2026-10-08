@@ -70,7 +70,7 @@ const facts=painting ? [
   <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href={p.back.href}>{p.artist==='Paul Murphy'?'Paul Murphy':p.type==='commission'?'Commissions':p.back.href.startsWith('/products/')?p.back.label.replace('← Back to ',''):'Gallery'}</a><span>/</span><span aria-current="page">{p.title}</span></nav>
   {p.examples?.length>0 && <section class="commission-gallery"><div class="section-heading"><h2>Portrait gallery</h2><p>{p.galleryDescription}</p></div><div class="exhibition-grid">{p.examples.map(img=><a class="ex-photo" href={img.src}><img {...img} loading="lazy" decoding="async" /></a>)}</div></section>}
   <article class:list={['product-layout',{'product-layout-text':!painting}]}>
-    {painting && <PaintingImage image={p.image} title={p.title} />}
+    {painting && <PaintingImage image={p.image} title={p.title} gallery={p.gallery} video={p.video} />}
     <div class="product-summary"><p class="eyebrow dark">{p.eyebrow}</p><h1>{p.title}</h1>{p.artist==="Paul Murphy" && <p class="product-artist-byline">by <a href="/exhibitions/paul-murphy/">Paul Murphy</a>, featured artist</p>}
   {painting && (p.listing.status==='available' || availablePrints.length>0) && <section class="product-purchase-actions" aria-label="Purchase options">
     {p.listing.status==='available' && <div data-original-purchase>
