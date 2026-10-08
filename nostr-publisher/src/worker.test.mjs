@@ -75,7 +75,7 @@ test('public blog feed shows only entries with a Nostr delivery receipt', async 
   const acceptedAt = Date.parse('2026-10-06T17:00:02Z');
   await state.storage.put(`nostr:sent:${posts[0].id}`, { eventId: 'ab'.repeat(32), acceptedAt, relay: 'wss://relay.example' });
   const response = await instance.fetch(new Request('https://internal/blog'));
-  assert.equal(response.headers.get('access-control-allow-origin'), 'https://vermillionaurora.com');
+  assert.equal(response.headers.get('access-control-allow-origin'), 'https://tjm.art');
   const result = await response.json();
   assert.deepEqual(result.posts.map(post => post.id), [posts[0].id]);
   assert.equal(result.posts[0].publishedAt, new Date(acceptedAt).toISOString());
@@ -89,4 +89,15 @@ test('pause and missing key prevent delivery; public requests cannot trigger sen
   const response = await worker.fetch(new Request('https://public/run', { method: 'POST' }), {});
   assert.equal(response.status, 404);
   assert.equal((await state.storage.list({ prefix: 'nostr:sent:' })).size, 0);
+});
+
+test('public blog feed answers CORS for tjm.art and the legacy domain only', async () => {
+  const state = { storage: storageDouble() };
+  const instance = new NostrSchedule(state, env);
+  const binding = { idFromName: () => 'id', get: () => ({ fetch: (url) => instance.fetch(new Request(url)) }) };
+  const origin = async (value) => (await worker.fetch(new Request('https://public/blog', { headers: value ? { Origin: value } : {} }), { NOSTR_SCHEDULE: binding })).headers;
+  assert.equal((await origin('https://tjm.art')).get('access-control-allow-origin'), 'https://tjm.art');
+  assert.equal((await origin('https://vermillionaurora.com')).get('access-control-allow-origin'), 'https://vermillionaurora.com');
+  assert.equal((await origin('https://evil.example')).get('access-control-allow-origin'), 'https://tjm.art');
+  assert.equal((await origin('https://tjm.art')).get('vary'), 'Origin');
 });

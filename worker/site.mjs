@@ -23,7 +23,7 @@ export function hostRedirect(request, env = {}) {
 // QuickBooks owner page, OAuth callback and owner API live in the checkout Worker (vermillion-commissions);
 // they are forwarded through the CHECKOUT service binding so the Intuit redirect URI can be https://tjm.art/quickbooks/callback.
 // The public pages /quickbooks/ and /quickbooks/disconnected/ stay static.
-export const QUICKBOOKS_API = new Set(['/quickbooks/connect', '/quickbooks/callback', '/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry']);
+export const QUICKBOOKS_API = new Set(['/quickbooks/connect', '/quickbooks/callback', '/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry', '/quickbooks/costs/preview', '/quickbooks/costs/backfill']);
 
 // Testimonial submission, the approved list, approved photos and the owner moderation API also live in the checkout
 // Worker (private R2 storage); forwarding keeps them same-origin with /testimonials/ and /testimonial-manager/.
