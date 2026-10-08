@@ -187,7 +187,9 @@ async function measureClearance(page) {
 /* ---- Caption clearance: prints + Buy fully inside card (≥4px) ---- */
 const clearanceTargets = [
   'El Zonte Before Dawn',
-  'Moonrise over lake in the North Cascades', // 2-line title on mobile
+  'Moonrise Over the Cascades',
+  'Sunrise in El Zonte (Large)', // longest new title
+  'Meditation at Denny Blaine',
 ];
 const narrowWidths = [375, 390, 414, 430];
 async function launchEngine(engine) {

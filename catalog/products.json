@@ -1167,14 +1167,14 @@
     "id": "painting-moonlit-water",
     "slug": "painting-moonlit-water",
     "type": "painting",
-    "title": "Moonrise over lake in the North Cascades",
-    "description": "Moonrise over lake in the North Cascades by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Moonrise Over the Cascades",
+    "description": "Moonrise Over the Cascades by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
       "status": "available",
       "price": {
-        "amount": "600.00",
+        "amount": "500.00",
         "currency": "USD"
       }
     },
@@ -1183,8 +1183,8 @@
     "year": 2023,
     "framing": null,
     "dimensions": {
-      "width": 16,
-      "height": 24,
+      "width": 12,
+      "height": 23,
       "unit": "in"
     },
     "galleryReference": null,
@@ -1196,23 +1196,23 @@
       }
     ],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
+      "A full moon over a lake in the North Cascades, with the moonlight running down the water between dark trees. Painted in Seattle. Watercolor pastel, 12 \u00d7 23 in."
     ],
     "storyHeading": null,
     "inquiryHref": "/commissions/?product=painting-moonlit-water#form",
     "dimensionOrder": "width-height",
     "image": {
-      "src": "/gallery-images/moonlit-water.jpg",
-      "alt": "Moonrise over lake in the North Cascades by TJ Murphy",
-      "caption": "Moonrise over lake in the North Cascades"
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
     },
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 16,
+        "length": 12,
         "width": 4,
         "height": 4,
-        "weight": 0.9375,
+        "weight": 0.5625,
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
@@ -2065,6 +2065,126 @@
         }
       ],
       "label": "Video: El Zonte Before Dawn and the other El Zonte paintings in a living room"
+    }
+  },
+  {
+    "id": "sunrise-in-el-zonte-large",
+    "slug": "sunrise-in-el-zonte-large",
+    "type": "painting",
+    "title": "Sunrise in El Zonte (Large)",
+    "description": "Sunrise in El Zonte (Large) by TJ Murphy. Watercolor pastel. Available.",
+    "eyebrow": "Watercolor pastel",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "2000.00",
+        "currency": "USD"
+      }
+    },
+    "medium": "Watercolor pastel",
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 36,
+      "height": 48,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [
+      "The sun just clearing the water at El Zonte, with the headland in shadow and the round beach stones catching the first light in the foreground. I woke before dawn at the Punta El Zonte hostel, where the river meets the beach, and painted this back in my Seattle studio from the photos I took that morning. The tropical air makes the light especially luminous. Watercolor pastel, 36 \u00d7 48 in."
+    ],
+    "storyHeading": null,
+    "inquiryHref": "/commissions/?buy=sunrise-in-el-zonte-large#form",
+    "dimensionOrder": "width-height",
+    "image": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 36,
+        "width": 4,
+        "height": 4,
+        "weight": 2.4375,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
+    },
+    "inquiry": {
+      "label": "Inquire about this painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/gallery/",
+      "label": "Back to gallery"
+    }
+  },
+  {
+    "id": "meditation-at-denny-blaine",
+    "slug": "meditation-at-denny-blaine",
+    "type": "painting",
+    "title": "Meditation at Denny Blaine",
+    "description": "Meditation at Denny Blaine by TJ Murphy. Watercolor. Available.",
+    "eyebrow": "Watercolor",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "600.00",
+        "currency": "USD"
+      }
+    },
+    "medium": "Watercolor",
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "dimensions": {
+      "width": 16,
+      "height": 23,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [
+      "Mount Rainier from Denny Blaine, burning orange and red in the low light, with the whole sky mirrored in the still water below. Watching Rainier from this shore is the meditation that got me painting: sitting and waiting while the color changes. Watercolor, 16 \u00d7 23 in, painted in Seattle."
+    ],
+    "storyHeading": null,
+    "inquiryHref": "/commissions/?buy=meditation-at-denny-blaine#form",
+    "dimensionOrder": "width-height",
+    "image": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 16,
+        "width": 4,
+        "height": 4,
+        "weight": 0.875,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
+    },
+    "inquiry": {
+      "label": "Inquire about this painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/gallery/",
+      "label": "Back to gallery"
     }
   },
   {
