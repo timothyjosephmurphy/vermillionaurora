@@ -142,7 +142,7 @@ async function submit(request, env, ctx, now) {
     publishConsent: 'implied-by-submit',
     consent: {publish: true, basis: 'implied-by-submit', notice: PUBLISH_NOTICE, noticeVersion: PUBLISH_NOTICE_VERSION,
       shownVersion: oneLine(form.get('publishNotice'), 20) || null,
-      scope: 'name (if given), words, photos and city (approximate city pin on the map)', at: new Date(now).toISOString()},
+      scope: 'name (if given), words, photos and city/region (approximate city pin on the map; never a street address)', at: new Date(now).toISOString()},
     geo,
     photos: photos.map(p => ({n: p.n, key: imageKey(id, p.n, p.type), type: p.type, bytes: p.bytes.byteLength, originalName: p.originalName, publishable: p.publishable, removed: p.removed})),
     ...(video ? {video: {
@@ -176,7 +176,7 @@ async function submit(request, env, ctx, now) {
   return done(request, true, {success: true, id}, 200);
 }
 
-// City-level geocoding only: the visitor types a city, never an address; coordinates are rounded to ~1 km.
+// City-level geocoding: visitor may type "City", "City, Country", "City, State" or "City, State, Country" (never a street address); coordinates are rounded to ~1 km.
 export async function geocodeCity(city, env = {}) {
   const query = oneLine(city, 100);
   if (!query) return null;

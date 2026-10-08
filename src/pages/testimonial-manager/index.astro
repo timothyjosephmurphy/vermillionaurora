@@ -112,8 +112,8 @@ function card(r){
   }
   a.append(field('Display name',name),field('Testimonial text (as published)',quote));
   a.append(el('div',{className:'tm-row'},field('Painting title',painting),field('Painting page slug (links to /products/<slug>/)',slug)));
-  a.append(el('div',{className:'tm-row'},field('City',city),field('Pin latitude',lat),field('Pin longitude',lng)));
-  a.append(el('div',{className:'tm-pinrow'},el('label',{},el('span',{},map,' Show a pin on the exhibitions map')),btn('Look up city',async()=>{const {geo}=await call({action:'geocode',city:city.value});if(!geo){say('No match for that city.');return;}lat.value=geo.lat;lng.value=geo.lng;map.checked=true;geoNote.textContent=`Found: ${geo.label}`;})),geoNote);
+  a.append(el('div',{className:'tm-row'},field('City, state, country',city),field('Pin latitude',lat),field('Pin longitude',lng)));
+  a.append(el('div',{className:'tm-pinrow'},el('label',{},el('span',{},map,' Show a pin on the exhibitions map')),btn('Look up',async()=>{const {geo}=await call({action:'geocode',city:city.value});if(!geo){say('No match for that place.');return;}lat.value=geo.lat;lng.value=geo.lng;map.checked=true;geoNote.textContent=`Found: ${geo.label}`;})),geoNote);
   const photoBoxes=[];
   if(r.photos.length){
     const ul=el('ul',{className:'tm-photos'});

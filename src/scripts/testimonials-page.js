@@ -300,6 +300,7 @@ function setupForm() {
     if (chosen.length > ok.length + tooBig.length) notes.push('That file type won’t work. Please use JPEG, PNG, WebP or HEIC.');
     say(notes.join(' '), notes.length > 0);
   });
+  const originalLabel = submit.textContent;
   form.addEventListener('submit', async event => {
     event.preventDefault();
     form.querySelectorAll('[aria-invalid]').forEach(n => n.removeAttribute('aria-invalid'));
@@ -311,7 +312,12 @@ function setupForm() {
       first.focus();
       return;
     }
+    // Disable and relabel immediately so every exit path (success, 4xx/5xx, network, video upload
+    // failure) can restore via finally. Validation returns above without touching the button.
     submit.disabled = true;
+    submit.textContent = 'Sending…';
+    form.setAttribute('aria-busy', 'true');
+    let finished = false;
     try {
       const data = new FormData(form);
       data.delete('photos');
@@ -320,17 +326,41 @@ function setupForm() {
       if (video?.has()) { say('Uploading your video…'); await video.addTo(data); }
       else { data.delete('videoSite'); data.delete('videoSocial'); }
       say('Sending…');
-      const r = await fetch(form.action, {method: 'POST', body: data, headers: {Accept: 'application/json'}});
+      const fetchOpts = {method: 'POST', body: data, headers: {Accept: 'application/json'}};
+      // Bound the wait so a hung Worker (e.g. geocode/mail) cannot leave the button on "Sending…" forever.
+      if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') fetchOpts.signal = AbortSignal.timeout(120000);
+      const r = await fetch(form.action, fetchOpts);
       const result = await r.json().catch(() => ({}));
       if (!r.ok || !result.success) throw Error(result.error || 'Sorry, something went wrong. Please try again, or email tj@tjm.art.');
-      form.hidden = true;
-      if (video?.has()) document.querySelector('[data-thanks-video]').hidden = false;
-      if (!data.get('email')) document.querySelector('[data-thanks-code]').hidden = true; // no email, no code
+      // Show the thank-you panel before hiding the form so a later exception cannot leave a blank panel
+      // with the status still reading "Sending…".
+      if (video?.has()) {
+        const videoThanks = document.querySelector('[data-thanks-video]');
+        if (videoThanks) videoThanks.hidden = false;
+      }
+      if (!data.get('email')) {
+        const codeThanks = document.querySelector('[data-thanks-code]');
+        if (codeThanks) codeThanks.hidden = true; // no email, no code
+      }
       const thanks = document.querySelector('[data-thanks]');
-      thanks.hidden = false; thanks.focus();
+      if (thanks) {
+        thanks.hidden = false;
+        try { thanks.focus(); } catch {}
+      }
+      form.hidden = true;
+      say('');
+      submit.textContent = 'Sent — thank you';
+      finished = true;
     } catch (error) {
-      say(error.message, true);
-    } finally { submit.disabled = false; }
+      const timedOut = error?.name === 'TimeoutError' || error?.name === 'AbortError';
+      say(timedOut ? 'That took too long. Please check your connection and try again.' : (error.message || 'Sorry, something went wrong. Please try again, or email tj@tjm.art.'), true);
+    } finally {
+      form.removeAttribute('aria-busy');
+      if (!finished) {
+        submit.disabled = false;
+        submit.textContent = originalLabel;
+      }
+    }
   });
   // Non-JavaScript fallback redirects back here with ?thanks=1 or ?error=...
   const params = new URLSearchParams(location.search);
