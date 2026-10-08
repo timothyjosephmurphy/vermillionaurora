@@ -60,8 +60,11 @@ test('submission is stored pending with stripped photos, notifies TJ, and is not
   assert.equal((await testimonialsApi(new Request(`https://tjm.art/testimonials/api/photo/${id}/0`),env)).status,404);
 });
 
-test('submissions without any painting fields are accepted',async()=>{
-  const env=setup();const r=await submit(env,form({paintingSlug:null,painting:null,city:''}));assert.equal(r.status,200);
+test('painting is optional free text; submissions without it are accepted',async()=>{
+  const env=setup();
+  const t=await (await submit(env,form({paintingSlug:null,painting:'Sunset over the Sound',city:''}))).json();
+  assert.equal(JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+t.id+'.json').value).paintingTitle,'Sunset over the Sound');
+  const r=await submit(env,form({paintingSlug:null,painting:null,city:''}));assert.equal(r.status,200);
   const {id}=await r.json();const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);assert.equal(rec.paintingSlug,'');assert.equal(rec.paintingTitle,'');
 });
 

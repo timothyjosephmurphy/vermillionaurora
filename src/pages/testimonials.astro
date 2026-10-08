@@ -79,6 +79,10 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
               </label>
             </div>
             <label>
+              <span>Which painting? (optional)</span>
+              <input type="text" name="painting" maxlength="200" placeholder="Describe it or give its title" />
+            </label>
+            <label>
               <span>Your testimonial (required)</span>
               <textarea name="quote" required minlength="3" maxlength="2000" rows="6" placeholder="What does the painting mean to you? Where does it hang?"></textarea>
             </label>
