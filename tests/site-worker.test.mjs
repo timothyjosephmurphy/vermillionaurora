@@ -77,6 +77,17 @@ test('renamed product pages: one-hop 301 from the legacy domain, _redirects on t
   }
   assert.deepEqual(loc('https://vermillionaurora.com/products/painting-shoreline-at-dusk/',on),[301,'https://tjm.art/products/painting-shoreline-at-dusk/']);
 });
+test('/contact/ is a server-side 301 to the commission form (static/_redirects), not a meta-refresh page, and stays out of the sitemap',async()=>{
+  const fs=await import('node:fs');
+  const rules=fs.readFileSync('static/_redirects','utf8').split('\n').map(l=>l.trim().split(/\s+/)).filter(l=>l[0]&&!l[0].startsWith('#'));
+  for(const from of ['/contact/','/contact'])assert.deepEqual(rules.filter(r=>r[0]===from),[[from,'/commissions/#form','301']],from);
+  assert.ok(!fs.existsSync('src/pages/contact'),'no Astro.redirect stub page (it rendered a 980px meta-refresh page with a 200)');
+  if(fs.existsSync('dist/sitemap.xml')){
+    assert.ok(!fs.existsSync('dist/contact/index.html'),'no built /contact/ page');
+    assert.doesNotMatch(fs.readFileSync('dist/sitemap.xml','utf8'),/tjm\.art\/contact\b/);
+    assert.match(fs.readFileSync('dist/commissions/index.html','utf8'),/\bid="form"/,'the redirect target anchor exists');
+  }
+});
 test('every Nostr scheduled-post product link resolves to a live product page',async()=>{
   const fs=await import('node:fs');
   const {posts}=await import('../nostr-publisher/src/posts.mjs');
