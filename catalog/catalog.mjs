@@ -34,6 +34,18 @@ export function validateCatalog(items=products, groups=collections) {
     if (!Array.isArray(p.story)) fail(p,'story must be an array of paragraphs');
     if (['painting','book'].includes(p.type)) media(p,p.image);
     for(const img of p.examples || []) media(p,img);
+    // Extra product photos (room shots) and an optional product video, both reusable per painting.
+    // Their files live in static/ (published at the site root).
+    const published=src=>src?.startsWith('/')&&[src.slice(1),'static'+src].some(f=>existsSync(resolve(process.cwd(),f)));
+    for(const g of p.gallery || []) {
+      if(!g.alt || !published(g.fallback) || !Array.isArray(g.widths) || !g.widths.length || !(g.width>0&&g.height>0)) fail(p,'gallery photo needs alt text, a fallback file, widths and size');
+      for(const w of g.widths) for(const ext of ['avif','webp']) if(!published(`${g.base}-${w}.${ext}`)) fail(p,`missing gallery image ${g.base}-${w}.${ext}`);
+    }
+    if(p.video) {
+      const v=p.video;
+      if(!v.label || !Array.isArray(v.sources) || !v.sources.length || v.sources.some(s=>!s.src?.startsWith('https://media.vermillionaurora.com/') || s.type!=='video/mp4')) fail(p,'video needs a label and HTTPS MP4 sources on the media domain');
+      if(!published(v.poster)) fail(p,`missing video poster ${v.poster}`);
+    }
     const price=p.listing?.price;
     if(p.type!=='book' && !['available','sold','not-for-sale','inquiry','retired'].includes(p.listing?.status)) fail(p,'listing status required');
     if(price && (!/^\d+\.\d{2}$/.test(price.amount) || Number(price.amount)<=0 || price.currency!=='USD')) fail(p,'positive USD price with two decimal places required');

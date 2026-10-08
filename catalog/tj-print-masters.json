@@ -13,9 +13,9 @@
   },
   {
     "id": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador",
-    "sha256": "3b684b4c0dafc81c20fc3ad38d02314bfe094b00ad0fc651efa1e96dffbcb462",
-    "local": "gallery-images/el-salvador-sunrise.jpeg"
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "sha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
+    "local": "static/print-masters/6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8.jpg"
   },
   {
     "id": "painting-red-horizon",
@@ -29,37 +29,8 @@
   {
     "id": "painting-shoreline-at-dusk",
     "title": "El Zonte at Dawn, El Salvador",
-    "sha256": "a6c58cca2d1dc02439c225b44c1564cab09010fe53dc1f0c5382f3f5295a90c8",
-    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
-    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
-    "xref": 585,
-    "page": 41,
-    "corners": [
-      [
-        254.60000610351562,
-        265.70001220703125
-      ],
-      [
-        2048,
-        261.20001220703125
-      ],
-      [
-        2068.39990234375,
-        1126.9000244140625
-      ],
-      [
-        235.8000030517578,
-        1120.5999755859375
-      ]
-    ],
-    "widthPx": 1793,
-    "heightPx": 855,
-    "layoutOptions": {
-      "padPaperToMinimum": true,
-      "sizeKeys": [
-        "full"
-      ]
-    }
+    "sha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
+    "local": "static/print-masters/63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a.jpg"
   },
   {
     "id": "painting-sunset-silhouette",
@@ -229,5 +200,11 @@
     "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
     "xref": 1058,
     "page": 74
+  },
+  {
+    "id": "el-zonte-before-dawn",
+    "title": "El Zonte Before Dawn",
+    "sha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
+    "local": "static/print-masters/0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559.jpg"
   }
 ]

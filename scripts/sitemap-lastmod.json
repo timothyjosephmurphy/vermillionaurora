@@ -1,6 +1,6 @@
 {
   "https://tjm.art/": {
-    "hash": "261b12267778f0bf",
+    "hash": "d092bcf3be9b0873",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/about/": {
@@ -24,7 +24,7 @@
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/book-galleries/watercolor-landscapes-travels/": {
-    "hash": "6e98f70ba725d552",
+    "hash": "d39ffa9e4630dd69",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-bitcoiners/": {
@@ -108,15 +108,15 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/gallery/": {
-    "hash": "75ad61bbb456afac",
+    "hash": "cc091a6effcf0819",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/gallery/available/": {
-    "hash": "4adcefde325e75c4",
+    "hash": "f4bee8a992115144",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/links/": {
-    "hash": "c531e4190ce3390b",
+    "hash": "06be90e41d80dcf7",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/murals/": {
@@ -668,7 +668,11 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/el-zonte-at-sunrise/": {
-    "hash": "d2d69c9549f81198",
+    "hash": "022a841f1736bfb8",
+    "lastmod": "2026-10-08"
+  },
+  "https://tjm.art/products/el-zonte-before-dawn/": {
+    "hash": "7183e130fc20e34a",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/girl-wearing-flower-crown/": {
@@ -772,7 +776,7 @@
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-shoreline-at-dusk/": {
-    "hash": "69ba3f0917266e53",
+    "hash": "8fc80b2c3843ad86",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-studio-figure/": {
@@ -980,7 +984,7 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/testimonials/": {
-    "hash": "98e9afe820d98e68",
+    "hash": "5acbe01c691edff8",
     "lastmod": "2026-10-08"
   }
 }
