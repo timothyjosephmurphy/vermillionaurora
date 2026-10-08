@@ -176,6 +176,8 @@ export function accountingClient(env, { realmId, accessToken, log, fetcher, orde
   return {
     query: (statement, entity) => call('query', { query: statement }, { method: 'GET' }, `query ${entity}`).then(b => b?.QueryResponse?.[entity] || []),
     create: (entity, payload, requestId) => call(entity.toLowerCase(), requestId ? { requestid: requestId } : {}, { method: 'POST', body: JSON.stringify(payload) }, `create ${entity}`).then(b => b?.[entity]),
+    // Sparse update: only the fields in payload change (payload carries Id, SyncToken and sparse: true).
+    update: (entity, payload) => call(entity.toLowerCase(), { operation: 'update' }, { method: 'POST', body: JSON.stringify(payload) }, `update ${entity}`).then(b => b?.[entity]),
     read: (path, entity) => call(path, {}, { method: 'GET' }, `read ${entity}`).then(b => b?.[entity])
   };
 }
@@ -262,12 +264,28 @@ export function salesReceiptPayload(receipt, refs) {
     CustomerRef: { value: refs.customerId },
     DepositToAccountRef: { value: refs.depositAccountId },
     PaymentRefNum: String(receipt.transactionId || '').slice(-21),
-    PrivateNote: `Vermillion Aurora order ${receipt.orderId}; ${receipt.provider === 'btcpay' ? 'BTCPay invoice' : 'Square payment'} ${receipt.transactionId}`.slice(0, 4000),
+    PrivateNote: withAtCostMarker(`Vermillion Aurora order ${receipt.orderId}; ${receipt.provider === 'btcpay' ? 'BTCPay invoice' : 'Square payment'} ${receipt.transactionId}`, receipt.printCode),
     ...(receipt.buyerEmail ? { BillEmail: { Address: String(receipt.buyerEmail).slice(0, 100) } } : {}),
     ...(address.street1 ? { ShipAddr: { Line1: String(address.street1).slice(0, 500), ...(address.street2 ? { Line2: String(address.street2).slice(0, 500) } : {}),
       City: String(address.city || '').slice(0, 255), CountrySubDivisionCode: String(address.state || '').slice(0, 255), PostalCode: String(address.zip || '').slice(0, 30), Country: String(address.country || 'US').slice(0, 255) } } : {}),
     Line: lines
   };
+}
+// Orders paid with a single-use at-cost collector code (the VA-XXXX-XXXX-XXXX testimonial/thank-you print codes) are
+// marketing spend, not ordinary sales. They are marked in the internal Memo (PrivateNote) of the Sales Receipt and of its
+// production-cost Purchases: a plain-text marker needs nothing set up in QuickBooks and works whether or not Classes,
+// Locations or Tags are turned on. Only a masked reference is shown (last group of the code); the owner code is never marked.
+export const AT_COST_MARKER = 'At-cost testimonial print code — marketing';
+export function atCostNote(printCode) {
+  if (printCode?.kind !== 'collector') return '';
+  const suffix = typeof printCode.suffix === 'string' && /^[A-Z2-9]{4}$/.test(printCode.suffix) ? printCode.suffix : '';
+  return suffix ? `${AT_COST_MARKER} (code VA-…-${suffix})` : AT_COST_MARKER;
+}
+// Prepends the marker (so it is the first thing in the Memo column) unless it is already there. Idempotent.
+export function withAtCostMarker(note, printCode) {
+  const marker = atCostNote(printCode), text = String(note || '');
+  if (!marker || text.includes(AT_COST_MARKER)) return text.slice(0, 4000);
+  return `${marker}. ${text}`.slice(0, 4000);
 }
 export const depositAccountKey = receipt => receipt.provider === 'btcpay' ? 'bitcoin' : 'square';
 
@@ -282,7 +300,8 @@ export function validateCost(cost) {
 }
 // Pure mapping from a resolved cost ({placedAt, lines:[{account, cents, description}], amountSource, memo}) to a QuickBooks
 // Purchase paid by credit card. Lines are positive and must add up to the resolved total.
-export function purchasePayload(cost, resolved, refs) {
+// printCode is the sale's code ({kind, suffix}) so the Purchase carries the same at-cost marker as its Sales Receipt.
+export function purchasePayload(cost, resolved, refs, printCode = null) {
   validateCost(cost);
   const lines = resolved.lines.filter(l => l.cents > 0);
   if (!lines.length || resolved.lines.some(l => !Number.isInteger(l.cents) || l.cents < 0)) throw new QboError('Production cost has no valid lines', { kind: 'validation' });
@@ -294,7 +313,7 @@ export function purchasePayload(cost, resolved, refs) {
     EntityRef: { value: refs.vendorId, type: 'Vendor' },
     TxnDate: pacificDate(resolved.placedAt),
     DocNumber: costDocNumber(cost.orderId, cost.type),
-    PrivateNote: resolved.memo.slice(0, 4000),
+    PrivateNote: withAtCostMarker(resolved.memo, printCode),
     Line: lines.map(l => ({ DetailType: 'AccountBasedExpenseLineDetail', Amount: Number(dollars(l.cents)), Description: String(l.description).slice(0, 4000),
       AccountBasedExpenseLineDetail: { AccountRef: { value: refs.accounts[l.account] } } }))
   };

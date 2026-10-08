@@ -29,7 +29,9 @@ export async function resolveCode(env,code,items) {
   const state=await codeStore(env,hash).codeState();
   if(!state||state.status==='redeemed')throw Error('That code is not valid or has already been used.');
   if(state.status==='claimed')throw Error('That code is being used in another checkout. Try again in 20 minutes.');
-  return {kind:'collector',hash};
+  // The last group of the code is kept so bookkeeping can show a masked reference (VA-…-WXYZ). Never the full code,
+  // and never anything about the owner code.
+  return {kind:'collector',hash,suffix:norm.slice(-4)};
 }
 // Apply at-cost pricing AFTER the print provider validated retail prices. unitCosts are dollar strings (or cents) per copy by SKU.
 export function applyCode(items,code,unitCosts) {

@@ -79,7 +79,7 @@ export async function priceCart(env,items,input,email,code=null) {
   // A code reprices only after the provider has validated the listed retail prices.
   if(code){items=applyCode(items,code,printQuote?.unitCosts);if(printQuote)delete printQuote.unitCosts;}
   const totals=await calculateTax(env,items,address,shipments.reduce((sum,s)=>sum+cents(s.shipping),0)+(printQuote?cents(printQuote.shipping):0));
-  return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments,...(printQuote?{printQuote}:{}),...(code?{printCode:{kind:code.kind,hash:code.hash}}:{}),...totals,quotedAt:Date.now()};
+  return {schemaVersion:3,catalogVersion:cartVersion,address,email,items,shipments,...(printQuote?{printQuote}:{}),...(code?{printCode:{kind:code.kind,hash:code.hash,...(code.kind==='collector'&&/^[A-Z2-9]{4}$/.test(code.suffix||'')?{suffix:code.suffix}:{})}}:{}),...totals,quotedAt:Date.now()};
 }
 
 export async function recordTax(env,calculationId,captureId) {
