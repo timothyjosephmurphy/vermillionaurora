@@ -61,6 +61,8 @@ it('connects with signed single-use state and records a completed sale once (ide
   expect(JSON.stringify(status)).not.toContain('A1');
   expect(await stub.enqueue(sale())).toEqual({queued:true,duplicate:false});
   expect(await stub.enqueue(sale())).toEqual({queued:true,duplicate:true});
+  expect((await stub.queueRows())[0]).toMatchObject({paid_at:'2026-10-07T20:00:00.000Z',provider:'square',gross:'207.41'});
+  expect(JSON.stringify(await stub.queueRows())).not.toContain('buyer@example.test');
   await runDurableObjectAlarm(stub);
   expect(created).toHaveLength(1);
   expect(created[0].auth).toBe('Bearer A1');
