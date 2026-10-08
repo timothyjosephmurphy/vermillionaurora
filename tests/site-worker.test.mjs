@@ -54,3 +54,35 @@ test('fingerprinted /display/ and /_astro/ assets get a one-year immutable cache
   for(const p of ['/display/a-123-160.webp','/_astro/index.abc.css']){const r=await worker.fetch(new Request('https://tjm.art'+p),env);assert.equal(r.headers.get('Cache-Control'),'public, max-age=31536000, immutable',p);assert.equal(r.headers.get('Content-Type'),'image/webp');}
   for(const p of ['/','/gallery/','/gallery-images/a.jpg','/missing/'])assert.notEqual((await worker.fetch(new Request('https://tjm.art'+p),env)).headers.get('Cache-Control'),'public, max-age=31536000, immutable',p);
 });
+test('renamed product pages: one-hop 301 from the legacy domain, _redirects on tjm.art, no stale catalog ids',async()=>{
+  const {PRODUCT_RENAMES,renamedProductPath}=await import('../worker/product-renames.mjs');
+  const fs=await import('node:fs');
+  const products=JSON.parse(fs.readFileSync('catalog/products.json','utf8'));
+  const prints=JSON.parse(fs.readFileSync('catalog/prints.json','utf8')).artworks;
+  const checkoutSlugs=fs.readFileSync('cloudflare/wrangler.jsonc','utf8');
+  const redirects=fs.readFileSync('static/_redirects','utf8');
+  const ids=new Set(products.map(p=>p.id));
+  assert.ok(Object.keys(PRODUCT_RENAMES).length>0);
+  for(const [old,next] of Object.entries(PRODUCT_RENAMES)){
+    assert.ok(ids.has(next),`${next} is a product`);
+    assert.ok(!ids.has(old),`${old} no longer a product id`);
+    assert.ok(!Object.hasOwn(PRODUCT_RENAMES,next),'no redirect chains');
+    // Hash-bound print records and live checkout identities keep their slugs.
+    assert.ok(!Object.hasOwn(prints,old)&&!checkoutSlugs.includes(old),`${old} must not be print- or checkout-bound`);
+    for(const path of [`/products/${old}/`,`/products/${old}`])
+      assert.ok(redirects.includes(`${path} /products/${next}/ 301\n`),path);
+    assert.deepEqual(loc(`https://vermillionaurora.com/products/${old}/?ref=ig`,on),[301,`https://tjm.art/products/${next}/?ref=ig`]);
+    assert.deepEqual(loc(`https://www.vermillionaurora.com/products/${old}`,on),[301,`https://tjm.art/products/${next}/`]);
+    assert.equal(renamedProductPath(`/products/${old}/extra/`),`/products/${old}/extra/`);
+  }
+  assert.deepEqual(loc('https://vermillionaurora.com/products/painting-shoreline-at-dusk/',on),[301,'https://tjm.art/products/painting-shoreline-at-dusk/']);
+});
+test('every Nostr scheduled-post product link resolves to a live product page',async()=>{
+  const fs=await import('node:fs');
+  const {posts}=await import('../nostr-publisher/src/posts.mjs');
+  const slugs=new Set(JSON.parse(fs.readFileSync('catalog/products.json','utf8')).map(p=>p.slug));
+  for(const post of posts){
+    const slug=post.productUrl.match(/^\/products\/([a-z0-9-]+)\/$/)?.[1];
+    if(slug)assert.ok(slugs.has(slug),`${post.id} links to ${post.productUrl}`);
+  }
+});
