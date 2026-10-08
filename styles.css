@@ -806,3 +806,9 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 .service-size select { font:inherit; font-size:.95rem; letter-spacing:0; text-transform:none; color:var(--ink, #1d1a17); padding:.65rem .8rem; border:1px solid var(--line, rgba(25,19,15,.14)); border-radius:10px; background:#fffaf4; }
 .portrait-preview-group { margin:0 0 14px; }
 .portrait-preview-group figcaption { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted, #5e554d); margin:0 0 6px; }
+
+/* One-line invitation to the testimonials page (homepage collectors section, About). */
+.testimonial-cta { margin: 1.25rem 0 0; text-align: center; font-size: 1rem; }
+.testimonial-cta a { color: var(--accent-dark, #5c2d21); font-weight: 600; text-decoration: underline; text-underline-offset: 0.2em; }
+.testimonial-cta a:hover { color: var(--cta-hover, #b83518); }
+.testimonial-cta a:focus-visible { outline: 3px solid var(--cta, #d34220); outline-offset: 3px; }

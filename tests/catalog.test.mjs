@@ -24,6 +24,10 @@ test('gallery rows and shared cards use the catalog and preserve collection orde
   assert.ok($('.painting-discovery-actions a.button[href="/gallery/"]').length);
   assert.equal($('#gallery h2').text(),'Featured works');
   assert.equal($('#collectors-items h2').text(),'Collector’s Items');
+  // Testimonials are discoverable: main nav (after Commissions) and a CTA under the collectors carousel.
+  const nav=$('.main-nav a').map((i,e)=>$(e).attr('href')).get();
+  assert.equal(nav[nav.indexOf('/commissions/')+1],'/testimonials/');
+  assert.equal($('#collectors-items .testimonial-cta a[href="/testimonials/"]').length,1);
  }else{
   const scope=({gallery:'.painting-list',paul:'.exhibition-grid',chase:'.collaboration-grid',gavin:'.film-collaboration-gallery'})[key];
   assert.deepEqual($(`${scope} [data-product-id]`).map((i,e)=>$(e).attr('data-product-id')).get(),expected);
