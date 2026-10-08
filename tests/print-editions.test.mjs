@@ -36,8 +36,8 @@ test('all 38 paintings have 112 image-proportional, uncropped, 300-DPI layouts',
   }
   assert.equal(count,112);
 });
-test('#55 has one resolution-limited size without inventing original dimensions',()=>{
-  const p=paintings.find(p=>p.id.endsWith('-55'));assert.equal(p.dimensions,null);
+test('#55 keeps one resolution-limited size now that its 12 × 10 in original is measured',()=>{
+  const p=paintings.find(p=>p.id.endsWith('-55'));assert.deepEqual(p.dimensions,{width:12,height:10,unit:'in'});
   const options=printOptions(p,config,papers);assert.equal(options.length,1);
   assert.deepEqual(options[0].paper,{width:4.76,height:4.52,unit:'in',provider:'finerworks',paper:'watercolor-bright-white',sku:'5M144M8S4.76X4.52'});
   assert(Math.abs(options[0].image.width-4.5)<.02);assert(Math.abs(options[0].image.height-4.27)<.02);
