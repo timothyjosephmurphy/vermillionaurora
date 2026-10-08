@@ -18,7 +18,17 @@ let mails=[];
 test.beforeEach(()=>{mails=[];issued.length=0;globalThis.fetch=async(url,init={})=>{const u=new URL(url);
   if(u.hostname==='oauth2.googleapis.com')return Response.json({access_token:'T'});
   if(u.hostname==='gmail.googleapis.com'){mails.push(JSON.parse(init.body));return Response.json({id:'m'});}
-  if(u.hostname==='nominatim.openstreetmap.org'){assert.equal(u.searchParams.get('q'),'Tacoma, WA');return Response.json([{lat:'47.2455013',lon:'-122.438329',display_name:'Tacoma, Pierce County, Washington, United States'}]);}
+  if(u.hostname==='nominatim.openstreetmap.org'){
+    const q=u.searchParams.get('q');
+    const hits={
+      'Tacoma, WA':{lat:'47.2455013',lon:'-122.438329',display_name:'Tacoma, Pierce County, Washington, United States'},
+      'Tacoma, WA, USA':{lat:'47.2455013',lon:'-122.438329',display_name:'Tacoma, Pierce County, Washington, United States'},
+      'Warsaw, Poland':{lat:'52.2297',lon:'21.0122',display_name:'Warsaw, Masovian Voivodeship, Poland'},
+      'Seattle, WA, USA':{lat:'47.6062',lon:'-122.3321',display_name:'Seattle, King County, Washington, United States'},
+    };
+    if(!hits[q]) return Response.json([]);
+    return Response.json([hits[q]]);
+  }
   throw Error('unexpected fetch '+url);};});
 const form=(fields={},photos=[])=>{const f=new FormData();for(const [k,v] of Object.entries({name:'Jane D.',email:'jane@example.com',quote:'It makes our kitchen glow.',city:'Tacoma, WA',paintingSlug:'painting-emergence',painting:'Emergence',publishNotice:'2026-10-08b',...fields}))if(v!=null)f.set(k,v);photos.forEach(([bytes,name,type])=>f.append('photos',new File([bytes],name,{type})));return f;};
 const submit=(env,body,headers={})=>testimonialsApi(new Request('https://tjm.art/testimonials/api/submit',{method:'POST',body,headers:{Origin:'https://tjm.art','CF-Connecting-IP':'203.0.113.9',Accept:'application/json',...headers}}),env,null,now);
@@ -173,6 +183,29 @@ test('name is optional: shown publicly as “A collector” (with city), TJ can 
   await owner(env,{action:'approve',id:named.id,name:''});
   assert.deepEqual((await approved(env)).map(t=>t.name).sort(),['A collector','A collector']);
 });
+
+test('geocode accepts city+state, city+state+country, and city+country without a state', async () => {
+  const env = setup();
+  const cases = [['Tacoma, WA', 47.25, '203.0.113.21'], ['Tacoma, WA, USA', 47.25, '203.0.113.22'], ['Warsaw, Poland', 52.23, '203.0.113.23']];
+  for (const [city, expectLat, ip] of cases) {
+    const r = await submit(env, form({city, email: '', name: 'Collector'}), {'CF-Connecting-IP': ip});
+    assert.equal(r.status, 200, city);
+    const {id} = await r.json();
+    const rec = JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/' + id + '.json').value);
+    assert.equal(rec.city, city);
+    assert.equal(rec.geo.lat, expectLat);
+    assert.ok(rec.city.length <= 100);
+  }
+  // Max length still 100 (server oneLine truncates).
+  const long = 'A'.repeat(120);
+  const r = await submit(env, form({city: long, email: ''}), {'CF-Connecting-IP': '203.0.113.99'});
+  assert.equal(r.status, 200);
+  const {id} = await r.json();
+  const rec = JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/' + id + '.json').value);
+  assert.equal(rec.city.length, 100);
+  // Long nonsense city will not match nominatim mock — geo may be null; still accepted.
+});
+
 
 test('email is optional: approval publishes but issues no code and sends nothing; code actions refuse; bad email still rejected',async()=>{
   const env=setup();
