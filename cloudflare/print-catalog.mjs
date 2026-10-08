@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="59df016cda486fc9238e";
+export const printVersion="420c39847f104b080a95";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -1306,8 +1306,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Large print",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Large print",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "55.00",
     "currency": "USD",
     "sku": "5M144M8S14.1X9.37",
@@ -1331,8 +1331,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1344,8 +1344,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Large print — Black frame",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Large print — Black frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "112.00",
     "currency": "USD",
     "sku": "5M144M8S14DD1X9DD37F1S17DD1X12DD37J1S14DD1X9DD37G1",
@@ -1369,8 +1369,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1418,8 +1418,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Large print — White frame",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Large print — White frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "112.00",
     "currency": "USD",
     "sku": "5M144M8S14DD1X9DD37F2S17DD1X12DD37J1S14DD1X9DD37G1",
@@ -1443,8 +1443,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1492,8 +1492,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Large print — Natural wood frame",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Large print — Natural wood frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "124.00",
     "currency": "USD",
     "sku": "5M144M8S14DD1X9DD37F7S17DD1X12DD37J1S14DD1X9DD37G1",
@@ -1517,8 +1517,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1566,8 +1566,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Medium print",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Medium print",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S10.64X7.09",
@@ -1591,8 +1591,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1604,8 +1604,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Medium print — Black frame",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Medium print — Black frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "78.00",
     "currency": "USD",
     "sku": "5M144M8S10DD64X7DD09F1S13DD64X10DD09J1S10DD64X7DD09G1",
@@ -1629,8 +1629,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1678,8 +1678,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Medium print — White frame",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Medium print — White frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "78.00",
     "currency": "USD",
     "sku": "5M144M8S10DD64X7DD09F2S13DD64X10DD09J1S10DD64X7DD09G1",
@@ -1703,8 +1703,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1752,8 +1752,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Medium print — Natural wood frame",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Medium print — Natural wood frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "89.00",
     "currency": "USD",
     "sku": "5M144M8S10DD64X7DD09F7S13DD64X10DD09J1S10DD64X7DD09G1",
@@ -1777,8 +1777,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1826,8 +1826,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Small print",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Small print",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S7.17X4.81",
@@ -1851,8 +1851,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1864,8 +1864,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Small print — Black frame",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Small print — Black frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "60.63",
     "currency": "USD",
     "sku": "5M144M8S7DD17X4DD81F1S10DD37X8DD01J1S7DD17X4DD81G1",
@@ -1889,8 +1889,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -1938,8 +1938,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Small print — White frame",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Small print — White frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "60.63",
     "currency": "USD",
     "sku": "5M144M8S7DD17X4DD81F2S10DD37X8DD01J1S7DD17X4DD81G1",
@@ -1963,8 +1963,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2012,8 +2012,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-couple-in-color",
-    "title": "Aunt Fran and Hillary — Small print — Natural wood frame",
-    "artworkTitle": "Aunt Fran and Hillary",
+    "title": "Aunt Fran and Cousin Hillary — Small print — Natural wood frame",
+    "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "68.63",
     "currency": "USD",
     "sku": "5M144M8S7DD17X4DD81F7S10DD37X8DD01J1S7DD17X4DD81G1",
@@ -2037,8 +2037,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/couple-in-color.jpg",
-      "alt": "Aunt Fran and Hillary by TJ Murphy",
-      "caption": "Aunt Fran and Hillary"
+      "alt": "Aunt Fran and Cousin Hillary by TJ Murphy",
+      "caption": "Aunt Fran and Cousin Hillary"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2086,8 +2086,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-festival-portrait",
-    "title": "Wonder — Large print",
-    "artworkTitle": "Wonder",
+    "title": "The Bounty of Satoshi: Wonder — Large print",
+    "artworkTitle": "The Bounty of Satoshi: Wonder",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S4.46X8.82",
@@ -2111,8 +2111,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/festival-portrait.jpg",
-      "alt": "Wonder by TJ Murphy",
-      "caption": "Wonder"
+      "alt": "The Bounty of Satoshi: Wonder by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Wonder"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2124,8 +2124,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-festival-portrait",
-    "title": "Wonder — Large print — Black frame",
-    "artworkTitle": "Wonder",
+    "title": "The Bounty of Satoshi: Wonder — Large print — Black frame",
+    "artworkTitle": "The Bounty of Satoshi: Wonder",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S4DD46X8DD82F1S8X12DD36J1S4DD46X8DD82G1",
@@ -2149,8 +2149,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/festival-portrait.jpg",
-      "alt": "Wonder by TJ Murphy",
-      "caption": "Wonder"
+      "alt": "The Bounty of Satoshi: Wonder by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Wonder"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2198,8 +2198,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-festival-portrait",
-    "title": "Wonder — Large print — White frame",
-    "artworkTitle": "Wonder",
+    "title": "The Bounty of Satoshi: Wonder — Large print — White frame",
+    "artworkTitle": "The Bounty of Satoshi: Wonder",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S4DD46X8DD82F2S8X12DD36J1S4DD46X8DD82G1",
@@ -2223,8 +2223,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/festival-portrait.jpg",
-      "alt": "Wonder by TJ Murphy",
-      "caption": "Wonder"
+      "alt": "The Bounty of Satoshi: Wonder by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Wonder"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2272,8 +2272,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-festival-portrait",
-    "title": "Wonder — Large print — Natural wood frame",
-    "artworkTitle": "Wonder",
+    "title": "The Bounty of Satoshi: Wonder — Large print — Natural wood frame",
+    "artworkTitle": "The Bounty of Satoshi: Wonder",
     "amount": "76.63",
     "currency": "USD",
     "sku": "5M144M8S4DD46X8DD82F7S8X12DD36J1S4DD46X8DD82G1",
@@ -2297,8 +2297,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/festival-portrait.jpg",
-      "alt": "Wonder by TJ Murphy",
-      "caption": "Wonder"
+      "alt": "The Bounty of Satoshi: Wonder by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Wonder"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2606,8 +2606,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-golden-coast",
-    "title": "Sunset in Puget Sound from San Juan Island — Large print",
-    "artworkTitle": "Sunset in Puget Sound from San Juan Island",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S5.18X9.46",
@@ -2631,8 +2631,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/golden-coast.jpg",
-      "alt": "Sunset in Puget Sound from San Juan Island by TJ Murphy",
-      "caption": "Sunset in Puget Sound from San Juan Island"
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1 by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Patos Island 1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2644,8 +2644,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-golden-coast",
-    "title": "Sunset in Puget Sound from San Juan Island — Large print — Black frame",
-    "artworkTitle": "Sunset in Puget Sound from San Juan Island",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print — Black frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD18X9DD46F1S8DD18X12DD46J1S5DD18X9DD46G1",
@@ -2669,8 +2669,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/golden-coast.jpg",
-      "alt": "Sunset in Puget Sound from San Juan Island by TJ Murphy",
-      "caption": "Sunset in Puget Sound from San Juan Island"
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1 by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Patos Island 1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2718,8 +2718,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-golden-coast",
-    "title": "Sunset in Puget Sound from San Juan Island — Large print — White frame",
-    "artworkTitle": "Sunset in Puget Sound from San Juan Island",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print — White frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD18X9DD46F2S8DD18X12DD46J1S5DD18X9DD46G1",
@@ -2743,8 +2743,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/golden-coast.jpg",
-      "alt": "Sunset in Puget Sound from San Juan Island by TJ Murphy",
-      "caption": "Sunset in Puget Sound from San Juan Island"
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1 by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Patos Island 1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2792,8 +2792,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-golden-coast",
-    "title": "Sunset in Puget Sound from San Juan Island — Large print — Natural wood frame",
-    "artworkTitle": "Sunset in Puget Sound from San Juan Island",
+    "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
     "amount": "81.63",
     "currency": "USD",
     "sku": "5M144M8S5DD18X9DD46F7S8DD18X12DD46J1S5DD18X9DD46G1",
@@ -2817,8 +2817,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/golden-coast.jpg",
-      "alt": "Sunset in Puget Sound from San Juan Island by TJ Murphy",
-      "caption": "Sunset in Puget Sound from San Juan Island"
+      "alt": "Sunset in the Strait of Juan de Fuca, Patos Island 1 by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Patos Island 1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2866,8 +2866,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Large print",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Large print",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S9.09X10.4",
@@ -2891,8 +2891,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2904,8 +2904,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Large print — Black frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Large print — Black frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S9DD09X10DD4F1S12DD09X13DD4J1S9DD09X10DD4G1",
@@ -2929,8 +2929,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2978,8 +2978,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Large print — White frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Large print — White frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S9DD09X10DD4F2S12DD09X13DD4J1S9DD09X10DD4G1",
@@ -3003,8 +3003,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3052,8 +3052,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Large print — Natural wood frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Large print — Natural wood frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S9DD09X10DD4F7S12DD09X13DD4J1S9DD09X10DD4G1",
@@ -3077,8 +3077,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3126,8 +3126,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Medium print",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Medium print",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.88X7.86",
@@ -3151,8 +3151,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3164,8 +3164,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Medium print — Black frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Medium print — Black frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S6DD88X7DD86F1S9DD88X10DD86J1S6DD88X7DD86G1",
@@ -3189,8 +3189,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3238,8 +3238,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Medium print — White frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Medium print — White frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S6DD88X7DD86F2S9DD88X10DD86J1S6DD88X7DD86G1",
@@ -3263,8 +3263,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3312,8 +3312,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Medium print — Natural wood frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Medium print — Natural wood frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "71.63",
     "currency": "USD",
     "sku": "5M144M8S6DD88X7DD86F7S9DD88X10DD86J1S6DD88X7DD86G1",
@@ -3337,8 +3337,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3386,8 +3386,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Small print",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Small print",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S4.67X5.32",
@@ -3411,8 +3411,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3424,8 +3424,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Small print — Black frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Small print — Black frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "58.63",
     "currency": "USD",
     "sku": "5M144M8S4DD67X5DD32F1S8DD01X8DD66J1S4DD67X5DD32G1",
@@ -3449,8 +3449,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3498,8 +3498,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Small print — White frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Small print — White frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "58.63",
     "currency": "USD",
     "sku": "5M144M8S4DD67X5DD32F2S8DD01X8DD66J1S4DD67X5DD32G1",
@@ -3523,8 +3523,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3572,8 +3572,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Malone — Small print — Natural wood frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Small print — Natural wood frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S4DD67X5DD32F7S8DD01X8DD66J1S4DD67X5DD32G1",
@@ -3597,8 +3597,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Malone by TJ Murphy",
-      "caption": "Malone"
+      "alt": "Girl Tuning Guitar by TJ Murphy",
+      "caption": "Girl Tuning Guitar"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3646,8 +3646,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-phoenix-rising",
-    "title": "Achievement — Large print",
-    "artworkTitle": "Achievement",
+    "title": "The Bounty of Satoshi: Achievement — Large print",
+    "artworkTitle": "The Bounty of Satoshi: Achievement",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S4.37X8.72",
@@ -3671,8 +3671,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/phoenix-rising.jpg",
-      "alt": "Achievement by TJ Murphy",
-      "caption": "Achievement"
+      "alt": "The Bounty of Satoshi: Achievement by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Achievement"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3684,8 +3684,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-phoenix-rising",
-    "title": "Achievement — Large print — Black frame",
-    "artworkTitle": "Achievement",
+    "title": "The Bounty of Satoshi: Achievement — Large print — Black frame",
+    "artworkTitle": "The Bounty of Satoshi: Achievement",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S4DD37X8DD72F1S8DD01X12DD36J1S4DD37X8DD72G1",
@@ -3709,8 +3709,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/phoenix-rising.jpg",
-      "alt": "Achievement by TJ Murphy",
-      "caption": "Achievement"
+      "alt": "The Bounty of Satoshi: Achievement by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Achievement"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3758,8 +3758,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-phoenix-rising",
-    "title": "Achievement — Large print — White frame",
-    "artworkTitle": "Achievement",
+    "title": "The Bounty of Satoshi: Achievement — Large print — White frame",
+    "artworkTitle": "The Bounty of Satoshi: Achievement",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S4DD37X8DD72F2S8DD01X12DD36J1S4DD37X8DD72G1",
@@ -3783,8 +3783,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/phoenix-rising.jpg",
-      "alt": "Achievement by TJ Murphy",
-      "caption": "Achievement"
+      "alt": "The Bounty of Satoshi: Achievement by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Achievement"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3832,8 +3832,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-phoenix-rising",
-    "title": "Achievement — Large print — Natural wood frame",
-    "artworkTitle": "Achievement",
+    "title": "The Bounty of Satoshi: Achievement — Large print — Natural wood frame",
+    "artworkTitle": "The Bounty of Satoshi: Achievement",
     "amount": "76.63",
     "currency": "USD",
     "sku": "5M144M8S4DD37X8DD72F7S8DD01X12DD36J1S4DD37X8DD72G1",
@@ -3857,8 +3857,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/phoenix-rising.jpg",
-      "alt": "Achievement by TJ Murphy",
-      "caption": "Achievement"
+      "alt": "The Bounty of Satoshi: Achievement by TJ Murphy",
+      "caption": "The Bounty of Satoshi: Achievement"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3906,8 +3906,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Large print",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Large print",
+    "artworkTitle": "MJ",
     "amount": "70.00",
     "currency": "USD",
     "sku": "5M144M8S12.25X13.85",
@@ -3931,8 +3931,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3944,8 +3944,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Large print — Black frame",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Large print — Black frame",
+    "artworkTitle": "MJ",
     "amount": "134.00",
     "currency": "USD",
     "sku": "5M144M8S12DD25X13DD85F1S15DD25X16DD85J1S12DD25X13DD85G1",
@@ -3969,8 +3969,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4018,8 +4018,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Large print — White frame",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Large print — White frame",
+    "artworkTitle": "MJ",
     "amount": "134.00",
     "currency": "USD",
     "sku": "5M144M8S12DD25X13DD85F2S15DD25X16DD85J1S12DD25X13DD85G1",
@@ -4043,8 +4043,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4092,8 +4092,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Large print — Natural wood frame",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Large print — Natural wood frame",
+    "artworkTitle": "MJ",
     "amount": "148.00",
     "currency": "USD",
     "sku": "5M144M8S12DD25X13DD85F7S15DD25X16DD85J1S12DD25X13DD85G1",
@@ -4117,8 +4117,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4166,8 +4166,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Medium print",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Medium print",
+    "artworkTitle": "MJ",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S9.25X10.45",
@@ -4191,8 +4191,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4204,8 +4204,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Medium print — Black frame",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Medium print — Black frame",
+    "artworkTitle": "MJ",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S9DD25X10DD45F1S12DD25X13DD45J1S9DD25X10DD45G1",
@@ -4229,8 +4229,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4278,8 +4278,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Medium print — White frame",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Medium print — White frame",
+    "artworkTitle": "MJ",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S9DD25X10DD45F2S12DD25X13DD45J1S9DD25X10DD45G1",
@@ -4303,8 +4303,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4352,8 +4352,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Medium print — Natural wood frame",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Medium print — Natural wood frame",
+    "artworkTitle": "MJ",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S9DD25X10DD45F7S12DD25X13DD45J1S9DD25X10DD45G1",
@@ -4377,8 +4377,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4426,8 +4426,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Small print",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Small print",
+    "artworkTitle": "MJ",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.25X7.05",
@@ -4451,8 +4451,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4464,8 +4464,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Small print — Black frame",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Small print — Black frame",
+    "artworkTitle": "MJ",
     "amount": "61.63",
     "currency": "USD",
     "sku": "5M144M8S6DD25X7DD05F1S9DD25X10DD05J1S6DD25X7DD05G1",
@@ -4489,8 +4489,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4538,8 +4538,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Small print — White frame",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Small print — White frame",
+    "artworkTitle": "MJ",
     "amount": "61.63",
     "currency": "USD",
     "sku": "5M144M8S6DD25X7DD05F2S9DD25X10DD05J1S6DD25X7DD05G1",
@@ -4563,8 +4563,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -4612,8 +4612,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-in-blue-light",
-    "title": "MJ Spinning at Chalet — Small print — Natural wood frame",
-    "artworkTitle": "MJ Spinning at Chalet",
+    "title": "MJ — Small print — Natural wood frame",
+    "artworkTitle": "MJ",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD25X7DD05F7S9DD25X10DD05J1S6DD25X7DD05G1",
@@ -4637,8 +4637,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-in-blue-light.jpg",
-      "alt": "MJ Spinning at Chalet by TJ Murphy",
-      "caption": "MJ Spinning at Chalet"
+      "alt": "MJ by TJ Murphy",
+      "caption": "MJ"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -6506,8 +6506,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Large print",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Large print",
+    "artworkTitle": "Father Paul",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S10.92X18.92",
@@ -6531,8 +6531,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -6544,8 +6544,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Large print — Black frame",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Large print — Black frame",
+    "artworkTitle": "Father Paul",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S10DD92X18DD92F1S13DD92X21DD92J1S10DD92X18DD92G1",
@@ -6569,8 +6569,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -6618,8 +6618,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Large print — White frame",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Large print — White frame",
+    "artworkTitle": "Father Paul",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S10DD92X18DD92F2S13DD92X21DD92J1S10DD92X18DD92G1",
@@ -6643,8 +6643,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -6692,8 +6692,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Large print — Natural wood frame",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Large print — Natural wood frame",
+    "artworkTitle": "Father Paul",
     "amount": "174.00",
     "currency": "USD",
     "sku": "5M144M8S10DD92X18DD92F7S13DD92X21DD92J1S10DD92X18DD92G1",
@@ -6717,8 +6717,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -6766,8 +6766,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Medium print",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Medium print",
+    "artworkTitle": "Father Paul",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S8.25X14.25",
@@ -6791,8 +6791,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -6804,8 +6804,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Medium print — Black frame",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Medium print — Black frame",
+    "artworkTitle": "Father Paul",
     "amount": "104.00",
     "currency": "USD",
     "sku": "5M144M8S8DD25X14DD25F1S11DD25X17DD25J1S8DD25X14DD25G1",
@@ -6829,8 +6829,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -6878,8 +6878,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Medium print — White frame",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Medium print — White frame",
+    "artworkTitle": "Father Paul",
     "amount": "104.00",
     "currency": "USD",
     "sku": "5M144M8S8DD25X14DD25F2S11DD25X17DD25J1S8DD25X14DD25G1",
@@ -6903,8 +6903,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -6952,8 +6952,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Medium print — Natural wood frame",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Medium print — Natural wood frame",
+    "artworkTitle": "Father Paul",
     "amount": "116.00",
     "currency": "USD",
     "sku": "5M144M8S8DD25X14DD25F7S11DD25X17DD25J1S8DD25X14DD25G1",
@@ -6977,8 +6977,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7026,8 +7026,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Small print",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Small print",
+    "artworkTitle": "Father Paul",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S5.58X9.58",
@@ -7051,8 +7051,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7064,8 +7064,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Small print — Black frame",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Small print — Black frame",
+    "artworkTitle": "Father Paul",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD58X9DD58F1S8DD58X12DD58J1S5DD58X9DD58G1",
@@ -7089,8 +7089,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7138,8 +7138,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Small print — White frame",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Small print — White frame",
+    "artworkTitle": "Father Paul",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD58X9DD58F2S8DD58X12DD58J1S5DD58X9DD58G1",
@@ -7163,8 +7163,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7212,8 +7212,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-scarf",
-    "title": "Paul Murphy: my Dad — Small print — Natural wood frame",
-    "artworkTitle": "Paul Murphy: my Dad",
+    "title": "Father Paul — Small print — Natural wood frame",
+    "artworkTitle": "Father Paul",
     "amount": "82.63",
     "currency": "USD",
     "sku": "5M144M8S5DD58X9DD58F7S8DD58X12DD58J1S5DD58X9DD58G1",
@@ -7237,8 +7237,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Paul Murphy: my Dad by TJ Murphy",
-      "caption": "Paul Murphy: my Dad"
+      "alt": "Father Paul by TJ Murphy",
+      "caption": "Father Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7286,8 +7286,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei — Large print",
-    "artworkTitle": "Maui Sunset from Kihei",
+    "title": "Hawaii — Large print",
+    "artworkTitle": "Hawaii",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S6.67X12.77",
@@ -7311,8 +7311,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy",
-      "caption": "Maui Sunset from Kihei"
+      "alt": "Hawaii by TJ Murphy",
+      "caption": "Hawaii"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7324,8 +7324,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei — Large print — Black frame",
-    "artworkTitle": "Maui Sunset from Kihei",
+    "title": "Hawaii — Large print — Black frame",
+    "artworkTitle": "Hawaii",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD77F1S9DD67X15DD77J1S6DD67X12DD77G1",
@@ -7349,8 +7349,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy",
-      "caption": "Maui Sunset from Kihei"
+      "alt": "Hawaii by TJ Murphy",
+      "caption": "Hawaii"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7398,8 +7398,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei — Large print — White frame",
-    "artworkTitle": "Maui Sunset from Kihei",
+    "title": "Hawaii — Large print — White frame",
+    "artworkTitle": "Hawaii",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD77F2S9DD67X15DD77J1S6DD67X12DD77G1",
@@ -7423,8 +7423,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy",
-      "caption": "Maui Sunset from Kihei"
+      "alt": "Hawaii by TJ Murphy",
+      "caption": "Hawaii"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7472,8 +7472,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei — Large print — Natural wood frame",
-    "artworkTitle": "Maui Sunset from Kihei",
+    "title": "Hawaii — Large print — Natural wood frame",
+    "artworkTitle": "Hawaii",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD77F7S9DD67X15DD77J1S6DD67X12DD77G1",
@@ -7497,8 +7497,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy",
-      "caption": "Maui Sunset from Kihei"
+      "alt": "Hawaii by TJ Murphy",
+      "caption": "Hawaii"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7546,8 +7546,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei — Medium print",
-    "artworkTitle": "Maui Sunset from Kihei",
+    "title": "Hawaii — Medium print",
+    "artworkTitle": "Hawaii",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S5.07X9.64",
@@ -7571,8 +7571,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy",
-      "caption": "Maui Sunset from Kihei"
+      "alt": "Hawaii by TJ Murphy",
+      "caption": "Hawaii"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7584,8 +7584,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei — Medium print — Black frame",
-    "artworkTitle": "Maui Sunset from Kihei",
+    "title": "Hawaii — Medium print — Black frame",
+    "artworkTitle": "Hawaii",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD07X9DD64F1S8DD07X12DD64J1S5DD07X9DD64G1",
@@ -7609,8 +7609,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy",
-      "caption": "Maui Sunset from Kihei"
+      "alt": "Hawaii by TJ Murphy",
+      "caption": "Hawaii"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7658,8 +7658,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei — Medium print — White frame",
-    "artworkTitle": "Maui Sunset from Kihei",
+    "title": "Hawaii — Medium print — White frame",
+    "artworkTitle": "Hawaii",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD07X9DD64F2S8DD07X12DD64J1S5DD07X9DD64G1",
@@ -7683,8 +7683,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy",
-      "caption": "Maui Sunset from Kihei"
+      "alt": "Hawaii by TJ Murphy",
+      "caption": "Hawaii"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -7732,8 +7732,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei — Medium print — Natural wood frame",
-    "artworkTitle": "Maui Sunset from Kihei",
+    "title": "Hawaii — Medium print — Natural wood frame",
+    "artworkTitle": "Hawaii",
     "amount": "81.63",
     "currency": "USD",
     "sku": "5M144M8S5DD07X9DD64F7S8DD07X12DD64J1S5DD07X9DD64G1",
@@ -7757,8 +7757,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy",
-      "caption": "Maui Sunset from Kihei"
+      "alt": "Hawaii by TJ Murphy",
+      "caption": "Hawaii"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -56166,8 +56166,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Large print",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Large print",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S9.09X10.4",
@@ -56191,7 +56191,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56204,8 +56204,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Large print — Black frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Large print — Black frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S9DD09X10DD4F1S12DD09X13DD4J1S9DD09X10DD4G1",
@@ -56229,7 +56229,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56278,8 +56278,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Large print — White frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Large print — White frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S9DD09X10DD4F2S12DD09X13DD4J1S9DD09X10DD4G1",
@@ -56303,7 +56303,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56352,8 +56352,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Large print — Natural wood frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Large print — Natural wood frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S9DD09X10DD4F7S12DD09X13DD4J1S9DD09X10DD4G1",
@@ -56377,7 +56377,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56426,8 +56426,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Medium print",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Medium print",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.88X7.86",
@@ -56451,7 +56451,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56464,8 +56464,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Medium print — Black frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Medium print — Black frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S6DD88X7DD86F1S9DD88X10DD86J1S6DD88X7DD86G1",
@@ -56489,7 +56489,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56538,8 +56538,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Medium print — White frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Medium print — White frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S6DD88X7DD86F2S9DD88X10DD86J1S6DD88X7DD86G1",
@@ -56563,7 +56563,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56612,8 +56612,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Medium print — Natural wood frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Medium print — Natural wood frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "71.63",
     "currency": "USD",
     "sku": "5M144M8S6DD88X7DD86F7S9DD88X10DD86J1S6DD88X7DD86G1",
@@ -56637,7 +56637,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56686,8 +56686,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Small print",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Small print",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S4.67X5.32",
@@ -56711,7 +56711,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56724,8 +56724,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Small print — Black frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Small print — Black frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "58.63",
     "currency": "USD",
     "sku": "5M144M8S4DD67X5DD32F1S8DD01X8DD66J1S4DD67X5DD32G1",
@@ -56749,7 +56749,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56798,8 +56798,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Small print — White frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Small print — White frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "58.63",
     "currency": "USD",
     "sku": "5M144M8S4DD67X5DD32F2S8DD01X8DD66J1S4DD67X5DD32G1",
@@ -56823,7 +56823,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},
@@ -56872,8 +56872,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-1708a7dca996aca40e6c",
-    "title": "Malone — Small print — Natural wood frame",
-    "artworkTitle": "Malone",
+    "title": "Girl Tuning Guitar — Small print — Natural wood frame",
+    "artworkTitle": "Girl Tuning Guitar",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S4DD67X5DD32F7S8DD01X8DD66J1S4DD67X5DD32G1",
@@ -56897,7 +56897,7 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp",
-      "alt": "Malone",
+      "alt": "Girl Tuning Guitar",
       "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.jpg"
     },
     "attributes": {},

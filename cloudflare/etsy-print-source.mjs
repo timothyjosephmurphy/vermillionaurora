@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="59df016cda486fc9238e";
+export const sourcePrintVersion="420c39847f104b080a95";
 export default [
   {
     "id": "warszawska-syrenka",
@@ -362,7 +362,7 @@ export default [
   },
   {
     "id": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei",
+    "title": "Hawaii",
     "artist": "TJ Murphy",
     "year": 2022,
     "medium": "Watercolor pastel",
@@ -377,7 +377,7 @@ export default [
     ],
     "image": {
       "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Maui Sunset from Kihei by TJ Murphy"
+      "alt": "Hawaii by TJ Murphy"
     },
     "variants": [
       {
