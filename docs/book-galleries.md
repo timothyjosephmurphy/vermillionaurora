@@ -37,3 +37,11 @@ Do not publish before the 441 R2 objects are uploaded and verified. Run 36941307
 Do not expand book-gallery availability into original sales without mapping it to the existing original inventory record and confirming actual availability.
 
 The retry after the build-token permission update was also denied (run 36941641565, prepare job 110639160869). Upload credentials are now separate from production credentials: create a token with Workers Admin in the site account and save it as the repository Actions secret `CLOUDFLARE_BOOK_MEDIA_API_TOKEN`. Upload is explicitly triggered by workflow dispatch or a preparation-branch workflow change whose commit message includes `[upload-book-media]`.
+
+## Corrected display photos
+
+Some book images are phone photos of a painting on a desk. `catalog/book-photo-corrections.json` lists perspective corrections for them: the four paper corners in the native PDF image, the upright size, and the crop to the paper (white margin kept, no background). `python scripts/book_photo_corrections.py .cache/book-sources OUT` reproduces the committed JPEG (quality 96, 4:4:4) and WebP (≤1000 px, quality 85) with Pillow 12.3.0. They get new immutable keys (`<key>-paper.jpg/.webp`); the original extracted objects stay in R2 untouched. `prepare-book-catalog.py` points the artwork's `masterUrl`/`previewUrl` and product image (with width/height) at the corrected files, while `masterSha256`/`widthPx`/`heightPx` keep describing the extracted book image. Corrected photos are display-only: print preparation refuses a corrected artwork that is a print candidate.
+
+Upload: `upload-book-photo-corrections.yml` runs on a push to `codex/book-photo-*` whose commit message includes `[upload-book-photos]` (or by dispatch). It deploys the same bounded uploader limited to `scripts/book-photo-corrections/uploads.json`, verifies the public bytes, and removes the uploader. Upload before the catalog change reaches `release`.
+
+- Nick Szabo @NickSzabo4 (`e4bbfe556c3c847d9c90`, Portraits p. 56): 1024×768 desk photo → 696×709 paper. The photo's top edge clips the top-right of the paper, so the top margin is slightly narrower than the others.
