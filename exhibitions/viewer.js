@@ -11,10 +11,10 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
       const imageLink = node.querySelector('.gallery-product-image, .product-image');
       const background = imageLink && getComputedStyle(imageLink).backgroundImage.match(/url\(["']?(.*?)["']?\)/);
       const src = imageSrc || background?.[1];
-      return src ? {id:node.dataset.productId,node,price:Number(node.dataset.price)||null,area:Number(node.dataset.area)||null,printReady:node.dataset.printReady==='true',src, srcset: imageSrc ? srcset : '', orientedImage, alt: product.textContent, product: product.href, availability: node.dataset.availability} : null;
+      return src ? {id:node.dataset.productId,node,price:Number(node.dataset.price)||null,area:Number(node.dataset.area)||null,printReady:node.dataset.printReady==='true',src, srcset: imageSrc ? srcset : '', orientedImage, alt: product.textContent, product: product.href, availability: node.dataset.availability, caption: node.dataset.caption, printsFrom: node.dataset.printsFrom, buy: node.dataset.buy==='true'} : null;
     }
     const video = node.querySelector('video');
-    return img ? {id:node.dataset.productId,src: imageSrc, srcset, orientedImage, alt: img.dataset.imageAlt || img.alt, caption: node.dataset.caption, product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), caption: video.dataset.caption || '', lazyPreview: video.dataset.previewLazy === 'true', video: true} : null;
+    return img ? {id:node.dataset.productId,src: imageSrc, srcset, orientedImage, alt: img.dataset.imageAlt || img.alt, caption: node.dataset.caption, printsFrom: node.dataset.printsFrom, buy: node.dataset.buy==='true', product: node.dataset.product} : video ? {src: video.querySelector('source')?.src || video.src, alt: video.getAttribute('aria-label'), caption: video.dataset.caption || '', lazyPreview: video.dataset.previewLazy === 'true', video: true} : null;
   }).filter(Boolean);
   if (!items.length) return;
   const allItems = items;
@@ -106,7 +106,9 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
         else { media.alt = item.alt || 'Exhibition image'; media.loading = 'lazy'; media.decoding = 'async'; }
         cell.append(media);
       }
-      if (item.caption && !(item.video && item.lazyPreview)) { const caption = document.createElement('span'); caption.className = 'ev-caption'; caption.textContent = item.caption; cell.append(caption); }
+      if (item.caption && !(item.video && item.lazyPreview)) { const caption = document.createElement('span'); caption.className = 'ev-caption'; const title = document.createElement('span'); title.className = 'ev-caption-title'; title.textContent = item.caption; caption.append(title); if (item.printsFrom) { const prints = document.createElement('span'); prints.className = 'ev-caption-prints'; prints.textContent = item.printsFrom; caption.append(prints); } cell.append(caption); }
+      // Visual cue only: the whole cell is already the link to the painting's page, so Buy is a span, not a nested control.
+      if (item.buy && item.product) { const buy = document.createElement('span'); buy.className = 'ev-buy'; buy.setAttribute('aria-hidden', 'true'); buy.textContent = 'Buy'; cell.append(buy); }
       stage.append(cell);
     });
   }
@@ -262,7 +264,7 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
     applyFilter();
   }
   document.addEventListener('catalog:availability',()=>{
-    allItems.forEach(item=>{if(!item.id)return;const node=[...grid.children].find(node=>node.dataset.productId===item.id);if(node){item.availability=node.dataset.availability;item.caption=node.dataset.caption;}});
+    allItems.forEach(item=>{if(!item.id)return;const node=[...grid.children].find(node=>node.dataset.productId===item.id);if(node){item.availability=node.dataset.availability;item.caption=node.dataset.caption;item.buy=node.dataset.buy==='true';}});
     if(refreshFilter)refreshFilter();else{buildItems();show(index);}
   });
 });

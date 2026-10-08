@@ -143,3 +143,30 @@ test('original purchase buttons say "Buy"; paintings without online checkout sti
   }
  }
 });
+test('painting cards: price without "USD", "Prints from" the cheapest ready print, vermillion Buy cue inside one whole-tile link',async()=>{
+ const {lowestPrintPrice,printsFromLabel,showBuy,dollars}=await import('../src/data/card-commerce.mjs');
+ assert.equal(dollars(25),'$25');assert.equal(dollars(1000),'$1,000');assert.equal(dollars(32.5),'$32.50');
+ assert.equal(priceLabel(byId['painting-lady-in-gold']??products.find(p=>p.title==='Lady in Gold')),'$1,000');
+ const pages=['index.html','gallery/index.html','gallery/available/index.html','exhibitions/paul-murphy/index.html'];
+ let checked=0;
+ for(const path of pages){
+  const $=load(fs.readFileSync(`dist/${path}`,'utf8'));
+  $('[data-caption]').each((i,e)=>assert(!/\bUSD\b/.test($(e).attr('data-caption')),`${path}: ${$(e).attr('data-caption')}`));
+  $('.card-tile, a.ex-photo[data-buy]').each((i,e)=>{
+   const tile=$(e),href=tile.is('a')?tile.attr('href'):tile.find('a').attr('href');
+   const p=products.find(p=>href?.replace(/\/$/,'').endsWith(`/products/${p.slug}`));assert(p,`${path}: card without product link (${href})`);
+   assert.equal(tile.find('a a').length+(tile.is('a')?tile.find('a').length:0),0,`${path}: ${p.id} has nested links`);
+   tile.find('a').each((j,a)=>assert.equal($(a).attr('href'),href,`${path}: ${p.id} links elsewhere`));
+   assert.equal(tile.find('button, input, select').length,0,`${path}: ${p.id}`);
+   assert.equal(tile.find('.card-prints-from').first().text()||tile.attr('data-prints-from')||'',printsFromLabel(p),`${path}: ${p.id}`);
+   assert.equal(tile.attr('data-buy')??String(showBuy(p)),String(showBuy(p)),`${path}: ${p.id}`);
+   if(tile.attr('data-prints-from')!==undefined)assert.equal(tile.attr('data-prints-from'),printsFromLabel(p),`${path}: ${p.id}`);
+   const buy=tile.find('[data-card-buy]');
+   if(buy.length){assert.equal(buy.text(),'Buy');assert.equal(buy.attr('aria-hidden'),'true');assert.equal(buy.attr('hidden')!==undefined,!showBuy(p)&&path!=='gallery/available/index.html',`${path}: ${p.id}`);}
+   checked++;
+  });
+ }
+ assert(checked>100,`checked ${checked} cards`);
+ for(const p of products.filter(p=>p.type==='painting')){const low=lowestPrintPrice(p);if(low!==null)assert(low>0);if(p.listing.status==='available'||low!==null)assert(showBuy(p),p.id);else assert(!showBuy(p),p.id);}
+ const css=fs.readFileSync('styles.css','utf8');assert.match(css,/\.card-buy\{[^}]*background:var\(--cta\)/);
+});

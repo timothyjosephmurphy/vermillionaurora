@@ -28,7 +28,7 @@ try {
  assert.equal(await page.locator('.available-paintings-carousel [data-product-id="painting-moonlit-water"]').count(),0);
  assert.equal(await page.locator('.collector-items-carousel [data-product-id="painting-moonlit-water"]').count(),1);
  assert.equal(await page.locator('.available-paintings-carousel [data-availability="Sold"]').count(),0);
- await page.goto(origin+'/exhibitions/paul-murphy/');await page.waitForFunction(()=>[...document.querySelectorAll('.ev-caption')].some(el=>el.textContent==='Tipi · Sold'));
+ await page.goto(origin+'/exhibitions/paul-murphy/');await page.waitForFunction(()=>[...document.querySelectorAll('.ev-caption-title')].some(el=>el.textContent==='Tipi · Sold'));
  await page.goto(origin+'/gallery/');const card=page.locator('[data-product-id="painting-portrait-in-green"]');await page.waitForFunction(()=>document.querySelector('[data-product-id="painting-portrait-in-green"]').dataset.availability==='Sold');await page.locator('#available-only').check();assert(await card.isHidden());
  assert.equal(await page.locator('.product-grid').count(),0,'Gallery uses a list instead of tiles');
  assert.match(await page.locator('[data-product-id="painting-portrait-in-gold"] .painting-list-dimensions').textContent(),/12 × 15 in/);
