@@ -4,13 +4,14 @@ import { checkoutReadiness } from './checkout-readiness.mjs';
 
 test('production readiness requires authentication and only reads provider configuration',async t=>{
   const env={CHECKOUT_AUDIT_TOKEN:'audit-secret',PAYPAL_MODE:'live',PAYPAL_CHECKOUT_ENABLED:'false',PAYPAL_CLIENT_ID:'client',PAYPAL_CLIENT_SECRET:'paypal-secret',PAYPAL_WEBHOOK_ID:'hook',PAYPAL_MERCHANT_ID:'8DYAVLDCWDESE',STRIPE_SECRET_KEY:'sk_live_fake',SHIPPO_TOKEN:'shippo_live_fake',GITHUB_TOKEN:'github-secret',PAINTING_STOCK:{},SALES_LEDGER:{},SALES_ARCHIVE:{},SHIP_FROM_STREET:'123 private street'};
-  let calls=0,squareCardProcessing=true,squareWebhookEnabled=true,bitcoinInvoiceAllowed=true;
+  let applePayCalls=[],applePayAllowed=true,calls=0,squareCardProcessing=true,squareWebhookEnabled=true,bitcoinInvoiceAllowed=true;
   t.mock.method(globalThis,'fetch',async(url,options)=>{
     calls++;
     if(url.endsWith('/oauth2/token'))return Response.json({access_token:'token'});
     if(url==='https://oauth2.googleapis.com/token')return Response.json({access_token:'gmail-token'});
     if(url==='https://api.goshippo.com/shipments/')return Response.json({object_id:'SHIP1',extra:{insurance:{amount:'200.00',currency:'USD',content:'Original painting: Chase Toole'}},rates:[{object_id:'RATE1',shipment:'SHIP1',provider:'UPS',currency:'USD',amount:'6.50',included_insurance_price:'1.50'}]});
     if(url==='https://api.stripe.com/v1/tax/calculations')return Response.json({id:'taxcalc_live',currency:'usd',amount_total:20650});
+    if(url==='https://connect.squareup.com/v2/apple-pay/domains'){applePayCalls.push({body:JSON.parse(options.body),auth:options.headers.Authorization});return applePayAllowed?Response.json({status:'VERIFIED'}):Response.json({errors:[{category:'AUTHENTICATION_ERROR',code:'INSUFFICIENT_SCOPES',detail:'Missing scope'}]},{status:401});}
     assert.notEqual(options.method,'POST');
     if(url==='https://connect.squareup.com/v2/locations/LOCATION')return Response.json({location:{id:'LOCATION',status:'ACTIVE',currency:'USD',capabilities:squareCardProcessing?['CREDIT_CARD_PROCESSING']:[]}});
     if(url==='https://connect.squareup.com/v2/webhooks/subscriptions?limit=100')return Response.json({subscriptions:[{enabled:squareWebhookEnabled,notification_url:'https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/square/webhook',event_types:['payment.updated']}]});
@@ -59,6 +60,15 @@ test('production readiness requires authentication and only reads provider confi
   assert.equal((await checkoutReadiness(request(),{...square,SQUARE_ACCESS_TOKEN:''})).status,503);
   assert.equal((await checkoutReadiness(request(),{...square,SQUARE_MODE:'sandbox'})).status,503);
   assert.equal((await checkoutReadiness(request(),{...square,SQUARE_APPLICATION_ID:'sandbox-sq0idb-APP'})).status,503);
+  // Apple Pay domain registration: the storefront domain only, with the worker's token; never part of readiness.
+  assert.deepEqual(squareAudit.checks.applePayDomain,{domain:'tjm.art',status:'VERIFIED'});
+  assert.deepEqual(applePayCalls.at(-1),{body:{domain_name:'tjm.art'},auth:'Bearer square-secret'});
+  assert.equal(audit.checks.applePayDomain,undefined);
+  applePayAllowed=false;
+  const applePayDenied=await checkoutReadiness(request(),square);assert.equal(applePayDenied.status,200);
+  const deniedText=await applePayDenied.text();assert.ok(!deniedText.includes('square-secret'));
+  assert.deepEqual(JSON.parse(deniedText).checks.applePayDomain,{domain:'tjm.art',error:'HTTP 401',codes:['AUTHENTICATION_ERROR:INSUFFICIENT_SCOPES'],detail:'Missing scope'});
+  applePayAllowed=true;
   squareCardProcessing=false;assert.equal((await checkoutReadiness(request(),square)).status,503);
   squareCardProcessing=true;squareWebhookEnabled=false;assert.equal((await checkoutReadiness(request(),square)).status,503);
 

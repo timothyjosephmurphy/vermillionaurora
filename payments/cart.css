@@ -23,3 +23,12 @@
 [data-cart-methods] .payment-button-content{display:inline-flex;align-items:center;justify-content:center;gap:.6rem}
 [data-cart-methods] .payment-button-icon{display:block;width:1.15rem;height:1.15rem;flex:0 0 auto}
 .cart-code-toggle{margin:0 0 13px}.cart-code-toggle summary{display:inline-block;cursor:pointer;font-size:.82rem;text-decoration:underline;text-underline-offset:3px;color:var(--ink)}.cart-code-toggle summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.cart-code-toggle[open] summary{margin-bottom:10px}
+/* Express checkout: Apple Pay / Google Pay (shown only when the browser and Square support them). */
+.cart-checkout .cart-wallets{margin:1rem 0 .5rem}
+.cart-checkout .cart-wallets-label{margin:0 0 .5rem;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5c544b}
+.cart-checkout .cart-wallet-buttons{display:grid;gap:.6rem}
+.cart-checkout .cart-wallets.is-disabled{opacity:.55;pointer-events:none}
+.cart-checkout .apple-pay-button{display:block;width:100%;height:48px;padding:0;border:0;border-radius:6px;cursor:pointer;-webkit-appearance:-apple-pay-button;-apple-pay-button-type:buy;-apple-pay-button-style:black}
+.cart-checkout .google-pay-button{width:100%;height:48px;min-height:48px}
+.cart-checkout .cart-wallets-or{display:flex;align-items:center;gap:.75rem;margin:.9rem 0 0;font-size:.85rem;color:#5c544b}
+.cart-checkout .cart-wallets-or::before,.cart-checkout .cart-wallets-or::after{content:"";flex:1;border-top:1px solid #c8c1b6}
