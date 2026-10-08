@@ -16,7 +16,7 @@
   function priceLine(product) {
     const price = product.querySelector('[data-card-price]');
     return ((price && price.parentElement) || product.querySelector('.product-info p')).textContent.trim();
-  };
+  }
   let items = products.map(itemFor);
   let index = Math.max(0, items.findIndex(item => item.href === card.querySelector('a').href));
   let busy = false;
@@ -29,56 +29,84 @@
   card.setAttribute('role', 'region');
   card.setAttribute('aria-roledescription', 'carousel');
   card.setAttribute('aria-label', 'Featured paintings');
+  // Two stacked layers: the outgoing layer keeps the card's size while the incoming layer crossfades in.
   const stage = document.createElement('div');
   stage.className = 'featured-stage';
-  function slide(item) {
-    const panel = document.createElement('article');
-    panel.className = 'featured-slide';
-    const link = document.createElement('a');
-    link.href = item.href;
+  const layers = [0,1].map(() => {
+    const layer = document.createElement('article');
+    layer.className = 'featured-slide';
+    layer.setAttribute('aria-hidden', 'true');
+    const media = document.createElement('a');
+    media.className = 'featured-media';
     const image = document.createElement('img');
-    if (item.srcset) { image.srcset = item.srcset; image.sizes = SLIDE_SIZES; }
-    image.src = item.source;
-    image.alt = item.title;
     image.className = 'featured-painting';
-    link.append(image);
+    image.alt = '';
+    image.sizes = SLIDE_SIZES;
+    media.append(image);
     const meta = document.createElement('div');
     meta.className = 'featured-caption';
     const title = document.createElement('h2');
     const titleLink = document.createElement('a');
-    titleLink.href = item.href;
-    titleLink.textContent = item.title;
     title.append(titleLink);
-    const detail = document.createElement('span');
-    detail.textContent = item.detail;
-    // Same last line as every painting card: "Prints from $X" (or the price line when there are no prints) with the small vermillion Buy pill at its end.
+    const detail = document.createElement('p');
+    detail.className = 'featured-detail';
     const row = document.createElement('p');
     row.className = 'card-buy-row';
-    if (item.printsFrom) {
-      const price = document.createElement('p');
-      price.className = 'featured-detail';
-      price.append(detail);
-      const prints = document.createElement('span');
-      prints.className = 'card-prints-from';
-      prints.textContent = item.printsFrom;
-      row.append(prints);
-      meta.append(title, price, row);
-    } else {
-      detail.className = 'featured-detail';
-      row.append(detail);
-      meta.append(title, row);
-    }
-    if (item.buy) {
-      const buy = document.createElement('span');
-      buy.className = 'card-buy';
-      buy.setAttribute('aria-hidden', 'true');
-      buy.textContent = 'Buy';
-      row.append(buy);
-    }
-    panel.append(link, meta);
-    return panel;
+    const prints = document.createElement('span');
+    prints.className = 'card-prints-from';
+    const priceInRow = document.createElement('span');
+    priceInRow.className = 'featured-detail';
+    const buy = document.createElement('span');
+    buy.className = 'card-buy';
+    buy.setAttribute('aria-hidden', 'true');
+    buy.textContent = 'Buy';
+    buy.hidden = true;
+    row.append(prints, priceInRow, buy);
+    meta.append(title, detail, row);
+    layer.append(media, meta);
+    stage.append(layer);
+    return {layer, media, image, titleLink, detail, prints, priceInRow, buy, row};
+  });
+  let front = 0;
+  function fill(slot, item) {
+    slot.media.href = item.href;
+    slot.titleLink.href = item.href;
+    slot.titleLink.textContent = item.title;
+    slot.image.alt = item.title;
+    if (item.srcset) slot.image.srcset = item.srcset; else slot.image.removeAttribute('srcset');
+    slot.image.src = item.source;
+    // Always the same three blocks (title / price / last row) so caption height never changes between slides.
+    slot.detail.textContent = item.detail;
+    slot.detail.hidden = false;
+    slot.prints.textContent = item.printsFrom || '';
+    slot.prints.hidden = false; // keep the node in flow; empty text still reserves the line via CSS min-height on the row's first child when needed
+    slot.prints.classList.toggle('is-empty', !item.printsFrom);
+    slot.priceInRow.textContent = '';
+    slot.priceInRow.hidden = true;
+    slot.buy.hidden = !item.buy;
   }
-  stage.append(slide(items[index]));
+  function showFront() {
+    layers.forEach((slot, i) => {
+      slot.layer.classList.toggle('featured-front', i === front);
+      slot.layer.classList.toggle('featured-back', i !== front);
+      slot.layer.setAttribute('aria-hidden', i === front ? 'false' : 'true');
+      slot.layer.inert = i !== front;
+    });
+  }
+  async function decodeImage(img) {
+    try {
+      if (typeof img.decode === 'function') await img.decode();
+      else if (!img.complete) await new Promise(resolve => { img.addEventListener('load', resolve, {once:true}); img.addEventListener('error', resolve, {once:true}); });
+    } catch {}
+  }
+  async function preload(item) {
+    const probe = new Image();
+    if (item.srcset) { probe.srcset = item.srcset; probe.sizes = SLIDE_SIZES; }
+    probe.src = item.source;
+    await decodeImage(probe);
+  }
+  fill(layers[front], items[index]);
+  showFront();
   const controls = document.createElement('div');
   controls.className = 'featured-controls';
   controls.innerHTML = '<button type="button" data-prev aria-label="Previous featured painting">←</button><button type="button" data-toggle>Pause</button><span class="featured-position"></span><button type="button" data-next aria-label="Next featured painting">→</button>';
@@ -94,34 +122,43 @@
     toggle.textContent = paused ? 'Play' : 'Pause';
     toggle.setAttribute('aria-label', `${paused ? 'Start' : 'Pause'} featured painting slideshow`);
     controls.querySelector('.featured-position').textContent = `${index + 1} / ${items.length}`;
-    const preload = new Image(), next = items[(index + 1) % items.length];
-    if (next.srcset) { preload.srcset = next.srcset; preload.sizes = SLIDE_SIZES; }
-    preload.src = next.source;
+    const next = items[(index + 1) % items.length];
+    if (next) preload(next);
   }
   async function advance(direction) {
     if (busy || !items.length) return;
     busy = true;
     const target = (index + direction + items.length) % items.length;
-    const outgoing = stage.firstElementChild;
-    const incoming = slide(items[target]);
-    incoming.classList.add('featured-entering');
-    incoming.inert = true;
-    stage.append(incoming);
-    const duration = motion.matches ? 0 : 350;
-    const animations = [
-      outgoing.animate([{transform:'translateX(0)'}, {transform:`translateX(${-direction * 100}%)`}], {duration, easing:'ease-in-out', fill:'forwards'}),
-      incoming.animate([{transform:`translateX(${direction * 100}%)`}, {transform:'translateX(0)'}], {duration, easing:'ease-in-out', fill:'forwards'})
-    ];
-    await Promise.allSettled(animations.map(animation => animation.finished));
-    outgoing.remove();
-    incoming.classList.remove('featured-entering');
-    incoming.inert = false;
-    animations.forEach(animation => animation.cancel());
+    const incoming = layers[1 - front];
+    fill(incoming, items[target]);
+    await decodeImage(incoming.image);
+    const duration = motion.matches ? 0 : 400;
+    if (duration === 0) {
+      front = 1 - front;
+      showFront();
+    } else {
+      incoming.layer.classList.add('featured-entering');
+      incoming.layer.style.opacity = '0';
+      // Force a frame so the opacity:0 starting point sticks before we animate.
+      incoming.layer.getBoundingClientRect();
+      const fadeIn = incoming.layer.animate([{opacity:0}, {opacity:1}], {duration, easing:'ease-in-out', fill:'forwards'});
+      const fadeOut = layers[front].layer.animate([{opacity:1}, {opacity:0}], {duration, easing:'ease-in-out', fill:'forwards'});
+      await Promise.allSettled([fadeIn.finished, fadeOut.finished]);
+      fadeIn.cancel();
+      fadeOut.cancel();
+      incoming.layer.style.opacity = '';
+      incoming.layer.classList.remove('featured-entering');
+      front = 1 - front;
+      showFront();
+    }
     index = items.length ? target % items.length : 0;
     busy = false;
     if (pendingSync) {
       pendingSync = false;
-      if (items.length) stage.replaceChildren(slide(items[index]));
+      if (items.length) {
+        fill(layers[front], items[index]);
+        await decodeImage(layers[front].image);
+      }
     }
     update();
   }
@@ -154,7 +191,10 @@
     card.hidden=items.length===0;
     index=Math.max(0,items.findIndex(item=>item.id===currentId));
     if(busy)pendingSync=true;
-    else if(items.length)stage.replaceChildren(slide(items[index]));
+    else if(items.length){
+      fill(layers[front], items[index]);
+      decodeImage(layers[front].image);
+    }
     update();
     schedule();
   });
