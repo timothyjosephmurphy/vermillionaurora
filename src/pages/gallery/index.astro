@@ -16,12 +16,13 @@ import collections from '../../../catalog/collections.json';
     <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/exhibitions/viewer.css"><link rel="stylesheet" href="/site-header.css">
   <link rel="stylesheet" href="/gallery/painting-list.css">
-<meta name="catalog-version" content={catalogVersion} /></head>
+<meta name="catalog-version" content={catalogVersion} />
+  <script is:inline>document.documentElement.classList.add('js-gallery');</script></head>
   <body class="painting-gallery-page">
     <div class="page-shell">
       <SiteHeader />
 
-      <main>
+      <main id="main-content">
         <section id="gallery" class="section section-light">
           <div class="container">
             <div class="section-heading">
@@ -29,6 +30,7 @@ import collections from '../../../catalog/collections.json';
               <h1>Paintings by TJ Murphy</h1>
             </div>
 
+            <div class="gallery-viewer-reserve" aria-hidden="true"></div>
             <div data-gallery-list>
               <div class="gallery-filter" hidden>
                 <label class="gallery-sort" for="gallery-sort">Sort by
@@ -40,7 +42,7 @@ import collections from '../../../catalog/collections.json';
                   </select>
                 </label>
                 <label><input type="checkbox" id="available-only"> Available only</label>
-                <span id="gallery-result-count" role="status" aria-live="polite"></span>
+                <span id="gallery-result-count" role="status" aria-live="polite">{collections.gallery.length} of {collections.gallery.length} paintings</span>
                 <p id="gallery-size-note">Size is sorted by painted area.</p>
               </div>
               <ul class="painting-list" aria-label="Paintings">
