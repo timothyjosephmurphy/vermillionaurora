@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import {load} from 'cheerio';
 import manifest from '../catalog/book-galleries.json' with {type:'json'};
 import bookProducts from '../catalog/book-products.json' with {type:'json'};
@@ -132,6 +133,34 @@ test('book print files preserve native resolution and use content-addressed R2 a
       assert(option.asset.layoutSpec.content.height<=source.heightPx);
       assert.equal(option.asset.url,`https://media.vermillionaurora.com/images/book-galleries/v1/prints/${option.asset.sha256}.jpg`);
       if(art.enabled)assert(option.ready,option.reasons.join(', '));
+    }
+  }
+});
+
+test('perspective-corrected book photos replace the desk photo everywhere and stay display-only',()=>{
+  const {corrections}=JSON.parse(fs.readFileSync('catalog/book-photo-corrections.json','utf8'));
+  const uploads=JSON.parse(fs.readFileSync('scripts/book-photo-corrections/uploads.json','utf8'));
+  assert(corrections.length>0);
+  for(const c of corrections){
+    const art=manifest.artworks.find(entry=>entry.key===c.key),product=bookProducts.find(p=>p.id===art.id);
+    assert.equal(art.masterUrl,c.masterUrl);assert.equal(art.previewUrl,c.previewUrl);
+    assert.deepEqual(art.photoCorrection,{widthPx:c.widthPx,heightPx:c.heightPx,masterSha256:c.masterSha256,previewSha256:c.previewSha256,config:'catalog/book-photo-corrections.json'});
+    assert.deepEqual(product.image,{src:c.previewUrl,alt:product.title,fullSrc:c.masterUrl,width:c.widthPx,height:c.heightPx});
+    assert.equal(art.printCandidate,false);assert(!bookPrints[art.id]);
+    for(const [ext,sha] of [['jpg',c.masterSha256],['webp',c.previewSha256]]){
+      const u=uploads.find(x=>x.key===`images/book-galleries/v1/${c.output}.${ext}`);
+      assert.equal(u.sha256,sha);
+      assert.equal(createHash('sha256').update(fs.readFileSync(`scripts/book-photo-corrections/${u.file}`)).digest('hex'),sha);
+    }
+    const page=fs.readFileSync(`dist/products/${art.id}/index.html`,'utf8'),$=load(page);
+    assert(!page.includes(`/v1/${c.key}.`),'old desk photo still referenced');
+    assert.equal($('meta[property="og:image"]').attr('content'),c.previewUrl);
+    assert.equal(JSON.parse($('script[type="application/ld+json"]').first().html()).image,c.previewUrl);
+    assert.equal($('.product-figure img').attr('width'),String(c.widthPx));
+    assert.equal($('.painting-image-trigger').attr('href'),c.masterUrl);
+    for(const section of art.sectionIds){
+      const html=fs.readFileSync(`dist/book-galleries/${section}/index.html`,'utf8');
+      assert(html.includes(c.previewUrl)&&!html.includes(`/v1/${c.key}.`));
     }
   }
 });
