@@ -152,6 +152,7 @@ async function ensureListing(env, token, record, etag, sync, work, kind, setup) 
     if (patched?.skipped) sync.listings[work.id].skipped = patched.skipped;
     ({record, etag} = await saveIndex(env, record, etag, sync));
   }
+  if (kind === 'original') await writeOriginalPrice(env, token, listingId, plan.body.get('price'), settings.readinessStateId);
   if (kind === 'print') {
     await etsyApiCall(API + '/listings/' + listingId + '/inventory?legacy=false&max_variations_supported=2', env, token, {method: 'PUT', headers: {'Content-Type': 'application/json; charset=utf-8'}, body: JSON.stringify(plan.inventory), action: 'setting sizes and frame options'});
     const batch = record.etsyDraftBatch;
@@ -167,6 +168,28 @@ function money(value) {
   if (typeof value === 'number') return value;
   if (value && Number.isFinite(value.amount) && Number.isFinite(value.divisor) && value.divisor) return value.amount / value.divisor;
   return null;
+}
+
+
+function cleanProperty(value) {
+  return {property_id: value.property_id, property_name: value.property_name, value_ids: value.value_ids || [], values: value.values, scale_id: value.scale_id ?? null};
+}
+async function writeOriginalPrice(env, token, listingId, price, readinessStateId) {
+  const current = await etsyApiCall(API + '/listings/' + listingId + '/inventory?legacy=false', env, token, {action: 'reading the original price'});
+  const source = Array.isArray(current?.products) ? current.products : [];
+  const products = source.map(product => ({
+    sku: product.sku || '',
+    property_values: (product.property_values || []).filter(value => !value.is_deleted).map(cleanProperty),
+    offerings: (product.offerings || []).filter(offering => !offering.is_deleted).map(offering => ({price: Number(price), quantity: 1, is_enabled: offering.is_enabled !== false, readiness_state_id: offering.readiness_state_id || readinessStateId}))
+  })).filter(product => product.offerings.length);
+  const inventory = {
+    products: products.length ? products : [{sku: '', property_values: [], offerings: [{price: Number(price), quantity: 1, is_enabled: true, readiness_state_id: readinessStateId}]}],
+    price_on_property: current?.price_on_property || [],
+    quantity_on_property: current?.quantity_on_property || [],
+    sku_on_property: current?.sku_on_property || [],
+    readiness_state_on_property: current?.readiness_state_on_property || []
+  };
+  await etsyApiCall(API + '/listings/' + listingId + '/inventory?legacy=false', env, token, {method: 'PUT', headers: {'Content-Type': 'application/json; charset=utf-8'}, body: JSON.stringify(inventory), action: 'setting the original price'});
 }
 
 export async function etsyListingAdmin(request, env, session, now = Date.now()) {
