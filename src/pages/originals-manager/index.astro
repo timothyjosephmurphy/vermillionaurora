@@ -1,0 +1,70 @@
+---
+import PolicyLayout from '../../layouts/PolicyLayout.astro';
+import {products} from '../../../catalog/catalog.mjs';
+const originals = products.filter(product => product.type === 'painting').map(product => ({id: product.id, title: product.title, artist: product.artist || 'TJ Murphy'})).sort((a, b) => a.title.localeCompare(b.title));
+---
+<PolicyLayout title="Original inventory" description="Owner control for marking an original sold, unavailable, or available." noindex>
+<p>Owner access only. Enter the inventory admin credential (the Worker’s <code>INVENTORY_ADMIN_TOKEN</code>). It stays in memory for this page and is never saved or put in a link.</p>
+<form id="om-login"><label>Inventory credential <input id="om-token" type="password" autocomplete="off" required/></label><button class="button button-solid" type="submit">Open originals</button></form>
+<div id="om-controls" hidden><button type="button" id="om-refresh">Refresh</button><button type="button" id="om-lock">Lock</button></div>
+<p id="om-status" role="status" aria-live="polite"></p>
+<div id="om-list"></div>
+<details><summary>How this works</summary>
+<p><strong>Sold</strong> is for a sale in person or through a gallery. <strong>Not available</strong> is for a loan, consignment, or show (for example CLCT or Gallery 110). Both take the original off sale on tjm.art and deactivate its Etsy listing. Prints stay for sale. <strong>Available</strong> puts Buy back and is the only action that reactivates the Etsy listing. The optional note is the venue, price, or payment method. It is logged with the time.</p>
+<p>From another computer that has the credential: <code>node scripts/original-status.mjs &lt;product-id&gt; sold|unavailable|available --note "Gallery 110"</code></p>
+</details>
+<script define:vars={{originals}}>
+const api = '/inventory/originals';
+const $=id=>document.getElementById(id);
+let token='';
+const status=$('om-status'), list=$('om-list');
+const say=text=>{status.textContent=text;};
+async function call(body){
+  const response=await fetch(api,{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`},body:JSON.stringify(body)});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw Error(data.error||`Request failed (${response.status})`);
+  return data;
+}
+function card(item, live){
+  const article=document.createElement('article');
+  const title=document.createElement('h2');
+  title.textContent=item.title;
+  const meta=document.createElement('p');
+  meta.textContent=`${item.artist} · ${item.id} · ${live?.status||'unknown'}${live?.at?' · '+new Date(live.at).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'}):''}`;
+  const note=document.createElement('input');
+  note.type='text'; note.maxLength=300; note.value=live?.note||''; note.placeholder='Note: venue, price, or payment method';
+  const actions=document.createElement('div');
+  for(const [label,value] of [['Sold','sold'],['Not available','unavailable'],['Available','available']]){
+    const button=document.createElement('button');
+    button.type='button'; button.textContent=label;
+    if(value==='available')button.className='button button-solid';
+    button.addEventListener('click',async()=>{
+      button.disabled=true;
+      try{
+        const result=await call({action:'set',id:item.id,status:value,note:note.value});
+        const etsy=result.etsy?.ok===false?` Etsy was not updated: ${result.etsy.error}`:result.etsy?.skipped==='unmapped'?' No Etsy original listing is linked.':' Etsy updated.';
+        say(`${item.title} is ${result.status}.${etsy}`);
+        await load();
+      }catch(error){say(error.message);}
+      finally{button.disabled=false;}
+    });
+    actions.append(button);
+  }
+  article.append(title,meta,note,actions);
+  return article;
+}
+async function load(){
+  const data=await call({action:'list',ids:originals.map(item=>item.id)});
+  const byId=new Map(data.originals.map(item=>[item.id,item]));
+  list.replaceChildren(...originals.map(item=>card(item,byId.get(item.id))));
+  say(`${data.originals.length} originals.`);
+}
+$('om-login').addEventListener('submit',async event=>{
+  event.preventDefault(); token=$('om-token').value; $('om-token').value='';
+  try{await load(); $('om-login').hidden=true; $('om-controls').hidden=false;}
+  catch(error){token=''; say(error.message);}
+});
+$('om-refresh').addEventListener('click',()=>load().catch(error=>say(error.message)));
+$('om-lock').addEventListener('click',()=>{token=''; list.replaceChildren(); $('om-controls').hidden=true; $('om-login').hidden=false; say('Locked.');});
+</script>
+</PolicyLayout>

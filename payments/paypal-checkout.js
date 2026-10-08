@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   let liveStock;
   document.addEventListener('catalog:availability',event=>{
     liveStock=event.detail?.[slug];
-    if(['sold','reserved','retired','not-for-sale'].includes(liveStock)){
+    if(['sold','unavailable','reserved','retired','not-for-sale'].includes(liveStock)){
       document.querySelectorAll('.purchase-panel,.product-purchase-cta,.paypal-checkout-link').forEach(el=>el.remove());
       document.querySelector('[data-original-purchase]')?.setAttribute('hidden','');
     }

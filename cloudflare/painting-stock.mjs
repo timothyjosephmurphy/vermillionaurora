@@ -2,6 +2,7 @@ import { DurableObject } from 'cloudflare:workers';
 import { recordTax } from './checkout-pricing.mjs';
 import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
 import { checkoutRecord, fulfillmentRecord, ledgerFor } from './sales-records.mjs';
+import {stockStatus, nextManualRow, nextEtsySale} from './original-availability.mjs';
 
 // One SQLite-backed object per original. All state changes happen on the same object.
 export class PaintingStock extends DurableObject {
@@ -25,14 +26,14 @@ export class PaintingStock extends DurableObject {
     ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS sale_receipt (capture_id TEXT PRIMARY KEY, data TEXT NOT NULL)');
     // Separate table adds fulfillment without altering existing stock records.
     ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS shipping_job (id INTEGER PRIMARY KEY CHECK (id=1), data TEXT NOT NULL)');
+    for (const sql of ['ALTER TABLE stock ADD COLUMN manual TEXT', 'ALTER TABLE stock ADD COLUMN note TEXT', 'ALTER TABLE stock ADD COLUMN manual_at TEXT']) {
+      try { ctx.storage.sql.exec(sql); } catch { /* column already exists */ }
+    }
   }
 
   row() { return this.ctx.storage.sql.exec('SELECT * FROM stock WHERE id = 1').toArray()[0]; }
-  status() {
-    const row = this.row();
-    if (!row || (row.state === 'held' && row.expires_at <= Date.now())) return 'available';
-    return row.state === 'sold' ? 'sold' : 'reserved';
-  }
+  status() { return stockStatus(this.row()); }
+  summary() { const row = this.row(); return row ? {state: row.state, manual: row.manual || null, note: row.note || '', at: row.manual_at || null, expires_at: row.expires_at, order_id: row.order_id, capture_id: row.capture_id} : null; }
   reserve(holdId) {
     if (this.status() !== 'available') return false;
     this.ctx.storage.sql.exec(`INSERT INTO stock (id,state,hold_id,expires_at,order_id,capture_id,published)
@@ -61,6 +62,7 @@ export class PaintingStock extends DurableObject {
     if(row?.state==='sold'&&row.order_id===`cart:${orderId}`&&row.capture_id===captureId)return true;
     if(!this.ownsCart(orderId))return false;
     this.ctx.storage.sql.exec("UPDATE stock SET state='sold',capture_id=?,published=1,expires_at=NULL WHERE id=1",captureId);
+    this.queueEtsySync();
     // Payment receipt, tax and fulfillment belong to the coordinator, once per order.
     return true;
   }
@@ -111,6 +113,7 @@ export class PaintingStock extends DurableObject {
       this.ctx.storage.sql.exec("UPDATE stock SET state='sold',capture_id=?,expires_at=NULL WHERE id=1", captureId);
       this.ctx.storage.sql.exec('INSERT OR IGNORE INTO sale_receipt (capture_id,data) VALUES (?,?)',captureId,JSON.stringify(receipt));
     });
+    this.queueEtsySync();
     return true;
   }
   recordExternalSale(transactionId) {
@@ -119,7 +122,39 @@ export class PaintingStock extends DurableObject {
     if(this.status()!=='available')return false;
     this.ctx.storage.sql.exec(`INSERT INTO stock(id,state,order_id,capture_id,published,tax_recorded) VALUES(1,'sold',?,?,1,1)
       ON CONFLICT(id) DO UPDATE SET state='sold',order_id=excluded.order_id,capture_id=excluded.capture_id,expires_at=NULL,published=1,tax_recorded=1`,orderId,transactionId);
+    this.queueEtsySync();
     return true;
+  }
+  applyRow(next, note, at) {
+    this.ctx.storage.sql.exec(`INSERT INTO stock (id,state,hold_id,expires_at,order_id,capture_id,published,manual,note,manual_at)
+      VALUES (1,?,NULL,?,?,?,1,?,?,?)
+      ON CONFLICT(id) DO UPDATE SET state=excluded.state,hold_id=NULL,expires_at=excluded.expires_at,order_id=excluded.order_id,capture_id=excluded.capture_id,published=1,manual=excluded.manual,note=excluded.note,manual_at=excluded.manual_at`,
+      next.state, next.expires_at, next.order_id, next.capture_id, next.manual, String(note || '').slice(0, 300), at);
+  }
+  setManual(status, note = '', at = new Date().toISOString()) {
+    const next = nextManualRow(this.row(), status);
+    if (next.error) return {ok: false, error: next.error};
+    this.applyRow(next, note, at);
+    if (status !== 'available' && !next.unchanged) this.queueEtsySync();
+    return {ok: true, status: this.status(), unchanged: !!next.unchanged};
+  }
+  recordEtsySale(receiptId, at = new Date().toISOString()) {
+    const next = nextEtsySale(this.row(), String(receiptId));
+    if (next.duplicate) return {ok: true, duplicate: true, status: 'sold'};
+    if (next.conflict) return {ok: false, conflict: true, status: this.status()};
+    this.applyRow(next, 'Etsy receipt ' + receiptId, at);
+    return {ok: true, status: 'sold', replacedHold: !!next.replacedHold};
+  }
+  queueEtsySync() {
+    if (!this.env?.ETSY_KEYSTRING) return;
+    const slug = this.etsySlug();
+    if (!slug) return;
+    const job = import('./etsy-original-sync.mjs').then(mod => mod.onSiteSold(this.env, slug)).catch(() => console.error('Etsy original sync failed:', slug));
+    if (this.ctx.waitUntil) this.ctx.waitUntil(job);
+  }
+  etsySlug() {
+    try { if (this.ctx.id?.name) return this.ctx.id.name; } catch { /* unnamed object */ }
+    try { return this.ctx.storage.sql.exec('SELECT slug FROM painting WHERE id=1').toArray()[0]?.slug || ''; } catch { return ''; }
   }
   async archiveSale() {
     const row=this.row();

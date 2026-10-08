@@ -1,4 +1,5 @@
 import {inventory,catalogVersion} from './checkout-catalog.mjs';
+import {displayedStatus} from './original-availability.mjs';
 import {corsOrigin} from './site-origins.mjs';
 export async function inventoryStatus(request,env) {
  const headers={'Access-Control-Allow-Origin':corsOrigin(request),'Cache-Control':'no-store','Vary':'Origin'};
@@ -7,7 +8,11 @@ export async function inventoryStatus(request,env) {
  if(!ids.length||ids.length>80||ids.some(id=>!Object.hasOwn(inventory,id)))return Response.json({error:'Supply up to 80 known artwork IDs'},{status:400,headers});
  if(!env.PAINTING_STOCK)return Response.json({error:'Availability temporarily unavailable'},{status:503,headers});
  try {
-  const entries=await Promise.all(ids.map(async id=>[id,inventory[id].status==='available'?await env.PAINTING_STOCK.getByName(id).status():inventory[id].status]));
+  const entries=await Promise.all(ids.map(async id=>{
+    const stub=env.PAINTING_STOCK.getByName(id);
+    if(typeof stub.summary==='function')return [id,displayedStatus(inventory[id].status,await stub.summary())];
+    return [id,inventory[id].status==='available'?await stub.status():inventory[id].status];
+  }));
   return Response.json({version:catalogVersion,availability:Object.fromEntries(entries)},{headers});
  }catch{return Response.json({error:'Availability temporarily unavailable'},{status:503,headers});}
 }
