@@ -188,3 +188,19 @@ test('painting pages render extra photos as thumbnails after the main image and 
   assert.deepEqual(video.find('source').map((i,e)=>$(e).attr('src')).get(),p.video.sources.map(s=>s.src));
  }
 });
+test('homepage featured carousel includes each El Zonte painting exactly once with the new full-res photos',()=>{
+ const trackIds=[];
+ const $=load(fs.readFileSync('dist/index.html','utf8'));
+ $('[data-available-paintings] [data-product-id]').each((i,el)=>trackIds.push($(el).attr('data-product-id')));
+ const want={'el-zonte-before-dawn':'el-zonte-before-dawn','painting-shoreline-at-dusk':'el-zonte-at-dawn-2026','el-zonte-at-sunrise':'sunrise-punta-el-zonte-hostel-2026'};
+ for(const [id,photo] of Object.entries(want)){
+  assert.equal(trackIds.filter(x=>x===id).length,1,`${id} should appear exactly once in the featured track (order=${trackIds.join(',')})`);
+  const card=$(`[data-available-paintings] [data-product-id="${id}"]`);
+  const img=card.find('img');
+  const src=`${img.attr('src')||''} ${img.attr('srcset')||''} ${img.attr('data-image-src')||''}`;
+  assert.match(src,new RegExp(photo),`${id} must use the new photo (${photo}), got ${src.slice(0,160)}`);
+  assert(!/shoreline-at-dusk-|sunrise-punto-el-zonte/.test(src),`${id} still references an old photo path`);
+ }
+ // Lead the available track so the hero crossfade shows them first.
+ assert.deepEqual(trackIds.slice(0,3),['el-zonte-before-dawn','painting-shoreline-at-dusk','el-zonte-at-sunrise']);
+});
