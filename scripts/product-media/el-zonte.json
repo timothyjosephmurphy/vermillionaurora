@@ -1,0 +1,168 @@
+{
+  "masters": {
+    "sunrise-punto-el-zonte-hostel-master.jpg": {
+      "url": "https://vermillionaurora.com/print-masters/6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8.jpg",
+      "widthPx": 3598,
+      "heightPx": 7082,
+      "sha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8"
+    },
+    "el-zonte-at-dawn-master.jpg": {
+      "url": "https://vermillionaurora.com/print-masters/63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a.jpg",
+      "widthPx": 7645,
+      "heightPx": 3615,
+      "sha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a"
+    },
+    "new-painting-master.jpg": {
+      "url": "https://vermillionaurora.com/print-masters/0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559.jpg",
+      "widthPx": 7544,
+      "heightPx": 3600,
+      "sha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559"
+    }
+  },
+  "mains": {
+    "sunrise-punto-el-zonte-hostel-master.jpg": {
+      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
+      "width": 1219,
+      "height": 2400,
+      "bytes": 491625
+    },
+    "el-zonte-at-dawn-master.jpg": {
+      "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
+      "width": 2400,
+      "height": 1135,
+      "bytes": 568940
+    },
+    "new-painting-master.jpg": {
+      "src": "/gallery-images/el-zonte-before-dawn.jpg",
+      "width": 2400,
+      "height": 1145,
+      "bytes": 414261
+    }
+  },
+  "rooms": {
+    "1": {
+      "base": "/product-media/el-zonte/room-1",
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "width": 2400,
+      "height": 1800,
+      "fallback": "/product-media/el-zonte/room-1-1600.jpg",
+      "variants": [
+        {
+          "w": 480,
+          "avif": 12489,
+          "webp": 22898
+        },
+        {
+          "w": 960,
+          "avif": 34670,
+          "webp": 60668
+        },
+        {
+          "w": 1600,
+          "avif": 73729,
+          "webp": 123234
+        },
+        {
+          "w": 2400,
+          "avif": 136556,
+          "webp": 219048
+        }
+      ]
+    },
+    "2": {
+      "base": "/product-media/el-zonte/room-2",
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "width": 2400,
+      "height": 1800,
+      "fallback": "/product-media/el-zonte/room-2-1600.jpg",
+      "variants": [
+        {
+          "w": 480,
+          "avif": 11090,
+          "webp": 18984
+        },
+        {
+          "w": 960,
+          "avif": 30878,
+          "webp": 51130
+        },
+        {
+          "w": 1600,
+          "avif": 65940,
+          "webp": 105582
+        },
+        {
+          "w": 2400,
+          "avif": 124905,
+          "webp": 192362
+        }
+      ]
+    },
+    "3": {
+      "base": "/product-media/el-zonte/room-3",
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "width": 2400,
+      "height": 1800,
+      "fallback": "/product-media/el-zonte/room-3-1600.jpg",
+      "variants": [
+        {
+          "w": 480,
+          "avif": 10495,
+          "webp": 17602
+        },
+        {
+          "w": 960,
+          "avif": 29439,
+          "webp": 47504
+        },
+        {
+          "w": 1600,
+          "avif": 65241,
+          "webp": 98988
+        },
+        {
+          "w": 2400,
+          "avif": 125403,
+          "webp": 183118
+        }
+      ]
+    }
+  },
+  "poster": {
+    "base": "/product-media/el-zonte/video-poster",
+    "widths": [
+      960,
+      1920
+    ],
+    "width": 1920,
+    "height": 1080,
+    "fallback": "/product-media/el-zonte/video-poster-1920.jpg",
+    "variants": [
+      {
+        "w": 960,
+        "avif": 24681,
+        "webp": 37198
+      },
+      {
+        "w": 1920,
+        "avif": 61653,
+        "webp": 87100
+      }
+    ]
+  }
+}

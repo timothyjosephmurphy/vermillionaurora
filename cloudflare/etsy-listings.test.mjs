@@ -75,7 +75,7 @@ test('creates five saved drafts with the selected private production partner and
  const data=await res.json();
  assert.equal(data.batch.status,'complete');
  assert.deepEqual(data.batch.items.map(x=>x.status),Array(5).fill('draft ready'));
- assert.deepEqual(inventoryCounts,[12,12,8,4,8]);
+ assert.deepEqual(inventoryCounts,[12,12,8,12,12]);
  assert.equal(calls.filter(x=>x.url.endsWith('/images')).length,5);
  const titles=calls.filter(x=>x.url.includes('/listings?legacy=false')).map(x=>new URLSearchParams(x.options.body).get('title'));
  assert.match(titles[3],/Landscape/);assert.match(titles[4],/Portrait/);
@@ -96,7 +96,7 @@ test('creates five saved drafts with the selected private production partner and
  }
  const expectedPrices=new Map(prints.flatMap(p=>p.variants.flatMap(v=>[[v.sku,Number(v.price)],...v.frames.map(f=>[f.sku,Number(f.price)])])));
  const saved=(await read(env)).record.etsyDraftBatch;
- assert.equal(saved.skuMapVersion,1);assert.equal(Object.keys(saved.skuMap).length,44);
+ assert.equal(saved.skuMapVersion,1);assert.equal(Object.keys(saved.skuMap).length,56);
  for(const entry of calls.filter(x=>x.url.includes('/inventory?')))for(const p of JSON.parse(entry.options.body).products)assert.equal(p.offerings[0].price,expectedPrices.get(saved.skuMap[p.sku].providerSku));
  const before=calls.filter(x=>x.url.includes('/listings?legacy=false')||x.url.endsWith('/images')||x.url.includes('/inventory?')).length;
  const again=await req(env,'/etsy/listings/create-drafts',{shippingProfileId:11,readinessStateId:22,taxonomyId:55,productionPartnerId:'33'});
@@ -271,16 +271,16 @@ test('a rejected calculated-shipping batch can switch to fixed rate without send
 });
 
 const planSettings={shippingProfileId:11,readinessStateId:22,taxonomyId:55,partnerId:33,returnPolicyId:66,shippingPackages:null};
-test('all 44 Etsy SKUs fit the provider limit and retain exact FinerWorks identities',async()=>{
+test('all 56 Etsy SKUs fit the provider limit and retain exact FinerWorks identities',async()=>{
  const plans=await buildListingPlans(prints,planSettings),aliases=plans.flatMap(p=>Object.keys(p.skuMap));
- assert.equal(aliases.length,44);assert.equal(new Set(aliases).size,44);assert.ok(aliases.every(s=>/^VA-[a-f0-9]{24}$/.test(s)));
+ assert.equal(aliases.length,56);assert.equal(new Set(aliases).size,56);assert.ok(aliases.every(s=>/^VA-[a-f0-9]{24}$/.test(s)));
  let longProviderCodes=0;
  for(const plan of plans)for(const [sku,mapping] of Object.entries(plan.skuMap)){
   const p=prints.find(x=>x.id===mapping.productId),size=p.variants.find(x=>x.key===mapping.sizeKey),option=mapping.frameKey?size.frames.find(x=>x.key===mapping.frameKey):size;
   assert.equal(mapping.providerSku,option.sku);assert.equal(sku,await etsySkuForPrintId(mapping.printId));
   if(mapping.providerSku.length>32)longProviderCodes++;
  }
- assert.equal(longProviderCodes,33);
+ assert.equal(longProviderCodes,42); // framed FinerWorks codes exceed 32 characters
  const changed=structuredClone(prints);changed[0].title='New title';changed[0].variants[0].sku='replacement-provider-code';
  const revised=await buildListingPlans(changed,planSettings);
  assert.equal(revised[0].inventory.products[0].sku,plans[0].inventory.products[0].sku);
@@ -314,7 +314,7 @@ test('resumes the existing draft and image after the legacy overlength-SKU rejec
  assert.equal(calls.filter(x=>x.url.includes('/listings?legacy=false')).length,4);
  assert.equal(calls.filter(x=>x.url.endsWith('/images')).length,4);
  assert.equal(calls.filter(x=>x.url.includes('/listings/800/inventory?')).length,1);
- const saved=(await read(env)).record.etsyDraftBatch;assert.equal(saved.items[prints[0].id].listingId,800);assert.equal(Object.keys(saved.skuMap).length,44);
+ const saved=(await read(env)).record.etsyDraftBatch;assert.equal(saved.items[prints[0].id].listingId,800);assert.equal(Object.keys(saved.skuMap).length,56);
 });
 
 test('loads processing profiles beyond the first documented page',async t=>{
