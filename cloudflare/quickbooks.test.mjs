@@ -126,3 +126,19 @@ test('names, document numbers, dates, retry schedule and sealed storage', async 
   assert.ok(!sealed.includes('secret-refresh'));
   assert.deepEqual(await unseal(env, sealed), { refreshToken: 'secret-refresh' });
 });
+
+test('production-cost sources: placed print orders and finished labels only; deposits have none', async () => {
+  const { costSources } = await import('./quickbooks-costs.mjs');
+  const base = { id: '9a8b7c6d-1111-4222-8333-444455556666', status: 'paid', mode: 'live', paidAt: '2026-10-02T22:48:12.197Z', jobs: [] };
+  assert.deepEqual(costSources({ ...base, quote: { items: [{ type: 'deposit' }] } }), []);
+  assert.deepEqual(costSources({ ...base, status: 'review' }), []);
+  const print = { provider: 'finerworks', status: 'creating', request: { merchantReference: 'va-cart-x-prints' }, quotedProductionCost: '31.20', quotedShipping: '9.95', maximumProviderCost: '41.15', items: [] };
+  assert.deepEqual(costSources({ ...base, printJob: print }), []);
+  const [placed] = costSources({ ...base, printJob: { ...print, status: 'in-production', providerId: '812345', attemptedAt: Date.parse('2026-10-02T22:49:00Z') } });
+  assert.equal(placed.type, 'print'); assert.equal(placed.vendor, 'finerworks'); assert.equal(placed.saleDocNumber, 'VA-9a8b7c6d1111422283');
+  assert.equal(placed.placedAt, '2026-10-02T22:49:00.000Z'); assert.deepEqual(placed.quoted, { production: '31.20', shipping: '9.95', maximum: '41.15' });
+  const ready = { status: 'ready', transactionId: 'tx_1', attemptedAt: Date.parse('2026-10-02T23:00:00Z'), quote: { slug: 'a', rateId: 'rate_1', shipping: '20.00', carrier: 'UPS', service: 'Ground' } };
+  assert.deepEqual(costSources({ ...base, jobs: [ready, { status: 'waiting' }] }), []);
+  const [labels] = costSources({ ...base, jobs: [ready, { status: 'review' }] });
+  assert.equal(labels.type, 'label'); assert.equal(labels.labels.length, 1); assert.equal(labels.labels[0].quoted, '20.00');
+});

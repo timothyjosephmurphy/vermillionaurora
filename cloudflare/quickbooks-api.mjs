@@ -3,6 +3,7 @@
 //   POST /quickbooks/start       Bearer COMMISSION_MANAGER_TOKEN → Intuit authorization URL (+ state cookie)
 //   GET  /quickbooks/callback    Intuit redirect URI (signed state + cookie + single-use nonce)
 //   POST /quickbooks/status | /quickbooks/disconnect | /quickbooks/sync | /quickbooks/logs | /quickbooks/retry   (Bearer)
+//   POST /quickbooks/costs/preview {orderId} (read-only) | /quickbooks/costs/backfill {orderIds} (queues production-cost Purchases)
 import { authorized } from './etsy-connection.mjs';
 import { QBO_ORIGINS, environment, configured, DISCONNECTED_PAGE } from './quickbooks-core.mjs';
 import { quickbooksFor } from './quickbooks-sync.mjs';
@@ -27,7 +28,7 @@ export async function quickbooksApi(request, env) {
       return toPage(result);
     } catch { return toPage('internal'); }
   }
-  const routes = ['/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry'];
+  const routes = ['/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry', '/quickbooks/costs/preview', '/quickbooks/costs/backfill'];
   if (request.method !== 'POST' || !routes.includes(path)) return json({ error: 'Not found' }, 404);
   if (request.headers.get('Origin') !== origin || !await authorized(request, env)) return json({ error: 'Invalid management credential or origin.' }, 403);
   if (!configured(env)) return json({ error: 'QuickBooks credentials are missing from this Worker.' }, 503);
@@ -40,7 +41,9 @@ export async function quickbooksApi(request, env) {
     if (path === '/quickbooks/sync') return json(await sync.syncNow());
     if (path === '/quickbooks/retry') { const body = await request.json().catch(() => ({})); return json(await sync.retry(String(body.orderId || ''))); }
     const body = await request.json().catch(() => ({}));
-    return json({ environment: environment(env), logs: await sync.logs(Number(body.limit) || 500), queue: await sync.queueRows() });
+    if (path === '/quickbooks/costs/preview') return json(await sync.previewCosts(String(body.orderId || '')));
+    if (path === '/quickbooks/costs/backfill') return json(await sync.backfillCosts(body.orderIds));
+    return json({ environment: environment(env), logs: await sync.logs(Number(body.limit) || 500), queue: await sync.queueRows(), costs: await sync.costRows() });
   } catch (error) {
     return json({ error: error.kind === 'config' ? error.message : 'QuickBooks request failed. See the log for the intuit_tid.' }, error.kind === 'config' ? 409 : 503);
   }

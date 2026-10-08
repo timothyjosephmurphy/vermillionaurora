@@ -3,8 +3,9 @@ import {catalogVersion,commonMethods,cartOrigin,publicCartItem} from './cart-pol
 import {paypalRequest,paypalBody,validatePaypal,approvalUrl,squareRequest,squarePaymentBody,validateSquarePayment,squarePaymentDetails} from './cart-providers.mjs';
 import {bitcoinApi,bitcoinServer,checkoutUrl} from './bitcoin-api.mjs';
 import {captureDetails,ledgerFor,fulfillmentRecord} from './sales-records.mjs';
-import {queueQuickbooks} from './quickbooks-sync.mjs';
-import {syncEnabled as quickbooksEnabled} from './quickbooks-core.mjs';
+import {queueQuickbooks,queueQuickbooksCost} from './quickbooks-sync.mjs';
+import {syncEnabled as quickbooksEnabled,costSyncEnabled} from './quickbooks-core.mjs';
+import {costSources} from './quickbooks-costs.mjs';
 import {recordTax} from './checkout-pricing.mjs';
 import {newShippingJob,fulfillSale} from './shipping-fulfillment.mjs';
 import {sendCartEmail} from './cart-email.mjs';
@@ -369,9 +370,22 @@ export class CartOrder extends DurableObject {
     }
     if(this.read().quote.items.some(i=>i.type==='deposit'))try{await this.mail('depositSellerMail','deposit-seller');}catch{done=false;}
     try{await this.mail('customerMail','confirmation');}catch{done=false;}
+    // QuickBooks production costs: queued once the lab order is placed / labels are bought, only for sales already sent to QuickBooks.
+    if(this.read().quickbooksQueued&&costSyncEnabled(this.env))try{await this.queueQuickbooksCosts();}catch(error){console.error('QuickBooks cost queue failed',d.id,error.message);done=false;}
     try{await this.archiveSale();}catch{done=false;}
     if(done)await this.ctx.storage.deleteAlarm();
     else if(this.read().printJob)await this.schedule(15*60000);
+  }
+  quickbooksCostSources(){return costSources(this.read());}
+  async queueQuickbooksCosts() {
+    const d=this.read();if(!d?.quickbooksQueued||!costSyncEnabled(this.env))return {queued:[],reason:'not eligible'};
+    const queued=[];
+    for(const source of costSources(d)) {
+      if(this.read().quickbooksCosts?.[source.type])continue;
+      await queueQuickbooksCost(this.env,source);
+      this.save({...this.read(),quickbooksCosts:{...(this.read().quickbooksCosts||{}),[source.type]:true}});queued.push(source.type);
+    }
+    return {queued,already:Object.keys(this.read().quickbooksCosts||{}).filter(t=>!queued.includes(t))};
   }
   async printCallback(key) {
     const d=this.read();if(!d?.printJob||d.printJob.callbackKey!==key)return false;
