@@ -3,7 +3,8 @@
 // The catalog original stays in data-image-src for cart/catalog checks.
 // Only HTML on DISPLAY_PAGES is rewritten. Original files, catalog JSON, print assets,
 // and print samples are left untouched, so catalog and checkout hashes do not change.
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, readdir } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { DISPLAY_PAGES, SIZES, DEFAULT_SIZES, PAGE_SIZES } from './display-images.config.mjs';
 const map = JSON.parse(await readFile('scripts/display-images.json', 'utf8'));
 const pick = v => v.filter(x => x.w <= 960).at(-1) || v[0];
@@ -43,4 +44,33 @@ for (const page of DISPLAY_PAGES) {
   });
   if (next !== html) await writeFile(file, next);
 }
-console.log(`Responsive WebP display images: ${imgs} img tags, ${backgrounds} inline backgrounds`);
+// Painting pages: only the main (fetchpriority="high") image becomes responsive WebP, with intrinsic
+// width/height so it reserves space. The original stays in data-image-src, the full-screen viewer and
+// og:image, so print, checkout and catalog checks are unaffected.
+const webpSize = buf => {
+  if (buf.toString('ascii', 0, 4) !== 'RIFF' || buf.toString('ascii', 8, 12) !== 'WEBP') return null;
+  const chunk = buf.toString('ascii', 12, 16);
+  if (chunk === 'VP8 ') return { w: buf.readUInt16LE(26) & 0x3fff, h: buf.readUInt16LE(28) & 0x3fff };
+  if (chunk === 'VP8L') { const b = buf.readUInt32LE(21); return { w: (b & 0x3fff) + 1, h: ((b >> 14) & 0x3fff) + 1 }; }
+  if (chunk === 'VP8X') return { w: buf.readUIntLE(24, 3) + 1, h: buf.readUIntLE(27, 3) + 1 };
+  return null;
+};
+const PRODUCT_SIZES = '(max-width: 980px) calc(100vw - 48px), 560px';
+let products = 0;
+for (const slug of await readdir('dist/products').catch(() => [])) {
+  const file = `dist/products/${slug}/index.html`;
+  const html = await readFile(file, 'utf8').catch(() => null);
+  if (html === null) continue;
+  const next = html.replace(/<img\b[^>]*\sfetchpriority="high"[^>]*>/, tag => {
+    const src = tag.match(/\ssrc="([^"]+)"/)?.[1], entry = src && map[src];
+    if (!entry || /\ssrcset=/.test(tag)) return tag;
+    const v = entry.variants, largest = v.at(-1);
+    const dims = webpSize(Buffer.from(readFileSync(`static${largest.src}`)));
+    let out = tag.replace(` src="${src}"`, ` data-image-src="${src}" src="${pick(v).src}" srcset="${v.map(x => `${x.src} ${x.w}w`).join(', ')}" sizes="${PRODUCT_SIZES}"`);
+    if (dims && !/\swidth=/.test(tag)) out = out.replace(/^<img\b/, `<img width="${dims.w}" height="${dims.h}"`);
+    products++;
+    return out;
+  });
+  if (next !== html) await writeFile(file, next);
+}
+console.log(`Responsive WebP display images: ${imgs} img tags, ${backgrounds} inline backgrounds, ${products} painting-page main images`);

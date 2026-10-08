@@ -3,12 +3,14 @@
   let products = [...document.querySelectorAll('.available-paintings-carousel .product-card')];
   if (!card || !products.length) return;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const SLIDE_SIZES = '(max-width: 980px) 80vw, 340px';
   const itemFor = product => {
     const link = product.querySelector('.product-title-link');
     const image = product.querySelector('img');
     const background = product.querySelector('.product-image');
     const source = image ? image.src : getComputedStyle(background).backgroundImage.replace(/^url\(["']?|["']?\)$/g, '');
-    return {id:product.dataset.productId,href:link.href, title:link.textContent, source, detail:product.querySelector('.product-info p').textContent};
+    // Carry the responsive WebP candidates so phones download a right-sized image, not the 960px file.
+    return {id:product.dataset.productId,href:link.href, title:link.textContent, source, srcset:image?.getAttribute('srcset')||'', detail:product.querySelector('.product-info p').textContent};
   };
   let items = products.map(itemFor);
   let index = Math.max(0, items.findIndex(item => item.href === card.querySelector('a').href));
@@ -30,6 +32,7 @@
     const link = document.createElement('a');
     link.href = item.href;
     const image = document.createElement('img');
+    if (item.srcset) { image.srcset = item.srcset; image.sizes = SLIDE_SIZES; }
     image.src = item.source;
     image.alt = item.title;
     image.className = 'featured-painting';
@@ -63,8 +66,9 @@
     toggle.textContent = paused ? 'Play' : 'Pause';
     toggle.setAttribute('aria-label', `${paused ? 'Start' : 'Pause'} featured painting slideshow`);
     controls.querySelector('.featured-position').textContent = `${index + 1} / ${items.length}`;
-    const preload = new Image();
-    preload.src = items[(index + 1) % items.length].source;
+    const preload = new Image(), next = items[(index + 1) % items.length];
+    if (next.srcset) { preload.srcset = next.srcset; preload.sizes = SLIDE_SIZES; }
+    preload.src = next.source;
   }
   async function advance(direction) {
     if (busy || !items.length) return;

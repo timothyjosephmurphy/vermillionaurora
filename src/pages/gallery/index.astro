@@ -45,6 +45,7 @@ import collections from '../../../catalog/collections.json';
                 <span id="gallery-result-count" role="status" aria-live="polite">{collections.gallery.length} of {collections.gallery.length} paintings</span>
                 <p id="gallery-size-note">Size is sorted by painted area.</p>
               </div>
+              <h2 class="visually-hidden">All paintings</h2>
               <ul class="painting-list" aria-label="Paintings">
                 {collections.gallery.map(entry=>{
                   const p=byId[entry.product],status=statusLabel(p),url=urlFor(p);

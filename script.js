@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!response.ok) {
         status.textContent = result.error
           ? 'Submission error: ' + result.error
-          : 'Your message could not be sent. Please try again or email TJ@VermillionAurora.com directly.';
+          : 'Your message could not be sent. Please try again or email tj@tjm.art directly.';
         return;
       }
 
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
       form.reset();
       offerDeposit(chosenPackage, result.requestId);
     } catch (error) {
-      status.textContent = 'We could not confirm your submission. Please check your connection and try again, or email TJ@VermillionAurora.com directly.';
+      status.textContent = 'We could not confirm your submission. Please check your connection and try again, or email tj@tjm.art directly.';
     } finally {
       sending = false;
       button.disabled = false;

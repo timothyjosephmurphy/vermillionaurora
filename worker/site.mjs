@@ -4,6 +4,8 @@
 //   path and query on PRIMARY_HOST, except hash-bound print and catalog files that print fulfilment and
 //   release verification fetch by exact URL; those keep serving 200 on the old domain.
 // Everything else (including static/_redirects rules and 404s) is handled by the assets binding.
+import { APPLE_PAY_DOMAIN_ASSOCIATION } from './apple-pay-domain-association.mjs';
+
 export const LEGACY_HOSTS = new Set(['vermillionaurora.com', 'www.vermillionaurora.com']);
 export const KEEP_ON_LEGACY = ['/print-editions/', '/print-samples/', '/print-masters/', '/print-test/', '/prints/', '/catalog/'];
 
@@ -29,6 +31,30 @@ export const QUICKBOOKS_API = new Set(['/quickbooks/connect', '/quickbooks/callb
 // Worker (private R2 storage); forwarding keeps them same-origin with /testimonials/ and /testimonial-manager/.
 export const TESTIMONIALS_API = '/testimonials/api/';
 
+// Apple Pay on the Web (Square Web Payments SDK): Apple fetches this file to verify tjm.art. Serve Square's
+// current copy (Square asks sellers to keep it in sync and avoid long caches), falling back to the committed snapshot.
+export const APPLE_PAY_ASSOCIATION_PATH = '/.well-known/apple-developer-merchantid-domain-association';
+const SQUARE_ASSOCIATION_URL = 'https://app.squareup.com/digital-wallets/apple-pay/apple-developer-merchantid-domain-association';
+export async function applePayAssociation(fetcher = fetch) {
+  let body = APPLE_PAY_DOMAIN_ASSOCIATION;
+  try {
+    const r = await fetcher(SQUARE_ASSOCIATION_URL, { cf: { cacheTtl: 3600, cacheEverything: true }, signal: AbortSignal.timeout(5000) });
+    const text = r.ok ? (await r.text()).trim() : '';
+    if (/^[0-9A-Fa-f]{1000,}$/.test(text)) body = text;
+  } catch {}
+  return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
+}
+
+// Fingerprinted build assets never change under the same URL: Astro's /_astro/ bundles and the /display/ WebP
+// derivatives (named by a hash; a replaced original gets a new name). Let browsers keep them for a year.
+export const IMMUTABLE_PREFIXES = ['/_astro/', '/display/'];
+export function withLongCache(response, pathname) {
+  if (response.status !== 200 || !IMMUTABLE_PREFIXES.some((prefix) => pathname.startsWith(prefix))) return response;
+  const headers = new Headers(response.headers);
+  headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
+
 export default {
   async fetch(request, env) {
     const redirect = hostRedirect(request, env);
@@ -40,6 +66,7 @@ export default {
     if (url.pathname.startsWith(TESTIMONIALS_API) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ success: false, error: 'Testimonials are temporarily unavailable.' }, { status: 503 });
     }
-    return env.ASSETS.fetch(request);
+    if (url.pathname === APPLE_PAY_ASSOCIATION_PATH) return applePayAssociation();
+    return withLongCache(await env.ASSETS.fetch(request), url.pathname);
   },
 };

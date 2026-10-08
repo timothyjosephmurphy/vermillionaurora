@@ -73,7 +73,8 @@ import { person, website, ld } from '../data/structured-data.mjs';
               <h2>Featured works</h2>
             </div>
             <div class="painting-discovery-actions"><a href="/gallery/available/" class="button button-solid">Shop available paintings</a><a href="/gallery/" class="button button-ghost">Browse the full gallery</a></div>
-            <p class="painting-empty-message" data-available-empty hidden={availablePaintings.length > 0}>No original paintings are available right now. Browse the collector’s items or ask about a commission.</p>
+            {/* The empty-state text is only in the HTML when it is true; availability.js fills it in if live stock empties the track. */}
+            <p class="painting-empty-message" data-available-empty hidden={availablePaintings.length > 0}>{availablePaintings.length === 0 && 'No original paintings are available right now. Browse the collector’s items or ask about a commission.'}</p>
             <div class="ex-carousel painting-carousel available-paintings-carousel" data-painting-group="available" role="region" aria-roledescription="carousel" aria-label="Featured works">
               <div class="ex-track" data-available-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse featured works">{availablePaintings.map((product,index)=><ProductCard product={product} variant="carousel" priority={index===0} />)}</div>
               <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic available paintings scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous available painting">←</button><p class="ex-position" role="status">1 / {availablePaintings.length}</p><button type="button" data-direction="1" aria-label="Next available painting">→</button><a href="/gallery/available/" class="button button-solid carousel-view-all">View available paintings</a></div>
@@ -88,7 +89,7 @@ import { person, website, ld } from '../data/structured-data.mjs';
               <h2>Collector’s Items</h2>
               <p>Sold and unavailable works from the collection.</p>
             </div>
-            <p class="painting-empty-message" data-collector-empty hidden={collectorPreview.length > 0}>There are no sold or unavailable works in this selection right now.</p>
+            <p class="painting-empty-message" data-collector-empty hidden={collectorPreview.length > 0}>{collectorPreview.length === 0 && 'There are no sold or unavailable works in this selection right now.'}</p>
             <div class="ex-carousel painting-carousel collector-items-carousel" data-painting-group="collectors" role="region" aria-roledescription="carousel" aria-label="Collector’s Items">
               <div class="ex-track" data-collector-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse collector’s items">{collectorPreview.map(product=><ProductCard product={product} variant="carousel" />)}</div>
               <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic collector’s items scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous collector’s item">←</button><p class="ex-position" role="status">1 / {collectorPreview.length}</p><button type="button" data-direction="1" aria-label="Next collector’s item">→</button><a href="/gallery/" class="button button-solid carousel-view-all">Browse the full gallery</a></div>
@@ -172,9 +173,9 @@ import { person, website, ld } from '../data/structured-data.mjs';
               
               <h2 id="artist-film-heading">About the Artist &amp; Film</h2>
             </div>
-            <div class="artist-film-carousel" role="region" aria-roledescription="carousel" aria-labelledby="artist-film-heading">
+            <div class="artist-film-carousel" role="region" aria-roledescription="carousel" aria-label="Artist profile and film">
               <div id="artist-film-track" class="artist-film-track" tabindex="0" aria-label="Swipe or use arrow keys to browse the artist profile and film">
-                <article class="product-card artist-film-card" role="group" aria-roledescription="slide" aria-label="1 of 2: About the artist">
+                <article class="product-card artist-film-card" aria-roledescription="slide" aria-label="1 of 2: About the artist">
                   <a class="artist-film-media artist-film-portrait" href="/about/" aria-label="Meet TJ Murphy">
                     <img src="/about/images/tj-murphy-portrait.jpg" alt="TJ Murphy smiling outdoors in sunglasses and a white shirt" width="424" height="360" loading="lazy" decoding="async">
                   </a>
@@ -185,7 +186,7 @@ import { person, website, ld } from '../data/structured-data.mjs';
                     <a href="/about/" class="button button-solid">Meet the artist</a>
                   </div>
                 </article>
-                <article id="film" class="product-card artist-film-card" role="group" aria-roledescription="slide" aria-label="2 of 2: Coined in Watercolor documentary">
+                <article id="film" class="product-card artist-film-card" aria-roledescription="slide" aria-label="2 of 2: Coined in Watercolor documentary">
                   <div class="artist-film-media artist-film-video">
                     <iframe width="960" height="540" src="https://www.youtube-nocookie.com/embed/i7tvzE_bqM8?playsinline=1" title="Coined in Watercolor: The Art of Going All In — documentary by Gavin Robertson" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
                   </div>
@@ -217,7 +218,7 @@ import { person, website, ld } from '../data/structured-data.mjs';
               </p>
               <ul class="contact-list">
                 <li>Seattle, WA</li>
-                <li><a href="mailto:TJ@VermillionAurora.com">TJ@VermillionAurora.com</a></li>
+                <li><a href="mailto:tj@tjm.art">tj@tjm.art</a></li>
                 <li>50% deposit to start · Typical turnaround 2–4 weeks</li>
               </ul>
             </div>
