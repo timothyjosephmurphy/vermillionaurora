@@ -193,6 +193,8 @@
     if(quoteFeedback){quoteFeedback.replaceChildren(node('span','An earlier checkout needs a status check. Calculate shipping & tax will check it again. '));const open=node('a','Open existing checkout');open.href=link.href;open.className='cart-text-link';quoteFeedback.append(open);}
     if(requestedBuy){notice.append(document.createTextNode(' '));const fullCart=node('a','View full cart');fullCart.href='/cart/';fullCart.className='cart-text-link';notice.append(fullCart);}
   }
+  // Print sizes display to one decimal place (the catalog keeps exact values).
+  function inches(value){const n=Number(value);return Number.isFinite(n)?String(Math.round(n*10)/10):String(value);}
   function render(){
     const list=root.querySelector('[data-cart-items]');list.replaceChildren();
     let subtotal=0,invalid=false;
@@ -201,13 +203,16 @@
       if(amount)subtotal+=Number(amount)*line.quantity;
       const row=node('article',undefined,'cart-line'),link=node('a');link.href=isDeposit?'/commissions/':`/products/${details?.productId||line.id}/`;
       if(p?.image||details?.preview){const img=node('img');img.src=(p?.image||details.preview).src;img.alt=p?.title||details.title;link.append(img);}row.append(link);
-      const info=node('div'),title=node('h2'),titleLink=node('a',p?.title||live?.title||'Unavailable artwork');titleLink.href=link.href;title.append(titleLink);info.append(title,node('p',isPrint?`Fine-art print · Image ${details.imageSize.width} × ${details.imageSize.height} in · Paper ${details.paperSize.width} × ${details.paperSize.height} in${details.mat?` · ${details.mat.name} · Mat / frame ${details.mat.outer.width} × ${details.mat.outer.height} in`:""}`:isDeposit?`Commission deposit · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Balance due before the finished work ships${line.requestId?' · Linked to your commission request':''}`:'Original artwork · Quantity 1'),node('p',amount?money(Number(amount)*line.quantity):'Price unavailable','cart-line-price'));
+      const info=node('div'),title=node('h2'),titleLink=node('a',p?.title||live?.title||'Unavailable artwork');titleLink.href=link.href;title.append(titleLink);info.append(title,node('p',isPrint?`Fine-art print · Image ${inches(details.imageSize.width)} × ${inches(details.imageSize.height)} in · Paper ${inches(details.paperSize.width)} × ${inches(details.paperSize.height)} in${details.mat?` · ${details.mat.name} · Mat / frame ${inches(details.mat.outer.width)} × ${inches(details.mat.outer.height)} in`:""}`:isDeposit?`Commission deposit · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Balance due before the finished work ships${line.requestId?' · Linked to your commission request':''}`:'Original artwork · Quantity 1'),node('p',amount?money(Number(amount)*line.quantity):'Price unavailable','cart-line-price'));
       if(isPrint&&details.frame)info.append(node('p',`${details.frame.name} frame · ${details.frame.glazing.name} acrylic · Assembled by FinerWorks`,'cart-frame-description'));
       if(!eligible(line.id)){invalid=true;info.append(node('p',live?.status==='sold'?'Sold':live?.status==='reserved'?'Temporarily reserved':'Checkout unavailable — please inquire','cart-line-unavailable'));}
       if(details?.sampleOnly)info.append(node('p','Low-resolution sample · Real printed order · One copy','cart-footnote'));
       if(isPrint&&!details.sampleOnly){const label=node('label','Quantity '),quantity=node('input');quantity.type='number';quantity.min='1';quantity.max='10';quantity.step='1';quantity.value=String(line.quantity);quantity.setAttribute('aria-label',`Quantity of ${details.title}`);quantity.style.width='70px';quantity.addEventListener('change',()=>{const n=Number(quantity.value);if(!Number.isSafeInteger(n)||n<1||n>10){quantity.value=String(line.quantity);announce('Choose between 1 and 10 copies.');return;}line.quantity=n;saveCart().catch(error=>announce(error.message));invalidate();render();});label.append(quantity);info.append(label);}const remove=node('button','Remove','cart-text-link');remove.type='button';remove.setAttribute('aria-label',`Remove ${p?.title||live?.title||'artwork'}`);remove.addEventListener('click',()=>{cart=cart.filter(i=>i.id!==line.id);saveCart().catch(error=>announce(`The item was removed here, but its reservation could not be updated yet: ${error.message}`));invalidate();render();announce('Artwork removed from your cart.');});info.append(remove);row.append(info);list.append(row);
     }
     root.querySelector('[data-cart-subtotal]').textContent=money(subtotal);
+    // The 15-minute hold applies to originals only; prints and deposits are not held.
+    const holdNote=root.querySelector('[data-cart-hold-note]');
+    if(holdNote)holdNote.hidden=!cart.some(i=>!i.id.startsWith('print-')&&!i.id.startsWith('deposit-'));
     const active=!!current&&(pending(current)||current.status==='paid');
     layout.hidden=!cart.length||active;root.querySelector('[data-cart-empty]').hidden=!!cart.length||active;
     updateQuoteButton();

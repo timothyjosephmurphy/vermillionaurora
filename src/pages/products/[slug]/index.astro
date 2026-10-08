@@ -9,11 +9,18 @@ import ReferencePhoto from '../../../components/ReferencePhoto.astro';
 import referenceMedia from '../../../../catalog/reference-media.json';
 import CommissionProcess from '../../../components/CommissionProcess.astro';
 import PrintPurchaseDialog from '../../../components/PrintPurchaseDialog.astro';
+import EmailSignup from '../../../components/EmailSignup.astro';
 import {originalFrameEligible,amazonFrameSearchUrl} from '../../../../catalog/frame-matching.mjs';
 import {printOptions,config,papers} from '../../../../catalog/prints.mjs';
 import { products, priceLabel, statusLabel, dimensionLabel } from '../../../../catalog/catalog.mjs';
 export function getStaticPaths() { return products.map(product=>({params:{slug:product.slug},props:{product}})); }
-const {product:p}=Astro.props;
+const {product:source}=Astro.props;
+// Book-gallery artworks whose section is not published (e.g. forewords) link back to their book instead of a missing gallery.
+const publishedSections=new Set(manifest.sections.map(section=>`/book-galleries/${section.id}/`));
+const sourceBook=source.bookGallery?byId[source.bookSources?.[0]?.book]:null;
+const p=source.bookGallery&&!publishedSections.has(source.back?.href)&&sourceBook
+  ?{...source,back:{href:urlFor(sourceBook),label:`← Back to ${sourceBook.title}`}}
+  :source;
 const painting=p.type==='painting';
 const relatedSource=manifest.artworks.find(art=>(art.id===p.id&&art.originalProductId)||art.originalProductId===p.id);
 const relatedProduct=relatedSource?byId[relatedSource.id===p.id?relatedSource.originalProductId:relatedSource.id]:null;
@@ -45,11 +52,11 @@ const facts=painting ? [
   <section id="read-book" class="book-preview" aria-labelledby="book-preview-title"><div class="book-preview-heading"><h2 id="book-preview-title">Inside the book</h2><a href={p.book.pdfUrl} target="_blank" rel="noopener noreferrer">Open PDF ↗ <span>({p.book.pdfSize})</span></a></div><iframe src={`${p.book.pdfUrl}#view=FitH`} title={`${p.title} — full book PDF viewer`} loading="lazy"></iframe></section>
   <p class="book-back"><a href="/books/">← All books</a></p>
 </main> : <main class="container product-detail" data-product-id={painting?p.id:undefined}>
-  <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href={p.back.href}>{p.artist==='Paul Murphy'?'Paul Murphy':p.type==='commission'?'Commissions':'Gallery'}</a><span>/</span><span aria-current="page">{p.title}</span></nav>
+  <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href={p.back.href}>{p.artist==='Paul Murphy'?'Paul Murphy':p.type==='commission'?'Commissions':p.back.href.startsWith('/products/')?p.back.label.replace('← Back to ',''):'Gallery'}</a><span>/</span><span aria-current="page">{p.title}</span></nav>
   {p.examples?.length>0 && <section class="commission-gallery"><div class="section-heading"><h2>Portrait gallery</h2><p>{p.galleryDescription}</p></div><div class="exhibition-grid">{p.examples.map(img=><a class="ex-photo" href={img.src}><img {...img} loading="lazy" decoding="async" /></a>)}</div></section>}
   <article class:list={['product-layout',{'product-layout-text':!painting}]}>
     {painting && <PaintingImage image={p.image} title={p.title} />}
-    <div class="product-summary"><p class="eyebrow dark">{p.eyebrow}</p><h1>{p.title}</h1>
+    <div class="product-summary"><p class="eyebrow dark">{p.eyebrow}</p><h1>{p.title}</h1>{p.artist==="Paul Murphy" && <p class="product-artist-byline">by <a href="/exhibitions/paul-murphy/">Paul Murphy</a>, featured artist</p>}
   {painting && (p.listing.status==='available' || availablePrints.length>0) && <section class="product-purchase-actions" aria-label="Purchase options">
     {p.listing.status==='available' && <div data-original-purchase>
       {p.checkout?.mode==='integrated' ? <div data-cart-product>
@@ -63,9 +70,14 @@ const facts=painting ? [
     </div>}
   </section>}
       {relatedProduct&&<p class="product-print-availability"><a href={urlFor(relatedProduct)}>{p.bookGallery?'View the original painting':(relatedPrints?'View fine-art print options':'View in the book collection')} →</a></p>}
-      {p.listing.price && (!painting||p.listing.status!=='available') && <p class="product-detail-price">{priceLabel(p,painting)}</p>}
+      {p.listing.price && p.listing.status!=='not-for-sale' && (!painting||p.listing.status!=='available') && <p class="product-detail-price">{priceLabel(p,painting)}</p>}
       {painting && <p class="product-availability" data-live-status>{p.bookGallery?'From the book collection':statusLabel(p)}</p>}
       {painting&&availablePrints.length===0&&!relatedPrints&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
+      {painting&&!p.bookGallery&&p.listing.status==='sold'&&<section class="sold-next-steps" aria-label="Next steps for a sold painting">
+        <p>This original has found its home. I can paint something in the same spirit for you.</p>
+        <a class="button button-solid" href="/commissions/">Commission something similar</a>
+        {availablePrints.length===0&&!relatedPrints&&<EmailSignup id="notify-prints-email" compact heading="Notify me when prints are available" text="Join my studio notes and I’ll share when prints of this painting are released. A few emails a year; unsubscribe anytime." button="Notify me" />}
+      </section>}
       {facts.length>0 && <dl class="painting-facts">{facts.map(f=><><dt>{f.label}</dt><dd>{f.value}</dd></>)}</dl>}
       {p.storyHeading ? <section class="painting-story" aria-labelledby="painting-story-heading"><h2 id="painting-story-heading">{p.storyHeading}</h2>{p.story.map(text=><p>{text}</p>)}</section> : p.story.map(text=><p class={!painting?'product-description':undefined}>{text}</p>)}
       {painting && referenceMedia[p.id] && <ReferencePhoto media={referenceMedia[p.id]} />}

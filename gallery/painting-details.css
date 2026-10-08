@@ -55,3 +55,5 @@
 .product-frame-action .button{max-width:100%;min-height:44px;white-space:normal;text-align:center;font-size:.78rem;letter-spacing:.04em;line-height:1.5}
 .product-purchase-actions button:disabled{opacity:.5;cursor:not-allowed}
 @media(max-width:600px){.product-purchase-actions{gap:1rem}.product-purchase-actions>[data-original-purchase],.product-print-action{width:100%}.product-purchase-actions .cart-product-actions>.button,.product-print-action>.button{width:100%}.product-purchase-actions .cart-product-actions{grid-template-columns:1fr;gap:.5rem}.product-purchase-actions [data-cart-add]{grid-column:1;grid-row:3}.product-purchase-actions .cart-text-link{margin:0 auto}}
+.product-summary .product-artist-byline{margin:-.25rem 0 1rem;font-size:1.05rem;color:var(--muted)}.product-summary .product-artist-byline a{text-decoration:underline;text-underline-offset:3px}
+.sold-next-steps{margin:14px 0 22px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.sold-next-steps>p{margin:0 0 12px;line-height:1.6}

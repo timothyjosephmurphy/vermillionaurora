@@ -20,4 +20,14 @@ export const person = {
   brand: { '@type': 'Brand', name: 'Vermillion Aurora' },
   sameAs
 };
+// Site name for search results: TJM.art (alternate: TJ Murphy).
+export const website = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE}/#website`,
+  name: 'TJM.art',
+  alternateName: ['TJ Murphy', 'tjm.art'],
+  url: `${SITE}/`,
+  publisher: { '@id': `${SITE}/#tj-murphy` }
+};
 export const ld = data => JSON.stringify(data).replace(/</g, '\\u003c');
