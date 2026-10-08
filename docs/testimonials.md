@@ -3,9 +3,16 @@
 Collectors (people TJ has given or sold paintings to) share testimonials on https://tjm.art/testimonials/.
 
 ## Flow
-1. **Form** on /testimonials/: name (as shown), email (private, required), painting (picker of TJ's paintings and/or free text),
-   testimonial (required), optional city, up to 4 photos (JPEG/PNG/WebP/HEIC, ≤10 MB each), and one consent checkbox to publish
-   name, words, photos and city (including an approximate city pin on the map). Honeypot field `website`; rate limit 5 per visitor
+1. **Form** on /testimonials/: name (optional, as shown; blank appears publicly as "A collector", plus the city if given),
+   email (private, required), painting (picker of TJ's paintings and/or free text), testimonial (required unless a video is
+   attached), optional city, up to 4 photos (JPEG/PNG/WebP/HEIC, ≤10 MB each), then the optional video right below the photos.
+   **No consent checkbox:** a short notice sits just above the submit button (text and version in
+   `cloudflare/testimonial-notice.mjs`): "By sending this, you’re OK with TJ showing your name (if you give one), city, words and
+   photos on tjm.art. Videos are only shown if you tick the box above." Submitting is the consent; the record stores
+   `publishConsent: 'implied-by-submit'` and `consent: {publish: true, basis: 'implied-by-submit', notice, noticeVersion,
+   shownVersion, scope, at}` (`shownVersion` is the version the page sent in the hidden `publishNotice` field). The two video
+   permission boxes are unchanged and still separate. The thank-you email greets by first name, or "Hi there" without one.
+   Honeypot field `website`; rate limit 5 per visitor
    (hashed IP) per UTC day and 60 total per day. Works without JavaScript (303 back to `/testimonials/?thanks=1`).
 2. **Photos**: the browser resizes to ≤2000 px JPEG, which drops all metadata (HEIC is converted with heic2any, lazy-loaded from
    jsDelivr with SRI, when the browser can't decode it). The Worker strips metadata again (`cloudflare/image-metadata.mjs`):
@@ -36,7 +43,7 @@ service binding, like the QuickBooks routes.
 
 ## Video testimonials
 
-The form invites a short selfie video ("stand next to your painting, hold your phone at arm's length…"). Phones get two
+The optional video control sits directly below "Add photos" (no separate encouragement box since 2026-10-08). Phones get two
 buttons: **Record a selfie video** (`capture="user"`, front camera) and **Choose from my videos** (library, no `capture`).
 A video makes the written words optional; at least one of words or video is required.
 

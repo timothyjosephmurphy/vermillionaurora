@@ -49,9 +49,19 @@ try{
   const desktop=await browser.newContext({viewport:{width:1280,height:900}});await desktop.route('**/*',serve);
   const page=await desktop.newPage();page.on('pageerror',e=>errors.push(e.message));
   await page.goto(origin+'/testimonials/#share');
-  const invite=page.locator('.video-invite');await invite.waitFor();
-  assert.match(await invite.textContent(),/Stand next to your painting, hold your phone at arm’s length/);
-  assert.equal(await invite.locator('li').count(),3);
+  await page.locator('[data-video-field]').waitFor();
+  // Layout (2026-10-08): no encouragement box, video directly below the photos, no consent checkbox, notice above the button.
+  assert.equal(await page.locator('.video-invite').count(),0,'encouragement box removed');
+  assert.equal(await page.getByText('Got a minute?').count(),0);
+  assert.deepEqual(await page.evaluate(()=>{const f=document.querySelector('[data-testimonial-form]');const kids=[...f.children].filter(n=>n.getClientRects().length||n.matches('ul'));
+    const i=kids.indexOf(document.querySelector('[data-photo-field]'));
+    return {next:[kids[i+1]?.className,kids[i+2]?.className],publishBeforeSubmit:document.querySelector('button[type=submit]').previousElementSibling.matches('[data-publish-note]')};}),
+    {next:['photo-previews','video-field'],publishBeforeSubmit:true});
+  assert.equal(await page.locator('input[name=consent]').count(),0,'no publish consent checkbox');
+  assert.equal(await page.locator('input[type=checkbox]:visible').count(),0,'no visible checkbox until a video is attached');
+  assert.equal((await page.locator('[data-publish-note]').textContent()).trim(),'By sending this, you’re OK with TJ showing your name (if you give one), city, words and photos on tjm.art. Videos are only shown if you tick the box above. Testimonials are reviewed before they appear. Privacy.');
+  assert.equal(await page.locator('input[name=name]').evaluate(n=>n.required),false,'name is optional');
+  assert.match(await page.locator('label:has(input[name=name]) > span').first().textContent(),/Your name \(optional\)/);
   assert(await page.locator('[data-video-record]').isHidden(),'no record button on desktop');
   assert(await page.locator('[data-video-consent]').isHidden(),'permissions only appear with a video');
   assert.equal(await page.locator('[data-video-input]').getAttribute('capture'),null,'library input never forces the camera');
@@ -66,9 +76,9 @@ try{
   assert.equal(await page.locator('textarea[name=quote]').evaluate(n=>n.required),false,'words are optional with a video');
   assert.match(await page.locator('[data-video-consent]').textContent(),/TJ can show my video on tjm\.art.*TJ can share my video on his social media\..*take it down anytime/s);
   assert.equal(await page.locator('[data-video-consent] input:checked').count(),0,'both permissions start unticked');
-  await page.locator('input[name=name]').fill('Jane D.');await page.locator('input[name=email]').fill('jane@example.com');
+  await page.locator('input[name=email]').fill('jane@example.com'); // no name: shows as “A collector”
   await page.locator('input[name=painting]').fill('Emergence');await page.locator('input[name=city]').fill('');
-  await page.locator('input[name=consent]').check();await page.locator('input[name=videoSite]').check();
+  await page.locator('input[name=videoSite]').check();
   await page.waitForTimeout(1200); // poster capture
   await unstick(page);
   if(shots)await page.locator('.share-form-wrap').screenshot({path:path.join(shots,'form-desktop.png')});
@@ -79,6 +89,7 @@ try{
   const records=[...env.COMMISSION_UPLOADS.data.keys()].filter(k=>k.startsWith('testimonials/records/'));
   assert.equal(records.length,1);
   const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get(records[0]).value);
+  assert.equal(rec.name,'');assert.equal(rec.publishConsent,'implied-by-submit');assert.equal(rec.consent.shownVersion,'2026-10-08');
   assert.equal(rec.quote,'');assert.equal(rec.video.type,'video/webm');assert.equal(rec.video.bytes,video.length);
   assert.deepEqual([rec.video.consent.site,rec.video.consent.social],[true,false]);
   assert.ok(rec.video.poster,'poster frame captured and stored');
@@ -103,13 +114,14 @@ try{
   const player=page.locator(`#${rec.id} video`);await player.waitFor();
   assert.deepEqual(await player.evaluate(v=>({preload:v.preload,autoplay:v.autoplay,playsinline:v.hasAttribute('playsinline'),poster:/\/poster$/.test(v.poster),controls:v.controls,type:v.querySelector('source').type})),{preload:'none',autoplay:false,playsinline:true,poster:true,controls:true,type:'video/webm'});
   assert.equal(await page.locator(`#${rec.id} blockquote`).count(),0,'no empty quote');
+  assert.equal(await page.locator(`#${rec.id} .testimonial-meta strong`).textContent(),'A collector');
   await player.evaluate(v=>{v.muted=true;return v.play();});await unstick(page);
   if(shots){await page.waitForTimeout(800);await page.locator(`#${rec.id}`).screenshot({path:path.join(shots,'public-card.png')});}
 
   // Phone: record (front camera) and library buttons.
-  const phone=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2});await phone.route('**/*',serve);
+  const phone=await browser.newContext({viewport:{width:375,height:812},isMobile:true,hasTouch:true,deviceScaleFactor:2});await phone.route('**/*',serve);
   const m=await phone.newPage();m.on('pageerror',e=>errors.push(e.message));
-  await m.goto(origin+'/testimonials/#share');await m.locator('.video-invite').waitFor();
+  await m.goto(origin+'/testimonials/#share');await m.locator('[data-video-field]').waitFor();
   assert(await m.locator('[data-video-record]').isVisible());
   assert.equal(await m.locator('[data-video-choose-label]').textContent(),'Choose from my videos');
   assert.equal(await m.locator('[data-video-capture]').getAttribute('capture'),'user');

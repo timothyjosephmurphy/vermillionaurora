@@ -3,6 +3,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { testimonials } from '../data/testimonials.mjs';
 import { ld, person } from '../data/structured-data.mjs';
+import { PUBLISH_NOTICE, PUBLISH_NOTICE_VERSION } from '../../cloudflare/testimonial-notice.mjs';
 // Hand-curated entries (src/data/testimonials.json) render at build time; approved form submissions load at
 // request time from /testimonials/api/approved, so approving one on /testimonial-manager/ needs no rebuild.
 const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Person',name:t.name}, reviewBody:t.quote, itemReviewed:{'@type':'VisualArtwork',name:t.painting||'Painting by TJ Murphy',creator:{'@id':person['@id']}} }));
@@ -68,47 +69,11 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
             <p><a href="/gallery/">Browse the gallery</a> · <a href="/commissions/">Commission a painting</a></p>
           </div>
           <form class="contact-form testimonial-form" action="/testimonials/api/submit" method="POST" enctype="multipart/form-data" data-testimonial-form>
-            <div class="video-invite" data-video-only hidden>
-              <p class="video-invite-kicker">Got a minute? Record a selfie video</p>
-              <p class="video-invite-lede">Stand next to your painting, hold your phone at arm’s length, and tell me in a minute or so what you see in it and why you chose it. No script needed. Just talk the way you would to a friend who’s visiting.</p>
-              <ul class="video-tips">
-                <li>Face a window or a lamp so your face is in good light.</li>
-                <li>Hold the phone steady and stay close enough that I can hear you.</li>
-                <li>Portrait or landscape are both fine.</li>
-              </ul>
-            </div>
-            <fieldset class="video-field" data-video-field data-video-only hidden>
-              <legend>Your video (optional)</legend>
-              <div class="video-buttons">
-                <button type="button" class="photo-add" data-video-record hidden><span aria-hidden="true">●</span> Record a selfie video</button>
-                <button type="button" class="photo-add" data-video-choose><span aria-hidden="true">+</span> <span data-video-choose-label>Choose a video</span></button>
-              </div>
-              <input type="file" accept="video/*" capture="user" class="visually-hidden" tabindex="-1" aria-hidden="true" data-video-capture />
-              <input type="file" accept="video/mp4,video/quicktime,video/webm,.mp4,.m4v,.mov,.webm" class="visually-hidden" tabindex="-1" aria-hidden="true" data-video-input />
-              <small id="video-help" class="field-help">MP4, MOV or WebM, up to 500 MB (a couple of minutes from any phone).</small>
-              <div class="video-selected" data-video-selected hidden>
-                <video muted playsinline preload="metadata" data-video-preview aria-label="Preview of your video"></video>
-                <div class="video-selected-info">
-                  <strong data-video-name></strong>
-                  <span data-video-size></span>
-                  <button type="button" class="video-remove" data-video-remove>Remove video</button>
-                </div>
-              </div>
-              <div class="video-progress" data-video-progress hidden>
-                <progress max="100" value="0" aria-label="Video upload progress" data-video-bar></progress>
-                <span data-video-progress-text></span>
-              </div>
-              <div class="video-consent" data-video-consent hidden>
-                <label class="consent"><input type="checkbox" name="videoSite" value="yes" /><span>TJ can show my video on tjm.art</span></label>
-                <label class="consent"><input type="checkbox" name="videoSocial" value="yes" /><span>TJ can share my video on his social media.</span></label>
-                <p class="field-help">Both are optional. If you leave them unticked, your video is just for TJ. You can ask TJ to take it down anytime by emailing him at <a href="mailto:tj@tjm.art">tj@tjm.art</a>.</p>
-              </div>
-            </fieldset>
             <div class="field-row">
               <label>
-                <span>Your name (required)</span>
-                <input type="text" name="name" required maxlength="80" autocomplete="name" placeholder="e.g. Jane D." aria-describedby="name-help" />
-                <small id="name-help" class="field-help">As you’d like it shown with your testimonial.</small>
+                <span>Your name (optional)</span>
+                <input type="text" name="name" maxlength="80" autocomplete="name" placeholder="e.g. Jane D." aria-describedby="name-help" />
+                <small id="name-help" class="field-help">As you’d like it shown. Leave it blank to appear as “A collector”.</small>
               </label>
               <label>
                 <span>Email (required, kept private)</span>
@@ -137,12 +102,36 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
               <p id="photo-count" class="photo-count" role="status" aria-live="polite" data-photo-count></p>
             </div>
             <ul class="photo-previews" data-photo-previews aria-label="Selected photos"></ul>
+            <fieldset class="video-field" data-video-field data-video-only hidden>
+              <legend>Your video (optional)</legend>
+              <div class="video-buttons">
+                <button type="button" class="photo-add" data-video-record hidden><span aria-hidden="true">●</span> Record a selfie video</button>
+                <button type="button" class="photo-add" data-video-choose><span aria-hidden="true">+</span> <span data-video-choose-label>Choose a video</span></button>
+              </div>
+              <input type="file" accept="video/*" capture="user" class="visually-hidden" tabindex="-1" aria-hidden="true" data-video-capture />
+              <input type="file" accept="video/mp4,video/quicktime,video/webm,.mp4,.m4v,.mov,.webm" class="visually-hidden" tabindex="-1" aria-hidden="true" data-video-input />
+              <small id="video-help" class="field-help">MP4, MOV or WebM, up to 500 MB (a couple of minutes from any phone).</small>
+              <div class="video-selected" data-video-selected hidden>
+                <video muted playsinline preload="metadata" data-video-preview aria-label="Preview of your video"></video>
+                <div class="video-selected-info">
+                  <strong data-video-name></strong>
+                  <span data-video-size></span>
+                  <button type="button" class="video-remove" data-video-remove>Remove video</button>
+                </div>
+              </div>
+              <div class="video-progress" data-video-progress hidden>
+                <progress max="100" value="0" aria-label="Video upload progress" data-video-bar></progress>
+                <span data-video-progress-text></span>
+              </div>
+              <div class="video-consent" data-video-consent hidden>
+                <label class="consent"><input type="checkbox" name="videoSite" value="yes" /><span>TJ can show my video on tjm.art</span></label>
+                <label class="consent"><input type="checkbox" name="videoSocial" value="yes" /><span>TJ can share my video on his social media.</span></label>
+                <p class="field-help">Both are optional. If you leave them unticked, your video is just for TJ. You can ask TJ to take it down anytime by emailing him at <a href="mailto:tj@tjm.art">tj@tjm.art</a>.</p>
+              </div>
+            </fieldset>
             <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot" />
-            <label class="consent">
-              <input type="checkbox" name="consent" value="yes" required />
-              <span>I agree that TJ Murphy may publish my name, words, photos and city on tjm.art, including an approximate city pin on the exhibitions map. I can ask for it to be removed at any time.</span>
-            </label>
-            <p class="form-privacy-note">Testimonials are reviewed before they appear. <a href="/privacy/">Privacy</a>.</p>
+            <input type="hidden" name="publishNotice" value={PUBLISH_NOTICE_VERSION} />
+            <p class="form-publish-note" data-publish-note>{PUBLISH_NOTICE} Testimonials are reviewed before they appear. <a href="/privacy/">Privacy</a>.</p>
             <button type="submit" class="button button-solid">Send my testimonial</button>
             <p class="form-status" role="status" aria-live="polite" aria-atomic="true" data-form-status></p>
           </form>
@@ -171,14 +160,14 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .testimonial-selfie{border-radius:50%;object-fit:cover;width:48px;height:48px}
     .testimonial-share{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;margin-top:40px;padding-top:36px;border-top:1px solid var(--line)}
     .share-copy{line-height:1.75;color:#3f3832}.share-copy h2{font:600 clamp(2rem,4vw,2.6rem)/1.1 "Cormorant Garamond",serif;margin:0 0 14px;color:var(--ink)}
-    .share-copy a,.form-privacy-note a,.form-thanks a{text-decoration:underline;text-underline-offset:3px}
+    .share-copy a,.form-publish-note a,.form-thanks a{text-decoration:underline;text-underline-offset:3px}
     .share-points{padding-left:1.1rem;font-size:.92rem}.share-points li+li{margin-top:6px}
     .testimonial-form .field-help{font-size:.8rem;letter-spacing:0;text-transform:none;color:var(--muted)}
     .testimonial-form label.consent{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;letter-spacing:0;text-transform:none;line-height:1.55}
     .testimonial-form label.consent input{width:22px;height:22px;flex:none;margin-top:2px;accent-color:var(--cta)}
     .testimonial-form [aria-invalid=true]{border-color:#b83518;box-shadow:0 0 0 2px rgba(184,53,24,.15)}
     .testimonial-form button[type=submit]{justify-self:start}
-    .form-privacy-note{font-size:.85rem;color:var(--muted);margin:0}
+    .form-publish-note{font-size:.9rem;line-height:1.55;color:#3f3832;margin:0}
     .form-status{margin:0;font-size:.95rem}.form-status.error{color:#a3301a}
     .photo-field{display:grid;gap:.5rem;justify-items:start}
     .photo-field>label{color:#3f3832;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
@@ -195,10 +184,6 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .photo-previews img,.photo-previews .no-preview{width:92px;height:92px;object-fit:cover;border-radius:10px;display:grid;place-items:center;background:#e8dfd3;font-size:.7rem;text-align:center;color:var(--muted)}
     .photo-previews button{position:absolute;top:4px;right:4px;width:30px;height:30px;border-radius:50%;border:0;background:rgba(29,26,23,.78);color:#fff;font-size:1.1rem;line-height:1;cursor:pointer}
     .photo-previews button:focus-visible{outline:3px solid var(--cta);outline-offset:2px}
-    .video-invite{background:linear-gradient(135deg,#fff4e6,#fdebe2);border:1px solid rgba(211,66,32,.25);border-radius:18px;padding:1.1rem 1.25rem;line-height:1.6;color:#3f3832}
-    .video-invite-kicker{margin:0 0 .35rem;font:600 1.6rem/1.15 "Cormorant Garamond",serif;color:var(--ink)}
-    .video-invite-lede{margin:0;font-size:1rem}
-    .video-tips{margin:.6rem 0 0;padding-left:1.1rem;font-size:.88rem;color:#5e554d}.video-tips li+li{margin-top:2px}
     .video-field{border:0;padding:0;margin:0;display:grid;gap:.5rem;justify-items:start;min-width:0}
     .video-field legend{padding:0;margin-bottom:.5rem;color:#3f3832;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
     .video-buttons{display:flex;flex-wrap:wrap;gap:10px}
