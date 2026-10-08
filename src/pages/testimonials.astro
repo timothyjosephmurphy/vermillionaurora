@@ -91,11 +91,13 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
               <input type="text" name="city" maxlength="100" autocomplete="address-level2" placeholder="e.g. Tacoma, WA" aria-describedby="city-help" />
               <small id="city-help" class="field-help">City only, shown with your testimonial and as an approximate pin on the map.</small>
             </label>
-            <label>
-              <span>Photos (optional, up to 4)</span>
-              <input type="file" name="photos" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" aria-describedby="photo-help" data-photo-input />
+            <div class="photo-field" data-photo-field>
+              <label for="testimonial-photos">Photos (optional, up to 4)</label>
+              <input id="testimonial-photos" type="file" name="photos" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" aria-describedby="photo-help" data-photo-input />
+              <button type="button" class="photo-add" data-photo-add aria-describedby="photo-help photo-count" hidden><span aria-hidden="true">+</span> Add photos</button>
               <small id="photo-help" class="field-help">The painting on your wall, and a photo of you with it if you like. JPEG, PNG, WebP or HEIC, up to 10 MB each.</small>
-            </label>
+              <p id="photo-count" class="photo-count" role="status" aria-live="polite" data-photo-count></p>
+            </div>
             <ul class="photo-previews" data-photo-previews aria-label="Selected photos"></ul>
             <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot" />
             <label class="consent">
@@ -132,7 +134,6 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .share-copy{line-height:1.75;color:#3f3832}.share-copy h2{font:600 clamp(2rem,4vw,2.6rem)/1.1 "Cormorant Garamond",serif;margin:0 0 14px;color:var(--ink)}
     .share-copy a,.form-privacy-note a,.form-thanks a{text-decoration:underline;text-underline-offset:3px}
     .share-points{padding-left:1.1rem;font-size:.92rem}.share-points li+li{margin-top:6px}
-    .testimonial-form input[type=file]{padding:.7rem;font-size:.9rem;letter-spacing:0;text-transform:none}
     .testimonial-form .field-help{font-size:.8rem;letter-spacing:0;text-transform:none;color:var(--muted)}
     .testimonial-form label.consent{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;letter-spacing:0;text-transform:none;line-height:1.55}
     .testimonial-form label.consent input{width:22px;height:22px;flex:none;margin-top:2px;accent-color:var(--cta)}
@@ -140,6 +141,16 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .testimonial-form button[type=submit]{justify-self:start}
     .form-privacy-note{font-size:.85rem;color:var(--muted);margin:0}
     .form-status{margin:0;font-size:.95rem}.form-status.error{color:#a3301a}
+    .photo-field{display:grid;gap:.5rem;justify-items:start}
+    .photo-field>label{color:#3f3832;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+    .photo-field input[type=file]{width:100%;border:1px solid rgba(25,19,15,.14);border-radius:12px;background:rgba(255,255,255,.75);padding:.7rem;font-size:.9rem}
+    .photo-field.js-photos input[type=file]{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+    .photo-add{display:inline-flex;align-items:center;gap:.5rem;min-height:46px;padding:.7rem 1.2rem;border:1.5px dashed rgba(140,77,57,.55);border-radius:12px;background:rgba(255,255,255,.75);color:var(--accent-dark,#5c2d21);font:600 .9rem/1.2 Inter,Arial,sans-serif;cursor:pointer}
+    .photo-add span{font-size:1.25rem;line-height:1}
+    .photo-add:hover{border-color:var(--cta,#d34220);background:#fffaf4}
+    .photo-add:focus-visible{outline:3px solid var(--cta,#d34220);outline-offset:3px}
+    .photo-add[hidden]{display:none}
+    .photo-count{margin:0;font-size:.85rem;color:var(--muted)}.photo-count:empty{display:none}
     .photo-previews{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:-6px 0 0}.photo-previews:empty{display:none}
     .photo-previews li{position:relative;width:92px}
     .photo-previews img,.photo-previews .no-preview{width:92px;height:92px;object-fit:cover;border-radius:10px;display:grid;place-items:center;background:#e8dfd3;font-size:.7rem;text-align:center;color:var(--muted)}
