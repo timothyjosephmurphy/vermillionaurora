@@ -1,13 +1,13 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="2dcee9b9792427369d97";
+export const printVersion="59df016cda486fc9238e";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador — Large print",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S5.41X10.52",
@@ -31,8 +31,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -44,8 +44,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador — Large print — Black frame",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print — Black frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
     "amount": "74.00",
     "currency": "USD",
     "sku": "5M144M8S5DD41X10DD52F1S8DD41X13DD52J1S5DD41X10DD52G1",
@@ -69,8 +69,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -118,8 +118,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador — Large print — White frame",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print — White frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
     "amount": "74.00",
     "currency": "USD",
     "sku": "5M144M8S5DD41X10DD52F2S8DD41X13DD52J1S5DD41X10DD52G1",
@@ -143,8 +143,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -192,8 +192,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador — Large print — Natural wood frame",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
     "amount": "84.00",
     "currency": "USD",
     "sku": "5M144M8S5DD41X10DD52F7S8DD41X13DD52J1S5DD41X10DD52G1",
@@ -217,8 +217,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -266,8 +266,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador — Medium print",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S4.12X7.95",
@@ -291,8 +291,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -304,8 +304,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador — Medium print — Black frame",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print — Black frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
     "amount": "61.63",
     "currency": "USD",
     "sku": "5M144M8S4DD12X7DD95F1S8X11DD83J1S4DD12X7DD95G1",
@@ -329,8 +329,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -378,8 +378,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador — Medium print — White frame",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print — White frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
     "amount": "61.63",
     "currency": "USD",
     "sku": "5M144M8S4DD12X7DD95F2S8X11DD83J1S4DD12X7DD95G1",
@@ -403,8 +403,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -452,8 +452,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "el-zonte-at-sunrise",
-    "title": "El Zonte at Sunrise, El Salvador — Medium print — Natural wood frame",
-    "artworkTitle": "El Zonte at Sunrise, El Salvador",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise from Punto El Zonte Hostel, El Salvador",
     "amount": "70.63",
     "currency": "USD",
     "sku": "5M144M8S4DD12X7DD95F7S8X11DD83J1S4DD12X7DD95G1",
@@ -477,8 +477,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2866,8 +2866,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Large print",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Large print",
+    "artworkTitle": "Malone",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S9.09X10.4",
@@ -2891,8 +2891,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2904,8 +2904,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Large print — Black frame",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Large print — Black frame",
+    "artworkTitle": "Malone",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S9DD09X10DD4F1S12DD09X13DD4J1S9DD09X10DD4G1",
@@ -2929,8 +2929,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -2978,8 +2978,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Large print — White frame",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Large print — White frame",
+    "artworkTitle": "Malone",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S9DD09X10DD4F2S12DD09X13DD4J1S9DD09X10DD4G1",
@@ -3003,8 +3003,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3052,8 +3052,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Large print — Natural wood frame",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Large print — Natural wood frame",
+    "artworkTitle": "Malone",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S9DD09X10DD4F7S12DD09X13DD4J1S9DD09X10DD4G1",
@@ -3077,8 +3077,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3126,8 +3126,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Medium print",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Medium print",
+    "artworkTitle": "Malone",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.88X7.86",
@@ -3151,8 +3151,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3164,8 +3164,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Medium print — Black frame",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Medium print — Black frame",
+    "artworkTitle": "Malone",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S6DD88X7DD86F1S9DD88X10DD86J1S6DD88X7DD86G1",
@@ -3189,8 +3189,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3238,8 +3238,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Medium print — White frame",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Medium print — White frame",
+    "artworkTitle": "Malone",
     "amount": "62.63",
     "currency": "USD",
     "sku": "5M144M8S6DD88X7DD86F2S9DD88X10DD86J1S6DD88X7DD86G1",
@@ -3263,8 +3263,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3312,8 +3312,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Medium print — Natural wood frame",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Medium print — Natural wood frame",
+    "artworkTitle": "Malone",
     "amount": "71.63",
     "currency": "USD",
     "sku": "5M144M8S6DD88X7DD86F7S9DD88X10DD86J1S6DD88X7DD86G1",
@@ -3337,8 +3337,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3386,8 +3386,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Small print",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Small print",
+    "artworkTitle": "Malone",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S4.67X5.32",
@@ -3411,8 +3411,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3424,8 +3424,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Small print — Black frame",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Small print — Black frame",
+    "artworkTitle": "Malone",
     "amount": "58.63",
     "currency": "USD",
     "sku": "5M144M8S4DD67X5DD32F1S8DD01X8DD66J1S4DD67X5DD32G1",
@@ -3449,8 +3449,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3498,8 +3498,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Small print — White frame",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Small print — White frame",
+    "artworkTitle": "Malone",
     "amount": "58.63",
     "currency": "USD",
     "sku": "5M144M8S4DD67X5DD32F2S8DD01X8DD66J1S4DD67X5DD32G1",
@@ -3523,8 +3523,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -3572,8 +3572,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-guitarist",
-    "title": "Girl Tuning Guitar — Small print — Natural wood frame",
-    "artworkTitle": "Girl Tuning Guitar",
+    "title": "Malone — Small print — Natural wood frame",
+    "artworkTitle": "Malone",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S4DD67X5DD32F7S8DD01X8DD66J1S4DD67X5DD32G1",
@@ -3597,8 +3597,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8066,8 +8066,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunflower-woman",
-    "title": "Mother and Child on the Ukrainian Plain — Large print",
-    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "title": "Vision of Ukraine at Peace — Large print",
+    "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S11.3X6.27",
@@ -8091,8 +8091,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunflower-woman.jpg",
-      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
-      "caption": "Mother and Child on the Ukrainian Plain"
+      "alt": "Vision of Ukraine at Peace by TJ Murphy",
+      "caption": "Vision of Ukraine at Peace"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8104,8 +8104,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunflower-woman",
-    "title": "Mother and Child on the Ukrainian Plain — Large print — Black frame",
-    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "title": "Vision of Ukraine at Peace — Large print — Black frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "78.00",
     "currency": "USD",
     "sku": "5M144M8S11DD3X6DD27F1S14DD3X9DD27J1S11DD3X6DD27G1",
@@ -8129,8 +8129,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunflower-woman.jpg",
-      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
-      "caption": "Mother and Child on the Ukrainian Plain"
+      "alt": "Vision of Ukraine at Peace by TJ Murphy",
+      "caption": "Vision of Ukraine at Peace"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8178,8 +8178,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunflower-woman",
-    "title": "Mother and Child on the Ukrainian Plain — Large print — White frame",
-    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "title": "Vision of Ukraine at Peace — Large print — White frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "78.00",
     "currency": "USD",
     "sku": "5M144M8S11DD3X6DD27F2S14DD3X9DD27J1S11DD3X6DD27G1",
@@ -8203,8 +8203,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunflower-woman.jpg",
-      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
-      "caption": "Mother and Child on the Ukrainian Plain"
+      "alt": "Vision of Ukraine at Peace by TJ Murphy",
+      "caption": "Vision of Ukraine at Peace"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8252,8 +8252,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunflower-woman",
-    "title": "Mother and Child on the Ukrainian Plain — Large print — Natural wood frame",
-    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "title": "Vision of Ukraine at Peace — Large print — Natural wood frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S11DD3X6DD27F7S14DD3X9DD27J1S11DD3X6DD27G1",
@@ -8277,8 +8277,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunflower-woman.jpg",
-      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
-      "caption": "Mother and Child on the Ukrainian Plain"
+      "alt": "Vision of Ukraine at Peace by TJ Murphy",
+      "caption": "Vision of Ukraine at Peace"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8326,8 +8326,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunflower-woman",
-    "title": "Mother and Child on the Ukrainian Plain — Medium print",
-    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "title": "Vision of Ukraine at Peace — Medium print",
+    "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S8.54X4.77",
@@ -8351,8 +8351,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunflower-woman.jpg",
-      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
-      "caption": "Mother and Child on the Ukrainian Plain"
+      "alt": "Vision of Ukraine at Peace by TJ Murphy",
+      "caption": "Vision of Ukraine at Peace"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8364,8 +8364,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunflower-woman",
-    "title": "Mother and Child on the Ukrainian Plain — Medium print — Black frame",
-    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "title": "Vision of Ukraine at Peace — Medium print — Black frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S8DD54X4DD77F1S11DD78X8DD01J1S8DD54X4DD77G1",
@@ -8389,8 +8389,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunflower-woman.jpg",
-      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
-      "caption": "Mother and Child on the Ukrainian Plain"
+      "alt": "Vision of Ukraine at Peace by TJ Murphy",
+      "caption": "Vision of Ukraine at Peace"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8438,8 +8438,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunflower-woman",
-    "title": "Mother and Child on the Ukrainian Plain — Medium print — White frame",
-    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "title": "Vision of Ukraine at Peace — Medium print — White frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "66.63",
     "currency": "USD",
     "sku": "5M144M8S8DD54X4DD77F2S11DD78X8DD01J1S8DD54X4DD77G1",
@@ -8463,8 +8463,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunflower-woman.jpg",
-      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
-      "caption": "Mother and Child on the Ukrainian Plain"
+      "alt": "Vision of Ukraine at Peace by TJ Murphy",
+      "caption": "Vision of Ukraine at Peace"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8512,8 +8512,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunflower-woman",
-    "title": "Mother and Child on the Ukrainian Plain — Medium print — Natural wood frame",
-    "artworkTitle": "Mother and Child on the Ukrainian Plain",
+    "title": "Vision of Ukraine at Peace — Medium print — Natural wood frame",
+    "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "75.63",
     "currency": "USD",
     "sku": "5M144M8S8DD54X4DD77F7S11DD78X8DD01J1S8DD54X4DD77G1",
@@ -8537,8 +8537,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunflower-woman.jpg",
-      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
-      "caption": "Mother and Child on the Ukrainian Plain"
+      "alt": "Vision of Ukraine at Peace by TJ Murphy",
+      "caption": "Vision of Ukraine at Peace"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8586,8 +8586,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunset-silhouette",
-    "title": "Sunset on Sucia Island in Puget Sound — Large print",
-    "artworkTitle": "Sunset on Sucia Island in Puget Sound",
+    "title": "Sunset in the Strait of Juan de Fuca, Sucia Island — Large print",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Sucia Island",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S5.4X4",
@@ -8611,8 +8611,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunset-silhouette.jpg",
-      "alt": "Sunset on Sucia Island in Puget Sound by TJ Murphy",
-      "caption": "Sunset on Sucia Island in Puget Sound"
+      "alt": "Sunset in the Strait of Juan de Fuca, Sucia Island by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Sucia Island"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8624,8 +8624,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunset-silhouette",
-    "title": "Sunset on Sucia Island in Puget Sound — Large print — Black frame",
-    "artworkTitle": "Sunset on Sucia Island in Puget Sound",
+    "title": "Sunset in the Strait of Juan de Fuca, Sucia Island — Large print — Black frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Sucia Island",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S5DD4X4F1S9DD4X8J1S5DD4X4G1",
@@ -8649,8 +8649,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunset-silhouette.jpg",
-      "alt": "Sunset on Sucia Island in Puget Sound by TJ Murphy",
-      "caption": "Sunset on Sucia Island in Puget Sound"
+      "alt": "Sunset in the Strait of Juan de Fuca, Sucia Island by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Sucia Island"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8698,8 +8698,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunset-silhouette",
-    "title": "Sunset on Sucia Island in Puget Sound — Large print — White frame",
-    "artworkTitle": "Sunset on Sucia Island in Puget Sound",
+    "title": "Sunset in the Strait of Juan de Fuca, Sucia Island — Large print — White frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Sucia Island",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S5DD4X4F2S9DD4X8J1S5DD4X4G1",
@@ -8723,8 +8723,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunset-silhouette.jpg",
-      "alt": "Sunset on Sucia Island in Puget Sound by TJ Murphy",
-      "caption": "Sunset on Sucia Island in Puget Sound"
+      "alt": "Sunset in the Strait of Juan de Fuca, Sucia Island by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Sucia Island"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8772,8 +8772,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-sunset-silhouette",
-    "title": "Sunset on Sucia Island in Puget Sound — Large print — Natural wood frame",
-    "artworkTitle": "Sunset on Sucia Island in Puget Sound",
+    "title": "Sunset in the Strait of Juan de Fuca, Sucia Island — Large print — Natural wood frame",
+    "artworkTitle": "Sunset in the Strait of Juan de Fuca, Sucia Island",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S5DD4X4F7S9DD4X8J1S5DD4X4G1",
@@ -8797,8 +8797,8 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "/gallery-images/sunset-silhouette.jpg",
-      "alt": "Sunset on Sucia Island in Puget Sound by TJ Murphy",
-      "caption": "Sunset on Sucia Island in Puget Sound"
+      "alt": "Sunset in the Strait of Juan de Fuca, Sucia Island by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Sucia Island"
     },
     "attributes": {},
     "minimumDpi": 300,

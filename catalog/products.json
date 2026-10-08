@@ -167,8 +167,8 @@
     "id": "el-zonte-at-sunrise",
     "slug": "el-zonte-at-sunrise",
     "type": "painting",
-    "title": "El Zonte at Sunrise, El Salvador",
-    "description": "El Zonte at Sunrise, El Salvador by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Sunrise from Punto El Zonte Hostel, El Salvador",
+    "description": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -189,15 +189,20 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 42"
+      }
+    ],
     "story": [],
     "storyHeading": null,
     "inquiryHref": "/commissions/?buy=el-zonte-at-sunrise#form",
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/el-salvador-sunrise.jpeg",
-      "alt": "El Zonte at Sunrise, El Salvador by TJ Murphy",
-      "caption": "El Zonte at Sunrise, El Salvador"
+      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
+      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
     },
     "checkout": {
       "mode": "integrated",
@@ -284,11 +289,11 @@
     }
   },
   {
-    "id": "sunset-from-atami-el-salvador",
-    "slug": "sunset-from-atami-el-salvador",
+    "id": "sunset-in-el-tunco-el-salvador",
+    "slug": "sunset-in-el-tunco-el-salvador",
     "type": "painting",
-    "title": "Sunset from Atami, El Salvador",
-    "description": "Sunset from Atami, El Salvador by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Sunset in El Tunco, El Salvador",
+    "description": "Sunset in El Tunco, El Salvador by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -309,7 +314,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 40"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -318,8 +328,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/beach-walk.jpg",
-      "alt": "Sunset from Atami, El Salvador by TJ Murphy",
-      "caption": "Sunset from Atami, El Salvador"
+      "alt": "Sunset in El Tunco, El Salvador by TJ Murphy",
+      "caption": "Sunset in El Tunco, El Salvador"
     },
     "checkout": {
       "mode": "inquiry"
@@ -397,8 +407,8 @@
     "id": "painting-clouds-over-water",
     "slug": "painting-clouds-over-water",
     "type": "painting",
-    "title": "Sunset in Atami, El Salvador",
-    "description": "Sunset in Atami, El Salvador by TJ Murphy. Watercolor pastel. Available.",
+    "title": "El Salvador",
+    "description": "El Salvador by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -419,7 +429,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 44"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -428,8 +443,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/clouds-over-water.jpg",
-      "alt": "Sunset in Atami, El Salvador by TJ Murphy",
-      "caption": "Sunset in Atami, El Salvador"
+      "alt": "El Salvador by TJ Murphy",
+      "caption": "El Salvador"
     },
     "checkout": {
       "mode": "integrated",
@@ -500,11 +515,11 @@
     }
   },
   {
-    "id": "painting-embrace",
-    "slug": "painting-embrace",
+    "id": "michael-and-katie-in-yelapa",
+    "slug": "michael-and-katie-in-yelapa",
     "type": "painting",
-    "title": "Embrace",
-    "description": "Embrace by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Michael and Katie in Yelapa",
+    "description": "Michael and Katie in Yelapa by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -525,7 +540,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 29"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -534,8 +554,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/embrace.jpg",
-      "alt": "Embrace by TJ Murphy",
-      "caption": "Embrace"
+      "alt": "Michael and Katie in Yelapa by TJ Murphy",
+      "caption": "Michael and Katie in Yelapa"
     },
     "checkout": {
       "mode": "inquiry"
@@ -615,11 +635,11 @@
     }
   },
   {
-    "id": "grandpa-mom-myself",
-    "slug": "grandpa-mom-myself",
+    "id": "myself-my-mother-ruth-my-grandpa-howard",
+    "slug": "myself-my-mother-ruth-my-grandpa-howard",
     "type": "painting",
-    "title": "Grandpa, Mom, Myself",
-    "description": "Grandpa, Mom, Myself by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Myself, my mother Ruth, my grandpa Howard",
+    "description": "Myself, my mother Ruth, my grandpa Howard by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -637,7 +657,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 70; Watercolor Portraits, page 74"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -646,8 +671,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/family-portrait.jpg",
-      "alt": "Grandpa, Mom, Myself by TJ Murphy",
-      "caption": "Grandpa, Mom, Myself"
+      "alt": "Myself, my mother Ruth, my grandpa Howard by TJ Murphy",
+      "caption": "Myself, my mother Ruth, my grandpa Howard"
     },
     "checkout": {
       "mode": "inquiry"
@@ -744,7 +769,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 62"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -819,11 +849,11 @@
     }
   },
   {
-    "id": "sunset-from-la-libertad-el-salvador",
-    "slug": "sunset-from-la-libertad-el-salvador",
+    "id": "sunset-in-el-zonte-el-salvador",
+    "slug": "sunset-in-el-zonte-el-salvador",
     "type": "painting",
-    "title": "Sunset from La Libertad, El Salvador",
-    "description": "Sunset from La Libertad, El Salvador by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Sunset in El Zonte, El Salvador",
+    "description": "Sunset in El Zonte, El Salvador by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -841,7 +871,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 43"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -850,8 +885,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/golden-reflection.jpg",
-      "alt": "Sunset from La Libertad, El Salvador by TJ Murphy",
-      "caption": "Sunset from La Libertad, El Salvador"
+      "alt": "Sunset in El Zonte, El Salvador by TJ Murphy",
+      "caption": "Sunset in El Zonte, El Salvador"
     },
     "checkout": {
       "mode": "inquiry"
@@ -869,8 +904,8 @@
     "id": "painting-guitarist",
     "slug": "painting-guitarist",
     "type": "painting",
-    "title": "Girl Tuning Guitar",
-    "description": "Girl Tuning Guitar by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Malone",
+    "description": "Malone by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -888,7 +923,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 25"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -897,8 +937,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/guitarist.jpg",
-      "alt": "Girl Tuning Guitar by TJ Murphy",
-      "caption": "Girl Tuning Guitar"
+      "alt": "Malone by TJ Murphy",
+      "caption": "Malone"
     },
     "checkout": {
       "mode": "inquiry"
@@ -1038,8 +1078,8 @@
     "id": "painting-moonlit-water",
     "slug": "painting-moonlit-water",
     "type": "painting",
-    "title": "Moonrise in the North Cascades",
-    "description": "Moonrise in the North Cascades by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Moonrise over lake in the North Cascades",
+    "description": "Moonrise over lake in the North Cascades by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1060,7 +1100,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 31"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1069,8 +1114,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/moonlit-water.jpg",
-      "alt": "Moonrise in the North Cascades by TJ Murphy",
-      "caption": "Moonrise in the North Cascades"
+      "alt": "Moonrise over lake in the North Cascades by TJ Murphy",
+      "caption": "Moonrise over lake in the North Cascades"
     },
     "checkout": {
       "mode": "integrated",
@@ -1095,11 +1140,11 @@
     }
   },
   {
-    "id": "ukrainian-woman-with-flower-crown",
-    "slug": "ukrainian-woman-with-flower-crown",
+    "id": "girl-wearing-flower-crown",
+    "slug": "girl-wearing-flower-crown",
     "type": "painting",
-    "title": "Ukrainian woman with flower crown",
-    "description": "Ukrainian woman with flower crown by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Girl Wearing Flower Crown",
+    "description": "Girl Wearing Flower Crown by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1120,7 +1165,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 63"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1129,8 +1179,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/mount-rainier-at-sunset.jpg",
-      "alt": "Ukrainian woman with flower crown by TJ Murphy",
-      "caption": "Ukrainian woman with flower crown"
+      "alt": "Girl Wearing Flower Crown by TJ Murphy",
+      "caption": "Girl Wearing Flower Crown"
     },
     "checkout": {
       "mode": "inquiry"
@@ -1421,8 +1471,8 @@
     "id": "painting-portrait-with-cheese",
     "slug": "painting-portrait-with-cheese",
     "type": "painting",
-    "title": "Brekkie Finishing Orange Calcite B",
-    "description": "Brekkie Finishing Orange Calcite B by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Brekkie @BVBTC with polished Bitcoin B",
+    "description": "Brekkie @BVBTC with polished Bitcoin B by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1443,7 +1493,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 63"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1452,8 +1507,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/portrait-with-cheese.jpg",
-      "alt": "Brekkie Finishing Orange Calcite B by TJ Murphy",
-      "caption": "Brekkie Finishing Orange Calcite B"
+      "alt": "Brekkie @BVBTC with polished Bitcoin B by TJ Murphy",
+      "caption": "Brekkie @BVBTC with polished Bitcoin B"
     },
     "checkout": {
       "mode": "integrated",
@@ -1708,8 +1763,8 @@
     "id": "painting-studio-figure",
     "slug": "painting-studio-figure",
     "type": "painting",
-    "title": "Brekkie Hoisting Orange Calcite B",
-    "description": "Brekkie Hoisting Orange Calcite B by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Brekkie @BVBTC hoisting a sculpture in progress",
+    "description": "Brekkie @BVBTC hoisting a sculpture in progress by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1730,7 +1785,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 63"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1739,8 +1799,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/studio-figure.jpg",
-      "alt": "Brekkie Hoisting Orange Calcite B by TJ Murphy",
-      "caption": "Brekkie Hoisting Orange Calcite B"
+      "alt": "Brekkie @BVBTC hoisting a sculpture in progress by TJ Murphy",
+      "caption": "Brekkie @BVBTC hoisting a sculpture in progress"
     },
     "checkout": {
       "mode": "integrated",
@@ -1768,8 +1828,8 @@
     "id": "painting-sunflower-woman",
     "slug": "painting-sunflower-woman",
     "type": "painting",
-    "title": "Mother and Child on the Ukrainian Plain",
-    "description": "Mother and Child on the Ukrainian Plain by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Vision of Ukraine at Peace",
+    "description": "Vision of Ukraine at Peace by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1790,7 +1850,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 61"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1799,8 +1864,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunflower-woman.jpg",
-      "alt": "Mother and Child on the Ukrainian Plain by TJ Murphy",
-      "caption": "Mother and Child on the Ukrainian Plain"
+      "alt": "Vision of Ukraine at Peace by TJ Murphy",
+      "caption": "Vision of Ukraine at Peace"
     },
     "checkout": {
       "mode": "inquiry"
@@ -1815,11 +1880,11 @@
     }
   },
   {
-    "id": "joachim-in-zihuatanejo",
-    "slug": "joachim-in-zihuatanejo",
+    "id": "joaquim-in-zihuatanejo",
+    "slug": "joaquim-in-zihuatanejo",
     "type": "painting",
-    "title": "Joachim in Zihuatanejo",
-    "description": "Joachim in Zihuatanejo by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Joaquim in Zihuatanejo",
+    "description": "Joaquim in Zihuatanejo by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1840,7 +1905,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 33"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1849,8 +1919,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunset-reflection.jpg",
-      "alt": "Joachim in Zihuatanejo by TJ Murphy",
-      "caption": "Joachim in Zihuatanejo"
+      "alt": "Joaquim in Zihuatanejo by TJ Murphy",
+      "caption": "Joaquim in Zihuatanejo"
     },
     "checkout": {
       "mode": "inquiry"
@@ -1865,11 +1935,11 @@
     }
   },
   {
-    "id": "daniel-being-reprimanded-in-vietnam",
-    "slug": "daniel-being-reprimanded-in-vietnam",
+    "id": "daniel-portrait-1",
+    "slug": "daniel-portrait-1",
     "type": "painting",
-    "title": "Daniel being Reprimanded in Vietnam",
-    "description": "Daniel being Reprimanded in Vietnam by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Daniel \u2014 portrait 1",
+    "description": "Daniel \u2014 portrait 1 by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1887,7 +1957,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Portraits, page 10"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1896,8 +1971,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunset-shore.jpg",
-      "alt": "Daniel being Reprimanded in Vietnam by TJ Murphy",
-      "caption": "Daniel being Reprimanded in Vietnam"
+      "alt": "Daniel \u2014 portrait 1 by TJ Murphy",
+      "caption": "Daniel \u2014 portrait 1"
     },
     "checkout": {
       "mode": "inquiry"
@@ -1915,8 +1990,8 @@
     "id": "painting-sunset-silhouette",
     "slug": "painting-sunset-silhouette",
     "type": "painting",
-    "title": "Sunset on Sucia Island in Puget Sound",
-    "description": "Sunset on Sucia Island in Puget Sound by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Sunset in the Strait of Juan de Fuca, Sucia Island",
+    "description": "Sunset in the Strait of Juan de Fuca, Sucia Island by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1937,7 +2012,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 25"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -1946,8 +2026,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/sunset-silhouette.jpg",
-      "alt": "Sunset on Sucia Island in Puget Sound by TJ Murphy",
-      "caption": "Sunset on Sucia Island in Puget Sound"
+      "alt": "Sunset in the Strait of Juan de Fuca, Sucia Island by TJ Murphy",
+      "caption": "Sunset in the Strait of Juan de Fuca, Sucia Island"
     },
     "checkout": {
       "mode": "inquiry"
@@ -2027,11 +2107,11 @@
     }
   },
   {
-    "id": "rice-paddy-in-vietnam",
-    "slug": "rice-paddy-in-vietnam",
+    "id": "rice-paddies-in-vietnam",
+    "slug": "rice-paddies-in-vietnam",
     "type": "painting",
-    "title": "Rice Paddy in Vietnam",
-    "description": "Rice Paddy in Vietnam by TJ Murphy. Watercolor pastel. Not for sale.",
+    "title": "Rice paddies in Vietnam, Photo Credit: Daniel Goldsmith",
+    "description": "Rice paddies in Vietnam, Photo Credit: Daniel Goldsmith by TJ Murphy. Watercolor pastel. Not for sale.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -2049,7 +2129,12 @@
     },
     "galleryReference": null,
     "gallerySequence": null,
-    "facts": [],
+    "facts": [
+      {
+        "label": "In the book",
+        "value": "Watercolor Landscapes, page 60"
+      }
+    ],
     "story": [
       "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
     ],
@@ -2058,8 +2143,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/two-soldiers.jpg",
-      "alt": "Rice Paddy in Vietnam by TJ Murphy by TJ Murphy",
-      "caption": "Rice Paddy in Vietnam"
+      "alt": "Rice paddies in Vietnam, Photo Credit: Daniel Goldsmith by TJ Murphy",
+      "caption": "Rice paddies in Vietnam, Photo Credit: Daniel Goldsmith"
     },
     "checkout": {
       "mode": "inquiry"
@@ -4593,7 +4678,7 @@
       },
       {
         "src": "/gallery-images/moonlit-water.jpg",
-        "alt": "Moonrise in the North Cascades, watercolor pastel landscape by TJ Murphy"
+        "alt": "Moonrise over lake in the North Cascades, watercolor pastel landscape by TJ Murphy"
       },
       {
         "src": "/gallery-images/portrait-with-hat.jpg",
@@ -4601,15 +4686,15 @@
       },
       {
         "src": "/gallery-images/sunset-silhouette.jpg",
-        "alt": "Sunset on Sucia Island in Puget Sound, watercolor pastel landscape by TJ Murphy"
+        "alt": "Sunset in the Strait of Juan de Fuca, Sucia Island, watercolor pastel landscape by TJ Murphy"
       },
       {
         "src": "/gallery-images/el-salvador-sunrise.jpeg",
-        "alt": "El Zonte at Sunrise, El Salvador, watercolor pastel landscape by TJ Murphy"
+        "alt": "Sunrise from Punto El Zonte Hostel, El Salvador, watercolor pastel landscape by TJ Murphy"
       },
       {
         "src": "/gallery-images/golden-reflection.jpg",
-        "alt": "Sunset from La Libertad, El Salvador, watercolor pastel landscape by TJ Murphy"
+        "alt": "Sunset in El Zonte, El Salvador, watercolor pastel landscape by TJ Murphy"
       },
       {
         "src": "/gallery-images/red-horizon.jpg",
@@ -4617,7 +4702,7 @@
       },
       {
         "src": "/gallery-images/two-soldiers.jpg",
-        "alt": "Rice Paddy in Vietnam, watercolor pastel landscape by TJ Murphy"
+        "alt": "Rice paddies in Vietnam, Photo Credit: Daniel Goldsmith, watercolor pastel landscape by TJ Murphy"
       }
     ],
     "galleryDescription": "",

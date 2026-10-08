@@ -9,7 +9,7 @@ import bookPrints from '../catalog/book-prints.json' with {type:'json'};
 import {printOptions,config,papers} from '../catalog/prints.mjs';
 import originalProducts from '../catalog/products.json' with {type:'json'};
 import collections from '../catalog/collections.json' with {type:'json'};
-import {canonicalArtwork,sectionAdditions} from '../src/data/canonical-artworks.mjs';
+import {canonicalArtwork,sectionAdditions,sectionArtworkIds} from '../src/data/canonical-artworks.mjs';
 
 const groups=new Map(manifest.sections.map(group=>[group.id,group]));
 
@@ -89,7 +89,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   const overview=load(fs.readFileSync('dist/book-galleries/index.html','utf8'));
   assert.equal(overview('.book-gallery-carousel-grid li').length,manifest.sections.length);
   assert.equal(overview('.book-gallery-links a').length,manifest.books.length);
-  const uniqueIds=[...new Set(manifest.sections.flatMap(group=>group.artworks))];
+  const uniqueIds=[...new Set(manifest.sections.flatMap(sectionArtworkIds))];
   const printReady=uniqueIds.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||originalProducts.find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
   assert.equal(Number(overview('.book-gallery-print-total').attr('data-total-print-ready-count')),printReady);
   const home=load(fs.readFileSync('dist/index.html','utf8'));

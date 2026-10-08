@@ -2,6 +2,7 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { join, relative, resolve, sep } from 'node:path';
+import { canonicalArtwork } from '../src/data/canonical-artworks.mjs';
 
 // <lastmod> comes from scripts/sitemap-lastmod.json (url -> {hash, lastmod}). A page whose
 // content hash still matches keeps its recorded date; a changed or new page gets the date of
@@ -26,7 +27,7 @@ const excluded = new Set(['cart', 'commission-manager', 'testimonial-manager', '
 // Old commission package pages 301 to /commissions/ (static/_redirects).
 const redirected = new Set(['single-portrait', 'double-portrait', 'small-landscape']);
 // Book scans that duplicate a catalog painting 301 to it (src/data/canonical-artworks.mjs).
-redirected.add('book-art-ccff23f1e469654faa05').add('book-art-2136f2260225dd8ef20a');
+for (const scan of Object.keys(canonicalArtwork)) redirected.add(scan);
 const pages = [];
 
 async function walk(directory) {

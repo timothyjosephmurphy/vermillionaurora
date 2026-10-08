@@ -94,6 +94,6 @@ try{
   assert(await page.locator('[data-print-add]').isDisabled());
   unavailable=false;stale=true;await page.goto(origin+'/products/painting-portrait-in-green/');await page.getByRole('button',{name:'Buy a print',exact:true}).click();await page.locator('[data-print-finish]').selectOption('frame-black');
   assert(await page.locator('[data-print-add]').isDisabled(),'An old backend must not sell a different print layout than the page preview');
-  await page.goto(origin+'/products/sunset-from-atami-el-salvador/');assert.equal(await page.locator('[data-print-options]').count(),0);assert.match(await page.locator('.product-print-availability').textContent(),/not yet available/);
+  await page.goto(origin+'/products/sunset-in-el-tunco-el-salvador/');assert.equal(await page.locator('[data-print-options]').count(),0);assert.match(await page.locator('.product-print-availability').textContent(),/not yet available/);
   assert.deepEqual(errors,[]);console.log('PASS: product-page sizes, frame prices, mobile layout, multiple finish selections, cart details and exact quote IDs; no payments or print orders.');
 }finally{await browser.close();}
