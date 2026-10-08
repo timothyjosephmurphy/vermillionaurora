@@ -69,8 +69,9 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
           <form class="contact-form testimonial-form" action="/testimonials/api/submit" method="POST" enctype="multipart/form-data" data-testimonial-form>
             <div class="field-row">
               <label>
-                <span>Your name, as you’d like it shown (required)</span>
-                <input type="text" name="name" required maxlength="80" autocomplete="name" placeholder="e.g. Jane D." />
+                <span>Your name (required)</span>
+                <input type="text" name="name" required maxlength="80" autocomplete="name" placeholder="e.g. Jane D." aria-describedby="name-help" />
+                <small id="name-help" class="field-help">As you’d like it shown with your testimonial.</small>
               </label>
               <label>
                 <span>Email (required, kept private)</span>
@@ -116,7 +117,8 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
   <style is:global>
     .testimonials-page{padding:48px 0 72px;max-width:1080px}
     .testimonials-intro{max-width:760px;line-height:1.75;color:#3f3832}
-    .testimonials-intro h1{margin:.2em 0 .3em}
+    .testimonials-intro h1{margin:.2em 0 .3em;font:600 clamp(2.6rem,6vw,4.2rem)/1.05 "Cormorant Garamond",serif;letter-spacing:-.01em;color:var(--ink)}
+    .testimonial-form .field-row{align-items:start}
     .testimonials-lede{font:500 1.35rem/1.55 "Cormorant Garamond",serif;color:var(--ink)}
     .testimonials-jump .button{margin:6px 8px 0 0}
     .visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

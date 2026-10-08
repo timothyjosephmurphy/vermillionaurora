@@ -51,7 +51,7 @@ try{
     const smallShape=await selector.locator('[data-print-sheet]').boundingBox();
     await selector.locator('input[value$="-medium"]').check();
     assert.equal(await selector.locator('[data-print-total]').textContent(),'Framed print: $'+prints['print-painting-portrait-in-green-medium-frame-black'].amount);
-    assert((await selector.locator('[data-print-dimensions]').textContent()).includes('Mat / frame size: '+prints['print-painting-portrait-in-green-medium-frame-black'].mat.outer.width+' × '+prints['print-painting-portrait-in-green-medium-frame-black'].mat.outer.height));
+    assert((await selector.locator('[data-print-dimensions]').textContent()).includes('Mat / frame size: '+Number(prints['print-painting-portrait-in-green-medium-frame-black'].mat.outer.width).toFixed(1)+' × '+Number(prints['print-painting-portrait-in-green-medium-frame-black'].mat.outer.height).toFixed(1)));
     const mediumShape=await selector.locator('[data-print-sheet]').boundingBox();
     assert(mediumShape.width>smallShape.width,'The frame preview grows with the selected print');
     const medium=prints['print-painting-portrait-in-green-medium-frame-black'];
