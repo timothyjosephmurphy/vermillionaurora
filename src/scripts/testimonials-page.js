@@ -305,7 +305,7 @@ function setupForm() {
     if (invalid.length) {
       invalid.forEach(n => n.setAttribute('aria-invalid', 'true'));
       const first = invalid[0];
-      say(first.name === 'consent' ? 'Please tick the consent box so I can publish your testimonial.' : first.name === 'email' ? 'Please enter a valid email address.' : first.name === 'quote' ? 'Please write a few words about the painting, or add a video.' : 'Please fill in the required fields.', true);
+      say(first.name === 'email' ? 'Please enter a valid email address.' : first.name === 'quote' ? 'Please write a few words about the painting, or add a video.' : 'Please fill in the required fields.', true);
       first.focus();
       return;
     }

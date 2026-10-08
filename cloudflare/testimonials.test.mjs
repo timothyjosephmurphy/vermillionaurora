@@ -20,7 +20,7 @@ test.beforeEach(()=>{mails=[];issued.length=0;globalThis.fetch=async(url,init={}
   if(u.hostname==='gmail.googleapis.com'){mails.push(JSON.parse(init.body));return Response.json({id:'m'});}
   if(u.hostname==='nominatim.openstreetmap.org'){assert.equal(u.searchParams.get('q'),'Tacoma, WA');return Response.json([{lat:'47.2455013',lon:'-122.438329',display_name:'Tacoma, Pierce County, Washington, United States'}]);}
   throw Error('unexpected fetch '+url);};});
-const form=(fields={},photos=[])=>{const f=new FormData();for(const [k,v] of Object.entries({name:'Jane D.',email:'jane@example.com',quote:'It makes our kitchen glow.',city:'Tacoma, WA',paintingSlug:'painting-emergence',painting:'Emergence',consent:'yes',...fields}))if(v!=null)f.set(k,v);photos.forEach(([bytes,name,type])=>f.append('photos',new File([bytes],name,{type})));return f;};
+const form=(fields={},photos=[])=>{const f=new FormData();for(const [k,v] of Object.entries({name:'Jane D.',email:'jane@example.com',quote:'It makes our kitchen glow.',city:'Tacoma, WA',paintingSlug:'painting-emergence',painting:'Emergence',publishNotice:'2026-10-08',...fields}))if(v!=null)f.set(k,v);photos.forEach(([bytes,name,type])=>f.append('photos',new File([bytes],name,{type})));return f;};
 const submit=(env,body,headers={})=>testimonialsApi(new Request('https://tjm.art/testimonials/api/submit',{method:'POST',body,headers:{Origin:'https://tjm.art','CF-Connecting-IP':'203.0.113.9',Accept:'application/json',...headers}}),env,null,now);
 const owner=(env,body,{token='owner-token',origin='https://tjm.art'}={})=>testimonialsApi(new Request('https://tjm.art/testimonials/api/owner',{method:'POST',headers:{Origin:origin,Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify(body)}),env,null,now);
 const approved=async env=>(await (await testimonialsApi(new Request('https://tjm.art/testimonials/api/approved'),env,null,now)).json()).testimonials;
@@ -62,9 +62,8 @@ test('painting is optional free text; submissions without it are accepted',async
   const {id}=await r.json();const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);assert.equal(rec.paintingSlug,'');assert.equal(rec.paintingTitle,'');
 });
 
-test('validation, honeypot, consent, file type and rate limit',async()=>{
+test('validation, honeypot, file type and rate limit',async()=>{
   const env=setup();
-  assert.equal((await submit(env,form({consent:null}))).status,400);
   assert.equal((await submit(env,form({email:'nope'}))).status,400);
   assert.equal((await submit(env,form({quote:''}))).status,400);
   assert.equal((await submit(env,form({},[[new TextEncoder().encode('<svg/>'),'x.svg','image/svg+xml']]))).status,400);
@@ -139,6 +138,40 @@ test('thank-you email copy',async()=>{
   assert.match(body,/^Hi Jane,/);assert.match(body,/VA-ABCD-EFGH-JKLM/);assert.match(body,/https:\/\/tjm.art\/cart\//);assert.match(body,/#t-20261007-abcdefabcdef/);
   assert.match(body,/doesn’t apply to original paintings or commission deposits/);
   assert.match(thanksEmail({id:'t-20261007-abcdefabcdef',name:'Sam',thanks:{code:'VA-ABCD-EFGH-JKLM'}}).body,/sharing what my painting means to you/);
+  // No name: neutral greeting. Shown as “A collector” but the collector gave a name privately: greet them by it.
+  for(const r of [{name:''},{name:'',published:{name:''}},{name:'',published:{name:'A collector'}}])
+    assert.match(thanksEmail({id:'t-20261007-abcdefabcdef',thanks:{code:'VA-ABCD-EFGH-JKLM'},...r}).body,/^Hi there,\n/);
+  assert.match(thanksEmail({id:'t-20261007-abcdefabcdef',name:'Jane Doe',published:{name:''},thanks:{code:'VA-ABCD-EFGH-JKLM'}}).body,/^Hi Jane,/);
+});
+
+test('no consent checkbox: submitting records implied consent with the notice text; old consent field is ignored',async()=>{
+  const {PUBLISH_NOTICE,PUBLISH_NOTICE_VERSION}=await import('./testimonial-notice.mjs');
+  assert.match(PUBLISH_NOTICE,/^By sending this, you’re OK with TJ showing your name \(if you give one\), city, words and photos on tjm\.art\. Videos are only shown if you tick the box above\.$/);
+  const env=setup();
+  for(const extra of [{},{consent:'yes'}]){
+    const r=await submit(env,form(extra));assert.equal(r.status,200);const {id}=await r.json();
+    const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);
+    assert.equal(rec.publishConsent,'implied-by-submit');
+    assert.equal(rec.consent.publish,true);assert.equal(rec.consent.basis,'implied-by-submit');
+    assert.equal(rec.consent.notice,PUBLISH_NOTICE);assert.equal(rec.consent.noticeVersion,PUBLISH_NOTICE_VERSION);assert.equal(rec.consent.shownVersion,'2026-10-08');
+  }
+});
+
+test('name is optional: shown publicly as “A collector” (with city), TJ can blank a name, and the thank-you says “Hi there”',async()=>{
+  const env=setup();
+  const r=await submit(env,form({name:''}));assert.equal(r.status,200);const {id}=await r.json();
+  const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);assert.equal(rec.name,'');
+  const alert=atob(mails[0].raw.replace(/-/g,'+').replace(/_/g,'/'));assert.match(alert,/Name: Not given/);assert.match(alert,new RegExp('Subject: =\\?UTF-8\\?B\\?'+btoa(String.fromCharCode(...new TextEncoder().encode('New testimonial — no name given')))));
+  mails=[];
+  const ok=await owner(env,{action:'approve',id});assert.equal(ok.status,200);
+  const [pub]=await approved(env);assert.equal(pub.name,'A collector');assert.equal(pub.city,'Tacoma, WA');
+  assert.equal(issued.length,1);
+  assert.equal(mails.length,1);const thanks=new TextDecoder().decode(Uint8Array.from(atob(atob(mails[0].raw.replace(/-/g,'+').replace(/_/g,'/')).split('\r\n\r\n')[1].trim()),c=>c.charCodeAt(0)));
+  assert.match(thanks,/^Hi there,/);
+  // A named submission can be shown anonymously by clearing the name on approval.
+  const named=await (await submit(env,form({quote:'Second one.'}))).json();
+  await owner(env,{action:'approve',id:named.id,name:''});
+  assert.deepEqual((await approved(env)).map(t=>t.name).sort(),['A collector','A collector']);
 });
 
 // ---------- Video testimonials ----------
