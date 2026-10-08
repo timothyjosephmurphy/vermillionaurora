@@ -307,7 +307,7 @@ export class QuickbooksSync extends DurableObject {
     return this.ctx.storage.sql.exec('SELECT * FROM log ORDER BY id DESC LIMIT ?', Math.min(Math.max(1, limit | 0), LOG_LIMIT)).toArray();
   }
   queueRows(limit = 200) {
-    return this.ctx.storage.sql.exec('SELECT order_id, status, attempts, next_at, qbo_id, doc_number, last_error, last_tid, created_at, updated_at FROM queue ORDER BY created_at DESC LIMIT ?', Math.min(limit | 0, 1000)).toArray();
+    return this.ctx.storage.sql.exec("SELECT order_id, status, attempts, next_at, qbo_id, doc_number, last_error, last_tid, created_at, updated_at, json_extract(receipt,'$.paidAt') AS paid_at, json_extract(receipt,'$.provider') AS provider, json_extract(receipt,'$.gross') AS gross FROM queue ORDER BY created_at DESC LIMIT ?", Math.min(limit | 0, 1000)).toArray();
   }
   async retry(orderId) {
     const changed = this.ctx.storage.sql.exec("UPDATE queue SET status='queued', next_at=0 WHERE order_id=? AND status IN ('review','queued')", String(orderId)).rowsWritten;
