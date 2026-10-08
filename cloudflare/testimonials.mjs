@@ -245,7 +245,7 @@ async function readIndex(env) {
 async function approvedList(env) {
   if (!env.COMMISSION_UPLOADS) return reply({testimonials: []}, 200);
   const index = await readIndex(env);
-  return Response.json({testimonials: (index.testimonials || []).map(forClient), updatedAt: index.updatedAt || null}, {headers: {'Cache-Control': 'public, max-age=60', 'Access-Control-Allow-Origin': '*', 'X-Content-Type-Options': 'nosniff'}});
+  return Response.json({testimonials: (index.testimonials || []).map(forClient), updatedAt: index.updatedAt || null}, {headers: {'Cache-Control': 'public, max-age=60, must-revalidate', 'CDN-Cache-Control': 'public, max-age=60', 'Access-Control-Allow-Origin': '*', 'X-Content-Type-Options': 'nosniff'}});
 }
 async function publicPhoto(env, id, n) {
   if (!env.COMMISSION_UPLOADS) return reply({error: 'Not found'}, 404);

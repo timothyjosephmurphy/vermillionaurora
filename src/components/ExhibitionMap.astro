@@ -6,18 +6,22 @@ const point = ([lat,lon]: number[]) => ({ x:24+(lon+180)*3.2, y:30+(90-lat)*3.2 
 const kind = (place: typeof locations[number]) => place.exhibitions.every(item => item.type === 'mural') ? 'mural' : place.exhibitions.some(item => item.type === 'mural') ? 'mixed' : 'exhibition';
 const color = (place: typeof locations[number]) => kind(place) === 'mural' ? '#236fa1' : kind(place) === 'mixed' ? 'url(#atlas-preview-mixed)' : '#d34220';
 ---
-{compact ? <div class="exhibition-atlas atlas-compact">
+{compact ? <div class="exhibition-atlas atlas-compact" data-live-map>
   <svg class="atlas-art" viewBox="0 0 1200 650" role="img" aria-label="World map of exhibitions and murals in Seattle, Lillooet, San Salvador, Berlín in El Salvador, Warsaw, and Cape Town">
     <defs><linearGradient id="atlas-preview-mixed"><stop offset="50%" stop-color="#d34220"/><stop offset="50%" stop-color="#236fa1"/></linearGradient></defs>
     <image href="/exhibitions/world-map/land.svg" width="1200" height="650" />
-    {locations.map(place => {const {x,y}=point(place.coordinates);return <circle cx={x} cy={y} r="5" fill={color(place)} stroke="#fffaf2" stroke-width="1.5"/>;})}
+    {locations.map(place => {const {x,y}=point(place.coordinates);return <circle data-pin="exhibition" cx={x} cy={y} r="5" fill={color(place)} stroke="#fffaf2" stroke-width="1.5"/>;})}
     <g class="atlas-preview-labels">
       <text x="270" y="116" text-anchor="middle">Seattle · Lillooet</text>
       <text x="290" y="320" text-anchor="middle">San Salvador · Berlín</text>
       <text x="695" y="151">Warsaw</text>
       <text x="690" y="430">Cape Town</text>
     </g>
+    <g data-live-pins pointer-events="none"></g>
   </svg>
+  <p class="atlas-compact-note" data-compact-legend hidden aria-hidden="true"><span class="legend-dot"></span>Collector testimonials</p>
+  <script is:inline type="application/json" data-pin-seed set:html={JSON.stringify(testimonialPins.map(({id, city, lat, lng}) => ({id, city, lat, lng}))).replace(/</g, '\\u003c')} />
+  <script is:inline type="module" src="/exhibitions/world-map/live-pins.js"></script>
 </div> : <div class="exhibition-atlas" data-exhibition-atlas>
   <div class="atlas-toolbar" aria-label="Map views" hidden>
     <button type="button" data-map-view="world" aria-pressed="true">World view</button>
@@ -47,8 +51,11 @@ const color = (place: typeof locations[number]) => kind(place) === 'mural' ? '#2
 </div>}
 <style>
   .exhibition-atlas{background:#f3eee5;border-radius:8px;color:#3d3027;isolation:isolate;overflow:hidden}
-  .atlas-art{display:block;width:100%;height:auto;font-family:Inter,Arial,sans-serif}.atlas-compact{border-radius:0}
+  .atlas-art{display:block;width:100%;height:auto;font-family:Inter,Arial,sans-serif}.atlas-compact{position:relative;border-radius:0}
   .atlas-preview-labels{fill:#3d3027;font-size:25px;font-weight:600;paint-order:stroke;stroke:#f3eee5;stroke-width:5px;stroke-linejoin:round}
+  .atlas-compact-note{position:absolute;left:8px;bottom:8px;display:flex;align-items:center;gap:6px;margin:0;padding:3px 8px;border-radius:999px;background:#f3eee5ee;color:#3d3027;font:600 11px/1.2 Inter,Arial,sans-serif;pointer-events:none}
+  .atlas-compact-note[hidden]{display:none}
+  .atlas-compact-note .legend-dot{width:9px;height:9px;background:#2f8a4c}
   .atlas-toolbar{display:flex;flex-wrap:wrap;gap:8px;padding:16px;border-bottom:1px solid #d7ccba}.atlas-toolbar[hidden]{display:none}
   .atlas-toolbar button{font:500 .82rem/1.4 Inter,Arial,sans-serif;min-height:42px;padding:9px 14px;border:1px solid #cdbfae;border-radius:24px;background:#fffcf6;color:#3d3027;cursor:pointer}
   .atlas-toolbar button[aria-pressed="true"]{background:#bd381c;border-color:#bd381c;color:white}
