@@ -330,7 +330,7 @@ export class CartOrder extends DurableObject {
       transactionId:d.captureId,orderId:`cart:${d.id}`,parentTransactionId:'',status:'COMPLETED',paidAt:d.paidAt,recordedAt:d.paidAt,
       title:q.items.map(i=>i.title).join('; '),slug:'',currency:'USD',items:q.items,shipments,...(d.printJob?{printFulfillment:printFulfillmentRecord(d.printJob)}:{}),itemAmount:q.base,shipping:q.shipping,tax:q.tax,gross:q.total,
       ...(d.method==='paypal'?{paypalFee:details.fee??null,paypalNet:details.net??null}:{}),providerFee:details.fee??null,feeCurrency:details.feeCurrency||'',netCurrency:details.netCurrency||'',
-      ...(q.printCode?{printCode:{kind:q.printCode.kind,hash:q.printCode.hash.slice(0,12)},listAmount:q.items.reduce((s,i)=>s+Number(i.listAmount||i.amount)*(i.quantity||1),0).toFixed(2)}:{}),
+      ...(q.printCode?{printCode:{kind:q.printCode.kind,hash:q.printCode.hash.slice(0,12),...(q.printCode.kind==='collector'&&q.printCode.suffix?{suffix:q.printCode.suffix}:{})},listAmount:q.items.reduce((s,i)=>s+Number(i.listAmount||i.amount)*(i.quantity||1),0).toFixed(2)}:{}),
       buyerName:q.address.name,buyerEmail:q.email,shippingAddress:q.address,taxCalculationId:q.taxCalculationId,
       ...(q.items.some(i=>i.type==='deposit')?{commissionDeposit:q.items.filter(i=>i.type==='deposit').map(i=>({id:i.id,...i.commission}))}:{}),
       ...(d.method==='bitcoin'?{invoiceId:d.providerId,bitcoinPayments:details.bitcoinPayments||[]} : {}),
