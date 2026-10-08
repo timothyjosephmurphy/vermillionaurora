@@ -12,6 +12,7 @@ import {issueCollectorCode} from './print-codes.mjs';
 import {sellerMailToken} from './shipping-email.mjs';
 import {isSiteOrigin} from './site-origins.mjs';
 import {cleanImage} from './image-metadata.mjs';
+import {PUBLISH_NOTICE, PUBLISH_NOTICE_VERSION, ANONYMOUS_NAME} from './testimonial-notice.mjs';
 import {videoUpload, verifiedUpload, discardUpload, deleteVideoFiles, manifestKey, serveMedia, playbackType, signedVideoUrls, privateMedia, purgeTestimonialVideos, MAX_VIDEO_BYTES} from './testimonial-videos.mjs';
 export {MAX_VIDEO_BYTES};
 
@@ -108,10 +109,8 @@ async function submit(request, env, ctx, now) {
   const slug = oneLine(form.get('paintingSlug'), 150);
   const paintingSlug = validSlug(slug) ? slug : '';
   const paintingTitle = oneLine(form.get('painting'), 200);
-  if (!name) return fail('Please enter your name as you’d like it shown.');
   if (!email || !validEmail(email)) return fail('Please enter a valid email address so I can send your thank-you.');
   if (!video && quote.length < 3) return fail('Please write a few words about what the painting means to you, or add a video.');
-  if (form.get('consent') !== 'yes') return fail('Please tick the consent box so I can publish your testimonial.');
   const files = form.getAll('photos').filter(f => f instanceof File && f.size > 0);
   if (files.length > MAX_PHOTOS) return fail(`Please choose up to ${MAX_PHOTOS} photos.`);
   const photos = [];
@@ -138,7 +137,11 @@ async function submit(request, env, ctx, now) {
   const record = {
     id, status: 'pending', createdAt: new Date(now).toISOString(),
     name, email, quote, city, paintingSlug, paintingTitle,
-    consent: {publish: true, scope: 'name, words, photos and city (approximate city pin on the map)', at: new Date(now).toISOString()},
+    // No checkbox: sending the form under the notice above the button is the consent to publish (after TJ approves).
+    publishConsent: 'implied-by-submit',
+    consent: {publish: true, basis: 'implied-by-submit', notice: PUBLISH_NOTICE, noticeVersion: PUBLISH_NOTICE_VERSION,
+      shownVersion: oneLine(form.get('publishNotice'), 20) || null,
+      scope: 'name (if given), words, photos and city (approximate city pin on the map)', at: new Date(now).toISOString()},
     geo,
     photos: photos.map(p => ({n: p.n, key: imageKey(id, p.n, p.type), type: p.type, bytes: p.bytes.byteLength, originalName: p.originalName, publishable: p.publishable, removed: p.removed})),
     ...(video ? {video: {
@@ -206,7 +209,7 @@ async function notifyOwner(env, record) {
   const painting = record.paintingTitle || (record.paintingSlug ? record.paintingSlug : 'Not specified');
   const body = [
     'New testimonial waiting for your approval', '',
-    `Name: ${record.name}`,
+    `Name: ${record.name || 'Not given (shown as “A collector”)'}`,
     `Email (private): ${record.email}`,
     `Painting: ${painting}${record.paintingSlug ? ` (https://tjm.art/products/${record.paintingSlug}/)` : ''}`,
     `City: ${record.city || 'Not given'}`,
@@ -219,7 +222,7 @@ async function notifyOwner(env, record) {
   ].join('\r\n');
   const mime = [
     `From: TJM.art Website <${sender}>`, `To: ${sender}`, `Reply-To: ${record.email}`,
-    `Subject: ${mimeHeader(`New testimonial — ${record.name}`)}`,
+    `Subject: ${mimeHeader(`New testimonial — ${record.name || 'no name given'}`)}`,
     'MIME-Version: 1.0', 'Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: 8bit', '', body, '',
   ].join('\r\n');
   const r = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
@@ -279,7 +282,8 @@ export function publicEntry(record) {
   const v = videoIsPublic(record) ? record.video : null;
   return {
     id: record.id,
-    name: pub.name || record.name,
+    // No name given (or TJ cleared it) = “A collector”.
+    name: ('name' in pub ? pub.name : record.name) || ANONYMOUS_NAME,
     city: pub.city ?? record.city ?? '',
     painting: pub.painting ?? record.paintingTitle ?? '',
     paintingHref: (pub.paintingSlug ?? record.paintingSlug) ? `/products/${pub.paintingSlug ?? record.paintingSlug}/` : '',
@@ -344,7 +348,7 @@ async function owner(request, env, now) {
   }
   if (input.action === 'approve') {
     const name = oneLine(input.name ?? record.name, 80), quote = clean(input.quote ?? record.quote, 2000);
-    if (!name || (!quote && !record.video)) return reply({error: 'Name and testimonial text are required'}, 400);
+    if (!quote && !record.video) return reply({error: 'Testimonial text is required'}, 400);
     const slug = oneLine(input.paintingSlug ?? record.paintingSlug, 150);
     if (slug && !validSlug(slug)) return reply({error: 'Unknown painting page (product slug)'}, 400);
     const photos = (Array.isArray(input.photos) ? input.photos : record.photos.map(p => p.n)).map(Number)
@@ -420,7 +424,7 @@ async function thankCollector(env, start, {send, force = false, now}) {
     if (record.thanks?.issuingAt && now - Date.parse(record.thanks.issuingAt) < 120000) return {record, result: {error: 'A code is being issued; reload in a moment'}};
     const claimed = await writeRecord(env, {...record, thanks: {...record.thanks, issuingAt: new Date(now).toISOString()}}, etag);
     if (!claimed) return {record, result: {error: 'Record changed; reload'}};
-    const issued = await issueCollectorCode(env, {name: record.name, email: record.email, note: `Testimonial ${record.id}`});
+    const issued = await issueCollectorCode(env, {name: record.name || '(no name given)', email: record.email, note: `Testimonial ${record.id}`});
     record = {...record, thanks: {code: issued.code, issuedAt: issued.issuedAt}};
     const stored = await writeRecord(env, record, null); // we hold the claim; never lose an issued code
     etag = stored?.etag;
@@ -451,14 +455,16 @@ async function thankCollector(env, start, {send, force = false, now}) {
 }
 
 export function thanksEmail(record) {
-  const first = (record.published?.name || record.name).split(/\s+/)[0];
+  // Greet by first name when there is one; otherwise a neutral greeting.
+  const given = [record.published?.name, record.name].map(n => (n || '').trim()).find(n => n && n !== ANONYMOUS_NAME);
+  const first = given ? given.split(/\s+/)[0] : '';
   const painting = record.published?.painting || record.paintingTitle;
   const subject = 'Thank you, and a print code for you';
   // A private video with no words or photos is not on the site, so the email doesn't link to it.
   const onSite = record.status !== 'approved' || hasPublicContent(publicEntry(record));
   const thanks = `Thank you so much for sharing what ${painting ? `“${painting}”` : 'my painting'} means to you. It means a lot to me that it has a good home with you.`;
   const body = [
-    `Hi ${first},`, '',
+    `Hi ${first || 'there'},`, '',
     ...(onSite ? [`${thanks} Your testimonial is now on my site:`, `https://tjm.art/testimonials/#${record.id}`] : [thanks]), '',
     'As a thank-you, here is your personal print code:', '',
     `    ${record.thanks.code}`, '',
