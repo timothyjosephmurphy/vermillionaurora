@@ -9,7 +9,7 @@
 // A testimonial that uses a video gets the upload's id, so the record, the video and the manifest share <id>.
 import {isSiteOrigin} from './site-origins.mjs';
 
-export const MAX_VIDEO_BYTES = 500 * 1024 * 1024; // ~2 minutes of 4K/60 or ~5 minutes of 1080p phone video
+export const MAX_VIDEO_BYTES = 50 * 1024 * 1024; // 50 MB: roughly 1–3 minutes of default 1080p phone video
 export const PART_BYTES = 8 * 1024 * 1024;
 export const VIDEO_TYPES = {'video/mp4': 'mp4', 'video/quicktime': 'mov', 'video/webm': 'webm'};
 export const VIDEO_DAILY_LIMIT = 4;        // upload starts per visitor (hashed IP) per UTC day
@@ -127,9 +127,9 @@ export async function videoUpload(request, env, now, action, {rateLimited}) {
   try { input = await request.json(); } catch { return reply({error: 'Invalid request'}, 400); }
   if (action === 'start') {
     const type = String(input.type || '').toLowerCase(), size = Number(input.size);
-    if (!VIDEO_TYPES[type]) return reply({error: 'Videos must be MP4, MOV or WebM.'}, 415);
+    if (!VIDEO_TYPES[type]) return reply({error: 'Videos need to be MP4, MOV or WebM, up to 50 MB.'}, 415);
     if (!Number.isInteger(size) || size < 1024) return reply({error: 'That video file is empty.'}, 400);
-    if (size > MAX_VIDEO_BYTES) return reply({error: `Videos must be ${MAX_VIDEO_BYTES / 1024 / 1024} MB or smaller.`}, 413);
+    if (size > MAX_VIDEO_BYTES) return reply({error: `Videos need to be MP4, MOV or WebM, up to ${MAX_VIDEO_BYTES / 1024 / 1024} MB.`}, 413);
     if (await limited(env, request, now, rateLimited)) return reply({error: 'Thank you! You’ve started several video uploads today. Please try again tomorrow or email tj@tjm.art.'}, 429);
     const id = newId(now), key = `${videoPrefix(id)}video.${VIDEO_TYPES[type]}`;
     const upload = await bucket.createMultipartUpload(key, {httpMetadata: {contentType: type}});

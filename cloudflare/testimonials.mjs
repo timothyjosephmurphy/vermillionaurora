@@ -109,13 +109,14 @@ async function submit(request, env, ctx, now) {
   const slug = oneLine(form.get('paintingSlug'), 150);
   const paintingSlug = validSlug(slug) ? slug : '';
   const paintingTitle = oneLine(form.get('painting'), 200);
-  if (!email || !validEmail(email)) return fail('Please enter a valid email address so I can send your thank-you.');
+  // Email is optional: it's only for the thank-you print code. Without one, approval publishes but sends nothing.
+  if (email && !validEmail(email)) return fail('Please check your email address, or leave it blank.');
   if (!video && quote.length < 3) return fail('Please write a few words about what the painting means to you, or add a video.');
   const files = form.getAll('photos').filter(f => f instanceof File && f.size > 0);
   if (files.length > MAX_PHOTOS) return fail(`Please choose up to ${MAX_PHOTOS} photos.`);
   const photos = [];
   for (const [n, file] of files.entries()) {
-    if (file.size > MAX_PHOTO_BYTES) return fail(`Each photo must be 10 MB or smaller (“${file.name.slice(0, 60)}” is too large).`);
+    if (file.size > MAX_PHOTO_BYTES) return fail(`“${file.name.slice(0, 60)}” is too large. Photos need to be 10 MB or smaller.`);
     let cleaned;
     try { cleaned = cleanImage(new Uint8Array(await file.arrayBuffer())); } catch { return fail(`“${file.name.slice(0, 60)}” is not a JPEG, PNG, WebP or HEIC photo.`); }
     if (!ACCEPTED.has(cleaned.type)) return fail('Photos must be JPEG, PNG, WebP or HEIC.');
@@ -210,7 +211,7 @@ async function notifyOwner(env, record) {
   const body = [
     'New testimonial waiting for your approval', '',
     `Name: ${record.name || 'Not given (shown as “A collector”)'}`,
-    `Email (private): ${record.email}`,
+    `Email (private): ${record.email || 'Not given (no thank-you code will be sent)'}`,
     `Painting: ${painting}${record.paintingSlug ? ` (https://tjm.art/products/${record.paintingSlug}/)` : ''}`,
     `City: ${record.city || 'Not given'}`,
     `Photos: ${record.photos.length}`,
@@ -221,7 +222,7 @@ async function notifyOwner(env, record) {
     `Reference: ${record.id}`,
   ].join('\r\n');
   const mime = [
-    `From: TJM.art Website <${sender}>`, `To: ${sender}`, `Reply-To: ${record.email}`,
+    `From: TJM.art Website <${sender}>`, `To: ${sender}`, ...(record.email ? [`Reply-To: ${record.email}`] : []),
     `Subject: ${mimeHeader(`New testimonial — ${record.name || 'no name given'}`)}`,
     'MIME-Version: 1.0', 'Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: 8bit', '', body, '',
   ].join('\r\n');
@@ -371,7 +372,7 @@ async function owner(request, env, now) {
   if (input.action === 'sendThanks') {
     if (record.status !== 'approved') return reply({error: 'Approve the testimonial first'}, 409);
     const thanked = await thankCollector(env, record, {send: true, force: input.force === true, now});
-    return reply({record: thanked.record, thanks: thanked.result}, thanked.result.error ? 409 : 200);
+    return reply({record: thanked.record, thanks: thanked.result}, thanked.result.error || thanked.result.noEmail ? 409 : 200);
   }
   // A collector asked to withdraw a video permission (e.g. by email). Permissions can be withdrawn here, never granted.
   if (input.action === 'withdrawVideoConsent') {
@@ -399,7 +400,7 @@ async function owner(request, env, now) {
   if (input.action === 'issueCode') {
     if (record.status !== 'approved') return reply({error: 'Approve the testimonial before issuing a code'}, 409);
     const thanked = await thankCollector(env, record, {send: false, now});
-    return reply({record: thanked.record, thanks: thanked.result}, thanked.result.error ? 409 : 200);
+    return reply({record: thanked.record, thanks: thanked.result}, thanked.result.error || thanked.result.noEmail ? 409 : 200);
   }
   return reply({error: 'Unknown action'}, 400);
 }
@@ -412,12 +413,15 @@ export const THANKS_REPLY_TO = 'tj@tjm.art';
 async function writeRecord(env, record, etag) {
   return env.COMMISSION_UPLOADS.put(recordKey(record.id), JSON.stringify(record), {...(etag ? {onlyIf: {etagMatches: etag}} : {}), httpMetadata: {contentType: 'application/json'}});
 }
+export const NO_EMAIL_NOTE = 'No email, so no code sent';
 async function thankCollector(env, start, {send, force = false, now}) {
   const bucket = env.COMMISSION_UPLOADS;
   let object = await bucket.get(recordKey(start.id));
   let record = object ? await object.json() : start;
   let etag = object?.etag;
   const result = {};
+  // No email given: the testimonial still publishes, but no code is issued and no thank-you is sent.
+  if (!record.email) return {record, result: {noEmail: true, emailSkipped: NO_EMAIL_NOTE}};
   if (!record.thanks?.code) {
     if (!env.CART_ORDERS) return {record, result: {error: 'Print codes are unavailable on this Worker'}};
     // Claim issuance first so two approvals can never issue two codes.
