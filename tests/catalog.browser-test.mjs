@@ -29,6 +29,7 @@ try {
  assert.equal(await page.locator('.collector-items-carousel [data-product-id="painting-moonlit-water"]').count(),1);
  assert.equal(await page.locator('.available-paintings-carousel [data-availability="Sold"]').count(),0);
  await page.goto(origin+'/exhibitions/paul-murphy/');await page.waitForFunction(()=>[...document.querySelectorAll('.ev-caption-title')].some(el=>el.textContent==='Tipi · Sold'));
+ assert(await page.evaluate(()=>{const buys=[...document.querySelectorAll('.ev-buy')];return buys.length>0&&buys.every(b=>{const row=b.parentElement,text=row.firstElementChild,br=b.getBoundingClientRect(),tr=text.getBoundingClientRect();return row.matches('.ev-caption-row')&&row.parentElement.matches('.ev-caption')&&br.top<tr.bottom&&br.bottom>tr.top&&br.left>=tr.right-1;});}),'Viewer Buy sits inline at the end of the caption’s last line');
  await page.goto(origin+'/gallery/');const card=page.locator('[data-product-id="painting-portrait-in-green"]');await page.waitForFunction(()=>document.querySelector('[data-product-id="painting-portrait-in-green"]').dataset.availability==='Sold');await page.locator('#available-only').check();assert(await card.isHidden());
  assert.equal(await page.locator('.product-grid').count(),0,'Gallery uses a list instead of tiles');
  assert.match(await page.locator('[data-product-id="painting-portrait-in-gold"] .painting-list-dimensions').textContent(),/12 × 15 in/);
