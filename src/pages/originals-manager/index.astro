@@ -1,6 +1,6 @@
 ---
 import PolicyLayout from '../../layouts/PolicyLayout.astro';
-import {products} from '../../catalog/catalog.mjs';
+import {products} from '../../../catalog/catalog.mjs';
 const originals = products.filter(product => product.type === 'painting').map(product => ({id: product.id, title: product.title, artist: product.artist || 'TJ Murphy'})).sort((a, b) => a.title.localeCompare(b.title));
 ---
 <PolicyLayout title="Original inventory" description="Owner control for marking an original sold, unavailable, or available." noindex>
