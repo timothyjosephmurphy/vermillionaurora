@@ -60,8 +60,8 @@ async function shopSetup(env, token) {
   };
 }
 function originalTaxonomy(nodes) {
-  const exact = nodes.filter(node => /Painting/.test(node.name) && /Watercolor$/.test(node.name));
-  const choice = exact.length ? exact.sort((a, b) => a.name.length - b.name.length)[0] : nodes.find(node => /Watercolor$/.test(node.name));
+  const painted = nodes.filter(node => /painting/i.test(node.name) && /watercolor/i.test(node.name));
+  const choice = (painted.length ? painted : nodes.filter(node => /watercolor/i.test(node.name))).sort((a, b) => a.name.length - b.name.length)[0];
   if (!choice) throw Error('No Etsy watercolor painting category was found. Shop settings were not changed.');
   return choice;
 }
@@ -133,7 +133,14 @@ async function ensureListing(env, token, record, etag, sync, work, kind, setup) 
   const plan = kind === 'print' ? await buildSyncPrintPlan(work, settings) : buildSyncOriginalPlan(work, settings);
   let created = false;
   if (!listingId) {
-    const createdListing = await etsyApiCall(API + '/shops/' + token.shopId + '/listings?legacy=false', env, token, {method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'}, body: plan.body, action: 'creating a draft'});
+    let createdListing;
+    try {
+      createdListing = await etsyApiCall(API + '/shops/' + token.shopId + '/listings?legacy=false', env, token, {method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'}, body: plan.body, action: 'creating a draft'});
+    } catch (error) {
+      if (!plan.body.has('materials') || !/material/i.test(error.message)) throw error;
+      plan.body.delete('materials');
+      createdListing = await etsyApiCall(API + '/shops/' + token.shopId + '/listings?legacy=false', env, token, {method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'}, body: plan.body, action: 'creating a draft'});
+    }
     listingId = owned(createdListing?.listing_id);
     created = true;
     sync = remember(sync, work.id, kind, listingId);
