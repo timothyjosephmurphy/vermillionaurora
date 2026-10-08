@@ -12,7 +12,7 @@ const dir=process.argv[2];if(!dir)throw Error('Pass the source directory');
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const srgb=img=>img.rotate().toColourspace('srgb').withIccProfile('srgb');
 const MAINS=[
-  ['sunrise-punto-el-zonte-hostel-master.jpg','gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg'],
+  ['sunrise-punta-el-zonte-hostel-master.jpg','gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg'],
   ['el-zonte-at-dawn-master.jpg','gallery-images/el-zonte-at-dawn-2026.jpg'],
   ['new-painting-master.jpg','gallery-images/el-zonte-before-dawn.jpg'],
 ];

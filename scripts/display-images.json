@@ -896,28 +896,28 @@
    }
   ]
  },
- "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg": {
+ "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg": {
   "original": 491625,
   "width": 1219,
   "variants": [
    {
     "w": 160,
-    "src": "/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-160.webp",
+    "src": "/display/sunrise-punta-el-zonte-hostel-2026-ce8dd4d1f7-160.webp",
     "bytes": 5338
    },
    {
     "w": 480,
-    "src": "/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-480.webp",
+    "src": "/display/sunrise-punta-el-zonte-hostel-2026-ce8dd4d1f7-480.webp",
     "bytes": 44720
    },
    {
     "w": 960,
-    "src": "/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-960.webp",
+    "src": "/display/sunrise-punta-el-zonte-hostel-2026-ce8dd4d1f7-960.webp",
     "bytes": 164414
    },
    {
     "w": 1219,
-    "src": "/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-1219.webp",
+    "src": "/display/sunrise-punta-el-zonte-hostel-2026-ce8dd4d1f7-1219.webp",
     "bytes": 245196
    }
   ]

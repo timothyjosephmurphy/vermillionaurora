@@ -167,8 +167,8 @@
     "id": "el-zonte-at-sunrise",
     "slug": "el-zonte-at-sunrise",
     "type": "painting",
-    "title": "Sunrise from Punto El Zonte Hostel, El Salvador",
-    "description": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Sunrise from Punta El Zonte Hostel",
+    "description": "Sunrise from Punta El Zonte Hostel by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -196,15 +196,15 @@
       }
     ],
     "story": [
-      "This is the view from the Punto El Zonte hostel, where I stayed on the corner of the river that runs through town and the beach the surfers use. I woke before dawn, sat and meditated, and watched the sunrise and the surfers paddling out through the waves. The beach is all big round stones, and they tumble and rumble as each wave hits. The tropical air makes the light especially luminous. I painted it in my Seattle studio, from the photos I took that morning."
+      "This is the view from the Punta El Zonte hostel, where I stayed on the corner of the river that runs through town and the beach the surfers use. I woke before dawn, sat and meditated, and watched the sunrise and the surfers paddling out through the waves. The beach is all big round stones, and they tumble and rumble as each wave hits. The tropical air makes the light especially luminous. I painted it in my Seattle studio, from the photos I took that morning."
     ],
     "storyHeading": null,
     "inquiryHref": "/commissions/?buy=el-zonte-at-sunrise#form",
     "dimensionOrder": "width-height",
     "image": {
-      "src": "/gallery-images/sunrise-punto-el-zonte-hostel-2026.jpg",
-      "alt": "Sunrise from Punto El Zonte Hostel, El Salvador by TJ Murphy",
-      "caption": "Sunrise from Punto El Zonte Hostel, El Salvador"
+      "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
+      "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy",
+      "caption": "Sunrise from Punta El Zonte Hostel"
     },
     "checkout": {
       "mode": "integrated",
@@ -239,7 +239,7 @@
         "width": 2400,
         "height": 1800,
         "fallback": "/product-media/el-zonte/room-1-1600.jpg",
-        "alt": "Sunrise from Punto El Zonte Hostel, El Salvador hanging with two other El Zonte paintings in a living room",
+        "alt": "Sunrise from Punta El Zonte Hostel hanging with two other El Zonte paintings in a living room",
         "caption": "In a living room with the other two El Zonte paintings"
       },
       {
@@ -253,7 +253,7 @@
         "width": 2400,
         "height": 1800,
         "fallback": "/product-media/el-zonte/room-2-1600.jpg",
-        "alt": "Sunrise from Punto El Zonte Hostel, El Salvador hanging with two other El Zonte paintings in a living room",
+        "alt": "Sunrise from Punta El Zonte Hostel hanging with two other El Zonte paintings in a living room",
         "caption": "Hanging together: the three El Zonte paintings"
       },
       {
@@ -267,7 +267,7 @@
         "width": 2400,
         "height": 1800,
         "fallback": "/product-media/el-zonte/room-3-1600.jpg",
-        "alt": "Sunrise from Punto El Zonte Hostel, El Salvador hanging with two other El Zonte paintings in a living room",
+        "alt": "Sunrise from Punta El Zonte Hostel hanging with two other El Zonte paintings in a living room",
         "caption": "The three El Zonte paintings above the dining table"
       }
     ],
@@ -292,7 +292,7 @@
           "height": 720
         }
       ],
-      "label": "Video: Sunrise from Punto El Zonte Hostel, El Salvador and the other El Zonte paintings in a living room"
+      "label": "Video: Sunrise from Punta El Zonte Hostel and the other El Zonte paintings in a living room"
     }
   },
   {
@@ -1841,7 +1841,7 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "The sun was just up over the water at El Zonte, and the surfers were still paddling out, diving through the waves and riding them in. I watched from the Punto El Zonte hostel, where the river runs into the beach, and the big round stones tumbled and knocked together every time a wave crashed. The tropical air makes the light especially luminous. I painted it back in my Seattle studio, from the photos I took that morning."
+      "The sun was just up over the water at El Zonte, and the surfers were still paddling out, diving through the waves and riding them in. I watched from the Punta El Zonte hostel, where the river runs into the beach, and the big round stones tumbled and knocked together every time a wave crashed. The tropical air makes the light especially luminous. I painted it back in my Seattle studio, from the photos I took that morning."
     ],
     "storyHeading": null,
     "inquiryHref": "/commissions/?product=painting-shoreline-at-dusk#form",
@@ -1968,7 +1968,7 @@
     "gallerySequence": null,
     "facts": [],
     "story": [
-      "I woke before dawn at the Punto El Zonte hostel, on the corner where the river meets the beach, and sat and watched the light come. The surfers were already paddling out, diving through the waves and riding them back to shore. The beach is made of big round stones, and you can hear them tumbling as the waves crash in. The tropical air makes the light especially luminous. I painted it later in my Seattle studio, from the photos I took that morning."
+      "I woke before dawn at the Punta El Zonte hostel, on the corner where the river meets the beach, and sat and watched the light come. The surfers were already paddling out, diving through the waves and riding them back to shore. The beach is made of big round stones, and you can hear them tumbling as the waves crash in. The tropical air makes the light especially luminous. I painted it later in my Seattle studio, from the photos I took that morning."
     ],
     "storyHeading": null,
     "inquiryHref": "/commissions/?product=el-zonte-before-dawn#form",
@@ -5012,7 +5012,7 @@
       },
       {
         "src": "/gallery-images/el-salvador-sunrise.jpeg",
-        "alt": "Sunrise from Punto El Zonte Hostel, El Salvador, watercolor pastel landscape by TJ Murphy"
+        "alt": "Sunrise from Punta El Zonte Hostel, watercolor pastel landscape by TJ Murphy"
       },
       {
         "src": "/gallery-images/golden-reflection.jpg",
