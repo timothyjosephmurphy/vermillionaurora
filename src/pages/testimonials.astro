@@ -31,7 +31,6 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
         <p class="eyebrow dark">Collectors</p>
         <h1>Testimonials</h1>
         <p class="testimonials-lede">Over the years I’ve given many of my paintings to friends, family and people I’ve met on my travels, and others have found homes through sales and commissions. If one of them lives with you, I’d love to hear what it means to you.</p>
-        <p>Share a few words, a photo of the painting where it hangs, or a short selfie video of you with it. As a thank-you, I’ll email you a personal code for a print of any of my paintings at cost.</p>
         <p class="testimonials-jump" data-has-testimonials hidden><a class="button button-solid" href="#share">Share your story</a> <a class="button button-ghost" href="/exhibitions/world-map/">See collectors on the map</a></p>
       </header>
 
@@ -55,17 +54,17 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
         <div class="share-copy">
           <h2 id="share-heading">Share your story</h2>
           <p>Tell me about the painting you have, where it lives now, and what it means to you. I read every message personally and publish testimonials after I’ve had a chance to review them.</p>
+          <p class="share-thanks" data-share-thanks>As a thank-you, I’ll email you a personal code for a print of any of my paintings at cost.</p>
           <ul class="share-points">
-            <li>Your email stays private. I use it only to send your thank-you print code.</li>
+            <li>Your email is optional and stays private. I use it only to send your thank-you print code.</li>
             <li>Location data is removed from photos and videos before anything is published.</li>
-            <li>Videos are only ever shown where you say they can be.</li>
             <li>Your city is shown as an approximate pin on my <a href="/exhibitions/world-map/">exhibitions map</a>, never an address.</li>
           </ul>
         </div>
         <div class="share-form-wrap">
           <div class="form-thanks" data-thanks hidden tabindex="-1">
             <h3>Thank you!</h3>
-            <p>Your testimonial is on its way to me<span data-thanks-video hidden>, video and all</span>. I’ll review it soon and email your thank-you print code. It means a lot that you took the time.</p>
+            <p>Your testimonial is on its way to me<span data-thanks-video hidden>, video and all</span>. I’ll review it soon<span data-thanks-code> and email your thank-you print code</span>. It means a lot that you took the time.</p>
             <p><a href="/gallery/">Browse the gallery</a> · <a href="/commissions/">Commission a painting</a></p>
           </div>
           <form class="contact-form testimonial-form" action="/testimonials/api/submit" method="POST" enctype="multipart/form-data" data-testimonial-form>
@@ -76,9 +75,9 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
                 <small id="name-help" class="field-help">As you’d like it shown. Leave it blank to appear as “A collector”.</small>
               </label>
               <label>
-                <span>Email (required, kept private)</span>
-                <input type="email" name="email" required maxlength="254" autocomplete="email" placeholder="you@example.com" aria-describedby="email-help" />
-                <small id="email-help" class="field-help">Only for sending your thank-you code. Never published.</small>
+                <span>Email (optional, kept private)</span>
+                <input type="email" name="email" maxlength="254" autocomplete="email" placeholder="you@example.com" aria-describedby="email-help" />
+                <small id="email-help" class="field-help">Only if you’d like a thank-you discount code on prints. Never published.</small>
               </label>
             </div>
             <label>
@@ -96,9 +95,8 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
             </label>
             <div class="photo-field" data-photo-field>
               <label for="testimonial-photos">Photos (optional, up to 4)</label>
-              <input id="testimonial-photos" type="file" name="photos" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" aria-describedby="photo-help" data-photo-input />
-              <button type="button" class="photo-add" data-photo-add aria-describedby="photo-help photo-count" hidden><span aria-hidden="true">+</span> Add photos</button>
-              <small id="photo-help" class="field-help">The painting on your wall, and a photo of you with it if you like. JPEG, PNG, WebP or HEIC, up to 10 MB each.</small>
+              <input id="testimonial-photos" type="file" name="photos" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" aria-describedby="photo-count" data-photo-input />
+              <button type="button" class="photo-add" data-photo-add aria-describedby="photo-count" hidden><span aria-hidden="true">+</span> Add photos</button>
               <p id="photo-count" class="photo-count" role="status" aria-live="polite" data-photo-count></p>
             </div>
             <ul class="photo-previews" data-photo-previews aria-label="Selected photos"></ul>
@@ -110,7 +108,6 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
               </div>
               <input type="file" accept="video/*" capture="user" class="visually-hidden" tabindex="-1" aria-hidden="true" data-video-capture />
               <input type="file" accept="video/mp4,video/quicktime,video/webm,.mp4,.m4v,.mov,.webm" class="visually-hidden" tabindex="-1" aria-hidden="true" data-video-input />
-              <small id="video-help" class="field-help">MP4, MOV or WebM, up to 500 MB (a couple of minutes from any phone).</small>
               <div class="video-selected" data-video-selected hidden>
                 <video muted playsinline preload="metadata" data-video-preview aria-label="Preview of your video"></video>
                 <div class="video-selected-info">

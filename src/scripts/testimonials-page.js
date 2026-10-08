@@ -4,7 +4,8 @@
 const MAX_PHOTOS = 4, MAX_BYTES = 10 * 1024 * 1024, MAX_EDGE = 2000;
 // Videos go straight from the browser to private storage in 8 MiB parts (/testimonials/api/video/*), then the form
 // is sent with the upload's id. Must match MAX_VIDEO_BYTES in cloudflare/testimonial-videos.mjs.
-const MAX_VIDEO_BYTES = 500 * 1024 * 1024;
+const MAX_VIDEO_BYTES = 50 * 1024 * 1024;
+const VIDEO_RULE = 'Videos need to be MP4, MOV or WebM, up to 50 MB.';
 const VIDEO_EXT = {mp4: 'video/mp4', m4v: 'video/mp4', mov: 'video/quicktime', webm: 'video/webm'};
 const HEIC2ANY = {src: 'https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js', integrity: 'sha384-OTofQ0MEeiSgh62havBcemCIK0gqj809wX6UA0uPISNMRnR6NZyCdGzX3SbLrgwL'};
 const el = (tag, props = {}, ...children) => { const n = Object.assign(document.createElement(tag), props); n.append(...children.filter(c => c != null && c !== false)); return n; };
@@ -210,8 +211,9 @@ function setupVideo(form, say) {
   const pick = file => {
     if (!file) return;
     const type = videoType(file);
-    if (!type) return say(`“${file.name}” isn’t a video I can accept. Please choose an MP4, MOV or WebM video.`, true);
-    if (file.size > MAX_VIDEO_BYTES) return say(`That video is ${mb(file.size)}; the limit is 500 MB. Please record a shorter clip (a minute or two is perfect) or trim it first.`, true);
+    // Format and size are only mentioned when a file doesn't fit (no hint text under the buttons).
+    if (!type) return say(VIDEO_RULE, true);
+    if (file.size > MAX_VIDEO_BYTES) return say(`${VIDEO_RULE} That one is ${mb(file.size)}; please trim it or record a shorter clip.`, true);
     if (file.size < 1024) return say('That video file is empty. Please try again.', true);
     reset();
     Object.assign(state, {file, type, url: URL.createObjectURL(file)});
@@ -293,9 +295,9 @@ function setupForm() {
     render();
     if (photos.length) (add.hidden ? previews.querySelector('li:last-child button') : add).focus();
     const notes = [];
-    if (tooBig.length) notes.push(`${tooBig.map(f => f.name).join(', ')} ${tooBig.length > 1 ? 'are' : 'is'} over 10 MB.`);
+    if (tooBig.length) notes.push(`${tooBig.map(f => `“${f.name}”`).join(', ')} ${tooBig.length > 1 ? 'are' : 'is'} too large. Photos need to be 10 MB or smaller.`);
     if (ok.length > room) notes.push(`You can add up to ${MAX_PHOTOS} photos.`);
-    if (chosen.length > ok.length + tooBig.length) notes.push('Only JPEG, PNG, WebP or HEIC photos can be added.');
+    if (chosen.length > ok.length + tooBig.length) notes.push('That file type won’t work. Please use JPEG, PNG, WebP or HEIC.');
     say(notes.join(' '), notes.length > 0);
   });
   form.addEventListener('submit', async event => {
@@ -305,7 +307,7 @@ function setupForm() {
     if (invalid.length) {
       invalid.forEach(n => n.setAttribute('aria-invalid', 'true'));
       const first = invalid[0];
-      say(first.name === 'email' ? 'Please enter a valid email address.' : first.name === 'quote' ? 'Please write a few words about the painting, or add a video.' : 'Please fill in the required fields.', true);
+      say(first.name === 'email' ? 'Please check your email address, or leave it blank.' : first.name === 'quote' ? 'Please write a few words about the painting, or add a video.' : 'Please fill in the required fields.', true);
       first.focus();
       return;
     }
@@ -323,6 +325,7 @@ function setupForm() {
       if (!r.ok || !result.success) throw Error(result.error || 'Sorry, something went wrong. Please try again, or email tj@tjm.art.');
       form.hidden = true;
       if (video?.has()) document.querySelector('[data-thanks-video]').hidden = false;
+      if (!data.get('email')) document.querySelector('[data-thanks-code]').hidden = true; // no email, no code
       const thanks = document.querySelector('[data-thanks]');
       thanks.hidden = false; thanks.focus();
     } catch (error) {
