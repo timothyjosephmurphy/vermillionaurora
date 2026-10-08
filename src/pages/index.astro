@@ -12,6 +12,7 @@ const collectorPaintings=homePaintings.filter(product=>!['available','inquiry'].
 const collectorPreview=collectorPaintings.slice(0,8);
 const featured=availablePaintings[0]||homePaintings[0];
 import { person, website, ld } from '../data/structured-data.mjs';
+import { printsFromLabel, showBuy } from '../data/card-commerce.mjs';
 ---
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
@@ -61,7 +62,7 @@ import { person, website, ld } from '../data/structured-data.mjs';
             <div class="hero-panel" aria-label="Featured artwork panel">
               <div class="art-card featured-art">
                 <a href={urlFor(featured)} class="art-image art-1" style={`background-image:url('${featured.image.src}')`} aria-label={`View ${featured.title}`}></a>
-                <div class="art-meta"><span class="meta-label">Featured piece</span><h2><a href={urlFor(featured)} class="product-title-link">{featured.title}</a></h2><p>{featured.listing.status==='available'?priceLabel(featured):statusLabel(featured)}</p></div>
+                <div class="art-meta"><span class="meta-label">Featured piece</span><h2><a href={urlFor(featured)} class="product-title-link">{featured.title}</a></h2><p class="card-buy-row"><span>{featured.listing.status==='available'?priceLabel(featured):statusLabel(featured)}{printsFromLabel(featured)&&` · ${printsFromLabel(featured)}`}</span>{showBuy(featured)&&<span class="card-buy" aria-hidden="true">Buy</span>}</p></div>
               </div>
             </div>
           </div>

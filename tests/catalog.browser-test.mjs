@@ -33,6 +33,26 @@ try {
  await page.goto(origin+'/');await page.waitForTimeout(500);
  assert(await page.evaluate(()=>{const track=document.querySelector('[data-available-paintings]'),tr=track.getBoundingClientRect();const pills=[...track.querySelectorAll('.card-buy:not([hidden])')].map(b=>({b:b.getBoundingClientRect(),c:b.closest('.card-tile').getBoundingClientRect()})).filter(x=>x.c.left>=tr.left-1&&x.c.right<=tr.right+1);
   return pills.length>1&&pills.every(x=>Math.abs(x.b.bottom-pills[0].b.bottom)<=1&&Math.abs((x.c.right-x.b.right)-(pills[0].c.right-pills[0].b.right))<=1&&Math.abs(x.c.height-pills[0].c.height)<=1);}),'Homepage carousel cards are equal height with Buy pills level in the lower-right corner');
+ // Every visible Buy cue (card pills, viewer pills, the hero carousel's slides) must be the vermillion pill, never plain text glued to a price.
+ const buyCueProblems=()=>{const cta=(()=>{const probe=document.createElement('span');probe.style.background='var(--cta)';document.body.append(probe);const c=getComputedStyle(probe).backgroundColor;probe.remove();return c;})();const hover=(()=>{const probe=document.createElement('span');probe.style.background='var(--cta-hover)';document.body.append(probe);const c=getComputedStyle(probe).backgroundColor;probe.remove();return c;})();
+  const problems=[];
+  for(const el of document.querySelectorAll('body *')){if(el.children.length||!/^buy$/i.test(el.textContent.trim())||el.closest('[hidden],[inert]'))continue;const r=el.getBoundingClientRect();if(!r.width||!r.height)continue;const cs=getComputedStyle(el);
+   if(![cta,hover].includes(cs.backgroundColor))problems.push(`${el.className||el.tagName}: background ${cs.backgroundColor}`);
+   else if(!el.closest('.button')&&(r.height<24||r.height>32||parseFloat(cs.borderTopLeftRadius)<8))problems.push(`${el.className}: not a compact pill (${Math.round(r.height)}px)`);}
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;
+  while((node=walker.nextNode())){const v=node.nodeValue.trim();if(/Buy$/.test(v)&&!/^buy$/i.test(v)&&node.parentElement?.getClientRects().length&&!node.parentElement.closest('script,style,[hidden]'))problems.push(`glued Buy text: ${v.slice(-50)}`);}
+  return problems;};
+ for(const width of [1440,390]){
+  await page.setViewportSize({width,height:900});
+  for(const route of ['/','/gallery/','/gallery/available/','/exhibitions/paul-murphy/']){
+   await page.goto(origin+route);await page.waitForTimeout(400);
+   let problems=await page.evaluate(buyCueProblems);
+   if(route==='/'){const slides=await page.evaluate(()=>Number(document.querySelector('.featured-position')?.textContent.split('/')[1]||0));assert(slides>1,'hero carousel has slides');
+    for(let i=0;i<slides;i++){await page.evaluate(()=>document.querySelector('.featured-carousel [data-next]').click());await page.waitForTimeout(500);problems=problems.concat(await page.evaluate(buyCueProblems));
+     assert.equal(await page.evaluate(()=>{const s=document.querySelector('.featured-stage .featured-slide:last-child'),row=s.querySelector('.featured-caption .card-buy-row'),buy=row?.querySelector('.card-buy');if(!buy)return 'ok';const text=row.firstElementChild.getBoundingClientRect(),b=buy.getBoundingClientRect();return row.lastElementChild===buy&&b.left-text.right>=8&&b.top<text.bottom&&b.bottom>text.top?'ok':'Buy not inline at the end of the last line';}),'ok',`hero slide ${i+1} at ${width}px`);}}
+   assert.deepEqual([...new Set(problems)],[],`${route} at ${width}px`);
+  }
+ }
  await page.goto(origin+'/gallery/');const card=page.locator('[data-product-id="painting-portrait-in-green"]');await page.waitForFunction(()=>document.querySelector('[data-product-id="painting-portrait-in-green"]').dataset.availability==='Sold');await page.locator('#available-only').check();assert(await card.isHidden());
  assert.equal(await page.locator('.product-grid').count(),0,'Gallery uses a list instead of tiles');
  assert.match(await page.locator('[data-product-id="painting-portrait-in-gold"] .painting-list-dimensions').textContent(),/12 × 15 in/);
