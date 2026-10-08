@@ -86,7 +86,7 @@
       };
       add.addEventListener('click',async()=>{add.disabled=true;buy.disabled=true;await addItem();add.disabled=!eligible(slug);buy.disabled=!eligible(slug);});
       buy.addEventListener('click',async()=>{const hasOtherItems=cart.some(item=>item.id!==slug);add.disabled=true;buy.disabled=true;if(await addItem())location.assign(hasOtherItems?'/cart/':`/cart/?buy=${encodeURIComponent(slug)}`);else{add.disabled=!eligible(slug);buy.disabled=!eligible(slug);}});
-      document.addEventListener('catalog:availability',e=>{const status=e.detail?.[slug];if(!status||heldIds.has(slug))return;const product=capabilities?.products.find(item=>item.id===slug);if(product)product.status=status;if(status==='available'){add.disabled=false;buy.disabled=false;message.textContent='';}else{add.disabled=true;buy.disabled=true;message.textContent=status==='sold'?'This original has sold.':'This original is currently reserved.';}});
+      document.addEventListener('catalog:availability',e=>{const status=e.detail?.[slug];if(!status||heldIds.has(slug))return;const product=capabilities?.products.find(item=>item.id===slug);if(product)product.status=status;if(status==='available'){add.disabled=false;buy.disabled=false;message.textContent='';}else{add.disabled=true;buy.disabled=true;message.textContent=status==='sold'?'This original has sold.':status==='unavailable'?'This original is not currently available.':'This original is currently reserved.';}});
     }
     window.addEventListener('storage',event=>{if(event.key===CART){cart=clean(read(CART));counts();if(root&&!busy&&!pending(current)){syncHold(cart).catch(()=>{});invalidate();render();}}if(event.key===HOLD)holdSession=read(HOLD);});
   });

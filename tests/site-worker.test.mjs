@@ -97,3 +97,12 @@ test('every Nostr scheduled-post product link resolves to a live product page',a
     if(slug)assert.ok(slugs.has(slug),`${post.id} links to ${post.productUrl}`);
   }
 });
+
+test('original inventory API on tjm.art goes to the checkout Worker', async () => {
+  const seen = [];
+  const env = {LEGACY_REDIRECT:'false', PRIMARY_HOST:'tjm.art', ASSETS:{fetch:()=>new Response('asset')}, CHECKOUT:{fetch:r=>{seen.push(r.url);return new Response('checkout');}}};
+  assert.equal(await (await worker.fetch(new Request('https://tjm.art/inventory/originals',{method:'POST'}),env)).text(), 'checkout');
+  assert.equal(seen[0], 'https://tjm.art/inventory/originals');
+  assert.equal(await (await worker.fetch(new Request('https://tjm.art/originals-manager/'),env)).text(), 'asset');
+  assert.equal((await worker.fetch(new Request('https://tjm.art/inventory/originals'),{...env, CHECKOUT:undefined})).status, 503);
+});

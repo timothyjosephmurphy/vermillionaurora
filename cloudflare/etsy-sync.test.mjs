@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {etsyListings} from './etsy-listings.mjs';
 import {ETSY_ORIGIN, write} from './etsy-connection.mjs';
-import {PROTECTED_LISTING_IDS, printTitle, originalTitle} from './etsy-sync-plan.mjs';
+import {PROTECTED_LISTING_IDS, printTitle, originalTitle, SYNC_WORKS} from './etsy-sync-plan.mjs';
 
 const now = Date.parse('2026-10-08T21:00:00Z');
 class Bucket {
@@ -86,25 +86,30 @@ test('updates the two existing print drafts and creates only the missing one', a
   const creates = calls.filter(call => call.url.includes('/listings?legacy=false'));
   assert.equal(creates.length, 1);
   assert.equal(new URLSearchParams(creates[0].options.body).get('title'), 'El Zonte Before Dawn Art Print · Framed or Unframed');
+  assert.equal(new URLSearchParams(creates[0].options.body).get('price'), String(Math.min(...SYNC_WORKS.find(work => work.id === 'el-zonte-before-dawn').variants.map(variant => Number(variant.price)))));
   assert.equal(calls.filter(call => call.url.includes('/inventory')).length, 3);
   assert.equal(calls.some(call => call.url.includes('4587311534')), false);
 });
 
-test('creates original drafts at the site price and refuses to publish them', async t => {
+test('creates original drafts at the site price plus the Etsy uplift and can publish them explicitly', async t => {
   const env = envOf(); await connected(env); const calls = mock(t);
   const res = await req(env, '/etsy/listings/sync', {kind: 'original', productIds: ['el-zonte-before-dawn']});
   assert.equal(res.status, 200, await res.clone().text());
   const form = new URLSearchParams(calls.find(call => call.url.includes('/listings?legacy=false')).options.body);
   assert.equal(form.get('title'), 'El Zonte Before Dawn, Original Watercolor Pastel, 48 x 24 in');
-  assert.equal(form.get('price'), '1000.00');
+  assert.equal(form.get('price'), '1100.00');
   assert.equal(form.get('quantity'), '1');
   assert.equal(form.get('who_made'), 'i_did');
   assert.equal(form.get('when_made'), '2020_2026');
   assert.equal(form.get('shipping_profile_id'), '502');
   assert.equal(form.has('production_partner_ids'), false);
   const activate = await req(env, '/etsy/listings/activate', {kind: 'original', productIds: ['el-zonte-before-dawn']});
-  assert.equal(activate.status, 502);
-  assert.match((await activate.json()).error, /stay drafts/);
+  assert.equal(activate.status, 200, await activate.clone().text());
+  const published = calls.filter(call => call.options.method === 'PATCH');
+  assert.equal(published.length, 1);
+  assert.equal(new URLSearchParams(published[0].options.body).get('state'), 'active');
+  assert.equal(new URLSearchParams(published[0].options.body).get('quantity'), '1');
+  assert.equal(published[0].url.includes('/listings/777'), true);
 });
 
 test('publishes only the requested print listings', async t => {

@@ -9,7 +9,7 @@ import {
 } from './etsy-sync-plan.mjs';
 
 const API = 'https://api.etsy.com/v3/application';
-export const ADMIN_PATHS = new Set(['/etsy/listings/sync', '/etsy/listings/media', '/etsy/listings/activate', '/etsy/listings/verify']);
+export const ADMIN_PATHS = new Set(['/etsy/listings/sync', '/etsy/listings/media', '/etsy/listings/activate', '/etsy/listings/verify', '/etsy/listings/reconcile']);
 const rows = value => Array.isArray(value?.results) ? value.results : Array.isArray(value) ? value : [];
 const SLOTS = {painting: 1, 'room-1': 2, 'room-2': 3, 'room-3': 4};
 
@@ -175,6 +175,10 @@ export async function etsyListingAdmin(request, env, session, now = Date.now()) 
   let {record, etag, token} = session;
   if (path === '/etsy/listings/media') return uploadMedia(request, env, record, etag, token);
   let input; try { input = await request.json(); } catch { throw Error('Choose the El Zonte paintings to sync.'); }
+  if (path === '/etsy/listings/reconcile') {
+    const {reconcileOriginals} = await import('./etsy-original-sync.mjs');
+    return reconcileOriginals(env, token, record, {dryRun: input.dryRun !== false});
+  }
   const works = requested(input);
   if (path === '/etsy/listings/verify') return verify(env, token, record, works, input.kind);
   const kind = kindOf(input);
@@ -206,6 +210,10 @@ async function uploadMedia(request, env, record, etag, token) {
     }
     return {id: work.id, kind, listingId, removed};
   }
+  if (op === 'drop-inactive-video') {
+    const {dropInactiveVideo} = await import('./etsy-original-sync.mjs');
+    return {id: work.id, kind, listingId, ...await dropInactiveVideo(env, token, listingId)};
+  }
   if (op === 'video') {
     const existing = await etsyApiCall(API + '/listings/' + listingId + '/videos', env, token, {action: 'reading listing video'}).catch(error => error.etsyStatus === 404 ? {results: []} : Promise.reject(error));
     if (rows(existing).some(video => !video.video_state || video.video_state === 'active')) return {id: work.id, kind, listingId, video: 'already attached'};
@@ -234,14 +242,20 @@ async function uploadMedia(request, env, record, etag, token) {
 }
 
 async function activate(env, token, record, works, kind) {
-  if (kind !== 'print') throw Error('Original listings stay drafts until Etsy pricing is decided.');
   const sync = indexOf(record);
   const results = [];
   for (const work of works) {
-    const listingId = owned(sync.listings?.[work.id]?.print || EXISTING_PRINT_LISTINGS[work.id]);
+    const listingId = owned(sync.listings?.[work.id]?.[kind] || (kind === 'print' ? EXISTING_PRINT_LISTINGS[work.id] : null));
     const body = new URLSearchParams();
     body.set('state', 'active');
-    await etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId, env, token, {method: 'PATCH', headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'}, body, action: 'publishing a print listing'});
+    if (kind === 'original') body.set('quantity', '1');
+    const publish = payload => etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId, env, token, {method: 'PATCH', headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'}, body: payload, action: 'publishing a listing'});
+    try { await publish(body); }
+    catch (error) {
+      if (kind !== 'original' || !body.has('quantity') || !/quantity/i.test(error.message || '')) throw error;
+      body.delete('quantity');
+      await publish(body);
+    }
     const listing = await readListing(env, token, listingId);
     results.push({id: work.id, kind, listingId, state: listing?.state || null, url: listing?.url || 'https://www.etsy.com/listing/' + listingId});
   }

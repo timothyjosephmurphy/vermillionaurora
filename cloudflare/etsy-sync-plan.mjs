@@ -1,6 +1,7 @@
 // Targeted El Zonte listing plans. The five-painting draft batch is unchanged.
 import {etsySkuForPrintId, validateListingPlan} from './etsy-listing-plan.mjs';
 import syncWorks, {syncSourceVersion} from './etsy-sync-source.mjs';
+import {etsyOriginalPrice} from './original-availability.mjs';
 
 export {syncSourceVersion};
 export const SYNC_WORKS = syncWorks;
@@ -14,6 +15,12 @@ export const EXISTING_PRINT_LISTINGS = {
   'el-zonte-at-sunrise': 4587305955
 };
 export const PROTECTED_LISTING_IDS = new Set([4587311534, 4587311600, 4587305901]);
+// Originals this sync may update. Saved index entries override these ids.
+export const ORIGINAL_LISTINGS = {
+  'el-zonte-before-dawn': 4591466297,
+  'painting-shoreline-at-dusk': 4591478382,
+  'el-zonte-at-sunrise': 4591478390
+};
 const SIZE = 513, FRAME = 514, QUANTITY = 100;
 const length = value => Array.from(value).length;
 const whole = value => Number.isInteger(value) ? String(value) : String(value);
@@ -106,7 +113,7 @@ export function buildSyncOriginalPlan(work, settings) {
     ['quantity', 1],
     ['title', title],
     ['description', originalDescription(work)],
-    ['price', work.original.price],
+    ['price', etsyOriginalPrice(work.original.price)],
     ['who_made', 'i_did'],
     ['when_made', '2020_2026'],
     ['taxonomy_id', settings.taxonomyId],
