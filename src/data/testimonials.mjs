@@ -13,4 +13,4 @@ export const testimonials = raw.filter(t => ok(t?.consent?.publish) && t.quote).
   city: ok(t.consent.city) ? t.city : '',
   pin: ok(t.consent.map) && Number.isFinite(t.lat) && Number.isFinite(t.lng) ? [t.lat, t.lng] : null,
 }));
-export const testimonialPins = testimonials.filter(t => t.pin).map(t => ({ name: t.name, city: t.city, painting: t.painting, lat: t.pin[0], lng: t.pin[1] }));
+export const testimonialPins = testimonials.filter(t => t.pin).map(t => ({ id: t.id, name: t.name, city: t.city, painting: t.painting, lat: t.pin[0], lng: t.pin[1] }));
