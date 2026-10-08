@@ -10,6 +10,7 @@ for book,refs in [('watercolor-landscapes',[977,1003]),('watercolor-portraits',[
  names[book,refs[0]]='Myself, my mother Ruth, my grandpa Howard';names[book,refs[1]]='Myself in a Tam'
 # Shared captions are ambiguous in these collages; keep numbered works without guessing names.
 for n,x in enumerate([1037,1036,1034,1038],1):names['watercolor-portraits',x]=f'Benny and Kermit, P, Culhane, Bob — portrait {n}'
+corrections={c['key']:c for c in json.load(open(root/'catalog/book-photo-corrections.json'))['corrections']}
 unique={};occurrences=[]
 removed={('watercolor-landscapes',300),('watercolor-landscapes',298),('watercolor-landscapes',301),('watercolor-landscapes',317),('watercolor-landscapes',315),('watercolor-landscapes',318)}
 for e in raw['artworks']:
@@ -28,6 +29,9 @@ for e in raw['artworks']:
  eligible=min(e['widthPx'],e['heightPx'])>=900 and max(e['widthPx'],e['heightPx'])>=1200
  if 'about-the-author' in '|'.join(e['sectionIds']):eligible=False
  ent={**e,'id':id,'title':title,'measurements':measurements,'printCandidate':eligible,'masterUrl':base+key+'.jpg','previewUrl':base+key+'.webp','sources':[{k:e[k] for k in ['book','pages','xref','captions','measurements']} ]}
+ # Perspective-corrected display photos (scripts/book_photo_corrections.py) replace the raw desk photo on the site.
+ c=corrections.get(key)
+ if c:ent.update(masterUrl=c['masterUrl'],previewUrl=c['previewUrl'],photoCorrection={'widthPx':c['widthPx'],'heightPx':c['heightPx'],'masterSha256':c['masterSha256'],'previewSha256':c['previewSha256'],'config':'catalog/book-photo-corrections.json'})
  unique[identity]=ent;occurrences.append((key,id))
 lookup=dict(occurrences);artworks=list(unique.values());groups=[]
 for s in raw['sections']:
@@ -48,6 +52,6 @@ new=[]
 for e in artworks:
  facts=[{'label':'Book measurements','value':'; '.join(e['measurements'])+' — unit not specified in book'}] if e['measurements'] else []
  section=next(s for s in groups if e['id'] in s['artworks'])
- new.append(dict(id=e['id'],slug=e['id'],title=e['title'],type='painting',artist='TJ Murphy',bookGallery=True,eyebrow=section['title'],description=e['title']+' from TJ Murphy’s watercolor art books.',image=dict(src=e['previewUrl'],fullSrc=e['masterUrl'],alt=e['title']),listing=dict(status='not-for-sale'),facts=facts,story=[],back=dict(href='/book-galleries/'+section['id']+'/',label='← Back to '+section['title']),inquiry=dict(label='Contact the artist',note=''),bookSources=e['sources']))
+ new.append(dict(id=e['id'],slug=e['id'],title=e['title'],type='painting',artist='TJ Murphy',bookGallery=True,eyebrow=section['title'],description=e['title']+' from TJ Murphy’s watercolor art books.',image=dict(src=e['previewUrl'],alt=e['title'],fullSrc=e['masterUrl'],**({'width':e['photoCorrection']['widthPx'],'height':e['photoCorrection']['heightPx']} if e.get('photoCorrection') else {})),listing=dict(status='not-for-sale'),facts=facts,story=[],back=dict(href='/book-galleries/'+section['id']+'/',label='← Back to '+section['title']),inquiry=dict(label='Contact the artist',note=''),bookSources=e['sources']))
 (root/'catalog/book-products.json').write_text(json.dumps(new,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'galleries':len(groups),'artworks':len(artworks),'printCandidates':sum(e['printCandidate'] for e in artworks)}))

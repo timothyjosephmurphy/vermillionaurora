@@ -14,6 +14,8 @@ for(const e of manifest.artworks){
  const file=path.join(work,'media',e.key+'.jpg'),bytes=await readFile(file);
  if(digest(bytes)!==e.masterSha256)throw Error('Extraction mismatch: '+e.id);
  for(const ext of ['jpg','webp']){const filename=e.key+'.'+ext,data=await readFile(path.join(work,'media',filename));uploads.push({file:path.join('media',filename),key:'images/book-galleries/v1/'+filename,sha256:digest(data),size:data.length,contentType:ext==='jpg'?'image/jpeg':'image/webp'});}
+ // Corrected display photos are uploaded by upload-book-photo-corrections.yml; print sheets would need their own corrected source.
+ if(e.photoCorrection&&e.printCandidate)throw Error('Corrected display photo has no print source: '+e.id);
  if(!e.printCandidate)continue;
  const source={url:e.masterUrl,widthPx:e.widthPx,heightPx:e.heightPx,sha256:e.masterSha256};
  const variants={};
