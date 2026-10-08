@@ -6344,11 +6344,11 @@
     "eyebrow": "Bitcoiners",
     "description": "Nick Szabo @NickSzabo4 from TJ Murphy’s watercolor art books.",
     "image": {
-      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e4bbfe556c3c847d9c90-paper.webp",
+      "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e4bbfe556c3c847d9c90-color.webp",
       "alt": "Nick Szabo @NickSzabo4",
-      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e4bbfe556c3c847d9c90-paper.jpg",
-      "width": 696,
-      "height": 709
+      "fullSrc": "https://media.vermillionaurora.com/images/book-galleries/v1/e4bbfe556c3c847d9c90-color.jpg",
+      "width": 613,
+      "height": 635
     },
     "listing": {
       "status": "not-for-sale"

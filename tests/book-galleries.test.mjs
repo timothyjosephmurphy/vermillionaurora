@@ -154,6 +154,7 @@ test('perspective-corrected book photos replace the desk photo everywhere and st
     }
     const page=fs.readFileSync(`dist/products/${art.id}/index.html`,'utf8'),$=load(page);
     assert(!page.includes(`/v1/${c.key}.`),'old desk photo still referenced');
+    assert.deepEqual([...new Set(page.match(new RegExp(`/v1/${c.key}[^"' ]*`,'g')))].sort(),[`/v1/${c.output}.jpg`,`/v1/${c.output}.webp`],'only the current corrected photo is referenced');
     assert.equal($('meta[property="og:image"]').attr('content'),c.previewUrl);
     assert.equal(JSON.parse($('script[type="application/ld+json"]').first().html()).image,c.previewUrl);
     assert.equal($('.product-figure img').attr('width'),String(c.widthPx));
