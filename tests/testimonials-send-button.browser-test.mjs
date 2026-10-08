@@ -126,9 +126,38 @@ try {
     assert.equal(state.formHidden, true);
     assert.equal(state.label, 'Sent — thank you');
     assert.equal(state.disabled, true);
+    // No email given: no print-code lines, so no Promotions heads-up.
+    assert.equal(await page.getByText(/Promotions tab/).isVisible(), false);
+    assert.deepEqual(await page.locator('[data-thanks-code]').evaluateAll(ns => ns.map(n => n.hidden)), [true, true]);
     assert.deepEqual(errors, []);
     await page.close();
     console.log('ok text-only success');
+  }
+
+  // Success with an email: the thank-you panel says the print code comes separately and to check Gmail's Promotions tab.
+  {
+    const {page, errors} = await openForm(context);
+    await page.locator('textarea[name=quote]').fill(quote);
+    await page.locator('input[name=email]').fill('collector@example.com');
+    await page.locator('button[type=submit]').click();
+    await page.locator('[data-thanks]').waitFor({state: 'visible', timeout: 10000});
+    const line = page.locator('[data-thanks]').getByText(/Promotions tab/);
+    assert.equal(await line.isVisible(), true);
+    assert.equal((await line.textContent()).trim(), 'Your print code will arrive in a separate email from tj@tjm.art once I’ve reviewed your testimonial. If you use Gmail, it may land in your Promotions tab, so check there if you don’t see it. Adding tj@tjm.art to your contacts helps it reach your inbox.');
+    assert.deepEqual(errors, []);
+    await page.close();
+    console.log('ok email success shows the Promotions heads-up');
+  }
+
+  // Non-JavaScript fallback redirect: ?thanks=1&code=1 (email given) shows the heads-up; ?thanks=1 alone hides it.
+  for (const [query, visible] of [['?thanks=1&code=1', true], ['?thanks=1', false]]) {
+    const page = await context.newPage();
+    await mockApis(page);
+    await page.goto(origin + '/testimonials/' + query + '#share', {waitUntil: 'domcontentloaded'});
+    await page.locator('[data-thanks]').waitFor({state: 'visible', timeout: 10000});
+    assert.equal(await page.locator('[data-thanks]').getByText(/Promotions tab/).isVisible(), visible, query);
+    await page.close();
+    console.log('ok fallback ' + query);
   }
 
   // Success: with photo

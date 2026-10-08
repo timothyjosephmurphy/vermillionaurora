@@ -338,10 +338,8 @@ function setupForm() {
         const videoThanks = document.querySelector('[data-thanks-video]');
         if (videoThanks) videoThanks.hidden = false;
       }
-      if (!data.get('email')) {
-        const codeThanks = document.querySelector('[data-thanks-code]');
-        if (codeThanks) codeThanks.hidden = true; // no email, no code
-      }
+      // No email, no code: hide the print-code lines (including the Promotions heads-up).
+      if (!data.get('email')) document.querySelectorAll('[data-thanks-code]').forEach(n => { n.hidden = true; });
       const thanks = document.querySelector('[data-thanks]');
       if (thanks) {
         thanks.hidden = false;
@@ -364,7 +362,11 @@ function setupForm() {
   });
   // Non-JavaScript fallback redirects back here with ?thanks=1 or ?error=...
   const params = new URLSearchParams(location.search);
-  if (params.has('thanks')) { form.hidden = true; document.querySelector('[data-thanks]').hidden = false; }
+  if (params.has('thanks')) {
+    form.hidden = true;
+    if (!params.has('code')) document.querySelectorAll('[data-thanks-code]').forEach(n => { n.hidden = true; });
+    document.querySelector('[data-thanks]').hidden = false;
+  }
   else if (params.get('error')) say(params.get('error'), true);
 }
 

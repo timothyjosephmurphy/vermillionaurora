@@ -38,8 +38,14 @@ Collectors (people TJ has given or sold paintings to) share testimonials on http
    testimonials page map is only those collector pins, captioned “Collectors around the world”, and links to the full map.
 7. **Thank-you code and email**: approving from Pending issues the person's single-use at-cost print code (same issuer as
    `scripts/issue-print-code.mjs`, note `Testimonial <id>`) and, if **Send thank-you email** is ticked (default), emails it to
-   them from `TJ Murphy <tj@vermillionaurora.com>` (the site's existing Gmail identity, same as order emails) with
-   `Reply-To: tj@tjm.art`. The copy is `thanksEmail()` in `cloudflare/testimonials.mjs`. Each submission gets at most one code
+   them from `TJ Murphy <tj@tjm.art>` (a send-as alias of the site's existing Gmail mailbox, tj@vermillionaurora.com; set the
+   Worker var `TESTIMONIAL_EMAIL_FROM` to `tj@vermillionaurora.com` to switch back) with `Reply-To: tj@tjm.art`. The copy is
+   `thanksEmail()` in `cloudflare/testimonials.mjs`: subject "Thank you for your testimonial, {first name}" (or without the
+   name), written as a personal note so Gmail keeps it out of Promotions: plain text plus a minimal HTML mirror (no images,
+   logo, buttons, styling or footer; plain links only), no List-Unsubscribe/bulk headers, no promo wording ("discount",
+   "offer", "deal", exclamation marks), and an invitation to reply. The VA-… string appears after "Use this at checkout:".
+   There is no confirmation email on submission; instead, when an email is given, the on-page thank-you says the print
+   code comes separately from tj@tjm.art and to check Gmail's Promotions tab (non-JS posts redirect with `&code=1`). Each submission gets at most one code
    and one email (the code is stored on the private record and always shown on the owner page; an email attempt is recorded
    before sending, and an unknown outcome needs an explicit resend). Untick to approve quietly and use **Send thank-you email**
    later. Set the Worker var `TESTIMONIAL_THANKS_EMAIL` to `"false"` to turn automatic emails off. Editing a published

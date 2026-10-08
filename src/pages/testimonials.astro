@@ -77,6 +77,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
           <div class="form-thanks" data-thanks hidden tabindex="-1">
             <h3>Thank you!</h3>
             <p>Your testimonial is on its way to me<span data-thanks-video hidden>, video and all</span>. I’ll review it soon<span data-thanks-code> and email your thank-you print code</span>. It means a lot that you took the time.</p>
+            <p data-thanks-code>Your print code will arrive in a separate email from tj@tjm.art once I’ve reviewed your testimonial. If you use Gmail, it may land in your Promotions tab, so check there if you don’t see it. Adding tj@tjm.art to your contacts helps it reach your inbox.</p>
             <p><a href="/gallery/">Browse the gallery</a> · <a href="/commissions/">Commission a painting</a></p>
           </div>
           <form class="contact-form testimonial-form" action="/testimonials/api/submit" method="POST" enctype="multipart/form-data" data-testimonial-form novalidate>
