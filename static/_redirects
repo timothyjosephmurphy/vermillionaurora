@@ -16,6 +16,8 @@
 /index.php / 301
 /home/story.html /about/ 301
 /index.html / 301
+/contact/ /commissions/#form 301
+/contact /commissions/#form 301
 /products/velvet-dawn/ /gallery/ 301
 /products/velvet-dawn /gallery/ 301
 /products/paul-murphy-painting-82/ /gallery/available/#paul-murphy 301
