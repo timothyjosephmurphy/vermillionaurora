@@ -204,7 +204,9 @@ document.querySelectorAll('.exhibition-grid, .book-gallery-carousel-grid, .paint
   stage.addEventListener('pointercancel', () => { gesture = null; schedule(); });
   stage.addEventListener('lostpointercapture', () => { gesture = null; });
 
-  (grid.closest('[data-gallery-list]')||grid).before(box);
+  const reserve = grid.closest('.painting-gallery-page')?.querySelector('.gallery-viewer-reserve');
+  (reserve||grid.closest('[data-gallery-list]')||grid).before(box);
+  reserve?.remove();
   const paintingGallery = grid.closest('.painting-gallery-page');
   const bookGallery = grid.closest('.book-gallery-page');
   grid.hidden = !paintingGallery && !bookGallery && !bookGalleryOverview;

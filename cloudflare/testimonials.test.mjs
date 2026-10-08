@@ -54,6 +54,7 @@ test('submission is stored pending with stripped photos, notifies TJ, and is not
   const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);
   assert.equal(rec.status,'pending');assert.equal(rec.email,'jane@example.com');assert.deepEqual(rec.geo,{lat:47.25,lng:-122.44,label:'Tacoma, Pierce County, Washington, United States',source:'OpenStreetMap Nominatim'});
   const stored=env.COMMISSION_UPLOADS.data.get(rec.photos[0].key).value;assert.deepEqual(jpegExifTags(stored),[[0x0112]]);
+  assert.ok(JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value).notifiedAt);
   assert.equal(mails.length,1);const mail=atob(mails[0].raw.replace(/-/g,'+').replace(/_/g,'/'));assert.match(mail,/testimonial-manager/);assert.match(mail,/Reply-To: jane@example.com/);
   assert.deepEqual(await approved(env),[]);
   assert.equal((await testimonialsApi(new Request(`https://tjm.art/testimonials/api/photo/${id}/0`),env)).status,404);
@@ -91,9 +92,19 @@ test('owner moderation: auth, approve with edits, public list and photos, unpubl
   assert.equal(JSON.stringify(await approved(env)).includes('jane@example.com'),false);
   const photo=await testimonialsApi(new Request('https://tjm.art'+pub.photos[0]),env);assert.equal(photo.status,200);assert.equal(photo.headers.get('Content-Type'),'image/jpeg');
   assert.deepEqual(jpegExifTags(new Uint8Array(await photo.arrayBuffer())),[[0x0112]]);
-  const code=await (await owner(env,{action:'issueCode',id})).json();assert.match(code.code,/^VA-[A-Z2-9]{4}-[A-Z2-9]{4}-[A-Z2-9]{4}$/);assert.equal(issued[0].record.email,'jane@example.com');
-  assert.equal((await owner(env,{action:'issueCode',id})).status,409);
-  assert.equal(mails.length,1,'no email is sent when a code is issued');
+  // Approval issued one code and sent one thank-you email (sendThanks defaults to on).
+  assert.equal(issued.length,1);assert.equal(issued[0].record.email,'jane@example.com');assert.equal(issued[0].record.note,'Testimonial '+id);
+  assert.equal(mails.length,2);const thanks=atob(mails[1].raw.replace(/-/g,'+').replace(/_/g,'/'));
+  assert.match(thanks,/To: jane@example.com/);assert.match(thanks,/Reply-To: tj@tjm.art/);
+  const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);
+  assert.match(rec.thanks.code,/^VA-[A-Z2-9]{4}-[A-Z2-9]{4}-[A-Z2-9]{4}$/);assert.ok(rec.thanks.emailedAt);
+  assert.equal(JSON.stringify(await approved(env)).includes(rec.thanks.code),false);
+  // Idempotent: saving, re-sending, issuing again, unpublish + re-approve never add a code or an email.
+  await owner(env,{action:'approve',id,name:'Jane'});
+  assert.equal((await (await owner(env,{action:'issueCode',id})).json()).thanks.code,rec.thanks.code);
+  await owner(env,{action:'sendThanks',id});
+  await owner(env,{action:'unpublish',id});await owner(env,{action:'approve',id,name:'Jane',lat:'47.25',lng:'-122.44'});
+  assert.equal(issued.length,1);assert.equal(mails.length,2);
   await owner(env,{action:'unpublish',id});assert.deepEqual(await approved(env),[]);
   assert.equal((await owner(env,{action:'delete',id})).status,400);
   assert.equal((await owner(env,{action:'delete',id,confirm:id})).status,200);
@@ -106,4 +117,23 @@ test('site Worker forwards the testimonials API to the checkout Worker on tjm.ar
   assert.equal(await (await site.fetch(new Request('https://tjm.art/testimonials/'),env)).text(),'asset');
   assert.equal(await (await site.fetch(new Request('https://tjm.art/testimonial-manager/'),env)).text(),'asset');
   assert.equal((await site.fetch(new Request('https://tjm.art/testimonials/api/submit',{method:'POST'}),{...env,CHECKOUT:undefined})).status,503);
+});
+
+test('approve without email issues the code only; email can follow once; flag turns emails off',async()=>{
+  const env=setup();
+  const {id}=await (await submit(env,form({city:''}))).json();mails=[];
+  const quiet=await (await owner(env,{action:'approve',id,sendThanks:false})).json();
+  assert.equal(quiet.thanks.issued,true);assert.equal(mails.length,0);assert.equal(issued.length,1);
+  const sent=await (await owner(env,{action:'sendThanks',id})).json();assert.equal(sent.thanks.emailed,true);assert.equal(mails.length,1);
+  assert.equal((await owner(env,{action:'sendThanks',id})).status,200);assert.equal(mails.length,1);
+  const off={...setup(),TESTIMONIAL_THANKS_EMAIL:'false'};
+  const second=await (await submit(off,form({city:''}))).json();mails=[];
+  const r=await (await owner(off,{action:'approve',id:second.id})).json();assert.match(r.thanks.emailSkipped,/turned off/);assert.equal(mails.length,0);
+});
+test('thank-you email copy',async()=>{
+  const {thanksEmail}=await import('./testimonials.mjs');
+  const {subject,body}=thanksEmail({id:'t-20261007-abcdefabcdef',name:'Jane Doe',paintingTitle:'Emergence',thanks:{code:'VA-ABCD-EFGH-JKLM'}});
+  assert.equal(subject,'Thank you, and a print code for you');
+  assert.match(body,/^Hi Jane,/);assert.match(body,/VA-ABCD-EFGH-JKLM/);assert.match(body,/https:\/\/tjm.art\/cart\//);assert.match(body,/#t-20261007-abcdefabcdef/);
+  assert.match(body,/doesn’t apply to original paintings or commission deposits/);
 });

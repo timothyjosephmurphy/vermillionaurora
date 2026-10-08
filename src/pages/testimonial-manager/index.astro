@@ -12,7 +12,7 @@ import PolicyLayout from '../../layouts/PolicyLayout.astro';
 <div id="tm-records"></div>
 <details class="tm-help"><summary>How this works</summary>
 <p>New submissions arrive here as <strong>Pending</strong> and you get an email at tj@vermillionaurora.com. Nothing is public until you press <strong>Approve &amp; publish</strong>. Edit the display name, wording, painting, city or map pin first if needed, and untick any photo you don’t want shown. Published testimonials appear on <a href="/testimonials/">/testimonials/</a> and, if they have a pin, on the <a href="/exhibitions/world-map/">exhibitions map</a> within about a minute; no rebuild is needed.</p>
-<p><strong>Delete</strong> permanently removes the submission and its photos (use it to reject). <strong>Unpublish</strong> takes a published testimonial down but keeps it here. After approval, <strong>Issue at-cost print code</strong> creates their single-use print code; nothing is emailed automatically, so copy the code and send it yourself.</p>
+<p><strong>Delete</strong> permanently removes the submission and its photos (use it to reject). <strong>Unpublish</strong> takes a published testimonial down but keeps it here. When you approve with <strong>Send thank-you email</strong> ticked (the default), the site issues their single-use at-cost print code and emails it to them with a short thank-you from you (reply-to tj@tjm.art). Untick it to approve quietly; you can send it later. Each submission gets at most one code and one email, and the code is always shown here.</p>
 <p>Photos have location (GPS) and other EXIF metadata removed on upload. HEIC photos that the visitor’s browser could not convert are kept private and can’t be published.</p>
 </details>
 <style is:global>
@@ -29,6 +29,7 @@ import PolicyLayout from '../../layouts/PolicyLayout.astro';
 .tm-code{background:#fffcf6;border:2px dashed #2f8a4c;border-radius:10px;padding:12px}.tm-code code{font-size:1.2rem;font-weight:700}
 #tm-controls button[aria-pressed=true]{background:#1d1a17;color:#fff}
 .tm-quote{white-space:pre-line;font-style:italic}
+.tm-send{font-weight:600}
 .tm-pinrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.tm-pinrow label{display:block}
 </style>
 <script>
@@ -56,7 +57,7 @@ function card(r){
   const pub=r.published||{};
   const a=el('article',{className:'tm-card',id:r.id});
   a.append(el('h2',{},`${r.name} `,el('span',{className:'tm-badge '+r.status,textContent:r.status==='approved'?'Published':'Pending'})));
-  a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,el('a',{href:`mailto:${r.email}`,textContent:r.email}),` (private) · ${r.id}`,r.codeIssuedAt?` · Print code issued ${fmt(r.codeIssuedAt)}`:''));
+  a.append(el('p',{className:'tm-meta'},`Received ${fmt(r.createdAt)} · `,el('a',{href:`mailto:${r.email}`,textContent:r.email}),` (private) · ${r.id}`,r.notifiedAt?' · Email alert sent':r.notifyError?` · Email alert failed (${r.notifyError})`:'',r.thanks?.emailedAt?` · Thanked ${fmt(r.thanks.emailedAt)}`:r.thanks?.code?' · Code issued':''));
   const name=el('input',{type:'text',value:pub.name||r.name,maxLength:80});
   const quote=el('textarea',{value:pub.quote||r.quote,maxLength:2000});
   const painting=el('input',{type:'text',value:pub.painting??r.paintingTitle??'',maxLength:200});
@@ -84,22 +85,25 @@ function card(r){
     a.append(ul);
   } else a.append(el('p',{className:'tm-meta',textContent:'No photos.'}));
   const actions=el('div',{}),out=el('div',{});
-  const approve=()=>call({action:'approve',id:r.id,name:name.value,quote:quote.value,painting:painting.value,paintingSlug:slug.value.trim(),city:city.value,lat:lat.value,lng:lng.value,map:map.checked,photos:photoBoxes.filter(b=>b.checked).map(b=>Number(b.dataset.n))});
-  if(r.status==='pending')actions.append(btn('Approve & publish',async()=>{await approve();await load();say(`Published ${r.name}’s testimonial.`);},'button button-solid'));
-  else {
+  const t=r.thanks||{};
+  const sendBox=el('input',{type:'checkbox',checked:!t.emailedAt});
+  const approve=()=>call({action:'approve',id:r.id,name:name.value,quote:quote.value,painting:painting.value,paintingSlug:slug.value.trim(),city:city.value,lat:lat.value,lng:lng.value,map:map.checked,sendThanks:r.status==='pending'?sendBox.checked:false,photos:photoBoxes.filter(b=>b.checked).map(b=>Number(b.dataset.n))});
+  const report=d=>{const x=d.thanks||{};return [x.issued?'Print code issued.':'',x.emailed?`Thank-you email sent to ${r.email}.`:'',x.emailSkipped||'',x.error||''].filter(Boolean).join(' ');};
+  if(r.status==='pending'){
+    if(!t.emailedAt)a.append(el('label',{className:'tm-send'},el('span',{},sendBox,` Send thank-you email with their at-cost print code to ${r.email}`)));
+    actions.append(btn('Approve & publish',async()=>{const d=await approve();await load();say(`Published ${r.name}’s testimonial. ${report(d)}`);},'button button-solid'));
+  } else {
     actions.append(btn('Save changes',async()=>{await approve();await load();say('Saved.');}));
     actions.append(btn('Unpublish',async()=>{await call({action:'unpublish',id:r.id});await load();say('Unpublished; it is back in Pending.');}));
-    actions.append(btn(r.codeIssuedAt?'Issue another print code':'Issue at-cost print code',async()=>{
-      if(!confirm(`Issue a single-use at-cost print code for ${r.name} <${r.email}>? Nothing is emailed; you send it yourself.`))return;
-      let d;try{d=await call({action:'issueCode',id:r.id,again:Boolean(r.codeIssuedAt)});}catch(e){if(e.data?.alreadyIssued&&confirm(e.message)){d=await call({action:'issueCode',id:r.id,again:true});}else throw e;}
-      const note=`Hi ${r.name.split(' ')[0]},\n\nThank you so much for your testimonial. As a thank-you, here is your personal code for a print of any of my paintings at cost: ${d.code}\n\nAdd a print to your cart on https://tjm.art and enter the code in the Code field before calculating shipping. It works once, on prints only.\n\nWith gratitude,\nTJ`;
-      const ta=el('textarea',{value:note,readOnly:true,rows:9});
-      out.replaceChildren(el('div',{className:'tm-code'},el('p',{},'Code: ',el('code',{textContent:d.code})),el('p',{className:'tm-meta',textContent:d.usage+' Shown once; only its hash is stored.'}),ta,
-        btn('Copy note',async()=>{await navigator.clipboard.writeText(note);say('Thank-you note copied.');}),
-        el('a',{href:`mailto:${encodeURIComponent(r.email)}?subject=${encodeURIComponent('Thank you for your testimonial')}&body=${encodeURIComponent(note)}`,textContent:'Open in my email app'})));
-      r.codeIssuedAt=d.issuedAt;
-    }));
+    if(!t.code)actions.append(btn('Issue print code (no email)',async()=>{const d=await call({action:'issueCode',id:r.id});await load();say(report(d)||'Code ready.');}));
+    if(!t.emailedAt)actions.append(btn(t.code?'Send thank-you email':'Issue code & send thank-you email',async()=>{
+      if(!confirm(`Email ${r.name} <${r.email}> their thank-you note and print code now?`))return;
+      let d;try{d=await call({action:'sendThanks',id:r.id});}catch(e){if(/unknown result/.test(e.message)&&confirm(e.message)){d=await call({action:'sendThanks',id:r.id,force:true});}else throw e;}
+      await load();say(report(d));}));
   }
+  if(t.code)out.append(el('div',{className:'tm-code'},el('p',{},'Print code: ',el('code',{textContent:t.code})),
+    el('p',{className:'tm-meta',textContent:`Issued ${fmt(t.issuedAt)}. Single use, prints only, at print-lab cost plus shipping. `+(t.emailedAt?`Thank-you email sent ${fmt(t.emailedAt)}.`:t.emailError?`Email failed: ${t.emailError}.`:'Not emailed yet.')}),
+    btn('Copy code',async()=>{await navigator.clipboard.writeText(t.code);say('Code copied.');})));
   actions.append(btn('Delete (reject)',async()=>{if(!confirm(`Permanently delete ${r.name}’s testimonial and photos?`))return;await call({action:'delete',id:r.id,confirm:r.id});await load();say('Deleted.');}));
   a.append(actions,out);
   return a;

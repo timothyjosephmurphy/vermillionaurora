@@ -1,16 +1,17 @@
 ---
 import { newsletterAction } from '../data/newsletter.mjs';
-const { heading = 'Studio notes by email', text = 'New paintings, prints, exhibitions, and books, a few times a year. Unsubscribe anytime.' } = Astro.props;
+const { heading = 'Studio notes by email', text = 'New paintings, prints, exhibitions, and books, a few times a year. Unsubscribe anytime.', id = 'bd-email', compact = false, button = 'Subscribe' } = Astro.props;
+const headingId = `${id}-heading`;
 ---
-{newsletterAction && <section class="email-signup" aria-labelledby="email-signup-heading">
-  <h2 id="email-signup-heading">{heading}</h2>
+{newsletterAction && <section class:list={["email-signup",{"email-signup-compact":compact}]} aria-labelledby={headingId}>
+  <h2 id={headingId}>{heading}</h2>
   <p>{text}</p>
   <form action={newsletterAction} method="post" target="_blank" class="email-signup-form">
-    <label for="bd-email">Email address</label>
+    <label for={id}>Email address</label>
     <div class="email-signup-row">
-      <input type="email" name="email" id="bd-email" autocomplete="email" required placeholder="you@example.com" />
+      <input type="email" name="email" id={id} autocomplete="email" required placeholder="you@example.com" />
       <input type="hidden" name="embed" value="1" />
-      <button type="submit" class="button button-solid">Subscribe</button>
+      <button type="submit" class="button button-solid">{button}</button>
     </div>
   </form>
 </section>}
@@ -20,4 +21,5 @@ const { heading = 'Studio notes by email', text = 'New paintings, prints, exhibi
   .email-signup label{display:block;font-size:.8rem;margin-bottom:6px}
   .email-signup-row{display:flex;gap:10px;flex-wrap:wrap}
   .email-signup input[type=email]{flex:1 1 220px;min-height:44px;padding:10px 12px;border:1px solid #cdbfae;border-radius:6px;font:inherit}
+  .email-signup-compact{margin:18px 0 0;padding:18px}.email-signup-compact h2{font-size:1.35rem}.email-signup-compact p{font-size:.92rem}
 </style>

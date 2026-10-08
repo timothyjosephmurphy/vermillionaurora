@@ -7,7 +7,7 @@ import SiteFooter from '../../components/SiteFooter.astro';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Stories from the Studio | Vermillion Aurora</title>
+    <title>Stories from the Studio | TJ Murphy</title>
     <meta name="description" content="A running journal of paintings, the places behind them, and new work by TJ Murphy." />
     <link rel="canonical" href="https://tjm.art/blog/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -102,7 +102,12 @@ import SiteFooter from '../../components/SiteFooter.astro';
         .then(data => {
           const stories = Array.isArray(data.posts) ? data.posts : [];
           const staticStories = Array.from(entriesNode.querySelectorAll('[data-static-story]'));
-          entriesNode.replaceChildren(...staticStories, ...stories.map(makeEntry));
+          // Newest first, mixing the hand-written stories with Nostr posts.
+          const dated = [
+            ...staticStories.map(node => ({ node, time: Date.parse(node.querySelector('time')?.getAttribute('datetime') || '') || 0 })),
+            ...stories.map(post => ({ node: makeEntry(post), time: Date.parse(post.publishedAt) || 0 })),
+          ].sort((a, b) => b.time - a.time);
+          entriesNode.replaceChildren(...dated.map(entry => entry.node));
           statusNode.textContent = stories.length || staticStories.length ? '' : 'The first story will appear here when it is released on Nostr.';
         })
         .catch(() => {

@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
     packageSelect.addEventListener('change', () => {
       const defaults = defaultsFor(packageSelect.value);
       // Packages with a fixed size always show it; keep anything the client typed for custom work.
+      // A hidden size field (commissions page) always mirrors the chosen package.
+      if (sizeInput?.type === 'hidden') { sizeInput.value = defaults?.size || ''; return; }
       const known = options.some(o => o.dataset.size && o.dataset.size === sizeInput?.value);
       if (defaults?.size && sizeInput && (!sizeInput.value || known)) sizeInput.value = defaults.size;
     });

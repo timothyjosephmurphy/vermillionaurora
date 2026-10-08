@@ -8,8 +8,8 @@ const availablePaintings = products
 ---
 <!doctype html><html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Available Paintings | Vermillion Aurora</title>
-  <meta name="description" content="Browse original paintings currently available from TJ Murphy, sorted by price. Explore landscapes and portraits.">
+  <title>Available Paintings | TJ Murphy</title>
+  <meta name="description" content="Browse original paintings currently available from TJ Murphy and featured artist Paul Murphy, sorted by price. Explore landscapes and portraits.">
   <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/site-header.css"><link rel="stylesheet" href="/gallery/painting-list.css">
 </head><body class="painting-gallery-page"><div class="page-shell"><SiteHeader/><main><section class="section section-light"><div class="container">
   <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/gallery/">Gallery</a><span>/ Available paintings</span></nav>
@@ -17,7 +17,7 @@ const availablePaintings = products
   <ul class="painting-list" aria-label="Available paintings">
     {availablePaintings.map(product => <li class="painting-list-row" data-product-id={product.id}>
       <a href={urlFor(product)} class="gallery-product-image" aria-label={`View ${product.title}`} tabindex="-1"><img src={product.image.src} alt={product.image.alt||product.title} loading="lazy" decoding="async" width={product.image.width} height={product.image.height}></a>
-      <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a></h3>
+      <h3><a href={urlFor(product)} class="product-title-link">{product.title}</a>{product.artist && product.artist !== 'TJ Murphy' && <span class="painting-list-artist">by {product.artist}</span>}</h3>
       <p class="painting-list-dimensions">{dimensionLabel(product)}</p>
       <p class="painting-list-price">{product.listing.price?priceLabel(product):statusLabel(product)}</p>
     </li>)}

@@ -462,11 +462,7 @@
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
-      "status": "not-for-sale",
-      "price": {
-        "amount": "400.00",
-        "currency": "USD"
-      }
+      "status": "not-for-sale"
     },
     "medium": "Watercolor pastel",
     "surface": "Arches Coldpress Paper",
@@ -4312,37 +4308,6 @@
     }
   },
   {
-    "id": "personal-portrait",
-    "slug": "personal-portrait",
-    "type": "commission",
-    "title": "Personal Portrait",
-    "description": "Commissioned piece",
-    "eyebrow": "Commission",
-    "artist": "TJ Murphy",
-    "listing": {
-      "status": "inquiry",
-      "price": {
-        "amount": "100.00",
-        "currency": "USD",
-        "from": true
-      }
-    },
-    "story": [
-      "Commissioned piece"
-    ],
-    "examples": [],
-    "galleryDescription": "",
-    "inquiry": {
-      "label": "Discuss this commission",
-      "note": "Tell me about your idea, reference photos, and any dates you have in mind."
-    },
-    "back": {
-      "href": "/commissions/",
-      "label": "View all commissions"
-    },
-    "inquiryHref": "/commissions/#form"
-  },
-  {
     "id": "reflections-on-time",
     "slug": "reflections-on-time",
     "type": "book",
@@ -4746,66 +4711,6 @@
     "optionOrder": [
       "size"
     ]
-  },
-  {
-    "id": "sunset-over-water",
-    "slug": "sunset-over-water",
-    "type": "work",
-    "title": "Sunset Over Water",
-    "description": "Original mixed-media study",
-    "eyebrow": "Limited edition",
-    "artist": "TJ Murphy",
-    "listing": {
-      "status": "inquiry",
-      "price": {
-        "amount": "420.00",
-        "currency": "USD",
-        "from": false
-      }
-    },
-    "story": [
-      "Original mixed-media study"
-    ],
-    "examples": [],
-    "galleryDescription": "",
-    "inquiry": {
-      "label": "Inquire about this work",
-      "note": "Get in touch to ask about availability, dimensions, materials, and delivery."
-    },
-    "back": {
-      "href": "/gallery/",
-      "label": "Back to selected works"
-    }
-  },
-  {
-    "id": "velvet-dawn",
-    "slug": "velvet-dawn",
-    "type": "work",
-    "title": "Velvet Dawn",
-    "description": "Archival fine art print",
-    "eyebrow": "Signed print",
-    "artist": "TJ Murphy",
-    "listing": {
-      "status": "inquiry",
-      "price": {
-        "amount": "180.00",
-        "currency": "USD",
-        "from": false
-      }
-    },
-    "story": [
-      "Archival fine art print"
-    ],
-    "examples": [],
-    "galleryDescription": "",
-    "inquiry": {
-      "label": "Inquire about this work",
-      "note": "Get in touch to ask about availability, dimensions, materials, and delivery."
-    },
-    "back": {
-      "href": "/gallery/",
-      "label": "Back to selected works"
-    }
   },
   {
     "id": "warszawska-syrenka",
