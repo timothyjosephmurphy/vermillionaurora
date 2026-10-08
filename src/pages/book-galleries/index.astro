@@ -3,12 +3,14 @@ import Layout from '../../layouts/BookGalleryLayout.astro';
 import manifest from '../../../catalog/book-galleries.json';
 import {byId} from '../../../catalog/catalog.mjs';
 import {config,papers,printOptions} from '../../../catalog/prints.mjs';
+import {sectionArtworkIds} from '../../data/canonical-artworks.mjs';
 
-const galleryArtworks=[...new Set(manifest.sections.flatMap(group=>group.artworks))];
+const galleryArtworks=[...new Set(manifest.sections.flatMap(sectionArtworkIds))];
 const totalPrintReady=galleryArtworks.filter(id=>printOptions(byId[id],config,papers).some(option=>option.ready)).length;
 const gallerySummaries=manifest.sections.map(group=>({
   ...group,
-  printReadyCount:group.artworks.filter(id=>printOptions(byId[id],config,papers).some(option=>option.ready)).length
+  artworks:sectionArtworkIds(group),
+  printReadyCount:sectionArtworkIds(group).filter(id=>printOptions(byId[id],config,papers).some(option=>option.ready)).length
 }));
 const bookTitles=Object.fromEntries(manifest.books.map(book=>[book.id,book.title]));
 ---
