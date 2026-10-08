@@ -11,10 +11,19 @@
 .home-page .hero-actions { margin-top:22px; }
 .home-page .hero-actions-centered { justify-content:center; }
 .home-page .featured-art { max-width:360px; padding:14px; }
-.home-page .featured-stage { --featured-painting-h:320px; height:calc(320px + 7.25rem); min-height:calc(320px + 7.25rem); }
+.home-page .featured-stage {
+  --featured-painting-h:320px;
+  --featured-title-size:1.55rem;
+  --featured-caption-pad-top:12px;
+  height:calc(var(--featured-painting-h) + var(--featured-caption-h));
+  min-height:calc(var(--featured-painting-h) + var(--featured-caption-h));
+}
 .home-page .featured-painting { height:100%; }
-.home-page .featured-caption { height:7.25rem; min-height:7.25rem; padding-top:12px; }
-.home-page .featured-caption h2 { font-size:1.55rem; }
+.home-page .featured-caption {
+  height:var(--featured-caption-h);
+  min-height:var(--featured-caption-h);
+  padding-top:var(--featured-caption-pad-top);
+}
 .home-page .art-image { height:320px; }
 .home-page .ex-track { gap:18px; padding-bottom:12px; }
 .home-page .painting-carousel .ex-slide { flex-basis:calc((100% - 72px)/5); }
@@ -54,7 +63,11 @@
 @media(max-width:980px) {
  .home-page .hero-grid { grid-template-columns:1.1fr .9fr; min-height:0; gap:22px; }
  .home-page .hero-copy h1 { font-size:clamp(2.5rem,5.8vw,3.5rem); }
- .home-page .featured-stage { --featured-painting-h:280px; height:calc(280px + 7.25rem); min-height:calc(280px + 7.25rem); }
+ .home-page .featured-stage {
+   --featured-painting-h:280px;
+   height:calc(var(--featured-painting-h) + var(--featured-caption-h));
+   min-height:calc(var(--featured-painting-h) + var(--featured-caption-h));
+ }
  .home-page .featured-painting { height:100%; }
  .home-page .painting-carousel .ex-slide { flex-basis:calc((100% - 36px)/3); }
  .home-page .service-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
@@ -93,7 +106,12 @@
 .home-page #exhibitions .ex-autoplay { margin-right:0; }
 
 /* Bring featured-painting controls directly beneath its caption. */
-.home-page .featured-caption { height:7.25rem; min-height:7.25rem; padding-top:10px; }
+.home-page .featured-stage { --featured-caption-pad-top:10px; }
+.home-page .featured-caption {
+  height:var(--featured-caption-h);
+  min-height:var(--featured-caption-h);
+  padding-top:var(--featured-caption-pad-top);
+}
 .home-page .featured-controls { justify-content:flex-start; gap:6px; margin-top:8px; }
 .home-page .featured-controls button { min-height:24px; height:24px; padding:2px 7px; border-radius:6px; font-size:.68rem; line-height:1; }
 .home-page .featured-controls [data-prev],.home-page .featured-controls [data-next] { width:26px; padding:2px 0; }
