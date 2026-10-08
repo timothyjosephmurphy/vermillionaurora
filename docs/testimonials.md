@@ -1,6 +1,40 @@
 # Testimonials
 
-Edit `src/data/testimonials.json` (an array). Nothing appears unless `consent.publish` is `true`.
+Collectors (people TJ has given or sold paintings to) share testimonials on https://tjm.art/testimonials/.
+
+## Flow
+1. **Form** on /testimonials/: name (as shown), email (private, required), painting (picker of TJ's paintings and/or free text),
+   testimonial (required), optional city, up to 4 photos (JPEG/PNG/WebP/HEIC, ≤10 MB each), and one consent checkbox to publish
+   name, words, photos and city (including an approximate city pin on the map). Honeypot field `website`; rate limit 5 per visitor
+   (hashed IP) per UTC day and 60 total per day. Works without JavaScript (303 back to `/testimonials/?thanks=1`).
+2. **Photos**: the browser resizes to ≤2000 px JPEG, which drops all metadata (HEIC is converted with heic2any, lazy-loaded from
+   jsDelivr with SRI, when the browser can't decode it). The Worker strips metadata again (`cloudflare/image-metadata.mjs`):
+   JPEG EXIF/XMP/IPTC/comments/trailers (orientation is kept as a one-tag EXIF block), PNG text/eXIf/tIME chunks, WebP EXIF/XMP.
+   HEIC that reaches the Worker unconverted is stored privately and can never be published.
+3. **Storage** (existing private R2 bucket `COMMISSION_UPLOADS`, checkout Worker `vermillion-commissions`):
+   `testimonials/records/<id>.json`, `testimonials/images/<id>/<n>.<ext>`, `testimonials/approved.json` (public index).
+4. **Notification**: an email to tj@vermillionaurora.com from the same Gmail identity as commission requests, with Reply-To set to
+   the submitter, and a link to the owner page. Photos are not attached. Submissions are saved even if the email fails.
+5. **Moderation**: https://tjm.art/testimonial-manager/ (noindex; enter `COMMISSION_MANAGER_TOKEN`). Pending → **Approve & publish**
+   (edit name, wording, painting, slug, city, pin, photos first), **Unpublish**, **Delete (reject)**. API:
+   `POST /testimonials/api/owner` with `Origin: https://tjm.art` and `Authorization: Bearer $COMMISSION_MANAGER_TOKEN`
+   (actions `list`, `photo`, `geocode`, `approve`, `unpublish`, `delete`, `issueCode`).
+6. **Display**: /testimonials/ and the /exhibitions/world-map/ map fetch `GET /testimonials/api/approved` at page load, so approval
+   is live within a minute with no rebuild. Approved photos are served from `/testimonials/api/photo/<id>/<n>`. Pins are green
+   speech-mark markers with a "Collector testimonials" legend entry.
+7. **Thank-you code**: after approval, **Issue at-cost print code** calls the same issuer as `scripts/issue-print-code.mjs`
+   (single use, prints only). The code is shown once with a ready-to-copy note; nothing is emailed automatically.
+
+The site Worker (`worker/site.mjs`) forwards `/testimonials/api/*` on tjm.art to the checkout Worker through the `CHECKOUT`
+service binding, like the QuickBooks routes.
+
+## Geocoding
+City text only, never an address: OpenStreetMap Nominatim (settlement search), falling back to Open-Meteo/GeoNames, rounded to
+2 decimals (≈1 km). TJ can edit or clear the pin before approving.
+
+## Hand-curated entries (optional)
+`src/data/testimonials.json` still works for entries added by hand (rendered at build time). Nothing appears unless
+`consent.publish` is `true`.
 
 ```json
 {
@@ -13,15 +47,10 @@ Edit `src/data/testimonials.json` (an array). Nothing appears unless `consent.pu
   "photo": "/testimonials/images/jane-painting.webp",
   "selfie": "/testimonials/images/jane-selfie.webp",
   "city": "Tacoma, WA",
-  "lat": 47.2529,
-  "lng": -122.4443,
+  "lat": 47.25,
+  "lng": -122.44,
   "consent": { "publish": true, "name": true, "photo": true, "selfie": false, "city": true, "map": true },
   "received": "2026-10-06"
 }
 ```
-
-- `name` is shown only when `consent.name` is true and `anonymous` is false; otherwise "A collector".
-- `photo` (the painting in its new home), `selfie`, `city`, and the map pin (`lat`/`lng`, `consent.map`) are each optional and each need their own consent flag.
-- Pins appear on /exhibitions/world-map/ in green with a "Collector testimonials" legend entry. Use city-level coordinates, never a home address.
-- Put images in `static/testimonials/images/` as WebP, ideally ≤ 1600px wide.
-- After a testimonial, issue an at-cost print code if appropriate (see docs/print-codes.md).
+Put those images in `static/testimonials/images/` as WebP, ideally ≤ 1600px wide.
