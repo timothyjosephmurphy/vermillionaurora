@@ -68,6 +68,13 @@ try{
   assert.equal(await page.locator('input[name=email]').evaluate(n=>n.required),false,'email is optional');
   assert.match(await page.locator('label:has(input[name=email])').textContent(),/Email \(optional, kept private\).*Only if you’d like a thank-you discount code on prints\. Never published\./s);
   assert.match(await page.locator('label:has(input[name=name]) > span').first().textContent(),/Your name \(optional\)/);
+  // Owner convenience link (2026-10-08): one small gray "Manage" link at the bottom of the content, right-aligned, in the page flow.
+  assert.deepEqual(await page.evaluate(()=>{const links=[...document.querySelectorAll('a[href="/testimonial-manager/"]')];const a=links[0],main=document.querySelector('main');
+    const r=a.getBoundingClientRect(),m=main.getBoundingClientRect(),share=document.querySelector('#share').getBoundingClientRect(),cs=getComputedStyle(a);
+    const [R,G,B]=cs.color.match(/\d+/g).map(Number);
+    return {count:links.length,text:a.textContent.trim(),lastInMain:main.lastElementChild.contains(a),belowForm:r.top>=share.bottom,rightAligned:Math.abs(m.right-r.right)<=parseFloat(getComputedStyle(main).paddingRight)+2,
+      inFlow:!['fixed','sticky','absolute'].includes(getComputedStyle(a.parentElement).position)&&!['fixed','sticky','absolute'].includes(cs.position),small:parseFloat(cs.fontSize)<=12,gray:Math.max(R,G,B)-Math.min(R,G,B)<=16};}),
+    {count:1,text:'Manage',lastInMain:true,belowForm:true,rightAligned:true,inFlow:true,small:true,gray:true});
   assert(await page.locator('[data-video-record]').isHidden(),'no record button on desktop');
   assert(await page.locator('[data-video-consent]').isHidden(),'permissions only appear with a video');
   assert.equal(await page.locator('[data-video-input]').getAttribute('capture'),null,'library input never forces the camera');

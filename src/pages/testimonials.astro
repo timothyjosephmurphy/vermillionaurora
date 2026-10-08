@@ -134,6 +134,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
           </form>
         </div>
       </section>
+      <p class="testimonial-manager-link"><a href="/testimonial-manager/" rel="nofollow">Manage</a></p>
     </main>
     <SiteFooter />
   </div>
@@ -196,6 +197,11 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .testimonial-video video{display:block;width:100%;max-height:75vh;border-radius:9px;background:#1d1a17}
     .testimonial-video .video-fallback{font-size:.82rem;color:var(--muted);margin:6px 0 0}
     .form-thanks{background:#fffcf6;border:1px solid var(--line);border-radius:22px;padding:1.5rem;line-height:1.7}.form-thanks h3{font:600 2rem/1.1 "Cormorant Garamond",serif;margin:0 0 8px}
+    /* Owner convenience link: bottom of the content, right-aligned, small and low-contrast gray (not an overlay). */
+    .testimonial-manager-link{display:flex;justify-content:flex-end;margin:40px 0 0}
+    .testimonial-manager-link a{display:inline-block;padding:3px 9px;border:1px solid #ddd8d1;border-radius:6px;color:#a8a29b;font:400 .7rem/1.4 Inter,Arial,sans-serif;letter-spacing:.02em;text-decoration:none}
+    .testimonial-manager-link a:hover,.testimonial-manager-link a:focus-visible{color:#77716a;border-color:#c9c3bb}
+    .testimonial-manager-link a:focus-visible{outline:2px solid #9a948d;outline-offset:2px}
     @media(max-width:860px){.testimonial-share{grid-template-columns:1fr;gap:20px}}
     @media(max-width:640px){.testimonials-page{padding-top:32px}.testimonial-form .field-row{grid-template-columns:1fr}.testimonial-form button[type=submit]{justify-self:stretch}}
   </style>
