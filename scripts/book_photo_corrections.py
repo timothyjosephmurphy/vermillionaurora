@@ -1,8 +1,9 @@
-"""Perspective-correct and crop book-gallery painting photos to the paper (see catalog/book-photo-corrections.json).
+"""Perspective-correct and crop book-gallery painting photos (see catalog/book-photo-corrections.json).
 Run: python scripts/book_photo_corrections.py SOURCE_DIR OUTPUT_DIR
 SOURCE_DIR holds the book PDFs (scripts/download-book-sources.mjs). Each correction starts from the native PDF image
 (verified by sourceHash), maps the four paper corners (TL, TR, BR, BL; source pixels) onto an upright rectangle of
-`size`, then crops `crop` [x0, y0, x1, y1) so no background shows. No enlargement beyond the photographed paper
+`size`, then crops `crop` [x0, y0, x1, y1) in that upright image: to the paper (no background) or, with
+cropTo 'color', inside the painted area so no paper margin shows on any edge. No enlargement beyond the photographed paper
 and no sharpening. Writes OUTPUT_DIR/<output>.jpg (quality 96, 4:4:4) and <output>.webp (<=1000 px, quality 85),
 the same encodings as extract-book-galleries.py, plus corrections.json with sizes and SHA-256 digests.
 Use pinned Pillow 12.3.0 (as in prepare-book-galleries.yml) to reproduce the committed bytes exactly.
