@@ -101,7 +101,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   // El Zonte at Dawn: one product page; the duplicate book scan was removed from the catalog.
   assert(!bookProducts.some(product=>product.id==='book-art-1be48d404e2dbf547794'));
   assert(groups.get('watercolor-landscapes-travels').artworks.includes('painting-shoreline-at-dusk'));
-  assert.equal(originalProducts.find(product=>product.id==='painting-shoreline-at-dusk').title,'El Zonte at Dawn, El Salvador');
+  assert.equal(originalProducts.find(product=>product.id==='painting-shoreline-at-dusk').title,'El Zonte at Dawn');
   for(const [scan,canonical] of Object.entries(canonicalArtwork)){
     assert(originalProducts.some(product=>product.id===canonical));
     assert(fs.readFileSync('static/_redirects','utf8').includes(`/products/${scan}/ /products/${canonical}/ 301`));
