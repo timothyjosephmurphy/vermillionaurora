@@ -1,0 +1,106 @@
+name: Prepare batch-2 painting media and print quotes
+# Side branch only (never merged): uploads the two product videos (Meditation at Denny Blaine, Sunrise in El Zonte
+# (Large), Moonrise Over the Cascades) to the public R2 media bucket through a bounded one-time uploader, and gets
+# read-only FinerWorks quotes for the three new masters through the isolated sandbox. No orders, no payments.
+# Results come back as artifacts.
+on:
+  push:
+    branches: [codex/batch-2-media-upload]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  upload-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: product-media-upload
+      cancel-in-progress: false
+    steps:
+      - name: Confirm the dedicated Cloudflare credential is configured
+        env:
+          UPLOAD_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: test -n "$UPLOAD_TOKEN"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Deploy temporary prefix-limited R2 uploader
+        id: uploader
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          workingDirectory: scripts/product-media-upload
+          wranglerVersion: '4.143.0'
+          command: deploy --config wrangler.jsonc
+      - name: Upload videos and verify every public object
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/upload-product-media.mjs scripts/product-media-upload/assets
+      - name: Remove temporary uploader
+        if: always() && steps.uploader.outcome == 'success'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/remove-product-media-uploader.mjs
+  quote-prints:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    concurrency:
+      group: checkout-sandbox
+      cancel-in-progress: false
+    env:
+      TJ_PRINT_IDS: sunrise-in-el-zonte-large,meditation-at-denny-blaine,painting-moonlit-water
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact-size files and build the quote-only catalog
+        run: |
+          npm ci
+          node scripts/build-pilot-print-assets.mjs
+          node scripts/build-edition-print-assets.mjs
+          node payments/build-print-catalog.mjs
+          node payments/build-checkout-catalog.mjs
+      - name: Deploy quote-only catalog to sandbox
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
+      - name: Verify exact unframed prices
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          DEPLOYED_SHA: ${{ github.sha }}
+        run: |
+          node payments/quote-tj-prints.mjs
+          node payments/apply-tj-print-quotes.mjs
+          node payments/build-print-catalog.mjs
+          node payments/build-checkout-catalog.mjs
+      - name: Deploy priced catalog to sandbox for framing quotes
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
+      - name: Verify all three frame finishes
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          DEPLOYED_SHA: ${{ github.sha }}
+        run: |
+          node payments/quote-tj-prints.mjs --frames
+          node payments/apply-tj-frame-quotes.mjs tj-frame-quotes.json
+          node payments/build-print-catalog.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: batch-2-print-quotes
+          path: |
+            tj-print-quotes.json
+            tj-frame-quotes.json
+            catalog/prints.json
+          retention-days: 7
