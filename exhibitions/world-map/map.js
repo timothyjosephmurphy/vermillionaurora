@@ -124,15 +124,28 @@
     select(place);
   }));
   // Collector testimonial pins (green), separate from exhibition markers and clustering.
-  try {
-    const pins = JSON.parse(root.querySelector('[data-testimonial-pins]')?.textContent || '[]');
-    const testimonials = L.layerGroup().addTo(map);
-    pins.forEach(pin => {
-      const label = [pin.name, pin.city, pin.painting].filter(Boolean).join(' · ');
-      L.marker([pin.lat, pin.lng], {icon: L.divIcon({className: 'atlas-testimonial', iconSize: [14, 14]}), title: label, keyboard: false})
-        .bindTooltip(label, {direction: 'top'}).on('click', () => { location.href = '/testimonials/'; }).addTo(testimonials);
-    });
-  } catch {}
+  // Hand-curated pins are embedded at build time; approved form submissions load from /testimonials/api/approved.
+  const testimonials = L.layerGroup().addTo(map);
+  const legend = root.querySelector('[data-testimonial-legend]');
+  const testimonialIcon = L.divIcon({className: 'atlas-testimonial', iconSize: [26, 34], iconAnchor: [13, 34],
+    html: '<svg viewBox="0 0 26 34" width="26" height="34" aria-hidden="true"><path d="M13 33C10 28 1 20 1 13a12 12 0 1 1 24 0c0 7-9 15-12 20Z" fill="#2f8a4c" stroke="#fffaf2" stroke-width="2"/><text x="13" y="20" text-anchor="middle" fill="white" font-family="Georgia,serif" font-size="15" font-weight="700">\u201C</text></svg>'});
+  const shown = new Set();
+  const addPins = pins => pins.forEach(pin => {
+    const key = pin.id || `${pin.name}|${pin.lat}|${pin.lng}`;
+    if (shown.has(key) || !Number.isFinite(pin.lat) || !Number.isFinite(pin.lng)) return;
+    shown.add(key);
+    const label = [pin.name, pin.city, pin.painting].filter(Boolean).join(' · ');
+    L.marker([pin.lat, pin.lng], {icon: testimonialIcon, title: `Testimonial: ${label}`, keyboard: false})
+      .bindTooltip(label, {direction: 'top', offset: [0, -32]})
+      .on('click', () => { location.href = '/testimonials/' + (pin.id ? '#' + encodeURIComponent(pin.id) : ''); })
+      .addTo(testimonials);
+    if (legend) legend.hidden = false;
+  });
+  try { addPins(JSON.parse(root.querySelector('[data-testimonial-pins]')?.textContent || '[]')); } catch {}
+  fetch('/testimonials/api/approved', {cache: 'no-cache', headers: {Accept: 'application/json'}})
+    .then(r => r.ok ? r.json() : {testimonials: []})
+    .then(data => addPins((data.testimonials || []).filter(t => Array.isArray(t.pin)).map(t => ({id: t.id, name: t.name, city: t.city, painting: t.painting, lat: t.pin[0], lng: t.pin[1]}))))
+    .catch(() => {});
   root.querySelector('.atlas-toolbar').hidden = false;
   draw();
   status.textContent = 'Click a numbered circle to zoom, or choose a city.';

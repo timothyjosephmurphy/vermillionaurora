@@ -3,7 +3,7 @@ import { join, relative, resolve, sep } from 'node:path';
 
 const site = 'https://tjm.art';
 const dist = resolve('dist');
-const excluded = new Set(['cart', 'commission-manager', 'print-preview', 'print-test']);
+const excluded = new Set(['cart', 'commission-manager', 'testimonial-manager', 'print-preview', 'print-test']);
 // Old commission package pages 301 to /commissions/ (static/_redirects).
 const redirected = new Set(['single-portrait', 'double-portrait', 'small-landscape']);
 // Book scans that duplicate a catalog painting 301 to it (src/data/canonical-artworks.mjs).

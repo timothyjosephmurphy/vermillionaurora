@@ -28,7 +28,7 @@ const color = (place: typeof locations[number]) => kind(place) === 'mural' ? '#2
     <li data-kind="exhibition"><span class="legend-dot" aria-hidden="true"></span>Exhibitions</li>
     <li data-kind="mural"><span class="legend-dot" aria-hidden="true"></span>Murals</li>
     <li data-kind="mixed"><span class="legend-dot" aria-hidden="true"></span>Both</li>
-    {testimonialPins.length > 0 && <li data-kind="testimonial"><span class="legend-dot" aria-hidden="true"></span><a href="/testimonials/">Collector testimonials</a></li>}
+    <li data-kind="testimonial" data-testimonial-legend hidden={testimonialPins.length === 0}><span class="legend-dot" aria-hidden="true"></span><a href="/testimonials/">Collector testimonials</a></li>
   </ul>
   <script type="application/json" data-testimonial-pins set:html={JSON.stringify(testimonialPins).replace(/</g,'\\u003c')} />
   <div class="atlas-layout">
@@ -56,7 +56,8 @@ const color = (place: typeof locations[number]) => kind(place) === 'mural' ? '#2
   .atlas-legend li{display:flex;align-items:center;gap:7px}.legend-dot{display:inline-block;width:14px;height:14px;border-radius:50%;background:#d34220}
   [data-kind="mural"] :is(.pin-number,.legend-dot){background:#236fa1}
   [data-kind="testimonial"] .legend-dot{background:#2f8a4c}
-  .atlas-canvas :global(.atlas-testimonial){width:14px;height:14px;border-radius:50%;background:#2f8a4c;border:2px solid #fffcf6;box-shadow:0 0 0 1px #2f8a4c}
+  .atlas-legend li[hidden]{display:none}
+  .atlas-canvas :global(.atlas-testimonial){border:0;background:none;cursor:pointer}.atlas-canvas :global(.atlas-testimonial svg){display:block;overflow:visible}
   [data-kind="mixed"] :is(.pin-number,.legend-dot){background:linear-gradient(90deg,#d34220 50%,#236fa1 50%)}
   .atlas-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;align-items:stretch}
   .atlas-canvas{min-height:570px;min-width:0;background:#f3eee5;z-index:0}
