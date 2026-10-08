@@ -4,6 +4,7 @@
 //   testimonials/images/<id>/<n>.<ext> photos after metadata stripping (EXIF GPS removed); HEIC is kept private only
 //   testimonials/approved.json       public index rebuilt on every approve / unpublish / delete
 //   testimonials/rate/<day>/<hash>   per-visitor submission counters (hashed IP), purged by the hourly cron
+//   testimonials/videos/<id>/, testimonials/uploads/<id>.json   optional video + poster (see testimonial-videos.mjs)
 // Nothing is published until TJ approves it on https://tjm.art/testimonial-manager/.
 import {inventory} from './checkout-catalog.mjs';
 import {authorized} from './etsy-connection.mjs';
@@ -11,6 +12,8 @@ import {issueCollectorCode} from './print-codes.mjs';
 import {sellerMailToken} from './shipping-email.mjs';
 import {isSiteOrigin} from './site-origins.mjs';
 import {cleanImage} from './image-metadata.mjs';
+import {videoUpload, verifiedUpload, discardUpload, deleteVideoFiles, manifestKey, serveMedia, playbackType, signedVideoUrls, privateMedia, purgeTestimonialVideos, MAX_VIDEO_BYTES} from './testimonial-videos.mjs';
+export {MAX_VIDEO_BYTES};
 
 export const OWNER_ORIGIN = 'https://tjm.art';
 export const MANAGER_URL = 'https://tjm.art/testimonial-manager/';
@@ -18,6 +21,7 @@ export const MAX_PHOTO_BYTES = 10 * 1024 * 1024;
 export const MAX_PHOTOS = 4;
 export const DAILY_LIMIT = 5;        // per visitor (hashed IP) per UTC day
 export const DAILY_TOTAL_LIMIT = 60; // across everyone, bounds storage abuse
+export const MAX_POSTER_BYTES = 2 * 1024 * 1024;
 const ACCEPTED = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']);
 const EXT = {'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/heic': 'heic', 'image/heif': 'heif'};
 const ID = /^t-\d{8}-[0-9a-f]{12}$/;
@@ -45,6 +49,13 @@ export async function testimonialsApi(request, env, ctx, now = Date.now()) {
   const photo = /^\/testimonials\/api\/photo\/(t-\d{8}-[0-9a-f]{12})\/([0-3])$/.exec(path);
   if (photo && ['GET', 'HEAD'].includes(request.method)) return publicPhoto(env, photo[1], Number(photo[2]));
   if (path === '/testimonials/api/owner') return owner(request, env, now);
+  const upload = /^\/testimonials\/api\/video\/(start|part|complete|abort)$/.exec(path);
+  if (upload) return videoUpload(request, env, now, upload[1], {rateLimited});
+  if (!['GET', 'HEAD'].includes(request.method)) return reply({error: 'Not found'}, 404);
+  const privateVideo = /^\/testimonials\/api\/video\/private\/(t-\d{8}-[0-9a-f]{12})\/(video|poster)$/.exec(path);
+  if (privateVideo) return privateMedia(request, env, privateVideo[1], privateVideo[2], now, id => loadRecord(env, id));
+  const video = /^\/testimonials\/api\/video\/(t-\d{8}-[0-9a-f]{12})(\/poster)?$/.exec(path);
+  if (video) return publicVideo(request, env, video[1], Boolean(video[2]));
   return reply({error: 'Not found'}, 404);
 }
 
@@ -58,14 +69,14 @@ function done(request, ok, payload, status) {
   return reply(payload, status);
 }
 
-async function rateLimited(env, request, now) {
+async function rateLimited(env, request, now, {scope = '', perVisitor = DAILY_LIMIT, total: totalLimit = DAILY_TOTAL_LIMIT} = {}) {
   const bucket = env.COMMISSION_UPLOADS, today = day(now);
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-  const visitor = `${RATE}${today}/${(await sha(`testimonial-rate:${today}:${ip}:${env.COMMISSION_MANAGER_TOKEN || ''}`)).slice(0, 32)}`;
-  const total = `${RATE}${today}/_all`;
+  const visitor = `${RATE}${today}/${scope ? scope + '-' : ''}${(await sha(`testimonial-rate:${scope}${today}:${ip}:${env.COMMISSION_MANAGER_TOKEN || ''}`)).slice(0, 32)}`;
+  const total = `${RATE}${today}/_${scope || 'all'}`;
   const read = async key => { const o = await bucket.get(key); return o ? Number(await o.text()) || 0 : 0; };
   const [mine, all] = await Promise.all([read(visitor), read(total)]);
-  if (mine >= DAILY_LIMIT || all >= DAILY_TOTAL_LIMIT) return true;
+  if (mine >= perVisitor || all >= totalLimit) return true;
   await Promise.all([bucket.put(visitor, String(mine + 1)), bucket.put(total, String(all + 1))]);
   return false;
 }
@@ -80,8 +91,16 @@ async function submit(request, env, ctx, now) {
   const fail = (error, status = 400) => done(request, false, {success: false, error}, status);
   let form;
   try { form = await request.formData(); } catch { return fail('The form could not be read. Please try again with smaller photos.', 413); }
-  // Honeypot: bots fill every field. Pretend success and store nothing.
-  if (clean(form.get('website'), 200)) return done(request, true, {success: true}, 200);
+  // Optional video, uploaded beforehand through /testimonials/api/video/* (the browser sends its id and upload token).
+  const videoId = oneLine(form.get('videoId'), 40);
+  const upload = videoId ? await verifiedUpload(env, videoId, form.get('videoToken')) : null;
+  // Honeypot: bots fill every field. Pretend success and store nothing (an uploaded video is deleted too).
+  if (clean(form.get('website'), 200)) {
+    if (upload && upload.manifest.state !== 'attached') await discardUpload(env, upload.manifest).catch(() => {});
+    return done(request, true, {success: true}, 200);
+  }
+  if (videoId && (!upload || upload.manifest.state !== 'complete')) return fail('Your video upload didn’t finish or has expired. Please choose the video again.');
+  const video = upload?.manifest;
   const name = oneLine(form.get('name'), 80);
   const email = oneLine(form.get('email'), 254);
   const quote = clean(form.get('quote'), 2000);
@@ -91,7 +110,7 @@ async function submit(request, env, ctx, now) {
   const paintingTitle = oneLine(form.get('painting'), 200);
   if (!name) return fail('Please enter your name as you’d like it shown.');
   if (!email || !validEmail(email)) return fail('Please enter a valid email address so I can send your thank-you.');
-  if (quote.length < 3) return fail('Please write a few words about what the painting means to you.');
+  if (!video && quote.length < 3) return fail('Please write a few words about what the painting means to you, or add a video.');
   if (form.get('consent') !== 'yes') return fail('Please tick the consent box so I can publish your testimonial.');
   const files = form.getAll('photos').filter(f => f instanceof File && f.size > 0);
   if (files.length > MAX_PHOTOS) return fail(`Please choose up to ${MAX_PHOTOS} photos.`);
@@ -103,10 +122,18 @@ async function submit(request, env, ctx, now) {
     if (!ACCEPTED.has(cleaned.type)) return fail('Photos must be JPEG, PNG, WebP or HEIC.');
     photos.push({n, ...cleaned, originalName: oneLine(file.name, 120)});
   }
+  // Poster: a still frame the browser captured from the video (JPEG). Metadata is stripped like any photo.
+  let poster = null;
+  const posterFile = video ? form.get('posterFrame') : null;
+  if (posterFile instanceof File && posterFile.size > 0 && posterFile.size <= MAX_POSTER_BYTES) {
+    try { const p = cleanImage(new Uint8Array(await posterFile.arrayBuffer())); if (['image/jpeg', 'image/png', 'image/webp'].includes(p.type)) poster = p; } catch {}
+  }
   if (await rateLimited(env, request, now)) return fail('Thank you! I’ve received several testimonials from you today. Please try again tomorrow or email tj@vermillionaurora.com.', 429);
 
-  const id = `t-${day(now).replace(/-/g, '')}-${crypto.randomUUID().replace(/-/g, '').slice(0, 12)}`;
+  const id = video ? video.id : `t-${day(now).replace(/-/g, '')}-${crypto.randomUUID().replace(/-/g, '').slice(0, 12)}`;
   const bucket = env.COMMISSION_UPLOADS;
+  const posterKey = poster ? `testimonials/videos/${id}/poster.${EXT[poster.type]}` : '';
+  const duration = Number(form.get('videoDuration'));
   const geo = city ? await geocodeCity(city, env).catch(() => null) : null;
   const record = {
     id, status: 'pending', createdAt: new Date(now).toISOString(),
@@ -114,12 +141,22 @@ async function submit(request, env, ctx, now) {
     consent: {publish: true, scope: 'name, words, photos and city (approximate city pin on the map)', at: new Date(now).toISOString()},
     geo,
     photos: photos.map(p => ({n: p.n, key: imageKey(id, p.n, p.type), type: p.type, bytes: p.bytes.byteLength, originalName: p.originalName, publishable: p.publishable, removed: p.removed})),
+    ...(video ? {video: {
+      key: video.key, type: video.type, bytes: video.size, originalName: video.originalName,
+      duration: Number.isFinite(duration) && duration > 0 && duration < 36000 ? Math.round(duration) : null,
+      poster: poster ? {key: posterKey, type: poster.type} : null,
+      // Two separate, optional permissions. Neither ticked = the video is for TJ only, never shown anywhere.
+      consent: {site: form.get('videoSite') === 'yes', social: form.get('videoSocial') === 'yes', at: new Date(now).toISOString()},
+    }} : {}),
   };
   const written = [];
   let stored;
   try {
     for (const p of photos) { const key = imageKey(id, p.n, p.type); await bucket.put(key, p.bytes, {httpMetadata: {contentType: p.type}}); written.push(key); }
+    if (poster) { await bucket.put(posterKey, poster.bytes, {httpMetadata: {contentType: poster.type}}); written.push(posterKey); }
     stored = await bucket.put(recordKey(id), JSON.stringify(record), {httpMetadata: {contentType: 'application/json'}});
+    // The video now belongs to this testimonial: retention follows the record from here on.
+    if (video) await bucket.put(manifestKey(id), JSON.stringify({...video, state: 'attached', recordId: id, attachedAt: new Date(now).toISOString()}), {httpMetadata: {contentType: 'application/json'}});
   } catch (error) {
     console.error('Testimonial storage failed');
     if (written.length) await bucket.delete(written).catch(() => {});
@@ -173,8 +210,9 @@ async function notifyOwner(env, record) {
     `Email (private): ${record.email}`,
     `Painting: ${painting}${record.paintingSlug ? ` (https://tjm.art/products/${record.paintingSlug}/)` : ''}`,
     `City: ${record.city || 'Not given'}`,
-    `Photos: ${record.photos.length}`, '',
-    'Testimonial:', record.quote, '',
+    `Photos: ${record.photos.length}`,
+    `Video: ${record.video ? `yes (${Math.round(record.video.bytes / 1048576)} MB${record.video.duration ? `, ${record.video.duration} s` : ''}) · may show on tjm.art: ${record.video.consent.site ? 'yes' : 'no'} · may share on social media: ${record.video.consent.social ? 'yes' : 'no'}` : 'none'}`, '',
+    'Testimonial:', record.quote || '(no written words; see the video)', '',
     `Approve or reject: ${MANAGER_URL}`,
     'Nothing is published until you approve it. After approval you can issue their at-cost print code from the same page.',
     `Reference: ${record.id}`,
@@ -216,25 +254,47 @@ async function publicPhoto(env, id, n) {
   if (!['image/jpeg', 'image/png', 'image/webp'].includes(type)) return reply({error: 'Not found'}, 404);
   return new Response(object.body, {headers: {'Content-Type': type, 'Cache-Control': 'public, max-age=86400', 'X-Content-Type-Options': 'nosniff', 'Content-Disposition': 'inline', 'Cross-Origin-Resource-Policy': 'cross-origin'}});
 }
+// Only videos listed in the public index are served: approved, set to show by TJ, and the collector ticked
+// "TJ can show my video on tjm.art". Everything else 404s here.
+async function publicVideo(request, env, id, poster) {
+  if (!env.COMMISSION_UPLOADS) return reply({error: 'Not found'}, 404);
+  const entry = (await readIndex(env)).testimonials?.find(t => t.id === id);
+  const keys = entry?.videoKeys;
+  if (!entry?.video || !keys) return reply({error: 'Not found'}, 404);
+  if (poster) return keys.poster ? serveMedia(request, env.COMMISSION_UPLOADS, keys.poster, {contentType: keys.posterType, cache: 'public, max-age=86400'}) : reply({error: 'Not found'}, 404);
+  return serveMedia(request, env.COMMISSION_UPLOADS, keys.video, {contentType: entry.video.type, cache: 'public, max-age=3600'});
+}
+async function loadRecord(env, id) {
+  const o = await env.COMMISSION_UPLOADS?.get(recordKey(id));
+  return o ? o.json() : null;
+}
 
 // Public shape of an approved record. Email, original file names and moderation notes never leave the owner API.
+// A video is public only when all three hold: TJ approved the testimonial, TJ left "show the video" on, and the
+// collector ticked "TJ can show my video on tjm.art". The social-media permission never makes anything public here.
+export const videoIsPublic = record => record.status === 'approved' && record.published?.video === true && Boolean(record.video) && !record.video.expired && record.video.consent?.site === true;
 export function publicEntry(record) {
   const pub = record.published || {};
   const photos = (pub.photos || []).map(n => record.photos.find(p => p.n === n)).filter(p => p && p.publishable);
+  const v = videoIsPublic(record) ? record.video : null;
   return {
     id: record.id,
     name: pub.name || record.name,
     city: pub.city ?? record.city ?? '',
     painting: pub.painting ?? record.paintingTitle ?? '',
     paintingHref: (pub.paintingSlug ?? record.paintingSlug) ? `/products/${pub.paintingSlug ?? record.paintingSlug}/` : '',
-    quote: pub.quote || record.quote,
+    quote: pub.quote ?? record.quote ?? '',
     photos: photos.map(p => `/testimonials/api/photo/${record.id}/${p.n}`),
     photoKeys: photos.map(p => p.key),
+    video: v ? {src: `/testimonials/api/video/${record.id}`, type: playbackType(v.type), poster: v.poster ? `/testimonials/api/video/${record.id}/poster` : '', duration: v.duration || null} : null,
+    ...(v ? {videoKeys: {video: v.key, poster: v.poster?.key || '', posterType: v.poster?.type || ''}} : {}),
     pin: pub.pin && validCoord(pub.pin[0], pub.pin[1]) ? [round2(pub.pin[0]), round2(pub.pin[1])] : null,
     approvedAt: record.approvedAt,
   };
 }
-const forClient = entry => { const {photoKeys, ...rest} = entry; return rest; };
+const forClient = entry => { const {photoKeys, videoKeys, ...rest} = entry; return rest; };
+// An approved testimonial with nothing to show (a private video and no words or photos) stays off the public page.
+const hasPublicContent = entry => Boolean(entry.quote || entry.video || entry.photos.length);
 
 async function listRecords(bucket) {
   const out = [];
@@ -248,7 +308,7 @@ async function listRecords(bucket) {
 }
 export async function rebuildIndex(env, now = Date.now()) {
   const approved = (await listRecords(env.COMMISSION_UPLOADS)).filter(r => r.status === 'approved')
-    .sort((a, b) => String(b.approvedAt).localeCompare(String(a.approvedAt))).map(publicEntry);
+    .sort((a, b) => String(b.approvedAt).localeCompare(String(a.approvedAt))).map(publicEntry).filter(hasPublicContent);
   // photoKeys stay in the stored index (used to serve photos) but are stripped from the public JSON response below.
   await env.COMMISSION_UPLOADS.put(INDEX, JSON.stringify({updatedAt: new Date(now).toISOString(), testimonials: approved}), {httpMetadata: {contentType: 'application/json'}});
   return approved.length;
@@ -263,7 +323,7 @@ async function owner(request, env, now) {
   const bucket = env.COMMISSION_UPLOADS;
   if (input.action === 'list') {
     const records = (await listRecords(bucket)).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-    return reply({records: records.map(r => ({...r, public: r.status === 'approved' ? forClient(publicEntry(r)) : null}))});
+    return reply({records: await Promise.all(records.map(async r => ({...r, public: r.status === 'approved' ? forClient(publicEntry(r)) : null, videoUrls: await signedVideoUrls(env, r, now)})))});
   }
   if (input.action === 'geocode') return reply({geo: await geocodeCity(input.city, env)});
   if (!ID.test(input.id || '')) return reply({error: 'Invalid testimonial'}, 400);
@@ -284,7 +344,7 @@ async function owner(request, env, now) {
   }
   if (input.action === 'approve') {
     const name = oneLine(input.name ?? record.name, 80), quote = clean(input.quote ?? record.quote, 2000);
-    if (!name || !quote) return reply({error: 'Name and testimonial text are required'}, 400);
+    if (!name || (!quote && !record.video)) return reply({error: 'Name and testimonial text are required'}, 400);
     const slug = oneLine(input.paintingSlug ?? record.paintingSlug, 150);
     if (slug && !validSlug(slug)) return reply({error: 'Unknown painting page (product slug)'}, 400);
     const photos = (Array.isArray(input.photos) ? input.photos : record.photos.map(p => p.n)).map(Number)
@@ -293,7 +353,9 @@ async function owner(request, env, now) {
     const city = oneLine(input.city ?? record.city, 100);
     const pin = input.map !== false && city && input.lat !== '' && input.lng !== '' && validCoord(lat, lng) ? [round2(lat), round2(lng)] : null;
     const next = {...record, status: 'approved', approvedAt: record.approvedAt || new Date(now).toISOString(),
-      published: {name, quote, city, painting: oneLine(input.painting ?? record.paintingTitle, 200), paintingSlug: slug, photos, pin}};
+      published: {name, quote, city, painting: oneLine(input.painting ?? record.paintingTitle, 200), paintingSlug: slug, photos, pin,
+        // TJ can keep a video off the page; it can only go on it when the collector gave the tjm.art permission.
+        video: Boolean(record.video) && input.video !== false && record.video.consent?.site === true}};
     const saved = await save(next);
     if (!saved) return reply({error: 'Record changed; reload'}, 409);
     // Approval from Pending issues the code (once) and, unless unticked, sends the thank-you email (once). Edits to an
@@ -307,6 +369,15 @@ async function owner(request, env, now) {
     const thanked = await thankCollector(env, record, {send: true, force: input.force === true, now});
     return reply({record: thanked.record, thanks: thanked.result}, thanked.result.error ? 409 : 200);
   }
+  // A collector asked to withdraw a video permission (e.g. by email). Permissions can be withdrawn here, never granted.
+  if (input.action === 'withdrawVideoConsent') {
+    if (!record.video) return reply({error: 'No video on this testimonial'}, 400);
+    const consent = {...record.video.consent, withdrawnAt: new Date(now).toISOString()};
+    if (input.site === true) consent.site = false;
+    if (input.social === true) consent.social = false;
+    const saved = await save({...record, video: {...record.video, consent}, ...(record.published ? {published: {...record.published, video: record.published.video && consent.site}} : {})});
+    return saved ? reply({record: {...saved, public: saved.status === 'approved' ? forClient(publicEntry(saved)) : null, videoUrls: await signedVideoUrls(env, saved, now)}}) : reply({error: 'Record changed; reload'}, 409);
+  }
   if (input.action === 'unpublish') {
     const {approvedAt, ...rest} = record;
     const saved = await save({...rest, status: 'pending', unpublishedAt: new Date(now).toISOString()});
@@ -316,6 +387,7 @@ async function owner(request, env, now) {
     if (input.confirm !== record.id) return reply({error: 'Confirm the testimonial to delete'}, 400);
     const keys = record.photos.map(p => p.key).filter(k => k.startsWith(`testimonials/images/${record.id}/`));
     if (keys.length) await bucket.delete(keys);
+    if (record.video) { await deleteVideoFiles(bucket, record.id); await bucket.delete(manifestKey(record.id)); }
     await bucket.delete(recordKey(record.id));
     await rebuildIndex(env, now);
     return reply({deleted: true});
@@ -382,10 +454,12 @@ export function thanksEmail(record) {
   const first = (record.published?.name || record.name).split(/\s+/)[0];
   const painting = record.published?.painting || record.paintingTitle;
   const subject = 'Thank you, and a print code for you';
+  // A private video with no words or photos is not on the site, so the email doesn't link to it.
+  const onSite = record.status !== 'approved' || hasPublicContent(publicEntry(record));
+  const thanks = `Thank you so much for sharing what ${painting ? `“${painting}”` : 'my painting'} means to you. It means a lot to me that it has a good home with you.`;
   const body = [
     `Hi ${first},`, '',
-    `Thank you so much for sharing what ${painting ? `“${painting}”` : 'my painting'} means to you. It means a lot to me that it has a good home with you. Your testimonial is now on my site:`,
-    `https://tjm.art/testimonials/#${record.id}`, '',
+    ...(onSite ? [`${thanks} Your testimonial is now on my site:`, `https://tjm.art/testimonials/#${record.id}`] : [thanks]), '',
     'As a thank-you, here is your personal print code:', '',
     `    ${record.thanks.code}`, '',
     'It gets you fine-art prints of any of my paintings at the print lab’s cost plus shipping, with no markup. Put as many prints as you like in one order; the code works for one order. It doesn’t apply to original paintings or commission deposits.', '',
@@ -413,6 +487,9 @@ async function sendThanksEmail(env, record) {
   if (!r.ok || !data.id) throw Error(`Gmail ${r.status}`);
   return data.id;
 }
+
+// Hourly cron: video retention (unattached uploads after 24 h, unapproved videos after 90 days, orphans).
+export const purgeVideos = (env, now = Date.now()) => purgeTestimonialVideos(env, now, {recordKey});
 
 // Hourly cron: delete rate-limit counters from previous days.
 export async function purgeTestimonialRateLimits(env, now = Date.now()) {

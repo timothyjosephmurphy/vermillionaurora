@@ -13,7 +13,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Collector Testimonials | Seattle watercolor artist TJ Murphy</title>
-  <meta name="description" content="Words and photos from people who live with paintings by Seattle watercolor artist TJ Murphy, and a form to share your own." />
+  <meta name="description" content="Words, photos and videos from people who live with paintings by Seattle watercolor artist TJ Murphy, and a form to share your own." />
   <link rel="canonical" href="https://tjm.art/testimonials/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,7 +30,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
         <p class="eyebrow dark">Collectors</p>
         <h1>Testimonials</h1>
         <p class="testimonials-lede">Over the years I’ve given many of my paintings to friends, family and people I’ve met on my travels, and others have found homes through sales and commissions. If one of them lives with you, I’d love to hear what it means to you.</p>
-        <p>Share a few words and, if you like, a photo of the painting where it hangs. As a thank-you, I’ll email you a personal code for a print of any of my paintings at cost.</p>
+        <p>Share a few words, a photo of the painting where it hangs, or a short selfie video of you with it. As a thank-you, I’ll email you a personal code for a print of any of my paintings at cost.</p>
         <p class="testimonials-jump" data-has-testimonials hidden><a class="button button-solid" href="#share">Share your story</a> <a class="button button-ghost" href="/exhibitions/world-map/">See collectors on the map</a></p>
       </header>
 
@@ -56,17 +56,54 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
           <p>Tell me about the painting you have, where it lives now, and what it means to you. I read every message personally and publish testimonials after I’ve had a chance to review them.</p>
           <ul class="share-points">
             <li>Your email stays private. I use it only to send your thank-you print code.</li>
-            <li>Location data is removed from photos before anything is published.</li>
+            <li>Location data is removed from photos and videos before anything is published.</li>
+            <li>Videos are only ever shown where you say they can be.</li>
             <li>Your city is shown as an approximate pin on my <a href="/exhibitions/world-map/">exhibitions map</a>, never an address.</li>
           </ul>
         </div>
         <div class="share-form-wrap">
           <div class="form-thanks" data-thanks hidden tabindex="-1">
             <h3>Thank you!</h3>
-            <p>Your testimonial is on its way to me. I’ll review it soon and email your thank-you print code. It means a lot that you took the time.</p>
+            <p>Your testimonial is on its way to me<span data-thanks-video hidden>, video and all</span>. I’ll review it soon and email your thank-you print code. It means a lot that you took the time.</p>
             <p><a href="/gallery/">Browse the gallery</a> · <a href="/commissions/">Commission a painting</a></p>
           </div>
           <form class="contact-form testimonial-form" action="/testimonials/api/submit" method="POST" enctype="multipart/form-data" data-testimonial-form>
+            <div class="video-invite" data-video-only hidden>
+              <p class="video-invite-kicker">Got a minute? Record a selfie video</p>
+              <p class="video-invite-lede">Stand next to your painting, hold your phone at arm’s length, and tell me in a minute or so what you see in it and why you chose it. No script needed. Just talk the way you would to a friend who’s visiting.</p>
+              <ul class="video-tips">
+                <li>Face a window or a lamp so your face is in good light.</li>
+                <li>Hold the phone steady and stay close enough that I can hear you.</li>
+                <li>Portrait or landscape are both fine.</li>
+              </ul>
+            </div>
+            <fieldset class="video-field" data-video-field data-video-only hidden>
+              <legend>Your video (optional)</legend>
+              <div class="video-buttons">
+                <button type="button" class="photo-add" data-video-record hidden><span aria-hidden="true">●</span> Record a selfie video</button>
+                <button type="button" class="photo-add" data-video-choose><span aria-hidden="true">+</span> <span data-video-choose-label>Choose a video</span></button>
+              </div>
+              <input type="file" accept="video/*" capture="user" class="visually-hidden" tabindex="-1" aria-hidden="true" data-video-capture />
+              <input type="file" accept="video/mp4,video/quicktime,video/webm,.mp4,.m4v,.mov,.webm" class="visually-hidden" tabindex="-1" aria-hidden="true" data-video-input />
+              <small id="video-help" class="field-help">MP4, MOV or WebM, up to 500 MB (a couple of minutes from any phone).</small>
+              <div class="video-selected" data-video-selected hidden>
+                <video muted playsinline preload="metadata" data-video-preview aria-label="Preview of your video"></video>
+                <div class="video-selected-info">
+                  <strong data-video-name></strong>
+                  <span data-video-size></span>
+                  <button type="button" class="video-remove" data-video-remove>Remove video</button>
+                </div>
+              </div>
+              <div class="video-progress" data-video-progress hidden>
+                <progress max="100" value="0" aria-label="Video upload progress" data-video-bar></progress>
+                <span data-video-progress-text></span>
+              </div>
+              <div class="video-consent" data-video-consent hidden>
+                <label class="consent"><input type="checkbox" name="videoSite" value="yes" /><span>TJ can show my video on tjm.art</span></label>
+                <label class="consent"><input type="checkbox" name="videoSocial" value="yes" /><span>TJ can share my video on his social media.</span></label>
+                <p class="field-help">Both are optional. If you leave them unticked, your video is just for TJ. You can ask TJ to take it down anytime by emailing him at <a href="mailto:tj@tjm.art">tj@tjm.art</a>.</p>
+              </div>
+            </fieldset>
             <div class="field-row">
               <label>
                 <span>Your name (required)</span>
@@ -84,7 +121,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
               <input type="text" name="painting" maxlength="200" placeholder="Describe it or give its title" />
             </label>
             <label>
-              <span>Your testimonial (required)</span>
+              <span data-quote-label>Your testimonial (required)</span>
               <textarea name="quote" required minlength="3" maxlength="2000" rows="6" placeholder="What does the painting mean to you? Where does it hang?"></textarea>
             </label>
             <label>
@@ -148,7 +185,7 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .photo-field input[type=file]{width:100%;border:1px solid rgba(25,19,15,.14);border-radius:12px;background:rgba(255,255,255,.75);padding:.7rem;font-size:.9rem}
     .photo-field.js-photos input[type=file]{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
     .photo-add{display:inline-flex;align-items:center;gap:.5rem;min-height:46px;padding:.7rem 1.2rem;border:1.5px dashed rgba(140,77,57,.55);border-radius:12px;background:rgba(255,255,255,.75);color:var(--accent-dark,#5c2d21);font:600 .9rem/1.2 Inter,Arial,sans-serif;cursor:pointer}
-    .photo-add span{font-size:1.25rem;line-height:1}
+    .photo-add span[aria-hidden]{font-size:1.25rem;line-height:1}
     .photo-add:hover{border-color:var(--cta,#d34220);background:#fffaf4}
     .photo-add:focus-visible{outline:3px solid var(--cta,#d34220);outline-offset:3px}
     .photo-add[hidden]{display:none}
@@ -158,6 +195,24 @@ const reviews = testimonials.map(t => ({ '@type':'Review', author:{'@type':'Pers
     .photo-previews img,.photo-previews .no-preview{width:92px;height:92px;object-fit:cover;border-radius:10px;display:grid;place-items:center;background:#e8dfd3;font-size:.7rem;text-align:center;color:var(--muted)}
     .photo-previews button{position:absolute;top:4px;right:4px;width:30px;height:30px;border-radius:50%;border:0;background:rgba(29,26,23,.78);color:#fff;font-size:1.1rem;line-height:1;cursor:pointer}
     .photo-previews button:focus-visible{outline:3px solid var(--cta);outline-offset:2px}
+    .video-invite{background:linear-gradient(135deg,#fff4e6,#fdebe2);border:1px solid rgba(211,66,32,.25);border-radius:18px;padding:1.1rem 1.25rem;line-height:1.6;color:#3f3832}
+    .video-invite-kicker{margin:0 0 .35rem;font:600 1.6rem/1.15 "Cormorant Garamond",serif;color:var(--ink)}
+    .video-invite-lede{margin:0;font-size:1rem}
+    .video-tips{margin:.6rem 0 0;padding-left:1.1rem;font-size:.88rem;color:#5e554d}.video-tips li+li{margin-top:2px}
+    .video-field{border:0;padding:0;margin:0;display:grid;gap:.5rem;justify-items:start;min-width:0}
+    .video-field legend{padding:0;margin-bottom:.5rem;color:#3f3832;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+    .video-buttons{display:flex;flex-wrap:wrap;gap:10px}
+    .video-selected{display:flex;gap:14px;align-items:center;flex-wrap:wrap;width:100%}
+    .video-selected video{width:140px;height:140px;object-fit:cover;border-radius:12px;background:#1d1a17}
+    .video-selected-info{display:grid;gap:4px;font-size:.9rem;min-width:0}.video-selected-info strong{overflow-wrap:anywhere}
+    .video-remove{justify-self:start;border:0;background:none;padding:6px 0;color:#a3301a;text-decoration:underline;text-underline-offset:3px;font:inherit;cursor:pointer}
+    .video-progress{display:grid;gap:4px;width:100%}.video-progress progress{width:100%;height:12px;accent-color:var(--cta,#d34220)}
+    .video-progress span{font-size:.85rem;color:var(--muted)}
+    .video-consent{display:grid;gap:10px;width:100%}.video-consent .field-help a{text-decoration:underline}
+    [data-video-only][hidden],.video-field [hidden]{display:none!important}
+    .testimonial-video{margin:0 0 12px}
+    .testimonial-video video{display:block;width:100%;max-height:75vh;border-radius:9px;background:#1d1a17}
+    .testimonial-video .video-fallback{font-size:.82rem;color:var(--muted);margin:6px 0 0}
     .form-thanks{background:#fffcf6;border:1px solid var(--line);border-radius:22px;padding:1.5rem;line-height:1.7}.form-thanks h3{font:600 2rem/1.1 "Cormorant Garamond",serif;margin:0 0 8px}
     @media(max-width:860px){.testimonial-share{grid-template-columns:1fr;gap:20px}}
     @media(max-width:640px){.testimonials-page{padding-top:32px}.testimonial-form .field-row{grid-template-columns:1fr}.testimonial-form button[type=submit]{justify-self:stretch}}

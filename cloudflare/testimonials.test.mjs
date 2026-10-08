@@ -10,13 +10,7 @@ const GPS_PROGRESSIVE=b64('/9j/4AAQSkZJRgABAQAAAQABAAD/4QCoRXhpZgAATU0AKgAAAAgAA
 const META_PNG=b64('iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAIAAABxZ0isAAAAI3RFWHRDb21tZW50AHNlY3JldCBsb2NhdGlvbiA0Ny42LC0xMjIuM3psGUwAAACgZVhJZk1NACoAAAAIAAMBDwACAAAACAAAADIBEgADAAAAAQAGAACIJQAEAAAAAQAAADoAAAAAVGVzdENhbQAABAABAAIAAAACTgAAAAACAAUAAAADAAAAcAADAAIAAAACVwAAAAAEAAUAAAADAAAAiAAAAAAAAAAvAAAAAQAAACQAAAABAAAAGQAAAAIAAAB6AAAAAQAAABMAAAABAAAANwAAAAERy3rTAAAAFElEQVR4nGM8YaPBgA0wYRWlkwQAsioBOPy3KEAAAAAASUVORK5CYII=');
 const META_WEBP=b64('UklGRvYAAABXRUJQVlA4WAoAAAAIAAAABwAABQAAVlA4IDAAAADwAQCdASoIAAYAAUAmJaACdLoB+AAEgwAA/u4KZ/5BcsLrka/9pZ+pZ+pZ/ioAAABFWElGoAAAAE1NACoAAAAIAAMBDwACAAAACAAAADIBEgADAAAAAQAGAACIJQAEAAAAAQAAADoAAAAAVGVzdENhbQAABAABAAIAAAACTgAAAAACAAUAAAADAAAAcAADAAIAAAACVwAAAAAEAAUAAAADAAAAiAAAAAAAAAAvAAAAAQAAACQAAAABAAAAGQAAAAIAAAB6AAAAAQAAABMAAAABAAAANwAAAAE=');
 const now=Date.parse('2026-10-07T20:00:00Z');
-class Bucket {
-  data=new Map();seq=0;
-  async put(key,value,options={}){const prev=this.data.get(key);if(options.onlyIf?.etagMatches&&prev?.etag!==options.onlyIf.etagMatches)return null;const item={key,value,etag:String(++this.seq),...options};this.data.set(key,item);return item;}
-  async get(key){const item=this.data.get(key);if(!item)return null;const text=typeof item.value==='string'?item.value:null;return {...item,body:item.value,text:async()=>text??new TextDecoder().decode(item.value),json:async()=>JSON.parse(text)};}
-  async delete(keys){for(const key of Array.isArray(keys)?keys:[keys])this.data.delete(key);}
-  async list({prefix='',limit=1000,cursor}){const all=[...this.data.values()].filter(x=>x.key.startsWith(prefix)).sort((a,b)=>a.key.localeCompare(b.key));const rest=all.filter(x=>!cursor||x.key>cursor),objects=rest.slice(0,limit);return {objects,truncated:rest.length>limit,cursor:objects.at(-1)?.key};}
-}
+import {Bucket} from '../tests/r2-memory-bucket.mjs';
 const issued=[];
 const setup=()=>({COMMISSION_UPLOADS:new Bucket(),COMMISSION_MANAGER_TOKEN:'owner-token',GOOGLE_CLIENT_ID:'id',GOOGLE_CLIENT_SECRET:'s',GOOGLE_REFRESH_TOKEN:'r',PAYPAL_MODE:'live',
   CART_ORDERS:{getByName:name=>({codeIssue:async(hash,record)=>{issued.push({name,record});}})}});
@@ -96,7 +90,7 @@ test('owner moderation: auth, approve with edits, public list and photos, unpubl
   assert.equal((await owner(env,{action:'approve',id,paintingSlug:'not-a-painting'})).status,400);
   const ok=await owner(env,{action:'approve',id,name:'Jane',lat:'47.2455',lng:'-122.4383',city:'Tacoma, WA',map:true});assert.equal(ok.status,200);
   const [pub]=await approved(env);
-  assert.deepEqual(pub,{id,name:'Jane',city:'Tacoma, WA',painting:'Emergence',paintingHref:'/products/painting-emergence/',quote:'It makes our kitchen glow.',photos:[`/testimonials/api/photo/${id}/0`],pin:[47.25,-122.44],approvedAt:new Date(now).toISOString()});
+  assert.deepEqual(pub,{id,name:'Jane',city:'Tacoma, WA',painting:'Emergence',paintingHref:'/products/painting-emergence/',quote:'It makes our kitchen glow.',photos:[`/testimonials/api/photo/${id}/0`],video:null,pin:[47.25,-122.44],approvedAt:new Date(now).toISOString()});
   assert.equal(JSON.stringify(await approved(env)).includes('jane@example.com'),false);
   const photo=await testimonialsApi(new Request('https://tjm.art'+pub.photos[0]),env);assert.equal(photo.status,200);assert.equal(photo.headers.get('Content-Type'),'image/jpeg');
   assert.deepEqual(jpegExifTags(new Uint8Array(await photo.arrayBuffer())),[[0x0112]]);
@@ -145,4 +139,157 @@ test('thank-you email copy',async()=>{
   assert.match(body,/^Hi Jane,/);assert.match(body,/VA-ABCD-EFGH-JKLM/);assert.match(body,/https:\/\/tjm.art\/cart\//);assert.match(body,/#t-20261007-abcdefabcdef/);
   assert.match(body,/doesn’t apply to original paintings or commission deposits/);
   assert.match(thanksEmail({id:'t-20261007-abcdefabcdef',name:'Sam',thanks:{code:'VA-ABCD-EFGH-JKLM'}}).body,/sharing what my painting means to you/);
+});
+
+// ---------- Video testimonials ----------
+const {PART_BYTES,MAX_VIDEO_BYTES:MAX_VIDEO,blankLocations,sniffVideo}=await import('./testimonial-videos.mjs');
+const {purgeVideos}=await import('./testimonials.mjs');
+const api=(env,path,{method='POST',body,headers={},at=now}={})=>testimonialsApi(new Request('https://tjm.art'+path,{method,body:body&&typeof body==='object'&&!(body instanceof Uint8Array)?JSON.stringify(body):body,headers:{Origin:'https://tjm.art','CF-Connecting-IP':'203.0.113.9',...headers}}),env,null,at);
+// A fake MP4: ftyp box, then an iPhone-style ISO 6709 location string, padded to the requested size.
+const fakeVideo=(size,brand='isom')=>{const b=new Uint8Array(size);b.set([0,0,0,24,...new TextEncoder().encode('ftyp'+brand)]);b.set(new TextEncoder().encode('com.apple.quicktime.location.ISO6709+47.6062-122.3321+050.000/'),40);return b;};
+async function uploadVideo(env,bytes,{type='video/mp4',name='me.mov',at=now,ip='203.0.113.9'}={}){
+  const headers={'CF-Connecting-IP':ip};
+  const start=await api(env,'/testimonials/api/video/start',{body:{type,size:bytes.length,name},at,headers});
+  const s=await start.json();if(!start.ok)return {status:start.status,...s};
+  const parts=[];
+  for(let n=1;n<=s.parts;n++){const r=await api(env,`/testimonials/api/video/part?id=${s.id}&n=${n}`,{method:'PUT',body:bytes.slice((n-1)*s.partBytes,n*s.partBytes),headers:{...headers,'X-Upload-Token':s.token},at});const p=await r.json();if(!r.ok)return {status:r.status,...p};parts.push(p);}
+  const done=await api(env,'/testimonials/api/video/complete',{body:{id:s.id,token:s.token,parts},at,headers});
+  return {status:done.status,...s,...await done.json()};
+}
+
+test('video upload: multipart parts, size and type checks, magic bytes, location metadata blanked',async()=>{
+  const env=setup();
+  assert.equal((await api(env,'/testimonials/api/video/start',{body:{type:'video/x-msvideo',size:5000}})).status,415);
+  assert.equal((await api(env,'/testimonials/api/video/start',{body:{type:'video/mp4',size:MAX_VIDEO+1}})).status,413);
+  assert.equal((await api(env,'/testimonials/api/video/start',{body:{type:'video/mp4',size:5000},headers:{Origin:'https://evil.example'}})).status,403);
+  const bytes=fakeVideo(PART_BYTES*2+1234);
+  const up=await uploadVideo(env,bytes);
+  assert.equal(up.status,200);assert.equal(up.parts,3);
+  const stored=env.COMMISSION_UPLOADS.data.get(`testimonials/videos/${up.id}/video.mp4`).value;
+  assert.equal(stored.length,bytes.length);
+  const text=new TextDecoder('latin1').decode(stored.slice(0,200));
+  assert.equal(text.includes('47.6062'),false);assert.match(text,/ISO6709 {20,}/);
+  assert.equal(JSON.parse(env.COMMISSION_UPLOADS.data.get(`testimonials/uploads/${up.id}.json`).value).state,'complete');
+  // Not a video: rejected on the first part and the upload is discarded.
+  const fake=await uploadVideo(env,new TextEncoder().encode('<html>'.padEnd(5000,'x')));
+  assert.equal(fake.status,415);assert.equal([...env.COMMISSION_UPLOADS.uploads.keys()].length,0);
+  // Wrong part size, wrong token.
+  const s=await (await api(env,'/testimonials/api/video/start',{body:{type:'video/webm',size:PART_BYTES+10}})).json();
+  assert.equal((await api(env,`/testimonials/api/video/part?id=${s.id}&n=1`,{method:'PUT',body:new Uint8Array(100),headers:{'X-Upload-Token':s.token}})).status,400);
+  assert.equal((await api(env,`/testimonials/api/video/part?id=${s.id}&n=1`,{method:'PUT',body:new Uint8Array(PART_BYTES),headers:{'X-Upload-Token':'0'.repeat(64)}})).status,403);
+  assert.equal((await api(env,'/testimonials/api/video/abort',{body:{id:s.id,token:s.token}})).status,200);
+  assert.equal(env.COMMISSION_UPLOADS.data.has(`testimonials/uploads/${s.id}.json`),false);
+  assert.equal(sniffVideo(fakeVideo(128,'qt  ')),'mov');assert.equal(sniffVideo(Uint8Array.from([0x1a,0x45,0xdf,0xa3,0,0,0,0,0,0,0,0])),'webm');
+  const android=new TextEncoder().encode('....\xa9xyz....+47.6062-122.3321/....');assert.equal(blankLocations(android),1);assert.equal(new TextDecoder().decode(android).includes('47.6'),false);
+});
+
+test('video upload starts are rate limited per visitor',async()=>{
+  const env=setup();
+  for(let i=0;i<4;i++)assert.equal((await api(env,'/testimonials/api/video/start',{body:{type:'video/mp4',size:5000}})).status,200);
+  assert.equal((await api(env,'/testimonials/api/video/start',{body:{type:'video/mp4',size:5000}})).status,429);
+  assert.equal((await api(env,'/testimonials/api/video/start',{body:{type:'video/mp4',size:5000},headers:{'CF-Connecting-IP':'198.51.100.7'}})).status,200);
+});
+
+test('video testimonial: text optional, two optional consents stored, private until approved with tjm.art consent',async()=>{
+  const env=setup();
+  const up=await uploadVideo(env,fakeVideo(300000));
+  // A text-only submission still needs words; with a video the words are optional.
+  assert.equal((await submit(env,form({quote:''}))).status,400);
+  assert.equal((await submit(env,form({quote:'',videoId:up.id,videoToken:'bad'}))).status,400);
+  const r=await submit(env,form({quote:'',city:'',videoId:up.id,videoToken:up.token,videoSite:'yes',videoDuration:'64.4',posterFrame:new File([GPS_JPEG],'poster.jpg',{type:'image/jpeg'})}));
+  assert.equal(r.status,200);const {id}=await r.json();assert.equal(id,up.id);
+  const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);
+  assert.deepEqual({site:rec.video.consent.site,social:rec.video.consent.social},{site:true,social:false});
+  assert.equal(rec.video.duration,64);assert.equal(rec.video.poster.key,`testimonials/videos/${id}/poster.jpg`);
+  assert.deepEqual(jpegExifTags(env.COMMISSION_UPLOADS.data.get(rec.video.poster.key).value),[[0x0112]]);
+  assert.equal(JSON.parse(env.COMMISSION_UPLOADS.data.get(`testimonials/uploads/${id}.json`).value).state,'attached');
+  // The same upload cannot be attached twice.
+  assert.equal((await submit(env,form({videoId:up.id,videoToken:up.token}),{'CF-Connecting-IP':'198.51.100.3'})).status,400);
+  const mail=atob(mails[0].raw.replace(/-/g,'+').replace(/_/g,'/'));
+  // Not public before approval: no list entry, public video URL 404s.
+  assert.deepEqual(await approved(env),[]);
+  assert.equal((await api(env,`/testimonials/api/video/${id}`,{method:'GET'})).status,404);
+  // Moderation gets signed playback links (Range supported), which expire and only match their own record.
+  const list=await (await owner(env,{action:'list'})).json();
+  const urls=list.records[0].videoUrls;assert.match(urls.video,/\/private\/.+\/video\?exp=/);assert.match(urls.poster,/\/poster\?/);
+  const part=await api(env,urls.video,{method:'GET',headers:{Range:'bytes=0-99'}});
+  assert.equal(part.status,206);assert.equal(part.headers.get('Content-Range'),'bytes 0-99/300000');assert.equal((await part.arrayBuffer()).byteLength,100);
+  assert.equal(part.headers.get('Content-Type'),'video/mp4');
+  assert.match((await api(env,urls.download,{method:'GET'})).headers.get('Content-Disposition'),/attachment; filename="testimonial-t-.+\.mp4"/);
+  assert.equal((await api(env,urls.video.replace(/sig=[0-9a-f]+/,'sig='+'0'.repeat(64)),{method:'GET'})).status,403);
+  assert.equal((await api(env,urls.video,{method:'GET',at:now+7*3600e3})).status,403);
+  // Approve without words: allowed for a video; thank-you + code flow unchanged.
+  const ok=await owner(env,{action:'approve',id,name:'Jane'});assert.equal(ok.status,200);
+  assert.equal(issued.length,1);assert.equal(mails.length,2);
+  const [pub]=await approved(env);
+  assert.deepEqual(pub.video,{src:`/testimonials/api/video/${id}`,type:'video/mp4',poster:`/testimonials/api/video/${id}/poster`,duration:64});
+  assert.equal(JSON.stringify(pub).includes('testimonials/videos/'),false);
+  const full=await api(env,pub.video.src,{method:'GET'});assert.equal(full.status,200);assert.equal(full.headers.get('Content-Length'),'300000');assert.equal(full.headers.get('Accept-Ranges'),'bytes');
+  assert.equal((await api(env,pub.video.src,{method:'GET',headers:{Range:'bytes=999999-'}})).status,416);
+  assert.equal((await api(env,pub.video.poster,{method:'GET'})).headers.get('Content-Type'),'image/jpeg');
+  // TJ can keep the video off the page.
+  await owner(env,{action:'approve',id,name:'Jane',video:false});
+  assert.deepEqual(await approved(env),[]);
+  assert.equal((await api(env,pub.video.src,{method:'GET'})).status,404);
+  // Collector withdraws the tjm.art permission: re-approving can no longer show it.
+  await owner(env,{action:'approve',id,name:'Jane'});assert.equal((await approved(env)).length,1);
+  const w=await (await owner(env,{action:'withdrawVideoConsent',id,site:true})).json();assert.equal(w.record.video.consent.site,false);
+  await owner(env,{action:'approve',id,name:'Jane',video:true});assert.deepEqual(await approved(env),[]);
+  // Delete removes record, video, poster and manifest.
+  await owner(env,{action:'delete',id,confirm:id});
+  assert.equal([...env.COMMISSION_UPLOADS.data.keys()].filter(k=>k.includes(id)).length,0);
+});
+
+test('video without the tjm.art permission stays private after approval; words still show; email skips the link when nothing shows',async()=>{
+  const env=setup();
+  const a=await uploadVideo(env,fakeVideo(5000));
+  const {id}=await (await submit(env,form({city:'',videoId:a.id,videoToken:a.token,videoSocial:'yes'}))).json();
+  await owner(env,{action:'approve',id,name:'Jane'});
+  const [pub]=await approved(env);assert.equal(pub.video,null);assert.equal(pub.quote,'It makes our kitchen glow.');
+  assert.equal((await api(env,`/testimonials/api/video/${id}`,{method:'GET'})).status,404);
+  const rec=JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value);
+  assert.deepEqual([rec.video.consent.site,rec.video.consent.social],[false,true]);
+  // Neither box, no words: approval thanks them (code + email) but nothing appears publicly and the email has no link.
+  const b=await uploadVideo(env,fakeVideo(5000),{});
+  const second=await (await submit(env,form({city:'',quote:'',videoId:b.id,videoToken:b.token}),{'CF-Connecting-IP':'198.51.100.4'})).json();
+  mails=[];
+  const res=await (await owner(env,{action:'approve',id:second.id,name:'Sam'})).json();
+  assert.equal(res.thanks.emailed,true);
+  assert.equal((await approved(env)).length,1);
+  const body=atob(atob(mails[0].raw.replace(/-/g,'+').replace(/_/g,'/')).split('\r\n\r\n')[1].trim());
+  assert.equal(body.includes('#'+second.id),false);assert.match(body,/print code/);
+});
+
+test('honeypot deletes an uploaded video; retention sweeps unattached, orphaned and long-pending videos',async()=>{
+  const env=setup();
+  const bot=await uploadVideo(env,fakeVideo(5000));
+  assert.equal((await submit(env,form({website:'x',videoId:bot.id,videoToken:bot.token}))).status,200);
+  assert.equal([...env.COMMISSION_UPLOADS.data.keys()].filter(k=>k.includes(bot.id)).length,0);
+  const abandoned=await uploadVideo(env,fakeVideo(5000));
+  const s=await (await api(env,'/testimonials/api/video/start',{body:{type:'video/mp4',size:5000}})).json(); // never finished
+  const pending=await uploadVideo(env,fakeVideo(5000));
+  const {id}=await (await submit(env,form({city:'',videoId:pending.id,videoToken:pending.token,videoSite:'yes'}))).json();
+  const kept=await uploadVideo(env,fakeVideo(5000),{ip:'198.51.100.5'});assert.equal(kept.status,200);
+  const k=await (await submit(env,form({city:'',videoId:kept.id,videoToken:kept.token,videoSite:'yes'}),{'CF-Connecting-IP':'198.51.100.5'})).json();
+  await owner(env,{action:'approve',id:k.id,name:'Kim'});
+  assert.deepEqual(await purgeVideos(env,now+3600e3),{removed:0});
+  assert.deepEqual(await purgeVideos(env,now+25*3600e3),{removed:2});
+  assert.equal(env.COMMISSION_UPLOADS.uploads.size,0);
+  assert.equal([...env.COMMISSION_UPLOADS.data.keys()].filter(k=>k.includes(abandoned.id)||k.includes(s.id)).length,0);
+  assert.ok(env.COMMISSION_UPLOADS.data.has(`testimonials/videos/${id}/video.mp4`));
+  assert.deepEqual(await purgeVideos(env,now+91*86400e3),{removed:1});
+  assert.equal(env.COMMISSION_UPLOADS.data.has(`testimonials/videos/${id}/video.mp4`),false);
+  assert.equal(JSON.parse(env.COMMISSION_UPLOADS.data.get('testimonials/records/'+id+'.json').value).video.expired,true);
+  assert.ok(env.COMMISSION_UPLOADS.data.has(`testimonials/videos/${k.id}/video.mp4`),'approved videos are kept');
+  // Orphan: manifest says attached but the record is gone.
+  env.COMMISSION_UPLOADS.data.delete('testimonials/records/'+k.id+'.json');
+  assert.deepEqual(await purgeVideos(env,now+92*86400e3),{removed:1});
+  assert.equal([...env.COMMISSION_UPLOADS.data.keys()].filter(x=>x.includes(k.id)).length,0);
+});
+
+test('site Worker forwards video upload and playback paths',async()=>{
+  const seen=[];const env={PRIMARY_HOST:'tjm.art',ASSETS:{fetch:()=>new Response('asset')},CHECKOUT:{fetch:r=>{seen.push(r.method+' '+new URL(r.url).pathname);return new Response('checkout');}}};
+  await site.fetch(new Request('https://tjm.art/testimonials/api/video/part?id=x&n=1',{method:'PUT',body:'x'}),env);
+  await site.fetch(new Request('https://tjm.art/testimonials/api/video/t-20261007-abcdefabcdef'),env);
+  assert.deepEqual(seen,['PUT /testimonials/api/video/part','GET /testimonials/api/video/t-20261007-abcdefabcdef']);
 });
