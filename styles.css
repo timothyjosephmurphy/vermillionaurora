@@ -818,3 +818,13 @@ button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 .site-footer .footer-brand-block .footer-socials { flex-wrap: nowrap; }
 /* Screen-reader-only text (headings that keep the outline in order without changing the look). */
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+/* Card commerce cues: the whole tile links to the painting's page (stretched title link); "Buy" is a visual cue, not a nested control. */
+.card-tile{position:relative}
+.card-tile .product-title-link::after{content:"";position:absolute;inset:0;z-index:1}
+.card-tile:has(.product-title-link:focus-visible){outline:3px solid var(--cta);outline-offset:2px}
+.card-tile .product-title-link:focus-visible{outline:none}
+.card-prints-from{margin:.2rem 0 0;font-size:.85rem;color:var(--muted)}
+.card-buy{display:inline-flex;align-items:center;justify-content:center;min-height:36px;min-width:72px;margin-top:.6rem;padding:0 18px;border-radius:999px;background:var(--cta);color:#fff;font:600 .78rem/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+.card-buy[hidden]{display:none}
+.card-tile:hover .card-buy{background:var(--cta-hover)}

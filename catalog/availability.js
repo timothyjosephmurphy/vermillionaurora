@@ -37,6 +37,7 @@
     node.querySelectorAll('[data-live-status]').forEach(el=>{el.textContent=value==='available'?el.dataset.initialText:label;if(value!=='available')el.hidden=false;});
     node.querySelectorAll('[data-card-price]').forEach(el=>{el.textContent=value==='available'?el.dataset.price:label;});
     if(node.dataset.caption){node.dataset.caption=value==='available'?node.dataset.initialCaption:node.dataset.initialCaption.replace(/ · [^]*$/,' · '+label);}
+    if(node.dataset.buy!==undefined){const buy=['available','inquiry'].includes(value)||!!node.dataset.printsFrom;node.dataset.buy=String(buy);node.querySelectorAll('[data-card-buy]').forEach(el=>{el.hidden=!buy;});}
     moveHomepagePainting(node,value);
    }
    updateHomepageEmptyMessages();
