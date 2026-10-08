@@ -34,6 +34,38 @@ Collectors (people TJ has given or sold paintings to) share testimonials on http
 The site Worker (`worker/site.mjs`) forwards `/testimonials/api/*` on tjm.art to the checkout Worker through the `CHECKOUT`
 service binding, like the QuickBooks routes.
 
+## Video testimonials
+
+The form invites a short selfie video ("stand next to your painting, hold your phone at arm's length…"). Phones get two
+buttons: **Record a selfie video** (`capture="user"`, front camera) and **Choose from my videos** (library, no `capture`).
+A video makes the written words optional; at least one of words or video is required.
+
+- **Formats and size:** MP4, MOV (iPhone) or WebM, up to **500 MB**. A 2-minute iPhone clip is about 80 MB at 1080p/30
+  and about 350–400 MB at 4K/60, so 500 MB covers any phone's default settings for a couple of minutes.
+- **Upload:** browser → Worker → R2 multipart (`POST /testimonials/api/video/start`, `PUT …/part?id=&n=` with 8 MiB parts
+  and an HMAC upload token, `POST …/complete`, `POST …/abort`). The Worker relays each part, so no R2 API keys,
+  presigned URLs or bucket CORS are needed. It checks the declared type and size, every part's exact length and the
+  file signature (ISO-BMFF `ftyp`/QuickTime atoms or WebM EBML) on part 1. Upload starts are rate limited (4 per visitor
+  and 40 total per UTC day); submissions keep the existing limits and honeypot (a honeypot hit deletes the video).
+- **Location:** phones store the recording location as an ISO 6709 string; the browser blanks it in the whole file and
+  the Worker blanks it again in each part (same length, so the file stays valid).
+- **Poster:** the browser captures a frame (canvas → JPEG) and sends it with the form; metadata is stripped like photos.
+  Without a poster the public player uses `preload="metadata"` once it nears the viewport.
+- **Permissions:** two optional boxes, stored on the record as `video.consent.site` and `video.consent.social`.
+  A video is public only if the testimonial is approved, TJ leaves "Show the video on tjm.art" on, and `consent.site` is
+  true. Otherwise it stays private (approval still issues the code and sends the thank-you; the words can be published;
+  the email leaves out the site link when nothing is shown). The manager has a **Videos OK for social media** view with
+  download links, and buttons to record that a collector withdrew either permission.
+- **Playback:** public `GET /testimonials/api/video/<id>` (and `/poster`) serves only videos in the public index, with
+  HTTP Range support. Moderation uses signed links (`/testimonials/api/video/private/<id>/video?exp=&sig=`, 6 hours).
+  `.mov` is served as `video/mp4` so Chrome/Firefox play H.264 iPhone clips; HEVC clips need Safari or a download.
+- **Retention (hourly cron):** uploads not attached to a testimonial within 24 hours are aborted and deleted; videos on
+  testimonials still unapproved 90 days after arrival (or after unpublishing) are deleted and the record is marked
+  `video.expired`; videos whose record is gone are deleted; Delete removes the video with the record. Approved videos
+  are kept.
+- **Storage:** `testimonials/videos/<id>/video.<ext>`, `testimonials/videos/<id>/poster.jpg`,
+  `testimonials/uploads/<id>.json` in `COMMISSION_UPLOADS`.
+
 ## Geocoding
 City text only, never an address: OpenStreetMap Nominatim (settlement search), falling back to Open-Meteo/GeoNames, rounded to
 2 decimals (≈1 km). TJ can edit or clear the pin before approving.
