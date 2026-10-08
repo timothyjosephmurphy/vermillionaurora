@@ -2,19 +2,21 @@
 import ArtworkImage from './ArtworkImage.astro';
 import { urlFor, priceLabel, statusLabel, dimensionLabel, byId } from '../../catalog/catalog.mjs';
 import { artworkAlt } from '../data/artwork-alt.mjs';
+import { printsFromLabel, showBuy } from '../data/card-commerce.mjs';
 import { commissionExampleGroups, interleave } from '../data/commission-examples.mjs';
 const {product:p,variant='gallery',priority=false}=Astro.props;
 // Commission packages live on the merged /commissions/ page; their old product pages 301 there.
 const commissionAnchors={'single-portrait':'portrait','double-portrait':'portrait','small-landscape':'landscape'};
 const url=commissionAnchors[p.slug]?`/commissions/#${commissionAnchors[p.slug]}`:urlFor(p), status=statusLabel(p);
 const caption=`${p.title} · ${p.listing?.status==='available'?priceLabel(p):status}`;
+const printsFrom=printsFromLabel(p), buy=showBuy(p);
 const packageHref=`/commissions/?package=${encodeURIComponent(p.slug)}#form`;
 // Sized/faced packages link with every axis, e.g. ?package=single-portrait&size=12x15&faces=2f.
 const optionHref=o=>{const parts=o.id.split('-'),faces=parts.at(-1).endsWith('f')&&p.optionOrder?.includes('faces')?parts.pop():null;return `/commissions/?package=${encodeURIComponent(p.slug)}&size=${encodeURIComponent(parts.join('-'))}${faces?`&faces=${faces.slice(0,-1)}`:''}#form`;};
 // Merged packages (Portrait) show one labeled carousel; "mix" groups alternate single and double examples (src/data/commission-examples.mjs).
 const exampleGroups=(commissionExampleGroups[p.slug]||p.exampleGroups||[]).map(g=>({...g,examples:g.mix?interleave(g.mix.map(id=>byId[id]?.examples||[])):byId[g.portrait]?.examples||[]})).filter(g=>g.examples.length);
 ---
-{variant==='artist' ? <a class="ex-photo" data-product-id={p.id} data-availability={status} data-caption={caption} data-product={url} href={url}><ArtworkImage src={p.image.src} alt={artworkAlt(p)} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" /></a> :
+{variant==='artist' ? <a class="ex-photo" data-product-id={p.id} data-availability={status} data-caption={caption} data-prints-from={printsFrom||undefined} data-buy={buy?'true':'false'} data-product={url} href={url}><ArtworkImage src={p.image.src} alt={artworkAlt(p)} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" /></a> :
 variant==='service' ? <article class="service-card">
   {exampleGroups.length>0 ? exampleGroups.map(g=><figure class="portrait-preview-group"><figcaption>{g.label}</figcaption><div class="portrait-preview" data-portrait={g.portrait} data-mix={g.mix?.join(',')} aria-label={`${g.label} examples`}><a class="portrait-preview-stage" href={url}><img src={g.examples[0].src} alt={g.examples[0].alt} loading="lazy" /></a></div></figure>) :
    p.examples?.length>0 && <div class="portrait-preview" data-portrait={p.slug} aria-label={`${p.title} examples`}><a class="portrait-preview-stage" href={url}><img src={p.examples[0].src} alt={p.examples[0].alt} loading="lazy" /></a></div>}
@@ -31,7 +33,7 @@ variant==='service' ? <article class="service-card">
 </article> : variant==='poster' ? <article class="product-card film-collaboration-poster" data-product-id={p.id} data-availability={status}>
   <a href={url} aria-label={`View ${p.title}`}><ArtworkImage src={p.image.src} alt={artworkAlt(p)} width={p.image.width} height={p.image.height} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding="async" /></a>
   <div class="product-info"><p class="eyebrow dark">Original painting · {p.artist}</p><h2><a class="product-title-link" href={url}>{p.title}</a></h2><p>{dimensionLabel(p)}<br />{p.medium} on {p.surface}</p><p class="product-availability" data-live-status>{status}{p.gifted?' · Gifted':''}</p><a class="button button-ghost" href={url}>View painting and story</a></div>
-</article> : <article class:list={['product-card',{'ex-slide':variant==='carousel'}]} data-product-id={p.id} data-availability={status}>
+</article> : <article class:list={['product-card','card-tile',{'ex-slide':variant==='carousel'}]} data-product-id={p.id} data-availability={status} data-prints-from={printsFrom||undefined} data-buy={buy?'true':'false'}>
   <a href={url} class="gallery-product-image"><ArtworkImage src={p.image.src} alt={artworkAlt(p)} loading={priority?'eager':'lazy'} decoding="async" fetchpriority={priority?'high':'auto'} width={p.image.width} height={p.image.height} /></a>
-  <div class="product-info"><h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.medium && <>{p.medium} · </>}<span data-card-price>{p.listing.status==='available'?priceLabel(p):status}</span></p></div>
+  <div class="product-info"><h3><a href={url} class="product-title-link">{p.title}</a></h3><p>{p.medium && <>{p.medium} · </>}<span data-card-price>{p.listing.status==='available'?priceLabel(p):status}</span></p>{printsFrom&&<p class="card-prints-from">{printsFrom}</p>}<span class="card-buy" data-card-buy aria-hidden="true" hidden={!buy}>Buy</span></div>
 </article>}
