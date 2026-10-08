@@ -2,9 +2,11 @@
 // - www.tjm.art always 301s to the same path on tjm.art.
 // - When LEGACY_REDIRECT is "true", vermillionaurora.com and www.vermillionaurora.com 301 to the same
 //   path and query on PRIMARY_HOST, except hash-bound print and catalog files that print fulfilment and
-//   release verification fetch by exact URL; those keep serving 200 on the old domain.
+//   release verification fetch by exact URL; those keep serving 200 on the old domain. Renamed product
+//   pages go straight to their new slug (worker/product-renames.mjs).
 // Everything else (including static/_redirects rules and 404s) is handled by the assets binding.
 import { APPLE_PAY_DOMAIN_ASSOCIATION } from './apple-pay-domain-association.mjs';
+import { renamedProductPath } from './product-renames.mjs';
 
 export const LEGACY_HOSTS = new Set(['vermillionaurora.com', 'www.vermillionaurora.com']);
 export const KEEP_ON_LEGACY = ['/print-editions/', '/print-samples/', '/print-masters/', '/print-test/', '/prints/', '/catalog/'];
@@ -19,7 +21,7 @@ export function hostRedirect(request, env = {}) {
   if (url.protocol === 'http:' && url.hostname === primary) return moved(`https://${primary}${url.pathname}${url.search}`);
   if (env.LEGACY_REDIRECT !== 'true' || !LEGACY_HOSTS.has(url.hostname)) return null;
   if (KEEP_ON_LEGACY.some((prefix) => url.pathname.startsWith(prefix))) return null;
-  return moved(`https://${primary}${url.pathname}${url.search}`);
+  return moved(`https://${primary}${renamedProductPath(url.pathname)}${url.search}`);
 }
 
 // QuickBooks owner page, OAuth callback and owner API live in the checkout Worker (vermillion-commissions);
