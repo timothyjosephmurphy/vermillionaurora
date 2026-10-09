@@ -33,7 +33,7 @@ const MERGED={
   'book-art-9f6386bac0e6198f6661':['rice-paddies-in-vietnam','Rice paddies in Vietnam, Photo Credit: Daniel Goldsmith'],
   // Second batch (same rule), visually confirmed.
   'book-art-e1fa746bb51029294a17':['painting-chef-in-white','Jimmy Song @jimmysong'],
-  'book-art-04a049ea60a5a09e6873':['painting-red-horizon','Hawaii'],
+  'book-art-04a049ea60a5a09e6873':['painting-red-horizon','Sunset at Kihei on Maui'],
   'book-art-8ff9ac182d32fa228450':['painting-phoenix-rising','The Bounty of Satoshi: Achievement'],
   'book-art-18e4d05240ce63a1a44b':['painting-portrait-in-blue-light','MJ'],
   'book-art-8d1545e1ac13c99eb4ce':['painting-couple-in-color','Aunt Fran and Cousin Hillary'],

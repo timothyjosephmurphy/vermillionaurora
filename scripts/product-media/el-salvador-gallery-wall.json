@@ -1,0 +1,36 @@
+{
+  "base": "/product-media/el-salvador-gallery-wall/wall",
+  "widths": [
+    480,
+    960,
+    1600,
+    2400
+  ],
+  "width": 1024,
+  "height": 768,
+  "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+  "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+  "caption": "El Zonte paintings hanging in a gallery",
+  "variants": [
+    {
+      "w": 480,
+      "avif": 10322,
+      "webp": 17794
+    },
+    {
+      "w": 960,
+      "avif": 31316,
+      "webp": 53264
+    },
+    {
+      "w": 1600,
+      "avif": 36238,
+      "webp": 61484
+    },
+    {
+      "w": 2400,
+      "avif": 36238,
+      "webp": 61484
+    }
+  ]
+}
