@@ -1,6 +1,14 @@
 {
   "home": [
     {
+      "product": "hope-the-vermillion-aurora",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-red-horizon",
+      "variant": "carousel"
+    },
+    {
       "product": "sunrise-in-el-zonte-large",
       "variant": "carousel"
     },
@@ -30,10 +38,6 @@
     },
     {
       "product": "honeybadger-and-cub-with-genesis-block",
-      "variant": "carousel"
-    },
-    {
-      "product": "painting-red-horizon",
       "variant": "carousel"
     },
     {
@@ -180,6 +184,10 @@
     },
     {
       "product": "painting-red-horizon",
+      "variant": "gallery"
+    },
+    {
+      "product": "hope-the-vermillion-aurora",
       "variant": "gallery"
     },
     {

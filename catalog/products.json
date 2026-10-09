@@ -1819,8 +1819,8 @@
     "id": "painting-red-horizon",
     "slug": "painting-red-horizon",
     "type": "painting",
-    "title": "Hawaii",
-    "description": "Hawaii by TJ Murphy. Watercolor pastel. Available.",
+    "title": "Sunset at Kihei on Maui",
+    "description": "Sunset at Kihei on Maui by TJ Murphy. Watercolor pastel. Available.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -1835,8 +1835,8 @@
     "year": 2022,
     "framing": null,
     "dimensions": {
-      "width": 24,
-      "height": 48,
+      "width": 23,
+      "height": 44,
       "unit": "in"
     },
     "galleryReference": null,
@@ -1848,23 +1848,23 @@
       }
     ],
     "story": [
-      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
+      "Just before this sunset, a friend and I were sitting in a quiet cove along the beach at Kihei when a couple and a minister walked out and began a wedding ceremony, and we watched quietly from where we sat. Partway through, a kid climbed onto the rocks above them and started an airplane dogfight with a couple of toys, oblivious to the wedding. As they were wrapping up, a guy emerged from the bushes where he'd been sleeping: \u201cOh, hey, how's it going?\u201d Then the sky went orange, pink and gray over the water. Watercolor pastel, 23 \u00d7 44 in, 2022."
     ],
     "storyHeading": null,
     "inquiryHref": "/commissions/?product=painting-red-horizon#form",
     "dimensionOrder": "width-height",
     "image": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy",
-      "caption": "Hawaii"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
     },
     "checkout": {
       "mode": "integrated",
       "shipping": {
-        "length": 24,
+        "length": 23,
         "width": 4,
         "height": 4,
-        "weight": 1.625,
+        "weight": 1.5,
         "packaging": "tube",
         "insuranceRequested": false,
         "verification": "estimated",
@@ -1878,6 +1878,172 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
+    },
+    "gallery": [
+      {
+        "base": "/product-media/kihei-hope/room-1",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 2400,
+        "height": 1800,
+        "fallback": "/product-media/kihei-hope/room-1-1600.jpg",
+        "alt": "Sunset at Kihei on Maui hanging with Hope, the Vermillion Aurora in a living room",
+        "caption": "In my living room with the other painting"
+      },
+      {
+        "base": "/product-media/kihei-hope/room-2",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 2400,
+        "height": 1800,
+        "fallback": "/product-media/kihei-hope/room-2-1600.jpg",
+        "alt": "Sunset at Kihei on Maui hanging with Hope, the Vermillion Aurora in a living room",
+        "caption": "Hanging together: Sunset at Kihei on Maui and Hope, the Vermillion Aurora"
+      }
+    ],
+    "video": {
+      "caption": "The two paintings together in my living room (36 s, with sound).",
+      "poster": "/product-media/kihei-hope/video-poster-1920.webp",
+      "width": 1920,
+      "height": 1080,
+      "duration": 36,
+      "sources": [
+        {
+          "src": "https://media.vermillionaurora.com/images/products/kihei-hope/kihei-hope-paintings-1080-4a0193b7.mp4",
+          "type": "video/mp4",
+          "media": "(min-width: 801px)",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "https://media.vermillionaurora.com/images/products/kihei-hope/kihei-hope-paintings-720-6fc5d411.mp4",
+          "type": "video/mp4",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "label": "Video: Sunset at Kihei on Maui and another painting in a living room"
+    }
+  },
+  {
+    "id": "hope-the-vermillion-aurora",
+    "slug": "hope-the-vermillion-aurora",
+    "type": "painting",
+    "title": "Hope, the Vermillion Aurora",
+    "description": "Hope, the Vermillion Aurora by TJ Murphy. Watercolor pastel. Available.",
+    "eyebrow": "Watercolor pastel",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "available",
+      "price": {
+        "amount": "2000.00",
+        "currency": "USD"
+      }
+    },
+    "medium": "Watercolor pastel",
+    "surface": null,
+    "year": 2023,
+    "framing": null,
+    "dimensions": {
+      "width": 44,
+      "height": 22,
+      "unit": "in"
+    },
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [
+      "A face lifted into the light, ringed in orange and gold feathers, while rays break past the gray towers behind it. The dawn of Bitcoin is a bright orange sunrise for humanity: an answer to the financial oppression so many people live under, and the beginning of a new era of hope and prosperity. Watercolor pastel, 44 \u00d7 22 in, 2023."
+    ],
+    "storyHeading": null,
+    "inquiryHref": "/commissions/?buy=hope-the-vermillion-aurora#form",
+    "dimensionOrder": "width-height",
+    "image": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "checkout": {
+      "mode": "integrated",
+      "shipping": {
+        "length": 22,
+        "width": 4,
+        "height": 4,
+        "weight": 1.4375,
+        "packaging": "tube",
+        "insuranceRequested": false,
+        "verification": "estimated",
+        "notes": "Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz per 12 in of the derived tube length. Rounded up to a whole ounce. Confirm packed weight before buying a label."
+      }
+    },
+    "inquiry": {
+      "label": "Inquire about this painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/gallery/",
+      "label": "Back to gallery"
+    },
+    "gallery": [
+      {
+        "base": "/product-media/kihei-hope/room-1",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 2400,
+        "height": 1800,
+        "fallback": "/product-media/kihei-hope/room-1-1600.jpg",
+        "alt": "Hope, the Vermillion Aurora hanging with Sunset at Kihei on Maui in a living room",
+        "caption": "In my living room with the other painting"
+      },
+      {
+        "base": "/product-media/kihei-hope/room-2",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 2400,
+        "height": 1800,
+        "fallback": "/product-media/kihei-hope/room-2-1600.jpg",
+        "alt": "Hope, the Vermillion Aurora hanging with Sunset at Kihei on Maui in a living room",
+        "caption": "Hanging together: Sunset at Kihei on Maui and Hope, the Vermillion Aurora"
+      }
+    ],
+    "video": {
+      "caption": "The two paintings together in my living room (36 s, with sound).",
+      "poster": "/product-media/kihei-hope/video-poster-1920.webp",
+      "width": 1920,
+      "height": 1080,
+      "duration": 36,
+      "sources": [
+        {
+          "src": "https://media.vermillionaurora.com/images/products/kihei-hope/kihei-hope-paintings-1080-4a0193b7.mp4",
+          "type": "video/mp4",
+          "media": "(min-width: 801px)",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "https://media.vermillionaurora.com/images/products/kihei-hope/kihei-hope-paintings-720-6fc5d411.mp4",
+          "type": "video/mp4",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "label": "Video: Hope, the Vermillion Aurora and another painting in a living room"
     }
   },
   {

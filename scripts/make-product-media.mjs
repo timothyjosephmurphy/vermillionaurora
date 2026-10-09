@@ -18,6 +18,10 @@ const SETS={
     ['new-painting-master.jpg','gallery-images/el-zonte-before-dawn.jpg'],
   ],rooms:['room-1.jpeg','room-2.jpeg','room-3.jpeg']},
   // Meditation at Denny Blaine, Sunrise in El Zonte (Large) and Moonrise Over the Cascades, photographed together.
+  'kihei-hope':{mains:[
+    ['sunset-at-kihei-on-maui-master.jpg','gallery-images/sunset-at-kihei-on-maui.jpg'],
+    ['hope-the-vermillion-aurora-master.jpg','gallery-images/hope-the-vermillion-aurora.jpg'],
+  ],rooms:['room-1.jpeg','room-2.jpeg']},
   'denny-blaine-el-zonte-cascades':{mains:[
     ['meditation-at-denny-blaine-master.jpg','gallery-images/meditation-at-denny-blaine.jpg'],
     ['sunrise-in-el-zonte-large-master.jpg','gallery-images/sunrise-in-el-zonte-large.jpg'],
