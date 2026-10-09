@@ -7,12 +7,16 @@ import ExhibitionMap from '../components/ExhibitionMap.astro';
 import { byId, catalogVersion, urlFor, priceLabel, statusLabel } from '../../catalog/catalog.mjs';
 import collections from '../../catalog/collections.json';
 const homePaintings=collections.home.filter(entry=>entry.variant==='carousel').map(entry=>byId[entry.product]).filter(product=>product?.type==='painting');
-const availablePaintings=homePaintings.filter(product=>['available','inquiry'].includes(product.listing?.status));
+// Featured works: highest original price first, ties by title; prints-only paintings last by lowest print price.
+const originalPrice=product=>{const amount=Number(product.listing?.price?.amount);return amount>0?amount:null;};
+const byFeaturedPrice=(a,b)=>{const pa=originalPrice(a),pb=originalPrice(b);if(pa!==null||pb!==null){if(pa===null)return 1;if(pb===null)return -1;if(pa!==pb)return pb-pa;}else{const qa=lowestPrintPrice(a)??Infinity,qb=lowestPrintPrice(b)??Infinity;if(qa!==qb)return qa-qb;}return a.title.localeCompare(b.title,'en');};
+const availablePaintings=homePaintings.filter(product=>['available','inquiry'].includes(product.listing?.status)).sort(byFeaturedPrice);
+// No item limit: every qualifying home painting is shown in its carousel.
 const collectorPaintings=homePaintings.filter(product=>!['available','inquiry'].includes(product.listing?.status));
-const collectorPreview=collectorPaintings.slice(0,8);
+const collectorPreview=collectorPaintings;
 const featured=availablePaintings[0]||homePaintings[0];
 import { person, website, ld } from '../data/structured-data.mjs';
-import { printsFromLabel, showBuy } from '../data/card-commerce.mjs';
+import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerce.mjs';
 ---
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
