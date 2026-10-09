@@ -6002,11 +6002,11 @@
     }
   },
   {
-    "id": "cormorant-over-puget-sound",
-    "slug": "cormorant-over-puget-sound",
+    "id": "cormorant-presiding-over-sunset-on-puget-sound",
+    "slug": "cormorant-presiding-over-sunset-on-puget-sound",
     "type": "painting",
-    "title": "Cormorant over Puget Sound",
-    "description": "Cormorant over Puget Sound by TJ Murphy. Prints of a mural in a private garden; the original is not for sale.",
+    "title": "Cormorant Presiding over Sunset on Puget Sound",
+    "description": "Cormorant Presiding over Sunset on Puget Sound by TJ Murphy. Prints of a garden mural in Seattle; the original is not for sale.",
     "eyebrow": "Mural",
     "artist": "TJ Murphy",
     "listing": {
@@ -6022,6 +6022,10 @@
       {
         "label": "Original",
         "value": "Mural in a private garden"
+      },
+      {
+        "label": "Location",
+        "value": "Seattle, Washington"
       }
     ],
     "story": [
@@ -6032,8 +6036,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/cormorant-over-puget-sound.jpg",
-      "alt": "Cormorant over Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
-      "caption": "Cormorant over Puget Sound"
+      "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
+      "caption": "Cormorant Presiding over Sunset on Puget Sound"
     },
     "checkout": {
       "mode": "inquiry"
