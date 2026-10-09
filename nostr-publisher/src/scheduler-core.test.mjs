@@ -45,6 +45,14 @@ test('El Zonte keeps its id (at most one El Zonte note) and moved from Oct 8, 11
   assert.ok(!posts.some(post => post.scheduledAt.startsWith('2026-10-08')));
 });
 
+test('Moonrise Over the Cascades keeps its id and Oct 24 slot, with the renamed text, new image and one product link', () => {
+  const moonrise = posts.find(post => post.id === 'campaign-moonrise-north-cascades-2026-10-24');
+  assert.equal(moonrise.scheduledAt, '2026-10-24T10:00:00-07:00');
+  assert.equal(moonrise.text, 'Moonrise Over the Cascades. Dark firs, a mountain lake, and a road of moonlight across the water. Watercolor pastel, 12 × 23 in. The original is available, $500, and prints start at $35: https://tjm.art/products/painting-moonlit-water/');
+  assert.equal(moonrise.imageUrl, 'https://tjm.art/gallery-images/moonrise-over-the-cascades.jpg');
+  assert.equal(eventContent(moonrise), `${moonrise.text}\n\n${moonrise.imageUrl}`);
+});
+
 test('after deploy: published entries never repeat and nothing publishes before its slot', () => {
   const activatedAt = Date.parse('2026-10-03T20:00:00Z');
   const delivered = new Set([...PUBLISHED, testPost.id]);
