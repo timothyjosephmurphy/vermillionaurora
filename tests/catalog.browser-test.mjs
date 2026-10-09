@@ -83,8 +83,8 @@ try {
  await page.locator('#available-only').uncheck();assert(await page.locator('.exhibition-viewer').isVisible());
  await page.goto(origin+'/');await page.waitForFunction(()=>document.querySelector('.available-paintings-carousel .ex-track').children.length===0);
  const availableCount=collections.home.filter(e=>e.variant==='carousel'&&['available','inquiry'].includes(byId[e.product].listing?.status)).length;
- const collectorPreview=Math.min(8,collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).length);
- // Live availability moves sold available cards into the collectors track; preview cap only limits the static sold set.
+ const collectorPreview=collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).length;
+ // Live availability moves sold available cards into the collectors track; Collector's Items has no item limit.
  assert.equal(await page.locator('.collector-items-carousel .product-card').count(),collectorPreview+availableCount);
  assert.equal(await page.locator('.collector-archive-link').count(),0);
  assert(await page.locator('.painting-discovery-actions a.button[href="/gallery/"]').count());

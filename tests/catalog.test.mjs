@@ -6,6 +6,7 @@ import {products,collections,byId,catalogVersion,validateCatalog,priceLabel,dime
 import {estimatePaperParcelWeightLb} from '../catalog/shipping-estimates.mjs';
 import checkout,{catalogVersion as workerVersion} from '../cloudflare/checkout-catalog.mjs';
 import {inventoryStatus} from '../cloudflare/inventory-api.mjs';
+import {lowestPrintPrice} from '../src/data/card-commerce.mjs';
 test('every product renders at its stable URL with matching content and checkout price',()=>{
  assert.equal(catalogVersion,workerVersion);
  for(const p of products){const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));assert.equal($('h1').text(),p.title);assert.equal($('meta[name=catalog-version]').attr('content'),catalogVersion);assert.equal($('link[rel=canonical]').attr('href'),`https://tjm.art/products/${p.slug}/`);for(const paragraph of p.story)assert.ok($('main').text().includes(paragraph),p.slug);if(p.image)assert.equal(($('main img, main svg[data-image-src]').first().attr('data-image-src') || $('main img, main svg[data-image-src]').first().attr('src')),p.image.src);if(checkout[p.id]){assert.equal(checkout[p.id].amount,p.listing.price.amount);assert.equal($('.product-detail-price').text(),priceLabel(p));}}
@@ -14,11 +15,16 @@ test('gallery rows and shared cards use the catalog and preserve collection orde
  for(const [key,path] of Object.entries({home:'index.html',gallery:'gallery/index.html',paul:'exhibitions/paul-murphy/index.html',chase:'exhibitions/chase-toole/index.html',gavin:'exhibitions/gavin-robertson/index.html'})){
  const $=load(fs.readFileSync(`dist/${path}`,'utf8'));const expected=collections[key].filter(e=>byId[e.product].type==='painting').map(e=>e.product);
  if(key==='home'){
-  const available=collections.home.filter(e=>e.variant==='carousel'&&['available','inquiry'].includes(byId[e.product].listing?.status)).map(e=>e.product);
+  // Featured works: every qualifying painting, highest original price first, ties by title; prints-only last by lowest print price.
+  const price=id=>Number(byId[id].listing?.price?.amount)||null;
+  const available=collections.home.filter(e=>e.variant==='carousel'&&['available','inquiry'].includes(byId[e.product].listing?.status)).map(e=>e.product)
+   .sort((a,b)=>(price(a)===null)-(price(b)===null)||(price(b)??0)-(price(a)??0)||(price(a)===null?(lowestPrintPrice(byId[a])??Infinity)-(lowestPrintPrice(byId[b])??Infinity):0)||byId[a].title.localeCompare(byId[b].title,'en'));
+  // Collector's Items: no item limit, every qualifying painting in collection order.
   const collectors=collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).map(e=>e.product);
-  const collectorPreview=collectors.slice(0,8);
   assert.deepEqual($('.available-paintings-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),available);
-  assert.deepEqual($('.collector-items-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),collectorPreview);
+  assert.deepEqual($('.collector-items-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),collectors);
+  const prices=$('.available-paintings-carousel [data-product-id]').map((i,e)=>price($(e).attr('data-product-id'))).get().filter(Boolean);
+  assert.deepEqual(prices,[...prices].sort((a,b)=>b-a),'featured works sorted by original price, highest first');
   assert.equal($('.available-paintings-carousel [data-product-id]').length+collectors.length,expected.length);
   assert.equal($('.collector-archive-link').length,0);
   assert.ok($('.painting-discovery-actions a.button[href="/gallery/"]').length);
@@ -203,8 +209,6 @@ test('homepage featured carousel includes each El Zonte painting exactly once wi
   assert.match(src,new RegExp(photo),`${id} must use the new photo (${photo}), got ${src.slice(0,160)}`);
   assert(!/shoreline-at-dusk-|sunrise-punto-el-zonte/.test(src),`${id} still references an old photo path`);
  }
- // Right after the newer Denny Blaine / El Zonte (Large) / Cascades batch.
- assert.deepEqual(trackIds.slice(5,8),['el-zonte-before-dawn','painting-shoreline-at-dusk','el-zonte-at-sunrise']);
 });
 test('homepage featured carousel leads with Sunrise in El Zonte (Large), Meditation at Denny Blaine and Moonrise Over the Cascades, once each, new photos',()=>{
  const trackIds=[];
@@ -219,8 +223,6 @@ test('homepage featured carousel leads with Sunrise in El Zonte (Large), Meditat
   assert.match(src,new RegExp(photo),`${id} must use the new photo (${photo}), got ${src.slice(0,160)}`);
   assert(!/moonlit-water/.test(src),`${id} still references the old Moonrise photo`);
  }
- // After Hope and Kihei in the available track.
- assert.deepEqual(trackIds.slice(2,5),Object.keys(want));
  // One product page each; Moonrise keeps its id and URL with the new title, size and prints.
  for(const id of Object.keys(want))assert.equal(products.filter(p=>p.id===id).length,1,id);
  const moon=products.find(p=>p.id==='painting-moonlit-water');
@@ -243,7 +245,9 @@ test('homepage featured carousel leads with Hope and Sunset at Kihei on Maui, on
   assert.match(src,new RegExp(photo),`${id} must use the new photo`);
   assert(!/red-horizon/.test(src),`${id} still uses the old Hawaii photo`);
  }
- assert.deepEqual(trackIds.slice(0,2),Object.keys(want));
+ // Featured works are sorted by price: Hope ($2,000) leads; Kihei ($1,000) comes before the $600 and $500 paintings.
+ assert.equal(trackIds[0],'hope-the-vermillion-aurora');
+ assert(trackIds.indexOf('painting-red-horizon')<trackIds.indexOf('meditation-at-denny-blaine'));
  const kihei=products.find(p=>p.id==='painting-red-horizon');
  assert.equal(kihei.title,'Sunset at Kihei on Maui');assert.deepEqual(kihei.dimensions,{width:23,height:44,unit:'in'});
  assert.equal(kihei.listing.price.amount,'1000.00');assert.equal(kihei.year,2022);
