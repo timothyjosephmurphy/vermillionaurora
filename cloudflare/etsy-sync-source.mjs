@@ -757,7 +757,7 @@ export default [
     "id": "meditation-at-denny-blaine",
     "title": "Meditation at Denny Blaine",
     "story": [
-      "Mount Rainier from Denny Blaine, burning orange and red in the low light, with the whole sky mirrored in the still water below. Watching Rainier from this shore is the meditation that got me painting: sitting and waiting while the color changes. Watercolor, 16 × 23 in, painted in Seattle."
+      "Mount Rainier from Denny Blaine, burning orange and red in the low light, with the whole sky mirrored in the still water below. Watching Rainier from this shore is the meditation that got me painting: sitting and waiting while the color changes. Watercolor, 16 × 23 in, 2022, painted in Seattle."
     ],
     "medium": "Watercolor",
     "dimensions": {
