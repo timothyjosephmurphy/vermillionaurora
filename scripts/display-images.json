@@ -242,6 +242,110 @@
    }
   ]
  },
+ "/gallery-images/burning-man-temple-2022-blue.jpg": {
+  "original": 332655,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/burning-man-temple-2022-blue-810d61d9f9-160.webp",
+    "bytes": 962
+   },
+   {
+    "w": 480,
+    "src": "/display/burning-man-temple-2022-blue-810d61d9f9-480.webp",
+    "bytes": 5368
+   },
+   {
+    "w": 960,
+    "src": "/display/burning-man-temple-2022-blue-810d61d9f9-960.webp",
+    "bytes": 19722
+   },
+   {
+    "w": 1600,
+    "src": "/display/burning-man-temple-2022-blue-810d61d9f9-1600.webp",
+    "bytes": 51502
+   }
+  ]
+ },
+ "/gallery-images/burning-man-temple-2022-daytime.jpg": {
+  "original": 350225,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/burning-man-temple-2022-daytime-bde1d6e4e4-160.webp",
+    "bytes": 1018
+   },
+   {
+    "w": 480,
+    "src": "/display/burning-man-temple-2022-daytime-bde1d6e4e4-480.webp",
+    "bytes": 5818
+   },
+   {
+    "w": 960,
+    "src": "/display/burning-man-temple-2022-daytime-bde1d6e4e4-960.webp",
+    "bytes": 21514
+   },
+   {
+    "w": 1600,
+    "src": "/display/burning-man-temple-2022-daytime-bde1d6e4e4-1600.webp",
+    "bytes": 64760
+   }
+  ]
+ },
+ "/gallery-images/burning-man-temple-2022-flame.jpg": {
+  "original": 440531,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/burning-man-temple-2022-flame-e2b7539ffd-160.webp",
+    "bytes": 1476
+   },
+   {
+    "w": 480,
+    "src": "/display/burning-man-temple-2022-flame-e2b7539ffd-480.webp",
+    "bytes": 8528
+   },
+   {
+    "w": 960,
+    "src": "/display/burning-man-temple-2022-flame-e2b7539ffd-960.webp",
+    "bytes": 41086
+   },
+   {
+    "w": 1600,
+    "src": "/display/burning-man-temple-2022-flame-e2b7539ffd-1600.webp",
+    "bytes": 111334
+   }
+  ]
+ },
+ "/gallery-images/burning-man-temple-2022-pink.jpg": {
+  "original": 411822,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/burning-man-temple-2022-pink-8c7eff3601-160.webp",
+    "bytes": 1454
+   },
+   {
+    "w": 480,
+    "src": "/display/burning-man-temple-2022-pink-8c7eff3601-480.webp",
+    "bytes": 8962
+   },
+   {
+    "w": 960,
+    "src": "/display/burning-man-temple-2022-pink-8c7eff3601-960.webp",
+    "bytes": 39644
+   },
+   {
+    "w": 1600,
+    "src": "/display/burning-man-temple-2022-pink-8c7eff3601-1600.webp",
+    "bytes": 97116
+   }
+  ]
+ },
  "/gallery-images/chef-in-white.jpg": {
   "original": 57204,
   "width": 360,
@@ -292,6 +396,106 @@
     "w": 724,
     "src": "/display/coined-in-watercolor-film-poster-7c882f193a-724.webp",
     "bytes": 68506
+   }
+  ]
+ },
+ "/gallery-images/commissioned-portrait-1.jpg": {
+  "original": 333730,
+  "width": 642,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/commissioned-portrait-1-590ba3e442-160.webp",
+    "bytes": 7718
+   },
+   {
+    "w": 480,
+    "src": "/display/commissioned-portrait-1-590ba3e442-480.webp",
+    "bytes": 59586
+   },
+   {
+    "w": 642,
+    "src": "/display/commissioned-portrait-1-590ba3e442-642.webp",
+    "bytes": 97958
+   }
+  ]
+ },
+ "/gallery-images/commissioned-portrait-2.jpg": {
+  "original": 330903,
+  "width": 642,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/commissioned-portrait-2-f4261c31d4-160.webp",
+    "bytes": 7252
+   },
+   {
+    "w": 480,
+    "src": "/display/commissioned-portrait-2-f4261c31d4-480.webp",
+    "bytes": 62026
+   },
+   {
+    "w": 642,
+    "src": "/display/commissioned-portrait-2-f4261c31d4-642.webp",
+    "bytes": 103140
+   }
+  ]
+ },
+ "/gallery-images/commissioned-portrait-3.jpg": {
+  "original": 80434,
+  "width": 302,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/commissioned-portrait-3-e13e1bee9a-160.webp",
+    "bytes": 7322
+   },
+   {
+    "w": 302,
+    "src": "/display/commissioned-portrait-3-e13e1bee9a-302.webp",
+    "bytes": 21430
+   }
+  ]
+ },
+ "/gallery-images/commissioned-portrait-4.jpg": {
+  "original": 70636,
+  "width": 302,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/commissioned-portrait-4-28f07bbdf1-160.webp",
+    "bytes": 5976
+   },
+   {
+    "w": 302,
+    "src": "/display/commissioned-portrait-4-28f07bbdf1-302.webp",
+    "bytes": 18286
+   }
+  ]
+ },
+ "/gallery-images/cormorant-over-puget-sound.jpg": {
+  "original": 523335,
+  "width": 2250,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/cormorant-over-puget-sound-0290e7844c-160.webp",
+    "bytes": 1700
+   },
+   {
+    "w": 480,
+    "src": "/display/cormorant-over-puget-sound-0290e7844c-480.webp",
+    "bytes": 7974
+   },
+   {
+    "w": 960,
+    "src": "/display/cormorant-over-puget-sound-0290e7844c-960.webp",
+    "bytes": 35124
+   },
+   {
+    "w": 1600,
+    "src": "/display/cormorant-over-puget-sound-0290e7844c-1600.webp",
+    "bytes": 123308
    }
   ]
  },
@@ -602,6 +806,32 @@
     "w": 1060,
     "src": "/display/honeybadger-and-cub-ae2a98cf59-1060.webp",
     "bytes": 178446
+   }
+  ]
+ },
+ "/gallery-images/hope-the-vermillion-aurora.jpg": {
+  "original": 334964,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/hope-the-vermillion-aurora-856a57b627-160.webp",
+    "bytes": 2394
+   },
+   {
+    "w": 480,
+    "src": "/display/hope-the-vermillion-aurora-856a57b627-480.webp",
+    "bytes": 12578
+   },
+   {
+    "w": 960,
+    "src": "/display/hope-the-vermillion-aurora-856a57b627-960.webp",
+    "bytes": 38378
+   },
+   {
+    "w": 1600,
+    "src": "/display/hope-the-vermillion-aurora-856a57b627-1600.webp",
+    "bytes": 82328
    }
   ]
  },
@@ -1000,6 +1230,32 @@
    }
   ]
  },
+ "/gallery-images/sunset-at-kihei-on-maui.jpg": {
+  "original": 458722,
+  "width": 1176,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/sunset-at-kihei-on-maui-695a8d0994-160.webp",
+    "bytes": 6818
+   },
+   {
+    "w": 480,
+    "src": "/display/sunset-at-kihei-on-maui-695a8d0994-480.webp",
+    "bytes": 50562
+   },
+   {
+    "w": 960,
+    "src": "/display/sunset-at-kihei-on-maui-695a8d0994-960.webp",
+    "bytes": 165144
+   },
+   {
+    "w": 1176,
+    "src": "/display/sunset-at-kihei-on-maui-695a8d0994-1176.webp",
+    "bytes": 226538
+   }
+  ]
+ },
  "/gallery-images/sunset-reflection.jpg": {
   "original": 45280,
   "width": 360,
@@ -1123,6 +1379,32 @@
     "w": 1046,
     "src": "/display/warszawska-syrenka-34226c70a3-1046.webp",
     "bytes": 254142
+   }
+  ]
+ },
+ "/gallery-images/wedding-portrait-with-dog.jpg": {
+  "original": 891656,
+  "width": 1550,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/wedding-portrait-with-dog-dece50ffe2-160.webp",
+    "bytes": 7160
+   },
+   {
+    "w": 480,
+    "src": "/display/wedding-portrait-with-dog-dece50ffe2-480.webp",
+    "bytes": 72718
+   },
+   {
+    "w": 960,
+    "src": "/display/wedding-portrait-with-dog-dece50ffe2-960.webp",
+    "bytes": 288308
+   },
+   {
+    "w": 1550,
+    "src": "/display/wedding-portrait-with-dog-dece50ffe2-1550.webp",
+    "bytes": 582498
    }
   ]
  },

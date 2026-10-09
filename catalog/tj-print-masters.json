@@ -19,12 +19,9 @@
   },
   {
     "id": "painting-red-horizon",
-    "title": "Maui Sunset from Kihei",
-    "sha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
-    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
-    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
-    "xref": 805,
-    "page": 57
+    "title": "Sunset at Kihei on Maui",
+    "local": "static/print-masters/d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1.jpg",
+    "sha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1"
   },
   {
     "id": "painting-shoreline-at-dusk",
@@ -224,5 +221,17 @@
     "title": "Moonrise Over the Cascades",
     "sha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
     "local": "static/print-masters/370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d.jpg"
+  },
+  {
+    "id": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora",
+    "sha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "local": "static/print-masters/d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d.jpg"
+  },
+  {
+    "id": "cormorant-presiding-over-sunset-on-puget-sound",
+    "title": "Cormorant Presiding over Sunset on Puget Sound",
+    "sha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "local": "static/print-masters/622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd.jpg"
   }
 ]

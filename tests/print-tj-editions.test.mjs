@@ -5,8 +5,8 @@ import {createHash} from 'node:crypto';
 import config from '../catalog/prints.json' with {type:'json'};
 import recipes from '../catalog/tj-print-masters.json' with {type:'json'};
 import {readyPrints} from '../catalog/prints.mjs';
-test('All 22 reviewed TJ masters have native-resolution editions and three frames at every approved size',async()=>{
-  assert.equal(recipes.length,22);
+test('All 23 reviewed TJ masters have native-resolution editions and three frames at every approved size',async()=>{
+  assert.equal(recipes.length,24);
   let sizes=0;
   for(const recipe of recipes){
     const art=config.artworks[recipe.id],base=Object.values(readyPrints).filter(p=>p.productId===recipe.id&&!p.mat&&!p.frame);
@@ -23,5 +23,5 @@ test('All 22 reviewed TJ masters have native-resolution editions and three frame
       }
     }
   }
-  assert.equal(sizes,52);
+  assert.equal(sizes,59);
 });

@@ -1,6 +1,14 @@
 {
   "home": [
     {
+      "product": "hope-the-vermillion-aurora",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-red-horizon",
+      "variant": "carousel"
+    },
+    {
       "product": "sunrise-in-el-zonte-large",
       "variant": "carousel"
     },
@@ -33,11 +41,27 @@
       "variant": "carousel"
     },
     {
-      "product": "painting-red-horizon",
+      "product": "painting-clouds-over-water",
       "variant": "carousel"
     },
     {
-      "product": "painting-clouds-over-water",
+      "product": "burning-man-temple-2022-blue",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-pink",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-flame",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-daytime",
+      "variant": "carousel"
+    },
+    {
+      "product": "cormorant-presiding-over-sunset-on-puget-sound",
       "variant": "carousel"
     },
     {
@@ -183,6 +207,10 @@
       "variant": "gallery"
     },
     {
+      "product": "hope-the-vermillion-aurora",
+      "variant": "gallery"
+    },
+    {
       "product": "michael-and-katie-in-yelapa",
       "variant": "gallery"
     },
@@ -296,6 +324,26 @@
     },
     {
       "product": "painting-lightburst",
+      "variant": "gallery"
+    },
+    {
+      "product": "burning-man-temple-2022-blue",
+      "variant": "gallery"
+    },
+    {
+      "product": "burning-man-temple-2022-pink",
+      "variant": "gallery"
+    },
+    {
+      "product": "burning-man-temple-2022-flame",
+      "variant": "gallery"
+    },
+    {
+      "product": "burning-man-temple-2022-daytime",
+      "variant": "gallery"
+    },
+    {
+      "product": "cormorant-presiding-over-sunset-on-puget-sound",
       "variant": "gallery"
     }
   ],

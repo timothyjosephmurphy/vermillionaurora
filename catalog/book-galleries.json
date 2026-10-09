@@ -218,7 +218,7 @@
       "heightPx": 611,
       "masterSha256": "baf1acc5494064f291b960200e6e98dd612b98ecdde4424810941b8d69c3c0e2",
       "captions": [],
-      "title": "Untitled — Foreword, page 4",
+      "title": "Untitled \u2014 Foreword, page 4",
       "measurements": [],
       "sectionIds": [],
       "spread": false,
@@ -261,7 +261,7 @@
       ],
       "title": "Sunrise on Puget Sound",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -312,7 +312,7 @@
       ],
       "title": "Sunrise on Tahoma from Denny Blaine with meditation self-portrait",
       "measurements": [
-        "15 × 45"
+        "15 \u00d7 45"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -364,7 +364,7 @@
       ],
       "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
       "measurements": [
-        "45 × 72"
+        "45 \u00d7 72"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -416,7 +416,7 @@
       ],
       "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine",
       "measurements": [
-        "45 × 72"
+        "45 \u00d7 72"
       ],
       "sectionIds": [],
       "spread": true,
@@ -466,7 +466,7 @@
       ],
       "title": "Sunrise on Tahoma from Denny Blaine with Eagle catching fish",
       "measurements": [
-        "36 × 72"
+        "36 \u00d7 72"
       ],
       "sectionIds": [],
       "spread": true,
@@ -515,7 +515,7 @@
       ],
       "title": "Sunrise on Tahoma with motorcycles",
       "measurements": [
-        "24 × 45"
+        "24 \u00d7 45"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -565,7 +565,7 @@
       ],
       "title": "Mt. Shuksan from the Mt. Baker Trail",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -616,7 +616,7 @@
       ],
       "title": "Waterfall in Olympic Peninsula",
       "measurements": [
-        "24 × 8"
+        "24 \u00d7 8"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -667,7 +667,7 @@
       ],
       "title": "Pagoda in Botanical Garden",
       "measurements": [
-        "24 × 8"
+        "24 \u00d7 8"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -712,7 +712,7 @@
       "heightPx": 1085,
       "masterSha256": "6b95bf3e5f22e900d27f21066eac76b12c07c4595d4312229aef007ddff59268",
       "captions": [],
-      "title": "Untitled — Pacific North West, page 23",
+      "title": "Untitled \u2014 Pacific North West, page 23",
       "measurements": [],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -752,7 +752,7 @@
       "heightPx": 1072,
       "masterSha256": "0f9a7c94447d440301478072eabbd7ab0954cc44232678ad969ce3a05b92fdf1",
       "captions": [],
-      "title": "Untitled — Pacific North West, page 23 — 2",
+      "title": "Untitled \u2014 Pacific North West, page 23 \u2014 2",
       "measurements": [],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -797,7 +797,7 @@
       ],
       "title": "Sunset in the Strait of Juan de Fuca, Sucia Island",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -847,7 +847,7 @@
       ],
       "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -897,7 +897,7 @@
       ],
       "title": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -947,7 +947,7 @@
       ],
       "title": "Sunrise at Bass Coast, Merritt, BC 2",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -997,7 +997,7 @@
       ],
       "title": "Sunrise at Bass Coast, Merritt, BC 1",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1047,7 +1047,7 @@
       ],
       "title": "Dawn on Mt. Vesper from Denny Blaine",
       "measurements": [
-        "24 × 45"
+        "24 \u00d7 45"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -1097,7 +1097,7 @@
       ],
       "title": "Moonrise Over the Cascades",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -1147,7 +1147,7 @@
       ],
       "title": "Lake in the North Cascades",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-pacific-north-west"
@@ -1197,7 +1197,7 @@
       ],
       "title": "Dawn in hammock at sunset in Zihuatanejo",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1247,7 +1247,7 @@
       ],
       "title": "Sunrise in Puerto Vallarta",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1297,7 +1297,7 @@
       ],
       "title": "Katie, Julie, and Dawn in Zihuatanejo at Sunset",
       "measurements": [
-        "48 × 24"
+        "48 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1347,7 +1347,7 @@
       ],
       "title": "Dawn and I in San Pancho",
       "measurements": [
-        "48 × 24"
+        "48 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1398,7 +1398,7 @@
       ],
       "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
       "measurements": [
-        "48 × 24"
+        "48 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1459,7 +1459,7 @@
       "heightPx": 623,
       "masterSha256": "fd84f9a3ae649d5a20bb6272d4f1725d23e3e77d471567582b81d2c0723b364d",
       "captions": [],
-      "title": "Untitled — El Salvador, page 38",
+      "title": "Untitled \u2014 El Salvador, page 38",
       "measurements": [],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1504,7 +1504,7 @@
       ],
       "title": "Sunrise from Punta El Zonte Hostel",
       "measurements": [
-        "36 × 45"
+        "36 \u00d7 45"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1554,7 +1554,7 @@
       ],
       "title": "Sunset in El Tunco, El Salvador",
       "measurements": [
-        "8 × 15"
+        "8 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1604,7 +1604,7 @@
       ],
       "title": "Sunrise in El Zonte , El Salvador",
       "measurements": [
-        "25 × 15"
+        "25 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1652,9 +1652,9 @@
         "Sunrise from Punta El Zonte Hostel",
         "24x45"
       ],
-      "title": "Sunrise from Punta El Zonte Hostel — 2",
+      "title": "Sunrise from Punta El Zonte Hostel \u2014 2",
       "measurements": [
-        "24 × 45"
+        "24 \u00d7 45"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1704,7 +1704,7 @@
       ],
       "title": "Sunset in El Zonte, El Salvador",
       "measurements": [
-        "24 × 45"
+        "24 \u00d7 45"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -1877,7 +1877,7 @@
       ],
       "title": "El Salvador",
       "measurements": [
-        "25 × 15"
+        "25 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2006,7 +2006,7 @@
       ],
       "title": "Sunset on Camps Bay from Lion's Head",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2056,7 +2056,7 @@
       ],
       "title": "Sunset on Lion's Head",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2106,7 +2106,7 @@
       ],
       "title": "Sunrise on Table Mountain",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2156,7 +2156,7 @@
       ],
       "title": "Sunset on the Twelve Apostles",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2206,7 +2206,7 @@
       ],
       "title": "Table Mountain",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2256,7 +2256,7 @@
       ],
       "title": "Sedona: Bell Rock 2",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2306,7 +2306,7 @@
       ],
       "title": "Sedona: Bell Rock 1",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2356,7 +2356,7 @@
       ],
       "title": "Sedona Monuments",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2441,7 +2441,7 @@
       "heightPx": 3758,
       "masterSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
       "captions": [],
-      "title": "Hawaii",
+      "title": "Sunset at Kihei on Maui",
       "measurements": [],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2486,7 +2486,7 @@
       ],
       "title": "Sunset in Greece, Photo Credit: Chelsea Murphy",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2531,7 +2531,7 @@
       "heightPx": 2551,
       "masterSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
       "captions": [],
-      "title": "Untitled — Assorted Adventures, page 59",
+      "title": "Untitled \u2014 Assorted Adventures, page 59",
       "measurements": [],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2576,7 +2576,7 @@
       ],
       "title": "Rice paddies in Vietnam, Photo Credit: Daniel Goldsmith",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2626,7 +2626,7 @@
       ],
       "title": "Vision of Ukraine at Peace",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2676,7 +2676,7 @@
       ],
       "title": "The Mother of Kiev",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2726,7 +2726,7 @@
       ],
       "title": "Girl Wearing Flower Crown",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2777,7 +2777,7 @@
       ],
       "title": "Inside album cover for Yes: Close to the Edge",
       "measurements": [
-        "24 × 45"
+        "24 \u00d7 45"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2828,7 +2828,7 @@
       ],
       "title": "Moonrise in Santa Monica, photo credit: Paul Murphy",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -2878,7 +2878,7 @@
       ],
       "title": "Sunrise in Traverse City, photo credit: Paul Murphy",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-landscapes-travels"
@@ -3048,7 +3048,7 @@
       ],
       "title": "Myself, my mother Ruth, my grandpa Howard",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -3112,7 +3112,7 @@
       ],
       "title": "Me, Chelsea, Grandpa",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -3176,7 +3176,7 @@
       ],
       "title": "Myself on fire",
       "measurements": [
-        "5 × 4"
+        "5 \u00d7 4"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -3240,7 +3240,7 @@
       ],
       "title": "Myself in a Tam",
       "measurements": [
-        "8 × 6"
+        "8 \u00d7 6"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -3304,7 +3304,7 @@
       ],
       "title": "Sunrise on Playa",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -3415,7 +3415,7 @@
       ],
       "title": "The Bounty of Satoshi: Wonder",
       "measurements": [
-        "45 × 24"
+        "45 \u00d7 24"
       ],
       "sectionIds": [],
       "spread": false,
@@ -3477,7 +3477,7 @@
       ],
       "title": "The Bounty of Satoshi: Achievement",
       "measurements": [
-        "45 × 24"
+        "45 \u00d7 24"
       ],
       "sectionIds": [],
       "spread": false,
@@ -3539,7 +3539,7 @@
       ],
       "title": "Rescued Hummingbird",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -3589,7 +3589,7 @@
       ],
       "title": "Fiona and Joe in Austin",
       "measurements": [
-        "11.25 × 12"
+        "11.25 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -3639,7 +3639,7 @@
       ],
       "title": "Mathew \"Fu\" Furst, owner of Grandma's House in Denver",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -3729,7 +3729,7 @@
       ],
       "title": "Lisa on the floor",
       "measurements": [
-        "24 × 35"
+        "24 \u00d7 35"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -3774,7 +3774,7 @@
       "heightPx": 1519,
       "masterSha256": "f39b0d49840244656df0881d44db277d047492eb54412c0fd66303cc5af3455c",
       "captions": [],
-      "title": "Daniel — portrait 1",
+      "title": "Daniel \u2014 portrait 1",
       "measurements": [],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -3814,7 +3814,7 @@
       "heightPx": 760,
       "masterSha256": "42db213ea28218f502dc7699f656ffc66620430a24732fe7802a4465a6167e70",
       "captions": [],
-      "title": "Daniel — portrait 2",
+      "title": "Daniel \u2014 portrait 2",
       "measurements": [],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -3859,7 +3859,7 @@
       ],
       "title": "Hank",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -3909,7 +3909,7 @@
       ],
       "title": "Steve",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -3959,7 +3959,7 @@
       ],
       "title": "Colin and Craig",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4009,7 +4009,7 @@
       ],
       "title": "Laura in Maui at Halehaku Point",
       "measurements": [
-        "12 × 12"
+        "12 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4059,7 +4059,7 @@
       ],
       "title": "Laura in Maui at Ahihi Kinau natural reserve",
       "measurements": [
-        "12 × 12"
+        "12 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4105,11 +4105,11 @@
       "masterSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
       "captions": [
         "24 x 35",
-        "Laura and Cafécito on paddleboard in Lake Washington"
+        "Laura and Caf\u00e9cito on paddleboard in Lake Washington"
       ],
-      "title": "Laura and Cafécito on paddleboard in Lake Washington",
+      "title": "Laura and Caf\u00e9cito on paddleboard in Lake Washington",
       "measurements": [
-        "24 × 35"
+        "24 \u00d7 35"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4128,7 +4128,7 @@
           "xref": 202,
           "captions": [
             "24 x 35",
-            "Laura and Cafécito on paddleboard in Lake Washington"
+            "Laura and Caf\u00e9cito on paddleboard in Lake Washington"
           ],
           "measurements": [
             "24 x 35"
@@ -4154,9 +4154,9 @@
       "heightPx": 3229,
       "masterSha256": "ecb81d17191279e61bd833cd5ae946aef1a66692e5d0d33e38684f9ed682cf0e",
       "captions": [],
-      "title": "Catherine dance series — study 1",
+      "title": "Catherine dance series \u2014 study 1",
       "measurements": [
-        "96 × 24 (complete series)"
+        "96 \u00d7 24 (complete series)"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4198,9 +4198,9 @@
       "captions": [
         "Catherine dance series, Photo Credit Jeff Diffner"
       ],
-      "title": "Catherine dance series — study 2",
+      "title": "Catherine dance series \u2014 study 2",
       "measurements": [
-        "96 × 24 (complete series)"
+        "96 \u00d7 24 (complete series)"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4242,9 +4242,9 @@
       "heightPx": 3388,
       "masterSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
       "captions": [],
-      "title": "Catherine dance series — study 3",
+      "title": "Catherine dance series \u2014 study 3",
       "measurements": [
-        "96 × 24 (complete series)"
+        "96 \u00d7 24 (complete series)"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4286,9 +4286,9 @@
       "captions": [
         "96 x 24"
       ],
-      "title": "Catherine dance series — study 4",
+      "title": "Catherine dance series \u2014 study 4",
       "measurements": [
-        "96 × 24 (complete series)"
+        "96 \u00d7 24 (complete series)"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4337,7 +4337,7 @@
       ],
       "title": "Catherine",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4387,7 +4387,7 @@
       ],
       "title": "Catherine and Owen",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4437,7 +4437,7 @@
       ],
       "title": "Dawn and her father Pete at Burning Man",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4487,7 +4487,7 @@
       ],
       "title": "Dawn in her Flight Helmet",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4537,7 +4537,7 @@
       ],
       "title": "Dawn at Bass Coast",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4587,7 +4587,7 @@
       ],
       "title": "Dawn Clowning",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4637,7 +4637,7 @@
       ],
       "title": "Dawn in Zihuatanejo",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4687,7 +4687,7 @@
       ],
       "title": "Kristine",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4737,7 +4737,7 @@
       ],
       "title": "MJ",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4787,7 +4787,7 @@
       ],
       "title": "Loree",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4837,7 +4837,7 @@
       ],
       "title": "Girl Tuning Guitar",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4887,7 +4887,7 @@
       ],
       "title": "John",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4937,7 +4937,7 @@
       ],
       "title": "Sergey winning at poker",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -4987,7 +4987,7 @@
       ],
       "title": "Sergey",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5037,7 +5037,7 @@
       ],
       "title": "Mikyla, Mandy, and Guin",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5087,7 +5087,7 @@
       ],
       "title": "Julia's baby shower",
       "measurements": [
-        "24 × 35"
+        "24 \u00d7 35"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5137,7 +5137,7 @@
       ],
       "title": "Michael and Katie in Yelapa",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5187,7 +5187,7 @@
       ],
       "title": "Charlie and Pepper's wedding",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5237,7 +5237,7 @@
       ],
       "title": "Jane and Sid in Zihuatanejo",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5287,7 +5287,7 @@
       ],
       "title": "Mike and Julie in Leon",
       "measurements": [
-        "12 × 24"
+        "12 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5337,7 +5337,7 @@
       ],
       "title": "Joaquim in Zihuatanejo",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5387,7 +5387,7 @@
       ],
       "title": "Sienna and Michael in Austin",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5437,7 +5437,7 @@
       ],
       "title": "Jasmine in Austin",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5487,7 +5487,7 @@
       ],
       "title": "Tianna and child in Austin",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5537,7 +5537,7 @@
       ],
       "title": "Brothers",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5587,7 +5587,7 @@
       ],
       "title": "Tiana and Michael at Bass Coast",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5637,7 +5637,7 @@
       ],
       "title": "Travis at Bass Coast",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5687,7 +5687,7 @@
       ],
       "title": "Devo at Bass Coast",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5737,7 +5737,7 @@
       ],
       "title": "Neil at Bass Coast",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5787,7 +5787,7 @@
       ],
       "title": "Michael at Bass Coast",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5837,7 +5837,7 @@
       ],
       "title": "Jennica at Bass Coast",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5887,7 +5887,7 @@
       ],
       "title": "Katie and Devo at Bass Coast",
       "measurements": [
-        "24 × 45"
+        "24 \u00d7 45"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5937,7 +5937,7 @@
       ],
       "title": "Izzy and Sienna in Austin",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-friends"
@@ -5987,7 +5987,7 @@
       ],
       "title": "Aunt Fran and Cousin Hillary",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-family"
@@ -6037,7 +6037,7 @@
       ],
       "title": "Grandpa Howard",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-family"
@@ -6087,7 +6087,7 @@
       ],
       "title": "Sister Chelsea and I",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-family"
@@ -6137,7 +6137,7 @@
       ],
       "title": "Cousin Tina and Aunt Michelle",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-family"
@@ -6187,7 +6187,7 @@
       ],
       "title": "Sister Claire",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-family"
@@ -6237,7 +6237,7 @@
       ],
       "title": "Brother Jack",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-family"
@@ -6287,7 +6287,7 @@
       ],
       "title": "Father Paul",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-family"
@@ -6337,7 +6337,7 @@
       ],
       "title": "Mother Ruth",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-family"
@@ -6382,7 +6382,7 @@
       "heightPx": 580,
       "masterSha256": "6fb8835ca17497c96bb3c06c5aafccdf9005a665731df1e2a248f0a9dc7691bc",
       "captions": [],
-      "title": "Untitled — Bitcoiners, page 50",
+      "title": "Untitled \u2014 Bitcoiners, page 50",
       "measurements": [],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6427,7 +6427,7 @@
       ],
       "title": "Nico @BITVOLT",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6477,7 +6477,7 @@
       ],
       "title": "Jimmy Song @jimmysong",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6527,7 +6527,7 @@
       ],
       "title": "Maya Parbhoe @MayaPar25",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6577,7 +6577,7 @@
       ],
       "title": "Marisa Angeli @MarisaJeanArt",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6627,7 +6627,7 @@
       ],
       "title": "Tomer Strolight @TomerStrolight",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6677,7 +6677,7 @@
       ],
       "title": "Valerie B Love @djvalerieblove",
       "measurements": [
-        "12 × 12"
+        "12 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6727,7 +6727,7 @@
       ],
       "title": "Nick Szabo @NickSzabo4",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6784,7 +6784,7 @@
       ],
       "title": "Michael Saylor @saylor",
       "measurements": [
-        "24 × 24"
+        "24 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6834,7 +6834,7 @@
       ],
       "title": "Walker @WalkerAmerica",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6884,7 +6884,7 @@
       ],
       "title": "Carla @carlabitcoin",
       "measurements": [
-        "15 × 24"
+        "15 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6934,7 +6934,7 @@
       ],
       "title": "Scott Dedels @LanternBitcoin",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -6984,7 +6984,7 @@
       ],
       "title": "Viv @btcviv",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7034,7 +7034,7 @@
       ],
       "title": "Peter St. Onge @profstonge",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7084,7 +7084,7 @@
       ],
       "title": "Alejandra Guajardo @MissBitcoin_sv",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7134,7 +7134,7 @@
       ],
       "title": "Brekkie @BVBTC meditating on uncut stone",
       "measurements": [
-        "15 × 12"
+        "15 \u00d7 12"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7184,7 +7184,7 @@
       ],
       "title": "Brekkie @BVBTC hoisting a sculpture in progress",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7234,7 +7234,7 @@
       ],
       "title": "Brekkie @BVBTC with polished Bitcoin B",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7284,7 +7284,7 @@
       ],
       "title": "Osisipho Filane @FilaneSisipho",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7334,7 +7334,7 @@
       ],
       "title": "Scarlette Melon @Scarlette_melon",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7384,7 +7384,7 @@
       ],
       "title": "Kushboo Kullar @DrKhushboo_K",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7432,9 +7432,9 @@
         "____",
         "12 x 15"
       ],
-      "title": "Untitled — Bitcoiners, page 64",
+      "title": "Untitled \u2014 Bitcoiners, page 64",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7484,7 +7484,7 @@
       ],
       "title": "Brekkie @BVBTC",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7534,7 +7534,7 @@
       ],
       "title": "Ser at Pacific Bitcoin Festival",
       "measurements": [
-        "24 × 15"
+        "24 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7584,7 +7584,7 @@
       ],
       "title": "Cory Klippsten @coryklippsten",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7629,7 +7629,7 @@
       "heightPx": 493,
       "masterSha256": "11c9c31cfaaaaca7be64a513ce2df05964d7dfc3b0af95799a9c74a87878a699",
       "captions": [],
-      "title": "Benny and Kermit, P, Culhane, Bob — portrait 1",
+      "title": "Benny and Kermit, P, Culhane, Bob \u2014 portrait 1",
       "measurements": [],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7669,7 +7669,7 @@
       "heightPx": 421,
       "masterSha256": "437d8283498a197e14058e6ab60235bce6323dd452373508ebec879cbc124ce5",
       "captions": [],
-      "title": "Benny and Kermit, P, Culhane, Bob — portrait 2",
+      "title": "Benny and Kermit, P, Culhane, Bob \u2014 portrait 2",
       "measurements": [],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7711,7 +7711,7 @@
       "captions": [
         "Benny and Kermit, P, Culhane, Bob"
       ],
-      "title": "Benny and Kermit, P, Culhane, Bob — portrait 3",
+      "title": "Benny and Kermit, P, Culhane, Bob \u2014 portrait 3",
       "measurements": [],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7755,9 +7755,9 @@
       "captions": [
         "12 x 15"
       ],
-      "title": "Benny and Kermit, P, Culhane, Bob — portrait 4",
+      "title": "Benny and Kermit, P, Culhane, Bob \u2014 portrait 4",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-bitcoiners"
@@ -7806,7 +7806,7 @@
       ],
       "title": "Myself",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -7855,7 +7855,7 @@
       ],
       "title": "Myself Painting on Mt Baker near Goat Lake",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -7904,7 +7904,7 @@
       ],
       "title": "Painting in Black Rock City",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -7954,7 +7954,7 @@
       ],
       "title": "Myself at Denny Blaine",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -8004,7 +8004,7 @@
       ],
       "title": "Meditating in Gas Works Park on Solstice 2016",
       "measurements": [
-        "12 × 15"
+        "12 \u00d7 15"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"
@@ -8054,7 +8054,7 @@
       ],
       "title": "Meditating at Denny Blaine on Solstice 2015",
       "measurements": [
-        "45 × 24"
+        "45 \u00d7 24"
       ],
       "sectionIds": [
         "watercolor-portraits-self-portraits"

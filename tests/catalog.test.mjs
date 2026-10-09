@@ -71,7 +71,7 @@ test('dimensioned available paintings receive parcels from the flat-at-12-inch r
  const missing=originals.filter(p=>!p.dimensions);
  assert.deepEqual(missing.map(p=>p.id),[]); // paul-murphy-painting-55 was the last one, measured at 12 × 10 in
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,55); // 52 before paul-murphy-painting-82 was removed, 51 after, 52 once paul-murphy-painting-55 was measured, 53 with El Zonte Before Dawn, 55 with Meditation at Denny Blaine and Sunrise in El Zonte (Large)
+ assert.equal(ready.length,56); // 52 before paul-murphy-painting-82 was removed, 51 after, 52 once paul-murphy-painting-55 was measured, 53 with El Zonte Before Dawn, 55 with Meditation at Denny Blaine and Sunrise in El Zonte (Large), 56 with Hope, the Vermillion Aurora
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
@@ -172,20 +172,22 @@ test('painting cards: price without "USD", "Prints from" the cheapest ready prin
 });
 test('painting pages render extra photos as thumbnails after the main image and an accessible product video',()=>{
  const withMedia=products.filter(p=>p.type==='painting'&&(p.gallery?.length||p.video));
- assert.deepEqual(withMedia.map(p=>p.id).sort(),['el-zonte-at-sunrise','el-zonte-before-dawn','meditation-at-denny-blaine','painting-moonlit-water','painting-shoreline-at-dusk','sunrise-in-el-zonte-large']);
+ assert.deepEqual(withMedia.map(p=>p.id).sort(),['el-zonte-at-sunrise','el-zonte-before-dawn','hope-the-vermillion-aurora','meditation-at-denny-blaine','painting-clouds-over-water','painting-emergence','painting-insect-garden','painting-moonlit-water','painting-red-horizon','painting-shoreline-at-dusk','painting-twin-dragons','sunrise-in-el-zonte-large','sunset-in-el-tunco-el-salvador','sunset-in-el-zonte-el-salvador']);
  for(const p of withMedia){
   const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));
   const thumbs=$('.product-media [data-product-thumbs] .product-thumb');
   assert.equal(thumbs.length,p.gallery.length+1,p.id);
   assert.equal(thumbs.first().attr('aria-pressed'),'true');
   assert.match(thumbs.first().attr('aria-label'),new RegExp(`^Show photo 1 of ${p.gallery.length+1}: `));
-  p.gallery.forEach((g,i)=>{const t=thumbs.eq(i+1);assert.equal(t.attr('data-alt'),g.alt);assert.ok(g.alt.startsWith(p.title));assert.equal(t.find('source[type="image/avif"]').length,1);assert.equal(t.find('source[type="image/webp"]').length,1);});
-  const video=$('.product-media video[data-product-video]');
-  assert.equal(video.length,1,p.id);
-  for(const attr of ['controls','playsinline'])assert.ok(video.attr(attr)!==undefined,attr);
-  assert.equal(video.attr('preload'),'metadata');assert.equal(video.attr('aria-label'),p.video.label);assert.equal(video.attr('poster'),p.video.poster);
-  assert.equal(video.attr('autoplay'),undefined);
-  assert.deepEqual(video.find('source').map((i,e)=>$(e).attr('src')).get(),p.video.sources.map(s=>s.src));
+  p.gallery.forEach((g,i)=>{const t=thumbs.eq(i+1);assert.equal(t.attr('data-alt'),g.alt);assert.ok(g.alt.startsWith(p.title)||g.alt==='El Zonte paintings by TJ Murphy hanging in a gallery',p.id+': '+g.alt);assert.equal(t.find('source[type="image/avif"]').length,1);assert.equal(t.find('source[type="image/webp"]').length,1);});
+  if(p.video){
+   const video=$('.product-media video[data-product-video]');
+   assert.equal(video.length,1,p.id);
+   for(const attr of ['controls','playsinline'])assert.ok(video.attr(attr)!==undefined,attr);
+   assert.equal(video.attr('preload'),'metadata');assert.equal(video.attr('aria-label'),p.video.label);assert.equal(video.attr('poster'),p.video.poster);
+   assert.equal(video.attr('autoplay'),undefined);
+   assert.deepEqual(video.find('source').map((i,e)=>$(e).attr('src')).get(),p.video.sources.map(s=>s.src));
+  } else assert.equal($('.product-media video[data-product-video]').length,0,p.id);
  }
 });
 test('homepage featured carousel includes each El Zonte painting exactly once with the new full-res photos',()=>{
@@ -202,7 +204,7 @@ test('homepage featured carousel includes each El Zonte painting exactly once wi
   assert(!/shoreline-at-dusk-|sunrise-punto-el-zonte/.test(src),`${id} still references an old photo path`);
  }
  // Right after the newer Denny Blaine / El Zonte (Large) / Cascades batch.
- assert.deepEqual(trackIds.slice(3,6),['el-zonte-before-dawn','painting-shoreline-at-dusk','el-zonte-at-sunrise']);
+ assert.deepEqual(trackIds.slice(5,8),['el-zonte-before-dawn','painting-shoreline-at-dusk','el-zonte-at-sunrise']);
 });
 test('homepage featured carousel leads with Sunrise in El Zonte (Large), Meditation at Denny Blaine and Moonrise Over the Cascades, once each, new photos',()=>{
  const trackIds=[];
@@ -217,7 +219,8 @@ test('homepage featured carousel leads with Sunrise in El Zonte (Large), Meditat
   assert.match(src,new RegExp(photo),`${id} must use the new photo (${photo}), got ${src.slice(0,160)}`);
   assert(!/moonlit-water/.test(src),`${id} still references the old Moonrise photo`);
  }
- assert.deepEqual(trackIds.slice(0,3),Object.keys(want));
+ // After Hope and Kihei in the available track.
+ assert.deepEqual(trackIds.slice(2,5),Object.keys(want));
  // One product page each; Moonrise keeps its id and URL with the new title, size and prints.
  for(const id of Object.keys(want))assert.equal(products.filter(p=>p.id===id).length,1,id);
  const moon=products.find(p=>p.id==='painting-moonlit-water');
@@ -226,4 +229,56 @@ test('homepage featured carousel leads with Sunrise in El Zonte (Large), Meditat
  const page=load(fs.readFileSync('dist/products/painting-moonlit-water/index.html','utf8'));
  assert.equal(page('h1').text(),'Moonrise Over the Cascades');
  assert(page('[data-print-options], [data-print-purchase], .print-options').length>0||/Prints from/.test(page.html()),'Moonrise page offers prints');
+});
+test('homepage featured carousel leads with Hope and Sunset at Kihei on Maui, once each, new photos',()=>{
+ const trackIds=[];
+ const $=load(fs.readFileSync('dist/index.html','utf8'));
+ $('[data-available-paintings] [data-product-id]').each((i,el)=>trackIds.push($(el).attr('data-product-id')));
+ const want={'hope-the-vermillion-aurora':'hope-the-vermillion-aurora','painting-red-horizon':'sunset-at-kihei-on-maui'};
+ for(const [id,photo] of Object.entries(want)){
+  assert.equal(trackIds.filter(x=>x===id).length,1,`${id} should appear exactly once`);
+  const card=$(`[data-available-paintings] [data-product-id="${id}"]`);
+  const img=card.find('img');
+  const src=`${img.attr('src')||''} ${img.attr('srcset')||''} ${img.attr('data-image-src')||''}`;
+  assert.match(src,new RegExp(photo),`${id} must use the new photo`);
+  assert(!/red-horizon/.test(src),`${id} still uses the old Hawaii photo`);
+ }
+ assert.deepEqual(trackIds.slice(0,2),Object.keys(want));
+ const kihei=products.find(p=>p.id==='painting-red-horizon');
+ assert.equal(kihei.title,'Sunset at Kihei on Maui');assert.deepEqual(kihei.dimensions,{width:23,height:44,unit:'in'});
+ assert.equal(kihei.listing.price.amount,'1000.00');assert.equal(kihei.year,2022);
+ assert(fs.existsSync('gallery-images/red-horizon.jpg'),'old Hawaii photo stays');
+ const hope=products.find(p=>p.id==='hope-the-vermillion-aurora');
+ assert.equal(hope.title,'Hope, the Vermillion Aurora');assert.deepEqual(hope.dimensions,{width:44,height:22,unit:'in'});
+ assert.equal(hope.listing.price.amount,'2000.00');assert.equal(hope.year,2023);
+});
+test('Burning Man Temple 2022 paintings are collector’s items with their own pages, no prints and no checkout',()=>{
+ const ids=['burning-man-temple-2022-blue','burning-man-temple-2022-pink','burning-man-temple-2022-flame','burning-man-temple-2022-daytime'];
+ const $=load(fs.readFileSync('dist/index.html','utf8'));
+ const collectors=$('[data-collector-paintings] [data-product-id]').map((i,el)=>$(el).attr('data-product-id')).get();
+ for(const id of ids){
+  const p=products.find(x=>x.id===id);
+  assert.equal(p.listing.status,'not-for-sale',id);assert.equal(p.listing.price,undefined,id);assert.equal(p.checkout.mode,'inquiry',id);
+  assert.deepEqual(p.dimensions,{width:45,height:24,unit:'in'},id);assert.equal(p.year,2022,id);assert.equal(p.medium,'Watercolor pastel',id);
+  assert.equal(collectors.filter(x=>x===id).length,1,`${id} once in Collector’s Items`);
+  assert.equal($(`[data-available-paintings] [data-product-id="${id}"]`).length,0,id);
+  assert(!Object.keys(JSON.parse(fs.readFileSync('catalog/prints.json','utf8')).artworks).includes(id),`${id} has no prints`);
+  const page=load(fs.readFileSync(`dist/products/${id}/index.html`,'utf8'));
+  assert.equal(page('h1').text(),p.title);
+  assert.equal(page('[data-original-purchase]').length,0,id);
+  assert.equal(page('.product-availability').text().trim(),'Not for sale',id);
+  assert.equal($(`[data-collector-paintings] [data-product-id="${id}"]`).attr('data-availability'),'Not for sale',id);
+ }
+});
+test('the wedding portrait and four commissioned portraits lead the /commissions/ portrait carousel and are not products',()=>{
+ const $=load(fs.readFileSync('dist/commissions/index.html','utf8'));
+ const box=$('#portrait [data-mix]');
+ assert.equal(box.find('.portrait-preview-stage img').first().attr('data-image-src'),'/gallery-images/wedding-portrait-with-dog.jpg');
+ assert.ok(box.find('.portrait-preview-stage img').first().attr('alt').startsWith('Wedding Portrait with Dog'));
+ assert.equal(box.attr('data-lead'),'portrait-lead');assert.equal(box.attr('data-mix'),'single-portrait,double-portrait');
+ const js=fs.readFileSync('portrait-preview.js','utf8');const lead=JSON.parse(js.match(/const portraitImages = (\{.*?\});/)[1])['portrait-lead'];
+ assert.deepEqual(lead.map(s=>s.split('/').pop().replace(/-[0-9a-f]{10}-\d+\.webp$/,'')),['wedding-portrait-with-dog','commissioned-portrait-1','commissioned-portrait-2','commissioned-portrait-3','commissioned-portrait-4']);
+ for(const s of lead)assert.ok(fs.existsSync('static'+s),s);
+ const srcs=new Set(products.flatMap(p=>[p.image?.src,...(p.examples||[]).map(e=>e.src),...(p.gallery||[]).map(g=>g.src)]));
+ for(const n of ['wedding-portrait-with-dog','commissioned-portrait-1','commissioned-portrait-2','commissioned-portrait-3','commissioned-portrait-4'])assert.ok(!srcs.has(`/gallery-images/${n}.jpg`),n);
 });

@@ -1,0 +1,122 @@
+{
+  "masters": {
+    "sunset-at-kihei-on-maui-master.jpg": {
+      "url": "https://vermillionaurora.com/print-masters/ef890e67833c00a74055e4b351d9fab187c45e332c56f73f1e89bf42ea1fc188.jpg",
+      "widthPx": 3715,
+      "heightPx": 7579,
+      "sha256": "ef890e67833c00a74055e4b351d9fab187c45e332c56f73f1e89bf42ea1fc188"
+    },
+    "hope-the-vermillion-aurora-master.jpg": {
+      "url": "https://vermillionaurora.com/print-masters/18542d216a4e0b849108a18b899b5a98622871187b2d80c986554118c43cf0d4.jpg",
+      "widthPx": 7499,
+      "heightPx": 3370,
+      "sha256": "18542d216a4e0b849108a18b899b5a98622871187b2d80c986554118c43cf0d4"
+    }
+  },
+  "mains": {
+    "sunset-at-kihei-on-maui-master.jpg": {
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "width": 1176,
+      "height": 2400,
+      "bytes": 458722
+    },
+    "hope-the-vermillion-aurora-master.jpg": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "width": 2400,
+      "height": 1079,
+      "bytes": 334964
+    }
+  },
+  "rooms": {
+    "1": {
+      "base": "/product-media/kihei-hope/room-1",
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "width": 2400,
+      "height": 1800,
+      "fallback": "/product-media/kihei-hope/room-1-1600.jpg",
+      "variants": [
+        {
+          "w": 480,
+          "avif": 11115,
+          "webp": 17680
+        },
+        {
+          "w": 960,
+          "avif": 30367,
+          "webp": 46020
+        },
+        {
+          "w": 1600,
+          "avif": 62401,
+          "webp": 92638
+        },
+        {
+          "w": 2400,
+          "avif": 112057,
+          "webp": 163512
+        }
+      ]
+    },
+    "2": {
+      "base": "/product-media/kihei-hope/room-2",
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "width": 2400,
+      "height": 1800,
+      "fallback": "/product-media/kihei-hope/room-2-1600.jpg",
+      "variants": [
+        {
+          "w": 480,
+          "avif": 11827,
+          "webp": 19852
+        },
+        {
+          "w": 960,
+          "avif": 32511,
+          "webp": 53380
+        },
+        {
+          "w": 1600,
+          "avif": 68935,
+          "webp": 106092
+        },
+        {
+          "w": 2400,
+          "avif": 124389,
+          "webp": 186550
+        }
+      ]
+    }
+  },
+  "poster": {
+    "base": "/product-media/kihei-hope/video-poster",
+    "widths": [
+      960,
+      1920
+    ],
+    "width": 1920,
+    "height": 1080,
+    "fallback": "/product-media/kihei-hope/video-poster-1920.jpg",
+    "variants": [
+      {
+        "w": 960,
+        "avif": 23595,
+        "webp": 37034
+      },
+      {
+        "w": 1920,
+        "avif": 61636,
+        "webp": 88456
+      }
+    ]
+  }
+}
