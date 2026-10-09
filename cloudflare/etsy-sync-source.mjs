@@ -1128,5 +1128,381 @@ export default [
         "item_dimensions_unit": "in"
       }
     }
+  },
+  {
+    "id": "painting-red-horizon",
+    "title": "Sunset at Kihei on Maui",
+    "story": [
+      "Just before this sunset, a friend and I were sitting in a quiet cove along the beach at Kihei when a couple and a minister walked out and began a wedding ceremony, and we watched quietly from where we sat. Partway through, a kid climbed onto the rocks above them and started an airplane dogfight with a couple of toys, oblivious to the wedding. As they were wrapping up, a guy emerged from the bushes where he'd been sleeping: “Oh, hey, how's it going?” Then the sky went orange, pink and gray over the water. Watercolor pastel, 23 × 44 in, 2022."
+    ],
+    "medium": "Watercolor pastel",
+    "dimensions": {
+      "width": 23,
+      "height": 44,
+      "unit": "in"
+    },
+    "image": {
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy"
+    },
+    "roomAlt": "Sunset at Kihei on Maui hanging with Hope, the Vermillion Aurora in a living room",
+    "variants": [
+      {
+        "key": "full",
+        "label": "Large",
+        "price": "145.00",
+        "sku": "5M144M8S13.45X25.51",
+        "paperSize": {
+          "width": 13.45,
+          "height": 25.51,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "245.00",
+            "sku": "5M144M8S13DD45X25DD51F1S16DD45X28DD51J1S13DD45X25DD51G1",
+            "outerSize": {
+              "width": 16.45,
+              "height": 28.51,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "245.00",
+            "sku": "5M144M8S13DD45X25DD51F2S16DD45X28DD51J1S13DD45X25DD51G1",
+            "outerSize": {
+              "width": 16.45,
+              "height": 28.51,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "264.00",
+            "sku": "5M144M8S13DD45X25DD51F7S16DD45X28DD51J1S13DD45X25DD51G1",
+            "outerSize": {
+              "width": 16.45,
+              "height": 28.51,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "medium",
+        "label": "Medium",
+        "price": "85.00",
+        "sku": "5M144M8S10.15X19.19",
+        "paperSize": {
+          "width": 10.15,
+          "height": 19.19,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "156.00",
+            "sku": "5M144M8S10DD15X19DD19F1S13DD15X22DD19J1S10DD15X19DD19G1",
+            "outerSize": {
+              "width": 13.15,
+              "height": 22.19,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "156.00",
+            "sku": "5M144M8S10DD15X19DD19F2S13DD15X22DD19J1S10DD15X19DD19G1",
+            "outerSize": {
+              "width": 13.15,
+              "height": 22.19,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "172.00",
+            "sku": "5M144M8S10DD15X19DD19F7S13DD15X22DD19J1S10DD15X19DD19G1",
+            "outerSize": {
+              "width": 13.15,
+              "height": 22.19,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "small",
+        "label": "Small",
+        "price": "45.00",
+        "sku": "5M144M8S6.85X12.88",
+        "paperSize": {
+          "width": 6.85,
+          "height": 12.88,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "92.00",
+            "sku": "5M144M8S6DD85X12DD88F1S9DD85X15DD88J1S6DD85X12DD88G1",
+            "outerSize": {
+              "width": 9.85,
+              "height": 15.88,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "92.00",
+            "sku": "5M144M8S6DD85X12DD88F2S9DD85X15DD88J1S6DD85X12DD88G1",
+            "outerSize": {
+              "width": 9.85,
+              "height": 15.88,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "103.00",
+            "sku": "5M144M8S6DD85X12DD88F7S9DD85X15DD88J1S6DD85X12DD88G1",
+            "outerSize": {
+              "width": 9.85,
+              "height": 15.88,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      }
+    ],
+    "original": {
+      "price": "1000.00",
+      "currency": "USD",
+      "shipping": {
+        "item_weight": 1.5,
+        "item_length": 23,
+        "item_width": 4,
+        "item_height": 4,
+        "item_weight_unit": "lb",
+        "item_dimensions_unit": "in"
+      }
+    }
+  },
+  {
+    "id": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora",
+    "story": [
+      "A face lifted into the light, ringed in orange and gold feathers, while rays break past the gray towers behind it. The dawn of Bitcoin is a bright orange sunrise for humanity: an answer to the financial oppression so many people live under, and the beginning of a new era of hope and prosperity. Watercolor pastel, 44 × 22 in, 2023."
+    ],
+    "medium": "Watercolor pastel",
+    "dimensions": {
+      "width": 44,
+      "height": 22,
+      "unit": "in"
+    },
+    "image": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy"
+    },
+    "roomAlt": "Hope, the Vermillion Aurora hanging with Sunset at Kihei on Maui in a living room",
+    "variants": [
+      {
+        "key": "full",
+        "label": "Large",
+        "price": "135.00",
+        "sku": "5M144M8S25.24X12.75",
+        "paperSize": {
+          "width": 25.24,
+          "height": 12.75,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "231.00",
+            "sku": "5M144M8S25DD24X12DD75F1S28DD24X15DD75J1S25DD24X12DD75G1",
+            "outerSize": {
+              "width": 28.24,
+              "height": 15.75,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "231.00",
+            "sku": "5M144M8S25DD24X12DD75F2S28DD24X15DD75J1S25DD24X12DD75G1",
+            "outerSize": {
+              "width": 28.24,
+              "height": 15.75,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "250.00",
+            "sku": "5M144M8S25DD24X12DD75F7S28DD24X15DD75J1S25DD24X12DD75G1",
+            "outerSize": {
+              "width": 28.24,
+              "height": 15.75,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "medium",
+        "label": "Medium",
+        "price": "75.00",
+        "sku": "5M144M8S18.99X9.62",
+        "paperSize": {
+          "width": 18.99,
+          "height": 9.62,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "144.00",
+            "sku": "5M144M8S18DD99X9DD62F1S21DD99X12DD62J1S18DD99X9DD62G1",
+            "outerSize": {
+              "width": 21.99,
+              "height": 12.62,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "144.00",
+            "sku": "5M144M8S18DD99X9DD62F2S21DD99X12DD62J1S18DD99X9DD62G1",
+            "outerSize": {
+              "width": 21.99,
+              "height": 12.62,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "159.00",
+            "sku": "5M144M8S18DD99X9DD62F7S21DD99X12DD62J1S18DD99X9DD62G1",
+            "outerSize": {
+              "width": 21.99,
+              "height": 12.62,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "small",
+        "label": "Small",
+        "price": "45.00",
+        "sku": "5M144M8S12.74X6.5",
+        "paperSize": {
+          "width": 12.74,
+          "height": 6.5,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "90.00",
+            "sku": "5M144M8S12DD74X6DD5F1S15DD74X9DD5J1S12DD74X6DD5G1",
+            "outerSize": {
+              "width": 15.74,
+              "height": 9.5,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "90.00",
+            "sku": "5M144M8S12DD74X6DD5F2S15DD74X9DD5J1S12DD74X6DD5G1",
+            "outerSize": {
+              "width": 15.74,
+              "height": 9.5,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "102.00",
+            "sku": "5M144M8S12DD74X6DD5F7S15DD74X9DD5J1S12DD74X6DD5G1",
+            "outerSize": {
+              "width": 15.74,
+              "height": 9.5,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      }
+    ],
+    "original": {
+      "price": "2000.00",
+      "currency": "USD",
+      "shipping": {
+        "item_weight": 1.4375,
+        "item_length": 22,
+        "item_width": 4,
+        "item_height": 4,
+        "item_weight_unit": "lb",
+        "item_dimensions_unit": "in"
+      }
+    }
   }
 ];
