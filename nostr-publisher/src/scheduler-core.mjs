@@ -11,7 +11,9 @@ export function duePosts(posts, nowMs, activatedAtMs, deliveredIds = new Set()) 
 export function eventContent(post) {
   const text = post.text.replace(/([?&])utm_source=x\b/g, '$1utm_source=nostr');
   const productLink = post.productUrl ? `https://tjm.art${post.productUrl}` : '';
-  return [text.trim(), productLink, post.imageUrl].filter(Boolean).join('\n\n');
+  // A note whose text already ends with its product link (Moonrise) does not repeat it.
+  const appendLink = productLink && !text.includes(productLink) ? productLink : '';
+  return [text.trim(), appendLink, post.imageUrl].filter(Boolean).join('\n\n');
 }
 
 export function scheduledSeconds(post) {

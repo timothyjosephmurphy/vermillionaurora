@@ -26,7 +26,7 @@ A Cloudflare Worker (`vermillion-nostr-publisher`) that publishes TJ's art posts
 
 ## Note format
 
-Each note is `text`, then `https://tjm.art` + `productUrl`, then `imageUrl`, separated by blank lines. `text` is the X caption without its trailing tjm.art link. X @handles are replaced with plain names. `xText` keeps the Buffer X caption for reference and is not published. Links and images point to `tjm.art`. A `utm_source=x` parameter is rewritten to `utm_source=nostr`. A note carries one image, so for carousel posts only the first image goes out.
+Each note is `text`, then `https://tjm.art` + `productUrl`, then `imageUrl`, separated by blank lines (the product link is not repeated when `text` already contains it). `text` is the X caption without its trailing tjm.art link. X @handles are replaced with plain names. `xText` keeps the Buffer X caption for reference and is not published. Links and images point to `tjm.art`. A `utm_source=x` parameter is rewritten to `utm_source=nostr`. A note carries one image, so for carousel posts only the first image goes out.
 
 ## Safety rules
 
@@ -52,6 +52,6 @@ Deployment preserves dashboard variables with `keep_vars: true`. A missing enabl
 
 ## Status
 
-- Read-only status: https://vermillion-nostr-publisher.timothyjosephmurphy.workers.dev/status. It reports the number of scheduled posts, the enabled state, and the connection-test (`testPost`) receipt.
+- Read-only status: https://vermillion-nostr-publisher.timothyjosephmurphy.workers.dev/status. It reports the number of scheduled posts, each scheduled post's id, time, status, text and image, the enabled state, and the connection-test (`testPost`) receipt.
 - `/blog` lists published notes with their note URLs. It feeds https://tjm.art/blog/.
 - Neither endpoint can trigger publishing, and there is no public write endpoint.

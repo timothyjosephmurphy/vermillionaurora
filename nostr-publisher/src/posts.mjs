@@ -84,10 +84,10 @@ export const posts = [
   },
   {
     "id": "campaign-moonrise-north-cascades-2026-10-24",
-    "title": "Moonrise in the North Cascades",
+    "title": "Moonrise Over the Cascades",
     "scheduledAt": "2026-10-24T10:00:00-07:00",
-    "text": "Moonrise in the North Cascades. Dark firs, a mountain lake, and a road of moonlight across the water. Watercolor pastel, 16 × 24 in. The original is available, $600:",
-    "imageUrl": "https://tjm.art/gallery-images/moonlit-water.jpg",
+    "text": "Moonrise Over the Cascades. Dark firs, a mountain lake, and a road of moonlight across the water. Watercolor pastel, 12 × 23 in. The original is available, $500, and prints start at $35: https://tjm.art/products/painting-moonlit-water/",
+    "imageUrl": "https://tjm.art/gallery-images/moonrise-over-the-cascades.jpg",
     "productUrl": "/products/painting-moonlit-water/",
     "xText": "Moonrise in the North Cascades. Dark firs, a mountain lake, and a road of moonlight across the water. Watercolor pastel, 16 × 24 in. The original is available, $600: https://tjm.art/products/painting-moonlit-water/"
   },
