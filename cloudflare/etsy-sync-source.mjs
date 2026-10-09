@@ -7,6 +7,7 @@ export default [
     "story": [
       "I woke before dawn at the Punta El Zonte hostel, on the corner where the river meets the beach, and sat and watched the light come. The surfers were already paddling out, diving through the waves and riding them back to shore. The beach is made of big round stones, and you can hear them tumbling as the waves crash in. The tropical air makes the light especially luminous. I painted it later in my Seattle studio, from the photos I took that morning."
     ],
+    "medium": "Watercolor pastel",
     "dimensions": {
       "width": 48,
       "height": 24,
@@ -16,6 +17,7 @@ export default [
       "src": "/gallery-images/el-zonte-before-dawn.jpg",
       "alt": "El Zonte Before Dawn by TJ Murphy"
     },
+    "roomAlt": "El Zonte Before Dawn hanging with two other El Zonte paintings in a living room",
     "variants": [
       {
         "key": "full",
@@ -193,6 +195,7 @@ export default [
     "story": [
       "The sun was just up over the water at El Zonte, and the surfers were still paddling out, diving through the waves and riding them in. I watched from the Punta El Zonte hostel, where the river runs into the beach, and the big round stones tumbled and knocked together every time a wave crashed. The tropical air makes the light especially luminous. I painted it back in my Seattle studio, from the photos I took that morning."
     ],
+    "medium": "Watercolor pastel",
     "dimensions": {
       "width": 48,
       "height": 24,
@@ -202,6 +205,7 @@ export default [
       "src": "/gallery-images/el-zonte-at-dawn-2026.jpg",
       "alt": "El Zonte shoreline at dawn by TJ Murphy"
     },
+    "roomAlt": "El Zonte at Dawn hanging with two other El Zonte paintings in a living room",
     "variants": [
       {
         "key": "full",
@@ -379,6 +383,7 @@ export default [
     "story": [
       "This is the view from the Punta El Zonte hostel, where I stayed on the corner of the river that runs through town and the beach the surfers use. I woke before dawn, sat and meditated, and watched the sunrise and the surfers paddling out through the waves. The beach is all big round stones, and they tumble and rumble as each wave hits. The tropical air makes the light especially luminous. I painted it in my Seattle studio, from the photos I took that morning."
     ],
+    "medium": "Watercolor pastel",
     "dimensions": {
       "width": 24,
       "height": 48,
@@ -388,6 +393,7 @@ export default [
       "src": "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg",
       "alt": "Sunrise from Punta El Zonte Hostel by TJ Murphy"
     },
+    "roomAlt": "Sunrise from Punta El Zonte Hostel hanging with two other El Zonte paintings in a living room",
     "variants": [
       {
         "key": "full",
@@ -552,6 +558,570 @@ export default [
       "shipping": {
         "item_weight": 1.625,
         "item_length": 24,
+        "item_width": 4,
+        "item_height": 4,
+        "item_weight_unit": "lb",
+        "item_dimensions_unit": "in"
+      }
+    }
+  },
+  {
+    "id": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large)",
+    "story": [
+      "The sun just clearing the water at El Zonte, with the headland in shadow and the round beach stones catching the first light in the foreground. I woke before dawn at the Punta El Zonte hostel, where the river meets the beach, and painted this back in my Seattle studio from the photos I took that morning. The tropical air makes the light especially luminous. Watercolor pastel, 36 × 48 in."
+    ],
+    "medium": "Watercolor pastel",
+    "dimensions": {
+      "width": 36,
+      "height": 48,
+      "unit": "in"
+    },
+    "image": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy"
+    },
+    "roomAlt": "Sunrise in El Zonte (Large) hanging with Meditation at Denny Blaine and Moonrise Over the Cascades in a living room",
+    "variants": [
+      {
+        "key": "full",
+        "label": "Large",
+        "price": "160.00",
+        "sku": "5M144M8S16.7X22.94",
+        "paperSize": {
+          "width": 16.7,
+          "height": 22.94,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "266.00",
+            "sku": "5M144M8S16DD7X22DD94F1S19DD7X25DD94J1S16DD7X22DD94G1",
+            "outerSize": {
+              "width": 19.7,
+              "height": 25.94,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "266.00",
+            "sku": "5M144M8S16DD7X22DD94F2S19DD7X25DD94J1S16DD7X22DD94G1",
+            "outerSize": {
+              "width": 19.7,
+              "height": 25.94,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "285.00",
+            "sku": "5M144M8S16DD7X22DD94F7S19DD7X25DD94J1S16DD7X22DD94G1",
+            "outerSize": {
+              "width": 19.7,
+              "height": 25.94,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "medium",
+        "label": "Medium",
+        "price": "95.00",
+        "sku": "5M144M8S12.58X17.27",
+        "paperSize": {
+          "width": 12.58,
+          "height": 17.27,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "169.00",
+            "sku": "5M144M8S12DD58X17DD27F1S15DD58X20DD27J1S12DD58X17DD27G1",
+            "outerSize": {
+              "width": 15.58,
+              "height": 20.27,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "169.00",
+            "sku": "5M144M8S12DD58X17DD27F2S15DD58X20DD27J1S12DD58X17DD27G1",
+            "outerSize": {
+              "width": 15.58,
+              "height": 20.27,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "184.00",
+            "sku": "5M144M8S12DD58X17DD27F7S15DD58X20DD27J1S12DD58X17DD27G1",
+            "outerSize": {
+              "width": 15.58,
+              "height": 20.27,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "small",
+        "label": "Small",
+        "price": "40.00",
+        "sku": "5M144M8S8.47X11.59",
+        "paperSize": {
+          "width": 8.47,
+          "height": 11.59,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "88.00",
+            "sku": "5M144M8S8DD47X11DD59F1S11DD47X14DD59J1S8DD47X11DD59G1",
+            "outerSize": {
+              "width": 11.47,
+              "height": 14.59,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "88.00",
+            "sku": "5M144M8S8DD47X11DD59F2S11DD47X14DD59J1S8DD47X11DD59G1",
+            "outerSize": {
+              "width": 11.47,
+              "height": 14.59,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "100.00",
+            "sku": "5M144M8S8DD47X11DD59F7S11DD47X14DD59J1S8DD47X11DD59G1",
+            "outerSize": {
+              "width": 11.47,
+              "height": 14.59,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      }
+    ],
+    "original": {
+      "price": "2000.00",
+      "currency": "USD",
+      "shipping": {
+        "item_weight": 2.4375,
+        "item_length": 36,
+        "item_width": 4,
+        "item_height": 4,
+        "item_weight_unit": "lb",
+        "item_dimensions_unit": "in"
+      }
+    }
+  },
+  {
+    "id": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine",
+    "story": [
+      "Mount Rainier from Denny Blaine, burning orange and red in the low light, with the whole sky mirrored in the still water below. Watching Rainier from this shore is the meditation that got me painting: sitting and waiting while the color changes. Watercolor, 16 × 23 in, painted in Seattle."
+    ],
+    "medium": "Watercolor",
+    "dimensions": {
+      "width": 16,
+      "height": 23,
+      "unit": "in"
+    },
+    "image": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy"
+    },
+    "roomAlt": "Meditation at Denny Blaine hanging with Sunrise in El Zonte (Large) and Moonrise Over the Cascades in a living room",
+    "variants": [
+      {
+        "key": "full",
+        "label": "Large",
+        "price": "155.00",
+        "sku": "5M144M8S16.25X22.56",
+        "paperSize": {
+          "width": 16.25,
+          "height": 22.56,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "258.00",
+            "sku": "5M144M8S16DD25X22DD56F1S19DD25X25DD56J1S16DD25X22DD56G1",
+            "outerSize": {
+              "width": 19.25,
+              "height": 25.56,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "258.00",
+            "sku": "5M144M8S16DD25X22DD56F2S19DD25X25DD56J1S16DD25X22DD56G1",
+            "outerSize": {
+              "width": 19.25,
+              "height": 25.56,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "277.00",
+            "sku": "5M144M8S16DD25X22DD56F7S19DD25X25DD56J1S16DD25X22DD56G1",
+            "outerSize": {
+              "width": 19.25,
+              "height": 25.56,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "medium",
+        "label": "Medium",
+        "price": "85.00",
+        "sku": "5M144M8S12.25X16.98",
+        "paperSize": {
+          "width": 12.25,
+          "height": 16.98,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "158.00",
+            "sku": "5M144M8S12DD25X16DD98F1S15DD25X19DD98J1S12DD25X16DD98G1",
+            "outerSize": {
+              "width": 15.25,
+              "height": 19.98,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "158.00",
+            "sku": "5M144M8S12DD25X16DD98F2S15DD25X19DD98J1S12DD25X16DD98G1",
+            "outerSize": {
+              "width": 15.25,
+              "height": 19.98,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "173.00",
+            "sku": "5M144M8S12DD25X16DD98F7S15DD25X19DD98J1S12DD25X16DD98G1",
+            "outerSize": {
+              "width": 15.25,
+              "height": 19.98,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "small",
+        "label": "Small",
+        "price": "40.00",
+        "sku": "5M144M8S8.25X11.4",
+        "paperSize": {
+          "width": 8.25,
+          "height": 11.4,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "88.00",
+            "sku": "5M144M8S8DD25X11DD4F1S11DD25X14DD4J1S8DD25X11DD4G1",
+            "outerSize": {
+              "width": 11.25,
+              "height": 14.4,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "88.00",
+            "sku": "5M144M8S8DD25X11DD4F2S11DD25X14DD4J1S8DD25X11DD4G1",
+            "outerSize": {
+              "width": 11.25,
+              "height": 14.4,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "99.00",
+            "sku": "5M144M8S8DD25X11DD4F7S11DD25X14DD4J1S8DD25X11DD4G1",
+            "outerSize": {
+              "width": 11.25,
+              "height": 14.4,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      }
+    ],
+    "original": {
+      "price": "600.00",
+      "currency": "USD",
+      "shipping": {
+        "item_weight": 0.875,
+        "item_length": 16,
+        "item_width": 4,
+        "item_height": 4,
+        "item_weight_unit": "lb",
+        "item_dimensions_unit": "in"
+      }
+    }
+  },
+  {
+    "id": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades",
+    "story": [
+      "A full moon over a lake in the North Cascades, with the moonlight running down the water between dark trees. Painted in Seattle. Watercolor pastel, 12 × 23 in."
+    ],
+    "medium": "Watercolor pastel",
+    "dimensions": {
+      "width": 12,
+      "height": 23,
+      "unit": "in"
+    },
+    "image": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy"
+    },
+    "roomAlt": "Moonrise Over the Cascades hanging with Meditation at Denny Blaine and Sunrise in El Zonte (Large) in a living room",
+    "variants": [
+      {
+        "key": "full",
+        "label": "Large",
+        "price": "80.00",
+        "sku": "5M144M8S9.69X19.44",
+        "paperSize": {
+          "width": 9.69,
+          "height": 19.44,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "150.00",
+            "sku": "5M144M8S9DD69X19DD44F1S12DD69X22DD44J1S9DD69X19DD44G1",
+            "outerSize": {
+              "width": 12.69,
+              "height": 22.44,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "150.00",
+            "sku": "5M144M8S9DD69X19DD44F2S12DD69X22DD44J1S9DD69X19DD44G1",
+            "outerSize": {
+              "width": 12.69,
+              "height": 22.44,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "165.00",
+            "sku": "5M144M8S9DD69X19DD44F7S12DD69X22DD44J1S9DD69X19DD44G1",
+            "outerSize": {
+              "width": 12.69,
+              "height": 22.44,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "medium",
+        "label": "Medium",
+        "price": "50.00",
+        "sku": "5M144M8S7.33X14.64",
+        "paperSize": {
+          "width": 7.33,
+          "height": 14.64,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "102.00",
+            "sku": "5M144M8S7DD33X14DD64F1S10DD33X17DD64J1S7DD33X14DD64G1",
+            "outerSize": {
+              "width": 10.33,
+              "height": 17.64,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "102.00",
+            "sku": "5M144M8S7DD33X14DD64F2S10DD33X17DD64J1S7DD33X14DD64G1",
+            "outerSize": {
+              "width": 10.33,
+              "height": 17.64,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "114.00",
+            "sku": "5M144M8S7DD33X14DD64F7S10DD33X17DD64J1S7DD33X14DD64G1",
+            "outerSize": {
+              "width": 10.33,
+              "height": 17.64,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "small",
+        "label": "Small",
+        "price": "35.00",
+        "sku": "5M144M8S4.97X9.84",
+        "paperSize": {
+          "width": 4.97,
+          "height": 9.84,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "72.63",
+            "sku": "5M144M8S4DD97X9DD84F1S8DD01X12DD88J1S4DD97X9DD84G1",
+            "outerSize": {
+              "width": 8.01,
+              "height": 12.88,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "72.63",
+            "sku": "5M144M8S4DD97X9DD84F2S8DD01X12DD88J1S4DD97X9DD84G1",
+            "outerSize": {
+              "width": 8.01,
+              "height": 12.88,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "82.63",
+            "sku": "5M144M8S4DD97X9DD84F7S8DD01X12DD88J1S4DD97X9DD84G1",
+            "outerSize": {
+              "width": 8.01,
+              "height": 12.88,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      }
+    ],
+    "original": {
+      "price": "500.00",
+      "currency": "USD",
+      "shipping": {
+        "item_weight": 0.5625,
+        "item_length": 12,
         "item_width": 4,
         "item_height": 4,
         "item_weight_unit": "lb",

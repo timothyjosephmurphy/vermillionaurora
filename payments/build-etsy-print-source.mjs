@@ -37,7 +37,9 @@ await writeFile(new URL('../cloudflare/etsy-print-source.mjs',import.meta.url),
   `// Generated from the approved print catalog. Do not edit by hand.\nexport const sourcePrintVersion=${JSON.stringify(printVersion)};\nexport default ${JSON.stringify(output,null,2)};\n`);
 console.log(`Built Etsy print source for ${output.length} paintings.`);
 
-const syncIds = ['el-zonte-before-dawn', 'painting-shoreline-at-dusk', 'el-zonte-at-sunrise'];
+// Paintings the owner-only Etsy sync may create or update (one print listing and one original listing each).
+const syncIds = ['el-zonte-before-dawn', 'painting-shoreline-at-dusk', 'el-zonte-at-sunrise',
+  'sunrise-in-el-zonte-large', 'meditation-at-denny-blaine', 'painting-moonlit-water'];
 const syncOutput = syncIds.map(productId => {
   const product = products.find(item => item.id === productId && item.type === 'painting');
   if (!product) throw Error('Missing Etsy sync artwork ' + productId);
@@ -57,7 +59,9 @@ const syncOutput = syncIds.map(productId => {
   if (!ship || ship.packaging !== 'tube' || !(ship.weight > 0) || !(ship.length > 0)) throw Error('Original tube shipping is not recorded for ' + productId);
   return {
     id: product.id, title: product.title, story: product.story || [],
+    medium: product.medium || 'Watercolor pastel',
     dimensions: product.dimensions, image: {src: product.image.src, alt: product.image.alt},
+    ...(product.gallery?.[0]?.alt ? {roomAlt: product.gallery[0].alt} : {}),
     variants,
     original: {
       price: product.listing.price.amount,
