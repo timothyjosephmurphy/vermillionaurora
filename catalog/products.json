@@ -643,8 +643,8 @@
     "id": "michael-and-katie-in-yelapa",
     "slug": "michael-and-katie-in-yelapa",
     "type": "painting",
-    "title": "Michael and Katie in Yelapa",
-    "description": "Michael and Katie in Yelapa by TJ Murphy. Watercolor pastel. Sold.",
+    "title": "Romance in Yelapa",
+    "description": "Romance in Yelapa by TJ Murphy. Watercolor pastel. Sold.",
     "eyebrow": "Watercolor pastel",
     "artist": "TJ Murphy",
     "listing": {
@@ -679,8 +679,8 @@
     "dimensionOrder": "width-height",
     "image": {
       "src": "/gallery-images/embrace.jpg",
-      "alt": "Michael and Katie in Yelapa by TJ Murphy",
-      "caption": "Michael and Katie in Yelapa"
+      "alt": "Romance in Yelapa by TJ Murphy",
+      "caption": "Romance in Yelapa"
     },
     "checkout": {
       "mode": "inquiry"
@@ -6049,6 +6049,11 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
+    },
+    "dimensions": {
+      "width": 60,
+      "height": 40,
+      "unit": "in"
     }
   }
 ]
