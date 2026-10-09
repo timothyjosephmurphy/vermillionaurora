@@ -17,6 +17,104 @@
     }
   },
   "artworks": {
+    "cormorant-over-puget-sound": {
+      "enabled": false,
+      "sizing": "image-proportional",
+      "sizingApproved": true,
+      "paper": "watercolor-bright-white",
+      "source": {
+        "url": "https://vermillionaurora.com/print-masters/622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd.jpg",
+        "widthPx": 4500,
+        "heightPx": 2792,
+        "sha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd"
+      },
+      "variants": {
+        "full": {
+          "sku": "5M144M8S15.25X9.55",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/6a5cfc20321853ca072c8377eea8767d828269b37b87b347bbe559678ac878b8.jpg",
+            "sha256": "6a5cfc20321853ca072c8377eea8767d828269b37b87b347bbe559678ac878b8",
+            "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+            "productCode": "5M144M8S15.25X9.55",
+            "imageWidthIn": 14.9833,
+            "imageHeightIn": 9.2967,
+            "paperWidthIn": 15.25,
+            "paperHeightIn": 9.55,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-white-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 4575,
+              "heightPx": 2865,
+              "content": {
+                "left": 40,
+                "top": 38,
+                "width": 4495,
+                "height": 2789
+              }
+            }
+          }
+        },
+        "medium": {
+          "sku": "5M144M8S11.5X7.23",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e.jpg",
+            "sha256": "b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e",
+            "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+            "productCode": "5M144M8S11.5X7.23",
+            "imageWidthIn": 11.2433,
+            "imageHeightIn": 6.9767,
+            "paperWidthIn": 11.5,
+            "paperHeightIn": 7.23,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-white-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3450,
+              "heightPx": 2169,
+              "content": {
+                "left": 38,
+                "top": 38,
+                "width": 3373,
+                "height": 2093
+              }
+            }
+          }
+        },
+        "small": {
+          "sku": "5M144M8S7.75X4.9",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970.jpg",
+            "sha256": "499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970",
+            "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+            "productCode": "5M144M8S7.75X4.9",
+            "imageWidthIn": 7.49,
+            "imageHeightIn": 4.6467,
+            "paperWidthIn": 7.75,
+            "paperHeightIn": 4.9,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-white-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2325,
+              "heightPx": 1470,
+              "content": {
+                "left": 39,
+                "top": 38,
+                "width": 2247,
+                "height": 1394
+              }
+            }
+          }
+        }
+      }
+    },
     "el-zonte-at-sunrise": {
       "enabled": true,
       "sizing": "image-proportional",

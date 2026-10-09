@@ -61,6 +61,10 @@
       "variant": "carousel"
     },
     {
+      "product": "cormorant-over-puget-sound",
+      "variant": "carousel"
+    },
+    {
       "product": "michael-and-katie-in-yelapa",
       "variant": "carousel"
     },
@@ -336,6 +340,10 @@
     },
     {
       "product": "burning-man-temple-2022-daytime",
+      "variant": "gallery"
+    },
+    {
+      "product": "cormorant-over-puget-sound",
       "variant": "gallery"
     }
   ],

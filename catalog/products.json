@@ -6000,5 +6000,51 @@
       "height": 24,
       "unit": "in"
     }
+  },
+  {
+    "id": "cormorant-over-puget-sound",
+    "slug": "cormorant-over-puget-sound",
+    "type": "painting",
+    "title": "Cormorant over Puget Sound",
+    "description": "Cormorant over Puget Sound by TJ Murphy. Prints of a mural in a private garden; the original is not for sale.",
+    "eyebrow": "Mural",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale"
+    },
+    "medium": null,
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [
+      {
+        "label": "Original",
+        "value": "Mural in a private garden"
+      }
+    ],
+    "story": [
+      "A cormorant spreads its wings to dry on an old piling while orange clouds blaze over Puget Sound, with a strip of turquoise sky showing through between them. Two sailboats catch the last light below the mountains. The original is a mural in a private garden. Prints are made from a photograph of it."
+    ],
+    "storyHeading": null,
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "width-height",
+    "image": {
+      "src": "/gallery-images/cormorant-over-puget-sound.jpg",
+      "alt": "Cormorant over Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
+      "caption": "Cormorant over Puget Sound"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Commission a mural",
+      "note": ""
+    },
+    "back": {
+      "href": "/gallery/",
+      "label": "Back to gallery"
+    }
   }
 ]

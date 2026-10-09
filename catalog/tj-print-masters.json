@@ -227,5 +227,11 @@
     "title": "Hope, the Vermillion Aurora",
     "sha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
     "local": "static/print-masters/d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d.jpg"
+  },
+  {
+    "id": "cormorant-over-puget-sound",
+    "title": "Cormorant over Puget Sound",
+    "sha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "local": "static/print-masters/622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd.jpg"
   }
 ]
