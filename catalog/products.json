@@ -5830,7 +5830,7 @@
     },
     "medium": "Watercolor pastel",
     "surface": null,
-    "year": null,
+    "year": 2022,
     "framing": null,
     "galleryReference": null,
     "gallerySequence": null,
@@ -5856,6 +5856,11 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
+    },
+    "dimensions": {
+      "width": 45,
+      "height": 24,
+      "unit": "in"
     }
   },
   {
@@ -5871,7 +5876,7 @@
     },
     "medium": "Watercolor pastel",
     "surface": null,
-    "year": null,
+    "year": 2022,
     "framing": null,
     "galleryReference": null,
     "gallerySequence": null,
@@ -5897,6 +5902,11 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
+    },
+    "dimensions": {
+      "width": 45,
+      "height": 24,
+      "unit": "in"
     }
   },
   {
@@ -5912,7 +5922,7 @@
     },
     "medium": "Watercolor pastel",
     "surface": null,
-    "year": null,
+    "year": 2022,
     "framing": null,
     "galleryReference": null,
     "gallerySequence": null,
@@ -5938,6 +5948,11 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
+    },
+    "dimensions": {
+      "width": 45,
+      "height": 24,
+      "unit": "in"
     }
   },
   {
@@ -5953,7 +5968,7 @@
     },
     "medium": "Watercolor pastel",
     "surface": null,
-    "year": null,
+    "year": 2022,
     "framing": null,
     "galleryReference": null,
     "gallerySequence": null,
@@ -5979,6 +5994,11 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
+    },
+    "dimensions": {
+      "width": 45,
+      "height": 24,
+      "unit": "in"
     }
   }
 ]

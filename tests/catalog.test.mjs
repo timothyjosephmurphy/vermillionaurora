@@ -259,13 +259,15 @@ test('Burning Man Temple 2022 paintings are collector’s items with their own p
  for(const id of ids){
   const p=products.find(x=>x.id===id);
   assert.equal(p.listing.status,'not-for-sale',id);assert.equal(p.listing.price,undefined,id);assert.equal(p.checkout.mode,'inquiry',id);
-  assert.equal(p.dimensions,undefined,id);assert.equal(p.year,null,id);assert.deepEqual(p.facts,[],id);
+  assert.deepEqual(p.dimensions,{width:45,height:24,unit:'in'},id);assert.equal(p.year,2022,id);assert.equal(p.medium,'Watercolor pastel',id);
   assert.equal(collectors.filter(x=>x===id).length,1,`${id} once in Collector’s Items`);
   assert.equal($(`[data-available-paintings] [data-product-id="${id}"]`).length,0,id);
   assert(!Object.keys(JSON.parse(fs.readFileSync('catalog/prints.json','utf8')).artworks).includes(id),`${id} has no prints`);
   const page=load(fs.readFileSync(`dist/products/${id}/index.html`,'utf8'));
   assert.equal(page('h1').text(),p.title);
   assert.equal(page('[data-original-purchase]').length,0,id);
+  assert.equal(page('.product-availability').text().trim(),'Not for sale',id);
+  assert.equal($(`[data-collector-paintings] [data-product-id="${id}"]`).attr('data-availability'),'Not for sale',id);
  }
 });
 test('the wedding portrait and four commissioned portraits lead the /commissions/ portrait carousel and are not products',()=>{
