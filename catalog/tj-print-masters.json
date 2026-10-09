@@ -206,5 +206,23 @@
     "title": "El Zonte Before Dawn",
     "sha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
     "local": "static/print-masters/0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559.jpg"
+  },
+  {
+    "id": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large)",
+    "sha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "local": "static/print-masters/85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488.jpg"
+  },
+  {
+    "id": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine",
+    "sha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "local": "static/print-masters/80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3.jpg"
+  },
+  {
+    "id": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades",
+    "sha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "local": "static/print-masters/370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d.jpg"
   }
 ]
