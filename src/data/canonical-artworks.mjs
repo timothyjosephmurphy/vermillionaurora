@@ -13,7 +13,7 @@ export const canonicalArtwork = {
   'book-art-1708a7dca996aca40e6c': 'painting-guitarist', // Girl Tuning Guitar (book title: Malone; TJ chose the catalog title)
   'book-art-5e4eb881d89ae9f5c635': 'painting-sunset-silhouette', // Sunset in the Strait of Juan de Fuca, Sucia Island
   'book-art-7676696646b77fc3ca94': 'sunset-in-el-zonte-el-salvador', // Sunset in El Zonte, El Salvador
-  'book-art-164299ae97e7b62137f5': 'painting-moonlit-water', // Moonrise over lake in the North Cascades
+  'book-art-164299ae97e7b62137f5': 'painting-moonlit-water', // Moonrise Over the Cascades
   'book-art-04de39dfa1817b8d1ed9': 'painting-figures-in-wheatfield', // The Mother of Kiev
   'book-art-7718008765132b8bc17f': 'painting-studio-figure', // Brekkie @BVBTC hoisting a sculpture in progress
   'book-art-159503a8e82d7b91c293': 'joaquim-in-zihuatanejo', // Joaquim in Zihuatanejo

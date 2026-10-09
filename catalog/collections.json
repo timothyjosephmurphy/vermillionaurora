@@ -1,6 +1,18 @@
 {
   "home": [
     {
+      "product": "sunrise-in-el-zonte-large",
+      "variant": "carousel"
+    },
+    {
+      "product": "meditation-at-denny-blaine",
+      "variant": "carousel"
+    },
+    {
+      "product": "painting-moonlit-water",
+      "variant": "carousel"
+    },
+    {
       "product": "el-zonte-before-dawn",
       "variant": "carousel"
     },
@@ -22,10 +34,6 @@
     },
     {
       "product": "painting-red-horizon",
-      "variant": "carousel"
-    },
-    {
-      "product": "painting-moonlit-water",
       "variant": "carousel"
     },
     {
@@ -160,6 +168,14 @@
     },
     {
       "product": "painting-moonlit-water",
+      "variant": "gallery"
+    },
+    {
+      "product": "sunrise-in-el-zonte-large",
+      "variant": "gallery"
+    },
+    {
+      "product": "meditation-at-denny-blaine",
       "variant": "gallery"
     },
     {

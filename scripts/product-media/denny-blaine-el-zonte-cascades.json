@@ -1,0 +1,168 @@
+{
+  "masters": {
+    "meditation-at-denny-blaine-master.jpg": {
+      "url": "https://vermillionaurora.com/print-masters/80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3.jpg",
+      "widthPx": 4816,
+      "heightPx": 6716,
+      "sha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3"
+    },
+    "sunrise-in-el-zonte-large-master.jpg": {
+      "url": "https://vermillionaurora.com/print-masters/85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488.jpg",
+      "widthPx": 4935,
+      "heightPx": 6808,
+      "sha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488"
+    },
+    "moonrise-over-the-cascades-master.jpg": {
+      "url": "https://vermillionaurora.com/print-masters/370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d.jpg",
+      "widthPx": 2832,
+      "heightPx": 5758,
+      "sha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d"
+    }
+  },
+  "mains": {
+    "meditation-at-denny-blaine-master.jpg": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "width": 1721,
+      "height": 2400,
+      "bytes": 391742
+    },
+    "sunrise-in-el-zonte-large-master.jpg": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "width": 1740,
+      "height": 2400,
+      "bytes": 577216
+    },
+    "moonrise-over-the-cascades-master.jpg": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "width": 1180,
+      "height": 2400,
+      "bytes": 381640
+    }
+  },
+  "rooms": {
+    "1": {
+      "base": "/product-media/denny-blaine-el-zonte-cascades/room-1",
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "width": 2400,
+      "height": 1800,
+      "fallback": "/product-media/denny-blaine-el-zonte-cascades/room-1-1600.jpg",
+      "variants": [
+        {
+          "w": 480,
+          "avif": 10308,
+          "webp": 16368
+        },
+        {
+          "w": 960,
+          "avif": 27584,
+          "webp": 43352
+        },
+        {
+          "w": 1600,
+          "avif": 58211,
+          "webp": 88574
+        },
+        {
+          "w": 2400,
+          "avif": 108944,
+          "webp": 162590
+        }
+      ]
+    },
+    "2": {
+      "base": "/product-media/denny-blaine-el-zonte-cascades/room-2",
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "width": 2400,
+      "height": 1800,
+      "fallback": "/product-media/denny-blaine-el-zonte-cascades/room-2-1600.jpg",
+      "variants": [
+        {
+          "w": 480,
+          "avif": 8935,
+          "webp": 13384
+        },
+        {
+          "w": 960,
+          "avif": 24945,
+          "webp": 37588
+        },
+        {
+          "w": 1600,
+          "avif": 58016,
+          "webp": 83708
+        },
+        {
+          "w": 2400,
+          "avif": 118482,
+          "webp": 164494
+        }
+      ]
+    },
+    "3": {
+      "base": "/product-media/denny-blaine-el-zonte-cascades/room-3",
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "width": 2400,
+      "height": 1800,
+      "fallback": "/product-media/denny-blaine-el-zonte-cascades/room-3-1600.jpg",
+      "variants": [
+        {
+          "w": 480,
+          "avif": 9276,
+          "webp": 13914
+        },
+        {
+          "w": 960,
+          "avif": 25833,
+          "webp": 37054
+        },
+        {
+          "w": 1600,
+          "avif": 58342,
+          "webp": 81768
+        },
+        {
+          "w": 2400,
+          "avif": 111638,
+          "webp": 150828
+        }
+      ]
+    }
+  },
+  "poster": {
+    "base": "/product-media/denny-blaine-el-zonte-cascades/video-poster",
+    "widths": [
+      960,
+      1920
+    ],
+    "width": 1920,
+    "height": 1080,
+    "fallback": "/product-media/denny-blaine-el-zonte-cascades/video-poster-1920.jpg",
+    "variants": [
+      {
+        "w": 960,
+        "avif": 18263,
+        "webp": 26852
+      },
+      {
+        "w": 1920,
+        "avif": 51004,
+        "webp": 69884
+      }
+    ]
+  }
+}
