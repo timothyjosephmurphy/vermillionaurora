@@ -139,7 +139,7 @@ test('Sunrise in El Zonte (Large), Meditation at Denny Blaine and Moonrise Over 
   const settings = {taxonomyId: 1, shippingProfileId: 2, readinessStateId: 3, partnerId: 4, returnPolicyId: 5};
   const want = {
     'sunrise-in-el-zonte-large': ['Sunrise in El Zonte (Large), Original Watercolor Pastel, 36 x 48 in', '2200.00', 'watercolor pastel', 'The tropical air makes the light especially luminous. Watercolor pastel.'],
-    'meditation-at-denny-blaine': ['Meditation at Denny Blaine, Original Watercolor, 16 x 23 in', '660.00', 'watercolor', 'sitting and waiting while the color changes. Watercolor, painted in Seattle.'],
+    'meditation-at-denny-blaine': ['Meditation at Denny Blaine, Original Watercolor, 16 x 23 in', '660.00', 'watercolor', 'sitting and waiting while the color changes. Watercolor, 2022, painted in Seattle.'],
     'painting-moonlit-water': ['Moonrise Over the Cascades, Original Watercolor Pastel, 12 x 23 in', '550.00', 'watercolor pastel', 'Painted in Seattle. Watercolor pastel.'],
     'painting-red-horizon': ['Sunset at Kihei on Maui, Original Watercolor Pastel, 23 x 44 in', '1100.00', 'watercolor pastel', 'gray over the water. Watercolor pastel, 2022.'],
     'hope-the-vermillion-aurora': ['Hope, the Vermillion Aurora, Original Watercolor Pastel, 44 x 22 in', '2200.00', 'watercolor pastel', 'hope and prosperity. Watercolor pastel, 2023.']
