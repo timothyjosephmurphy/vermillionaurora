@@ -268,12 +268,15 @@ test('Burning Man Temple 2022 paintings are collector’s items with their own p
   assert.equal(page('[data-original-purchase]').length,0,id);
  }
 });
-test('the wedding portrait commission example leads the /commissions/ portrait carousel and is not a product',()=>{
+test('the wedding portrait and four commissioned portraits lead the /commissions/ portrait carousel and are not products',()=>{
  const $=load(fs.readFileSync('dist/commissions/index.html','utf8'));
- const first=$('#portrait .portrait-preview-stage img').first();
- assert.equal(first.attr('data-image-src'),'/gallery-images/wedding-portrait-with-dog.jpg');
- assert.ok(first.attr('alt').startsWith('Wedding Portrait with Dog'));
- assert.equal($('#portrait [data-mix]').attr('data-mix').split(',')[0],'double-portrait');
- const js=fs.readFileSync('portrait-preview.js','utf8');assert.ok(js.includes('"double-portrait": ["/display/wedding-portrait-with-dog-'));
- assert.ok(!products.some(p=>p.image?.src==='/gallery-images/wedding-portrait-with-dog.jpg'));
+ const box=$('#portrait [data-mix]');
+ assert.equal(box.find('.portrait-preview-stage img').first().attr('data-image-src'),'/gallery-images/wedding-portrait-with-dog.jpg');
+ assert.ok(box.find('.portrait-preview-stage img').first().attr('alt').startsWith('Wedding Portrait with Dog'));
+ assert.equal(box.attr('data-lead'),'portrait-lead');assert.equal(box.attr('data-mix'),'single-portrait,double-portrait');
+ const js=fs.readFileSync('portrait-preview.js','utf8');const lead=JSON.parse(js.match(/const portraitImages = (\{.*?\});/)[1])['portrait-lead'];
+ assert.deepEqual(lead.map(s=>s.split('/').pop().replace(/-[0-9a-f]{10}-\d+\.webp$/,'')),['wedding-portrait-with-dog','commissioned-portrait-1','commissioned-portrait-2','commissioned-portrait-3','commissioned-portrait-4']);
+ for(const s of lead)assert.ok(fs.existsSync('static'+s),s);
+ const srcs=new Set(products.flatMap(p=>[p.image?.src,...(p.examples||[]).map(e=>e.src),...(p.gallery||[]).map(g=>g.src)]));
+ for(const n of ['wedding-portrait-with-dog','commissioned-portrait-1','commissioned-portrait-2','commissioned-portrait-3','commissioned-portrait-4'])assert.ok(!srcs.has(`/gallery-images/${n}.jpg`),n);
 });

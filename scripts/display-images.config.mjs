@@ -15,7 +15,8 @@ export const EXTRA_SOURCES = ['/gallery-images/esperanza-hero.png', '/gallery-im
   '/gallery-images/golden-coast.jpg', '/gallery-images/moonlit-water.jpg', '/gallery-images/portrait-with-hat.jpg', '/gallery-images/sunset-silhouette.jpg',
   '/gallery-images/el-salvador-sunrise.jpeg', '/gallery-images/golden-reflection.jpg', '/gallery-images/red-horizon.jpg', '/gallery-images/two-soldiers.jpg',
   // Portrait commission card carousel (portrait-preview.js).
-  '/gallery-images/wedding-portrait-with-dog.jpg'];
+  '/gallery-images/wedding-portrait-with-dog.jpg', '/gallery-images/commissioned-portrait-1.jpg', '/gallery-images/commissioned-portrait-2.jpg',
+  '/gallery-images/commissioned-portrait-3.jpg', '/gallery-images/commissioned-portrait-4.jpg'];
 // sizes by layout: the nearest matching container class before the img wins.
 export const SIZES = [
   ['painting-list-row', '64px'],

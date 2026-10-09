@@ -399,6 +399,80 @@
    }
   ]
  },
+ "/gallery-images/commissioned-portrait-1.jpg": {
+  "original": 333730,
+  "width": 642,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/commissioned-portrait-1-590ba3e442-160.webp",
+    "bytes": 7718
+   },
+   {
+    "w": 480,
+    "src": "/display/commissioned-portrait-1-590ba3e442-480.webp",
+    "bytes": 59586
+   },
+   {
+    "w": 642,
+    "src": "/display/commissioned-portrait-1-590ba3e442-642.webp",
+    "bytes": 97958
+   }
+  ]
+ },
+ "/gallery-images/commissioned-portrait-2.jpg": {
+  "original": 330903,
+  "width": 642,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/commissioned-portrait-2-f4261c31d4-160.webp",
+    "bytes": 7252
+   },
+   {
+    "w": 480,
+    "src": "/display/commissioned-portrait-2-f4261c31d4-480.webp",
+    "bytes": 62026
+   },
+   {
+    "w": 642,
+    "src": "/display/commissioned-portrait-2-f4261c31d4-642.webp",
+    "bytes": 103140
+   }
+  ]
+ },
+ "/gallery-images/commissioned-portrait-3.jpg": {
+  "original": 80434,
+  "width": 302,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/commissioned-portrait-3-e13e1bee9a-160.webp",
+    "bytes": 7322
+   },
+   {
+    "w": 302,
+    "src": "/display/commissioned-portrait-3-e13e1bee9a-302.webp",
+    "bytes": 21430
+   }
+  ]
+ },
+ "/gallery-images/commissioned-portrait-4.jpg": {
+  "original": 70636,
+  "width": 302,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/commissioned-portrait-4-28f07bbdf1-160.webp",
+    "bytes": 5976
+   },
+   {
+    "w": 302,
+    "src": "/display/commissioned-portrait-4-28f07bbdf1-302.webp",
+    "bytes": 18286
+   }
+  ]
+ },
  "/gallery-images/couple-in-color.jpg": {
   "original": 233545,
   "width": 1092,
