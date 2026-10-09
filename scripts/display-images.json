@@ -473,6 +473,32 @@
    }
   ]
  },
+ "/gallery-images/cormorant-over-puget-sound.jpg": {
+  "original": 523335,
+  "width": 2250,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/cormorant-over-puget-sound-0290e7844c-160.webp",
+    "bytes": 1700
+   },
+   {
+    "w": 480,
+    "src": "/display/cormorant-over-puget-sound-0290e7844c-480.webp",
+    "bytes": 7974
+   },
+   {
+    "w": 960,
+    "src": "/display/cormorant-over-puget-sound-0290e7844c-960.webp",
+    "bytes": 35124
+   },
+   {
+    "w": 1600,
+    "src": "/display/cormorant-over-puget-sound-0290e7844c-1600.webp",
+    "bytes": 123308
+   }
+  ]
+ },
  "/gallery-images/couple-in-color.jpg": {
   "original": 233545,
   "width": 1092,

@@ -11,8 +11,8 @@ async function api(action,body){
 const tj=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.productId.startsWith('paul-murphy-')&&!p.productId.startsWith('book-art-'));
 const books=Object.values(prints).filter(p=>p.productId.startsWith('book-art-'));
 assert.equal(new Set(books.map(p=>p.productId)).size,53);assert.equal(books.filter(p=>!p.frame).length,109);assert.equal(books.filter(p=>p.frame).length,327);assert.equal(books.length,436);
-// 22 TJ masters (El Zonte Before Dawn added and the two El Zonte masters replaced at full resolution; then Meditation at Denny Blaine, Sunrise in El Zonte (Large) and Moonrise Over the Cascades added, Oct 2026).
-assert.equal(new Set(tj.map(p=>p.productId)).size,23);assert.equal(tj.filter(p=>!p.frame).length,56);assert.equal(tj.filter(p=>p.frame).length,168);
+// 24 TJ masters (Oct 2026: El Zonte set, then Meditation at Denny Blaine, Sunrise in El Zonte (Large), Moonrise Over the Cascades, Sunset at Kihei on Maui, Hope, the Vermillion Aurora and Cormorant over Puget Sound).
+assert.equal(new Set(tj.map(p=>p.productId)).size,24);assert.equal(tj.filter(p=>!p.frame).length,59);assert.equal(tj.filter(p=>p.frame).length,177);
 const expected=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&p.productId.startsWith('paul-murphy-')),catalog=await api('catalog');
 assert.equal(expected.filter(p=>!p.frame).length,112);assert.equal(expected.filter(p=>p.frame).length,336);assert.equal(new Set(expected.map(p=>p.productId)).size,38);assert(catalog.version.endsWith('-'+printVersion));
 for(const p of [...expected,...tj,...books]){
