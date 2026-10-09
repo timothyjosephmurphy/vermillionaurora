@@ -13,7 +13,9 @@ export const ORIGINAL_TAGS = ['watercolor pastel','seascape painting','el salvad
 // Per-painting search tags: 12 subject tags, then 'art print' or 'original painting' as the 13th. Works not listed use the El Zonte tags.
 const SUBJECT_TAGS = {
   'meditation-at-denny-blaine': ['watercolor painting','mount rainier art','seattle art','lake washington','pacific northwest','mountain painting','orange sunset art','reflection art','landscape painting','washington state','nature wall art','meditation art'],
-  'painting-moonlit-water': ['watercolor pastel','moon painting','full moon art','north cascades','mountain lake art','pacific northwest','night landscape','moonlight painting','washington state','forest wall art','lake painting','cabin decor']
+  'painting-moonlit-water': ['watercolor pastel','moon painting','full moon art','north cascades','mountain lake art','pacific northwest','night landscape','moonlight painting','washington state','forest wall art','lake painting','cabin decor'],
+  'painting-red-horizon': ['watercolor pastel','maui art','hawaii painting','kihei','sunset painting','beach sunset art','tropical art','ocean wall art','seascape painting','hawaiian decor','island art','coastal wall art'],
+  'hope-the-vermillion-aurora': ['watercolor pastel','bitcoin art','crypto art','sunrise painting','hope art','orange art','figurative art','spiritual art','symbolic painting','feather art','large wall art','modern art']
 };
 export function printTags(work) {
   return SUBJECT_TAGS[work.id] ? [...SUBJECT_TAGS[work.id], 'art print'] : PRINT_TAGS;

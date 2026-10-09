@@ -39,7 +39,8 @@ console.log(`Built Etsy print source for ${output.length} paintings.`);
 
 // Paintings the owner-only Etsy sync may create or update (one print listing and one original listing each).
 const syncIds = ['el-zonte-before-dawn', 'painting-shoreline-at-dusk', 'el-zonte-at-sunrise',
-  'sunrise-in-el-zonte-large', 'meditation-at-denny-blaine', 'painting-moonlit-water'];
+  'sunrise-in-el-zonte-large', 'meditation-at-denny-blaine', 'painting-moonlit-water',
+  'painting-red-horizon', 'hope-the-vermillion-aurora'];
 const syncOutput = syncIds.map(productId => {
   const product = products.find(item => item.id === productId && item.type === 'painting');
   if (!product) throw Error('Missing Etsy sync artwork ' + productId);
