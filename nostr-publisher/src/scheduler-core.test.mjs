@@ -11,8 +11,8 @@ const fixture = [
 
 const PUBLISHED = ['launch-warszawska-syrenka-2026-10-03', 'launch-honeybadger-cub-2026-10-06'];
 const EL_ZONTE = 'launch-sunrise-el-zonte-bitcoin-beach-2026-10-08';
-// Pacific wall-clock slots matching the Buffer schedule (Sun Oct 11, then Tue 7 AM / Thu 6 PM / Sat 10 AM).
-const SLOTS = ['2026-10-03 23:00', '2026-10-06 07:00', '2026-10-11 10:00', '2026-10-13 07:00', '2026-10-15 18:00', '2026-10-17 10:00',
+// Pacific wall-clock slots matching the Buffer schedule (Sun Oct 11, then Tue 7 AM / Thu 6 PM / Sat 10 AM, plus the Fri Oct 16 noon testimonial request).
+const SLOTS = ['2026-10-03 23:00', '2026-10-06 07:00', '2026-10-11 10:00', '2026-10-13 07:00', '2026-10-15 18:00', '2026-10-16 12:00', '2026-10-17 10:00',
   '2026-10-20 07:00', '2026-10-22 18:00', '2026-10-24 10:00', '2026-10-27 07:00', '2026-10-29 18:00', '2026-10-31 10:00',
   '2026-11-03 07:00', '2026-11-05 18:00', '2026-11-07 10:00'];
 const pacific = (ms) => {
@@ -53,6 +53,18 @@ test('Moonrise Over the Cascades keeps its id and Oct 24 slot, with the renamed 
   assert.equal(eventContent(moonrise), `${moonrise.text}\n\n${moonrise.imageUrl}`);
 });
 
+test('testimonial request goes out Fri Oct 16 at noon PT with the exact copy, the three-El-Zonte room photo and its link once', () => {
+  const post = posts.find(entry => entry.id === 'campaign-testimonial-request-2026-10-16');
+  assert.equal(post.scheduledAt, '2026-10-16T12:00:00-07:00');
+  assert.equal(pacific(Date.parse(post.scheduledAt)), '2026-10-16 12:00');
+  assert.equal(post.text, "Have one of my paintings at home? I'd love to hear about it. Share a testimonial with photos, or a short selfie video of you in front of your painting talking about it. If I approve it, I'll thank you with a personal code for a print of mine at cost: https://tjm.art/testimonials/#share");
+  assert.equal(post.imageUrl, 'https://tjm.art/product-media/el-zonte/room-1-1600.jpg');
+  assert.equal(post.productUrl, '/testimonials/');
+  const content = eventContent(post);
+  assert.equal(content, `${post.text}\n\n${post.imageUrl}`);
+  assert.equal(content.match(/https:\/\/tjm\.art\/testimonials\//g).length, 1);
+});
+
 test('after deploy: published entries never repeat and nothing publishes before its slot', () => {
   const activatedAt = Date.parse('2026-10-03T20:00:00Z');
   const delivered = new Set([...PUBLISHED, testPost.id]);
@@ -74,7 +86,8 @@ test('notes use tjm.art links and images, no X handles, and no duplicated link',
     const content = eventContent(post);
     assert.ok(!/vermillionaurora\.com/.test(content), post.id);
     assert.ok(!/(^|\s)@\w/.test(post.text), `${post.id} has an X handle`);
-    assert.equal(content.split(/\s+/).filter(word => word.replace(/[.,:;)]+$/, '') === `https://tjm.art${post.productUrl}`).length, 1, `${post.id} link once`);
+    const link = `https://tjm.art${post.productUrl}`;
+    assert.equal(content.split(/\s+/).filter(word => { const bare = word.replace(/[.,:;)]+$/, ''); return bare === link || bare.startsWith(`${link}#`); }).length, 1, `${post.id} link once`);
     assert.ok(content.endsWith(post.imageUrl));
   }
 });
