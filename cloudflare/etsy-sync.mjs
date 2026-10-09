@@ -1,5 +1,5 @@
 // Owner-only, product-scoped Etsy updates. Does not publish unless activate is called,
-// and never touches listings outside the El Zonte sync set.
+// and never touches listings outside the sync set (SYNC_WORKS).
 import {ETSY_ORIGIN} from './etsy-connection.mjs';
 import {call as etsyApiCall, persist as persistEtsyRecord} from './etsy-listings.mjs';
 import {shippingChoice, shippingPackages, estimateShippingPackages} from './etsy-shipping.mjs';
@@ -25,7 +25,7 @@ function flatten(nodes, parent = '') {
 }
 function owned(id) {
   const listingId = Number(id);
-  if (!Number.isSafeInteger(listingId) || listingId <= 0 || PROTECTED_LISTING_IDS.has(listingId)) throw Error('Refusing to modify a listing outside the El Zonte sync.');
+  if (!Number.isSafeInteger(listingId) || listingId <= 0 || PROTECTED_LISTING_IDS.has(listingId)) throw Error('Refusing to modify a listing outside the Etsy sync set.');
   return listingId;
 }
 function indexOf(record) {
@@ -105,7 +105,7 @@ async function writeListing(env, token, listingId, body) {
 
 function requested(input) {
   const ids = input?.productIds;
-  if (!Array.isArray(ids) || !ids.length || ids.length > SYNC_WORKS.length || new Set(ids).size !== ids.length) throw Error('Choose the El Zonte paintings to sync.');
+  if (!Array.isArray(ids) || !ids.length || ids.length > SYNC_WORKS.length || new Set(ids).size !== ids.length) throw Error('Choose the paintings to sync.');
   return ids.map(workById);
 }
 function kindOf(input) {
@@ -197,7 +197,7 @@ export async function etsyListingAdmin(request, env, session, now = Date.now()) 
   if (new URL(request.url).origin !== ETSY_ORIGIN) throw Error('Not found');
   let {record, etag, token} = session;
   if (path === '/etsy/listings/media') return uploadMedia(request, env, record, etag, token);
-  let input; try { input = await request.json(); } catch { throw Error('Choose the El Zonte paintings to sync.'); }
+  let input; try { input = await request.json(); } catch { throw Error('Choose the paintings to sync.'); }
   if (path === '/etsy/listings/reconcile') {
     const {reconcileOriginals} = await import('./etsy-original-sync.mjs');
     return reconcileOriginals(env, token, record, {dryRun: input.dryRun !== false});
@@ -258,7 +258,7 @@ async function uploadMedia(request, env, record, etag, token) {
   upload.set('image', new Blob([await file.arrayBuffer()], {type}), work.id + '-' + slot + (type === 'image/jpeg' ? '.jpg' : '.png'));
   upload.set('rank', String(rank));
   upload.set('overwrite', 'true');
-  upload.set('alt_text', Array.from(slot === 'painting' ? work.image.alt : work.title + ' hanging with the other El Zonte paintings in a living room').slice(0, 250).join(''));
+  upload.set('alt_text', Array.from(slot === 'painting' ? work.image.alt : work.roomAlt || work.title + ' hanging with the other El Zonte paintings in a living room').slice(0, 250).join(''));
   await etsyApiCall(API + '/shops/' + token.shopId + '/listings/' + listingId + '/images', env, token, {method: 'POST', body: upload, action: 'uploading artwork'});
   if (!sync.listings?.[work.id]?.[kind]) ({record, etag} = await saveIndex(env, record, etag, remember(sync, work.id, kind, listingId)));
   return {id: work.id, kind, listingId, rank};

@@ -127,9 +127,38 @@ test('publishes only the requested print listings', async t => {
   assert.equal(new URLSearchParams(patches[0].options.body).get('state'), 'active');
 });
 
-test('rejects paintings outside the El Zonte set', async t => {
+test('rejects paintings outside the Etsy sync list', async t => {
   const env = envOf(); await connected(env); mock(t);
   const res = await req(env, '/etsy/listings/sync', {kind: 'print', productIds: ['warszawska-syrenka']});
   assert.equal(res.status, 502);
-  assert.match((await res.json()).error, /El Zonte/);
+  assert.match((await res.json()).error, /sync list/);
+});
+
+test('Sunrise in El Zonte (Large), Meditation at Denny Blaine and Moonrise Over the Cascades: titles, copy, tags and prices', async () => {
+  const {buildSyncPrintPlan, buildSyncOriginalPlan, workById} = await import('./etsy-sync-plan.mjs');
+  const settings = {taxonomyId: 1, shippingProfileId: 2, readinessStateId: 3, partnerId: 4, returnPolicyId: 5};
+  const want = {
+    'sunrise-in-el-zonte-large': ['Sunrise in El Zonte (Large), Original Watercolor Pastel, 36 x 48 in', '2200.00', 'watercolor pastel', 'The tropical air makes the light especially luminous. Watercolor pastel.'],
+    'meditation-at-denny-blaine': ['Meditation at Denny Blaine, Original Watercolor, 16 x 23 in', '660.00', 'watercolor', 'sitting and waiting while the color changes. Watercolor, painted in Seattle.'],
+    'painting-moonlit-water': ['Moonrise Over the Cascades, Original Watercolor Pastel, 12 x 23 in', '550.00', 'watercolor pastel', 'Painted in Seattle. Watercolor pastel.']
+  };
+  for (const [id, [title, price, medium, ending]] of Object.entries(want)) {
+    const work = workById(id);
+    const original = buildSyncOriginalPlan(work, settings).body;
+    assert.equal(original.get('title'), title);
+    assert.equal(original.get('price'), price);
+    assert.equal(original.get('quantity'), '1');
+    assert.equal(original.get('materials'), medium);
+    assert.equal(original.get('tags').split(',').at(-1), 'original painting');
+    assert.ok(original.get('description').includes(ending), id);
+    assert.doesNotMatch(original.get('description'), /\d+\s*×\s*\d+\s*in/);
+    const print = (await buildSyncPrintPlan(work, settings)).body;
+    assert.equal(print.get('title'), work.title + ' Art Print · Framed or Unframed');
+    assert.equal(print.get('tags').split(',').length, 13);
+    assert.equal(print.get('tags').split(',').at(-1), 'art print');
+    assert.match(print.get('description'), /printed on Watercolor Bright White fine art paper/);
+    assert.doesNotMatch(print.get('description'), /finerworks/i);
+    assert.equal(print.get('price'), String(Math.min(...work.variants.map(v => Number(v.price)))));
+    for (const v of work.variants) assert.ok(print.get('description').includes(`(${v.paperSize.width} × ${v.paperSize.height} in): $${v.price} unframed`), id);
+  }
 });
