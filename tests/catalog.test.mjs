@@ -172,20 +172,22 @@ test('painting cards: price without "USD", "Prints from" the cheapest ready prin
 });
 test('painting pages render extra photos as thumbnails after the main image and an accessible product video',()=>{
  const withMedia=products.filter(p=>p.type==='painting'&&(p.gallery?.length||p.video));
- assert.deepEqual(withMedia.map(p=>p.id).sort(),['el-zonte-at-sunrise','el-zonte-before-dawn','hope-the-vermillion-aurora','meditation-at-denny-blaine','painting-moonlit-water','painting-red-horizon','painting-shoreline-at-dusk','sunrise-in-el-zonte-large']);
+ assert.deepEqual(withMedia.map(p=>p.id).sort(),['el-zonte-at-sunrise','el-zonte-before-dawn','hope-the-vermillion-aurora','meditation-at-denny-blaine','painting-clouds-over-water','painting-emergence','painting-insect-garden','painting-moonlit-water','painting-red-horizon','painting-shoreline-at-dusk','painting-twin-dragons','sunrise-in-el-zonte-large','sunset-in-el-tunco-el-salvador','sunset-in-el-zonte-el-salvador']);
  for(const p of withMedia){
   const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));
   const thumbs=$('.product-media [data-product-thumbs] .product-thumb');
   assert.equal(thumbs.length,p.gallery.length+1,p.id);
   assert.equal(thumbs.first().attr('aria-pressed'),'true');
   assert.match(thumbs.first().attr('aria-label'),new RegExp(`^Show photo 1 of ${p.gallery.length+1}: `));
-  p.gallery.forEach((g,i)=>{const t=thumbs.eq(i+1);assert.equal(t.attr('data-alt'),g.alt);assert.ok(g.alt.startsWith(p.title));assert.equal(t.find('source[type="image/avif"]').length,1);assert.equal(t.find('source[type="image/webp"]').length,1);});
-  const video=$('.product-media video[data-product-video]');
-  assert.equal(video.length,1,p.id);
-  for(const attr of ['controls','playsinline'])assert.ok(video.attr(attr)!==undefined,attr);
-  assert.equal(video.attr('preload'),'metadata');assert.equal(video.attr('aria-label'),p.video.label);assert.equal(video.attr('poster'),p.video.poster);
-  assert.equal(video.attr('autoplay'),undefined);
-  assert.deepEqual(video.find('source').map((i,e)=>$(e).attr('src')).get(),p.video.sources.map(s=>s.src));
+  p.gallery.forEach((g,i)=>{const t=thumbs.eq(i+1);assert.equal(t.attr('data-alt'),g.alt);assert.ok(g.alt.startsWith(p.title)||g.alt==='El Zonte paintings by TJ Murphy hanging in a gallery',p.id+': '+g.alt);assert.equal(t.find('source[type="image/avif"]').length,1);assert.equal(t.find('source[type="image/webp"]').length,1);});
+  if(p.video){
+   const video=$('.product-media video[data-product-video]');
+   assert.equal(video.length,1,p.id);
+   for(const attr of ['controls','playsinline'])assert.ok(video.attr(attr)!==undefined,attr);
+   assert.equal(video.attr('preload'),'metadata');assert.equal(video.attr('aria-label'),p.video.label);assert.equal(video.attr('poster'),p.video.poster);
+   assert.equal(video.attr('autoplay'),undefined);
+   assert.deepEqual(video.find('source').map((i,e)=>$(e).attr('src')).get(),p.video.sources.map(s=>s.src));
+  } else assert.equal($('.product-media video[data-product-video]').length,0,p.id);
  }
 });
 test('homepage featured carousel includes each El Zonte painting exactly once with the new full-res photos',()=>{
@@ -249,4 +251,29 @@ test('homepage featured carousel leads with Hope and Sunset at Kihei on Maui, on
  const hope=products.find(p=>p.id==='hope-the-vermillion-aurora');
  assert.equal(hope.title,'Hope, the Vermillion Aurora');assert.deepEqual(hope.dimensions,{width:44,height:22,unit:'in'});
  assert.equal(hope.listing.price.amount,'2000.00');assert.equal(hope.year,2023);
+});
+test('Burning Man Temple 2022 paintings are collector’s items with their own pages, no prints and no checkout',()=>{
+ const ids=['burning-man-temple-2022-blue','burning-man-temple-2022-pink','burning-man-temple-2022-flame','burning-man-temple-2022-daytime'];
+ const $=load(fs.readFileSync('dist/index.html','utf8'));
+ const collectors=$('[data-collector-paintings] [data-product-id]').map((i,el)=>$(el).attr('data-product-id')).get();
+ for(const id of ids){
+  const p=products.find(x=>x.id===id);
+  assert.equal(p.listing.status,'not-for-sale',id);assert.equal(p.listing.price,undefined,id);assert.equal(p.checkout.mode,'inquiry',id);
+  assert.equal(p.dimensions,undefined,id);assert.equal(p.year,null,id);assert.deepEqual(p.facts,[],id);
+  assert.equal(collectors.filter(x=>x===id).length,1,`${id} once in Collector’s Items`);
+  assert.equal($(`[data-available-paintings] [data-product-id="${id}"]`).length,0,id);
+  assert(!Object.keys(JSON.parse(fs.readFileSync('catalog/prints.json','utf8')).artworks).includes(id),`${id} has no prints`);
+  const page=load(fs.readFileSync(`dist/products/${id}/index.html`,'utf8'));
+  assert.equal(page('h1').text(),p.title);
+  assert.equal(page('[data-original-purchase]').length,0,id);
+ }
+});
+test('the wedding portrait commission example leads the /commissions/ portrait carousel and is not a product',()=>{
+ const $=load(fs.readFileSync('dist/commissions/index.html','utf8'));
+ const first=$('#portrait .portrait-preview-stage img').first();
+ assert.equal(first.attr('data-image-src'),'/gallery-images/wedding-portrait-with-dog.jpg');
+ assert.ok(first.attr('alt').startsWith('Wedding Portrait with Dog'));
+ assert.equal($('#portrait [data-mix]').attr('data-mix').split(',')[0],'double-portrait');
+ const js=fs.readFileSync('portrait-preview.js','utf8');assert.ok(js.includes('"double-portrait": ["/display/wedding-portrait-with-dog-'));
+ assert.ok(!products.some(p=>p.image?.src==='/gallery-images/wedding-portrait-with-dog.jpg'));
 });

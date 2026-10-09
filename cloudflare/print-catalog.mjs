@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="223b8029b3c0d5257a57";
+export const printVersion="dba14127a339accdf896";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -8326,33 +8326,33 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Hawaii — Large print",
-    "artworkTitle": "Hawaii",
-    "amount": "45.00",
+    "title": "Sunset at Kihei on Maui — Large print",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "145.00",
     "currency": "USD",
-    "sku": "5M144M8S6.67X12.77",
+    "sku": "5M144M8S13.45X25.51",
     "scale": 1,
     "imageSize": {
-      "width": 6.4167,
-      "height": 12.5067,
+      "width": 13.1967,
+      "height": 25.2433,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.67,
-      "height": 12.77,
+      "width": 13.45,
+      "height": 25.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27.jpg",
-    "assetSha256": "e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27",
-    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1466c0912270c7aeb5775e0456698db59dcecc51a54442e0fc1033216251d7f3.jpg",
+    "assetSha256": "1466c0912270c7aeb5775e0456698db59dcecc51a54442e0fc1033216251d7f3",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy",
-      "caption": "Hawaii"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8364,33 +8364,33 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Hawaii — Large print — Black frame",
-    "artworkTitle": "Hawaii",
-    "amount": "92.00",
+    "title": "Sunset at Kihei on Maui — Large print — Black frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "245.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD67X12DD77F1S9DD67X15DD77J1S6DD67X12DD77G1",
+    "sku": "5M144M8S13DD45X25DD51F1S16DD45X28DD51J1S13DD45X25DD51G1",
     "scale": 1,
     "imageSize": {
-      "width": 6.4167,
-      "height": 12.5067,
+      "width": 13.1967,
+      "height": 25.2433,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.67,
-      "height": 12.77,
+      "width": 13.45,
+      "height": 25.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27.jpg",
-    "assetSha256": "e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27",
-    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1466c0912270c7aeb5775e0456698db59dcecc51a54442e0fc1033216251d7f3.jpg",
+    "assetSha256": "1466c0912270c7aeb5775e0456698db59dcecc51a54442e0fc1033216251d7f3",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy",
-      "caption": "Hawaii"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8401,18 +8401,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9.67,
-        "height": 15.77,
+        "width": 16.45,
+        "height": 28.51,
         "unit": "in"
       },
       "window": {
-        "width": 6.67,
-        "height": 12.77,
+        "width": 13.45,
+        "height": 25.51,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S6.67X12.77",
+    "baseSku": "5M144M8S13.45X25.51",
     "frame": {
       "key": "black",
       "id": 1,
@@ -8422,8 +8422,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9.67,
-        "height": 15.77,
+        "width": 16.45,
+        "height": 28.51,
         "unit": "in"
       },
       "glazing": {
@@ -8431,40 +8431,40 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "45.00"
+    "unframedAmount": "145.00"
   },
   "print-painting-red-horizon-full-frame-white": {
     "id": "print-painting-red-horizon-full-frame-white",
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Hawaii — Large print — White frame",
-    "artworkTitle": "Hawaii",
-    "amount": "92.00",
+    "title": "Sunset at Kihei on Maui — Large print — White frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "245.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD67X12DD77F2S9DD67X15DD77J1S6DD67X12DD77G1",
+    "sku": "5M144M8S13DD45X25DD51F2S16DD45X28DD51J1S13DD45X25DD51G1",
     "scale": 1,
     "imageSize": {
-      "width": 6.4167,
-      "height": 12.5067,
+      "width": 13.1967,
+      "height": 25.2433,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.67,
-      "height": 12.77,
+      "width": 13.45,
+      "height": 25.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27.jpg",
-    "assetSha256": "e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27",
-    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1466c0912270c7aeb5775e0456698db59dcecc51a54442e0fc1033216251d7f3.jpg",
+    "assetSha256": "1466c0912270c7aeb5775e0456698db59dcecc51a54442e0fc1033216251d7f3",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy",
-      "caption": "Hawaii"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8475,18 +8475,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9.67,
-        "height": 15.77,
+        "width": 16.45,
+        "height": 28.51,
         "unit": "in"
       },
       "window": {
-        "width": 6.67,
-        "height": 12.77,
+        "width": 13.45,
+        "height": 25.51,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S6.67X12.77",
+    "baseSku": "5M144M8S13.45X25.51",
     "frame": {
       "key": "white",
       "id": 2,
@@ -8496,8 +8496,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9.67,
-        "height": 15.77,
+        "width": 16.45,
+        "height": 28.51,
         "unit": "in"
       },
       "glazing": {
@@ -8505,40 +8505,40 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "45.00"
+    "unframedAmount": "145.00"
   },
   "print-painting-red-horizon-full-frame-natural": {
     "id": "print-painting-red-horizon-full-frame-natural",
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Hawaii — Large print — Natural wood frame",
-    "artworkTitle": "Hawaii",
-    "amount": "103.00",
+    "title": "Sunset at Kihei on Maui — Large print — Natural wood frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "264.00",
     "currency": "USD",
-    "sku": "5M144M8S6DD67X12DD77F7S9DD67X15DD77J1S6DD67X12DD77G1",
+    "sku": "5M144M8S13DD45X25DD51F7S16DD45X28DD51J1S13DD45X25DD51G1",
     "scale": 1,
     "imageSize": {
-      "width": 6.4167,
-      "height": 12.5067,
+      "width": 13.1967,
+      "height": 25.2433,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.67,
-      "height": 12.77,
+      "width": 13.45,
+      "height": 25.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27.jpg",
-    "assetSha256": "e8913072bada3e7fc3eedd344a3441c9701959d3d03b3ec217610489fd608c27",
-    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1466c0912270c7aeb5775e0456698db59dcecc51a54442e0fc1033216251d7f3.jpg",
+    "assetSha256": "1466c0912270c7aeb5775e0456698db59dcecc51a54442e0fc1033216251d7f3",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy",
-      "caption": "Hawaii"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8549,18 +8549,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 9.67,
-        "height": 15.77,
+        "width": 16.45,
+        "height": 28.51,
         "unit": "in"
       },
       "window": {
-        "width": 6.67,
-        "height": 12.77,
+        "width": 13.45,
+        "height": 25.51,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S6.67X12.77",
+    "baseSku": "5M144M8S13.45X25.51",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -8570,8 +8570,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 9.67,
-        "height": 15.77,
+        "width": 16.45,
+        "height": 28.51,
         "unit": "in"
       },
       "glazing": {
@@ -8579,40 +8579,40 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "45.00"
+    "unframedAmount": "145.00"
   },
   "print-painting-red-horizon-medium": {
     "id": "print-painting-red-horizon-medium",
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Hawaii — Medium print",
-    "artworkTitle": "Hawaii",
-    "amount": "35.00",
+    "title": "Sunset at Kihei on Maui — Medium print",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S5.07X9.64",
+    "sku": "5M144M8S10.15X19.19",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.8167,
-      "height": 9.3867,
+      "width": 9.8967,
+      "height": 18.93,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.07,
-      "height": 9.64,
+      "width": 10.15,
+      "height": 19.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0.jpg",
-    "assetSha256": "8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0",
-    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/51cfa2aa9b3ee21f1e73966390d4a5fe36dd378a34665d593c3e8d5a9b27b7dc.jpg",
+    "assetSha256": "51cfa2aa9b3ee21f1e73966390d4a5fe36dd378a34665d593c3e8d5a9b27b7dc",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy",
-      "caption": "Hawaii"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8624,33 +8624,33 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Hawaii — Medium print — Black frame",
-    "artworkTitle": "Hawaii",
-    "amount": "72.63",
+    "title": "Sunset at Kihei on Maui — Medium print — Black frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "156.00",
     "currency": "USD",
-    "sku": "5M144M8S5DD07X9DD64F1S8DD07X12DD64J1S5DD07X9DD64G1",
+    "sku": "5M144M8S10DD15X19DD19F1S13DD15X22DD19J1S10DD15X19DD19G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.8167,
-      "height": 9.3867,
+      "width": 9.8967,
+      "height": 18.93,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.07,
-      "height": 9.64,
+      "width": 10.15,
+      "height": 19.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0.jpg",
-    "assetSha256": "8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0",
-    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/51cfa2aa9b3ee21f1e73966390d4a5fe36dd378a34665d593c3e8d5a9b27b7dc.jpg",
+    "assetSha256": "51cfa2aa9b3ee21f1e73966390d4a5fe36dd378a34665d593c3e8d5a9b27b7dc",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy",
-      "caption": "Hawaii"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8661,18 +8661,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8.07,
-        "height": 12.64,
+        "width": 13.15,
+        "height": 22.19,
         "unit": "in"
       },
       "window": {
-        "width": 5.07,
-        "height": 9.64,
+        "width": 10.15,
+        "height": 19.19,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S5.07X9.64",
+    "baseSku": "5M144M8S10.15X19.19",
     "frame": {
       "key": "black",
       "id": 1,
@@ -8682,8 +8682,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8.07,
-        "height": 12.64,
+        "width": 13.15,
+        "height": 22.19,
         "unit": "in"
       },
       "glazing": {
@@ -8691,40 +8691,40 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "35.00"
+    "unframedAmount": "85.00"
   },
   "print-painting-red-horizon-medium-frame-white": {
     "id": "print-painting-red-horizon-medium-frame-white",
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Hawaii — Medium print — White frame",
-    "artworkTitle": "Hawaii",
-    "amount": "72.63",
+    "title": "Sunset at Kihei on Maui — Medium print — White frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "156.00",
     "currency": "USD",
-    "sku": "5M144M8S5DD07X9DD64F2S8DD07X12DD64J1S5DD07X9DD64G1",
+    "sku": "5M144M8S10DD15X19DD19F2S13DD15X22DD19J1S10DD15X19DD19G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.8167,
-      "height": 9.3867,
+      "width": 9.8967,
+      "height": 18.93,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.07,
-      "height": 9.64,
+      "width": 10.15,
+      "height": 19.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0.jpg",
-    "assetSha256": "8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0",
-    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/51cfa2aa9b3ee21f1e73966390d4a5fe36dd378a34665d593c3e8d5a9b27b7dc.jpg",
+    "assetSha256": "51cfa2aa9b3ee21f1e73966390d4a5fe36dd378a34665d593c3e8d5a9b27b7dc",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy",
-      "caption": "Hawaii"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8735,18 +8735,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8.07,
-        "height": 12.64,
+        "width": 13.15,
+        "height": 22.19,
         "unit": "in"
       },
       "window": {
-        "width": 5.07,
-        "height": 9.64,
+        "width": 10.15,
+        "height": 19.19,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S5.07X9.64",
+    "baseSku": "5M144M8S10.15X19.19",
     "frame": {
       "key": "white",
       "id": 2,
@@ -8756,8 +8756,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8.07,
-        "height": 12.64,
+        "width": 13.15,
+        "height": 22.19,
         "unit": "in"
       },
       "glazing": {
@@ -8765,40 +8765,40 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "35.00"
+    "unframedAmount": "85.00"
   },
   "print-painting-red-horizon-medium-frame-natural": {
     "id": "print-painting-red-horizon-medium-frame-natural",
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-red-horizon",
-    "title": "Hawaii — Medium print — Natural wood frame",
-    "artworkTitle": "Hawaii",
-    "amount": "81.63",
+    "title": "Sunset at Kihei on Maui — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "172.00",
     "currency": "USD",
-    "sku": "5M144M8S5DD07X9DD64F7S8DD07X12DD64J1S5DD07X9DD64G1",
+    "sku": "5M144M8S10DD15X19DD19F7S13DD15X22DD19J1S10DD15X19DD19G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.8167,
-      "height": 9.3867,
+      "width": 9.8967,
+      "height": 18.93,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.07,
-      "height": 9.64,
+      "width": 10.15,
+      "height": 19.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0.jpg",
-    "assetSha256": "8513719d230547f87b44b08db0ae5849006138ddfc87aa572eabcc66ccd0d8a0",
-    "sourceSha256": "33a074dcefbacb7086c903a457334a61e38561154e8514282ef2a65f4660810f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/51cfa2aa9b3ee21f1e73966390d4a5fe36dd378a34665d593c3e8d5a9b27b7dc.jpg",
+    "assetSha256": "51cfa2aa9b3ee21f1e73966390d4a5fe36dd378a34665d593c3e8d5a9b27b7dc",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy",
-      "caption": "Hawaii"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -8809,18 +8809,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 8.07,
-        "height": 12.64,
+        "width": 13.15,
+        "height": 22.19,
         "unit": "in"
       },
       "window": {
-        "width": 5.07,
-        "height": 9.64,
+        "width": 10.15,
+        "height": 19.19,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S5.07X9.64",
+    "baseSku": "5M144M8S10.15X19.19",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -8830,8 +8830,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 8.07,
-        "height": 12.64,
+        "width": 13.15,
+        "height": 22.19,
         "unit": "in"
       },
       "glazing": {
@@ -8839,7 +8839,1047 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "35.00"
+    "unframedAmount": "85.00"
+  },
+  "print-painting-red-horizon-small": {
+    "id": "print-painting-red-horizon-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Sunset at Kihei on Maui — Small print",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "45.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.85X12.88",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.5967,
+      "height": 12.62,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.85,
+      "height": 12.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/637db244a8d1cc15f2446209c81e33e4bb9b996f10fe239c98cc9fd3d8afd152.jpg",
+    "assetSha256": "637db244a8d1cc15f2446209c81e33e4bb9b996f10fe239c98cc9fd3d8afd152",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-red-horizon-small-frame-black": {
+    "id": "print-painting-red-horizon-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Sunset at Kihei on Maui — Small print — Black frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD85X12DD88F1S9DD85X15DD88J1S6DD85X12DD88G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.5967,
+      "height": 12.62,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.85,
+      "height": 12.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/637db244a8d1cc15f2446209c81e33e4bb9b996f10fe239c98cc9fd3d8afd152.jpg",
+    "assetSha256": "637db244a8d1cc15f2446209c81e33e4bb9b996f10fe239c98cc9fd3d8afd152",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.85,
+        "height": 15.88,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.85,
+        "height": 12.88,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.85X12.88",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.85,
+        "height": 15.88,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-painting-red-horizon-small-frame-white": {
+    "id": "print-painting-red-horizon-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Sunset at Kihei on Maui — Small print — White frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD85X12DD88F2S9DD85X15DD88J1S6DD85X12DD88G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.5967,
+      "height": 12.62,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.85,
+      "height": 12.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/637db244a8d1cc15f2446209c81e33e4bb9b996f10fe239c98cc9fd3d8afd152.jpg",
+    "assetSha256": "637db244a8d1cc15f2446209c81e33e4bb9b996f10fe239c98cc9fd3d8afd152",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.85,
+        "height": 15.88,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.85,
+        "height": 12.88,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.85X12.88",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.85,
+        "height": 15.88,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-painting-red-horizon-small-frame-natural": {
+    "id": "print-painting-red-horizon-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-red-horizon",
+    "title": "Sunset at Kihei on Maui — Small print — Natural wood frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
+    "amount": "103.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD85X12DD88F7S9DD85X15DD88J1S6DD85X12DD88G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.5967,
+      "height": 12.62,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.85,
+      "height": 12.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/637db244a8d1cc15f2446209c81e33e4bb9b996f10fe239c98cc9fd3d8afd152.jpg",
+    "assetSha256": "637db244a8d1cc15f2446209c81e33e4bb9b996f10fe239c98cc9fd3d8afd152",
+    "sourceSha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy",
+      "caption": "Sunset at Kihei on Maui"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.85,
+        "height": 15.88,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.85,
+        "height": 12.88,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.85X12.88",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.85,
+        "height": 15.88,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-hope-the-vermillion-aurora-full": {
+    "id": "print-hope-the-vermillion-aurora-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Large print",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "135.00",
+    "currency": "USD",
+    "sku": "5M144M8S25.24X12.75",
+    "scale": 1,
+    "imageSize": {
+      "width": 24.9867,
+      "height": 12.4933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.24,
+      "height": 12.75,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6e87d7d714db8ac33dfa0ad65fcf56baec00eeb6242bdd10cf6ff0ace2c92ef9.jpg",
+    "assetSha256": "6e87d7d714db8ac33dfa0ad65fcf56baec00eeb6242bdd10cf6ff0ace2c92ef9",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-hope-the-vermillion-aurora-full-frame-black": {
+    "id": "print-hope-the-vermillion-aurora-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Large print — Black frame",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "231.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD24X12DD75F1S28DD24X15DD75J1S25DD24X12DD75G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 24.9867,
+      "height": 12.4933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.24,
+      "height": 12.75,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6e87d7d714db8ac33dfa0ad65fcf56baec00eeb6242bdd10cf6ff0ace2c92ef9.jpg",
+    "assetSha256": "6e87d7d714db8ac33dfa0ad65fcf56baec00eeb6242bdd10cf6ff0ace2c92ef9",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.24,
+        "height": 15.75,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.24,
+        "height": 12.75,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.24X12.75",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.24,
+        "height": 15.75,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "135.00"
+  },
+  "print-hope-the-vermillion-aurora-full-frame-white": {
+    "id": "print-hope-the-vermillion-aurora-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Large print — White frame",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "231.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD24X12DD75F2S28DD24X15DD75J1S25DD24X12DD75G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 24.9867,
+      "height": 12.4933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.24,
+      "height": 12.75,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6e87d7d714db8ac33dfa0ad65fcf56baec00eeb6242bdd10cf6ff0ace2c92ef9.jpg",
+    "assetSha256": "6e87d7d714db8ac33dfa0ad65fcf56baec00eeb6242bdd10cf6ff0ace2c92ef9",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.24,
+        "height": 15.75,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.24,
+        "height": 12.75,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.24X12.75",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.24,
+        "height": 15.75,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "135.00"
+  },
+  "print-hope-the-vermillion-aurora-full-frame-natural": {
+    "id": "print-hope-the-vermillion-aurora-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Large print — Natural wood frame",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "250.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD24X12DD75F7S28DD24X15DD75J1S25DD24X12DD75G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 24.9867,
+      "height": 12.4933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.24,
+      "height": 12.75,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6e87d7d714db8ac33dfa0ad65fcf56baec00eeb6242bdd10cf6ff0ace2c92ef9.jpg",
+    "assetSha256": "6e87d7d714db8ac33dfa0ad65fcf56baec00eeb6242bdd10cf6ff0ace2c92ef9",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.24,
+        "height": 15.75,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.24,
+        "height": 12.75,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.24X12.75",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.24,
+        "height": 15.75,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "135.00"
+  },
+  "print-hope-the-vermillion-aurora-medium": {
+    "id": "print-hope-the-vermillion-aurora-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Medium print",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "75.00",
+    "currency": "USD",
+    "sku": "5M144M8S18.99X9.62",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 18.73,
+      "height": 9.3667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 18.99,
+      "height": 9.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/96061e35f91945ede7797e7550ca0e6c1b78605b8182b17b7ee3f50615041a7f.jpg",
+    "assetSha256": "96061e35f91945ede7797e7550ca0e6c1b78605b8182b17b7ee3f50615041a7f",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-hope-the-vermillion-aurora-medium-frame-black": {
+    "id": "print-hope-the-vermillion-aurora-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Medium print — Black frame",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S18DD99X9DD62F1S21DD99X12DD62J1S18DD99X9DD62G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 18.73,
+      "height": 9.3667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 18.99,
+      "height": 9.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/96061e35f91945ede7797e7550ca0e6c1b78605b8182b17b7ee3f50615041a7f.jpg",
+    "assetSha256": "96061e35f91945ede7797e7550ca0e6c1b78605b8182b17b7ee3f50615041a7f",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 21.99,
+        "height": 12.62,
+        "unit": "in"
+      },
+      "window": {
+        "width": 18.99,
+        "height": 9.62,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S18.99X9.62",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 21.99,
+        "height": 12.62,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "75.00"
+  },
+  "print-hope-the-vermillion-aurora-medium-frame-white": {
+    "id": "print-hope-the-vermillion-aurora-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Medium print — White frame",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "144.00",
+    "currency": "USD",
+    "sku": "5M144M8S18DD99X9DD62F2S21DD99X12DD62J1S18DD99X9DD62G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 18.73,
+      "height": 9.3667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 18.99,
+      "height": 9.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/96061e35f91945ede7797e7550ca0e6c1b78605b8182b17b7ee3f50615041a7f.jpg",
+    "assetSha256": "96061e35f91945ede7797e7550ca0e6c1b78605b8182b17b7ee3f50615041a7f",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 21.99,
+        "height": 12.62,
+        "unit": "in"
+      },
+      "window": {
+        "width": 18.99,
+        "height": 9.62,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S18.99X9.62",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 21.99,
+        "height": 12.62,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "75.00"
+  },
+  "print-hope-the-vermillion-aurora-medium-frame-natural": {
+    "id": "print-hope-the-vermillion-aurora-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Medium print — Natural wood frame",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "159.00",
+    "currency": "USD",
+    "sku": "5M144M8S18DD99X9DD62F7S21DD99X12DD62J1S18DD99X9DD62G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 18.73,
+      "height": 9.3667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 18.99,
+      "height": 9.62,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/96061e35f91945ede7797e7550ca0e6c1b78605b8182b17b7ee3f50615041a7f.jpg",
+    "assetSha256": "96061e35f91945ede7797e7550ca0e6c1b78605b8182b17b7ee3f50615041a7f",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 21.99,
+        "height": 12.62,
+        "unit": "in"
+      },
+      "window": {
+        "width": 18.99,
+        "height": 9.62,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S18.99X9.62",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 21.99,
+        "height": 12.62,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "75.00"
+  },
+  "print-hope-the-vermillion-aurora-small": {
+    "id": "print-hope-the-vermillion-aurora-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Small print",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "45.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.74X6.5",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.4867,
+      "height": 6.2433,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.74,
+      "height": 6.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d3180d0fa60fe914a0f994239a1be41c86bf3b330aa5c4057441d402c98c809e.jpg",
+    "assetSha256": "d3180d0fa60fe914a0f994239a1be41c86bf3b330aa5c4057441d402c98c809e",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-hope-the-vermillion-aurora-small-frame-black": {
+    "id": "print-hope-the-vermillion-aurora-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Small print — Black frame",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "90.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD74X6DD5F1S15DD74X9DD5J1S12DD74X6DD5G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.4867,
+      "height": 6.2433,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.74,
+      "height": 6.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d3180d0fa60fe914a0f994239a1be41c86bf3b330aa5c4057441d402c98c809e.jpg",
+    "assetSha256": "d3180d0fa60fe914a0f994239a1be41c86bf3b330aa5c4057441d402c98c809e",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.74,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.74,
+        "height": 6.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.74X6.5",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.74,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-hope-the-vermillion-aurora-small-frame-white": {
+    "id": "print-hope-the-vermillion-aurora-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Small print — White frame",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "90.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD74X6DD5F2S15DD74X9DD5J1S12DD74X6DD5G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.4867,
+      "height": 6.2433,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.74,
+      "height": 6.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d3180d0fa60fe914a0f994239a1be41c86bf3b330aa5c4057441d402c98c809e.jpg",
+    "assetSha256": "d3180d0fa60fe914a0f994239a1be41c86bf3b330aa5c4057441d402c98c809e",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.74,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.74,
+        "height": 6.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.74X6.5",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.74,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-hope-the-vermillion-aurora-small-frame-natural": {
+    "id": "print-hope-the-vermillion-aurora-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "hope-the-vermillion-aurora",
+    "title": "Hope, the Vermillion Aurora — Small print — Natural wood frame",
+    "artworkTitle": "Hope, the Vermillion Aurora",
+    "amount": "102.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD74X6DD5F7S15DD74X9DD5J1S12DD74X6DD5G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 12.4867,
+      "height": 6.2433,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.74,
+      "height": 6.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d3180d0fa60fe914a0f994239a1be41c86bf3b330aa5c4057441d402c98c809e.jpg",
+    "assetSha256": "d3180d0fa60fe914a0f994239a1be41c86bf3b330aa5c4057441d402c98c809e",
+    "sourceSha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/hope-the-vermillion-aurora.jpg",
+      "alt": "Hope, the Vermillion Aurora by TJ Murphy",
+      "caption": "Hope, the Vermillion Aurora"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.74,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.74,
+        "height": 6.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.74X6.5",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.74,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
   },
   "print-painting-shoreline-at-dusk-full": {
     "id": "print-painting-shoreline-at-dusk-full",
@@ -47846,8 +48886,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Hawaii — Large print",
-    "artworkTitle": "Hawaii",
+    "title": "Sunset at Kihei on Maui — Large print",
+    "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S6.67X12.77",
@@ -47884,8 +48924,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Hawaii — Large print — Black frame",
-    "artworkTitle": "Hawaii",
+    "title": "Sunset at Kihei on Maui — Large print — Black frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD77F1S9DD67X15DD77J1S6DD67X12DD77G1",
@@ -47958,8 +48998,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Hawaii — Large print — White frame",
-    "artworkTitle": "Hawaii",
+    "title": "Sunset at Kihei on Maui — Large print — White frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD77F2S9DD67X15DD77J1S6DD67X12DD77G1",
@@ -48032,8 +49072,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Hawaii — Large print — Natural wood frame",
-    "artworkTitle": "Hawaii",
+    "title": "Sunset at Kihei on Maui — Large print — Natural wood frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD77F7S9DD67X15DD77J1S6DD67X12DD77G1",
@@ -48106,8 +49146,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Hawaii — Medium print",
-    "artworkTitle": "Hawaii",
+    "title": "Sunset at Kihei on Maui — Medium print",
+    "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S5.07X9.64",
@@ -48144,8 +49184,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Hawaii — Medium print — Black frame",
-    "artworkTitle": "Hawaii",
+    "title": "Sunset at Kihei on Maui — Medium print — Black frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD07X9DD64F1S8DD07X12DD64J1S5DD07X9DD64G1",
@@ -48218,8 +49258,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Hawaii — Medium print — White frame",
-    "artworkTitle": "Hawaii",
+    "title": "Sunset at Kihei on Maui — Medium print — White frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "72.63",
     "currency": "USD",
     "sku": "5M144M8S5DD07X9DD64F2S8DD07X12DD64J1S5DD07X9DD64G1",
@@ -48292,8 +49332,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "book-art-04a049ea60a5a09e6873",
-    "title": "Hawaii — Medium print — Natural wood frame",
-    "artworkTitle": "Hawaii",
+    "title": "Sunset at Kihei on Maui — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "81.63",
     "currency": "USD",
     "sku": "5M144M8S5DD07X9DD64F7S8DD07X12DD64J1S5DD07X9DD64G1",

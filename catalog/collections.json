@@ -45,6 +45,22 @@
       "variant": "carousel"
     },
     {
+      "product": "burning-man-temple-2022-blue",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-pink",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-flame",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-daytime",
+      "variant": "carousel"
+    },
+    {
       "product": "michael-and-katie-in-yelapa",
       "variant": "carousel"
     },
@@ -304,6 +320,22 @@
     },
     {
       "product": "painting-lightburst",
+      "variant": "gallery"
+    },
+    {
+      "product": "burning-man-temple-2022-blue",
+      "variant": "gallery"
+    },
+    {
+      "product": "burning-man-temple-2022-pink",
+      "variant": "gallery"
+    },
+    {
+      "product": "burning-man-temple-2022-flame",
+      "variant": "gallery"
+    },
+    {
+      "product": "burning-man-temple-2022-daytime",
       "variant": "gallery"
     }
   ],

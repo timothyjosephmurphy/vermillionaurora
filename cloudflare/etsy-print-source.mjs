@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="223b8029b3c0d5257a57";
+export const sourcePrintVersion="dba14127a339accdf896";
 export default [
   {
     "id": "warszawska-syrenka",
@@ -362,43 +362,43 @@ export default [
   },
   {
     "id": "painting-red-horizon",
-    "title": "Hawaii",
+    "title": "Sunset at Kihei on Maui",
     "artist": "TJ Murphy",
     "year": 2022,
     "medium": "Watercolor pastel",
     "surface": "Arches Coldpress Paper",
     "dimensions": {
-      "width": 24,
-      "height": 48,
+      "width": 23,
+      "height": 44,
       "unit": "in"
     },
     "story": [
-      "This original watercolor pastel is part of TJ Murphy’s ongoing exploration of luminous color, atmosphere, and human expression."
+      "Just before this sunset, a friend and I were sitting in a quiet cove along the beach at Kihei when a couple and a minister walked out and began a wedding ceremony, and we watched quietly from where we sat. Partway through, a kid climbed onto the rocks above them and started an airplane dogfight with a couple of toys, oblivious to the wedding. As they were wrapping up, a guy emerged from the bushes where he'd been sleeping: “Oh, hey, how's it going?” Then the sky went orange, pink and gray over the water. Watercolor pastel, 23 × 44 in, 2022."
     ],
     "image": {
-      "src": "/gallery-images/red-horizon.jpg",
-      "alt": "Hawaii by TJ Murphy"
+      "src": "/gallery-images/sunset-at-kihei-on-maui.jpg",
+      "alt": "Sunset at Kihei on Maui by TJ Murphy"
     },
     "variants": [
       {
         "key": "full",
         "label": "Large",
-        "price": "45.00",
-        "sku": "5M144M8S6.67X12.77",
+        "price": "145.00",
+        "sku": "5M144M8S13.45X25.51",
         "paperSize": {
-          "width": 6.67,
-          "height": 12.77,
+          "width": 13.45,
+          "height": 25.51,
           "unit": "in"
         },
         "frames": [
           {
             "key": "black",
             "label": "Black",
-            "price": "92.00",
-            "sku": "5M144M8S6DD67X12DD77F1S9DD67X15DD77J1S6DD67X12DD77G1",
+            "price": "245.00",
+            "sku": "5M144M8S13DD45X25DD51F1S16DD45X28DD51J1S13DD45X25DD51G1",
             "outerSize": {
-              "width": 9.67,
-              "height": 15.77,
+              "width": 16.45,
+              "height": 28.51,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -407,11 +407,11 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "92.00",
-            "sku": "5M144M8S6DD67X12DD77F2S9DD67X15DD77J1S6DD67X12DD77G1",
+            "price": "245.00",
+            "sku": "5M144M8S13DD45X25DD51F2S16DD45X28DD51J1S13DD45X25DD51G1",
             "outerSize": {
-              "width": 9.67,
-              "height": 15.77,
+              "width": 16.45,
+              "height": 28.51,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -420,11 +420,11 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "103.00",
-            "sku": "5M144M8S6DD67X12DD77F7S9DD67X15DD77J1S6DD67X12DD77G1",
+            "price": "264.00",
+            "sku": "5M144M8S13DD45X25DD51F7S16DD45X28DD51J1S13DD45X25DD51G1",
             "outerSize": {
-              "width": 9.67,
-              "height": 15.77,
+              "width": 16.45,
+              "height": 28.51,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -435,22 +435,22 @@ export default [
       {
         "key": "medium",
         "label": "Medium",
-        "price": "35.00",
-        "sku": "5M144M8S5.07X9.64",
+        "price": "85.00",
+        "sku": "5M144M8S10.15X19.19",
         "paperSize": {
-          "width": 5.07,
-          "height": 9.64,
+          "width": 10.15,
+          "height": 19.19,
           "unit": "in"
         },
         "frames": [
           {
             "key": "black",
             "label": "Black",
-            "price": "72.63",
-            "sku": "5M144M8S5DD07X9DD64F1S8DD07X12DD64J1S5DD07X9DD64G1",
+            "price": "156.00",
+            "sku": "5M144M8S10DD15X19DD19F1S13DD15X22DD19J1S10DD15X19DD19G1",
             "outerSize": {
-              "width": 8.07,
-              "height": 12.64,
+              "width": 13.15,
+              "height": 22.19,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -459,11 +459,11 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "72.63",
-            "sku": "5M144M8S5DD07X9DD64F2S8DD07X12DD64J1S5DD07X9DD64G1",
+            "price": "156.00",
+            "sku": "5M144M8S10DD15X19DD19F2S13DD15X22DD19J1S10DD15X19DD19G1",
             "outerSize": {
-              "width": 8.07,
-              "height": 12.64,
+              "width": 13.15,
+              "height": 22.19,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -472,11 +472,63 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "81.63",
-            "sku": "5M144M8S5DD07X9DD64F7S8DD07X12DD64J1S5DD07X9DD64G1",
+            "price": "172.00",
+            "sku": "5M144M8S10DD15X19DD19F7S13DD15X22DD19J1S10DD15X19DD19G1",
             "outerSize": {
-              "width": 8.07,
-              "height": 12.64,
+              "width": 13.15,
+              "height": 22.19,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          }
+        ]
+      },
+      {
+        "key": "small",
+        "label": "Small",
+        "price": "45.00",
+        "sku": "5M144M8S6.85X12.88",
+        "paperSize": {
+          "width": 6.85,
+          "height": 12.88,
+          "unit": "in"
+        },
+        "frames": [
+          {
+            "key": "black",
+            "label": "Black",
+            "price": "92.00",
+            "sku": "5M144M8S6DD85X12DD88F1S9DD85X15DD88J1S6DD85X12DD88G1",
+            "outerSize": {
+              "width": 9.85,
+              "height": 15.88,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "white",
+            "label": "White",
+            "price": "92.00",
+            "sku": "5M144M8S6DD85X12DD88F2S9DD85X15DD88J1S6DD85X12DD88G1",
+            "outerSize": {
+              "width": 9.85,
+              "height": 15.88,
+              "unit": "in"
+            },
+            "mat": "Snow White",
+            "glazing": "Premium Clear"
+          },
+          {
+            "key": "natural",
+            "label": "Natural wood",
+            "price": "103.00",
+            "sku": "5M144M8S6DD85X12DD88F7S9DD85X15DD88J1S6DD85X12DD88G1",
+            "outerSize": {
+              "width": 9.85,
+              "height": 15.88,
               "unit": "in"
             },
             "mat": "Snow White",

@@ -23,5 +23,5 @@ test('All 23 reviewed TJ masters have native-resolution editions and three frame
       }
     }
   }
-  assert.equal(sizes,55);
+  assert.equal(sizes,56);
 });

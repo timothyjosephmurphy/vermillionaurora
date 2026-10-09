@@ -71,6 +71,10 @@
     ],
     "examples": [
       {
+        "src": "/gallery-images/wedding-portrait-with-dog.jpg",
+        "alt": "Wedding Portrait with Dog, watercolor commission by TJ Murphy: a couple in wedding clothes holding a small dog between them"
+      },
+      {
         "src": "https://media.vermillionaurora.com/images/Double%20Portraits/72064089526__670907BA-6F07-4A76-B462-99F35ADAFBB5.jpeg",
         "alt": "Double Portraits example 1 by TJ Murphy"
       },
@@ -269,6 +273,20 @@
         "fallback": "/product-media/el-zonte/room-3-1600.jpg",
         "alt": "Sunrise from Punta El Zonte Hostel hanging with two other El Zonte paintings in a living room",
         "caption": "The three El Zonte paintings above the dining table"
+      },
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
       }
     ],
     "video": {
@@ -410,7 +428,23 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
-    }
+    },
+    "gallery": [
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
+      }
+    ]
   },
   {
     "id": "painting-chef-in-white",
@@ -540,7 +574,23 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
-    }
+    },
+    "gallery": [
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
+      }
+    ]
   },
   {
     "id": "painting-couple-in-color",
@@ -711,7 +761,23 @@
       "title": "El Salvador: Present",
       "chapter": "Present",
       "credit": "Chase Toole & TJ Murphy"
-    }
+    },
+    "gallery": [
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
+      }
+    ]
   },
   {
     "id": "myself-my-mother-ruth-my-grandpa-howard",
@@ -987,7 +1053,23 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
-    }
+    },
+    "gallery": [
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
+      }
+    ]
   },
   {
     "id": "painting-guitarist",
@@ -1104,7 +1186,23 @@
       "title": "El Salvador: Past",
       "chapter": "Past",
       "credit": "Chase Toole & TJ Murphy"
-    }
+    },
+    "gallery": [
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
+      }
+    ]
   },
   {
     "id": "painting-lightburst",
@@ -2147,6 +2245,20 @@
         "fallback": "/product-media/el-zonte/room-3-1600.jpg",
         "alt": "El Zonte at Dawn hanging with two other El Zonte paintings in a living room",
         "caption": "The three El Zonte paintings above the dining table"
+      },
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
       }
     ],
     "video": {
@@ -2274,6 +2386,20 @@
         "fallback": "/product-media/el-zonte/room-3-1600.jpg",
         "alt": "El Zonte Before Dawn hanging with two other El Zonte paintings in a living room",
         "caption": "The three El Zonte paintings above the dining table"
+      },
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
       }
     ],
     "video": {
@@ -2401,6 +2527,20 @@
         "fallback": "/product-media/denny-blaine-el-zonte-cascades/room-3-1600.jpg",
         "alt": "Sunrise in El Zonte (Large) hanging with Meditation at Denny Blaine and Moonrise Over the Cascades in a living room",
         "caption": "The three paintings above the dining table"
+      },
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
       }
     ],
     "video": {
@@ -2899,7 +3039,23 @@
       "title": "El Salvador: Future",
       "chapter": "Future",
       "credit": "Chase Toole & TJ Murphy"
-    }
+    },
+    "gallery": [
+      {
+        "base": "/product-media/el-salvador-gallery-wall/wall",
+        "widths": [
+          480,
+          960,
+          1600,
+          2400
+        ],
+        "width": 1024,
+        "height": 768,
+        "fallback": "/product-media/el-salvador-gallery-wall/wall-1600.jpg",
+        "alt": "El Zonte paintings by TJ Murphy hanging in a gallery",
+        "caption": "El Zonte paintings hanging in a gallery"
+      }
+    ]
   },
   {
     "id": "rice-paddies-in-vietnam",
@@ -5663,6 +5819,170 @@
     "card": {
       "eyebrow": "Art book \u00b7 TJ Murphy",
       "description": "A collection of portraits exploring expression, rich color, and the texture of watercolor pastel."
+    }
+  },
+  {
+    "id": "burning-man-temple-2022-blue",
+    "slug": "burning-man-temple-2022-blue",
+    "type": "painting",
+    "title": "Burning Man Temple 2022: Blue",
+    "description": "Burning Man Temple 2022: Blue by TJ Murphy. Watercolor pastel. Not for sale.",
+    "eyebrow": "Watercolor pastel",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale"
+    },
+    "medium": "Watercolor pastel",
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [
+      "The Burning Man Temple at night, its long low wings glowing blue and pink against a dark sky, with a red spire at the center above the dark playa."
+    ],
+    "storyHeading": null,
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "width-height",
+    "image": {
+      "src": "/gallery-images/burning-man-temple-2022-blue.jpg",
+      "alt": "Burning Man Temple 2022: Blue by TJ Murphy",
+      "caption": "Burning Man Temple 2022: Blue"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Commission a painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/gallery/",
+      "label": "Back to gallery"
+    }
+  },
+  {
+    "id": "burning-man-temple-2022-pink",
+    "slug": "burning-man-temple-2022-pink",
+    "type": "painting",
+    "title": "Burning Man Temple 2022: Pink",
+    "description": "Burning Man Temple 2022: Pink by TJ Murphy. Watercolor pastel. Not for sale.",
+    "eyebrow": "Watercolor pastel",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale"
+    },
+    "medium": "Watercolor pastel",
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [
+      "The Temple glowing pink and red against a stormy violet sky, its patterned wings spreading low across the playa, with a star-shaped emblem on the right."
+    ],
+    "storyHeading": null,
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "width-height",
+    "image": {
+      "src": "/gallery-images/burning-man-temple-2022-pink.jpg",
+      "alt": "Burning Man Temple 2022: Pink by TJ Murphy",
+      "caption": "Burning Man Temple 2022: Pink"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Commission a painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/gallery/",
+      "label": "Back to gallery"
+    }
+  },
+  {
+    "id": "burning-man-temple-2022-flame",
+    "slug": "burning-man-temple-2022-flame",
+    "type": "painting",
+    "title": "Burning Man Temple 2022: Flame",
+    "description": "Burning Man Temple 2022: Flame by TJ Murphy. Watercolor pastel. Not for sale.",
+    "eyebrow": "Watercolor pastel",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale"
+    },
+    "medium": "Watercolor pastel",
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [
+      "The Temple burning: its outline sketched in the middle of a wall of yellow-white flame and smoke rising into a gray sky."
+    ],
+    "storyHeading": null,
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "width-height",
+    "image": {
+      "src": "/gallery-images/burning-man-temple-2022-flame.jpg",
+      "alt": "Burning Man Temple 2022: Flame by TJ Murphy",
+      "caption": "Burning Man Temple 2022: Flame"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Commission a painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/gallery/",
+      "label": "Back to gallery"
+    }
+  },
+  {
+    "id": "burning-man-temple-2022-daytime",
+    "slug": "burning-man-temple-2022-daytime",
+    "type": "painting",
+    "title": "Burning Man Temple 2022: Daytime",
+    "description": "Burning Man Temple 2022: Daytime by TJ Murphy. Watercolor pastel. Not for sale.",
+    "eyebrow": "Watercolor pastel",
+    "artist": "TJ Murphy",
+    "listing": {
+      "status": "not-for-sale"
+    },
+    "medium": "Watercolor pastel",
+    "surface": null,
+    "year": null,
+    "framing": null,
+    "galleryReference": null,
+    "gallerySequence": null,
+    "facts": [],
+    "story": [
+      "The Temple in daylight, its copper-colored lattice wings and central spire under a pale blue-gray sky."
+    ],
+    "storyHeading": null,
+    "inquiryHref": "/commissions/",
+    "dimensionOrder": "width-height",
+    "image": {
+      "src": "/gallery-images/burning-man-temple-2022-daytime.jpg",
+      "alt": "Burning Man Temple 2022: Daytime by TJ Murphy",
+      "caption": "Burning Man Temple 2022: Daytime"
+    },
+    "checkout": {
+      "mode": "inquiry"
+    },
+    "inquiry": {
+      "label": "Commission a painting",
+      "note": ""
+    },
+    "back": {
+      "href": "/gallery/",
+      "label": "Back to gallery"
     }
   }
 ]
