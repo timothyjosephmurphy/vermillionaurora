@@ -5,6 +5,7 @@
 // so at most one El Zonte note can ever go out.
 // text: the Nostr note body (the X caption without its trailing tjm.art link and without X @handles);
 // the publisher appends https://tjm.art + productUrl and the image URL. xText keeps the Buffer X caption for reference.
+// A note whose text already contains its tjm.art + productUrl link (Moonrise, the testimonial request) is not given a second one.
 export const posts = [
   {
     "id": "launch-warszawska-syrenka-2026-10-03",
@@ -54,6 +55,15 @@ export const posts = [
     "imageUrl": "https://tjm.art/murals/images/cormorant-hero.jpg",
     "productUrl": "/murals/",
     "xText": "New mural in a Seattle garden: Cormorant Presiding over Sunset on Puget Sound. Brian and Marcos wanted their favorite view of the Olympics on their fence. Watercolor study first, then acrylic on board. Mural commissions open: https://tjm.art/murals/"
+  },
+  {
+    "id": "campaign-testimonial-request-2026-10-16",
+    "title": "Share a testimonial",
+    "scheduledAt": "2026-10-16T12:00:00-07:00",
+    "text": "Have one of my paintings at home? I'd love to hear about it. Share a testimonial with photos, or a short selfie video of you in front of your painting talking about it. If I approve it, I'll thank you with a personal code for a print of mine at cost: https://tjm.art/testimonials/#share",
+    "imageUrl": "https://tjm.art/product-media/el-zonte/room-1-1600.jpg",
+    "productUrl": "/testimonials/",
+    "xText": "Have one of my paintings at home? I'd love to hear about it. Share a testimonial with photos, or a short selfie video of you in front of your painting talking about it. If I approve it, I'll thank you with a personal code for a print of mine at cost: https://tjm.art/testimonials/#share"
   },
   {
     "id": "campaign-dorian-nakamoto-2026-10-17",
