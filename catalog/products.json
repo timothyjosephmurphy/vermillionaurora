@@ -6049,6 +6049,11 @@
     "back": {
       "href": "/gallery/",
       "label": "Back to gallery"
+    },
+    "dimensions": {
+      "width": 60,
+      "height": 40,
+      "unit": "in"
     }
   }
 ]
