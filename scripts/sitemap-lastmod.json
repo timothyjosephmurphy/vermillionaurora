@@ -1,6 +1,6 @@
 {
   "https://tjm.art/": {
-    "hash": "eb06617734dfcd91",
+    "hash": "f35b59d0d56e17ea",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/about/": {
@@ -16,11 +16,11 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/": {
-    "hash": "433cc9f904285b4f",
+    "hash": "982c13c690cba210",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/book-galleries/watercolor-landscapes-pacific-north-west/": {
-    "hash": "56d1293409239eec",
+    "hash": "f5e23c1da75823de",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/book-galleries/watercolor-landscapes-travels/": {
@@ -108,15 +108,15 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/gallery/": {
-    "hash": "3e5fa51ac7626567",
+    "hash": "5cf1010a8687204a",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/gallery/available/": {
-    "hash": "b8642432169fe221",
+    "hash": "04d7dde89925de9f",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/links/": {
-    "hash": "c553bcfabb4ed411",
+    "hash": "43360b538fc692a1",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/murals/": {
@@ -691,6 +691,10 @@
     "hash": "ba78bbb80f2aa5d8",
     "lastmod": "2026-10-08"
   },
+  "https://tjm.art/products/meditation-at-denny-blaine/": {
+    "hash": "410cba74ebb541d7",
+    "lastmod": "2026-10-08"
+  },
   "https://tjm.art/products/michael-and-katie-in-yelapa/": {
     "hash": "91244afe8dde4a76",
     "lastmod": "2026-10-08"
@@ -740,7 +744,7 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/painting-moonlit-water/": {
-    "hash": "4aa2eea51e9de3ac",
+    "hash": "cdbf8becbaf3889f",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-phoenix-rising/": {
@@ -954,6 +958,10 @@
   "https://tjm.art/products/rice-paddies-in-vietnam/": {
     "hash": "ab2256dc81ec1325",
     "lastmod": "2026-10-07"
+  },
+  "https://tjm.art/products/sunrise-in-el-zonte-large/": {
+    "hash": "fcc1f2eaf82c2a1d",
+    "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/sunset-in-el-tunco-el-salvador/": {
     "hash": "952cb2350dabb6da",

@@ -71,7 +71,7 @@ test('dimensioned available paintings receive parcels from the flat-at-12-inch r
  const missing=originals.filter(p=>!p.dimensions);
  assert.deepEqual(missing.map(p=>p.id),[]); // paul-murphy-painting-55 was the last one, measured at 12 × 10 in
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,53); // 52 before paul-murphy-painting-82 was removed, 51 after, 52 once paul-murphy-painting-55 was measured, 53 with El Zonte Before Dawn
+ assert.equal(ready.length,55); // 52 before paul-murphy-painting-82 was removed, 51 after, 52 once paul-murphy-painting-55 was measured, 53 with El Zonte Before Dawn, 55 with Meditation at Denny Blaine and Sunrise in El Zonte (Large)
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
@@ -172,7 +172,7 @@ test('painting cards: price without "USD", "Prints from" the cheapest ready prin
 });
 test('painting pages render extra photos as thumbnails after the main image and an accessible product video',()=>{
  const withMedia=products.filter(p=>p.type==='painting'&&(p.gallery?.length||p.video));
- assert.deepEqual(withMedia.map(p=>p.id).sort(),['el-zonte-at-sunrise','el-zonte-before-dawn','painting-shoreline-at-dusk']);
+ assert.deepEqual(withMedia.map(p=>p.id).sort(),['el-zonte-at-sunrise','el-zonte-before-dawn','meditation-at-denny-blaine','painting-moonlit-water','painting-shoreline-at-dusk','sunrise-in-el-zonte-large']);
  for(const p of withMedia){
   const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));
   const thumbs=$('.product-media [data-product-thumbs] .product-thumb');
@@ -201,6 +201,29 @@ test('homepage featured carousel includes each El Zonte painting exactly once wi
   assert.match(src,new RegExp(photo),`${id} must use the new photo (${photo}), got ${src.slice(0,160)}`);
   assert(!/shoreline-at-dusk-|sunrise-punto-el-zonte/.test(src),`${id} still references an old photo path`);
  }
- // Lead the available track so the hero crossfade shows them first.
- assert.deepEqual(trackIds.slice(0,3),['el-zonte-before-dawn','painting-shoreline-at-dusk','el-zonte-at-sunrise']);
+ // Right after the newer Denny Blaine / El Zonte (Large) / Cascades batch.
+ assert.deepEqual(trackIds.slice(3,6),['el-zonte-before-dawn','painting-shoreline-at-dusk','el-zonte-at-sunrise']);
+});
+test('homepage featured carousel leads with Sunrise in El Zonte (Large), Meditation at Denny Blaine and Moonrise Over the Cascades, once each, new photos',()=>{
+ const trackIds=[];
+ const $=load(fs.readFileSync('dist/index.html','utf8'));
+ $('[data-available-paintings] [data-product-id]').each((i,el)=>trackIds.push($(el).attr('data-product-id')));
+ const want={'sunrise-in-el-zonte-large':'sunrise-in-el-zonte-large','meditation-at-denny-blaine':'meditation-at-denny-blaine','painting-moonlit-water':'moonrise-over-the-cascades'};
+ for(const [id,photo] of Object.entries(want)){
+  assert.equal(trackIds.filter(x=>x===id).length,1,`${id} should appear exactly once in the featured track (order=${trackIds.join(',')})`);
+  const card=$(`[data-available-paintings] [data-product-id="${id}"]`);
+  const img=card.find('img');
+  const src=`${img.attr('src')||''} ${img.attr('srcset')||''} ${img.attr('data-image-src')||''}`;
+  assert.match(src,new RegExp(photo),`${id} must use the new photo (${photo}), got ${src.slice(0,160)}`);
+  assert(!/moonlit-water/.test(src),`${id} still references the old Moonrise photo`);
+ }
+ assert.deepEqual(trackIds.slice(0,3),Object.keys(want));
+ // One product page each; Moonrise keeps its id and URL with the new title, size and prints.
+ for(const id of Object.keys(want))assert.equal(products.filter(p=>p.id===id).length,1,id);
+ const moon=products.find(p=>p.id==='painting-moonlit-water');
+ assert.equal(moon.title,'Moonrise Over the Cascades');assert.deepEqual(moon.dimensions,{width:12,height:23,unit:'in'});
+ assert(fs.existsSync('gallery-images/moonlit-water.jpg'),'old Moonrise photo stays in place');
+ const page=load(fs.readFileSync('dist/products/painting-moonlit-water/index.html','utf8'));
+ assert.equal(page('h1').text(),'Moonrise Over the Cascades');
+ assert(page('[data-print-options], [data-print-purchase], .print-options').length>0||/Prints from/.test(page.html()),'Moonrise page offers prints');
 });
