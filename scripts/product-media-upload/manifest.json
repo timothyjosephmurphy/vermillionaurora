@@ -1,0 +1,16 @@
+[
+  {
+    "file": "kihei-hope-paintings-1080-4a0193b7.mp4",
+    "key": "images/products/kihei-hope/kihei-hope-paintings-1080-4a0193b7.mp4",
+    "size": 8605992,
+    "sha256": "4a0193b772671d07e0deb111b1bd4093eff6abadeeffdd2995798fee3dc67bf3",
+    "contentType": "video/mp4"
+  },
+  {
+    "file": "kihei-hope-paintings-720-6fc5d411.mp4",
+    "key": "images/products/kihei-hope/kihei-hope-paintings-720-6fc5d411.mp4",
+    "size": 5052530,
+    "sha256": "6fc5d4118912dbb768e5a1512da5e1ecb24bba40b9cba825e6893cb6f8584885",
+    "contentType": "video/mp4"
+  }
+]
