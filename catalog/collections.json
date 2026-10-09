@@ -45,22 +45,6 @@
       "variant": "carousel"
     },
     {
-      "product": "burning-man-temple-2022-blue",
-      "variant": "carousel"
-    },
-    {
-      "product": "burning-man-temple-2022-pink",
-      "variant": "carousel"
-    },
-    {
-      "product": "burning-man-temple-2022-flame",
-      "variant": "carousel"
-    },
-    {
-      "product": "burning-man-temple-2022-daytime",
-      "variant": "carousel"
-    },
-    {
       "product": "cormorant-presiding-over-sunset-on-puget-sound",
       "variant": "carousel"
     },
@@ -150,6 +134,22 @@
     },
     {
       "product": "painting-lightburst",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-blue",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-pink",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-flame",
+      "variant": "carousel"
+    },
+    {
+      "product": "burning-man-temple-2022-daytime",
       "variant": "carousel"
     },
     {
@@ -327,6 +327,10 @@
       "variant": "gallery"
     },
     {
+      "product": "cormorant-presiding-over-sunset-on-puget-sound",
+      "variant": "gallery"
+    },
+    {
       "product": "burning-man-temple-2022-blue",
       "variant": "gallery"
     },
@@ -340,10 +344,6 @@
     },
     {
       "product": "burning-man-temple-2022-daytime",
-      "variant": "gallery"
-    },
-    {
-      "product": "cormorant-presiding-over-sunset-on-puget-sound",
       "variant": "gallery"
     }
   ],
