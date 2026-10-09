@@ -289,3 +289,18 @@ test('the wedding portrait and four commissioned portraits lead the /commissions
  const srcs=new Set(products.flatMap(p=>[p.image?.src,...(p.examples||[]).map(e=>e.src),...(p.gallery||[]).map(g=>g.src)]));
  for(const n of ['wedding-portrait-with-dog','commissioned-portrait-1','commissioned-portrait-2','commissioned-portrait-3','commissioned-portrait-4'])assert.ok(!srcs.has(`/gallery-images/${n}.jpg`),n);
 });
+
+test('living room exhibition keeps its 18 chosen photographs in source and catalog',()=>{
+ const $=load(fs.readFileSync('exhibitions/living-room/index.html','utf8'));
+ const links=$('.exhibition-grid a.ex-photo');
+ assert.equal(links.length,18);
+ assert.match($('.section-heading p').first().text(),/^18 photographs and videos\./);
+ const removed=/three-landscapes-in-living-room|IMG_43(46|72|88|89|91|92)\./;
+ links.each((i,a)=>{
+  assert.doesNotMatch($(a).attr('href'),removed);
+  assert.equal($(a).find('img').attr('alt'),`My Living Room, Seattle, Washington exhibition photograph ${i+1}`);
+ });
+ const entry=JSON.parse(fs.readFileSync('exhibitions/catalog.json','utf8')).find(e=>e.slug==='living-room');
+ assert.deepEqual(entry.files.map(f=>f.url),links.map((i,a)=>$(a).attr('href')).get());
+ assert.ok(fs.existsSync('exhibitions/living-room/images/three-landscapes-in-living-room.jpg'),'homepage card image stays');
+});
