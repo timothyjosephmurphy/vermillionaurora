@@ -166,3 +166,9 @@ test('the batch-2 originals are in the inventory sync mapping', () => {
   assert.equal(map['meditation-at-denny-blaine'], 4591543973);
   assert.equal(map['painting-moonlit-water'], 4591556404);
 });
+
+test('the Kihei and Hope originals are in the inventory sync mapping', () => {
+  const map = Object.fromEntries(listingMap({}).map(item => [item.productId, item.listingId]));
+  assert.equal(map['painting-red-horizon'], 4591572797);
+  assert.equal(map['hope-the-vermillion-aurora'], 4591572815);
+});
