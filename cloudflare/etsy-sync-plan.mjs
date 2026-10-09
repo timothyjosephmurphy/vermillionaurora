@@ -40,7 +40,10 @@ export const PROTECTED_LISTING_IDS = new Set([4587311534, 4587311600, 4587305901
 export const ORIGINAL_LISTINGS = {
   'el-zonte-before-dawn': 4591466297,
   'painting-shoreline-at-dusk': 4591478382,
-  'el-zonte-at-sunrise': 4591478390
+  'el-zonte-at-sunrise': 4591478390,
+  'sunrise-in-el-zonte-large': 4591556382,
+  'meditation-at-denny-blaine': 4591543973,
+  'painting-moonlit-water': 4591556404
 };
 const SIZE = 513, FRAME = 514, QUANTITY = 100;
 const length = value => Array.from(value).length;
