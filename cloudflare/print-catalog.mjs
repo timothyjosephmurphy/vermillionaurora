@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="b070d042590d2b4002f3";
+export const printVersion="223b8029b3c0d5257a57";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -3900,6 +3900,786 @@ export default {
       }
     },
     "unframedAmount": "25.00"
+  },
+  "print-painting-moonlit-water-full": {
+    "id": "print-painting-moonlit-water-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Large print",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "80.00",
+    "currency": "USD",
+    "sku": "5M144M8S9.69X19.44",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.4367,
+      "height": 19.1867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.69,
+      "height": 19.44,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3.jpg",
+    "assetSha256": "e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-moonlit-water-full-frame-black": {
+    "id": "print-painting-moonlit-water-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Large print — Black frame",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "150.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD69X19DD44F1S12DD69X22DD44J1S9DD69X19DD44G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.4367,
+      "height": 19.1867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.69,
+      "height": 19.44,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3.jpg",
+    "assetSha256": "e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12.69,
+        "height": 22.44,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.69,
+        "height": 19.44,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.69X19.44",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12.69,
+        "height": 22.44,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-painting-moonlit-water-full-frame-white": {
+    "id": "print-painting-moonlit-water-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Large print — White frame",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "150.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD69X19DD44F2S12DD69X22DD44J1S9DD69X19DD44G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.4367,
+      "height": 19.1867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.69,
+      "height": 19.44,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3.jpg",
+    "assetSha256": "e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12.69,
+        "height": 22.44,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.69,
+        "height": 19.44,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.69X19.44",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12.69,
+        "height": 22.44,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-painting-moonlit-water-full-frame-natural": {
+    "id": "print-painting-moonlit-water-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Large print — Natural wood frame",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "165.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD69X19DD44F7S12DD69X22DD44J1S9DD69X19DD44G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 9.4367,
+      "height": 19.1867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.69,
+      "height": 19.44,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3.jpg",
+    "assetSha256": "e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12.69,
+        "height": 22.44,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.69,
+        "height": 19.44,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.69X19.44",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12.69,
+        "height": 22.44,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-painting-moonlit-water-medium": {
+    "id": "print-painting-moonlit-water-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Medium print",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M8S7.33X14.64",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.0767,
+      "height": 14.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.33,
+      "height": 14.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca.jpg",
+    "assetSha256": "4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-moonlit-water-medium-frame-black": {
+    "id": "print-painting-moonlit-water-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Medium print — Black frame",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "102.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD33X14DD64F1S10DD33X17DD64J1S7DD33X14DD64G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.0767,
+      "height": 14.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.33,
+      "height": 14.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca.jpg",
+    "assetSha256": "4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10.33,
+        "height": 17.64,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.33,
+        "height": 14.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.33X14.64",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10.33,
+        "height": 17.64,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-painting-moonlit-water-medium-frame-white": {
+    "id": "print-painting-moonlit-water-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Medium print — White frame",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "102.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD33X14DD64F2S10DD33X17DD64J1S7DD33X14DD64G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.0767,
+      "height": 14.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.33,
+      "height": 14.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca.jpg",
+    "assetSha256": "4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10.33,
+        "height": 17.64,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.33,
+        "height": 14.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.33X14.64",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10.33,
+        "height": 17.64,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-painting-moonlit-water-medium-frame-natural": {
+    "id": "print-painting-moonlit-water-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Medium print — Natural wood frame",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "114.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD33X14DD64F7S10DD33X17DD64J1S7DD33X14DD64G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 7.0767,
+      "height": 14.3867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.33,
+      "height": 14.64,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca.jpg",
+    "assetSha256": "4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10.33,
+        "height": 17.64,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.33,
+        "height": 14.64,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.33X14.64",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10.33,
+        "height": 17.64,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-painting-moonlit-water-small": {
+    "id": "print-painting-moonlit-water-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Small print",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S4.97X9.84",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.7167,
+      "height": 9.5867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.97,
+      "height": 9.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a.jpg",
+    "assetSha256": "85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-painting-moonlit-water-small-frame-black": {
+    "id": "print-painting-moonlit-water-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Small print — Black frame",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD97X9DD84F1S8DD01X12DD88J1S4DD97X9DD84G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.7167,
+      "height": 9.5867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.97,
+      "height": 9.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a.jpg",
+    "assetSha256": "85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.01,
+        "height": 12.88,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.97,
+        "height": 9.84,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.97X9.84",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.01,
+        "height": 12.88,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-moonlit-water-small-frame-white": {
+    "id": "print-painting-moonlit-water-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Small print — White frame",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD97X9DD84F2S8DD01X12DD88J1S4DD97X9DD84G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.7167,
+      "height": 9.5867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.97,
+      "height": 9.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a.jpg",
+    "assetSha256": "85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.01,
+        "height": 12.88,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.97,
+        "height": 9.84,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.97X9.84",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.01,
+        "height": 12.88,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-painting-moonlit-water-small-frame-natural": {
+    "id": "print-painting-moonlit-water-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-moonlit-water",
+    "title": "Moonrise Over the Cascades — Small print — Natural wood frame",
+    "artworkTitle": "Moonrise Over the Cascades",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD97X9DD84F7S8DD01X12DD88J1S4DD97X9DD84G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 4.7167,
+      "height": 9.5867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.97,
+      "height": 9.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a.jpg",
+    "assetSha256": "85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a",
+    "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/moonrise-over-the-cascades.jpg",
+      "alt": "Moonrise Over the Cascades by TJ Murphy",
+      "caption": "Moonrise Over the Cascades"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.01,
+        "height": 12.88,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.97,
+        "height": 9.84,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.97X9.84",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.01,
+        "height": 12.88,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   },
   "print-painting-phoenix-rising-full": {
     "id": "print-painting-phoenix-rising-full",
@@ -9620,6 +10400,1566 @@ export default {
       }
     },
     "unframedAmount": "45.00"
+  },
+  "print-sunrise-in-el-zonte-large-full": {
+    "id": "print-sunrise-in-el-zonte-large-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Large print",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "160.00",
+    "currency": "USD",
+    "sku": "5M144M8S16.7X22.94",
+    "scale": 1,
+    "imageSize": {
+      "width": 16.4467,
+      "height": 22.6867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.7,
+      "height": 22.94,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5.jpg",
+    "assetSha256": "50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-sunrise-in-el-zonte-large-full-frame-black": {
+    "id": "print-sunrise-in-el-zonte-large-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Large print — Black frame",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "266.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD7X22DD94F1S19DD7X25DD94J1S16DD7X22DD94G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 16.4467,
+      "height": 22.6867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.7,
+      "height": 22.94,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5.jpg",
+    "assetSha256": "50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.7,
+        "height": 25.94,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.7,
+        "height": 22.94,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.7X22.94",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.7,
+        "height": 25.94,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "160.00"
+  },
+  "print-sunrise-in-el-zonte-large-full-frame-white": {
+    "id": "print-sunrise-in-el-zonte-large-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Large print — White frame",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "266.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD7X22DD94F2S19DD7X25DD94J1S16DD7X22DD94G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 16.4467,
+      "height": 22.6867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.7,
+      "height": 22.94,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5.jpg",
+    "assetSha256": "50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.7,
+        "height": 25.94,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.7,
+        "height": 22.94,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.7X22.94",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.7,
+        "height": 25.94,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "160.00"
+  },
+  "print-sunrise-in-el-zonte-large-full-frame-natural": {
+    "id": "print-sunrise-in-el-zonte-large-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "285.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD7X22DD94F7S19DD7X25DD94J1S16DD7X22DD94G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 16.4467,
+      "height": 22.6867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.7,
+      "height": 22.94,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5.jpg",
+    "assetSha256": "50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.7,
+        "height": 25.94,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.7,
+        "height": 22.94,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.7X22.94",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.7,
+        "height": 25.94,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "160.00"
+  },
+  "print-sunrise-in-el-zonte-large-medium": {
+    "id": "print-sunrise-in-el-zonte-large-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Medium print",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "95.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.58X17.27",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.3267,
+      "height": 17.0067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.58,
+      "height": 17.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d.jpg",
+    "assetSha256": "21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-sunrise-in-el-zonte-large-medium-frame-black": {
+    "id": "print-sunrise-in-el-zonte-large-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Medium print — Black frame",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "169.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD58X17DD27F1S15DD58X20DD27J1S12DD58X17DD27G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.3267,
+      "height": 17.0067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.58,
+      "height": 17.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d.jpg",
+    "assetSha256": "21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.58,
+        "height": 20.27,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.58,
+        "height": 17.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.58X17.27",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.58,
+        "height": 20.27,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "95.00"
+  },
+  "print-sunrise-in-el-zonte-large-medium-frame-white": {
+    "id": "print-sunrise-in-el-zonte-large-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Medium print — White frame",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "169.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD58X17DD27F2S15DD58X20DD27J1S12DD58X17DD27G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.3267,
+      "height": 17.0067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.58,
+      "height": 17.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d.jpg",
+    "assetSha256": "21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.58,
+        "height": 20.27,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.58,
+        "height": 17.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.58X17.27",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.58,
+        "height": 20.27,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "95.00"
+  },
+  "print-sunrise-in-el-zonte-large-medium-frame-natural": {
+    "id": "print-sunrise-in-el-zonte-large-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "184.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD58X17DD27F7S15DD58X20DD27J1S12DD58X17DD27G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.3267,
+      "height": 17.0067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.58,
+      "height": 17.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d.jpg",
+    "assetSha256": "21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.58,
+        "height": 20.27,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.58,
+        "height": 17.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.58X17.27",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.58,
+        "height": 20.27,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "95.00"
+  },
+  "print-sunrise-in-el-zonte-large-small": {
+    "id": "print-sunrise-in-el-zonte-large-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Small print",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S8.47X11.59",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 8.2167,
+      "height": 11.3367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.47,
+      "height": 11.59,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e.jpg",
+    "assetSha256": "1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-sunrise-in-el-zonte-large-small-frame-black": {
+    "id": "print-sunrise-in-el-zonte-large-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Small print — Black frame",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "88.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD47X11DD59F1S11DD47X14DD59J1S8DD47X11DD59G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 8.2167,
+      "height": 11.3367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.47,
+      "height": 11.59,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e.jpg",
+    "assetSha256": "1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.47,
+        "height": 14.59,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.47,
+        "height": 11.59,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.47X11.59",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.47,
+        "height": 14.59,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-sunrise-in-el-zonte-large-small-frame-white": {
+    "id": "print-sunrise-in-el-zonte-large-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Small print — White frame",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "88.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD47X11DD59F2S11DD47X14DD59J1S8DD47X11DD59G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 8.2167,
+      "height": 11.3367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.47,
+      "height": 11.59,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e.jpg",
+    "assetSha256": "1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.47,
+        "height": 14.59,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.47,
+        "height": 11.59,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.47X11.59",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.47,
+        "height": 14.59,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-sunrise-in-el-zonte-large-small-frame-natural": {
+    "id": "print-sunrise-in-el-zonte-large-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "sunrise-in-el-zonte-large",
+    "title": "Sunrise in El Zonte (Large) — Small print — Natural wood frame",
+    "artworkTitle": "Sunrise in El Zonte (Large)",
+    "amount": "100.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD47X11DD59F7S11DD47X14DD59J1S8DD47X11DD59G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 8.2167,
+      "height": 11.3367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.47,
+      "height": 11.59,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e.jpg",
+    "assetSha256": "1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e",
+    "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-in-el-zonte-large.jpg",
+      "alt": "Sunrise in El Zonte (Large) by TJ Murphy",
+      "caption": "Sunrise in El Zonte (Large)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.47,
+        "height": 14.59,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.47,
+        "height": 11.59,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.47X11.59",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.47,
+        "height": 14.59,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-meditation-at-denny-blaine-full": {
+    "id": "print-meditation-at-denny-blaine-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Large print",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "155.00",
+    "currency": "USD",
+    "sku": "5M144M8S16.25X22.56",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.9967,
+      "height": 22.3067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.25,
+      "height": 22.56,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a.jpg",
+    "assetSha256": "091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-meditation-at-denny-blaine-full-frame-black": {
+    "id": "print-meditation-at-denny-blaine-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Large print — Black frame",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "258.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD25X22DD56F1S19DD25X25DD56J1S16DD25X22DD56G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.9967,
+      "height": 22.3067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.25,
+      "height": 22.56,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a.jpg",
+    "assetSha256": "091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.25,
+        "height": 25.56,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.25,
+        "height": 22.56,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.25X22.56",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.25,
+        "height": 25.56,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "155.00"
+  },
+  "print-meditation-at-denny-blaine-full-frame-white": {
+    "id": "print-meditation-at-denny-blaine-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Large print — White frame",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "258.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD25X22DD56F2S19DD25X25DD56J1S16DD25X22DD56G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.9967,
+      "height": 22.3067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.25,
+      "height": 22.56,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a.jpg",
+    "assetSha256": "091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.25,
+        "height": 25.56,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.25,
+        "height": 22.56,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.25X22.56",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.25,
+        "height": 25.56,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "155.00"
+  },
+  "print-meditation-at-denny-blaine-full-frame-natural": {
+    "id": "print-meditation-at-denny-blaine-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Large print — Natural wood frame",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "277.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD25X22DD56F7S19DD25X25DD56J1S16DD25X22DD56G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.9967,
+      "height": 22.3067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.25,
+      "height": 22.56,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a.jpg",
+    "assetSha256": "091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.25,
+        "height": 25.56,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.25,
+        "height": 22.56,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.25X22.56",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.25,
+        "height": 25.56,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "155.00"
+  },
+  "print-meditation-at-denny-blaine-medium": {
+    "id": "print-meditation-at-denny-blaine-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Medium print",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "85.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.25X16.98",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.9933,
+      "height": 16.7267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.25,
+      "height": 16.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e.jpg",
+    "assetSha256": "b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-meditation-at-denny-blaine-medium-frame-black": {
+    "id": "print-meditation-at-denny-blaine-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Medium print — Black frame",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "158.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD25X16DD98F1S15DD25X19DD98J1S12DD25X16DD98G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.9933,
+      "height": 16.7267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.25,
+      "height": 16.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e.jpg",
+    "assetSha256": "b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.25,
+        "height": 19.98,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.25,
+        "height": 16.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.25X16.98",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.25,
+        "height": 19.98,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-meditation-at-denny-blaine-medium-frame-white": {
+    "id": "print-meditation-at-denny-blaine-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Medium print — White frame",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "158.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD25X16DD98F2S15DD25X19DD98J1S12DD25X16DD98G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.9933,
+      "height": 16.7267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.25,
+      "height": 16.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e.jpg",
+    "assetSha256": "b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.25,
+        "height": 19.98,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.25,
+        "height": 16.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.25X16.98",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.25,
+        "height": 19.98,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-meditation-at-denny-blaine-medium-frame-natural": {
+    "id": "print-meditation-at-denny-blaine-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Medium print — Natural wood frame",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "173.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD25X16DD98F7S15DD25X19DD98J1S12DD25X16DD98G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.9933,
+      "height": 16.7267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.25,
+      "height": 16.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e.jpg",
+    "assetSha256": "b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.25,
+        "height": 19.98,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.25,
+        "height": 16.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.25X16.98",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.25,
+        "height": 19.98,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-meditation-at-denny-blaine-small": {
+    "id": "print-meditation-at-denny-blaine-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Small print",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S8.25X11.4",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 7.9933,
+      "height": 11.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.25,
+      "height": 11.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c.jpg",
+    "assetSha256": "92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-meditation-at-denny-blaine-small-frame-black": {
+    "id": "print-meditation-at-denny-blaine-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Small print — Black frame",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "88.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD25X11DD4F1S11DD25X14DD4J1S8DD25X11DD4G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 7.9933,
+      "height": 11.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.25,
+      "height": 11.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c.jpg",
+    "assetSha256": "92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.25,
+        "height": 14.4,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.25,
+        "height": 11.4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.25X11.4",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.25,
+        "height": 14.4,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-meditation-at-denny-blaine-small-frame-white": {
+    "id": "print-meditation-at-denny-blaine-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Small print — White frame",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "88.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD25X11DD4F2S11DD25X14DD4J1S8DD25X11DD4G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 7.9933,
+      "height": 11.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.25,
+      "height": 11.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c.jpg",
+    "assetSha256": "92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.25,
+        "height": 14.4,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.25,
+        "height": 11.4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.25X11.4",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.25,
+        "height": 14.4,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-meditation-at-denny-blaine-small-frame-natural": {
+    "id": "print-meditation-at-denny-blaine-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "meditation-at-denny-blaine",
+    "title": "Meditation at Denny Blaine — Small print — Natural wood frame",
+    "artworkTitle": "Meditation at Denny Blaine",
+    "amount": "99.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD25X11DD4F7S11DD25X14DD4J1S8DD25X11DD4G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 7.9933,
+      "height": 11.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.25,
+      "height": 11.4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c.jpg",
+    "assetSha256": "92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c",
+    "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/meditation-at-denny-blaine.jpg",
+      "alt": "Meditation at Denny Blaine by TJ Murphy",
+      "caption": "Meditation at Denny Blaine"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.25,
+        "height": 14.4,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.25,
+        "height": 11.4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.25X11.4",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.25,
+        "height": 14.4,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
   },
   "print-painting-sunflower-woman-full": {
     "id": "print-painting-sunflower-woman-full",

@@ -642,6 +642,32 @@
    }
   ]
  },
+ "/gallery-images/meditation-at-denny-blaine.jpg": {
+  "original": 391742,
+  "width": 1721,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/meditation-at-denny-blaine-5a3385c5cb-160.webp",
+    "bytes": 4722
+   },
+   {
+    "w": 480,
+    "src": "/display/meditation-at-denny-blaine-5a3385c5cb-480.webp",
+    "bytes": 26270
+   },
+   {
+    "w": 960,
+    "src": "/display/meditation-at-denny-blaine-5a3385c5cb-960.webp",
+    "bytes": 71750
+   },
+   {
+    "w": 1600,
+    "src": "/display/meditation-at-denny-blaine-5a3385c5cb-1600.webp",
+    "bytes": 140960
+   }
+  ]
+ },
  "/gallery-images/moonlit-water.jpg": {
   "original": 40914,
   "width": 308,
@@ -655,6 +681,32 @@
     "w": 308,
     "src": "/display/moonlit-water-2d5761a881-308.webp",
     "bytes": 15800
+   }
+  ]
+ },
+ "/gallery-images/moonrise-over-the-cascades.jpg": {
+  "original": 381640,
+  "width": 1180,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/moonrise-over-the-cascades-d656be70f7-160.webp",
+    "bytes": 4878
+   },
+   {
+    "w": 480,
+    "src": "/display/moonrise-over-the-cascades-d656be70f7-480.webp",
+    "bytes": 52468
+   },
+   {
+    "w": 960,
+    "src": "/display/moonrise-over-the-cascades-d656be70f7-960.webp",
+    "bytes": 140088
+   },
+   {
+    "w": 1180,
+    "src": "/display/moonrise-over-the-cascades-d656be70f7-1180.webp",
+    "bytes": 184554
    }
   ]
  },
@@ -893,6 +945,32 @@
     "w": 556,
     "src": "/display/sunflower-woman-a962ed62f4-556.webp",
     "bytes": 24638
+   }
+  ]
+ },
+ "/gallery-images/sunrise-in-el-zonte-large.jpg": {
+  "original": 577216,
+  "width": 1740,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/sunrise-in-el-zonte-large-673f23d562-160.webp",
+    "bytes": 3636
+   },
+   {
+    "w": 480,
+    "src": "/display/sunrise-in-el-zonte-large-673f23d562-480.webp",
+    "bytes": 27944
+   },
+   {
+    "w": 960,
+    "src": "/display/sunrise-in-el-zonte-large-673f23d562-960.webp",
+    "bytes": 106496
+   },
+   {
+    "w": 1600,
+    "src": "/display/sunrise-in-el-zonte-large-673f23d562-1600.webp",
+    "bytes": 230532
    }
   ]
  },
