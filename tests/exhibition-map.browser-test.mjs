@@ -100,7 +100,7 @@ try {
     }
     await page.locator('#map-berlin-el-salvador a').click();
     await page.waitForURL(origin+'/murals/berlin-el-salvador/');
-    assert.equal(await page.locator('h1').textContent(),'Berlin, El Salvador');
+    assert.equal(await page.locator('h1').textContent(),'Berlín, El Salvador');
   }
   await page.goto(origin+'/exhibitions/world-map/');
   await page.locator('#map-seattle summary').click();
