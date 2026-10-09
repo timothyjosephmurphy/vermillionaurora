@@ -45,7 +45,9 @@ export const ORIGINAL_LISTINGS = {
   'el-zonte-at-sunrise': 4591478390,
   'sunrise-in-el-zonte-large': 4591556382,
   'meditation-at-denny-blaine': 4591543973,
-  'painting-moonlit-water': 4591556404
+  'painting-moonlit-water': 4591556404,
+  'painting-red-horizon': 4591572797,
+  'hope-the-vermillion-aurora': 4591572815
 };
 const SIZE = 513, FRAME = 514, QUANTITY = 100;
 const length = value => Array.from(value).length;
