@@ -1,5 +1,5 @@
 // Generated from the approved catalog for the targeted Etsy sync. Do not edit by hand.
-export const syncSourceVersion="9513595bdcb1253c0186";
+export const syncSourceVersion="eae6c38377b2ea207e5f";
 export default [
   {
     "id": "el-zonte-before-dawn",
@@ -1150,22 +1150,22 @@ export default [
       {
         "key": "full",
         "label": "Large",
-        "price": "145.00",
-        "sku": "5M144M8S13.45X25.51",
+        "price": "130.00",
+        "sku": "5M144M8S12.63X23.94",
         "paperSize": {
-          "width": 13.45,
-          "height": 25.51,
+          "width": 12.63,
+          "height": 23.94,
           "unit": "in"
         },
         "frames": [
           {
             "key": "black",
             "label": "Black",
-            "price": "245.00",
-            "sku": "5M144M8S13DD45X25DD51F1S16DD45X28DD51J1S13DD45X25DD51G1",
+            "price": "223.00",
+            "sku": "5M144M8S12DD63X23DD94F1S15DD63X26DD94J1S12DD63X23DD94G1",
             "outerSize": {
-              "width": 16.45,
-              "height": 28.51,
+              "width": 15.63,
+              "height": 26.94,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1174,11 +1174,11 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "245.00",
-            "sku": "5M144M8S13DD45X25DD51F2S16DD45X28DD51J1S13DD45X25DD51G1",
+            "price": "223.00",
+            "sku": "5M144M8S12DD63X23DD94F2S15DD63X26DD94J1S12DD63X23DD94G1",
             "outerSize": {
-              "width": 16.45,
-              "height": 28.51,
+              "width": 15.63,
+              "height": 26.94,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1187,11 +1187,11 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "264.00",
-            "sku": "5M144M8S13DD45X25DD51F7S16DD45X28DD51J1S13DD45X25DD51G1",
+            "price": "241.00",
+            "sku": "5M144M8S12DD63X23DD94F7S15DD63X26DD94J1S12DD63X23DD94G1",
             "outerSize": {
-              "width": 16.45,
-              "height": 28.51,
+              "width": 15.63,
+              "height": 26.94,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1202,22 +1202,22 @@ export default [
       {
         "key": "medium",
         "label": "Medium",
-        "price": "85.00",
-        "sku": "5M144M8S10.15X19.19",
+        "price": "70.00",
+        "sku": "5M144M8S9.53X18.01",
         "paperSize": {
-          "width": 10.15,
-          "height": 19.19,
+          "width": 9.53,
+          "height": 18.01,
           "unit": "in"
         },
         "frames": [
           {
             "key": "black",
             "label": "Black",
-            "price": "156.00",
-            "sku": "5M144M8S10DD15X19DD19F1S13DD15X22DD19J1S10DD15X19DD19G1",
+            "price": "136.00",
+            "sku": "5M144M8S9DD53X18DD01F1S12DD53X21DD01J1S9DD53X18DD01G1",
             "outerSize": {
-              "width": 13.15,
-              "height": 22.19,
+              "width": 12.53,
+              "height": 21.01,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1226,11 +1226,11 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "156.00",
-            "sku": "5M144M8S10DD15X19DD19F2S13DD15X22DD19J1S10DD15X19DD19G1",
+            "price": "136.00",
+            "sku": "5M144M8S9DD53X18DD01F2S12DD53X21DD01J1S9DD53X18DD01G1",
             "outerSize": {
-              "width": 13.15,
-              "height": 22.19,
+              "width": 12.53,
+              "height": 21.01,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1239,11 +1239,11 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "172.00",
-            "sku": "5M144M8S10DD15X19DD19F7S13DD15X22DD19J1S10DD15X19DD19G1",
+            "price": "150.00",
+            "sku": "5M144M8S9DD53X18DD01F7S12DD53X21DD01J1S9DD53X18DD01G1",
             "outerSize": {
-              "width": 13.15,
-              "height": 22.19,
+              "width": 12.53,
+              "height": 21.01,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1254,22 +1254,22 @@ export default [
       {
         "key": "small",
         "label": "Small",
-        "price": "45.00",
-        "sku": "5M144M8S6.85X12.88",
+        "price": "40.00",
+        "sku": "5M144M8S6.44X12.09",
         "paperSize": {
-          "width": 6.85,
-          "height": 12.88,
+          "width": 6.44,
+          "height": 12.09,
           "unit": "in"
         },
         "frames": [
           {
             "key": "black",
             "label": "Black",
-            "price": "92.00",
-            "sku": "5M144M8S6DD85X12DD88F1S9DD85X15DD88J1S6DD85X12DD88G1",
+            "price": "84.00",
+            "sku": "5M144M8S6DD44X12DD09F1S9DD44X15DD09J1S6DD44X12DD09G1",
             "outerSize": {
-              "width": 9.85,
-              "height": 15.88,
+              "width": 9.44,
+              "height": 15.09,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1278,11 +1278,11 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "92.00",
-            "sku": "5M144M8S6DD85X12DD88F2S9DD85X15DD88J1S6DD85X12DD88G1",
+            "price": "84.00",
+            "sku": "5M144M8S6DD44X12DD09F2S9DD44X15DD09J1S6DD44X12DD09G1",
             "outerSize": {
-              "width": 9.85,
-              "height": 15.88,
+              "width": 9.44,
+              "height": 15.09,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1291,11 +1291,11 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "103.00",
-            "sku": "5M144M8S6DD85X12DD88F7S9DD85X15DD88J1S6DD85X12DD88G1",
+            "price": "95.00",
+            "sku": "5M144M8S6DD44X12DD09F7S9DD44X15DD09J1S6DD44X12DD09G1",
             "outerSize": {
-              "width": 9.85,
-              "height": 15.88,
+              "width": 9.44,
+              "height": 15.09,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1338,22 +1338,22 @@ export default [
       {
         "key": "full",
         "label": "Large",
-        "price": "135.00",
-        "sku": "5M144M8S25.24X12.75",
+        "price": "110.00",
+        "sku": "5M144M8S22.71X11.48",
         "paperSize": {
-          "width": 25.24,
-          "height": 12.75,
+          "width": 22.71,
+          "height": 11.48,
           "unit": "in"
         },
         "frames": [
           {
             "key": "black",
             "label": "Black",
-            "price": "231.00",
-            "sku": "5M144M8S25DD24X12DD75F1S28DD24X15DD75J1S25DD24X12DD75G1",
+            "price": "194.00",
+            "sku": "5M144M8S22DD71X11DD48F1S25DD71X14DD48J1S22DD71X11DD48G1",
             "outerSize": {
-              "width": 28.24,
-              "height": 15.75,
+              "width": 25.71,
+              "height": 14.48,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1362,11 +1362,11 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "231.00",
-            "sku": "5M144M8S25DD24X12DD75F2S28DD24X15DD75J1S25DD24X12DD75G1",
+            "price": "194.00",
+            "sku": "5M144M8S22DD71X11DD48F2S25DD71X14DD48J1S22DD71X11DD48G1",
             "outerSize": {
-              "width": 28.24,
-              "height": 15.75,
+              "width": 25.71,
+              "height": 14.48,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1375,11 +1375,11 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "250.00",
-            "sku": "5M144M8S25DD24X12DD75F7S28DD24X15DD75J1S25DD24X12DD75G1",
+            "price": "211.00",
+            "sku": "5M144M8S22DD71X11DD48F7S25DD71X14DD48J1S22DD71X11DD48G1",
             "outerSize": {
-              "width": 28.24,
-              "height": 15.75,
+              "width": 25.71,
+              "height": 14.48,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1390,22 +1390,22 @@ export default [
       {
         "key": "medium",
         "label": "Medium",
-        "price": "75.00",
-        "sku": "5M144M8S18.99X9.62",
+        "price": "60.00",
+        "sku": "5M144M8S17.1X8.67",
         "paperSize": {
-          "width": 18.99,
-          "height": 9.62,
+          "width": 17.1,
+          "height": 8.67,
           "unit": "in"
         },
         "frames": [
           {
             "key": "black",
             "label": "Black",
-            "price": "144.00",
-            "sku": "5M144M8S18DD99X9DD62F1S21DD99X12DD62J1S18DD99X9DD62G1",
+            "price": "122.00",
+            "sku": "5M144M8S17DD1X8DD67F1S20DD1X11DD67J1S17DD1X8DD67G1",
             "outerSize": {
-              "width": 21.99,
-              "height": 12.62,
+              "width": 20.1,
+              "height": 11.67,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1414,11 +1414,11 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "144.00",
-            "sku": "5M144M8S18DD99X9DD62F2S21DD99X12DD62J1S18DD99X9DD62G1",
+            "price": "122.00",
+            "sku": "5M144M8S17DD1X8DD67F2S20DD1X11DD67J1S17DD1X8DD67G1",
             "outerSize": {
-              "width": 21.99,
-              "height": 12.62,
+              "width": 20.1,
+              "height": 11.67,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1427,11 +1427,11 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "159.00",
-            "sku": "5M144M8S18DD99X9DD62F7S21DD99X12DD62J1S18DD99X9DD62G1",
+            "price": "136.00",
+            "sku": "5M144M8S17DD1X8DD67F7S20DD1X11DD67J1S17DD1X8DD67G1",
             "outerSize": {
-              "width": 21.99,
-              "height": 12.62,
+              "width": 20.1,
+              "height": 11.67,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1442,22 +1442,22 @@ export default [
       {
         "key": "small",
         "label": "Small",
-        "price": "45.00",
-        "sku": "5M144M8S12.74X6.5",
+        "price": "40.00",
+        "sku": "5M144M8S11.48X5.86",
         "paperSize": {
-          "width": 12.74,
-          "height": 6.5,
+          "width": 11.48,
+          "height": 5.86,
           "unit": "in"
         },
         "frames": [
           {
             "key": "black",
             "label": "Black",
-            "price": "90.00",
-            "sku": "5M144M8S12DD74X6DD5F1S15DD74X9DD5J1S12DD74X6DD5G1",
+            "price": "82.00",
+            "sku": "5M144M8S11DD48X5DD86F1S14DD48X8DD86J1S11DD48X5DD86G1",
             "outerSize": {
-              "width": 15.74,
-              "height": 9.5,
+              "width": 14.48,
+              "height": 8.86,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1466,11 +1466,11 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "90.00",
-            "sku": "5M144M8S12DD74X6DD5F2S15DD74X9DD5J1S12DD74X6DD5G1",
+            "price": "82.00",
+            "sku": "5M144M8S11DD48X5DD86F2S14DD48X8DD86J1S11DD48X5DD86G1",
             "outerSize": {
-              "width": 15.74,
-              "height": 9.5,
+              "width": 14.48,
+              "height": 8.86,
               "unit": "in"
             },
             "mat": "Snow White",
@@ -1479,11 +1479,11 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "102.00",
-            "sku": "5M144M8S12DD74X6DD5F7S15DD74X9DD5J1S12DD74X6DD5G1",
+            "price": "92.00",
+            "sku": "5M144M8S11DD48X5DD86F7S14DD48X8DD86J1S11DD48X5DD86G1",
             "outerSize": {
-              "width": 15.74,
-              "height": 9.5,
+              "width": 14.48,
+              "height": 8.86,
               "unit": "in"
             },
             "mat": "Snow White",

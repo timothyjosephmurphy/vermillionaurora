@@ -20,8 +20,8 @@
   {
     "id": "painting-red-horizon",
     "title": "Sunset at Kihei on Maui",
-    "local": "static/print-masters/d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1.jpg",
-    "sha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1"
+    "local": "static/print-masters/f6e3bea6cf0aae99cac1bf06cccd45149b5be70beb16be754e64984b0e176efc.jpg",
+    "sha256": "f6e3bea6cf0aae99cac1bf06cccd45149b5be70beb16be754e64984b0e176efc"
   },
   {
     "id": "painting-shoreline-at-dusk",
@@ -225,8 +225,8 @@
   {
     "id": "hope-the-vermillion-aurora",
     "title": "Hope, the Vermillion Aurora",
-    "sha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d",
-    "local": "static/print-masters/d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d.jpg"
+    "sha256": "62fadea5e859a0d9adca611a1bbb9d8b714edf350fa0885e2920296867d136fb",
+    "local": "static/print-masters/62fadea5e859a0d9adca611a1bbb9d8b714edf350fa0885e2920296867d136fb.jpg"
   },
   {
     "id": "cormorant-presiding-over-sunset-on-puget-sound",

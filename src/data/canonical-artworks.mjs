@@ -9,7 +9,7 @@ export const canonicalArtwork = {
   // Oct 2026 merge (TJ: "Merge the duplicates and keep the book titles"): the catalog page survives with the book title.
   'book-art-9b6b4f1ce8b283e14b21': 'el-zonte-at-sunrise', // Sunrise from Punta El Zonte Hostel
   'book-art-024a1e2da99a49b4438a': 'myself-my-mother-ruth-my-grandpa-howard', // Myself, my mother Ruth, my grandpa Howard
-  'book-art-ad30c3da712401606ea6': 'michael-and-katie-in-yelapa', // Michael and Katie in Yelapa
+  'book-art-ad30c3da712401606ea6': 'michael-and-katie-in-yelapa', // Romance in Yelapa
   'book-art-1708a7dca996aca40e6c': 'painting-guitarist', // Girl Tuning Guitar (book title: Malone; TJ chose the catalog title)
   'book-art-5e4eb881d89ae9f5c635': 'painting-sunset-silhouette', // Sunset in the Strait of Juan de Fuca, Sucia Island
   'book-art-7676696646b77fc3ca94': 'sunset-in-el-zonte-el-salvador', // Sunset in El Zonte, El Salvador
