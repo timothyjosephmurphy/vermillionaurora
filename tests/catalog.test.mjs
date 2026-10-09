@@ -304,3 +304,15 @@ test('living room exhibition keeps its 18 chosen photographs in source and catal
  assert.deepEqual(entry.files.map(f=>f.url),links.map((i,a)=>$(a).attr('href')).get());
  assert.ok(fs.existsSync('exhibitions/living-room/images/three-landscapes-in-living-room.jpg'),'homepage card image stays');
 });
+
+test('commissions contact form shows the email with a decorative envelope icon and a working mailto link',()=>{
+ const $=load(fs.readFileSync('src/pages/commissions/index.astro','utf8').replace(/^---[\s\S]*?\n---/,''));
+ const link=$('#form .contact-list a[href="mailto:tj@tjm.art"]');
+ assert.equal(link.length,1);
+ assert.equal(link.text().trim(),'tj@tjm.art');
+ const svg=link.find('svg');
+ assert.equal(svg.length,1);
+ assert.equal(svg.attr('aria-hidden'),'true');
+ assert.equal(svg.attr('stroke'),'currentColor');
+ assert.equal(link.find('img').length,0,'icon is inline, no image request');
+});
