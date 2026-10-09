@@ -53,6 +53,13 @@ export class NostrSchedule {
         enabled: this.env.NOSTR_PUBLISH_ENABLED === 'true',
         keyConfigured: Boolean(this.env.NOSTR_NSEC),
         scheduledPosts: posts.length,
+        posts: await Promise.all(posts.map(async (post) => ({
+          id: post.id,
+          scheduledAt: post.scheduledAt,
+          status: (await this.state.storage.get(`nostr:sent:${post.id}`)) ? 'published' : 'scheduled',
+          text: post.text,
+          imageUrl: post.imageUrl
+        }))),
         test: {
           id: testPost.id,
           status: receipt ? 'published' : (attempt?.status || 'pending'),
