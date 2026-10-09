@@ -159,3 +159,10 @@ test('a failed Etsy deactivate emails TJ and does not reactivate', async t => {
   assert.equal(calls.some(url => url.includes('gmail.googleapis.com')), true);
   assert.equal(calls.some(url => url.includes('state=active')), false);
 });
+
+test('the batch-2 originals are in the inventory sync mapping', () => {
+  const map = Object.fromEntries(listingMap({}).map(item => [item.productId, item.listingId]));
+  assert.equal(map['sunrise-in-el-zonte-large'], 4591556382);
+  assert.equal(map['meditation-at-denny-blaine'], 4591543973);
+  assert.equal(map['painting-moonlit-water'], 4591556404);
+});
