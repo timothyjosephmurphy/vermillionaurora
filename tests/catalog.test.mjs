@@ -158,7 +158,7 @@ test('painting cards: price without "USD", "Prints from" the cheapest ready prin
  for(const path of pages){
   const $=load(fs.readFileSync(`dist/${path}`,'utf8'));
   $('[data-caption]').each((i,e)=>assert(!/\bUSD\b/.test($(e).attr('data-caption')),`${path}: ${$(e).attr('data-caption')}`));
-  $('.card-tile, a.ex-photo[data-buy]').each((i,e)=>{
+  $('.card-tile[data-product-id], a.ex-photo[data-buy]').each((i,e)=>{
    const tile=$(e),href=tile.is('a')?tile.attr('href'):tile.find('a').attr('href');
    const p=products.find(p=>href?.replace(/\/$/,'').endsWith(`/products/${p.slug}`));assert(p,`${path}: card without product link (${href})`);
    assert.equal(tile.find('a a').length+(tile.is('a')?tile.find('a').length:0),0,`${path}: ${p.id} has nested links`);
@@ -315,4 +315,13 @@ test('commissions contact form shows the email with a decorative envelope icon a
  assert.equal(svg.attr('aria-hidden'),'true');
  assert.equal(svg.attr('stroke'),'currentColor');
  assert.equal(link.find('img').length,0,'icon is inline, no image request');
+});
+
+test('the homepage presents the zoomable print wall as a framed gallery tile',()=>{
+ const $=load(fs.readFileSync('dist/index.html','utf8'));
+ const tile=$('.available-paintings-carousel [data-gallery-feature="print-wall"]');
+ assert.equal(tile.length,1);assert.equal(tile.find('.product-title-link').attr('href'),'/gallery/wall/');
+ assert.equal(tile.attr('data-product-id'),undefined,'A gallery experience is not original-painting inventory');
+ assert.equal(tile.find('img').attr('src'),'/gallery-wall/framed-wall.webp');
+ assert(fs.existsSync('dist/gallery-wall/framed-wall.webp'));
 });
