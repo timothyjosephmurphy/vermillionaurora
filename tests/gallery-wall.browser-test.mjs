@@ -43,7 +43,7 @@ for(const engine of [chromium,webkit]){
     const assertWholeFrame=async art=>{
       const r=await page.locator(`[data-wall-art="${art.id}"]`).boundingBox(),v=page.viewportSize();
       assert(r.x>=15&&r.y>=15&&r.x+r.width<=v.width-15&&r.y+r.height<=v.height-64+1,'Maximum zoom must show the entire frame');
-      const rect=await page.locator('[data-wall-viewport]').boundingBox();assert.equal(rect.x,0);assert.equal(rect.y,0);assert.equal(rect.width,v.width);assert.equal(rect.height,v.height);
+      const rect=await page.locator('[data-wall-viewport]').boundingBox();assert.equal(rect.x,0);assert.equal(rect.y,0);assert(Math.abs(rect.width-v.width)<.1&&Math.abs(rect.height-v.height)<.1,'The viewer fills the viewport, allowing browser subpixel rounding');
       assert.equal(await page.locator('.site-header').evaluate(el=>getComputedStyle(el).visibility),'hidden');
     };
     const assertClearPanel=async()=>{
