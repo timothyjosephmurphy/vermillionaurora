@@ -18,11 +18,17 @@ async function context(options={}){
 }
 try{
   for(const mobile of [false,true]){
-    const ctx=await context({viewport:mobile?{width:390,height:844}:{width:1440,height:960},hasTouch:mobile,isMobile:mobile,deviceScaleFactor:mobile?2:1});
+    const ctx=await context({viewport:mobile?{width:390,height:844}:{width:1440,height:960},hasTouch:mobile,isMobile:mobile,deviceScaleFactor:mobile?2:1,reducedMotion:'reduce'});
     const page=await ctx.newPage(),errors=[];
     page.on('pageerror',e=>{errors.push(e.message);console.log('ROOM PAGE ERROR',e.message);});page.on('console',m=>{if(m.type()==='error'&&m.text().includes('Gallery room'))console.log(m.text());});
     page.on('request',r=>{if(page.url().endsWith('/gallery/room/')&&r.url().includes('/checkout/'))throw Error('The room must not initiate checkout');});
-    await page.goto(origin+'/gallery/room/');
+    await page.goto(origin+'/');
+    const roomTile=page.locator('[data-collector-paintings] > :first-child');
+    assert.equal(await roomTile.getAttribute('data-gallery-feature'),'gallery-room','The room is the first Collector’s Items tile');
+    await roomTile.scrollIntoViewIfNeeded();
+    await page.waitForFunction(()=>document.querySelector('[data-gallery-feature="gallery-room"] img').naturalWidth===1440);
+    await page.screenshot({path:`/tmp/gallery-room-home-${mobile?'mobile':'desktop'}.png`});
+    await Promise.all([page.waitForURL(origin+'/gallery/room/'),roomTile.locator('.product-title-link').click()]);
     await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.ready==='true',{},{timeout:60000});
     await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.loadedImages==='24');
     assert.equal(await page.locator('[data-gallery-room]').getAttribute('data-paintings'),'24');
