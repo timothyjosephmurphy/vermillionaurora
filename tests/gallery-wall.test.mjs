@@ -40,15 +40,20 @@ test('zoom retains the point beneath a finger and the overview shows the complet
     assert(constrained.x<=160&&constrained.y>=view.height-wallSize.height*constrained.scale-160);
   }
 });
-test('detail progresses to the untouched source and focused artwork has an onscreen panel',()=>{
+test('detail progresses to the untouched source and focus follows the gesture point',()=>{
   const art=wallArtworks[0];assert.equal(imageSource(art.sources,100),art.sources[0]);assert.equal(imageSource(art.sources,art.sourceWidth),art.sources.at(-1));
-  for(const view of [{width:1280,height:700},{width:366,height:480}]){
-    const fit=fitView(view,wallSize),scale=fit.scale*5;
-    const t={scale,x:view.width/2-(art.x+art.width/2)*scale,y:view.height/2-(art.y+art.height/2)*scale};
-    assert.equal(focusArtwork(wallArtworks,t,view,fit.scale)?.id,art.id);
-    for(const rect of [screenRect(art,t),{x:-300,y:-100,width:2000,height:1800}]){
-      const p=panelPosition(rect,view,{width:260,height:340});
-      assert(p.x>=12&&p.y>=12&&p.x+260<=view.width-12&&p.y+340<=view.height-12);
-    }
-  }
+  const artworks=[{id:'left',x:20,y:20,width:120,height:160},{id:'right',x:220,y:20,width:120,height:160}],view={width:720,height:400},transform={scale:2,x:0,y:0};
+  assert.equal(focusArtwork(artworks,transform,view,.5,{x:100,y:160})?.id,'left');
+  assert.equal(focusArtwork(artworks,transform,view,.5,{x:560,y:160})?.id,'right','A new gesture must immediately release the previous focus');
+  assert.equal(focusArtwork(artworks,transform,view,.5,{x:360,y:160}),null,'Do not select an unrelated painting across empty wall space');
+});
+test('the fixed screen-size pane occupies empty wall space or hides completely',()=>{
+  const view={width:1280,height:700},panel={width:236,height:220},art={x:300,y:100,width:680,height:500};
+  const p=panelPosition(art,view,panel,[art]);assert(p);
+  assert(p.x>=12&&p.y>=12&&p.x+panel.width<=view.width-12&&p.y+panel.height<=view.height-12);
+  assert(p.x+panel.width+12<=art.x||p.x>=art.x+art.width+12||p.y+panel.height+12<=art.y||p.y>=art.y+art.height+12);
+  const blocked={x:0,y:0,width:1280,height:700};
+  assert.equal(panelPosition(art,view,panel,[art,blocked]),null,'Never cover another painting to show product information');
+  assert.equal(panelPosition(blocked,view,panel),null,'Deep zoom leaves the painting unobstructed');
+  assert.equal(panelPosition(art,{width:200,height:200},panel),null);
 });

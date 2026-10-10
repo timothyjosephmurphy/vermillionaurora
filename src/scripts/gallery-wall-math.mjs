@@ -17,23 +17,33 @@ export function constrainView(transform,view,world){
 export function screenRect(art,transform){return {x:transform.x+art.x*transform.scale,y:transform.y+art.y*transform.scale,width:art.width*transform.scale,height:art.height*transform.scale};}
 export function intersects(rect,view,padding=0){return rect.x+rect.width>-padding&&rect.y+rect.height>-padding&&rect.x<view.width+padding&&rect.y<view.height+padding;}
 export function imageSource(sources,pixels){return sources.find(s=>s.width>=pixels)||sources.at(-1);}
-export function focusArtwork(artworks,transform,view,fitScale,previousId){
+export function focusArtwork(artworks,transform,view,fitScale,point={x:view.width/2,y:view.height/2}){
   if(transform.scale<fitScale*1.8)return null;
-  const cx=view.width/2,cy=view.height/2;
+  const cx=point.x,cy=point.y;
   const candidates=artworks.map(art=>{
     const rect=screenRect(art,transform);
     if(!intersects(rect,view)||Math.max(rect.width,rect.height)<Math.min(view.width,view.height)*.22)return null;
     // Distance to the visible painting, rather than its off-screen center at deep zoom.
     const dx=Math.max(rect.x-cx,cx-rect.x-rect.width,0),dy=Math.max(rect.y-cy,cy-rect.y-rect.height,0);
-    const center=Math.hypot(rect.x+rect.width/2-cx,rect.y+rect.height/2-cy)*.035;
-    return {art,score:Math.hypot(dx,dy)+center-(art.id===previousId?10:0)};
+    const center=Math.hypot(rect.x+rect.width/2-cx,rect.y+rect.height/2-cy)*.0001;
+    return {art,score:Math.hypot(dx,dy)+center};
   }).filter(Boolean).sort((a,b)=>a.score-b.score);
-  return candidates[0]&&candidates[0].score<Math.min(view.width,view.height)*.35?candidates[0].art:null;
+  return candidates[0]&&candidates[0].score<Math.min(48,Math.min(view.width,view.height)*.08)?candidates[0].art:null;
 }
-export function panelPosition(rect,view,panel){
-  const gap=18,pad=12;
-  let x=rect.x+rect.width+gap,y=rect.y;
-  if(x+panel.width>view.width-pad)x=rect.x-panel.width-gap;
-  if(x<pad){x=view.width-panel.width-pad;y=view.height-panel.height-pad;}
-  return {x:clamp(x,pad,Math.max(pad,view.width-panel.width-pad)),y:clamp(y,pad,Math.max(pad,view.height-panel.height-pad))};
+export function panelPosition(rect,view,panel,obstacles=[rect]){
+  const gap=12,pad=12,maxX=view.width-panel.width-pad,maxY=view.height-panel.height-pad;
+  if(maxX<pad||maxY<pad)return null;
+  const xs=new Set([pad,maxX]),ys=new Set([pad,maxY]);
+  for(const r of obstacles){
+    for(const x of [r.x-panel.width-gap,r.x+r.width+gap])xs.add(clamp(x,pad,maxX));
+    for(const y of [r.y-panel.height-gap,r.y+r.height+gap,r.y])ys.add(clamp(y,pad,maxY));
+  }
+  let best=null,bestDistance=Infinity;
+  for(const x of xs)for(const y of ys){
+    if(obstacles.some(r=>x<r.x+r.width+gap&&x+panel.width>r.x-gap&&y<r.y+r.height+gap&&y+panel.height>r.y-gap))continue;
+    const distance=Math.hypot(x+panel.width/2-rect.x-rect.width/2,y+panel.height/2-rect.y-rect.height/2);
+    if(distance<bestDistance){best={x,y};bestDistance=distance;}
+  }
+  // At deep zoom, no empty wall may remain. Hiding is preferable to covering art.
+  return best;
 }

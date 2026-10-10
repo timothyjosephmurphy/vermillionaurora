@@ -9,7 +9,8 @@ function initializeWall(){
   const picker=root.querySelector('[data-wall-picker]'),byId=new Map(artworks.map(art=>[art.id,art]));
   const imageStates=new Map(artworks.map(art=>[art.id,{img:root.querySelector(`[data-art-image="${art.id}"]`),width:art.sources[0].width,loading:false,failed:new Set()}]));
   let view={width:viewport.clientWidth,height:viewport.clientHeight},fit=fitView(view,world),transform={...fit};
-  let focused=null,preferredId=null,dismissed=null,frame=0,imageTimer=0,activeLoads=0,busy=false,capabilities=null;
+  let focused=null,dismissed=null,frame=0,imageTimer=0,activeLoads=0,busy=false,capabilities=null;
+  let focusPoint={x:view.width/2,y:view.height/2};
   let maxScale=Math.max(...artworks.map(a=>a.sourceWidth/a.imageWidth))/Math.max(1,devicePixelRatio)*1.15;
   const pointers=new Map();let gesture=null,moved=false,suppressClickUntil=0;
   const money=amount=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(Number(amount));
@@ -26,6 +27,7 @@ function initializeWall(){
   function setFocus(art){
     if(focused?.id===art?.id)return;
     focused=art;
+    root.dataset.focusedArt=art?.id||'';
     if(!art){dismissed=null;return;}
     picker.value=art.id;
     panel.querySelector('[data-wall-title]').textContent=art.title;
@@ -43,13 +45,13 @@ function initializeWall(){
     zoomLabel.textContent=`${Math.round(transform.scale/fit.scale*100)}%`;
     root.querySelector('[data-wall-minus]').disabled=transform.scale<=fit.scale*1.001;
     root.querySelector('[data-wall-plus]').disabled=transform.scale>=maxScale*.999;
-    const preferred=byId.get(preferredId);
-    if(!busy)setFocus(preferred&&transform.scale>=fit.scale*1.8&&intersects(screenRect(preferred,transform),view)?preferred:focusArtwork(artworks,transform,view,fit.scale,focused?.id));
-    const shown=focused&&focused.id!==dismissed;
+    if(!busy)setFocus(focusArtwork(artworks,transform,view,fit.scale,focusPoint));
+    const panelView={...view,height:view.height-(view.width<=760?106:76)};
+    const obstacles=artworks.map(art=>screenRect(art,transform)).filter(rect=>intersects(rect,panelView,12));
+    const pos=focused&&!pointers.size?panelPosition(screenRect(focused,transform),panelView,{width:panel.offsetWidth,height:panel.offsetHeight},obstacles):null;
+    const shown=pos&&focused&&focused.id!==dismissed;
     panel.classList.toggle('is-visible',!!shown);panel.inert=!shown;panel.setAttribute('aria-hidden',String(!shown));
     if(shown){
-      const panelView={...view,height:view.height-(view.width<=760?106:76)};
-      const pos=panelPosition(screenRect(focused,transform),panelView,{width:panel.offsetWidth,height:panel.offsetHeight});
       panel.style.left=`${pos.x}px`;panel.style.top=`${pos.y}px`;
     }
     clearTimeout(imageTimer);imageTimer=setTimeout(loadVisibleDetail,100);
@@ -57,16 +59,16 @@ function initializeWall(){
   function schedule(){if(!frame)frame=requestAnimationFrame(render);}
   function change(next){transform=constrainView({...next,scale:clamp(next.scale,fit.scale,maxScale)},view,world);schedule();}
   function zoom(factor,point){
-    if(!point){const rect=focused&&screenRect(focused,transform);point=rect?{x:clamp(rect.x+rect.width/2,0,view.width),y:clamp(rect.y+rect.height/2,0,view.height)}:{x:view.width/2,y:view.height/2};}
+    point||={x:view.width/2,y:view.height/2};focusPoint=point;
     change(zoomAt(transform,point,clamp(transform.scale*factor,fit.scale,maxScale)));
   }
-  function reset(){dismissed=null;preferredId=null;focused=null;picker.value='';change({...fit});status.textContent='The full print wall is in view.';}
+  function reset(){dismissed=null;focusPoint={x:view.width/2,y:view.height/2};setFocus(null);picker.value='';change({...fit});status.textContent='The full print wall is in view.';}
   function focusById(id){
     const art=byId.get(id);if(!art)return;
-    const availableWidth=view.width>760?view.width-330:view.width*.92;
+    const availableWidth=view.width>760?view.width-540:view.width*.92;
     const scale=clamp(Math.min(availableWidth/art.width,view.height*.76/art.height),fit.scale*2.1,maxScale);
-    const cx=view.width>760?availableWidth/2:view.width/2;
-    dismissed=null;preferredId=id;
+    const cx=view.width/2;
+    dismissed=null;focusPoint={x:cx,y:view.height/2};
     change({scale,x:cx-(art.x+art.width/2)*scale,y:view.height/2-(art.y+art.height/2)*scale});
     setFocus(art);status.textContent=`Viewing ${art.title}.`;
   }
@@ -107,7 +109,7 @@ function initializeWall(){
     pointers.set(event.pointerId,point(event));
     (event.target.closest('a')||viewport).setPointerCapture(event.pointerId);
     if(pointers.size>1)moved=true;
-    rebaseGesture();viewport.classList.add('is-dragging');
+    rebaseGesture();viewport.classList.add('is-dragging');schedule();
   });
   viewport.addEventListener('pointermove',event=>{
     if(!pointers.has(event.pointerId)||!gesture)return;
@@ -116,18 +118,18 @@ function initializeWall(){
     if(list.length>1&&gesture.distance>0){
       const center=midpoint(list[0],list[1]),distance=Math.hypot(list[0].x-list[1].x,list[0].y-list[1].y);
       const next=zoomAt(gesture.transform,gesture.center,clamp(gesture.transform.scale*distance/gesture.distance,fit.scale,maxScale));
-      next.x+=center.x-gesture.center.x;next.y+=center.y-gesture.center.y;moved=true;preferredId=null;change(next);
+      next.x+=center.x-gesture.center.x;next.y+=center.y-gesture.center.y;moved=true;focusPoint=center;change(next);
     }else{
       const dx=list[0].x-gesture.start.x,dy=list[0].y-gesture.start.y;
       if(Math.hypot(dx,dy)>5)moved=true;
-      if(moved){preferredId=null;change({...gesture.transform,x:gesture.transform.x+dx,y:gesture.transform.y+dy});}
+      if(moved){focusPoint={x:view.width/2,y:view.height/2};change({...gesture.transform,x:gesture.transform.x+dx,y:gesture.transform.y+dy});}
     }
   });
   const endPointer=event=>{
     if(!pointers.has(event.pointerId))return;
     pointers.delete(event.pointerId);
     if(moved||event.type==='pointercancel')suppressClickUntil=performance.now()+400;
-    rebaseGesture();if(!pointers.size)viewport.classList.remove('is-dragging');
+    rebaseGesture();if(!pointers.size)viewport.classList.remove('is-dragging');schedule();
   };
   viewport.addEventListener('pointerup',endPointer);viewport.addEventListener('pointercancel',endPointer);viewport.addEventListener('lostpointercapture',endPointer);
   viewport.addEventListener('click',event=>{
@@ -136,7 +138,7 @@ function initializeWall(){
   },true);
   viewport.addEventListener('dragstart',event=>event.preventDefault());
   viewport.addEventListener('wheel',event=>{
-    if(event.target.closest('[data-wall-ui]'))return;
+    if(event.target.closest('.wall-tools'))return;
     event.preventDefault();
     const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?view.height:1);
     zoom(Math.exp(-clamp(delta,-100,100)*(event.ctrlKey ? .008 : .0025)),point(event));
@@ -147,11 +149,11 @@ function initializeWall(){
     if(['0','Home','Escape'].includes(event.key))reset();
     else if(['+','='].includes(event.key))zoom(1.5);
     else if(event.key==='-')zoom(1/1.5);
-    else {preferredId=null;change({...transform,x:transform.x+({ArrowLeft:70,ArrowRight:-70}[event.key]||0),y:transform.y+({ArrowUp:70,ArrowDown:-70}[event.key]||0)});}
+    else {focusPoint={x:view.width/2,y:view.height/2};change({...transform,x:transform.x+({ArrowLeft:70,ArrowRight:-70}[event.key]||0),y:transform.y+({ArrowUp:70,ArrowDown:-70}[event.key]||0)});}
   });
   // Tabbing through real product links keeps the current link visible at any zoom.
   viewport.addEventListener('focusin',event=>{
-    const anchor=event.target.closest('[data-wall-art]');if(!anchor)return;
+    const anchor=event.target.closest('[data-wall-art]');if(!anchor||!anchor.matches(':focus-visible'))return;
     if(!intersects(screenRect(byId.get(anchor.dataset.wallArt),transform),view,-30))focusById(anchor.dataset.wallArt);
   });
   root.querySelector('[data-wall-plus]').addEventListener('click',()=>zoom(1.5));
@@ -169,6 +171,7 @@ function initializeWall(){
     const next={width:viewport.clientWidth,height:viewport.clientHeight};if(!next.width||!next.height)return;
     const wasFit=Math.abs(transform.scale-fit.scale)<.001;
     const center={x:(view.width/2-transform.x)/transform.scale,y:(view.height/2-transform.y)/transform.scale};
+    focusPoint={x:focusPoint.x*next.width/view.width,y:focusPoint.y*next.height/view.height};
     view=next;fit=fitView(view,world);maxScale=Math.max(...artworks.map(a=>a.sourceWidth/a.imageWidth))/Math.max(1,devicePixelRatio)*1.15;
     const scale=clamp(transform.scale,fit.scale,maxScale);
     change(wasFit?{...fit}:{scale,x:view.width/2-center.x*scale,y:view.height/2-center.y*scale});
