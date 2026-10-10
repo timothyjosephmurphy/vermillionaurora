@@ -14,6 +14,14 @@ export function paintingView(art,view){
   const scale=Math.min((view.width-pad*2)/art.width,(view.height-pad*2-bottom)/art.height);
   return {scale,x:view.width/2-(art.x+art.width/2)*scale,y:(view.height-bottom)/2-(art.y+art.height/2)*scale};
 }
+// A deliberate first click reserves a quiet strip for details, leaving the entire frame visible.
+export function inspectionView(art,view){
+  const side=view.width>=760||view.width>view.height;
+  const area=side?{width:view.width-260,height:view.height}:{width:view.width,height:view.height-244};
+  return {transform:paintingView(art,area),center:{x:area.width/2,y:(area.height-64)/2},
+    panel:side?{x:view.width-248,y:Math.max(12,(view.height-64-220)/2)}:{x:(view.width-236)/2,y:view.height-64-232},
+    side};
+}
 export function constrainView(transform,view,world){
   const bound=(offset,size,viewport)=>{
     const margin=Math.min(viewport*.4,160);

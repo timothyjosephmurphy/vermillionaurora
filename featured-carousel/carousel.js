@@ -10,7 +10,7 @@
     const background = product.querySelector('.product-image');
     const source = image ? image.src : getComputedStyle(background).backgroundImage.replace(/^url\(["']?|["']?\)$/g, '');
     // Carry the responsive WebP candidates so phones download a right-sized image, not the 960px file.
-    return {id:product.dataset.productId,href:link.href, title:link.textContent, source, srcset:image?.getAttribute('srcset')||'', detail:priceLine(product), printsFrom:product.dataset.printsFrom||'', buy:product.dataset.buy==='true'};
+    return {id:product.dataset.productId||product.dataset.galleryFeature,href:link.href, title:link.textContent, source, srcset:image?.getAttribute('srcset')||'', detail:priceLine(product), printsFrom:product.dataset.printsFrom||'', buy:product.dataset.buy==='true'};
   };
   // The price line ("Watercolor pastel · $600") only, never the card's Buy cue: on cards without prints the price shares its row with the pill.
   function priceLine(product) {

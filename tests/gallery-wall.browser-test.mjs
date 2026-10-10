@@ -120,25 +120,43 @@ for(const engine of [chromium,webkit]){
     await page.evaluate(()=>localStorage.clear());stale=true;await open();await focus(art);
     assert(await page.locator('[data-wall-buy]').isDisabled(),'Stale print catalog cannot be purchased');
     await fitWall();
-    // Ordinary painting clicks animate before navigating. Modified clicks remain real links.
+    // First click inspects without leaving the wall. Second click completes the smooth product transition.
+    await page.locator(`[data-wall-art="${art.id}"]`).click();await settled();
+    assert.equal(page.url(),origin+'/gallery/wall/');
+    await page.waitForFunction(()=>document.querySelector('[data-wall-panel]').getAttribute('aria-hidden')==='false');
+    const inspection=await page.locator(`[data-wall-art="${art.id}"]`).boundingBox(),details=await panel.boundingBox();
+    assert(inspection.x+inspection.width<details.x||inspection.y+inspection.height<details.y);
+    await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-inspection.png`,fullPage:true});
     await page.evaluate(id=>{
       const art=document.querySelector(`[data-wall-art="${id}"]`);let samples=[];
-      const sample=()=>{samples.push(art.getBoundingClientRect().width);requestAnimationFrame(sample);};requestAnimationFrame(sample);
+      const sample=()=>{const r=art.getBoundingClientRect();samples.push([Math.round(r.width),Math.round(r.x)]);requestAnimationFrame(sample);};requestAnimationFrame(sample);
       addEventListener('pagehide',()=>{const r=art.getBoundingClientRect();sessionStorage.setItem('wall-transition-check',JSON.stringify({samples,rect:{x:r.x,y:r.y,width:r.width,height:r.height},name:art.querySelector('img').style.viewTransitionName}));},{once:true});
     },art.id);
     const started=Date.now();
     await Promise.all([page.waitForURL(origin+art.href),page.locator(`[data-wall-art="${art.id}"]`).click()]);
     assert(Date.now()-started>=500,'Navigation waits for the smooth zoom');
     const handoff=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('wall-transition-check')));
-    assert(new Set(handoff.samples.map(n=>Math.round(n))).size>5,'The camera renders intermediate zoom positions');
+    assert(new Set(handoff.samples.map(n=>JSON.stringify(n))).size>5,'The camera renders intermediate positions before the product transition');
     assert(handoff.rect.x>=23&&handoff.rect.y>=23&&handoff.rect.x+handoff.rect.width<=1257&&handoff.rect.y+handoff.rect.height<=913);
     assert.equal(handoff.name,'wall-painting');
     assert.equal(await page.locator('.painting-image-trigger>img').evaluate(el=>getComputedStyle(el).viewTransitionName),'wall-painting');
     const transition=await page.evaluate(()=>window.wallIncomingTransition);
     if(engine===chromium)assert.equal(transition,true,'The native image transition completes on the product page');
     else assert(transition===undefined||transition===true,'Supported cross-page image transitions complete');
-    await page.emulateMedia({reducedMotion:'reduce'});await open();
+    await page.emulateMedia({reducedMotion:'reduce'});await page.setViewportSize({width:390,height:844});await open();
+    await page.locator(`[data-wall-art="${art.id}"]`).click();await settled();
+    assert.equal(page.url(),origin+'/gallery/wall/');
+    await page.waitForFunction(()=>document.querySelector('[data-wall-panel]').getAttribute('aria-hidden')==='false');
+    const phoneArt=await page.locator(`[data-wall-art="${art.id}"]`).boundingBox(),phonePanel=await panel.boundingBox();
+    assert(phoneArt.y+phoneArt.height<phonePanel.y,'Phone details sit below the entire frame');
+    await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-inspection-mobile.png`,fullPage:true});
     await Promise.all([page.waitForURL(origin+art.href),page.locator(`[data-wall-art="${art.id}"]`).click()]);
+    await page.goto(origin+'/');
+    const wallTile=page.locator('[data-gallery-feature="print-wall"]');
+    assert.equal(await wallTile.locator('.product-title-link').getAttribute('href'),'/gallery/wall/');
+    await page.waitForFunction(()=>document.querySelector('[data-gallery-feature="print-wall"] img').naturalWidth===1600);
+    await page.evaluate(()=>document.dispatchEvent(new CustomEvent('catalog:availability')));
+    assert.equal(await wallTile.count(),1,'Live inventory keeps the wall tile in the carousel');
     assert.deepEqual(errors,[]);console.log(`PASS: ${engine.name()} print wall: layout, source detail, full-screen fit, smooth product transition, touch, panel, cart selection, and stale-catalog guard.`);
   }finally{await browser.close();}
 }
