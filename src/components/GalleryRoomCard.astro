@@ -1,0 +1,14 @@
+<article class="product-card card-tile ex-slide gallery-room-card" data-gallery-feature="gallery-room" data-buy="false">
+  <a href="/gallery/room/" class="gallery-product-image room-card-image" aria-label="Enter the 3D gallery room">
+    <span class="room-card-frame"><span class="room-card-view"><img src="/gallery-room/room-preview.webp" width="1440" height="960" alt="A view inside TJ Murphy’s square gallery, with framed paintings on warm white walls" loading="lazy" decoding="async" /></span></span>
+  </a>
+  <div class="product-info"><h3><a href="/gallery/room/" class="product-title-link">The Gallery Room</a></h3><p>24 paintings · A gallery to walk through</p><p class="card-buy-row"><span>Step inside and explore →</span></p></div>
+</article>
+<style>
+  .room-card-image{display:grid;place-items:center;padding:18px;background:#e8dfd3}
+  .room-card-frame{display:block;width:100%;border:7px solid #282521;padding:10px;background:#f8f3e9;box-shadow:3px 6px 10px #35291d38}
+  /* Show the room itself from the real browser capture, without its navigation overlays. */
+  .room-card-view{display:block;position:relative;aspect-ratio:1440/710;overflow:hidden}
+  .room-card-view img{position:absolute;left:0;top:-12.676%;width:100%;height:auto;max-width:none}
+  .gallery-room-card:hover .room-card-view img{transform:none}
+</style>
