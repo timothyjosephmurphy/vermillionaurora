@@ -31,6 +31,8 @@ try {
  await page.goto(origin+'/exhibitions/paul-murphy/');await page.waitForFunction(()=>[...document.querySelectorAll('.ev-caption-title')].some(el=>el.textContent==='Tipi · Sold'));
  assert(await page.evaluate(()=>{const buys=[...document.querySelectorAll('.ev-buy')];return buys.length>0&&buys.every(b=>{const row=b.parentElement,text=row.firstElementChild,br=b.getBoundingClientRect(),tr=text.getBoundingClientRect();return row.matches('.ev-caption-row')&&row.parentElement.matches('.ev-caption')&&br.top<tr.bottom&&br.bottom>tr.top&&br.left>=tr.right-1;});}),'Viewer Buy sits inline at the end of the caption’s last line');
  await page.goto(origin+'/');await page.waitForTimeout(500);
+ // The first tile is the gallery experience; compare two actual painting purchase cues.
+ await page.locator('[data-available-paintings] [data-product-id]').first().evaluate(el=>el.scrollIntoView({block:'nearest',inline:'start',behavior:'instant'}));
  assert(await page.evaluate(()=>{const track=document.querySelector('[data-available-paintings]'),tr=track.getBoundingClientRect();const pills=[...track.querySelectorAll('.card-buy:not([hidden])')].map(b=>({b:b.getBoundingClientRect(),c:b.closest('.card-tile').getBoundingClientRect()})).filter(x=>x.c.left>=tr.left-1&&x.c.right<=tr.right+1);
   return pills.length>1&&pills.every(x=>Math.abs(x.b.bottom-pills[0].b.bottom)<=1&&Math.abs((x.c.right-x.b.right)-(pills[0].c.right-pills[0].b.right))<=1&&Math.abs(x.c.height-pills[0].c.height)<=1);}),'Homepage carousel cards are equal height with Buy pills level in the lower-right corner');
  // Every visible Buy cue (card pills, viewer pills, the hero carousel's slides) must be the vermillion pill, never plain text glued to a price.
@@ -49,7 +51,7 @@ try {
    let problems=await page.evaluate(buyCueProblems);
    if(route==='/'){const slides=await page.evaluate(()=>Number(document.querySelector('.featured-position')?.textContent.split('/')[1]||0));assert(slides>1,'hero carousel has slides');
     for(let i=0;i<slides;i++){await page.evaluate(()=>document.querySelector('.featured-carousel [data-next]').click());await page.waitForTimeout(500);problems=problems.concat(await page.evaluate(buyCueProblems));
-     assert.equal(await page.evaluate(()=>{const s=document.querySelector('.featured-stage .featured-slide:last-child'),row=s.querySelector('.featured-caption .card-buy-row'),buy=row?.querySelector('.card-buy');if(!buy)return 'ok';const text=row.firstElementChild.getBoundingClientRect(),b=buy.getBoundingClientRect();return row.lastElementChild===buy&&b.left-text.right>=8&&b.top<text.bottom&&b.bottom>text.top?'ok':'Buy not inline at the end of the last line';}),'ok',`hero slide ${i+1} at ${width}px`);}}
+     assert.equal(await page.evaluate(()=>{const s=document.querySelector('.featured-stage .featured-slide:last-child'),row=s.querySelector('.featured-caption .card-buy-row'),buy=row?.querySelector('.card-buy');if(!buy||buy.hidden)return 'ok';const text=row.firstElementChild.getBoundingClientRect(),b=buy.getBoundingClientRect();return row.lastElementChild===buy&&b.left-text.right>=8&&b.top<text.bottom&&b.bottom>text.top?'ok':'Buy not inline at the end of the last line';}),'ok',`hero slide ${i+1} at ${width}px`);}}
    assert.deepEqual([...new Set(problems)],[],`${route} at ${width}px`);
   }
  }
@@ -81,11 +83,12 @@ try {
  allSold=true;await page.reload();await page.waitForFunction(()=>[...document.querySelectorAll('.painting-list-row')].every(n=>n.dataset.availability==='Sold'));
  await page.locator('#available-only').check();assert.equal(await page.locator('.painting-list-row:visible').count(),0);assert(await page.locator('.gallery-empty').isVisible());assert(await page.locator('.exhibition-viewer').isHidden());
  await page.locator('#available-only').uncheck();assert(await page.locator('.exhibition-viewer').isVisible());
- await page.goto(origin+'/');await page.waitForFunction(()=>document.querySelector('.available-paintings-carousel .ex-track').children.length===0);
+ await page.goto(origin+'/');await page.waitForFunction(()=>document.querySelectorAll('.available-paintings-carousel [data-product-id]').length===0);
  const availableCount=collections.home.filter(e=>e.variant==='carousel'&&['available','inquiry'].includes(byId[e.product].listing?.status)).length;
  const collectorPreview=collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).length;
  // Live availability moves sold available cards into the collectors track; Collector's Items has no item limit.
  assert.equal(await page.locator('.collector-items-carousel .product-card').count(),collectorPreview+availableCount);
+ assert.equal(await page.locator('.available-paintings-carousel [data-gallery-feature="print-wall"]').count(),1,'The print wall remains available when originals sell out');
  assert.equal(await page.locator('.collector-archive-link').count(),0);
  assert(await page.locator('.painting-discovery-actions a.button[href="/gallery/"]').count());
  allSold=false;
