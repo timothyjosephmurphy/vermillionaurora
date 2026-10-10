@@ -21,6 +21,12 @@ const data=JSON.stringify({artworks:wallArtworks,world:wallSize,printVersion:wal
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" /><link rel="stylesheet" href="/site-header.css" /><link rel="stylesheet" href="/payments/cart.css" />
   <script is:inline src="/payments/cart.js" defer></script>
+  <script is:inline>
+    // A second navigation can cancel a native cross-document transition.
+    for(const name of ['pageswap','pagereveal'])addEventListener(name,event=>{
+      event.viewTransition?.ready.catch(error=>{if(error.name!=='AbortError')throw error;});
+    });
+  </script>
   <style is:global>
     @view-transition{navigation:auto}
     ::view-transition-group(wall-painting){animation-duration:.48s;animation-timing-function:cubic-bezier(.22,1,.36,1)}

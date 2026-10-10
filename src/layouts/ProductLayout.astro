@@ -48,6 +48,12 @@ const structuredData = product.type === 'painting'
   <link rel="stylesheet" href="/styles.css" /><link rel="stylesheet" href="/site-header.css" />
   <link rel="stylesheet" href="/gallery/painting-details.css" />
   {product.type==='painting' && <link rel="stylesheet" href="/payments/cart.css" />}
+  {product.type==='painting' && <script is:inline>
+    // Rapid onward navigation may cancel a pending native image transition.
+    for(const name of ['pageswap','pagereveal'])addEventListener(name,event=>{
+      event.viewTransition?.ready.catch(error=>{if(error.name!=='AbortError')throw error;});
+    });
+  </script>}
   {product.type==='painting' && <style is:global>
     @view-transition{navigation:auto}
     .painting-image-trigger>img{view-transition-name:wall-painting}
