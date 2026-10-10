@@ -1,0 +1,65 @@
+---
+import {wallArtworks,WALL_UNIT} from '../../data/gallery-wall.mjs';
+import {ROOM,roomLayout} from '../../scripts/gallery-room-layout.mjs';
+const artworks=roomLayout(wallArtworks,WALL_UNIT);
+const data=JSON.stringify({artworks,room:ROOM}).replace(/</g,'\\u003c');
+---
+<!doctype html><html lang="en"><head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>The Gallery Room | TJ Murphy</title>
+  <meta name="description" content="Walk through a room of TJ Murphy’s framed watercolor prints. Discover 24 paintings in a first-person gallery." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.ico" />
+</head><body>
+<main class="gallery-room" data-gallery-room>
+  <canvas data-room-canvas tabindex="0" aria-label="Three-dimensional gallery. Use W A S D to walk, arrow keys to move or turn, and drag to look. Press Escape to pause." aria-describedby="room-instructions"></canvas>
+  <header class="room-header">
+    <a href="/gallery/wall/" class="room-back" aria-label="Back to the print wall">← <span>Print wall</span></a>
+    <div class="room-brand"><span>TJ MURPHY</span><strong>The gallery room</strong></div>
+    <button type="button" data-room-pause disabled>Controls</button>
+  </header>
+  <section class="room-welcome" data-room-welcome aria-labelledby="room-heading">
+    <p class="eyebrow">An exhibition in four walls</p>
+    <h1 id="room-heading">Step inside.</h1>
+    <p>Twenty-four paintings. A room to explore.<br />Move closer, and find the story behind each one.</p>
+    <button class="enter-button" type="button" data-room-enter disabled>Preparing the gallery…</button>
+    <p class="room-instructions" id="room-instructions"><span class="desktop-instructions"><kbd>W A S D</kbd> walk · <kbd>← →</kbd> turn<br />Mouse or drag to look · <kbd>Esc</kbd> pause</span><span class="touch-instructions">Drag to look. Hold the arrows to walk.</span><br />Click a painting, press <kbd>E</kbd>, or walk right up to it to open its page.</p>
+    <label class="room-find">Go to a painting<select data-room-picker disabled><option value="">Choose a painting</option>{artworks.map(art=><option value={art.id}>{art.title}</option>)}</select></label>
+    <p class="room-error" data-room-error hidden>The 3D view couldn’t start in this browser. <a href="/gallery/wall/">Explore the print wall</a>, or browse the paintings below.</p>
+  </section>
+  <div class="room-crosshair" data-room-crosshair aria-hidden="true"></div>
+  <aside class="room-art-card" data-room-art-card hidden aria-live="polite">
+    <span>TJ Murphy · Framed fine-art print</span><h2 data-room-art-title></h2>
+    <p data-room-art-size></p><a data-room-product href="/gallery/">View painting & story <span aria-hidden="true">→</span></a>
+  </aside>
+  <div class="room-touch-controls" aria-label="Walking controls">
+    <button type="button" data-room-move="forward" aria-label="Walk forward">↑</button>
+    <button type="button" data-room-move="left" aria-label="Step left">←</button>
+    <button type="button" data-room-move="back" aria-label="Walk backward">↓</button>
+    <button type="button" data-room-move="right" aria-label="Step right">→</button>
+  </div>
+  <div class="room-map" aria-label="Your position in the square gallery">
+    <div class="room-map-inner">{artworks.map(art=><i class={`room-map-art wall-${art.wall}`} style={`left:${(art.x/ROOM.size+.5)*100}%;top:${(.5-art.z/ROOM.size)*100}%`}></i>)}<i class="room-map-you" data-room-map-you></i></div>
+    <span>24 paintings · 4 walls</span>
+  </div>
+  <p class="room-status" data-room-status role="status">Preparing the gallery…</p>
+  <details class="room-index" data-room-index><summary>Browse the paintings</summary><ul>{artworks.map(art=><li><a href={`https://tjm.art${art.href}`}>{art.title}</a></li>)}</ul></details>
+  <script type="application/json" data-room-data set:html={data}></script>
+</main>
+<script>import '../../scripts/gallery-room.js';</script>
+<noscript><style>.room-welcome,.room-header,.room-map,.room-status,canvas{display:none!important}.room-index{display:block!important;position:relative!important;margin:30px!important}</style><p style="padding:24px">This gallery uses JavaScript. <a href="/gallery/wall/">Visit the print wall</a> or browse below.</p></noscript>
+</body></html>
+<style is:global>
+  *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#e8e0d2;color:#30281f;font-family:Arial,Helvetica,sans-serif}button,a,select{-webkit-tap-highlight-color:transparent}button,select{font:inherit}button,a{touch-action:manipulation}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,select:focus-visible{outline:2px solid #bc4e31;outline-offset:4px}button:disabled{cursor:wait;opacity:.6}[hidden]{display:none!important}
+  .gallery-room{position:relative;width:100%;height:100dvh;isolation:isolate}.gallery-room canvas{display:block;width:100%;height:100%;outline:none;touch-action:none}
+  .room-header{position:absolute;top:max(18px,env(safe-area-inset-top));left:24px;right:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:5;pointer-events:none}.room-header>*{pointer-events:auto}.room-back,.room-header button{border:1px solid #ffffffb0;background:#fffaf0d9;backdrop-filter:blur(14px);border-radius:30px;padding:11px 16px;text-decoration:none;font-size:12px;color:#544535;box-shadow:0 3px 14px #3020110c}.room-brand{text-align:center;text-shadow:0 1px 10px #fff;background:#f5eee0b8;padding:8px 20px;border-radius:4px;backdrop-filter:blur(10px)}.room-brand span{display:block;font-size:9px;letter-spacing:.24em}.room-brand strong{display:block;font:400 21px/1.25 Georgia,serif;margin-top:4px}
+  .room-welcome{position:absolute;z-index:4;left:clamp(24px,6vw,88px);bottom:clamp(32px,8vh,90px);width:390px;max-width:calc(100% - 48px);padding:28px 30px;border:1px solid #fff8;border-radius:5px;background:#fffaf1e6;backdrop-filter:blur(20px);box-shadow:0 15px 65px #40301c1a}.eyebrow{margin:0 0 10px;font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:#98794f}.room-welcome h1{margin:0 0 13px;font:400 clamp(40px,5vw,58px)/1.05 Georgia,serif;letter-spacing:-.045em}.room-welcome>p:not(.eyebrow){font-size:13px;line-height:1.7;color:#796950}.enter-button{margin:12px 0 8px;padding:13px 24px;border:1px solid #b44a30;border-radius:4px;background:#bc5035;color:white;font-size:12px;letter-spacing:.03em;min-height:44px}.enter-button:hover{background:#a6422a}.room-welcome .room-instructions{font-size:10px!important;line-height:1.9!important}kbd{font:inherit;font-weight:600;white-space:nowrap}.touch-instructions{display:none}.room-find{display:block;font-size:10px;color:#806a50;margin-top:18px}.room-find select{display:block;margin-top:6px;width:100%;padding:10px 12px;border:1px solid #cabca7;background:#fffcf5;color:#594834;border-radius:4px;font-size:11px;min-height:40px}.room-error{color:#91432b!important}
+  .room-crosshair{position:absolute;left:50%;top:50%;width:5px;height:5px;border:1px solid #fff;border-radius:50%;background:#5c504799;box-shadow:0 0 2px #000;transform:translate(-50%,-50%);pointer-events:none;display:none}.room-crosshair.is-targeting{width:9px;height:9px;background:#bf5738;box-shadow:0 0 0 3px #fff5}
+  .room-art-card{position:absolute;left:50%;bottom:max(26px,env(safe-area-inset-bottom));transform:translateX(-50%);width:300px;max-width:calc(100% - 32px);background:#fffaf1d9;backdrop-filter:blur(16px);border:1px solid #fffa;border-radius:6px;box-shadow:0 7px 28px #32271518;padding:15px 18px;text-align:center;pointer-events:none}.room-art-card>span{font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#927650}.room-art-card h2{font:400 21px/1.15 Georgia,serif;margin:6px 0}.room-art-card p{font-size:9px;color:#8a7559;margin:6px 0 10px}.room-art-card a{font-size:11px;pointer-events:auto;text-decoration:none;color:#a9462e;border-bottom:1px solid #c08c78;padding-bottom:3px}.room-art-card a span{margin-left:5px}
+  .room-map{position:absolute;bottom:28px;right:28px;width:116px;background:#fffaf0c4;backdrop-filter:blur(12px);padding:11px;border:1px solid #fffa;border-radius:4px;pointer-events:none}.room-map-inner{position:relative;aspect-ratio:1;border:1px solid #a89476;background:#f3eadb}.room-map-art{position:absolute;width:7px;height:2px;background:#9e7f59;transform:translate(-50%,-50%)}.room-map-art.wall-1,.room-map-art.wall-3{width:2px;height:7px}.room-map-you{position:absolute;left:50%;top:50%;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-bottom:9px solid #bd5036;transform:translate(-50%,-50%)}.room-map>span{display:block;text-align:center;font-size:7px;color:#8b7658;margin-top:8px;white-space:nowrap}
+  .room-status{position:absolute;bottom:15px;left:24px;margin:0;font-size:10px;color:#746148;background:#fff8;padding:6px 9px;border-radius:4px;pointer-events:none}.room-index{position:absolute;left:24px;top:90px;background:#fff8;padding:12px;font-size:12px;display:none;z-index:6}.room-index ul{padding-left:20px;line-height:1.8;max-height:70vh;overflow:auto}.gallery-room[data-failed] .room-index{display:block}.gallery-room[data-playing="true"] .room-welcome{display:none}.gallery-room[data-playing="true"] .room-crosshair{display:block}
+  .room-touch-controls{position:absolute;bottom:max(22px,env(safe-area-inset-bottom));left:20px;display:none;grid-template-columns:repeat(3,44px);grid-template-rows:repeat(2,44px);gap:4px}.room-touch-controls button{border:1px solid #fffa;background:#fffcf0d9;backdrop-filter:blur(14px);border-radius:9px;color:#614a34;font-size:21px;touch-action:none;user-select:none}.room-touch-controls button:active,.room-touch-controls button.is-held{background:#ddc8ac}.room-touch-controls button:first-child{grid-column:2}.room-touch-controls button:nth-child(2){grid-column:1;grid-row:2}.room-touch-controls button:nth-child(3){grid-column:2;grid-row:2}.room-touch-controls button:nth-child(4){grid-column:3;grid-row:2}
+  @media(pointer:coarse){.desktop-instructions{display:none}.touch-instructions{display:inline}.gallery-room[data-playing="true"] .room-touch-controls{display:grid}.room-map{display:none}.room-status{display:none}.room-art-card{bottom:138px;width:270px}}
+  @media(max-width:600px){.room-header{top:max(12px,env(safe-area-inset-top));left:12px;right:12px;gap:8px}.room-back,.room-header button{font-size:10px;padding:10px 12px}.room-brand{padding:6px 8px}.room-brand span{font-size:7px}.room-brand strong{font-size:16px}.room-welcome{left:20px;bottom:26px;width:350px;max-width:calc(100% - 40px);padding:22px}.room-welcome h1{font-size:43px}.room-welcome>p:not(.eyebrow){font-size:12px}.room-find{margin-top:12px}.room-map{display:none}.room-status{display:none}}
+  @media(max-height:560px){.room-welcome{bottom:16px;padding:18px 22px;width:360px}.room-welcome h1{font-size:35px}.room-welcome>p:not(.room-instructions){display:none}.room-find{margin-top:8px}.room-instructions{margin:5px 0}.room-welcome .eyebrow{display:none}.room-welcome .enter-button{margin:0 0 4px}}
+</style>

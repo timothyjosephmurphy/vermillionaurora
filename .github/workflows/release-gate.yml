@@ -58,6 +58,16 @@ jobs:
         run: |
           npx playwright install --only-shell chromium
           npx playwright install --with-deps webkit
+      - name: Check the Babylon gallery room
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: npm run test:room
+      - name: Save gallery room browser previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gallery-room-browser-previews
+          path: /tmp/gallery-room-*.png
+          if-no-files-found: ignore
       - name: Run browser tests
         if: github.event_name != 'pull_request' || github.base_ref == 'main'
         run: npm run test:browser
