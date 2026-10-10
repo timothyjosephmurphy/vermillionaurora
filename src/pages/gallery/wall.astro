@@ -1,0 +1,137 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import {catalogVersion} from '../../../catalog/catalog.mjs';
+import {wallArtworks,wallSize,wallPrintVersion} from '../../data/gallery-wall.mjs';
+const data=JSON.stringify({artworks:wallArtworks,world:wallSize,printVersion:wallPrintVersion}).replace(/</g,'\\u003c');
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Print Wall | TJ Murphy</title>
+  <meta name="description" content="Explore TJ Murphy's framed watercolor prints on an interactive gallery wall. Zoom into the original high-resolution artwork, discover each painting, and shop prints." />
+  <meta name="catalog-version" content={catalogVersion} />
+  <link rel="canonical" href="https://tjm.art/gallery/wall/" />
+  <meta property="og:title" content="The Print Wall | TJ Murphy" />
+  <meta property="og:description" content="A wall of framed watercolor prints. Move closer and discover the details." />
+  <meta property="og:type" content="website" /><meta property="og:url" content="https://tjm.art/gallery/wall/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" /><link rel="stylesheet" href="/site-header.css" /><link rel="stylesheet" href="/payments/cart.css" />
+  <script is:inline src="/payments/cart.js" defer></script>
+</head>
+<body class="print-wall-page">
+  <div class="page-shell">
+    <SiteHeader />
+    <main id="main-content" class="print-wall-main" data-gallery-wall>
+      <header class="wall-intro">
+        <div><a class="wall-back" href="/gallery/">← All paintings</a><h1>The print wall</h1></div>
+        <p id="wall-help">Pinch or scroll to move closer. Drag to explore. Select a painting to visit its page.</p>
+      </header>
+      <section class="wall-viewport" data-wall-viewport tabindex="0" aria-label="Zoomable gallery of framed prints" aria-describedby="wall-help wall-keyboard">
+        <div class="wall-canvas">
+        <div class="wall-scene" data-wall-scene style={`width:${wallSize.width}px;height:${wallSize.height}px`}>
+          <div class="wall-floor" aria-hidden="true"></div>
+          {wallArtworks.map(art=><a
+            class="wall-art" data-wall-art={art.id} href={art.href} aria-label={`${art.title} — view painting`}
+            style={`left:${art.x}px;top:${art.y}px;width:${art.width}px;height:${art.height}px;border-width:${art.frameWidth}px`}
+          >
+            <img data-art-image={art.id} src={art.sources[0].src} alt={art.title} width={art.sourceWidth} height={art.sourceHeight} decoding="async" draggable="false"
+              style={`width:${art.imageWidth}px;height:${art.imageHeight}px`} />
+          </a>)}
+        </div>
+        </div>
+        <div class="wall-tools" data-wall-ui>
+          <label class="wall-picker"><span class="visually-hidden">Find a painting</span><select data-wall-picker aria-label="Find a painting"><option value="">Find a painting</option>{wallArtworks.map(art=><option value={art.id}>{art.title}</option>)}</select></label>
+          <div class="wall-zoom-tools" role="group" aria-label="Gallery zoom controls">
+            <button type="button" data-wall-minus aria-label="Zoom out">−</button><output data-wall-zoom aria-label="Zoom level">100%</output><button type="button" data-wall-plus aria-label="Zoom in">+</button>
+            <button type="button" data-wall-fit>Fit wall</button><button type="button" data-wall-fullscreen>Full screen</button>
+          </div>
+        </div>
+        <aside class="wall-glass" data-wall-panel data-wall-ui aria-labelledby="wall-product-title" aria-hidden="true" inert>
+          <button class="wall-glass-close" type="button" data-wall-close aria-label="Hide painting details">×</button>
+          <p class="wall-glass-eyebrow">TJ Murphy · Framed fine-art print</p>
+          <h2 id="wall-product-title" data-wall-title></h2>
+          <p class="wall-glass-medium" data-wall-medium></p>
+          <p class="wall-glass-price" data-wall-price></p>
+          <div class="wall-glass-specs"><span data-wall-print-size></span><span data-wall-frame-size></span><span>Black frame · white conservation mat</span></div>
+          <button type="button" class="button button-solid wall-glass-buy" data-wall-buy disabled>Buy this framed print</button>
+          <p class="wall-glass-note" data-wall-availability></p>
+          <div class="wall-glass-links"><a data-wall-product href="/gallery/">Painting & story</a><a data-wall-options href="/gallery/">Other print options</a></div>
+          <p class="wall-glass-message" data-wall-message role="status" aria-live="polite"></p>
+        </aside>
+      </section>
+      <div class="wall-caption">
+        <p>{wallArtworks.length} paintings · Largest available framed print of each · Shown at a consistent scale</p>
+        <p id="wall-keyboard">Keyboard: + / − to zoom, arrow keys to move, 0 to fit the wall.</p>
+      </div>
+      <p class="visually-hidden" data-wall-status role="status" aria-live="polite"></p>
+      <details class="wall-index"><summary>Browse the paintings</summary><ul>{wallArtworks.map(art=><li><a href={art.href}>{art.title}</a></li>)}</ul></details>
+      <script type="application/json" data-wall-data set:html={data}></script>
+      <noscript><style>.wall-viewport{display:none!important}.wall-index{display:block}</style><p>Open “Browse the paintings” for links to every artwork.</p></noscript>
+    </main>
+    <SiteFooter />
+  </div>
+  <script>import '../../scripts/gallery-wall.js';</script>
+</body>
+</html>
+<style is:global>
+  .print-wall-page{background:#f7f3ec;color:#29241f}
+  .print-wall-main{max-width:1880px;margin:0 auto;padding:34px 24px 48px}
+  .wall-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:0 0 22px}
+  .wall-back{font-size:12px;text-decoration:none;color:#7c6554}
+  .wall-intro h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(38px,4vw,64px);line-height:1.05;margin:7px 0 0;letter-spacing:-.025em}
+  .wall-intro>p{max-width:360px;font-size:13px;line-height:1.6;color:#736858;margin:0 0 2px}
+  .wall-viewport{position:relative;height:min(78svh,900px);min-height:460px;overflow:hidden;isolation:isolate;overscroll-behavior:contain;background:radial-gradient(ellipse at 50% 15%,#faf8f3,#e9e3d8);border:1px solid #d9d0c3;border-radius:4px;cursor:grab}
+  .wall-canvas{position:absolute;inset:0;touch-action:none}
+  .wall-viewport:focus-visible{outline:2px solid #c64e32;outline-offset:4px}
+  .wall-viewport.is-dragging{cursor:grabbing}
+  .wall-viewport:fullscreen{height:100dvh;width:100vw;border:0;border-radius:0;min-height:0}
+  .wall-scene{position:absolute;top:0;left:0;transform-origin:0 0;user-select:none;will-change:transform;background:radial-gradient(ellipse at 50% 10%,#fbf8f2,#ebe6dd)}
+  .wall-floor{position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(#baa181,#dfc4a0);border-top:14px solid #f8f6ef;box-shadow:0 -1px 0 #d3cabc}
+  .wall-art{box-sizing:border-box;position:absolute;display:flex;align-items:center;justify-content:center;background:#fffefb;border-style:solid;border-color:#262321;box-shadow:3px 5px 5px #29201940,inset 0 0 2px #7776;text-decoration:none;color:inherit;cursor:pointer;outline-offset:5px}
+  .wall-art:focus-visible{outline:2px solid #d35a3b}
+  .wall-art img{display:block;flex-shrink:0;max-width:none;max-height:none;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none}
+  .wall-tools{position:absolute;z-index:5;left:16px;right:16px;bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;pointer-events:none}
+  .wall-tools>*{pointer-events:auto}
+  .wall-zoom-tools,.wall-picker select{background:rgba(255,253,247,.91);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border:1px solid #fff9;box-shadow:0 3px 18px #3627161a;border-radius:9px;color:#302920;font:12px Inter,system-ui,sans-serif}
+  .wall-picker select{max-width:260px;width:100%;min-height:44px;padding:10px 28px 10px 12px;cursor:pointer}
+  .wall-zoom-tools{display:flex;align-items:center;padding:3px;gap:1px}
+  .wall-zoom-tools button{min-height:40px;min-width:40px;padding:6px 12px;border:0;border-radius:6px;background:none;color:inherit;font:inherit;cursor:pointer;white-space:nowrap}
+  .wall-zoom-tools button[data-wall-plus],.wall-zoom-tools button[data-wall-minus]{font-size:22px;padding:0 8px}
+  .wall-zoom-tools output{min-width:46px;text-align:center;font-variant-numeric:tabular-nums;font-size:11px;color:#807364}
+  .wall-zoom-tools button:hover{background:#e8ded0}
+  .wall-zoom-tools button:disabled{opacity:.3;cursor:default}
+  .wall-zoom-tools button:focus-visible,.wall-picker select:focus-visible{outline:2px solid #c64e32;outline-offset:2px}
+  .wall-glass{position:absolute;z-index:4;box-sizing:border-box;width:300px;max-width:calc(100% - 24px);max-height:calc(100% - 92px);overflow:auto;padding:24px 22px 18px;border:1px solid #ffffffbd;border-radius:16px;background:rgba(252,249,243,.82);backdrop-filter:blur(20px) saturate(115%);-webkit-backdrop-filter:blur(20px) saturate(115%);box-shadow:0 12px 42px #2f241323,inset 0 1px 0 #fff9;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,visibility .18s;cursor:default;touch-action:pan-y}
+  .wall-glass.is-visible{opacity:1;visibility:visible;pointer-events:auto}
+  .wall-glass-close{position:absolute;top:4px;right:5px;width:36px;height:36px;background:none;border:0;color:#80715f;font-size:25px;cursor:pointer}
+  .wall-glass-eyebrow{font-size:9px;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;color:#8c7158;margin:0 22px 9px 0}
+  .wall-glass h2{font:500 30px/1.04 'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em;margin:0 0 10px;color:#292119}
+  .wall-glass-medium{font-size:11px;color:#807361;line-height:1.5;margin:0 0 13px}
+  .wall-glass-price{font-size:20px;font-weight:500;margin:0 0 13px;letter-spacing:-.03em}
+  .wall-glass-specs{display:grid;gap:4px;font-size:11px;line-height:1.5;color:#736754;margin:0 0 17px}
+  .wall-glass-buy{box-sizing:border-box;width:100%;min-height:44px;background:#c65032;border:1px solid #c65032;color:#fffaf6;border-radius:7px;font:500 12px Inter,system-ui,sans-serif;padding:12px;cursor:pointer;justify-content:center}
+  .wall-glass-buy:disabled{opacity:.5;cursor:default}
+  .wall-glass-note{font-size:10px;line-height:1.5;color:#8b7b65;margin:8px 0 15px}
+  .wall-glass-links{display:flex;justify-content:space-between;gap:12px;font-size:10px}
+  .wall-glass-links a{color:#70503b;text-underline-offset:3px}
+  .wall-glass-message{font-size:11px;line-height:1.5;margin:12px 0 0;color:#704e32}
+  .wall-glass-message:empty{display:none}
+  .wall-caption{display:flex;justify-content:space-between;gap:24px;color:#857563;font-size:10px;line-height:1.6;margin:12px 0 28px}
+  .wall-caption p{margin:0}
+  .wall-index{border-top:1px solid #ded5c8;padding:16px 0;font-size:12px;color:#705b47}
+  .wall-index summary{cursor:pointer;min-height:32px}
+  .wall-index ul{columns:3;list-style:none;padding:10px 0 0;margin:0}
+  .wall-index li{break-inside:avoid;margin:0 0 12px;line-height:1.5}.wall-index a{color:inherit;text-underline-offset:3px}
+  @media(max-width:760px){
+    .print-wall-main{padding:22px 12px 30px}.wall-intro{display:block;margin:0 5px 16px}.wall-intro>p{font-size:11px;max-width:330px;margin-top:10px}
+    .wall-viewport{height:70svh;min-height:420px}.wall-tools{left:8px;right:8px;bottom:8px;gap:6px;flex-wrap:wrap;justify-content:center}
+    .wall-picker{flex-basis:100%;display:flex;justify-content:center}.wall-picker select{max-width:230px;font-size:11px;min-height:38px}
+    .wall-zoom-tools button{font-size:11px;min-height:38px;padding:5px 10px}.wall-glass{width:260px;padding:20px 17px 15px;max-height:calc(100% - 118px)}
+    .wall-glass h2{font-size:25px}.wall-glass-specs{font-size:10px}.wall-caption{display:block;font-size:9px;margin-left:5px}.wall-caption p+p{margin-top:5px}.wall-index ul{columns:2}
+  }
+  @media(prefers-reduced-motion:reduce){.wall-glass{transition:none}}
+</style>
