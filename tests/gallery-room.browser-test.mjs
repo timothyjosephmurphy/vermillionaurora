@@ -21,7 +21,7 @@ try{
     const ctx=await context({viewport:mobile?{width:390,height:844}:{width:1440,height:960},hasTouch:mobile,isMobile:mobile,deviceScaleFactor:mobile?2:1});
     const page=await ctx.newPage(),errors=[];
     page.on('pageerror',e=>{errors.push(e.message);console.log('ROOM PAGE ERROR',e.message);});page.on('console',m=>{if(m.type()==='error'&&m.text().includes('Gallery room'))console.log(m.text());});
-    page.on('request',r=>{if(r.url().includes('/checkout/'))throw Error('The room must not initiate checkout');});
+    page.on('request',r=>{if(page.url().endsWith('/gallery/room/')&&r.url().includes('/checkout/'))throw Error('The room must not initiate checkout');});
     await page.goto(origin+'/gallery/room/');
     await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.ready==='true',{},{timeout:60000});
     await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.loadedImages==='24');

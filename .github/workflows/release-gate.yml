@@ -41,18 +41,6 @@ jobs:
       # Main PRs and manual runs execute the full suite. A main-to-release
       # promotion reruns the build and production-config checks above against
       # the exact release PR commit, without repeating the full suite.
-      - name: Run application tests
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
-        run: npm test
-      - name: Run print unit tests
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
-        run: node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
-      - name: Install Cloudflare Worker test dependencies
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
-        run: npm --prefix cloudflare/test ci
-      - name: Run Cloudflare Worker tests
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
-        run: npm run test:worker
       - name: Install Chromium and WebKit for browser checks
         if: github.event_name != 'pull_request' || github.base_ref == 'main'
         run: |
@@ -68,6 +56,18 @@ jobs:
           name: gallery-room-browser-previews
           path: /tmp/gallery-room-*.png
           if-no-files-found: ignore
+      - name: Run application tests
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: npm test
+      - name: Run print unit tests
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
+      - name: Install Cloudflare Worker test dependencies
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: npm --prefix cloudflare/test ci
+      - name: Run Cloudflare Worker tests
+        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        run: npm run test:worker
       - name: Run browser tests
         if: github.event_name != 'pull_request' || github.base_ref == 'main'
         run: npm run test:browser
