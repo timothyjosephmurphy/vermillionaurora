@@ -27,6 +27,7 @@ try{
     assert.equal(await roomTile.getAttribute('data-gallery-feature'),'gallery-room','The room is the first Collector’s Items tile');
     await roomTile.scrollIntoViewIfNeeded();
     await page.waitForFunction(()=>document.querySelector('[data-gallery-feature="gallery-room"] img').naturalWidth===1440);
+    await roomTile.locator('img').evaluate(async img=>{await img.decode();await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
     await page.screenshot({path:`/tmp/gallery-room-home-${mobile?'mobile':'desktop'}.png`});
     await Promise.all([page.waitForURL(origin+'/gallery/room/'),roomTile.locator('.product-title-link').click()]);
     await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.ready==='true',{},{timeout:60000});
