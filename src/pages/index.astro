@@ -4,6 +4,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ProductCard from '../components/ProductCard.astro';
 import PrintWallCard from '../components/PrintWallCard.astro';
+import GalleryRoomCard from '../components/GalleryRoomCard.astro';
 import ExhibitionMap from '../components/ExhibitionMap.astro';
 import { byId, catalogVersion, urlFor, priceLabel, statusLabel } from '../../catalog/catalog.mjs';
 import collections from '../../catalog/collections.json';
@@ -95,10 +96,10 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
               <h2>Collector’s Items</h2>
               <p>Sold and unavailable works from the collection.</p>
             </div>
-            <p class="painting-empty-message" data-collector-empty hidden={collectorPreview.length > 0}>{collectorPreview.length === 0 && 'There are no sold or unavailable works in this selection right now.'}</p>
+            <p class="painting-empty-message" data-collector-empty hidden></p>
             <div class="ex-carousel painting-carousel collector-items-carousel" data-painting-group="collectors" role="region" aria-roledescription="carousel" aria-label="Collector’s Items">
-              <div class="ex-track" data-collector-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse collector’s items">{collectorPreview.map(product=><ProductCard product={product} variant="carousel" />)}</div>
-              <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic collector’s items scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous collector’s item">←</button><p class="ex-position" role="status">1 / {collectorPreview.length}</p><button type="button" data-direction="1" aria-label="Next collector’s item">→</button><a href="/gallery/" class="button button-solid carousel-view-all">Browse the full gallery</a></div>
+              <div class="ex-track" data-collector-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse collector’s items"><GalleryRoomCard />{collectorPreview.map(product=><ProductCard product={product} variant="carousel" />)}</div>
+              <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic collector’s items scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous collector’s item">←</button><p class="ex-position" role="status">1 / {collectorPreview.length+1}</p><button type="button" data-direction="1" aria-label="Next collector’s item">→</button><a href="/gallery/" class="button button-solid carousel-view-all">Browse the full gallery</a></div>
             </div>
             <p class="testimonial-cta"><a href="/testimonials/">Own one of my paintings? Share your story <span aria-hidden="true">→</span></a></p>
           </div>
