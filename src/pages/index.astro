@@ -3,6 +3,7 @@ import BookGalleryCarousel from '../components/BookGalleryCarousel.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ProductCard from '../components/ProductCard.astro';
+import PrintWallCard from '../components/PrintWallCard.astro';
 import ExhibitionMap from '../components/ExhibitionMap.astro';
 import { byId, catalogVersion, urlFor, priceLabel, statusLabel } from '../../catalog/catalog.mjs';
 import collections from '../../catalog/collections.json';
@@ -81,8 +82,8 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
             {/* The empty-state text is only in the HTML when it is true; availability.js fills it in if live stock empties the track. */}
             <p class="painting-empty-message" data-available-empty hidden={availablePaintings.length > 0}>{availablePaintings.length === 0 && 'No original paintings are available right now. Browse the collector’s items or ask about a commission.'}</p>
             <div class="ex-carousel painting-carousel available-paintings-carousel" data-painting-group="available" role="region" aria-roledescription="carousel" aria-label="Featured works">
-              <div class="ex-track" data-available-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse featured works">{availablePaintings.map((product,index)=><ProductCard product={product} variant="carousel" priority={index===0} />)}</div>
-              <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic available paintings scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous available painting">←</button><p class="ex-position" role="status">1 / {availablePaintings.length}</p><button type="button" data-direction="1" aria-label="Next available painting">→</button><a href="/gallery/available/" class="button button-solid carousel-view-all">View available paintings</a></div>
+              <div class="ex-track" data-available-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse featured works"><PrintWallCard />{availablePaintings.map((product,index)=><ProductCard product={product} variant="carousel" priority={index===0} />)}</div>
+              <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic available paintings scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous available painting">←</button><p class="ex-position" role="status">1 / {availablePaintings.length+1}</p><button type="button" data-direction="1" aria-label="Next available painting">→</button><a href="/gallery/available/" class="button button-solid carousel-view-all">View available paintings</a></div>
             </div>
             <noscript><p><a href="/gallery/available/">Shop available paintings</a></p></noscript>
           </div>
