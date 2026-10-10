@@ -46,7 +46,7 @@ for(const engine of [chromium,webkit]){
     const art=wallArtworks.find(a=>a.id.includes('cormorant'))||wallArtworks[0];
     await focus(art);assert.equal(await page.locator('[data-wall-product]').getAttribute('href'),art.href);
     await page.waitForFunction(()=>!document.querySelector('[data-wall-buy]').disabled);
-    assert.equal(await page.locator('[data-wall-price]').textContent,`$${Number(art.price).toFixed(2)}`);
+    assert.equal(await page.locator('[data-wall-price]').textContent(),`$${Number(art.price).toFixed(2)}`);
     await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-detail.png`,fullPage:true});
     // Zoom to the source level, with the camera centered on this painting.
     const viewport=page.locator('[data-wall-viewport]');await viewport.focus();
