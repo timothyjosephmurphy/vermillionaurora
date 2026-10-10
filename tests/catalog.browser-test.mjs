@@ -87,7 +87,8 @@ try {
  const availableCount=collections.home.filter(e=>e.variant==='carousel'&&['available','inquiry'].includes(byId[e.product].listing?.status)).length;
  const collectorPreview=collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).length;
  // Live availability moves sold available cards into the collectors track; Collector's Items has no item limit.
- assert.equal(await page.locator('.collector-items-carousel .product-card').count(),collectorPreview+availableCount);
+ assert.equal(await page.locator('.collector-items-carousel [data-product-id]').count(),collectorPreview+availableCount);
+ assert.equal(await page.locator('[data-collector-paintings] > :first-child').getAttribute('data-gallery-feature'),'gallery-room','The 3D room stays first after live inventory moves paintings');
  assert.equal(await page.locator('.available-paintings-carousel [data-gallery-feature="print-wall"]').count(),1,'The print wall remains available when originals sell out');
  assert.equal(await page.locator('.collector-archive-link').count(),0);
  assert(await page.locator('.painting-discovery-actions a.button[href="/gallery/"]').count());
