@@ -31,7 +31,7 @@ try {
  await page.goto(origin+'/exhibitions/paul-murphy/');await page.waitForFunction(()=>[...document.querySelectorAll('.ev-caption-title')].some(el=>el.textContent==='Tipi · Sold'));
  assert(await page.evaluate(()=>{const buys=[...document.querySelectorAll('.ev-buy')];return buys.length>0&&buys.every(b=>{const row=b.parentElement,text=row.firstElementChild,br=b.getBoundingClientRect(),tr=text.getBoundingClientRect();return row.matches('.ev-caption-row')&&row.parentElement.matches('.ev-caption')&&br.top<tr.bottom&&br.bottom>tr.top&&br.left>=tr.right-1;});}),'Viewer Buy sits inline at the end of the caption’s last line');
  await page.goto(origin+'/');await page.waitForTimeout(500);
- // The first tile is the gallery experience; compare two actual painting purchase cues.
+ // Compare the purchase cues on two painting cards.
  await page.locator('[data-available-paintings] [data-product-id]').first().evaluate(el=>el.scrollIntoView({block:'nearest',inline:'start',behavior:'instant'}));
  assert(await page.evaluate(()=>{const track=document.querySelector('[data-available-paintings]'),tr=track.getBoundingClientRect();const pills=[...track.querySelectorAll('.card-buy:not([hidden])')].map(b=>({b:b.getBoundingClientRect(),c:b.closest('.card-tile').getBoundingClientRect()})).filter(x=>x.c.left>=tr.left-1&&x.c.right<=tr.right+1);
   return pills.length>1&&pills.every(x=>Math.abs(x.b.bottom-pills[0].b.bottom)<=1&&Math.abs((x.c.right-x.b.right)-(pills[0].c.right-pills[0].b.right))<=1&&Math.abs(x.c.height-pills[0].c.height)<=1);}),'Homepage carousel cards are equal height with Buy pills level in the lower-right corner');
@@ -88,8 +88,8 @@ try {
  const collectorPreview=collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).length;
  // Live availability moves sold available cards into the collectors track; Collector's Items has no item limit.
  assert.equal(await page.locator('.collector-items-carousel [data-product-id]').count(),collectorPreview+availableCount);
- assert.equal(await page.locator('[data-collector-paintings] > :first-child').getAttribute('data-gallery-feature'),'gallery-room','The 3D room stays first after live inventory moves paintings');
- assert.equal(await page.locator('.available-paintings-carousel [data-gallery-feature="print-wall"]').count(),1,'The print wall remains available when originals sell out');
+ assert.deepEqual(await page.locator('#exhibitions [data-gallery-feature]').evaluateAll(nodes=>nodes.map(n=>n.dataset.galleryFeature)),['print-wall','gallery-room'],'Live inventory leaves both gallery experiences in Exhibitions');
+ assert.equal(await page.locator('.painting-carousel [data-gallery-feature]').count(),0,'Painting carousels contain no gallery experiences');
  assert.equal(await page.locator('.collector-archive-link').count(),0);
  assert(await page.locator('.painting-discovery-actions a.button[href="/gallery/"]').count());
  allSold=false;

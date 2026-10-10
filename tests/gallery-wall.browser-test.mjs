@@ -152,8 +152,9 @@ for(const engine of [chromium,webkit]){
     await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-inspection-mobile.png`,fullPage:true});
     await Promise.all([page.waitForURL(origin+art.href),page.locator(`[data-wall-art="${art.id}"]`).click()]);
     await page.goto(origin+'/');
-    const wallTile=page.locator('[data-gallery-feature="print-wall"]');
+    const wallTile=page.locator('#exhibitions [data-gallery-feature="print-wall"]');
     assert.equal(await wallTile.locator('.product-title-link').getAttribute('href'),'/gallery/wall/');
+    await wallTile.scrollIntoViewIfNeeded();
     await page.waitForFunction(()=>document.querySelector('[data-gallery-feature="print-wall"] img').naturalWidth===1600);
     await page.evaluate(()=>document.dispatchEvent(new CustomEvent('catalog:availability')));
     assert.equal(await wallTile.count(),1,'Live inventory keeps the wall tile in the carousel');
