@@ -50,6 +50,7 @@ try{
     await page.waitForTimeout(900);await page.screenshot({path:`/tmp/gallery-room-${label}-painting.png`});
     assert.equal(await page.locator('[data-gallery-room]').getAttribute('data-playing'),'true','A painting jump stays active after leaving pointer lock');
     assert(await page.locator('[data-room-art-card]').isVisible(),'The selected painting shows its product pane');
+    if(mobile){const pane=await page.locator('[data-room-art-card]').boundingBox(),pad=await page.locator('.room-touch-controls').boundingBox();assert(pane.x>=pad.x+pad.width+8,'The mobile product pane sits beside the walking controls');assert(pane.y+pane.height<=844,'The mobile product pane stays on screen');}
     if(mobile){await Promise.all([page.waitForURL(origin+art.href),page.locator('[data-room-product]').click()]);}
     else{await Promise.all([page.waitForURL(origin+art.href),page.keyboard.press('e')]);}
     await page.goBack();await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.ready==='true');
