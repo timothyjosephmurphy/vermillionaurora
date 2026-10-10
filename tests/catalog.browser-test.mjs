@@ -31,6 +31,8 @@ try {
  await page.goto(origin+'/exhibitions/paul-murphy/');await page.waitForFunction(()=>[...document.querySelectorAll('.ev-caption-title')].some(el=>el.textContent==='Tipi · Sold'));
  assert(await page.evaluate(()=>{const buys=[...document.querySelectorAll('.ev-buy')];return buys.length>0&&buys.every(b=>{const row=b.parentElement,text=row.firstElementChild,br=b.getBoundingClientRect(),tr=text.getBoundingClientRect();return row.matches('.ev-caption-row')&&row.parentElement.matches('.ev-caption')&&br.top<tr.bottom&&br.bottom>tr.top&&br.left>=tr.right-1;});}),'Viewer Buy sits inline at the end of the caption’s last line');
  await page.goto(origin+'/');await page.waitForTimeout(500);
+ // The first tile is the gallery experience; compare two actual painting purchase cues.
+ await page.locator('[data-available-paintings] [data-product-id]').first().evaluate(el=>el.scrollIntoView({block:'nearest',inline:'start',behavior:'instant'}));
  assert(await page.evaluate(()=>{const track=document.querySelector('[data-available-paintings]'),tr=track.getBoundingClientRect();const pills=[...track.querySelectorAll('.card-buy:not([hidden])')].map(b=>({b:b.getBoundingClientRect(),c:b.closest('.card-tile').getBoundingClientRect()})).filter(x=>x.c.left>=tr.left-1&&x.c.right<=tr.right+1);
   return pills.length>1&&pills.every(x=>Math.abs(x.b.bottom-pills[0].b.bottom)<=1&&Math.abs((x.c.right-x.b.right)-(pills[0].c.right-pills[0].b.right))<=1&&Math.abs(x.c.height-pills[0].c.height)<=1);}),'Homepage carousel cards are equal height with Buy pills level in the lower-right corner');
  // Every visible Buy cue (card pills, viewer pills, the hero carousel's slides) must be the vermillion pill, never plain text glued to a price.
