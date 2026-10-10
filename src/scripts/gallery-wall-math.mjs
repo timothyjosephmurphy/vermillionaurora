@@ -7,6 +7,13 @@ export function zoomAt(transform,point,scale){
   const ratio=scale/transform.scale;
   return {scale,x:point.x-(point.x-transform.x)*ratio,y:point.y-(point.y-transform.y)*ratio};
 }
+// Leave only a small breathing margin and a slim strip for the gallery controls.
+// Product information never participates in this calculation or shrinks the art.
+export function paintingView(art,view){
+  const pad=view.width<=760?16:24,bottom=64;
+  const scale=Math.min((view.width-pad*2)/art.width,(view.height-pad*2-bottom)/art.height);
+  return {scale,x:view.width/2-(art.x+art.width/2)*scale,y:(view.height-bottom)/2-(art.y+art.height/2)*scale};
+}
 export function constrainView(transform,view,world){
   const bound=(offset,size,viewport)=>{
     const margin=Math.min(viewport*.4,160);

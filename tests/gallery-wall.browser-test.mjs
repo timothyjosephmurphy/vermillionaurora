@@ -34,7 +34,15 @@ for(const engine of [chromium,webkit]){
     });
     const open=async()=>{await page.goto(origin+'/gallery/wall/');await page.locator('[data-gallery-wall][data-ready="true"]').waitFor();};
     const panel=page.locator('[data-wall-panel]'),picker=page.locator('[data-wall-picker]');
-    const focus=async art=>{await picker.selectOption(art.id);await page.waitForFunction(title=>document.querySelector('[data-wall-title]').textContent===title&&document.querySelector('[data-gallery-wall]').dataset.focusedArt,art.title);};
+    const settled=()=>page.waitForFunction(()=>document.querySelector('[data-gallery-wall]').dataset.animating!=='true');
+    const fitWall=async()=>{await page.locator('[data-wall-fit]').click();await settled();};
+    const focus=async art=>{await fitWall();await picker.selectOption(art.id);await settled();await page.waitForFunction(id=>document.querySelector('[data-gallery-wall]').dataset.focusedArt===id,art.id);};
+    const assertWholeFrame=async art=>{
+      const r=await page.locator(`[data-wall-art="${art.id}"]`).boundingBox(),v=page.viewportSize();
+      assert(r.x>=15&&r.y>=15&&r.x+r.width<=v.width-15&&r.y+r.height<=v.height-64+1,'Maximum zoom must show the entire frame');
+      const rect=await page.locator('[data-wall-viewport]').boundingBox();assert.equal(rect.x,0);assert.equal(rect.y,0);assert.equal(rect.width,v.width);assert.equal(rect.height,v.height);
+      assert.equal(await page.locator('.site-header').evaluate(el=>getComputedStyle(el).visibility),'hidden');
+    };
     const assertClearPanel=async()=>{
       const check=await panel.evaluate(el=>{
         const p=el.getBoundingClientRect();
@@ -54,8 +62,8 @@ for(const engine of [chromium,webkit]){
     for(const r of rects){assert.equal(r.fit,'contain');assert.notEqual(r.overflow,'hidden');}
     for(let i=0;i<rects.length;i++)for(let j=i+1;j<rects.length;j++){const a=rects[i],b=rects[j];assert(a.x+a.width<=b.x+.1||b.x+b.width<=a.x+.1||a.y+a.height<=b.y+.1||b.y+b.height<=a.y+.1);}
     await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-overview.png`,fullPage:true});
-    const art=wallArtworks.find(a=>a.id.includes('cormorant'))||wallArtworks[0];
-    await focus(art);assert.equal(await page.locator('[data-wall-product]').getAttribute('href'),art.href);
+    const art=wallArtworks.find(a=>a.id==='meditation-at-denny-blaine');
+    await focus(art);await assertWholeFrame(art);assert.equal(await page.locator('[data-wall-product]').getAttribute('href'),art.href);
     await page.waitForFunction(()=>!document.querySelector('[data-wall-buy]').disabled);
     assert.equal(await page.locator('[data-wall-price]').textContent(),`$${Number(art.price).toFixed(2)}`);
     await page.waitForFunction(()=>document.querySelector('[data-wall-panel]').getAttribute('aria-hidden')==='false');
@@ -72,13 +80,15 @@ for(const engine of [chromium,webkit]){
     await page.waitForFunction(id=>document.querySelector('[data-gallery-wall]').dataset.focusedArt===id,other.id);
     await assertClearPanel();
     await focus(art);
-    // Zoom to the source level, with the camera centered on this painting.
+    // Repeated zoom-in input stops with the whole frame visible, at source quality.
     const viewport=page.locator('[data-wall-viewport]');await viewport.focus();
     for(let i=0;i<9;i++)await page.keyboard.press('+');
+    await settled();await assertWholeFrame(art);
     await page.waitForFunction(id=>Number(document.querySelector(`[data-art-image="${id}"]`).dataset.loadedWidth)>1920,art.id);
-    assert(masters.includes(art.fullSrc),'Deep zoom requests the exact original image file');
-    await assertClearPanel();assert.equal(await panel.getAttribute('aria-hidden'),'true','Hide information when the painting fills the view');
-    await page.locator('[data-wall-fit]').click();await page.waitForFunction(()=>document.querySelector('[data-wall-panel]').getAttribute('aria-hidden')==='true');
+    assert(masters.includes(art.fullSrc),'Maximum painting view requests the untouched original image');
+    await assertClearPanel();await fitWall();
+    assert.equal(await panel.getAttribute('aria-hidden'),'true');
+    assert.equal(await page.locator('.site-header').evaluate(el=>getComputedStyle(el).visibility),'visible');
     // A drag over a painting pans without following its product link.
     await focus(art);const box=await page.locator(`[data-wall-art="${art.id}"]`).boundingBox();
     const canvas=await viewport.boundingBox(),dragX=Math.max(canvas.x+20,Math.min(box.x+30,canvas.x+canvas.width-340)),dragY=Math.max(canvas.y+20,Math.min(box.y+30,canvas.y+canvas.height-120));
@@ -86,18 +96,18 @@ for(const engine of [chromium,webkit]){
     await page.mouse.move(dragX,dragY);await page.mouse.down();await page.mouse.move(dragX+45,dragY+30,{steps:4});await page.mouse.up();assert.equal(page.url(),origin+'/gallery/wall/');
     await page.waitForFunction(before=>document.querySelector('[data-wall-scene]').getAttribute('style')!==before,beforePan);
     assert.equal(await viewport.evaluate(el=>el.scrollLeft+el.scrollTop),0,'Pointer focus cannot silently scroll the viewport');
-    await page.setViewportSize({width:390,height:844});await page.locator('[data-wall-fit]').click();await focus(art);
+    await page.setViewportSize({width:390,height:844});await focus(art);await assertWholeFrame(art);
     await assertClearPanel();
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-mobile.png`,fullPage:true});
     // Use real touch input for pinch on Chromium. WebKit exercises the same pointer handler through desktop interaction above.
     if(engine===chromium){
-      await page.locator('[data-wall-fit]').click();await viewport.scrollIntoViewIfNeeded();const r=await viewport.boundingBox(),cdp=await context.newCDPSession(page);
+      await fitWall();await viewport.scrollIntoViewIfNeeded();const r=await viewport.boundingBox(),cdp=await context.newCDPSession(page);
       const x=r.x+r.width/2,y=r.y+r.height*.35;
       await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{id:1,x:x-35,y},{id:2,x:x+35,y}]});
       await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{id:1,x:x-100,y},{id:2,x:x+100,y}]});
       await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
-      await page.waitForFunction(()=>parseInt(document.querySelector('[data-wall-zoom]').textContent)>180);
+      await page.waitForFunction(()=>parseInt(document.querySelector('[data-wall-zoom]').textContent)>180);await settled();
       assert.equal(page.url(),origin+'/gallery/wall/');
     }
     await page.setViewportSize({width:1280,height:1000});await focus(art);
@@ -106,7 +116,23 @@ for(const engine of [chromium,webkit]){
     assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('va-cart-v1'))),[{id:art.printId,quantity:1}]);
     await page.evaluate(()=>localStorage.clear());stale=true;await open();await focus(art);
     assert(await page.locator('[data-wall-buy]').isDisabled(),'Stale print catalog cannot be purchased');
-    await Promise.all([page.waitForURL(origin+art.href),page.locator('[data-wall-product]').click()]);
-    assert.deepEqual(errors,[]);console.log(`PASS: ${engine.name()} print wall: layout, source detail, zoom, touch, panel, product links, cart selection, and stale-catalog guard.`);
+    await fitWall();
+    // Ordinary painting clicks animate before navigating. Modified clicks remain real links.
+    await page.evaluate(id=>{
+      const art=document.querySelector(`[data-wall-art="${id}"]`);let samples=[];
+      const sample=()=>{samples.push(art.getBoundingClientRect().width);requestAnimationFrame(sample);};requestAnimationFrame(sample);
+      addEventListener('pagehide',()=>{const r=art.getBoundingClientRect();sessionStorage.setItem('wall-transition-check',JSON.stringify({samples,rect:{x:r.x,y:r.y,width:r.width,height:r.height},name:art.querySelector('img').style.viewTransitionName}));},{once:true});
+    },art.id);
+    const started=Date.now();
+    await Promise.all([page.waitForURL(origin+art.href),page.locator(`[data-wall-art="${art.id}"]`).click()]);
+    assert(Date.now()-started>=500,'Navigation waits for the smooth zoom');
+    const handoff=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('wall-transition-check')));
+    assert(new Set(handoff.samples.map(n=>Math.round(n))).size>5,'The camera renders intermediate zoom positions');
+    assert(handoff.rect.x>=23&&handoff.rect.y>=23&&handoff.rect.x+handoff.rect.width<=1257&&handoff.rect.y+handoff.rect.height<=913);
+    assert.equal(handoff.name,'wall-painting');
+    assert.equal(await page.locator('.painting-image-trigger>img').evaluate(el=>getComputedStyle(el).viewTransitionName),'wall-painting');
+    await page.emulateMedia({reducedMotion:'reduce'});await open();
+    await Promise.all([page.waitForURL(origin+art.href),page.locator(`[data-wall-art="${art.id}"]`).click()]);
+    assert.deepEqual(errors,[]);console.log(`PASS: ${engine.name()} print wall: layout, source detail, full-screen fit, smooth product transition, touch, panel, cart selection, and stale-catalog guard.`);
   }finally{await browser.close();}
 }
