@@ -92,7 +92,11 @@ async function initializeRoom(){
     let playing=false,navigating=false,selected=null,contactSince=0,lastLod=0,hadPointerLock=false;
     const held=new Set(),productLink=root.querySelector('[data-room-product]'),map=root.querySelector('[data-room-map-you]');
     function stopMotion(){held.clear();root.querySelectorAll('.is-held').forEach(el=>el.classList.remove('is-held'));camera.cameraDirection.setAll(0);camera.cameraRotation.setAll(0);}
-    function pause(){if(navigating)return;playing=false;root.dataset.playing='false';camera.detachControl();stopMotion();if(document.pointerLockElement)document.exitPointerLock();enter.textContent='Continue exploring';pauseButton.textContent='Continue';card.hidden=true;enter.focus({preventScroll:true});}
+    function pause(){if(navigating)return;playing=false;root.dataset.playing='false';camera.detachControl();stopMotion();
+      // An intentional unlock can finish after a painting jump has resumed play.
+      // Consume that exit here so its asynchronous event cannot pause the new view.
+      hadPointerLock=false;if(document.pointerLockElement)document.exitPointerLock();
+      enter.textContent='Continue exploring';pauseButton.textContent='Continue';card.hidden=true;enter.focus({preventScroll:true});}
     function play(lock=true){
       playing=true;root.dataset.playing='true';camera.attachControl(canvas,true);canvas.focus({preventScroll:true});pauseButton.textContent='Controls';
       if(lock&&matchMedia('(pointer:fine)').matches&&canvas.requestPointerLock){try{const pending=canvas.requestPointerLock();pending?.catch(()=>{});}catch{}}
