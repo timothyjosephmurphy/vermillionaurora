@@ -13,6 +13,8 @@ function initializeWall(){
   let focusPoint={x:view.width/2,y:view.height/2};
   let immersive=false,animation=0,animationResolve=null,navigating=false;
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+  const transitionStyle=document.createElement('style');document.head.append(transitionStyle);
+  const enableProductTransition=enabled=>{transitionStyle.textContent=`@view-transition{navigation:${enabled?'auto':'none'}}`;};
   const outside=[...document.querySelectorAll('.site-header,.wall-intro,.wall-caption,.wall-index,.site-footer')];
   const maxScale=()=>Math.max(...artworks.map(a=>paintingView(a,view).scale));
   const limitAt=point=>{
@@ -106,7 +108,7 @@ function initializeWall(){
     if(factor>1&&limit.art&&scale>=limit.scale*.999){focusPoint={x:view.width/2,y:(view.height-64)/2};animateTo(paintingView(limit.art,view),260);}
     else change(zoomAt(transform,point,scale));
   }
-  function reset(){navigating=false;cancelAnimation();setImmersive(false);dismissed=null;focusPoint={x:view.width/2,y:view.height/2};setFocus(null);picker.value='';animateTo({...fit});status.textContent='The full print wall is in view.';}
+  function reset(){navigating=false;enableProductTransition(false);cancelAnimation();setImmersive(false);dismissed=null;focusPoint={x:view.width/2,y:view.height/2};setFocus(null);picker.value='';animateTo({...fit});status.textContent='The full print wall is in view.';}
   function focusById(id){
     const art=byId.get(id);if(!art)return Promise.resolve(false);
     setImmersive(true);dismissed=null;focusPoint={x:view.width/2,y:(view.height-64)/2};
@@ -115,12 +117,13 @@ function initializeWall(){
   }
   async function visitPainting(art){
     if(navigating)return;navigating=true;
+    enableProductTransition(true);
     const prefetch=document.createElement('link');prefetch.rel='prefetch';prefetch.href=art.href;prefetch.as='document';document.head.append(prefetch);
     const complete=await focusById(art.id);
     if(!complete||!navigating)return;
     imageStates.get(art.id).img.style.viewTransitionName='wall-painting';
     status.textContent=`Opening ${art.title}.`;
-    requestAnimationFrame(()=>{if(navigating)location.assign(art.href);});
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{if(navigating)location.assign(art.href);}));
   }
   // CSS transforms do not update srcset's layout width. Explicitly select the
   // rendition needed for the on-screen image, and keep the full master as the last level.
@@ -248,7 +251,7 @@ function initializeWall(){
     }}}));
   });
   Promise.resolve(window.vaCartReady).then(value=>{capabilities=value;updateBuy();});
-  window.addEventListener('pageshow',()=>{navigating=false;for(const state of imageStates.values())state.img.style.viewTransitionName='';schedule();});
+  window.addEventListener('pageshow',()=>{navigating=false;enableProductTransition(false);for(const state of imageStates.values())state.img.style.viewTransitionName='';schedule();});
   viewport.classList.add('is-ready');root.dataset.ready='true';render();
   const requested=new URLSearchParams(location.hash.slice(1)).get('painting');if(requested)focusById(requested);
 }

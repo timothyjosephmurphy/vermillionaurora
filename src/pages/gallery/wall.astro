@@ -29,7 +29,7 @@ const data=JSON.stringify({artworks:wallArtworks,world:wallSize,printVersion:wal
     });
   </script>
   <style is:global>
-    @view-transition{navigation:auto}
+    @view-transition{navigation:none}
     ::view-transition-group(wall-painting){animation-duration:.48s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
     ::view-transition-old(root),::view-transition-new(root){animation-duration:.3s}
     @media(prefers-reduced-motion:reduce){::view-transition-group(*){animation-duration:.01ms!important}}

@@ -50,10 +50,19 @@ const structuredData = product.type === 'painting'
   {product.type==='painting' && <link rel="stylesheet" href="/payments/cart.css" />}
   {product.type==='painting' && <script is:inline>
     // Rapid onward navigation may cancel a pending native image transition.
+    const finishPaintingTransition=()=>{
+      const style=document.createElement('style');style.textContent='@view-transition{navigation:none}';document.head.append(style);
+    };
     for(const name of ['pageswap','pagereveal'])addEventListener(name,event=>{
-      const transition=event.viewTransition;if(!transition)return;
+      const transition=event.viewTransition;
+      if(name==='pagereveal'){
+        if(transition)transition.finished.then(finishPaintingTransition,finishPaintingTransition);
+        else finishPaintingTransition();
+      }
+      if(!transition)return;
       for(const promise of [transition.ready,transition.finished,transition.updateCallbackDone])promise.catch(error=>{if(error.name!=='AbortError')throw error;});
     });
+    document.addEventListener('click',event=>{if(event.target.closest('a[href],button'))finishPaintingTransition();},{capture:true});
   </script>}
   {product.type==='painting' && <style is:global>
     @view-transition{navigation:auto}
