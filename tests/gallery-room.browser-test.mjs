@@ -20,7 +20,7 @@ try{
   for(const mobile of [false,true]){
     const ctx=await context({viewport:mobile?{width:390,height:844}:{width:1440,height:960},hasTouch:mobile,isMobile:mobile,deviceScaleFactor:mobile?2:1});
     const page=await ctx.newPage(),errors=[];
-    page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error'&&m.text().includes('Gallery room'))console.log(m.text());});
+    page.on('pageerror',e=>{errors.push(e.message);console.log('ROOM PAGE ERROR',e.message);});page.on('console',m=>{if(m.type()==='error'&&m.text().includes('Gallery room'))console.log(m.text());});
     page.on('request',r=>{if(r.url().includes('/checkout/'))throw Error('The room must not initiate checkout');});
     await page.goto(origin+'/gallery/room/');
     await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.ready==='true',{},{timeout:60000});
@@ -34,9 +34,10 @@ try{
     await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.playing==='true');
     const position=()=>page.locator('[data-gallery-room]').getAttribute('data-position').then(JSON.parse);
     const start=await position();
+    const moved=()=>page.waitForFunction(start=>{const p=JSON.parse(document.querySelector('[data-gallery-room]').dataset.position);return Math.hypot(p.x-start.x,p.z-start.z)>.15;},start,{timeout:15000}).catch(async error=>{console.log('WALK DIAGNOSTIC',JSON.stringify({start,after:await position(),state:await page.locator('[data-gallery-room]').evaluate(el=>({...el.dataset,active:document.activeElement?.tagName,locked:!!document.pointerLockElement})),errors}));await page.screenshot({path:`/tmp/gallery-room-${label}-walk-failure.png`});throw error;});
     if(mobile){
-      const b=await page.locator('[data-room-move="forward"]').boundingBox(),cdp=await ctx.newCDPSession(page);await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{id:1,x:b.x+b.width/2,y:b.y+b.height/2}]});await page.waitForTimeout(500);await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
-    }else{await page.keyboard.down('w');await page.waitForTimeout(500);await page.keyboard.up('w');}
+      const b=await page.locator('[data-room-move="forward"]').boundingBox(),cdp=await ctx.newCDPSession(page);await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{id:1,x:b.x+b.width/2,y:b.y+b.height/2}]});await moved();await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+    }else{await page.keyboard.down('w');await moved();await page.keyboard.up('w');}
     const after=await position();assert(Math.hypot(after.x-start.x,after.z-start.z)>.1,'Keyboard / touch walking changes the visitor position');
     assert(Math.abs(after.y-ROOM.eyeHeight)<.12,'The visitor stays at walking height');
     await page.screenshot({path:`/tmp/gallery-room-${label}-walking.png`});
