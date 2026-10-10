@@ -13,7 +13,10 @@ for(const engine of [chromium,webkit]){
   try{
     const context=await browser.newContext({viewport:{width:1280,height:1000},hasTouch:true});
     const page=await context.newPage(),errors=[],masters=[];let stale=false;
-    page.on('pageerror',e=>errors.push(e.message));
+    page.on('pageerror',e=>{const error={name:e.name,message:e.message,url:page.url(),stack:e.stack};errors.push(error);console.log('BROWSER ERROR',JSON.stringify(error));});
+    await page.addInitScript(()=>addEventListener('pagereveal',event=>{
+      if(event.viewTransition)window.wallIncomingTransition=event.viewTransition.ready.then(()=>event.viewTransition.finished).then(()=>true,error=>error.name+': '+error.message);
+    }));
     await page.route('**/*',async route=>{
       const u=new URL(route.request().url());
       if(u.pathname.startsWith('/checkout/cart/')){
@@ -131,6 +134,9 @@ for(const engine of [chromium,webkit]){
     assert(handoff.rect.x>=23&&handoff.rect.y>=23&&handoff.rect.x+handoff.rect.width<=1257&&handoff.rect.y+handoff.rect.height<=913);
     assert.equal(handoff.name,'wall-painting');
     assert.equal(await page.locator('.painting-image-trigger>img').evaluate(el=>getComputedStyle(el).viewTransitionName),'wall-painting');
+    const transition=await page.evaluate(()=>window.wallIncomingTransition);
+    if(engine===chromium)assert.equal(transition,true,'The native image transition completes on the product page');
+    else assert(transition===undefined||transition===true,'Supported cross-page image transitions complete');
     await page.emulateMedia({reducedMotion:'reduce'});await open();
     await Promise.all([page.waitForURL(origin+art.href),page.locator(`[data-wall-art="${art.id}"]`).click()]);
     assert.deepEqual(errors,[]);console.log(`PASS: ${engine.name()} print wall: layout, source detail, full-screen fit, smooth product transition, touch, panel, cart selection, and stale-catalog guard.`);

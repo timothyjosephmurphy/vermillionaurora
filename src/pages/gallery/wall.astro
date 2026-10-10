@@ -24,7 +24,8 @@ const data=JSON.stringify({artworks:wallArtworks,world:wallSize,printVersion:wal
   <script is:inline>
     // A second navigation can cancel a native cross-document transition.
     for(const name of ['pageswap','pagereveal'])addEventListener(name,event=>{
-      event.viewTransition?.ready.catch(error=>{if(error.name!=='AbortError')throw error;});
+      const transition=event.viewTransition;if(!transition)return;
+      for(const promise of [transition.ready,transition.finished,transition.updateCallbackDone])promise.catch(error=>{if(error.name!=='AbortError')throw error;});
     });
   </script>
   <style is:global>
