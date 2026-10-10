@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {wallArtworks,wallLayout,wallSize,WALL_UNIT} from '../src/data/gallery-wall.mjs';
 import {byId,collections} from '../catalog/catalog.mjs';
 import {readyPrints} from '../catalog/prints.mjs';
-import {fitView,paintingView,zoomAt,constrainView,screenRect,imageSource,focusArtwork,panelPosition} from '../src/scripts/gallery-wall-math.mjs';
+import {fitView,paintingView,inspectionView,zoomAt,constrainView,screenRect,imageSource,focusArtwork,panelPosition} from '../src/scripts/gallery-wall-math.mjs';
 const near=(a,b)=>assert(Math.abs(a-b)<.001,`${a} differs from ${b}`);
 test('every main-gallery TJ print appears once at its largest ready black-frame size',()=>{
   const expected=Object.values(readyPrints).filter(p=>!p.testOnly&&!p.sampleOnly&&p.frame?.key==='black'&&byId[p.productId]?.artist==='TJ Murphy'&&collections.gallery.some(c=>c.product===p.productId));
@@ -64,4 +64,13 @@ test('the fixed screen-size pane occupies empty wall space or hides completely',
   assert.equal(panelPosition(art,view,panel,[art,blocked]),null,'Never cover another painting to show product information');
   assert.equal(panelPosition(blocked,view,panel),null,'Deep zoom leaves the painting unobstructed');
   assert.equal(panelPosition(art,{width:200,height:200},panel),null);
+});
+
+test('first-click inspection leaves room for the fixed details pane and the entire frame',()=>{
+  for(const view of [{width:1280,height:1000},{width:390,height:844},{width:844,height:390}])for(const art of wallArtworks){
+    const target=inspectionView(art,view),r=screenRect(art,target.transform),p=target.panel;
+    assert(r.x>=15&&r.y>=15&&r.x+r.width<=view.width-15&&r.y+r.height<=view.height-64,art.id);
+    assert(p.x>=0&&p.y>=0&&p.x+236<=view.width&&p.y+220<=view.height-64);
+    assert(r.x+r.width+12<=p.x||r.y+r.height+12<=p.y,'Pane must sit outside the artwork');
+  }
 });
