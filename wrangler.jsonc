@@ -4,7 +4,7 @@
   "compatibility_date": "2026-09-29",
   "main": "worker/site.mjs",
   "build": { "command": "npm run build" },
-  "assets": { "directory": "./dist", "binding": "ASSETS", "run_worker_first": true, "html_handling": "auto-trailing-slash", "not_found_handling": "404-page" },
+  "assets": { "directory": "./dist", "binding": "ASSETS", "run_worker_first": ["/quickbooks/connect", "/quickbooks/callback", "/quickbooks/start", "/quickbooks/status", "/quickbooks/preflight", "/quickbooks/disconnect", "/quickbooks/sync", "/quickbooks/logs", "/quickbooks/retry", "/quickbooks/costs/preview", "/quickbooks/costs/backfill", "/testimonials/api/*", "/inventory/originals", "/.well-known/apple-developer-merchantid-domain-association"], "html_handling": "auto-trailing-slash", "not_found_handling": "404-page" },
   "services": [{ "binding": "CHECKOUT", "service": "vermillion-commissions" }],
   "vars": { "PRIMARY_HOST": "tjm.art", "LEGACY_REDIRECT": "true" }
 }

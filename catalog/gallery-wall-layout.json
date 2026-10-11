@@ -1,0 +1,176 @@
+{
+  "unit": "in",
+  "width": 156,
+  "height": 72,
+  "gap": 2.6,
+  "artworks": [
+    {
+      "id": "painting-portrait-in-blue-light",
+      "x": 0,
+      "y": 0,
+      "width": 17.01,
+      "height": 18.61
+    },
+    {
+      "id": "el-zonte-before-dawn",
+      "x": 125.85,
+      "y": 0,
+      "width": 30.15,
+      "height": 17.01
+    },
+    {
+      "id": "meditation-at-denny-blaine",
+      "x": 0,
+      "y": 44.68,
+      "width": 21.01,
+      "height": 27.32
+    },
+    {
+      "id": "painting-red-horizon",
+      "x": 138.61,
+      "y": 43.3,
+      "width": 17.39,
+      "height": 28.7
+    },
+    {
+      "id": "el-zonte-at-sunrise",
+      "x": 72,
+      "y": 43.39,
+      "width": 17.0,
+      "height": 28.61
+    },
+    {
+      "id": "sunrise-in-el-zonte-large",
+      "x": 47.94,
+      "y": 0,
+      "width": 21.46,
+      "height": 27.7
+    },
+    {
+      "id": "painting-shoreline-at-dusk",
+      "x": 14.85,
+      "y": 21.21,
+      "width": 30.49,
+      "height": 17.06
+    },
+    {
+      "id": "hope-the-vermillion-aurora",
+      "x": 108.54,
+      "y": 19.61,
+      "width": 27.47,
+      "height": 16.24
+    },
+    {
+      "id": "painting-moonlit-water",
+      "x": 54.95,
+      "y": 30.3,
+      "width": 14.45,
+      "height": 24.2
+    },
+    {
+      "id": "painting-portrait-with-scarf",
+      "x": 23.61,
+      "y": 48.32,
+      "width": 15.68,
+      "height": 23.68
+    },
+    {
+      "id": "cormorant-presiding-over-sunset-on-puget-sound",
+      "x": 138.61,
+      "y": 19.61,
+      "width": 16.26,
+      "height": 11.99
+    },
+    {
+      "id": "painting-guitarist",
+      "x": 19.61,
+      "y": 3.45,
+      "width": 13.85,
+      "height": 15.16
+    },
+    {
+      "id": "painting-couple-in-color",
+      "x": 50.54,
+      "y": 57.87,
+      "width": 18.86,
+      "height": 14.13
+    },
+    {
+      "id": "painting-portrait-in-gold",
+      "x": 72.0,
+      "y": 3.22,
+      "width": 13.14,
+      "height": 13.79
+    },
+    {
+      "id": "warszawska-syrenka",
+      "x": 92.6,
+      "y": 19.61,
+      "width": 13.34,
+      "height": 17.75
+    },
+    {
+      "id": "honeybadger-and-cub-with-genesis-block",
+      "x": 76.66,
+      "y": 23.21,
+      "width": 13.34,
+      "height": 17.58
+    },
+    {
+      "id": "painting-golden-coast",
+      "x": 41.89,
+      "y": 40.87,
+      "width": 9.94,
+      "height": 14.22
+    },
+    {
+      "id": "painting-sunflower-woman",
+      "x": 87.74,
+      "y": 5.98,
+      "width": 16.06,
+      "height": 11.03
+    },
+    {
+      "id": "painting-portrait-in-green",
+      "x": 106.4,
+      "y": 0.95,
+      "width": 14.22,
+      "height": 16.06
+    },
+    {
+      "id": "painting-phoenix-rising",
+      "x": 2.48,
+      "y": 27.96,
+      "width": 9.77,
+      "height": 14.12
+    },
+    {
+      "id": "painting-festival-portrait",
+      "x": 108.54,
+      "y": 57.88,
+      "width": 9.76,
+      "height": 14.12
+    },
+    {
+      "id": "painting-sunset-silhouette",
+      "x": 92.6,
+      "y": 62.24,
+      "width": 11.16,
+      "height": 9.76
+    },
+    {
+      "id": "painting-figures-in-wheatfield",
+      "x": 91.6,
+      "y": 47.09,
+      "width": 9.76,
+      "height": 12.55
+    },
+    {
+      "id": "painting-portrait-with-hat",
+      "x": 120.94,
+      "y": 38.45,
+      "width": 15.07,
+      "height": 9.76
+    }
+  ]
+}

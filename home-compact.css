@@ -36,6 +36,15 @@
 .home-page .ex-controls .ex-autoplay { width:auto; }
 .home-page #exhibitions .ex-slide,.home-page #featured-artists .ex-slide { flex-basis:calc((100% - 36px)/3); }
 .home-page #exhibitions .ex-slide img,.home-page #featured-artists .ex-slide img { aspect-ratio:16/9; }
+/* Gallery experiences share the exhibition cards’ landscape media and captions. */
+.home-page #exhibitions [data-gallery-feature] { display:flex; flex-direction:column; }
+.home-page #exhibitions [data-gallery-feature] a { height:auto; }
+.home-page #exhibitions [data-gallery-feature] > .gallery-product-image { flex:0 0 auto; aspect-ratio:16/9; }
+.home-page #exhibitions .room-card-image { display:grid; padding:6px; }
+.home-page #exhibitions .room-card-frame { border-width:4px; padding:4px; }
+.home-page #exhibitions .room-card-view img { aspect-ratio:auto; }
+.home-page #exhibitions [data-gallery-feature] .product-info { flex:1; display:flex; flex-direction:column; }
+.home-page #exhibitions [data-gallery-feature] .card-buy-row { margin-top:auto; padding-top:.2rem; }
 .home-page .ex-slide-caption { padding:14px; }
 .home-page .ex-slide-caption h3 { font-size:1.65rem; }
 .home-page .centered-link-row { margin-top:20px; }

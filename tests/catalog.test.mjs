@@ -158,7 +158,7 @@ test('painting cards: price without "USD", "Prints from" the cheapest ready prin
  for(const path of pages){
   const $=load(fs.readFileSync(`dist/${path}`,'utf8'));
   $('[data-caption]').each((i,e)=>assert(!/\bUSD\b/.test($(e).attr('data-caption')),`${path}: ${$(e).attr('data-caption')}`));
-  $('.card-tile, a.ex-photo[data-buy]').each((i,e)=>{
+  $('.card-tile[data-product-id], a.ex-photo[data-buy]').each((i,e)=>{
    const tile=$(e),href=tile.is('a')?tile.attr('href'):tile.find('a').attr('href');
    const p=products.find(p=>href?.replace(/\/$/,'').endsWith(`/products/${p.slug}`));assert(p,`${path}: card without product link (${href})`);
    assert.equal(tile.find('a a').length+(tile.is('a')?tile.find('a').length:0),0,`${path}: ${p.id} has nested links`);
@@ -303,4 +303,28 @@ test('living room exhibition keeps its 18 chosen photographs in source and catal
  const entry=JSON.parse(fs.readFileSync('exhibitions/catalog.json','utf8')).find(e=>e.slug==='living-room');
  assert.deepEqual(entry.files.map(f=>f.url),links.map((i,a)=>$(a).attr('href')).get());
  assert.ok(fs.existsSync('exhibitions/living-room/images/three-landscapes-in-living-room.jpg'),'homepage card image stays');
+});
+
+test('commissions contact form shows the email with a decorative envelope icon and a working mailto link',()=>{
+ const $=load(fs.readFileSync('src/pages/commissions/index.astro','utf8').replace(/^---[\s\S]*?\n---/,''));
+ const link=$('#form .contact-list a[href="mailto:tj@tjm.art"]');
+ assert.equal(link.length,1);
+ assert.equal(link.text().trim(),'tj@tjm.art');
+ const svg=link.find('svg');
+ assert.equal(svg.length,1);
+ assert.equal(svg.attr('aria-hidden'),'true');
+ assert.equal(svg.attr('stroke'),'currentColor');
+ assert.equal(link.find('img').length,0,'icon is inline, no image request');
+});
+
+test('the homepage leads Exhibitions with the framed print wall and gallery room',()=>{
+ const $=load(fs.readFileSync('dist/index.html','utf8'));
+ assert.deepEqual($('#exhibitions .ex-track').children().slice(0,2).map((i,n)=>$(n).attr('data-gallery-feature')).get(),['print-wall','gallery-room']);
+ assert.equal($('.painting-carousel [data-gallery-feature]').length,0);
+ assert.equal($('#exhibitions [data-gallery-feature="gallery-room"] .product-title-link').attr('href'),'/gallery/room/');
+ const tile=$('#exhibitions [data-gallery-feature="print-wall"]');
+ assert.equal(tile.length,1);assert.equal(tile.find('.product-title-link').attr('href'),'/gallery/wall/');
+ assert.equal(tile.attr('data-product-id'),undefined,'A gallery experience is not original-painting inventory');
+ assert.equal(tile.find('img').attr('src'),'/gallery-wall/framed-wall.webp');
+ assert(fs.existsSync('dist/gallery-wall/framed-wall.webp'));
 });
