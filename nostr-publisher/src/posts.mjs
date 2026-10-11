@@ -52,7 +52,7 @@ export const posts = [
     "title": "Cormorant Presiding over Sunset on Puget Sound",
     "scheduledAt": "2026-10-15T18:00:00-07:00",
     "text": "New mural in a Seattle garden: Cormorant Presiding over Sunset on Puget Sound. Brian and Marcos wanted their favorite view of the Olympics on their fence. Watercolor study first, then acrylic on board. Mural commissions open:",
-    "imageUrl": "https://tjm.art/murals/images/cormorant-hero.jpg",
+    "imageUrl": "https://tjm.art/murals/images/cormorant-hero-hires.jpg",
     "productUrl": "/murals/",
     "xText": "New mural in a Seattle garden: Cormorant Presiding over Sunset on Puget Sound. Brian and Marcos wanted their favorite view of the Olympics on their fence. Watercolor study first, then acrylic on board. Mural commissions open: https://tjm.art/murals/"
   },

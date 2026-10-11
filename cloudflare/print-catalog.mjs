@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="eae6c38377b2ea207e5f";
+export const printVersion="a415454d2e060dabea94";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -43681,6 +43681,266 @@ export default {
     },
     "unframedAmount": "25.00"
   },
+  "print-cormorant-presiding-over-sunset-on-puget-sound-full": {
+    "id": "print-cormorant-presiding-over-sunset-on-puget-sound-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "cormorant-presiding-over-sunset-on-puget-sound",
+    "title": "Cormorant Presiding over Sunset on Puget Sound — Large print",
+    "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
+    "amount": "150.00",
+    "currency": "USD",
+    "sku": "5M144M8S22.86X15.32",
+    "scale": 1,
+    "imageSize": {
+      "width": 22.6,
+      "height": 15.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 22.86,
+      "height": 15.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c.jpg",
+    "assetSha256": "16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
+      "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
+      "caption": "Cormorant Presiding over Sunset on Puget Sound"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-cormorant-presiding-over-sunset-on-puget-sound-full-frame-black": {
+    "id": "print-cormorant-presiding-over-sunset-on-puget-sound-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "cormorant-presiding-over-sunset-on-puget-sound",
+    "title": "Cormorant Presiding over Sunset on Puget Sound — Large print — Black frame",
+    "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
+    "amount": "250.00",
+    "currency": "USD",
+    "sku": "5M144M8S22DD86X15DD32F1S25DD86X18DD32J1S22DD86X15DD32G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 22.6,
+      "height": 15.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 22.86,
+      "height": 15.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c.jpg",
+    "assetSha256": "16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
+      "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
+      "caption": "Cormorant Presiding over Sunset on Puget Sound"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 25.86,
+        "height": 18.32,
+        "unit": "in"
+      },
+      "window": {
+        "width": 22.86,
+        "height": 15.32,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S22.86X15.32",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 25.86,
+        "height": 18.32,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "150.00"
+  },
+  "print-cormorant-presiding-over-sunset-on-puget-sound-full-frame-white": {
+    "id": "print-cormorant-presiding-over-sunset-on-puget-sound-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "cormorant-presiding-over-sunset-on-puget-sound",
+    "title": "Cormorant Presiding over Sunset on Puget Sound — Large print — White frame",
+    "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
+    "amount": "250.00",
+    "currency": "USD",
+    "sku": "5M144M8S22DD86X15DD32F2S25DD86X18DD32J1S22DD86X15DD32G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 22.6,
+      "height": 15.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 22.86,
+      "height": 15.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c.jpg",
+    "assetSha256": "16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
+      "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
+      "caption": "Cormorant Presiding over Sunset on Puget Sound"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 25.86,
+        "height": 18.32,
+        "unit": "in"
+      },
+      "window": {
+        "width": 22.86,
+        "height": 15.32,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S22.86X15.32",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 25.86,
+        "height": 18.32,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "150.00"
+  },
+  "print-cormorant-presiding-over-sunset-on-puget-sound-full-frame-natural": {
+    "id": "print-cormorant-presiding-over-sunset-on-puget-sound-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "cormorant-presiding-over-sunset-on-puget-sound",
+    "title": "Cormorant Presiding over Sunset on Puget Sound — Large print — Natural wood frame",
+    "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
+    "amount": "269.00",
+    "currency": "USD",
+    "sku": "5M144M8S22DD86X15DD32F7S25DD86X18DD32J1S22DD86X15DD32G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 22.6,
+      "height": 15.0667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 22.86,
+      "height": 15.32,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c.jpg",
+    "assetSha256": "16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
+      "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
+      "caption": "Cormorant Presiding over Sunset on Puget Sound"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 25.86,
+        "height": 18.32,
+        "unit": "in"
+      },
+      "window": {
+        "width": 22.86,
+        "height": 15.32,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S22.86X15.32",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 25.86,
+        "height": 18.32,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "150.00"
+  },
   "print-cormorant-presiding-over-sunset-on-puget-sound-medium": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-medium",
     "type": "print",
@@ -43688,29 +43948,29 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Medium print",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "40.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S11.5X7.23",
+    "sku": "5M144M8S17.2X11.55",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.2433,
-      "height": 6.9767,
+      "width": 16.9467,
+      "height": 11.2967,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.5,
-      "height": 7.23,
+      "width": 17.2,
+      "height": 11.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e.jpg",
-    "assetSha256": "b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e",
-    "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359.jpg",
+    "assetSha256": "3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/cormorant-over-puget-sound.jpg",
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
       "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
       "caption": "Cormorant Presiding over Sunset on Puget Sound"
     },
@@ -43726,29 +43986,29 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Medium print — Black frame",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "85.00",
+    "amount": "156.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD5X7DD23F1S14DD5X10DD23J1S11DD5X7DD23G1",
+    "sku": "5M144M8S17DD2X11DD55F1S20DD2X14DD55J1S17DD2X11DD55G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.2433,
-      "height": 6.9767,
+      "width": 16.9467,
+      "height": 11.2967,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.5,
-      "height": 7.23,
+      "width": 17.2,
+      "height": 11.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e.jpg",
-    "assetSha256": "b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e",
-    "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359.jpg",
+    "assetSha256": "3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/cormorant-over-puget-sound.jpg",
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
       "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
       "caption": "Cormorant Presiding over Sunset on Puget Sound"
     },
@@ -43761,18 +44021,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14.5,
-        "height": 10.23,
+        "width": 20.2,
+        "height": 14.55,
         "unit": "in"
       },
       "window": {
-        "width": 11.5,
-        "height": 7.23,
+        "width": 17.2,
+        "height": 11.55,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S11.5X7.23",
+    "baseSku": "5M144M8S17.2X11.55",
     "frame": {
       "key": "black",
       "id": 1,
@@ -43782,8 +44042,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14.5,
-        "height": 10.23,
+        "width": 20.2,
+        "height": 14.55,
         "unit": "in"
       },
       "glazing": {
@@ -43791,7 +44051,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "40.00"
+    "unframedAmount": "85.00"
   },
   "print-cormorant-presiding-over-sunset-on-puget-sound-medium-frame-white": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-medium-frame-white",
@@ -43800,29 +44060,29 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Medium print — White frame",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "85.00",
+    "amount": "156.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD5X7DD23F2S14DD5X10DD23J1S11DD5X7DD23G1",
+    "sku": "5M144M8S17DD2X11DD55F2S20DD2X14DD55J1S17DD2X11DD55G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.2433,
-      "height": 6.9767,
+      "width": 16.9467,
+      "height": 11.2967,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.5,
-      "height": 7.23,
+      "width": 17.2,
+      "height": 11.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e.jpg",
-    "assetSha256": "b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e",
-    "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359.jpg",
+    "assetSha256": "3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/cormorant-over-puget-sound.jpg",
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
       "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
       "caption": "Cormorant Presiding over Sunset on Puget Sound"
     },
@@ -43835,18 +44095,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14.5,
-        "height": 10.23,
+        "width": 20.2,
+        "height": 14.55,
         "unit": "in"
       },
       "window": {
-        "width": 11.5,
-        "height": 7.23,
+        "width": 17.2,
+        "height": 11.55,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S11.5X7.23",
+    "baseSku": "5M144M8S17.2X11.55",
     "frame": {
       "key": "white",
       "id": 2,
@@ -43856,8 +44116,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14.5,
-        "height": 10.23,
+        "width": 20.2,
+        "height": 14.55,
         "unit": "in"
       },
       "glazing": {
@@ -43865,7 +44125,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "40.00"
+    "unframedAmount": "85.00"
   },
   "print-cormorant-presiding-over-sunset-on-puget-sound-medium-frame-natural": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-medium-frame-natural",
@@ -43874,29 +44134,29 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Medium print — Natural wood frame",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "96.00",
+    "amount": "171.00",
     "currency": "USD",
-    "sku": "5M144M8S11DD5X7DD23F7S14DD5X10DD23J1S11DD5X7DD23G1",
+    "sku": "5M144M8S17DD2X11DD55F7S20DD2X14DD55J1S17DD2X11DD55G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.2433,
-      "height": 6.9767,
+      "width": 16.9467,
+      "height": 11.2967,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.5,
-      "height": 7.23,
+      "width": 17.2,
+      "height": 11.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e.jpg",
-    "assetSha256": "b352a4a88d2157ef27597520baa5021312ad93b9bf1b7384c662e5662cb1403e",
-    "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359.jpg",
+    "assetSha256": "3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/cormorant-over-puget-sound.jpg",
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
       "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
       "caption": "Cormorant Presiding over Sunset on Puget Sound"
     },
@@ -43909,18 +44169,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 14.5,
-        "height": 10.23,
+        "width": 20.2,
+        "height": 14.55,
         "unit": "in"
       },
       "window": {
-        "width": 11.5,
-        "height": 7.23,
+        "width": 17.2,
+        "height": 11.55,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S11.5X7.23",
+    "baseSku": "5M144M8S17.2X11.55",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -43930,8 +44190,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 14.5,
-        "height": 10.23,
+        "width": 20.2,
+        "height": 14.55,
         "unit": "in"
       },
       "glazing": {
@@ -43939,7 +44199,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "40.00"
+    "unframedAmount": "85.00"
   },
   "print-cormorant-presiding-over-sunset-on-puget-sound-small": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-small",
@@ -43948,29 +44208,29 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Small print",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "25.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S7.75X4.9",
+    "sku": "5M144M8S11.55X7.78",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.49,
-      "height": 4.6467,
+      "width": 11.29,
+      "height": 7.5267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 4.9,
+      "width": 11.55,
+      "height": 7.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970.jpg",
-    "assetSha256": "499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970",
-    "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01.jpg",
+    "assetSha256": "98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/cormorant-over-puget-sound.jpg",
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
       "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
       "caption": "Cormorant Presiding over Sunset on Puget Sound"
     },
@@ -43986,29 +44246,29 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Small print — Black frame",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "60.63",
+    "amount": "87.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X4DD9F1S10DD85X8J1S7DD75X4DD9G1",
+    "sku": "5M144M8S11DD55X7DD78F1S14DD55X10DD78J1S11DD55X7DD78G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.49,
-      "height": 4.6467,
+      "width": 11.29,
+      "height": 7.5267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 4.9,
+      "width": 11.55,
+      "height": 7.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970.jpg",
-    "assetSha256": "499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970",
-    "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01.jpg",
+    "assetSha256": "98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/cormorant-over-puget-sound.jpg",
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
       "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
       "caption": "Cormorant Presiding over Sunset on Puget Sound"
     },
@@ -44021,18 +44281,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10.85,
-        "height": 8,
+        "width": 14.55,
+        "height": 10.78,
         "unit": "in"
       },
       "window": {
-        "width": 7.75,
-        "height": 4.9,
+        "width": 11.55,
+        "height": 7.78,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.75X4.9",
+    "baseSku": "5M144M8S11.55X7.78",
     "frame": {
       "key": "black",
       "id": 1,
@@ -44042,8 +44302,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10.85,
-        "height": 8,
+        "width": 14.55,
+        "height": 10.78,
         "unit": "in"
       },
       "glazing": {
@@ -44051,7 +44311,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "25.00"
+    "unframedAmount": "40.00"
   },
   "print-cormorant-presiding-over-sunset-on-puget-sound-small-frame-white": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-small-frame-white",
@@ -44060,29 +44320,29 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Small print — White frame",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "60.63",
+    "amount": "87.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X4DD9F2S10DD85X8J1S7DD75X4DD9G1",
+    "sku": "5M144M8S11DD55X7DD78F2S14DD55X10DD78J1S11DD55X7DD78G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.49,
-      "height": 4.6467,
+      "width": 11.29,
+      "height": 7.5267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 4.9,
+      "width": 11.55,
+      "height": 7.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970.jpg",
-    "assetSha256": "499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970",
-    "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01.jpg",
+    "assetSha256": "98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/cormorant-over-puget-sound.jpg",
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
       "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
       "caption": "Cormorant Presiding over Sunset on Puget Sound"
     },
@@ -44095,18 +44355,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10.85,
-        "height": 8,
+        "width": 14.55,
+        "height": 10.78,
         "unit": "in"
       },
       "window": {
-        "width": 7.75,
-        "height": 4.9,
+        "width": 11.55,
+        "height": 7.78,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.75X4.9",
+    "baseSku": "5M144M8S11.55X7.78",
     "frame": {
       "key": "white",
       "id": 2,
@@ -44116,8 +44376,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10.85,
-        "height": 8,
+        "width": 14.55,
+        "height": 10.78,
         "unit": "in"
       },
       "glazing": {
@@ -44125,7 +44385,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "25.00"
+    "unframedAmount": "40.00"
   },
   "print-cormorant-presiding-over-sunset-on-puget-sound-small-frame-natural": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-small-frame-natural",
@@ -44134,29 +44394,29 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Small print — Natural wood frame",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "69.63",
+    "amount": "98.00",
     "currency": "USD",
-    "sku": "5M144M8S7DD75X4DD9F7S10DD85X8J1S7DD75X4DD9G1",
+    "sku": "5M144M8S11DD55X7DD78F7S14DD55X10DD78J1S11DD55X7DD78G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.49,
-      "height": 4.6467,
+      "width": 11.29,
+      "height": 7.5267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 4.9,
+      "width": 11.55,
+      "height": 7.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970.jpg",
-    "assetSha256": "499d6b4a4fe8d4cb4733d0cca3dd37e769a75718b5bfbf3ffd94e8264ecb1970",
-    "sourceSha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01.jpg",
+    "assetSha256": "98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01",
+    "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/cormorant-over-puget-sound.jpg",
+      "src": "/gallery-images/cormorant-over-puget-sound-hires.jpg",
       "alt": "Cormorant Presiding over Sunset on Puget Sound, mural by TJ Murphy: a cormorant drying its wings on a piling under orange clouds",
       "caption": "Cormorant Presiding over Sunset on Puget Sound"
     },
@@ -44169,18 +44429,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10.85,
-        "height": 8,
+        "width": 14.55,
+        "height": 10.78,
         "unit": "in"
       },
       "window": {
-        "width": 7.75,
-        "height": 4.9,
+        "width": 11.55,
+        "height": 7.78,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7.75X4.9",
+    "baseSku": "5M144M8S11.55X7.78",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -44190,8 +44450,8 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10.85,
-        "height": 8,
+        "width": 14.55,
+        "height": 10.78,
         "unit": "in"
       },
       "glazing": {
@@ -44199,7 +44459,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "25.00"
+    "unframedAmount": "40.00"
   },
   "print-book-art-9ae261289a3bce952c6f-full": {
     "id": "print-book-art-9ae261289a3bce952c6f-full",
