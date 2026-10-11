@@ -42,7 +42,7 @@ The build validates unique identities, collection references, positive prices, i
 
 ## Deployment
 
-Root `wrangler.jsonc` names the existing website Worker `vermillionaurora`, runs the build, and publishes `dist/`. Cloudflare Workers Builds must use `npx wrangler deploy` from the repository root, without an old `--assets .` override.
+Root `wrangler.jsonc` names the existing website Worker `vermillionaurora`, runs the build, and publishes `dist/`. Cloudflare Workers Builds must use `npx wrangler deploy` from the repository root, without an old `--assets .` override. Static files bypass the Worker (`assets.run_worker_first` is an explicit route list); the redirects and long-cache header that used to run in the Worker are zone rules, see `docs/static-bypass-zone-rules.md`.
 
 Production uses a protected two-stage release. `main` is the integration branch. `.github/workflows/release-gate.yml` is the single required pull request gate; it runs the local build, catalog drift check, unit and Worker tests, and browser checks (including print framing and sample coverage). After a successful `main` push, `.github/workflows/promote-release.yml` may open or update a promotion pull request from `main` to `release`. **That auto promote PR often fails;** the reliable path is a `codex/release-*` branch from `origin/release` that merges `origin/main` (`--no-ff`), then a gated PR into `release`. See [docs/release-control.md](docs/release-control.md).
 
