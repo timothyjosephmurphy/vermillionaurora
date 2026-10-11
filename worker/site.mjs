@@ -1,10 +1,15 @@
-// Website Worker: serves the static build (dist/) and handles host-level redirects.
-// - www.tjm.art always 301s to the same path on tjm.art.
-// - When LEGACY_REDIRECT is "true", vermillionaurora.com and www.vermillionaurora.com 301 to the same
-//   path and query on PRIMARY_HOST, except hash-bound print and catalog files that print fulfilment and
-//   release verification fetch by exact URL; those keep serving 200 on the old domain. Renamed product
-//   pages go straight to their new slug (worker/product-renames.mjs).
-// Everything else (including static/_redirects rules and 404s) is handled by the assets binding.
+// Website Worker. wrangler.jsonc sets assets.run_worker_first to an explicit route list, so static files, pages,
+// static/_redirects and 404s are served by the Cloudflare assets layer WITHOUT invoking this Worker
+// (and without counting toward the Workers request limit). Only the routes listed there reach this code: the
+// QuickBooks API, the testimonials API, the original-inventory API (all forwarded to the checkout Worker) and the
+// Apple Pay merchant-id file. Keep run_worker_first in sync with the routes below (tests/site-worker.test.mjs checks it).
+//
+// Host-level redirects now live at the Cloudflare edge (zone Redirect Rules, see docs/static-bypass-zone-rules.md):
+// www.tjm.art -> tjm.art, http://tjm.art -> https, and vermillionaurora.com (and www) -> tjm.art with the
+// KEEP_ON_LEGACY exceptions. hostRedirect below is kept as a harmless second line of defence for requests that do
+// reach the Worker (for example if a zone rule were disabled), with the same behaviour as before.
+// The one-year immutable Cache-Control on 200 responses under /_astro/ and /display/ is a zone Response Header Transform Rule
+// (a static/_headers rule would also stamp it on 404s for those paths).
 import { APPLE_PAY_DOMAIN_ASSOCIATION } from './apple-pay-domain-association.mjs';
 import { renamedProductPath } from './product-renames.mjs';
 
@@ -50,16 +55,6 @@ export async function applePayAssociation(fetcher = fetch) {
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
 }
 
-// Fingerprinted build assets never change under the same URL: Astro's /_astro/ bundles and the /display/ WebP
-// derivatives (named by a hash; a replaced original gets a new name). Let browsers keep them for a year.
-export const IMMUTABLE_PREFIXES = ['/_astro/', '/display/'];
-export function withLongCache(response, pathname) {
-  if (response.status !== 200 || !IMMUTABLE_PREFIXES.some((prefix) => pathname.startsWith(prefix))) return response;
-  const headers = new Headers(response.headers);
-  headers.set('Cache-Control', 'public, max-age=31536000, immutable');
-  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
-}
-
 export default {
   async fetch(request, env) {
     const redirect = hostRedirect(request, env);
@@ -75,6 +70,6 @@ export default {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ error: 'Original inventory is temporarily unavailable.' }, { status: 503 });
     }
     if (url.pathname === APPLE_PAY_ASSOCIATION_PATH) return applePayAssociation();
-    return withLongCache(await env.ASSETS.fetch(request), url.pathname);
+    return env.ASSETS.fetch(request);
   },
 };

@@ -49,10 +49,58 @@ test('Apple Pay domain association is served on tjm.art, from Square when reacha
   const r=await worker.fetch(new Request('https://tjm.art'+APPLE_PAY_ASSOCIATION_PATH),env);
   assert.equal(r.status,200);assert.match(r.headers.get('Content-Type'),/^text\/plain/);
 });
-test('fingerprinted /display/ and /_astro/ assets get a one-year immutable cache; pages keep the default',async()=>{
-  const env={...off,ASSETS:{fetch:r=>new URL(r.url).pathname==='/missing/'?new Response('nf',{status:404}):new Response('x',{headers:{'Cache-Control':'public, max-age=0, must-revalidate','Content-Type':'image/webp'}})}};
-  for(const p of ['/display/a-123-160.webp','/_astro/index.abc.css']){const r=await worker.fetch(new Request('https://tjm.art'+p),env);assert.equal(r.headers.get('Cache-Control'),'public, max-age=31536000, immutable',p);assert.equal(r.headers.get('Content-Type'),'image/webp');}
-  for(const p of ['/','/gallery/','/gallery-images/a.jpg','/missing/'])assert.notEqual((await worker.fetch(new Request('https://tjm.art'+p),env)).headers.get('Cache-Control'),'public, max-age=31536000, immutable',p);
+test('the Worker passes asset responses through untouched (cache headers now come from a zone rule)',async()=>{
+  const env={...off,ASSETS:{fetch:()=>new Response('x',{headers:{'Cache-Control':'public, max-age=0, must-revalidate','Content-Type':'image/webp'}})}};
+  for(const p of ['/display/a-123-160.webp','/_astro/index.abc.css','/gallery-images/a.jpg']){const r=await worker.fetch(new Request('https://tjm.art'+p),env);assert.equal(r.headers.get('Cache-Control'),'public, max-age=0, must-revalidate',p);}
+});
+test('long-cache headers are a zone rule limited to 200 responses, not a static/_headers file (which would also cache 404s for a year)',async()=>{
+  const fs=await import('node:fs');
+  assert.ok(!fs.existsSync('static/_headers')&&!fs.existsSync('dist/_headers'),'no _headers file: it would stamp immutable Cache-Control on 404s under /_astro/ and /display/');
+  const doc=fs.readFileSync('docs/static-bypass-zone-rules.md','utf8');
+  const expr=doc.match(/^CACHE_RULE_EXPRESSION: (.+)$/m)?.[1];
+  assert.ok(expr,'the doc records the cache rule expression');
+  assert.match(expr,/http\.response\.code eq 200/);
+  assert.deepEqual([...expr.matchAll(/starts_with\(http\.request\.uri\.path, "([^"]+)"\)/g)].map(m=>m[1]),['/_astro/','/display/']);
+  assert.ok(doc.includes('Cache-Control: public, max-age=31536000, immutable')&&doc.includes('dabd690a6a4a455384558b3b19d278f8'));
+});
+const globRe=(pattern)=>new RegExp('^'+pattern.replace(/[.+?^${}()|[\]\\]/g,'\\$&').replace(/\*/g,'.*')+'$');
+const workerFirst=async()=>{
+  const fs=await import('node:fs');
+  const config=JSON.parse(fs.readFileSync('wrangler.jsonc','utf8'));
+  return config.assets.run_worker_first;
+};
+test('run_worker_first lists exactly the routes the Worker serves, so static files never invoke it',async()=>{
+  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH}=await import('../worker/site.mjs');
+  const patterns=await workerFirst();
+  assert.ok(Array.isArray(patterns)&&patterns.length>0&&patterns.length<=100,'an explicit pattern list, not true');
+  assert.ok(patterns.every(p=>p.startsWith('/')&&!p.startsWith('!/')),'no negative patterns needed');
+  const matches=(path)=>patterns.some(p=>globRe(p).test(path));
+  // Every route the Worker handles runs the Worker first.
+  for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH])assert.ok(matches(path),path+' must run the Worker');
+  // Every pattern is a route the Worker actually handles (no stray patterns).
+  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,TESTIMONIALS_API+'*']);
+  for(const p of patterns)assert.ok(handled.has(p),p+' is not a Worker route');
+  assert.equal(patterns.length,handled.size);
+  // Static files, pages and admin pages are served by the assets layer, not the Worker.
+  for(const path of ['/','/about/','/gallery/','/products/painting-portrait-in-gold/','/_astro/index.abc.css','/display/a-123-160.webp','/gallery-images/a.jpg','/product-media/el-zonte/room-1-2400.webp','/robots.txt','/sitemap.xml','/catalog/version.json','/print-editions/a.jpg','/print-masters/a.jpg','/quickbooks/','/quickbooks/disconnected/','/testimonials/','/testimonials/api','/testimonial-manager/','/originals-manager/','/inventory/','/.well-known/security.txt','/favicon.ico','/site.webmanifest','/404.html','/nope/'])assert.ok(!matches(path),path+' must not invoke the Worker');
+});
+test('assets keep their routing settings and the service binding is unchanged',async()=>{
+  const fs=await import('node:fs');
+  const config=JSON.parse(fs.readFileSync('wrangler.jsonc','utf8'));
+  assert.equal(config.assets.directory,'./dist');assert.equal(config.assets.binding,'ASSETS');
+  assert.equal(config.assets.html_handling,'auto-trailing-slash');assert.equal(config.assets.not_found_handling,'404-page');
+  assert.deepEqual(config.services,[{binding:'CHECKOUT',service:'vermillion-commissions'}]);
+  assert.deepEqual(config.vars,{PRIMARY_HOST:'tjm.art',LEGACY_REDIRECT:'true'});
+});
+test('zone redirect rules document the legacy exceptions exactly as the Worker keeps them',async()=>{
+  const fs=await import('node:fs');
+  const {KEEP_ON_LEGACY}=await import('../worker/site.mjs');
+  const doc=fs.readFileSync('docs/static-bypass-zone-rules.md','utf8');
+  const expr=doc.match(/^LEGACY_RULE_EXPRESSION: (.+)$/m)?.[1];
+  assert.ok(expr,'the doc records the legacy rule expression');
+  assert.deepEqual([...expr.matchAll(/not starts_with\(http\.request\.uri\.path, "([^"]+)"\)/g)].map(m=>m[1]),KEEP_ON_LEGACY);
+  assert.match(expr,/^\(http\.host eq "vermillionaurora\.com" and /);
+  for(const needle of ['(http.host eq "www.tjm.art")','(http.host eq "tjm.art" and not ssl)','81db549fdd1e4d04b41cc6f69cb1c895','8fb5c150877b4889952ac2814eae2a4b','be24884aab634cccb6ec1cde04bff37a','901dca909b4c4cd6a0055d0141c4c8a9'])assert.ok(doc.includes(needle),needle);
 });
 test('renamed product pages: one-hop 301 from the legacy domain, _redirects on tjm.art, no stale catalog ids',async()=>{
   const {PRODUCT_RENAMES,renamedProductPath}=await import('../worker/product-renames.mjs');
