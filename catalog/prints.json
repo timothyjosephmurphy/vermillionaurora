@@ -13,12 +13,12 @@
       "label": "Watercolor Bright White"
     },
     "photo-rag": {
-      "label": "Hahnemühle Photo Rag"
+      "label": "Hahnem\u00fchle Photo Rag"
     }
   },
   "artworks": {
     "cormorant-presiding-over-sunset-on-puget-sound": {
-      "enabled": true,
+      "enabled": false,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
