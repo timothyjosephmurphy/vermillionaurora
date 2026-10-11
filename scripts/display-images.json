@@ -473,6 +473,32 @@
    }
   ]
  },
+ "/gallery-images/cormorant-over-puget-sound-hires.jpg": {
+  "original": 492277,
+  "width": 2250,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/cormorant-over-puget-sound-hires-8892d0a33e-160.webp",
+    "bytes": 1754
+   },
+   {
+    "w": 480,
+    "src": "/display/cormorant-over-puget-sound-hires-8892d0a33e-480.webp",
+    "bytes": 7532
+   },
+   {
+    "w": 960,
+    "src": "/display/cormorant-over-puget-sound-hires-8892d0a33e-960.webp",
+    "bytes": 25390
+   },
+   {
+    "w": 1600,
+    "src": "/display/cormorant-over-puget-sound-hires-8892d0a33e-1600.webp",
+    "bytes": 68048
+   }
+  ]
+ },
  "/gallery-images/cormorant-over-puget-sound.jpg": {
   "original": 523335,
   "width": 2250,
@@ -1447,6 +1473,32 @@
     "w": 556,
     "src": "/display/hero-a7562636d0-556.webp",
     "bytes": 15152
+   }
+  ]
+ },
+ "/murals/images/cormorant-hero-hires.jpg": {
+  "original": 244291,
+  "width": 1600,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/cormorant-hero-hires-9107390ea5-160.webp",
+    "bytes": 1726
+   },
+   {
+    "w": 480,
+    "src": "/display/cormorant-hero-hires-9107390ea5-480.webp",
+    "bytes": 7516
+   },
+   {
+    "w": 960,
+    "src": "/display/cormorant-hero-hires-9107390ea5-960.webp",
+    "bytes": 25368
+   },
+   {
+    "w": 1600,
+    "src": "/display/cormorant-hero-hires-9107390ea5-1600.webp",
+    "bytes": 69018
    }
   ]
  },

@@ -23,5 +23,14 @@ test('All 23 reviewed TJ masters have native-resolution editions and three frame
       }
     }
   }
-  assert.equal(sizes,58);
+  assert.equal(sizes,59);
+});
+
+test('Cormorant mural master is the exact 3:2 crop of the high-resolution photo, offered at three native-resolution sizes',()=>{
+  const art=config.artworks['cormorant-presiding-over-sunset-on-puget-sound'];
+  assert.equal(art.source.widthPx*2,art.source.heightPx*3,'exact 3:2, no padding');
+  assert(art.source.widthPx>=6700&&!art.layoutOptions);
+  assert.deepEqual(Object.keys(art.variants),['full','medium','small']);
+  assert.deepEqual(Object.values(art.variants).map(v=>v.sku),['5M144M8S22.86X15.32','5M144M8S17.2X11.55','5M144M8S11.55X7.78']);
+  for(const v of Object.values(art.variants))assert.equal(v.asset.sourceSha256,art.source.sha256);
 });
