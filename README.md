@@ -6,6 +6,7 @@ Astro generates the public website from a versioned JSON catalog. Cloudflare ser
 
 - `catalog/products.json`: one record per artwork, commission package, or book. Edit titles, stories, prices, media, dimensions, credits, and explicit shipping profiles here.
 - Optional painting fields `gallery` (extra photos such as room shots, shown as thumbnails after the main image; AVIF/WebP derivatives in `static/product-media/`) and `video` (a product video with label, poster and MP4 sources on `media.vermillionaurora.com`; files over the 25 MiB Workers asset limit belong in R2). See `scripts/make-product-media.mjs`.
+- `catalog/archive-paintings.json`: ordered JPEG/HEIC source pairs, visually verified hash-mark indices, original file checksums, and handwritten dimension inscriptions. `catalog/archive-products.mjs` creates the archival painting records; missing indices and measurement units stay explicit. `/gallery/archived/` shows all 54 records. Display WebPs live in `static/display/`, while the unmodified JPEG print masters remain in R2. To rebuild derivatives, run the branch-scoped `Prepare Archived Paintings` workflow, which uses the existing media credential and removes its temporary reader afterward.
 - `catalog/collections.json`: product IDs and display order for the homepage, gallery, and artist collaborations.
 - `src/pages/products/[slug]/index.astro`: shared product template, with painting, book, and commission layouts.
 - `src/components/ProductCard.astro`: shared gallery, carousel, book, commission, and collaboration cards.
@@ -71,3 +72,4 @@ Sales no longer mutate GitHub files, and the live Worker no longer requires a re
 PayPal remains restricted to the existing Chase Toole $20 pilot. BTCPay accepts on-chain Bitcoin and Lightning for the two $20 portrait pilots: Chase Toole and Dorian Nakamoto. Existing estimated parcels are carried forward explicitly, including the owner-authorized portrait envelope. Verify each physical parcel before adding more products to the production allowlists. No new payment methods, shipping profiles, or live purchases are enabled by this migration.
 
 The Warsaw Syrenka stock-limited PayPal link remains a legacy exception. It has not been silently opted into automatic inventory matching; unmatched verified IPN payments are still archived. Use shared checkout for new original-art sales. Books continue to Amazon, commissions continue to inquiries, and paintings without measurements remain inquiry-only.
+

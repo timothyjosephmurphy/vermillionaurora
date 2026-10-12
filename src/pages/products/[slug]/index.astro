@@ -86,7 +86,7 @@ const facts=painting ? [
   </section>}
       {relatedProduct&&<p class="product-print-availability"><a href={urlFor(relatedProduct)}>{p.bookGallery?'View the original painting':(relatedPrints?'View fine-art print options':'View in the book collection')} →</a></p>}
       {p.listing.price && p.listing.status!=='not-for-sale' && (!painting||p.listing.status!=='available') && <p class="product-detail-price">{priceLabel(p)}</p>}
-      {painting && <p class="product-availability" data-live-status>{p.archive?'Archived painting':p.bookGallery?'From the book collection':statusLabel(p)}</p>}
+      {painting && <p class="product-availability" data-live-status={p.archive?undefined:''}>{p.archive?'Archived painting':p.bookGallery?'From the book collection':statusLabel(p)}</p>}
       {painting&&!p.archive&&availablePrints.length===0&&!relatedPrints&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
       {painting&&!p.bookGallery&&p.listing.status==='sold'&&<section class="sold-next-steps" aria-label="Next steps for a sold painting">
         <p>This original has found its home. I can paint something in the same spirit for you.</p>
