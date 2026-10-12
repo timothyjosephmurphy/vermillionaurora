@@ -1,0 +1,64 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import {archivePaintings,archiveTitle,archivePreview} from '../../../catalog/archive-products.mjs';
+import {catalogVersion} from '../../../catalog/catalog.mjs';
+const description='Explore Archived Paintings by TJ Murphy, labeled with the index numbers recorded on their backs.';
+---
+<!doctype html><html lang="en"><head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Archived Paintings | TJ Murphy</title><meta name="description" content={description}/>
+  <meta name="catalog-version" content={catalogVersion}/><link rel="canonical" href="https://tjm.art/gallery/archived/"/>
+  <meta property="og:title" content="Archived Paintings | TJ Murphy"/><meta property="og:description" content={description}/>
+  <meta property="og:url" content="https://tjm.art/gallery/archived/"/><meta property="og:type" content="website"/>
+  <meta property="og:image" content={`https://tjm.art${archivePreview(archivePaintings[0])}`}/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="/styles.css"/><link rel="stylesheet" href="/site-header.css"/>
+</head><body><div class="page-shell"><SiteHeader/>
+<main class="container archive-main" id="main-content">
+  <nav class="archive-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/gallery/">Gallery</a><span>/</span><span aria-current="page">Archived Paintings</span></nav>
+  <header class="archive-intro"><p class="eyebrow dark">From the studio archive</p><h1>Archived Paintings</h1>
+    <p>Portraits, landscapes, and studies from the archive, identified by the handwritten numbers on their backs.</p>
+    <p class="archive-count">{archivePaintings.length} paintings · Browse in archive order or find a painting by number.</p>
+  </header>
+  <div class="archive-tools" hidden>
+    <label for="archive-search">Find a painting<input id="archive-search" type="search" placeholder="Index number or title" autocomplete="off"/></label>
+    <label for="archive-sort">Sort by<select id="archive-sort"><option value="archive">Archive order</option><option value="index">Index number</option></select></label>
+    <p id="archive-results" role="status" aria-live="polite">{archivePaintings.length} paintings</p>
+  </div>
+  <ul class="archive-grid" aria-label="Archived Paintings">
+    {archivePaintings.map((p,i)=><li class="archive-card" data-archive-order={p.order} data-archive-index={p.index??''} data-archive-search={`${p.index??''} ${archiveTitle(p)} ${p.inscription||''}`.toLowerCase()}>
+      <a href={`/products/${p.id}/`}>
+        <div class="archive-image"><img src={archivePreview(p,480)} srcset={[480,960,1600].map(w=>`${archivePreview(p,w)} ${w}w`).join(', ')} sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 960px) 45vw, 30vw" width={p.front.width} height={p.front.height} alt={p.alt} loading={i<3?'eager':'lazy'} decoding="async"/></div>
+        <div class="archive-caption"><h2>{archiveTitle(p)}</h2>{p.index!==null&&p.inscription&&<p>{p.inscription}</p>}{p.index===null&&<p class="archive-unindexed">Index not recorded</p>}{p.year&&<span>{p.year}</span>}</div>
+      </a>
+    </li>)}
+  </ul>
+  <p class="archive-empty" hidden>No paintings match that search. Try another number or title.</p>
+  <p class="archive-back"><a href="/gallery/">← Return to the main gallery</a></p>
+</main><SiteFooter/></div>
+<script>
+  const tools=document.querySelector<HTMLElement>('.archive-tools');
+  const list=document.querySelector<HTMLUListElement>('.archive-grid');
+  const search=document.querySelector<HTMLInputElement>('#archive-search');
+  const sort=document.querySelector<HTMLSelectElement>('#archive-sort');
+  const results=document.querySelector<HTMLElement>('#archive-results');
+  const empty=document.querySelector<HTMLElement>('.archive-empty');
+  if(tools&&list&&search&&sort&&results&&empty){
+    const cards=Array.from(list.querySelectorAll<HTMLLIElement>('.archive-card'));
+    const update=()=>{
+      const query=search.value.trim().toLowerCase().replace(/^#/,'');
+      let count=0;
+      cards.sort((a,b)=>sort.value==='index'
+        ?(a.dataset.archiveIndex?Number(a.dataset.archiveIndex):Infinity)-(b.dataset.archiveIndex?Number(b.dataset.archiveIndex):Infinity)||Number(a.dataset.archiveOrder)-Number(b.dataset.archiveOrder)
+        :Number(a.dataset.archiveOrder)-Number(b.dataset.archiveOrder));
+      for(const card of cards){card.hidden=!!query&&!card.dataset.archiveSearch?.includes(query);if(!card.hidden)count++;list.append(card);}
+      results.textContent=`${count} of ${cards.length} paintings`;empty.hidden=count>0;
+    };
+    tools.hidden=false;search.addEventListener('input',update);sort.addEventListener('change',update);
+  }
+</script>
+<style>
+  .archive-main{padding-top:30px;padding-bottom:70px}.archive-breadcrumb{display:flex;flex-wrap:wrap;gap:10px;font-size:.85rem;color:#665b52}.archive-intro{max-width:750px;margin:42px 0 32px}.archive-intro h1{font:500 clamp(2.8rem,6vw,4.5rem)/1.05 'Cormorant Garamond',serif;margin:12px 0 18px}.archive-intro>p{line-height:1.65}.archive-count{color:#73685e;font-size:.9rem}.archive-tools{display:flex;align-items:end;gap:24px;flex-wrap:wrap;padding:22px 0;border-top:1px solid #ddd1c5;margin-bottom:22px}.archive-tools[hidden],.archive-card[hidden],.archive-empty[hidden]{display:none}.archive-tools label{display:grid;gap:8px;font-size:.85rem;font-weight:600}.archive-tools input,.archive-tools select{font:inherit;color:inherit;background:#fffaf4;border:1px solid #c9bbae;border-radius:4px;padding:12px}.archive-tools input{width:min(360px,70vw)}.archive-tools p{margin:0 0 12px auto;font-size:.85rem;color:#73685e}.archive-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 28px}.archive-card{min-width:0}.archive-card a{display:block;color:inherit;text-decoration:none}.archive-image{background:#f1ece4;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border-radius:4px;overflow:hidden}.archive-image img{width:100%;height:100%;object-fit:contain;padding:16px}.archive-caption{padding:15px 2px 0}.archive-caption h2{font:600 1.65rem/1.15 'Cormorant Garamond',serif;margin:0 0 7px}.archive-caption p{margin:0 0 6px;font-size:.9rem;line-height:1.4}.archive-caption span,.archive-unindexed{font-size:.8rem;color:#73685e}.archive-back{margin-top:54px}.archive-card a:focus-visible,.archive-tools input:focus-visible,.archive-tools select:focus-visible{outline:3px solid #a34528;outline-offset:5px}.archive-card a:hover h2{color:#a34528}@media(max-width:960px){.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 20px}}@media(max-width:600px){.archive-grid{grid-template-columns:1fr}.archive-intro{margin-top:30px}.archive-tools{gap:16px}.archive-tools p{width:100%;margin:0}.archive-tools input{width:100%}.archive-tools label:first-child{width:100%}}
+</style>
+</body></html>
