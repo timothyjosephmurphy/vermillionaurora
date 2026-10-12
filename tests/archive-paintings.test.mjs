@@ -19,7 +19,7 @@ test('every ordered archive pair has one painting, master provenance, and a veri
     for(const source of [p.front,p.back]){assert.match(source.sha256,/^[a-f0-9]{64}$/);assert(source.width>0&&source.height>0);}
     assert.equal(products[i].image.src,p.front.sourceUrl);
     assert.equal(products[i].listing.price,null);
-    assert.equal(products[i].dimensions,null,'Unstated units must not become inches');
+    assert.equal(products[i].dimensions,null,'Photo estimates must not enter measured dimensions, print sizing or shipping');
     assert.equal(products[i].checkout.mode,'inquiry');
     if(p.index!==null)assert.equal(products[i].title,`Painting #${p.index}`);
     else assert.equal(products[i].title,p.inscription);
@@ -33,6 +33,23 @@ test('every ordered archive pair has one painting, master provenance, and a veri
   assert.equal(manifest.paintings[51].front.key,'images/Archive/IMG_1659.jpg');
   assert.equal(manifest.paintings[51].back.key,'images/Archive/IMG_1658.HEIC');
   assert.equal(manifest.paintings[51].index,4);
+});
+
+test('inferred sizes stay approximate and separately attributed from recorded sizes',()=>{
+  const estimated=manifest.paintings.filter(p=>p.estimatedDimensions);
+  assert.equal(estimated.length,26);
+  assert.equal(manifest.paintings.filter(p=>p.cataloguedDimensions).length,2);
+  assert.equal(manifest.paintings.filter(p=>p.dimensionReviewNote).length,8);
+  for(const p of estimated){
+    const d=p.estimatedDimensions;
+    assert.equal(d.approximate,true);
+    assert.equal(d.unit,'in');
+    assert(d.width>0&&d.height>0&&d.tolerancePercent>=10);
+    assert(d.evidence.matchingFeatures>=16);
+    assert(!p.dimensionsInscription,'Preserve written measurements instead of replacing them with estimates');
+    const product=products.find(x=>x.id===p.id);
+    assert(product.facts.some(f=>f.label==='Approximate paper size'&&f.value.includes('estimated from photographs')));
+  }
 });
 
 test('archive gallery and all painting pages render and are discoverable',()=>{

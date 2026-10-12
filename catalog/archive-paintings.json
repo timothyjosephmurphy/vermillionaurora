@@ -4,7 +4,7 @@
     "prefix": "images/Archive/",
     "reviewedAt": "2026-10-12",
     "indexRule": "Use the hash-mark number immediately beneath the artist stamp; retain older corner markings separately.",
-    "dimensionRule": "Preserve handwritten measurements verbatim; no unit is inferred."
+    "dimensionRule": "Preserve handwritten measurements verbatim. Show photograph-derived dimensions as approximate, rounded to whole inches, using the repeated artist stamp calibrated against 18 inscriptions. Keep existing catalogue dimensions separately attributed. Never treat equal image resolution alone as physical scale."
   },
   "paintings": [
     {
@@ -30,7 +30,28 @@
         "height": 6954,
         "captureDate": "2026:10:12 11:26:40"
       },
-      "alt": "A smiling woman with her hair tied up, painted in muted brown and purple tones"
+      "alt": "A smiling woman with her hair tied up, painted in muted brown and purple tones",
+      "estimatedDimensions": {
+        "width": 9,
+        "height": 11,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.999997,
+          "matchingFeatures": 1171,
+          "paperBoundsInPreview": [
+            0.0,
+            39.0,
+            1736.0,
+            2170.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-308",
@@ -56,7 +77,28 @@
         "captureDate": "2026:10:12 11:42:12"
       },
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
-      "inscription": "Self Portrait on Goat Lake"
+      "inscription": "Self Portrait on Goat Lake",
+      "estimatedDimensions": {
+        "width": 10,
+        "height": 12,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.933936,
+          "matchingFeatures": 141,
+          "paperBoundsInPreview": [
+            0.0,
+            35.0,
+            1811.0,
+            2152.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-307",
@@ -83,7 +125,28 @@
       },
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "inscription": "Cross on Maui",
-      "year": 2021
+      "year": 2021,
+      "estimatedDimensions": {
+        "width": 13,
+        "height": 10,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.813501,
+          "matchingFeatures": 114,
+          "paperBoundsInPreview": [
+            63.0,
+            0.0,
+            2097.0,
+            1589.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-233",
@@ -108,7 +171,28 @@
         "height": 5712,
         "captureDate": "2026:10:12 11:50:50"
       },
-      "alt": "A man in a flat cap and Stanford sweatshirt against a deep blue background"
+      "alt": "A man in a flat cap and Stanford sweatshirt against a deep blue background",
+      "estimatedDimensions": {
+        "width": 11,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.634714,
+          "matchingFeatures": 113,
+          "paperBoundsInPreview": [
+            95.0,
+            246.0,
+            1514.0,
+            2080.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-img-1555",
@@ -135,7 +219,8 @@
       },
       "alt": "A seated man in a brimmed hat with his hands raised beside a sunlit woodland path",
       "inscription": "Dad Meditating in Yellowstone",
-      "year": 2026
+      "year": 2026,
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
     },
     {
       "id": "archived-painting-363",
@@ -161,7 +246,28 @@
         "captureDate": "2026:10:12 11:54:13"
       },
       "alt": "A seated man in a cap with a child perched above him beside a window",
-      "inscription": "Elon & Lil’ X in the Oval Office"
+      "inscription": "Elon & Lil’ X in the Oval Office",
+      "estimatedDimensions": {
+        "width": 12,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.650692,
+          "matchingFeatures": 99,
+          "paperBoundsInPreview": [
+            32.0,
+            122.0,
+            1515.0,
+            2023.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-368",
@@ -187,7 +293,28 @@
         "captureDate": "2026:10:12 11:56:20"
       },
       "alt": "A smiling woman wearing sunglasses against a blue background",
-      "reviewNote": "Handwritten title spelling needs confirmation."
+      "reviewNote": "Handwritten title spelling needs confirmation.",
+      "estimatedDimensions": {
+        "width": 12,
+        "height": 16,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.660996,
+          "matchingFeatures": 93,
+          "paperBoundsInPreview": [
+            71.0,
+            0.0,
+            1554.0,
+            1999.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-369",
@@ -212,7 +339,28 @@
         "height": 4284,
         "captureDate": "2026:10:12 11:57:17"
       },
-      "alt": "A bearded man with reddish hair and a rust-colored shirt"
+      "alt": "A bearded man with reddish hair and a rust-colored shirt",
+      "estimatedDimensions": {
+        "width": 15,
+        "height": 11,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.645959,
+          "matchingFeatures": 47,
+          "paperBoundsInPreview": [
+            122.0,
+            112.0,
+            2061.0,
+            1517.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-370",
@@ -238,7 +386,28 @@
         "captureDate": "2026:10:12 11:58:48"
       },
       "alt": "A laughing man wearing headphones beside a green frog puppet",
-      "inscription": "Ben & Kermit & Swan"
+      "inscription": "Ben & Kermit & Swan",
+      "estimatedDimensions": {
+        "width": 15,
+        "height": 11,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.624008,
+          "matchingFeatures": 120,
+          "paperBoundsInPreview": [
+            171.0,
+            103.0,
+            1994.0,
+            1495.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-371",
@@ -263,7 +432,28 @@
         "height": 4284,
         "captureDate": "2026:10:12 12:01:58"
       },
-      "alt": "A smiling man in glasses and headphones against a blue background"
+      "alt": "A smiling man in glasses and headphones against a blue background",
+      "estimatedDimensions": {
+        "width": 15,
+        "height": 12,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.622345,
+          "matchingFeatures": 87,
+          "paperBoundsInPreview": [
+            285.0,
+            53.0,
+            2074.0,
+            1479.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-364",
@@ -290,7 +480,28 @@
       },
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "inscription": "Max Keiser & Michael Saylor",
-      "year": 2025
+      "year": 2025,
+      "estimatedDimensions": {
+        "width": 15,
+        "height": 12,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.636,
+          "matchingFeatures": 101,
+          "paperBoundsInPreview": [
+            171.0,
+            100.0,
+            2077.0,
+            1557.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-366",
@@ -316,7 +527,28 @@
         "captureDate": "2026:10:12 12:03:27"
       },
       "alt": "A gray-haired man in a suit looking to the side",
-      "inscription": "RFK"
+      "inscription": "RFK",
+      "estimatedDimensions": {
+        "width": 12,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.573786,
+          "matchingFeatures": 112,
+          "paperBoundsInPreview": [
+            244.0,
+            229.0,
+            1576.0,
+            1891.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-367",
@@ -342,7 +574,28 @@
         "captureDate": "2026:10:12 12:04:17"
       },
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
-      "inscription": "Josie, The Redheaded Libertarian"
+      "inscription": "Josie, The Redheaded Libertarian",
+      "estimatedDimensions": {
+        "width": 12,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.628179,
+          "matchingFeatures": 112,
+          "paperBoundsInPreview": [
+            115.0,
+            245.0,
+            1569.0,
+            2060.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-362",
@@ -369,7 +622,28 @@
       },
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "inscription": "Max Keiser & Stacey Herbert",
-      "year": 2025
+      "year": 2025,
+      "estimatedDimensions": {
+        "width": 15,
+        "height": 12,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.658123,
+          "matchingFeatures": 104,
+          "paperBoundsInPreview": [
+            205.0,
+            54.0,
+            2157.0,
+            1540.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-412",
@@ -396,7 +670,28 @@
       },
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "inscription": "Brekkie Hoisting Orange Calcite B",
-      "year": 2025
+      "year": 2025,
+      "estimatedDimensions": {
+        "width": 15,
+        "height": 12,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.673469,
+          "matchingFeatures": 101,
+          "paperBoundsInPreview": [
+            210.0,
+            54.0,
+            2133.0,
+            1563.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-373",
@@ -421,7 +716,28 @@
         "height": 5712,
         "captureDate": "2026:10:12 12:06:46"
       },
-      "alt": "A man in a colorful cap wearing a headset microphone"
+      "alt": "A man in a colorful cap wearing a headset microphone",
+      "estimatedDimensions": {
+        "width": 12,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.634055,
+          "matchingFeatures": 114,
+          "paperBoundsInPreview": [
+            140.0,
+            136.0,
+            1598.0,
+            2023.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-375",
@@ -447,7 +763,28 @@
         "captureDate": "2026:10:12 12:07:20"
       },
       "alt": "A woman with long dark hair looking upward against a blue background",
-      "reviewNote": "Handwritten title spelling needs confirmation."
+      "reviewNote": "Handwritten title spelling needs confirmation.",
+      "estimatedDimensions": {
+        "width": 11,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.616478,
+          "matchingFeatures": 94,
+          "paperBoundsInPreview": [
+            102.0,
+            229.0,
+            1475.0,
+            2044.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-385",
@@ -474,7 +811,28 @@
       },
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "inscription": "Holding the Line",
-      "year": 2024
+      "year": 2024,
+      "estimatedDimensions": {
+        "width": 12,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.595642,
+          "matchingFeatures": 80,
+          "paperBoundsInPreview": [
+            94.0,
+            241.0,
+            1501.0,
+            1980.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-386",
@@ -501,7 +859,28 @@
       },
       "alt": "A man with close-cropped hair looking upward",
       "inscription": "Holding the Line #2",
-      "year": 2025
+      "year": 2025,
+      "estimatedDimensions": {
+        "width": 11,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.643373,
+          "matchingFeatures": 104,
+          "paperBoundsInPreview": [
+            134.0,
+            183.0,
+            1568.0,
+            2095.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-387",
@@ -528,7 +907,28 @@
       },
       "alt": "A woman with long dark hair against a blue background",
       "inscription": "Tulsi Gabbard #1",
-      "year": 2025
+      "year": 2025,
+      "estimatedDimensions": {
+        "width": 12,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.611334,
+          "matchingFeatures": 104,
+          "paperBoundsInPreview": [
+            132.0,
+            290.0,
+            1528.0,
+            2079.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-389",
@@ -555,7 +955,28 @@
       },
       "alt": "A smiling woman with dark hair against a dark background",
       "inscription": "Tulsi Gabbard #2",
-      "year": 2025
+      "year": 2025,
+      "estimatedDimensions": {
+        "width": 12,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.632301,
+          "matchingFeatures": 96,
+          "paperBoundsInPreview": [
+            89.0,
+            238.0,
+            1558.0,
+            2072.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-390",
@@ -582,7 +1003,28 @@
       },
       "alt": "An older man in a suit and tie seen from below",
       "inscription": "Ron Paul",
-      "year": 2025
+      "year": 2025,
+      "estimatedDimensions": {
+        "width": 12,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.632491,
+          "matchingFeatures": 113,
+          "paperBoundsInPreview": [
+            134.0,
+            230.0,
+            1575.0,
+            2110.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-226",
@@ -607,7 +1049,8 @@
         "height": 3750,
         "captureDate": "2026:10:12 12:21:11"
       },
-      "alt": "A bearded man in a colorful hat and scarf seated outdoors"
+      "alt": "A bearded man in a colorful hat and scarf seated outdoors",
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
     },
     {
       "id": "archived-painting-354",
@@ -632,7 +1075,8 @@
         "height": 5712,
         "captureDate": "2026:10:12 12:22:58"
       },
-      "alt": "A lion’s face rendered in vivid pink, yellow, and blue strokes"
+      "alt": "A lion’s face rendered in vivid pink, yellow, and blue strokes",
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
     },
     {
       "id": "archived-painting-249",
@@ -688,7 +1132,8 @@
         "height": 5712,
         "captureDate": "2026:10:12 12:27:06"
       },
-      "alt": "Two people leaning toward one another in blue and ochre tones"
+      "alt": "Two people leaning toward one another in blue and ochre tones",
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
     },
     {
       "id": "archived-painting-75",
@@ -713,7 +1158,28 @@
         "height": 5712,
         "captureDate": "2026:10:12 12:27:38"
       },
-      "alt": "A smiling woman holding two drinks against a sunset"
+      "alt": "A smiling woman holding two drinks against a sunset",
+      "estimatedDimensions": {
+        "width": 14,
+        "height": 20,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.510032,
+          "matchingFeatures": 80,
+          "paperBoundsInPreview": [
+            125.0,
+            136.0,
+            1551.0,
+            2091.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-76",
@@ -738,7 +1204,28 @@
         "height": 5712,
         "captureDate": "2026:10:12 12:28:09"
       },
-      "alt": "A person in a straw hat seated cross-legged on a boat"
+      "alt": "A person in a straw hat seated cross-legged on a boat",
+      "estimatedDimensions": {
+        "width": 15,
+        "height": 19,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.513906,
+          "matchingFeatures": 73,
+          "paperBoundsInPreview": [
+            47.0,
+            83.0,
+            1590.0,
+            2028.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-img-1608",
@@ -765,7 +1252,15 @@
       },
       "alt": "A white-haired man with round glasses and a striped scarf",
       "inscription": "My Dad, Paul Murphy",
-      "year": 2025
+      "year": 2025,
+      "cataloguedDimensions": {
+        "width": 15,
+        "height": 24,
+        "unit": "in",
+        "sourceProductId": "painting-portrait-with-scarf",
+        "verifiedImageMatch": true,
+        "note": "Previously catalogued size; not newly measured from this photograph."
+      }
     },
     {
       "id": "archived-painting-416",
@@ -791,7 +1286,28 @@
         "captureDate": "2026:10:12 12:40:03"
       },
       "alt": "A man beside a polished orange Bitcoin sculpture",
-      "inscription": "Brekkie Finishing Orange Calcite B"
+      "inscription": "Brekkie Finishing Orange Calcite B",
+      "estimatedDimensions": {
+        "width": 24,
+        "height": 15,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.441921,
+          "matchingFeatures": 53,
+          "paperBoundsInPreview": [
+            56.0,
+            216.0,
+            2113.0,
+            1516.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-img-1612",
@@ -818,7 +1334,15 @@
       },
       "alt": "A figure in an elaborate feathered headdress beneath a glowing bird",
       "inscription": "Bounty of Satoshi: Achievement",
-      "year": 2024
+      "year": 2024,
+      "cataloguedDimensions": {
+        "width": 24,
+        "height": 48,
+        "unit": "in",
+        "sourceProductId": "painting-phoenix-rising",
+        "verifiedImageMatch": true,
+        "note": "Previously catalogued size; not newly measured from this photograph."
+      }
     },
     {
       "id": "archived-painting-246",
@@ -939,7 +1463,28 @@
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "inscription": "Devo in Front of the Mayan Warrior",
       "year": 2022,
-      "otherMarks": "A dimension inscription is present, but its first value is overwritten and needs confirmation."
+      "otherMarks": "A dimension inscription is present, but its first value is overwritten and needs confirmation.",
+      "estimatedDimensions": {
+        "width": 15,
+        "height": 24,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.411261,
+          "matchingFeatures": 66,
+          "paperBoundsInPreview": [
+            227.0,
+            131.0,
+            1453.0,
+            2031.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     },
     {
       "id": "archived-painting-438",
@@ -1244,7 +1789,8 @@
       },
       "alt": "A person meditating beside a lake in golden morning light",
       "inscription": "Self Portrait, Meditation at Denny Blaine",
-      "year": 2020
+      "year": 2020,
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
     },
     {
       "id": "archived-painting-15",
@@ -1424,7 +1970,8 @@
         "captureDate": "2026:10:12 13:06:52"
       },
       "alt": "A panoramic mountain and water landscape with a small seated figure",
-      "pairingNote": "Back photographed immediately before the JPEG master; preserved sequence pairs."
+      "pairingNote": "Back photographed immediately before the JPEG master; preserved sequence pairs.",
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
     },
     {
       "id": "archived-painting-4",
@@ -1450,7 +1997,8 @@
         "captureDate": "2026:10:12 13:09:13"
       },
       "alt": "An orange mountain ridge beneath a pale sunset sky",
-      "pairingNote": "Back photographed immediately before the JPEG master; preserved sequence pairs."
+      "pairingNote": "Back photographed immediately before the JPEG master; preserved sequence pairs.",
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
     },
     {
       "id": "archived-painting-1",
@@ -1475,7 +2023,8 @@
         "height": 3024,
         "captureDate": "2026:10:12 13:12:02"
       },
-      "alt": "A panoramic mountain landscape with a person seated beside the water"
+      "alt": "A panoramic mountain landscape with a person seated beside the water",
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
     },
     {
       "id": "archived-painting-217",
@@ -1500,7 +2049,28 @@
         "height": 5712,
         "captureDate": "2026:10:12 13:14:15"
       },
-      "alt": "A narrow garden scene with trees, a pavilion, and a pond"
+      "alt": "A narrow garden scene with trees, a pavilion, and a pond",
+      "estimatedDimensions": {
+        "width": 9,
+        "height": 24,
+        "unit": "in",
+        "method": "artist-stamp-calibration",
+        "approximate": true,
+        "rounding": "nearest inch",
+        "tolerancePercent": 10,
+        "reference": "archive-dimension-calibration.json",
+        "evidence": {
+          "stampScale": 0.333171,
+          "matchingFeatures": 40,
+          "paperBoundsInPreview": [
+            498.0,
+            427.0,
+            1069.0,
+            1965.0
+          ],
+          "previewLongEdge": 2200
+        }
+      }
     }
   ]
 }

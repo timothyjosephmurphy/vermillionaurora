@@ -1,0 +1,259 @@
+{
+  "reviewedAt": "2026-10-12",
+  "method": "Compare the same printed artist-name stamp in each reverse photograph with a SIFT/RANSAC similarity transform; measure the sheet outline through its middle third; normalize the pixel-to-unit scale against the 18 legible dimension inscriptions. Exclude poorly matched stamps and substantially clipped sheet outlines.",
+  "unit": "in",
+  "unitEvidence": {
+    "archiveIndex": 19,
+    "matchingProductId": "burning-man-temple-2022-daytime",
+    "cataloguedSize": {
+      "width": 45,
+      "height": 24,
+      "unit": "in"
+    },
+    "verification": "JPEG composition visually matches the existing catalogued painting and its 24 × 45 reverse inscription."
+  },
+  "referenceImage": "images/Archive/IMG_1527.heic",
+  "referencePreviewSize": [
+    1737,
+    2200
+  ],
+  "referenceTextCrop": [
+    610,
+    955,
+    1220,
+    1165
+  ],
+  "referencePixelsPerInch": 194.535,
+  "calibrationMedianAxisErrorPercent": 1.48,
+  "displayRounding": "nearest inch",
+  "estimateTolerancePercent": 10,
+  "limitations": "Approximate paper dimensions only. Stamp impressions, paper curvature, perspective and cropping prevent exact measurement; these estimates must not drive print or shipping sizes. The tolerance is a practical allowance, not a statistical confidence interval.",
+  "calibrationPaintings": [
+    {
+      "index": 249,
+      "inscription": [
+        13.0,
+        24.0
+      ],
+      "referencePixelsPerUnit": [
+        187.08,
+        184.51
+      ]
+    },
+    {
+      "index": 246,
+      "inscription": [
+        13.5,
+        25.75
+      ],
+      "referencePixelsPerUnit": [
+        192.44,
+        177.23
+      ]
+    },
+    {
+      "index": 248,
+      "inscription": [
+        14.0,
+        23.75
+      ],
+      "referencePixelsPerUnit": [
+        196.97,
+        190.03
+      ]
+    },
+    {
+      "index": 247,
+      "inscription": [
+        15.0,
+        24.0
+      ],
+      "referencePixelsPerUnit": [
+        194.39,
+        182.15
+      ]
+    },
+    {
+      "index": 438,
+      "inscription": [
+        14.75,
+        23.25
+      ],
+      "referencePixelsPerUnit": [
+        198.53,
+        198.66
+      ]
+    },
+    {
+      "index": 437,
+      "inscription": [
+        14.75,
+        23.25
+      ],
+      "referencePixelsPerUnit": [
+        195.5,
+        200.31
+      ]
+    },
+    {
+      "index": 433,
+      "inscription": [
+        14.75,
+        23.25
+      ],
+      "referencePixelsPerUnit": [
+        191.95,
+        198.41
+      ]
+    },
+    {
+      "index": 436,
+      "inscription": [
+        13.75,
+        24.75
+      ],
+      "referencePixelsPerUnit": [
+        209.15,
+        186.16
+      ]
+    },
+    {
+      "index": 90,
+      "inscription": [
+        14.75,
+        23.25
+      ],
+      "referencePixelsPerUnit": [
+        197.5,
+        201.27
+      ]
+    },
+    {
+      "index": 62,
+      "inscription": [
+        19.25,
+        21.5
+      ],
+      "referencePixelsPerUnit": [
+        194.68,
+        190.85
+      ]
+    },
+    {
+      "index": 241,
+      "inscription": [
+        20.5,
+        26.0
+      ],
+      "referencePixelsPerUnit": [
+        192.79,
+        195.38
+      ]
+    },
+    {
+      "index": 66,
+      "inscription": [
+        22.0,
+        26.0
+      ],
+      "referencePixelsPerUnit": [
+        193.02,
+        201.42
+      ]
+    },
+    {
+      "index": 301,
+      "inscription": [
+        22.0,
+        24.0
+      ],
+      "referencePixelsPerUnit": [
+        199.86,
+        191.75
+      ]
+    },
+    {
+      "index": 15,
+      "inscription": [
+        24.0,
+        44.5
+      ],
+      "referencePixelsPerUnit": [
+        194.77,
+        200.4
+      ]
+    },
+    {
+      "index": 18,
+      "inscription": [
+        24.0,
+        44.5
+      ],
+      "referencePixelsPerUnit": [
+        192.98,
+        194.19
+      ]
+    },
+    {
+      "index": 19,
+      "inscription": [
+        24.0,
+        45.0
+      ],
+      "referencePixelsPerUnit": [
+        193.22,
+        198.31
+      ]
+    },
+    {
+      "index": 20,
+      "inscription": [
+        24.0,
+        45.0
+      ],
+      "referencePixelsPerUnit": [
+        193.36,
+        195.98
+      ]
+    },
+    {
+      "index": 22,
+      "inscription": [
+        24.0,
+        45.0
+      ],
+      "referencePixelsPerUnit": [
+        193.44,
+        196.03
+      ]
+    }
+  ],
+  "estimatedIndices": [
+    193,
+    308,
+    307,
+    233,
+    363,
+    368,
+    369,
+    370,
+    371,
+    364,
+    366,
+    367,
+    362,
+    412,
+    373,
+    375,
+    385,
+    386,
+    387,
+    389,
+    390,
+    75,
+    76,
+    416,
+    133,
+    217
+  ]
+}
