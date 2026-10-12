@@ -1,0 +1,69 @@
+name: Prepare Archived Paintings
+on:
+  push:
+    branches: [codex/archived-paintings]
+    paths: ['catalog/archive-paintings.json', 'scripts/prepare-archive-display.py', '.github/workflows/prepare-painting-archive.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: prepare-painting-archive
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/codex/archived-paintings' && (github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[prepare-archive]'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/archived-paintings
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow==12.3.0
+      - name: Deploy authenticated read-only archive reader
+        id: reader
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          command: deploy --config scripts/archive-reader/wrangler.jsonc
+      - name: Generate verified display images through authenticated R2 reads
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/export-painting-archive.mjs --display
+      - name: Remove temporary archive reader
+        if: always() && steps.reader.outcome == 'success'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/export-painting-archive.mjs --cleanup
+      - run: npm ci
+      - run: npm run build
+      - name: Validate archive pages and records
+        run: node --test tests/archive-paintings.test.mjs tests/catalog.test.mjs
+      - name: Commit generated images and catalogs to the archive branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add static/display/archived-painting-*.webp scripts/display-images.json cloudflare/checkout-catalog.mjs cloudflare/commission-deposits.mjs cloudflare/print-catalog.mjs cloudflare/etsy-print-source.mjs cloudflare/etsy-sync-source.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m "Prepare verified archive display images and generated catalogs"
+            git push origin HEAD:codex/archived-paintings
+          fi
+      - name: Create archive browser previews
+        run: |
+          npx playwright install --only-shell chromium
+          node tests/archive-paintings.browser-test.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: archived-paintings-browser-previews
+          path: /tmp/archived-paintings-*.png
+          if-no-files-found: ignore
+          retention-days: 3
