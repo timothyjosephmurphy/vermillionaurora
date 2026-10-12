@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/BookGalleryLayout.astro';
 import manifest from '../../../catalog/book-galleries.json';
+import {archivePaintings,archivePreview} from '../../../catalog/archive-products.mjs';
 import {byId} from '../../../catalog/catalog.mjs';
 import {config,papers,printOptions} from '../../../catalog/prints.mjs';
 import {sectionArtworkIds} from '../../data/canonical-artworks.mjs';
@@ -35,9 +36,11 @@ const bookTitles=Object.fromEntries(manifest.books.map(book=>[book.id,book.title
           </a>
         </li>;
       })}
+      <li class="book-gallery-card" data-product="/gallery/archived/" data-caption={`${archivePaintings.length} paintings from the studio archive`}><a href="/gallery/archived/"><img src={archivePreview(archivePaintings[0],480)} alt="Archived Paintings by TJ Murphy" loading="lazy" decoding="async"/><h3>Archived Paintings</h3><p>{archivePaintings.length} works · From the studio archive</p></a></li>
     </ul>
   </section>
   <nav class="book-gallery-links" aria-label="Read the watercolor books">
     {manifest.books.map(book=><a href={`/products/${book.id}/`}>Read {book.title} →</a>)}
   </nav>
 </Layout>
+
