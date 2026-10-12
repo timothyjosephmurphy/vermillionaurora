@@ -1,0 +1,1506 @@
+{
+  "source": {
+    "bucket": "images",
+    "prefix": "images/Archive/",
+    "reviewedAt": "2026-10-12",
+    "indexRule": "Use the hash-mark number immediately beneath the artist stamp; retain older corner markings separately.",
+    "dimensionRule": "Preserve handwritten measurements verbatim; no unit is inferred."
+  },
+  "paintings": [
+    {
+      "id": "archived-painting-193",
+      "order": 1,
+      "index": 193,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1526.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1526.jpg",
+        "sha256": "b359eb147108c36e50c722a17f3d45a1ebd0f0cbaf58e8dfaaecc5bd1c6bd33d",
+        "size": 5394443,
+        "width": 5329,
+        "height": 5825,
+        "captureDate": "2026:10:12 11:26:32"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1527.heic",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1527.heic",
+        "sha256": "17c049a46b7cd8a1b8d1aa5fa8c508859a48c47d60e20284a6bfcc5d412d24c7",
+        "size": 3388888,
+        "width": 5492,
+        "height": 6954,
+        "captureDate": "2026:10:12 11:26:40"
+      },
+      "alt": "A smiling woman with her hair tied up, painted in muted brown and purple tones"
+    },
+    {
+      "id": "archived-painting-308",
+      "order": 2,
+      "index": 308,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1545.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1545.jpg",
+        "sha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
+        "size": 5678236,
+        "width": 4076,
+        "height": 5375,
+        "captureDate": "2026:10:12 11:42:02"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1546.heic",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1546.heic",
+        "sha256": "067c18009e7e1554d971744270f1ace9cd1225356339d4c679bc15178580a60b",
+        "size": 1798408,
+        "width": 4048,
+        "height": 4915,
+        "captureDate": "2026:10:12 11:42:12"
+      },
+      "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
+      "inscription": "Self Portrait on Goat Lake"
+    },
+    {
+      "id": "archived-painting-307",
+      "order": 3,
+      "index": 307,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1547.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1547.jpg",
+        "sha256": "74b889871f4a2aacebfea38f8b5ae1be8ce5f1f03c9c820e0172d25114e138b9",
+        "size": 8680530,
+        "width": 6833,
+        "height": 5116,
+        "captureDate": "2026:10:12 11:45:11"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1548.heic",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1548.heic",
+        "sha256": "ba8ef1feb26fc8e7739acade509ad3f010b4c514ebd193c47d2630fc79a518f4",
+        "size": 1910577,
+        "width": 5293,
+        "height": 4006,
+        "captureDate": "2026:10:12 11:45:21"
+      },
+      "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
+      "inscription": "Cross on Maui",
+      "year": 2021
+    },
+    {
+      "id": "archived-painting-233",
+      "order": 4,
+      "index": 233,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1552.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1552.jpg",
+        "sha256": "a5cfc0849615388546a9ec9772b91a5d485057f77ec3de9c2503385fc3893b36",
+        "size": 3674493,
+        "width": 3413,
+        "height": 4801,
+        "captureDate": "2026:10:12 11:50:41"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1553.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1553.HEIC",
+        "sha256": "5a2b7438e1534eebf91d9abfc9080fe81d6879d6c68536359b5d362e7e770992",
+        "size": 2468088,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 11:50:50"
+      },
+      "alt": "A man in a flat cap and Stanford sweatshirt against a deep blue background"
+    },
+    {
+      "id": "archived-painting-img-1555",
+      "order": 5,
+      "index": null,
+      "indexStatus": "not-visible",
+      "front": {
+        "key": "images/Archive/IMG_1555.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1555.jpg",
+        "sha256": "140afceb54fcf91b85e0778adfaff80793eb576d4d1a005b4ca5717e7cf6d0a1",
+        "size": 6204282,
+        "width": 5574,
+        "height": 4504,
+        "captureDate": "2026:10:12 11:52:36"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1556.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1556.HEIC",
+        "sha256": "5e7e79255ed8bc23d54b0ad833c8a8c48cec793da60b72913370d714d11c2b68",
+        "size": 2707285,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 11:52:46"
+      },
+      "alt": "A seated man in a brimmed hat with his hands raised beside a sunlit woodland path",
+      "inscription": "Dad Meditating in Yellowstone",
+      "year": 2026
+    },
+    {
+      "id": "archived-painting-363",
+      "order": 6,
+      "index": 363,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1557.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1557.jpg",
+        "sha256": "c395c1c2a73621f0eba699af365ff267e7e04b4d7af6d133ec931f03a98938d0",
+        "size": 5199848,
+        "width": 3589,
+        "height": 4899,
+        "captureDate": "2026:10:12 11:53:54"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1558.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1558.HEIC",
+        "sha256": "f4aaabfd8243310cd6d138f70318ff0347056bc83d3e4a4af0961857fbe27558",
+        "size": 2290699,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 11:54:13"
+      },
+      "alt": "A seated man in a cap with a child perched above him beside a window",
+      "inscription": "Elon & Lil’ X in the Oval Office"
+    },
+    {
+      "id": "archived-painting-368",
+      "order": 7,
+      "index": 368,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1562.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1562.jpg",
+        "sha256": "4bf6fd5e67133125a7715aa9aa4e67dd313fee4888717a8ff7855fdabc219d13",
+        "size": 4437082,
+        "width": 3674,
+        "height": 4881,
+        "captureDate": "2026:10:12 11:56:12"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1563.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1563.HEIC",
+        "sha256": "0119996f3ee0dbd4e492ffdbf765ba5dd3fe0e57c78176b1713b629d7cb23c0e",
+        "size": 2343401,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 11:56:20"
+      },
+      "alt": "A smiling woman wearing sunglasses against a blue background",
+      "reviewNote": "Handwritten title spelling needs confirmation."
+    },
+    {
+      "id": "archived-painting-369",
+      "order": 8,
+      "index": 369,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1564.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1564.jpg",
+        "sha256": "3b82c491eb2e0d50fc70d1fbb0cfe5581ab1971fcbed338850ca6ed6b7700f55",
+        "size": 4303049,
+        "width": 5072,
+        "height": 3673,
+        "captureDate": "2026:10:12 11:57:01"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1565.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1565.HEIC",
+        "sha256": "f6d68ac84bf0709672a27d15db05e58714da3e5733fa0f55c5e656f729dcb79e",
+        "size": 2737587,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 11:57:17"
+      },
+      "alt": "A bearded man with reddish hair and a rust-colored shirt"
+    },
+    {
+      "id": "archived-painting-370",
+      "order": 9,
+      "index": 370,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1566.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1566.jpg",
+        "sha256": "4b6a2895e642a6103cba97fdfc26f05f48f0f2121136f3db346f87b90e151445",
+        "size": 5276052,
+        "width": 5389,
+        "height": 4051,
+        "captureDate": "2026:10:12 11:58:03"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1567.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1567.HEIC",
+        "sha256": "72d13bc82f58949f007efc537078677c28b1643919511a4c8ad22f6222b610b3",
+        "size": 2595124,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 11:58:48"
+      },
+      "alt": "A laughing man wearing headphones beside a green frog puppet",
+      "inscription": "Ben & Kermit & Swan"
+    },
+    {
+      "id": "archived-painting-371",
+      "order": 10,
+      "index": 371,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1568.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1568.jpg",
+        "sha256": "c22a2fde103c8c65575e5b871116318b6e87c6d8ac914177b3373cb84a673711",
+        "size": 3761414,
+        "width": 4815,
+        "height": 3533,
+        "captureDate": "2026:10:12 12:01:44"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1569.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1569.HEIC",
+        "sha256": "d82c5bcacd683be3f8386b4c0f256041482c403c7a2473734497cece98fdd0f3",
+        "size": 2671203,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:01:58"
+      },
+      "alt": "A smiling man in glasses and headphones against a blue background"
+    },
+    {
+      "id": "archived-painting-364",
+      "order": 11,
+      "index": 364,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1570.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1570.jpg",
+        "sha256": "b29e07d3045e85d048b268939aa32ca68a492f7a88b694408491e4969250181a",
+        "size": 6046595,
+        "width": 4930,
+        "height": 3624,
+        "captureDate": "2026:10:12 12:02:44"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1571.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1571.HEIC",
+        "sha256": "c39baa802446985d972d9ad1aca88ad8ad4d161d2133b196466c210a47b8864f",
+        "size": 2610319,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:02:55"
+      },
+      "alt": "Two smiling men, one in a suit and one in a white cap",
+      "inscription": "Max Keiser & Michael Saylor",
+      "year": 2025
+    },
+    {
+      "id": "archived-painting-366",
+      "order": 12,
+      "index": 366,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1572.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1572.jpg",
+        "sha256": "c0436ee7e503922435d19062a877a660c2d4d1fd21d412725010fa4cbf21899e",
+        "size": 4871381,
+        "width": 3648,
+        "height": 5114,
+        "captureDate": "2026:10:12 12:03:09"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1573.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1573.HEIC",
+        "sha256": "52804ef43db51b0457f6b7bfac3b5d345e7143cfbb74daa6f87e1a94da638aee",
+        "size": 2304458,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:03:27"
+      },
+      "alt": "A gray-haired man in a suit looking to the side",
+      "inscription": "RFK"
+    },
+    {
+      "id": "archived-painting-367",
+      "order": 13,
+      "index": 367,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1574.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1574.jpg",
+        "sha256": "64e27601d760271561cd6a29135a46e368d669d2d9dfa7360337d561aa2ad8f8",
+        "size": 3802233,
+        "width": 3605,
+        "height": 4955,
+        "captureDate": "2026:10:12 12:04:08"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1575.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1575.HEIC",
+        "sha256": "cb532ee7631f01aee6a98c2187733f6fc4c6cfa4275265dd959a37caa61348e0",
+        "size": 2374469,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:04:17"
+      },
+      "alt": "A red-haired woman wearing headphones and speaking into a microphone",
+      "inscription": "Josie, The Redheaded Libertarian"
+    },
+    {
+      "id": "archived-painting-362",
+      "order": 14,
+      "index": 362,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1576.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1576.jpg",
+        "sha256": "495def835824cee6f5ddabd2e49dac28b6a11588900c98d69c8294f33fe724ac",
+        "size": 5667715,
+        "width": 5236,
+        "height": 3733,
+        "captureDate": "2026:10:12 12:05:20"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1577.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1577.HEIC",
+        "sha256": "59b8244ddb0b993fa819a3c2ac1d2c4a2d475dd07ff8c5ca861abe980e376561",
+        "size": 2436513,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:05:30"
+      },
+      "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
+      "inscription": "Max Keiser & Stacey Herbert",
+      "year": 2025
+    },
+    {
+      "id": "archived-painting-412",
+      "order": 15,
+      "index": 412,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1578.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1578.jpg",
+        "sha256": "49077623a9eebab719aa89b099be7bcf78a21f03cb7ea7e247ac7f55f03293db",
+        "size": 4072440,
+        "width": 5063,
+        "height": 3662,
+        "captureDate": "2026:10:12 12:06:11"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1579.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1579.HEIC",
+        "sha256": "d6c6e630ae9f3504beb87c2b558a18f8e960a7b085f04b4cfe9949def7030681",
+        "size": 2471915,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:06:21"
+      },
+      "alt": "A man working on a large pale orange Bitcoin sculpture",
+      "inscription": "Brekkie Hoisting Orange Calcite B",
+      "year": 2025
+    },
+    {
+      "id": "archived-painting-373",
+      "order": 16,
+      "index": 373,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1580.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1580.jpg",
+        "sha256": "aeb9c6621442e41a7670b8de9d31b17b2bae4cb8f40e8c9e2dd849f2bbeaca0c",
+        "size": 3962460,
+        "width": 3581,
+        "height": 4940,
+        "captureDate": "2026:10:12 12:06:36"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1581.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1581.HEIC",
+        "sha256": "a9066f92588ed51dd55292996ba768604eeacddb7dfd68ed5767f55e45c72c08",
+        "size": 2456578,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:06:46"
+      },
+      "alt": "A man in a colorful cap wearing a headset microphone"
+    },
+    {
+      "id": "archived-painting-375",
+      "order": 17,
+      "index": 375,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1582.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1582.jpg",
+        "sha256": "73624bb4c2211042e2e50e91fbbc6de8795cf5765c54181f41f643ca4cabe292",
+        "size": 3725776,
+        "width": 3825,
+        "height": 5076,
+        "captureDate": "2026:10:12 12:07:12"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1583.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1583.HEIC",
+        "sha256": "da090b458bf9f9c480c0d9a9ef9b45f846073b6285d8695cc71b82d03e12d69e",
+        "size": 2574869,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:07:20"
+      },
+      "alt": "A woman with long dark hair looking upward against a blue background",
+      "reviewNote": "Handwritten title spelling needs confirmation."
+    },
+    {
+      "id": "archived-painting-385",
+      "order": 18,
+      "index": 385,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1584.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1584.jpg",
+        "sha256": "6e037122c56177197ba12817fa36682ab1a74b1ded40830c99a02432f3b3ea99",
+        "size": 3777819,
+        "width": 3518,
+        "height": 4802,
+        "captureDate": "2026:10:12 12:07:35"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1585.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1585.HEIC",
+        "sha256": "6f2e9eb0e2af1470ecac7b7445255211293d189d9b811257b6e6cbbd19c3a7c9",
+        "size": 2480088,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:08:04"
+      },
+      "alt": "A man in a brown shirt with sunglasses resting on his head",
+      "inscription": "Holding the Line",
+      "year": 2024
+    },
+    {
+      "id": "archived-painting-386",
+      "order": 19,
+      "index": 386,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1586.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1586.jpg",
+        "sha256": "30d546d939ec9a4e26f594f42706d2f067312dc19bc5d93ab512d8d860d9b914",
+        "size": 3628096,
+        "width": 3598,
+        "height": 4906,
+        "captureDate": "2026:10:12 12:08:30"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1587.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1587.HEIC",
+        "sha256": "f62b725ab0e5f370d75515cea2c990408fcbf3ea853b459031c42a9bf87f8ce2",
+        "size": 2388350,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:08:38"
+      },
+      "alt": "A man with close-cropped hair looking upward",
+      "inscription": "Holding the Line #2",
+      "year": 2025
+    },
+    {
+      "id": "archived-painting-387",
+      "order": 20,
+      "index": 387,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1588.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1588.jpg",
+        "sha256": "c9bbb3f33ff4f860e9846a7479cb19550c230739149e5bbb3275ef7e4cb0f847",
+        "size": 3306068,
+        "width": 3471,
+        "height": 4702,
+        "captureDate": "2026:10:12 12:09:08"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1589.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1589.HEIC",
+        "sha256": "09087999a46cc5e9b07b578d04e351414c6b8ad95432f4c6d56a30d157bc5a8a",
+        "size": 2424989,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:09:17"
+      },
+      "alt": "A woman with long dark hair against a blue background",
+      "inscription": "Tulsi Gabbard #1",
+      "year": 2025
+    },
+    {
+      "id": "archived-painting-389",
+      "order": 21,
+      "index": 389,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1590.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1590.jpg",
+        "sha256": "8bf2e4be17af62dd9bccf1e9d2f9aff40bac6ea178e0d5b0ef8610702d55c3c9",
+        "size": 3043262,
+        "width": 3609,
+        "height": 4846,
+        "captureDate": "2026:10:12 12:09:46"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1591.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1591.HEIC",
+        "sha256": "669bd904158497c9b45a6c064a395e2c974d671a9227e85d0e12cc6af5f52fa9",
+        "size": 2411800,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:09:55"
+      },
+      "alt": "A smiling woman with dark hair against a dark background",
+      "inscription": "Tulsi Gabbard #2",
+      "year": 2025
+    },
+    {
+      "id": "archived-painting-390",
+      "order": 22,
+      "index": 390,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1592.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1592.jpg",
+        "sha256": "5030c993aeaef08722c6dd789360a6bfcf46cd82ce48612ef2444a140c3e6d30",
+        "size": 3651314,
+        "width": 3543,
+        "height": 4950,
+        "captureDate": "2026:10:12 12:10:19"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1594.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1594.HEIC",
+        "sha256": "84790ef2e8884c0a73d2a5a49274e7ac0c36b630445272f75714202d10f875bf",
+        "size": 2387795,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:10:32"
+      },
+      "alt": "An older man in a suit and tie seen from below",
+      "inscription": "Ron Paul",
+      "year": 2025
+    },
+    {
+      "id": "archived-painting-226",
+      "order": 23,
+      "index": 226,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1595.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1595.jpg",
+        "sha256": "58877194b4cb1a4caa6f655c50e29aa546c154fb9fb58223b09220a613d1727e",
+        "size": 7702215,
+        "width": 7232,
+        "height": 5083,
+        "captureDate": "2026:10:12 12:20:58"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1596.heic",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1596.heic",
+        "sha256": "fdceb02df184c159701215089b58654e917fe702183ab842027ce25463bcd60d",
+        "size": 1984477,
+        "width": 5322,
+        "height": 3750,
+        "captureDate": "2026:10:12 12:21:11"
+      },
+      "alt": "A bearded man in a colorful hat and scarf seated outdoors"
+    },
+    {
+      "id": "archived-painting-354",
+      "order": 24,
+      "index": 354,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1597.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1597.jpg",
+        "sha256": "020829831bba99f303622a9351e674b4bf0a3794f5995ecf744bdae4179eda33",
+        "size": 10438209,
+        "width": 5341,
+        "height": 7290,
+        "captureDate": "2026:10:12 12:22:43"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1598.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1598.HEIC",
+        "sha256": "bbe925b00518642a755b373726e1da7cda6b307b63fc8943ba0305f4452bb740",
+        "size": 4156966,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:22:58"
+      },
+      "alt": "A lion’s face rendered in vivid pink, yellow, and blue strokes"
+    },
+    {
+      "id": "archived-painting-249",
+      "order": 25,
+      "index": 249,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1600.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1600.jpg",
+        "sha256": "0d8b905417ca735c995aee98ca4f07a719dfc8b8f4d89a6babf609ae159efa7d",
+        "size": 7089089,
+        "width": 4094,
+        "height": 7647,
+        "captureDate": "2026:10:12 12:26:20"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1601.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1601.HEIC",
+        "sha256": "9c37f232802101073f5863365fd62c476a06f4d475adffcd5eeea2b9d1993e4b",
+        "size": 3907161,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:26:33"
+      },
+      "alt": "A narrow lake winding through wooded blue mountains",
+      "inscription": "Lake in North Cascades",
+      "dimensionsInscription": {
+        "text": "24 × 13",
+        "unit": null
+      },
+      "otherMarks": "An older corner index reads #124; another number is crossed out."
+    },
+    {
+      "id": "archived-painting-73",
+      "order": 26,
+      "index": 73,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1602.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1602.jpg",
+        "sha256": "ce548dec7454c6a31c49a759c41152114abd14e1731fc91f48c9c1e206c2d32c",
+        "size": 7321222,
+        "width": 4372,
+        "height": 7007,
+        "captureDate": "2026:10:12 12:26:56"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1603.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1603.HEIC",
+        "sha256": "b4994f912f601e38277e056c861de25fb82b4a692460297cea870b84bfc9c0fb",
+        "size": 5373646,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:27:06"
+      },
+      "alt": "Two people leaning toward one another in blue and ochre tones"
+    },
+    {
+      "id": "archived-painting-75",
+      "order": 27,
+      "index": 75,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1604.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1604.jpg",
+        "sha256": "09b012e1ac23215f0b5d3d63350ef9a0882e5c3d1680802239e0ad603bc2f2af",
+        "size": 6413491,
+        "width": 4071,
+        "height": 5968,
+        "captureDate": "2026:10:12 12:27:25"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1605.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1605.HEIC",
+        "sha256": "57407764c45248c1b5c11899c1804335b717daa77e81009705ce5acb7b606a48",
+        "size": 2605023,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:27:38"
+      },
+      "alt": "A smiling woman holding two drinks against a sunset"
+    },
+    {
+      "id": "archived-painting-76",
+      "order": 28,
+      "index": 76,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1606.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1606.jpg",
+        "sha256": "64b732c7f9f637d54873d5dc1656279ee18adcf4d17ba5389298e61d6890895e",
+        "size": 5840496,
+        "width": 4232,
+        "height": 5794,
+        "captureDate": "2026:10:12 12:27:58"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1607.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1607.HEIC",
+        "sha256": "459221f7461fab46ac07090b834a2134a87ba0b33e69ed1cdb90e851ff03952b",
+        "size": 2363354,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:28:09"
+      },
+      "alt": "A person in a straw hat seated cross-legged on a boat"
+    },
+    {
+      "id": "archived-painting-img-1608",
+      "order": 29,
+      "index": null,
+      "indexStatus": "not-visible",
+      "front": {
+        "key": "images/Archive/IMG_1608.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1608.jpg",
+        "sha256": "7401a29fec30c8f5333f5830871d8efb867cf0ad3418fd92e1740f65d66f03c1",
+        "size": 5265656,
+        "width": 3610,
+        "height": 6441,
+        "captureDate": "2026:10:12 12:39:17"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1609.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1609.HEIC",
+        "sha256": "4c8a59cc7c15c349c78b6832d137972f877b983112a89a02f8347fd7a3de91f3",
+        "size": 2597923,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:39:25"
+      },
+      "alt": "A white-haired man with round glasses and a striped scarf",
+      "inscription": "My Dad, Paul Murphy",
+      "year": 2025
+    },
+    {
+      "id": "archived-painting-416",
+      "order": 30,
+      "index": 416,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1610.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1610.jpg",
+        "sha256": "a616e8fe5d34df6ce9ddba9e9c389ffee6a97974faea046237220f94c7710e30",
+        "size": 4956536,
+        "width": 6361,
+        "height": 3513,
+        "captureDate": "2026:10:12 12:39:52"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1611.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1611.HEIC",
+        "sha256": "de5452c8992d827d0de2ddcf08bedfa0087f59de72894c39a566ea14bc5b70d3",
+        "size": 2480097,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:40:03"
+      },
+      "alt": "A man beside a polished orange Bitcoin sculpture",
+      "inscription": "Brekkie Finishing Orange Calcite B"
+    },
+    {
+      "id": "archived-painting-img-1612",
+      "order": 31,
+      "index": null,
+      "indexStatus": "not-visible",
+      "front": {
+        "key": "images/Archive/IMG_1612.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1612.jpg",
+        "sha256": "c987f826bbffc0e4dea91ece695bcfab8181cb008757b2e5c9b97c130088b6e1",
+        "size": 6124882,
+        "width": 3476,
+        "height": 6231,
+        "captureDate": "2026:10:12 12:40:28"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1613.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1613.HEIC",
+        "sha256": "ce5dc3bb080fbb6707d8687161a04712f21f51c5024a7ba6433525e798e6ce8a",
+        "size": 2745433,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:40:38"
+      },
+      "alt": "A figure in an elaborate feathered headdress beneath a glowing bird",
+      "inscription": "Bounty of Satoshi: Achievement",
+      "year": 2024
+    },
+    {
+      "id": "archived-painting-246",
+      "order": 32,
+      "index": 246,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1614.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1614.jpg",
+        "sha256": "1aa7d0a3b86d956b6fb23786e2288aa0b1f7e46b71e4babeeb461594eab790c4",
+        "size": 7665613,
+        "width": 4263,
+        "height": 7535,
+        "captureDate": "2026:10:12 12:41:01"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1615.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1615.HEIC",
+        "sha256": "a12aac2e8b42744c42d2c38d9783d4b5915018e7312dd765c8c4fd2bc363b520",
+        "size": 3263660,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:41:58"
+      },
+      "alt": "A sunset over ocean water and a terrace railing",
+      "inscription": "Sunset from Atami, El Salvador #1",
+      "dimensionsInscription": {
+        "text": "13.5 × 25.75",
+        "unit": null
+      },
+      "otherMarks": "Corner also reads “El Salvador Surf #2”, “24 × 13.5”, and #102."
+    },
+    {
+      "id": "archived-painting-248",
+      "order": 33,
+      "index": 248,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1616.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg",
+        "sha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
+        "size": 7583489,
+        "width": 4567,
+        "height": 7703,
+        "captureDate": "2026:10:12 12:42:16"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1617.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1617.HEIC",
+        "sha256": "5dd50b1a3120761414a909b6158d8a2c594893c934005f8db056515873005ca6",
+        "size": 3007091,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:43:06"
+      },
+      "alt": "Yellow light breaking through clouds above the sea",
+      "inscription": "Sunset from Atami, El Salvador #2",
+      "dimensionsInscription": {
+        "text": "14 × 23.75",
+        "unit": null
+      },
+      "otherMarks": "Corner also reads “El Salvador Surf #4” and #104."
+    },
+    {
+      "id": "archived-painting-247",
+      "order": 34,
+      "index": 247,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1618.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1618.jpg",
+        "sha256": "9064d4cf43de15de8bb99b0913e242f8473d59e03f39eb6224c0dc7ab1018920",
+        "size": 6934139,
+        "width": 4764,
+        "height": 7346,
+        "captureDate": "2026:10:12 12:43:30"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1619.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1619.HEIC",
+        "sha256": "f206213c540ca916d52894d73ccb32f70b9d80ab2f4878041e1b0fb2cbea7fdd",
+        "size": 3232137,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:43:41"
+      },
+      "alt": "A golden sunset reflected on the sea beside a curved terrace",
+      "inscription": "Sunset from Atami, El Salvador #3",
+      "dimensionsInscription": {
+        "text": "24 × 15",
+        "unit": null
+      },
+      "otherMarks": "Corner also reads “El Salvador Surf #3”."
+    },
+    {
+      "id": "archived-painting-133",
+      "order": 35,
+      "index": 133,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1620.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1620.jpg",
+        "sha256": "20686e5b976babbe2b5e90a7067f631f6bbbdcdf654e83b6985bdbe7431acc6c",
+        "size": 6285379,
+        "width": 4069,
+        "height": 6834,
+        "captureDate": "2026:10:12 12:44:03"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1621.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1621.HEIC",
+        "sha256": "4d276861661a3334ba2755b8f10cf28d036345907664ed6c8e5a120a4fb1d2bd",
+        "size": 2591472,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:45:08"
+      },
+      "alt": "Festivalgoers in front of a stage with green laser beams",
+      "inscription": "Devo in Front of the Mayan Warrior",
+      "year": 2022,
+      "otherMarks": "A dimension inscription is present, but its first value is overwritten and needs confirmation."
+    },
+    {
+      "id": "archived-painting-438",
+      "order": 36,
+      "index": 438,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1622.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1622.jpg",
+        "sha256": "7b31e9134c311dd8c49a16428df99db5934e05e0bc9753c051ac30586898ad47",
+        "size": 5046080,
+        "width": 6404,
+        "height": 3578,
+        "captureDate": "2026:10:12 12:46:12"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1623.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1623.HEIC",
+        "sha256": "a4b2b304d6e3402066b403748e28546c253104ff2ab4221231c9249554741e3c",
+        "size": 2871764,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:47:13"
+      },
+      "alt": "A tree reflected in still water beneath a dawn sky",
+      "inscription": "Sunrise at Bass Coast 2023 #4",
+      "year": 2023,
+      "dimensionsInscription": {
+        "text": "23.25 × 14.75",
+        "unit": null
+      }
+    },
+    {
+      "id": "archived-painting-437",
+      "order": 37,
+      "index": 437,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1624.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1624.jpg",
+        "sha256": "062ab28f5f678c9bfb0553c710f42785865ec766620e1e51ed79eed96676e661",
+        "size": 4352567,
+        "width": 6318,
+        "height": 3455,
+        "captureDate": "2026:10:12 12:47:43"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1625.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1625.HEIC",
+        "sha256": "50622f2847ae279251daff131fb9808d05a14bee625cc4035988a8f0bf88dd64",
+        "size": 2521258,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:48:16"
+      },
+      "alt": "A lone tree beside a pool under scattered dawn clouds",
+      "inscription": "Sunrise at Bass Coast 2023 #3",
+      "year": 2023,
+      "dimensionsInscription": {
+        "text": "23.25 × 14.75",
+        "unit": null
+      }
+    },
+    {
+      "id": "archived-painting-433",
+      "order": 38,
+      "index": 433,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1626.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1626.jpg",
+        "sha256": "d444d5892a8f556cf83218ca41a096112f34f9fc96a30cf646c7d7e042018a3d",
+        "size": 4476071,
+        "width": 6329,
+        "height": 3423,
+        "captureDate": "2026:10:12 12:48:34"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1627.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1627.HEIC",
+        "sha256": "e47bfd012cf3e558f179434992eff4bcbef75810d85e565d47ca7a688c4bfa32",
+        "size": 2653991,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:48:56"
+      },
+      "alt": "A blue and gold dawn landscape with still water",
+      "inscription": "Sunrise at Bass Coast 2023 #1",
+      "year": 2023,
+      "dimensionsInscription": {
+        "text": "23.25 × 14.75",
+        "unit": null
+      }
+    },
+    {
+      "id": "archived-painting-436",
+      "order": 39,
+      "index": 436,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1628.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1628.jpg",
+        "sha256": "37fb5f76e383a5973699d952b83ee162c815fb2c144a105a289451e22af48a62",
+        "size": 4215552,
+        "width": 3345,
+        "height": 6053,
+        "captureDate": "2026:10:12 12:49:21"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1629.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1629.HEIC",
+        "sha256": "2ea184bb9535ddf872b6679bb861d06ce2d5d0fbc97f862ef9270dcbdb50da14",
+        "size": 3104323,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:49:46"
+      },
+      "alt": "A tall tree silhouette reflected in water at dawn",
+      "inscription": "Sunrise at Bass Coast 2023 #2",
+      "year": 2023,
+      "dimensionsInscription": {
+        "text": "13.75 × 24.75",
+        "unit": null
+      }
+    },
+    {
+      "id": "archived-painting-90",
+      "order": 40,
+      "index": 90,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1630.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1630.jpg",
+        "sha256": "f974178c8dcf4970e390b3e3de23cf2ab8bbd96ac649906636195c7395c7d162",
+        "size": 5562898,
+        "width": 3548,
+        "height": 6217,
+        "captureDate": "2026:10:12 12:50:06"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1631.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1631.HEIC",
+        "sha256": "70b4643da18055cc740e053313a9a8537309dbf534f90fa6ca07eb79466e5324",
+        "size": 2761573,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:50:37"
+      },
+      "alt": "A woman with sunglasses holding a drink under a blue sky",
+      "inscription": "Sierra Dawn at Bass Coast",
+      "dimensionsInscription": {
+        "text": "14.75 × 23.25",
+        "unit": null
+      }
+    },
+    {
+      "id": "archived-painting-62",
+      "order": 41,
+      "index": 62,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1632.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg",
+        "sha256": "46554d5969de58ccb45aa2f91a55920cbe49d85f342c8cda7fe49ffadc646818",
+        "size": 12521228,
+        "width": 5626,
+        "height": 6233,
+        "captureDate": "2026:10:12 12:52:37"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1633.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1633.HEIC",
+        "sha256": "200f77156be1ba2814a93cad76fa598335ff850bf1c47d523a7645552abeeecd",
+        "size": 2944927,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:52:53"
+      },
+      "alt": "A person holding an electronic device in vivid blue, orange, and yellow",
+      "year": 2022,
+      "dimensionsInscription": {
+        "text": "19.25 × 21.5",
+        "unit": null
+      },
+      "reviewNote": "Handwritten title spelling needs confirmation."
+    },
+    {
+      "id": "archived-painting-241",
+      "order": 42,
+      "index": 241,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1635.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1635.jpg",
+        "sha256": "82dce5605cb36a0d8c1fc15de07dfd2d539291a947ee3c425ae29485633359ac",
+        "size": 11633935,
+        "width": 7370,
+        "height": 5613,
+        "captureDate": "2026:10:12 12:53:33"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1636.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1636.HEIC",
+        "sha256": "3d36614ccc4d982afb02f12ff77eba5be168182fc7d7672ec8a91b47bed5ea69",
+        "size": 2762170,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:53:45"
+      },
+      "alt": "A reclining person with long blond hair beside a window",
+      "inscription": "On a Trip with Elsa",
+      "dimensionsInscription": {
+        "text": "20.5 × 26",
+        "unit": null
+      },
+      "otherMarks": "Older corner index: #155."
+    },
+    {
+      "id": "archived-painting-66",
+      "order": 43,
+      "index": 66,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1637.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1637.jpg",
+        "sha256": "51f462f3a96a1a6da5485b16a847912d453b17ea5afba5ada4624619ff5287a3",
+        "size": 7442717,
+        "width": 6285,
+        "height": 5173,
+        "captureDate": "2026:10:12 12:54:14"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1638.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1638.HEIC",
+        "sha256": "fe325bd60556de7885465ce421c57a78e5b6e8092187be8c0460d8788de3af89",
+        "size": 2479165,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:54:27"
+      },
+      "alt": "A guitarist playing outdoors in warm sunset light",
+      "inscription": "Flamenco Guitarist in Zihuatanejo",
+      "dimensionsInscription": {
+        "text": "22 × 26",
+        "unit": null
+      },
+      "otherMarks": "Older corner index: #151."
+    },
+    {
+      "id": "archived-painting-301",
+      "order": 44,
+      "index": 301,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1639.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
+        "sha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+        "size": 6688408,
+        "width": 5620,
+        "height": 6037,
+        "captureDate": "2026:10:12 12:55:03"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1640.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1640.HEIC",
+        "sha256": "befd1599568b2c5dbeca2bb6d04b4e3f655c4885d28bff0e44a53df75f7c3a70",
+        "size": 2564910,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:55:15"
+      },
+      "alt": "A woman with dark hair and raised arms in yellow and rose tones",
+      "inscription": "Catherine #1",
+      "dimensionsInscription": {
+        "text": "24 × 22",
+        "unit": null
+      },
+      "otherMarks": "Older corner index: #156."
+    },
+    {
+      "id": "archived-painting-53",
+      "order": 45,
+      "index": 53,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1641.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
+        "sha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+        "size": 7093866,
+        "width": 4051,
+        "height": 7675,
+        "captureDate": "2026:10:12 12:56:09"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1642.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1642.HEIC",
+        "sha256": "e18c0701b6273c7fa3169504d3db4c34f111e8654e73e7b859e005426edcc12a",
+        "size": 2298155,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 12:57:24"
+      },
+      "alt": "A person meditating beside a lake in golden morning light",
+      "inscription": "Self Portrait, Meditation at Denny Blaine",
+      "year": 2020
+    },
+    {
+      "id": "archived-painting-15",
+      "order": 46,
+      "index": 15,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1643.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1643.jpg",
+        "sha256": "7112103318fcb79bfaae9e8fb67b3a2badc1b9bc3313084870aaa9df993f6c13",
+        "size": 5211841,
+        "width": 7112,
+        "height": 3383,
+        "captureDate": "2026:10:12 12:58:02"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1644.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1644.HEIC",
+        "sha256": "c1b20adecaa16e5bfb6cbbdb54e129bc0b7b8c7276a3b9d2c2669751fd3b3515",
+        "size": 2422230,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:58:23"
+      },
+      "alt": "A central figure surrounded by a radiating colorful headdress",
+      "inscription": "Symbiosis #1",
+      "dimensionsInscription": {
+        "text": "24 × 44.5",
+        "unit": null
+      },
+      "otherMarks": "Older corner index: #122."
+    },
+    {
+      "id": "archived-painting-18",
+      "order": 47,
+      "index": 18,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1645.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1645.jpg",
+        "sha256": "2f86850a9431808e9abbf7882abf72c33f5aa61632855b1088b085b64a0b40da",
+        "size": 5814532,
+        "width": 7352,
+        "height": 3609,
+        "captureDate": "2026:10:12 12:59:12"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1646.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1646.HEIC",
+        "sha256": "75b04b9d4ef3c3120908a65c6130273784c8aee2181b925a8890034e8d34afe6",
+        "size": 2366400,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 12:59:52"
+      },
+      "alt": "A festival stage sending laser beams across a sunset sky",
+      "inscription": "Mayan Warrior",
+      "dimensionsInscription": {
+        "text": "24 × 44.5",
+        "unit": null
+      },
+      "otherMarks": "Older corner index: #119."
+    },
+    {
+      "id": "archived-painting-19",
+      "order": 48,
+      "index": 19,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1647.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1647.jpg",
+        "sha256": "73ae0f9353d8e6952c0f74268dfd91fe5d3be1e7912e838e621676425f6f65f6",
+        "size": 6203855,
+        "width": 7436,
+        "height": 3660,
+        "captureDate": "2026:10:12 13:00:54"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1648.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1648.HEIC",
+        "sha256": "4c740fa10e8277272349b4b783fd10e772c20ade7f5510912b084287935caef6",
+        "size": 2389637,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 13:01:08"
+      },
+      "alt": "A triangular wooden structure emerging from pale mist",
+      "inscription": "The Temple, Daytime",
+      "dimensionsInscription": {
+        "text": "24 × 45",
+        "unit": null
+      }
+    },
+    {
+      "id": "archived-painting-20",
+      "order": 49,
+      "index": 20,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1649.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1649.jpg",
+        "sha256": "05a725ac7c5f8c65d1b11f67ad3533fced0e63f4354f29aba8bd181549c07f98",
+        "size": 4721234,
+        "width": 7399,
+        "height": 3659,
+        "captureDate": "2026:10:12 13:01:33"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1650.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1650.HEIC",
+        "sha256": "61456709eb308f781bd32e4d7da6236acb39b39358ba5f70b5378e40e777750a",
+        "size": 2434360,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 13:01:52"
+      },
+      "alt": "A triangular illuminated structure against a dark sky",
+      "inscription": "The Temple, the Lighting #2",
+      "dimensionsInscription": {
+        "text": "24 × 45",
+        "unit": null
+      },
+      "otherMarks": "Older corner index: #121."
+    },
+    {
+      "id": "archived-painting-22",
+      "order": 50,
+      "index": 22,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1651.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1651.jpg",
+        "sha256": "a162cfb27e01580ab91fcb783c9c9b81fe68a0e4f572c73e902855b0eb09365a",
+        "size": 4787095,
+        "width": 6882,
+        "height": 3303,
+        "captureDate": "2026:10:12 13:02:16"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1652.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1652.HEIC",
+        "sha256": "e6f5531ec34b253d237a848f54cba4fda9d6107271cd2eb0372885d49f845aec",
+        "size": 2384115,
+        "width": 5712,
+        "height": 4284,
+        "captureDate": "2026:10:12 13:02:34"
+      },
+      "alt": "Two people facing one another in vivid orange and blue tones",
+      "inscription": "Devo & Kit @ Bass Coast #2",
+      "dimensionsInscription": {
+        "text": "24 × 45",
+        "unit": null
+      },
+      "otherMarks": "Older corner index: #123."
+    },
+    {
+      "id": "archived-painting-2",
+      "order": 51,
+      "index": 2,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1657.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1657.jpg",
+        "sha256": "e661e119f7f15ccbe7c71c081b858bca38b1a7a837ff5acf7e60c77f7938ac31",
+        "size": 1099930,
+        "width": 4191,
+        "height": 1069,
+        "captureDate": "2026:10:12 13:08:23"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1656.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1656.HEIC",
+        "sha256": "033c38e0d85f807036922449f1adc43696fe2a83cee60f0aa6b0282174529c92",
+        "size": 1601469,
+        "width": 3024,
+        "height": 4032,
+        "captureDate": "2026:10:12 13:06:52"
+      },
+      "alt": "A panoramic mountain and water landscape with a small seated figure",
+      "pairingNote": "Back photographed immediately before the JPEG master; preserved sequence pairs."
+    },
+    {
+      "id": "archived-painting-4",
+      "order": 52,
+      "index": 4,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1659.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1659.jpg",
+        "sha256": "992f895182682e7172da1054d9e7d1172877e138d3f8b537f49c430b4bece967",
+        "size": 618657,
+        "width": 4129,
+        "height": 953,
+        "captureDate": "2026:10:12 13:09:47"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1658.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1658.HEIC",
+        "sha256": "d3e1f26fe4624609603fe1169832f4a7427840885bb7e72dd0d853cf5ddcb221",
+        "size": 1465055,
+        "width": 4032,
+        "height": 3024,
+        "captureDate": "2026:10:12 13:09:13"
+      },
+      "alt": "An orange mountain ridge beneath a pale sunset sky",
+      "pairingNote": "Back photographed immediately before the JPEG master; preserved sequence pairs."
+    },
+    {
+      "id": "archived-painting-1",
+      "order": 53,
+      "index": 1,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1660.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1660.jpg",
+        "sha256": "e9876274627a9afe2ddb371681be76c5343f6d079f465440a2179049cbfa7669",
+        "size": 637326,
+        "width": 4190,
+        "height": 1012,
+        "captureDate": "2026:10:12 13:11:50"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1661.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1661.HEIC",
+        "sha256": "add99c4b897c5d101351df4ebc42e1dc6bceafb7aa05fb6fe4e9bd1513fa2484",
+        "size": 1381114,
+        "width": 4032,
+        "height": 3024,
+        "captureDate": "2026:10:12 13:12:02"
+      },
+      "alt": "A panoramic mountain landscape with a person seated beside the water"
+    },
+    {
+      "id": "archived-painting-217",
+      "order": 54,
+      "index": 217,
+      "indexStatus": "verified",
+      "front": {
+        "key": "images/Archive/IMG_1662.jpg",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1662.jpg",
+        "sha256": "0adb3354b13717fde1f05575dace2085698d3eb35dca17f0fa5a6d2273d7beee",
+        "size": 4110493,
+        "width": 2296,
+        "height": 7297,
+        "captureDate": "2026:10:12 13:14:05"
+      },
+      "back": {
+        "key": "images/Archive/IMG_1663.HEIC",
+        "sourceUrl": "https://media.vermillionaurora.com/images/Archive/IMG_1663.HEIC",
+        "sha256": "5cebd66e5f94785879a429de45b735c90f1f972ba46fb98217b107bcacbba722",
+        "size": 3653656,
+        "width": 4284,
+        "height": 5712,
+        "captureDate": "2026:10:12 13:14:15"
+      },
+      "alt": "A narrow garden scene with trees, a pavilion, and a pond"
+    }
+  ]
+}
