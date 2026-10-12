@@ -4,7 +4,7 @@ import hashlib
 import io
 import json
 import pathlib
-import urllib.request
+import sys
 from PIL import Image, ImageOps
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -16,8 +16,9 @@ def prepare(p):
     source = p['front']
     if not source['sourceUrl'].startswith('https://media.vermillionaurora.com/images/Archive/'):
         raise ValueError('Unexpected archive source URL')
-    with urllib.request.urlopen(source['sourceUrl'], timeout=120) as response:
-        data = response.read(256 * 1024 * 1024 + 1)
+    if len(sys.argv) != 2:
+        raise ValueError('Provide the directory of authenticated R2 master downloads')
+    data = (pathlib.Path(sys.argv[1]) / pathlib.PurePosixPath(source['key']).name).read_bytes()
     if hashlib.sha256(data).hexdigest() != source['sha256']:
         raise ValueError('Master checksum changed: ' + source['key'])
     with Image.open(io.BytesIO(data)) as original:

@@ -26,7 +26,23 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install Pillow==12.3.0
-      - run: python scripts/prepare-archive-display.py
+      - name: Deploy authenticated read-only archive reader
+        id: reader
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          command: deploy --config scripts/archive-reader/wrangler.jsonc
+      - name: Generate verified display images through authenticated R2 reads
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/export-painting-archive.mjs --display
+      - name: Remove temporary archive reader
+        if: always() && steps.reader.outcome == 'success'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_BOOK_MEDIA_API_TOKEN }}
+        run: node scripts/export-painting-archive.mjs --cleanup
       - run: npm ci
       - run: npm run build
       - name: Validate archive pages and records

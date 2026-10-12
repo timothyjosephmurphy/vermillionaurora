@@ -39,6 +39,23 @@ try {
   const install=await fetch(api+'/secrets',{method:'PUT',headers:apiHeaders,
     body:JSON.stringify({name:'ARCHIVE_READ_TOKEN',text:token,type:'secret_text'})});
   if(!install.ok)throw Error('Cannot configure temporary archive credential: HTTP '+install.status);
+  if (process.argv.includes('--display')) {
+    const manifest=JSON.parse(await readFile('catalog/archive-paintings.json','utf8'));
+    let at=0;
+    async function downloadMaster(){
+      while(at<manifest.paintings.length){
+        const source=manifest.paintings[at++].front;
+        if(!source.key.startsWith('images/Archive/')||!(/\.jpe?g$/i).test(source.key))throw Error('Unexpected master key');
+        const response=await get('/object?key='+encodeURIComponent(source.key));
+        const file=path.join(temp,path.basename(source.key));
+        await pipeline(Readable.fromWeb(response.body),createWriteStream(file));
+      }
+    }
+    const downloads=await Promise.allSettled([downloadMaster(),downloadMaster(),downloadMaster(),downloadMaster()]);
+    for(const result of downloads)if(result.status==='rejected')throw result.reason;
+    const {stdout}=await exec('python',['scripts/prepare-archive-display.py',temp],{maxBuffer:1024*1024});
+    console.log(stdout);
+  } else {
   const objects=[];
   let cursor='';
   do {
@@ -89,8 +106,10 @@ try {
   await writeFile(root+'/review.json',JSON.stringify({...inventory,objects:reviewed},null,2));
   for(const result of results)if(result.status==='rejected')throw result.reason;
   console.log('PASS: '+reviewed.length+' source images inventoried and previewed.');
+  }
 } finally {
   await rm(temp,{recursive:true,force:true});
   const response=await fetch(api+'/secrets/ARCHIVE_READ_TOKEN',{method:'DELETE',headers:apiHeaders});
   if(!response.ok && response.status!==404)throw Error('Temporary archive credential cleanup failed: HTTP '+response.status);
 }
+
