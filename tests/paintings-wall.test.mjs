@@ -1,3 +1,4 @@
+import olderWorkProducts from '../catalog/older-work-products.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -81,12 +82,12 @@ test('previews are small WebP files, never upscaled, and end with the full photo
   assert(own<900_000,`own TJ previews ${own}`);
 });
 test('paintings without a size are listed, not drawn',()=>{
-  assert.equal(notToScale.length,162+archiveProducts.filter(p=>!p.dimensions).length);assert.equal(notToScale.filter(i=>i.kind==='Commission package').length,3);
+  assert.equal(notToScale.length,162+archiveProducts.filter(p=>!p.dimensions).length+olderWorkProducts.length);assert.deepEqual(notToScale.filter(i=>i.kind==='Older Work').map(i=>i.id).sort(),olderWorkProducts.map(p=>p.id).sort());assert.equal(notToScale.filter(i=>i.kind==='Commission package').length,3);
   assert.equal(notToScale.filter(i=>i.kind==='Art-book page').length,159);
   assert.deepEqual(notToScale.filter(i=>i.kind==='Archived painting').map(i=>i.id).sort(),archiveProducts.filter(p=>!p.dimensions).map(p=>p.id).sort());
   const drawn=new Set([...tjWall.artworks,...paulWall.artworks].map(a=>a.id));
   assert(notToScale.every(i=>!drawn.has(i.id)&&/^\/(products\/[a-z0-9-]+\/|commissions\/#[a-z]+)$/.test(i.href)));
-  assert.equal(unscaledPaintings().length+scaledPaintings('TJ Murphy').length+scaledPaintings('Paul Murphy').length,162+archiveProducts.length+46+38);
+  assert.equal(unscaledPaintings().length+scaledPaintings('TJ Murphy').length+scaledPaintings('Paul Murphy').length,162+archiveProducts.length+olderWorkProducts.length+46+38);
 });
 test('the print wall includes the 54 archive additions',()=>{assert.equal(wallArtworks.length,78);assert(archiveProducts.every(p=>wallArtworks.some(a=>a.id===p.id)));});
 

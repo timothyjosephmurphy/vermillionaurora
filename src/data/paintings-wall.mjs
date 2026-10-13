@@ -51,5 +51,5 @@ export function buildWall(artist){
 }
 export const tjWall=buildWall('TJ Murphy');
 export const paulWall=buildWall('Paul Murphy');
-export const notToScale=unscaledPaintings().map(p=>({id:p.id,title:p.title,href:commissionAnchors[p.slug]?`/commissions/#${commissionAnchors[p.slug]}`:urlFor(p),kind:p.type==='commission'?'Commission package':p.archive?'Archived painting':'Art-book page'}));
+export const notToScale=unscaledPaintings().map(p=>({id:p.id,title:p.title,href:commissionAnchors[p.slug]?`/commissions/#${commissionAnchors[p.slug]}`:urlFor(p),kind:p.type==='commission'?'Commission package':p.archive?'Archived painting':p.olderWork?'Older Work':'Art-book page'}));
 export const statusOrder=[['all','All'],['available','Available'],['sold','Sold'],['not-for-sale','Not for sale']];

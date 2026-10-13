@@ -1,0 +1,1892 @@
+{
+ "source": {
+  "bucket": "images",
+  "prefix": "images/Archive/Need processing/",
+  "reviewedAt": "2026-10-13",
+  "files": 42,
+  "preference": "DNG, then HEIC, then JPEG when the same shot exists in several formats.",
+  "orderRule": "Backs were photographed flipped top-to-bottom, so their left-to-right order matches the fronts.",
+  "cropRule": "Each painting is cropped to its painted area and perspective-corrected; nothing is padded. Group masters place the crops side by side (or stacked, as photographed) on white, scaled down to the smallest member, never enlarged.",
+  "privacy": "Back photographs and stamp text are never published."
+ },
+ "groups": [
+  {
+   "id": "older-work-shore-figures",
+   "order": 1,
+   "title": "Figures on a Shore Triptych",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1502.jpg"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1503.jpg"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Figures on a Shore",
+     "name": "TJ Figures on a Shore 179",
+     "index": 179,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 2290,
+      "heightPx": 2100
+     },
+     "display": {
+      "base": "/display/older-work-shore-figures-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 880,
+      "fallback": "/display/older-work-shore-figures-1.jpg"
+     }
+    },
+    {
+     "title": "Wading Figure",
+     "name": "TJ Wading Figure 181",
+     "index": 181,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 2367,
+      "heightPx": 2159
+     },
+     "display": {
+      "base": "/display/older-work-shore-figures-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 876,
+      "fallback": "/display/older-work-shore-figures-2.jpg"
+     }
+    },
+    {
+     "title": "Driftwood Stump",
+     "name": "TJ Driftwood Stump 180",
+     "index": 180,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 2424,
+      "heightPx": 2192
+     },
+     "display": {
+      "base": "/display/older-work-shore-figures-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 868,
+      "fallback": "/display/older-work-shore-figures-3.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+    "sha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "widthPx": 7040,
+    "heightPx": 2100
+   }
+  },
+  {
+   "id": "older-work-mountain-layers",
+   "order": 2,
+   "title": "Mountain Layers Studies",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1504.HEIC"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1505.heic"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Blue Mountain Layers",
+     "name": "TJ Blue Mountain Layers 185",
+     "index": 185,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 1034,
+      "heightPx": 789
+     },
+     "display": {
+      "base": "/display/older-work-mountain-layers-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 733,
+      "fallback": "/display/older-work-mountain-layers-1.jpg"
+     }
+    },
+    {
+     "title": "Orange Mountain Layers",
+     "name": "TJ Orange Mountain Layers 186",
+     "index": 186,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 1136,
+      "heightPx": 758
+     },
+     "display": {
+      "base": "/display/older-work-mountain-layers-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 641,
+      "fallback": "/display/older-work-mountain-layers-2.jpg"
+     }
+    },
+    {
+     "title": "Red Mountain Layers",
+     "name": "TJ Red Mountain Layers 156",
+     "index": 156,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 1179,
+      "heightPx": 750
+     },
+     "display": {
+      "base": "/display/older-work-mountain-layers-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 611,
+      "fallback": "/display/older-work-mountain-layers-3.jpg"
+     }
+    },
+    {
+     "title": "Golden Mountain Layers",
+     "name": "TJ Golden Mountain Layers 153",
+     "index": 153,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 1179,
+      "heightPx": 787
+     },
+     "display": {
+      "base": "/display/older-work-mountain-layers-4",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 641,
+      "fallback": "/display/older-work-mountain-layers-4.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d.jpg",
+    "sha256": "22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d",
+    "widthPx": 4476,
+    "heightPx": 750
+   }
+  },
+  {
+   "id": "older-work-lake-hillside-color-wheel",
+   "order": 3,
+   "title": "Lake, Hillside and Color Wheel",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1507.jpg"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1508.jpg"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Mountain Lake",
+     "name": "TJ Mountain Lake 145",
+     "index": 145,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 2153,
+      "heightPx": 1458
+     },
+     "display": {
+      "base": "/display/older-work-lake-hillside-color-wheel-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 650,
+      "fallback": "/display/older-work-lake-hillside-color-wheel-1.jpg"
+     }
+    },
+    {
+     "title": "Golden Hillside",
+     "name": "TJ Golden Hillside 141",
+     "index": 141,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; another painting is on its reverse",
+     "crop": {
+      "widthPx": 2185,
+      "heightPx": 1533
+     },
+     "display": {
+      "base": "/display/older-work-lake-hillside-color-wheel-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 674,
+      "fallback": "/display/older-work-lake-hillside-color-wheel-2.jpg"
+     }
+    },
+    {
+     "title": "Color Wheel Study",
+     "name": "TJ Color Wheel Study 184",
+     "index": 184,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 2105,
+      "heightPx": 1661
+     },
+     "display": {
+      "base": "/display/older-work-lake-hillside-color-wheel-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 758,
+      "fallback": "/display/older-work-lake-hillside-color-wheel-3.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67.jpg",
+    "sha256": "eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67",
+    "widthPx": 6167,
+    "heightPx": 1458
+   }
+  },
+  {
+   "id": "older-work-sunset-ridge-strips",
+   "order": 4,
+   "title": "Sunset Ridge Strips",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1509.DNG"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1510.DNG"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Sunset Ridge Strip",
+     "name": "TJ Sunset Ridge Strip 174",
+     "index": 174,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 976,
+      "heightPx": 3060
+     },
+     "display": {
+      "base": "/display/older-work-sunset-ridge-strips-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 3010,
+      "fallback": "/display/older-work-sunset-ridge-strips-1.jpg"
+     }
+    },
+    {
+     "title": "Sunset Ridge Strip",
+     "name": "TJ Sunset Ridge Strip 165",
+     "index": 165,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 943,
+      "heightPx": 3084
+     },
+     "display": {
+      "base": "/display/older-work-sunset-ridge-strips-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 943,
+      "height": 3084,
+      "fallback": "/display/older-work-sunset-ridge-strips-2.jpg"
+     }
+    },
+    {
+     "title": "Sunset Ridge Strip",
+     "name": "TJ Sunset Ridge Strip 159",
+     "index": 159,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 975,
+      "heightPx": 3048
+     },
+     "display": {
+      "base": "/display/older-work-sunset-ridge-strips-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 3001,
+      "fallback": "/display/older-work-sunset-ridge-strips-3.jpg"
+     }
+    },
+    {
+     "title": "Sunset Ridge Strip",
+     "name": "TJ Sunset Ridge Strip 164",
+     "index": 164,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 984,
+      "heightPx": 3078
+     },
+     "display": {
+      "base": "/display/older-work-sunset-ridge-strips-4",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 3003,
+      "fallback": "/display/older-work-sunset-ridge-strips-4.jpg"
+     }
+    },
+    {
+     "title": "Sunset Ridge Strip",
+     "name": "TJ Sunset Ridge Strip 173",
+     "index": 173,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 1073,
+      "heightPx": 3072
+     },
+     "display": {
+      "base": "/display/older-work-sunset-ridge-strips-5",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 2748,
+      "fallback": "/display/older-work-sunset-ridge-strips-5.jpg"
+     }
+    },
+    {
+     "title": "Sunset Ridge Strip",
+     "name": "TJ Sunset Ridge Strip 158",
+     "index": 158,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 960,
+      "heightPx": 3139
+     },
+     "display": {
+      "base": "/display/older-work-sunset-ridge-strips-6",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 3139,
+      "fallback": "/display/older-work-sunset-ridge-strips-6.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+    "sha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "widthPx": 6305,
+    "heightPx": 3048
+   }
+  },
+  {
+   "id": "older-work-ridge-strips-unindexed",
+   "order": 5,
+   "title": "Ridge Strip Studies (unindexed)",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1511.DNG"
+   },
+   "back": null,
+   "layout": "row",
+   "members": [
+    {
+     "title": "Ridge Strip Study A",
+     "name": "TJ Ridge Strip Study A",
+     "index": null,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; no back photo, index unknown",
+     "crop": {
+      "widthPx": 807,
+      "heightPx": 2576
+     },
+     "display": {
+      "base": "/display/older-work-ridge-strips-unindexed-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 807,
+      "height": 2576,
+      "fallback": "/display/older-work-ridge-strips-unindexed-1.jpg"
+     }
+    },
+    {
+     "title": "Ridge Strip Study B",
+     "name": "TJ Ridge Strip Study B",
+     "index": null,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; no back photo, index unknown",
+     "crop": {
+      "widthPx": 774,
+      "heightPx": 2594
+     },
+     "display": {
+      "base": "/display/older-work-ridge-strips-unindexed-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 774,
+      "height": 2594,
+      "fallback": "/display/older-work-ridge-strips-unindexed-2.jpg"
+     }
+    },
+    {
+     "title": "Ridge Strip Study C",
+     "name": "TJ Ridge Strip Study C",
+     "index": null,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; no back photo, index unknown",
+     "crop": {
+      "widthPx": 879,
+      "heightPx": 2607
+     },
+     "display": {
+      "base": "/display/older-work-ridge-strips-unindexed-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 879,
+      "height": 2607,
+      "fallback": "/display/older-work-ridge-strips-unindexed-3.jpg"
+     }
+    },
+    {
+     "title": "Ridge Strip Study D",
+     "name": "TJ Ridge Strip Study D",
+     "index": null,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; no back photo, index unknown",
+     "crop": {
+      "widthPx": 798,
+      "heightPx": 2655
+     },
+     "display": {
+      "base": "/display/older-work-ridge-strips-unindexed-4",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 798,
+      "height": 2655,
+      "fallback": "/display/older-work-ridge-strips-unindexed-4.jpg"
+     }
+    },
+    {
+     "title": "Ridge Strip Study E",
+     "name": "TJ Ridge Strip Study E",
+     "index": null,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; no back photo, index unknown",
+     "crop": {
+      "widthPx": 855,
+      "heightPx": 2673
+     },
+     "display": {
+      "base": "/display/older-work-ridge-strips-unindexed-5",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 855,
+      "height": 2673,
+      "fallback": "/display/older-work-ridge-strips-unindexed-5.jpg"
+     }
+    },
+    {
+     "title": "Ridge Strip Study F",
+     "name": "TJ Ridge Strip Study F",
+     "index": null,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; no back photo, index unknown",
+     "crop": {
+      "widthPx": 887,
+      "heightPx": 2679
+     },
+     "display": {
+      "base": "/display/older-work-ridge-strips-unindexed-6",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 887,
+      "height": 2679,
+      "fallback": "/display/older-work-ridge-strips-unindexed-6.jpg"
+     }
+    },
+    {
+     "title": "Ridge Strip Study G",
+     "name": "TJ Ridge Strip Study G",
+     "index": null,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; no back photo, index unknown",
+     "crop": {
+      "widthPx": 823,
+      "heightPx": 2649
+     },
+     "display": {
+      "base": "/display/older-work-ridge-strips-unindexed-7",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 823,
+      "height": 2649,
+      "fallback": "/display/older-work-ridge-strips-unindexed-7.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+    "sha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "widthPx": 6158,
+    "heightPx": 2576
+   }
+  },
+  {
+   "id": "older-work-pitchers",
+   "order": 6,
+   "title": "Pitcher Still Lifes",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1513.DNG"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1514.DNG"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Two Pitchers",
+     "name": "TJ Two Pitchers 188",
+     "index": 188,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 3823,
+      "heightPx": 2480
+     },
+     "display": {
+      "base": "/display/older-work-pitchers-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 623,
+      "fallback": "/display/older-work-pitchers-1.jpg"
+     }
+    },
+    {
+     "title": "Blue Pitcher",
+     "name": "TJ Blue Pitcher 187",
+     "index": 187,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 2573,
+      "heightPx": 3738
+     },
+     "display": {
+      "base": "/display/older-work-pitchers-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1395,
+      "fallback": "/display/older-work-pitchers-2.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+    "sha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "widthPx": 5604,
+    "heightPx": 2480
+   }
+  },
+  {
+   "id": "older-work-coconut-190",
+   "order": 7,
+   "title": "TJ Coconut 190",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1515.jpg"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1516.DNG"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Coconut",
+     "name": "TJ Coconut 190",
+     "index": 190,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; size note reads 8.5x17 or 8.5x11 (ambiguous), recorded as unknown",
+     "crop": {
+      "widthPx": 1235,
+      "heightPx": 1736
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg",
+    "sha256": "cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819",
+    "widthPx": 1235,
+    "heightPx": 1736
+   }
+  },
+  {
+   "id": "older-work-bitcoin-voices",
+   "order": 8,
+   "title": "Mallers, Brunell, McCormack and Saylor",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1517.jpg"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1518.jpg"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Jack Mallers",
+     "name": "TJ Jack Mallers",
+     "index": null,
+     "dimensions": null,
+     "year": "2026",
+     "flag": "no index on back",
+     "crop": {
+      "widthPx": 1078,
+      "heightPx": 2155
+     },
+     "display": {
+      "base": "/display/older-work-bitcoin-voices-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1919,
+      "fallback": "/display/older-work-bitcoin-voices-1.jpg"
+     }
+    },
+    {
+     "title": "Natalie Brunell",
+     "name": "TJ Natalie Brunell",
+     "index": null,
+     "dimensions": null,
+     "year": "2026",
+     "flag": "no index on back",
+     "crop": {
+      "widthPx": 1380,
+      "heightPx": 2518
+     },
+     "display": {
+      "base": "/display/older-work-bitcoin-voices-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1752,
+      "fallback": "/display/older-work-bitcoin-voices-2.jpg"
+     }
+    },
+    {
+     "title": "Peter McCormack",
+     "name": "TJ Peter McCormack",
+     "index": null,
+     "dimensions": null,
+     "year": "2026",
+     "flag": "no index on back",
+     "crop": {
+      "widthPx": 1462,
+      "heightPx": 2317
+     },
+     "display": {
+      "base": "/display/older-work-bitcoin-voices-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1521,
+      "fallback": "/display/older-work-bitcoin-voices-3.jpg"
+     }
+    },
+    {
+     "title": "Michael Saylor",
+     "name": "TJ Michael Saylor",
+     "index": null,
+     "dimensions": null,
+     "year": "2026",
+     "flag": "no index on back",
+     "crop": {
+      "widthPx": 1453,
+      "heightPx": 2419
+     },
+     "display": {
+      "base": "/display/older-work-bitcoin-voices-4",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1598,
+      "fallback": "/display/older-work-bitcoin-voices-4.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f.jpg",
+    "sha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+    "widthPx": 5108,
+    "heightPx": 2155
+   }
+  },
+  {
+   "id": "older-work-provibes-sandwiches",
+   "order": 9,
+   "title": "Provibes Reunion Sandwich Portraits",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1521.DNG"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1522.jpg"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Dov and Sara Sandwich",
+     "name": "TJ Dov and Sara Sandwich",
+     "index": null,
+     "dimensions": null,
+     "year": "2026",
+     "flag": "no index; names partly uncertain",
+     "crop": {
+      "widthPx": 3116,
+      "heightPx": 2195
+     },
+     "display": {
+      "base": "/display/older-work-provibes-sandwiches-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 676,
+      "fallback": "/display/older-work-provibes-sandwiches-1.jpg"
+     }
+    },
+    {
+     "title": "Dov and Isaiah Sandwich",
+     "name": "TJ Dov and Isaiah Sandwich",
+     "index": null,
+     "dimensions": null,
+     "year": "2026",
+     "flag": "no index; names partly uncertain",
+     "crop": {
+      "widthPx": 3154,
+      "heightPx": 2239
+     },
+     "display": {
+      "base": "/display/older-work-provibes-sandwiches-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 681,
+      "fallback": "/display/older-work-provibes-sandwiches-2.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
+    "sha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+    "widthPx": 6274,
+    "heightPx": 2195
+   }
+  },
+  {
+   "id": "older-work-portraits-319-329",
+   "order": 10,
+   "title": "Parah, José, Antonopoulos and #319",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1523.jpg"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1525.heic"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Bernard Parah",
+     "name": "TJ Bernard Parah 329",
+     "index": 329,
+     "dimensions": null,
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1691,
+      "heightPx": 2028
+     },
+     "display": {
+      "base": "/display/older-work-portraits-319-329-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1151,
+      "fallback": "/display/older-work-portraits-319-329-1.jpg"
+     }
+    },
+    {
+     "title": "José",
+     "name": "TJ José 328",
+     "index": 328,
+     "dimensions": null,
+     "year": null,
+     "flag": "name uncertain (José/Josie)",
+     "crop": {
+      "widthPx": 1566,
+      "heightPx": 2034
+     },
+     "display": {
+      "base": "/display/older-work-portraits-319-329-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1247,
+      "fallback": "/display/older-work-portraits-319-329-2.jpg"
+     }
+    },
+    {
+     "title": "Andreas Antonopoulos",
+     "name": "TJ Andreas Antonopoulos 327",
+     "index": 327,
+     "dimensions": null,
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1652,
+      "heightPx": 1924
+     },
+     "display": {
+      "base": "/display/older-work-portraits-319-329-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1118,
+      "fallback": "/display/older-work-portraits-319-329-3.jpg"
+     }
+    },
+    {
+     "title": "Portrait with Glasses",
+     "name": "TJ Portrait with Glasses 319",
+     "index": 319,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title (no name on back)",
+     "crop": {
+      "widthPx": 1652,
+      "heightPx": 2090
+     },
+     "display": {
+      "base": "/display/older-work-portraits-319-329-4",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1215,
+      "fallback": "/display/older-work-portraits-319-329-4.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6.jpg",
+    "sha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+    "widthPx": 6432,
+    "heightPx": 1924
+   }
+  },
+  {
+   "id": "older-work-fernandez-moran-pysh",
+   "order": 11,
+   "title": "Fernandez, Moran and Pysh",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1528.DNG"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1529.HEIC"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Akin Fernandez",
+     "name": "TJ Akin Fernandez 351",
+     "index": 351,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1664,
+      "heightPx": 1724
+     },
+     "display": {
+      "base": "/display/older-work-fernandez-moran-pysh-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 995,
+      "fallback": "/display/older-work-fernandez-moran-pysh-1.jpg"
+     }
+    },
+    {
+     "title": "Nico Moran",
+     "name": "TJ Nico Moran 345",
+     "index": 345,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1615,
+      "heightPx": 1692
+     },
+     "display": {
+      "base": "/display/older-work-fernandez-moran-pysh-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1006,
+      "fallback": "/display/older-work-fernandez-moran-pysh-2.jpg"
+     }
+    },
+    {
+     "title": "Preston Pysh",
+     "name": "TJ Preston Pysh 344",
+     "index": 344,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1717,
+      "heightPx": 1818
+     },
+     "display": {
+      "base": "/display/older-work-fernandez-moran-pysh-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1016,
+      "fallback": "/display/older-work-fernandez-moran-pysh-3.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2.jpg",
+    "sha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+    "widthPx": 4948,
+    "heightPx": 1692
+   }
+  },
+  {
+   "id": "older-work-breedlove-ammous-livera",
+   "order": 12,
+   "title": "Breedlove, Ammous and Livera",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1530.jpg"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1531.heic"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Robert Breedlove",
+     "name": "TJ Robert Breedlove 357",
+     "index": 357,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1460,
+      "heightPx": 1813
+     },
+     "display": {
+      "base": "/display/older-work-breedlove-ammous-livera-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1192,
+      "fallback": "/display/older-work-breedlove-ammous-livera-1.jpg"
+     }
+    },
+    {
+     "title": "Saifedean Ammous",
+     "name": "TJ Saifedean Ammous 355",
+     "index": 355,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1661,
+      "heightPx": 1742
+     },
+     "display": {
+      "base": "/display/older-work-breedlove-ammous-livera-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1007,
+      "fallback": "/display/older-work-breedlove-ammous-livera-2.jpg"
+     }
+    },
+    {
+     "title": "Stephan Livera",
+     "name": "TJ Stephan Livera 356",
+     "index": 356,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1632,
+      "heightPx": 1776
+     },
+     "display": {
+      "base": "/display/older-work-breedlove-ammous-livera-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1045,
+      "fallback": "/display/older-work-breedlove-ammous-livera-3.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
+    "sha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
+    "widthPx": 4769,
+    "heightPx": 1742
+   }
+  },
+  {
+   "id": "older-work-rochard-martinez",
+   "order": 13,
+   "title": "Pierre Rochard, Morgen Rochard and Aixa Martinez",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1533.HEIC"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1535.heic"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Pierre Rochard",
+     "name": "TJ Pierre Rochard 359",
+     "index": 359,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1176,
+      "heightPx": 1221
+     },
+     "display": {
+      "base": "/display/older-work-rochard-martinez-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 997,
+      "fallback": "/display/older-work-rochard-martinez-1.jpg"
+     }
+    },
+    {
+     "title": "Morgen Rochard",
+     "name": "TJ Morgen Rochard 358",
+     "index": 358,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1091,
+      "heightPx": 1203
+     },
+     "display": {
+      "base": "/display/older-work-rochard-martinez-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1059,
+      "fallback": "/display/older-work-rochard-martinez-2.jpg"
+     }
+    },
+    {
+     "title": "Aixa Martinez",
+     "name": "TJ Aixa Martinez 347",
+     "index": 347,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1107,
+      "heightPx": 1231
+     },
+     "display": {
+      "base": "/display/older-work-rochard-martinez-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1068,
+      "fallback": "/display/older-work-rochard-martinez-3.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec.jpg",
+    "sha256": "4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec",
+    "widthPx": 3404,
+    "heightPx": 1203
+   }
+  },
+  {
+   "id": "older-work-nakamoto-hayek",
+   "order": 14,
+   "title": "Dorian Nakamoto and Hayek",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1536.HEIC"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1537.HEIC"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Dorian Nakamoto",
+     "name": "TJ Dorian Nakamoto",
+     "index": null,
+     "dimensions": null,
+     "year": "2024",
+     "flag": "no index on back",
+     "crop": {
+      "widthPx": 1750,
+      "heightPx": 1876
+     },
+     "display": {
+      "base": "/display/older-work-nakamoto-hayek-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1029,
+      "fallback": "/display/older-work-nakamoto-hayek-1.jpg"
+     }
+    },
+    {
+     "title": "Hayek",
+     "name": "TJ Hayek 339",
+     "index": 339,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1650,
+      "heightPx": 1878
+     },
+     "display": {
+      "base": "/display/older-work-nakamoto-hayek-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1093,
+      "fallback": "/display/older-work-nakamoto-hayek-2.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541.jpg",
+    "sha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+    "widthPx": 3454,
+    "heightPx": 1876
+   }
+  },
+  {
+   "id": "older-work-figen-pnut-swoll",
+   "order": 15,
+   "title": "Figen, PNut and Joey Swoll",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1538.heic"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1539.heic"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Figen",
+     "name": "TJ Figen 341",
+     "index": 341,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1174,
+      "heightPx": 1218
+     },
+     "display": {
+      "base": "/display/older-work-figen-pnut-swoll-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 996,
+      "fallback": "/display/older-work-figen-pnut-swoll-1.jpg"
+     }
+    },
+    {
+     "title": "PNut Window",
+     "name": "TJ PNut Window 338",
+     "index": 338,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "label on reverse"
+     },
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1079,
+      "heightPx": 1208
+     },
+     "display": {
+      "base": "/display/older-work-figen-pnut-swoll-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1075,
+      "fallback": "/display/older-work-figen-pnut-swoll-2.jpg"
+     }
+    },
+    {
+     "title": "Joey Swoll",
+     "name": "TJ Joey Swoll 340",
+     "index": 340,
+     "dimensions": null,
+     "year": "2024",
+     "flag": "spelling uncertain (Joey/Joe Swoll)",
+     "crop": {
+      "widthPx": 1178,
+      "heightPx": 1246
+     },
+     "display": {
+      "base": "/display/older-work-figen-pnut-swoll-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1015,
+      "fallback": "/display/older-work-figen-pnut-swoll-3.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9.jpg",
+    "sha256": "05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9",
+    "widthPx": 3457,
+    "heightPx": 1208
+   }
+  },
+  {
+   "id": "older-work-hayek-stark-gomez-el-bawab",
+   "order": 16,
+   "title": "Hayek, Stark, Gomez and El Bawab",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1541.DNG"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1542.HEIC"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "F.A. Hayek",
+     "name": "TJ F.A. Hayek 336",
+     "index": 336,
+     "dimensions": null,
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1609,
+      "heightPx": 2060
+     },
+     "display": {
+      "base": "/display/older-work-hayek-stark-gomez-el-bawab-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1229,
+      "fallback": "/display/older-work-hayek-stark-gomez-el-bawab-1.jpg"
+     }
+    },
+    {
+     "title": "Elizabeth Stark",
+     "name": "TJ Elizabeth Stark 335",
+     "index": 335,
+     "dimensions": null,
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1682,
+      "heightPx": 2011
+     },
+     "display": {
+      "base": "/display/older-work-hayek-stark-gomez-el-bawab-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1148,
+      "fallback": "/display/older-work-hayek-stark-gomez-el-bawab-2.jpg"
+     }
+    },
+    {
+     "title": "Rodrigo Gomez",
+     "name": "TJ Rodrigo Gomez 334",
+     "index": 334,
+     "dimensions": null,
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1611,
+      "heightPx": 1939
+     },
+     "display": {
+      "base": "/display/older-work-hayek-stark-gomez-el-bawab-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1155,
+      "fallback": "/display/older-work-hayek-stark-gomez-el-bawab-3.jpg"
+     }
+    },
+    {
+     "title": "Noor El Bawab",
+     "name": "TJ Noor El Bawab 333",
+     "index": 333,
+     "dimensions": null,
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1456,
+      "heightPx": 1836
+     },
+     "display": {
+      "base": "/display/older-work-hayek-stark-gomez-el-bawab-4",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1211,
+      "fallback": "/display/older-work-hayek-stark-gomez-el-bawab-4.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
+    "sha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
+    "widthPx": 6116,
+    "heightPx": 1836
+   }
+  },
+  {
+   "id": "older-work-yakes-todd-dickerson",
+   "order": 17,
+   "title": "Yakes, Todd and Dickerson",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1543.jpg"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1544.DNG"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Eric Yakes",
+     "name": "TJ Eric Yakes 330",
+     "index": 330,
+     "dimensions": null,
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 2275,
+      "heightPx": 2740
+     },
+     "display": {
+      "base": "/display/older-work-yakes-todd-dickerson-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1156,
+      "fallback": "/display/older-work-yakes-todd-dickerson-1.jpg"
+     }
+    },
+    {
+     "title": "Peter Todd",
+     "name": "TJ Peter Todd 331",
+     "index": 331,
+     "dimensions": null,
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 1973,
+      "heightPx": 2829
+     },
+     "display": {
+      "base": "/display/older-work-yakes-todd-dickerson-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1377,
+      "fallback": "/display/older-work-yakes-todd-dickerson-2.jpg"
+     }
+    },
+    {
+     "title": "Desiree Dickerson",
+     "name": "TJ Desiree Dickerson 332",
+     "index": 332,
+     "dimensions": null,
+     "year": null,
+     "flag": null,
+     "crop": {
+      "widthPx": 2265,
+      "heightPx": 2673
+     },
+     "display": {
+      "base": "/display/older-work-yakes-todd-dickerson-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1133,
+      "fallback": "/display/older-work-yakes-todd-dickerson-3.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+    "sha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "widthPx": 6508,
+    "heightPx": 2673
+   }
+  },
+  {
+   "id": "older-work-beach-sunsets",
+   "order": 18,
+   "title": "Beach Sunsets",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1549.jpg"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1550.heic"
+   },
+   "layout": "stack",
+   "members": [
+    {
+     "title": "Beach Sunset",
+     "name": "TJ Beach Sunset 310",
+     "index": 310,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; top-to-bottom index order uncertain",
+     "crop": {
+      "widthPx": 2362,
+      "heightPx": 1754
+     },
+     "display": {
+      "base": "/display/older-work-beach-sunsets-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 713,
+      "fallback": "/display/older-work-beach-sunsets-1.jpg"
+     }
+    },
+    {
+     "title": "Beach Sunset",
+     "name": "TJ Beach Sunset 311",
+     "index": 311,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; order uncertain",
+     "crop": {
+      "widthPx": 2313,
+      "heightPx": 1681
+     },
+     "display": {
+      "base": "/display/older-work-beach-sunsets-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 698,
+      "fallback": "/display/older-work-beach-sunsets-2.jpg"
+     }
+    },
+    {
+     "title": "Beach Sunset",
+     "name": "TJ Beach Sunset 309",
+     "index": 309,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title; order uncertain",
+     "crop": {
+      "widthPx": 2266,
+      "heightPx": 1644
+     },
+     "display": {
+      "base": "/display/older-work-beach-sunsets-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 696,
+      "fallback": "/display/older-work-beach-sunsets-3.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+    "sha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "widthPx": 2266,
+    "heightPx": 5110
+   }
+  },
+  {
+   "id": "older-work-forest-triptych",
+   "order": 19,
+   "title": "Forest Triptych",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1653.DNG"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1654.HEIC"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "Forest",
+     "name": "TJ Forest 303",
+     "index": 303,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 1185,
+      "heightPx": 6048
+     },
+     "display": {
+      "base": "/display/older-work-forest-triptych-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 4900,
+      "fallback": "/display/older-work-forest-triptych-1.jpg"
+     }
+    },
+    {
+     "title": "Forest",
+     "name": "TJ Forest 302",
+     "index": 302,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 1282,
+      "heightPx": 6072
+     },
+     "display": {
+      "base": "/display/older-work-forest-triptych-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 4547,
+      "fallback": "/display/older-work-forest-triptych-2.jpg"
+     }
+    },
+    {
+     "title": "Forest",
+     "name": "TJ Forest 304",
+     "index": 304,
+     "dimensions": null,
+     "year": null,
+     "flag": "placeholder title",
+     "crop": {
+      "widthPx": 1369,
+      "heightPx": 6088
+     },
+     "display": {
+      "base": "/display/older-work-forest-triptych-3",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 4269,
+      "fallback": "/display/older-work-forest-triptych-3.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+    "sha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "widthPx": 4184,
+    "heightPx": 6048
+   }
+  },
+  {
+   "id": "older-work-legend-of-billy-buff",
+   "order": 20,
+   "title": "The Legend of Billy Buff",
+   "front": {
+    "key": "images/Archive/Need processing/IMG_1664.DNG"
+   },
+   "back": {
+    "key": "images/Archive/Need processing/IMG_1666.HEIC"
+   },
+   "layout": "row",
+   "members": [
+    {
+     "title": "The Legend of Billy Buff",
+     "name": "TJ The Legend of Billy Buff 2",
+     "index": 2,
+     "dimensions": null,
+     "year": "2026",
+     "flag": null,
+     "crop": {
+      "widthPx": 2893,
+      "heightPx": 4042
+     },
+     "display": {
+      "base": "/display/older-work-legend-of-billy-buff-1",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1341,
+      "fallback": "/display/older-work-legend-of-billy-buff-1.jpg"
+     }
+    },
+    {
+     "title": "The Legend of Billy Buff",
+     "name": "TJ The Legend of Billy Buff 1",
+     "index": 1,
+     "dimensions": null,
+     "year": "2026",
+     "flag": null,
+     "crop": {
+      "widthPx": 2863,
+      "heightPx": 4100
+     },
+     "display": {
+      "base": "/display/older-work-legend-of-billy-buff-2",
+      "widths": [
+       480,
+       960
+      ],
+      "width": 960,
+      "height": 1375,
+      "fallback": "/display/older-work-legend-of-billy-buff-2.jpg"
+     }
+    }
+   ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+    "sha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "widthPx": 5836,
+    "heightPx": 4042
+   }
+  }
+ ]
+}

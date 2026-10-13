@@ -3,6 +3,8 @@ import manifest from '../../catalog/book-galleries.json';
 import {byId,urlFor} from '../../catalog/catalog.mjs';
 import {sectionArtworkIds} from '../data/canonical-artworks.mjs';
 import {archivePaintings,archivePreview} from '../../catalog/archive-products.mjs';
+import {olderWorkGroups,olderWorkPreview} from '../../catalog/older-work-products.mjs';
+const olderWorkCount=olderWorkGroups.reduce((n,g)=>n+g.members.length,0);
 const groups=manifest.sections;
 ---
 <section id="book-galleries" class="section section-light"><div class="container">
@@ -11,6 +13,7 @@ const groups=manifest.sections;
     <div class="ex-track" tabindex="0" aria-label="Swipe or use arrow keys to browse galleries">
       {groups.map(g=>{const p=byId[sectionArtworkIds(g)[0]];return <article class="ex-slide product-card"><a href={`/book-galleries/${g.id}/`}><img src={p.image.src} alt={p.title} loading="lazy" decoding="async" style="object-fit:contain;background:#f4efe8"/><div class="ex-slide-caption product-info"><p>{g.book==='watercolor-landscapes'?'Landscapes':'Portraits'}</p><h3>{g.title}</h3><p>{g.artworks.length} {g.artworks.length===1?'work':'works'} · Explore gallery →</p></div></a></article>})}
       <article class="ex-slide product-card"><a href="/gallery/archived/"><img src={archivePreview(archivePaintings[0],480)} alt="Archived Paintings by TJ Murphy" loading="lazy" decoding="async" style="object-fit:contain;background:#f4efe8"/><div class="ex-slide-caption product-info"><p>From the studio archive</p><h3>Archived Paintings</h3><p>{archivePaintings.length} works · Explore gallery →</p></div></a></article>
+      <article class="ex-slide product-card"><a href="/gallery/older-work/"><img src={olderWorkPreview(olderWorkGroups[0],480)} alt="Older Work by TJ Murphy" loading="lazy" decoding="async" style="object-fit:contain;background:#f4efe8"/><div class="ex-slide-caption product-info"><p>From the studio</p><h3>Older Work</h3><p>{olderWorkCount} works · Explore gallery →</p></div></a></article>
     </div>
     <div class="ex-controls" hidden><button type="button" class="ex-autoplay" aria-label="Pause automatic gallery scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous gallery">←</button><p class="ex-position" role="status">1 / {groups.length+1}</p><button type="button" data-direction="1" aria-label="Next gallery">→</button><a href="/book-galleries/" class="button button-solid carousel-view-all">View all galleries</a></div>
   </div>

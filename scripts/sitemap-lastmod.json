@@ -1,6 +1,6 @@
 {
   "https://tjm.art/": {
-    "hash": "6ec24c67ddcecbf6",
+    "hash": "c89b9cd09dbc1393",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/about/": {
@@ -16,7 +16,7 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/": {
-    "hash": "99678ef1ee4eb32e",
+    "hash": "bb2408eac5984474",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/book-galleries/watercolor-landscapes-pacific-north-west/": {
@@ -108,7 +108,7 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/gallery/": {
-    "hash": "e6ff7ccc1704f095",
+    "hash": "d2725745b53c5411",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/archived/": {
@@ -117,6 +117,10 @@
   },
   "https://tjm.art/gallery/available/": {
     "hash": "a2d94db39e03cece",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/gallery/older-work/": {
+    "hash": "69fbad69c7906270",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/room/": {
@@ -128,7 +132,7 @@
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/wall/all/": {
-    "hash": "b2259d2df3a7c9ac",
+    "hash": "615acb4d56116b93",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/wall/paul/": {
@@ -962,6 +966,86 @@
   "https://tjm.art/products/myself-my-mother-ruth-my-grandpa-howard/": {
     "hash": "31169ef8773e3876",
     "lastmod": "2026-10-07"
+  },
+  "https://tjm.art/products/older-work-beach-sunsets/": {
+    "hash": "bf0d127111878dd1",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-bitcoin-voices/": {
+    "hash": "d57ce2c5e5b8fa83",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-breedlove-ammous-livera/": {
+    "hash": "2f9e7df2800acd9c",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-coconut-190/": {
+    "hash": "2f90fe986a903191",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-fernandez-moran-pysh/": {
+    "hash": "7f54e10cd3ad0103",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-figen-pnut-swoll/": {
+    "hash": "b9067d1ed49c4000",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-forest-triptych/": {
+    "hash": "86506e9221edffe6",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-hayek-stark-gomez-el-bawab/": {
+    "hash": "1145802ba0ffd626",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-lake-hillside-color-wheel/": {
+    "hash": "0a0f304801405838",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-legend-of-billy-buff/": {
+    "hash": "958f08e44712fdd8",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-mountain-layers/": {
+    "hash": "d0f772dbfbd84906",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-nakamoto-hayek/": {
+    "hash": "643638bc270ffe55",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-pitchers/": {
+    "hash": "e800a3bede38a492",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-portraits-319-329/": {
+    "hash": "af903d9658e49135",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-provibes-sandwiches/": {
+    "hash": "23564fa2def98126",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-ridge-strips-unindexed/": {
+    "hash": "7d4df735292c167b",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-rochard-martinez/": {
+    "hash": "a770e9b0cbeedf31",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-shore-figures/": {
+    "hash": "eac210040e2c9f2d",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-sunset-ridge-strips/": {
+    "hash": "7f90ab8c7de0327e",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/older-work-yakes-todd-dickerson/": {
+    "hash": "304740d17d41fdc6",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/painting-chef-in-white/": {
     "hash": "8d642b96b1022829",
