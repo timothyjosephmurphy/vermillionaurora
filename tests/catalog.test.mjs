@@ -317,9 +317,9 @@ test('commissions contact form shows the email with a decorative envelope icon a
  assert.equal(link.find('img').length,0,'icon is inline, no image request');
 });
 
-test('the homepage leads Exhibitions with the framed print wall and gallery room',()=>{
+test('the homepage ends Exhibitions with the gallery room and framed print wall',()=>{
  const $=load(fs.readFileSync('dist/index.html','utf8'));
- assert.deepEqual($('#exhibitions .ex-track').children().slice(0,2).map((i,n)=>$(n).attr('data-gallery-feature')).get(),['print-wall','gallery-room']);
+ assert.deepEqual($('#exhibitions .ex-track').children().slice(-2).map((i,n)=>$(n).attr('data-gallery-feature')).get(),['gallery-room','print-wall']);
  assert.equal($('.painting-carousel [data-gallery-feature]').length,0);
  assert.equal($('#exhibitions [data-gallery-feature="gallery-room"] .product-title-link').attr('href'),'/gallery/room/');
  const tile=$('#exhibitions [data-gallery-feature="print-wall"]');
