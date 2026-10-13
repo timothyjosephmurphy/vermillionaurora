@@ -1,7 +1,7 @@
 import {finerworksRequest} from './finerworks-api.mjs';
 import {finerworksRecipient,groupPrintProducts,quoteFinerWorksPrints} from './finerworks-quotes.mjs';
 import {moneyCents} from '../catalog/print-pricing.mjs';
-import {printAssetUrl} from './print-asset-policy.mjs';
+import {printAssetUrl,printThumbnailUrl} from './print-asset-policy.mjs';
 
 const terminal=new Set(['complete','review','cancelled','test-complete']);
 const reference=/^va-cart-[0-9a-f]{32}-prints$/;
@@ -20,7 +20,7 @@ export function newFinerWorksJob(env,order,items) {
   const origin=mode==='sandbox'?env.SANDBOX_RETURN_ORIGIN:'https://vermillion-commissions.timothyjosephmurphy.workers.dev';
   const request={merchantReference:po,orders:[{order_po:po,order_key:null,recipient:finerworksRecipient(q.address,po),
     order_items:items.map(item=>({product_order_po:po,product_sku:item.sku,product_qty:item.quantity,
-      product_title:item.title.slice(0,50),product_image:{product_url_file:printAssetUrl(item.assetUrl,mode),product_url_thumbnail:printAssetUrl(item.assetUrl,mode)}})),
+      product_title:item.title.slice(0,50),product_image:{product_url_file:printAssetUrl(item.assetUrl,mode),product_url_thumbnail:printThumbnailUrl(item.assetUrl,mode)}})),
     shipping_code:q.printQuote.shippingMethod,test_mode:mode==='sandbox',
     webhook_order_status_url:`${origin}/checkout/prints/callback?order=${order.id}&key=${callbackKey}`}],validate_only:false};
   // Payment credentials are attached only at the provider boundary, never persisted.

@@ -2,7 +2,7 @@ import {finerworksRequest,finerworksMaterials,finerworksPrices,finerworksEnviron
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
 import {moneyCents,moneyString,printRetailPrice} from '../catalog/print-pricing.mjs';
 import {framedRetailPrice} from '../catalog/frame-pricing.mjs';
-import {printAssetUrl} from './print-asset-policy.mjs';
+import {printAssetUrl,printThumbnailUrl} from './print-asset-policy.mjs';
 import {quoteMattedOption} from './finerworks-matting.mjs';
 import {sameMat} from '../catalog/matting.mjs';
 import {quoteFramedSelections} from './finerworks-framing.mjs';
@@ -110,7 +110,7 @@ export async function quoteFinerWorksPrints(env,items,address) {
   // The shipping endpoint validates the order model, including the image object.
   for(const product of products) {
     const item=items.find(i=>i.sku===product.product_sku),url=printAssetUrl(item.assetUrl,env.PAYPAL_MODE);
-    product.product_image={product_url_file:url,product_url_thumbnail:url};
+    product.product_image={product_url_file:url,product_url_thumbnail:printThumbnailUrl(item.assetUrl,env.PAYPAL_MODE)};
   }
   const body={orders:[{order_po:po,order_key:null,recipient,order_items:products,shipping_code:'EC',test_mode:env.PAYPAL_MODE==='sandbox'}]};
   const data=await finerworksRequest(env,'/v3/list_shipping_options_multiple',body);
@@ -125,7 +125,7 @@ export async function validateFinerWorksPrintOrder(env,items,address,quote) {
   groupPrintProducts(items,po);
   const order_items=items.map(item=>{
     const url=printAssetUrl(item.assetUrl,env.PAYPAL_MODE);
-    return {product_order_po:po,product_sku:item.sku,product_qty:item.quantity,product_title:String(item.title||'Art print').slice(0,50),product_image:{product_url_file:url,product_url_thumbnail:url}};
+    return {product_order_po:po,product_sku:item.sku,product_qty:item.quantity,product_title:String(item.title||'Art print').slice(0,50),product_image:{product_url_file:url,product_url_thumbnail:printThumbnailUrl(item.assetUrl,env.PAYPAL_MODE)}};
   });
   // Omit the optional source label: the live validator rejected it despite its documented text type.
   const body={orders:[{order_po:po,order_key:null,recipient:finerworksRecipient(address,po),order_items,shipping_code:quote.shippingMethod,test_mode:true}],validate_only:true,payment_token:'xxxx'};

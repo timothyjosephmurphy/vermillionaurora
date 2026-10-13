@@ -10,7 +10,7 @@ import {editionLayouts,EDITION_LAYOUT,EDITION_BORDER_IN} from '../catalog/editio
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
 const prepareArchive=process.argv.includes('--prepare-archive'),prepareTJ=process.argv.includes('--prepare-tj')||prepareArchive,prepare=process.argv.includes('--prepare')||prepareTJ,digest=b=>createHash('sha256').update(b).digest('hex'),run=promisify(execFile);
 const root=new URL('../',import.meta.url),cache=new URL('.cache/edition-sources/',root),output=new URL('static/print-editions/',root);
-await mkdir(cache,{recursive:true});await mkdir(output,{recursive:true});
+await mkdir(cache,{recursive:true});await mkdir(new URL('thumbs/',output),{recursive:true});
 const tjIds=prepareTJ?JSON.parse(await readFile(new URL(prepareArchive?'catalog/archive-print-masters.json':'catalog/tj-print-masters.json',root),'utf8')).map(r=>r.id):[];
 // --only=id,id limits a preparation run to replaced or new masters so other approved files stay untouched.
 const only=process.argv.find(a=>a.startsWith('--only='))?.slice(7).split(',');
@@ -52,6 +52,8 @@ await Promise.all(Array.from({length:4},async()=>{
       if(prepare)art.variants[key]={...art.variants[key],sku,asset};
       else if(JSON.stringify(art.variants[key]?.asset)!==JSON.stringify(asset))throw Error(`Edition file needs review: ${product.id}/${key}`);
       await writeFile(new URL(`${hash}.jpg`,output),data);count++;
+      // FinerWorks builds its order thumbnail from product_url_thumbnail; a full print master is too large for it.
+      await writeFile(new URL(`thumbs/${hash}.jpg`,output),await sharp(data).resize({width:1000,height:1000,fit:'inside',withoutEnlargement:true}).jpeg({quality:80}).toBuffer());
     }
     if(prepare)config.artworks[product.id]=art;
     console.log(`Prepared ${product.id}`);
