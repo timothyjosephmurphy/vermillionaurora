@@ -67476,7 +67476,70 @@
         "heightPx": 2135,
         "sha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299"
       },
-      "variants": {}
+      "variants": {
+        "full": {
+          "sku": "5M144M8S25.73X7.36",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092.jpg",
+            "sha256": "a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092",
+            "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
+            "productCode": "5M144M8S25.73X7.36",
+            "imageWidthIn": 25.45,
+            "imageHeightIn": 7.1067,
+            "paperWidthIn": 25.73,
+            "paperHeightIn": 7.36,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-white-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 7719,
+              "heightPx": 2208,
+              "content": {
+                "left": 42,
+                "top": 38,
+                "width": 7635,
+                "height": 2132
+              }
+            }
+          },
+          "amount": "90.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T20:00:00.000Z"
+        },
+        "medium": {
+          "sku": "5M144M8S19.36X5.58",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f.jpg",
+            "sha256": "7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f",
+            "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
+            "productCode": "5M144M8S19.36X5.58",
+            "imageWidthIn": 19.0767,
+            "imageHeightIn": 5.3267,
+            "paperWidthIn": 19.36,
+            "paperHeightIn": 5.58,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-white-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 5808,
+              "heightPx": 1674,
+              "content": {
+                "left": 42,
+                "top": 38,
+                "width": 5723,
+                "height": 1598
+              }
+            }
+          },
+          "amount": "65.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T20:00:00.000Z"
+        }
+      }
     },
     "painting-portrait-with-scarf": {
       "enabled": true,
