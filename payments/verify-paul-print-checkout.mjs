@@ -11,22 +11,24 @@ async function api(action,body){
 const tj=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.productId.startsWith('paul-murphy-')&&!p.productId.startsWith('book-art-'));
 const books=Object.values(prints).filter(p=>p.productId.startsWith('book-art-'));
 assert.equal(new Set(books.map(p=>p.productId)).size,53);assert.equal(books.filter(p=>!p.frame).length,109);assert.equal(books.filter(p=>p.frame).length,327);assert.equal(books.length,436);
-// 24 TJ masters (Oct 2026: El Zonte set, then Meditation at Denny Blaine, Sunrise in El Zonte (Large), Moonrise Over the Cascades, Sunset at Kihei on Maui, Hope, the Vermillion Aurora and Cormorant over Puget Sound).
-assert.equal(new Set(tj.map(p=>p.productId)).size,24);assert.equal(tj.filter(p=>!p.frame).length,59);assert.equal(tj.filter(p=>p.frame).length,177);
+// 24 existing TJ masters plus all 54 artist-designated archive masters.
+assert.equal(new Set(tj.map(p=>p.productId)).size,78);assert.equal(tj.filter(p=>!p.frame).length,215);assert.equal(tj.filter(p=>p.frame).length,645);
 const expected=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&p.productId.startsWith('paul-murphy-')),catalog=await api('catalog');
 assert.equal(expected.filter(p=>!p.frame).length,112);assert.equal(expected.filter(p=>p.frame).length,336);assert.equal(new Set(expected.map(p=>p.productId)).size,38);assert(catalog.version.endsWith('-'+printVersion));
 for(const p of [...expected,...tj,...books]){
   const live=catalog.products.find(i=>i.id===p.id);assert(live,`Missing edition: ${p.id}`);assert.equal(live.amount,p.amount);assert.equal(live.status,'available');assert(live.methods.includes('square')&&!live.methods.includes('paypal'));assert(!live.sampleOnly);
 }
 const bookFrame=books.find(p=>p.frame),bookUnframed=books.find(p=>!p.frame);assert(bookFrame&&bookUnframed);
-const ids=['print-paul-murphy-painting-57-small-frame-black','print-paul-murphy-painting-55-full-frame-white','print-paul-murphy-painting-72-medium-frame-natural','print-paul-murphy-painting-86-small','print-painting-portrait-with-hat-full-frame-black','print-painting-figures-in-wheatfield-full-frame-white','print-warszawska-syrenka-small-frame-natural','print-painting-sunset-silhouette-full',bookFrame.id,bookUnframed.id];let order;
+const ids=['print-paul-murphy-painting-57-small-frame-black','print-paul-murphy-painting-55-full-frame-white','print-paul-murphy-painting-72-medium-frame-natural','print-paul-murphy-painting-86-small','print-painting-portrait-with-hat-full-frame-black','print-painting-figures-in-wheatfield-full-frame-white','print-warszawska-syrenka-small-frame-natural','print-painting-sunset-silhouette-full',bookFrame.id,bookUnframed.id,'print-archived-painting-246-small-frame-black','print-archived-painting-1-full'];let order;
 try {
   const q=await api('quote',{catalogVersion:catalog.version,items:ids.map(id=>({id,quantity:1})),email:'checkout-verification@example.test',address:{name:'Checkout Verification',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'}});
   order={orderId:q.orderId,key:q.key};assert.equal(q.quote.base,(ids.reduce((sum,id)=>sum+Math.round(Number(prints[id].amount)*100),0)/100).toFixed(2));
   assert(Number(q.quote.shipping)>0);assert.deepEqual(q.quote.items.map(i=>i.id).sort(),ids.sort());
   assert(q.quote.items.every(i=>i.imageSize.width<i.paperSize.width&&i.imageSize.height<i.paperSize.height));
-  assert.equal(q.quote.items.filter(i=>i.frame&&i.mat&&i.frame.glazing?.name==='Premium Clear').length,7);
+  assert.equal(q.quote.items.filter(i=>i.frame&&i.mat&&i.frame.glazing?.name==='Premium Clear').length,8);
   assert(q.quote.items.some(i=>i.id===bookFrame.id&&i.frame&&i.mat),'The framed book edition must quote successfully');
+  assert(q.quote.items.some(i=>i.id==='print-archived-painting-246-small-frame-black'&&i.frame),'Archive framed edition quotes successfully');
+  assert(q.quote.items.some(i=>i.id==='print-archived-painting-1-full'&&!i.frame),'Archive panorama quotes successfully');
   const all=[...expected,...tj,...books];
   console.log(`PASS: ${new Set([...expected,...tj].map(p=>p.productId)).size} original-gallery paintings plus ${new Set(books.map(p=>p.productId)).size} book artworks / ${all.filter(p=>!p.frame).length} unframed and ${all.filter(p=>p.frame).length} framed variants available; representative framed, unframed, and R2-backed book editions quoted with shipping and tax. No payment started or print submitted.`);
 } finally {if(order){const r=await api('cancel',order);assert.equal(r.status,'cancelled');}}

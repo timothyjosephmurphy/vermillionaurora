@@ -8,6 +8,7 @@ import bookProducts from '../catalog/book-products.json' with {type:'json'};
 import bookPrints from '../catalog/book-prints.json' with {type:'json'};
 import {printOptions,config,papers} from '../catalog/prints.mjs';
 import originalProducts from '../catalog/products.json' with {type:'json'};
+import archiveProducts from '../catalog/archive-products.mjs';
 import collections from '../catalog/collections.json' with {type:'json'};
 import {canonicalArtwork,sectionAdditions,sectionArtworkIds} from '../src/data/canonical-artworks.mjs';
 
@@ -21,7 +22,8 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
     assert(!product.listing.price);
     assert(!product.dimensions,'Unstated units must not become inches');
   }
-  for(const entries of Object.values(collections))for(const entry of entries)assert(originalIds.has(entry.product));
+  const collectionIds=new Set([...originalProducts,...archiveProducts].map(p=>p.id));
+  for(const entries of Object.values(collections))for(const entry of entries)assert(collectionIds.has(entry.product),entry.product);
 
   assert.equal(manifest.sections.length,6);
   assert(!manifest.sections.some(group=>group.title==='About the Author'));

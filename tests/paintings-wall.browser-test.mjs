@@ -50,9 +50,9 @@ for(const engine of [chromium,webkit]){
 
       // Filter
       const filterButtons=page.locator('[data-wall-filter] [data-filter]');
-      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),['All (46)','Available (19)','Sold (8)','Not for sale (19)']);
+      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),['All (66)','Available (31)','Sold (8)','Not for sale (27)']);
       await page.locator('[data-filter="sold"]').click();await settled();
-      assert.equal(await page.locator('.wall-art.is-dimmed').count(),46-8);
+      assert.equal(await page.locator('.wall-art.is-dimmed').count(),66-8);
       assert.equal(await picker.locator('option').count(),9);
       await page.locator('[data-filter="all"]').click();await settled();
       assert.equal(await page.locator('.wall-art.is-dimmed').count(),0);
@@ -123,3 +123,4 @@ for(const engine of [chromium,webkit]){
     console.log(`PASS: ${engine.name()} all-paintings wall: reduced motion and no-JS list`);
   }finally{await browser.close();}
 }
+

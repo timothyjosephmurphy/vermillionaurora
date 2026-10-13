@@ -5,6 +5,7 @@ import {load} from 'cheerio';
 import manifest from '../catalog/book-galleries.json' with {type:'json'};
 import bookProducts from '../catalog/book-products.json' with {type:'json'};
 import products from '../catalog/products.json' with {type:'json'};
+import archiveProducts from '../catalog/archive-products.mjs';
 import collections from '../catalog/collections.json' with {type:'json'};
 import {canonicalArtwork,sectionArtworkIds} from '../src/data/canonical-artworks.mjs';
 import {PRODUCT_RENAMES,renamedProductPath} from '../worker/product-renames.mjs';
@@ -102,7 +103,8 @@ test('merged duplicates: each painting shows once and feeds list only the surviv
     assert.deepEqual(shown,sectionArtworkIds(group));
     $('a[href^="/products/book-art-"]').each((_,a)=>assert(!scans.some(s=>$(a).attr('href').startsWith(`/products/${s}/`)),`${group.id} links ${$(a).attr('href')}`));
   }
-  for(const entries of Object.values(collections))for(const e of entries)assert(byId[e.product],e.product);
+  const collectionIds=new Set([...products,...archiveProducts].map(p=>p.id));
+  for(const entries of Object.values(collections))for(const e of entries)assert(collectionIds.has(e.product),e.product);
   const sitemap=fs.readFileSync('dist/sitemap.xml','utf8');
   const feed=JSON.parse(fs.readFileSync('dist/catalog/products.json','utf8'));
   const inventory=JSON.parse(fs.readFileSync('dist/gallery/inventory.json','utf8'));

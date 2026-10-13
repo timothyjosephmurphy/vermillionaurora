@@ -5,7 +5,9 @@ import {framedMatLayout as matLayout,sameMat} from '../catalog/matting.mjs';
 import {frameFinish,sameFrame} from '../catalog/framing.mjs';
 import frames from '../catalog/finerworks-frames.json' with {type:'json'};
 import mats from '../catalog/finerworks-mats.json' with {type:'json'};
-import allRecipes from '../catalog/tj-print-masters.json' with {type:'json'};
+import tjRecipes from '../catalog/tj-print-masters.json' with {type:'json'};
+import archiveRecipes from '../catalog/archive-print-masters.json' with {type:'json'};
+const allRecipes=process.env.PRINT_RECIPE_SET==='archive'?archiveRecipes:tjRecipes;
 // TJ_PRINT_IDS=id,id quotes or applies only replaced/new masters; other paintings keep their published prices.
 const onlyIds=process.env.TJ_PRINT_IDS?.split(',').map(s=>s.trim()).filter(Boolean);
 const recipes=onlyIds?allRecipes.filter(r=>onlyIds.includes(r.id)):allRecipes;
@@ -30,3 +32,4 @@ for(const q of report.variants){
 assert.equal(expected.size,0);
 await writeFile(url,JSON.stringify(config,null,2)+'\n');
 console.log(`Applied ${report.variants.length} verified framed variants for ${ids.length} paintings.`);
+

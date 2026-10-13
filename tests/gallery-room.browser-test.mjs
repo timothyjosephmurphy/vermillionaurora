@@ -2,7 +2,7 @@ import {chromium} from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import {wallArtworks} from '../src/data/gallery-wall.mjs';
+import {roomArtworks as wallArtworks} from '../src/data/gallery-room.mjs';
 import {ROOM} from '../src/scripts/gallery-room-layout.mjs';
 const origin='https://tjm.art',root=path.resolve('dist');
 const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
@@ -86,3 +86,4 @@ try{
   assert.equal(await fallbackPage.locator('[data-room-index] li a').count(),24);await fallback.close();
   console.log('PASS: square room wall collisions, contact-to-product interaction, and WebGL-unavailable fallback.');
 }finally{await browser.close();}
+
