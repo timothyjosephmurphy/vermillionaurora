@@ -39,7 +39,7 @@ const metaDescription=(()=>{
     ?`${p.title}: an original ${medium}${detail?` (${detail})`:''} by Seattle artist TJ Murphy.`
     :`${p.title}: an original ${medium}${detail?` (${detail})`:''} by featured artist ${p.artist}, presented by Seattle artist TJ Murphy.`;
   const price=p.listing?.price?.amount?`$${Number(p.listing.price.amount).toLocaleString('en-US',{maximumFractionDigits:2})}`:'';
-  const status=p.archive&&p.listing.status==='not-for-sale'?'From the Archived Paintings collection.':{available:price?`Original available for ${price}.`:'Original available.',inquiry:'Original available by inquiry.',sold:'The original has sold.','not-for-sale':'The original is not for sale.',reserved:'The original is currently reserved.'}[p.listing?.status]||'';
+  const status=p.archive&&!p.archive.originalWithdrawn&&p.listing.status==='not-for-sale'?'From the Archived Paintings collection.':{available:price?`Original available for ${price}.`:'Original available.',inquiry:'Original available by inquiry.',sold:'The original has sold.','not-for-sale':'The original is not for sale.',reserved:'The original is currently reserved.'}[p.listing?.status]||'';
   const prints=printFrom?`Fine-art prints from $${Number(printFrom).toLocaleString('en-US',{minimumFractionDigits:printFrom%1?2:0,maximumFractionDigits:2})}.`:'';
   return [lead,status,prints].filter(Boolean).join(' ');
 })();
@@ -86,7 +86,7 @@ const facts=painting ? [
   </section>}
       {relatedProduct&&<p class="product-print-availability"><a href={urlFor(relatedProduct)}>{p.bookGallery?'View the original painting':(relatedPrints?'View fine-art print options':'View in the book collection')} →</a></p>}
       {p.listing.price && p.listing.status!=='not-for-sale' && (!painting||p.listing.status!=='available') && <p class="product-detail-price">{priceLabel(p)}</p>}
-      {painting && <p class="product-availability" data-live-status={p.archive&&p.listing.status==='not-for-sale'?undefined:''}>{p.archive&&p.listing.status==='not-for-sale'?'Archived painting':p.bookGallery?'From the book collection':statusLabel(p)}</p>}
+      {painting && <p class="product-availability" data-live-status={p.archive&&!p.archive.originalWithdrawn&&p.listing.status==='not-for-sale'?undefined:''}>{p.archive&&!p.archive.originalWithdrawn&&p.listing.status==='not-for-sale'?'Archived painting':p.bookGallery?'From the book collection':statusLabel(p)}</p>}
       {painting&&!p.archive&&availablePrints.length===0&&!relatedPrints&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
       {painting&&!p.bookGallery&&p.listing.status==='sold'&&<section class="sold-next-steps" aria-label="Next steps for a sold painting">
         <p>This original has found its home. I can paint something in the same spirit for you.</p>
