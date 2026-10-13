@@ -150,6 +150,8 @@ for(const engine of [chromium,webkit]){
     const transition=await page.evaluate(()=>window.wallIncomingTransition);
     if(engine===chromium)assert.equal(transition,true,'The native image transition completes on the product page');
     else assert(transition===undefined||transition===true,'Supported cross-page image transitions complete');
+    // Finish mocked product requests before navigating away; WebKit reports cancelled cross-origin requests as page errors.
+    await page.waitForLoadState('networkidle');
     await page.emulateMedia({reducedMotion:'reduce'});await page.setViewportSize({width:390,height:844});await open();
     await page.locator(`[data-wall-art="${art.id}"]`).click();await settled();
     assert.equal(page.url(),origin+'/gallery/wall/');
@@ -158,6 +160,7 @@ for(const engine of [chromium,webkit]){
     assert(phoneArt.y+phoneArt.height<phonePanel.y,'Phone details sit below the entire frame');
     await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-inspection-mobile.png`,fullPage:true});
     await Promise.all([page.waitForURL(origin+art.href),page.locator(`[data-wall-art="${art.id}"]`).click()]);
+    await page.waitForLoadState('networkidle');
     await page.goto(origin+'/');
     const wallTile=page.locator('#exhibitions [data-gallery-feature="print-wall"]');
     assert.equal(await wallTile.locator('.product-title-link').getAttribute('href'),'/gallery/wall/');
