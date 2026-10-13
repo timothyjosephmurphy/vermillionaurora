@@ -139,4 +139,6 @@ test('Father Paul and My Dad, Paul Murphy are one painting: the archive page wit
   const $=read('dist/index.html');
   assert.equal($(`.available-paintings-carousel [data-product-id="${slug}"]`).length,0);
   assert.equal($(`.collector-items-carousel [data-product-id="${slug}"]`).length,1);
+  const page=read(`dist/products/${slug}/index.html`);
+  assert.equal(page('.product-availability').text().trim(),'Not for sale');
 });
