@@ -28,12 +28,12 @@ test('all 54 archive masters retain exact bytes and offer native-resolution edit
     }
     assert.equal(wallArtworks.filter(a=>a.id===recipe.id).length,1,recipe.id);
   }
-  assert.equal(wallArtworks.length,78);
+  assert.equal(wallArtworks.length,77);
   assert.equal(roomArtworks.length,24,'Expanded Print Wall does not overcrowd the curated 3D room');
 });
 
 test('identified featured selections have comparable original prices and measured shipping only',()=>{
-  const expected=[246,248,247,438,437,433,436,301,66,15,2,1,307,249].map(n=>`archived-painting-${n}`).concat(['archived-painting-img-1555','archived-painting-img-1608']);
+  const expected=[246,248,247,438,437,433,436,301,66,15,2,1,307,249].map(n=>`archived-painting-${n}`).concat(['archived-painting-img-1555']);
   const selected=products.filter(p=>p.listing.status==='available');
   assert.deepEqual(new Set(selected.map(p=>p.id)),new Set(expected));
   assert.deepEqual(manifest.featuredSelectionRequest.unmatchedIndices,[266]);
@@ -48,5 +48,5 @@ test('identified featured selections have comparable original prices and measure
       assert.equal(p.checkout.shipping.verification,'estimated');
     }else assert.equal(p.dimensions,null);
   }
-  assert.equal(selected.filter(p=>p.checkout.mode==='integrated').length,12);
+  assert.equal(selected.filter(p=>p.checkout.mode==='integrated').length,11);
 });

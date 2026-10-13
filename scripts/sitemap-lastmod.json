@@ -1,6 +1,6 @@
 {
   "https://tjm.art/": {
-    "hash": "c89b9cd09dbc1393",
+    "hash": "90889b2b448a8b5c",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/about/": {
@@ -32,8 +32,8 @@
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-family/": {
-    "hash": "0f72f8469c403643",
-    "lastmod": "2026-10-08"
+    "hash": "8e072e04f14026b7",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-friends/": {
     "hash": "14fdaa7821ab46af",
@@ -108,7 +108,7 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/gallery/": {
-    "hash": "d2725745b53c5411",
+    "hash": "b76f871f594db2d4",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/archived/": {
@@ -116,7 +116,7 @@
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/available/": {
-    "hash": "a2d94db39e03cece",
+    "hash": "8f3365cdc3606fe9",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/older-work/": {
@@ -124,19 +124,19 @@
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/room/": {
-    "hash": "0b1430dde5bde91b",
+    "hash": "1e27f04d77e1cd36",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/wall/": {
-    "hash": "0961738382c54c16",
+    "hash": "56f11c2cbcc854f1",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/wall/all/": {
-    "hash": "ce8c0c7f0ee39aff",
+    "hash": "582a558b6582858a",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/wall/paul/": {
-    "hash": "fdda59f879be1a2e",
+    "hash": "66d7e3ea1997b3c2",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/links/": {
@@ -368,7 +368,7 @@
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/archived-painting-img-1608/": {
-    "hash": "928dce98f5eac291",
+    "hash": "bfca13930a6a608c",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/archived-painting-img-1612/": {
@@ -1114,10 +1114,6 @@
   "https://tjm.art/products/painting-portrait-with-hat/": {
     "hash": "b473015225d68de4",
     "lastmod": "2026-10-13"
-  },
-  "https://tjm.art/products/painting-portrait-with-scarf/": {
-    "hash": "afca22a514a18162",
-    "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-red-horizon/": {
     "hash": "4d6962194e063ac8",

@@ -81,7 +81,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
     assert.equal($('script[src="/exhibitions/viewer.js"]').length,1);
     assert.equal($('.book-measurement-note').length,0);
     assert(!$('[data-gallery-list]').text().toLowerCase().includes('book measurements'));
-    const expected=shown.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||originalProducts.find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
+    const expected=shown.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||[...originalProducts,...archiveProducts].find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
     assert.equal(Number($('.book-gallery-stats').attr('data-print-ready-count')),expected);
     for(const id of group.artworks)assert(bookProducts.some(product=>product.id===id)||Object.values(canonicalArtwork).includes(id),`${id} is neither a book product nor a canonical painting`);
   }
@@ -92,7 +92,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   assert.equal(overview('.book-gallery-carousel-grid li').length,manifest.sections.length+2);
   assert.equal(overview('.book-gallery-links a').length,manifest.books.length);
   const uniqueIds=[...new Set(manifest.sections.flatMap(sectionArtworkIds))];
-  const printReady=uniqueIds.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||originalProducts.find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
+  const printReady=uniqueIds.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||[...originalProducts,...archiveProducts].find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
   assert.equal(Number(overview('.book-gallery-print-total').attr('data-total-print-ready-count')),printReady);
   const home=load(fs.readFileSync('dist/index.html','utf8'));
   assert.equal(home('.book-section-carousel .ex-slide').length,manifest.sections.length+2);
@@ -105,7 +105,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   assert(groups.get('watercolor-landscapes-travels').artworks.includes('painting-shoreline-at-dusk'));
   assert.equal(originalProducts.find(product=>product.id==='painting-shoreline-at-dusk').title,'El Zonte at Dawn');
   for(const [scan,canonical] of Object.entries(canonicalArtwork)){
-    assert(originalProducts.some(product=>product.id===canonical));
+    assert([...originalProducts,...archiveProducts].some(product=>product.id===canonical));
     assert(fs.readFileSync('static/_redirects','utf8').includes(`/products/${scan}/ /products/${canonical}/ 301`));
   }
   const devo=bookProducts.find(p=>p.id===friends.artworks[0]);
