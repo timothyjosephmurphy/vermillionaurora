@@ -148,37 +148,8 @@
   {
     "id": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle",
-    "sha256": "0002b816708471c1008a8cccbe7cb7e0080a4341fc8c772780b7df47839f0303",
-    "url": "https://media.vermillionaurora.com/images/Art-book-Landscapes/Landscapes%20book%20Second%20Draft.pdf",
-    "pdfSha256": "93339a45cf842fc1bdc39c161b8b6f4be8004f573812c609d2bbb64610415944",
-    "xref": 193,
-    "page": 14,
-    "corners": [
-      [
-        90,
-        163.89999389648438
-      ],
-      [
-        2810.5,
-        153.10000610351562
-      ],
-      [
-        2831.699951171875,
-        920.7000122070312
-      ],
-      [
-        65.4000015258789,
-        930.2999877929688
-      ]
-    ],
-    "widthPx": 2720,
-    "heightPx": 766,
-    "layoutOptions": {
-      "padPaperToMinimum": true,
-      "sizeKeys": [
-        "full"
-      ]
-    }
+    "sha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
+    "local": "static/print-masters/b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682.jpg"
   },
   {
     "id": "painting-phoenix-rising",
