@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="c9b28406d6ee923ce26f";
+export const printVersion="1cf5691b54e4f3db76c1";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -115492,5 +115492,11429 @@ export default {
       }
     },
     "unframedAmount": "40.00"
+  },
+  "print-older-work-shore-figures-full": {
+    "id": "print-older-work-shore-figures-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Large print",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "80.00",
+    "currency": "USD",
+    "sku": "5M144M8S23.71X7.25",
+    "scale": 1,
+    "imageSize": {
+      "width": 23.4567,
+      "height": 6.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 23.71,
+      "height": 7.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2.jpg",
+    "assetSha256": "3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
+      "width": 7040,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-shore-figures-full-frame-black": {
+    "id": "print-older-work-shore-figures-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Large print — Black frame",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "151.00",
+    "currency": "USD",
+    "sku": "5M144M8S23DD71X7DD25F1S26DD71X10DD25J1S23DD71X7DD25G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 23.4567,
+      "height": 6.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 23.71,
+      "height": 7.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2.jpg",
+    "assetSha256": "3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
+      "width": 7040,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 26.71,
+        "height": 10.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 23.71,
+        "height": 7.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S23.71X7.25",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 26.71,
+        "height": 10.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-older-work-shore-figures-full-frame-white": {
+    "id": "print-older-work-shore-figures-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Large print — White frame",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "151.00",
+    "currency": "USD",
+    "sku": "5M144M8S23DD71X7DD25F2S26DD71X10DD25J1S23DD71X7DD25G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 23.4567,
+      "height": 6.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 23.71,
+      "height": 7.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2.jpg",
+    "assetSha256": "3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
+      "width": 7040,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 26.71,
+        "height": 10.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 23.71,
+        "height": 7.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S23.71X7.25",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 26.71,
+        "height": 10.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-older-work-shore-figures-full-frame-natural": {
+    "id": "print-older-work-shore-figures-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Large print — Natural wood frame",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "167.00",
+    "currency": "USD",
+    "sku": "5M144M8S23DD71X7DD25F7S26DD71X10DD25J1S23DD71X7DD25G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 23.4567,
+      "height": 6.9967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 23.71,
+      "height": 7.25,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2.jpg",
+    "assetSha256": "3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
+      "width": 7040,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 26.71,
+        "height": 10.25,
+        "unit": "in"
+      },
+      "window": {
+        "width": 23.71,
+        "height": 7.25,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S23.71X7.25",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 26.71,
+        "height": 10.25,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-older-work-shore-figures-medium": {
+    "id": "print-older-work-shore-figures-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Medium print",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "60.00",
+    "currency": "USD",
+    "sku": "5M144M8S17.85X5.5",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 17.59,
+      "height": 5.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 17.85,
+      "height": 5.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d.jpg",
+    "assetSha256": "9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
+      "width": 7040,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-shore-figures-medium-frame-black": {
+    "id": "print-older-work-shore-figures-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Medium print — Black frame",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "113.00",
+    "currency": "USD",
+    "sku": "5M144M8S17DD85X5DD5F1S20DD85X8DD5J1S17DD85X5DD5G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 17.59,
+      "height": 5.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 17.85,
+      "height": 5.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d.jpg",
+    "assetSha256": "9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
+      "width": 7040,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20.85,
+        "height": 8.5,
+        "unit": "in"
+      },
+      "window": {
+        "width": 17.85,
+        "height": 5.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S17.85X5.5",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20.85,
+        "height": 8.5,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-shore-figures-medium-frame-white": {
+    "id": "print-older-work-shore-figures-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Medium print — White frame",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "113.00",
+    "currency": "USD",
+    "sku": "5M144M8S17DD85X5DD5F2S20DD85X8DD5J1S17DD85X5DD5G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 17.59,
+      "height": 5.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 17.85,
+      "height": 5.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d.jpg",
+    "assetSha256": "9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
+      "width": 7040,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20.85,
+        "height": 8.5,
+        "unit": "in"
+      },
+      "window": {
+        "width": 17.85,
+        "height": 5.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S17.85X5.5",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20.85,
+        "height": 8.5,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-shore-figures-medium-frame-natural": {
+    "id": "print-older-work-shore-figures-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Medium print — Natural wood frame",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "125.00",
+    "currency": "USD",
+    "sku": "5M144M8S17DD85X5DD5F7S20DD85X8DD5J1S17DD85X5DD5G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 17.59,
+      "height": 5.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 17.85,
+      "height": 5.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d.jpg",
+    "assetSha256": "9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
+      "width": 7040,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20.85,
+        "height": 8.5,
+        "unit": "in"
+      },
+      "window": {
+        "width": 17.85,
+        "height": 5.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S17.85X5.5",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20.85,
+        "height": 8.5,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-mountain-layers-full": {
+    "id": "print-older-work-mountain-layers-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-mountain-layers",
+    "title": "Mountain Layers Studies — Large print",
+    "artworkTitle": "Mountain Layers Studies",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M8S15.17X4",
+    "scale": 1,
+    "imageSize": {
+      "width": 14.9167,
+      "height": 2.5,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.17,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157.jpg",
+    "assetSha256": "c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157",
+    "sourceSha256": "22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d.jpg",
+      "fullSrc": "/display/older-work-mountain-layers-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Blue Mountain Layers 185, TJ Orange Mountain Layers 186, TJ Red Mountain Layers 156, TJ Golden Mountain Layers 153",
+      "width": 4476,
+      "height": 750,
+      "caption": "Mountain Layers Studies"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-mountain-layers-full-frame-black": {
+    "id": "print-older-work-mountain-layers-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-mountain-layers",
+    "title": "Mountain Layers Studies — Large print — Black frame",
+    "artworkTitle": "Mountain Layers Studies",
+    "amount": "98.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD17X4F1S19DD17X8J1S15DD17X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 14.9167,
+      "height": 2.5,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.17,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157.jpg",
+    "assetSha256": "c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157",
+    "sourceSha256": "22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d.jpg",
+      "fullSrc": "/display/older-work-mountain-layers-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Blue Mountain Layers 185, TJ Orange Mountain Layers 186, TJ Red Mountain Layers 156, TJ Golden Mountain Layers 153",
+      "width": 4476,
+      "height": 750,
+      "caption": "Mountain Layers Studies"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.17,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.17,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.17X4",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.17,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-mountain-layers-full-frame-white": {
+    "id": "print-older-work-mountain-layers-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-mountain-layers",
+    "title": "Mountain Layers Studies — Large print — White frame",
+    "artworkTitle": "Mountain Layers Studies",
+    "amount": "98.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD17X4F2S19DD17X8J1S15DD17X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 14.9167,
+      "height": 2.5,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.17,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157.jpg",
+    "assetSha256": "c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157",
+    "sourceSha256": "22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d.jpg",
+      "fullSrc": "/display/older-work-mountain-layers-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Blue Mountain Layers 185, TJ Orange Mountain Layers 186, TJ Red Mountain Layers 156, TJ Golden Mountain Layers 153",
+      "width": 4476,
+      "height": 750,
+      "caption": "Mountain Layers Studies"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.17,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.17,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.17X4",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.17,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-mountain-layers-full-frame-natural": {
+    "id": "print-older-work-mountain-layers-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-mountain-layers",
+    "title": "Mountain Layers Studies — Large print — Natural wood frame",
+    "artworkTitle": "Mountain Layers Studies",
+    "amount": "110.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD17X4F7S19DD17X8J1S15DD17X4G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 14.9167,
+      "height": 2.5,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.17,
+      "height": 4,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157.jpg",
+    "assetSha256": "c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157",
+    "sourceSha256": "22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d.jpg",
+      "fullSrc": "/display/older-work-mountain-layers-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Blue Mountain Layers 185, TJ Orange Mountain Layers 186, TJ Red Mountain Layers 156, TJ Golden Mountain Layers 153",
+      "width": 4476,
+      "height": 750,
+      "caption": "Mountain Layers Studies"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.17,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.17,
+        "height": 4,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.17X4",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.17,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-lake-hillside-color-wheel-full": {
+    "id": "print-older-work-lake-hillside-color-wheel-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-lake-hillside-color-wheel",
+    "title": "Lake, Hillside and Color Wheel — Large print",
+    "artworkTitle": "Lake, Hillside and Color Wheel",
+    "amount": "70.00",
+    "currency": "USD",
+    "sku": "5M144M8S20.8X5.11",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.5433,
+      "height": 4.8567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.8,
+      "height": 5.11,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f.jpg",
+    "assetSha256": "03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f",
+    "sourceSha256": "eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67.jpg",
+      "fullSrc": "/display/older-work-lake-hillside-color-wheel-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Mountain Lake 145, TJ Golden Hillside 141, TJ Color Wheel Study 184",
+      "width": 6167,
+      "height": 1458,
+      "caption": "Lake, Hillside and Color Wheel"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-lake-hillside-color-wheel-full-frame-black": {
+    "id": "print-older-work-lake-hillside-color-wheel-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-lake-hillside-color-wheel",
+    "title": "Lake, Hillside and Color Wheel — Large print — Black frame",
+    "artworkTitle": "Lake, Hillside and Color Wheel",
+    "amount": "127.00",
+    "currency": "USD",
+    "sku": "5M144M8S20DD8X5DD11F1S23DD8X8DD11J1S20DD8X5DD11G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.5433,
+      "height": 4.8567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.8,
+      "height": 5.11,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f.jpg",
+    "assetSha256": "03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f",
+    "sourceSha256": "eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67.jpg",
+      "fullSrc": "/display/older-work-lake-hillside-color-wheel-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Mountain Lake 145, TJ Golden Hillside 141, TJ Color Wheel Study 184",
+      "width": 6167,
+      "height": 1458,
+      "caption": "Lake, Hillside and Color Wheel"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 23.8,
+        "height": 8.11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 20.8,
+        "height": 5.11,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S20.8X5.11",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 23.8,
+        "height": 8.11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-lake-hillside-color-wheel-full-frame-white": {
+    "id": "print-older-work-lake-hillside-color-wheel-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-lake-hillside-color-wheel",
+    "title": "Lake, Hillside and Color Wheel — Large print — White frame",
+    "artworkTitle": "Lake, Hillside and Color Wheel",
+    "amount": "127.00",
+    "currency": "USD",
+    "sku": "5M144M8S20DD8X5DD11F2S23DD8X8DD11J1S20DD8X5DD11G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.5433,
+      "height": 4.8567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.8,
+      "height": 5.11,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f.jpg",
+    "assetSha256": "03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f",
+    "sourceSha256": "eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67.jpg",
+      "fullSrc": "/display/older-work-lake-hillside-color-wheel-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Mountain Lake 145, TJ Golden Hillside 141, TJ Color Wheel Study 184",
+      "width": 6167,
+      "height": 1458,
+      "caption": "Lake, Hillside and Color Wheel"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 23.8,
+        "height": 8.11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 20.8,
+        "height": 5.11,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S20.8X5.11",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 23.8,
+        "height": 8.11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-lake-hillside-color-wheel-full-frame-natural": {
+    "id": "print-older-work-lake-hillside-color-wheel-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-lake-hillside-color-wheel",
+    "title": "Lake, Hillside and Color Wheel — Large print — Natural wood frame",
+    "artworkTitle": "Lake, Hillside and Color Wheel",
+    "amount": "141.00",
+    "currency": "USD",
+    "sku": "5M144M8S20DD8X5DD11F7S23DD8X8DD11J1S20DD8X5DD11G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.5433,
+      "height": 4.8567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.8,
+      "height": 5.11,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f.jpg",
+    "assetSha256": "03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f",
+    "sourceSha256": "eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67.jpg",
+      "fullSrc": "/display/older-work-lake-hillside-color-wheel-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Mountain Lake 145, TJ Golden Hillside 141, TJ Color Wheel Study 184",
+      "width": 6167,
+      "height": 1458,
+      "caption": "Lake, Hillside and Color Wheel"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 23.8,
+        "height": 8.11,
+        "unit": "in"
+      },
+      "window": {
+        "width": 20.8,
+        "height": 5.11,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S20.8X5.11",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 23.8,
+        "height": 8.11,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-sunset-ridge-strips-full": {
+    "id": "print-older-work-sunset-ridge-strips-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Large print",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "95.00",
+    "currency": "USD",
+    "sku": "5M144M8S21.26X10.41",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.0067,
+      "height": 10.1567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.26,
+      "height": 10.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76.jpg",
+    "assetSha256": "01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-sunset-ridge-strips-full-frame-black": {
+    "id": "print-older-work-sunset-ridge-strips-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Large print — Black frame",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "173.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD26X10DD41F1S24DD26X13DD41J1S21DD26X10DD41G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.0067,
+      "height": 10.1567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.26,
+      "height": 10.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76.jpg",
+    "assetSha256": "01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.26,
+        "height": 13.41,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.26,
+        "height": 10.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.26X10.41",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.26,
+        "height": 13.41,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "95.00"
+  },
+  "print-older-work-sunset-ridge-strips-full-frame-white": {
+    "id": "print-older-work-sunset-ridge-strips-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Large print — White frame",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "173.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD26X10DD41F2S24DD26X13DD41J1S21DD26X10DD41G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.0067,
+      "height": 10.1567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.26,
+      "height": 10.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76.jpg",
+    "assetSha256": "01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.26,
+        "height": 13.41,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.26,
+        "height": 10.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.26X10.41",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.26,
+        "height": 13.41,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "95.00"
+  },
+  "print-older-work-sunset-ridge-strips-full-frame-natural": {
+    "id": "print-older-work-sunset-ridge-strips-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Large print — Natural wood frame",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "189.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD26X10DD41F7S24DD26X13DD41J1S21DD26X10DD41G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.0067,
+      "height": 10.1567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.26,
+      "height": 10.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76.jpg",
+    "assetSha256": "01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.26,
+        "height": 13.41,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.26,
+        "height": 10.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.26X10.41",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.26,
+        "height": 13.41,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "95.00"
+  },
+  "print-older-work-sunset-ridge-strips-medium": {
+    "id": "print-older-work-sunset-ridge-strips-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Medium print",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "55.00",
+    "currency": "USD",
+    "sku": "5M144M8S16.01X7.87",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.7567,
+      "height": 7.6167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.01,
+      "height": 7.87,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84.jpg",
+    "assetSha256": "b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-sunset-ridge-strips-medium-frame-black": {
+    "id": "print-older-work-sunset-ridge-strips-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Medium print — Black frame",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "111.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD01X7DD87F1S19DD01X10DD87J1S16DD01X7DD87G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.7567,
+      "height": 7.6167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.01,
+      "height": 7.87,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84.jpg",
+    "assetSha256": "b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.01,
+        "height": 10.87,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.01,
+        "height": 7.87,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.01X7.87",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.01,
+        "height": 10.87,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-sunset-ridge-strips-medium-frame-white": {
+    "id": "print-older-work-sunset-ridge-strips-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Medium print — White frame",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "111.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD01X7DD87F2S19DD01X10DD87J1S16DD01X7DD87G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.7567,
+      "height": 7.6167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.01,
+      "height": 7.87,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84.jpg",
+    "assetSha256": "b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.01,
+        "height": 10.87,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.01,
+        "height": 7.87,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.01X7.87",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.01,
+        "height": 10.87,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-sunset-ridge-strips-medium-frame-natural": {
+    "id": "print-older-work-sunset-ridge-strips-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD01X7DD87F7S19DD01X10DD87J1S16DD01X7DD87G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.7567,
+      "height": 7.6167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.01,
+      "height": 7.87,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84.jpg",
+    "assetSha256": "b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.01,
+        "height": 10.87,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.01,
+        "height": 7.87,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.01X7.87",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.01,
+        "height": 10.87,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-sunset-ridge-strips-small": {
+    "id": "print-older-work-sunset-ridge-strips-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Small print",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S10.75X5.33",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.4967,
+      "height": 5.0733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.75,
+      "height": 5.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955.jpg",
+    "assetSha256": "92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-sunset-ridge-strips-small-frame-black": {
+    "id": "print-older-work-sunset-ridge-strips-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Small print — Black frame",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "74.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD75X5DD33F1S13DD75X8DD33J1S10DD75X5DD33G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.4967,
+      "height": 5.0733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.75,
+      "height": 5.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955.jpg",
+    "assetSha256": "92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.75,
+        "height": 8.33,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.75,
+        "height": 5.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.75X5.33",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.75,
+        "height": 8.33,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-sunset-ridge-strips-small-frame-white": {
+    "id": "print-older-work-sunset-ridge-strips-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Small print — White frame",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "74.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD75X5DD33F2S13DD75X8DD33J1S10DD75X5DD33G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.4967,
+      "height": 5.0733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.75,
+      "height": 5.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955.jpg",
+    "assetSha256": "92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.75,
+        "height": 8.33,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.75,
+        "height": 5.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.75X5.33",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.75,
+        "height": 8.33,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-sunset-ridge-strips-small-frame-natural": {
+    "id": "print-older-work-sunset-ridge-strips-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-sunset-ridge-strips",
+    "title": "Sunset Ridge Strips — Small print — Natural wood frame",
+    "artworkTitle": "Sunset Ridge Strips",
+    "amount": "84.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD75X5DD33F7S13DD75X8DD33J1S10DD75X5DD33G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.4967,
+      "height": 5.0733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.75,
+      "height": 5.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955.jpg",
+    "assetSha256": "92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955",
+    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
+      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
+      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
+      "width": 6305,
+      "height": 3048,
+      "caption": "Sunset Ridge Strips"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.75,
+        "height": 8.33,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.75,
+        "height": 5.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.75X5.33",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.75,
+        "height": 8.33,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-ridge-strips-unindexed-full": {
+    "id": "print-older-work-ridge-strips-unindexed-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Large print",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "80.00",
+    "currency": "USD",
+    "sku": "5M144M8S20.77X8.83",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.5033,
+      "height": 8.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.77,
+      "height": 8.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798.jpg",
+    "assetSha256": "fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-ridge-strips-unindexed-full-frame-black": {
+    "id": "print-older-work-ridge-strips-unindexed-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Large print — Black frame",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "150.00",
+    "currency": "USD",
+    "sku": "5M144M8S20DD77X8DD83F1S23DD77X11DD83J1S20DD77X8DD83G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.5033,
+      "height": 8.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.77,
+      "height": 8.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798.jpg",
+    "assetSha256": "fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 23.77,
+        "height": 11.83,
+        "unit": "in"
+      },
+      "window": {
+        "width": 20.77,
+        "height": 8.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S20.77X8.83",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 23.77,
+        "height": 11.83,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-older-work-ridge-strips-unindexed-full-frame-white": {
+    "id": "print-older-work-ridge-strips-unindexed-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Large print — White frame",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "150.00",
+    "currency": "USD",
+    "sku": "5M144M8S20DD77X8DD83F2S23DD77X11DD83J1S20DD77X8DD83G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.5033,
+      "height": 8.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.77,
+      "height": 8.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798.jpg",
+    "assetSha256": "fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 23.77,
+        "height": 11.83,
+        "unit": "in"
+      },
+      "window": {
+        "width": 20.77,
+        "height": 8.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S20.77X8.83",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 23.77,
+        "height": 11.83,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-older-work-ridge-strips-unindexed-full-frame-natural": {
+    "id": "print-older-work-ridge-strips-unindexed-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Large print — Natural wood frame",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "165.00",
+    "currency": "USD",
+    "sku": "5M144M8S20DD77X8DD83F7S23DD77X11DD83J1S20DD77X8DD83G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.5033,
+      "height": 8.5767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.77,
+      "height": 8.83,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798.jpg",
+    "assetSha256": "fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 23.77,
+        "height": 11.83,
+        "unit": "in"
+      },
+      "window": {
+        "width": 20.77,
+        "height": 8.83,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S20.77X8.83",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 23.77,
+        "height": 11.83,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "80.00"
+  },
+  "print-older-work-ridge-strips-unindexed-medium": {
+    "id": "print-older-work-ridge-strips-unindexed-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Medium print",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "55.00",
+    "currency": "USD",
+    "sku": "5M144M8S15.64X6.69",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.3867,
+      "height": 6.4367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.64,
+      "height": 6.69,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344.jpg",
+    "assetSha256": "b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-ridge-strips-unindexed-medium-frame-black": {
+    "id": "print-older-work-ridge-strips-unindexed-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Medium print — Black frame",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD64X6DD69F1S18DD64X9DD69J1S15DD64X6DD69G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.3867,
+      "height": 6.4367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.64,
+      "height": 6.69,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344.jpg",
+    "assetSha256": "b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.64,
+        "height": 9.69,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.64,
+        "height": 6.69,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.64X6.69",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.64,
+        "height": 9.69,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-ridge-strips-unindexed-medium-frame-white": {
+    "id": "print-older-work-ridge-strips-unindexed-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Medium print — White frame",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "108.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD64X6DD69F2S18DD64X9DD69J1S15DD64X6DD69G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.3867,
+      "height": 6.4367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.64,
+      "height": 6.69,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344.jpg",
+    "assetSha256": "b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.64,
+        "height": 9.69,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.64,
+        "height": 6.69,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.64X6.69",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.64,
+        "height": 9.69,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-ridge-strips-unindexed-medium-frame-natural": {
+    "id": "print-older-work-ridge-strips-unindexed-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Medium print — Natural wood frame",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "120.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD64X6DD69F7S18DD64X9DD69J1S15DD64X6DD69G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.3867,
+      "height": 6.4367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.64,
+      "height": 6.69,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344.jpg",
+    "assetSha256": "b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.64,
+        "height": 9.69,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.64,
+        "height": 6.69,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.64X6.69",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.64,
+        "height": 9.69,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-ridge-strips-unindexed-small": {
+    "id": "print-older-work-ridge-strips-unindexed-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Small print",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S10.51X4.54",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.2467,
+      "height": 4.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.51,
+      "height": 4.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e.jpg",
+    "assetSha256": "ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-ridge-strips-unindexed-small-frame-black": {
+    "id": "print-older-work-ridge-strips-unindexed-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Small print — Black frame",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "73.63",
+    "currency": "USD",
+    "sku": "5M144M8S10DD51X4DD54F1S13DD97X8J1S10DD51X4DD54G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.2467,
+      "height": 4.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.51,
+      "height": 4.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e.jpg",
+    "assetSha256": "ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.97,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.51,
+        "height": 4.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.51X4.54",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.97,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-ridge-strips-unindexed-small-frame-white": {
+    "id": "print-older-work-ridge-strips-unindexed-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Small print — White frame",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "73.63",
+    "currency": "USD",
+    "sku": "5M144M8S10DD51X4DD54F2S13DD97X8J1S10DD51X4DD54G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.2467,
+      "height": 4.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.51,
+      "height": 4.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e.jpg",
+    "assetSha256": "ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.97,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.51,
+        "height": 4.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.51X4.54",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.97,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-ridge-strips-unindexed-small-frame-natural": {
+    "id": "print-older-work-ridge-strips-unindexed-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-ridge-strips-unindexed",
+    "title": "Ridge Strip Studies (unindexed) — Small print — Natural wood frame",
+    "artworkTitle": "Ridge Strip Studies (unindexed)",
+    "amount": "83.63",
+    "currency": "USD",
+    "sku": "5M144M8S10DD51X4DD54F7S13DD97X8J1S10DD51X4DD54G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.2467,
+      "height": 4.2867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.51,
+      "height": 4.54,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e.jpg",
+    "assetSha256": "ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e",
+    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
+      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
+      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
+      "width": 6158,
+      "height": 2576,
+      "caption": "Ridge Strip Studies (unindexed)"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.97,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.51,
+        "height": 4.54,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.51X4.54",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.97,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-pitchers-full": {
+    "id": "print-older-work-pitchers-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Large print",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "70.00",
+    "currency": "USD",
+    "sku": "5M144M8S18.93X8.51",
+    "scale": 1,
+    "imageSize": {
+      "width": 18.6567,
+      "height": 8.2567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 18.93,
+      "height": 8.51,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8.jpg",
+    "assetSha256": "8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-pitchers-full-frame-black": {
+    "id": "print-older-work-pitchers-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Large print — Black frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "136.00",
+    "currency": "USD",
+    "sku": "5M144M8S18DD93X8DD51F1S21DD93X11DD51J1S18DD93X8DD51G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 18.6567,
+      "height": 8.2567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 18.93,
+      "height": 8.51,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8.jpg",
+    "assetSha256": "8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 21.93,
+        "height": 11.51,
+        "unit": "in"
+      },
+      "window": {
+        "width": 18.93,
+        "height": 8.51,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S18.93X8.51",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 21.93,
+        "height": 11.51,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-pitchers-full-frame-white": {
+    "id": "print-older-work-pitchers-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Large print — White frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "136.00",
+    "currency": "USD",
+    "sku": "5M144M8S18DD93X8DD51F2S21DD93X11DD51J1S18DD93X8DD51G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 18.6567,
+      "height": 8.2567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 18.93,
+      "height": 8.51,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8.jpg",
+    "assetSha256": "8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 21.93,
+        "height": 11.51,
+        "unit": "in"
+      },
+      "window": {
+        "width": 18.93,
+        "height": 8.51,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S18.93X8.51",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 21.93,
+        "height": 11.51,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-pitchers-full-frame-natural": {
+    "id": "print-older-work-pitchers-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Large print — Natural wood frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "150.00",
+    "currency": "USD",
+    "sku": "5M144M8S18DD93X8DD51F7S21DD93X11DD51J1S18DD93X8DD51G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 18.6567,
+      "height": 8.2567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 18.93,
+      "height": 8.51,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8.jpg",
+    "assetSha256": "8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 21.93,
+        "height": 11.51,
+        "unit": "in"
+      },
+      "window": {
+        "width": 18.93,
+        "height": 8.51,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S18.93X8.51",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 21.93,
+        "height": 11.51,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-pitchers-medium": {
+    "id": "print-older-work-pitchers-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Medium print",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M8S14.26X6.45",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 14.0033,
+      "height": 6.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.26,
+      "height": 6.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8.jpg",
+    "assetSha256": "dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-pitchers-medium-frame-black": {
+    "id": "print-older-work-pitchers-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Medium print — Black frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "99.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD26X6DD45F1S17DD26X9DD45J1S14DD26X6DD45G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 14.0033,
+      "height": 6.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.26,
+      "height": 6.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8.jpg",
+    "assetSha256": "dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 17.26,
+        "height": 9.45,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.26,
+        "height": 6.45,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.26X6.45",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 17.26,
+        "height": 9.45,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-pitchers-medium-frame-white": {
+    "id": "print-older-work-pitchers-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Medium print — White frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "99.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD26X6DD45F2S17DD26X9DD45J1S14DD26X6DD45G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 14.0033,
+      "height": 6.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.26,
+      "height": 6.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8.jpg",
+    "assetSha256": "dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 17.26,
+        "height": 9.45,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.26,
+        "height": 6.45,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.26X6.45",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 17.26,
+        "height": 9.45,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-pitchers-medium-frame-natural": {
+    "id": "print-older-work-pitchers-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Medium print — Natural wood frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "111.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD26X6DD45F7S17DD26X9DD45J1S14DD26X6DD45G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 14.0033,
+      "height": 6.1967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.26,
+      "height": 6.45,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8.jpg",
+    "assetSha256": "dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 17.26,
+        "height": 9.45,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.26,
+        "height": 6.45,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.26X6.45",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 17.26,
+        "height": 9.45,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-pitchers-small": {
+    "id": "print-older-work-pitchers-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Small print",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S9.59X4.38",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 9.3233,
+      "height": 4.1267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.59,
+      "height": 4.38,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672.jpg",
+    "assetSha256": "19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-pitchers-small-frame-black": {
+    "id": "print-older-work-pitchers-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Small print — Black frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD59X4DD38F1S13DD21X8J1S9DD59X4DD38G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 9.3233,
+      "height": 4.1267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.59,
+      "height": 4.38,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672.jpg",
+    "assetSha256": "19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.21,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.59,
+        "height": 4.38,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.59X4.38",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.21,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-pitchers-small-frame-white": {
+    "id": "print-older-work-pitchers-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Small print — White frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "72.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD59X4DD38F2S13DD21X8J1S9DD59X4DD38G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 9.3233,
+      "height": 4.1267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.59,
+      "height": 4.38,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672.jpg",
+    "assetSha256": "19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.21,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.59,
+        "height": 4.38,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.59X4.38",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.21,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-pitchers-small-frame-natural": {
+    "id": "print-older-work-pitchers-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Small print — Natural wood frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "82.63",
+    "currency": "USD",
+    "sku": "5M144M8S9DD59X4DD38F7S13DD21X8J1S9DD59X4DD38G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 9.3233,
+      "height": 4.1267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.59,
+      "height": 4.38,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672.jpg",
+    "assetSha256": "19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5604,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.21,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.59,
+        "height": 4.38,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.59X4.38",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.21,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-coconut-190-full": {
+    "id": "print-older-work-coconut-190-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-coconut-190",
+    "title": "TJ Coconut 190 — Large print",
+    "artworkTitle": "TJ Coconut 190",
+    "amount": "25.00",
+    "currency": "USD",
+    "sku": "5M144M8S4.36X6.03",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 5.7733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 6.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc.jpg",
+    "assetSha256": "29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc",
+    "sourceSha256": "cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg",
+      "fullSrc": "/display/older-work-coconut-190-1600.webp",
+      "alt": "TJ Coconut 190, a painting by TJ Murphy",
+      "width": 1235,
+      "height": 1736,
+      "caption": "TJ Coconut 190"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-coconut-190-full-frame-black": {
+    "id": "print-older-work-coconut-190-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-coconut-190",
+    "title": "TJ Coconut 190 — Large print — Black frame",
+    "artworkTitle": "TJ Coconut 190",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD36X6DD03F1S8X9DD67J1S4DD36X6DD03G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 5.7733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 6.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc.jpg",
+    "assetSha256": "29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc",
+    "sourceSha256": "cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg",
+      "fullSrc": "/display/older-work-coconut-190-1600.webp",
+      "alt": "TJ Coconut 190, a painting by TJ Murphy",
+      "width": 1235,
+      "height": 1736,
+      "caption": "TJ Coconut 190"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 9.67,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.36,
+        "height": 6.03,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.36X6.03",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 9.67,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-older-work-coconut-190-full-frame-white": {
+    "id": "print-older-work-coconut-190-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-coconut-190",
+    "title": "TJ Coconut 190 — Large print — White frame",
+    "artworkTitle": "TJ Coconut 190",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD36X6DD03F2S8X9DD67J1S4DD36X6DD03G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 5.7733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 6.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc.jpg",
+    "assetSha256": "29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc",
+    "sourceSha256": "cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg",
+      "fullSrc": "/display/older-work-coconut-190-1600.webp",
+      "alt": "TJ Coconut 190, a painting by TJ Murphy",
+      "width": 1235,
+      "height": 1736,
+      "caption": "TJ Coconut 190"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 9.67,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.36,
+        "height": 6.03,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.36X6.03",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 9.67,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-older-work-coconut-190-full-frame-natural": {
+    "id": "print-older-work-coconut-190-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-coconut-190",
+    "title": "TJ Coconut 190 — Large print — Natural wood frame",
+    "artworkTitle": "TJ Coconut 190",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD36X6DD03F7S8X9DD67J1S4DD36X6DD03G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.1067,
+      "height": 5.7733,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.36,
+      "height": 6.03,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc.jpg",
+    "assetSha256": "29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc",
+    "sourceSha256": "cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg",
+      "fullSrc": "/display/older-work-coconut-190-1600.webp",
+      "alt": "TJ Coconut 190, a painting by TJ Murphy",
+      "width": 1235,
+      "height": 1736,
+      "caption": "TJ Coconut 190"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8,
+        "height": 9.67,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.36,
+        "height": 6.03,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.36X6.03",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8,
+        "height": 9.67,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-older-work-bitcoin-voices-full": {
+    "id": "print-older-work-bitcoin-voices-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-bitcoin-voices",
+    "title": "Mallers, Brunell, McCormack and Saylor — Large print",
+    "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
+    "amount": "60.00",
+    "currency": "USD",
+    "sku": "5M144M8S17.27X7.43",
+    "scale": 1,
+    "imageSize": {
+      "width": 17.01,
+      "height": 7.1767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 17.27,
+      "height": 7.43,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9.jpg",
+    "assetSha256": "082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9",
+    "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f.jpg",
+      "fullSrc": "/display/older-work-bitcoin-voices-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Jack Mallers, TJ Natalie Brunell, TJ Peter McCormack, TJ Michael Saylor",
+      "width": 5108,
+      "height": 2155,
+      "caption": "Mallers, Brunell, McCormack and Saylor"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-bitcoin-voices-full-frame-black": {
+    "id": "print-older-work-bitcoin-voices-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-bitcoin-voices",
+    "title": "Mallers, Brunell, McCormack and Saylor — Large print — Black frame",
+    "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
+    "amount": "118.00",
+    "currency": "USD",
+    "sku": "5M144M8S17DD27X7DD43F1S20DD27X10DD43J1S17DD27X7DD43G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 17.01,
+      "height": 7.1767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 17.27,
+      "height": 7.43,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9.jpg",
+    "assetSha256": "082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9",
+    "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f.jpg",
+      "fullSrc": "/display/older-work-bitcoin-voices-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Jack Mallers, TJ Natalie Brunell, TJ Peter McCormack, TJ Michael Saylor",
+      "width": 5108,
+      "height": 2155,
+      "caption": "Mallers, Brunell, McCormack and Saylor"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20.27,
+        "height": 10.43,
+        "unit": "in"
+      },
+      "window": {
+        "width": 17.27,
+        "height": 7.43,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S17.27X7.43",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20.27,
+        "height": 10.43,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-bitcoin-voices-full-frame-white": {
+    "id": "print-older-work-bitcoin-voices-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-bitcoin-voices",
+    "title": "Mallers, Brunell, McCormack and Saylor — Large print — White frame",
+    "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
+    "amount": "118.00",
+    "currency": "USD",
+    "sku": "5M144M8S17DD27X7DD43F2S20DD27X10DD43J1S17DD27X7DD43G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 17.01,
+      "height": 7.1767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 17.27,
+      "height": 7.43,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9.jpg",
+    "assetSha256": "082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9",
+    "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f.jpg",
+      "fullSrc": "/display/older-work-bitcoin-voices-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Jack Mallers, TJ Natalie Brunell, TJ Peter McCormack, TJ Michael Saylor",
+      "width": 5108,
+      "height": 2155,
+      "caption": "Mallers, Brunell, McCormack and Saylor"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20.27,
+        "height": 10.43,
+        "unit": "in"
+      },
+      "window": {
+        "width": 17.27,
+        "height": 7.43,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S17.27X7.43",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20.27,
+        "height": 10.43,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-bitcoin-voices-full-frame-natural": {
+    "id": "print-older-work-bitcoin-voices-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-bitcoin-voices",
+    "title": "Mallers, Brunell, McCormack and Saylor — Large print — Natural wood frame",
+    "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
+    "amount": "131.00",
+    "currency": "USD",
+    "sku": "5M144M8S17DD27X7DD43F7S20DD27X10DD43J1S17DD27X7DD43G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 17.01,
+      "height": 7.1767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 17.27,
+      "height": 7.43,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9.jpg",
+    "assetSha256": "082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9",
+    "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f.jpg",
+      "fullSrc": "/display/older-work-bitcoin-voices-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Jack Mallers, TJ Natalie Brunell, TJ Peter McCormack, TJ Michael Saylor",
+      "width": 5108,
+      "height": 2155,
+      "caption": "Mallers, Brunell, McCormack and Saylor"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 20.27,
+        "height": 10.43,
+        "unit": "in"
+      },
+      "window": {
+        "width": 17.27,
+        "height": 7.43,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S17.27X7.43",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 20.27,
+        "height": 10.43,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-bitcoin-voices-medium": {
+    "id": "print-older-work-bitcoin-voices-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-bitcoin-voices",
+    "title": "Mallers, Brunell, McCormack and Saylor — Medium print",
+    "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
+    "amount": "45.00",
+    "currency": "USD",
+    "sku": "5M144M8S13.02X5.63",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.7433,
+      "height": 5.3767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 13.02,
+      "height": 5.63,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a.jpg",
+    "assetSha256": "afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a",
+    "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f.jpg",
+      "fullSrc": "/display/older-work-bitcoin-voices-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Jack Mallers, TJ Natalie Brunell, TJ Peter McCormack, TJ Michael Saylor",
+      "width": 5108,
+      "height": 2155,
+      "caption": "Mallers, Brunell, McCormack and Saylor"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-bitcoin-voices-medium-frame-black": {
+    "id": "print-older-work-bitcoin-voices-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-bitcoin-voices",
+    "title": "Mallers, Brunell, McCormack and Saylor — Medium print — Black frame",
+    "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
+    "amount": "89.00",
+    "currency": "USD",
+    "sku": "5M144M8S13DD02X5DD63F1S16DD02X8DD63J1S13DD02X5DD63G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.7433,
+      "height": 5.3767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 13.02,
+      "height": 5.63,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a.jpg",
+    "assetSha256": "afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a",
+    "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f.jpg",
+      "fullSrc": "/display/older-work-bitcoin-voices-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Jack Mallers, TJ Natalie Brunell, TJ Peter McCormack, TJ Michael Saylor",
+      "width": 5108,
+      "height": 2155,
+      "caption": "Mallers, Brunell, McCormack and Saylor"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16.02,
+        "height": 8.63,
+        "unit": "in"
+      },
+      "window": {
+        "width": 13.02,
+        "height": 5.63,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S13.02X5.63",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16.02,
+        "height": 8.63,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-bitcoin-voices-medium-frame-white": {
+    "id": "print-older-work-bitcoin-voices-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-bitcoin-voices",
+    "title": "Mallers, Brunell, McCormack and Saylor — Medium print — White frame",
+    "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
+    "amount": "89.00",
+    "currency": "USD",
+    "sku": "5M144M8S13DD02X5DD63F2S16DD02X8DD63J1S13DD02X5DD63G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.7433,
+      "height": 5.3767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 13.02,
+      "height": 5.63,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a.jpg",
+    "assetSha256": "afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a",
+    "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f.jpg",
+      "fullSrc": "/display/older-work-bitcoin-voices-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Jack Mallers, TJ Natalie Brunell, TJ Peter McCormack, TJ Michael Saylor",
+      "width": 5108,
+      "height": 2155,
+      "caption": "Mallers, Brunell, McCormack and Saylor"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16.02,
+        "height": 8.63,
+        "unit": "in"
+      },
+      "window": {
+        "width": 13.02,
+        "height": 5.63,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S13.02X5.63",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16.02,
+        "height": 8.63,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-bitcoin-voices-medium-frame-natural": {
+    "id": "print-older-work-bitcoin-voices-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-bitcoin-voices",
+    "title": "Mallers, Brunell, McCormack and Saylor — Medium print — Natural wood frame",
+    "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
+    "amount": "100.00",
+    "currency": "USD",
+    "sku": "5M144M8S13DD02X5DD63F7S16DD02X8DD63J1S13DD02X5DD63G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.7433,
+      "height": 5.3767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 13.02,
+      "height": 5.63,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a.jpg",
+    "assetSha256": "afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a",
+    "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f.jpg",
+      "fullSrc": "/display/older-work-bitcoin-voices-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Jack Mallers, TJ Natalie Brunell, TJ Peter McCormack, TJ Michael Saylor",
+      "width": 5108,
+      "height": 2155,
+      "caption": "Mallers, Brunell, McCormack and Saylor"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16.02,
+        "height": 8.63,
+        "unit": "in"
+      },
+      "window": {
+        "width": 13.02,
+        "height": 5.63,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S13.02X5.63",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16.02,
+        "height": 8.63,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-provibes-sandwiches-full": {
+    "id": "print-older-work-provibes-sandwiches-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-provibes-sandwiches",
+    "title": "Provibes Reunion Sandwich Portraits — Large print",
+    "artworkTitle": "Provibes Reunion Sandwich Portraits",
+    "amount": "70.00",
+    "currency": "USD",
+    "sku": "5M144M8S21.16X7.56",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.8833,
+      "height": 7.3067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.16,
+      "height": 7.56,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8.jpg",
+    "assetSha256": "14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8",
+    "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
+      "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "width": 6274,
+      "height": 2195,
+      "caption": "Provibes Reunion Sandwich Portraits"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-provibes-sandwiches-full-frame-black": {
+    "id": "print-older-work-provibes-sandwiches-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-provibes-sandwiches",
+    "title": "Provibes Reunion Sandwich Portraits — Large print — Black frame",
+    "artworkTitle": "Provibes Reunion Sandwich Portraits",
+    "amount": "137.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD16X7DD56F1S24DD16X10DD56J1S21DD16X7DD56G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.8833,
+      "height": 7.3067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.16,
+      "height": 7.56,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8.jpg",
+    "assetSha256": "14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8",
+    "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
+      "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "width": 6274,
+      "height": 2195,
+      "caption": "Provibes Reunion Sandwich Portraits"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.16,
+        "height": 10.56,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.16,
+        "height": 7.56,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.16X7.56",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.16,
+        "height": 10.56,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-provibes-sandwiches-full-frame-white": {
+    "id": "print-older-work-provibes-sandwiches-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-provibes-sandwiches",
+    "title": "Provibes Reunion Sandwich Portraits — Large print — White frame",
+    "artworkTitle": "Provibes Reunion Sandwich Portraits",
+    "amount": "137.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD16X7DD56F2S24DD16X10DD56J1S21DD16X7DD56G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.8833,
+      "height": 7.3067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.16,
+      "height": 7.56,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8.jpg",
+    "assetSha256": "14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8",
+    "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
+      "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "width": 6274,
+      "height": 2195,
+      "caption": "Provibes Reunion Sandwich Portraits"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.16,
+        "height": 10.56,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.16,
+        "height": 7.56,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.16X7.56",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.16,
+        "height": 10.56,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-provibes-sandwiches-full-frame-natural": {
+    "id": "print-older-work-provibes-sandwiches-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-provibes-sandwiches",
+    "title": "Provibes Reunion Sandwich Portraits — Large print — Natural wood frame",
+    "artworkTitle": "Provibes Reunion Sandwich Portraits",
+    "amount": "152.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD16X7DD56F7S24DD16X10DD56J1S21DD16X7DD56G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.8833,
+      "height": 7.3067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.16,
+      "height": 7.56,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8.jpg",
+    "assetSha256": "14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8",
+    "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
+      "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "width": 6274,
+      "height": 2195,
+      "caption": "Provibes Reunion Sandwich Portraits"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.16,
+        "height": 10.56,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.16,
+        "height": 7.56,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.16X7.56",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.16,
+        "height": 10.56,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-provibes-sandwiches-medium": {
+    "id": "print-older-work-provibes-sandwiches-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-provibes-sandwiches",
+    "title": "Provibes Reunion Sandwich Portraits — Medium print",
+    "artworkTitle": "Provibes Reunion Sandwich Portraits",
+    "amount": "55.00",
+    "currency": "USD",
+    "sku": "5M144M8S15.93X5.73",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.6533,
+      "height": 5.4767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.93,
+      "height": 5.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8.jpg",
+    "assetSha256": "00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8",
+    "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
+      "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "width": 6274,
+      "height": 2195,
+      "caption": "Provibes Reunion Sandwich Portraits"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-provibes-sandwiches-medium-frame-black": {
+    "id": "print-older-work-provibes-sandwiches-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-provibes-sandwiches",
+    "title": "Provibes Reunion Sandwich Portraits — Medium print — Black frame",
+    "artworkTitle": "Provibes Reunion Sandwich Portraits",
+    "amount": "105.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD93X5DD73F1S18DD93X8DD73J1S15DD93X5DD73G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.6533,
+      "height": 5.4767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.93,
+      "height": 5.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8.jpg",
+    "assetSha256": "00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8",
+    "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
+      "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "width": 6274,
+      "height": 2195,
+      "caption": "Provibes Reunion Sandwich Portraits"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.93,
+        "height": 8.73,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.93,
+        "height": 5.73,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.93X5.73",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.93,
+        "height": 8.73,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-provibes-sandwiches-medium-frame-white": {
+    "id": "print-older-work-provibes-sandwiches-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-provibes-sandwiches",
+    "title": "Provibes Reunion Sandwich Portraits — Medium print — White frame",
+    "artworkTitle": "Provibes Reunion Sandwich Portraits",
+    "amount": "105.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD93X5DD73F2S18DD93X8DD73J1S15DD93X5DD73G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.6533,
+      "height": 5.4767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.93,
+      "height": 5.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8.jpg",
+    "assetSha256": "00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8",
+    "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
+      "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "width": 6274,
+      "height": 2195,
+      "caption": "Provibes Reunion Sandwich Portraits"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.93,
+        "height": 8.73,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.93,
+        "height": 5.73,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.93X5.73",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.93,
+        "height": 8.73,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-provibes-sandwiches-medium-frame-natural": {
+    "id": "print-older-work-provibes-sandwiches-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-provibes-sandwiches",
+    "title": "Provibes Reunion Sandwich Portraits — Medium print — Natural wood frame",
+    "artworkTitle": "Provibes Reunion Sandwich Portraits",
+    "amount": "117.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD93X5DD73F7S18DD93X8DD73J1S15DD93X5DD73G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.6533,
+      "height": 5.4767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.93,
+      "height": 5.73,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8.jpg",
+    "assetSha256": "00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8",
+    "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
+      "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "width": 6274,
+      "height": 2195,
+      "caption": "Provibes Reunion Sandwich Portraits"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.93,
+        "height": 8.73,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.93,
+        "height": 5.73,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.93X5.73",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.93,
+        "height": 8.73,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-portraits-319-329-full": {
+    "id": "print-older-work-portraits-319-329-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-portraits-319-329",
+    "title": "Parah, José, Antonopoulos and #319 — Large print",
+    "artworkTitle": "Parah, José, Antonopoulos and #319",
+    "amount": "70.00",
+    "currency": "USD",
+    "sku": "5M144M8S21.69X6.66",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.4167,
+      "height": 6.4067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.69,
+      "height": 6.66,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d.jpg",
+    "assetSha256": "d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d",
+    "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6.jpg",
+      "fullSrc": "/display/older-work-portraits-319-329-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Bernard Parah 329, TJ José 328, TJ Andreas Antonopoulos 327, TJ Portrait with Glasses 319",
+      "width": 6432,
+      "height": 1924,
+      "caption": "Parah, José, Antonopoulos and #319"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-portraits-319-329-full-frame-black": {
+    "id": "print-older-work-portraits-319-329-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-portraits-319-329",
+    "title": "Parah, José, Antonopoulos and #319 — Large print — Black frame",
+    "artworkTitle": "Parah, José, Antonopoulos and #319",
+    "amount": "135.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD69X6DD66F1S24DD69X9DD66J1S21DD69X6DD66G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.4167,
+      "height": 6.4067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.69,
+      "height": 6.66,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d.jpg",
+    "assetSha256": "d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d",
+    "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6.jpg",
+      "fullSrc": "/display/older-work-portraits-319-329-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Bernard Parah 329, TJ José 328, TJ Andreas Antonopoulos 327, TJ Portrait with Glasses 319",
+      "width": 6432,
+      "height": 1924,
+      "caption": "Parah, José, Antonopoulos and #319"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.69,
+        "height": 9.66,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.69,
+        "height": 6.66,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.69X6.66",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.69,
+        "height": 9.66,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-portraits-319-329-full-frame-white": {
+    "id": "print-older-work-portraits-319-329-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-portraits-319-329",
+    "title": "Parah, José, Antonopoulos and #319 — Large print — White frame",
+    "artworkTitle": "Parah, José, Antonopoulos and #319",
+    "amount": "135.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD69X6DD66F2S24DD69X9DD66J1S21DD69X6DD66G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.4167,
+      "height": 6.4067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.69,
+      "height": 6.66,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d.jpg",
+    "assetSha256": "d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d",
+    "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6.jpg",
+      "fullSrc": "/display/older-work-portraits-319-329-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Bernard Parah 329, TJ José 328, TJ Andreas Antonopoulos 327, TJ Portrait with Glasses 319",
+      "width": 6432,
+      "height": 1924,
+      "caption": "Parah, José, Antonopoulos and #319"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.69,
+        "height": 9.66,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.69,
+        "height": 6.66,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.69X6.66",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.69,
+        "height": 9.66,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-portraits-319-329-full-frame-natural": {
+    "id": "print-older-work-portraits-319-329-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-portraits-319-329",
+    "title": "Parah, José, Antonopoulos and #319 — Large print — Natural wood frame",
+    "artworkTitle": "Parah, José, Antonopoulos and #319",
+    "amount": "149.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD69X6DD66F7S24DD69X9DD66J1S21DD69X6DD66G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.4167,
+      "height": 6.4067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.69,
+      "height": 6.66,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d.jpg",
+    "assetSha256": "d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d",
+    "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6.jpg",
+      "fullSrc": "/display/older-work-portraits-319-329-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Bernard Parah 329, TJ José 328, TJ Andreas Antonopoulos 327, TJ Portrait with Glasses 319",
+      "width": 6432,
+      "height": 1924,
+      "caption": "Parah, José, Antonopoulos and #319"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.69,
+        "height": 9.66,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.69,
+        "height": 6.66,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.69X6.66",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.69,
+        "height": 9.66,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-portraits-319-329-medium": {
+    "id": "print-older-work-portraits-319-329-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-portraits-319-329",
+    "title": "Parah, José, Antonopoulos and #319 — Medium print",
+    "artworkTitle": "Parah, José, Antonopoulos and #319",
+    "amount": "55.00",
+    "currency": "USD",
+    "sku": "5M144M8S16.33X5.06",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 16.07,
+      "height": 4.8067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.33,
+      "height": 5.06,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875.jpg",
+    "assetSha256": "0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875",
+    "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6.jpg",
+      "fullSrc": "/display/older-work-portraits-319-329-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Bernard Parah 329, TJ José 328, TJ Andreas Antonopoulos 327, TJ Portrait with Glasses 319",
+      "width": 6432,
+      "height": 1924,
+      "caption": "Parah, José, Antonopoulos and #319"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-portraits-319-329-medium-frame-black": {
+    "id": "print-older-work-portraits-319-329-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-portraits-319-329",
+    "title": "Parah, José, Antonopoulos and #319 — Medium print — Black frame",
+    "artworkTitle": "Parah, José, Antonopoulos and #319",
+    "amount": "104.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD33X5DD06F1S19DD33X8DD06J1S16DD33X5DD06G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 16.07,
+      "height": 4.8067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.33,
+      "height": 5.06,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875.jpg",
+    "assetSha256": "0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875",
+    "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6.jpg",
+      "fullSrc": "/display/older-work-portraits-319-329-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Bernard Parah 329, TJ José 328, TJ Andreas Antonopoulos 327, TJ Portrait with Glasses 319",
+      "width": 6432,
+      "height": 1924,
+      "caption": "Parah, José, Antonopoulos and #319"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.33,
+        "height": 8.06,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.33,
+        "height": 5.06,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.33X5.06",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.33,
+        "height": 8.06,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-portraits-319-329-medium-frame-white": {
+    "id": "print-older-work-portraits-319-329-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-portraits-319-329",
+    "title": "Parah, José, Antonopoulos and #319 — Medium print — White frame",
+    "artworkTitle": "Parah, José, Antonopoulos and #319",
+    "amount": "104.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD33X5DD06F2S19DD33X8DD06J1S16DD33X5DD06G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 16.07,
+      "height": 4.8067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.33,
+      "height": 5.06,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875.jpg",
+    "assetSha256": "0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875",
+    "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6.jpg",
+      "fullSrc": "/display/older-work-portraits-319-329-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Bernard Parah 329, TJ José 328, TJ Andreas Antonopoulos 327, TJ Portrait with Glasses 319",
+      "width": 6432,
+      "height": 1924,
+      "caption": "Parah, José, Antonopoulos and #319"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.33,
+        "height": 8.06,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.33,
+        "height": 5.06,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.33X5.06",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.33,
+        "height": 8.06,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-portraits-319-329-medium-frame-natural": {
+    "id": "print-older-work-portraits-319-329-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-portraits-319-329",
+    "title": "Parah, José, Antonopoulos and #319 — Medium print — Natural wood frame",
+    "artworkTitle": "Parah, José, Antonopoulos and #319",
+    "amount": "116.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD33X5DD06F7S19DD33X8DD06J1S16DD33X5DD06G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 16.07,
+      "height": 4.8067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.33,
+      "height": 5.06,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875.jpg",
+    "assetSha256": "0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875",
+    "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6.jpg",
+      "fullSrc": "/display/older-work-portraits-319-329-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ Bernard Parah 329, TJ José 328, TJ Andreas Antonopoulos 327, TJ Portrait with Glasses 319",
+      "width": 6432,
+      "height": 1924,
+      "caption": "Parah, José, Antonopoulos and #319"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.33,
+        "height": 8.06,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.33,
+        "height": 5.06,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.33X5.06",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.33,
+        "height": 8.06,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-fernandez-moran-pysh-full": {
+    "id": "print-older-work-fernandez-moran-pysh-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-fernandez-moran-pysh",
+    "title": "Fernandez, Moran and Pysh — Large print",
+    "artworkTitle": "Fernandez, Moran and Pysh",
+    "amount": "60.00",
+    "currency": "USD",
+    "sku": "5M144M8S16.74X5.89",
+    "scale": 1,
+    "imageSize": {
+      "width": 16.4833,
+      "height": 5.6367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.74,
+      "height": 5.89,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75.jpg",
+    "assetSha256": "50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75",
+    "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2.jpg",
+      "fullSrc": "/display/older-work-fernandez-moran-pysh-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Akin Fernandez 351, TJ Nico Moran 345, TJ Preston Pysh 344",
+      "width": 4948,
+      "height": 1692,
+      "caption": "Fernandez, Moran and Pysh"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-fernandez-moran-pysh-full-frame-black": {
+    "id": "print-older-work-fernandez-moran-pysh-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-fernandez-moran-pysh",
+    "title": "Fernandez, Moran and Pysh — Large print — Black frame",
+    "artworkTitle": "Fernandez, Moran and Pysh",
+    "amount": "112.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD74X5DD89F1S19DD74X8DD89J1S16DD74X5DD89G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 16.4833,
+      "height": 5.6367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.74,
+      "height": 5.89,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75.jpg",
+    "assetSha256": "50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75",
+    "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2.jpg",
+      "fullSrc": "/display/older-work-fernandez-moran-pysh-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Akin Fernandez 351, TJ Nico Moran 345, TJ Preston Pysh 344",
+      "width": 4948,
+      "height": 1692,
+      "caption": "Fernandez, Moran and Pysh"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.74,
+        "height": 8.89,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.74,
+        "height": 5.89,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.74X5.89",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.74,
+        "height": 8.89,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-fernandez-moran-pysh-full-frame-white": {
+    "id": "print-older-work-fernandez-moran-pysh-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-fernandez-moran-pysh",
+    "title": "Fernandez, Moran and Pysh — Large print — White frame",
+    "artworkTitle": "Fernandez, Moran and Pysh",
+    "amount": "112.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD74X5DD89F2S19DD74X8DD89J1S16DD74X5DD89G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 16.4833,
+      "height": 5.6367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.74,
+      "height": 5.89,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75.jpg",
+    "assetSha256": "50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75",
+    "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2.jpg",
+      "fullSrc": "/display/older-work-fernandez-moran-pysh-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Akin Fernandez 351, TJ Nico Moran 345, TJ Preston Pysh 344",
+      "width": 4948,
+      "height": 1692,
+      "caption": "Fernandez, Moran and Pysh"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.74,
+        "height": 8.89,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.74,
+        "height": 5.89,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.74X5.89",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.74,
+        "height": 8.89,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-fernandez-moran-pysh-full-frame-natural": {
+    "id": "print-older-work-fernandez-moran-pysh-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-fernandez-moran-pysh",
+    "title": "Fernandez, Moran and Pysh — Large print — Natural wood frame",
+    "artworkTitle": "Fernandez, Moran and Pysh",
+    "amount": "124.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD74X5DD89F7S19DD74X8DD89J1S16DD74X5DD89G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 16.4833,
+      "height": 5.6367,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.74,
+      "height": 5.89,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75.jpg",
+    "assetSha256": "50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75",
+    "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2.jpg",
+      "fullSrc": "/display/older-work-fernandez-moran-pysh-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Akin Fernandez 351, TJ Nico Moran 345, TJ Preston Pysh 344",
+      "width": 4948,
+      "height": 1692,
+      "caption": "Fernandez, Moran and Pysh"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.74,
+        "height": 8.89,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.74,
+        "height": 5.89,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.74X5.89",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.74,
+        "height": 8.89,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-fernandez-moran-pysh-medium": {
+    "id": "print-older-work-fernandez-moran-pysh-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-fernandez-moran-pysh",
+    "title": "Fernandez, Moran and Pysh — Medium print",
+    "artworkTitle": "Fernandez, Moran and Pysh",
+    "amount": "45.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.62X4.48",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.36,
+      "height": 4.2267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.62,
+      "height": 4.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493.jpg",
+    "assetSha256": "4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493",
+    "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2.jpg",
+      "fullSrc": "/display/older-work-fernandez-moran-pysh-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Akin Fernandez 351, TJ Nico Moran 345, TJ Preston Pysh 344",
+      "width": 4948,
+      "height": 1692,
+      "caption": "Fernandez, Moran and Pysh"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-fernandez-moran-pysh-medium-frame-black": {
+    "id": "print-older-work-fernandez-moran-pysh-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-fernandez-moran-pysh",
+    "title": "Fernandez, Moran and Pysh — Medium print — Black frame",
+    "artworkTitle": "Fernandez, Moran and Pysh",
+    "amount": "87.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD62X4DD48F1S16DD14X8J1S12DD62X4DD48G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.36,
+      "height": 4.2267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.62,
+      "height": 4.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493.jpg",
+    "assetSha256": "4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493",
+    "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2.jpg",
+      "fullSrc": "/display/older-work-fernandez-moran-pysh-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Akin Fernandez 351, TJ Nico Moran 345, TJ Preston Pysh 344",
+      "width": 4948,
+      "height": 1692,
+      "caption": "Fernandez, Moran and Pysh"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16.14,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.62,
+        "height": 4.48,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.62X4.48",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16.14,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-fernandez-moran-pysh-medium-frame-white": {
+    "id": "print-older-work-fernandez-moran-pysh-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-fernandez-moran-pysh",
+    "title": "Fernandez, Moran and Pysh — Medium print — White frame",
+    "artworkTitle": "Fernandez, Moran and Pysh",
+    "amount": "87.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD62X4DD48F2S16DD14X8J1S12DD62X4DD48G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.36,
+      "height": 4.2267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.62,
+      "height": 4.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493.jpg",
+    "assetSha256": "4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493",
+    "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2.jpg",
+      "fullSrc": "/display/older-work-fernandez-moran-pysh-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Akin Fernandez 351, TJ Nico Moran 345, TJ Preston Pysh 344",
+      "width": 4948,
+      "height": 1692,
+      "caption": "Fernandez, Moran and Pysh"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16.14,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.62,
+        "height": 4.48,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.62X4.48",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16.14,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-fernandez-moran-pysh-medium-frame-natural": {
+    "id": "print-older-work-fernandez-moran-pysh-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-fernandez-moran-pysh",
+    "title": "Fernandez, Moran and Pysh — Medium print — Natural wood frame",
+    "artworkTitle": "Fernandez, Moran and Pysh",
+    "amount": "98.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD62X4DD48F7S16DD14X8J1S12DD62X4DD48G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 12.36,
+      "height": 4.2267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.62,
+      "height": 4.48,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493.jpg",
+    "assetSha256": "4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493",
+    "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2.jpg",
+      "fullSrc": "/display/older-work-fernandez-moran-pysh-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Akin Fernandez 351, TJ Nico Moran 345, TJ Preston Pysh 344",
+      "width": 4948,
+      "height": 1692,
+      "caption": "Fernandez, Moran and Pysh"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16.14,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.62,
+        "height": 4.48,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.62X4.48",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16.14,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-breedlove-ammous-livera-full": {
+    "id": "print-older-work-breedlove-ammous-livera-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-breedlove-ammous-livera",
+    "title": "Breedlove, Ammous and Livera — Large print",
+    "artworkTitle": "Breedlove, Ammous and Livera",
+    "amount": "55.00",
+    "currency": "USD",
+    "sku": "5M144M8S16.14X6.05",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.87,
+      "height": 5.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.14,
+      "height": 6.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
+    "assetSha256": "2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45",
+    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
+      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
+      "width": 4769,
+      "height": 1742,
+      "caption": "Breedlove, Ammous and Livera"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-breedlove-ammous-livera-full-frame-black": {
+    "id": "print-older-work-breedlove-ammous-livera-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-breedlove-ammous-livera",
+    "title": "Breedlove, Ammous and Livera — Large print — Black frame",
+    "artworkTitle": "Breedlove, Ammous and Livera",
+    "amount": "106.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD14X6DD05F1S19DD14X9DD05J1S16DD14X6DD05G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.87,
+      "height": 5.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.14,
+      "height": 6.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
+    "assetSha256": "2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45",
+    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
+      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
+      "width": 4769,
+      "height": 1742,
+      "caption": "Breedlove, Ammous and Livera"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.14,
+        "height": 9.05,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.14,
+        "height": 6.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.14X6.05",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.14,
+        "height": 9.05,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-breedlove-ammous-livera-full-frame-white": {
+    "id": "print-older-work-breedlove-ammous-livera-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-breedlove-ammous-livera",
+    "title": "Breedlove, Ammous and Livera — Large print — White frame",
+    "artworkTitle": "Breedlove, Ammous and Livera",
+    "amount": "106.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD14X6DD05F2S19DD14X9DD05J1S16DD14X6DD05G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.87,
+      "height": 5.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.14,
+      "height": 6.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
+    "assetSha256": "2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45",
+    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
+      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
+      "width": 4769,
+      "height": 1742,
+      "caption": "Breedlove, Ammous and Livera"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.14,
+        "height": 9.05,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.14,
+        "height": 6.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.14X6.05",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.14,
+        "height": 9.05,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-breedlove-ammous-livera-full-frame-natural": {
+    "id": "print-older-work-breedlove-ammous-livera-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-breedlove-ammous-livera",
+    "title": "Breedlove, Ammous and Livera — Large print — Natural wood frame",
+    "artworkTitle": "Breedlove, Ammous and Livera",
+    "amount": "119.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD14X6DD05F7S19DD14X9DD05J1S16DD14X6DD05G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 15.87,
+      "height": 5.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.14,
+      "height": 6.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
+    "assetSha256": "2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45",
+    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
+      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
+      "width": 4769,
+      "height": 1742,
+      "caption": "Breedlove, Ammous and Livera"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.14,
+        "height": 9.05,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.14,
+        "height": 6.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.14X6.05",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.14,
+        "height": 9.05,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-breedlove-ammous-livera-medium": {
+    "id": "print-older-work-breedlove-ammous-livera-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-breedlove-ammous-livera",
+    "title": "Breedlove, Ammous and Livera — Medium print",
+    "artworkTitle": "Breedlove, Ammous and Livera",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.17X4.6",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.9,
+      "height": 4.3467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.17,
+      "height": 4.6,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
+    "assetSha256": "f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9",
+    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
+      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
+      "width": 4769,
+      "height": 1742,
+      "caption": "Breedlove, Ammous and Livera"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-breedlove-ammous-livera-medium-frame-black": {
+    "id": "print-older-work-breedlove-ammous-livera-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-breedlove-ammous-livera",
+    "title": "Breedlove, Ammous and Livera — Medium print — Black frame",
+    "artworkTitle": "Breedlove, Ammous and Livera",
+    "amount": "82.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD17X4DD6F1S15DD59X8DD02J1S12DD17X4DD6G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.9,
+      "height": 4.3467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.17,
+      "height": 4.6,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
+    "assetSha256": "f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9",
+    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
+      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
+      "width": 4769,
+      "height": 1742,
+      "caption": "Breedlove, Ammous and Livera"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.59,
+        "height": 8.02,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.17,
+        "height": 4.6,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.17X4.6",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.59,
+        "height": 8.02,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-breedlove-ammous-livera-medium-frame-white": {
+    "id": "print-older-work-breedlove-ammous-livera-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-breedlove-ammous-livera",
+    "title": "Breedlove, Ammous and Livera — Medium print — White frame",
+    "artworkTitle": "Breedlove, Ammous and Livera",
+    "amount": "82.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD17X4DD6F2S15DD59X8DD02J1S12DD17X4DD6G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.9,
+      "height": 4.3467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.17,
+      "height": 4.6,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
+    "assetSha256": "f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9",
+    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
+      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
+      "width": 4769,
+      "height": 1742,
+      "caption": "Breedlove, Ammous and Livera"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.59,
+        "height": 8.02,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.17,
+        "height": 4.6,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.17X4.6",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.59,
+        "height": 8.02,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-breedlove-ammous-livera-medium-frame-natural": {
+    "id": "print-older-work-breedlove-ammous-livera-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-breedlove-ammous-livera",
+    "title": "Breedlove, Ammous and Livera — Medium print — Natural wood frame",
+    "artworkTitle": "Breedlove, Ammous and Livera",
+    "amount": "92.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD17X4DD6F7S15DD59X8DD02J1S12DD17X4DD6G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.9,
+      "height": 4.3467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.17,
+      "height": 4.6,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
+    "assetSha256": "f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9",
+    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
+      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
+      "width": 4769,
+      "height": 1742,
+      "caption": "Breedlove, Ammous and Livera"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.59,
+        "height": 8.02,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.17,
+        "height": 4.6,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.17X4.6",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.59,
+        "height": 8.02,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-rochard-martinez-full": {
+    "id": "print-older-work-rochard-martinez-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-rochard-martinez",
+    "title": "Pierre Rochard, Morgen Rochard and Aixa Martinez — Large print",
+    "artworkTitle": "Pierre Rochard, Morgen Rochard and Aixa Martinez",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S11.59X4.26",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.3367,
+      "height": 4.0067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.59,
+      "height": 4.26,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9.jpg",
+    "assetSha256": "e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9",
+    "sourceSha256": "4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec.jpg",
+      "fullSrc": "/display/older-work-rochard-martinez-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Pierre Rochard 359, TJ Morgen Rochard 358, TJ Aixa Martinez 347",
+      "width": 3404,
+      "height": 1203,
+      "caption": "Pierre Rochard, Morgen Rochard and Aixa Martinez"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-rochard-martinez-full-frame-black": {
+    "id": "print-older-work-rochard-martinez-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-rochard-martinez",
+    "title": "Pierre Rochard, Morgen Rochard and Aixa Martinez — Large print — Black frame",
+    "artworkTitle": "Pierre Rochard, Morgen Rochard and Aixa Martinez",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD59X4DD26F1S15DD33X8J1S11DD59X4DD26G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.3367,
+      "height": 4.0067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.59,
+      "height": 4.26,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9.jpg",
+    "assetSha256": "e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9",
+    "sourceSha256": "4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec.jpg",
+      "fullSrc": "/display/older-work-rochard-martinez-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Pierre Rochard 359, TJ Morgen Rochard 358, TJ Aixa Martinez 347",
+      "width": 3404,
+      "height": 1203,
+      "caption": "Pierre Rochard, Morgen Rochard and Aixa Martinez"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.33,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.59,
+        "height": 4.26,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.59X4.26",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.33,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-rochard-martinez-full-frame-white": {
+    "id": "print-older-work-rochard-martinez-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-rochard-martinez",
+    "title": "Pierre Rochard, Morgen Rochard and Aixa Martinez — Large print — White frame",
+    "artworkTitle": "Pierre Rochard, Morgen Rochard and Aixa Martinez",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD59X4DD26F2S15DD33X8J1S11DD59X4DD26G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.3367,
+      "height": 4.0067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.59,
+      "height": 4.26,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9.jpg",
+    "assetSha256": "e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9",
+    "sourceSha256": "4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec.jpg",
+      "fullSrc": "/display/older-work-rochard-martinez-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Pierre Rochard 359, TJ Morgen Rochard 358, TJ Aixa Martinez 347",
+      "width": 3404,
+      "height": 1203,
+      "caption": "Pierre Rochard, Morgen Rochard and Aixa Martinez"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.33,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.59,
+        "height": 4.26,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.59X4.26",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.33,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-rochard-martinez-full-frame-natural": {
+    "id": "print-older-work-rochard-martinez-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-rochard-martinez",
+    "title": "Pierre Rochard, Morgen Rochard and Aixa Martinez — Large print — Natural wood frame",
+    "artworkTitle": "Pierre Rochard, Morgen Rochard and Aixa Martinez",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD59X4DD26F7S15DD33X8J1S11DD59X4DD26G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.3367,
+      "height": 4.0067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.59,
+      "height": 4.26,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9.jpg",
+    "assetSha256": "e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9",
+    "sourceSha256": "4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec.jpg",
+      "fullSrc": "/display/older-work-rochard-martinez-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Pierre Rochard 359, TJ Morgen Rochard 358, TJ Aixa Martinez 347",
+      "width": 3404,
+      "height": 1203,
+      "caption": "Pierre Rochard, Morgen Rochard and Aixa Martinez"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.33,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.59,
+        "height": 4.26,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.59X4.26",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.33,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-nakamoto-hayek-full": {
+    "id": "print-older-work-nakamoto-hayek-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-nakamoto-hayek",
+    "title": "Dorian Nakamoto and Hayek — Large print",
+    "artworkTitle": "Dorian Nakamoto and Hayek",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S11.76X6.5",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.5,
+      "height": 6.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.76,
+      "height": 6.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9.jpg",
+    "assetSha256": "74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9",
+    "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541.jpg",
+      "fullSrc": "/display/older-work-nakamoto-hayek-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dorian Nakamoto, TJ Hayek 339",
+      "width": 3454,
+      "height": 1876,
+      "caption": "Dorian Nakamoto and Hayek"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-nakamoto-hayek-full-frame-black": {
+    "id": "print-older-work-nakamoto-hayek-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-nakamoto-hayek",
+    "title": "Dorian Nakamoto and Hayek — Large print — Black frame",
+    "artworkTitle": "Dorian Nakamoto and Hayek",
+    "amount": "84.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD76X6DD5F1S14DD76X9DD5J1S11DD76X6DD5G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.5,
+      "height": 6.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.76,
+      "height": 6.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9.jpg",
+    "assetSha256": "74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9",
+    "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541.jpg",
+      "fullSrc": "/display/older-work-nakamoto-hayek-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dorian Nakamoto, TJ Hayek 339",
+      "width": 3454,
+      "height": 1876,
+      "caption": "Dorian Nakamoto and Hayek"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14.76,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.76,
+        "height": 6.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.76X6.5",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14.76,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-nakamoto-hayek-full-frame-white": {
+    "id": "print-older-work-nakamoto-hayek-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-nakamoto-hayek",
+    "title": "Dorian Nakamoto and Hayek — Large print — White frame",
+    "artworkTitle": "Dorian Nakamoto and Hayek",
+    "amount": "84.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD76X6DD5F2S14DD76X9DD5J1S11DD76X6DD5G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.5,
+      "height": 6.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.76,
+      "height": 6.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9.jpg",
+    "assetSha256": "74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9",
+    "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541.jpg",
+      "fullSrc": "/display/older-work-nakamoto-hayek-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dorian Nakamoto, TJ Hayek 339",
+      "width": 3454,
+      "height": 1876,
+      "caption": "Dorian Nakamoto and Hayek"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14.76,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.76,
+        "height": 6.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.76X6.5",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14.76,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-nakamoto-hayek-full-frame-natural": {
+    "id": "print-older-work-nakamoto-hayek-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-nakamoto-hayek",
+    "title": "Dorian Nakamoto and Hayek — Large print — Natural wood frame",
+    "artworkTitle": "Dorian Nakamoto and Hayek",
+    "amount": "94.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD76X6DD5F7S14DD76X9DD5J1S11DD76X6DD5G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.5,
+      "height": 6.2467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.76,
+      "height": 6.5,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9.jpg",
+    "assetSha256": "74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9",
+    "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541.jpg",
+      "fullSrc": "/display/older-work-nakamoto-hayek-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dorian Nakamoto, TJ Hayek 339",
+      "width": 3454,
+      "height": 1876,
+      "caption": "Dorian Nakamoto and Hayek"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14.76,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.76,
+        "height": 6.5,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.76X6.5",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14.76,
+        "height": 9.5,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-nakamoto-hayek-medium": {
+    "id": "print-older-work-nakamoto-hayek-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-nakamoto-hayek",
+    "title": "Dorian Nakamoto and Hayek — Medium print",
+    "artworkTitle": "Dorian Nakamoto and Hayek",
+    "amount": "30.00",
+    "currency": "USD",
+    "sku": "5M144M8S8.88X4.94",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.6267,
+      "height": 4.6867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.88,
+      "height": 4.94,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96.jpg",
+    "assetSha256": "216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96",
+    "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541.jpg",
+      "fullSrc": "/display/older-work-nakamoto-hayek-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dorian Nakamoto, TJ Hayek 339",
+      "width": 3454,
+      "height": 1876,
+      "caption": "Dorian Nakamoto and Hayek"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-nakamoto-hayek-medium-frame-black": {
+    "id": "print-older-work-nakamoto-hayek-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-nakamoto-hayek",
+    "title": "Dorian Nakamoto and Hayek — Medium print — Black frame",
+    "artworkTitle": "Dorian Nakamoto and Hayek",
+    "amount": "66.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD88X4DD94F1S11DD94X8J1S8DD88X4DD94G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.6267,
+      "height": 4.6867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.88,
+      "height": 4.94,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96.jpg",
+    "assetSha256": "216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96",
+    "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541.jpg",
+      "fullSrc": "/display/older-work-nakamoto-hayek-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dorian Nakamoto, TJ Hayek 339",
+      "width": 3454,
+      "height": 1876,
+      "caption": "Dorian Nakamoto and Hayek"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.94,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.88,
+        "height": 4.94,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.88X4.94",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.94,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-older-work-nakamoto-hayek-medium-frame-white": {
+    "id": "print-older-work-nakamoto-hayek-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-nakamoto-hayek",
+    "title": "Dorian Nakamoto and Hayek — Medium print — White frame",
+    "artworkTitle": "Dorian Nakamoto and Hayek",
+    "amount": "66.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD88X4DD94F2S11DD94X8J1S8DD88X4DD94G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.6267,
+      "height": 4.6867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.88,
+      "height": 4.94,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96.jpg",
+    "assetSha256": "216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96",
+    "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541.jpg",
+      "fullSrc": "/display/older-work-nakamoto-hayek-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dorian Nakamoto, TJ Hayek 339",
+      "width": 3454,
+      "height": 1876,
+      "caption": "Dorian Nakamoto and Hayek"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.94,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.88,
+        "height": 4.94,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.88X4.94",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.94,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-older-work-nakamoto-hayek-medium-frame-natural": {
+    "id": "print-older-work-nakamoto-hayek-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-nakamoto-hayek",
+    "title": "Dorian Nakamoto and Hayek — Medium print — Natural wood frame",
+    "artworkTitle": "Dorian Nakamoto and Hayek",
+    "amount": "75.63",
+    "currency": "USD",
+    "sku": "5M144M8S8DD88X4DD94F7S11DD94X8J1S8DD88X4DD94G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 8.6267,
+      "height": 4.6867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.88,
+      "height": 4.94,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96.jpg",
+    "assetSha256": "216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96",
+    "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541.jpg",
+      "fullSrc": "/display/older-work-nakamoto-hayek-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Dorian Nakamoto, TJ Hayek 339",
+      "width": 3454,
+      "height": 1876,
+      "caption": "Dorian Nakamoto and Hayek"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.94,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.88,
+        "height": 4.94,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.88X4.94",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.94,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-older-work-figen-pnut-swoll-full": {
+    "id": "print-older-work-figen-pnut-swoll-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-figen-pnut-swoll",
+    "title": "Figen, PNut and Joey Swoll — Large print",
+    "artworkTitle": "Figen, PNut and Joey Swoll",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S11.77X4.27",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.4933,
+      "height": 4.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.77,
+      "height": 4.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f.jpg",
+    "assetSha256": "8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f",
+    "sourceSha256": "05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9.jpg",
+      "fullSrc": "/display/older-work-figen-pnut-swoll-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figen 341, TJ PNut Window 338, TJ Joey Swoll 340",
+      "width": 3457,
+      "height": 1208,
+      "caption": "Figen, PNut and Joey Swoll"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-figen-pnut-swoll-full-frame-black": {
+    "id": "print-older-work-figen-pnut-swoll-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-figen-pnut-swoll",
+    "title": "Figen, PNut and Joey Swoll — Large print — Black frame",
+    "artworkTitle": "Figen, PNut and Joey Swoll",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD77X4DD27F1S15DD51X8DD01J1S11DD77X4DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.4933,
+      "height": 4.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.77,
+      "height": 4.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f.jpg",
+    "assetSha256": "8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f",
+    "sourceSha256": "05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9.jpg",
+      "fullSrc": "/display/older-work-figen-pnut-swoll-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figen 341, TJ PNut Window 338, TJ Joey Swoll 340",
+      "width": 3457,
+      "height": 1208,
+      "caption": "Figen, PNut and Joey Swoll"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.51,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.77,
+        "height": 4.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.77X4.27",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.51,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-figen-pnut-swoll-full-frame-white": {
+    "id": "print-older-work-figen-pnut-swoll-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-figen-pnut-swoll",
+    "title": "Figen, PNut and Joey Swoll — Large print — White frame",
+    "artworkTitle": "Figen, PNut and Joey Swoll",
+    "amount": "81.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD77X4DD27F2S15DD51X8DD01J1S11DD77X4DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.4933,
+      "height": 4.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.77,
+      "height": 4.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f.jpg",
+    "assetSha256": "8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f",
+    "sourceSha256": "05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9.jpg",
+      "fullSrc": "/display/older-work-figen-pnut-swoll-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figen 341, TJ PNut Window 338, TJ Joey Swoll 340",
+      "width": 3457,
+      "height": 1208,
+      "caption": "Figen, PNut and Joey Swoll"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.51,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.77,
+        "height": 4.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.77X4.27",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.51,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-figen-pnut-swoll-full-frame-natural": {
+    "id": "print-older-work-figen-pnut-swoll-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-figen-pnut-swoll",
+    "title": "Figen, PNut and Joey Swoll — Large print — Natural wood frame",
+    "artworkTitle": "Figen, PNut and Joey Swoll",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD77X4DD27F7S15DD51X8DD01J1S11DD77X4DD27G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 11.4933,
+      "height": 4.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.77,
+      "height": 4.27,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f.jpg",
+    "assetSha256": "8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f",
+    "sourceSha256": "05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9.jpg",
+      "fullSrc": "/display/older-work-figen-pnut-swoll-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figen 341, TJ PNut Window 338, TJ Joey Swoll 340",
+      "width": 3457,
+      "height": 1208,
+      "caption": "Figen, PNut and Joey Swoll"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 15.51,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.77,
+        "height": 4.27,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.77X4.27",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 15.51,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-hayek-stark-gomez-el-bawab-full": {
+    "id": "print-older-work-hayek-stark-gomez-el-bawab-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-hayek-stark-gomez-el-bawab",
+    "title": "Hayek, Stark, Gomez and El Bawab — Large print",
+    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
+    "amount": "70.00",
+    "currency": "USD",
+    "sku": "5M144M8S20.63X6.37",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.3767,
+      "height": 6.1167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.63,
+      "height": 6.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881.jpg",
+    "assetSha256": "1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881",
+    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
+      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
+      "width": 6116,
+      "height": 1836,
+      "caption": "Hayek, Stark, Gomez and El Bawab"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-hayek-stark-gomez-el-bawab-full-frame-black": {
+    "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-hayek-stark-gomez-el-bawab",
+    "title": "Hayek, Stark, Gomez and El Bawab — Large print — Black frame",
+    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
+    "amount": "131.00",
+    "currency": "USD",
+    "sku": "5M144M8S20DD63X6DD37F1S23DD63X9DD37J1S20DD63X6DD37G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.3767,
+      "height": 6.1167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.63,
+      "height": 6.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881.jpg",
+    "assetSha256": "1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881",
+    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
+      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
+      "width": 6116,
+      "height": 1836,
+      "caption": "Hayek, Stark, Gomez and El Bawab"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 23.63,
+        "height": 9.37,
+        "unit": "in"
+      },
+      "window": {
+        "width": 20.63,
+        "height": 6.37,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S20.63X6.37",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 23.63,
+        "height": 9.37,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-hayek-stark-gomez-el-bawab-full-frame-white": {
+    "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-hayek-stark-gomez-el-bawab",
+    "title": "Hayek, Stark, Gomez and El Bawab — Large print — White frame",
+    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
+    "amount": "131.00",
+    "currency": "USD",
+    "sku": "5M144M8S20DD63X6DD37F2S23DD63X9DD37J1S20DD63X6DD37G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.3767,
+      "height": 6.1167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.63,
+      "height": 6.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881.jpg",
+    "assetSha256": "1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881",
+    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
+      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
+      "width": 6116,
+      "height": 1836,
+      "caption": "Hayek, Stark, Gomez and El Bawab"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 23.63,
+        "height": 9.37,
+        "unit": "in"
+      },
+      "window": {
+        "width": 20.63,
+        "height": 6.37,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S20.63X6.37",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 23.63,
+        "height": 9.37,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-hayek-stark-gomez-el-bawab-full-frame-natural": {
+    "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-hayek-stark-gomez-el-bawab",
+    "title": "Hayek, Stark, Gomez and El Bawab — Large print — Natural wood frame",
+    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
+    "amount": "145.00",
+    "currency": "USD",
+    "sku": "5M144M8S20DD63X6DD37F7S23DD63X9DD37J1S20DD63X6DD37G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 20.3767,
+      "height": 6.1167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 20.63,
+      "height": 6.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881.jpg",
+    "assetSha256": "1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881",
+    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
+      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
+      "width": 6116,
+      "height": 1836,
+      "caption": "Hayek, Stark, Gomez and El Bawab"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 23.63,
+        "height": 9.37,
+        "unit": "in"
+      },
+      "window": {
+        "width": 20.63,
+        "height": 6.37,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S20.63X6.37",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 23.63,
+        "height": 9.37,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-hayek-stark-gomez-el-bawab-medium": {
+    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-hayek-stark-gomez-el-bawab",
+    "title": "Hayek, Stark, Gomez and El Bawab — Medium print",
+    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M8S15.54X4.84",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.28,
+      "height": 4.5867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.54,
+      "height": 4.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6.jpg",
+    "assetSha256": "ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6",
+    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
+      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
+      "width": 6116,
+      "height": 1836,
+      "caption": "Hayek, Stark, Gomez and El Bawab"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-black": {
+    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-hayek-stark-gomez-el-bawab",
+    "title": "Hayek, Stark, Gomez and El Bawab — Medium print — Black frame",
+    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
+    "amount": "97.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD54X4DD84F1S18DD7X8J1S15DD54X4DD84G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.28,
+      "height": 4.5867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.54,
+      "height": 4.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6.jpg",
+    "assetSha256": "ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6",
+    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
+      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
+      "width": 6116,
+      "height": 1836,
+      "caption": "Hayek, Stark, Gomez and El Bawab"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.7,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.54,
+        "height": 4.84,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.54X4.84",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.7,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-white": {
+    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-hayek-stark-gomez-el-bawab",
+    "title": "Hayek, Stark, Gomez and El Bawab — Medium print — White frame",
+    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
+    "amount": "97.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD54X4DD84F2S18DD7X8J1S15DD54X4DD84G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.28,
+      "height": 4.5867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.54,
+      "height": 4.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6.jpg",
+    "assetSha256": "ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6",
+    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
+      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
+      "width": 6116,
+      "height": 1836,
+      "caption": "Hayek, Stark, Gomez and El Bawab"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.7,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.54,
+        "height": 4.84,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.54X4.84",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.7,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-natural": {
+    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-hayek-stark-gomez-el-bawab",
+    "title": "Hayek, Stark, Gomez and El Bawab — Medium print — Natural wood frame",
+    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
+    "amount": "109.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD54X4DD84F7S18DD7X8J1S15DD54X4DD84G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 15.28,
+      "height": 4.5867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.54,
+      "height": 4.84,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6.jpg",
+    "assetSha256": "ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6",
+    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
+      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
+      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
+      "width": 6116,
+      "height": 1836,
+      "caption": "Hayek, Stark, Gomez and El Bawab"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.7,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.54,
+        "height": 4.84,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.54X4.84",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.7,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-yakes-todd-dickerson-full": {
+    "id": "print-older-work-yakes-todd-dickerson-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Large print",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "85.00",
+    "currency": "USD",
+    "sku": "5M144M8S21.94X9.16",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.6867,
+      "height": 8.9067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.94,
+      "height": 9.16,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a.jpg",
+    "assetSha256": "41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-yakes-todd-dickerson-full-frame-black": {
+    "id": "print-older-work-yakes-todd-dickerson-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Large print — Black frame",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "159.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD94X9DD16F1S24DD94X12DD16J1S21DD94X9DD16G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.6867,
+      "height": 8.9067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.94,
+      "height": 9.16,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a.jpg",
+    "assetSha256": "41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.94,
+        "height": 12.16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.94,
+        "height": 9.16,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.94X9.16",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.94,
+        "height": 12.16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-older-work-yakes-todd-dickerson-full-frame-white": {
+    "id": "print-older-work-yakes-todd-dickerson-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Large print — White frame",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "159.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD94X9DD16F2S24DD94X12DD16J1S21DD94X9DD16G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.6867,
+      "height": 8.9067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.94,
+      "height": 9.16,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a.jpg",
+    "assetSha256": "41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.94,
+        "height": 12.16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.94,
+        "height": 9.16,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.94X9.16",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.94,
+        "height": 12.16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-older-work-yakes-todd-dickerson-full-frame-natural": {
+    "id": "print-older-work-yakes-todd-dickerson-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Large print — Natural wood frame",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "175.00",
+    "currency": "USD",
+    "sku": "5M144M8S21DD94X9DD16F7S24DD94X12DD16J1S21DD94X9DD16G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 21.6867,
+      "height": 8.9067,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 21.94,
+      "height": 9.16,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a.jpg",
+    "assetSha256": "41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 24.94,
+        "height": 12.16,
+        "unit": "in"
+      },
+      "window": {
+        "width": 21.94,
+        "height": 9.16,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S21.94X9.16",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 24.94,
+        "height": 12.16,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-older-work-yakes-todd-dickerson-medium": {
+    "id": "print-older-work-yakes-todd-dickerson-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Medium print",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "55.00",
+    "currency": "USD",
+    "sku": "5M144M8S16.52X6.93",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 16.2567,
+      "height": 6.6767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.52,
+      "height": 6.93,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf.jpg",
+    "assetSha256": "3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-yakes-todd-dickerson-medium-frame-black": {
+    "id": "print-older-work-yakes-todd-dickerson-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Medium print — Black frame",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "110.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD52X6DD93F1S19DD52X9DD93J1S16DD52X6DD93G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 16.2567,
+      "height": 6.6767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.52,
+      "height": 6.93,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf.jpg",
+    "assetSha256": "3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.52,
+        "height": 9.93,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.52,
+        "height": 6.93,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.52X6.93",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.52,
+        "height": 9.93,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-yakes-todd-dickerson-medium-frame-white": {
+    "id": "print-older-work-yakes-todd-dickerson-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Medium print — White frame",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "110.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD52X6DD93F2S19DD52X9DD93J1S16DD52X6DD93G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 16.2567,
+      "height": 6.6767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.52,
+      "height": 6.93,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf.jpg",
+    "assetSha256": "3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.52,
+        "height": 9.93,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.52,
+        "height": 6.93,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.52X6.93",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.52,
+        "height": 9.93,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-yakes-todd-dickerson-medium-frame-natural": {
+    "id": "print-older-work-yakes-todd-dickerson-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Medium print — Natural wood frame",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "122.00",
+    "currency": "USD",
+    "sku": "5M144M8S16DD52X6DD93F7S19DD52X9DD93J1S16DD52X6DD93G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 16.2567,
+      "height": 6.6767,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 16.52,
+      "height": 6.93,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf.jpg",
+    "assetSha256": "3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 19.52,
+        "height": 9.93,
+        "unit": "in"
+      },
+      "window": {
+        "width": 16.52,
+        "height": 6.93,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S16.52X6.93",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 19.52,
+        "height": 9.93,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "55.00"
+  },
+  "print-older-work-yakes-todd-dickerson-small": {
+    "id": "print-older-work-yakes-todd-dickerson-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Small print",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S11.09X4.7",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.8267,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.09,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb.jpg",
+    "assetSha256": "724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-yakes-todd-dickerson-small-frame-black": {
+    "id": "print-older-work-yakes-todd-dickerson-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Small print — Black frame",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "75.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD09X4DD7F1S14DD39X8J1S11DD09X4DD7G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.8267,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.09,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb.jpg",
+    "assetSha256": "724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14.39,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.09,
+        "height": 4.7,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.09X4.7",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14.39,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-yakes-todd-dickerson-small-frame-white": {
+    "id": "print-older-work-yakes-todd-dickerson-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Small print — White frame",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "75.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD09X4DD7F2S14DD39X8J1S11DD09X4DD7G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.8267,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.09,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb.jpg",
+    "assetSha256": "724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14.39,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.09,
+        "height": 4.7,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.09X4.7",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14.39,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-yakes-todd-dickerson-small-frame-natural": {
+    "id": "print-older-work-yakes-todd-dickerson-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-yakes-todd-dickerson",
+    "title": "Yakes, Todd and Dickerson — Small print — Natural wood frame",
+    "artworkTitle": "Yakes, Todd and Dickerson",
+    "amount": "85.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD09X4DD7F7S14DD39X8J1S11DD09X4DD7G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 10.8267,
+      "height": 4.4467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.09,
+      "height": 4.7,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb.jpg",
+    "assetSha256": "724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb",
+    "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536.jpg",
+      "fullSrc": "/display/older-work-yakes-todd-dickerson-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Eric Yakes 330, TJ Peter Todd 331, TJ Desiree Dickerson 332",
+      "width": 6508,
+      "height": 2673,
+      "caption": "Yakes, Todd and Dickerson"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14.39,
+        "height": 8,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.09,
+        "height": 4.7,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.09X4.7",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14.39,
+        "height": 8,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-beach-sunsets-full": {
+    "id": "print-older-work-beach-sunsets-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Large print",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "60.00",
+    "currency": "USD",
+    "sku": "5M144M8S7.8X17.28",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.5467,
+      "height": 17.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.8,
+      "height": 17.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9.jpg",
+    "assetSha256": "00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-beach-sunsets-full-frame-black": {
+    "id": "print-older-work-beach-sunsets-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Large print — Black frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "119.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD8X17DD28F1S10DD8X20DD28J1S7DD8X17DD28G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.5467,
+      "height": 17.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.8,
+      "height": 17.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9.jpg",
+    "assetSha256": "00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10.8,
+        "height": 20.28,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.8,
+        "height": 17.28,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.8X17.28",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10.8,
+        "height": 20.28,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-beach-sunsets-full-frame-white": {
+    "id": "print-older-work-beach-sunsets-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Large print — White frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "119.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD8X17DD28F2S10DD8X20DD28J1S7DD8X17DD28G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.5467,
+      "height": 17.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.8,
+      "height": 17.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9.jpg",
+    "assetSha256": "00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10.8,
+        "height": 20.28,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.8,
+        "height": 17.28,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.8X17.28",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10.8,
+        "height": 20.28,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-beach-sunsets-full-frame-natural": {
+    "id": "print-older-work-beach-sunsets-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Large print — Natural wood frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "133.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD8X17DD28F7S10DD8X20DD28J1S7DD8X17DD28G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.5467,
+      "height": 17.0167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.8,
+      "height": 17.28,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9.jpg",
+    "assetSha256": "00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10.8,
+        "height": 20.28,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.8,
+        "height": 17.28,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.8X17.28",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10.8,
+        "height": 20.28,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "60.00"
+  },
+  "print-older-work-beach-sunsets-medium": {
+    "id": "print-older-work-beach-sunsets-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Medium print",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "45.00",
+    "currency": "USD",
+    "sku": "5M144M8S5.91X13.02",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.6567,
+      "height": 12.7567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.91,
+      "height": 13.02,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df.jpg",
+    "assetSha256": "a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-beach-sunsets-medium-frame-black": {
+    "id": "print-older-work-beach-sunsets-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Medium print — Black frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "89.00",
+    "currency": "USD",
+    "sku": "5M144M8S5DD91X13DD02F1S8DD91X16DD02J1S5DD91X13DD02G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.6567,
+      "height": 12.7567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.91,
+      "height": 13.02,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df.jpg",
+    "assetSha256": "a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.91,
+        "height": 16.02,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.91,
+        "height": 13.02,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.91X13.02",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.91,
+        "height": 16.02,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-beach-sunsets-medium-frame-white": {
+    "id": "print-older-work-beach-sunsets-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Medium print — White frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "89.00",
+    "currency": "USD",
+    "sku": "5M144M8S5DD91X13DD02F2S8DD91X16DD02J1S5DD91X13DD02G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.6567,
+      "height": 12.7567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.91,
+      "height": 13.02,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df.jpg",
+    "assetSha256": "a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.91,
+        "height": 16.02,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.91,
+        "height": 13.02,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.91X13.02",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.91,
+        "height": 16.02,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-beach-sunsets-medium-frame-natural": {
+    "id": "print-older-work-beach-sunsets-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Medium print — Natural wood frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "100.00",
+    "currency": "USD",
+    "sku": "5M144M8S5DD91X13DD02F7S8DD91X16DD02J1S5DD91X13DD02G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 5.6567,
+      "height": 12.7567,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.91,
+      "height": 13.02,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df.jpg",
+    "assetSha256": "a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.91,
+        "height": 16.02,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.91,
+        "height": 13.02,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.91X13.02",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.91,
+        "height": 16.02,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-beach-sunsets-small": {
+    "id": "print-older-work-beach-sunsets-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Small print",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "30.00",
+    "currency": "USD",
+    "sku": "5M144M8S4.02X8.76",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.7667,
+      "height": 8.4933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.02,
+      "height": 8.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf.jpg",
+    "assetSha256": "8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-beach-sunsets-small-frame-black": {
+    "id": "print-older-work-beach-sunsets-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Small print — Black frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD02X8DD76F1S8DD02X12DD76J1S4DD02X8DD76G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.7667,
+      "height": 8.4933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.02,
+      "height": 8.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf.jpg",
+    "assetSha256": "8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.02,
+        "height": 12.76,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.02,
+        "height": 8.76,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.02X8.76",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.02,
+        "height": 12.76,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-older-work-beach-sunsets-small-frame-white": {
+    "id": "print-older-work-beach-sunsets-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Small print — White frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD02X8DD76F2S8DD02X12DD76J1S4DD02X8DD76G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.7667,
+      "height": 8.4933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.02,
+      "height": 8.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf.jpg",
+    "assetSha256": "8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.02,
+        "height": 12.76,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.02,
+        "height": 8.76,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.02X8.76",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.02,
+        "height": 12.76,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-older-work-beach-sunsets-small-frame-natural": {
+    "id": "print-older-work-beach-sunsets-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Small print — Natural wood frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "76.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD02X8DD76F7S8DD02X12DD76J1S4DD02X8DD76G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 3.7667,
+      "height": 8.4933,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.02,
+      "height": 8.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf.jpg",
+    "assetSha256": "8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.02,
+        "height": 12.76,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.02,
+        "height": 8.76,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.02X8.76",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.02,
+        "height": 12.76,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "30.00"
+  },
+  "print-older-work-forest-triptych-full": {
+    "id": "print-older-work-forest-triptych-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Large print",
+    "artworkTitle": "Forest Triptych",
+    "amount": "120.00",
+    "currency": "USD",
+    "sku": "5M144M8S14.19X20.41",
+    "scale": 1,
+    "imageSize": {
+      "width": 13.9367,
+      "height": 20.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.19,
+      "height": 20.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8.jpg",
+    "assetSha256": "6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-forest-triptych-full-frame-black": {
+    "id": "print-older-work-forest-triptych-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Large print — Black frame",
+    "artworkTitle": "Forest Triptych",
+    "amount": "209.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD19X20DD41F1S17DD19X23DD41J1S14DD19X20DD41G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 13.9367,
+      "height": 20.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.19,
+      "height": 20.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8.jpg",
+    "assetSha256": "6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 17.19,
+        "height": 23.41,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.19,
+        "height": 20.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.19X20.41",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 17.19,
+        "height": 23.41,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "120.00"
+  },
+  "print-older-work-forest-triptych-full-frame-white": {
+    "id": "print-older-work-forest-triptych-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Large print — White frame",
+    "artworkTitle": "Forest Triptych",
+    "amount": "209.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD19X20DD41F2S17DD19X23DD41J1S14DD19X20DD41G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 13.9367,
+      "height": 20.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.19,
+      "height": 20.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8.jpg",
+    "assetSha256": "6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 17.19,
+        "height": 23.41,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.19,
+        "height": 20.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.19X20.41",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 17.19,
+        "height": 23.41,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "120.00"
+  },
+  "print-older-work-forest-triptych-full-frame-natural": {
+    "id": "print-older-work-forest-triptych-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Large print — Natural wood frame",
+    "artworkTitle": "Forest Triptych",
+    "amount": "226.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD19X20DD41F7S17DD19X23DD41J1S14DD19X20DD41G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 13.9367,
+      "height": 20.1467,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.19,
+      "height": 20.41,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8.jpg",
+    "assetSha256": "6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 17.19,
+        "height": 23.41,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.19,
+        "height": 20.41,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.19X20.41",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 17.19,
+        "height": 23.41,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "120.00"
+  },
+  "print-older-work-forest-triptych-medium": {
+    "id": "print-older-work-forest-triptych-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Medium print",
+    "artworkTitle": "Forest Triptych",
+    "amount": "70.00",
+    "currency": "USD",
+    "sku": "5M144M8S10.71X15.37",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 10.4567,
+      "height": 15.1167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.71,
+      "height": 15.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea.jpg",
+    "assetSha256": "22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-forest-triptych-medium-frame-black": {
+    "id": "print-older-work-forest-triptych-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Medium print — Black frame",
+    "artworkTitle": "Forest Triptych",
+    "amount": "134.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD71X15DD37F1S13DD71X18DD37J1S10DD71X15DD37G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 10.4567,
+      "height": 15.1167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.71,
+      "height": 15.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea.jpg",
+    "assetSha256": "22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.71,
+        "height": 18.37,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.71,
+        "height": 15.37,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.71X15.37",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.71,
+        "height": 18.37,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-forest-triptych-medium-frame-white": {
+    "id": "print-older-work-forest-triptych-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Medium print — White frame",
+    "artworkTitle": "Forest Triptych",
+    "amount": "134.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD71X15DD37F2S13DD71X18DD37J1S10DD71X15DD37G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 10.4567,
+      "height": 15.1167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.71,
+      "height": 15.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea.jpg",
+    "assetSha256": "22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.71,
+        "height": 18.37,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.71,
+        "height": 15.37,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.71X15.37",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.71,
+        "height": 18.37,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-forest-triptych-medium-frame-natural": {
+    "id": "print-older-work-forest-triptych-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Medium print — Natural wood frame",
+    "artworkTitle": "Forest Triptych",
+    "amount": "148.00",
+    "currency": "USD",
+    "sku": "5M144M8S10DD71X15DD37F7S13DD71X18DD37J1S10DD71X15DD37G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 10.4567,
+      "height": 15.1167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 10.71,
+      "height": 15.37,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea.jpg",
+    "assetSha256": "22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 13.71,
+        "height": 18.37,
+        "unit": "in"
+      },
+      "window": {
+        "width": 10.71,
+        "height": 15.37,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S10.71X15.37",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 13.71,
+        "height": 18.37,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "70.00"
+  },
+  "print-older-work-forest-triptych-small": {
+    "id": "print-older-work-forest-triptych-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Small print",
+    "artworkTitle": "Forest Triptych",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S7.22X10.33",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.9667,
+      "height": 10.07,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.22,
+      "height": 10.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10.jpg",
+    "assetSha256": "b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-forest-triptych-small-frame-black": {
+    "id": "print-older-work-forest-triptych-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Small print — Black frame",
+    "artworkTitle": "Forest Triptych",
+    "amount": "78.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD22X10DD33F1S10DD22X13DD33J1S7DD22X10DD33G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.9667,
+      "height": 10.07,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.22,
+      "height": 10.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10.jpg",
+    "assetSha256": "b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10.22,
+        "height": 13.33,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.22,
+        "height": 10.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.22X10.33",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10.22,
+        "height": 13.33,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-forest-triptych-small-frame-white": {
+    "id": "print-older-work-forest-triptych-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Small print — White frame",
+    "artworkTitle": "Forest Triptych",
+    "amount": "78.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD22X10DD33F2S10DD22X13DD33J1S7DD22X10DD33G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.9667,
+      "height": 10.07,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.22,
+      "height": 10.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10.jpg",
+    "assetSha256": "b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10.22,
+        "height": 13.33,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.22,
+        "height": 10.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.22X10.33",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10.22,
+        "height": 13.33,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-forest-triptych-small-frame-natural": {
+    "id": "print-older-work-forest-triptych-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-forest-triptych",
+    "title": "Forest Triptych — Small print — Natural wood frame",
+    "artworkTitle": "Forest Triptych",
+    "amount": "88.00",
+    "currency": "USD",
+    "sku": "5M144M8S7DD22X10DD33F7S10DD22X13DD33J1S7DD22X10DD33G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 6.9667,
+      "height": 10.07,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 7.22,
+      "height": 10.33,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10.jpg",
+    "assetSha256": "b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10",
+    "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4.jpg",
+      "fullSrc": "/display/older-work-forest-triptych-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Forest 303, TJ Forest 302, TJ Forest 304",
+      "width": 4184,
+      "height": 6048,
+      "caption": "Forest Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 10.22,
+        "height": 13.33,
+        "unit": "in"
+      },
+      "window": {
+        "width": 7.22,
+        "height": 10.33,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S7.22X10.33",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 10.22,
+        "height": 13.33,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-legend-of-billy-buff-full": {
+    "id": "print-older-work-legend-of-billy-buff-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Large print",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "115.00",
+    "currency": "USD",
+    "sku": "5M144M8S19.7X13.72",
+    "scale": 1,
+    "imageSize": {
+      "width": 19.4433,
+      "height": 13.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.7,
+      "height": 13.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372.jpg",
+    "assetSha256": "9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-legend-of-billy-buff-full-frame-black": {
+    "id": "print-older-work-legend-of-billy-buff-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Large print — Black frame",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "201.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD7X13DD72F1S22DD7X16DD72J1S19DD7X13DD72G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 19.4433,
+      "height": 13.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.7,
+      "height": 13.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372.jpg",
+    "assetSha256": "9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.7,
+        "height": 16.72,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.7,
+        "height": 13.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.7X13.72",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.7,
+        "height": 16.72,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "115.00"
+  },
+  "print-older-work-legend-of-billy-buff-full-frame-white": {
+    "id": "print-older-work-legend-of-billy-buff-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Large print — White frame",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "201.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD7X13DD72F2S22DD7X16DD72J1S19DD7X13DD72G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 19.4433,
+      "height": 13.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.7,
+      "height": 13.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372.jpg",
+    "assetSha256": "9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.7,
+        "height": 16.72,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.7,
+        "height": 13.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.7X13.72",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.7,
+        "height": 16.72,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "115.00"
+  },
+  "print-older-work-legend-of-billy-buff-full-frame-natural": {
+    "id": "print-older-work-legend-of-billy-buff-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Large print — Natural wood frame",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "217.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD7X13DD72F7S22DD7X16DD72J1S19DD7X13DD72G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 19.4433,
+      "height": 13.4667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.7,
+      "height": 13.72,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372.jpg",
+    "assetSha256": "9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.7,
+        "height": 16.72,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.7,
+        "height": 13.72,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.7X13.72",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.7,
+        "height": 16.72,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "115.00"
+  },
+  "print-older-work-legend-of-billy-buff-medium": {
+    "id": "print-older-work-legend-of-billy-buff-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Medium print",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "65.00",
+    "currency": "USD",
+    "sku": "5M144M8S14.84X10.35",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 14.5767,
+      "height": 10.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.84,
+      "height": 10.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53.jpg",
+    "assetSha256": "634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-legend-of-billy-buff-medium-frame-black": {
+    "id": "print-older-work-legend-of-billy-buff-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Medium print — Black frame",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "126.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD84X10DD35F1S17DD84X13DD35J1S14DD84X10DD35G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 14.5767,
+      "height": 10.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.84,
+      "height": 10.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53.jpg",
+    "assetSha256": "634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 17.84,
+        "height": 13.35,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.84,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.84X10.35",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 17.84,
+        "height": 13.35,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "65.00"
+  },
+  "print-older-work-legend-of-billy-buff-medium-frame-white": {
+    "id": "print-older-work-legend-of-billy-buff-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Medium print — White frame",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "126.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD84X10DD35F2S17DD84X13DD35J1S14DD84X10DD35G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 14.5767,
+      "height": 10.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.84,
+      "height": 10.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53.jpg",
+    "assetSha256": "634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 17.84,
+        "height": 13.35,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.84,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.84X10.35",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 17.84,
+        "height": 13.35,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "65.00"
+  },
+  "print-older-work-legend-of-billy-buff-medium-frame-natural": {
+    "id": "print-older-work-legend-of-billy-buff-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Medium print — Natural wood frame",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "140.00",
+    "currency": "USD",
+    "sku": "5M144M8S14DD84X10DD35F7S17DD84X13DD35J1S14DD84X10DD35G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 14.5767,
+      "height": 10.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 14.84,
+      "height": 10.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53.jpg",
+    "assetSha256": "634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 17.84,
+        "height": 13.35,
+        "unit": "in"
+      },
+      "window": {
+        "width": 14.84,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S14.84X10.35",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 17.84,
+        "height": 13.35,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "65.00"
+  },
+  "print-older-work-legend-of-billy-buff-small": {
+    "id": "print-older-work-legend-of-billy-buff-small",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Small print",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "35.00",
+    "currency": "USD",
+    "sku": "5M144M8S9.97X6.98",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 9.7133,
+      "height": 6.7267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.97,
+      "height": 6.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9.jpg",
+    "assetSha256": "b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-legend-of-billy-buff-small-frame-black": {
+    "id": "print-older-work-legend-of-billy-buff-small-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Small print — Black frame",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD97X6DD98F1S12DD97X9DD98J1S9DD97X6DD98G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 9.7133,
+      "height": 6.7267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.97,
+      "height": 6.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9.jpg",
+    "assetSha256": "b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12.97,
+        "height": 9.98,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.97,
+        "height": 6.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.97X6.98",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12.97,
+        "height": 9.98,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-legend-of-billy-buff-small-frame-white": {
+    "id": "print-older-work-legend-of-billy-buff-small-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Small print — White frame",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "76.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD97X6DD98F2S12DD97X9DD98J1S9DD97X6DD98G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 9.7133,
+      "height": 6.7267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.97,
+      "height": 6.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9.jpg",
+    "assetSha256": "b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12.97,
+        "height": 9.98,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.97,
+        "height": 6.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.97X6.98",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12.97,
+        "height": 9.98,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
+  },
+  "print-older-work-legend-of-billy-buff-small-frame-natural": {
+    "id": "print-older-work-legend-of-billy-buff-small-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-legend-of-billy-buff",
+    "title": "The Legend of Billy Buff — Small print — Natural wood frame",
+    "artworkTitle": "The Legend of Billy Buff",
+    "amount": "86.00",
+    "currency": "USD",
+    "sku": "5M144M8S9DD97X6DD98F7S12DD97X9DD98J1S9DD97X6DD98G1",
+    "scale": 0.5,
+    "imageSize": {
+      "width": 9.7133,
+      "height": 6.7267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 9.97,
+      "height": 6.98,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9.jpg",
+    "assetSha256": "b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9",
+    "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421.jpg",
+      "fullSrc": "/display/older-work-legend-of-billy-buff-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ The Legend of Billy Buff 2, TJ The Legend of Billy Buff 1",
+      "width": 5836,
+      "height": 4042,
+      "caption": "The Legend of Billy Buff"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 12.97,
+        "height": 9.98,
+        "unit": "in"
+      },
+      "window": {
+        "width": 9.97,
+        "height": 6.98,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S9.97X6.98",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 12.97,
+        "height": 9.98,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "35.00"
   }
 };
