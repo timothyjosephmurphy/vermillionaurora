@@ -4,14 +4,14 @@ import {createHash} from 'node:crypto';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import config from '../catalog/prints.json' with {type:'json'};
-import products from '../catalog/products.json' with {type:'json'};
+import products from '../catalog/all-products.mjs';
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {editionLayouts,EDITION_LAYOUT,EDITION_BORDER_IN} from '../catalog/edition-layout.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
-const prepareTJ=process.argv.includes('--prepare-tj'),prepare=process.argv.includes('--prepare')||prepareTJ,digest=b=>createHash('sha256').update(b).digest('hex'),run=promisify(execFile);
+const prepareArchive=process.argv.includes('--prepare-archive'),prepareTJ=process.argv.includes('--prepare-tj')||prepareArchive,prepare=process.argv.includes('--prepare')||prepareTJ,digest=b=>createHash('sha256').update(b).digest('hex'),run=promisify(execFile);
 const root=new URL('../',import.meta.url),cache=new URL('.cache/edition-sources/',root),output=new URL('static/print-editions/',root);
 await mkdir(cache,{recursive:true});await mkdir(output,{recursive:true});
-const tjIds=prepareTJ?JSON.parse(await readFile(new URL('catalog/tj-print-masters.json',root),'utf8')).map(r=>r.id):[];
+const tjIds=prepareTJ?JSON.parse(await readFile(new URL(prepareArchive?'catalog/archive-print-masters.json':'catalog/tj-print-masters.json',root),'utf8')).map(r=>r.id):[];
 // --only=id,id limits a preparation run to replaced or new masters so other approved files stay untouched.
 const only=process.argv.find(a=>a.startsWith('--only='))?.slice(7).split(',');
 const selected=products.filter(p=>prepareTJ?tjIds.includes(p.id):prepare?p.artist==='Paul Murphy':config.artworks[p.id]?.sizing==='image-proportional').filter(p=>!only||only.includes(p.id));
@@ -59,3 +59,4 @@ await Promise.all(Array.from({length:4},async()=>{
 }));
 if(prepare){config.artworks=Object.fromEntries(Object.entries(config.artworks).sort(([a],[b])=>a.localeCompare(b)));await writeFile(new URL('catalog/prints.json',root),JSON.stringify(config,null,2)+'\n');}
 console.log(`Verified ${count} full-image print files for ${selected.length} artworks; no source images cropped or enlarged.`);
+

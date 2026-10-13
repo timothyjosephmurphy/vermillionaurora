@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 import {wallArtworks} from '../src/data/gallery-wall.mjs';
+import {byId,catalogVersion} from '../catalog/catalog.mjs';
 const origin='https://tjm.art',root=path.resolve('dist');
 const available=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['bitcoin']}));
 const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml'};
@@ -29,7 +30,12 @@ for(const engine of [chromium,webkit]){
         }
         return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'wall-test-'+(stale?'old':printVersion),products:available}});
       }
-      if(u.hostname!=='tjm.art')return route.fulfill({json:{products:[],availability:{}}});
+      if(u.pathname==='/inventory/status'){
+        assert.equal(route.request().method(),'GET');
+        const ids=(u.searchParams.get('ids')||'').split(',').filter(Boolean);
+        return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{version:catalogVersion,availability:Object.fromEntries(ids.map(id=>[id,byId[id]?.listing.status||'available']))}});
+      }
+      if(u.hostname!=='tjm.art')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{products:[],availability:{}}});
       if(u.pathname.startsWith('/print-masters/'))masters.push(u.pathname);
       const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
       if(!fs.existsSync(file))return route.fulfill({status:404});
@@ -58,14 +64,15 @@ for(const engine of [chromium,webkit]){
       assert.equal(check.width,236);assert.equal(check.height,220);
     };
     await open();
-    assert.equal(await page.locator('[data-wall-art]').count(),24);assert.equal(await panel.getAttribute('aria-hidden'),'true');
+    assert.equal(await page.locator('[data-wall-art]').count(),wallArtworks.length);assert.equal(await panel.getAttribute('aria-hidden'),'true');
     await page.waitForFunction(()=>[...document.querySelectorAll('[data-art-image]')].every(i=>i.complete&&i.naturalWidth>0));
     assert.equal(masters.length,0,'The overview must not download original masters');
     const rects=await page.locator('[data-wall-art]').evaluateAll(elements=>elements.map(el=>{const r=el.getBoundingClientRect(),img=el.querySelector('img');return {x:r.x,y:r.y,width:r.width,height:r.height,fit:getComputedStyle(img).objectFit,overflow:getComputedStyle(el).overflow};}));
     for(const r of rects){assert.equal(r.fit,'contain');assert.notEqual(r.overflow,'hidden');}
     for(let i=0;i<rects.length;i++)for(let j=i+1;j<rects.length;j++){const a=rects[i],b=rects[j];assert(a.x+a.width<=b.x+.1||b.x+b.width<=a.x+.1||a.y+a.height<=b.y+.1||b.y+b.height<=a.y+.1);}
     await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-overview.png`,fullPage:true});
-    const art=wallArtworks.find(a=>a.id==='meditation-at-denny-blaine');
+    // This outer-row portrait leaves empty wall for the full-frame details pane and a visible neighbor for gesture checks.
+    const art=wallArtworks.find(a=>a.id==='archived-painting-img-1608');
     await focus(art);await assertWholeFrame(art);assert.equal(await page.locator('[data-wall-product]').getAttribute('href'),art.href);
     await page.waitForFunction(()=>!document.querySelector('[data-wall-buy]').disabled);
     assert.equal(await page.locator('[data-wall-price]').textContent(),`$${Number(art.price).toFixed(2)}`);
@@ -143,6 +150,8 @@ for(const engine of [chromium,webkit]){
     const transition=await page.evaluate(()=>window.wallIncomingTransition);
     if(engine===chromium)assert.equal(transition,true,'The native image transition completes on the product page');
     else assert(transition===undefined||transition===true,'Supported cross-page image transitions complete');
+    // Finish mocked product requests before navigating away; WebKit reports cancelled cross-origin requests as page errors.
+    await page.waitForLoadState('networkidle');
     await page.emulateMedia({reducedMotion:'reduce'});await page.setViewportSize({width:390,height:844});await open();
     await page.locator(`[data-wall-art="${art.id}"]`).click();await settled();
     assert.equal(page.url(),origin+'/gallery/wall/');
@@ -151,6 +160,7 @@ for(const engine of [chromium,webkit]){
     assert(phoneArt.y+phoneArt.height<phonePanel.y,'Phone details sit below the entire frame');
     await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-inspection-mobile.png`,fullPage:true});
     await Promise.all([page.waitForURL(origin+art.href),page.locator(`[data-wall-art="${art.id}"]`).click()]);
+    await page.waitForLoadState('networkidle');
     await page.goto(origin+'/');
     const wallTile=page.locator('#exhibitions [data-gallery-feature="print-wall"]');
     assert.equal(await wallTile.locator('.product-title-link').getAttribute('href'),'/gallery/wall/');
@@ -161,3 +171,4 @@ for(const engine of [chromium,webkit]){
     assert.deepEqual(errors,[]);console.log(`PASS: ${engine.name()} print wall: layout, source detail, full-screen fit, smooth product transition, touch, panel, cart selection, and stale-catalog guard.`);
   }finally{await browser.close();}
 }
+

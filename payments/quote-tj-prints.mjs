@@ -2,7 +2,9 @@
 import assert from 'node:assert/strict';
 import {randomBytes} from 'node:crypto';
 import {writeFile} from 'node:fs/promises';
-import allRecipes from '../catalog/tj-print-masters.json' with {type:'json'};
+import tjRecipes from '../catalog/tj-print-masters.json' with {type:'json'};
+import archiveRecipes from '../catalog/archive-print-masters.json' with {type:'json'};
+const allRecipes=process.env.PRINT_RECIPE_SET==='archive'?archiveRecipes:tjRecipes;
 // TJ_PRINT_IDS=id,id quotes or applies only replaced/new masters; other paintings keep their published prices.
 const onlyIds=process.env.TJ_PRINT_IDS?.split(',').map(s=>s.trim()).filter(Boolean);
 const recipes=onlyIds?allRecipes.filter(r=>onlyIds.includes(r.id)):allRecipes;
@@ -53,3 +55,4 @@ try {
   await writeFile(framing?'tj-frame-quotes.json':'tj-print-quotes.json',JSON.stringify({release:process.env.DEPLOYED_SHA,readOnly:true,ordersSubmitted:false,variants},null,2)+'\n');
   console.log(`PASS: ${variants.length} verified framed variants across ${ids.length} paintings; no payments or orders.`);
 } finally {if(installed){await credential('DELETE');console.log('Temporary audit credential removed.');}}
+

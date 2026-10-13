@@ -1,0 +1,85 @@
+name: Prepare archive print editions
+on:
+  push:
+    branches: [codex/archive-commerce]
+    paths:
+      - '.github/workflows/prepare-archive-prints.yml'
+      - 'scripts/prepare-archive-print-masters.py'
+      - 'catalog/archive-print-masters.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: checkout-sandbox
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/codex/archive-commerce'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare the artist-designated archive masters and print files
+        run: |
+          python -m pip install Pillow==12.3.0
+          npm ci
+          python scripts/prepare-archive-print-masters.py
+          node scripts/build-edition-print-assets.mjs --prepare-archive
+          node scripts/build-pilot-print-assets.mjs
+          node payments/build-print-catalog.mjs
+          node payments/build-checkout-catalog.mjs
+      - name: Deploy the quote-only catalog to the existing sandbox
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
+      - name: Verify and apply unframed prices in read-only batches
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          DEPLOYED_SHA: ${{ github.sha }}
+        run: |
+          node scripts/quote-archive-prints.mjs
+          node payments/build-print-catalog.mjs
+      - name: Deploy the priced catalog for framing quotes
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          wranglerVersion: '4.143.0'
+          workingDirectory: cloudflare
+          command: deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
+      - name: Verify frames and prepare the expanded wall
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          DEPLOYED_SHA: ${{ github.sha }}
+        run: |
+          node scripts/quote-archive-prints.mjs --frames
+          node scripts/build-expanded-print-wall.mjs
+          npm run build
+          node --test tests/archive-prints.test.mjs tests/archive-paintings.test.mjs
+      - name: Commit verified print catalog and unchanged source masters
+        run: |
+          git fetch origin codex/archive-commerce
+          test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add static/print-masters catalog/prints.json catalog/gallery-wall-layout.json cloudflare/print-catalog.mjs cloudflare/checkout-catalog.mjs cloudflare/etsy-print-source.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m 'Prepare 54 archive masters, supplier-verified editions, and expanded print wall'
+            git push origin HEAD:codex/archive-commerce
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: archive-print-quote-reports
+          path: archive-print-quotes/*.json
+          retention-days: 7

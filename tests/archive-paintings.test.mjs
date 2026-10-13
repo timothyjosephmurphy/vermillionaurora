@@ -18,9 +18,12 @@ test('every ordered archive pair has one painting, master provenance, and a veri
     assert.match(p.back.key,/^images\/Archive\/IMG_\d+\.heic$/i);
     for(const source of [p.front,p.back]){assert.match(source.sha256,/^[a-f0-9]{64}$/);assert(source.width>0&&source.height>0);}
     assert.equal(products[i].image.src,p.front.sourceUrl);
-    assert.equal(products[i].listing.price,null);
-    assert.equal(products[i].dimensions,null,'Photo estimates must not enter measured dimensions, print sizing or shipping');
-    assert.equal(products[i].checkout.mode,'inquiry');
+    assert.equal(products[i].listing.price?.amount||null,p.originalSale?.amount||null);
+    assert.equal(products[i].listing.status,p.originalSale?'available':'not-for-sale');
+    const recorded=p.recordedDimensions||p.cataloguedDimensions;
+    assert.deepEqual(products[i].dimensions,recorded?{width:recorded.width,height:recorded.height,unit:'in'}:null,'Only recorded or previously catalogued sizes enter measured dimensions');
+    assert.equal(products[i].checkout.mode,p.originalSale&&recorded?'integrated':'inquiry');
+    if(p.dimensionsInscription)assert.equal(p.dimensionsInscription.unit,'in');
     if(p.index!==null)assert.equal(products[i].title,`Painting #${p.index}`);
     else assert.equal(products[i].title,p.inscription);
     assert(display[p.front.sourceUrl]);
@@ -62,8 +65,10 @@ test('archive gallery and all painting pages render and are discoverable',()=>{
   for(const p of products){
     const page=load(fs.readFileSync(`dist/products/${p.id}/index.html`,'utf8'));
     assert.equal(page('h1').text(),p.title);
-    assert.equal(page('.product-availability').text(),'Archived painting');
-    assert.equal(page('.product-purchase-actions').length,0);
+    assert.equal(page('.product-availability').text(),p.listing.status==='available'?'Available':'Archived painting');
+    assert.equal(page('.product-purchase-actions').length,1);
+    assert.equal(page('[data-print-open]').length,1,'Every archive painting has purchasable print editions');
+    assert.equal(page('[data-original-purchase]').length,p.listing.status==='available'?1:0);
     assert.equal(page('.product-back').attr('href'),'/gallery/archived/');
     assert(page('.painting-image-trigger img').attr('srcset'));
     assert(!page('main').text().includes('undefined'));
@@ -73,3 +78,4 @@ test('archive gallery and all painting pages render and are discoverable',()=>{
     assert(page('a[href="/gallery/archived/"]').length,file);
   }
 });
+

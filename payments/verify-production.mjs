@@ -1,7 +1,7 @@
 import { randomBytes } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 const expected=JSON.parse(readFileSync('cloudflare/wrangler.jsonc','utf8')).vars;
-const products=JSON.parse(readFileSync('catalog/products.json','utf8'));
+import products from '../catalog/all-products.mjs';
 const worker='vermillion-commissions',base=`https://${worker}.timothyjosephmurphy.workers.dev`;
 const cf=`https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757d2e1bda0/workers/scripts/${worker}/secrets`;
 const key='CHECKOUT_AUDIT_TOKEN',secret=randomBytes(32).toString('hex');

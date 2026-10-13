@@ -61,9 +61,11 @@ try {
  for(const choice of ['price-asc','price-desc','size-asc','size-desc']){
   await page.locator('#gallery-sort').selectOption(choice);
   const field=choice.startsWith('price')?'price':'area',direction=choice.endsWith('asc')?1:-1;
-  const rows=await page.locator('.painting-list-row:visible').evaluateAll((nodes,field)=>nodes.map(n=>({value:Number(n.dataset[field]),url:n.querySelector('.product-title-link').href})),field);
+  const rows=await page.locator('.painting-list-row:visible').evaluateAll((nodes,field)=>nodes.map(n=>{const value=Number(n.dataset[field]);return {value:Number.isFinite(value)&&value>0?value:null,url:n.querySelector('.product-title-link').href};}),field);
   assert(rows.length>1);
-  assert(rows.every((r,i)=>i===0||direction*(r.value-rows[i-1].value)>=0),choice+' sorts the visible paintings');
+  const known=rows.filter(r=>r.value!==null),firstMissing=rows.findIndex(r=>r.value===null);
+  assert(known.every((r,i)=>i===0||direction*(r.value-known[i-1].value)>=0),choice+' sorts the recorded values');
+  assert(firstMissing===-1||rows.slice(firstMissing).every(r=>r.value===null),choice+' keeps unrecorded values at the end');
   assert.deepEqual(await page.locator('.ev-stage .ev-cell').evaluateAll(nodes=>nodes.map(n=>n.href)),rows.map(r=>r.url),'Carousel follows the sorted, filtered list');
  }
  await page.locator('#available-only').uncheck();await page.locator('#gallery-sort').selectOption('price-desc');

@@ -75,9 +75,10 @@ import {deriveParcel} from '../catalog/shipping.mjs';
 test('dimensioned available paintings receive parcels from the flat-at-12-inch rule',()=>{
  const originals=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price);
  const missing=originals.filter(p=>!p.dimensions);
- assert.deepEqual(missing.map(p=>p.id),[]); // paul-murphy-painting-55 was the last one, measured at 12 × 10 in
+ assert.deepEqual(missing.map(p=>p.id).sort(),['archived-painting-1','archived-painting-2','archived-painting-307','archived-painting-img-1555']);
+ for(const p of missing){assert.equal(p.checkout.mode,'inquiry');assert(!checkout[p.id],'Unmeasured originals must not receive an invented shipping parcel');}
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,56); // 52 before paul-murphy-painting-82 was removed, 51 after, 52 once paul-murphy-painting-55 was measured, 53 with El Zonte Before Dawn, 55 with Meditation at Denny Blaine and Sunrise in El Zonte (Large), 56 with Hope, the Vermillion Aurora
+ assert.equal(ready.length,68); // 56 existing originals and 12 archive originals with recorded dimensions
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
@@ -262,7 +263,7 @@ test('Burning Man Temple 2022 paintings are collector’s items with their own p
  const collectors=$('[data-collector-paintings] [data-product-id]').map((i,el)=>$(el).attr('data-product-id')).get();
  // The Temple series closes Collector's Items (and the gallery list) in the order Blue, Pink, Flame, Daytime.
  assert.deepEqual(collectors.slice(-4),ids);
- assert.deepEqual(collections.gallery.slice(-4).map(e=>e.product),ids);
+ assert.deepEqual(collections.gallery.filter(e=>!byId[e.product].archive).slice(-4).map(e=>e.product),ids);
  for(const id of ids){
   const p=products.find(x=>x.id===id);
   assert.equal(p.listing.status,'not-for-sale',id);assert.equal(p.listing.price,undefined,id);assert.equal(p.checkout.mode,'inquiry',id);
@@ -328,3 +329,4 @@ test('the homepage ends Exhibitions with the gallery room and framed print wall'
  assert.equal(tile.find('img').attr('src'),'/gallery-wall/framed-wall.webp');
  assert(fs.existsSync('dist/gallery-wall/framed-wall.webp'));
 });
+

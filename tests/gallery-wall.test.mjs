@@ -7,14 +7,18 @@ import {fitView,paintingView,inspectionView,zoomAt,constrainView,screenRect,imag
 const near=(a,b)=>assert(Math.abs(a-b)<.001,`${a} differs from ${b}`);
 test('every main-gallery TJ print appears once at its largest ready black-frame size',()=>{
   const expected=Object.values(readyPrints).filter(p=>!p.testOnly&&!p.sampleOnly&&p.frame?.key==='black'&&byId[p.productId]?.artist==='TJ Murphy'&&collections.gallery.some(c=>c.product===p.productId));
-  assert.equal(wallArtworks.length,24);assert.equal(new Set(wallArtworks.map(a=>a.id)).size,24);
+  assert.equal(wallArtworks.length,78);assert.equal(new Set(wallArtworks.map(a=>a.id)).size,78);
   assert.deepEqual(new Set(wallArtworks.map(a=>a.id)),new Set(expected.map(p=>p.productId)));
   for(const art of wallArtworks){
     const largest=expected.filter(p=>p.productId===art.id).sort((a,b)=>b.frame.size.width*b.frame.size.height-a.frame.size.width*a.frame.size.height)[0];
     assert.equal(art.printId,largest.id);
     near(art.width/WALL_UNIT,largest.frame.size.width+2*largest.frame.mouldingWidth);
     near(art.height/WALL_UNIT,largest.frame.size.height+2*largest.frame.mouldingWidth);
-    assert(Math.abs(art.imageWidth/art.imageHeight-art.sourceWidth/art.sourceHeight)<.002,'Uncropped source proportions');
+    // Uniform scaling rounds each raster edge to the nearest pixel. The saved inch values add at most .015 px at 300 dpi.
+    const pw=art.imageWidth/WALL_UNIT*largest.minimumDpi,ph=art.imageHeight/WALL_UNIT*largest.minimumDpi,tolerance=.52;
+    const scaleMin=Math.max((pw-tolerance)/art.sourceWidth,(ph-tolerance)/art.sourceHeight);
+    const scaleMax=Math.min((pw+tolerance)/art.sourceWidth,(ph+tolerance)/art.sourceHeight);
+    assert(scaleMin<=scaleMax,`Uncropped source proportions within pixel rounding: ${art.id}`);
     assert(art.imageWidth<art.width-2*art.frameWidth&&art.imageHeight<art.height-2*art.frameWidth,'Entire image fits within the mat');
     assert.equal(art.sources.at(-1).src,art.fullSrc);assert.equal(art.sources.at(-1).width,art.sourceWidth);
     assert.match(art.href,/^\/products\/[a-z0-9-]+\/$/);
@@ -74,3 +78,4 @@ test('first-click inspection leaves room for the fixed details pane and the enti
     assert(r.x+r.width+12<=p.x||r.y+r.height+12<=p.y,'Pane must sit outside the artwork');
   }
 });
+
