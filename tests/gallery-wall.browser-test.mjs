@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import prints,{printVersion} from '../cloudflare/print-catalog.mjs';
 import {publicCartItem} from '../cloudflare/cart-policy.mjs';
 import {wallArtworks} from '../src/data/gallery-wall.mjs';
+import {byId,catalogVersion} from '../catalog/catalog.mjs';
 const origin='https://tjm.art',root=path.resolve('dist');
 const available=Object.values(prints).map(p=>({...publicCartItem({...p,quantity:1}),status:'available',methods:['bitcoin']}));
 const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml'};
@@ -29,7 +30,12 @@ for(const engine of [chromium,webkit]){
         }
         return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:true,version:'wall-test-'+(stale?'old':printVersion),products:available}});
       }
-      if(u.hostname!=='tjm.art')return route.fulfill({json:{products:[],availability:{}}});
+      if(u.pathname==='/inventory/status'){
+        assert.equal(route.request().method(),'GET');
+        const ids=(u.searchParams.get('ids')||'').split(',').filter(Boolean);
+        return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{version:catalogVersion,availability:Object.fromEntries(ids.map(id=>[id,byId[id]?.listing.status||'available']))}});
+      }
+      if(u.hostname!=='tjm.art')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{products:[],availability:{}}});
       if(u.pathname.startsWith('/print-masters/'))masters.push(u.pathname);
       const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
       if(!fs.existsSync(file))return route.fulfill({status:404});
