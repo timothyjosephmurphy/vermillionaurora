@@ -59902,7 +59902,7 @@
           },
           "amount": "60.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:54.580Z",
+          "quotedAt": "2026-10-13T21:51:45.100Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S7DD8X17DD28F1S10DD8X20DD28J1S7DD8X17DD28G1",
@@ -59944,7 +59944,7 @@
               "amount": "119.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:01.406Z",
+              "quotedAt": "2026-10-13T21:52:56.070Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9.jpg",
@@ -60046,7 +60046,7 @@
               "amount": "133.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:01.406Z",
+              "quotedAt": "2026-10-13T21:52:56.070Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9.jpg",
@@ -60148,7 +60148,7 @@
               "amount": "119.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:01.406Z",
+              "quotedAt": "2026-10-13T21:52:56.070Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/00dabee94b997a8f5eabf6c75a9e1448cfff0c12a2a8d2d9a7447c26d0fe0dd9.jpg",
@@ -60241,7 +60241,7 @@
           },
           "amount": "45.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:54.580Z",
+          "quotedAt": "2026-10-13T21:51:45.100Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S5DD91X13DD02F1S8DD91X16DD02J1S5DD91X13DD02G1",
@@ -60283,7 +60283,7 @@
               "amount": "89.00",
               "unframedAmount": "45.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:02.439Z",
+              "quotedAt": "2026-10-13T21:52:57.426Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df.jpg",
@@ -60385,7 +60385,7 @@
               "amount": "100.00",
               "unframedAmount": "45.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:02.439Z",
+              "quotedAt": "2026-10-13T21:52:57.426Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df.jpg",
@@ -60487,7 +60487,7 @@
               "amount": "89.00",
               "unframedAmount": "45.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:02.439Z",
+              "quotedAt": "2026-10-13T21:52:57.426Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/a094a2956ecd565f5116f0e7ba1e65b01e40399e79b86312c63caeaa279578df.jpg",
@@ -60580,7 +60580,7 @@
           },
           "amount": "30.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:54.580Z",
+          "quotedAt": "2026-10-13T21:51:45.100Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S4DD02X8DD76F1S8DD02X12DD76J1S4DD02X8DD76G1",
@@ -60622,7 +60622,7 @@
               "amount": "67.63",
               "unframedAmount": "30.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:03.564Z",
+              "quotedAt": "2026-10-13T21:52:58.796Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf.jpg",
@@ -60724,7 +60724,7 @@
               "amount": "76.63",
               "unframedAmount": "30.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:03.564Z",
+              "quotedAt": "2026-10-13T21:52:58.796Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf.jpg",
@@ -60826,7 +60826,7 @@
               "amount": "67.63",
               "unframedAmount": "30.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:03.564Z",
+              "quotedAt": "2026-10-13T21:52:58.796Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/8cccc3b91d73c30d4cb514d0485304764d0756348cf5fccddae0cd9fd5389edf.jpg",
@@ -60933,7 +60933,7 @@
           },
           "amount": "60.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:42.485Z",
+          "quotedAt": "2026-10-13T21:51:31.925Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S17DD27X7DD43F1S20DD27X10DD43J1S17DD27X7DD43G1",
@@ -60975,7 +60975,7 @@
               "amount": "118.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:40.317Z",
+              "quotedAt": "2026-10-13T21:52:31.873Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9.jpg",
@@ -61077,7 +61077,7 @@
               "amount": "131.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:40.317Z",
+              "quotedAt": "2026-10-13T21:52:31.873Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9.jpg",
@@ -61179,7 +61179,7 @@
               "amount": "118.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:40.317Z",
+              "quotedAt": "2026-10-13T21:52:31.873Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9.jpg",
@@ -61272,7 +61272,7 @@
           },
           "amount": "45.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:42.485Z",
+          "quotedAt": "2026-10-13T21:51:31.925Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S13DD02X5DD63F1S16DD02X8DD63J1S13DD02X5DD63G1",
@@ -61314,7 +61314,7 @@
               "amount": "89.00",
               "unframedAmount": "45.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:44.440Z",
+              "quotedAt": "2026-10-13T21:52:33.287Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a.jpg",
@@ -61416,7 +61416,7 @@
               "amount": "100.00",
               "unframedAmount": "45.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:44.440Z",
+              "quotedAt": "2026-10-13T21:52:33.287Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a.jpg",
@@ -61518,7 +61518,7 @@
               "amount": "89.00",
               "unframedAmount": "45.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:44.440Z",
+              "quotedAt": "2026-10-13T21:52:33.287Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a.jpg",
@@ -61625,7 +61625,7 @@
           },
           "amount": "55.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:43.861Z",
+          "quotedAt": "2026-10-13T21:51:33.781Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S16DD14X6DD05F1S19DD14X9DD05J1S16DD14X6DD05G1",
@@ -61667,7 +61667,7 @@
               "amount": "106.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:46.229Z",
+              "quotedAt": "2026-10-13T21:52:39.215Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
@@ -61769,7 +61769,7 @@
               "amount": "119.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:46.229Z",
+              "quotedAt": "2026-10-13T21:52:39.215Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
@@ -61871,7 +61871,7 @@
               "amount": "106.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:46.229Z",
+              "quotedAt": "2026-10-13T21:52:39.215Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
@@ -61964,7 +61964,7 @@
           },
           "amount": "40.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:43.861Z",
+          "quotedAt": "2026-10-13T21:51:33.781Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S12DD17X4DD6F1S15DD59X8DD02J1S12DD17X4DD6G1",
@@ -62006,7 +62006,7 @@
               "amount": "82.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:47.309Z",
+              "quotedAt": "2026-10-13T21:52:40.640Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
@@ -62108,7 +62108,7 @@
               "amount": "92.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:47.309Z",
+              "quotedAt": "2026-10-13T21:52:40.640Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
@@ -62210,7 +62210,7 @@
               "amount": "82.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:47.309Z",
+              "quotedAt": "2026-10-13T21:52:40.640Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
@@ -62317,7 +62317,7 @@
           },
           "amount": "25.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:42.152Z",
+          "quotedAt": "2026-10-13T21:51:30.723Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S4DD36X6DD03F1S8X9DD67J1S4DD36X6DD03G1",
@@ -62359,7 +62359,7 @@
               "amount": "59.63",
               "unframedAmount": "25.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:38.639Z",
+              "quotedAt": "2026-10-13T21:52:31.765Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc.jpg",
@@ -62461,7 +62461,7 @@
               "amount": "67.63",
               "unframedAmount": "25.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:38.639Z",
+              "quotedAt": "2026-10-13T21:52:31.765Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc.jpg",
@@ -62563,7 +62563,7 @@
               "amount": "59.63",
               "unframedAmount": "25.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:38.639Z",
+              "quotedAt": "2026-10-13T21:52:31.765Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc.jpg",
@@ -62670,7 +62670,7 @@
           },
           "amount": "60.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:43.430Z",
+          "quotedAt": "2026-10-13T21:51:33.048Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S16DD74X5DD89F1S19DD74X8DD89J1S16DD74X5DD89G1",
@@ -62712,7 +62712,7 @@
               "amount": "112.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:45.903Z",
+              "quotedAt": "2026-10-13T21:52:38.476Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75.jpg",
@@ -62814,7 +62814,7 @@
               "amount": "124.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:45.903Z",
+              "quotedAt": "2026-10-13T21:52:38.476Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75.jpg",
@@ -62916,7 +62916,7 @@
               "amount": "112.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:45.903Z",
+              "quotedAt": "2026-10-13T21:52:38.476Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75.jpg",
@@ -63009,7 +63009,7 @@
           },
           "amount": "45.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:43.430Z",
+          "quotedAt": "2026-10-13T21:51:33.048Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S12DD62X4DD48F1S16DD14X8J1S12DD62X4DD48G1",
@@ -63051,7 +63051,7 @@
               "amount": "87.00",
               "unframedAmount": "45.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:47.253Z",
+              "quotedAt": "2026-10-13T21:52:39.959Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493.jpg",
@@ -63153,7 +63153,7 @@
               "amount": "98.00",
               "unframedAmount": "45.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:47.253Z",
+              "quotedAt": "2026-10-13T21:52:39.959Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493.jpg",
@@ -63255,7 +63255,7 @@
               "amount": "87.00",
               "unframedAmount": "45.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:47.253Z",
+              "quotedAt": "2026-10-13T21:52:39.959Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493.jpg",
@@ -63322,7 +63322,7 @@
       }
     },
     "older-work-figen-pnut-swoll": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -63357,6 +63357,317 @@
                 "top": 38,
                 "width": 3410,
                 "height": 1205
+              }
+            }
+          },
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:43.599Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S11DD64X4DD27F1S15DD38X8DD01J1S11DD64X4DD27G1",
+              "baseSku": "5M144M8S11.64X4.27",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 15.38,
+                  "height": 8.01,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 11.64,
+                  "height": 4.27,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 15.38,
+                  "height": 8.01,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "81.00",
+              "unframedAmount": "40.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:50.159Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/4bc1cc9902a9dd1b1880e032c9e3805ffe25f9a929c54fd030925d7c12435ba2.jpg",
+                "sha256": "4bc1cc9902a9dd1b1880e032c9e3805ffe25f9a929c54fd030925d7c12435ba2",
+                "sourceSha256": "20c766fa5b9e16b2143ba956a2a32e31aba6ef2e34534ca00d7c277c0ae2bf6a",
+                "productCode": "5M144M8S11DD64X4DD27F1S15DD38X8DD01J1S11DD64X4DD27G1",
+                "imageWidthIn": 11.3667,
+                "imageHeightIn": 4.0167,
+                "paperWidthIn": 11.64,
+                "paperHeightIn": 4.27,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 3492,
+                  "heightPx": 1281,
+                  "content": {
+                    "left": 41,
+                    "top": 38,
+                    "width": 3410,
+                    "height": 1205
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 15.38,
+                    "height": 8.01,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 11.64,
+                    "height": 4.27,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 15.38,
+                    "height": 8.01,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S11DD64X4DD27F7S15DD38X8DD01J1S11DD64X4DD27G1",
+              "baseSku": "5M144M8S11.64X4.27",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 15.38,
+                  "height": 8.01,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 11.64,
+                  "height": 4.27,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 15.38,
+                  "height": 8.01,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "91.00",
+              "unframedAmount": "40.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:50.159Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/4bc1cc9902a9dd1b1880e032c9e3805ffe25f9a929c54fd030925d7c12435ba2.jpg",
+                "sha256": "4bc1cc9902a9dd1b1880e032c9e3805ffe25f9a929c54fd030925d7c12435ba2",
+                "sourceSha256": "20c766fa5b9e16b2143ba956a2a32e31aba6ef2e34534ca00d7c277c0ae2bf6a",
+                "productCode": "5M144M8S11DD64X4DD27F7S15DD38X8DD01J1S11DD64X4DD27G1",
+                "imageWidthIn": 11.3667,
+                "imageHeightIn": 4.0167,
+                "paperWidthIn": 11.64,
+                "paperHeightIn": 4.27,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 3492,
+                  "heightPx": 1281,
+                  "content": {
+                    "left": 41,
+                    "top": 38,
+                    "width": 3410,
+                    "height": 1205
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 15.38,
+                    "height": 8.01,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 11.64,
+                    "height": 4.27,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 15.38,
+                    "height": 8.01,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S11DD64X4DD27F2S15DD38X8DD01J1S11DD64X4DD27G1",
+              "baseSku": "5M144M8S11.64X4.27",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 15.38,
+                  "height": 8.01,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 11.64,
+                  "height": 4.27,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 15.38,
+                  "height": 8.01,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "81.00",
+              "unframedAmount": "40.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:50.159Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/4bc1cc9902a9dd1b1880e032c9e3805ffe25f9a929c54fd030925d7c12435ba2.jpg",
+                "sha256": "4bc1cc9902a9dd1b1880e032c9e3805ffe25f9a929c54fd030925d7c12435ba2",
+                "sourceSha256": "20c766fa5b9e16b2143ba956a2a32e31aba6ef2e34534ca00d7c277c0ae2bf6a",
+                "productCode": "5M144M8S11DD64X4DD27F2S15DD38X8DD01J1S11DD64X4DD27G1",
+                "imageWidthIn": 11.3667,
+                "imageHeightIn": 4.0167,
+                "paperWidthIn": 11.64,
+                "paperHeightIn": 4.27,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 3492,
+                  "heightPx": 1281,
+                  "content": {
+                    "left": 41,
+                    "top": 38,
+                    "width": 3410,
+                    "height": 1205
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 15.38,
+                    "height": 8.01,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 11.64,
+                    "height": 4.27,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 15.38,
+                    "height": 8.01,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
               }
             }
           }
@@ -63404,7 +63715,7 @@
           },
           "amount": "120.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:58:02.118Z",
+          "quotedAt": "2026-10-13T21:51:54.233Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S14DD19X20DD41F1S17DD19X23DD41J1S14DD19X20DD41G1",
@@ -63446,7 +63757,7 @@
               "amount": "209.00",
               "unframedAmount": "120.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:12.761Z",
+              "quotedAt": "2026-10-13T21:53:09.666Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8.jpg",
@@ -63548,7 +63859,7 @@
               "amount": "226.00",
               "unframedAmount": "120.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:12.761Z",
+              "quotedAt": "2026-10-13T21:53:09.666Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8.jpg",
@@ -63650,7 +63961,7 @@
               "amount": "209.00",
               "unframedAmount": "120.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:12.761Z",
+              "quotedAt": "2026-10-13T21:53:09.666Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8.jpg",
@@ -63743,7 +64054,7 @@
           },
           "amount": "70.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:58:02.118Z",
+          "quotedAt": "2026-10-13T21:51:54.233Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S10DD71X15DD37F1S13DD71X18DD37J1S10DD71X15DD37G1",
@@ -63785,7 +64096,7 @@
               "amount": "134.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:14.145Z",
+              "quotedAt": "2026-10-13T21:53:11.253Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea.jpg",
@@ -63887,7 +64198,7 @@
               "amount": "148.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:14.145Z",
+              "quotedAt": "2026-10-13T21:53:11.253Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea.jpg",
@@ -63989,7 +64300,7 @@
               "amount": "134.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:14.145Z",
+              "quotedAt": "2026-10-13T21:53:11.253Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea.jpg",
@@ -64082,7 +64393,7 @@
           },
           "amount": "35.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:58:02.118Z",
+          "quotedAt": "2026-10-13T21:51:54.233Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S7DD22X10DD33F1S10DD22X13DD33J1S7DD22X10DD33G1",
@@ -64124,7 +64435,7 @@
               "amount": "78.00",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:15.174Z",
+              "quotedAt": "2026-10-13T21:53:12.709Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10.jpg",
@@ -64226,7 +64537,7 @@
               "amount": "88.00",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:15.174Z",
+              "quotedAt": "2026-10-13T21:53:12.709Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10.jpg",
@@ -64328,7 +64639,7 @@
               "amount": "78.00",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:15.174Z",
+              "quotedAt": "2026-10-13T21:53:12.709Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10.jpg",
@@ -64395,7 +64706,7 @@
       }
     },
     "older-work-hayek-stark-gomez-el-bawab": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -64432,6 +64743,317 @@
                 "height": 1835
               }
             }
+          },
+          "amount": "70.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:43.948Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S20DD36X6DD37F1S23DD36X9DD37J1S20DD36X6DD37G1",
+              "baseSku": "5M144M8S20.36X6.37",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 23.36,
+                  "height": 9.37,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 20.36,
+                  "height": 6.37,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 23.36,
+                  "height": 9.37,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "131.00",
+              "unframedAmount": "70.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:52.332Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/ce498a0127eefa97b8b6863391e4a60cf86c680af071a1f935f242bb5fb93d98.jpg",
+                "sha256": "ce498a0127eefa97b8b6863391e4a60cf86c680af071a1f935f242bb5fb93d98",
+                "sourceSha256": "4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49",
+                "productCode": "5M144M8S20DD36X6DD37F1S23DD36X9DD37J1S20DD36X6DD37G1",
+                "imageWidthIn": 20.1067,
+                "imageHeightIn": 6.1167,
+                "paperWidthIn": 20.36,
+                "paperHeightIn": 6.37,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 6108,
+                  "heightPx": 1911,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 6032,
+                    "height": 1835
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 23.36,
+                    "height": 9.37,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 20.36,
+                    "height": 6.37,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 23.36,
+                    "height": 9.37,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S20DD36X6DD37F7S23DD36X9DD37J1S20DD36X6DD37G1",
+              "baseSku": "5M144M8S20.36X6.37",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 23.36,
+                  "height": 9.37,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 20.36,
+                  "height": 6.37,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 23.36,
+                  "height": 9.37,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "145.00",
+              "unframedAmount": "70.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:52.332Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/ce498a0127eefa97b8b6863391e4a60cf86c680af071a1f935f242bb5fb93d98.jpg",
+                "sha256": "ce498a0127eefa97b8b6863391e4a60cf86c680af071a1f935f242bb5fb93d98",
+                "sourceSha256": "4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49",
+                "productCode": "5M144M8S20DD36X6DD37F7S23DD36X9DD37J1S20DD36X6DD37G1",
+                "imageWidthIn": 20.1067,
+                "imageHeightIn": 6.1167,
+                "paperWidthIn": 20.36,
+                "paperHeightIn": 6.37,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 6108,
+                  "heightPx": 1911,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 6032,
+                    "height": 1835
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 23.36,
+                    "height": 9.37,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 20.36,
+                    "height": 6.37,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 23.36,
+                    "height": 9.37,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S20DD36X6DD37F2S23DD36X9DD37J1S20DD36X6DD37G1",
+              "baseSku": "5M144M8S20.36X6.37",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 23.36,
+                  "height": 9.37,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 20.36,
+                  "height": 6.37,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 23.36,
+                  "height": 9.37,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "131.00",
+              "unframedAmount": "70.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:52.332Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/ce498a0127eefa97b8b6863391e4a60cf86c680af071a1f935f242bb5fb93d98.jpg",
+                "sha256": "ce498a0127eefa97b8b6863391e4a60cf86c680af071a1f935f242bb5fb93d98",
+                "sourceSha256": "4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49",
+                "productCode": "5M144M8S20DD36X6DD37F2S23DD36X9DD37J1S20DD36X6DD37G1",
+                "imageWidthIn": 20.1067,
+                "imageHeightIn": 6.1167,
+                "paperWidthIn": 20.36,
+                "paperHeightIn": 6.37,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 6108,
+                  "heightPx": 1911,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 6032,
+                    "height": 1835
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 23.36,
+                    "height": 9.37,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 20.36,
+                    "height": 6.37,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 23.36,
+                    "height": 9.37,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            }
           }
         },
         "medium": {
@@ -64458,6 +65080,317 @@
                 "top": 38,
                 "width": 4523,
                 "height": 1376
+              }
+            }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:43.948Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S15DD33X4DD84F1S18DD49X8J1S15DD33X4DD84G1",
+              "baseSku": "5M144M8S15.33X4.84",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 18.49,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15.33,
+                  "height": 4.84,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 18.49,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "97.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:53.940Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/0f7c6638ac3e5d63f182afc46e5a26de61860d9bb9a64a9215359243c1659aac.jpg",
+                "sha256": "0f7c6638ac3e5d63f182afc46e5a26de61860d9bb9a64a9215359243c1659aac",
+                "sourceSha256": "4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49",
+                "productCode": "5M144M8S15DD33X4DD84F1S18DD49X8J1S15DD33X4DD84G1",
+                "imageWidthIn": 15.0767,
+                "imageHeightIn": 4.5867,
+                "paperWidthIn": 15.33,
+                "paperHeightIn": 4.84,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 4599,
+                  "heightPx": 1452,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 4523,
+                    "height": 1376
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 18.49,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 15.33,
+                    "height": 4.84,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 18.49,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S15DD33X4DD84F7S18DD49X8J1S15DD33X4DD84G1",
+              "baseSku": "5M144M8S15.33X4.84",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 18.49,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15.33,
+                  "height": 4.84,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 18.49,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "108.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:53.940Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/0f7c6638ac3e5d63f182afc46e5a26de61860d9bb9a64a9215359243c1659aac.jpg",
+                "sha256": "0f7c6638ac3e5d63f182afc46e5a26de61860d9bb9a64a9215359243c1659aac",
+                "sourceSha256": "4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49",
+                "productCode": "5M144M8S15DD33X4DD84F7S18DD49X8J1S15DD33X4DD84G1",
+                "imageWidthIn": 15.0767,
+                "imageHeightIn": 4.5867,
+                "paperWidthIn": 15.33,
+                "paperHeightIn": 4.84,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 4599,
+                  "heightPx": 1452,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 4523,
+                    "height": 1376
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 18.49,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 15.33,
+                    "height": 4.84,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 18.49,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S15DD33X4DD84F2S18DD49X8J1S15DD33X4DD84G1",
+              "baseSku": "5M144M8S15.33X4.84",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 18.49,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15.33,
+                  "height": 4.84,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 18.49,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "97.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:53.940Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/0f7c6638ac3e5d63f182afc46e5a26de61860d9bb9a64a9215359243c1659aac.jpg",
+                "sha256": "0f7c6638ac3e5d63f182afc46e5a26de61860d9bb9a64a9215359243c1659aac",
+                "sourceSha256": "4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49",
+                "productCode": "5M144M8S15DD33X4DD84F2S18DD49X8J1S15DD33X4DD84G1",
+                "imageWidthIn": 15.0767,
+                "imageHeightIn": 4.5867,
+                "paperWidthIn": 15.33,
+                "paperHeightIn": 4.84,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 4599,
+                  "heightPx": 1452,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 4523,
+                    "height": 1376
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 18.49,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 15.33,
+                    "height": 4.84,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 18.49,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
               }
             }
           }
@@ -64505,7 +65438,7 @@
           },
           "amount": "70.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:33.189Z",
+          "quotedAt": "2026-10-13T21:51:19.724Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S20DD8X5DD11F1S23DD8X8DD11J1S20DD8X5DD11G1",
@@ -64547,7 +65480,7 @@
               "amount": "127.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:22.288Z",
+              "quotedAt": "2026-10-13T21:52:11.120Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f.jpg",
@@ -64649,7 +65582,7 @@
               "amount": "141.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:22.288Z",
+              "quotedAt": "2026-10-13T21:52:11.120Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f.jpg",
@@ -64751,7 +65684,7 @@
               "amount": "127.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:22.288Z",
+              "quotedAt": "2026-10-13T21:52:11.120Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f.jpg",
@@ -64858,7 +65791,7 @@
           },
           "amount": "115.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:58:02.100Z",
+          "quotedAt": "2026-10-13T21:51:50.134Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S19DD7X13DD72F1S22DD7X16DD72J1S19DD7X13DD72G1",
@@ -64900,7 +65833,7 @@
               "amount": "201.00",
               "unframedAmount": "115.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:12.658Z",
+              "quotedAt": "2026-10-13T21:53:04.131Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372.jpg",
@@ -65002,7 +65935,7 @@
               "amount": "217.00",
               "unframedAmount": "115.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:12.658Z",
+              "quotedAt": "2026-10-13T21:53:04.131Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372.jpg",
@@ -65104,7 +66037,7 @@
               "amount": "201.00",
               "unframedAmount": "115.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:12.658Z",
+              "quotedAt": "2026-10-13T21:53:04.131Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372.jpg",
@@ -65197,7 +66130,7 @@
           },
           "amount": "65.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:58:02.100Z",
+          "quotedAt": "2026-10-13T21:51:50.134Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S14DD84X10DD35F1S17DD84X13DD35J1S14DD84X10DD35G1",
@@ -65239,7 +66172,7 @@
               "amount": "126.00",
               "unframedAmount": "65.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:14.062Z",
+              "quotedAt": "2026-10-13T21:53:05.555Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53.jpg",
@@ -65341,7 +66274,7 @@
               "amount": "140.00",
               "unframedAmount": "65.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:14.062Z",
+              "quotedAt": "2026-10-13T21:53:05.555Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53.jpg",
@@ -65443,7 +66376,7 @@
               "amount": "126.00",
               "unframedAmount": "65.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:14.062Z",
+              "quotedAt": "2026-10-13T21:53:05.555Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53.jpg",
@@ -65536,7 +66469,7 @@
           },
           "amount": "35.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:58:02.100Z",
+          "quotedAt": "2026-10-13T21:51:50.134Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S9DD97X6DD98F1S12DD97X9DD98J1S9DD97X6DD98G1",
@@ -65578,7 +66511,7 @@
               "amount": "76.00",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:15.142Z",
+              "quotedAt": "2026-10-13T21:53:06.942Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9.jpg",
@@ -65680,7 +66613,7 @@
               "amount": "86.00",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:15.142Z",
+              "quotedAt": "2026-10-13T21:53:06.942Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9.jpg",
@@ -65782,7 +66715,7 @@
               "amount": "76.00",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:15.142Z",
+              "quotedAt": "2026-10-13T21:53:06.942Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9.jpg",
@@ -65849,7 +66782,7 @@
       }
     },
     "older-work-mountain-layers": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -65884,6 +66817,317 @@
                 "top": 225,
                 "width": 4424,
                 "height": 749
+              }
+            }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:17.105Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S15X4F1S19X8J1S15X4G1",
+              "baseSku": "5M144M8S15X4",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 19,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15,
+                  "height": 4,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 19,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "98.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:08.581Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/60987e67aec4d72f9dbb08be69af7a417094e80de309844bf297d6c493581e1b.jpg",
+                "sha256": "60987e67aec4d72f9dbb08be69af7a417094e80de309844bf297d6c493581e1b",
+                "sourceSha256": "82f798d1d4455607884aad492a53d6021ba4fc187eb662312ef9b2e83b5953b1",
+                "productCode": "5M144M8S15X4F1S19X8J1S15X4G1",
+                "imageWidthIn": 14.7467,
+                "imageHeightIn": 2.4967,
+                "paperWidthIn": 15,
+                "paperHeightIn": 4,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 4500,
+                  "heightPx": 1200,
+                  "content": {
+                    "left": 38,
+                    "top": 225,
+                    "width": 4424,
+                    "height": 749
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 19,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 15,
+                    "height": 4,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 19,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S15X4F7S19X8J1S15X4G1",
+              "baseSku": "5M144M8S15X4",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 19,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15,
+                  "height": 4,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 19,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "110.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:08.581Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/60987e67aec4d72f9dbb08be69af7a417094e80de309844bf297d6c493581e1b.jpg",
+                "sha256": "60987e67aec4d72f9dbb08be69af7a417094e80de309844bf297d6c493581e1b",
+                "sourceSha256": "82f798d1d4455607884aad492a53d6021ba4fc187eb662312ef9b2e83b5953b1",
+                "productCode": "5M144M8S15X4F7S19X8J1S15X4G1",
+                "imageWidthIn": 14.7467,
+                "imageHeightIn": 2.4967,
+                "paperWidthIn": 15,
+                "paperHeightIn": 4,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 4500,
+                  "heightPx": 1200,
+                  "content": {
+                    "left": 38,
+                    "top": 225,
+                    "width": 4424,
+                    "height": 749
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 19,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 15,
+                    "height": 4,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 19,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S15X4F2S19X8J1S15X4G1",
+              "baseSku": "5M144M8S15X4",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 19,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 15,
+                  "height": 4,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 19,
+                  "height": 8,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "98.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:08.581Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/60987e67aec4d72f9dbb08be69af7a417094e80de309844bf297d6c493581e1b.jpg",
+                "sha256": "60987e67aec4d72f9dbb08be69af7a417094e80de309844bf297d6c493581e1b",
+                "sourceSha256": "82f798d1d4455607884aad492a53d6021ba4fc187eb662312ef9b2e83b5953b1",
+                "productCode": "5M144M8S15X4F2S19X8J1S15X4G1",
+                "imageWidthIn": 14.7467,
+                "imageHeightIn": 2.4967,
+                "paperWidthIn": 15,
+                "paperHeightIn": 4,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 4500,
+                  "heightPx": 1200,
+                  "content": {
+                    "left": 38,
+                    "top": 225,
+                    "width": 4424,
+                    "height": 749
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 19,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 15,
+                    "height": 4,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 19,
+                    "height": 8,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
               }
             }
           }
@@ -65937,7 +67181,7 @@
           },
           "amount": "40.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:51.791Z",
+          "quotedAt": "2026-10-13T21:51:42.844Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S11DD76X6DD5F1S14DD76X9DD5J1S11DD76X6DD5G1",
@@ -65979,7 +67223,7 @@
               "amount": "84.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:55.958Z",
+              "quotedAt": "2026-10-13T21:52:45.645Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9.jpg",
@@ -66081,7 +67325,7 @@
               "amount": "94.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:55.958Z",
+              "quotedAt": "2026-10-13T21:52:45.645Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9.jpg",
@@ -66183,7 +67427,7 @@
               "amount": "84.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:55.958Z",
+              "quotedAt": "2026-10-13T21:52:45.645Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9.jpg",
@@ -66276,7 +67520,7 @@
           },
           "amount": "30.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:51.791Z",
+          "quotedAt": "2026-10-13T21:51:42.844Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S8DD88X4DD94F1S11DD94X8J1S8DD88X4DD94G1",
@@ -66318,7 +67562,7 @@
               "amount": "66.63",
               "unframedAmount": "30.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:56.986Z",
+              "quotedAt": "2026-10-13T21:52:47.257Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96.jpg",
@@ -66420,7 +67664,7 @@
               "amount": "75.63",
               "unframedAmount": "30.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:56.986Z",
+              "quotedAt": "2026-10-13T21:52:47.257Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96.jpg",
@@ -66522,7 +67766,7 @@
               "amount": "66.63",
               "unframedAmount": "30.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:56.986Z",
+              "quotedAt": "2026-10-13T21:52:47.257Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96.jpg",
@@ -66629,7 +67873,7 @@
           },
           "amount": "70.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:34.491Z",
+          "quotedAt": "2026-10-13T21:51:21.966Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S18DD93X8DD51F1S21DD93X11DD51J1S18DD93X8DD51G1",
@@ -66671,7 +67915,7 @@
               "amount": "136.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:27.462Z",
+              "quotedAt": "2026-10-13T21:52:18.979Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8.jpg",
@@ -66773,7 +68017,7 @@
               "amount": "150.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:27.462Z",
+              "quotedAt": "2026-10-13T21:52:18.979Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8.jpg",
@@ -66875,7 +68119,7 @@
               "amount": "136.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:27.462Z",
+              "quotedAt": "2026-10-13T21:52:18.979Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/8e7e1560b1afdb7d379fb7887b30b3502ac4b99774d955badb3b46afdb5ea7f8.jpg",
@@ -66968,7 +68212,7 @@
           },
           "amount": "50.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:34.491Z",
+          "quotedAt": "2026-10-13T21:51:21.966Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S14DD26X6DD45F1S17DD26X9DD45J1S14DD26X6DD45G1",
@@ -67010,7 +68254,7 @@
               "amount": "99.00",
               "unframedAmount": "50.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:28.449Z",
+              "quotedAt": "2026-10-13T21:52:20.376Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8.jpg",
@@ -67112,7 +68356,7 @@
               "amount": "111.00",
               "unframedAmount": "50.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:28.449Z",
+              "quotedAt": "2026-10-13T21:52:20.376Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8.jpg",
@@ -67214,7 +68458,7 @@
               "amount": "99.00",
               "unframedAmount": "50.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:28.449Z",
+              "quotedAt": "2026-10-13T21:52:20.376Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/dae05419c586fa72bdf9df77142714809865c9f70f1b4b5f3dff6cebcd383bd8.jpg",
@@ -67307,7 +68551,7 @@
           },
           "amount": "35.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:34.491Z",
+          "quotedAt": "2026-10-13T21:51:21.966Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S9DD59X4DD38F1S13DD21X8J1S9DD59X4DD38G1",
@@ -67349,7 +68593,7 @@
               "amount": "72.63",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:29.437Z",
+              "quotedAt": "2026-10-13T21:52:21.765Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672.jpg",
@@ -67451,7 +68695,7 @@
               "amount": "82.63",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:29.437Z",
+              "quotedAt": "2026-10-13T21:52:21.765Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672.jpg",
@@ -67553,7 +68797,7 @@
               "amount": "72.63",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:29.437Z",
+              "quotedAt": "2026-10-13T21:52:21.765Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/19169a0530c91bb2f7afdf18f4c30f11e7b639b17bf0b7f2d5058e7eed92d672.jpg",
@@ -67660,7 +68904,7 @@
           },
           "amount": "70.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:43.092Z",
+          "quotedAt": "2026-10-13T21:51:32.776Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S21DD69X6DD66F1S24DD69X9DD66J1S21DD69X6DD66G1",
@@ -67702,7 +68946,7 @@
               "amount": "135.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:43.145Z",
+              "quotedAt": "2026-10-13T21:52:35.496Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d.jpg",
@@ -67804,7 +69048,7 @@
               "amount": "149.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:43.145Z",
+              "quotedAt": "2026-10-13T21:52:35.496Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d.jpg",
@@ -67906,7 +69150,7 @@
               "amount": "135.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:43.145Z",
+              "quotedAt": "2026-10-13T21:52:35.496Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d.jpg",
@@ -67999,7 +69243,7 @@
           },
           "amount": "55.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:43.092Z",
+          "quotedAt": "2026-10-13T21:51:32.776Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S16DD33X5DD06F1S19DD33X8DD06J1S16DD33X5DD06G1",
@@ -68041,7 +69285,7 @@
               "amount": "104.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:44.130Z",
+              "quotedAt": "2026-10-13T21:52:37.001Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875.jpg",
@@ -68143,7 +69387,7 @@
               "amount": "116.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:44.130Z",
+              "quotedAt": "2026-10-13T21:52:37.001Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875.jpg",
@@ -68245,7 +69489,7 @@
               "amount": "104.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:44.130Z",
+              "quotedAt": "2026-10-13T21:52:37.001Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875.jpg",
@@ -68352,7 +69596,7 @@
           },
           "amount": "70.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:42.849Z",
+          "quotedAt": "2026-10-13T21:51:31.739Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S21DD16X7DD56F1S24DD16X10DD56J1S21DD16X7DD56G1",
@@ -68394,7 +69638,7 @@
               "amount": "137.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:40.467Z",
+              "quotedAt": "2026-10-13T21:52:34.147Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8.jpg",
@@ -68496,7 +69740,7 @@
               "amount": "152.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:40.467Z",
+              "quotedAt": "2026-10-13T21:52:34.147Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8.jpg",
@@ -68598,7 +69842,7 @@
               "amount": "137.00",
               "unframedAmount": "70.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:40.467Z",
+              "quotedAt": "2026-10-13T21:52:34.147Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8.jpg",
@@ -68691,7 +69935,7 @@
           },
           "amount": "55.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:42.849Z",
+          "quotedAt": "2026-10-13T21:51:31.739Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S15DD93X5DD73F1S18DD93X8DD73J1S15DD93X5DD73G1",
@@ -68733,7 +69977,7 @@
               "amount": "105.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:41.535Z",
+              "quotedAt": "2026-10-13T21:52:35.963Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8.jpg",
@@ -68835,7 +70079,7 @@
               "amount": "117.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:41.535Z",
+              "quotedAt": "2026-10-13T21:52:35.963Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8.jpg",
@@ -68937,7 +70181,7 @@
               "amount": "105.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:41.535Z",
+              "quotedAt": "2026-10-13T21:52:35.963Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8.jpg",
@@ -69004,7 +70248,7 @@
       }
     },
     "older-work-ridge-strips-unindexed": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -69041,6 +70285,317 @@
                 "height": 6085
               }
             }
+          },
+          "amount": "75.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:22.003Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S8DD83X20DD55F1S11DD83X23DD55J1S8DD83X20DD55G1",
+              "baseSku": "5M144M8S8.83X20.55",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 11.83,
+                  "height": 23.55,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 8.83,
+                  "height": 20.55,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 11.83,
+                  "height": 23.55,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "145.00",
+              "unframedAmount": "75.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:15.961Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/86ded9a8fb849bfe31856433bbb66404348936d4be9c2e9ffd63e1dc6b8aa3f3.jpg",
+                "sha256": "86ded9a8fb849bfe31856433bbb66404348936d4be9c2e9ffd63e1dc6b8aa3f3",
+                "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+                "productCode": "5M144M8S8DD83X20DD55F1S11DD83X23DD55J1S8DD83X20DD55G1",
+                "imageWidthIn": 8.5767,
+                "imageHeightIn": 20.2833,
+                "paperWidthIn": 8.83,
+                "paperHeightIn": 20.55,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2649,
+                  "heightPx": 6165,
+                  "content": {
+                    "left": 38,
+                    "top": 40,
+                    "width": 2573,
+                    "height": 6085
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 11.83,
+                    "height": 23.55,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 8.83,
+                    "height": 20.55,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 11.83,
+                    "height": 23.55,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S8DD83X20DD55F7S11DD83X23DD55J1S8DD83X20DD55G1",
+              "baseSku": "5M144M8S8.83X20.55",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 11.83,
+                  "height": 23.55,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 8.83,
+                  "height": 20.55,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 11.83,
+                  "height": 23.55,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "160.00",
+              "unframedAmount": "75.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:15.961Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/86ded9a8fb849bfe31856433bbb66404348936d4be9c2e9ffd63e1dc6b8aa3f3.jpg",
+                "sha256": "86ded9a8fb849bfe31856433bbb66404348936d4be9c2e9ffd63e1dc6b8aa3f3",
+                "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+                "productCode": "5M144M8S8DD83X20DD55F7S11DD83X23DD55J1S8DD83X20DD55G1",
+                "imageWidthIn": 8.5767,
+                "imageHeightIn": 20.2833,
+                "paperWidthIn": 8.83,
+                "paperHeightIn": 20.55,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2649,
+                  "heightPx": 6165,
+                  "content": {
+                    "left": 38,
+                    "top": 40,
+                    "width": 2573,
+                    "height": 6085
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 11.83,
+                    "height": 23.55,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 8.83,
+                    "height": 20.55,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 11.83,
+                    "height": 23.55,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S8DD83X20DD55F2S11DD83X23DD55J1S8DD83X20DD55G1",
+              "baseSku": "5M144M8S8.83X20.55",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 11.83,
+                  "height": 23.55,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 8.83,
+                  "height": 20.55,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 11.83,
+                  "height": 23.55,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "145.00",
+              "unframedAmount": "75.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:15.961Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/86ded9a8fb849bfe31856433bbb66404348936d4be9c2e9ffd63e1dc6b8aa3f3.jpg",
+                "sha256": "86ded9a8fb849bfe31856433bbb66404348936d4be9c2e9ffd63e1dc6b8aa3f3",
+                "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+                "productCode": "5M144M8S8DD83X20DD55F2S11DD83X23DD55J1S8DD83X20DD55G1",
+                "imageWidthIn": 8.5767,
+                "imageHeightIn": 20.2833,
+                "paperWidthIn": 8.83,
+                "paperHeightIn": 20.55,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2649,
+                  "heightPx": 6165,
+                  "content": {
+                    "left": 38,
+                    "top": 40,
+                    "width": 2573,
+                    "height": 6085
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 11.83,
+                    "height": 23.55,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 8.83,
+                    "height": 20.55,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 11.83,
+                    "height": 23.55,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            }
           }
         },
         "medium": {
@@ -69069,6 +70624,317 @@
                 "height": 4567
               }
             }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:22.003Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S6DD69X15DD48F1S9DD69X18DD48J1S6DD69X15DD48G1",
+              "baseSku": "5M144M8S6.69X15.48",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 9.69,
+                  "height": 18.48,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 6.69,
+                  "height": 15.48,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 9.69,
+                  "height": 18.48,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "102.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:17.511Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/505b280c82bfbb7862098007dc8052efbea9357aeb6ca5fc12aa1a5c8be4482d.jpg",
+                "sha256": "505b280c82bfbb7862098007dc8052efbea9357aeb6ca5fc12aa1a5c8be4482d",
+                "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+                "productCode": "5M144M8S6DD69X15DD48F1S9DD69X18DD48J1S6DD69X15DD48G1",
+                "imageWidthIn": 6.4367,
+                "imageHeightIn": 15.2233,
+                "paperWidthIn": 6.69,
+                "paperHeightIn": 15.48,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2007,
+                  "heightPx": 4644,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 1931,
+                    "height": 4567
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 9.69,
+                    "height": 18.48,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 6.69,
+                    "height": 15.48,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 9.69,
+                    "height": 18.48,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S6DD69X15DD48F7S9DD69X18DD48J1S6DD69X15DD48G1",
+              "baseSku": "5M144M8S6.69X15.48",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 9.69,
+                  "height": 18.48,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 6.69,
+                  "height": 15.48,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 9.69,
+                  "height": 18.48,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "115.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:17.511Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/505b280c82bfbb7862098007dc8052efbea9357aeb6ca5fc12aa1a5c8be4482d.jpg",
+                "sha256": "505b280c82bfbb7862098007dc8052efbea9357aeb6ca5fc12aa1a5c8be4482d",
+                "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+                "productCode": "5M144M8S6DD69X15DD48F7S9DD69X18DD48J1S6DD69X15DD48G1",
+                "imageWidthIn": 6.4367,
+                "imageHeightIn": 15.2233,
+                "paperWidthIn": 6.69,
+                "paperHeightIn": 15.48,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2007,
+                  "heightPx": 4644,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 1931,
+                    "height": 4567
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 9.69,
+                    "height": 18.48,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 6.69,
+                    "height": 15.48,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 9.69,
+                    "height": 18.48,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S6DD69X15DD48F2S9DD69X18DD48J1S6DD69X15DD48G1",
+              "baseSku": "5M144M8S6.69X15.48",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 9.69,
+                  "height": 18.48,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 6.69,
+                  "height": 15.48,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 9.69,
+                  "height": 18.48,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "102.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:17.511Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/505b280c82bfbb7862098007dc8052efbea9357aeb6ca5fc12aa1a5c8be4482d.jpg",
+                "sha256": "505b280c82bfbb7862098007dc8052efbea9357aeb6ca5fc12aa1a5c8be4482d",
+                "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+                "productCode": "5M144M8S6DD69X15DD48F2S9DD69X18DD48J1S6DD69X15DD48G1",
+                "imageWidthIn": 6.4367,
+                "imageHeightIn": 15.2233,
+                "paperWidthIn": 6.69,
+                "paperHeightIn": 15.48,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2007,
+                  "heightPx": 4644,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 1931,
+                    "height": 4567
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 9.69,
+                    "height": 18.48,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 6.69,
+                    "height": 15.48,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 9.69,
+                    "height": 18.48,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            }
           }
         },
         "small": {
@@ -69095,6 +70961,317 @@
                 "top": 39,
                 "width": 1286,
                 "height": 3041
+              }
+            }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:22.003Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S4DD54X10DD4F1S8X13DD86J1S4DD54X10DD4G1",
+              "baseSku": "5M144M8S4.54X10.4",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 8,
+                  "height": 13.86,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 4.54,
+                  "height": 10.4,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 8,
+                  "height": 13.86,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "73.63",
+              "unframedAmount": "35.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:18.957Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/6c0f7687908abdd109cda7b5f9701f1e85b0d1d7ee7e0d697fcc09e2026e3fb9.jpg",
+                "sha256": "6c0f7687908abdd109cda7b5f9701f1e85b0d1d7ee7e0d697fcc09e2026e3fb9",
+                "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+                "productCode": "5M144M8S4DD54X10DD4F1S8X13DD86J1S4DD54X10DD4G1",
+                "imageWidthIn": 4.2867,
+                "imageHeightIn": 10.1367,
+                "paperWidthIn": 4.54,
+                "paperHeightIn": 10.4,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 1362,
+                  "heightPx": 3120,
+                  "content": {
+                    "left": 38,
+                    "top": 39,
+                    "width": 1286,
+                    "height": 3041
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 8,
+                    "height": 13.86,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 4.54,
+                    "height": 10.4,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 8,
+                    "height": 13.86,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S4DD54X10DD4F7S8X13DD86J1S4DD54X10DD4G1",
+              "baseSku": "5M144M8S4.54X10.4",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 8,
+                  "height": 13.86,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 4.54,
+                  "height": 10.4,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 8,
+                  "height": 13.86,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "83.63",
+              "unframedAmount": "35.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:18.957Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/6c0f7687908abdd109cda7b5f9701f1e85b0d1d7ee7e0d697fcc09e2026e3fb9.jpg",
+                "sha256": "6c0f7687908abdd109cda7b5f9701f1e85b0d1d7ee7e0d697fcc09e2026e3fb9",
+                "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+                "productCode": "5M144M8S4DD54X10DD4F7S8X13DD86J1S4DD54X10DD4G1",
+                "imageWidthIn": 4.2867,
+                "imageHeightIn": 10.1367,
+                "paperWidthIn": 4.54,
+                "paperHeightIn": 10.4,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 1362,
+                  "heightPx": 3120,
+                  "content": {
+                    "left": 38,
+                    "top": 39,
+                    "width": 1286,
+                    "height": 3041
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 8,
+                    "height": 13.86,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 4.54,
+                    "height": 10.4,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 8,
+                    "height": 13.86,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S4DD54X10DD4F2S8X13DD86J1S4DD54X10DD4G1",
+              "baseSku": "5M144M8S4.54X10.4",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 8,
+                  "height": 13.86,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 4.54,
+                  "height": 10.4,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 8,
+                  "height": 13.86,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "73.63",
+              "unframedAmount": "35.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:18.957Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/6c0f7687908abdd109cda7b5f9701f1e85b0d1d7ee7e0d697fcc09e2026e3fb9.jpg",
+                "sha256": "6c0f7687908abdd109cda7b5f9701f1e85b0d1d7ee7e0d697fcc09e2026e3fb9",
+                "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
+                "productCode": "5M144M8S4DD54X10DD4F2S8X13DD86J1S4DD54X10DD4G1",
+                "imageWidthIn": 4.2867,
+                "imageHeightIn": 10.1367,
+                "paperWidthIn": 4.54,
+                "paperHeightIn": 10.4,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 1362,
+                  "heightPx": 3120,
+                  "content": {
+                    "left": 38,
+                    "top": 39,
+                    "width": 1286,
+                    "height": 3041
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 8,
+                    "height": 13.86,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 4.54,
+                    "height": 10.4,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 8,
+                    "height": 13.86,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
               }
             }
           }
@@ -69142,7 +71319,7 @@
           },
           "amount": "40.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:53.877Z",
+          "quotedAt": "2026-10-13T21:51:42.578Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S11DD59X4DD26F1S15DD33X8J1S11DD59X4DD26G1",
@@ -69184,7 +71361,7 @@
               "amount": "81.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:55.746Z",
+              "quotedAt": "2026-10-13T21:52:50.150Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9.jpg",
@@ -69286,7 +71463,7 @@
               "amount": "91.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:55.746Z",
+              "quotedAt": "2026-10-13T21:52:50.150Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9.jpg",
@@ -69388,7 +71565,7 @@
               "amount": "81.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:55.746Z",
+              "quotedAt": "2026-10-13T21:52:50.150Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9.jpg",
@@ -69495,7 +71672,7 @@
           },
           "amount": "80.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:32.561Z",
+          "quotedAt": "2026-10-13T21:51:20.829Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S23DD71X7DD25F1S26DD71X10DD25J1S23DD71X7DD25G1",
@@ -69537,7 +71714,7 @@
               "amount": "151.00",
               "unframedAmount": "80.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:21.025Z",
+              "quotedAt": "2026-10-13T21:52:12.383Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2.jpg",
@@ -69639,7 +71816,7 @@
               "amount": "167.00",
               "unframedAmount": "80.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:21.025Z",
+              "quotedAt": "2026-10-13T21:52:12.383Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2.jpg",
@@ -69741,7 +71918,7 @@
               "amount": "151.00",
               "unframedAmount": "80.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:21.025Z",
+              "quotedAt": "2026-10-13T21:52:12.383Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/3088deab137fd1f54fd74707383629a558ad9142aa12ed94bdcd2bdbaf5543c2.jpg",
@@ -69834,7 +72011,7 @@
           },
           "amount": "60.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:32.561Z",
+          "quotedAt": "2026-10-13T21:51:20.829Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S17DD85X5DD5F1S20DD85X8DD5J1S17DD85X5DD5G1",
@@ -69876,7 +72053,7 @@
               "amount": "113.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:22.299Z",
+              "quotedAt": "2026-10-13T21:52:13.803Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d.jpg",
@@ -69978,7 +72155,7 @@
               "amount": "125.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:22.299Z",
+              "quotedAt": "2026-10-13T21:52:13.803Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d.jpg",
@@ -70080,7 +72257,7 @@
               "amount": "113.00",
               "unframedAmount": "60.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:22.299Z",
+              "quotedAt": "2026-10-13T21:52:13.803Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/9223902f91a23d30cd6c9b3ff46d9188dc89705d97eb51607712d4b7217b269d.jpg",
@@ -70147,7 +72324,7 @@
       }
     },
     "older-work-sunset-ridge-strips": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -70184,6 +72361,317 @@
                 "height": 6074
               }
             }
+          },
+          "amount": "85.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:20.778Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S9DD94X20DD51F1S12DD94X23DD51J1S9DD94X20DD51G1",
+              "baseSku": "5M144M8S9.94X20.51",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 12.94,
+                  "height": 23.51,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 9.94,
+                  "height": 20.51,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 12.94,
+                  "height": 23.51,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "160.00",
+              "unframedAmount": "85.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:13.595Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/5f821f810f22f91d924f64cf0c8f8ee9576ced54b315c0a1d0376badd9a46b96.jpg",
+                "sha256": "5f821f810f22f91d924f64cf0c8f8ee9576ced54b315c0a1d0376badd9a46b96",
+                "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+                "productCode": "5M144M8S9DD94X20DD51F1S12DD94X23DD51J1S9DD94X20DD51G1",
+                "imageWidthIn": 9.6867,
+                "imageHeightIn": 20.2467,
+                "paperWidthIn": 9.94,
+                "paperHeightIn": 20.51,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2982,
+                  "heightPx": 6153,
+                  "content": {
+                    "left": 38,
+                    "top": 39,
+                    "width": 2906,
+                    "height": 6074
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 12.94,
+                    "height": 23.51,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 9.94,
+                    "height": 20.51,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 12.94,
+                    "height": 23.51,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S9DD94X20DD51F7S12DD94X23DD51J1S9DD94X20DD51G1",
+              "baseSku": "5M144M8S9.94X20.51",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 12.94,
+                  "height": 23.51,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 9.94,
+                  "height": 20.51,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 12.94,
+                  "height": 23.51,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "175.00",
+              "unframedAmount": "85.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:13.595Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/5f821f810f22f91d924f64cf0c8f8ee9576ced54b315c0a1d0376badd9a46b96.jpg",
+                "sha256": "5f821f810f22f91d924f64cf0c8f8ee9576ced54b315c0a1d0376badd9a46b96",
+                "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+                "productCode": "5M144M8S9DD94X20DD51F7S12DD94X23DD51J1S9DD94X20DD51G1",
+                "imageWidthIn": 9.6867,
+                "imageHeightIn": 20.2467,
+                "paperWidthIn": 9.94,
+                "paperHeightIn": 20.51,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2982,
+                  "heightPx": 6153,
+                  "content": {
+                    "left": 38,
+                    "top": 39,
+                    "width": 2906,
+                    "height": 6074
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 12.94,
+                    "height": 23.51,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 9.94,
+                    "height": 20.51,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 12.94,
+                    "height": 23.51,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S9DD94X20DD51F2S12DD94X23DD51J1S9DD94X20DD51G1",
+              "baseSku": "5M144M8S9.94X20.51",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 12.94,
+                  "height": 23.51,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 9.94,
+                  "height": 20.51,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 12.94,
+                  "height": 23.51,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "160.00",
+              "unframedAmount": "85.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:13.595Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/5f821f810f22f91d924f64cf0c8f8ee9576ced54b315c0a1d0376badd9a46b96.jpg",
+                "sha256": "5f821f810f22f91d924f64cf0c8f8ee9576ced54b315c0a1d0376badd9a46b96",
+                "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+                "productCode": "5M144M8S9DD94X20DD51F2S12DD94X23DD51J1S9DD94X20DD51G1",
+                "imageWidthIn": 9.6867,
+                "imageHeightIn": 20.2467,
+                "paperWidthIn": 9.94,
+                "paperHeightIn": 20.51,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2982,
+                  "heightPx": 6153,
+                  "content": {
+                    "left": 38,
+                    "top": 39,
+                    "width": 2906,
+                    "height": 6074
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 12.94,
+                    "height": 23.51,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 9.94,
+                    "height": 20.51,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 12.94,
+                    "height": 23.51,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            }
           }
         },
         "medium": {
@@ -70212,6 +72700,317 @@
                 "height": 4556
               }
             }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:20.778Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S7DD52X15DD44F1S10DD52X18DD44J1S7DD52X15DD44G1",
+              "baseSku": "5M144M8S7.52X15.44",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 10.52,
+                  "height": 18.44,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 7.52,
+                  "height": 15.44,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 10.52,
+                  "height": 18.44,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "104.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:15.241Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/680a7c8d7aa8bd1cbdc501a1befebcdac8fa2fc1da61131f4d4455e58a0f4431.jpg",
+                "sha256": "680a7c8d7aa8bd1cbdc501a1befebcdac8fa2fc1da61131f4d4455e58a0f4431",
+                "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+                "productCode": "5M144M8S7DD52X15DD44F1S10DD52X18DD44J1S7DD52X15DD44G1",
+                "imageWidthIn": 7.2667,
+                "imageHeightIn": 15.1867,
+                "paperWidthIn": 7.52,
+                "paperHeightIn": 15.44,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2256,
+                  "heightPx": 4632,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 2180,
+                    "height": 4556
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 10.52,
+                    "height": 18.44,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 7.52,
+                    "height": 15.44,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 10.52,
+                    "height": 18.44,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S7DD52X15DD44F7S10DD52X18DD44J1S7DD52X15DD44G1",
+              "baseSku": "5M144M8S7.52X15.44",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 10.52,
+                  "height": 18.44,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 7.52,
+                  "height": 15.44,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 10.52,
+                  "height": 18.44,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "117.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:15.241Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/680a7c8d7aa8bd1cbdc501a1befebcdac8fa2fc1da61131f4d4455e58a0f4431.jpg",
+                "sha256": "680a7c8d7aa8bd1cbdc501a1befebcdac8fa2fc1da61131f4d4455e58a0f4431",
+                "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+                "productCode": "5M144M8S7DD52X15DD44F7S10DD52X18DD44J1S7DD52X15DD44G1",
+                "imageWidthIn": 7.2667,
+                "imageHeightIn": 15.1867,
+                "paperWidthIn": 7.52,
+                "paperHeightIn": 15.44,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2256,
+                  "heightPx": 4632,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 2180,
+                    "height": 4556
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 10.52,
+                    "height": 18.44,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 7.52,
+                    "height": 15.44,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 10.52,
+                    "height": 18.44,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S7DD52X15DD44F2S10DD52X18DD44J1S7DD52X15DD44G1",
+              "baseSku": "5M144M8S7.52X15.44",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 10.52,
+                  "height": 18.44,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 7.52,
+                  "height": 15.44,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 10.52,
+                  "height": 18.44,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "104.00",
+              "unframedAmount": "50.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:15.241Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/680a7c8d7aa8bd1cbdc501a1befebcdac8fa2fc1da61131f4d4455e58a0f4431.jpg",
+                "sha256": "680a7c8d7aa8bd1cbdc501a1befebcdac8fa2fc1da61131f4d4455e58a0f4431",
+                "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+                "productCode": "5M144M8S7DD52X15DD44F2S10DD52X18DD44J1S7DD52X15DD44G1",
+                "imageWidthIn": 7.2667,
+                "imageHeightIn": 15.1867,
+                "paperWidthIn": 7.52,
+                "paperHeightIn": 15.44,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 2256,
+                  "heightPx": 4632,
+                  "content": {
+                    "left": 38,
+                    "top": 38,
+                    "width": 2180,
+                    "height": 4556
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 10.52,
+                    "height": 18.44,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 7.52,
+                    "height": 15.44,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 10.52,
+                    "height": 18.44,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            }
           }
         },
         "small": {
@@ -70238,6 +73037,317 @@
                 "top": 40,
                 "width": 1451,
                 "height": 3033
+              }
+            }
+          },
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T21:51:20.778Z",
+          "frameOptions": {
+            "black": {
+              "sku": "5M144M8S5DD09X10DD38F1S8DD09X13DD38J1S5DD09X10DD38G1",
+              "baseSku": "5M144M8S5.09X10.38",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 8.09,
+                  "height": 13.38,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 5.09,
+                  "height": 10.38,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "black",
+                "id": 1,
+                "collectionId": 1,
+                "name": "Black",
+                "color": "#262321",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 8.09,
+                  "height": 13.38,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "73.63",
+              "unframedAmount": "35.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:16.665Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/3e6c150f49127221ff7687e387ed94466ae26c8ff5233f4a830a3aff8d79c545.jpg",
+                "sha256": "3e6c150f49127221ff7687e387ed94466ae26c8ff5233f4a830a3aff8d79c545",
+                "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+                "productCode": "5M144M8S5DD09X10DD38F1S8DD09X13DD38J1S5DD09X10DD38G1",
+                "imageWidthIn": 4.8367,
+                "imageHeightIn": 10.11,
+                "paperWidthIn": 5.09,
+                "paperHeightIn": 10.38,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 1527,
+                  "heightPx": 3114,
+                  "content": {
+                    "left": 38,
+                    "top": 40,
+                    "width": 1451,
+                    "height": 3033
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 8.09,
+                    "height": 13.38,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 5.09,
+                    "height": 10.38,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "black",
+                  "id": 1,
+                  "collectionId": 1,
+                  "name": "Black",
+                  "color": "#262321",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 8.09,
+                    "height": 13.38,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "natural": {
+              "sku": "5M144M8S5DD09X10DD38F7S8DD09X13DD38J1S5DD09X10DD38G1",
+              "baseSku": "5M144M8S5.09X10.38",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 8.09,
+                  "height": 13.38,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 5.09,
+                  "height": 10.38,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "natural",
+                "id": 7,
+                "collectionId": 1,
+                "name": "Natural wood",
+                "color": "#b79061",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 8.09,
+                  "height": 13.38,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "82.63",
+              "unframedAmount": "35.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:16.665Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/3e6c150f49127221ff7687e387ed94466ae26c8ff5233f4a830a3aff8d79c545.jpg",
+                "sha256": "3e6c150f49127221ff7687e387ed94466ae26c8ff5233f4a830a3aff8d79c545",
+                "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+                "productCode": "5M144M8S5DD09X10DD38F7S8DD09X13DD38J1S5DD09X10DD38G1",
+                "imageWidthIn": 4.8367,
+                "imageHeightIn": 10.11,
+                "paperWidthIn": 5.09,
+                "paperHeightIn": 10.38,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 1527,
+                  "heightPx": 3114,
+                  "content": {
+                    "left": 38,
+                    "top": 40,
+                    "width": 1451,
+                    "height": 3033
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 8.09,
+                    "height": 13.38,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 5.09,
+                    "height": 10.38,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "natural",
+                  "id": 7,
+                  "collectionId": 1,
+                  "name": "Natural wood",
+                  "color": "#b79061",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 8.09,
+                    "height": 13.38,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
+              }
+            },
+            "white": {
+              "sku": "5M144M8S5DD09X10DD38F2S8DD09X13DD38J1S5DD09X10DD38G1",
+              "baseSku": "5M144M8S5.09X10.38",
+              "mat": {
+                "key": "snow-white",
+                "name": "Snow White",
+                "color": "#fff",
+                "outer": {
+                  "width": 8.09,
+                  "height": 13.38,
+                  "unit": "in"
+                },
+                "window": {
+                  "width": 5.09,
+                  "height": 10.38,
+                  "unit": "in"
+                },
+                "id": 1
+              },
+              "frame": {
+                "key": "white",
+                "id": 2,
+                "collectionId": 1,
+                "name": "White",
+                "color": "#f7f5ef",
+                "material": "Solid Wood with Veneer",
+                "mouldingWidth": 0.88,
+                "size": {
+                  "width": 8.09,
+                  "height": 13.38,
+                  "unit": "in"
+                },
+                "glazing": {
+                  "id": 1,
+                  "name": "Premium Clear"
+                }
+              },
+              "amount": "73.63",
+              "unframedAmount": "35.00",
+              "pricingRule": "finerworks-frame-at-cost-v1",
+              "quotedAt": "2026-10-13T21:52:16.665Z",
+              "asset": {
+                "provider": "finerworks",
+                "url": "https://vermillionaurora.com/print-editions/3e6c150f49127221ff7687e387ed94466ae26c8ff5233f4a830a3aff8d79c545.jpg",
+                "sha256": "3e6c150f49127221ff7687e387ed94466ae26c8ff5233f4a830a3aff8d79c545",
+                "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
+                "productCode": "5M144M8S5DD09X10DD38F2S8DD09X13DD38J1S5DD09X10DD38G1",
+                "imageWidthIn": 4.8367,
+                "imageHeightIn": 10.11,
+                "paperWidthIn": 5.09,
+                "paperHeightIn": 10.38,
+                "approved": true,
+                "layoutApproved": true,
+                "layout": "full-image-white-border-v1",
+                "layoutSpec": {
+                  "dpi": 300,
+                  "widthPx": 1527,
+                  "heightPx": 3114,
+                  "content": {
+                    "left": 38,
+                    "top": 40,
+                    "width": 1451,
+                    "height": 3033
+                  }
+                },
+                "mat": {
+                  "key": "snow-white",
+                  "name": "Snow White",
+                  "color": "#fff",
+                  "outer": {
+                    "width": 8.09,
+                    "height": 13.38,
+                    "unit": "in"
+                  },
+                  "window": {
+                    "width": 5.09,
+                    "height": 10.38,
+                    "unit": "in"
+                  },
+                  "id": 1
+                },
+                "frame": {
+                  "key": "white",
+                  "id": 2,
+                  "collectionId": 1,
+                  "name": "White",
+                  "color": "#f7f5ef",
+                  "material": "Solid Wood with Veneer",
+                  "mouldingWidth": 0.88,
+                  "size": {
+                    "width": 8.09,
+                    "height": 13.38,
+                    "unit": "in"
+                  },
+                  "glazing": {
+                    "id": 1,
+                    "name": "Premium Clear"
+                  }
+                },
+                "layoutReview": "full-image-white-border-mat-overlap"
               }
             }
           }
@@ -70285,7 +73395,7 @@
           },
           "amount": "85.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:53.760Z",
+          "quotedAt": "2026-10-13T21:51:44.620Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S21DD94X9DD16F1S24DD94X12DD16J1S21DD94X9DD16G1",
@@ -70327,7 +73437,7 @@
               "amount": "159.00",
               "unframedAmount": "85.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:59.018Z",
+              "quotedAt": "2026-10-13T21:52:52.368Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a.jpg",
@@ -70429,7 +73539,7 @@
               "amount": "175.00",
               "unframedAmount": "85.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:59.018Z",
+              "quotedAt": "2026-10-13T21:52:52.368Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a.jpg",
@@ -70531,7 +73641,7 @@
               "amount": "159.00",
               "unframedAmount": "85.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:58:59.018Z",
+              "quotedAt": "2026-10-13T21:52:52.368Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a.jpg",
@@ -70624,7 +73734,7 @@
           },
           "amount": "55.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:53.760Z",
+          "quotedAt": "2026-10-13T21:51:44.620Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S16DD52X6DD93F1S19DD52X9DD93J1S16DD52X6DD93G1",
@@ -70666,7 +73776,7 @@
               "amount": "110.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:00.159Z",
+              "quotedAt": "2026-10-13T21:52:54.024Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf.jpg",
@@ -70768,7 +73878,7 @@
               "amount": "122.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:00.159Z",
+              "quotedAt": "2026-10-13T21:52:54.024Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf.jpg",
@@ -70870,7 +73980,7 @@
               "amount": "110.00",
               "unframedAmount": "55.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:00.159Z",
+              "quotedAt": "2026-10-13T21:52:54.024Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf.jpg",
@@ -70963,7 +74073,7 @@
           },
           "amount": "35.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T19:57:53.760Z",
+          "quotedAt": "2026-10-13T21:51:44.620Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S11DD09X4DD7F1S14DD39X8J1S11DD09X4DD7G1",
@@ -71005,7 +74115,7 @@
               "amount": "75.00",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:01.368Z",
+              "quotedAt": "2026-10-13T21:52:55.383Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb.jpg",
@@ -71107,7 +74217,7 @@
               "amount": "85.00",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:01.368Z",
+              "quotedAt": "2026-10-13T21:52:55.383Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb.jpg",
@@ -71209,7 +74319,7 @@
               "amount": "75.00",
               "unframedAmount": "35.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-13T19:59:01.368Z",
+              "quotedAt": "2026-10-13T21:52:55.383Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb.jpg",
