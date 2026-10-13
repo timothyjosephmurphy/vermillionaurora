@@ -56808,7 +56808,8 @@
             }
           },
           "amount": "135.00",
-          "pricingRule": "finerworks-3.5x-v1"
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T17:00:00.000Z"
         },
         "medium": {
           "sku": "5M144M8S12.29X17.45",
@@ -56838,7 +56839,8 @@
             }
           },
           "amount": "75.00",
-          "pricingRule": "finerworks-3.5x-v1"
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T17:00:00.000Z"
         },
         "small": {
           "sku": "5M144M8S8.27X11.71",
@@ -56868,7 +56870,8 @@
             }
           },
           "amount": "50.00",
-          "pricingRule": "finerworks-3.5x-v1"
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T17:00:00.000Z"
         }
       }
     },
@@ -66578,7 +66581,8 @@
             }
           },
           "amount": "75.00",
-          "pricingRule": "finerworks-3.5x-v1"
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T17:00:00.000Z"
         },
         "medium": {
           "sku": "5M144M8S14.8X5.58",
@@ -66608,7 +66612,8 @@
             }
           },
           "amount": "50.00",
-          "pricingRule": "finerworks-3.5x-v1"
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T17:00:00.000Z"
         }
       }
     },
@@ -110327,7 +110332,8 @@
             }
           },
           "amount": "135.00",
-          "pricingRule": "finerworks-3.5x-v1"
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T17:00:00.000Z"
         },
         "medium": {
           "sku": "5M144M8S12.71X18.05",
@@ -110357,7 +110363,8 @@
             }
           },
           "amount": "75.00",
-          "pricingRule": "finerworks-3.5x-v1"
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T17:00:00.000Z"
         },
         "small": {
           "sku": "5M144M8S8.55X12.11",
@@ -110387,7 +110394,8 @@
             }
           },
           "amount": "50.00",
-          "pricingRule": "finerworks-3.5x-v1"
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T17:00:00.000Z"
         }
       }
     }
