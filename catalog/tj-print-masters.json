@@ -2,14 +2,14 @@
   {
     "id": "warszawska-syrenka",
     "title": "Warszawska Syrenka",
-    "sha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "local": "gallery-images/warszawska-syrenka.jpeg"
+    "sha256": "6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718",
+    "local": "static/print-masters/6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718.jpg"
   },
   {
     "id": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block",
-    "sha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "local": "gallery-images/honeybadger-and-cub.jpeg"
+    "sha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
+    "local": "static/print-masters/5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b.jpg"
   },
   {
     "id": "el-zonte-at-sunrise",
