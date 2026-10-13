@@ -24,9 +24,9 @@ try{
     page.on('request',r=>{if(page.url().endsWith('/gallery/room/')&&r.url().includes('/checkout/'))throw Error('The room must not initiate checkout');});
     await page.goto(origin+'/');
     const exhibitionTiles=page.locator('#exhibitions .ex-track > article');
-    assert.deepEqual(await exhibitionTiles.evaluateAll(nodes=>nodes.slice(0,2).map(n=>n.dataset.galleryFeature)),['print-wall','gallery-room'],'Both gallery experiences lead the Exhibitions carousel');
+    assert.deepEqual(await exhibitionTiles.evaluateAll(nodes=>nodes.slice(-2).map(n=>n.dataset.galleryFeature)),['gallery-room','print-wall'],'Both gallery experiences finish the Exhibitions carousel');
     assert.equal(await page.locator('.painting-carousel [data-gallery-feature]').count(),0,'Gallery experiences are removed from the painting carousels');
-    const roomTile=exhibitionTiles.nth(1);
+    const roomTile=page.locator('#exhibitions [data-gallery-feature="gallery-room"]');
     await roomTile.scrollIntoViewIfNeeded();
     await page.waitForFunction(()=>document.querySelector('[data-gallery-feature="gallery-room"] img').naturalWidth===1440);
     await roomTile.locator('img').evaluate(async img=>{await img.decode();await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
