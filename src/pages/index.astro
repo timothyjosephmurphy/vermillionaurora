@@ -12,7 +12,10 @@ const homePaintings=collections.home.filter(entry=>entry.variant==='carousel').m
 // Featured works: highest original price first, ties by title; prints-only paintings last by lowest print price.
 const originalPrice=product=>{const amount=Number(product.listing?.price?.amount);return amount>0?amount:null;};
 const byFeaturedPrice=(a,b)=>{const pa=originalPrice(a),pb=originalPrice(b);if(pa!==null||pb!==null){if(pa===null)return 1;if(pb===null)return -1;if(pa!==pb)return pb-pa;}else{const qa=lowestPrintPrice(a)??Infinity,qb=lowestPrintPrice(b)??Infinity;if(qa!==qb)return qa-qb;}return a.title.localeCompare(b.title,'en');};
-const availablePaintings=homePaintings.filter(product=>['available','inquiry'].includes(product.listing?.status)).sort(byFeaturedPrice);
+const sortedAvailable=homePaintings.filter(product=>['available','inquiry'].includes(product.listing?.status)).sort(byFeaturedPrice);
+// Manual overrides applied after the price sort: [productToMove, productItGoesDirectlyBefore].
+const featuredPlaceBefore=[['archived-painting-436','archived-painting-433']];
+const availablePaintings=featuredPlaceBefore.reduce((list,[move,before])=>{const item=list.find(p=>p.id===move);if(!item||!list.some(p=>p.id===before))return list;const rest=list.filter(p=>p!==item);rest.splice(rest.findIndex(p=>p.id===before),0,item);return rest;},sortedAvailable);
 // No item limit: every qualifying home painting is shown in its carousel.
 const collectorPaintings=homePaintings.filter(product=>!['available','inquiry'].includes(product.listing?.status));
 const collectorPreview=collectorPaintings;

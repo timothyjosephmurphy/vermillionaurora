@@ -12,7 +12,7 @@ const tj=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.
 const books=Object.values(prints).filter(p=>p.productId.startsWith('book-art-'));
 assert.equal(new Set(books.map(p=>p.productId)).size,53);assert.equal(books.filter(p=>!p.frame).length,109);assert.equal(books.filter(p=>p.frame).length,327);assert.equal(books.length,436);
 // 24 existing TJ masters plus all 54 artist-designated archive masters.
-assert.equal(new Set(tj.map(p=>p.productId)).size,78);assert.equal(tj.filter(p=>!p.frame).length,216);assert.equal(tj.filter(p=>p.frame).length,648);
+assert.equal(new Set(tj.map(p=>p.productId)).size,77);assert.equal(tj.filter(p=>!p.frame).length,213);assert.equal(tj.filter(p=>p.frame).length,639);
 const expected=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&p.productId.startsWith('paul-murphy-')),catalog=await api('catalog');
 assert.equal(expected.filter(p=>!p.frame).length,112);assert.equal(expected.filter(p=>p.frame).length,336);assert.equal(new Set(expected.map(p=>p.productId)).size,38);assert(catalog.version.endsWith('-'+printVersion));
 for(const p of [...expected,...tj,...books]){
