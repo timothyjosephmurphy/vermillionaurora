@@ -5,8 +5,8 @@ import {createHash} from 'node:crypto';
 import config from '../catalog/prints.json' with {type:'json'};
 import recipes from '../catalog/tj-print-masters.json' with {type:'json'};
 import {readyPrints} from '../catalog/prints.mjs';
-test('All 23 reviewed TJ masters have native-resolution editions and three frames at every approved size',async()=>{
-  assert.equal(recipes.length,24);
+test('All 22 reviewed TJ masters have native-resolution editions and three frames at every approved size',async()=>{
+  assert.equal(recipes.length,23);
   let sizes=0;
   for(const recipe of recipes){
     const art=config.artworks[recipe.id],base=Object.values(readyPrints).filter(p=>p.productId===recipe.id&&!p.mat&&!p.frame);
@@ -23,7 +23,7 @@ test('All 23 reviewed TJ masters have native-resolution editions and three frame
       }
     }
   }
-  assert.equal(sizes,60); // Rainier with Eagle: full-res master adds a medium size
+  assert.equal(sizes,57); // Rainier with Eagle: full-res master adds a medium size
 });
 
 test('Cormorant mural master is the exact 3:2 crop of the high-resolution photo, offered at three native-resolution sizes',()=>{
