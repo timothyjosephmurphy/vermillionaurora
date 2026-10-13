@@ -8,7 +8,7 @@ export const MIN_BYTES = 30000; // EXTRA_SOURCES are always converted (lowered f
 export const WIDTHS = [160, 480, 960, 1600];
 export const DEFAULT_QUALITY = 75;
 // Very textured paintings need a lower quality to get real savings; visually equivalent at display size.
-export const QUALITY = { '/gallery-images/warszawska-syrenka.jpeg': 60 };
+export const QUALITY = { '/gallery-images/warszawska-syrenka.jpeg': 60, '/gallery-images/warszawska-syrenka-2026.jpg': 60 };
 // CSS/inline backgrounds that the img scan cannot see.
 export const EXTRA_SOURCES = ['/gallery-images/esperanza-hero.png', '/gallery-images/warszawska-syrenka.jpeg',
   // Landscape commission card carousel (portrait-preview.js).

@@ -23,7 +23,7 @@ test('All 23 reviewed TJ masters have native-resolution editions and three frame
       }
     }
   }
-  assert.equal(sizes,59);
+  assert.equal(sizes,60); // Rainier with Eagle: full-res master adds a medium size
 });
 
 test('Cormorant mural master is the exact 3:2 crop of the high-resolution photo, offered at three native-resolution sizes',()=>{

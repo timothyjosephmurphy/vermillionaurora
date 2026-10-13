@@ -809,6 +809,32 @@
    }
   ]
  },
+ "/gallery-images/honeybadger-and-cub-2026.jpg": {
+  "original": 762764,
+  "width": 1680,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/honeybadger-and-cub-2026-24cec820be-160.webp",
+    "bytes": 4800
+   },
+   {
+    "w": 480,
+    "src": "/display/honeybadger-and-cub-2026-24cec820be-480.webp",
+    "bytes": 39006
+   },
+   {
+    "w": 960,
+    "src": "/display/honeybadger-and-cub-2026-24cec820be-960.webp",
+    "bytes": 142640
+   },
+   {
+    "w": 1600,
+    "src": "/display/honeybadger-and-cub-2026-24cec820be-1600.webp",
+    "bytes": 332030
+   }
+  ]
+ },
  "/gallery-images/honeybadger-and-cub.jpeg": {
   "original": 261515,
   "width": 1060,
@@ -1230,6 +1256,32 @@
    }
   ]
  },
+ "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg": {
+  "original": 308806,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/sunrise-on-rainier-with-eagle-2026-bbe4278e39-160.webp",
+    "bytes": 1740
+   },
+   {
+    "w": 480,
+    "src": "/display/sunrise-on-rainier-with-eagle-2026-bbe4278e39-480.webp",
+    "bytes": 8758
+   },
+   {
+    "w": 960,
+    "src": "/display/sunrise-on-rainier-with-eagle-2026-bbe4278e39-960.webp",
+    "bytes": 28730
+   },
+   {
+    "w": 1600,
+    "src": "/display/sunrise-on-rainier-with-eagle-2026-bbe4278e39-1600.webp",
+    "bytes": 64030
+   }
+  ]
+ },
  "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg": {
   "original": 491625,
   "width": 1219,
@@ -1379,6 +1431,32 @@
     "w": 558,
     "src": "/display/two-soldiers-6d91f5f3d2-558.webp",
     "bytes": 23500
+   }
+  ]
+ },
+ "/gallery-images/warszawska-syrenka-2026.jpg": {
+  "original": 895216,
+  "width": 1680,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/warszawska-syrenka-2026-9c41892006-160.webp",
+    "bytes": 4974
+   },
+   {
+    "w": 480,
+    "src": "/display/warszawska-syrenka-2026-9c41892006-480.webp",
+    "bytes": 31756
+   },
+   {
+    "w": 960,
+    "src": "/display/warszawska-syrenka-2026-9c41892006-960.webp",
+    "bytes": 145126
+   },
+   {
+    "w": 1600,
+    "src": "/display/warszawska-syrenka-2026-9c41892006-1600.webp",
+    "bytes": 347438
    }
   ]
  },
@@ -1583,6 +1661,1410 @@
     "w": 672,
     "src": "/display/cover-acbf3adb60-672.webp",
     "bytes": 20648
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1526.jpg": {
+  "original": 5394443,
+  "width": 5329,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-193-160.webp",
+    "bytes": 4158
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-193-480.webp",
+    "bytes": 32470
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-193-960.webp",
+    "bytes": 109354
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-193-1600.webp",
+    "bytes": 232334
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1545.jpg": {
+  "original": 5678236,
+  "width": 4076,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-308-160.webp",
+    "bytes": 10794
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-308-480.webp",
+    "bytes": 83928
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-308-960.webp",
+    "bytes": 250360
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-308-1600.webp",
+    "bytes": 526190
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1547.jpg": {
+  "original": 8680530,
+  "width": 6833,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-307-160.webp",
+    "bytes": 5260
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-307-480.webp",
+    "bytes": 43024
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-307-960.webp",
+    "bytes": 159898
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-307-1600.webp",
+    "bytes": 380198
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1552.jpg": {
+  "original": 3674493,
+  "width": 3413,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-233-160.webp",
+    "bytes": 6962
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-233-480.webp",
+    "bytes": 54932
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-233-960.webp",
+    "bytes": 190270
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-233-1600.webp",
+    "bytes": 399844
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1555.jpg": {
+  "original": 6204282,
+  "width": 5574,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-img-1555-160.webp",
+    "bytes": 6552
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-img-1555-480.webp",
+    "bytes": 51692
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-img-1555-960.webp",
+    "bytes": 176234
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-img-1555-1600.webp",
+    "bytes": 388376
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1557.jpg": {
+  "original": 5199848,
+  "width": 3589,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-363-160.webp",
+    "bytes": 11074
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-363-480.webp",
+    "bytes": 99582
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-363-960.webp",
+    "bytes": 312134
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-363-1600.webp",
+    "bytes": 640048
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1562.jpg": {
+  "original": 4437082,
+  "width": 3674,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-368-160.webp",
+    "bytes": 6634
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-368-480.webp",
+    "bytes": 58168
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-368-960.webp",
+    "bytes": 199886
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-368-1600.webp",
+    "bytes": 455664
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1564.jpg": {
+  "original": 4303049,
+  "width": 5072,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-369-160.webp",
+    "bytes": 4772
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-369-480.webp",
+    "bytes": 38578
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-369-960.webp",
+    "bytes": 131580
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-369-1600.webp",
+    "bytes": 296268
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1566.jpg": {
+  "original": 5276052,
+  "width": 5389,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-370-160.webp",
+    "bytes": 4918
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-370-480.webp",
+    "bytes": 40270
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-370-960.webp",
+    "bytes": 138126
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-370-1600.webp",
+    "bytes": 304170
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1568.jpg": {
+  "original": 3761414,
+  "width": 4815,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-371-160.webp",
+    "bytes": 5076
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-371-480.webp",
+    "bytes": 40726
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-371-960.webp",
+    "bytes": 132784
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-371-1600.webp",
+    "bytes": 278456
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1570.jpg": {
+  "original": 6046595,
+  "width": 4930,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-364-160.webp",
+    "bytes": 5458
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-364-480.webp",
+    "bytes": 47226
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-364-960.webp",
+    "bytes": 179022
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-364-1600.webp",
+    "bytes": 450864
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1572.jpg": {
+  "original": 4871381,
+  "width": 3648,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-366-160.webp",
+    "bytes": 8480
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-366-480.webp",
+    "bytes": 79114
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-366-960.webp",
+    "bytes": 244780
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-366-1600.webp",
+    "bytes": 507118
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1574.jpg": {
+  "original": 3802233,
+  "width": 3605,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-367-160.webp",
+    "bytes": 7630
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-367-480.webp",
+    "bytes": 63362
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-367-960.webp",
+    "bytes": 186732
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-367-1600.webp",
+    "bytes": 382418
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1576.jpg": {
+  "original": 5667715,
+  "width": 5236,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-362-160.webp",
+    "bytes": 5728
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-362-480.webp",
+    "bytes": 50980
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-362-960.webp",
+    "bytes": 178754
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-362-1600.webp",
+    "bytes": 399482
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1578.jpg": {
+  "original": 4072440,
+  "width": 5063,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-412-160.webp",
+    "bytes": 5854
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-412-480.webp",
+    "bytes": 45916
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-412-960.webp",
+    "bytes": 144116
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-412-1600.webp",
+    "bytes": 286718
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1580.jpg": {
+  "original": 3962460,
+  "width": 3581,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-373-160.webp",
+    "bytes": 7908
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-373-480.webp",
+    "bytes": 63244
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-373-960.webp",
+    "bytes": 196730
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-373-1600.webp",
+    "bytes": 415678
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1582.jpg": {
+  "original": 3725776,
+  "width": 3825,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-375-160.webp",
+    "bytes": 6038
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-375-480.webp",
+    "bytes": 49136
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-375-960.webp",
+    "bytes": 154998
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-375-1600.webp",
+    "bytes": 311404
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1584.jpg": {
+  "original": 3777819,
+  "width": 3518,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-385-160.webp",
+    "bytes": 7036
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-385-480.webp",
+    "bytes": 57882
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-385-960.webp",
+    "bytes": 180744
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-385-1600.webp",
+    "bytes": 379728
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1586.jpg": {
+  "original": 3628096,
+  "width": 3598,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-386-160.webp",
+    "bytes": 5606
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-386-480.webp",
+    "bytes": 48748
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-386-960.webp",
+    "bytes": 150352
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-386-1600.webp",
+    "bytes": 313442
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1588.jpg": {
+  "original": 3306068,
+  "width": 3471,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-387-160.webp",
+    "bytes": 6354
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-387-480.webp",
+    "bytes": 55710
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-387-960.webp",
+    "bytes": 164296
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-387-1600.webp",
+    "bytes": 335116
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1590.jpg": {
+  "original": 3043262,
+  "width": 3609,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-389-160.webp",
+    "bytes": 6264
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-389-480.webp",
+    "bytes": 49942
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-389-960.webp",
+    "bytes": 131764
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-389-1600.webp",
+    "bytes": 248032
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1592.jpg": {
+  "original": 3651314,
+  "width": 3543,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-390-160.webp",
+    "bytes": 6392
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-390-480.webp",
+    "bytes": 53772
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-390-960.webp",
+    "bytes": 161622
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-390-1600.webp",
+    "bytes": 332140
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1595.jpg": {
+  "original": 7702215,
+  "width": 7232,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-226-160.webp",
+    "bytes": 4416
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-226-480.webp",
+    "bytes": 36056
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-226-960.webp",
+    "bytes": 133290
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-226-1600.webp",
+    "bytes": 301732
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1597.jpg": {
+  "original": 10438209,
+  "width": 5341,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-354-160.webp",
+    "bytes": 13696
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-354-480.webp",
+    "bytes": 119564
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-354-960.webp",
+    "bytes": 398266
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-354-1600.webp",
+    "bytes": 820898
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1600.jpg": {
+  "original": 7089089,
+  "width": 4094,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-249-160.webp",
+    "bytes": 9038
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-249-480.webp",
+    "bytes": 97186
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-249-960.webp",
+    "bytes": 314598
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-249-1600.webp",
+    "bytes": 648122
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1602.jpg": {
+  "original": 7321222,
+  "width": 4372,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-73-160.webp",
+    "bytes": 11154
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-73-480.webp",
+    "bytes": 93028
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-73-960.webp",
+    "bytes": 291966
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-73-1600.webp",
+    "bytes": 609376
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1604.jpg": {
+  "original": 6413491,
+  "width": 4071,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-75-160.webp",
+    "bytes": 9530
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-75-480.webp",
+    "bytes": 80406
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-75-960.webp",
+    "bytes": 267586
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-75-1600.webp",
+    "bytes": 577896
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1606.jpg": {
+  "original": 5840496,
+  "width": 4232,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-76-160.webp",
+    "bytes": 7284
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-76-480.webp",
+    "bytes": 68390
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-76-960.webp",
+    "bytes": 234404
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-76-1600.webp",
+    "bytes": 497582
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1608.jpg": {
+  "original": 5265656,
+  "width": 3610,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-img-1608-160.webp",
+    "bytes": 8472
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-img-1608-480.webp",
+    "bytes": 84028
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-img-1608-960.webp",
+    "bytes": 266616
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-img-1608-1600.webp",
+    "bytes": 559410
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1610.jpg": {
+  "original": 4956536,
+  "width": 6361,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-416-160.webp",
+    "bytes": 3372
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-416-480.webp",
+    "bytes": 22678
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-416-960.webp",
+    "bytes": 90484
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-416-1600.webp",
+    "bytes": 227312
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1612.jpg": {
+  "original": 6124882,
+  "width": 3476,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-img-1612-160.webp",
+    "bytes": 14898
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-img-1612-480.webp",
+    "bytes": 122120
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-img-1612-960.webp",
+    "bytes": 396146
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-img-1612-1600.webp",
+    "bytes": 812814
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1614.jpg": {
+  "original": 7665613,
+  "width": 4263,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-246-160.webp",
+    "bytes": 8936
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-246-480.webp",
+    "bytes": 89276
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-246-960.webp",
+    "bytes": 314288
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-246-1600.webp",
+    "bytes": 650042
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg": {
+  "original": 7583489,
+  "width": 4567,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-248-160.webp",
+    "bytes": 7608
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-248-480.webp",
+    "bytes": 77640
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-248-960.webp",
+    "bytes": 261188
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-248-1600.webp",
+    "bytes": 567742
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1618.jpg": {
+  "original": 6934139,
+  "width": 4764,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-247-160.webp",
+    "bytes": 6048
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-247-480.webp",
+    "bytes": 57876
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-247-960.webp",
+    "bytes": 206302
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-247-1600.webp",
+    "bytes": 454456
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1620.jpg": {
+  "original": 6285379,
+  "width": 4069,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-133-160.webp",
+    "bytes": 7394
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-133-480.webp",
+    "bytes": 65728
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-133-960.webp",
+    "bytes": 247048
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-133-1600.webp",
+    "bytes": 568152
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1622.jpg": {
+  "original": 5046080,
+  "width": 6404,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-438-160.webp",
+    "bytes": 3224
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-438-480.webp",
+    "bytes": 21612
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-438-960.webp",
+    "bytes": 84454
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-438-1600.webp",
+    "bytes": 204456
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1624.jpg": {
+  "original": 4352567,
+  "width": 6318,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-437-160.webp",
+    "bytes": 2484
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-437-480.webp",
+    "bytes": 18614
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-437-960.webp",
+    "bytes": 70204
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-437-1600.webp",
+    "bytes": 166902
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1626.jpg": {
+  "original": 4476071,
+  "width": 6329,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-433-160.webp",
+    "bytes": 2630
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-433-480.webp",
+    "bytes": 18684
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-433-960.webp",
+    "bytes": 68836
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-433-1600.webp",
+    "bytes": 169894
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1628.jpg": {
+  "original": 4215552,
+  "width": 3345,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-436-160.webp",
+    "bytes": 5740
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-436-480.webp",
+    "bytes": 52686
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-436-960.webp",
+    "bytes": 182726
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-436-1600.webp",
+    "bytes": 404090
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1630.jpg": {
+  "original": 5562898,
+  "width": 3548,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-90-160.webp",
+    "bytes": 11778
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-90-480.webp",
+    "bytes": 99008
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-90-960.webp",
+    "bytes": 307888
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-90-1600.webp",
+    "bytes": 655918
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg": {
+  "original": 12521228,
+  "width": 5626,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-62-160.webp",
+    "bytes": 9524
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-62-480.webp",
+    "bytes": 102728
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-62-960.webp",
+    "bytes": 394130
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-62-1600.webp",
+    "bytes": 908600
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1635.jpg": {
+  "original": 11633935,
+  "width": 7370,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-241-160.webp",
+    "bytes": 6270
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-241-480.webp",
+    "bytes": 52222
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-241-960.webp",
+    "bytes": 212496
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-241-1600.webp",
+    "bytes": 520320
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1637.jpg": {
+  "original": 7442717,
+  "width": 6285,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-66-160.webp",
+    "bytes": 5232
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-66-480.webp",
+    "bytes": 35134
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-66-960.webp",
+    "bytes": 140274
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-66-1600.webp",
+    "bytes": 330518
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg": {
+  "original": 6688408,
+  "width": 5620,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-301-160.webp",
+    "bytes": 4416
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-301-480.webp",
+    "bytes": 30292
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-301-960.webp",
+    "bytes": 124276
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-301-1600.webp",
+    "bytes": 295632
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg": {
+  "original": 7093866,
+  "width": 4051,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-53-160.webp",
+    "bytes": 9600
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-53-480.webp",
+    "bytes": 65276
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-53-960.webp",
+    "bytes": 234190
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-53-1600.webp",
+    "bytes": 522996
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1643.jpg": {
+  "original": 5211841,
+  "width": 7112,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-15-160.webp",
+    "bytes": 3526
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-15-480.webp",
+    "bytes": 20878
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-15-960.webp",
+    "bytes": 74934
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-15-1600.webp",
+    "bytes": 189690
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1645.jpg": {
+  "original": 5814532,
+  "width": 7352,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-18-160.webp",
+    "bytes": 2766
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-18-480.webp",
+    "bytes": 17974
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-18-960.webp",
+    "bytes": 71254
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-18-1600.webp",
+    "bytes": 188994
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1647.jpg": {
+  "original": 6203855,
+  "width": 7436,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-19-160.webp",
+    "bytes": 2056
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-19-480.webp",
+    "bytes": 14320
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-19-960.webp",
+    "bytes": 66468
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-19-1600.webp",
+    "bytes": 189116
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1649.jpg": {
+  "original": 4721234,
+  "width": 7399,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-20-160.webp",
+    "bytes": 1674
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-20-480.webp",
+    "bytes": 9834
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-20-960.webp",
+    "bytes": 37810
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-20-1600.webp",
+    "bytes": 103758
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1651.jpg": {
+  "original": 4787095,
+  "width": 6882,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-22-160.webp",
+    "bytes": 3586
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-22-480.webp",
+    "bytes": 22310
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-22-960.webp",
+    "bytes": 73222
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-22-1600.webp",
+    "bytes": 174928
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1657.jpg": {
+  "original": 1099930,
+  "width": 4191,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-2-160.webp",
+    "bytes": 1564
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-2-480.webp",
+    "bytes": 9130
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-2-960.webp",
+    "bytes": 31988
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-2-1600.webp",
+    "bytes": 74822
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1659.jpg": {
+  "original": 618657,
+  "width": 4129,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-4-160.webp",
+    "bytes": 1434
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-4-480.webp",
+    "bytes": 6780
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-4-960.webp",
+    "bytes": 18186
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-4-1600.webp",
+    "bytes": 37122
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1660.jpg": {
+  "original": 637326,
+  "width": 4190,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-1-160.webp",
+    "bytes": 1354
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-1-480.webp",
+    "bytes": 6510
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-1-960.webp",
+    "bytes": 17164
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-1-1600.webp",
+    "bytes": 33418
+   }
+  ]
+ },
+ "https://media.vermillionaurora.com/images/Archive/IMG_1662.jpg": {
+  "original": 4110493,
+  "width": 2296,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/archived-painting-217-160.webp",
+    "bytes": 20870
+   },
+   {
+    "w": 480,
+    "src": "/display/archived-painting-217-480.webp",
+    "bytes": 141816
+   },
+   {
+    "w": 960,
+    "src": "/display/archived-painting-217-960.webp",
+    "bytes": 404818
+   },
+   {
+    "w": 1600,
+    "src": "/display/archived-painting-217-1600.webp",
+    "bytes": 779928
    }
   ]
  },
@@ -7153,1410 +8635,6 @@
     "w": 480,
     "src": "/display/072-dfc07ef6cc-480.webp",
     "bytes": 34664
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1526.jpg": {
-  "original": 5394443,
-  "width": 5329,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-193-160.webp",
-    "bytes": 4158
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-193-480.webp",
-    "bytes": 32470
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-193-960.webp",
-    "bytes": 109354
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-193-1600.webp",
-    "bytes": 232334
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1545.jpg": {
-  "original": 5678236,
-  "width": 4076,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-308-160.webp",
-    "bytes": 10794
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-308-480.webp",
-    "bytes": 83928
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-308-960.webp",
-    "bytes": 250360
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-308-1600.webp",
-    "bytes": 526190
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1547.jpg": {
-  "original": 8680530,
-  "width": 6833,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-307-160.webp",
-    "bytes": 5260
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-307-480.webp",
-    "bytes": 43024
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-307-960.webp",
-    "bytes": 159898
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-307-1600.webp",
-    "bytes": 380198
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1552.jpg": {
-  "original": 3674493,
-  "width": 3413,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-233-160.webp",
-    "bytes": 6962
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-233-480.webp",
-    "bytes": 54932
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-233-960.webp",
-    "bytes": 190270
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-233-1600.webp",
-    "bytes": 399844
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1555.jpg": {
-  "original": 6204282,
-  "width": 5574,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-img-1555-160.webp",
-    "bytes": 6552
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-img-1555-480.webp",
-    "bytes": 51692
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-img-1555-960.webp",
-    "bytes": 176234
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-img-1555-1600.webp",
-    "bytes": 388376
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1557.jpg": {
-  "original": 5199848,
-  "width": 3589,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-363-160.webp",
-    "bytes": 11074
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-363-480.webp",
-    "bytes": 99582
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-363-960.webp",
-    "bytes": 312134
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-363-1600.webp",
-    "bytes": 640048
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1562.jpg": {
-  "original": 4437082,
-  "width": 3674,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-368-160.webp",
-    "bytes": 6634
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-368-480.webp",
-    "bytes": 58168
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-368-960.webp",
-    "bytes": 199886
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-368-1600.webp",
-    "bytes": 455664
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1564.jpg": {
-  "original": 4303049,
-  "width": 5072,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-369-160.webp",
-    "bytes": 4772
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-369-480.webp",
-    "bytes": 38578
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-369-960.webp",
-    "bytes": 131580
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-369-1600.webp",
-    "bytes": 296268
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1566.jpg": {
-  "original": 5276052,
-  "width": 5389,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-370-160.webp",
-    "bytes": 4918
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-370-480.webp",
-    "bytes": 40270
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-370-960.webp",
-    "bytes": 138126
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-370-1600.webp",
-    "bytes": 304170
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1568.jpg": {
-  "original": 3761414,
-  "width": 4815,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-371-160.webp",
-    "bytes": 5076
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-371-480.webp",
-    "bytes": 40726
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-371-960.webp",
-    "bytes": 132784
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-371-1600.webp",
-    "bytes": 278456
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1570.jpg": {
-  "original": 6046595,
-  "width": 4930,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-364-160.webp",
-    "bytes": 5458
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-364-480.webp",
-    "bytes": 47226
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-364-960.webp",
-    "bytes": 179022
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-364-1600.webp",
-    "bytes": 450864
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1572.jpg": {
-  "original": 4871381,
-  "width": 3648,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-366-160.webp",
-    "bytes": 8480
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-366-480.webp",
-    "bytes": 79114
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-366-960.webp",
-    "bytes": 244780
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-366-1600.webp",
-    "bytes": 507118
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1574.jpg": {
-  "original": 3802233,
-  "width": 3605,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-367-160.webp",
-    "bytes": 7630
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-367-480.webp",
-    "bytes": 63362
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-367-960.webp",
-    "bytes": 186732
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-367-1600.webp",
-    "bytes": 382418
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1576.jpg": {
-  "original": 5667715,
-  "width": 5236,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-362-160.webp",
-    "bytes": 5728
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-362-480.webp",
-    "bytes": 50980
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-362-960.webp",
-    "bytes": 178754
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-362-1600.webp",
-    "bytes": 399482
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1578.jpg": {
-  "original": 4072440,
-  "width": 5063,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-412-160.webp",
-    "bytes": 5854
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-412-480.webp",
-    "bytes": 45916
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-412-960.webp",
-    "bytes": 144116
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-412-1600.webp",
-    "bytes": 286718
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1580.jpg": {
-  "original": 3962460,
-  "width": 3581,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-373-160.webp",
-    "bytes": 7908
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-373-480.webp",
-    "bytes": 63244
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-373-960.webp",
-    "bytes": 196730
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-373-1600.webp",
-    "bytes": 415678
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1582.jpg": {
-  "original": 3725776,
-  "width": 3825,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-375-160.webp",
-    "bytes": 6038
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-375-480.webp",
-    "bytes": 49136
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-375-960.webp",
-    "bytes": 154998
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-375-1600.webp",
-    "bytes": 311404
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1584.jpg": {
-  "original": 3777819,
-  "width": 3518,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-385-160.webp",
-    "bytes": 7036
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-385-480.webp",
-    "bytes": 57882
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-385-960.webp",
-    "bytes": 180744
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-385-1600.webp",
-    "bytes": 379728
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1586.jpg": {
-  "original": 3628096,
-  "width": 3598,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-386-160.webp",
-    "bytes": 5606
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-386-480.webp",
-    "bytes": 48748
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-386-960.webp",
-    "bytes": 150352
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-386-1600.webp",
-    "bytes": 313442
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1588.jpg": {
-  "original": 3306068,
-  "width": 3471,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-387-160.webp",
-    "bytes": 6354
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-387-480.webp",
-    "bytes": 55710
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-387-960.webp",
-    "bytes": 164296
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-387-1600.webp",
-    "bytes": 335116
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1590.jpg": {
-  "original": 3043262,
-  "width": 3609,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-389-160.webp",
-    "bytes": 6264
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-389-480.webp",
-    "bytes": 49942
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-389-960.webp",
-    "bytes": 131764
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-389-1600.webp",
-    "bytes": 248032
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1592.jpg": {
-  "original": 3651314,
-  "width": 3543,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-390-160.webp",
-    "bytes": 6392
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-390-480.webp",
-    "bytes": 53772
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-390-960.webp",
-    "bytes": 161622
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-390-1600.webp",
-    "bytes": 332140
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1595.jpg": {
-  "original": 7702215,
-  "width": 7232,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-226-160.webp",
-    "bytes": 4416
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-226-480.webp",
-    "bytes": 36056
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-226-960.webp",
-    "bytes": 133290
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-226-1600.webp",
-    "bytes": 301732
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1597.jpg": {
-  "original": 10438209,
-  "width": 5341,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-354-160.webp",
-    "bytes": 13696
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-354-480.webp",
-    "bytes": 119564
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-354-960.webp",
-    "bytes": 398266
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-354-1600.webp",
-    "bytes": 820898
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1600.jpg": {
-  "original": 7089089,
-  "width": 4094,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-249-160.webp",
-    "bytes": 9038
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-249-480.webp",
-    "bytes": 97186
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-249-960.webp",
-    "bytes": 314598
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-249-1600.webp",
-    "bytes": 648122
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1602.jpg": {
-  "original": 7321222,
-  "width": 4372,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-73-160.webp",
-    "bytes": 11154
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-73-480.webp",
-    "bytes": 93028
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-73-960.webp",
-    "bytes": 291966
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-73-1600.webp",
-    "bytes": 609376
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1604.jpg": {
-  "original": 6413491,
-  "width": 4071,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-75-160.webp",
-    "bytes": 9530
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-75-480.webp",
-    "bytes": 80406
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-75-960.webp",
-    "bytes": 267586
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-75-1600.webp",
-    "bytes": 577896
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1606.jpg": {
-  "original": 5840496,
-  "width": 4232,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-76-160.webp",
-    "bytes": 7284
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-76-480.webp",
-    "bytes": 68390
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-76-960.webp",
-    "bytes": 234404
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-76-1600.webp",
-    "bytes": 497582
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1608.jpg": {
-  "original": 5265656,
-  "width": 3610,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-img-1608-160.webp",
-    "bytes": 8472
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-img-1608-480.webp",
-    "bytes": 84028
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-img-1608-960.webp",
-    "bytes": 266616
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-img-1608-1600.webp",
-    "bytes": 559410
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1610.jpg": {
-  "original": 4956536,
-  "width": 6361,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-416-160.webp",
-    "bytes": 3372
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-416-480.webp",
-    "bytes": 22678
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-416-960.webp",
-    "bytes": 90484
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-416-1600.webp",
-    "bytes": 227312
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1612.jpg": {
-  "original": 6124882,
-  "width": 3476,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-img-1612-160.webp",
-    "bytes": 14898
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-img-1612-480.webp",
-    "bytes": 122120
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-img-1612-960.webp",
-    "bytes": 396146
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-img-1612-1600.webp",
-    "bytes": 812814
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1614.jpg": {
-  "original": 7665613,
-  "width": 4263,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-246-160.webp",
-    "bytes": 8936
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-246-480.webp",
-    "bytes": 89276
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-246-960.webp",
-    "bytes": 314288
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-246-1600.webp",
-    "bytes": 650042
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1616.jpg": {
-  "original": 7583489,
-  "width": 4567,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-248-160.webp",
-    "bytes": 7608
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-248-480.webp",
-    "bytes": 77640
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-248-960.webp",
-    "bytes": 261188
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-248-1600.webp",
-    "bytes": 567742
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1618.jpg": {
-  "original": 6934139,
-  "width": 4764,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-247-160.webp",
-    "bytes": 6048
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-247-480.webp",
-    "bytes": 57876
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-247-960.webp",
-    "bytes": 206302
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-247-1600.webp",
-    "bytes": 454456
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1620.jpg": {
-  "original": 6285379,
-  "width": 4069,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-133-160.webp",
-    "bytes": 7394
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-133-480.webp",
-    "bytes": 65728
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-133-960.webp",
-    "bytes": 247048
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-133-1600.webp",
-    "bytes": 568152
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1622.jpg": {
-  "original": 5046080,
-  "width": 6404,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-438-160.webp",
-    "bytes": 3224
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-438-480.webp",
-    "bytes": 21612
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-438-960.webp",
-    "bytes": 84454
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-438-1600.webp",
-    "bytes": 204456
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1624.jpg": {
-  "original": 4352567,
-  "width": 6318,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-437-160.webp",
-    "bytes": 2484
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-437-480.webp",
-    "bytes": 18614
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-437-960.webp",
-    "bytes": 70204
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-437-1600.webp",
-    "bytes": 166902
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1626.jpg": {
-  "original": 4476071,
-  "width": 6329,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-433-160.webp",
-    "bytes": 2630
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-433-480.webp",
-    "bytes": 18684
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-433-960.webp",
-    "bytes": 68836
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-433-1600.webp",
-    "bytes": 169894
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1628.jpg": {
-  "original": 4215552,
-  "width": 3345,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-436-160.webp",
-    "bytes": 5740
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-436-480.webp",
-    "bytes": 52686
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-436-960.webp",
-    "bytes": 182726
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-436-1600.webp",
-    "bytes": 404090
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1630.jpg": {
-  "original": 5562898,
-  "width": 3548,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-90-160.webp",
-    "bytes": 11778
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-90-480.webp",
-    "bytes": 99008
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-90-960.webp",
-    "bytes": 307888
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-90-1600.webp",
-    "bytes": 655918
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1632.jpg": {
-  "original": 12521228,
-  "width": 5626,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-62-160.webp",
-    "bytes": 9524
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-62-480.webp",
-    "bytes": 102728
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-62-960.webp",
-    "bytes": 394130
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-62-1600.webp",
-    "bytes": 908600
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1635.jpg": {
-  "original": 11633935,
-  "width": 7370,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-241-160.webp",
-    "bytes": 6270
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-241-480.webp",
-    "bytes": 52222
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-241-960.webp",
-    "bytes": 212496
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-241-1600.webp",
-    "bytes": 520320
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1637.jpg": {
-  "original": 7442717,
-  "width": 6285,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-66-160.webp",
-    "bytes": 5232
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-66-480.webp",
-    "bytes": 35134
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-66-960.webp",
-    "bytes": 140274
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-66-1600.webp",
-    "bytes": 330518
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg": {
-  "original": 6688408,
-  "width": 5620,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-301-160.webp",
-    "bytes": 4416
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-301-480.webp",
-    "bytes": 30292
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-301-960.webp",
-    "bytes": 124276
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-301-1600.webp",
-    "bytes": 295632
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg": {
-  "original": 7093866,
-  "width": 4051,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-53-160.webp",
-    "bytes": 9600
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-53-480.webp",
-    "bytes": 65276
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-53-960.webp",
-    "bytes": 234190
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-53-1600.webp",
-    "bytes": 522996
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1643.jpg": {
-  "original": 5211841,
-  "width": 7112,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-15-160.webp",
-    "bytes": 3526
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-15-480.webp",
-    "bytes": 20878
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-15-960.webp",
-    "bytes": 74934
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-15-1600.webp",
-    "bytes": 189690
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1645.jpg": {
-  "original": 5814532,
-  "width": 7352,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-18-160.webp",
-    "bytes": 2766
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-18-480.webp",
-    "bytes": 17974
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-18-960.webp",
-    "bytes": 71254
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-18-1600.webp",
-    "bytes": 188994
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1647.jpg": {
-  "original": 6203855,
-  "width": 7436,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-19-160.webp",
-    "bytes": 2056
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-19-480.webp",
-    "bytes": 14320
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-19-960.webp",
-    "bytes": 66468
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-19-1600.webp",
-    "bytes": 189116
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1649.jpg": {
-  "original": 4721234,
-  "width": 7399,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-20-160.webp",
-    "bytes": 1674
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-20-480.webp",
-    "bytes": 9834
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-20-960.webp",
-    "bytes": 37810
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-20-1600.webp",
-    "bytes": 103758
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1651.jpg": {
-  "original": 4787095,
-  "width": 6882,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-22-160.webp",
-    "bytes": 3586
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-22-480.webp",
-    "bytes": 22310
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-22-960.webp",
-    "bytes": 73222
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-22-1600.webp",
-    "bytes": 174928
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1657.jpg": {
-  "original": 1099930,
-  "width": 4191,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-2-160.webp",
-    "bytes": 1564
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-2-480.webp",
-    "bytes": 9130
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-2-960.webp",
-    "bytes": 31988
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-2-1600.webp",
-    "bytes": 74822
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1659.jpg": {
-  "original": 618657,
-  "width": 4129,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-4-160.webp",
-    "bytes": 1434
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-4-480.webp",
-    "bytes": 6780
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-4-960.webp",
-    "bytes": 18186
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-4-1600.webp",
-    "bytes": 37122
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1660.jpg": {
-  "original": 637326,
-  "width": 4190,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-1-160.webp",
-    "bytes": 1354
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-1-480.webp",
-    "bytes": 6510
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-1-960.webp",
-    "bytes": 17164
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-1-1600.webp",
-    "bytes": 33418
-   }
-  ]
- },
- "https://media.vermillionaurora.com/images/Archive/IMG_1662.jpg": {
-  "original": 4110493,
-  "width": 2296,
-  "variants": [
-   {
-    "w": 160,
-    "src": "/display/archived-painting-217-160.webp",
-    "bytes": 20870
-   },
-   {
-    "w": 480,
-    "src": "/display/archived-painting-217-480.webp",
-    "bytes": 141816
-   },
-   {
-    "w": 960,
-    "src": "/display/archived-painting-217-960.webp",
-    "bytes": 404818
-   },
-   {
-    "w": 1600,
-    "src": "/display/archived-painting-217-1600.webp",
-    "bytes": 779928
    }
   ]
  }
