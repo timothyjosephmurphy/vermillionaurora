@@ -5,7 +5,7 @@ import {framedRetailPrice} from '../catalog/frame-pricing.mjs';
 import {printAssetUrl} from './print-asset-policy.mjs';
 import {quoteMattedOption} from './finerworks-matting.mjs';
 import {sameMat} from '../catalog/matting.mjs';
-import {quoteFramedOption} from './finerworks-framing.mjs';
+import {quoteFramedSelections} from './finerworks-framing.mjs';
 import {sameFrame} from '../catalog/framing.mjs';
 import {EDITION_LAYOUT} from '../catalog/edition-layout.mjs';
 // No order creation, payment, email or Shippo calls. Wholesale totals remain server-side.
@@ -83,9 +83,14 @@ export async function quoteFinerWorksPrints(env,items,address) {
   if(env.PRINT_PROVIDER!=='finerworks')throw Error('FinerWorks is not the selected print provider');
   const po=`va-quote-${crypto.randomUUID()}`,products=groupPrintProducts(items,po),recipient=finerworksRecipient(address,po);
   const materials=await finerworksMaterials(env);
+  const framedItems=items.filter(item=>item.frame);
+  const framedGroups=framedItems.length?await quoteFramedSelections(env,materials,framedItems.map(item=>({
+    option:{id:item.id,amount:item.unframedAmount,image:item.imageSize,paper:{...item.paperSize,sku:item.baseSku},sizeBasis:item.sizeBasis},frameKeys:[item.frame.key]
+  }))):[];
+  const framedQuotes=new Map(framedItems.map((item,index)=>[item.id,framedGroups[index][0]]));
   for(const item of items) {
     if(item.frame){
-      const quoted=await quoteFramedOption(env,materials,{id:item.id,amount:item.unframedAmount,image:item.imageSize,paper:{...item.paperSize,sku:item.baseSku},sizeBasis:item.sizeBasis},item.frame.key);
+      const quoted=framedQuotes.get(item.id);
       if(quoted.sku!==item.sku||!sameMat(quoted.mat,item.mat)||!sameFrame(quoted.frame,item.frame))throw Error('FinerWorks frame or product configuration changed; review before checkout');
       continue;
     }
@@ -128,3 +133,4 @@ export async function validateFinerWorksPrintOrder(env,items,address,quote) {
   if(data.status?.success!==true||Array.isArray(data.orders)&&data.orders.length)throw Error('FinerWorks preflight did not confirm validation-only success');
   return {provider:'finerworks',validationOnly:true,testMode:true,validated:true,ordersSubmitted:false};
 }
+
