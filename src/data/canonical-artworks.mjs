@@ -32,7 +32,7 @@ export const canonicalArtwork = {
   'book-art-f56007f6a7d6ee955caf': 'painting-golden-coast', // Sunset in the Strait of Juan de Fuca, Patos Island 1
   'book-art-29b3572972c367d351d1': 'painting-festival-portrait', // The Bounty of Satoshi: Wonder
   'book-art-ea6e156a9a533d06f198': 'grandpa-howard', // Grandpa Howard
-  'book-art-82127d1886ae57d5cb6e': 'painting-portrait-with-scarf', // Father Paul
+  'book-art-82127d1886ae57d5cb6e': 'archived-painting-img-1608', // Father Paul -> My Dad, Paul Murphy (Oct 2026: same painting, better photo)
 };
 // Extra works shown in a book-gallery section (catalog ids or book-art ids).
 export const sectionAdditions = {
