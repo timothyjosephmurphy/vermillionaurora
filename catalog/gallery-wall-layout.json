@@ -1,7 +1,7 @@
 {
   "unit": "in",
-  "width": 299.84,
-  "height": 160.53,
+  "width": 299.9,
+  "height": 147.29,
   "gap": 2.6,
   "artworks": [
     {
@@ -15,91 +15,91 @@
       "id": "archived-painting-217",
       "width": 12.66,
       "height": 29.33,
-      "x": 21.11,
+      "x": 21.1146,
       "y": 0
     },
     {
       "id": "archived-painting-354",
       "width": 22.81,
       "height": 29.31,
-      "x": 36.37,
+      "x": 36.3792,
       "y": 0
     },
     {
       "id": "archived-painting-249",
       "width": 17.85,
       "height": 29.01,
-      "x": 61.78,
+      "x": 61.7938,
       "y": 0
     },
     {
       "id": "archived-painting-246",
       "width": 18.51,
       "height": 28.87,
-      "x": 82.23,
+      "x": 82.2485,
       "y": 0
     },
     {
       "id": "warszawska-syrenka",
       "width": 21.62,
       "height": 28.74,
-      "x": 103.34,
+      "x": 103.3631,
       "y": 0
     },
     {
       "id": "painting-red-horizon",
       "width": 17.39,
       "height": 28.7,
-      "x": 127.56,
+      "x": 127.5877,
       "y": 0
     },
     {
       "id": "archived-painting-248",
       "width": 19.01,
       "height": 28.62,
-      "x": 147.55,
+      "x": 147.5823,
       "y": 0
     },
     {
       "id": "el-zonte-at-sunrise",
       "width": 17,
       "height": 28.61,
-      "x": 169.16,
+      "x": 169.1969,
       "y": 0
     },
     {
       "id": "archived-painting-73",
       "width": 19.58,
       "height": 28.36,
-      "x": 188.76,
+      "x": 188.8015,
       "y": 0
     },
     {
       "id": "archived-painting-247",
       "width": 20.01,
       "height": 28.13,
-      "x": 210.94,
+      "x": 210.9862,
       "y": 0
     },
     {
       "id": "honeybadger-and-cub-with-genesis-block",
       "width": 21.06,
       "height": 27.94,
-      "x": 233.55,
+      "x": 233.6008,
       "y": 0
     },
     {
       "id": "archived-painting-133",
       "width": 18.57,
       "height": 27.79,
-      "x": 257.21,
+      "x": 257.2654,
       "y": 0
     },
     {
       "id": "sunrise-in-el-zonte-large",
       "width": 21.46,
       "height": 27.7,
-      "x": 278.38,
+      "x": 278.44,
       "y": 0
     },
     {
@@ -113,442 +113,435 @@
       "id": "archived-painting-img-1608",
       "width": 17.04,
       "height": 26.48,
-      "x": 24.7225,
+      "x": 24.485,
       "y": 33.19
     },
     {
       "id": "archived-painting-62",
       "width": 23.76,
       "height": 25.78,
-      "x": 45.475,
+      "x": 45,
       "y": 33.19
     },
     {
       "id": "archived-painting-img-1612",
       "width": 16.59,
       "height": 25.78,
-      "x": 72.9475,
+      "x": 72.235,
       "y": 33.19
     },
     {
       "id": "archived-painting-90",
       "width": 16.83,
       "height": 25.73,
-      "x": 93.25,
+      "x": 92.3,
       "y": 33.19
     },
     {
       "id": "archived-painting-436",
       "width": 16.16,
       "height": 25.18,
-      "x": 113.7925,
+      "x": 112.605,
       "y": 33.19
     },
     {
       "id": "archived-painting-301",
       "width": 23.74,
       "height": 25.13,
-      "x": 133.665,
+      "x": 132.24,
       "y": 33.19
     },
     {
       "id": "archived-painting-75",
       "width": 18.58,
       "height": 24.9,
-      "x": 161.1175,
+      "x": 159.455,
       "y": 33.19
     },
     {
       "id": "archived-painting-193",
       "width": 22.77,
       "height": 24.42,
-      "x": 183.41,
+      "x": 181.51,
       "y": 33.19
     },
     {
       "id": "archived-painting-76",
       "width": 19.11,
       "height": 24.32,
-      "x": 209.8925,
+      "x": 207.755,
       "y": 33.19
     },
     {
       "id": "painting-moonlit-water",
       "width": 14.45,
       "height": 24.2,
-      "x": 232.715,
+      "x": 230.34,
       "y": 33.19
     },
     {
       "id": "archived-painting-241",
       "width": 29.57,
       "height": 23.72,
-      "x": 250.8775,
-      "y": 33.19
-    },
-    {
-      "id": "painting-portrait-with-scarf",
-      "width": 15.68,
-      "height": 23.68,
-      "x": 284.16,
+      "x": 248.265,
       "y": 33.19
     },
     {
       "id": "archived-painting-308",
       "width": 18.59,
       "height": 22.92,
-      "x": 0,
-      "y": 63.11
+      "x": 281.31,
+      "y": 33.19
     },
     {
       "id": "archived-painting-66",
       "width": 25.96,
       "height": 22.25,
-      "x": 22.2925,
+      "x": 0,
       "y": 63.11
     },
     {
       "id": "archived-painting-307",
       "width": 27.78,
       "height": 22.06,
-      "x": 51.955,
+      "x": 29.8225,
       "y": 63.11
     },
     {
       "id": "archived-painting-366",
       "width": 17.17,
       "height": 22.05,
-      "x": 83.4375,
+      "x": 61.465,
       "y": 63.11
     },
     {
       "id": "archived-painting-226",
       "width": 29.11,
       "height": 21.95,
-      "x": 104.31,
+      "x": 82.4975,
       "y": 63.11
     },
     {
       "id": "archived-painting-375",
       "width": 17.76,
       "height": 21.93,
-      "x": 137.1225,
+      "x": 115.47,
       "y": 63.11
     },
     {
       "id": "archived-painting-367",
       "width": 17.02,
       "height": 21.52,
-      "x": 158.585,
+      "x": 137.0925,
       "y": 63.11
     },
     {
       "id": "archived-painting-390",
       "width": 16.82,
       "height": 21.51,
-      "x": 179.3075,
+      "x": 157.975,
       "y": 63.11
     },
     {
       "id": "archived-painting-373",
       "width": 16.94,
       "height": 21.47,
-      "x": 199.83,
+      "x": 178.6575,
       "y": 63.11
     },
     {
       "id": "archived-painting-386",
       "width": 17,
       "height": 21.36,
-      "x": 220.4725,
+      "x": 199.46,
       "y": 63.11
     },
     {
       "id": "archived-painting-363",
       "width": 16.97,
       "height": 21.34,
-      "x": 241.175,
+      "x": 220.3225,
       "y": 63.11
     },
     {
       "id": "archived-painting-368",
       "width": 17.25,
       "height": 21.28,
-      "x": 261.8475,
+      "x": 241.155,
       "y": 63.11
     },
     {
       "id": "archived-painting-389",
       "width": 17.04,
       "height": 21.16,
-      "x": 282.8,
+      "x": 262.2675,
       "y": 63.11
     },
     {
       "id": "archived-painting-385",
       "width": 16.73,
       "height": 21.01,
-      "x": 0,
-      "y": 88.63
+      "x": 283.17,
+      "y": 63.11
     },
     {
       "id": "archived-painting-233",
       "width": 16.38,
       "height": 21.01,
-      "x": 19.7527,
-      "y": 88.63
+      "x": 0,
+      "y": 87.96
     },
     {
       "id": "archived-painting-387",
       "width": 16.58,
       "height": 20.68,
-      "x": 39.1555,
-      "y": 88.63
+      "x": 18.98,
+      "y": 87.96
     },
     {
       "id": "cormorant-presiding-over-sunset-on-puget-sound",
       "width": 27.62,
       "height": 20.08,
-      "x": 58.7582,
-      "y": 88.63
+      "x": 38.16,
+      "y": 87.96
     },
     {
       "id": "archived-painting-img-1555",
       "width": 23.59,
       "height": 20.02,
-      "x": 89.4009,
-      "y": 88.63
+      "x": 68.38,
+      "y": 87.96
     },
     {
       "id": "painting-portrait-in-blue-light",
       "width": 17.01,
       "height": 18.61,
-      "x": 116.0136,
-      "y": 88.63
+      "x": 94.57,
+      "y": 87.96
     },
     {
       "id": "archived-painting-370",
       "width": 22.97,
       "height": 18.51,
-      "x": 136.0464,
-      "y": 88.63
+      "x": 114.18,
+      "y": 87.96
     },
     {
       "id": "archived-painting-362",
       "width": 22.46,
       "height": 17.45,
-      "x": 162.0391,
-      "y": 88.63
+      "x": 139.75,
+      "y": 87.96
     },
     {
       "id": "archived-painting-369",
       "width": 21.91,
       "height": 17.25,
-      "x": 187.5218,
-      "y": 88.63
+      "x": 164.81,
+      "y": 87.96
     },
     {
       "id": "archived-painting-19",
       "width": 29.79,
       "height": 17.21,
-      "x": 212.4545,
-      "y": 88.63
+      "x": 189.32,
+      "y": 87.96
     },
     {
       "id": "archived-painting-412",
       "width": 21.88,
       "height": 17.21,
-      "x": 245.2673,
-      "y": 88.63
+      "x": 221.71,
+      "y": 87.96
     },
     {
       "id": "archived-painting-20",
       "width": 29.67,
       "height": 17.2,
-      "x": 270.17,
-      "y": 88.63
+      "x": 246.19,
+      "y": 87.96
     },
     {
       "id": "archived-painting-364",
       "width": 21.44,
       "height": 17.09,
-      "x": 0,
-      "y": 112.24
+      "x": 278.46,
+      "y": 87.96
     },
     {
       "id": "painting-shoreline-at-dusk",
       "width": 30.49,
       "height": 17.06,
-      "x": 25.19,
-      "y": 112.24
+      "x": 0,
+      "y": 111.57
     },
     {
       "id": "archived-painting-18",
       "width": 29.51,
       "height": 17.04,
-      "x": 59.43,
-      "y": 112.24
+      "x": 33.5767,
+      "y": 111.57
     },
     {
       "id": "el-zonte-before-dawn",
       "width": 30.15,
       "height": 17.01,
-      "x": 92.69,
-      "y": 112.24
+      "x": 66.1733,
+      "y": 111.57
     },
     {
       "id": "archived-painting-438",
       "width": 26.35,
       "height": 16.93,
-      "x": 126.59,
-      "y": 112.24
+      "x": 99.41,
+      "y": 111.57
     },
     {
       "id": "archived-painting-371",
       "width": 21.06,
       "height": 16.78,
-      "x": 156.69,
-      "y": 112.24
+      "x": 128.8467,
+      "y": 111.57
     },
     {
       "id": "archived-painting-416",
       "width": 26.21,
       "height": 16.72,
-      "x": 181.5,
-      "y": 112.24
+      "x": 152.9933,
+      "y": 111.57
     },
     {
       "id": "archived-painting-437",
       "width": 26.07,
       "height": 16.52,
-      "x": 211.46,
-      "y": 112.24
+      "x": 182.29,
+      "y": 111.57
     },
     {
       "id": "archived-painting-433",
       "width": 26.1,
       "height": 16.42,
-      "x": 241.28,
-      "y": 112.24
+      "x": 211.4467,
+      "y": 111.57
     },
     {
       "id": "archived-painting-15",
       "width": 28.71,
       "height": 16.28,
-      "x": 271.13,
-      "y": 112.24
+      "x": 240.6333,
+      "y": 111.57
     },
     {
       "id": "hope-the-vermillion-aurora",
       "width": 27.47,
       "height": 16.24,
-      "x": 0,
-      "y": 131.93
+      "x": 272.43,
+      "y": 111.57
     },
     {
       "id": "painting-portrait-in-green",
       "width": 14.22,
       "height": 16.06,
-      "x": 31.9792,
-      "y": 131.93
+      "x": 0,
+      "y": 131.23
     },
     {
       "id": "archived-painting-22",
       "width": 27.95,
       "height": 16.02,
-      "x": 50.7085,
-      "y": 131.93
+      "x": 18.1643,
+      "y": 131.27
     },
     {
       "id": "painting-guitarist",
       "width": 13.85,
       "height": 15.16,
-      "x": 83.1677,
-      "y": 131.93
+      "x": 50.0586,
+      "y": 132.13
     },
     {
       "id": "painting-golden-coast",
       "width": 9.94,
       "height": 14.22,
-      "x": 101.5269,
-      "y": 131.93
+      "x": 67.8529,
+      "y": 133.07
     },
     {
       "id": "painting-couple-in-color",
       "width": 18.86,
       "height": 14.13,
-      "x": 115.9762,
-      "y": 131.93
+      "x": 81.7371,
+      "y": 133.16
     },
     {
       "id": "painting-phoenix-rising",
       "width": 9.77,
       "height": 14.12,
-      "x": 139.3454,
-      "y": 131.93
+      "x": 104.5414,
+      "y": 133.17
     },
     {
       "id": "painting-festival-portrait",
       "width": 9.76,
       "height": 14.12,
-      "x": 153.6246,
-      "y": 131.93
+      "x": 118.2557,
+      "y": 133.17
     },
     {
       "id": "painting-portrait-in-gold",
       "width": 13.14,
       "height": 13.79,
-      "x": 167.8938,
-      "y": 131.93
+      "x": 131.96,
+      "y": 133.5
     },
     {
       "id": "painting-figures-in-wheatfield",
       "width": 9.76,
       "height": 12.55,
-      "x": 185.5431,
-      "y": 131.93
+      "x": 149.0443,
+      "y": 134.74
     },
     {
       "id": "painting-portrait-with-hat",
       "width": 30.49,
       "height": 12.12,
-      "x": 199.8123,
-      "y": 131.93
+      "x": 162.7486,
+      "y": 135.17
     },
     {
       "id": "painting-sunflower-woman",
       "width": 16.06,
       "height": 11.03,
-      "x": 234.8115,
-      "y": 131.93
+      "x": 197.1829,
+      "y": 136.26
     },
     {
       "id": "archived-painting-2",
       "width": 19.98,
       "height": 9.76,
-      "x": 255.3808,
-      "y": 131.93
+      "x": 217.1871,
+      "y": 137.53
     },
     {
       "id": "archived-painting-1",
       "width": 19.97,
       "height": 9.76,
-      "x": 279.87,
-      "y": 131.93
+      "x": 241.1114,
+      "y": 137.53
     },
     {
       "id": "archived-painting-4",
       "width": 19.77,
       "height": 9.76,
-      "x": 0,
-      "y": 150.77
+      "x": 265.0257,
+      "y": 137.53
     },
     {
       "id": "painting-sunset-silhouette",
       "width": 11.16,
       "height": 9.76,
-      "x": 288.68,
-      "y": 150.77
+      "x": 288.74,
+      "y": 137.53
     }
   ]
 }

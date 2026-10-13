@@ -109,7 +109,8 @@ test('renamed product pages: one-hop 301 from the legacy domain, _redirects on t
   const prints=JSON.parse(fs.readFileSync('catalog/prints.json','utf8')).artworks;
   const checkoutSlugs=fs.readFileSync('cloudflare/wrangler.jsonc','utf8');
   const redirects=fs.readFileSync('static/_redirects','utf8');
-  const ids=new Set(products.map(p=>p.id));
+  const archiveIds=JSON.parse(fs.readFileSync('catalog/archive-paintings.json','utf8')).paintings.map(p=>p.id);
+  const ids=new Set([...products.map(p=>p.id),...archiveIds]);
   assert.ok(Object.keys(PRODUCT_RENAMES).length>0);
   for(const [old,next] of Object.entries(PRODUCT_RENAMES)){
     assert.ok(ids.has(next),`${next} is a product`);

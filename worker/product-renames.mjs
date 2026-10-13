@@ -18,7 +18,8 @@ export const PRODUCT_RENAMES = Object.freeze({
   "daniel-being-reprimanded-in-vietnam": "daniel-portrait-1",
   "sunset-from-atami-el-salvador": "sunset-in-el-tunco-el-salvador",
   "ukrainian-woman-with-flower-crown": "girl-wearing-flower-crown",
-  "rice-paddy-in-vietnam": "rice-paddies-in-vietnam"
+  "rice-paddy-in-vietnam": "rice-paddies-in-vietnam",
+  "painting-portrait-with-scarf": "archived-painting-img-1608" // Father Paul merged into My Dad, Paul Murphy (same painting, better photo)
 });
 
 // Book scans merged into their catalog painting (src/data/canonical-artworks.mjs) also go straight to it.

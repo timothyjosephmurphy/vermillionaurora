@@ -19,11 +19,13 @@ test('gallery rows and shared cards use the catalog and preserve collection orde
   const price=id=>Number(byId[id].listing?.price?.amount)||null;
   const available=collections.home.filter(e=>e.variant==='carousel'&&['available','inquiry'].includes(byId[e.product].listing?.status)).map(e=>e.product)
    .sort((a,b)=>(price(a)===null)-(price(b)===null)||(price(b)??0)-(price(a)??0)||(price(a)===null?(lowestPrintPrice(byId[a])??Infinity)-(lowestPrintPrice(byId[b])??Infinity):0)||byId[a].title.localeCompare(byId[b].title,'en'));
+  // Manual override after the price sort: Painting #436 sits directly before Painting #433.
+  for(const [move,before] of [['archived-painting-436','archived-painting-433']]){const i=available.indexOf(move);if(i<0||!available.includes(before))continue;available.splice(i,1);available.splice(available.indexOf(before),0,move);}
   // Collector's Items: no item limit, every qualifying painting in collection order.
   const collectors=collections.home.filter(e=>e.variant==='carousel'&&!['available','inquiry'].includes(byId[e.product].listing?.status)).map(e=>e.product);
   assert.deepEqual($('.available-paintings-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),available);
   assert.deepEqual($('.collector-items-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get(),collectors);
-  const prices=$('.available-paintings-carousel [data-product-id]').map((i,e)=>price($(e).attr('data-product-id'))).get().filter(Boolean);
+  const prices=$('.available-paintings-carousel [data-product-id]').map((i,e)=>$(e).attr('data-product-id')).get().filter(id=>id!=='archived-painting-436').map(price).filter(Boolean);
   assert.deepEqual(prices,[...prices].sort((a,b)=>b-a),'featured works sorted by original price, highest first');
   assert.equal($('.available-paintings-carousel [data-product-id]').length+collectors.length,expected.length);
   assert.equal($('.collector-archive-link').length,0);
@@ -78,7 +80,7 @@ test('dimensioned available paintings receive parcels from the flat-at-12-inch r
  assert.deepEqual(missing.map(p=>p.id).sort(),['archived-painting-1','archived-painting-2','archived-painting-307','archived-painting-img-1555']);
  for(const p of missing){assert.equal(p.checkout.mode,'inquiry');assert(!checkout[p.id],'Unmeasured originals must not receive an invented shipping parcel');}
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,68); // 56 existing originals and 12 archive originals with recorded dimensions
+ assert.equal(ready.length,67); // 56 existing originals and 11 archive originals (img-1608 original withdrawn) with recorded dimensions
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
