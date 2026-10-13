@@ -65,7 +65,8 @@ for(const engine of [chromium,webkit]){
     for(const r of rects){assert.equal(r.fit,'contain');assert.notEqual(r.overflow,'hidden');}
     for(let i=0;i<rects.length;i++)for(let j=i+1;j<rects.length;j++){const a=rects[i],b=rects[j];assert(a.x+a.width<=b.x+.1||b.x+b.width<=a.x+.1||a.y+a.height<=b.y+.1||b.y+b.height<=a.y+.1);}
     await page.screenshot({path:`/tmp/gallery-wall-${engine.name()}-overview.png`,fullPage:true});
-    const art=wallArtworks.find(a=>a.id==='meditation-at-denny-blaine');
+    // This outer-row portrait leaves empty wall for the full-frame details pane and a visible neighbor for gesture checks.
+    const art=wallArtworks.find(a=>a.id==='archived-painting-img-1608');
     await focus(art);await assertWholeFrame(art);assert.equal(await page.locator('[data-wall-product]').getAttribute('href'),art.href);
     await page.waitForFunction(()=>!document.querySelector('[data-wall-buy]').disabled);
     assert.equal(await page.locator('[data-wall-price]').textContent(),`$${Number(art.price).toFixed(2)}`);
