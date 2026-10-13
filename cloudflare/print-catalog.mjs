@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="43efbd9444a275c18db4";
+export const printVersion="132f8f43098a5ba63185";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -788,29 +788,29 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Large print",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "50.00",
+    "amount": "135.00",
     "currency": "USD",
-    "sku": "5M144M8S8.58X12.82",
+    "sku": "5M144M8S16.3X23.18",
     "scale": 1,
     "imageSize": {
-      "width": 8.3267,
-      "height": 12.5633,
+      "width": 16.0467,
+      "height": 22.9233,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.58,
-      "height": 12.82,
+      "width": 16.3,
+      "height": 23.18,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2.jpg",
-    "assetSha256": "95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e.jpg",
+    "assetSha256": "168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e",
+    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
       "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
       "caption": "Honeybadger and Cub with Genesis Block"
     },
@@ -818,228 +818,6 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-full-frame-black": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Large print — Black frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "102.00",
-    "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD82F1S11DD58X15DD82J1S8DD58X12DD82G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 8.3267,
-      "height": 12.5633,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 8.58,
-      "height": 12.82,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2.jpg",
-    "assetSha256": "95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 11.58,
-        "height": 15.82,
-        "unit": "in"
-      },
-      "window": {
-        "width": 8.58,
-        "height": 12.82,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S8.58X12.82",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 11.58,
-        "height": 15.82,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-full-frame-white": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Large print — White frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "102.00",
-    "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD82F2S11DD58X15DD82J1S8DD58X12DD82G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 8.3267,
-      "height": 12.5633,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 8.58,
-      "height": 12.82,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2.jpg",
-    "assetSha256": "95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 11.58,
-        "height": 15.82,
-        "unit": "in"
-      },
-      "window": {
-        "width": 8.58,
-        "height": 12.82,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S8.58X12.82",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 11.58,
-        "height": 15.82,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-full-frame-natural": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Large print — Natural wood frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "114.00",
-    "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD82F7S11DD58X15DD82J1S8DD58X12DD82G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 8.3267,
-      "height": 12.5633,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 8.58,
-      "height": 12.82,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2.jpg",
-    "assetSha256": "95e54b73f3de0264768c5d72e6fdb8a8d6cff20712f8e9802cea4c6bc00783c2",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 11.58,
-        "height": 15.82,
-        "unit": "in"
-      },
-      "window": {
-        "width": 8.58,
-        "height": 12.82,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S8.58X12.82",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 11.58,
-        "height": 15.82,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
   },
   "print-honeybadger-and-cub-with-genesis-block-medium": {
     "id": "print-honeybadger-and-cub-with-genesis-block-medium",
@@ -1048,29 +826,29 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Medium print",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "35.00",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S6.5X9.68",
+    "sku": "5M144M8S12.29X17.45",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.2467,
-      "height": 9.4233,
+      "width": 12.0367,
+      "height": 17.1967,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.5,
-      "height": 9.68,
+      "width": 12.29,
+      "height": 17.45,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509.jpg",
-    "assetSha256": "354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51.jpg",
+    "assetSha256": "78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51",
+    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
       "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
       "caption": "Honeybadger and Cub with Genesis Block"
     },
@@ -1078,228 +856,6 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-medium-frame-black": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-medium-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Medium print — Black frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "74.00",
-    "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD68F1S9DD5X12DD68J1S6DD5X9DD68G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 6.2467,
-      "height": 9.4233,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 6.5,
-      "height": 9.68,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509.jpg",
-    "assetSha256": "354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 9.5,
-        "height": 12.68,
-        "unit": "in"
-      },
-      "window": {
-        "width": 6.5,
-        "height": 9.68,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S6.5X9.68",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 9.5,
-        "height": 12.68,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-medium-frame-white": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-medium-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Medium print — White frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "74.00",
-    "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD68F2S9DD5X12DD68J1S6DD5X9DD68G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 6.2467,
-      "height": 9.4233,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 6.5,
-      "height": 9.68,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509.jpg",
-    "assetSha256": "354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 9.5,
-        "height": 12.68,
-        "unit": "in"
-      },
-      "window": {
-        "width": 6.5,
-        "height": 9.68,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S6.5X9.68",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 9.5,
-        "height": 12.68,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-medium-frame-natural": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-medium-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Medium print — Natural wood frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "84.00",
-    "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD68F7S9DD5X12DD68J1S6DD5X9DD68G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 6.2467,
-      "height": 9.4233,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 6.5,
-      "height": 9.68,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509.jpg",
-    "assetSha256": "354905f96f848e59e8ff1ca8881868c1c8355b8f4e1b58f09818f1f36c795509",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 9.5,
-        "height": 12.68,
-        "unit": "in"
-      },
-      "window": {
-        "width": 6.5,
-        "height": 9.68,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S6.5X9.68",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 9.5,
-        "height": 12.68,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
   },
   "print-honeybadger-and-cub-with-genesis-block-small": {
     "id": "print-honeybadger-and-cub-with-genesis-block-small",
@@ -1308,29 +864,29 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Small print",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "25.00",
+    "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S4.41X6.53",
+    "sku": "5M144M8S8.27X11.71",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.1567,
-      "height": 6.27,
+      "width": 8.0167,
+      "height": 11.4533,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.41,
-      "height": 6.53,
+      "width": 8.27,
+      "height": 11.71,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2.jpg",
-    "assetSha256": "719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff.jpg",
+    "assetSha256": "731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff",
+    "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
+      "src": "/gallery-images/honeybadger-and-cub-2026.jpg",
       "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
       "caption": "Honeybadger and Cub with Genesis Block"
     },
@@ -1338,228 +894,6 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-small-frame-black": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-small-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Small print — Black frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "59.63",
-    "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD53F1S8DD01X10DD13J1S4DD41X6DD53G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 4.1567,
-      "height": 6.27,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 4.41,
-      "height": 6.53,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2.jpg",
-    "assetSha256": "719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 8.01,
-        "height": 10.13,
-        "unit": "in"
-      },
-      "window": {
-        "width": 4.41,
-        "height": 6.53,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S4.41X6.53",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 8.01,
-        "height": 10.13,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "25.00"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-small-frame-white": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-small-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Small print — White frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "59.63",
-    "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD53F2S8DD01X10DD13J1S4DD41X6DD53G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 4.1567,
-      "height": 6.27,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 4.41,
-      "height": 6.53,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2.jpg",
-    "assetSha256": "719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 8.01,
-        "height": 10.13,
-        "unit": "in"
-      },
-      "window": {
-        "width": 4.41,
-        "height": 6.53,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S4.41X6.53",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 8.01,
-        "height": 10.13,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "25.00"
-  },
-  "print-honeybadger-and-cub-with-genesis-block-small-frame-natural": {
-    "id": "print-honeybadger-and-cub-with-genesis-block-small-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "honeybadger-and-cub-with-genesis-block",
-    "title": "Honeybadger and Cub with Genesis Block — Small print — Natural wood frame",
-    "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "68.63",
-    "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD53F7S8DD01X10DD13J1S4DD41X6DD53G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 4.1567,
-      "height": 6.27,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 4.41,
-      "height": 6.53,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2.jpg",
-    "assetSha256": "719a05015e2a2290cee6f106b25d6e9211fa89e06a0165a22de93696b2ca9eb2",
-    "sourceSha256": "3c59197bad10d29deeb31b058dbf602d2f9b2bea70bdb8b6a15220f6adfe4dc8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/honeybadger-and-cub.jpeg",
-      "alt": "Honeybadger and Cub with Genesis Block by TJ Murphy",
-      "caption": "Honeybadger and Cub with Genesis Block"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 8.01,
-        "height": 10.13,
-        "unit": "in"
-      },
-      "window": {
-        "width": 4.41,
-        "height": 6.53,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S4.41X6.53",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 8.01,
-        "height": 10.13,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "25.00"
   },
   "print-painting-couple-in-color-full": {
     "id": "print-painting-couple-in-color-full",
@@ -7288,29 +6622,29 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Large print",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "30.00",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S9.31X4",
+    "sku": "5M144M8S19.65X7.36",
     "scale": 1,
     "imageSize": {
-      "width": 9.0567,
-      "height": 2.55,
+      "width": 19.3833,
+      "height": 7.1067,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.31,
-      "height": 4,
+      "width": 19.65,
+      "height": 7.36,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe.jpg",
-    "assetSha256": "d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe",
-    "sourceSha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd.jpg",
+    "assetSha256": "3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd",
+    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/portrait-with-hat.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -7319,227 +6653,43 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
-  "print-painting-portrait-with-hat-full-frame-black": {
-    "id": "print-painting-portrait-with-hat-full-frame-black",
+  "print-painting-portrait-with-hat-medium": {
+    "id": "print-painting-portrait-with-hat-medium",
     "type": "print",
     "provider": "finerworks",
     "productId": "painting-portrait-with-hat",
-    "title": "Sunrise on Rainier with Eagle — Large print — Black frame",
+    "title": "Sunrise on Rainier with Eagle — Medium print",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "68.63",
+    "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD31X4F1S13DD31X8J1S9DD31X4G1",
-    "scale": 1,
+    "sku": "5M144M8S14.8X5.58",
+    "scale": 0.75,
     "imageSize": {
-      "width": 9.0567,
-      "height": 2.55,
+      "width": 14.5267,
+      "height": 5.3267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.31,
-      "height": 4,
+      "width": 14.8,
+      "height": 5.58,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe.jpg",
-    "assetSha256": "d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe",
-    "sourceSha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d.jpg",
+    "assetSha256": "b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d",
+    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/portrait-with-hat.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
     "attributes": {},
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 13.31,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 9.31,
-        "height": 4,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S9.31X4",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 13.31,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "30.00"
-  },
-  "print-painting-portrait-with-hat-full-frame-white": {
-    "id": "print-painting-portrait-with-hat-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "painting-portrait-with-hat",
-    "title": "Sunrise on Rainier with Eagle — Large print — White frame",
-    "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "68.63",
-    "currency": "USD",
-    "sku": "5M144M8S9DD31X4F2S13DD31X8J1S9DD31X4G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 9.0567,
-      "height": 2.55,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 9.31,
-      "height": 4,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe.jpg",
-    "assetSha256": "d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe",
-    "sourceSha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/portrait-with-hat.jpg",
-      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
-      "caption": ""
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 13.31,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 9.31,
-        "height": 4,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S9.31X4",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 13.31,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "30.00"
-  },
-  "print-painting-portrait-with-hat-full-frame-natural": {
-    "id": "print-painting-portrait-with-hat-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "painting-portrait-with-hat",
-    "title": "Sunrise on Rainier with Eagle — Large print — Natural wood frame",
-    "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "77.63",
-    "currency": "USD",
-    "sku": "5M144M8S9DD31X4F7S13DD31X8J1S9DD31X4G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 9.0567,
-      "height": 2.55,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 9.31,
-      "height": 4,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe.jpg",
-    "assetSha256": "d5fdec0214c9399dc1d6fdad537d4d3d698cc03c1c826aa8825dabcaa9847fbe",
-    "sourceSha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/portrait-with-hat.jpg",
-      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
-      "caption": ""
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 13.31,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 9.31,
-        "height": 4,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S9.31X4",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 13.31,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "30.00"
+    "sizeBasis": "image-proportional"
   },
   "print-painting-portrait-with-scarf-full": {
     "id": "print-painting-portrait-with-scarf-full",
@@ -42908,29 +42058,29 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Large print",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "50.00",
+    "amount": "135.00",
     "currency": "USD",
-    "sku": "5M144M8S8.58X12.99",
+    "sku": "5M144M8S16.86X23.98",
     "scale": 1,
     "imageSize": {
-      "width": 8.3267,
-      "height": 12.7367,
+      "width": 16.6067,
+      "height": 23.7233,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.58,
-      "height": 12.99,
+      "width": 16.86,
+      "height": 23.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf.jpg",
-    "assetSha256": "10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3c47ade0a9a8da4345943dede294a28971ea0d2611b6baf1c9b5a6eb01e9f287.jpg",
+    "assetSha256": "3c47ade0a9a8da4345943dede294a28971ea0d2611b6baf1c9b5a6eb01e9f287",
+    "sourceSha256": "6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "src": "/gallery-images/warszawska-syrenka-2026.jpg",
       "alt": "Warszawska Syrenka by TJ Murphy",
       "caption": "Warszawska Syrenka"
     },
@@ -42938,228 +42088,6 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
-  },
-  "print-warszawska-syrenka-full-frame-black": {
-    "id": "print-warszawska-syrenka-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "warszawska-syrenka",
-    "title": "Warszawska Syrenka — Large print — Black frame",
-    "artworkTitle": "Warszawska Syrenka",
-    "amount": "102.00",
-    "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD99F1S11DD58X15DD99J1S8DD58X12DD99G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 8.3267,
-      "height": 12.7367,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 8.58,
-      "height": 12.99,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf.jpg",
-    "assetSha256": "10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
-      "alt": "Warszawska Syrenka by TJ Murphy",
-      "caption": "Warszawska Syrenka"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 11.58,
-        "height": 15.99,
-        "unit": "in"
-      },
-      "window": {
-        "width": 8.58,
-        "height": 12.99,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S8.58X12.99",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 11.58,
-        "height": 15.99,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
-  },
-  "print-warszawska-syrenka-full-frame-white": {
-    "id": "print-warszawska-syrenka-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "warszawska-syrenka",
-    "title": "Warszawska Syrenka — Large print — White frame",
-    "artworkTitle": "Warszawska Syrenka",
-    "amount": "102.00",
-    "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD99F2S11DD58X15DD99J1S8DD58X12DD99G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 8.3267,
-      "height": 12.7367,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 8.58,
-      "height": 12.99,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf.jpg",
-    "assetSha256": "10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
-      "alt": "Warszawska Syrenka by TJ Murphy",
-      "caption": "Warszawska Syrenka"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 11.58,
-        "height": 15.99,
-        "unit": "in"
-      },
-      "window": {
-        "width": 8.58,
-        "height": 12.99,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S8.58X12.99",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 11.58,
-        "height": 15.99,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
-  },
-  "print-warszawska-syrenka-full-frame-natural": {
-    "id": "print-warszawska-syrenka-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "warszawska-syrenka",
-    "title": "Warszawska Syrenka — Large print — Natural wood frame",
-    "artworkTitle": "Warszawska Syrenka",
-    "amount": "114.00",
-    "currency": "USD",
-    "sku": "5M144M8S8DD58X12DD99F7S11DD58X15DD99J1S8DD58X12DD99G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 8.3267,
-      "height": 12.7367,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 8.58,
-      "height": 12.99,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf.jpg",
-    "assetSha256": "10d72aecaa1d4b6016de96acb872702fc24eb36427fa0fe6ad545f260fd1ffdf",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
-      "alt": "Warszawska Syrenka by TJ Murphy",
-      "caption": "Warszawska Syrenka"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 11.58,
-        "height": 15.99,
-        "unit": "in"
-      },
-      "window": {
-        "width": 8.58,
-        "height": 12.99,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S8.58X12.99",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 11.58,
-        "height": 15.99,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
   },
   "print-warszawska-syrenka-medium": {
     "id": "print-warszawska-syrenka-medium",
@@ -43168,29 +42096,29 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Medium print",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "35.00",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S6.5X9.81",
+    "sku": "5M144M8S12.71X18.05",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.2467,
-      "height": 9.5533,
+      "width": 12.4567,
+      "height": 17.7967,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.5,
-      "height": 9.81,
+      "width": 12.71,
+      "height": 18.05,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e.jpg",
-    "assetSha256": "c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/55b678125cfa379c12c206da9ec29deb4799c7fe18739df25e1fae9b3b253169.jpg",
+    "assetSha256": "55b678125cfa379c12c206da9ec29deb4799c7fe18739df25e1fae9b3b253169",
+    "sourceSha256": "6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "src": "/gallery-images/warszawska-syrenka-2026.jpg",
       "alt": "Warszawska Syrenka by TJ Murphy",
       "caption": "Warszawska Syrenka"
     },
@@ -43198,228 +42126,6 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
-  },
-  "print-warszawska-syrenka-medium-frame-black": {
-    "id": "print-warszawska-syrenka-medium-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "warszawska-syrenka",
-    "title": "Warszawska Syrenka — Medium print — Black frame",
-    "artworkTitle": "Warszawska Syrenka",
-    "amount": "75.00",
-    "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD81F1S9DD5X12DD81J1S6DD5X9DD81G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 6.2467,
-      "height": 9.5533,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 6.5,
-      "height": 9.81,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e.jpg",
-    "assetSha256": "c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
-      "alt": "Warszawska Syrenka by TJ Murphy",
-      "caption": "Warszawska Syrenka"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 9.5,
-        "height": 12.81,
-        "unit": "in"
-      },
-      "window": {
-        "width": 6.5,
-        "height": 9.81,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S6.5X9.81",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 9.5,
-        "height": 12.81,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
-  },
-  "print-warszawska-syrenka-medium-frame-white": {
-    "id": "print-warszawska-syrenka-medium-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "warszawska-syrenka",
-    "title": "Warszawska Syrenka — Medium print — White frame",
-    "artworkTitle": "Warszawska Syrenka",
-    "amount": "75.00",
-    "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD81F2S9DD5X12DD81J1S6DD5X9DD81G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 6.2467,
-      "height": 9.5533,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 6.5,
-      "height": 9.81,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e.jpg",
-    "assetSha256": "c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
-      "alt": "Warszawska Syrenka by TJ Murphy",
-      "caption": "Warszawska Syrenka"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 9.5,
-        "height": 12.81,
-        "unit": "in"
-      },
-      "window": {
-        "width": 6.5,
-        "height": 9.81,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S6.5X9.81",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 9.5,
-        "height": 12.81,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
-  },
-  "print-warszawska-syrenka-medium-frame-natural": {
-    "id": "print-warszawska-syrenka-medium-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "warszawska-syrenka",
-    "title": "Warszawska Syrenka — Medium print — Natural wood frame",
-    "artworkTitle": "Warszawska Syrenka",
-    "amount": "85.00",
-    "currency": "USD",
-    "sku": "5M144M8S6DD5X9DD81F7S9DD5X12DD81J1S6DD5X9DD81G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 6.2467,
-      "height": 9.5533,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 6.5,
-      "height": 9.81,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e.jpg",
-    "assetSha256": "c07917935708db76cabb36fce1c791c5325b275fd88e6eca9554fc7550dc792e",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
-      "alt": "Warszawska Syrenka by TJ Murphy",
-      "caption": "Warszawska Syrenka"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 9.5,
-        "height": 12.81,
-        "unit": "in"
-      },
-      "window": {
-        "width": 6.5,
-        "height": 9.81,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S6.5X9.81",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 9.5,
-        "height": 12.81,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
   },
   "print-warszawska-syrenka-small": {
     "id": "print-warszawska-syrenka-small",
@@ -43428,29 +42134,29 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Small print",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "25.00",
+    "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S4.41X6.62",
+    "sku": "5M144M8S8.55X12.11",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.1567,
-      "height": 6.3567,
+      "width": 8.2967,
+      "height": 11.8533,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.41,
-      "height": 6.62,
+      "width": 8.55,
+      "height": 12.11,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7.jpg",
-    "assetSha256": "d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ad366bbc7a83f84ecdbb82f42f033f3914c8721485702e20e769c211fb3831df.jpg",
+    "assetSha256": "ad366bbc7a83f84ecdbb82f42f033f3914c8721485702e20e769c211fb3831df",
+    "sourceSha256": "6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
+      "src": "/gallery-images/warszawska-syrenka-2026.jpg",
       "alt": "Warszawska Syrenka by TJ Murphy",
       "caption": "Warszawska Syrenka"
     },
@@ -43458,228 +42164,6 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
-  },
-  "print-warszawska-syrenka-small-frame-black": {
-    "id": "print-warszawska-syrenka-small-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "warszawska-syrenka",
-    "title": "Warszawska Syrenka — Small print — Black frame",
-    "artworkTitle": "Warszawska Syrenka",
-    "amount": "60.63",
-    "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD62F1S8DD01X10DD22J1S4DD41X6DD62G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 4.1567,
-      "height": 6.3567,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 4.41,
-      "height": 6.62,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7.jpg",
-    "assetSha256": "d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
-      "alt": "Warszawska Syrenka by TJ Murphy",
-      "caption": "Warszawska Syrenka"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 8.01,
-        "height": 10.22,
-        "unit": "in"
-      },
-      "window": {
-        "width": 4.41,
-        "height": 6.62,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S4.41X6.62",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 8.01,
-        "height": 10.22,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "25.00"
-  },
-  "print-warszawska-syrenka-small-frame-white": {
-    "id": "print-warszawska-syrenka-small-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "warszawska-syrenka",
-    "title": "Warszawska Syrenka — Small print — White frame",
-    "artworkTitle": "Warszawska Syrenka",
-    "amount": "60.63",
-    "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD62F2S8DD01X10DD22J1S4DD41X6DD62G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 4.1567,
-      "height": 6.3567,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 4.41,
-      "height": 6.62,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7.jpg",
-    "assetSha256": "d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
-      "alt": "Warszawska Syrenka by TJ Murphy",
-      "caption": "Warszawska Syrenka"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 8.01,
-        "height": 10.22,
-        "unit": "in"
-      },
-      "window": {
-        "width": 4.41,
-        "height": 6.62,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S4.41X6.62",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 8.01,
-        "height": 10.22,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "25.00"
-  },
-  "print-warszawska-syrenka-small-frame-natural": {
-    "id": "print-warszawska-syrenka-small-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "warszawska-syrenka",
-    "title": "Warszawska Syrenka — Small print — Natural wood frame",
-    "artworkTitle": "Warszawska Syrenka",
-    "amount": "68.63",
-    "currency": "USD",
-    "sku": "5M144M8S4DD41X6DD62F7S8DD01X10DD22J1S4DD41X6DD62G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 4.1567,
-      "height": 6.3567,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 4.41,
-      "height": 6.62,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7.jpg",
-    "assetSha256": "d55f882238539b99db755846ae3ee8634db3e62d817548e1fbe4871d7bd213b7",
-    "sourceSha256": "8683f0899037079bdb2caea4966d46a82a189d3b40c4cf963021cbf19cd06ec7",
-    "layoutApproved": true,
-    "preview": {
-      "src": "/gallery-images/warszawska-syrenka.jpeg",
-      "alt": "Warszawska Syrenka by TJ Murphy",
-      "caption": "Warszawska Syrenka"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 8.01,
-        "height": 10.22,
-        "unit": "in"
-      },
-      "window": {
-        "width": 4.41,
-        "height": 6.62,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S4.41X6.62",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 8.01,
-        "height": 10.22,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "25.00"
   },
   "print-cormorant-presiding-over-sunset-on-puget-sound-full": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-full",
