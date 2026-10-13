@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="a9c93dc675a8560234ba";
+export const printVersion="c5acb6b8466327c68c0f";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -7288,29 +7288,29 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Large print",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "65.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S19.65X7.36",
+    "sku": "5M144M8S25.73X7.36",
     "scale": 1,
     "imageSize": {
-      "width": 19.3833,
+      "width": 25.45,
       "height": 7.1067,
       "unit": "in"
     },
     "paperSize": {
-      "width": 19.65,
+      "width": 25.73,
       "height": 7.36,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd.jpg",
-    "assetSha256": "3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd",
-    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092.jpg",
+    "assetSha256": "a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092",
+    "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -7326,29 +7326,29 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Large print — Black frame",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "128.00",
+    "amount": "160.00",
     "currency": "USD",
-    "sku": "5M144M8S19DD65X7DD36F1S22DD65X10DD36J1S19DD65X7DD36G1",
+    "sku": "5M144M8S25DD73X7DD36F1S28DD73X10DD36J1S25DD73X7DD36G1",
     "scale": 1,
     "imageSize": {
-      "width": 19.3833,
+      "width": 25.45,
       "height": 7.1067,
       "unit": "in"
     },
     "paperSize": {
-      "width": 19.65,
+      "width": 25.73,
       "height": 7.36,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd.jpg",
-    "assetSha256": "3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd",
-    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092.jpg",
+    "assetSha256": "a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092",
+    "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -7361,18 +7361,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 22.65,
+        "width": 28.73,
         "height": 10.36,
         "unit": "in"
       },
       "window": {
-        "width": 19.65,
+        "width": 25.73,
         "height": 7.36,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S19.65X7.36",
+    "baseSku": "5M144M8S25.73X7.36",
     "frame": {
       "key": "black",
       "id": 1,
@@ -7382,7 +7382,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 22.65,
+        "width": 28.73,
         "height": 10.36,
         "unit": "in"
       },
@@ -7391,7 +7391,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "65.00"
+    "unframedAmount": "85.00"
   },
   "print-painting-portrait-with-hat-full-frame-white": {
     "id": "print-painting-portrait-with-hat-full-frame-white",
@@ -7400,29 +7400,29 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Large print — White frame",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "128.00",
+    "amount": "160.00",
     "currency": "USD",
-    "sku": "5M144M8S19DD65X7DD36F2S22DD65X10DD36J1S19DD65X7DD36G1",
+    "sku": "5M144M8S25DD73X7DD36F2S28DD73X10DD36J1S25DD73X7DD36G1",
     "scale": 1,
     "imageSize": {
-      "width": 19.3833,
+      "width": 25.45,
       "height": 7.1067,
       "unit": "in"
     },
     "paperSize": {
-      "width": 19.65,
+      "width": 25.73,
       "height": 7.36,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd.jpg",
-    "assetSha256": "3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd",
-    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092.jpg",
+    "assetSha256": "a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092",
+    "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -7435,18 +7435,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 22.65,
+        "width": 28.73,
         "height": 10.36,
         "unit": "in"
       },
       "window": {
-        "width": 19.65,
+        "width": 25.73,
         "height": 7.36,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S19.65X7.36",
+    "baseSku": "5M144M8S25.73X7.36",
     "frame": {
       "key": "white",
       "id": 2,
@@ -7456,7 +7456,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 22.65,
+        "width": 28.73,
         "height": 10.36,
         "unit": "in"
       },
@@ -7465,7 +7465,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "65.00"
+    "unframedAmount": "85.00"
   },
   "print-painting-portrait-with-hat-full-frame-natural": {
     "id": "print-painting-portrait-with-hat-full-frame-natural",
@@ -7474,29 +7474,29 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Large print — Natural wood frame",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "142.00",
+    "amount": "177.00",
     "currency": "USD",
-    "sku": "5M144M8S19DD65X7DD36F7S22DD65X10DD36J1S19DD65X7DD36G1",
+    "sku": "5M144M8S25DD73X7DD36F7S28DD73X10DD36J1S25DD73X7DD36G1",
     "scale": 1,
     "imageSize": {
-      "width": 19.3833,
+      "width": 25.45,
       "height": 7.1067,
       "unit": "in"
     },
     "paperSize": {
-      "width": 19.65,
+      "width": 25.73,
       "height": 7.36,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd.jpg",
-    "assetSha256": "3c4c97c578b5f7bc1816b96f9d480ac3bacb201ca5698ac56057a36cd571f5dd",
-    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092.jpg",
+    "assetSha256": "a74554268ff8a7ec830c31bbcb271150e7e8063a97d1f4d24f41c85248cb7092",
+    "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -7509,18 +7509,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 22.65,
+        "width": 28.73,
         "height": 10.36,
         "unit": "in"
       },
       "window": {
-        "width": 19.65,
+        "width": 25.73,
         "height": 7.36,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S19.65X7.36",
+    "baseSku": "5M144M8S25.73X7.36",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -7530,7 +7530,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 22.65,
+        "width": 28.73,
         "height": 10.36,
         "unit": "in"
       },
@@ -7539,7 +7539,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "65.00"
+    "unframedAmount": "85.00"
   },
   "print-painting-portrait-with-hat-medium": {
     "id": "print-painting-portrait-with-hat-medium",
@@ -7548,29 +7548,29 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Medium print",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "50.00",
+    "amount": "65.00",
     "currency": "USD",
-    "sku": "5M144M8S14.8X5.58",
+    "sku": "5M144M8S19.36X5.58",
     "scale": 0.75,
     "imageSize": {
-      "width": 14.5267,
+      "width": 19.0767,
       "height": 5.3267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.8,
+      "width": 19.36,
       "height": 5.58,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d.jpg",
-    "assetSha256": "b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d",
-    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f.jpg",
+    "assetSha256": "7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f",
+    "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -7586,29 +7586,29 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Medium print — Black frame",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "98.00",
+    "amount": "121.00",
     "currency": "USD",
-    "sku": "5M144M8S14DD8X5DD58F1S17DD8X8DD58J1S14DD8X5DD58G1",
+    "sku": "5M144M8S19DD36X5DD58F1S22DD36X8DD58J1S19DD36X5DD58G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 14.5267,
+      "width": 19.0767,
       "height": 5.3267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.8,
+      "width": 19.36,
       "height": 5.58,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d.jpg",
-    "assetSha256": "b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d",
-    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f.jpg",
+    "assetSha256": "7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f",
+    "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -7621,18 +7621,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 17.8,
+        "width": 22.36,
         "height": 8.58,
         "unit": "in"
       },
       "window": {
-        "width": 14.8,
+        "width": 19.36,
         "height": 5.58,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S14.8X5.58",
+    "baseSku": "5M144M8S19.36X5.58",
     "frame": {
       "key": "black",
       "id": 1,
@@ -7642,7 +7642,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 17.8,
+        "width": 22.36,
         "height": 8.58,
         "unit": "in"
       },
@@ -7651,7 +7651,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "50.00"
+    "unframedAmount": "65.00"
   },
   "print-painting-portrait-with-hat-medium-frame-white": {
     "id": "print-painting-portrait-with-hat-medium-frame-white",
@@ -7660,29 +7660,29 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Medium print — White frame",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "98.00",
+    "amount": "121.00",
     "currency": "USD",
-    "sku": "5M144M8S14DD8X5DD58F2S17DD8X8DD58J1S14DD8X5DD58G1",
+    "sku": "5M144M8S19DD36X5DD58F2S22DD36X8DD58J1S19DD36X5DD58G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 14.5267,
+      "width": 19.0767,
       "height": 5.3267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.8,
+      "width": 19.36,
       "height": 5.58,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d.jpg",
-    "assetSha256": "b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d",
-    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f.jpg",
+    "assetSha256": "7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f",
+    "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -7695,18 +7695,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 17.8,
+        "width": 22.36,
         "height": 8.58,
         "unit": "in"
       },
       "window": {
-        "width": 14.8,
+        "width": 19.36,
         "height": 5.58,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S14.8X5.58",
+    "baseSku": "5M144M8S19.36X5.58",
     "frame": {
       "key": "white",
       "id": 2,
@@ -7716,7 +7716,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 17.8,
+        "width": 22.36,
         "height": 8.58,
         "unit": "in"
       },
@@ -7725,7 +7725,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "50.00"
+    "unframedAmount": "65.00"
   },
   "print-painting-portrait-with-hat-medium-frame-natural": {
     "id": "print-painting-portrait-with-hat-medium-frame-natural",
@@ -7734,29 +7734,29 @@ export default {
     "productId": "painting-portrait-with-hat",
     "title": "Sunrise on Rainier with Eagle — Medium print — Natural wood frame",
     "artworkTitle": "Sunrise on Rainier with Eagle",
-    "amount": "109.00",
+    "amount": "134.00",
     "currency": "USD",
-    "sku": "5M144M8S14DD8X5DD58F7S17DD8X8DD58J1S14DD8X5DD58G1",
+    "sku": "5M144M8S19DD36X5DD58F7S22DD36X8DD58J1S19DD36X5DD58G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 14.5267,
+      "width": 19.0767,
       "height": 5.3267,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.8,
+      "width": 19.36,
       "height": 5.58,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d.jpg",
-    "assetSha256": "b58312c0362920fd7589c8e965c1af8fe2c47ca0bd0e03371b5b21ec5799a49d",
-    "sourceSha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f.jpg",
+    "assetSha256": "7186b51563c9d0f4c30d0b36031e4638ad859629ea17f7409e2be9c142dada8f",
+    "sourceSha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299",
     "layoutApproved": true,
     "preview": {
-      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -7769,18 +7769,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 17.8,
+        "width": 22.36,
         "height": 8.58,
         "unit": "in"
       },
       "window": {
-        "width": 14.8,
+        "width": 19.36,
         "height": 5.58,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S14.8X5.58",
+    "baseSku": "5M144M8S19.36X5.58",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -7790,7 +7790,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 17.8,
+        "width": 22.36,
         "height": 8.58,
         "unit": "in"
       },
@@ -7799,7 +7799,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "50.00"
+    "unframedAmount": "65.00"
   },
   "print-painting-red-horizon-full": {
     "id": "print-painting-red-horizon-full",
@@ -115257,278 +115257,6 @@ export default {
     },
     "unframedAmount": "60.00"
   },
-  "print-older-work-mountain-layers-full": {
-    "id": "print-older-work-mountain-layers-full",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-mountain-layers",
-    "title": "Mountain Layers Studies — Large print",
-    "artworkTitle": "Mountain Layers Studies",
-    "amount": "50.00",
-    "currency": "USD",
-    "sku": "5M144M8S15.17X4",
-    "scale": 1,
-    "imageSize": {
-      "width": 14.9167,
-      "height": 2.5,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.17,
-      "height": 4,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157.jpg",
-    "assetSha256": "c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157",
-    "sourceSha256": "22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d.jpg",
-      "fullSrc": "/display/older-work-mountain-layers-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ Blue Mountain Layers 185, TJ Orange Mountain Layers 186, TJ Red Mountain Layers 156, TJ Golden Mountain Layers 153",
-      "width": 4476,
-      "height": 750,
-      "caption": "Mountain Layers Studies"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-mountain-layers-full-frame-black": {
-    "id": "print-older-work-mountain-layers-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-mountain-layers",
-    "title": "Mountain Layers Studies — Large print — Black frame",
-    "artworkTitle": "Mountain Layers Studies",
-    "amount": "98.00",
-    "currency": "USD",
-    "sku": "5M144M8S15DD17X4F1S19DD17X8J1S15DD17X4G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 14.9167,
-      "height": 2.5,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.17,
-      "height": 4,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157.jpg",
-    "assetSha256": "c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157",
-    "sourceSha256": "22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d.jpg",
-      "fullSrc": "/display/older-work-mountain-layers-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ Blue Mountain Layers 185, TJ Orange Mountain Layers 186, TJ Red Mountain Layers 156, TJ Golden Mountain Layers 153",
-      "width": 4476,
-      "height": 750,
-      "caption": "Mountain Layers Studies"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.17,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 15.17,
-        "height": 4,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S15.17X4",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.17,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
-  },
-  "print-older-work-mountain-layers-full-frame-white": {
-    "id": "print-older-work-mountain-layers-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-mountain-layers",
-    "title": "Mountain Layers Studies — Large print — White frame",
-    "artworkTitle": "Mountain Layers Studies",
-    "amount": "98.00",
-    "currency": "USD",
-    "sku": "5M144M8S15DD17X4F2S19DD17X8J1S15DD17X4G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 14.9167,
-      "height": 2.5,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.17,
-      "height": 4,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157.jpg",
-    "assetSha256": "c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157",
-    "sourceSha256": "22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d.jpg",
-      "fullSrc": "/display/older-work-mountain-layers-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ Blue Mountain Layers 185, TJ Orange Mountain Layers 186, TJ Red Mountain Layers 156, TJ Golden Mountain Layers 153",
-      "width": 4476,
-      "height": 750,
-      "caption": "Mountain Layers Studies"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.17,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 15.17,
-        "height": 4,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S15.17X4",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.17,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
-  },
-  "print-older-work-mountain-layers-full-frame-natural": {
-    "id": "print-older-work-mountain-layers-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-mountain-layers",
-    "title": "Mountain Layers Studies — Large print — Natural wood frame",
-    "artworkTitle": "Mountain Layers Studies",
-    "amount": "110.00",
-    "currency": "USD",
-    "sku": "5M144M8S15DD17X4F7S19DD17X8J1S15DD17X4G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 14.9167,
-      "height": 2.5,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.17,
-      "height": 4,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157.jpg",
-    "assetSha256": "c88f79e9ad0769b662ed560003321f2c2ee325b080760e5ea61d2cca30e9a157",
-    "sourceSha256": "22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/22c49978e7156d7cfd89f6e436f3a6a6d81b282571657df62a8f4fcb5ffaf82d.jpg",
-      "fullSrc": "/display/older-work-mountain-layers-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ Blue Mountain Layers 185, TJ Orange Mountain Layers 186, TJ Red Mountain Layers 156, TJ Golden Mountain Layers 153",
-      "width": 4476,
-      "height": 750,
-      "caption": "Mountain Layers Studies"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.17,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 15.17,
-        "height": 4,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S15.17X4",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.17,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
-  },
   "print-older-work-lake-hillside-color-wheel-full": {
     "id": "print-older-work-lake-hillside-color-wheel-full",
     "type": "print",
@@ -115800,1638 +115528,6 @@ export default {
       }
     },
     "unframedAmount": "70.00"
-  },
-  "print-older-work-sunset-ridge-strips-full": {
-    "id": "print-older-work-sunset-ridge-strips-full",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Large print",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "95.00",
-    "currency": "USD",
-    "sku": "5M144M8S21.26X10.41",
-    "scale": 1,
-    "imageSize": {
-      "width": 21.0067,
-      "height": 10.1567,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 21.26,
-      "height": 10.41,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76.jpg",
-    "assetSha256": "01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-sunset-ridge-strips-full-frame-black": {
-    "id": "print-older-work-sunset-ridge-strips-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Large print — Black frame",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "173.00",
-    "currency": "USD",
-    "sku": "5M144M8S21DD26X10DD41F1S24DD26X13DD41J1S21DD26X10DD41G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 21.0067,
-      "height": 10.1567,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 21.26,
-      "height": 10.41,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76.jpg",
-    "assetSha256": "01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 24.26,
-        "height": 13.41,
-        "unit": "in"
-      },
-      "window": {
-        "width": 21.26,
-        "height": 10.41,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S21.26X10.41",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 24.26,
-        "height": 13.41,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "95.00"
-  },
-  "print-older-work-sunset-ridge-strips-full-frame-white": {
-    "id": "print-older-work-sunset-ridge-strips-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Large print — White frame",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "173.00",
-    "currency": "USD",
-    "sku": "5M144M8S21DD26X10DD41F2S24DD26X13DD41J1S21DD26X10DD41G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 21.0067,
-      "height": 10.1567,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 21.26,
-      "height": 10.41,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76.jpg",
-    "assetSha256": "01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 24.26,
-        "height": 13.41,
-        "unit": "in"
-      },
-      "window": {
-        "width": 21.26,
-        "height": 10.41,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S21.26X10.41",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 24.26,
-        "height": 13.41,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "95.00"
-  },
-  "print-older-work-sunset-ridge-strips-full-frame-natural": {
-    "id": "print-older-work-sunset-ridge-strips-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Large print — Natural wood frame",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "189.00",
-    "currency": "USD",
-    "sku": "5M144M8S21DD26X10DD41F7S24DD26X13DD41J1S21DD26X10DD41G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 21.0067,
-      "height": 10.1567,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 21.26,
-      "height": 10.41,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76.jpg",
-    "assetSha256": "01ef26510106eeb10d34989aaa1014cf892b280095ce5ec73dbe7931015c3b76",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 24.26,
-        "height": 13.41,
-        "unit": "in"
-      },
-      "window": {
-        "width": 21.26,
-        "height": 10.41,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S21.26X10.41",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 24.26,
-        "height": 13.41,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "95.00"
-  },
-  "print-older-work-sunset-ridge-strips-medium": {
-    "id": "print-older-work-sunset-ridge-strips-medium",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Medium print",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "55.00",
-    "currency": "USD",
-    "sku": "5M144M8S16.01X7.87",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.7567,
-      "height": 7.6167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.01,
-      "height": 7.87,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84.jpg",
-    "assetSha256": "b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-sunset-ridge-strips-medium-frame-black": {
-    "id": "print-older-work-sunset-ridge-strips-medium-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Medium print — Black frame",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "111.00",
-    "currency": "USD",
-    "sku": "5M144M8S16DD01X7DD87F1S19DD01X10DD87J1S16DD01X7DD87G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.7567,
-      "height": 7.6167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.01,
-      "height": 7.87,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84.jpg",
-    "assetSha256": "b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.01,
-        "height": 10.87,
-        "unit": "in"
-      },
-      "window": {
-        "width": 16.01,
-        "height": 7.87,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S16.01X7.87",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.01,
-        "height": 10.87,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "55.00"
-  },
-  "print-older-work-sunset-ridge-strips-medium-frame-white": {
-    "id": "print-older-work-sunset-ridge-strips-medium-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Medium print — White frame",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "111.00",
-    "currency": "USD",
-    "sku": "5M144M8S16DD01X7DD87F2S19DD01X10DD87J1S16DD01X7DD87G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.7567,
-      "height": 7.6167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.01,
-      "height": 7.87,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84.jpg",
-    "assetSha256": "b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.01,
-        "height": 10.87,
-        "unit": "in"
-      },
-      "window": {
-        "width": 16.01,
-        "height": 7.87,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S16.01X7.87",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.01,
-        "height": 10.87,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "55.00"
-  },
-  "print-older-work-sunset-ridge-strips-medium-frame-natural": {
-    "id": "print-older-work-sunset-ridge-strips-medium-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Medium print — Natural wood frame",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "124.00",
-    "currency": "USD",
-    "sku": "5M144M8S16DD01X7DD87F7S19DD01X10DD87J1S16DD01X7DD87G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.7567,
-      "height": 7.6167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.01,
-      "height": 7.87,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84.jpg",
-    "assetSha256": "b048cee57c4c24285361de5d5ae67e3482311304067ae9367f9414c23fc04e84",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.01,
-        "height": 10.87,
-        "unit": "in"
-      },
-      "window": {
-        "width": 16.01,
-        "height": 7.87,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S16.01X7.87",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.01,
-        "height": 10.87,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "55.00"
-  },
-  "print-older-work-sunset-ridge-strips-small": {
-    "id": "print-older-work-sunset-ridge-strips-small",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Small print",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "35.00",
-    "currency": "USD",
-    "sku": "5M144M8S10.75X5.33",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 10.4967,
-      "height": 5.0733,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 10.75,
-      "height": 5.33,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955.jpg",
-    "assetSha256": "92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-sunset-ridge-strips-small-frame-black": {
-    "id": "print-older-work-sunset-ridge-strips-small-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Small print — Black frame",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "74.00",
-    "currency": "USD",
-    "sku": "5M144M8S10DD75X5DD33F1S13DD75X8DD33J1S10DD75X5DD33G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 10.4967,
-      "height": 5.0733,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 10.75,
-      "height": 5.33,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955.jpg",
-    "assetSha256": "92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 13.75,
-        "height": 8.33,
-        "unit": "in"
-      },
-      "window": {
-        "width": 10.75,
-        "height": 5.33,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S10.75X5.33",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 13.75,
-        "height": 8.33,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
-  },
-  "print-older-work-sunset-ridge-strips-small-frame-white": {
-    "id": "print-older-work-sunset-ridge-strips-small-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Small print — White frame",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "74.00",
-    "currency": "USD",
-    "sku": "5M144M8S10DD75X5DD33F2S13DD75X8DD33J1S10DD75X5DD33G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 10.4967,
-      "height": 5.0733,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 10.75,
-      "height": 5.33,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955.jpg",
-    "assetSha256": "92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 13.75,
-        "height": 8.33,
-        "unit": "in"
-      },
-      "window": {
-        "width": 10.75,
-        "height": 5.33,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S10.75X5.33",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 13.75,
-        "height": 8.33,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
-  },
-  "print-older-work-sunset-ridge-strips-small-frame-natural": {
-    "id": "print-older-work-sunset-ridge-strips-small-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-sunset-ridge-strips",
-    "title": "Sunset Ridge Strips — Small print — Natural wood frame",
-    "artworkTitle": "Sunset Ridge Strips",
-    "amount": "84.00",
-    "currency": "USD",
-    "sku": "5M144M8S10DD75X5DD33F7S13DD75X8DD33J1S10DD75X5DD33G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 10.4967,
-      "height": 5.0733,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 10.75,
-      "height": 5.33,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955.jpg",
-    "assetSha256": "92d032c9eb83b16b8c48ad7359eb09a470e677e247f0dcc2a1892d6739f3e955",
-    "sourceSha256": "35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/35442b7c65e3e7fd393c28cace009ca0966be835219d0b2e48edb9f57a8210b3.jpg",
-      "fullSrc": "/display/older-work-sunset-ridge-strips-1600.webp",
-      "alt": "6 paintings by TJ Murphy shown together: TJ Sunset Ridge Strip 174, TJ Sunset Ridge Strip 165, TJ Sunset Ridge Strip 159, TJ Sunset Ridge Strip 164, TJ Sunset Ridge Strip 173, TJ Sunset Ridge Strip 158",
-      "width": 6305,
-      "height": 3048,
-      "caption": "Sunset Ridge Strips"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 13.75,
-        "height": 8.33,
-        "unit": "in"
-      },
-      "window": {
-        "width": 10.75,
-        "height": 5.33,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S10.75X5.33",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 13.75,
-        "height": 8.33,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
-  },
-  "print-older-work-ridge-strips-unindexed-full": {
-    "id": "print-older-work-ridge-strips-unindexed-full",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Large print",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "80.00",
-    "currency": "USD",
-    "sku": "5M144M8S20.77X8.83",
-    "scale": 1,
-    "imageSize": {
-      "width": 20.5033,
-      "height": 8.5767,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 20.77,
-      "height": 8.83,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798.jpg",
-    "assetSha256": "fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-ridge-strips-unindexed-full-frame-black": {
-    "id": "print-older-work-ridge-strips-unindexed-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Large print — Black frame",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "150.00",
-    "currency": "USD",
-    "sku": "5M144M8S20DD77X8DD83F1S23DD77X11DD83J1S20DD77X8DD83G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 20.5033,
-      "height": 8.5767,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 20.77,
-      "height": 8.83,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798.jpg",
-    "assetSha256": "fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 23.77,
-        "height": 11.83,
-        "unit": "in"
-      },
-      "window": {
-        "width": 20.77,
-        "height": 8.83,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S20.77X8.83",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 23.77,
-        "height": 11.83,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "80.00"
-  },
-  "print-older-work-ridge-strips-unindexed-full-frame-white": {
-    "id": "print-older-work-ridge-strips-unindexed-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Large print — White frame",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "150.00",
-    "currency": "USD",
-    "sku": "5M144M8S20DD77X8DD83F2S23DD77X11DD83J1S20DD77X8DD83G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 20.5033,
-      "height": 8.5767,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 20.77,
-      "height": 8.83,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798.jpg",
-    "assetSha256": "fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 23.77,
-        "height": 11.83,
-        "unit": "in"
-      },
-      "window": {
-        "width": 20.77,
-        "height": 8.83,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S20.77X8.83",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 23.77,
-        "height": 11.83,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "80.00"
-  },
-  "print-older-work-ridge-strips-unindexed-full-frame-natural": {
-    "id": "print-older-work-ridge-strips-unindexed-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Large print — Natural wood frame",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "165.00",
-    "currency": "USD",
-    "sku": "5M144M8S20DD77X8DD83F7S23DD77X11DD83J1S20DD77X8DD83G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 20.5033,
-      "height": 8.5767,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 20.77,
-      "height": 8.83,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798.jpg",
-    "assetSha256": "fe86404de8b5318a08eddc99c932d9d34bd15982e387cf2b9e17f6a41d953798",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 23.77,
-        "height": 11.83,
-        "unit": "in"
-      },
-      "window": {
-        "width": 20.77,
-        "height": 8.83,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S20.77X8.83",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 23.77,
-        "height": 11.83,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "80.00"
-  },
-  "print-older-work-ridge-strips-unindexed-medium": {
-    "id": "print-older-work-ridge-strips-unindexed-medium",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Medium print",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "55.00",
-    "currency": "USD",
-    "sku": "5M144M8S15.64X6.69",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.3867,
-      "height": 6.4367,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.64,
-      "height": 6.69,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344.jpg",
-    "assetSha256": "b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-ridge-strips-unindexed-medium-frame-black": {
-    "id": "print-older-work-ridge-strips-unindexed-medium-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Medium print — Black frame",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "108.00",
-    "currency": "USD",
-    "sku": "5M144M8S15DD64X6DD69F1S18DD64X9DD69J1S15DD64X6DD69G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.3867,
-      "height": 6.4367,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.64,
-      "height": 6.69,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344.jpg",
-    "assetSha256": "b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 18.64,
-        "height": 9.69,
-        "unit": "in"
-      },
-      "window": {
-        "width": 15.64,
-        "height": 6.69,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S15.64X6.69",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 18.64,
-        "height": 9.69,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "55.00"
-  },
-  "print-older-work-ridge-strips-unindexed-medium-frame-white": {
-    "id": "print-older-work-ridge-strips-unindexed-medium-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Medium print — White frame",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "108.00",
-    "currency": "USD",
-    "sku": "5M144M8S15DD64X6DD69F2S18DD64X9DD69J1S15DD64X6DD69G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.3867,
-      "height": 6.4367,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.64,
-      "height": 6.69,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344.jpg",
-    "assetSha256": "b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 18.64,
-        "height": 9.69,
-        "unit": "in"
-      },
-      "window": {
-        "width": 15.64,
-        "height": 6.69,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S15.64X6.69",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 18.64,
-        "height": 9.69,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "55.00"
-  },
-  "print-older-work-ridge-strips-unindexed-medium-frame-natural": {
-    "id": "print-older-work-ridge-strips-unindexed-medium-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Medium print — Natural wood frame",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "120.00",
-    "currency": "USD",
-    "sku": "5M144M8S15DD64X6DD69F7S18DD64X9DD69J1S15DD64X6DD69G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.3867,
-      "height": 6.4367,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.64,
-      "height": 6.69,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344.jpg",
-    "assetSha256": "b07acd9fb6f9e192f3e96267a7e5ae6d8585523bf958b7718e6b6394827a8344",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 18.64,
-        "height": 9.69,
-        "unit": "in"
-      },
-      "window": {
-        "width": 15.64,
-        "height": 6.69,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S15.64X6.69",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 18.64,
-        "height": 9.69,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "55.00"
-  },
-  "print-older-work-ridge-strips-unindexed-small": {
-    "id": "print-older-work-ridge-strips-unindexed-small",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Small print",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "35.00",
-    "currency": "USD",
-    "sku": "5M144M8S10.51X4.54",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 10.2467,
-      "height": 4.2867,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 10.51,
-      "height": 4.54,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e.jpg",
-    "assetSha256": "ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-ridge-strips-unindexed-small-frame-black": {
-    "id": "print-older-work-ridge-strips-unindexed-small-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Small print — Black frame",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "73.63",
-    "currency": "USD",
-    "sku": "5M144M8S10DD51X4DD54F1S13DD97X8J1S10DD51X4DD54G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 10.2467,
-      "height": 4.2867,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 10.51,
-      "height": 4.54,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e.jpg",
-    "assetSha256": "ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 13.97,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 10.51,
-        "height": 4.54,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S10.51X4.54",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 13.97,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
-  },
-  "print-older-work-ridge-strips-unindexed-small-frame-white": {
-    "id": "print-older-work-ridge-strips-unindexed-small-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Small print — White frame",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "73.63",
-    "currency": "USD",
-    "sku": "5M144M8S10DD51X4DD54F2S13DD97X8J1S10DD51X4DD54G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 10.2467,
-      "height": 4.2867,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 10.51,
-      "height": 4.54,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e.jpg",
-    "assetSha256": "ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 13.97,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 10.51,
-        "height": 4.54,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S10.51X4.54",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 13.97,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
-  },
-  "print-older-work-ridge-strips-unindexed-small-frame-natural": {
-    "id": "print-older-work-ridge-strips-unindexed-small-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-ridge-strips-unindexed",
-    "title": "Ridge Strip Studies (unindexed) — Small print — Natural wood frame",
-    "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "83.63",
-    "currency": "USD",
-    "sku": "5M144M8S10DD51X4DD54F7S13DD97X8J1S10DD51X4DD54G1",
-    "scale": 0.5,
-    "imageSize": {
-      "width": 10.2467,
-      "height": 4.2867,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 10.51,
-      "height": 4.54,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e.jpg",
-    "assetSha256": "ed0f18af35653412ac1d35b1e6689254ec2ec5bcf0bbfb2b2e6e63aba6f7bb4e",
-    "sourceSha256": "758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/758562a8a1bca21b3ef81bfce09c71576867e78c13617fd012698e7f348a3035.jpg",
-      "fullSrc": "/display/older-work-ridge-strips-unindexed-1600.webp",
-      "alt": "7 paintings by TJ Murphy shown together: TJ Ridge Strip Study A, TJ Ridge Strip Study B, TJ Ridge Strip Study C, TJ Ridge Strip Study D, TJ Ridge Strip Study E, TJ Ridge Strip Study F, TJ Ridge Strip Study G",
-      "width": 6158,
-      "height": 2576,
-      "caption": "Ridge Strip Studies (unindexed)"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 13.97,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 10.51,
-        "height": 4.54,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S10.51X4.54",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 13.97,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "35.00"
   },
   "print-older-work-pitchers-full": {
     "id": "print-older-work-pitchers-full",
@@ -119096,7 +117192,7 @@ export default {
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
       "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
-      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Devo and Sarah Sandwich (L), TJ Devo and Sarah Sandwich (R)",
       "width": 6274,
       "height": 2195,
       "caption": "Provibes Reunion Sandwich Portraits"
@@ -119137,7 +117233,7 @@ export default {
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
       "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
-      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Devo and Sarah Sandwich (L), TJ Devo and Sarah Sandwich (R)",
       "width": 6274,
       "height": 2195,
       "caption": "Provibes Reunion Sandwich Portraits"
@@ -119214,7 +117310,7 @@ export default {
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
       "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
-      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Devo and Sarah Sandwich (L), TJ Devo and Sarah Sandwich (R)",
       "width": 6274,
       "height": 2195,
       "caption": "Provibes Reunion Sandwich Portraits"
@@ -119291,7 +117387,7 @@ export default {
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
       "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
-      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Devo and Sarah Sandwich (L), TJ Devo and Sarah Sandwich (R)",
       "width": 6274,
       "height": 2195,
       "caption": "Provibes Reunion Sandwich Portraits"
@@ -119368,7 +117464,7 @@ export default {
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
       "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
-      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Devo and Sarah Sandwich (L), TJ Devo and Sarah Sandwich (R)",
       "width": 6274,
       "height": 2195,
       "caption": "Provibes Reunion Sandwich Portraits"
@@ -119409,7 +117505,7 @@ export default {
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
       "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
-      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Devo and Sarah Sandwich (L), TJ Devo and Sarah Sandwich (R)",
       "width": 6274,
       "height": 2195,
       "caption": "Provibes Reunion Sandwich Portraits"
@@ -119486,7 +117582,7 @@ export default {
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
       "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
-      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Devo and Sarah Sandwich (L), TJ Devo and Sarah Sandwich (R)",
       "width": 6274,
       "height": 2195,
       "caption": "Provibes Reunion Sandwich Portraits"
@@ -119563,7 +117659,7 @@ export default {
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790.jpg",
       "fullSrc": "/display/older-work-provibes-sandwiches-1600.webp",
-      "alt": "2 paintings by TJ Murphy shown together: TJ Dov and Sara Sandwich, TJ Dov and Isaiah Sandwich",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Devo and Sarah Sandwich (L), TJ Devo and Sarah Sandwich (R)",
       "width": 6274,
       "height": 2195,
       "caption": "Provibes Reunion Sandwich Portraits"
@@ -122056,822 +120152,6 @@ export default {
       }
     },
     "unframedAmount": "30.00"
-  },
-  "print-older-work-figen-pnut-swoll-full": {
-    "id": "print-older-work-figen-pnut-swoll-full",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-figen-pnut-swoll",
-    "title": "Figen, PNut and Joey Swoll — Large print",
-    "artworkTitle": "Figen, PNut and Joey Swoll",
-    "amount": "40.00",
-    "currency": "USD",
-    "sku": "5M144M8S11.77X4.27",
-    "scale": 1,
-    "imageSize": {
-      "width": 11.4933,
-      "height": 4.0167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 11.77,
-      "height": 4.27,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f.jpg",
-    "assetSha256": "8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f",
-    "sourceSha256": "05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9.jpg",
-      "fullSrc": "/display/older-work-figen-pnut-swoll-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figen 341, TJ PNut Window 338, TJ Joey Swoll 340",
-      "width": 3457,
-      "height": 1208,
-      "caption": "Figen, PNut and Joey Swoll"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-figen-pnut-swoll-full-frame-black": {
-    "id": "print-older-work-figen-pnut-swoll-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-figen-pnut-swoll",
-    "title": "Figen, PNut and Joey Swoll — Large print — Black frame",
-    "artworkTitle": "Figen, PNut and Joey Swoll",
-    "amount": "81.00",
-    "currency": "USD",
-    "sku": "5M144M8S11DD77X4DD27F1S15DD51X8DD01J1S11DD77X4DD27G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 11.4933,
-      "height": 4.0167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 11.77,
-      "height": 4.27,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f.jpg",
-    "assetSha256": "8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f",
-    "sourceSha256": "05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9.jpg",
-      "fullSrc": "/display/older-work-figen-pnut-swoll-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figen 341, TJ PNut Window 338, TJ Joey Swoll 340",
-      "width": 3457,
-      "height": 1208,
-      "caption": "Figen, PNut and Joey Swoll"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 15.51,
-        "height": 8.01,
-        "unit": "in"
-      },
-      "window": {
-        "width": 11.77,
-        "height": 4.27,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S11.77X4.27",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 15.51,
-        "height": 8.01,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "40.00"
-  },
-  "print-older-work-figen-pnut-swoll-full-frame-white": {
-    "id": "print-older-work-figen-pnut-swoll-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-figen-pnut-swoll",
-    "title": "Figen, PNut and Joey Swoll — Large print — White frame",
-    "artworkTitle": "Figen, PNut and Joey Swoll",
-    "amount": "81.00",
-    "currency": "USD",
-    "sku": "5M144M8S11DD77X4DD27F2S15DD51X8DD01J1S11DD77X4DD27G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 11.4933,
-      "height": 4.0167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 11.77,
-      "height": 4.27,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f.jpg",
-    "assetSha256": "8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f",
-    "sourceSha256": "05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9.jpg",
-      "fullSrc": "/display/older-work-figen-pnut-swoll-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figen 341, TJ PNut Window 338, TJ Joey Swoll 340",
-      "width": 3457,
-      "height": 1208,
-      "caption": "Figen, PNut and Joey Swoll"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 15.51,
-        "height": 8.01,
-        "unit": "in"
-      },
-      "window": {
-        "width": 11.77,
-        "height": 4.27,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S11.77X4.27",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 15.51,
-        "height": 8.01,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "40.00"
-  },
-  "print-older-work-figen-pnut-swoll-full-frame-natural": {
-    "id": "print-older-work-figen-pnut-swoll-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-figen-pnut-swoll",
-    "title": "Figen, PNut and Joey Swoll — Large print — Natural wood frame",
-    "artworkTitle": "Figen, PNut and Joey Swoll",
-    "amount": "91.00",
-    "currency": "USD",
-    "sku": "5M144M8S11DD77X4DD27F7S15DD51X8DD01J1S11DD77X4DD27G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 11.4933,
-      "height": 4.0167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 11.77,
-      "height": 4.27,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f.jpg",
-    "assetSha256": "8cabf7a47d5cfc6633cc329049b991ec24e6eae5a9428769af704fb0d706ea1f",
-    "sourceSha256": "05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/05e4fb71e3fb820e3b0a06eec6a00d8907e9e9a53adfa44706cd2e2ddfcbcac9.jpg",
-      "fullSrc": "/display/older-work-figen-pnut-swoll-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figen 341, TJ PNut Window 338, TJ Joey Swoll 340",
-      "width": 3457,
-      "height": 1208,
-      "caption": "Figen, PNut and Joey Swoll"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 15.51,
-        "height": 8.01,
-        "unit": "in"
-      },
-      "window": {
-        "width": 11.77,
-        "height": 4.27,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S11.77X4.27",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 15.51,
-        "height": 8.01,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "40.00"
-  },
-  "print-older-work-hayek-stark-gomez-el-bawab-full": {
-    "id": "print-older-work-hayek-stark-gomez-el-bawab-full",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-hayek-stark-gomez-el-bawab",
-    "title": "Hayek, Stark, Gomez and El Bawab — Large print",
-    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
-    "amount": "70.00",
-    "currency": "USD",
-    "sku": "5M144M8S20.63X6.37",
-    "scale": 1,
-    "imageSize": {
-      "width": 20.3767,
-      "height": 6.1167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 20.63,
-      "height": 6.37,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881.jpg",
-    "assetSha256": "1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881",
-    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
-      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
-      "width": 6116,
-      "height": 1836,
-      "caption": "Hayek, Stark, Gomez and El Bawab"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-hayek-stark-gomez-el-bawab-full-frame-black": {
-    "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-hayek-stark-gomez-el-bawab",
-    "title": "Hayek, Stark, Gomez and El Bawab — Large print — Black frame",
-    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
-    "amount": "131.00",
-    "currency": "USD",
-    "sku": "5M144M8S20DD63X6DD37F1S23DD63X9DD37J1S20DD63X6DD37G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 20.3767,
-      "height": 6.1167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 20.63,
-      "height": 6.37,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881.jpg",
-    "assetSha256": "1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881",
-    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
-      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
-      "width": 6116,
-      "height": 1836,
-      "caption": "Hayek, Stark, Gomez and El Bawab"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 23.63,
-        "height": 9.37,
-        "unit": "in"
-      },
-      "window": {
-        "width": 20.63,
-        "height": 6.37,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S20.63X6.37",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 23.63,
-        "height": 9.37,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "70.00"
-  },
-  "print-older-work-hayek-stark-gomez-el-bawab-full-frame-white": {
-    "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-hayek-stark-gomez-el-bawab",
-    "title": "Hayek, Stark, Gomez and El Bawab — Large print — White frame",
-    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
-    "amount": "131.00",
-    "currency": "USD",
-    "sku": "5M144M8S20DD63X6DD37F2S23DD63X9DD37J1S20DD63X6DD37G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 20.3767,
-      "height": 6.1167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 20.63,
-      "height": 6.37,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881.jpg",
-    "assetSha256": "1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881",
-    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
-      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
-      "width": 6116,
-      "height": 1836,
-      "caption": "Hayek, Stark, Gomez and El Bawab"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 23.63,
-        "height": 9.37,
-        "unit": "in"
-      },
-      "window": {
-        "width": 20.63,
-        "height": 6.37,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S20.63X6.37",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 23.63,
-        "height": 9.37,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "70.00"
-  },
-  "print-older-work-hayek-stark-gomez-el-bawab-full-frame-natural": {
-    "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-hayek-stark-gomez-el-bawab",
-    "title": "Hayek, Stark, Gomez and El Bawab — Large print — Natural wood frame",
-    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
-    "amount": "145.00",
-    "currency": "USD",
-    "sku": "5M144M8S20DD63X6DD37F7S23DD63X9DD37J1S20DD63X6DD37G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 20.3767,
-      "height": 6.1167,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 20.63,
-      "height": 6.37,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881.jpg",
-    "assetSha256": "1caca6f05576554fc44580a7aa5052196f98472d29d010173c71f24450128881",
-    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
-      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
-      "width": 6116,
-      "height": 1836,
-      "caption": "Hayek, Stark, Gomez and El Bawab"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 23.63,
-        "height": 9.37,
-        "unit": "in"
-      },
-      "window": {
-        "width": 20.63,
-        "height": 6.37,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S20.63X6.37",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 23.63,
-        "height": 9.37,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "70.00"
-  },
-  "print-older-work-hayek-stark-gomez-el-bawab-medium": {
-    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-hayek-stark-gomez-el-bawab",
-    "title": "Hayek, Stark, Gomez and El Bawab — Medium print",
-    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
-    "amount": "50.00",
-    "currency": "USD",
-    "sku": "5M144M8S15.54X4.84",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.28,
-      "height": 4.5867,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.54,
-      "height": 4.84,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6.jpg",
-    "assetSha256": "ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6",
-    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
-      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
-      "width": 6116,
-      "height": 1836,
-      "caption": "Hayek, Stark, Gomez and El Bawab"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-black": {
-    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-hayek-stark-gomez-el-bawab",
-    "title": "Hayek, Stark, Gomez and El Bawab — Medium print — Black frame",
-    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
-    "amount": "97.00",
-    "currency": "USD",
-    "sku": "5M144M8S15DD54X4DD84F1S18DD7X8J1S15DD54X4DD84G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.28,
-      "height": 4.5867,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.54,
-      "height": 4.84,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6.jpg",
-    "assetSha256": "ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6",
-    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
-      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
-      "width": 6116,
-      "height": 1836,
-      "caption": "Hayek, Stark, Gomez and El Bawab"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 18.7,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 15.54,
-        "height": 4.84,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S15.54X4.84",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 18.7,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
-  },
-  "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-white": {
-    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-hayek-stark-gomez-el-bawab",
-    "title": "Hayek, Stark, Gomez and El Bawab — Medium print — White frame",
-    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
-    "amount": "97.00",
-    "currency": "USD",
-    "sku": "5M144M8S15DD54X4DD84F2S18DD7X8J1S15DD54X4DD84G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.28,
-      "height": 4.5867,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.54,
-      "height": 4.84,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6.jpg",
-    "assetSha256": "ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6",
-    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
-      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
-      "width": 6116,
-      "height": 1836,
-      "caption": "Hayek, Stark, Gomez and El Bawab"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 18.7,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 15.54,
-        "height": 4.84,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S15.54X4.84",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 18.7,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
-  },
-  "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-natural": {
-    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-hayek-stark-gomez-el-bawab",
-    "title": "Hayek, Stark, Gomez and El Bawab — Medium print — Natural wood frame",
-    "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
-    "amount": "109.00",
-    "currency": "USD",
-    "sku": "5M144M8S15DD54X4DD84F7S18DD7X8J1S15DD54X4DD84G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 15.28,
-      "height": 4.5867,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 15.54,
-      "height": 4.84,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6.jpg",
-    "assetSha256": "ba9d6779dcc34fc7134bc14b97513c02b3b9f80b91577ba9c9c87b68ca81ebd6",
-    "sourceSha256": "bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/bacbb6c64f5b28cde9c939b29664cfc5a54d4ab0c5fe976aaf769b02eaf9e58d.jpg",
-      "fullSrc": "/display/older-work-hayek-stark-gomez-el-bawab-1600.webp",
-      "alt": "4 paintings by TJ Murphy shown together: TJ F.A. Hayek 336, TJ Elizabeth Stark 335, TJ Rodrigo Gomez 334, TJ Noor El Bawab 333",
-      "width": 6116,
-      "height": 1836,
-      "caption": "Hayek, Stark, Gomez and El Bawab"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 18.7,
-        "height": 8,
-        "unit": "in"
-      },
-      "window": {
-        "width": 15.54,
-        "height": 4.84,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S15.54X4.84",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 18.7,
-        "height": 8,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "50.00"
   },
   "print-older-work-yakes-todd-dickerson-full": {
     "id": "print-older-work-yakes-todd-dickerson-full",
