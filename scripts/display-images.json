@@ -1282,6 +1282,32 @@
    }
   ]
  },
+ "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg": {
+  "original": 248536,
+  "width": 2400,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/sunrise-on-rainier-with-eagle-full-2026-9da0e29055-160.webp",
+    "bytes": 1378
+   },
+   {
+    "w": 480,
+    "src": "/display/sunrise-on-rainier-with-eagle-full-2026-9da0e29055-480.webp",
+    "bytes": 7130
+   },
+   {
+    "w": 960,
+    "src": "/display/sunrise-on-rainier-with-eagle-full-2026-9da0e29055-960.webp",
+    "bytes": 22542
+   },
+   {
+    "w": 1600,
+    "src": "/display/sunrise-on-rainier-with-eagle-full-2026-9da0e29055-1600.webp",
+    "bytes": 51010
+   }
+  ]
+ },
  "/gallery-images/sunrise-punta-el-zonte-hostel-2026.jpg": {
   "original": 491625,
   "width": 1219,
