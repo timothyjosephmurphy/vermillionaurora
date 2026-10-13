@@ -18,7 +18,7 @@ test('each wall shows every sized painting by that artist exactly once',()=>{
     assert.equal(new Set(wall.artworks.map(a=>a.id)).size,wall.artworks.length);
     assert(wall.artworks.every(a=>a.artist===artist));
   }
-  assert.equal(new Set([...tjWall.artworks,...paulWall.artworks].map(a=>a.id)).size,84);
+  assert.equal(new Set([...tjWall.artworks,...paulWall.artworks].map(a=>a.id)).size,104);
 });
 test('status wording comes from the catalog and the Temple paintings say exactly Not for sale',()=>{
   const labels=new Set(['Available','Sold','Not for sale']);
@@ -76,7 +76,7 @@ test('previews are small WebP files, never upscaled, and end with the full photo
       }
     }
   }
-  // The first (initial-load) previews of the whole TJ wall stay in the 1-2 MB budget; the 24 print-wall previews come from the build step.
+  // The first (initial-load) previews of the whole TJ wall stay in the 1-2 MB budget; the 78 print-wall previews come from the build step.
   const own=tjWall.artworks.filter(a=>!onPrintWall.has(a.id)).reduce((sum,a)=>sum+fs.statSync(`static${a.sources[0].src}`).size,0);
   assert(own<900_000,`own TJ previews ${own}`);
 });
