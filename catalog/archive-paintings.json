@@ -1308,7 +1308,8 @@
         "verifiedImageMatch": true,
         "note": "Previously catalogued size; not newly measured from this photograph."
       },
-      "originalSale": {
+      "featured": true,
+      "withdrawnOriginalSale": {
         "amount": "400.00",
         "currency": "USD",
         "pricingBasis": "existing-catalog-comparables",
@@ -1317,9 +1318,10 @@
           "painting-chef-in-white"
         ],
         "rationale": "Comparable to the existing $400 portrait tier; no premium assigned for the family subject.",
-        "listedAt": "2026-10-12"
-      },
-      "featured": true
+        "listedAt": "2026-10-12",
+        "withdrawnAt": "2026-10-13",
+        "withdrawnReason": "Original not for sale per TJ; prints remain available."
+      }
     },
     {
       "id": "archived-painting-416",
