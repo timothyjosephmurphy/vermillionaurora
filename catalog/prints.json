@@ -56806,7 +56806,9 @@
                 "height": 6877
               }
             }
-          }
+          },
+          "amount": "135.00",
+          "pricingRule": "finerworks-3.5x-v1"
         },
         "medium": {
           "sku": "5M144M8S12.29X17.45",
@@ -56834,7 +56836,9 @@
                 "height": 5159
               }
             }
-          }
+          },
+          "amount": "75.00",
+          "pricingRule": "finerworks-3.5x-v1"
         },
         "small": {
           "sku": "5M144M8S8.27X11.71",
@@ -56862,7 +56866,9 @@
                 "height": 3436
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1"
         }
       }
     },
@@ -66570,7 +66576,9 @@
                 "height": 2132
               }
             }
-          }
+          },
+          "amount": "75.00",
+          "pricingRule": "finerworks-3.5x-v1"
         },
         "medium": {
           "sku": "5M144M8S14.8X5.58",
@@ -66598,7 +66606,9 @@
                 "height": 1598
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1"
         }
       }
     },
@@ -110315,7 +110325,9 @@
                 "height": 7117
               }
             }
-          }
+          },
+          "amount": "135.00",
+          "pricingRule": "finerworks-3.5x-v1"
         },
         "medium": {
           "sku": "5M144M8S12.71X18.05",
@@ -110343,7 +110355,9 @@
                 "height": 5339
               }
             }
-          }
+          },
+          "amount": "75.00",
+          "pricingRule": "finerworks-3.5x-v1"
         },
         "small": {
           "sku": "5M144M8S8.55X12.11",
@@ -110371,7 +110385,9 @@
                 "height": 3556
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1"
         }
       }
     }
