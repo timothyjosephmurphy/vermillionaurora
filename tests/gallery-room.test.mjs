@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {wallArtworks,WALL_UNIT} from '../src/data/gallery-wall.mjs';
+import {roomArtworks as wallArtworks,WALL_UNIT} from '../src/data/gallery-room.mjs';
 import {ROOM,roomLayout,approachPosition} from '../src/scripts/gallery-room-layout.mjs';
 const artworks=roomLayout(wallArtworks,WALL_UNIT);
 test('square room has six unique, evenly spaced, physically sized TJ prints on each wall',()=>{
@@ -18,3 +18,4 @@ test('square room has six unique, evenly spaced, physically sized TJ prints on e
     }
   }
 });
+

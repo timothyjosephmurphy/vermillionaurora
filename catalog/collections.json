@@ -171,6 +171,70 @@
     {
       "product": "small-landscape",
       "variant": "service"
+    },
+    {
+      "product": "archived-painting-307",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-img-1555",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-249",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-img-1608",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-246",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-248",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-247",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-438",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-437",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-433",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-436",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-66",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-301",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-15",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-2",
+      "variant": "carousel"
+    },
+    {
+      "product": "archived-painting-1",
+      "variant": "carousel"
     }
   ],
   "gallery": [
@@ -344,6 +408,222 @@
     },
     {
       "product": "burning-man-temple-2022-daytime",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-193",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-308",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-307",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-233",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-img-1555",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-363",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-368",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-369",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-370",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-371",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-364",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-366",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-367",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-362",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-412",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-373",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-375",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-385",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-386",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-387",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-389",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-390",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-226",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-354",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-249",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-73",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-75",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-76",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-img-1608",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-416",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-img-1612",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-246",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-248",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-247",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-133",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-438",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-437",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-433",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-436",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-90",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-62",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-241",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-66",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-301",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-53",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-15",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-18",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-19",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-20",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-22",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-2",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-4",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-1",
+      "variant": "gallery"
+    },
+    {
+      "product": "archived-painting-217",
       "variant": "gallery"
     }
   ],

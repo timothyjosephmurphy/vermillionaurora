@@ -1,5 +1,5 @@
 ---
-import {wallArtworks,WALL_UNIT} from '../../data/gallery-wall.mjs';
+import {roomArtworks as wallArtworks,WALL_UNIT} from '../../data/gallery-room.mjs';
 import {ROOM,roomLayout} from '../../scripts/gallery-room-layout.mjs';
 const artworks=roomLayout(wallArtworks,WALL_UNIT);
 const data=JSON.stringify({artworks,room:ROOM}).replace(/</g,'\\u003c');
@@ -63,3 +63,4 @@ const data=JSON.stringify({artworks,room:ROOM}).replace(/</g,'\\u003c');
   @media(max-width:600px){.room-header{top:max(12px,env(safe-area-inset-top));left:12px;right:12px;gap:8px}.room-back,.room-header button{font-size:10px;padding:10px 12px}.room-brand{padding:6px 8px}.room-brand span{font-size:7px}.room-brand strong{font-size:16px}.room-welcome{left:20px;bottom:26px;width:350px;max-width:calc(100% - 40px);padding:22px}.room-welcome h1{font-size:43px}.room-welcome>p:not(.eyebrow){font-size:12px}.room-find{margin-top:12px}.room-map{display:none}.room-status{display:none}}
   @media(max-height:560px){.room-welcome{bottom:16px;padding:18px 22px;width:360px}.room-welcome h1{font-size:35px}.room-welcome>p:not(.room-instructions){display:none}.room-find{margin-top:8px}.room-instructions{margin:5px 0}.room-welcome .eyebrow{display:none}.room-welcome .enter-button{margin:0 0 4px}}
 </style>
+

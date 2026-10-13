@@ -262,7 +262,7 @@ test('Burning Man Temple 2022 paintings are collector’s items with their own p
  const collectors=$('[data-collector-paintings] [data-product-id]').map((i,el)=>$(el).attr('data-product-id')).get();
  // The Temple series closes Collector's Items (and the gallery list) in the order Blue, Pink, Flame, Daytime.
  assert.deepEqual(collectors.slice(-4),ids);
- assert.deepEqual(collections.gallery.slice(-4).map(e=>e.product),ids);
+ assert.deepEqual(collections.gallery.filter(e=>!byId[e.product].archive).slice(-4).map(e=>e.product),ids);
  for(const id of ids){
   const p=products.find(x=>x.id===id);
   assert.equal(p.listing.status,'not-for-sale',id);assert.equal(p.listing.price,undefined,id);assert.equal(p.checkout.mode,'inquiry',id);
@@ -328,3 +328,4 @@ test('the homepage ends Exhibitions with the gallery room and framed print wall'
  assert.equal(tile.find('img').attr('src'),'/gallery-wall/framed-wall.webp');
  assert(fs.existsSync('dist/gallery-wall/framed-wall.webp'));
 });
+

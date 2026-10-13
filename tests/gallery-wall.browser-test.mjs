@@ -58,7 +58,7 @@ for(const engine of [chromium,webkit]){
       assert.equal(check.width,236);assert.equal(check.height,220);
     };
     await open();
-    assert.equal(await page.locator('[data-wall-art]').count(),24);assert.equal(await panel.getAttribute('aria-hidden'),'true');
+    assert.equal(await page.locator('[data-wall-art]').count(),wallArtworks.length);assert.equal(await panel.getAttribute('aria-hidden'),'true');
     await page.waitForFunction(()=>[...document.querySelectorAll('[data-art-image]')].every(i=>i.complete&&i.naturalWidth>0));
     assert.equal(masters.length,0,'The overview must not download original masters');
     const rects=await page.locator('[data-wall-art]').evaluateAll(elements=>elements.map(el=>{const r=el.getBoundingClientRect(),img=el.querySelector('img');return {x:r.x,y:r.y,width:r.width,height:r.height,fit:getComputedStyle(img).objectFit,overflow:getComputedStyle(el).overflow};}));
@@ -161,3 +161,4 @@ for(const engine of [chromium,webkit]){
     assert.deepEqual(errors,[]);console.log(`PASS: ${engine.name()} print wall: layout, source detail, full-screen fit, smooth product transition, touch, panel, cart selection, and stale-catalog guard.`);
   }finally{await browser.close();}
 }
+
