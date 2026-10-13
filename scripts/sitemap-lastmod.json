@@ -1,11 +1,11 @@
 {
   "https://tjm.art/": {
-    "hash": "bd07376ba6579348",
-    "lastmod": "2026-10-08"
+    "hash": "6ec24c67ddcecbf6",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/about/": {
-    "hash": "488b565e545199c8",
-    "lastmod": "2026-10-07"
+    "hash": "abc1b17b9fa200ea",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/blog/": {
     "hash": "4e32a041720d70ce",
@@ -16,16 +16,16 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/": {
-    "hash": "982c13c690cba210",
-    "lastmod": "2026-10-08"
+    "hash": "99678ef1ee4eb32e",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/book-galleries/watercolor-landscapes-pacific-north-west/": {
     "hash": "f5e23c1da75823de",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/book-galleries/watercolor-landscapes-travels/": {
-    "hash": "51b91713910afc04",
-    "lastmod": "2026-10-08"
+    "hash": "449c1ffef9dab190",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-bitcoiners/": {
     "hash": "48ac836e67ffa2e9",
@@ -36,8 +36,8 @@
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-friends/": {
-    "hash": "878e146687dfc958",
-    "lastmod": "2026-10-08"
+    "hash": "14fdaa7821ab46af",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/book-galleries/watercolor-portraits-self-portraits/": {
     "hash": "f4122d40a19064d4",
@@ -48,8 +48,8 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/commissions/": {
-    "hash": "a42fd92efc28ba81",
-    "lastmod": "2026-10-07"
+    "hash": "c9a116fb58c38bdc",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/commissions/process/": {
     "hash": "b7eefed619885bf6",
@@ -84,8 +84,8 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/exhibitions/living-room/": {
-    "hash": "df0ebdf40d64f3b6",
-    "lastmod": "2026-10-07"
+    "hash": "8756e6a11cfa4656",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/exhibitions/paul-murphy/": {
     "hash": "2c3201722d9645ad",
@@ -100,32 +100,52 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/exhibitions/world-map/": {
-    "hash": "7e116503d64046d9",
-    "lastmod": "2026-10-07"
+    "hash": "1242c92a414afdee",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/film/": {
     "hash": "3ca3f1cda7f3d4d1",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/gallery/": {
-    "hash": "193256ad41e0414c",
-    "lastmod": "2026-10-08"
+    "hash": "e6ff7ccc1704f095",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/gallery/archived/": {
+    "hash": "46eec65789efd7c7",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/available/": {
-    "hash": "7f857bef2a7720bc",
-    "lastmod": "2026-10-08"
+    "hash": "a2d94db39e03cece",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/gallery/room/": {
+    "hash": "0b1430dde5bde91b",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/gallery/wall/": {
+    "hash": "0961738382c54c16",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/gallery/wall/all/": {
+    "hash": "b2259d2df3a7c9ac",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/gallery/wall/paul/": {
+    "hash": "fdda59f879be1a2e",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/links/": {
-    "hash": "1e6244c50d4938c5",
-    "lastmod": "2026-10-08"
+    "hash": "5e2e3aa5ebe36e8a",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/murals/": {
-    "hash": "18dd704173b2c139",
-    "lastmod": "2026-10-07"
+    "hash": "323f8f4142191155",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/murals/berlin-el-salvador/": {
-    "hash": "fc08d448fe6baee0",
-    "lastmod": "2026-10-07"
+    "hash": "426b739f8237244b",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/neural-dance/": {
     "hash": "617f4687c23fa0bc",
@@ -134,6 +154,222 @@
   "https://tjm.art/privacy/": {
     "hash": "95e7e0cde1c381a3",
     "lastmod": "2026-10-08"
+  },
+  "https://tjm.art/products/archived-painting-1/": {
+    "hash": "660d7eb96e14d572",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-133/": {
+    "hash": "d79644631ec04eac",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-15/": {
+    "hash": "350c8f6d7518ddb1",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-18/": {
+    "hash": "3d301498e6a96c1b",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-19/": {
+    "hash": "dad061cc3b31bfa2",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-193/": {
+    "hash": "6e311e540e58edf5",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-2/": {
+    "hash": "edd469576cc791c1",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-20/": {
+    "hash": "f062b604bcd24bb4",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-217/": {
+    "hash": "923918e1a6ad684a",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-22/": {
+    "hash": "3b3afff07b164a4a",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-226/": {
+    "hash": "cdbc35a136f64223",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-233/": {
+    "hash": "507611d7481b3351",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-241/": {
+    "hash": "6daa13ad10484f5b",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-246/": {
+    "hash": "ac9f46caa5dc6383",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-247/": {
+    "hash": "76540dc26d11545c",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-248/": {
+    "hash": "e50c5627a6ad009a",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-249/": {
+    "hash": "4ce8c270d0b5b8d1",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-301/": {
+    "hash": "2b0b7f683e298b8e",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-307/": {
+    "hash": "3e9163b91a921767",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-308/": {
+    "hash": "d10806301887da8a",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-354/": {
+    "hash": "d19f0bf67fa558a0",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-362/": {
+    "hash": "a4ce456b5dc814e8",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-363/": {
+    "hash": "6bb3b711e8a46ccb",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-364/": {
+    "hash": "fb2ae949088f9f8b",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-366/": {
+    "hash": "da7460b862ff46bf",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-367/": {
+    "hash": "b068d2de7a95c0ec",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-368/": {
+    "hash": "9a2697d491b914ca",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-369/": {
+    "hash": "0709fe6b760b52ae",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-370/": {
+    "hash": "b0841a3c8c30eabc",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-371/": {
+    "hash": "69cfd718b952d8f8",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-373/": {
+    "hash": "03e4f0a01c45d108",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-375/": {
+    "hash": "e50d03887bb8ea5b",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-385/": {
+    "hash": "db10050a9ba28abb",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-386/": {
+    "hash": "496ea71d85ecfa50",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-387/": {
+    "hash": "7931803cab6d0613",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-389/": {
+    "hash": "b3f434f35a83c51f",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-390/": {
+    "hash": "757a71d880f69475",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-4/": {
+    "hash": "349d19b31ae3a9a4",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-412/": {
+    "hash": "0f42a37902b93185",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-416/": {
+    "hash": "697280ce2ce7caeb",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-433/": {
+    "hash": "daae30f7025479d2",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-436/": {
+    "hash": "3dc7890663fc1210",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-437/": {
+    "hash": "e08ac695ffecd64a",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-438/": {
+    "hash": "3b2373c48d6f6d2e",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-53/": {
+    "hash": "f53f9a18c9cbdac3",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-62/": {
+    "hash": "33739aaff183f56d",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-66/": {
+    "hash": "74defb1efcda2989",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-73/": {
+    "hash": "e18fe1e71d2c10a1",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-75/": {
+    "hash": "516073d5f9425840",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-76/": {
+    "hash": "68f1c94f4be352a7",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-90/": {
+    "hash": "1e610f9a9a5447ec",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-img-1555/": {
+    "hash": "6f01633656a0cd80",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-img-1608/": {
+    "hash": "928dce98f5eac291",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/archived-painting-img-1612/": {
+    "hash": "6a122758ee7ca3a4",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/book-art-029f45a5fbfd6c90212e/": {
     "hash": "1eb33dfc28099598",
@@ -659,21 +895,41 @@
     "hash": "f625ba1963f5e6ff",
     "lastmod": "2026-10-07"
   },
+  "https://tjm.art/products/burning-man-temple-2022-blue/": {
+    "hash": "aefff7b720c9c34f",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/burning-man-temple-2022-daytime/": {
+    "hash": "7db3c09199322414",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/burning-man-temple-2022-flame/": {
+    "hash": "e2160dc1eb70d314",
+    "lastmod": "2026-10-13"
+  },
+  "https://tjm.art/products/burning-man-temple-2022-pink/": {
+    "hash": "338ff2052c82c67c",
+    "lastmod": "2026-10-13"
+  },
   "https://tjm.art/products/coined-in-watercolor-film-poster/": {
     "hash": "6cdd6293f177b0fd",
     "lastmod": "2026-10-07"
+  },
+  "https://tjm.art/products/cormorant-presiding-over-sunset-on-puget-sound/": {
+    "hash": "0c9902e6bc1a2d4c",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/daniel-portrait-1/": {
     "hash": "d826f31a464a8cbf",
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/el-zonte-at-sunrise/": {
-    "hash": "7b3ef903abb97c64",
-    "lastmod": "2026-10-08"
+    "hash": "bd11da8eafe7eb95",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/el-zonte-before-dawn/": {
-    "hash": "935bba8fddeeda07",
-    "lastmod": "2026-10-08"
+    "hash": "74047b8be33638c3",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/girl-wearing-flower-crown/": {
     "hash": "257eb6d21753f92a",
@@ -684,24 +940,24 @@
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/honeybadger-and-cub-with-genesis-block/": {
-    "hash": "d54be8e7cd1561c5",
-    "lastmod": "2026-10-08"
+    "hash": "b5c73dd4ce09e7eb",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/hope-the-vermillion-aurora/": {
-    "hash": "c1c7dbf75192089b",
-    "lastmod": "2026-10-08"
+    "hash": "e1abff9206ff475b",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/joaquim-in-zihuatanejo/": {
     "hash": "ba78bbb80f2aa5d8",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/meditation-at-denny-blaine/": {
-    "hash": "410cba74ebb541d7",
-    "lastmod": "2026-10-08"
+    "hash": "c58d752a3e9cf5bd",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/michael-and-katie-in-yelapa/": {
-    "hash": "91244afe8dde4a76",
-    "lastmod": "2026-10-08"
+    "hash": "76289b67235c1b59",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/myself-my-mother-ruth-my-grandpa-howard/": {
     "hash": "31169ef8773e3876",
@@ -712,16 +968,16 @@
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-clouds-over-water/": {
-    "hash": "5634dfb24b5fe61d",
-    "lastmod": "2026-10-08"
+    "hash": "f69009eb429445e2",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/painting-couple-in-color/": {
     "hash": "a740660a973049ef",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-emergence/": {
-    "hash": "2d18d19ceb851c12",
-    "lastmod": "2026-10-08"
+    "hash": "849ec1ba700c3088",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/painting-festival-portrait/": {
     "hash": "0b48f324752c8483",
@@ -740,8 +996,8 @@
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-insect-garden/": {
-    "hash": "dc1eb05e80be5903",
-    "lastmod": "2026-10-08"
+    "hash": "d2dc65941bbcadf5",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/painting-lightburst/": {
     "hash": "cdaa6879591f47ca",
@@ -772,20 +1028,20 @@
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-portrait-with-hat/": {
-    "hash": "8be36d9310db959b",
-    "lastmod": "2026-10-07"
+    "hash": "b473015225d68de4",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/painting-portrait-with-scarf/": {
     "hash": "afca22a514a18162",
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-red-horizon/": {
-    "hash": "cc0ab9c181a9111b",
-    "lastmod": "2026-10-08"
+    "hash": "4d6962194e063ac8",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/painting-shoreline-at-dusk/": {
-    "hash": "e85c97a290843410",
-    "lastmod": "2026-10-08"
+    "hash": "a2842ab91d0d6d0e",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/painting-studio-figure/": {
     "hash": "3b8cbba87417b490",
@@ -800,8 +1056,8 @@
     "lastmod": "2026-10-08"
   },
   "https://tjm.art/products/painting-twin-dragons/": {
-    "hash": "e65296acf88aec33",
-    "lastmod": "2026-10-08"
+    "hash": "72630f42946f389e",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/paul-murphy-painting-1/": {
     "hash": "120d27250dcacfd7",
@@ -964,20 +1220,20 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/products/sunrise-in-el-zonte-large/": {
-    "hash": "fcc1f2eaf82c2a1d",
-    "lastmod": "2026-10-08"
+    "hash": "77c370d3c2b24d4a",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/sunset-in-el-tunco-el-salvador/": {
-    "hash": "952cb2350dabb6da",
-    "lastmod": "2026-10-08"
+    "hash": "4c048676a448d254",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/sunset-in-el-zonte-el-salvador/": {
-    "hash": "cb60302efa172f2d",
-    "lastmod": "2026-10-07"
+    "hash": "fd0f0c3adf82a9ae",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/warszawska-syrenka/": {
-    "hash": "9144a7c9ad3e3fbc",
-    "lastmod": "2026-10-08"
+    "hash": "d3c5310d831aee35",
+    "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/watercolor-landscapes/": {
     "hash": "7fa9f45ff5aa2f88",
