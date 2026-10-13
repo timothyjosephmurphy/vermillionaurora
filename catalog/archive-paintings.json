@@ -4,7 +4,12 @@
     "prefix": "images/Archive/",
     "reviewedAt": "2026-10-12",
     "indexRule": "Use the hash-mark number immediately beneath the artist stamp; retain older corner markings separately.",
-    "dimensionRule": "Preserve handwritten measurements verbatim. Show photograph-derived dimensions as approximate, rounded to whole inches, using the repeated artist stamp calibrated against 18 inscriptions. Keep existing catalogue dimensions separately attributed. Never treat equal image resolution alone as physical scale."
+    "dimensionRule": "Handwritten measurements are inches, confirmed by the artist. Preserve their text and orient width and height to the front image. Photograph-derived dimensions remain approximate, rounded to whole inches; keep existing catalogue dimensions separately attributed.",
+    "dimensionUnitConfirmation": {
+      "unit": "in",
+      "confirmedBy": "artist",
+      "confirmedAt": "2026-10-12"
+    }
   },
   "paintings": [
     {
@@ -146,7 +151,18 @@
           ],
           "previewLongEdge": 2200
         }
-      }
+      },
+      "originalSale": {
+        "amount": "250.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-clouds-over-water"
+        ],
+        "rationale": "Small landscape; comparable to the existing $200 small landscape, with a modest $50 difference.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-233",
@@ -220,7 +236,19 @@
       "alt": "A seated man in a brimmed hat with his hands raised beside a sunlit woodland path",
       "inscription": "Dad Meditating in Yellowstone",
       "year": 2026,
-      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate.",
+      "originalSale": {
+        "amount": "400.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-portrait-with-cheese",
+          "painting-chef-in-white"
+        ],
+        "rationale": "Comparable to the existing $400 portrait tier; no premium assigned for the family subject.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-363",
@@ -1105,9 +1133,28 @@
       "inscription": "Lake in North Cascades",
       "dimensionsInscription": {
         "text": "24 × 13",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "An older corner index reads #124; another number is crossed out."
+      "otherMarks": "An older corner index reads #124; another number is crossed out.",
+      "recordedDimensions": {
+        "width": 13.0,
+        "height": 24.0,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "500.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "meditation-at-denny-blaine"
+        ],
+        "rationale": "Mid-sized landscape in the existing $500–$600 landscape tier, listed at $500.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-73",
@@ -1260,7 +1307,19 @@
         "sourceProductId": "painting-portrait-with-scarf",
         "verifiedImageMatch": true,
         "note": "Previously catalogued size; not newly measured from this photograph."
-      }
+      },
+      "originalSale": {
+        "amount": "400.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-portrait-with-cheese",
+          "painting-chef-in-white"
+        ],
+        "rationale": "Comparable to the existing $400 portrait tier; no premium assigned for the family subject.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-416",
@@ -1371,9 +1430,28 @@
       "inscription": "Sunset from Atami, El Salvador #1",
       "dimensionsInscription": {
         "text": "13.5 × 25.75",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Corner also reads “El Salvador Surf #2”, “24 × 13.5”, and #102."
+      "otherMarks": "Corner also reads “El Salvador Surf #2”, “24 × 13.5”, and #102.",
+      "recordedDimensions": {
+        "width": 13.5,
+        "height": 25.75,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "500.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "meditation-at-denny-blaine"
+        ],
+        "rationale": "Mid-sized landscape in the existing $500–$600 landscape tier, listed at $500.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-248",
@@ -1402,9 +1480,28 @@
       "inscription": "Sunset from Atami, El Salvador #2",
       "dimensionsInscription": {
         "text": "14 × 23.75",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Corner also reads “El Salvador Surf #4” and #104."
+      "otherMarks": "Corner also reads “El Salvador Surf #4” and #104.",
+      "recordedDimensions": {
+        "width": 14.0,
+        "height": 23.75,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "500.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "meditation-at-denny-blaine"
+        ],
+        "rationale": "Mid-sized landscape in the existing $500–$600 landscape tier, listed at $500.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-247",
@@ -1433,9 +1530,28 @@
       "inscription": "Sunset from Atami, El Salvador #3",
       "dimensionsInscription": {
         "text": "24 × 15",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Corner also reads “El Salvador Surf #3”."
+      "otherMarks": "Corner also reads “El Salvador Surf #3”.",
+      "recordedDimensions": {
+        "width": 15.0,
+        "height": 24.0,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "500.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "meditation-at-denny-blaine"
+        ],
+        "rationale": "Mid-sized landscape in the existing $500–$600 landscape tier, listed at $500.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-133",
@@ -1514,8 +1630,27 @@
       "year": 2023,
       "dimensionsInscription": {
         "text": "23.25 × 14.75",
-        "unit": null
-      }
+        "unit": "in"
+      },
+      "recordedDimensions": {
+        "width": 23.25,
+        "height": 14.75,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "500.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "meditation-at-denny-blaine"
+        ],
+        "rationale": "Mid-sized landscape in the existing $500–$600 landscape tier, listed at $500.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-437",
@@ -1545,8 +1680,27 @@
       "year": 2023,
       "dimensionsInscription": {
         "text": "23.25 × 14.75",
-        "unit": null
-      }
+        "unit": "in"
+      },
+      "recordedDimensions": {
+        "width": 23.25,
+        "height": 14.75,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "500.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "meditation-at-denny-blaine"
+        ],
+        "rationale": "Mid-sized landscape in the existing $500–$600 landscape tier, listed at $500.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-433",
@@ -1576,8 +1730,27 @@
       "year": 2023,
       "dimensionsInscription": {
         "text": "23.25 × 14.75",
-        "unit": null
-      }
+        "unit": "in"
+      },
+      "recordedDimensions": {
+        "width": 23.25,
+        "height": 14.75,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "500.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "meditation-at-denny-blaine"
+        ],
+        "rationale": "Mid-sized landscape in the existing $500–$600 landscape tier, listed at $500.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-436",
@@ -1607,8 +1780,27 @@
       "year": 2023,
       "dimensionsInscription": {
         "text": "13.75 × 24.75",
-        "unit": null
-      }
+        "unit": "in"
+      },
+      "recordedDimensions": {
+        "width": 13.75,
+        "height": 24.75,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "500.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "meditation-at-denny-blaine"
+        ],
+        "rationale": "Mid-sized landscape in the existing $500–$600 landscape tier, listed at $500.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-90",
@@ -1634,10 +1826,17 @@
         "captureDate": "2026:10:12 12:50:37"
       },
       "alt": "A woman with sunglasses holding a drink under a blue sky",
-      "inscription": "Sierra Dawn at Bass Coast",
+      "inscription": "Sienna Dawn at Bass Coast",
       "dimensionsInscription": {
         "text": "14.75 × 23.25",
-        "unit": null
+        "unit": "in"
+      },
+      "recordedDimensions": {
+        "width": 14.75,
+        "height": 23.25,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
       }
     },
     {
@@ -1667,9 +1866,16 @@
       "year": 2022,
       "dimensionsInscription": {
         "text": "19.25 × 21.5",
-        "unit": null
+        "unit": "in"
       },
-      "reviewNote": "Handwritten title spelling needs confirmation."
+      "reviewNote": "Handwritten title spelling needs confirmation.",
+      "recordedDimensions": {
+        "width": 19.25,
+        "height": 21.5,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      }
     },
     {
       "id": "archived-painting-241",
@@ -1698,9 +1904,16 @@
       "inscription": "On a Trip with Elsa",
       "dimensionsInscription": {
         "text": "20.5 × 26",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Older corner index: #155."
+      "otherMarks": "Older corner index: #155.",
+      "recordedDimensions": {
+        "width": 26.0,
+        "height": 20.5,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      }
     },
     {
       "id": "archived-painting-66",
@@ -1729,9 +1942,28 @@
       "inscription": "Flamenco Guitarist in Zihuatanejo",
       "dimensionsInscription": {
         "text": "22 × 26",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Older corner index: #151."
+      "otherMarks": "Older corner index: #151.",
+      "recordedDimensions": {
+        "width": 26.0,
+        "height": 22.0,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "600.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-portrait-with-cheese",
+          "joaquim-in-zihuatanejo"
+        ],
+        "rationale": "Larger figure or portrait work than the existing 15 × 24 inch $400 portrait tier.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-301",
@@ -1760,9 +1992,28 @@
       "inscription": "Catherine #1",
       "dimensionsInscription": {
         "text": "24 × 22",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Older corner index: #156."
+      "otherMarks": "Older corner index: #156.",
+      "recordedDimensions": {
+        "width": 22.0,
+        "height": 24.0,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "600.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-portrait-with-cheese",
+          "joaquim-in-zihuatanejo"
+        ],
+        "rationale": "Larger figure or portrait work than the existing 15 × 24 inch $400 portrait tier.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-53",
@@ -1819,9 +2070,28 @@
       "inscription": "Symbiosis #1",
       "dimensionsInscription": {
         "text": "24 × 44.5",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Older corner index: #122."
+      "otherMarks": "Older corner index: #122.",
+      "recordedDimensions": {
+        "width": 44.5,
+        "height": 24.0,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      },
+      "originalSale": {
+        "amount": "1000.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-red-horizon",
+          "painting-shoreline-at-dusk"
+        ],
+        "rationale": "Comparable to the existing large panoramic watercolor-pastel originals priced at $1,000.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-18",
@@ -1850,9 +2120,16 @@
       "inscription": "Mayan Warrior",
       "dimensionsInscription": {
         "text": "24 × 44.5",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Older corner index: #119."
+      "otherMarks": "Older corner index: #119.",
+      "recordedDimensions": {
+        "width": 44.5,
+        "height": 24.0,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      }
     },
     {
       "id": "archived-painting-19",
@@ -1881,7 +2158,14 @@
       "inscription": "The Temple, Daytime",
       "dimensionsInscription": {
         "text": "24 × 45",
-        "unit": null
+        "unit": "in"
+      },
+      "recordedDimensions": {
+        "width": 45.0,
+        "height": 24.0,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
       }
     },
     {
@@ -1911,9 +2195,16 @@
       "inscription": "The Temple, the Lighting #2",
       "dimensionsInscription": {
         "text": "24 × 45",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Older corner index: #121."
+      "otherMarks": "Older corner index: #121.",
+      "recordedDimensions": {
+        "width": 45.0,
+        "height": 24.0,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      }
     },
     {
       "id": "archived-painting-22",
@@ -1942,9 +2233,16 @@
       "inscription": "Devo & Kit @ Bass Coast #2",
       "dimensionsInscription": {
         "text": "24 × 45",
-        "unit": null
+        "unit": "in"
       },
-      "otherMarks": "Older corner index: #123."
+      "otherMarks": "Older corner index: #123.",
+      "recordedDimensions": {
+        "width": 45.0,
+        "height": 24.0,
+        "unit": "in",
+        "source": "reverse-inscription",
+        "orientation": "front-image"
+      }
     },
     {
       "id": "archived-painting-2",
@@ -1971,7 +2269,19 @@
       },
       "alt": "A panoramic mountain and water landscape with a small seated figure",
       "pairingNote": "Back photographed immediately before the JPEG master; preserved sequence pairs.",
-      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate.",
+      "originalSale": {
+        "amount": "400.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "painting-golden-coast"
+        ],
+        "rationale": "Panoramic landscape comparison by subject and composition; original dimensions remain unverified.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-4",
@@ -2024,7 +2334,19 @@
         "captureDate": "2026:10:12 13:12:02"
       },
       "alt": "A panoramic mountain landscape with a person seated beside the water",
-      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
+      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate.",
+      "originalSale": {
+        "amount": "400.00",
+        "currency": "USD",
+        "pricingBasis": "existing-catalog-comparables",
+        "comparableProductIds": [
+          "painting-moonlit-water",
+          "painting-golden-coast"
+        ],
+        "rationale": "Panoramic landscape comparison by subject and composition; original dimensions remain unverified.",
+        "listedAt": "2026-10-12"
+      },
+      "featured": true
     },
     {
       "id": "archived-painting-217",
@@ -2072,5 +2394,32 @@
         }
       }
     }
-  ]
+  ],
+  "featuredSelectionRequest": {
+    "requestedIndices": [
+      246,
+      248,
+      247,
+      438,
+      437,
+      433,
+      436,
+      301,
+      66,
+      15,
+      2,
+      1,
+      307,
+      266,
+      249
+    ],
+    "requestedUnindexed": [
+      "Dad Meditating in Yellowstone",
+      "My Dad, Paul Murphy"
+    ],
+    "unmatchedIndices": [
+      266
+    ],
+    "note": "#226 is present and verified on the reverse; do not substitute it for the requested #266 without clarification."
+  }
 }

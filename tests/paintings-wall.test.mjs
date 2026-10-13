@@ -11,14 +11,14 @@ import images from '../catalog/paintings-wall-images.json' with {type:'json'};
 
 const walls=[['TJ Murphy',tjWall],['Paul Murphy',paulWall]];
 test('each wall shows every sized painting by that artist exactly once',()=>{
-  assert.equal(tjWall.artworks.length,46);assert.equal(paulWall.artworks.length,38);
+  assert.equal(tjWall.artworks.length,66);assert.equal(paulWall.artworks.length,38);
   for(const [artist,wall] of walls){
     const expected=products.filter(p=>p.type==='painting'&&!p.bookGallery&&p.artist===artist&&p.dimensions?.width>0&&p.dimensions?.height>0);
     assert.deepEqual(wall.artworks.map(a=>a.id).sort(),expected.map(p=>p.id).sort());
     assert.equal(new Set(wall.artworks.map(a=>a.id)).size,wall.artworks.length);
     assert(wall.artworks.every(a=>a.artist===artist));
   }
-  assert.equal(new Set([...tjWall.artworks,...paulWall.artworks].map(a=>a.id)).size,84);
+  assert.equal(new Set([...tjWall.artworks,...paulWall.artworks].map(a=>a.id)).size,104);
 });
 test('status wording comes from the catalog and the Temple paintings say exactly Not for sale',()=>{
   const labels=new Set(['Available','Sold','Not for sale']);
@@ -76,16 +76,17 @@ test('previews are small WebP files, never upscaled, and end with the full photo
       }
     }
   }
-  // The first (initial-load) previews of the whole TJ wall stay in the 1-2 MB budget; the 24 print-wall previews come from the build step.
+  // The first (initial-load) previews of the whole TJ wall stay in the 1-2 MB budget; the 78 print-wall previews come from the build step.
   const own=tjWall.artworks.filter(a=>!onPrintWall.has(a.id)).reduce((sum,a)=>sum+fs.statSync(`static${a.sources[0].src}`).size,0);
   assert(own<900_000,`own TJ previews ${own}`);
 });
 test('paintings without a size are listed, not drawn',()=>{
-  assert.equal(notToScale.length,162+archiveProducts.length);assert.equal(notToScale.filter(i=>i.kind==='Commission package').length,3);
+  assert.equal(notToScale.length,162+archiveProducts.filter(p=>!p.dimensions).length);assert.equal(notToScale.filter(i=>i.kind==='Commission package').length,3);
   assert.equal(notToScale.filter(i=>i.kind==='Art-book page').length,159);
-  assert.deepEqual(notToScale.filter(i=>i.kind==='Archived painting').map(i=>i.id).sort(),archiveProducts.map(p=>p.id).sort());
+  assert.deepEqual(notToScale.filter(i=>i.kind==='Archived painting').map(i=>i.id).sort(),archiveProducts.filter(p=>!p.dimensions).map(p=>p.id).sort());
   const drawn=new Set([...tjWall.artworks,...paulWall.artworks].map(a=>a.id));
   assert(notToScale.every(i=>!drawn.has(i.id)&&/^\/(products\/[a-z0-9-]+\/|commissions\/#[a-z]+)$/.test(i.href)));
   assert.equal(unscaledPaintings().length+scaledPaintings('TJ Murphy').length+scaledPaintings('Paul Murphy').length,162+archiveProducts.length+46+38);
 });
-test('the existing print wall is untouched',()=>{assert.equal(wallArtworks.length,24);});
+test('the print wall includes the 54 archive additions',()=>{assert.equal(wallArtworks.length,78);assert(archiveProducts.every(p=>wallArtworks.some(a=>a.id===p.id)));});
+
