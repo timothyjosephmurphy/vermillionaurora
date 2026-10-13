@@ -15,7 +15,7 @@ jobs:
       group: checkout-sandbox
       cancel-in-progress: false
     env:
-      TJ_PRINT_IDS: warszawska-syrenka,honeybadger-and-cub-with-genesis-block
+      TJ_PRINT_IDS: warszawska-syrenka,honeybadger-and-cub-with-genesis-block,painting-portrait-with-hat
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
