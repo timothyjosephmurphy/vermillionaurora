@@ -30,6 +30,6 @@ export default archivePaintings.map(p => {
     image:{src:p.front.sourceUrl,fullSrc:archivePreview(p,1600),alt:p.alt,width:p.front.width,height:p.front.height,caption:archiveTitle(p)},
     checkout,inquiry:{label:price?'Contact me to purchase the original':'Ask about this painting',note:price&&!dimensions?'Contact me to arrange purchase and shipping.':''},
     back:{href:'/gallery/archived/',label:'← Back to Archived Paintings'},
-    archive:{index:p.index,order:p.order,indexStatus:p.indexStatus,master:p.front,reverse:p.back,...(p.estimatedDimensions?{estimatedDimensions:p.estimatedDimensions}:{}),...(p.cataloguedDimensions?{cataloguedDimensions:p.cataloguedDimensions}:{})}
+    archive:{index:p.index,...(p.withdrawnOriginalSale?{originalWithdrawn:true}:{}),order:p.order,indexStatus:p.indexStatus,master:p.front,reverse:p.back,...(p.estimatedDimensions?{estimatedDimensions:p.estimatedDimensions}:{}),...(p.cataloguedDimensions?{cataloguedDimensions:p.cataloguedDimensions}:{})}
   };
 });
