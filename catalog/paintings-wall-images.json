@@ -321,6 +321,25 @@
    }
   ]
  },
+ "older-work-hummingbird-feeder-190": {
+  "sha256": "cef1c7ac71",
+  "width": 1235,
+  "height": 1736,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/older-work-hummingbird-feeder-190-cef1c7ac71-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/older-work-hummingbird-feeder-190-cef1c7ac71-960.webp"
+   },
+   {
+    "width": 1235,
+    "src": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg"
+   }
+  ]
+ },
  "paul-murphy-painting-1": {
   "sha256": "a9c8c100a6",
   "width": 3825,
