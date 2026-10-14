@@ -74,9 +74,8 @@ product-page scripts or screenshots shared for troubleshooting.
 ```sh
 npm --prefix cloudflare/test ci
 npm --prefix cloudflare/test test
-node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
+node --test cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
 node payments/build-checkout-catalog.mjs
-node payments/paypal-checkout.browser-test.cjs
 node payments/bitcoin-checkout.browser-test.cjs
 ```
 
