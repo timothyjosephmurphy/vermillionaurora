@@ -11,8 +11,8 @@ async function api(action,body){
 const tj=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&!p.productId.startsWith('paul-murphy-')&&!p.productId.startsWith('book-art-'));
 const books=Object.values(prints).filter(p=>p.productId.startsWith('book-art-'));
 assert.equal(new Set(books.map(p=>p.productId)).size,53);assert.equal(books.filter(p=>!p.frame).length,109);assert.equal(books.filter(p=>p.frame).length,327);assert.equal(books.length,436);
-// 24 existing TJ masters plus all 54 artist-designated archive masters.
-assert.equal(new Set(tj.map(p=>p.productId)).size,77);assert.equal(tj.filter(p=>!p.frame).length,213);assert.equal(tj.filter(p=>p.frame).length,639);
+// TJ masters, artist-designated archive masters, and 20 Older Work pages.
+assert.equal(new Set(tj.map(p=>p.productId)).size,97);assert.equal(tj.filter(p=>!p.frame).length,255);assert.equal(tj.filter(p=>p.frame).length,765);
 const expected=Object.values(prints).filter(p=>p.sizeBasis==='image-proportional'&&p.productId.startsWith('paul-murphy-')),catalog=await api('catalog');
 assert.equal(expected.filter(p=>!p.frame).length,112);assert.equal(expected.filter(p=>p.frame).length,336);assert.equal(new Set(expected.map(p=>p.productId)).size,38);assert(catalog.version.endsWith('-'+printVersion));
 for(const p of [...expected,...tj,...books]){

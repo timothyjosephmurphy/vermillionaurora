@@ -19,6 +19,8 @@ export const PRODUCT_RENAMES = Object.freeze({
   "sunset-from-atami-el-salvador": "sunset-in-el-tunco-el-salvador",
   "ukrainian-woman-with-flower-crown": "girl-wearing-flower-crown",
   "rice-paddy-in-vietnam": "rice-paddies-in-vietnam",
+  "older-work-coconut-190": "older-work-hummingbird-feeder-190",
+  "older-work-breedlove-ammous-livera": "older-work-ammous-livera", // Robert Breedlove portrait removed (distorted image)
   "painting-portrait-with-scarf": "archived-painting-img-1608" // Father Paul merged into My Dad, Paul Murphy (same painting, better photo)
 });
 

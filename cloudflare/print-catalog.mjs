@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="d0257e7c4533f5e4b227";
+export const printVersion="1bda8d456a915045356b";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -114742,10 +114742,10 @@ export default {
     "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
       "fullSrc": "/display/older-work-shore-figures-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
-      "width": 7040,
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
       "height": 2100,
       "caption": "Figures on a Shore Triptych"
     },
@@ -114783,10 +114783,10 @@ export default {
     "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
       "fullSrc": "/display/older-work-shore-figures-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
-      "width": 7040,
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
       "height": 2100,
       "caption": "Figures on a Shore Triptych"
     },
@@ -114860,10 +114860,10 @@ export default {
     "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
       "fullSrc": "/display/older-work-shore-figures-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
-      "width": 7040,
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
       "height": 2100,
       "caption": "Figures on a Shore Triptych"
     },
@@ -114937,10 +114937,10 @@ export default {
     "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
       "fullSrc": "/display/older-work-shore-figures-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
-      "width": 7040,
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
       "height": 2100,
       "caption": "Figures on a Shore Triptych"
     },
@@ -115014,10 +115014,10 @@ export default {
     "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
       "fullSrc": "/display/older-work-shore-figures-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
-      "width": 7040,
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
       "height": 2100,
       "caption": "Figures on a Shore Triptych"
     },
@@ -115055,10 +115055,10 @@ export default {
     "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
       "fullSrc": "/display/older-work-shore-figures-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
-      "width": 7040,
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
       "height": 2100,
       "caption": "Figures on a Shore Triptych"
     },
@@ -115132,10 +115132,10 @@ export default {
     "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
       "fullSrc": "/display/older-work-shore-figures-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
-      "width": 7040,
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
       "height": 2100,
       "caption": "Figures on a Shore Triptych"
     },
@@ -115209,10 +115209,10 @@ export default {
     "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f.jpg",
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
       "fullSrc": "/display/older-work-shore-figures-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Driftwood Stump 180",
-      "width": 7040,
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
       "height": 2100,
       "caption": "Figures on a Shore Triptych"
     },
@@ -117462,10 +117462,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -117503,10 +117503,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -117580,10 +117580,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -117657,10 +117657,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -117734,10 +117734,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -117775,10 +117775,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -117852,10 +117852,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -117929,10 +117929,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -118006,10 +118006,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -118047,10 +118047,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -118124,10 +118124,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -118201,10 +118201,10 @@ export default {
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
-      "src": "https://vermillionaurora.com/print-masters/e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343.jpg",
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
       "fullSrc": "/display/older-work-pitchers-1600.webp",
       "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
-      "width": 5604,
+      "width": 5579,
       "height": 2480,
       "caption": "Pitcher Still Lifes"
     },
@@ -118249,13 +118249,13 @@ export default {
     },
     "unframedAmount": "35.00"
   },
-  "print-older-work-coconut-190-full": {
-    "id": "print-older-work-coconut-190-full",
+  "print-older-work-hummingbird-feeder-190-full": {
+    "id": "print-older-work-hummingbird-feeder-190-full",
     "type": "print",
     "provider": "finerworks",
-    "productId": "older-work-coconut-190",
-    "title": "TJ Coconut 190 — Large print",
-    "artworkTitle": "TJ Coconut 190",
+    "productId": "older-work-hummingbird-feeder-190",
+    "title": "TJ Hummingbird Feeder 190 — Large print",
+    "artworkTitle": "TJ Hummingbird Feeder 190",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S4.36X6.03",
@@ -118279,24 +118279,24 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg",
-      "fullSrc": "/display/older-work-coconut-190-1600.webp",
-      "alt": "TJ Coconut 190, a painting by TJ Murphy",
+      "fullSrc": "/display/older-work-hummingbird-feeder-190-1600.webp",
+      "alt": "TJ Hummingbird Feeder 190, a painting by TJ Murphy",
       "width": 1235,
       "height": 1736,
-      "caption": "TJ Coconut 190"
+      "caption": "TJ Hummingbird Feeder 190"
     },
     "attributes": {},
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
-  "print-older-work-coconut-190-full-frame-black": {
-    "id": "print-older-work-coconut-190-full-frame-black",
+  "print-older-work-hummingbird-feeder-190-full-frame-black": {
+    "id": "print-older-work-hummingbird-feeder-190-full-frame-black",
     "type": "print",
     "provider": "finerworks",
-    "productId": "older-work-coconut-190",
-    "title": "TJ Coconut 190 — Large print — Black frame",
-    "artworkTitle": "TJ Coconut 190",
+    "productId": "older-work-hummingbird-feeder-190",
+    "title": "TJ Hummingbird Feeder 190 — Large print — Black frame",
+    "artworkTitle": "TJ Hummingbird Feeder 190",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S4DD36X6DD03F1S8X9DD67J1S4DD36X6DD03G1",
@@ -118320,11 +118320,11 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg",
-      "fullSrc": "/display/older-work-coconut-190-1600.webp",
-      "alt": "TJ Coconut 190, a painting by TJ Murphy",
+      "fullSrc": "/display/older-work-hummingbird-feeder-190-1600.webp",
+      "alt": "TJ Hummingbird Feeder 190, a painting by TJ Murphy",
       "width": 1235,
       "height": 1736,
-      "caption": "TJ Coconut 190"
+      "caption": "TJ Hummingbird Feeder 190"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -118367,13 +118367,13 @@ export default {
     },
     "unframedAmount": "25.00"
   },
-  "print-older-work-coconut-190-full-frame-white": {
-    "id": "print-older-work-coconut-190-full-frame-white",
+  "print-older-work-hummingbird-feeder-190-full-frame-white": {
+    "id": "print-older-work-hummingbird-feeder-190-full-frame-white",
     "type": "print",
     "provider": "finerworks",
-    "productId": "older-work-coconut-190",
-    "title": "TJ Coconut 190 — Large print — White frame",
-    "artworkTitle": "TJ Coconut 190",
+    "productId": "older-work-hummingbird-feeder-190",
+    "title": "TJ Hummingbird Feeder 190 — Large print — White frame",
+    "artworkTitle": "TJ Hummingbird Feeder 190",
     "amount": "59.63",
     "currency": "USD",
     "sku": "5M144M8S4DD36X6DD03F2S8X9DD67J1S4DD36X6DD03G1",
@@ -118397,11 +118397,11 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg",
-      "fullSrc": "/display/older-work-coconut-190-1600.webp",
-      "alt": "TJ Coconut 190, a painting by TJ Murphy",
+      "fullSrc": "/display/older-work-hummingbird-feeder-190-1600.webp",
+      "alt": "TJ Hummingbird Feeder 190, a painting by TJ Murphy",
       "width": 1235,
       "height": 1736,
-      "caption": "TJ Coconut 190"
+      "caption": "TJ Hummingbird Feeder 190"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -118444,13 +118444,13 @@ export default {
     },
     "unframedAmount": "25.00"
   },
-  "print-older-work-coconut-190-full-frame-natural": {
-    "id": "print-older-work-coconut-190-full-frame-natural",
+  "print-older-work-hummingbird-feeder-190-full-frame-natural": {
+    "id": "print-older-work-hummingbird-feeder-190-full-frame-natural",
     "type": "print",
     "provider": "finerworks",
-    "productId": "older-work-coconut-190",
-    "title": "TJ Coconut 190 — Large print — Natural wood frame",
-    "artworkTitle": "TJ Coconut 190",
+    "productId": "older-work-hummingbird-feeder-190",
+    "title": "TJ Hummingbird Feeder 190 — Large print — Natural wood frame",
+    "artworkTitle": "TJ Hummingbird Feeder 190",
     "amount": "67.63",
     "currency": "USD",
     "sku": "5M144M8S4DD36X6DD03F7S8X9DD67J1S4DD36X6DD03G1",
@@ -118474,11 +118474,11 @@ export default {
     "layoutApproved": true,
     "preview": {
       "src": "https://vermillionaurora.com/print-masters/cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819.jpg",
-      "fullSrc": "/display/older-work-coconut-190-1600.webp",
-      "alt": "TJ Coconut 190, a painting by TJ Murphy",
+      "fullSrc": "/display/older-work-hummingbird-feeder-190-1600.webp",
+      "alt": "TJ Hummingbird Feeder 190, a painting by TJ Murphy",
       "width": 1235,
       "height": 1736,
-      "caption": "TJ Coconut 190"
+      "caption": "TJ Hummingbird Feeder 190"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -120696,550 +120696,6 @@ export default {
       }
     },
     "unframedAmount": "45.00"
-  },
-  "print-older-work-breedlove-ammous-livera-full": {
-    "id": "print-older-work-breedlove-ammous-livera-full",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-breedlove-ammous-livera",
-    "title": "Breedlove, Ammous and Livera — Large print",
-    "artworkTitle": "Breedlove, Ammous and Livera",
-    "amount": "55.00",
-    "currency": "USD",
-    "sku": "5M144M8S16.14X6.05",
-    "scale": 1,
-    "imageSize": {
-      "width": 15.87,
-      "height": 5.7967,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.14,
-      "height": 6.05,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
-    "assetSha256": "2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45",
-    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
-      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
-      "width": 4769,
-      "height": 1742,
-      "caption": "Breedlove, Ammous and Livera"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-breedlove-ammous-livera-full-frame-black": {
-    "id": "print-older-work-breedlove-ammous-livera-full-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-breedlove-ammous-livera",
-    "title": "Breedlove, Ammous and Livera — Large print — Black frame",
-    "artworkTitle": "Breedlove, Ammous and Livera",
-    "amount": "106.00",
-    "currency": "USD",
-    "sku": "5M144M8S16DD14X6DD05F1S19DD14X9DD05J1S16DD14X6DD05G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 15.87,
-      "height": 5.7967,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.14,
-      "height": 6.05,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
-    "assetSha256": "2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45",
-    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
-      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
-      "width": 4769,
-      "height": 1742,
-      "caption": "Breedlove, Ammous and Livera"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.14,
-        "height": 9.05,
-        "unit": "in"
-      },
-      "window": {
-        "width": 16.14,
-        "height": 6.05,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S16.14X6.05",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.14,
-        "height": 9.05,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "55.00"
-  },
-  "print-older-work-breedlove-ammous-livera-full-frame-white": {
-    "id": "print-older-work-breedlove-ammous-livera-full-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-breedlove-ammous-livera",
-    "title": "Breedlove, Ammous and Livera — Large print — White frame",
-    "artworkTitle": "Breedlove, Ammous and Livera",
-    "amount": "106.00",
-    "currency": "USD",
-    "sku": "5M144M8S16DD14X6DD05F2S19DD14X9DD05J1S16DD14X6DD05G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 15.87,
-      "height": 5.7967,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.14,
-      "height": 6.05,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
-    "assetSha256": "2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45",
-    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
-      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
-      "width": 4769,
-      "height": 1742,
-      "caption": "Breedlove, Ammous and Livera"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.14,
-        "height": 9.05,
-        "unit": "in"
-      },
-      "window": {
-        "width": 16.14,
-        "height": 6.05,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S16.14X6.05",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.14,
-        "height": 9.05,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "55.00"
-  },
-  "print-older-work-breedlove-ammous-livera-full-frame-natural": {
-    "id": "print-older-work-breedlove-ammous-livera-full-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-breedlove-ammous-livera",
-    "title": "Breedlove, Ammous and Livera — Large print — Natural wood frame",
-    "artworkTitle": "Breedlove, Ammous and Livera",
-    "amount": "119.00",
-    "currency": "USD",
-    "sku": "5M144M8S16DD14X6DD05F7S19DD14X9DD05J1S16DD14X6DD05G1",
-    "scale": 1,
-    "imageSize": {
-      "width": 15.87,
-      "height": 5.7967,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 16.14,
-      "height": 6.05,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45.jpg",
-    "assetSha256": "2f273f46a9f7fd4127ed62783797eaed2ea274ed898025e41dfcb461848b0e45",
-    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
-      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
-      "width": 4769,
-      "height": 1742,
-      "caption": "Breedlove, Ammous and Livera"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 19.14,
-        "height": 9.05,
-        "unit": "in"
-      },
-      "window": {
-        "width": 16.14,
-        "height": 6.05,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S16.14X6.05",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 19.14,
-        "height": 9.05,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "55.00"
-  },
-  "print-older-work-breedlove-ammous-livera-medium": {
-    "id": "print-older-work-breedlove-ammous-livera-medium",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-breedlove-ammous-livera",
-    "title": "Breedlove, Ammous and Livera — Medium print",
-    "artworkTitle": "Breedlove, Ammous and Livera",
-    "amount": "40.00",
-    "currency": "USD",
-    "sku": "5M144M8S12.17X4.6",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 11.9,
-      "height": 4.3467,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 12.17,
-      "height": 4.6,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
-    "assetSha256": "f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9",
-    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
-      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
-      "width": 4769,
-      "height": 1742,
-      "caption": "Breedlove, Ammous and Livera"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
-  },
-  "print-older-work-breedlove-ammous-livera-medium-frame-black": {
-    "id": "print-older-work-breedlove-ammous-livera-medium-frame-black",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-breedlove-ammous-livera",
-    "title": "Breedlove, Ammous and Livera — Medium print — Black frame",
-    "artworkTitle": "Breedlove, Ammous and Livera",
-    "amount": "82.00",
-    "currency": "USD",
-    "sku": "5M144M8S12DD17X4DD6F1S15DD59X8DD02J1S12DD17X4DD6G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 11.9,
-      "height": 4.3467,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 12.17,
-      "height": 4.6,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
-    "assetSha256": "f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9",
-    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
-      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
-      "width": 4769,
-      "height": 1742,
-      "caption": "Breedlove, Ammous and Livera"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 15.59,
-        "height": 8.02,
-        "unit": "in"
-      },
-      "window": {
-        "width": 12.17,
-        "height": 4.6,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S12.17X4.6",
-    "frame": {
-      "key": "black",
-      "id": 1,
-      "collectionId": 1,
-      "name": "Black",
-      "color": "#262321",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 15.59,
-        "height": 8.02,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "40.00"
-  },
-  "print-older-work-breedlove-ammous-livera-medium-frame-white": {
-    "id": "print-older-work-breedlove-ammous-livera-medium-frame-white",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-breedlove-ammous-livera",
-    "title": "Breedlove, Ammous and Livera — Medium print — White frame",
-    "artworkTitle": "Breedlove, Ammous and Livera",
-    "amount": "82.00",
-    "currency": "USD",
-    "sku": "5M144M8S12DD17X4DD6F2S15DD59X8DD02J1S12DD17X4DD6G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 11.9,
-      "height": 4.3467,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 12.17,
-      "height": 4.6,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
-    "assetSha256": "f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9",
-    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
-      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
-      "width": 4769,
-      "height": 1742,
-      "caption": "Breedlove, Ammous and Livera"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 15.59,
-        "height": 8.02,
-        "unit": "in"
-      },
-      "window": {
-        "width": 12.17,
-        "height": 4.6,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S12.17X4.6",
-    "frame": {
-      "key": "white",
-      "id": 2,
-      "collectionId": 1,
-      "name": "White",
-      "color": "#f7f5ef",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 15.59,
-        "height": 8.02,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "40.00"
-  },
-  "print-older-work-breedlove-ammous-livera-medium-frame-natural": {
-    "id": "print-older-work-breedlove-ammous-livera-medium-frame-natural",
-    "type": "print",
-    "provider": "finerworks",
-    "productId": "older-work-breedlove-ammous-livera",
-    "title": "Breedlove, Ammous and Livera — Medium print — Natural wood frame",
-    "artworkTitle": "Breedlove, Ammous and Livera",
-    "amount": "92.00",
-    "currency": "USD",
-    "sku": "5M144M8S12DD17X4DD6F7S15DD59X8DD02J1S12DD17X4DD6G1",
-    "scale": 0.75,
-    "imageSize": {
-      "width": 11.9,
-      "height": 4.3467,
-      "unit": "in"
-    },
-    "paperSize": {
-      "width": 12.17,
-      "height": 4.6,
-      "unit": "in"
-    },
-    "paper": "Watercolor Bright White",
-    "testOnly": false,
-    "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9.jpg",
-    "assetSha256": "f5471aff2a1a983fb39e1d52b7db78ec824c4dcc7d754e20eb425e819bd995f9",
-    "sourceSha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
-    "layoutApproved": true,
-    "preview": {
-      "src": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
-      "fullSrc": "/display/older-work-breedlove-ammous-livera-1600.webp",
-      "alt": "3 paintings by TJ Murphy shown together: TJ Robert Breedlove 357, TJ Saifedean Ammous 355, TJ Stephan Livera 356",
-      "width": 4769,
-      "height": 1742,
-      "caption": "Breedlove, Ammous and Livera"
-    },
-    "attributes": {},
-    "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional",
-    "mat": {
-      "key": "snow-white",
-      "name": "Snow White",
-      "color": "#fff",
-      "outer": {
-        "width": 15.59,
-        "height": 8.02,
-        "unit": "in"
-      },
-      "window": {
-        "width": 12.17,
-        "height": 4.6,
-        "unit": "in"
-      },
-      "id": 1
-    },
-    "baseSku": "5M144M8S12.17X4.6",
-    "frame": {
-      "key": "natural",
-      "id": 7,
-      "collectionId": 1,
-      "name": "Natural wood",
-      "color": "#b79061",
-      "material": "Solid Wood with Veneer",
-      "mouldingWidth": 0.88,
-      "size": {
-        "width": 15.59,
-        "height": 8.02,
-        "unit": "in"
-      },
-      "glazing": {
-        "id": 1,
-        "name": "Premium Clear"
-      }
-    },
-    "unframedAmount": "40.00"
   },
   "print-older-work-rochard-martinez-full": {
     "id": "print-older-work-rochard-martinez-full",
