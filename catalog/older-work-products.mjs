@@ -25,7 +25,7 @@ export default olderWorkGroups.map(g => {
       {label:'Originals',value:'Not for sale · Prints of the set only'}
     ],
     story:single?[]:['A print reproduces the whole set as photographed, side by side on white.'],
-    image:{src:g.master.url,fullSrc:olderWorkPreview(g,1600),alt:olderWorkAlt(g),width:g.master.widthPx,height:g.master.heightPx,caption:title},
+    image:g.preview?{src:`https://tjm.art${olderWorkPreview(g,1600)}`,fullSrc:olderWorkPreview(g,1600),alt:olderWorkAlt(g),width:g.preview.width,height:g.preview.height,caption:title}:{src:g.master.url,fullSrc:olderWorkPreview(g,1600),alt:olderWorkAlt(g),width:g.master.widthPx,height:g.master.heightPx,caption:title},
     gallery:single?[]:g.members.map(m=>({...m.display,alt:`${m.name}, a painting by TJ Murphy`,caption:m.name})),
     checkout:{mode:'inquiry'},inquiry:{label:'Ask about this painting',note:''},
     back:{href:'/gallery/older-work/',label:'← Back to Older Work'},

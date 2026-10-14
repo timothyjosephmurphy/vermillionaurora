@@ -27,7 +27,7 @@ const description='Older paintings by TJ Murphy: portraits, landscapes and studi
   <ul class="archive-grid older-work-grid" aria-label="Older Work">
     {olderWorkGroups.map((g,i)=>{const p=byId[g.id],prints=printsFromLabel(p),buy=showBuy(p);return <li class="archive-card card-tile" data-product-id={g.id} data-prints-from={prints||undefined} data-buy={buy?'true':'false'}>
       <a href={`/products/${g.id}/`}>
-        <div class="archive-image"><img src={olderWorkPreview(g,480)} srcset={[480,960,1600].map(w=>`${olderWorkPreview(g,w)} ${w}w`).join(', ')} sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 960px) 45vw, 30vw" width={g.master.widthPx} height={g.master.heightPx} alt={olderWorkAlt(g)} loading={i<3?'eager':'lazy'} decoding="async"/></div>
+        <div class="archive-image"><img src={olderWorkPreview(g,480)} srcset={[480,960,1600].map(w=>`${olderWorkPreview(g,w)} ${w}w`).join(', ')} sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 960px) 45vw, 30vw" width={g.preview?.width??g.master.widthPx} height={g.preview?.height??g.master.heightPx} alt={olderWorkAlt(g)} loading={i<3?'eager':'lazy'} decoding="async"/></div>
         <div class="archive-caption"><h2>{olderWorkTitle(g)}</h2>{g.members.length>1&&<p>{g.members.length} paintings</p>}
           <p class="card-buy-row">{prints?<span class="card-prints-from">{prints}</span>:<span class="card-prints-from">Original not for sale</span>}<span class="card-buy" data-card-buy aria-hidden="true" hidden={!buy}>Buy</span></p></div>
       </a>
