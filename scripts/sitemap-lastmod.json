@@ -1,7 +1,7 @@
 {
   "https://tjm.art/": {
-    "hash": "d66aae159a2fef2d",
-    "lastmod": "2026-10-13"
+    "hash": "bf67d9f2e5a77a69",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/about/": {
     "hash": "abc1b17b9fa200ea",
@@ -16,8 +16,8 @@
     "lastmod": "2026-10-07"
   },
   "https://tjm.art/book-galleries/": {
-    "hash": "bb2408eac5984474",
-    "lastmod": "2026-10-13"
+    "hash": "ea043f1d6e73a437",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/book-galleries/watercolor-landscapes-pacific-north-west/": {
     "hash": "f5e23c1da75823de",
@@ -120,8 +120,8 @@
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/older-work/": {
-    "hash": "6c3a2632d3ddaf31",
-    "lastmod": "2026-10-13"
+    "hash": "18e1ff5089485739",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/gallery/room/": {
     "hash": "1e27f04d77e1cd36",
@@ -132,8 +132,8 @@
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/gallery/wall/all/": {
-    "hash": "4fc34ec9c872fd89",
-    "lastmod": "2026-10-13"
+    "hash": "012bc9f06aa41425",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/gallery/wall/paul/": {
     "hash": "66d7e3ea1997b3c2",
@@ -368,8 +368,8 @@
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/archived-painting-img-1608/": {
-    "hash": "bfca13930a6a608c",
-    "lastmod": "2026-10-13"
+    "hash": "e5ff7b7fd3f52551",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/products/archived-painting-img-1612/": {
     "hash": "6a122758ee7ca3a4",
@@ -967,6 +967,10 @@
     "hash": "31169ef8773e3876",
     "lastmod": "2026-10-07"
   },
+  "https://tjm.art/products/older-work-ammous-livera/": {
+    "hash": "84b074bbe6394325",
+    "lastmod": "2026-10-14"
+  },
   "https://tjm.art/products/older-work-beach-sunsets/": {
     "hash": "8d99c066cd3f077f",
     "lastmod": "2026-10-13"
@@ -975,29 +979,25 @@
     "hash": "cc893b38cb31ef33",
     "lastmod": "2026-10-13"
   },
-  "https://tjm.art/products/older-work-breedlove-ammous-livera/": {
-    "hash": "e3381e04d2cad4e4",
-    "lastmod": "2026-10-13"
-  },
-  "https://tjm.art/products/older-work-coconut-190/": {
-    "hash": "5bd998fab8e367c2",
-    "lastmod": "2026-10-13"
-  },
   "https://tjm.art/products/older-work-fernandez-moran-pysh/": {
     "hash": "749f7a122ef9bc2f",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/older-work-figen-pnut-swoll/": {
-    "hash": "0acb2bf9b3a6bab4",
-    "lastmod": "2026-10-13"
+    "hash": "5fc757b1d10116c5",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/products/older-work-forest-triptych/": {
     "hash": "1f4683da5ef123a6",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/older-work-hayek-stark-gomez-el-bawab/": {
-    "hash": "a41bec6d3e8fd779",
-    "lastmod": "2026-10-13"
+    "hash": "3a05220c428c09bd",
+    "lastmod": "2026-10-14"
+  },
+  "https://tjm.art/products/older-work-hummingbird-feeder-190/": {
+    "hash": "03bcb2b51e370fea",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/products/older-work-lake-hillside-color-wheel/": {
     "hash": "8fe0dc8a23ff588d",
@@ -1008,16 +1008,16 @@
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/older-work-mountain-layers/": {
-    "hash": "6a79ec2e4f498569",
-    "lastmod": "2026-10-13"
+    "hash": "e0ed7fe90d7ad14c",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/products/older-work-nakamoto-hayek/": {
     "hash": "011c676f0e97f64f",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/older-work-pitchers/": {
-    "hash": "287835e2e1c48e4d",
-    "lastmod": "2026-10-13"
+    "hash": "2155a794d56f9b34",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/products/older-work-portraits-319-329/": {
     "hash": "6e32a3ab7344fb6a",
@@ -1028,20 +1028,20 @@
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/older-work-ridge-strips-unindexed/": {
-    "hash": "235a646f5295ab65",
-    "lastmod": "2026-10-13"
+    "hash": "e9cf7ad517f1132c",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/products/older-work-rochard-martinez/": {
     "hash": "e8760f84e4f6281e",
     "lastmod": "2026-10-13"
   },
   "https://tjm.art/products/older-work-shore-figures/": {
-    "hash": "6ab58cc2c27f42f9",
-    "lastmod": "2026-10-13"
+    "hash": "dde568f3cd4b2532",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/products/older-work-sunset-ridge-strips/": {
-    "hash": "d24805cef70e771e",
-    "lastmod": "2026-10-13"
+    "hash": "167d7d34585d4b71",
+    "lastmod": "2026-10-14"
   },
   "https://tjm.art/products/older-work-yakes-todd-dickerson/": {
     "hash": "91e03ce9f7119a77",

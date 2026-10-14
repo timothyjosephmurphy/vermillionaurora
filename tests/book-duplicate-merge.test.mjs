@@ -6,6 +6,7 @@ import manifest from '../catalog/book-galleries.json' with {type:'json'};
 import bookProducts from '../catalog/book-products.json' with {type:'json'};
 import products from '../catalog/products.json' with {type:'json'};
 import archiveProducts from '../catalog/archive-products.mjs';
+import olderWorkProducts from '../catalog/older-work-products.mjs';
 import collections from '../catalog/collections.json' with {type:'json'};
 import {canonicalArtwork,sectionArtworkIds} from '../src/data/canonical-artworks.mjs';
 import {PRODUCT_RENAMES,renamedProductPath} from '../worker/product-renames.mjs';
@@ -74,7 +75,7 @@ test('merged duplicates: the catalog page survives with the book title everywher
 });
 
 test('merged duplicates: dropped URLs 301 to the survivor in one hop on both domains',()=>{
-  const finals=new Set([...products,...archiveProducts].map(p=>`/products/${p.slug}/`));
+  const finals=new Set([...products,...archiveProducts,...olderWorkProducts].map(p=>`/products/${p.slug}/`));
   for(const [scan,[slug]] of Object.entries(MERGED)){
     for(const from of [`/products/${scan}/`,`/products/${scan}`]){
       const line=redirects.find(([f])=>f===from);
@@ -88,7 +89,7 @@ test('merged duplicates: dropped URLs 301 to the survivor in one hop on both dom
   }
   for(const [old,slug] of Object.entries(PRODUCT_RENAMES)){
     assert(!byId[old],`${old} must no longer be a product id`);
-    assert(byId[slug]||archiveProducts.some(p=>p.id===slug),`${old} -> ${slug} must land on a product`);
+    assert(byId[slug]||[...archiveProducts,...olderWorkProducts].some(p=>p.id===slug),`${old} -> ${slug} must land on a product`);
   }
 });
 

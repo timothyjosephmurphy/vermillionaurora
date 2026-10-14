@@ -67,14 +67,14 @@
      }
     },
     {
-     "title": "Driftwood Stump",
-     "name": "TJ Driftwood Stump 180",
+     "title": "Crab on Beach",
+     "name": "TJ Crab on Beach 180",
      "index": 180,
      "dimensions": null,
      "year": null,
      "flag": "placeholder title",
      "crop": {
-      "widthPx": 2424,
+      "widthPx": 2369,
       "heightPx": 2192
      },
      "display": {
@@ -84,7 +84,7 @@
        960
       ],
       "width": 960,
-      "height": 868,
+      "height": 888,
       "fallback": "/display/older-work-shore-figures-3.jpg"
      }
     }
@@ -94,6 +94,11 @@
     "sha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "widthPx": 7040,
     "heightPx": 2100
+   },
+   "preview": {
+    "width": 6988,
+    "height": 2100,
+    "note": "Web preview cropped after the print master was made; print master unchanged."
    }
   },
   {
@@ -634,7 +639,7 @@
      "year": null,
      "flag": "placeholder title",
      "crop": {
-      "widthPx": 3823,
+      "widthPx": 3780,
       "heightPx": 2480
      },
      "display": {
@@ -644,7 +649,7 @@
        960
       ],
       "width": 960,
-      "height": 623,
+      "height": 630,
       "fallback": "/display/older-work-pitchers-1.jpg"
      }
     },
@@ -657,7 +662,7 @@
      "flag": "placeholder title",
      "crop": {
       "widthPx": 2573,
-      "heightPx": 3738
+      "heightPx": 3699
      },
      "display": {
       "base": "/display/older-work-pitchers-2",
@@ -666,7 +671,7 @@
        960
       ],
       "width": 960,
-      "height": 1395,
+      "height": 1380,
       "fallback": "/display/older-work-pitchers-2.jpg"
      }
     }
@@ -676,12 +681,17 @@
     "sha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "widthPx": 5604,
     "heightPx": 2480
+   },
+   "preview": {
+    "width": 5579,
+    "height": 2480,
+    "note": "Web preview cropped after the print master was made; print master unchanged."
    }
   },
   {
-   "id": "older-work-coconut-190",
+   "id": "older-work-hummingbird-feeder-190",
    "order": 7,
-   "title": "TJ Coconut 190",
+   "title": "TJ Hummingbird Feeder 190",
    "front": {
     "key": "images/Archive/Need processing/IMG_1515.jpg"
    },
@@ -691,8 +701,8 @@
    "layout": "row",
    "members": [
     {
-     "title": "Coconut",
-     "name": "TJ Coconut 190",
+     "title": "Hummingbird Feeder",
+     "name": "TJ Hummingbird Feeder 190",
      "index": 190,
      "dimensions": null,
      "year": null,
@@ -1092,9 +1102,9 @@
    }
   },
   {
-   "id": "older-work-breedlove-ammous-livera",
+   "id": "older-work-ammous-livera",
    "order": 12,
-   "title": "Breedlove, Ammous and Livera",
+   "title": "Ammous and Livera",
    "front": {
     "key": "images/Archive/Need processing/IMG_1530.jpg"
    },
@@ -1103,33 +1113,6 @@
    },
    "layout": "row",
    "members": [
-    {
-     "title": "Robert Breedlove",
-     "name": "TJ Robert Breedlove 357",
-     "index": 357,
-     "dimensions": {
-      "width": 11,
-      "height": 12,
-      "unit": "in",
-      "source": "label on reverse"
-     },
-     "year": null,
-     "flag": null,
-     "crop": {
-      "widthPx": 1460,
-      "heightPx": 1813
-     },
-     "display": {
-      "base": "/display/older-work-breedlove-ammous-livera-1",
-      "widths": [
-       480,
-       960
-      ],
-      "width": 960,
-      "height": 1192,
-      "fallback": "/display/older-work-breedlove-ammous-livera-1.jpg"
-     }
-    },
     {
      "title": "Saifedean Ammous",
      "name": "TJ Saifedean Ammous 355",
@@ -1147,14 +1130,14 @@
       "heightPx": 1742
      },
      "display": {
-      "base": "/display/older-work-breedlove-ammous-livera-2",
+      "base": "/display/older-work-ammous-livera-1",
       "widths": [
        480,
        960
       ],
       "width": 960,
       "height": 1007,
-      "fallback": "/display/older-work-breedlove-ammous-livera-2.jpg"
+      "fallback": "/display/older-work-ammous-livera-1.jpg"
      }
     },
     {
@@ -1174,21 +1157,21 @@
       "heightPx": 1776
      },
      "display": {
-      "base": "/display/older-work-breedlove-ammous-livera-3",
+      "base": "/display/older-work-ammous-livera-2",
       "widths": [
        480,
        960
       ],
       "width": 960,
       "height": 1045,
-      "fallback": "/display/older-work-breedlove-ammous-livera-3.jpg"
+      "fallback": "/display/older-work-ammous-livera-2.jpg"
      }
     }
    ],
    "master": {
-    "url": "https://vermillionaurora.com/print-masters/40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a.jpg",
-    "sha256": "40eb5bcebabacc45d85e810e19bb2207c097d482fe54778fb7c60997d909758a",
-    "widthPx": 4769,
+    "url": "https://vermillionaurora.com/print-masters/1cfd0cbe9ff70fd834ee72c1134cd9db4914a7bdaf52276c95566de05c8154dc.jpg",
+    "sha256": "1cfd0cbe9ff70fd834ee72c1134cd9db4914a7bdaf52276c95566de05c8154dc",
+    "widthPx": 3314,
     "heightPx": 1742
    }
   },
