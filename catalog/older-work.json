@@ -26,7 +26,12 @@
      "title": "Figures on a Shore",
      "name": "TJ Figures on a Shore 179",
      "index": 179,
-     "dimensions": null,
+     "dimensions": {
+      "width": 4.25,
+      "height": 4,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -48,7 +53,12 @@
      "title": "Wading Figure",
      "name": "TJ Wading Figure 181",
      "index": 181,
-     "dimensions": null,
+     "dimensions": {
+      "width": 4.25,
+      "height": 4,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -70,7 +80,12 @@
      "title": "Crab on Beach",
      "name": "TJ Crab on Beach 180",
      "index": 180,
-     "dimensions": null,
+     "dimensions": {
+      "width": 4.25,
+      "height": 4,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -117,7 +132,12 @@
      "title": "Blue Mountain Layers",
      "name": "TJ Blue Mountain Layers 185",
      "index": 185,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -139,7 +159,12 @@
      "title": "Orange Mountain Layers",
      "name": "TJ Orange Mountain Layers 186",
      "index": 186,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -161,7 +186,12 @@
      "title": "Red Mountain Layers",
      "name": "TJ Red Mountain Layers 156",
      "index": 156,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -183,7 +213,12 @@
      "title": "Golden Mountain Layers",
      "name": "TJ Golden Mountain Layers 153",
      "index": 153,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -225,7 +260,12 @@
      "title": "Mountain Lake",
      "name": "TJ Mountain Lake 145",
      "index": 145,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -247,7 +287,12 @@
      "title": "Golden Hillside",
      "name": "TJ Golden Hillside 141",
      "index": 141,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; another painting is on its reverse",
      "crop": {
@@ -269,7 +314,12 @@
      "title": "Color Wheel Study",
      "name": "TJ Color Wheel Study 184",
      "index": 184,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -311,7 +361,12 @@
      "title": "Sunset Ridge Strip",
      "name": "TJ Sunset Ridge Strip 174",
      "index": 174,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -333,7 +388,12 @@
      "title": "Sunset Ridge Strip",
      "name": "TJ Sunset Ridge Strip 165",
      "index": 165,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -355,7 +415,12 @@
      "title": "Sunset Ridge Strip",
      "name": "TJ Sunset Ridge Strip 159",
      "index": 159,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -377,7 +442,12 @@
      "title": "Sunset Ridge Strip",
      "name": "TJ Sunset Ridge Strip 164",
      "index": 164,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -399,7 +469,12 @@
      "title": "Sunset Ridge Strip",
      "name": "TJ Sunset Ridge Strip 173",
      "index": 173,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -421,7 +496,12 @@
      "title": "Sunset Ridge Strip",
      "name": "TJ Sunset Ridge Strip 158",
      "index": 158,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -461,7 +541,12 @@
      "title": "Ridge Strip Study A",
      "name": "TJ Ridge Strip Study A",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; no back photo, index unknown",
      "crop": {
@@ -483,7 +568,12 @@
      "title": "Ridge Strip Study B",
      "name": "TJ Ridge Strip Study B",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; no back photo, index unknown",
      "crop": {
@@ -505,7 +595,12 @@
      "title": "Ridge Strip Study C",
      "name": "TJ Ridge Strip Study C",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; no back photo, index unknown",
      "crop": {
@@ -527,7 +622,12 @@
      "title": "Ridge Strip Study D",
      "name": "TJ Ridge Strip Study D",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; no back photo, index unknown",
      "crop": {
@@ -549,7 +649,12 @@
      "title": "Ridge Strip Study E",
      "name": "TJ Ridge Strip Study E",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; no back photo, index unknown",
      "crop": {
@@ -571,7 +676,12 @@
      "title": "Ridge Strip Study F",
      "name": "TJ Ridge Strip Study F",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; no back photo, index unknown",
      "crop": {
@@ -593,7 +703,12 @@
      "title": "Ridge Strip Study G",
      "name": "TJ Ridge Strip Study G",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 4.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; no back photo, index unknown",
      "crop": {
@@ -635,7 +750,12 @@
      "title": "Two Pitchers",
      "name": "TJ Two Pitchers 188",
      "index": 188,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 6,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -657,7 +777,12 @@
      "title": "Blue Pitcher",
      "name": "TJ Blue Pitcher 187",
      "index": 187,
-     "dimensions": null,
+     "dimensions": {
+      "width": 6,
+      "height": 9,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title",
      "crop": {
@@ -704,7 +829,12 @@
      "title": "Hummingbird Feeder",
      "name": "TJ Hummingbird Feeder 190",
      "index": 190,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 8.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; size note reads 8.5x17 or 8.5x11 (ambiguous), recorded as unknown",
      "crop": {
@@ -736,7 +866,12 @@
      "title": "Jack Mallers",
      "name": "TJ Jack Mallers",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7.25,
+      "height": 11.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2026",
      "flag": "no index on back",
      "crop": {
@@ -758,7 +893,12 @@
      "title": "Natalie Brunell",
      "name": "TJ Natalie Brunell",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7.25,
+      "height": 11.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2026",
      "flag": "no index on back",
      "crop": {
@@ -780,7 +920,12 @@
      "title": "Peter McCormack",
      "name": "TJ Peter McCormack",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 16,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2026",
      "flag": "no index on back",
      "crop": {
@@ -802,7 +947,12 @@
      "title": "Michael Saylor",
      "name": "TJ Michael Saylor",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 12,
+      "height": 16,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2026",
      "flag": "no index on back",
      "crop": {
@@ -844,7 +994,12 @@
      "title": "Devo and Sarah Sandwich (L)",
      "name": "TJ Devo and Sarah Sandwich (L)",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 17.5,
+      "height": 12.25,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2026",
      "flag": "no index; renamed per TJ (both entries Devo and Sarah); (L)/(R) from back labels",
      "crop": {
@@ -866,7 +1021,12 @@
      "title": "Devo and Sarah Sandwich (R)",
      "name": "TJ Devo and Sarah Sandwich (R)",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 17.5,
+      "height": 12.25,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2026",
      "flag": "no index; renamed per TJ (both entries Devo and Sarah); (L)/(R) from back labels",
      "crop": {
@@ -908,7 +1068,12 @@
      "title": "Bernard Parah",
      "name": "TJ Bernard Parah 329",
      "index": 329,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": null,
      "crop": {
@@ -930,7 +1095,12 @@
      "title": "José",
      "name": "TJ José 328",
      "index": 328,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "name uncertain (José/Josie)",
      "crop": {
@@ -952,7 +1122,12 @@
      "title": "Andreas Antonopoulos",
      "name": "TJ Andreas Antonopoulos 327",
      "index": 327,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": null,
      "crop": {
@@ -974,7 +1149,12 @@
      "title": "Portrait with Glasses",
      "name": "TJ Portrait with Glasses 319",
      "index": 319,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title (no name on back)",
      "crop": {
@@ -1292,7 +1472,12 @@
      "title": "Dorian Nakamoto",
      "name": "TJ Dorian Nakamoto",
      "index": null,
-     "dimensions": null,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2024",
      "flag": "no index on back",
      "crop": {
@@ -1415,7 +1600,12 @@
      "title": "Joey Swoll",
      "name": "TJ Joey Swoll 340",
      "index": 340,
-     "dimensions": null,
+     "dimensions": {
+      "width": 11,
+      "height": 12,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2024",
      "flag": "spelling uncertain (Joey/Joe Swoll)",
      "crop": {
@@ -1457,7 +1647,12 @@
      "title": "F.A. Hayek",
      "name": "TJ F.A. Hayek 336",
      "index": 336,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": null,
      "crop": {
@@ -1479,7 +1674,12 @@
      "title": "Elizabeth Stark",
      "name": "TJ Elizabeth Stark 335",
      "index": 335,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": null,
      "crop": {
@@ -1501,7 +1701,12 @@
      "title": "Rodrigo Gomez",
      "name": "TJ Rodrigo Gomez 334",
      "index": 334,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": null,
      "crop": {
@@ -1523,7 +1728,12 @@
      "title": "Noor El Bawab",
      "name": "TJ Noor El Bawab 333",
      "index": 333,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": null,
      "crop": {
@@ -1565,7 +1775,12 @@
      "title": "Eric Yakes",
      "name": "TJ Eric Yakes 330",
      "index": 330,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": null,
      "crop": {
@@ -1587,7 +1802,12 @@
      "title": "Peter Todd",
      "name": "TJ Peter Todd 331",
      "index": 331,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": null,
      "crop": {
@@ -1609,7 +1829,12 @@
      "title": "Desiree Dickerson",
      "name": "TJ Desiree Dickerson 332",
      "index": 332,
-     "dimensions": null,
+     "dimensions": {
+      "width": 9,
+      "height": 10.75,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": null,
      "crop": {
@@ -1651,7 +1876,12 @@
      "title": "Beach Sunset",
      "name": "TJ Beach Sunset 310",
      "index": 310,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; top-to-bottom index order uncertain",
      "crop": {
@@ -1673,7 +1903,12 @@
      "title": "Beach Sunset",
      "name": "TJ Beach Sunset 311",
      "index": 311,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; order uncertain",
      "crop": {
@@ -1695,7 +1930,12 @@
      "title": "Beach Sunset",
      "name": "TJ Beach Sunset 309",
      "index": 309,
-     "dimensions": null,
+     "dimensions": {
+      "width": 7,
+      "height": 5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": null,
      "flag": "placeholder title; order uncertain",
      "crop": {
@@ -1823,7 +2063,12 @@
      "title": "The Legend of Billy Buff",
      "name": "TJ The Legend of Billy Buff 2",
      "index": 2,
-     "dimensions": null,
+     "dimensions": {
+      "width": 10.5,
+      "height": 13.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2026",
      "flag": null,
      "crop": {
@@ -1845,7 +2090,12 @@
      "title": "The Legend of Billy Buff",
      "name": "TJ The Legend of Billy Buff 1",
      "index": 1,
-     "dimensions": null,
+     "dimensions": {
+      "width": 10.5,
+      "height": 13.5,
+      "unit": "in",
+      "source": "estimated from reference"
+     },
      "year": "2026",
      "flag": null,
      "crop": {

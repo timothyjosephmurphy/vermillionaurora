@@ -2,7 +2,7 @@ import manifest from './older-work.json' with {type:'json'};
 // Older Work: each photographed group is one product (one page, one composite master); a lone painting is its own product.
 export const olderWorkGroups = manifest.groups;
 export const olderWorkPreview = (g, width=960) => `/display/${g.id}-${width}.webp`;
-const size = d => d ? `${d.width} × ${d.height} ${d.unit} (W × H, from the label on the reverse)` : 'Unknown';
+const size = d => d ? `${d.width} × ${d.height} ${d.unit} (W × H, ${d.source==='estimated from reference'?'estimated from a measured painting of the same paper':'from the label on the reverse'})` : 'Unknown';
 const memberLine = m => `${m.name}${m.year?` (${m.year})`:''} — ${m.dimensions?`${m.dimensions.width} × ${m.dimensions.height} in`:'size unknown'}`;
 export const olderWorkTitle = g => g.members.length===1 ? g.members[0].name : g.title;
 export const olderWorkAlt = g => g.members.length===1
