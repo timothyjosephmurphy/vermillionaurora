@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {load} from 'cheerio';
 import manifest from '../catalog/older-work.json' with {type:'json'};
-import olderWork from '../catalog/older-work-products.mjs';
+import allOlderWork,{olderWorkOriginals} from '../catalog/older-work-products.mjs';
+const olderWork=allOlderWork.filter(p=>p.olderWork);
 import recipes from '../catalog/older-work-print-masters.json' with {type:'json'};
 import config from '../catalog/prints.json' with {type:'json'};
 import {printsFromLabel,showBuy} from '../src/data/card-commerce.mjs';
@@ -25,7 +26,9 @@ test('Older Work masters are committed, checksummed and quote-only',()=>{
     assert.equal(config.artworks[r.id].source.sha256,r.sha256);
     assert.equal(config.artworks[r.id].source.url,r.url);
   }
-  for(const p of olderWork){assert.equal(p.listing.status,'not-for-sale');assert.equal(p.listing.price,null);assert.notEqual(p.checkout.mode,'integrated');}
+  // Set pages are not for sale; a single painting with a sized price, and each priced original, sells as the original.
+  for(const p of olderWork){const single=p.olderWork.members.length===1;if(!single||p.listing.status!=='available'){assert.equal(p.listing.status,'not-for-sale');assert.equal(p.listing.price,null);assert.notEqual(p.checkout.mode,'integrated');}}
+  for(const p of olderWorkOriginals){assert.equal(p.listing.status,'available');assert(p.listing.price);assert(p.dimensions);assert.equal(p.checkout.mode,'integrated');}
 });
 
 test('Older Work gallery is linked from the gallery and shows one tile per page',()=>{

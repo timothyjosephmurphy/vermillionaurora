@@ -1,4 +1,5 @@
 import manifest from './older-work.json' with {type:'json'};
+import {estimatePaperParcelWeightLb} from './shipping-estimates.mjs';
 // Older Work: each photographed group is one product (one page, one composite master); a lone painting is its own product.
 export const olderWorkGroups = manifest.groups;
 export const olderWorkPreview = (g, width=960) => `/display/${g.id}-${width}.webp`;
@@ -13,7 +14,8 @@ const TIER={'4.25x4':75,'7x5':75,'6x9':75,'9x6':75,'7x8.5':75,'12x4.5':100,'9x10
 export const originalPrice = m => {const d=m.dimensions;const v=d&&TIER[`${d.width}x${d.height}`];return v?{amount:v.toFixed(2),currency:'USD'}:null;};
 export const originalId = (g,i) => `${g.id}-original-${i+1}`;
 const shippingFor = d => {const [a,b]=[d.width,d.height].sort((x,y)=>x-y),sq=a*b*0.00064516,grams=sq*300+2*sq*180+10,oz=Math.ceil(grams/28.3495+4);
-  return {length:b+2,width:a+2,height:2,weight:oz/16,packaging:'flat',insuranceRequested:false,verification:'estimated',notes:'Estimated: one 300 gsm paper sheet plus a same-size two-face 180 gsm envelope and 10 g flap/label allowance; adds 4 oz for flat-mailer protection. Rounded up to a whole ounce. Confirm packed weight before buying a label.'};};
+  const weight=estimatePaperParcelWeightLb({dimensions:{width:d.width,height:d.height,unit:'in'},checkout:{shipping:{height:2}}});
+  return {length:b+2,width:a+2,height:2,weight,packaging:'flat',insuranceRequested:false,verification:'estimated',notes:'Estimated with the shared paper-parcel rule (catalog/shipping-estimates.mjs). Confirm packed weight before buying a label.'};};
 const originals = olderWorkGroups.flatMap(g=>g.members.map((m,i)=>{const price=originalPrice(m);if(!price||g.members.length===1)return null;const id=originalId(g,i);
   return {id,slug:id,type:'painting',title:m.name,artist:'TJ Murphy',description:`${m.name}, an original painting by TJ Murphy.`,eyebrow:'Older Work · Original',
     listing:{status:'available',price},medium:null,surface:'Paper',year:m.year??null,dimensions:{width:m.dimensions.width,height:m.dimensions.height,unit:'in'},dimensionOrder:'width-height',
