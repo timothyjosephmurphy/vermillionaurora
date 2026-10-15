@@ -55,3 +55,25 @@ export async function exportAll(db) {
   const [p, e, i, s, m] = await db.batch(['paintings ORDER BY id', 'editions ORDER BY id', 'images ORDER BY product_id, width', 'status ORDER BY product_id', 'meta ORDER BY key'].map(t => db.prepare('SELECT * FROM ' + t)));
   return { exportedAt: now(), schema: 1, meta: Object.fromEntries(m.results.map(r => [r.key, r.value])), paintings: p.results, editions: e.results, images: i.results, status: s.results };
 }
+// Bring repo changes into D1: for the given product ids (or every painting/edition D1 does not have yet),
+// copy the built snapshot's values over D1 (painting, status, image keys, print sizes). Use after a repo PR
+// adds or reprices paintings; untouched ids keep their D1 values.
+export async function syncFromSnapshot(db, snap, { ids = [], missing = true } = {}) {
+  const live = await readLive(db, { force: true }), want = new Set(ids), at = now(), stmts = [], done = new Set();
+  const P = db.prepare('INSERT INTO paintings (id, slug, type, title, artist, medium, surface, year, width, height, unit, description, price_amount, currency, parcel_json, source, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET slug=excluded.slug, type=excluded.type, title=excluded.title, artist=excluded.artist, medium=excluded.medium, surface=excluded.surface, year=excluded.year, width=excluded.width, height=excluded.height, unit=excluded.unit, description=excluded.description, price_amount=excluded.price_amount, currency=excluded.currency, parcel_json=excluded.parcel_json, source=excluded.source, updated_at=excluded.updated_at');
+  const S = db.prepare('INSERT INTO status (product_id, status, note, updated_at) VALUES (?,?,?,?) ON CONFLICT(product_id) DO UPDATE SET status=excluded.status, note=excluded.note, updated_at=excluded.updated_at');
+  const I = db.prepare("INSERT OR IGNORE INTO images (product_id, key, width, role, rev) VALUES (?,?,?,'display',0)");
+  const E = db.prepare('INSERT INTO editions (id, product_id, title, amount, currency, sku, image_w, image_h, paper_w, paper_h, enabled, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,1,?) ON CONFLICT(id) DO UPDATE SET product_id=excluded.product_id, title=excluded.title, amount=excluded.amount, currency=excluded.currency, sku=excluded.sku, image_w=excluded.image_w, image_h=excluded.image_h, paper_w=excluded.paper_w, paper_h=excluded.paper_h, enabled=1, updated_at=excluded.updated_at');
+  for (const p of snap.paintings) {
+    if (!want.has(p.id) && !(missing && !live.paintings.has(p.id))) continue;
+    done.add(p.id);
+    stmts.push(P.bind(p.id, p.slug, p.type, p.title, p.artist, p.medium, p.surface, p.year, p.width, p.height, p.unit, p.description, p.price, p.currency, p.parcel ? JSON.stringify(p.parcel) : null, 'import', at));
+    if (p.status) stmts.push(S.bind(p.id, p.status, 'repo sync', at));
+    for (const im of p.images) stmts.push(I.bind(p.id, im.key, im.width));
+  }
+  let editions = 0;
+  for (const e of snap.editions) if (done.has(e.productId) || (missing && !live.editions.has(e.id))) { editions++; stmts.push(E.bind(e.id, e.productId, e.title, e.amount, e.currency, e.sku, e.imageW, e.imageH, e.paperW, e.paperH, at)); }
+  for (let i = 0; i < stmts.length; i += 200) await db.batch(stmts.slice(i, i + 200));
+  if (stmts.length) await bumpRev(db, 'sync', null, { paintings: [...done], editions });
+  return { paintings: done.size, editions, statements: stmts.length };
+}

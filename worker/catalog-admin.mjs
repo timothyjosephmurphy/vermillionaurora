@@ -1,7 +1,7 @@
 // /catalog-admin/: owner page for the live catalog (tjm-catalog D1). Password = Worker secret CATALOG_ADMIN_PASSWORD.
 // Sign-in sets a 12-hour HttpOnly cookie signed with that password; scripts (nightly export) may send
 // "Authorization: Bearer <password>" instead. Every write bumps the D1 revision, so pages and checkout use it at once.
-import { readLive, bumpRev, importSnapshot, exportAll, now } from '../cloudflare/catalog-d1.mjs';
+import { readLive, bumpRev, importSnapshot, exportAll, syncFromSnapshot, now } from '../cloudflare/catalog-d1.mjs';
 import { snapshot } from './catalog-pages.mjs';
 const COOKIE = '__Host-catalog-admin';
 const STATUSES = new Set(['available', 'sold', 'not-for-sale', 'inquiry', 'unavailable']);
@@ -53,6 +53,8 @@ export async function catalogAdmin(request, env, ctx) {
       return new Response(JSON.stringify(await exportAll(db), null, 1) + '\n', { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', 'Content-Disposition': `attachment; filename="tjm-catalog-${day}.json"` } });
     }
     if (op === 'import' && request.method === 'POST') return json(await importSnapshot(db, await snapshot(env)));
+    // {ids:[...]} copies those paintings (and their print sizes) from the deployed build; anything D1 lacks is always added.
+    if (op === 'sync' && request.method === 'POST') { const b = await request.json().catch(() => ({})); return json(await syncFromSnapshot(db, await snapshot(env), { ids: Array.isArray(b.ids) ? b.ids.map(String).slice(0, 500) : [], missing: true })); }
     if (op === 'painting' && request.method === 'POST') {
       const b = await request.json(), id = String(b.id || '');
       const cur = await db.prepare('SELECT * FROM paintings WHERE id = ?').bind(id).first();
