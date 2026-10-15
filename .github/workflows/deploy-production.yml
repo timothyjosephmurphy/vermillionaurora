@@ -55,11 +55,11 @@ jobs:
           node scripts/ci/changed-products.mjs < /tmp/changed.txt
       - name: Prepare and verify private accounting storage
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
         run: node payments/prepare-sales-archive.mjs
       - name: Verify commission reference and accounting storage are private
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
         run: node payments/verify-commission-privacy.mjs
       - name: Wait for Workers Builds to publish this website version, then check sampled print files
         env:
@@ -71,7 +71,7 @@ jobs:
       - name: Deploy the checkout Worker with the checked-in checkout settings
         uses: cloudflare/wrangler-action@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           workingDirectory: cloudflare
           command: deploy --config wrangler.jsonc --var CHECKOUT_RELEASE:${{ github.sha }} --message "main ${{ github.sha }}"
@@ -100,7 +100,7 @@ jobs:
           NODE
       - name: Verify live providers without taking payment
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
         run: node payments/verify-production.mjs
       - name: Verify website and API catalog versions agree
         env:

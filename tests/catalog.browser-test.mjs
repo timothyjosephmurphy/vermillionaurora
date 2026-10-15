@@ -11,6 +11,8 @@ try {
  await page.route('**/*',async route=>{
   const url=new URL(route.request().url());
   if(url.pathname==='/inventory/status'){const ids=url.searchParams.get('ids').split(',');return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{version:catalogVersion,availability:Object.fromEntries(ids.map(id=>[id,allSold?'sold':['painting-portrait-in-green','painting-moonlit-water','paul-murphy-painting-1'].includes(id)?status:byId[id]?.listing.status||'available']))}});}
+  // Display images live on img.tjm.art (R2); serve the same files from the local build.
+  if(url.hostname==='img.tjm.art'){const f='dist'+decodeURIComponent(url.pathname);return fs.existsSync(f)?route.fulfill({body:fs.readFileSync(f),contentType:'image/webp'}):route.fulfill({status:404});}
   if(url.hostname!==new URL(origin).hostname)return route.abort();
   // Approved testimonials come from the Worker at request time; the static preview has none.
   if(url.pathname==='/testimonials/api/approved')return route.fulfill({json:{testimonials:[]}});

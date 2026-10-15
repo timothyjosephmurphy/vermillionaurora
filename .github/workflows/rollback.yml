@@ -1,9 +1,8 @@
 name: Roll back production
 # One-command rollback to the previous Worker version:
 #   gh workflow run rollback.yml -R timothyjosephmurphy/vermillionaurora -f target=checkout
-# The repo CLOUDFLARE_API_TOKEN cannot touch the website Worker; roll the site back with a
-# logged-in wrangler (npx wrangler rollback --name vermillionaurora) or Cloudflare dashboard
-# (Workers > vermillionaurora > Deployments), or grant the token access and use target=both.
+# Uses CLOUDFLARE_SANDBOX_API_TOKEN (whole-account Workers Scripts Edit), so target=site and
+# target=both roll back the website Worker too.
 # Optionally pin versions: -f site_version=<id> -f checkout_version=<id> (see `wrangler versions list`).
 on:
   workflow_dispatch:
@@ -34,14 +33,14 @@ jobs:
         if: inputs.target != 'site'
         uses: cloudflare/wrangler-action@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           command: rollback ${{ inputs.checkout_version }} --name vermillion-commissions --message "Rollback via GitHub Actions run ${{ github.run_id }}" --yes
       - name: Roll back the website Worker
         if: inputs.target != 'checkout'
         uses: cloudflare/wrangler-action@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           command: rollback ${{ inputs.site_version }} --name vermillionaurora --message "Rollback via GitHub Actions run ${{ github.run_id }}" --yes
       - name: Show live health after rollback
