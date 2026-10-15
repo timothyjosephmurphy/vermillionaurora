@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {matLayout} from '../catalog/matting.mjs';
 import {matProductBuild,buildMattedProduct,quoteMattedOption} from './finerworks-matting.mjs';
 import {groupPrintProducts,quoteFinerWorksPrints,validateFinerWorksPrintOrder} from './finerworks-quotes.mjs';
-const env={PAYPAL_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
+const env={CHECKOUT_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
 const media={id:144,productTypeId:5,styleIds:[8]},style={id:8,canMat:true,allowDecimal:true,customSizing:true,allowRotate:true,min:{width:4,height:4},max:{width:40,height:90}};
 const image={width:7.5,height:6},paper={...image,sku:'5M144M8S7.5X6'},material={id:1,name:'Snow White',thickness:4,minWidth:4,minHeight:4,maxWidth:30,maxHeight:40},mat=matLayout(paper,image,material);
 const sku='5M144M8S7.5X6-MAT1S10X8',address={name:'Sandbox Test',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'};

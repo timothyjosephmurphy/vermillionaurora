@@ -1,11 +1,11 @@
 import catalog from './checkout-catalog.mjs';
-import { backfillCheckoutSale } from './paypal-orders.mjs';
+import { backfillCheckoutSale } from './historical-sales.mjs';
 
 // Deployment-only maintenance. No public export or customer information in the response.
 export async function salesMaintenance(request,env) {
   const reply=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'no-store'}});
   if(request.method!=='POST'||!env.CHECKOUT_AUDIT_TOKEN||request.headers.get('Authorization')!==`Bearer ${env.CHECKOUT_AUDIT_TOKEN}`)return reply({error:'Not found'},404);
-  if(env.PAYPAL_MODE!=='live'||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return reply({error:'Sales archive is not configured'},503);
+  if(env.CHECKOUT_MODE!=='live'||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return reply({error:'Sales archive is not configured'},503);
   const url=new URL(request.url);
   if(url.searchParams.get('action')==='reset') {
     const slug=url.searchParams.get('slug');

@@ -12,7 +12,7 @@ const META_WEBP=b64('UklGRvYAAABXRUJQVlA4WAoAAAAIAAAABwAABQAAVlA4IDAAAADwAQCdASo
 const now=Date.parse('2026-10-07T20:00:00Z');
 import {Bucket} from '../tests/r2-memory-bucket.mjs';
 const issued=[];
-const setup=()=>({COMMISSION_UPLOADS:new Bucket(),COMMISSION_MANAGER_TOKEN:'owner-token',GOOGLE_CLIENT_ID:'id',GOOGLE_CLIENT_SECRET:'s',GOOGLE_REFRESH_TOKEN:'r',PAYPAL_MODE:'live',
+const setup=()=>({COMMISSION_UPLOADS:new Bucket(),COMMISSION_MANAGER_TOKEN:'owner-token',GOOGLE_CLIENT_ID:'id',GOOGLE_CLIENT_SECRET:'s',GOOGLE_REFRESH_TOKEN:'r',CHECKOUT_MODE:'live',
   CART_ORDERS:{getByName:name=>({codeIssue:async(hash,record)=>{issued.push({name,record});}})}});
 let mails=[];
 test.beforeEach(()=>{mails=[];issued.length=0;globalThis.fetch=async(url,init={})=>{const u=new URL(url);

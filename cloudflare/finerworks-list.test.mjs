@@ -24,7 +24,7 @@ test('never promotes error objects, untyped data, or credentials/orders to succe
 });
 test('HTTP failures and credential success gates remain strict for array-shaped replies',async()=>{
  const original=globalThis.fetch;
- const env={PAYPAL_MODE:'sandbox',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
+ const env={CHECKOUT_MODE:'sandbox',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
  try{
   globalThis.fetch=async()=>Response.json([media]);
   assert.deepEqual(await finerworksRequest(env,'/v3/list_media_types',{}),{media_types:[media]});
@@ -38,7 +38,7 @@ test('HTTP failures and credential success gates remain strict for array-shaped 
 test('documented-code validation tolerates the observed empty 404 envelope only for exact valid rows',async t=>{
  const code='5M144M8S7DD5X6F0S10X8J1S7DD5X6',path='/v3/validate_product',body={skus_or_codes:[code]};
  const data={status:{success:false,status_code:404,message:''},product_validations:[{product_code:code,product_sku:null,valid:true,validation_message:'Product appears to be valid.'}]};
- const env={PAYPAL_MODE:'sandbox',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
+ const env={CHECKOUT_MODE:'sandbox',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
  t.mock.method(globalThis,'fetch',async()=>Response.json(data,{status:404}));
  assert.deepEqual(await finerworksRequest(env,path,body),{product_validations:data.product_validations});
  for(const bad of [

@@ -15,7 +15,7 @@ export function captureDetails(order) {
 }
 export function checkoutRecord(env,row,slug,job,details={},recordedAt=new Date().toISOString()) {
   const quote=job?.quote || {};
-  return {schemaVersion:1,id:`payment:${row.capture_id}`,kind:'sale',mode:env.PAYPAL_MODE,source:'checkout',provider:details.provider || 'paypal',
+  return {schemaVersion:1,id:`payment:${row.capture_id}`,kind:'sale',mode:env.CHECKOUT_MODE,source:'checkout',provider:details.provider || 'paypal',
     ...(details.provider==='btcpay'?{invoiceId:details.invoiceId,bitcoinPayments:details.bitcoinPayments || []}:{}),
     transactionId:row.capture_id,orderId:row.order_id,parentTransactionId:'',status:'COMPLETED',
     paidAt:details.paidAt || recordedAt,dateEstimated:!details.paidAt,recordedAt,

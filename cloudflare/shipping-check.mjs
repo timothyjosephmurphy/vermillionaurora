@@ -7,7 +7,7 @@ import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
 const slug = 'honeybadger-and-cub-with-genesis-block';
 // A new sample after UPS setup was corrected; preserve the failed v1 record.
 const sample = {state:'sold',slug,order_id:'SHIPPINGCHECKV2',capture_id:'SHIPPINGCHECKV2',integrationTest:true};
-const isolated = env => env.PAYPAL_MODE === 'sandbox' && !env.GITHUB_TOKEN &&
+const isolated = env => env.CHECKOUT_MODE === 'sandbox' && !env.GITHUB_TOKEN &&
   env.SHIPPO_TOKEN?.startsWith('shippo_test_') && /^[sr]k_test_/.test(env.STRIPE_SECRET_KEY || '');
 
 export async function shippingCheck(request, env) {

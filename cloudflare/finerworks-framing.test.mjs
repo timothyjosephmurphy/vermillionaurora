@@ -4,7 +4,7 @@ import {quoteFramedOption} from './finerworks-framing.mjs';
 import {quoteFinerWorksPrints,validateFinerWorksPrintOrder,groupPrintProducts} from './finerworks-quotes.mjs';
 import {newFinerWorksJob,finerworksFulfillmentRecord} from './finerworks-fulfillment.mjs';
 import {publicCartItem} from './cart-policy.mjs';
-const env={PAYPAL_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app',FINERWORKS_ORDER_ENABLED:'true',SANDBOX_RETURN_ORIGIN:'https://example.test'};
+const env={CHECKOUT_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app',FINERWORKS_ORDER_ENABLED:'true',SANDBOX_RETURN_ORIGIN:'https://example.test'};
 const media={id:144,productTypeId:5,styleIds:[8]},style={id:8,canMat:true,allowDecimal:true,customSizing:true,allowRotate:true,min:{width:4,height:4},max:{width:40,height:90}};
 const image={width:7.5,height:6},paper={...image,sku:'5M144M8S7.5X6'},sku='5M144M8S7DD5X6F1S10X8J1S7DD5X6G1';
 const address={name:'Sandbox Test',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'};

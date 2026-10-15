@@ -20,7 +20,7 @@ export class BitcoinOrder extends DurableObject {
   async start(id,slug,quote) {
     return this.exclusive(async()=>{
       if(this.read())throw Error('Bitcoin order already exists');
-      let data=this.save({id,slug,quote,mode:this.env.PAYPAL_MODE,server:bitcoinServer(this.env),storeId:this.env.BTCPAY_STORE_ID,
+      let data=this.save({id,slug,quote,mode:this.env.CHECKOUT_MODE,server:bitcoinServer(this.env),storeId:this.env.BTCPAY_STORE_ID,
         createdAt:Date.now(),status:'preparing'});
       await this.ctx.storage.setAlarm(Date.now()+60_000);
       const stock=this.stock(data);
@@ -44,7 +44,7 @@ export class BitcoinOrder extends DurableObject {
     });
   }
   validate(data,invoice) {
-    if(data.server!==bitcoinServer(this.env) || data.storeId!==this.env.BTCPAY_STORE_ID || data.mode!==this.env.PAYPAL_MODE)throw Error('Bitcoin order configuration changed');
+    if(data.server!==bitcoinServer(this.env) || data.storeId!==this.env.BTCPAY_STORE_ID || data.mode!==this.env.CHECKOUT_MODE)throw Error('Bitcoin order configuration changed');
     if(!/^[a-zA-Z0-9]{1,100}$/.test(invoice.id||'') || (data.invoiceId && data.invoiceId!==invoice.id) ||
       invoice.storeId!==data.storeId || invoice.metadata?.orderId!==`va-btc-${data.id}` || invoice.metadata?.itemCode!==data.slug ||
       invoice.currency!=='USD' || !/^\d+(\.\d{1,2})?$/.test(invoice.amount||'') || Number(invoice.amount).toFixed(2)!==data.quote.total)throw Error('Bitcoin invoice does not match the saved order');

@@ -6,11 +6,11 @@ import catalog from '../checkout-catalog.mjs';
 import prints from '../print-catalog.mjs';
 import {cartCheckout} from '../cart-checkout.mjs';
 import {priceCart} from '../checkout-pricing.mjs';
-import {backfillCheckoutSale,checkoutWebhook} from '../paypal-orders.mjs';
+import {backfillCheckoutSale,checkoutWebhook} from '../historical-sales.mjs';
 import {bitcoinWebhook} from '../bitcoin-checkout.mjs';
 const ids=['honeybadger-and-cub-with-genesis-block','painting-portrait-in-green'].sort();
 const address={name:'Test Buyer',street1:'123 Main St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
-const config={CART_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_SLUGS:ids.join(','),PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://shop.example.test',SHIPPO_AUTO_LABEL_ENABLED:'false'};
+const config={CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CHECKOUT_SLUGS:ids.join(','),PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://shop.example.test',SHIPPO_AUTO_LABEL_ENABLED:'false'};
 let paypalOrders,invoices,squarePayments,calls,failCreate,failCapture,failRelease,failInvoiceRead,objects,shipCount,mailCount;
 function quote(){const items=ids.map(id=>({id,type:'original',quantity:1,title:catalog[id].title,amount:catalog[id].amount})),base=items.reduce((s,i)=>s+Number(i.amount),0).toFixed(2);return {catalogVersion,items,base,shipping:'12.00',tax:'5.00',total:(Number(base)+17).toFixed(2),email:'buyer@example.test',address,taxCalculationId:'taxcalc_CART',quotedAt:Date.now(),shipments:items.map((i,n)=>({slug:i.id,title:i.title,base:i.amount,shipping:'6.00',parcel:{length:16,width:12,height:1,weight:1},packaging:'flat',address,carrier:'UPS',service:'Ground',rateId:`RATE${n}`,quotedAt:Date.now()}))};}
 beforeEach(async()=>{
@@ -57,7 +57,7 @@ beforeEach(async()=>{
 afterEach(async()=>{for(const stub of objects)await runInDurableObject(stub,(_,ctx)=>ctx.storage.deleteAlarm());vi.unstubAllGlobals();});
 async function setup(method='paypal',overrides={}) {
   const id=crypto.randomUUID(),order=env.CART_ORDERS.getByName(id);objects.push(order);
-  const settings={...config,...(method==='bitcoin'?{PAYPAL_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true',BTCPAY_CHECKOUT_SLUGS:ids.join(',')}:{}),
+  const settings={...config,...(method==='bitcoin'?{CHECKOUT_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true',BTCPAY_CHECKOUT_SLUGS:ids.join(',')}:{}),
     ...(method==='square'?{SQUARE_CHECKOUT_ENABLED:'true',SQUARE_MODE:'sandbox',SQUARE_CHECKOUT_SLUGS:ids.join(','),SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook'}:{}),...overrides};
   await runInDurableObject(order,instance=>{instance.env={...instance.env,...settings};});
   await order.createQuote(id,await keyHash('a'.repeat(64)),quote(),[method]);return {id,order,settings};
@@ -74,7 +74,7 @@ it('keeps PayPal available independently and requires an explicit Square item al
 });
 
 it('offers production Square across eligible originals and prints, preserving PayPal and fulfillment gates',()=>{
-  const square={...env,...config,PAYPAL_MODE:'live',SQUARE_MODE:'live',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_CHECKOUT_ALL:'true',
+  const square={...env,...config,CHECKOUT_MODE:'live',SQUARE_MODE:'live',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_CHECKOUT_ALL:'true',
     SQUARE_ACCESS_TOKEN:'fake',SQUARE_APPLICATION_ID:'sq0idp-APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'fake',
     SQUARE_WEBHOOK_URL:'https://worker/checkout/square/webhook',
     PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_ALL:'true',PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',
@@ -227,7 +227,7 @@ it('reports an existing payment attempt to product-page cart additions without c
 it('explains BTCPay invoice permission failures and keeps stock reserved',async()=>{
   const {id,order}=await setup('bitcoin');failCreate=true;await order.start('bitcoin');failCreate=false;failInvoiceRead=true;
   const statusRequest=request('status',{orderId:id,key:'a'.repeat(64)});statusRequest.headers.set('Origin','https://vermillionaurora.com');
-  const response=await cartCheckout(statusRequest,{...env,...config,PAYPAL_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'});
+  const response=await cartCheckout(statusRequest,{...env,...config,CHECKOUT_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'});
   expect(response.status).toBe(503);expect((await response.json()).error).toMatch(/View invoices permission/);
   expect(await env.PAINTING_STOCK.getByName(ids[0]).status()).toBe('reserved');
 });
@@ -280,7 +280,7 @@ it('requires the order access key and permits existing orders to finish when new
   expect((await cartCheckout(new Request('https://worker/checkout/cart/catalog',{headers:{Origin:'https://other.example'}}),{...env,...config})).status).toBe(403);
 });
 it('accepts both website domains in production and echoes the caller origin',async()=>{
-  const live={...env,...config,PAYPAL_MODE:'live'};
+  const live={...env,...config,CHECKOUT_MODE:'live'};
   for(const origin of ['https://tjm.art','https://vermillionaurora.com']){
     const response=await cartCheckout(new Request('https://worker/checkout/cart/catalog',{headers:{Origin:origin}}),live);
     expect(response.status).toBe(200);expect(response.headers.get('Access-Control-Allow-Origin')).toBe(origin);
@@ -298,7 +298,7 @@ it('checks out a 50% commission deposit alone: no shipping, stock or labels; lin
   expect(paymentMethods({...env,...config},'deposit-small-landscape-12x15')).toEqual([]);
   expect(paymentMethods({...on,COMMISSION_DEPOSITS_PAUSED:'true'},'deposit-small-landscape-12x15')).toEqual([]);
   expect(paymentMethods(on,'deposit-small-landscape-12x15')).toEqual(['paypal']);
-  const btc={...on,PAYPAL_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'};
+  const btc={...on,CHECKOUT_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'};
   expect(paymentMethods(btc,'deposit-single-portrait-7-5x12-3f')).toEqual(['paypal','bitcoin']);
   expect(cartItems([{id:'deposit-small-landscape-12x15',quantity:1,amount:'0.01'}])[0].amount).toBe('125.00');
   expect(cartItems([{id:'deposit-single-portrait-7-5x12-1f',quantity:1}])[0].amount).toBe('50.00');
