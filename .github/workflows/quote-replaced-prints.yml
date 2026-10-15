@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: {node-version: '22', cache: npm}
-      - run: npm ci && node payments/build-print-catalog.mjs && node payments/build-etsy-print-source.mjs && node payments/build-checkout-catalog.mjs
+      - run: npm ci && npm run build && node payments/build-print-catalog.mjs && node payments/build-etsy-print-source.mjs && node payments/build-checkout-catalog.mjs
       - name: Deploy sandbox with replaced master
         run: cd cloudflare && npx --yes wrangler@4.143.0 deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
         env: {CLOUDFLARE_ACCOUNT_ID: 3c1fddf0f4f4fc9c84594757d2e1bda0}
