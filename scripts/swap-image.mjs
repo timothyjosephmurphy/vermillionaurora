@@ -15,6 +15,7 @@
 //      (node scripts/build-edition-print-assets.mjs --only=<id>), requote, then commit and merge.
 //   --dry-run writes the derivatives to .cache/swap-<slug>/ and uploads/purges nothing.
 // Needs R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY (see scripts/lib/r2.mjs).
+import { execFileSync } from 'node:child_process';
 import sharp from 'sharp';
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -65,7 +66,12 @@ if (!dry) {
     console.log(`Purged ${urls.length} URLs from Cloudflare cache`);
   } else {
     await writeFile(`.cache/swap-purge-${slug}.json`, JSON.stringify({ files: urls }, null, 1));
-    console.log(`CLOUDFLARE_API_TOKEN not set: purge these URLs (listed in .cache/swap-purge-${slug}.json):\n${urls.join('\n')}`);
+    // No local token: purge through the purge-image-cache workflow so the new display images go live now,
+    // independent of any print-master PR.
+    try {
+      execFileSync('gh', ['workflow', 'run', 'purge-image-cache.yml', '--ref', 'main', '-f', `urls=${urls.join(' ')}`], { stdio: 'inherit' });
+      console.log(`Requested purge of ${urls.length} URLs via the purge-image-cache workflow`);
+    } catch { console.log(`CLOUDFLARE_API_TOKEN not set: purge these URLs (listed in .cache/swap-purge-${slug}.json):\n${urls.join('\n')}`); }
   }
 }
 if (master) {

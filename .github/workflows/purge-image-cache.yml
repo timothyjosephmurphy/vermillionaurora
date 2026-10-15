@@ -1,0 +1,28 @@
+# Purges img.tjm.art display URLs after scripts/swap-image.mjs replaces them on R2.
+name: Purge image cache
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: Space-separated https://img.tjm.art/ URLs
+        required: true
+permissions:
+  contents: read
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          URLS: ${{ inputs.urls }}
+        run: |
+          node --input-type=module <<'NODE'
+          const urls=process.env.URLS.split(/\s+/).filter(Boolean);
+          if(!urls.length||urls.some(u=>!u.startsWith('https://img.tjm.art/')))throw Error('Only https://img.tjm.art/ URLs');
+          for(let i=0;i<urls.length;i+=30){
+            const r=await fetch('https://api.cloudflare.com/client/v4/zones/5c51165760cc5bc41120a3567c75dc28/purge_cache',{method:'POST',headers:{authorization:`Bearer ${process.env.CLOUDFLARE_API_TOKEN}`,'content-type':'application/json'},body:JSON.stringify({files:urls.slice(i,i+30)})});
+            const j=await r.json();if(!j.success)throw Error('Purge failed: '+JSON.stringify(j.errors));
+          }
+          console.log(`Purged ${urls.length} URLs`);
+          NODE
