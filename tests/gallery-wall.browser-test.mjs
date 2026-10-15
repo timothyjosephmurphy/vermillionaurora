@@ -35,7 +35,7 @@ for(const engine of [chromium,webkit]){
         const ids=(u.searchParams.get('ids')||'').split(',').filter(Boolean);
         return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{version:catalogVersion,availability:Object.fromEntries(ids.map(id=>[id,byId[id]?.listing.status||'available']))}});
       }
-      if(u.hostname!=='tjm.art')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{products:[],availability:{}}});
+      if(u.hostname!=='tjm.art'&&u.hostname!=='img.tjm.art')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{products:[],availability:{}}});
       if(u.pathname.startsWith('/print-masters/'))masters.push(u.pathname);
       const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
       if(!fs.existsSync(file))return route.fulfill({status:404});
