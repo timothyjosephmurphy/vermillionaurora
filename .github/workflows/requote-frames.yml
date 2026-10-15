@@ -24,6 +24,8 @@ jobs:
       - name: Deploy sandbox
         run: cd cloudflare && npx --yes wrangler@4.143.0 deploy --config wrangler.sandbox.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
         env: {CLOUDFLARE_ACCOUNT_ID: 3c1fddf0f4f4fc9c84594757d2e1bda0}
+      - name: Wait for the sandbox release
+        run: for i in $(seq 1 30); do curl -s https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/health | grep -q "$DEPLOYED_SHA" && exit 0; sleep 5; done; exit 1
       - run: node payments/refresh-print-frame-quotes.mjs
       - uses: actions/upload-artifact@v4
         if: always()
