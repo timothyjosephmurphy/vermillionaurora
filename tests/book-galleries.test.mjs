@@ -89,7 +89,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   assert(viewer.includes("grid.closest('.book-gallery-page')"));
   assert(viewer.includes("box.className = 'exhibition-viewer' + (threeUp ? ' ev-three-up' : '')"));
   const overview=load(fs.readFileSync('dist/book-galleries/index.html','utf8'));
-  assert.equal(overview('.book-gallery-carousel-grid li').length,manifest.sections.length+2);
+  assert.equal(overview('.book-gallery-carousel-grid li').length,manifest.sections.length+3);
   assert.equal(overview('.book-gallery-links a').length,manifest.books.length);
   const uniqueIds=[...new Set(manifest.sections.flatMap(sectionArtworkIds))];
   const printReady=uniqueIds.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||[...originalProducts,...archiveProducts].find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
