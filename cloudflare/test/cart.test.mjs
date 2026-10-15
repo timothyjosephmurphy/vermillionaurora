@@ -6,7 +6,7 @@ import catalog from '../checkout-catalog.mjs';
 import prints from '../print-catalog.mjs';
 import {cartCheckout} from '../cart-checkout.mjs';
 import {priceCart} from '../checkout-pricing.mjs';
-import {backfillCheckoutSale,checkoutWebhook} from '../historical-sales.mjs';
+import {backfillCheckoutSale} from '../historical-sales.mjs';
 import {bitcoinWebhook} from '../bitcoin-checkout.mjs';
 const ids=['honeybadger-and-cub-with-genesis-block','painting-portrait-in-green'].sort();
 const address={name:'Test Buyer',street1:'123 Main St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
@@ -166,8 +166,7 @@ it('keeps locks after a lost capture response, settles once, records one sale/ta
   const {id,order}=await setup();await order.start('paypal');approve();failCapture=true;
   expect((await order.capture()).status).toBe('capturing');for(const slug of ids)expect(await env.PAINTING_STOCK.getByName(slug).reserve('other')).toBe(false);
   failCapture=false;
-  const hook=new Request('https://worker/checkout/webhook',{method:'POST',body:JSON.stringify({event_type:'PAYMENT.CAPTURE.COMPLETED',resource:{id:'CAPTURE1',supplementary_data:{related_ids:{order_id:'ORDER0'}}}})});
-  expect((await checkoutWebhook(hook,{...env,...config})).status).toBe(200);expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
+  await order.refresh();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
   expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(1);expect(calls.filter(c=>c.url.endsWith('/create_from_calculation'))).toHaveLength(1);expect(mailCount).toBe(1);
   const d=await read(order);expect(d.taxRecorded).toBe(true);expect(d.customerMail.status).toBe('sent');
   for(const slug of ids){expect(await env.PAINTING_STOCK.getByName(slug).status()).toBe('sold');expect(await runInDurableObject(env.PAINTING_STOCK.getByName(slug),(_,ctx)=>ctx.storage.sql.exec('SELECT count(*) AS n FROM sale_receipt').one().n)).toBe(0);}

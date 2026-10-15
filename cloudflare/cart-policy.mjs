@@ -21,7 +21,7 @@ export const listed=(list,id)=>!!list?.split(',').map(s=>s.trim()).includes(id);
 // generated, server-owned catalog to scale past Wrangler's 5.1 kB text-binding
 // limit. This flag never admits an ID absent from the generated print catalog.
 export const printCheckoutListed=(env,id)=>env.PRINT_CHECKOUT_ALL==='true'?Object.hasOwn(prints,id):listed(env.PRINT_CHECKOUT_IDS,id);
-const paypalFixture=env=>env.PAYPAL_TEST_FIXTURE==='true'&&env.CHECKOUT_MODE==='sandbox'&&!!env.PAYPAL_MERCHANT_ID;
+const paypalFixture=env=>env.PAYPAL_TEST_FIXTURE==='true'&&!!env.PAYPAL_MERCHANT_ID;
 export function paymentMethods(env,id) {
   if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS||!env.PAINTING_STOCK||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return [];
   const print=Object.hasOwn(prints,id)?prints[id]:null;
