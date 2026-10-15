@@ -3,7 +3,7 @@
 // objects already there with the same size, then verify counts. Usage: node scripts/sync-images-r2.mjs [--force]  (--force re-uploads everything, e.g. to change Cache-Control)
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { putObject, listKeys } from './lib/r2.mjs';
-const roots = ['display', 'wall-paintings', 'gallery-wall', 'print-editions/thumbs'];
+const roots = ['display', 'wall-paintings', 'gallery-wall', 'print-editions/thumbs', 'walkthrough'];
 let total = 0, uploaded = 0, bad = 0;
 for (const root of roots) {
   const files = await readdir(`static/${root}`, { recursive: true, withFileTypes: true }).catch(() => null);
