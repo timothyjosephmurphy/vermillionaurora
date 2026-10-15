@@ -70,7 +70,15 @@ for (const slug of await readdir('dist/products').catch(() => [])) {
     if (dims && !/\swidth=/.test(tag)) out = out.replace(/^<img\b/, `<img width="${dims.w}" height="${dims.h}"`);
     products++;
     return out;
-  });
+  })
+  // Full-screen view and its "open" link: the largest display WebP (served from img.tjm.art by
+  // r2-image-urls.mjs) instead of the multi-megabyte original; the original stays in data-image-src.
+  .replace(/(<dialog id="painting-lightbox"[^>]*>[^]*?)(<img\b[^>]*>)/, (m, pre, tag) => {
+    const src = tag.match(/\ssrc="([^"]+)"/)?.[1], entry = src && map[src];
+    if (!entry || /\sdata-image-src=/.test(tag)) return m;
+    return pre + tag.replace(` src="${src}"`, ` data-image-src="${src}" src="${entry.variants.at(-1).src}"`);
+  })
+  .replace(/(<a class="painting-image-trigger" href=")([^"]+)"/, (m, pre, href) => map[href] ? `${pre}${map[href].variants.at(-1).src}"` : m);
   if (next !== html) await writeFile(file, next);
 }
 console.log(`Responsive WebP display images: ${imgs} img tags, ${backgrounds} inline backgrounds, ${products} painting-page main images`);
