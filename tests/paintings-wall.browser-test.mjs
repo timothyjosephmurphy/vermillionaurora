@@ -53,9 +53,9 @@ for(const engine of [chromium,webkit]){
 
       // Filter
       const filterButtons=page.locator('[data-wall-filter] [data-filter]');
-      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),['All (129)','Available (94)','Sold (8)','Not for sale (27)']);
+      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),['All (216)','Available (98)','Sold (8)','Not for sale (110)']);
       await page.locator('[data-filter="sold"]').click();await settled();
-      assert.equal(await page.locator('.wall-art.is-dimmed').count(),129-8);
+      assert.equal(await page.locator('.wall-art.is-dimmed').count(),216-8);
       assert.equal(await picker.locator('option').count(),9);
       await page.locator('[data-filter="all"]').click();await settled();
       assert.equal(await page.locator('.wall-art.is-dimmed').count(),0);
