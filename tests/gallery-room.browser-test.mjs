@@ -10,7 +10,7 @@ const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript'
 async function context(options={}){
   const ctx=await browser.newContext(options);
   await ctx.route('**/*',async route=>{
-    const u=new URL(route.request().url());if(u.hostname!=='tjm.art')return route.fulfill({json:{products:[],availability:{}}});
+    const u=new URL(route.request().url());if(u.hostname!=='tjm.art'&&u.hostname!=='img.tjm.art')return route.fulfill({json:{products:[],availability:{}}});
     const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
     if(!fs.existsSync(file))return route.fulfill({status:404});
     return route.fulfill({body:fs.readFileSync(file),contentType:mime[path.extname(file)]||'application/octet-stream'});
