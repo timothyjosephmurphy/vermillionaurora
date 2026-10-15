@@ -1,21 +1,25 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {roomArtworks as wallArtworks,WALL_UNIT} from '../src/data/gallery-room.mjs';
-import {ROOM,roomLayout,approachPosition} from '../src/scripts/gallery-room-layout.mjs';
-const artworks=roomLayout(wallArtworks,WALL_UNIT);
-test('square room has six unique, evenly spaced, physically sized TJ prints on each wall',()=>{
-  assert.equal(artworks.length,24);assert.equal(new Set(artworks.map(a=>a.id)).size,24);
-  for(let wall=0;wall<4;wall++){
-    const row=artworks.filter(a=>a.wall===wall);assert.equal(row.length,6);
-    for(let i=0;i<row.length;i++){
-      const art=row[i],source=wallArtworks.find(a=>a.id===art.id);
-      assert(Math.abs(art.width-source.width/WALL_UNIT*.0254)<1e-9);
-      assert(Math.abs(art.imageWidth/art.imageHeight-source.sourceWidth/source.sourceHeight)<.002);
-      assert(art.y-art.height/2>.8&&art.y+art.height/2<ROOM.height-.6);
-      if(i){const previous=row[i-1],distance=Math.hypot(art.x-previous.x,art.z-previous.z);assert(Math.abs(distance-ROOM.size/6)<1e-9);assert(distance>(art.width+previous.width)/2+.2);}
-      const approach=approachPosition(art);assert(Math.abs(approach.x)<ROOM.size/2-.2&&Math.abs(approach.z)<ROOM.size/2-.2);
-      assert.equal(art.href,source.href);
-    }
-  }
+import {walkthroughRooms,walkthroughPaintingCount} from '../src/data/gallery-walkthrough.mjs';
+import {walkthroughLayout,approachPosition,HALL} from '../src/scripts/gallery-walkthrough-layout.mjs';
+import {tjWall,WALL_UNIT} from '../src/data/paintings-wall.mjs';
+import assets from '../catalog/walkthrough-assets.json' with {type:'json'};
+const {rooms,items}=walkthroughLayout(walkthroughRooms);
+test('walkthrough hangs every Painting Wall work once, at true size',()=>{
+  assert.equal(walkthroughPaintingCount,tjWall.artworks.length);
+  const works=items.filter(i=>i.kind==='painting'||(i.kind==='mural'&&tjWall.artworks.some(a=>a.id===i.id)));
+  assert.equal(new Set(works.map(w=>w.id)).size,tjWall.artworks.length);
+  for(const w of works){const a=tjWall.artworks.find(x=>x.id===w.id);assert(Math.abs(w.width-a.width/WALL_UNIT*.0254)<1e-9,w.id);assert.equal(w.href,a.href);}
 });
-
+test('theme rooms, one room per exhibition, and full-scale murals',()=>{
+  assert(rooms.filter(r=>r.kind==='theme').length>=4);
+  for(const ex of assets.exhibitions){const r=rooms.find(x=>x.id==='exhibition-'+ex.id);assert(r,ex.id);
+    const inRoom=items.filter(i=>i.room===r.id);assert(inRoom.some(i=>i.kind==='plaque'));assert.equal(inRoom.filter(i=>i.kind==='photo').length,ex.photos.length);}
+  const lillooet=items.find(i=>i.id==='friends-club-mural');assert(Math.abs(lillooet.width-480*.0254)<1e-9&&Math.abs(lillooet.height-108*.0254)<1e-9);
+});
+test('every hung item fits inside its room, below the ceiling, with room to approach',()=>{
+  for(const i of items){const r=rooms.find(x=>x.id===i.room);
+    assert(i.x-.001>=r.x0&&i.x+.001<=r.x0+r.width,i.id);assert(i.y+i.height/2<HALL.height,i.id);assert(i.y-i.height/2>0,i.id);
+    const p=approachPosition(i);assert((p.z-r.z0)*r.side>0&&(r.z1-p.z)*r.side>0,i.id);}
+  assert.equal(new Set(items.map(i=>i.id)).size,items.length);
+});

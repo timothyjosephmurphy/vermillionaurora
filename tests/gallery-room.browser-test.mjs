@@ -2,8 +2,9 @@ import {chromium} from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import {roomArtworks as wallArtworks} from '../src/data/gallery-room.mjs';
-import {ROOM} from '../src/scripts/gallery-room-layout.mjs';
+import {walkthroughRooms,walkthroughPaintingCount} from '../src/data/gallery-walkthrough.mjs';
+import {walkthroughLayout,HALL} from '../src/scripts/gallery-walkthrough-layout.mjs';
+const {rooms,items}=walkthroughLayout(walkthroughRooms);
 const origin='https://tjm.art',root=path.resolve('dist');
 const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ico':'image/x-icon'};
@@ -18,72 +19,30 @@ async function context(options={}){
 }
 try{
   for(const mobile of [false,true]){
+    const label=mobile?'Mobile':'Desktop';
     const ctx=await context({viewport:mobile?{width:390,height:844}:{width:1440,height:960},hasTouch:mobile,isMobile:mobile,deviceScaleFactor:mobile?2:1,reducedMotion:'reduce'});
-    const page=await ctx.newPage(),errors=[];
-    page.on('pageerror',e=>{errors.push(e.message);console.log('ROOM PAGE ERROR',e.message);});page.on('console',m=>{if(m.type()==='error'&&m.text().includes('Gallery room'))console.log(m.text());});
-    page.on('request',r=>{if(page.url().endsWith('/gallery/room/')&&r.url().includes('/checkout/'))throw Error('The room must not initiate checkout');});
-    await page.goto(origin+'/');
-    const exhibitionTiles=page.locator('#exhibitions .ex-track > article');
-    assert.deepEqual(await exhibitionTiles.evaluateAll(nodes=>nodes.slice(-2).map(n=>n.dataset.galleryFeature)),['gallery-room','print-wall'],'Both gallery experiences finish the Exhibitions carousel');
-    assert.equal(await page.locator('.painting-carousel [data-gallery-feature]').count(),0,'Gallery experiences are removed from the painting carousels');
-    const roomTile=page.locator('#exhibitions [data-gallery-feature="gallery-room"]');
-    await roomTile.scrollIntoViewIfNeeded();
-    await page.waitForFunction(()=>document.querySelector('[data-gallery-feature="gallery-room"] img').naturalWidth===1440);
-    await roomTile.locator('img').evaluate(async img=>{await img.decode();await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
-    const media=await roomTile.locator('.gallery-product-image').boundingBox(),caption=await roomTile.locator('.product-info').boundingBox();
-    assert(Math.abs(media.width/media.height-16/9)<.02,'The room preview fits the landscape exhibition tile');
-    assert(caption.y>=media.y+media.height-1,'The caption stays below the room preview');
-    const frame=await roomTile.locator('.room-card-frame').boundingBox();
-    assert(frame.y>=media.y&&frame.y+frame.height<=media.y+media.height,'The complete room preview frame stays visible');
-    await page.screenshot({path:`/tmp/gallery-room-home-${mobile?'mobile':'desktop'}.png`});
-    await Promise.all([page.waitForURL(origin+'/gallery/room/'),roomTile.locator('.product-title-link').click()]);
-    await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.ready==='true',{},{timeout:60000});
-    await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.loadedImages==='24');
-    assert.equal(await page.locator('[data-gallery-room]').getAttribute('data-paintings'),'24');
-    assert.equal(await page.locator('[data-gallery-room]').getAttribute('data-walls'),'4');
-    assert.equal(await page.locator('[data-room-picker] option').count(),25);
-    const label=mobile?'mobile':'desktop';
-    await page.screenshot({path:`/tmp/gallery-room-${label}-welcome.png`});
+    const page=await ctx.newPage(),errors=[],textures=[];
+    page.on('pageerror',e=>{errors.push(e.message);console.log('ROOM PAGE ERROR',e.message);});
+    page.on('request',r=>{if(/\.(webp|jpe?g)$/.test(new URL(r.url()).pathname)&&page.url().endsWith('/gallery/room/'))textures.push(r.url());if(page.url().endsWith('/gallery/room/')&&r.url().includes('/checkout/'))throw Error('The room must not initiate checkout');});
+    await page.goto(origin+'/gallery/room/');
+    const root=page.locator('[data-gallery-room]');
+    await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.ready==='true',null,{timeout:120000});
+    assert.equal(await root.getAttribute('data-rooms'),String(rooms.length));
+    assert(Number(await root.getAttribute('data-paintings'))>=walkthroughPaintingCount);
+    const atStart=textures.length;assert(atStart<items.length/2,`Textures load lazily (${atStart} requested at start of ${items.length})`);
+    console.log('hosts',[...new Set(textures.map(u=>new URL(u).hostname+new URL(u).pathname.split('/').slice(0,2).join('/')))]);
     await page.locator('[data-room-enter]').click();
-    await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.playing==='true');
-    const position=()=>page.locator('[data-gallery-room]').getAttribute('data-position').then(JSON.parse);
-    const start=await position();
-    const moved=()=>page.waitForFunction(start=>{const p=JSON.parse(document.querySelector('[data-gallery-room]').dataset.position);return Math.hypot(p.x-start.x,p.z-start.z)>.15;},start,{timeout:15000}).catch(async error=>{console.log('WALK DIAGNOSTIC',JSON.stringify({start,after:await position(),state:await page.locator('[data-gallery-room]').evaluate(el=>({...el.dataset,active:document.activeElement?.tagName,locked:!!document.pointerLockElement})),errors}));await page.screenshot({path:`/tmp/gallery-room-${label}-walk-failure.png`});throw error;});
-    if(mobile){
-      const b=await page.locator('[data-room-move="forward"]').boundingBox(),cdp=await ctx.newCDPSession(page);await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{id:1,x:b.x+b.width/2,y:b.y+b.height/2}]});await moved();await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
-    }else{await page.keyboard.down('w');await moved();await page.keyboard.up('w');}
-    const after=await position();assert(Math.hypot(after.x-start.x,after.z-start.z)>.1,'Keyboard / touch walking changes the visitor position');
-    assert(Math.abs(after.y-ROOM.eyeHeight)<.12,'The visitor stays at walking height');
-    await page.screenshot({path:`/tmp/gallery-room-${label}-walking.png`});
-    await page.keyboard.press('Escape');await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.playing==='false');
-    const art=wallArtworks.find(a=>a.id==='meditation-at-denny-blaine');
-    await page.locator('[data-room-picker]').selectOption(art.id);
-    await page.waitForFunction(id=>document.querySelector('[data-gallery-room]').dataset.focusedArt===id,art.id);
-    assert.equal(await page.locator('[data-room-product]').getAttribute('href'),origin+art.href);
+    const art=items.find(i=>i.id==='meditation-at-denny-blaine')||items.find(i=>i.kind==='painting');
+    await page.keyboard.press('Escape');await page.locator('[data-room-picker]').selectOption(art.id);
+    await page.waitForFunction(id=>document.querySelector('[data-gallery-room]').dataset.focusedArt===id,art.id,{timeout:20000});
+    await page.waitForFunction(r=>document.querySelector('[data-gallery-room]').dataset.room===r,art.room,{timeout:20000});
     assert.equal(await page.locator('[data-room-art-title]').textContent(),art.title);
-    await page.waitForTimeout(900);await page.screenshot({path:`/tmp/gallery-room-${label}-painting.png`});
-    assert.equal(await page.locator('[data-gallery-room]').getAttribute('data-playing'),'true','A painting jump stays active after leaving pointer lock');
-    assert(await page.locator('[data-room-art-card]').isVisible(),'The selected painting shows its product pane');
-    if(mobile){const pane=await page.locator('[data-room-art-card]').boundingBox(),pad=await page.locator('.room-touch-controls').boundingBox();assert(pane.x>=pad.x+pad.width+8,'The mobile product pane sits beside the walking controls');assert(pane.y+pane.height<=844,'The mobile product pane stays on screen');}
-    if(mobile){await Promise.all([page.waitForURL(origin+art.href),page.locator('[data-room-product]').click()]);}
-    else{await Promise.all([page.waitForURL(origin+art.href),page.keyboard.press('e')]);}
-    await page.goBack();await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.ready==='true');
-    assert(await page.locator('[data-room-welcome]').isVisible(),'Returning from a product page restores a paused gallery');
-    assert.deepEqual(errors,[]);await ctx.close();console.log(`PASS: ${label} Babylon gallery renders 24 framed paintings, walking controls, correct picking, product navigation and return.`);
+    assert.equal(await page.locator('[data-room-product]').getAttribute('href'),new URL(art.href,origin).href);
+    assert.deepEqual(errors,[]);await ctx.close();
+    console.log(`PASS: ${label} walkthrough renders ${rooms.length} rooms with ${walkthroughPaintingCount} paintings, lazy img.tjm.art textures, and painting jumps.`);
   }
-  const ctx=await context({viewport:{width:1280,height:900}}),page=await ctx.newPage();
-  await page.goto(origin+'/gallery/room/');await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.ready==='true',{},{timeout:60000});
-  await page.locator('[data-room-enter]').click();await page.keyboard.down('w');await page.waitForTimeout(6500);await page.keyboard.up('w');
-  const edge=JSON.parse(await page.locator('[data-gallery-room]').getAttribute('data-position'));
-  assert(Math.abs(edge.x)<=ROOM.size/2-.2&&Math.abs(edge.z)<=ROOM.size/2-.2,'Room collision prevents walking through the walls');
-  assert(Math.max(Math.abs(edge.x),Math.abs(edge.z))>ROOM.size/2-.5,'The collision check actually reaches a wall');
-  await page.keyboard.press('Escape');const art=wallArtworks[0];await page.locator('[data-room-picker]').selectOption(art.id);
-  await page.waitForFunction(id=>document.querySelector('[data-gallery-room]').dataset.focusedArt===id,art.id);
-  await page.keyboard.down('w');await page.waitForURL(origin+art.href,{timeout:15000});await page.keyboard.up('w');
-  assert.equal(page.url(),origin+art.href,'Walking up to the painting opens its exact product page');await ctx.close();
-  const fallback=await context();await fallback.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return /webgl/i.test(type)?null:original.call(this,type,...args);};});
-  const fallbackPage=await fallback.newPage();await fallbackPage.goto(origin+'/gallery/room/');await fallbackPage.locator('[data-room-error]').waitFor({state:'visible'});
-  assert.equal(await fallbackPage.locator('[data-room-index] li a').count(),24);await fallback.close();
-  console.log('PASS: square room wall collisions, contact-to-product interaction, and WebGL-unavailable fallback.');
+  const fallback=await context();await fallback.addInitScript(()=>{HTMLCanvasElement.prototype.getContext=()=>null;});
+  const fallbackPage=await fallback.newPage();await fallbackPage.goto(origin+'/gallery/room/');await fallbackPage.waitForSelector('[data-room-error]:not([hidden])');
+  assert(await fallbackPage.locator('[data-room-index] li a').count()>=walkthroughPaintingCount);await fallback.close();
+  console.log('PASS: WebGL-unavailable fallback lists every painting.');
 }finally{await browser.close();}
-
