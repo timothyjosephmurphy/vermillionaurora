@@ -95,7 +95,7 @@ test('book gallery sections contain only the retained artwork inventory',()=>{
   const printReady=uniqueIds.filter(id=>printOptions(bookProducts.find(product=>product.id===id)||[...originalProducts,...archiveProducts].find(product=>product.id===id),config,papers).some(option=>option.ready)).length;
   assert.equal(Number(overview('.book-gallery-print-total').attr('data-total-print-ready-count')),printReady);
   const home=load(fs.readFileSync('dist/index.html','utf8'));
-  assert.equal(home('.book-section-carousel .ex-slide').length,manifest.sections.length+2);
+  assert.equal(home('.book-section-carousel .ex-slide').length,manifest.sections.length+3);
   assert.equal(home('#book-galleries h2').text(),'Selected Galleries');
   assert.equal(home('#gallery h2').text(),'Featured works');
   for(const id of ['painting-portrait-in-green','painting-portrait-in-gold'])
