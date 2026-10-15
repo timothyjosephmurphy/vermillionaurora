@@ -14,7 +14,7 @@ const data=JSON.stringify({artworks,room:ROOM}).replace(/</g,'\\u003c');
 <main class="gallery-room" data-gallery-room>
   <canvas data-room-canvas tabindex="0" aria-label="Three-dimensional gallery. Use W A S D to walk, arrow keys to move or turn, and drag to look. Press Escape to pause." aria-describedby="room-instructions"></canvas>
   <header class="room-header">
-    <a href="/gallery/wall/" class="room-back" aria-label="Back to the print wall">← <span>Print wall</span></a>
+    <a href="/gallery/wall/all/" class="room-back" aria-label="Back to the painting wall">← <span>Painting wall</span></a>
     <div class="room-brand"><span>TJ MURPHY</span><strong>The gallery room</strong></div>
     <button type="button" data-room-pause disabled>Controls</button>
   </header>
@@ -25,7 +25,7 @@ const data=JSON.stringify({artworks,room:ROOM}).replace(/</g,'\\u003c');
     <button class="enter-button" type="button" data-room-enter disabled>Preparing the gallery…</button>
     <p class="room-instructions" id="room-instructions"><span class="desktop-instructions"><kbd>W A S D</kbd> walk · <kbd>← →</kbd> turn<br />Mouse or drag to look · <kbd>Esc</kbd> pause</span><span class="touch-instructions">Drag to look. Hold the arrows to walk.</span><br />Click a painting, press <kbd>E</kbd>, or walk right up to it to open its page.</p>
     <label class="room-find">Go to a painting<select data-room-picker disabled><option value="">Choose a painting</option>{artworks.map(art=><option value={art.id}>{art.title}</option>)}</select></label>
-    <p class="room-error" data-room-error hidden>The 3D view couldn’t start in this browser. <a href="/gallery/wall/">Explore the print wall</a>, or browse the paintings below.</p>
+    <p class="room-error" data-room-error hidden>The 3D view couldn’t start in this browser. <a href="/gallery/wall/all/">Explore the painting wall</a>, or browse the paintings below.</p>
   </section>
   <div class="room-crosshair" data-room-crosshair aria-hidden="true"></div>
   <aside class="room-art-card" data-room-art-card hidden aria-live="polite">
@@ -47,7 +47,7 @@ const data=JSON.stringify({artworks,room:ROOM}).replace(/</g,'\\u003c');
   <script type="application/json" data-room-data set:html={data}></script>
 </main>
 <script>import '../../scripts/gallery-room.js';</script>
-<noscript><style>.room-welcome,.room-header,.room-map,.room-status,canvas{display:none!important}.room-index{display:block!important;position:relative!important;margin:30px!important}</style><p style="padding:24px">This gallery uses JavaScript. <a href="/gallery/wall/">Visit the print wall</a> or browse below.</p></noscript>
+<noscript><style>.room-welcome,.room-header,.room-map,.room-status,canvas{display:none!important}.room-index{display:block!important;position:relative!important;margin:30px!important}</style><p style="padding:24px">This gallery uses JavaScript. <a href="/gallery/wall/all/">Visit the print wall</a> or browse below.</p></noscript>
 </body></html>
 <style is:global>
   *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#e8e0d2;color:#30281f;font-family:Arial,Helvetica,sans-serif}button,a,select{-webkit-tap-highlight-color:transparent}button,select{font:inherit}button,a{touch-action:manipulation}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,select:focus-visible{outline:2px solid #bc4e31;outline-offset:4px}button:disabled{cursor:wait;opacity:.6}[hidden]{display:none!important}
