@@ -16,7 +16,7 @@ export async function finerworksDiagnostic(request,env,products) {
   if(action!=='verify'||request.method!=='POST'||!env.FINERWORKS_AUDIT_TOKEN||request.headers.get('Authorization')!==`Bearer ${env.FINERWORKS_AUDIT_TOKEN}`)return reply({error:'Not found'},404);
   const expiry=Number(env.FINERWORKS_AUDIT_TOKEN.split('.')[0]);
   if(!/^\d{13}\.[a-f0-9]{64}$/.test(env.FINERWORKS_AUDIT_TOKEN)||expiry<=Date.now()||expiry>Date.now()+20*60*1000)return reply({error:'Not found'},404);
-  if(env.PAYPAL_MODE!=='sandbox')return reply({error:'Diagnostics require sandbox checkout'},409);
+  if(env.CHECKOUT_MODE!=='sandbox')return reply({error:'Diagnostics require sandbox checkout'},409);
   const raw=await request.text();if(raw.length>4096)return reply({error:'Request too large'},413);
   let input;try{input=JSON.parse(raw);}catch{return reply({error:'Invalid request'},400);}
   if(!input||Array.isArray(input)||typeof input!=='object')return reply({error:'Invalid request'},400);

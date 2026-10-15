@@ -8,9 +8,9 @@ import {finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 export const MAX_ITEMS=12;
 export const ORDER_ID=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 export const ACCESS_KEY=/^[a-f0-9]{64}$/;
-export const cartOrigin=env=>env.PAYPAL_MODE==='sandbox'?env.SANDBOX_RETURN_ORIGIN:PRIMARY_SITE;
+export const cartOrigin=env=>env.CHECKOUT_MODE==='sandbox'?env.SANDBOX_RETURN_ORIGIN:PRIMARY_SITE;
 // Origins allowed to call the cart API (both website domains in production).
-export const cartOrigins=env=>env.PAYPAL_MODE==='sandbox'?[env.SANDBOX_RETURN_ORIGIN]:SITE_ORIGINS;
+export const cartOrigins=env=>env.CHECKOUT_MODE==='sandbox'?[env.SANDBOX_RETURN_ORIGIN]:SITE_ORIGINS;
 export const dollars=n=>(n/100).toFixed(2);
 export function cents(value) {
   if(typeof value!=='string'||!/^\d+\.\d{2}$/.test(value))throw Error('Invalid amount');
@@ -21,23 +21,24 @@ export const listed=(list,id)=>!!list?.split(',').map(s=>s.trim()).includes(id);
 // generated, server-owned catalog to scale past Wrangler's 5.1 kB text-binding
 // limit. This flag never admits an ID absent from the generated print catalog.
 export const printCheckoutListed=(env,id)=>env.PRINT_CHECKOUT_ALL==='true'?Object.hasOwn(prints,id):listed(env.PRINT_CHECKOUT_IDS,id);
+const paypalFixture=env=>env.PAYPAL_TEST_FIXTURE==='true'&&!!env.PAYPAL_MERCHANT_ID;
 export function paymentMethods(env,id) {
   if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS||!env.PAINTING_STOCK||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return [];
   const print=Object.hasOwn(prints,id)?prints[id]:null;
-  if(!env.STRIPE_SECRET_KEY||!['live','sandbox'].includes(env.PAYPAL_MODE))return [];
+  if(!env.STRIPE_SECRET_KEY||!['live','sandbox'].includes(env.CHECKOUT_MODE))return [];
   if(Object.hasOwn(deposits,id))return depositMethods(env);
   if(print) {
-    if(print.testOnly&&env.PAYPAL_MODE!=='sandbox')return [];
-    if(print.sampleOnly&&env.PAYPAL_MODE==='live'&&env.LIVE_PRINT_SAMPLE_ENABLED!=='true')return [];
+    if(print.testOnly&&env.CHECKOUT_MODE!=='sandbox')return [];
+    if(print.sampleOnly&&env.CHECKOUT_MODE==='live'&&env.LIVE_PRINT_SAMPLE_ENABLED!=='true')return [];
     if(env.PRINT_CHECKOUT_ENABLED!=='true'||!printCheckoutListed(env,id))return [];
     if(print.provider==='finerworks') {if(!finerworksOrderingReady(env))return [];}
-    else if(env.PRINT_PROVIDER==='finerworks'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.PAYPAL_MODE)return [];
+    else if(env.PRINT_PROVIDER==='finerworks'||!env.PRODIGI_API_KEY||env.PRODIGI_ENV!==env.CHECKOUT_MODE)return [];
   } else if(!env.SHIPPO_TOKEN||!env.SHIP_FROM_STREET||!Object.hasOwn(catalog,id)||catalog[id].available===false)return [];
   const methods=[];
-  // PAYPAL_DEPRECATED="true" hides PayPal everywhere (cards via Square, Bitcoin via BTCPay) without touching credentials.
-  if(env.PAYPAL_DEPRECATED!=='true'&&env.PAYPAL_CHECKOUT_ENABLED==='true'&&(print||listed(env.PAYPAL_CHECKOUT_SLUGS,id))&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');
+  // PayPal is removed from checkout. The cart's PayPal adapter is reachable only from unit-test fixtures (never live).
+  if(paypalFixture(env))methods.push('paypal');
   if(print?!print.sampleOnly&&printBitcoinOffered(env):bitcoinOffered(env,id))methods.push('bitcoin');
-  if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.PAYPAL_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&
+  if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.CHECKOUT_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&
     (env.SQUARE_CHECKOUT_ALL==='true'||listed(env.SQUARE_CHECKOUT_SLUGS,id))&&env.SQUARE_ACCESS_TOKEN&&env.SQUARE_APPLICATION_ID&&env.SQUARE_LOCATION_ID&&env.SQUARE_WEBHOOK_SIGNATURE_KEY&&env.SQUARE_WEBHOOK_URL&&
     !(env.SQUARE_MODE==='live'&&env.SQUARE_APPLICATION_ID.startsWith('sandbox-')))methods.push('square');
   return methods;
@@ -47,9 +48,9 @@ export function paymentMethods(env,id) {
 export function depositMethods(env) {
   if(env.COMMISSION_DEPOSITS_ENABLED!=='true'||env.COMMISSION_DEPOSITS_PAUSED==='true')return [];
   const methods=[];
-  if(env.PAYPAL_DEPRECATED!=='true'&&env.PAYPAL_CHECKOUT_ENABLED==='true'&&env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_MERCHANT_ID&&env.PAYPAL_WEBHOOK_ID)methods.push('paypal');
+  if(paypalFixture(env))methods.push('paypal');
   if(printBitcoinOffered(env))methods.push('bitcoin');
-  if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.PAYPAL_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&env.SQUARE_CHECKOUT_ALL==='true'&&
+  if(env.SQUARE_CHECKOUT_ENABLED==='true'&&env.SQUARE_MODE===env.CHECKOUT_MODE&&['live','sandbox'].includes(env.SQUARE_MODE)&&env.SQUARE_CHECKOUT_ALL==='true'&&
     env.SQUARE_ACCESS_TOKEN&&env.SQUARE_APPLICATION_ID&&env.SQUARE_LOCATION_ID&&env.SQUARE_WEBHOOK_SIGNATURE_KEY&&env.SQUARE_WEBHOOK_URL&&
     !(env.SQUARE_MODE==='live'&&env.SQUARE_APPLICATION_ID.startsWith('sandbox-')))methods.push('square');
   return methods;
@@ -86,7 +87,7 @@ export function cleanEmail(email) {
 }
 export async function keyHash(key) { return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(key)))].map(n=>n.toString(16).padStart(2,'0')).join(''); }
 function printBitcoinOffered(env) {
-  try {const u=new URL(env.BTCPAY_URL);return env.PAYPAL_MODE==='live'&&env.BTCPAY_CHECKOUT_ENABLED==='true'&&u.protocol==='https:'&&!u.username&&!u.password&&!!env.BTCPAY_STORE_ID&&!!env.BTCPAY_API_KEY&&!!env.BTCPAY_WEBHOOK_SECRET&&!!env.BITCOIN_ORDERS;}catch{return false;}
+  try {const u=new URL(env.BTCPAY_URL);return env.CHECKOUT_MODE==='live'&&env.BTCPAY_CHECKOUT_ENABLED==='true'&&u.protocol==='https:'&&!u.username&&!u.password&&!!env.BTCPAY_STORE_ID&&!!env.BTCPAY_API_KEY&&!!env.BTCPAY_WEBHOOK_SECRET&&!!env.BITCOIN_ORDERS;}catch{return false;}
 }
 export function publicCartItem(item) {
   const {id,type,productId,title,amount,quantity,imageSize,paperSize,paper,preview,mat,frame,sampleOnly,commission,listAmount,priceCode}=item;

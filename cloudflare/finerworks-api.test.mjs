@@ -4,19 +4,19 @@ import assert from 'node:assert/strict';
 test('a live billing rejection cannot place the payment token in saved diagnostics',async t=>{
   const token='private-live-billing-token';
   t.mock.method(globalThis,'fetch',async()=>Response.json({status:{success:false,message:`Rejected payment ${token}`}},{status:400}));
-  await assert.rejects(finerworksRequest({PAYPAL_MODE:'live',PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'private-web',FINERWORKS_APP_KEY:'private-app',FINERWORKS_PAYMENT_TOKEN:token},'/v3/submit_orders_v2',{
+  await assert.rejects(finerworksRequest({CHECKOUT_MODE:'live',PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'private-web',FINERWORKS_APP_KEY:'private-app',FINERWORKS_PAYMENT_TOKEN:token},'/v3/submit_orders_v2',{
     validate_only:false,payment_token:token,orders:[{order_po:`va-cart-${'a'.repeat(32)}-prints`,test_mode:false}]
   }),error=>!JSON.stringify(error.details).includes(token)&&error.details.providerMessage.includes('[redacted]'));
 });
 import {finerworksRequest,finerworksEnvironment,finerworksMaterials,finerworksPrices,finerworksProductCode,finerworksSizeAllowed} from './finerworks-api.mjs';
 const originalFetch=globalThis.fetch;
-const env={PAYPAL_MODE:'sandbox',FINERWORKS_WEB_API_KEY:'private-web-key',FINERWORKS_APP_KEY:'private-app-key'};
+const env={CHECKOUT_MODE:'sandbox',FINERWORKS_WEB_API_KEY:'private-web-key',FINERWORKS_APP_KEY:'private-app-key'};
 afterEach(()=>{globalThis.fetch=originalFetch;});
 const style={id:9,customSizing:true,allowDecimal:true,allowRotate:true,min:{width:4,height:4},max:{width:40,height:60},availableSizes:[]};
 const media={id:6,productTypeId:5,styleIds:[9]};
 test('requires explicit checkout environment and both keys',()=>{
   assert.equal(finerworksEnvironment(env),'sandbox');assert.equal(finerworksEnvironment({},false),null);
-  for(const bad of [{...env,PAYPAL_MODE:undefined},{...env,FINERWORKS_WEB_API_KEY:''},{...env,FINERWORKS_APP_KEY:''}])assert.throws(()=>finerworksEnvironment(bad));
+  for(const bad of [{...env,CHECKOUT_MODE:undefined},{...env,FINERWORKS_WEB_API_KEY:''},{...env,FINERWORKS_APP_KEY:''}])assert.throws(()=>finerworksEnvironment(bad));
 });
 test('read-only allowlist blocks orders, arbitrary URLs and method changes without fetching',async()=>{
   globalThis.fetch=()=>assert.fail('Must not call vendor');

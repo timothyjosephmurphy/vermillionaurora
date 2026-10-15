@@ -5,12 +5,11 @@ const data=await response.json();
 if(!response.ok||!data.success){console.log(`Production Worker settings are inaccessible to the deployment token (HTTP ${response.status}).`);process.exitCode=1;}
 else {
   const bindings=data.result.bindings||[];
-  const required=['PAYPAL_CLIENT_ID','PAYPAL_CLIENT_SECRET','PAYPAL_MERCHANT_ID','PAYPAL_WEBHOOK_ID','SHIPPO_TOKEN','STRIPE_SECRET_KEY','SHIP_FROM_STREET'];
+  const required=['SHIPPO_TOKEN','STRIPE_SECRET_KEY','SHIP_FROM_STREET'];
   const names=new Set(bindings.map(x=>x.name));
   const missing=required.filter(x=>!names.has(x));
   const safe={requiredBindingsPresent:required.filter(x=>names.has(x)),missingBindings:missing,
-    mode:bindings.find(x=>x.name==='PAYPAL_MODE')?.text||'unset',
-    enabled:bindings.find(x=>x.name==='PAYPAL_CHECKOUT_ENABLED')?.text||'unset',
+    mode:bindings.find(x=>x.name==='CHECKOUT_MODE')?.text||'unset',
     inventoryBinding:bindings.some(x=>x.name==='PAINTING_STOCK'&&x.type==='durable_object_namespace')};
   console.log('Production configuration:',JSON.stringify(safe));
   console.log('Secret presence does not verify provider credentials or live webhook registration.');

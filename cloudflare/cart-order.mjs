@@ -34,7 +34,7 @@ export class CartOrder extends DurableObject {
   authorize(hash){return !!this.read()&&this.read().keyHash===hash;}
   async createQuote(id,keyHash,quote,methods) {
     if(this.read())throw Error('Order already exists');
-    this.save({id,keyHash,quote,methods,mode:this.env.PAYPAL_MODE,status:'quoted',createdAt:Date.now(),expiresAt:Date.now()+10*60000});
+    this.save({id,keyHash,quote,methods,mode:this.env.CHECKOUT_MODE,status:'quoted',createdAt:Date.now(),expiresAt:Date.now()+10*60000});
     await this.schedule(10*60000);return this.result();
   }
   async syncCart(id,keyHash,items) {return this.exclusive(async()=>{
@@ -71,7 +71,7 @@ export class CartOrder extends DurableObject {
     const held=[...(d.heldIds||[])].sort(),expected=[...expectedIds].sort();
     if(held.join(',')!==expected.join(','))throw Error('Your cart changed while calculating shipping. Refresh and try again.');
     for(const id of held)if(!await this.stock(id).ownsCart(d.id))throw Error('An original in your cart is no longer reserved. Refresh and try again.');
-    this.save({...d,quote,methods,mode:this.env.PAYPAL_MODE,status:'quoted',quotedAt:Date.now(),expiresAt:Date.now()+10*60000});
+    this.save({...d,quote,methods,mode:this.env.CHECKOUT_MODE,status:'quoted',quotedAt:Date.now(),expiresAt:Date.now()+10*60000});
     await this.schedule(10*60000);return this.result();
   });}
   result() {
@@ -90,12 +90,12 @@ export class CartOrder extends DurableObject {
     let d=this.read();if(!d)throw Error('Order missing');
     if(d.status!=='quoted')return this.result(); // Retries reuse the same attempt, never create a second payment.
     if(Date.now()>d.expiresAt){if(d.heldIds?.length)await this.expireCartHold();else this.save({...d,status:'expired'});return this.result();}
-    if(d.quote.catalogVersion!==catalogVersion||this.env.PAYPAL_MODE!==d.mode||!d.methods.includes(method)||!commonMethods(this.env,d.quote.items).includes(method))throw Error('Refresh this cart before payment');
+    if(d.quote.catalogVersion!==catalogVersion||this.env.CHECKOUT_MODE!==d.mode||!d.methods.includes(method)||!commonMethods(this.env,d.quote.items).includes(method))throw Error('Refresh this cart before payment');
     if(method==='square'&&(typeof payment.sourceId!=='string'||!payment.sourceId||payment.sourceId.length>2000))throw Error('Enter valid card details before paying.');
     const code=this.codeOrder(d);
     if(code&&!await code.codeClaim(d.id))return {...this.result(),codeError:'That discount code has already been used.'};
     await this.schedule();
-    d=this.save({...d,status:'reserving',method,squareSandboxNoFulfillment:method==='square'&&this.env.PAYPAL_MODE==='sandbox'&&this.env.SQUARE_MODE==='sandbox'&&this.env.SQUARE_SANDBOX_NO_FULFILLMENT==='true',expiresAt:Date.now()+20*60000,paymentError:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,
+    d=this.save({...d,status:'reserving',method,squareSandboxNoFulfillment:method==='square'&&this.env.CHECKOUT_MODE==='sandbox'&&this.env.SQUARE_MODE==='sandbox'&&this.env.SQUARE_SANDBOX_NO_FULFILLMENT==='true',expiresAt:Date.now()+20*60000,paymentError:undefined,squareSourceId:undefined,squareIdempotencyKey:undefined,
       merchantId:method==='paypal'?this.env.PAYPAL_MERCHANT_ID:null,
       ...(method==='square'?{squareMode:this.env.SQUARE_MODE,squareLocationId:this.env.SQUARE_LOCATION_ID,squareSourceId:payment.sourceId,
         squareAttempt:(d.squareAttempt||0)+1,squareIdempotencyKey:`${d.id}-${String((d.squareAttempt||0)+1).padStart(2,'0')}`,paymentError:undefined}:{}),
@@ -199,14 +199,14 @@ export class CartOrder extends DurableObject {
     this.save({...d,status:'paid',jobs,...(printJob?{printJob}:{})});await this.schedule(1000);
   }
   validateBitcoin(d,invoice) {
-    if(this.env.PAYPAL_MODE!==d.mode||bitcoinServer(this.env)!==d.server||this.env.BTCPAY_STORE_ID!==d.storeId||
+    if(this.env.CHECKOUT_MODE!==d.mode||bitcoinServer(this.env)!==d.server||this.env.BTCPAY_STORE_ID!==d.storeId||
       !/^[a-zA-Z0-9]{1,100}$/.test(invoice.id||'')||(d.providerId&&d.providerId!==invoice.id)||invoice.storeId!==d.storeId||invoice.metadata?.orderId!==`va-cart-${d.id}`||invoice.currency!=='USD'||!/^\d+(\.\d{1,2})?$/.test(invoice.amount||'')||Number(invoice.amount).toFixed(2)!==d.quote.total)throw Error('Bitcoin invoice does not match the saved order');
   }
   // Deployment-only diagnostics: expose comparison flags, never invoice IDs,
   // checkout links, credentials, buyer details, or raw provider responses.
   async bitcoinDiagnostics() {
     const d=this.read();if(!d||d.method!=='bitcoin')return {bitcoin:false};
-    const result={bitcoin:true,status:d.status,hasAlarm:(await this.ctx.storage.getAlarm())!==null,configurationMatches:this.env.PAYPAL_MODE===d.mode&&bitcoinServer(this.env)===d.server&&this.env.BTCPAY_STORE_ID===d.storeId};
+    const result={bitcoin:true,status:d.status,hasAlarm:(await this.ctx.storage.getAlarm())!==null,configurationMatches:this.env.CHECKOUT_MODE===d.mode&&bitcoinServer(this.env)===d.server&&this.env.BTCPAY_STORE_ID===d.storeId};
     if(!result.configurationMatches)return result;
     try {
       const invoices=d.providerId?[await bitcoinApi(this.env,`/invoices/${encodeURIComponent(d.providerId)}`)]:await bitcoinApi(this.env,`/invoices?orderId=${encodeURIComponent('va-cart-'+d.id)}&take=2`);

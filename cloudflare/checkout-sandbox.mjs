@@ -6,8 +6,6 @@ import {cartCheckout} from './cart-checkout.mjs';
 import {printApi} from './print-api.mjs';
 import {finerworksBillingSetup} from './finerworks-billing-setup.mjs';
 import catalog from './checkout-catalog.mjs';
-import { checkout, checkoutWebhook } from './paypal-orders.mjs';
-import { verifySandbox } from './checkout-verification.mjs';
 import { shippingCheck } from './shipping-check.mjs';
 import {printTestPage} from './print-test-page.mjs';
 import {squareWebhook} from './square-webhook.mjs';
@@ -38,7 +36,7 @@ if(params.get('checkout')==='return'||params.get('checkout')==='cancel'){form.hi
 
 export default {
   fetch(request,env) {
-    if (env.PAYPAL_MODE !== 'sandbox' || env.GITHUB_TOKEN) return new Response('Sandbox isolation failure',{status:503});
+    if (env.CHECKOUT_MODE !== 'sandbox' || env.GITHUB_TOKEN) return new Response('Sandbox isolation failure',{status:503});
     const path=new URL(request.url).pathname;
     if(request.method==='GET'&&Object.hasOwn(printTestAssets,path)) {
       const asset=printTestAssets[path],bytes=Uint8Array.from(atob(asset.base64),c=>c.charCodeAt(0));
@@ -57,15 +55,12 @@ export default {
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path==='/checkout/square/webhook')return squareWebhook(request,env);
     if (path==='/checkout/shipping-check') return shippingCheck(request,env);
-    if (path==='/checkout/verification') return verifySandbox(request,env);
     if (path==='/checkout/square-test' && request.method==='GET') {
       if (!squareTestPageEnabled(env)) return new Response('Not found',{status:404});
       return new Response(squareTestPage,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
     }
     if (path==='/checkout/test' && request.method==='GET') return new Response(page,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
-    if (path==='/checkout/health' && request.method==='GET') return Response.json({mode:'sandbox',enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE||null},{headers:{'Cache-Control':'no-store'}});
-    if (path==='/checkout/webhook') return checkoutWebhook(request,env);
-    if (path.startsWith('/checkout/')) return checkout(request,env);
+    if (path==='/checkout/health' && request.method==='GET') return Response.json({mode:'sandbox',release:env.CHECKOUT_RELEASE||null},{headers:{'Cache-Control':'no-store'}});
     return new Response('Not found',{status:404});
   }
 };

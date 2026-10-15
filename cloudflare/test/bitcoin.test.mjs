@@ -2,7 +2,7 @@ import { env } from 'cloudflare:workers';
 import { runInDurableObject, runDurableObjectAlarm, evictDurableObject } from 'cloudflare:test';
 import { it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { bitcoinCheckout, bitcoinWebhook } from '../bitcoin-checkout.mjs';
-import { backfillCheckoutSale } from '../paypal-orders.mjs';
+import { backfillCheckoutSale } from '../historical-sales.mjs';
 
 const objects=[];
 let invoices, requests, timeoutCreate, emails;

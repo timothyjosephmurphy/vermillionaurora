@@ -277,7 +277,7 @@ it('diagnoses a failed test transaction without exposing private message text or
 it.each([
   ['no diagnostic token',{}],
   ['wrong diagnostic token',{SHIPPING_CHECK_TOKEN:'different'}],
-  ['live PayPal mode',{SHIPPING_CHECK_TOKEN:'test',PAYPAL_MODE:'live'}],
+  ['live PayPal mode',{SHIPPING_CHECK_TOKEN:'test',CHECKOUT_MODE:'live'}],
   ['live Shippo key',{SHIPPING_CHECK_TOKEN:'test',SHIPPO_TOKEN:'shippo_live_fake'}],
   ['live Stripe key',{SHIPPING_CHECK_TOKEN:'test',STRIPE_SECRET_KEY:'sk_live_fake'}],
   ['production inventory credential',{SHIPPING_CHECK_TOKEN:'test',GITHUB_TOKEN:'fake'}]

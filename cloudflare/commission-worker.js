@@ -17,8 +17,6 @@ export { SalesLedger } from './sales-ledger.mjs';
 export { BitcoinOrder } from './bitcoin-order.mjs';
 import { bitcoinCheckout, bitcoinWebhook } from './bitcoin-checkout.mjs';
 // Deployed automatically from GitHub via Cloudflare Builds.
-import { handlePaypalIpn } from "./paypal-inventory.mjs";
-import { checkout, checkoutWebhook } from "./paypal-orders.mjs";
 import { salesMaintenance } from './sales-maintenance.mjs';
 import { checkoutReadiness } from './checkout-readiness.mjs';
 export { PaintingStock } from './painting-stock.mjs';
@@ -50,14 +48,10 @@ export default {
     if (path === '/inventory/status') return inventoryStatus(request,env);
     if (path === '/checkout/bitcoin/webhook') return bitcoinWebhook(request,env);
     if (path.startsWith('/checkout/bitcoin/')) return bitcoinCheckout(request,env);
-    if (path === '/checkout/health' && request.method === 'GET') return Response.json({catalogVersion,mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE || null,catalogSource:catalogSource()},{headers:{'Cache-Control':'no-store'}});
+    if (path === '/checkout/health' && request.method === 'GET') return Response.json({catalogVersion,mode:env.CHECKOUT_MODE,release:env.CHECKOUT_RELEASE || null,catalogSource:catalogSource()},{headers:{'Cache-Control':'no-store'}});
     if (path === '/checkout/sales-maintenance') return salesMaintenance(request,env);
     if (path === '/checkout/readiness') return checkoutReadiness(request,env);
-    if (path === "/paypal-ipn") {
-      return handlePaypalIpn(request, env);
-    }
-    if (path === '/checkout/webhook') return checkoutWebhook(request,env);
-    if (path.startsWith('/checkout/')) return checkout(request,env);
+    if (path.startsWith('/checkout/')) return Response.json({error:'Not found.'},{status:404,headers:{'Cache-Control':'no-store'}});
     return commissionForm(request,env);
   }
 };

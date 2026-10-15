@@ -60,8 +60,8 @@ export async function printCodesApi(request,env) {
 export const CODE_USAGE='Single use, prints only, priced at print-lab cost plus shipping.';
 export async function issueCollectorCode(env,{name,email,note=''}) {
   const code=newCollectorCode(),hash=await codeHash(code);
-  const record={name,email,note,issuedAt:new Date().toISOString(),mode:env.PAYPAL_MODE};
+  const record={name,email,note,issuedAt:new Date().toISOString(),mode:env.CHECKOUT_MODE};
   await codeStore(env,hash).codeIssue(hash,record);
-  if(env.SALES_ARCHIVE)await env.SALES_ARCHIVE.put(`print-codes/${env.PAYPAL_MODE}/${hash}.json`,JSON.stringify({hash,...record},null,2),{httpMetadata:{contentType:'application/json'}});
+  if(env.SALES_ARCHIVE)await env.SALES_ARCHIVE.put(`print-codes/${env.CHECKOUT_MODE}/${hash}.json`,JSON.stringify({hash,...record},null,2),{httpMetadata:{contentType:'application/json'}});
   return {code,name,email,issuedAt:record.issuedAt,usage:CODE_USAGE};
 }

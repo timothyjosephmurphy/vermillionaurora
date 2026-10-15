@@ -183,7 +183,7 @@ const fwFound=(over={})=>({status:{success:true},orders:[{order_id:812345,order_
 const fwDetail={status:{success:true},order:{order_id:812345,totals:{order_subtotal:31.20,order_shipping_rate:9.95,order_discount:0,order_sales_tax:2.25,order_expedite_fee:0,order_credits_used:0,order_grand_total:43.40,
   product_pricing:[{product_qty:1,product_sku:'SKU1',product_price:18.70,add_frame_price:11.00,add_mat_1_price:1.50,add_mat_2_price:0,add_glazing_price:0,total_price:31.20}]}}};
 async function costReady(stub){
-  await runInDurableObject(stub,instance=>{instance.env={...instance.env,QBO_COST_SYNC_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fw-web',FINERWORKS_APP_KEY:'fw-app',PAYPAL_MODE:'live'};});
+  await runInDurableObject(stub,instance=>{instance.env={...instance.env,QBO_COST_SYNC_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fw-web',FINERWORKS_APP_KEY:'fw-app',CHECKOUT_MODE:'live'};});
   const before=created.length;
   await stub.enqueue(sale(ORDER));await runDurableObjectAlarm(stub);
   expect(created.length).toBe(before+1);

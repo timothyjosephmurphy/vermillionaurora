@@ -5,8 +5,8 @@ import {printAssetUrl,printThumbnailUrl} from './print-asset-policy.mjs';
 
 const terminal=new Set(['complete','review','cancelled','test-complete']);
 const reference=/^va-cart-[0-9a-f]{32}-prints$/;
-export function finerworksOrderingReady(env,mode=env.PAYPAL_MODE) {
-  return ['sandbox','live'].includes(mode)&&env.PAYPAL_MODE===mode&&env.PRINT_PROVIDER==='finerworks'&&env.FINERWORKS_ORDER_ENABLED==='true'&&
+export function finerworksOrderingReady(env,mode=env.CHECKOUT_MODE) {
+  return ['sandbox','live'].includes(mode)&&env.CHECKOUT_MODE===mode&&env.PRINT_PROVIDER==='finerworks'&&env.FINERWORKS_ORDER_ENABLED==='true'&&
     !!env.FINERWORKS_WEB_API_KEY&&!!env.FINERWORKS_APP_KEY&&
     (mode==='sandbox'||!!env.FINERWORKS_PAYMENT_TOKEN&&env.FINERWORKS_PAYMENT_TOKEN!=='xxxx');
 }

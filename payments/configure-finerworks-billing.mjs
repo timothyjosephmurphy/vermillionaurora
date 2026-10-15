@@ -12,7 +12,7 @@ async function cloudflare(worker,key,path,method='GET',body) {
 async function productionSettings() {
   const settings=await cloudflare(target,process.env.CLOUDFLARE_PRODUCTION_API_TOKEN,'settings'),bindings=settings.bindings||[];
   const flag=name=>bindings.find(b=>b.name===name)?.text;
-  assert.equal(flag('PAYPAL_MODE'),'live');
+  assert.equal(flag('CHECKOUT_MODE'),'live');
   assert.notEqual(flag('PRINT_CHECKOUT_ENABLED'),'true','Print purchases must remain disabled during billing setup');
   assert.notEqual(flag('FINERWORKS_ORDER_ENABLED'),'true','Print fulfillment must remain disabled during billing setup');
   return new Set(bindings.map(b=>b.name));

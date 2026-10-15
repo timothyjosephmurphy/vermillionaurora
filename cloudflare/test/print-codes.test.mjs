@@ -7,7 +7,7 @@ import prints from '../print-catalog.mjs';
 import {resolveCode,applyCode,printCodesApi,codeHash,OWNER_CODE_HASH} from '../print-codes.mjs';
 const ids=['print-painting-portrait-in-green-small','print-painting-portrait-in-gold-small'];
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
-const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),PAYPAL_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
+const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
 const originalPrints=structuredClone(prints);
 // Explicit sample fixtures keep the historical security gates covered after
 // Chase and Dorian graduate to normal full-resolution editions.
@@ -44,7 +44,7 @@ beforeEach(()=>{
 afterEach(async()=>{for(const o of objects)await runInDurableObject(o,(_,ctx)=>ctx.storage.deleteAlarm());vi.unstubAllGlobals();for(const id of Object.keys(originalPrints))prints[id]=structuredClone(originalPrints[id]);});
 const inspect=o=>runInDurableObject(o,i=>i.read());
 async function quoteWith(code,selection=ids){
-  const config={...settings};activeMode=config.PAYPAL_MODE;
+  const config={...settings};activeMode=config.CHECKOUT_MODE;
   const orderId=crypto.randomUUID(),order=env.CART_ORDERS.getByName(orderId);objects.push(order);
   await runInDurableObject(order,i=>{i.env={...i.env,...config};});
   const items=cartItems(selection.map(id=>({id,quantity:1})));
@@ -53,7 +53,7 @@ async function quoteWith(code,selection=ids){
   await order.createQuote(orderId,await keyHash('a'.repeat(64)),quote,['paypal']);return {orderId,order,quote};
 }
 async function issue(token='manager-test-token'){
-  const r=await printCodesApi(new Request('https://w.test/checkout/print-codes/issue',{method:'POST',headers:{Authorization:`Bearer ${token}`},body:JSON.stringify({name:'Jane Collector',email:'jane@example.test'})}),{...env,COMMISSION_MANAGER_TOKEN:'manager-test-token',PAYPAL_MODE:'sandbox'});
+  const r=await printCodesApi(new Request('https://w.test/checkout/print-codes/issue',{method:'POST',headers:{Authorization:`Bearer ${token}`},body:JSON.stringify({name:'Jane Collector',email:'jane@example.test'})}),{...env,COMMISSION_MANAGER_TOKEN:'manager-test-token',CHECKOUT_MODE:'sandbox'});
   return {status:r.status,data:await r.json()};
 }
 it('issuing requires the existing manager token and returns a code once',async()=>{

@@ -16,7 +16,7 @@ export function selectPaymentToken(data,profileId) {
 export async function finerworksBillingSetup(request,env) {
   let setup;try{setup=JSON.parse(env.FINERWORKS_BILLING_SETUP||'null');}catch{}
   const expiry=typeof setup?.token==='string'?Number(setup.token.split('.')[0]):0;
-  if(env.PAYPAL_MODE!=='sandbox'||request.method!=='POST'||!/^\d{13}\.[a-f0-9]{64}$/.test(setup?.token||'')||expiry<=Date.now()||expiry>Date.now()+20*60000||request.headers.get('Authorization')!==`Bearer ${setup.token}`)return reply({error:'Not found'},404);
+  if(env.CHECKOUT_MODE!=='sandbox'||request.method!=='POST'||!/^\d{13}\.[a-f0-9]{64}$/.test(setup?.token||'')||expiry<=Date.now()||expiry>Date.now()+20*60000||request.headers.get('Authorization')!==`Bearer ${setup.token}`)return reply({error:'Not found'},404);
   try {
     const jwk=setup.publicKey;
     if(!jwk||jwk.kty!=='RSA'||jwk.e!=='AQAB'||typeof jwk.n!=='string'||jwk.n.length!==512||jwk.d)throw problem('INVALID_SETUP_ENCRYPTION_KEY');

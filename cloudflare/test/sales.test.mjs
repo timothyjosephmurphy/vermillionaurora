@@ -3,8 +3,7 @@ import { runInDurableObject, runDurableObjectAlarm, evictDurableObject } from 'c
 import { it, expect, afterEach, vi } from 'vitest';
 import { salesCsv, ipnRecord } from '../sales-records.mjs';
 import { salesMaintenance } from '../sales-maintenance.mjs';
-import { handlePaypalIpn } from '../paypal-inventory.mjs';
-import {backfillCheckoutSale} from '../paypal-orders.mjs';
+import {backfillCheckoutSale} from '../historical-sales.mjs';
 
 const objects=[];
 afterEach(async()=>{
@@ -18,12 +17,12 @@ function ledger(){const stub=env.SALES_LEDGER.getByName(crypto.randomUUID());obj
 const read=stub=>runInDurableObject(stub,(_,ctx)=>ctx.storage.sql.exec('SELECT data FROM sales').toArray().map(x=>JSON.parse(x.data)));
 it('verifies legacy IPN receipts from the ledger without sending transaction IDs to PayPal Orders',async()=>{
   const period=new Date().toISOString().slice(0,7),stub=env.SALES_LEDGER.getByName(`live:${period}`);objects.push(stub);
-  await runInDurableObject(stub,i=>{i.env={...i.env,PAYPAL_MODE:'live'};});
+  await runInDurableObject(stub,i=>{i.env={...i.env,CHECKOUT_MODE:'live'};});
   const record=ipnRecord({},new URLSearchParams({payment_status:'Completed',txn_id:'LEGACYARCHIVE1',mc_currency:'USD',mc_gross:'20.00',payment_date:new Date().toISOString()}));
   await stub.record(record);
   const fetch=vi.fn(()=>{throw Error('No provider call is permitted');});vi.stubGlobal('fetch',fetch);
   const stock={getByName:()=>({order:async()=>({state:'sold',captureId:'LEGACYARCHIVE1',orderId:'ipn:LEGACYARCHIVE1'})})};
-  expect(await backfillCheckoutSale({...env,PAYPAL_MODE:'live',PAINTING_STOCK:stock},'legacy-work')).toEqual({recorded:true,period});expect(fetch).not.toHaveBeenCalled();
+  expect(await backfillCheckoutSale({...env,CHECKOUT_MODE:'live',PAINTING_STOCK:stock},'legacy-work')).toEqual({recorded:true,period});expect(fetch).not.toHaveBeenCalled();
   expect((await stub.archiveNow()).archived).toBe(true);
   expect(await stub.hasRecordedIpnSale('MISSING')).toBe(false);
 });
@@ -40,7 +39,7 @@ it('keeps one financial receipt across retries and eviction, with retained fulfi
 });
 it('exports a private CSV and revision backup, retaining a retry alarm if storage fails',async()=>{
   const stub=ledger();
-  await runInDurableObject(stub,instance=>{instance.env={...instance.env,PAYPAL_MODE:'live',SALES_ARCHIVE:{put:async()=>{throw Error('R2 unavailable')}}};});
+  await runInDurableObject(stub,instance=>{instance.env={...instance.env,CHECKOUT_MODE:'live',SALES_ARCHIVE:{put:async()=>{throw Error('R2 unavailable')}}};});
   await stub.record(receipt({mode:'live'}));
   expect(await runInDurableObject(stub,async instance=>{try{await instance.archiveNow();return '';}catch(error){return error.message;}})).toBe('R2 unavailable');
   expect((await stub.summary()).archived).toBe(false);
@@ -72,20 +71,6 @@ it('stores the receipt atomically with sold state even when the accounting servi
   expect(await stub.archiveSale()).toEqual({recorded:true,period:'2026-09'});
   const target=env.SALES_LEDGER.getByName('sandbox:2026-09');objects.push(target);
 });
-it('archives unmatched legacy payments and requests retry on ledger failure',async()=>{
-  let recorded=[];let fail=false;
-  vi.stubGlobal('fetch',vi.fn(async url=>{
-    if(String(url).includes('ipnpb.paypal.com'))return new Response('VERIFIED');
-    if(String(url).includes('git/ref/'))return Response.json({object:{sha:'main'}});
-    if(String(url).includes('git/commits/'))return Response.json({tree:{sha:'tree'}});
-    if(String(url).includes('/contents/'))return Response.json({encoding:'base64',content:btoa('{}')});
-    throw Error('Unexpected call');
-  }));
-  const config={PAYPAL_IPN_ENABLED:'true',PAYPAL_MERCHANT_ID:'MERCHANT',GITHUB_TOKEN:'fake',SALES_LEDGER:{getByName:()=>({record:async r=>{if(fail)throw Error('Unavailable');recorded.push(r);}})}};
-  const req=()=>new Request('https://test/paypal-ipn',{method:'POST',body:new URLSearchParams({payment_status:'Completed',receiver_id:'MERCHANT',txn_id:'LEGACY1',item_name:'Unmatched work',mc_currency:'USD',mc_gross:'200.00',mc_fee:'6.00',payment_date:'2026-09-29T09:30:00Z'})});
-  expect((await handlePaypalIpn(req(),config)).status).toBe(200);expect(recorded[0].gross).toBe('200.00');expect(recorded[0].paypalNet).toBe('194.00');
-  fail=true;expect((await handlePaypalIpn(req(),config)).status).toBe(503);
-});
 it('preserves verified IPN refund adjustments and escapes spreadsheet formulas',()=>{
   const record=ipnRecord({},new URLSearchParams({payment_status:'Refunded',txn_id:'REFUND1',parent_txn_id:'CAP1',mc_currency:'USD',mc_gross:'-20.00',payment_date:'2026-09-29T09:30:00Z'}));
   expect(record.kind).toBe('adjustment');expect(record.parentTransactionId).toBe('CAP1');expect(record.gross).toBe('-20.00');
@@ -101,7 +86,7 @@ it('does not lose a second sale arriving during an archive write',async()=>{
   const stub=ledger();
   await runInDurableObject(stub,instance=>{
     const bucket=instance.env.SALES_ARCHIVE;let first=true;
-    instance.env={...instance.env,PAYPAL_MODE:'live',SALES_ARCHIVE:{put:async(...args)=>{
+    instance.env={...instance.env,CHECKOUT_MODE:'live',SALES_ARCHIVE:{put:async(...args)=>{
       if(first){first=false;await instance.record(receipt({mode:'live',id:'payment:CAP2',transactionId:'CAP2',gross:'40.00'}));}
       return bucket.put(...args);
     }}};

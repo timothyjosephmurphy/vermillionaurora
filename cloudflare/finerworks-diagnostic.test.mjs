@@ -2,7 +2,7 @@ import {test,afterEach} from 'node:test';
 import assert from 'node:assert/strict';
 import {finerworksDiagnostic} from './finerworks-diagnostic.mjs';
 const originalFetch=globalThis.fetch;
-const env={PAYPAL_MODE:'sandbox',PRINT_CHECKOUT_ENABLED:'false',FINERWORKS_WEB_API_KEY:'private-web',FINERWORKS_APP_KEY:'private-app',FINERWORKS_AUDIT_TOKEN:`${Date.now()+600000}.${'a'.repeat(64)}`};
+const env={CHECKOUT_MODE:'sandbox',PRINT_CHECKOUT_ENABLED:'false',FINERWORKS_WEB_API_KEY:'private-web',FINERWORKS_APP_KEY:'private-app',FINERWORKS_AUDIT_TOKEN:`${Date.now()+600000}.${'a'.repeat(64)}`};
 const products=[{id:'test-art',type:'painting',title:'Test Art',dimensions:{width:15,height:12,unit:'in'}}];
 const req=(body={})=>new Request('https://worker/checkout/prints/verify',{method:'POST',headers:{Authorization:`Bearer ${env.FINERWORKS_AUDIT_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify(body)});
 test('edition quotes use approved paper geometry and expose retail prices only',async t=>{
@@ -25,7 +25,7 @@ test('rejects unauthenticated diagnostics before calling provider',async()=>{
 });
 test('refuses live checkout diagnostics',async()=>{
   globalThis.fetch=()=>assert.fail('Must not fetch');
-  assert.equal((await finerworksDiagnostic(req(),{...env,PAYPAL_MODE:'live'},products)).status,409);
+  assert.equal((await finerworksDiagnostic(req(),{...env,CHECKOUT_MODE:'live'},products)).status,409);
 });
 test('credential check returns no key, account, billing details or upstream debug',async()=>{
   globalThis.fetch=async()=>Response.json({status:{success:true,debug:{key:env.FINERWORKS_APP_KEY}},user_account:{web_api_key:env.FINERWORKS_WEB_API_KEY,billing_info:{address_1:'private'}}});

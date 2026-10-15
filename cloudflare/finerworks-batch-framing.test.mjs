@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {quoteFramedSelections} from './finerworks-framing.mjs';
 import {quoteFinerWorksPrints} from './finerworks-quotes.mjs';
 
-const env={PAYPAL_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
+const env={CHECKOUT_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
 const media={id:144,productTypeId:5,styleIds:[8]};
 const style={id:8,canMat:true,allowDecimal:true,customSizing:true,allowRotate:true,min:{width:4,height:4},max:{width:40,height:90}};
 const address={name:'Checkout Verification',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'};

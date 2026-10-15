@@ -6,12 +6,12 @@ const shippoHeaders = env => ({Authorization:`ShippoToken ${env.SHIPPO_TOKEN}`,
   'Content-Type':'application/json','SHIPPO-API-VERSION':'2018-02-08'});
 
 export function newShippingJob(env, orderId, quote) {
-  return {orderId,mode:env.PAYPAL_MODE,quote,
+  return {orderId,mode:env.CHECKOUT_MODE,quote,
     status:env.SHIPPO_AUTO_LABEL_ENABLED === 'true' ? 'pending' : 'disabled'};
 }
 
 function configurationIssue(env, job) {
-  if (env.PAYPAL_MODE !== job.mode || !['live','sandbox'].includes(job.mode)) return 'Checkout mode changed after the order was created.';
+  if (env.CHECKOUT_MODE !== job.mode || !['live','sandbox'].includes(job.mode)) return 'Checkout mode changed after the order was created.';
   const prefix = job.mode === 'sandbox' ? 'shippo_test_' : 'shippo_live_';
   if (!env.SHIPPO_TOKEN?.startsWith(prefix)) return 'Shippo token does not match the checkout mode.';
   return '';
