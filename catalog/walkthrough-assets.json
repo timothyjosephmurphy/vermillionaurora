@@ -1,0 +1,435 @@
+{
+  "exhibitions": [
+    {
+      "id": "cape-town",
+      "title": "Adopting Bitcoin Cape Town, South Africa",
+      "date": "2025",
+      "href": "/exhibitions/cape-town/",
+      "story": [
+        "Adopting Bitcoin 2025 · V&A Waterfront"
+      ],
+      "photos": [
+        {
+          "src": "/walkthrough/cape-town-1-ed9f87335e.webp",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/cape-town-2-50badf74cb.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/cape-town-3-26dc376246.webp",
+          "width": 938,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/cape-town-4-d903a6cf54.webp",
+          "width": 1280,
+          "height": 918
+        },
+        {
+          "src": "/walkthrough/cape-town-5-aef9347413.webp",
+          "width": 900,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/cape-town-6-aeee033e4a.webp",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/cape-town-7-8e4c6caa45.webp",
+          "width": 1203,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/cape-town-8-10602afacf.webp",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "/walkthrough/cape-town-9-566e5b92fd.webp",
+          "width": 1280,
+          "height": 960
+        }
+      ]
+    },
+    {
+      "id": "el-salvador",
+      "title": "Adopting Bitcoin El Salvador",
+      "date": "2024",
+      "href": "/exhibitions/el-salvador/",
+      "story": [
+        "Adopting Bitcoin conference venue · Near San Salvador"
+      ],
+      "photos": [
+        {
+          "src": "/walkthrough/el-salvador-1-a6da6a0938.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/el-salvador-2-d28af1ce1a.webp",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/el-salvador-3-c42f07697e.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/el-salvador-4-66dd5a1b1b.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/el-salvador-5-f6b1626659.webp",
+          "width": 1280,
+          "height": 589
+        },
+        {
+          "src": "/walkthrough/el-salvador-6-c0af96d7f1.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/el-salvador-7-53d1ba4aa8.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/el-salvador-8-8f0a8c0078.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/el-salvador-9-ae475b60b1.webp",
+          "width": 1280,
+          "height": 839
+        }
+      ]
+    },
+    {
+      "id": "living-room",
+      "title": "My Living Room, Seattle, Washington",
+      "date": "Current",
+      "href": "/exhibitions/living-room/",
+      "story": [],
+      "photos": [
+        {
+          "src": "/walkthrough/living-room-1-82efb49456.webp",
+          "width": 1280,
+          "height": 584
+        },
+        {
+          "src": "/walkthrough/living-room-2-d58d45fa46.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/living-room-3-e624f266d8.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/living-room-4-79af7e3fb6.webp",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/living-room-5-73fe4945ae.webp",
+          "width": 1280,
+          "height": 457
+        },
+        {
+          "src": "/walkthrough/living-room-6-b7035d66e4.webp",
+          "width": 1201,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/living-room-7-1e4e813330.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/living-room-8-30a0b5e18a.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/living-room-9-3ff3823dc6.webp",
+          "width": 1280,
+          "height": 960
+        }
+      ]
+    },
+    {
+      "id": "studio-601",
+      "title": "Studio 601, Seattle, Washington",
+      "date": "2023",
+      "href": "/exhibitions/studio-601/",
+      "story": [
+        "Pioneer Square · Seattle waterfront"
+      ],
+      "photos": [
+        {
+          "src": "/walkthrough/studio-601-1-6e6ee08d89.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/studio-601-2-54077797b7.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/studio-601-3-865d7ffe81.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/studio-601-4-fece0b806a.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/studio-601-5-1426107d13.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/studio-601-6-23eefd5b4b.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/studio-601-7-3928359f63.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/studio-601-8-16314a9b1d.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/studio-601-9-8cedcc057a.webp",
+          "width": 964,
+          "height": 1280
+        }
+      ]
+    },
+    {
+      "id": "victrola",
+      "title": "Victrola Coffee Shop, Seattle, Washington",
+      "date": "2026",
+      "href": "/exhibitions/victrola/",
+      "story": [
+        "15th Avenue East · Capitol Hill"
+      ],
+      "photos": [
+        {
+          "src": "/walkthrough/victrola-1-fbabde96b2.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/victrola-2-9ba5ee7ea7.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/victrola-3-6c183879fd.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/victrola-4-c7b942c905.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/victrola-5-9a3baaf989.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/victrola-6-5421dcc17f.webp",
+          "width": 1280,
+          "height": 694
+        },
+        {
+          "src": "/walkthrough/victrola-7-1b2d17be9b.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/victrola-8-cbd6ea9502.webp",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "src": "/walkthrough/victrola-9-dea3a557c7.webp",
+          "width": 1280,
+          "height": 960
+        }
+      ]
+    },
+    {
+      "id": "paul-murphy",
+      "title": "Paul Murphy",
+      "date": null,
+      "href": "/exhibitions/paul-murphy/",
+      "story": [
+        "Paul Murphy is my dad. We’ve been painting together since COVID, when he picked up a brush shortly after I did and began painting for the first time in his life. As he leaves the corporate world, he’s discovered a new passion for artistic expression.",
+        "At least once a week, we talk about painting techniques and share images to paint. During COVID, he painted every day for a long stretch, sending me each painting with a poem he had written to accompany it. Those paintings and poems became his book COVID 2020.",
+        "He has published several books of poetry and found readers for his work. COVID 2020 and Reflections on Time are available on Amazon. You can also explore Reflections on Time here."
+      ],
+      "photos": [
+        {
+          "src": "/walkthrough/paul-murphy-1-0f79164f2b.webp",
+          "width": 989,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/paul-murphy-2-798cc09e77.webp",
+          "width": 977,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/paul-murphy-3-4f77ad4251.webp",
+          "width": 1280,
+          "height": 1214
+        },
+        {
+          "src": "/walkthrough/paul-murphy-4-037513451c.webp",
+          "width": 1135,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/paul-murphy-5-8dea220fe0.webp",
+          "width": 685,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/paul-murphy-6-301969e01c.webp",
+          "width": 1258,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/paul-murphy-7-fa0b9fb832.webp",
+          "width": 1231,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/paul-murphy-8-17a22a77eb.webp",
+          "width": 961,
+          "height": 1280
+        },
+        {
+          "src": "/walkthrough/paul-murphy-9-f26861de16.webp",
+          "width": 1280,
+          "height": 1031
+        }
+      ]
+    },
+    {
+      "id": "bitcoin-film-festival-warsaw",
+      "title": "Bitcoin Film Festival Warsaw, Poland",
+      "date": "2026",
+      "href": "/exhibitions/bitcoin-film-festival-warsaw/",
+      "story": [
+        "Art & cinema · Warsaw, Poland",
+        "2026 · Kinoteka · Palace of Culture and Science",
+        "I made these paintings specifically for the Bitcoin Film Festival: the Warsaw Syrenka and the Bitcoin honey badger with cub, along with the movie poster for Coined in Watercolor, Gavin Robertson’s documentary."
+      ],
+      "photos": [
+        {
+          "src": "/walkthrough/bitcoin-film-festival-warsaw-1-a478043c9a.webp",
+          "width": 360,
+          "height": 550
+        },
+        {
+          "src": "/walkthrough/bitcoin-film-festival-warsaw-2-c660724789.webp",
+          "width": 1024,
+          "height": 768
+        },
+        {
+          "src": "/walkthrough/bitcoin-film-festival-warsaw-3-8272d30414.webp",
+          "width": 332,
+          "height": 516
+        },
+        {
+          "src": "/walkthrough/bitcoin-film-festival-warsaw-4-66b921dfbd.webp",
+          "width": 360,
+          "height": 480
+        },
+        {
+          "src": "/walkthrough/bitcoin-film-festival-warsaw-5-e09b48b106.webp",
+          "width": 480,
+          "height": 360
+        },
+        {
+          "src": "/walkthrough/bitcoin-film-festival-warsaw-6-9321014b4e.webp",
+          "width": 480,
+          "height": 360
+        },
+        {
+          "src": "/walkthrough/bitcoin-film-festival-warsaw-7-b542ef52a4.webp",
+          "width": 360,
+          "height": 480
+        }
+      ]
+    }
+  ],
+  "murals": [
+    {
+      "id": "friends-club-mural",
+      "title": "Friends Club",
+      "place": "Lillooet, British Columbia · 2026",
+      "size": {
+        "width": 480,
+        "height": 108,
+        "unit": "in"
+      },
+      "sizeLabel": "40 × 9 ft shipping-container mural",
+      "href": "/murals/#friends-story",
+      "image": {
+        "src": "/walkthrough/friends-club-mural-8e471cb081.webp",
+        "width": 882,
+        "height": 196
+      },
+      "story": [
+        {
+          "title": "An invitation, and a little trust",
+          "text": "An exercise in trusting in the process and serendipity."
+        },
+        {
+          "title": "The design concept",
+          "text": "I set up an ideation board, and Kara, Paul, and I brainstormed. I took their Higher Education branding kit and extracted a color palette and a set of themes. We discussed the principles of their organization, seeking to incorporate some of the messaging symbolically into the design, and we iterated."
+        },
+        {
+          "title": "Day one · Preparing the sea-can",
+          "text": "On the May long weekend, I ventured to Lillooet with an intrepid crew of builders: stopping at the Ark in Vancouver to load cylinders and triangles, stopping in Whistler to jam and sleep, and wending over the passes and between charging stations toward the remote mountain valley."
+        }
+      ]
+    }
+  ],
+  "gardenStory": [
+    {
+      "title": "A favorite view",
+      "text": "Brian and Marcos sent me reference photographs of sunset over Puget Sound, with the Olympic Mountains behind it. This is one of their favorite views—a scene that captures the essence of Seattle for them. They wanted to bring it into their garden as a mural painted on a board and hung from their fence."
+    },
+    {
+      "title": "The watercolor prototype",
+      "text": "Before starting the acrylic mural, I painted a watercolor prototype to explore the composition. A cormorant spreads its wings on a pier pile in the foreground, as if presiding over the sunset. Two distant sailboats meet the waterline, beneath the layered mountains of the Olympics."
+    },
+    {
+      "title": "The garden becomes part of the painting",
+      "text": "The plants in the garden are part of the composition. As the grasses beneath the board fill in, they will suggest dunes leading into the painted shore."
+    }
+  ]
+}
