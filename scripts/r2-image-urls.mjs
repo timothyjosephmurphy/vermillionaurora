@@ -13,9 +13,16 @@ const re = new RegExp(`(["'(\\s,])(?:https://(?:www\\.)?tjm\\.art)?/(${prefixes}
 let files = 0, refs = 0;
 const all = await readdir('dist', { recursive: true });
 for (const rel of all.filter(f => /\.(html|css)$/.test(f) || f === 'portrait-preview.js')) {
-  const file = `dist/${rel}`, text = await readFile(file, 'utf8');
+  const file = `dist/${rel}`;
+  // Keep the catalog URL of an <img> whose src moves to R2 in data-image-src (as responsive-images.mjs
+  // does), so cart/catalog checks still see the catalog's image.src.
+  const text = (await readFile(file, 'utf8')).replace(/<img\b[^>]*>/g, tag => {
+    const src = tag.match(/\ssrc="([^"]+)"/)?.[1];
+    return src && !/\sdata-image-src=/.test(tag) && new RegExp(`^(?:https://(?:www\\.)?tjm\\.art)?/(?:${prefixes})/`).test(src) ? tag.replace(/^<img\b/, `<img data-image-src="${src}"`) : tag;
+  });
   let n = 0;
-  const next = text.replace(re, (m, pre, prefix) => (n++, `${pre}${IMAGE_ORIGIN}/${prefix}/`));
+  // data-image-src carries the catalog's own image.src for cart/catalog checks: never rewritten.
+  const next = text.replace(re, (m, pre, prefix, at) => text.slice(Math.max(0, at - 15), at + 1).endsWith('data-image-src="') ? m : (n++, `${pre}${IMAGE_ORIGIN}/${prefix}/`));
   if (n) { files++; refs += n; await writeFile(file, next); }
 }
 console.log(`R2 image URLs: ${refs} references in ${files} files now use ${IMAGE_ORIGIN}`);
