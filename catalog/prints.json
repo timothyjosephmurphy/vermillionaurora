@@ -81379,6 +81379,37 @@
         "sha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a"
       },
       "variants": {
+        "full": {
+          "sku": "5M144M8S25.63X7.35",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9.jpg",
+            "sha256": "10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9",
+            "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
+            "productCode": "5M144M8S25.63X7.35",
+            "imageWidthIn": 25.3667,
+            "imageHeightIn": 7.0967,
+            "paperWidthIn": 25.63,
+            "paperHeightIn": 7.35,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-white-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 7689,
+              "heightPx": 2205,
+              "content": {
+                "left": 39,
+                "top": 38,
+                "width": 7610,
+                "height": 2129
+              }
+            }
+          },
+          "amount": "85.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-13T20:21:30.049Z"
+        },
         "medium": {
           "sku": "5M144M8S19.28X5.57",
           "asset": {
@@ -81714,34 +81745,6 @@
                   }
                 },
                 "layoutReview": "full-image-white-border-mat-overlap"
-              }
-            }
-          }
-        },
-        "full": {
-          "sku": "5M144M8S25.63X7.35",
-          "asset": {
-            "provider": "finerworks",
-            "url": "https://vermillionaurora.com/print-editions/10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9.jpg",
-            "sha256": "10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9",
-            "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
-            "productCode": "5M144M8S25.63X7.35",
-            "imageWidthIn": 25.3667,
-            "imageHeightIn": 7.0967,
-            "paperWidthIn": 25.63,
-            "paperHeightIn": 7.35,
-            "approved": true,
-            "layoutApproved": true,
-            "layout": "full-image-white-border-v1",
-            "layoutSpec": {
-              "dpi": 300,
-              "widthPx": 7689,
-              "heightPx": 2205,
-              "content": {
-                "left": 39,
-                "top": 38,
-                "width": 7610,
-                "height": 2129
               }
             }
           }
