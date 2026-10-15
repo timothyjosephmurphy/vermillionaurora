@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="e371b0ec1e821517ff58";
+export const printVersion="799c4560bdcdf86fc0bd";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -108194,24 +108194,24 @@ export default {
     "artworkTitle": "Painting #53",
     "amount": "150.00",
     "currency": "USD",
-    "sku": "5M144M8S13.75X25.83",
+    "sku": "5M144M8S13.58X25.83",
     "scale": 1,
     "imageSize": {
-      "width": 13.4967,
-      "height": 25.57,
+      "width": 13.3267,
+      "height": 25.5633,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.75,
+      "width": 13.58,
       "height": 25.83,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7f5a68300e73311ea1033280d99ae8e76d14faa564a5e21b4e425581dd1b537a.jpg",
-    "assetSha256": "7f5a68300e73311ea1033280d99ae8e76d14faa564a5e21b4e425581dd1b537a",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f.jpg",
+    "assetSha256": "8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108233,26 +108233,26 @@ export default {
     "productId": "archived-painting-53",
     "title": "Painting #53 — Large print — Black frame",
     "artworkTitle": "Painting #53",
-    "amount": "253.00",
+    "amount": "255.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD75X25DD83F1S16DD75X28DD83J1S13DD75X25DD83G1",
+    "sku": "5M144M8S13DD58X25DD83F1S16DD58X28DD83J1S13DD58X25DD83G1",
     "scale": 1,
     "imageSize": {
-      "width": 13.4967,
-      "height": 25.57,
+      "width": 13.3267,
+      "height": 25.5633,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.75,
+      "width": 13.58,
       "height": 25.83,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7f5a68300e73311ea1033280d99ae8e76d14faa564a5e21b4e425581dd1b537a.jpg",
-    "assetSha256": "7f5a68300e73311ea1033280d99ae8e76d14faa564a5e21b4e425581dd1b537a",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f.jpg",
+    "assetSha256": "8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108271,18 +108271,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16.75,
+        "width": 16.58,
         "height": 28.83,
         "unit": "in"
       },
       "window": {
-        "width": 13.75,
+        "width": 13.58,
         "height": 25.83,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S13.75X25.83",
+    "baseSku": "5M144M8S13.58X25.83",
     "frame": {
       "key": "black",
       "id": 1,
@@ -108292,7 +108292,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16.75,
+        "width": 16.58,
         "height": 28.83,
         "unit": "in"
       },
@@ -108310,26 +108310,26 @@ export default {
     "productId": "archived-painting-53",
     "title": "Painting #53 — Large print — White frame",
     "artworkTitle": "Painting #53",
-    "amount": "253.00",
+    "amount": "255.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD75X25DD83F2S16DD75X28DD83J1S13DD75X25DD83G1",
+    "sku": "5M144M8S13DD58X25DD83F2S16DD58X28DD83J1S13DD58X25DD83G1",
     "scale": 1,
     "imageSize": {
-      "width": 13.4967,
-      "height": 25.57,
+      "width": 13.3267,
+      "height": 25.5633,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.75,
+      "width": 13.58,
       "height": 25.83,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7f5a68300e73311ea1033280d99ae8e76d14faa564a5e21b4e425581dd1b537a.jpg",
-    "assetSha256": "7f5a68300e73311ea1033280d99ae8e76d14faa564a5e21b4e425581dd1b537a",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f.jpg",
+    "assetSha256": "8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108348,18 +108348,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16.75,
+        "width": 16.58,
         "height": 28.83,
         "unit": "in"
       },
       "window": {
-        "width": 13.75,
+        "width": 13.58,
         "height": 25.83,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S13.75X25.83",
+    "baseSku": "5M144M8S13.58X25.83",
     "frame": {
       "key": "white",
       "id": 2,
@@ -108369,7 +108369,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16.75,
+        "width": 16.58,
         "height": 28.83,
         "unit": "in"
       },
@@ -108387,26 +108387,26 @@ export default {
     "productId": "archived-painting-53",
     "title": "Painting #53 — Large print — Natural wood frame",
     "artworkTitle": "Painting #53",
-    "amount": "272.00",
+    "amount": "275.00",
     "currency": "USD",
-    "sku": "5M144M8S13DD75X25DD83F7S16DD75X28DD83J1S13DD75X25DD83G1",
+    "sku": "5M144M8S13DD58X25DD83F7S16DD58X28DD83J1S13DD58X25DD83G1",
     "scale": 1,
     "imageSize": {
-      "width": 13.4967,
-      "height": 25.57,
+      "width": 13.3267,
+      "height": 25.5633,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.75,
+      "width": 13.58,
       "height": 25.83,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7f5a68300e73311ea1033280d99ae8e76d14faa564a5e21b4e425581dd1b537a.jpg",
-    "assetSha256": "7f5a68300e73311ea1033280d99ae8e76d14faa564a5e21b4e425581dd1b537a",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f.jpg",
+    "assetSha256": "8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108425,18 +108425,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 16.75,
+        "width": 16.58,
         "height": 28.83,
         "unit": "in"
       },
       "window": {
-        "width": 13.75,
+        "width": 13.58,
         "height": 25.83,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S13.75X25.83",
+    "baseSku": "5M144M8S13.58X25.83",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -108446,7 +108446,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 16.75,
+        "width": 16.58,
         "height": 28.83,
         "unit": "in"
       },
@@ -108466,24 +108466,24 @@ export default {
     "artworkTitle": "Painting #53",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S10.37X19.43",
+    "sku": "5M144M8S10.25X19.43",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1167,
-      "height": 19.1667,
+      "width": 9.9967,
+      "height": 19.1767,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.37,
+      "width": 10.25,
       "height": 19.43,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b2dd9b67734947ea8e4736e63dec24121109480669092ac1f10a071bd52d96ad.jpg",
-    "assetSha256": "b2dd9b67734947ea8e4736e63dec24121109480669092ac1f10a071bd52d96ad",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea.jpg",
+    "assetSha256": "65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108505,26 +108505,26 @@ export default {
     "productId": "archived-painting-53",
     "title": "Painting #53 — Medium print — Black frame",
     "artworkTitle": "Painting #53",
-    "amount": "157.00",
+    "amount": "160.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD37X19DD43F1S13DD37X22DD43J1S10DD37X19DD43G1",
+    "sku": "5M144M8S10DD25X19DD43F1S13DD25X22DD43J1S10DD25X19DD43G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1167,
-      "height": 19.1667,
+      "width": 9.9967,
+      "height": 19.1767,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.37,
+      "width": 10.25,
       "height": 19.43,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b2dd9b67734947ea8e4736e63dec24121109480669092ac1f10a071bd52d96ad.jpg",
-    "assetSha256": "b2dd9b67734947ea8e4736e63dec24121109480669092ac1f10a071bd52d96ad",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea.jpg",
+    "assetSha256": "65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108543,18 +108543,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 13.37,
+        "width": 13.25,
         "height": 22.43,
         "unit": "in"
       },
       "window": {
-        "width": 10.37,
+        "width": 10.25,
         "height": 19.43,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S10.37X19.43",
+    "baseSku": "5M144M8S10.25X19.43",
     "frame": {
       "key": "black",
       "id": 1,
@@ -108564,7 +108564,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 13.37,
+        "width": 13.25,
         "height": 22.43,
         "unit": "in"
       },
@@ -108582,26 +108582,26 @@ export default {
     "productId": "archived-painting-53",
     "title": "Painting #53 — Medium print — White frame",
     "artworkTitle": "Painting #53",
-    "amount": "157.00",
+    "amount": "160.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD37X19DD43F2S13DD37X22DD43J1S10DD37X19DD43G1",
+    "sku": "5M144M8S10DD25X19DD43F2S13DD25X22DD43J1S10DD25X19DD43G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1167,
-      "height": 19.1667,
+      "width": 9.9967,
+      "height": 19.1767,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.37,
+      "width": 10.25,
       "height": 19.43,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b2dd9b67734947ea8e4736e63dec24121109480669092ac1f10a071bd52d96ad.jpg",
-    "assetSha256": "b2dd9b67734947ea8e4736e63dec24121109480669092ac1f10a071bd52d96ad",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea.jpg",
+    "assetSha256": "65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108620,18 +108620,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 13.37,
+        "width": 13.25,
         "height": 22.43,
         "unit": "in"
       },
       "window": {
-        "width": 10.37,
+        "width": 10.25,
         "height": 19.43,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S10.37X19.43",
+    "baseSku": "5M144M8S10.25X19.43",
     "frame": {
       "key": "white",
       "id": 2,
@@ -108641,7 +108641,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 13.37,
+        "width": 13.25,
         "height": 22.43,
         "unit": "in"
       },
@@ -108659,26 +108659,26 @@ export default {
     "productId": "archived-painting-53",
     "title": "Painting #53 — Medium print — Natural wood frame",
     "artworkTitle": "Painting #53",
-    "amount": "172.00",
+    "amount": "176.00",
     "currency": "USD",
-    "sku": "5M144M8S10DD37X19DD43F7S13DD37X22DD43J1S10DD37X19DD43G1",
+    "sku": "5M144M8S10DD25X19DD43F7S13DD25X22DD43J1S10DD25X19DD43G1",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1167,
-      "height": 19.1667,
+      "width": 9.9967,
+      "height": 19.1767,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.37,
+      "width": 10.25,
       "height": 19.43,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b2dd9b67734947ea8e4736e63dec24121109480669092ac1f10a071bd52d96ad.jpg",
-    "assetSha256": "b2dd9b67734947ea8e4736e63dec24121109480669092ac1f10a071bd52d96ad",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea.jpg",
+    "assetSha256": "65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108697,18 +108697,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 13.37,
+        "width": 13.25,
         "height": 22.43,
         "unit": "in"
       },
       "window": {
-        "width": 10.37,
+        "width": 10.25,
         "height": 19.43,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S10.37X19.43",
+    "baseSku": "5M144M8S10.25X19.43",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -108718,7 +108718,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 13.37,
+        "width": 13.25,
         "height": 22.43,
         "unit": "in"
       },
@@ -108738,24 +108738,24 @@ export default {
     "artworkTitle": "Painting #53",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S7X13.04",
+    "sku": "5M144M8S6.91X13.04",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7467,
-      "height": 12.7833,
+      "width": 6.6567,
+      "height": 12.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7,
+      "width": 6.91,
       "height": 13.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1b85fb0283fab1e156c289bf6fc521014d5e23bb8f2e48decd467a38a8c6e9f3.jpg",
-    "assetSha256": "1b85fb0283fab1e156c289bf6fc521014d5e23bb8f2e48decd467a38a8c6e9f3",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15.jpg",
+    "assetSha256": "18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108777,26 +108777,26 @@ export default {
     "productId": "archived-painting-53",
     "title": "Painting #53 — Small print — Black frame",
     "artworkTitle": "Painting #53",
-    "amount": "92.00",
+    "amount": "94.00",
     "currency": "USD",
-    "sku": "5M144M8S7X13DD04F1S10X16DD04J1S7X13DD04G1",
+    "sku": "5M144M8S6DD91X13DD04F1S9DD91X16DD04J1S6DD91X13DD04G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7467,
-      "height": 12.7833,
+      "width": 6.6567,
+      "height": 12.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7,
+      "width": 6.91,
       "height": 13.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1b85fb0283fab1e156c289bf6fc521014d5e23bb8f2e48decd467a38a8c6e9f3.jpg",
-    "assetSha256": "1b85fb0283fab1e156c289bf6fc521014d5e23bb8f2e48decd467a38a8c6e9f3",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15.jpg",
+    "assetSha256": "18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108815,18 +108815,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.91,
         "height": 16.04,
         "unit": "in"
       },
       "window": {
-        "width": 7,
+        "width": 6.91,
         "height": 13.04,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7X13.04",
+    "baseSku": "5M144M8S6.91X13.04",
     "frame": {
       "key": "black",
       "id": 1,
@@ -108836,7 +108836,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.91,
         "height": 16.04,
         "unit": "in"
       },
@@ -108854,26 +108854,26 @@ export default {
     "productId": "archived-painting-53",
     "title": "Painting #53 — Small print — White frame",
     "artworkTitle": "Painting #53",
-    "amount": "92.00",
+    "amount": "94.00",
     "currency": "USD",
-    "sku": "5M144M8S7X13DD04F2S10X16DD04J1S7X13DD04G1",
+    "sku": "5M144M8S6DD91X13DD04F2S9DD91X16DD04J1S6DD91X13DD04G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7467,
-      "height": 12.7833,
+      "width": 6.6567,
+      "height": 12.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7,
+      "width": 6.91,
       "height": 13.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1b85fb0283fab1e156c289bf6fc521014d5e23bb8f2e48decd467a38a8c6e9f3.jpg",
-    "assetSha256": "1b85fb0283fab1e156c289bf6fc521014d5e23bb8f2e48decd467a38a8c6e9f3",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15.jpg",
+    "assetSha256": "18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108892,18 +108892,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.91,
         "height": 16.04,
         "unit": "in"
       },
       "window": {
-        "width": 7,
+        "width": 6.91,
         "height": 13.04,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7X13.04",
+    "baseSku": "5M144M8S6.91X13.04",
     "frame": {
       "key": "white",
       "id": 2,
@@ -108913,7 +108913,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.91,
         "height": 16.04,
         "unit": "in"
       },
@@ -108931,26 +108931,26 @@ export default {
     "productId": "archived-painting-53",
     "title": "Painting #53 — Small print — Natural wood frame",
     "artworkTitle": "Painting #53",
-    "amount": "104.00",
+    "amount": "107.00",
     "currency": "USD",
-    "sku": "5M144M8S7X13DD04F7S10X16DD04J1S7X13DD04G1",
+    "sku": "5M144M8S6DD91X13DD04F7S9DD91X16DD04J1S6DD91X13DD04G1",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7467,
-      "height": 12.7833,
+      "width": 6.6567,
+      "height": 12.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7,
+      "width": 6.91,
       "height": 13.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1b85fb0283fab1e156c289bf6fc521014d5e23bb8f2e48decd467a38a8c6e9f3.jpg",
-    "assetSha256": "1b85fb0283fab1e156c289bf6fc521014d5e23bb8f2e48decd467a38a8c6e9f3",
-    "sourceSha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15.jpg",
+    "assetSha256": "18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15",
+    "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
@@ -108969,18 +108969,18 @@ export default {
       "name": "Snow White",
       "color": "#fff",
       "outer": {
-        "width": 10,
+        "width": 9.91,
         "height": 16.04,
         "unit": "in"
       },
       "window": {
-        "width": 7,
+        "width": 6.91,
         "height": 13.04,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S7X13.04",
+    "baseSku": "5M144M8S6.91X13.04",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -108990,7 +108990,7 @@ export default {
       "material": "Solid Wood with Veneer",
       "mouldingWidth": 0.88,
       "size": {
-        "width": 10,
+        "width": 9.91,
         "height": 16.04,
         "unit": "in"
       },
