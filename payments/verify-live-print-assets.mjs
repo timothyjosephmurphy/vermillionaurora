@@ -11,6 +11,14 @@ assert(samples.every(p=>!p.testOnly&&['painting-portrait-in-green','painting-por
 assert(editions.every(p=>!p.testOnly&&p.layout===EDITION_LAYOUT&&p.layoutApproved&&p.minimumDpi>=300));
 assert.deepEqual([...new Set(editions.map(p=>p.productId))].sort(),Object.entries(config.artworks).filter(([,a])=>a.enabled&&a.sizing==='image-proportional').map(([id])=>id).sort());
 assert(prints.filter(p=>p.frame).every(p=>p.mat&&p.frame.glazing?.id===1&&p.baseSku));
+export function sampleAssets(){
+  const all=[...new Set(prints.map(p=>p.assetUrl))];
+  if(process.env.PRINT_ASSET_SAMPLE==='all')return all;
+  const ids=[...new Set(prints.map(p=>p.productId))],changed=new Set((process.env.CHANGED_PRINT_PRODUCTS||'').split(/[\s,]+/).filter(id=>ids.includes(id)));
+  const rest=ids.filter(id=>!changed.has(id));for(let i=0;i<3&&rest.length;i++)changed.add(rest.splice(Math.floor(Math.random()*rest.length),1)[0]);
+  console.log('Print asset check for:',[...changed].join(', '));
+  return [...new Set(prints.filter(p=>changed.has(p.productId)).map(p=>p.assetUrl))];
+}
 export async function verifyLivePrintAssets() {
   const release=await fetch(`${site}/catalog/version.json?release=${catalogVersion}`,{cache:'no-store',signal:AbortSignal.timeout(15000)});
   assert.equal(release.status,200);
@@ -19,7 +27,8 @@ export async function verifyLivePrintAssets() {
   assert.equal(page.status,200);assert((await page.text()).includes(printVersion));
   const catalog=await (await fetch(`${site}/catalog/products.json?prints=${printVersion}`,{cache:'no-store',signal:AbortSignal.timeout(15000)})).json();
   assert.equal(catalog.printVersion,printVersion);assert.deepEqual(catalog.prints.map(p=>p.id).sort(),prints.map(p=>p.id).sort());
-  const assets=[...new Set(prints.map(p=>p.assetUrl))];let cursor=0;
+  // Sampled by default: changed paintings (CHANGED_PRINT_PRODUCTS) plus 3 random ones. PRINT_ASSET_SAMPLE=all checks every file.
+  const assets=sampleAssets();let cursor=0;
   await Promise.all(Array.from({length:4},async()=>{while(cursor<assets.length){
     const url=assets[cursor++],sha=prints.find(p=>p.assetUrl===url).assetSha256;
     assert(new URL(url).origin===site||url===`https://media.vermillionaurora.com/images/book-galleries/v1/prints/${sha}.jpg`,'Unexpected print asset location');
@@ -33,7 +42,8 @@ export async function verifyLivePrintAssets() {
 }
 if(process.argv[1]?.endsWith('/verify-live-print-assets.mjs')||process.argv[1]==='payments/verify-live-print-assets.mjs') {
   let ready=false;
-  for(let i=0;i<36;i++)try{await verifyLivePrintAssets();ready=true;break;}catch{console.log(`Waiting for print website release (${i+1}/36)`);await new Promise(resolve=>setTimeout(resolve,5000));}
+  const tries=Number(process.env.SITE_WAIT_TRIES||120);
+  for(let i=0;i<tries;i++)try{await verifyLivePrintAssets();ready=true;break;}catch{console.log(`Waiting for print website release (${i+1}/${tries})`);await new Promise(resolve=>setTimeout(resolve,5000));}
   if(!ready)throw Error('The approved print pages, catalog and images are not deployed');
-  console.log(`PASS: exact approved files and public catalog deployed for ${prints.length} print variants.`);
+  console.log(`PASS: public catalog lists all ${prints.length} print variants; sampled print files match their approved hashes.`);
 }

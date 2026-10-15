@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
 import tjRecipes from '../catalog/tj-print-masters.json' with {type:'json'};
 import archiveRecipes from '../catalog/archive-print-masters.json' with {type:'json'};
-const allRecipes=process.env.PRINT_RECIPE_SET==='archive'?archiveRecipes:tjRecipes;
+import olderWorkRecipes from '../catalog/older-work-print-masters.json' with {type:'json'};
+const allRecipes=process.env.PRINT_RECIPE_SET==='archive'?archiveRecipes:process.env.PRINT_RECIPE_SET==='older-work'?olderWorkRecipes:tjRecipes;
 // TJ_PRINT_IDS=id,id quotes or applies only replaced/new masters; other paintings keep their published prices.
 const onlyIds=process.env.TJ_PRINT_IDS?.split(',').map(s=>s.trim()).filter(Boolean);
 const recipes=onlyIds?allRecipes.filter(r=>onlyIds.includes(r.id)):allRecipes;

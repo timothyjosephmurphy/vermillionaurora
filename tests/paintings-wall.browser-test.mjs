@@ -6,6 +6,8 @@ import {tjWall,paulWall,notToScale} from '../src/data/paintings-wall.mjs';
 const origin='https://tjm.art',root=path.resolve('dist');
 const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml'};
 const pixel=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==','base64');
+// Built pages load display and wall images from img.tjm.art (R2); serve them from the local build.
+const r2=src=>/^\/(?:display|wall-paintings)\//.test(src)?'https://img.tjm.art'+src:src;
 function router(state){
   return async route=>{
     const u=new URL(route.request().url());
@@ -13,6 +15,7 @@ function router(state){
       if(route.request().frame().url().includes('/gallery/wall/'))state.worker.push(u.pathname);
       return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{enabled:false,products:[]}});
     }
+    if(u.hostname==='img.tjm.art'){const f=path.join(root,decodeURIComponent(u.pathname));if(!fs.existsSync(f))return route.fulfill({status:404});const b=fs.readFileSync(f);state.images.push({url:u.pathname,bytes:b.length});return route.fulfill({body:b,contentType:'image/webp'});}
     if(u.hostname!=='tjm.art'){state.external.push(u.href);return /\.(jpe?g|png|webp)/i.test(u.pathname)?route.fulfill({body:pixel,contentType:'image/png'}):route.fulfill({json:{}});}
     const file=path.join(root,decodeURIComponent(u.pathname),u.pathname.endsWith('/')?'index.html':'');
     if(!fs.existsSync(file))return route.fulfill({status:404});
@@ -39,7 +42,7 @@ for(const engine of [chromium,webkit]){
       await page.waitForFunction(()=>[...document.querySelectorAll('[data-art-image]')].every(i=>i.complete&&i.naturalWidth>0));
       const initial=state.images.filter(i=>/\.(webp|jpe?g)$/.test(i.url)&&(i.url.startsWith('/wall-paintings/')||i.url.startsWith('/gallery-wall/')||i.url.startsWith('/gallery-images/')));
       const initialBytes=initial.reduce((s,i)=>s+i.bytes,0);
-      assert(initialBytes<2_000_000,`initial painting images ${initialBytes}`);
+      assert(initialBytes<3_000_000,`initial painting images ${initialBytes}`); // budget raised from 2 MB when ~65 Older Work originals joined the wall
       assert(!state.images.some(i=>i.url.startsWith('/print-masters/')),'overview never downloads masters');
       assert.deepEqual(state.external.filter(u=>u.includes('media.vermillionaurora.com')),[],'no remote photos until zoom');
       assert(await page.locator('[data-wall-index] li').count()===tjWall.artworks.length);
@@ -50,9 +53,9 @@ for(const engine of [chromium,webkit]){
 
       // Filter
       const filterButtons=page.locator('[data-wall-filter] [data-filter]');
-      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),['All (66)','Available (31)','Sold (8)','Not for sale (27)']);
+      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),['All (129)','Available (94)','Sold (8)','Not for sale (27)']);
       await page.locator('[data-filter="sold"]').click();await settled();
-      assert.equal(await page.locator('.wall-art.is-dimmed').count(),66-8);
+      assert.equal(await page.locator('.wall-art.is-dimmed').count(),129-8);
       assert.equal(await picker.locator('option').count(),9);
       await page.locator('[data-filter="all"]').click();await settled();
       assert.equal(await page.locator('.wall-art.is-dimmed').count(),0);
@@ -85,9 +88,9 @@ for(const engine of [chromium,webkit]){
       await open('/gallery/wall/all/');
       const sharp=tjWall.artworks.find(a=>a.sources.length>1&&a.sources.at(-1).src.startsWith('/')&&!a.sources.at(-1).src.startsWith('/print-masters/')&&a.sources.at(-1).src.startsWith('/gallery-images/'));
       assert(sharp,'a local painting with a full-size photo');
-      assert.equal(await page.locator(`[data-art-image="${sharp.id}"]`).evaluate(i=>i.getAttribute('src')),sharp.sources[0].src);
+      assert.equal(await page.locator(`[data-art-image="${sharp.id}"]`).evaluate(i=>i.getAttribute('src')),r2(sharp.sources[0].src));
       await picker.selectOption(sharp.id);await settled();
-      await page.waitForFunction(({id,src})=>document.querySelector(`[data-art-image="${id}"]`).getAttribute('src')===src,{id:sharp.id,src:sharp.sources.at(-1).src});
+      await page.waitForFunction(({id,src})=>document.querySelector(`[data-art-image="${id}"]`).getAttribute('src')===src,{id:sharp.id,src:r2(sharp.sources.at(-1).src)});
       if(!mobile)await page.screenshot({path:`/tmp/paintings-wall-${engine.name()}-zoom.png`});
 
       // Paul's wall and the toggle

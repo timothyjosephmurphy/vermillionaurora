@@ -8,10 +8,10 @@ import products from '../catalog/all-products.mjs';
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {editionLayouts,EDITION_LAYOUT,EDITION_BORDER_IN} from '../catalog/edition-layout.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
-const prepareArchive=process.argv.includes('--prepare-archive'),prepareTJ=process.argv.includes('--prepare-tj')||prepareArchive,prepare=process.argv.includes('--prepare')||prepareTJ,digest=b=>createHash('sha256').update(b).digest('hex'),run=promisify(execFile);
+const prepareArchive=process.argv.includes('--prepare-archive'),prepareOlder=process.argv.includes('--prepare-older-work'),prepareTJ=process.argv.includes('--prepare-tj')||prepareArchive||prepareOlder,prepare=process.argv.includes('--prepare')||prepareTJ,digest=b=>createHash('sha256').update(b).digest('hex'),run=promisify(execFile);
 const root=new URL('../',import.meta.url),cache=new URL('.cache/edition-sources/',root),output=new URL('static/print-editions/',root);
 await mkdir(cache,{recursive:true});await mkdir(new URL('thumbs/',output),{recursive:true});
-const tjIds=prepareTJ?JSON.parse(await readFile(new URL(prepareArchive?'catalog/archive-print-masters.json':'catalog/tj-print-masters.json',root),'utf8')).map(r=>r.id):[];
+const tjIds=prepareTJ?JSON.parse(await readFile(new URL(prepareOlder?'catalog/older-work-print-masters.json':prepareArchive?'catalog/archive-print-masters.json':'catalog/tj-print-masters.json',root),'utf8')).map(r=>r.id):[];
 // --only=id,id limits a preparation run to replaced or new masters so other approved files stay untouched.
 const only=process.argv.find(a=>a.startsWith('--only='))?.slice(7).split(',');
 const selected=products.filter(p=>prepareTJ?tjIds.includes(p.id):prepare?p.artist==='Paul Murphy':config.artworks[p.id]?.sizing==='image-proportional').filter(p=>!only||only.includes(p.id));

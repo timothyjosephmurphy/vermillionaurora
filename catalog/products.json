@@ -1831,7 +1831,7 @@
     "inquiryHref": "/commissions/",
     "dimensionOrder": "width-height",
     "image": {
-      "src": "/gallery-images/sunrise-on-rainier-with-eagle-2026.jpg",
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
       "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
       "caption": ""
     },
@@ -1847,58 +1847,6 @@
         "verification": "estimated",
         "notes": "Existing shipping estimate carried forward; confirm before enabling additional products."
       }
-    },
-    "inquiry": {
-      "label": "Commission a painting",
-      "note": ""
-    },
-    "back": {
-      "href": "/gallery/",
-      "label": "Back to gallery"
-    }
-  },
-  {
-    "id": "painting-portrait-with-scarf",
-    "slug": "painting-portrait-with-scarf",
-    "type": "painting",
-    "title": "Father Paul",
-    "description": "Father Paul by TJ Murphy. Watercolor pastel. Not for sale.",
-    "eyebrow": "Watercolor pastel",
-    "artist": "TJ Murphy",
-    "listing": {
-      "status": "not-for-sale",
-      "price": null
-    },
-    "medium": "Watercolor pastel",
-    "surface": "Arches Coldpress Paper",
-    "year": 2025,
-    "framing": null,
-    "dimensions": {
-      "width": 15,
-      "height": 24,
-      "unit": "in"
-    },
-    "galleryReference": null,
-    "gallerySequence": null,
-    "facts": [
-      {
-        "label": "In the book",
-        "value": "Watercolor Portraits, page 46"
-      }
-    ],
-    "story": [
-      "This original watercolor pastel is part of TJ Murphy\u2019s ongoing exploration of luminous color, atmosphere, and human expression."
-    ],
-    "storyHeading": null,
-    "inquiryHref": "/commissions/",
-    "dimensionOrder": "width-height",
-    "image": {
-      "src": "/gallery-images/portrait-with-scarf.jpg",
-      "alt": "Father Paul by TJ Murphy",
-      "caption": "Father Paul"
-    },
-    "checkout": {
-      "mode": "inquiry"
     },
     "inquiry": {
       "label": "Commission a painting",

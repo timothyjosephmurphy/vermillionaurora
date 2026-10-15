@@ -6,6 +6,7 @@ import manifest from '../catalog/book-galleries.json' with {type:'json'};
 import bookProducts from '../catalog/book-products.json' with {type:'json'};
 import products from '../catalog/products.json' with {type:'json'};
 import archiveProducts from '../catalog/archive-products.mjs';
+import olderWorkProducts from '../catalog/older-work-products.mjs';
 import collections from '../catalog/collections.json' with {type:'json'};
 import {canonicalArtwork,sectionArtworkIds} from '../src/data/canonical-artworks.mjs';
 import {PRODUCT_RENAMES,renamedProductPath} from '../worker/product-renames.mjs';
@@ -41,7 +42,6 @@ const MERGED={
   'book-art-f56007f6a7d6ee955caf':['painting-golden-coast','Sunset in the Strait of Juan de Fuca, Patos Island 1'],
   'book-art-29b3572972c367d351d1':['painting-festival-portrait','The Bounty of Satoshi: Wonder'],
   'book-art-ea6e156a9a533d06f198':['grandpa-howard','Grandpa Howard'],
-  'book-art-82127d1886ae57d5cb6e':['painting-portrait-with-scarf','Father Paul'],
 };
 const byId=Object.fromEntries(products.map(p=>[p.id,p]));
 const redirects=fs.readFileSync('static/_redirects','utf8').split('\n').map(l=>l.trim().split(/\s+/)).filter(l=>l.length===3);
@@ -75,7 +75,7 @@ test('merged duplicates: the catalog page survives with the book title everywher
 });
 
 test('merged duplicates: dropped URLs 301 to the survivor in one hop on both domains',()=>{
-  const finals=new Set(products.map(p=>`/products/${p.slug}/`));
+  const finals=new Set([...products,...archiveProducts,...olderWorkProducts].map(p=>`/products/${p.slug}/`));
   for(const [scan,[slug]] of Object.entries(MERGED)){
     for(const from of [`/products/${scan}/`,`/products/${scan}`]){
       const line=redirects.find(([f])=>f===from);
@@ -89,7 +89,7 @@ test('merged duplicates: dropped URLs 301 to the survivor in one hop on both dom
   }
   for(const [old,slug] of Object.entries(PRODUCT_RENAMES)){
     assert(!byId[old],`${old} must no longer be a product id`);
-    assert(byId[slug],`${old} -> ${slug} must land on a product`);
+    assert(byId[slug]||[...archiveProducts,...olderWorkProducts].some(p=>p.id===slug),`${old} -> ${slug} must land on a product`);
   }
 });
 
@@ -124,4 +124,22 @@ test('merged duplicates: each painting shows once and feeds list only the surviv
     assert(ids.length>0,scan);
     for(const id of ids)assert(feed.prints.some(p=>p.id===id),id);
   }
+});
+
+test('Father Paul and My Dad, Paul Murphy are one painting: the archive page with the better photo survives',()=>{
+  const slug='archived-painting-img-1608',dad=archiveProducts.find(p=>p.id===slug);
+  assert.equal(dad.title,'My Dad, Paul Murphy');
+  assert.equal(dad.listing.status,'not-for-sale');
+  assert(Object.values(readyPrints).some(p=>p.productId===slug),'prints stay for sale');
+  assert(!products.some(p=>p.id==='painting-portrait-with-scarf'||p.title==='Father Paul'));
+  assert.equal(canonicalArtwork['book-art-82127d1886ae57d5cb6e'],slug);
+  for(const from of ['/products/painting-portrait-with-scarf/','/products/painting-portrait-with-scarf','/products/book-art-82127d1886ae57d5cb6e/','/products/book-art-82127d1886ae57d5cb6e'])
+    {assert.deepEqual(redirects.find(([f])=>f===from),[from,`/products/${slug}/`,'301'],from);assert.equal(renamedProductPath(from),`/products/${slug}/`);}
+  const home=collections.home.map(e=>e.product);
+  assert(home.includes(slug));
+  const $=read('dist/index.html');
+  assert.equal($(`.available-paintings-carousel [data-product-id="${slug}"]`).length,0);
+  assert.equal($(`.collector-items-carousel [data-product-id="${slug}"]`).length,1);
+  const page=read(`dist/products/${slug}/index.html`);
+  assert.equal(page('.product-availability').text().trim(),'Not for sale');
 });

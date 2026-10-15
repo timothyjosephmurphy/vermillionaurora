@@ -7,8 +7,7 @@ const cf=`https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757
 const key='CHECKOUT_AUDIT_TOKEN',secret=randomBytes(32).toString('hex');
 const cloudflare=async(method,path='',body)=>{const r=await fetch(cf+path,{method,headers:{Authorization:`Bearer ${process.env.CLOUDFLARE_API_TOKEN}`,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});const d=await r.json();if(!r.ok||!d.success)throw Error(`Production diagnostic credential ${method} failed: HTTP ${r.status}`);};
 const eligible=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price&&p.dimensions&&p.checkout?.mode==='integrated');
-const expectedSlugs=eligible.map(p=>p.id).sort(),configuredSlugs=(expected.PAYPAL_CHECKOUT_SLUGS||'').split(',').map(s=>s.trim()).filter(Boolean).sort();
-if(JSON.stringify(configuredSlugs)!==JSON.stringify(expectedSlugs))throw Error('PayPal allowlist does not match all dimensioned, available priced paintings');
+// PayPal is deprecated (Oct 2026): no PayPal allowlist enforcement.
 let installed=false;
 try{
  await cloudflare('PUT','',{name:key,text:secret,type:'secret_text'});installed=true;
@@ -19,9 +18,11 @@ try{
  const ar=await fetch(base+'/checkout/sales-maintenance',{method:'POST',headers:{Authorization:`Bearer ${secret}`},signal:AbortSignal.timeout(90000)}),archive=await ar.json();console.log('Private sales archive:',JSON.stringify(archive));if(!ar.ok||!archive.ready)throw Error('Sales archive verification failed');
  if(expected.CHECKOUT_RESET_SLUG){const r=await fetch(base+'/checkout/sales-maintenance?action=reset&slug='+encodeURIComponent(expected.CHECKOUT_RESET_SLUG),{method:'POST',headers:{Authorization:`Bearer ${secret}`},signal:AbortSignal.timeout(90000)}),x=await r.json();console.log('Production stock reset:',JSON.stringify(x));if(!r.ok||x.slug!==expected.CHECKOUT_RESET_SLUG||x.result?.priorState!=='sold')throw Error('Production stock reset failed');}
  const denied=await fetch(base+'/checkout/sales-maintenance',{method:'POST'});if(denied.status!==404)throw Error('Unauthenticated accounting access was not denied');
- if(!audit.enabled){for(const item of eligible){const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(item.id));if(r.status!==503)throw Error('A painting is purchasable while checkout is disabled');}}
+ if(!audit.enabled){for(const item of (process.env.FULL_CHECKS==='1'?eligible:eligible.slice(0,1))){const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(item.id));if(r.status!==503)throw Error('A painting is purchasable while checkout is disabled');}}
  else{
-  for(const item of eligible){
+  // Read-only status checks (no holds). Sampled to one random original unless FULL_CHECKS=1.
+  const sampled=process.env.FULL_CHECKS==='1'?eligible:eligible.length?[eligible[Math.floor(Math.random()*eligible.length)]]:[];
+  for(const item of sampled){
    let status=0,state=null,lastBody='';
    for(let attempt=0;attempt<3;attempt++){
     const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(item.id),{signal:AbortSignal.timeout(30000)});

@@ -1,54 +1,40 @@
-# Production release control
+# Release control
 
-This repository uses a protected two-stage release so the public website and checkout API are promoted from the same reviewed catalog.
+## One-step deploy
 
-## One-time human setup
+`main` is production. Merging a pull request into `main` runs `.github/workflows/deploy-production.yml`, which:
 
-1. In Cloudflare, open the vermillionaurora Worker’s Workers Builds settings and set its production branch to release. Keep the repository root and the existing npx wrangler deploy build configuration.
-2. In GitHub repository Settings → Actions → General, keep workflow permissions at least Read and write and enable “Allow GitHub Actions to create and approve pull requests.” The promotion workflow uses this permission to open or update the main → release pull request after each successful main gate.
-3. In GitHub, protect main:
-   - require pull requests;
-   - require the Release gate / gate status check;
-   - require the branch to be current before merging;
-   - prevent direct pushes.
-4. Protect release:
-   - require a pull request;
-   - require the Release gate / gate status check;
-   - prevent direct pushes;
-   - allow the repository owner to merge the promotion pull request.
-5. After the first merge to main, wait for Propose production release to open the main → release promotion pull request. Merge it only after the Cloudflare branch setting is correct.
+1. Builds the site and checks the generated catalogs and production checkout config.
+2. Verifies private accounting storage and commission privacy.
+3. Cloudflare Workers Builds deploys the website Worker (`vermillionaurora`) from `main` (production branch = main); the workflow waits for it, then confirms the live catalog version and sampled print files (changed paintings + 3 random).
+4. Verifies live blog pages only when the push touched the blog.
+5. Deploys the checkout Worker (`vermillion-commissions`) with `CHECKOUT_RELEASE=<sha>` and waits for `/checkout/health` to report that revision.
+6. Runs live provider checks (one random original, read-only status), website/API catalog agreement on sampled product pages, and a quote of one unframed and one framed print (cancelled).
 
-## Normal release sequence (preferred / reliable path)
+Testing is quote-only: no payments, no FinerWorks orders, no holds on originals. Run the workflow manually with `full_checks` to check every product, original and print file.
 
-The automated `Propose production release` workflow (main → release PR titled “Promote main to production release”) often fails or stalls. **Do not wait on it.** Use this manual path every time:
+The `release` branch is a frozen backup of the last two-stage release and no longer deploys.
 
-1. Land work on `main` only after the Release gate passes (feature branch `codex/<topic>` from `origin/main` → PR → gate → squash-merge).
-2. Create a release branch from the current production tip:
-   ```sh
-   git fetch origin
-   git checkout -B codex/release-<topic> origin/release
-   git merge origin/main --no-ff -m "Release: <topic summary>"
-   ```
-3. Confirm the release branch **tree equals `origin/main`** (same files as main; merge commit is fine):
-   ```sh
-   git diff --stat origin/main
-   # expect empty
-   ```
-4. Push and open a PR **into `release`** (not the auto promote PR):
-   ```sh
-   git push -u origin HEAD
-   gh pr create --base release --head codex/release-<topic> --title "Release: <topic>" --body "..."
-   ```
-5. Wait for the Release gate on that PR, then merge with a **merge commit** (not squash), so release history stays explicit.
-6. Ignore any open auto “Promote main to production release” PR from `main` → `release`; close it if it confuses review.
-7. Cloudflare Workers Builds publishes the website from `release`. The production checkout workflow waits for the website’s catalog hash, then deploys the API Worker from `release`, and verifies health, providers, catalog agreement, inventory, product routes, and the limited print pilot.
+## Pull request gate (required check `gate`)
 
-If the website version does not arrive, the API deployment stops before changing the checkout Worker. Use the existing checkout pause flags for an emergency stop. Never reset Durable Object data during rollback.
+`.github/workflows/release-gate.yml` picks a tier from the changed paths (`scripts/ci/classify-changes.mjs`):
 
-### Checkout deploy retries
+| Tier | Paths | Runs |
+| --- | --- | --- |
+| content | catalog JSON, images, blog, static, docs | build, catalog drift, smoke on home/gallery/product/cart + changed pages |
+| code | other site code | the above + unit tests + browser tests for touched areas |
+| full | `cloudflare/`, `payments/`, `worker/`, catalog code, cart, CI, dependencies, manual runs | full suite (unit, browser, room, Worker, print framing) |
 
-If checkout deploy fails on `wait-for-site` or a transient print provider `422`, re-run failed jobs after the site is live (`gh run rerun --failed`), at most twice. If a Cloudflare build is stuck longer than about 15 minutes, stop and investigate rather than looping retries.
+Squash-merge PRs into `main`. Never use `--admin` or force-push.
 
-## Why the auto promote PR is unreliable
+## Rollback
 
-`.github/workflows/promote-release.yml` opens or updates a PR with base `release` and head `main` after each successful main push. Branch protection, required status checks, and GitHub’s handling of cross-branch promotion PRs frequently leave that PR ungated, conflicted, or otherwise unmergeable. The `codex/release-*` merge-from-main path above is the supported production promotion method until that workflow is deliberately fixed.
+```bash
+gh workflow run rollback.yml -R timothyjosephmurphy/vermillionaurora -f target=checkout   # or scripts/rollback.sh
+```
+
+This rolls the checkout Worker back to its previous version. The repo token has no access to the website Worker, so roll the site back with `npx wrangler rollback --name vermillionaurora` (logged in) or the Cloudflare dashboard Deployments tab; `target=both` works only once the token is granted access. Never reset Durable Object data during rollback. Use the checkout pause flags for an emergency stop.
+
+## Retries
+
+Re-run a failed deploy at most twice (`gh run rerun --failed`). If a step keeps failing, stop and investigate.

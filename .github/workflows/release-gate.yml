@@ -1,5 +1,10 @@
 name: Release gate
 
+# Tiered PR gate (required check: "gate").
+#   content  (catalog data, images, blog, static, docs): build + changed pages load.
+#   code     (site code): build + unit tests + browser tests for touched areas + smoke.
+#   full     (checkout, payments, workers, CI, dependencies, or manual runs): the full suite.
+# Testing never takes payment, submits FinerWorks orders, or holds originals.
 on:
   pull_request:
     branches: [main, release]
@@ -7,6 +12,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: read
 
 concurrency:
   group: release-gate-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -18,6 +24,21 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+      - name: Classify changed paths
+        id: changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE_FULL: ${{ github.event_name != 'pull_request' }}
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            gh api --paginate "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files?per_page=100" --jq '.[].filename' > /tmp/changed.txt || : > /tmp/changed.txt
+          else
+            : > /tmp/changed.txt
+          fi
+          node scripts/ci/classify-changes.mjs < /tmp/changed.txt
+          # The frozen release branch only needs build and config checks.
+          if [ "${{ github.base_ref }}" = "release" ]; then echo "tier=release" >> "$GITHUB_OUTPUT"; fi
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"; head -500 /tmp/changed.txt >> "$GITHUB_OUTPUT"; echo "EOF" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -34,53 +55,62 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           const config=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc','utf8'));
-          if(config.name!=='vermillion-commissions'||config.vars.PAYPAL_MODE!=='live') {
+          if(config.name!=='vermillion-commissions') {
             throw new Error('Unexpected production Worker configuration');
           }
           NODE
-      # Main PRs and manual runs execute the full suite. A main-to-release
-      # promotion reruns the build and production-config checks above against
-      # the exact release PR commit, without repeating the full suite.
+      - name: Install Chromium
+        if: steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code'
+        run: npx playwright install --only-shell chromium
+      - name: Smoke test home, gallery, product, cart and changed pages
+        if: steps.changes.outputs.tier == 'content' || steps.changes.outputs.tier == 'code'
+        env:
+          CHANGED_FILES: ${{ steps.changes.outputs.files }}
+        run: node tests/smoke.browser-test.mjs
+      - name: Run application tests
+        if: steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full'
+        run: npm test
+      - name: Run print unit tests
+        if: steps.changes.outputs.tier == 'code' || steps.changes.outputs.tier == 'full'
+        run: node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
+      - name: Install WebKit for touched-area browser tests
+        if: steps.changes.outputs.tier == 'code' && steps.changes.outputs.browser_tests != ''
+        run: npx playwright install --with-deps webkit
+      - name: Browser tests for touched areas
+        if: steps.changes.outputs.tier == 'code' && steps.changes.outputs.browser_tests != ''
+        run: for t in ${{ steps.changes.outputs.browser_tests }}; do echo "::group::$t"; node "$t"; echo "::endgroup::"; done
+      - name: Gallery room check (touched)
+        if: steps.changes.outputs.tier == 'code' && steps.changes.outputs.room == 'true'
+        run: npm run test:room
+      # ---- Full suite (checkout/payments/worker/CI changes and manual runs) ----
       - name: Install Chromium and WebKit for browser checks
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        if: steps.changes.outputs.tier == 'full'
         run: |
           npx playwright install --only-shell chromium
           npx playwright install --with-deps webkit
-      # Report interaction regressions before the slower 3D room check. All checks remain required.
       - name: Run browser tests
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
-        run: npm run test:browser
-      - name: Save print wall browser previews
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: print-wall-browser-previews
-          path: /tmp/gallery-wall-*.png
-          if-no-files-found: ignore
+        if: steps.changes.outputs.tier == 'full'
+        run: npm run test:browser && node tests/smoke.browser-test.mjs
       - name: Check the Babylon gallery room
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        if: steps.changes.outputs.tier == 'full'
         run: npm run test:room
-      - name: Save gallery room browser previews
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: gallery-room-browser-previews
-          path: /tmp/gallery-room-*.png
-          if-no-files-found: ignore
-      - name: Run application tests
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
-        run: npm test
-      - name: Run print unit tests
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
-        run: node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
       - name: Install Cloudflare Worker test dependencies
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        if: steps.changes.outputs.tier == 'full'
         run: npm --prefix cloudflare/test ci
       - name: Run Cloudflare Worker tests
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        if: steps.changes.outputs.tier == 'full'
         run: npm run test:worker
       - name: Check print framing and print samples
-        if: github.event_name != 'pull_request' || github.base_ref == 'main'
+        if: steps.changes.outputs.tier == 'full'
         run: |
           node tests/print-framing.browser-test.mjs
           node tests/live-print-samples.browser-test.mjs
+      - name: Save browser previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-previews
+          path: |
+            /tmp/gallery-wall-*.png
+            /tmp/gallery-room-*.png
+          if-no-files-found: ignore

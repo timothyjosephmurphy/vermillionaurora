@@ -35,7 +35,9 @@ await page.route('**/*',async route=>{
  if(url.pathname==='/inventory/status')return route.fulfill({headers:{'Access-Control-Allow-Origin':origin},json:{availability:Object.fromEntries(url.searchParams.get('ids').split(',').map(id=>[id,availability]))}});
  if(url.hostname==='web.squarecdn.com')return route.fulfill({contentType:'application/javascript',body:"window.Square={payments:()=>({card:async()=>({attach:async()=>{},tokenize:async()=>({status:'OK',token:'cnon:test'})})})};"});
  if(url.hostname==='btcpay.example.test')return route.fulfill({contentType:'text/html',body:'<h1>BTCPay payment page</h1>'});
- if(url.hostname!==new URL(origin).hostname)return route.abort();
+ // Display images live on img.tjm.art (R2); serve the same files from the local build.
+  if(url.hostname==='img.tjm.art'){const f='dist'+decodeURIComponent(url.pathname);return fs.existsSync(f)?route.fulfill({body:fs.readFileSync(f),contentType:'image/webp'}):route.fulfill({status:404});}
+  if(url.hostname!==new URL(origin).hostname)return route.abort();
  const file=path.join(root,url.pathname,url.pathname.endsWith('/')?'index.html':'');
  if(fs.existsSync(file)&&fs.statSync(file).isFile())return route.fulfill({body:fs.readFileSync(file),contentType:({'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml'})[path.extname(file)]||'application/octet-stream'});
  return route.fulfill({status:404});

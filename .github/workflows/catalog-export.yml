@@ -1,0 +1,39 @@
+name: Nightly catalog export
+# Copies the live tjm-catalog D1 database (via /catalog-admin/api/export) into the repo on the
+# catalog-export branch (catalog/d1-export/latest.json + a dated copy). That branch never deploys.
+on:
+  schedule:
+    - cron: '17 10 * * *'   # 03:17 PT (PDT)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: catalog-export
+  cancel-in-progress: false
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download the live catalog
+        env:
+          CATALOG_ADMIN_PASSWORD: ${{ secrets.CATALOG_ADMIN_PASSWORD }}
+        run: |
+          curl -fsS --retry 3 -H "Authorization: Bearer $CATALOG_ADMIN_PASSWORD" https://tjm.art/catalog-admin/api/export -o /tmp/export.json
+          node -e "const j=require('/tmp/export.json');if(!Array.isArray(j.paintings)||!j.paintings.length||!Array.isArray(j.editions))process.exit(1);console.log(j.paintings.length+' paintings, '+j.editions.length+' print sizes, revision '+j.meta.rev)"
+      - name: Commit to the catalog-export branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin catalog-export >/dev/null; then git fetch origin catalog-export && git checkout catalog-export; else git checkout --orphan catalog-export && git rm -rfq .; fi
+          mkdir -p catalog/d1-export
+          day=$(date -u +%F)
+          # exportedAt changes every run; keep latest.json stable unless the data changed.
+          node -e "const j=require('/tmp/export.json');delete j.exportedAt;require('fs').writeFileSync('catalog/d1-export/latest.json',JSON.stringify(j,null,1)+'\n')"
+          cp catalog/d1-export/latest.json "catalog/d1-export/$day.json"
+          git add catalog/d1-export
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -qm "Catalog export $day"
+          git push origin catalog-export

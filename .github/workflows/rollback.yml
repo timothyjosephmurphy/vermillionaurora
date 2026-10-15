@@ -1,0 +1,49 @@
+name: Roll back production
+# One-command rollback to the previous Worker version:
+#   gh workflow run rollback.yml -R timothyjosephmurphy/vermillionaurora -f target=checkout
+# Uses CLOUDFLARE_SANDBOX_API_TOKEN (whole-account Workers Scripts Edit), so target=site and
+# target=both roll back the website Worker too.
+# Optionally pin versions: -f site_version=<id> -f checkout_version=<id> (see `wrangler versions list`).
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Which Worker(s) to roll back'
+        type: choice
+        options: [checkout, both, site]
+        default: checkout
+      site_version:
+        description: 'Website version id (blank = previous)'
+        required: false
+        default: ''
+      checkout_version:
+        description: 'Checkout version id (blank = previous)'
+        required: false
+        default: ''
+permissions:
+  contents: read
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Roll back the checkout Worker
+        if: inputs.target != 'site'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          command: rollback ${{ inputs.checkout_version }} --name vermillion-commissions --message "Rollback via GitHub Actions run ${{ github.run_id }}" --yes
+      - name: Roll back the website Worker
+        if: inputs.target != 'checkout'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
+          command: rollback ${{ inputs.site_version }} --name vermillionaurora --message "Rollback via GitHub Actions run ${{ github.run_id }}" --yes
+      - name: Show live health after rollback
+        run: |
+          curl -fsS https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/health; echo
+          curl -fsS -o /dev/null -w 'tjm.art HTTP %{http_code}\n' https://tjm.art/

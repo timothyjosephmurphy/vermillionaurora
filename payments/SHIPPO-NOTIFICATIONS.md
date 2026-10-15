@@ -47,7 +47,7 @@ For diagnosis, inspect the per-painting `shipping_job` table in Cloudflare's Dur
 ## Local verification
 
 ```sh
-node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs
+node --test cloudflare/checkout-recovery.test.mjs
 npm --prefix cloudflare/test ci
 npm --prefix cloudflare/test test
 ```
