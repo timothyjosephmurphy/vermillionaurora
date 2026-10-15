@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "meta": {
-  "rev": "3"
+  "rev": "8"
  },
  "paintings": [
   {
@@ -179,7 +179,7 @@
    "id": "archived-painting-22",
    "slug": "archived-painting-22",
    "type": "painting",
-   "title": "Painting #22",
+   "title": "Devo & Katie @ Bass Coast",
    "artist": "TJ Murphy",
    "medium": null,
    "surface": null,
@@ -187,12 +187,12 @@
    "width": 45,
    "height": 24,
    "unit": "in",
-   "description": "Painting #22 by TJ Murphy, from Archived Paintings. Devo & Kit @ Bass Coast #2.",
-   "price_amount": null,
+   "description": "Painting #22 by TJ Murphy, from Archived Paintings. Devo & Katie @ Bass Coast #2.",
+   "price_amount": "1000.00",
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:20:08.303Z"
   },
   {
    "id": "archived-painting-226",
@@ -4400,7 +4400,7 @@
    "title": "Ammous and Livera",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4410,7 +4410,45 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-ammous-livera-original-1",
+   "slug": "older-work-ammous-livera-original-1",
+   "type": "painting",
+   "title": "TJ Saifedean Ammous 355",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Saifedean Ammous 355, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-ammous-livera-original-2",
+   "slug": "older-work-ammous-livera-original-2",
+   "type": "painting",
+   "title": "TJ Stephan Livera 356",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Stephan Livera 356, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-beach-sunsets",
@@ -4419,7 +4457,7 @@
    "title": "Beach Sunsets",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4429,7 +4467,64 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-beach-sunsets-original-1",
+   "slug": "older-work-beach-sunsets-original-1",
+   "type": "painting",
+   "title": "TJ Beach Sunset 310",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Beach Sunset 310, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-beach-sunsets-original-2",
+   "slug": "older-work-beach-sunsets-original-2",
+   "type": "painting",
+   "title": "TJ Beach Sunset 311",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Beach Sunset 311, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-beach-sunsets-original-3",
+   "slug": "older-work-beach-sunsets-original-3",
+   "type": "painting",
+   "title": "TJ Beach Sunset 309",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Beach Sunset 309, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-bitcoin-voices",
@@ -4438,7 +4533,7 @@
    "title": "Mallers, Brunell, McCormack and Saylor",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4448,7 +4543,83 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-bitcoin-voices-original-1",
+   "slug": "older-work-bitcoin-voices-original-1",
+   "type": "painting",
+   "title": "TJ Jack Mallers",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7.25,
+   "height": 11.75,
+   "unit": "in",
+   "description": "TJ Jack Mallers, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":10,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-bitcoin-voices-original-2",
+   "slug": "older-work-bitcoin-voices-original-2",
+   "type": "painting",
+   "title": "TJ Natalie Brunell",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7.25,
+   "height": 11.75,
+   "unit": "in",
+   "description": "TJ Natalie Brunell, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":10,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-bitcoin-voices-original-3",
+   "slug": "older-work-bitcoin-voices-original-3",
+   "type": "painting",
+   "title": "TJ Peter McCormack",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 16,
+   "unit": "in",
+   "description": "TJ Peter McCormack, an original painting by TJ Murphy.",
+   "price_amount": "250.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":12,\"width\":4,\"height\":4,\"weight\":0.5}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-bitcoin-voices-original-4",
+   "slug": "older-work-bitcoin-voices-original-4",
+   "type": "painting",
+   "title": "TJ Michael Saylor",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 16,
+   "unit": "in",
+   "description": "TJ Michael Saylor, an original painting by TJ Murphy.",
+   "price_amount": "250.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":12,\"width\":4,\"height\":4,\"weight\":0.5}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-fernandez-moran-pysh",
@@ -4457,7 +4628,7 @@
    "title": "Fernandez, Moran and Pysh",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4467,7 +4638,64 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-fernandez-moran-pysh-original-1",
+   "slug": "older-work-fernandez-moran-pysh-original-1",
+   "type": "painting",
+   "title": "TJ Akin Fernandez 351",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Akin Fernandez 351, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-fernandez-moran-pysh-original-2",
+   "slug": "older-work-fernandez-moran-pysh-original-2",
+   "type": "painting",
+   "title": "TJ Nico Moran 345",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Nico Moran 345, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-fernandez-moran-pysh-original-3",
+   "slug": "older-work-fernandez-moran-pysh-original-3",
+   "type": "painting",
+   "title": "TJ Preston Pysh 344",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Preston Pysh 344, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-figen-pnut-swoll",
@@ -4476,7 +4704,7 @@
    "title": "Figen, PNut and Joey Swoll",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4486,7 +4714,64 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-figen-pnut-swoll-original-1",
+   "slug": "older-work-figen-pnut-swoll-original-1",
+   "type": "painting",
+   "title": "TJ Figen 341",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Figen 341, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-figen-pnut-swoll-original-2",
+   "slug": "older-work-figen-pnut-swoll-original-2",
+   "type": "painting",
+   "title": "TJ PNut Window 338",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ PNut Window 338, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-figen-pnut-swoll-original-3",
+   "slug": "older-work-figen-pnut-swoll-original-3",
+   "type": "painting",
+   "title": "TJ Joey Swoll 340",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Joey Swoll 340, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-forest-triptych",
@@ -4495,7 +4780,7 @@
    "title": "Forest Triptych",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4505,7 +4790,64 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-forest-triptych-original-1",
+   "slug": "older-work-forest-triptych-original-1",
+   "type": "painting",
+   "title": "TJ Forest 303",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7.75,
+   "height": 30,
+   "unit": "in",
+   "description": "TJ Forest 303, an original painting by TJ Murphy.",
+   "price_amount": "250.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":8,\"width\":4,\"height\":4,\"weight\":0.5}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-forest-triptych-original-2",
+   "slug": "older-work-forest-triptych-original-2",
+   "type": "painting",
+   "title": "TJ Forest 302",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7.75,
+   "height": 30,
+   "unit": "in",
+   "description": "TJ Forest 302, an original painting by TJ Murphy.",
+   "price_amount": "250.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":8,\"width\":4,\"height\":4,\"weight\":0.5}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-forest-triptych-original-3",
+   "slug": "older-work-forest-triptych-original-3",
+   "type": "painting",
+   "title": "TJ Forest 304",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7.75,
+   "height": 30,
+   "unit": "in",
+   "description": "TJ Forest 304, an original painting by TJ Murphy.",
+   "price_amount": "250.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":8,\"width\":4,\"height\":4,\"weight\":0.5}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-hayek-stark-gomez-el-bawab",
@@ -4514,7 +4856,7 @@
    "title": "Hayek, Stark, Gomez and El Bawab",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4524,7 +4866,83 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-hayek-stark-gomez-el-bawab-original-1",
+   "slug": "older-work-hayek-stark-gomez-el-bawab-original-1",
+   "type": "painting",
+   "title": "TJ F.A. Hayek 336",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ F.A. Hayek 336, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-hayek-stark-gomez-el-bawab-original-2",
+   "slug": "older-work-hayek-stark-gomez-el-bawab-original-2",
+   "type": "painting",
+   "title": "TJ Elizabeth Stark 335",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ Elizabeth Stark 335, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-hayek-stark-gomez-el-bawab-original-3",
+   "slug": "older-work-hayek-stark-gomez-el-bawab-original-3",
+   "type": "painting",
+   "title": "TJ Rodrigo Gomez 334",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ Rodrigo Gomez 334, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-hayek-stark-gomez-el-bawab-original-4",
+   "slug": "older-work-hayek-stark-gomez-el-bawab-original-4",
+   "type": "painting",
+   "title": "TJ Noor El Bawab 333",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ Noor El Bawab 333, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-hummingbird-feeder-190",
@@ -4533,17 +4951,17 @@
    "title": "TJ Hummingbird Feeder 190",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
-   "width": null,
-   "height": null,
-   "unit": null,
+   "width": 7,
+   "height": 8.5,
+   "unit": "in",
    "description": "TJ Hummingbird Feeder 190, an older painting by TJ Murphy.",
-   "price_amount": null,
+   "price_amount": "75.00",
    "currency": "USD",
-   "parcel_json": null,
+   "parcel_json": "{\"length\":11,\"width\":9,\"height\":2,\"weight\":0.375}",
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-lake-hillside-color-wheel",
@@ -4552,7 +4970,7 @@
    "title": "Lake, Hillside and Color Wheel",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4562,7 +4980,64 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-lake-hillside-color-wheel-original-1",
+   "slug": "older-work-lake-hillside-color-wheel-original-1",
+   "type": "painting",
+   "title": "TJ Mountain Lake 145",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Mountain Lake 145, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-lake-hillside-color-wheel-original-2",
+   "slug": "older-work-lake-hillside-color-wheel-original-2",
+   "type": "painting",
+   "title": "TJ Golden Hillside 141",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Golden Hillside 141, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-lake-hillside-color-wheel-original-3",
+   "slug": "older-work-lake-hillside-color-wheel-original-3",
+   "type": "painting",
+   "title": "TJ Color Wheel Study 184",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Color Wheel Study 184, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-legend-of-billy-buff",
@@ -4571,7 +5046,7 @@
    "title": "The Legend of Billy Buff",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4581,7 +5056,45 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-legend-of-billy-buff-original-1",
+   "slug": "older-work-legend-of-billy-buff-original-1",
+   "type": "painting",
+   "title": "TJ The Legend of Billy Buff 2",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 10.5,
+   "height": 13.5,
+   "unit": "in",
+   "description": "TJ The Legend of Billy Buff 2, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":11,\"width\":4,\"height\":4,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-legend-of-billy-buff-original-2",
+   "slug": "older-work-legend-of-billy-buff-original-2",
+   "type": "painting",
+   "title": "TJ The Legend of Billy Buff 1",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 10.5,
+   "height": 13.5,
+   "unit": "in",
+   "description": "TJ The Legend of Billy Buff 1, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":11,\"width\":4,\"height\":4,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-mountain-layers",
@@ -4590,7 +5103,7 @@
    "title": "Mountain Layers Studies",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4600,7 +5113,83 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-mountain-layers-original-1",
+   "slug": "older-work-mountain-layers-original-1",
+   "type": "painting",
+   "title": "TJ Blue Mountain Layers 185",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Blue Mountain Layers 185, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-mountain-layers-original-2",
+   "slug": "older-work-mountain-layers-original-2",
+   "type": "painting",
+   "title": "TJ Orange Mountain Layers 186",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Orange Mountain Layers 186, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-mountain-layers-original-3",
+   "slug": "older-work-mountain-layers-original-3",
+   "type": "painting",
+   "title": "TJ Red Mountain Layers 156",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Red Mountain Layers 156, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-mountain-layers-original-4",
+   "slug": "older-work-mountain-layers-original-4",
+   "type": "painting",
+   "title": "TJ Golden Mountain Layers 153",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 7,
+   "height": 5,
+   "unit": "in",
+   "description": "TJ Golden Mountain Layers 153, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":9,\"width\":7,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-nakamoto-hayek",
@@ -4609,7 +5198,7 @@
    "title": "Dorian Nakamoto and Hayek",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4619,7 +5208,45 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-nakamoto-hayek-original-1",
+   "slug": "older-work-nakamoto-hayek-original-1",
+   "type": "painting",
+   "title": "TJ Dorian Nakamoto",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Dorian Nakamoto, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-nakamoto-hayek-original-2",
+   "slug": "older-work-nakamoto-hayek-original-2",
+   "type": "painting",
+   "title": "TJ Hayek 339",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Hayek 339, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-pitchers",
@@ -4628,7 +5255,7 @@
    "title": "Pitcher Still Lifes",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4638,7 +5265,45 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-pitchers-original-1",
+   "slug": "older-work-pitchers-original-1",
+   "type": "painting",
+   "title": "TJ Two Pitchers 188",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 6,
+   "unit": "in",
+   "description": "TJ Two Pitchers 188, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":11,\"width\":8,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-pitchers-original-2",
+   "slug": "older-work-pitchers-original-2",
+   "type": "painting",
+   "title": "TJ Blue Pitcher 187",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 6,
+   "height": 9,
+   "unit": "in",
+   "description": "TJ Blue Pitcher 187, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":11,\"width\":8,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-portraits-319-329",
@@ -4647,7 +5312,7 @@
    "title": "Parah, José, Antonopoulos and #319",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4657,7 +5322,83 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-portraits-319-329-original-1",
+   "slug": "older-work-portraits-319-329-original-1",
+   "type": "painting",
+   "title": "TJ Bernard Parah 329",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ Bernard Parah 329, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-portraits-319-329-original-2",
+   "slug": "older-work-portraits-319-329-original-2",
+   "type": "painting",
+   "title": "TJ José 328",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ José 328, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-portraits-319-329-original-3",
+   "slug": "older-work-portraits-319-329-original-3",
+   "type": "painting",
+   "title": "TJ Andreas Antonopoulos 327",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ Andreas Antonopoulos 327, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-portraits-319-329-original-4",
+   "slug": "older-work-portraits-319-329-original-4",
+   "type": "painting",
+   "title": "TJ Portrait with Glasses 319",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ Portrait with Glasses 319, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-provibes-sandwiches",
@@ -4666,7 +5407,7 @@
    "title": "Provibes Reunion Sandwich Portraits",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4676,7 +5417,45 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-provibes-sandwiches-original-1",
+   "slug": "older-work-provibes-sandwiches-original-1",
+   "type": "painting",
+   "title": "TJ Devo and Sarah Sandwich (L)",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 17.5,
+   "height": 12.25,
+   "unit": "in",
+   "description": "TJ Devo and Sarah Sandwich (L), an original painting by TJ Murphy.",
+   "price_amount": "250.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":4,\"height\":4,\"weight\":0.75}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-provibes-sandwiches-original-2",
+   "slug": "older-work-provibes-sandwiches-original-2",
+   "type": "painting",
+   "title": "TJ Devo and Sarah Sandwich (R)",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 17.5,
+   "height": 12.25,
+   "unit": "in",
+   "description": "TJ Devo and Sarah Sandwich (R), an original painting by TJ Murphy.",
+   "price_amount": "250.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":4,\"height\":4,\"weight\":0.75}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-ridge-strips-unindexed",
@@ -4685,7 +5464,7 @@
    "title": "Ridge Strip Studies (unindexed)",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4695,7 +5474,140 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-ridge-strips-unindexed-original-1",
+   "slug": "older-work-ridge-strips-unindexed-original-1",
+   "type": "painting",
+   "title": "TJ Ridge Strip Study A",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Ridge Strip Study A, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-ridge-strips-unindexed-original-2",
+   "slug": "older-work-ridge-strips-unindexed-original-2",
+   "type": "painting",
+   "title": "TJ Ridge Strip Study B",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Ridge Strip Study B, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-ridge-strips-unindexed-original-3",
+   "slug": "older-work-ridge-strips-unindexed-original-3",
+   "type": "painting",
+   "title": "TJ Ridge Strip Study C",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Ridge Strip Study C, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-ridge-strips-unindexed-original-4",
+   "slug": "older-work-ridge-strips-unindexed-original-4",
+   "type": "painting",
+   "title": "TJ Ridge Strip Study D",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Ridge Strip Study D, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-ridge-strips-unindexed-original-5",
+   "slug": "older-work-ridge-strips-unindexed-original-5",
+   "type": "painting",
+   "title": "TJ Ridge Strip Study E",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Ridge Strip Study E, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-ridge-strips-unindexed-original-6",
+   "slug": "older-work-ridge-strips-unindexed-original-6",
+   "type": "painting",
+   "title": "TJ Ridge Strip Study F",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Ridge Strip Study F, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-ridge-strips-unindexed-original-7",
+   "slug": "older-work-ridge-strips-unindexed-original-7",
+   "type": "painting",
+   "title": "TJ Ridge Strip Study G",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Ridge Strip Study G, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-rochard-martinez",
@@ -4704,7 +5616,7 @@
    "title": "Pierre Rochard, Morgen Rochard and Aixa Martinez",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4714,7 +5626,64 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-rochard-martinez-original-1",
+   "slug": "older-work-rochard-martinez-original-1",
+   "type": "painting",
+   "title": "TJ Pierre Rochard 359",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Pierre Rochard 359, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-rochard-martinez-original-2",
+   "slug": "older-work-rochard-martinez-original-2",
+   "type": "painting",
+   "title": "TJ Morgen Rochard 358",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Morgen Rochard 358, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-rochard-martinez-original-3",
+   "slug": "older-work-rochard-martinez-original-3",
+   "type": "painting",
+   "title": "TJ Aixa Martinez 347",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 11,
+   "height": 12,
+   "unit": "in",
+   "description": "TJ Aixa Martinez 347, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":13,\"height\":2,\"weight\":0.4375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-shore-figures",
@@ -4723,7 +5692,7 @@
    "title": "Figures on a Shore Triptych",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4733,7 +5702,64 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-shore-figures-original-1",
+   "slug": "older-work-shore-figures-original-1",
+   "type": "painting",
+   "title": "TJ Figures on a Shore 179",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 4.25,
+   "height": 4,
+   "unit": "in",
+   "description": "TJ Figures on a Shore 179, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":7,\"width\":6,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-shore-figures-original-2",
+   "slug": "older-work-shore-figures-original-2",
+   "type": "painting",
+   "title": "TJ Wading Figure 181",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 4.25,
+   "height": 4,
+   "unit": "in",
+   "description": "TJ Wading Figure 181, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":7,\"width\":6,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-shore-figures-original-3",
+   "slug": "older-work-shore-figures-original-3",
+   "type": "painting",
+   "title": "TJ Crab on Beach 180",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 4.25,
+   "height": 4,
+   "unit": "in",
+   "description": "TJ Crab on Beach 180, an original painting by TJ Murphy.",
+   "price_amount": "75.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":7,\"width\":6,\"height\":2,\"weight\":0.3125}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-sunset-ridge-strips",
@@ -4742,7 +5768,7 @@
    "title": "Sunset Ridge Strips",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4752,7 +5778,121 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-sunset-ridge-strips-original-1",
+   "slug": "older-work-sunset-ridge-strips-original-1",
+   "type": "painting",
+   "title": "TJ Sunset Ridge Strip 174",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Sunset Ridge Strip 174, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-sunset-ridge-strips-original-2",
+   "slug": "older-work-sunset-ridge-strips-original-2",
+   "type": "painting",
+   "title": "TJ Sunset Ridge Strip 165",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Sunset Ridge Strip 165, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-sunset-ridge-strips-original-3",
+   "slug": "older-work-sunset-ridge-strips-original-3",
+   "type": "painting",
+   "title": "TJ Sunset Ridge Strip 159",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Sunset Ridge Strip 159, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-sunset-ridge-strips-original-4",
+   "slug": "older-work-sunset-ridge-strips-original-4",
+   "type": "painting",
+   "title": "TJ Sunset Ridge Strip 164",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Sunset Ridge Strip 164, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-sunset-ridge-strips-original-5",
+   "slug": "older-work-sunset-ridge-strips-original-5",
+   "type": "painting",
+   "title": "TJ Sunset Ridge Strip 173",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Sunset Ridge Strip 173, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-sunset-ridge-strips-original-6",
+   "slug": "older-work-sunset-ridge-strips-original-6",
+   "type": "painting",
+   "title": "TJ Sunset Ridge Strip 158",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 12,
+   "height": 4.5,
+   "unit": "in",
+   "description": "TJ Sunset Ridge Strip 158, an original painting by TJ Murphy.",
+   "price_amount": "100.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":14,\"width\":7,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "older-work-yakes-todd-dickerson",
@@ -4761,7 +5901,7 @@
    "title": "Yakes, Todd and Dickerson",
    "artist": "TJ Murphy",
    "medium": null,
-   "surface": null,
+   "surface": "Paper",
    "year": null,
    "width": null,
    "height": null,
@@ -4771,7 +5911,64 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-yakes-todd-dickerson-original-1",
+   "slug": "older-work-yakes-todd-dickerson-original-1",
+   "type": "painting",
+   "title": "TJ Eric Yakes 330",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ Eric Yakes 330, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-yakes-todd-dickerson-original-2",
+   "slug": "older-work-yakes-todd-dickerson-original-2",
+   "type": "painting",
+   "title": "TJ Peter Todd 331",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ Peter Todd 331, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "id": "older-work-yakes-todd-dickerson-original-3",
+   "slug": "older-work-yakes-todd-dickerson-original-3",
+   "type": "painting",
+   "title": "TJ Desiree Dickerson 332",
+   "artist": "TJ Murphy",
+   "medium": null,
+   "surface": "Paper",
+   "year": null,
+   "width": 9,
+   "height": 10.75,
+   "unit": "in",
+   "description": "TJ Desiree Dickerson 332, an original painting by TJ Murphy.",
+   "price_amount": "200.00",
+   "currency": "USD",
+   "parcel_json": "{\"length\":13,\"width\":11,\"height\":2,\"weight\":0.375}",
+   "source": "import",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "painting-chef-in-white",
@@ -5094,7 +6291,7 @@
    "currency": "USD",
    "parcel_json": null,
    "source": "import",
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "id": "painting-red-horizon",
@@ -21984,7 +23181,7 @@
    "paper_w": 7.8,
    "paper_h": 17.28,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-full-frame-black",
@@ -21998,7 +23195,7 @@
    "paper_w": 7.8,
    "paper_h": 17.28,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-full-frame-natural",
@@ -22012,7 +23209,7 @@
    "paper_w": 7.8,
    "paper_h": 17.28,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-full-frame-white",
@@ -22026,7 +23223,7 @@
    "paper_w": 7.8,
    "paper_h": 17.28,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-medium",
@@ -22040,7 +23237,7 @@
    "paper_w": 5.91,
    "paper_h": 13.02,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-medium-frame-black",
@@ -22054,7 +23251,7 @@
    "paper_w": 5.91,
    "paper_h": 13.02,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-medium-frame-natural",
@@ -22068,7 +23265,7 @@
    "paper_w": 5.91,
    "paper_h": 13.02,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-medium-frame-white",
@@ -22082,7 +23279,7 @@
    "paper_w": 5.91,
    "paper_h": 13.02,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-small",
@@ -22096,7 +23293,7 @@
    "paper_w": 4.02,
    "paper_h": 8.76,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-small-frame-black",
@@ -22110,7 +23307,7 @@
    "paper_w": 4.02,
    "paper_h": 8.76,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-small-frame-natural",
@@ -22124,7 +23321,7 @@
    "paper_w": 4.02,
    "paper_h": 8.76,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-beach-sunsets-small-frame-white",
@@ -22138,7 +23335,7 @@
    "paper_w": 4.02,
    "paper_h": 8.76,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-bitcoin-voices-full",
@@ -22152,7 +23349,7 @@
    "paper_w": 17.27,
    "paper_h": 7.43,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-bitcoin-voices-full-frame-black",
@@ -22166,7 +23363,7 @@
    "paper_w": 17.27,
    "paper_h": 7.43,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-bitcoin-voices-full-frame-natural",
@@ -22180,7 +23377,7 @@
    "paper_w": 17.27,
    "paper_h": 7.43,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-bitcoin-voices-full-frame-white",
@@ -22194,7 +23391,7 @@
    "paper_w": 17.27,
    "paper_h": 7.43,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-bitcoin-voices-medium",
@@ -22208,7 +23405,7 @@
    "paper_w": 13.02,
    "paper_h": 5.63,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-bitcoin-voices-medium-frame-black",
@@ -22222,7 +23419,7 @@
    "paper_w": 13.02,
    "paper_h": 5.63,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-bitcoin-voices-medium-frame-natural",
@@ -22236,7 +23433,7 @@
    "paper_w": 13.02,
    "paper_h": 5.63,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-bitcoin-voices-medium-frame-white",
@@ -22250,7 +23447,7 @@
    "paper_w": 13.02,
    "paper_h": 5.63,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-fernandez-moran-pysh-full",
@@ -22264,7 +23461,7 @@
    "paper_w": 16.74,
    "paper_h": 5.89,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-fernandez-moran-pysh-full-frame-black",
@@ -22278,7 +23475,7 @@
    "paper_w": 16.74,
    "paper_h": 5.89,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-fernandez-moran-pysh-full-frame-natural",
@@ -22292,7 +23489,7 @@
    "paper_w": 16.74,
    "paper_h": 5.89,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-fernandez-moran-pysh-full-frame-white",
@@ -22306,7 +23503,7 @@
    "paper_w": 16.74,
    "paper_h": 5.89,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-fernandez-moran-pysh-medium",
@@ -22320,7 +23517,7 @@
    "paper_w": 12.62,
    "paper_h": 4.48,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-fernandez-moran-pysh-medium-frame-black",
@@ -22334,7 +23531,7 @@
    "paper_w": 12.62,
    "paper_h": 4.48,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-fernandez-moran-pysh-medium-frame-natural",
@@ -22348,7 +23545,7 @@
    "paper_w": 12.62,
    "paper_h": 4.48,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-fernandez-moran-pysh-medium-frame-white",
@@ -22362,7 +23559,7 @@
    "paper_w": 12.62,
    "paper_h": 4.48,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-figen-pnut-swoll-full",
@@ -22376,7 +23573,7 @@
    "paper_w": 11.64,
    "paper_h": 4.27,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-figen-pnut-swoll-full-frame-black",
@@ -22390,7 +23587,7 @@
    "paper_w": 11.64,
    "paper_h": 4.27,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-figen-pnut-swoll-full-frame-natural",
@@ -22404,7 +23601,7 @@
    "paper_w": 11.64,
    "paper_h": 4.27,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-figen-pnut-swoll-full-frame-white",
@@ -22418,7 +23615,7 @@
    "paper_w": 11.64,
    "paper_h": 4.27,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-full",
@@ -22432,7 +23629,7 @@
    "paper_w": 14.19,
    "paper_h": 20.41,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-full-frame-black",
@@ -22446,7 +23643,7 @@
    "paper_w": 14.19,
    "paper_h": 20.41,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-full-frame-natural",
@@ -22460,7 +23657,7 @@
    "paper_w": 14.19,
    "paper_h": 20.41,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-full-frame-white",
@@ -22474,7 +23671,7 @@
    "paper_w": 14.19,
    "paper_h": 20.41,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-medium",
@@ -22488,7 +23685,7 @@
    "paper_w": 10.71,
    "paper_h": 15.37,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-medium-frame-black",
@@ -22502,7 +23699,7 @@
    "paper_w": 10.71,
    "paper_h": 15.37,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-medium-frame-natural",
@@ -22516,7 +23713,7 @@
    "paper_w": 10.71,
    "paper_h": 15.37,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-medium-frame-white",
@@ -22530,7 +23727,7 @@
    "paper_w": 10.71,
    "paper_h": 15.37,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-small",
@@ -22544,7 +23741,7 @@
    "paper_w": 7.22,
    "paper_h": 10.33,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-small-frame-black",
@@ -22558,7 +23755,7 @@
    "paper_w": 7.22,
    "paper_h": 10.33,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-small-frame-natural",
@@ -22572,7 +23769,7 @@
    "paper_w": 7.22,
    "paper_h": 10.33,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-forest-triptych-small-frame-white",
@@ -22586,7 +23783,7 @@
    "paper_w": 7.22,
    "paper_h": 10.33,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hayek-stark-gomez-el-bawab-full",
@@ -22600,7 +23797,7 @@
    "paper_w": 20.36,
    "paper_h": 6.37,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-black",
@@ -22614,7 +23811,7 @@
    "paper_w": 20.36,
    "paper_h": 6.37,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-natural",
@@ -22628,7 +23825,7 @@
    "paper_w": 20.36,
    "paper_h": 6.37,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-white",
@@ -22642,7 +23839,7 @@
    "paper_w": 20.36,
    "paper_h": 6.37,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium",
@@ -22656,7 +23853,7 @@
    "paper_w": 15.33,
    "paper_h": 4.84,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-black",
@@ -22670,7 +23867,7 @@
    "paper_w": 15.33,
    "paper_h": 4.84,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-natural",
@@ -22684,7 +23881,7 @@
    "paper_w": 15.33,
    "paper_h": 4.84,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-white",
@@ -22698,7 +23895,7 @@
    "paper_w": 15.33,
    "paper_h": 4.84,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hummingbird-feeder-190-full",
@@ -22712,7 +23909,7 @@
    "paper_w": 4.36,
    "paper_h": 6.03,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hummingbird-feeder-190-full-frame-black",
@@ -22726,7 +23923,7 @@
    "paper_w": 4.36,
    "paper_h": 6.03,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hummingbird-feeder-190-full-frame-natural",
@@ -22740,7 +23937,7 @@
    "paper_w": 4.36,
    "paper_h": 6.03,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-hummingbird-feeder-190-full-frame-white",
@@ -22754,7 +23951,7 @@
    "paper_w": 4.36,
    "paper_h": 6.03,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-lake-hillside-color-wheel-full",
@@ -22768,7 +23965,7 @@
    "paper_w": 20.8,
    "paper_h": 5.11,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-lake-hillside-color-wheel-full-frame-black",
@@ -22782,7 +23979,7 @@
    "paper_w": 20.8,
    "paper_h": 5.11,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-lake-hillside-color-wheel-full-frame-natural",
@@ -22796,7 +23993,7 @@
    "paper_w": 20.8,
    "paper_h": 5.11,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-lake-hillside-color-wheel-full-frame-white",
@@ -22810,7 +24007,7 @@
    "paper_w": 20.8,
    "paper_h": 5.11,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-full",
@@ -22824,7 +24021,7 @@
    "paper_w": 19.7,
    "paper_h": 13.72,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-full-frame-black",
@@ -22838,7 +24035,7 @@
    "paper_w": 19.7,
    "paper_h": 13.72,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-full-frame-natural",
@@ -22852,7 +24049,7 @@
    "paper_w": 19.7,
    "paper_h": 13.72,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-full-frame-white",
@@ -22866,7 +24063,7 @@
    "paper_w": 19.7,
    "paper_h": 13.72,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-medium",
@@ -22880,7 +24077,7 @@
    "paper_w": 14.84,
    "paper_h": 10.35,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-medium-frame-black",
@@ -22894,7 +24091,7 @@
    "paper_w": 14.84,
    "paper_h": 10.35,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-medium-frame-natural",
@@ -22908,7 +24105,7 @@
    "paper_w": 14.84,
    "paper_h": 10.35,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-medium-frame-white",
@@ -22922,7 +24119,7 @@
    "paper_w": 14.84,
    "paper_h": 10.35,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-small",
@@ -22936,7 +24133,7 @@
    "paper_w": 9.97,
    "paper_h": 6.98,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-small-frame-black",
@@ -22950,7 +24147,7 @@
    "paper_w": 9.97,
    "paper_h": 6.98,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-small-frame-natural",
@@ -22964,7 +24161,7 @@
    "paper_w": 9.97,
    "paper_h": 6.98,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-legend-of-billy-buff-small-frame-white",
@@ -22978,7 +24175,7 @@
    "paper_w": 9.97,
    "paper_h": 6.98,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-mountain-layers-full",
@@ -22992,7 +24189,7 @@
    "paper_w": 15,
    "paper_h": 4,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-mountain-layers-full-frame-black",
@@ -23006,7 +24203,7 @@
    "paper_w": 15,
    "paper_h": 4,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-mountain-layers-full-frame-natural",
@@ -23020,7 +24217,7 @@
    "paper_w": 15,
    "paper_h": 4,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-mountain-layers-full-frame-white",
@@ -23034,7 +24231,7 @@
    "paper_w": 15,
    "paper_h": 4,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-nakamoto-hayek-full",
@@ -23048,7 +24245,7 @@
    "paper_w": 11.76,
    "paper_h": 6.5,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-nakamoto-hayek-full-frame-black",
@@ -23062,7 +24259,7 @@
    "paper_w": 11.76,
    "paper_h": 6.5,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-nakamoto-hayek-full-frame-natural",
@@ -23076,7 +24273,7 @@
    "paper_w": 11.76,
    "paper_h": 6.5,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-nakamoto-hayek-full-frame-white",
@@ -23090,7 +24287,7 @@
    "paper_w": 11.76,
    "paper_h": 6.5,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-nakamoto-hayek-medium",
@@ -23104,7 +24301,7 @@
    "paper_w": 8.88,
    "paper_h": 4.94,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-nakamoto-hayek-medium-frame-black",
@@ -23118,7 +24315,7 @@
    "paper_w": 8.88,
    "paper_h": 4.94,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-nakamoto-hayek-medium-frame-natural",
@@ -23132,7 +24329,7 @@
    "paper_w": 8.88,
    "paper_h": 4.94,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-nakamoto-hayek-medium-frame-white",
@@ -23146,7 +24343,7 @@
    "paper_w": 8.88,
    "paper_h": 4.94,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-full",
@@ -23160,7 +24357,7 @@
    "paper_w": 18.93,
    "paper_h": 8.51,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-full-frame-black",
@@ -23174,7 +24371,7 @@
    "paper_w": 18.93,
    "paper_h": 8.51,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-full-frame-natural",
@@ -23188,7 +24385,7 @@
    "paper_w": 18.93,
    "paper_h": 8.51,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-full-frame-white",
@@ -23202,7 +24399,7 @@
    "paper_w": 18.93,
    "paper_h": 8.51,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-medium",
@@ -23216,7 +24413,7 @@
    "paper_w": 14.26,
    "paper_h": 6.45,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-medium-frame-black",
@@ -23230,7 +24427,7 @@
    "paper_w": 14.26,
    "paper_h": 6.45,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-medium-frame-natural",
@@ -23244,7 +24441,7 @@
    "paper_w": 14.26,
    "paper_h": 6.45,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-medium-frame-white",
@@ -23258,7 +24455,7 @@
    "paper_w": 14.26,
    "paper_h": 6.45,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-small",
@@ -23272,7 +24469,7 @@
    "paper_w": 9.59,
    "paper_h": 4.38,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-small-frame-black",
@@ -23286,7 +24483,7 @@
    "paper_w": 9.59,
    "paper_h": 4.38,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-small-frame-natural",
@@ -23300,7 +24497,7 @@
    "paper_w": 9.59,
    "paper_h": 4.38,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-pitchers-small-frame-white",
@@ -23314,7 +24511,7 @@
    "paper_w": 9.59,
    "paper_h": 4.38,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-portraits-319-329-full",
@@ -23328,7 +24525,7 @@
    "paper_w": 21.69,
    "paper_h": 6.66,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-portraits-319-329-full-frame-black",
@@ -23342,7 +24539,7 @@
    "paper_w": 21.69,
    "paper_h": 6.66,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-portraits-319-329-full-frame-natural",
@@ -23356,7 +24553,7 @@
    "paper_w": 21.69,
    "paper_h": 6.66,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-portraits-319-329-full-frame-white",
@@ -23370,7 +24567,7 @@
    "paper_w": 21.69,
    "paper_h": 6.66,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-portraits-319-329-medium",
@@ -23384,7 +24581,7 @@
    "paper_w": 16.33,
    "paper_h": 5.06,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-portraits-319-329-medium-frame-black",
@@ -23398,7 +24595,7 @@
    "paper_w": 16.33,
    "paper_h": 5.06,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-portraits-319-329-medium-frame-natural",
@@ -23412,7 +24609,7 @@
    "paper_w": 16.33,
    "paper_h": 5.06,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-portraits-319-329-medium-frame-white",
@@ -23426,7 +24623,7 @@
    "paper_w": 16.33,
    "paper_h": 5.06,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-provibes-sandwiches-full",
@@ -23440,7 +24637,7 @@
    "paper_w": 21.16,
    "paper_h": 7.56,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-provibes-sandwiches-full-frame-black",
@@ -23454,7 +24651,7 @@
    "paper_w": 21.16,
    "paper_h": 7.56,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-provibes-sandwiches-full-frame-natural",
@@ -23468,7 +24665,7 @@
    "paper_w": 21.16,
    "paper_h": 7.56,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-provibes-sandwiches-full-frame-white",
@@ -23482,7 +24679,7 @@
    "paper_w": 21.16,
    "paper_h": 7.56,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-provibes-sandwiches-medium",
@@ -23496,7 +24693,7 @@
    "paper_w": 15.93,
    "paper_h": 5.73,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-provibes-sandwiches-medium-frame-black",
@@ -23510,7 +24707,7 @@
    "paper_w": 15.93,
    "paper_h": 5.73,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-provibes-sandwiches-medium-frame-natural",
@@ -23524,7 +24721,7 @@
    "paper_w": 15.93,
    "paper_h": 5.73,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-provibes-sandwiches-medium-frame-white",
@@ -23538,7 +24735,7 @@
    "paper_w": 15.93,
    "paper_h": 5.73,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-full",
@@ -23552,7 +24749,7 @@
    "paper_w": 8.83,
    "paper_h": 20.55,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-full-frame-black",
@@ -23566,7 +24763,7 @@
    "paper_w": 8.83,
    "paper_h": 20.55,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-full-frame-natural",
@@ -23580,7 +24777,7 @@
    "paper_w": 8.83,
    "paper_h": 20.55,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-full-frame-white",
@@ -23594,7 +24791,7 @@
    "paper_w": 8.83,
    "paper_h": 20.55,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-medium",
@@ -23608,7 +24805,7 @@
    "paper_w": 6.69,
    "paper_h": 15.48,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-medium-frame-black",
@@ -23622,7 +24819,7 @@
    "paper_w": 6.69,
    "paper_h": 15.48,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-medium-frame-natural",
@@ -23636,7 +24833,7 @@
    "paper_w": 6.69,
    "paper_h": 15.48,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-medium-frame-white",
@@ -23650,7 +24847,7 @@
    "paper_w": 6.69,
    "paper_h": 15.48,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-small",
@@ -23664,7 +24861,7 @@
    "paper_w": 4.54,
    "paper_h": 10.4,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-small-frame-black",
@@ -23678,7 +24875,7 @@
    "paper_w": 4.54,
    "paper_h": 10.4,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-small-frame-natural",
@@ -23692,7 +24889,7 @@
    "paper_w": 4.54,
    "paper_h": 10.4,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-ridge-strips-unindexed-small-frame-white",
@@ -23706,7 +24903,7 @@
    "paper_w": 4.54,
    "paper_h": 10.4,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-rochard-martinez-full",
@@ -23720,7 +24917,7 @@
    "paper_w": 11.59,
    "paper_h": 4.26,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-rochard-martinez-full-frame-black",
@@ -23734,7 +24931,7 @@
    "paper_w": 11.59,
    "paper_h": 4.26,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-rochard-martinez-full-frame-natural",
@@ -23748,7 +24945,7 @@
    "paper_w": 11.59,
    "paper_h": 4.26,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-rochard-martinez-full-frame-white",
@@ -23762,7 +24959,7 @@
    "paper_w": 11.59,
    "paper_h": 4.26,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-shore-figures-full",
@@ -23776,7 +24973,7 @@
    "paper_w": 23.71,
    "paper_h": 7.25,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-shore-figures-full-frame-black",
@@ -23790,7 +24987,7 @@
    "paper_w": 23.71,
    "paper_h": 7.25,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-shore-figures-full-frame-natural",
@@ -23804,7 +25001,7 @@
    "paper_w": 23.71,
    "paper_h": 7.25,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-shore-figures-full-frame-white",
@@ -23818,7 +25015,7 @@
    "paper_w": 23.71,
    "paper_h": 7.25,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-shore-figures-medium",
@@ -23832,7 +25029,7 @@
    "paper_w": 17.85,
    "paper_h": 5.5,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-shore-figures-medium-frame-black",
@@ -23846,7 +25043,7 @@
    "paper_w": 17.85,
    "paper_h": 5.5,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-shore-figures-medium-frame-natural",
@@ -23860,7 +25057,7 @@
    "paper_w": 17.85,
    "paper_h": 5.5,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-shore-figures-medium-frame-white",
@@ -23874,7 +25071,7 @@
    "paper_w": 17.85,
    "paper_h": 5.5,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-full",
@@ -23888,7 +25085,7 @@
    "paper_w": 9.94,
    "paper_h": 20.51,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-full-frame-black",
@@ -23902,7 +25099,7 @@
    "paper_w": 9.94,
    "paper_h": 20.51,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-full-frame-natural",
@@ -23916,7 +25113,7 @@
    "paper_w": 9.94,
    "paper_h": 20.51,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-full-frame-white",
@@ -23930,7 +25127,7 @@
    "paper_w": 9.94,
    "paper_h": 20.51,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-medium",
@@ -23944,7 +25141,7 @@
    "paper_w": 7.52,
    "paper_h": 15.44,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-medium-frame-black",
@@ -23958,7 +25155,7 @@
    "paper_w": 7.52,
    "paper_h": 15.44,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-medium-frame-natural",
@@ -23972,7 +25169,7 @@
    "paper_w": 7.52,
    "paper_h": 15.44,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-medium-frame-white",
@@ -23986,7 +25183,7 @@
    "paper_w": 7.52,
    "paper_h": 15.44,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-small",
@@ -24000,7 +25197,7 @@
    "paper_w": 5.09,
    "paper_h": 10.38,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-small-frame-black",
@@ -24014,7 +25211,7 @@
    "paper_w": 5.09,
    "paper_h": 10.38,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-small-frame-natural",
@@ -24028,7 +25225,7 @@
    "paper_w": 5.09,
    "paper_h": 10.38,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-sunset-ridge-strips-small-frame-white",
@@ -24042,7 +25239,7 @@
    "paper_w": 5.09,
    "paper_h": 10.38,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-full",
@@ -24056,7 +25253,7 @@
    "paper_w": 21.94,
    "paper_h": 9.16,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-full-frame-black",
@@ -24070,7 +25267,7 @@
    "paper_w": 21.94,
    "paper_h": 9.16,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-full-frame-natural",
@@ -24084,7 +25281,7 @@
    "paper_w": 21.94,
    "paper_h": 9.16,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-full-frame-white",
@@ -24098,7 +25295,7 @@
    "paper_w": 21.94,
    "paper_h": 9.16,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-medium",
@@ -24112,7 +25309,7 @@
    "paper_w": 16.52,
    "paper_h": 6.93,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-medium-frame-black",
@@ -24126,7 +25323,7 @@
    "paper_w": 16.52,
    "paper_h": 6.93,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-medium-frame-natural",
@@ -24140,7 +25337,7 @@
    "paper_w": 16.52,
    "paper_h": 6.93,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-medium-frame-white",
@@ -24154,7 +25351,7 @@
    "paper_w": 16.52,
    "paper_h": 6.93,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-small",
@@ -24168,7 +25365,7 @@
    "paper_w": 11.09,
    "paper_h": 4.7,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-small-frame-black",
@@ -24182,7 +25379,7 @@
    "paper_w": 11.09,
    "paper_h": 4.7,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-small-frame-natural",
@@ -24196,7 +25393,7 @@
    "paper_w": 11.09,
    "paper_h": 4.7,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-older-work-yakes-todd-dickerson-small-frame-white",
@@ -24210,7 +25407,7 @@
    "paper_w": 11.09,
    "paper_h": 4.7,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "id": "print-painting-couple-in-color-full",
@@ -25450,13 +26647,13 @@
    "title": "Sunrise on Rainier with Eagle — Large print",
    "amount": "85.00",
    "currency": "USD",
-   "sku": "5M144M8S25.73X7.36",
-   "image_w": 25.45,
-   "image_h": 7.1067,
-   "paper_w": 25.73,
-   "paper_h": 7.36,
+   "sku": "5M144M8S25.63X7.35",
+   "image_w": 25.3667,
+   "image_h": 7.0967,
+   "paper_w": 25.63,
+   "paper_h": 7.35,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "id": "print-painting-portrait-with-hat-full-frame-black",
@@ -25464,13 +26661,13 @@
    "title": "Sunrise on Rainier with Eagle — Large print — Black frame",
    "amount": "160.00",
    "currency": "USD",
-   "sku": "5M144M8S25DD73X7DD36F1S28DD73X10DD36J1S25DD73X7DD36G1",
-   "image_w": 25.45,
-   "image_h": 7.1067,
-   "paper_w": 25.73,
-   "paper_h": 7.36,
+   "sku": "5M144M8S25DD63X7DD35F1S28DD63X10DD35J1S25DD63X7DD35G1",
+   "image_w": 25.3667,
+   "image_h": 7.0967,
+   "paper_w": 25.63,
+   "paper_h": 7.35,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "id": "print-painting-portrait-with-hat-full-frame-natural",
@@ -25478,13 +26675,13 @@
    "title": "Sunrise on Rainier with Eagle — Large print — Natural wood frame",
    "amount": "177.00",
    "currency": "USD",
-   "sku": "5M144M8S25DD73X7DD36F7S28DD73X10DD36J1S25DD73X7DD36G1",
-   "image_w": 25.45,
-   "image_h": 7.1067,
-   "paper_w": 25.73,
-   "paper_h": 7.36,
+   "sku": "5M144M8S25DD63X7DD35F7S28DD63X10DD35J1S25DD63X7DD35G1",
+   "image_w": 25.3667,
+   "image_h": 7.0967,
+   "paper_w": 25.63,
+   "paper_h": 7.35,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "id": "print-painting-portrait-with-hat-full-frame-white",
@@ -25492,13 +26689,13 @@
    "title": "Sunrise on Rainier with Eagle — Large print — White frame",
    "amount": "160.00",
    "currency": "USD",
-   "sku": "5M144M8S25DD73X7DD36F2S28DD73X10DD36J1S25DD73X7DD36G1",
-   "image_w": 25.45,
-   "image_h": 7.1067,
-   "paper_w": 25.73,
-   "paper_h": 7.36,
+   "sku": "5M144M8S25DD63X7DD35F2S28DD63X10DD35J1S25DD63X7DD35G1",
+   "image_w": 25.3667,
+   "image_h": 7.0967,
+   "paper_w": 25.63,
+   "paper_h": 7.35,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "id": "print-painting-portrait-with-hat-medium",
@@ -25506,13 +26703,13 @@
    "title": "Sunrise on Rainier with Eagle — Medium print",
    "amount": "65.00",
    "currency": "USD",
-   "sku": "5M144M8S19.36X5.58",
-   "image_w": 19.0767,
-   "image_h": 5.3267,
-   "paper_w": 19.36,
-   "paper_h": 5.58,
+   "sku": "5M144M8S19.28X5.57",
+   "image_w": 19.0067,
+   "image_h": 5.3167,
+   "paper_w": 19.28,
+   "paper_h": 5.57,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "id": "print-painting-portrait-with-hat-medium-frame-black",
@@ -25520,13 +26717,13 @@
    "title": "Sunrise on Rainier with Eagle — Medium print — Black frame",
    "amount": "121.00",
    "currency": "USD",
-   "sku": "5M144M8S19DD36X5DD58F1S22DD36X8DD58J1S19DD36X5DD58G1",
-   "image_w": 19.0767,
-   "image_h": 5.3267,
-   "paper_w": 19.36,
-   "paper_h": 5.58,
+   "sku": "5M144M8S19DD28X5DD57F1S22DD28X8DD57J1S19DD28X5DD57G1",
+   "image_w": 19.0067,
+   "image_h": 5.3167,
+   "paper_w": 19.28,
+   "paper_h": 5.57,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "id": "print-painting-portrait-with-hat-medium-frame-natural",
@@ -25534,13 +26731,13 @@
    "title": "Sunrise on Rainier with Eagle — Medium print — Natural wood frame",
    "amount": "134.00",
    "currency": "USD",
-   "sku": "5M144M8S19DD36X5DD58F7S22DD36X8DD58J1S19DD36X5DD58G1",
-   "image_w": 19.0767,
-   "image_h": 5.3267,
-   "paper_w": 19.36,
-   "paper_h": 5.58,
+   "sku": "5M144M8S19DD28X5DD57F7S22DD28X8DD57J1S19DD28X5DD57G1",
+   "image_w": 19.0067,
+   "image_h": 5.3167,
+   "paper_w": 19.28,
+   "paper_h": 5.57,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "id": "print-painting-portrait-with-hat-medium-frame-white",
@@ -25548,13 +26745,13 @@
    "title": "Sunrise on Rainier with Eagle — Medium print — White frame",
    "amount": "121.00",
    "currency": "USD",
-   "sku": "5M144M8S19DD36X5DD58F2S22DD36X8DD58J1S19DD36X5DD58G1",
-   "image_w": 19.0767,
-   "image_h": 5.3267,
-   "paper_w": 19.36,
-   "paper_h": 5.58,
+   "sku": "5M144M8S19DD28X5DD57F2S22DD28X8DD57J1S19DD28X5DD57G1",
+   "image_w": 19.0067,
+   "image_h": 5.3167,
+   "paper_w": 19.28,
+   "paper_h": 5.57,
    "enabled": 1,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "id": "print-painting-red-horizon-full",
@@ -36886,9 +38083,9 @@
   },
   {
    "product_id": "archived-painting-22",
-   "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "status": "available",
+   "note": "catalog-admin",
+   "updated_at": "2026-10-15T05:20:08.303Z"
   },
   {
    "product_id": "archived-painting-226",
@@ -38219,122 +39416,500 @@
   {
    "product_id": "older-work-ammous-livera",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-ammous-livera-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-ammous-livera-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-beach-sunsets",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-beach-sunsets-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-beach-sunsets-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-beach-sunsets-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-bitcoin-voices",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-bitcoin-voices-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-bitcoin-voices-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-bitcoin-voices-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-bitcoin-voices-original-4",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-fernandez-moran-pysh",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-fernandez-moran-pysh-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-fernandez-moran-pysh-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-fernandez-moran-pysh-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-figen-pnut-swoll",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-figen-pnut-swoll-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-figen-pnut-swoll-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-figen-pnut-swoll-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-forest-triptych",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-forest-triptych-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-forest-triptych-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-forest-triptych-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-hayek-stark-gomez-el-bawab",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-hayek-stark-gomez-el-bawab-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-hayek-stark-gomez-el-bawab-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-hayek-stark-gomez-el-bawab-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-hayek-stark-gomez-el-bawab-original-4",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-hummingbird-feeder-190",
-   "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-lake-hillside-color-wheel",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-lake-hillside-color-wheel-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-lake-hillside-color-wheel-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-lake-hillside-color-wheel-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-legend-of-billy-buff",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-legend-of-billy-buff-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-legend-of-billy-buff-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-mountain-layers",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-mountain-layers-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-mountain-layers-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-mountain-layers-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-mountain-layers-original-4",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-nakamoto-hayek",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-nakamoto-hayek-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-nakamoto-hayek-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-pitchers",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-pitchers-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-pitchers-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-portraits-319-329",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-portraits-319-329-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-portraits-319-329-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-portraits-319-329-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-portraits-319-329-original-4",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-provibes-sandwiches",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-provibes-sandwiches-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-provibes-sandwiches-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-ridge-strips-unindexed",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-ridge-strips-unindexed-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-ridge-strips-unindexed-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-ridge-strips-unindexed-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-ridge-strips-unindexed-original-4",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-ridge-strips-unindexed-original-5",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-ridge-strips-unindexed-original-6",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-ridge-strips-unindexed-original-7",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-rochard-martinez",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-rochard-martinez-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-rochard-martinez-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-rochard-martinez-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-shore-figures",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-shore-figures-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-shore-figures-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-shore-figures-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-sunset-ridge-strips",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-sunset-ridge-strips-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-sunset-ridge-strips-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-sunset-ridge-strips-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-sunset-ridge-strips-original-4",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-sunset-ridge-strips-original-5",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-sunset-ridge-strips-original-6",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "older-work-yakes-todd-dickerson",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-yakes-todd-dickerson-original-1",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-yakes-todd-dickerson-original-2",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
+  },
+  {
+   "product_id": "older-work-yakes-todd-dickerson-original-3",
+   "status": "available",
+   "note": "repo sync",
+   "updated_at": "2026-10-15T05:55:33.296Z"
   },
   {
    "product_id": "painting-chef-in-white",
@@ -38435,8 +40010,8 @@
   {
    "product_id": "painting-portrait-with-hat",
    "status": "not-for-sale",
-   "note": null,
-   "updated_at": "2026-10-15T04:03:50.728Z"
+   "note": "repo sync",
+   "updated_at": "2026-10-15T06:55:56.129Z"
   },
   {
    "product_id": "painting-red-horizon",
