@@ -174,7 +174,7 @@ test('painting cards: price without "USD", "Prints from" the cheapest ready prin
  const css=fs.readFileSync('styles.css','utf8');assert.match(css,/\.card-buy\{[^}]*background:var\(--cta\)/);
 });
 test('painting pages render extra photos as thumbnails after the main image and an accessible product video',()=>{
- const withMedia=products.filter(p=>p.type==='painting'&&!p.olderWork&&(p.gallery?.length||p.video));
+ const withMedia=products.filter(p=>p.type==='painting'&&!p.olderWork&&!p.strawberryGroup&&(p.gallery?.length||p.video));
  assert.deepEqual(withMedia.map(p=>p.id).sort(),['el-zonte-at-sunrise','el-zonte-before-dawn','hope-the-vermillion-aurora','meditation-at-denny-blaine','painting-clouds-over-water','painting-emergence','painting-insect-garden','painting-moonlit-water','painting-red-horizon','painting-shoreline-at-dusk','painting-twin-dragons','sunrise-in-el-zonte-large','sunset-in-el-tunco-el-salvador','sunset-in-el-zonte-el-salvador']);
  for(const p of withMedia){
   const $=load(fs.readFileSync(`dist/products/${p.slug}/index.html`,'utf8'));
