@@ -3,6 +3,7 @@ import Layout from '../../layouts/BookGalleryLayout.astro';
 import manifest from '../../../catalog/book-galleries.json';
 import {archivePaintings,archivePreview} from '../../../catalog/archive-products.mjs';
 import {olderWorkGroups,olderWorkPreview} from '../../../catalog/older-work-products.mjs';
+import {strawberryPaintings} from '../../../catalog/strawberry-point-products.mjs';
 const olderWorkCount=olderWorkGroups.reduce((n,g)=>n+g.members.length,0);
 import {byId} from '../../../catalog/catalog.mjs';
 import {config,papers,printOptions} from '../../../catalog/prints.mjs';
@@ -39,6 +40,7 @@ const bookTitles=Object.fromEntries(manifest.books.map(book=>[book.id,book.title
         </li>;
       })}
       <li class="book-gallery-card" data-product="/gallery/archived/" data-caption={`${archivePaintings.length} paintings from the studio archive`}><a href="/gallery/archived/"><img src={archivePreview(archivePaintings[0],480)} alt="Archived Paintings by TJ Murphy" loading="lazy" decoding="async"/><h3>Archived Paintings</h3><p>{archivePaintings.length} works · From the studio archive</p></a></li>
+      <li class="book-gallery-card" data-product="/gallery/strawberry-point/" data-caption={`${strawberryPaintings.length} paintings from a hike on the Olympic Peninsula`}><a href="/gallery/strawberry-point/"><img src={`${strawberryPaintings[0].display.base}-480.webp`} alt="Strawberry Point Hiking Trip paintings by TJ Murphy" loading="lazy" decoding="async"/><h3>Strawberry Point Hiking Trip</h3><p>{strawberryPaintings.length} paintings · Olympic Peninsula</p></a></li>
       <li class="book-gallery-card" data-product="/gallery/older-work/" data-caption={`${olderWorkCount} older paintings from the studio`}><a href="/gallery/older-work/"><img src={olderWorkPreview(olderWorkGroups[0],480)} alt="Older Work by TJ Murphy" loading="lazy" decoding="async"/><h3>Older Work</h3><p>{olderWorkCount} works · From the studio</p></a></li>
     </ul>
   </section>
