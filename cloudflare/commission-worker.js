@@ -12,6 +12,7 @@ import { inventoryStatus } from './inventory-api.mjs';
 import { originalStatusApi } from './original-status.mjs';
 import { runOriginalInventorySync } from './etsy-original-sync.mjs';
 import { catalogVersion } from './checkout-catalog.mjs';
+import { applyCatalogOverlay, catalogSource } from './catalog-overlay.mjs';
 export { SalesLedger } from './sales-ledger.mjs';
 export { BitcoinOrder } from './bitcoin-order.mjs';
 import { bitcoinCheckout, bitcoinWebhook } from './bitcoin-checkout.mjs';
@@ -27,11 +28,14 @@ import { quickbooksApi } from './quickbooks-api.mjs';
 import { testimonialsApi, purgeTestimonialRateLimits, purgeVideos as purgeTestimonialVideos } from './testimonials.mjs';
 export default {
   async scheduled(event,env,ctx) {
+    await applyCatalogOverlay(env);
     if (event?.cron === '*/5 * * * *') { ctx.waitUntil(runOriginalInventorySync(env).catch(()=>console.error('Etsy original sync failed'))); return; }
     ctx.waitUntil(purgeCommissionReferences(env)); ctx.waitUntil(purgeTestimonialRateLimits(env).catch(()=>console.error('Testimonial rate-limit cleanup failed'))); ctx.waitUntil(purgeTestimonialVideos(env).catch(()=>console.error('Testimonial video cleanup failed'))); ctx.waitUntil(markAtCostOrders(env).catch(()=>console.error('QuickBooks at-cost marker backfill failed')));
   },
   async fetch(request, env, ctx) {
     const path = new URL(request.url).pathname;
+    // Live catalog (D1) over the built catalog; built values if D1 is unavailable.
+    await applyCatalogOverlay(env);
     if (path.startsWith('/testimonials/api/')) return testimonialsApi(request,env,ctx);
     if (path.startsWith('/buffer/')) return bufferApi(request,env);
     if (path.startsWith('/etsy/listings/')) return etsyListings(request,env);
@@ -46,7 +50,7 @@ export default {
     if (path === '/inventory/status') return inventoryStatus(request,env);
     if (path === '/checkout/bitcoin/webhook') return bitcoinWebhook(request,env);
     if (path.startsWith('/checkout/bitcoin/')) return bitcoinCheckout(request,env);
-    if (path === '/checkout/health' && request.method === 'GET') return Response.json({catalogVersion,mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE || null},{headers:{'Cache-Control':'no-store'}});
+    if (path === '/checkout/health' && request.method === 'GET') return Response.json({catalogVersion,mode:env.PAYPAL_MODE,enabled:env.PAYPAL_CHECKOUT_ENABLED==='true',release:env.CHECKOUT_RELEASE || null,catalogSource:catalogSource()},{headers:{'Cache-Control':'no-store'}});
     if (path === '/checkout/sales-maintenance') return salesMaintenance(request,env);
     if (path === '/checkout/readiness') return checkoutReadiness(request,env);
     if (path === "/paypal-ipn") {

@@ -12,6 +12,10 @@
 // (a static/_headers rule would also stamp it on 404s for those paths).
 import { APPLE_PAY_DOMAIN_ASSOCIATION } from './apple-pay-domain-association.mjs';
 import { renamedProductPath } from './product-renames.mjs';
+import { catalogResponse, CATALOG_PATHS } from './catalog-pages.mjs';
+import { catalogAdmin } from './catalog-admin.mjs';
+// Catalog pages and the catalog admin run the Worker first (see worker/catalog-pages.mjs).
+export const CATALOG_WORKER_FIRST = ['/', '/products/*', '/gallery', '/gallery/*', '/catalog/products.json', '/catalog-admin', '/catalog-admin/*'];
 
 export const LEGACY_HOSTS = new Set(['vermillionaurora.com', 'www.vermillionaurora.com']);
 export const KEEP_ON_LEGACY = ['/print-editions/', '/print-samples/', '/print-masters/', '/print-test/', '/prints/', '/catalog/'];
@@ -56,7 +60,7 @@ export async function applePayAssociation(fetcher = fetch) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const redirect = hostRedirect(request, env);
     if (redirect) return redirect;
     const url = new URL(request.url);
@@ -70,6 +74,11 @@ export default {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ error: 'Original inventory is temporarily unavailable.' }, { status: 503 });
     }
     if (url.pathname === APPLE_PAY_ASSOCIATION_PATH) return applePayAssociation();
+    // Live catalog (tjm-catalog D1): owner admin, and catalog pages patched at request time (built page on any D1 error).
+    if (/^\/catalog-admin(?:\/|$)/.test(url.pathname)) return catalogAdmin(request, env, ctx);
+    if (CATALOG_PATHS(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
+      try { return await catalogResponse(request, env, ctx); } catch { return env.ASSETS.fetch(request); }
+    }
     return env.ASSETS.fetch(request);
   },
 };
