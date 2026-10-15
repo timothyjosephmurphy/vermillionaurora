@@ -4,6 +4,7 @@ import {commissionPrivacy,purgeCommissionReferences} from './commission-privacy.
 import {cartCheckout} from './cart-checkout.mjs';
 import {squareWebhook} from './square-webhook.mjs';
 import {printApi} from './print-api.mjs';
+import {ownerPrintOrder} from './owner-print-order.mjs';
 import {etsyConnection} from './etsy-connection.mjs';
 import {etsyListings} from './etsy-listings.mjs';
 import {bufferApi} from './buffer-api.mjs';
@@ -42,10 +43,11 @@ export default {
     if (path === '/commission-privacy') return commissionPrivacy(request,env);
     if (path.startsWith('/checkout/prints/')) return printApi(request,env);
     if (path === '/checkout/print-codes/issue') return printCodesApi(request,env);
+    if (path === '/checkout/owner/print-order') return ownerPrintOrder(request,env);
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path === '/checkout/square/webhook') return squareWebhook(request,env);
     if (path === '/inventory/originals') return originalStatusApi(request,env);
-    if (path === '/inventory/status') return inventoryStatus(request,env);
+    if (path === '/inventory/status') return inventoryStatus(request,env,ctx);
     if (path === '/checkout/bitcoin/webhook') return bitcoinWebhook(request,env);
     if (path.startsWith('/checkout/bitcoin/')) return bitcoinCheckout(request,env);
     if (path === '/checkout/health' && request.method === 'GET') return Response.json({catalogVersion,mode:env.CHECKOUT_MODE,release:env.CHECKOUT_RELEASE || null,catalogSource:catalogSource()},{headers:{'Cache-Control':'no-store'}});

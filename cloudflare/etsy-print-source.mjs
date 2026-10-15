@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="ef1cdb5b20229537761f";
+export const sourcePrintVersion="e21bc9fa901411298494";
 export default [
   {
     "id": "warszawska-syrenka",
@@ -36,7 +36,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "280.00",
+            "price": "284.00",
             "sku": "5M144M8S16DD86X23DD98F1S19DD86X26DD98J1S16DD86X23DD98G1",
             "outerSize": {
               "width": 19.86,
@@ -49,7 +49,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "280.00",
+            "price": "284.00",
             "sku": "5M144M8S16DD86X23DD98F2S19DD86X26DD98J1S16DD86X23DD98G1",
             "outerSize": {
               "width": 19.86,
@@ -62,7 +62,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "299.00",
+            "price": "305.00",
             "sku": "5M144M8S16DD86X23DD98F7S19DD86X26DD98J1S16DD86X23DD98G1",
             "outerSize": {
               "width": 19.86,
@@ -88,7 +88,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "172.00",
+            "price": "175.00",
             "sku": "5M144M8S12DD71X18DD05F1S15DD71X21DD05J1S12DD71X18DD05G1",
             "outerSize": {
               "width": 15.71,
@@ -101,7 +101,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "172.00",
+            "price": "175.00",
             "sku": "5M144M8S12DD71X18DD05F2S15DD71X21DD05J1S12DD71X18DD05G1",
             "outerSize": {
               "width": 15.71,
@@ -114,7 +114,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "188.00",
+            "price": "192.00",
             "sku": "5M144M8S12DD71X18DD05F7S15DD71X21DD05J1S12DD71X18DD05G1",
             "outerSize": {
               "width": 15.71,
@@ -140,7 +140,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "95.00",
+            "price": "97.00",
             "sku": "5M144M8S8DD55X12DD11F1S11DD55X15DD11J1S8DD55X12DD11G1",
             "outerSize": {
               "width": 11.55,
@@ -153,7 +153,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "95.00",
+            "price": "97.00",
             "sku": "5M144M8S8DD55X12DD11F2S11DD55X15DD11J1S8DD55X12DD11G1",
             "outerSize": {
               "width": 11.55,
@@ -166,7 +166,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "107.00",
+            "price": "110.00",
             "sku": "5M144M8S8DD55X12DD11F7S11DD55X15DD11J1S8DD55X12DD11G1",
             "outerSize": {
               "width": 11.55,
@@ -216,7 +216,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "265.00",
+            "price": "268.00",
             "sku": "5M144M8S16DD3X23DD18F1S19DD3X26DD18J1S16DD3X23DD18G1",
             "outerSize": {
               "width": 19.3,
@@ -229,7 +229,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "265.00",
+            "price": "268.00",
             "sku": "5M144M8S16DD3X23DD18F2S19DD3X26DD18J1S16DD3X23DD18G1",
             "outerSize": {
               "width": 19.3,
@@ -242,7 +242,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "284.00",
+            "price": "289.00",
             "sku": "5M144M8S16DD3X23DD18F7S19DD3X26DD18J1S16DD3X23DD18G1",
             "outerSize": {
               "width": 19.3,
@@ -268,7 +268,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "164.00",
+            "price": "167.00",
             "sku": "5M144M8S12DD29X17DD45F1S15DD29X20DD45J1S12DD29X17DD45G1",
             "outerSize": {
               "width": 15.29,
@@ -281,7 +281,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "164.00",
+            "price": "167.00",
             "sku": "5M144M8S12DD29X17DD45F2S15DD29X20DD45J1S12DD29X17DD45G1",
             "outerSize": {
               "width": 15.29,
@@ -294,7 +294,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "179.00",
+            "price": "183.00",
             "sku": "5M144M8S12DD29X17DD45F7S15DD29X20DD45J1S12DD29X17DD45G1",
             "outerSize": {
               "width": 15.29,
@@ -320,7 +320,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "88.00",
+            "price": "90.00",
             "sku": "5M144M8S8DD27X11DD71F1S11DD27X14DD71J1S8DD27X11DD71G1",
             "outerSize": {
               "width": 11.27,
@@ -333,7 +333,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "88.00",
+            "price": "90.00",
             "sku": "5M144M8S8DD27X11DD71F2S11DD27X14DD71J1S8DD27X11DD71G1",
             "outerSize": {
               "width": 11.27,
@@ -346,7 +346,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "100.00",
+            "price": "103.00",
             "sku": "5M144M8S8DD27X11DD71F7S11DD27X14DD71J1S8DD27X11DD71G1",
             "outerSize": {
               "width": 11.27,
@@ -394,7 +394,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "223.00",
+            "price": "226.00",
             "sku": "5M144M8S12DD63X23DD94F1S15DD63X26DD94J1S12DD63X23DD94G1",
             "outerSize": {
               "width": 15.63,
@@ -407,7 +407,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "223.00",
+            "price": "226.00",
             "sku": "5M144M8S12DD63X23DD94F2S15DD63X26DD94J1S12DD63X23DD94G1",
             "outerSize": {
               "width": 15.63,
@@ -420,7 +420,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "241.00",
+            "price": "245.00",
             "sku": "5M144M8S12DD63X23DD94F7S15DD63X26DD94J1S12DD63X23DD94G1",
             "outerSize": {
               "width": 15.63,
@@ -446,7 +446,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "136.00",
+            "price": "138.00",
             "sku": "5M144M8S9DD53X18DD01F1S12DD53X21DD01J1S9DD53X18DD01G1",
             "outerSize": {
               "width": 12.53,
@@ -459,7 +459,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "136.00",
+            "price": "138.00",
             "sku": "5M144M8S9DD53X18DD01F2S12DD53X21DD01J1S9DD53X18DD01G1",
             "outerSize": {
               "width": 12.53,
@@ -472,7 +472,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "150.00",
+            "price": "154.00",
             "sku": "5M144M8S9DD53X18DD01F7S12DD53X21DD01J1S9DD53X18DD01G1",
             "outerSize": {
               "width": 12.53,
@@ -498,7 +498,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "84.00",
+            "price": "86.00",
             "sku": "5M144M8S6DD44X12DD09F1S9DD44X15DD09J1S6DD44X12DD09G1",
             "outerSize": {
               "width": 9.44,
@@ -511,7 +511,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "84.00",
+            "price": "86.00",
             "sku": "5M144M8S6DD44X12DD09F2S9DD44X15DD09J1S6DD44X12DD09G1",
             "outerSize": {
               "width": 9.44,
@@ -524,7 +524,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "95.00",
+            "price": "97.00",
             "sku": "5M144M8S6DD44X12DD09F7S9DD44X15DD09J1S6DD44X12DD09G1",
             "outerSize": {
               "width": 9.44,
@@ -572,7 +572,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "226.00",
+            "price": "230.00",
             "sku": "5M144M8S25DD73X12DD3F1S28DD73X15DD3J1S25DD73X12DD3G1",
             "outerSize": {
               "width": 28.73,
@@ -585,7 +585,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "226.00",
+            "price": "230.00",
             "sku": "5M144M8S25DD73X12DD3F2S28DD73X15DD3J1S25DD73X12DD3G1",
             "outerSize": {
               "width": 28.73,
@@ -598,7 +598,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "245.00",
+            "price": "249.00",
             "sku": "5M144M8S25DD73X12DD3F7S28DD73X15DD3J1S25DD73X12DD3G1",
             "outerSize": {
               "width": 28.73,
@@ -624,7 +624,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "144.00",
+            "price": "147.00",
             "sku": "5M144M8S19DD36X9DD28F1S22DD36X12DD28J1S19DD36X9DD28G1",
             "outerSize": {
               "width": 22.36,
@@ -637,7 +637,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "144.00",
+            "price": "147.00",
             "sku": "5M144M8S19DD36X9DD28F2S22DD36X12DD28J1S19DD36X9DD28G1",
             "outerSize": {
               "width": 22.36,
@@ -650,7 +650,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "159.00",
+            "price": "162.00",
             "sku": "5M144M8S19DD36X9DD28F7S22DD36X12DD28J1S19DD36X9DD28G1",
             "outerSize": {
               "width": 22.36,
@@ -676,7 +676,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "91.00",
+            "price": "93.00",
             "sku": "5M144M8S12DD99X6DD27F1S15DD99X9DD27J1S12DD99X6DD27G1",
             "outerSize": {
               "width": 15.99,
@@ -689,7 +689,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "91.00",
+            "price": "93.00",
             "sku": "5M144M8S12DD99X6DD27F2S15DD99X9DD27J1S12DD99X6DD27G1",
             "outerSize": {
               "width": 15.99,
@@ -702,7 +702,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "102.00",
+            "price": "105.00",
             "sku": "5M144M8S12DD99X6DD27F7S15DD99X9DD27J1S12DD99X6DD27G1",
             "outerSize": {
               "width": 15.99,
@@ -750,7 +750,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "215.00",
+            "price": "218.00",
             "sku": "5M144M8S12DD24X23DD85F1S15DD24X26DD85J1S12DD24X23DD85G1",
             "outerSize": {
               "width": 15.24,
@@ -763,7 +763,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "215.00",
+            "price": "218.00",
             "sku": "5M144M8S12DD24X23DD85F2S15DD24X26DD85J1S12DD24X23DD85G1",
             "outerSize": {
               "width": 15.24,
@@ -776,7 +776,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "233.00",
+            "price": "238.00",
             "sku": "5M144M8S12DD24X23DD85F7S15DD24X26DD85J1S12DD24X23DD85G1",
             "outerSize": {
               "width": 15.24,
@@ -802,7 +802,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "135.00",
+            "price": "138.00",
             "sku": "5M144M8S9DD24X17DD95F1S12DD24X20DD95J1S9DD24X17DD95G1",
             "outerSize": {
               "width": 12.24,
@@ -815,7 +815,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "135.00",
+            "price": "138.00",
             "sku": "5M144M8S9DD24X17DD95F2S12DD24X20DD95J1S9DD24X17DD95G1",
             "outerSize": {
               "width": 12.24,
@@ -828,7 +828,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "150.00",
+            "price": "153.00",
             "sku": "5M144M8S9DD24X17DD95F7S12DD24X20DD95J1S9DD24X17DD95G1",
             "outerSize": {
               "width": 12.24,
@@ -854,7 +854,7 @@ export default [
           {
             "key": "black",
             "label": "Black",
-            "price": "84.00",
+            "price": "86.00",
             "sku": "5M144M8S6DD24X12DD05F1S9DD24X15DD05J1S6DD24X12DD05G1",
             "outerSize": {
               "width": 9.24,
@@ -867,7 +867,7 @@ export default [
           {
             "key": "white",
             "label": "White",
-            "price": "84.00",
+            "price": "86.00",
             "sku": "5M144M8S6DD24X12DD05F2S9DD24X15DD05J1S6DD24X12DD05G1",
             "outerSize": {
               "width": 9.24,
@@ -880,7 +880,7 @@ export default [
           {
             "key": "natural",
             "label": "Natural wood",
-            "price": "94.00",
+            "price": "97.00",
             "sku": "5M144M8S6DD24X12DD05F7S9DD24X15DD05J1S6DD24X12DD05G1",
             "outerSize": {
               "width": 9.24,
