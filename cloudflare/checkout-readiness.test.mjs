@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { checkoutReadiness } from './checkout-readiness.mjs';
 
 test('production readiness requires authentication and only reads provider configuration',async t=>{
-  const env={CHECKOUT_AUDIT_TOKEN:'audit-secret',PAYPAL_MODE:'live',PAYPAL_CHECKOUT_ENABLED:'false',PAYPAL_CLIENT_ID:'client',PAYPAL_CLIENT_SECRET:'paypal-secret',PAYPAL_WEBHOOK_ID:'hook',PAYPAL_MERCHANT_ID:'8DYAVLDCWDESE',STRIPE_SECRET_KEY:'sk_live_fake',SHIPPO_TOKEN:'shippo_live_fake',GITHUB_TOKEN:'github-secret',PAINTING_STOCK:{},SALES_LEDGER:{},SALES_ARCHIVE:{},SHIP_FROM_STREET:'123 private street'};
+  const env={CHECKOUT_AUDIT_TOKEN:'audit-secret',CHECKOUT_MODE:'live',PAYPAL_CLIENT_ID:'client',PAYPAL_CLIENT_SECRET:'paypal-secret',PAYPAL_WEBHOOK_ID:'hook',PAYPAL_MERCHANT_ID:'8DYAVLDCWDESE',STRIPE_SECRET_KEY:'sk_live_fake',SHIPPO_TOKEN:'shippo_live_fake',GITHUB_TOKEN:'github-secret',PAINTING_STOCK:{},SALES_LEDGER:{},SALES_ARCHIVE:{},SHIP_FROM_STREET:'123 private street'};
   let applePayCalls=[],applePayAllowed=true,calls=0,squareCardProcessing=true,squareWebhookEnabled=true,bitcoinInvoiceAllowed=true;
   t.mock.method(globalThis,'fetch',async(url,options)=>{
     calls++;
@@ -36,19 +36,19 @@ test('production readiness requires authentication and only reads provider confi
   const deniedBody=await bitcoinDenied.text();assert.match(deniedBody,/BTCPay API 403/);assert.ok(!deniedBody.includes('btcpay-secret'));
   bitcoinInvoiceAllowed=true;
   const testKey=await checkoutReadiness(request(),{...env,STRIPE_SECRET_KEY:'sk_test_fake'});assert.equal(testKey.status,503);
-  const pilot={...env,CHECKOUT_PILOT_ENABLED:'true',SHIP_FROM_PHONE:'+12065550100',PAYPAL_CHECKOUT_SLUGS:'painting-portrait-in-green',SHIPPO_CARRIER_ALLOWLIST:'UPS',SHIPPO_AUTO_LABEL_ENABLED:'true',
+  const pilot={...env,CHECKOUT_PILOT_ENABLED:'true',SHIP_FROM_PHONE:'+12065550100',CHECKOUT_PILOT_SLUGS:'painting-portrait-in-green',SHIPPO_CARRIER_ALLOWLIST:'UPS',SHIPPO_AUTO_LABEL_ENABLED:'true',
     GOOGLE_CLIENT_ID:'client',GOOGLE_CLIENT_SECRET:'google-secret',GOOGLE_REFRESH_TOKEN:'refresh',PAINTING_STOCK:{getByName:()=>({status:async()=>'available'})}};
   const verified=await checkoutReadiness(request(),pilot);
   assert.equal(verified.status,200);
   const audit=await verified.json();
   assert.equal(audit.checks.sellerEmail,true);assert.equal(audit.checks.insuredQuote,true);
   assert.deepEqual(audit.checks.pilotQuote,{base:'200.00',shipping:'6.50',tax:'0.00',total:'206.50',carrier:'UPS',insurance:'200.00',insuranceFee:'1.50'});
-  const cartPilot={...pilot,PAYPAL_CHECKOUT_SLUGS:'painting-portrait-in-green,painting-portrait-in-gold'};
+  const cartPilot={...pilot,CHECKOUT_PILOT_SLUGS:'painting-portrait-in-green,painting-portrait-in-gold'};
   assert.equal((await checkoutReadiness(request(),cartPilot)).status,200);
-  assert.equal((await checkoutReadiness(request(),{...cartPilot,PAYPAL_CHECKOUT_SLUGS:cartPilot.PAYPAL_CHECKOUT_SLUGS+',el-zonte-at-sunrise'})).status,503);
+  assert.equal((await checkoutReadiness(request(),{...cartPilot,CHECKOUT_PILOT_SLUGS:cartPilot.CHECKOUT_PILOT_SLUGS+',el-zonte-at-sunrise'})).status,503);
   const completed=await checkoutReadiness(request(),{...pilot,PAINTING_STOCK:{getByName:()=>({status:async()=>'sold'})}});
   assert.equal(completed.status,200);assert.equal((await completed.json()).checks.completedPilot,true);
-  assert.equal((await checkoutReadiness(request(),{...pilot,PAYPAL_CHECKOUT_SLUGS:''})).status,503);
+  assert.equal((await checkoutReadiness(request(),{...pilot,CHECKOUT_PILOT_SLUGS:''})).status,503);
   assert.equal((await checkoutReadiness(request(),{...pilot,GOOGLE_REFRESH_TOKEN:''})).status,503);
   const square={...env,SQUARE_CHECKOUT_ENABLED:'true',SQUARE_CHECKOUT_ALL:'true',SQUARE_MODE:'live',
     SQUARE_ACCESS_TOKEN:'square-secret',SQUARE_APPLICATION_ID:'sq0idp-APP',SQUARE_LOCATION_ID:'LOCATION',SQUARE_WEBHOOK_SIGNATURE_KEY:'square-hook-secret',

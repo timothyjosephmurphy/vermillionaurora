@@ -7,7 +7,7 @@ import {finerworksRequest} from '../finerworks-api.mjs';
 import prints from '../print-catalog.mjs';
 const ids=['print-painting-portrait-in-green-small','print-painting-portrait-in-gold-small'];
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
-const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),PAYPAL_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
+const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
 const originalPrints=structuredClone(prints);
 // Explicit sample fixtures keep the historical security gates covered after
 // Chase and Dorian graduate to normal full-resolution editions.
@@ -44,7 +44,7 @@ beforeEach(()=>{
 afterEach(async()=>{for(const o of objects)await runInDurableObject(o,(_,ctx)=>ctx.storage.deleteAlarm());vi.unstubAllGlobals();for(const id of Object.keys(originalPrints))prints[id]=structuredClone(originalPrints[id]);});
 const inspect=o=>runInDurableObject(o,i=>i.read());
 async function setup(overrides={},selection=ids) {
-  const config={...settings,...overrides};activeMode=config.PAYPAL_MODE;
+  const config={...settings,...overrides};activeMode=config.CHECKOUT_MODE;
   const orderId=crypto.randomUUID(),order=env.CART_ORDERS.getByName(orderId);objects.push(order);
   await runInDurableObject(order,i=>{i.env={...i.env,...config};});
   const quote=await priceCart({...env,...config},cartItems(selection.map(id=>({id,quantity:1}))),address,'buyer@example.test');
@@ -65,11 +65,11 @@ it('full-image editions preserve paper geometry and exact files through paid ful
 });
 it('allows sandbox pilots while live samples require their separate enablement flag',()=>{
   useSampleFixtures();
-  for(const id of ids){expect(paymentMethods({...env,...settings},id)).toEqual(['paypal']);expect(paymentMethods({...env,...settings,PAYPAL_MODE:'live',FINERWORKS_PAYMENT_TOKEN:'invoice'},id)).toEqual([]);expect(paymentMethods({...env,...settings,FINERWORKS_ORDER_ENABLED:'false'},id)).toEqual([]);}
+  for(const id of ids){expect(paymentMethods({...env,...settings},id)).toEqual(['paypal']);expect(paymentMethods({...env,...settings,CHECKOUT_MODE:'live',FINERWORKS_PAYMENT_TOKEN:'invoice'},id)).toEqual([]);expect(paymentMethods({...env,...settings,FINERWORKS_ORDER_ENABLED:'false'},id)).toEqual([]);}
 });
 it('live sample gate never admits sandbox-only files or multiple copies of one painting',()=>{
   useSampleFixtures();
-  const live={...env,...settings,PAYPAL_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'};
+  const live={...env,...settings,CHECKOUT_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'};
   expect(paymentMethods(live,ids[0])).toEqual(['paypal']);
   expect(paymentMethods({...live,LIVE_PRINT_SAMPLE_ENABLED:'false'},ids[0])).toEqual([]);
   const prior=prints[ids[0]].testOnly;try{prints[ids[0]].testOnly=true;expect(paymentMethods(live,ids[0])).toEqual([]);}finally{prints[ids[0]].testOnly=prior;}
@@ -77,8 +77,8 @@ it('live sample gate never admits sandbox-only files or multiple copies of one p
   expect(()=>cartItems([{id:ids[0],quantity:1},{id:ids[0].replace('-small','-medium'),quantity:1}])).toThrow(/one copy/);
 });
 it('live payment precedes one billed full-resolution edition submission and archives the sale without billing credentials',async()=>{
-  const ledger=env.SALES_LEDGER.getByName('live:2026-09');objects.push(ledger);await runInDurableObject(ledger,i=>{i.env={...i.env,PAYPAL_MODE:'live'};});
-  const {order,orderId}=await setup({PAYPAL_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'});
+  const ledger=env.SALES_LEDGER.getByName('live:2026-09');objects.push(ledger);await runInDurableObject(ledger,i=>{i.env={...i.env,CHECKOUT_MODE:'live'};});
+  const {order,orderId}=await setup({CHECKOUT_MODE:'live',LIVE_PRINT_SAMPLE_ENABLED:'true',FINERWORKS_PAYMENT_TOKEN:'fake-live-payment-token'});
   await order.start('paypal');expect(submission).toBeNull();payment.status='APPROVED';await order.capture();await order.refresh();await order.refresh();
   const saved=await inspect(order);expect(saved.status).toBe('paid');expect(saved.printJob.status).toBe('in-production');
   expect(submission.order_items).toHaveLength(2);expect(calls.filter(c=>c.url.endsWith('submit_orders_v2'))).toHaveLength(1);

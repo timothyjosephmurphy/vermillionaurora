@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {finerworksRequest} from './finerworks-api.mjs';
 import {shippingOptions,groupPrintProducts,finerworksRecipient,quoteFinerWorksPrints,validateFinerWorksPrintOrder} from './finerworks-quotes.mjs';
-const env={PAYPAL_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
+const env={CHECKOUT_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'test-web',FINERWORKS_APP_KEY:'test-app'};
 const a={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
 const item={id:'test-print',provider:'finerworks',sku:'5M144M8S7.5X6',quantity:1,amount:'25.00',imageSize:{width:7.5,height:6},paperSize:{width:7.5,height:6},assetUrl:'https://vermillionaurora.com/gallery-images/portrait-in-gold.jpg'};
 const products=groupPrintProducts([item],'po');
@@ -42,7 +42,7 @@ test('preflight cannot become a billed order even if called incorrectly',async t
   const b={orders:[{test_mode:true}],validate_only:true,payment_token:'xxxx'};
   await finerworksRequest(env,'/v3/submit_orders_v2',b);
   for(const bad of [{...b,validate_only:false},{...b,payment_token:'invoice'},{...b,orders:[{test_mode:false}]}]) await assert.rejects(finerworksRequest(env,'/v3/submit_orders_v2',bad));
-  await assert.rejects(finerworksRequest({...env,PAYPAL_MODE:'live'},'/v3/submit_orders_v2',b));assert.equal(calls,1);
+  await assert.rejects(finerworksRequest({...env,CHECKOUT_MODE:'live'},'/v3/submit_orders_v2',b));assert.equal(calls,1);
 });
 test('complete quote uses verified dimensions and separate shipping, then validation-only with three safety flags',async t=>{
   const calls=[];

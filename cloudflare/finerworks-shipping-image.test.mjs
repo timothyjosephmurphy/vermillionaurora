@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {quoteFinerWorksPrints} from './finerworks-quotes.mjs';
 test('shipping quotes include the server-approved image required by the provider order model',async t=>{
-  const env={PAYPAL_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'fake',FINERWORKS_APP_KEY:'fake'},url='https://vermillionaurora.com/gallery-images/portrait-in-gold.jpg';
+  const env={CHECKOUT_MODE:'sandbox',PRINT_PROVIDER:'finerworks',FINERWORKS_WEB_API_KEY:'fake',FINERWORKS_APP_KEY:'fake'},url='https://vermillionaurora.com/gallery-images/portrait-in-gold.jpg';
   let shippingCalled=false;
   t.mock.method(globalThis,'fetch',async(u,init)=>{
     const p=new URL(u).pathname,b=JSON.parse(init.body);

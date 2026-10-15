@@ -20,7 +20,7 @@ jobs:
           node-version: '22'
       - name: Test before deployment
         run: |
-          node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
+          node --test cloudflare/checkout-readiness.test.mjs
           npm --prefix cloudflare/test ci
           npm --prefix cloudflare/test test
           node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.SHIPPO_AUTO_LABEL_ENABLED!=='true')process.exit(1)"

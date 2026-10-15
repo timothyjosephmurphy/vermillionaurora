@@ -21,7 +21,7 @@ it('live sale publication needs no GitHub token or repository request',async()=>
  await stub.bindOrder('hold','ORDER',{title:'Saved title',base:'20.00',shipping:'6.00',tax:'0.00',total:'26.00',taxCalculationId:'taxcalc_test',address:{name:'Buyer'}});
  await stub.complete('ORDER','CAP');
  const calls=[];vi.stubGlobal('fetch',vi.fn(async url=>{calls.push(String(url));throw Error('Providers unavailable');}));
- await runInDurableObject(stub,async instance=>{instance.env={...instance.env,PAYPAL_MODE:'live',GITHUB_TOKEN:undefined,SALES_LEDGER:{getByName:()=>({record:async()=>{}})}};await instance.alarm();});
+ await runInDurableObject(stub,async instance=>{instance.env={...instance.env,CHECKOUT_MODE:'live',GITHUB_TOKEN:undefined,SALES_LEDGER:{getByName:()=>({record:async()=>{}})}};await instance.alarm();});
  expect((await stub.verification()).published).toBe(true);expect(await stub.status()).toBe('sold');expect(calls.some(url=>url.includes('github.com'))).toBe(false);
 });
 it('legacy notification replay is idempotent and cannot overwrite another buyer',async()=>{

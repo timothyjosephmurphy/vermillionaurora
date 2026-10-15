@@ -1,5 +1,5 @@
 import {cartOrigin,cents} from './cart-policy.mjs';
-const paypalBase=env=>env.PAYPAL_MODE==='sandbox'?'https://api-m.sandbox.paypal.com':'https://api-m.paypal.com';
+const paypalBase=env=>env.CHECKOUT_MODE==='sandbox'?'https://api-m.sandbox.paypal.com':'https://api-m.paypal.com';
 export async function paypalRequest(env,path,body,requestId) {
   const response=await fetch(`${paypalBase(env)}/v1/oauth2/token`,{method:'POST',signal:AbortSignal.timeout(20000),headers:{Authorization:`Basic ${btoa(`${env.PAYPAL_CLIENT_ID}:${env.PAYPAL_CLIENT_SECRET}`)}`,'Content-Type':'application/x-www-form-urlencoded'},body:'grant_type=client_credentials'});
   const auth=await response.json();if(!response.ok||!auth.access_token)throw Error('PayPal authentication unavailable');
@@ -18,7 +18,7 @@ export function paypalBody(env,data) {
 }
 export function validatePaypal(env,data,order,paid=false) {
   const q=data.quote,u=order.purchase_units?.[0],a=u?.shipping?.address;
-  if(env.PAYPAL_MODE!==data.mode||env.PAYPAL_MERCHANT_ID!==data.merchantId||! /^[A-Z0-9]{1,36}$/.test(order.id||'')|| (data.providerId&&data.providerId!==order.id)||
+  if(env.CHECKOUT_MODE!==data.mode||env.PAYPAL_MERCHANT_ID!==data.merchantId||! /^[A-Z0-9]{1,36}$/.test(order.id||'')|| (data.providerId&&data.providerId!==order.id)||
     order.purchase_units?.length!==1||u.reference_id!==`cart:${data.id}`||u.custom_id!==`cart:${data.id}`||u.payee?.merchant_id!==data.merchantId||
     u.amount?.currency_code!=='USD'||u.amount?.value!==q.total||u.amount.breakdown?.item_total?.value!==q.base||u.amount.breakdown?.shipping?.value!==q.shipping||u.amount.breakdown?.tax_total?.value!==q.tax||
     a?.country_code!=='US'||a.address_line_1!==q.address.street1||(a.address_line_2||'')!==(q.address.street2||'')||a.admin_area_2!==q.address.city||a.admin_area_1!==q.address.state||a.postal_code!==q.address.zip)throw Error('PayPal order does not match the saved quote');
@@ -30,7 +30,7 @@ export function validatePaypal(env,data,order,paid=false) {
 }
 export function approvalUrl(env,order) {
   const value=order.links?.find(l=>l.rel==='payer-action'||l.rel==='approve')?.href;
-  const u=new URL(value),hosts=env.PAYPAL_MODE==='sandbox'?['sandbox.paypal.com','www.sandbox.paypal.com']:['paypal.com','www.paypal.com'];
+  const u=new URL(value),hosts=env.CHECKOUT_MODE==='sandbox'?['sandbox.paypal.com','www.sandbox.paypal.com']:['paypal.com','www.paypal.com'];
   if(u.protocol!=='https:'||u.username||u.password||!hosts.includes(u.hostname))throw Error('Invalid approval URL');return u.href;
 }
 

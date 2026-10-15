@@ -1,5 +1,5 @@
 export const PRINT_PROVIDER='prodigi';
-export function prodigiEnvironment(env,expected=env.PAYPAL_MODE) {
+export function prodigiEnvironment(env,expected=env.CHECKOUT_MODE) {
   if(!['sandbox','live'].includes(env.PRODIGI_ENV)||env.PRODIGI_ENV!==expected||!env.PRODIGI_API_KEY)throw Error('Print provider environment is not configured for this checkout');
   return env.PRODIGI_ENV;
 }

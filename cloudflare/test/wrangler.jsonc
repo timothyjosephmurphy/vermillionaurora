@@ -6,7 +6,7 @@
     "nodejs_compat"
   ],
   "vars": {
-    "PAYPAL_MODE": "sandbox",
+    "CHECKOUT_MODE": "sandbox",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "SHIPPO_TOKEN": "shippo_test_fake",
     "SHIP_FROM_STREET": "123 Origin St",

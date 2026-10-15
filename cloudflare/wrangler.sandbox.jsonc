@@ -6,9 +6,7 @@
   "workers_dev": true,
   "keep_vars": true,
   "vars": {
-    "PAYPAL_CHECKOUT_ENABLED": "true",
-    "PAYPAL_DEPRECATED": "true",
-    "PAYPAL_MODE": "sandbox",
+    "CHECKOUT_MODE": "sandbox",
     "SQUARE_CHECKOUT_ENABLED": "true",
     "SQUARE_MODE": "sandbox",
     "SQUARE_SANDBOX_NO_FULFILLMENT": "true",
@@ -17,7 +15,6 @@
     "SQUARE_WEBHOOK_URL": "https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev/checkout/square/webhook",
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "SHIPPO_CARRIER_ALLOWLIST": "UPS",
-    "PAYPAL_MERCHANT_ID": "QRRG2GBRVB8DN",
     "CART_CHECKOUT_ENABLED": "true",
     "COMMISSION_DEPOSITS_ENABLED": "true",
     "PRINT_CHECKOUT_ENABLED": "true",

@@ -109,22 +109,22 @@ export async function quoteFinerWorksPrints(env,items,address) {
   }
   // The shipping endpoint validates the order model, including the image object.
   for(const product of products) {
-    const item=items.find(i=>i.sku===product.product_sku),url=printAssetUrl(item.assetUrl,env.PAYPAL_MODE);
+    const item=items.find(i=>i.sku===product.product_sku),url=printAssetUrl(item.assetUrl,env.CHECKOUT_MODE);
     product.product_image={product_url_file:url,product_url_thumbnail:url};
   }
-  const body={orders:[{order_po:po,order_key:null,recipient,order_items:products,shipping_code:'EC',test_mode:env.PAYPAL_MODE==='sandbox'}]};
+  const body={orders:[{order_po:po,order_key:null,recipient,order_items:products,shipping_code:'EC',test_mode:env.CHECKOUT_MODE==='sandbox'}]};
   const data=await finerworksRequest(env,'/v3/list_shipping_options_multiple',body);
   const options=shippingOptions(data,po,products),selected=options[0];
   // unitCosts (dollars per copy by SKU) let at-cost print codes price prints after the retail check above.
   return {provider:'finerworks',mode:finerworksEnvironment(env),currency:'USD',...selected,selectionHash:await selectionHash(items,address),shippingMarkup:'0.00',options,unitCosts:Object.fromEntries(units.filter(q=>q.ok).map(q=>[q.code,q.productionCost]))};
 }
 export async function validateFinerWorksPrintOrder(env,items,address,quote) {
-  if(env.PAYPAL_MODE!=='sandbox'||quote?.provider!=='finerworks'||quote.mode!=='sandbox'||!/^\d+$/.test(quote.shippingMethod||''))throw Error('Order preflight requires a sandbox FinerWorks quote');
+  if(env.CHECKOUT_MODE!=='sandbox'||quote?.provider!=='finerworks'||quote.mode!=='sandbox'||!/^\d+$/.test(quote.shippingMethod||''))throw Error('Order preflight requires a sandbox FinerWorks quote');
   if(quote.selectionHash!==await selectionHash(items,address)||!Number.isFinite(quote.quotedAt)||Date.now()-quote.quotedAt>600000||quote.quotedAt>Date.now()+1000)throw Error('Refresh the shipping quote for these exact items and destination');
   const po=`va-test-${crypto.randomUUID()}`;
   groupPrintProducts(items,po);
   const order_items=items.map(item=>{
-    const url=printAssetUrl(item.assetUrl,env.PAYPAL_MODE);
+    const url=printAssetUrl(item.assetUrl,env.CHECKOUT_MODE);
     return {product_order_po:po,product_sku:item.sku,product_qty:item.quantity,product_title:String(item.title||'Art print').slice(0,50),product_image:{product_url_file:url,product_url_thumbnail:url}};
   });
   // Omit the optional source label: the live validator rejected it despite its documented text type.

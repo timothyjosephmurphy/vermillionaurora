@@ -6,7 +6,7 @@ Square provides the public credit-card checkout option. The sandbox Worker has a
 
 Set these as regular Cloudflare Worker variables:
 
-- `SQUARE_MODE=sandbox` (must match `PAYPAL_MODE`).
+- `SQUARE_MODE=sandbox` (must match `CHECKOUT_MODE`).
 - `SQUARE_CHECKOUT_ENABLED=false` until sandbox testing is ready.
 - `SQUARE_CHECKOUT_SLUGS=painting-portrait-in-green` for the pilot allowlist.
 - `SQUARE_APPLICATION_ID` from the Square sandbox application. This is an application identifier, not a secret.

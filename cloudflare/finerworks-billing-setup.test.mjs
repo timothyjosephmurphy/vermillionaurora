@@ -4,7 +4,7 @@ import {generateKeyPairSync,privateDecrypt,randomBytes} from 'node:crypto';
 import {finerworksBillingSetup,selectPaymentToken} from './finerworks-billing-setup.mjs';
 const {publicKey,privateKey}=generateKeyPairSync('rsa',{modulusLength:3072});
 const session=()=>({token:`${Date.now()+15*60000}.${randomBytes(32).toString('hex')}`,publicKey:publicKey.export({format:'jwk'})});
-const environment=s=>({PAYPAL_MODE:'sandbox',FINERWORKS_WEB_API_KEY:'private-web-key',FINERWORKS_APP_KEY:'private-app-key',FINERWORKS_BILLING_SETUP:JSON.stringify(s)});
+const environment=s=>({CHECKOUT_MODE:'sandbox',FINERWORKS_WEB_API_KEY:'private-web-key',FINERWORKS_APP_KEY:'private-app-key',FINERWORKS_BILLING_SETUP:JSON.stringify(s)});
 const request=(s,extra={})=>new Request('https://sandbox.example/checkout/prints/billing-setup?payment_profile_id=someone-else',{method:'POST',headers:{Authorization:`Bearer ${s.token}`},body:JSON.stringify({payment_profile_id:'someone-else'}),...extra});
 const row=(token='saved-private-token',is_default=true)=>({token,is_default,associated_payment_method:'Visa ending in 1111'});
 const envelope=rows=>({status:{success:true},payment_profile_id:'own-profile',payment_tokens:rows});
@@ -14,7 +14,7 @@ test('missing, malformed, wrong, expired, future and live-mode access fails befo
   const bad=[null,{token:42}, {...s,token:`${Date.now()-1}.${'a'.repeat(64)}`},{...s,token:`${Date.now()+30*60000}.${'a'.repeat(64)}`}];
   for(const value of bad)assert.equal((await finerworksBillingSetup(request(s),environment(value))).status,404);
   assert.equal((await finerworksBillingSetup(request({...s,token:s.token+'x'}),environment(s))).status,404);
-  assert.equal((await finerworksBillingSetup(request(s),{...environment(s),PAYPAL_MODE:'live'})).status,404);
+  assert.equal((await finerworksBillingSetup(request(s),{...environment(s),CHECKOUT_MODE:'live'})).status,404);
   assert.equal((await finerworksBillingSetup(request(s,{method:'GET',body:undefined}),environment(s))).status,404);
   assert.equal(calls,0);
 });

@@ -9,7 +9,7 @@ import {printApi} from '../print-api.mjs';
 const id='print-painting-portrait-in-green-medium',art='painting-portrait-in-green';
 const item={id,type:'print',productId:art,title:'Chase Toole — Medium print',amount:'80.00',sku:'GLOBAL-FAP-12X16',scale:.75,imageSize:{width:9,height:11.25,unit:'in'},paperSize:{width:12,height:16,unit:'in'},paper:'Enhanced matte',assetUrl:'https://media.vermillionaurora.com/prints/approved.pdf',attributes:{},quantity:2};
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
-const settings={PRODIGI_API_KEY:'fake',PRODIGI_ENV:'sandbox',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:id,PAYPAL_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_CHECKOUT_ENABLED:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://sandbox.example.test'};
+const settings={PRODIGI_API_KEY:'fake',PRODIGI_ENV:'sandbox',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:id,CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://sandbox.example.test'};
 let calls,orders,payment,loseReply,providerStage,price,objects,mailCount;
 beforeEach(()=>{
   prints[id]={...item};calls=[];orders=new Map();payment=null;loseReply=false;providerStage='InProgress';price='10.00';objects=[];mailCount=0;
@@ -54,7 +54,7 @@ it('isolates environments and requires separate print allowlisting; client price
 });
 it('never exposes a sandbox-only print through live payment methods',()=>{
   prints[id]={...item,testOnly:true};
-  expect(paymentMethods({...env,...settings,PAYPAL_MODE:'live',PRODIGI_ENV:'live',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:id},id)).toEqual([]);
+  expect(paymentMethods({...env,...settings,CHECKOUT_MODE:'live',PRODIGI_ENV:'live',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:id},id)).toEqual([]);
 });
 it('quotes quantities and one tax calculation without calling Shippo or placing a vendor order',async()=>{
   const {quote}=await setup();expect(quote.base).toBe('160.00');expect(quote.shipping).toBe('7.00');expect(quote.total).toBe('172.00');expect(quote.shipments).toEqual([]);

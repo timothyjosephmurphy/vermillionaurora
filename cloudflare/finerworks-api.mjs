@@ -22,16 +22,16 @@ const READS=new Map([
   ['/v3/get_order','GET']
 ]);
 export function finerworksEnvironment(env,requireKeys=true) {
-  const mode=['sandbox','live'].includes(env.PAYPAL_MODE)?env.PAYPAL_MODE:null;
+  const mode=['sandbox','live'].includes(env.CHECKOUT_MODE)?env.CHECKOUT_MODE:null;
   if(requireKeys&&(!mode||!env.FINERWORKS_WEB_API_KEY||!env.FINERWORKS_APP_KEY))throw Error('FinerWorks credentials or checkout environment are not configured');
   return mode;
 }
 export async function finerworksRequest(env,path,body,method='POST') {
   finerworksEnvironment(env);
-  const validationOnly=path==='/v3/submit_orders_v2'&&method==='POST'&&env.PAYPAL_MODE==='sandbox'&&body?.validate_only===true&&body?.payment_token==='xxxx'&&Array.isArray(body.orders)&&body.orders.length===1&&body.orders.every(o=>o.test_mode===true);
+  const validationOnly=path==='/v3/submit_orders_v2'&&method==='POST'&&env.CHECKOUT_MODE==='sandbox'&&body?.validate_only===true&&body?.payment_token==='xxxx'&&Array.isArray(body.orders)&&body.orders.length===1&&body.orders.every(o=>o.test_mode===true);
   const submission=path==='/v3/submit_orders_v2'&&method==='POST'&&env.PRINT_PROVIDER==='finerworks'&&env.FINERWORKS_ORDER_ENABLED==='true'&&body?.validate_only===false&&
-    Array.isArray(body.orders)&&body.orders.length===1&&body.orders.every(o=>/^va-cart-[0-9a-f]{32}-prints$/.test(o.order_po||'')&&o.test_mode===(env.PAYPAL_MODE==='sandbox'))&&
-    (env.PAYPAL_MODE==='sandbox'?body.payment_token==='xxxx':env.PAYPAL_MODE==='live'&&!!env.FINERWORKS_PAYMENT_TOKEN&&env.FINERWORKS_PAYMENT_TOKEN!=='xxxx'&&body.payment_token===env.FINERWORKS_PAYMENT_TOKEN);
+    Array.isArray(body.orders)&&body.orders.length===1&&body.orders.every(o=>/^va-cart-[0-9a-f]{32}-prints$/.test(o.order_po||'')&&o.test_mode===(env.CHECKOUT_MODE==='sandbox'))&&
+    (env.CHECKOUT_MODE==='sandbox'?body.payment_token==='xxxx':env.CHECKOUT_MODE==='live'&&!!env.FINERWORKS_PAYMENT_TOKEN&&env.FINERWORKS_PAYMENT_TOKEN!=='xxxx'&&body.payment_token===env.FINERWORKS_PAYMENT_TOKEN);
   const route=path.split('?')[0];
   if(path!==route&&!(route==='/v3/get_order'&&/^\?order_guid=[0-9A-Fa-f-]{36}&order_email=[^&]{1,320}$/.test(path.slice(route.length))))throw Error('FinerWorks request is not enabled for this environment');
   if((READS.get(route)!==method&&!validationOnly&&!submission)||(method==='GET'&&body!==undefined))throw Error('FinerWorks request is not enabled for this environment');

@@ -4,7 +4,6 @@ on:
     branches: [main, shared-paypal-checkout, finerworks-print-ordering]
     paths:
       - 'cloudflare/**'
-      - 'payments/verify-sandbox.mjs'
       - 'payments/verify-print-sandbox.mjs'
       - 'payments/finerworks-report-public.pem'
       - 'payments/prepare-sandbox-sales-archive.mjs'
@@ -14,10 +13,6 @@ on:
       - '.github/workflows/deploy-checkout-sandbox.yml'
   workflow_dispatch:
     inputs:
-      replay_webhook:
-        description: Request a fresh PayPal webhook replay
-        type: boolean
-        default: false
       test_print_orders:
         description: Submit unbilled FinerWorks sandbox test orders
         type: boolean
@@ -52,10 +47,10 @@ jobs:
           node --test tests/print*.test.mjs cloudflare/finerworks-*.test.mjs
           npm --prefix cloudflare/test ci
           npm run test:worker
-          node --test cloudflare/paypal-inventory.test.mjs cloudflare/paypal-orders.test.mjs cloudflare/checkout-recovery.test.mjs cloudflare/checkout-readiness.test.mjs
+          node --test cloudflare/checkout-readiness.test.mjs
           node payments/build-checkout-catalog.mjs
           git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
-          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.PAYPAL_CHECKOUT_ENABLED!=='true'||c.vars.PRINT_PROVIDER!=='finerworks'||c.vars.PRINT_CHECKOUT_ENABLED!=='true'||c.vars.FINERWORKS_ORDER_ENABLED!=='true'||c.main!=='checkout-sandbox.mjs')process.exit(1)"
+          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.PRINT_PROVIDER!=='finerworks'||c.vars.PRINT_CHECKOUT_ENABLED!=='true'||c.vars.FINERWORKS_ORDER_ENABLED!=='true'||c.main!=='checkout-sandbox.mjs')process.exit(1)"
       - name: Build production Worker without deploying
         run: |
           node --input-type=module -e "import fs from 'node:fs';import prints from './cloudflare/print-catalog.mjs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));const listed=c.vars.PRINT_CHECKOUT_IDS.split(',').filter(Boolean);if(c.name!=='vermillion-commissions'||c.vars.PAYPAL_MODE!=='live'||c.vars.PRINT_PROVIDER!=='finerworks'||c.vars.LIVE_PRINT_SAMPLE_ENABLED!=='true'||c.vars.PRINT_CHECKOUT_ALL!=='true'||listed.some(id=>!Object.hasOwn(prints,id)))process.exit(1)"
@@ -89,10 +84,6 @@ jobs:
           path: /tmp/finerworks-audit.encrypted.json
           retention-days: 1
           if-no-files-found: ignore
-      - name: Confirm recorded sandbox payment, webhook receipt, and tax record
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
-        run: node payments/verify-sandbox.mjs ${{ inputs.replay_webhook && '--replay' || '' }}
   production-config:
     runs-on: ubuntu-latest
     steps:

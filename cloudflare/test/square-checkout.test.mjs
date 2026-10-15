@@ -59,9 +59,9 @@ test('Square webhook validates the configured URL and HMAC before touching an or
 
 
 test('Square sandbox test page requires enabled sandbox checkout and the no-fulfillment guard',()=>{
-  const base={PAYPAL_MODE:'sandbox',SQUARE_MODE:'sandbox',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_SANDBOX_NO_FULFILLMENT:'true'};
+  const base={CHECKOUT_MODE:'sandbox',SQUARE_MODE:'sandbox',SQUARE_CHECKOUT_ENABLED:'true',SQUARE_SANDBOX_NO_FULFILLMENT:'true'};
   expect(squareTestPageEnabled(base)).toBe(true);
-  expect(squareTestPageEnabled({...base,PAYPAL_MODE:'live'})).toBe(false);
+  expect(squareTestPageEnabled({...base,CHECKOUT_MODE:'live'})).toBe(false);
   expect(squareTestPageEnabled({...base,SQUARE_MODE:'live'})).toBe(false);
   expect(squareTestPageEnabled({...base,SQUARE_CHECKOUT_ENABLED:'false'})).toBe(false);
   expect(squareTestPageEnabled({...base,SQUARE_SANDBOX_NO_FULFILLMENT:'false'})).toBe(false);
