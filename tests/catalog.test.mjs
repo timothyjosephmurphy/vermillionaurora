@@ -322,7 +322,7 @@ test('the homepage ends Exhibitions with the gallery room and framed print wall'
  const tile=$('#exhibitions [data-gallery-feature="print-wall"]');
  assert.equal(tile.length,1);assert.equal(tile.find('.product-title-link').attr('href'),'/gallery/wall/');
  assert.equal(tile.attr('data-product-id'),undefined,'A gallery experience is not original-painting inventory');
- assert.equal(tile.find('img').attr('src'),'/gallery-wall/framed-wall.webp');
+ assert.match(tile.find('img').attr('src'),/^(https:\/\/img\.tjm\.art)?\/gallery-wall\/framed-wall\.webp$/);
  assert(fs.existsSync('dist/gallery-wall/framed-wall.webp'));
 });
 
