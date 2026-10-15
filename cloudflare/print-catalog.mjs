@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="2f2338d83a08377e5f39";
+export const printVersion="e21bc9fa901411298494";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -73102,8 +73102,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Large print",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Large print",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S13.83X18.16",
@@ -73131,7 +73131,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73143,8 +73143,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Large print — Black frame",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Large print — Black frame",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "188.00",
     "currency": "USD",
     "sku": "5M144M8S13DD83X18DD16F1S16DD83X21DD16J1S13DD83X18DD16G1",
@@ -73172,7 +73172,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73220,8 +73220,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Large print — White frame",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Large print — White frame",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "188.00",
     "currency": "USD",
     "sku": "5M144M8S13DD83X18DD16F2S16DD83X21DD16J1S13DD83X18DD16G1",
@@ -73249,7 +73249,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73297,8 +73297,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Large print — Natural wood frame",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "205.00",
     "currency": "USD",
     "sku": "5M144M8S13DD83X18DD16F7S16DD83X21DD16J1S13DD83X18DD16G1",
@@ -73326,7 +73326,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73374,8 +73374,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Medium print",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Medium print",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "60.00",
     "currency": "USD",
     "sku": "5M144M8S10.44X13.68",
@@ -73403,7 +73403,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73415,8 +73415,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Medium print — Black frame",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Medium print — Black frame",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "121.00",
     "currency": "USD",
     "sku": "5M144M8S10DD44X13DD68F1S13DD44X16DD68J1S10DD44X13DD68G1",
@@ -73444,7 +73444,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73492,8 +73492,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Medium print — White frame",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Medium print — White frame",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "121.00",
     "currency": "USD",
     "sku": "5M144M8S10DD44X13DD68F2S13DD44X16DD68J1S10DD44X13DD68G1",
@@ -73521,7 +73521,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73569,8 +73569,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Medium print — Natural wood frame",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "135.00",
     "currency": "USD",
     "sku": "5M144M8S10DD44X13DD68F7S13DD44X16DD68J1S10DD44X13DD68G1",
@@ -73598,7 +73598,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73646,8 +73646,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Small print",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Small print",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S7.04X9.2",
@@ -73675,7 +73675,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73687,8 +73687,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Small print — Black frame",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Small print — Black frame",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "71.00",
     "currency": "USD",
     "sku": "5M144M8S7DD04X9DD2F1S10DD04X12DD2J1S7DD04X9DD2G1",
@@ -73716,7 +73716,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73764,8 +73764,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Small print — White frame",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Small print — White frame",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "71.00",
     "currency": "USD",
     "sku": "5M144M8S7DD04X9DD2F2S10DD04X12DD2J1S7DD04X9DD2G1",
@@ -73793,7 +73793,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73841,8 +73841,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-308",
-    "title": "Painting #308 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #308",
+    "title": "Self Portrait on Goat Lake — Small print — Natural wood frame",
+    "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "82.00",
     "currency": "USD",
     "sku": "5M144M8S7DD04X9DD2F7S10DD04X12DD2J1S7DD04X9DD2G1",
@@ -73870,7 +73870,7 @@ export default {
       "alt": "A bearded man in a brimmed hat and sunglasses beside a lake",
       "width": 4076,
       "height": 5375,
-      "caption": "Painting #308"
+      "caption": "Self Portrait on Goat Lake"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73918,8 +73918,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Large print",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Large print",
+    "artworkTitle": "Cross on Maui",
     "amount": "165.00",
     "currency": "USD",
     "sku": "5M144M8S23.02X17.3",
@@ -73947,7 +73947,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -73959,8 +73959,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Large print — Black frame",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Large print — Black frame",
+    "artworkTitle": "Cross on Maui",
     "amount": "277.00",
     "currency": "USD",
     "sku": "5M144M8S23DD02X17DD3F1S26DD02X20DD3J1S23DD02X17DD3G1",
@@ -73988,7 +73988,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74036,8 +74036,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Large print — White frame",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Large print — White frame",
+    "artworkTitle": "Cross on Maui",
     "amount": "277.00",
     "currency": "USD",
     "sku": "5M144M8S23DD02X17DD3F2S26DD02X20DD3J1S23DD02X17DD3G1",
@@ -74065,7 +74065,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74113,8 +74113,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Large print — Natural wood frame",
+    "artworkTitle": "Cross on Maui",
     "amount": "298.00",
     "currency": "USD",
     "sku": "5M144M8S23DD02X17DD3F7S26DD02X20DD3J1S23DD02X17DD3G1",
@@ -74142,7 +74142,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74190,8 +74190,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Medium print",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Medium print",
+    "artworkTitle": "Cross on Maui",
     "amount": "95.00",
     "currency": "USD",
     "sku": "5M144M8S17.33X13.04",
@@ -74219,7 +74219,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74231,8 +74231,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Medium print — Black frame",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Medium print — Black frame",
+    "artworkTitle": "Cross on Maui",
     "amount": "174.00",
     "currency": "USD",
     "sku": "5M144M8S17DD33X13DD04F1S20DD33X16DD04J1S17DD33X13DD04G1",
@@ -74260,7 +74260,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74308,8 +74308,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Medium print — White frame",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Medium print — White frame",
+    "artworkTitle": "Cross on Maui",
     "amount": "174.00",
     "currency": "USD",
     "sku": "5M144M8S17DD33X13DD04F2S20DD33X16DD04J1S17DD33X13DD04G1",
@@ -74337,7 +74337,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74385,8 +74385,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Medium print — Natural wood frame",
+    "artworkTitle": "Cross on Maui",
     "amount": "191.00",
     "currency": "USD",
     "sku": "5M144M8S17DD33X13DD04F7S20DD33X16DD04J1S17DD33X13DD04G1",
@@ -74414,7 +74414,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74462,8 +74462,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Small print",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Small print",
+    "artworkTitle": "Cross on Maui",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S11.63X8.77",
@@ -74491,7 +74491,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74503,8 +74503,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Small print — Black frame",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Small print — Black frame",
+    "artworkTitle": "Cross on Maui",
     "amount": "97.00",
     "currency": "USD",
     "sku": "5M144M8S11DD63X8DD77F1S14DD63X11DD77J1S11DD63X8DD77G1",
@@ -74532,7 +74532,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74580,8 +74580,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Small print — White frame",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Small print — White frame",
+    "artworkTitle": "Cross on Maui",
     "amount": "97.00",
     "currency": "USD",
     "sku": "5M144M8S11DD63X8DD77F2S14DD63X11DD77J1S11DD63X8DD77G1",
@@ -74609,7 +74609,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -74657,8 +74657,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-307",
-    "title": "Painting #307 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #307",
+    "title": "Cross on Maui — Small print — Natural wood frame",
+    "artworkTitle": "Cross on Maui",
     "amount": "109.00",
     "currency": "USD",
     "sku": "5M144M8S11DD63X8DD77F7S14DD63X11DD77J1S11DD63X8DD77G1",
@@ -74686,7 +74686,7 @@ export default {
       "alt": "A cross on a coastal bluff beneath a purple and yellow sunset",
       "width": 6833,
       "height": 5116,
-      "caption": "Painting #307"
+      "caption": "Cross on Maui"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76366,8 +76366,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Large print",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Large print",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S12.21X16.58",
@@ -76395,7 +76395,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76407,8 +76407,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Large print — Black frame",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Large print — Black frame",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S12DD21X16DD58F1S15DD21X19DD58J1S12DD21X16DD58G1",
@@ -76436,7 +76436,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76484,8 +76484,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Large print — White frame",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Large print — White frame",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S12DD21X16DD58F2S15DD21X19DD58J1S12DD21X16DD58G1",
@@ -76513,7 +76513,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76561,8 +76561,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Large print — Natural wood frame",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "175.00",
     "currency": "USD",
     "sku": "5M144M8S12DD21X16DD58F7S15DD21X19DD58J1S12DD21X16DD58G1",
@@ -76590,7 +76590,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76638,8 +76638,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Medium print",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Medium print",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S9.22X12.49",
@@ -76667,7 +76667,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76679,8 +76679,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Medium print — Black frame",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Medium print — Black frame",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD22X12DD49F1S12DD22X15DD49J1S9DD22X12DD49G1",
@@ -76708,7 +76708,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76756,8 +76756,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Medium print — White frame",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Medium print — White frame",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD22X12DD49F2S12DD22X15DD49J1S9DD22X12DD49G1",
@@ -76785,7 +76785,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76833,8 +76833,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Medium print — Natural wood frame",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "118.00",
     "currency": "USD",
     "sku": "5M144M8S9DD22X12DD49F7S12DD22X15DD49J1S9DD22X12DD49G1",
@@ -76862,7 +76862,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76910,8 +76910,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Small print",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Small print",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S6.23X8.41",
@@ -76939,7 +76939,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -76951,8 +76951,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Small print — Black frame",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Small print — Black frame",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD23X8DD41F1S9DD23X11DD41J1S6DD23X8DD41G1",
@@ -76980,7 +76980,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -77028,8 +77028,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Small print — White frame",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Small print — White frame",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD23X8DD41F2S9DD23X11DD41J1S6DD23X8DD41G1",
@@ -77057,7 +77057,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -77105,8 +77105,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-363",
-    "title": "Painting #363 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #363",
+    "title": "Elon & Lil’ X in the Oval Office — Small print — Natural wood frame",
+    "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "79.63",
     "currency": "USD",
     "sku": "5M144M8S6DD23X8DD41F7S9DD23X11DD41J1S6DD23X8DD41G1",
@@ -77134,7 +77134,7 @@ export default {
       "alt": "A seated man in a cap with a child perched above him beside a window",
       "width": 3589,
       "height": 4899,
-      "caption": "Painting #363"
+      "caption": "Elon & Lil’ X in the Oval Office"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -78814,8 +78814,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Large print",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Large print",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S18.21X13.75",
@@ -78843,7 +78843,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -78855,8 +78855,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Large print — Black frame",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Large print — Black frame",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "188.00",
     "currency": "USD",
     "sku": "5M144M8S18DD21X13DD75F1S21DD21X16DD75J1S18DD21X13DD75G1",
@@ -78884,7 +78884,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -78932,8 +78932,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Large print — White frame",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Large print — White frame",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "188.00",
     "currency": "USD",
     "sku": "5M144M8S18DD21X13DD75F2S21DD21X16DD75J1S18DD21X13DD75G1",
@@ -78961,7 +78961,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -79009,8 +79009,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Large print — Natural wood frame",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "205.00",
     "currency": "USD",
     "sku": "5M144M8S18DD21X13DD75F7S21DD21X16DD75J1S18DD21X13DD75G1",
@@ -79038,7 +79038,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -79086,8 +79086,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Medium print",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Medium print",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "60.00",
     "currency": "USD",
     "sku": "5M144M8S13.72X10.37",
@@ -79115,7 +79115,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -79127,8 +79127,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Medium print — Black frame",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Medium print — Black frame",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "121.00",
     "currency": "USD",
     "sku": "5M144M8S13DD72X10DD37F1S16DD72X13DD37J1S13DD72X10DD37G1",
@@ -79156,7 +79156,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -79204,8 +79204,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Medium print — White frame",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Medium print — White frame",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "121.00",
     "currency": "USD",
     "sku": "5M144M8S13DD72X10DD37F2S16DD72X13DD37J1S13DD72X10DD37G1",
@@ -79233,7 +79233,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -79281,8 +79281,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Medium print — Natural wood frame",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "135.00",
     "currency": "USD",
     "sku": "5M144M8S13DD72X10DD37F7S16DD72X13DD37J1S13DD72X10DD37G1",
@@ -79310,7 +79310,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -79358,8 +79358,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Small print",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Small print",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S9.23X7",
@@ -79387,7 +79387,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -79399,8 +79399,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Small print — Black frame",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Small print — Black frame",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "71.00",
     "currency": "USD",
     "sku": "5M144M8S9DD23X7F1S12DD23X10J1S9DD23X7G1",
@@ -79428,7 +79428,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -79476,8 +79476,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Small print — White frame",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Small print — White frame",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "71.00",
     "currency": "USD",
     "sku": "5M144M8S9DD23X7F2S12DD23X10J1S9DD23X7G1",
@@ -79505,7 +79505,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -79553,8 +79553,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-370",
-    "title": "Painting #370 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #370",
+    "title": "Ben & Kermit & Swan — Small print — Natural wood frame",
+    "artworkTitle": "Ben & Kermit & Swan",
     "amount": "82.00",
     "currency": "USD",
     "sku": "5M144M8S9DD23X7F7S12DD23X10J1S9DD23X7G1",
@@ -79582,7 +79582,7 @@ export default {
       "alt": "A laughing man wearing headphones beside a green frog puppet",
       "width": 5389,
       "height": 4051,
-      "caption": "Painting #370"
+      "caption": "Ben & Kermit & Swan"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -80446,8 +80446,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Large print",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Large print",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S16.68X12.33",
@@ -80475,7 +80475,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -80487,8 +80487,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Large print — Black frame",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Large print — Black frame",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "160.00",
     "currency": "USD",
     "sku": "5M144M8S16DD68X12DD33F1S19DD68X15DD33J1S16DD68X12DD33G1",
@@ -80516,7 +80516,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -80564,8 +80564,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Large print — White frame",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Large print — White frame",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "160.00",
     "currency": "USD",
     "sku": "5M144M8S16DD68X12DD33F2S19DD68X15DD33J1S16DD68X12DD33G1",
@@ -80593,7 +80593,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -80641,8 +80641,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Large print — Natural wood frame",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "176.00",
     "currency": "USD",
     "sku": "5M144M8S16DD68X12DD33F7S19DD68X15DD33J1S16DD68X12DD33G1",
@@ -80670,7 +80670,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -80718,8 +80718,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Medium print",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Medium print",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S12.57X9.31",
@@ -80747,7 +80747,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -80759,8 +80759,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Medium print — Black frame",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Medium print — Black frame",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S12DD57X9DD31F1S15DD57X12DD31J1S12DD57X9DD31G1",
@@ -80788,7 +80788,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -80836,8 +80836,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Medium print — White frame",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Medium print — White frame",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S12DD57X9DD31F2S15DD57X12DD31J1S12DD57X9DD31G1",
@@ -80865,7 +80865,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -80913,8 +80913,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Medium print — Natural wood frame",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "118.00",
     "currency": "USD",
     "sku": "5M144M8S12DD57X9DD31F7S15DD57X12DD31J1S12DD57X9DD31G1",
@@ -80942,7 +80942,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -80990,8 +80990,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Small print",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Small print",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S8.46X6.29",
@@ -81019,7 +81019,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81031,8 +81031,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Small print — Black frame",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Small print — Black frame",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S8DD46X6DD29F1S11DD46X9DD29J1S8DD46X6DD29G1",
@@ -81060,7 +81060,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81108,8 +81108,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Small print — White frame",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Small print — White frame",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S8DD46X6DD29F2S11DD46X9DD29J1S8DD46X6DD29G1",
@@ -81137,7 +81137,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81185,8 +81185,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-364",
-    "title": "Painting #364 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #364",
+    "title": "Max Keiser & Michael Saylor — Small print — Natural wood frame",
+    "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "79.63",
     "currency": "USD",
     "sku": "5M144M8S8DD46X6DD29F7S11DD46X9DD29J1S8DD46X6DD29G1",
@@ -81214,7 +81214,7 @@ export default {
       "alt": "Two smiling men, one in a suit and one in a white cap",
       "width": 4930,
       "height": 3624,
-      "caption": "Painting #364"
+      "caption": "Max Keiser & Michael Saylor"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81262,8 +81262,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Large print",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Large print",
+    "artworkTitle": "RFK",
     "amount": "90.00",
     "currency": "USD",
     "sku": "5M144M8S12.41X17.29",
@@ -81291,7 +81291,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81303,8 +81303,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Large print — Black frame",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Large print — Black frame",
+    "artworkTitle": "RFK",
     "amount": "167.00",
     "currency": "USD",
     "sku": "5M144M8S12DD41X17DD29F1S15DD41X20DD29J1S12DD41X17DD29G1",
@@ -81332,7 +81332,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81380,8 +81380,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Large print — White frame",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Large print — White frame",
+    "artworkTitle": "RFK",
     "amount": "167.00",
     "currency": "USD",
     "sku": "5M144M8S12DD41X17DD29F2S15DD41X20DD29J1S12DD41X17DD29G1",
@@ -81409,7 +81409,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81457,8 +81457,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Large print — Natural wood frame",
+    "artworkTitle": "RFK",
     "amount": "183.00",
     "currency": "USD",
     "sku": "5M144M8S12DD41X17DD29F7S15DD41X20DD29J1S12DD41X17DD29G1",
@@ -81486,7 +81486,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81534,8 +81534,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Medium print",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Medium print",
+    "artworkTitle": "RFK",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S9.37X13.03",
@@ -81563,7 +81563,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81575,8 +81575,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Medium print — Black frame",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Medium print — Black frame",
+    "artworkTitle": "RFK",
     "amount": "107.00",
     "currency": "USD",
     "sku": "5M144M8S9DD37X13DD03F1S12DD37X16DD03J1S9DD37X13DD03G1",
@@ -81604,7 +81604,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81652,8 +81652,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Medium print — White frame",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Medium print — White frame",
+    "artworkTitle": "RFK",
     "amount": "107.00",
     "currency": "USD",
     "sku": "5M144M8S9DD37X13DD03F2S12DD37X16DD03J1S9DD37X13DD03G1",
@@ -81681,7 +81681,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81729,8 +81729,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Medium print — Natural wood frame",
+    "artworkTitle": "RFK",
     "amount": "120.00",
     "currency": "USD",
     "sku": "5M144M8S9DD37X13DD03F7S12DD37X16DD03J1S9DD37X13DD03G1",
@@ -81758,7 +81758,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81806,8 +81806,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Small print",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Small print",
+    "artworkTitle": "RFK",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S6.33X8.77",
@@ -81835,7 +81835,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81847,8 +81847,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Small print — Black frame",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Small print — Black frame",
+    "artworkTitle": "RFK",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD33X8DD77F1S9DD33X11DD77J1S6DD33X8DD77G1",
@@ -81876,7 +81876,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -81924,8 +81924,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Small print — White frame",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Small print — White frame",
+    "artworkTitle": "RFK",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD33X8DD77F2S9DD33X11DD77J1S6DD33X8DD77G1",
@@ -81953,7 +81953,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82001,8 +82001,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-366",
-    "title": "Painting #366 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #366",
+    "title": "RFK — Small print — Natural wood frame",
+    "artworkTitle": "RFK",
     "amount": "79.63",
     "currency": "USD",
     "sku": "5M144M8S6DD33X8DD77F7S9DD33X11DD77J1S6DD33X8DD77G1",
@@ -82030,7 +82030,7 @@ export default {
       "alt": "A gray-haired man in a suit looking to the side",
       "width": 3648,
       "height": 5114,
-      "caption": "Painting #366"
+      "caption": "RFK"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82078,8 +82078,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Large print",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Large print",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S12.26X16.76",
@@ -82107,7 +82107,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82119,8 +82119,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Large print — Black frame",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Large print — Black frame",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "160.00",
     "currency": "USD",
     "sku": "5M144M8S12DD26X16DD76F1S15DD26X19DD76J1S12DD26X16DD76G1",
@@ -82148,7 +82148,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82196,8 +82196,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Large print — White frame",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Large print — White frame",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "160.00",
     "currency": "USD",
     "sku": "5M144M8S12DD26X16DD76F2S15DD26X19DD76J1S12DD26X16DD76G1",
@@ -82225,7 +82225,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82273,8 +82273,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Large print — Natural wood frame",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "176.00",
     "currency": "USD",
     "sku": "5M144M8S12DD26X16DD76F7S15DD26X19DD76J1S12DD26X16DD76G1",
@@ -82302,7 +82302,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82350,8 +82350,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Medium print",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Medium print",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S9.26X12.63",
@@ -82379,7 +82379,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82391,8 +82391,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Medium print — Black frame",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Medium print — Black frame",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD26X12DD63F1S12DD26X15DD63J1S9DD26X12DD63G1",
@@ -82420,7 +82420,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82468,8 +82468,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Medium print — White frame",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Medium print — White frame",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD26X12DD63F2S12DD26X15DD63J1S9DD26X12DD63G1",
@@ -82497,7 +82497,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82545,8 +82545,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Medium print — Natural wood frame",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "118.00",
     "currency": "USD",
     "sku": "5M144M8S9DD26X12DD63F7S12DD26X15DD63J1S9DD26X12DD63G1",
@@ -82574,7 +82574,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82622,8 +82622,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Small print",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Small print",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S6.25X8.5",
@@ -82651,7 +82651,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82663,8 +82663,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Small print — Black frame",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Small print — Black frame",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD25X8DD5F1S9DD25X11DD5J1S6DD25X8DD5G1",
@@ -82692,7 +82692,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82740,8 +82740,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Small print — White frame",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Small print — White frame",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD25X8DD5F2S9DD25X11DD5J1S6DD25X8DD5G1",
@@ -82769,7 +82769,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82817,8 +82817,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-367",
-    "title": "Painting #367 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #367",
+    "title": "Josie, The Redheaded Libertarian — Small print — Natural wood frame",
+    "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "79.63",
     "currency": "USD",
     "sku": "5M144M8S6DD25X8DD5F7S9DD25X11DD5J1S6DD25X8DD5G1",
@@ -82846,7 +82846,7 @@ export default {
       "alt": "A red-haired woman wearing headphones and speaking into a microphone",
       "width": 3605,
       "height": 4955,
-      "caption": "Painting #367"
+      "caption": "Josie, The Redheaded Libertarian"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82894,8 +82894,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Large print",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Large print",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "95.00",
     "currency": "USD",
     "sku": "5M144M8S17.7X12.69",
@@ -82923,7 +82923,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -82935,8 +82935,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Large print — Black frame",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Large print — Black frame",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "174.00",
     "currency": "USD",
     "sku": "5M144M8S17DD7X12DD69F1S20DD7X15DD69J1S17DD7X12DD69G1",
@@ -82964,7 +82964,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83012,8 +83012,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Large print — White frame",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Large print — White frame",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "174.00",
     "currency": "USD",
     "sku": "5M144M8S17DD7X12DD69F2S20DD7X15DD69J1S17DD7X12DD69G1",
@@ -83041,7 +83041,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83089,8 +83089,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Large print — Natural wood frame",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "191.00",
     "currency": "USD",
     "sku": "5M144M8S17DD7X12DD69F7S20DD7X15DD69J1S17DD7X12DD69G1",
@@ -83118,7 +83118,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83166,8 +83166,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Medium print",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Medium print",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "55.00",
     "currency": "USD",
     "sku": "5M144M8S13.34X9.58",
@@ -83195,7 +83195,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83207,8 +83207,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Medium print — Black frame",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Medium print — Black frame",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "112.00",
     "currency": "USD",
     "sku": "5M144M8S13DD34X9DD58F1S16DD34X12DD58J1S13DD34X9DD58G1",
@@ -83236,7 +83236,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83284,8 +83284,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Medium print — White frame",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Medium print — White frame",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "112.00",
     "currency": "USD",
     "sku": "5M144M8S13DD34X9DD58F2S16DD34X12DD58J1S13DD34X9DD58G1",
@@ -83313,7 +83313,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83361,8 +83361,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Medium print — Natural wood frame",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "126.00",
     "currency": "USD",
     "sku": "5M144M8S13DD34X9DD58F7S16DD34X12DD58J1S13DD34X9DD58G1",
@@ -83390,7 +83390,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83438,8 +83438,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Small print",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Small print",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S8.97X6.47",
@@ -83467,7 +83467,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83479,8 +83479,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Small print — Black frame",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Small print — Black frame",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "71.00",
     "currency": "USD",
     "sku": "5M144M8S8DD97X6DD47F1S11DD97X9DD47J1S8DD97X6DD47G1",
@@ -83508,7 +83508,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83556,8 +83556,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Small print — White frame",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Small print — White frame",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "71.00",
     "currency": "USD",
     "sku": "5M144M8S8DD97X6DD47F2S11DD97X9DD47J1S8DD97X6DD47G1",
@@ -83585,7 +83585,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83633,8 +83633,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-362",
-    "title": "Painting #362 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #362",
+    "title": "Max Keiser & Stacey Herbert — Small print — Natural wood frame",
+    "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "81.00",
     "currency": "USD",
     "sku": "5M144M8S8DD97X6DD47F7S11DD97X9DD47J1S8DD97X6DD47G1",
@@ -83662,7 +83662,7 @@ export default {
       "alt": "A woman beside a man wearing a Bitcoin cap and shirt",
       "width": 5236,
       "height": 3733,
-      "caption": "Painting #362"
+      "caption": "Max Keiser & Stacey Herbert"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83710,8 +83710,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Large print",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Large print",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "90.00",
     "currency": "USD",
     "sku": "5M144M8S17.12X12.45",
@@ -83739,7 +83739,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83751,8 +83751,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Large print — Black frame",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Large print — Black frame",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "167.00",
     "currency": "USD",
     "sku": "5M144M8S17DD12X12DD45F1S20DD12X15DD45J1S17DD12X12DD45G1",
@@ -83780,7 +83780,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83828,8 +83828,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Large print — White frame",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Large print — White frame",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "167.00",
     "currency": "USD",
     "sku": "5M144M8S17DD12X12DD45F2S20DD12X15DD45J1S17DD12X12DD45G1",
@@ -83857,7 +83857,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83905,8 +83905,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Large print — Natural wood frame",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "183.00",
     "currency": "USD",
     "sku": "5M144M8S17DD12X12DD45F7S20DD12X15DD45J1S17DD12X12DD45G1",
@@ -83934,7 +83934,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -83982,8 +83982,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Medium print",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Medium print",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S12.9X9.4",
@@ -84011,7 +84011,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -84023,8 +84023,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Medium print — Black frame",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Medium print — Black frame",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "107.00",
     "currency": "USD",
     "sku": "5M144M8S12DD9X9DD4F1S15DD9X12DD4J1S12DD9X9DD4G1",
@@ -84052,7 +84052,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -84100,8 +84100,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Medium print — White frame",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Medium print — White frame",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "107.00",
     "currency": "USD",
     "sku": "5M144M8S12DD9X9DD4F2S15DD9X12DD4J1S12DD9X9DD4G1",
@@ -84129,7 +84129,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -84177,8 +84177,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Medium print — Natural wood frame",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "120.00",
     "currency": "USD",
     "sku": "5M144M8S12DD9X9DD4F7S15DD9X12DD4J1S12DD9X9DD4G1",
@@ -84206,7 +84206,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -84254,8 +84254,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Small print",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Small print",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S8.68X6.35",
@@ -84283,7 +84283,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -84295,8 +84295,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Small print — Black frame",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Small print — Black frame",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S8DD68X6DD35F1S11DD68X9DD35J1S8DD68X6DD35G1",
@@ -84324,7 +84324,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -84372,8 +84372,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Small print — White frame",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Small print — White frame",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S8DD68X6DD35F2S11DD68X9DD35J1S8DD68X6DD35G1",
@@ -84401,7 +84401,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -84449,8 +84449,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-412",
-    "title": "Painting #412 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #412",
+    "title": "Brekkie Hoisting Orange Calcite B — Small print — Natural wood frame",
+    "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "79.63",
     "currency": "USD",
     "sku": "5M144M8S8DD68X6DD35F7S11DD68X9DD35J1S8DD68X6DD35G1",
@@ -84478,7 +84478,7 @@ export default {
       "alt": "A man working on a large pale orange Bitcoin sculpture",
       "width": 5063,
       "height": 3662,
-      "caption": "Painting #412"
+      "caption": "Brekkie Hoisting Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86158,8 +86158,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Large print",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Large print",
+    "artworkTitle": "Holding the Line",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S11.97X16.25",
@@ -86187,7 +86187,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86199,8 +86199,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Large print — Black frame",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Large print — Black frame",
+    "artworkTitle": "Holding the Line",
     "amount": "158.00",
     "currency": "USD",
     "sku": "5M144M8S11DD97X16DD25F1S14DD97X19DD25J1S11DD97X16DD25G1",
@@ -86228,7 +86228,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86276,8 +86276,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Large print — White frame",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Large print — White frame",
+    "artworkTitle": "Holding the Line",
     "amount": "158.00",
     "currency": "USD",
     "sku": "5M144M8S11DD97X16DD25F2S14DD97X19DD25J1S11DD97X16DD25G1",
@@ -86305,7 +86305,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86353,8 +86353,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Large print — Natural wood frame",
+    "artworkTitle": "Holding the Line",
     "amount": "174.00",
     "currency": "USD",
     "sku": "5M144M8S11DD97X16DD25F7S14DD97X19DD25J1S11DD97X16DD25G1",
@@ -86382,7 +86382,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86430,8 +86430,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Medium print",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Medium print",
+    "artworkTitle": "Holding the Line",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S9.04X12.25",
@@ -86459,7 +86459,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86471,8 +86471,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Medium print — Black frame",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Medium print — Black frame",
+    "artworkTitle": "Holding the Line",
     "amount": "104.00",
     "currency": "USD",
     "sku": "5M144M8S9DD04X12DD25F1S12DD04X15DD25J1S9DD04X12DD25G1",
@@ -86500,7 +86500,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86548,8 +86548,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Medium print — White frame",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Medium print — White frame",
+    "artworkTitle": "Holding the Line",
     "amount": "104.00",
     "currency": "USD",
     "sku": "5M144M8S9DD04X12DD25F2S12DD04X15DD25J1S9DD04X12DD25G1",
@@ -86577,7 +86577,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86625,8 +86625,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Medium print — Natural wood frame",
+    "artworkTitle": "Holding the Line",
     "amount": "117.00",
     "currency": "USD",
     "sku": "5M144M8S9DD04X12DD25F7S12DD04X15DD25J1S9DD04X12DD25G1",
@@ -86654,7 +86654,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86702,8 +86702,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Small print",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Small print",
+    "artworkTitle": "Holding the Line",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.11X8.25",
@@ -86731,7 +86731,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86743,8 +86743,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Small print — Black frame",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Small print — Black frame",
+    "artworkTitle": "Holding the Line",
     "amount": "63.63",
     "currency": "USD",
     "sku": "5M144M8S6DD11X8DD25F1S9DD11X11DD25J1S6DD11X8DD25G1",
@@ -86772,7 +86772,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86820,8 +86820,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Small print — White frame",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Small print — White frame",
+    "artworkTitle": "Holding the Line",
     "amount": "63.63",
     "currency": "USD",
     "sku": "5M144M8S6DD11X8DD25F2S9DD11X11DD25J1S6DD11X8DD25G1",
@@ -86849,7 +86849,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86897,8 +86897,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-385",
-    "title": "Painting #385 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #385",
+    "title": "Holding the Line — Small print — Natural wood frame",
+    "artworkTitle": "Holding the Line",
     "amount": "73.63",
     "currency": "USD",
     "sku": "5M144M8S6DD11X8DD25F7S9DD11X11DD25J1S6DD11X8DD25G1",
@@ -86926,7 +86926,7 @@ export default {
       "alt": "A man in a brown shirt with sunglasses resting on his head",
       "width": 3518,
       "height": 4802,
-      "caption": "Painting #385"
+      "caption": "Holding the Line"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -86974,8 +86974,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Large print",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Large print",
+    "artworkTitle": "Holding the Line #2",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S12.24X16.6",
@@ -87003,7 +87003,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87015,8 +87015,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Large print — Black frame",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Large print — Black frame",
+    "artworkTitle": "Holding the Line #2",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S12DD24X16DD6F1S15DD24X19DD6J1S12DD24X16DD6G1",
@@ -87044,7 +87044,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87092,8 +87092,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Large print — White frame",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Large print — White frame",
+    "artworkTitle": "Holding the Line #2",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S12DD24X16DD6F2S15DD24X19DD6J1S12DD24X16DD6G1",
@@ -87121,7 +87121,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87169,8 +87169,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Large print — Natural wood frame",
+    "artworkTitle": "Holding the Line #2",
     "amount": "175.00",
     "currency": "USD",
     "sku": "5M144M8S12DD24X16DD6F7S15DD24X19DD6J1S12DD24X16DD6G1",
@@ -87198,7 +87198,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87246,8 +87246,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Medium print",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Medium print",
+    "artworkTitle": "Holding the Line #2",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S9.24X12.51",
@@ -87275,7 +87275,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87287,8 +87287,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Medium print — Black frame",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Medium print — Black frame",
+    "artworkTitle": "Holding the Line #2",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD24X12DD51F1S12DD24X15DD51J1S9DD24X12DD51G1",
@@ -87316,7 +87316,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87364,8 +87364,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Medium print — White frame",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Medium print — White frame",
+    "artworkTitle": "Holding the Line #2",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD24X12DD51F2S12DD24X15DD51J1S9DD24X12DD51G1",
@@ -87393,7 +87393,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87441,8 +87441,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Medium print — Natural wood frame",
+    "artworkTitle": "Holding the Line #2",
     "amount": "118.00",
     "currency": "USD",
     "sku": "5M144M8S9DD24X12DD51F7S12DD24X15DD51J1S9DD24X12DD51G1",
@@ -87470,7 +87470,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87518,8 +87518,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Small print",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Small print",
+    "artworkTitle": "Holding the Line #2",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S6.24X8.42",
@@ -87547,7 +87547,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87559,8 +87559,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Small print — Black frame",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Small print — Black frame",
+    "artworkTitle": "Holding the Line #2",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD24X8DD42F1S9DD24X11DD42J1S6DD24X8DD42G1",
@@ -87588,7 +87588,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87636,8 +87636,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Small print — White frame",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Small print — White frame",
+    "artworkTitle": "Holding the Line #2",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD24X8DD42F2S9DD24X11DD42J1S6DD24X8DD42G1",
@@ -87665,7 +87665,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87713,8 +87713,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-386",
-    "title": "Painting #386 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #386",
+    "title": "Holding the Line #2 — Small print — Natural wood frame",
+    "artworkTitle": "Holding the Line #2",
     "amount": "79.63",
     "currency": "USD",
     "sku": "5M144M8S6DD24X8DD42F7S9DD24X11DD42J1S6DD24X8DD42G1",
@@ -87742,7 +87742,7 @@ export default {
       "alt": "A man with close-cropped hair looking upward",
       "width": 3598,
       "height": 4906,
-      "caption": "Painting #386"
+      "caption": "Holding the Line #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87790,8 +87790,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Large print",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Large print",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "80.00",
     "currency": "USD",
     "sku": "5M144M8S11.82X15.92",
@@ -87819,7 +87819,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87831,8 +87831,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Large print — Black frame",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Large print — Black frame",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "151.00",
     "currency": "USD",
     "sku": "5M144M8S11DD82X15DD92F1S14DD82X18DD92J1S11DD82X15DD92G1",
@@ -87860,7 +87860,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87908,8 +87908,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Large print — White frame",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Large print — White frame",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "151.00",
     "currency": "USD",
     "sku": "5M144M8S11DD82X15DD92F2S14DD82X18DD92J1S11DD82X15DD92G1",
@@ -87937,7 +87937,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -87985,8 +87985,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Large print — Natural wood frame",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "166.00",
     "currency": "USD",
     "sku": "5M144M8S11DD82X15DD92F7S14DD82X18DD92J1S11DD82X15DD92G1",
@@ -88014,7 +88014,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88062,8 +88062,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Medium print",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Medium print",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S8.92X12",
@@ -88091,7 +88091,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88103,8 +88103,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Medium print — Black frame",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Medium print — Black frame",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "98.00",
     "currency": "USD",
     "sku": "5M144M8S8DD92X12F1S11DD92X15J1S8DD92X12G1",
@@ -88132,7 +88132,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88180,8 +88180,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Medium print — White frame",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Medium print — White frame",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "98.00",
     "currency": "USD",
     "sku": "5M144M8S8DD92X12F2S11DD92X15J1S8DD92X12G1",
@@ -88209,7 +88209,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88257,8 +88257,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Medium print — Natural wood frame",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "111.00",
     "currency": "USD",
     "sku": "5M144M8S8DD92X12F7S11DD92X15J1S8DD92X12G1",
@@ -88286,7 +88286,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88334,8 +88334,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Small print",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Small print",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.03X8.08",
@@ -88363,7 +88363,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88375,8 +88375,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Small print — Black frame",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Small print — Black frame",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "63.63",
     "currency": "USD",
     "sku": "5M144M8S6DD03X8DD08F1S9DD03X11DD08J1S6DD03X8DD08G1",
@@ -88404,7 +88404,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88452,8 +88452,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Small print — White frame",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Small print — White frame",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "63.63",
     "currency": "USD",
     "sku": "5M144M8S6DD03X8DD08F2S9DD03X11DD08J1S6DD03X8DD08G1",
@@ -88481,7 +88481,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88529,8 +88529,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-387",
-    "title": "Painting #387 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #387",
+    "title": "Tulsi Gabbard #1 — Small print — Natural wood frame",
+    "artworkTitle": "Tulsi Gabbard #1",
     "amount": "73.63",
     "currency": "USD",
     "sku": "5M144M8S6DD03X8DD08F7S9DD03X11DD08J1S6DD03X8DD08G1",
@@ -88558,7 +88558,7 @@ export default {
       "alt": "A woman with long dark hair against a blue background",
       "width": 3471,
       "height": 4702,
-      "caption": "Painting #387"
+      "caption": "Tulsi Gabbard #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88606,8 +88606,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Large print",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Large print",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S12.28X16.4",
@@ -88635,7 +88635,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88647,8 +88647,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Large print — Black frame",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Large print — Black frame",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S12DD28X16DD4F1S15DD28X19DD4J1S12DD28X16DD4G1",
@@ -88676,7 +88676,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88724,8 +88724,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Large print — White frame",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Large print — White frame",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S12DD28X16DD4F2S15DD28X19DD4J1S12DD28X16DD4G1",
@@ -88753,7 +88753,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88801,8 +88801,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Large print — Natural wood frame",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "175.00",
     "currency": "USD",
     "sku": "5M144M8S12DD28X16DD4F7S15DD28X19DD4J1S12DD28X16DD4G1",
@@ -88830,7 +88830,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88878,8 +88878,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Medium print",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Medium print",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S9.27X12.36",
@@ -88907,7 +88907,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88919,8 +88919,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Medium print — Black frame",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Medium print — Black frame",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD27X12DD36F1S12DD27X15DD36J1S9DD27X12DD36G1",
@@ -88948,7 +88948,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -88996,8 +88996,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Medium print — White frame",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Medium print — White frame",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD27X12DD36F2S12DD27X15DD36J1S9DD27X12DD36G1",
@@ -89025,7 +89025,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89073,8 +89073,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Medium print — Natural wood frame",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "118.00",
     "currency": "USD",
     "sku": "5M144M8S9DD27X12DD36F7S12DD27X15DD36J1S9DD27X12DD36G1",
@@ -89102,7 +89102,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89150,8 +89150,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Small print",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Small print",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "25.00",
     "currency": "USD",
     "sku": "5M144M8S6.26X8.32",
@@ -89179,7 +89179,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89191,8 +89191,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Small print — Black frame",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Small print — Black frame",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "64.63",
     "currency": "USD",
     "sku": "5M144M8S6DD26X8DD32F1S9DD26X11DD32J1S6DD26X8DD32G1",
@@ -89220,7 +89220,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89268,8 +89268,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Small print — White frame",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Small print — White frame",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "64.63",
     "currency": "USD",
     "sku": "5M144M8S6DD26X8DD32F2S9DD26X11DD32J1S6DD26X8DD32G1",
@@ -89297,7 +89297,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89345,8 +89345,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-389",
-    "title": "Painting #389 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #389",
+    "title": "Tulsi Gabbard #2 — Small print — Natural wood frame",
+    "artworkTitle": "Tulsi Gabbard #2",
     "amount": "74.63",
     "currency": "USD",
     "sku": "5M144M8S6DD26X8DD32F7S9DD26X11DD32J1S6DD26X8DD32G1",
@@ -89374,7 +89374,7 @@ export default {
       "alt": "A smiling woman with dark hair against a dark background",
       "width": 3609,
       "height": 4846,
-      "caption": "Painting #389"
+      "caption": "Tulsi Gabbard #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89422,8 +89422,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Large print",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Large print",
+    "artworkTitle": "Ron Paul",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S12.06X16.75",
@@ -89451,7 +89451,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89463,8 +89463,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Large print — Black frame",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Large print — Black frame",
+    "artworkTitle": "Ron Paul",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S12DD06X16DD75F1S15DD06X19DD75J1S12DD06X16DD75G1",
@@ -89492,7 +89492,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89540,8 +89540,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Large print — White frame",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Large print — White frame",
+    "artworkTitle": "Ron Paul",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S12DD06X16DD75F2S15DD06X19DD75J1S12DD06X16DD75G1",
@@ -89569,7 +89569,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89617,8 +89617,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Large print — Natural wood frame",
+    "artworkTitle": "Ron Paul",
     "amount": "175.00",
     "currency": "USD",
     "sku": "5M144M8S12DD06X16DD75F7S15DD06X19DD75J1S12DD06X16DD75G1",
@@ -89646,7 +89646,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89694,8 +89694,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Medium print",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Medium print",
+    "artworkTitle": "Ron Paul",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S9.1X12.62",
@@ -89723,7 +89723,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89735,8 +89735,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Medium print — Black frame",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Medium print — Black frame",
+    "artworkTitle": "Ron Paul",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD1X12DD62F1S12DD1X15DD62J1S9DD1X12DD62G1",
@@ -89764,7 +89764,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89812,8 +89812,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Medium print — White frame",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Medium print — White frame",
+    "artworkTitle": "Ron Paul",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S9DD1X12DD62F2S12DD1X15DD62J1S9DD1X12DD62G1",
@@ -89841,7 +89841,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89889,8 +89889,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Medium print — Natural wood frame",
+    "artworkTitle": "Ron Paul",
     "amount": "118.00",
     "currency": "USD",
     "sku": "5M144M8S9DD1X12DD62F7S12DD1X15DD62J1S9DD1X12DD62G1",
@@ -89918,7 +89918,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -89966,8 +89966,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Small print",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Small print",
+    "artworkTitle": "Ron Paul",
     "amount": "30.00",
     "currency": "USD",
     "sku": "5M144M8S6.15X8.5",
@@ -89995,7 +89995,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -90007,8 +90007,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Small print — Black frame",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Small print — Black frame",
+    "artworkTitle": "Ron Paul",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD15X8DD5F1S9DD15X11DD5J1S6DD15X8DD5G1",
@@ -90036,7 +90036,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -90084,8 +90084,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Small print — White frame",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Small print — White frame",
+    "artworkTitle": "Ron Paul",
     "amount": "69.63",
     "currency": "USD",
     "sku": "5M144M8S6DD15X8DD5F2S9DD15X11DD5J1S6DD15X8DD5G1",
@@ -90113,7 +90113,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -90161,8 +90161,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-390",
-    "title": "Painting #390 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #390",
+    "title": "Ron Paul — Small print — Natural wood frame",
+    "artworkTitle": "Ron Paul",
     "amount": "79.63",
     "currency": "USD",
     "sku": "5M144M8S6DD15X8DD5F7S9DD15X11DD5J1S6DD15X8DD5G1",
@@ -90190,7 +90190,7 @@ export default {
       "alt": "An older man in a suit and tie seen from below",
       "width": 3543,
       "height": 4950,
-      "caption": "Painting #390"
+      "caption": "Ron Paul"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -91870,8 +91870,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Large print",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Large print",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "135.00",
     "currency": "USD",
     "sku": "5M144M8S13.09X24.25",
@@ -91899,7 +91899,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -91911,8 +91911,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Large print — Black frame",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Large print — Black frame",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "234.00",
     "currency": "USD",
     "sku": "5M144M8S13DD09X24DD25F1S16DD09X27DD25J1S13DD09X24DD25G1",
@@ -91940,7 +91940,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -91988,8 +91988,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Large print — White frame",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Large print — White frame",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "234.00",
     "currency": "USD",
     "sku": "5M144M8S13DD09X24DD25F2S16DD09X27DD25J1S13DD09X24DD25G1",
@@ -92017,7 +92017,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -92065,8 +92065,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Large print — Natural wood frame",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "253.00",
     "currency": "USD",
     "sku": "5M144M8S13DD09X24DD25F7S16DD09X27DD25J1S13DD09X24DD25G1",
@@ -92094,7 +92094,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -92142,8 +92142,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Medium print",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Medium print",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "75.00",
     "currency": "USD",
     "sku": "5M144M8S9.88X18.25",
@@ -92171,7 +92171,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -92183,8 +92183,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Medium print — Black frame",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Medium print — Black frame",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "146.00",
     "currency": "USD",
     "sku": "5M144M8S9DD88X18DD25F1S12DD88X21DD25J1S9DD88X18DD25G1",
@@ -92212,7 +92212,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -92260,8 +92260,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Medium print — White frame",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Medium print — White frame",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "146.00",
     "currency": "USD",
     "sku": "5M144M8S9DD88X18DD25F2S12DD88X21DD25J1S9DD88X18DD25G1",
@@ -92289,7 +92289,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -92337,8 +92337,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Medium print — Natural wood frame",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "162.00",
     "currency": "USD",
     "sku": "5M144M8S9DD88X18DD25F7S12DD88X21DD25J1S9DD88X18DD25G1",
@@ -92366,7 +92366,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -92414,8 +92414,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Small print",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Small print",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S6.67X12.25",
@@ -92443,7 +92443,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -92455,8 +92455,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Small print — Black frame",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Small print — Black frame",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "87.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD25F1S9DD67X15DD25J1S6DD67X12DD25G1",
@@ -92484,7 +92484,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -92532,8 +92532,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Small print — White frame",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Small print — White frame",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "87.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD25F2S9DD67X15DD25J1S6DD67X12DD25G1",
@@ -92561,7 +92561,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -92609,8 +92609,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-249",
-    "title": "Painting #249 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #249",
+    "title": "Lake in North Cascades — Small print — Natural wood frame",
+    "artworkTitle": "Lake in North Cascades",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S6DD67X12DD25F7S9DD67X15DD25J1S6DD67X12DD25G1",
@@ -92638,7 +92638,7 @@ export default {
       "alt": "A narrow lake winding through wooded blue mountains",
       "width": 4094,
       "height": 7647,
-      "caption": "Painting #249"
+      "caption": "Lake in North Cascades"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -95950,8 +95950,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Large print",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Large print",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S21.45X11.96",
@@ -95979,7 +95979,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -95991,8 +95991,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Large print — Black frame",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Large print — Black frame",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "192.00",
     "currency": "USD",
     "sku": "5M144M8S21DD45X11DD96F1S24DD45X14DD96J1S21DD45X11DD96G1",
@@ -96020,7 +96020,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96068,8 +96068,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Large print — White frame",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Large print — White frame",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "192.00",
     "currency": "USD",
     "sku": "5M144M8S21DD45X11DD96F2S24DD45X14DD96J1S21DD45X11DD96G1",
@@ -96097,7 +96097,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96145,8 +96145,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Large print — Natural wood frame",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "210.00",
     "currency": "USD",
     "sku": "5M144M8S21DD45X11DD96F7S24DD45X14DD96J1S21DD45X11DD96G1",
@@ -96174,7 +96174,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96222,8 +96222,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Medium print",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Medium print",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "60.00",
     "currency": "USD",
     "sku": "5M144M8S16.15X9.03",
@@ -96251,7 +96251,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96263,8 +96263,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Medium print — Black frame",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Medium print — Black frame",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "123.00",
     "currency": "USD",
     "sku": "5M144M8S16DD15X9DD03F1S19DD15X12DD03J1S16DD15X9DD03G1",
@@ -96292,7 +96292,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96340,8 +96340,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Medium print — White frame",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Medium print — White frame",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "123.00",
     "currency": "USD",
     "sku": "5M144M8S16DD15X9DD03F2S19DD15X12DD03J1S16DD15X9DD03G1",
@@ -96369,7 +96369,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96417,8 +96417,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Medium print — Natural wood frame",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "137.00",
     "currency": "USD",
     "sku": "5M144M8S16DD15X9DD03F7S19DD15X12DD03J1S16DD15X9DD03G1",
@@ -96446,7 +96446,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96494,8 +96494,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Small print",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Small print",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S10.85X6.1",
@@ -96523,7 +96523,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96535,8 +96535,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Small print — Black frame",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Small print — Black frame",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "78.00",
     "currency": "USD",
     "sku": "5M144M8S10DD85X6DD1F1S13DD85X9DD1J1S10DD85X6DD1G1",
@@ -96564,7 +96564,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96612,8 +96612,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Small print — White frame",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Small print — White frame",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "78.00",
     "currency": "USD",
     "sku": "5M144M8S10DD85X6DD1F2S13DD85X9DD1J1S10DD85X6DD1G1",
@@ -96641,7 +96641,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -96689,8 +96689,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-416",
-    "title": "Painting #416 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #416",
+    "title": "Brekkie Finishing Orange Calcite B — Small print — Natural wood frame",
+    "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "89.00",
     "currency": "USD",
     "sku": "5M144M8S10DD85X6DD1F7S13DD85X9DD1J1S10DD85X6DD1G1",
@@ -96718,7 +96718,7 @@ export default {
       "alt": "A man beside a polished orange Bitcoin sculpture",
       "width": 6361,
       "height": 3513,
-      "caption": "Painting #416"
+      "caption": "Brekkie Finishing Orange Calcite B"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -97582,8 +97582,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Large print",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Large print",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "140.00",
     "currency": "USD",
     "sku": "5M144M8S13.75X24.11",
@@ -97611,7 +97611,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -97623,8 +97623,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Large print — Black frame",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Large print — Black frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "241.00",
     "currency": "USD",
     "sku": "5M144M8S13DD75X24DD11F1S16DD75X27DD11J1S13DD75X24DD11G1",
@@ -97652,7 +97652,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -97700,8 +97700,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Large print — White frame",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Large print — White frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "241.00",
     "currency": "USD",
     "sku": "5M144M8S13DD75X24DD11F2S16DD75X27DD11J1S13DD75X24DD11G1",
@@ -97729,7 +97729,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -97777,8 +97777,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Large print — Natural wood frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "261.00",
     "currency": "USD",
     "sku": "5M144M8S13DD75X24DD11F7S16DD75X27DD11J1S13DD75X24DD11G1",
@@ -97806,7 +97806,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -97854,8 +97854,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Medium print",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Medium print",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "80.00",
     "currency": "USD",
     "sku": "5M144M8S10.37X18.14",
@@ -97883,7 +97883,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -97895,8 +97895,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Medium print — Black frame",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Medium print — Black frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "152.00",
     "currency": "USD",
     "sku": "5M144M8S10DD37X18DD14F1S13DD37X21DD14J1S10DD37X18DD14G1",
@@ -97924,7 +97924,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -97972,8 +97972,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Medium print — White frame",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Medium print — White frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "152.00",
     "currency": "USD",
     "sku": "5M144M8S10DD37X18DD14F2S13DD37X21DD14J1S10DD37X18DD14G1",
@@ -98001,7 +98001,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98049,8 +98049,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "168.00",
     "currency": "USD",
     "sku": "5M144M8S10DD37X18DD14F7S13DD37X21DD14J1S10DD37X18DD14G1",
@@ -98078,7 +98078,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98126,8 +98126,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Small print",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Small print",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S7X12.18",
@@ -98155,7 +98155,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98167,8 +98167,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Small print — Black frame",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Small print — Black frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S7X12DD18F1S10X15DD18J1S7X12DD18G1",
@@ -98196,7 +98196,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98244,8 +98244,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Small print — White frame",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Small print — White frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S7X12DD18F2S10X15DD18J1S7X12DD18G1",
@@ -98273,7 +98273,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98321,8 +98321,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-246",
-    "title": "Painting #246 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #246",
+    "title": "Sunset from Atami, El Salvador #1 — Small print — Natural wood frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "100.00",
     "currency": "USD",
     "sku": "5M144M8S7X12DD18F7S10X15DD18J1S7X12DD18G1",
@@ -98350,7 +98350,7 @@ export default {
       "alt": "A sunset over ocean water and a terrace railing",
       "width": 4263,
       "height": 7535,
-      "caption": "Painting #246"
+      "caption": "Sunset from Atami, El Salvador #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98398,8 +98398,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Large print",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Large print",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "140.00",
     "currency": "USD",
     "sku": "5M144M8S14.25X23.86",
@@ -98427,7 +98427,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98439,8 +98439,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Large print — Black frame",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Large print — Black frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "242.00",
     "currency": "USD",
     "sku": "5M144M8S14DD25X23DD86F1S17DD25X26DD86J1S14DD25X23DD86G1",
@@ -98468,7 +98468,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98516,8 +98516,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Large print — White frame",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Large print — White frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "242.00",
     "currency": "USD",
     "sku": "5M144M8S14DD25X23DD86F2S17DD25X26DD86J1S14DD25X23DD86G1",
@@ -98545,7 +98545,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98593,8 +98593,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Large print — Natural wood frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "262.00",
     "currency": "USD",
     "sku": "5M144M8S14DD25X23DD86F7S17DD25X26DD86J1S14DD25X23DD86G1",
@@ -98622,7 +98622,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98670,8 +98670,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Medium print",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Medium print",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S10.75X17.95",
@@ -98699,7 +98699,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98711,8 +98711,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Medium print — Black frame",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Medium print — Black frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S10DD75X17DD95F1S13DD75X20DD95J1S10DD75X17DD95G1",
@@ -98740,7 +98740,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98788,8 +98788,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Medium print — White frame",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Medium print — White frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S10DD75X17DD95F2S13DD75X20DD95J1S10DD75X17DD95G1",
@@ -98817,7 +98817,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98865,8 +98865,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "175.00",
     "currency": "USD",
     "sku": "5M144M8S10DD75X17DD95F7S13DD75X20DD95J1S10DD75X17DD95G1",
@@ -98894,7 +98894,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98942,8 +98942,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Small print",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Small print",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S7.25X12.05",
@@ -98971,7 +98971,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -98983,8 +98983,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Small print — Black frame",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Small print — Black frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "89.00",
     "currency": "USD",
     "sku": "5M144M8S7DD25X12DD05F1S10DD25X15DD05J1S7DD25X12DD05G1",
@@ -99012,7 +99012,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99060,8 +99060,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Small print — White frame",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Small print — White frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "89.00",
     "currency": "USD",
     "sku": "5M144M8S7DD25X12DD05F2S10DD25X15DD05J1S7DD25X12DD05G1",
@@ -99089,7 +99089,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99137,8 +99137,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-248",
-    "title": "Painting #248 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #248",
+    "title": "Sunset from Atami, El Salvador #2 — Small print — Natural wood frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "101.00",
     "currency": "USD",
     "sku": "5M144M8S7DD25X12DD05F7S10DD25X15DD05J1S7DD25X12DD05G1",
@@ -99166,7 +99166,7 @@ export default {
       "alt": "Yellow light breaking through clouds above the sea",
       "width": 4567,
       "height": 7703,
-      "caption": "Painting #248"
+      "caption": "Sunset from Atami, El Salvador #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99214,8 +99214,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Large print",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Large print",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "150.00",
     "currency": "USD",
     "sku": "5M144M8S15.25X23.37",
@@ -99243,7 +99243,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99255,8 +99255,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Large print — Black frame",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Large print — Black frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "254.00",
     "currency": "USD",
     "sku": "5M144M8S15DD25X23DD37F1S18DD25X26DD37J1S15DD25X23DD37G1",
@@ -99284,7 +99284,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99332,8 +99332,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Large print — White frame",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Large print — White frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "254.00",
     "currency": "USD",
     "sku": "5M144M8S15DD25X23DD37F2S18DD25X26DD37J1S15DD25X23DD37G1",
@@ -99361,7 +99361,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99409,8 +99409,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Large print — Natural wood frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "274.00",
     "currency": "USD",
     "sku": "5M144M8S15DD25X23DD37F7S18DD25X26DD37J1S15DD25X23DD37G1",
@@ -99438,7 +99438,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99486,8 +99486,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Medium print",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Medium print",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S11.5X17.59",
@@ -99515,7 +99515,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99527,8 +99527,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Medium print — Black frame",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Medium print — Black frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S11DD5X17DD59F1S14DD5X20DD59J1S11DD5X17DD59G1",
@@ -99556,7 +99556,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99604,8 +99604,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Medium print — White frame",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Medium print — White frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "159.00",
     "currency": "USD",
     "sku": "5M144M8S11DD5X17DD59F2S14DD5X20DD59J1S11DD5X17DD59G1",
@@ -99633,7 +99633,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99681,8 +99681,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Medium print — Natural wood frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "175.00",
     "currency": "USD",
     "sku": "5M144M8S11DD5X17DD59F7S14DD5X20DD59J1S11DD5X17DD59G1",
@@ -99710,7 +99710,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99758,8 +99758,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Small print",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Small print",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S7.75X11.81",
@@ -99787,7 +99787,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99799,8 +99799,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Small print — Black frame",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Small print — Black frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "89.00",
     "currency": "USD",
     "sku": "5M144M8S7DD75X11DD81F1S10DD75X14DD81J1S7DD75X11DD81G1",
@@ -99828,7 +99828,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99876,8 +99876,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Small print — White frame",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Small print — White frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "89.00",
     "currency": "USD",
     "sku": "5M144M8S7DD75X11DD81F2S10DD75X14DD81J1S7DD75X11DD81G1",
@@ -99905,7 +99905,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -99953,8 +99953,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-247",
-    "title": "Painting #247 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #247",
+    "title": "Sunset from Atami, El Salvador #3 — Small print — Natural wood frame",
+    "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "101.00",
     "currency": "USD",
     "sku": "5M144M8S7DD75X11DD81F7S10DD75X14DD81J1S7DD75X11DD81G1",
@@ -99982,7 +99982,7 @@ export default {
       "alt": "A golden sunset reflected on the sea beside a curved terrace",
       "width": 4764,
       "height": 7346,
-      "caption": "Painting #247"
+      "caption": "Sunset from Atami, El Salvador #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100030,8 +100030,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Large print",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Large print",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "135.00",
     "currency": "USD",
     "sku": "5M144M8S13.81X23.03",
@@ -100059,7 +100059,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100071,8 +100071,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Large print — Black frame",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Large print — Black frame",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "233.00",
     "currency": "USD",
     "sku": "5M144M8S13DD81X23DD03F1S16DD81X26DD03J1S13DD81X23DD03G1",
@@ -100100,7 +100100,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100148,8 +100148,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Large print — White frame",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Large print — White frame",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "233.00",
     "currency": "USD",
     "sku": "5M144M8S13DD81X23DD03F2S16DD81X26DD03J1S13DD81X23DD03G1",
@@ -100177,7 +100177,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100225,8 +100225,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Large print — Natural wood frame",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "253.00",
     "currency": "USD",
     "sku": "5M144M8S13DD81X23DD03F7S16DD81X26DD03J1S13DD81X23DD03G1",
@@ -100254,7 +100254,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100302,8 +100302,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Medium print",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Medium print",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "75.00",
     "currency": "USD",
     "sku": "5M144M8S10.42X17.33",
@@ -100331,7 +100331,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100343,8 +100343,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Medium print — Black frame",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Medium print — Black frame",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "146.00",
     "currency": "USD",
     "sku": "5M144M8S10DD42X17DD33F1S13DD42X20DD33J1S10DD42X17DD33G1",
@@ -100372,7 +100372,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100420,8 +100420,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Medium print — White frame",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Medium print — White frame",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "146.00",
     "currency": "USD",
     "sku": "5M144M8S10DD42X17DD33F2S13DD42X20DD33J1S10DD42X17DD33G1",
@@ -100449,7 +100449,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100497,8 +100497,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Medium print — Natural wood frame",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "161.00",
     "currency": "USD",
     "sku": "5M144M8S10DD42X17DD33F7S13DD42X20DD33J1S10DD42X17DD33G1",
@@ -100526,7 +100526,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100574,8 +100574,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Small print",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Small print",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S7.03X11.64",
@@ -100603,7 +100603,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100615,8 +100615,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Small print — Black frame",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Small print — Black frame",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "87.00",
     "currency": "USD",
     "sku": "5M144M8S7DD03X11DD64F1S10DD03X14DD64J1S7DD03X11DD64G1",
@@ -100644,7 +100644,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100692,8 +100692,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Small print — White frame",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Small print — White frame",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "87.00",
     "currency": "USD",
     "sku": "5M144M8S7DD03X11DD64F2S10DD03X14DD64J1S7DD03X11DD64G1",
@@ -100721,7 +100721,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100769,8 +100769,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-133",
-    "title": "Painting #133 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #133",
+    "title": "Devo in Front of the Mayan Warrior — Small print — Natural wood frame",
+    "artworkTitle": "Devo in Front of the Mayan Warrior",
     "amount": "99.00",
     "currency": "USD",
     "sku": "5M144M8S7DD03X11DD64F7S10DD03X14DD64J1S7DD03X11DD64G1",
@@ -100798,7 +100798,7 @@ export default {
       "alt": "Festivalgoers in front of a stage with green laser beams",
       "width": 4069,
       "height": 6834,
-      "caption": "Painting #133"
+      "caption": "Devo in Front of the Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100846,8 +100846,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Large print",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Large print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "110.00",
     "currency": "USD",
     "sku": "5M144M8S21.59X12.17",
@@ -100875,7 +100875,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100887,8 +100887,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Large print — Black frame",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Large print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "197.00",
     "currency": "USD",
     "sku": "5M144M8S21DD59X12DD17F1S24DD59X15DD17J1S21DD59X12DD17G1",
@@ -100916,7 +100916,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -100964,8 +100964,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Large print — White frame",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Large print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "197.00",
     "currency": "USD",
     "sku": "5M144M8S21DD59X12DD17F2S24DD59X15DD17J1S21DD59X12DD17G1",
@@ -100993,7 +100993,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101041,8 +101041,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "215.00",
     "currency": "USD",
     "sku": "5M144M8S21DD59X12DD17F7S24DD59X15DD17J1S21DD59X12DD17G1",
@@ -101070,7 +101070,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101118,8 +101118,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Medium print",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Medium print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "60.00",
     "currency": "USD",
     "sku": "5M144M8S16.26X9.19",
@@ -101147,7 +101147,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101159,8 +101159,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Medium print — Black frame",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Medium print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "124.00",
     "currency": "USD",
     "sku": "5M144M8S16DD26X9DD19F1S19DD26X12DD19J1S16DD26X9DD19G1",
@@ -101188,7 +101188,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101236,8 +101236,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Medium print — White frame",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Medium print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "124.00",
     "currency": "USD",
     "sku": "5M144M8S16DD26X9DD19F2S19DD26X12DD19J1S16DD26X9DD19G1",
@@ -101265,7 +101265,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101313,8 +101313,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "139.00",
     "currency": "USD",
     "sku": "5M144M8S16DD26X9DD19F7S19DD26X12DD19J1S16DD26X9DD19G1",
@@ -101342,7 +101342,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101390,8 +101390,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Small print",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Small print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S10.92X6.21",
@@ -101419,7 +101419,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101431,8 +101431,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Small print — Black frame",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Small print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "78.00",
     "currency": "USD",
     "sku": "5M144M8S10DD92X6DD21F1S13DD92X9DD21J1S10DD92X6DD21G1",
@@ -101460,7 +101460,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101508,8 +101508,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Small print — White frame",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Small print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "78.00",
     "currency": "USD",
     "sku": "5M144M8S10DD92X6DD21F2S13DD92X9DD21J1S10DD92X6DD21G1",
@@ -101537,7 +101537,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101585,8 +101585,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-438",
-    "title": "Painting #438 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #438",
+    "title": "Sunrise at Bass Coast 2023 #4 — Small print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "89.00",
     "currency": "USD",
     "sku": "5M144M8S10DD92X6DD21F7S13DD92X9DD21J1S10DD92X6DD21G1",
@@ -101614,7 +101614,7 @@ export default {
       "alt": "A tree reflected in still water beneath a dawn sky",
       "width": 6404,
       "height": 3578,
-      "caption": "Painting #438"
+      "caption": "Sunrise at Bass Coast 2023 #4"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101662,8 +101662,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Large print",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Large print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S21.31X11.76",
@@ -101691,7 +101691,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101703,8 +101703,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Large print — Black frame",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Large print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "191.00",
     "currency": "USD",
     "sku": "5M144M8S21DD31X11DD76F1S24DD31X14DD76J1S21DD31X11DD76G1",
@@ -101732,7 +101732,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101780,8 +101780,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Large print — White frame",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Large print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "191.00",
     "currency": "USD",
     "sku": "5M144M8S21DD31X11DD76F2S24DD31X14DD76J1S21DD31X11DD76G1",
@@ -101809,7 +101809,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101857,8 +101857,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "209.00",
     "currency": "USD",
     "sku": "5M144M8S21DD31X11DD76F7S24DD31X14DD76J1S21DD31X11DD76G1",
@@ -101886,7 +101886,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101934,8 +101934,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Medium print",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Medium print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "60.00",
     "currency": "USD",
     "sku": "5M144M8S16.04X8.88",
@@ -101963,7 +101963,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -101975,8 +101975,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Medium print — Black frame",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Medium print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "123.00",
     "currency": "USD",
     "sku": "5M144M8S16DD04X8DD88F1S19DD04X11DD88J1S16DD04X8DD88G1",
@@ -102004,7 +102004,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102052,8 +102052,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Medium print — White frame",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Medium print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "123.00",
     "currency": "USD",
     "sku": "5M144M8S16DD04X8DD88F2S19DD04X11DD88J1S16DD04X8DD88G1",
@@ -102081,7 +102081,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102129,8 +102129,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "137.00",
     "currency": "USD",
     "sku": "5M144M8S16DD04X8DD88F7S19DD04X11DD88J1S16DD04X8DD88G1",
@@ -102158,7 +102158,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102206,8 +102206,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Small print",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Small print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S10.78X6",
@@ -102235,7 +102235,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102247,8 +102247,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Small print — Black frame",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Small print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "77.00",
     "currency": "USD",
     "sku": "5M144M8S10DD78X6F1S13DD78X9J1S10DD78X6G1",
@@ -102276,7 +102276,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102324,8 +102324,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Small print — White frame",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Small print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "77.00",
     "currency": "USD",
     "sku": "5M144M8S10DD78X6F2S13DD78X9J1S10DD78X6G1",
@@ -102353,7 +102353,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102401,8 +102401,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-437",
-    "title": "Painting #437 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #437",
+    "title": "Sunrise at Bass Coast 2023 #3 — Small print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S10DD78X6F7S13DD78X9J1S10DD78X6G1",
@@ -102430,7 +102430,7 @@ export default {
       "alt": "A lone tree beside a pool under scattered dawn clouds",
       "width": 6318,
       "height": 3455,
-      "caption": "Painting #437"
+      "caption": "Sunrise at Bass Coast 2023 #3"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102478,8 +102478,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Large print",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Large print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S21.34X11.66",
@@ -102507,7 +102507,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102519,8 +102519,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Large print — Black frame",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Large print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "189.00",
     "currency": "USD",
     "sku": "5M144M8S21DD34X11DD66F1S24DD34X14DD66J1S21DD34X11DD66G1",
@@ -102548,7 +102548,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102596,8 +102596,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Large print — White frame",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Large print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "189.00",
     "currency": "USD",
     "sku": "5M144M8S21DD34X11DD66F2S24DD34X14DD66J1S21DD34X11DD66G1",
@@ -102625,7 +102625,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102673,8 +102673,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "207.00",
     "currency": "USD",
     "sku": "5M144M8S21DD34X11DD66F7S24DD34X14DD66J1S21DD34X11DD66G1",
@@ -102702,7 +102702,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102750,8 +102750,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Medium print",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Medium print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "60.00",
     "currency": "USD",
     "sku": "5M144M8S16.07X8.8",
@@ -102779,7 +102779,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102791,8 +102791,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Medium print — Black frame",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Medium print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "122.00",
     "currency": "USD",
     "sku": "5M144M8S16DD07X8DD8F1S19DD07X11DD8J1S16DD07X8DD8G1",
@@ -102820,7 +102820,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102868,8 +102868,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Medium print — White frame",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Medium print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "122.00",
     "currency": "USD",
     "sku": "5M144M8S16DD07X8DD8F2S19DD07X11DD8J1S16DD07X8DD8G1",
@@ -102897,7 +102897,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -102945,8 +102945,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "136.00",
     "currency": "USD",
     "sku": "5M144M8S16DD07X8DD8F7S19DD07X11DD8J1S16DD07X8DD8G1",
@@ -102974,7 +102974,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103022,8 +103022,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Small print",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Small print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S10.79X5.95",
@@ -103051,7 +103051,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103063,8 +103063,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Small print — Black frame",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Small print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "77.00",
     "currency": "USD",
     "sku": "5M144M8S10DD79X5DD95F1S13DD79X8DD95J1S10DD79X5DD95G1",
@@ -103092,7 +103092,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103140,8 +103140,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Small print — White frame",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Small print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "77.00",
     "currency": "USD",
     "sku": "5M144M8S10DD79X5DD95F2S13DD79X8DD95J1S10DD79X5DD95G1",
@@ -103169,7 +103169,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103217,8 +103217,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-433",
-    "title": "Painting #433 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #433",
+    "title": "Sunrise at Bass Coast 2023 #1 — Small print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S10DD79X5DD95F7S13DD79X8DD95J1S10DD79X5DD95G1",
@@ -103246,7 +103246,7 @@ export default {
       "alt": "A blue and gold dawn landscape with still water",
       "width": 6329,
       "height": 3423,
-      "caption": "Painting #433"
+      "caption": "Sunrise at Bass Coast 2023 #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103294,8 +103294,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Large print",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Large print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "95.00",
     "currency": "USD",
     "sku": "5M144M8S11.4X20.42",
@@ -103323,7 +103323,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103335,8 +103335,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Large print — Black frame",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Large print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "176.00",
     "currency": "USD",
     "sku": "5M144M8S11DD4X20DD42F1S14DD4X23DD42J1S11DD4X20DD42G1",
@@ -103364,7 +103364,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103412,8 +103412,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Large print — White frame",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Large print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "176.00",
     "currency": "USD",
     "sku": "5M144M8S11DD4X20DD42F2S14DD4X23DD42J1S11DD4X20DD42G1",
@@ -103441,7 +103441,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103489,8 +103489,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "193.00",
     "currency": "USD",
     "sku": "5M144M8S11DD4X20DD42F7S14DD4X23DD42J1S11DD4X20DD42G1",
@@ -103518,7 +103518,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103566,8 +103566,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Medium print",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Medium print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "55.00",
     "currency": "USD",
     "sku": "5M144M8S8.61X15.38",
@@ -103595,7 +103595,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103607,8 +103607,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Medium print — Black frame",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Medium print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "115.00",
     "currency": "USD",
     "sku": "5M144M8S8DD61X15DD38F1S11DD61X18DD38J1S8DD61X15DD38G1",
@@ -103636,7 +103636,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103684,8 +103684,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Medium print — White frame",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Medium print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "115.00",
     "currency": "USD",
     "sku": "5M144M8S8DD61X15DD38F2S11DD61X18DD38J1S8DD61X15DD38G1",
@@ -103713,7 +103713,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103761,8 +103761,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "129.00",
     "currency": "USD",
     "sku": "5M144M8S8DD61X15DD38F7S11DD61X18DD38J1S8DD61X15DD38G1",
@@ -103790,7 +103790,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103838,8 +103838,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Small print",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Small print",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S5.82X10.33",
@@ -103867,7 +103867,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103879,8 +103879,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Small print — Black frame",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Small print — Black frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "76.00",
     "currency": "USD",
     "sku": "5M144M8S5DD82X10DD33F1S8DD82X13DD33J1S5DD82X10DD33G1",
@@ -103908,7 +103908,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -103956,8 +103956,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Small print — White frame",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Small print — White frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "76.00",
     "currency": "USD",
     "sku": "5M144M8S5DD82X10DD33F2S8DD82X13DD33J1S5DD82X10DD33G1",
@@ -103985,7 +103985,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104033,8 +104033,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-436",
-    "title": "Painting #436 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #436",
+    "title": "Sunrise at Bass Coast 2023 #2 — Small print — Natural wood frame",
+    "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "87.00",
     "currency": "USD",
     "sku": "5M144M8S5DD82X10DD33F7S8DD82X13DD33J1S5DD82X10DD33G1",
@@ -104062,7 +104062,7 @@ export default {
       "alt": "A tall tree silhouette reflected in water at dawn",
       "width": 3345,
       "height": 6053,
-      "caption": "Painting #436"
+      "caption": "Sunrise at Bass Coast 2023 #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104110,8 +104110,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Large print",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Large print",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "105.00",
     "currency": "USD",
     "sku": "5M144M8S12.07X20.97",
@@ -104139,7 +104139,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104151,8 +104151,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Large print — Black frame",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Large print — Black frame",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "191.00",
     "currency": "USD",
     "sku": "5M144M8S12DD07X20DD97F1S15DD07X23DD97J1S12DD07X20DD97G1",
@@ -104180,7 +104180,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104228,8 +104228,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Large print — White frame",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Large print — White frame",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "191.00",
     "currency": "USD",
     "sku": "5M144M8S12DD07X20DD97F2S15DD07X23DD97J1S12DD07X20DD97G1",
@@ -104257,7 +104257,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104305,8 +104305,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Large print — Natural wood frame",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "209.00",
     "currency": "USD",
     "sku": "5M144M8S12DD07X20DD97F7S15DD07X23DD97J1S12DD07X20DD97G1",
@@ -104334,7 +104334,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104382,8 +104382,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Medium print",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Medium print",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "60.00",
     "currency": "USD",
     "sku": "5M144M8S9.12X15.79",
@@ -104411,7 +104411,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104423,8 +104423,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Medium print — Black frame",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Medium print — Black frame",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "123.00",
     "currency": "USD",
     "sku": "5M144M8S9DD12X15DD79F1S12DD12X18DD79J1S9DD12X15DD79G1",
@@ -104452,7 +104452,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104500,8 +104500,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Medium print — White frame",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Medium print — White frame",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "123.00",
     "currency": "USD",
     "sku": "5M144M8S9DD12X15DD79F2S12DD12X18DD79J1S9DD12X15DD79G1",
@@ -104529,7 +104529,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104577,8 +104577,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Medium print — Natural wood frame",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "137.00",
     "currency": "USD",
     "sku": "5M144M8S9DD12X15DD79F7S12DD12X18DD79J1S9DD12X15DD79G1",
@@ -104606,7 +104606,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104654,8 +104654,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Small print",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Small print",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "35.00",
     "currency": "USD",
     "sku": "5M144M8S6.16X10.61",
@@ -104683,7 +104683,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104695,8 +104695,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Small print — Black frame",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Small print — Black frame",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "77.00",
     "currency": "USD",
     "sku": "5M144M8S6DD16X10DD61F1S9DD16X13DD61J1S6DD16X10DD61G1",
@@ -104724,7 +104724,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104772,8 +104772,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Small print — White frame",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Small print — White frame",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "77.00",
     "currency": "USD",
     "sku": "5M144M8S6DD16X10DD61F2S9DD16X13DD61J1S6DD16X10DD61G1",
@@ -104801,7 +104801,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -104849,8 +104849,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-90",
-    "title": "Painting #90 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #90",
+    "title": "Sienna Dawn at Bass Coast — Small print — Natural wood frame",
+    "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "88.00",
     "currency": "USD",
     "sku": "5M144M8S6DD16X10DD61F7S9DD16X13DD61J1S6DD16X10DD61G1",
@@ -104878,7 +104878,7 @@ export default {
       "alt": "A woman with sunglasses holding a drink under a blue sky",
       "width": 3548,
       "height": 6217,
-      "caption": "Painting #90"
+      "caption": "Sienna Dawn at Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -105742,8 +105742,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Large print",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Large print",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "200.00",
     "currency": "USD",
     "sku": "5M144M8S24.81X18.96",
@@ -105771,7 +105771,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -105783,8 +105783,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Large print — Black frame",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Large print — Black frame",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "325.00",
     "currency": "USD",
     "sku": "5M144M8S24DD81X18DD96F1S27DD81X21DD96J1S24DD81X18DD96G1",
@@ -105812,7 +105812,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -105860,8 +105860,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Large print — White frame",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Large print — White frame",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "325.00",
     "currency": "USD",
     "sku": "5M144M8S24DD81X18DD96F2S27DD81X21DD96J1S24DD81X18DD96G1",
@@ -105889,7 +105889,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -105937,8 +105937,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Large print — Natural wood frame",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "347.00",
     "currency": "USD",
     "sku": "5M144M8S24DD81X18DD96F7S27DD81X21DD96J1S24DD81X18DD96G1",
@@ -105966,7 +105966,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106014,8 +106014,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Medium print",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Medium print",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "110.00",
     "currency": "USD",
     "sku": "5M144M8S18.67X14.28",
@@ -106043,7 +106043,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106055,8 +106055,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Medium print — Black frame",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Medium print — Black frame",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "196.00",
     "currency": "USD",
     "sku": "5M144M8S18DD67X14DD28F1S21DD67X17DD28J1S18DD67X14DD28G1",
@@ -106084,7 +106084,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106132,8 +106132,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Medium print — White frame",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Medium print — White frame",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "196.00",
     "currency": "USD",
     "sku": "5M144M8S18DD67X14DD28F2S21DD67X17DD28J1S18DD67X14DD28G1",
@@ -106161,7 +106161,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106209,8 +106209,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Medium print — Natural wood frame",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "214.00",
     "currency": "USD",
     "sku": "5M144M8S18DD67X14DD28F7S21DD67X17DD28J1S18DD67X14DD28G1",
@@ -106238,7 +106238,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106286,8 +106286,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Small print",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Small print",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "50.00",
     "currency": "USD",
     "sku": "5M144M8S12.53X9.6",
@@ -106315,7 +106315,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106327,8 +106327,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Small print — Black frame",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Small print — Black frame",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "106.00",
     "currency": "USD",
     "sku": "5M144M8S12DD53X9DD6F1S15DD53X12DD6J1S12DD53X9DD6G1",
@@ -106356,7 +106356,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106404,8 +106404,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Small print — White frame",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Small print — White frame",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "106.00",
     "currency": "USD",
     "sku": "5M144M8S12DD53X9DD6F2S15DD53X12DD6J1S12DD53X9DD6G1",
@@ -106433,7 +106433,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106481,8 +106481,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-241",
-    "title": "Painting #241 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #241",
+    "title": "On a Trip with Elsa — Small print — Natural wood frame",
+    "artworkTitle": "On a Trip with Elsa",
     "amount": "119.00",
     "currency": "USD",
     "sku": "5M144M8S12DD53X9DD6F7S15DD53X12DD6J1S12DD53X9DD6G1",
@@ -106510,7 +106510,7 @@ export default {
       "alt": "A reclining person with long blond hair beside a window",
       "width": 7370,
       "height": 5613,
-      "caption": "Painting #241"
+      "caption": "On a Trip with Elsa"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106558,8 +106558,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Large print",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Large print",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "155.00",
     "currency": "USD",
     "sku": "5M144M8S21.2X17.49",
@@ -106587,7 +106587,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106599,8 +106599,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Large print — Black frame",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Large print — Black frame",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "261.00",
     "currency": "USD",
     "sku": "5M144M8S21DD2X17DD49F1S24DD2X20DD49J1S21DD2X17DD49G1",
@@ -106628,7 +106628,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106676,8 +106676,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Large print — White frame",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Large print — White frame",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "261.00",
     "currency": "USD",
     "sku": "5M144M8S21DD2X17DD49F2S24DD2X20DD49J1S21DD2X17DD49G1",
@@ -106705,7 +106705,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106753,8 +106753,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Large print — Natural wood frame",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "281.00",
     "currency": "USD",
     "sku": "5M144M8S21DD2X17DD49F7S24DD2X20DD49J1S21DD2X17DD49G1",
@@ -106782,7 +106782,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106830,8 +106830,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Medium print",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Medium print",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "90.00",
     "currency": "USD",
     "sku": "5M144M8S15.96X13.18",
@@ -106859,7 +106859,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106871,8 +106871,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Medium print — Black frame",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Medium print — Black frame",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "166.00",
     "currency": "USD",
     "sku": "5M144M8S15DD96X13DD18F1S18DD96X16DD18J1S15DD96X13DD18G1",
@@ -106900,7 +106900,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -106948,8 +106948,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Medium print — White frame",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Medium print — White frame",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "166.00",
     "currency": "USD",
     "sku": "5M144M8S15DD96X13DD18F2S18DD96X16DD18J1S15DD96X13DD18G1",
@@ -106977,7 +106977,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107025,8 +107025,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Medium print — Natural wood frame",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "182.00",
     "currency": "USD",
     "sku": "5M144M8S15DD96X13DD18F7S18DD96X16DD18J1S15DD96X13DD18G1",
@@ -107054,7 +107054,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107102,8 +107102,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Small print",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Small print",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S10.72X8.87",
@@ -107131,7 +107131,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107143,8 +107143,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Small print — Black frame",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Small print — Black frame",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "90.00",
     "currency": "USD",
     "sku": "5M144M8S10DD72X8DD87F1S13DD72X11DD87J1S10DD72X8DD87G1",
@@ -107172,7 +107172,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107220,8 +107220,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Small print — White frame",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Small print — White frame",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "90.00",
     "currency": "USD",
     "sku": "5M144M8S10DD72X8DD87F2S13DD72X11DD87J1S10DD72X8DD87G1",
@@ -107249,7 +107249,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107297,8 +107297,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-66",
-    "title": "Painting #66 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #66",
+    "title": "Flamenco Guitarist in Zihuatanejo — Small print — Natural wood frame",
+    "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "102.00",
     "currency": "USD",
     "sku": "5M144M8S10DD72X8DD87F7S13DD72X11DD87J1S10DD72X8DD87G1",
@@ -107326,7 +107326,7 @@ export default {
       "alt": "A guitarist playing outdoors in warm sunset light",
       "width": 6285,
       "height": 5173,
-      "caption": "Painting #66"
+      "caption": "Flamenco Guitarist in Zihuatanejo"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107374,8 +107374,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Large print",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Large print",
+    "artworkTitle": "Catherine #1",
     "amount": "165.00",
     "currency": "USD",
     "sku": "5M144M8S18.98X20.37",
@@ -107403,7 +107403,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107415,8 +107415,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Large print — Black frame",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Large print — Black frame",
+    "artworkTitle": "Catherine #1",
     "amount": "274.00",
     "currency": "USD",
     "sku": "5M144M8S18DD98X20DD37F1S21DD98X23DD37J1S18DD98X20DD37G1",
@@ -107444,7 +107444,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107492,8 +107492,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Large print — White frame",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Large print — White frame",
+    "artworkTitle": "Catherine #1",
     "amount": "274.00",
     "currency": "USD",
     "sku": "5M144M8S18DD98X20DD37F2S21DD98X23DD37J1S18DD98X20DD37G1",
@@ -107521,7 +107521,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107569,8 +107569,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Large print — Natural wood frame",
+    "artworkTitle": "Catherine #1",
     "amount": "294.00",
     "currency": "USD",
     "sku": "5M144M8S18DD98X20DD37F7S21DD98X23DD37J1S18DD98X20DD37G1",
@@ -107598,7 +107598,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107646,8 +107646,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Medium print",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Medium print",
+    "artworkTitle": "Catherine #1",
     "amount": "95.00",
     "currency": "USD",
     "sku": "5M144M8S14.3X15.34",
@@ -107675,7 +107675,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107687,8 +107687,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Medium print — Black frame",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Medium print — Black frame",
+    "artworkTitle": "Catherine #1",
     "amount": "172.00",
     "currency": "USD",
     "sku": "5M144M8S14DD3X15DD34F1S17DD3X18DD34J1S14DD3X15DD34G1",
@@ -107716,7 +107716,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107764,8 +107764,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Medium print — White frame",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Medium print — White frame",
+    "artworkTitle": "Catherine #1",
     "amount": "172.00",
     "currency": "USD",
     "sku": "5M144M8S14DD3X15DD34F2S17DD3X18DD34J1S14DD3X15DD34G1",
@@ -107793,7 +107793,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107841,8 +107841,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Medium print — Natural wood frame",
+    "artworkTitle": "Catherine #1",
     "amount": "188.00",
     "currency": "USD",
     "sku": "5M144M8S14DD3X15DD34F7S17DD3X18DD34J1S14DD3X15DD34G1",
@@ -107870,7 +107870,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107918,8 +107918,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Small print",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Small print",
+    "artworkTitle": "Catherine #1",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S9.61X10.31",
@@ -107947,7 +107947,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -107959,8 +107959,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Small print — Black frame",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Small print — Black frame",
+    "artworkTitle": "Catherine #1",
     "amount": "90.00",
     "currency": "USD",
     "sku": "5M144M8S9DD61X10DD31F1S12DD61X13DD31J1S9DD61X10DD31G1",
@@ -107988,7 +107988,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108036,8 +108036,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Small print — White frame",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Small print — White frame",
+    "artworkTitle": "Catherine #1",
     "amount": "90.00",
     "currency": "USD",
     "sku": "5M144M8S9DD61X10DD31F2S12DD61X13DD31J1S9DD61X10DD31G1",
@@ -108065,7 +108065,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108113,8 +108113,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-301",
-    "title": "Painting #301 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #301",
+    "title": "Catherine #1 — Small print — Natural wood frame",
+    "artworkTitle": "Catherine #1",
     "amount": "103.00",
     "currency": "USD",
     "sku": "5M144M8S9DD61X10DD31F7S12DD61X13DD31J1S9DD61X10DD31G1",
@@ -108142,7 +108142,7 @@ export default {
       "alt": "A woman with dark hair and raised arms in yellow and rose tones",
       "width": 5620,
       "height": 6037,
-      "caption": "Painting #301"
+      "caption": "Catherine #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108190,8 +108190,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Large print",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Large print",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "150.00",
     "currency": "USD",
     "sku": "5M144M8S13.75X25.83",
@@ -108219,7 +108219,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108231,8 +108231,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Large print — Black frame",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Large print — Black frame",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "256.00",
     "currency": "USD",
     "sku": "5M144M8S13DD75X25DD83F1S16DD75X28DD83J1S13DD75X25DD83G1",
@@ -108260,7 +108260,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108308,8 +108308,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Large print — White frame",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Large print — White frame",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "256.00",
     "currency": "USD",
     "sku": "5M144M8S13DD75X25DD83F2S16DD75X28DD83J1S13DD75X25DD83G1",
@@ -108337,7 +108337,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108385,8 +108385,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Large print — Natural wood frame",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "277.00",
     "currency": "USD",
     "sku": "5M144M8S13DD75X25DD83F7S16DD75X28DD83J1S13DD75X25DD83G1",
@@ -108414,7 +108414,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108462,8 +108462,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Medium print",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Medium print",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S10.37X19.43",
@@ -108491,7 +108491,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108503,8 +108503,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Medium print — Black frame",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Medium print — Black frame",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "160.00",
     "currency": "USD",
     "sku": "5M144M8S10DD37X19DD43F1S13DD37X22DD43J1S10DD37X19DD43G1",
@@ -108532,7 +108532,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108580,8 +108580,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Medium print — White frame",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Medium print — White frame",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "160.00",
     "currency": "USD",
     "sku": "5M144M8S10DD37X19DD43F2S13DD37X22DD43J1S10DD37X19DD43G1",
@@ -108609,7 +108609,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108657,8 +108657,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Medium print — Natural wood frame",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "176.00",
     "currency": "USD",
     "sku": "5M144M8S10DD37X19DD43F7S13DD37X22DD43J1S10DD37X19DD43G1",
@@ -108686,7 +108686,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108734,8 +108734,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Small print",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Small print",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S7X13.04",
@@ -108763,7 +108763,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108775,8 +108775,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Small print — Black frame",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Small print — Black frame",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "94.00",
     "currency": "USD",
     "sku": "5M144M8S7X13DD04F1S10X16DD04J1S7X13DD04G1",
@@ -108804,7 +108804,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108852,8 +108852,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Small print — White frame",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Small print — White frame",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "94.00",
     "currency": "USD",
     "sku": "5M144M8S7X13DD04F2S10X16DD04J1S7X13DD04G1",
@@ -108881,7 +108881,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -108929,8 +108929,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-53",
-    "title": "Painting #53 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #53",
+    "title": "Self Portrait, Meditation at Denny Blaine — Small print — Natural wood frame",
+    "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "107.00",
     "currency": "USD",
     "sku": "5M144M8S7X13DD04F7S10X16DD04J1S7X13DD04G1",
@@ -108958,7 +108958,7 @@ export default {
       "alt": "A person meditating beside a lake in golden morning light",
       "width": 4051,
       "height": 7675,
-      "caption": "Painting #53"
+      "caption": "Self Portrait, Meditation at Denny Blaine"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109006,8 +109006,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Large print",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Large print",
+    "artworkTitle": "Symbiosis #1",
     "amount": "120.00",
     "currency": "USD",
     "sku": "5M144M8S23.95X11.52",
@@ -109035,7 +109035,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109047,8 +109047,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Large print — Black frame",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Large print — Black frame",
+    "artworkTitle": "Symbiosis #1",
     "amount": "211.00",
     "currency": "USD",
     "sku": "5M144M8S23DD95X11DD52F1S26DD95X14DD52J1S23DD95X11DD52G1",
@@ -109076,7 +109076,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109124,8 +109124,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Large print — White frame",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Large print — White frame",
+    "artworkTitle": "Symbiosis #1",
     "amount": "211.00",
     "currency": "USD",
     "sku": "5M144M8S23DD95X11DD52F2S26DD95X14DD52J1S23DD95X11DD52G1",
@@ -109153,7 +109153,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109201,8 +109201,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Large print — Natural wood frame",
+    "artworkTitle": "Symbiosis #1",
     "amount": "230.00",
     "currency": "USD",
     "sku": "5M144M8S23DD95X11DD52F7S26DD95X14DD52J1S23DD95X11DD52G1",
@@ -109230,7 +109230,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109278,8 +109278,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Medium print",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Medium print",
+    "artworkTitle": "Symbiosis #1",
     "amount": "65.00",
     "currency": "USD",
     "sku": "5M144M8S18.03X8.7",
@@ -109307,7 +109307,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109319,8 +109319,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Medium print — Black frame",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Medium print — Black frame",
+    "artworkTitle": "Symbiosis #1",
     "amount": "132.00",
     "currency": "USD",
     "sku": "5M144M8S18DD03X8DD7F1S21DD03X11DD7J1S18DD03X8DD7G1",
@@ -109348,7 +109348,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109396,8 +109396,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Medium print — White frame",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Medium print — White frame",
+    "artworkTitle": "Symbiosis #1",
     "amount": "132.00",
     "currency": "USD",
     "sku": "5M144M8S18DD03X8DD7F2S21DD03X11DD7J1S18DD03X8DD7G1",
@@ -109425,7 +109425,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109473,8 +109473,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Medium print — Natural wood frame",
+    "artworkTitle": "Symbiosis #1",
     "amount": "147.00",
     "currency": "USD",
     "sku": "5M144M8S18DD03X8DD7F7S21DD03X11DD7J1S18DD03X8DD7G1",
@@ -109502,7 +109502,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109550,8 +109550,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Small print",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Small print",
+    "artworkTitle": "Symbiosis #1",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S12.1X5.88",
@@ -109579,7 +109579,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109591,8 +109591,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Small print — Black frame",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Small print — Black frame",
+    "artworkTitle": "Symbiosis #1",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S12DD1X5DD88F1S15DD1X8DD88J1S12DD1X5DD88G1",
@@ -109620,7 +109620,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109668,8 +109668,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Small print — White frame",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Small print — White frame",
+    "artworkTitle": "Symbiosis #1",
     "amount": "85.00",
     "currency": "USD",
     "sku": "5M144M8S12DD1X5DD88F2S15DD1X8DD88J1S12DD1X5DD88G1",
@@ -109697,7 +109697,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109745,8 +109745,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-15",
-    "title": "Painting #15 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #15",
+    "title": "Symbiosis #1 — Small print — Natural wood frame",
+    "artworkTitle": "Symbiosis #1",
     "amount": "97.00",
     "currency": "USD",
     "sku": "5M144M8S12DD1X5DD88F7S15DD1X8DD88J1S12DD1X5DD88G1",
@@ -109774,7 +109774,7 @@ export default {
       "alt": "A central figure surrounded by a radiating colorful headdress",
       "width": 7112,
       "height": 3383,
-      "caption": "Painting #15"
+      "caption": "Symbiosis #1"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109822,8 +109822,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Large print",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Large print",
+    "artworkTitle": "Mayan Warrior",
     "amount": "130.00",
     "currency": "USD",
     "sku": "5M144M8S24.75X12.28",
@@ -109851,7 +109851,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109863,8 +109863,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Large print — Black frame",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Large print — Black frame",
+    "artworkTitle": "Mayan Warrior",
     "amount": "226.00",
     "currency": "USD",
     "sku": "5M144M8S24DD75X12DD28F1S27DD75X15DD28J1S24DD75X12DD28G1",
@@ -109892,7 +109892,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -109940,8 +109940,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Large print — White frame",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Large print — White frame",
+    "artworkTitle": "Mayan Warrior",
     "amount": "226.00",
     "currency": "USD",
     "sku": "5M144M8S24DD75X12DD28F2S27DD75X15DD28J1S24DD75X12DD28G1",
@@ -109969,7 +109969,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110017,8 +110017,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Large print — Natural wood frame",
+    "artworkTitle": "Mayan Warrior",
     "amount": "246.00",
     "currency": "USD",
     "sku": "5M144M8S24DD75X12DD28F7S27DD75X15DD28J1S24DD75X12DD28G1",
@@ -110046,7 +110046,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110094,8 +110094,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Medium print",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Medium print",
+    "artworkTitle": "Mayan Warrior",
     "amount": "70.00",
     "currency": "USD",
     "sku": "5M144M8S18.63X9.27",
@@ -110123,7 +110123,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110135,8 +110135,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Medium print — Black frame",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Medium print — Black frame",
+    "artworkTitle": "Mayan Warrior",
     "amount": "140.00",
     "currency": "USD",
     "sku": "5M144M8S18DD63X9DD27F1S21DD63X12DD27J1S18DD63X9DD27G1",
@@ -110164,7 +110164,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110212,8 +110212,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Medium print — White frame",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Medium print — White frame",
+    "artworkTitle": "Mayan Warrior",
     "amount": "140.00",
     "currency": "USD",
     "sku": "5M144M8S18DD63X9DD27F2S21DD63X12DD27J1S18DD63X9DD27G1",
@@ -110241,7 +110241,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110289,8 +110289,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Medium print — Natural wood frame",
+    "artworkTitle": "Mayan Warrior",
     "amount": "155.00",
     "currency": "USD",
     "sku": "5M144M8S18DD63X9DD27F7S21DD63X12DD27J1S18DD63X9DD27G1",
@@ -110318,7 +110318,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110366,8 +110366,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Small print",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Small print",
+    "artworkTitle": "Mayan Warrior",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S12.5X6.26",
@@ -110395,7 +110395,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110407,8 +110407,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Small print — Black frame",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Small print — Black frame",
+    "artworkTitle": "Mayan Warrior",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S12DD5X6DD26F1S15DD5X9DD26J1S12DD5X6DD26G1",
@@ -110436,7 +110436,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110484,8 +110484,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Small print — White frame",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Small print — White frame",
+    "artworkTitle": "Mayan Warrior",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S12DD5X6DD26F2S15DD5X9DD26J1S12DD5X6DD26G1",
@@ -110513,7 +110513,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110561,8 +110561,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-18",
-    "title": "Painting #18 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #18",
+    "title": "Mayan Warrior — Small print — Natural wood frame",
+    "artworkTitle": "Mayan Warrior",
     "amount": "104.00",
     "currency": "USD",
     "sku": "5M144M8S12DD5X6DD26F7S15DD5X9DD26J1S12DD5X6DD26G1",
@@ -110590,7 +110590,7 @@ export default {
       "alt": "A festival stage sending laser beams across a sunset sky",
       "width": 7352,
       "height": 3609,
-      "caption": "Painting #18"
+      "caption": "Mayan Warrior"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110638,8 +110638,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Large print",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Large print",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "130.00",
     "currency": "USD",
     "sku": "5M144M8S25.03X12.45",
@@ -110667,7 +110667,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110679,8 +110679,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Large print — Black frame",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Large print — Black frame",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "228.00",
     "currency": "USD",
     "sku": "5M144M8S25DD03X12DD45F1S28DD03X15DD45J1S25DD03X12DD45G1",
@@ -110708,7 +110708,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110756,8 +110756,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Large print — White frame",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Large print — White frame",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "228.00",
     "currency": "USD",
     "sku": "5M144M8S25DD03X12DD45F2S28DD03X15DD45J1S25DD03X12DD45G1",
@@ -110785,7 +110785,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110833,8 +110833,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Large print — Natural wood frame",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "248.00",
     "currency": "USD",
     "sku": "5M144M8S25DD03X12DD45F7S28DD03X15DD45J1S25DD03X12DD45G1",
@@ -110862,7 +110862,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110910,8 +110910,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Medium print",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Medium print",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "75.00",
     "currency": "USD",
     "sku": "5M144M8S18.84X9.4",
@@ -110939,7 +110939,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -110951,8 +110951,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Medium print — Black frame",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Medium print — Black frame",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "146.00",
     "currency": "USD",
     "sku": "5M144M8S18DD84X9DD4F1S21DD84X12DD4J1S18DD84X9DD4G1",
@@ -110980,7 +110980,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111028,8 +111028,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Medium print — White frame",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Medium print — White frame",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "146.00",
     "currency": "USD",
     "sku": "5M144M8S18DD84X9DD4F2S21DD84X12DD4J1S18DD84X9DD4G1",
@@ -111057,7 +111057,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111105,8 +111105,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Medium print — Natural wood frame",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "162.00",
     "currency": "USD",
     "sku": "5M144M8S18DD84X9DD4F7S21DD84X12DD4J1S18DD84X9DD4G1",
@@ -111134,7 +111134,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111182,8 +111182,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Small print",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Small print",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S12.64X6.35",
@@ -111211,7 +111211,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111223,8 +111223,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Small print — Black frame",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Small print — Black frame",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S12DD64X6DD35F1S15DD64X9DD35J1S12DD64X6DD35G1",
@@ -111252,7 +111252,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111300,8 +111300,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Small print — White frame",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Small print — White frame",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S12DD64X6DD35F2S15DD64X9DD35J1S12DD64X6DD35G1",
@@ -111329,7 +111329,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111377,8 +111377,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-19",
-    "title": "Painting #19 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #19",
+    "title": "The Temple, Daytime — Small print — Natural wood frame",
+    "artworkTitle": "The Temple, Daytime",
     "amount": "104.00",
     "currency": "USD",
     "sku": "5M144M8S12DD64X6DD35F7S15DD64X9DD35J1S12DD64X6DD35G1",
@@ -111406,7 +111406,7 @@ export default {
       "alt": "A triangular wooden structure emerging from pale mist",
       "width": 7436,
       "height": 3660,
-      "caption": "Painting #19"
+      "caption": "The Temple, Daytime"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111454,8 +111454,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Large print",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Large print",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "130.00",
     "currency": "USD",
     "sku": "5M144M8S24.91X12.44",
@@ -111483,7 +111483,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111495,8 +111495,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Large print — Black frame",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Large print — Black frame",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "228.00",
     "currency": "USD",
     "sku": "5M144M8S24DD91X12DD44F1S27DD91X15DD44J1S24DD91X12DD44G1",
@@ -111524,7 +111524,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111572,8 +111572,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Large print — White frame",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Large print — White frame",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "228.00",
     "currency": "USD",
     "sku": "5M144M8S24DD91X12DD44F2S27DD91X15DD44J1S24DD91X12DD44G1",
@@ -111601,7 +111601,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111649,8 +111649,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Large print — Natural wood frame",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "247.00",
     "currency": "USD",
     "sku": "5M144M8S24DD91X12DD44F7S27DD91X15DD44J1S24DD91X12DD44G1",
@@ -111678,7 +111678,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111726,8 +111726,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Medium print",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Medium print",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "75.00",
     "currency": "USD",
     "sku": "5M144M8S18.74X9.39",
@@ -111755,7 +111755,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111767,8 +111767,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Medium print — Black frame",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Medium print — Black frame",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "146.00",
     "currency": "USD",
     "sku": "5M144M8S18DD74X9DD39F1S21DD74X12DD39J1S18DD74X9DD39G1",
@@ -111796,7 +111796,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111844,8 +111844,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Medium print — White frame",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Medium print — White frame",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "146.00",
     "currency": "USD",
     "sku": "5M144M8S18DD74X9DD39F2S21DD74X12DD39J1S18DD74X9DD39G1",
@@ -111873,7 +111873,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111921,8 +111921,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Medium print — Natural wood frame",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "162.00",
     "currency": "USD",
     "sku": "5M144M8S18DD74X9DD39F7S21DD74X12DD39J1S18DD74X9DD39G1",
@@ -111950,7 +111950,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -111998,8 +111998,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Small print",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Small print",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "45.00",
     "currency": "USD",
     "sku": "5M144M8S12.58X6.34",
@@ -112027,7 +112027,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112039,8 +112039,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Small print — Black frame",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Small print — Black frame",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S12DD58X6DD34F1S15DD58X9DD34J1S12DD58X6DD34G1",
@@ -112068,7 +112068,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112116,8 +112116,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Small print — White frame",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Small print — White frame",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "92.00",
     "currency": "USD",
     "sku": "5M144M8S12DD58X6DD34F2S15DD58X9DD34J1S12DD58X6DD34G1",
@@ -112145,7 +112145,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112193,8 +112193,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-20",
-    "title": "Painting #20 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #20",
+    "title": "The Temple, the Lighting #2 — Small print — Natural wood frame",
+    "artworkTitle": "The Temple, the Lighting #2",
     "amount": "104.00",
     "currency": "USD",
     "sku": "5M144M8S12DD58X6DD34F7S15DD58X9DD34J1S12DD58X6DD34G1",
@@ -112222,7 +112222,7 @@ export default {
       "alt": "A triangular illuminated structure against a dark sky",
       "width": 7399,
       "height": 3659,
-      "caption": "Painting #20"
+      "caption": "The Temple, the Lighting #2"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112270,8 +112270,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Large print",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Large print",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "110.00",
     "currency": "USD",
     "sku": "5M144M8S23.19X11.26",
@@ -112299,7 +112299,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112311,8 +112311,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Large print — Black frame",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Large print — Black frame",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "198.00",
     "currency": "USD",
     "sku": "5M144M8S23DD19X11DD26F1S26DD19X14DD26J1S23DD19X11DD26G1",
@@ -112340,7 +112340,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112388,8 +112388,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Large print — White frame",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Large print — White frame",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "198.00",
     "currency": "USD",
     "sku": "5M144M8S23DD19X11DD26F2S26DD19X14DD26J1S23DD19X11DD26G1",
@@ -112417,7 +112417,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112465,8 +112465,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Large print — Natural wood frame",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Large print — Natural wood frame",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "216.00",
     "currency": "USD",
     "sku": "5M144M8S23DD19X11DD26F7S26DD19X14DD26J1S23DD19X11DD26G1",
@@ -112494,7 +112494,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112542,8 +112542,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Medium print",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Medium print",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "60.00",
     "currency": "USD",
     "sku": "5M144M8S17.45X8.5",
@@ -112571,7 +112571,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112583,8 +112583,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Medium print — Black frame",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Medium print — Black frame",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "125.00",
     "currency": "USD",
     "sku": "5M144M8S17DD45X8DD5F1S20DD45X11DD5J1S17DD45X8DD5G1",
@@ -112612,7 +112612,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112660,8 +112660,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Medium print — White frame",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Medium print — White frame",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "125.00",
     "currency": "USD",
     "sku": "5M144M8S17DD45X8DD5F2S20DD45X11DD5J1S17DD45X8DD5G1",
@@ -112689,7 +112689,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112737,8 +112737,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Medium print — Natural wood frame",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Medium print — Natural wood frame",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "139.00",
     "currency": "USD",
     "sku": "5M144M8S17DD45X8DD5F7S20DD45X11DD5J1S17DD45X8DD5G1",
@@ -112766,7 +112766,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112814,8 +112814,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Small print",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Small print",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "40.00",
     "currency": "USD",
     "sku": "5M144M8S11.72X5.75",
@@ -112843,7 +112843,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112855,8 +112855,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Small print — Black frame",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Small print — Black frame",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "84.00",
     "currency": "USD",
     "sku": "5M144M8S11DD72X5DD75F1S14DD72X8DD75J1S11DD72X5DD75G1",
@@ -112884,7 +112884,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -112932,8 +112932,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Small print — White frame",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Small print — White frame",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "84.00",
     "currency": "USD",
     "sku": "5M144M8S11DD72X5DD75F2S14DD72X8DD75J1S11DD72X5DD75G1",
@@ -112961,7 +112961,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
@@ -113009,8 +113009,8 @@ export default {
     "type": "print",
     "provider": "finerworks",
     "productId": "archived-painting-22",
-    "title": "Painting #22 — Small print — Natural wood frame",
-    "artworkTitle": "Painting #22",
+    "title": "Devo & Katie @ Bass Coast — Small print — Natural wood frame",
+    "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "95.00",
     "currency": "USD",
     "sku": "5M144M8S11DD72X5DD75F7S14DD72X8DD75J1S11DD72X5DD75G1",
@@ -113038,7 +113038,7 @@ export default {
       "alt": "Two people facing one another in vivid orange and blue tones",
       "width": 6882,
       "height": 3303,
-      "caption": "Painting #22"
+      "caption": "Devo & Katie @ Bass Coast"
     },
     "attributes": {},
     "minimumDpi": 300,
