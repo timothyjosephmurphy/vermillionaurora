@@ -18,8 +18,12 @@ const areas=[
   [/home-map|exhibition/,['tests/home-map.browser-test.mjs','tests/exhibition-map.browser-test.mjs']],
   [/wallet|apple-pay|google-pay/i,['tests/cart-wallets.browser-test.mjs']],
 ];
+// Print-master-only: prints.json, master registries, master/edition files and the catalogs generated from them.
+const printMaster=[/^catalog\/prints\.json$/,/^catalog\/[a-z-]*print-masters\.json$/,/^catalog\/gallery-wall-layout\.json$/,/^static\/print-(masters|editions)\//,/^cloudflare\/(print-catalog|checkout-catalog|etsy-print-source|etsy-sync-source)\.mjs$/];
 let tier;
-if(process.env.FORCE_FULL==='true'||!files.length||files.length>=3000||files.some(f=>full.some(r=>r.test(f))))tier='full';
+const printOnly=files.length>0&&files.includes('catalog/prints.json')&&files.every(f=>printMaster.some(r=>r.test(f)));
+if(process.env.FORCE_FULL!=='true'&&printOnly)tier='content';
+else if(process.env.FORCE_FULL==='true'||!files.length||files.length>=3000||files.some(f=>full.some(r=>r.test(f))))tier='full';
 else if(files.every(f=>content.some(r=>r.test(f))))tier='content';
 else tier='code';
 const browser=new Set();let room=false;
@@ -28,6 +32,6 @@ for(const f of files){
   for(const [r,tests] of areas)if(r.test(f))for(const t of tests){if(t==='ROOM')room=true;else if(fs.existsSync(t))browser.add(t);}
 }
 const blog=files.some(f=>/(^|\/)blog(\/|-)/.test(f));
-const out={tier,browser_tests:[...browser].join(' '),room:String(room),blog:String(blog),count:String(files.length)};
+const out={tier,print_quotes:String(tier==='content'&&printOnly),browser_tests:[...browser].join(' '),room:String(room),blog:String(blog),count:String(files.length)};
 console.log(JSON.stringify(out,null,1));
 if(process.env.GITHUB_OUTPUT)fs.appendFileSync(process.env.GITHUB_OUTPUT,Object.entries(out).map(([k,v])=>`${k}=${v}\n`).join(''));
