@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="9d367ba1bce8fb327e69";
+export const printVersion="e371b0ec1e821517ff58";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -7319,6 +7319,228 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-painting-portrait-with-hat-full-frame-black": {
+    "id": "print-painting-portrait-with-hat-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Large print — Black frame",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "160.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD63X7DD35F1S28DD63X10DD35J1S25DD63X7DD35G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.3667,
+      "height": 7.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.63,
+      "height": 7.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9.jpg",
+    "assetSha256": "10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9",
+    "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.63,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.63,
+        "height": 7.35,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.63X7.35",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.63,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-painting-portrait-with-hat-full-frame-white": {
+    "id": "print-painting-portrait-with-hat-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Large print — White frame",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "160.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD63X7DD35F2S28DD63X10DD35J1S25DD63X7DD35G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.3667,
+      "height": 7.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.63,
+      "height": 7.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9.jpg",
+    "assetSha256": "10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9",
+    "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.63,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.63,
+        "height": 7.35,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.63X7.35",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.63,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
+  "print-painting-portrait-with-hat-full-frame-natural": {
+    "id": "print-painting-portrait-with-hat-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Large print — Natural wood frame",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "177.00",
+    "currency": "USD",
+    "sku": "5M144M8S25DD63X7DD35F7S28DD63X10DD35J1S25DD63X7DD35G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 25.3667,
+      "height": 7.0967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 25.63,
+      "height": 7.35,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9.jpg",
+    "assetSha256": "10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9",
+    "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 28.63,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "window": {
+        "width": 25.63,
+        "height": 7.35,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S25.63X7.35",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 28.63,
+        "height": 10.35,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "85.00"
+  },
   "print-painting-portrait-with-hat-medium": {
     "id": "print-painting-portrait-with-hat-medium",
     "type": "print",
@@ -7356,6 +7578,228 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-painting-portrait-with-hat-medium-frame-black": {
+    "id": "print-painting-portrait-with-hat-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Medium print — Black frame",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "121.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD28X5DD57F1S22DD28X8DD57J1S19DD28X5DD57G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 19.0067,
+      "height": 5.3167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.28,
+      "height": 5.57,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/393bca2542b75aeae6a0d3b5a8127b7c40702f2d6c4ef5db9bff5174e35c7818.jpg",
+    "assetSha256": "393bca2542b75aeae6a0d3b5a8127b7c40702f2d6c4ef5db9bff5174e35c7818",
+    "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.28,
+        "height": 8.57,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.28,
+        "height": 5.57,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.28X5.57",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.28,
+        "height": 8.57,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "65.00"
+  },
+  "print-painting-portrait-with-hat-medium-frame-white": {
+    "id": "print-painting-portrait-with-hat-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Medium print — White frame",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "121.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD28X5DD57F2S22DD28X8DD57J1S19DD28X5DD57G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 19.0067,
+      "height": 5.3167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.28,
+      "height": 5.57,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/393bca2542b75aeae6a0d3b5a8127b7c40702f2d6c4ef5db9bff5174e35c7818.jpg",
+    "assetSha256": "393bca2542b75aeae6a0d3b5a8127b7c40702f2d6c4ef5db9bff5174e35c7818",
+    "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.28,
+        "height": 8.57,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.28,
+        "height": 5.57,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.28X5.57",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.28,
+        "height": 8.57,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "65.00"
+  },
+  "print-painting-portrait-with-hat-medium-frame-natural": {
+    "id": "print-painting-portrait-with-hat-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "painting-portrait-with-hat",
+    "title": "Sunrise on Rainier with Eagle — Medium print — Natural wood frame",
+    "artworkTitle": "Sunrise on Rainier with Eagle",
+    "amount": "134.00",
+    "currency": "USD",
+    "sku": "5M144M8S19DD28X5DD57F7S22DD28X8DD57J1S19DD28X5DD57G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 19.0067,
+      "height": 5.3167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 19.28,
+      "height": 5.57,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/393bca2542b75aeae6a0d3b5a8127b7c40702f2d6c4ef5db9bff5174e35c7818.jpg",
+    "assetSha256": "393bca2542b75aeae6a0d3b5a8127b7c40702f2d6c4ef5db9bff5174e35c7818",
+    "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
+    "layoutApproved": true,
+    "preview": {
+      "src": "/gallery-images/sunrise-on-rainier-with-eagle-full-2026.jpg",
+      "alt": "Sunrise on Rainier with Eagle by TJ Murphy",
+      "caption": ""
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 22.28,
+        "height": 8.57,
+        "unit": "in"
+      },
+      "window": {
+        "width": 19.28,
+        "height": 5.57,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S19.28X5.57",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 22.28,
+        "height": 8.57,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "65.00"
   },
   "print-painting-red-horizon-full": {
     "id": "print-painting-red-horizon-full",
