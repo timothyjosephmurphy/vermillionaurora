@@ -24,7 +24,7 @@ test('every ordered archive pair has one painting, master provenance, and a veri
     assert.deepEqual(products[i].dimensions,recorded?{width:recorded.width,height:recorded.height,unit:'in'}:null,'Only recorded or previously catalogued sizes enter measured dimensions');
     assert.equal(products[i].checkout.mode,p.originalSale&&recorded?'integrated':'inquiry');
     if(p.dimensionsInscription)assert.equal(p.dimensionsInscription.unit,'in');
-    if(p.index!==null)assert.equal(products[i].title,`Painting #${p.index}`);
+    if(p.index!==null)assert.equal(products[i].title,p.title||p.inscription||`Painting #${p.index}`);
     else assert.equal(products[i].title,p.inscription);
     assert(display[p.front.sourceUrl]);
     for(const v of display[p.front.sourceUrl].variants)assert(fs.existsSync(`static${v.src}`));
@@ -42,7 +42,7 @@ test('inferred sizes stay approximate and separately attributed from recorded si
   const estimated=manifest.paintings.filter(p=>p.estimatedDimensions);
   assert.equal(estimated.length,26);
   assert.equal(manifest.paintings.filter(p=>p.cataloguedDimensions).length,2);
-  assert.equal(manifest.paintings.filter(p=>p.dimensionReviewNote).length,8);
+  assert.equal(manifest.paintings.filter(p=>p.dimensionReviewNote).length,7);
   for(const p of estimated){
     const d=p.estimatedDimensions;
     assert.equal(d.approximate,true);

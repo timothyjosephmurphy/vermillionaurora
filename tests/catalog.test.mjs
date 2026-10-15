@@ -80,7 +80,7 @@ test('dimensioned available paintings receive parcels from the flat-at-12-inch r
  assert.deepEqual(missing.map(p=>p.id).sort(),['archived-painting-1','archived-painting-2','archived-painting-307','archived-painting-img-1555']);
  for(const p of missing){assert.equal(p.checkout.mode,'inquiry');assert(!checkout[p.id],'Unmeasured originals must not receive an invented shipping parcel');}
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,67+64); // plus 64 sized Older Work originals (Oct 2026); 56 existing originals and 11 archive originals (img-1608 original withdrawn) with recorded dimensions
+ assert.equal(ready.length,68+64); // #22 priced and #53 measured Oct 15; plus 64 sized Older Work originals (Oct 2026); 56 existing originals and 11 archive originals (img-1608 original withdrawn) with recorded dimensions
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
