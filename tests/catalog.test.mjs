@@ -326,3 +326,13 @@ test('the homepage ends Exhibitions with the gallery room and framed print wall'
  assert(fs.existsSync('dist/gallery-wall/framed-wall.webp'));
 });
 
+test('homepage and every product page carry a small Manage link into the catalog admin',()=>{
+ const home=load(fs.readFileSync('dist/index.html','utf8'));
+ assert.equal(home('[data-manage-link]').attr('href'),'/catalog-admin/');
+ for(const p of products){
+  const file=`dist/products/${p.slug}/index.html`;if(!fs.existsSync(file))continue;
+  assert.equal(load(fs.readFileSync(file,'utf8'))('[data-manage-link]').attr('href'),`/catalog-admin/?slug=${encodeURIComponent(p.slug)}`,p.slug);
+ }
+ const admin=fs.readFileSync('worker/catalog-admin.mjs','utf8');
+ assert.match(admin,/u\.get\('slug'\)/,'the admin opens the painting named by ?slug= (or #slug)');
+});
