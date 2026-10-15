@@ -27,7 +27,9 @@ to the website Worker (`vermillionaurora`) and the checkout Worker (`vermillion-
 
 ## Notes
 - After the import, D1 is the source of truth for the fields above. A repo change to an imported painting's price or
-  title is overridden by D1; change it in the admin instead (new paintings or new print sizes still come from the repo).
+  title is overridden by D1; change it in the admin instead. After a repo PR that adds or reprices paintings, copy it in:
+  `POST /catalog-admin/api/sync` with `{"ids":[...]}` (those ids are overwritten from the deployed build; paintings and
+  print sizes D1 lacks are always added).
 - New print sizes need FinerWorks files, so the admin can only reprice or withdraw sizes. Print masters change via
   `scripts/swap-image.mjs --master` + a PR.
 - Picture swaps in the admin crop to the painting's proportions in the browser (centred, never padded), write the

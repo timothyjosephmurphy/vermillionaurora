@@ -7,8 +7,7 @@ const cf=`https://api.cloudflare.com/client/v4/accounts/3c1fddf0f4f4fc9c84594757
 const key='CHECKOUT_AUDIT_TOKEN',secret=randomBytes(32).toString('hex');
 const cloudflare=async(method,path='',body)=>{const r=await fetch(cf+path,{method,headers:{Authorization:`Bearer ${process.env.CLOUDFLARE_API_TOKEN}`,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});const d=await r.json();if(!r.ok||!d.success)throw Error(`Production diagnostic credential ${method} failed: HTTP ${r.status}`);};
 const eligible=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price&&p.dimensions&&p.checkout?.mode==='integrated');
-const expectedSlugs=eligible.map(p=>p.id).sort(),configuredSlugs=(expected.PAYPAL_CHECKOUT_SLUGS||'').split(',').map(s=>s.trim()).filter(Boolean).sort();
-if(JSON.stringify(configuredSlugs)!==JSON.stringify(expectedSlugs))throw Error('PayPal allowlist does not match all dimensioned, available priced paintings');
+// PayPal is deprecated (Oct 2026): no PayPal allowlist enforcement.
 let installed=false;
 try{
  await cloudflare('PUT','',{name:key,text:secret,type:'secret_text'});installed=true;

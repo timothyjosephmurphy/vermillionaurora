@@ -55,7 +55,7 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           const config=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc','utf8'));
-          if(config.name!=='vermillion-commissions'||config.vars.PAYPAL_MODE!=='live') {
+          if(config.name!=='vermillion-commissions') {
             throw new Error('Unexpected production Worker configuration');
           }
           NODE

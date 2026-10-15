@@ -80,7 +80,7 @@ test('dimensioned available paintings receive parcels from the flat-at-12-inch r
  assert.deepEqual(missing.map(p=>p.id).sort(),['archived-painting-1','archived-painting-2','archived-painting-307','archived-painting-img-1555']);
  for(const p of missing){assert.equal(p.checkout.mode,'inquiry');assert(!checkout[p.id],'Unmeasured originals must not receive an invented shipping parcel');}
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,67); // 56 existing originals and 11 archive originals (img-1608 original withdrawn) with recorded dimensions
+ assert.equal(ready.length,67+64); // plus 64 sized Older Work originals (Oct 2026); 56 existing originals and 11 archive originals (img-1608 original withdrawn) with recorded dimensions
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
@@ -128,12 +128,6 @@ test('Arizona Slot Cave uses the complete left-rotated image in its gallery and 
  assert.equal(page('meta[property="og:image"]').attr('content'),byId['paul-murphy-painting-8'].image.src);
  const gallery=load(fs.readFileSync('dist/exhibitions/paul-murphy/index.html','utf8'));
  check(gallery('[data-product-id="paul-murphy-painting-8"] svg'));
-});
-test('checked-in PayPal allowlist matches every dimensioned, available, priced painting (deploy verifier rule)',()=>{
- // payments/verify-production.mjs enforces this after deploying; catch a mismatch in the gate instead.
- const vars=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc','utf8')).vars;
- const eligible=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price&&p.dimensions&&p.checkout?.mode==='integrated').map(p=>p.id).sort();
- assert.deepEqual((vars.PAYPAL_CHECKOUT_SLUGS||'').split(',').map(s=>s.trim()).filter(Boolean).sort(),eligible);
 });
 test('original purchase buttons say "Buy"; paintings without online checkout still link to the purchase inquiry form',()=>{
  const html=[];

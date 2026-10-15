@@ -16,6 +16,7 @@ const out=resolve('static/wall-paintings'),manifestPath=resolve('catalog/paintin
 const onPrintWall=new Set(wallArtworks.map(a=>a.id));
 const exists=f=>access(f).then(()=>true,()=>false);
 async function load(src){
+  if(src.startsWith('https://tjm.art/')&&await exists(resolve('static',src.slice(16))))return readFile(resolve('static',src.slice(16)));
   if(/^https?:/.test(src))return execFileSync('curl',['-sfL','-A','Mozilla/5.0',src],{maxBuffer:1<<28});
   for(const base of ['.','static','public'])if(await exists(resolve(base,src.slice(1))))return readFile(resolve(base,src.slice(1)));
   throw Error(`Cannot find ${src}`);
