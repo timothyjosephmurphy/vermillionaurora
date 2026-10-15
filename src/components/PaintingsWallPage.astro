@@ -170,7 +170,7 @@ const groups=[['Commission packages',unsized.filter(i=>i.kind==='Commission pack
         </aside>
       </section>
       <div class="wall-caption">
-        <p>{list.length} paintings · Shown at true relative scale · Each photo is shown in its own shape</p>
+        <p>{list.length} paintings · Shown at true relative scale{list.some(a=>a.scaleBasis==='print')&&` (${list.filter(a=>a.scaleBasis==='print').length} without a recorded size are shown at their largest print size)`} · Each photo is shown in its own shape</p>
         <p id="wall-keyboard">Keyboard: + / − to zoom, arrows to move, Esc or 0 to return to the wall.</p>
       </div>
       <p class="visually-hidden" data-wall-status role="status" aria-live="polite"></p>

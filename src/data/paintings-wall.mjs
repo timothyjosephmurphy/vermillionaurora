@@ -1,7 +1,7 @@
 import images from '../../catalog/paintings-wall-images.json' with {type:'json'};
 import {urlFor,statusLabel,dimensionLabel} from '../../catalog/catalog.mjs';
 import {wallArtworks,WALL_UNIT} from './gallery-wall.mjs';
-import {scaledPaintings,unscaledPaintings,inchesOf} from './paintings-wall-selection.mjs';
+import {scaledPaintings,unscaledPaintings,inchesOf,wallBasis} from './paintings-wall-selection.mjs';
 import {packWall,WALL_GAP,WALL_MARGIN} from './paintings-wall-layout.mjs';
 
 export {WALL_UNIT,WALL_GAP,WALL_MARGIN};
@@ -38,7 +38,7 @@ export function buildWall(artist){
     return {
       id:p.id,title:p.title,href:urlFor(p),status,statusLabel:statusLabel(p),
       artist:p.artist,description:[p.medium||p.eyebrow,p.year].filter(Boolean).join(' · '),
-      sizeLabel:dimensionLabel(p),buy:status==='available',buyHref:buyHref(p),
+      sizeLabel:wallBasis(p)==='print'?`Shown at its largest print size, ${+stated.width.toFixed(1)} × ${+stated.height.toFixed(1)} in`:dimensionLabel(p),scaleBasis:wallBasis(p),buy:status==='available',buyHref:buyHref(p),
       frameWidth:FRAME_INCHES*WALL_UNIT,
       x:slot.x*WALL_UNIT,y:slot.y*WALL_UNIT,width:slot.width*WALL_UNIT,height:slot.height*WALL_UNIT,
       imageWidth:paint.width*WALL_UNIT,imageHeight:paint.height*WALL_UNIT,
