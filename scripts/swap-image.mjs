@@ -1,5 +1,6 @@
 // Replace a painting's picture on the live site without a deploy.
-// Usage: node scripts/swap-image.mjs <slug> <photo> [--master] [--dry-run]
+// Usage: node scripts/swap-image.mjs <slug> <photo> [--master] [--keep-ratio] [--dry-run]
+//   (image-proportional print artworks, and --keep-ratio, keep the photo's own proportions)
 //   1. Crops <photo> (EXIF-rotated) to the painting's recorded proportions, centred. Never pads:
 //      it only cuts away the excess on one axis.
 //   2. Regenerates every existing display WebP for that painting at the same widths and the same
@@ -36,10 +37,16 @@ const idRe = new RegExp(`^${product.id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}-(
 for (const f of await readdir('static/display')) { const m = f.match(idRe); if (m) keys.set(`display/${f}`, { w: +m[1], quality: DEFAULT_QUALITY }); }
 if (!keys.size) throw Error(`${slug} has no display images to swap`);
 // Target proportions: recorded dimensions, else the current image's pixel ratio.
-const d = product.dimensions, ratio = d?.width > 0 && d?.height > 0 ? d.width / d.height : product.image.width / product.image.height;
-if (!(ratio > 0)) throw Error(`${slug}: no proportions to crop to`);
+// Target proportions: recorded dimensions, else the current image's pixel ratio. Image-proportional print
+// editions (catalog/prints.json sizing) follow the photo itself, so the photo's own ratio is kept.
+const printArt = JSON.parse(await readFile('catalog/prints.json', 'utf8')).artworks?.[product.id];
+const d = product.dimensions;
+let ratio = d?.width > 0 && d?.height > 0 ? d.width / d.height : product.image.width / product.image.height;
+if (printArt?.sizing === 'image-proportional' || process.argv.includes('--keep-ratio')) ratio = null;
 const src = await sharp(await readFile(photo)).rotate().toBuffer({ resolveWithObject: true });
 const { width: W, height: H } = src.info;
+if (ratio === null) ratio = W / H;
+if (!(ratio > 0)) throw Error(`${slug}: no proportions to crop to`);
 let cw = W, ch = Math.round(W / ratio);
 if (ch > H) { ch = H; cw = Math.round(H * ratio); }
 const crop = await sharp(src.data).extract({ left: Math.floor((W - cw) / 2), top: Math.floor((H - ch) / 2), width: cw, height: ch }).toBuffer();
@@ -83,6 +90,13 @@ if (master) {
     if (wIn && hIn && (cw / wIn < config.minimumDpi || ch / hIn < config.minimumDpi)) { delete art.variants[k]; dropped.push(k); }
   }
   if (!dry) await writeFile('catalog/prints.json', JSON.stringify(config, null, 2) + '\n');
+  // Keep the master registries (tj/archive/older-work print masters) pointing at the new file.
+  for (const reg of ['catalog/tj-print-masters.json', 'catalog/archive-print-masters.json', 'catalog/older-work-print-masters.json']) {
+    const list = JSON.parse(await readFile(reg, 'utf8').catch(() => '[]')), row = Array.isArray(list) && list.find(r => r.id === product.id);
+    if (!row) continue;
+    if (row.sha256) row.sha256 = sha; if (row.local) row.local = `static/print-masters/${sha}.jpg`;
+    if (!dry) await writeFile(reg, JSON.stringify(list, null, 2) + '\n');
+  }
   console.log(`Print master ${old?.widthPx}x${old?.heightPx} -> ${cw}x${ch} (${sha}); dropped sizes: ${dropped.join(', ') || 'none'}.`);
   console.log(`Next: node scripts/build-edition-print-assets.mjs --only=${product.id}, requote, then commit + PR (print masters still live in the repo until Phase 3).`);
 }
