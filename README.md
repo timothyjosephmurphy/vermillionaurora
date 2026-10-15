@@ -45,7 +45,7 @@ The build validates unique identities, collection references, positive prices, i
 
 Root `wrangler.jsonc` names the existing website Worker `vermillionaurora`, runs the build, and publishes `dist/`. Cloudflare Workers Builds must use `npx wrangler deploy` from the repository root, without an old `--assets .` override. Static files bypass the Worker (`assets.run_worker_first` is an explicit route list); the redirects and long-cache header that used to run in the Worker are zone rules, see `docs/static-bypass-zone-rules.md`.
 
-Production deploys in one step: merging a pull request into `main` runs `.github/workflows/deploy-production.yml`, which deploys the website Worker and then the checkout Worker and runs sampled, quote-only live checks. `.github/workflows/release-gate.yml` is the single required pull request gate (`gate`), tiered by changed paths. Roll back with `gh workflow run rollback.yml -f target=both`. See [docs/release-control.md](docs/release-control.md).
+Production deploys in one step: merging a pull request into `main` runs `.github/workflows/deploy-production.yml`, where Workers Builds deploys the website Worker and the workflow then deploys the checkout Worker and runs sampled, quote-only live checks. `.github/workflows/release-gate.yml` is the single required pull request gate (`gate`), tiered by changed paths. Roll back with `gh workflow run rollback.yml -f target=checkout`. See [docs/release-control.md](docs/release-control.md).
 
 The `release` branch is a frozen backup of the former two-stage flow and no longer deploys. The website and checkout deploys are coordinated rather than atomic across two Workers, so the workflow verifies both versions before declaring success.
 

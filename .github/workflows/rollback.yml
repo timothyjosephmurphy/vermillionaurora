@@ -1,6 +1,9 @@
 name: Roll back production
 # One-command rollback to the previous Worker version:
-#   gh workflow run rollback.yml -R timothyjosephmurphy/vermillionaurora -f target=both
+#   gh workflow run rollback.yml -R timothyjosephmurphy/vermillionaurora -f target=checkout
+# The repo CLOUDFLARE_API_TOKEN cannot touch the website Worker; roll the site back with a
+# logged-in wrangler (npx wrangler rollback --name vermillionaurora) or Cloudflare dashboard
+# (Workers > vermillionaurora > Deployments), or grant the token access and use target=both.
 # Optionally pin versions: -f site_version=<id> -f checkout_version=<id> (see `wrangler versions list`).
 on:
   workflow_dispatch:
@@ -8,8 +11,8 @@ on:
       target:
         description: 'Which Worker(s) to roll back'
         type: choice
-        options: [both, site, checkout]
-        default: both
+        options: [checkout, both, site]
+        default: checkout
       site_version:
         description: 'Website version id (blank = previous)'
         required: false
