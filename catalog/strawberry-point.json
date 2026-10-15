@@ -1,0 +1,414 @@
+{
+ "source": {
+  "bucket": "images",
+  "prefix": "images/Strawberry Point Series/"
+ },
+ "paintings": [
+  {
+   "index": 1,
+   "photo": "IMG_1732.jpg",
+   "position": 1,
+   "crop": [
+    21,
+    21,
+    4927,
+    4888
+   ],
+   "display": {
+    "base": "/display/strawberry-point-1",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 952,
+    "fallback": "/display/strawberry-point-1.jpg",
+    "sourceWidth": 4906,
+    "sourceHeight": 4867
+   }
+  },
+  {
+   "index": 2,
+   "photo": "IMG_1733.jpg",
+   "position": 1,
+   "crop": [
+    21,
+    21,
+    4936,
+    4950
+   ],
+   "display": {
+    "base": "/display/strawberry-point-2",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 963,
+    "fallback": "/display/strawberry-point-2.jpg",
+    "sourceWidth": 4915,
+    "sourceHeight": 4929
+   }
+  },
+  {
+   "index": 3,
+   "photo": "IMG_1734.jpg",
+   "position": 1,
+   "crop": [
+    21,
+    21,
+    4908,
+    4946
+   ],
+   "display": {
+    "base": "/display/strawberry-point-3",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 967,
+    "fallback": "/display/strawberry-point-3.jpg",
+    "sourceWidth": 4887,
+    "sourceHeight": 4925
+   }
+  },
+  {
+   "index": 4,
+   "photo": "IMG_1736.jpg",
+   "position": 1,
+   "crop": [
+    251,
+    285,
+    1542,
+    1664
+   ],
+   "display": {
+    "base": "/display/strawberry-point-4",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 1025,
+    "fallback": "/display/strawberry-point-4.jpg",
+    "sourceWidth": 1291,
+    "sourceHeight": 1379
+   }
+  },
+  {
+   "index": 5,
+   "photo": "IMG_1736.jpg",
+   "position": 2,
+   "crop": [
+    261,
+    2191,
+    1534,
+    3481
+   ],
+   "display": {
+    "base": "/display/strawberry-point-5",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 973,
+    "fallback": "/display/strawberry-point-5.jpg",
+    "sourceWidth": 1273,
+    "sourceHeight": 1290
+   }
+  },
+  {
+   "index": 6,
+   "photo": "IMG_1736.jpg",
+   "position": 3,
+   "crop": [
+    263,
+    3988,
+    1532,
+    5295
+   ],
+   "display": {
+    "base": "/display/strawberry-point-6",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 989,
+    "fallback": "/display/strawberry-point-6.jpg",
+    "sourceWidth": 1269,
+    "sourceHeight": 1307
+   }
+  },
+  {
+   "index": 7,
+   "photo": "IMG_1736.jpg",
+   "position": 4,
+   "crop": [
+    270,
+    5816,
+    1552,
+    7179
+   ],
+   "display": {
+    "base": "/display/strawberry-point-7",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 1021,
+    "fallback": "/display/strawberry-point-7.jpg",
+    "sourceWidth": 1282,
+    "sourceHeight": 1363
+   }
+  },
+  {
+   "index": 8,
+   "photo": "IMG_1737.jpg",
+   "position": 1,
+   "crop": [
+    217,
+    249,
+    2227,
+    2287
+   ],
+   "display": {
+    "base": "/display/strawberry-point-8",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 973,
+    "fallback": "/display/strawberry-point-8.jpg",
+    "sourceWidth": 2010,
+    "sourceHeight": 2038
+   }
+  },
+  {
+   "index": 9,
+   "photo": "IMG_1737.jpg",
+   "position": 2,
+   "crop": [
+    240,
+    2801,
+    2212,
+    4764
+   ],
+   "display": {
+    "base": "/display/strawberry-point-9",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 956,
+    "fallback": "/display/strawberry-point-9.jpg",
+    "sourceWidth": 1972,
+    "sourceHeight": 1963
+   }
+  },
+  {
+   "index": 10,
+   "photo": "IMG_1737.jpg",
+   "position": 3,
+   "crop": [
+    240,
+    5261,
+    2233,
+    7353
+   ],
+   "display": {
+    "base": "/display/strawberry-point-10",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 1008,
+    "fallback": "/display/strawberry-point-10.jpg",
+    "sourceWidth": 1993,
+    "sourceHeight": 2092
+   }
+  },
+  {
+   "index": 11,
+   "photo": "IMG_1738.jpg",
+   "position": 1,
+   "crop": [
+    142,
+    247,
+    2517,
+    2589
+   ],
+   "display": {
+    "base": "/display/strawberry-point-11",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 947,
+    "fallback": "/display/strawberry-point-11.jpg",
+    "sourceWidth": 2375,
+    "sourceHeight": 2342
+   }
+  },
+  {
+   "index": 12,
+   "photo": "IMG_1738.jpg",
+   "position": 2,
+   "crop": [
+    2936,
+    215,
+    5304,
+    2554
+   ],
+   "display": {
+    "base": "/display/strawberry-point-12",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 948,
+    "fallback": "/display/strawberry-point-12.jpg",
+    "sourceWidth": 2368,
+    "sourceHeight": 2339
+   }
+  },
+  {
+   "index": 13,
+   "photo": "IMG_1738.jpg",
+   "position": 3,
+   "crop": [
+    207,
+    3003,
+    2541,
+    5409
+   ],
+   "display": {
+    "base": "/display/strawberry-point-13",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 990,
+    "fallback": "/display/strawberry-point-13.jpg",
+    "sourceWidth": 2334,
+    "sourceHeight": 2406
+   }
+  },
+  {
+   "index": 14,
+   "photo": "IMG_1738.jpg",
+   "position": 4,
+   "crop": [
+    2960,
+    2983,
+    5287,
+    5387
+   ],
+   "display": {
+    "base": "/display/strawberry-point-14",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 992,
+    "fallback": "/display/strawberry-point-14.jpg",
+    "sourceWidth": 2327,
+    "sourceHeight": 2404
+   }
+  }
+ ],
+ "groups": [
+  {
+   "id": "strawberry-point-set-a",
+   "photo": "IMG_1736.jpg",
+   "members": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "display": {
+    "base": "/display/strawberry-point-set-a",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 3918,
+    "fallback": "/display/strawberry-point-set-a.jpg",
+    "sourceWidth": 1809,
+    "sourceHeight": 7383
+   }
+  },
+  {
+   "id": "strawberry-point-set-b",
+   "photo": "IMG_1737.jpg",
+   "members": [
+    8,
+    9,
+    10
+   ],
+   "display": {
+    "base": "/display/strawberry-point-set-b",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 2951,
+    "fallback": "/display/strawberry-point-set-b.jpg",
+    "sourceWidth": 2467,
+    "sourceHeight": 7584
+   }
+  },
+  {
+   "id": "strawberry-point-set-c",
+   "photo": "IMG_1738.jpg",
+   "members": [
+    11,
+    12,
+    13,
+    14
+   ],
+   "display": {
+    "base": "/display/strawberry-point-set-c",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 986,
+    "fallback": "/display/strawberry-point-set-c.jpg",
+    "sourceWidth": 5489,
+    "sourceHeight": 5636
+   }
+  }
+ ]
+}

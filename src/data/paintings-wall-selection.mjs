@@ -17,7 +17,7 @@ const byId=new Map(products.map(p=>[p.id,p]));
 const coveredSet=p=>p.olderWork?.members?.length>1&&p.olderWork.members.every((_,i)=>byId.has(`${p.id}-original-${i+1}`));
 // A book scan merged into a catalog painting is that painting; only the catalog page is drawn and linked.
 const merged=p=>!!canonicalArtwork[p.id]&&byId.has(canonicalArtwork[p.id]);
-const tjWork=p=>p.artist==='TJ Murphy'&&(p.type==='painting'||p.bookGallery)&&!coveredSet(p)&&!merged(p);
+const tjWork=p=>p.artist==='TJ Murphy'&&(p.type==='painting'||p.bookGallery)&&!coveredSet(p)&&!merged(p)&&!p.strawberryGroup;
 export const wallBasis=p=>sized(p)&&(isPainting(p)||p.bookGallery)?'actual':largestPrint.has(p.id)?'print':null;
 export const scaledPaintings=artist=>products.filter(p=>artist==='TJ Murphy'?tjWork(p)&&wallBasis(p):isPainting(p)&&p.artist===artist&&sized(p));
 export const unscaledPaintings=()=>products.filter(p=>p.artist==='TJ Murphy'&&(p.type==='commission'||(tjWork(p)&&!wallBasis(p))));

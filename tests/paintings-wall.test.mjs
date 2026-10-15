@@ -14,12 +14,12 @@ import {canonicalArtwork} from '../src/data/canonical-artworks.mjs';
 const walls=[['TJ Murphy',tjWall],['Paul Murphy',paulWall]];
 test('the TJ wall draws every TJ work with a size or a print; Paul\'s wall every measured painting, each once',()=>{
   const covered=p=>p.olderWork?.members?.length>1&&p.olderWork.members.every((_,i)=>products.some(x=>x.id===`${p.id}-original-${i+1}`));
-  const tjWorks=products.filter(p=>p.artist==='TJ Murphy'&&(p.type==='painting'||p.bookGallery)&&!covered(p)&&!(canonicalArtwork[p.id]&&products.some(x=>x.id===canonicalArtwork[p.id])));
+  const tjWorks=products.filter(p=>p.artist==='TJ Murphy'&&(p.type==='painting'||p.bookGallery)&&!covered(p)&&!p.strawberryGroup&&!(canonicalArtwork[p.id]&&products.some(x=>x.id===canonicalArtwork[p.id])));
   assert(tjWall.artworks.every(a=>!canonicalArtwork[a.id])&&notToScale.every(i=>!canonicalArtwork[i.id]||!products.some(x=>x.id===canonicalArtwork[i.id])),'merged book scans are not drawn or listed');
   const drawnTJ=new Set(tjWall.artworks.map(a=>a.id)),listed=new Set(notToScale.map(i=>i.id));
   assert(tjWorks.every(p=>drawnTJ.has(p.id)!==listed.has(p.id)),'each TJ work is drawn or listed, never both');
   assert(tjWall.artworks.length>=205);
-  assert(tjWall.artworks.filter(a=>a.scaleBasis==='actual').length>=129&&tjWall.artworks.filter(a=>a.scaleBasis==='print').length>=76);
+  assert(tjWall.artworks.filter(a=>a.scaleBasis==='actual').length>=130&&tjWall.artworks.filter(a=>a.scaleBasis==='print').length>=75);
   const paulExpected=products.filter(p=>p.type==='painting'&&!p.bookGallery&&p.artist==='Paul Murphy'&&p.dimensions?.width>0&&p.dimensions?.height>0);
   assert.deepEqual(paulWall.artworks.map(a=>a.id).sort(),paulExpected.map(p=>p.id).sort());
   for(const [artist,wall] of walls){assert.equal(new Set(wall.artworks.map(a=>a.id)).size,wall.artworks.length);assert(wall.artworks.every(a=>a.artist===artist));}
