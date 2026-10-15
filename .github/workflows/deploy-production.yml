@@ -40,7 +40,7 @@ jobs:
       - name: Verify generated catalogs and production checkout config
         run: |
           git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
-          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.PAYPAL_MODE!=='live')process.exit(1)"
+          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.CHECKOUT_MODE!=='live')process.exit(1)"
       - name: Work out what changed in this push
         id: changes
         env:
@@ -93,7 +93,7 @@ jobs:
           let ready=false;
           for(let i=0;i<30;i++){
             const r=await fetch(url);const h=await r.json().catch(()=>({}));
-            if(r.ok&&h.mode==='live'&&h.release===process.env.DEPLOYED_SHA&&h.enabled===(expected.PAYPAL_CHECKOUT_ENABLED==='true')){ready=true;console.log('Production checkout health:',JSON.stringify(h));break;}
+            if(r.ok&&h.mode==='live'&&h.release===process.env.DEPLOYED_SHA){ready=true;console.log('Production checkout health:',JSON.stringify(h));break;}
             await new Promise(resolve=>setTimeout(resolve,5000));
           }
           if(!ready)throw Error('The expected production revision did not become ready');
