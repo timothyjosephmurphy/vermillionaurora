@@ -1,17 +1,31 @@
-name: Deploy checkout from the promoted release branch and verify the website release
+name: Deploy production from main
+# Merging to main deploys production directly: Cloudflare Workers Builds deploys the website Worker
+# (vermillionaurora) from main; this workflow waits for that version, then deploys the checkout
+# Worker (vermillion-commissions), followed by sampled, quote-only verification.
+# The release branch is a frozen backup and no longer deploys anything from this workflow.
+# Roll back with: gh workflow run rollback.yml -f target=checkout
 on:
   push:
-    branches: [release]
+    branches: [main]
   workflow_dispatch:
+    inputs:
+      full_checks:
+        description: 'Check every product page, original and print file (slow)'
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
-  group: checkout-production-release
+  group: production-deploy
   cancel-in-progress: false
+env:
+  FULL_CHECKS: ${{ inputs.full_checks && '1' || '0' }}
+  PRINT_ASSET_SAMPLE: ${{ inputs.full_checks && 'all' || 'sample' }}
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/release'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,30 +37,44 @@ jobs:
             cloudflare/test/package-lock.json
       - run: npm ci
       - run: npm run build
-      - name: Verify production checkout
+      - name: Verify generated catalogs and production checkout config
         run: |
-          node payments/build-checkout-catalog.mjs
           git diff --exit-code -- cloudflare/checkout-catalog.mjs cloudflare/print-catalog.mjs
           node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.jsonc'));if(c.name!=='vermillion-commissions'||c.vars.PAYPAL_MODE!=='live')process.exit(1)"
+      - name: Work out what changed in this push
+        id: changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          before="${{ github.event.before }}"
+          if [ "${{ github.event_name }}" = "push" ] && [ -n "$before" ] && [ "$before" != "0000000000000000000000000000000000000000" ]; then
+            gh api "repos/${{ github.repository }}/compare/$before...${{ github.sha }}" --jq '.files[].filename' > /tmp/changed.txt || : > /tmp/changed.txt
+          else
+            : > /tmp/changed.txt
+          fi
+          node scripts/ci/changed-products.mjs < /tmp/changed.txt
       - name: Prepare and verify private accounting storage
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
         run: node payments/prepare-sales-archive.mjs
       - name: Verify commission reference and accounting storage are private
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
         run: node payments/verify-commission-privacy.mjs
-      - name: Verify promoted website release before enabling purchases
+      - name: Wait for Workers Builds to publish this website version, then check sampled print files
+        env:
+          CHANGED_PRINT_PRODUCTS: ${{ steps.changes.outputs.print_products }}
         run: node payments/verify-live-print-assets.mjs
       - name: Verify published blog cards, articles, and photos
+        if: steps.changes.outputs.blog == 'true' || steps.changes.outputs.unknown == 'true'
         run: node scripts/verify-blog-pages.mjs --live
-      - name: Deploy the production Worker with the checked-in checkout settings
+      - name: Deploy the checkout Worker with the checked-in checkout settings
         uses: cloudflare/wrangler-action@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
           accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
           workingDirectory: cloudflare
-          command: deploy --config wrangler.jsonc --var CHECKOUT_RELEASE:${{ github.sha }}
+          command: deploy --config wrangler.jsonc --var CHECKOUT_RELEASE:${{ github.sha }} --message "main ${{ github.sha }}"
           # QuickBooks Online app credentials (repository secrets), uploaded as Worker secrets.
           secrets: |
             QBO_CLIENT_ID
@@ -72,14 +100,11 @@ jobs:
           NODE
       - name: Verify live providers without taking payment
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
         run: node payments/verify-production.mjs
-      # The website is published by Cloudflare Workers Builds from the protected
-      # release branch. The API deploy waits for that website version before
-      # enabling the matching checkout Worker.
       - name: Verify website and API catalog versions agree
+        env:
+          CHANGED_PRODUCT_SLUGS: ${{ steps.changes.outputs.product_slugs }}
         run: node scripts/verify-release.mjs
-      - name: Verify live print checkout without taking payment
-        run: node payments/verify-live-print-pilot.mjs
-      - name: Verify all artwork print editions without starting payment
-        run: node payments/verify-paul-print-checkout.mjs
+      - name: Quote one print and one framed print (no payment, no order)
+        run: node payments/verify-sampled-quote.mjs

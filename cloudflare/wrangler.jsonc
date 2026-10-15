@@ -32,6 +32,13 @@
     "QBO_SYNC_ENABLED": "true",
     "QBO_COST_SYNC_ENABLED": "true"
   },
+  "d1_databases": [
+    {
+      "binding": "CATALOG_DB",
+      "database_name": "tjm-catalog",
+      "database_id": "e7514ceb-a633-4613-9cf1-cda817d8ca94"
+    }
+  ],
   "durable_objects": {
     "bindings": [
       {

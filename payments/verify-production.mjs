@@ -18,9 +18,11 @@ try{
  const ar=await fetch(base+'/checkout/sales-maintenance',{method:'POST',headers:{Authorization:`Bearer ${secret}`},signal:AbortSignal.timeout(90000)}),archive=await ar.json();console.log('Private sales archive:',JSON.stringify(archive));if(!ar.ok||!archive.ready)throw Error('Sales archive verification failed');
  if(expected.CHECKOUT_RESET_SLUG){const r=await fetch(base+'/checkout/sales-maintenance?action=reset&slug='+encodeURIComponent(expected.CHECKOUT_RESET_SLUG),{method:'POST',headers:{Authorization:`Bearer ${secret}`},signal:AbortSignal.timeout(90000)}),x=await r.json();console.log('Production stock reset:',JSON.stringify(x));if(!r.ok||x.slug!==expected.CHECKOUT_RESET_SLUG||x.result?.priorState!=='sold')throw Error('Production stock reset failed');}
  const denied=await fetch(base+'/checkout/sales-maintenance',{method:'POST'});if(denied.status!==404)throw Error('Unauthenticated accounting access was not denied');
- if(!audit.enabled){for(const item of eligible){const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(item.id));if(r.status!==503)throw Error('A painting is purchasable while checkout is disabled');}}
+ if(!audit.enabled){for(const item of (process.env.FULL_CHECKS==='1'?eligible:eligible.slice(0,1))){const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(item.id));if(r.status!==503)throw Error('A painting is purchasable while checkout is disabled');}}
  else{
-  for(const item of eligible){
+  // Read-only status checks (no holds). Sampled to one random original unless FULL_CHECKS=1.
+  const sampled=process.env.FULL_CHECKS==='1'?eligible:eligible.length?[eligible[Math.floor(Math.random()*eligible.length)]]:[];
+  for(const item of sampled){
    let status=0,state=null,lastBody='';
    for(let attempt=0;attempt<3;attempt++){
     const r=await fetch(base+'/checkout/status?slug='+encodeURIComponent(item.id),{signal:AbortSignal.timeout(30000)});

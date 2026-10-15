@@ -70,7 +70,7 @@ const workerFirst=async()=>{
   return config.assets.run_worker_first;
 };
 test('run_worker_first lists exactly the routes the Worker serves, so static files never invoke it',async()=>{
-  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH}=await import('../worker/site.mjs');
+  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,CATALOG_WORKER_FIRST}=await import('../worker/site.mjs');
   const patterns=await workerFirst();
   assert.ok(Array.isArray(patterns)&&patterns.length>0&&patterns.length<=100,'an explicit pattern list, not true');
   assert.ok(patterns.every(p=>p.startsWith('/')&&!p.startsWith('!/')),'no negative patterns needed');
@@ -78,11 +78,11 @@ test('run_worker_first lists exactly the routes the Worker serves, so static fil
   // Every route the Worker handles runs the Worker first.
   for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH])assert.ok(matches(path),path+' must run the Worker');
   // Every pattern is a route the Worker actually handles (no stray patterns).
-  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,TESTIMONIALS_API+'*']);
+  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,TESTIMONIALS_API+'*',...CATALOG_WORKER_FIRST]);
   for(const p of patterns)assert.ok(handled.has(p),p+' is not a Worker route');
   assert.equal(patterns.length,handled.size);
   // Static files, pages and admin pages are served by the assets layer, not the Worker.
-  for(const path of ['/','/about/','/gallery/','/products/painting-portrait-in-gold/','/_astro/index.abc.css','/display/a-123-160.webp','/gallery-images/a.jpg','/product-media/el-zonte/room-1-2400.webp','/robots.txt','/sitemap.xml','/catalog/version.json','/print-editions/a.jpg','/print-masters/a.jpg','/quickbooks/','/quickbooks/disconnected/','/testimonials/','/testimonials/api','/testimonial-manager/','/originals-manager/','/inventory/','/.well-known/security.txt','/favicon.ico','/site.webmanifest','/404.html','/nope/'])assert.ok(!matches(path),path+' must not invoke the Worker');
+  for(const path of ['/about/','/_astro/index.abc.css','/display/a-123-160.webp','/gallery-images/a.jpg','/product-media/el-zonte/room-1-2400.webp','/robots.txt','/sitemap.xml','/catalog/version.json','/print-editions/a.jpg','/print-masters/a.jpg','/quickbooks/','/quickbooks/disconnected/','/testimonials/','/testimonials/api','/testimonial-manager/','/originals-manager/','/inventory/','/.well-known/security.txt','/favicon.ico','/site.webmanifest','/404.html','/nope/'])assert.ok(!matches(path),path+' must not invoke the Worker');
 });
 test('assets keep their routing settings and the service binding is unchanged',async()=>{
   const fs=await import('node:fs');
