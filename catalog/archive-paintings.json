@@ -2043,7 +2043,11 @@
       "alt": "A person meditating beside a lake in golden morning light",
       "inscription": "Self Portrait, Meditation at Denny Blaine",
       "year": 2020,
-      "dimensionReviewNote": "No dependable stamp match or complete sheet outline for a physical-size estimate."
+      "recordedDimensions": {
+        "width": 24,
+        "height": 45,
+        "unit": "in"
+      }
     },
     {
       "id": "archived-painting-15",
@@ -2244,6 +2248,14 @@
         "unit": "in",
         "source": "reverse-inscription",
         "orientation": "front-image"
+      },
+      "title": "Devo & Katie @ Bass Coast",
+      "originalSale": {
+        "amount": "1000.00",
+        "currency": "USD",
+        "pricingBasis": "artist-set",
+        "rationale": "Price set by TJ in the catalog admin.",
+        "listedAt": "2026-10-15"
       }
     },
     {

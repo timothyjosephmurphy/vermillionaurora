@@ -34,7 +34,8 @@ test('all 54 archive masters retain exact bytes and offer native-resolution edit
 
 test('identified featured selections have comparable original prices and measured shipping only',()=>{
   const expected=[246,248,247,438,437,433,436,301,66,15,2,1,307,249].map(n=>`archived-painting-${n}`).concat(['archived-painting-img-1555']);
-  const selected=products.filter(p=>p.listing.status==='available');
+  // Prices TJ sets himself in the admin (pricingBasis artist-set) are not part of the featured selection.
+  const selected=products.filter(p=>p.listing.status==='available'&&manifest.paintings.find(x=>x.id===p.id)?.originalSale?.pricingBasis!=='artist-set');
   assert.deepEqual(new Set(selected.map(p=>p.id)),new Set(expected));
   assert.deepEqual(manifest.featuredSelectionRequest.unmatchedIndices,[266]);
   for(const p of selected){

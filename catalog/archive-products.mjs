@@ -3,7 +3,8 @@ import {deriveParcel} from './shipping.mjs';
 import {estimatePaperParcelWeightLb} from './shipping-estimates.mjs';
 
 export const archivePaintings = manifest.paintings;
-export const archiveTitle = p => p.index === null ? p.inscription : `Painting #${p.index}`;
+// Title: TJ's own title, else the inscription on the reverse, else the archive index (Oct 15 2026: retitled from the reverse).
+export const archiveTitle = p => p.title || p.inscription || `Painting #${p.index}`;
 export const archivePreview = (p, width=960) => `/display/${p.id}-${width}.webp`;
 
 export default archivePaintings.map(p => {
@@ -17,7 +18,7 @@ export default archivePaintings.map(p => {
   }
   return {
     id:p.id,slug:p.id,type:'painting',title:archiveTitle(p),artist:'TJ Murphy',
-    description:`${archiveTitle(p)} by TJ Murphy, from Archived Paintings.${p.index!==null&&p.inscription?` ${p.inscription}.`:''}`,
+    description:`${archiveTitle(p)} by TJ Murphy, from Archived Paintings.${p.index!==null&&p.inscription&&p.inscription!==archiveTitle(p)?` ${p.inscription}.`:''}`,
     eyebrow:'Archived Paintings',listing:{status:price?'available':'not-for-sale',price},
     year:p.year||null,dimensions,
     facts:[
