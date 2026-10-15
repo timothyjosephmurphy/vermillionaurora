@@ -1,5 +1,7 @@
 ---
 import SocialLinks from './SocialLinks.astro';
+// Optional studio shortcut into the catalog admin (password protected, noindex).
+const { manage } = Astro.props;
 ---
 <footer class="site-footer">
         <div class="container footer-inner">
@@ -24,6 +26,7 @@ import SocialLinks from './SocialLinks.astro';
             <a href="/links/">Social links</a>
           </div>
         </div>
+        {manage && <div class="container footer-manage"><a href={manage} rel="nofollow" data-manage-link>Manage</a></div>}
       </footer>
 <style>
   .footer-brand-block { display: grid; gap: 10px; }
@@ -35,6 +38,9 @@ import SocialLinks from './SocialLinks.astro';
     color: var(--muted);
   }
   .footer-socials { margin-top: 4px; }
+  .footer-manage { display: flex; justify-content: flex-end; padding-bottom: 10px; }
+  .footer-manage a { font-size: 0.68rem; color: var(--muted); opacity: 0.55; text-decoration: none; }
+  .footer-manage a:hover, .footer-manage a:focus-visible { opacity: 1; text-decoration: underline; }
   @media (max-width: 700px) {
     .footer-inner { flex-direction: column; align-items: flex-start; padding: 28px 0; }
   }

@@ -320,9 +320,19 @@ test('the homepage ends Exhibitions with the gallery room and framed print wall'
  assert.equal($('.painting-carousel [data-gallery-feature]').length,0);
  assert.equal($('#exhibitions [data-gallery-feature="gallery-room"] .product-title-link').attr('href'),'/gallery/room/');
  const tile=$('#exhibitions [data-gallery-feature="print-wall"]');
- assert.equal(tile.length,1);assert.equal(tile.find('.product-title-link').attr('href'),'/gallery/wall/');
+ assert.equal(tile.length,1);assert.equal(tile.find('.product-title-link').attr('href'),'/gallery/wall/all/');
  assert.equal(tile.attr('data-product-id'),undefined,'A gallery experience is not original-painting inventory');
  assert.match(tile.find('img').attr('src'),/^(https:\/\/img\.tjm\.art)?\/gallery-wall\/framed-wall\.webp$/);
  assert(fs.existsSync('dist/gallery-wall/framed-wall.webp'));
 });
 
+test('homepage and every product page carry a small Manage link into the catalog admin',()=>{
+ const home=load(fs.readFileSync('dist/index.html','utf8'));
+ assert.equal(home('[data-manage-link]').attr('href'),'/catalog-admin/');
+ for(const p of products){
+  const file=`dist/products/${p.slug}/index.html`;if(!fs.existsSync(file))continue;
+  assert.equal(load(fs.readFileSync(file,'utf8'))('[data-manage-link]').attr('href'),`/catalog-admin/?slug=${encodeURIComponent(p.slug)}`,p.slug);
+ }
+ const admin=fs.readFileSync('worker/catalog-admin.mjs','utf8');
+ assert.match(admin,/u\.get\('slug'\)/,'the admin opens the painting named by ?slug= (or #slug)');
+});

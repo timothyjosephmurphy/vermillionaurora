@@ -74,6 +74,8 @@ export default {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ error: 'Original inventory is temporarily unavailable.' }, { status: 503 });
     }
     if (url.pathname === APPLE_PAY_ASSOCIATION_PATH) return applePayAssociation();
+    // One painting wall: the older framed print wall moved to the all-paintings wall.
+    if (/^\/gallery\/wall\/?$/.test(url.pathname)) return Response.redirect(new URL('/gallery/wall/all/' + url.search, url).href, 301);
     // Live catalog (tjm-catalog D1): owner admin, and catalog pages patched at request time (built page on any D1 error).
     if (/^\/catalog-admin(?:\/|$)/.test(url.pathname)) return catalogAdmin(request, env, ctx);
     if (CATALOG_PATHS(url.pathname) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
