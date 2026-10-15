@@ -30,7 +30,9 @@ try{
     assert.equal(await root.getAttribute('data-rooms'),String(rooms.length));
     assert(Number(await root.getAttribute('data-paintings'))>=walkthroughPaintingCount);
     const atStart=textures.length;assert(atStart<items.length/2,`Textures load lazily (${atStart} requested at start of ${items.length})`);
-    console.log('hosts',[...new Set(textures.map(u=>new URL(u).hostname+new URL(u).pathname.split('/').slice(0,2).join('/')))]);
+    const focal=items.find(i=>i.focal);await page.waitForFunction(id=>document.querySelector('[data-gallery-room]').dataset.loadedImages>='1',null,{timeout:60000});
+    assert(textures.some(u=>focal.sources.some(s=>s.src===u)),'The entry mural loads first, from the far end of the hall');
+    if(!mobile)await page.screenshot({path:'/tmp/walkthrough-entry.png'});
     await page.locator('[data-room-enter]').click();
     const art=items.find(i=>i.id==='meditation-at-denny-blaine')||items.find(i=>i.kind==='painting');
     await page.keyboard.press('Escape');await page.locator('[data-room-picker]').selectOption(art.id);

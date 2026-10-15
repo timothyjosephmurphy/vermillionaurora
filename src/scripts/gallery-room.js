@@ -20,15 +20,15 @@ async function initializeRoom(){
   const root=document.querySelector('[data-gallery-room]');if(!root)return;
   const canvas=root.querySelector('[data-room-canvas]'),enter=root.querySelector('[data-room-enter]'),pauseButton=root.querySelector('[data-room-pause]');
   const picker=root.querySelector('[data-room-picker]'),card=root.querySelector('[data-room-art-card]'),crosshair=root.querySelector('[data-room-crosshair]'),status=root.querySelector('[data-room-status]');
-  const {artworks,rooms,hall,bounds}=JSON.parse(root.querySelector('[data-room-data]').textContent),byId=new Map(artworks.filter(a=>a.kind!=='plaque').map(art=>[art.id,art]));
+  const {artworks,rooms,hall,bounds,hallways,signs:signSpecs,start}=JSON.parse(root.querySelector('[data-room-data]').textContent),byId=new Map(artworks.filter(a=>a.kind!=='plaque').map(art=>[art.id,art]));
   let engine;
   try{
     engine=new Engine(canvas,true,{stencil:true,powerPreference:'high-performance'},false);
     engine.setHardwareScalingLevel(1/Math.min(devicePixelRatio||1,1.5));
     const scene=new Scene(engine);scene.clearColor=new Color4(.92,.89,.84,1);
     scene.collisionsEnabled=true;scene.gravity=new Vector3(0,-.12,0);
-        const camera=new UniversalCamera('gallery-visitor',new Vector3(1.4,hall.eyeHeight,0),scene);
-    camera.setTarget(new Vector3(8,hall.eyeHeight,0));camera.minZ=.045;camera.maxZ=90;camera.fov=.95;
+        const camera=new UniversalCamera('gallery-visitor',new Vector3(start.x,hall.eyeHeight,start.z),scene);
+    camera.setTarget(new Vector3(start.x,hall.eyeHeight,start.z+10));camera.minZ=.045;camera.maxZ=90;camera.fov=.95;
     camera.speed=.55;camera.inertia=.15;camera.angularSensibility=2400;
     camera.checkCollisions=true;camera.applyGravity=true;camera.ellipsoid=new Vector3(.22,hall.eyeHeight/2,.22);
     camera.keysUp=[87,38];camera.keysDown=[83,40];camera.keysLeft=[65];camera.keysRight=[68];
@@ -41,36 +41,37 @@ async function initializeRoom(){
     const material=(name,hex,unlit=false)=>{const m=new StandardMaterial(name,scene);m.diffuseColor=Color3.FromHexString(hex);m.specularColor=new Color3(.025,.025,.025);if(unlit){m.disableLighting=true;m.emissiveColor=Color3.FromHexString(hex);}return m;};
     const plaster=material('warm-white-plaster','#f3efe5'),hallPlaster=material('hall-plaster','#ebe4d6'),trim=material('gallery-trim','#e7dfd0'),frameMaterial=material('black-wood-frame','#24221f'),matMaterial=material('conservation-mat','#fffdf7'),waiting=material('image-waiting','#d9d1c3',true),signMaterial=material('sign-board','#3a3029');
     const box=(name,width,height,depth,position,mat,collides=false)=>{const mesh=CreateBox(name,{width,height,depth},scene);mesh.position.copyFromFloats(...position);mesh.material=mat;mesh.checkCollisions=collides;mesh.isPickable=false;mesh.freezeWorldMatrix();return mesh;};
-    const {height:H,wall:t,corridor:C,door,doorHeight,length:Lc}=hall,b=bounds,midX=(b.minX+b.maxX)/2,spanX=b.maxX-b.minX+1,spanZ=b.maxZ-b.minZ+1,midZ=(b.minZ+b.maxZ)/2;
-    // corridor end walls and the corridor-side walls, with a doorway into every room
-    box('hall-west',t,H,C+2*t,[-t/2,H/2,0],hallPlaster,true);box('hall-east',t,H,C+2*t,[Lc+t/2,H/2,0],hallPlaster,true);
-    for(const s of [1,-1]){
-      const doors=rooms.filter(r=>r.side===s).map(r=>r.doorX).sort((a,c)=>a-c);let x=-t;
-      for(const d of [...doors,null]){
-        const end=d===null?Lc+t:d-door/2;if(end>x)box(`hall-wall-${s}-${x.toFixed(1)}`,end-x,H,t,[(x+end)/2,H/2,s*(C/2+t/2)],hallPlaster,true);
-        if(d!==null){box(`lintel-${s}-${d.toFixed(1)}`,door,H-doorHeight,t,[d,doorHeight+(H-doorHeight)/2,s*(C/2+t/2)],hallPlaster);x=d+door/2;}
-      }
+    const {height:H,wall:t,door,doorHeight}=hall,b=bounds,midX=(b.minX+b.maxX)/2,spanX=b.maxX-b.minX+1,spanZ=b.maxZ-b.minZ+1,midZ=(b.minZ+b.maxZ)/2;
+    // each room's four walls, with a lintel over every doorway; walls sit just outside the room rectangle
+    const wallRun=(id,axis,fixed,lo,hi,openings,mat)=>{let x=lo-t;
+      for(const o of [...openings.sort((p,q)=>p.from-q.from),null]){
+        const end=o?o.from:hi+t;if(end>x){const len=end-x,c=(x+end)/2;axis==='x'?box(`${id}-${c.toFixed(2)}`,len,H,t,[c,H/2,fixed],mat,true):box(`${id}-${c.toFixed(2)}`,t,H,len,[fixed,H/2,c],mat,true);}
+        if(o){const len=o.to-o.from,c=(o.from+o.to)/2;axis==='x'?box(`${id}-lintel-${c.toFixed(2)}`,len,H-doorHeight,t,[c,doorHeight+(H-doorHeight)/2,fixed],mat):box(`${id}-lintel-${c.toFixed(2)}`,t,H-doorHeight,len,[fixed,doorHeight+(H-doorHeight)/2,c],mat);x=o.to;}
+      }};
+    for(const r of rooms){
+      const op=w=>r.openings.filter(o=>o.wall===w),mat=r.kind==='hall'?plaster:hallPlaster;
+      wallRun(r.id+'-north','x',r.maxZ+t/2,r.minX,r.maxX,op('N'),mat);wallRun(r.id+'-south','x',r.minZ-t/2,r.minX,r.maxX,op('S'),mat);
+      wallRun(r.id+'-east','z',r.maxX+t/2,r.minZ,r.maxZ,op('E'),mat);wallRun(r.id+'-west','z',r.minX-t/2,r.minZ,r.maxZ,op('W'),mat);
+      for(let x=r.minX+3;x<r.maxX-1;x+=6)for(let z=r.minZ+3;z<r.maxZ-1;z+=6)box(`${r.id}-light-${x}-${z}`,1.2,.015,.3,[x,H-.03,z],material(`${r.id}-glow-${x}-${z}`,'#fff6dc',true));
+    }
+    // hallway side walls run between the hall and the gallery
+    for(const h of hallways){
+      if(h.maxX-h.minX<h.maxZ-h.minZ){for(const x of [h.minX-t/2,h.maxX+t/2])box(`${h.id}-hall-side-${x.toFixed(2)}`,t,H,h.maxZ-h.minZ+2*t,[x,H/2,(h.minZ+h.maxZ)/2],hallPlaster,true);}
+      else{for(const z of [h.minZ-t/2,h.maxZ+t/2])box(`${h.id}-hall-side-${z.toFixed(2)}`,h.maxX-h.minX+2*t,H,t,[(h.minX+h.maxX)/2,H/2,z],hallPlaster,true);}
     }
     const signs=[];
-    for(const r of rooms){
-      const s=r.side,zb=r.z1+s*t/2;
-      box(r.id+'-back',r.width+2*t,H,t,[r.x0+r.width/2,H/2,zb],plaster,true);
-      for(const x of [r.x0-t/2,r.x0+r.width+t/2])box(r.id+'-side-'+x.toFixed(1),t,H,r.depth+t,[x,H/2,(r.z0+r.z1)/2+s*t/2],plaster,true);
-      box(r.id+'-baseboard',r.width,.1,.028,[r.x0+r.width/2,.05,r.z1-s*.014],trim);
-      box(r.id+'-light',.055,.015,r.depth-1.2,[r.x0+r.width/2,H-.03,(r.z0+r.z1)/2],material(r.id+'-glow','#fff6dc',true));
-      // the room's name, lettered above its doorway on the corridor side
-      const tex=new DynamicTexture(r.id+'-sign',{width:1024,height:160},scene,true),c=tex.getContext();
+    for(const sp of signSpecs){
+      // the gallery's name, lettered above the corner doorway
+      const tex=new DynamicTexture('sign-'+signs.length,{width:1024,height:160},scene,true),c=tex.getContext();
       c.fillStyle='#3a3029';c.fillRect(0,0,1024,160);c.fillStyle='#f6eedd';c.textAlign='center';c.textBaseline='middle';
-      let size=58;c.font=`${size}px Georgia`;while(c.measureText(r.title).width>960&&size>26){size-=2;c.font=`${size}px Georgia`;}
-      c.fillText(r.title,512,r.kind==='exhibition'?62:80);if(r.kind==='exhibition'){c.font='26px Arial';c.fillStyle='#d7b98d';c.fillText('EXHIBITION',512,124);}
-      tex.update();const m=material(r.id+'-sign-material','#ffffff',true);m.diffuseTexture=tex;
-      const sign=CreatePlane(r.id+'-doorway-sign',{width:2.4,height:.375},scene);sign.material=m;sign.isPickable=false;
-      sign.position.set(r.doorX,doorHeight+.42,s*(C/2)-s*.01);sign.rotation.y=s>0?0:Math.PI;signs.push(sign);
+      let size=58;c.font=`${size}px Georgia`;while(c.measureText(sp.title).width>960&&size>26){size-=2;c.font=`${size}px Georgia`;}
+      c.fillText(sp.title,512,80);tex.update();const m=material('sign-material-'+signs.length,'#ffffff',true);m.diffuseTexture=tex;
+      const sign=CreatePlane('doorway-sign-'+signs.length,{width:2.4,height:.375},scene);sign.material=m;sign.isPickable=false;
+      sign.position.set(sp.x,sp.y,sp.z);sign.rotation.y=sp.yaw;signs.push(sign);
     }
-    {const tex=new DynamicTexture('welcome-sign',{width:1024,height:420},scene,true),c=tex.getContext();c.fillStyle='#f3efe5';c.fillRect(0,0,1024,420);c.fillStyle='#4b3c2c';c.textAlign='center';c.font='34px Arial';c.fillText('T J   M U R P H Y',512,120);c.font='86px Georgia';c.fillText('The Gallery',512,230);c.font='30px Georgia';c.fillStyle='#8f7350';c.fillText(`${rooms.length} rooms · every painting at its true size`,512,320);tex.update();
-      const m=material('welcome-material','#ffffff',true);m.diffuseTexture=tex;const p=CreatePlane('welcome',{width:2.6,height:1.07},scene);p.material=m;p.position.set(.02,2.2,0);p.rotation.y=-Math.PI/2;p.isPickable=false;}
+    {const tex=new DynamicTexture('welcome-sign',{width:1024,height:420},scene,true),c=tex.getContext();c.fillStyle='#f3efe5';c.fillRect(0,0,1024,420);c.fillStyle='#4b3c2c';c.textAlign='center';c.font='34px Arial';c.fillText('T J   M U R P H Y',512,120);c.font='86px Georgia';c.fillText('The Gallery',512,230);c.font='30px Georgia';c.fillStyle='#8f7350';c.fillText(`${rooms.length} galleries · every painting at its true size`,512,320);tex.update();
+      const central=rooms.find(r=>r.kind==='hall'),m=material('welcome-material','#ffffff',true);m.diffuseTexture=tex;const p=CreatePlane('welcome',{width:2.6,height:1.07},scene);p.material=m;p.position.set(0,2.2,central.minZ+.03);p.rotation.y=Math.PI;p.isPickable=false;}
     box('ceiling',spanX,.1,spanZ,[midX,H+.05,midZ],plaster);
-    for(let x=2;x<Lc;x+=4)box('hall-light-'+x,.9,.015,.3,[x,H-.03,0],material('hall-glow-'+x,'#fff6dc',true));
     const floorMat=material('pale-oak','#ffffff');floorMat.specularColor=new Color3(.09,.08,.06);
     const grain=new DynamicTexture('oak-grain',{width:1024,height:1024},scene,true),ctx=grain.getContext();
     let seed=137;const random=()=>((seed=Math.imul(1664525,seed)+1013904223|0)>>>0)/4294967296;
@@ -149,21 +150,21 @@ async function initializeRoom(){
     }
     function loadDetail(){
       const p=camera.position;
-      const close=[...imageStates.values()].map(state=>({state,distance:Math.hypot(p.x-state.art.x,p.z-state.art.z)})).sort((a,c)=>a.distance-c.distance);
+      const close=[...imageStates.values()].map(state=>({state,distance:Math.hypot(p.x-state.art.x,p.z-state.art.z)})).sort((a,c)=>(c.state.art.focal?1:0)-(a.state.art.focal?1:0)||a.distance-c.distance);
       for(const {state,distance} of close){
         const art=state.art;
         if(distance<9&&!state.label)makeLabel(state);
         else if(distance>15&&state.label){state.label.material.diffuseTexture?.dispose();state.label.material.dispose();state.label.dispose();state.label=null;}
-        if(distance>26&&state.width&&!state.loading){state.material.diffuseTexture?.dispose();state.material.diffuseTexture=null;state.image.material=waiting;state.width=0;readyImages--;root.dataset.loadedImages=String(readyImages);continue;}
-        if(activeLoads>=3||distance>18)continue;
-        const scale=Math.max(1,art.imageWidth/.6),desired=(distance<1.8?1920:distance<4.5?960:320)*Math.min(scale,2),source=art.sources.find(s=>s.width>=desired)||art.sources.at(-1);
+        if(distance>26&&!art.focal&&state.width&&!state.loading){state.material.diffuseTexture?.dispose();state.material.diffuseTexture=null;state.image.material=waiting;state.width=0;readyImages--;root.dataset.loadedImages=String(readyImages);continue;}
+        if(activeLoads>=3||(distance>18&&!art.focal))continue;
+        const scale=Math.max(1,art.imageWidth/.6),desired=art.focal&&distance>=4.5?960:(distance<1.8?1920:distance<4.5?960:320)*Math.min(scale,2),source=art.sources.find(s=>s.width>=desired)||art.sources.at(-1);
         const downgrade=distance>7&&state.width>960;
         if(state.loading||(!downgrade&&state.width>=source.width)||state.failed.has(source.src))continue;
         if(downgrade){const small=art.sources.find(s=>s.width>=320)||art.sources[0];if(small.width<state.width)setTexture(state,small);continue;}
         setTexture(state,source);
       }
     }
-    const inside=(x,z)=>(x>.25&&x<hall.length-.25&&Math.abs(z)<hall.corridor/2-.2)||rooms.some(r=>x>r.x0+.25&&x<r.x0+r.width-.25&&(z-r.z0)*r.side>.2&&(r.z1-z)*r.side>.25);
+    const inside=(x,z)=>[...rooms,...hallways].some(r=>x>r.minX+.25&&x<r.maxX-.25&&z>r.minZ+.25&&z<r.maxZ-.25);
     try{const saved=JSON.parse(sessionStorage.getItem('tj-gallery-walkthrough-position'));if(saved&&[saved.x,saved.z,saved.yaw,saved.pitch].every(Number.isFinite)&&inside(saved.x,saved.z)){camera.position.set(saved.x,hall.eyeHeight,saved.z);camera.rotation.set(saved.pitch,saved.yaw,0);}}catch{}
     enter.addEventListener('click',()=>play());pauseButton.addEventListener('click',()=>playing?pause():play());picker.addEventListener('change',()=>goTo(picker.value));
     productLink.addEventListener('click',event=>{if(event.button===0&&!event.metaKey&&!event.ctrlKey&&!event.shiftKey&&!event.altKey){event.preventDefault();visit(selected);}});
@@ -197,7 +198,7 @@ async function initializeRoom(){
       // These bounds also guard a stalled frame when a tab returns from the background.
       camera.position.x=Math.max(bounds.minX+.22,Math.min(bounds.maxX-.22,camera.position.x));camera.position.z=Math.max(bounds.minZ+.22,Math.min(bounds.maxZ-.22,camera.position.z));
       map.style.left=`${(camera.position.x-bounds.minX)/(bounds.maxX-bounds.minX)*100}%`;map.style.top=`${(bounds.maxZ-camera.position.z)/(bounds.maxZ-bounds.minZ)*100}%`;
-      const here=rooms.find(r=>camera.position.x>r.x0&&camera.position.x<r.x0+r.width&&(camera.position.z-r.z0)*r.side>0&&(r.z1-camera.position.z)*r.side>0);if((here?.id||'hall')!==root.dataset.room){root.dataset.room=here?.id||'hall';roomName.textContent=here?here.title:'The corridor';}map.style.transform=`translate(-50%,-50%) rotate(${camera.rotation.y}rad)`;
+      const here=rooms.find(r=>camera.position.x>r.minX&&camera.position.x<r.maxX&&camera.position.z>r.minZ&&camera.position.z<r.maxZ);if((here?.id||'hallway')!==root.dataset.room){root.dataset.room=here?.id||'hallway';roomName.textContent=here?here.title:'Hallway';}map.style.transform=`translate(-50%,-50%) rotate(${camera.rotation.y}rad)`;
       root.dataset.position=JSON.stringify({x:camera.position.x,y:camera.position.y,z:camera.position.z,yaw:camera.rotation.y});
       const hit=scene.pick(canvas.clientWidth/2,canvas.clientHeight/2,mesh=>!!mesh.metadata?.artId),art=hit?.hit&&hit.distance<3.2?byId.get(hit.pickedMesh.metadata.artId):null;
       if(playing){showArt(art);card.hidden=!art;}
@@ -210,7 +211,7 @@ async function initializeRoom(){
     engine.runRenderLoop(()=>scene.render());
     await scene.whenReadyAsync();
     root.dataset.ready='true';enter.disabled=false;picker.disabled=false;pauseButton.disabled=false;enter.textContent='Enter the gallery';
-    status.textContent=`${rooms.length} rooms off one corridor. Every painting hangs at its true size.`;loadDetail();
+    status.textContent=`A central hall and ${rooms.length-1} galleries. Every painting hangs at its true size.`;loadDetail();
   }catch(error){
     engine?.dispose();root.dataset.failed='true';root.querySelector('[data-room-error]').hidden=false;root.querySelector('[data-room-index]').open=true;
     enter.hidden=true;status.textContent='Explore the print wall or browse the paintings.';console.error('Gallery room could not start',error);
