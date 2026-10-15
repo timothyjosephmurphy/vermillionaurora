@@ -23,7 +23,7 @@ jobs:
           node --test cloudflare/checkout-readiness.test.mjs
           npm --prefix cloudflare/test ci
           npm --prefix cloudflare/test test
-          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.PAYPAL_MODE!=='sandbox'||c.vars.SHIPPO_AUTO_LABEL_ENABLED!=='true')process.exit(1)"
+          node --input-type=module -e "import fs from 'node:fs';const c=JSON.parse(fs.readFileSync('cloudflare/wrangler.sandbox.jsonc'));if(c.name!=='vermillion-checkout-sandbox'||c.vars.CHECKOUT_MODE!=='sandbox'||c.vars.SHIPPO_AUTO_LABEL_ENABLED!=='true')process.exit(1)"
       - name: Deploy isolated sandbox
         uses: cloudflare/wrangler-action@v4
         with:
