@@ -47,7 +47,7 @@ export default {
     if (path.startsWith('/checkout/cart/')) return cartCheckout(request,env);
     if (path === '/checkout/square/webhook') return squareWebhook(request,env);
     if (path === '/inventory/originals') return originalStatusApi(request,env);
-    if (path === '/inventory/status') return inventoryStatus(request,env);
+    if (path === '/inventory/status') return inventoryStatus(request,env,ctx);
     if (path === '/checkout/bitcoin/webhook') return bitcoinWebhook(request,env);
     if (path.startsWith('/checkout/bitcoin/')) return bitcoinCheckout(request,env);
     if (path === '/checkout/health' && request.method === 'GET') return Response.json({catalogVersion,mode:env.CHECKOUT_MODE,release:env.CHECKOUT_RELEASE || null,catalogSource:catalogSource()},{headers:{'Cache-Control':'no-store'}});
