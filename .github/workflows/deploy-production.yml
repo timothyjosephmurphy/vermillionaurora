@@ -1,8 +1,9 @@
 name: Deploy production from main
-# Merging to main deploys production directly: website Worker (vermillionaurora) then checkout
+# Merging to main deploys production directly: Cloudflare Workers Builds deploys the website Worker
+# (vermillionaurora) from main; this workflow waits for that version, then deploys the checkout
 # Worker (vermillion-commissions), followed by sampled, quote-only verification.
 # The release branch is a frozen backup and no longer deploys anything from this workflow.
-# Roll back with: gh workflow run rollback.yml -f target=both
+# Roll back with: gh workflow run rollback.yml -f target=checkout
 on:
   push:
     branches: [main]
@@ -60,15 +61,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: node payments/verify-commission-privacy.mjs
-      - name: Prepare website deploy config (dist is already built)
-        run: node -e "const fs=require('fs');const c=JSON.parse(fs.readFileSync('wrangler.jsonc','utf8'));delete c.build;delete c['\$schema'];fs.writeFileSync('wrangler.deploy.json',JSON.stringify(c,null,1))"
-      - name: Deploy the website Worker
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: 3c1fddf0f4f4fc9c84594757d2e1bda0
-          command: deploy --config wrangler.deploy.json --message "main ${{ github.sha }}"
-      - name: Verify the website serves this catalog and sampled print files
+      - name: Wait for Workers Builds to publish this website version, then check sampled print files
         env:
           CHANGED_PRINT_PRODUCTS: ${{ steps.changes.outputs.print_products }}
         run: node payments/verify-live-print-assets.mjs
