@@ -5,6 +5,8 @@
 // repeated call for the same original returns the saved order instead of ordering again.
 // No customer payment is taken here; the address is stored only in the private sales archive.
 import {cartItems} from './cart-policy.mjs';
+import {finerworksPrices} from './finerworks-api.mjs';
+import {framedRetailPrice} from '../catalog/frame-pricing.mjs';
 import {quoteFinerWorksPrints} from './finerworks-quotes.mjs';
 import {newFinerWorksJob,fulfillFinerWorks,finerworksOrderingReady} from './finerworks-fulfillment.mjs';
 const reply=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
@@ -25,7 +27,10 @@ export async function ownerPrintOrder(request,env){
   if(items.length!==1||items[0].provider!=='finerworks'||items[0].testOnly)return reply({error:'Choose a live FinerWorks print'},400);
   const recordKey=`orders/owner-resubmits/${input.replaces}-${items[0].id}.json`;
   if(input.submit===true&&env.SALES_ARCHIVE){const prev=await env.SALES_ARCHIVE.get(recordKey);if(prev){const {job}=await prev.json();return reply({existing:true,orderId:job.providerId||null,reference:job.request.merchantReference,status:job.status,...(job.lastError?{error:job.lastError}:{})});}}
-  let quote;try{quote=await quoteFinerWorksPrints(env,items,input.address);}catch(e){return reply({error:e.message},400);}
+  let quote;try{quote=await quoteFinerWorksPrints(env,items,input.address);}catch(e){
+    // Owner-only detail: the live FinerWorks unit quote and the retail price the pricing rule gives for it.
+    let live=null;try{const [q]=await finerworksPrices(env,[items[0].sku]);let rule=null;try{rule=items[0].frame?framedRetailPrice(q,items[0].unframedAmount):null;}catch(x){rule='error: '+x.message;}live={unitQuote:q,ruleRetail:rule,savedRetail:items[0].amount,unframedAmount:items[0].unframedAmount||null};}catch(x){live={error:x.message};}
+    return reply({error:e.message,live},400);}
   if(input.submit!==true)return reply({dryRun:true,printId:items[0].id,title:items[0].title,sku:items[0].sku,mode:quote.mode,...costs(quote)});
   if(!finerworksOrderingReady(env)||!env.SALES_ARCHIVE)return reply({error:'FinerWorks ordering is not enabled'},409);
   const id=crypto.randomUUID();
