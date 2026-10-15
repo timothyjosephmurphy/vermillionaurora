@@ -42,7 +42,7 @@ for(const engine of [chromium,webkit]){
       await page.waitForFunction(()=>[...document.querySelectorAll('[data-art-image]')].every(i=>i.complete&&i.naturalWidth>0));
       const initial=state.images.filter(i=>/\.(webp|jpe?g)$/.test(i.url)&&(i.url.startsWith('/wall-paintings/')||i.url.startsWith('/gallery-wall/')||i.url.startsWith('/gallery-images/')));
       const initialBytes=initial.reduce((s,i)=>s+i.bytes,0);
-      assert(initialBytes<3_000_000,`initial painting images ${initialBytes}`); // budget raised from 2 MB when ~65 Older Work originals joined the wall
+      assert(initialBytes<5_000_000,`initial painting images ${initialBytes}`); // ~20 KB per painting: 3 MB with the Older Work originals, 5 MB once every TJ work (book pages, archive at print size) joined the wall
       assert(!state.images.some(i=>i.url.startsWith('/print-masters/')),'overview never downloads masters');
       assert.deepEqual(state.external.filter(u=>u.includes('media.vermillionaurora.com')),[],'no remote photos until zoom');
       assert(await page.locator('[data-wall-index] li').count()===tjWall.artworks.length);
@@ -53,9 +53,9 @@ for(const engine of [chromium,webkit]){
 
       // Filter
       const filterButtons=page.locator('[data-wall-filter] [data-filter]');
-      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),['All (129)','Available (94)','Sold (8)','Not for sale (27)']);
+      assert.deepEqual(await filterButtons.evaluateAll(b=>b.map(x=>x.textContent)),['All (216)','Available (98)','Sold (8)','Not for sale (110)']);
       await page.locator('[data-filter="sold"]').click();await settled();
-      assert.equal(await page.locator('.wall-art.is-dimmed').count(),129-8);
+      assert.equal(await page.locator('.wall-art.is-dimmed').count(),216-8);
       assert.equal(await picker.locator('option').count(),9);
       await page.locator('[data-filter="all"]').click();await settled();
       assert.equal(await page.locator('.wall-art.is-dimmed').count(),0);

@@ -321,6 +321,869 @@
    }
   ]
  },
+ "book-art-9ae261289a3bce952c6f": {
+  "sha256": "c02294e976",
+  "width": 1000,
+  "height": 383,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-9ae261289a3bce952c6f-c02294e976-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-9ae261289a3bce952c6f-c02294e976-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9ae261289a3bce952c6f.webp"
+   }
+  ]
+ },
+ "book-art-deb3358c321671dae1fc": {
+  "sha256": "af7acfac00",
+  "width": 542,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-deb3358c321671dae1fc-af7acfac00-320.webp"
+   },
+   {
+    "width": 542,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb3358c321671dae1fc.webp"
+   }
+  ]
+ },
+ "book-art-f56007f6a7d6ee955caf": {
+  "sha256": "e33c722a94",
+  "width": 535,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-f56007f6a7d6ee955caf-e33c722a94-320.webp"
+   },
+   {
+    "width": 535,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f56007f6a7d6ee955caf.webp"
+   }
+  ]
+ },
+ "book-art-d1399111a441ed91feaa": {
+  "sha256": "74e5870ff7",
+  "width": 550,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-d1399111a441ed91feaa-74e5870ff7-320.webp"
+   },
+   {
+    "width": 550,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/d1399111a441ed91feaa.webp"
+   }
+  ]
+ },
+ "book-art-c198f09bc8ddad18ed1e": {
+  "sha256": "994bc476f6",
+  "width": 1000,
+  "height": 545,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-c198f09bc8ddad18ed1e-994bc476f6-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-c198f09bc8ddad18ed1e-994bc476f6-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c198f09bc8ddad18ed1e.webp"
+   }
+  ]
+ },
+ "book-art-87cf2a732259b313f5ab": {
+  "sha256": "28ef0c856e",
+  "width": 568,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-87cf2a732259b313f5ab-28ef0c856e-320.webp"
+   },
+   {
+    "width": 568,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/87cf2a732259b313f5ab.webp"
+   }
+  ]
+ },
+ "book-art-471daf14a8bb7883f114": {
+  "sha256": "6db9296c0b",
+  "width": 1000,
+  "height": 537,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-471daf14a8bb7883f114-6db9296c0b-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-471daf14a8bb7883f114-6db9296c0b-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/471daf14a8bb7883f114.webp"
+   }
+  ]
+ },
+ "book-art-e3293c73dbb01f94b39b": {
+  "sha256": "2be213bfaa",
+  "width": 1000,
+  "height": 794,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-e3293c73dbb01f94b39b-2be213bfaa-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-e3293c73dbb01f94b39b-2be213bfaa-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e3293c73dbb01f94b39b.webp"
+   }
+  ]
+ },
+ "book-art-a2e53a8418a8d84f3dc5": {
+  "sha256": "eba19eb317",
+  "width": 1000,
+  "height": 770,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-a2e53a8418a8d84f3dc5-eba19eb317-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-a2e53a8418a8d84f3dc5-eba19eb317-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a2e53a8418a8d84f3dc5.webp"
+   }
+  ]
+ },
+ "book-art-27fee33e69f262ecfacb": {
+  "sha256": "4e39fecd9e",
+  "width": 759,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-27fee33e69f262ecfacb-4e39fecd9e-320.webp"
+   },
+   {
+    "width": 759,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/27fee33e69f262ecfacb.webp"
+   }
+  ]
+ },
+ "book-art-ff6db6906f0ed48ccc3a": {
+  "sha256": "6efc3645f3",
+  "width": 1000,
+  "height": 748,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-ff6db6906f0ed48ccc3a-6efc3645f3-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-ff6db6906f0ed48ccc3a-6efc3645f3-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ff6db6906f0ed48ccc3a.webp"
+   }
+  ]
+ },
+ "book-art-55829535637cd4974a88": {
+  "sha256": "f905147f0a",
+  "width": 1000,
+  "height": 782,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-55829535637cd4974a88-f905147f0a-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-55829535637cd4974a88-f905147f0a-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/55829535637cd4974a88.webp"
+   }
+  ]
+ },
+ "book-art-04a049ea60a5a09e6873": {
+  "sha256": "75e14f089d",
+  "width": 513,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-04a049ea60a5a09e6873-75e14f089d-320.webp"
+   },
+   {
+    "width": 513,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/04a049ea60a5a09e6873.webp"
+   }
+  ]
+ },
+ "book-art-e589c9375e23d1de4748": {
+  "sha256": "878e092b32",
+  "width": 1000,
+  "height": 552,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-e589c9375e23d1de4748-878e092b32-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-e589c9375e23d1de4748-878e092b32-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e589c9375e23d1de4748.webp"
+   }
+  ]
+ },
+ "book-art-f2025e5a72f4a70866c6": {
+  "sha256": "f6d52f6258",
+  "width": 1000,
+  "height": 803,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-f2025e5a72f4a70866c6-f6d52f6258-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-f2025e5a72f4a70866c6-f6d52f6258-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/f2025e5a72f4a70866c6.webp"
+   }
+  ]
+ },
+ "book-art-82ab8d65fb50fe0d096a": {
+  "sha256": "5529b3de7f",
+  "width": 1000,
+  "height": 545,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-82ab8d65fb50fe0d096a-5529b3de7f-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-82ab8d65fb50fe0d096a-5529b3de7f-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82ab8d65fb50fe0d096a.webp"
+   }
+  ]
+ },
+ "book-art-94e2edf9a24c90950489": {
+  "sha256": "bfc815d54d",
+  "width": 1000,
+  "height": 489,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-94e2edf9a24c90950489-bfc815d54d-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-94e2edf9a24c90950489-bfc815d54d-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/94e2edf9a24c90950489.webp"
+   }
+  ]
+ },
+ "book-art-6e6d7ac51608e0b7f10f": {
+  "sha256": "3924efb2b4",
+  "width": 628,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-6e6d7ac51608e0b7f10f-3924efb2b4-320.webp"
+   },
+   {
+    "width": 628,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/6e6d7ac51608e0b7f10f.webp"
+   }
+  ]
+ },
+ "book-art-e97329411fa8b273b508": {
+  "sha256": "765284572c",
+  "width": 613,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-e97329411fa8b273b508-765284572c-320.webp"
+   },
+   {
+    "width": 613,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/e97329411fa8b273b508.webp"
+   }
+  ]
+ },
+ "book-art-2136f2260225dd8ef20a": {
+  "sha256": "7d0340027a",
+  "width": 926,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-2136f2260225dd8ef20a-7d0340027a-320.webp"
+   },
+   {
+    "width": 926,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/2136f2260225dd8ef20a.webp"
+   }
+  ]
+ },
+ "book-art-29b3572972c367d351d1": {
+  "sha256": "030ae91185",
+  "width": 492,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-29b3572972c367d351d1-030ae91185-320.webp"
+   },
+   {
+    "width": 492,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/29b3572972c367d351d1.webp"
+   }
+  ]
+ },
+ "book-art-8ff9ac182d32fa228450": {
+  "sha256": "e25ab89a66",
+  "width": 486,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-8ff9ac182d32fa228450-e25ab89a66-320.webp"
+   },
+   {
+    "width": 486,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8ff9ac182d32fa228450.webp"
+   }
+  ]
+ },
+ "book-art-ccff23f1e469654faa05": {
+  "sha256": "16fef20c7f",
+  "width": 834,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-ccff23f1e469654faa05-16fef20c7f-320.webp"
+   },
+   {
+    "width": 834,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ccff23f1e469654faa05.webp"
+   }
+  ]
+ },
+ "book-art-db933efcbc4fbe01c841": {
+  "sha256": "598086bef4",
+  "width": 652,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-db933efcbc4fbe01c841-598086bef4-320.webp"
+   },
+   {
+    "width": 652,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/db933efcbc4fbe01c841.webp"
+   }
+  ]
+ },
+ "book-art-74a736000a32427842b1": {
+  "sha256": "845d6258d2",
+  "width": 1000,
+  "height": 891,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-74a736000a32427842b1-845d6258d2-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-74a736000a32427842b1-845d6258d2-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/74a736000a32427842b1.webp"
+   }
+  ]
+ },
+ "book-art-9209f1fd7d47f373597f": {
+  "sha256": "aace0ec869",
+  "width": 425,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-9209f1fd7d47f373597f-aace0ec869-320.webp"
+   },
+   {
+    "width": 425,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/9209f1fd7d47f373597f.webp"
+   }
+  ]
+ },
+ "book-art-a61c71e5de8cc1b71500": {
+  "sha256": "4da4b1f17f",
+  "width": 633,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-a61c71e5de8cc1b71500-4da4b1f17f-320.webp"
+   },
+   {
+    "width": 633,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a61c71e5de8cc1b71500.webp"
+   }
+  ]
+ },
+ "book-art-596837cb5ff533c620dd": {
+  "sha256": "9641cbc5d8",
+  "width": 579,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-596837cb5ff533c620dd-9641cbc5d8-320.webp"
+   },
+   {
+    "width": 579,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/596837cb5ff533c620dd.webp"
+   }
+  ]
+ },
+ "book-art-7bce6e3509027d1f7a0b": {
+  "sha256": "f3af696c54",
+  "width": 468,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-7bce6e3509027d1f7a0b-f3af696c54-320.webp"
+   },
+   {
+    "width": 468,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/7bce6e3509027d1f7a0b.webp"
+   }
+  ]
+ },
+ "book-art-3a9cba708a8045364e82": {
+  "sha256": "6d25875d18",
+  "width": 1000,
+  "height": 531,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-3a9cba708a8045364e82-6d25875d18-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-3a9cba708a8045364e82-6d25875d18-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/3a9cba708a8045364e82.webp"
+   }
+  ]
+ },
+ "book-art-1143b08e177333e43dc7": {
+  "sha256": "305a43c755",
+  "width": 842,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-1143b08e177333e43dc7-305a43c755-320.webp"
+   },
+   {
+    "width": 842,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1143b08e177333e43dc7.webp"
+   }
+  ]
+ },
+ "book-art-18e4d05240ce63a1a44b": {
+  "sha256": "bee33fb7b7",
+  "width": 882,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-18e4d05240ce63a1a44b-bee33fb7b7-320.webp"
+   },
+   {
+    "width": 882,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/18e4d05240ce63a1a44b.webp"
+   }
+  ]
+ },
+ "book-art-64cfd389b3dbb5cde532": {
+  "sha256": "8275a9101a",
+  "width": 842,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-64cfd389b3dbb5cde532-8275a9101a-320.webp"
+   },
+   {
+    "width": 842,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/64cfd389b3dbb5cde532.webp"
+   }
+  ]
+ },
+ "book-art-1708a7dca996aca40e6c": {
+  "sha256": "9e26cc0a40",
+  "width": 871,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-1708a7dca996aca40e6c-9e26cc0a40-320.webp"
+   },
+   {
+    "width": 871,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/1708a7dca996aca40e6c.webp"
+   }
+  ]
+ },
+ "book-art-a627c7b7d19ace6b3e51": {
+  "sha256": "c51e42538e",
+  "width": 882,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-a627c7b7d19ace6b3e51-c51e42538e-320.webp"
+   },
+   {
+    "width": 882,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/a627c7b7d19ace6b3e51.webp"
+   }
+  ]
+ },
+ "book-art-44161b6b117af79e3df4": {
+  "sha256": "afe5005c44",
+  "width": 900,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-44161b6b117af79e3df4-afe5005c44-320.webp"
+   },
+   {
+    "width": 900,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/44161b6b117af79e3df4.webp"
+   }
+  ]
+ },
+ "book-art-029f45a5fbfd6c90212e": {
+  "sha256": "767a3330e9",
+  "width": 555,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-029f45a5fbfd6c90212e-767a3330e9-320.webp"
+   },
+   {
+    "width": 555,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/029f45a5fbfd6c90212e.webp"
+   }
+  ]
+ },
+ "book-art-28bec44600b36ed0766f": {
+  "sha256": "7ba8c7fdc2",
+  "width": 812,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-28bec44600b36ed0766f-7ba8c7fdc2-320.webp"
+   },
+   {
+    "width": 812,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/28bec44600b36ed0766f.webp"
+   }
+  ]
+ },
+ "book-art-14d2876a55c720cbc908": {
+  "sha256": "987aa02cb7",
+  "width": 1000,
+  "height": 707,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-14d2876a55c720cbc908-987aa02cb7-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-14d2876a55c720cbc908-987aa02cb7-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/14d2876a55c720cbc908.webp"
+   }
+  ]
+ },
+ "book-art-c347459aa3f77f7213ae": {
+  "sha256": "8823455597",
+  "width": 1000,
+  "height": 550,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-c347459aa3f77f7213ae-8823455597-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-c347459aa3f77f7213ae-8823455597-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c347459aa3f77f7213ae.webp"
+   }
+  ]
+ },
+ "book-art-616ff8378f27047b4a91": {
+  "sha256": "e9654a67fb",
+  "width": 921,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-616ff8378f27047b4a91-e9654a67fb-320.webp"
+   },
+   {
+    "width": 921,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/616ff8378f27047b4a91.webp"
+   }
+  ]
+ },
+ "book-art-8d1545e1ac13c99eb4ce": {
+  "sha256": "334d5cd49e",
+  "width": 1000,
+  "height": 709,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-8d1545e1ac13c99eb4ce-334d5cd49e-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-8d1545e1ac13c99eb4ce-334d5cd49e-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/8d1545e1ac13c99eb4ce.webp"
+   }
+  ]
+ },
+ "book-art-466dc684227286c40502": {
+  "sha256": "2065f74b65",
+  "width": 675,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-466dc684227286c40502-2065f74b65-320.webp"
+   },
+   {
+    "width": 675,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/466dc684227286c40502.webp"
+   }
+  ]
+ },
+ "book-art-82127d1886ae57d5cb6e": {
+  "sha256": "61bcd6d2f8",
+  "width": 703,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-82127d1886ae57d5cb6e-61bcd6d2f8-320.webp"
+   },
+   {
+    "width": 703,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/82127d1886ae57d5cb6e.webp"
+   }
+  ]
+ },
+ "book-art-c04c7e48687fe35e65f5": {
+  "sha256": "f669ebc933",
+  "width": 917,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-c04c7e48687fe35e65f5-f669ebc933-320.webp"
+   },
+   {
+    "width": 917,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/c04c7e48687fe35e65f5.webp"
+   }
+  ]
+ },
+ "book-art-ec22daff29e72f16eb76": {
+  "sha256": "641f09e31f",
+  "width": 872,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-ec22daff29e72f16eb76-641f09e31f-320.webp"
+   },
+   {
+    "width": 872,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/ec22daff29e72f16eb76.webp"
+   }
+  ]
+ },
+ "book-art-504e3fafdacd7c9bbcd0": {
+  "sha256": "3f5bdff980",
+  "width": 696,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-504e3fafdacd7c9bbcd0-3f5bdff980-320.webp"
+   },
+   {
+    "width": 696,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/504e3fafdacd7c9bbcd0.webp"
+   }
+  ]
+ },
+ "book-art-4a0bb9cdd6c404c4e77c": {
+  "sha256": "d3ca4c37b4",
+  "width": 703,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-4a0bb9cdd6c404c4e77c-d3ca4c37b4-320.webp"
+   },
+   {
+    "width": 703,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4a0bb9cdd6c404c4e77c.webp"
+   }
+  ]
+ },
+ "book-art-0ee2717bc04e65d0507e": {
+  "sha256": "cbb35a2d7a",
+  "width": 910,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-0ee2717bc04e65d0507e-cbb35a2d7a-320.webp"
+   },
+   {
+    "width": 910,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0ee2717bc04e65d0507e.webp"
+   }
+  ]
+ },
+ "book-art-deb92de6e72f7b3ce951": {
+  "sha256": "d1c8660ff2",
+  "width": 910,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-deb92de6e72f7b3ce951-d1c8660ff2-320.webp"
+   },
+   {
+    "width": 910,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/deb92de6e72f7b3ce951.webp"
+   }
+  ]
+ },
+ "book-art-0f696788184bbba1d236": {
+  "sha256": "a18c6fe534",
+  "width": 621,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-0f696788184bbba1d236-a18c6fe534-320.webp"
+   },
+   {
+    "width": 621,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/0f696788184bbba1d236.webp"
+   }
+  ]
+ },
+ "book-art-50a7984f819bec72d1c7": {
+  "sha256": "b4f48ae004",
+  "width": 752,
+  "height": 1000,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-50a7984f819bec72d1c7-b4f48ae004-320.webp"
+   },
+   {
+    "width": 752,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/50a7984f819bec72d1c7.webp"
+   }
+  ]
+ },
+ "book-art-4c6fb3817fed4e5a6195": {
+  "sha256": "5a0c40f61a",
+  "width": 1000,
+  "height": 873,
+  "sources": [
+   {
+    "width": 320,
+    "src": "/wall-paintings/book-art-4c6fb3817fed4e5a6195-5a0c40f61a-320.webp"
+   },
+   {
+    "width": 960,
+    "src": "/wall-paintings/book-art-4c6fb3817fed4e5a6195-5a0c40f61a-960.webp"
+   },
+   {
+    "width": 1000,
+    "src": "https://media.vermillionaurora.com/images/book-galleries/v1/4c6fb3817fed4e5a6195.webp"
+   }
+  ]
+ },
  "older-work-hummingbird-feeder-190": {
   "sha256": "cef1c7ac71",
   "width": 1235,
