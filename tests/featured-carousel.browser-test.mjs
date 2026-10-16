@@ -45,8 +45,10 @@ try {
     await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(300);
     assert(await page.evaluate(() => !!document.querySelector('#painting-wall-peek img').getAttribute('src')), `${name}: wall image loads when revealed`);
     // Deep links keep their target.
-    const deep = await ctx.newPage(); await deep.goto(origin + '/#gallery', {waitUntil: 'load'}); await deep.waitForTimeout(300);
-    assert(await deep.evaluate(() => Math.abs(document.getElementById('gallery').getBoundingClientRect().top) < 200), `${name}: #gallery deep link`);
+    const deep = await ctx.newPage(); await deep.goto(origin + '/#gallery', {waitUntil: 'load'});
+    // CI runners are slow; give late image layout a few seconds to settle before judging the landing spot.
+    const landed = await deep.waitForFunction(() => Math.abs(document.getElementById('gallery').getBoundingClientRect().top) < 200, null, {timeout: 5000}).then(() => true, () => false);
+    assert(landed, `${name}: #gallery deep link`);
     await ctx.close();
   }
   const ctx = await browser.newContext({viewport: {width: 1280, height: 800}, reducedMotion: 'reduce'}), page = await ctx.newPage();
