@@ -75,7 +75,8 @@ test('previews are small WebP files, never upscaled, and end with the full photo
     if(!onPrintWall.has(art.id)){
       assert(images[art.id],`${art.id} manifest`);
       for(const s of art.sources.filter(s=>s.src.startsWith('/wall-paintings/'))){
-        assert(fs.existsSync(`static${s.src}`),`${s.src} exists`);assert(fs.statSync(`static${s.src}`).size<400_000);
+        // 1920/2880 deep-zoom previews are uploaded to R2 only (gitignored); the small levels ship in the repo
+        if(s.width<1920){assert(fs.existsSync(`static${s.src}`),`${s.src} exists`);assert(fs.statSync(`static${s.src}`).size<400_000);}
         assert(s.width<=art.sourceWidth);
       }
     }
