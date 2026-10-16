@@ -149,6 +149,8 @@ export function patchProductsJson(data, live) {
   data.liveRev = live.rev;
   return data;
 }
+export const BROWSER_HTML = 'public, max-age=0, must-revalidate';
+export function browserCopy(hit) { const h = new Headers(hit.headers); h.set('Cache-Control', BROWSER_HTML); h.delete('Age'); return new Response(hit.body, { status: hit.status, headers: h }); }
 export const CATALOG_PATHS = path => path === '/' || path === '/catalog/products.json' || /^\/(?:products|gallery)(?:\/|$)/.test(path);
 export async function catalogResponse(request, env, ctx) {
   const url = new URL(request.url);
@@ -162,8 +164,10 @@ export async function catalogResponse(request, env, ctx) {
   const touches = addedHere || url.pathname === '/catalog/products.json' || diff.added.length || (slug ? diff.changes.has(snap.bySlug.get(slug)?.id) : diff.changes.size);
   if (!touches) return env.ASSETS.fetch(request);
   const cache = caches.default, key = new Request(`https://tjm.art/__catalog/${live.rev}/${encodeURIComponent(snap.builtAt)}${url.pathname}`);
+  // The edge copy (keyed by live rev + build time, so every deploy misses it) is stored with a day's TTL, but browsers
+  // must always revalidate HTML: re-stamp the short browser policy on hits.
   const hit = await cache.match(key);
-  if (hit) return hit;
+  if (hit) return browserCopy(hit);
   let body, type = 'text/html; charset=utf-8', base;
   if (addedHere) {
     if (url.pathname !== `/products/${slug}/`) return Response.redirect(`https://tjm.art/products/${slug}/`, 301);
@@ -178,7 +182,7 @@ export async function catalogResponse(request, env, ctx) {
       if (!slug) body = addCards(body, diff, live);
     }
   }
-  const res = new Response(body, { headers: { 'Content-Type': type, 'Cache-Control': 'public, max-age=0, must-revalidate', 'X-Catalog-Rev': live.rev } });
+  const res = new Response(body, { headers: { 'Content-Type': type, 'Cache-Control': BROWSER_HTML, 'X-Catalog-Rev': live.rev } });
   const store = new Response(res.clone().body, { headers: { ...Object.fromEntries(res.headers), 'Cache-Control': 'public, max-age=86400' } });
   ctx?.waitUntil?.(cache.put(key, store));
   return res;
