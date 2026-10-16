@@ -163,7 +163,7 @@ export async function catalogResponse(request, env, ctx) {
   const addedHere = slug && diff.added.find(p => p.slug === slug);
   const touches = addedHere || url.pathname === '/catalog/products.json' || diff.added.length || (slug ? diff.changes.has(snap.bySlug.get(slug)?.id) : diff.changes.size);
   if (!touches) return env.ASSETS.fetch(request);
-  const cache = caches.default, key = new Request(`https://tjm.art/__catalog/${live.rev}/${encodeURIComponent(snap.builtAt)}${url.pathname}`);
+  const cache = caches.default, key = new Request(`https://tjm.art/__catalog/v2/${live.rev}/${encodeURIComponent(snap.builtAt)}${url.pathname}`);
   // The edge copy (keyed by live rev + build time, so every deploy misses it) is stored with a day's TTL, but browsers
   // must always revalidate HTML: re-stamp the short browser policy on hits.
   const hit = await cache.match(key);
@@ -184,6 +184,7 @@ export async function catalogResponse(request, env, ctx) {
   }
   const res = new Response(body, { headers: { 'Content-Type': type, 'Cache-Control': BROWSER_HTML, 'X-Catalog-Rev': live.rev } });
   const store = new Response(res.clone().body, { headers: { ...Object.fromEntries(res.headers), 'Cache-Control': 'public, max-age=86400' } });
-  ctx?.waitUntil?.(cache.put(key, store));
+  // only a GET may fill the edge copy: a HEAD response has no body and would be served empty to later GETs
+  if (request.method === 'GET') ctx?.waitUntil?.(cache.put(key, store));
   return res;
 }
