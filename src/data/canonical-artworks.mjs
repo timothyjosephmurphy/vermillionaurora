@@ -33,6 +33,13 @@ export const canonicalArtwork = {
   'book-art-29b3572972c367d351d1': 'painting-festival-portrait', // The Bounty of Satoshi: Wonder
   'book-art-ea6e156a9a533d06f198': 'grandpa-howard', // Grandpa Howard
   'book-art-82127d1886ae57d5cb6e': 'archived-painting-img-1608', // Father Paul -> My Dad, Paul Murphy (Oct 2026: same painting, better photo)
+  // Oct 15 2026 backend audit (TJ approved): same painting under two slugs; the page with the stock record survives, titles unchanged.
+  'book-art-f91504eaa0ab6b936c29': 'older-work-beach-sunsets-original-1', // Miami (book) = TJ Beach Sunset 310
+  'book-art-4bb692457bed7cd4bb00': 'older-work-beach-sunsets-original-2', // Miami (book) = TJ Beach Sunset 311
+  'book-art-fb5eaeb2078ebf9c75f0': 'older-work-beach-sunsets-original-3', // Miami (book) = TJ Beach Sunset 309
+  'book-art-b50262c37f44843487ae': 'archived-painting-301', // Catherine (book) = Catherine #1
+  'book-art-a6a2c048812a41cee4e4': 'archived-painting-371', // Benny and Kermit… portrait 4 (book) = Painting #371
+  'archived-painting-412': 'painting-studio-figure', // Brekkie Hoisting Orange Calcite B (archive photo) = the catalog page
 };
 // Extra works shown in a book-gallery section (catalog ids or book-art ids).
 export const sectionAdditions = {
