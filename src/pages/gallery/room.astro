@@ -1,13 +1,13 @@
 ---
-import {walkthroughRooms,walkthroughPaintingCount} from '../../data/gallery-walkthrough.mjs';
+import {walkthroughRooms,walkthroughPaintingCount,walkthroughAtlases as atlases} from '../../data/gallery-walkthrough.mjs';
 import {walkthroughLayout} from '../../scripts/gallery-walkthrough-layout.mjs';
 const {rooms,items:artworks,hall,bounds,hallways,signs,start,courtyard}=walkthroughLayout(walkthroughRooms);
-const data=JSON.stringify({artworks,rooms,hall,bounds,hallways,signs,start,courtyard}).replace(/</g,'\\u003c');
+const data=JSON.stringify({artworks,rooms,hall,bounds,hallways,signs,start,courtyard,atlases}).replace(/</g,'\\u003c');
 const works=artworks.filter(a=>a.kind!=='plaque');
 const mx=x=>(x-bounds.minX)/(bounds.maxX-bounds.minX)*100,mz=z=>(bounds.maxZ-z)/(bounds.maxZ-bounds.minZ)*100;
 ---
 <!doctype html><html lang="en"><head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta charset="utf-8" /><link rel="preconnect" href="https://img.tjm.art" crossorigin /><link rel="preload" as="image" href={atlases.central.src} crossorigin="anonymous" fetchpriority="high" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>The Gallery Room | TJ Murphy</title>
   <meta name="description" content="Walk through TJ Murphy’s gallery: every painting at its true size, in themed rooms, with a room for each exhibition and the murals." />
   <meta property="og:image" content="https://tjm.art/gallery-room/room-preview.webp" />

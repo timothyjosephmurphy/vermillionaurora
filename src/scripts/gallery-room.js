@@ -20,7 +20,7 @@ async function initializeRoom(){
   const root=document.querySelector('[data-gallery-room]');if(!root)return;
   const canvas=root.querySelector('[data-room-canvas]'),enter=root.querySelector('[data-room-enter]'),pauseButton=root.querySelector('[data-room-pause]');
   const picker=root.querySelector('[data-room-picker]'),card=root.querySelector('[data-room-art-card]'),crosshair=root.querySelector('[data-room-crosshair]'),status=root.querySelector('[data-room-status]');
-  const {artworks,rooms,hall,bounds,hallways,signs:signSpecs,start,courtyard}=JSON.parse(root.querySelector('[data-room-data]').textContent),byId=new Map(artworks.filter(a=>a.kind!=='plaque').map(art=>[art.id,art]));
+  const {artworks,rooms,hall,bounds,hallways,signs:signSpecs,start,courtyard,atlases={}}=JSON.parse(root.querySelector('[data-room-data]').textContent),byId=new Map(artworks.filter(a=>a.kind!=='plaque').map(art=>[art.id,art]));
   let engine;
   try{
     engine=new Engine(canvas,true,{stencil:true,powerPreference:'high-performance'},false);
@@ -152,26 +152,44 @@ async function initializeRoom(){
     }
     function goTo(id){const art=byId.get(id);if(!art)return;stopMotion();const position=approachPosition(art);camera.position.copyFromFloats(position.x,position.y,position.z);camera.setTarget(new Vector3(art.x,art.y,art.z));play(false);showArt(art);}
     // Textures and labels load only near the visitor, so the full collection never sits in memory at once.
+    // Thumbnails first: one atlas per room (current room, then its neighbours, then the rest), so every wall fills in
+    // within a few requests; then ≤960 px previews only for works near the visitor in the room they are in.
+    const roomAt=(x,z)=>rooms.find(r=>x>r.minX&&x<r.maxX&&z>r.minZ&&z<r.maxZ);
+    const atlasTex=new Map(),t0=performance.now();let thumbsReady=0;const thumbTotal=[...imageStates.values()].filter(s=>s.art.thumb).length;
+    function applyThumb(state,tex){
+      if(state.thumbTex)return;const a=atlases[state.art.thumb.atlas],[x,y,w,h]=state.art.thumb.rect,t=tex.clone();
+      t.uScale=w/a.width;t.vScale=h/a.height;t.uOffset=x/a.width;t.vOffset=1-(y+h)/a.height;t.wrapU=t.wrapV=Texture.CLAMP_ADDRESSMODE;
+      state.thumbTex=t;thumbsReady++;if(!state.width){state.material.diffuseTexture=t;state.image.material=state.material;state.width=1;readyImages++;}root.dataset.loadedImages=String(readyImages);
+      if(thumbsReady===thumbTotal)root.dataset.thumbsMs=String(Math.round(performance.now()-t0));
+    }
+    function loadAtlases(){
+      const here=roomAt(camera.position.x,camera.position.z)||rooms.find(r=>r.kind==='hall'),ring=['S','W','N','E'],k=ring.indexOf(here.ring);
+      const order=[here,...rooms.filter(r=>r!==here).sort((a,b)=>{const d=r=>{const i=ring.indexOf(r.ring);return Math.min((i-k+4)%4,(k-i+4)%4);};return d(a)-d(b);})];
+      for(const r of order){const a=atlases[r.id];if(!a||atlasTex.has(r.id))continue;
+        const load=(url,retry)=>{const tex=new Texture(url,scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>{for(const st of imageStates.values())if(st.art.thumb?.atlas===r.id)applyThumb(st,tex);},()=>{tex.dispose();if(retry)load(a.fallback,false);});atlasTex.set(r.id,tex);};
+        load(a.src,true);}
+    }
+    loadAtlases();
     function setTexture(state,source,useFallback=false){
       const url=useFallback?source.fallback:source.src;state.loading=true;activeLoads++;
       const next=new Texture(url,scene,false,true,Texture.TRILINEAR_SAMPLINGMODE,()=>{
-        const old=state.material.diffuseTexture;state.material.diffuseTexture=next;next.anisotropicFilteringLevel=8;state.image.material=state.material;
-        if(!state.width){readyImages++;root.dataset.loadedImages=String(readyImages);}state.width=source.width;old?.dispose();state.loading=false;activeLoads--;
+        if(state.detail)state.detail.dispose();state.detail=next;state.material.diffuseTexture=next;next.anisotropicFilteringLevel=8;state.image.material=state.material;
+        if(!state.width){readyImages++;root.dataset.loadedImages=String(readyImages);}state.width=source.width;state.loading=false;activeLoads--;
       },()=>{next.dispose();state.loading=false;activeLoads--;if(!useFallback&&source.fallback&&source.fallback!==source.src)setTexture(state,source,true);else state.failed.add(source.src);});
     }
     function loadDetail(){
-      const p=camera.position;
-      const close=[...imageStates.values()].map(state=>({state,distance:Math.hypot(p.x-state.art.x,p.z-state.art.z)})).sort((a,c)=>(c.state.art.focal?1:0)-(a.state.art.focal?1:0)||a.distance-c.distance);
-      for(const {state,distance} of close){
+      const p=camera.position,here=roomAt(p.x,p.z);
+      const close=[...imageStates.values()].map(state=>({state,distance:Math.hypot(p.x-state.art.x,p.z-state.art.z),same:here&&state.art.room===here.id})).sort((a,c)=>(c.same-a.same)||a.distance-c.distance);
+      for(const {state,distance,same} of close){
         const art=state.art;
         if(distance<9&&!state.label)makeLabel(state);
         else if(distance>15&&state.label){state.label.material.diffuseTexture?.dispose();state.label.material.dispose();state.label.dispose();state.label=null;}
-        if(distance>26&&!art.focal&&state.width&&!state.loading){state.material.diffuseTexture?.dispose();state.material.diffuseTexture=null;state.image.material=waiting;state.width=0;readyImages--;root.dataset.loadedImages=String(readyImages);continue;}
-        if(activeLoads>=3||(distance>18&&!art.focal))continue;
-        const scale=Math.max(1,art.imageWidth/.6),desired=art.focal&&distance>=4.5?960:(distance<1.8?1920:distance<4.5?960:320)*Math.min(scale,2),source=art.sources.find(s=>s.width>=desired)||art.sources.at(-1);
-        const downgrade=distance>7&&state.width>960;
-        if(state.loading||(!downgrade&&state.width>=source.width)||state.failed.has(source.src))continue;
-        if(downgrade){const small=art.sources.find(s=>s.width>=320)||art.sources[0];if(small.width<state.width)setTexture(state,small);continue;}
+        // far away: drop the preview and fall back to the atlas tile (thumbnails stay in memory; they are tiny)
+        if(state.detail&&!state.loading&&distance>(art.kind==='mural'?30:14)&&state.thumbTex){state.material.diffuseTexture=state.thumbTex;state.detail.dispose();state.detail=null;state.width=1;continue;}
+        if(activeLoads>=4)continue;
+        const near=art.kind==='mural'?distance<24:(same&&distance<7)||distance<3.5;if(!near)continue;
+        const want=960,source=art.sources.find(s=>s.width>=want)||art.sources.at(-1);
+        if(!source||state.loading||state.width>=source.width||state.failed.has(source.src))continue;
         setTexture(state,source);
       }
     }

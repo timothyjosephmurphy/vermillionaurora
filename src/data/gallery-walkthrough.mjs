@@ -1,4 +1,5 @@
 import assets from '../../catalog/walkthrough-assets.json' with {type:'json'};
+import atlases from '../../catalog/walkthrough-atlases.json' with {type:'json'};
 import {tjWall,WALL_UNIT} from './paintings-wall.mjs';
 import {IMAGE_ORIGIN,R2_PREFIXES} from '../../scripts/lib/image-keys.mjs';
 // Every work on The Painting Wall, hung at its true size (inches → metres; works without a measured size use their
@@ -58,6 +59,10 @@ export const walkthroughRooms=[
     items:[murals[1],murals[2],...arrange([...works(/^(Travels|Pacific Northwest)/),...exhibition('cape-town'),...exhibition('el-salvador'),...exhibition('bitcoin-film-festival-warsaw')])]}
 ];
 for(const r of walkthroughRooms)r.items=r.items.filter(i=>i.kind==='mural'||i.kind==='plaque'||(i.kind==='painting'&&/^\/products\/[^/]+\/$/.test(i.href||'')));
+// Each room's thumbnail atlas (scripts/build-walkthrough-atlases.mjs): one request fills a room's walls at once; the
+// renderer then upgrades nearby works to ≤960 px previews (never the print masters).
+export const walkthroughAtlases=Object.fromEntries(Object.entries(atlases).map(([id,a])=>[id,{src:remote(a.src),fallback:a.src,width:a.width,height:a.height}]));
+for(const r of walkthroughRooms){const a=atlases[r.id];for(const i of r.items){if(i.sources)i.sources=i.sources.filter(s=>s.width<=960&&!/print-masters/.test(s.src));const q=a?.rects[i.id];if(q)i.thumb={atlas:r.id,rect:q};}}
 const placed=new Set(walkthroughRooms.flatMap(r=>r.items.map(i=>i.id)));
 export const walkthroughPaintingCount=tjWall.artworks.filter(a=>placed.has(a.id)).length;
 const missing=tjWall.artworks.filter(a=>!placed.has(a.id));
