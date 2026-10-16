@@ -77,10 +77,10 @@ import {deriveParcel} from '../catalog/shipping.mjs';
 test('dimensioned available paintings receive parcels from the flat-at-12-inch rule',()=>{
  const originals=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price);
  const missing=originals.filter(p=>!p.dimensions);
- assert.deepEqual(missing.map(p=>p.id).sort(),['archived-painting-1','archived-painting-2','archived-painting-307','archived-painting-img-1555',...[4,5,6,7,8,9,10,11,12,13,14].map(n=>`strawberry-point-${n}`)].sort());
+ assert.deepEqual(missing.map(p=>p.id).sort(),['archived-painting-1','archived-painting-2','archived-painting-307','archived-painting-img-1555'].sort());
  for(const p of missing){assert.equal(p.checkout.mode,'inquiry');assert(!checkout[p.id],'Unmeasured originals must not receive an invented shipping parcel');}
  const ready=originals.filter(p=>p.dimensions);
- assert.equal(ready.length,68+64); // #22 priced and #53 measured Oct 15; plus 64 sized Older Work originals (Oct 2026); 56 existing originals and 11 archive originals (img-1608 original withdrawn) with recorded dimensions
+ assert.equal(ready.length,68+64+12); // +12 Strawberry Point #4–15 measured Oct 16; // #22 priced and #53 measured Oct 15; plus 64 sized Older Work originals (Oct 2026); 56 existing originals and 11 archive originals (img-1608 original withdrawn) with recorded dimensions
  for(const p of ready){
   assert.equal(p.checkout.mode,'integrated',p.id);
   const s=p.checkout.shipping;
@@ -317,7 +317,8 @@ test('commissions contact form shows the email with a decorative envelope icon a
 test('the homepage ends Exhibitions with the gallery room and framed print wall',()=>{
  const $=load(fs.readFileSync('dist/index.html','utf8'));
  assert.deepEqual($('#exhibitions .ex-track').children().slice(-2).map((i,n)=>$(n).attr('data-gallery-feature')).get(),['gallery-room','print-wall']);
- assert.equal($('.painting-carousel [data-gallery-feature]').length,0);
+ // The one gallery tile in Featured works is Strawberry Point (TJ, Oct 16 2026).
+ assert.deepEqual($('.painting-carousel [data-gallery-feature]').map((i,n)=>$(n).attr('data-gallery-feature')).get(),['strawberry-point']);
  assert.equal($('#exhibitions [data-gallery-feature="gallery-room"] .product-title-link').attr('href'),'/gallery/room/');
  const tile=$('#exhibitions [data-gallery-feature="print-wall"]');
  assert.equal(tile.length,1);assert.equal(tile.find('.product-title-link').attr('href'),'/gallery/wall/all/');

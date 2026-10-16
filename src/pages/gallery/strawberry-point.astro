@@ -1,9 +1,9 @@
 ---
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
-import {strawberryPaintings,strawberryGroups,strawberryId,strawberryTitle,strawberryGroupTitle} from '../../../catalog/strawberry-point-products.mjs';
+import strawberryProducts,{strawberryPaintings,strawberryGroups,strawberryId,strawberryTitle,strawberryGroupTitle} from '../../../catalog/strawberry-point-products.mjs';
 import {catalogVersion} from '../../../catalog/catalog.mjs';
-const title='Strawberry Point Hiking Trip';
+const title='Strawberry Point Backpacking Trip';
 const description='Paintings by TJ Murphy from a three-day backpacking trip to Strawberry Point on the Pacific coast of the Olympic Peninsula.';
 const src=(d,w)=>`${d.base}-${w}.webp`,srcset=d=>d.widths.map(w=>`${src(d,w)} ${w}w`).join(', ');
 const story=[
@@ -13,6 +13,22 @@ const story=[
   'On the way out we met Gary, who seems to hike the trail every day, a strange and interesting woodland fellow. I asked how his day was going. “Grand Slam! I saw sea otters!” We saw him again later, taking photos.',
   'It was a beautiful trip with great friends. I painted these this fall as part of a year in retrospect, painting from photos of all my trips. I plan a series of twelve paintings in this format.'
 ];
+// True relative scale: one CSS inch (--in) per painting inch. #1–3 are unmeasured; they are drawn at an estimated
+// 12 in for layout only (judged from the photos) and that estimate is never shown or stored as a size.
+const ESTIMATED_IN=12;
+const product=id=>strawberryProducts.find(x=>x.id===id);
+const cards=ids=>ids.map(n=>{const p=strawberryPaintings.find(x=>x.index===n),pr=product(strawberryId(p)),d=pr.dimensions;
+  return {p,pr,inches:d?d.width:ESTIMATED_IN,measured:!!d,size:d?pr.facts.find(f=>f.label==='Size')?.value:'Size not recorded',
+    price:pr.listing.status==='available'&&pr.listing.price?`$${Number(pr.listing.price.amount)}`:'Inquire'};});
+// Story paragraphs interleaved with the paintings in story order.
+const sections=[
+  {story:[story[0]],ids:[1,2,3],label:'Strawberry Point'},
+  {story:[story[1]],ids:[4,5,6,7],label:'Camp on the point'},
+  {story:[story[2]],ids:[8,9,10],label:'Rain and wind'},
+  {story:[story[3]],ids:[11,12,13,14],label:'The way out'},
+  {story:[story[4]],ids:[15],label:'A year in retrospect'}
+];
+const forSale=strawberryProducts.filter(p=>p.listing.status==='available').length;
 ---
 <!doctype html><html lang="en"><head>
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -27,14 +43,17 @@ const story=[
 <main class="container archive-main" id="main-content">
   <nav class="archive-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/gallery/">Gallery</a><span>/</span><span aria-current="page">{title}</span></nav>
   <header class="archive-intro"><p class="eyebrow dark">Olympic Peninsula · Painted fall 2026</p><h1>{title}</h1>
-    {story.map(t=><p>{t}</p>)}
-    <p class="archive-count">{strawberryPaintings.length} paintings · not yet for sale, inquiries welcome</p>
+    <p class="archive-count">{strawberryPaintings.length} watercolor pastels · {forSale} originals for sale · shown at true relative size</p>
   </header>
-  <ul class="archive-grid" aria-label="Strawberry Point paintings">
-    {strawberryPaintings.map((p,i)=><li class="archive-card" data-product-id={strawberryId(p)}><a href={`/products/${strawberryId(p)}/`}>
-      <div class="archive-image"><img src={src(p.display,480)} srcset={srcset(p.display)} sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 960px) 45vw, 30vw" width={p.display.width} height={p.display.height} alt={`${strawberryTitle(p)}, a painting by TJ Murphy`} loading={i<3?'eager':'lazy'} decoding="async"/></div>
-      <div class="archive-caption"><h2>{strawberryTitle(p)}</h2><p><span>Inquire</span></p></div></a></li>)}
-  </ul>
+  {sections.map((sec,si)=><section class="sp-section">
+    {sec.story.map(t=><p class="sp-story">{t}</p>)}
+    {sec.ids.length>0&&<ul class="sp-row" aria-label={sec.label}>
+      {cards(sec.ids).map(({p,pr,inches,measured,size,price})=><li class="sp-card" style={`--w:${inches}`} data-product-id={strawberryId(p)} data-scale={measured?'measured':'estimated'}><a href={`/products/${strawberryId(p)}/`}>
+        <img src={src(p.display,480)} srcset={srcset(p.display)} sizes={`(max-width: 700px) ${Math.round(inches*15)}px, ${Math.round(inches*28)}px`} width={p.display.width} height={p.display.height} alt={`${strawberryTitle(p)}, a painting by TJ Murphy`} loading={si<1?'eager':'lazy'} decoding="async"/>
+        <div class="sp-caption"><h2>{strawberryTitle(p).replace('Strawberry Point Backpacking Trip ','')}</h2><p>{size}</p><p class="sp-price">{price}</p></div></a></li>)}
+    </ul>}
+  </section>)}
+  <p class="sp-note">Paintings #4–15 are shown at their measured sizes relative to one another. #1–3 have not been measured yet and are drawn at an estimated scale.</p>
   <h2 class="sp-sets">As photographed together</h2>
   <ul class="archive-grid" aria-label="Strawberry Point paintings photographed together">
     {strawberryGroups.map(g=><li class="archive-card" data-product-id={g.id}><a href={`/products/${g.id}/`}>
@@ -44,6 +63,6 @@ const story=[
   <p class="archive-back"><a href="/gallery/">← Return to the main gallery</a></p>
 </main><SiteFooter/></div>
 <style>
-  .archive-main{padding-top:30px;padding-bottom:70px}.archive-breadcrumb{display:flex;flex-wrap:wrap;gap:10px;font-size:.85rem;color:#665b52}.archive-intro{max-width:750px;margin:42px 0 32px}.archive-intro h1{font:500 clamp(2.8rem,6vw,4.5rem)/1.05 'Cormorant Garamond',serif;margin:12px 0 18px}.archive-intro>p{line-height:1.65}.archive-count{color:#73685e;font-size:.9rem}.archive-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 28px}.archive-card{min-width:0}.archive-card a{display:block;color:inherit;text-decoration:none}.archive-image{background:#f1ece4;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border-radius:4px;overflow:hidden}.archive-image img{width:100%;height:100%;object-fit:contain;padding:16px}.archive-caption{padding:15px 2px 0}.archive-caption h2{font:600 1.65rem/1.15 'Cormorant Garamond',serif;margin:0 0 7px}.archive-caption p{margin:0 0 6px;font-size:.9rem}.archive-caption span{color:#73685e}.archive-back{margin-top:54px}.archive-card a:hover h2{color:#a34528}.sp-sets{font:500 2.2rem/1.1 'Cormorant Garamond',serif;margin:64px 0 24px}@media(max-width:960px){.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.archive-grid{grid-template-columns:1fr}}
+  .archive-main{padding-top:30px;padding-bottom:70px}.archive-breadcrumb{display:flex;flex-wrap:wrap;gap:10px;font-size:.85rem;color:#665b52}.archive-intro{max-width:750px;margin:42px 0 32px}.archive-intro h1{font:500 clamp(2.8rem,6vw,4.5rem)/1.05 'Cormorant Garamond',serif;margin:12px 0 18px}.archive-intro>p{line-height:1.65}.archive-count{color:#73685e;font-size:.9rem}.archive-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 28px}.archive-card{min-width:0}.archive-card a{display:block;color:inherit;text-decoration:none}.archive-image{background:#f1ece4;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border-radius:4px;overflow:hidden}.archive-image img{width:100%;height:100%;object-fit:contain;padding:16px}.archive-caption{padding:15px 2px 0}.archive-caption h2{font:600 1.65rem/1.15 'Cormorant Garamond',serif;margin:0 0 7px}.archive-caption p{margin:0 0 6px;font-size:.9rem}.archive-caption span{color:#73685e}.archive-back{margin-top:54px}.archive-card a:hover h2{color:#a34528}.sp-sets{font:500 2.2rem/1.1 'Cormorant Garamond',serif;margin:64px 0 24px}.sp-section{margin:0 0 56px}.sp-story{max-width:750px;line-height:1.7;font-size:1.05rem;margin:0 0 28px}.sp-row{--in:28px;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:flex-end;gap:36px 32px}.sp-card{width:min(100%,calc(var(--w)*var(--in)));min-width:0}.sp-card a{display:block;color:inherit;text-decoration:none}.sp-card img{display:block;width:100%;height:auto;box-shadow:0 2px 10px rgba(40,30,20,.18)}.sp-caption{padding-top:10px}.sp-caption h2{font:600 1.35rem/1.1 'Cormorant Garamond',serif;margin:0 0 4px}.sp-caption p{margin:0;font-size:.8rem;color:#73685e}.sp-caption .sp-price{color:#a34528;font-weight:600;margin-top:2px}.sp-card a:hover h2{color:#a34528}.sp-note{font-size:.85rem;color:#73685e;margin:8px 0 0}@media(max-width:1240px){.sp-row{--in:2.2vw}}@media(max-width:700px){.sp-row{--in:15px;gap:24px 18px}.sp-caption h2{font-size:1.15rem}.sp-story{font-size:1rem}}@media(max-width:960px){.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.archive-grid{grid-template-columns:1fr}}
 </style>
 </body></html>
