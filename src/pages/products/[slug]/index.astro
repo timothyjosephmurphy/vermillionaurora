@@ -27,6 +27,7 @@ const relatedProduct=relatedSource?byId[relatedSource.id===p.id?relatedSource.or
 const relatedPrints=relatedProduct?printOptions(relatedProduct,config,papers).some(option=>option.ready&&!option.testOnly):false;
 const originalFrameHref=originalFrameEligible(p)?amazonFrameSearchUrl(p.dimensions):null;
 const availablePrints=painting?printOptions(p,config,papers).filter(o=>o.ready&&!o.testOnly):[];
+const olderOriginals=p.olderWork&&p.olderWork.members.length>1?p.olderWork.members.filter(m=>m.originalId&&byId[m.originalId]).map(m=>({...m,product:byId[m.originalId],status:byId[m.originalId].listing.status})):[];
 const printFrom=availablePrints.length?Math.min(...availablePrints.map(o=>Number(o.amount))):null;
 // Search/share description for original paintings, built only from catalog facts (no invented details).
 const metaDescription=(()=>{
@@ -86,7 +87,11 @@ const facts=painting ? [
   </section>}
       {relatedProduct&&<p class="product-print-availability"><a href={urlFor(relatedProduct)}>{p.bookGallery?'View the original painting':(relatedPrints?'View fine-art print options':'View in the book collection')} →</a></p>}
       {p.listing.price && p.listing.status!=='not-for-sale' && (!painting||p.listing.status!=='available') && <p class="product-detail-price">{priceLabel(p)}</p>}
-      {painting && <p class="product-availability" data-live-status={(p.archive&&!p.archive.originalWithdrawn&&p.listing.status==='not-for-sale')||p.olderWork?undefined:''}>{p.archive&&!p.archive.originalWithdrawn&&p.listing.status==='not-for-sale'?'Archived painting':p.olderWork?(p.olderWork.members.length>1?'Originals not for sale':'Original not for sale'):p.bookGallery?'From the book collection':statusLabel(p)}</p>}
+      {painting && <p class="product-availability" data-live-status={(p.archive&&!p.archive.originalWithdrawn&&p.listing.status==='not-for-sale')||p.olderWork?undefined:''}>{p.archive&&!p.archive.originalWithdrawn&&p.listing.status==='not-for-sale'?'Archived painting':p.olderWork?(p.olderWork.members.length>1?(olderOriginals.some(o=>o.status==='available')?'Originals available':(olderOriginals.length?'Originals sold':'')):(p.listing.status==='not-for-sale'?'':statusLabel(p))):p.bookGallery?'From the book collection':statusLabel(p)}</p>}
+      {olderOriginals.length>0&&<section class="older-originals-list" aria-labelledby="older-originals-heading"><h2 id="older-originals-heading">Originals</h2><ul>{olderOriginals.map(o=>{const href=urlFor(o.product),sold=o.status==='sold',avail=o.status==='available';return <li data-original-id={o.originalId} data-status={o.status}>
+        <a class="older-original-thumb" href={href}><img src={`${o.display.base}-480.webp`} width={o.display.width} height={o.display.height} alt={`${o.name}, a painting by TJ Murphy`} loading="lazy" decoding="async"/></a>
+        <div><a class="older-original-name" href={href}>{o.name.replace(/^TJ /,'')}</a><p>{o.dimensions?`${o.dimensions.width} × ${o.dimensions.height} in · `:''}{sold?'Sold':avail?`$${Number(o.price.amount)}`:statusLabel(o.product)}</p></div>
+        {avail?<a class="button button-solid older-original-buy" href={href}>Buy</a>:<a class="older-original-view" href={href}>View</a>}</li>;})}</ul></section>}
       {painting&&!p.archive&&availablePrints.length===0&&!relatedPrints&&<p class="product-print-availability">Prints not yet available for this painting.</p>}
       {painting&&!p.bookGallery&&p.listing.status==='sold'&&<section class="sold-next-steps" aria-label="Next steps for a sold painting">
         <p>This original has found its home. I can paint something in the same spirit for you.</p>
@@ -107,6 +112,7 @@ const facts=painting ? [
   </article>
   {availablePrints.length>0&&<PrintPurchaseDialog product={p}/>}
 </main>}
+<style is:global>.older-originals-list{margin:26px 0}.older-originals-list h2{font:600 1.6rem/1.2 'Cormorant Garamond',serif;margin:0 0 10px}.older-originals-list ul{list-style:none;margin:0;padding:0}.older-originals-list li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid #e3d9ce}.older-original-thumb{display:block;background:#f1ece4;border-radius:3px}.older-original-thumb img{display:block;width:72px;height:72px;object-fit:contain;padding:4px}.older-original-name{color:inherit;font-weight:600}.older-originals-list li p{margin:2px 0 0;font-size:.88rem;color:#665b52}.older-originals-list .older-original-buy{padding:8px 18px;min-height:0}.older-original-view{color:#a34528;font-size:.9rem}</style>
 </ProductLayout>
 
 
