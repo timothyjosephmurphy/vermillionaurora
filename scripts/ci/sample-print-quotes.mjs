@@ -18,7 +18,8 @@ async function credential(method,body){
   const r=await fetch(endpoint+(method==='DELETE'?'/'+name:''),{method,headers:{Authorization:`Bearer ${process.env.CLOUDFLARE_API_TOKEN}`,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});
   assert(r.ok,`Sandbox credential ${method} failed: HTTP ${r.status}`);
 }
-const verify=async body=>{const r=await fetch(base+'/checkout/prints/verify',{method:'POST',headers:{Authorization:`Bearer ${secret}`,'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(150000)});const d=await r.json();assert(r.ok,d.error||r.status);assert.equal(d.ordersSubmitted,false);return d;};
+// The freshly installed secret can take a few seconds to reach the Worker; retry 404s briefly.
+const verify=async body=>{let r;for(let t=0;t<6;t++){r=await fetch(base+'/checkout/prints/verify',{method:'POST',headers:{Authorization:`Bearer ${secret}`,'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(150000)});if(r.status!==404)break;await new Promise(z=>setTimeout(z,5000));}const d=await r.json();assert(r.ok,d.error||r.status);assert.equal(d.ordersSubmitted,false);return d;};
 let installed=false;
 try{
   for(let i=0;i<24;i++){const h=await (await fetch(base+'/checkout/health',{cache:'no-store'})).json();if(h.release===process.env.DEPLOYED_SHA)break;assert(i<23,'Sandbox release not ready');await new Promise(r=>setTimeout(r,5000));}
