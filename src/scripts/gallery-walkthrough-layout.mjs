@@ -1,8 +1,8 @@
-// Pure geometry for the walkthrough, in metres. The rooms run in one straight west–east line through their
-// centres (z = 0): Archived Paintings · Friends, Family & Bitcoiners · central hall · Travels & the Pacific
-// Northwest · Older Work. The plan is mirror-symmetric about the z = 0 axis; doorways sit at wall midpoints.
-// Each room is only as long as its art needs. The visitor starts at the hall's south wall facing north, with the
-// entry mural centred on the far north wall. Only related works (a series, a set, an exhibition) share a column.
+// Pure geometry for the walkthrough, in metres. Four rooms form one loop around a courtyard, mirror-symmetric
+// about the north–south axis (x = 0): the central hall on the south side, a gallery on the west and east sides, and
+// one on the north. Walking through the doorways you circle back to the hall; there are no dead ends. The two side
+// galleries share one length and the hall and north gallery share one length, each just long enough for the art.
+// The visitor starts at the hall's south wall facing north, with the entry mural centred on the hall's north wall.
 export const HALL={height:4.6,eyeHeight:1.62,wall:.2,door:2.4,doorHeight:2.7,passage:2.2,band:[.5,3.9],gap:.5,stackGap:.14,margin:.45,maxGap:1.1};
 const DEPTH={hall:12,gallery:8};
 const yawFor=(nx,nz)=>Math.atan2(-nx,-nz);
@@ -62,38 +62,47 @@ function place(groups,segs,room){
   return out;
 }
 const ORDER=['N','S','W','E'];
-function fitRoom(room,x0,hasW,hasE){
-  const D=DEPTH[room.kind]||DEPTH.gallery,z0=-D/2,z1=D/2,d=HALL.door/2,focal=room.items.find(i=>i.focal);
-  const list=room.items.filter(i=>i!==focal),cols=columns(list);
-  for(let L=Math.max(8,focal?focal.width+6:0);L<200;L+=.25){
-    const rect=[x0,x0+L,z0,z1],openings=[...(hasW?[{wall:'W',from:-d,to:d}]:[]),...(hasE?[{wall:'E',from:-d,to:d}]:[])];
-    let segs=wallSegments(rect,openings);
-    if(focal){const cx=x0+L/2,half=focal.width/2+1.2;segs=segs.flatMap(g=>g.wall==='N'?cut(g,cx-half,cx+half):g.wall==='S'?cut(g,cx-2,cx+2):[g]);}
+// rect(L) -> {rect:[x0,x1,z0,z1],openings}; long axis x for the hall/north rooms, z for the side rooms
+function fitRoom(room,shape,minL){
+  const focal=room.items.find(i=>i.focal),list=room.items.filter(i=>i!==focal),cols=columns(list);
+  for(let L=Math.max(minL,8,focal?focal.width+6:0);L<200;L+=.25){
+    const {rect,openings}=shape(L),[x0,x1,,z1]=rect;let segs=wallSegments(rect,openings);
+    if(focal){const cx=(x0+x1)/2,half=focal.width/2+1.2;segs=segs.flatMap(g=>g.wall==='N'?cut(g,cx-half,cx+half):g.wall==='S'?cut(g,cx-2,cx+2):[g]);}
     segs.sort((a,b)=>ORDER.indexOf(a.wall)-ORDER.indexOf(b.wall));
     const groups=assign(cols,segs);if(!groups)continue;
     const items=place(groups,segs,room);
-    if(focal){const cx=x0+L/2;items.unshift({...focal,room:room.id,roomTitle:room.title,x:cx,y:Math.max(1.75,focal.height/2+.6),z:z1-.035,yaw:yawFor(0,-1),inward:{x:0,z:-1},wall:'N'});}
-    return {room:{id:room.id,title:room.title,kind:room.kind,galleries:room.galleries,minX:x0,maxX:x0+L,minZ:z0,maxZ:z1,openings,count:room.items.length},items};
+    if(focal){const cx=(x0+x1)/2;items.unshift({...focal,room:room.id,roomTitle:room.title,x:cx,y:Math.max(1.75,focal.height/2+.6),z:z1-.035,yaw:yawFor(0,-1),inward:{x:0,z:-1},wall:'N'});}
+    return {L,room:{id:room.id,title:room.title,kind:room.kind,ring:room.ring,galleries:room.galleries,minX:x0,maxX:x1,minZ:rect[2],maxZ:z1,openings,count:room.items.length},items};
   }
   throw Error(room.title+': could not fit');
 }
+const COURT=4;
 export function walkthroughLayout(rooms){
-  const sorted=[...rooms].sort((a,b)=>a.order-b.order),hallIdx=sorted.findIndex(r=>r.order===0);
-  // lay out the central hall at the origin, then each wing outward from it
-  const fitted=new Array(sorted.length);
-  const central=sorted[hallIdx];
-  const probe=fitRoom(central,0,hallIdx>0,hallIdx<sorted.length-1),Lc=probe.room.maxX-probe.room.minX;
-  fitted[hallIdx]=fitRoom(central,-Lc/2,hallIdx>0,hallIdx<sorted.length-1);
-  const passages=[];
-  for(let i=hallIdx+1;i<sorted.length;i++){const prev=fitted[i-1].room,x0=prev.maxX+HALL.passage+2*HALL.wall;passages.push({id:`passage-${prev.id}-${sorted[i].id}`,minX:prev.maxX,maxX:x0,minZ:-HALL.door/2,maxZ:HALL.door/2,to:sorted[i].id,from:prev.id});fitted[i]=fitRoom(sorted[i],x0,true,i<sorted.length-1);}
-  for(let i=hallIdx-1;i>=0;i--){const next=fitted[i+1].room,p=fitRoom(sorted[i],0,i>0,true),L=p.room.maxX-p.room.minX,x1=next.minX-HALL.passage-2*HALL.wall;fitted[i]=fitRoom(sorted[i],x1-L,i>0,true);passages.push({id:`passage-${sorted[i].id}-${next.id}`,minX:x1,maxX:next.minX,minZ:-HALL.door/2,maxZ:HALL.door/2,to:sorted[i].id,from:next.id});}
-  const laid=fitted.map(f=>f.room),items=fitted.flatMap(f=>f.items),byId=Object.fromEntries(laid.map(r=>[r.id,r]));
+  const by=Object.fromEntries(rooms.map(r=>[r.ring,r])),d=HALL.door/2,Dh=DEPTH.hall,Dg=DEPTH.gallery,link=HALL.passage+2*HALL.wall;
+  // hall (S) spans z∈[0,Dh]; north room spans z∈[Zn-Dg/2, Zn+Dg/2]; side rooms run z∈[0, Zn+Dg/2]
+  const ew=(r,L,Zc,D)=>({rect:[-L/2,L/2,Zc-D/2,Zc+D/2],openings:[{wall:'W',from:Zc-d,to:Zc+d},{wall:'E',from:Zc-d,to:Zc+d}]});
+  const side=(r,L,X,Zn,west)=>({rect:[X,X+Dg,0,L],openings:[{wall:west?'E':'W',from:Dh/2-d,to:Dh/2+d},{wall:west?'E':'W',from:Zn-d,to:Zn+d}]});
+  let Lx=0,Lz=Dh+COURT+Dg,out;
+  for(let guard=0;guard<40;guard++){
+    const Zn=Lz-Dg/2,X=Lx/2+link;
+    const fit=[fitRoom(by.S,L=>ew(by.S,L,Dh/2,Dh),Lx),fitRoom(by.N,L=>ew(by.N,L,Zn,Dg),Lx),fitRoom(by.W,L=>side(by.W,L,-X-Dg,L-Dg/2,true),Lz),fitRoom(by.E,L=>side(by.E,L,X,L-Dg/2,false),Lz)];
+    const nLx=Math.max(fit[0].L,fit[1].L),nLz=Math.max(fit[2].L,fit[3].L);
+    if(nLx===Lx&&nLz===Lz){out=fit;break;}Lx=nLx;Lz=nLz;
+  }
+  if(!out)throw Error('loop layout did not settle');
+  const laid=out.map(f=>f.room),items=out.flatMap(f=>f.items),R=Object.fromEntries(laid.map(r=>[r.ring,r]));
+  const Zh=Dh/2,Zn=Lz-Dg/2,passages=[
+    {id:'passage-central-people',from:'central',to:by.W.id,minX:R.W.maxX,maxX:R.S.minX,minZ:Zh-d,maxZ:Zh+d},
+    {id:'passage-people-archive',from:by.W.id,to:by.N.id,minX:R.W.maxX,maxX:R.N.minX,minZ:Zn-d,maxZ:Zn+d},
+    {id:'passage-archive-travels',from:by.N.id,to:by.E.id,minX:R.N.maxX,maxX:R.E.minX,minZ:Zn-d,maxZ:Zn+d},
+    {id:'passage-travels-central',from:by.E.id,to:'central',minX:R.S.maxX,maxX:R.E.minX,minZ:Zh-d,maxZ:Zh+d}];
+  const byId=Object.fromEntries(laid.map(r=>[r.id,r])),name=r=>r.kind==='hall'?'Central Hall':r.title,signs=[],y=HALL.doorHeight+.45;
   // a sign over both faces of every doorway, naming the room it leads into
-  const signs=[],y=HALL.doorHeight+.45;
-  for(const p of passages){const a=byId[p.from],b=byId[p.to],east=b.minX>a.minX;
-    signs.push({title:b.title,x:east?a.maxX-.12:a.minX+.12,y,z:0,yaw:yawFor(east?-1:1,0)},{title:a.kind==='hall'?'Central Hall':a.title,x:east?b.minX+.12:b.maxX-.12,y,z:0,yaw:yawFor(east?1:-1,0)});}
-  const c=byId[central.id],minX=Math.min(...laid.map(r=>r.minX)),maxX=Math.max(...laid.map(r=>r.maxX)),maxZ=Math.max(...laid.map(r=>r.maxZ));
-  return {rooms:laid,items,hall:HALL,hallways:passages,signs,start:{x:(c.minX+c.maxX)/2,z:c.minZ+1.6,yaw:0},bounds:{minX:minX-1,maxX:maxX+1,minZ:-maxZ-1,maxZ:maxZ+1}};
+  for(const p of passages){const z=(p.minZ+p.maxZ)/2;const [w,e]=[byId[p.from],byId[p.to]].sort((a,b)=>a.minX-b.minX);
+    signs.push({title:name(e),x:p.minX-.12,y,z,yaw:yawFor(-1,0)},{title:name(w),x:p.maxX+.12,y,z,yaw:yawFor(1,0)});}
+  const minX=Math.min(...laid.map(r=>r.minX)),maxX=Math.max(...laid.map(r=>r.maxX)),maxZ=Math.max(...laid.map(r=>r.maxZ));
+  return {rooms:laid,items,hall:HALL,hallways:passages,signs,loop:['central',by.W.id,by.N.id,by.E.id,'central'],courtyard:{minX:R.S.minX,maxX:R.S.maxX,minZ:Dh,maxZ:Zn-Dg/2},
+    start:{x:0,z:1.6,yaw:0},bounds:{minX:minX-1,maxX:maxX+1,minZ:-1,maxZ:maxZ+1}};
 }
 export function approachPosition(art,distance=1.25){return {x:art.x+art.inward.x*distance,y:HALL.eyeHeight,z:art.z+art.inward.z*distance};}
 export const insideWalk=(layout,x,z,pad=.25)=>[...layout.rooms,...layout.hallways].some(r=>x>r.minX+pad&&x<r.maxX-pad&&z>r.minZ+pad&&z<r.maxZ-pad);

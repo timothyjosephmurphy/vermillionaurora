@@ -21,9 +21,9 @@ const mx=x=>(x-bounds.minX)/(bounds.maxX-bounds.minX)*100,mz=z=>(bounds.maxZ-z)/
     <button type="button" data-room-pause disabled>Controls</button>
   </header>
   <section class="room-welcome" data-room-welcome aria-labelledby="room-heading">
-    <p class="eyebrow">A central hall · Four galleries</p>
+    <p class="eyebrow">A loop of four rooms</p>
     <h1 id="room-heading">Step inside.</h1>
-    <p>{walkthroughPaintingCount} paintings, each at its true size, in a central hall and four galleries in one line, related works together, with the exhibitions and the murals at full scale.<br />Each doorway is signed with the gallery beyond it.</p>
+    <p>{walkthroughPaintingCount} paintings, each at its true size, in a loop of rooms around a courtyard that brings you back to the central hall, related works together, with the exhibitions and the murals at full scale.<br />Each doorway is signed with the gallery beyond it.</p>
     <button class="enter-button" type="button" data-room-enter disabled>Preparing the gallery…</button>
     <p class="room-instructions" id="room-instructions"><span class="desktop-instructions"><kbd>W A S D</kbd> walk · <kbd>← →</kbd> turn<br />Mouse or drag to look · <kbd>Esc</kbd> pause</span><span class="touch-instructions">Drag to look. Hold the arrows to walk.</span><br />Click a painting, press <kbd>E</kbd>, or walk right up to it to open its page.</p>
     <label class="room-find">Go to a painting<select data-room-picker disabled><option value="">Choose a painting</option>{rooms.map(r=><optgroup label={r.title}>{works.filter(a=>a.room===r.id).map(art=><option value={art.id}>{art.kind==='photo'?`Photograph · ${art.id.split('-photo-')[1]}`:art.title}</option>)}</optgroup>)}</select></label>

@@ -45,15 +45,15 @@ export function arrange(items){
   list.sort((a,b)=>(a.ex-b.ex)||a.s-b.s||a.g[0].title.localeCompare(b.g[0].title));
   return list.flatMap(({k,g})=>g.map(it=>({...it,series:k.startsWith('solo:')||g.length<2?null:k})));
 }
-// The rooms run west to east in one straight line, mirrored around the central hall (no turns, no pinwheel).
+// The rooms form one loop around a courtyard, mirror-symmetric about the north–south axis (no turns that pinwheel):
+// central hall (south) → Friends, Family & Bitcoiners (west) → Archived & Older Work (north) → Travels (east) → hall.
 export const walkthroughRooms=[
-  {id:'archived',order:-2,kind:'gallery',title:'Archived Paintings',galleries:['Archived Paintings'],items:arrange(works(/^Archived Paintings/))},
-  {id:'people',order:-1,kind:'gallery',title:'Friends, Family & Bitcoiners',galleries:['Friends','Family','Bitcoiners','Self Portraits','Exhibitions: Living Room, Studio 601, Victrola, Paul Murphy'],
+  {id:'central',ring:'S',kind:'hall',title:'Watercolor Pastels',galleries:['Cormorant garden mural','Watercolor Pastels'],items:[murals[0],murals[3],...arrange(works(/^Watercolor/))]},
+  {id:'people',ring:'W',kind:'gallery',title:'Friends, Family & Bitcoiners',galleries:['Friends','Family','Bitcoiners','Self Portraits','Exhibitions: Living Room, Studio 601, Victrola, Paul Murphy'],
     items:arrange([...works(/^(Friends|Family|Bitcoiners|Self Portraits)/),...exhibition('living-room'),...exhibition('studio-601'),...exhibition('victrola'),...exhibition('paul-murphy')])},
-  {id:'central',order:0,kind:'hall',title:'Watercolor Pastels',galleries:['Cormorant garden mural','Watercolor Pastels'],items:[murals[0],murals[3],...arrange(works(/^Watercolor/))]},
-  {id:'travels',order:1,kind:'gallery',title:'Travels & the Pacific Northwest',galleries:['Travels','Pacific Northwest','Friends Club mural (Lillooet)','Exhibitions: Cape Town, El Salvador, Warsaw'],
-    items:[murals[1],murals[2],...arrange([...works(/^(Travels|Pacific Northwest)/),...exhibition('cape-town'),...exhibition('el-salvador'),...exhibition('bitcoin-film-festival-warsaw')])]},
-  {id:'older',order:2,kind:'gallery',title:'Older Work',galleries:['Older Work'],items:arrange(works(/^Older Work/))}
+  {id:'archive',ring:'N',kind:'gallery',title:'Archived & Older Work',galleries:['Archived Paintings','Older Work'],items:[...arrange(works(/^Archived Paintings/)),...arrange(works(/^Older Work/))]},
+  {id:'travels',ring:'E',kind:'gallery',title:'Travels & the Pacific Northwest',galleries:['Travels','Pacific Northwest','Friends Club mural (Lillooet)','Exhibitions: Cape Town, El Salvador, Warsaw'],
+    items:[murals[1],murals[2],...arrange([...works(/^(Travels|Pacific Northwest)/),...exhibition('cape-town'),...exhibition('el-salvador'),...exhibition('bitcoin-film-festival-warsaw')])]}
 ];
 const placed=new Set(walkthroughRooms.flatMap(r=>r.items.map(i=>i.id)));
 export const walkthroughPaintingCount=tjWall.artworks.filter(a=>placed.has(a.id)).length;
