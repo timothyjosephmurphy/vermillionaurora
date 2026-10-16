@@ -20,12 +20,12 @@ async function initializeRoom(){
   const root=document.querySelector('[data-gallery-room]');if(!root)return;
   const canvas=root.querySelector('[data-room-canvas]'),enter=root.querySelector('[data-room-enter]'),pauseButton=root.querySelector('[data-room-pause]');
   const picker=root.querySelector('[data-room-picker]'),card=root.querySelector('[data-room-art-card]'),crosshair=root.querySelector('[data-room-crosshair]'),status=root.querySelector('[data-room-status]');
-  const {artworks,rooms,hall,bounds,hallways,signs:signSpecs,start}=JSON.parse(root.querySelector('[data-room-data]').textContent),byId=new Map(artworks.filter(a=>a.kind!=='plaque').map(art=>[art.id,art]));
+  const {artworks,rooms,hall,bounds,hallways,signs:signSpecs,start,courtyard}=JSON.parse(root.querySelector('[data-room-data]').textContent),byId=new Map(artworks.filter(a=>a.kind!=='plaque').map(art=>[art.id,art]));
   let engine;
   try{
     engine=new Engine(canvas,true,{stencil:true,powerPreference:'high-performance'},false);
     engine.setHardwareScalingLevel(1/Math.min(devicePixelRatio||1,1.5));
-    const scene=new Scene(engine);scene.clearColor=new Color4(.92,.89,.84,1);
+    const scene=new Scene(engine);scene.clearColor=new Color4(.71,.84,.95,1);
     scene.collisionsEnabled=true;scene.gravity=new Vector3(0,-.12,0);
         const camera=new UniversalCamera('gallery-visitor',new Vector3(start.x,hall.eyeHeight,start.z),scene);
     camera.setTarget(new Vector3(start.x,hall.eyeHeight,start.z+10));camera.minZ=.045;camera.maxZ=90;camera.fov=.95;
@@ -40,16 +40,20 @@ async function initializeRoom(){
     const sun=new DirectionalLight('gallery-soft-light',new Vector3(.3,-1,.4),scene);sun.intensity=.3;
     const material=(name,hex,unlit=false)=>{const m=new StandardMaterial(name,scene);m.diffuseColor=Color3.FromHexString(hex);m.specularColor=new Color3(.025,.025,.025);if(unlit){m.disableLighting=true;m.emissiveColor=Color3.FromHexString(hex);}return m;};
     const plaster=material('warm-white-plaster','#f3efe5'),hallPlaster=material('hall-plaster','#ebe4d6'),trim=material('gallery-trim','#e7dfd0'),frameMaterial=material('black-wood-frame','#24221f'),matMaterial=material('conservation-mat','#fffdf7'),waiting=material('image-waiting','#d9d1c3',true),signMaterial=material('sign-board','#3a3029');
+    const glass=material('window-glass','#dcebf2');glass.alpha=.14;glass.backFaceCulling=false;
     const box=(name,width,height,depth,position,mat,collides=false)=>{const mesh=CreateBox(name,{width,height,depth},scene);mesh.position.copyFromFloats(...position);mesh.material=mat;mesh.checkCollisions=collides;mesh.isPickable=false;mesh.freezeWorldMatrix();return mesh;};
     const {height:H,wall:t,door,doorHeight}=hall,b=bounds,midX=(b.minX+b.maxX)/2,spanX=b.maxX-b.minX+1,spanZ=b.maxZ-b.minZ+1,midZ=(b.minZ+b.maxZ)/2;
     // each room's four walls, with a lintel over every doorway; walls sit just outside the room rectangle
     const wallRun=(id,axis,fixed,lo,hi,openings,mat)=>{let x=lo-t;
       for(const o of [...openings.sort((p,q)=>p.from-q.from),null]){
         const end=o?o.from:hi+t;if(end>x){const len=end-x,c=(x+end)/2;axis==='x'?box(`${id}-${c.toFixed(2)}`,len,H,t,[c,H/2,fixed],mat,true):box(`${id}-${c.toFixed(2)}`,t,H,len,[fixed,H/2,c],mat,true);}
-        if(o){const len=o.to-o.from,c=(o.from+o.to)/2;axis==='x'?box(`${id}-lintel-${c.toFixed(2)}`,len,H-doorHeight,t,[c,doorHeight+(H-doorHeight)/2,fixed],mat):box(`${id}-lintel-${c.toFixed(2)}`,t,H-doorHeight,len,[fixed,doorHeight+(H-doorHeight)/2,c],mat);x=o.to;}
+        if(o){const len=o.to-o.from,c=(o.from+o.to)/2,piece=(name,y0,y1,m=mat,collides=false)=>axis==='x'?box(`${id}-${name}-${c.toFixed(2)}`,len,y1-y0,t,[c,(y0+y1)/2,fixed],m,collides):box(`${id}-${name}-${c.toFixed(2)}`,t,y1-y0,len,[fixed,(y0+y1)/2,c],m,collides);
+          if(o.sill!==undefined){piece('sill',0,o.sill,mat,true);piece('window-head',o.head,H);piece('glass',o.sill,o.head,glass,true);
+            const ledge=axis==='x'?box(`${id}-ledge-${c.toFixed(2)}`,len+.1,.04,t+.12,[c,o.sill+.02,fixed],trim):box(`${id}-ledge-${c.toFixed(2)}`,t+.12,.04,len+.1,[fixed,o.sill+.02,c],trim);}
+          else piece('lintel',doorHeight,H);x=o.to;}
       }};
     for(const r of rooms){
-      const op=w=>r.openings.filter(o=>o.wall===w),mat=r.kind==='hall'?plaster:hallPlaster;
+      const op=w=>[...r.openings,...(r.windows||[])].filter(o=>o.wall===w),mat=r.kind==='hall'?plaster:hallPlaster;
       wallRun(r.id+'-north','x',r.maxZ+t/2,r.minX,r.maxX,op('N'),mat);wallRun(r.id+'-south','x',r.minZ-t/2,r.minX,r.maxX,op('S'),mat);
       wallRun(r.id+'-east','z',r.maxX+t/2,r.minZ,r.maxZ,op('E'),mat);wallRun(r.id+'-west','z',r.minX-t/2,r.minZ,r.maxZ,op('W'),mat);
       for(let x=r.minX+3;x<r.maxX-1;x+=6)for(let z=r.minZ+3;z<r.maxZ-1;z+=6)box(`${r.id}-light-${x}-${z}`,1.2,.015,.3,[x,H-.03,z],material(`${r.id}-glow-${x}-${z}`,'#fff6dc',true));
@@ -71,7 +75,14 @@ async function initializeRoom(){
     }
     {const tex=new DynamicTexture('welcome-sign',{width:1024,height:420},scene,true),c=tex.getContext();c.fillStyle='#f3efe5';c.fillRect(0,0,1024,420);c.fillStyle='#4b3c2c';c.textAlign='center';c.font='34px Arial';c.fillText('T J   M U R P H Y',512,120);c.font='86px Georgia';c.fillText('The Gallery',512,230);c.font='30px Georgia';c.fillStyle='#8f7350';c.fillText(`${rooms.length} galleries · every painting at its true size`,512,320);tex.update();
       const central=rooms.find(r=>r.kind==='hall'),m=material('welcome-material','#ffffff',true);m.diffuseTexture=tex;const p=CreatePlane('welcome',{width:2.6,height:1.07},scene);p.material=m;p.position.set(0,2.2,central.minZ+.03);p.rotation.y=Math.PI;p.isPickable=false;}
-    box('ceiling',spanX,.1,spanZ,[midX,H+.05,midZ],plaster);
+    // ceilings over rooms and passages only: the courtyard is open to the sky, with a lawn, low hedges and two trees
+    for(const r of [...rooms,...hallways])box(`ceiling-${r.id}`,r.maxX-r.minX+2*t+.02,.1,r.maxZ-r.minZ+2*t+.02,[(r.minX+r.maxX)/2,H+.05,(r.minZ+r.maxZ)/2],plaster);
+    if(courtyard){const cw=courtyard.maxX-courtyard.minX,cd=courtyard.maxZ-courtyard.minZ,cx=(courtyard.minX+courtyard.maxX)/2,cz=(courtyard.minZ+courtyard.maxZ)/2;
+      const lawn=CreateGround('courtyard-lawn',{width:cw-2*t,height:cd-2*t},scene);lawn.position.set(cx,.012,cz);lawn.material=material('lawn','#7f9f5a');lawn.isPickable=false;
+      const hedge=material('hedge','#4f7040'),bark=material('bark','#6b5440'),leaves=material('leaves','#5d8248'),path=material('gravel','#d8cfbd');
+      box('courtyard-path',cw-2*t,.02,.9,[cx,.022,cz],path);
+      for(const sx of [-1,1]){box(`hedge-${sx}`,cw/2-2.4,.7,.5,[cx+sx*(cw/4+.6),.35,courtyard.maxZ-t-.4],hedge);box(`hedge-s-${sx}`,cw/2-2.4,.7,.5,[cx+sx*(cw/4+.6),.35,courtyard.minZ+t+.4],hedge);
+        const tx=cx+sx*cw/8;box(`trunk-${sx}`,.22,3.2,.22,[tx,1.6,cz],bark);const crown=CreateBox(`crown-${sx}`,{size:1},scene);crown.scaling.set(2.2,2.4,Math.min(2.2,cd-.6));crown.position.set(tx,4.3,cz);crown.rotation.y=.785;crown.material=leaves;crown.isPickable=false;}}
     const floorMat=material('pale-oak','#ffffff');floorMat.specularColor=new Color3(.09,.08,.06);
     const grain=new DynamicTexture('oak-grain',{width:1024,height:1024},scene,true),ctx=grain.getContext();
     let seed=137;const random=()=>((seed=Math.imul(1664525,seed)+1013904223|0)>>>0)/4294967296;

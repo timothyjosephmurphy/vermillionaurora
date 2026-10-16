@@ -45,11 +45,15 @@ export function arrange(items){
 }
 // The rooms form one loop around a courtyard, mirror-symmetric about the north–south axis (no turns that pinwheel):
 // central hall (south) → Friends, Family & Bitcoiners (west) → Travels & the Pacific Northwest (north) → Archived & Older Work (east) → hall.
+// Archived works about people (friends, family, portraits, Bitcoin figures) hang with Friends, Family & Bitcoiners;
+// a series moves whole because these titles are matched by their shared stem.
+const PEOPLE_ARCHIVE=/^(Devo|Self Portrait|Ben & Kermit|Brekkie|Catherine|Elon|Flamenco Guitarist|Josie|Max Keiser|My Dad|RFK|Ron Paul|Tulsi Gabbard|Bounty of Satoshi|Dad Meditating)/;
+const archivedWorks=works(/^Archived Paintings/),archivedPeople=archivedWorks.filter(a=>PEOPLE_ARCHIVE.test(a.title)),archivedRest=archivedWorks.filter(a=>!PEOPLE_ARCHIVE.test(a.title));
 export const walkthroughRooms=[
   {id:'central',ring:'S',kind:'hall',title:'Watercolor Pastels',galleries:['Cormorant garden mural','Watercolor Pastels'],items:[murals[0],murals[3],...arrange(works(/^Watercolor/))]},
-  {id:'people',ring:'W',kind:'gallery',title:'Friends, Family & Bitcoiners',galleries:['Friends','Family','Bitcoiners','Self Portraits','Exhibitions: Living Room, Studio 601, Victrola, Paul Murphy'],
-    items:arrange([...works(/^(Friends|Family|Bitcoiners|Self Portraits)/),...exhibition('living-room'),...exhibition('studio-601'),...exhibition('victrola'),...exhibition('paul-murphy')])},
-  {id:'archive',ring:'E',kind:'gallery',title:'Archived & Older Work',galleries:['Archived Paintings','Older Work'],items:[...arrange(works(/^Archived Paintings/)),...arrange(works(/^Older Work/))]},
+  {id:'people',ring:'W',kind:'gallery',title:'Friends, Family & Bitcoiners',galleries:['Friends','Family','Bitcoiners','Self Portraits','Archived Paintings (portraits & people)','Exhibitions: Living Room, Studio 601, Victrola, Paul Murphy'],
+    items:arrange([...works(/^(Friends|Family|Bitcoiners|Self Portraits)/),...archivedPeople,...exhibition('living-room'),...exhibition('studio-601'),...exhibition('victrola'),...exhibition('paul-murphy')])},
+  {id:'archive',ring:'E',kind:'gallery',title:'Archived & Older Work',galleries:['Archived Paintings','Older Work'],items:[...arrange(archivedRest),...arrange(works(/^Older Work/))]},
   {id:'travels',ring:'N',kind:'gallery',title:'Travels & the Pacific Northwest',galleries:['Travels','Pacific Northwest','Friends Club mural (Lillooet)','Exhibitions: Cape Town, El Salvador, Warsaw'],
     items:[murals[1],murals[2],...arrange([...works(/^(Travels|Pacific Northwest)/),...exhibition('cape-town'),...exhibition('el-salvador'),...exhibition('bitcoin-film-festival-warsaw')])]}
 ];

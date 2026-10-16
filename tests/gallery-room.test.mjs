@@ -29,6 +29,13 @@ test('only paintings with a product page, the two murals, and plaques',()=>{
   for(const i of items)assert(i.kind==='mural'||i.kind==='plaque'||(i.kind==='painting'&&/^\/products\/[^/]+\/$/.test(i.href)),i.id);
   assert.equal(items.filter(i=>i.kind==='mural').length,2);
 });
+test('mirrored courtyard windows that no painting crosses',()=>{
+  const R=Object.fromEntries(rooms.map(r=>[r.ring,r]));
+  for(const r of rooms){assert(r.windows.length>=1,r.id);for(const w of r.windows){assert.equal(w.wall,{S:'N',N:'S',W:'E',E:'W'}[r.ring],'windows face the courtyard');
+    for(const i of items.filter(i=>i.room===r.id&&i.wall===w.wall)){const c=w.wall==='N'||w.wall==='S'?i.x:i.z;assert(c+i.width/2<=w.from||c-i.width/2>=w.to,i.id+' crosses a window');}}}
+  for(const k of ['S','N'])assert.deepEqual(R[k].windows.map(w=>w.from+w.to),[-(R[k].windows[1].from+R[k].windows[1].to),R[k].windows[1].from+R[k].windows[1].to]);
+  assert.deepEqual(R.W.windows.map(w=>[w.from,w.to]),R.E.windows.map(w=>[w.from,w.to]));
+});
 test('only related works share a column',()=>{
   const cols=new Map();for(const i of items){const k=i.room+i.x.toFixed(3)+i.z.toFixed(3);(cols.get(k)||cols.set(k,[]).get(k)).push(i);}
   for(const c of cols.values())if(c.length>1)assert(c.every(i=>i.series&&i.series===c[0].series),c.map(i=>i.id).join(','));

@@ -1,8 +1,8 @@
 ---
 import {walkthroughRooms,walkthroughPaintingCount} from '../../data/gallery-walkthrough.mjs';
 import {walkthroughLayout} from '../../scripts/gallery-walkthrough-layout.mjs';
-const {rooms,items:artworks,hall,bounds,hallways,signs,start}=walkthroughLayout(walkthroughRooms);
-const data=JSON.stringify({artworks,rooms,hall,bounds,hallways,signs,start}).replace(/</g,'\\u003c');
+const {rooms,items:artworks,hall,bounds,hallways,signs,start,courtyard}=walkthroughLayout(walkthroughRooms);
+const data=JSON.stringify({artworks,rooms,hall,bounds,hallways,signs,start,courtyard}).replace(/</g,'\\u003c');
 const works=artworks.filter(a=>a.kind!=='plaque');
 const mx=x=>(x-bounds.minX)/(bounds.maxX-bounds.minX)*100,mz=z=>(bounds.maxZ-z)/(bounds.maxZ-bounds.minZ)*100;
 ---
