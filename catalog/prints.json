@@ -13,7 +13,7 @@
       "label": "Watercolor Bright White"
     },
     "photo-rag": {
-      "label": "Hahnem\u00fchle Photo Rag"
+      "label": "Hahnemühle Photo Rag"
     }
   },
   "artworks": {
@@ -123673,7 +123673,7 @@
       }
     },
     "strawberry-point-10": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -123716,7 +123716,10 @@
                 "height": 2090
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:41.824Z"
         },
         "medium": {
           "sku": "5M144M8S5.23X5.48",
@@ -123744,12 +123747,15 @@
                 "height": 1567
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:41.824Z"
         }
       }
     },
     "strawberry-point-11": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -123792,7 +123798,10 @@
                 "height": 2339
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:42.607Z"
         },
         "medium": {
           "sku": "5M144M8S6.18X6.1",
@@ -123820,12 +123829,15 @@
                 "height": 1753
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:42.607Z"
         }
       }
     },
     "strawberry-point-12": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -123868,7 +123880,10 @@
                 "height": 2336
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:43.424Z"
         },
         "medium": {
           "sku": "5M144M8S6.17X6.09",
@@ -123896,12 +123911,15 @@
                 "height": 1751
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:43.424Z"
         }
       }
     },
     "strawberry-point-13": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -123944,7 +123962,10 @@
                 "height": 2405
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:44.237Z"
         },
         "medium": {
           "sku": "5M144M8S6.08X6.26",
@@ -123972,12 +123993,15 @@
                 "height": 1802
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:44.237Z"
         }
       }
     },
     "strawberry-point-14": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -124020,7 +124044,10 @@
                 "height": 2401
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:45.021Z"
         },
         "medium": {
           "sku": "5M144M8S6.06X6.26",
@@ -124048,12 +124075,15 @@
                 "height": 1800
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:45.021Z"
         }
       }
     },
     "strawberry-point-15": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -124096,7 +124126,10 @@
                 "height": 2248
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:45.798Z"
         },
         "medium": {
           "sku": "5M144M8S5.59X5.87",
@@ -124124,12 +124157,15 @@
                 "height": 1685
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:45.798Z"
         }
       }
     },
     "strawberry-point-4": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -124171,12 +124207,15 @@
                 "height": 1376
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:36.875Z"
         }
       }
     },
     "strawberry-point-5": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -124218,12 +124257,15 @@
                 "height": 1288
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:37.768Z"
         }
       }
     },
     "strawberry-point-6": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -124265,12 +124307,15 @@
                 "height": 1304
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:38.602Z"
         }
       }
     },
     "strawberry-point-7": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -124312,12 +124357,15 @@
                 "height": 1361
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:39.418Z"
         }
       }
     },
     "strawberry-point-8": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -124360,7 +124408,10 @@
                 "height": 2036
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:40.230Z"
         },
         "medium": {
           "sku": "5M144M8S5.27X5.34",
@@ -124388,12 +124439,15 @@
                 "height": 1526
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:40.230Z"
         }
       }
     },
     "strawberry-point-9": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -124436,7 +124490,10 @@
                 "height": 1961
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:41.046Z"
         },
         "medium": {
           "sku": "5M144M8S5.18X5.15",
@@ -124464,7 +124521,10 @@
                 "height": 1469
               }
             }
-          }
+          },
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T20:08:41.046Z"
         }
       }
     },
