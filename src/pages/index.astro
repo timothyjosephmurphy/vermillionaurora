@@ -20,6 +20,14 @@ const availablePaintings=featuredPlaceBefore.reduce((list,[move,before])=>{const
 const collectorPaintings=homePaintings.filter(product=>!['available','inquiry'].includes(product.listing?.status));
 const collectorPreview=collectorPaintings;
 const featured=availablePaintings[0]||homePaintings[0];
+import displayImages from '../../scripts/display-images.json';
+import {tjWall} from '../data/paintings-wall.mjs';
+// Hero background: a slow crossfade through the wide (landscape, >= 1.6:1) Featured works. Slide 1 stays the
+// Hope hero image (the LCP); the rest load one at a time, only just before they are shown.
+const HERO_FIRST='/display/esperanza-hero-aba277665d-1134.webp';
+const landscapeRatio=p=>{const i=p.image||{};if(i.width&&i.height)return i.width/i.height;const d=p.dimensions;return d?d.width/d.height:0;};
+const heroSrc=p=>{const f=p.image?.fullSrc||p.image?.src||'';if(f.startsWith('/display/'))return f;const e=displayImages[f];const v=e?.variants?.filter(x=>x.w<=1920).at(-1);return v?.src||null;};
+const heroSlides=[HERO_FIRST,...availablePaintings.filter(p=>p.id!=='hope-the-vermillion-aurora'&&landscapeRatio(p)>=1.6).map(heroSrc).filter(Boolean)];
 import { person, website, ld } from '../data/structured-data.mjs';
 import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerce.mjs';
 ---
@@ -32,12 +40,10 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
     <meta name="description" content="Paintings and murals by TJ Murphy, celebrating natural beauty and self-sovereignty through Pacific Northwest landscapes, expressive portraits, and a limited palette.">
     <!-- Hero background is the LCP element; keep this URL in sync with .hero-background in styles.css. -->
     <link rel="preload" as="image" type="image/webp" href="/display/esperanza-hero-aba277665d-1134.webp" fetchpriority="high">
-    <link rel="preload" as="image" href={featured.image.src}>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="/featured-carousel/carousel.css">
   <link rel="stylesheet" href="/home-compact.css">
   <link rel="stylesheet" href="/portrait-preview.css"><link rel="stylesheet" href="/site-header.css">
 <meta name="catalog-version" content={catalogVersion} />  <style is:global>
@@ -51,12 +57,27 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
 </head>
   <body class="home-page">
     <div class="page-shell">
+      <section class="wall-peek" id="painting-wall-peek" aria-label="The Painting Wall">
+        <a href="/gallery/wall/all/" class="wall-peek-link">
+          <span class="wall-peek-frame"><img data-wall-src="/gallery-wall/framed-wall.webp" width="1600" height="880" alt="TJ Murphy’s framed paintings arranged on the painting wall" decoding="async"/></span>
+          <span class="wall-peek-text"><span class="wall-peek-eyebrow">Above the studio</span><span class="wall-peek-title">The Painting Wall</span><span class="wall-peek-sub">{tjWall.artworks.length} paintings at true size · Walk the wall →</span></span>
+        </a>
+      </section>
+      <script is:inline>
+        // Land on the usual top content: the wall sits above it and is revealed by scrolling up.
+        // Only on a fresh navigation without a #fragment; reloads and back/forward keep the browser's position.
+        (function(){var w=document.getElementById('painting-wall-peek');if(!w)return;var n=(performance.getEntriesByType&&performance.getEntriesByType('navigation')[0])||{};
+          if(location.hash||(n.type&&n.type!=='navigate')||window.scrollY>2)return;var h=w.offsetHeight,de=document.documentElement;
+          de.style.minHeight=(h+innerHeight+2)+'px';window.scrollTo({top:h,left:0,behavior:'instant'});
+          document.addEventListener('DOMContentLoaded',function(){de.style.minHeight='';},{once:true});})();
+      </script>
       <SiteHeader />
 
       <main id="main-content">
         <section class="hero" id="top">
-          <div class="hero-background" aria-hidden="true"></div>
-          <div class="container hero-grid">
+          <div class="hero-background hero-slideshow" aria-hidden="true" data-hero-slides={JSON.stringify(heroSlides.slice(1))}><img class="hero-slide is-active" src={HERO_FIRST} alt="" fetchpriority="high" decoding="async"/><img class="hero-slide" alt="" decoding="async"/></div>
+          <a class="hero-room-link" href="/gallery/room/">Explore the 3D gallery</a>
+          <div class="container hero-grid hero-grid-solo">
             <div class="hero-copy">
               <p class="eyebrow">Seattle watercolor &amp; pastel artist · Inspiring self-sovereignty</p>
               <h1>Natural beauty. Independent spirit.</h1>
@@ -68,12 +89,6 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
               </div>
             </div>
 
-            <div class="hero-panel" aria-label="Featured artwork panel">
-              <div class="art-card featured-art">
-                <a href={urlFor(featured)} class="art-image art-1" style={`background-image:url('${featured.image.src}')`} aria-label={`View ${featured.title}`}></a>
-                <div class="art-meta"><span class="meta-label">Featured piece</span><h2><a href={urlFor(featured)} class="product-title-link">{featured.title}</a></h2><p class="card-buy-row"><span>{featured.listing.status==='available'?priceLabel(featured):statusLabel(featured)}{printsFromLabel(featured)&&` · ${printsFromLabel(featured)}`}</span>{showBuy(featured)&&<span class="card-buy" aria-hidden="true">Buy</span>}</p></div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -294,11 +309,29 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
 
     <script is:inline src="/exhibitions/exhibitions.js" defer=""></script>
     <script is:inline src="script.js"></script>
-  <script is:inline src="/featured-carousel/carousel.js" defer=""></script>
+  <script is:inline src="/home-hero.js" defer=""></script>
   <script is:inline src="/portrait-preview.js" defer=""></script>
   <script is:inline src="/artist-film-carousel.js" defer=""></script>
 
 <script is:inline src="/catalog/availability.js" defer=""></script>  <style is:global>
+    .hero-grid-solo{grid-template-columns:minmax(0,1fr)}
+    .hero-slideshow{background:#2b2420 !important;filter:none !important;overflow:hidden}
+    .hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 3s ease-in-out;filter:saturate(.85) contrast(1.05)}
+    .hero-slide.is-active{opacity:1}
+    .hero-slideshow::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,9,9,.62) 0%,rgba(10,9,9,.38) 45%,rgba(10,9,9,.18) 100%)}
+    @media (prefers-reduced-motion: reduce){.hero-slide{transition:none}}
+    .hero-room-link{position:absolute;top:14px;right:18px;z-index:2;font-size:.78rem;letter-spacing:.04em;color:rgba(255,255,255,.86);text-decoration:none;padding:6px 10px;border-radius:999px;background:rgba(16,14,13,.28)}
+    .hero-room-link:hover,.hero-room-link:focus-visible{color:#fff;background:rgba(16,14,13,.5);text-decoration:underline}
+    .wall-peek{height:min(78vh,720px);background:#2c2723;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .wall-peek-link{display:flex;flex-direction:column;align-items:center;gap:18px;width:min(1100px,92vw);color:#f4ede4;text-decoration:none}
+    .wall-peek-frame{display:block;width:100%;aspect-ratio:1600/880;max-height:calc(min(78vh,720px) - 130px);background:#3a332d;border-radius:4px;overflow:hidden}
+    .wall-peek-frame img{width:100%;height:100%;object-fit:contain;display:block}
+    .wall-peek-text{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+    .wall-peek-eyebrow{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+    .wall-peek-title{font:600 2rem/1 'Cormorant Garamond',serif}
+    .wall-peek-sub{font-size:.85rem;opacity:.85}
+    .wall-peek-link:hover .wall-peek-title{text-decoration:underline}
+    @media (max-width:700px){.wall-peek{height:62vh}.wall-peek-frame{max-height:calc(62vh - 120px)}.hero-room-link{top:8px;right:10px;font-size:.72rem}.hero-grid-solo .hero-copy{padding-top:52px}}
     /* Homepage carousels: no Pause/arrow/counter controls. Auto-advance continues, pauses on
        hover, focus and touch, and stays off for prefers-reduced-motion (exhibitions.js and
        featured-carousel/carousel.js). Swipe, scroll and keyboard arrows on the track still work. */
