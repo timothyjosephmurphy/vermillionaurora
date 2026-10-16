@@ -16239,9 +16239,9 @@
               }
             }
           },
-          "amount": "165.00",
+          "amount": "160.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T00:48:36.947Z",
+          "quotedAt": "2026-10-16T19:51:56.788Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S18DD98X20DD17F1S21DD98X23DD17J1S18DD98X20DD17G1",
@@ -16280,10 +16280,10 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "274.00",
-              "unframedAmount": "165.00",
+              "amount": "269.00",
+              "unframedAmount": "160.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-15T19:46:14.076Z",
+              "quotedAt": "2026-10-16T19:51:59.950Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d.jpg",
@@ -16382,10 +16382,10 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "294.00",
-              "unframedAmount": "165.00",
+              "amount": "289.00",
+              "unframedAmount": "160.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-15T19:46:14.076Z",
+              "quotedAt": "2026-10-16T19:51:59.950Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d.jpg",
@@ -16484,10 +16484,10 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "274.00",
-              "unframedAmount": "165.00",
+              "amount": "269.00",
+              "unframedAmount": "160.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-15T19:46:14.076Z",
+              "quotedAt": "2026-10-16T19:51:59.950Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d.jpg",
@@ -16580,7 +16580,7 @@
           },
           "amount": "95.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T00:48:36.947Z",
+          "quotedAt": "2026-10-16T19:51:56.788Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S14DD3X15DD19F1S17DD3X18DD19J1S14DD3X15DD19G1",
@@ -16619,10 +16619,10 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "172.00",
+              "amount": "171.00",
               "unframedAmount": "95.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-15T19:46:15.362Z",
+              "quotedAt": "2026-10-16T19:52:01.651Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1.jpg",
@@ -16724,7 +16724,7 @@
               "amount": "188.00",
               "unframedAmount": "95.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-15T19:46:15.362Z",
+              "quotedAt": "2026-10-16T19:52:01.651Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1.jpg",
@@ -16823,10 +16823,10 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "172.00",
+              "amount": "171.00",
               "unframedAmount": "95.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-15T19:46:15.362Z",
+              "quotedAt": "2026-10-16T19:52:01.651Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1.jpg",
@@ -16919,7 +16919,7 @@
           },
           "amount": "40.00",
           "pricingRule": "finerworks-3.5x-v1",
-          "quotedAt": "2026-10-13T00:48:36.947Z",
+          "quotedAt": "2026-10-16T19:51:56.788Z",
           "frameOptions": {
             "black": {
               "sku": "5M144M8S9DD61X10DD21F1S12DD61X13DD21J1S9DD61X10DD21G1",
@@ -16961,7 +16961,7 @@
               "amount": "90.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-15T19:46:16.598Z",
+              "quotedAt": "2026-10-16T19:52:03.293Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81.jpg",
@@ -17060,10 +17060,10 @@
                   "name": "Premium Clear"
                 }
               },
-              "amount": "103.00",
+              "amount": "102.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-15T19:46:16.598Z",
+              "quotedAt": "2026-10-16T19:52:03.293Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81.jpg",
@@ -17165,7 +17165,7 @@
               "amount": "90.00",
               "unframedAmount": "40.00",
               "pricingRule": "finerworks-frame-at-cost-v1",
-              "quotedAt": "2026-10-15T19:46:16.598Z",
+              "quotedAt": "2026-10-16T19:52:03.293Z",
               "asset": {
                 "provider": "finerworks",
                 "url": "https://vermillionaurora.com/print-editions/3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81.jpg",
