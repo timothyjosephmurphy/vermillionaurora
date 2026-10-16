@@ -11,7 +11,7 @@ const listed=products.filter(p=>!Object.hasOwn(canonicalArtwork,p.id));
 // shipping notes, old hosting bundles, dependencies and tests never enter dist.
 const roots=['about','book-viewer','exhibitions','gallery','gallery-images','murals','neural-dance','products'];
 const types=/\.(?:html|css|js|json|jpg|jpeg|png|webp|gif|svg|ico|avif|woff2?|ttf|pdf|mp4|webm|mp3|wav)$/i;
-const migrated=new Set(['index.html','gallery/index.html','exhibitions/paul-murphy/index.html','exhibitions/chase-toole/index.html','exhibitions/gavin-robertson/index.html',...products.map(p=>`products/${p.slug}/index.html`)]);
+const migrated=new Set(['index.html','gallery/index.html','exhibitions/index.html','exhibitions/paul-murphy/index.html','exhibitions/chase-toole/index.html','exhibitions/gavin-robertson/index.html',...products.map(p=>`products/${p.slug}/index.html`)]);
 async function copy(path) {
   if(migrated.has(path)||path==='gallery/inventory.json')return;
   await mkdir(`dist/${path.slice(0,path.lastIndexOf('/'))}`,{recursive:true});

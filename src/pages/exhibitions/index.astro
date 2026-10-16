@@ -1,0 +1,36 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { exhibitions, featured } from '../../data/exhibitions.mjs';
+const description = 'Exhibitions by Seattle watercolor painter TJ Murphy: Bitcoin Film Festival Warsaw, Victrola, Adopting Bitcoin Cape Town and El Salvador, Studio 601, Intiman Theater auction, and more.';
+---
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibitions | TJ Murphy — Watercolor Painter</title>
+    <meta name="description" content={description}>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="canonical" href="https://tjm.art/exhibitions/"><link rel="stylesheet" href="/exhibitions/index.css"><link rel="stylesheet" href="/site-header.css">
+    <style is:inline>.exhibition-meta{margin:0 0 6px;font-size:.92rem;color:var(--muted)}.exhibition-meta strong{color:inherit;font-weight:600}.exhibition-related{margin:10px 0 12px;padding:0;list-style:none;font-size:.88rem;line-height:1.6}.exhibition-related a{text-decoration:underline;text-underline-offset:3px}.exhibition-index h2.section-title{font:600 2.4rem/1.1 "Cormorant Garamond",serif;margin:48px 0 18px}</style>
+</head>
+<body><div class="page-shell"><SiteHeader />
+<main class="container exhibition-index" id="main-content"><nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/ Exhibitions</span></nav>
+<div class="section-heading"><p class="eyebrow dark">Art &amp; community</p><h1>Exhibitions</h1><p>Solo and group shows, newest first, with photographs and videos from each one. The <a href="/about/#cv">Selected CV</a> on the About page lists them too.</p><p><a class="button button-solid" href="/exhibitions/world-map/">Explore the world map →</a></p></div>
+<div class="exhibition-index-grid">{exhibitions.map(ex=>(
+<article class="product-card"><a class="exhibition-index-image" href={`/exhibitions/${ex.slug}/`}><img src={ex.image} alt={ex.alt} loading="lazy" style={ex.contain?'object-fit:contain;background:#e8dfd3':undefined}></a><div class="product-info"><h2><a class="product-title-link" href={`/exhibitions/${ex.slug}/`}>{ex.title}</a></h2>
+<p class="exhibition-meta"><strong class="exhibition-date"><time datetime={/^\d/.test(ex.year)?ex.year:undefined}>{ex.year}</time></strong> · {ex.type}</p>
+<p class="exhibition-meta">{ex.venue}</p><p class="exhibition-meta">{ex.location}</p>
+{ex.related && <ul class="exhibition-related" aria-label={`Paintings related to ${ex.title}`}>{ex.related.map(r=><li><a href={r.href}>{r.label}</a></li>)}</ul>}
+<a class="exhibition-gallery-link" href={`/exhibitions/${ex.slug}/`}>View exhibition photos →</a></div></article>))}
+</div>
+<h2 class="section-title">Featured artists &amp; collaborations</h2>
+<div class="exhibition-index-grid">{featured.map(f=>(
+<article class="product-card"><a class="exhibition-index-image" href={`/exhibitions/${f.slug}/`}><img src={f.image} alt={f.alt} loading="lazy" style={f.contain?'object-fit:contain':undefined}></a><div class="product-info"><h2><a class="product-title-link" href={`/exhibitions/${f.slug}/`}>{f.title}</a></h2><p class="exhibition-meta">{f.note}</p><a class="exhibition-gallery-link" href={`/exhibitions/${f.slug}/`}>View gallery →</a></div></article>))}
+</div>
+<p style="margin-top:40px"><a href="/gallery/">Browse all paintings in the gallery →</a></p>
+</main><SiteFooter /></div>
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'ItemList',name:'Exhibitions by TJ Murphy',itemListElement:exhibitions.map((e,i)=>({'@type':'ListItem',position:i+1,url:`https://tjm.art/exhibitions/${e.slug}/`,name:e.title}))})}></script>
+</body></html>
