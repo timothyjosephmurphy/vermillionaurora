@@ -1,4 +1,4 @@
-// Builds display images for the Strawberry Point Hiking Trip gallery from TJ's photos.
+// Builds display images for the Strawberry Point Backpacking Trip gallery from TJ's photos.
 // Usage: STRAWBERRY_SRC=<folder with IMG_17xx.jpg from R2 images/Strawberry Point Series/> node scripts/prepare-strawberry-point.mjs
 // Each painting is cropped (crop only, no padding) to its painted edge using the boxes in
 // catalog/strawberry-point.json; each group photo is kept whole. Outputs go to static/display/ (R2 / img.tjm.art).

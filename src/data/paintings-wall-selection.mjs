@@ -18,7 +18,8 @@ const coveredSet=p=>p.olderWork?.members?.length>1&&p.olderWork.members.every((_
 // A book scan merged into a catalog painting is that painting; only the catalog page is drawn and linked.
 const merged=p=>!!canonicalArtwork[p.id]&&byId.has(canonicalArtwork[p.id]);
 const tjWork=p=>p.artist==='TJ Murphy'&&(p.type==='painting'||p.bookGallery)&&!coveredSet(p)&&!merged(p)&&!p.strawberryGroup;
-export const wallBasis=p=>sized(p)&&(isPainting(p)||p.bookGallery)?'actual':largestPrint.has(p.id)?'print':null;
+// Strawberry Point stays off the scaled wall and /gallery/room/ until its wall assets are built (sizes recorded Oct 16 2026).
+export const wallBasis=p=>p.series==='strawberry-point'?null:sized(p)&&(isPainting(p)||p.bookGallery)?'actual':largestPrint.has(p.id)?'print':null;
 export const scaledPaintings=artist=>products.filter(p=>artist==='TJ Murphy'?tjWork(p)&&wallBasis(p):isPainting(p)&&p.artist===artist&&sized(p));
 export const unscaledPaintings=()=>products.filter(p=>p.artist==='TJ Murphy'&&(p.type==='commission'||(tjWork(p)&&!wallBasis(p))));
 export const inchesOf=p=>{

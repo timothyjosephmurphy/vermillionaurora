@@ -1,5 +1,7 @@
 ---
 import BookGalleryCarousel from '../components/BookGalleryCarousel.astro';
+import {strawberryPaintings} from '../../catalog/strawberry-point-products.mjs';
+const sp12=strawberryPaintings.find(p=>p.index===12);
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ProductCard from '../components/ProductCard.astro';
@@ -86,7 +88,7 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
             {/* The empty-state text is only in the HTML when it is true; availability.js fills it in if live stock empties the track. */}
             <p class="painting-empty-message" data-available-empty hidden={availablePaintings.length > 0}>{availablePaintings.length === 0 && 'No original paintings are available right now. Browse the collector’s items or ask about a commission.'}</p>
             <div class="ex-carousel painting-carousel available-paintings-carousel" data-painting-group="available" role="region" aria-roledescription="carousel" aria-label="Featured works">
-              <div class="ex-track" data-available-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse featured works">{availablePaintings.map((product,index)=><ProductCard product={product} variant="carousel" priority={index===0} />)}</div>
+              <div class="ex-track" data-available-paintings tabindex="0" aria-label="Swipe or use arrow keys to browse featured works">{availablePaintings.map((product,index)=><ProductCard product={product} variant="carousel" priority={index===0} />)}<article class="product-card card-tile ex-slide gallery-feature-tile" data-gallery-feature="strawberry-point" data-buy="false"><a href="/gallery/strawberry-point/" class="gallery-product-image" aria-label="Explore the Strawberry Point Backpacking Trip gallery"><img src={`${sp12.display.base}-480.webp`} srcset={`${sp12.display.base}-480.webp 480w, ${sp12.display.base}-960.webp 960w`} sizes="(max-width: 980px) 80vw, 340px" width={sp12.display.width} height={sp12.display.height} alt="Strawberry Point Backpacking Trip #12, a painting by TJ Murphy" loading="lazy" decoding="async" style="object-fit:contain"/></a><div class="product-info ex-slide-caption"><h3><a href="/gallery/strawberry-point/" class="product-title-link">Strawberry Point Backpacking Trip</a></h3><p>{strawberryPaintings.length} watercolor pastels · A gallery from the Olympic Peninsula</p><p class="card-buy-row"><span>Originals from $75 · Explore →</span></p></div></article></div>
               <div class="ex-controls" hidden=""><button type="button" class="ex-autoplay" aria-label="Pause automatic available paintings scrolling">Pause</button><button type="button" data-direction="-1" aria-label="Previous available painting">←</button><p class="ex-position" role="status">1 / {availablePaintings.length}</p><button type="button" data-direction="1" aria-label="Next available painting">→</button><a href="/gallery/available/" class="button button-solid carousel-view-all">View available paintings</a></div>
             </div>
             <noscript><p><a href="/gallery/available/">Shop available paintings</a></p></noscript>
