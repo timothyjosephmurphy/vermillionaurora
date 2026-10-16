@@ -15,7 +15,7 @@ function initializeWall(){
   const panel=root.querySelector('[data-wall-panel]'),buy=panel.querySelector('[data-wall-buy]');
   const status=root.querySelector('[data-wall-status]'),zoomLabel=root.querySelector('[data-wall-zoom]');
   const picker=root.querySelector('[data-wall-picker]'),byId=new Map(all.map(art=>[art.id,art]));
-  const imageStates=new Map(all.map(art=>[art.id,{img:root.querySelector(`[data-art-image="${art.id}"]`),width:art.sources[0].width,loading:false,failed:new Set()}]));
+  const imageStates=new Map(all.map(art=>[art.id,{img:root.querySelector(`[data-art-image="${art.id}"]`),width:art.sources[0].width,loading:false,failed:new Map()}]));
   let view={width:viewport.clientWidth,height:viewport.clientHeight},fit=fitOf(view),transform={...fit};
   let focused=null,dismissed=null,frame=0,imageTimer=0,activeLoads=0,busy=false,capabilities=null;
   let focusPoint={x:view.width/2,y:view.height/2};
@@ -144,27 +144,36 @@ function initializeWall(){
   // CSS transforms do not update srcset's layout width. Explicitly select the
   // rendition needed for the on-screen image, and keep the full master as the last level.
   function loadVisibleDetail(){
-    const candidates=[];
+    const candidates=[],cx=view.width/2,cy=view.height/2;
+    const atLimit=transform.scale>=limitAt({x:cx,y:cy}).scale*.95;
     for(const art of artworks){
       const state=imageStates.get(art.id),rect=screenRect(art,transform);
       if(!intersects(rect,view,70)){
-        if(state.width>960&&!state.loading){state.img.src=art.sources[0].src;state.width=art.sources[0].width;}
+        // well off screen: step a large image back to the 960 level (never down to the tiny tile) to save memory
+        if(!intersects(rect,view,Math.max(view.width,view.height))&&state.width>960&&!state.loading){const keep=imageSource(art.sources,960);state.img.src=keep.src;state.width=keep.width;state.img.dataset.loadedWidth=String(keep.width);}
         continue;
       }
-      const nearMaximum=focused?.id===art.id&&transform.scale>=paintingView(art,view).scale*.95;
-      const source=nearMaximum?art.sources.at(-1):imageSource(art.sources,art.imageWidth*transform.scale*Math.max(1,devicePixelRatio));
-      if(source.width>state.width&&!state.loading&&!state.failed.has(source.src))candidates.push({art,state,source});
+      // pick the rendition that matches the painting's on-screen device pixels; at full zoom (or when focused) the sharpest one
+      const nearMaximum=atLimit||(focused?.id===art.id&&transform.scale>=paintingView(art,view).scale*.95);
+      const source=nearMaximum?art.sources.at(-1):imageSource(art.sources,(art.imageWidth||art.width)*transform.scale*Math.max(1,devicePixelRatio));
+      if(source.width>state.width&&!state.loading&&(state.failed.get(source.src)||0)<2)
+        candidates.push({art,state,source,priority:(focused?.id===art.id?-1e9:0)+Math.hypot(rect.x+rect.width/2-cx,rect.y+rect.height/2-cy)});
     }
-    candidates.sort((a,b)=>(b.art.id===focused?.id?1:0)-(a.art.id===focused?.id?1:0));
+    candidates.sort((a,b)=>a.priority-b.priority);
     for(const {art,state,source} of candidates){
-      if(activeLoads>=2)break;
+      if(activeLoads>=4)break;
       activeLoads++;state.loading=true;
-      const image=new Image();image.decoding='async';image.src=source.src;
-      image.decode().then(()=>{
-        if(intersects(screenRect(art,transform),view,70)&&source.width>state.width){
-          state.img.src=source.src;state.width=source.width;state.img.dataset.loadedWidth=String(source.width);
-        }
-      }).catch(()=>{state.failed.add(source.src);}).finally(()=>{activeLoads--;state.loading=false;setTimeout(loadVisibleDetail,0);});
+      // the low-res tile stays in place until the sharper file has fully loaded, so nothing ever blanks
+      const image=new Image();image.decoding='async';
+      const done=ok=>{
+        activeLoads--;state.loading=false;
+        if(ok&&source.width>state.width){state.img.src=source.src;state.width=source.width;state.img.dataset.loadedWidth=String(source.width);}
+        else if(!ok)state.failed.set(source.src,(state.failed.get(source.src)||0)+1);
+        setTimeout(loadVisibleDetail,0);
+      };
+      image.onload=()=>{(image.decode?image.decode():Promise.resolve()).catch(()=>{}).then(()=>done(true));};
+      image.onerror=()=>done(false);
+      image.src=source.src;
     }
   }
   const point=event=>{const rect=viewport.getBoundingClientRect();return {x:event.clientX-rect.left,y:event.clientY-rect.top};};
