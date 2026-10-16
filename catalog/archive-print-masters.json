@@ -349,6 +349,10 @@
     "url": "https://vermillionaurora.com/print-masters/0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5.jpg",
     "sha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "widthPx": 5620,
+    "derivedFrom": {
+      "sha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+      "edit": "crop 59px dark edge from bottom; no other change"
+    },
     "heightPx": 5978
   },
   {
