@@ -317,7 +317,8 @@ test('commissions contact form shows the email with a decorative envelope icon a
 test('the homepage ends Exhibitions with the gallery room and framed print wall',()=>{
  const $=load(fs.readFileSync('dist/index.html','utf8'));
  assert.deepEqual($('#exhibitions .ex-track').children().slice(-2).map((i,n)=>$(n).attr('data-gallery-feature')).get(),['gallery-room','print-wall']);
- assert.equal($('.painting-carousel [data-gallery-feature]').length,0);
+ // The one gallery tile in Featured works is Strawberry Point (TJ, Oct 16 2026).
+ assert.deepEqual($('.painting-carousel [data-gallery-feature]').map((i,n)=>$(n).attr('data-gallery-feature')).get(),['strawberry-point']);
  assert.equal($('#exhibitions [data-gallery-feature="gallery-room"] .product-title-link').attr('href'),'/gallery/room/');
  const tile=$('#exhibitions [data-gallery-feature="print-wall"]');
  assert.equal(tile.length,1);assert.equal(tile.find('.product-title-link').attr('href'),'/gallery/wall/all/');
