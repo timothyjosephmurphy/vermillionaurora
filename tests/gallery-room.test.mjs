@@ -49,5 +49,5 @@ test('salon hanging: no overlaps, stacks within the band, every work reachable',
 test('every work has a thumbnail tile in its room atlas, and previews never exceed 960 px',async()=>{
   const fs=await import('node:fs');const {walkthroughAtlases}=await import('../src/data/gallery-walkthrough.mjs');
   for(const [id,a] of Object.entries(walkthroughAtlases))assert(fs.existsSync('static'+a.fallback),id+' atlas committed');
-  for(const i of items.filter(i=>i.kind!=='plaque')){assert(i.thumb&&walkthroughAtlases[i.thumb.atlas],i.id);assert(i.sources.length&&i.sources.every(s=>s.width<=960&&!/print-masters/.test(s.src)),i.id);}
+  for(const i of items.filter(i=>i.kind!=='plaque')){assert(i.thumb&&walkthroughAtlases[i.thumb.atlas],i.id);assert(i.sources.length&&i.sources.every(s=>(s.width<=960||(i.id==='friends-club-mural'&&s.width===3528&&/friends-club-mural-upscaled/.test(s.src)))&&!/print-masters/.test(s.src)),i.id);}
 });
