@@ -20,10 +20,14 @@ test('a symmetric loop of rooms around a courtyard (no dead ends, no pinwheel); 
   assert.deepEqual(layout.loop,['central',R.W.id,R.N.id,R.E.id,'central']);
   for(const h of layout.hallways)assert(Math.abs(layout.hallways.find(k=>Math.abs(k.minX+h.maxX)<1e-9&&k.minZ===h.minZ).minZ-h.minZ)<1e-9,'doorways mirror');
   assert.equal(layout.signs.length,2*layout.hallways.length);
-  for(const ex of assets.exhibitions){const inRoom=items.filter(i=>i.href===ex.href&&i.kind!=='painting');assert(inRoom.some(i=>i.kind==='plaque'),ex.id);assert.equal(inRoom.filter(i=>i.kind==='photo').length,ex.photos.length);}
+  for(const ex of assets.exhibitions){const inRoom=items.filter(i=>i.href===ex.href&&i.kind!=='painting');assert(inRoom.some(i=>i.kind==='plaque'),ex.id);assert.equal(inRoom.filter(i=>i.kind==='photo').length,0);}
   const lillooet=items.find(i=>i.id==='friends-club-mural');assert(Math.abs(lillooet.width-480*.0254)<1e-9&&Math.abs(lillooet.height-108*.0254)<1e-9);
   const focal=items.find(i=>i.focal);assert.equal(focal.x,start.x);assert(focal.z>start.z+8,'the entry mural is straight ahead across the hall');
   assert(!items.some(i=>i!==focal&&Math.abs(i.x-start.x)<focal.width/2+.5&&i.z>start.z&&i.wall==='N'&&i.room===focal.room),'nothing else hangs in the entry sightline');
+});
+test('only paintings with a product page, the two murals, and plaques',()=>{
+  for(const i of items)assert(i.kind==='mural'||i.kind==='plaque'||(i.kind==='painting'&&/^\/products\/[^/]+\/$/.test(i.href)),i.id);
+  assert.equal(items.filter(i=>i.kind==='mural').length,2);
 });
 test('only related works share a column',()=>{
   const cols=new Map();for(const i of items){const k=i.room+i.x.toFixed(3)+i.z.toFixed(3);(cols.get(k)||cols.set(k,[]).get(k)).push(i);}
