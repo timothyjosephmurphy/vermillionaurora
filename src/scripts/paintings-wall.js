@@ -104,10 +104,10 @@ function initializeWall(){
     schedule();return offset;
   }
   function clearInspection(){inspecting=null;inspectionReady=false;delete root.dataset.inspecting;delete root.dataset.inspectionSide;}
-  function zoom(factor,point){
+  function zoom(factor,point,inPlace=false){
     if(navigating)return;cancelAnimation();clearInspection();
     point||={x:view.width/2,y:view.height/2};
-    if(factor>1){const offset=setImmersive(true);point={x:point.x+offset.x,y:point.y+offset.y};}
+    if(factor>1&&!inPlace){const offset=setImmersive(true);point={x:point.x+offset.x,y:point.y+offset.y};}
     focusPoint=point;
     const limit=limitAt(point),scale=clamp(transform.scale*factor,fit.scale,Math.max(transform.scale,limit.scale));
     if(factor<1&&scale<=fit.scale*1.001){reset();return;}
@@ -218,10 +218,21 @@ function initializeWall(){
   viewport.addEventListener('dragstart',event=>event.preventDefault());
   // a plain wheel or two-finger trackpad scroll moves the page; only a pinch (ctrl+wheel, or Safari gesture events) zooms
   viewport.addEventListener('wheel',event=>{
-    if(event.target.closest('.wall-tools')||!event.ctrlKey)return;
+    if(event.target.closest('.wall-tools'))return;
+    const unit=event.deltaMode===1?16:event.deltaMode===2?view.height:1;
+    if(!event.ctrlKey){
+      // zoomed in: scroll pans the wall (shift+wheel pans sideways); at fit zoom or at the pan edge the page scrolls
+      if(transform.scale<=fit.scale*1.001)return;
+      let dx=event.deltaX*unit,dy=event.deltaY*unit;
+      if(event.shiftKey&&!dx){dx=dy;dy=0;}
+      const next=constrainView({...transform,x:transform.x-dx,y:transform.y-dy},view,world);
+      if(Math.abs(next.x-transform.x)<.5&&Math.abs(next.y-transform.y)<.5)return;
+      event.preventDefault();cancelAnimation();clearInspection();transform=next;schedule();return;
+    }
     event.preventDefault();
     const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?view.height:1);
-    zoom(Math.exp(-clamp(delta,-100,100)*(event.ctrlKey ? .008 : .0025)),point(event));
+    // trackpad pinch zooms inside the page (no full-screen takeover) so scrolling past the pan edge still reaches the page
+    zoom(Math.exp(-clamp(delta,-100,100)*.008),point(event),true);
   },{passive:false});
   let gestureScale=1;
   viewport.addEventListener('gesturestart',event=>{event.preventDefault();gestureScale=1;});
