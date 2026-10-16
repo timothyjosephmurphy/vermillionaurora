@@ -1,5 +1,10 @@
 // Reuses the commission form's authenticated Gmail identity. No customer email is sent.
-const seller = 'tj@vermillionaurora.com';
+// Site mail goes out as tj@tjm.art, an alias of the same Google Workspace mailbox configured as a Gmail "Send mail as"
+// address (SPF include:_spf.google.com, DKIM google._domainkey.tjm.art, DMARC p=quarantine), like the testimonial notes.
+// SITE_EMAIL_FROM="tj@vermillionaurora.com" switches back to the mailbox's primary address without a code deploy.
+export const SITE_SENDERS = ['tj@tjm.art', 'tj@vermillionaurora.com'];
+export const siteSender = env => SITE_SENDERS.includes(env?.SITE_EMAIL_FROM) ? env.SITE_EMAIL_FROM : SITE_SENDERS[0];
+export const senderDomain = env => siteSender(env).split('@')[1];
 const request = (url, options = {}) => fetch(url, {...options, signal:AbortSignal.timeout(20_000)});
 const encode = bytes => {
   let text = '';
@@ -65,7 +70,8 @@ async function labelAttachment(url) {
   return encode(bytes).match(/.{1,76}/g).join('\r\n');
 }
 
-export async function sendShippingEmail(token, sale, job) {
+export async function sendShippingEmail(token, sale, job, env = {}) {
+  const seller = siteSender(env);
   const ready = job.status === 'ready';
   const integrationTest = job.mode === 'sandbox' && sale.integrationTest === true;
   const quote = job.quote, address = quote.address, parcel = quote.parcel;
@@ -112,7 +118,7 @@ export async function sendShippingEmail(token, sale, job) {
   const parts = [
     `From: Vermilion Aurora Shipping <${seller}>`, `To: ${seller}`,
     `Subject: =?UTF-8?B?${utf8(subject)}?=`,
-    `Message-ID: <shippo-${sale.capture_id.replace(/[^a-zA-Z0-9]/g,'')}-${sale.slug}-${job.status}@vermillionaurora.com>`,
+    `Message-ID: <shippo-${sale.capture_id.replace(/[^a-zA-Z0-9]/g,'')}-${sale.slug}-${job.status}@${senderDomain(env)}>`,
     'MIME-Version: 1.0', `Content-Type: multipart/mixed; boundary="${boundary}"`, '',
     `--${boundary}`, 'Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: base64', '',
     utf8(lines.join('\r\n')).match(/.{1,76}/g).join('\r\n')
