@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="26d313696a3caf379ace";
+export const printVersion="71b66c4ea1eabb5be301";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -124818,6 +124818,237 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-strawberry-point-4-full-frame-black": {
+    "id": "print-strawberry-point-4-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-4",
+    "title": "Strawberry Point Backpacking Trip #4 — Large print — Black frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #4",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD53X4DD78F1S8DD01X8DD26J1S4DD53X4DD78G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2733,
+      "height": 4.5267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.53,
+      "height": 4.78,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/0cfd04c0b0a500adc9deaf29dcbd2cf9eebbca791388d303bb0d5cd6d6e9dc79.jpg",
+    "assetSha256": "0cfd04c0b0a500adc9deaf29dcbd2cf9eebbca791388d303bb0d5cd6d6e9dc79",
+    "sourceSha256": "d286bc703e88313b8fa43f0eaefc505ed86b515e5f4a5b43e2ea68e9c98521f6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-4-897857fb-1600.webp",
+      "fullSrc": "/display/strawberry-point-4-897857fb-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #4, a painting by TJ Murphy",
+      "width": 1284,
+      "height": 1360,
+      "caption": "Strawberry Point Backpacking Trip #4"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.01,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.53,
+        "height": 4.78,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.53X4.78",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.01,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-strawberry-point-4-full-frame-white": {
+    "id": "print-strawberry-point-4-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-4",
+    "title": "Strawberry Point Backpacking Trip #4 — Large print — White frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #4",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD53X4DD78F2S8DD01X8DD26J1S4DD53X4DD78G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2733,
+      "height": 4.5267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.53,
+      "height": 4.78,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/0cfd04c0b0a500adc9deaf29dcbd2cf9eebbca791388d303bb0d5cd6d6e9dc79.jpg",
+    "assetSha256": "0cfd04c0b0a500adc9deaf29dcbd2cf9eebbca791388d303bb0d5cd6d6e9dc79",
+    "sourceSha256": "d286bc703e88313b8fa43f0eaefc505ed86b515e5f4a5b43e2ea68e9c98521f6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-4-897857fb-1600.webp",
+      "fullSrc": "/display/strawberry-point-4-897857fb-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #4, a painting by TJ Murphy",
+      "width": 1284,
+      "height": 1360,
+      "caption": "Strawberry Point Backpacking Trip #4"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.01,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.53,
+        "height": 4.78,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.53X4.78",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.01,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-strawberry-point-4-full-frame-natural": {
+    "id": "print-strawberry-point-4-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-4",
+    "title": "Strawberry Point Backpacking Trip #4 — Large print — Natural wood frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #4",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD53X4DD78F7S8DD01X8DD26J1S4DD53X4DD78G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2733,
+      "height": 4.5267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.53,
+      "height": 4.78,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/0cfd04c0b0a500adc9deaf29dcbd2cf9eebbca791388d303bb0d5cd6d6e9dc79.jpg",
+    "assetSha256": "0cfd04c0b0a500adc9deaf29dcbd2cf9eebbca791388d303bb0d5cd6d6e9dc79",
+    "sourceSha256": "d286bc703e88313b8fa43f0eaefc505ed86b515e5f4a5b43e2ea68e9c98521f6",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-4-897857fb-1600.webp",
+      "fullSrc": "/display/strawberry-point-4-897857fb-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #4, a painting by TJ Murphy",
+      "width": 1284,
+      "height": 1360,
+      "caption": "Strawberry Point Backpacking Trip #4"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.01,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.53,
+        "height": 4.78,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.53X4.78",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.01,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-strawberry-point-5-full": {
     "id": "print-strawberry-point-5-full",
     "type": "print",
@@ -125402,6 +125633,237 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-strawberry-point-7-full-frame-black": {
+    "id": "print-strawberry-point-7-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-7",
+    "title": "Strawberry Point Backpacking Trip #7 — Large print — Black frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #7",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD52X4DD76F1S8DD02X8DD26J1S4DD52X4DD76G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2667,
+      "height": 4.5033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.52,
+      "height": 4.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/40661400ad6a431ab6b586e8b1b3bd274ec716d6fd98d3044a30115cbce67ae4.jpg",
+    "assetSha256": "40661400ad6a431ab6b586e8b1b3bd274ec716d6fd98d3044a30115cbce67ae4",
+    "sourceSha256": "785b736bb2c560d347c9f2257d5609eef029ccc8f38fa09c7cd3ed8f1cfbbba2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-7-2dff5146-1600.webp",
+      "fullSrc": "/display/strawberry-point-7-2dff5146-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #7, a painting by TJ Murphy",
+      "width": 1282,
+      "height": 1353,
+      "caption": "Strawberry Point Backpacking Trip #7"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.02,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.52,
+        "height": 4.76,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.52X4.76",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.02,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-strawberry-point-7-full-frame-white": {
+    "id": "print-strawberry-point-7-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-7",
+    "title": "Strawberry Point Backpacking Trip #7 — Large print — White frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #7",
+    "amount": "59.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD52X4DD76F2S8DD02X8DD26J1S4DD52X4DD76G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2667,
+      "height": 4.5033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.52,
+      "height": 4.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/40661400ad6a431ab6b586e8b1b3bd274ec716d6fd98d3044a30115cbce67ae4.jpg",
+    "assetSha256": "40661400ad6a431ab6b586e8b1b3bd274ec716d6fd98d3044a30115cbce67ae4",
+    "sourceSha256": "785b736bb2c560d347c9f2257d5609eef029ccc8f38fa09c7cd3ed8f1cfbbba2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-7-2dff5146-1600.webp",
+      "fullSrc": "/display/strawberry-point-7-2dff5146-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #7, a painting by TJ Murphy",
+      "width": 1282,
+      "height": 1353,
+      "caption": "Strawberry Point Backpacking Trip #7"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.02,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.52,
+        "height": 4.76,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.52X4.76",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.02,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-strawberry-point-7-full-frame-natural": {
+    "id": "print-strawberry-point-7-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-7",
+    "title": "Strawberry Point Backpacking Trip #7 — Large print — Natural wood frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #7",
+    "amount": "67.63",
+    "currency": "USD",
+    "sku": "5M144M8S4DD52X4DD76F7S8DD02X8DD26J1S4DD52X4DD76G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 4.2667,
+      "height": 4.5033,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 4.52,
+      "height": 4.76,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/40661400ad6a431ab6b586e8b1b3bd274ec716d6fd98d3044a30115cbce67ae4.jpg",
+    "assetSha256": "40661400ad6a431ab6b586e8b1b3bd274ec716d6fd98d3044a30115cbce67ae4",
+    "sourceSha256": "785b736bb2c560d347c9f2257d5609eef029ccc8f38fa09c7cd3ed8f1cfbbba2",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-7-2dff5146-1600.webp",
+      "fullSrc": "/display/strawberry-point-7-2dff5146-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #7, a painting by TJ Murphy",
+      "width": 1282,
+      "height": 1353,
+      "caption": "Strawberry Point Backpacking Trip #7"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.02,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "window": {
+        "width": 4.52,
+        "height": 4.76,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S4.52X4.76",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.02,
+        "height": 8.26,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-strawberry-point-8-full": {
     "id": "print-strawberry-point-8-full",
@@ -125988,6 +126450,237 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-strawberry-point-10-full-frame-black": {
+    "id": "print-strawberry-point-10-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-10",
+    "title": "Strawberry Point Backpacking Trip #10 — Large print — Black frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #10",
+    "amount": "63.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD89X7DD17F1S9DD89X10DD17J1S6DD89X7DD17G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.6333,
+      "height": 6.9167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.89,
+      "height": 7.17,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/5c34cd9c2e468198f38470bac59de751685ab1f9c775a13cbc909a1ba4f8848f.jpg",
+    "assetSha256": "5c34cd9c2e468198f38470bac59de751685ab1f9c775a13cbc909a1ba4f8848f",
+    "sourceSha256": "6fbaf07d5e47ebd789370e0bb4773c21445cfa551e66d39c14be1215ca9d83f1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-10-4c8f16e5-1600.webp",
+      "fullSrc": "/display/strawberry-point-10-4c8f16e5-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #10, a painting by TJ Murphy",
+      "width": 1993,
+      "height": 2078,
+      "caption": "Strawberry Point Backpacking Trip #10"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.89,
+        "height": 10.17,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.89,
+        "height": 7.17,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.89X7.17",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.89,
+        "height": 10.17,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-strawberry-point-10-full-frame-white": {
+    "id": "print-strawberry-point-10-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-10",
+    "title": "Strawberry Point Backpacking Trip #10 — Large print — White frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #10",
+    "amount": "63.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD89X7DD17F2S9DD89X10DD17J1S6DD89X7DD17G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.6333,
+      "height": 6.9167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.89,
+      "height": 7.17,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/5c34cd9c2e468198f38470bac59de751685ab1f9c775a13cbc909a1ba4f8848f.jpg",
+    "assetSha256": "5c34cd9c2e468198f38470bac59de751685ab1f9c775a13cbc909a1ba4f8848f",
+    "sourceSha256": "6fbaf07d5e47ebd789370e0bb4773c21445cfa551e66d39c14be1215ca9d83f1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-10-4c8f16e5-1600.webp",
+      "fullSrc": "/display/strawberry-point-10-4c8f16e5-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #10, a painting by TJ Murphy",
+      "width": 1993,
+      "height": 2078,
+      "caption": "Strawberry Point Backpacking Trip #10"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.89,
+        "height": 10.17,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.89,
+        "height": 7.17,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.89X7.17",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.89,
+        "height": 10.17,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-strawberry-point-10-full-frame-natural": {
+    "id": "print-strawberry-point-10-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-10",
+    "title": "Strawberry Point Backpacking Trip #10 — Large print — Natural wood frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #10",
+    "amount": "73.63",
+    "currency": "USD",
+    "sku": "5M144M8S6DD89X7DD17F7S9DD89X10DD17J1S6DD89X7DD17G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.6333,
+      "height": 6.9167,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.89,
+      "height": 7.17,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/5c34cd9c2e468198f38470bac59de751685ab1f9c775a13cbc909a1ba4f8848f.jpg",
+    "assetSha256": "5c34cd9c2e468198f38470bac59de751685ab1f9c775a13cbc909a1ba4f8848f",
+    "sourceSha256": "6fbaf07d5e47ebd789370e0bb4773c21445cfa551e66d39c14be1215ca9d83f1",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-10-4c8f16e5-1600.webp",
+      "fullSrc": "/display/strawberry-point-10-4c8f16e5-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #10, a painting by TJ Murphy",
+      "width": 1993,
+      "height": 2078,
+      "caption": "Strawberry Point Backpacking Trip #10"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.89,
+        "height": 10.17,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.89,
+        "height": 7.17,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.89X7.17",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.89,
+        "height": 10.17,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
   "print-strawberry-point-11-full": {
     "id": "print-strawberry-point-11-full",
     "type": "print",
@@ -126028,6 +126721,237 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-strawberry-point-11-full-frame-black": {
+    "id": "print-strawberry-point-11-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-11",
+    "title": "Strawberry Point Backpacking Trip #11 — Large print — Black frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #11",
+    "amount": "66.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD1X8DD05F1S11DD1X11DD05J1S8DD1X8DD05G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.8467,
+      "height": 7.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.1,
+      "height": 8.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/108720f56fb8c66d6d1220c35524944cfa38749d3e4e28e4898e870d492437e5.jpg",
+    "assetSha256": "108720f56fb8c66d6d1220c35524944cfa38749d3e4e28e4898e870d492437e5",
+    "sourceSha256": "0a7960cb5d67ef2aa232a11693a5adbc0c3a06ff186906e219d9c6ac976bfe6d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-11-59634d47-1600.webp",
+      "fullSrc": "/display/strawberry-point-11-59634d47-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #11, a painting by TJ Murphy",
+      "width": 2357,
+      "height": 2342,
+      "caption": "Strawberry Point Backpacking Trip #11"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.1,
+        "height": 11.05,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.1,
+        "height": 8.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.1X8.05",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.1,
+        "height": 11.05,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-strawberry-point-11-full-frame-white": {
+    "id": "print-strawberry-point-11-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-11",
+    "title": "Strawberry Point Backpacking Trip #11 — Large print — White frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #11",
+    "amount": "66.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD1X8DD05F2S11DD1X11DD05J1S8DD1X8DD05G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.8467,
+      "height": 7.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.1,
+      "height": 8.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/108720f56fb8c66d6d1220c35524944cfa38749d3e4e28e4898e870d492437e5.jpg",
+    "assetSha256": "108720f56fb8c66d6d1220c35524944cfa38749d3e4e28e4898e870d492437e5",
+    "sourceSha256": "0a7960cb5d67ef2aa232a11693a5adbc0c3a06ff186906e219d9c6ac976bfe6d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-11-59634d47-1600.webp",
+      "fullSrc": "/display/strawberry-point-11-59634d47-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #11, a painting by TJ Murphy",
+      "width": 2357,
+      "height": 2342,
+      "caption": "Strawberry Point Backpacking Trip #11"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.1,
+        "height": 11.05,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.1,
+        "height": 8.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.1X8.05",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.1,
+        "height": 11.05,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
+  },
+  "print-strawberry-point-11-full-frame-natural": {
+    "id": "print-strawberry-point-11-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "strawberry-point-11",
+    "title": "Strawberry Point Backpacking Trip #11 — Large print — Natural wood frame",
+    "artworkTitle": "Strawberry Point Backpacking Trip #11",
+    "amount": "77.00",
+    "currency": "USD",
+    "sku": "5M144M8S8DD1X8DD05F7S11DD1X11DD05J1S8DD1X8DD05G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 7.8467,
+      "height": 7.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 8.1,
+      "height": 8.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/108720f56fb8c66d6d1220c35524944cfa38749d3e4e28e4898e870d492437e5.jpg",
+    "assetSha256": "108720f56fb8c66d6d1220c35524944cfa38749d3e4e28e4898e870d492437e5",
+    "sourceSha256": "0a7960cb5d67ef2aa232a11693a5adbc0c3a06ff186906e219d9c6ac976bfe6d",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/strawberry-point-11-59634d47-1600.webp",
+      "fullSrc": "/display/strawberry-point-11-59634d47-1600.webp",
+      "alt": "Strawberry Point Backpacking Trip #11, a painting by TJ Murphy",
+      "width": 2357,
+      "height": 2342,
+      "caption": "Strawberry Point Backpacking Trip #11"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 11.1,
+        "height": 11.05,
+        "unit": "in"
+      },
+      "window": {
+        "width": 8.1,
+        "height": 8.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S8.1X8.05",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 11.1,
+        "height": 11.05,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "25.00"
   },
   "print-strawberry-point-12-full": {
     "id": "print-strawberry-point-12-full",
