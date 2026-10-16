@@ -1,0 +1,135 @@
+{
+ "date": "2026-10-15",
+ "note": "Moved, not deleted (TJ approved). Only files with no reference by name/stem in repo, built site, or D1. print-editions/thumbs untouched. Restore: copy back to the from path.",
+ "r2Bucket": "tjm-images",
+ "r2": [
+  {
+   "from": "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-1219.webp",
+   "to": "archive/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-1219.webp",
+   "bytes": 245196,
+   "sha256": "aa85373bff73289067a1fa4faa2f99854c85f7b30dd9e6e96c56b86429872034"
+  },
+  {
+   "from": "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-160.webp",
+   "to": "archive/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-160.webp",
+   "bytes": 5338,
+   "sha256": "f4c70ff71f955654ab7a3a6ce6d96dcc08dd8c1672cbfd3a6195d63e3acf7d6b"
+  },
+  {
+   "from": "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-480.webp",
+   "to": "archive/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-480.webp",
+   "bytes": 44720,
+   "sha256": "cb4224a754f5882f843b100fab35fa41c923f9568a5e679c979ea0d7c50c40da"
+  },
+  {
+   "from": "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-960.webp",
+   "to": "archive/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-960.webp",
+   "bytes": 164414,
+   "sha256": "fe69d47c34295a36cf30de572a80f85a558afc7dce26446078440f95619f4a65"
+  },
+  {
+   "from": "wall-paintings/older-work-pitchers-original-1-db79a95d6d-320.webp",
+   "to": "archive/wall-paintings/older-work-pitchers-original-1-db79a95d6d-320.webp",
+   "bytes": 5650,
+   "sha256": "d2f62051bb91cf70beaae8f5c684989c6cf1d5910f3e43ca96758becb181ffd3"
+  },
+  {
+   "from": "wall-paintings/older-work-pitchers-original-1-db79a95d6d-960.webp",
+   "to": "archive/wall-paintings/older-work-pitchers-original-1-db79a95d6d-960.webp",
+   "bytes": 32016,
+   "sha256": "e7116606896622483aaa8ceaae6d60385fa33f7e7855ac26de121376bd181d8c"
+  },
+  {
+   "from": "wall-paintings/older-work-pitchers-original-2-66254280ec-320.webp",
+   "to": "archive/wall-paintings/older-work-pitchers-original-2-66254280ec-320.webp",
+   "bytes": 11950,
+   "sha256": "cda29aa1817ce0e7051c2a95d0e6a48983977b833014c856552bc2d47cbb2372"
+  },
+  {
+   "from": "wall-paintings/older-work-pitchers-original-2-66254280ec-960.webp",
+   "to": "archive/wall-paintings/older-work-pitchers-original-2-66254280ec-960.webp",
+   "bytes": 70880,
+   "sha256": "3c8690850b8ba08f0379f22f2470e1fb9be8730915f4d0c6a3f3dd38119eca9d"
+  },
+  {
+   "from": "wall-paintings/older-work-shore-figures-original-3-83bc8a2021-320.webp",
+   "to": "archive/wall-paintings/older-work-shore-figures-original-3-83bc8a2021-320.webp",
+   "bytes": 10198,
+   "sha256": "481252520f9d329248c1fcf3167eebea491c97f1db10b89080022243e08e7332"
+  },
+  {
+   "from": "wall-paintings/older-work-shore-figures-original-3-83bc8a2021-960.webp",
+   "to": "archive/wall-paintings/older-work-shore-figures-original-3-83bc8a2021-960.webp",
+   "bytes": 58074,
+   "sha256": "bf5436d78364d613bbc2a5a5f7de815a5c373eeb00fe1f95c1b529a7a8384b21"
+  },
+  {
+   "from": "gallery-wall/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299-1920.webp",
+   "to": "archive/gallery-wall/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299-1920.webp",
+   "bytes": 200120,
+   "sha256": "089dd11422befb5ba4a54082df06dc14be174e2bb51941130582b0019e7f2d07"
+  },
+  {
+   "from": "gallery-wall/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299-320.webp",
+   "to": "archive/gallery-wall/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299-320.webp",
+   "bytes": 5738,
+   "sha256": "3abdc927b79393ac4f62081a809341470669cfbc72ed08b13e7cbc900bfe5c1e"
+  },
+  {
+   "from": "gallery-wall/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299-960.webp",
+   "to": "archive/gallery-wall/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299-960.webp",
+   "bytes": 62978,
+   "sha256": "f4d90ee47b50a5c2dd3f276de87d72d911cdc085d5212a0b9e40ada2a46d3bbc"
+  }
+ ],
+ "repo": [
+  {
+   "from": "static/print-masters/048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8.jpg",
+   "to": "archive/print-masters/048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8.jpg",
+   "bytes": 652515,
+   "sha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8"
+  },
+  {
+   "from": "static/print-masters/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299.jpg",
+   "to": "archive/print-masters/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299.jpg",
+   "bytes": 2954872,
+   "sha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299"
+  },
+  {
+   "from": "static/print-masters/622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd.jpg",
+   "to": "archive/print-masters/622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd.jpg",
+   "bytes": 3290606,
+   "sha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd"
+  },
+  {
+   "from": "static/print-masters/b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682.jpg",
+   "to": "archive/print-masters/b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682.jpg",
+   "bytes": 2694267,
+   "sha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682"
+  },
+  {
+   "from": "static/print-masters/c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf.jpg",
+   "to": "archive/print-masters/c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf.jpg",
+   "bytes": 706596,
+   "sha256": "c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf"
+  },
+  {
+   "from": "static/print-masters/d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1.jpg",
+   "to": "archive/print-masters/d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1.jpg",
+   "bytes": 7159105,
+   "sha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1"
+  },
+  {
+   "from": "static/print-masters/d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d.jpg",
+   "to": "archive/print-masters/d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d.jpg",
+   "bytes": 5333719,
+   "sha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d"
+  },
+  {
+   "from": "static/print-masters/f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371.jpg",
+   "to": "archive/print-masters/f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371.jpg",
+   "bytes": 6580130,
+   "sha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371"
+  }
+ ]
+}
