@@ -129,7 +129,7 @@ async function submit(request, env, ctx, now) {
   if (posterFile instanceof File && posterFile.size > 0 && posterFile.size <= MAX_POSTER_BYTES) {
     try { const p = cleanImage(new Uint8Array(await posterFile.arrayBuffer())); if (['image/jpeg', 'image/png', 'image/webp'].includes(p.type)) poster = p; } catch {}
   }
-  if (await rateLimited(env, request, now)) return fail('Thank you! I’ve received several testimonials from you today. Please try again tomorrow or email tj@vermillionaurora.com.', 429);
+  if (await rateLimited(env, request, now)) return fail('Thank you! I’ve received several testimonials from you today. Please try again tomorrow or email tj@tjm.art.', 429);
 
   const id = video ? video.id : `t-${day(now).replace(/-/g, '')}-${crypto.randomUUID().replace(/-/g, '').slice(0, 12)}`;
   const bucket = env.COMMISSION_UPLOADS;
