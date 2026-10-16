@@ -14,9 +14,11 @@ test('all 54 archive masters retain exact bytes and offer native-resolution edit
   assert.equal(recipes.length,54);
   for(const recipe of recipes){
     const p=manifest.paintings.find(p=>p.id===recipe.id),art=config.artworks[recipe.id];
-    assert.equal(art.source.sha256,p.front.sha256);
+    // A master is the exact photo, or a recorded crop of it (derivedFrom names the photo it was cut from).
+    assert.equal(recipe.derivedFrom?.sha256??recipe.sha256,p.front.sha256,recipe.id);
+    assert.equal(art.source.sha256,recipe.sha256);
     const bytes=await readFile(new URL('../static'+new URL(art.source.url).pathname,import.meta.url));
-    assert.equal(createHash('sha256').update(bytes).digest('hex'),p.front.sha256);
+    assert.equal(createHash('sha256').update(bytes).digest('hex'),recipe.sha256);
     assert(art.enabled&&!art.testOnly&&!art.sampleOnly);
     const base=Object.values(readyPrints).filter(v=>v.productId===recipe.id&&!v.mat&&!v.frame);
     assert(base.length>0,recipe.id);
