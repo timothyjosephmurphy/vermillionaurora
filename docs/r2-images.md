@@ -38,3 +38,6 @@ a year at the edge (purged on swap), one day in browsers. Not `immutable`, becau
   `--master` also writes a new print master and updates `catalog/prints.json` (dropping sizes the
   master cannot fill at 300 dpi). That part is still a repo commit until Phase 3.
 - R2 credentials: `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` (never print them).
+
+## CORS
+A zone Response Header Transform Rule (`img-cors`, id 2ca5aa7cf6364f99afa3d097f770bd15) sets `Access-Control-Allow-Origin: *` on every img.tjm.art response, so WebGL/canvas loads never fail on an edge-cached copy that lacked the per-origin header.

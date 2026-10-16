@@ -42,6 +42,7 @@
     image.className = 'featured-painting';
     image.alt = '';
     image.sizes = SLIDE_SIZES;
+    image.hidden = true; // no empty <img> until a painting is assigned
     media.append(image);
     const meta = document.createElement('div');
     meta.className = 'featured-caption';
@@ -75,6 +76,7 @@
     slot.image.alt = item.title;
     if (item.srcset) slot.image.srcset = item.srcset; else slot.image.removeAttribute('srcset');
     slot.image.src = item.source;
+    slot.image.hidden = false;
     // Always the same three blocks (title / price / last row) so caption height never changes between slides.
     slot.detail.textContent = item.detail;
     slot.detail.hidden = false;
