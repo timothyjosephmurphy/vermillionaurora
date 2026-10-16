@@ -1,7 +1,7 @@
 ---
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
-import {olderWorkGroups,olderWorkTitle,olderWorkPreview,olderWorkAlt,originalPrice,originalId} from '../../../catalog/older-work-products.mjs';
+import {olderWorkGroups,olderWorkTitle,olderWorkPreview,olderWorkAlt,originalPrice} from '../../../catalog/older-work-products.mjs';
 import {byId} from '../../../catalog/catalog.mjs';
 import {printsFromLabel,showBuy} from '../../data/card-commerce.mjs';
 const count=olderWorkGroups.reduce((n,g)=>n+g.members.length,0);
@@ -29,17 +29,14 @@ const description='Older paintings by TJ Murphy: portraits, landscapes and studi
       <a href={`/products/${g.id}/`}>
         <div class="archive-image"><img src={olderWorkPreview(g,480)} srcset={[480,960,1600].map(w=>`${olderWorkPreview(g,w)} ${w}w`).join(', ')} sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 960px) 45vw, 30vw" width={g.preview?.width??g.master.widthPx} height={g.preview?.height??g.master.heightPx} alt={olderWorkAlt(g)} loading={i<3?'eager':'lazy'} decoding="async"/></div>
         <div class="archive-caption"><h2>{olderWorkTitle(g)}</h2>{g.members.length>1&&<p>{g.members.length} paintings</p>}
-          <p class="card-buy-row">{prints?<span class="card-prints-from">{prints}</span>:<span class="card-prints-from">{g.members.length===1&&originalPrice(g.members[0])?`Original $${Number(originalPrice(g.members[0]).amount)}`:'Original not for sale'}</span>}<span class="card-buy" data-card-buy aria-hidden="true" hidden={!buy}>Buy</span></p></div>
+          <p class="card-buy-row">{prints?<span class="card-prints-from">{prints}</span>:<span class="card-prints-from">{(()=>{const ps=g.members.map(originalPrice).filter(Boolean).map(x=>Number(x.amount));return ps.length?(g.members.length===1?`Original $${ps[0]}`:`Originals from $${Math.min(...ps)}`):'';})()}</span>}<span class="card-buy" data-card-buy aria-hidden="true" hidden={!buy}>Buy</span></p></div>
       </a>
-      {g.members.length>1&&<ul class="older-originals" aria-label={`Paintings in ${olderWorkTitle(g)}`}>{g.members.map((m,j)=>{const price=originalPrice(m),href=price?`/products/${originalId(g,j)}/`:`/products/${g.id}/`;return <li data-original-id={price?originalId(g,j):undefined}>
-        <a href={href} class="older-original-image"><img src={`${m.display.base}-480.webp`} width={m.display.width} height={m.display.height} alt={`${m.name}, a painting by TJ Murphy`} loading="lazy" decoding="async"/></a>
-        <a href={href} class="older-original-name">{m.name.replace(/^TJ /,'')}</a> <span>{price?`original $${Number(price.amount)}`:'original not for sale'}</span></li>;})}</ul>}
     </li>})}
   </ul>
   <p class="archive-back"><a href="/gallery/">← Return to the main gallery</a></p>
 </main><SiteFooter/></div>
 <style>
   .archive-main{padding-top:30px;padding-bottom:70px}.archive-breadcrumb{display:flex;flex-wrap:wrap;gap:10px;font-size:.85rem;color:#665b52}.archive-intro{max-width:750px;margin:42px 0 32px}.archive-intro h1{font:500 clamp(2.8rem,6vw,4.5rem)/1.05 'Cormorant Garamond',serif;margin:12px 0 18px}.archive-intro>p{line-height:1.65}.archive-count{color:#73685e;font-size:.9rem}.archive-tools{display:flex;align-items:end;gap:24px;flex-wrap:wrap;padding:22px 0;border-top:1px solid #ddd1c5;margin-bottom:22px}.archive-tools[hidden],.archive-card[hidden],.archive-empty[hidden]{display:none}.archive-tools label{display:grid;gap:8px;font-size:.85rem;font-weight:600}.archive-tools input,.archive-tools select{font:inherit;color:inherit;background:#fffaf4;border:1px solid #c9bbae;border-radius:4px;padding:12px}.archive-tools input{width:min(360px,70vw)}.archive-tools p{margin:0 0 12px auto;font-size:.85rem;color:#73685e}.archive-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 28px}.archive-card{min-width:0}.archive-card a{display:block;color:inherit;text-decoration:none}.archive-image{background:#f1ece4;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border-radius:4px;overflow:hidden}.archive-image img{width:100%;height:100%;object-fit:contain;padding:16px}.archive-caption{padding:15px 2px 0}.archive-caption h2{font:600 1.65rem/1.15 'Cormorant Garamond',serif;margin:0 0 7px}.archive-caption p{margin:0 0 6px;font-size:.9rem;line-height:1.4}.archive-caption span,.archive-unindexed{font-size:.8rem;color:#73685e}.archive-back{margin-top:54px}.archive-card a:focus-visible,.archive-tools input:focus-visible,.archive-tools select:focus-visible{outline:3px solid #a34528;outline-offset:5px}.archive-card a:hover h2{color:#a34528}@media(max-width:960px){.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 20px}}@media(max-width:600px){.archive-grid{grid-template-columns:1fr}.archive-intro{margin-top:30px}.archive-tools{gap:16px}.archive-tools p{width:100%;margin:0}.archive-tools input{width:100%}.archive-tools label:first-child{width:100%}}
-.older-work-grid .card-buy-row{margin-top:8px}.older-originals{list-style:none;margin:6px 2px 0;padding:0;font-size:.85rem;line-height:1.6}.older-originals li{display:grid;grid-template-columns:64px 1fr;column-gap:10px;align-items:center;margin-bottom:6px}.older-originals .older-original-image{grid-row:span 2;display:block;background:#f1ece4;border-radius:3px}.older-originals .older-original-image img{display:block;width:64px;height:64px;object-fit:contain;padding:4px}.older-originals .older-original-name{display:inline;color:#a34528;text-decoration:underline}.older-originals span{color:#73685e}
+.older-work-grid .card-buy-row{margin-top:8px}
 </style>
 </body></html>
