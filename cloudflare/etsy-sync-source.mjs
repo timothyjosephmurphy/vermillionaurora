@@ -1,5 +1,5 @@
 // Generated from the approved catalog for the targeted Etsy sync. Do not edit by hand.
-export const syncSourceVersion="afa38cec701a504e5a89";
+export const syncSourceVersion="8f5f18ba2e0305c1bf48";
 export default [
   {
     "id": "el-zonte-before-dawn",
