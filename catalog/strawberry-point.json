@@ -94,7 +94,7 @@
     1664
    ],
    "display": {
-    "base": "/display/strawberry-point-4",
+    "base": "/display/strawberry-point-4-e1b95e42",
     "widths": [
      480,
      960,
@@ -102,9 +102,15 @@
     ],
     "width": 960,
     "height": 1025,
-    "fallback": "/display/strawberry-point-4.jpg",
+    "fallback": "/display/strawberry-point-4-e1b95e42.jpg",
     "sourceWidth": 1291,
     "sourceHeight": 1379
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/e0eae411bb55aee28694df82040f3acb0b842ba81aca6c047d0fce4325f4fbfb.jpg",
+    "sha256": "e0eae411bb55aee28694df82040f3acb0b842ba81aca6c047d0fce4325f4fbfb",
+    "widthPx": 1291,
+    "heightPx": 1379
    }
   },
   {
@@ -118,7 +124,7 @@
     3481
    ],
    "display": {
-    "base": "/display/strawberry-point-5",
+    "base": "/display/strawberry-point-5-7592f1f1",
     "widths": [
      480,
      960,
@@ -126,9 +132,15 @@
     ],
     "width": 960,
     "height": 973,
-    "fallback": "/display/strawberry-point-5.jpg",
+    "fallback": "/display/strawberry-point-5-7592f1f1.jpg",
     "sourceWidth": 1273,
     "sourceHeight": 1290
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/693dc2228133ae222643c2c2a6f67d0d02ad9162a93004965239e95a2155268f.jpg",
+    "sha256": "693dc2228133ae222643c2c2a6f67d0d02ad9162a93004965239e95a2155268f",
+    "widthPx": 1273,
+    "heightPx": 1290
    }
   },
   {
@@ -142,7 +154,7 @@
     5295
    ],
    "display": {
-    "base": "/display/strawberry-point-6",
+    "base": "/display/strawberry-point-6-17e3a2c3",
     "widths": [
      480,
      960,
@@ -150,9 +162,15 @@
     ],
     "width": 960,
     "height": 989,
-    "fallback": "/display/strawberry-point-6.jpg",
+    "fallback": "/display/strawberry-point-6-17e3a2c3.jpg",
     "sourceWidth": 1269,
     "sourceHeight": 1307
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/8e56018c2db5e540065be7e917fe4166cb04d8ad782c8ef2e79a8e464be3cc91.jpg",
+    "sha256": "8e56018c2db5e540065be7e917fe4166cb04d8ad782c8ef2e79a8e464be3cc91",
+    "widthPx": 1269,
+    "heightPx": 1307
    }
   },
   {
@@ -166,7 +184,7 @@
     7179
    ],
    "display": {
-    "base": "/display/strawberry-point-7",
+    "base": "/display/strawberry-point-7-9e3f3e10",
     "widths": [
      480,
      960,
@@ -174,9 +192,15 @@
     ],
     "width": 960,
     "height": 1021,
-    "fallback": "/display/strawberry-point-7.jpg",
+    "fallback": "/display/strawberry-point-7-9e3f3e10.jpg",
     "sourceWidth": 1282,
     "sourceHeight": 1363
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/828a3fa40455efc3f488cec806a9de265665aa4ff6dcfc7816ae1567aa9aefcc.jpg",
+    "sha256": "828a3fa40455efc3f488cec806a9de265665aa4ff6dcfc7816ae1567aa9aefcc",
+    "widthPx": 1282,
+    "heightPx": 1363
    }
   },
   {
@@ -190,7 +214,7 @@
     2287
    ],
    "display": {
-    "base": "/display/strawberry-point-8",
+    "base": "/display/strawberry-point-8-fa71535b",
     "widths": [
      480,
      960,
@@ -198,9 +222,15 @@
     ],
     "width": 960,
     "height": 973,
-    "fallback": "/display/strawberry-point-8.jpg",
+    "fallback": "/display/strawberry-point-8-fa71535b.jpg",
     "sourceWidth": 2010,
     "sourceHeight": 2038
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/618d9f9bda1d5f9e9362a3745a541a4c5605f76742a7b53f9002efd023251bad.jpg",
+    "sha256": "618d9f9bda1d5f9e9362a3745a541a4c5605f76742a7b53f9002efd023251bad",
+    "widthPx": 2010,
+    "heightPx": 2038
    }
   },
   {
@@ -214,7 +244,7 @@
     4764
    ],
    "display": {
-    "base": "/display/strawberry-point-9",
+    "base": "/display/strawberry-point-9-0a07239b",
     "widths": [
      480,
      960,
@@ -222,9 +252,15 @@
     ],
     "width": 960,
     "height": 956,
-    "fallback": "/display/strawberry-point-9.jpg",
+    "fallback": "/display/strawberry-point-9-0a07239b.jpg",
     "sourceWidth": 1972,
     "sourceHeight": 1963
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/60587be399ebb54467b35dd1414bdc00a97d7d79f49c000921cec6cbeddfc8e6.jpg",
+    "sha256": "60587be399ebb54467b35dd1414bdc00a97d7d79f49c000921cec6cbeddfc8e6",
+    "widthPx": 1972,
+    "heightPx": 1963
    }
   },
   {
@@ -238,7 +274,7 @@
     7353
    ],
    "display": {
-    "base": "/display/strawberry-point-10",
+    "base": "/display/strawberry-point-10-86185f7b",
     "widths": [
      480,
      960,
@@ -246,9 +282,15 @@
     ],
     "width": 960,
     "height": 1008,
-    "fallback": "/display/strawberry-point-10.jpg",
+    "fallback": "/display/strawberry-point-10-86185f7b.jpg",
     "sourceWidth": 1993,
     "sourceHeight": 2092
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/3d721e159b7a80aa9cf306d775d838692e47b3c8ae3310a6243c7d27dc496c0e.jpg",
+    "sha256": "3d721e159b7a80aa9cf306d775d838692e47b3c8ae3310a6243c7d27dc496c0e",
+    "widthPx": 1993,
+    "heightPx": 2092
    }
   },
   {
@@ -262,7 +304,7 @@
     2589
    ],
    "display": {
-    "base": "/display/strawberry-point-11",
+    "base": "/display/strawberry-point-11-b5adc2b1",
     "widths": [
      480,
      960,
@@ -270,9 +312,15 @@
     ],
     "width": 960,
     "height": 947,
-    "fallback": "/display/strawberry-point-11.jpg",
+    "fallback": "/display/strawberry-point-11-b5adc2b1.jpg",
     "sourceWidth": 2375,
     "sourceHeight": 2342
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/629318b048b36ea41aa4388b1b3766e53e31396edeb489e40620967f179f82de.jpg",
+    "sha256": "629318b048b36ea41aa4388b1b3766e53e31396edeb489e40620967f179f82de",
+    "widthPx": 2375,
+    "heightPx": 2342
    }
   },
   {
@@ -286,7 +334,7 @@
     2554
    ],
    "display": {
-    "base": "/display/strawberry-point-12",
+    "base": "/display/strawberry-point-12-36e436a0",
     "widths": [
      480,
      960,
@@ -294,9 +342,15 @@
     ],
     "width": 960,
     "height": 948,
-    "fallback": "/display/strawberry-point-12.jpg",
+    "fallback": "/display/strawberry-point-12-36e436a0.jpg",
     "sourceWidth": 2368,
     "sourceHeight": 2339
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/d8e9bee2644bcc4c7a529cf61050c753222d2184626cc67580d08d28063d7e6d.jpg",
+    "sha256": "d8e9bee2644bcc4c7a529cf61050c753222d2184626cc67580d08d28063d7e6d",
+    "widthPx": 2368,
+    "heightPx": 2339
    }
   },
   {
@@ -310,7 +364,7 @@
     5409
    ],
    "display": {
-    "base": "/display/strawberry-point-13",
+    "base": "/display/strawberry-point-13-e933e140",
     "widths": [
      480,
      960,
@@ -318,9 +372,15 @@
     ],
     "width": 960,
     "height": 990,
-    "fallback": "/display/strawberry-point-13.jpg",
+    "fallback": "/display/strawberry-point-13-e933e140.jpg",
     "sourceWidth": 2334,
     "sourceHeight": 2406
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/e5a096aa07730c339d3f1aff1a7f20ee553cb7e057a8988ced271377c72304cb.jpg",
+    "sha256": "e5a096aa07730c339d3f1aff1a7f20ee553cb7e057a8988ced271377c72304cb",
+    "widthPx": 2334,
+    "heightPx": 2406
    }
   },
   {
@@ -334,7 +394,7 @@
     5387
    ],
    "display": {
-    "base": "/display/strawberry-point-14",
+    "base": "/display/strawberry-point-14-b2280ae9",
     "widths": [
      480,
      960,
@@ -342,40 +402,46 @@
     ],
     "width": 960,
     "height": 992,
-    "fallback": "/display/strawberry-point-14.jpg",
+    "fallback": "/display/strawberry-point-14-b2280ae9.jpg",
     "sourceWidth": 2327,
     "sourceHeight": 2404
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/981d0c5996edd475baf3a832ba85d6c8f9fc079e46fe41c5a6dc4e0a624a22e4.jpg",
+    "sha256": "981d0c5996edd475baf3a832ba85d6c8f9fc079e46fe41c5a6dc4e0a624a22e4",
+    "widthPx": 2327,
+    "heightPx": 2404
    }
   },
   {
    "index": 15,
-   "photo": "sp-15.jpg",
-   "source": "TJ upload, Oct 16 2026 (single painting; paint reaches every edge, so the crop is the whole photo)",
+   "photo": "sp-15-hi.jpg",
+   "source": "TJ upload, Oct 16 2026 (higher-resolution photo, 2583 × 2720; paint reaches every edge, so the crop is the whole photo)",
    "position": 1,
    "crop": [
     0,
     0,
-    973,
-    1024
+    2583,
+    2720
    ],
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/6513241ed3567e338ad8c13af762f5f7ea072ebcf90d75eb9dff29e589c5f628.jpg",
+    "sha256": "6513241ed3567e338ad8c13af762f5f7ea072ebcf90d75eb9dff29e589c5f628",
+    "widthPx": 2583,
+    "heightPx": 2720
+   },
    "display": {
-    "base": "/display/strawberry-point-15-73b875d4",
+    "base": "/display/strawberry-point-15-073f92b9",
     "widths": [
      480,
      960,
      1600
     ],
     "width": 960,
-    "height": 1010,
-    "fallback": "/display/strawberry-point-15-73b875d4.jpg",
-    "sourceWidth": 973,
-    "sourceHeight": 1024
-   },
-   "master": {
-    "url": "https://vermillionaurora.com/print-masters/8b8760be59a795ebbc25f10dc8bc3322d5a5b3e3fecce5dadb0167ded428486c.jpg",
-    "sha256": "8b8760be59a795ebbc25f10dc8bc3322d5a5b3e3fecce5dadb0167ded428486c",
-    "widthPx": 973,
-    "heightPx": 1024
+    "height": 1011,
+    "fallback": "/display/strawberry-point-15-073f92b9.jpg",
+    "sourceWidth": 2583,
+    "sourceHeight": 2720
    }
   }
  ],
