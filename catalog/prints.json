@@ -59932,7 +59932,7 @@
       }
     },
     "older-work-beach-sunsets": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -59969,7 +59969,10 @@
                 "height": 4496
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T21:42:54.070Z"
         },
         "medium": {
           "sku": "5M144M8S5.23X11.49",
@@ -59997,7 +60000,10 @@
                 "height": 3367
               }
             }
-          }
+          },
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T21:42:54.070Z"
         }
       },
       "layoutOptions": {
@@ -66257,7 +66263,7 @@
       }
     },
     "older-work-pitchers": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -66294,7 +66300,10 @@
                 "height": 1988
               }
             }
-          }
+          },
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T21:42:53.251Z"
         },
         "medium": {
           "sku": "5M144M8S11.5X5.22",
@@ -66322,7 +66331,10 @@
                 "height": 1490
               }
             }
-          }
+          },
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T21:42:53.251Z"
         }
       },
       "layoutOptions": {
@@ -69102,7 +69114,7 @@
       }
     },
     "older-work-shore-figures": {
-      "enabled": false,
+      "enabled": true,
       "sizing": "image-proportional",
       "sizingApproved": true,
       "paper": "watercolor-bright-white",
@@ -69139,7 +69151,10 @@
                 "height": 1139
               }
             }
-          }
+          },
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-16T21:42:52.319Z"
         }
       },
       "layoutOptions": {

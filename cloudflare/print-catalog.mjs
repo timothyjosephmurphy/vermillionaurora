@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="7d29c1f339966b0bf68c";
+export const printVersion="42372f66ce753787fcd3";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -114713,6 +114713,47 @@ export default {
     },
     "unframedAmount": "40.00"
   },
+  "print-older-work-shore-figures-full": {
+    "id": "print-older-work-shore-figures-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Large print",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "45.00",
+    "currency": "USD",
+    "sku": "5M144M8S12.98X4.05",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.7267,
+      "height": 3.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.98,
+      "height": 4.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708.jpg",
+    "assetSha256": "d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
   "print-older-work-mountain-layers-full": {
     "id": "print-older-work-mountain-layers-full",
     "type": "print",
@@ -116888,6 +116929,88 @@ export default {
       }
     },
     "unframedAmount": "35.00"
+  },
+  "print-older-work-pitchers-full": {
+    "id": "print-older-work-pitchers-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Large print",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M8S15.25X6.88",
+    "scale": 1,
+    "imageSize": {
+      "width": 14.9733,
+      "height": 6.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.25,
+      "height": 6.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc.jpg",
+    "assetSha256": "8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5579,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-pitchers-medium": {
+    "id": "print-older-work-pitchers-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Medium print",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S11.5X5.22",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.2233,
+      "height": 4.9667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.5,
+      "height": 5.22,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650.jpg",
+    "assetSha256": "d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5579,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
   },
   "print-older-work-hummingbird-feeder-190-full": {
     "id": "print-older-work-hummingbird-feeder-190-full",
@@ -121784,6 +121907,88 @@ export default {
       }
     },
     "unframedAmount": "35.00"
+  },
+  "print-older-work-beach-sunsets-full": {
+    "id": "print-older-work-beach-sunsets-full",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Large print",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "50.00",
+    "currency": "USD",
+    "sku": "5M144M8S6.9X15.24",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.6467,
+      "height": 14.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.9,
+      "height": 15.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d.jpg",
+    "assetSha256": "70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
+  },
+  "print-older-work-beach-sunsets-medium": {
+    "id": "print-older-work-beach-sunsets-medium",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Medium print",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "40.00",
+    "currency": "USD",
+    "sku": "5M144M8S5.23X11.49",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.9767,
+      "height": 11.2233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.23,
+      "height": 11.49,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0.jpg",
+    "assetSha256": "256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional"
   },
   "print-older-work-forest-triptych-full": {
     "id": "print-older-work-forest-triptych-full",
