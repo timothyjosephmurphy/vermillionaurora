@@ -22,7 +22,7 @@ await new Promise(r => server.listen(0, '127.0.0.1', r));
 const origin = `http://127.0.0.1:${server.address().port}`;
 
 
-// Homepage hero: slow opacity crossfade through wide Featured works (no product card), Painting Wall peek
+// Homepage hero: slow opacity crossfade through wide Featured works, a small card cycling Strawberry Point paintings, Painting Wall peek
 // above the landing position, and the 3D gallery corner link.
 const browser = await chromium.launch();
 try {
@@ -31,11 +31,17 @@ try {
     await page.goto(origin + '/', {waitUntil: 'load'});
     const s = await page.evaluate(() => {
       const wall = document.getElementById('painting-wall-peek'), hero = document.querySelector('.hero');
-      return {y: scrollY, wall: wall?.offsetHeight, heroTop: hero.getBoundingClientRect().top, card: document.querySelectorAll('.featured-art,.hero-panel').length,
+      return {y: scrollY, wall: wall?.offsetHeight, heroTop: hero.getBoundingClientRect().top, card: document.querySelectorAll('.hero .featured-art').length, sp: [...document.querySelectorAll('.sp-hero-source .product-card')].map(c=>c.dataset.productId),
+        overlap: (()=>{const c=document.querySelector('.hero .featured-art').getBoundingClientRect();return [...document.querySelectorAll('.hero-copy h1,.hero-copy .button,.hero-room-link')].some(e=>{const r=e.getBoundingClientRect();return r.left<c.right&&r.right>c.left&&r.top<c.bottom&&r.bottom>c.top;});})(),
+        cardHref: document.querySelector('.featured-art .featured-media')?.getAttribute('href'),
         slides: JSON.parse(document.querySelector('.hero-slideshow').dataset.heroSlides).length, wallImg: wall.querySelector('img').getAttribute('src'),
         room: document.querySelector('.hero-room-link')?.getAttribute('href'), transition: getComputedStyle(document.querySelector('.hero-slide')).transitionProperty};
     });
-    assert.equal(s.card, 0, `${name}: hero product card removed`);
+    assert.equal(s.card, 1, `${name}: hero carousel card`);
+    assert.equal(s.sp.length, 15, `${name}: all Strawberry Point paintings`);
+    assert(s.sp.every(id => id.startsWith('strawberry-point-')), `${name}: only Strawberry Point paintings`);
+    assert(/^\/products\/strawberry-point-\d+\/$/.test(new URL(s.cardHref, origin).pathname), `${name}: card links to its painting`);
+    assert(!s.overlap, `${name}: card clear of headline/CTA`);
     assert(s.slides >= 2, `${name}: wide paintings queued`);
     assert(s.wall > 200 && Math.abs(s.y - s.wall) <= 2, `${name}: lands below the wall (${s.y} vs ${s.wall})`);
     assert(s.heroTop >= 0 && s.heroTop < 140, `${name}: hero right under the header (${s.heroTop})`);
