@@ -51,9 +51,7 @@ try {
   for(const route of ['/','/gallery/','/gallery/available/','/exhibitions/paul-murphy/']){
    await page.goto(origin+route);await page.waitForTimeout(400);
    let problems=await page.evaluate(buyCueProblems);
-   if(route==='/'){const slides=await page.evaluate(()=>Number(document.querySelector('.featured-position')?.textContent.split('/')[1]||0));assert(slides>1,'hero carousel has slides');
-    for(let i=0;i<slides;i++){await page.evaluate(()=>document.querySelector('.featured-carousel [data-next]').click());await page.waitForTimeout(500);problems=problems.concat(await page.evaluate(buyCueProblems));
-     assert.equal(await page.evaluate(()=>{const s=document.querySelector('.featured-stage .featured-slide:last-child'),row=s.querySelector('.featured-caption .card-buy-row'),buy=row?.querySelector('.card-buy');if(!buy||buy.hidden)return 'ok';const text=row.firstElementChild.getBoundingClientRect(),b=buy.getBoundingClientRect();return row.lastElementChild===buy&&b.left-text.right>=8&&b.top<text.bottom&&b.bottom>text.top?'ok':'Buy not inline at the end of the last line';}),'ok',`hero slide ${i+1} at ${width}px`);}}
+   if(route==='/'){assert.equal(await page.locator('.hero .featured-art').count(),0,'hero has no product card');assert.equal(await page.locator('.hero-slideshow .hero-slide').count(),2,'hero crossfade has two layers');}
    assert.deepEqual([...new Set(problems)],[],`${route} at ${width}px`);
   }
  }
