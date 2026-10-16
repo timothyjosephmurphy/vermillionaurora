@@ -13,11 +13,9 @@ const painting=a=>({
 });
 const plaque=(id,title,lines,href)=>({id,kind:'plaque',title,lines:lines.filter(Boolean),href,width:.62,height:.82});
 const works=re=>tjWall.artworks.filter(a=>!/^Mural/.test(a.description)&&re.test(a.description)).map(painting);
-const exhibition=id=>{const ex=assets.exhibitions.find(e=>e.id===id),long=.75,f=.02;
-  return [plaque(ex.id+'-plaque',ex.title,['Exhibition · '+ex.date,...ex.story],ex.href),
-    ...ex.photos.map((p,i)=>{const r=p.width/p.height,w=r>=1?long:long*r,h=r>=1?long/r:long;
-      return {id:`${ex.id}-photo-${i+1}`,kind:'photo',title:ex.title,caption:'Exhibition photograph',href:ex.href,exhibition:ex.id,
-        width:w+2*f,height:h+2*f,imageWidth:w,imageHeight:h,frameWidth:f,sources:sources([p])};})];};
+// Exhibitions are represented by their plaque only: the walkthrough hangs paintings with a product page and the two
+// murals, never photographs.
+const exhibition=id=>{const ex=assets.exhibitions.find(e=>e.id===id);return [{...plaque(ex.id+'-plaque',ex.title,['Exhibition · '+ex.date,...ex.story],ex.href),exhibition:ex.id}];};
 // The silhouetted cormorant over Puget Sound faces the entrance across the central hall.
 export const ENTRY_MURAL_ID='cormorant-presiding-over-sunset-on-puget-sound';
 const garden=tjWall.artworks.find(a=>a.id===ENTRY_MURAL_ID);
@@ -46,15 +44,16 @@ export function arrange(items){
   return list.flatMap(({k,g})=>g.map(it=>({...it,series:k.startsWith('solo:')||g.length<2?null:k})));
 }
 // The rooms form one loop around a courtyard, mirror-symmetric about the north–south axis (no turns that pinwheel):
-// central hall (south) → Friends, Family & Bitcoiners (west) → Archived & Older Work (north) → Travels (east) → hall.
+// central hall (south) → Friends, Family & Bitcoiners (west) → Travels & the Pacific Northwest (north) → Archived & Older Work (east) → hall.
 export const walkthroughRooms=[
   {id:'central',ring:'S',kind:'hall',title:'Watercolor Pastels',galleries:['Cormorant garden mural','Watercolor Pastels'],items:[murals[0],murals[3],...arrange(works(/^Watercolor/))]},
   {id:'people',ring:'W',kind:'gallery',title:'Friends, Family & Bitcoiners',galleries:['Friends','Family','Bitcoiners','Self Portraits','Exhibitions: Living Room, Studio 601, Victrola, Paul Murphy'],
     items:arrange([...works(/^(Friends|Family|Bitcoiners|Self Portraits)/),...exhibition('living-room'),...exhibition('studio-601'),...exhibition('victrola'),...exhibition('paul-murphy')])},
-  {id:'archive',ring:'N',kind:'gallery',title:'Archived & Older Work',galleries:['Archived Paintings','Older Work'],items:[...arrange(works(/^Archived Paintings/)),...arrange(works(/^Older Work/))]},
-  {id:'travels',ring:'E',kind:'gallery',title:'Travels & the Pacific Northwest',galleries:['Travels','Pacific Northwest','Friends Club mural (Lillooet)','Exhibitions: Cape Town, El Salvador, Warsaw'],
+  {id:'archive',ring:'E',kind:'gallery',title:'Archived & Older Work',galleries:['Archived Paintings','Older Work'],items:[...arrange(works(/^Archived Paintings/)),...arrange(works(/^Older Work/))]},
+  {id:'travels',ring:'N',kind:'gallery',title:'Travels & the Pacific Northwest',galleries:['Travels','Pacific Northwest','Friends Club mural (Lillooet)','Exhibitions: Cape Town, El Salvador, Warsaw'],
     items:[murals[1],murals[2],...arrange([...works(/^(Travels|Pacific Northwest)/),...exhibition('cape-town'),...exhibition('el-salvador'),...exhibition('bitcoin-film-festival-warsaw')])]}
 ];
+for(const r of walkthroughRooms)r.items=r.items.filter(i=>i.kind==='mural'||i.kind==='plaque'||(i.kind==='painting'&&/^\/products\/[^/]+\/$/.test(i.href||'')));
 const placed=new Set(walkthroughRooms.flatMap(r=>r.items.map(i=>i.id)));
 export const walkthroughPaintingCount=tjWall.artworks.filter(a=>placed.has(a.id)).length;
 const missing=tjWall.artworks.filter(a=>!placed.has(a.id));
