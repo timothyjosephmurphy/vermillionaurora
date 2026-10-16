@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="42372f66ce753787fcd3";
+export const printVersion="6391f8b10c99349f43e6";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -114754,6 +114754,237 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-older-work-shore-figures-full-frame-black": {
+    "id": "print-older-work-shore-figures-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Large print — Black frame",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD98X4DD05F1S16DD94X8DD01J1S12DD98X4DD05G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.7267,
+      "height": 3.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.98,
+      "height": 4.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708.jpg",
+    "assetSha256": "d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16.94,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.98,
+        "height": 4.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.98X4.05",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16.94,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-shore-figures-full-frame-white": {
+    "id": "print-older-work-shore-figures-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Large print — White frame",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "91.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD98X4DD05F2S16DD94X8DD01J1S12DD98X4DD05G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.7267,
+      "height": 3.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.98,
+      "height": 4.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708.jpg",
+    "assetSha256": "d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16.94,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.98,
+        "height": 4.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.98X4.05",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16.94,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
+  "print-older-work-shore-figures-full-frame-natural": {
+    "id": "print-older-work-shore-figures-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-shore-figures",
+    "title": "Figures on a Shore Triptych — Large print — Natural wood frame",
+    "artworkTitle": "Figures on a Shore Triptych",
+    "amount": "103.00",
+    "currency": "USD",
+    "sku": "5M144M8S12DD98X4DD05F7S16DD94X8DD01J1S12DD98X4DD05G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 12.7267,
+      "height": 3.7967,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 12.98,
+      "height": 4.05,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708.jpg",
+    "assetSha256": "d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708",
+    "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-shore-figures-1600.webp",
+      "fullSrc": "/display/older-work-shore-figures-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Figures on a Shore 179, TJ Wading Figure 181, TJ Crab on Beach 180",
+      "width": 6988,
+      "height": 2100,
+      "caption": "Figures on a Shore Triptych"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 16.94,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "window": {
+        "width": 12.98,
+        "height": 4.05,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S12.98X4.05",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 16.94,
+        "height": 8.01,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "45.00"
+  },
   "print-older-work-mountain-layers-full": {
     "id": "print-older-work-mountain-layers-full",
     "type": "print",
@@ -116971,6 +117202,237 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-older-work-pitchers-full-frame-black": {
+    "id": "print-older-work-pitchers-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Large print — Black frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "105.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD25X6DD88F1S18DD25X9DD88J1S15DD25X6DD88G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 14.9733,
+      "height": 6.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.25,
+      "height": 6.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc.jpg",
+    "assetSha256": "8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5579,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.25,
+        "height": 9.88,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.25,
+        "height": 6.88,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.25X6.88",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.25,
+        "height": 9.88,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-pitchers-full-frame-white": {
+    "id": "print-older-work-pitchers-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Large print — White frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "105.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD25X6DD88F2S18DD25X9DD88J1S15DD25X6DD88G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 14.9733,
+      "height": 6.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.25,
+      "height": 6.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc.jpg",
+    "assetSha256": "8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5579,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.25,
+        "height": 9.88,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.25,
+        "height": 6.88,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.25X6.88",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.25,
+        "height": 9.88,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-pitchers-full-frame-natural": {
+    "id": "print-older-work-pitchers-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Large print — Natural wood frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "118.00",
+    "currency": "USD",
+    "sku": "5M144M8S15DD25X6DD88F7S18DD25X9DD88J1S15DD25X6DD88G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 14.9733,
+      "height": 6.6267,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 15.25,
+      "height": 6.88,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc.jpg",
+    "assetSha256": "8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5579,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 18.25,
+        "height": 9.88,
+        "unit": "in"
+      },
+      "window": {
+        "width": 15.25,
+        "height": 6.88,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S15.25X6.88",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 18.25,
+        "height": 9.88,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
   "print-older-work-pitchers-medium": {
     "id": "print-older-work-pitchers-medium",
     "type": "print",
@@ -117011,6 +117473,237 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-older-work-pitchers-medium-frame-black": {
+    "id": "print-older-work-pitchers-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Medium print — Black frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "82.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD5X5DD22F1S14DD5X8DD22J1S11DD5X5DD22G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.2233,
+      "height": 4.9667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.5,
+      "height": 5.22,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650.jpg",
+    "assetSha256": "d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5579,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14.5,
+        "height": 8.22,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.5,
+        "height": 5.22,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.5X5.22",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14.5,
+        "height": 8.22,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-pitchers-medium-frame-white": {
+    "id": "print-older-work-pitchers-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Medium print — White frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "82.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD5X5DD22F2S14DD5X8DD22J1S11DD5X5DD22G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.2233,
+      "height": 4.9667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.5,
+      "height": 5.22,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650.jpg",
+    "assetSha256": "d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5579,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14.5,
+        "height": 8.22,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.5,
+        "height": 5.22,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.5X5.22",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14.5,
+        "height": 8.22,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-pitchers-medium-frame-natural": {
+    "id": "print-older-work-pitchers-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-pitchers",
+    "title": "Pitcher Still Lifes — Medium print — Natural wood frame",
+    "artworkTitle": "Pitcher Still Lifes",
+    "amount": "93.00",
+    "currency": "USD",
+    "sku": "5M144M8S11DD5X5DD22F7S14DD5X8DD22J1S11DD5X5DD22G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 11.2233,
+      "height": 4.9667,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 11.5,
+      "height": 5.22,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650.jpg",
+    "assetSha256": "d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650",
+    "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://tjm.art/display/older-work-pitchers-1600.webp",
+      "fullSrc": "/display/older-work-pitchers-1600.webp",
+      "alt": "2 paintings by TJ Murphy shown together: TJ Two Pitchers 188, TJ Blue Pitcher 187",
+      "width": 5579,
+      "height": 2480,
+      "caption": "Pitcher Still Lifes"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 14.5,
+        "height": 8.22,
+        "unit": "in"
+      },
+      "window": {
+        "width": 11.5,
+        "height": 5.22,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S11.5X5.22",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 14.5,
+        "height": 8.22,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
   },
   "print-older-work-hummingbird-feeder-190-full": {
     "id": "print-older-work-hummingbird-feeder-190-full",
@@ -121949,6 +122642,237 @@ export default {
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
   },
+  "print-older-work-beach-sunsets-full-frame-black": {
+    "id": "print-older-work-beach-sunsets-full-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Large print — Black frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "105.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD9X15DD24F1S9DD9X18DD24J1S6DD9X15DD24G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.6467,
+      "height": 14.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.9,
+      "height": 15.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d.jpg",
+    "assetSha256": "70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.9,
+        "height": 18.24,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.9,
+        "height": 15.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.9X15.24",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.9,
+        "height": 18.24,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-beach-sunsets-full-frame-white": {
+    "id": "print-older-work-beach-sunsets-full-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Large print — White frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "105.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD9X15DD24F2S9DD9X18DD24J1S6DD9X15DD24G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.6467,
+      "height": 14.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.9,
+      "height": 15.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d.jpg",
+    "assetSha256": "70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.9,
+        "height": 18.24,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.9,
+        "height": 15.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.9X15.24",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.9,
+        "height": 18.24,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
+  "print-older-work-beach-sunsets-full-frame-natural": {
+    "id": "print-older-work-beach-sunsets-full-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Large print — Natural wood frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "118.00",
+    "currency": "USD",
+    "sku": "5M144M8S6DD9X15DD24F7S9DD9X18DD24J1S6DD9X15DD24G1",
+    "scale": 1,
+    "imageSize": {
+      "width": 6.6467,
+      "height": 14.9867,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 6.9,
+      "height": 15.24,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d.jpg",
+    "assetSha256": "70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 9.9,
+        "height": 18.24,
+        "unit": "in"
+      },
+      "window": {
+        "width": 6.9,
+        "height": 15.24,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S6.9X15.24",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 9.9,
+        "height": 18.24,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "50.00"
+  },
   "print-older-work-beach-sunsets-medium": {
     "id": "print-older-work-beach-sunsets-medium",
     "type": "print",
@@ -121989,6 +122913,237 @@ export default {
     "minimumDpi": 300,
     "layout": "full-image-white-border-v1",
     "sizeBasis": "image-proportional"
+  },
+  "print-older-work-beach-sunsets-medium-frame-black": {
+    "id": "print-older-work-beach-sunsets-medium-frame-black",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Medium print — Black frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "82.00",
+    "currency": "USD",
+    "sku": "5M144M8S5DD23X11DD49F1S8DD23X14DD49J1S5DD23X11DD49G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.9767,
+      "height": 11.2233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.23,
+      "height": 11.49,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0.jpg",
+    "assetSha256": "256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.23,
+        "height": 14.49,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.23,
+        "height": 11.49,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.23X11.49",
+    "frame": {
+      "key": "black",
+      "id": 1,
+      "collectionId": 1,
+      "name": "Black",
+      "color": "#262321",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.23,
+        "height": 14.49,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-beach-sunsets-medium-frame-white": {
+    "id": "print-older-work-beach-sunsets-medium-frame-white",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Medium print — White frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "82.00",
+    "currency": "USD",
+    "sku": "5M144M8S5DD23X11DD49F2S8DD23X14DD49J1S5DD23X11DD49G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.9767,
+      "height": 11.2233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.23,
+      "height": 11.49,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0.jpg",
+    "assetSha256": "256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.23,
+        "height": 14.49,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.23,
+        "height": 11.49,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.23X11.49",
+    "frame": {
+      "key": "white",
+      "id": 2,
+      "collectionId": 1,
+      "name": "White",
+      "color": "#f7f5ef",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.23,
+        "height": 14.49,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
+  },
+  "print-older-work-beach-sunsets-medium-frame-natural": {
+    "id": "print-older-work-beach-sunsets-medium-frame-natural",
+    "type": "print",
+    "provider": "finerworks",
+    "productId": "older-work-beach-sunsets",
+    "title": "Beach Sunsets — Medium print — Natural wood frame",
+    "artworkTitle": "Beach Sunsets",
+    "amount": "93.00",
+    "currency": "USD",
+    "sku": "5M144M8S5DD23X11DD49F7S8DD23X14DD49J1S5DD23X11DD49G1",
+    "scale": 0.75,
+    "imageSize": {
+      "width": 4.9767,
+      "height": 11.2233,
+      "unit": "in"
+    },
+    "paperSize": {
+      "width": 5.23,
+      "height": 11.49,
+      "unit": "in"
+    },
+    "paper": "Watercolor Bright White",
+    "testOnly": false,
+    "sampleOnly": false,
+    "assetUrl": "https://vermillionaurora.com/print-editions/256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0.jpg",
+    "assetSha256": "256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0",
+    "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
+    "layoutApproved": true,
+    "preview": {
+      "src": "https://vermillionaurora.com/print-masters/9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3.jpg",
+      "fullSrc": "/display/older-work-beach-sunsets-1600.webp",
+      "alt": "3 paintings by TJ Murphy shown together: TJ Beach Sunset 310, TJ Beach Sunset 311, TJ Beach Sunset 309",
+      "width": 2266,
+      "height": 5110,
+      "caption": "Beach Sunsets"
+    },
+    "attributes": {},
+    "minimumDpi": 300,
+    "layout": "full-image-white-border-v1",
+    "sizeBasis": "image-proportional",
+    "mat": {
+      "key": "snow-white",
+      "name": "Snow White",
+      "color": "#fff",
+      "outer": {
+        "width": 8.23,
+        "height": 14.49,
+        "unit": "in"
+      },
+      "window": {
+        "width": 5.23,
+        "height": 11.49,
+        "unit": "in"
+      },
+      "id": 1
+    },
+    "baseSku": "5M144M8S5.23X11.49",
+    "frame": {
+      "key": "natural",
+      "id": 7,
+      "collectionId": 1,
+      "name": "Natural wood",
+      "color": "#b79061",
+      "material": "Solid Wood with Veneer",
+      "mouldingWidth": 0.88,
+      "size": {
+        "width": 8.23,
+        "height": 14.49,
+        "unit": "in"
+      },
+      "glazing": {
+        "id": 1,
+        "name": "Premium Clear"
+      }
+    },
+    "unframedAmount": "40.00"
   },
   "print-older-work-forest-triptych-full": {
     "id": "print-older-work-forest-triptych-full",
