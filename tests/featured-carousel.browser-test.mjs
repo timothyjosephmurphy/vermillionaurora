@@ -31,7 +31,7 @@ try {
     await page.goto(origin + '/', {waitUntil: 'load'});
     const s = await page.evaluate(() => {
       const wall = document.getElementById('painting-wall-peek'), hero = document.querySelector('.hero');
-      return {y: scrollY, wall: wall?.offsetHeight, heroTop: hero.getBoundingClientRect().top, card: document.querySelectorAll('.hero .featured-art').length, sp: [...document.querySelectorAll('.sp-hero-source .product-card')].map(c=>c.dataset.productId),
+      return {y: scrollY, wall: wall?.offsetHeight, heroTop: hero.getBoundingClientRect().top, card: document.querySelectorAll('.hero .featured-art').length, sp: [...document.querySelectorAll('.sp-hero-source .product-card')].map(c=>c.dataset.spId),
         overlap: (()=>{const c=document.querySelector('.hero .featured-art').getBoundingClientRect();return [...document.querySelectorAll('.hero-copy h1,.hero-copy .button,.hero-room-link')].some(e=>{const r=e.getBoundingClientRect();return r.left<c.right&&r.right>c.left&&r.top<c.bottom&&r.bottom>c.top;});})(),
         cardHref: document.querySelector('.featured-art .featured-media')?.getAttribute('href'),
         slides: JSON.parse(document.querySelector('.hero-slideshow').dataset.heroSlides).length, wallImg: wall.querySelector('img').getAttribute('src'),
