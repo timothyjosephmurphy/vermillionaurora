@@ -346,6 +346,37 @@
     "sourceWidth": 2327,
     "sourceHeight": 2404
    }
+  },
+  {
+   "index": 15,
+   "photo": "sp-15.jpg",
+   "source": "TJ upload, Oct 16 2026 (single painting; paint reaches every edge, so the crop is the whole photo)",
+   "position": 1,
+   "crop": [
+    0,
+    0,
+    973,
+    1024
+   ],
+   "display": {
+    "base": "/display/strawberry-point-15-73b875d4",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 1010,
+    "fallback": "/display/strawberry-point-15-73b875d4.jpg",
+    "sourceWidth": 973,
+    "sourceHeight": 1024
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/8b8760be59a795ebbc25f10dc8bc3322d5a5b3e3fecce5dadb0167ded428486c.jpg",
+    "sha256": "8b8760be59a795ebbc25f10dc8bc3322d5a5b3e3fecce5dadb0167ded428486c",
+    "widthPx": 973,
+    "heightPx": 1024
+   }
   }
  ],
  "groups": [
