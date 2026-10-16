@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="41d1883bbe8944b82dfe";
+export const sourcePrintVersion="840156362b5469912e0c";
 export default [
   {
     "id": "warszawska-syrenka",
