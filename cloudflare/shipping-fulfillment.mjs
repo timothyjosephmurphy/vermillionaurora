@@ -92,7 +92,7 @@ export async function fulfillSale(env, sale, initialJob, save) {
     }
   }
   if (['ready','review'].includes(job.status)) {
-    const email = await sendShippingEmail(emailToken, sale, job);
+    const email = await sendShippingEmail(emailToken, sale, job, env);
     await persist({...job,emailId:email.id,pdfAttached:email.pdfAttached,attachmentError:email.attachmentError,emailedAt:Date.now()});
     return true;
   }

@@ -1,4 +1,4 @@
-import {sellerMailToken} from './shipping-email.mjs';
+import {sellerMailToken,siteSender,senderDomain} from './shipping-email.mjs';
 const encode=text=>{let s='';for(const b of new TextEncoder().encode(text))s+=String.fromCharCode(b);return btoa(s);};
 export async function sendCartEmail(env,order,type) {
   const token=await sellerMailToken(env),review=type==='review',q=order.quote,print=order.printJob;
@@ -11,8 +11,9 @@ export async function sendCartEmail(env,order,type) {
     type==='print-shipped'?`Your fine-art prints have shipped.\n\nOrder ${order.id}\n${(print.shipments||[]).map(s=>`${s.carrier} ${s.service}\n${s.trackingNumber||'Tracking is not available for this shipment.'}\n${s.trackingUrl||''}`).join('\n\n')}\n\nPlease reply with any questions.\nTJ Murphy`:
     deposit?`${seller?'A commission deposit has been paid. Match it to the commission request below and reply to the client to confirm the brief and schedule.':'Thank you! Your commission deposit is confirmed. I will reply by email to confirm the details of your brief and the schedule.'}\n\nOrder: ${order.id}\n${lines}\n\nDeposit: $${q.base}\nTax: $${q.tax}\nTotal paid: $${q.total} USD\n\nClient: ${q.address.name} <${q.email}>\n${q.address.street1}\n${q.address.street2||''}\n${q.address.city}, ${q.address.state} ${q.address.zip}\n\nThe remaining balance is invoiced when the work is finished and is due before it ships. Shipping is quoted then.\nPlease reply with any questions.\n\nTJ Murphy\nhttps://tjm.art`:
     `${seller?'A print sale has been recorded. The print lab handles production and delivery.':'Thank you for collecting my work. Your payment is confirmed.'}\n\nOrder: ${order.id}\n${lines}\n\nArtwork: $${q.base}\nShipping: $${q.shipping}\nTax: $${q.tax}\nTotal paid: $${q.total} USD\n\nShip to:\n${q.address.name}\n${q.address.street1}\n${q.address.street2||''}\n${q.address.city}, ${q.address.state} ${q.address.zip}\n\n${print?'Prints ship from the print lab, separately from any originals. You will receive a shipment update.':'Originals are packed separately.'}${seller?`\nPrint-lab status: ${print.status}\nPrint-lab reference: ${print.providerId||print.request.merchantReference}\nQuoted production cost: $${print.quotedProductionCost}\nQuoted print shipping: $${print.quotedShipping}`:''}\nPlease reply with any questions.\n\nTJ Murphy\nhttps://tjm.art`;
-  const mime=[`From: Vermillion Aurora <tj@vermillionaurora.com>`,`To: ${seller?'tj@vermillionaurora.com':q.email}`,
-    `Subject: =?UTF-8?B?${encode((order.mode==='sandbox'?'[TEST] ':'')+subject)}?=`,`Message-ID: <cart-${order.id}-${type}@vermillionaurora.com>`,
+  const from=siteSender(env);
+  const mime=[`From: Vermillion Aurora <${from}>`,`To: ${seller?from:q.email}`,
+    `Subject: =?UTF-8?B?${encode((order.mode==='sandbox'?'[TEST] ':'')+subject)}?=`,`Message-ID: <cart-${order.id}-${type}@${senderDomain(env)}>`,
     'MIME-Version: 1.0','Content-Type: text/plain; charset=UTF-8','Content-Transfer-Encoding: base64','',encode(body+'\n\nShipping & returns: https://tjm.art/shipping-returns/\nPrivacy: https://tjm.art/privacy/')].join('\r\n');
   const response=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send',{method:'POST',signal:AbortSignal.timeout(20000),headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify({raw:encode(mime).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'')})});
   const result=await response.json();if(!response.ok||!result.id)throw Error('Order email needs review');return result.id;
