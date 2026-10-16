@@ -30,6 +30,37 @@
   },
   {
    "index": 2,
+   "photo": "arch-2.jpg",
+   "source": "TJ upload, Oct 15 2026 (driftwood arch with a figure at sunset)",
+   "position": 1,
+   "crop": [
+    0,
+    0,
+    5081,
+    5149
+   ],
+   "display": {
+    "base": "/display/strawberry-point-2-d1401313",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 973,
+    "fallback": "/display/strawberry-point-2-d1401313.jpg",
+    "sourceWidth": 5081,
+    "sourceHeight": 5149
+   },
+   "master": {
+    "url": "https://vermillionaurora.com/print-masters/683adbd430e8009a91a2da100e16b8a96369f827b39c2da032bc0a6c8d69adf5.jpg",
+    "sha256": "683adbd430e8009a91a2da100e16b8a96369f827b39c2da032bc0a6c8d69adf5",
+    "widthPx": 5081,
+    "heightPx": 5149
+   }
+  },
+  {
+   "index": 3,
    "photo": "IMG_1733.jpg",
    "position": 1,
    "crop": [
@@ -39,7 +70,7 @@
     4950
    ],
    "display": {
-    "base": "/display/strawberry-point-2",
+    "base": "/display/strawberry-point-3-3ad850c1",
     "widths": [
      480,
      960,
@@ -47,33 +78,9 @@
     ],
     "width": 960,
     "height": 963,
-    "fallback": "/display/strawberry-point-2.jpg",
+    "fallback": "/display/strawberry-point-3-3ad850c1.jpg",
     "sourceWidth": 4915,
     "sourceHeight": 4929
-   }
-  },
-  {
-   "index": 3,
-   "photo": "IMG_1734.jpg",
-   "position": 1,
-   "crop": [
-    21,
-    21,
-    4908,
-    4946
-   ],
-   "display": {
-    "base": "/display/strawberry-point-3",
-    "widths": [
-     480,
-     960,
-     1600
-    ],
-    "width": 960,
-    "height": 967,
-    "fallback": "/display/strawberry-point-3.jpg",
-    "sourceWidth": 4887,
-    "sourceHeight": 4925
    }
   },
   {
@@ -408,6 +415,26 @@
     "fallback": "/display/strawberry-point-set-c.jpg",
     "sourceWidth": 5489,
     "sourceHeight": 5636
+   }
+  }
+ ],
+ "retired": [
+  {
+   "photo": "IMG_1734.jpg",
+   "formerIndex": 3,
+   "note": "Duplicate photo of #1; retired Oct 15 2026. Its display files are kept.",
+   "display": {
+    "base": "/display/strawberry-point-3",
+    "widths": [
+     480,
+     960,
+     1600
+    ],
+    "width": 960,
+    "height": 967,
+    "fallback": "/display/strawberry-point-3.jpg",
+    "sourceWidth": 4887,
+    "sourceHeight": 4925
    }
   }
  ]
