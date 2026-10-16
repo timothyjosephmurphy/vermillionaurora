@@ -104,6 +104,9 @@ for(const engine of [chromium,webkit]){
       if(!mobile)await page.screenshot({path:`/tmp/paintings-wall-${engine.name()}-paul.png`});
       assert.deepEqual(state.worker.filter(p=>!p.startsWith('/checkout/cart/')),[],'no per-view Worker calls beyond the site cart');
       assert(!state.worker.some(p=>p.includes('inventory')));
+      // at rest the scene must not keep a will-change layer (Chrome would keep the zoomed-in paintings rasterised as stretched tiles)
+      await page.waitForTimeout(400);
+      assert.equal(await page.locator('[data-wall-scene]').evaluate(e=>getComputedStyle(e).willChange),'auto','no will-change at rest');
       assert.deepEqual(errors,[]);
       await context.close();
       console.log(`PASS: ${tag} all-paintings wall: ${tjWall.artworks.length}/${paulWall.artworks.length} paintings, ${Math.round(initialBytes/1024)} KB initial images, filter, inspect card, Buy, zoom sharpening, toggle`);
