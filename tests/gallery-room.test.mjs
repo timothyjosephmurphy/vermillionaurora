@@ -46,3 +46,8 @@ test('salon hanging: no overlaps, stacks within the band, every work reachable',
     for(const a of items)for(const b of items)if(a!==b&&a.room===b.room&&a.wall===b.wall){const d=Math.abs(a.x-b.x)+Math.abs(a.z-b.z);assert(!(d<(a.width+b.width)/2-.01&&Math.abs(a.y-b.y)<(a.height+b.height)/2-.01),a.id+' overlaps '+b.id);}
   assert.equal(new Set(items.map(i=>i.id)).size,items.length);
 });
+test('every work has a thumbnail tile in its room atlas, and previews never exceed 960 px',async()=>{
+  const fs=await import('node:fs');const {walkthroughAtlases}=await import('../src/data/gallery-walkthrough.mjs');
+  for(const [id,a] of Object.entries(walkthroughAtlases))assert(fs.existsSync('static'+a.fallback),id+' atlas committed');
+  for(const i of items.filter(i=>i.kind!=='plaque')){assert(i.thumb&&walkthroughAtlases[i.thumb.atlas],i.id);assert(i.sources.length&&i.sources.every(s=>s.width<=960&&!/print-masters/.test(s.src)),i.id);}
+});

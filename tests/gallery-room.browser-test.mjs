@@ -2,7 +2,7 @@ import {chromium} from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import {walkthroughRooms,walkthroughPaintingCount} from '../src/data/gallery-walkthrough.mjs';
+import {walkthroughRooms,walkthroughPaintingCount,walkthroughAtlases} from '../src/data/gallery-walkthrough.mjs';
 import {walkthroughLayout,HALL} from '../src/scripts/gallery-walkthrough-layout.mjs';
 const {rooms,items}=walkthroughLayout(walkthroughRooms);
 const origin='https://tjm.art',root=path.resolve('dist');
@@ -31,7 +31,8 @@ try{
     assert(Number(await root.getAttribute('data-paintings'))>=walkthroughPaintingCount);
     const atStart=textures.length;assert(atStart<items.length/2,`Textures load lazily (${atStart} requested at start of ${items.length})`);
     const focal=items.find(i=>i.focal);await page.waitForFunction(id=>document.querySelector('[data-gallery-room]').dataset.loadedImages>='1',null,{timeout:60000});
-    assert(textures.some(u=>focal.sources.some(s=>s.src===u)),'The entry mural loads first, from the far end of the hall');
+    assert.equal(textures[0],walkthroughAtlases.central.src,'The entry room thumbnail atlas loads first');assert(!textures.some(u=>/print-masters/.test(u)),'never the print masters');
+    await page.waitForFunction(()=>document.querySelector('[data-gallery-room]').dataset.thumbsMs,null,{timeout:60000});
     if(!mobile)await page.screenshot({path:'/tmp/walkthrough-entry.png'});
     await page.locator('[data-room-enter]').click();
     const art=items.find(i=>i.id==='meditation-at-denny-blaine')||items.find(i=>i.kind==='painting');
