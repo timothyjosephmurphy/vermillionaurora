@@ -51,7 +51,7 @@ try {
   for(const route of ['/','/gallery/','/gallery/available/','/exhibitions/paul-murphy/']){
    await page.goto(origin+route);await page.waitForTimeout(400);
    let problems=await page.evaluate(buyCueProblems);
-   if(route==='/'){assert.equal(await page.locator('.hero .featured-art').count(),0,'hero has no product card');assert.equal(await page.locator('.hero-slideshow .hero-slide').count(),2,'hero crossfade has two layers');}
+   if(route==='/'){assert.equal(await page.locator('.hero .featured-art').count(),1,'hero has the Strawberry Point card');assert.equal(await page.locator('.hero-slideshow .hero-slide').count(),2,'hero crossfade has two layers');}
    assert.deepEqual([...new Set(problems)],[],`${route} at ${width}px`);
   }
  }
