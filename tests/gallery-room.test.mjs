@@ -11,10 +11,14 @@ test('walkthrough hangs every Painting Wall work once, at true size',()=>{
   assert.equal(new Set(works.map(w=>w.id)).size,tjWall.artworks.length);
   for(const w of works){const a=tjWall.artworks.find(x=>x.id===w.id);assert(Math.abs(w.width-a.width/WALL_UNIT*.0254)<1e-9,w.id);assert.equal(w.href,a.href);}
 });
-test('one straight, mirror-symmetric line of rooms (no pinwheel); exhibitions and full-scale murals',()=>{
-  for(const r of rooms){assert.equal(r.minZ,-r.maxZ,r.id+' is centred on the axis');for(const o of r.openings){assert(['W','E'].includes(o.wall));assert.equal(o.from,-o.to,'doorways sit at wall midpoints');}}
-  const xs=[...rooms].sort((a,b)=>a.minX-b.minX);for(let i=1;i<xs.length;i++)assert(xs[i].minX>xs[i-1].maxX);
-  assert.equal(xs.findIndex(r=>r.kind==='hall'),2,'two galleries on each side of the hall');
+test('a symmetric loop of rooms around a courtyard (no dead ends, no pinwheel); exhibitions and full-scale murals',()=>{
+  const R=Object.fromEntries(rooms.map(r=>[r.ring,r]));
+  assert.equal(R.S.kind,'hall');assert.equal(R.S.minX,-R.S.maxX);assert.equal(R.N.minX,-R.N.maxX);
+  assert.equal(R.W.minX,-R.E.maxX,'side galleries mirror each other');assert.equal(R.W.maxZ-R.W.minZ,R.E.maxZ-R.E.minZ);
+  assert(R.N.minZ>R.S.maxZ,'a courtyard separates hall and north gallery');
+  assert.equal(layout.hallways.length,4);for(const r of rooms)assert.equal(layout.hallways.filter(h=>h.from===r.id||h.to===r.id).length,2,r.id+' has two exits');
+  assert.deepEqual(layout.loop,['central',R.W.id,R.N.id,R.E.id,'central']);
+  for(const h of layout.hallways)assert(Math.abs(layout.hallways.find(k=>Math.abs(k.minX+h.maxX)<1e-9&&k.minZ===h.minZ).minZ-h.minZ)<1e-9,'doorways mirror');
   assert.equal(layout.signs.length,2*layout.hallways.length);
   for(const ex of assets.exhibitions){const inRoom=items.filter(i=>i.href===ex.href&&i.kind!=='painting');assert(inRoom.some(i=>i.kind==='plaque'),ex.id);assert.equal(inRoom.filter(i=>i.kind==='photo').length,ex.photos.length);}
   const lillooet=items.find(i=>i.id==='friends-club-mural');assert(Math.abs(lillooet.width-480*.0254)<1e-9&&Math.abs(lillooet.height-108*.0254)<1e-9);
