@@ -2,14 +2,20 @@
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { catalogVersion, urlFor } from '../../catalog/catalog.mjs';
+import bookProductsData from '../../catalog/book-products.json';
+const bookProductList = Array.isArray(bookProductsData) ? bookProductsData : bookProductsData.products || [];
 const { product, metaDescription } = Astro.props;
 const manageHref = `/catalog-admin/?slug=${encodeURIComponent(product.slug)}`;
 const canonical = new URL(urlFor(product), Astro.site || 'https://tjm.art').href;
 const shareTitle = `${product.title} — ${product.artist || product.author || 'TJ Murphy'}`;
 const featuredArtist = product.artist && product.artist !== 'TJ Murphy' ? product.artist : null;
+const bookPage = product.bookGallery && !/\bpage \d/i.test(product.title) && product.bookSources?.[0]?.pages?.[0];
+// several works can share a title and a page: number them so every page title is unique
+const samePage = bookPage ? bookProductList.filter(b => b.title === product.title && b.bookSources?.[0]?.pages?.[0] === bookPage) : [];
+const bookLabel = bookPage ? `, page ${bookPage}${samePage.length > 1 ? ` (${samePage.findIndex(b => b.slug === product.slug) + 1} of ${samePage.length})` : ''}` : '';
 const pageTitle = featuredArtist
   ? `${product.title} by ${featuredArtist} | TJM.art`
-  : `${product.title}${product.bookGallery ? ' — Book gallery artwork' : ''} | TJ Murphy`;
+  : `${product.title}${bookLabel}${product.bookGallery ? ' — Book gallery artwork' : ''} | TJ Murphy`;
 const shareDescription = metaDescription || product.description || product.story?.join(' ').slice(0, 180) || shareTitle;
 const shareImageSrc = product.image?.src || product.examples?.[0]?.src;
 const shareImage = shareImageSrc ? new URL(shareImageSrc, canonical).href : null;
