@@ -29,15 +29,31 @@ const murals=[
   plaque(lillooet.id+'-plaque',lillooet.title,[lillooet.place,lillooet.sizeLabel,...lillooet.story.map(c=>`${c.title}. ${c.text}`)],lillooet.href),
   plaque(garden.id+'-plaque',garden.title,['Garden mural, Seattle · '+garden.sizeLabel,...assets.gardenStory.map(c=>`${c.title}. ${c.text}`)],garden.href)
 ];
-// position: centre, or the side of the central hall the gallery runs along.
+// Related works sit together: a series (same title apart from its number), a set photographed together, or one
+// exhibition. Only related works may share a column; everything else hangs in a single line, ordered by subject.
+const seriesKey=i=>{
+  if(i.exhibition)return 'exhibition:'+i.exhibition;
+  const set=/\/products\/(older-work-.+)-original-\d+\//.exec(i.href||'');if(set)return 'set:'+set[1];
+  const t=String(i.title).replace(/^TJ\s+/,'').replace(/:.*$/,'').replace(/\s*(—\s*study\s*)?(#\s*\d+|\((?:L|R)\)|\d+)\s*$/i,'').trim();
+  return /^Painting$|^Untitled/i.test(t)?null:'title:'+t.toLowerCase();
+};
+const SUBJECTS=[['sea',/sunset|sunrise|beach|sea\b|ocean|shore|bay|island|coast|wave|zonte|tunco|atami|puget|kihei|water|dusk|dawn|moon/i],['land',/ridge|mountain|forest|lake|cascade|rainier|tree|garden|valley|trail|field/i],['people',/portrait|self|catherine|tulsi|keiser|saylor|rfk|paul|josie|elon|ben\b|dance|guitar|figure|girl|boy|man|woman|devo|brekkie/i],['temple',/temple|mayan|burning|bass coast/i]];
+const subject=i=>{const k=SUBJECTS.findIndex(([,re])=>re.test(i.title));return k<0?SUBJECTS.length:k;};
+export function arrange(items){
+  const groups=new Map();for(const it of items){const k=seriesKey(it)||'solo:'+it.id;(groups.get(k)||groups.set(k,[]).get(k)).push(it);}
+  const list=[...groups.entries()].map(([k,g])=>{g.sort((a,b)=>String(a.title).localeCompare(String(b.title),'en',{numeric:true}));if(g[0].kind==='photo'||g.some(x=>x.kind==='plaque'))g.sort((a,b)=>(a.kind==='plaque'?-1:0)-(b.kind==='plaque'?-1:0));return {k,g,s:Math.min(...g.map(subject)),ex:g.some(x=>x.exhibition)};});
+  list.sort((a,b)=>(a.ex-b.ex)||a.s-b.s||a.g[0].title.localeCompare(b.g[0].title));
+  return list.flatMap(({k,g})=>g.map(it=>({...it,series:k.startsWith('solo:')||g.length<2?null:k})));
+}
+// The rooms run west to east in one straight line, mirrored around the central hall (no turns, no pinwheel).
 export const walkthroughRooms=[
-  {id:'central',position:'centre',kind:'hall',title:'Murals & Watercolor Pastels',galleries:['Murals','Watercolor Pastels'],items:[...murals,...works(/^Watercolor/)]},
-  {id:'north',position:'north',kind:'gallery',title:'Travels & the Pacific Northwest',galleries:['Travels','Pacific Northwest','Exhibitions: Cape Town, El Salvador, Warsaw'],
-    items:[...works(/^(Travels|Pacific Northwest)/),...exhibition('cape-town'),...exhibition('el-salvador'),...exhibition('bitcoin-film-festival-warsaw')]},
-  {id:'east',position:'east',kind:'gallery',title:'Friends, Family & Bitcoiners',galleries:['Friends','Family','Bitcoiners','Self Portraits','Exhibitions: Living Room, Studio 601, Victrola, Paul Murphy'],
-    items:[...works(/^(Friends|Family|Bitcoiners|Self Portraits)/),...exhibition('living-room'),...exhibition('studio-601'),...exhibition('victrola'),...exhibition('paul-murphy')]},
-  {id:'south',position:'south',kind:'gallery',title:'Archived Paintings',galleries:['Archived Paintings'],items:works(/^Archived Paintings/)},
-  {id:'west',position:'west',kind:'gallery',title:'Older Work',galleries:['Older Work'],items:works(/^Older Work/)}
+  {id:'archived',order:-2,kind:'gallery',title:'Archived Paintings',galleries:['Archived Paintings'],items:arrange(works(/^Archived Paintings/))},
+  {id:'people',order:-1,kind:'gallery',title:'Friends, Family & Bitcoiners',galleries:['Friends','Family','Bitcoiners','Self Portraits','Exhibitions: Living Room, Studio 601, Victrola, Paul Murphy'],
+    items:arrange([...works(/^(Friends|Family|Bitcoiners|Self Portraits)/),...exhibition('living-room'),...exhibition('studio-601'),...exhibition('victrola'),...exhibition('paul-murphy')])},
+  {id:'central',order:0,kind:'hall',title:'Watercolor Pastels',galleries:['Cormorant garden mural','Watercolor Pastels'],items:[murals[0],murals[3],...arrange(works(/^Watercolor/))]},
+  {id:'travels',order:1,kind:'gallery',title:'Travels & the Pacific Northwest',galleries:['Travels','Pacific Northwest','Friends Club mural (Lillooet)','Exhibitions: Cape Town, El Salvador, Warsaw'],
+    items:[murals[1],murals[2],...arrange([...works(/^(Travels|Pacific Northwest)/),...exhibition('cape-town'),...exhibition('el-salvador'),...exhibition('bitcoin-film-festival-warsaw')])]},
+  {id:'older',order:2,kind:'gallery',title:'Older Work',galleries:['Older Work'],items:arrange(works(/^Older Work/))}
 ];
 const placed=new Set(walkthroughRooms.flatMap(r=>r.items.map(i=>i.id)));
 export const walkthroughPaintingCount=tjWall.artworks.filter(a=>placed.has(a.id)).length;
