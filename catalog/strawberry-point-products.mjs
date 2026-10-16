@@ -9,10 +9,10 @@ export const strawberryPaintings=manifest.paintings;
 export const strawberryGroups=manifest.groups;
 export const strawberryId=p=>`strawberry-point-${p.index}`;
 export const strawberryTitle=p=>`Strawberry Point Backpacking Trip #${p.index}`;
-// Original prices (TJ, Oct 16 2026). #8–10 default $100; sizes unknown.
-export const STRAWBERRY_PRICES={4:75,5:75,6:75,7:75,8:100,9:100,10:100,11:75,12:75,13:75,14:75,15:100};
-// Measured sizes (TJ, Oct 16 2026): #4–7 are 5 × 5 in (13 × 13 cm); #8–10 and #15 are 7.5 × 7.5 in (19 × 19 cm); #11–14 are 9.75 × 9.75 in (24 × 24 cm). Measured + priced originals get integrated checkout.
-export const STRAWBERRY_SIZES={15:[7.5,7.5,19],4:[5,5,13],5:[5,5,13],6:[5,5,13],7:[5,5,13],8:[7.5,7.5,19],9:[7.5,7.5,19],10:[7.5,7.5,19],11:[9.75,9.75,24],12:[9.75,9.75,24],13:[9.75,9.75,24],14:[9.75,9.75,24]};
+// Original prices (TJ, Oct 16 2026). #8–10 default $100; #11–14 (9.75 in) raised to $200.
+export const STRAWBERRY_PRICES={4:75,5:75,6:75,7:75,8:100,9:100,10:100,11:200,12:200,13:200,14:200,15:100};
+// Measured sizes (TJ, Oct 16 2026): #1–3 are 15 × 15 in (38 × 38 cm), not for sale; #4–7 are 5 × 5 in (13 × 13 cm); #8–10 and #15 are 7.5 × 7.5 in (19 × 19 cm); #11–14 are 9.75 × 9.75 in (24 × 24 cm). Measured + priced originals get integrated checkout.
+export const STRAWBERRY_SIZES={1:[15,15,38],2:[15,15,38],3:[15,15,38],15:[7.5,7.5,19],4:[5,5,13],5:[5,5,13],6:[5,5,13],7:[5,5,13],8:[7.5,7.5,19],9:[7.5,7.5,19],10:[7.5,7.5,19],11:[9.75,9.75,24],12:[9.75,9.75,24],13:[9.75,9.75,24],14:[9.75,9.75,24]};
 const sizeOf=p=>{const d=STRAWBERRY_SIZES[p.index];return d?{width:d[0],height:d[1],unit:'in'}:null;};
 const cmOf=p=>{const d=STRAWBERRY_SIZES[p.index];return d?`${d[2]} × ${d[2]} cm`:'';};
 const shippingFor=d=>{const weight=estimatePaperParcelWeightLb({dimensions:d,checkout:{shipping:{height:2}}});
