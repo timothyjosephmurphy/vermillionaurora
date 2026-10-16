@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="afa38cec701a504e5a89";
+export const printVersion="829f11418107dcfbd17b";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -107378,24 +107378,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "165.00",
     "currency": "USD",
-    "sku": "5M144M8S18.98X20.37",
+    "sku": "5M144M8S18.98X20.17",
     "scale": 1,
     "imageSize": {
-      "width": 18.7267,
-      "height": 20.1167,
+      "width": 18.7233,
+      "height": 19.9167,
       "unit": "in"
     },
     "paperSize": {
       "width": 18.98,
-      "height": 20.37,
+      "height": 20.17,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2e62c0876db3bd980c675eebcf4ec9012a1e4196e8484d86e917645094e143e8.jpg",
-    "assetSha256": "2e62c0876db3bd980c675eebcf4ec9012a1e4196e8484d86e917645094e143e8",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d.jpg",
+    "assetSha256": "0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -107419,24 +107419,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "274.00",
     "currency": "USD",
-    "sku": "5M144M8S18DD98X20DD37F1S21DD98X23DD37J1S18DD98X20DD37G1",
+    "sku": "5M144M8S18DD98X20DD17F1S21DD98X23DD17J1S18DD98X20DD17G1",
     "scale": 1,
     "imageSize": {
-      "width": 18.7267,
-      "height": 20.1167,
+      "width": 18.7233,
+      "height": 19.9167,
       "unit": "in"
     },
     "paperSize": {
       "width": 18.98,
-      "height": 20.37,
+      "height": 20.17,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2e62c0876db3bd980c675eebcf4ec9012a1e4196e8484d86e917645094e143e8.jpg",
-    "assetSha256": "2e62c0876db3bd980c675eebcf4ec9012a1e4196e8484d86e917645094e143e8",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d.jpg",
+    "assetSha256": "0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -107456,17 +107456,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 21.98,
-        "height": 23.37,
+        "height": 23.17,
         "unit": "in"
       },
       "window": {
         "width": 18.98,
-        "height": 20.37,
+        "height": 20.17,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S18.98X20.37",
+    "baseSku": "5M144M8S18.98X20.17",
     "frame": {
       "key": "black",
       "id": 1,
@@ -107477,7 +107477,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 21.98,
-        "height": 23.37,
+        "height": 23.17,
         "unit": "in"
       },
       "glazing": {
@@ -107496,24 +107496,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "274.00",
     "currency": "USD",
-    "sku": "5M144M8S18DD98X20DD37F2S21DD98X23DD37J1S18DD98X20DD37G1",
+    "sku": "5M144M8S18DD98X20DD17F2S21DD98X23DD17J1S18DD98X20DD17G1",
     "scale": 1,
     "imageSize": {
-      "width": 18.7267,
-      "height": 20.1167,
+      "width": 18.7233,
+      "height": 19.9167,
       "unit": "in"
     },
     "paperSize": {
       "width": 18.98,
-      "height": 20.37,
+      "height": 20.17,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2e62c0876db3bd980c675eebcf4ec9012a1e4196e8484d86e917645094e143e8.jpg",
-    "assetSha256": "2e62c0876db3bd980c675eebcf4ec9012a1e4196e8484d86e917645094e143e8",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d.jpg",
+    "assetSha256": "0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -107533,17 +107533,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 21.98,
-        "height": 23.37,
+        "height": 23.17,
         "unit": "in"
       },
       "window": {
         "width": 18.98,
-        "height": 20.37,
+        "height": 20.17,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S18.98X20.37",
+    "baseSku": "5M144M8S18.98X20.17",
     "frame": {
       "key": "white",
       "id": 2,
@@ -107554,7 +107554,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 21.98,
-        "height": 23.37,
+        "height": 23.17,
         "unit": "in"
       },
       "glazing": {
@@ -107573,24 +107573,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "294.00",
     "currency": "USD",
-    "sku": "5M144M8S18DD98X20DD37F7S21DD98X23DD37J1S18DD98X20DD37G1",
+    "sku": "5M144M8S18DD98X20DD17F7S21DD98X23DD17J1S18DD98X20DD17G1",
     "scale": 1,
     "imageSize": {
-      "width": 18.7267,
-      "height": 20.1167,
+      "width": 18.7233,
+      "height": 19.9167,
       "unit": "in"
     },
     "paperSize": {
       "width": 18.98,
-      "height": 20.37,
+      "height": 20.17,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2e62c0876db3bd980c675eebcf4ec9012a1e4196e8484d86e917645094e143e8.jpg",
-    "assetSha256": "2e62c0876db3bd980c675eebcf4ec9012a1e4196e8484d86e917645094e143e8",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d.jpg",
+    "assetSha256": "0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -107610,17 +107610,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 21.98,
-        "height": 23.37,
+        "height": 23.17,
         "unit": "in"
       },
       "window": {
         "width": 18.98,
-        "height": 20.37,
+        "height": 20.17,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S18.98X20.37",
+    "baseSku": "5M144M8S18.98X20.17",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -107631,7 +107631,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 21.98,
-        "height": 23.37,
+        "height": 23.17,
         "unit": "in"
       },
       "glazing": {
@@ -107650,24 +107650,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S14.3X15.34",
+    "sku": "5M144M8S14.3X15.19",
     "scale": 0.75,
     "imageSize": {
       "width": 14.0433,
-      "height": 15.0867,
+      "height": 14.9367,
       "unit": "in"
     },
     "paperSize": {
       "width": 14.3,
-      "height": 15.34,
+      "height": 15.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/783ee3256f9a7d4c6f0b88f2a46aa1faa89fa34a2c9fff29d7c938e9f66e0c9e.jpg",
-    "assetSha256": "783ee3256f9a7d4c6f0b88f2a46aa1faa89fa34a2c9fff29d7c938e9f66e0c9e",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1.jpg",
+    "assetSha256": "a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -107691,24 +107691,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "172.00",
     "currency": "USD",
-    "sku": "5M144M8S14DD3X15DD34F1S17DD3X18DD34J1S14DD3X15DD34G1",
+    "sku": "5M144M8S14DD3X15DD19F1S17DD3X18DD19J1S14DD3X15DD19G1",
     "scale": 0.75,
     "imageSize": {
       "width": 14.0433,
-      "height": 15.0867,
+      "height": 14.9367,
       "unit": "in"
     },
     "paperSize": {
       "width": 14.3,
-      "height": 15.34,
+      "height": 15.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/783ee3256f9a7d4c6f0b88f2a46aa1faa89fa34a2c9fff29d7c938e9f66e0c9e.jpg",
-    "assetSha256": "783ee3256f9a7d4c6f0b88f2a46aa1faa89fa34a2c9fff29d7c938e9f66e0c9e",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1.jpg",
+    "assetSha256": "a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -107728,17 +107728,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 17.3,
-        "height": 18.34,
+        "height": 18.19,
         "unit": "in"
       },
       "window": {
         "width": 14.3,
-        "height": 15.34,
+        "height": 15.19,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S14.3X15.34",
+    "baseSku": "5M144M8S14.3X15.19",
     "frame": {
       "key": "black",
       "id": 1,
@@ -107749,7 +107749,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 17.3,
-        "height": 18.34,
+        "height": 18.19,
         "unit": "in"
       },
       "glazing": {
@@ -107768,24 +107768,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "172.00",
     "currency": "USD",
-    "sku": "5M144M8S14DD3X15DD34F2S17DD3X18DD34J1S14DD3X15DD34G1",
+    "sku": "5M144M8S14DD3X15DD19F2S17DD3X18DD19J1S14DD3X15DD19G1",
     "scale": 0.75,
     "imageSize": {
       "width": 14.0433,
-      "height": 15.0867,
+      "height": 14.9367,
       "unit": "in"
     },
     "paperSize": {
       "width": 14.3,
-      "height": 15.34,
+      "height": 15.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/783ee3256f9a7d4c6f0b88f2a46aa1faa89fa34a2c9fff29d7c938e9f66e0c9e.jpg",
-    "assetSha256": "783ee3256f9a7d4c6f0b88f2a46aa1faa89fa34a2c9fff29d7c938e9f66e0c9e",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1.jpg",
+    "assetSha256": "a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -107805,17 +107805,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 17.3,
-        "height": 18.34,
+        "height": 18.19,
         "unit": "in"
       },
       "window": {
         "width": 14.3,
-        "height": 15.34,
+        "height": 15.19,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S14.3X15.34",
+    "baseSku": "5M144M8S14.3X15.19",
     "frame": {
       "key": "white",
       "id": 2,
@@ -107826,7 +107826,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 17.3,
-        "height": 18.34,
+        "height": 18.19,
         "unit": "in"
       },
       "glazing": {
@@ -107845,24 +107845,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "188.00",
     "currency": "USD",
-    "sku": "5M144M8S14DD3X15DD34F7S17DD3X18DD34J1S14DD3X15DD34G1",
+    "sku": "5M144M8S14DD3X15DD19F7S17DD3X18DD19J1S14DD3X15DD19G1",
     "scale": 0.75,
     "imageSize": {
       "width": 14.0433,
-      "height": 15.0867,
+      "height": 14.9367,
       "unit": "in"
     },
     "paperSize": {
       "width": 14.3,
-      "height": 15.34,
+      "height": 15.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/783ee3256f9a7d4c6f0b88f2a46aa1faa89fa34a2c9fff29d7c938e9f66e0c9e.jpg",
-    "assetSha256": "783ee3256f9a7d4c6f0b88f2a46aa1faa89fa34a2c9fff29d7c938e9f66e0c9e",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1.jpg",
+    "assetSha256": "a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -107882,17 +107882,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 17.3,
-        "height": 18.34,
+        "height": 18.19,
         "unit": "in"
       },
       "window": {
         "width": 14.3,
-        "height": 15.34,
+        "height": 15.19,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S14.3X15.34",
+    "baseSku": "5M144M8S14.3X15.19",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -107903,7 +107903,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 17.3,
-        "height": 18.34,
+        "height": 18.19,
         "unit": "in"
       },
       "glazing": {
@@ -107922,24 +107922,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S9.61X10.31",
+    "sku": "5M144M8S9.61X10.21",
     "scale": 0.5,
     "imageSize": {
       "width": 9.3567,
-      "height": 10.05,
+      "height": 9.9533,
       "unit": "in"
     },
     "paperSize": {
       "width": 9.61,
-      "height": 10.31,
+      "height": 10.21,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/644575439b8ee984de3be6e93f1ac3859a36a7c12b5a620f7b3f782a9172eb38.jpg",
-    "assetSha256": "644575439b8ee984de3be6e93f1ac3859a36a7c12b5a620f7b3f782a9172eb38",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81.jpg",
+    "assetSha256": "3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -107963,24 +107963,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD61X10DD31F1S12DD61X13DD31J1S9DD61X10DD31G1",
+    "sku": "5M144M8S9DD61X10DD21F1S12DD61X13DD21J1S9DD61X10DD21G1",
     "scale": 0.5,
     "imageSize": {
       "width": 9.3567,
-      "height": 10.05,
+      "height": 9.9533,
       "unit": "in"
     },
     "paperSize": {
       "width": 9.61,
-      "height": 10.31,
+      "height": 10.21,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/644575439b8ee984de3be6e93f1ac3859a36a7c12b5a620f7b3f782a9172eb38.jpg",
-    "assetSha256": "644575439b8ee984de3be6e93f1ac3859a36a7c12b5a620f7b3f782a9172eb38",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81.jpg",
+    "assetSha256": "3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -108000,17 +108000,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 12.61,
-        "height": 13.31,
+        "height": 13.21,
         "unit": "in"
       },
       "window": {
         "width": 9.61,
-        "height": 10.31,
+        "height": 10.21,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9.61X10.31",
+    "baseSku": "5M144M8S9.61X10.21",
     "frame": {
       "key": "black",
       "id": 1,
@@ -108021,7 +108021,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 12.61,
-        "height": 13.31,
+        "height": 13.21,
         "unit": "in"
       },
       "glazing": {
@@ -108040,24 +108040,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD61X10DD31F2S12DD61X13DD31J1S9DD61X10DD31G1",
+    "sku": "5M144M8S9DD61X10DD21F2S12DD61X13DD21J1S9DD61X10DD21G1",
     "scale": 0.5,
     "imageSize": {
       "width": 9.3567,
-      "height": 10.05,
+      "height": 9.9533,
       "unit": "in"
     },
     "paperSize": {
       "width": 9.61,
-      "height": 10.31,
+      "height": 10.21,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/644575439b8ee984de3be6e93f1ac3859a36a7c12b5a620f7b3f782a9172eb38.jpg",
-    "assetSha256": "644575439b8ee984de3be6e93f1ac3859a36a7c12b5a620f7b3f782a9172eb38",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81.jpg",
+    "assetSha256": "3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -108077,17 +108077,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 12.61,
-        "height": 13.31,
+        "height": 13.21,
         "unit": "in"
       },
       "window": {
         "width": 9.61,
-        "height": 10.31,
+        "height": 10.21,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9.61X10.31",
+    "baseSku": "5M144M8S9.61X10.21",
     "frame": {
       "key": "white",
       "id": 2,
@@ -108098,7 +108098,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 12.61,
-        "height": 13.31,
+        "height": 13.21,
         "unit": "in"
       },
       "glazing": {
@@ -108117,24 +108117,24 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "103.00",
     "currency": "USD",
-    "sku": "5M144M8S9DD61X10DD31F7S12DD61X13DD31J1S9DD61X10DD31G1",
+    "sku": "5M144M8S9DD61X10DD21F7S12DD61X13DD21J1S9DD61X10DD21G1",
     "scale": 0.5,
     "imageSize": {
       "width": 9.3567,
-      "height": 10.05,
+      "height": 9.9533,
       "unit": "in"
     },
     "paperSize": {
       "width": 9.61,
-      "height": 10.31,
+      "height": 10.21,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/644575439b8ee984de3be6e93f1ac3859a36a7c12b5a620f7b3f782a9172eb38.jpg",
-    "assetSha256": "644575439b8ee984de3be6e93f1ac3859a36a7c12b5a620f7b3f782a9172eb38",
-    "sourceSha256": "83af905a4d9fc70fe6a9f1e6701a3b701bda410567f28a456c6553c272b2358f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81.jpg",
+    "assetSha256": "3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81",
+    "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
       "src": "https://media.vermillionaurora.com/images/Archive/IMG_1639.jpg",
@@ -108154,17 +108154,17 @@ export default {
       "color": "#fff",
       "outer": {
         "width": 12.61,
-        "height": 13.31,
+        "height": 13.21,
         "unit": "in"
       },
       "window": {
         "width": 9.61,
-        "height": 10.31,
+        "height": 10.21,
         "unit": "in"
       },
       "id": 1
     },
-    "baseSku": "5M144M8S9.61X10.31",
+    "baseSku": "5M144M8S9.61X10.21",
     "frame": {
       "key": "natural",
       "id": 7,
@@ -108175,7 +108175,7 @@ export default {
       "mouldingWidth": 0.88,
       "size": {
         "width": 12.61,
-        "height": 13.31,
+        "height": 13.21,
         "unit": "in"
       },
       "glazing": {
