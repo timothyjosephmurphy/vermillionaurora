@@ -6,6 +6,8 @@ const round = n => Math.round(n * 10000) / 10000;
 export function editionLayouts(source, original, dpi = 300, options = {}) {
   if (!Number.isSafeInteger(dpi) || dpi < 300 || !['widthPx','heightPx'].every(k => Number.isSafeInteger(source?.[k]) && source[k] > 0)) return [];
   const w = source.widthPx, h = source.heightPx;
+  // Group composites have no single original; layoutOptions.setDimensions caps them at the physical set size.
+  original = original || options.setDimensions || null;
   let factor = 1 / dpi;
   if (original) {
     if (!['in','cm'].includes(original.unit) || ![original.width,original.height].every(n => Number.isFinite(n) && n > 0)) return [];

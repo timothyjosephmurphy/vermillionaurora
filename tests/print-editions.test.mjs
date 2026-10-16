@@ -69,3 +69,7 @@ test('every generated print file matches its approved hash, paper dimensions and
     const edge=await sharp(bytes).extract({left:0,top:0,width:metadata.width,height:4}).raw().toBuffer();assert(edge.every(v=>v>=250));
   }
 });
+test('group composites never print larger than the physical set (layoutOptions.setDimensions)', () => {
+  const l = editionLayouts({widthPx:5604,heightPx:2480}, null, 300, {setDimensions:{width:15,height:6.64,unit:'in'}});
+  assert(l.length >= 1 && l.every(c => Math.max(c.image.width, c.image.height) <= 15));
+});
