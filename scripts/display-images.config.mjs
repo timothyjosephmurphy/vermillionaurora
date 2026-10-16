@@ -24,7 +24,7 @@ export const SIZES = [
   ['gallery-product-image', '(max-width: 980px) 164px, 224px'],
   ['featured-slide', '(max-width: 980px) 90vw, 340px'],
   ['portrait-preview', '(max-width: 600px) 80vw, 340px'],
-  ['ex-slide', '(max-width: 600px) 75vw, 390px'],
+  ['ex-slide', '(max-width: 600px) 75vw, 60vw'],
   ['exhibition-index-grid', '(max-width: 600px) 90vw, 400px'],
   ['books-grid', '(max-width: 600px) 90vw, 320px'],
   ['ex-track', '(max-width: 600px) 70vw, 520px'],
