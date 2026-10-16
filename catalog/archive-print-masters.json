@@ -355,8 +355,12 @@
     "id": "archived-painting-53",
     "title": "Painting #53",
     "url": "https://media.vermillionaurora.com/images/Archive/IMG_1641.jpg",
-    "sha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
-    "widthPx": 4051,
+    "sha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
+    "widthPx": 4001,
+    "derivedFrom": {
+      "sha256": "728a0d5c4bbcec72c17c4349b7003c41b519dd4bf0b818c098300ea541c30a39",
+      "edit": "crop 50px dark edge from left; no other change"
+    },
     "heightPx": 7675
   },
   {
