@@ -3,6 +3,7 @@
 // one on the north. Walking through the doorways you circle back to the hall; there are no dead ends. The two side
 // galleries share one length and the hall and north gallery share one length, each just long enough for the art.
 // The visitor starts at the hall's south wall facing north, with the entry mural centred on the hall's north wall.
+export const WINDOW={width:2,sill:.9,head:3};
 export const HALL={height:4.6,eyeHeight:1.62,wall:.2,door:2.4,doorHeight:2.7,passage:2.2,band:[.5,3.9],gap:.5,stackGap:.14,margin:.45,maxGap:1.1};
 const DEPTH={hall:12,gallery:8};
 const yawFor=(nx,nz)=>Math.atan2(-nx,-nz);
@@ -66,22 +67,26 @@ const ORDER=['N','S','W','E'];
 function fitRoom(room,shape,minL){
   const focal=room.items.find(i=>i.focal),list=room.items.filter(i=>i!==focal),cols=columns(list);
   for(let L=Math.max(minL,8,focal?focal.width+6:0);L<200;L+=.25){
-    const {rect,openings}=shape(L),[x0,x1,,z1]=rect;let segs=wallSegments(rect,openings);
+    const {rect,openings,windows=[]}=shape(L),[x0,x1,,z1]=rect;let segs=wallSegments(rect,openings);
+    for(const w of windows)segs=segs.flatMap(g=>g.wall===w.wall?cut(g,w.from-.3,w.to+.3):[g]);
     if(focal){const cx=(x0+x1)/2,half=focal.width/2+1.2;segs=segs.flatMap(g=>g.wall==='N'?cut(g,cx-half,cx+half):g.wall==='S'?cut(g,cx-2,cx+2):[g]);}
     segs.sort((a,b)=>ORDER.indexOf(a.wall)-ORDER.indexOf(b.wall));
     const groups=assign(cols,segs);if(!groups)continue;
     const items=place(groups,segs,room);
     if(focal){const cx=(x0+x1)/2;items.unshift({...focal,room:room.id,roomTitle:room.title,x:cx,y:Math.max(1.75,focal.height/2+.6),z:z1-.035,yaw:yawFor(0,-1),inward:{x:0,z:-1},wall:'N'});}
-    return {L,room:{id:room.id,title:room.title,kind:room.kind,ring:room.ring,galleries:room.galleries,minX:x0,maxX:x1,minZ:rect[2],maxZ:z1,openings,count:room.items.length},items};
+    return {L,room:{id:room.id,title:room.title,kind:room.kind,ring:room.ring,galleries:room.galleries,minX:x0,maxX:x1,minZ:rect[2],maxZ:z1,openings,windows,count:room.items.length},items};
   }
   throw Error(room.title+': could not fit');
 }
-const COURT=4;
+const COURT=3.5;
 export function walkthroughLayout(rooms){
   const by=Object.fromEntries(rooms.map(r=>[r.ring,r])),d=HALL.door/2,Dh=DEPTH.hall,Dg=DEPTH.gallery,link=HALL.passage+2*HALL.wall;
   // hall (S) spans z∈[0,Dh]; north room spans z∈[Zn-Dg/2, Zn+Dg/2]; side rooms run z∈[0, Zn+Dg/2]
-  const ew=(r,L,Zc,D)=>({rect:[-L/2,L/2,Zc-D/2,Zc+D/2],openings:[{wall:'W',from:Zc-d,to:Zc+d},{wall:'E',from:Zc-d,to:Zc+d}]});
-  const side=(r,L,X,Zn,west)=>({rect:[X,X+Dg,0,L],openings:[{wall:west?'E':'W',from:Dh/2-d,to:Dh/2+d},{wall:west?'E':'W',from:Zn-d,to:Zn+d}]});
+  // windows on the courtyard walls: two mirrored ones in the hall's and north gallery's long walls (at ±L/4, either
+// side of the entry mural) and one centred on the courtyard in each side gallery; art never hangs across a window
+  const win=(wall,c)=>({wall,from:c-WINDOW.width/2,to:c+WINDOW.width/2,sill:WINDOW.sill,head:WINDOW.head});
+  const ew=(r,L,Zc,D)=>({rect:[-L/2,L/2,Zc-D/2,Zc+D/2],openings:[{wall:'W',from:Zc-d,to:Zc+d},{wall:'E',from:Zc-d,to:Zc+d}],windows:[win(r.ring==='S'?'N':'S',-L/4),win(r.ring==='S'?'N':'S',L/4)]});
+  const side=(r,L,X,Zn,west)=>({rect:[X,X+Dg,0,L],openings:[{wall:west?'E':'W',from:Dh/2-d,to:Dh/2+d},{wall:west?'E':'W',from:Zn-d,to:Zn+d}],windows:[win(west?'E':'W',(Dh+Zn-Dg/2)/2)]});
   let Lx=0,Lz=Dh+COURT+Dg,out;
   for(let guard=0;guard<40;guard++){
     const Zn=Lz-Dg/2,X=Lx/2+link;
