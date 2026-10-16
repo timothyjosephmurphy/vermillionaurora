@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="c42bb40936254b345e28";
+export const printVersion="a89804f00638728a5f52";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -107376,7 +107376,7 @@ export default {
     "productId": "archived-painting-301",
     "title": "Catherine #1 — Large print",
     "artworkTitle": "Catherine #1",
-    "amount": "165.00",
+    "amount": "160.00",
     "currency": "USD",
     "sku": "5M144M8S18.98X20.17",
     "scale": 1,
@@ -107417,7 +107417,7 @@ export default {
     "productId": "archived-painting-301",
     "title": "Catherine #1 — Large print — Black frame",
     "artworkTitle": "Catherine #1",
-    "amount": "274.00",
+    "amount": "269.00",
     "currency": "USD",
     "sku": "5M144M8S18DD98X20DD17F1S21DD98X23DD17J1S18DD98X20DD17G1",
     "scale": 1,
@@ -107485,7 +107485,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "165.00"
+    "unframedAmount": "160.00"
   },
   "print-archived-painting-301-full-frame-white": {
     "id": "print-archived-painting-301-full-frame-white",
@@ -107494,7 +107494,7 @@ export default {
     "productId": "archived-painting-301",
     "title": "Catherine #1 — Large print — White frame",
     "artworkTitle": "Catherine #1",
-    "amount": "274.00",
+    "amount": "269.00",
     "currency": "USD",
     "sku": "5M144M8S18DD98X20DD17F2S21DD98X23DD17J1S18DD98X20DD17G1",
     "scale": 1,
@@ -107562,7 +107562,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "165.00"
+    "unframedAmount": "160.00"
   },
   "print-archived-painting-301-full-frame-natural": {
     "id": "print-archived-painting-301-full-frame-natural",
@@ -107571,7 +107571,7 @@ export default {
     "productId": "archived-painting-301",
     "title": "Catherine #1 — Large print — Natural wood frame",
     "artworkTitle": "Catherine #1",
-    "amount": "294.00",
+    "amount": "289.00",
     "currency": "USD",
     "sku": "5M144M8S18DD98X20DD17F7S21DD98X23DD17J1S18DD98X20DD17G1",
     "scale": 1,
@@ -107639,7 +107639,7 @@ export default {
         "name": "Premium Clear"
       }
     },
-    "unframedAmount": "165.00"
+    "unframedAmount": "160.00"
   },
   "print-archived-painting-301-medium": {
     "id": "print-archived-painting-301-medium",
@@ -107689,7 +107689,7 @@ export default {
     "productId": "archived-painting-301",
     "title": "Catherine #1 — Medium print — Black frame",
     "artworkTitle": "Catherine #1",
-    "amount": "172.00",
+    "amount": "171.00",
     "currency": "USD",
     "sku": "5M144M8S14DD3X15DD19F1S17DD3X18DD19J1S14DD3X15DD19G1",
     "scale": 0.75,
@@ -107766,7 +107766,7 @@ export default {
     "productId": "archived-painting-301",
     "title": "Catherine #1 — Medium print — White frame",
     "artworkTitle": "Catherine #1",
-    "amount": "172.00",
+    "amount": "171.00",
     "currency": "USD",
     "sku": "5M144M8S14DD3X15DD19F2S17DD3X18DD19J1S14DD3X15DD19G1",
     "scale": 0.75,
@@ -108115,7 +108115,7 @@ export default {
     "productId": "archived-painting-301",
     "title": "Catherine #1 — Small print — Natural wood frame",
     "artworkTitle": "Catherine #1",
-    "amount": "103.00",
+    "amount": "102.00",
     "currency": "USD",
     "sku": "5M144M8S9DD61X10DD21F7S12DD61X13DD21J1S9DD61X10DD21G1",
     "scale": 0.5,
