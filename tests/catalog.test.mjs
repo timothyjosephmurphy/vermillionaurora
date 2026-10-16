@@ -77,7 +77,7 @@ import {deriveParcel} from '../catalog/shipping.mjs';
 test('dimensioned available paintings receive parcels from the flat-at-12-inch rule',()=>{
  const originals=products.filter(p=>p.type==='painting'&&p.listing?.status==='available'&&p.listing?.price);
  const missing=originals.filter(p=>!p.dimensions);
- assert.deepEqual(missing.map(p=>p.id).sort(),['archived-painting-1','archived-painting-2','archived-painting-307','archived-painting-img-1555']);
+ assert.deepEqual(missing.map(p=>p.id).sort(),['archived-painting-1','archived-painting-2','archived-painting-307','archived-painting-img-1555',...[4,5,6,7,8,9,10,11,12,13,14].map(n=>`strawberry-point-${n}`)].sort());
  for(const p of missing){assert.equal(p.checkout.mode,'inquiry');assert(!checkout[p.id],'Unmeasured originals must not receive an invented shipping parcel');}
  const ready=originals.filter(p=>p.dimensions);
  assert.equal(ready.length,68+64); // #22 priced and #53 measured Oct 15; plus 64 sized Older Work originals (Oct 2026); 56 existing originals and 11 archive originals (img-1608 original withdrawn) with recorded dimensions
