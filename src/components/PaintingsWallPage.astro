@@ -61,7 +61,8 @@ const groups=[['Commission packages',unsized.filter(i=>i.kind==='Commission pack
   .wall-immersive .wall-tools{justify-content:center;bottom:max(8px,env(safe-area-inset-bottom));left:8px;right:8px}
   [data-inspecting] .wall-canvas{clip-path:inset(0 0 308px 0)}
   [data-inspecting][data-inspection-side="true"] .wall-canvas{clip-path:inset(0 260px 64px 0)}
-  .wall-scene{position:absolute;top:0;left:0;transform-origin:0 0;user-select:none;will-change:transform;background:radial-gradient(ellipse at 50% 10%,#fbf8f2,#ebe6dd)}
+  .wall-scene.is-moving{will-change:transform}
+  .wall-scene{position:absolute;top:0;left:0;transform-origin:0 0;user-select:none;background:radial-gradient(ellipse at 50% 10%,#fbf8f2,#ebe6dd)}
   .wall-floor{position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(#baa181,#dfc4a0);border-top:14px solid #f8f6ef;box-shadow:0 -1px 0 #d3cabc}
   .wall-art{box-sizing:border-box;position:absolute;display:flex;align-items:center;justify-content:center;background:#fffefb;border-style:solid;border-color:#262321;box-shadow:3px 5px 5px #29201940,inset 0 0 2px #7776;text-decoration:none;color:inherit;cursor:pointer;outline-offset:5px}
   .wall-art:focus-visible{outline:2px solid #d35a3b}

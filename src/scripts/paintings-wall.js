@@ -52,9 +52,14 @@ function initializeWall(){
     panel.querySelector('[data-wall-product]').href=art.href;
     updateBuy();
   }
+  let restTimer=0;
   function render(){
     frame=0;
     scene.style.transform=`translate(${transform.x}px,${transform.y}px) scale(${transform.scale})`;
+    // Chrome keeps a will-change:transform layer rasterised at the scale it had when the hint was set, so a zoomed
+    // painting stays a stretched tile even after its 1600 px file loads. Hint only while moving; once the view rests
+    // the hint is dropped and the browser re-rasterises at the current zoom (sharp).
+    scene.classList.add('is-moving');clearTimeout(restTimer);restTimer=setTimeout(()=>{if(!pointers.size&&!animation)scene.classList.remove('is-moving');else schedule();},180);
     zoomLabel.textContent=`${Math.round(transform.scale/fit.scale*100)}%`;
     root.querySelector('[data-wall-minus]').disabled=transform.scale<=fit.scale*1.001;
     root.querySelector('[data-wall-plus]').disabled=transform.scale>=limitAt({x:view.width/2,y:view.height/2}).scale*.999;
