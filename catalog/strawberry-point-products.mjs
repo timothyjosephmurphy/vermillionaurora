@@ -2,7 +2,7 @@ import manifest from './strawberry-point.json' with {type:'json'};
 import {estimatePaperParcelWeightLb} from './shipping-estimates.mjs';
 // Strawberry Point Backpacking Trip (fall 2026): one page per painting ("Strawberry Point Backpacking Trip #n", numbered across the
 // photos in order, left to right and top to bottom), plus one page for each photo that shows several paintings.
-// Medium is watercolor pastel (TJ, Oct 16 2026); titles are not recorded and there are no prints yet. Originals #4–14 are for sale (TJ, Oct 16 2026);
+// Medium is watercolor pastel (TJ, Oct 16 2026); titles are not recorded. Prints for #4–15 never exceed the original size (TJ, Oct 16 2026). Originals #4–14 are for sale (TJ, Oct 16 2026);
 // with no measured size they follow the unmeasured-original rule: priced, Buy goes to inquiry, no invented parcel. #1–3 stay by inquiry.
 export const STRAWBERRY_GALLERY='/gallery/strawberry-point/';
 export const strawberryPaintings=manifest.paintings;
@@ -29,7 +29,7 @@ const paintings=strawberryPaintings.map(p=>{const g=groupOf(p),title=strawberryT
   ...(dims?{dimensions:dims,...(price?{checkout:{mode:'integrated',shipping:shippingFor(dims)}}:{})}:{}),
   id:strawberryId(p),slug:strawberryId(p),title,
   description:`${title}, a painting by TJ Murphy from his Strawberry Point backpacking trip on the Pacific coast of the Olympic Peninsula.`,
-  facts:[{label:'Series',value:'Strawberry Point Backpacking Trip, painted fall 2026'},{label:'Index',value:`#${p.index}`},...(dims?[{label:'Size',value:`${dims.width} × ${dims.height} in (${cmOf(p)})`},{label:'Details',value:'Title not yet recorded'}]:[{label:'Details',value:MISSING}]),{label:'Original',value:price?`Available · $${Number(price.amount)}`:'Not yet for sale · inquire'},...(p.master?[{label:"Print master",value:`On file (${p.master.widthPx} × ${p.master.heightPx} px); ${p.master.widthPx<2000?'too small for prints, original only':'prints need the painting size'}`}]:[]),
+  facts:[{label:'Series',value:'Strawberry Point Backpacking Trip, painted fall 2026'},{label:'Index',value:`#${p.index}`},...(dims?[{label:'Size',value:`${dims.width} × ${dims.height} in (${cmOf(p)})`},{label:'Details',value:'Title not yet recorded'}]:[{label:'Details',value:MISSING}]),{label:'Original',value:price?`Available · $${Number(price.amount)}`:'Not yet for sale · inquire'},...(p.master&&p.index>3?[{label:'Prints',value:'Archival prints on watercolor paper, never larger than the original (TJ, Oct 16 2026)'}]:p.master?[{label:'Print master',value:'On file; prints need the painting size'}]:[]),
     ...(g?[{label:'Photographed with',value:`${strawberryGroupTitle(g)} (position ${p.position})`}]:[])],
   story:[],image:image(p.display,`${title}, a painting by TJ Murphy`,title),
   inquiry:{label:'Inquire about this painting',note:''},
