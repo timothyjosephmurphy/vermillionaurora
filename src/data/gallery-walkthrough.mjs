@@ -63,6 +63,9 @@ for(const r of walkthroughRooms)r.items=r.items.filter(i=>i.kind==='mural'||i.ki
 // renderer then upgrades nearby works to ≤960 px previews (never the print masters).
 export const walkthroughAtlases=Object.fromEntries(Object.entries(atlases).map(([id,a])=>[id,{src:remote(a.src),fallback:a.src,width:a.width,height:a.height}]));
 for(const r of walkthroughRooms){const a=atlases[r.id];for(const i of r.items){if(i.sources)i.sources=i.sources.filter(s=>s.width<=960&&!/print-masters/.test(s.src));const q=a?.rects[i.id];if(q)i.thumb={atlas:r.id,rect:q};}}
+// 3D gallery only: the Friends Club mural uses a 4x upscale (3528 px) so it stays sharp at 12 m wide; every other page keeps the original photo.
+const friendsClubUpscaled={width:3528,src:'/walkthrough/friends-club-mural-upscaled-3528-3fd8d748ff.webp'};
+for(const r of walkthroughRooms)for(const i of r.items)if(i.id==='friends-club-mural')i.sources=sources([friendsClubUpscaled]);
 const placed=new Set(walkthroughRooms.flatMap(r=>r.items.map(i=>i.id)));
 export const walkthroughPaintingCount=tjWall.artworks.filter(a=>placed.has(a.id)).length;
 const missing=tjWall.artworks.filter(a=>!placed.has(a.id));

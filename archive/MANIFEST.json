@@ -4,30 +4,6 @@
  "r2Bucket": "tjm-images",
  "r2": [
   {
-   "from": "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-1219.webp",
-   "to": "archive/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-1219.webp",
-   "bytes": 245196,
-   "sha256": "aa85373bff73289067a1fa4faa2f99854c85f7b30dd9e6e96c56b86429872034"
-  },
-  {
-   "from": "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-160.webp",
-   "to": "archive/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-160.webp",
-   "bytes": 5338,
-   "sha256": "f4c70ff71f955654ab7a3a6ce6d96dcc08dd8c1672cbfd3a6195d63e3acf7d6b"
-  },
-  {
-   "from": "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-480.webp",
-   "to": "archive/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-480.webp",
-   "bytes": 44720,
-   "sha256": "cb4224a754f5882f843b100fab35fa41c923f9568a5e679c979ea0d7c50c40da"
-  },
-  {
-   "from": "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-960.webp",
-   "to": "archive/display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-960.webp",
-   "bytes": 164414,
-   "sha256": "fe69d47c34295a36cf30de572a80f85a558afc7dce26446078440f95619f4a65"
-  },
-  {
    "from": "wall-paintings/older-work-pitchers-original-1-db79a95d6d-320.webp",
    "to": "archive/wall-paintings/older-work-pitchers-original-1-db79a95d6d-320.webp",
    "bytes": 5650,
@@ -82,54 +58,25 @@
    "sha256": "f4d90ee47b50a5c2dd3f276de87d72d911cdc085d5212a0b9e40ada2a46d3bbc"
   }
  ],
- "repo": [
-  {
-   "from": "static/print-masters/048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8.jpg",
-   "to": "archive/print-masters/048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8.jpg",
-   "bytes": 652515,
-   "sha256": "048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8"
-  },
-  {
-   "from": "static/print-masters/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299.jpg",
-   "to": "archive/print-masters/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299.jpg",
-   "bytes": 2954872,
-   "sha256": "471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299"
-  },
-  {
-   "from": "static/print-masters/622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd.jpg",
-   "to": "archive/print-masters/622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd.jpg",
-   "bytes": 3290606,
-   "sha256": "622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd"
-  },
-  {
-   "from": "static/print-masters/b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682.jpg",
-   "to": "archive/print-masters/b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682.jpg",
-   "bytes": 2694267,
-   "sha256": "b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682"
-  },
-  {
-   "from": "static/print-masters/c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf.jpg",
-   "to": "archive/print-masters/c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf.jpg",
-   "bytes": 706596,
-   "sha256": "c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf"
-  },
-  {
-   "from": "static/print-masters/d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1.jpg",
-   "to": "archive/print-masters/d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1.jpg",
-   "bytes": 7159105,
-   "sha256": "d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1"
-  },
-  {
-   "from": "static/print-masters/d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d.jpg",
-   "to": "archive/print-masters/d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d.jpg",
-   "bytes": 5333719,
-   "sha256": "d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d"
-  },
-  {
-   "from": "static/print-masters/f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371.jpg",
-   "to": "archive/print-masters/f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371.jpg",
-   "bytes": 6580130,
-   "sha256": "f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371"
-  }
- ]
+ "repo": [],
+ "restored": {
+  "date": "2026-10-15",
+  "note": "Restored after broader re-check: superseded print masters may back past/in-flight supplier orders and reprints; old Punto display images may be linked by shared OG cards/search.",
+  "r2": [
+   "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-1219.webp",
+   "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-160.webp",
+   "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-480.webp",
+   "display/sunrise-punto-el-zonte-hostel-2026-ce8dd4d1f7-960.webp"
+  ],
+  "repo": [
+   "static/print-masters/048eebc3affaba865bf1d57e15dcc26d46f477e9fb927ee335dc3839ef736cd8.jpg",
+   "static/print-masters/471f4055e18ee7f9422add20a89221debe8565030b98ff28b73bdc96d7208299.jpg",
+   "static/print-masters/622b2cc38869e7ac05bbb2afbf396dc24928a1bfb3e95a647a0182cf518885dd.jpg",
+   "static/print-masters/b6331f33825f6de762aa689e78ea1a0bdeee3fc2bcc7b09983046bd29c9c3682.jpg",
+   "static/print-masters/c20bf512a21727830812b7c21a99aff83dd05a94676af2f90574d8bdcdc49bbf.jpg",
+   "static/print-masters/d132dae4612489b43ba30df1734ff46a9e8f7e8a8e2dc65ceadfca939cbc3ab1.jpg",
+   "static/print-masters/d6721a54d35c2bb9ab01b36ef2d1c4adca5bba86a57b4bd728192996b443791d.jpg",
+   "static/print-masters/f9892124a0056a57cd94b46dff6f957e606ee32d8f4ae5e7e320c89ff1083371.jpg"
+  ]
+ }
 }
