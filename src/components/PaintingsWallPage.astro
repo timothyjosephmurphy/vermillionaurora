@@ -44,12 +44,12 @@ const groups=[['Commission packages',unsized.filter(i=>i.kind==='Commission pack
   </style>
   <style is:global>
   .print-wall-page{background:#f7f3ec;color:#29241f}
-  .print-wall-main{max-width:1880px;margin:0 auto;padding:34px 24px 48px}
-  .wall-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:0 0 22px}
+  .print-wall-main{max-width:1880px;margin:0 auto;padding:10px 24px 48px}
+  .wall-intro{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 8px}.wall-intro>div{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
   .wall-back{font-size:12px;text-decoration:none;color:#7c6554}
-  .wall-intro h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(38px,4vw,64px);line-height:1.05;margin:7px 0 0;letter-spacing:-.025em}
-  .wall-intro>p{max-width:360px;font-size:13px;line-height:1.6;color:#736858;margin:0 0 2px}
-  .wall-viewport{position:relative;height:min(78svh,900px);min-height:460px;overflow:clip;isolation:isolate;overscroll-behavior:contain;background:radial-gradient(ellipse at 50% 15%,#faf8f3,#e9e3d8);border:1px solid #d9d0c3;border-radius:4px;cursor:grab}
+  .wall-intro h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(22px,2vw,28px);line-height:1.1;margin:0;letter-spacing:-.015em}
+  .wall-intro>p{max-width:420px;font-size:11px;line-height:1.4;color:#736858;margin:0;text-align:right}
+  .wall-viewport{position:relative;height:max(320px,calc(100svh - var(--wall-top,180px) - 12px));overflow:clip;isolation:isolate;overscroll-behavior:contain;background:radial-gradient(ellipse at 50% 15%,#faf8f3,#e9e3d8);border:1px solid #d9d0c3;border-radius:4px;cursor:grab}
   .wall-canvas{position:absolute;inset:0;touch-action:none}
   .wall-viewport:focus-visible{outline:2px solid #c64e32;outline-offset:4px}
   .wall-viewport.is-dragging{cursor:grabbing}
@@ -99,17 +99,17 @@ const groups=[['Commission packages',unsized.filter(i=>i.kind==='Commission pack
   .wall-index ul{columns:3;list-style:none;padding:10px 0 0;margin:0}
   .wall-index li{break-inside:avoid;margin:0 0 12px;line-height:1.5}.wall-index a{color:inherit;text-underline-offset:3px}
   @media(max-width:760px){
-    .print-wall-main{padding:22px 12px 30px}.wall-intro{display:block;margin:0 5px 16px}.wall-intro>p{font-size:11px;max-width:330px;margin-top:10px}
-    .wall-viewport{height:70svh;min-height:420px}.wall-tools{left:8px;right:8px;bottom:8px;gap:6px;flex-wrap:wrap;justify-content:center}
+    .print-wall-main{padding:6px 8px 30px}.wall-intro{display:block;margin:0 4px 6px}.wall-intro>div{gap:8px 10px}.wall-intro>p{display:none}
+    .wall-tools{left:8px;right:8px;bottom:8px;gap:6px;flex-wrap:wrap;justify-content:center}
     .wall-picker{flex-basis:100%;display:flex;justify-content:center}.wall-picker select{max-width:230px;font-size:11px;min-height:38px}
     .wall-zoom-tools button{font-size:11px;min-height:38px;padding:5px 10px}
     .wall-caption{display:block;font-size:9px;margin-left:5px}.wall-caption p+p{margin-top:5px}.wall-index ul{columns:2}
   }
-  .wall-switch{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;padding:0;list-style:none}
+  .wall-switch{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}.wall-switch a{min-height:30px!important;padding:4px 12px!important}
   .wall-switch a,.wall-filter button{display:inline-flex;align-items:center;min-height:36px;padding:6px 14px;border:1px solid #d3c8b8;border-radius:999px;background:#fffdf8;color:#4a3d30;font:500 12px Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer}
   .wall-switch a[aria-current="page"],.wall-filter button[aria-pressed="true"]{background:#2f2922;border-color:#2f2922;color:#fffaf2}
   .wall-switch a:focus-visible,.wall-filter button:focus-visible{outline:2px solid #c64e32;outline-offset:2px}
-  .wall-filter{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 12px}
+  .wall-filter{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 6px}.wall-filter button{min-height:30px;padding:4px 12px}
   .wall-filter>span{font:11px Inter,system-ui,sans-serif;color:#7c6c5a;margin-right:4px}
   .wall-art.is-dimmed{opacity:.14;pointer-events:none;box-shadow:none}
   .wall-unsized{border-top:1px solid #ded5c8;padding:16px 0;font-size:12px;color:#705b47}

@@ -5,11 +5,18 @@ function initializeWall(){
   const {artworks:all,world}=JSON.parse(root.querySelector('[data-wall-data]').textContent);
   let artworks=all;
   const viewport=root.querySelector('[data-wall-viewport]'),scene=root.querySelector('[data-wall-scene]');
+  // size the wall to the rest of the screen so the fitted view shows every painting on landing
+  const sizeToScreen=()=>{if(document.body.classList.contains('wall-immersive')||document.fullscreenElement)return;viewport.style.removeProperty('height');const top=viewport.getBoundingClientRect().top+scrollY;root.style.setProperty('--wall-top',`${Math.round(top)}px`);};
+  // on narrow screens the wall is much wider than tall: shrink the box to the fitted wall plus room for the controls
+  const sizeToScreen2=()=>{sizeToScreen();if(innerWidth<760&&!document.body.classList.contains('wall-immersive')){const h=viewport.clientWidth*.96*world.height/world.width+150;if(h<viewport.clientHeight)viewport.style.height=`${Math.round(h)}px`;}};
+  sizeToScreen2();
+  // fit leaves a strip at the bottom for the zoom controls so no painting starts hidden behind them
+  const fitOf=v=>{const f=fitView({width:v.width,height:Math.max(120,v.height-60)},world);return f;};
   const panel=root.querySelector('[data-wall-panel]'),buy=panel.querySelector('[data-wall-buy]');
   const status=root.querySelector('[data-wall-status]'),zoomLabel=root.querySelector('[data-wall-zoom]');
   const picker=root.querySelector('[data-wall-picker]'),byId=new Map(all.map(art=>[art.id,art]));
   const imageStates=new Map(all.map(art=>[art.id,{img:root.querySelector(`[data-art-image="${art.id}"]`),width:art.sources[0].width,loading:false,failed:new Set()}]));
-  let view={width:viewport.clientWidth,height:viewport.clientHeight},fit=fitView(view,world),transform={...fit};
+  let view={width:viewport.clientWidth,height:viewport.clientHeight},fit=fitOf(view),transform={...fit};
   let focused=null,dismissed=null,frame=0,imageTimer=0,activeLoads=0,busy=false,capabilities=null;
   let focusPoint={x:view.width/2,y:view.height/2};
   let immersive=false,animation=0,animationResolve=null,navigating=false,inspecting=null,inspectionReady=false;
@@ -90,7 +97,7 @@ function initializeWall(){
     immersive=enabled;document.body.classList.toggle('wall-immersive',enabled);root.dataset.immersive=String(enabled);
     outside.forEach(el=>{el.inert=enabled;});
     const after=viewport.getBoundingClientRect(),offset={x:before.left-after.left,y:before.top-after.top};
-    view={width:viewport.clientWidth,height:viewport.clientHeight};fit=fitView(view,world);
+    view={width:viewport.clientWidth,height:viewport.clientHeight};fit=fitOf(view);
     transform={...transform,x:transform.x+offset.x,y:transform.y+offset.y};
     focusPoint={x:focusPoint.x+offset.x,y:focusPoint.y+offset.y};
     for(const [id,p] of pointers)pointers.set(id,{x:p.x+offset.x,y:p.y+offset.y});
@@ -209,12 +216,17 @@ function initializeWall(){
     if(anchor&&event.button===0&&!event.metaKey&&!event.ctrlKey&&!event.shiftKey&&!event.altKey){event.preventDefault();const art=byId.get(anchor.dataset.wallArt);if(inspecting===art.id&&inspectionReady)visitPainting(art);else inspectPainting(art);}
   },true);
   viewport.addEventListener('dragstart',event=>event.preventDefault());
+  // a plain wheel or two-finger trackpad scroll moves the page; only a pinch (ctrl+wheel, or Safari gesture events) zooms
   viewport.addEventListener('wheel',event=>{
-    if(event.target.closest('.wall-tools'))return;
+    if(event.target.closest('.wall-tools')||!event.ctrlKey)return;
     event.preventDefault();
     const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?view.height:1);
     zoom(Math.exp(-clamp(delta,-100,100)*(event.ctrlKey ? .008 : .0025)),point(event));
   },{passive:false});
+  let gestureScale=1;
+  viewport.addEventListener('gesturestart',event=>{event.preventDefault();gestureScale=1;});
+  viewport.addEventListener('gesturechange',event=>{event.preventDefault();const f=event.scale/gestureScale;gestureScale=event.scale;const r=viewport.getBoundingClientRect();zoom(f,{x:event.clientX-r.left,y:event.clientY-r.top});});
+  viewport.addEventListener('gestureend',event=>event.preventDefault());
   viewport.addEventListener('keydown',event=>{
     if(event.target.closest('[data-wall-ui]'))return;
     if(['+','=','-','0','Home','Escape','ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key))event.preventDefault();else return;
@@ -246,7 +258,7 @@ function initializeWall(){
     const wasFit=Math.abs(transform.scale-fit.scale)<.001;
     const center={x:(view.width/2-transform.x)/transform.scale,y:(view.height/2-transform.y)/transform.scale};
     focusPoint={x:focusPoint.x*next.width/view.width,y:focusPoint.y*next.height/view.height};
-    view=next;fit=fitView(view,world);
+    view=next;fit=fitOf(view);
     const scale=clamp(transform.scale,fit.scale,maxScale());
     if(inspecting){const target=inspectionView(byId.get(inspecting),view);root.dataset.inspectionSide=String(target.side);focusPoint=target.center;transform=target.transform;schedule();return;}
     change(wasFit?{...fit}:focused?paintingView(focused,view):{scale,x:view.width/2-center.x*scale,y:view.height/2-center.y*scale});
