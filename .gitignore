@@ -11,3 +11,7 @@ static/print-samples/
 static/print-editions/
 static/gallery-wall/
 .cache/
+
+# Deep-zoom wall previews (1920/2880 px) live only in R2 (img.tjm.art); rebuild with scripts/build-paintings-wall-assets.mjs
+static/wall-paintings/*-1920.webp
+static/wall-paintings/*-2880.webp
