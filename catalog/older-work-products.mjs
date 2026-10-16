@@ -38,14 +38,14 @@ const groupProducts = olderWorkGroups.map(g => {
     ]:[
       {label:'Paintings',value:`${g.members.length}, shown in the order photographed`},
       ...g.members.map((m,i)=>({label:`${g.layout==='stack'?['Top','Middle','Bottom'][i]||i+1:i+1}`,value:memberLine(m)+(originalPrice(m)?` · original $${Number(originalPrice(m).amount)}`:'')})),
-      {label:'Originals',value:'Each original is sold separately; prints reproduce the whole set'}
+      {label:'Originals',value:'Each original is sold separately (listed below); prints reproduce the whole set'}
     ],
     story:single?[]:['A print reproduces the whole set as photographed, side by side on white.'],
     image:g.preview?{src:`https://tjm.art${olderWorkPreview(g,1600)}`,fullSrc:olderWorkPreview(g,1600),alt:olderWorkAlt(g),width:g.preview.width,height:g.preview.height,caption:title}:{src:g.master.url,fullSrc:olderWorkPreview(g,1600),alt:olderWorkAlt(g),width:g.master.widthPx,height:g.master.heightPx,caption:title},
     gallery:single?[]:g.members.map(m=>({...m.display,alt:`${m.name}, a painting by TJ Murphy`,caption:m.name})),
     checkout:single&&originalPrice(m0)?{mode:'integrated',shipping:shippingFor(m0.dimensions)}:{mode:'inquiry'},inquiry:{label:single?'Inquire about this painting':'Ask about these paintings',note:''},surface:'Paper',dimensionOrder:'width-height',
     back:{href:'/gallery/older-work/',label:'← Back to Older Work'},
-    olderWork:{order:g.order,members:g.members.map(({name,index,dimensions,year})=>({name,index,dimensions,year})),master:g.master}
+    olderWork:{order:g.order,members:g.members.map(({name,index,dimensions,year,display},i)=>({name,index,dimensions,year,display,originalId:!single&&originalPrice(g.members[i])?originalId(g,i):null,price:originalPrice(g.members[i])})),master:g.master}
   };
 });
 export default [...groupProducts, ...originals];

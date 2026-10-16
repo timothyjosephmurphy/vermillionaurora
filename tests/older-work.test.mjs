@@ -44,6 +44,7 @@ test('Older Work gallery is linked from the gallery and shows one tile per page'
     assert.doesNotMatch(tile.text(),/USD/);
   }
   assert($('a[href="/gallery/older-work/"]').length===0||true);
+  assert.equal($('.older-originals').length,0);
   assert(load(fs.readFileSync('dist/gallery/index.html','utf8'))('a[href="/gallery/older-work/"]').length);
 });
 
@@ -52,5 +53,17 @@ test('no contact details or back photographs are published for Older Work',()=>{
   for(const file of pages){
     const html=fs.readFileSync(file,'utf8');
     assert.doesNotMatch(html,/471.?0639|206.?471|Need processing|IMG_1\d{3}/,file);
+  }
+});
+
+test('Older Work set pages list each priced original with its price and own page, never "not for sale"',()=>{
+  for(const p of olderWork){
+    const $=load(fs.readFileSync(`dist/products/${p.id}/index.html`,'utf8'));
+    assert.doesNotMatch($('.product-availability').text(),/not for sale/i,p.id);
+    for(const o of olderWorkOriginals.filter(o=>o.back.href===`/products/${p.id}/`)){
+      const row=$(`.older-originals-list li[data-original-id="${o.id}"]`);assert.equal(row.length,1,o.id);
+      assert(row.find(`a[href="/products/${o.id}/"]`).length);
+      if(o.listing.status==='available'){assert.match(row.text(),new RegExp('\\$'+Number(o.listing.price.amount)));assert.equal(row.find('.older-original-buy').text(),'Buy');}
+    }
   }
 });
