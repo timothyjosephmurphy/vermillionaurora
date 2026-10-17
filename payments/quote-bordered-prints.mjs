@@ -1,6 +1,6 @@
 // Read-only provider quotes for the unframed outer-border editions. Output: publishable retail snapshots only.
 // --shipping=<productId>/<sizeKey> instead quotes one ready unframed print to a placeholder address in ZIP 98122
-// (print, shipping and supplier tax). Never submits, validates or pays for an order.
+// (print, shipping and supplier tax). Never submits, validates or pays for an order. Test print only.
 import assert from 'node:assert/strict';
 import {randomBytes} from 'node:crypto';
 import config from '../catalog/print-config.mjs';
