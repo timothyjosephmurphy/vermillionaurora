@@ -6,7 +6,6 @@ import {captureDetails,ledgerFor,fulfillmentRecord} from './sales-records.mjs';
 import {queueQuickbooks,queueQuickbooksCost} from './quickbooks-sync.mjs';
 import {syncEnabled as quickbooksEnabled,costSyncEnabled} from './quickbooks-core.mjs';
 import {costSources} from './quickbooks-costs.mjs';
-import {recordTax} from './checkout-pricing.mjs';
 import {newShippingJob,fulfillSale} from './shipping-fulfillment.mjs';
 import {sendCartEmail} from './cart-email.mjs';
 import {newPrintJob,fulfillPrints,printFulfillmentRecord} from './print-fulfillment.mjs';
@@ -78,7 +77,7 @@ export class CartOrder extends DurableObject {
     const d=this.read();if(!d)return {status:'missing'};
     return {orderId:d.id,status:d.status,expiresAt:d.expiresAt,method:d.method,methods:d.methods,
       ...((['pending','processing'].includes(d.status)||d.method==='bitcoin'&&['settling','paid'].includes(d.status))&&d.url?{url:d.url}:{}),
-      ...(d.quote?{quote:{items:d.quote.items.map(publicCartItem),base:d.quote.base,shipping:d.quote.shipping,tax:d.quote.tax,total:d.quote.total,
+      ...(d.quote?{quote:{items:d.quote.items.map(publicCartItem),base:d.quote.base,shipping:d.quote.shipping,tax:d.quote.tax,total:d.quote.total,...(d.quote.salesTax?{taxRate:d.quote.salesTax.rate}:{}),
         shipments:[...d.quote.shipments.map(s=>({id:s.slug,title:s.title,shipping:s.shipping,carrier:s.carrier,service:s.service})),...(d.quote.printQuote?[{id:'prints',title:'Fine-art prints',shipping:d.quote.printQuote.shipping,carrier:d.quote.printQuote.carrier,service:d.quote.printQuote.service}]:[])]},
         }:{}),
       ...(d.heldIds?{heldIds:d.heldIds}:{}),
@@ -331,7 +330,7 @@ export class CartOrder extends DurableObject {
       title:q.items.map(i=>i.title).join('; '),slug:'',currency:'USD',items:q.items,shipments,...(d.printJob?{printFulfillment:printFulfillmentRecord(d.printJob)}:{}),itemAmount:q.base,shipping:q.shipping,tax:q.tax,gross:q.total,
       ...(d.method==='paypal'?{paypalFee:details.fee??null,paypalNet:details.net??null}:{}),providerFee:details.fee??null,feeCurrency:details.feeCurrency||'',netCurrency:details.netCurrency||'',
       ...(q.printCode?{printCode:{kind:q.printCode.kind,hash:q.printCode.hash.slice(0,12),...(q.printCode.kind==='collector'&&q.printCode.suffix?{suffix:q.printCode.suffix}:{})},listAmount:q.items.reduce((s,i)=>s+Number(i.listAmount||i.amount)*(i.quantity||1),0).toFixed(2)}:{}),
-      buyerName:q.address.name,buyerEmail:q.email,shippingAddress:q.address,taxCalculationId:q.taxCalculationId,
+      buyerName:q.address.name,buyerEmail:q.email,shippingAddress:q.address,...(q.salesTax?{salesTax:q.salesTax}:{}),
       ...(q.items.some(i=>i.type==='deposit')?{commissionDeposit:q.items.filter(i=>i.type==='deposit').map(i=>({id:i.id,...i.commission}))}:{}),
       ...(d.method==='bitcoin'?{invoiceId:d.providerId,bitcoinPayments:details.bitcoinPayments||[]} : {}),
       fulfillment:{inventoryPublished:true,taxRecorded:!!d.taxRecorded,labelStatus,
@@ -351,7 +350,8 @@ export class CartOrder extends DurableObject {
     // QuickBooks: queue the completed sale (idempotent per order). The sync itself runs in its own Durable Object
     // and never blocks fulfillment; a failed enqueue is retried on the next pass.
     if(!this.read().quickbooksQueued&&quickbooksEnabled(this.env)&&['square','bitcoin'].includes(d.method))try{await queueQuickbooks(this.env,this.receipt());this.save({...this.read(),quickbooksQueued:true});}catch(error){console.error('QuickBooks queue failed',d.id,error.message);done=false;}
-    if(!d.taxRecorded)try{await recordTax(this.env,d.quote.taxCalculationId,d.captureId);this.save({...this.read(),taxRecorded:true});}catch{done=false;}
+    // The Washington rate, location code and tax amount live on the order quote (salesTax); no external tax record is written.
+    if(!d.taxRecorded)this.save({...this.read(),taxRecorded:true});
     for(let i=0;i<d.jobs.length;i++)try {
       const job=this.read().jobs[i];
       const complete=await fulfillSale(this.env,{state:'sold',order_id:`cart:${d.id}`,capture_id:d.captureId,slug:job.quote.slug},job,async next=>{

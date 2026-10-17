@@ -25,5 +25,9 @@ try{
   assert.equal(q.quote.base,(ids.reduce((s,id)=>s+Math.round(Number(prints[id].amount)*100),0)/100).toFixed(2));
   assert(Number(q.quote.shipping)>0);assert.deepEqual(q.quote.items.map(i=>i.id).sort(),[...ids].sort());
   assert(q.quote.items.some(i=>i.frame&&i.mat),'Framed print must quote with frame and mat');
+  // Washington DOR sales tax: Seattle (location 1726) on prints plus shipping, never $0.
+  const taxable=Math.round(Number(q.quote.base)*100)+Math.round(Number(q.quote.shipping)*100);
+  assert(Number(q.quote.taxRate)>=0.065,'Seattle quote must carry the WA DOR rate');
+  assert.equal(Math.round(Number(q.quote.tax)*100),Math.floor((taxable*Math.round(Number(q.quote.taxRate)*1e6)+500000)/1e6),'WA tax must be rate × (prints + shipping)');
   console.log(`PASS: ${all.length} live print prices match; unframed + framed quote with shipping/tax OK. No payment started, no print submitted.`);
 }finally{if(order){const r=await api('cancel',order);assert.equal(r.status,'cancelled');console.log('Quote cancelled.');}}

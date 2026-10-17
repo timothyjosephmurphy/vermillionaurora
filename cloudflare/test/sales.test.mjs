@@ -59,7 +59,7 @@ it('never exports sandbox transactions into live storage',async()=>{
 it('stores the receipt atomically with sold state even when the accounting service is unavailable',async()=>{
   const stub=env.PAINTING_STOCK.getByName(crypto.randomUUID());objects.push(stub);
   await stub.initialize('painting-portrait-in-green');await stub.reserve('hold');
-  await stub.bindOrder('hold','ORDER',{title:'Chase Toole',base:'20.00',shipping:'6.01',tax:'0.00',total:'26.01',taxCalculationId:'taxcalc_1',address:{name:'Buyer'},quotedAt:Date.now()});
+  await stub.bindOrder('hold','ORDER',{title:'Chase Toole',base:'20.00',shipping:'6.01',tax:'0.00',total:'26.01',address:{name:'Buyer'},quotedAt:Date.now()});
   await runInDurableObject(stub,instance=>{instance.env={...instance.env,SALES_LEDGER:{getByName:()=>({record:async()=>{throw Error('Unavailable')}})}};});
   expect(await stub.complete('ORDER','CAPTURE',{paidAt:'2026-09-29T09:30:00Z',fee:'1.40',net:'24.61',buyerEmail:'buyer@example.test'})).toBe(true);
   expect(await runInDurableObject(stub,async instance=>{try{await instance.archiveSale();return '';}catch(error){return error.message;}})).toBe('Unavailable');

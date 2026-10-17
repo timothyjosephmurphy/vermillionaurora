@@ -61,6 +61,8 @@ export async function cartCheckout(request,env) {
     return reply(await order.publicStatus());
   } catch(error) {
     console.error('Cart checkout failed:',action,error.message);
+    // A Washington address whose sales tax cannot be found blocks payment with an address message (never a $0 tax).
+    if(action==='quote'&&error?.code==='TAX_ADDRESS')return reply({error:error.message,code:'TAX_ADDRESS'},422);
     if(action==='hold'&&error.message==='Checkout has already started.')return reply({error:'Checkout has already started.',code:'CHECKOUT_STARTED'},409);
     const reservationError=/^(Your cart reservation expired|Your cart changed while calculating shipping|An original in your cart is no longer reserved)/.test(error.message||'');
     const bitcoinPermissionError=action==='status'&&/^BTCPay API (401|403)$/.test(error.message||'');

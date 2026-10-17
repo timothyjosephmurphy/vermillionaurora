@@ -8,11 +8,12 @@ import {cartCheckout} from '../cart-checkout.mjs';
 import {priceCart} from '../checkout-pricing.mjs';
 import {backfillCheckoutSale} from '../historical-sales.mjs';
 import {bitcoinWebhook} from '../bitcoin-checkout.mjs';
+import {isDor,dorReply} from './dor-mock.mjs';
 const ids=['honeybadger-and-cub-with-genesis-block','painting-portrait-in-green'].sort();
 const address={name:'Test Buyer',street1:'123 Main St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
 const config={CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CHECKOUT_SLUGS:ids.join(','),PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://shop.example.test',SHIPPO_AUTO_LABEL_ENABLED:'false'};
 let paypalOrders,invoices,squarePayments,calls,failCreate,failCapture,failRelease,failInvoiceRead,objects,shipCount,mailCount;
-function quote(){const items=ids.map(id=>({id,type:'original',quantity:1,title:catalog[id].title,amount:catalog[id].amount})),base=items.reduce((s,i)=>s+Number(i.amount),0).toFixed(2);return {catalogVersion,items,base,shipping:'12.00',tax:'5.00',total:(Number(base)+17).toFixed(2),email:'buyer@example.test',address,taxCalculationId:'taxcalc_CART',quotedAt:Date.now(),shipments:items.map((i,n)=>({slug:i.id,title:i.title,base:i.amount,shipping:'6.00',parcel:{length:16,width:12,height:1,weight:1},packaging:'flat',address,carrier:'UPS',service:'Ground',rateId:`RATE${n}`,quotedAt:Date.now()}))};}
+function quote(){const items=ids.map(id=>({id,type:'original',quantity:1,title:catalog[id].title,amount:catalog[id].amount})),base=items.reduce((s,i)=>s+Number(i.amount),0).toFixed(2);return {catalogVersion,items,base,shipping:'12.00',tax:'5.00',total:(Number(base)+17).toFixed(2),email:'buyer@example.test',address,quotedAt:Date.now(),shipments:items.map((i,n)=>({slug:i.id,title:i.title,base:i.amount,shipping:'6.00',parcel:{length:16,width:12,height:1,weight:1},packaging:'flat',address,carrier:'UPS',service:'Ground',rateId:`RATE${n}`,quotedAt:Date.now()}))};}
 beforeEach(async()=>{
   paypalOrders=new Map();invoices=[];squarePayments=new Map();calls=[];objects=[];failCreate=failCapture=failRelease=failInvoiceRead=false;shipCount=mailCount=0;
   for(const id of ids){const stock=env.PAINTING_STOCK.getByName(id);objects.push(stock);await runInDurableObject(stock,(_,ctx)=>{ctx.storage.sql.exec('DELETE FROM stock');ctx.storage.sql.exec('DELETE FROM shipping_job');ctx.storage.sql.exec('DELETE FROM sale_receipt');return ctx.storage.deleteAlarm();});}
@@ -45,8 +46,7 @@ beforeEach(async()=>{
       const invoice=invoices.find(i=>i.id===url.pathname.split('/')[6]);if(!invoice)throw Error('Unknown invoice');return Response.json(url.pathname.endsWith('/payment-methods')?[{currency:'BTC',paymentMethodId:'BTC',payments:invoice.payments}]:invoice);
     }
     if(url.pathname==='/shipments/')return Response.json({rates:[{object_id:`RATE${shipCount++}`,currency:'USD',amount:'6.00',provider:'UPS',servicelevel:{name:'Ground'}}],extra:{}});
-    if(url.pathname==='/v1/tax/calculations') {let total=Number(body.get('shipping_cost[amount]'));for(const [key,value] of body)if(/^line_items\[\d+\]\[amount\]$/.test(key))total+=Number(value);return Response.json({id:'taxcalc_CART',currency:'usd',amount_total:total+500});}
-    if(url.pathname==='/v1/tax/transactions/create_from_calculation')return Response.json({id:'tax_CART'});
+    if(isDor(url))return dorReply();
     if(url.hostname==='oauth2.googleapis.com')return Response.json({access_token:'FAKE'});
     if(url.hostname==='gmail.googleapis.com')return Response.json({id:'EMAIL'+mailCount++});
     if(url.pathname==='/transactions/'){return Response.json({object_id:'TX'+calls.filter(c=>c.url.includes('/transactions/')).length,test:true,status:'SUCCESS',label_url:'https://labels.example.test/label.pdf',tracking_number:'TRACK',tracking_url_provider:'https://ups.example.test/track'});}
@@ -125,8 +125,9 @@ it('quotes separate parcels and one tax calculation with all items, without rese
   const items=quote().items.filter(i=>i.id!== 'painting-portrait-in-green'); // The pilot has insured shipping, tested separately by insurance tests.
   items.push({...items[0],id:'el-zonte-at-sunrise',amount:catalog['el-zonte-at-sunrise'].amount});
   const q=await priceCart({...env,...config},items,address,'buyer@example.test');
-  expect(q.shipments).toHaveLength(2);expect(q.shipping).toBe('12.00');expect(q.tax).toBe('5.00');
-  expect(calls.filter(c=>c.url.endsWith('/v1/tax/calculations'))).toHaveLength(1);expect(calls.at(-1).body.get('line_items[1][reference]')).toBe('el-zonte-at-sunrise');
+  expect(q.shipments).toHaveLength(2);expect(q.shipping).toBe('12.00');
+  const taxable=Math.round(Number(q.base)*100)+1200;expect(q.salesTax.taxable).toBe((taxable/100).toFixed(2));expect(q.tax).toBe((Math.floor((taxable*105500+500000)/1e6)/100).toFixed(2));
+  expect(calls.filter(c=>isDor(c.url))).toHaveLength(1);expect(q.items.map(i=>i.id)).toContain('el-zonte-at-sunrise');
   for(const id of ids)expect(await env.PAINTING_STOCK.getByName(id).status()).toBe('available');expect(paypalOrders.size).toBe(0);
 });
 it('reserves every original against competing carts and legacy checkout, with conditional cleanup',async()=>{
@@ -157,7 +158,7 @@ it('recovers a lost Square create reply with the same token and idempotency key,
   await order.refresh();expect((await read(order)).status).toBe('paid');expect(squarePayments.size).toBe(1);
   await order.refresh();expect(squarePayments.size).toBe(1);
   expect(calls.filter(c=>c.url==='https://connect.squareupsandbox.com/v2/payments')).toHaveLength(2);
-  expect(calls.filter(c=>c.url.endsWith('/create_from_calculation'))).toHaveLength(1);
+  expect(calls.filter(c=>isDor(c.url))).toHaveLength(0);
   const d=await read(order),ledger=env.SALES_LEDGER.getByName(`sandbox:${d.paidAt.slice(0,7)}`);objects.push(ledger);
   const receipt=await runInDurableObject(ledger,(_,ctx)=>JSON.parse(ctx.storage.sql.exec('SELECT data FROM sales WHERE id=?','payment:square:SQUAREPAY0').one().data));
   expect(receipt.provider).toBe('square');expect(receipt.gross).toBe(quote().total);expect(receipt.providerFee).toBe('2.00');
@@ -167,7 +168,7 @@ it('keeps locks after a lost capture response, settles once, records one sale/ta
   expect((await order.capture()).status).toBe('capturing');for(const slug of ids)expect(await env.PAINTING_STOCK.getByName(slug).reserve('other')).toBe(false);
   failCapture=false;
   await order.refresh();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
-  expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(1);expect(calls.filter(c=>c.url.endsWith('/create_from_calculation'))).toHaveLength(1);expect(mailCount).toBe(1);
+  expect(calls.filter(c=>c.url.endsWith('/capture'))).toHaveLength(1);expect(calls.filter(c=>isDor(c.url))).toHaveLength(0);expect(mailCount).toBe(1);
   const d=await read(order);expect(d.taxRecorded).toBe(true);expect(d.customerMail.status).toBe('sent');
   for(const slug of ids){expect(await env.PAINTING_STOCK.getByName(slug).status()).toBe('sold');expect(await runInDurableObject(env.PAINTING_STOCK.getByName(slug),(_,ctx)=>ctx.storage.sql.exec('SELECT count(*) AS n FROM sale_receipt').one().n)).toBe(0);}
   const ledger=env.SALES_LEDGER.getByName(`sandbox:${d.paidAt.slice(0,7)}`);objects.push(ledger);
@@ -289,7 +290,7 @@ it('accepts both website domains in production and echoes the caller origin',asy
 it('buys and tracks two parcel labels once while recording the payment only once',async()=>{
   const {order}=await setup('paypal',{SHIPPO_AUTO_LABEL_ENABLED:'true'});await order.start('paypal');approve();await order.capture();await order.refresh();await order.refresh();
   expect(calls.filter(c=>c.url==='https://api.goshippo.com/transactions/')).toHaveLength(2);
-  expect((await read(order)).jobs.map(j=>j.status)).toEqual(['ready','ready']);expect(calls.filter(c=>c.url.endsWith('/create_from_calculation'))).toHaveLength(1);expect(mailCount).toBe(3);
+  expect((await read(order)).jobs.map(j=>j.status)).toEqual(['ready','ready']);expect(calls.filter(c=>isDor(c.url))).toHaveLength(0);expect(mailCount).toBe(3);
   const messages=calls.filter(c=>c.url.includes('gmail.googleapis.com')).map(c=>atob(c.body.raw.replaceAll('-','+').replaceAll('_','/')));expect(messages.filter(m=>m.includes('To: buyer@example.test'))).toHaveLength(1);
 });
 it('checks out a 50% commission deposit alone: no shipping, stock or labels; linked to the request; seller and buyer emails',async()=>{

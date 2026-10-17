@@ -43,6 +43,7 @@ async function bitcoinRequest(request,env) {
     return json({orderId,...result});
   } catch(error) {
     console.error('Bitcoin checkout failed',error.message);
+    if (error?.code==='TAX_ADDRESS') return json({error:error.message,code:'TAX_ADDRESS'},422);
     return json({error:'Could not start Bitcoin checkout. Please try again shortly.'},503);
   }
 }

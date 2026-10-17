@@ -39,7 +39,7 @@ The checked-in production configuration sets `SQUARE_MODE=live`, `SQUARE_CHECKOU
 
 The production deployment checks Square authentication, an active USD location enabled for credit card processing, and the matching enabled webhook subscription without taking payment. Missing credentials keep the Square option hidden and are reported by verification. Successful live Square payments use the existing reservation, tax recording, fulfillment, sales records, and customer email flow. The sandbox no-fulfillment guard cannot apply in live mode.
 
-Stripe Tax continues to calculate checkout tax. The public cart does not offer a new PayPal checkout. Saved PayPal order recovery, return handling, and webhooks remain supported. Sandbox cards cannot be used in production; any deliberate live payment uses a real card and has normal fulfillment effects.
+Washington sales tax is calculated from the Washington Department of Revenue rate lookup (see `cloudflare/wa-sales-tax.mjs`); other US destinations are not taxed. The public cart does not offer a new PayPal checkout. Saved PayPal order recovery, return handling, and webhooks remain supported. Sandbox cards cannot be used in production; any deliberate live payment uses a real card and has normal fulfillment effects.
 
 ## Local verification
 

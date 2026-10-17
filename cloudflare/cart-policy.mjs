@@ -25,7 +25,7 @@ const paypalFixture=env=>env.PAYPAL_TEST_FIXTURE==='true'&&!!env.PAYPAL_MERCHANT
 export function paymentMethods(env,id) {
   if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS||!env.PAINTING_STOCK||!env.SALES_LEDGER||!env.SALES_ARCHIVE)return [];
   const print=Object.hasOwn(prints,id)?prints[id]:null;
-  if(!env.STRIPE_SECRET_KEY||!['live','sandbox'].includes(env.CHECKOUT_MODE))return [];
+  if(!['live','sandbox'].includes(env.CHECKOUT_MODE))return [];
   if(Object.hasOwn(deposits,id))return depositMethods(env);
   if(print) {
     if(print.testOnly&&env.CHECKOUT_MODE!=='sandbox')return [];

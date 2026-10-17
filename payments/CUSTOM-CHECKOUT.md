@@ -2,13 +2,13 @@
 
 The product page calls the `vermillion-commissions` Worker. One SQLite Durable Object per stable product ID serializes PayPal and Bitcoin reservations. `cloudflare/checkout-catalog.mjs` is generated from `catalog/products.json` by `npm run build`; never edit it by hand or scrape prices from HTML.
 
-A buyer enters a US shipping address, receives a Shippo shipping quote plus a Stripe Tax calculation, then approves the full USD total with the selected provider. Server-side reservation and total checks prevent concurrent purchase of an original. Existing orders retain their original price, shipping, tax, address, and fulfillment snapshot even if the catalog changes. New pages send a catalog hash; mismatches reject new quote/create requests with a reload message. Payment returns and verified webhooks do not depend on the latest catalog hash.
+A buyer enters a US shipping address, receives a Shippo shipping quote plus Washington sales tax from the Department of Revenue rate lookup (WA destinations only: rate × artwork, framing and shipping; ZIP-only fallback; an unresolved WA address blocks payment), then approves the full USD total with the selected provider. Server-side reservation and total checks prevent concurrent purchase of an original. Existing orders retain their original price, shipping, tax, address, and fulfillment snapshot even if the catalog changes. New pages send a catalog hash; mismatches reject new quote/create requests with a reload message. Payment returns and verified webhooks do not depend on the latest catalog hash.
 
 A confirmed payment immediately marks the Durable Object sold. `/inventory/status` supplies live status to the website independently of whether checkout is enabled. Sales never rewrite GitHub HTML or wait for a deployment. The recovery alarm archives receipts, records tax, fulfills shipping, and notifies the seller. It retains retries when a provider is unavailable. Never clear a `capturing` lock before reconciling its provider payment.
 
 ## Production configuration
 
-Keep credentials in Cloudflare secrets: PayPal client ID/secret, merchant ID and webhook ID; Shippo token and shipping origin; Stripe Tax secret; Gmail OAuth values; and BTCPay credentials when enabled. The production Worker no longer needs `GITHUB_TOKEN`. Sandbox continues to reject that credential as a configuration guard.
+Keep credentials in Cloudflare secrets: PayPal client ID/secret, merchant ID and webhook ID; Shippo token and shipping origin; Gmail OAuth values; and BTCPay credentials when enabled. The production Worker no longer needs `GITHUB_TOKEN`. Sandbox continues to reject that credential as a configuration guard.
 
 `PAYPAL_CHECKOUT_ENABLED` and `PAYPAL_CHECKOUT_SLUGS` control new PayPal purchases. Bitcoin uses its separate existing enable flag and slug allowlist. Pausing new purchases does not interrupt pending returns or webhook reconciliation. The existing production pilot is still only `painting-portrait-in-green`; this migration does not expand it or enable Bitcoin.
 
