@@ -1,5 +1,5 @@
 // Replace a painting's picture on the live site without a deploy.
-// Usage: node scripts/swap-image.mjs <slug> <photo> [--master] [--keep-ratio] [--dry-run]
+// Usage: node scripts/swap-image.mjs <slug> <photo> [--master] [--keep-ratio] [--fit-widths] [--dry-run]
 //   (image-proportional print artworks, and --keep-ratio, keep the photo's own proportions)
 //   1. Crops <photo> (EXIF-rotated) to the painting's recorded proportions, centred. Never pads:
 //      it only cuts away the excess on one axis.
@@ -14,6 +14,8 @@
 //      than the new master has (below minimumDpi) are dropped from that artwork's variants.
 //      Until the Phase 3 D1 catalog exists this is a repo change: rebuild the edition files
 //      (node scripts/build-edition-print-assets.mjs --only=<id>), requote, then commit and merge.
+//   --fit-widths  a width larger than the cropped photo is written at the photo's own width (never upscaled)
+//      instead of being left unchanged, so a tighter crop never leaves a stale larger image behind.
 //   --dry-run writes the derivatives to .cache/swap-<slug>/ and uploads/purges nothing.
 // Needs R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY (see scripts/lib/r2.mjs).
 import { execFileSync } from 'node:child_process';
@@ -25,8 +27,8 @@ import { QUALITY, DEFAULT_QUALITY } from './display-images.config.mjs';
 import { putObject } from './lib/r2.mjs';
 import { imageUrl } from './lib/image-keys.mjs';
 const [slug, photo] = process.argv.slice(2).filter(a => !a.startsWith('--'));
-const master = process.argv.includes('--master'), dry = process.argv.includes('--dry-run');
-if (!slug || !photo) { console.error('Usage: node scripts/swap-image.mjs <slug> <photo> [--master] [--dry-run]'); process.exit(2); }
+const master = process.argv.includes('--master'), dry = process.argv.includes('--dry-run'), fit = process.argv.includes('--fit-widths');
+if (!slug || !photo) { console.error('Usage: node scripts/swap-image.mjs <slug> <photo> [--master] [--keep-ratio] [--fit-widths] [--dry-run]'); process.exit(2); }
 const product = products.find(p => p.slug === slug || p.id === slug);
 if (!product) throw Error(`No catalog product with slug ${slug}`);
 const map = JSON.parse(await readFile('scripts/display-images.json', 'utf8'));
@@ -55,8 +57,8 @@ console.log(`${slug}: photo ${W}x${H} cropped to ${cw}x${ch} (ratio ${ratio.toFi
 const outDir = `.cache/swap-${slug}`; await mkdir(outDir, { recursive: true });
 const done = [], skipped = [];
 for (const [key, { w, quality }] of [...keys].sort((a, b) => a[1].w - b[1].w)) {
-  if (w > cw) { skipped.push(key); continue; }
-  const data = await sharp(crop).resize({ width: w }).webp({ quality, effort: 6 }).toBuffer();
+  if (w > cw && !fit) { skipped.push(key); continue; }
+  const data = await sharp(crop).resize({ width: Math.min(w, cw) }).webp({ quality, effort: 6 }).toBuffer();
   await writeFile(`${outDir}/${key.split('/').pop()}`, data);
   if (!dry) await putObject(key, data);
   done.push(key);
