@@ -6,6 +6,7 @@ import {cartItems,catalogVersion,keyHash,paymentMethods} from '../cart-policy.mj
 import {priceCart} from '../checkout-pricing.mjs';
 import {prodigiEnvironment,quotePrints} from '../prodigi-api.mjs';
 import {printApi} from '../print-api.mjs';
+import {isDor,dorReply} from './dor-mock.mjs';
 const id='print-painting-portrait-in-green-medium',art='painting-portrait-in-green';
 const item={id,type:'print',productId:art,title:'Chase Toole — Medium print',amount:'80.00',sku:'GLOBAL-FAP-12X16',scale:.75,imageSize:{width:9,height:11.25,unit:'in'},paperSize:{width:12,height:16,unit:'in'},paper:'Enhanced matte',assetUrl:'https://media.vermillionaurora.com/prints/approved.pdf',attributes:{},quantity:2};
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
@@ -29,8 +30,7 @@ beforeEach(()=>{
     if(u.pathname.startsWith('/v2/checkout/orders/')){
       if(u.pathname.endsWith('/capture')){payment.status='COMPLETED';payment.purchase_units[0].payments={captures:[{id:'PRINTCAPTURE',status:'COMPLETED',amount:payment.purchase_units[0].amount,create_time:'2026-09-29T12:00:00Z'}]};}return Response.json(payment);
     }
-    if(u.pathname==='/v1/tax/calculations'){let total=Number(body.get('shipping_cost[amount]'));for(const [key,value] of body)if(/^line_items\[\d+\]\[amount\]$/.test(key))total+=Number(value);return Response.json({id:'taxcalc_PRINT',currency:'usd',amount_total:total+500});}
-    if(u.pathname==='/v1/tax/transactions/create_from_calculation')return Response.json({id:'tax_PRINT'});
+    if(isDor(u))return dorReply();
     if(u.hostname==='gmail.googleapis.com')return Response.json({id:`MAIL${mailCount++}`});
     throw Error(`Unexpected external request: ${u.origin}${u.pathname}`);
   }));
@@ -57,8 +57,8 @@ it('never exposes a sandbox-only print through live payment methods',()=>{
   expect(paymentMethods({...env,...settings,CHECKOUT_MODE:'live',PRODIGI_ENV:'live',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:id},id)).toEqual([]);
 });
 it('quotes quantities and one tax calculation without calling Shippo or placing a vendor order',async()=>{
-  const {quote}=await setup();expect(quote.base).toBe('160.00');expect(quote.shipping).toBe('7.00');expect(quote.total).toBe('172.00');expect(quote.shipments).toEqual([]);
-  expect(calls.find(c=>c.url.endsWith('/v1/tax/calculations')).body.get('line_items[0][amount]')).toBe('16000');
+  const {quote}=await setup();expect(quote.base).toBe('160.00');expect(quote.shipping).toBe('7.00');expect(quote.tax).toBe('17.62');expect(quote.total).toBe('184.62');expect(quote.shipments).toEqual([]);
+  expect(quote.salesTax).toMatchObject({loccode:'1726',rate:'0.1055',taxable:'167.00',amount:'17.62'});expect(calls.filter(c=>isDor(c.url))).toHaveLength(1);
   expect(orders.size).toBe(0);expect(calls.some(c=>c.url.includes('shippo'))).toBe(false);
 });
 it('rejects a changed paper measurement before quoting or taking payment',async()=>{

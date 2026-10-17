@@ -13,7 +13,7 @@ const receipt = (over = {}) => ({ kind: 'sale', status: 'COMPLETED', provider: '
     { id: 'print-painting-portrait-in-green-small', type: 'print', title: 'Chase Toole — Small print', amount: '10.00', listAmount: '35.00', priceCode: 'owner', quantity: 2 },
     { id: 'deposit-small-landscape-12x15', type: 'deposit', title: 'Commission deposit', amount: '125.00', quantity: 1, commission: { packageTitle: 'Landscape 12 × 15' } }
   ],
-  printCode: { kind: 'owner', hash: 'abcdef123456' }, shipping: '7.95', tax: '34.07', gross: '387.02', taxCalculationId: 'taxcalc_123', ...over });
+  printCode: { kind: 'owner', hash: 'abcdef123456' }, shipping: '7.95', tax: '34.07', gross: '387.02', salesTax: { state: 'WA', collected: true, source: 'wa-dor', rate: '0.1055', loccode: '1726', jurisdiction: 'SEATTLE', basis: 'address', amount: '34.07' }, ...over });
 
 test('maps a completed sale to an edition-neutral, USD, non-taxable SalesReceipt with tax, shipping and discount lines', () => {
   const p = salesReceiptPayload(receipt(), refs);
@@ -32,6 +32,11 @@ test('maps a completed sale to an edition-neutral, USD, non-taxable SalesReceipt
   assert.ok(p.Line.every(l => Math.round(l.Amount * 100) === Math.round(l.SalesItemLineDetail.UnitPrice * l.SalesItemLineDetail.Qty * 100)));
   assert.match(p.Line[3].Description, /owner code/);
   assert.equal(p.ShipAddr.CountrySubDivisionCode, 'WA');
+  // WA sales tax collected: its own line with the DOR location code, also noted in the memo.
+  const taxLine = p.Line.find(l => l.SalesItemLineDetail.ItemRef.value === '5');
+  assert.equal(taxLine.Amount, 34.07);
+  assert.match(taxLine.Description, /^WA sales tax collected — DOR location code 1726 \(SEATTLE\), rate 10\.55%/);
+  assert.match(p.PrivateNote, /WA sales tax \$34\.07 at 10\.55%, DOR location code 1726/);
 });
 test('rejects sales that do not balance, are not USD, or come from PayPal', () => {
   assert.throws(() => salesReceiptPayload(receipt({ gross: '400.00' }), refs), e => e.kind === 'validation' && /does not match/.test(e.message));
@@ -146,7 +151,7 @@ test('production-cost sources: placed print orders and finished labels only; dep
 // ---------- At-cost (collector) print code marker ----------
 const collector = { kind: 'collector', hash: '0123456789ab', suffix: 'V6DE' };
 const printOnly = over => receipt({ items: [{ id: 'print-x-small', type: 'print', title: 'Emergence — Small print', amount: '7.00', listAmount: '35.00', priceCode: 'collector', quantity: 2 }],
-  shipping: '7.95', tax: '1.98', gross: '23.93', printCode: collector, ...over });
+  shipping: '7.95', tax: '1.98', gross: '23.93', printCode: collector, salesTax: undefined, ...over });
 test('at-cost collector code: Memo marker with masked code, amounts and lines unchanged; owner code never marked', async () => {
   const { AT_COST_MARKER, purchasePayload, withAtCostMarker } = await import('./quickbooks-core.mjs');
   assert.equal(AT_COST_MARKER, 'At-cost testimonial print code — marketing');

@@ -1,5 +1,5 @@
 // Imported only by the isolated sandbox entry point. This sample order does not
-// call PayPal, publish inventory, or write a Stripe tax transaction.
+// call PayPal, publish inventory, or take a payment.
 import { DurableObject } from 'cloudflare:workers';
 import { priceOrder } from './checkout-pricing.mjs';
 import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
@@ -8,7 +8,7 @@ const slug = 'honeybadger-and-cub-with-genesis-block';
 // A new sample after UPS setup was corrected; preserve the failed v1 record.
 const sample = {state:'sold',slug,order_id:'SHIPPINGCHECKV2',capture_id:'SHIPPINGCHECKV2',integrationTest:true};
 const isolated = env => env.CHECKOUT_MODE === 'sandbox' && !env.GITHUB_TOKEN &&
-  env.SHIPPO_TOKEN?.startsWith('shippo_test_') && /^[sr]k_test_/.test(env.STRIPE_SECRET_KEY || '');
+  env.SHIPPO_TOKEN?.startsWith('shippo_test_');
 
 export async function shippingCheck(request, env) {
   if (!isolated(env) || !env.SHIPPING_CHECK_TOKEN ||

@@ -23,7 +23,13 @@ export function checkoutRecord(env,row,slug,job,details={},recordedAt=new Date()
     paypalFee:details.fee ?? null,paypalNet:details.net ?? null,feeCurrency:details.feeCurrency||'',netCurrency:details.netCurrency||'',
     buyerName:details.buyerName || quote.address?.name || '',buyerEmail:details.buyerEmail || '',
     shippingAddress:quote.address || (row.destination ? JSON.parse(row.destination) : null),
-    taxCalculationId:row.tax_calc_id || '',fulfillment:fulfillmentRecord(row,job)};
+    ...salesTaxRecord(row,job),fulfillment:fulfillmentRecord(row,job)};
+}
+// Washington DOR rate details stored with the order. Older rows held a legacy tax calculation reference instead.
+function salesTaxRecord(row,job) {
+  if (job?.quote?.salesTax) return {salesTax:job.quote.salesTax};
+  try { const stored=JSON.parse(row.tax_calc_id || ''); if (stored && typeof stored === 'object') return {salesTax:stored}; } catch { /* legacy or empty */ }
+  return {};
 }
 export function fulfillmentRecord(row,job) {
   return {inventoryPublished:!!row.published,taxRecorded:!!row.tax_recorded,labelStatus:job?.status || 'unavailable',

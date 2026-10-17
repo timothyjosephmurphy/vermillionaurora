@@ -8,7 +8,7 @@ it('one concurrent buyer wins and sold stock survives eviction without a website
  const stub=stock();await stub.initialize('painting-portrait-in-green');
  const won=await Promise.all([stub.reserve('first'),stub.reserve('second')]);expect(won.filter(Boolean)).toHaveLength(1);
  const hold=won[0]?'first':'second';
- expect(await stub.bindOrder(hold,'ORDER',{title:'Saved title',base:'20.00',shipping:'6.01',tax:'1.02',total:'27.03',taxCalculationId:'taxcalc_test',address:{name:'Buyer'}})).toBe(true);
+ expect(await stub.bindOrder(hold,'ORDER',{title:'Saved title',base:'20.00',shipping:'6.01',tax:'1.02',total:'27.03',address:{name:'Buyer'}})).toBe(true);
  expect((await stub.order()).base).toBe('20.00');
  await stub.complete('ORDER','CAP');await stub.complete('ORDER','CAP');
  expect(await stub.status()).toBe('sold');expect(await stub.reserve('third')).toBe(false);
@@ -18,7 +18,7 @@ it('one concurrent buyer wins and sold stock survives eviction without a website
 });
 it('live sale publication needs no GitHub token or repository request',async()=>{
  const stub=stock();await stub.initialize('painting-portrait-in-green');await stub.reserve('hold');
- await stub.bindOrder('hold','ORDER',{title:'Saved title',base:'20.00',shipping:'6.00',tax:'0.00',total:'26.00',taxCalculationId:'taxcalc_test',address:{name:'Buyer'}});
+ await stub.bindOrder('hold','ORDER',{title:'Saved title',base:'20.00',shipping:'6.00',tax:'0.00',total:'26.00',address:{name:'Buyer'}});
  await stub.complete('ORDER','CAP');
  const calls=[];vi.stubGlobal('fetch',vi.fn(async url=>{calls.push(String(url));throw Error('Providers unavailable');}));
  await runInDurableObject(stub,async instance=>{instance.env={...instance.env,CHECKOUT_MODE:'live',GITHUB_TOKEN:undefined,SALES_LEDGER:{getByName:()=>({record:async()=>{}})}};await instance.alarm();});

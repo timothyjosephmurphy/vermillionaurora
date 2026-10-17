@@ -4,7 +4,7 @@ import {
   QboError, QBO_ORIGINS, environment, configured, syncEnabled, discover, authorizationUrl, exchangeCode, refreshTokens, revokeToken,
   accountingClient, signState, verifyState, seal, unseal, randomToken, sha256Hex, qboString, qboName, salesReceiptPayload,
   validateReceipt, depositAccountKey, docNumberFor, accountName, itemName, ACCOUNT_DEFAULTS, ITEM_DEFAULTS, queueDelayMs,
-  costSyncEnabled, vendorName, VENDOR_DEFAULTS, costDocNumber, costId, validateCost, purchasePayload
+  costSyncEnabled, vendorName, VENDOR_DEFAULTS, costDocNumber, costId, validateCost, purchasePayload, waTaxCollected
 } from './quickbooks-core.mjs';
 import { resolveCost, CostPending } from './quickbooks-costs.mjs';
 import { markAtCostRecords } from './quickbooks-markers.mjs';
@@ -443,7 +443,7 @@ export class QuickbooksSync extends DurableObject {
     const needed = new Set(receipt.items.map(i => i.type === 'print' ? 'print' : i.type === 'deposit' ? 'deposit' : 'original'));
     if (receipt.items.some(i => i.listAmount && Number(i.listAmount) > Number(i.amount))) needed.add('discount');
     if (Number(receipt.shipping) > 0) needed.add('shipping');
-    if (Number(receipt.tax) > 0) needed.add('tax');
+    if (Number(receipt.tax) > 0 || waTaxCollected(receipt)) needed.add('tax');
     const items = {};
     for (const key of needed) items[key] = await item(key);
     const depositAccountId = await account(depositAccountKey(receipt));

@@ -2,6 +2,7 @@ import { env } from 'cloudflare:workers';
 import { runInDurableObject, runDurableObjectAlarm, evictDurableObject } from 'cloudflare:test';
 import { afterEach, beforeEach, it, expect, vi } from 'vitest';
 import { priceOrder } from '../checkout-pricing.mjs';
+import {isDor,dorReply} from './dor-mock.mjs';
 
 const slug = 'painting-portrait-in-green';
 let calls, rate, shipment, transaction, objects;
@@ -15,8 +16,7 @@ beforeEach(() => {
     if(url==='https://api.goshippo.com/shipments/')return Response.json({...shipment,rates:[{object_id:'UNINSURED',currency:'USD',amount:'1.00'},rate]});
     if(url==='https://api.goshippo.com/rates/INS_RATE/')return Response.json(rate);
     if(url==='https://api.goshippo.com/shipments/INS_SHIPMENT/')return Response.json(shipment);
-    if(url==='https://api.stripe.com/v1/tax/calculations')return Response.json({id:'taxcalc_INSURED',currency:'usd',amount_total:20575});
-    if(url.endsWith('/tax/transactions/create_from_calculation'))return Response.json({id:'TAX1'});
+    if(isDor(url))return dorReply();
     if(url==='https://oauth2.googleapis.com/token')return Response.json({access_token:'EMAIL'});
     if(url==='https://api.goshippo.com/transactions/')return Response.json(transaction);
     if(url==='https://deliver.goshippo.com/insured.pdf')return new Response('%PDF-1.4\nTest');
@@ -43,8 +43,10 @@ it('quotes the flat envelope with $200 insurance and includes its fee only once'
   expect(request.extra.insurance).toEqual(shipment.extra.insurance);
   expect(request.address_from.phone).toBe('+12065550123');
   expect(request.parcels).toEqual([{length:'15',width:'12',height:'0.125',weight:'0.25',distance_unit:'in',mass_unit:'lb'}]);
-  expect(quote).toMatchObject({base:'200.00',shipping:'5.75',total:'205.75',rateId:'INS_RATE',insurance:{amount:'200.00',fee:'0.75'}});
-  expect(calls.find(c=>c.url.endsWith('/tax/calculations')).body.get('shipping_cost[amount]')).toBe('575');
+  expect(quote).toMatchObject({base:'200.00',shipping:'5.75',tax:'21.71',total:'227.46',rateId:'INS_RATE',insurance:{amount:'200.00',fee:'0.75'}});
+  // WA tax covers the painting and the insured shipping: 10.55% of $205.75.
+  expect(quote.salesTax).toMatchObject({state:'WA',loccode:'1726',rate:'0.1055',taxable:'205.75',amount:'21.71',basis:'address'});
+  expect(calls.filter(c=>isDor(c.url))).toHaveLength(1);
 });
 
 it('uses only an allowed carrier even when another insured rate is cheaper',async()=>{

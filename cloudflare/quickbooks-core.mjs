@@ -223,6 +223,17 @@ export const costSyncEnabled = env => syncEnabled(env) && env.QBO_COST_SYNC_ENAB
 export const accountName = (env, key) => qboName(env[ACCOUNT_DEFAULTS[key].env] || ACCOUNT_DEFAULTS[key].name);
 export const itemName = (env, key) => qboName(env[ITEM_DEFAULTS[key].env] || ITEM_DEFAULTS[key].name);
 
+// Washington sales tax details from the DOR rate lookup, stored on the order as salesTax.
+export const waTaxCollected = receipt => receipt?.salesTax?.state === 'WA' && receipt.salesTax.collected === true && /^\d{4}$/.test(receipt.salesTax.loccode || '');
+const percent = rate => `${(Math.round(Number(rate) * 1e6) / 1e4).toString()}%`;
+export function waTaxNote(receipt) {
+  const t = receipt.salesTax;
+  return `WA sales tax $${receipt.tax} at ${percent(t.rate)}, DOR location code ${t.loccode}`;
+}
+export function waTaxDescription(receipt) {
+  const t = receipt.salesTax, place = String(t.jurisdiction || '').replace(/[^A-Za-z0-9 .'-]/g, '').slice(0, 60);
+  return `WA sales tax collected — DOR location code ${t.loccode}${place ? ` (${place})` : ''}, rate ${percent(t.rate)}${t.taxable ? ` on taxable $${t.taxable}` : ''}${t.period ? `, ${String(t.period).slice(0, 10)}` : ''}${t.basis === 'zip' ? ', ZIP-level rate' : ''}`;
+}
 export function validateReceipt(receipt) {
   if (!receipt || receipt.kind !== 'sale' || receipt.status !== 'COMPLETED') throw new QboError('Only completed sales are recorded', { kind: 'validation' });
   if (!['square', 'btcpay'].includes(receipt.provider)) throw new QboError(`Unsupported payment provider ${receipt.provider}`, { kind: 'validation' });
@@ -254,7 +265,9 @@ export function salesReceiptPayload(receipt, refs) {
   }
   if (discount > 0) lines.push(line('discount', -discount, `Discount${receipt.printCode?.kind ? ` — ${receipt.printCode.kind} code` : ''}`));
   if (cents(receipt.shipping) > 0) lines.push(line('shipping', cents(receipt.shipping), 'Shipping'));
-  if (cents(receipt.tax) > 0) lines.push(line('tax', cents(receipt.tax), `Sales tax collected${receipt.taxCalculationId ? ` (${String(receipt.taxCalculationId).slice(0, 60)})` : ''}`));
+  // Washington sales tax collected is its own line, with the DOR location code, so WA excise returns can be filed per location.
+  if (waTaxCollected(receipt)) lines.push(line('tax', cents(receipt.tax), waTaxDescription(receipt)));
+  else if (cents(receipt.tax) > 0) lines.push(line('tax', cents(receipt.tax), 'Sales tax collected'));
   const total = lines.reduce((sum, l) => sum + cents(l.Amount), 0);
   if (total !== cents(receipt.gross)) throw new QboError(`Line total ${dollars(total)} does not match the sale total ${receipt.gross}`, { kind: 'validation' });
   const address = receipt.shippingAddress || {};
@@ -264,7 +277,7 @@ export function salesReceiptPayload(receipt, refs) {
     CustomerRef: { value: refs.customerId },
     DepositToAccountRef: { value: refs.depositAccountId },
     PaymentRefNum: String(receipt.transactionId || '').slice(-21),
-    PrivateNote: withAtCostMarker(`Vermillion Aurora order ${receipt.orderId}; ${receipt.provider === 'btcpay' ? 'BTCPay invoice' : 'Square payment'} ${receipt.transactionId}`, receipt.printCode),
+    PrivateNote: withAtCostMarker(`Vermillion Aurora order ${receipt.orderId}; ${receipt.provider === 'btcpay' ? 'BTCPay invoice' : 'Square payment'} ${receipt.transactionId}${waTaxCollected(receipt) ? `; ${waTaxNote(receipt)}` : ''}`, receipt.printCode),
     ...(receipt.buyerEmail ? { BillEmail: { Address: String(receipt.buyerEmail).slice(0, 100) } } : {}),
     ...(address.street1 ? { ShipAddr: { Line1: String(address.street1).slice(0, 500), ...(address.street2 ? { Line2: String(address.street2).slice(0, 500) } : {}),
       City: String(address.city || '').slice(0, 255), CountrySubDivisionCode: String(address.state || '').slice(0, 255), PostalCode: String(address.zip || '').slice(0, 30), Country: String(address.country || 'US').slice(0, 255) } } : {}),

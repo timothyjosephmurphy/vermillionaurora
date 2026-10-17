@@ -5,6 +5,7 @@ import {cartItems,keyHash,paymentMethods} from '../cart-policy.mjs';
 import {priceCart} from '../checkout-pricing.mjs';
 import {finerworksRequest} from '../finerworks-api.mjs';
 import prints from '../print-catalog.mjs';
+import {isDor,dorReply} from './dor-mock.mjs';
 const ids=['print-painting-portrait-in-green-small','print-painting-portrait-in-gold-small'];
 const address={name:'Test Buyer',street1:'123 Test St',street2:'',city:'Seattle',state:'WA',zip:'98122',country:'US'};
 const settings={PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',FINERWORKS_WEB_API_KEY:'fake-web',FINERWORKS_APP_KEY:'fake-app',PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_IDS:ids.join(','),CHECKOUT_MODE:'sandbox',CART_CHECKOUT_ENABLED:'true',PAYPAL_TEST_FIXTURE:'true',PAYPAL_CLIENT_ID:'fake',PAYPAL_CLIENT_SECRET:'fake',PAYPAL_MERCHANT_ID:'MERCHANT',PAYPAL_WEBHOOK_ID:'HOOK',SANDBOX_RETURN_ORIGIN:'https://vermillion-checkout-sandbox.timothyjosephmurphy.workers.dev'};
@@ -35,8 +36,7 @@ beforeEach(()=>{
     if(u.pathname==='/v1/oauth2/token'||u.hostname==='oauth2.googleapis.com')return Response.json({access_token:'FAKE'});
     if(u.pathname==='/v2/checkout/orders'){payment={...body,id:'ORDER1',status:'CREATED',links:[{rel:'approve',href:`https://www.${activeMode==='sandbox'?'sandbox.':''}paypal.com/checkoutnow?token=ORDER1`}]};return Response.json(payment);}
     if(u.pathname.startsWith('/v2/checkout/orders/')){if(u.pathname.endsWith('/capture')){payment.status='COMPLETED';payment.purchase_units[0].payments={captures:[{id:`FWCAPTURE${++captureSequence}`,status:'COMPLETED',amount:payment.purchase_units[0].amount,create_time:'2026-09-30T12:00:00Z'}]};}return Response.json(payment);}
-    if(u.pathname==='/v1/tax/calculations'){let total=Number(body.get('shipping_cost[amount]'));for(const [key,value] of body)if(/^line_items\[\d+\]\[amount\]$/.test(key))total+=Number(value);return Response.json({id:'taxcalc_FW',currency:'usd',amount_total:total+500});}
-    if(u.pathname==='/v1/tax/transactions/create_from_calculation')return Response.json({id:'tax_FW'});
+    if(isDor(u))return dorReply();
     if(u.hostname==='gmail.googleapis.com')return Response.json({id:`MAIL${++mailCount}`});
     throw Error(`Unexpected external request: ${u.origin}${u.pathname}`);
   }));
@@ -88,7 +88,7 @@ it('live payment precedes one billed full-resolution edition submission and arch
 });
 it('records one payment and one FinerWorks order containing both paintings without touching originals',async()=>{
   const stock=env.PAINTING_STOCK.getByName('painting-portrait-in-green'),before=await stock.status();
-  const {order,orderId,quote}=await setup();expect(quote.base).toBe('50.00');expect(quote.shipping).toBe('8.95');expect(quote.total).toBe('63.95');expect(submission).toBeNull();
+  const {order,orderId,quote}=await setup();expect(quote.base).toBe('50.00');expect(quote.shipping).toBe('8.95');expect(quote.tax).toBe('6.22');expect(quote.total).toBe('65.17');expect(submission).toBeNull();
   await pay(order);await order.refresh();await order.refresh();
   const saved=await inspect(order);expect(saved.status).toBe('paid');expect(saved.printJob.status).toBe('test-complete');expect(saved.printJob.providerId).toBe('123456');
   expect(submission.order_items).toHaveLength(2);expect(new Set(submission.order_items.map(i=>i.product_image.product_url_file)).size).toBe(2);

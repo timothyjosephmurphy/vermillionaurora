@@ -3,10 +3,13 @@ import { priceOrder } from './checkout-pricing.mjs';
 import catalog from './checkout-catalog.mjs';
 import { squareRequest } from './square-provider.mjs';
 import { bitcoinApi } from './bitcoin-api.mjs';
+import { waRate } from './wa-sales-tax.mjs';
 
 // Administrative provider checks without payments or label purchases. The deployment job creates and removes
 // this random credential; public callers cannot trigger provider requests.
 const APPLE_PAY_DOMAIN='tjm.art';
+// Seattle City Hall, a public address used only to confirm the DOR lookup answers.
+export const WA_TAX_CHECK_ADDRESS={street1:'600 4th Ave',city:'Seattle',state:'WA',zip:'98104'};
 export async function checkoutReadiness(request,env) {
   const reply=(value,status=200)=>Response.json(value,{status,headers:{'Cache-Control':'no-store'}});
   if(request.method!=='POST'||!env.CHECKOUT_AUDIT_TOKEN||request.headers.get('Authorization')!==`Bearer ${env.CHECKOUT_AUDIT_TOKEN}`)return reply({error:'Not found'},404);
@@ -18,12 +21,11 @@ export async function checkoutReadiness(request,env) {
     return r.json();
   };
   try {
-    if(!/^[sr]k_live_/.test(env.STRIPE_SECRET_KEY||''))throw Error('Expected a live Stripe key');
-    const settings=await get('https://api.stripe.com/v1/tax/settings',`Bearer ${env.STRIPE_SECRET_KEY}`);
-    checks.stripeTax=settings.livemode===true&&settings.status==='active';
-    const registrations=await get('https://api.stripe.com/v1/tax/registrations?status=active&limit=100',`Bearer ${env.STRIPE_SECRET_KEY}`);
-    checks.taxRegistrations=(registrations.data||[]).map(x=>({country:x.country,state:x.country_options?.us?.state||null}));
-  }catch(error){checks.stripeError=error.message;}
+    // Washington DOR rate lookup (public, no credential): a known Seattle street address must match at street level.
+    const wa=await waRate(WA_TAX_CHECK_ADDRESS);
+    checks.waTaxRate={rate:wa.rate,loccode:wa.loccode,jurisdiction:wa.jurisdiction,period:wa.period,basis:wa.basis,resultCode:wa.resultCode};
+    checks.waTaxLookup=wa.basis==='address'&&Number(wa.rate)>=0.065;
+  }catch(error){checks.waTaxLookup=false;checks.waTaxError=error.message;}
   try {
     if(!env.SHIPPO_TOKEN?.startsWith('shippo_live_'))throw Error('Expected a live Shippo token');
     const accounts=await get('https://api.goshippo.com/carrier_accounts/?results=100',`ShippoToken ${env.SHIPPO_TOKEN}`,{'SHIPPO-API-VERSION':'2018-02-08'});
@@ -95,7 +97,7 @@ export async function checkoutReadiness(request,env) {
         checks.completedPilot=true;
       } else {
       // A quote only, addressed to the configured origin. No payment,
-      // tax transaction, shipping label or email is created by this check.
+      // shipping label or email is created by this check.
       const quote=await priceOrder(env,slug,{name:'Live checkout verification',street1:env.SHIP_FROM_STREET,city:'Seattle',state:'WA',zip:'98122'});
       checks.pilotQuote={base:quote.base,shipping:quote.shipping,tax:quote.tax,total:quote.total,carrier:quote.carrier,
         insurance:quote.insurance?.amount||null,insuranceFee:quote.insurance?.fee||null};
@@ -108,6 +110,6 @@ export async function checkoutReadiness(request,env) {
     (checks.pilotRestriction&&checks.automaticLabels&&checks.sellerEmail&&(checks.completedPilot||(checks.insuredQuote&&checks.pilotStock==='available')));
   const squareReady=env.SQUARE_CHECKOUT_ENABLED!=='true'||(checks.squareConfiguration&&checks.squareLocation&&checks.squareWebhook);
   const bitcoinReady=env.BTCPAY_CHECKOUT_ENABLED!=='true'||checks.bitcoinInvoiceAccess===true;
-  const ready=bitcoinReady&&squareReady&&checks.stripeTax&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
+  const ready=bitcoinReady&&squareReady&&checks.waTaxLookup===true&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
   return reply({mode:env.CHECKOUT_MODE,release:env.CHECKOUT_RELEASE||null,ready:!!ready,checks},ready?200:503);
 }

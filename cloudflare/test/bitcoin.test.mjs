@@ -6,7 +6,7 @@ import { backfillCheckoutSale } from '../historical-sales.mjs';
 
 const objects=[];
 let invoices, requests, timeoutCreate, emails;
-const quote={title:'Original painting',base:'20.00',shipping:'6.00',tax:'1.00',total:'27.00',taxCalculationId:'taxcalc_test',
+const quote={title:'Original painting',base:'20.00',shipping:'6.00',tax:'1.00',total:'27.00',
   address:{name:'Buyer',street1:'123 Main St',city:'Seattle',state:'WA',zip:'98122',country:'US'},quotedAt:Date.now()};
 beforeEach(()=>{
   invoices=[];requests=[];timeoutCreate=false;emails=0;

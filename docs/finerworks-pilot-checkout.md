@@ -19,7 +19,7 @@ runtime `LIVE_PRINT_SAMPLE_ENABLED` and 24 exact `PRINT_CHECKOUT_IDS` limit the
 release. `testOnly` files remain blocked from all live fulfillment. Mat variants
 remain unavailable pending their separate layout approval.
 
-The live test uses normal cart, PayPal, Stripe tax, ledger, R2 archive and emails.
+The live test uses normal cart, PayPal, Washington DOR sales tax, ledger, R2 archive and emails.
 FinerWorks receives `test_mode:false` and the saved payment token only after a
 verified customer payment. A mocked live Worker test covers payment-before-order,
 single submission and token-free records. The deployment creates one unpaid

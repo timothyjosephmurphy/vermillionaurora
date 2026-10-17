@@ -20,7 +20,7 @@ try {
   const q=await api('quote',{catalogVersion:catalog.version,items:ids.map(id=>({id,quantity:1})),email:'checkout-verification@example.test',address:{name:'Checkout Verification',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'}});
   order={orderId:q.orderId,key:q.key};assert.equal(q.quote.base,(ids.reduce((s,id)=>s+Number(prints[id].amount),0)).toFixed(2));assert(Number(q.quote.shipping)>0);assert(Number(q.quote.total)>=50);
   assert(q.methods.includes('square')&&!q.methods.includes('paypal'));
-  console.log('PASS: live catalog, FinerWorks shipping, Stripe tax, and Square card checkout offered (payment not started).');
+  console.log('PASS: live catalog, FinerWorks shipping, Washington DOR sales tax, and Square card checkout offered (payment not started).');
   console.log(JSON.stringify({prints:q.quote.base,shipping:q.quote.shipping,tax:q.quote.tax,total:q.quote.total,address:'Seattle verification address',paymentCaptured:false,printOrderSubmitted:false}));
 } finally {
   if(order){const cancelled=await api('cancel',order);assert.equal(cancelled.status,'cancelled');console.log('PASS: verification checkout cancelled without payment.');}

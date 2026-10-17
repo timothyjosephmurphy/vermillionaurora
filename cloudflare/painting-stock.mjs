@@ -1,5 +1,4 @@
 import { DurableObject } from 'cloudflare:workers';
-import { recordTax } from './checkout-pricing.mjs';
 import { newShippingJob, fulfillSale } from './shipping-fulfillment.mjs';
 import { checkoutRecord, fulfillmentRecord, ledgerFor } from './sales-records.mjs';
 import {stockStatus, nextManualRow, nextEtsySale} from './original-availability.mjs';
@@ -70,7 +69,7 @@ export class PaintingStock extends DurableObject {
     const row = this.row();
     if (row?.state !== 'held' || row.hold_id !== holdId || row.expires_at <= Date.now() || row.order_id) return false;
     this.ctx.storage.sql.exec('UPDATE stock SET order_id=?,total=?,shipping=?,tax=?,tax_calc_id=?,destination=? WHERE id=1',
-      orderId,quote.total,quote.shipping,quote.tax,quote.taxCalculationId,JSON.stringify(quote.address));
+      orderId,quote.total,quote.shipping,quote.tax,quote.salesTax?JSON.stringify(quote.salesTax):null,JSON.stringify(quote.address));
     this.ctx.storage.sql.exec('INSERT OR REPLACE INTO shipping_job (id,data) VALUES (1,?)',
       JSON.stringify(newShippingJob(this.env, orderId, quote)));
     return true;
@@ -225,15 +224,8 @@ export class PaintingStock extends DurableObject {
     // or website rebuild is needed; retain the published field for old receipts.
     if (!row.published) this.markPublished(row.order_id);
     const slug = this.ctx.storage.sql.exec('SELECT slug FROM painting WHERE id=1').toArray()[0]?.slug;
-    try {
-      if (!row.tax_recorded) {
-        await recordTax(this.env,row.tax_calc_id,row.capture_id);
-        this.ctx.storage.sql.exec('UPDATE stock SET tax_recorded=1 WHERE id=1');
-      }
-    } catch (error) {
-      finished = false;
-      console.error('Checkout tax recording failed:', slug, error.message);
-    }
+    // The Washington rate, location code and tax amount were stored with the order (tax_calc_id holds the salesTax JSON).
+    if (!row.tax_recorded) this.ctx.storage.sql.exec('UPDATE stock SET tax_recorded=1 WHERE id=1');
     try {
       const storedJob = this.ctx.storage.sql.exec('SELECT data FROM shipping_job WHERE id=1').toArray()[0];
       const shipped = await fulfillSale(this.env, {...row,slug}, storedJob ? JSON.parse(storedJob.data) : null, async job => {

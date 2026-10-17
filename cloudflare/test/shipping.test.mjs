@@ -5,22 +5,23 @@ import { fulfillSale, newShippingJob } from '../shipping-fulfillment.mjs';
 import { shippingCheck } from '../shipping-check.mjs';
 import { sellerMailToken } from '../shipping-email.mjs';
 import { priceOrder } from '../checkout-pricing.mjs';
+import {isDor,dorReply} from './dor-mock.mjs';
 
 const slug = 'honeybadger-and-cub-with-genesis-block';
 const quote = () => ({title:'Honeybadger and Cub with Genesis Block',base:'1200.00',shipping:'12.00',tax:'9.00',total:'1221.00',
-  taxCalculationId:'taxcalc_TEST',rateId:'RATE1',quotedAt:Date.now(),carrier:'USPS',service:'Ground Advantage',packaging:'tube',
+  rateId:'RATE1',quotedAt:Date.now(),carrier:'USPS',service:'Ground Advantage',packaging:'tube',
   parcel:{length:28,width:4,height:4,weight:2},
   address:{name:'Test Buyer',street1:'123 Main St',city:'Seattle',state:'WA',zip:'98122',country:'US'}});
 const sale = {state:'sold',order_id:'ORDER1',capture_id:'CAPTURE1',slug};
 const success = {object_id:'TX1',test:true,status:'SUCCESS',label_url:'https://deliver.goshippo.com/label.pdf',
   tracking_number:'TRACK1',tracking_url_provider:'https://tools.usps.com/track/TRACK1'};
-let calls, transaction, pollTransaction, failEmail, failPurchase, failTax, failPdf, pdfRedirect;
+let calls, transaction, pollTransaction, failEmail, failPurchase, failPdf, pdfRedirect;
 let objects, insuredRate, insuredShipment;
 beforeEach(() => {
   calls = []; objects = []; transaction = success; pollTransaction = success;
   insuredRate = {object_id:'INS_RATE',shipment:'INS_SHIPMENT',currency:'USD',amount:'5.75',included_insurance_price:'0.75',provider:'USPS',servicelevel:{name:'Ground Advantage'}};
   insuredShipment = {object_id:'INS_SHIPMENT',extra:{insurance:{amount:'200.00',currency:'USD',content:'Original painting: Chase Toole'}}};
-  failEmail = failPurchase = failTax = failPdf = false;
+  failEmail = failPurchase = failPdf = false;
   pdfRedirect = null;
   vi.stubGlobal('fetch', vi.fn(async (url, options = {}) => {
     calls.push({url:String(url),...options});
@@ -30,7 +31,7 @@ beforeEach(() => {
       : Response.json({rates:[{object_id:'RATE1',currency:'USD',amount:'12.00',provider:'USPS',servicelevel:{name:'Ground'}}]});
     if (url === 'https://api.goshippo.com/rates/INS_RATE/') return Response.json(insuredRate);
     if (url === 'https://api.goshippo.com/shipments/INS_SHIPMENT/') return Response.json(insuredShipment);
-    if (url === 'https://api.stripe.com/v1/tax/calculations') return Response.json({id:'taxcalc_TEST',currency:'usd',amount_total:Number(options.body.get('line_items[0][amount]'))+Number(options.body.get('shipping_cost[amount]'))+900});
+    if(isDor(url))return dorReply();
     if (url === 'https://api.goshippo.com/transactions/') {
       if (failPurchase) throw new Error('Connection lost after request was accepted');
       return Response.json(transaction);
@@ -40,9 +41,6 @@ beforeEach(() => {
     if (url === 'https://labels.example.test/final.pdf') return new Response('%PDF-1.4\nRedirected test label');
     if (url === 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send') {
       return failEmail ? Response.json({error:'Unavailable'},{status:503}) : Response.json({id:'EMAIL1'});
-    }
-    if (url === 'https://api.stripe.com/v1/tax/transactions/create_from_calculation') {
-      return failTax ? new Response('Unavailable',{status:503}) : Response.json({id:'TAX1'});
     }
     throw new Error(`Unexpected external request: ${url}`);
   }));
@@ -107,15 +105,14 @@ it('retries email after eviction without buying the label again', async () => {
   expect((await readJob(stub)).emailId).toBe('EMAIL1');
 });
 
-it('keeps shipping independent of a tax service outage', async () => {
-  failTax = true;
+it('completes fulfillment without any external tax service call', async () => {
   const stub = await soldObject();
   await runDurableObjectAlarm(stub);
   expect((await readJob(stub)).emailId).toBe('EMAIL1');
-  failTax = false;
-  await runDurableObjectAlarm(stub);
   expect(purchases()).toHaveLength(1);
   expect(emails()).toHaveLength(1);
+  expect(calls.some(c => c.url.includes('dor.wa.gov'))).toBe(false);
+  expect(await stub.verification()).toMatchObject({taxRecorded:true});
   expect(await runInDurableObject(stub, (_,ctx) => ctx.storage.getAlarm())).toBeNull();
 });
 
@@ -246,7 +243,7 @@ it('runs a sample shipping check once without a PayPal purchase or inventory mut
   expect(await runDurableObjectAlarm(stub)).toBe(false);
   expect(purchases()).toHaveLength(1);
   expect(emails()).toHaveLength(1);
-  expect(calls.some(c=>c.url.includes('paypal.com') || c.url.includes('api.github.com') || c.url.includes('tax/transactions'))).toBe(false);
+  expect(calls.some(c=>c.url.includes('paypal.com') || c.url.includes('api.github.com') || c.url.includes('dor.wa.gov'))).toBe(false);
 });
 
 it('keeps the insured Chase diagnostic separate and confirms its coverage without a PayPal purchase', async () => {
@@ -258,7 +255,7 @@ it('keeps the insured Chase diagnostic separate and confirms its coverage withou
   await stub.start('chase-insurance');
   expect(await runDurableObjectAlarm(stub)).toBe(false);
   expect(purchases()).toHaveLength(1);
-  expect(calls.some(c=>c.url.includes('paypal.com') || c.url.includes('api.github.com') || c.url.includes('tax/transactions'))).toBe(false);
+  expect(calls.some(c=>c.url.includes('paypal.com') || c.url.includes('api.github.com') || c.url.includes('dor.wa.gov'))).toBe(false);
 });
 
 it('diagnoses a failed test transaction without exposing private message text or purchasing again', async () => {
@@ -281,7 +278,6 @@ it.each([
   ['wrong diagnostic token',{SHIPPING_CHECK_TOKEN:'different'}],
   ['live PayPal mode',{SHIPPING_CHECK_TOKEN:'test',CHECKOUT_MODE:'live'}],
   ['live Shippo key',{SHIPPING_CHECK_TOKEN:'test',SHIPPO_TOKEN:'shippo_live_fake'}],
-  ['live Stripe key',{SHIPPING_CHECK_TOKEN:'test',STRIPE_SECRET_KEY:'sk_live_fake'}],
   ['production inventory credential',{SHIPPING_CHECK_TOKEN:'test',GITHUB_TOKEN:'fake'}]
 ])('blocks shipping diagnostics with %s',async (_, overrides) => {
   const response = await shippingCheck(new Request('https://sandbox.example/checkout/shipping-check',{method:'POST',headers:{Authorization:'Bearer test'}}),{...env,...overrides});

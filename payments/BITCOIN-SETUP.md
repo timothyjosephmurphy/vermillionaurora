@@ -1,7 +1,7 @@
 # Bitcoin checkout through BTCPay
 
 The product checkout can offer **Buy with Bitcoin** alongside PayPal. It uses the
-existing US shipping quote, Stripe Tax calculation, per-original reservation,
+existing US shipping quote, Washington DOR sales tax calculation, per-original reservation,
 shipping-label workflow and private sales ledger. BTCPay converts the complete
 USD total to BTC and presents on-chain and Lightning methods that are enabled in
 the store. The invoice requires full payment and one on-chain confirmation

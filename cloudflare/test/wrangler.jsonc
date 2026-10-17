@@ -13,7 +13,6 @@
     "GOOGLE_CLIENT_ID": "fake",
     "GOOGLE_CLIENT_SECRET": "fake",
     "GOOGLE_REFRESH_TOKEN": "fake",
-    "STRIPE_SECRET_KEY": "sk_test_fake",
     "SHIP_FROM_PHONE": "+12065550123",
     "CART_CHECKOUT_ENABLED": "true",
     "QBO_CLIENT_ID": "test-client",
