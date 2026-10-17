@@ -9,8 +9,42 @@
 <meta property="og:image" content="https://img.tjm.art/play/share.jpg"><meta property="og:image:secure_url" content="https://img.tjm.art/play/share.jpg"><meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Inside TJM Gallery: a torch-lit 3D hall of TJ Murphy paintings with a hologram of TJ playing guitar">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TJM Gallery: walk through TJ Murphy's paintings"><meta name="twitter:description" content="A playable 3D art gallery: wander 200+ original paintings by TJ Murphy, flip through his art books, meet the machine elves and buy originals straight off the walls. Works on phone and desktop.">
-<meta name="twitter:image" content="https://img.tjm.art/play/share.jpg"><meta name="twitter:image:alt" content="Inside TJM Gallery: a torch-lit 3D hall of TJ Murphy paintings with a hologram of TJ playing guitar">  <script type="module" crossorigin src="/play/assets/index-BQTuA7Sh.js"></script>
-  <link rel="stylesheet" crossorigin href="/play/assets/index-YMh1i2NJ.css">
+<meta name="twitter:image" content="https://img.tjm.art/play/share.jpg"><meta name="twitter:image:alt" content="Inside TJM Gallery: a torch-lit 3D hall of TJ Murphy paintings with a hologram of TJ playing guitar"><script>
+/* Black-screen watchdog: if the 3D view never draws (or stops, or the WebGL context is lost) while it should be running,
+   show "open in your browser" + "Copy link" instead of a silent black screen. Independent of the game bundle. */
+(function () {
+  var url = 'https://tjm.art/play/', shown = 0;
+  window.__playFallback = function (why) {
+    if (shown) return; shown = 1; window.__fallback = why || 'stall';
+    try {
+      var ua = navigator.userAgent, android = /Android/i.test(ua), d = document.createElement('div');
+      d.id = 'openbrowser'; d.setAttribute('role', 'alert'); document.body.classList.add('openbrowser');
+      var head = why === 'inapp' ? 'Open TJM Gallery in your browser' : why === 'lost' ? 'The 3D view ran out of memory here' : 'The 3D view could not start here';
+      d.innerHTML = '<div class=ob-box><div class=ob-title>TJM GALLERY</div><b class=ob-h>' + head + '</b>' +
+        '<p class=ob-p>' + (why === 'inapp' ? 'The game needs a full browser. ' : 'For the full game, open it in your browser. ') +
+        (android ? 'Tap <b>Open in Chrome</b>, or tap <b>&#8942;</b> then <b>Open in browser</b>.' : 'Tap <b>&#8942;</b> below, then <b>Open in Safari</b> / <b>Open in browser</b>.') + '</p>' +
+        '<div class=ob-btns>' + (android ? '<a class=ob-go href="intent://tjm.art/play/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(url) + ';end">Open in Chrome</a>' : '') +
+        '<button type=button class=ob-copy>Copy link</button></div><p class=ob-url>tjm.art/play</p></div>' +
+        '<div class=ob-arrow aria-hidden=true><span>Tap &#8942; here</span><i>&#8595;</i></div>';
+      ['touchstart', 'touchend', 'touchmove', 'mousedown', 'click', 'pointerdown', 'keydown'].forEach(function (ev) { d.addEventListener(ev, function (e) { e.stopPropagation(); }); });
+      d.querySelector('.ob-copy').onclick = function () { var b = this, done = function (ok) { b.textContent = ok ? 'Link copied \u2713' : url; };
+        try { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(function () { done(1); }, function () { done(fb()); }); return; } } catch (e) {}
+        done(fb()); };
+      function fb() { try { var i = document.createElement('input'); i.value = url; i.setAttribute('readonly', ''); i.style.cssText = 'position:fixed;top:0;opacity:0'; document.body.appendChild(i); i.select(); i.setSelectionRange(0, 99); var ok = document.execCommand('copy'); i.remove(); return ok; } catch (e) { return false; } }
+      document.body.appendChild(d);
+    } catch (e) {}
+  };
+  var last = -1, still = 0;
+  setInterval(function () {
+    if (shown || document.hidden || window.__paused || !window.__mainLoaded) { still = 0; return; } // only judge once the game code has loaded
+    var f = window.__frames || 0;
+    if (f === last) still++; else still = 0; last = f;
+    if (still >= 6) window.__playFallback(f ? 'stall' : 'nostart'); // ~6 s with no first frame after load, or frozen for ~6 s
+  }, 1000);
+  addEventListener('error', function (e) { if (!(window.__frames > 0) && /WebGL|context/i.test(String(e.message))) window.__playFallback('nostart'); });
+})();
+</script>  <script type="module" crossorigin src="/play/assets/index-DAOugIbO.js"></script>
+  <link rel="stylesheet" crossorigin href="/play/assets/index-BgYRTp4z.css">
 </head><body>
 <canvas id="c"></canvas>
 <div id="title">TJM GALLERY</div>
