@@ -19,8 +19,8 @@ beforeEach(()=>{
   vi.stubGlobal('fetch',vi.fn(async(input,init={})=>{
     const u=new URL(input),body=typeof init.body==='string'&&init.body.startsWith('{')?JSON.parse(init.body):init.body;calls.push({url:u.href,body});
     if(u.hostname==='v2.api.finerworks.com') {
-      if(u.pathname.endsWith('list_media_types'))return Response.json([{id:144,product_type_id:5,name:'Watercolor Bright White',style_ids:[8]}]);
-      if(u.pathname.endsWith('list_style_types'))return Response.json([{id:8,name:'Borderless',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90}}]);
+      if(u.pathname.endsWith('list_media_types'))return Response.json([{id:144,product_type_id:5,name:'Watercolor Bright White',style_ids:[8,9]}]);
+      if(u.pathname.endsWith('list_style_types'))return Response.json([{id:8,name:'Borderless',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90}},{id:9,name:'1/2" Extra Border Added',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90},border_size:0.5,bleed_amt:0}]);
       if(u.pathname.endsWith('get_prices'))return Response.json(body.products.map(p=>({...p,product_code:p.product_sku,product_price:unitCost,total_price:unitCost})));
       if(u.pathname.endsWith('list_shipping_options_multiple')) {
         const order=body.orders[0],total=order.order_items.reduce((n,p)=>n+p.product_qty*unitCost,0);

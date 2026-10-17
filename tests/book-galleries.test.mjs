@@ -134,7 +134,12 @@ test('book print files preserve native resolution and use content-addressed R2 a
       assert(option.resolution.dpi>=300);
       assert(option.asset.layoutSpec.content.width<=source.widthPx);
       assert(option.asset.layoutSpec.content.height<=source.heightPx);
-      assert.equal(option.asset.url,`https://media.vermillionaurora.com/images/book-galleries/v1/prints/${option.asset.sha256}.jpg`);
+      // Frames keep the padded R2 edition; the unframed outer-border crop of it is a site edition file.
+      const padded=art.variants[option.key].asset;
+      assert.equal(padded.url,`https://media.vermillionaurora.com/images/book-galleries/v1/prints/${padded.sha256}.jpg`);
+      assert.equal(option.asset.editionSha256,padded.sha256);
+      assert.equal(option.asset.url,`https://vermillionaurora.com/print-editions/${option.asset.sha256}.jpg`);
+      for(const framed of option.frameOptions)assert.equal(framed.asset.url,padded.url);
       if(art.enabled)assert(option.ready,option.reasons.join(', '));
     }
   }

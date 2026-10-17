@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="71b66c4ea1eabb5be301";
+export const printVersion="843f5fd545881d340b91";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -8,25 +8,25 @@ export default {
     "productId": "el-zonte-at-sunrise",
     "title": "Sunrise from Punta El Zonte Hostel — Large print",
     "artworkTitle": "Sunrise from Punta El Zonte Hostel",
-    "amount": "125.00",
+    "amount": "120.00",
     "currency": "USD",
-    "sku": "5M144M8S12.24X23.85",
+    "sku": "5M144M9S11.98X23.59",
     "scale": 1,
     "imageSize": {
-      "width": 11.9867,
-      "height": 23.5933,
+      "width": 11.98,
+      "height": 23.59,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.24,
-      "height": 23.85,
+      "width": 12.98,
+      "height": 24.59,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de.jpg",
-    "assetSha256": "df7957b71e4420f972ec759b3e8b0c6368332010c72c56f5676f9343ab9571de",
+    "assetUrl": "https://vermillionaurora.com/print-editions/dce2c05a5ff04962b2f5915094c7ea6b0ebe51663b20d65ea4f0fa3b0e98bc05.jpg",
+    "assetSha256": "dce2c05a5ff04962b2f5915094c7ea6b0ebe51663b20d65ea4f0fa3b0e98bc05",
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
@@ -36,8 +36,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.98,
+      "height": 23.59,
+      "unit": "in"
+    }
   },
   "print-el-zonte-at-sunrise-full-frame-black": {
     "id": "print-el-zonte-at-sunrise-full-frame-black",
@@ -270,23 +275,23 @@ export default {
     "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S9.24X17.95",
+    "sku": "5M144M9S8.98X17.69",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.9867,
+      "width": 8.98,
       "height": 17.69,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.24,
-      "height": 17.95,
+      "width": 9.98,
+      "height": 18.69,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21.jpg",
-    "assetSha256": "a6c01be1c90e332e62ce1c0859f7788f3a18d6717805b4001664149aadb5ff21",
+    "assetUrl": "https://vermillionaurora.com/print-editions/14499789a36f376808efca994a31b6181abae2d0766eda1fa7932eff86d604f8.jpg",
+    "assetSha256": "14499789a36f376808efca994a31b6181abae2d0766eda1fa7932eff86d604f8",
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
@@ -296,8 +301,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.98,
+      "height": 17.69,
+      "unit": "in"
+    }
   },
   "print-el-zonte-at-sunrise-medium-frame-black": {
     "id": "print-el-zonte-at-sunrise-medium-frame-black",
@@ -530,23 +540,23 @@ export default {
     "artworkTitle": "Sunrise from Punta El Zonte Hostel",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S6.24X12.05",
+    "sku": "5M144M9S5.98X11.78",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9867,
-      "height": 11.7833,
+      "width": 5.98,
+      "height": 11.78,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.24,
-      "height": 12.05,
+      "width": 6.98,
+      "height": 12.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062.jpg",
-    "assetSha256": "88e5df5fcc5eaf2d49205c906723402c84e491bdd44aa3655ccf45187b1c3062",
+    "assetUrl": "https://vermillionaurora.com/print-editions/703f1d8adec26e73d6a53cf6dd39c003e61f956540060522d085f2392d7f1084.jpg",
+    "assetSha256": "703f1d8adec26e73d6a53cf6dd39c003e61f956540060522d085f2392d7f1084",
     "sourceSha256": "6bd54b8a2350ec2a09c359d018e74399db2b1c36dd7a179c717f01702d45f8a8",
     "layoutApproved": true,
     "preview": {
@@ -556,8 +566,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.98,
+      "height": 11.78,
+      "unit": "in"
+    }
   },
   "print-el-zonte-at-sunrise-small-frame-black": {
     "id": "print-el-zonte-at-sunrise-small-frame-black",
@@ -788,25 +803,25 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Large print",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "160.00",
+    "amount": "155.00",
     "currency": "USD",
-    "sku": "5M144M8S16.3X23.18",
+    "sku": "5M144M9S16.04X22.92",
     "scale": 1,
     "imageSize": {
-      "width": 16.0467,
-      "height": 22.9233,
+      "width": 16.04,
+      "height": 22.92,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.3,
-      "height": 23.18,
+      "width": 17.04,
+      "height": 23.92,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e.jpg",
-    "assetSha256": "168aadba6cfdd9440e8bb38c2068be6eb796619cf0fa2a6fede106d7945bbc3e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/23d799473d9a899f8f0ce2ca860bf9c42b68994a4be6853d18c45c40d3e88b5e.jpg",
+    "assetSha256": "23d799473d9a899f8f0ce2ca860bf9c42b68994a4be6853d18c45c40d3e88b5e",
     "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
     "layoutApproved": true,
     "preview": {
@@ -816,8 +831,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.04,
+      "height": 22.92,
+      "unit": "in"
+    }
   },
   "print-honeybadger-and-cub-with-genesis-block-full-frame-black": {
     "id": "print-honeybadger-and-cub-with-genesis-block-full-frame-black",
@@ -1048,25 +1068,25 @@ export default {
     "productId": "honeybadger-and-cub-with-genesis-block",
     "title": "Honeybadger and Cub with Genesis Block — Medium print",
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
-    "amount": "90.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.29X17.45",
+    "sku": "5M144M9S12.03X17.19",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.0367,
-      "height": 17.1967,
+      "width": 12.03,
+      "height": 17.19,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.29,
-      "height": 17.45,
+      "width": 13.03,
+      "height": 18.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51.jpg",
-    "assetSha256": "78520a8472c3b83707025911005bbb843dee91c621302921b4e3da28b743aa51",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fec6c4150f10826fcd97f0d58576df80b9338c9849f95b029aa153e4323ef9bb.jpg",
+    "assetSha256": "fec6c4150f10826fcd97f0d58576df80b9338c9849f95b029aa153e4323ef9bb",
     "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
     "layoutApproved": true,
     "preview": {
@@ -1076,8 +1096,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.03,
+      "height": 17.19,
+      "unit": "in"
+    }
   },
   "print-honeybadger-and-cub-with-genesis-block-medium-frame-black": {
     "id": "print-honeybadger-and-cub-with-genesis-block-medium-frame-black",
@@ -1310,23 +1335,23 @@ export default {
     "artworkTitle": "Honeybadger and Cub with Genesis Block",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S8.27X11.71",
+    "sku": "5M144M9S8.01X11.45",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.0167,
-      "height": 11.4533,
+      "width": 8.01,
+      "height": 11.45,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.27,
-      "height": 11.71,
+      "width": 9.01,
+      "height": 12.45,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff.jpg",
-    "assetSha256": "731b6e933c9eab8942bb3ee6d53b0521de38dd2f8847bfccf0ca9737b06abaff",
+    "assetUrl": "https://vermillionaurora.com/print-editions/efbc521474eba4276d65b693e4a29526540aaf4b7de20c06a21c30ed317236a8.jpg",
+    "assetSha256": "efbc521474eba4276d65b693e4a29526540aaf4b7de20c06a21c30ed317236a8",
     "sourceSha256": "5661ac7acd18cb2d7e1634c9595fedb2ef05b6a9a0c454b5e5613b77c17a2c7b",
     "layoutApproved": true,
     "preview": {
@@ -1336,8 +1361,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.01,
+      "height": 11.45,
+      "unit": "in"
+    }
   },
   "print-honeybadger-and-cub-with-genesis-block-small-frame-black": {
     "id": "print-honeybadger-and-cub-with-genesis-block-small-frame-black",
@@ -1570,23 +1600,23 @@ export default {
     "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S14.1X9.37",
+    "sku": "5M144M9S13.84X9.11",
     "scale": 1,
     "imageSize": {
-      "width": 13.8467,
-      "height": 9.1133,
+      "width": 13.84,
+      "height": 9.11,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.1,
-      "height": 9.37,
+      "width": 14.84,
+      "height": 10.11,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b.jpg",
-    "assetSha256": "cdf7f38413648377f39587ae458e300068540ee120f20fdbcb59388bf7dca13b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2d30db8a095f3799bdf45074b1498e0fb23c8cf322d0b90f888628cf8038b488.jpg",
+    "assetSha256": "2d30db8a095f3799bdf45074b1498e0fb23c8cf322d0b90f888628cf8038b488",
     "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
     "layoutApproved": true,
     "preview": {
@@ -1596,8 +1626,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.84,
+      "height": 9.11,
+      "unit": "in"
+    }
   },
   "print-painting-couple-in-color-full-frame-black": {
     "id": "print-painting-couple-in-color-full-frame-black",
@@ -1830,23 +1865,23 @@ export default {
     "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.64X7.09",
+    "sku": "5M144M9S10.38X6.83",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.3867,
-      "height": 6.8367,
+      "width": 10.38,
+      "height": 6.83,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.64,
-      "height": 7.09,
+      "width": 11.38,
+      "height": 7.83,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585.jpg",
-    "assetSha256": "cd72cfe35fdd9a1360fd55db581e8610d17be16dd841f95644bb60351e3e0585",
+    "assetUrl": "https://vermillionaurora.com/print-editions/502894305df9d527041cea353690af40eedc0e6805e06d601b2dafdf7dbb549a.jpg",
+    "assetSha256": "502894305df9d527041cea353690af40eedc0e6805e06d601b2dafdf7dbb549a",
     "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
     "layoutApproved": true,
     "preview": {
@@ -1856,8 +1891,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.38,
+      "height": 6.83,
+      "unit": "in"
+    }
   },
   "print-painting-couple-in-color-medium-frame-black": {
     "id": "print-painting-couple-in-color-medium-frame-black",
@@ -2090,23 +2130,23 @@ export default {
     "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.17X4.81",
+    "sku": "5M144M9S6.91X4.55",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.9167,
-      "height": 4.5533,
+      "width": 6.91,
+      "height": 4.55,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.17,
-      "height": 4.81,
+      "width": 7.91,
+      "height": 5.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2.jpg",
-    "assetSha256": "2b2736e8953fdd3637e4090e353650bafca80c41a094051c1ea0a5bf514bdce2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d1cf58389f3bfbb6845a1c4d2d5fa8ba1944d8bcc395995559dbfdf56dc839aa.jpg",
+    "assetSha256": "d1cf58389f3bfbb6845a1c4d2d5fa8ba1944d8bcc395995559dbfdf56dc839aa",
     "sourceSha256": "f6b3e14539ed681eb7395e1d56e8537a437d8f085d5acc986d2d0318bc775c36",
     "layoutApproved": true,
     "preview": {
@@ -2116,8 +2156,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.91,
+      "height": 4.55,
+      "unit": "in"
+    }
   },
   "print-painting-couple-in-color-small-frame-black": {
     "id": "print-painting-couple-in-color-small-frame-black",
@@ -2350,23 +2395,23 @@ export default {
     "artworkTitle": "The Bounty of Satoshi: Wonder",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S4.46X8.82",
+    "sku": "5M144M9S4.2X8.55",
     "scale": 1,
     "imageSize": {
-      "width": 4.2067,
+      "width": 4.2,
       "height": 8.55,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.46,
-      "height": 8.82,
+      "width": 5.2,
+      "height": 9.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52.jpg",
-    "assetSha256": "30f079967342cdd781824587e66a8bbe35a62daf2cb6c6c8afb4548694860d52",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ae1123829e5a4bc55d5d35fc8e7bef1c68515357e3a84b01ba5d06aac563e5ef.jpg",
+    "assetSha256": "ae1123829e5a4bc55d5d35fc8e7bef1c68515357e3a84b01ba5d06aac563e5ef",
     "sourceSha256": "5a93fb9dae1591564ffabae3ec7eb4e3474858bad0c8c0c34ea878f467462e04",
     "layoutApproved": true,
     "preview": {
@@ -2376,8 +2421,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.2,
+      "height": 8.55,
+      "unit": "in"
+    }
   },
   "print-painting-festival-portrait-full-frame-black": {
     "id": "print-painting-festival-portrait-full-frame-black",
@@ -2610,23 +2660,23 @@ export default {
     "artworkTitle": "The Mother of Kiev",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4X6.79",
+    "sku": "5M144M9S4.01X7.01",
     "scale": 1,
     "imageSize": {
       "width": 3.53,
-      "height": 6.5367,
+      "height": 6.53,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4,
-      "height": 6.79,
+      "width": 5.01,
+      "height": 8.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834.jpg",
-    "assetSha256": "44e7b4c0bea7e958747f5162e7ef4b8bbb125cd5ce1e5419642526d505877834",
+    "assetUrl": "https://vermillionaurora.com/print-editions/773723f74c832baab33d4326107bac4f1939f9b2e7e3335ff46521e8abc3b0d2.jpg",
+    "assetSha256": "773723f74c832baab33d4326107bac4f1939f9b2e7e3335ff46521e8abc3b0d2",
     "sourceSha256": "a97a42644b7c84e4693e2af671f49e0daf4f16a662d7ac9796fe5e2d67c055aa",
     "layoutApproved": true,
     "preview": {
@@ -2636,8 +2686,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.01,
+      "height": 7.01,
+      "unit": "in"
+    }
   },
   "print-painting-figures-in-wheatfield-full-frame-black": {
     "id": "print-painting-figures-in-wheatfield-full-frame-black",
@@ -2868,25 +2923,25 @@ export default {
     "productId": "painting-golden-coast",
     "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print",
     "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
-    "amount": "35.00",
+    "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S5.18X9.46",
+    "sku": "5M144M9S4.92X9.2",
     "scale": 1,
     "imageSize": {
-      "width": 4.9267,
-      "height": 9.2033,
+      "width": 4.92,
+      "height": 9.2,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.18,
-      "height": 9.46,
+      "width": 5.92,
+      "height": 10.2,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef.jpg",
-    "assetSha256": "af7643fb9a82099d70debc524e34dd43510d720e48499ed6f02db95dc77316ef",
+    "assetUrl": "https://vermillionaurora.com/print-editions/04035adfca78319115b2372aff388e3f8461ec3a66fc97ebc1da020d0fec72b4.jpg",
+    "assetSha256": "04035adfca78319115b2372aff388e3f8461ec3a66fc97ebc1da020d0fec72b4",
     "sourceSha256": "9f3f1c8a20548e3041ad3062bf8879b280a5b26a63d3b6784f891c1f251e18e1",
     "layoutApproved": true,
     "preview": {
@@ -2896,8 +2951,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.92,
+      "height": 9.2,
+      "unit": "in"
+    }
   },
   "print-painting-golden-coast-full-frame-black": {
     "id": "print-painting-golden-coast-full-frame-black",
@@ -3128,25 +3188,25 @@ export default {
     "productId": "painting-guitarist",
     "title": "Girl Tuning Guitar — Large print",
     "artworkTitle": "Girl Tuning Guitar",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S9.09X10.4",
+    "sku": "5M144M9S8.83X10.14",
     "scale": 1,
     "imageSize": {
-      "width": 8.8367,
-      "height": 10.1467,
+      "width": 8.83,
+      "height": 10.14,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.09,
-      "height": 10.4,
+      "width": 9.83,
+      "height": 11.14,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b.jpg",
-    "assetSha256": "8396b2f5eaebfe4ed3348e6a7ae4842bd3aeda8278f3520117ca4566c7c0222b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b00df397486006be2cac3db4c1a7ff1d1ca13d0b8d96adf65f13769ff8ea9eca.jpg",
+    "assetSha256": "b00df397486006be2cac3db4c1a7ff1d1ca13d0b8d96adf65f13769ff8ea9eca",
     "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
     "layoutApproved": true,
     "preview": {
@@ -3156,8 +3216,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.83,
+      "height": 10.14,
+      "unit": "in"
+    }
   },
   "print-painting-guitarist-full-frame-black": {
     "id": "print-painting-guitarist-full-frame-black",
@@ -3390,23 +3455,23 @@ export default {
     "artworkTitle": "Girl Tuning Guitar",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.88X7.86",
+    "sku": "5M144M9S6.62X7.6",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.6233,
-      "height": 7.6067,
+      "width": 6.62,
+      "height": 7.6,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.88,
-      "height": 7.86,
+      "width": 7.62,
+      "height": 8.6,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0.jpg",
-    "assetSha256": "e896778dcc68e40e68b7f92317f882c2d7e913c307d69c50d77bd6656bbe71d0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b98187662e81f7bfb86f959b6ea9ebb4c69e8f5de17d511e55ccf025c6f1356c.jpg",
+    "assetSha256": "b98187662e81f7bfb86f959b6ea9ebb4c69e8f5de17d511e55ccf025c6f1356c",
     "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
     "layoutApproved": true,
     "preview": {
@@ -3416,8 +3481,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.62,
+      "height": 7.6,
+      "unit": "in"
+    }
   },
   "print-painting-guitarist-medium-frame-black": {
     "id": "print-painting-guitarist-medium-frame-black",
@@ -3650,23 +3720,23 @@ export default {
     "artworkTitle": "Girl Tuning Guitar",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.67X5.32",
+    "sku": "5M144M9S4.41X5.06",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.4133,
-      "height": 5.0667,
+      "width": 4.41,
+      "height": 5.06,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.67,
-      "height": 5.32,
+      "width": 5.41,
+      "height": 6.06,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358.jpg",
-    "assetSha256": "1e05fc4de9e70fd2708c6cc706459d27081601d13f960256dd3763e217577358",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f44c8b5b41c8483130e09d1c51dc545ee2d9ccbc367d3d283ce689c4a1f6261a.jpg",
+    "assetSha256": "f44c8b5b41c8483130e09d1c51dc545ee2d9ccbc367d3d283ce689c4a1f6261a",
     "sourceSha256": "df6cb0c90b3e3686c53c19965833979894218165c6c141e33f01331582f9cb18",
     "layoutApproved": true,
     "preview": {
@@ -3676,8 +3746,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.41,
+      "height": 5.06,
+      "unit": "in"
+    }
   },
   "print-painting-guitarist-small-frame-black": {
     "id": "print-painting-guitarist-small-frame-black",
@@ -3908,25 +3983,25 @@ export default {
     "productId": "painting-moonlit-water",
     "title": "Moonrise Over the Cascades — Large print",
     "artworkTitle": "Moonrise Over the Cascades",
-    "amount": "80.00",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S9.69X19.44",
+    "sku": "5M144M9S9.43X19.18",
     "scale": 1,
     "imageSize": {
-      "width": 9.4367,
-      "height": 19.1867,
+      "width": 9.43,
+      "height": 19.18,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.69,
-      "height": 19.44,
+      "width": 10.43,
+      "height": 20.18,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3.jpg",
-    "assetSha256": "e2e1874fc2c98085c58c6e0bdc666708dc63845f42a03fa82954be72cda025d3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d2f20c5ee81020c79607f79488e79c99073e2bd799c5e8cfaa38ca40476d5df2.jpg",
+    "assetSha256": "d2f20c5ee81020c79607f79488e79c99073e2bd799c5e8cfaa38ca40476d5df2",
     "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
     "layoutApproved": true,
     "preview": {
@@ -3936,8 +4011,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.43,
+      "height": 19.18,
+      "unit": "in"
+    }
   },
   "print-painting-moonlit-water-full-frame-black": {
     "id": "print-painting-moonlit-water-full-frame-black",
@@ -4170,23 +4250,23 @@ export default {
     "artworkTitle": "Moonrise Over the Cascades",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S7.33X14.64",
+    "sku": "5M144M9S7.07X14.38",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.0767,
-      "height": 14.3867,
+      "width": 7.07,
+      "height": 14.38,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.33,
-      "height": 14.64,
+      "width": 8.07,
+      "height": 15.38,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca.jpg",
-    "assetSha256": "4c234f3508b27e16cbc87fd02e5efa789e2d5550d91f647716973590590f88ca",
+    "assetUrl": "https://vermillionaurora.com/print-editions/621d4b4dec44f4655d0956d28f58974db2e8614248da7d1a0281a084f93bfe61.jpg",
+    "assetSha256": "621d4b4dec44f4655d0956d28f58974db2e8614248da7d1a0281a084f93bfe61",
     "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
     "layoutApproved": true,
     "preview": {
@@ -4196,8 +4276,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.07,
+      "height": 14.38,
+      "unit": "in"
+    }
   },
   "print-painting-moonlit-water-medium-frame-black": {
     "id": "print-painting-moonlit-water-medium-frame-black",
@@ -4430,23 +4515,23 @@ export default {
     "artworkTitle": "Moonrise Over the Cascades",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S4.97X9.84",
+    "sku": "5M144M9S4.71X9.58",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.7167,
-      "height": 9.5867,
+      "width": 4.71,
+      "height": 9.58,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.97,
-      "height": 9.84,
+      "width": 5.71,
+      "height": 10.58,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a.jpg",
-    "assetSha256": "85961ee9300e22ed3ba80e1f5c489dfef69a55a2ff5de2ea7100a0f7844cf55a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e2a4712096c412289231bd3012fb25653c552825696a129844403bac19eee7ee.jpg",
+    "assetSha256": "e2a4712096c412289231bd3012fb25653c552825696a129844403bac19eee7ee",
     "sourceSha256": "370a11b9549c02d36d2ecf5a32d0e0e9b927311a116a38623a17985029422b2d",
     "layoutApproved": true,
     "preview": {
@@ -4456,8 +4541,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.71,
+      "height": 9.58,
+      "unit": "in"
+    }
   },
   "print-painting-moonlit-water-small-frame-black": {
     "id": "print-painting-moonlit-water-small-frame-black",
@@ -4690,23 +4780,23 @@ export default {
     "artworkTitle": "The Bounty of Satoshi: Achievement",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S4.37X8.72",
+    "sku": "5M144M9S4.11X8.46",
     "scale": 1,
     "imageSize": {
-      "width": 4.1167,
-      "height": 8.4667,
+      "width": 4.11,
+      "height": 8.46,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.37,
-      "height": 8.72,
+      "width": 5.11,
+      "height": 9.46,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b.jpg",
-    "assetSha256": "c1f45720d050feff956e7edd06f6c850e26c3913239c36cc92d389c1927c275b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/18bf27b633a8010431d17f9528fdbaa19724c1a8db6dac0f6341508aad8acb4f.jpg",
+    "assetSha256": "18bf27b633a8010431d17f9528fdbaa19724c1a8db6dac0f6341508aad8acb4f",
     "sourceSha256": "3ae03c4519694354f32fd4500c9b80d14213531c3e37ed74b2e5a6bb9206b69e",
     "layoutApproved": true,
     "preview": {
@@ -4716,8 +4806,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.11,
+      "height": 8.46,
+      "unit": "in"
+    }
   },
   "print-painting-phoenix-rising-full-frame-black": {
     "id": "print-painting-phoenix-rising-full-frame-black",
@@ -4950,23 +5045,23 @@ export default {
     "artworkTitle": "MJ",
     "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S12.25X13.85",
+    "sku": "5M144M9S11.99X13.59",
     "scale": 1,
     "imageSize": {
-      "width": 11.9933,
-      "height": 13.5967,
+      "width": 11.99,
+      "height": 13.59,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.25,
-      "height": 13.85,
+      "width": 12.99,
+      "height": 14.59,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0.jpg",
-    "assetSha256": "defd822e268b43f0fc7ae0eb446862bf196af78e882a90ea11e4b90919adbaf0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fa2d021e4a8104ccaa23157637efefc6ee833cd9f37bd15bbba1e00cb20c80b0.jpg",
+    "assetSha256": "fa2d021e4a8104ccaa23157637efefc6ee833cd9f37bd15bbba1e00cb20c80b0",
     "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
     "layoutApproved": true,
     "preview": {
@@ -4976,8 +5071,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.99,
+      "height": 13.59,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-in-blue-light-full-frame-black": {
     "id": "print-painting-portrait-in-blue-light-full-frame-black",
@@ -5208,25 +5308,25 @@ export default {
     "productId": "painting-portrait-in-blue-light",
     "title": "MJ — Medium print",
     "artworkTitle": "MJ",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S9.25X10.45",
+    "sku": "5M144M9S8.99X10.19",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.9933,
-      "height": 10.1967,
+      "width": 8.99,
+      "height": 10.19,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.25,
-      "height": 10.45,
+      "width": 9.99,
+      "height": 11.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d.jpg",
-    "assetSha256": "be23a7bd1114923ef0a8369970faea4672431b09284e3326a0974e0a3a03c10d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/116d72e34f9b2437506a2d8e051bbd09cd80517d7d53530169ee9a116c3e204d.jpg",
+    "assetSha256": "116d72e34f9b2437506a2d8e051bbd09cd80517d7d53530169ee9a116c3e204d",
     "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
     "layoutApproved": true,
     "preview": {
@@ -5236,8 +5336,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.99,
+      "height": 10.19,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-in-blue-light-medium-frame-black": {
     "id": "print-painting-portrait-in-blue-light-medium-frame-black",
@@ -5470,23 +5575,23 @@ export default {
     "artworkTitle": "MJ",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.25X7.05",
+    "sku": "5M144M9S5.99X6.79",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9967,
-      "height": 6.7967,
+      "width": 5.99,
+      "height": 6.79,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.25,
-      "height": 7.05,
+      "width": 6.99,
+      "height": 7.79,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa.jpg",
-    "assetSha256": "979698068621482a03c274e8b1728b39fc70cefc70287ac957f792ac8ffe5afa",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c9c5b2d4182fef960ec524df6fad32f9fe4fa7f0b99d687f2e3a8f189637311c.jpg",
+    "assetSha256": "c9c5b2d4182fef960ec524df6fad32f9fe4fa7f0b99d687f2e3a8f189637311c",
     "sourceSha256": "f8860ee7e0bc016ca435183a6539bac3ba4b0024f1078ac1d1f075f98c2fcb53",
     "layoutApproved": true,
     "preview": {
@@ -5496,8 +5601,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.99,
+      "height": 6.79,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-in-blue-light-small-frame-black": {
     "id": "print-painting-portrait-in-blue-light-small-frame-black",
@@ -5728,25 +5838,25 @@ export default {
     "productId": "painting-portrait-in-gold",
     "title": "Dorian Nakamoto — Large print",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "35.00",
+    "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.38X9.03",
+    "sku": "5M144M9S8.12X8.77",
     "scale": 1,
     "imageSize": {
-      "width": 8.1267,
-      "height": 8.7767,
+      "width": 8.12,
+      "height": 8.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.38,
-      "height": 9.03,
+      "width": 9.12,
+      "height": 9.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373.jpg",
-    "assetSha256": "49b1099017a6060e67b058c8f2489c6f688fab180204d31694ff6d7d70bdc373",
+    "assetUrl": "https://vermillionaurora.com/print-editions/30c64c91da47b6aacc600e91390a80ebb0158708c2e59391b9acd28de6935e67.jpg",
+    "assetSha256": "30c64c91da47b6aacc600e91390a80ebb0158708c2e59391b9acd28de6935e67",
     "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
     "layoutApproved": true,
     "preview": {
@@ -5756,8 +5866,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.12,
+      "height": 8.77,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-in-gold-full-frame-black": {
     "id": "print-painting-portrait-in-gold-full-frame-black",
@@ -5990,23 +6105,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.35X6.83",
+    "sku": "5M144M9S6.09X6.57",
     "scale": 0.75,
     "imageSize": {
       "width": 6.09,
-      "height": 6.5767,
+      "height": 6.57,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.35,
-      "height": 6.83,
+      "width": 7.09,
+      "height": 7.57,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251.jpg",
-    "assetSha256": "62624fed7123eb5f63960ffa070e27c7667aa5cca52772ce362ea3d93182a251",
+    "assetUrl": "https://vermillionaurora.com/print-editions/513347c4780dd14849141ed6332eeb73a3bde0a07bc3a1634ce77f2bc77fe380.jpg",
+    "assetSha256": "513347c4780dd14849141ed6332eeb73a3bde0a07bc3a1634ce77f2bc77fe380",
     "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
     "layoutApproved": true,
     "preview": {
@@ -6016,8 +6131,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.09,
+      "height": 6.57,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-in-gold-medium-frame-black": {
     "id": "print-painting-portrait-in-gold-medium-frame-black",
@@ -6250,23 +6370,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.31X4.64",
+    "sku": "5M144M9S4.05X4.38",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.0567,
+      "width": 4.05,
       "height": 4.38,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.31,
-      "height": 4.64,
+      "width": 5.05,
+      "height": 5.38,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266.jpg",
-    "assetSha256": "98876cfcbfc49448105b85691de51cecb7d3dc1fb4f817e806eaa5c947464266",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f6d610ef5efea8581cb77fa090558f56f3c4d1735cc42a81f3518df456b5cbf0.jpg",
+    "assetSha256": "f6d610ef5efea8581cb77fa090558f56f3c4d1735cc42a81f3518df456b5cbf0",
     "sourceSha256": "edcc7405e05f4353e269958204c32ca9af022e77e445f06fb978c3a877bbee34",
     "layoutApproved": true,
     "preview": {
@@ -6276,8 +6396,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.05,
+      "height": 4.38,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-in-gold-small-frame-black": {
     "id": "print-painting-portrait-in-gold-small-frame-black",
@@ -6510,23 +6635,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S9.46X11.3",
+    "sku": "5M144M9S9.2X11.04",
     "scale": 1,
     "imageSize": {
-      "width": 9.2067,
-      "height": 11.0433,
+      "width": 9.2,
+      "height": 11.04,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.46,
-      "height": 11.3,
+      "width": 10.2,
+      "height": 12.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd.jpg",
-    "assetSha256": "d6a912a765ebee1d6f76725b892e22f196bfe4f6855b60f970768fa3fd339bcd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f99c65ba0d48d9ba921a0e6a816e854d33207b9f864c81e4d3294604ec18d869.jpg",
+    "assetSha256": "f99c65ba0d48d9ba921a0e6a816e854d33207b9f864c81e4d3294604ec18d869",
     "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
@@ -6536,8 +6661,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.2,
+      "height": 11.04,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-in-green-full-frame-black": {
     "id": "print-painting-portrait-in-green-full-frame-black",
@@ -6768,25 +6898,25 @@ export default {
     "productId": "painting-portrait-in-green",
     "title": "Chase Toole — Medium print",
     "artworkTitle": "Chase Toole",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.16X8.54",
+    "sku": "5M144M9S6.9X8.28",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.9067,
-      "height": 8.2867,
+      "width": 6.9,
+      "height": 8.28,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.16,
-      "height": 8.54,
+      "width": 7.9,
+      "height": 9.28,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301.jpg",
-    "assetSha256": "9c45119a7a925c2e5e480cca27e93167e418f27212aaa750586007bc70f00301",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1134095e1115e49ecfb38fe95564d40e62a689de8cd19000f191b06c5b2f72f4.jpg",
+    "assetSha256": "1134095e1115e49ecfb38fe95564d40e62a689de8cd19000f191b06c5b2f72f4",
     "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
@@ -6796,8 +6926,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.9,
+      "height": 8.28,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-in-green-medium-frame-black": {
     "id": "print-painting-portrait-in-green-medium-frame-black",
@@ -7030,23 +7165,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.85X5.77",
+    "sku": "5M144M9S4.59X5.51",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.5967,
-      "height": 5.5133,
+      "width": 4.59,
+      "height": 5.51,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.85,
-      "height": 5.77,
+      "width": 5.59,
+      "height": 6.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3.jpg",
-    "assetSha256": "fb15648ffe6c2dd29a938076e8719941fc257543b55c4dad348bd7418dac29c3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a4819acb843ae81a5044fbd6b39c21661cc89f347c1abed82fa48a9daa21404c.jpg",
+    "assetSha256": "a4819acb843ae81a5044fbd6b39c21661cc89f347c1abed82fa48a9daa21404c",
     "sourceSha256": "9ba4b0f54e321f8b264ccb423549c1d935d4e02767f91549de7c6fade8ccf5b8",
     "layoutApproved": true,
     "preview": {
@@ -7056,8 +7191,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.59,
+      "height": 5.51,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-in-green-small-frame-black": {
     "id": "print-painting-portrait-in-green-small-frame-black",
@@ -7290,23 +7430,23 @@ export default {
     "artworkTitle": "Sunrise on Rainier with Eagle",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S25.63X7.35",
+    "sku": "5M144M9S25.36X7.09",
     "scale": 1,
     "imageSize": {
-      "width": 25.3667,
-      "height": 7.0967,
+      "width": 25.36,
+      "height": 7.09,
       "unit": "in"
     },
     "paperSize": {
-      "width": 25.63,
-      "height": 7.35,
+      "width": 26.36,
+      "height": 8.09,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9.jpg",
-    "assetSha256": "10fb4ad8a76d5650ca6578c62cae7d1114706830f739e1fb86b19d114b8a6fa9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0be7d78bcfffd56696ff665a35e89a5063cc01de878e27238a4618cfdaebf70c.jpg",
+    "assetSha256": "0be7d78bcfffd56696ff665a35e89a5063cc01de878e27238a4618cfdaebf70c",
     "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
     "layoutApproved": true,
     "preview": {
@@ -7316,8 +7456,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 25.36,
+      "height": 7.09,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-with-hat-full-frame-black": {
     "id": "print-painting-portrait-with-hat-full-frame-black",
@@ -7550,23 +7695,23 @@ export default {
     "artworkTitle": "Sunrise on Rainier with Eagle",
     "amount": "65.00",
     "currency": "USD",
-    "sku": "5M144M8S19.28X5.57",
+    "sku": "5M144M9S19X5.31",
     "scale": 0.75,
     "imageSize": {
-      "width": 19.0067,
-      "height": 5.3167,
+      "width": 19,
+      "height": 5.31,
       "unit": "in"
     },
     "paperSize": {
-      "width": 19.28,
-      "height": 5.57,
+      "width": 20,
+      "height": 6.31,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/393bca2542b75aeae6a0d3b5a8127b7c40702f2d6c4ef5db9bff5174e35c7818.jpg",
-    "assetSha256": "393bca2542b75aeae6a0d3b5a8127b7c40702f2d6c4ef5db9bff5174e35c7818",
+    "assetUrl": "https://vermillionaurora.com/print-editions/636fbdb315b4181c9c9078f9c463fc149f27d2ceac103ba02f99c9e21b0c234d.jpg",
+    "assetSha256": "636fbdb315b4181c9c9078f9c463fc149f27d2ceac103ba02f99c9e21b0c234d",
     "sourceSha256": "06b6660bc24b59597f923ebfa869fe3bcbacae363f1b8cab9a6486a3c73a756a",
     "layoutApproved": true,
     "preview": {
@@ -7576,8 +7721,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 19,
+      "height": 5.31,
+      "unit": "in"
+    }
   },
   "print-painting-portrait-with-hat-medium-frame-black": {
     "id": "print-painting-portrait-with-hat-medium-frame-black",
@@ -7808,25 +7958,25 @@ export default {
     "productId": "painting-red-horizon",
     "title": "Sunset at Kihei on Maui — Large print",
     "artworkTitle": "Sunset at Kihei on Maui",
-    "amount": "130.00",
+    "amount": "125.00",
     "currency": "USD",
-    "sku": "5M144M8S12.63X23.94",
+    "sku": "5M144M9S12.37X23.67",
     "scale": 1,
     "imageSize": {
-      "width": 12.3767,
-      "height": 23.6767,
+      "width": 12.37,
+      "height": 23.67,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.63,
-      "height": 23.94,
+      "width": 13.37,
+      "height": 24.67,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3ddbf219c659447351768a3b9c54ab035fd41874d03f4efb2111554f0c1ec2e0.jpg",
-    "assetSha256": "3ddbf219c659447351768a3b9c54ab035fd41874d03f4efb2111554f0c1ec2e0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c6fc1251d723216f2ad9119d1f2c510708d9bfc98cc46335228e4e7d3df3abfc.jpg",
+    "assetSha256": "c6fc1251d723216f2ad9119d1f2c510708d9bfc98cc46335228e4e7d3df3abfc",
     "sourceSha256": "f6e3bea6cf0aae99cac1bf06cccd45149b5be70beb16be754e64984b0e176efc",
     "layoutApproved": true,
     "preview": {
@@ -7836,8 +7986,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.37,
+      "height": 23.67,
+      "unit": "in"
+    }
   },
   "print-painting-red-horizon-full-frame-black": {
     "id": "print-painting-red-horizon-full-frame-black",
@@ -8070,23 +8225,23 @@ export default {
     "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S9.53X18.01",
+    "sku": "5M144M9S9.27X17.74",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.2767,
-      "height": 17.7467,
+      "width": 9.27,
+      "height": 17.74,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.53,
-      "height": 18.01,
+      "width": 10.27,
+      "height": 18.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/04e5977c502cbc87e26ea7132e605fbb7774fd7df1a2900bf09f53a6226d726a.jpg",
-    "assetSha256": "04e5977c502cbc87e26ea7132e605fbb7774fd7df1a2900bf09f53a6226d726a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fefab2ee51af26823da265e8c493f37a3db38d9e63dc1a90228220b7108e98bc.jpg",
+    "assetSha256": "fefab2ee51af26823da265e8c493f37a3db38d9e63dc1a90228220b7108e98bc",
     "sourceSha256": "f6e3bea6cf0aae99cac1bf06cccd45149b5be70beb16be754e64984b0e176efc",
     "layoutApproved": true,
     "preview": {
@@ -8096,8 +8251,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.27,
+      "height": 17.74,
+      "unit": "in"
+    }
   },
   "print-painting-red-horizon-medium-frame-black": {
     "id": "print-painting-red-horizon-medium-frame-black",
@@ -8330,23 +8490,23 @@ export default {
     "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S6.44X12.09",
+    "sku": "5M144M9S6.18X11.83",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.1867,
-      "height": 11.8367,
+      "width": 6.18,
+      "height": 11.83,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.44,
-      "height": 12.09,
+      "width": 7.18,
+      "height": 12.83,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/908e6f0210d7f13c093ee0d17a41c8d0435a7c2ac6ae29fafcad0f1d15482fce.jpg",
-    "assetSha256": "908e6f0210d7f13c093ee0d17a41c8d0435a7c2ac6ae29fafcad0f1d15482fce",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3bcdb9edd83cbf886602dd73d72dec0683af1d087f6acc088d5afd3fe7d9d8ee.jpg",
+    "assetSha256": "3bcdb9edd83cbf886602dd73d72dec0683af1d087f6acc088d5afd3fe7d9d8ee",
     "sourceSha256": "f6e3bea6cf0aae99cac1bf06cccd45149b5be70beb16be754e64984b0e176efc",
     "layoutApproved": true,
     "preview": {
@@ -8356,8 +8516,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.18,
+      "height": 11.83,
+      "unit": "in"
+    }
   },
   "print-painting-red-horizon-small-frame-black": {
     "id": "print-painting-red-horizon-small-frame-black",
@@ -8588,25 +8753,25 @@ export default {
     "productId": "hope-the-vermillion-aurora",
     "title": "Hope, the Vermillion Aurora — Large print",
     "artworkTitle": "Hope, the Vermillion Aurora",
-    "amount": "110.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S22.71X11.48",
+    "sku": "5M144M9S22.45X11.22",
     "scale": 1,
     "imageSize": {
-      "width": 22.4533,
-      "height": 11.2267,
+      "width": 22.45,
+      "height": 11.22,
       "unit": "in"
     },
     "paperSize": {
-      "width": 22.71,
-      "height": 11.48,
+      "width": 23.45,
+      "height": 12.22,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2f7300061b019f61b9f7b275885a316c7a265fb75fdc248cd0a480cbd3ae5e06.jpg",
-    "assetSha256": "2f7300061b019f61b9f7b275885a316c7a265fb75fdc248cd0a480cbd3ae5e06",
+    "assetUrl": "https://vermillionaurora.com/print-editions/89dc47168feea7b4dc482cb196eb3232f4e5401f9dfbc037aacbb896874bc704.jpg",
+    "assetSha256": "89dc47168feea7b4dc482cb196eb3232f4e5401f9dfbc037aacbb896874bc704",
     "sourceSha256": "62fadea5e859a0d9adca611a1bbb9d8b714edf350fa0885e2920296867d136fb",
     "layoutApproved": true,
     "preview": {
@@ -8616,8 +8781,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 22.45,
+      "height": 11.22,
+      "unit": "in"
+    }
   },
   "print-hope-the-vermillion-aurora-full-frame-black": {
     "id": "print-hope-the-vermillion-aurora-full-frame-black",
@@ -8850,23 +9020,23 @@ export default {
     "artworkTitle": "Hope, the Vermillion Aurora",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S17.1X8.67",
+    "sku": "5M144M9S16.83X8.41",
     "scale": 0.75,
     "imageSize": {
-      "width": 16.8333,
-      "height": 8.4167,
+      "width": 16.83,
+      "height": 8.41,
       "unit": "in"
     },
     "paperSize": {
-      "width": 17.1,
-      "height": 8.67,
+      "width": 17.83,
+      "height": 9.41,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c8d9ea33324d96e50397d2dff94c85b7fe1d58c31579b4959653efa53c8aa8d2.jpg",
-    "assetSha256": "c8d9ea33324d96e50397d2dff94c85b7fe1d58c31579b4959653efa53c8aa8d2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a6a4209aba015d0c89b9434c64b4c56f323193c15d8f9cc162757b0bd2f7bf0d.jpg",
+    "assetSha256": "a6a4209aba015d0c89b9434c64b4c56f323193c15d8f9cc162757b0bd2f7bf0d",
     "sourceSha256": "62fadea5e859a0d9adca611a1bbb9d8b714edf350fa0885e2920296867d136fb",
     "layoutApproved": true,
     "preview": {
@@ -8876,8 +9046,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.83,
+      "height": 8.41,
+      "unit": "in"
+    }
   },
   "print-hope-the-vermillion-aurora-medium-frame-black": {
     "id": "print-hope-the-vermillion-aurora-medium-frame-black",
@@ -9108,25 +9283,25 @@ export default {
     "productId": "hope-the-vermillion-aurora",
     "title": "Hope, the Vermillion Aurora — Small print",
     "artworkTitle": "Hope, the Vermillion Aurora",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.48X5.86",
+    "sku": "5M144M9S11.21X5.6",
     "scale": 0.5,
     "imageSize": {
-      "width": 11.2133,
-      "height": 5.6067,
+      "width": 11.21,
+      "height": 5.6,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.48,
-      "height": 5.86,
+      "width": 12.21,
+      "height": 6.6,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c8a6fcfc54c203e18e3e11ed21730f2f2046e9afe1726cce3a5b718ce77ea028.jpg",
-    "assetSha256": "c8a6fcfc54c203e18e3e11ed21730f2f2046e9afe1726cce3a5b718ce77ea028",
+    "assetUrl": "https://vermillionaurora.com/print-editions/86973345900f231226ec7ffcab336d021e237217c0e7cd684c42f91bf93d1819.jpg",
+    "assetSha256": "86973345900f231226ec7ffcab336d021e237217c0e7cd684c42f91bf93d1819",
     "sourceSha256": "62fadea5e859a0d9adca611a1bbb9d8b714edf350fa0885e2920296867d136fb",
     "layoutApproved": true,
     "preview": {
@@ -9136,8 +9311,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.21,
+      "height": 5.6,
+      "unit": "in"
+    }
   },
   "print-hope-the-vermillion-aurora-small-frame-black": {
     "id": "print-hope-the-vermillion-aurora-small-frame-black",
@@ -9370,23 +9550,23 @@ export default {
     "artworkTitle": "El Zonte at Dawn",
     "amount": "130.00",
     "currency": "USD",
-    "sku": "5M144M8S25.73X12.3",
+    "sku": "5M144M9S25.47X12.04",
     "scale": 1,
     "imageSize": {
-      "width": 25.4767,
-      "height": 12.0467,
+      "width": 25.47,
+      "height": 12.04,
       "unit": "in"
     },
     "paperSize": {
-      "width": 25.73,
-      "height": 12.3,
+      "width": 26.47,
+      "height": 13.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883.jpg",
-    "assetSha256": "168abc0d0194d2e54b7a08b83dfca777bad556737180fc64823a033ce775f883",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9649a7209e0e9060245c6c9a76df04c4cdb4f061319c491cb97c75e71c20681f.jpg",
+    "assetSha256": "9649a7209e0e9060245c6c9a76df04c4cdb4f061319c491cb97c75e71c20681f",
     "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
     "layoutApproved": true,
     "preview": {
@@ -9396,8 +9576,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 25.47,
+      "height": 12.04,
+      "unit": "in"
+    }
   },
   "print-painting-shoreline-at-dusk-full-frame-black": {
     "id": "print-painting-shoreline-at-dusk-full-frame-black",
@@ -9628,25 +9813,25 @@ export default {
     "productId": "painting-shoreline-at-dusk",
     "title": "El Zonte at Dawn — Medium print",
     "artworkTitle": "El Zonte at Dawn",
-    "amount": "75.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S19.36X9.28",
+    "sku": "5M144M9S19.09X9.02",
     "scale": 0.75,
     "imageSize": {
       "width": 19.09,
-      "height": 9.0267,
+      "height": 9.02,
       "unit": "in"
     },
     "paperSize": {
-      "width": 19.36,
-      "height": 9.28,
+      "width": 20.09,
+      "height": 10.02,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e.jpg",
-    "assetSha256": "5a2326161a9bd7fc023c9e89459c7a5e34c2d98519f382ec1132c557c658061e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ccda4a6b710b991279460e4a2d0977c663c1e574824931ec94e9c371a6c5de66.jpg",
+    "assetSha256": "ccda4a6b710b991279460e4a2d0977c663c1e574824931ec94e9c371a6c5de66",
     "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
     "layoutApproved": true,
     "preview": {
@@ -9656,8 +9841,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 19.09,
+      "height": 9.02,
+      "unit": "in"
+    }
   },
   "print-painting-shoreline-at-dusk-medium-frame-black": {
     "id": "print-painting-shoreline-at-dusk-medium-frame-black",
@@ -9890,23 +10080,23 @@ export default {
     "artworkTitle": "El Zonte at Dawn",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S12.99X6.27",
+    "sku": "5M144M9S12.72X6.01",
     "scale": 0.5,
     "imageSize": {
-      "width": 12.7233,
-      "height": 6.0167,
+      "width": 12.72,
+      "height": 6.01,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.99,
-      "height": 6.27,
+      "width": 13.72,
+      "height": 7.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2.jpg",
-    "assetSha256": "6267c08a239b7dbe96654bb95b5b3c3b7e7762ad537c456dde82f049b669f2f2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8f9686a7b8807ebc894a5fc35240251132934d5d4b4ec7cd17be244d0c35077e.jpg",
+    "assetSha256": "8f9686a7b8807ebc894a5fc35240251132934d5d4b4ec7cd17be244d0c35077e",
     "sourceSha256": "63d06a96a47f9244f2309dbda6117c8922c6eade29a98ad674923cf57378421a",
     "layoutApproved": true,
     "preview": {
@@ -9916,8 +10106,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.72,
+      "height": 6.01,
+      "unit": "in"
+    }
   },
   "print-painting-shoreline-at-dusk-small-frame-black": {
     "id": "print-painting-shoreline-at-dusk-small-frame-black",
@@ -10150,23 +10345,23 @@ export default {
     "artworkTitle": "El Zonte Before Dawn",
     "amount": "130.00",
     "currency": "USD",
-    "sku": "5M144M8S25.39X12.25",
+    "sku": "5M144M9S25.13X11.99",
     "scale": 1,
     "imageSize": {
-      "width": 25.1367,
-      "height": 11.9967,
+      "width": 25.13,
+      "height": 11.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 25.39,
-      "height": 12.25,
+      "width": 26.13,
+      "height": 12.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047.jpg",
-    "assetSha256": "f9bb5e82c05825541446a34e8dde4e054e34d2eb1129b5727ca399ec01399047",
+    "assetUrl": "https://vermillionaurora.com/print-editions/54be757e6cac90b5f51477ebc0e75b9478d2fd96e688c352db390bde678dc0ed.jpg",
+    "assetSha256": "54be757e6cac90b5f51477ebc0e75b9478d2fd96e688c352db390bde678dc0ed",
     "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
     "layoutApproved": true,
     "preview": {
@@ -10176,8 +10371,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 25.13,
+      "height": 11.99,
+      "unit": "in"
+    }
   },
   "print-el-zonte-before-dawn-full-frame-black": {
     "id": "print-el-zonte-before-dawn-full-frame-black",
@@ -10408,25 +10608,25 @@ export default {
     "productId": "el-zonte-before-dawn",
     "title": "El Zonte Before Dawn — Medium print",
     "artworkTitle": "El Zonte Before Dawn",
-    "amount": "75.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S19.11X9.25",
+    "sku": "5M144M9S18.85X8.99",
     "scale": 0.75,
     "imageSize": {
-      "width": 18.8533,
-      "height": 8.9967,
+      "width": 18.85,
+      "height": 8.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 19.11,
-      "height": 9.25,
+      "width": 19.85,
+      "height": 9.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17.jpg",
-    "assetSha256": "e016a237715a7128c7567a0f5bffd56df2b1462b2293a4009ee3c55f6266fb17",
+    "assetUrl": "https://vermillionaurora.com/print-editions/24bf7924f3162b08ed727eaad64b6bfa43382798332c9167d8d6e5ce1c052828.jpg",
+    "assetSha256": "24bf7924f3162b08ed727eaad64b6bfa43382798332c9167d8d6e5ce1c052828",
     "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
     "layoutApproved": true,
     "preview": {
@@ -10436,8 +10636,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 18.85,
+      "height": 8.99,
+      "unit": "in"
+    }
   },
   "print-el-zonte-before-dawn-medium-frame-black": {
     "id": "print-el-zonte-before-dawn-medium-frame-black",
@@ -10670,23 +10875,23 @@ export default {
     "artworkTitle": "El Zonte Before Dawn",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S12.82X6.25",
+    "sku": "5M144M9S12.56X5.99",
     "scale": 0.5,
     "imageSize": {
-      "width": 12.5667,
-      "height": 5.9967,
+      "width": 12.56,
+      "height": 5.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.82,
-      "height": 6.25,
+      "width": 13.56,
+      "height": 6.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48.jpg",
-    "assetSha256": "846e1b9dcc614141ace815221febfc76414ce645fcbbf01a0272266101b49d48",
+    "assetUrl": "https://vermillionaurora.com/print-editions/73ccbbff9708ff40c24b0beba4184e4ce45eef9b57744a77179be686f955a832.jpg",
+    "assetSha256": "73ccbbff9708ff40c24b0beba4184e4ce45eef9b57744a77179be686f955a832",
     "sourceSha256": "0832de7fa78ee0b4964fb98b9009c464a0a40018c4db8f32144bd246d9135559",
     "layoutApproved": true,
     "preview": {
@@ -10696,8 +10901,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.56,
+      "height": 5.99,
+      "unit": "in"
+    }
   },
   "print-el-zonte-before-dawn-small-frame-black": {
     "id": "print-el-zonte-before-dawn-small-frame-black",
@@ -10928,25 +11138,25 @@ export default {
     "productId": "sunrise-in-el-zonte-large",
     "title": "Sunrise in El Zonte (Large) — Large print",
     "artworkTitle": "Sunrise in El Zonte (Large)",
-    "amount": "160.00",
+    "amount": "155.00",
     "currency": "USD",
-    "sku": "5M144M8S16.7X22.94",
+    "sku": "5M144M9S16.44X22.68",
     "scale": 1,
     "imageSize": {
-      "width": 16.4467,
-      "height": 22.6867,
+      "width": 16.44,
+      "height": 22.68,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.7,
-      "height": 22.94,
+      "width": 17.44,
+      "height": 23.68,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5.jpg",
-    "assetSha256": "50a6b0b7620bc409e26aab665f3d00ecc53f9db64adf192177f41e7d10a69ed5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c4fb0e552da271fc31a2c907847e935d430d90cc99e5a5d6a373bfe36b6e11df.jpg",
+    "assetSha256": "c4fb0e552da271fc31a2c907847e935d430d90cc99e5a5d6a373bfe36b6e11df",
     "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
     "layoutApproved": true,
     "preview": {
@@ -10956,8 +11166,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.44,
+      "height": 22.68,
+      "unit": "in"
+    }
   },
   "print-sunrise-in-el-zonte-large-full-frame-black": {
     "id": "print-sunrise-in-el-zonte-large-full-frame-black",
@@ -11188,25 +11403,25 @@ export default {
     "productId": "sunrise-in-el-zonte-large",
     "title": "Sunrise in El Zonte (Large) — Medium print",
     "artworkTitle": "Sunrise in El Zonte (Large)",
-    "amount": "95.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S12.58X17.27",
+    "sku": "5M144M9S12.32X17",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.3267,
-      "height": 17.0067,
+      "width": 12.32,
+      "height": 17,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.58,
-      "height": 17.27,
+      "width": 13.32,
+      "height": 18,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d.jpg",
-    "assetSha256": "21210375428a82194f7255df4b330d82d5889dc7c23078d48d68c3786c80335d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7b480e63d09302abe5d559c02b80978c0b9b784b1a31aace40a7a224c7500f34.jpg",
+    "assetSha256": "7b480e63d09302abe5d559c02b80978c0b9b784b1a31aace40a7a224c7500f34",
     "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
     "layoutApproved": true,
     "preview": {
@@ -11216,8 +11431,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.32,
+      "height": 17,
+      "unit": "in"
+    }
   },
   "print-sunrise-in-el-zonte-large-medium-frame-black": {
     "id": "print-sunrise-in-el-zonte-large-medium-frame-black",
@@ -11450,23 +11670,23 @@ export default {
     "artworkTitle": "Sunrise in El Zonte (Large)",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S8.47X11.59",
+    "sku": "5M144M9S8.21X11.33",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.2167,
-      "height": 11.3367,
+      "width": 8.21,
+      "height": 11.33,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.47,
-      "height": 11.59,
+      "width": 9.21,
+      "height": 12.33,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e.jpg",
-    "assetSha256": "1481fdbd401f530cb956913cd45fafb0996e5e441dd2190b1e996d1536dece7e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4ef791397f866d49d38d90e2236c4aa0006fa2e6034354365c20c3e7358ccc96.jpg",
+    "assetSha256": "4ef791397f866d49d38d90e2236c4aa0006fa2e6034354365c20c3e7358ccc96",
     "sourceSha256": "85427e7af2a0b74812205d51fbd7046788188c69454562ed1afc25ecb380c488",
     "layoutApproved": true,
     "preview": {
@@ -11476,8 +11696,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.21,
+      "height": 11.33,
+      "unit": "in"
+    }
   },
   "print-sunrise-in-el-zonte-large-small-frame-black": {
     "id": "print-sunrise-in-el-zonte-large-small-frame-black",
@@ -11708,25 +11933,25 @@ export default {
     "productId": "meditation-at-denny-blaine",
     "title": "Meditation at Denny Blaine — Large print",
     "artworkTitle": "Meditation at Denny Blaine",
-    "amount": "155.00",
+    "amount": "150.00",
     "currency": "USD",
-    "sku": "5M144M8S16.25X22.56",
+    "sku": "5M144M9S15.99X22.3",
     "scale": 1,
     "imageSize": {
-      "width": 15.9967,
-      "height": 22.3067,
+      "width": 15.99,
+      "height": 22.3,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.25,
-      "height": 22.56,
+      "width": 16.99,
+      "height": 23.3,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a.jpg",
-    "assetSha256": "091989f1c210a9f340e956fc35eefe065310a616769366c98b8c3a875f59b41a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/579ac6de94e985bcbf23aef35c6b7a7087f148d49d3a105c2ed179471390e0f9.jpg",
+    "assetSha256": "579ac6de94e985bcbf23aef35c6b7a7087f148d49d3a105c2ed179471390e0f9",
     "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
     "layoutApproved": true,
     "preview": {
@@ -11736,8 +11961,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.99,
+      "height": 22.3,
+      "unit": "in"
+    }
   },
   "print-meditation-at-denny-blaine-full-frame-black": {
     "id": "print-meditation-at-denny-blaine-full-frame-black",
@@ -11970,23 +12200,23 @@ export default {
     "artworkTitle": "Meditation at Denny Blaine",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.25X16.98",
+    "sku": "5M144M9S11.99X16.72",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.9933,
-      "height": 16.7267,
+      "width": 11.99,
+      "height": 16.72,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.25,
-      "height": 16.98,
+      "width": 12.99,
+      "height": 17.72,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e.jpg",
-    "assetSha256": "b7783e2b71145d6e5c28f4f1e67d70766f4151e71ba186763e4a189776874c1e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b656e5092c6995babd0e5591f431adaae59bec92e3bb68de2cf778f4b5d4123a.jpg",
+    "assetSha256": "b656e5092c6995babd0e5591f431adaae59bec92e3bb68de2cf778f4b5d4123a",
     "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
     "layoutApproved": true,
     "preview": {
@@ -11996,8 +12226,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.99,
+      "height": 16.72,
+      "unit": "in"
+    }
   },
   "print-meditation-at-denny-blaine-medium-frame-black": {
     "id": "print-meditation-at-denny-blaine-medium-frame-black",
@@ -12228,25 +12463,25 @@ export default {
     "productId": "meditation-at-denny-blaine",
     "title": "Meditation at Denny Blaine — Small print",
     "artworkTitle": "Meditation at Denny Blaine",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S8.25X11.4",
+    "sku": "5M144M9S7.99X11.14",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.9933,
-      "height": 11.1467,
+      "width": 7.99,
+      "height": 11.14,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.25,
-      "height": 11.4,
+      "width": 8.99,
+      "height": 12.14,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c.jpg",
-    "assetSha256": "92cc47165aa5ab1b39cf964e791725ef925bfb8203c17420d6f055cd66d4d45c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6613c8183a624413250b1a4f6d244ad13568621352dcece4d67aad0f24e94daf.jpg",
+    "assetSha256": "6613c8183a624413250b1a4f6d244ad13568621352dcece4d67aad0f24e94daf",
     "sourceSha256": "80cd427a93dfa369a63d4e8bd5232ebdce59355ee8dfbe8b83aea6b214613cc3",
     "layoutApproved": true,
     "preview": {
@@ -12256,8 +12491,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.99,
+      "height": 11.14,
+      "unit": "in"
+    }
   },
   "print-meditation-at-denny-blaine-small-frame-black": {
     "id": "print-meditation-at-denny-blaine-small-frame-black",
@@ -12490,23 +12730,23 @@ export default {
     "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.3X6.27",
+    "sku": "5M144M9S11.03X6.01",
     "scale": 1,
     "imageSize": {
-      "width": 11.0367,
-      "height": 6.0167,
+      "width": 11.03,
+      "height": 6.01,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.3,
-      "height": 6.27,
+      "width": 12.03,
+      "height": 7.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117.jpg",
-    "assetSha256": "40a5a579b8d14b9b011145b521b77c9ac2875edaf17506dc6d13c31db810a117",
+    "assetUrl": "https://vermillionaurora.com/print-editions/796a29550997be87aee870c60d38bc26147ec30b765d774a9f65baf414002c3c.jpg",
+    "assetSha256": "796a29550997be87aee870c60d38bc26147ec30b765d774a9f65baf414002c3c",
     "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
     "layoutApproved": true,
     "preview": {
@@ -12516,8 +12756,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.03,
+      "height": 6.01,
+      "unit": "in"
+    }
   },
   "print-painting-sunflower-woman-full-frame-black": {
     "id": "print-painting-sunflower-woman-full-frame-black",
@@ -12748,25 +12993,25 @@ export default {
     "productId": "painting-sunflower-woman",
     "title": "Vision of Ukraine at Peace — Medium print",
     "artworkTitle": "Vision of Ukraine at Peace",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.54X4.77",
+    "sku": "5M144M9S8.28X4.51",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.2867,
-      "height": 4.5167,
+      "width": 8.28,
+      "height": 4.51,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.54,
-      "height": 4.77,
+      "width": 9.28,
+      "height": 5.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163.jpg",
-    "assetSha256": "9da64d8750d7738a76c5a908f9c09a10f27dc9544d59ab1c05240d5728264163",
+    "assetUrl": "https://vermillionaurora.com/print-editions/53626fb065da821dc31d2d55c849c6671300633cc3d7592a08844cec6995fe52.jpg",
+    "assetSha256": "53626fb065da821dc31d2d55c849c6671300633cc3d7592a08844cec6995fe52",
     "sourceSha256": "19bc1bffd4191f6c530e4dcbe85d95cb1b2dbd7ccbd6b024a5a285781523d63e",
     "layoutApproved": true,
     "preview": {
@@ -12776,8 +13021,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.28,
+      "height": 4.51,
+      "unit": "in"
+    }
   },
   "print-painting-sunflower-woman-medium-frame-black": {
     "id": "print-painting-sunflower-woman-medium-frame-black",
@@ -13010,23 +13260,23 @@ export default {
     "artworkTitle": "Sunset in the Strait of Juan de Fuca, Sucia Island",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.4X4",
+    "sku": "5M144M9S6.28X4.01",
     "scale": 1,
     "imageSize": {
-      "width": 5.1467,
-      "height": 2.8733,
+      "width": 5.14,
+      "height": 2.87,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.4,
-      "height": 4,
+      "width": 7.28,
+      "height": 5.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718.jpg",
-    "assetSha256": "3f7a65246914101c4f1ce63565f351a3719f87ef14089895f1b81b87cb450718",
+    "assetUrl": "https://vermillionaurora.com/print-editions/22b30941280c61ff46aa0cba60bd84d8ed2789b4c3d43f1321b4618e041349c3.jpg",
+    "assetSha256": "22b30941280c61ff46aa0cba60bd84d8ed2789b4c3d43f1321b4618e041349c3",
     "sourceSha256": "75de88bb244df1dc710367f6eef13734be24c732398f783551c78e31674bca91",
     "layoutApproved": true,
     "preview": {
@@ -13036,8 +13286,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.28,
+      "height": 4.01,
+      "unit": "in"
+    }
   },
   "print-painting-sunset-silhouette-full-frame-black": {
     "id": "print-painting-sunset-silhouette-full-frame-black",
@@ -13270,23 +13525,23 @@ export default {
     "artworkTitle": "Tipi",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.69X12.25",
+    "sku": "5M144M9S9.43X11.99",
     "scale": 1,
     "imageSize": {
-      "width": 9.4367,
-      "height": 11.9933,
+      "width": 9.43,
+      "height": 11.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.69,
-      "height": 12.25,
+      "width": 10.43,
+      "height": 12.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a11d6d406b25d091757720def41a4f1cb14bbf1ea2c2066ef9758a203405246f.jpg",
-    "assetSha256": "a11d6d406b25d091757720def41a4f1cb14bbf1ea2c2066ef9758a203405246f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2d32078ea814805df6a1e36823dcf75c38620574b1b85d2732e221c0def4668b.jpg",
+    "assetSha256": "2d32078ea814805df6a1e36823dcf75c38620574b1b85d2732e221c0def4668b",
     "sourceSha256": "a9c8c100a6c454d56c2e307fd5b1fcda39784e9f74d28df8b0498a686b3261ff",
     "layoutApproved": true,
     "preview": {
@@ -13296,8 +13551,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.43,
+      "height": 11.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-1-full-frame-black": {
     "id": "print-paul-murphy-painting-1-full-frame-black",
@@ -13530,23 +13790,23 @@ export default {
     "artworkTitle": "Tipi",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S7.33X9.25",
+    "sku": "5M144M9S7.07X8.99",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.0767,
-      "height": 8.9933,
+      "width": 7.07,
+      "height": 8.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.33,
-      "height": 9.25,
+      "width": 8.07,
+      "height": 9.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b5ac29f526346cbec3bd44e1b9bd00c25a343e2178579f743672e9862b9b6aa6.jpg",
-    "assetSha256": "b5ac29f526346cbec3bd44e1b9bd00c25a343e2178579f743672e9862b9b6aa6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d02e5f0373d67b28dcf2996b7cf98888c64968d87b0567b459ab3dce2b1bdb2f.jpg",
+    "assetSha256": "d02e5f0373d67b28dcf2996b7cf98888c64968d87b0567b459ab3dce2b1bdb2f",
     "sourceSha256": "a9c8c100a6c454d56c2e307fd5b1fcda39784e9f74d28df8b0498a686b3261ff",
     "layoutApproved": true,
     "preview": {
@@ -13556,8 +13816,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.07,
+      "height": 8.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-1-medium-frame-black": {
     "id": "print-paul-murphy-painting-1-medium-frame-black",
@@ -13790,23 +14055,23 @@ export default {
     "artworkTitle": "Tipi",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.97X6.25",
+    "sku": "5M144M9S4.71X5.99",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.7167,
-      "height": 5.9933,
+      "width": 4.71,
+      "height": 5.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.97,
-      "height": 6.25,
+      "width": 5.71,
+      "height": 6.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ae5da93ea83d302aa10e689312c4f342e7f65dce11fdaab4387888cfa4a70630.jpg",
-    "assetSha256": "ae5da93ea83d302aa10e689312c4f342e7f65dce11fdaab4387888cfa4a70630",
+    "assetUrl": "https://vermillionaurora.com/print-editions/929213cfcc7d5454f976c9991bc5dbfb856b70f49df467ae5f5705d8d255fec3.jpg",
+    "assetSha256": "929213cfcc7d5454f976c9991bc5dbfb856b70f49df467ae5f5705d8d255fec3",
     "sourceSha256": "a9c8c100a6c454d56c2e307fd5b1fcda39784e9f74d28df8b0498a686b3261ff",
     "layoutApproved": true,
     "preview": {
@@ -13816,8 +14081,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.71,
+      "height": 5.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-1-small-frame-black": {
     "id": "print-paul-murphy-painting-1-small-frame-black",
@@ -14048,25 +14318,25 @@ export default {
     "productId": "paul-murphy-painting-11",
     "title": "Puerto Rico Beach — Large print",
     "artworkTitle": "Puerto Rico Beach",
-    "amount": "55.00",
+    "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S10.58X11.9",
+    "sku": "5M144M9S10.32X11.64",
     "scale": 1,
     "imageSize": {
-      "width": 10.3267,
-      "height": 11.6467,
+      "width": 10.32,
+      "height": 11.64,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.58,
-      "height": 11.9,
+      "width": 11.32,
+      "height": 12.64,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/683e4cbf7e2fe681ac31353bbbefcffb7a2c3af86b6750475b02790fa028563e.jpg",
-    "assetSha256": "683e4cbf7e2fe681ac31353bbbefcffb7a2c3af86b6750475b02790fa028563e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/413f589d6a22f02635bad1292f2afeb9c09469ad35755594143f99c7fd39f19a.jpg",
+    "assetSha256": "413f589d6a22f02635bad1292f2afeb9c09469ad35755594143f99c7fd39f19a",
     "sourceSha256": "1ec8b2463db18955a0caa120355a6a5d8087ceac3e21f11042404d336c499c9b",
     "layoutApproved": true,
     "preview": {
@@ -14076,8 +14346,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.32,
+      "height": 11.64,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-11-full-frame-black": {
     "id": "print-paul-murphy-painting-11-full-frame-black",
@@ -14310,23 +14585,23 @@ export default {
     "artworkTitle": "Puerto Rico Beach",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8X8.99",
+    "sku": "5M144M9S7.74X8.73",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.7467,
-      "height": 8.7367,
+      "width": 7.74,
+      "height": 8.73,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8,
-      "height": 8.99,
+      "width": 8.74,
+      "height": 9.73,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/cfc21f189b56f91c074a294a4fefd4088cf74040bf860f612d72a2dc33124257.jpg",
-    "assetSha256": "cfc21f189b56f91c074a294a4fefd4088cf74040bf860f612d72a2dc33124257",
+    "assetUrl": "https://vermillionaurora.com/print-editions/02cc8c4db88fee5cc67bfd145cdf87759d56d6bb83682317f3e9f9979629f776.jpg",
+    "assetSha256": "02cc8c4db88fee5cc67bfd145cdf87759d56d6bb83682317f3e9f9979629f776",
     "sourceSha256": "1ec8b2463db18955a0caa120355a6a5d8087ceac3e21f11042404d336c499c9b",
     "layoutApproved": true,
     "preview": {
@@ -14336,8 +14611,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.74,
+      "height": 8.73,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-11-medium-frame-black": {
     "id": "print-paul-murphy-painting-11-medium-frame-black",
@@ -14570,23 +14850,23 @@ export default {
     "artworkTitle": "Puerto Rico Beach",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.41X6.07",
+    "sku": "5M144M9S5.15X5.81",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.1567,
-      "height": 5.8167,
+      "width": 5.15,
+      "height": 5.81,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.41,
-      "height": 6.07,
+      "width": 6.15,
+      "height": 6.81,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ec8f6726b33fceaef886ff8efb6ae9f8d74e1e8c94461c3c668c99445d3e30a0.jpg",
-    "assetSha256": "ec8f6726b33fceaef886ff8efb6ae9f8d74e1e8c94461c3c668c99445d3e30a0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ff65c78b5de5c307aabbbc0c09c72a4999eb4c7d5f4e45210a253c04fc6e0813.jpg",
+    "assetSha256": "ff65c78b5de5c307aabbbc0c09c72a4999eb4c7d5f4e45210a253c04fc6e0813",
     "sourceSha256": "1ec8b2463db18955a0caa120355a6a5d8087ceac3e21f11042404d336c499c9b",
     "layoutApproved": true,
     "preview": {
@@ -14596,8 +14876,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.15,
+      "height": 5.81,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-11-small-frame-black": {
     "id": "print-paul-murphy-painting-11-small-frame-black",
@@ -14828,25 +15113,25 @@ export default {
     "productId": "paul-murphy-painting-14",
     "title": "Eagle from Photo 1 — Large print",
     "artworkTitle": "Eagle from Photo 1",
-    "amount": "50.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S12.25X9.27",
+    "sku": "5M144M9S11.99X9.01",
     "scale": 1,
     "imageSize": {
-      "width": 11.9933,
-      "height": 9.0167,
+      "width": 11.99,
+      "height": 9.01,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.25,
-      "height": 9.27,
+      "width": 12.99,
+      "height": 10.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0df9b423ccf5088b4af6b539baf9b0b80afff22be34099f4ca5079b5dac8154a.jpg",
-    "assetSha256": "0df9b423ccf5088b4af6b539baf9b0b80afff22be34099f4ca5079b5dac8154a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c385babfa5b85f5268901501b3ef2cebc2146f8358d7e58ec4d260fdd5c6bccb.jpg",
+    "assetSha256": "c385babfa5b85f5268901501b3ef2cebc2146f8358d7e58ec4d260fdd5c6bccb",
     "sourceSha256": "c71729a7dd293429c92a72b9f62d00fcf0fd280b8f3a4a0c82f2c22e634c7372",
     "layoutApproved": true,
     "preview": {
@@ -14856,8 +15141,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.99,
+      "height": 9.01,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-14-full-frame-black": {
     "id": "print-paul-murphy-painting-14-full-frame-black",
@@ -15090,23 +15380,23 @@ export default {
     "artworkTitle": "Eagle from Photo 1",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.25X7.01",
+    "sku": "5M144M9S8.98X6.75",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.9867,
-      "height": 6.7567,
+      "width": 8.98,
+      "height": 6.75,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.25,
-      "height": 7.01,
+      "width": 9.98,
+      "height": 7.75,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d343e1c942edaf545d52944f2884c36331b67f32dc6ffc1017e8573678acbc41.jpg",
-    "assetSha256": "d343e1c942edaf545d52944f2884c36331b67f32dc6ffc1017e8573678acbc41",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5999d1bd4a7512cf4b0ce37dfbdabbc9a2de832f75de140a1fc669857ce7ec2a.jpg",
+    "assetSha256": "5999d1bd4a7512cf4b0ce37dfbdabbc9a2de832f75de140a1fc669857ce7ec2a",
     "sourceSha256": "c71729a7dd293429c92a72b9f62d00fcf0fd280b8f3a4a0c82f2c22e634c7372",
     "layoutApproved": true,
     "preview": {
@@ -15116,8 +15406,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.98,
+      "height": 6.75,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-14-medium-frame-black": {
     "id": "print-paul-murphy-painting-14-medium-frame-black",
@@ -15350,23 +15645,23 @@ export default {
     "artworkTitle": "Eagle from Photo 1",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.25X4.76",
+    "sku": "5M144M9S5.99X4.5",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9933,
-      "height": 4.5067,
+      "width": 5.99,
+      "height": 4.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.25,
-      "height": 4.76,
+      "width": 6.99,
+      "height": 5.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/015b5e8836e90c45ef29ef80625785a51c37cca099bc1f77fa8c76a875c3a136.jpg",
-    "assetSha256": "015b5e8836e90c45ef29ef80625785a51c37cca099bc1f77fa8c76a875c3a136",
+    "assetUrl": "https://vermillionaurora.com/print-editions/48415406a11a02ce72e2f258218c73517b2e8ea2c134e846177ac7d400680429.jpg",
+    "assetSha256": "48415406a11a02ce72e2f258218c73517b2e8ea2c134e846177ac7d400680429",
     "sourceSha256": "c71729a7dd293429c92a72b9f62d00fcf0fd280b8f3a4a0c82f2c22e634c7372",
     "layoutApproved": true,
     "preview": {
@@ -15376,8 +15671,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.99,
+      "height": 4.5,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-14-small-frame-black": {
     "id": "print-paul-murphy-painting-14-small-frame-black",
@@ -15608,25 +15908,25 @@ export default {
     "productId": "paul-murphy-painting-15",
     "title": "Eagle from Photo 2 — Large print",
     "artworkTitle": "Eagle from Photo 2",
-    "amount": "50.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S8.98X12.25",
+    "sku": "5M144M9S8.72X11.99",
     "scale": 1,
     "imageSize": {
-      "width": 8.7267,
-      "height": 11.9933,
+      "width": 8.72,
+      "height": 11.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.98,
-      "height": 12.25,
+      "width": 9.72,
+      "height": 12.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a3a16686b5649cf78804364fa5f8cf5651bcfd4d7bbe867d45a573afd1f5ce64.jpg",
-    "assetSha256": "a3a16686b5649cf78804364fa5f8cf5651bcfd4d7bbe867d45a573afd1f5ce64",
+    "assetUrl": "https://vermillionaurora.com/print-editions/760f46954265835fafffd1f49f986d001822a972c560e5f1be1a9ec25852d36f.jpg",
+    "assetSha256": "760f46954265835fafffd1f49f986d001822a972c560e5f1be1a9ec25852d36f",
     "sourceSha256": "a61c7d05304367255920c205fc0c44f96cad0076bbbfb4bf957f114b40dc083d",
     "layoutApproved": true,
     "preview": {
@@ -15636,8 +15936,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.72,
+      "height": 11.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-15-full-frame-black": {
     "id": "print-paul-murphy-painting-15-full-frame-black",
@@ -15870,23 +16175,23 @@ export default {
     "artworkTitle": "Eagle from Photo 2",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S6.79X9.25",
+    "sku": "5M144M9S6.53X8.98",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.5367,
-      "height": 8.9833,
+      "width": 6.53,
+      "height": 8.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.79,
-      "height": 9.25,
+      "width": 7.53,
+      "height": 9.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/01dd42642a3c6d69ecac1a511c835f38d264704ad476d0dee5bf475bc5017e0e.jpg",
-    "assetSha256": "01dd42642a3c6d69ecac1a511c835f38d264704ad476d0dee5bf475bc5017e0e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f213cea1de59db191ab62f6739e6a84392d576462fc3dfb9ce629a6889103ac2.jpg",
+    "assetSha256": "f213cea1de59db191ab62f6739e6a84392d576462fc3dfb9ce629a6889103ac2",
     "sourceSha256": "a61c7d05304367255920c205fc0c44f96cad0076bbbfb4bf957f114b40dc083d",
     "layoutApproved": true,
     "preview": {
@@ -15896,8 +16201,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.53,
+      "height": 8.98,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-15-medium-frame-black": {
     "id": "print-paul-murphy-painting-15-medium-frame-black",
@@ -16130,23 +16440,23 @@ export default {
     "artworkTitle": "Eagle from Photo 2",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.61X6.25",
+    "sku": "5M144M9S4.35X5.98",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.3567,
-      "height": 5.9867,
+      "width": 4.35,
+      "height": 5.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.61,
-      "height": 6.25,
+      "width": 5.35,
+      "height": 6.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/59567ce0c6ee621dca7063865a89327bceb3dc261756afbb387511bc995f881d.jpg",
-    "assetSha256": "59567ce0c6ee621dca7063865a89327bceb3dc261756afbb387511bc995f881d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3f61251205030297c1c7da7b9d2ac7271f6e18fd128206ab0f925ac2fd873a24.jpg",
+    "assetSha256": "3f61251205030297c1c7da7b9d2ac7271f6e18fd128206ab0f925ac2fd873a24",
     "sourceSha256": "a61c7d05304367255920c205fc0c44f96cad0076bbbfb4bf957f114b40dc083d",
     "layoutApproved": true,
     "preview": {
@@ -16156,8 +16466,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.35,
+      "height": 5.98,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-15-small-frame-black": {
     "id": "print-paul-murphy-painting-15-small-frame-black",
@@ -16390,23 +16705,23 @@ export default {
     "artworkTitle": "Leo/Bear Constellation",
     "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S13.28X17.09",
+    "sku": "5M144M9S13.02X16.83",
     "scale": 1,
     "imageSize": {
-      "width": 13.0267,
+      "width": 13.02,
       "height": 16.83,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.28,
-      "height": 17.09,
+      "width": 14.02,
+      "height": 17.83,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3ab3a353f855d2179205ba00a32b130dfc0340627ba52e4099452b3cbceed2fc.jpg",
-    "assetSha256": "3ab3a353f855d2179205ba00a32b130dfc0340627ba52e4099452b3cbceed2fc",
+    "assetUrl": "https://vermillionaurora.com/print-editions/93be8163f6bbfb4104b3a8c6adb8e0d3dddf50a5dfc7cecde859b45dd079e718.jpg",
+    "assetSha256": "93be8163f6bbfb4104b3a8c6adb8e0d3dddf50a5dfc7cecde859b45dd079e718",
     "sourceSha256": "a9dca425f741f6cfe87bf90971d9eedc2271b6209c7983e683c1fe237032da7d",
     "layoutApproved": true,
     "preview": {
@@ -16416,8 +16731,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.02,
+      "height": 16.83,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-2-full-frame-black": {
     "id": "print-paul-murphy-painting-2-full-frame-black",
@@ -16648,25 +16968,25 @@ export default {
     "productId": "paul-murphy-painting-2",
     "title": "Leo/Bear Constellation — Medium print",
     "artworkTitle": "Leo/Bear Constellation",
-    "amount": "55.00",
+    "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S10.02X12.88",
+    "sku": "5M144M9S9.76X12.62",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.7667,
+      "width": 9.76,
       "height": 12.62,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.02,
-      "height": 12.88,
+      "width": 10.76,
+      "height": 13.62,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/020ecf684ed262c5cd3c364c10bfe6b2a95497b3799da32a7084f70b235bfac3.jpg",
-    "assetSha256": "020ecf684ed262c5cd3c364c10bfe6b2a95497b3799da32a7084f70b235bfac3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e979455b1879bb53433ef3ce049ba624906310f1947ea90c34c13e06755ed99.jpg",
+    "assetSha256": "8e979455b1879bb53433ef3ce049ba624906310f1947ea90c34c13e06755ed99",
     "sourceSha256": "a9dca425f741f6cfe87bf90971d9eedc2271b6209c7983e683c1fe237032da7d",
     "layoutApproved": true,
     "preview": {
@@ -16676,8 +16996,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.76,
+      "height": 12.62,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-2-medium-frame-black": {
     "id": "print-paul-murphy-painting-2-medium-frame-black",
@@ -16910,23 +17235,23 @@ export default {
     "artworkTitle": "Leo/Bear Constellation",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S6.76X8.67",
+    "sku": "5M144M9S6.5X8.4",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.5067,
-      "height": 8.4067,
+      "width": 6.5,
+      "height": 8.4,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.76,
-      "height": 8.67,
+      "width": 7.5,
+      "height": 9.4,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5f3c2bb185489e0814b62860d7b69ef1fc6fc15c14b4a7f654d75df79d258592.jpg",
-    "assetSha256": "5f3c2bb185489e0814b62860d7b69ef1fc6fc15c14b4a7f654d75df79d258592",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3df3286f1e416fc9f2a84807b0a6bf65b860af31557060a0a8facde2a4563850.jpg",
+    "assetSha256": "3df3286f1e416fc9f2a84807b0a6bf65b860af31557060a0a8facde2a4563850",
     "sourceSha256": "a9dca425f741f6cfe87bf90971d9eedc2271b6209c7983e683c1fe237032da7d",
     "layoutApproved": true,
     "preview": {
@@ -16936,8 +17261,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.5,
+      "height": 8.4,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-2-small-frame-black": {
     "id": "print-paul-murphy-painting-2-small-frame-black",
@@ -17168,25 +17498,25 @@ export default {
     "productId": "paul-murphy-painting-23",
     "title": "My Ego — Large print",
     "artworkTitle": "My Ego",
-    "amount": "50.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S9X12.25",
+    "sku": "5M144M9S8.74X11.99",
     "scale": 1,
     "imageSize": {
-      "width": 8.7467,
+      "width": 8.74,
       "height": 11.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9,
-      "height": 12.25,
+      "width": 9.74,
+      "height": 12.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ae35ad9202798992fcf63acec5f8a3364b8942ace1cea6df427f25e25b9c3210.jpg",
-    "assetSha256": "ae35ad9202798992fcf63acec5f8a3364b8942ace1cea6df427f25e25b9c3210",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e186f1e31a2da7ea14bdede7a5a73488407ab1d6e40d34f16f8b2dd04a085a71.jpg",
+    "assetSha256": "e186f1e31a2da7ea14bdede7a5a73488407ab1d6e40d34f16f8b2dd04a085a71",
     "sourceSha256": "8f5bce1fe764fb3da73fc454074109637d10742d1e49042356d0e01527de7d2e",
     "layoutApproved": true,
     "preview": {
@@ -17196,8 +17526,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.74,
+      "height": 11.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-23-full-frame-black": {
     "id": "print-paul-murphy-painting-23-full-frame-black",
@@ -17430,23 +17765,23 @@ export default {
     "artworkTitle": "My Ego",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S6.81X9.25",
+    "sku": "5M144M9S6.55X8.98",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.5567,
-      "height": 8.9867,
+      "width": 6.55,
+      "height": 8.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.81,
-      "height": 9.25,
+      "width": 7.55,
+      "height": 9.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/dbea8e2272aef6ca74bacbeee2611c6a4075e35c36cf8adcc571af29eb8e276e.jpg",
-    "assetSha256": "dbea8e2272aef6ca74bacbeee2611c6a4075e35c36cf8adcc571af29eb8e276e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7325cdab64070f26a843e37f2f6a7a16266ab23e1e93d525c45d7a2bfcc41ebe.jpg",
+    "assetSha256": "7325cdab64070f26a843e37f2f6a7a16266ab23e1e93d525c45d7a2bfcc41ebe",
     "sourceSha256": "8f5bce1fe764fb3da73fc454074109637d10742d1e49042356d0e01527de7d2e",
     "layoutApproved": true,
     "preview": {
@@ -17456,8 +17791,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.55,
+      "height": 8.98,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-23-medium-frame-black": {
     "id": "print-paul-murphy-painting-23-medium-frame-black",
@@ -17690,23 +18030,23 @@ export default {
     "artworkTitle": "My Ego",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.62X6.25",
+    "sku": "5M144M9S4.36X5.98",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.3667,
-      "height": 5.9867,
+      "width": 4.36,
+      "height": 5.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.62,
-      "height": 6.25,
+      "width": 5.36,
+      "height": 6.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/62dad201dedb66d26de47c0f877ca1044c099e62f1d7722b5da61a922a210add.jpg",
-    "assetSha256": "62dad201dedb66d26de47c0f877ca1044c099e62f1d7722b5da61a922a210add",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e183cc0bfa433f4d61c498e8e01f0b3874082a0aa9ae698d3921b7489bb78ebc.jpg",
+    "assetSha256": "e183cc0bfa433f4d61c498e8e01f0b3874082a0aa9ae698d3921b7489bb78ebc",
     "sourceSha256": "8f5bce1fe764fb3da73fc454074109637d10742d1e49042356d0e01527de7d2e",
     "layoutApproved": true,
     "preview": {
@@ -17716,8 +18056,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.36,
+      "height": 5.98,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-23-small-frame-black": {
     "id": "print-paul-murphy-painting-23-small-frame-black",
@@ -17948,25 +18293,25 @@ export default {
     "productId": "paul-murphy-painting-24",
     "title": "Beach Eglin AFB — Large print",
     "artworkTitle": "Beach Eglin AFB",
-    "amount": "65.00",
+    "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S9.21X17",
+    "sku": "5M144M9S8.95X16.73",
     "scale": 1,
     "imageSize": {
-      "width": 8.9567,
-      "height": 16.7333,
+      "width": 8.95,
+      "height": 16.73,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.21,
-      "height": 17,
+      "width": 9.95,
+      "height": 17.73,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9a49311682cfe540401319a5e84a18e89e8c33680d0c0eb8e09456bad4775ead.jpg",
-    "assetSha256": "9a49311682cfe540401319a5e84a18e89e8c33680d0c0eb8e09456bad4775ead",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c4ff994d958a91d72e6de8565b8f264c72e452202b0473093e5c9af0dbcf6f87.jpg",
+    "assetSha256": "c4ff994d958a91d72e6de8565b8f264c72e452202b0473093e5c9af0dbcf6f87",
     "sourceSha256": "e8928d87dc4d93a2ae56ae7bb350d3af430df1492eacdff14c1d4ba950997efe",
     "layoutApproved": true,
     "preview": {
@@ -17976,8 +18321,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.95,
+      "height": 16.73,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-24-full-frame-black": {
     "id": "print-paul-murphy-painting-24-full-frame-black",
@@ -18210,23 +18560,23 @@ export default {
     "artworkTitle": "Beach Eglin AFB",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S6.97X12.81",
+    "sku": "5M144M9S6.71X12.55",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.7167,
+      "width": 6.71,
       "height": 12.55,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.97,
-      "height": 12.81,
+      "width": 7.71,
+      "height": 13.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/19cf37b8121862f533015586328b23c46827e00822c5f179a29e170292224086.jpg",
-    "assetSha256": "19cf37b8121862f533015586328b23c46827e00822c5f179a29e170292224086",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1403f7a67718618f1693ba127fa96647e0454ff046b65460175388d00b91632b.jpg",
+    "assetSha256": "1403f7a67718618f1693ba127fa96647e0454ff046b65460175388d00b91632b",
     "sourceSha256": "e8928d87dc4d93a2ae56ae7bb350d3af430df1492eacdff14c1d4ba950997efe",
     "layoutApproved": true,
     "preview": {
@@ -18236,8 +18586,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.71,
+      "height": 12.55,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-24-medium-frame-black": {
     "id": "print-paul-murphy-painting-24-medium-frame-black",
@@ -18470,23 +18825,23 @@ export default {
     "artworkTitle": "Beach Eglin AFB",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S4.73X8.62",
+    "sku": "5M144M9S4.47X8.36",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.4767,
-      "height": 8.3633,
+      "width": 4.47,
+      "height": 8.36,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.73,
-      "height": 8.62,
+      "width": 5.47,
+      "height": 9.36,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/04b605182d8f102a290093418f6fa92e505f8d5bd34aaa6e133883ae4bc754df.jpg",
-    "assetSha256": "04b605182d8f102a290093418f6fa92e505f8d5bd34aaa6e133883ae4bc754df",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0953c1fe4955e299cda6200f8be7c450504a6c07ee79dbf7d2fae87a2e5cd1c0.jpg",
+    "assetSha256": "0953c1fe4955e299cda6200f8be7c450504a6c07ee79dbf7d2fae87a2e5cd1c0",
     "sourceSha256": "e8928d87dc4d93a2ae56ae7bb350d3af430df1492eacdff14c1d4ba950997efe",
     "layoutApproved": true,
     "preview": {
@@ -18496,8 +18851,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.47,
+      "height": 8.36,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-24-small-frame-black": {
     "id": "print-paul-murphy-painting-24-small-frame-black",
@@ -18730,23 +19090,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 1",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S11.26X10.23",
+    "sku": "5M144M9S11X9.97",
     "scale": 1,
     "imageSize": {
-      "width": 11.0067,
-      "height": 9.9767,
+      "width": 11,
+      "height": 9.97,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.26,
-      "height": 10.23,
+      "width": 12,
+      "height": 10.97,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e0be8274d1cf60686ba67f132223043684bc43846cd26aa0ec994e64cbde4102.jpg",
-    "assetSha256": "e0be8274d1cf60686ba67f132223043684bc43846cd26aa0ec994e64cbde4102",
+    "assetUrl": "https://vermillionaurora.com/print-editions/83ae69fea3224a4bae6eed04cce4d1d4da4437cbef838eccac304f9f0b0792a6.jpg",
+    "assetSha256": "83ae69fea3224a4bae6eed04cce4d1d4da4437cbef838eccac304f9f0b0792a6",
     "sourceSha256": "965e2cd522b60c56862c2a514448279a8888d162a5edcf12d135e380d248be31",
     "layoutApproved": true,
     "preview": {
@@ -18756,8 +19116,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11,
+      "height": 9.97,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-25-full-frame-black": {
     "id": "print-paul-murphy-painting-25-full-frame-black",
@@ -18988,25 +19353,25 @@ export default {
     "productId": "paul-murphy-painting-25",
     "title": "Spiritual Sedona Mountains 1 — Medium print",
     "artworkTitle": "Spiritual Sedona Mountains 1",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.5X7.73",
+    "sku": "5M144M9S8.24X7.47",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.2467,
-      "height": 7.4767,
+      "width": 8.24,
+      "height": 7.47,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.5,
-      "height": 7.73,
+      "width": 9.24,
+      "height": 8.47,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/783f5f36a9f7c20c469142ec01675042de09bced8a349defe7a17c7735a4d786.jpg",
-    "assetSha256": "783f5f36a9f7c20c469142ec01675042de09bced8a349defe7a17c7735a4d786",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0ae3bc062751ccf8574908ddadb8862ee773598aea0bb02b2e82a9abc729c962.jpg",
+    "assetSha256": "0ae3bc062751ccf8574908ddadb8862ee773598aea0bb02b2e82a9abc729c962",
     "sourceSha256": "965e2cd522b60c56862c2a514448279a8888d162a5edcf12d135e380d248be31",
     "layoutApproved": true,
     "preview": {
@@ -19016,8 +19381,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.24,
+      "height": 7.47,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-25-medium-frame-black": {
     "id": "print-paul-murphy-painting-25-medium-frame-black",
@@ -19250,23 +19620,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 1",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.75X5.24",
+    "sku": "5M144M9S5.49X4.98",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.4967,
-      "height": 4.9833,
+      "width": 5.49,
+      "height": 4.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.75,
-      "height": 5.24,
+      "width": 6.49,
+      "height": 5.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9e9541055b432cc38b77e509ecb8c9ffd7635d1217cedf7fe919aa9be93d2b2a.jpg",
-    "assetSha256": "9e9541055b432cc38b77e509ecb8c9ffd7635d1217cedf7fe919aa9be93d2b2a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/046535d9b839a2b44a5b29a9c52379a986b2fb0ac7bc88318cd23c3762f86e19.jpg",
+    "assetSha256": "046535d9b839a2b44a5b29a9c52379a986b2fb0ac7bc88318cd23c3762f86e19",
     "sourceSha256": "965e2cd522b60c56862c2a514448279a8888d162a5edcf12d135e380d248be31",
     "layoutApproved": true,
     "preview": {
@@ -19276,8 +19646,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.49,
+      "height": 4.98,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-25-small-frame-black": {
     "id": "print-paul-murphy-painting-25-small-frame-black",
@@ -19510,23 +19885,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 2",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S12.14X10.2",
+    "sku": "5M144M9S11.88X9.94",
     "scale": 1,
     "imageSize": {
-      "width": 11.8867,
-      "height": 9.9433,
+      "width": 11.88,
+      "height": 9.94,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.14,
-      "height": 10.2,
+      "width": 12.88,
+      "height": 10.94,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a29e301c5b938566c3b1db2f8eb63c3c4856ffb707a76d4a09407b7ee2793ee1.jpg",
-    "assetSha256": "a29e301c5b938566c3b1db2f8eb63c3c4856ffb707a76d4a09407b7ee2793ee1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6236378fd0b2d4166a6aff6a8ec1a542dfe6769d6fb51bf63894112eaa86a09f.jpg",
+    "assetSha256": "6236378fd0b2d4166a6aff6a8ec1a542dfe6769d6fb51bf63894112eaa86a09f",
     "sourceSha256": "5dd3b58b33c4d9ad789bb6374beaca56d1f2df60015cdc7041a96bdbd6acd375",
     "layoutApproved": true,
     "preview": {
@@ -19536,8 +19911,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.88,
+      "height": 9.94,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-27-full-frame-black": {
     "id": "print-paul-murphy-painting-27-full-frame-black",
@@ -19770,23 +20150,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 2",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.17X7.71",
+    "sku": "5M144M9S8.91X7.45",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.9133,
-      "height": 7.4567,
+      "width": 8.91,
+      "height": 7.45,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.17,
-      "height": 7.71,
+      "width": 9.91,
+      "height": 8.45,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/22775057da6685fb4f2f69513eb9fabf14081277809d1d03bf80d9aa8f2f38ae.jpg",
-    "assetSha256": "22775057da6685fb4f2f69513eb9fabf14081277809d1d03bf80d9aa8f2f38ae",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8c199c96b008285ba80c1eff4d94eeca70386676f876f96644e5c2b94f9f61be.jpg",
+    "assetSha256": "8c199c96b008285ba80c1eff4d94eeca70386676f876f96644e5c2b94f9f61be",
     "sourceSha256": "5dd3b58b33c4d9ad789bb6374beaca56d1f2df60015cdc7041a96bdbd6acd375",
     "layoutApproved": true,
     "preview": {
@@ -19796,8 +20176,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.91,
+      "height": 7.45,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-27-medium-frame-black": {
     "id": "print-paul-murphy-painting-27-medium-frame-black",
@@ -20030,23 +20415,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 2",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.19X5.22",
+    "sku": "5M144M9S5.93X4.96",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9367,
-      "height": 4.9667,
+      "width": 5.93,
+      "height": 4.96,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.19,
-      "height": 5.22,
+      "width": 6.93,
+      "height": 5.96,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f9d295e0c057c434cd09d2bfdbd6e432b0f5a10c01d9208f567cc38140ba5733.jpg",
-    "assetSha256": "f9d295e0c057c434cd09d2bfdbd6e432b0f5a10c01d9208f567cc38140ba5733",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4c9a7b66fb9ec04af8d7881a38fa6949d183dea8dbf58e549da6e1a09525a090.jpg",
+    "assetSha256": "4c9a7b66fb9ec04af8d7881a38fa6949d183dea8dbf58e549da6e1a09525a090",
     "sourceSha256": "5dd3b58b33c4d9ad789bb6374beaca56d1f2df60015cdc7041a96bdbd6acd375",
     "layoutApproved": true,
     "preview": {
@@ -20056,8 +20441,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.93,
+      "height": 4.96,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-27-small-frame-black": {
     "id": "print-paul-murphy-painting-27-small-frame-black",
@@ -20290,23 +20680,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 3",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S12.25X9.62",
+    "sku": "5M144M9S11.99X9.36",
     "scale": 1,
     "imageSize": {
       "width": 11.99,
-      "height": 9.3667,
+      "height": 9.36,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.25,
-      "height": 9.62,
+      "width": 12.99,
+      "height": 10.36,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8548e965443fd1f00d9a2c51dea886bb1e56920fae147636d2f38c0c6df68148.jpg",
-    "assetSha256": "8548e965443fd1f00d9a2c51dea886bb1e56920fae147636d2f38c0c6df68148",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8afb348c618e660b986652eae0c9127b8fa6269fdcb6f7975a95142ffd890631.jpg",
+    "assetSha256": "8afb348c618e660b986652eae0c9127b8fa6269fdcb6f7975a95142ffd890631",
     "sourceSha256": "7de3fb10255a3a4a23e8811d134fdea64e00d451701a9fa47150af800bc9c4ae",
     "layoutApproved": true,
     "preview": {
@@ -20316,8 +20706,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.99,
+      "height": 9.36,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-28-full-frame-black": {
     "id": "print-paul-murphy-painting-28-full-frame-black",
@@ -20550,23 +20945,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 3",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.25X7.28",
+    "sku": "5M144M9S8.99X7.02",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.9967,
-      "height": 7.0267,
+      "width": 8.99,
+      "height": 7.02,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.25,
-      "height": 7.28,
+      "width": 9.99,
+      "height": 8.02,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ba354c8a83325c2eddbf5eae50d07a6b7466de2aa76086bf7f8f0696bce90f74.jpg",
-    "assetSha256": "ba354c8a83325c2eddbf5eae50d07a6b7466de2aa76086bf7f8f0696bce90f74",
+    "assetUrl": "https://vermillionaurora.com/print-editions/59b110cbdfece4653981f82f264f39ad3a5657773745d896eba0be714214d46b.jpg",
+    "assetSha256": "59b110cbdfece4653981f82f264f39ad3a5657773745d896eba0be714214d46b",
     "sourceSha256": "7de3fb10255a3a4a23e8811d134fdea64e00d451701a9fa47150af800bc9c4ae",
     "layoutApproved": true,
     "preview": {
@@ -20576,8 +20971,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.99,
+      "height": 7.02,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-28-medium-frame-black": {
     "id": "print-paul-murphy-painting-28-medium-frame-black",
@@ -20810,23 +21210,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 3",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.25X4.93",
+    "sku": "5M144M9S5.98X4.67",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9867,
-      "height": 4.6767,
+      "width": 5.98,
+      "height": 4.67,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.25,
-      "height": 4.93,
+      "width": 6.98,
+      "height": 5.67,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f6337f1e5dcbe8c94be87502e5034d200b4de1fae5e0e926fb3e96d25df844d1.jpg",
-    "assetSha256": "f6337f1e5dcbe8c94be87502e5034d200b4de1fae5e0e926fb3e96d25df844d1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/31236cddeb08aa925e9a636c87c72b1cd968da66e851dc5a0e19c55c60b11c09.jpg",
+    "assetSha256": "31236cddeb08aa925e9a636c87c72b1cd968da66e851dc5a0e19c55c60b11c09",
     "sourceSha256": "7de3fb10255a3a4a23e8811d134fdea64e00d451701a9fa47150af800bc9c4ae",
     "layoutApproved": true,
     "preview": {
@@ -20836,8 +21236,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.98,
+      "height": 4.67,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-28-small-frame-black": {
     "id": "print-paul-murphy-painting-28-small-frame-black",
@@ -21070,23 +21475,23 @@ export default {
     "artworkTitle": "Rebel Loon/MN ICE Protest",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S12.25X8.83",
+    "sku": "5M144M9S11.98X8.57",
     "scale": 1,
     "imageSize": {
-      "width": 11.9833,
-      "height": 8.5767,
+      "width": 11.98,
+      "height": 8.57,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.25,
-      "height": 8.83,
+      "width": 12.98,
+      "height": 9.57,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/953ba456637b96ce108601407a89aa8579e9567828d3edd646c1159a7b2f3ef0.jpg",
-    "assetSha256": "953ba456637b96ce108601407a89aa8579e9567828d3edd646c1159a7b2f3ef0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e24f21c3d4acd6d4304cc9fd8513de2cc5f55143e8a615e0fc953c3a53607ab9.jpg",
+    "assetSha256": "e24f21c3d4acd6d4304cc9fd8513de2cc5f55143e8a615e0fc953c3a53607ab9",
     "sourceSha256": "591018dfc57c11e4b4e24b9c8022035b53c52a309c228d33dc52b0b0a9b25a7f",
     "layoutApproved": true,
     "preview": {
@@ -21096,8 +21501,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.98,
+      "height": 8.57,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-3-full-frame-black": {
     "id": "print-paul-murphy-painting-3-full-frame-black",
@@ -21330,23 +21740,23 @@ export default {
     "artworkTitle": "Rebel Loon/MN ICE Protest",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.25X6.69",
+    "sku": "5M144M9S8.99X6.43",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.9933,
-      "height": 6.4367,
+      "width": 8.99,
+      "height": 6.43,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.25,
-      "height": 6.69,
+      "width": 9.99,
+      "height": 7.43,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/030c66777b714be1b2d8c25d61d92988e02a0783ee0a6f4e1b8d129d120af9d6.jpg",
-    "assetSha256": "030c66777b714be1b2d8c25d61d92988e02a0783ee0a6f4e1b8d129d120af9d6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e7024a1e3be40e26930df096a8ce0e73973426aa46969693fc0d67d91dee11b7.jpg",
+    "assetSha256": "e7024a1e3be40e26930df096a8ce0e73973426aa46969693fc0d67d91dee11b7",
     "sourceSha256": "591018dfc57c11e4b4e24b9c8022035b53c52a309c228d33dc52b0b0a9b25a7f",
     "layoutApproved": true,
     "preview": {
@@ -21356,8 +21766,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.99,
+      "height": 6.43,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-3-medium-frame-black": {
     "id": "print-paul-murphy-painting-3-medium-frame-black",
@@ -21590,23 +22005,23 @@ export default {
     "artworkTitle": "Rebel Loon/MN ICE Protest",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.25X4.54",
+    "sku": "5M144M9S5.99X4.28",
     "scale": 0.5,
     "imageSize": {
       "width": 5.99,
-      "height": 4.2867,
+      "height": 4.28,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.25,
-      "height": 4.54,
+      "width": 6.99,
+      "height": 5.28,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6818fe13a495e8855bfaf4e0dae631cd2cdc5afbed483294792a868afeb1fad1.jpg",
-    "assetSha256": "6818fe13a495e8855bfaf4e0dae631cd2cdc5afbed483294792a868afeb1fad1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/30cb9f6ff72772de2a2d783e157c6388d4deea02f3d082ec98c526b0ea1c0491.jpg",
+    "assetSha256": "30cb9f6ff72772de2a2d783e157c6388d4deea02f3d082ec98c526b0ea1c0491",
     "sourceSha256": "591018dfc57c11e4b4e24b9c8022035b53c52a309c228d33dc52b0b0a9b25a7f",
     "layoutApproved": true,
     "preview": {
@@ -21616,8 +22031,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.99,
+      "height": 4.28,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-3-small-frame-black": {
     "id": "print-paul-murphy-painting-3-small-frame-black",
@@ -21850,23 +22270,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 4",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S10.25X10.42",
+    "sku": "5M144M9S9.99X10.16",
     "scale": 1,
     "imageSize": {
-      "width": 9.9933,
-      "height": 10.1667,
+      "width": 9.99,
+      "height": 10.16,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.25,
-      "height": 10.42,
+      "width": 10.99,
+      "height": 11.16,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b6c96be8853b078195d6700695484b5d0c250126ec4fde48c287e899fb385289.jpg",
-    "assetSha256": "b6c96be8853b078195d6700695484b5d0c250126ec4fde48c287e899fb385289",
+    "assetUrl": "https://vermillionaurora.com/print-editions/21f0ce40d34b5c3365d1208fdb5a75a6997ca67b66a265c6fa09fd87e864c0f7.jpg",
+    "assetSha256": "21f0ce40d34b5c3365d1208fdb5a75a6997ca67b66a265c6fa09fd87e864c0f7",
     "sourceSha256": "bed01d34b2e9fc2fd8a5040aa704ceb89a168c4346c283bc0e1116527b5d90bf",
     "layoutApproved": true,
     "preview": {
@@ -21876,8 +22296,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.99,
+      "height": 10.16,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-34-full-frame-black": {
     "id": "print-paul-murphy-painting-34-full-frame-black",
@@ -22110,23 +22535,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 4",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.75X7.88",
+    "sku": "5M144M9S7.49X7.62",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.4967,
-      "height": 7.6267,
+      "width": 7.49,
+      "height": 7.62,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 7.88,
+      "width": 8.49,
+      "height": 8.62,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/559c055c0027c6dc9dca5a2d946d9901682de11bf0882c42342d8fe693817118.jpg",
-    "assetSha256": "559c055c0027c6dc9dca5a2d946d9901682de11bf0882c42342d8fe693817118",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a2f690d57e6887119f8040208f78089fac1129562f894d5c8b55079683f01f2d.jpg",
+    "assetSha256": "a2f690d57e6887119f8040208f78089fac1129562f894d5c8b55079683f01f2d",
     "sourceSha256": "bed01d34b2e9fc2fd8a5040aa704ceb89a168c4346c283bc0e1116527b5d90bf",
     "layoutApproved": true,
     "preview": {
@@ -22136,8 +22561,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.49,
+      "height": 7.62,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-34-medium-frame-black": {
     "id": "print-paul-murphy-painting-34-medium-frame-black",
@@ -22370,23 +22800,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 4",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.25X5.33",
+    "sku": "5M144M9S4.99X5.07",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
-      "height": 5.0767,
+      "height": 5.07,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.25,
-      "height": 5.33,
+      "width": 5.99,
+      "height": 6.07,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5b7ed52aa60f8d8985572a2ebf3456b8940b284e180e7b55b50c2f1c3baf52b5.jpg",
-    "assetSha256": "5b7ed52aa60f8d8985572a2ebf3456b8940b284e180e7b55b50c2f1c3baf52b5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7adf583c530850911b983b7c333632fbacc51c34bff5382d6f41f35ef7477599.jpg",
+    "assetSha256": "7adf583c530850911b983b7c333632fbacc51c34bff5382d6f41f35ef7477599",
     "sourceSha256": "bed01d34b2e9fc2fd8a5040aa704ceb89a168c4346c283bc0e1116527b5d90bf",
     "layoutApproved": true,
     "preview": {
@@ -22396,8 +22826,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.99,
+      "height": 5.07,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-34-small-frame-black": {
     "id": "print-paul-murphy-painting-34-small-frame-black",
@@ -22630,23 +23065,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 5",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S11.42X10.25",
+    "sku": "5M144M9S11.16X9.99",
     "scale": 1,
     "imageSize": {
-      "width": 11.1667,
+      "width": 11.16,
       "height": 9.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.42,
-      "height": 10.25,
+      "width": 12.16,
+      "height": 10.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/35512d4ff8dd60e2a3ab0f8104f0a9465a1f5d771c49b38bfadc49865414dfe4.jpg",
-    "assetSha256": "35512d4ff8dd60e2a3ab0f8104f0a9465a1f5d771c49b38bfadc49865414dfe4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6096d13595910dc324bd4ec3d59e879ba2346410e511f90d9f846f8d9adaadbb.jpg",
+    "assetSha256": "6096d13595910dc324bd4ec3d59e879ba2346410e511f90d9f846f8d9adaadbb",
     "sourceSha256": "e06de5ea894eace340b82f42f7f96cd304322bc6458534ac5875d95a3e3c5e1e",
     "layoutApproved": true,
     "preview": {
@@ -22656,8 +23091,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.16,
+      "height": 9.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-35-full-frame-black": {
     "id": "print-paul-murphy-painting-35-full-frame-black",
@@ -22890,23 +23330,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 5",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.63X7.75",
+    "sku": "5M144M9S8.37X7.49",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.3767,
-      "height": 7.4933,
+      "width": 8.37,
+      "height": 7.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.63,
-      "height": 7.75,
+      "width": 9.37,
+      "height": 8.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2d7309cf73f4860eed74f3e6b6bf37082e73db7bb101e6d68374b2d8b96a23b5.jpg",
-    "assetSha256": "2d7309cf73f4860eed74f3e6b6bf37082e73db7bb101e6d68374b2d8b96a23b5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/bf9cb1e22de46e8df4c8eb81549874369858bbfcb607f7b8d59648c8b3125991.jpg",
+    "assetSha256": "bf9cb1e22de46e8df4c8eb81549874369858bbfcb607f7b8d59648c8b3125991",
     "sourceSha256": "e06de5ea894eace340b82f42f7f96cd304322bc6458534ac5875d95a3e3c5e1e",
     "layoutApproved": true,
     "preview": {
@@ -22916,8 +23356,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.37,
+      "height": 7.49,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-35-medium-frame-black": {
     "id": "print-paul-murphy-painting-35-medium-frame-black",
@@ -23150,23 +23595,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 5",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.83X5.25",
+    "sku": "5M144M9S5.57X4.99",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.5767,
+      "width": 5.57,
       "height": 4.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.83,
-      "height": 5.25,
+      "width": 6.57,
+      "height": 5.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/55adab89ea1bc600e9f2b3bb53440802776c96daa18a4bc308b3488c29803933.jpg",
-    "assetSha256": "55adab89ea1bc600e9f2b3bb53440802776c96daa18a4bc308b3488c29803933",
+    "assetUrl": "https://vermillionaurora.com/print-editions/41eba3331ef016d31bb0696523658eb5ad230710faf1516d941e15ae6a40c148.jpg",
+    "assetSha256": "41eba3331ef016d31bb0696523658eb5ad230710faf1516d941e15ae6a40c148",
     "sourceSha256": "e06de5ea894eace340b82f42f7f96cd304322bc6458534ac5875d95a3e3c5e1e",
     "layoutApproved": true,
     "preview": {
@@ -23176,8 +23621,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.57,
+      "height": 4.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-35-small-frame-black": {
     "id": "print-paul-murphy-painting-35-small-frame-black",
@@ -23410,23 +23860,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 6",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S10.13X10.55",
+    "sku": "5M144M9S9.87X10.29",
     "scale": 1,
     "imageSize": {
-      "width": 9.8767,
-      "height": 10.2933,
+      "width": 9.87,
+      "height": 10.29,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.13,
-      "height": 10.55,
+      "width": 10.87,
+      "height": 11.29,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/90968b968178715356b3d94435e3381e3f8cae9a5c6e52f6929e6efa31b87217.jpg",
-    "assetSha256": "90968b968178715356b3d94435e3381e3f8cae9a5c6e52f6929e6efa31b87217",
+    "assetUrl": "https://vermillionaurora.com/print-editions/dd369d5017cdbea0eb1860683a58d3e2ca32a08a4baf01586ce0617703327c4e.jpg",
+    "assetSha256": "dd369d5017cdbea0eb1860683a58d3e2ca32a08a4baf01586ce0617703327c4e",
     "sourceSha256": "6283a204051b60f2530563d776d2802131b5cd90768b166149eddf69f46aa3f2",
     "layoutApproved": true,
     "preview": {
@@ -23436,8 +23886,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.87,
+      "height": 10.29,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-38-full-frame-black": {
     "id": "print-paul-murphy-painting-38-full-frame-black",
@@ -23670,23 +24125,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 6",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.66X7.97",
+    "sku": "5M144M9S7.4X7.71",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.4033,
-      "height": 7.7167,
+      "width": 7.4,
+      "height": 7.71,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.66,
-      "height": 7.97,
+      "width": 8.4,
+      "height": 8.71,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/dba6d9420fc5b7fbe858464d356f8d2a280b3bccc7fc95fa03511d2516779984.jpg",
-    "assetSha256": "dba6d9420fc5b7fbe858464d356f8d2a280b3bccc7fc95fa03511d2516779984",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0a295349072b8caceb5f4f2aacd9cdc9bdad5417132d23001c5638e698e75915.jpg",
+    "assetSha256": "0a295349072b8caceb5f4f2aacd9cdc9bdad5417132d23001c5638e698e75915",
     "sourceSha256": "6283a204051b60f2530563d776d2802131b5cd90768b166149eddf69f46aa3f2",
     "layoutApproved": true,
     "preview": {
@@ -23696,8 +24151,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.4,
+      "height": 7.71,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-38-medium-frame-black": {
     "id": "print-paul-murphy-painting-38-medium-frame-black",
@@ -23930,23 +24390,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 6",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.19X5.4",
+    "sku": "5M144M9S4.93X5.14",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.9367,
-      "height": 5.1433,
+      "width": 4.93,
+      "height": 5.14,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.19,
-      "height": 5.4,
+      "width": 5.93,
+      "height": 6.14,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b0c549fd211cadf9133adca99c6c08ec05c0d31154db518ca671398b561fcd91.jpg",
-    "assetSha256": "b0c549fd211cadf9133adca99c6c08ec05c0d31154db518ca671398b561fcd91",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c2e5d4799c86cc957947c7d3a02a37bd2d5b88777a48cfb86a009833ee5e3fc4.jpg",
+    "assetSha256": "c2e5d4799c86cc957947c7d3a02a37bd2d5b88777a48cfb86a009833ee5e3fc4",
     "sourceSha256": "6283a204051b60f2530563d776d2802131b5cd90768b166149eddf69f46aa3f2",
     "layoutApproved": true,
     "preview": {
@@ -23956,8 +24416,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.93,
+      "height": 5.14,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-38-small-frame-black": {
     "id": "print-paul-murphy-painting-38-small-frame-black",
@@ -24190,23 +24655,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 7",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S9.66X9.46",
+    "sku": "5M144M9S9.4X9.2",
     "scale": 1,
     "imageSize": {
-      "width": 9.4067,
-      "height": 9.2067,
+      "width": 9.4,
+      "height": 9.2,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.66,
-      "height": 9.46,
+      "width": 10.4,
+      "height": 10.2,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8a37bee2c0f51ff2df68d47df18f1573ff937de874a91949bc1b15a89a5bd95c.jpg",
-    "assetSha256": "8a37bee2c0f51ff2df68d47df18f1573ff937de874a91949bc1b15a89a5bd95c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6ece4f528a82398568042f310231101f709fc665f48dd8887f580fd6a7fe79da.jpg",
+    "assetSha256": "6ece4f528a82398568042f310231101f709fc665f48dd8887f580fd6a7fe79da",
     "sourceSha256": "4ebc6957267aa6b13ea390e61097e675c0247dea922e662657e293f789cb3995",
     "layoutApproved": true,
     "preview": {
@@ -24216,8 +24681,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.4,
+      "height": 9.2,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-39-full-frame-black": {
     "id": "print-paul-murphy-painting-39-full-frame-black",
@@ -24450,23 +24920,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 7",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.31X7.16",
+    "sku": "5M144M9S7.05X6.9",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.0567,
-      "height": 6.9067,
+      "width": 7.05,
+      "height": 6.9,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.31,
-      "height": 7.16,
+      "width": 8.05,
+      "height": 7.9,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/162e8a835de150f158c616786a95157c672a60065da845b7db657b5a253e28c9.jpg",
-    "assetSha256": "162e8a835de150f158c616786a95157c672a60065da845b7db657b5a253e28c9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/24eeda7101f543714d77e9247f670907d54999fb502f9bbfffdfe5468bda34d4.jpg",
+    "assetSha256": "24eeda7101f543714d77e9247f670907d54999fb502f9bbfffdfe5468bda34d4",
     "sourceSha256": "4ebc6957267aa6b13ea390e61097e675c0247dea922e662657e293f789cb3995",
     "layoutApproved": true,
     "preview": {
@@ -24476,8 +24946,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.05,
+      "height": 6.9,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-39-medium-frame-black": {
     "id": "print-paul-murphy-painting-39-medium-frame-black",
@@ -24710,23 +25185,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 7",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.95X4.85",
+    "sku": "5M144M9S4.69X4.59",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.6967,
-      "height": 4.5967,
+      "width": 4.69,
+      "height": 4.59,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.95,
-      "height": 4.85,
+      "width": 5.69,
+      "height": 5.59,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/02a9ccc6f2352e32926aa452f6efaf8776475632daca5de4416dd1ed41215d27.jpg",
-    "assetSha256": "02a9ccc6f2352e32926aa452f6efaf8776475632daca5de4416dd1ed41215d27",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0cee1adc2790965f294469155d5002d6cd6a1c1cee8871ca87416e16e93f08e7.jpg",
+    "assetSha256": "0cee1adc2790965f294469155d5002d6cd6a1c1cee8871ca87416e16e93f08e7",
     "sourceSha256": "4ebc6957267aa6b13ea390e61097e675c0247dea922e662657e293f789cb3995",
     "layoutApproved": true,
     "preview": {
@@ -24736,8 +25211,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.69,
+      "height": 4.59,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-39-small-frame-black": {
     "id": "print-paul-murphy-painting-39-small-frame-black",
@@ -24968,25 +25448,25 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Large print",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "50.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S10.25X11.04",
+    "sku": "5M144M9S9.99X10.78",
     "scale": 1,
     "imageSize": {
-      "width": 9.9933,
-      "height": 10.7867,
+      "width": 9.99,
+      "height": 10.78,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.25,
-      "height": 11.04,
+      "width": 10.99,
+      "height": 11.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a0882a5b483f7568b2f36db3f64cba9da30ac41415c47aa182b29342f8ab0aac.jpg",
-    "assetSha256": "a0882a5b483f7568b2f36db3f64cba9da30ac41415c47aa182b29342f8ab0aac",
+    "assetUrl": "https://vermillionaurora.com/print-editions/474edf85bad79510e9a3b6bd38dbc3c4ab0d6dcec0f9b16cef070cf0e680fa4c.jpg",
+    "assetSha256": "474edf85bad79510e9a3b6bd38dbc3c4ab0d6dcec0f9b16cef070cf0e680fa4c",
     "sourceSha256": "f6db547eb862365633ec100625f5e6c7b689ed9a02586c5106383e4d4123ec6a",
     "layoutApproved": true,
     "preview": {
@@ -24996,8 +25476,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.99,
+      "height": 10.78,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-40-full-frame-black": {
     "id": "print-paul-murphy-painting-40-full-frame-black",
@@ -25228,25 +25713,25 @@ export default {
     "productId": "paul-murphy-painting-40",
     "title": "Spiritual Sedona Mountains 8 — Medium print",
     "artworkTitle": "Spiritual Sedona Mountains 8",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.75X8.34",
+    "sku": "5M144M9S7.49X8.08",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.4933,
-      "height": 8.0867,
+      "width": 7.49,
+      "height": 8.08,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 8.34,
+      "width": 8.49,
+      "height": 9.08,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/78b7c08162df30c99e3c82ac3aea6fef3cf5631cd668691e55fd4fb26acc82ec.jpg",
-    "assetSha256": "78b7c08162df30c99e3c82ac3aea6fef3cf5631cd668691e55fd4fb26acc82ec",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1197908b80563d8f9b8fd0f6b4b3f8942341eb50c578b84777c187ae5fdb8254.jpg",
+    "assetSha256": "1197908b80563d8f9b8fd0f6b4b3f8942341eb50c578b84777c187ae5fdb8254",
     "sourceSha256": "f6db547eb862365633ec100625f5e6c7b689ed9a02586c5106383e4d4123ec6a",
     "layoutApproved": true,
     "preview": {
@@ -25256,8 +25741,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.49,
+      "height": 8.08,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-40-medium-frame-black": {
     "id": "print-paul-murphy-painting-40-medium-frame-black",
@@ -25490,23 +25980,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 8",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.25X5.64",
+    "sku": "5M144M9S4.99X5.38",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
-      "height": 5.3867,
+      "height": 5.38,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.25,
-      "height": 5.64,
+      "width": 5.99,
+      "height": 6.38,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/57878e785535d5fc78017daa854eee89d44e1734e1923291ce8580e9ec9d4c17.jpg",
-    "assetSha256": "57878e785535d5fc78017daa854eee89d44e1734e1923291ce8580e9ec9d4c17",
+    "assetUrl": "https://vermillionaurora.com/print-editions/78a755b971bdb1fe8227479be93816057ac957fa1868eae1c300ef66851d69fa.jpg",
+    "assetSha256": "78a755b971bdb1fe8227479be93816057ac957fa1868eae1c300ef66851d69fa",
     "sourceSha256": "f6db547eb862365633ec100625f5e6c7b689ed9a02586c5106383e4d4123ec6a",
     "layoutApproved": true,
     "preview": {
@@ -25516,8 +26006,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.99,
+      "height": 5.38,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-40-small-frame-black": {
     "id": "print-paul-murphy-painting-40-small-frame-black",
@@ -25748,25 +26243,25 @@ export default {
     "productId": "paul-murphy-painting-41",
     "title": "Spiritual Sedona Mountains 9 — Large print",
     "artworkTitle": "Spiritual Sedona Mountains 9",
-    "amount": "50.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S10.25X10.65",
+    "sku": "5M144M9S9.99X10.39",
     "scale": 1,
     "imageSize": {
-      "width": 9.9967,
-      "height": 10.3967,
+      "width": 9.99,
+      "height": 10.39,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.25,
-      "height": 10.65,
+      "width": 10.99,
+      "height": 11.39,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4373730011e23f91b6f91c15f4791a2b2564cb08a3ac87a239c8fa01d0ce2745.jpg",
-    "assetSha256": "4373730011e23f91b6f91c15f4791a2b2564cb08a3ac87a239c8fa01d0ce2745",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c2e30c6d334b685745caf7ad3af276365ee79925dcd93baf9b3c8c586e882e44.jpg",
+    "assetSha256": "c2e30c6d334b685745caf7ad3af276365ee79925dcd93baf9b3c8c586e882e44",
     "sourceSha256": "396a1d43657e04d6a0d6286a394c3cd5b26ec8d6916b2823f87f8eaa516d947a",
     "layoutApproved": true,
     "preview": {
@@ -25776,8 +26271,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.99,
+      "height": 10.39,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-41-full-frame-black": {
     "id": "print-paul-murphy-painting-41-full-frame-black",
@@ -26010,23 +26510,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 9",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.75X8.05",
+    "sku": "5M144M9S7.49X7.79",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.4967,
-      "height": 7.7967,
+      "width": 7.49,
+      "height": 7.79,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 8.05,
+      "width": 8.49,
+      "height": 8.79,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ed176362c7c0c174f0f9c7e1b99f062abf1264ab9fd242e3d4491ab39dd1bdfc.jpg",
-    "assetSha256": "ed176362c7c0c174f0f9c7e1b99f062abf1264ab9fd242e3d4491ab39dd1bdfc",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2c462615e0fa189394dc16a7282f5d85014e986ed9a4ffc76099597794823cc1.jpg",
+    "assetSha256": "2c462615e0fa189394dc16a7282f5d85014e986ed9a4ffc76099597794823cc1",
     "sourceSha256": "396a1d43657e04d6a0d6286a394c3cd5b26ec8d6916b2823f87f8eaa516d947a",
     "layoutApproved": true,
     "preview": {
@@ -26036,8 +26536,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.49,
+      "height": 7.79,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-41-medium-frame-black": {
     "id": "print-paul-murphy-painting-41-medium-frame-black",
@@ -26270,23 +26775,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 9",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.25X5.45",
+    "sku": "5M144M9S4.99X5.19",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.9967,
-      "height": 5.1967,
+      "width": 4.99,
+      "height": 5.19,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.25,
-      "height": 5.45,
+      "width": 5.99,
+      "height": 6.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b571a74f69b3971d08ed0666f0bcb9962c1ff5923d83fb2827ea693bac86146e.jpg",
-    "assetSha256": "b571a74f69b3971d08ed0666f0bcb9962c1ff5923d83fb2827ea693bac86146e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ee4303f1453a9fef0813dcc42a5296e7b698790afe6a64fba2711483c4977265.jpg",
+    "assetSha256": "ee4303f1453a9fef0813dcc42a5296e7b698790afe6a64fba2711483c4977265",
     "sourceSha256": "396a1d43657e04d6a0d6286a394c3cd5b26ec8d6916b2823f87f8eaa516d947a",
     "layoutApproved": true,
     "preview": {
@@ -26296,8 +26801,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.99,
+      "height": 5.19,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-41-small-frame-black": {
     "id": "print-paul-murphy-painting-41-small-frame-black",
@@ -26530,23 +27040,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 10",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S11.13X10.25",
+    "sku": "5M144M9S10.87X9.99",
     "scale": 1,
     "imageSize": {
-      "width": 10.8767,
+      "width": 10.87,
       "height": 9.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.13,
-      "height": 10.25,
+      "width": 11.87,
+      "height": 10.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e4ce7a22eb3ff8958d171ba9cb42880f9cea02a368f97695678e3c7601847cf9.jpg",
-    "assetSha256": "e4ce7a22eb3ff8958d171ba9cb42880f9cea02a368f97695678e3c7601847cf9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/abfdb3c8d5891ed82e967fe00e44b394521318a07b431227419ffae81faed667.jpg",
+    "assetSha256": "abfdb3c8d5891ed82e967fe00e44b394521318a07b431227419ffae81faed667",
     "sourceSha256": "4a71a5c1fde9aa81bc8026aac30425bca7919bd81db054b9ea13f50b97dcb3ac",
     "layoutApproved": true,
     "preview": {
@@ -26556,8 +27066,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.87,
+      "height": 9.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-43-full-frame-black": {
     "id": "print-paul-murphy-painting-43-full-frame-black",
@@ -26788,25 +27303,25 @@ export default {
     "productId": "paul-murphy-painting-43",
     "title": "Spiritual Sedona Mountains 10 — Medium print",
     "artworkTitle": "Spiritual Sedona Mountains 10",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.41X7.75",
+    "sku": "5M144M9S8.15X7.49",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.1567,
-      "height": 7.4933,
+      "width": 8.15,
+      "height": 7.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.41,
-      "height": 7.75,
+      "width": 9.15,
+      "height": 8.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/085b593fabc1b70a5dafd978eb77f63e4ae5b5bd40307879ec677fccd1002bf9.jpg",
-    "assetSha256": "085b593fabc1b70a5dafd978eb77f63e4ae5b5bd40307879ec677fccd1002bf9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b2379ee2a77c9b12348efe3fe3966b9c6123ff6a3ae411cbbe2f409630470be8.jpg",
+    "assetSha256": "b2379ee2a77c9b12348efe3fe3966b9c6123ff6a3ae411cbbe2f409630470be8",
     "sourceSha256": "4a71a5c1fde9aa81bc8026aac30425bca7919bd81db054b9ea13f50b97dcb3ac",
     "layoutApproved": true,
     "preview": {
@@ -26816,8 +27331,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.15,
+      "height": 7.49,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-43-medium-frame-black": {
     "id": "print-paul-murphy-painting-43-medium-frame-black",
@@ -27050,23 +27570,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 10",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.69X5.25",
+    "sku": "5M144M9S5.43X4.99",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.4367,
-      "height": 4.9933,
+      "width": 5.43,
+      "height": 4.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.69,
-      "height": 5.25,
+      "width": 6.43,
+      "height": 5.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e98b16d13fa86b53a038a4e927601940374fedea5c7618d0113cb2a12f0b0f52.jpg",
-    "assetSha256": "e98b16d13fa86b53a038a4e927601940374fedea5c7618d0113cb2a12f0b0f52",
+    "assetUrl": "https://vermillionaurora.com/print-editions/67c1e4b1c3b1106bceec6e71b9cf029ed6fb422163cb01078f872efca0f77007.jpg",
+    "assetSha256": "67c1e4b1c3b1106bceec6e71b9cf029ed6fb422163cb01078f872efca0f77007",
     "sourceSha256": "4a71a5c1fde9aa81bc8026aac30425bca7919bd81db054b9ea13f50b97dcb3ac",
     "layoutApproved": true,
     "preview": {
@@ -27076,8 +27596,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.43,
+      "height": 4.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-43-small-frame-black": {
     "id": "print-paul-murphy-painting-43-small-frame-black",
@@ -27310,23 +27835,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 11",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S10.34X10.25",
+    "sku": "5M144M9S10.08X9.99",
     "scale": 1,
     "imageSize": {
-      "width": 10.0867,
-      "height": 9.9933,
+      "width": 10.08,
+      "height": 9.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.34,
-      "height": 10.25,
+      "width": 11.08,
+      "height": 10.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5530995b6e97de13b4518239da33e1de4a9e752ab237a9fa3458d746af099a49.jpg",
-    "assetSha256": "5530995b6e97de13b4518239da33e1de4a9e752ab237a9fa3458d746af099a49",
+    "assetUrl": "https://vermillionaurora.com/print-editions/401b246050f67f52058683ed3bee52130b35bc19443cf7da2c2a50d9334bbc4c.jpg",
+    "assetSha256": "401b246050f67f52058683ed3bee52130b35bc19443cf7da2c2a50d9334bbc4c",
     "sourceSha256": "796b885fc82f1e6350caac80b710b1f6f9e7f6be6e4fbb7638f7015d740e6eef",
     "layoutApproved": true,
     "preview": {
@@ -27336,8 +27861,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.08,
+      "height": 9.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-44-full-frame-black": {
     "id": "print-paul-murphy-painting-44-full-frame-black",
@@ -27570,23 +28100,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 11",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.82X7.75",
+    "sku": "5M144M9S7.56X7.49",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.5667,
-      "height": 7.4967,
+      "width": 7.56,
+      "height": 7.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.82,
-      "height": 7.75,
+      "width": 8.56,
+      "height": 8.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/eaf68d67cccefa4c862b184ac8d255926d78369025f14d0c79ea8fd9bcc9311c.jpg",
-    "assetSha256": "eaf68d67cccefa4c862b184ac8d255926d78369025f14d0c79ea8fd9bcc9311c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/bd721eb41da5ff6018cad7034685e4e86e007810508567135f3a526956de18ea.jpg",
+    "assetSha256": "bd721eb41da5ff6018cad7034685e4e86e007810508567135f3a526956de18ea",
     "sourceSha256": "796b885fc82f1e6350caac80b710b1f6f9e7f6be6e4fbb7638f7015d740e6eef",
     "layoutApproved": true,
     "preview": {
@@ -27596,8 +28126,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.56,
+      "height": 7.49,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-44-medium-frame-black": {
     "id": "print-paul-murphy-painting-44-medium-frame-black",
@@ -27830,23 +28365,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 11",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.29X5.25",
+    "sku": "5M144M9S5.03X4.99",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.0367,
+      "width": 5.03,
       "height": 4.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.29,
-      "height": 5.25,
+      "width": 6.03,
+      "height": 5.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7e78221d2963c0780b08364563e49ee2b6df1a083d508a36300db45891ce0985.jpg",
-    "assetSha256": "7e78221d2963c0780b08364563e49ee2b6df1a083d508a36300db45891ce0985",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2b2ebbdf3382640ebdccb228a349525928ec45e10c8000d256b4e4a5d23f798d.jpg",
+    "assetSha256": "2b2ebbdf3382640ebdccb228a349525928ec45e10c8000d256b4e4a5d23f798d",
     "sourceSha256": "796b885fc82f1e6350caac80b710b1f6f9e7f6be6e4fbb7638f7015d740e6eef",
     "layoutApproved": true,
     "preview": {
@@ -27856,8 +28391,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.03,
+      "height": 4.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-44-small-frame-black": {
     "id": "print-paul-murphy-painting-44-small-frame-black",
@@ -28090,23 +28630,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 12",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S10.39X10.25",
+    "sku": "5M144M9S10.13X9.99",
     "scale": 1,
     "imageSize": {
-      "width": 10.1367,
-      "height": 9.9933,
+      "width": 10.13,
+      "height": 9.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.39,
-      "height": 10.25,
+      "width": 11.13,
+      "height": 10.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6eda38e9cd647446b4b274dc520d98f403b5983a28c14dd2927b1485f209136a.jpg",
-    "assetSha256": "6eda38e9cd647446b4b274dc520d98f403b5983a28c14dd2927b1485f209136a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1cb625775044632e34806b702718a3bab1c265a861b46ead0c43fc3d784cc843.jpg",
+    "assetSha256": "1cb625775044632e34806b702718a3bab1c265a861b46ead0c43fc3d784cc843",
     "sourceSha256": "207d04adc9f3b67e66c3c38de6c3913199e3fe2b6958c8d986f3e25f180a9250",
     "layoutApproved": true,
     "preview": {
@@ -28116,8 +28656,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.13,
+      "height": 9.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-45-full-frame-black": {
     "id": "print-paul-murphy-painting-45-full-frame-black",
@@ -28350,23 +28895,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 12",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.85X7.75",
+    "sku": "5M144M9S7.59X7.49",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.5967,
+      "width": 7.59,
       "height": 7.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.85,
-      "height": 7.75,
+      "width": 8.59,
+      "height": 8.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/be16352f9023b2a274c6fe62b342fbf8c2ec9edbb4f1aeea7480d85b0f29e23e.jpg",
-    "assetSha256": "be16352f9023b2a274c6fe62b342fbf8c2ec9edbb4f1aeea7480d85b0f29e23e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fa1b59abe3c6be64213f304b6d0cdeda66b270f53bb8715c3130e9c84fffa68a.jpg",
+    "assetSha256": "fa1b59abe3c6be64213f304b6d0cdeda66b270f53bb8715c3130e9c84fffa68a",
     "sourceSha256": "207d04adc9f3b67e66c3c38de6c3913199e3fe2b6958c8d986f3e25f180a9250",
     "layoutApproved": true,
     "preview": {
@@ -28376,8 +28921,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.59,
+      "height": 7.49,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-45-medium-frame-black": {
     "id": "print-paul-murphy-painting-45-medium-frame-black",
@@ -28610,23 +29160,23 @@ export default {
     "artworkTitle": "Spiritual Sedona Mountains 12",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.32X5.25",
+    "sku": "5M144M9S5.06X4.99",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.0667,
-      "height": 4.9933,
+      "width": 5.06,
+      "height": 4.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.32,
-      "height": 5.25,
+      "width": 6.06,
+      "height": 5.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4cfdc95405438d9b803a6dd41bcd36b9415b35c91e784c6ea86fa03c805c277b.jpg",
-    "assetSha256": "4cfdc95405438d9b803a6dd41bcd36b9415b35c91e784c6ea86fa03c805c277b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/aa33d7a02f1a9c913857cc76396d49987ce4e964de43f6819d24e868ec960ea1.jpg",
+    "assetSha256": "aa33d7a02f1a9c913857cc76396d49987ce4e964de43f6819d24e868ec960ea1",
     "sourceSha256": "207d04adc9f3b67e66c3c38de6c3913199e3fe2b6958c8d986f3e25f180a9250",
     "layoutApproved": true,
     "preview": {
@@ -28636,8 +29186,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.06,
+      "height": 4.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-45-small-frame-black": {
     "id": "print-paul-murphy-painting-45-small-frame-black",
@@ -28870,23 +29425,23 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S8.25X10.91",
+    "sku": "5M144M9S7.99X10.65",
     "scale": 1,
     "imageSize": {
-      "width": 7.9967,
-      "height": 10.6567,
+      "width": 7.99,
+      "height": 10.65,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.25,
-      "height": 10.91,
+      "width": 8.99,
+      "height": 11.65,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/600597d0290bb9c33c101a872826bb1008f493071ae38bacf9fbf4cc14a941ce.jpg",
-    "assetSha256": "600597d0290bb9c33c101a872826bb1008f493071ae38bacf9fbf4cc14a941ce",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8a1bf55bd6fa1a1e68a5d5d94e13b0112e5b66403e6ce0465ac8cbec22afd2c0.jpg",
+    "assetSha256": "8a1bf55bd6fa1a1e68a5d5d94e13b0112e5b66403e6ce0465ac8cbec22afd2c0",
     "sourceSha256": "4f4e46fed913aa62a63682b4e515349b4eaa6979d921b8df25dabd9d9392e0f5",
     "layoutApproved": true,
     "preview": {
@@ -28896,8 +29451,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.99,
+      "height": 10.65,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-51-full-frame-black": {
     "id": "print-paul-murphy-painting-51-full-frame-black",
@@ -29130,23 +29690,23 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.25X8.24",
+    "sku": "5M144M9S5.99X7.98",
     "scale": 0.75,
     "imageSize": {
-      "width": 5.9933,
-      "height": 7.9867,
+      "width": 5.99,
+      "height": 7.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.25,
-      "height": 8.24,
+      "width": 6.99,
+      "height": 8.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/109a4c3d5c871c6d000c90e570b0682358b459ea9df788c955e811e4cf18d4c7.jpg",
-    "assetSha256": "109a4c3d5c871c6d000c90e570b0682358b459ea9df788c955e811e4cf18d4c7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0aa8c1a7f2352f57c3eb4d72123bfb0e19468ec514dcc578d7c091d33888c9e4.jpg",
+    "assetSha256": "0aa8c1a7f2352f57c3eb4d72123bfb0e19468ec514dcc578d7c091d33888c9e4",
     "sourceSha256": "4f4e46fed913aa62a63682b4e515349b4eaa6979d921b8df25dabd9d9392e0f5",
     "layoutApproved": true,
     "preview": {
@@ -29156,8 +29716,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.99,
+      "height": 7.98,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-51-medium-frame-black": {
     "id": "print-paul-murphy-painting-51-medium-frame-black",
@@ -29390,23 +29955,23 @@ export default {
     "artworkTitle": "Puerto Rico Waterfront",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.25X5.58",
+    "sku": "5M144M9S4.01X5.34",
     "scale": 0.5,
     "imageSize": {
-      "width": 3.9967,
-      "height": 5.3267,
+      "width": 3.99,
+      "height": 5.32,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.25,
-      "height": 5.58,
+      "width": 5.01,
+      "height": 6.34,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9791055bfa24c25a5ce1254d76c7f53c904426229ea3c11670af25c4fbae36a4.jpg",
-    "assetSha256": "9791055bfa24c25a5ce1254d76c7f53c904426229ea3c11670af25c4fbae36a4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f7bd3693dfbb9ee6892c072a1bbb523760899eb4c04be777026547b238621122.jpg",
+    "assetSha256": "f7bd3693dfbb9ee6892c072a1bbb523760899eb4c04be777026547b238621122",
     "sourceSha256": "4f4e46fed913aa62a63682b4e515349b4eaa6979d921b8df25dabd9d9392e0f5",
     "layoutApproved": true,
     "preview": {
@@ -29416,8 +29981,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.01,
+      "height": 5.34,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-51-small-frame-black": {
     "id": "print-paul-murphy-painting-51-small-frame-black",
@@ -29650,23 +30220,23 @@ export default {
     "artworkTitle": "Pyramid from Photo",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.76X4.52",
+    "sku": "5M144M9S4.5X4.26",
     "scale": 1,
     "imageSize": {
       "width": 4.5,
-      "height": 4.2667,
+      "height": 4.26,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.76,
-      "height": 4.52,
+      "width": 5.5,
+      "height": 5.26,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/af9e6ea994de3386e0d466731cbccd6fd4781d51871532df2429a6e79589017a.jpg",
-    "assetSha256": "af9e6ea994de3386e0d466731cbccd6fd4781d51871532df2429a6e79589017a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ee08874e3addc0436ce37d2e7f91d2b5cfbd82f003593ae7bd1b835a64fa3f5b.jpg",
+    "assetSha256": "ee08874e3addc0436ce37d2e7f91d2b5cfbd82f003593ae7bd1b835a64fa3f5b",
     "sourceSha256": "29138911cd296945e2b2a0a450130c284ef022746891d4e1be39b14ebe1b1b72",
     "layoutApproved": true,
     "preview": {
@@ -29676,8 +30246,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.5,
+      "height": 4.26,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-55-full-frame-black": {
     "id": "print-paul-murphy-painting-55-full-frame-black",
@@ -29910,23 +30485,23 @@ export default {
     "artworkTitle": "Peach Preserves",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S11.82X12.66",
+    "sku": "5M144M9S11.56X12.4",
     "scale": 1,
     "imageSize": {
-      "width": 11.5633,
-      "height": 12.4067,
+      "width": 11.56,
+      "height": 12.4,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.82,
-      "height": 12.66,
+      "width": 12.56,
+      "height": 13.4,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/92c3bc285c00cf4eb6e6aa61b3a26e354ebcfcc1fa2c1f5403d168866914619c.jpg",
-    "assetSha256": "92c3bc285c00cf4eb6e6aa61b3a26e354ebcfcc1fa2c1f5403d168866914619c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ca09054f1e3a35f5b67d298aa32771f4b3edefba8214b482b2f754a856424c63.jpg",
+    "assetSha256": "ca09054f1e3a35f5b67d298aa32771f4b3edefba8214b482b2f754a856424c63",
     "sourceSha256": "54badbbce49163e3ca93aca80c47020c18890e0f44c6a03d53fd6298770e1ccd",
     "layoutApproved": true,
     "preview": {
@@ -29936,8 +30511,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.56,
+      "height": 12.4,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-56-full-frame-black": {
     "id": "print-paul-murphy-painting-56-full-frame-black",
@@ -30170,23 +30750,23 @@ export default {
     "artworkTitle": "Peach Preserves",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S8.92X9.56",
+    "sku": "5M144M9S8.66X9.3",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.6667,
+      "width": 8.66,
       "height": 9.3,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.92,
-      "height": 9.56,
+      "width": 9.66,
+      "height": 10.3,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/55f23b7f9acf78882b20ba9e2899d0c3fd09051040a3e42da5ef752b78cd978d.jpg",
-    "assetSha256": "55f23b7f9acf78882b20ba9e2899d0c3fd09051040a3e42da5ef752b78cd978d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/950e8a5d9ae7c2a56bcfd110df3382c33d8c79da7404e05618b1321b84bf3ae4.jpg",
+    "assetSha256": "950e8a5d9ae7c2a56bcfd110df3382c33d8c79da7404e05618b1321b84bf3ae4",
     "sourceSha256": "54badbbce49163e3ca93aca80c47020c18890e0f44c6a03d53fd6298770e1ccd",
     "layoutApproved": true,
     "preview": {
@@ -30196,8 +30776,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.66,
+      "height": 9.3,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-56-medium-frame-black": {
     "id": "print-paul-murphy-painting-56-medium-frame-black",
@@ -30430,23 +31015,23 @@ export default {
     "artworkTitle": "Peach Preserves",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.03X6.45",
+    "sku": "5M144M9S5.77X6.19",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.7767,
-      "height": 6.1967,
+      "width": 5.77,
+      "height": 6.19,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.03,
-      "height": 6.45,
+      "width": 6.77,
+      "height": 7.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b4730cb2e4119b4659aa52afb41e8298aa0c4c48b469a487d966a869fb88ed60.jpg",
-    "assetSha256": "b4730cb2e4119b4659aa52afb41e8298aa0c4c48b469a487d966a869fb88ed60",
+    "assetUrl": "https://vermillionaurora.com/print-editions/08d7a8bcfbc237470031151e0fdcd6418255949e4ffb297bbd2dd8e68399903c.jpg",
+    "assetSha256": "08d7a8bcfbc237470031151e0fdcd6418255949e4ffb297bbd2dd8e68399903c",
     "sourceSha256": "54badbbce49163e3ca93aca80c47020c18890e0f44c6a03d53fd6298770e1ccd",
     "layoutApproved": true,
     "preview": {
@@ -30456,8 +31041,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.77,
+      "height": 6.19,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-56-small-frame-black": {
     "id": "print-paul-murphy-painting-56-small-frame-black",
@@ -30688,25 +31278,25 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Large print",
     "artworkTitle": "Lady in Gold",
-    "amount": "75.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S11.94X14.95",
+    "sku": "5M144M9S11.68X14.69",
     "scale": 1,
     "imageSize": {
-      "width": 11.6867,
-      "height": 14.6967,
+      "width": 11.68,
+      "height": 14.69,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.94,
-      "height": 14.95,
+      "width": 12.68,
+      "height": 15.69,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7141b7b9bb56388ffd174ae2308f3f47080851d20bea6e758d3ca14e619de672.jpg",
-    "assetSha256": "7141b7b9bb56388ffd174ae2308f3f47080851d20bea6e758d3ca14e619de672",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f1d050ab132562db1e5c7d670f10d2aa2f3534d08749c2396cec9b7719103de0.jpg",
+    "assetSha256": "f1d050ab132562db1e5c7d670f10d2aa2f3534d08749c2396cec9b7719103de0",
     "sourceSha256": "af6a02da0c2f187d56579b54248a6c5c739f5c824d6308d5e2aefe9f665ffbdc",
     "layoutApproved": true,
     "preview": {
@@ -30716,8 +31306,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.68,
+      "height": 14.69,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-57-full-frame-black": {
     "id": "print-paul-murphy-painting-57-full-frame-black",
@@ -30948,25 +31543,25 @@ export default {
     "productId": "paul-murphy-painting-57",
     "title": "Lady in Gold — Medium print",
     "artworkTitle": "Lady in Gold",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S9.01X11.27",
+    "sku": "5M144M9S8.75X11.01",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.7567,
+      "width": 8.75,
       "height": 11.01,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.01,
-      "height": 11.27,
+      "width": 9.75,
+      "height": 12.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/718db8bc7fa490065e159896a3a86c6c959fb03844e2b714f5079962cadb1af5.jpg",
-    "assetSha256": "718db8bc7fa490065e159896a3a86c6c959fb03844e2b714f5079962cadb1af5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/01eda6f6e7c9498e10581932821e08ecbf4b7c38cc87db031c296699fb638172.jpg",
+    "assetSha256": "01eda6f6e7c9498e10581932821e08ecbf4b7c38cc87db031c296699fb638172",
     "sourceSha256": "af6a02da0c2f187d56579b54248a6c5c739f5c824d6308d5e2aefe9f665ffbdc",
     "layoutApproved": true,
     "preview": {
@@ -30976,8 +31571,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.75,
+      "height": 11.01,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-57-medium-frame-black": {
     "id": "print-paul-murphy-painting-57-medium-frame-black",
@@ -31210,23 +31810,23 @@ export default {
     "artworkTitle": "Lady in Gold",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.09X7.6",
+    "sku": "5M144M9S5.83X7.34",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.8367,
+      "width": 5.83,
       "height": 7.34,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.09,
-      "height": 7.6,
+      "width": 6.83,
+      "height": 8.34,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/cb36b15e90a8d9fbd64e0cee58068a0cf8ff60625640f0b6fa6eb9c9e421077e.jpg",
-    "assetSha256": "cb36b15e90a8d9fbd64e0cee58068a0cf8ff60625640f0b6fa6eb9c9e421077e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/68cc964e9fa06a4ba23dcca0e412f7b98344f5bb9b1598192fdac04a451d3167.jpg",
+    "assetSha256": "68cc964e9fa06a4ba23dcca0e412f7b98344f5bb9b1598192fdac04a451d3167",
     "sourceSha256": "af6a02da0c2f187d56579b54248a6c5c739f5c824d6308d5e2aefe9f665ffbdc",
     "layoutApproved": true,
     "preview": {
@@ -31236,8 +31836,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.83,
+      "height": 7.34,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-57-small-frame-black": {
     "id": "print-paul-murphy-painting-57-small-frame-black",
@@ -31470,23 +32075,23 @@ export default {
     "artworkTitle": "Son TJ Sedona",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S12.09X10.25",
+    "sku": "5M144M9S11.83X9.99",
     "scale": 1,
     "imageSize": {
-      "width": 11.8367,
+      "width": 11.83,
       "height": 9.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.09,
-      "height": 10.25,
+      "width": 12.83,
+      "height": 10.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7f12b592f04e85af37f8647542f7c4d06b7a46a2ac6c86222f30e5c930f891da.jpg",
-    "assetSha256": "7f12b592f04e85af37f8647542f7c4d06b7a46a2ac6c86222f30e5c930f891da",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5f270d5b594a19ed037a0992e25788fc294f17027459f3fd44509031fb23cfa4.jpg",
+    "assetSha256": "5f270d5b594a19ed037a0992e25788fc294f17027459f3fd44509031fb23cfa4",
     "sourceSha256": "7cdf58a1170ff5aab8593f1323334eeef3a7413ef134b47f76a675a9dc181282",
     "layoutApproved": true,
     "preview": {
@@ -31496,8 +32101,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.83,
+      "height": 9.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-6-full-frame-black": {
     "id": "print-paul-murphy-painting-6-full-frame-black",
@@ -31730,23 +32340,23 @@ export default {
     "artworkTitle": "Son TJ Sedona",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.13X7.75",
+    "sku": "5M144M9S8.87X7.49",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.8767,
+      "width": 8.87,
       "height": 7.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.13,
-      "height": 7.75,
+      "width": 9.87,
+      "height": 8.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/06375d7c354ace13e5e22faea896efce826b06199a7fdfe421ae0505d07a39f2.jpg",
-    "assetSha256": "06375d7c354ace13e5e22faea896efce826b06199a7fdfe421ae0505d07a39f2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/dc1a2afa96accb90b61c87ca994e04355b10f5dd026a4cae03093958acbbc093.jpg",
+    "assetSha256": "dc1a2afa96accb90b61c87ca994e04355b10f5dd026a4cae03093958acbbc093",
     "sourceSha256": "7cdf58a1170ff5aab8593f1323334eeef3a7413ef134b47f76a675a9dc181282",
     "layoutApproved": true,
     "preview": {
@@ -31756,8 +32366,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.87,
+      "height": 7.49,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-6-medium-frame-black": {
     "id": "print-paul-murphy-painting-6-medium-frame-black",
@@ -31990,23 +32605,23 @@ export default {
     "artworkTitle": "Son TJ Sedona",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.17X5.25",
+    "sku": "5M144M9S5.91X4.99",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9167,
-      "height": 4.9933,
+      "width": 5.91,
+      "height": 4.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.17,
-      "height": 5.25,
+      "width": 6.91,
+      "height": 5.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/873fecd1b6ab81e293bc7ffe8e1dd22b4d80fdc84b63f001b4211aa4552d3de6.jpg",
-    "assetSha256": "873fecd1b6ab81e293bc7ffe8e1dd22b4d80fdc84b63f001b4211aa4552d3de6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7f87ea942d8c19f3903a931762008c405d7d4a4c4cbaffca302d0d8c1ef0b7fd.jpg",
+    "assetSha256": "7f87ea942d8c19f3903a931762008c405d7d4a4c4cbaffca302d0d8c1ef0b7fd",
     "sourceSha256": "7cdf58a1170ff5aab8593f1323334eeef3a7413ef134b47f76a675a9dc181282",
     "layoutApproved": true,
     "preview": {
@@ -32016,8 +32631,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.91,
+      "height": 4.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-6-small-frame-black": {
     "id": "print-paul-murphy-painting-6-small-frame-black",
@@ -32250,23 +32870,23 @@ export default {
     "artworkTitle": "Waiting on Your Ship",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S12.29X9.7",
+    "sku": "5M144M9S12.03X9.44",
     "scale": 1,
     "imageSize": {
-      "width": 12.0333,
-      "height": 9.4467,
+      "width": 12.03,
+      "height": 9.44,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.29,
-      "height": 9.7,
+      "width": 13.03,
+      "height": 10.44,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/23ee73bf068a51d13d30e1bbf523ee3c8fd4d2b70f5ad4bf16fe93cf592ac9cf.jpg",
-    "assetSha256": "23ee73bf068a51d13d30e1bbf523ee3c8fd4d2b70f5ad4bf16fe93cf592ac9cf",
+    "assetUrl": "https://vermillionaurora.com/print-editions/945e66e7f36800d3d044060ef6e5de26324f749155a3741248a11676c8e2bfca.jpg",
+    "assetSha256": "945e66e7f36800d3d044060ef6e5de26324f749155a3741248a11676c8e2bfca",
     "sourceSha256": "948e24ef3b50a6e393af2988c65693315393dc307b0cdbb0a38fed634c4c553f",
     "layoutApproved": true,
     "preview": {
@@ -32276,8 +32896,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.03,
+      "height": 9.44,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-62-full-frame-black": {
     "id": "print-paul-murphy-painting-62-full-frame-black",
@@ -32510,23 +33135,23 @@ export default {
     "artworkTitle": "Waiting on Your Ship",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.28X7.34",
+    "sku": "5M144M9S9.02X7.08",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.0267,
-      "height": 7.0867,
+      "width": 9.02,
+      "height": 7.08,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.28,
-      "height": 7.34,
+      "width": 10.02,
+      "height": 8.08,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/27b380622756e86c85a87ffb1f88c86db8b4cc346b4fdabe21930e65ac8dd33a.jpg",
-    "assetSha256": "27b380622756e86c85a87ffb1f88c86db8b4cc346b4fdabe21930e65ac8dd33a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/59e206943d83fe1488fe914d856d145ac4a507128b7219d98c2ff687a096beac.jpg",
+    "assetSha256": "59e206943d83fe1488fe914d856d145ac4a507128b7219d98c2ff687a096beac",
     "sourceSha256": "948e24ef3b50a6e393af2988c65693315393dc307b0cdbb0a38fed634c4c553f",
     "layoutApproved": true,
     "preview": {
@@ -32536,8 +33161,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.02,
+      "height": 7.08,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-62-medium-frame-black": {
     "id": "print-paul-murphy-painting-62-medium-frame-black",
@@ -32770,23 +33400,23 @@ export default {
     "artworkTitle": "Waiting on Your Ship",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.27X4.97",
+    "sku": "5M144M9S6.01X4.71",
     "scale": 0.5,
     "imageSize": {
       "width": 6.01,
-      "height": 4.7167,
+      "height": 4.71,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.27,
-      "height": 4.97,
+      "width": 7.01,
+      "height": 5.71,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a6a8be65daf6b71ca39005878f0e9a9a06807e8ff7cf4126d649e338a3259d95.jpg",
-    "assetSha256": "a6a8be65daf6b71ca39005878f0e9a9a06807e8ff7cf4126d649e338a3259d95",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c7b71367962787fba8d848d6cbd4b9199d77c681d33309bdbb4978754480350f.jpg",
+    "assetSha256": "c7b71367962787fba8d848d6cbd4b9199d77c681d33309bdbb4978754480350f",
     "sourceSha256": "948e24ef3b50a6e393af2988c65693315393dc307b0cdbb0a38fed634c4c553f",
     "layoutApproved": true,
     "preview": {
@@ -32796,8 +33426,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.01,
+      "height": 4.71,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-62-small-frame-black": {
     "id": "print-paul-murphy-painting-62-small-frame-black",
@@ -33028,25 +33663,25 @@ export default {
     "productId": "paul-murphy-painting-63",
     "title": "Slot Canyon Face — Large print",
     "artworkTitle": "Slot Canyon Face",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S8.52X11.09",
+    "sku": "5M144M9S8.26X10.83",
     "scale": 1,
     "imageSize": {
-      "width": 8.2667,
-      "height": 10.8333,
+      "width": 8.26,
+      "height": 10.83,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.52,
-      "height": 11.09,
+      "width": 9.26,
+      "height": 11.83,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fae134b756bd736a3636377f2de9038c1313239a2378aa463ea5b1c17d044e3a.jpg",
-    "assetSha256": "fae134b756bd736a3636377f2de9038c1313239a2378aa463ea5b1c17d044e3a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9a91e7c2d9e563b1a4be312f013c18e956727059002f85bfb076117885f988cc.jpg",
+    "assetSha256": "9a91e7c2d9e563b1a4be312f013c18e956727059002f85bfb076117885f988cc",
     "sourceSha256": "bd73fc32ab7017cae44b2a933f475d3944f4e0f019dce356ec80a733bfebdee9",
     "layoutApproved": true,
     "preview": {
@@ -33056,8 +33691,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.26,
+      "height": 10.83,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-63-full-frame-black": {
     "id": "print-paul-murphy-painting-63-full-frame-black",
@@ -33288,25 +33928,25 @@ export default {
     "productId": "paul-murphy-painting-63",
     "title": "Slot Canyon Face — Medium print",
     "artworkTitle": "Slot Canyon Face",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.45X8.38",
+    "sku": "5M144M9S6.19X8.12",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.1967,
+      "width": 6.19,
       "height": 8.12,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.45,
-      "height": 8.38,
+      "width": 7.19,
+      "height": 9.12,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9d57767fb57b0e2c1ed976fc3dd19a394d73b6a9d1ac1a3e579379cf7d90e5b5.jpg",
-    "assetSha256": "9d57767fb57b0e2c1ed976fc3dd19a394d73b6a9d1ac1a3e579379cf7d90e5b5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c2d988cbb125fae6cc4eeabe471bb615b913713339c667714bef6f050530d25d.jpg",
+    "assetSha256": "c2d988cbb125fae6cc4eeabe471bb615b913713339c667714bef6f050530d25d",
     "sourceSha256": "bd73fc32ab7017cae44b2a933f475d3944f4e0f019dce356ec80a733bfebdee9",
     "layoutApproved": true,
     "preview": {
@@ -33316,8 +33956,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.19,
+      "height": 8.12,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-63-medium-frame-black": {
     "id": "print-paul-murphy-painting-63-medium-frame-black",
@@ -33550,23 +34195,23 @@ export default {
     "artworkTitle": "Slot Canyon Face",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.38X5.67",
+    "sku": "5M144M9S4.12X5.4",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.1267,
-      "height": 5.4067,
+      "width": 4.12,
+      "height": 5.4,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.38,
-      "height": 5.67,
+      "width": 5.12,
+      "height": 6.4,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9e42e830efb52b58485073bc8ba4d2997c3476bd7823efe2f8ce3d678d563f8a.jpg",
-    "assetSha256": "9e42e830efb52b58485073bc8ba4d2997c3476bd7823efe2f8ce3d678d563f8a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/decd7f436be3210d74fe384898b36c489d21252e10a386ba7f096b32470d8e6e.jpg",
+    "assetSha256": "decd7f436be3210d74fe384898b36c489d21252e10a386ba7f096b32470d8e6e",
     "sourceSha256": "bd73fc32ab7017cae44b2a933f475d3944f4e0f019dce356ec80a733bfebdee9",
     "layoutApproved": true,
     "preview": {
@@ -33576,8 +34221,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.12,
+      "height": 5.4,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-63-small-frame-black": {
     "id": "print-paul-murphy-painting-63-small-frame-black",
@@ -33810,23 +34460,23 @@ export default {
     "artworkTitle": "Slot Canyon Arizona",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S8.57X11.34",
+    "sku": "5M144M9S8.31X11.08",
     "scale": 1,
     "imageSize": {
-      "width": 8.3133,
-      "height": 11.0867,
+      "width": 8.31,
+      "height": 11.08,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.57,
-      "height": 11.34,
+      "width": 9.31,
+      "height": 12.08,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/44109af10d25701294396acc53aa36f2fb12235122afb0e2b7361c69fe947668.jpg",
-    "assetSha256": "44109af10d25701294396acc53aa36f2fb12235122afb0e2b7361c69fe947668",
+    "assetUrl": "https://vermillionaurora.com/print-editions/093f441b39233728ae6ac5ec3a33924cc071838b609b80cb35a1b7f957d481bd.jpg",
+    "assetSha256": "093f441b39233728ae6ac5ec3a33924cc071838b609b80cb35a1b7f957d481bd",
     "sourceSha256": "3257ed9a9ced852baa1fd1bff607d5f98ab2b0d1ffa108b00ca306f886791dd4",
     "layoutApproved": true,
     "preview": {
@@ -33836,8 +34486,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.31,
+      "height": 11.08,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-64-full-frame-black": {
     "id": "print-paul-murphy-painting-64-full-frame-black",
@@ -34068,25 +34723,25 @@ export default {
     "productId": "paul-murphy-painting-64",
     "title": "Slot Canyon Arizona — Medium print",
     "artworkTitle": "Slot Canyon Arizona",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.49X8.57",
+    "sku": "5M144M9S6.23X8.31",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.2367,
-      "height": 8.3167,
+      "width": 6.23,
+      "height": 8.31,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.49,
-      "height": 8.57,
+      "width": 7.23,
+      "height": 9.31,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2af0c35daa172e8560b9ab300e16c520e781cfc57e2c1ec599cc77f7a8e355be.jpg",
-    "assetSha256": "2af0c35daa172e8560b9ab300e16c520e781cfc57e2c1ec599cc77f7a8e355be",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7053bd6cebc2558138e39bcba7d5cef07ddb1cf8f0cd57d70d5bd0ac76155118.jpg",
+    "assetSha256": "7053bd6cebc2558138e39bcba7d5cef07ddb1cf8f0cd57d70d5bd0ac76155118",
     "sourceSha256": "3257ed9a9ced852baa1fd1bff607d5f98ab2b0d1ffa108b00ca306f886791dd4",
     "layoutApproved": true,
     "preview": {
@@ -34096,8 +34751,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.23,
+      "height": 8.31,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-64-medium-frame-black": {
     "id": "print-paul-murphy-painting-64-medium-frame-black",
@@ -34330,23 +34990,23 @@ export default {
     "artworkTitle": "Slot Canyon Arizona",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.41X5.79",
+    "sku": "5M144M9S4.15X5.53",
     "scale": 0.5,
     "imageSize": {
       "width": 4.15,
-      "height": 5.5367,
+      "height": 5.53,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.41,
-      "height": 5.79,
+      "width": 5.15,
+      "height": 6.53,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8f596bee8b9c9faec8a44cf897869b9f48a05851bae493b488256e3eaf5a4f07.jpg",
-    "assetSha256": "8f596bee8b9c9faec8a44cf897869b9f48a05851bae493b488256e3eaf5a4f07",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7589a99354f7ec43e890cf9ce06e9e4183b65c2ffea3f58591add37824f10d18.jpg",
+    "assetSha256": "7589a99354f7ec43e890cf9ce06e9e4183b65c2ffea3f58591add37824f10d18",
     "sourceSha256": "3257ed9a9ced852baa1fd1bff607d5f98ab2b0d1ffa108b00ca306f886791dd4",
     "layoutApproved": true,
     "preview": {
@@ -34356,8 +35016,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.15,
+      "height": 5.53,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-64-small-frame-black": {
     "id": "print-paul-murphy-painting-64-small-frame-black",
@@ -34588,25 +35253,25 @@ export default {
     "productId": "paul-murphy-painting-65",
     "title": "Phoenix — Large print",
     "artworkTitle": "Phoenix",
-    "amount": "60.00",
+    "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S9.48X14.55",
+    "sku": "5M144M9S9.22X14.29",
     "scale": 1,
     "imageSize": {
-      "width": 9.2267,
-      "height": 14.2967,
+      "width": 9.22,
+      "height": 14.29,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.48,
-      "height": 14.55,
+      "width": 10.22,
+      "height": 15.29,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7911dfe1568b81ef74e33a998cf07438046ac6b58f524bd5e91c04860dc43888.jpg",
-    "assetSha256": "7911dfe1568b81ef74e33a998cf07438046ac6b58f524bd5e91c04860dc43888",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9cad27d7d715ebcbbdf5e333b5fa8a4cca55a948d971b649330e93064a591712.jpg",
+    "assetSha256": "9cad27d7d715ebcbbdf5e333b5fa8a4cca55a948d971b649330e93064a591712",
     "sourceSha256": "07785165b0addb1498f4fe2d7f1aa388521bd9918a5c4adca2011a7f4dffb4cb",
     "layoutApproved": true,
     "preview": {
@@ -34616,8 +35281,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.22,
+      "height": 14.29,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-65-full-frame-black": {
     "id": "print-paul-murphy-painting-65-full-frame-black",
@@ -34850,23 +35520,23 @@ export default {
     "artworkTitle": "Phoenix",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S7.17X10.98",
+    "sku": "5M144M9S6.91X10.71",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.9167,
-      "height": 10.7167,
+      "width": 6.91,
+      "height": 10.71,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.17,
-      "height": 10.98,
+      "width": 7.91,
+      "height": 11.71,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/067371eaa0bb846ffd8e61136b1e79f106a19fb3eb37755a93e2414ae89473a3.jpg",
-    "assetSha256": "067371eaa0bb846ffd8e61136b1e79f106a19fb3eb37755a93e2414ae89473a3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a60fcb4634205a29eaec43f2fca8dcdfed2dc85082948a9216677a5669f20e0c.jpg",
+    "assetSha256": "a60fcb4634205a29eaec43f2fca8dcdfed2dc85082948a9216677a5669f20e0c",
     "sourceSha256": "07785165b0addb1498f4fe2d7f1aa388521bd9918a5c4adca2011a7f4dffb4cb",
     "layoutApproved": true,
     "preview": {
@@ -34876,8 +35546,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.91,
+      "height": 10.71,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-65-medium-frame-black": {
     "id": "print-paul-murphy-painting-65-medium-frame-black",
@@ -35110,23 +35785,23 @@ export default {
     "artworkTitle": "Phoenix",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.86X7.4",
+    "sku": "5M144M9S4.6X7.13",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.6067,
-      "height": 7.1367,
+      "width": 4.6,
+      "height": 7.13,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.86,
-      "height": 7.4,
+      "width": 5.6,
+      "height": 8.13,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b7acd78851bc405a5ed382be03215bb000714f1d75077563bf594b8a695dc160.jpg",
-    "assetSha256": "b7acd78851bc405a5ed382be03215bb000714f1d75077563bf594b8a695dc160",
+    "assetUrl": "https://vermillionaurora.com/print-editions/212f8f49d8bc2a1ebc349ce36dec43f502ae3169d2b5cab7375aeabcc882e41c.jpg",
+    "assetSha256": "212f8f49d8bc2a1ebc349ce36dec43f502ae3169d2b5cab7375aeabcc882e41c",
     "sourceSha256": "07785165b0addb1498f4fe2d7f1aa388521bd9918a5c4adca2011a7f4dffb4cb",
     "layoutApproved": true,
     "preview": {
@@ -35136,8 +35811,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.6,
+      "height": 7.13,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-65-small-frame-black": {
     "id": "print-paul-murphy-painting-65-small-frame-black",
@@ -35370,23 +36050,23 @@ export default {
     "artworkTitle": "Slot Canyon",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S10.25X10.35",
+    "sku": "5M144M9S9.99X10.09",
     "scale": 1,
     "imageSize": {
       "width": 9.99,
-      "height": 10.0967,
+      "height": 10.09,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.25,
-      "height": 10.35,
+      "width": 10.99,
+      "height": 11.09,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/49bc8c2eccf13d773fbfd20d2b5c929690a4587c8b5200c1109bafca3a432d86.jpg",
-    "assetSha256": "49bc8c2eccf13d773fbfd20d2b5c929690a4587c8b5200c1109bafca3a432d86",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ab9ee702efff7dd8603de548d4d4d460b840e0e4865070c433452f721ae274e7.jpg",
+    "assetSha256": "ab9ee702efff7dd8603de548d4d4d460b840e0e4865070c433452f721ae274e7",
     "sourceSha256": "24abc9e45cfe54f688bf8d520e11b9a8e5122e820aca293cbe46dec5649163ea",
     "layoutApproved": true,
     "preview": {
@@ -35396,8 +36076,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.99,
+      "height": 10.09,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-7-full-frame-black": {
     "id": "print-paul-murphy-painting-7-full-frame-black",
@@ -35630,23 +36315,23 @@ export default {
     "artworkTitle": "Slot Canyon",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.75X7.83",
+    "sku": "5M144M9S7.49X7.57",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.4967,
-      "height": 7.5767,
+      "width": 7.49,
+      "height": 7.57,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 7.83,
+      "width": 8.49,
+      "height": 8.57,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/86ebbaca2b058b2e492ae703880ed845758eadfdca42a2b60d61be2128543d7a.jpg",
-    "assetSha256": "86ebbaca2b058b2e492ae703880ed845758eadfdca42a2b60d61be2128543d7a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4a29431d247084b728649ebef9f833ce69b776a3f43577965e030d085d6570b9.jpg",
+    "assetSha256": "4a29431d247084b728649ebef9f833ce69b776a3f43577965e030d085d6570b9",
     "sourceSha256": "24abc9e45cfe54f688bf8d520e11b9a8e5122e820aca293cbe46dec5649163ea",
     "layoutApproved": true,
     "preview": {
@@ -35656,8 +36341,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.49,
+      "height": 7.57,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-7-medium-frame-black": {
     "id": "print-paul-murphy-painting-7-medium-frame-black",
@@ -35890,23 +36580,23 @@ export default {
     "artworkTitle": "Slot Canyon",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.25X5.3",
+    "sku": "5M144M9S4.99X5.04",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.9933,
-      "height": 5.0467,
+      "width": 4.99,
+      "height": 5.04,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.25,
-      "height": 5.3,
+      "width": 5.99,
+      "height": 6.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/124cdf2c3df5e46f4963ada5990ce89a33dcea2882e7d2f4ebf1f744109193cb.jpg",
-    "assetSha256": "124cdf2c3df5e46f4963ada5990ce89a33dcea2882e7d2f4ebf1f744109193cb",
+    "assetUrl": "https://vermillionaurora.com/print-editions/31607ddca03f360b420510b3ae97f500ad6e4138029eee678e08b766a32e62a7.jpg",
+    "assetSha256": "31607ddca03f360b420510b3ae97f500ad6e4138029eee678e08b766a32e62a7",
     "sourceSha256": "24abc9e45cfe54f688bf8d520e11b9a8e5122e820aca293cbe46dec5649163ea",
     "layoutApproved": true,
     "preview": {
@@ -35916,8 +36606,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.99,
+      "height": 5.04,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-7-small-frame-black": {
     "id": "print-paul-murphy-painting-7-small-frame-black",
@@ -36148,25 +36843,25 @@ export default {
     "productId": "paul-murphy-painting-72",
     "title": "Dancing Wolf on Moon — Large print",
     "artworkTitle": "Dancing Wolf on Moon",
-    "amount": "80.00",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S16.86X11.08",
+    "sku": "5M144M9S16.6X10.82",
     "scale": 1,
     "imageSize": {
       "width": 16.6,
-      "height": 10.8267,
+      "height": 10.82,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.86,
-      "height": 11.08,
+      "width": 17.6,
+      "height": 11.82,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1f357bdc1e7807bca5a22d376ce342d9b08289162215959d2c4162d5357dd3e3.jpg",
-    "assetSha256": "1f357bdc1e7807bca5a22d376ce342d9b08289162215959d2c4162d5357dd3e3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3c30e5bf3b2b4d7fac2eb077d2016dfdd09c8de64ba7ae4e1028c3a8e10d09ff.jpg",
+    "assetSha256": "3c30e5bf3b2b4d7fac2eb077d2016dfdd09c8de64ba7ae4e1028c3a8e10d09ff",
     "sourceSha256": "2117481938e7c4297b36e4f93c60c62f8db938c5abd9cb327bfe73d7cab50b3c",
     "layoutApproved": true,
     "preview": {
@@ -36176,8 +36871,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.6,
+      "height": 10.82,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-72-full-frame-black": {
     "id": "print-paul-murphy-painting-72-full-frame-black",
@@ -36410,23 +37110,23 @@ export default {
     "artworkTitle": "Dancing Wolf on Moon",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S12.71X8.37",
+    "sku": "5M144M9S12.44X8.11",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.4467,
-      "height": 8.1167,
+      "width": 12.44,
+      "height": 8.11,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.71,
-      "height": 8.37,
+      "width": 13.44,
+      "height": 9.11,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/993492384780a36ee330b4e0d813c59f45b94f98542c97c26fcfb71dd172af54.jpg",
-    "assetSha256": "993492384780a36ee330b4e0d813c59f45b94f98542c97c26fcfb71dd172af54",
+    "assetUrl": "https://vermillionaurora.com/print-editions/76f6a9e4c532243701f788cd0b7340819cdef1b523b50967af2e63ccc3d52f20.jpg",
+    "assetSha256": "76f6a9e4c532243701f788cd0b7340819cdef1b523b50967af2e63ccc3d52f20",
     "sourceSha256": "2117481938e7c4297b36e4f93c60c62f8db938c5abd9cb327bfe73d7cab50b3c",
     "layoutApproved": true,
     "preview": {
@@ -36436,8 +37136,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.44,
+      "height": 8.11,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-72-medium-frame-black": {
     "id": "print-paul-murphy-painting-72-medium-frame-black",
@@ -36668,25 +37373,25 @@ export default {
     "productId": "paul-murphy-painting-72",
     "title": "Dancing Wolf on Moon — Small print",
     "artworkTitle": "Dancing Wolf on Moon",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.55X5.66",
+    "sku": "5M144M9S8.29X5.4",
     "scale": 0.5,
     "imageSize": {
       "width": 8.29,
-      "height": 5.4067,
+      "height": 5.4,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.55,
-      "height": 5.66,
+      "width": 9.29,
+      "height": 6.4,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4640a9516db135ed77cc4add3f0f2973cf16a504ad51d825b818ed895063efce.jpg",
-    "assetSha256": "4640a9516db135ed77cc4add3f0f2973cf16a504ad51d825b818ed895063efce",
+    "assetUrl": "https://vermillionaurora.com/print-editions/eb612b7308777048cb6a4dcc553bfb05b954e9a145a82da57c0de2685e04164a.jpg",
+    "assetSha256": "eb612b7308777048cb6a4dcc553bfb05b954e9a145a82da57c0de2685e04164a",
     "sourceSha256": "2117481938e7c4297b36e4f93c60c62f8db938c5abd9cb327bfe73d7cab50b3c",
     "layoutApproved": true,
     "preview": {
@@ -36696,8 +37401,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.29,
+      "height": 5.4,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-72-small-frame-black": {
     "id": "print-paul-murphy-painting-72-small-frame-black",
@@ -36930,23 +37640,23 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S8.04X10.92",
+    "sku": "5M144M9S7.78X10.66",
     "scale": 1,
     "imageSize": {
-      "width": 7.7867,
-      "height": 10.6667,
+      "width": 7.78,
+      "height": 10.66,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.04,
-      "height": 10.92,
+      "width": 8.78,
+      "height": 11.66,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2980528bc095c3ee0ee84478ef6b56b654ec74eb31bce6ad5dc567f9ee916fd3.jpg",
-    "assetSha256": "2980528bc095c3ee0ee84478ef6b56b654ec74eb31bce6ad5dc567f9ee916fd3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8731c6a7c10e1d34ccffbeaf956a271c5c30b25fabbb8f1d20c1af4c2c9b02c2.jpg",
+    "assetSha256": "8731c6a7c10e1d34ccffbeaf956a271c5c30b25fabbb8f1d20c1af4c2c9b02c2",
     "sourceSha256": "25f5d751099a10b4518bd5f40f23152f0e97ba4f9f8a14baaa4feaa740b9c28a",
     "layoutApproved": true,
     "preview": {
@@ -36956,8 +37666,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.78,
+      "height": 10.66,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-73-full-frame-black": {
     "id": "print-paul-murphy-painting-73-full-frame-black",
@@ -37190,23 +37905,23 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.09X8.25",
+    "sku": "5M144M9S5.83X7.99",
     "scale": 0.75,
     "imageSize": {
-      "width": 5.8367,
-      "height": 7.9967,
+      "width": 5.83,
+      "height": 7.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.09,
-      "height": 8.25,
+      "width": 6.83,
+      "height": 8.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ba645fb2a4bff83c6ef913bdb6d47e9ad60b5a0b8ae85d4e47c5192003a4bea6.jpg",
-    "assetSha256": "ba645fb2a4bff83c6ef913bdb6d47e9ad60b5a0b8ae85d4e47c5192003a4bea6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b5d3b9ccfe8af7d8fbb729e26b1c03a193504b59fb4fb2f392e9608b8bc03f07.jpg",
+    "assetSha256": "b5d3b9ccfe8af7d8fbb729e26b1c03a193504b59fb4fb2f392e9608b8bc03f07",
     "sourceSha256": "25f5d751099a10b4518bd5f40f23152f0e97ba4f9f8a14baaa4feaa740b9c28a",
     "layoutApproved": true,
     "preview": {
@@ -37216,8 +37931,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.83,
+      "height": 7.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-73-medium-frame-black": {
     "id": "print-paul-murphy-painting-73-medium-frame-black",
@@ -37450,23 +38170,23 @@ export default {
     "artworkTitle": "Sunset Tree",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.14X5.58",
+    "sku": "5M144M9S4X5.44",
     "scale": 0.5,
     "imageSize": {
-      "width": 3.8867,
-      "height": 5.3267,
+      "width": 3.88,
+      "height": 5.32,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.14,
-      "height": 5.58,
+      "width": 5,
+      "height": 6.44,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/96d2150ca0bbdf3ed4a86e1cafd577198c602bdcc131f1bb6fd778bf9744c95d.jpg",
-    "assetSha256": "96d2150ca0bbdf3ed4a86e1cafd577198c602bdcc131f1bb6fd778bf9744c95d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/03058b46d6812abb4afbf45fae85a598246f4e86e357ab5242836567754e2799.jpg",
+    "assetSha256": "03058b46d6812abb4afbf45fae85a598246f4e86e357ab5242836567754e2799",
     "sourceSha256": "25f5d751099a10b4518bd5f40f23152f0e97ba4f9f8a14baaa4feaa740b9c28a",
     "layoutApproved": true,
     "preview": {
@@ -37476,8 +38196,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4,
+      "height": 5.44,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-73-small-frame-black": {
     "id": "print-paul-murphy-painting-73-small-frame-black",
@@ -37710,23 +38435,23 @@ export default {
     "artworkTitle": "Music Notes of the Universe",
     "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S15.25X11.16",
+    "sku": "5M144M9S14.98X10.9",
     "scale": 1,
     "imageSize": {
-      "width": 14.9867,
-      "height": 10.9067,
+      "width": 14.98,
+      "height": 10.9,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15.25,
-      "height": 11.16,
+      "width": 15.98,
+      "height": 11.9,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2e9121140dcf0359c65fe871c6f177e546f741d1b12795fd99461e171ac677d8.jpg",
-    "assetSha256": "2e9121140dcf0359c65fe871c6f177e546f741d1b12795fd99461e171ac677d8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/25cec393b141db12001b5d50e5facf0d9022df1cb60209a98f8b2db8191563f2.jpg",
+    "assetSha256": "25cec393b141db12001b5d50e5facf0d9022df1cb60209a98f8b2db8191563f2",
     "sourceSha256": "47ca2a0a1827ab13827782125c748cc64a6642c59bccec1178a74f6d1fd027de",
     "layoutApproved": true,
     "preview": {
@@ -37736,8 +38461,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.98,
+      "height": 10.9,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-74-full-frame-black": {
     "id": "print-paul-murphy-painting-74-full-frame-black",
@@ -37970,23 +38700,23 @@ export default {
     "artworkTitle": "Music Notes of the Universe",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S11.5X8.43",
+    "sku": "5M144M9S11.23X8.17",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.2333,
-      "height": 8.1767,
+      "width": 11.23,
+      "height": 8.17,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.5,
-      "height": 8.43,
+      "width": 12.23,
+      "height": 9.17,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a4995aead9e90391f717d20270bfd37e4230450948b5fc521b182065050944bc.jpg",
-    "assetSha256": "a4995aead9e90391f717d20270bfd37e4230450948b5fc521b182065050944bc",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fd16b8a52086cd752d131aa3aaed8f51eab5f88891bd8339a5da704133008e42.jpg",
+    "assetSha256": "fd16b8a52086cd752d131aa3aaed8f51eab5f88891bd8339a5da704133008e42",
     "sourceSha256": "47ca2a0a1827ab13827782125c748cc64a6642c59bccec1178a74f6d1fd027de",
     "layoutApproved": true,
     "preview": {
@@ -37996,8 +38726,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.23,
+      "height": 8.17,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-74-medium-frame-black": {
     "id": "print-paul-murphy-painting-74-medium-frame-black",
@@ -38230,23 +38965,23 @@ export default {
     "artworkTitle": "Music Notes of the Universe",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.75X5.7",
+    "sku": "5M144M9S7.48X5.44",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.4833,
-      "height": 5.4467,
+      "width": 7.48,
+      "height": 5.44,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 5.7,
+      "width": 8.48,
+      "height": 6.44,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e13fea67e759bfb2a5b46703229de6b5c95adfe05d207be64fff46894f473e61.jpg",
-    "assetSha256": "e13fea67e759bfb2a5b46703229de6b5c95adfe05d207be64fff46894f473e61",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3f0d97836f0f7923cc43d384dcf96fe478da3e5b8c27a223f9ebc84ce5e57a6a.jpg",
+    "assetSha256": "3f0d97836f0f7923cc43d384dcf96fe478da3e5b8c27a223f9ebc84ce5e57a6a",
     "sourceSha256": "47ca2a0a1827ab13827782125c748cc64a6642c59bccec1178a74f6d1fd027de",
     "layoutApproved": true,
     "preview": {
@@ -38256,8 +38991,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.48,
+      "height": 5.44,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-74-small-frame-black": {
     "id": "print-paul-murphy-painting-74-small-frame-black",
@@ -38488,25 +39228,25 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Large print",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "50.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S11.05X10.25",
+    "sku": "5M144M9S10.79X9.99",
     "scale": 1,
     "imageSize": {
-      "width": 10.7967,
+      "width": 10.79,
       "height": 9.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.05,
-      "height": 10.25,
+      "width": 11.79,
+      "height": 10.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f22f9aa18e9b0212b9cc4489cbef6115b753e28e9106e81990a675be98f67671.jpg",
-    "assetSha256": "f22f9aa18e9b0212b9cc4489cbef6115b753e28e9106e81990a675be98f67671",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c66e4ee78d82bf5bee9e0ada4986ecfb23454de8be459a3c1f11b900cd1ae1d9.jpg",
+    "assetSha256": "c66e4ee78d82bf5bee9e0ada4986ecfb23454de8be459a3c1f11b900cd1ae1d9",
     "sourceSha256": "87527b58728cf28060a68f48e18eae901515e1b70666c19cdb2ee6fbbaf05626",
     "layoutApproved": true,
     "preview": {
@@ -38516,8 +39256,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.79,
+      "height": 9.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-8-full-frame-black": {
     "id": "print-paul-murphy-painting-8-full-frame-black",
@@ -38748,25 +39493,25 @@ export default {
     "productId": "paul-murphy-painting-8",
     "title": "Arizona Slot Cave — Medium print",
     "artworkTitle": "Arizona Slot Cave",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.35X7.75",
+    "sku": "5M144M9S8.09X7.49",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.0967,
+      "width": 8.09,
       "height": 7.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.35,
-      "height": 7.75,
+      "width": 9.09,
+      "height": 8.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/044e4fc5a6d2a56646b740b43c52622b146e7ec36c16e9abe911f5b7843d527f.jpg",
-    "assetSha256": "044e4fc5a6d2a56646b740b43c52622b146e7ec36c16e9abe911f5b7843d527f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/16ec71183c1de3441daefe984c6b0e133abc6cc76eaf588503dfb1513d53ddb5.jpg",
+    "assetSha256": "16ec71183c1de3441daefe984c6b0e133abc6cc76eaf588503dfb1513d53ddb5",
     "sourceSha256": "87527b58728cf28060a68f48e18eae901515e1b70666c19cdb2ee6fbbaf05626",
     "layoutApproved": true,
     "preview": {
@@ -38776,8 +39521,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.09,
+      "height": 7.49,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-8-medium-frame-black": {
     "id": "print-paul-murphy-painting-8-medium-frame-black",
@@ -39010,23 +39760,23 @@ export default {
     "artworkTitle": "Arizona Slot Cave",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.65X5.25",
+    "sku": "5M144M9S5.39X4.99",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.3967,
-      "height": 4.9933,
+      "width": 5.39,
+      "height": 4.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.65,
-      "height": 5.25,
+      "width": 6.39,
+      "height": 5.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e2766894effc9c2f1833d3e44710e06f34cc3eb79150414eddd67de328b06402.jpg",
-    "assetSha256": "e2766894effc9c2f1833d3e44710e06f34cc3eb79150414eddd67de328b06402",
+    "assetUrl": "https://vermillionaurora.com/print-editions/768eff9d8e96b2a32d7308b244370836587a0b0409392999ccebc799e89c5fb9.jpg",
+    "assetSha256": "768eff9d8e96b2a32d7308b244370836587a0b0409392999ccebc799e89c5fb9",
     "sourceSha256": "87527b58728cf28060a68f48e18eae901515e1b70666c19cdb2ee6fbbaf05626",
     "layoutApproved": true,
     "preview": {
@@ -39036,8 +39786,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.39,
+      "height": 4.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-8-small-frame-black": {
     "id": "print-paul-murphy-painting-8-small-frame-black",
@@ -39270,23 +40025,23 @@ export default {
     "artworkTitle": "Soul Connections 1",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S8.1X10.25",
+    "sku": "5M144M9S7.84X9.99",
     "scale": 1,
     "imageSize": {
-      "width": 7.8467,
-      "height": 9.9967,
+      "width": 7.84,
+      "height": 9.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.1,
-      "height": 10.25,
+      "width": 8.84,
+      "height": 10.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ae5536dbe91f5f75b4d453fc09d26d2a75e20ab3d200fc9cb3b8c322b1094e95.jpg",
-    "assetSha256": "ae5536dbe91f5f75b4d453fc09d26d2a75e20ab3d200fc9cb3b8c322b1094e95",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e0f8b4bb3d05b9f7414d0491c0086915c2189164c989d383f62a4b7be934e956.jpg",
+    "assetSha256": "e0f8b4bb3d05b9f7414d0491c0086915c2189164c989d383f62a4b7be934e956",
     "sourceSha256": "c44c79066fed0dabbeb12dceb00ee05987cf25873ff87737694ea920b0f0f486",
     "layoutApproved": true,
     "preview": {
@@ -39296,8 +40051,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.84,
+      "height": 9.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-83-full-frame-black": {
     "id": "print-paul-murphy-painting-83-full-frame-black",
@@ -39530,23 +40290,23 @@ export default {
     "artworkTitle": "Soul Connections 1",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.13X7.75",
+    "sku": "5M144M9S5.87X7.48",
     "scale": 0.75,
     "imageSize": {
-      "width": 5.8767,
-      "height": 7.4867,
+      "width": 5.87,
+      "height": 7.48,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.13,
-      "height": 7.75,
+      "width": 6.87,
+      "height": 8.48,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e16eec54418ebd50194b292c7142cf21dde629d04290d7505df759355da77989.jpg",
-    "assetSha256": "e16eec54418ebd50194b292c7142cf21dde629d04290d7505df759355da77989",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d9a8b6f6edf8366dcaf18c796d2b45b7e59108f7c64abd8279a6f7ad8e82d993.jpg",
+    "assetSha256": "d9a8b6f6edf8366dcaf18c796d2b45b7e59108f7c64abd8279a6f7ad8e82d993",
     "sourceSha256": "c44c79066fed0dabbeb12dceb00ee05987cf25873ff87737694ea920b0f0f486",
     "layoutApproved": true,
     "preview": {
@@ -39556,8 +40316,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.87,
+      "height": 7.48,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-83-medium-frame-black": {
     "id": "print-paul-murphy-painting-83-medium-frame-black",
@@ -39790,23 +40555,23 @@ export default {
     "artworkTitle": "Soul Connections 1",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.17X5.25",
+    "sku": "5M144M9S4.01X5.09",
     "scale": 0.5,
     "imageSize": {
-      "width": 3.9167,
+      "width": 3.91,
       "height": 4.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.17,
-      "height": 5.25,
+      "width": 5.01,
+      "height": 6.09,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0450e25ea375bb9e02dd0e40ee18854deedf9193deebcbe3497688371799573b.jpg",
-    "assetSha256": "0450e25ea375bb9e02dd0e40ee18854deedf9193deebcbe3497688371799573b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2f1eca73b156a97f676a2c1213841552ca37062943073a12c03c29d5c99241c8.jpg",
+    "assetSha256": "2f1eca73b156a97f676a2c1213841552ca37062943073a12c03c29d5c99241c8",
     "sourceSha256": "c44c79066fed0dabbeb12dceb00ee05987cf25873ff87737694ea920b0f0f486",
     "layoutApproved": true,
     "preview": {
@@ -39816,8 +40581,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.01,
+      "height": 5.09,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-83-small-frame-black": {
     "id": "print-paul-murphy-painting-83-small-frame-black",
@@ -40050,23 +40820,23 @@ export default {
     "artworkTitle": "Soul Connections 2",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.25X7.75",
+    "sku": "5M144M9S9.98X7.49",
     "scale": 1,
     "imageSize": {
-      "width": 9.9867,
-      "height": 7.4967,
+      "width": 9.98,
+      "height": 7.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.25,
-      "height": 7.75,
+      "width": 10.98,
+      "height": 8.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/94365a5f37a9f91921dd61f98992efba17ce74d3e1e864ac95a3ae234a27a3ed.jpg",
-    "assetSha256": "94365a5f37a9f91921dd61f98992efba17ce74d3e1e864ac95a3ae234a27a3ed",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9981e1467efc39414a09d34a845716a1f67ce099eb3be11954951044971077e0.jpg",
+    "assetSha256": "9981e1467efc39414a09d34a845716a1f67ce099eb3be11954951044971077e0",
     "sourceSha256": "bf4b84462ce67cc695928cbd248151989dd56cdcf69f7d0a56d3d0945b64a65f",
     "layoutApproved": true,
     "preview": {
@@ -40076,8 +40846,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.98,
+      "height": 7.49,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-84-full-frame-black": {
     "id": "print-paul-murphy-painting-84-full-frame-black",
@@ -40310,23 +41085,23 @@ export default {
     "artworkTitle": "Soul Connections 2",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.75X5.87",
+    "sku": "5M144M9S7.48X5.61",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.4833,
-      "height": 5.6167,
+      "width": 7.48,
+      "height": 5.61,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 5.87,
+      "width": 8.48,
+      "height": 6.61,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/db73093f58f9d0a24a2ef2f5e04d974135eeac3be6dc43818f6e02ecf77a5f5b.jpg",
-    "assetSha256": "db73093f58f9d0a24a2ef2f5e04d974135eeac3be6dc43818f6e02ecf77a5f5b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f699b14e93b1b2ae4c5c3585c854851756e89aaf3b83d42a0d495b03b4a1a558.jpg",
+    "assetSha256": "f699b14e93b1b2ae4c5c3585c854851756e89aaf3b83d42a0d495b03b4a1a558",
     "sourceSha256": "bf4b84462ce67cc695928cbd248151989dd56cdcf69f7d0a56d3d0945b64a65f",
     "layoutApproved": true,
     "preview": {
@@ -40336,8 +41111,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.48,
+      "height": 5.61,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-84-medium-frame-black": {
     "id": "print-paul-murphy-painting-84-medium-frame-black",
@@ -40570,23 +41350,23 @@ export default {
     "artworkTitle": "Soul Connections 2",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.25X4",
+    "sku": "5M144M9S5.25X4",
     "scale": 0.5,
     "imageSize": {
       "width": 4.99,
-      "height": 3.7467,
+      "height": 3.74,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.25,
-      "height": 4,
+      "width": 6.25,
+      "height": 5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/67919601026e6b150aab17e973a01fc713bb095f13f20c056eb2844508abf8a3.jpg",
-    "assetSha256": "67919601026e6b150aab17e973a01fc713bb095f13f20c056eb2844508abf8a3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1607e432b4d4e34e64b4c44c5eea8a771dadc57f91470fd5ad803ab5658cc5cc.jpg",
+    "assetSha256": "1607e432b4d4e34e64b4c44c5eea8a771dadc57f91470fd5ad803ab5658cc5cc",
     "sourceSha256": "bf4b84462ce67cc695928cbd248151989dd56cdcf69f7d0a56d3d0945b64a65f",
     "layoutApproved": true,
     "preview": {
@@ -40596,8 +41376,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.25,
+      "height": 4,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-84-small-frame-black": {
     "id": "print-paul-murphy-painting-84-small-frame-black",
@@ -40830,23 +41615,23 @@ export default {
     "artworkTitle": "Soul Connections 3",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.18X8.25",
+    "sku": "5M144M9S9.92X7.99",
     "scale": 1,
     "imageSize": {
-      "width": 9.9267,
-      "height": 7.9933,
+      "width": 9.92,
+      "height": 7.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.18,
-      "height": 8.25,
+      "width": 10.92,
+      "height": 8.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2323de441ad41eb59e7026aa59bdf98ed62255afe7b77cf95f0911895c11e214.jpg",
-    "assetSha256": "2323de441ad41eb59e7026aa59bdf98ed62255afe7b77cf95f0911895c11e214",
+    "assetUrl": "https://vermillionaurora.com/print-editions/edc0cf5485c4cf4c30502fc6174ba7139cc7982f32daaa04d4a6ee3880a5036c.jpg",
+    "assetSha256": "edc0cf5485c4cf4c30502fc6174ba7139cc7982f32daaa04d4a6ee3880a5036c",
     "sourceSha256": "a8fcd9d460f65b388fec13e2fc23805d818fec7ed96dd62de57380d5a21e0304",
     "layoutApproved": true,
     "preview": {
@@ -40856,8 +41641,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.92,
+      "height": 7.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-85-full-frame-black": {
     "id": "print-paul-murphy-painting-85-full-frame-black",
@@ -41090,23 +41880,23 @@ export default {
     "artworkTitle": "Soul Connections 3",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.7X6.25",
+    "sku": "5M144M9S7.44X5.99",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.4467,
-      "height": 5.9967,
+      "width": 7.44,
+      "height": 5.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.7,
-      "height": 6.25,
+      "width": 8.44,
+      "height": 6.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/20d14ed9c33fa24acac803bd5983ce6cb20c5dc4710cb9b7f30136f9b7278f8d.jpg",
-    "assetSha256": "20d14ed9c33fa24acac803bd5983ce6cb20c5dc4710cb9b7f30136f9b7278f8d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4668d94b93b700a74fd608581f1c07d04e54b62894624ba8a85be9168bc8bd02.jpg",
+    "assetSha256": "4668d94b93b700a74fd608581f1c07d04e54b62894624ba8a85be9168bc8bd02",
     "sourceSha256": "a8fcd9d460f65b388fec13e2fc23805d818fec7ed96dd62de57380d5a21e0304",
     "layoutApproved": true,
     "preview": {
@@ -41116,8 +41906,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.44,
+      "height": 5.99,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-85-medium-frame-black": {
     "id": "print-paul-murphy-painting-85-medium-frame-black",
@@ -41350,23 +42145,23 @@ export default {
     "artworkTitle": "Soul Connections 3",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.21X4.25",
+    "sku": "5M144M9S4.97X4.01",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.9567,
+      "width": 4.95,
       "height": 3.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.21,
-      "height": 4.25,
+      "width": 5.97,
+      "height": 5.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8aeb69b7ddccfc5d71ed1909f056cf3b94da9d87487e16a75b0c12995451a3f7.jpg",
-    "assetSha256": "8aeb69b7ddccfc5d71ed1909f056cf3b94da9d87487e16a75b0c12995451a3f7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f4b1a7249ea8477cb01b6e4c28977e37a56919b8f11f51a06d278a52db038ce2.jpg",
+    "assetSha256": "f4b1a7249ea8477cb01b6e4c28977e37a56919b8f11f51a06d278a52db038ce2",
     "sourceSha256": "a8fcd9d460f65b388fec13e2fc23805d818fec7ed96dd62de57380d5a21e0304",
     "layoutApproved": true,
     "preview": {
@@ -41376,8 +42171,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.97,
+      "height": 4.01,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-85-small-frame-black": {
     "id": "print-paul-murphy-painting-85-small-frame-black",
@@ -41610,23 +42410,23 @@ export default {
     "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.52X16.13",
+    "sku": "5M144M9S12.26X15.87",
     "scale": 1,
     "imageSize": {
-      "width": 12.2667,
+      "width": 12.26,
       "height": 15.87,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.52,
-      "height": 16.13,
+      "width": 13.26,
+      "height": 16.87,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c0ebf799fd87282b4a1d3c346b479314e06eb466128ba14522c3534401892bd9.jpg",
-    "assetSha256": "c0ebf799fd87282b4a1d3c346b479314e06eb466128ba14522c3534401892bd9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/42f92676b72f435ae159d446afec700214444b6980fbcada760f05dfc58b8963.jpg",
+    "assetSha256": "42f92676b72f435ae159d446afec700214444b6980fbcada760f05dfc58b8963",
     "sourceSha256": "d4f58b40349797dab162a0becbd8848551653cba455b2a00a2687772021027f4",
     "layoutApproved": true,
     "preview": {
@@ -41636,8 +42436,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.26,
+      "height": 15.87,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-86-full-frame-black": {
     "id": "print-paul-murphy-painting-86-full-frame-black",
@@ -41870,23 +42675,23 @@ export default {
     "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.45X12.16",
+    "sku": "5M144M9S9.19X11.9",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.1967,
+      "width": 9.19,
       "height": 11.9,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.45,
-      "height": 12.16,
+      "width": 10.19,
+      "height": 12.9,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/efa9325e7d475e726412cddd9acd2aca738106f73432fed3182bb59ac3e194e9.jpg",
-    "assetSha256": "efa9325e7d475e726412cddd9acd2aca738106f73432fed3182bb59ac3e194e9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/874719f9169abb00397bfb5cd79353ebd255319ba14cbd2581a4475340b82f3e.jpg",
+    "assetSha256": "874719f9169abb00397bfb5cd79353ebd255319ba14cbd2581a4475340b82f3e",
     "sourceSha256": "d4f58b40349797dab162a0becbd8848551653cba455b2a00a2687772021027f4",
     "layoutApproved": true,
     "preview": {
@@ -41896,8 +42701,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.19,
+      "height": 11.9,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-86-medium-frame-black": {
     "id": "print-paul-murphy-painting-86-medium-frame-black",
@@ -42130,23 +42940,23 @@ export default {
     "artworkTitle": "My Tipi, on Grand Traverse Bay",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.38X8.19",
+    "sku": "5M144M9S6.12X7.92",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.1267,
-      "height": 7.9267,
+      "width": 6.12,
+      "height": 7.92,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.38,
-      "height": 8.19,
+      "width": 7.12,
+      "height": 8.92,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/04a6425ba75350782a38c7584d9ef86cc2ab8ad173d738db38042a56e5657c2d.jpg",
-    "assetSha256": "04a6425ba75350782a38c7584d9ef86cc2ab8ad173d738db38042a56e5657c2d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/91a024f0c948a0fd077aa48d4cd2c1b3a0750af924f58e5216d2a12099066f77.jpg",
+    "assetSha256": "91a024f0c948a0fd077aa48d4cd2c1b3a0750af924f58e5216d2a12099066f77",
     "sourceSha256": "d4f58b40349797dab162a0becbd8848551653cba455b2a00a2687772021027f4",
     "layoutApproved": true,
     "preview": {
@@ -42156,8 +42966,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.12,
+      "height": 7.92,
+      "unit": "in"
+    }
   },
   "print-paul-murphy-painting-86-small-frame-black": {
     "id": "print-paul-murphy-painting-86-small-frame-black",
@@ -42388,25 +43203,25 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Large print",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "170.00",
+    "amount": "165.00",
     "currency": "USD",
-    "sku": "5M144M8S16.86X23.98",
+    "sku": "5M144M9S16.6X23.72",
     "scale": 1,
     "imageSize": {
-      "width": 16.6067,
-      "height": 23.7233,
+      "width": 16.6,
+      "height": 23.72,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.86,
-      "height": 23.98,
+      "width": 17.6,
+      "height": 24.72,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3c47ade0a9a8da4345943dede294a28971ea0d2611b6baf1c9b5a6eb01e9f287.jpg",
-    "assetSha256": "3c47ade0a9a8da4345943dede294a28971ea0d2611b6baf1c9b5a6eb01e9f287",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ff68ded50a675c3a84fec506f3294b44ce3af7aae2dae7b3b1db2348eac3c312.jpg",
+    "assetSha256": "ff68ded50a675c3a84fec506f3294b44ce3af7aae2dae7b3b1db2348eac3c312",
     "sourceSha256": "6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718",
     "layoutApproved": true,
     "preview": {
@@ -42416,8 +43231,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.6,
+      "height": 23.72,
+      "unit": "in"
+    }
   },
   "print-warszawska-syrenka-full-frame-black": {
     "id": "print-warszawska-syrenka-full-frame-black",
@@ -42650,23 +43470,23 @@ export default {
     "artworkTitle": "Warszawska Syrenka",
     "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S12.71X18.05",
+    "sku": "5M144M9S12.45X17.79",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.4567,
-      "height": 17.7967,
+      "width": 12.45,
+      "height": 17.79,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.71,
-      "height": 18.05,
+      "width": 13.45,
+      "height": 18.79,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/55b678125cfa379c12c206da9ec29deb4799c7fe18739df25e1fae9b3b253169.jpg",
-    "assetSha256": "55b678125cfa379c12c206da9ec29deb4799c7fe18739df25e1fae9b3b253169",
+    "assetUrl": "https://vermillionaurora.com/print-editions/33c8af452288cf18e1009a0564b057b0cab13411073fb85660933bac59110e96.jpg",
+    "assetSha256": "33c8af452288cf18e1009a0564b057b0cab13411073fb85660933bac59110e96",
     "sourceSha256": "6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718",
     "layoutApproved": true,
     "preview": {
@@ -42676,8 +43496,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.45,
+      "height": 17.79,
+      "unit": "in"
+    }
   },
   "print-warszawska-syrenka-medium-frame-black": {
     "id": "print-warszawska-syrenka-medium-frame-black",
@@ -42908,25 +43733,25 @@ export default {
     "productId": "warszawska-syrenka",
     "title": "Warszawska Syrenka — Small print",
     "artworkTitle": "Warszawska Syrenka",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S8.55X12.11",
+    "sku": "5M144M9S8.29X11.85",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.2967,
-      "height": 11.8533,
+      "width": 8.29,
+      "height": 11.85,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.55,
-      "height": 12.11,
+      "width": 9.29,
+      "height": 12.85,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ad366bbc7a83f84ecdbb82f42f033f3914c8721485702e20e769c211fb3831df.jpg",
-    "assetSha256": "ad366bbc7a83f84ecdbb82f42f033f3914c8721485702e20e769c211fb3831df",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b0e47f569e37b1bc8613d93443a43c4b60ae11a83b67b4feecd2e693f2dc6066.jpg",
+    "assetSha256": "b0e47f569e37b1bc8613d93443a43c4b60ae11a83b67b4feecd2e693f2dc6066",
     "sourceSha256": "6eb3799795acad929e3a84356c017bc8ce8174a9c4fa0b96604f389444e60718",
     "layoutApproved": true,
     "preview": {
@@ -42936,8 +43761,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.29,
+      "height": 11.85,
+      "unit": "in"
+    }
   },
   "print-warszawska-syrenka-small-frame-black": {
     "id": "print-warszawska-syrenka-small-frame-black",
@@ -43168,25 +43998,25 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Large print",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "150.00",
+    "amount": "140.00",
     "currency": "USD",
-    "sku": "5M144M8S22.86X15.32",
+    "sku": "5M144M9S22.6X15.06",
     "scale": 1,
     "imageSize": {
       "width": 22.6,
-      "height": 15.0667,
+      "height": 15.06,
       "unit": "in"
     },
     "paperSize": {
-      "width": 22.86,
-      "height": 15.32,
+      "width": 23.6,
+      "height": 16.06,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c.jpg",
-    "assetSha256": "16be94b2cf3c53d34011963e45987947dc7b71fbb260e821391f8d1fa0ea117c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/712dfbd3860d6d63ce4bcc859010689de9119fd3db2dcd410dbb46a961152d68.jpg",
+    "assetSha256": "712dfbd3860d6d63ce4bcc859010689de9119fd3db2dcd410dbb46a961152d68",
     "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
@@ -43196,8 +44026,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 22.6,
+      "height": 15.06,
+      "unit": "in"
+    }
   },
   "print-cormorant-presiding-over-sunset-on-puget-sound-full-frame-black": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-full-frame-black",
@@ -43428,25 +44263,25 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Medium print",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "85.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S17.2X11.55",
+    "sku": "5M144M9S16.94X11.29",
     "scale": 0.75,
     "imageSize": {
-      "width": 16.9467,
-      "height": 11.2967,
+      "width": 16.94,
+      "height": 11.29,
       "unit": "in"
     },
     "paperSize": {
-      "width": 17.2,
-      "height": 11.55,
+      "width": 17.94,
+      "height": 12.29,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359.jpg",
-    "assetSha256": "3744ef21db16e74921abbd32d1e58b7d4b929f56ed32c5daca88f294ee90e359",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ad17e425e948724f66243c7d3088287a52c3e58dde79d4375c2d153aff7fe3f0.jpg",
+    "assetSha256": "ad17e425e948724f66243c7d3088287a52c3e58dde79d4375c2d153aff7fe3f0",
     "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
@@ -43456,8 +44291,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.94,
+      "height": 11.29,
+      "unit": "in"
+    }
   },
   "print-cormorant-presiding-over-sunset-on-puget-sound-medium-frame-black": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-medium-frame-black",
@@ -43688,25 +44528,25 @@ export default {
     "productId": "cormorant-presiding-over-sunset-on-puget-sound",
     "title": "Cormorant Presiding over Sunset on Puget Sound — Small print",
     "artworkTitle": "Cormorant Presiding over Sunset on Puget Sound",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.55X7.78",
+    "sku": "5M144M9S11.29X7.52",
     "scale": 0.5,
     "imageSize": {
       "width": 11.29,
-      "height": 7.5267,
+      "height": 7.52,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.55,
-      "height": 7.78,
+      "width": 12.29,
+      "height": 8.52,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01.jpg",
-    "assetSha256": "98afcdd3fd399fff086c0488b1c796f089d37898792635ec870e617e5df30c01",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f6fa753a457a41ccf930b96091a8b6f362a75c5b5bf2a092e0b3f128d8f746a9.jpg",
+    "assetSha256": "f6fa753a457a41ccf930b96091a8b6f362a75c5b5bf2a092e0b3f128d8f746a9",
     "sourceSha256": "a74c24cb788ba4d20bea974f63c112995614224f8dbdc53b7d0ba5e3ad83b81a",
     "layoutApproved": true,
     "preview": {
@@ -43716,8 +44556,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.29,
+      "height": 7.52,
+      "unit": "in"
+    }
   },
   "print-cormorant-presiding-over-sunset-on-puget-sound-small-frame-black": {
     "id": "print-cormorant-presiding-over-sunset-on-puget-sound-small-frame-black",
@@ -43948,25 +44793,25 @@ export default {
     "productId": "book-art-9ae261289a3bce952c6f",
     "title": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype — Large print",
     "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
-    "amount": "55.00",
+    "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S15.79X6.21",
+    "sku": "5M144M9S15.53X5.95",
     "scale": 1,
     "imageSize": {
-      "width": 15.5367,
-      "height": 5.9567,
+      "width": 15.53,
+      "height": 5.95,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15.79,
-      "height": 6.21,
+      "width": 16.53,
+      "height": 6.95,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9.jpg",
-    "assetSha256": "a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6444c1102f78970fe8e9e56be4d84b08af5e2d0def2b104eed7de36231e7f5e7.jpg",
+    "assetSha256": "6444c1102f78970fe8e9e56be4d84b08af5e2d0def2b104eed7de36231e7f5e7",
     "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
     "layoutApproved": true,
     "preview": {
@@ -43976,8 +44821,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.53,
+      "height": 5.95,
+      "unit": "in"
+    }
   },
   "print-book-art-9ae261289a3bce952c6f-full-frame-black": {
     "id": "print-book-art-9ae261289a3bce952c6f-full-frame-black",
@@ -44210,23 +45060,23 @@ export default {
     "artworkTitle": "Lisa Climbing Tahoma at Sunrise from Denny Blaine prototype",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S11.91X4.72",
+    "sku": "5M144M9S11.65X4.46",
     "scale": 0.75,
     "imageSize": {
       "width": 11.65,
-      "height": 4.4667,
+      "height": 4.46,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.91,
-      "height": 4.72,
+      "width": 12.65,
+      "height": 5.46,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64.jpg",
-    "assetSha256": "f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b576814691e6d001d63b32719627a894e6a71b29a1ca803f5687bb354ada41b8.jpg",
+    "assetSha256": "b576814691e6d001d63b32719627a894e6a71b29a1ca803f5687bb354ada41b8",
     "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
     "layoutApproved": true,
     "preview": {
@@ -44236,8 +45086,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.65,
+      "height": 4.46,
+      "unit": "in"
+    }
   },
   "print-book-art-9ae261289a3bce952c6f-medium-frame-black": {
     "id": "print-book-art-9ae261289a3bce952c6f-medium-frame-black",
@@ -44470,23 +45325,23 @@ export default {
     "artworkTitle": "Sunrise on Tahoma with motorcycles",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S6.66X12.09",
+    "sku": "5M144M9S6.4X11.82",
     "scale": 1,
     "imageSize": {
-      "width": 6.4067,
-      "height": 11.8267,
+      "width": 6.4,
+      "height": 11.82,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.66,
-      "height": 12.09,
+      "width": 7.4,
+      "height": 12.82,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b.jpg",
-    "assetSha256": "27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/76e1b8147160ac6ec788cfd547fe70c644c6ae42c233b182ec9bea4601a4dc57.jpg",
+    "assetSha256": "76e1b8147160ac6ec788cfd547fe70c644c6ae42c233b182ec9bea4601a4dc57",
     "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
     "layoutApproved": true,
     "preview": {
@@ -44496,8 +45351,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.4,
+      "height": 11.82,
+      "unit": "in"
+    }
   },
   "print-book-art-deb3358c321671dae1fc-full-frame-black": {
     "id": "print-book-art-deb3358c321671dae1fc-full-frame-black",
@@ -44730,23 +45590,23 @@ export default {
     "artworkTitle": "Sunrise on Tahoma with motorcycles",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S5.06X9.13",
+    "sku": "5M144M9S4.8X8.87",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.8067,
-      "height": 8.8733,
+      "width": 4.8,
+      "height": 8.87,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.06,
-      "height": 9.13,
+      "width": 5.8,
+      "height": 9.87,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07.jpg",
-    "assetSha256": "50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1dcf551e450ee6da7afb41d79bf46054d0604073b3613feb0f493218d1a50674.jpg",
+    "assetSha256": "1dcf551e450ee6da7afb41d79bf46054d0604073b3613feb0f493218d1a50674",
     "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
     "layoutApproved": true,
     "preview": {
@@ -44756,8 +45616,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.8,
+      "height": 8.87,
+      "unit": "in"
+    }
   },
   "print-book-art-deb3358c321671dae1fc-medium-frame-black": {
     "id": "print-book-art-deb3358c321671dae1fc-medium-frame-black",
@@ -44988,25 +45853,25 @@ export default {
     "productId": "book-art-f56007f6a7d6ee955caf",
     "title": "Sunset in the Strait of Juan de Fuca, Patos Island 1 — Large print",
     "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 1",
-    "amount": "35.00",
+    "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S5.18X9.46",
+    "sku": "5M144M9S4.92X9.2",
     "scale": 1,
     "imageSize": {
-      "width": 4.9267,
-      "height": 9.2033,
+      "width": 4.92,
+      "height": 9.2,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.18,
-      "height": 9.46,
+      "width": 5.92,
+      "height": 10.2,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733.jpg",
-    "assetSha256": "7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733",
+    "assetUrl": "https://vermillionaurora.com/print-editions/bff229f2796285d4783c968eafbea647b8a9269445a53da38ae9c261717a9c22.jpg",
+    "assetSha256": "bff229f2796285d4783c968eafbea647b8a9269445a53da38ae9c261717a9c22",
     "sourceSha256": "f4e436a33f9a8b3e24e1c83ac157ca4b4ad2a65d08f84a68e85ef5e409a2578e",
     "layoutApproved": true,
     "preview": {
@@ -45016,8 +45881,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.92,
+      "height": 9.2,
+      "unit": "in"
+    }
   },
   "print-book-art-f56007f6a7d6ee955caf-full-frame-black": {
     "id": "print-book-art-f56007f6a7d6ee955caf-full-frame-black",
@@ -45250,23 +46120,23 @@ export default {
     "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S5.64X10.06",
+    "sku": "5M144M9S5.38X9.79",
     "scale": 1,
     "imageSize": {
-      "width": 5.3867,
-      "height": 9.7933,
+      "width": 5.38,
+      "height": 9.79,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.64,
-      "height": 10.06,
+      "width": 6.38,
+      "height": 10.79,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7.jpg",
-    "assetSha256": "cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/182818617c10365b2b22ad761cc9e20a162cb355f1c6502a10734aa3757b5ef2.jpg",
+    "assetSha256": "182818617c10365b2b22ad761cc9e20a162cb355f1c6502a10734aa3757b5ef2",
     "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
     "layoutApproved": true,
     "preview": {
@@ -45276,8 +46146,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.38,
+      "height": 9.79,
+      "unit": "in"
+    }
   },
   "print-book-art-d1399111a441ed91feaa-full-frame-black": {
     "id": "print-book-art-d1399111a441ed91feaa-full-frame-black",
@@ -45510,23 +46385,23 @@ export default {
     "artworkTitle": "Sunset in the Strait of Juan de Fuca, Patos Island 2",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.29X7.6",
+    "sku": "5M144M9S4.03X7.33",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.0367,
-      "height": 7.3367,
+      "width": 4.03,
+      "height": 7.33,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.29,
-      "height": 7.6,
+      "width": 5.03,
+      "height": 8.33,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde.jpg",
-    "assetSha256": "c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9aa01b0a7d2fd7be62b88bc68c2d33a60af60348f3f0fef487d6890998552f53.jpg",
+    "assetSha256": "9aa01b0a7d2fd7be62b88bc68c2d33a60af60348f3f0fef487d6890998552f53",
     "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
     "layoutApproved": true,
     "preview": {
@@ -45536,8 +46411,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.03,
+      "height": 7.33,
+      "unit": "in"
+    }
   },
   "print-book-art-d1399111a441ed91feaa-medium-frame-black": {
     "id": "print-book-art-d1399111a441ed91feaa-medium-frame-black",
@@ -45770,23 +46650,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast, Merritt, BC 2",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.96X4.99",
+    "sku": "5M144M9S8.69X4.73",
     "scale": 1,
     "imageSize": {
       "width": 8.69,
-      "height": 4.7367,
+      "height": 4.73,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.96,
-      "height": 4.99,
+      "width": 9.69,
+      "height": 5.73,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606.jpg",
-    "assetSha256": "65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a50842b69589016b5a293f02f9615dad1a7c43fdcc002ccd455b928d1f52d2ad.jpg",
+    "assetSha256": "a50842b69589016b5a293f02f9615dad1a7c43fdcc002ccd455b928d1f52d2ad",
     "sourceSha256": "0c8fd2894a6db45e93c583b935be0a98eaf8a004d4b0e93e9888e2fa67d00003",
     "layoutApproved": true,
     "preview": {
@@ -45796,8 +46676,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.69,
+      "height": 4.73,
+      "unit": "in"
+    }
   },
   "print-book-art-c198f09bc8ddad18ed1e-full-frame-black": {
     "id": "print-book-art-c198f09bc8ddad18ed1e-full-frame-black",
@@ -46030,23 +46915,23 @@ export default {
     "artworkTitle": "Sunrise in Puerto Vallarta",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.7X8.09",
+    "sku": "5M144M9S4.44X7.82",
     "scale": 1,
     "imageSize": {
-      "width": 4.4467,
-      "height": 7.8267,
+      "width": 4.44,
+      "height": 7.82,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.7,
-      "height": 8.09,
+      "width": 5.44,
+      "height": 8.82,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881.jpg",
-    "assetSha256": "103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8934b501e75b39a0c0f02f89c83162fa7b9a831813038283f50e7094dc9fd02d.jpg",
+    "assetSha256": "8934b501e75b39a0c0f02f89c83162fa7b9a831813038283f50e7094dc9fd02d",
     "sourceSha256": "ef0e6f808609f9dd3dcec88b6161cb14825b8080efd74c9f023ed3571587aa6c",
     "layoutApproved": true,
     "preview": {
@@ -46056,8 +46941,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.44,
+      "height": 7.82,
+      "unit": "in"
+    }
   },
   "print-book-art-87cf2a732259b313f5ab-full-frame-black": {
     "id": "print-book-art-87cf2a732259b313f5ab-full-frame-black",
@@ -46288,25 +47178,25 @@ export default {
     "productId": "book-art-471daf14a8bb7883f114",
     "title": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta — Large print",
     "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.57X6.33",
+    "sku": "5M144M9S11.3X6.07",
     "scale": 1,
     "imageSize": {
-      "width": 11.3067,
-      "height": 6.0767,
+      "width": 11.3,
+      "height": 6.07,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.57,
-      "height": 6.33,
+      "width": 12.3,
+      "height": 7.07,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f.jpg",
-    "assetSha256": "5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8d3382240f2f0f5db7e7b5c6123047b41a62d1437acd669e16b3100ae8b00501.jpg",
+    "assetSha256": "8d3382240f2f0f5db7e7b5c6123047b41a62d1437acd669e16b3100ae8b00501",
     "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
     "layoutApproved": true,
     "preview": {
@@ -46316,8 +47206,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.3,
+      "height": 6.07,
+      "unit": "in"
+    }
   },
   "print-book-art-471daf14a8bb7883f114-full-frame-black": {
     "id": "print-book-art-471daf14a8bb7883f114-full-frame-black",
@@ -46550,23 +47445,23 @@ export default {
     "artworkTitle": "Myself in Skandasana on Playa de los Muertos at Dawn in Puerto Vallarta",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.74X4.81",
+    "sku": "5M144M9S8.48X4.55",
     "scale": 0.75,
     "imageSize": {
       "width": 8.48,
-      "height": 4.5567,
+      "height": 4.55,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.74,
-      "height": 4.81,
+      "width": 9.48,
+      "height": 5.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27.jpg",
-    "assetSha256": "d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8c7fcc3f5fe5dc5521071fca76a685c753795ababd9d5f843802c834835dca72.jpg",
+    "assetSha256": "8c7fcc3f5fe5dc5521071fca76a685c753795ababd9d5f843802c834835dca72",
     "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
     "layoutApproved": true,
     "preview": {
@@ -46576,8 +47471,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.48,
+      "height": 4.55,
+      "unit": "in"
+    }
   },
   "print-book-art-471daf14a8bb7883f114-medium-frame-black": {
     "id": "print-book-art-471daf14a8bb7883f114-medium-frame-black",
@@ -46810,23 +47710,23 @@ export default {
     "artworkTitle": "El Salvador",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.57X4.48",
+    "sku": "5M144M9S5.31X4.22",
     "scale": 1,
     "imageSize": {
-      "width": 5.3167,
-      "height": 4.2233,
+      "width": 5.31,
+      "height": 4.22,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.57,
-      "height": 4.48,
+      "width": 6.31,
+      "height": 5.22,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67.jpg",
-    "assetSha256": "4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67",
+    "assetUrl": "https://vermillionaurora.com/print-editions/94ef6f88783392c44ac1f408310be39e59f27c54f6b47dccb33e911abc9f142e.jpg",
+    "assetSha256": "94ef6f88783392c44ac1f408310be39e59f27c54f6b47dccb33e911abc9f142e",
     "sourceSha256": "b95f74d6d3a6f6d8a6e0343f81d98b66152b453f30cb26ecc95457c88a39f17b",
     "layoutApproved": true,
     "preview": {
@@ -46836,8 +47736,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.31,
+      "height": 4.22,
+      "unit": "in"
+    }
   },
   "print-book-art-e3293c73dbb01f94b39b-full-frame-black": {
     "id": "print-book-art-e3293c73dbb01f94b39b-full-frame-black",
@@ -47070,23 +47975,23 @@ export default {
     "artworkTitle": "El Salvador",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.08X4.73",
+    "sku": "5M144M9S5.81X4.47",
     "scale": 1,
     "imageSize": {
-      "width": 5.8167,
-      "height": 4.4767,
+      "width": 5.81,
+      "height": 4.47,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.08,
-      "height": 4.73,
+      "width": 6.81,
+      "height": 5.47,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5.jpg",
-    "assetSha256": "cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f726b407bdd24c27921117ed2608d990bfbe215256373d07d2b700441ef63545.jpg",
+    "assetSha256": "f726b407bdd24c27921117ed2608d990bfbe215256373d07d2b700441ef63545",
     "sourceSha256": "195cdad363efab3f28a46926c4e9cf2a4804b05f799f23350f4a4bc120690193",
     "layoutApproved": true,
     "preview": {
@@ -47096,8 +48001,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.81,
+      "height": 4.47,
+      "unit": "in"
+    }
   },
   "print-book-art-a2e53a8418a8d84f3dc5-full-frame-black": {
     "id": "print-book-art-a2e53a8418a8d84f3dc5-full-frame-black",
@@ -47330,23 +48240,23 @@ export default {
     "artworkTitle": "Sedona: Bell Rock 2",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S10.33X13.52",
+    "sku": "5M144M9S10.07X13.26",
     "scale": 1,
     "imageSize": {
-      "width": 10.0733,
-      "height": 13.2667,
+      "width": 10.07,
+      "height": 13.26,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.33,
-      "height": 13.52,
+      "width": 11.07,
+      "height": 14.26,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0.jpg",
-    "assetSha256": "5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b6538f0f824407b766f52c45266157f7cb22c6f15eae8e0a6ef328863251d1aa.jpg",
+    "assetSha256": "b6538f0f824407b766f52c45266157f7cb22c6f15eae8e0a6ef328863251d1aa",
     "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
     "layoutApproved": true,
     "preview": {
@@ -47356,8 +48266,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.07,
+      "height": 13.26,
+      "unit": "in"
+    }
   },
   "print-book-art-27fee33e69f262ecfacb-full-frame-black": {
     "id": "print-book-art-27fee33e69f262ecfacb-full-frame-black",
@@ -47590,23 +48505,23 @@ export default {
     "artworkTitle": "Sedona: Bell Rock 2",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S7.81X10.2",
+    "sku": "5M144M9S7.55X9.94",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.5533,
-      "height": 9.9467,
+      "width": 7.55,
+      "height": 9.94,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.81,
-      "height": 10.2,
+      "width": 8.55,
+      "height": 10.94,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a.jpg",
-    "assetSha256": "c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a47b38074af307a490052f23cd1942fe8aaad32db7e9ec3d8f6619371b8c6b68.jpg",
+    "assetSha256": "a47b38074af307a490052f23cd1942fe8aaad32db7e9ec3d8f6619371b8c6b68",
     "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
     "layoutApproved": true,
     "preview": {
@@ -47616,8 +48531,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.55,
+      "height": 9.94,
+      "unit": "in"
+    }
   },
   "print-book-art-27fee33e69f262ecfacb-medium-frame-black": {
     "id": "print-book-art-27fee33e69f262ecfacb-medium-frame-black",
@@ -47850,23 +48770,23 @@ export default {
     "artworkTitle": "Sedona: Bell Rock 2",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.29X6.88",
+    "sku": "5M144M9S5.03X6.62",
     "scale": 0.5,
     "imageSize": {
       "width": 5.03,
-      "height": 6.6267,
+      "height": 6.62,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.29,
-      "height": 6.88,
+      "width": 6.03,
+      "height": 7.62,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246.jpg",
-    "assetSha256": "b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8704b10a76a2012cf6e4e5c4c88a6bf7e4a6df5d05af4ffb6b551846b922696b.jpg",
+    "assetSha256": "8704b10a76a2012cf6e4e5c4c88a6bf7e4a6df5d05af4ffb6b551846b922696b",
     "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
     "layoutApproved": true,
     "preview": {
@@ -47876,8 +48796,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.03,
+      "height": 6.62,
+      "unit": "in"
+    }
   },
   "print-book-art-27fee33e69f262ecfacb-small-frame-black": {
     "id": "print-book-art-27fee33e69f262ecfacb-small-frame-black",
@@ -48110,23 +49035,23 @@ export default {
     "artworkTitle": "Sedona Monuments",
     "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S13.24X9.96",
+    "sku": "5M144M9S12.98X9.7",
     "scale": 1,
     "imageSize": {
       "width": 12.98,
-      "height": 9.7067,
+      "height": 9.7,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.24,
-      "height": 9.96,
+      "width": 13.98,
+      "height": 10.7,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57.jpg",
-    "assetSha256": "e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57",
+    "assetUrl": "https://vermillionaurora.com/print-editions/12177f5f552c04206d4ae82e29446bc560c7dcd2d3e2bc71625268ebb9fdcdb0.jpg",
+    "assetSha256": "12177f5f552c04206d4ae82e29446bc560c7dcd2d3e2bc71625268ebb9fdcdb0",
     "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
     "layoutApproved": true,
     "preview": {
@@ -48136,8 +49061,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.98,
+      "height": 9.7,
+      "unit": "in"
+    }
   },
   "print-book-art-ff6db6906f0ed48ccc3a-full-frame-black": {
     "id": "print-book-art-ff6db6906f0ed48ccc3a-full-frame-black",
@@ -48370,23 +49300,23 @@ export default {
     "artworkTitle": "Sedona Monuments",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S9.99X7.53",
+    "sku": "5M144M9S9.73X7.27",
     "scale": 0.75,
     "imageSize": {
       "width": 9.73,
-      "height": 7.2767,
+      "height": 7.27,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.99,
-      "height": 7.53,
+      "width": 10.73,
+      "height": 8.27,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34.jpg",
-    "assetSha256": "0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34",
+    "assetUrl": "https://vermillionaurora.com/print-editions/75f34b3e74b56beeafc68f9645a97de48e6f5071a81b7476d21ed299b41de115.jpg",
+    "assetSha256": "75f34b3e74b56beeafc68f9645a97de48e6f5071a81b7476d21ed299b41de115",
     "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
     "layoutApproved": true,
     "preview": {
@@ -48396,8 +49326,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.73,
+      "height": 7.27,
+      "unit": "in"
+    }
   },
   "print-book-art-ff6db6906f0ed48ccc3a-medium-frame-black": {
     "id": "print-book-art-ff6db6906f0ed48ccc3a-medium-frame-black",
@@ -48630,23 +49565,23 @@ export default {
     "artworkTitle": "Sedona Monuments",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.74X5.1",
+    "sku": "5M144M9S6.48X4.84",
     "scale": 0.5,
     "imageSize": {
       "width": 6.48,
-      "height": 4.8467,
+      "height": 4.84,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.74,
-      "height": 5.1,
+      "width": 7.48,
+      "height": 5.84,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d.jpg",
-    "assetSha256": "cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d49a9b028f4bced48c3327aeeb7a9ccb6bcf1259420958bf7be00734f21260c2.jpg",
+    "assetSha256": "d49a9b028f4bced48c3327aeeb7a9ccb6bcf1259420958bf7be00734f21260c2",
     "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
     "layoutApproved": true,
     "preview": {
@@ -48656,8 +49591,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.48,
+      "height": 4.84,
+      "unit": "in"
+    }
   },
   "print-book-art-ff6db6906f0ed48ccc3a-small-frame-black": {
     "id": "print-book-art-ff6db6906f0ed48ccc3a-small-frame-black",
@@ -48890,23 +49830,23 @@ export default {
     "artworkTitle": "Hawaii",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.94X4.7",
+    "sku": "5M144M9S5.68X4.44",
     "scale": 1,
     "imageSize": {
-      "width": 5.6867,
-      "height": 4.4467,
+      "width": 5.68,
+      "height": 4.44,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.94,
-      "height": 4.7,
+      "width": 6.68,
+      "height": 5.44,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4.jpg",
-    "assetSha256": "d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9795002ca003c648bbf5ccf5b9c9ddb658edf61c2ff6d9d81afdd9a9a11096b9.jpg",
+    "assetSha256": "9795002ca003c648bbf5ccf5b9c9ddb658edf61c2ff6d9d81afdd9a9a11096b9",
     "sourceSha256": "a85207826c8015a22a24b624e5a9b54a7acefb349d4fe188e0c3f0c8c959ead3",
     "layoutApproved": true,
     "preview": {
@@ -48916,8 +49856,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.68,
+      "height": 4.44,
+      "unit": "in"
+    }
   },
   "print-book-art-55829535637cd4974a88-full-frame-black": {
     "id": "print-book-art-55829535637cd4974a88-full-frame-black",
@@ -49150,23 +50095,23 @@ export default {
     "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S6.67X12.77",
+    "sku": "5M144M9S6.41X12.5",
     "scale": 1,
     "imageSize": {
-      "width": 6.4167,
-      "height": 12.5067,
+      "width": 6.41,
+      "height": 12.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.67,
-      "height": 12.77,
+      "width": 7.41,
+      "height": 13.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee.jpg",
-    "assetSha256": "c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee",
+    "assetUrl": "https://vermillionaurora.com/print-editions/980e11bcb0c5c2f456f305c34344b51e5bc45925e42379770dd1ab540ae2ea6b.jpg",
+    "assetSha256": "980e11bcb0c5c2f456f305c34344b51e5bc45925e42379770dd1ab540ae2ea6b",
     "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
     "layoutApproved": true,
     "preview": {
@@ -49176,8 +50121,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.41,
+      "height": 12.5,
+      "unit": "in"
+    }
   },
   "print-book-art-04a049ea60a5a09e6873-full-frame-black": {
     "id": "print-book-art-04a049ea60a5a09e6873-full-frame-black",
@@ -49410,23 +50360,23 @@ export default {
     "artworkTitle": "Sunset at Kihei on Maui",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S5.07X9.64",
+    "sku": "5M144M9S4.81X9.38",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.8167,
-      "height": 9.3867,
+      "width": 4.81,
+      "height": 9.38,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.07,
-      "height": 9.64,
+      "width": 5.81,
+      "height": 10.38,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941.jpg",
-    "assetSha256": "7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1286efaa4bb3596cfe9a94c7416f0c3b6f2b78e4042f216b195ed3575c6acaff.jpg",
+    "assetSha256": "1286efaa4bb3596cfe9a94c7416f0c3b6f2b78e4042f216b195ed3575c6acaff",
     "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
     "layoutApproved": true,
     "preview": {
@@ -49436,8 +50386,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.81,
+      "height": 9.38,
+      "unit": "in"
+    }
   },
   "print-book-art-04a049ea60a5a09e6873-medium-frame-black": {
     "id": "print-book-art-04a049ea60a5a09e6873-medium-frame-black",
@@ -49670,23 +50625,23 @@ export default {
     "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.25X5.77",
+    "sku": "5M144M9S9.99X5.51",
     "scale": 1,
     "imageSize": {
       "width": 9.99,
-      "height": 5.5167,
+      "height": 5.51,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.25,
-      "height": 5.77,
+      "width": 10.99,
+      "height": 6.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e.jpg",
-    "assetSha256": "1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cfc03ddd8c4c7f1fd68c6013dcd879850a800635b57e443cfd63b6f69f04a14.jpg",
+    "assetSha256": "8cfc03ddd8c4c7f1fd68c6013dcd879850a800635b57e443cfd63b6f69f04a14",
     "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
     "layoutApproved": true,
     "preview": {
@@ -49696,8 +50651,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.99,
+      "height": 5.51,
+      "unit": "in"
+    }
   },
   "print-book-art-e589c9375e23d1de4748-full-frame-black": {
     "id": "print-book-art-e589c9375e23d1de4748-full-frame-black",
@@ -49930,23 +50890,23 @@ export default {
     "artworkTitle": "Sunset in Greece, Photo Credit: Chelsea Murphy",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.75X4.39",
+    "sku": "5M144M9S7.49X4.13",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.4933,
-      "height": 4.1367,
+      "width": 7.49,
+      "height": 4.13,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 4.39,
+      "width": 8.49,
+      "height": 5.13,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b.jpg",
-    "assetSha256": "b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/db87a07e95a7ea4594daca8f1117d8dc3c18f53aa6ac122726fd1338ab12d3cc.jpg",
+    "assetSha256": "db87a07e95a7ea4594daca8f1117d8dc3c18f53aa6ac122726fd1338ab12d3cc",
     "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
     "layoutApproved": true,
     "preview": {
@@ -49956,8 +50916,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.49,
+      "height": 4.13,
+      "unit": "in"
+    }
   },
   "print-book-art-e589c9375e23d1de4748-medium-frame-black": {
     "id": "print-book-art-e589c9375e23d1de4748-medium-frame-black",
@@ -50188,25 +51153,25 @@ export default {
     "productId": "book-art-f2025e5a72f4a70866c6",
     "title": "Untitled — Assorted Adventures, page 59 — Large print",
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.83X8.75",
+    "sku": "5M144M9S10.57X8.49",
     "scale": 1,
     "imageSize": {
-      "width": 10.5767,
-      "height": 8.4967,
+      "width": 10.57,
+      "height": 8.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.83,
-      "height": 8.75,
+      "width": 11.57,
+      "height": 9.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291.jpg",
-    "assetSha256": "9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291",
+    "assetUrl": "https://vermillionaurora.com/print-editions/cd1c4f7226fe13e71efc3e3d41fd53a3f8b76000985689c7a0330df0814b06e6.jpg",
+    "assetSha256": "cd1c4f7226fe13e71efc3e3d41fd53a3f8b76000985689c7a0330df0814b06e6",
     "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
     "layoutApproved": true,
     "preview": {
@@ -50216,8 +51181,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.57,
+      "height": 8.49,
+      "unit": "in"
+    }
   },
   "print-book-art-f2025e5a72f4a70866c6-full-frame-black": {
     "id": "print-book-art-f2025e5a72f4a70866c6-full-frame-black",
@@ -50450,23 +51420,23 @@ export default {
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.18X6.62",
+    "sku": "5M144M9S7.92X6.36",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.9233,
-      "height": 6.3667,
+      "width": 7.92,
+      "height": 6.36,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.18,
-      "height": 6.62,
+      "width": 8.92,
+      "height": 7.36,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a.jpg",
-    "assetSha256": "39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b834ee218a63d4e4f66bae2cd5f686aeb60c42139d7b2b9e1d0c2634198c8ea7.jpg",
+    "assetSha256": "b834ee218a63d4e4f66bae2cd5f686aeb60c42139d7b2b9e1d0c2634198c8ea7",
     "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
     "layoutApproved": true,
     "preview": {
@@ -50476,8 +51446,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.92,
+      "height": 6.36,
+      "unit": "in"
+    }
   },
   "print-book-art-f2025e5a72f4a70866c6-medium-frame-black": {
     "id": "print-book-art-f2025e5a72f4a70866c6-medium-frame-black",
@@ -50710,23 +51685,23 @@ export default {
     "artworkTitle": "Untitled — Assorted Adventures, page 59",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.54X4.5",
+    "sku": "5M144M9S5.28X4.24",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.2867,
-      "height": 4.2467,
+      "width": 5.28,
+      "height": 4.24,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.54,
-      "height": 4.5,
+      "width": 6.28,
+      "height": 5.24,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8.jpg",
-    "assetSha256": "8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0c0024254b143417bba3ad676026780071cdc1b8e315e9f97c89fc797e0fb2a9.jpg",
+    "assetSha256": "0c0024254b143417bba3ad676026780071cdc1b8e315e9f97c89fc797e0fb2a9",
     "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
     "layoutApproved": true,
     "preview": {
@@ -50736,8 +51711,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.28,
+      "height": 4.24,
+      "unit": "in"
+    }
   },
   "print-book-art-f2025e5a72f4a70866c6-small-frame-black": {
     "id": "print-book-art-f2025e5a72f4a70866c6-small-frame-black",
@@ -50970,23 +51950,23 @@ export default {
     "artworkTitle": "Vision of Ukraine at Peace",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.3X6.27",
+    "sku": "5M144M9S11.03X6.01",
     "scale": 1,
     "imageSize": {
-      "width": 11.0367,
-      "height": 6.0167,
+      "width": 11.03,
+      "height": 6.01,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.3,
-      "height": 6.27,
+      "width": 12.03,
+      "height": 7.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214.jpg",
-    "assetSha256": "02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8f22a4b896beadc039c55942a5ed9b4d04f77454732d8dd3382d57a1e1b44313.jpg",
+    "assetSha256": "8f22a4b896beadc039c55942a5ed9b4d04f77454732d8dd3382d57a1e1b44313",
     "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
     "layoutApproved": true,
     "preview": {
@@ -50996,8 +51976,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.03,
+      "height": 6.01,
+      "unit": "in"
+    }
   },
   "print-book-art-82ab8d65fb50fe0d096a-full-frame-black": {
     "id": "print-book-art-82ab8d65fb50fe0d096a-full-frame-black",
@@ -51228,25 +52213,25 @@ export default {
     "productId": "book-art-82ab8d65fb50fe0d096a",
     "title": "Vision of Ukraine at Peace — Medium print",
     "artworkTitle": "Vision of Ukraine at Peace",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.54X4.77",
+    "sku": "5M144M9S8.28X4.51",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.2867,
-      "height": 4.5167,
+      "width": 8.28,
+      "height": 4.51,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.54,
-      "height": 4.77,
+      "width": 9.28,
+      "height": 5.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0.jpg",
-    "assetSha256": "d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3fac6482de0c6a97df3eea6aa5f81e60c7c120a18727c985aab2951a4db87936.jpg",
+    "assetSha256": "3fac6482de0c6a97df3eea6aa5f81e60c7c120a18727c985aab2951a4db87936",
     "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
     "layoutApproved": true,
     "preview": {
@@ -51256,8 +52241,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.28,
+      "height": 4.51,
+      "unit": "in"
+    }
   },
   "print-book-art-82ab8d65fb50fe0d096a-medium-frame-black": {
     "id": "print-book-art-82ab8d65fb50fe0d096a-medium-frame-black",
@@ -51488,25 +52478,25 @@ export default {
     "productId": "book-art-94e2edf9a24c90950489",
     "title": "Inside album cover for Yes: Close to the Edge — Large print",
     "artworkTitle": "Inside album cover for Yes: Close to the Edge",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S12.56X6.27",
+    "sku": "5M144M9S12.3X6.01",
     "scale": 1,
     "imageSize": {
-      "width": 12.3067,
-      "height": 6.0167,
+      "width": 12.3,
+      "height": 6.01,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.56,
-      "height": 6.27,
+      "width": 13.3,
+      "height": 7.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792.jpg",
-    "assetSha256": "691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d6533ab2d638c085848a08c89b6a24c756d49501dbdab8ef53866ebdb5822274.jpg",
+    "assetSha256": "d6533ab2d638c085848a08c89b6a24c756d49501dbdab8ef53866ebdb5822274",
     "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
     "layoutApproved": true,
     "preview": {
@@ -51516,8 +52506,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.3,
+      "height": 6.01,
+      "unit": "in"
+    }
   },
   "print-book-art-94e2edf9a24c90950489-full-frame-black": {
     "id": "print-book-art-94e2edf9a24c90950489-full-frame-black",
@@ -51748,25 +52743,25 @@ export default {
     "productId": "book-art-94e2edf9a24c90950489",
     "title": "Inside album cover for Yes: Close to the Edge — Medium print",
     "artworkTitle": "Inside album cover for Yes: Close to the Edge",
-    "amount": "35.00",
+    "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.48X4.76",
+    "sku": "5M144M9S9.21X4.5",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.2167,
-      "height": 4.5067,
+      "width": 9.21,
+      "height": 4.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.48,
-      "height": 4.76,
+      "width": 10.21,
+      "height": 5.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b.jpg",
-    "assetSha256": "19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e6feb741784d2fea7ac40fce2a1f498606154a83705df7e5b7723c79fd33ee23.jpg",
+    "assetSha256": "e6feb741784d2fea7ac40fce2a1f498606154a83705df7e5b7723c79fd33ee23",
     "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
     "layoutApproved": true,
     "preview": {
@@ -51776,8 +52771,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.21,
+      "height": 4.5,
+      "unit": "in"
+    }
   },
   "print-book-art-94e2edf9a24c90950489-medium-frame-black": {
     "id": "print-book-art-94e2edf9a24c90950489-medium-frame-black",
@@ -52010,23 +53010,23 @@ export default {
     "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S5.73X8.98",
+    "sku": "5M144M9S5.47X8.71",
     "scale": 1,
     "imageSize": {
-      "width": 5.4767,
-      "height": 8.7133,
+      "width": 5.47,
+      "height": 8.71,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.73,
-      "height": 8.98,
+      "width": 6.47,
+      "height": 9.71,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf.jpg",
-    "assetSha256": "0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fee7c7225951fd8ffd07e9edf30cedb912cfaed05cb964d5319de8bf6fae0f7d.jpg",
+    "assetSha256": "fee7c7225951fd8ffd07e9edf30cedb912cfaed05cb964d5319de8bf6fae0f7d",
     "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
     "layoutApproved": true,
     "preview": {
@@ -52036,8 +53036,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.47,
+      "height": 8.71,
+      "unit": "in"
+    }
   },
   "print-book-art-6e6d7ac51608e0b7f10f-full-frame-black": {
     "id": "print-book-art-6e6d7ac51608e0b7f10f-full-frame-black",
@@ -52270,23 +53275,23 @@ export default {
     "artworkTitle": "Moonrise in Santa Monica, photo credit: Paul Murphy",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.36X6.79",
+    "sku": "5M144M9S4.1X6.53",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.1067,
-      "height": 6.5333,
+      "width": 4.1,
+      "height": 6.53,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.36,
-      "height": 6.79,
+      "width": 5.1,
+      "height": 7.53,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090.jpg",
-    "assetSha256": "fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8358e66dbbe566267f7d7f9e6da1912e48ead36853b7ba97cd6ff463769d67e6.jpg",
+    "assetSha256": "8358e66dbbe566267f7d7f9e6da1912e48ead36853b7ba97cd6ff463769d67e6",
     "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
     "layoutApproved": true,
     "preview": {
@@ -52296,8 +53301,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.1,
+      "height": 6.53,
+      "unit": "in"
+    }
   },
   "print-book-art-6e6d7ac51608e0b7f10f-medium-frame-black": {
     "id": "print-book-art-6e6d7ac51608e0b7f10f-medium-frame-black",
@@ -52530,23 +53540,23 @@ export default {
     "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S6.06X9.73",
+    "sku": "5M144M9S5.8X9.47",
     "scale": 1,
     "imageSize": {
-      "width": 5.8067,
-      "height": 9.4733,
+      "width": 5.8,
+      "height": 9.47,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.06,
-      "height": 9.73,
+      "width": 6.8,
+      "height": 10.47,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e.jpg",
-    "assetSha256": "de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9b436ac4bb75c7b85f8c328f13d2a25413fb84215a841be145e93d0e5b896d1d.jpg",
+    "assetSha256": "9b436ac4bb75c7b85f8c328f13d2a25413fb84215a841be145e93d0e5b896d1d",
     "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
     "layoutApproved": true,
     "preview": {
@@ -52556,8 +53566,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.8,
+      "height": 9.47,
+      "unit": "in"
+    }
   },
   "print-book-art-e97329411fa8b273b508-full-frame-black": {
     "id": "print-book-art-e97329411fa8b273b508-full-frame-black",
@@ -52790,23 +53805,23 @@ export default {
     "artworkTitle": "Sunrise in Traverse City, photo credit: Paul Murphy",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.6X7.36",
+    "sku": "5M144M9S4.34X7.09",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.3467,
-      "height": 7.0933,
+      "width": 4.34,
+      "height": 7.09,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.6,
-      "height": 7.36,
+      "width": 5.34,
+      "height": 8.09,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39.jpg",
-    "assetSha256": "894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a05d819c11d7b55f3c2557088e3fe633b6a4e243b9e5e3985acc5df1fab89b3f.jpg",
+    "assetSha256": "a05d819c11d7b55f3c2557088e3fe633b6a4e243b9e5e3985acc5df1fab89b3f",
     "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
     "layoutApproved": true,
     "preview": {
@@ -52816,8 +53831,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.34,
+      "height": 7.09,
+      "unit": "in"
+    }
   },
   "print-book-art-e97329411fa8b273b508-medium-frame-black": {
     "id": "print-book-art-e97329411fa8b273b508-medium-frame-black",
@@ -53048,25 +54068,25 @@ export default {
     "productId": "book-art-2136f2260225dd8ef20a",
     "title": "Dorian Nakamoto — Large print",
     "artworkTitle": "Dorian Nakamoto",
-    "amount": "35.00",
+    "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.38X9.03",
+    "sku": "5M144M9S8.12X8.77",
     "scale": 1,
     "imageSize": {
-      "width": 8.1267,
-      "height": 8.7767,
+      "width": 8.12,
+      "height": 8.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.38,
-      "height": 9.03,
+      "width": 9.12,
+      "height": 9.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3.jpg",
-    "assetSha256": "b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/81998328db3ee2eb5e433540e0ad2f1cb9f0a38bb6a2c6f9a4fcfe5e2afe3621.jpg",
+    "assetSha256": "81998328db3ee2eb5e433540e0ad2f1cb9f0a38bb6a2c6f9a4fcfe5e2afe3621",
     "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
     "layoutApproved": true,
     "preview": {
@@ -53076,8 +54096,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.12,
+      "height": 8.77,
+      "unit": "in"
+    }
   },
   "print-book-art-2136f2260225dd8ef20a-full-frame-black": {
     "id": "print-book-art-2136f2260225dd8ef20a-full-frame-black",
@@ -53310,23 +54335,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.35X6.83",
+    "sku": "5M144M9S6.09X6.57",
     "scale": 0.75,
     "imageSize": {
       "width": 6.09,
-      "height": 6.5767,
+      "height": 6.57,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.35,
-      "height": 6.83,
+      "width": 7.09,
+      "height": 7.57,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574.jpg",
-    "assetSha256": "76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5db3e48c89e6ed3fe77e695f05e81c84b923de18cb68c715fcf0baaa317c7f11.jpg",
+    "assetSha256": "5db3e48c89e6ed3fe77e695f05e81c84b923de18cb68c715fcf0baaa317c7f11",
     "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
     "layoutApproved": true,
     "preview": {
@@ -53336,8 +54361,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.09,
+      "height": 6.57,
+      "unit": "in"
+    }
   },
   "print-book-art-2136f2260225dd8ef20a-medium-frame-black": {
     "id": "print-book-art-2136f2260225dd8ef20a-medium-frame-black",
@@ -53570,23 +54600,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.31X4.64",
+    "sku": "5M144M9S4.05X4.38",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.0567,
+      "width": 4.05,
       "height": 4.38,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.31,
-      "height": 4.64,
+      "width": 5.05,
+      "height": 5.38,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2.jpg",
-    "assetSha256": "ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6d5395d2974e160a889eef2ce39ef613cda7993acb43f2341b12a5500cfbd0f0.jpg",
+    "assetSha256": "6d5395d2974e160a889eef2ce39ef613cda7993acb43f2341b12a5500cfbd0f0",
     "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
     "layoutApproved": true,
     "preview": {
@@ -53596,8 +54626,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.05,
+      "height": 4.38,
+      "unit": "in"
+    }
   },
   "print-book-art-2136f2260225dd8ef20a-small-frame-black": {
     "id": "print-book-art-2136f2260225dd8ef20a-small-frame-black",
@@ -53830,23 +54865,23 @@ export default {
     "artworkTitle": "The Bounty of Satoshi: Wonder",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S4.46X8.82",
+    "sku": "5M144M9S4.2X8.55",
     "scale": 1,
     "imageSize": {
-      "width": 4.2067,
+      "width": 4.2,
       "height": 8.55,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.46,
-      "height": 8.82,
+      "width": 5.2,
+      "height": 9.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b.jpg",
-    "assetSha256": "611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1ec87b50f891b4f95889595318d69b593c6399e1bc1fcedaa634f5f19f279c1a.jpg",
+    "assetSha256": "1ec87b50f891b4f95889595318d69b593c6399e1bc1fcedaa634f5f19f279c1a",
     "sourceSha256": "33094144963f5f4fc7e2fe15e8f1958fb407edfd1e63d5b91b668d96e31381e9",
     "layoutApproved": true,
     "preview": {
@@ -53856,8 +54891,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.2,
+      "height": 8.55,
+      "unit": "in"
+    }
   },
   "print-book-art-29b3572972c367d351d1-full-frame-black": {
     "id": "print-book-art-29b3572972c367d351d1-full-frame-black",
@@ -54090,23 +55130,23 @@ export default {
     "artworkTitle": "The Bounty of Satoshi: Achievement",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S4.37X8.72",
+    "sku": "5M144M9S4.11X8.46",
     "scale": 1,
     "imageSize": {
-      "width": 4.1167,
-      "height": 8.4667,
+      "width": 4.11,
+      "height": 8.46,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.37,
-      "height": 8.72,
+      "width": 5.11,
+      "height": 9.46,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9.jpg",
-    "assetSha256": "d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/24d305ad80cd1d4aa51e57cea0c7d284d1c815a89645f652f19879ecf1363472.jpg",
+    "assetSha256": "24d305ad80cd1d4aa51e57cea0c7d284d1c815a89645f652f19879ecf1363472",
     "sourceSha256": "feca1831b68b4619f2e32e9ce4845e1f5b82ee19f9c56f20fede898dcdb9e5d8",
     "layoutApproved": true,
     "preview": {
@@ -54116,8 +55156,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.11,
+      "height": 8.46,
+      "unit": "in"
+    }
   },
   "print-book-art-8ff9ac182d32fa228450-full-frame-black": {
     "id": "print-book-art-8ff9ac182d32fa228450-full-frame-black",
@@ -54350,23 +55395,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S9.46X11.3",
+    "sku": "5M144M9S9.2X11.04",
     "scale": 1,
     "imageSize": {
-      "width": 9.2067,
-      "height": 11.0433,
+      "width": 9.2,
+      "height": 11.04,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.46,
-      "height": 11.3,
+      "width": 10.2,
+      "height": 12.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d.jpg",
-    "assetSha256": "277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/72d761931c4a2ce5f6086df28976d1e719518de13b4090e13614a44c44fe23f8.jpg",
+    "assetSha256": "72d761931c4a2ce5f6086df28976d1e719518de13b4090e13614a44c44fe23f8",
     "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
     "layoutApproved": true,
     "preview": {
@@ -54376,8 +55421,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.2,
+      "height": 11.04,
+      "unit": "in"
+    }
   },
   "print-book-art-ccff23f1e469654faa05-full-frame-black": {
     "id": "print-book-art-ccff23f1e469654faa05-full-frame-black",
@@ -54608,25 +55658,25 @@ export default {
     "productId": "book-art-ccff23f1e469654faa05",
     "title": "Chase Toole — Medium print",
     "artworkTitle": "Chase Toole",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.16X8.54",
+    "sku": "5M144M9S6.9X8.28",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.9067,
-      "height": 8.2867,
+      "width": 6.9,
+      "height": 8.28,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.16,
-      "height": 8.54,
+      "width": 7.9,
+      "height": 9.28,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359.jpg",
-    "assetSha256": "112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359",
+    "assetUrl": "https://vermillionaurora.com/print-editions/977fdbc4a5a112c04d6c8588f292b1091ac4e3720cbeb1b76b701708c6d08206.jpg",
+    "assetSha256": "977fdbc4a5a112c04d6c8588f292b1091ac4e3720cbeb1b76b701708c6d08206",
     "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
     "layoutApproved": true,
     "preview": {
@@ -54636,8 +55686,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.9,
+      "height": 8.28,
+      "unit": "in"
+    }
   },
   "print-book-art-ccff23f1e469654faa05-medium-frame-black": {
     "id": "print-book-art-ccff23f1e469654faa05-medium-frame-black",
@@ -54870,23 +55925,23 @@ export default {
     "artworkTitle": "Chase Toole",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.85X5.77",
+    "sku": "5M144M9S4.59X5.51",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.5967,
-      "height": 5.5133,
+      "width": 4.59,
+      "height": 5.51,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.85,
-      "height": 5.77,
+      "width": 5.59,
+      "height": 6.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc.jpg",
-    "assetSha256": "cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc",
+    "assetUrl": "https://vermillionaurora.com/print-editions/602921474c9157fddb706b9b678e0821056df141719558cd6551702f0cdeb56a.jpg",
+    "assetSha256": "602921474c9157fddb706b9b678e0821056df141719558cd6551702f0cdeb56a",
     "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
     "layoutApproved": true,
     "preview": {
@@ -54896,8 +55951,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.59,
+      "height": 5.51,
+      "unit": "in"
+    }
   },
   "print-book-art-ccff23f1e469654faa05-small-frame-black": {
     "id": "print-book-art-ccff23f1e469654faa05-small-frame-black",
@@ -55128,25 +56188,25 @@ export default {
     "productId": "book-art-db933efcbc4fbe01c841",
     "title": "Steve — Large print",
     "artworkTitle": "Steve",
-    "amount": "60.00",
+    "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S9.53X14.48",
+    "sku": "5M144M9S9.27X14.22",
     "scale": 1,
     "imageSize": {
-      "width": 9.2767,
-      "height": 14.2267,
+      "width": 9.27,
+      "height": 14.22,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.53,
-      "height": 14.48,
+      "width": 10.27,
+      "height": 15.22,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e.jpg",
-    "assetSha256": "b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a4ef0cc67b3ebbd438b0ca9ed8b22dc53a82a58052517f41000cc61046cfabb0.jpg",
+    "assetSha256": "a4ef0cc67b3ebbd438b0ca9ed8b22dc53a82a58052517f41000cc61046cfabb0",
     "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
     "layoutApproved": true,
     "preview": {
@@ -55156,8 +56216,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.27,
+      "height": 14.22,
+      "unit": "in"
+    }
   },
   "print-book-art-db933efcbc4fbe01c841-full-frame-black": {
     "id": "print-book-art-db933efcbc4fbe01c841-full-frame-black",
@@ -55390,23 +56455,23 @@ export default {
     "artworkTitle": "Steve",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S7.21X10.92",
+    "sku": "5M144M9S6.95X10.66",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.9533,
-      "height": 10.6667,
+      "width": 6.95,
+      "height": 10.66,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.21,
-      "height": 10.92,
+      "width": 7.95,
+      "height": 11.66,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d.jpg",
-    "assetSha256": "7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/534c63c66562fda077744c0f2d46c6dd8845ecbeae93bf190533487fd4f6046f.jpg",
+    "assetSha256": "534c63c66562fda077744c0f2d46c6dd8845ecbeae93bf190533487fd4f6046f",
     "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
     "layoutApproved": true,
     "preview": {
@@ -55416,8 +56481,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.95,
+      "height": 10.66,
+      "unit": "in"
+    }
   },
   "print-book-art-db933efcbc4fbe01c841-medium-frame-black": {
     "id": "print-book-art-db933efcbc4fbe01c841-medium-frame-black",
@@ -55650,23 +56720,23 @@ export default {
     "artworkTitle": "Steve",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.89X7.36",
+    "sku": "5M144M9S4.63X7.1",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.6333,
-      "height": 7.1067,
+      "width": 4.63,
+      "height": 7.1,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.89,
-      "height": 7.36,
+      "width": 5.63,
+      "height": 8.1,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8.jpg",
-    "assetSha256": "3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/582a66f74d7c1418ae9a5e2cdf0124bdb4ef53ce380c34f1c801ae89bec79da1.jpg",
+    "assetSha256": "582a66f74d7c1418ae9a5e2cdf0124bdb4ef53ce380c34f1c801ae89bec79da1",
     "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
     "layoutApproved": true,
     "preview": {
@@ -55676,8 +56746,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.63,
+      "height": 7.1,
+      "unit": "in"
+    }
   },
   "print-book-art-db933efcbc4fbe01c841-small-frame-black": {
     "id": "print-book-art-db933efcbc4fbe01c841-small-frame-black",
@@ -55910,23 +56985,23 @@ export default {
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S11.39X10.18",
+    "sku": "5M144M9S11.13X9.92",
     "scale": 1,
     "imageSize": {
-      "width": 11.1367,
-      "height": 9.9267,
+      "width": 11.13,
+      "height": 9.92,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.39,
-      "height": 10.18,
+      "width": 12.13,
+      "height": 10.92,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd.jpg",
-    "assetSha256": "14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5e2ea9ec4f6fd534e63e8b0f10b5ff7c777414a5af8f78168730427d356c4fe5.jpg",
+    "assetSha256": "5e2ea9ec4f6fd534e63e8b0f10b5ff7c777414a5af8f78168730427d356c4fe5",
     "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
     "layoutApproved": true,
     "preview": {
@@ -55936,8 +57011,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.13,
+      "height": 9.92,
+      "unit": "in"
+    }
   },
   "print-book-art-74a736000a32427842b1-full-frame-black": {
     "id": "print-book-art-74a736000a32427842b1-full-frame-black",
@@ -56170,23 +57250,23 @@ export default {
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.6X7.69",
+    "sku": "5M144M9S8.34X7.43",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.3433,
-      "height": 7.4367,
+      "width": 8.34,
+      "height": 7.43,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.6,
-      "height": 7.69,
+      "width": 9.34,
+      "height": 8.43,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d.jpg",
-    "assetSha256": "75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6eec5f4ba7c36805f7789cb00db8abb12ab08a8efab2ca7744efab820149d311.jpg",
+    "assetSha256": "6eec5f4ba7c36805f7789cb00db8abb12ab08a8efab2ca7744efab820149d311",
     "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
     "layoutApproved": true,
     "preview": {
@@ -56196,8 +57276,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.34,
+      "height": 7.43,
+      "unit": "in"
+    }
   },
   "print-book-art-74a736000a32427842b1-medium-frame-black": {
     "id": "print-book-art-74a736000a32427842b1-medium-frame-black",
@@ -56430,23 +57515,23 @@ export default {
     "artworkTitle": "Laura and Cafécito on paddleboard in Lake Washington",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.82X5.21",
+    "sku": "5M144M9S5.56X4.95",
     "scale": 0.5,
     "imageSize": {
       "width": 5.56,
-      "height": 4.9567,
+      "height": 4.95,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.82,
-      "height": 5.21,
+      "width": 6.56,
+      "height": 5.95,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce.jpg",
-    "assetSha256": "351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce",
+    "assetUrl": "https://vermillionaurora.com/print-editions/62a8e91e20a7c3b619934ff64dd69f0d33ebddd8e6f27bb957d6baba64a3e49a.jpg",
+    "assetSha256": "62a8e91e20a7c3b619934ff64dd69f0d33ebddd8e6f27bb957d6baba64a3e49a",
     "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
     "layoutApproved": true,
     "preview": {
@@ -56456,8 +57541,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.56,
+      "height": 4.95,
+      "unit": "in"
+    }
   },
   "print-book-art-74a736000a32427842b1-small-frame-black": {
     "id": "print-book-art-74a736000a32427842b1-small-frame-black",
@@ -56690,23 +57780,23 @@ export default {
     "artworkTitle": "Catherine dance series — study 1",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S4.82X11.01",
+    "sku": "5M144M9S4.56X10.75",
     "scale": 1,
     "imageSize": {
-      "width": 4.5667,
-      "height": 10.7567,
+      "width": 4.56,
+      "height": 10.75,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.82,
-      "height": 11.01,
+      "width": 5.56,
+      "height": 11.75,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79.jpg",
-    "assetSha256": "41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0d1f55bdb34444985c9e90a9f23187d3b87d9f8eab8664c44a3eb0d54b42bc65.jpg",
+    "assetSha256": "0d1f55bdb34444985c9e90a9f23187d3b87d9f8eab8664c44a3eb0d54b42bc65",
     "sourceSha256": "ecb81d17191279e61bd833cd5ae946aef1a66692e5d0d33e38684f9ed682cf0e",
     "layoutApproved": true,
     "preview": {
@@ -56716,8 +57806,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.56,
+      "height": 10.75,
+      "unit": "in"
+    }
   },
   "print-book-art-9209f1fd7d47f373597f-full-frame-black": {
     "id": "print-book-art-9209f1fd7d47f373597f-full-frame-black",
@@ -56950,23 +58045,23 @@ export default {
     "artworkTitle": "Catherine dance series — study 2",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S6.7X10.44",
+    "sku": "5M144M9S6.44X10.18",
     "scale": 1,
     "imageSize": {
-      "width": 6.4467,
-      "height": 10.1833,
+      "width": 6.44,
+      "height": 10.18,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.7,
-      "height": 10.44,
+      "width": 7.44,
+      "height": 11.18,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e.jpg",
-    "assetSha256": "53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/33c68e55dcb56d9ef1500ac46d2e6ef0d759ee4816e6d86d58da7c6bfb676866.jpg",
+    "assetSha256": "33c68e55dcb56d9ef1500ac46d2e6ef0d759ee4816e6d86d58da7c6bfb676866",
     "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
     "layoutApproved": true,
     "preview": {
@@ -56976,8 +58071,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.44,
+      "height": 10.18,
+      "unit": "in"
+    }
   },
   "print-book-art-a61c71e5de8cc1b71500-full-frame-black": {
     "id": "print-book-art-a61c71e5de8cc1b71500-full-frame-black",
@@ -57210,23 +58310,23 @@ export default {
     "artworkTitle": "Catherine dance series — study 2",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.08X7.89",
+    "sku": "5M144M9S4.82X7.62",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.8267,
-      "height": 7.6267,
+      "width": 4.82,
+      "height": 7.62,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.08,
-      "height": 7.89,
+      "width": 5.82,
+      "height": 8.62,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6.jpg",
-    "assetSha256": "ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6533e7f95b5b43a6f53bced4e817885c149fdc6d879252883bf1298954e8a97f.jpg",
+    "assetSha256": "6533e7f95b5b43a6f53bced4e817885c149fdc6d879252883bf1298954e8a97f",
     "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
     "layoutApproved": true,
     "preview": {
@@ -57236,8 +58336,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.82,
+      "height": 7.62,
+      "unit": "in"
+    }
   },
   "print-book-art-a61c71e5de8cc1b71500-medium-frame-black": {
     "id": "print-book-art-a61c71e5de8cc1b71500-medium-frame-black",
@@ -57468,25 +58573,25 @@ export default {
     "productId": "book-art-596837cb5ff533c620dd",
     "title": "Catherine dance series — study 3 — Large print",
     "artworkTitle": "Catherine dance series — study 3",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S6.79X11.54",
+    "sku": "5M144M9S6.53X11.28",
     "scale": 1,
     "imageSize": {
-      "width": 6.5367,
-      "height": 11.2867,
+      "width": 6.53,
+      "height": 11.28,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.79,
-      "height": 11.54,
+      "width": 7.53,
+      "height": 12.28,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad.jpg",
-    "assetSha256": "b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3a980e10e81ea84938915db4c2259eed6d4728a6c53941abe60cc091aed9e6eb.jpg",
+    "assetSha256": "3a980e10e81ea84938915db4c2259eed6d4728a6c53941abe60cc091aed9e6eb",
     "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
     "layoutApproved": true,
     "preview": {
@@ -57496,8 +58601,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.53,
+      "height": 11.28,
+      "unit": "in"
+    }
   },
   "print-book-art-596837cb5ff533c620dd-full-frame-black": {
     "id": "print-book-art-596837cb5ff533c620dd-full-frame-black",
@@ -57730,23 +58840,23 @@ export default {
     "artworkTitle": "Catherine dance series — study 3",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S5.15X8.72",
+    "sku": "5M144M9S4.89X8.45",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.8967,
-      "height": 8.4567,
+      "width": 4.89,
+      "height": 8.45,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.15,
-      "height": 8.72,
+      "width": 5.89,
+      "height": 9.45,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf.jpg",
-    "assetSha256": "f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2f4eec4f6b1c413553257251f27c9fb110e51e9fa39eddc26a643d3e6f9c6221.jpg",
+    "assetSha256": "2f4eec4f6b1c413553257251f27c9fb110e51e9fa39eddc26a643d3e6f9c6221",
     "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
     "layoutApproved": true,
     "preview": {
@@ -57756,8 +58866,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.89,
+      "height": 8.45,
+      "unit": "in"
+    }
   },
   "print-book-art-596837cb5ff533c620dd-medium-frame-black": {
     "id": "print-book-art-596837cb5ff533c620dd-medium-frame-black",
@@ -57990,23 +59105,23 @@ export default {
     "artworkTitle": "Catherine dance series — study 4",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S6.33X13.25",
+    "sku": "5M144M9S6.07X12.99",
     "scale": 1,
     "imageSize": {
-      "width": 6.0767,
-      "height": 12.9967,
+      "width": 6.07,
+      "height": 12.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.33,
-      "height": 13.25,
+      "width": 7.07,
+      "height": 13.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b.jpg",
-    "assetSha256": "58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/136b929d138ef6e80fb840190031b09efd30ed40eb0a4efc046cb3ad8f242c74.jpg",
+    "assetSha256": "136b929d138ef6e80fb840190031b09efd30ed40eb0a4efc046cb3ad8f242c74",
     "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
     "layoutApproved": true,
     "preview": {
@@ -58016,8 +59131,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.07,
+      "height": 12.99,
+      "unit": "in"
+    }
   },
   "print-book-art-7bce6e3509027d1f7a0b-full-frame-black": {
     "id": "print-book-art-7bce6e3509027d1f7a0b-full-frame-black",
@@ -58250,23 +59370,23 @@ export default {
     "artworkTitle": "Catherine dance series — study 4",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S4.81X10",
+    "sku": "5M144M9S4.55X9.74",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.5567,
-      "height": 9.7467,
+      "width": 4.55,
+      "height": 9.74,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.81,
-      "height": 10,
+      "width": 5.55,
+      "height": 10.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da.jpg",
-    "assetSha256": "37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da",
+    "assetUrl": "https://vermillionaurora.com/print-editions/659c2e1101b8f3cddfdab087f2c7a05254ed901923c9eb6bef965e999975b66e.jpg",
+    "assetSha256": "659c2e1101b8f3cddfdab087f2c7a05254ed901923c9eb6bef965e999975b66e",
     "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
     "layoutApproved": true,
     "preview": {
@@ -58276,8 +59396,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.55,
+      "height": 9.74,
+      "unit": "in"
+    }
   },
   "print-book-art-7bce6e3509027d1f7a0b-medium-frame-black": {
     "id": "print-book-art-7bce6e3509027d1f7a0b-medium-frame-black",
@@ -58510,23 +59635,23 @@ export default {
     "artworkTitle": "Dawn and her father Pete at Burning Man",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S12.11X6.55",
+    "sku": "5M144M9S11.85X6.29",
     "scale": 1,
     "imageSize": {
-      "width": 11.8567,
-      "height": 6.2933,
+      "width": 11.85,
+      "height": 6.29,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.11,
-      "height": 6.55,
+      "width": 12.85,
+      "height": 7.29,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede.jpg",
-    "assetSha256": "a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5083f84d9c62c0aa5630557776b63053aa17559c603ab2796b643f6ec972107e.jpg",
+    "assetSha256": "5083f84d9c62c0aa5630557776b63053aa17559c603ab2796b643f6ec972107e",
     "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
     "layoutApproved": true,
     "preview": {
@@ -58536,8 +59661,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.85,
+      "height": 6.29,
+      "unit": "in"
+    }
   },
   "print-book-art-3a9cba708a8045364e82-full-frame-black": {
     "id": "print-book-art-3a9cba708a8045364e82-full-frame-black",
@@ -58770,23 +59900,23 @@ export default {
     "artworkTitle": "Dawn and her father Pete at Burning Man",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.15X4.97",
+    "sku": "5M144M9S8.88X4.71",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.8833,
-      "height": 4.7167,
+      "width": 8.88,
+      "height": 4.71,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.15,
-      "height": 4.97,
+      "width": 9.88,
+      "height": 5.71,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e.jpg",
-    "assetSha256": "d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ab161eaa5e9c7d737523845a6c7d947372c6e6528c7dc7f7cfdc856b2e8300d3.jpg",
+    "assetSha256": "ab161eaa5e9c7d737523845a6c7d947372c6e6528c7dc7f7cfdc856b2e8300d3",
     "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
     "layoutApproved": true,
     "preview": {
@@ -58796,8 +59926,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.88,
+      "height": 4.71,
+      "unit": "in"
+    }
   },
   "print-book-art-3a9cba708a8045364e82-medium-frame-black": {
     "id": "print-book-art-3a9cba708a8045364e82-medium-frame-black",
@@ -59028,25 +60163,25 @@ export default {
     "productId": "book-art-1143b08e177333e43dc7",
     "title": "Kristine — Large print",
     "artworkTitle": "Kristine",
-    "amount": "35.00",
+    "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S7.98X9.43",
+    "sku": "5M144M9S7.72X9.17",
     "scale": 1,
     "imageSize": {
-      "width": 7.7267,
-      "height": 9.1767,
+      "width": 7.72,
+      "height": 9.17,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.98,
-      "height": 9.43,
+      "width": 8.72,
+      "height": 10.17,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2.jpg",
-    "assetSha256": "b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/73c6c52643558c064c11f6cec121c4bc5707466de37f79e3951218495805abbc.jpg",
+    "assetSha256": "73c6c52643558c064c11f6cec121c4bc5707466de37f79e3951218495805abbc",
     "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
     "layoutApproved": true,
     "preview": {
@@ -59056,8 +60191,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.72,
+      "height": 9.17,
+      "unit": "in"
+    }
   },
   "print-book-art-1143b08e177333e43dc7-full-frame-black": {
     "id": "print-book-art-1143b08e177333e43dc7-full-frame-black",
@@ -59290,23 +60430,23 @@ export default {
     "artworkTitle": "Kristine",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.04X7.13",
+    "sku": "5M144M9S5.78X6.87",
     "scale": 0.75,
     "imageSize": {
-      "width": 5.7867,
-      "height": 6.8733,
+      "width": 5.78,
+      "height": 6.87,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.04,
-      "height": 7.13,
+      "width": 6.78,
+      "height": 7.87,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae.jpg",
-    "assetSha256": "f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae",
+    "assetUrl": "https://vermillionaurora.com/print-editions/19e73a9377efbd8ba4b4a193b44917031b9b3dd8f448326c832a6c95676a9571.jpg",
+    "assetSha256": "19e73a9377efbd8ba4b4a193b44917031b9b3dd8f448326c832a6c95676a9571",
     "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
     "layoutApproved": true,
     "preview": {
@@ -59316,8 +60456,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.78,
+      "height": 6.87,
+      "unit": "in"
+    }
   },
   "print-book-art-1143b08e177333e43dc7-medium-frame-black": {
     "id": "print-book-art-1143b08e177333e43dc7-medium-frame-black",
@@ -59550,23 +60695,23 @@ export default {
     "artworkTitle": "Kristine",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.11X4.84",
+    "sku": "5M144M9S4.01X4.74",
     "scale": 0.5,
     "imageSize": {
-      "width": 3.8567,
+      "width": 3.85,
       "height": 4.58,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.11,
-      "height": 4.84,
+      "width": 5.01,
+      "height": 5.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7.jpg",
-    "assetSha256": "0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5b8db2e2c49dffca1240fbb86cf56b43ddeaddffc363e67863de2582a2baee08.jpg",
+    "assetSha256": "5b8db2e2c49dffca1240fbb86cf56b43ddeaddffc363e67863de2582a2baee08",
     "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
     "layoutApproved": true,
     "preview": {
@@ -59576,8 +60721,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.01,
+      "height": 4.74,
+      "unit": "in"
+    }
   },
   "print-book-art-1143b08e177333e43dc7-small-frame-black": {
     "id": "print-book-art-1143b08e177333e43dc7-small-frame-black",
@@ -59808,25 +60958,25 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Large print",
     "artworkTitle": "MJ",
-    "amount": "80.00",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S12.74X14.41",
+    "sku": "5M144M9S12.48X14.15",
     "scale": 1,
     "imageSize": {
-      "width": 12.4867,
-      "height": 14.1567,
+      "width": 12.48,
+      "height": 14.15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.74,
-      "height": 14.41,
+      "width": 13.48,
+      "height": 15.15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637.jpg",
-    "assetSha256": "68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9fd4c9d4a63ceb7594cc6b830b635e278911d1a1fcb3f4cd24ba93abffd60e30.jpg",
+    "assetSha256": "9fd4c9d4a63ceb7594cc6b830b635e278911d1a1fcb3f4cd24ba93abffd60e30",
     "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
     "layoutApproved": true,
     "preview": {
@@ -59836,8 +60986,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.48,
+      "height": 14.15,
+      "unit": "in"
+    }
   },
   "print-book-art-18e4d05240ce63a1a44b-full-frame-black": {
     "id": "print-book-art-18e4d05240ce63a1a44b-full-frame-black",
@@ -60068,25 +61223,25 @@ export default {
     "productId": "book-art-18e4d05240ce63a1a44b",
     "title": "MJ — Medium print",
     "artworkTitle": "MJ",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S9.62X10.87",
+    "sku": "5M144M9S9.36X10.61",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.3633,
-      "height": 10.6167,
+      "width": 9.36,
+      "height": 10.61,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.62,
-      "height": 10.87,
+      "width": 10.36,
+      "height": 11.61,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c.jpg",
-    "assetSha256": "f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5baedda4c4e8724179b909bb99b3357ef3b345f157354413bc516cddc71d47d3.jpg",
+    "assetSha256": "5baedda4c4e8724179b909bb99b3357ef3b345f157354413bc516cddc71d47d3",
     "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
     "layoutApproved": true,
     "preview": {
@@ -60096,8 +61251,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.36,
+      "height": 10.61,
+      "unit": "in"
+    }
   },
   "print-book-art-18e4d05240ce63a1a44b-medium-frame-black": {
     "id": "print-book-art-18e4d05240ce63a1a44b-medium-frame-black",
@@ -60330,23 +61490,23 @@ export default {
     "artworkTitle": "MJ",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.49X7.33",
+    "sku": "5M144M9S6.23X7.07",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.2367,
+      "width": 6.23,
       "height": 7.07,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.49,
-      "height": 7.33,
+      "width": 7.23,
+      "height": 8.07,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6.jpg",
-    "assetSha256": "5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0507cf77fcad8a2ec3332f112fa4fc6039d351ba1f7b36054731a8cedeb496cf.jpg",
+    "assetSha256": "0507cf77fcad8a2ec3332f112fa4fc6039d351ba1f7b36054731a8cedeb496cf",
     "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
     "layoutApproved": true,
     "preview": {
@@ -60356,8 +61516,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.23,
+      "height": 7.07,
+      "unit": "in"
+    }
   },
   "print-book-art-18e4d05240ce63a1a44b-small-frame-black": {
     "id": "print-book-art-18e4d05240ce63a1a44b-small-frame-black",
@@ -60590,23 +61755,23 @@ export default {
     "artworkTitle": "Loree",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S8.44X9.98",
+    "sku": "5M144M9S8.18X9.72",
     "scale": 1,
     "imageSize": {
-      "width": 8.1867,
+      "width": 8.18,
       "height": 9.72,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.44,
-      "height": 9.98,
+      "width": 9.18,
+      "height": 10.72,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7.jpg",
-    "assetSha256": "ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/40b1e29f12aec17b05ed4ea716a7807783ccbf4e97308510a7d17b71f95438fd.jpg",
+    "assetSha256": "40b1e29f12aec17b05ed4ea716a7807783ccbf4e97308510a7d17b71f95438fd",
     "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
     "layoutApproved": true,
     "preview": {
@@ -60616,8 +61781,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.18,
+      "height": 9.72,
+      "unit": "in"
+    }
   },
   "print-book-art-64cfd389b3dbb5cde532-full-frame-black": {
     "id": "print-book-art-64cfd389b3dbb5cde532-full-frame-black",
@@ -60850,23 +62020,23 @@ export default {
     "artworkTitle": "Loree",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.39X7.55",
+    "sku": "5M144M9S6.13X7.28",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.1367,
-      "height": 7.2867,
+      "width": 6.13,
+      "height": 7.28,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.39,
-      "height": 7.55,
+      "width": 7.13,
+      "height": 8.28,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684.jpg",
-    "assetSha256": "9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684",
+    "assetUrl": "https://vermillionaurora.com/print-editions/10172fff990839ed2a0041bb8bdfd7dbd0165a870346579257670357daed35b9.jpg",
+    "assetSha256": "10172fff990839ed2a0041bb8bdfd7dbd0165a870346579257670357daed35b9",
     "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
     "layoutApproved": true,
     "preview": {
@@ -60876,8 +62046,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.13,
+      "height": 7.28,
+      "unit": "in"
+    }
   },
   "print-book-art-64cfd389b3dbb5cde532-medium-frame-black": {
     "id": "print-book-art-64cfd389b3dbb5cde532-medium-frame-black",
@@ -61110,23 +62285,23 @@ export default {
     "artworkTitle": "Loree",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.34X5.11",
+    "sku": "5M144M9S4.08X4.85",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.0867,
-      "height": 4.8533,
+      "width": 4.08,
+      "height": 4.85,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.34,
-      "height": 5.11,
+      "width": 5.08,
+      "height": 5.85,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838.jpg",
-    "assetSha256": "9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838",
+    "assetUrl": "https://vermillionaurora.com/print-editions/814fcd76f044ec0bc2a830fee91141a243bd04d4029e4976996feb1c37ff6bb8.jpg",
+    "assetSha256": "814fcd76f044ec0bc2a830fee91141a243bd04d4029e4976996feb1c37ff6bb8",
     "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
     "layoutApproved": true,
     "preview": {
@@ -61136,8 +62311,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.08,
+      "height": 4.85,
+      "unit": "in"
+    }
   },
   "print-book-art-64cfd389b3dbb5cde532-small-frame-black": {
     "id": "print-book-art-64cfd389b3dbb5cde532-small-frame-black",
@@ -61368,25 +62548,25 @@ export default {
     "productId": "book-art-1708a7dca996aca40e6c",
     "title": "Girl Tuning Guitar — Large print",
     "artworkTitle": "Girl Tuning Guitar",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S9.09X10.4",
+    "sku": "5M144M9S8.83X10.14",
     "scale": 1,
     "imageSize": {
-      "width": 8.8367,
-      "height": 10.1467,
+      "width": 8.83,
+      "height": 10.14,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.09,
-      "height": 10.4,
+      "width": 9.83,
+      "height": 11.14,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54.jpg",
-    "assetSha256": "9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54",
+    "assetUrl": "https://vermillionaurora.com/print-editions/278dffdd8942f8278d5cb91fb65d6ce90058f53cbc8f61ca24d9f733f1e042af.jpg",
+    "assetSha256": "278dffdd8942f8278d5cb91fb65d6ce90058f53cbc8f61ca24d9f733f1e042af",
     "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
     "layoutApproved": true,
     "preview": {
@@ -61396,8 +62576,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.83,
+      "height": 10.14,
+      "unit": "in"
+    }
   },
   "print-book-art-1708a7dca996aca40e6c-full-frame-black": {
     "id": "print-book-art-1708a7dca996aca40e6c-full-frame-black",
@@ -61630,23 +62815,23 @@ export default {
     "artworkTitle": "Girl Tuning Guitar",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.88X7.86",
+    "sku": "5M144M9S6.62X7.6",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.6233,
-      "height": 7.6067,
+      "width": 6.62,
+      "height": 7.6,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.88,
-      "height": 7.86,
+      "width": 7.62,
+      "height": 8.6,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936.jpg",
-    "assetSha256": "3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936",
+    "assetUrl": "https://vermillionaurora.com/print-editions/65c5d9e883781e64365927c51662188234d447def9d056f11c0effcd594a91b5.jpg",
+    "assetSha256": "65c5d9e883781e64365927c51662188234d447def9d056f11c0effcd594a91b5",
     "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
     "layoutApproved": true,
     "preview": {
@@ -61656,8 +62841,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.62,
+      "height": 7.6,
+      "unit": "in"
+    }
   },
   "print-book-art-1708a7dca996aca40e6c-medium-frame-black": {
     "id": "print-book-art-1708a7dca996aca40e6c-medium-frame-black",
@@ -61890,23 +63080,23 @@ export default {
     "artworkTitle": "Girl Tuning Guitar",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.67X5.32",
+    "sku": "5M144M9S4.41X5.06",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.4133,
-      "height": 5.0667,
+      "width": 4.41,
+      "height": 5.06,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.67,
-      "height": 5.32,
+      "width": 5.41,
+      "height": 6.06,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e.jpg",
-    "assetSha256": "6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f1a375eb58838d491993c8d37bb2068aae72f1e3d7acfdf2781f8269b97faf4a.jpg",
+    "assetSha256": "f1a375eb58838d491993c8d37bb2068aae72f1e3d7acfdf2781f8269b97faf4a",
     "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
     "layoutApproved": true,
     "preview": {
@@ -61916,8 +63106,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.41,
+      "height": 5.06,
+      "unit": "in"
+    }
   },
   "print-book-art-1708a7dca996aca40e6c-small-frame-black": {
     "id": "print-book-art-1708a7dca996aca40e6c-small-frame-black",
@@ -62150,23 +63345,23 @@ export default {
     "artworkTitle": "John",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S8.48X9.58",
+    "sku": "5M144M9S8.22X9.32",
     "scale": 1,
     "imageSize": {
-      "width": 8.2233,
-      "height": 9.3267,
+      "width": 8.22,
+      "height": 9.32,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.48,
-      "height": 9.58,
+      "width": 9.22,
+      "height": 10.32,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0.jpg",
-    "assetSha256": "cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a4a25a47d6cebc32d6d8c52b83ece4c41ea2746e23d8228b768e0ecd4261c68b.jpg",
+    "assetSha256": "a4a25a47d6cebc32d6d8c52b83ece4c41ea2746e23d8228b768e0ecd4261c68b",
     "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
     "layoutApproved": true,
     "preview": {
@@ -62176,8 +63371,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.22,
+      "height": 9.32,
+      "unit": "in"
+    }
   },
   "print-book-art-a627c7b7d19ace6b3e51-full-frame-black": {
     "id": "print-book-art-a627c7b7d19ace6b3e51-full-frame-black",
@@ -62410,23 +63610,23 @@ export default {
     "artworkTitle": "John",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.42X7.25",
+    "sku": "5M144M9S6.16X6.99",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.1667,
-      "height": 6.9933,
+      "width": 6.16,
+      "height": 6.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.42,
-      "height": 7.25,
+      "width": 7.16,
+      "height": 7.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50.jpg",
-    "assetSha256": "d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50",
+    "assetUrl": "https://vermillionaurora.com/print-editions/aeecc24a03fe2aa9dcedc679e8b260c49c934936c838dcc014627b94860a8425.jpg",
+    "assetSha256": "aeecc24a03fe2aa9dcedc679e8b260c49c934936c838dcc014627b94860a8425",
     "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
     "layoutApproved": true,
     "preview": {
@@ -62436,8 +63636,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.16,
+      "height": 6.99,
+      "unit": "in"
+    }
   },
   "print-book-art-a627c7b7d19ace6b3e51-medium-frame-black": {
     "id": "print-book-art-a627c7b7d19ace6b3e51-medium-frame-black",
@@ -62670,23 +63875,23 @@ export default {
     "artworkTitle": "John",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.36X4.91",
+    "sku": "5M144M9S4.1X4.65",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.1067,
-      "height": 4.6567,
+      "width": 4.1,
+      "height": 4.65,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.36,
-      "height": 4.91,
+      "width": 5.1,
+      "height": 5.65,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962.jpg",
-    "assetSha256": "30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0eca993e7442b3cc26df1e61c72dd4c63b43dda9b8478c38fd944001bf102d78.jpg",
+    "assetSha256": "0eca993e7442b3cc26df1e61c72dd4c63b43dda9b8478c38fd944001bf102d78",
     "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
     "layoutApproved": true,
     "preview": {
@@ -62696,8 +63901,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.1,
+      "height": 4.65,
+      "unit": "in"
+    }
   },
   "print-book-art-a627c7b7d19ace6b3e51-small-frame-black": {
     "id": "print-book-art-a627c7b7d19ace6b3e51-small-frame-black",
@@ -62930,23 +64140,23 @@ export default {
     "artworkTitle": "Sergey",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S8.89X9.85",
+    "sku": "5M144M9S8.63X9.59",
     "scale": 1,
     "imageSize": {
-      "width": 8.6367,
-      "height": 9.5967,
+      "width": 8.63,
+      "height": 9.59,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.89,
-      "height": 9.85,
+      "width": 9.63,
+      "height": 10.59,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee.jpg",
-    "assetSha256": "7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5fa931dca6fc8e19d210e5e5bd4be09f59a0112156ee4e7a22050f1db9cebce7.jpg",
+    "assetSha256": "5fa931dca6fc8e19d210e5e5bd4be09f59a0112156ee4e7a22050f1db9cebce7",
     "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
     "layoutApproved": true,
     "preview": {
@@ -62956,8 +64166,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.63,
+      "height": 9.59,
+      "unit": "in"
+    }
   },
   "print-book-art-44161b6b117af79e3df4-full-frame-black": {
     "id": "print-book-art-44161b6b117af79e3df4-full-frame-black",
@@ -63190,23 +64405,23 @@ export default {
     "artworkTitle": "Sergey",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.73X7.45",
+    "sku": "5M144M9S6.47X7.19",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.4767,
-      "height": 7.1967,
+      "width": 6.47,
+      "height": 7.19,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.73,
-      "height": 7.45,
+      "width": 7.47,
+      "height": 8.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135.jpg",
-    "assetSha256": "8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7c0b3d0e1898eb7e4e8a983aa746ca8c3566c574531eb4e4896382d254fcd4c9.jpg",
+    "assetSha256": "7c0b3d0e1898eb7e4e8a983aa746ca8c3566c574531eb4e4896382d254fcd4c9",
     "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
     "layoutApproved": true,
     "preview": {
@@ -63216,8 +64431,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.47,
+      "height": 7.19,
+      "unit": "in"
+    }
   },
   "print-book-art-44161b6b117af79e3df4-medium-frame-black": {
     "id": "print-book-art-44161b6b117af79e3df4-medium-frame-black",
@@ -63450,23 +64670,23 @@ export default {
     "artworkTitle": "Sergey",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.57X5.05",
+    "sku": "5M144M9S4.31X4.79",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.3167,
-      "height": 4.7967,
+      "width": 4.31,
+      "height": 4.79,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.57,
-      "height": 5.05,
+      "width": 5.31,
+      "height": 5.79,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d.jpg",
-    "assetSha256": "86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/77f5d066b1014f895372a1dffd5a99ffd58c35b7d5933fe98ef98ad3be24a537.jpg",
+    "assetSha256": "77f5d066b1014f895372a1dffd5a99ffd58c35b7d5933fe98ef98ad3be24a537",
     "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
     "layoutApproved": true,
     "preview": {
@@ -63476,8 +64696,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.31,
+      "height": 4.79,
+      "unit": "in"
+    }
   },
   "print-book-art-44161b6b117af79e3df4-small-frame-black": {
     "id": "print-book-art-44161b6b117af79e3df4-small-frame-black",
@@ -63710,23 +64935,23 @@ export default {
     "artworkTitle": "Mikyla, Mandy, and Guin",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S8.2X14.58",
+    "sku": "5M144M9S7.94X14.32",
     "scale": 1,
     "imageSize": {
-      "width": 7.9467,
-      "height": 14.3233,
+      "width": 7.94,
+      "height": 14.32,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.2,
-      "height": 14.58,
+      "width": 8.94,
+      "height": 15.32,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d.jpg",
-    "assetSha256": "9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/97e657bc2f9d1936e9e963eaa477dab82bc7e012ed7bb5ea64dfe3e4e30d1df8.jpg",
+    "assetSha256": "97e657bc2f9d1936e9e963eaa477dab82bc7e012ed7bb5ea64dfe3e4e30d1df8",
     "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
     "layoutApproved": true,
     "preview": {
@@ -63736,8 +64961,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.94,
+      "height": 14.32,
+      "unit": "in"
+    }
   },
   "print-book-art-029f45a5fbfd6c90212e-full-frame-black": {
     "id": "print-book-art-029f45a5fbfd6c90212e-full-frame-black",
@@ -63970,23 +65200,23 @@ export default {
     "artworkTitle": "Mikyla, Mandy, and Guin",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S6.21X10.99",
+    "sku": "5M144M9S5.95X10.73",
     "scale": 0.75,
     "imageSize": {
-      "width": 5.9567,
-      "height": 10.7367,
+      "width": 5.95,
+      "height": 10.73,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.21,
-      "height": 10.99,
+      "width": 6.95,
+      "height": 11.73,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1.jpg",
-    "assetSha256": "d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fae64cd2654cca08d8aa5465c56d959a8b1638763deb9e086a3c6db11e26693e.jpg",
+    "assetSha256": "fae64cd2654cca08d8aa5465c56d959a8b1638763deb9e086a3c6db11e26693e",
     "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
     "layoutApproved": true,
     "preview": {
@@ -63996,8 +65226,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.95,
+      "height": 10.73,
+      "unit": "in"
+    }
   },
   "print-book-art-029f45a5fbfd6c90212e-medium-frame-black": {
     "id": "print-book-art-029f45a5fbfd6c90212e-medium-frame-black",
@@ -64230,23 +65465,23 @@ export default {
     "artworkTitle": "Mikyla, Mandy, and Guin",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.22X7.41",
+    "sku": "5M144M9S4X7.19",
     "scale": 0.5,
     "imageSize": {
-      "width": 3.9667,
+      "width": 3.96,
       "height": 7.15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.22,
-      "height": 7.41,
+      "width": 5,
+      "height": 8.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb.jpg",
-    "assetSha256": "f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a7858cc074d10b3cc0d6d1e85f44b80209b11f7193742af4dd9188b5f26a377b.jpg",
+    "assetSha256": "a7858cc074d10b3cc0d6d1e85f44b80209b11f7193742af4dd9188b5f26a377b",
     "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
     "layoutApproved": true,
     "preview": {
@@ -64256,8 +65491,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4,
+      "height": 7.19,
+      "unit": "in"
+    }
   },
   "print-book-art-029f45a5fbfd6c90212e-small-frame-black": {
     "id": "print-book-art-029f45a5fbfd6c90212e-small-frame-black",
@@ -64490,23 +65730,23 @@ export default {
     "artworkTitle": "Julia's baby shower",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S7.6X9.3",
+    "sku": "5M144M9S7.34X9.04",
     "scale": 1,
     "imageSize": {
-      "width": 7.3467,
-      "height": 9.0467,
+      "width": 7.34,
+      "height": 9.04,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.6,
-      "height": 9.3,
+      "width": 8.34,
+      "height": 10.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa.jpg",
-    "assetSha256": "1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5c2d09462e3e17da0d5c5bd7833da71298d837d0b9eb97b00e3cb95ec1c5f2ca.jpg",
+    "assetSha256": "5c2d09462e3e17da0d5c5bd7833da71298d837d0b9eb97b00e3cb95ec1c5f2ca",
     "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
     "layoutApproved": true,
     "preview": {
@@ -64516,8 +65756,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.34,
+      "height": 9.04,
+      "unit": "in"
+    }
   },
   "print-book-art-28bec44600b36ed0766f-full-frame-black": {
     "id": "print-book-art-28bec44600b36ed0766f-full-frame-black",
@@ -64750,23 +65995,23 @@ export default {
     "artworkTitle": "Julia's baby shower",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.76X7.04",
+    "sku": "5M144M9S5.5X6.78",
     "scale": 0.75,
     "imageSize": {
-      "width": 5.5067,
-      "height": 6.7833,
+      "width": 5.5,
+      "height": 6.78,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.76,
-      "height": 7.04,
+      "width": 6.5,
+      "height": 7.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f.jpg",
-    "assetSha256": "5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/08c49a086ade6053b7b5188d4f0c01c5271b0895e679dac4214456c41dbfe45e.jpg",
+    "assetSha256": "08c49a086ade6053b7b5188d4f0c01c5271b0895e679dac4214456c41dbfe45e",
     "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
     "layoutApproved": true,
     "preview": {
@@ -64776,8 +66021,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.5,
+      "height": 6.78,
+      "unit": "in"
+    }
   },
   "print-book-art-28bec44600b36ed0766f-medium-frame-black": {
     "id": "print-book-art-28bec44600b36ed0766f-medium-frame-black",
@@ -65010,23 +66260,23 @@ export default {
     "artworkTitle": "Jane and Sid in Zihuatanejo",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S12.8X9.12",
+    "sku": "5M144M9S12.54X8.86",
     "scale": 1,
     "imageSize": {
       "width": 12.54,
-      "height": 8.8667,
+      "height": 8.86,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.8,
-      "height": 9.12,
+      "width": 13.54,
+      "height": 9.86,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d.jpg",
-    "assetSha256": "64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d28472581c55bb54aad036cce23caaf3ef0db91021bd84d79ffac1c1d61439c9.jpg",
+    "assetSha256": "d28472581c55bb54aad036cce23caaf3ef0db91021bd84d79ffac1c1d61439c9",
     "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
     "layoutApproved": true,
     "preview": {
@@ -65036,8 +66286,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.54,
+      "height": 8.86,
+      "unit": "in"
+    }
   },
   "print-book-art-14d2876a55c720cbc908-full-frame-black": {
     "id": "print-book-art-14d2876a55c720cbc908-full-frame-black",
@@ -65270,23 +66525,23 @@ export default {
     "artworkTitle": "Jane and Sid in Zihuatanejo",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S9.66X6.9",
+    "sku": "5M144M9S9.4X6.64",
     "scale": 0.75,
     "imageSize": {
       "width": 9.4,
-      "height": 6.6467,
+      "height": 6.64,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.66,
-      "height": 6.9,
+      "width": 10.4,
+      "height": 7.64,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23.jpg",
-    "assetSha256": "eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0666066a48643f21466a7e685d45ad4530819e7c6600691e831c5cda7e1fa177.jpg",
+    "assetSha256": "0666066a48643f21466a7e685d45ad4530819e7c6600691e831c5cda7e1fa177",
     "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
     "layoutApproved": true,
     "preview": {
@@ -65296,8 +66551,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.4,
+      "height": 6.64,
+      "unit": "in"
+    }
   },
   "print-book-art-14d2876a55c720cbc908-medium-frame-black": {
     "id": "print-book-art-14d2876a55c720cbc908-medium-frame-black",
@@ -65530,23 +66790,23 @@ export default {
     "artworkTitle": "Jane and Sid in Zihuatanejo",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.52X4.68",
+    "sku": "5M144M9S6.26X4.42",
     "scale": 0.5,
     "imageSize": {
       "width": 6.26,
-      "height": 4.4267,
+      "height": 4.42,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.52,
-      "height": 4.68,
+      "width": 7.26,
+      "height": 5.42,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35.jpg",
-    "assetSha256": "7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d1c33470884601ca30d649096e498ab3f61c8685dceac8a246977b4080bc6f3d.jpg",
+    "assetSha256": "d1c33470884601ca30d649096e498ab3f61c8685dceac8a246977b4080bc6f3d",
     "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
     "layoutApproved": true,
     "preview": {
@@ -65556,8 +66816,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.26,
+      "height": 4.42,
+      "unit": "in"
+    }
   },
   "print-book-art-14d2876a55c720cbc908-small-frame-black": {
     "id": "print-book-art-14d2876a55c720cbc908-small-frame-black",
@@ -65790,23 +67055,23 @@ export default {
     "artworkTitle": "Mike and Julie in Leon",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.04X6.18",
+    "sku": "5M144M9S10.77X5.92",
     "scale": 1,
     "imageSize": {
-      "width": 10.7733,
-      "height": 5.9267,
+      "width": 10.77,
+      "height": 5.92,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.04,
-      "height": 6.18,
+      "width": 11.77,
+      "height": 6.92,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb.jpg",
-    "assetSha256": "ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb",
+    "assetUrl": "https://vermillionaurora.com/print-editions/18a5e03706aa3ee031a46bda2b803375c978b8844d3cc41462fccc3c0c996171.jpg",
+    "assetSha256": "18a5e03706aa3ee031a46bda2b803375c978b8844d3cc41462fccc3c0c996171",
     "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
     "layoutApproved": true,
     "preview": {
@@ -65816,8 +67081,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.77,
+      "height": 5.92,
+      "unit": "in"
+    }
   },
   "print-book-art-c347459aa3f77f7213ae-full-frame-black": {
     "id": "print-book-art-c347459aa3f77f7213ae-full-frame-black",
@@ -66048,25 +67318,25 @@ export default {
     "productId": "book-art-c347459aa3f77f7213ae",
     "title": "Mike and Julie in Leon — Medium print",
     "artworkTitle": "Mike and Julie in Leon",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.34X4.7",
+    "sku": "5M144M9S8.08X4.44",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.0833,
-      "height": 4.4467,
+      "width": 8.08,
+      "height": 4.44,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.34,
-      "height": 4.7,
+      "width": 9.08,
+      "height": 5.44,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c.jpg",
-    "assetSha256": "1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/772c4edd8aff28992e5b90bea3f53d3df830bb7ae20c074df1a53f71beec61bb.jpg",
+    "assetSha256": "772c4edd8aff28992e5b90bea3f53d3df830bb7ae20c074df1a53f71beec61bb",
     "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
     "layoutApproved": true,
     "preview": {
@@ -66076,8 +67346,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.08,
+      "height": 4.44,
+      "unit": "in"
+    }
   },
   "print-book-art-c347459aa3f77f7213ae-medium-frame-black": {
     "id": "print-book-art-c347459aa3f77f7213ae-medium-frame-black",
@@ -66310,23 +67585,23 @@ export default {
     "artworkTitle": "Jasmine in Austin",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.84X5.24",
+    "sku": "5M144M9S4.58X4.98",
     "scale": 1,
     "imageSize": {
-      "width": 4.5867,
-      "height": 4.9833,
+      "width": 4.58,
+      "height": 4.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.84,
-      "height": 5.24,
+      "width": 5.58,
+      "height": 5.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0.jpg",
-    "assetSha256": "335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2d13f97728cabac048c949e44f204a79988ed77945f536361e96d2f65b8dcb3e.jpg",
+    "assetSha256": "2d13f97728cabac048c949e44f204a79988ed77945f536361e96d2f65b8dcb3e",
     "sourceSha256": "2ac7ebc0362dccb4541843ff4ee59ee8a340b977a81075bd80b59b18e2fd68c0",
     "layoutApproved": true,
     "preview": {
@@ -66336,8 +67611,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.58,
+      "height": 4.98,
+      "unit": "in"
+    }
   },
   "print-book-art-616ff8378f27047b4a91-full-frame-black": {
     "id": "print-book-art-616ff8378f27047b4a91-full-frame-black",
@@ -66570,23 +67850,23 @@ export default {
     "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.16X5.86",
+    "sku": "5M144M9S7.9X5.6",
     "scale": 1,
     "imageSize": {
-      "width": 7.9067,
-      "height": 5.6067,
+      "width": 7.9,
+      "height": 5.6,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.16,
-      "height": 5.86,
+      "width": 8.9,
+      "height": 6.6,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114.jpg",
-    "assetSha256": "f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114",
+    "assetUrl": "https://vermillionaurora.com/print-editions/57667af19fe4a1b4ef36a93281c08e2acd28dda48036127d7f0529bd72d007a8.jpg",
+    "assetSha256": "57667af19fe4a1b4ef36a93281c08e2acd28dda48036127d7f0529bd72d007a8",
     "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
     "layoutApproved": true,
     "preview": {
@@ -66596,8 +67876,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.9,
+      "height": 5.6,
+      "unit": "in"
+    }
   },
   "print-book-art-8d1545e1ac13c99eb4ce-full-frame-black": {
     "id": "print-book-art-8d1545e1ac13c99eb4ce-full-frame-black",
@@ -66830,23 +68115,23 @@ export default {
     "artworkTitle": "Aunt Fran and Cousin Hillary",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.18X4.46",
+    "sku": "5M144M9S5.92X4.2",
     "scale": 0.75,
     "imageSize": {
-      "width": 5.9267,
-      "height": 4.2033,
+      "width": 5.92,
+      "height": 4.2,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.18,
-      "height": 4.46,
+      "width": 6.92,
+      "height": 5.2,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6.jpg",
-    "assetSha256": "7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a47e7f483f08979e9c8cf0027fb7908950a16edb049e18294214893d1dd171fe.jpg",
+    "assetSha256": "a47e7f483f08979e9c8cf0027fb7908950a16edb049e18294214893d1dd171fe",
     "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
     "layoutApproved": true,
     "preview": {
@@ -66856,8 +68141,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.92,
+      "height": 4.2,
+      "unit": "in"
+    }
   },
   "print-book-art-8d1545e1ac13c99eb4ce-medium-frame-black": {
     "id": "print-book-art-8d1545e1ac13c99eb4ce-medium-frame-black",
@@ -67090,23 +68380,23 @@ export default {
     "artworkTitle": "Sister Claire",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.36X7.83",
+    "sku": "5M144M9S5.1X7.57",
     "scale": 1,
     "imageSize": {
-      "width": 5.1067,
+      "width": 5.1,
       "height": 7.57,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.36,
-      "height": 7.83,
+      "width": 6.1,
+      "height": 8.57,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9.jpg",
-    "assetSha256": "623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fc1f38c63542c7df3c829e909d1000435aa8902e1ff9a8396df593a93bb43755.jpg",
+    "assetSha256": "fc1f38c63542c7df3c829e909d1000435aa8902e1ff9a8396df593a93bb43755",
     "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
     "layoutApproved": true,
     "preview": {
@@ -67116,8 +68406,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.1,
+      "height": 7.57,
+      "unit": "in"
+    }
   },
   "print-book-art-466dc684227286c40502-full-frame-black": {
     "id": "print-book-art-466dc684227286c40502-full-frame-black",
@@ -67350,23 +68645,23 @@ export default {
     "artworkTitle": "Sister Claire",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.08X5.93",
+    "sku": "5M144M9S4X5.85",
     "scale": 0.75,
     "imageSize": {
-      "width": 3.8267,
+      "width": 3.82,
       "height": 5.67,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.08,
-      "height": 5.93,
+      "width": 5,
+      "height": 6.85,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b.jpg",
-    "assetSha256": "dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/cb3668dbecd25786737e4d96111ee1a15b9d928373047afbb0f8267e3918f65f.jpg",
+    "assetSha256": "cb3668dbecd25786737e4d96111ee1a15b9d928373047afbb0f8267e3918f65f",
     "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
     "layoutApproved": true,
     "preview": {
@@ -67376,8 +68671,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4,
+      "height": 5.85,
+      "unit": "in"
+    }
   },
   "print-book-art-466dc684227286c40502-medium-frame-black": {
     "id": "print-book-art-466dc684227286c40502-medium-frame-black",
@@ -67610,23 +68910,23 @@ export default {
     "artworkTitle": "Father Paul",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S10.08X14.24",
+    "sku": "5M144M9S9.82X13.98",
     "scale": 1,
     "imageSize": {
-      "width": 9.8267,
-      "height": 13.9867,
+      "width": 9.82,
+      "height": 13.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.08,
-      "height": 14.24,
+      "width": 10.82,
+      "height": 14.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73.jpg",
-    "assetSha256": "4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73",
+    "assetUrl": "https://vermillionaurora.com/print-editions/989c0a86c3724617fdcc5e8c00218d40566ebbf781b2e3f205d6461499285e22.jpg",
+    "assetSha256": "989c0a86c3724617fdcc5e8c00218d40566ebbf781b2e3f205d6461499285e22",
     "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
     "layoutApproved": true,
     "preview": {
@@ -67636,8 +68936,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.82,
+      "height": 13.98,
+      "unit": "in"
+    }
   },
   "print-book-art-82127d1886ae57d5cb6e-full-frame-black": {
     "id": "print-book-art-82127d1886ae57d5cb6e-full-frame-black",
@@ -67870,23 +69175,23 @@ export default {
     "artworkTitle": "Father Paul",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S7.62X10.74",
+    "sku": "5M144M9S7.36X10.48",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.3667,
-      "height": 10.4833,
+      "width": 7.36,
+      "height": 10.48,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.62,
-      "height": 10.74,
+      "width": 8.36,
+      "height": 11.48,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb.jpg",
-    "assetSha256": "a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0455b1da608286605756ed3b215a1948a7abb836a926415f117e807099d87470.jpg",
+    "assetSha256": "0455b1da608286605756ed3b215a1948a7abb836a926415f117e807099d87470",
     "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
     "layoutApproved": true,
     "preview": {
@@ -67896,8 +69201,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.36,
+      "height": 10.48,
+      "unit": "in"
+    }
   },
   "print-book-art-82127d1886ae57d5cb6e-medium-frame-black": {
     "id": "print-book-art-82127d1886ae57d5cb6e-medium-frame-black",
@@ -68130,23 +69440,23 @@ export default {
     "artworkTitle": "Father Paul",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.16X7.24",
+    "sku": "5M144M9S4.9X6.98",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.9067,
-      "height": 6.9833,
+      "width": 4.9,
+      "height": 6.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.16,
-      "height": 7.24,
+      "width": 5.9,
+      "height": 7.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1.jpg",
-    "assetSha256": "4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e7f06e31cf07281aa4272caa2972502e917e70158655eaf481d2daeac7f4a873.jpg",
+    "assetSha256": "e7f06e31cf07281aa4272caa2972502e917e70158655eaf481d2daeac7f4a873",
     "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
     "layoutApproved": true,
     "preview": {
@@ -68156,8 +69466,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.9,
+      "height": 6.98,
+      "unit": "in"
+    }
   },
   "print-book-art-82127d1886ae57d5cb6e-small-frame-black": {
     "id": "print-book-art-82127d1886ae57d5cb6e-small-frame-black",
@@ -68390,23 +69705,23 @@ export default {
     "artworkTitle": "Maya Parbhoe @MayaPar25",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.77X5.18",
+    "sku": "5M144M9S4.51X4.92",
     "scale": 1,
     "imageSize": {
-      "width": 4.5167,
-      "height": 4.9267,
+      "width": 4.51,
+      "height": 4.92,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.77,
-      "height": 5.18,
+      "width": 5.51,
+      "height": 5.92,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047.jpg",
-    "assetSha256": "2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047",
+    "assetUrl": "https://vermillionaurora.com/print-editions/aad37ad1dcd7d423f421da047b352287a8f77d8e73505d096ec48cbad1b7a4c2.jpg",
+    "assetSha256": "aad37ad1dcd7d423f421da047b352287a8f77d8e73505d096ec48cbad1b7a4c2",
     "sourceSha256": "5f4a86b09b49d0134e2dac402eb65b5372711c23b0bb0c7a07a9862eab9e7163",
     "layoutApproved": true,
     "preview": {
@@ -68416,8 +69731,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.51,
+      "height": 4.92,
+      "unit": "in"
+    }
   },
   "print-book-art-c04c7e48687fe35e65f5-full-frame-black": {
     "id": "print-book-art-c04c7e48687fe35e65f5-full-frame-black",
@@ -68650,23 +69970,23 @@ export default {
     "artworkTitle": "Tomer Strolight @TomerStrolight",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.83X5.51",
+    "sku": "5M144M9S4.57X5.25",
     "scale": 1,
     "imageSize": {
-      "width": 4.5767,
+      "width": 4.57,
       "height": 5.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.83,
-      "height": 5.51,
+      "width": 5.57,
+      "height": 6.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82.jpg",
-    "assetSha256": "3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82",
+    "assetUrl": "https://vermillionaurora.com/print-editions/82f0167ec26951ed925a342b1bf2dc07b52436af546a910b605daadcc3ccd601.jpg",
+    "assetSha256": "82f0167ec26951ed925a342b1bf2dc07b52436af546a910b605daadcc3ccd601",
     "sourceSha256": "1904273e6e15dd884990184a7a6c577df6d6621be04a839e4f32223d6c3cbddc",
     "layoutApproved": true,
     "preview": {
@@ -68676,8 +69996,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.57,
+      "height": 5.25,
+      "unit": "in"
+    }
   },
   "print-book-art-ec22daff29e72f16eb76-full-frame-black": {
     "id": "print-book-art-ec22daff29e72f16eb76-full-frame-black",
@@ -68910,23 +70235,23 @@ export default {
     "artworkTitle": "Osisipho Filane @FilaneSisipho",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5X7.07",
+    "sku": "5M144M9S4.74X6.81",
     "scale": 1,
     "imageSize": {
-      "width": 4.7467,
-      "height": 6.8167,
+      "width": 4.74,
+      "height": 6.81,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5,
-      "height": 7.07,
+      "width": 5.74,
+      "height": 7.81,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c.jpg",
-    "assetSha256": "4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d1edb240a4e1e3de2d34f980f74463ae2032bd9d55737cb41fc05bb4954d40b4.jpg",
+    "assetSha256": "d1edb240a4e1e3de2d34f980f74463ae2032bd9d55737cb41fc05bb4954d40b4",
     "sourceSha256": "738cecea10878b15dfc3c165445da7359d3603c137d579322a64193be34628bc",
     "layoutApproved": true,
     "preview": {
@@ -68936,8 +70261,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.74,
+      "height": 6.81,
+      "unit": "in"
+    }
   },
   "print-book-art-504e3fafdacd7c9bbcd0-full-frame-black": {
     "id": "print-book-art-504e3fafdacd7c9bbcd0-full-frame-black",
@@ -69170,23 +70500,23 @@ export default {
     "artworkTitle": "Scarlette Melon @Scarlette_melon",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.05X7.07",
+    "sku": "5M144M9S4.79X6.81",
     "scale": 1,
     "imageSize": {
-      "width": 4.7933,
-      "height": 6.8167,
+      "width": 4.79,
+      "height": 6.81,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.05,
-      "height": 7.07,
+      "width": 5.79,
+      "height": 7.81,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99.jpg",
-    "assetSha256": "6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b32c0992389eb84c6faf6dc2bc3ff69b5a8e1232b89791624ebc8a2f5f50c860.jpg",
+    "assetSha256": "b32c0992389eb84c6faf6dc2bc3ff69b5a8e1232b89791624ebc8a2f5f50c860",
     "sourceSha256": "76d1b80563112ed04fff1f301964c36fe19cfbb0934e8bc763b1ea1d39f1ffce",
     "layoutApproved": true,
     "preview": {
@@ -69196,8 +70526,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.79,
+      "height": 6.81,
+      "unit": "in"
+    }
   },
   "print-book-art-4a0bb9cdd6c404c4e77c-full-frame-black": {
     "id": "print-book-art-4a0bb9cdd6c404c4e77c-full-frame-black",
@@ -69430,23 +70765,23 @@ export default {
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S10.31X11.31",
+    "sku": "5M144M9S10.05X11.05",
     "scale": 1,
     "imageSize": {
-      "width": 10.0567,
-      "height": 11.0533,
+      "width": 10.05,
+      "height": 11.05,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.31,
-      "height": 11.31,
+      "width": 11.05,
+      "height": 12.05,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb.jpg",
-    "assetSha256": "0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb",
+    "assetUrl": "https://vermillionaurora.com/print-editions/acccb7877eda15c4b2b7bd2fd915eae39fa36a15ee0fc7d870477179d49deb67.jpg",
+    "assetSha256": "acccb7877eda15c4b2b7bd2fd915eae39fa36a15ee0fc7d870477179d49deb67",
     "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
     "layoutApproved": true,
     "preview": {
@@ -69456,8 +70791,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.05,
+      "height": 11.05,
+      "unit": "in"
+    }
   },
   "print-book-art-0ee2717bc04e65d0507e-full-frame-black": {
     "id": "print-book-art-0ee2717bc04e65d0507e-full-frame-black",
@@ -69688,25 +71028,25 @@ export default {
     "productId": "book-art-0ee2717bc04e65d0507e",
     "title": "Kushboo Kullar @DrKhushboo_K — Medium print",
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.79X8.54",
+    "sku": "5M144M9S7.53X8.28",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.5367,
-      "height": 8.2833,
+      "width": 7.53,
+      "height": 8.28,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.79,
-      "height": 8.54,
+      "width": 8.53,
+      "height": 9.28,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99.jpg",
-    "assetSha256": "18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99",
+    "assetUrl": "https://vermillionaurora.com/print-editions/440c8651c8104c6e3d019626218dcc1a463408bb2bdadbbd60fff87e3fa599e4.jpg",
+    "assetSha256": "440c8651c8104c6e3d019626218dcc1a463408bb2bdadbbd60fff87e3fa599e4",
     "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
     "layoutApproved": true,
     "preview": {
@@ -69716,8 +71056,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.53,
+      "height": 8.28,
+      "unit": "in"
+    }
   },
   "print-book-art-0ee2717bc04e65d0507e-medium-frame-black": {
     "id": "print-book-art-0ee2717bc04e65d0507e-medium-frame-black",
@@ -69950,23 +71295,23 @@ export default {
     "artworkTitle": "Kushboo Kullar @DrKhushboo_K",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.28X5.78",
+    "sku": "5M144M9S5.02X5.52",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.0267,
-      "height": 5.5233,
+      "width": 5.02,
+      "height": 5.52,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.28,
-      "height": 5.78,
+      "width": 6.02,
+      "height": 6.52,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa.jpg",
-    "assetSha256": "3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e15391438e2b8914c48c055b6a3317e055816ec06964e102d7971f9386197caf.jpg",
+    "assetSha256": "e15391438e2b8914c48c055b6a3317e055816ec06964e102d7971f9386197caf",
     "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
     "layoutApproved": true,
     "preview": {
@@ -69976,8 +71321,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.02,
+      "height": 5.52,
+      "unit": "in"
+    }
   },
   "print-book-art-0ee2717bc04e65d0507e-small-frame-black": {
     "id": "print-book-art-0ee2717bc04e65d0507e-small-frame-black",
@@ -70210,23 +71560,23 @@ export default {
     "artworkTitle": "Untitled — Bitcoiners, page 64",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.3X6.9",
+    "sku": "5M144M9S6.04X6.64",
     "scale": 1,
     "imageSize": {
-      "width": 6.0467,
-      "height": 6.6467,
+      "width": 6.04,
+      "height": 6.64,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.3,
-      "height": 6.9,
+      "width": 7.04,
+      "height": 7.64,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4.jpg",
-    "assetSha256": "3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/86e057cdf3367f2775611843cf98dbd4973b1ce0b8fd2d6eb7faac33620a8fca.jpg",
+    "assetSha256": "86e057cdf3367f2775611843cf98dbd4973b1ce0b8fd2d6eb7faac33620a8fca",
     "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
     "layoutApproved": true,
     "preview": {
@@ -70236,8 +71586,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.04,
+      "height": 6.64,
+      "unit": "in"
+    }
   },
   "print-book-art-deb92de6e72f7b3ce951-full-frame-black": {
     "id": "print-book-art-deb92de6e72f7b3ce951-full-frame-black",
@@ -70470,23 +71825,23 @@ export default {
     "artworkTitle": "Untitled — Bitcoiners, page 64",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.79X5.24",
+    "sku": "5M144M9S4.53X4.98",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.5367,
-      "height": 4.9867,
+      "width": 4.53,
+      "height": 4.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.79,
-      "height": 5.24,
+      "width": 5.53,
+      "height": 5.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5.jpg",
-    "assetSha256": "cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/acec6735aa3e7045068e478e344221aa03b860b26df388840a21d8b454590c76.jpg",
+    "assetSha256": "acec6735aa3e7045068e478e344221aa03b860b26df388840a21d8b454590c76",
     "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
     "layoutApproved": true,
     "preview": {
@@ -70496,8 +71851,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.53,
+      "height": 4.98,
+      "unit": "in"
+    }
   },
   "print-book-art-deb92de6e72f7b3ce951-medium-frame-black": {
     "id": "print-book-art-deb92de6e72f7b3ce951-medium-frame-black",
@@ -70730,23 +72090,23 @@ export default {
     "artworkTitle": "Myself",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.49X7.08",
+    "sku": "5M144M9S4.23X6.82",
     "scale": 1,
     "imageSize": {
-      "width": 4.2367,
+      "width": 4.23,
       "height": 6.82,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.49,
-      "height": 7.08,
+      "width": 5.23,
+      "height": 7.82,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72.jpg",
-    "assetSha256": "8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72",
+    "assetUrl": "https://vermillionaurora.com/print-editions/116f0cc122c8ffd7a0508fec87928e0923c75b6f083fb17e1e38ee1b989ac0ac.jpg",
+    "assetSha256": "116f0cc122c8ffd7a0508fec87928e0923c75b6f083fb17e1e38ee1b989ac0ac",
     "sourceSha256": "a87a784a8e3dcd764542faafaf1898e5397a7fb90a2f441c8eb728e36f3bf93a",
     "layoutApproved": true,
     "preview": {
@@ -70756,8 +72116,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.23,
+      "height": 6.82,
+      "unit": "in"
+    }
   },
   "print-book-art-0f696788184bbba1d236-full-frame-black": {
     "id": "print-book-art-0f696788184bbba1d236-full-frame-black",
@@ -70990,23 +72355,23 @@ export default {
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S7.85X10.35",
+    "sku": "5M144M9S7.59X10.09",
     "scale": 1,
     "imageSize": {
-      "width": 7.5933,
-      "height": 10.0967,
+      "width": 7.59,
+      "height": 10.09,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.85,
-      "height": 10.35,
+      "width": 8.59,
+      "height": 11.09,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09.jpg",
-    "assetSha256": "2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4bdc38f194a53e0b4508dce177c0f6fcf4933ba15b9d601fe9d2cee8de5761fb.jpg",
+    "assetSha256": "4bdc38f194a53e0b4508dce177c0f6fcf4933ba15b9d601fe9d2cee8de5761fb",
     "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
     "layoutApproved": true,
     "preview": {
@@ -71016,8 +72381,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.59,
+      "height": 10.09,
+      "unit": "in"
+    }
   },
   "print-book-art-50a7984f819bec72d1c7-full-frame-black": {
     "id": "print-book-art-50a7984f819bec72d1c7-full-frame-black",
@@ -71250,23 +72620,23 @@ export default {
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.95X7.82",
+    "sku": "5M144M9S5.69X7.56",
     "scale": 0.75,
     "imageSize": {
-      "width": 5.6933,
-      "height": 7.5667,
+      "width": 5.69,
+      "height": 7.56,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.95,
-      "height": 7.82,
+      "width": 6.69,
+      "height": 8.56,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a.jpg",
-    "assetSha256": "402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d128626372bd360799b527b5d40e98ffce5937438053c4d961eca987dc17938a.jpg",
+    "assetSha256": "d128626372bd360799b527b5d40e98ffce5937438053c4d961eca987dc17938a",
     "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
     "layoutApproved": true,
     "preview": {
@@ -71276,8 +72646,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.69,
+      "height": 7.56,
+      "unit": "in"
+    }
   },
   "print-book-art-50a7984f819bec72d1c7-medium-frame-black": {
     "id": "print-book-art-50a7984f819bec72d1c7-medium-frame-black",
@@ -71510,23 +72885,23 @@ export default {
     "artworkTitle": "Myself Painting on Mt Baker near Goat Lake",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.05X5.3",
+    "sku": "5M144M9S4.01X5.26",
     "scale": 0.5,
     "imageSize": {
-      "width": 3.7967,
-      "height": 5.0467,
+      "width": 3.79,
+      "height": 5.04,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.05,
-      "height": 5.3,
+      "width": 5.01,
+      "height": 6.26,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2.jpg",
-    "assetSha256": "411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/cde05da6d322f9d8a51e68969c5f810a3659f5bb6920692e9a811733f67cc65d.jpg",
+    "assetSha256": "cde05da6d322f9d8a51e68969c5f810a3659f5bb6920692e9a811733f67cc65d",
     "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
     "layoutApproved": true,
     "preview": {
@@ -71536,8 +72911,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.01,
+      "height": 5.26,
+      "unit": "in"
+    }
   },
   "print-book-art-50a7984f819bec72d1c7-small-frame-black": {
     "id": "print-book-art-50a7984f819bec72d1c7-small-frame-black",
@@ -71770,23 +73150,23 @@ export default {
     "artworkTitle": "Painting in Black Rock City",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.31X7.28",
+    "sku": "5M144M9S8.05X7.02",
     "scale": 1,
     "imageSize": {
       "width": 8.05,
-      "height": 7.0267,
+      "height": 7.02,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.31,
-      "height": 7.28,
+      "width": 9.05,
+      "height": 8.02,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49.jpg",
-    "assetSha256": "2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c2b68ba3adbdb3de21cd678abe50e06ac08e6ba1e9735a579bcc61f5edbc0ec4.jpg",
+    "assetSha256": "c2b68ba3adbdb3de21cd678abe50e06ac08e6ba1e9735a579bcc61f5edbc0ec4",
     "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
     "layoutApproved": true,
     "preview": {
@@ -71796,8 +73176,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.05,
+      "height": 7.02,
+      "unit": "in"
+    }
   },
   "print-book-art-4c6fb3817fed4e5a6195-full-frame-black": {
     "id": "print-book-art-4c6fb3817fed4e5a6195-full-frame-black",
@@ -72030,23 +73415,23 @@ export default {
     "artworkTitle": "Painting in Black Rock City",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.29X5.52",
+    "sku": "5M144M9S6.03X5.26",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.0333,
-      "height": 5.2667,
+      "width": 6.03,
+      "height": 5.26,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.29,
-      "height": 5.52,
+      "width": 7.03,
+      "height": 6.26,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://media.vermillionaurora.com/images/book-galleries/v1/prints/db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872.jpg",
-    "assetSha256": "db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872",
+    "assetUrl": "https://vermillionaurora.com/print-editions/77f9a9778406d0984f4a4440d1efcf03539cc0fba65abf4f05470450d58ba7f5.jpg",
+    "assetSha256": "77f9a9778406d0984f4a4440d1efcf03539cc0fba65abf4f05470450d58ba7f5",
     "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
     "layoutApproved": true,
     "preview": {
@@ -72056,8 +73441,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.03,
+      "height": 5.26,
+      "unit": "in"
+    }
   },
   "print-book-art-4c6fb3817fed4e5a6195-medium-frame-black": {
     "id": "print-book-art-4c6fb3817fed4e5a6195-medium-frame-black",
@@ -72288,25 +73678,25 @@ export default {
     "productId": "archived-painting-193",
     "title": "Painting #193 — Large print",
     "artworkTitle": "Painting #193",
-    "amount": "150.00",
+    "amount": "145.00",
     "currency": "USD",
-    "sku": "5M144M8S18.01X19.66",
+    "sku": "5M144M9S17.75X19.4",
     "scale": 1,
     "imageSize": {
-      "width": 17.7533,
-      "height": 19.4067,
+      "width": 17.75,
+      "height": 19.4,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.01,
-      "height": 19.66,
+      "width": 18.75,
+      "height": 20.4,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5e1066933b0bfb7edffed4de09e31ae6e02d46e3fd22d064d8159cdb3e15fb18.jpg",
-    "assetSha256": "5e1066933b0bfb7edffed4de09e31ae6e02d46e3fd22d064d8159cdb3e15fb18",
+    "assetUrl": "https://vermillionaurora.com/print-editions/38681a2b3d9b44dc1e288eb1752532906b1533fb51650474a68118f21293cde4.jpg",
+    "assetSha256": "38681a2b3d9b44dc1e288eb1752532906b1533fb51650474a68118f21293cde4",
     "sourceSha256": "b359eb147108c36e50c722a17f3d45a1ebd0f0cbaf58e8dfaaecc5bd1c6bd33d",
     "layoutApproved": true,
     "preview": {
@@ -72319,8 +73709,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 17.75,
+      "height": 19.4,
+      "unit": "in"
+    }
   },
   "print-archived-painting-193-full-frame-black": {
     "id": "print-archived-painting-193-full-frame-black",
@@ -72562,23 +73957,23 @@ export default {
     "artworkTitle": "Painting #193",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S13.57X14.81",
+    "sku": "5M144M9S13.31X14.55",
     "scale": 0.75,
     "imageSize": {
-      "width": 13.3167,
-      "height": 14.5567,
+      "width": 13.31,
+      "height": 14.55,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.57,
-      "height": 14.81,
+      "width": 14.31,
+      "height": 15.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/677d0ef83dfd982fed5e1d2e1cbd267d1a89cb98744a9d428f775a8c2d284ba8.jpg",
-    "assetSha256": "677d0ef83dfd982fed5e1d2e1cbd267d1a89cb98744a9d428f775a8c2d284ba8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f3cd9875fa79100ed54846ed51751ff4954fce5f0de7f1254f3b2816d9b273f6.jpg",
+    "assetSha256": "f3cd9875fa79100ed54846ed51751ff4954fce5f0de7f1254f3b2816d9b273f6",
     "sourceSha256": "b359eb147108c36e50c722a17f3d45a1ebd0f0cbaf58e8dfaaecc5bd1c6bd33d",
     "layoutApproved": true,
     "preview": {
@@ -72591,8 +73986,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.31,
+      "height": 14.55,
+      "unit": "in"
+    }
   },
   "print-archived-painting-193-medium-frame-black": {
     "id": "print-archived-painting-193-medium-frame-black",
@@ -72834,23 +74234,23 @@ export default {
     "artworkTitle": "Painting #193",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S9.13X9.95",
+    "sku": "5M144M9S8.87X9.69",
     "scale": 0.5,
     "imageSize": {
       "width": 8.87,
-      "height": 9.6967,
+      "height": 9.69,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.13,
-      "height": 9.95,
+      "width": 9.87,
+      "height": 10.69,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f21d87fef004a52dee4bf2533b03467824b369be620c300e319df917e6cdd4fb.jpg",
-    "assetSha256": "f21d87fef004a52dee4bf2533b03467824b369be620c300e319df917e6cdd4fb",
+    "assetUrl": "https://vermillionaurora.com/print-editions/72db1ef8d9cb900de587c3dec44a5e6003308f1f6acf3c78c6d96a1652bbed12.jpg",
+    "assetSha256": "72db1ef8d9cb900de587c3dec44a5e6003308f1f6acf3c78c6d96a1652bbed12",
     "sourceSha256": "b359eb147108c36e50c722a17f3d45a1ebd0f0cbaf58e8dfaaecc5bd1c6bd33d",
     "layoutApproved": true,
     "preview": {
@@ -72863,8 +74263,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.87,
+      "height": 9.69,
+      "unit": "in"
+    }
   },
   "print-archived-painting-193-small-frame-black": {
     "id": "print-archived-painting-193-small-frame-black",
@@ -73106,23 +74511,23 @@ export default {
     "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S13.83X18.16",
+    "sku": "5M144M9S13.57X17.9",
     "scale": 1,
     "imageSize": {
-      "width": 13.5767,
-      "height": 17.9033,
+      "width": 13.57,
+      "height": 17.9,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.83,
-      "height": 18.16,
+      "width": 14.57,
+      "height": 18.9,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6f6370c3ac2286a5add769b096e8bbfb154188554c59b1659112bf45b1146e37.jpg",
-    "assetSha256": "6f6370c3ac2286a5add769b096e8bbfb154188554c59b1659112bf45b1146e37",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f12fd2fa03ecb46d6a3c7db79f9fb9783c4684e2f29ba23f796603c30fcbc2d0.jpg",
+    "assetSha256": "f12fd2fa03ecb46d6a3c7db79f9fb9783c4684e2f29ba23f796603c30fcbc2d0",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -73135,8 +74540,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.57,
+      "height": 17.9,
+      "unit": "in"
+    }
   },
   "print-archived-painting-308-full-frame-black": {
     "id": "print-archived-painting-308-full-frame-black",
@@ -73378,23 +74788,23 @@ export default {
     "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S10.44X13.68",
+    "sku": "5M144M9S10.18X13.42",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1833,
-      "height": 13.4267,
+      "width": 10.18,
+      "height": 13.42,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.44,
-      "height": 13.68,
+      "width": 11.18,
+      "height": 14.42,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/965f44c68ba84a8fa79ee61068afe3193aa4ccfae8a07f05dba5eeefcbeeaed1.jpg",
-    "assetSha256": "965f44c68ba84a8fa79ee61068afe3193aa4ccfae8a07f05dba5eeefcbeeaed1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/78d08c259961583af50936a6f05ad62a761897c9023f11d3036281cb8fff57a4.jpg",
+    "assetSha256": "78d08c259961583af50936a6f05ad62a761897c9023f11d3036281cb8fff57a4",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -73407,8 +74817,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.18,
+      "height": 13.42,
+      "unit": "in"
+    }
   },
   "print-archived-painting-308-medium-frame-black": {
     "id": "print-archived-painting-308-medium-frame-black",
@@ -73650,23 +75065,23 @@ export default {
     "artworkTitle": "Self Portrait on Goat Lake",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S7.04X9.2",
+    "sku": "5M144M9S6.78X8.94",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7833,
-      "height": 8.9467,
+      "width": 6.78,
+      "height": 8.94,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.04,
-      "height": 9.2,
+      "width": 7.78,
+      "height": 9.94,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d51f97d5b4bb32c051098e54969807767555970190ed742b139b5a9a91d91d67.jpg",
-    "assetSha256": "d51f97d5b4bb32c051098e54969807767555970190ed742b139b5a9a91d91d67",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e864241944de60883b0790e9ee5f446d4989d71cc0f6732995cd0c232f1dcfa2.jpg",
+    "assetSha256": "e864241944de60883b0790e9ee5f446d4989d71cc0f6732995cd0c232f1dcfa2",
     "sourceSha256": "23cb306de1e7d1c1608c00cfb6ed7f612683d28af9cad0e20444ea53f4f23fe8",
     "layoutApproved": true,
     "preview": {
@@ -73679,8 +75094,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.78,
+      "height": 8.94,
+      "unit": "in"
+    }
   },
   "print-archived-painting-308-small-frame-black": {
     "id": "print-archived-painting-308-small-frame-black",
@@ -73922,23 +75342,23 @@ export default {
     "artworkTitle": "Cross on Maui",
     "amount": "165.00",
     "currency": "USD",
-    "sku": "5M144M8S23.02X17.3",
+    "sku": "5M144M9S22.76X17.04",
     "scale": 1,
     "imageSize": {
-      "width": 22.7667,
-      "height": 17.0467,
+      "width": 22.76,
+      "height": 17.04,
       "unit": "in"
     },
     "paperSize": {
-      "width": 23.02,
-      "height": 17.3,
+      "width": 23.76,
+      "height": 18.04,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c7c48204689926fa4895030600130b564b64a03e85bc893188522fbc22c2ba75.jpg",
-    "assetSha256": "c7c48204689926fa4895030600130b564b64a03e85bc893188522fbc22c2ba75",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9616956a3a1edbae8055dbe12b12164bd942f60eaee2d558d4b663a72119f76a.jpg",
+    "assetSha256": "9616956a3a1edbae8055dbe12b12164bd942f60eaee2d558d4b663a72119f76a",
     "sourceSha256": "74b889871f4a2aacebfea38f8b5ae1be8ce5f1f03c9c820e0172d25114e138b9",
     "layoutApproved": true,
     "preview": {
@@ -73951,8 +75371,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 22.76,
+      "height": 17.04,
+      "unit": "in"
+    }
   },
   "print-archived-painting-307-full-frame-black": {
     "id": "print-archived-painting-307-full-frame-black",
@@ -74194,23 +75619,23 @@ export default {
     "artworkTitle": "Cross on Maui",
     "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S17.33X13.04",
+    "sku": "5M144M9S17.07X12.78",
     "scale": 0.75,
     "imageSize": {
-      "width": 17.0767,
-      "height": 12.7867,
+      "width": 17.07,
+      "height": 12.78,
       "unit": "in"
     },
     "paperSize": {
-      "width": 17.33,
-      "height": 13.04,
+      "width": 18.07,
+      "height": 13.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/cd918ccf5f68cdb3b184f270ab801435b7dc4c7618d54b9f81033153f8a28ac5.jpg",
-    "assetSha256": "cd918ccf5f68cdb3b184f270ab801435b7dc4c7618d54b9f81033153f8a28ac5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f6cd742b3e5d755533890f81d5b27ba014f9b8359562c59027ae8f0bb99edf6b.jpg",
+    "assetSha256": "f6cd742b3e5d755533890f81d5b27ba014f9b8359562c59027ae8f0bb99edf6b",
     "sourceSha256": "74b889871f4a2aacebfea38f8b5ae1be8ce5f1f03c9c820e0172d25114e138b9",
     "layoutApproved": true,
     "preview": {
@@ -74223,8 +75648,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 17.07,
+      "height": 12.78,
+      "unit": "in"
+    }
   },
   "print-archived-painting-307-medium-frame-black": {
     "id": "print-archived-painting-307-medium-frame-black",
@@ -74464,25 +75894,25 @@ export default {
     "productId": "archived-painting-307",
     "title": "Cross on Maui — Small print",
     "artworkTitle": "Cross on Maui",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S11.63X8.77",
+    "sku": "5M144M9S11.37X8.51",
     "scale": 0.5,
     "imageSize": {
-      "width": 11.3733,
-      "height": 8.5167,
+      "width": 11.37,
+      "height": 8.51,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.63,
-      "height": 8.77,
+      "width": 12.37,
+      "height": 9.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/dde1821652c64b6d5e4a4a884ff01cdf0182f5f06bc5f778d3aef5e12b1080ea.jpg",
-    "assetSha256": "dde1821652c64b6d5e4a4a884ff01cdf0182f5f06bc5f778d3aef5e12b1080ea",
+    "assetUrl": "https://vermillionaurora.com/print-editions/94fcd77578ec0c7c51c87fc3a770d50e5a6144749087bcb6660c813db47cb597.jpg",
+    "assetSha256": "94fcd77578ec0c7c51c87fc3a770d50e5a6144749087bcb6660c813db47cb597",
     "sourceSha256": "74b889871f4a2aacebfea38f8b5ae1be8ce5f1f03c9c820e0172d25114e138b9",
     "layoutApproved": true,
     "preview": {
@@ -74495,8 +75925,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.37,
+      "height": 8.51,
+      "unit": "in"
+    }
   },
   "print-archived-painting-307-small-frame-black": {
     "id": "print-archived-painting-307-small-frame-black",
@@ -74736,25 +76171,25 @@ export default {
     "productId": "archived-painting-233",
     "title": "Painting #233 — Large print",
     "artworkTitle": "Painting #233",
-    "amount": "80.00",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S11.62X16.25",
+    "sku": "5M144M9S11.36X15.99",
     "scale": 1,
     "imageSize": {
-      "width": 11.3667,
+      "width": 11.36,
       "height": 15.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.62,
-      "height": 16.25,
+      "width": 12.36,
+      "height": 16.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c42c456133dd8fd00d3583d0b035c4271d501cb409b479f23aa19e65cc665ed2.jpg",
-    "assetSha256": "c42c456133dd8fd00d3583d0b035c4271d501cb409b479f23aa19e65cc665ed2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cfa7b9af6c5466eaaf090140bcd9cc38175064a98a4a6bc91838e75993d6bf9.jpg",
+    "assetSha256": "8cfa7b9af6c5466eaaf090140bcd9cc38175064a98a4a6bc91838e75993d6bf9",
     "sourceSha256": "a5cfc0849615388546a9ec9772b91a5d485057f77ec3de9c2503385fc3893b36",
     "layoutApproved": true,
     "preview": {
@@ -74767,8 +76202,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.36,
+      "height": 15.99,
+      "unit": "in"
+    }
   },
   "print-archived-painting-233-full-frame-black": {
     "id": "print-archived-painting-233-full-frame-black",
@@ -75010,23 +76450,23 @@ export default {
     "artworkTitle": "Painting #233",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S8.78X12.25",
+    "sku": "5M144M9S8.52X11.99",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.5267,
-      "height": 11.9933,
+      "width": 8.52,
+      "height": 11.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.78,
-      "height": 12.25,
+      "width": 9.52,
+      "height": 12.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/62c824209ae084339bbc0c779272c2e3ed90ae5c4e19ef5ab9524c731261f4ef.jpg",
-    "assetSha256": "62c824209ae084339bbc0c779272c2e3ed90ae5c4e19ef5ab9524c731261f4ef",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d7e40bef1f65d4d4828770b53545af11da327c37297bcccf7b8bf1c060c828a1.jpg",
+    "assetSha256": "d7e40bef1f65d4d4828770b53545af11da327c37297bcccf7b8bf1c060c828a1",
     "sourceSha256": "a5cfc0849615388546a9ec9772b91a5d485057f77ec3de9c2503385fc3893b36",
     "layoutApproved": true,
     "preview": {
@@ -75039,8 +76479,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.52,
+      "height": 11.99,
+      "unit": "in"
+    }
   },
   "print-archived-painting-233-medium-frame-black": {
     "id": "print-archived-painting-233-medium-frame-black",
@@ -75282,23 +76727,23 @@ export default {
     "artworkTitle": "Painting #233",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S5.93X8.25",
+    "sku": "5M144M9S5.67X7.98",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.6767,
-      "height": 7.9867,
+      "width": 5.67,
+      "height": 7.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.93,
-      "height": 8.25,
+      "width": 6.67,
+      "height": 8.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7bf4bf9e4d7b237a7f7237ab5fda32572ad4daccd6d23b01180dac80529472a2.jpg",
-    "assetSha256": "7bf4bf9e4d7b237a7f7237ab5fda32572ad4daccd6d23b01180dac80529472a2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/634fdff6dac5b70d5ccaa495d657ed0f32a37f33993774a1ebc5a6fae9199a77.jpg",
+    "assetSha256": "634fdff6dac5b70d5ccaa495d657ed0f32a37f33993774a1ebc5a6fae9199a77",
     "sourceSha256": "a5cfc0849615388546a9ec9772b91a5d485057f77ec3de9c2503385fc3893b36",
     "layoutApproved": true,
     "preview": {
@@ -75311,8 +76756,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.67,
+      "height": 7.98,
+      "unit": "in"
+    }
   },
   "print-archived-painting-233-small-frame-black": {
     "id": "print-archived-painting-233-small-frame-black",
@@ -75554,23 +77004,23 @@ export default {
     "artworkTitle": "Dad Meditating in Yellowstone",
     "amount": "120.00",
     "currency": "USD",
-    "sku": "5M144M8S18.83X15.26",
+    "sku": "5M144M9S18.57X15",
     "scale": 1,
     "imageSize": {
-      "width": 18.5733,
-      "height": 15.0067,
+      "width": 18.57,
+      "height": 15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.83,
-      "height": 15.26,
+      "width": 19.57,
+      "height": 16,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/192eeca358390c0cd0dd66d753e0b24ef29f9a0395cc6e6f2107b0fe515d4a89.jpg",
-    "assetSha256": "192eeca358390c0cd0dd66d753e0b24ef29f9a0395cc6e6f2107b0fe515d4a89",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d79e42e8a11128b141c8a2775b3f6254c960a31043fe13399db7ea0389956d86.jpg",
+    "assetSha256": "d79e42e8a11128b141c8a2775b3f6254c960a31043fe13399db7ea0389956d86",
     "sourceSha256": "140afceb54fcf91b85e0778adfaff80793eb576d4d1a005b4ca5717e7cf6d0a1",
     "layoutApproved": true,
     "preview": {
@@ -75583,8 +77033,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 18.57,
+      "height": 15,
+      "unit": "in"
+    }
   },
   "print-archived-painting-img-1555-full-frame-black": {
     "id": "print-archived-painting-img-1555-full-frame-black",
@@ -75824,25 +77279,25 @@ export default {
     "productId": "archived-painting-img-1555",
     "title": "Dad Meditating in Yellowstone — Medium print",
     "artworkTitle": "Dad Meditating in Yellowstone",
-    "amount": "70.00",
+    "amount": "65.00",
     "currency": "USD",
-    "sku": "5M144M8S14.18X11.51",
+    "sku": "5M144M9S13.92X11.25",
     "scale": 0.75,
     "imageSize": {
-      "width": 13.9267,
-      "height": 11.2533,
+      "width": 13.92,
+      "height": 11.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.18,
-      "height": 11.51,
+      "width": 14.92,
+      "height": 12.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6fb55f00e2f8b2cc03de68e86c3e65dbc7352af33fd2fbf33a0849c8cd23e805.jpg",
-    "assetSha256": "6fb55f00e2f8b2cc03de68e86c3e65dbc7352af33fd2fbf33a0849c8cd23e805",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9c048a131f481f5ef0c71b982a3a2193ae870257c89d2c49e8964c3df2fbf856.jpg",
+    "assetSha256": "9c048a131f481f5ef0c71b982a3a2193ae870257c89d2c49e8964c3df2fbf856",
     "sourceSha256": "140afceb54fcf91b85e0778adfaff80793eb576d4d1a005b4ca5717e7cf6d0a1",
     "layoutApproved": true,
     "preview": {
@@ -75855,8 +77310,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.92,
+      "height": 11.25,
+      "unit": "in"
+    }
   },
   "print-archived-painting-img-1555-medium-frame-black": {
     "id": "print-archived-painting-img-1555-medium-frame-black",
@@ -76096,25 +77556,25 @@ export default {
     "productId": "archived-painting-img-1555",
     "title": "Dad Meditating in Yellowstone — Small print",
     "artworkTitle": "Dad Meditating in Yellowstone",
-    "amount": "35.00",
+    "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.54X7.75",
+    "sku": "5M144M9S9.27X7.49",
     "scale": 0.5,
     "imageSize": {
-      "width": 9.2767,
-      "height": 7.4967,
+      "width": 9.27,
+      "height": 7.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.54,
-      "height": 7.75,
+      "width": 10.27,
+      "height": 8.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1ec9688889960c3c295297c99ffbf9dc00710641dd5fdb934ed2afa3826b062b.jpg",
-    "assetSha256": "1ec9688889960c3c295297c99ffbf9dc00710641dd5fdb934ed2afa3826b062b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2bd95a1d33d129836d598642e8bd17d58ea170612ce08e0e4ce428e8e8380ea4.jpg",
+    "assetSha256": "2bd95a1d33d129836d598642e8bd17d58ea170612ce08e0e4ce428e8e8380ea4",
     "sourceSha256": "140afceb54fcf91b85e0778adfaff80793eb576d4d1a005b4ca5717e7cf6d0a1",
     "layoutApproved": true,
     "preview": {
@@ -76127,8 +77587,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.27,
+      "height": 7.49,
+      "unit": "in"
+    }
   },
   "print-archived-painting-img-1555-small-frame-black": {
     "id": "print-archived-painting-img-1555-small-frame-black",
@@ -76370,23 +77835,23 @@ export default {
     "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.21X16.58",
+    "sku": "5M144M9S11.95X16.32",
     "scale": 1,
     "imageSize": {
-      "width": 11.9567,
+      "width": 11.95,
       "height": 16.32,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.21,
-      "height": 16.58,
+      "width": 12.95,
+      "height": 17.32,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/37ef15e506b16e6a3c1ca889499e8fd5e9471314ec2457c83714ef3b7cb94a9b.jpg",
-    "assetSha256": "37ef15e506b16e6a3c1ca889499e8fd5e9471314ec2457c83714ef3b7cb94a9b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f384af18515b8abe58dd3c3413cb8d37f56b9f4d28ea6e53a14e3321203a2218.jpg",
+    "assetSha256": "f384af18515b8abe58dd3c3413cb8d37f56b9f4d28ea6e53a14e3321203a2218",
     "sourceSha256": "c395c1c2a73621f0eba699af365ff267e7e04b4d7af6d133ec931f03a98938d0",
     "layoutApproved": true,
     "preview": {
@@ -76399,8 +77864,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.95,
+      "height": 16.32,
+      "unit": "in"
+    }
   },
   "print-archived-painting-363-full-frame-black": {
     "id": "print-archived-painting-363-full-frame-black",
@@ -76642,23 +78112,23 @@ export default {
     "artworkTitle": "Elon & Lil’ X in the Oval Office",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.22X12.49",
+    "sku": "5M144M9S8.96X12.23",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.9633,
-      "height": 12.2367,
+      "width": 8.96,
+      "height": 12.23,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.22,
-      "height": 12.49,
+      "width": 9.96,
+      "height": 13.23,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/eed2b27e869b0d813bb3c29473f46a2f226f63025f7b629d07e64da9775d2ba0.jpg",
-    "assetSha256": "eed2b27e869b0d813bb3c29473f46a2f226f63025f7b629d07e64da9775d2ba0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8cf90c564e6a70904bbdfe572ce216d81813cada7fa901a7d6c205cfcaa2e096.jpg",
+    "assetSha256": "8cf90c564e6a70904bbdfe572ce216d81813cada7fa901a7d6c205cfcaa2e096",
     "sourceSha256": "c395c1c2a73621f0eba699af365ff267e7e04b4d7af6d133ec931f03a98938d0",
     "layoutApproved": true,
     "preview": {
@@ -76671,8 +78141,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.96,
+      "height": 12.23,
+      "unit": "in"
+    }
   },
   "print-archived-painting-363-medium-frame-black": {
     "id": "print-archived-painting-363-medium-frame-black",
@@ -76912,25 +78387,25 @@ export default {
     "productId": "archived-painting-363",
     "title": "Elon & Lil’ X in the Oval Office — Small print",
     "artworkTitle": "Elon & Lil’ X in the Oval Office",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.23X8.41",
+    "sku": "5M144M9S5.97X8.15",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9767,
-      "height": 8.1567,
+      "width": 5.97,
+      "height": 8.15,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.23,
-      "height": 8.41,
+      "width": 6.97,
+      "height": 9.15,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/eb6112d707e6204cfec86c179c6eaeb9a792cfac248d7cb2350d855b5716b0e6.jpg",
-    "assetSha256": "eb6112d707e6204cfec86c179c6eaeb9a792cfac248d7cb2350d855b5716b0e6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0a651cea3245463bf966ec98683b4677d5c69c5d85e709d84dd0f87b7dacae8d.jpg",
+    "assetSha256": "0a651cea3245463bf966ec98683b4677d5c69c5d85e709d84dd0f87b7dacae8d",
     "sourceSha256": "c395c1c2a73621f0eba699af365ff267e7e04b4d7af6d133ec931f03a98938d0",
     "layoutApproved": true,
     "preview": {
@@ -76943,8 +78418,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.97,
+      "height": 8.15,
+      "unit": "in"
+    }
   },
   "print-archived-painting-363-small-frame-black": {
     "id": "print-archived-painting-363-small-frame-black",
@@ -77186,23 +78666,23 @@ export default {
     "artworkTitle": "Painting #368",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.49X16.52",
+    "sku": "5M144M9S12.23X16.25",
     "scale": 1,
     "imageSize": {
-      "width": 12.2367,
-      "height": 16.2567,
+      "width": 12.23,
+      "height": 16.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.49,
-      "height": 16.52,
+      "width": 13.23,
+      "height": 17.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/adc401dc9a170c0ac2f1f217172b478f17001753242c08d8f2e69222dddb36ab.jpg",
-    "assetSha256": "adc401dc9a170c0ac2f1f217172b478f17001753242c08d8f2e69222dddb36ab",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5e68179f207dc1f72aa9db345c244cf85ec3bf555501a12451aba8f814e83442.jpg",
+    "assetSha256": "5e68179f207dc1f72aa9db345c244cf85ec3bf555501a12451aba8f814e83442",
     "sourceSha256": "4bf6fd5e67133125a7715aa9aa4e67dd313fee4888717a8ff7855fdabc219d13",
     "layoutApproved": true,
     "preview": {
@@ -77215,8 +78695,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.23,
+      "height": 16.25,
+      "unit": "in"
+    }
   },
   "print-archived-painting-368-full-frame-black": {
     "id": "print-archived-painting-368-full-frame-black",
@@ -77458,23 +78943,23 @@ export default {
     "artworkTitle": "Painting #368",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.43X12.45",
+    "sku": "5M144M9S9.17X12.19",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.1767,
+      "width": 9.17,
       "height": 12.19,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.43,
-      "height": 12.45,
+      "width": 10.17,
+      "height": 13.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/32131032f599c37b942a4ac4fdf2219957757acbc8940fb070e04185c3d06fe8.jpg",
-    "assetSha256": "32131032f599c37b942a4ac4fdf2219957757acbc8940fb070e04185c3d06fe8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/02a4d107d98e09f2c8acbb24f378d4e213d2d31dd848188f89b6349da7a9eb95.jpg",
+    "assetSha256": "02a4d107d98e09f2c8acbb24f378d4e213d2d31dd848188f89b6349da7a9eb95",
     "sourceSha256": "4bf6fd5e67133125a7715aa9aa4e67dd313fee4888717a8ff7855fdabc219d13",
     "layoutApproved": true,
     "preview": {
@@ -77487,8 +78972,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.17,
+      "height": 12.19,
+      "unit": "in"
+    }
   },
   "print-archived-painting-368-medium-frame-black": {
     "id": "print-archived-painting-368-medium-frame-black",
@@ -77728,25 +79218,25 @@ export default {
     "productId": "archived-painting-368",
     "title": "Painting #368 — Small print",
     "artworkTitle": "Painting #368",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.37X8.38",
+    "sku": "5M144M9S6.11X8.12",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.1167,
-      "height": 8.1267,
+      "width": 6.11,
+      "height": 8.12,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.37,
-      "height": 8.38,
+      "width": 7.11,
+      "height": 9.12,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/529a4bc2702fa4ad242f5e4aa18e19cef105d7ecfc9617ffc60d66fa56dfa8a5.jpg",
-    "assetSha256": "529a4bc2702fa4ad242f5e4aa18e19cef105d7ecfc9617ffc60d66fa56dfa8a5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/63880f193857c1f2659b016a27d52b8cfd243245080e9649b0be052a27a1e859.jpg",
+    "assetSha256": "63880f193857c1f2659b016a27d52b8cfd243245080e9649b0be052a27a1e859",
     "sourceSha256": "4bf6fd5e67133125a7715aa9aa4e67dd313fee4888717a8ff7855fdabc219d13",
     "layoutApproved": true,
     "preview": {
@@ -77759,8 +79249,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.11,
+      "height": 8.12,
+      "unit": "in"
+    }
   },
   "print-archived-painting-368-small-frame-black": {
     "id": "print-archived-painting-368-small-frame-black",
@@ -78000,25 +79495,25 @@ export default {
     "productId": "archived-painting-369",
     "title": "Painting #369 — Large print",
     "artworkTitle": "Painting #369",
-    "amount": "90.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S17.15X12.49",
+    "sku": "5M144M9S16.89X12.23",
     "scale": 1,
     "imageSize": {
-      "width": 16.8967,
-      "height": 12.2367,
+      "width": 16.89,
+      "height": 12.23,
       "unit": "in"
     },
     "paperSize": {
-      "width": 17.15,
-      "height": 12.49,
+      "width": 17.89,
+      "height": 13.23,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/284ec69391b56368842f76323943c87f7e4bf99eaa049b17b6ed0f63339cf34f.jpg",
-    "assetSha256": "284ec69391b56368842f76323943c87f7e4bf99eaa049b17b6ed0f63339cf34f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/555af707205e2967fb9b666dccc09c01072c473dbffd4b6db8f243391dbd2a8d.jpg",
+    "assetSha256": "555af707205e2967fb9b666dccc09c01072c473dbffd4b6db8f243391dbd2a8d",
     "sourceSha256": "3b82c491eb2e0d50fc70d1fbb0cfe5581ab1971fcbed338850ca6ed6b7700f55",
     "layoutApproved": true,
     "preview": {
@@ -78031,8 +79526,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.89,
+      "height": 12.23,
+      "unit": "in"
+    }
   },
   "print-archived-painting-369-full-frame-black": {
     "id": "print-archived-painting-369-full-frame-black",
@@ -78274,23 +79774,23 @@ export default {
     "artworkTitle": "Painting #369",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S12.93X9.43",
+    "sku": "5M144M9S12.67X9.17",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.6733,
-      "height": 9.1767,
+      "width": 12.67,
+      "height": 9.17,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.93,
-      "height": 9.43,
+      "width": 13.67,
+      "height": 10.17,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/039b671e1891e46716b7618acb90be0e2b560aab362ce32faa3b1e2430b2e7a4.jpg",
-    "assetSha256": "039b671e1891e46716b7618acb90be0e2b560aab362ce32faa3b1e2430b2e7a4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/756d2dd2a00cc7b5422db53e118ec7697bc38b31298d58ac179ddd53f186153e.jpg",
+    "assetSha256": "756d2dd2a00cc7b5422db53e118ec7697bc38b31298d58ac179ddd53f186153e",
     "sourceSha256": "3b82c491eb2e0d50fc70d1fbb0cfe5581ab1971fcbed338850ca6ed6b7700f55",
     "layoutApproved": true,
     "preview": {
@@ -78303,8 +79803,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.67,
+      "height": 9.17,
+      "unit": "in"
+    }
   },
   "print-archived-painting-369-medium-frame-black": {
     "id": "print-archived-painting-369-medium-frame-black",
@@ -78546,23 +80051,23 @@ export default {
     "artworkTitle": "Painting #369",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.7X6.37",
+    "sku": "5M144M9S8.44X6.11",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.4467,
-      "height": 6.1167,
+      "width": 8.44,
+      "height": 6.11,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.7,
-      "height": 6.37,
+      "width": 9.44,
+      "height": 7.11,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/be31a754be9af8733705b7b9fba4e8349a2ea4d7df11bd85742ffad3612e32a9.jpg",
-    "assetSha256": "be31a754be9af8733705b7b9fba4e8349a2ea4d7df11bd85742ffad3612e32a9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d3c072c74c1c48a6bc5a0e399337b233e72747d829b84b02f436fd1fc9fc4698.jpg",
+    "assetSha256": "d3c072c74c1c48a6bc5a0e399337b233e72747d829b84b02f436fd1fc9fc4698",
     "sourceSha256": "3b82c491eb2e0d50fc70d1fbb0cfe5581ab1971fcbed338850ca6ed6b7700f55",
     "layoutApproved": true,
     "preview": {
@@ -78575,8 +80080,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.44,
+      "height": 6.11,
+      "unit": "in"
+    }
   },
   "print-archived-painting-369-small-frame-black": {
     "id": "print-archived-painting-369-small-frame-black",
@@ -78818,23 +80328,23 @@ export default {
     "artworkTitle": "Ben & Kermit & Swan",
     "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S18.21X13.75",
+    "sku": "5M144M9S17.95X13.49",
     "scale": 1,
     "imageSize": {
-      "width": 17.9533,
-      "height": 13.4967,
+      "width": 17.95,
+      "height": 13.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.21,
-      "height": 13.75,
+      "width": 18.95,
+      "height": 14.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5113dbd1cde88b5e722dabdc2a2781990fb7f78f28635208d921b4b7e328ffe0.jpg",
-    "assetSha256": "5113dbd1cde88b5e722dabdc2a2781990fb7f78f28635208d921b4b7e328ffe0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/013dc563cd21a11aaa413d852d40e1f9a2af5dadde71276e6d36ac1fbc5a9539.jpg",
+    "assetSha256": "013dc563cd21a11aaa413d852d40e1f9a2af5dadde71276e6d36ac1fbc5a9539",
     "sourceSha256": "4b6a2895e642a6103cba97fdfc26f05f48f0f2121136f3db346f87b90e151445",
     "layoutApproved": true,
     "preview": {
@@ -78847,8 +80357,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 17.95,
+      "height": 13.49,
+      "unit": "in"
+    }
   },
   "print-archived-painting-370-full-frame-black": {
     "id": "print-archived-painting-370-full-frame-black",
@@ -79090,23 +80605,23 @@ export default {
     "artworkTitle": "Ben & Kermit & Swan",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S13.72X10.37",
+    "sku": "5M144M9S13.45X10.11",
     "scale": 0.75,
     "imageSize": {
-      "width": 13.4567,
-      "height": 10.1167,
+      "width": 13.45,
+      "height": 10.11,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.72,
-      "height": 10.37,
+      "width": 14.45,
+      "height": 11.11,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b361a336049895e70139bc37962127e4fe9bdf7e513369171612408ee3b9f169.jpg",
-    "assetSha256": "b361a336049895e70139bc37962127e4fe9bdf7e513369171612408ee3b9f169",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4fc2aedeee9cc53211aa620f734a3cb4aa576377e5cedd2e58dde2854a10bf32.jpg",
+    "assetSha256": "4fc2aedeee9cc53211aa620f734a3cb4aa576377e5cedd2e58dde2854a10bf32",
     "sourceSha256": "4b6a2895e642a6103cba97fdfc26f05f48f0f2121136f3db346f87b90e151445",
     "layoutApproved": true,
     "preview": {
@@ -79119,8 +80634,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.45,
+      "height": 10.11,
+      "unit": "in"
+    }
   },
   "print-archived-painting-370-medium-frame-black": {
     "id": "print-archived-painting-370-medium-frame-black",
@@ -79362,23 +80882,23 @@ export default {
     "artworkTitle": "Ben & Kermit & Swan",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S9.23X7",
+    "sku": "5M144M9S8.97X6.74",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.9767,
-      "height": 6.7467,
+      "width": 8.97,
+      "height": 6.74,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.23,
-      "height": 7,
+      "width": 9.97,
+      "height": 7.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/49ad07d082a5ee3d286829d9543a86fc6391ab66f92909f5bfbdf636e8ac1fcc.jpg",
-    "assetSha256": "49ad07d082a5ee3d286829d9543a86fc6391ab66f92909f5bfbdf636e8ac1fcc",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0c766f8886c4961c5f78b8e73f8284bf6d3656fa7f7f4c5b8b3128615df731cd.jpg",
+    "assetSha256": "0c766f8886c4961c5f78b8e73f8284bf6d3656fa7f7f4c5b8b3128615df731cd",
     "sourceSha256": "4b6a2895e642a6103cba97fdfc26f05f48f0f2121136f3db346f87b90e151445",
     "layoutApproved": true,
     "preview": {
@@ -79391,8 +80911,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.97,
+      "height": 6.74,
+      "unit": "in"
+    }
   },
   "print-archived-painting-370-small-frame-black": {
     "id": "print-archived-painting-370-small-frame-black",
@@ -79632,25 +81157,25 @@ export default {
     "productId": "archived-painting-371",
     "title": "Painting #371 — Large print",
     "artworkTitle": "Painting #371",
-    "amount": "85.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S16.3X12.02",
+    "sku": "5M144M9S16.03X11.76",
     "scale": 1,
     "imageSize": {
-      "width": 16.0367,
-      "height": 11.7667,
+      "width": 16.03,
+      "height": 11.76,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.3,
-      "height": 12.02,
+      "width": 17.03,
+      "height": 12.76,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/42acc363336b8cc77605d4b6ee1ef4d3a8904b91694189753dd1fa02a98e4855.jpg",
-    "assetSha256": "42acc363336b8cc77605d4b6ee1ef4d3a8904b91694189753dd1fa02a98e4855",
+    "assetUrl": "https://vermillionaurora.com/print-editions/76db15c341aa7c9be7fb889aea2f935db901a5d35da3d1e8f418c15648ca0ca6.jpg",
+    "assetSha256": "76db15c341aa7c9be7fb889aea2f935db901a5d35da3d1e8f418c15648ca0ca6",
     "sourceSha256": "c22a2fde103c8c65575e5b871116318b6e87c6d8ac914177b3373cb84a673711",
     "layoutApproved": true,
     "preview": {
@@ -79663,8 +81188,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.03,
+      "height": 11.76,
+      "unit": "in"
+    }
   },
   "print-archived-painting-371-full-frame-black": {
     "id": "print-archived-painting-371-full-frame-black",
@@ -79904,25 +81434,25 @@ export default {
     "productId": "archived-painting-371",
     "title": "Painting #371 — Medium print",
     "artworkTitle": "Painting #371",
-    "amount": "50.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S12.28X9.08",
+    "sku": "5M144M9S12.02X8.82",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.0267,
-      "height": 8.8233,
+      "width": 12.02,
+      "height": 8.82,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.28,
-      "height": 9.08,
+      "width": 13.02,
+      "height": 9.82,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/edfadbeff7761114cb9c9ede0078a0b3be7ed4a169c5a96c0f1ed041f97ccde8.jpg",
-    "assetSha256": "edfadbeff7761114cb9c9ede0078a0b3be7ed4a169c5a96c0f1ed041f97ccde8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c6709b1185cec1517ee658a63b1bff045bfe83a471b5b11e49b5151e0e3f2672.jpg",
+    "assetSha256": "c6709b1185cec1517ee658a63b1bff045bfe83a471b5b11e49b5151e0e3f2672",
     "sourceSha256": "c22a2fde103c8c65575e5b871116318b6e87c6d8ac914177b3373cb84a673711",
     "layoutApproved": true,
     "preview": {
@@ -79935,8 +81465,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.02,
+      "height": 8.82,
+      "unit": "in"
+    }
   },
   "print-archived-painting-371-medium-frame-black": {
     "id": "print-archived-painting-371-medium-frame-black",
@@ -80178,23 +81713,23 @@ export default {
     "artworkTitle": "Painting #371",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.27X6.13",
+    "sku": "5M144M9S8.01X5.87",
     "scale": 0.5,
     "imageSize": {
       "width": 8.01,
-      "height": 5.8767,
+      "height": 5.87,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.27,
-      "height": 6.13,
+      "width": 9.01,
+      "height": 6.87,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/36c6bc1697caaf40164689ce6c204a55549bd3d94b546448b52097b60c3a37ba.jpg",
-    "assetSha256": "36c6bc1697caaf40164689ce6c204a55549bd3d94b546448b52097b60c3a37ba",
+    "assetUrl": "https://vermillionaurora.com/print-editions/67b6c647985223cab00b77f311ac528a4639bfce2ba40100ecaad8a49792bb4c.jpg",
+    "assetSha256": "67b6c647985223cab00b77f311ac528a4639bfce2ba40100ecaad8a49792bb4c",
     "sourceSha256": "c22a2fde103c8c65575e5b871116318b6e87c6d8ac914177b3373cb84a673711",
     "layoutApproved": true,
     "preview": {
@@ -80207,8 +81742,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.01,
+      "height": 5.87,
+      "unit": "in"
+    }
   },
   "print-archived-painting-371-small-frame-black": {
     "id": "print-archived-painting-371-small-frame-black",
@@ -80450,23 +81990,23 @@ export default {
     "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S16.68X12.33",
+    "sku": "5M144M9S16.42X12.07",
     "scale": 1,
     "imageSize": {
-      "width": 16.4267,
-      "height": 12.0767,
+      "width": 16.42,
+      "height": 12.07,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.68,
-      "height": 12.33,
+      "width": 17.42,
+      "height": 13.07,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/808adb4610ab30e865dadc1244c4ef94684994beb29deefb54d70ef4d2ec9be0.jpg",
-    "assetSha256": "808adb4610ab30e865dadc1244c4ef94684994beb29deefb54d70ef4d2ec9be0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5a78a500232e39d482688d13b3df59a73141c2985a6e4027fb2700a9c0a90106.jpg",
+    "assetSha256": "5a78a500232e39d482688d13b3df59a73141c2985a6e4027fb2700a9c0a90106",
     "sourceSha256": "b29e07d3045e85d048b268939aa32ca68a492f7a88b694408491e4969250181a",
     "layoutApproved": true,
     "preview": {
@@ -80479,8 +82019,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.42,
+      "height": 12.07,
+      "unit": "in"
+    }
   },
   "print-archived-painting-364-full-frame-black": {
     "id": "print-archived-painting-364-full-frame-black",
@@ -80722,23 +82267,23 @@ export default {
     "artworkTitle": "Max Keiser & Michael Saylor",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S12.57X9.31",
+    "sku": "5M144M9S12.31X9.05",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.3167,
-      "height": 9.0533,
+      "width": 12.31,
+      "height": 9.05,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.57,
-      "height": 9.31,
+      "width": 13.31,
+      "height": 10.05,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4b904ac82ea66301c31b92485f451f006fd6eac83f6e700cd2fa367d01c40071.jpg",
-    "assetSha256": "4b904ac82ea66301c31b92485f451f006fd6eac83f6e700cd2fa367d01c40071",
+    "assetUrl": "https://vermillionaurora.com/print-editions/54802fe149dcc90a559a10c28edb0c0f4705048272c94c8744b39ad2634268d9.jpg",
+    "assetSha256": "54802fe149dcc90a559a10c28edb0c0f4705048272c94c8744b39ad2634268d9",
     "sourceSha256": "b29e07d3045e85d048b268939aa32ca68a492f7a88b694408491e4969250181a",
     "layoutApproved": true,
     "preview": {
@@ -80751,8 +82296,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.31,
+      "height": 9.05,
+      "unit": "in"
+    }
   },
   "print-archived-painting-364-medium-frame-black": {
     "id": "print-archived-painting-364-medium-frame-black",
@@ -80992,25 +82542,25 @@ export default {
     "productId": "archived-painting-364",
     "title": "Max Keiser & Michael Saylor — Small print",
     "artworkTitle": "Max Keiser & Michael Saylor",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.46X6.29",
+    "sku": "5M144M9S8.2X6.03",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.2067,
-      "height": 6.0333,
+      "width": 8.2,
+      "height": 6.03,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.46,
-      "height": 6.29,
+      "width": 9.2,
+      "height": 7.03,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/672531859ae52312da5bc8a6e70f6c85eaef55166735ea08a8822e220e93665b.jpg",
-    "assetSha256": "672531859ae52312da5bc8a6e70f6c85eaef55166735ea08a8822e220e93665b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3b09db86e1c8efe75d06a428189fa1122f72e856ac5539f01e5f3e355f1e7133.jpg",
+    "assetSha256": "3b09db86e1c8efe75d06a428189fa1122f72e856ac5539f01e5f3e355f1e7133",
     "sourceSha256": "b29e07d3045e85d048b268939aa32ca68a492f7a88b694408491e4969250181a",
     "layoutApproved": true,
     "preview": {
@@ -81023,8 +82573,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.2,
+      "height": 6.03,
+      "unit": "in"
+    }
   },
   "print-archived-painting-364-small-frame-black": {
     "id": "print-archived-painting-364-small-frame-black",
@@ -81264,25 +82819,25 @@ export default {
     "productId": "archived-painting-366",
     "title": "RFK — Large print",
     "artworkTitle": "RFK",
-    "amount": "90.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.41X17.29",
+    "sku": "5M144M9S12.15X17.03",
     "scale": 1,
     "imageSize": {
-      "width": 12.1533,
-      "height": 17.0367,
+      "width": 12.15,
+      "height": 17.03,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.41,
-      "height": 17.29,
+      "width": 13.15,
+      "height": 18.03,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/04a76b9728fa6ea4342a5383f41e902ad7dcfe3aebb6f7384c2467e510351b1c.jpg",
-    "assetSha256": "04a76b9728fa6ea4342a5383f41e902ad7dcfe3aebb6f7384c2467e510351b1c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/83833e815c834e6179493fd9efdd1e2fe07b8cb4c73aba56cab8f0e9d54f7251.jpg",
+    "assetSha256": "83833e815c834e6179493fd9efdd1e2fe07b8cb4c73aba56cab8f0e9d54f7251",
     "sourceSha256": "c0436ee7e503922435d19062a877a660c2d4d1fd21d412725010fa4cbf21899e",
     "layoutApproved": true,
     "preview": {
@@ -81295,8 +82850,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.15,
+      "height": 17.03,
+      "unit": "in"
+    }
   },
   "print-archived-painting-366-full-frame-black": {
     "id": "print-archived-painting-366-full-frame-black",
@@ -81538,23 +83098,23 @@ export default {
     "artworkTitle": "RFK",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.37X13.03",
+    "sku": "5M144M9S9.11X12.77",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.1133,
-      "height": 12.7767,
+      "width": 9.11,
+      "height": 12.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.37,
-      "height": 13.03,
+      "width": 10.11,
+      "height": 13.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a9b85db37066fabcb88d698c060d301622c460d99cd22bd86225a132978930c5.jpg",
-    "assetSha256": "a9b85db37066fabcb88d698c060d301622c460d99cd22bd86225a132978930c5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a3287d5b48bc1e84c0b821b03f8b965b3862ae59d47adec3c4e4e8bc10daef10.jpg",
+    "assetSha256": "a3287d5b48bc1e84c0b821b03f8b965b3862ae59d47adec3c4e4e8bc10daef10",
     "sourceSha256": "c0436ee7e503922435d19062a877a660c2d4d1fd21d412725010fa4cbf21899e",
     "layoutApproved": true,
     "preview": {
@@ -81567,8 +83127,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.11,
+      "height": 12.77,
+      "unit": "in"
+    }
   },
   "print-archived-painting-366-medium-frame-black": {
     "id": "print-archived-painting-366-medium-frame-black",
@@ -81810,23 +83375,23 @@ export default {
     "artworkTitle": "RFK",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S6.33X8.77",
+    "sku": "5M144M9S6.07X8.51",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.0767,
-      "height": 8.5167,
+      "width": 6.07,
+      "height": 8.51,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.33,
-      "height": 8.77,
+      "width": 7.07,
+      "height": 9.51,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ac10e42ea895246ceff1b843aa0135882baf16f344e84a64b06d100cb6c17200.jpg",
-    "assetSha256": "ac10e42ea895246ceff1b843aa0135882baf16f344e84a64b06d100cb6c17200",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7db87d4fb2a61658b548cd6da92ce56d652fe6cfdec9a7778dbf42da7cb33d73.jpg",
+    "assetSha256": "7db87d4fb2a61658b548cd6da92ce56d652fe6cfdec9a7778dbf42da7cb33d73",
     "sourceSha256": "c0436ee7e503922435d19062a877a660c2d4d1fd21d412725010fa4cbf21899e",
     "layoutApproved": true,
     "preview": {
@@ -81839,8 +83404,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.07,
+      "height": 8.51,
+      "unit": "in"
+    }
   },
   "print-archived-painting-366-small-frame-black": {
     "id": "print-archived-painting-366-small-frame-black",
@@ -82082,23 +83652,23 @@ export default {
     "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.26X16.76",
+    "sku": "5M144M9S12X16.5",
     "scale": 1,
     "imageSize": {
-      "width": 12.0067,
-      "height": 16.5033,
+      "width": 12,
+      "height": 16.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.26,
-      "height": 16.76,
+      "width": 13,
+      "height": 17.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/aad10ce920a7b94c177fa46277158f137fcb272804f5c321975b7cba4cf33e01.jpg",
-    "assetSha256": "aad10ce920a7b94c177fa46277158f137fcb272804f5c321975b7cba4cf33e01",
+    "assetUrl": "https://vermillionaurora.com/print-editions/164f7726bbb8319814cba25c6a8c970b58c049a255a69e76de4207026418d2ad.jpg",
+    "assetSha256": "164f7726bbb8319814cba25c6a8c970b58c049a255a69e76de4207026418d2ad",
     "sourceSha256": "64e27601d760271561cd6a29135a46e368d669d2d9dfa7360337d561aa2ad8f8",
     "layoutApproved": true,
     "preview": {
@@ -82111,8 +83681,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12,
+      "height": 16.5,
+      "unit": "in"
+    }
   },
   "print-archived-painting-367-full-frame-black": {
     "id": "print-archived-painting-367-full-frame-black",
@@ -82354,23 +83929,23 @@ export default {
     "artworkTitle": "Josie, The Redheaded Libertarian",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.26X12.63",
+    "sku": "5M144M9S9X12.37",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.0033,
-      "height": 12.3767,
+      "width": 9,
+      "height": 12.37,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.26,
-      "height": 12.63,
+      "width": 10,
+      "height": 13.37,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6e1990f50aed972cd6d654c7a04cb106fe0428b3a554a16a59d2c78ea318c557.jpg",
-    "assetSha256": "6e1990f50aed972cd6d654c7a04cb106fe0428b3a554a16a59d2c78ea318c557",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f521bc5a012824653d8594f541f1d1eea9c2d1ff1363bb2d51ef17fac95bf1b5.jpg",
+    "assetSha256": "f521bc5a012824653d8594f541f1d1eea9c2d1ff1363bb2d51ef17fac95bf1b5",
     "sourceSha256": "64e27601d760271561cd6a29135a46e368d669d2d9dfa7360337d561aa2ad8f8",
     "layoutApproved": true,
     "preview": {
@@ -82383,8 +83958,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9,
+      "height": 12.37,
+      "unit": "in"
+    }
   },
   "print-archived-painting-367-medium-frame-black": {
     "id": "print-archived-painting-367-medium-frame-black",
@@ -82624,25 +84204,25 @@ export default {
     "productId": "archived-painting-367",
     "title": "Josie, The Redheaded Libertarian — Small print",
     "artworkTitle": "Josie, The Redheaded Libertarian",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.25X8.5",
+    "sku": "5M144M9S5.99X8.24",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9967,
-      "height": 8.2433,
+      "width": 5.99,
+      "height": 8.24,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.25,
-      "height": 8.5,
+      "width": 6.99,
+      "height": 9.24,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/652a8b0176dbe4191c2ad3e713a2c6b763b639ff5843ea79d902a029cb8b9998.jpg",
-    "assetSha256": "652a8b0176dbe4191c2ad3e713a2c6b763b639ff5843ea79d902a029cb8b9998",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a31b21ac9542c7964cca2688a173d5ef2c98ba148ed9be73e84c7edb7f10a643.jpg",
+    "assetSha256": "a31b21ac9542c7964cca2688a173d5ef2c98ba148ed9be73e84c7edb7f10a643",
     "sourceSha256": "64e27601d760271561cd6a29135a46e368d669d2d9dfa7360337d561aa2ad8f8",
     "layoutApproved": true,
     "preview": {
@@ -82655,8 +84235,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.99,
+      "height": 8.24,
+      "unit": "in"
+    }
   },
   "print-archived-painting-367-small-frame-black": {
     "id": "print-archived-painting-367-small-frame-black",
@@ -82898,23 +84483,23 @@ export default {
     "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S17.7X12.69",
+    "sku": "5M144M9S17.44X12.43",
     "scale": 1,
     "imageSize": {
-      "width": 17.4433,
-      "height": 12.4367,
+      "width": 17.44,
+      "height": 12.43,
       "unit": "in"
     },
     "paperSize": {
-      "width": 17.7,
-      "height": 12.69,
+      "width": 18.44,
+      "height": 13.43,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1b38873d30125751b33fc37f7e368d3a8f3db8de6211856d1e8f15c4ca8334b0.jpg",
-    "assetSha256": "1b38873d30125751b33fc37f7e368d3a8f3db8de6211856d1e8f15c4ca8334b0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d0c0ba896a57f954d8a55aac0c89130cf25b48c3ff43ebf2c0a3da237f3a8120.jpg",
+    "assetSha256": "d0c0ba896a57f954d8a55aac0c89130cf25b48c3ff43ebf2c0a3da237f3a8120",
     "sourceSha256": "495def835824cee6f5ddabd2e49dac28b6a11588900c98d69c8294f33fe724ac",
     "layoutApproved": true,
     "preview": {
@@ -82927,8 +84512,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 17.44,
+      "height": 12.43,
+      "unit": "in"
+    }
   },
   "print-archived-painting-362-full-frame-black": {
     "id": "print-archived-painting-362-full-frame-black",
@@ -83168,25 +84758,25 @@ export default {
     "productId": "archived-painting-362",
     "title": "Max Keiser & Stacey Herbert — Medium print",
     "artworkTitle": "Max Keiser & Stacey Herbert",
-    "amount": "55.00",
+    "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S13.34X9.58",
+    "sku": "5M144M9S13.08X9.32",
     "scale": 0.75,
     "imageSize": {
-      "width": 13.0833,
-      "height": 9.3267,
+      "width": 13.08,
+      "height": 9.32,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.34,
-      "height": 9.58,
+      "width": 14.08,
+      "height": 10.32,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/151bbb2b223eaa18ec2850cc9b2d0a3b36d1440f435866160607f0bdc2d1e156.jpg",
-    "assetSha256": "151bbb2b223eaa18ec2850cc9b2d0a3b36d1440f435866160607f0bdc2d1e156",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d4ece815437c581b89129a867db1da0410008f1b48f3259b53c0ebe17f3b70de.jpg",
+    "assetSha256": "d4ece815437c581b89129a867db1da0410008f1b48f3259b53c0ebe17f3b70de",
     "sourceSha256": "495def835824cee6f5ddabd2e49dac28b6a11588900c98d69c8294f33fe724ac",
     "layoutApproved": true,
     "preview": {
@@ -83199,8 +84789,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.08,
+      "height": 9.32,
+      "unit": "in"
+    }
   },
   "print-archived-painting-362-medium-frame-black": {
     "id": "print-archived-painting-362-medium-frame-black",
@@ -83442,23 +85037,23 @@ export default {
     "artworkTitle": "Max Keiser & Stacey Herbert",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.97X6.47",
+    "sku": "5M144M9S8.71X6.21",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.7167,
-      "height": 6.2133,
+      "width": 8.71,
+      "height": 6.21,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.97,
-      "height": 6.47,
+      "width": 9.71,
+      "height": 7.21,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f615910ee2b14b75dcf725fb5ca60e1507c51f311f067ac1ff151ea64fc9d496.jpg",
-    "assetSha256": "f615910ee2b14b75dcf725fb5ca60e1507c51f311f067ac1ff151ea64fc9d496",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a66d33352facfbb34ce48c0796af613034245f6b35e191327b7a0b044f6df4e3.jpg",
+    "assetSha256": "a66d33352facfbb34ce48c0796af613034245f6b35e191327b7a0b044f6df4e3",
     "sourceSha256": "495def835824cee6f5ddabd2e49dac28b6a11588900c98d69c8294f33fe724ac",
     "layoutApproved": true,
     "preview": {
@@ -83471,8 +85066,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.71,
+      "height": 6.21,
+      "unit": "in"
+    }
   },
   "print-archived-painting-362-small-frame-black": {
     "id": "print-archived-painting-362-small-frame-black",
@@ -83712,25 +85312,25 @@ export default {
     "productId": "archived-painting-412",
     "title": "Brekkie Hoisting Orange Calcite B — Large print",
     "artworkTitle": "Brekkie Hoisting Orange Calcite B",
-    "amount": "90.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S17.12X12.45",
+    "sku": "5M144M9S16.86X12.19",
     "scale": 1,
     "imageSize": {
-      "width": 16.8633,
-      "height": 12.1967,
+      "width": 16.86,
+      "height": 12.19,
       "unit": "in"
     },
     "paperSize": {
-      "width": 17.12,
-      "height": 12.45,
+      "width": 17.86,
+      "height": 13.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9528b14b71d0f9ab78a0da465452eb81f9e05b51bea49261219a6a5e3a4bd77e.jpg",
-    "assetSha256": "9528b14b71d0f9ab78a0da465452eb81f9e05b51bea49261219a6a5e3a4bd77e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/69aef75ad3d20873c93f54d18a0344e53636ffc11553d51acbf3edfb5381875f.jpg",
+    "assetSha256": "69aef75ad3d20873c93f54d18a0344e53636ffc11553d51acbf3edfb5381875f",
     "sourceSha256": "49077623a9eebab719aa89b099be7bcf78a21f03cb7ea7e247ac7f55f03293db",
     "layoutApproved": true,
     "preview": {
@@ -83743,8 +85343,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.86,
+      "height": 12.19,
+      "unit": "in"
+    }
   },
   "print-archived-painting-412-full-frame-black": {
     "id": "print-archived-painting-412-full-frame-black",
@@ -83986,23 +85591,23 @@ export default {
     "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S12.9X9.4",
+    "sku": "5M144M9S12.64X9.14",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.6467,
-      "height": 9.1467,
+      "width": 12.64,
+      "height": 9.14,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.9,
-      "height": 9.4,
+      "width": 13.64,
+      "height": 10.14,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5d5f36d38afa984cf3fc71b209f8c5878310f773dcf6d307df248bd542180da2.jpg",
-    "assetSha256": "5d5f36d38afa984cf3fc71b209f8c5878310f773dcf6d307df248bd542180da2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b3e1041e6e55f8c054af151240248baad8de9de24b120c09b3affa4040089d6c.jpg",
+    "assetSha256": "b3e1041e6e55f8c054af151240248baad8de9de24b120c09b3affa4040089d6c",
     "sourceSha256": "49077623a9eebab719aa89b099be7bcf78a21f03cb7ea7e247ac7f55f03293db",
     "layoutApproved": true,
     "preview": {
@@ -84015,8 +85620,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.64,
+      "height": 9.14,
+      "unit": "in"
+    }
   },
   "print-archived-painting-412-medium-frame-black": {
     "id": "print-archived-painting-412-medium-frame-black",
@@ -84258,23 +85868,23 @@ export default {
     "artworkTitle": "Brekkie Hoisting Orange Calcite B",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.68X6.35",
+    "sku": "5M144M9S8.42X6.09",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.4267,
-      "height": 6.0933,
+      "width": 8.42,
+      "height": 6.09,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.68,
-      "height": 6.35,
+      "width": 9.42,
+      "height": 7.09,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c0953f9b85f98ed6f6e9f07dc41ebac7b554d3361415308a2ab6767d018adbe2.jpg",
-    "assetSha256": "c0953f9b85f98ed6f6e9f07dc41ebac7b554d3361415308a2ab6767d018adbe2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f86e4cc2358a90a35c2e058dda45bc008b8ea43ff44de630c44f02f729c13dfd.jpg",
+    "assetSha256": "f86e4cc2358a90a35c2e058dda45bc008b8ea43ff44de630c44f02f729c13dfd",
     "sourceSha256": "49077623a9eebab719aa89b099be7bcf78a21f03cb7ea7e247ac7f55f03293db",
     "layoutApproved": true,
     "preview": {
@@ -84287,8 +85897,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.42,
+      "height": 6.09,
+      "unit": "in"
+    }
   },
   "print-archived-painting-412-small-frame-black": {
     "id": "print-archived-painting-412-small-frame-black",
@@ -84530,23 +86145,23 @@ export default {
     "artworkTitle": "Painting #373",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.18X16.71",
+    "sku": "5M144M9S11.92X16.45",
     "scale": 1,
     "imageSize": {
-      "width": 11.9267,
-      "height": 16.4533,
+      "width": 11.92,
+      "height": 16.45,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.18,
-      "height": 16.71,
+      "width": 12.92,
+      "height": 17.45,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/add9cf2d94abf97c420692cd44e6eeffefa178c23695e5a8491f28defb2b5fe3.jpg",
-    "assetSha256": "add9cf2d94abf97c420692cd44e6eeffefa178c23695e5a8491f28defb2b5fe3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/413ca9444abfb3ba626c3869a9fb27d5662c026266aa5cd2090cf22892b7ce30.jpg",
+    "assetSha256": "413ca9444abfb3ba626c3869a9fb27d5662c026266aa5cd2090cf22892b7ce30",
     "sourceSha256": "aeb9c6621442e41a7670b8de9d31b17b2bae4cb8f40e8c9e2dd849f2bbeaca0c",
     "layoutApproved": true,
     "preview": {
@@ -84559,8 +86174,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.92,
+      "height": 16.45,
+      "unit": "in"
+    }
   },
   "print-archived-painting-373-full-frame-black": {
     "id": "print-archived-painting-373-full-frame-black",
@@ -84802,23 +86422,23 @@ export default {
     "artworkTitle": "Painting #373",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.2X12.6",
+    "sku": "5M144M9S8.94X12.34",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.9467,
-      "height": 12.3433,
+      "width": 8.94,
+      "height": 12.34,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.2,
-      "height": 12.6,
+      "width": 9.94,
+      "height": 13.34,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3ff8a33070a284123c4748f677f9d29838a2fcc2f50bebf0464ec46ae511f1bf.jpg",
-    "assetSha256": "3ff8a33070a284123c4748f677f9d29838a2fcc2f50bebf0464ec46ae511f1bf",
+    "assetUrl": "https://vermillionaurora.com/print-editions/cbdc0dec61379a4eebef03296f099fa90815ad060ad1eaa4695ddcc8146e6bb1.jpg",
+    "assetSha256": "cbdc0dec61379a4eebef03296f099fa90815ad060ad1eaa4695ddcc8146e6bb1",
     "sourceSha256": "aeb9c6621442e41a7670b8de9d31b17b2bae4cb8f40e8c9e2dd849f2bbeaca0c",
     "layoutApproved": true,
     "preview": {
@@ -84831,8 +86451,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.94,
+      "height": 12.34,
+      "unit": "in"
+    }
   },
   "print-archived-painting-373-medium-frame-black": {
     "id": "print-archived-painting-373-medium-frame-black",
@@ -85072,25 +86697,25 @@ export default {
     "productId": "archived-painting-373",
     "title": "Painting #373 — Small print",
     "artworkTitle": "Painting #373",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.21X8.48",
+    "sku": "5M144M9S5.95X8.21",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9567,
-      "height": 8.2167,
+      "width": 5.95,
+      "height": 8.21,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.21,
-      "height": 8.48,
+      "width": 6.95,
+      "height": 9.21,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7e42a19e42618372d9af4bc592ba7d18bc3d40db2286e0cf207bb1e7220043ff.jpg",
-    "assetSha256": "7e42a19e42618372d9af4bc592ba7d18bc3d40db2286e0cf207bb1e7220043ff",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ddc6a525516c9dc0bcd71eb3a32d23a5776a529a560867439efb52b271be51a8.jpg",
+    "assetSha256": "ddc6a525516c9dc0bcd71eb3a32d23a5776a529a560867439efb52b271be51a8",
     "sourceSha256": "aeb9c6621442e41a7670b8de9d31b17b2bae4cb8f40e8c9e2dd849f2bbeaca0c",
     "layoutApproved": true,
     "preview": {
@@ -85103,8 +86728,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.95,
+      "height": 8.21,
+      "unit": "in"
+    }
   },
   "print-archived-painting-373-small-frame-black": {
     "id": "print-archived-painting-373-small-frame-black",
@@ -85344,25 +86974,25 @@ export default {
     "productId": "archived-painting-375",
     "title": "Painting #375 — Large print",
     "artworkTitle": "Painting #375",
-    "amount": "95.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S13X17.17",
+    "sku": "5M144M9S12.74X16.91",
     "scale": 1,
     "imageSize": {
-      "width": 12.7467,
-      "height": 16.9167,
+      "width": 12.74,
+      "height": 16.91,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13,
-      "height": 17.17,
+      "width": 13.74,
+      "height": 17.91,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b2174c07f66eea8f7cae21581a347024002d0c9dec3ca5e705abbbf994f10ac2.jpg",
-    "assetSha256": "b2174c07f66eea8f7cae21581a347024002d0c9dec3ca5e705abbbf994f10ac2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ee985ca56eccf5e5e87814b23ca317c932bc8c5c3fc28a5ba74355557adb9cb0.jpg",
+    "assetSha256": "ee985ca56eccf5e5e87814b23ca317c932bc8c5c3fc28a5ba74355557adb9cb0",
     "sourceSha256": "73624bb4c2211042e2e50e91fbbc6de8795cf5765c54181f41f643ca4cabe292",
     "layoutApproved": true,
     "preview": {
@@ -85375,8 +87005,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.74,
+      "height": 16.91,
+      "unit": "in"
+    }
   },
   "print-archived-painting-375-full-frame-black": {
     "id": "print-archived-painting-375-full-frame-black",
@@ -85616,25 +87251,25 @@ export default {
     "productId": "archived-painting-375",
     "title": "Painting #375 — Medium print",
     "artworkTitle": "Painting #375",
-    "amount": "55.00",
+    "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.81X12.94",
+    "sku": "5M144M9S9.55X12.68",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.5567,
-      "height": 12.6833,
+      "width": 9.55,
+      "height": 12.68,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.81,
-      "height": 12.94,
+      "width": 10.55,
+      "height": 13.68,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c9213333d2923961915fdd1905538c06e36bf6d019a4b170ae857827ec3658b2.jpg",
-    "assetSha256": "c9213333d2923961915fdd1905538c06e36bf6d019a4b170ae857827ec3658b2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/860b8190b5bbf396b09ae620d6912f37c877a372aa11283ce59a8f1a00b85be0.jpg",
+    "assetSha256": "860b8190b5bbf396b09ae620d6912f37c877a372aa11283ce59a8f1a00b85be0",
     "sourceSha256": "73624bb4c2211042e2e50e91fbbc6de8795cf5765c54181f41f643ca4cabe292",
     "layoutApproved": true,
     "preview": {
@@ -85647,8 +87282,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.55,
+      "height": 12.68,
+      "unit": "in"
+    }
   },
   "print-archived-painting-375-medium-frame-black": {
     "id": "print-archived-painting-375-medium-frame-black",
@@ -85890,23 +87530,23 @@ export default {
     "artworkTitle": "Painting #375",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S6.62X8.71",
+    "sku": "5M144M9S6.36X8.45",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.3667,
+      "width": 6.36,
       "height": 8.45,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.62,
-      "height": 8.71,
+      "width": 7.36,
+      "height": 9.45,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/2d9fb3408c02fc777a51e632c316befa64701e8ef6d7f1e19434d32b8d6d42f2.jpg",
-    "assetSha256": "2d9fb3408c02fc777a51e632c316befa64701e8ef6d7f1e19434d32b8d6d42f2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/888635410f33ae62e719d2549431b121b97e53c342124937fcb1289a465a28d9.jpg",
+    "assetSha256": "888635410f33ae62e719d2549431b121b97e53c342124937fcb1289a465a28d9",
     "sourceSha256": "73624bb4c2211042e2e50e91fbbc6de8795cf5765c54181f41f643ca4cabe292",
     "layoutApproved": true,
     "preview": {
@@ -85919,8 +87559,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.36,
+      "height": 8.45,
+      "unit": "in"
+    }
   },
   "print-archived-painting-375-small-frame-black": {
     "id": "print-archived-painting-375-small-frame-black",
@@ -86160,25 +87805,25 @@ export default {
     "productId": "archived-painting-385",
     "title": "Holding the Line — Large print",
     "artworkTitle": "Holding the Line",
-    "amount": "85.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S11.97X16.25",
+    "sku": "5M144M9S11.71X15.99",
     "scale": 1,
     "imageSize": {
-      "width": 11.7167,
-      "height": 15.9933,
+      "width": 11.71,
+      "height": 15.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.97,
-      "height": 16.25,
+      "width": 12.71,
+      "height": 16.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9f55c6ff81f3df28db62632e73ba47d6c793494ee69b9c70f6ac6647907a84c4.jpg",
-    "assetSha256": "9f55c6ff81f3df28db62632e73ba47d6c793494ee69b9c70f6ac6647907a84c4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3e225523b142c6042bbe669f134bf8d5af46a2ab986eedcd9f5d351565f2eff5.jpg",
+    "assetSha256": "3e225523b142c6042bbe669f134bf8d5af46a2ab986eedcd9f5d351565f2eff5",
     "sourceSha256": "6e037122c56177197ba12817fa36682ab1a74b1ded40830c99a02432f3b3ea99",
     "layoutApproved": true,
     "preview": {
@@ -86191,8 +87836,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.71,
+      "height": 15.99,
+      "unit": "in"
+    }
   },
   "print-archived-painting-385-full-frame-black": {
     "id": "print-archived-painting-385-full-frame-black",
@@ -86432,25 +88082,25 @@ export default {
     "productId": "archived-painting-385",
     "title": "Holding the Line — Medium print",
     "artworkTitle": "Holding the Line",
-    "amount": "50.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S9.04X12.25",
+    "sku": "5M144M9S8.78X11.99",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.7867,
-      "height": 11.9933,
+      "width": 8.78,
+      "height": 11.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.04,
-      "height": 12.25,
+      "width": 9.78,
+      "height": 12.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ecc3908bf705cd9c98695aa550e81edf489ffe3567434d0dee71a25efece31c5.jpg",
-    "assetSha256": "ecc3908bf705cd9c98695aa550e81edf489ffe3567434d0dee71a25efece31c5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/037bc55886d520bdb450a13e56cdbed2621c986f2355fa8ceea831ab177822f1.jpg",
+    "assetSha256": "037bc55886d520bdb450a13e56cdbed2621c986f2355fa8ceea831ab177822f1",
     "sourceSha256": "6e037122c56177197ba12817fa36682ab1a74b1ded40830c99a02432f3b3ea99",
     "layoutApproved": true,
     "preview": {
@@ -86463,8 +88113,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.78,
+      "height": 11.99,
+      "unit": "in"
+    }
   },
   "print-archived-painting-385-medium-frame-black": {
     "id": "print-archived-painting-385-medium-frame-black",
@@ -86706,23 +88361,23 @@ export default {
     "artworkTitle": "Holding the Line",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.11X8.25",
+    "sku": "5M144M9S5.85X7.99",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.8567,
-      "height": 7.9933,
+      "width": 5.85,
+      "height": 7.99,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.11,
-      "height": 8.25,
+      "width": 6.85,
+      "height": 8.99,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c8ca4f7f34a8d3841509cd172d4764cd4d9a2fe57c7efbbf4084634210ed079c.jpg",
-    "assetSha256": "c8ca4f7f34a8d3841509cd172d4764cd4d9a2fe57c7efbbf4084634210ed079c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b9621f959063127a9342facd28a74c2e6bf011160c26ddb958013327ee60d632.jpg",
+    "assetSha256": "b9621f959063127a9342facd28a74c2e6bf011160c26ddb958013327ee60d632",
     "sourceSha256": "6e037122c56177197ba12817fa36682ab1a74b1ded40830c99a02432f3b3ea99",
     "layoutApproved": true,
     "preview": {
@@ -86735,8 +88390,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.85,
+      "height": 7.99,
+      "unit": "in"
+    }
   },
   "print-archived-painting-385-small-frame-black": {
     "id": "print-archived-painting-385-small-frame-black",
@@ -86978,23 +88638,23 @@ export default {
     "artworkTitle": "Holding the Line #2",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.24X16.6",
+    "sku": "5M144M9S11.98X16.34",
     "scale": 1,
     "imageSize": {
-      "width": 11.9867,
-      "height": 16.3433,
+      "width": 11.98,
+      "height": 16.34,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.24,
-      "height": 16.6,
+      "width": 12.98,
+      "height": 17.34,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ea1d577faf48cbbde84e1da73c78171beb85ab8ac4ffea7c57c10cfc57df89c2.jpg",
-    "assetSha256": "ea1d577faf48cbbde84e1da73c78171beb85ab8ac4ffea7c57c10cfc57df89c2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/442ec663bb4ba6038472f5c41c30378058d09fe9d1d7b03dc2948f5062ba53a4.jpg",
+    "assetSha256": "442ec663bb4ba6038472f5c41c30378058d09fe9d1d7b03dc2948f5062ba53a4",
     "sourceSha256": "30d546d939ec9a4e26f594f42706d2f067312dc19bc5d93ab512d8d860d9b914",
     "layoutApproved": true,
     "preview": {
@@ -87007,8 +88667,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.98,
+      "height": 16.34,
+      "unit": "in"
+    }
   },
   "print-archived-painting-386-full-frame-black": {
     "id": "print-archived-painting-386-full-frame-black",
@@ -87250,23 +88915,23 @@ export default {
     "artworkTitle": "Holding the Line #2",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.24X12.51",
+    "sku": "5M144M9S8.98X12.25",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.9867,
-      "height": 12.2533,
+      "width": 8.98,
+      "height": 12.25,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.24,
-      "height": 12.51,
+      "width": 9.98,
+      "height": 13.25,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7bfa77539fe67b469066ed3af99b4e77d4df80342e88d84cecfc48206cc0eeaf.jpg",
-    "assetSha256": "7bfa77539fe67b469066ed3af99b4e77d4df80342e88d84cecfc48206cc0eeaf",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1ea4236740b859800e467974459cb35e0dd71ea4f524a1c5a73df5c969e0859e.jpg",
+    "assetSha256": "1ea4236740b859800e467974459cb35e0dd71ea4f524a1c5a73df5c969e0859e",
     "sourceSha256": "30d546d939ec9a4e26f594f42706d2f067312dc19bc5d93ab512d8d860d9b914",
     "layoutApproved": true,
     "preview": {
@@ -87279,8 +88944,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.98,
+      "height": 12.25,
+      "unit": "in"
+    }
   },
   "print-archived-painting-386-medium-frame-black": {
     "id": "print-archived-painting-386-medium-frame-black",
@@ -87520,25 +89190,25 @@ export default {
     "productId": "archived-painting-386",
     "title": "Holding the Line #2 — Small print",
     "artworkTitle": "Holding the Line #2",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.24X8.42",
+    "sku": "5M144M9S5.98X8.16",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9867,
-      "height": 8.1633,
+      "width": 5.98,
+      "height": 8.16,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.24,
-      "height": 8.42,
+      "width": 6.98,
+      "height": 9.16,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7164715a45c2f59d9b7085ae5087c8c357ad66876cf431dfa1a53c73e3285758.jpg",
-    "assetSha256": "7164715a45c2f59d9b7085ae5087c8c357ad66876cf431dfa1a53c73e3285758",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4e0af6d283d2c82e8fe545e26b49383b520185b2c7abbab590519c54a6028d99.jpg",
+    "assetSha256": "4e0af6d283d2c82e8fe545e26b49383b520185b2c7abbab590519c54a6028d99",
     "sourceSha256": "30d546d939ec9a4e26f594f42706d2f067312dc19bc5d93ab512d8d860d9b914",
     "layoutApproved": true,
     "preview": {
@@ -87551,8 +89221,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.98,
+      "height": 8.16,
+      "unit": "in"
+    }
   },
   "print-archived-painting-386-small-frame-black": {
     "id": "print-archived-painting-386-small-frame-black",
@@ -87792,25 +89467,25 @@ export default {
     "productId": "archived-painting-387",
     "title": "Tulsi Gabbard #1 — Large print",
     "artworkTitle": "Tulsi Gabbard #1",
-    "amount": "80.00",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S11.82X15.92",
+    "sku": "5M144M9S11.56X15.66",
     "scale": 1,
     "imageSize": {
-      "width": 11.5667,
-      "height": 15.6667,
+      "width": 11.56,
+      "height": 15.66,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.82,
-      "height": 15.92,
+      "width": 12.56,
+      "height": 16.66,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3d1be264c56ccfd44d23698eb49b2dee599433473b61d1d518f7fd0148ac3e3c.jpg",
-    "assetSha256": "3d1be264c56ccfd44d23698eb49b2dee599433473b61d1d518f7fd0148ac3e3c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5d16b19bd77b05e1c028955180ff908a27cfe80b3dfa6d2c3fc6031113aa7fec.jpg",
+    "assetSha256": "5d16b19bd77b05e1c028955180ff908a27cfe80b3dfa6d2c3fc6031113aa7fec",
     "sourceSha256": "c9bbb3f33ff4f860e9846a7479cb19550c230739149e5bbb3275ef7e4cb0f847",
     "layoutApproved": true,
     "preview": {
@@ -87823,8 +89498,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.56,
+      "height": 15.66,
+      "unit": "in"
+    }
   },
   "print-archived-painting-387-full-frame-black": {
     "id": "print-archived-painting-387-full-frame-black",
@@ -88066,23 +89746,23 @@ export default {
     "artworkTitle": "Tulsi Gabbard #1",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S8.92X12",
+    "sku": "5M144M9S8.66X11.74",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.6667,
+      "width": 8.66,
       "height": 11.74,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.92,
-      "height": 12,
+      "width": 9.66,
+      "height": 12.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fe1e5f1c52ceadcd1f9fc8eb6d5a91700fa8fdc719fd11e87735d24a09dcd739.jpg",
-    "assetSha256": "fe1e5f1c52ceadcd1f9fc8eb6d5a91700fa8fdc719fd11e87735d24a09dcd739",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fd33f1b287616c1df4ac750138605187b0ed0616fdc65da91cfce0bb2f58382f.jpg",
+    "assetSha256": "fd33f1b287616c1df4ac750138605187b0ed0616fdc65da91cfce0bb2f58382f",
     "sourceSha256": "c9bbb3f33ff4f860e9846a7479cb19550c230739149e5bbb3275ef7e4cb0f847",
     "layoutApproved": true,
     "preview": {
@@ -88095,8 +89775,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.66,
+      "height": 11.74,
+      "unit": "in"
+    }
   },
   "print-archived-painting-387-medium-frame-black": {
     "id": "print-archived-painting-387-medium-frame-black",
@@ -88338,23 +90023,23 @@ export default {
     "artworkTitle": "Tulsi Gabbard #1",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.03X8.08",
+    "sku": "5M144M9S5.77X7.82",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.7767,
-      "height": 7.8267,
+      "width": 5.77,
+      "height": 7.82,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.03,
-      "height": 8.08,
+      "width": 6.77,
+      "height": 8.82,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/46f89e867cc0bd589e7d261dd3dbe43fc8a88e6a096aa06cd5285536cd8db785.jpg",
-    "assetSha256": "46f89e867cc0bd589e7d261dd3dbe43fc8a88e6a096aa06cd5285536cd8db785",
+    "assetUrl": "https://vermillionaurora.com/print-editions/bb0e12119f7de52cce45d943ffc8f59dcf91ed46328a71ff005d7cd6f1f0f588.jpg",
+    "assetSha256": "bb0e12119f7de52cce45d943ffc8f59dcf91ed46328a71ff005d7cd6f1f0f588",
     "sourceSha256": "c9bbb3f33ff4f860e9846a7479cb19550c230739149e5bbb3275ef7e4cb0f847",
     "layoutApproved": true,
     "preview": {
@@ -88367,8 +90052,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.77,
+      "height": 7.82,
+      "unit": "in"
+    }
   },
   "print-archived-painting-387-small-frame-black": {
     "id": "print-archived-painting-387-small-frame-black",
@@ -88610,23 +90300,23 @@ export default {
     "artworkTitle": "Tulsi Gabbard #2",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.28X16.4",
+    "sku": "5M144M9S12.02X16.14",
     "scale": 1,
     "imageSize": {
-      "width": 12.0267,
-      "height": 16.1467,
+      "width": 12.02,
+      "height": 16.14,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.28,
-      "height": 16.4,
+      "width": 13.02,
+      "height": 17.14,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c9b09bd3698ac68474c882c3b55f39102f1b12e380ab665a77a03bbff833202c.jpg",
-    "assetSha256": "c9b09bd3698ac68474c882c3b55f39102f1b12e380ab665a77a03bbff833202c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b790e29ae08808089abb69f8a195ffe42f4e05bd8a5f9c217d3c4bde39f8f494.jpg",
+    "assetSha256": "b790e29ae08808089abb69f8a195ffe42f4e05bd8a5f9c217d3c4bde39f8f494",
     "sourceSha256": "8bf2e4be17af62dd9bccf1e9d2f9aff40bac6ea178e0d5b0ef8610702d55c3c9",
     "layoutApproved": true,
     "preview": {
@@ -88639,8 +90329,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.02,
+      "height": 16.14,
+      "unit": "in"
+    }
   },
   "print-archived-painting-389-full-frame-black": {
     "id": "print-archived-painting-389-full-frame-black",
@@ -88882,23 +90577,23 @@ export default {
     "artworkTitle": "Tulsi Gabbard #2",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.27X12.36",
+    "sku": "5M144M9S9.01X12.1",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.0167,
-      "height": 12.1067,
+      "width": 9.01,
+      "height": 12.1,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.27,
-      "height": 12.36,
+      "width": 10.01,
+      "height": 13.1,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/13b3f9c7a289b0667a0b51a3968e5631a1fd6f8e5ec8cdedf04e733a2e78dfd7.jpg",
-    "assetSha256": "13b3f9c7a289b0667a0b51a3968e5631a1fd6f8e5ec8cdedf04e733a2e78dfd7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e14a35b57463be364d2e8f1299b7fe76a46465c13fae6a171e4b4057a9ec27c7.jpg",
+    "assetSha256": "e14a35b57463be364d2e8f1299b7fe76a46465c13fae6a171e4b4057a9ec27c7",
     "sourceSha256": "8bf2e4be17af62dd9bccf1e9d2f9aff40bac6ea178e0d5b0ef8610702d55c3c9",
     "layoutApproved": true,
     "preview": {
@@ -88911,8 +90606,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.01,
+      "height": 12.1,
+      "unit": "in"
+    }
   },
   "print-archived-painting-389-medium-frame-black": {
     "id": "print-archived-painting-389-medium-frame-black",
@@ -89154,23 +90854,23 @@ export default {
     "artworkTitle": "Tulsi Gabbard #2",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.26X8.32",
+    "sku": "5M144M9S6X8.06",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.0067,
-      "height": 8.0667,
+      "width": 6,
+      "height": 8.06,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.26,
-      "height": 8.32,
+      "width": 7,
+      "height": 9.06,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e5733570a9b2054aa0053817e63d7229471a79ae92d397fe6886129ebfea72d6.jpg",
-    "assetSha256": "e5733570a9b2054aa0053817e63d7229471a79ae92d397fe6886129ebfea72d6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a4361e2776ea755165f0cdd190e9927f814cf18563ba20004297a367a1564d5b.jpg",
+    "assetSha256": "a4361e2776ea755165f0cdd190e9927f814cf18563ba20004297a367a1564d5b",
     "sourceSha256": "8bf2e4be17af62dd9bccf1e9d2f9aff40bac6ea178e0d5b0ef8610702d55c3c9",
     "layoutApproved": true,
     "preview": {
@@ -89183,8 +90883,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6,
+      "height": 8.06,
+      "unit": "in"
+    }
   },
   "print-archived-painting-389-small-frame-black": {
     "id": "print-archived-painting-389-small-frame-black",
@@ -89426,23 +91131,23 @@ export default {
     "artworkTitle": "Ron Paul",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S12.06X16.75",
+    "sku": "5M144M9S11.8X16.49",
     "scale": 1,
     "imageSize": {
-      "width": 11.8067,
-      "height": 16.4967,
+      "width": 11.8,
+      "height": 16.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.06,
-      "height": 16.75,
+      "width": 12.8,
+      "height": 17.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7f7c6b19b29107baf6ef093ead2a1fd72ec73b36229257a2c9a1a3f07c394fca.jpg",
-    "assetSha256": "7f7c6b19b29107baf6ef093ead2a1fd72ec73b36229257a2c9a1a3f07c394fca",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1b045d1e9a733e2df33413e10d5c369defb37993c9edffe4050c0387b3e9f6f8.jpg",
+    "assetSha256": "1b045d1e9a733e2df33413e10d5c369defb37993c9edffe4050c0387b3e9f6f8",
     "sourceSha256": "5030c993aeaef08722c6dd789360a6bfcf46cd82ce48612ef2444a140c3e6d30",
     "layoutApproved": true,
     "preview": {
@@ -89455,8 +91160,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.8,
+      "height": 16.49,
+      "unit": "in"
+    }
   },
   "print-archived-painting-390-full-frame-black": {
     "id": "print-archived-painting-390-full-frame-black",
@@ -89698,23 +91408,23 @@ export default {
     "artworkTitle": "Ron Paul",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S9.1X12.62",
+    "sku": "5M144M9S8.84X12.36",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.8467,
+      "width": 8.84,
       "height": 12.36,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.1,
-      "height": 12.62,
+      "width": 9.84,
+      "height": 13.36,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d609692e74e8f077a4d7a88460b8d7f6978674f5dabe730655e8779f03e4b4a0.jpg",
-    "assetSha256": "d609692e74e8f077a4d7a88460b8d7f6978674f5dabe730655e8779f03e4b4a0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c714d98883da6b8731db565f7ddaef5cbd6e71baa1c65a5c0cc980f6b3f97bf8.jpg",
+    "assetSha256": "c714d98883da6b8731db565f7ddaef5cbd6e71baa1c65a5c0cc980f6b3f97bf8",
     "sourceSha256": "5030c993aeaef08722c6dd789360a6bfcf46cd82ce48612ef2444a140c3e6d30",
     "layoutApproved": true,
     "preview": {
@@ -89727,8 +91437,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.84,
+      "height": 12.36,
+      "unit": "in"
+    }
   },
   "print-archived-painting-390-medium-frame-black": {
     "id": "print-archived-painting-390-medium-frame-black",
@@ -89968,25 +91683,25 @@ export default {
     "productId": "archived-painting-390",
     "title": "Ron Paul — Small print",
     "artworkTitle": "Ron Paul",
-    "amount": "30.00",
+    "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.15X8.5",
+    "sku": "5M144M9S5.89X8.24",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.8967,
+      "width": 5.89,
       "height": 8.24,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.15,
-      "height": 8.5,
+      "width": 6.89,
+      "height": 9.24,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3762072a9d43ca328c67c65f3dda027a4cde05abf13e7dd6e9c585a43a0fcbf8.jpg",
-    "assetSha256": "3762072a9d43ca328c67c65f3dda027a4cde05abf13e7dd6e9c585a43a0fcbf8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7fd8c8ba4a80edfff5cd4986e84539cd94edb96692b09275750d25b3592bb226.jpg",
+    "assetSha256": "7fd8c8ba4a80edfff5cd4986e84539cd94edb96692b09275750d25b3592bb226",
     "sourceSha256": "5030c993aeaef08722c6dd789360a6bfcf46cd82ce48612ef2444a140c3e6d30",
     "layoutApproved": true,
     "preview": {
@@ -89999,8 +91714,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.89,
+      "height": 8.24,
+      "unit": "in"
+    }
   },
   "print-archived-painting-390-small-frame-black": {
     "id": "print-archived-painting-390-small-frame-black",
@@ -90240,25 +91960,25 @@ export default {
     "productId": "archived-painting-226",
     "title": "Painting #226 — Large print",
     "artworkTitle": "Painting #226",
-    "amount": "175.00",
+    "amount": "170.00",
     "currency": "USD",
-    "sku": "5M144M8S24.35X17.19",
+    "sku": "5M144M9S24.09X16.93",
     "scale": 1,
     "imageSize": {
-      "width": 24.0967,
-      "height": 16.9367,
+      "width": 24.09,
+      "height": 16.93,
       "unit": "in"
     },
     "paperSize": {
-      "width": 24.35,
-      "height": 17.19,
+      "width": 25.09,
+      "height": 17.93,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/34251ecad482c9b1e4fc025f76e2763eb007df60ec54c850441b333d8957fc06.jpg",
-    "assetSha256": "34251ecad482c9b1e4fc025f76e2763eb007df60ec54c850441b333d8957fc06",
+    "assetUrl": "https://vermillionaurora.com/print-editions/040b2048b13323b473ea4318427d33d2d18000192af201f1c0cc5c9e7425172c.jpg",
+    "assetSha256": "040b2048b13323b473ea4318427d33d2d18000192af201f1c0cc5c9e7425172c",
     "sourceSha256": "58877194b4cb1a4caa6f655c50e29aa546c154fb9fb58223b09220a613d1727e",
     "layoutApproved": true,
     "preview": {
@@ -90271,8 +91991,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 24.09,
+      "height": 16.93,
+      "unit": "in"
+    }
   },
   "print-archived-painting-226-full-frame-black": {
     "id": "print-archived-painting-226-full-frame-black",
@@ -90512,25 +92237,25 @@ export default {
     "productId": "archived-painting-226",
     "title": "Painting #226 — Medium print",
     "artworkTitle": "Painting #226",
-    "amount": "100.00",
+    "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S18.33X12.95",
+    "sku": "5M144M9S18.06X12.69",
     "scale": 0.75,
     "imageSize": {
-      "width": 18.0633,
-      "height": 12.6967,
+      "width": 18.06,
+      "height": 12.69,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.33,
-      "height": 12.95,
+      "width": 19.06,
+      "height": 13.69,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/70011b70fd17c3b7f86d31adbffd26ea4b22dc6aa1e7f711fea85af19f290443.jpg",
-    "assetSha256": "70011b70fd17c3b7f86d31adbffd26ea4b22dc6aa1e7f711fea85af19f290443",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4dfda10cb90ba71e22dd337a2fa4a2e69d22bdca77013e570f90087d144fca89.jpg",
+    "assetSha256": "4dfda10cb90ba71e22dd337a2fa4a2e69d22bdca77013e570f90087d144fca89",
     "sourceSha256": "58877194b4cb1a4caa6f655c50e29aa546c154fb9fb58223b09220a613d1727e",
     "layoutApproved": true,
     "preview": {
@@ -90543,8 +92268,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 18.06,
+      "height": 12.69,
+      "unit": "in"
+    }
   },
   "print-archived-painting-226-medium-frame-black": {
     "id": "print-archived-painting-226-medium-frame-black",
@@ -90786,23 +92516,23 @@ export default {
     "artworkTitle": "Painting #226",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S12.3X8.72",
+    "sku": "5M144M9S12.04X8.46",
     "scale": 0.5,
     "imageSize": {
-      "width": 12.0467,
-      "height": 8.4667,
+      "width": 12.04,
+      "height": 8.46,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.3,
-      "height": 8.72,
+      "width": 13.04,
+      "height": 9.46,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/743f8935ee009504d296a9e3a47d3c5806e630b7a06b69ef9fb6023a8bde2cc6.jpg",
-    "assetSha256": "743f8935ee009504d296a9e3a47d3c5806e630b7a06b69ef9fb6023a8bde2cc6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/124df3241f31c93d4e04d1c8ac8ddc7306696a683a1e061e427e03014251227d.jpg",
+    "assetSha256": "124df3241f31c93d4e04d1c8ac8ddc7306696a683a1e061e427e03014251227d",
     "sourceSha256": "58877194b4cb1a4caa6f655c50e29aa546c154fb9fb58223b09220a613d1727e",
     "layoutApproved": true,
     "preview": {
@@ -90815,8 +92545,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.04,
+      "height": 8.46,
+      "unit": "in"
+    }
   },
   "print-archived-painting-226-small-frame-black": {
     "id": "print-archived-painting-226-small-frame-black",
@@ -91056,25 +92791,25 @@ export default {
     "productId": "archived-painting-354",
     "title": "Painting #354 — Large print",
     "artworkTitle": "Painting #354",
-    "amount": "190.00",
+    "amount": "180.00",
     "currency": "USD",
-    "sku": "5M144M8S18.05X24.55",
+    "sku": "5M144M9S17.79X24.29",
     "scale": 1,
     "imageSize": {
-      "width": 17.7967,
+      "width": 17.79,
       "height": 24.29,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.05,
-      "height": 24.55,
+      "width": 18.79,
+      "height": 25.29,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e0f04e05dd151da73837ee2fb52268fd9e9294a0a53985d8461584a52aee09ef.jpg",
-    "assetSha256": "e0f04e05dd151da73837ee2fb52268fd9e9294a0a53985d8461584a52aee09ef",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8c0ad212dfda86e06c17207261820cc4db5f91b200cadc97a08f507a85ff1164.jpg",
+    "assetSha256": "8c0ad212dfda86e06c17207261820cc4db5f91b200cadc97a08f507a85ff1164",
     "sourceSha256": "020829831bba99f303622a9351e674b4bf0a3794f5995ecf744bdae4179eda33",
     "layoutApproved": true,
     "preview": {
@@ -91087,8 +92822,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 17.79,
+      "height": 24.29,
+      "unit": "in"
+    }
   },
   "print-archived-painting-354-full-frame-black": {
     "id": "print-archived-painting-354-full-frame-black",
@@ -91330,23 +93070,23 @@ export default {
     "artworkTitle": "Painting #354",
     "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S13.6X18.47",
+    "sku": "5M144M9S13.34X18.21",
     "scale": 0.75,
     "imageSize": {
-      "width": 13.3467,
-      "height": 18.2167,
+      "width": 13.34,
+      "height": 18.21,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.6,
-      "height": 18.47,
+      "width": 14.34,
+      "height": 19.21,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1731e7094c29c6d07cd6ab0cd39db5fa0857043a21a6b0e6c8432d195e9ccd28.jpg",
-    "assetSha256": "1731e7094c29c6d07cd6ab0cd39db5fa0857043a21a6b0e6c8432d195e9ccd28",
+    "assetUrl": "https://vermillionaurora.com/print-editions/59889989b420ae17c22bc29bb2de9cfe7a8df906ae810bea806fc6464103e391.jpg",
+    "assetSha256": "59889989b420ae17c22bc29bb2de9cfe7a8df906ae810bea806fc6464103e391",
     "sourceSha256": "020829831bba99f303622a9351e674b4bf0a3794f5995ecf744bdae4179eda33",
     "layoutApproved": true,
     "preview": {
@@ -91359,8 +93099,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.34,
+      "height": 18.21,
+      "unit": "in"
+    }
   },
   "print-archived-painting-354-medium-frame-black": {
     "id": "print-archived-painting-354-medium-frame-black",
@@ -91600,25 +93345,25 @@ export default {
     "productId": "archived-painting-354",
     "title": "Painting #354 — Small print",
     "artworkTitle": "Painting #354",
-    "amount": "50.00",
+    "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S9.15X12.4",
+    "sku": "5M144M9S8.89X12.14",
     "scale": 0.5,
     "imageSize": {
-      "width": 8.8967,
-      "height": 12.1433,
+      "width": 8.89,
+      "height": 12.14,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.15,
-      "height": 12.4,
+      "width": 9.89,
+      "height": 13.14,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/47933d26744c505b97feedae58c5b801a84941c34dd377182bc5e2aea39a5f19.jpg",
-    "assetSha256": "47933d26744c505b97feedae58c5b801a84941c34dd377182bc5e2aea39a5f19",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ef2b4e57c79442b2885429eba88c8b83ea8d8a06d7a97a93a0fe63c5a818a69d.jpg",
+    "assetSha256": "ef2b4e57c79442b2885429eba88c8b83ea8d8a06d7a97a93a0fe63c5a818a69d",
     "sourceSha256": "020829831bba99f303622a9351e674b4bf0a3794f5995ecf744bdae4179eda33",
     "layoutApproved": true,
     "preview": {
@@ -91631,8 +93376,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.89,
+      "height": 12.14,
+      "unit": "in"
+    }
   },
   "print-archived-painting-354-small-frame-black": {
     "id": "print-archived-painting-354-small-frame-black",
@@ -91872,25 +93622,25 @@ export default {
     "productId": "archived-painting-249",
     "title": "Lake in North Cascades — Large print",
     "artworkTitle": "Lake in North Cascades",
-    "amount": "135.00",
+    "amount": "130.00",
     "currency": "USD",
-    "sku": "5M144M8S13.09X24.25",
+    "sku": "5M144M9S12.83X23.97",
     "scale": 1,
     "imageSize": {
-      "width": 12.8367,
-      "height": 23.9767,
+      "width": 12.83,
+      "height": 23.97,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.09,
-      "height": 24.25,
+      "width": 13.83,
+      "height": 24.97,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/328900df4060b21c1ebadbd66df1a80a75ff9f03e10e0b073ea0c0a1ba53d8de.jpg",
-    "assetSha256": "328900df4060b21c1ebadbd66df1a80a75ff9f03e10e0b073ea0c0a1ba53d8de",
+    "assetUrl": "https://vermillionaurora.com/print-editions/05945db37dacb3adead60dcd510aae01a92ba1d356b0a26fef2a8c747fe06ecb.jpg",
+    "assetSha256": "05945db37dacb3adead60dcd510aae01a92ba1d356b0a26fef2a8c747fe06ecb",
     "sourceSha256": "0d8b905417ca735c995aee98ca4f07a719dfc8b8f4d89a6babf609ae159efa7d",
     "layoutApproved": true,
     "preview": {
@@ -91903,8 +93653,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.83,
+      "height": 23.97,
+      "unit": "in"
+    }
   },
   "print-archived-painting-249-full-frame-black": {
     "id": "print-archived-painting-249-full-frame-black",
@@ -92144,25 +93899,25 @@ export default {
     "productId": "archived-painting-249",
     "title": "Lake in North Cascades — Medium print",
     "artworkTitle": "Lake in North Cascades",
-    "amount": "75.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S9.88X18.25",
+    "sku": "5M144M9S9.62X17.98",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.6267,
+      "width": 9.62,
       "height": 17.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.88,
-      "height": 18.25,
+      "width": 10.62,
+      "height": 18.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/def6e29a653e4b2ab66989e472ec4dcf8393a827d3b4f9c037101ff174e60d08.jpg",
-    "assetSha256": "def6e29a653e4b2ab66989e472ec4dcf8393a827d3b4f9c037101ff174e60d08",
+    "assetUrl": "https://vermillionaurora.com/print-editions/108dc1bbed5f199079192a88f7c07f65e8be05914e2353352e0d4c970fc92ec5.jpg",
+    "assetSha256": "108dc1bbed5f199079192a88f7c07f65e8be05914e2353352e0d4c970fc92ec5",
     "sourceSha256": "0d8b905417ca735c995aee98ca4f07a719dfc8b8f4d89a6babf609ae159efa7d",
     "layoutApproved": true,
     "preview": {
@@ -92175,8 +93930,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.62,
+      "height": 17.98,
+      "unit": "in"
+    }
   },
   "print-archived-painting-249-medium-frame-black": {
     "id": "print-archived-painting-249-medium-frame-black",
@@ -92418,23 +94178,23 @@ export default {
     "artworkTitle": "Lake in North Cascades",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S6.67X12.25",
+    "sku": "5M144M9S6.41X11.98",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.4167,
-      "height": 11.9867,
+      "width": 6.41,
+      "height": 11.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.67,
-      "height": 12.25,
+      "width": 7.41,
+      "height": 12.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/962c5a01ee68810353562409f594965139e8defee002564ade70a75130e4b784.jpg",
-    "assetSha256": "962c5a01ee68810353562409f594965139e8defee002564ade70a75130e4b784",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d36ef1865b251b1391ae62b8be4d3caf31d1c358422bc09a023799de146acf93.jpg",
+    "assetSha256": "d36ef1865b251b1391ae62b8be4d3caf31d1c358422bc09a023799de146acf93",
     "sourceSha256": "0d8b905417ca735c995aee98ca4f07a719dfc8b8f4d89a6babf609ae159efa7d",
     "layoutApproved": true,
     "preview": {
@@ -92447,8 +94207,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.41,
+      "height": 11.98,
+      "unit": "in"
+    }
   },
   "print-archived-painting-249-small-frame-black": {
     "id": "print-archived-painting-249-small-frame-black",
@@ -92688,25 +94453,25 @@ export default {
     "productId": "archived-painting-73",
     "title": "Painting #73 — Large print",
     "artworkTitle": "Painting #73",
-    "amount": "145.00",
+    "amount": "140.00",
     "currency": "USD",
-    "sku": "5M144M8S14.82X23.6",
+    "sku": "5M144M9S14.56X23.34",
     "scale": 1,
     "imageSize": {
-      "width": 14.5667,
-      "height": 23.3467,
+      "width": 14.56,
+      "height": 23.34,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.82,
-      "height": 23.6,
+      "width": 15.56,
+      "height": 24.34,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1ffba221351dba21b8a6faec882bbd11c4f59f9c5e9c3a510b76141bc58ad923.jpg",
-    "assetSha256": "1ffba221351dba21b8a6faec882bbd11c4f59f9c5e9c3a510b76141bc58ad923",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fe70b2f68d2f252f812949ddfe40aa6d166c6be40b75368ad70a395941412fc8.jpg",
+    "assetSha256": "fe70b2f68d2f252f812949ddfe40aa6d166c6be40b75368ad70a395941412fc8",
     "sourceSha256": "ce548dec7454c6a31c49a759c41152114abd14e1731fc91f48c9c1e206c2d32c",
     "layoutApproved": true,
     "preview": {
@@ -92719,8 +94484,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.56,
+      "height": 23.34,
+      "unit": "in"
+    }
   },
   "print-archived-painting-73-full-frame-black": {
     "id": "print-archived-painting-73-full-frame-black",
@@ -92960,25 +94730,25 @@ export default {
     "productId": "archived-painting-73",
     "title": "Painting #73 — Medium print",
     "artworkTitle": "Painting #73",
-    "amount": "85.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S11.18X17.76",
+    "sku": "5M144M9S10.92X17.5",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.9233,
-      "height": 17.5067,
+      "width": 10.92,
+      "height": 17.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.18,
-      "height": 17.76,
+      "width": 11.92,
+      "height": 18.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5315f27be389e35d4e26d08731f936133064eceaaf00cc7a9994401ad867cc3a.jpg",
-    "assetSha256": "5315f27be389e35d4e26d08731f936133064eceaaf00cc7a9994401ad867cc3a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a3175003e15c3a2298d5b6043c39c1ca4e95bf54391fcc3000c53a556435dfcf.jpg",
+    "assetSha256": "a3175003e15c3a2298d5b6043c39c1ca4e95bf54391fcc3000c53a556435dfcf",
     "sourceSha256": "ce548dec7454c6a31c49a759c41152114abd14e1731fc91f48c9c1e206c2d32c",
     "layoutApproved": true,
     "preview": {
@@ -92991,8 +94761,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.92,
+      "height": 17.5,
+      "unit": "in"
+    }
   },
   "print-archived-painting-73-medium-frame-black": {
     "id": "print-archived-painting-73-medium-frame-black",
@@ -93234,23 +95009,23 @@ export default {
     "artworkTitle": "Painting #73",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S7.53X11.92",
+    "sku": "5M144M9S7.27X11.66",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.2767,
-      "height": 11.6633,
+      "width": 7.27,
+      "height": 11.66,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.53,
-      "height": 11.92,
+      "width": 8.27,
+      "height": 12.66,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b4156cbc7a6a1e4a7228ab8c5e706932cb592da6cb3ca50dac8c032f323a756f.jpg",
-    "assetSha256": "b4156cbc7a6a1e4a7228ab8c5e706932cb592da6cb3ca50dac8c032f323a756f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/993115e8616b8c80f8df181caa1e625bd9f72b577d57aa2d2f1311672cc16a8a.jpg",
+    "assetSha256": "993115e8616b8c80f8df181caa1e625bd9f72b577d57aa2d2f1311672cc16a8a",
     "sourceSha256": "ce548dec7454c6a31c49a759c41152114abd14e1731fc91f48c9c1e206c2d32c",
     "layoutApproved": true,
     "preview": {
@@ -93263,8 +95038,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.27,
+      "height": 11.66,
+      "unit": "in"
+    }
   },
   "print-archived-painting-73-small-frame-black": {
     "id": "print-archived-painting-73-small-frame-black",
@@ -93504,25 +95284,25 @@ export default {
     "productId": "archived-painting-75",
     "title": "Painting #75 — Large print",
     "artworkTitle": "Painting #75",
-    "amount": "120.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S13.82X20.14",
+    "sku": "5M144M9S13.56X19.88",
     "scale": 1,
     "imageSize": {
-      "width": 13.5667,
-      "height": 19.8867,
+      "width": 13.56,
+      "height": 19.88,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.82,
-      "height": 20.14,
+      "width": 14.56,
+      "height": 20.88,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/bb23a8ed5093ecc50c20b96c5361170576a488f056a5013f8959e62954a7dfd9.jpg",
-    "assetSha256": "bb23a8ed5093ecc50c20b96c5361170576a488f056a5013f8959e62954a7dfd9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/eef7690e541c6d8e2141176792bff2b3bc47d8445159c0315a645de706b8a801.jpg",
+    "assetSha256": "eef7690e541c6d8e2141176792bff2b3bc47d8445159c0315a645de706b8a801",
     "sourceSha256": "09b012e1ac23215f0b5d3d63350ef9a0882e5c3d1680802239e0ad603bc2f2af",
     "layoutApproved": true,
     "preview": {
@@ -93535,8 +95315,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.56,
+      "height": 19.88,
+      "unit": "in"
+    }
   },
   "print-archived-painting-75-full-frame-black": {
     "id": "print-archived-painting-75-full-frame-black",
@@ -93778,23 +95563,23 @@ export default {
     "artworkTitle": "Painting #75",
     "amount": "65.00",
     "currency": "USD",
-    "sku": "5M144M8S10.42X15.17",
+    "sku": "5M144M9S10.16X14.9",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1667,
-      "height": 14.9033,
+      "width": 10.16,
+      "height": 14.9,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.42,
-      "height": 15.17,
+      "width": 11.16,
+      "height": 15.9,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e48df5c622d2121df0faa038765b5f9e8c43665c13f4187e38660ccce3730a08.jpg",
-    "assetSha256": "e48df5c622d2121df0faa038765b5f9e8c43665c13f4187e38660ccce3730a08",
+    "assetUrl": "https://vermillionaurora.com/print-editions/199a6f250a8fd1cb2b6d7f6209411909b03fc7a8c3b594fafaa31d2c606ddb2d.jpg",
+    "assetSha256": "199a6f250a8fd1cb2b6d7f6209411909b03fc7a8c3b594fafaa31d2c606ddb2d",
     "sourceSha256": "09b012e1ac23215f0b5d3d63350ef9a0882e5c3d1680802239e0ad603bc2f2af",
     "layoutApproved": true,
     "preview": {
@@ -93807,8 +95592,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.16,
+      "height": 14.9,
+      "unit": "in"
+    }
   },
   "print-archived-painting-75-medium-frame-black": {
     "id": "print-archived-painting-75-medium-frame-black",
@@ -94050,23 +95840,23 @@ export default {
     "artworkTitle": "Painting #75",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S7.03X10.19",
+    "sku": "5M144M9S6.77X9.93",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7767,
-      "height": 9.9333,
+      "width": 6.77,
+      "height": 9.93,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.03,
-      "height": 10.19,
+      "width": 7.77,
+      "height": 10.93,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0879fe37266aa5d729b1317c70769ee952154159dfe68d94ec88da84aa671862.jpg",
-    "assetSha256": "0879fe37266aa5d729b1317c70769ee952154159dfe68d94ec88da84aa671862",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8a68d5b9a6484c95da451593c3e2a1c4fc14c357a159ec82794647835dd3ef6f.jpg",
+    "assetSha256": "8a68d5b9a6484c95da451593c3e2a1c4fc14c357a159ec82794647835dd3ef6f",
     "sourceSha256": "09b012e1ac23215f0b5d3d63350ef9a0882e5c3d1680802239e0ad603bc2f2af",
     "layoutApproved": true,
     "preview": {
@@ -94079,8 +95869,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.77,
+      "height": 9.93,
+      "unit": "in"
+    }
   },
   "print-archived-painting-75-small-frame-black": {
     "id": "print-archived-painting-75-small-frame-black",
@@ -94320,25 +96115,25 @@ export default {
     "productId": "archived-painting-76",
     "title": "Painting #76 — Large print",
     "artworkTitle": "Painting #76",
-    "amount": "120.00",
+    "amount": "115.00",
     "currency": "USD",
-    "sku": "5M144M8S14.35X19.56",
+    "sku": "5M144M9S14.09X19.3",
     "scale": 1,
     "imageSize": {
-      "width": 14.0967,
+      "width": 14.09,
       "height": 19.3,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.35,
-      "height": 19.56,
+      "width": 15.09,
+      "height": 20.3,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a4cc402dab5f454f2591a66e5e117793a0d1c2263a16b5dc8f1aa509cd3d0b90.jpg",
-    "assetSha256": "a4cc402dab5f454f2591a66e5e117793a0d1c2263a16b5dc8f1aa509cd3d0b90",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8e4a28deeeea7afa4de9fef1f15cfc9317dc525b37f3f7ab93035e486e75cc3d.jpg",
+    "assetSha256": "8e4a28deeeea7afa4de9fef1f15cfc9317dc525b37f3f7ab93035e486e75cc3d",
     "sourceSha256": "64b732c7f9f637d54873d5dc1656279ee18adcf4d17ba5389298e61d6890895e",
     "layoutApproved": true,
     "preview": {
@@ -94351,8 +96146,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.09,
+      "height": 19.3,
+      "unit": "in"
+    }
   },
   "print-archived-painting-76-full-frame-black": {
     "id": "print-archived-painting-76-full-frame-black",
@@ -94592,25 +96392,25 @@ export default {
     "productId": "archived-painting-76",
     "title": "Painting #76 — Medium print",
     "artworkTitle": "Painting #76",
-    "amount": "70.00",
+    "amount": "65.00",
     "currency": "USD",
-    "sku": "5M144M8S10.83X14.73",
+    "sku": "5M144M9S10.57X14.47",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.5733,
-      "height": 14.4767,
+      "width": 10.57,
+      "height": 14.47,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.83,
-      "height": 14.73,
+      "width": 11.57,
+      "height": 15.47,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b2ebee21a23f5ced3ea0e1daa865e2b9398c9f4a80cf3115e33e32a5d6bb311c.jpg",
-    "assetSha256": "b2ebee21a23f5ced3ea0e1daa865e2b9398c9f4a80cf3115e33e32a5d6bb311c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2bf8dd2400cad6038ceb75be837fe7090aab2a874e622ce419051cb1417707d0.jpg",
+    "assetSha256": "2bf8dd2400cad6038ceb75be837fe7090aab2a874e622ce419051cb1417707d0",
     "sourceSha256": "64b732c7f9f637d54873d5dc1656279ee18adcf4d17ba5389298e61d6890895e",
     "layoutApproved": true,
     "preview": {
@@ -94623,8 +96423,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.57,
+      "height": 14.47,
+      "unit": "in"
+    }
   },
   "print-archived-painting-76-medium-frame-black": {
     "id": "print-archived-painting-76-medium-frame-black",
@@ -94866,23 +96671,23 @@ export default {
     "artworkTitle": "Painting #76",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S7.3X9.9",
+    "sku": "5M144M9S7.04X9.64",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.0467,
-      "height": 9.6467,
+      "width": 7.04,
+      "height": 9.64,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.3,
-      "height": 9.9,
+      "width": 8.04,
+      "height": 10.64,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0a4d2835abd9f038ba82b2d26cca4bc2decad06ac422b7d6ef1114d78efe5c05.jpg",
-    "assetSha256": "0a4d2835abd9f038ba82b2d26cca4bc2decad06ac422b7d6ef1114d78efe5c05",
+    "assetUrl": "https://vermillionaurora.com/print-editions/59985fb0f133ef3c38fc490c0bb2a6a517debc58328aefd0578d0e1aa2ed9b10.jpg",
+    "assetSha256": "59985fb0f133ef3c38fc490c0bb2a6a517debc58328aefd0578d0e1aa2ed9b10",
     "sourceSha256": "64b732c7f9f637d54873d5dc1656279ee18adcf4d17ba5389298e61d6890895e",
     "layoutApproved": true,
     "preview": {
@@ -94895,8 +96700,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.04,
+      "height": 9.64,
+      "unit": "in"
+    }
   },
   "print-archived-painting-76-small-frame-black": {
     "id": "print-archived-painting-76-small-frame-black",
@@ -95136,25 +96946,25 @@ export default {
     "productId": "archived-painting-img-1608",
     "title": "My Dad, Paul Murphy — Large print",
     "artworkTitle": "My Dad, Paul Murphy",
-    "amount": "115.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S12.28X21.72",
+    "sku": "5M144M9S12.02X21.45",
     "scale": 1,
     "imageSize": {
-      "width": 12.0267,
-      "height": 21.4567,
+      "width": 12.02,
+      "height": 21.45,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.28,
-      "height": 21.72,
+      "width": 13.02,
+      "height": 22.45,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9fdc802ffd3458e849fdace68b6145a37873a53a3123bfd13b48334cbdb2a581.jpg",
-    "assetSha256": "9fdc802ffd3458e849fdace68b6145a37873a53a3123bfd13b48334cbdb2a581",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fa613c6e64c201f6a664a52f171c152c6f02f772f8eb0af59bc4a776ccc28272.jpg",
+    "assetSha256": "fa613c6e64c201f6a664a52f171c152c6f02f772f8eb0af59bc4a776ccc28272",
     "sourceSha256": "7401a29fec30c8f5333f5830871d8efb867cf0ad3418fd92e1740f65d66f03c1",
     "layoutApproved": true,
     "preview": {
@@ -95167,8 +96977,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.02,
+      "height": 21.45,
+      "unit": "in"
+    }
   },
   "print-archived-painting-img-1608-full-frame-black": {
     "id": "print-archived-painting-img-1608-full-frame-black",
@@ -95408,25 +97223,25 @@ export default {
     "productId": "archived-painting-img-1608",
     "title": "My Dad, Paul Murphy — Medium print",
     "artworkTitle": "My Dad, Paul Murphy",
-    "amount": "65.00",
+    "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S9.27X16.35",
+    "sku": "5M144M9S9.01X16.08",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.0167,
-      "height": 16.0867,
+      "width": 9.01,
+      "height": 16.08,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.27,
-      "height": 16.35,
+      "width": 10.01,
+      "height": 17.08,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/45265f674d7d2fdb35c7ce938b18eded2e9121e0e30775f876343eb45cf98868.jpg",
-    "assetSha256": "45265f674d7d2fdb35c7ce938b18eded2e9121e0e30775f876343eb45cf98868",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d3492c9bfb70f723983d443701793676b1ed4cdb5ef8a11576c81737665021d7.jpg",
+    "assetSha256": "d3492c9bfb70f723983d443701793676b1ed4cdb5ef8a11576c81737665021d7",
     "sourceSha256": "7401a29fec30c8f5333f5830871d8efb867cf0ad3418fd92e1740f65d66f03c1",
     "layoutApproved": true,
     "preview": {
@@ -95439,8 +97254,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.01,
+      "height": 16.08,
+      "unit": "in"
+    }
   },
   "print-archived-painting-img-1608-medium-frame-black": {
     "id": "print-archived-painting-img-1608-medium-frame-black",
@@ -95682,23 +97502,23 @@ export default {
     "artworkTitle": "My Dad, Paul Murphy",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S6.26X10.98",
+    "sku": "5M144M9S6X10.71",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.0067,
-      "height": 10.7167,
+      "width": 6,
+      "height": 10.71,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.26,
-      "height": 10.98,
+      "width": 7,
+      "height": 11.71,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f3a3edcd398633caff0edbfe053650d17b8805c97a5711678c2c5276dc969e1c.jpg",
-    "assetSha256": "f3a3edcd398633caff0edbfe053650d17b8805c97a5711678c2c5276dc969e1c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/fbd6bc79970c3748fc352244c910d53e1fe2857bbf08dc1c76b38604e7a3a2e3.jpg",
+    "assetSha256": "fbd6bc79970c3748fc352244c910d53e1fe2857bbf08dc1c76b38604e7a3a2e3",
     "sourceSha256": "7401a29fec30c8f5333f5830871d8efb867cf0ad3418fd92e1740f65d66f03c1",
     "layoutApproved": true,
     "preview": {
@@ -95711,8 +97531,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6,
+      "height": 10.71,
+      "unit": "in"
+    }
   },
   "print-archived-painting-img-1608-small-frame-black": {
     "id": "print-archived-painting-img-1608-small-frame-black",
@@ -95954,23 +97779,23 @@ export default {
     "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S21.45X11.96",
+    "sku": "5M144M9S21.19X11.7",
     "scale": 1,
     "imageSize": {
-      "width": 21.1967,
-      "height": 11.7067,
+      "width": 21.19,
+      "height": 11.7,
       "unit": "in"
     },
     "paperSize": {
-      "width": 21.45,
-      "height": 11.96,
+      "width": 22.19,
+      "height": 12.7,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5edf606606dfd1c37e79139132895c56195063e69bd552a9e39781ecbf0af4a4.jpg",
-    "assetSha256": "5edf606606dfd1c37e79139132895c56195063e69bd552a9e39781ecbf0af4a4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f9d83941120b307f0104f1bd850995f51a0eb4d981eaa0c367dc6d7ebcf78585.jpg",
+    "assetSha256": "f9d83941120b307f0104f1bd850995f51a0eb4d981eaa0c367dc6d7ebcf78585",
     "sourceSha256": "a616e8fe5d34df6ce9ddba9e9c389ffee6a97974faea046237220f94c7710e30",
     "layoutApproved": true,
     "preview": {
@@ -95983,8 +97808,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 21.19,
+      "height": 11.7,
+      "unit": "in"
+    }
   },
   "print-archived-painting-416-full-frame-black": {
     "id": "print-archived-painting-416-full-frame-black",
@@ -96226,23 +98056,23 @@ export default {
     "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S16.15X9.03",
+    "sku": "5M144M9S15.89X8.77",
     "scale": 0.75,
     "imageSize": {
-      "width": 15.8933,
-      "height": 8.7767,
+      "width": 15.89,
+      "height": 8.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.15,
-      "height": 9.03,
+      "width": 16.89,
+      "height": 9.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7792eeffb5ccc2cd7cb1933ae021ed6628f002fb72b73371f777790b24db4f70.jpg",
-    "assetSha256": "7792eeffb5ccc2cd7cb1933ae021ed6628f002fb72b73371f777790b24db4f70",
+    "assetUrl": "https://vermillionaurora.com/print-editions/40a9db875e8816401fcc214c7d49fda2a6eae18eea6e03402cacfb29283c079c.jpg",
+    "assetSha256": "40a9db875e8816401fcc214c7d49fda2a6eae18eea6e03402cacfb29283c079c",
     "sourceSha256": "a616e8fe5d34df6ce9ddba9e9c389ffee6a97974faea046237220f94c7710e30",
     "layoutApproved": true,
     "preview": {
@@ -96255,8 +98085,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.89,
+      "height": 8.77,
+      "unit": "in"
+    }
   },
   "print-archived-painting-416-medium-frame-black": {
     "id": "print-archived-painting-416-medium-frame-black",
@@ -96498,23 +98333,23 @@ export default {
     "artworkTitle": "Brekkie Finishing Orange Calcite B",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.85X6.1",
+    "sku": "5M144M9S10.58X5.84",
     "scale": 0.5,
     "imageSize": {
-      "width": 10.5867,
-      "height": 5.8467,
+      "width": 10.58,
+      "height": 5.84,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.85,
-      "height": 6.1,
+      "width": 11.58,
+      "height": 6.84,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fd29da82067d66948fdfa7057684747b8ea0836799353e3aed4f003e95868746.jpg",
-    "assetSha256": "fd29da82067d66948fdfa7057684747b8ea0836799353e3aed4f003e95868746",
+    "assetUrl": "https://vermillionaurora.com/print-editions/33028ace5e617ab87651b9cd972a2478f33136d8295cd6eee360641f67900838.jpg",
+    "assetSha256": "33028ace5e617ab87651b9cd972a2478f33136d8295cd6eee360641f67900838",
     "sourceSha256": "a616e8fe5d34df6ce9ddba9e9c389ffee6a97974faea046237220f94c7710e30",
     "layoutApproved": true,
     "preview": {
@@ -96527,8 +98362,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.58,
+      "height": 5.84,
+      "unit": "in"
+    }
   },
   "print-archived-painting-416-small-frame-black": {
     "id": "print-archived-painting-416-small-frame-black",
@@ -96768,25 +98608,25 @@ export default {
     "productId": "archived-painting-img-1612",
     "title": "Bounty of Satoshi: Achievement — Large print",
     "artworkTitle": "Bounty of Satoshi: Achievement",
-    "amount": "105.00",
+    "amount": "100.00",
     "currency": "USD",
-    "sku": "5M144M8S11.83X21.02",
+    "sku": "5M144M9S11.57X20.75",
     "scale": 1,
     "imageSize": {
-      "width": 11.5767,
-      "height": 20.7533,
+      "width": 11.57,
+      "height": 20.75,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.83,
-      "height": 21.02,
+      "width": 12.57,
+      "height": 21.75,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fd28b84328a4854c1568be8550d342fbbf48e22f976766cf92c297316a8f30e7.jpg",
-    "assetSha256": "fd28b84328a4854c1568be8550d342fbbf48e22f976766cf92c297316a8f30e7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/dd46ec11d05ab740aa2f9e1fc88dabda3ecb421f1c11778d8ea6c2daf61671ed.jpg",
+    "assetSha256": "dd46ec11d05ab740aa2f9e1fc88dabda3ecb421f1c11778d8ea6c2daf61671ed",
     "sourceSha256": "c987f826bbffc0e4dea91ece695bcfab8181cb008757b2e5c9b97c130088b6e1",
     "layoutApproved": true,
     "preview": {
@@ -96799,8 +98639,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.57,
+      "height": 20.75,
+      "unit": "in"
+    }
   },
   "print-archived-painting-img-1612-full-frame-black": {
     "id": "print-archived-painting-img-1612-full-frame-black",
@@ -97042,23 +98887,23 @@ export default {
     "artworkTitle": "Bounty of Satoshi: Achievement",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S8.94X15.82",
+    "sku": "5M144M9S8.68X15.56",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.6833,
-      "height": 15.5667,
+      "width": 8.68,
+      "height": 15.56,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.94,
-      "height": 15.82,
+      "width": 9.68,
+      "height": 16.56,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/28583371549d1f09218605aeb7b7d9af2b86a45821b36be48553a638ddcf2e43.jpg",
-    "assetSha256": "28583371549d1f09218605aeb7b7d9af2b86a45821b36be48553a638ddcf2e43",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2a852e27408f4311f9d9b6beee9c71568e3b3f625ce0e2f67dc1f564a2e244f8.jpg",
+    "assetSha256": "2a852e27408f4311f9d9b6beee9c71568e3b3f625ce0e2f67dc1f564a2e244f8",
     "sourceSha256": "c987f826bbffc0e4dea91ece695bcfab8181cb008757b2e5c9b97c130088b6e1",
     "layoutApproved": true,
     "preview": {
@@ -97071,8 +98916,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.68,
+      "height": 15.56,
+      "unit": "in"
+    }
   },
   "print-archived-painting-img-1612-medium-frame-black": {
     "id": "print-archived-painting-img-1612-medium-frame-black",
@@ -97314,23 +99164,23 @@ export default {
     "artworkTitle": "Bounty of Satoshi: Achievement",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S6.04X10.63",
+    "sku": "5M144M9S5.78X10.37",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.7867,
-      "height": 10.3733,
+      "width": 5.78,
+      "height": 10.37,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.04,
-      "height": 10.63,
+      "width": 6.78,
+      "height": 11.37,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/37b8560816bcd11591e46867762d3b931535ba963c9c00c4e204c1ca107ac27c.jpg",
-    "assetSha256": "37b8560816bcd11591e46867762d3b931535ba963c9c00c4e204c1ca107ac27c",
+    "assetUrl": "https://vermillionaurora.com/print-editions/68ca8b13b1fd955f46475cacb92f02b00c6d93edf1c87ca365cc52fdc1a7a2f2.jpg",
+    "assetSha256": "68ca8b13b1fd955f46475cacb92f02b00c6d93edf1c87ca365cc52fdc1a7a2f2",
     "sourceSha256": "c987f826bbffc0e4dea91ece695bcfab8181cb008757b2e5c9b97c130088b6e1",
     "layoutApproved": true,
     "preview": {
@@ -97343,8 +99193,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.78,
+      "height": 10.37,
+      "unit": "in"
+    }
   },
   "print-archived-painting-img-1612-small-frame-black": {
     "id": "print-archived-painting-img-1612-small-frame-black",
@@ -97584,25 +99439,25 @@ export default {
     "productId": "archived-painting-246",
     "title": "Sunset from Atami, El Salvador #1 — Large print",
     "artworkTitle": "Sunset from Atami, El Salvador #1",
-    "amount": "140.00",
+    "amount": "135.00",
     "currency": "USD",
-    "sku": "5M144M8S13.75X24.11",
+    "sku": "5M144M9S13.49X23.85",
     "scale": 1,
     "imageSize": {
-      "width": 13.4967,
-      "height": 23.8567,
+      "width": 13.49,
+      "height": 23.85,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.75,
-      "height": 24.11,
+      "width": 14.49,
+      "height": 24.85,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3b29598169e88535ead21d16cd36037baf9dbdbcc354777aa76e978764f79fe4.jpg",
-    "assetSha256": "3b29598169e88535ead21d16cd36037baf9dbdbcc354777aa76e978764f79fe4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/72f8d4a71dd71cc38202f2a80d4b74e818d39a448947782380cb4031116ed656.jpg",
+    "assetSha256": "72f8d4a71dd71cc38202f2a80d4b74e818d39a448947782380cb4031116ed656",
     "sourceSha256": "1aa7d0a3b86d956b6fb23786e2288aa0b1f7e46b71e4babeeb461594eab790c4",
     "layoutApproved": true,
     "preview": {
@@ -97615,8 +99470,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.49,
+      "height": 23.85,
+      "unit": "in"
+    }
   },
   "print-archived-painting-246-full-frame-black": {
     "id": "print-archived-painting-246-full-frame-black",
@@ -97856,25 +99716,25 @@ export default {
     "productId": "archived-painting-246",
     "title": "Sunset from Atami, El Salvador #1 — Medium print",
     "artworkTitle": "Sunset from Atami, El Salvador #1",
-    "amount": "80.00",
+    "amount": "75.00",
     "currency": "USD",
-    "sku": "5M144M8S10.37X18.14",
+    "sku": "5M144M9S10.11X17.88",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1167,
+      "width": 10.11,
       "height": 17.88,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.37,
-      "height": 18.14,
+      "width": 11.11,
+      "height": 18.88,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e50ee3e090024c63b4f03ff757bcc1e36597238d43b89fbe7f9550c8f2bcef72.jpg",
-    "assetSha256": "e50ee3e090024c63b4f03ff757bcc1e36597238d43b89fbe7f9550c8f2bcef72",
+    "assetUrl": "https://vermillionaurora.com/print-editions/538558451a57aad3458bc14e536e22e399ed779b61e3989c316f9af7568812ac.jpg",
+    "assetSha256": "538558451a57aad3458bc14e536e22e399ed779b61e3989c316f9af7568812ac",
     "sourceSha256": "1aa7d0a3b86d956b6fb23786e2288aa0b1f7e46b71e4babeeb461594eab790c4",
     "layoutApproved": true,
     "preview": {
@@ -97887,8 +99747,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.11,
+      "height": 17.88,
+      "unit": "in"
+    }
   },
   "print-archived-painting-246-medium-frame-black": {
     "id": "print-archived-painting-246-medium-frame-black",
@@ -98130,23 +99995,23 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #1",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S7X12.18",
+    "sku": "5M144M9S6.74X11.92",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7467,
-      "height": 11.9233,
+      "width": 6.74,
+      "height": 11.92,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7,
-      "height": 12.18,
+      "width": 7.74,
+      "height": 12.92,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/466a8e8f88ccf4d63723a5b59ec16c4bed01b5f0153cc366541de8895fa23cf5.jpg",
-    "assetSha256": "466a8e8f88ccf4d63723a5b59ec16c4bed01b5f0153cc366541de8895fa23cf5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7d86c0a61a132c6a2a66f07594fe77cd7febc148f4ab1ca1e0daad115bd80cee.jpg",
+    "assetSha256": "7d86c0a61a132c6a2a66f07594fe77cd7febc148f4ab1ca1e0daad115bd80cee",
     "sourceSha256": "1aa7d0a3b86d956b6fb23786e2288aa0b1f7e46b71e4babeeb461594eab790c4",
     "layoutApproved": true,
     "preview": {
@@ -98159,8 +100024,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.74,
+      "height": 11.92,
+      "unit": "in"
+    }
   },
   "print-archived-painting-246-small-frame-black": {
     "id": "print-archived-painting-246-small-frame-black",
@@ -98402,23 +100272,23 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "140.00",
     "currency": "USD",
-    "sku": "5M144M8S14.25X23.86",
+    "sku": "5M144M9S13.99X23.6",
     "scale": 1,
     "imageSize": {
-      "width": 13.9967,
-      "height": 23.6067,
+      "width": 13.99,
+      "height": 23.6,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.25,
-      "height": 23.86,
+      "width": 14.99,
+      "height": 24.6,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ec698eab801499c0e994b10182ff2154febb2fe4626cda76b5dfca88a9148ed4.jpg",
-    "assetSha256": "ec698eab801499c0e994b10182ff2154febb2fe4626cda76b5dfca88a9148ed4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/33cc8717a0fc2d2b0fcd141e5bc53330a85b75f7e7286dfdc9ff25900f3134eb.jpg",
+    "assetSha256": "33cc8717a0fc2d2b0fcd141e5bc53330a85b75f7e7286dfdc9ff25900f3134eb",
     "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
     "layoutApproved": true,
     "preview": {
@@ -98431,8 +100301,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.99,
+      "height": 23.6,
+      "unit": "in"
+    }
   },
   "print-archived-painting-248-full-frame-black": {
     "id": "print-archived-painting-248-full-frame-black",
@@ -98672,25 +100547,25 @@ export default {
     "productId": "archived-painting-248",
     "title": "Sunset from Atami, El Salvador #2 — Medium print",
     "artworkTitle": "Sunset from Atami, El Salvador #2",
-    "amount": "85.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S10.75X17.95",
+    "sku": "5M144M9S10.49X17.69",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.4933,
-      "height": 17.6967,
+      "width": 10.49,
+      "height": 17.69,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.75,
-      "height": 17.95,
+      "width": 11.49,
+      "height": 18.69,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c979b7b20633030a72671ca5fe65103a8dd04f4bb18f6d0e8ae7b99691747aa1.jpg",
-    "assetSha256": "c979b7b20633030a72671ca5fe65103a8dd04f4bb18f6d0e8ae7b99691747aa1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f7efff903f0cfee92aaaedf21b2a41ad46b98b955e389ff08ccbae305d2cf25d.jpg",
+    "assetSha256": "f7efff903f0cfee92aaaedf21b2a41ad46b98b955e389ff08ccbae305d2cf25d",
     "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
     "layoutApproved": true,
     "preview": {
@@ -98703,8 +100578,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.49,
+      "height": 17.69,
+      "unit": "in"
+    }
   },
   "print-archived-painting-248-medium-frame-black": {
     "id": "print-archived-painting-248-medium-frame-black",
@@ -98946,23 +100826,23 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #2",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S7.25X12.05",
+    "sku": "5M144M9S6.99X11.79",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.9933,
-      "height": 11.7967,
+      "width": 6.99,
+      "height": 11.79,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.25,
-      "height": 12.05,
+      "width": 7.99,
+      "height": 12.79,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3d877edc05b5ed019d6ababd0808e6c01d1d7996dbf3c7444e6f09900bada348.jpg",
-    "assetSha256": "3d877edc05b5ed019d6ababd0808e6c01d1d7996dbf3c7444e6f09900bada348",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f27126746f53ffd7ed47e23beed0a7140f9a7eded64815ee27a0d81ad6e89ea1.jpg",
+    "assetSha256": "f27126746f53ffd7ed47e23beed0a7140f9a7eded64815ee27a0d81ad6e89ea1",
     "sourceSha256": "e8a641e0f5ae6b44f06e638fbea763860320d36f238101d0ccf79ae498af36bd",
     "layoutApproved": true,
     "preview": {
@@ -98975,8 +100855,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.99,
+      "height": 11.79,
+      "unit": "in"
+    }
   },
   "print-archived-painting-248-small-frame-black": {
     "id": "print-archived-painting-248-small-frame-black",
@@ -99216,25 +101101,25 @@ export default {
     "productId": "archived-painting-247",
     "title": "Sunset from Atami, El Salvador #3 — Large print",
     "artworkTitle": "Sunset from Atami, El Salvador #3",
-    "amount": "150.00",
+    "amount": "145.00",
     "currency": "USD",
-    "sku": "5M144M8S15.25X23.37",
+    "sku": "5M144M9S14.99X23.11",
     "scale": 1,
     "imageSize": {
       "width": 14.99,
-      "height": 23.1167,
+      "height": 23.11,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15.25,
-      "height": 23.37,
+      "width": 15.99,
+      "height": 24.11,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b3a8fab906ffe98db79774768168327eb2dd172187b697f80dbb8d28db8bcdec.jpg",
-    "assetSha256": "b3a8fab906ffe98db79774768168327eb2dd172187b697f80dbb8d28db8bcdec",
+    "assetUrl": "https://vermillionaurora.com/print-editions/71d9b4caea195c3601e86f3ad294c4bcfa7e3ecda270fc06c4b5186f2f49a341.jpg",
+    "assetSha256": "71d9b4caea195c3601e86f3ad294c4bcfa7e3ecda270fc06c4b5186f2f49a341",
     "sourceSha256": "9064d4cf43de15de8bb99b0913e242f8473d59e03f39eb6224c0dc7ab1018920",
     "layoutApproved": true,
     "preview": {
@@ -99247,8 +101132,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.99,
+      "height": 23.11,
+      "unit": "in"
+    }
   },
   "print-archived-painting-247-full-frame-black": {
     "id": "print-archived-painting-247-full-frame-black",
@@ -99490,23 +101380,23 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S11.5X17.59",
+    "sku": "5M144M9S11.24X17.33",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.2433,
-      "height": 17.3367,
+      "width": 11.24,
+      "height": 17.33,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.5,
-      "height": 17.59,
+      "width": 12.24,
+      "height": 18.33,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/c99a9c677e811afda520ab1d704bfef803a11ecda9a6f76ac20b947b1fd06d68.jpg",
-    "assetSha256": "c99a9c677e811afda520ab1d704bfef803a11ecda9a6f76ac20b947b1fd06d68",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c60ed33acc15111a5c447566f172e85ccba2fddd218f0e10989a1dbcc972cdc1.jpg",
+    "assetSha256": "c60ed33acc15111a5c447566f172e85ccba2fddd218f0e10989a1dbcc972cdc1",
     "sourceSha256": "9064d4cf43de15de8bb99b0913e242f8473d59e03f39eb6224c0dc7ab1018920",
     "layoutApproved": true,
     "preview": {
@@ -99519,8 +101409,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.24,
+      "height": 17.33,
+      "unit": "in"
+    }
   },
   "print-archived-painting-247-medium-frame-black": {
     "id": "print-archived-painting-247-medium-frame-black",
@@ -99762,23 +101657,23 @@ export default {
     "artworkTitle": "Sunset from Atami, El Salvador #3",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S7.75X11.81",
+    "sku": "5M144M9S7.49X11.55",
     "scale": 0.5,
     "imageSize": {
-      "width": 7.4933,
-      "height": 11.5567,
+      "width": 7.49,
+      "height": 11.55,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.75,
-      "height": 11.81,
+      "width": 8.49,
+      "height": 12.55,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/534bbebaa8a6cd457d6a577b763858220588a6dc12ac491e9fb01601d75e2552.jpg",
-    "assetSha256": "534bbebaa8a6cd457d6a577b763858220588a6dc12ac491e9fb01601d75e2552",
+    "assetUrl": "https://vermillionaurora.com/print-editions/14f81c5ca444ec4adc8b4f4331f19339c063bb9835638442aa42b6da5606e9f1.jpg",
+    "assetSha256": "14f81c5ca444ec4adc8b4f4331f19339c063bb9835638442aa42b6da5606e9f1",
     "sourceSha256": "9064d4cf43de15de8bb99b0913e242f8473d59e03f39eb6224c0dc7ab1018920",
     "layoutApproved": true,
     "preview": {
@@ -99791,8 +101686,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.49,
+      "height": 11.55,
+      "unit": "in"
+    }
   },
   "print-archived-painting-247-small-frame-black": {
     "id": "print-archived-painting-247-small-frame-black",
@@ -100032,25 +101932,25 @@ export default {
     "productId": "archived-painting-133",
     "title": "Devo in Front of the Mayan Warrior — Large print",
     "artworkTitle": "Devo in Front of the Mayan Warrior",
-    "amount": "135.00",
+    "amount": "130.00",
     "currency": "USD",
-    "sku": "5M144M8S13.81X23.03",
+    "sku": "5M144M9S13.55X22.77",
     "scale": 1,
     "imageSize": {
-      "width": 13.5567,
+      "width": 13.55,
       "height": 22.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.81,
-      "height": 23.03,
+      "width": 14.55,
+      "height": 23.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e0e0bb9a39a34b5541049d18ec9a4a6e921fb57c53c2aa09fc866b97b11c70aa.jpg",
-    "assetSha256": "e0e0bb9a39a34b5541049d18ec9a4a6e921fb57c53c2aa09fc866b97b11c70aa",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e597df506489dd3a7f40527606c647e0ca4a9167104a4721953f999aeac0017c.jpg",
+    "assetSha256": "e597df506489dd3a7f40527606c647e0ca4a9167104a4721953f999aeac0017c",
     "sourceSha256": "20686e5b976babbe2b5e90a7067f631f6bbbdcdf654e83b6985bdbe7431acc6c",
     "layoutApproved": true,
     "preview": {
@@ -100063,8 +101963,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.55,
+      "height": 22.77,
+      "unit": "in"
+    }
   },
   "print-archived-painting-133-full-frame-black": {
     "id": "print-archived-painting-133-full-frame-black",
@@ -100304,25 +102209,25 @@ export default {
     "productId": "archived-painting-133",
     "title": "Devo in Front of the Mayan Warrior — Medium print",
     "artworkTitle": "Devo in Front of the Mayan Warrior",
-    "amount": "75.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S10.42X17.33",
+    "sku": "5M144M9S10.16X17.07",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.1667,
-      "height": 17.0767,
+      "width": 10.16,
+      "height": 17.07,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.42,
-      "height": 17.33,
+      "width": 11.16,
+      "height": 18.07,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/1cd29e4cfa5f88905606046e85630afdfee3c27fc6ad3667bb875f4367a5864b.jpg",
-    "assetSha256": "1cd29e4cfa5f88905606046e85630afdfee3c27fc6ad3667bb875f4367a5864b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7b66fd66ea229ac5f6c6a9f0447de0e3093d5df9450717bac8f24d5cfd011769.jpg",
+    "assetSha256": "7b66fd66ea229ac5f6c6a9f0447de0e3093d5df9450717bac8f24d5cfd011769",
     "sourceSha256": "20686e5b976babbe2b5e90a7067f631f6bbbdcdf654e83b6985bdbe7431acc6c",
     "layoutApproved": true,
     "preview": {
@@ -100335,8 +102240,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.16,
+      "height": 17.07,
+      "unit": "in"
+    }
   },
   "print-archived-painting-133-medium-frame-black": {
     "id": "print-archived-painting-133-medium-frame-black",
@@ -100576,25 +102486,25 @@ export default {
     "productId": "archived-painting-133",
     "title": "Devo in Front of the Mayan Warrior — Small print",
     "artworkTitle": "Devo in Front of the Mayan Warrior",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S7.03X11.64",
+    "sku": "5M144M9S6.77X11.38",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.7767,
+      "width": 6.77,
       "height": 11.38,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.03,
-      "height": 11.64,
+      "width": 7.77,
+      "height": 12.38,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/266903701c6dcf64b195a88a900f019cf32aa3985e224263813ff040aa200965.jpg",
-    "assetSha256": "266903701c6dcf64b195a88a900f019cf32aa3985e224263813ff040aa200965",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8fac9cae89232b3ea2654ab251a569232ce0a8ebac1dcd179435de442ff2b8ac.jpg",
+    "assetSha256": "8fac9cae89232b3ea2654ab251a569232ce0a8ebac1dcd179435de442ff2b8ac",
     "sourceSha256": "20686e5b976babbe2b5e90a7067f631f6bbbdcdf654e83b6985bdbe7431acc6c",
     "layoutApproved": true,
     "preview": {
@@ -100607,8 +102517,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.77,
+      "height": 11.38,
+      "unit": "in"
+    }
   },
   "print-archived-painting-133-small-frame-black": {
     "id": "print-archived-painting-133-small-frame-black",
@@ -100848,25 +102763,25 @@ export default {
     "productId": "archived-painting-438",
     "title": "Sunrise at Bass Coast 2023 #4 — Large print",
     "artworkTitle": "Sunrise at Bass Coast 2023 #4",
-    "amount": "110.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S21.59X12.17",
+    "sku": "5M144M9S21.33X11.91",
     "scale": 1,
     "imageSize": {
       "width": 21.33,
-      "height": 11.9167,
+      "height": 11.91,
       "unit": "in"
     },
     "paperSize": {
-      "width": 21.59,
-      "height": 12.17,
+      "width": 22.33,
+      "height": 12.91,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/373d110dd030d99913ba8086a73c90ca84eb05f215dd1046b790ed77a963476f.jpg",
-    "assetSha256": "373d110dd030d99913ba8086a73c90ca84eb05f215dd1046b790ed77a963476f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/27f22d56883b64e3fa34281795cd8ecc7437067971ee7aa2cf306af10713f241.jpg",
+    "assetSha256": "27f22d56883b64e3fa34281795cd8ecc7437067971ee7aa2cf306af10713f241",
     "sourceSha256": "7b31e9134c311dd8c49a16428df99db5934e05e0bc9753c051ac30586898ad47",
     "layoutApproved": true,
     "preview": {
@@ -100879,8 +102794,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 21.33,
+      "height": 11.91,
+      "unit": "in"
+    }
   },
   "print-archived-painting-438-full-frame-black": {
     "id": "print-archived-painting-438-full-frame-black",
@@ -101122,23 +103042,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S16.26X9.19",
+    "sku": "5M144M9S15.99X8.93",
     "scale": 0.75,
     "imageSize": {
-      "width": 15.9967,
-      "height": 8.9367,
+      "width": 15.99,
+      "height": 8.93,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.26,
-      "height": 9.19,
+      "width": 16.99,
+      "height": 9.93,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4750e74cc6002e1ea3bcf2aee17d45a5b1c9735148149a9283752bcee018c2ae.jpg",
-    "assetSha256": "4750e74cc6002e1ea3bcf2aee17d45a5b1c9735148149a9283752bcee018c2ae",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3403e800fb544b2b6d1db1f0f0891802334071606b8a87ddeec3e2d8fbef2293.jpg",
+    "assetSha256": "3403e800fb544b2b6d1db1f0f0891802334071606b8a87ddeec3e2d8fbef2293",
     "sourceSha256": "7b31e9134c311dd8c49a16428df99db5934e05e0bc9753c051ac30586898ad47",
     "layoutApproved": true,
     "preview": {
@@ -101151,8 +103071,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.99,
+      "height": 8.93,
+      "unit": "in"
+    }
   },
   "print-archived-painting-438-medium-frame-black": {
     "id": "print-archived-painting-438-medium-frame-black",
@@ -101394,23 +103319,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #4",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.92X6.21",
+    "sku": "5M144M9S10.66X5.95",
     "scale": 0.5,
     "imageSize": {
       "width": 10.66,
-      "height": 5.9567,
+      "height": 5.95,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.92,
-      "height": 6.21,
+      "width": 11.66,
+      "height": 6.95,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/586d17821f0858ce065166b8bb6d3640476e5f6b298731123e29f0244d7079a7.jpg",
-    "assetSha256": "586d17821f0858ce065166b8bb6d3640476e5f6b298731123e29f0244d7079a7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0dc13fa78328b3c01f7120e6e13cb77764fe647090dad918b0a35ea622467456.jpg",
+    "assetSha256": "0dc13fa78328b3c01f7120e6e13cb77764fe647090dad918b0a35ea622467456",
     "sourceSha256": "7b31e9134c311dd8c49a16428df99db5934e05e0bc9753c051ac30586898ad47",
     "layoutApproved": true,
     "preview": {
@@ -101423,8 +103348,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.66,
+      "height": 5.95,
+      "unit": "in"
+    }
   },
   "print-archived-painting-438-small-frame-black": {
     "id": "print-archived-painting-438-small-frame-black",
@@ -101666,23 +103596,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S21.31X11.76",
+    "sku": "5M144M9S21.04X11.5",
     "scale": 1,
     "imageSize": {
-      "width": 21.0433,
-      "height": 11.5067,
+      "width": 21.04,
+      "height": 11.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 21.31,
-      "height": 11.76,
+      "width": 22.04,
+      "height": 12.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/57e4bec5abbd7768cea18c685ca843aa3e905710189484fcf9d9041f5559cdae.jpg",
-    "assetSha256": "57e4bec5abbd7768cea18c685ca843aa3e905710189484fcf9d9041f5559cdae",
+    "assetUrl": "https://vermillionaurora.com/print-editions/339c540fad840c5e1d8a0f38de9aa557071b4c80b960ab5d955b742620882303.jpg",
+    "assetSha256": "339c540fad840c5e1d8a0f38de9aa557071b4c80b960ab5d955b742620882303",
     "sourceSha256": "062ab28f5f678c9bfb0553c710f42785865ec766620e1e51ed79eed96676e661",
     "layoutApproved": true,
     "preview": {
@@ -101695,8 +103625,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 21.04,
+      "height": 11.5,
+      "unit": "in"
+    }
   },
   "print-archived-painting-437-full-frame-black": {
     "id": "print-archived-painting-437-full-frame-black",
@@ -101938,23 +103873,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S16.04X8.88",
+    "sku": "5M144M9S15.77X8.62",
     "scale": 0.75,
     "imageSize": {
-      "width": 15.7767,
-      "height": 8.6267,
+      "width": 15.77,
+      "height": 8.62,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.04,
-      "height": 8.88,
+      "width": 16.77,
+      "height": 9.62,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0172e4c646f18f6e19bde62157cd45cb02aa4ce0ee0d0dd2137b9e8ed20d4df9.jpg",
-    "assetSha256": "0172e4c646f18f6e19bde62157cd45cb02aa4ce0ee0d0dd2137b9e8ed20d4df9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/48a57f91e0fc06004afaca55a1883ad5ad9724b4631d8f6111c1a6ffde97b533.jpg",
+    "assetSha256": "48a57f91e0fc06004afaca55a1883ad5ad9724b4631d8f6111c1a6ffde97b533",
     "sourceSha256": "062ab28f5f678c9bfb0553c710f42785865ec766620e1e51ed79eed96676e661",
     "layoutApproved": true,
     "preview": {
@@ -101967,8 +103902,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.77,
+      "height": 8.62,
+      "unit": "in"
+    }
   },
   "print-archived-painting-437-medium-frame-black": {
     "id": "print-archived-painting-437-medium-frame-black",
@@ -102210,23 +104150,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #3",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.78X6",
+    "sku": "5M144M9S10.51X5.74",
     "scale": 0.5,
     "imageSize": {
       "width": 10.51,
-      "height": 5.7467,
+      "height": 5.74,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.78,
-      "height": 6,
+      "width": 11.51,
+      "height": 6.74,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fb697fef65afd0b126d5bf20f45204e2bae6a57547bf74dd9f32a91ce3983e30.jpg",
-    "assetSha256": "fb697fef65afd0b126d5bf20f45204e2bae6a57547bf74dd9f32a91ce3983e30",
+    "assetUrl": "https://vermillionaurora.com/print-editions/316cc1aef658e483969922383c21e4131da71e408b02f0f7f6f7a11220f87712.jpg",
+    "assetSha256": "316cc1aef658e483969922383c21e4131da71e408b02f0f7f6f7a11220f87712",
     "sourceSha256": "062ab28f5f678c9bfb0553c710f42785865ec766620e1e51ed79eed96676e661",
     "layoutApproved": true,
     "preview": {
@@ -102239,8 +104179,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.51,
+      "height": 5.74,
+      "unit": "in"
+    }
   },
   "print-archived-painting-437-small-frame-black": {
     "id": "print-archived-painting-437-small-frame-black",
@@ -102480,25 +104425,25 @@ export default {
     "productId": "archived-painting-433",
     "title": "Sunrise at Bass Coast 2023 #1 — Large print",
     "artworkTitle": "Sunrise at Bass Coast 2023 #1",
-    "amount": "105.00",
+    "amount": "100.00",
     "currency": "USD",
-    "sku": "5M144M8S21.34X11.66",
+    "sku": "5M144M9S21.08X11.4",
     "scale": 1,
     "imageSize": {
-      "width": 21.0867,
-      "height": 11.4033,
+      "width": 21.08,
+      "height": 11.4,
       "unit": "in"
     },
     "paperSize": {
-      "width": 21.34,
-      "height": 11.66,
+      "width": 22.08,
+      "height": 12.4,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/06e39696c4a2befc4ed220939cfb0b13cb46a52972b42a14e76c022b63021ca9.jpg",
-    "assetSha256": "06e39696c4a2befc4ed220939cfb0b13cb46a52972b42a14e76c022b63021ca9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/58dd5ad64a3d9a7d5c781fc40ae5333083aaa650587ec5aeb110906470c10be7.jpg",
+    "assetSha256": "58dd5ad64a3d9a7d5c781fc40ae5333083aaa650587ec5aeb110906470c10be7",
     "sourceSha256": "d444d5892a8f556cf83218ca41a096112f34f9fc96a30cf646c7d7e042018a3d",
     "layoutApproved": true,
     "preview": {
@@ -102511,8 +104456,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 21.08,
+      "height": 11.4,
+      "unit": "in"
+    }
   },
   "print-archived-painting-433-full-frame-black": {
     "id": "print-archived-painting-433-full-frame-black",
@@ -102754,23 +104704,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S16.07X8.8",
+    "sku": "5M144M9S15.8X8.54",
     "scale": 0.75,
     "imageSize": {
-      "width": 15.8033,
-      "height": 8.5467,
+      "width": 15.8,
+      "height": 8.54,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.07,
-      "height": 8.8,
+      "width": 16.8,
+      "height": 9.54,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5a4da25a700075aa2e35557a04392b44bf17da292529114f5fce90524d5dfa7e.jpg",
-    "assetSha256": "5a4da25a700075aa2e35557a04392b44bf17da292529114f5fce90524d5dfa7e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/bdbb524ad6340086d675351da5cac1a80fd219e2889df21cc4346c66eaf12413.jpg",
+    "assetSha256": "bdbb524ad6340086d675351da5cac1a80fd219e2889df21cc4346c66eaf12413",
     "sourceSha256": "d444d5892a8f556cf83218ca41a096112f34f9fc96a30cf646c7d7e042018a3d",
     "layoutApproved": true,
     "preview": {
@@ -102783,8 +104733,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.8,
+      "height": 8.54,
+      "unit": "in"
+    }
   },
   "print-archived-painting-433-medium-frame-black": {
     "id": "print-archived-painting-433-medium-frame-black",
@@ -103026,23 +104981,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #1",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.79X5.95",
+    "sku": "5M144M9S10.53X5.69",
     "scale": 0.5,
     "imageSize": {
-      "width": 10.5333,
-      "height": 5.6967,
+      "width": 10.53,
+      "height": 5.69,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.79,
-      "height": 5.95,
+      "width": 11.53,
+      "height": 6.69,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e60cdb52a78db0d8cd71d71564b74348f60c9f36f3b3999e0305161c5e7663b6.jpg",
-    "assetSha256": "e60cdb52a78db0d8cd71d71564b74348f60c9f36f3b3999e0305161c5e7663b6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6874e1bd2bcc86b062f80ff0f29dad930bb7b9987ff3b6f2ba05c97215bafebd.jpg",
+    "assetSha256": "6874e1bd2bcc86b062f80ff0f29dad930bb7b9987ff3b6f2ba05c97215bafebd",
     "sourceSha256": "d444d5892a8f556cf83218ca41a096112f34f9fc96a30cf646c7d7e042018a3d",
     "layoutApproved": true,
     "preview": {
@@ -103055,8 +105010,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.53,
+      "height": 5.69,
+      "unit": "in"
+    }
   },
   "print-archived-painting-433-small-frame-black": {
     "id": "print-archived-painting-433-small-frame-black",
@@ -103298,23 +105258,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S11.4X20.42",
+    "sku": "5M144M9S11.14X20.16",
     "scale": 1,
     "imageSize": {
-      "width": 11.1433,
-      "height": 20.1667,
+      "width": 11.14,
+      "height": 20.16,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.4,
-      "height": 20.42,
+      "width": 12.14,
+      "height": 21.16,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/75dc88ad31bb7918e7dadbdc62f93ed1e479748d87143621f3eb45e61b0f06c5.jpg",
-    "assetSha256": "75dc88ad31bb7918e7dadbdc62f93ed1e479748d87143621f3eb45e61b0f06c5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/296fa3c931dfc777e73920e70eba415fad77076ab53f17e9c1655ef8ca56aa7b.jpg",
+    "assetSha256": "296fa3c931dfc777e73920e70eba415fad77076ab53f17e9c1655ef8ca56aa7b",
     "sourceSha256": "37fb5f76e383a5973699d952b83ee162c815fb2c144a105a289451e22af48a62",
     "layoutApproved": true,
     "preview": {
@@ -103327,8 +105287,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.14,
+      "height": 20.16,
+      "unit": "in"
+    }
   },
   "print-archived-painting-436-full-frame-black": {
     "id": "print-archived-painting-436-full-frame-black",
@@ -103570,23 +105535,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S8.61X15.38",
+    "sku": "5M144M9S8.35X15.12",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.3567,
-      "height": 15.1233,
+      "width": 8.35,
+      "height": 15.12,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.61,
-      "height": 15.38,
+      "width": 9.35,
+      "height": 16.12,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ac7291afd4a138cc57a9c814ce8942245d7c3509411f645b8cd146f1597cbc58.jpg",
-    "assetSha256": "ac7291afd4a138cc57a9c814ce8942245d7c3509411f645b8cd146f1597cbc58",
+    "assetUrl": "https://vermillionaurora.com/print-editions/20fc8b4a803111576e047250fd04f1b7d8f612f0e9e443677fb5657a169499f7.jpg",
+    "assetSha256": "20fc8b4a803111576e047250fd04f1b7d8f612f0e9e443677fb5657a169499f7",
     "sourceSha256": "37fb5f76e383a5973699d952b83ee162c815fb2c144a105a289451e22af48a62",
     "layoutApproved": true,
     "preview": {
@@ -103599,8 +105564,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.35,
+      "height": 15.12,
+      "unit": "in"
+    }
   },
   "print-archived-painting-436-medium-frame-black": {
     "id": "print-archived-painting-436-medium-frame-black",
@@ -103842,23 +105812,23 @@ export default {
     "artworkTitle": "Sunrise at Bass Coast 2023 #2",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S5.82X10.33",
+    "sku": "5M144M9S5.56X10.07",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.5667,
-      "height": 10.0733,
+      "width": 5.56,
+      "height": 10.07,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.82,
-      "height": 10.33,
+      "width": 6.56,
+      "height": 11.07,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6037c1cb4a50bb70e30fbc3c3df4f36ee67aa01ad8085b2575b2dc1d64e6dc40.jpg",
-    "assetSha256": "6037c1cb4a50bb70e30fbc3c3df4f36ee67aa01ad8085b2575b2dc1d64e6dc40",
+    "assetUrl": "https://vermillionaurora.com/print-editions/879f616c5267f35a37ad3ad5fb01bcdf46d76dc1d51ef7e429801678d55a19db.jpg",
+    "assetSha256": "879f616c5267f35a37ad3ad5fb01bcdf46d76dc1d51ef7e429801678d55a19db",
     "sourceSha256": "37fb5f76e383a5973699d952b83ee162c815fb2c144a105a289451e22af48a62",
     "layoutApproved": true,
     "preview": {
@@ -103871,8 +105841,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.56,
+      "height": 10.07,
+      "unit": "in"
+    }
   },
   "print-archived-painting-436-small-frame-black": {
     "id": "print-archived-painting-436-small-frame-black",
@@ -104114,23 +106089,23 @@ export default {
     "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S12.07X20.97",
+    "sku": "5M144M9S11.81X20.7",
     "scale": 1,
     "imageSize": {
-      "width": 11.8167,
-      "height": 20.7067,
+      "width": 11.81,
+      "height": 20.7,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.07,
-      "height": 20.97,
+      "width": 12.81,
+      "height": 21.7,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0805fbbc832448b46adbae803e7f41e6c4ce4c4c13bfd0994ae275dd5d3209e3.jpg",
-    "assetSha256": "0805fbbc832448b46adbae803e7f41e6c4ce4c4c13bfd0994ae275dd5d3209e3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2b618c350008e89f1c97629aac2b5cf44eceba597989d1a5ce34f4d5a88bf132.jpg",
+    "assetSha256": "2b618c350008e89f1c97629aac2b5cf44eceba597989d1a5ce34f4d5a88bf132",
     "sourceSha256": "f974178c8dcf4970e390b3e3de23cf2ab8bbd96ac649906636195c7395c7d162",
     "layoutApproved": true,
     "preview": {
@@ -104143,8 +106118,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.81,
+      "height": 20.7,
+      "unit": "in"
+    }
   },
   "print-archived-painting-90-full-frame-black": {
     "id": "print-archived-painting-90-full-frame-black",
@@ -104386,23 +106366,23 @@ export default {
     "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S9.12X15.79",
+    "sku": "5M144M9S8.86X15.53",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.8667,
-      "height": 15.5367,
+      "width": 8.86,
+      "height": 15.53,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.12,
-      "height": 15.79,
+      "width": 9.86,
+      "height": 16.53,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b703a2c55cce02d27cb31ae0f13b780594ef1aa00f8b3e81f0a65ebbcf20d28e.jpg",
-    "assetSha256": "b703a2c55cce02d27cb31ae0f13b780594ef1aa00f8b3e81f0a65ebbcf20d28e",
+    "assetUrl": "https://vermillionaurora.com/print-editions/25180315599c09ae7f55bbb1a40a257e7134212858a2c0398b509dfb66026e81.jpg",
+    "assetSha256": "25180315599c09ae7f55bbb1a40a257e7134212858a2c0398b509dfb66026e81",
     "sourceSha256": "f974178c8dcf4970e390b3e3de23cf2ab8bbd96ac649906636195c7395c7d162",
     "layoutApproved": true,
     "preview": {
@@ -104415,8 +106395,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.86,
+      "height": 15.53,
+      "unit": "in"
+    }
   },
   "print-archived-painting-90-medium-frame-black": {
     "id": "print-archived-painting-90-medium-frame-black",
@@ -104658,23 +106643,23 @@ export default {
     "artworkTitle": "Sienna Dawn at Bass Coast",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S6.16X10.61",
+    "sku": "5M144M9S5.9X10.35",
     "scale": 0.5,
     "imageSize": {
-      "width": 5.9067,
+      "width": 5.9,
       "height": 10.35,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.16,
-      "height": 10.61,
+      "width": 6.9,
+      "height": 11.35,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/dfd7ddfc3ebbc7fd2d6c7591e35096a1951c21af1c25193d1c7088ac01215020.jpg",
-    "assetSha256": "dfd7ddfc3ebbc7fd2d6c7591e35096a1951c21af1c25193d1c7088ac01215020",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5ee91218814bbe0f844380e320bf6ba998da1fa208ceabe83353a4b792804b38.jpg",
+    "assetSha256": "5ee91218814bbe0f844380e320bf6ba998da1fa208ceabe83353a4b792804b38",
     "sourceSha256": "f974178c8dcf4970e390b3e3de23cf2ab8bbd96ac649906636195c7395c7d162",
     "layoutApproved": true,
     "preview": {
@@ -104687,8 +106672,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.9,
+      "height": 10.35,
+      "unit": "in"
+    }
   },
   "print-archived-painting-90-small-frame-black": {
     "id": "print-archived-painting-90-small-frame-black",
@@ -104930,23 +106920,23 @@ export default {
     "artworkTitle": "Painting #62",
     "amount": "165.00",
     "currency": "USD",
-    "sku": "5M144M8S19X21.02",
+    "sku": "5M144M9S18.74X20.76",
     "scale": 1,
     "imageSize": {
-      "width": 18.7433,
-      "height": 20.7667,
+      "width": 18.74,
+      "height": 20.76,
       "unit": "in"
     },
     "paperSize": {
-      "width": 19,
-      "height": 21.02,
+      "width": 19.74,
+      "height": 21.76,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/48ff892f9c06f2be80db78bee9689c7019bcb3baa6a262f81982bf9ca623a1e0.jpg",
-    "assetSha256": "48ff892f9c06f2be80db78bee9689c7019bcb3baa6a262f81982bf9ca623a1e0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c7e0726921595f5140cb51b1bdd85dc828806787a259e6b83fb8feef4599b0ba.jpg",
+    "assetSha256": "c7e0726921595f5140cb51b1bdd85dc828806787a259e6b83fb8feef4599b0ba",
     "sourceSha256": "46554d5969de58ccb45aa2f91a55920cbe49d85f342c8cda7fe49ffadc646818",
     "layoutApproved": true,
     "preview": {
@@ -104959,8 +106949,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 18.74,
+      "height": 20.76,
+      "unit": "in"
+    }
   },
   "print-archived-painting-62-full-frame-black": {
     "id": "print-archived-painting-62-full-frame-black",
@@ -105202,23 +107197,23 @@ export default {
     "artworkTitle": "Painting #62",
     "amount": "95.00",
     "currency": "USD",
-    "sku": "5M144M8S14.31X15.83",
+    "sku": "5M144M9S14.05X15.57",
     "scale": 0.75,
     "imageSize": {
-      "width": 14.0567,
-      "height": 15.5733,
+      "width": 14.05,
+      "height": 15.57,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.31,
-      "height": 15.83,
+      "width": 15.05,
+      "height": 16.57,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9faebff628f1672528f549c5f1704cf12f049af69f64ad53044023e7fd99eede.jpg",
-    "assetSha256": "9faebff628f1672528f549c5f1704cf12f049af69f64ad53044023e7fd99eede",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2a8893b3251e5f6ca4adebf9cebc853138d27f8e1160dfb6d089c45ecc84c203.jpg",
+    "assetSha256": "2a8893b3251e5f6ca4adebf9cebc853138d27f8e1160dfb6d089c45ecc84c203",
     "sourceSha256": "46554d5969de58ccb45aa2f91a55920cbe49d85f342c8cda7fe49ffadc646818",
     "layoutApproved": true,
     "preview": {
@@ -105231,8 +107226,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.05,
+      "height": 15.57,
+      "unit": "in"
+    }
   },
   "print-archived-painting-62-medium-frame-black": {
     "id": "print-archived-painting-62-medium-frame-black",
@@ -105472,25 +107472,25 @@ export default {
     "productId": "archived-painting-62",
     "title": "Painting #62 — Small print",
     "artworkTitle": "Painting #62",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S9.62X10.63",
+    "sku": "5M144M9S9.36X10.37",
     "scale": 0.5,
     "imageSize": {
-      "width": 9.3667,
-      "height": 10.3767,
+      "width": 9.36,
+      "height": 10.37,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.62,
-      "height": 10.63,
+      "width": 10.36,
+      "height": 11.37,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6306667815680fcbe716e163d03bbdcc830151de51896cdcf4f7d229f2456f86.jpg",
-    "assetSha256": "6306667815680fcbe716e163d03bbdcc830151de51896cdcf4f7d229f2456f86",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2f88f4dd29a7aa6a04fe68c8b5fed7ab9ad6a5392a996c87576031edf1562bb8.jpg",
+    "assetSha256": "2f88f4dd29a7aa6a04fe68c8b5fed7ab9ad6a5392a996c87576031edf1562bb8",
     "sourceSha256": "46554d5969de58ccb45aa2f91a55920cbe49d85f342c8cda7fe49ffadc646818",
     "layoutApproved": true,
     "preview": {
@@ -105503,8 +107503,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.36,
+      "height": 10.37,
+      "unit": "in"
+    }
   },
   "print-archived-painting-62-small-frame-black": {
     "id": "print-archived-painting-62-small-frame-black",
@@ -105744,25 +107749,25 @@ export default {
     "productId": "archived-painting-241",
     "title": "On a Trip with Elsa — Large print",
     "artworkTitle": "On a Trip with Elsa",
-    "amount": "200.00",
+    "amount": "195.00",
     "currency": "USD",
-    "sku": "5M144M8S24.81X18.96",
+    "sku": "5M144M9S24.55X18.7",
     "scale": 1,
     "imageSize": {
-      "width": 24.5567,
-      "height": 18.7033,
+      "width": 24.55,
+      "height": 18.7,
       "unit": "in"
     },
     "paperSize": {
-      "width": 24.81,
-      "height": 18.96,
+      "width": 25.55,
+      "height": 19.7,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b6b04e24a5b9ed13af9cca12246288373d3af720e2bd5e31b4ab786a39de7901.jpg",
-    "assetSha256": "b6b04e24a5b9ed13af9cca12246288373d3af720e2bd5e31b4ab786a39de7901",
+    "assetUrl": "https://vermillionaurora.com/print-editions/106f9463943878e56dd7fc06a3a5053b4ed4aa418472b5e73e2b803ab8ebaae2.jpg",
+    "assetSha256": "106f9463943878e56dd7fc06a3a5053b4ed4aa418472b5e73e2b803ab8ebaae2",
     "sourceSha256": "82dce5605cb36a0d8c1fc15de07dfd2d539291a947ee3c425ae29485633359ac",
     "layoutApproved": true,
     "preview": {
@@ -105775,8 +107780,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 24.55,
+      "height": 18.7,
+      "unit": "in"
+    }
   },
   "print-archived-painting-241-full-frame-black": {
     "id": "print-archived-painting-241-full-frame-black",
@@ -106016,25 +108026,25 @@ export default {
     "productId": "archived-painting-241",
     "title": "On a Trip with Elsa — Medium print",
     "artworkTitle": "On a Trip with Elsa",
-    "amount": "110.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S18.67X14.28",
+    "sku": "5M144M9S18.41X14.02",
     "scale": 0.75,
     "imageSize": {
-      "width": 18.4167,
-      "height": 14.0267,
+      "width": 18.41,
+      "height": 14.02,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.67,
-      "height": 14.28,
+      "width": 19.41,
+      "height": 15.02,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7a3532e32fa13abe4baa3b0d8314ec665e3cc1c43fef50759ba771715b693e24.jpg",
-    "assetSha256": "7a3532e32fa13abe4baa3b0d8314ec665e3cc1c43fef50759ba771715b693e24",
+    "assetUrl": "https://vermillionaurora.com/print-editions/de9f358671c15fb53e2ac6787a4aeba4dae81b9d6898a3a88508784f10e1c27e.jpg",
+    "assetSha256": "de9f358671c15fb53e2ac6787a4aeba4dae81b9d6898a3a88508784f10e1c27e",
     "sourceSha256": "82dce5605cb36a0d8c1fc15de07dfd2d539291a947ee3c425ae29485633359ac",
     "layoutApproved": true,
     "preview": {
@@ -106047,8 +108057,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 18.41,
+      "height": 14.02,
+      "unit": "in"
+    }
   },
   "print-archived-painting-241-medium-frame-black": {
     "id": "print-archived-painting-241-medium-frame-black",
@@ -106290,23 +108305,23 @@ export default {
     "artworkTitle": "On a Trip with Elsa",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S12.53X9.6",
+    "sku": "5M144M9S12.27X9.34",
     "scale": 0.5,
     "imageSize": {
-      "width": 12.2733,
-      "height": 9.3467,
+      "width": 12.27,
+      "height": 9.34,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.53,
-      "height": 9.6,
+      "width": 13.27,
+      "height": 10.34,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/04950fe279bf1fea530c3398b0ea6ed1d71870f0d87975b127610d76aa951e20.jpg",
-    "assetSha256": "04950fe279bf1fea530c3398b0ea6ed1d71870f0d87975b127610d76aa951e20",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c6544cf6e56601c22d5f6a57624e4482ec9c4f7aef9734ec43dc02eab0ada977.jpg",
+    "assetSha256": "c6544cf6e56601c22d5f6a57624e4482ec9c4f7aef9734ec43dc02eab0ada977",
     "sourceSha256": "82dce5605cb36a0d8c1fc15de07dfd2d539291a947ee3c425ae29485633359ac",
     "layoutApproved": true,
     "preview": {
@@ -106319,8 +108334,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.27,
+      "height": 9.34,
+      "unit": "in"
+    }
   },
   "print-archived-painting-241-small-frame-black": {
     "id": "print-archived-painting-241-small-frame-black",
@@ -106562,23 +108582,23 @@ export default {
     "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
     "amount": "155.00",
     "currency": "USD",
-    "sku": "5M144M8S21.2X17.49",
+    "sku": "5M144M9S20.94X17.23",
     "scale": 1,
     "imageSize": {
-      "width": 20.9433,
-      "height": 17.2367,
+      "width": 20.94,
+      "height": 17.23,
       "unit": "in"
     },
     "paperSize": {
-      "width": 21.2,
-      "height": 17.49,
+      "width": 21.94,
+      "height": 18.23,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/404663f8842f3f2edfb76ad5c4256283ca1a49158a0ec0863564af99d010fedb.jpg",
-    "assetSha256": "404663f8842f3f2edfb76ad5c4256283ca1a49158a0ec0863564af99d010fedb",
+    "assetUrl": "https://vermillionaurora.com/print-editions/58d28723e9a2306e17cf3037431c74c802e7004b4a7154ff3fa96453023d075c.jpg",
+    "assetSha256": "58d28723e9a2306e17cf3037431c74c802e7004b4a7154ff3fa96453023d075c",
     "sourceSha256": "51f462f3a96a1a6da5485b16a847912d453b17ea5afba5ada4624619ff5287a3",
     "layoutApproved": true,
     "preview": {
@@ -106591,8 +108611,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 20.94,
+      "height": 17.23,
+      "unit": "in"
+    }
   },
   "print-archived-painting-66-full-frame-black": {
     "id": "print-archived-painting-66-full-frame-black",
@@ -106832,25 +108857,25 @@ export default {
     "productId": "archived-painting-66",
     "title": "Flamenco Guitarist in Zihuatanejo — Medium print",
     "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
-    "amount": "90.00",
+    "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S15.96X13.18",
+    "sku": "5M144M9S15.7X12.92",
     "scale": 0.75,
     "imageSize": {
-      "width": 15.7067,
-      "height": 12.9267,
+      "width": 15.7,
+      "height": 12.92,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15.96,
-      "height": 13.18,
+      "width": 16.7,
+      "height": 13.92,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/47b8ef44fdbc40a23a58b7fb79e21a9a8bccbbd5f0f1cf1b8e7080819bc00440.jpg",
-    "assetSha256": "47b8ef44fdbc40a23a58b7fb79e21a9a8bccbbd5f0f1cf1b8e7080819bc00440",
+    "assetUrl": "https://vermillionaurora.com/print-editions/85f2edc47ebe349e61cc6ad6006df8c5a101d93d692d4731672037f6e4daaeea.jpg",
+    "assetSha256": "85f2edc47ebe349e61cc6ad6006df8c5a101d93d692d4731672037f6e4daaeea",
     "sourceSha256": "51f462f3a96a1a6da5485b16a847912d453b17ea5afba5ada4624619ff5287a3",
     "layoutApproved": true,
     "preview": {
@@ -106863,8 +108888,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.7,
+      "height": 12.92,
+      "unit": "in"
+    }
   },
   "print-archived-painting-66-medium-frame-black": {
     "id": "print-archived-painting-66-medium-frame-black",
@@ -107104,25 +109134,25 @@ export default {
     "productId": "archived-painting-66",
     "title": "Flamenco Guitarist in Zihuatanejo — Small print",
     "artworkTitle": "Flamenco Guitarist in Zihuatanejo",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S10.72X8.87",
+    "sku": "5M144M9S10.46X8.61",
     "scale": 0.5,
     "imageSize": {
-      "width": 10.4667,
-      "height": 8.6133,
+      "width": 10.46,
+      "height": 8.61,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.72,
-      "height": 8.87,
+      "width": 11.46,
+      "height": 9.61,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e2e97e523187b91f7d20dbf952d7f96bf94ce0f0e8c1ffd8ad82f52b4be40166.jpg",
-    "assetSha256": "e2e97e523187b91f7d20dbf952d7f96bf94ce0f0e8c1ffd8ad82f52b4be40166",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b170b38418ddfaeba087cffedb8e87413a82aac18e35e24609c94339e3794090.jpg",
+    "assetSha256": "b170b38418ddfaeba087cffedb8e87413a82aac18e35e24609c94339e3794090",
     "sourceSha256": "51f462f3a96a1a6da5485b16a847912d453b17ea5afba5ada4624619ff5287a3",
     "layoutApproved": true,
     "preview": {
@@ -107135,8 +109165,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.46,
+      "height": 8.61,
+      "unit": "in"
+    }
   },
   "print-archived-painting-66-small-frame-black": {
     "id": "print-archived-painting-66-small-frame-black",
@@ -107376,25 +109411,25 @@ export default {
     "productId": "archived-painting-301",
     "title": "Catherine #1 — Large print",
     "artworkTitle": "Catherine #1",
-    "amount": "160.00",
+    "amount": "155.00",
     "currency": "USD",
-    "sku": "5M144M8S18.98X20.17",
+    "sku": "5M144M9S18.72X19.91",
     "scale": 1,
     "imageSize": {
-      "width": 18.7233,
-      "height": 19.9167,
+      "width": 18.72,
+      "height": 19.91,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.98,
-      "height": 20.17,
+      "width": 19.72,
+      "height": 20.91,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d.jpg",
-    "assetSha256": "0b2d9561cd68f2a75e4861b2293d663c91fc0fad1f264e1bfd1debd30bb1672d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e52405a804e6ba4b8584f56b0b0edf337c5e09933e111c1434a3f2094b7b912d.jpg",
+    "assetSha256": "e52405a804e6ba4b8584f56b0b0edf337c5e09933e111c1434a3f2094b7b912d",
     "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
@@ -107407,8 +109442,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 18.72,
+      "height": 19.91,
+      "unit": "in"
+    }
   },
   "print-archived-painting-301-full-frame-black": {
     "id": "print-archived-painting-301-full-frame-black",
@@ -107648,25 +109688,25 @@ export default {
     "productId": "archived-painting-301",
     "title": "Catherine #1 — Medium print",
     "artworkTitle": "Catherine #1",
-    "amount": "95.00",
+    "amount": "90.00",
     "currency": "USD",
-    "sku": "5M144M8S14.3X15.19",
+    "sku": "5M144M9S14.04X14.93",
     "scale": 0.75,
     "imageSize": {
-      "width": 14.0433,
-      "height": 14.9367,
+      "width": 14.04,
+      "height": 14.93,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.3,
-      "height": 15.19,
+      "width": 15.04,
+      "height": 15.93,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1.jpg",
-    "assetSha256": "a3af63fc3785b683113fc34dacbef97dd14f9ab31ead5f711996685f1aba0de1",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b46c36ebf24935a4ffa23dad3f5200e6dd04b63cdb2fa7b92a4d2bb4f8e20c77.jpg",
+    "assetSha256": "b46c36ebf24935a4ffa23dad3f5200e6dd04b63cdb2fa7b92a4d2bb4f8e20c77",
     "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
@@ -107679,8 +109719,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.04,
+      "height": 14.93,
+      "unit": "in"
+    }
   },
   "print-archived-painting-301-medium-frame-black": {
     "id": "print-archived-painting-301-medium-frame-black",
@@ -107922,23 +109967,23 @@ export default {
     "artworkTitle": "Catherine #1",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S9.61X10.21",
+    "sku": "5M144M9S9.35X9.95",
     "scale": 0.5,
     "imageSize": {
-      "width": 9.3567,
-      "height": 9.9533,
+      "width": 9.35,
+      "height": 9.95,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.61,
-      "height": 10.21,
+      "width": 10.35,
+      "height": 10.95,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81.jpg",
-    "assetSha256": "3759c3f74b638c206f7d883034aee6c3aa013fc67b17bc4e9fa3da9346ddaf81",
+    "assetUrl": "https://vermillionaurora.com/print-editions/44d1cd01cdbc13b86d6b5c64d6eeb29662fd9188ded8d7962b16723d2dba9ff4.jpg",
+    "assetSha256": "44d1cd01cdbc13b86d6b5c64d6eeb29662fd9188ded8d7962b16723d2dba9ff4",
     "sourceSha256": "0d43a215c1265ad821e6304810082f3f2280c0cbaf68de166c04446f639fc4d5",
     "layoutApproved": true,
     "preview": {
@@ -107951,8 +109996,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.35,
+      "height": 9.95,
+      "unit": "in"
+    }
   },
   "print-archived-painting-301-small-frame-black": {
     "id": "print-archived-painting-301-small-frame-black",
@@ -108192,25 +110242,25 @@ export default {
     "productId": "archived-painting-53",
     "title": "Self Portrait, Meditation at Denny Blaine — Large print",
     "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
-    "amount": "150.00",
+    "amount": "140.00",
     "currency": "USD",
-    "sku": "5M144M8S13.58X25.83",
+    "sku": "5M144M9S13.32X25.56",
     "scale": 1,
     "imageSize": {
-      "width": 13.3267,
-      "height": 25.5633,
+      "width": 13.32,
+      "height": 25.56,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.58,
-      "height": 25.83,
+      "width": 14.32,
+      "height": 26.56,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f.jpg",
-    "assetSha256": "8e5e538929161b5975d2f9db92c68e09d26b31b73a95dcf7503526e6209f322f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f626ba4308adef7099a50667c0443fb1f7d6a6987714fea0b111d20af530cc8e.jpg",
+    "assetSha256": "f626ba4308adef7099a50667c0443fb1f7d6a6987714fea0b111d20af530cc8e",
     "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
@@ -108223,8 +110273,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.32,
+      "height": 25.56,
+      "unit": "in"
+    }
   },
   "print-archived-painting-53-full-frame-black": {
     "id": "print-archived-painting-53-full-frame-black",
@@ -108464,25 +110519,25 @@ export default {
     "productId": "archived-painting-53",
     "title": "Self Portrait, Meditation at Denny Blaine — Medium print",
     "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
-    "amount": "85.00",
+    "amount": "80.00",
     "currency": "USD",
-    "sku": "5M144M8S10.25X19.43",
+    "sku": "5M144M9S9.99X19.17",
     "scale": 0.75,
     "imageSize": {
-      "width": 9.9967,
-      "height": 19.1767,
+      "width": 9.99,
+      "height": 19.17,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.25,
-      "height": 19.43,
+      "width": 10.99,
+      "height": 20.17,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea.jpg",
-    "assetSha256": "65dcb8497f7164efd312d616d6b869653f32536aca28ff380444d51421c2ccea",
+    "assetUrl": "https://vermillionaurora.com/print-editions/377cfab672fa4d16cd188ffebe8ec5b692339b6d4d4c9cee9d968a4b0781aeb0.jpg",
+    "assetSha256": "377cfab672fa4d16cd188ffebe8ec5b692339b6d4d4c9cee9d968a4b0781aeb0",
     "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
@@ -108495,8 +110550,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.99,
+      "height": 19.17,
+      "unit": "in"
+    }
   },
   "print-archived-painting-53-medium-frame-black": {
     "id": "print-archived-painting-53-medium-frame-black",
@@ -108738,23 +110798,23 @@ export default {
     "artworkTitle": "Self Portrait, Meditation at Denny Blaine",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S6.91X13.04",
+    "sku": "5M144M9S6.65X12.77",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.6567,
+      "width": 6.65,
       "height": 12.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.91,
-      "height": 13.04,
+      "width": 7.65,
+      "height": 13.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15.jpg",
-    "assetSha256": "18440d46708c5e80475b63c3e265b94c204c4846c72f24917e16637e65012a15",
+    "assetUrl": "https://vermillionaurora.com/print-editions/82399f09ff0da28ac9a42902bf57e218fa9608ebdc69ccb8fa6c9a99d27310c2.jpg",
+    "assetSha256": "82399f09ff0da28ac9a42902bf57e218fa9608ebdc69ccb8fa6c9a99d27310c2",
     "sourceSha256": "9d83b86870ee61249fa5ad1a985a10ff503b1f8951db8db8d8c471dd76a07dcb",
     "layoutApproved": true,
     "preview": {
@@ -108767,8 +110827,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.65,
+      "height": 12.77,
+      "unit": "in"
+    }
   },
   "print-archived-painting-53-small-frame-black": {
     "id": "print-archived-painting-53-small-frame-black",
@@ -109008,25 +111073,25 @@ export default {
     "productId": "archived-painting-15",
     "title": "Symbiosis #1 — Large print",
     "artworkTitle": "Symbiosis #1",
-    "amount": "120.00",
+    "amount": "110.00",
     "currency": "USD",
-    "sku": "5M144M8S23.95X11.52",
+    "sku": "5M144M9S23.68X11.26",
     "scale": 1,
     "imageSize": {
-      "width": 23.6867,
-      "height": 11.2667,
+      "width": 23.68,
+      "height": 11.26,
       "unit": "in"
     },
     "paperSize": {
-      "width": 23.95,
-      "height": 11.52,
+      "width": 24.68,
+      "height": 12.26,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/fe417237ce86839e9f49a6aae6bb3f437c3b6944726ed3edfc0990edb6903165.jpg",
-    "assetSha256": "fe417237ce86839e9f49a6aae6bb3f437c3b6944726ed3edfc0990edb6903165",
+    "assetUrl": "https://vermillionaurora.com/print-editions/34b4f844fa5592060551f2c5c347f810d6ecab4962be64a931c117cd14ed7aad.jpg",
+    "assetSha256": "34b4f844fa5592060551f2c5c347f810d6ecab4962be64a931c117cd14ed7aad",
     "sourceSha256": "7112103318fcb79bfaae9e8fb67b3a2badc1b9bc3313084870aaa9df993f6c13",
     "layoutApproved": true,
     "preview": {
@@ -109039,8 +111104,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 23.68,
+      "height": 11.26,
+      "unit": "in"
+    }
   },
   "print-archived-painting-15-full-frame-black": {
     "id": "print-archived-painting-15-full-frame-black",
@@ -109280,25 +111350,25 @@ export default {
     "productId": "archived-painting-15",
     "title": "Symbiosis #1 — Medium print",
     "artworkTitle": "Symbiosis #1",
-    "amount": "65.00",
+    "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S18.03X8.7",
+    "sku": "5M144M9S17.75X8.44",
     "scale": 0.75,
     "imageSize": {
-      "width": 17.7567,
-      "height": 8.4467,
+      "width": 17.75,
+      "height": 8.44,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.03,
-      "height": 8.7,
+      "width": 18.75,
+      "height": 9.44,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f1f4eccf2b46ee1aa3f2c5d7431e69172136a777270afeba0133d7b7f69fe090.jpg",
-    "assetSha256": "f1f4eccf2b46ee1aa3f2c5d7431e69172136a777270afeba0133d7b7f69fe090",
+    "assetUrl": "https://vermillionaurora.com/print-editions/e9a68ee01a7750f1b35d5f5fe9c0043e29a6ada23849447c92edfd97c7f461fd.jpg",
+    "assetSha256": "e9a68ee01a7750f1b35d5f5fe9c0043e29a6ada23849447c92edfd97c7f461fd",
     "sourceSha256": "7112103318fcb79bfaae9e8fb67b3a2badc1b9bc3313084870aaa9df993f6c13",
     "layoutApproved": true,
     "preview": {
@@ -109311,8 +111381,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 17.75,
+      "height": 8.44,
+      "unit": "in"
+    }
   },
   "print-archived-painting-15-medium-frame-black": {
     "id": "print-archived-painting-15-medium-frame-black",
@@ -109554,23 +111629,23 @@ export default {
     "artworkTitle": "Symbiosis #1",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S12.1X5.88",
+    "sku": "5M144M9S11.83X5.62",
     "scale": 0.5,
     "imageSize": {
       "width": 11.83,
-      "height": 5.6267,
+      "height": 5.62,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.1,
-      "height": 5.88,
+      "width": 12.83,
+      "height": 6.62,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/419ec5fdb50955e4fd33f2ab3f0faa053f31848b5ff2fb6baf4847f83a5b9e2a.jpg",
-    "assetSha256": "419ec5fdb50955e4fd33f2ab3f0faa053f31848b5ff2fb6baf4847f83a5b9e2a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a06ad474ab880f46a933b361184a708ced79b8d4bf99cd70b7a7049330677446.jpg",
+    "assetSha256": "a06ad474ab880f46a933b361184a708ced79b8d4bf99cd70b7a7049330677446",
     "sourceSha256": "7112103318fcb79bfaae9e8fb67b3a2badc1b9bc3313084870aaa9df993f6c13",
     "layoutApproved": true,
     "preview": {
@@ -109583,8 +111658,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.83,
+      "height": 5.62,
+      "unit": "in"
+    }
   },
   "print-archived-painting-15-small-frame-black": {
     "id": "print-archived-painting-15-small-frame-black",
@@ -109824,25 +111904,25 @@ export default {
     "productId": "archived-painting-18",
     "title": "Mayan Warrior — Large print",
     "artworkTitle": "Mayan Warrior",
-    "amount": "130.00",
+    "amount": "125.00",
     "currency": "USD",
-    "sku": "5M144M8S24.75X12.28",
+    "sku": "5M144M9S24.49X12.02",
     "scale": 1,
     "imageSize": {
-      "width": 24.4967,
-      "height": 12.0267,
+      "width": 24.49,
+      "height": 12.02,
       "unit": "in"
     },
     "paperSize": {
-      "width": 24.75,
-      "height": 12.28,
+      "width": 25.49,
+      "height": 13.02,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f235123127b06edab552075630a33d003df0c2ab4c35ec1a1d0ca801c6b71117.jpg",
-    "assetSha256": "f235123127b06edab552075630a33d003df0c2ab4c35ec1a1d0ca801c6b71117",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b21e11cc868a3245253fd40343d9263d3bb5461ef56584e2e95f368c463a5490.jpg",
+    "assetSha256": "b21e11cc868a3245253fd40343d9263d3bb5461ef56584e2e95f368c463a5490",
     "sourceSha256": "2f86850a9431808e9abbf7882abf72c33f5aa61632855b1088b085b64a0b40da",
     "layoutApproved": true,
     "preview": {
@@ -109855,8 +111935,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 24.49,
+      "height": 12.02,
+      "unit": "in"
+    }
   },
   "print-archived-painting-18-full-frame-black": {
     "id": "print-archived-painting-18-full-frame-black",
@@ -110098,23 +112183,23 @@ export default {
     "artworkTitle": "Mayan Warrior",
     "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S18.63X9.27",
+    "sku": "5M144M9S18.36X9.01",
     "scale": 0.75,
     "imageSize": {
-      "width": 18.3667,
-      "height": 9.0167,
+      "width": 18.36,
+      "height": 9.01,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.63,
-      "height": 9.27,
+      "width": 19.36,
+      "height": 10.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/95f5aa296269a36451dae31c72ea0257650634d94d118bb456217ae3e58858b7.jpg",
-    "assetSha256": "95f5aa296269a36451dae31c72ea0257650634d94d118bb456217ae3e58858b7",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f7b39e3b8983a36122fe0bf9f82fa2ccf29a6fcc571f218f96bbbdb18d8665a7.jpg",
+    "assetSha256": "f7b39e3b8983a36122fe0bf9f82fa2ccf29a6fcc571f218f96bbbdb18d8665a7",
     "sourceSha256": "2f86850a9431808e9abbf7882abf72c33f5aa61632855b1088b085b64a0b40da",
     "layoutApproved": true,
     "preview": {
@@ -110127,8 +112212,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 18.36,
+      "height": 9.01,
+      "unit": "in"
+    }
   },
   "print-archived-painting-18-medium-frame-black": {
     "id": "print-archived-painting-18-medium-frame-black",
@@ -110368,25 +112458,25 @@ export default {
     "productId": "archived-painting-18",
     "title": "Mayan Warrior — Small print",
     "artworkTitle": "Mayan Warrior",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S12.5X6.26",
+    "sku": "5M144M9S12.23X6",
     "scale": 0.5,
     "imageSize": {
-      "width": 12.2367,
-      "height": 6.0067,
+      "width": 12.23,
+      "height": 6,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.5,
-      "height": 6.26,
+      "width": 13.23,
+      "height": 7,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/38c6f2ab0907862ceb8cda7e238bc04ac8cbe25c2c01077661d6a09a532b3dbc.jpg",
-    "assetSha256": "38c6f2ab0907862ceb8cda7e238bc04ac8cbe25c2c01077661d6a09a532b3dbc",
+    "assetUrl": "https://vermillionaurora.com/print-editions/34be0438cc096055654b8669a5f85eb71f70a19a8b300face173567c5eb79e58.jpg",
+    "assetSha256": "34be0438cc096055654b8669a5f85eb71f70a19a8b300face173567c5eb79e58",
     "sourceSha256": "2f86850a9431808e9abbf7882abf72c33f5aa61632855b1088b085b64a0b40da",
     "layoutApproved": true,
     "preview": {
@@ -110399,8 +112489,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.23,
+      "height": 6,
+      "unit": "in"
+    }
   },
   "print-archived-painting-18-small-frame-black": {
     "id": "print-archived-painting-18-small-frame-black",
@@ -110642,23 +112737,23 @@ export default {
     "artworkTitle": "The Temple, Daytime",
     "amount": "130.00",
     "currency": "USD",
-    "sku": "5M144M8S25.03X12.45",
+    "sku": "5M144M9S24.77X12.19",
     "scale": 1,
     "imageSize": {
-      "width": 24.7767,
-      "height": 12.1967,
+      "width": 24.77,
+      "height": 12.19,
       "unit": "in"
     },
     "paperSize": {
-      "width": 25.03,
-      "height": 12.45,
+      "width": 25.77,
+      "height": 13.19,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e3e08a57fa300b8575358b40a3e0c2cc679725480f1d9e39a05cf05dd45d4374.jpg",
-    "assetSha256": "e3e08a57fa300b8575358b40a3e0c2cc679725480f1d9e39a05cf05dd45d4374",
+    "assetUrl": "https://vermillionaurora.com/print-editions/984b0054ea196536cfc6c7c8b1954acb6682e06ca65d45af12c124a37bcd5af0.jpg",
+    "assetSha256": "984b0054ea196536cfc6c7c8b1954acb6682e06ca65d45af12c124a37bcd5af0",
     "sourceSha256": "73ae0f9353d8e6952c0f74268dfd91fe5d3be1e7912e838e621676425f6f65f6",
     "layoutApproved": true,
     "preview": {
@@ -110671,8 +112766,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 24.77,
+      "height": 12.19,
+      "unit": "in"
+    }
   },
   "print-archived-painting-19-full-frame-black": {
     "id": "print-archived-painting-19-full-frame-black",
@@ -110912,25 +113012,25 @@ export default {
     "productId": "archived-painting-19",
     "title": "The Temple, Daytime — Medium print",
     "artworkTitle": "The Temple, Daytime",
-    "amount": "75.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S18.84X9.4",
+    "sku": "5M144M9S18.58X9.14",
     "scale": 0.75,
     "imageSize": {
-      "width": 18.5833,
-      "height": 9.1467,
+      "width": 18.58,
+      "height": 9.14,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.84,
-      "height": 9.4,
+      "width": 19.58,
+      "height": 10.14,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7b9f3c111dd61b3ef52b4895e92ce2b13f234d1c6303e5ab0c578307f71ef8f5.jpg",
-    "assetSha256": "7b9f3c111dd61b3ef52b4895e92ce2b13f234d1c6303e5ab0c578307f71ef8f5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/49a5960974fa35e33738841b03e02e915f7a652e137b147f8aabe951c8451d10.jpg",
+    "assetSha256": "49a5960974fa35e33738841b03e02e915f7a652e137b147f8aabe951c8451d10",
     "sourceSha256": "73ae0f9353d8e6952c0f74268dfd91fe5d3be1e7912e838e621676425f6f65f6",
     "layoutApproved": true,
     "preview": {
@@ -110943,8 +113043,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 18.58,
+      "height": 9.14,
+      "unit": "in"
+    }
   },
   "print-archived-painting-19-medium-frame-black": {
     "id": "print-archived-painting-19-medium-frame-black",
@@ -111184,25 +113289,25 @@ export default {
     "productId": "archived-painting-19",
     "title": "The Temple, Daytime — Small print",
     "artworkTitle": "The Temple, Daytime",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S12.64X6.35",
+    "sku": "5M144M9S12.38X6.09",
     "scale": 0.5,
     "imageSize": {
-      "width": 12.3867,
-      "height": 6.0967,
+      "width": 12.38,
+      "height": 6.09,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.64,
-      "height": 6.35,
+      "width": 13.38,
+      "height": 7.09,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/54b3c6bc874dbe4ff52b5338884ab87462674b8dfd0a969cf7b9574ea2263046.jpg",
-    "assetSha256": "54b3c6bc874dbe4ff52b5338884ab87462674b8dfd0a969cf7b9574ea2263046",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0b68e2350acd7990031d8aafacdcf7c6bd6c7135f8b12c8e1363abc489ff5745.jpg",
+    "assetSha256": "0b68e2350acd7990031d8aafacdcf7c6bd6c7135f8b12c8e1363abc489ff5745",
     "sourceSha256": "73ae0f9353d8e6952c0f74268dfd91fe5d3be1e7912e838e621676425f6f65f6",
     "layoutApproved": true,
     "preview": {
@@ -111215,8 +113320,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.38,
+      "height": 6.09,
+      "unit": "in"
+    }
   },
   "print-archived-painting-19-small-frame-black": {
     "id": "print-archived-painting-19-small-frame-black",
@@ -111458,23 +113568,23 @@ export default {
     "artworkTitle": "The Temple, the Lighting #2",
     "amount": "130.00",
     "currency": "USD",
-    "sku": "5M144M8S24.91X12.44",
+    "sku": "5M144M9S24.64X12.18",
     "scale": 1,
     "imageSize": {
-      "width": 24.6433,
-      "height": 12.1867,
+      "width": 24.64,
+      "height": 12.18,
       "unit": "in"
     },
     "paperSize": {
-      "width": 24.91,
-      "height": 12.44,
+      "width": 25.64,
+      "height": 13.18,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/a529e81fc99b85e8afc1fa79bfc800557e71edda025193e9653bcd5a049b1281.jpg",
-    "assetSha256": "a529e81fc99b85e8afc1fa79bfc800557e71edda025193e9653bcd5a049b1281",
+    "assetUrl": "https://vermillionaurora.com/print-editions/44680000fd717ffbe252621ed7024f78bf19709ef39fbe528133a55ea424210f.jpg",
+    "assetSha256": "44680000fd717ffbe252621ed7024f78bf19709ef39fbe528133a55ea424210f",
     "sourceSha256": "05a725ac7c5f8c65d1b11f67ad3533fced0e63f4354f29aba8bd181549c07f98",
     "layoutApproved": true,
     "preview": {
@@ -111487,8 +113597,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 24.64,
+      "height": 12.18,
+      "unit": "in"
+    }
   },
   "print-archived-painting-20-full-frame-black": {
     "id": "print-archived-painting-20-full-frame-black",
@@ -111728,25 +113843,25 @@ export default {
     "productId": "archived-painting-20",
     "title": "The Temple, the Lighting #2 — Medium print",
     "artworkTitle": "The Temple, the Lighting #2",
-    "amount": "75.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S18.74X9.39",
+    "sku": "5M144M9S18.47X9.13",
     "scale": 0.75,
     "imageSize": {
-      "width": 18.4767,
-      "height": 9.1367,
+      "width": 18.47,
+      "height": 9.13,
       "unit": "in"
     },
     "paperSize": {
-      "width": 18.74,
-      "height": 9.39,
+      "width": 19.47,
+      "height": 10.13,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ba35bc3177a375c57d9dc4b57d1808f122133d378592a47575fdf249c9bf4c96.jpg",
-    "assetSha256": "ba35bc3177a375c57d9dc4b57d1808f122133d378592a47575fdf249c9bf4c96",
+    "assetUrl": "https://vermillionaurora.com/print-editions/65e52dd36792d4d92f25f11e417bcf9495586039622c68bcdebb313ec85fbd35.jpg",
+    "assetSha256": "65e52dd36792d4d92f25f11e417bcf9495586039622c68bcdebb313ec85fbd35",
     "sourceSha256": "05a725ac7c5f8c65d1b11f67ad3533fced0e63f4354f29aba8bd181549c07f98",
     "layoutApproved": true,
     "preview": {
@@ -111759,8 +113874,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 18.47,
+      "height": 9.13,
+      "unit": "in"
+    }
   },
   "print-archived-painting-20-medium-frame-black": {
     "id": "print-archived-painting-20-medium-frame-black",
@@ -112000,25 +114120,25 @@ export default {
     "productId": "archived-painting-20",
     "title": "The Temple, the Lighting #2 — Small print",
     "artworkTitle": "The Temple, the Lighting #2",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S12.58X6.34",
+    "sku": "5M144M9S12.3X6.08",
     "scale": 0.5,
     "imageSize": {
-      "width": 12.3067,
-      "height": 6.0867,
+      "width": 12.3,
+      "height": 6.08,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.58,
-      "height": 6.34,
+      "width": 13.3,
+      "height": 7.08,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/28a9266af226c3e122bcaec23d08cecef3b213f838ca1fc45a55faca21261538.jpg",
-    "assetSha256": "28a9266af226c3e122bcaec23d08cecef3b213f838ca1fc45a55faca21261538",
+    "assetUrl": "https://vermillionaurora.com/print-editions/d93e5289426b0d95d0f52fa731f71eae37f5dfe477ce50fe8e025ce200187f32.jpg",
+    "assetSha256": "d93e5289426b0d95d0f52fa731f71eae37f5dfe477ce50fe8e025ce200187f32",
     "sourceSha256": "05a725ac7c5f8c65d1b11f67ad3533fced0e63f4354f29aba8bd181549c07f98",
     "layoutApproved": true,
     "preview": {
@@ -112031,8 +114151,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.3,
+      "height": 6.08,
+      "unit": "in"
+    }
   },
   "print-archived-painting-20-small-frame-black": {
     "id": "print-archived-painting-20-small-frame-black",
@@ -112272,25 +114397,25 @@ export default {
     "productId": "archived-painting-22",
     "title": "Devo & Katie @ Bass Coast — Large print",
     "artworkTitle": "Devo & Katie @ Bass Coast",
-    "amount": "110.00",
+    "amount": "105.00",
     "currency": "USD",
-    "sku": "5M144M8S23.19X11.26",
+    "sku": "5M144M9S22.93X11",
     "scale": 1,
     "imageSize": {
-      "width": 22.9333,
-      "height": 11.0067,
+      "width": 22.93,
+      "height": 11,
       "unit": "in"
     },
     "paperSize": {
-      "width": 23.19,
-      "height": 11.26,
+      "width": 23.93,
+      "height": 12,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/19a122deaa53dde906cc5d74683fe0e27516a7c8c0dc0812e92bab23c3207dca.jpg",
-    "assetSha256": "19a122deaa53dde906cc5d74683fe0e27516a7c8c0dc0812e92bab23c3207dca",
+    "assetUrl": "https://vermillionaurora.com/print-editions/78698c19f3d5d577ba64895940b4723d51ba5ec389a34c44fbdc6a84debf402c.jpg",
+    "assetSha256": "78698c19f3d5d577ba64895940b4723d51ba5ec389a34c44fbdc6a84debf402c",
     "sourceSha256": "a162cfb27e01580ab91fcb783c9c9b81fe68a0e4f572c73e902855b0eb09365a",
     "layoutApproved": true,
     "preview": {
@@ -112303,8 +114428,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 22.93,
+      "height": 11,
+      "unit": "in"
+    }
   },
   "print-archived-painting-22-full-frame-black": {
     "id": "print-archived-painting-22-full-frame-black",
@@ -112546,23 +114676,23 @@ export default {
     "artworkTitle": "Devo & Katie @ Bass Coast",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S17.45X8.5",
+    "sku": "5M144M9S17.18X8.24",
     "scale": 0.75,
     "imageSize": {
-      "width": 17.1833,
-      "height": 8.2467,
+      "width": 17.18,
+      "height": 8.24,
       "unit": "in"
     },
     "paperSize": {
-      "width": 17.45,
-      "height": 8.5,
+      "width": 18.18,
+      "height": 9.24,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/11abbdc0f9e9a3bd387741999936ab47401128420e54b2a92feb598e5ad0fce5.jpg",
-    "assetSha256": "11abbdc0f9e9a3bd387741999936ab47401128420e54b2a92feb598e5ad0fce5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/98b100fb28183abcddb3c5fd53edd695c8d697e8f7816c7dd7c4f39301bcd694.jpg",
+    "assetSha256": "98b100fb28183abcddb3c5fd53edd695c8d697e8f7816c7dd7c4f39301bcd694",
     "sourceSha256": "a162cfb27e01580ab91fcb783c9c9b81fe68a0e4f572c73e902855b0eb09365a",
     "layoutApproved": true,
     "preview": {
@@ -112575,8 +114705,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 17.18,
+      "height": 8.24,
+      "unit": "in"
+    }
   },
   "print-archived-painting-22-medium-frame-black": {
     "id": "print-archived-painting-22-medium-frame-black",
@@ -112816,25 +114951,25 @@ export default {
     "productId": "archived-painting-22",
     "title": "Devo & Katie @ Bass Coast — Small print",
     "artworkTitle": "Devo & Katie @ Bass Coast",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.72X5.75",
+    "sku": "5M144M9S11.45X5.49",
     "scale": 0.5,
     "imageSize": {
-      "width": 11.4533,
-      "height": 5.4967,
+      "width": 11.45,
+      "height": 5.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.72,
-      "height": 5.75,
+      "width": 12.45,
+      "height": 6.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/be2eeeee8a4de3c5850825466b880f3fa60cc3330dcfd469b3a7a63aea277352.jpg",
-    "assetSha256": "be2eeeee8a4de3c5850825466b880f3fa60cc3330dcfd469b3a7a63aea277352",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a18d912f8f4784a4b3524d7d2ae4616063b28a374260d1a69a989d7392f260b1.jpg",
+    "assetSha256": "a18d912f8f4784a4b3524d7d2ae4616063b28a374260d1a69a989d7392f260b1",
     "sourceSha256": "a162cfb27e01580ab91fcb783c9c9b81fe68a0e4f572c73e902855b0eb09365a",
     "layoutApproved": true,
     "preview": {
@@ -112847,8 +114982,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.45,
+      "height": 5.49,
+      "unit": "in"
+    }
   },
   "print-archived-painting-22-small-frame-black": {
     "id": "print-archived-painting-22-small-frame-black",
@@ -113090,23 +115230,23 @@ export default {
     "artworkTitle": "Painting #2",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S14.22X4",
+    "sku": "5M144M9S14.4X4",
     "scale": 1,
     "imageSize": {
-      "width": 13.9667,
-      "height": 3.5633,
+      "width": 13.96,
+      "height": 3.56,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.22,
-      "height": 4,
+      "width": 15.4,
+      "height": 5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/eac26f4f235f0a2fec1a05b6120ddd85e35e47fa59e20087ca81f661b4638baf.jpg",
-    "assetSha256": "eac26f4f235f0a2fec1a05b6120ddd85e35e47fa59e20087ca81f661b4638baf",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3b3e3a957c46fe187b0a1ec6429d9a5414318471c9b5cb411d5fc970b8b81487.jpg",
+    "assetSha256": "3b3e3a957c46fe187b0a1ec6429d9a5414318471c9b5cb411d5fc970b8b81487",
     "sourceSha256": "e661e119f7f15ccbe7c71c081b858bca38b1a7a837ff5acf7e60c77f7938ac31",
     "layoutApproved": true,
     "preview": {
@@ -113119,8 +115259,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.4,
+      "height": 4,
+      "unit": "in"
+    }
   },
   "print-archived-painting-2-full-frame-black": {
     "id": "print-archived-painting-2-full-frame-black",
@@ -113362,23 +115507,23 @@ export default {
     "artworkTitle": "Painting #4",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S14.01X4",
+    "sku": "5M144M9S14.59X4.01",
     "scale": 1,
     "imageSize": {
-      "width": 13.7567,
-      "height": 3.1767,
+      "width": 13.75,
+      "height": 3.17,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.01,
-      "height": 4,
+      "width": 15.59,
+      "height": 5.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/56f2419cc25593c880d58fab5961c069d1c5252df28234cdf8c5436a6c1705bb.jpg",
-    "assetSha256": "56f2419cc25593c880d58fab5961c069d1c5252df28234cdf8c5436a6c1705bb",
+    "assetUrl": "https://vermillionaurora.com/print-editions/6d454b5a0cba34124563253c25c2aeaec9bb759739a396c8db212b6c37d92342.jpg",
+    "assetSha256": "6d454b5a0cba34124563253c25c2aeaec9bb759739a396c8db212b6c37d92342",
     "sourceSha256": "992f895182682e7172da1054d9e7d1172877e138d3f8b537f49c430b4bece967",
     "layoutApproved": true,
     "preview": {
@@ -113391,8 +115536,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.59,
+      "height": 4.01,
+      "unit": "in"
+    }
   },
   "print-archived-painting-4-full-frame-black": {
     "id": "print-archived-painting-4-full-frame-black",
@@ -113634,23 +115784,23 @@ export default {
     "artworkTitle": "Painting #1",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S14.21X4",
+    "sku": "5M144M9S14.59X4.01",
     "scale": 1,
     "imageSize": {
-      "width": 13.9567,
+      "width": 13.95,
       "height": 3.37,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.21,
-      "height": 4,
+      "width": 15.59,
+      "height": 5.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ce1e764f46efe564451af850dc7b99012f855204efe72942227e6e0c24e4a8d8.jpg",
-    "assetSha256": "ce1e764f46efe564451af850dc7b99012f855204efe72942227e6e0c24e4a8d8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5d00c3e42e0c6371e6d9576a32fc92fffc4661e2d7b9bbed1e30afbc842f886b.jpg",
+    "assetSha256": "5d00c3e42e0c6371e6d9576a32fc92fffc4661e2d7b9bbed1e30afbc842f886b",
     "sourceSha256": "e9876274627a9afe2ddb371681be76c5343f6d079f465440a2179049cbfa7669",
     "layoutApproved": true,
     "preview": {
@@ -113663,8 +115813,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.59,
+      "height": 4.01,
+      "unit": "in"
+    }
   },
   "print-archived-painting-1-full-frame-black": {
     "id": "print-archived-painting-1-full-frame-black",
@@ -113906,23 +116061,23 @@ export default {
     "artworkTitle": "Painting #217",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S7.9X24.57",
+    "sku": "5M144M9S7.64X24.3",
     "scale": 1,
     "imageSize": {
-      "width": 7.6467,
-      "height": 24.3033,
+      "width": 7.64,
+      "height": 24.3,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.9,
-      "height": 24.57,
+      "width": 8.64,
+      "height": 25.3,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/f27ef8a63b0b102772c045eef426a43dc37da538b1739e047ca5d75de5b4db37.jpg",
-    "assetSha256": "f27ef8a63b0b102772c045eef426a43dc37da538b1739e047ca5d75de5b4db37",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ac4d759242d55cdddd9ea2f1fe782d604b298c374664e25d1221f61f55a96309.jpg",
+    "assetSha256": "ac4d759242d55cdddd9ea2f1fe782d604b298c374664e25d1221f61f55a96309",
     "sourceSha256": "0adb3354b13717fde1f05575dace2085698d3eb35dca17f0fa5a6d2273d7beee",
     "layoutApproved": true,
     "preview": {
@@ -113935,8 +116090,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.64,
+      "height": 24.3,
+      "unit": "in"
+    }
   },
   "print-archived-painting-217-full-frame-black": {
     "id": "print-archived-painting-217-full-frame-black",
@@ -114178,23 +116338,23 @@ export default {
     "artworkTitle": "Painting #217",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S5.99X18.49",
+    "sku": "5M144M9S5.73X18.23",
     "scale": 0.75,
     "imageSize": {
-      "width": 5.7367,
-      "height": 18.2333,
+      "width": 5.73,
+      "height": 18.23,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.99,
-      "height": 18.49,
+      "width": 6.73,
+      "height": 19.23,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/34c0015b9e7f9961c5130bac60203097f7c0c5bd498adc30f3ed97652ad6b2cd.jpg",
-    "assetSha256": "34c0015b9e7f9961c5130bac60203097f7c0c5bd498adc30f3ed97652ad6b2cd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5dfa0527711f329f03b07c27989652a9d76dfda86dc12ebc36b2d36e386d932d.jpg",
+    "assetSha256": "5dfa0527711f329f03b07c27989652a9d76dfda86dc12ebc36b2d36e386d932d",
     "sourceSha256": "0adb3354b13717fde1f05575dace2085698d3eb35dca17f0fa5a6d2273d7beee",
     "layoutApproved": true,
     "preview": {
@@ -114207,8 +116367,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 5.73,
+      "height": 18.23,
+      "unit": "in"
+    }
   },
   "print-archived-painting-217-medium-frame-black": {
     "id": "print-archived-painting-217-medium-frame-black",
@@ -114450,23 +116615,23 @@ export default {
     "artworkTitle": "Painting #217",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S4.07X12.41",
+    "sku": "5M144M9S4.01X12.33",
     "scale": 0.5,
     "imageSize": {
-      "width": 3.8167,
+      "width": 3.81,
       "height": 12.13,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.07,
-      "height": 12.41,
+      "width": 5.01,
+      "height": 13.33,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9bf172a713633dc57b652f25e84c2812d294c429804c29eb6e7d9c51bf5739c6.jpg",
-    "assetSha256": "9bf172a713633dc57b652f25e84c2812d294c429804c29eb6e7d9c51bf5739c6",
+    "assetUrl": "https://vermillionaurora.com/print-editions/51569dd104aaacbfeb4f5a3a8f6d8e2daca77d64bdbe79b74ac9eae3ee3841b7.jpg",
+    "assetSha256": "51569dd104aaacbfeb4f5a3a8f6d8e2daca77d64bdbe79b74ac9eae3ee3841b7",
     "sourceSha256": "0adb3354b13717fde1f05575dace2085698d3eb35dca17f0fa5a6d2273d7beee",
     "layoutApproved": true,
     "preview": {
@@ -114479,8 +116644,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.01,
+      "height": 12.33,
+      "unit": "in"
+    }
   },
   "print-archived-painting-217-small-frame-black": {
     "id": "print-archived-painting-217-small-frame-black",
@@ -114722,23 +116892,23 @@ export default {
     "artworkTitle": "Figures on a Shore Triptych",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S12.98X4.05",
+    "sku": "5M144M9S12.94X4.01",
     "scale": 1,
     "imageSize": {
-      "width": 12.7267,
-      "height": 3.7967,
+      "width": 12.72,
+      "height": 3.79,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.98,
-      "height": 4.05,
+      "width": 13.94,
+      "height": 5.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708.jpg",
-    "assetSha256": "d8855cd4503c8145e2086d9c98fa2ecf28c62f78969bb463c9b36987504fd708",
+    "assetUrl": "https://vermillionaurora.com/print-editions/8548443275829774b0b39a3da1f1aa3f63476579d87c6c0c3428ed6351661a23.jpg",
+    "assetSha256": "8548443275829774b0b39a3da1f1aa3f63476579d87c6c0c3428ed6351661a23",
     "sourceSha256": "9002a9b1a5f4ad8ab772cd737f8aceedeb0d404410d9a7557137c9b60646b20f",
     "layoutApproved": true,
     "preview": {
@@ -114751,8 +116921,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.94,
+      "height": 4.01,
+      "unit": "in"
+    }
   },
   "print-older-work-shore-figures-full-frame-black": {
     "id": "print-older-work-shore-figures-full-frame-black",
@@ -114992,25 +117167,25 @@ export default {
     "productId": "older-work-mountain-layers",
     "title": "Mountain Layers Studies — Large print",
     "artworkTitle": "Mountain Layers Studies",
-    "amount": "50.00",
+    "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S15X4",
+    "sku": "5M144M9S16.26X4.01",
     "scale": 1,
     "imageSize": {
-      "width": 14.7467,
-      "height": 2.4967,
+      "width": 14.74,
+      "height": 2.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15,
-      "height": 4,
+      "width": 17.26,
+      "height": 5.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/60987e67aec4d72f9dbb08be69af7a417094e80de309844bf297d6c493581e1b.jpg",
-    "assetSha256": "60987e67aec4d72f9dbb08be69af7a417094e80de309844bf297d6c493581e1b",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0cdcd8e4687a38ca28852784e4b5e2bd7ae910941a0ba2c0b2858e0738d70e49.jpg",
+    "assetSha256": "0cdcd8e4687a38ca28852784e4b5e2bd7ae910941a0ba2c0b2858e0738d70e49",
     "sourceSha256": "82f798d1d4455607884aad492a53d6021ba4fc187eb662312ef9b2e83b5953b1",
     "layoutApproved": true,
     "preview": {
@@ -115023,8 +117198,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.26,
+      "height": 4.01,
+      "unit": "in"
+    }
   },
   "print-older-work-mountain-layers-full-frame-black": {
     "id": "print-older-work-mountain-layers-full-frame-black",
@@ -115266,23 +117446,23 @@ export default {
     "artworkTitle": "Lake, Hillside and Color Wheel",
     "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S20.8X5.11",
+    "sku": "5M144M9S20.54X4.85",
     "scale": 1,
     "imageSize": {
-      "width": 20.5433,
-      "height": 4.8567,
+      "width": 20.54,
+      "height": 4.85,
       "unit": "in"
     },
     "paperSize": {
-      "width": 20.8,
-      "height": 5.11,
+      "width": 21.54,
+      "height": 5.85,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f.jpg",
-    "assetSha256": "03e52d8f24d90439dfabfd55b19183567943b360001461bcbfab11bcbca2ca2f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/58cb9df0a28cf1dd448d9c1a92e8d7e2c8e7ac7923f37d309162458a13239183.jpg",
+    "assetSha256": "58cb9df0a28cf1dd448d9c1a92e8d7e2c8e7ac7923f37d309162458a13239183",
     "sourceSha256": "eac00d6c2f6d88c15fc3b920b7996a2234fb62924bce6ec9dabc27e5e53d4a67",
     "layoutApproved": true,
     "preview": {
@@ -115295,8 +117475,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 20.54,
+      "height": 4.85,
+      "unit": "in"
+    }
   },
   "print-older-work-lake-hillside-color-wheel-full-frame-black": {
     "id": "print-older-work-lake-hillside-color-wheel-full-frame-black",
@@ -115538,23 +117723,23 @@ export default {
     "artworkTitle": "Sunset Ridge Strips",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S9.94X20.51",
+    "sku": "5M144M9S9.68X20.24",
     "scale": 1,
     "imageSize": {
-      "width": 9.6867,
-      "height": 20.2467,
+      "width": 9.68,
+      "height": 20.24,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.94,
-      "height": 20.51,
+      "width": 10.68,
+      "height": 21.24,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5f821f810f22f91d924f64cf0c8f8ee9576ced54b315c0a1d0376badd9a46b96.jpg",
-    "assetSha256": "5f821f810f22f91d924f64cf0c8f8ee9576ced54b315c0a1d0376badd9a46b96",
+    "assetUrl": "https://vermillionaurora.com/print-editions/33a0865e22a1e110b108fcd7aaf4139f2c81464960c43d15b5162c70a3a059d9.jpg",
+    "assetSha256": "33a0865e22a1e110b108fcd7aaf4139f2c81464960c43d15b5162c70a3a059d9",
     "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
     "layoutApproved": true,
     "preview": {
@@ -115567,8 +117752,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.68,
+      "height": 20.24,
+      "unit": "in"
+    }
   },
   "print-older-work-sunset-ridge-strips-full-frame-black": {
     "id": "print-older-work-sunset-ridge-strips-full-frame-black",
@@ -115810,23 +118000,23 @@ export default {
     "artworkTitle": "Sunset Ridge Strips",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S7.52X15.44",
+    "sku": "5M144M9S7.26X15.18",
     "scale": 0.75,
     "imageSize": {
-      "width": 7.2667,
-      "height": 15.1867,
+      "width": 7.26,
+      "height": 15.18,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.52,
-      "height": 15.44,
+      "width": 8.26,
+      "height": 16.18,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/680a7c8d7aa8bd1cbdc501a1befebcdac8fa2fc1da61131f4d4455e58a0f4431.jpg",
-    "assetSha256": "680a7c8d7aa8bd1cbdc501a1befebcdac8fa2fc1da61131f4d4455e58a0f4431",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a698c0dfce35dfeeeb719f01d845d56d0680a5d5bc4ff7e1e15ff399d4a591e9.jpg",
+    "assetSha256": "a698c0dfce35dfeeeb719f01d845d56d0680a5d5bc4ff7e1e15ff399d4a591e9",
     "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
     "layoutApproved": true,
     "preview": {
@@ -115839,8 +118029,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.26,
+      "height": 15.18,
+      "unit": "in"
+    }
   },
   "print-older-work-sunset-ridge-strips-medium-frame-black": {
     "id": "print-older-work-sunset-ridge-strips-medium-frame-black",
@@ -116082,23 +118277,23 @@ export default {
     "artworkTitle": "Sunset Ridge Strips",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S5.09X10.38",
+    "sku": "5M144M9S4.83X10.11",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.8367,
+      "width": 4.83,
       "height": 10.11,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.09,
-      "height": 10.38,
+      "width": 5.83,
+      "height": 11.11,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3e6c150f49127221ff7687e387ed94466ae26c8ff5233f4a830a3aff8d79c545.jpg",
-    "assetSha256": "3e6c150f49127221ff7687e387ed94466ae26c8ff5233f4a830a3aff8d79c545",
+    "assetUrl": "https://vermillionaurora.com/print-editions/a1aed2690510c50f9f55e368253c4b651e3d528f1fe01e8e5565f4d3c1f912b5.jpg",
+    "assetSha256": "a1aed2690510c50f9f55e368253c4b651e3d528f1fe01e8e5565f4d3c1f912b5",
     "sourceSha256": "cce17a290bbf08e085023094036f2fef3666c3dcfb7b0095a72ed3c86912dd20",
     "layoutApproved": true,
     "preview": {
@@ -116111,8 +118306,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.83,
+      "height": 10.11,
+      "unit": "in"
+    }
   },
   "print-older-work-sunset-ridge-strips-small-frame-black": {
     "id": "print-older-work-sunset-ridge-strips-small-frame-black",
@@ -116352,25 +118552,25 @@ export default {
     "productId": "older-work-ridge-strips-unindexed",
     "title": "Ridge Strip Studies (unindexed) — Large print",
     "artworkTitle": "Ridge Strip Studies (unindexed)",
-    "amount": "75.00",
+    "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S8.83X20.55",
+    "sku": "5M144M9S8.57X20.28",
     "scale": 1,
     "imageSize": {
-      "width": 8.5767,
-      "height": 20.2833,
+      "width": 8.57,
+      "height": 20.28,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.83,
-      "height": 20.55,
+      "width": 9.57,
+      "height": 21.28,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/86ded9a8fb849bfe31856433bbb66404348936d4be9c2e9ffd63e1dc6b8aa3f3.jpg",
-    "assetSha256": "86ded9a8fb849bfe31856433bbb66404348936d4be9c2e9ffd63e1dc6b8aa3f3",
+    "assetUrl": "https://vermillionaurora.com/print-editions/eb2677d45e821b2e86ff08ecad6b4d8347cd6d54b7bb3d5d9692d6e2d7bb2e50.jpg",
+    "assetSha256": "eb2677d45e821b2e86ff08ecad6b4d8347cd6d54b7bb3d5d9692d6e2d7bb2e50",
     "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
     "layoutApproved": true,
     "preview": {
@@ -116383,8 +118583,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.57,
+      "height": 20.28,
+      "unit": "in"
+    }
   },
   "print-older-work-ridge-strips-unindexed-full-frame-black": {
     "id": "print-older-work-ridge-strips-unindexed-full-frame-black",
@@ -116626,23 +118831,23 @@ export default {
     "artworkTitle": "Ridge Strip Studies (unindexed)",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S6.69X15.48",
+    "sku": "5M144M9S6.43X15.22",
     "scale": 0.75,
     "imageSize": {
-      "width": 6.4367,
-      "height": 15.2233,
+      "width": 6.43,
+      "height": 15.22,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.69,
-      "height": 15.48,
+      "width": 7.43,
+      "height": 16.22,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/505b280c82bfbb7862098007dc8052efbea9357aeb6ca5fc12aa1a5c8be4482d.jpg",
-    "assetSha256": "505b280c82bfbb7862098007dc8052efbea9357aeb6ca5fc12aa1a5c8be4482d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/420803c6bf23a6788e2d77b896e0dbfe3017af0619dfd729e3ea8ec96d0370bf.jpg",
+    "assetSha256": "420803c6bf23a6788e2d77b896e0dbfe3017af0619dfd729e3ea8ec96d0370bf",
     "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
     "layoutApproved": true,
     "preview": {
@@ -116655,8 +118860,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.43,
+      "height": 15.22,
+      "unit": "in"
+    }
   },
   "print-older-work-ridge-strips-unindexed-medium-frame-black": {
     "id": "print-older-work-ridge-strips-unindexed-medium-frame-black",
@@ -116898,23 +119108,23 @@ export default {
     "artworkTitle": "Ridge Strip Studies (unindexed)",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S4.54X10.4",
+    "sku": "5M144M9S4.28X10.13",
     "scale": 0.5,
     "imageSize": {
-      "width": 4.2867,
-      "height": 10.1367,
+      "width": 4.28,
+      "height": 10.13,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.54,
-      "height": 10.4,
+      "width": 5.28,
+      "height": 11.13,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6c0f7687908abdd109cda7b5f9701f1e85b0d1d7ee7e0d697fcc09e2026e3fb9.jpg",
-    "assetSha256": "6c0f7687908abdd109cda7b5f9701f1e85b0d1d7ee7e0d697fcc09e2026e3fb9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/bffff67bfce39fa93a388dbc987d6e1b632e7e7d0519db94e68627b5c19cc663.jpg",
+    "assetSha256": "bffff67bfce39fa93a388dbc987d6e1b632e7e7d0519db94e68627b5c19cc663",
     "sourceSha256": "2964f0527c6cbe79a868c96de139c4335ae3eeef7acc3ae48944a10318184478",
     "layoutApproved": true,
     "preview": {
@@ -116927,8 +119137,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.28,
+      "height": 10.13,
+      "unit": "in"
+    }
   },
   "print-older-work-ridge-strips-unindexed-small-frame-black": {
     "id": "print-older-work-ridge-strips-unindexed-small-frame-black",
@@ -117170,23 +119385,23 @@ export default {
     "artworkTitle": "Pitcher Still Lifes",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S15.25X6.88",
+    "sku": "5M144M9S14.97X6.62",
     "scale": 1,
     "imageSize": {
-      "width": 14.9733,
-      "height": 6.6267,
+      "width": 14.97,
+      "height": 6.62,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15.25,
-      "height": 6.88,
+      "width": 15.97,
+      "height": 7.62,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc.jpg",
-    "assetSha256": "8bf634c790ba6a3674802a7f834cb0175a5ef9bec8a06c168e385801563abfcc",
+    "assetUrl": "https://vermillionaurora.com/print-editions/cec619b03a72ecaab87054f971fbea318f8592ab31ea89ea8ac1255388eab0f4.jpg",
+    "assetSha256": "cec619b03a72ecaab87054f971fbea318f8592ab31ea89ea8ac1255388eab0f4",
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
@@ -117199,8 +119414,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.97,
+      "height": 6.62,
+      "unit": "in"
+    }
   },
   "print-older-work-pitchers-full-frame-black": {
     "id": "print-older-work-pitchers-full-frame-black",
@@ -117440,25 +119660,25 @@ export default {
     "productId": "older-work-pitchers",
     "title": "Pitcher Still Lifes — Medium print",
     "artworkTitle": "Pitcher Still Lifes",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.5X5.22",
+    "sku": "5M144M9S11.22X4.96",
     "scale": 0.75,
     "imageSize": {
-      "width": 11.2233,
-      "height": 4.9667,
+      "width": 11.22,
+      "height": 4.96,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.5,
-      "height": 5.22,
+      "width": 12.22,
+      "height": 5.96,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650.jpg",
-    "assetSha256": "d053400d2fe3758bdc1d0990fdd56e349470eaae0bea26ab636f9c3cd0bcd650",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b301e8223c8f5ee43b8669ad865848f56e04057e97fbdeca05ff56dc5b2f35e2.jpg",
+    "assetSha256": "b301e8223c8f5ee43b8669ad865848f56e04057e97fbdeca05ff56dc5b2f35e2",
     "sourceSha256": "e94272585d94ecadb62babca8be7bb13100f594aee76c3c8ab28c009453ad343",
     "layoutApproved": true,
     "preview": {
@@ -117471,8 +119691,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.22,
+      "height": 4.96,
+      "unit": "in"
+    }
   },
   "print-older-work-pitchers-medium-frame-black": {
     "id": "print-older-work-pitchers-medium-frame-black",
@@ -117714,23 +119939,23 @@ export default {
     "artworkTitle": "TJ Hummingbird Feeder 190",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.36X6.03",
+    "sku": "5M144M9S4.1X5.77",
     "scale": 1,
     "imageSize": {
-      "width": 4.1067,
-      "height": 5.7733,
+      "width": 4.1,
+      "height": 5.77,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.36,
-      "height": 6.03,
+      "width": 5.1,
+      "height": 6.77,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc.jpg",
-    "assetSha256": "29fd759b5d8f80ac7a77880c45ef276e79ae2f5bdb31dfe78321b7074f62eacc",
+    "assetUrl": "https://vermillionaurora.com/print-editions/de015a3aeeb3d9a9a8d506866e54c2756789588e875382d151e8a344483e10fb.jpg",
+    "assetSha256": "de015a3aeeb3d9a9a8d506866e54c2756789588e875382d151e8a344483e10fb",
     "sourceSha256": "cef1c7ac71b26cc5ab75d989f48f17f4ab438eac2264f9656f0e6840415ae819",
     "layoutApproved": true,
     "preview": {
@@ -117743,8 +119968,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.1,
+      "height": 5.77,
+      "unit": "in"
+    }
   },
   "print-older-work-hummingbird-feeder-190-full-frame-black": {
     "id": "print-older-work-hummingbird-feeder-190-full-frame-black",
@@ -117986,23 +120216,23 @@ export default {
     "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
     "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S17.27X7.43",
+    "sku": "5M144M9S17.01X7.17",
     "scale": 1,
     "imageSize": {
       "width": 17.01,
-      "height": 7.1767,
+      "height": 7.17,
       "unit": "in"
     },
     "paperSize": {
-      "width": 17.27,
-      "height": 7.43,
+      "width": 18.01,
+      "height": 8.17,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9.jpg",
-    "assetSha256": "082b8fee79502acd0f2cd10ad0b729a593e0ad8b2e4a2eeb61b49b07368afdf9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2df3b9af8d867dfed099bda5851114f28bd3cc5bae29c603816af0ae73b79296.jpg",
+    "assetSha256": "2df3b9af8d867dfed099bda5851114f28bd3cc5bae29c603816af0ae73b79296",
     "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
     "layoutApproved": true,
     "preview": {
@@ -118015,8 +120245,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 17.01,
+      "height": 7.17,
+      "unit": "in"
+    }
   },
   "print-older-work-bitcoin-voices-full-frame-black": {
     "id": "print-older-work-bitcoin-voices-full-frame-black",
@@ -118258,23 +120493,23 @@ export default {
     "artworkTitle": "Mallers, Brunell, McCormack and Saylor",
     "amount": "45.00",
     "currency": "USD",
-    "sku": "5M144M8S13.02X5.63",
+    "sku": "5M144M9S12.74X5.37",
     "scale": 0.75,
     "imageSize": {
-      "width": 12.7433,
-      "height": 5.3767,
+      "width": 12.74,
+      "height": 5.37,
       "unit": "in"
     },
     "paperSize": {
-      "width": 13.02,
-      "height": 5.63,
+      "width": 13.74,
+      "height": 6.37,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a.jpg",
-    "assetSha256": "afaeed47c70dd143a074c9f8978d72db4ba3411f698fd74d6ec147fb0f24158a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7e7fa826be69a307cc68cfdeaccdd4e4100045e18403bd1bb9abf3772ced73a9.jpg",
+    "assetSha256": "7e7fa826be69a307cc68cfdeaccdd4e4100045e18403bd1bb9abf3772ced73a9",
     "sourceSha256": "2983dd087f71816051c77a751200d9af012f938e0c88cab75c7c25dcde32a27f",
     "layoutApproved": true,
     "preview": {
@@ -118287,8 +120522,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.74,
+      "height": 5.37,
+      "unit": "in"
+    }
   },
   "print-older-work-bitcoin-voices-medium-frame-black": {
     "id": "print-older-work-bitcoin-voices-medium-frame-black",
@@ -118530,23 +120770,23 @@ export default {
     "artworkTitle": "Provibes Reunion Sandwich Portraits",
     "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S21.16X7.56",
+    "sku": "5M144M9S20.88X7.3",
     "scale": 1,
     "imageSize": {
-      "width": 20.8833,
-      "height": 7.3067,
+      "width": 20.88,
+      "height": 7.3,
       "unit": "in"
     },
     "paperSize": {
-      "width": 21.16,
-      "height": 7.56,
+      "width": 21.88,
+      "height": 8.3,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8.jpg",
-    "assetSha256": "14f1a7f9cd8ab40fdd5d8110c8ce8379a0bbe1433dfb719a22df92ebfa37fad8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/94cd545124f828054201543e87927ba5493c63dd3c2c22485b001fae30e24ef3.jpg",
+    "assetSha256": "94cd545124f828054201543e87927ba5493c63dd3c2c22485b001fae30e24ef3",
     "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
     "layoutApproved": true,
     "preview": {
@@ -118559,8 +120799,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 20.88,
+      "height": 7.3,
+      "unit": "in"
+    }
   },
   "print-older-work-provibes-sandwiches-full-frame-black": {
     "id": "print-older-work-provibes-sandwiches-full-frame-black",
@@ -118802,23 +121047,23 @@ export default {
     "artworkTitle": "Provibes Reunion Sandwich Portraits",
     "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S15.93X5.73",
+    "sku": "5M144M9S15.65X5.47",
     "scale": 0.75,
     "imageSize": {
-      "width": 15.6533,
-      "height": 5.4767,
+      "width": 15.65,
+      "height": 5.47,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15.93,
-      "height": 5.73,
+      "width": 16.65,
+      "height": 6.47,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8.jpg",
-    "assetSha256": "00ed2bba3cfed8070a94feece38e281ad4fa8fbee849ef005e0009a094c306f8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/54dfea226625b0fe0801c1a7baec60f5461ecd562d7ee4db86340a042376c51d.jpg",
+    "assetSha256": "54dfea226625b0fe0801c1a7baec60f5461ecd562d7ee4db86340a042376c51d",
     "sourceSha256": "29a58d827d4b86a1ec364e458976baf72499c5fb421922752030ad6389a12790",
     "layoutApproved": true,
     "preview": {
@@ -118831,8 +121076,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.65,
+      "height": 5.47,
+      "unit": "in"
+    }
   },
   "print-older-work-provibes-sandwiches-medium-frame-black": {
     "id": "print-older-work-provibes-sandwiches-medium-frame-black",
@@ -119074,23 +121324,23 @@ export default {
     "artworkTitle": "Parah, José, Antonopoulos and #319",
     "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S21.69X6.66",
+    "sku": "5M144M9S21.41X6.4",
     "scale": 1,
     "imageSize": {
-      "width": 21.4167,
-      "height": 6.4067,
+      "width": 21.41,
+      "height": 6.4,
       "unit": "in"
     },
     "paperSize": {
-      "width": 21.69,
-      "height": 6.66,
+      "width": 22.41,
+      "height": 7.4,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d.jpg",
-    "assetSha256": "d25da4132fd7db85697765224c0e8399d2968424e603593098108e3aa28bdc8d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/326ff938fc898e0a69270fba452434938264a0c1686e18c3cb2f245c2d09e901.jpg",
+    "assetSha256": "326ff938fc898e0a69270fba452434938264a0c1686e18c3cb2f245c2d09e901",
     "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
     "layoutApproved": true,
     "preview": {
@@ -119103,8 +121353,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 21.41,
+      "height": 6.4,
+      "unit": "in"
+    }
   },
   "print-older-work-portraits-319-329-full-frame-black": {
     "id": "print-older-work-portraits-319-329-full-frame-black",
@@ -119346,23 +121601,23 @@ export default {
     "artworkTitle": "Parah, José, Antonopoulos and #319",
     "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S16.33X5.06",
+    "sku": "5M144M9S16.07X4.8",
     "scale": 0.75,
     "imageSize": {
       "width": 16.07,
-      "height": 4.8067,
+      "height": 4.8,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.33,
-      "height": 5.06,
+      "width": 17.07,
+      "height": 5.8,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875.jpg",
-    "assetSha256": "0a1bf66c2f0d04369fe6878aa271904c49cb0f797ba1c1b26d35e57376ef4875",
+    "assetUrl": "https://vermillionaurora.com/print-editions/3b081585326bb42b995320b6b7824e58fc67fe97c3f24686344190dc7e18e5e3.jpg",
+    "assetSha256": "3b081585326bb42b995320b6b7824e58fc67fe97c3f24686344190dc7e18e5e3",
     "sourceSha256": "eb80e428b7a9631d5638f5058e44926104edf16064fad3ac4d2b7bef668350b6",
     "layoutApproved": true,
     "preview": {
@@ -119375,8 +121630,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.07,
+      "height": 4.8,
+      "unit": "in"
+    }
   },
   "print-older-work-portraits-319-329-medium-frame-black": {
     "id": "print-older-work-portraits-319-329-medium-frame-black",
@@ -119616,25 +121876,25 @@ export default {
     "productId": "older-work-fernandez-moran-pysh",
     "title": "Fernandez, Moran and Pysh — Large print",
     "artworkTitle": "Fernandez, Moran and Pysh",
-    "amount": "60.00",
+    "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S16.74X5.89",
+    "sku": "5M144M9S16.48X5.63",
     "scale": 1,
     "imageSize": {
-      "width": 16.4833,
-      "height": 5.6367,
+      "width": 16.48,
+      "height": 5.63,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.74,
-      "height": 5.89,
+      "width": 17.48,
+      "height": 6.63,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75.jpg",
-    "assetSha256": "50f56e537c00c7df06411783821c4337d7967b26d506862f924550a6c6b3db75",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f8ce28eb32a67637917c1bca17fe782d700730b6fe87783d95a2190b400abf30.jpg",
+    "assetSha256": "f8ce28eb32a67637917c1bca17fe782d700730b6fe87783d95a2190b400abf30",
     "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
     "layoutApproved": true,
     "preview": {
@@ -119647,8 +121907,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.48,
+      "height": 5.63,
+      "unit": "in"
+    }
   },
   "print-older-work-fernandez-moran-pysh-full-frame-black": {
     "id": "print-older-work-fernandez-moran-pysh-full-frame-black",
@@ -119888,25 +122153,25 @@ export default {
     "productId": "older-work-fernandez-moran-pysh",
     "title": "Fernandez, Moran and Pysh — Medium print",
     "artworkTitle": "Fernandez, Moran and Pysh",
-    "amount": "45.00",
+    "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S12.62X4.48",
+    "sku": "5M144M9S12.36X4.22",
     "scale": 0.75,
     "imageSize": {
       "width": 12.36,
-      "height": 4.2267,
+      "height": 4.22,
       "unit": "in"
     },
     "paperSize": {
-      "width": 12.62,
-      "height": 4.48,
+      "width": 13.36,
+      "height": 5.22,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493.jpg",
-    "assetSha256": "4c944e554c41ddbc4927c60bc0b6ebf09b064b09587d4c259d7668326bc46493",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c1a558eabf940aa3af1d5d644387eb02338524d11e93da174988c35cd5193a86.jpg",
+    "assetSha256": "c1a558eabf940aa3af1d5d644387eb02338524d11e93da174988c35cd5193a86",
     "sourceSha256": "fd1d848bc42176cd895b164faf12ed010183648e8d4ee8e48d041cc53713d6b2",
     "layoutApproved": true,
     "preview": {
@@ -119919,8 +122184,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 12.36,
+      "height": 4.22,
+      "unit": "in"
+    }
   },
   "print-older-work-fernandez-moran-pysh-medium-frame-black": {
     "id": "print-older-work-fernandez-moran-pysh-medium-frame-black",
@@ -120160,25 +122430,25 @@ export default {
     "productId": "older-work-rochard-martinez",
     "title": "Pierre Rochard, Morgen Rochard and Aixa Martinez — Large print",
     "artworkTitle": "Pierre Rochard, Morgen Rochard and Aixa Martinez",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.59X4.26",
+    "sku": "5M144M9S11.33X4",
     "scale": 1,
     "imageSize": {
-      "width": 11.3367,
-      "height": 4.0067,
+      "width": 11.33,
+      "height": 4,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.59,
-      "height": 4.26,
+      "width": 12.33,
+      "height": 5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9.jpg",
-    "assetSha256": "e902c22b100900a0fa389f00dc81b85b19098697ae1ea8ccea3c75f89d567ac9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9a4eb426da718de9ad69bfa8449d27da48112fbc90b9992c4f7c66213d827bf9.jpg",
+    "assetSha256": "9a4eb426da718de9ad69bfa8449d27da48112fbc90b9992c4f7c66213d827bf9",
     "sourceSha256": "4deeed469a9284f5e81637e312fc8cd3b579d5ed511c52d940760cda572a57ec",
     "layoutApproved": true,
     "preview": {
@@ -120191,8 +122461,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.33,
+      "height": 4,
+      "unit": "in"
+    }
   },
   "print-older-work-rochard-martinez-full-frame-black": {
     "id": "print-older-work-rochard-martinez-full-frame-black",
@@ -120434,23 +122709,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto and Hayek",
     "amount": "40.00",
     "currency": "USD",
-    "sku": "5M144M8S11.76X6.5",
+    "sku": "5M144M9S11.5X6.24",
     "scale": 1,
     "imageSize": {
       "width": 11.5,
-      "height": 6.2467,
+      "height": 6.24,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.76,
-      "height": 6.5,
+      "width": 12.5,
+      "height": 7.24,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9.jpg",
-    "assetSha256": "74d1906c070f44ee78dd717ffc2a41ceddbde8f75e3bc6097ab03fdaabf71ad9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/28ed18fa2827fd54c67d2130731a6f4d1955bd89bf1262a02c771840dc02333e.jpg",
+    "assetSha256": "28ed18fa2827fd54c67d2130731a6f4d1955bd89bf1262a02c771840dc02333e",
     "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
     "layoutApproved": true,
     "preview": {
@@ -120463,8 +122738,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.5,
+      "height": 6.24,
+      "unit": "in"
+    }
   },
   "print-older-work-nakamoto-hayek-full-frame-black": {
     "id": "print-older-work-nakamoto-hayek-full-frame-black",
@@ -120706,23 +122986,23 @@ export default {
     "artworkTitle": "Dorian Nakamoto and Hayek",
     "amount": "30.00",
     "currency": "USD",
-    "sku": "5M144M8S8.88X4.94",
+    "sku": "5M144M9S8.62X4.68",
     "scale": 0.75,
     "imageSize": {
-      "width": 8.6267,
-      "height": 4.6867,
+      "width": 8.62,
+      "height": 4.68,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.88,
-      "height": 4.94,
+      "width": 9.62,
+      "height": 5.68,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96.jpg",
-    "assetSha256": "216b7037ae0d9c95e2ebf01eafca32b3dee71a253c7d94ce277a4442b3dd9c96",
+    "assetUrl": "https://vermillionaurora.com/print-editions/343432a403f1c2850b7b0d1863750b1e529d5b45991afa2a3aa144a2a3852ec9.jpg",
+    "assetSha256": "343432a403f1c2850b7b0d1863750b1e529d5b45991afa2a3aa144a2a3852ec9",
     "sourceSha256": "61708bcf161aebc2f44c5e96379895ca766470b529f20a3537210f6909dd3541",
     "layoutApproved": true,
     "preview": {
@@ -120735,8 +123015,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 8.62,
+      "height": 4.68,
+      "unit": "in"
+    }
   },
   "print-older-work-nakamoto-hayek-medium-frame-black": {
     "id": "print-older-work-nakamoto-hayek-medium-frame-black",
@@ -120976,25 +123261,25 @@ export default {
     "productId": "older-work-figen-pnut-swoll",
     "title": "Figen, PNut and Joey Swoll — Large print",
     "artworkTitle": "Figen, PNut and Joey Swoll",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.64X4.27",
+    "sku": "5M144M9S11.36X4.01",
     "scale": 1,
     "imageSize": {
-      "width": 11.3667,
-      "height": 4.0167,
+      "width": 11.36,
+      "height": 4.01,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.64,
-      "height": 4.27,
+      "width": 12.36,
+      "height": 5.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/4bc1cc9902a9dd1b1880e032c9e3805ffe25f9a929c54fd030925d7c12435ba2.jpg",
-    "assetSha256": "4bc1cc9902a9dd1b1880e032c9e3805ffe25f9a929c54fd030925d7c12435ba2",
+    "assetUrl": "https://vermillionaurora.com/print-editions/15d671fafccf3729df2123ad7fe93432922a57daf230226c4fc12ca15de45d0c.jpg",
+    "assetSha256": "15d671fafccf3729df2123ad7fe93432922a57daf230226c4fc12ca15de45d0c",
     "sourceSha256": "20c766fa5b9e16b2143ba956a2a32e31aba6ef2e34534ca00d7c277c0ae2bf6a",
     "layoutApproved": true,
     "preview": {
@@ -121007,8 +123292,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 11.36,
+      "height": 4.01,
+      "unit": "in"
+    }
   },
   "print-older-work-figen-pnut-swoll-full-frame-black": {
     "id": "print-older-work-figen-pnut-swoll-full-frame-black",
@@ -121250,23 +123540,23 @@ export default {
     "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
     "amount": "70.00",
     "currency": "USD",
-    "sku": "5M144M8S20.36X6.37",
+    "sku": "5M144M9S20.1X6.11",
     "scale": 1,
     "imageSize": {
-      "width": 20.1067,
-      "height": 6.1167,
+      "width": 20.1,
+      "height": 6.11,
       "unit": "in"
     },
     "paperSize": {
-      "width": 20.36,
-      "height": 6.37,
+      "width": 21.1,
+      "height": 7.11,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/ce498a0127eefa97b8b6863391e4a60cf86c680af071a1f935f242bb5fb93d98.jpg",
-    "assetSha256": "ce498a0127eefa97b8b6863391e4a60cf86c680af071a1f935f242bb5fb93d98",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4bf98a1af1622c494794645e30dfa3a9cfa1eebe40bb948cda2114cbeeceabdf.jpg",
+    "assetSha256": "4bf98a1af1622c494794645e30dfa3a9cfa1eebe40bb948cda2114cbeeceabdf",
     "sourceSha256": "4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49",
     "layoutApproved": true,
     "preview": {
@@ -121279,8 +123569,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 20.1,
+      "height": 6.11,
+      "unit": "in"
+    }
   },
   "print-older-work-hayek-stark-gomez-el-bawab-full-frame-black": {
     "id": "print-older-work-hayek-stark-gomez-el-bawab-full-frame-black",
@@ -121522,23 +123817,23 @@ export default {
     "artworkTitle": "Hayek, Stark, Gomez and El Bawab",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S15.33X4.84",
+    "sku": "5M144M9S15.07X4.58",
     "scale": 0.75,
     "imageSize": {
-      "width": 15.0767,
-      "height": 4.5867,
+      "width": 15.07,
+      "height": 4.58,
       "unit": "in"
     },
     "paperSize": {
-      "width": 15.33,
-      "height": 4.84,
+      "width": 16.07,
+      "height": 5.58,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0f7c6638ac3e5d63f182afc46e5a26de61860d9bb9a64a9215359243c1659aac.jpg",
-    "assetSha256": "0f7c6638ac3e5d63f182afc46e5a26de61860d9bb9a64a9215359243c1659aac",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f1523c7ac5af0104a16f0d94a0ed0119cb216358b358778110c3e19f932b4021.jpg",
+    "assetSha256": "f1523c7ac5af0104a16f0d94a0ed0119cb216358b358778110c3e19f932b4021",
     "sourceSha256": "4ecb8e52f00914355dfe2e388b910fe0f9c91f0001e1dcf4906dc62a9d569f49",
     "layoutApproved": true,
     "preview": {
@@ -121551,8 +123846,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 15.07,
+      "height": 4.58,
+      "unit": "in"
+    }
   },
   "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-black": {
     "id": "print-older-work-hayek-stark-gomez-el-bawab-medium-frame-black",
@@ -121794,23 +124094,23 @@ export default {
     "artworkTitle": "Yakes, Todd and Dickerson",
     "amount": "85.00",
     "currency": "USD",
-    "sku": "5M144M8S21.94X9.16",
+    "sku": "5M144M9S21.68X8.9",
     "scale": 1,
     "imageSize": {
-      "width": 21.6867,
-      "height": 8.9067,
+      "width": 21.68,
+      "height": 8.9,
       "unit": "in"
     },
     "paperSize": {
-      "width": 21.94,
-      "height": 9.16,
+      "width": 22.68,
+      "height": 9.9,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a.jpg",
-    "assetSha256": "41a8c62a8b8531eedbbab6527af95dfd16d2094c4527864cdfdc1e2b527d3f2a",
+    "assetUrl": "https://vermillionaurora.com/print-editions/20fe2d993cca5e297e4bb8227147fef54888eb3074c74dc9011a3465908ecc67.jpg",
+    "assetSha256": "20fe2d993cca5e297e4bb8227147fef54888eb3074c74dc9011a3465908ecc67",
     "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
     "layoutApproved": true,
     "preview": {
@@ -121823,8 +124123,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 21.68,
+      "height": 8.9,
+      "unit": "in"
+    }
   },
   "print-older-work-yakes-todd-dickerson-full-frame-black": {
     "id": "print-older-work-yakes-todd-dickerson-full-frame-black",
@@ -122066,23 +124371,23 @@ export default {
     "artworkTitle": "Yakes, Todd and Dickerson",
     "amount": "55.00",
     "currency": "USD",
-    "sku": "5M144M8S16.52X6.93",
+    "sku": "5M144M9S16.25X6.67",
     "scale": 0.75,
     "imageSize": {
-      "width": 16.2567,
-      "height": 6.6767,
+      "width": 16.25,
+      "height": 6.67,
       "unit": "in"
     },
     "paperSize": {
-      "width": 16.52,
-      "height": 6.93,
+      "width": 17.25,
+      "height": 7.67,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf.jpg",
-    "assetSha256": "3e899a6dd5c16e6f7586b0dca73461e27a233084b28374f8df872c3a44d55daf",
+    "assetUrl": "https://vermillionaurora.com/print-editions/b9e8659bc76e1666d2f5cc783bc46a46d18115a0b3f8fc45cd5252eb258a9b28.jpg",
+    "assetSha256": "b9e8659bc76e1666d2f5cc783bc46a46d18115a0b3f8fc45cd5252eb258a9b28",
     "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
     "layoutApproved": true,
     "preview": {
@@ -122095,8 +124400,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 16.25,
+      "height": 6.67,
+      "unit": "in"
+    }
   },
   "print-older-work-yakes-todd-dickerson-medium-frame-black": {
     "id": "print-older-work-yakes-todd-dickerson-medium-frame-black",
@@ -122338,23 +124648,23 @@ export default {
     "artworkTitle": "Yakes, Todd and Dickerson",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S11.09X4.7",
+    "sku": "5M144M9S10.82X4.44",
     "scale": 0.5,
     "imageSize": {
-      "width": 10.8267,
-      "height": 4.4467,
+      "width": 10.82,
+      "height": 4.44,
       "unit": "in"
     },
     "paperSize": {
-      "width": 11.09,
-      "height": 4.7,
+      "width": 11.82,
+      "height": 5.44,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb.jpg",
-    "assetSha256": "724965c1a3a9c4f7e4e59967299f7fe28459da905ca547500e606b51b492c3fb",
+    "assetUrl": "https://vermillionaurora.com/print-editions/847014da895e2222901ae9b57e19a27bbf0830093369d5059f335bd3a1ad85da.jpg",
+    "assetSha256": "847014da895e2222901ae9b57e19a27bbf0830093369d5059f335bd3a1ad85da",
     "sourceSha256": "6a727992a0cf924721c3ca33bce7fe58eff54fa223de72a7adf1f3384baab536",
     "layoutApproved": true,
     "preview": {
@@ -122367,8 +124677,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.82,
+      "height": 4.44,
+      "unit": "in"
+    }
   },
   "print-older-work-yakes-todd-dickerson-small-frame-black": {
     "id": "print-older-work-yakes-todd-dickerson-small-frame-black",
@@ -122610,23 +124925,23 @@ export default {
     "artworkTitle": "Beach Sunsets",
     "amount": "50.00",
     "currency": "USD",
-    "sku": "5M144M8S6.9X15.24",
+    "sku": "5M144M9S6.64X14.98",
     "scale": 1,
     "imageSize": {
-      "width": 6.6467,
-      "height": 14.9867,
+      "width": 6.64,
+      "height": 14.98,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.9,
-      "height": 15.24,
+      "width": 7.64,
+      "height": 15.98,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d.jpg",
-    "assetSha256": "70571b3a9c110c7f51f439e5d0a031137c462f1e65bde4cba1ce807f584adc4d",
+    "assetUrl": "https://vermillionaurora.com/print-editions/ab79593b11a39d57b15e03ead8a9dbeb5049131346d5bd69dc650d2ceb0ed367.jpg",
+    "assetSha256": "ab79593b11a39d57b15e03ead8a9dbeb5049131346d5bd69dc650d2ceb0ed367",
     "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
     "layoutApproved": true,
     "preview": {
@@ -122639,8 +124954,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.64,
+      "height": 14.98,
+      "unit": "in"
+    }
   },
   "print-older-work-beach-sunsets-full-frame-black": {
     "id": "print-older-work-beach-sunsets-full-frame-black",
@@ -122880,25 +125200,25 @@ export default {
     "productId": "older-work-beach-sunsets",
     "title": "Beach Sunsets — Medium print",
     "artworkTitle": "Beach Sunsets",
-    "amount": "40.00",
+    "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S5.23X11.49",
+    "sku": "5M144M9S4.97X11.22",
     "scale": 0.75,
     "imageSize": {
-      "width": 4.9767,
-      "height": 11.2233,
+      "width": 4.97,
+      "height": 11.22,
       "unit": "in"
     },
     "paperSize": {
-      "width": 5.23,
-      "height": 11.49,
+      "width": 5.97,
+      "height": 12.22,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0.jpg",
-    "assetSha256": "256a77fa6f7709b4e9d4e144d403c47127716d846882777a60937fa92056f3f0",
+    "assetUrl": "https://vermillionaurora.com/print-editions/947eafe74b031e54ab255673262c4909e1e71e8813a8e9471d6887095481f5b8.jpg",
+    "assetSha256": "947eafe74b031e54ab255673262c4909e1e71e8813a8e9471d6887095481f5b8",
     "sourceSha256": "9b62a2bbb430ceffcab0a4952b081865aff37dc3001c37dcbd8b587024a085d3",
     "layoutApproved": true,
     "preview": {
@@ -122911,8 +125231,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.97,
+      "height": 11.22,
+      "unit": "in"
+    }
   },
   "print-older-work-beach-sunsets-medium-frame-black": {
     "id": "print-older-work-beach-sunsets-medium-frame-black",
@@ -123154,23 +125479,23 @@ export default {
     "artworkTitle": "Forest Triptych",
     "amount": "120.00",
     "currency": "USD",
-    "sku": "5M144M8S14.19X20.41",
+    "sku": "5M144M9S13.93X20.14",
     "scale": 1,
     "imageSize": {
-      "width": 13.9367,
-      "height": 20.1467,
+      "width": 13.93,
+      "height": 20.14,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.19,
-      "height": 20.41,
+      "width": 14.93,
+      "height": 21.14,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8.jpg",
-    "assetSha256": "6b72600618487473eec146b0bf485c35e71f5f49978c4a2cbfe52d6c440d30d8",
+    "assetUrl": "https://vermillionaurora.com/print-editions/93a96ca590e897240c36e905b8d0044877fcada04cdbace90cc72853c7863aca.jpg",
+    "assetSha256": "93a96ca590e897240c36e905b8d0044877fcada04cdbace90cc72853c7863aca",
     "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
     "layoutApproved": true,
     "preview": {
@@ -123183,8 +125508,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 13.93,
+      "height": 20.14,
+      "unit": "in"
+    }
   },
   "print-older-work-forest-triptych-full-frame-black": {
     "id": "print-older-work-forest-triptych-full-frame-black",
@@ -123424,25 +125754,25 @@ export default {
     "productId": "older-work-forest-triptych",
     "title": "Forest Triptych — Medium print",
     "artworkTitle": "Forest Triptych",
-    "amount": "70.00",
+    "amount": "65.00",
     "currency": "USD",
-    "sku": "5M144M8S10.71X15.37",
+    "sku": "5M144M9S10.45X15.11",
     "scale": 0.75,
     "imageSize": {
-      "width": 10.4567,
-      "height": 15.1167,
+      "width": 10.45,
+      "height": 15.11,
       "unit": "in"
     },
     "paperSize": {
-      "width": 10.71,
-      "height": 15.37,
+      "width": 11.45,
+      "height": 16.11,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea.jpg",
-    "assetSha256": "22c40180af07a408ec6589bd2d8f62b6b49cfbd0dbee6cd99c86711cd8a40aea",
+    "assetUrl": "https://vermillionaurora.com/print-editions/836aaf551168cb617911af27edca5340acfcec0659bb973685e5015fb1725bcb.jpg",
+    "assetSha256": "836aaf551168cb617911af27edca5340acfcec0659bb973685e5015fb1725bcb",
     "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
     "layoutApproved": true,
     "preview": {
@@ -123455,8 +125785,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 10.45,
+      "height": 15.11,
+      "unit": "in"
+    }
   },
   "print-older-work-forest-triptych-medium-frame-black": {
     "id": "print-older-work-forest-triptych-medium-frame-black",
@@ -123698,23 +126033,23 @@ export default {
     "artworkTitle": "Forest Triptych",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S7.22X10.33",
+    "sku": "5M144M9S6.96X10.07",
     "scale": 0.5,
     "imageSize": {
-      "width": 6.9667,
+      "width": 6.96,
       "height": 10.07,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.22,
-      "height": 10.33,
+      "width": 7.96,
+      "height": 11.07,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10.jpg",
-    "assetSha256": "b2723bb6126205c99e95b1a852a24473fbfee1dbf2819c60c1d6e8e876a2bb10",
+    "assetUrl": "https://vermillionaurora.com/print-editions/4b51bf3117d5887ab37ac0ad2be7c8837f48e8a053ea1329ba6ca81c0643d4b3.jpg",
+    "assetSha256": "4b51bf3117d5887ab37ac0ad2be7c8837f48e8a053ea1329ba6ca81c0643d4b3",
     "sourceSha256": "700aebe60d067e125afa377fd3457da793d1ff9d7324375ae7bdc658892998f4",
     "layoutApproved": true,
     "preview": {
@@ -123727,8 +126062,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.96,
+      "height": 10.07,
+      "unit": "in"
+    }
   },
   "print-older-work-forest-triptych-small-frame-black": {
     "id": "print-older-work-forest-triptych-small-frame-black",
@@ -123968,25 +126308,25 @@ export default {
     "productId": "older-work-legend-of-billy-buff",
     "title": "The Legend of Billy Buff — Large print",
     "artworkTitle": "The Legend of Billy Buff",
-    "amount": "115.00",
+    "amount": "110.00",
     "currency": "USD",
-    "sku": "5M144M8S19.7X13.72",
+    "sku": "5M144M9S19.44X13.46",
     "scale": 1,
     "imageSize": {
-      "width": 19.4433,
-      "height": 13.4667,
+      "width": 19.44,
+      "height": 13.46,
       "unit": "in"
     },
     "paperSize": {
-      "width": 19.7,
-      "height": 13.72,
+      "width": 20.44,
+      "height": 14.46,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372.jpg",
-    "assetSha256": "9e0fa79eb94fcb652a0b709b367ab153e41bdb2960f5f34c6c5c910369c67372",
+    "assetUrl": "https://vermillionaurora.com/print-editions/f1a55ba943bfa129000dbc167741d08e3368f8e719fb01bce67dab7ffa757b82.jpg",
+    "assetSha256": "f1a55ba943bfa129000dbc167741d08e3368f8e719fb01bce67dab7ffa757b82",
     "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
     "layoutApproved": true,
     "preview": {
@@ -123999,8 +126339,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 19.44,
+      "height": 13.46,
+      "unit": "in"
+    }
   },
   "print-older-work-legend-of-billy-buff-full-frame-black": {
     "id": "print-older-work-legend-of-billy-buff-full-frame-black",
@@ -124240,25 +126585,25 @@ export default {
     "productId": "older-work-legend-of-billy-buff",
     "title": "The Legend of Billy Buff — Medium print",
     "artworkTitle": "The Legend of Billy Buff",
-    "amount": "65.00",
+    "amount": "60.00",
     "currency": "USD",
-    "sku": "5M144M8S14.84X10.35",
+    "sku": "5M144M9S14.57X10.09",
     "scale": 0.75,
     "imageSize": {
-      "width": 14.5767,
-      "height": 10.0967,
+      "width": 14.57,
+      "height": 10.09,
       "unit": "in"
     },
     "paperSize": {
-      "width": 14.84,
-      "height": 10.35,
+      "width": 15.57,
+      "height": 11.09,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53.jpg",
-    "assetSha256": "634e3af4df7e067e84adb73187b253c54fb3fa18fb0c72f37548f8782e371c53",
+    "assetUrl": "https://vermillionaurora.com/print-editions/0f481e3592e77fab578245ff5077fa9534153ae8574c025ce189b4e1f8a102c3.jpg",
+    "assetSha256": "0f481e3592e77fab578245ff5077fa9534153ae8574c025ce189b4e1f8a102c3",
     "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
     "layoutApproved": true,
     "preview": {
@@ -124271,8 +126616,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 14.57,
+      "height": 10.09,
+      "unit": "in"
+    }
   },
   "print-older-work-legend-of-billy-buff-medium-frame-black": {
     "id": "print-older-work-legend-of-billy-buff-medium-frame-black",
@@ -124514,23 +126864,23 @@ export default {
     "artworkTitle": "The Legend of Billy Buff",
     "amount": "35.00",
     "currency": "USD",
-    "sku": "5M144M8S9.97X6.98",
+    "sku": "5M144M9S9.71X6.72",
     "scale": 0.5,
     "imageSize": {
-      "width": 9.7133,
-      "height": 6.7267,
+      "width": 9.71,
+      "height": 6.72,
       "unit": "in"
     },
     "paperSize": {
-      "width": 9.97,
-      "height": 6.98,
+      "width": 10.71,
+      "height": 7.72,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9.jpg",
-    "assetSha256": "b6da3b9d7fd19920f09628d1625691d8eeddc5538449ae69eb911d10c961f4c9",
+    "assetUrl": "https://vermillionaurora.com/print-editions/732ea3c170f8e78e1a8910ff3c8d2129a362e5e86c4b5b6f01b5c4041cd4a3fc.jpg",
+    "assetSha256": "732ea3c170f8e78e1a8910ff3c8d2129a362e5e86c4b5b6f01b5c4041cd4a3fc",
     "sourceSha256": "5520c4814dbfe0f0bdbcb1effc5c8ef9f282d4a6097d2e4e05f630f522965421",
     "layoutApproved": true,
     "preview": {
@@ -124543,8 +126893,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 9.71,
+      "height": 6.72,
+      "unit": "in"
+    }
   },
   "print-older-work-legend-of-billy-buff-small-frame-black": {
     "id": "print-older-work-legend-of-billy-buff-small-frame-black",
@@ -124786,23 +127141,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #4",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.53X4.78",
+    "sku": "5M144M9S4.27X4.52",
     "scale": 1,
     "imageSize": {
-      "width": 4.2733,
-      "height": 4.5267,
+      "width": 4.27,
+      "height": 4.52,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.53,
-      "height": 4.78,
+      "width": 5.27,
+      "height": 5.52,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/0cfd04c0b0a500adc9deaf29dcbd2cf9eebbca791388d303bb0d5cd6d6e9dc79.jpg",
-    "assetSha256": "0cfd04c0b0a500adc9deaf29dcbd2cf9eebbca791388d303bb0d5cd6d6e9dc79",
+    "assetUrl": "https://vermillionaurora.com/print-editions/de660e0c70003cbcf5fa54bca9e3e4933c593560bdc99a1b214e30d1b2ee548b.jpg",
+    "assetSha256": "de660e0c70003cbcf5fa54bca9e3e4933c593560bdc99a1b214e30d1b2ee548b",
     "sourceSha256": "d286bc703e88313b8fa43f0eaefc505ed86b515e5f4a5b43e2ea68e9c98521f6",
     "layoutApproved": true,
     "preview": {
@@ -124815,8 +127170,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.27,
+      "height": 4.52,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-4-full-frame-black": {
     "id": "print-strawberry-point-4-full-frame-black",
@@ -125058,23 +127418,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #5",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.49X4.55",
+    "sku": "5M144M9S4.23X4.29",
     "scale": 1,
     "imageSize": {
-      "width": 4.2367,
-      "height": 4.2933,
+      "width": 4.23,
+      "height": 4.29,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.49,
-      "height": 4.55,
+      "width": 5.23,
+      "height": 5.29,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/b16192a68a1fd6da73f1600df1d4910d7e1b46c36bada010c5730e0d399a1257.jpg",
-    "assetSha256": "b16192a68a1fd6da73f1600df1d4910d7e1b46c36bada010c5730e0d399a1257",
+    "assetUrl": "https://vermillionaurora.com/print-editions/9cc6749117fed0fd40e16b1a69684eb467276bd5e475a321fcb2a9ce6d392e79.jpg",
+    "assetSha256": "9cc6749117fed0fd40e16b1a69684eb467276bd5e475a321fcb2a9ce6d392e79",
     "sourceSha256": "693dc2228133ae222643c2c2a6f67d0d02ad9162a93004965239e95a2155268f",
     "layoutApproved": true,
     "preview": {
@@ -125087,8 +127447,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.23,
+      "height": 4.29,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-5-full-frame-black": {
     "id": "print-strawberry-point-5-full-frame-black",
@@ -125330,23 +127695,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #6",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.48X4.6",
+    "sku": "5M144M9S4.22X4.34",
     "scale": 1,
     "imageSize": {
       "width": 4.22,
-      "height": 4.3467,
+      "height": 4.34,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.48,
-      "height": 4.6,
+      "width": 5.22,
+      "height": 5.34,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/936c32d16feaedb4d5ffd903057624a0696c9a37707c28c1839c59f2e1f72e48.jpg",
-    "assetSha256": "936c32d16feaedb4d5ffd903057624a0696c9a37707c28c1839c59f2e1f72e48",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7435756d6d06b7f95027fe4f8820baa794c76402373668fdd12523414ff5dd4c.jpg",
+    "assetSha256": "7435756d6d06b7f95027fe4f8820baa794c76402373668fdd12523414ff5dd4c",
     "sourceSha256": "8e56018c2db5e540065be7e917fe4166cb04d8ad782c8ef2e79a8e464be3cc91",
     "layoutApproved": true,
     "preview": {
@@ -125359,8 +127724,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.22,
+      "height": 4.34,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-6-full-frame-black": {
     "id": "print-strawberry-point-6-full-frame-black",
@@ -125602,23 +127972,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #7",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S4.52X4.76",
+    "sku": "5M144M9S4.26X4.5",
     "scale": 1,
     "imageSize": {
-      "width": 4.2667,
-      "height": 4.5033,
+      "width": 4.26,
+      "height": 4.5,
       "unit": "in"
     },
     "paperSize": {
-      "width": 4.52,
-      "height": 4.76,
+      "width": 5.26,
+      "height": 5.5,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/40661400ad6a431ab6b586e8b1b3bd274ec716d6fd98d3044a30115cbce67ae4.jpg",
-    "assetSha256": "40661400ad6a431ab6b586e8b1b3bd274ec716d6fd98d3044a30115cbce67ae4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/7218ac61328b39d4b375e5bb98631b39b9514fd9e1da43efa3d453caf7b83e58.jpg",
+    "assetSha256": "7218ac61328b39d4b375e5bb98631b39b9514fd9e1da43efa3d453caf7b83e58",
     "sourceSha256": "785b736bb2c560d347c9f2257d5609eef029ccc8f38fa09c7cd3ed8f1cfbbba2",
     "layoutApproved": true,
     "preview": {
@@ -125631,8 +128001,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 4.26,
+      "height": 4.5,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-7-full-frame-black": {
     "id": "print-strawberry-point-7-full-frame-black",
@@ -125874,23 +128249,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #8",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.95X7.04",
+    "sku": "5M144M9S6.69X6.78",
     "scale": 1,
     "imageSize": {
-      "width": 6.6933,
-      "height": 6.7867,
+      "width": 6.69,
+      "height": 6.78,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.95,
-      "height": 7.04,
+      "width": 7.69,
+      "height": 7.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/7b5da82e1bae7705d53810f94b4022604139d3ae4871e0d4edac292b4c954ddd.jpg",
-    "assetSha256": "7b5da82e1bae7705d53810f94b4022604139d3ae4871e0d4edac292b4c954ddd",
+    "assetUrl": "https://vermillionaurora.com/print-editions/835b72626dddf41ad8e5f0f1bfcfd31d8d974266078870f00e3747816a87a7d3.jpg",
+    "assetSha256": "835b72626dddf41ad8e5f0f1bfcfd31d8d974266078870f00e3747816a87a7d3",
     "sourceSha256": "618d9f9bda1d5f9e9362a3745a541a4c5605f76742a7b53f9002efd023251bad",
     "layoutApproved": true,
     "preview": {
@@ -125903,8 +128278,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.69,
+      "height": 6.78,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-8-full-frame-black": {
     "id": "print-strawberry-point-8-full-frame-black",
@@ -126146,23 +128526,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #9",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.82X6.79",
+    "sku": "5M144M9S6.56X6.53",
     "scale": 1,
     "imageSize": {
-      "width": 6.5667,
-      "height": 6.5367,
+      "width": 6.56,
+      "height": 6.53,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.82,
-      "height": 6.79,
+      "width": 7.56,
+      "height": 7.53,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/cd235d10f693099caae01b3720ea13cdff407e16b6b31950f290e23fc7346e26.jpg",
-    "assetSha256": "cd235d10f693099caae01b3720ea13cdff407e16b6b31950f290e23fc7346e26",
+    "assetUrl": "https://vermillionaurora.com/print-editions/949e20c3b10972a56b9276614809a2a5961dc01bfb926dd4b42191de61601b86.jpg",
+    "assetSha256": "949e20c3b10972a56b9276614809a2a5961dc01bfb926dd4b42191de61601b86",
     "sourceSha256": "60587be399ebb54467b35dd1414bdc00a97d7d79f49c000921cec6cbeddfc8e6",
     "layoutApproved": true,
     "preview": {
@@ -126175,8 +128555,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.56,
+      "height": 6.53,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-9-full-frame-black": {
     "id": "print-strawberry-point-9-full-frame-black",
@@ -126418,23 +128803,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #10",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S6.89X7.17",
+    "sku": "5M144M9S6.63X6.91",
     "scale": 1,
     "imageSize": {
-      "width": 6.6333,
-      "height": 6.9167,
+      "width": 6.63,
+      "height": 6.91,
       "unit": "in"
     },
     "paperSize": {
-      "width": 6.89,
-      "height": 7.17,
+      "width": 7.63,
+      "height": 7.91,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/5c34cd9c2e468198f38470bac59de751685ab1f9c775a13cbc909a1ba4f8848f.jpg",
-    "assetSha256": "5c34cd9c2e468198f38470bac59de751685ab1f9c775a13cbc909a1ba4f8848f",
+    "assetUrl": "https://vermillionaurora.com/print-editions/dad208de043574c2318421e8a1a7a82e15bf57336e6f7711b9f556199045ecbc.jpg",
+    "assetSha256": "dad208de043574c2318421e8a1a7a82e15bf57336e6f7711b9f556199045ecbc",
     "sourceSha256": "6fbaf07d5e47ebd789370e0bb4773c21445cfa551e66d39c14be1215ca9d83f1",
     "layoutApproved": true,
     "preview": {
@@ -126447,8 +128832,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 6.63,
+      "height": 6.91,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-10-full-frame-black": {
     "id": "print-strawberry-point-10-full-frame-black",
@@ -126690,23 +129080,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #11",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.1X8.05",
+    "sku": "5M144M9S7.84X7.79",
     "scale": 1,
     "imageSize": {
-      "width": 7.8467,
-      "height": 7.7967,
+      "width": 7.84,
+      "height": 7.79,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.1,
-      "height": 8.05,
+      "width": 8.84,
+      "height": 8.79,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/108720f56fb8c66d6d1220c35524944cfa38749d3e4e28e4898e870d492437e5.jpg",
-    "assetSha256": "108720f56fb8c66d6d1220c35524944cfa38749d3e4e28e4898e870d492437e5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2e5c2e73ff62450954ec442446b65493e6f2c57c8811e146f1c0dfdf0bcdbdb5.jpg",
+    "assetSha256": "2e5c2e73ff62450954ec442446b65493e6f2c57c8811e146f1c0dfdf0bcdbdb5",
     "sourceSha256": "0a7960cb5d67ef2aa232a11693a5adbc0c3a06ff186906e219d9c6ac976bfe6d",
     "layoutApproved": true,
     "preview": {
@@ -126719,8 +129109,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.84,
+      "height": 7.79,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-11-full-frame-black": {
     "id": "print-strawberry-point-11-full-frame-black",
@@ -126962,23 +129357,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #12",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.14X8.04",
+    "sku": "5M144M9S7.88X7.78",
     "scale": 1,
     "imageSize": {
-      "width": 7.8833,
-      "height": 7.7867,
+      "width": 7.88,
+      "height": 7.78,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.14,
-      "height": 8.04,
+      "width": 8.88,
+      "height": 8.78,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/e952b1de37716408f651392e2f309a14be70765fa2059bc78e2ed2d911457fa4.jpg",
-    "assetSha256": "e952b1de37716408f651392e2f309a14be70765fa2059bc78e2ed2d911457fa4",
+    "assetUrl": "https://vermillionaurora.com/print-editions/2e40d21ee79aa8fca797ca634c672964783de75575a28c7507dc50bde0883edb.jpg",
+    "assetSha256": "2e40d21ee79aa8fca797ca634c672964783de75575a28c7507dc50bde0883edb",
     "sourceSha256": "d8e9bee2644bcc4c7a529cf61050c753222d2184626cc67580d08d28063d7e6d",
     "layoutApproved": true,
     "preview": {
@@ -126991,8 +129386,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.88,
+      "height": 7.78,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-12-full-frame-black": {
     "id": "print-strawberry-point-12-full-frame-black",
@@ -127234,23 +129634,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #13",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8.03X8.27",
+    "sku": "5M144M9S7.77X8.01",
     "scale": 1,
     "imageSize": {
-      "width": 7.7767,
-      "height": 8.0167,
+      "width": 7.77,
+      "height": 8.01,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8.03,
-      "height": 8.27,
+      "width": 8.77,
+      "height": 9.01,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/3f84b6878f93776e152f12653fa3d28fdd1063c5fed1105be17cdf4c45e28b80.jpg",
-    "assetSha256": "3f84b6878f93776e152f12653fa3d28fdd1063c5fed1105be17cdf4c45e28b80",
+    "assetUrl": "https://vermillionaurora.com/print-editions/c413cc063c4eea859c8d99dd59a7ab1892e8f1b04687daeee5188492ad2cbeaf.jpg",
+    "assetSha256": "c413cc063c4eea859c8d99dd59a7ab1892e8f1b04687daeee5188492ad2cbeaf",
     "sourceSha256": "e5a096aa07730c339d3f1aff1a7f20ee553cb7e057a8988ced271377c72304cb",
     "layoutApproved": true,
     "preview": {
@@ -127263,8 +129663,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.77,
+      "height": 8.01,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-13-full-frame-black": {
     "id": "print-strawberry-point-13-full-frame-black",
@@ -127506,23 +129911,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #14",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S8X8.26",
+    "sku": "5M144M9S7.74X8",
     "scale": 1,
     "imageSize": {
-      "width": 7.7467,
-      "height": 8.0033,
+      "width": 7.74,
+      "height": 8,
       "unit": "in"
     },
     "paperSize": {
-      "width": 8,
-      "height": 8.26,
+      "width": 8.74,
+      "height": 9,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/292e7c85282ae7c2003b652f872a86a32e988a39c036cb20b057961612b7cea5.jpg",
-    "assetSha256": "292e7c85282ae7c2003b652f872a86a32e988a39c036cb20b057961612b7cea5",
+    "assetUrl": "https://vermillionaurora.com/print-editions/1c0724eaf8158ec608e70e4372340955579af1eace4bf7b7555cb825975656f2.jpg",
+    "assetSha256": "1c0724eaf8158ec608e70e4372340955579af1eace4bf7b7555cb825975656f2",
     "sourceSha256": "981d0c5996edd475baf3a832ba85d6c8f9fc079e46fe41c5a6dc4e0a624a22e4",
     "layoutApproved": true,
     "preview": {
@@ -127535,8 +129940,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.74,
+      "height": 8,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-14-full-frame-black": {
     "id": "print-strawberry-point-14-full-frame-black",
@@ -127778,23 +130188,23 @@ export default {
     "artworkTitle": "Strawberry Point Backpacking Trip #15",
     "amount": "25.00",
     "currency": "USD",
-    "sku": "5M144M8S7.37X7.75",
+    "sku": "5M144M9S7.11X7.49",
     "scale": 1,
     "imageSize": {
-      "width": 7.1167,
-      "height": 7.4933,
+      "width": 7.11,
+      "height": 7.49,
       "unit": "in"
     },
     "paperSize": {
-      "width": 7.37,
-      "height": 7.75,
+      "width": 8.11,
+      "height": 8.49,
       "unit": "in"
     },
     "paper": "Watercolor Bright White",
     "testOnly": false,
     "sampleOnly": false,
-    "assetUrl": "https://vermillionaurora.com/print-editions/59217d9e46263a5178ed5fbbfcacb8e833482509919038bf27ebcba62ae4b907.jpg",
-    "assetSha256": "59217d9e46263a5178ed5fbbfcacb8e833482509919038bf27ebcba62ae4b907",
+    "assetUrl": "https://vermillionaurora.com/print-editions/5cf472b3d4d96cc2d1a9e12a767c62569e5437dca33a3dfe4e4eb6da158537ee.jpg",
+    "assetSha256": "5cf472b3d4d96cc2d1a9e12a767c62569e5437dca33a3dfe4e4eb6da158537ee",
     "sourceSha256": "6513241ed3567e338ad8c13af762f5f7ea072ebcf90d75eb9dff29e589c5f628",
     "layoutApproved": true,
     "preview": {
@@ -127807,8 +130217,13 @@ export default {
     },
     "attributes": {},
     "minimumDpi": 300,
-    "layout": "full-image-white-border-v1",
-    "sizeBasis": "image-proportional"
+    "layout": "full-image-finerworks-border-v1",
+    "sizeBasis": "image-proportional",
+    "printSize": {
+      "width": 7.11,
+      "height": 7.49,
+      "unit": "in"
+    }
   },
   "print-strawberry-point-15-full-frame-black": {
     "id": "print-strawberry-point-15-full-frame-black",

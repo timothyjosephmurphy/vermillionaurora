@@ -19,7 +19,7 @@ test('All 22 reviewed TJ masters have native-resolution editions and three frame
       assert(Math.min(p.paperSize.width,p.paperSize.height)>=4);
       assert(p.imageSize.width*300<=art.source.widthPx+1&&p.imageSize.height*300<=art.source.heightPx+1);
       for(const finish of ['black','white','natural']){
-        const f=readyPrints[`${p.id}-frame-${finish}`];assert(f);assert.equal(f.assetSha256,p.assetSha256);assert(f.frame&&f.mat);assert(Number(f.amount)>Number(p.amount));
+        const f=readyPrints[`${p.id}-frame-${finish}`];assert(f);assert.equal(f.assetSha256,art.variants[p.id.split("-").at(-1)].asset.sha256);assert.equal(p.layout,"full-image-finerworks-border-v1");assert(f.frame&&f.mat);assert(Number(f.amount)>Number(p.amount));
       }
     }
   }

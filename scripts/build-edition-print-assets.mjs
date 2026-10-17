@@ -8,6 +8,10 @@ import products from '../catalog/all-products.mjs';
 import papers from '../catalog/finerworks-papers.json' with {type:'json'};
 import {editionLayouts,EDITION_LAYOUT,EDITION_BORDER_IN} from '../catalog/edition-layout.mjs';
 import {finerworksProductCode} from '../catalog/finerworks-products.mjs';
+import bookPrints from '../catalog/book-prints.json' with {type:'json'};
+import {borderedEdition} from './bordered-edition.mjs';
+// --prepare-bordered records the unframed outer-border files without changing any padded edition.
+const prepareBordered=process.argv.includes('--prepare-bordered');
 const prepareArchive=process.argv.includes('--prepare-archive'),prepareOlder=process.argv.includes('--prepare-older-work'),prepareTJ=process.argv.includes('--prepare-tj')||prepareArchive||prepareOlder,prepare=process.argv.includes('--prepare')||prepareTJ,digest=b=>createHash('sha256').update(b).digest('hex'),run=promisify(execFile);
 const root=new URL('../',import.meta.url),cache=new URL('.cache/edition-sources/',root),output=new URL('static/print-editions/',root);
 await mkdir(cache,{recursive:true});await mkdir(new URL('thumbs/',output),{recursive:true});
@@ -54,11 +58,41 @@ await Promise.all(Array.from({length:4},async()=>{
       await writeFile(new URL(`${hash}.jpg`,output),data);count++;
       // FinerWorks builds its order thumbnail from product_url_thumbnail; a full print master is too large for it.
       await writeFile(new URL(`thumbs/${hash}.jpg`,output),await sharp(data).resize({width:1000,height:1000,fit:'inside',withoutEnlargement:true}).jpeg({quality:80}).toBuffer());
+      if(await writeBordered(data,choice,asset,stock,art.variants,key,prepare||prepareBordered))count++;
     }
     if(prepare)config.artworks[product.id]=art;
     console.log(`Prepared ${product.id}`);
   }
 }));
-if(prepare){config.artworks=Object.fromEntries(Object.entries(config.artworks).sort(([a],[b])=>a.localeCompare(b)));await writeFile(new URL('catalog/prints.json',root),JSON.stringify(config,null,2)+'\n');}
-console.log(`Verified ${count} full-image print files for ${selected.length} artworks; no source images cropped or enlarged.`);
+// Book editions keep their padded R2 files for mats and frames; their unframed outer-border files are derived here.
+const books=Object.entries(bookPrints).flatMap(([id,art])=>Object.entries(art.variants||{}).filter(([,v])=>v.asset).map(([key,v])=>({id,art,key,v})));
+let bookCursor=0;
+await Promise.all(Array.from({length:4},async()=>{
+  while(bookCursor<books.length){
+    const {id,art,key,v}=books[bookCursor++],asset=v.asset,u=new URL(asset.url);
+    if(u.origin!=='https://media.vermillionaurora.com'||!u.pathname.startsWith('/images/book-galleries/v1/prints/')||!/^[a-f0-9]{64}$/.test(asset.sha256))throw Error(`Use an approved book edition file: ${id}`);
+    let bytes;try{bytes=await readFile(new URL(`${asset.sha256}.jpg`,cache));}catch{}
+    if(!bytes)for(let attempt=0;attempt<3;attempt++){
+      try{bytes=(await run('curl',['--fail','--silent','--show-error','--location','--connect-timeout','15','--max-time','180',asset.url],{encoding:'buffer',maxBuffer:60*1024*1024})).stdout;break;}
+      catch(error){if(attempt===2||![6,7,18,28,52,56].includes(error.code))throw Error(`Could not download book edition file: ${id} (curl ${error.code})`);}
+    }
+    if(digest(bytes)!==asset.sha256)throw Error(`Book edition file changed: ${id}/${key}`);
+    await writeFile(new URL(`${asset.sha256}.jpg`,cache),bytes);
+    const stock=papers.find(p=>p.paper===(art.paper||config.defaultPaper));
+    if(await writeBordered(bytes,{layoutSpec:asset.layoutSpec},asset,stock,art.variants,key,prepareBordered))count++;
+  }
+}));
+async function writeBordered(padded,choice,asset,stock,variants,key,record){
+  const bordered=await borderedEdition(padded,choice,asset,stock);
+  if(!bordered)return false;
+  const v=variants[key]||{};
+  if(record)variants[key]={...v,bordered:{...v.bordered,sku:bordered.sku,asset:bordered.asset}};
+  else if(JSON.stringify(v.bordered?.asset)!==JSON.stringify(bordered.asset)||v.bordered?.sku!==bordered.sku)throw Error(`Bordered edition file needs review: ${asset.sha256} (${key})`);
+  await writeFile(new URL(`${bordered.asset.sha256}.jpg`,output),bordered.data);
+  await writeFile(new URL(`thumbs/${bordered.asset.sha256}.jpg`,output),await sharp(bordered.data).resize({width:1000,height:1000,fit:'inside',withoutEnlargement:true}).jpeg({quality:80}).toBuffer());
+  return true;
+}
+if(prepareBordered)await writeFile(new URL('catalog/book-prints.json',root),JSON.stringify(bookPrints,null,2)+'\n');
+if(prepare||prepareBordered){config.artworks=Object.fromEntries(Object.entries(config.artworks).sort(([a],[b])=>a.localeCompare(b)));await writeFile(new URL('catalog/prints.json',root),JSON.stringify(config,null,2)+'\n');}
+console.log(`Verified ${count} full-image and bordered print files for ${selected.length} artworks; no source images cropped or enlarged.`);
 
