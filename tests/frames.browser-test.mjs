@@ -42,7 +42,7 @@ try{
     const recommendations=page.locator('[data-frame-recommendations]');
     await page.waitForFunction(()=>document.querySelector('[data-frame-recommendations]').dataset.frameInitialized==='true');
     // Match the new print sheet, independently of the original painting size.
-    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0BQR2BQYZ$/);
+    assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0FJLR7MTQ$/);
     await page.locator('input[value$="-small"]').check();
     assert.match(await recommendations.locator('.frame-link').first().getAttribute('href'),/B0B1CNJL7N$/);
     // Verify selection-change handling with exact-size borderless sheets.
