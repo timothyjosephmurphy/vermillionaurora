@@ -228,9 +228,11 @@ export const waTaxCollected = receipt => receipt?.salesTax?.state === 'WA' && re
 const percent = rate => `${(Math.round(Number(rate) * 1e6) / 1e4).toString()}%`;
 export function waTaxNote(receipt) {
   const t = receipt.salesTax;
-  return `WA sales tax $${receipt.tax} at ${percent(t.rate)}, DOR location code ${t.loccode}`;
+  return `WA sales tax $${receipt.tax} at ${percent(t.rate)}, ${t.taxFallback === true || t.basis === 'fallback' ? 'FALLBACK rate (DOR lookup failed; review location code)' : `DOR location code ${t.loccode}`}`;
 }
 export function waTaxDescription(receipt) {
+  if (receipt.salesTax.taxFallback === true || receipt.salesTax.basis === 'fallback')
+    return `WA sales tax collected — FALLBACK rate ${percent(receipt.salesTax.rate)} (DOR lookup failed; review location code)${receipt.salesTax.taxable ? ` on taxable $${receipt.salesTax.taxable}` : ''}`;
   const t = receipt.salesTax, place = String(t.jurisdiction || '').replace(/[^A-Za-z0-9 .'-]/g, '').slice(0, 60);
   return `WA sales tax collected — DOR location code ${t.loccode}${place ? ` (${place})` : ''}, rate ${percent(t.rate)}${t.taxable ? ` on taxable $${t.taxable}` : ''}${t.period ? `, ${String(t.period).slice(0, 10)}` : ''}${t.basis === 'zip' ? ', ZIP-level rate' : ''}`;
 }

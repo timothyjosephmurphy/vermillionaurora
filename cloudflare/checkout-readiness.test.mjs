@@ -38,10 +38,10 @@ test('production readiness requires authentication and only reads provider confi
   const bitcoinDenied=await checkoutReadiness(request(),btcpay);assert.equal(bitcoinDenied.status,503);
   const deniedBody=await bitcoinDenied.text();assert.match(deniedBody,/BTCPay API 403/);assert.ok(!deniedBody.includes('btcpay-secret'));
   bitcoinInvoiceAllowed=true;
-  // The DOR lookup gates readiness: a ZIP-only answer or an outage is not ready.
-  dorReply=DOR.replace('code="2"','code="5"');assert.equal((await checkoutReadiness(request(),env)).status,503);
-  dorReply='<response loccode="-1" localrate="-1" rate="-1" code="9" />';const dorDown=await checkoutReadiness(request(),env);assert.equal(dorDown.status,503);
-  const dorDownBody=await dorDown.json();assert.equal(dorDownBody.checks.waTaxLookup,false);assert.match(dorDownBody.checks.waTaxError,/Washington sales tax/);
+  // The DOR lookup only warns: a ZIP-only answer or an outage keeps the site ready (checkout uses the fallback rate).
+  dorReply=DOR.replace('code="2"','code="5"');const dorZip=await checkoutReadiness(request(),env);assert.equal(dorZip.status,200);assert.match((await dorZip.json()).checks.waTaxWarning,/ZIP-level/);
+  dorReply='<response loccode="-1" localrate="-1" rate="-1" code="9" />';const dorDown=await checkoutReadiness(request(),env);assert.equal(dorDown.status,200);
+  const dorDownBody=await dorDown.json();assert.equal(dorDownBody.checks.waTaxLookup,false);assert.match(dorDownBody.checks.waTaxError,/Washington sales tax/);assert.match(dorDownBody.checks.waTaxWarning,/fallback/);
   dorReply=DOR;
   const pilot={...env,CHECKOUT_PILOT_ENABLED:'true',SHIP_FROM_PHONE:'+12065550100',CHECKOUT_PILOT_SLUGS:'painting-portrait-in-green',SHIPPO_CARRIER_ALLOWLIST:'UPS',SHIPPO_AUTO_LABEL_ENABLED:'true',
     GOOGLE_CLIENT_ID:'client',GOOGLE_CLIENT_SECRET:'google-secret',GOOGLE_REFRESH_TOKEN:'refresh',PAINTING_STOCK:{getByName:()=>({status:async()=>'available'})}};
