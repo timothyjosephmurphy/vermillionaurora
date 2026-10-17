@@ -1,0 +1,23 @@
+name: Inspect FinerWorks border styles (read-only)
+on:
+  push:
+    branches: [print-half-inch-border]
+    paths: ['payments/inspect-finerworks-styles.mjs', '.github/workflows/inspect-finerworks-styles.yml']
+permissions:
+  contents: read
+concurrency:
+  group: checkout-sandbox
+  cancel-in-progress: false
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: List media and style types without pricing or ordering
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_SANDBOX_API_TOKEN }}
+        run: node payments/inspect-finerworks-styles.mjs
