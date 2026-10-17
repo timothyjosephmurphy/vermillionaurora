@@ -1,4 +1,5 @@
 ---
+import MailIcon from '../components/MailIcon.astro';
 import BookGalleryCarousel from '../components/BookGalleryCarousel.astro';
 import {strawberryPaintings} from '../../catalog/strawberry-point-products.mjs';
 const sp12=strawberryPaintings.find(p=>p.index===12);
@@ -259,7 +260,7 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
               </p>
               <ul class="contact-list">
                 <li>Seattle, WA</li>
-                <li><a href="mailto:tj@tjm.art">tj@tjm.art</a></li>
+                <li><a href="mailto:tj@tjm.art"><MailIcon />tj@tjm.art</a></li>
                 <li>50% deposit to start · Typical turnaround 2–4 weeks</li>
               </ul>
             </div>
