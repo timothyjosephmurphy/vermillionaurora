@@ -43,10 +43,12 @@ test('WA fallback: an unmatched, failed or partial address lookup uses the ZIP-o
   }
 });
 
-test('WA failure: both lookups failing blocks the quote, never $0',async t=>{
+test('WA failure: both lookups failing uses the 10.55% Seattle fallback, never blocks and never $0',async t=>{
   for(const replies of [[NONE,NONE],[500,new Error('down')],[MATCH.replace('rate=".1055"','rate="-1"'),NONE]]){
     mockDor(t,replies);
-    await assert.rejects(salesTax(seattle,10000),err=>err instanceof TaxAddressError&&err.code==='TAX_ADDRESS'&&/couldn’t calculate Washington sales tax/.test(err.message));
+    const {taxCents,tax}=await salesTax(seattle,10000);
+    assert.equal(taxCents,1055);
+    assert.deepEqual(tax,{state:'WA',collected:true,source:'wa-dor',rate:'0.1055',loccode:'1726',jurisdiction:'SEATTLE (FALLBACK)',period:'',basis:'fallback',resultCode:null,taxFallback:true});
   }
   mockDor(t,[NONE,NONE]);await assert.rejects(waRate(seattle),TaxAddressError);
 });
@@ -72,5 +74,9 @@ test('QuickBooks receipt records WA sales tax as its own line with the location 
   assert.match(payload.PrivateNote,/WA sales tax \$11\.61 at 10\.55%, DOR location code 1726/);
   // Out-of-state: no tax line.
   const oregon=salesReceiptPayload({...receipt,tax:'0.00',gross:'110.00',salesTax:{state:'OR',collected:false,rate:'0',basis:'out-of-state'}},refs);
+  // Fallback rate: the tax line says so plainly.
+  const fb=salesReceiptPayload({...receipt,salesTax:{state:'WA',collected:true,source:'wa-dor',rate:'0.1055',loccode:'1726',jurisdiction:'SEATTLE (FALLBACK)',basis:'fallback',taxFallback:true,taxable:'110.00',amount:'11.61'}},refs);
+  assert.match(fb.Line.find(l=>l.SalesItemLineDetail.ItemRef.value==='5').Description,/^WA sales tax collected — FALLBACK rate 10\.55% \(DOR lookup failed; review location code\)/);
+  assert.match(fb.PrivateNote,/FALLBACK rate/);
   assert.equal(oregon.Line.some(l=>l.SalesItemLineDetail.ItemRef.value==='5'),false);
 });

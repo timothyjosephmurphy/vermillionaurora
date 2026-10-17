@@ -21,11 +21,12 @@ export async function checkoutReadiness(request,env) {
     return r.json();
   };
   try {
-    // Washington DOR rate lookup (public, no credential): a known Seattle street address must match at street level.
+    // Washington DOR rate lookup (public, no credential). Warn only: a DOR outage never blocks checkout (fallback rate).
     const wa=await waRate(WA_TAX_CHECK_ADDRESS);
     checks.waTaxRate={rate:wa.rate,loccode:wa.loccode,jurisdiction:wa.jurisdiction,period:wa.period,basis:wa.basis,resultCode:wa.resultCode};
     checks.waTaxLookup=wa.basis==='address'&&Number(wa.rate)>=0.065;
-  }catch(error){checks.waTaxLookup=false;checks.waTaxError=error.message;}
+    if(!checks.waTaxLookup)checks.waTaxWarning='DOR lookup did not match at street level; checkout would use the ZIP-level rate';
+  }catch(error){checks.waTaxLookup=false;checks.waTaxError=error.message;checks.waTaxWarning='DOR lookup failing; checkout uses the 10.55% fallback rate (warning only)';}
   try {
     if(!env.SHIPPO_TOKEN?.startsWith('shippo_live_'))throw Error('Expected a live Shippo token');
     const accounts=await get('https://api.goshippo.com/carrier_accounts/?results=100',`ShippoToken ${env.SHIPPO_TOKEN}`,{'SHIPPO-API-VERSION':'2018-02-08'});
@@ -110,6 +111,6 @@ export async function checkoutReadiness(request,env) {
     (checks.pilotRestriction&&checks.automaticLabels&&checks.sellerEmail&&(checks.completedPilot||(checks.insuredQuote&&checks.pilotStock==='available')));
   const squareReady=env.SQUARE_CHECKOUT_ENABLED!=='true'||(checks.squareConfiguration&&checks.squareLocation&&checks.squareWebhook);
   const bitcoinReady=env.BTCPAY_CHECKOUT_ENABLED!=='true'||checks.bitcoinInvoiceAccess===true;
-  const ready=bitcoinReady&&squareReady&&checks.waTaxLookup===true&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
+  const ready=bitcoinReady&&squareReady&&checks.shippoAuthentication&&checks.activeCarriers?.length>0&&checks.inventoryBinding&&checks.shippingOrigin&&checks.salesLedger&&pilotReady;
   return reply({mode:env.CHECKOUT_MODE,release:env.CHECKOUT_RELEASE||null,ready:!!ready,checks},ready?200:503);
 }

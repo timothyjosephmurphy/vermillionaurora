@@ -66,18 +66,17 @@ it('falls back to the ZIP when the address lookup errors or returns a partial ma
   }
 });
 
-it('blocks a Washington quote with an address message when both lookups fail, for Square and BTCPay alike',async()=>{
+it('never blocks a Washington quote when both lookups fail: 10.55% fallback, flagged, for Square and BTCPay alike',async()=>{
   dor=[DOR_NO_MATCH,DOR_NO_MATCH];
-  await expect(priceCart({...env,...square},items,seattle,'buyer@example.test')).rejects.toThrow(TAX_ADDRESS_ERROR);
-  // Cart endpoint (Square card): no quote, no order, a clear address message, never $0 tax.
+  const q=await priceCart({...env,...square},items,seattle,'buyer@example.test');
+  expect(q.salesTax).toMatchObject({state:'WA',collected:true,rate:'0.1055',loccode:'1726',basis:'fallback',taxFallback:true});
+  expect(q.tax).toBe(expectedTax(Math.round(Number(q.base)*100)+1200));
   dor=[DOR_NO_MATCH,new Error('timeout')];
   const cart=await cartCheckout(request('/checkout/cart/quote',{items:[{id:slug,quantity:1}],address:seattle,email:'buyer@example.test',catalogVersion}),{...env,...square});
-  expect(cart.status).toBe(422);
-  const body=await cart.json();expect(body).toEqual({error:TAX_ADDRESS_ERROR,code:'TAX_ADDRESS'});
-  // Single-painting Bitcoin quote (BTCPay): blocked the same way, with no invoice request.
+  expect(cart.status).toBe(200);const body=await cart.json();expect(body.error).toBeUndefined();expect(JSON.stringify(body)).not.toContain(TAX_ADDRESS_ERROR);
   dor=[DOR_NO_MATCH,DOR_NO_MATCH];
   const btc=await bitcoinCheckout(request('/checkout/bitcoin/quote',{slug,address:seattle}),{...env,...bitcoin});
-  expect(btc.status).toBe(422);expect((await btc.json()).code).toBe('TAX_ADDRESS');
+  expect(btc.status).toBe(200);
   expect(calls.some(c=>c.url.includes('btcpay.example.test')||c.url.includes('squareup'))).toBe(false);
 });
 
