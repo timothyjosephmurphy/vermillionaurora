@@ -351,6 +351,9 @@
         },
         "bordered": {
           "sku": "5M144M9S15.53X5.95",
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/6444c1102f78970fe8e9e56be4d84b08af5e2d0def2b104eed7de36231e7f5e7.jpg",
@@ -728,6 +731,9 @@
         },
         "bordered": {
           "sku": "5M144M9S11.65X4.46",
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/b576814691e6d001d63b32719627a894e6a71b29a1ca803f5687bb354ada41b8.jpg",
@@ -1119,6 +1125,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.4X11.82",
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/76e1b8147160ac6ec788cfd547fe70c644c6ae42c233b182ec9bea4601a4dc57.jpg",
@@ -1496,6 +1505,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.8X8.87",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/1dcf551e450ee6da7afb41d79bf46054d0604073b3613feb0f493218d1a50674.jpg",
@@ -1887,6 +1899,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.92X9.2",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/bff229f2796285d4783c968eafbea647b8a9269445a53da38ae9c261717a9c22.jpg",
@@ -2278,6 +2293,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.38X9.79",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/182818617c10365b2b22ad761cc9e20a162cb355f1c6502a10734aa3757b5ef2.jpg",
@@ -2655,6 +2673,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.03X7.33",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/9aa01b0a7d2fd7be62b88bc68c2d33a60af60348f3f0fef487d6890998552f53.jpg",
@@ -3046,6 +3067,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.69X4.73",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/a50842b69589016b5a293f02f9615dad1a7c43fdcc002ccd455b928d1f52d2ad.jpg",
@@ -3437,6 +3461,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.44X7.82",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/8934b501e75b39a0c0f02f89c83162fa7b9a831813038283f50e7094dc9fd02d.jpg",
@@ -3828,6 +3855,9 @@
         },
         "bordered": {
           "sku": "5M144M9S11.3X6.07",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/8d3382240f2f0f5db7e7b5c6123047b41a62d1437acd669e16b3100ae8b00501.jpg",
@@ -4205,6 +4235,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.48X4.55",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/8c7fcc3f5fe5dc5521071fca76a685c753795ababd9d5f843802c834835dca72.jpg",
@@ -4596,6 +4629,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.31X4.22",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/94ef6f88783392c44ac1f408310be39e59f27c54f6b47dccb33e911abc9f142e.jpg",
@@ -4987,6 +5023,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.81X4.47",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/f726b407bdd24c27921117ed2608d990bfbe215256373d07d2b700441ef63545.jpg",
@@ -5378,6 +5417,9 @@
         },
         "bordered": {
           "sku": "5M144M9S10.07X13.26",
+          "amount": "60.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/b6538f0f824407b766f52c45266157f7cb22c6f15eae8e0a6ef328863251d1aa.jpg",
@@ -5755,6 +5797,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.55X9.94",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/a47b38074af307a490052f23cd1942fe8aaad32db7e9ec3d8f6619371b8c6b68.jpg",
@@ -6132,6 +6177,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.03X6.62",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/8704b10a76a2012cf6e4e5c4c88a6bf7e4a6df5d05af4ffb6b551846b922696b.jpg",
@@ -6523,6 +6571,9 @@
         },
         "bordered": {
           "sku": "5M144M9S12.98X9.7",
+          "amount": "55.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/12177f5f552c04206d4ae82e29446bc560c7dcd2d3e2bc71625268ebb9fdcdb0.jpg",
@@ -6900,6 +6951,9 @@
         },
         "bordered": {
           "sku": "5M144M9S9.73X7.27",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/75f34b3e74b56beeafc68f9645a97de48e6f5071a81b7476d21ed299b41de115.jpg",
@@ -7277,6 +7331,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.48X4.84",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/d49a9b028f4bced48c3327aeeb7a9ccb6bcf1259420958bf7be00734f21260c2.jpg",
@@ -7668,6 +7725,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.68X4.44",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/9795002ca003c648bbf5ccf5b9c9ddb658edf61c2ff6d9d81afdd9a9a11096b9.jpg",
@@ -8059,6 +8119,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.41X12.5",
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/980e11bcb0c5c2f456f305c34344b51e5bc45925e42379770dd1ab540ae2ea6b.jpg",
@@ -8436,6 +8499,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.81X9.38",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/1286efaa4bb3596cfe9a94c7416f0c3b6f2b78e4042f216b195ed3575c6acaff.jpg",
@@ -8827,6 +8893,9 @@
         },
         "bordered": {
           "sku": "5M144M9S9.99X5.51",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/8cfc03ddd8c4c7f1fd68c6013dcd879850a800635b57e443cfd63b6f69f04a14.jpg",
@@ -9204,6 +9273,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.49X4.13",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/db87a07e95a7ea4594daca8f1117d8dc3c18f53aa6ac122726fd1338ab12d3cc.jpg",
@@ -9595,6 +9667,9 @@
         },
         "bordered": {
           "sku": "5M144M9S10.57X8.49",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/cd1c4f7226fe13e71efc3e3d41fd53a3f8b76000985689c7a0330df0814b06e6.jpg",
@@ -9972,6 +10047,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.92X6.36",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/b834ee218a63d4e4f66bae2cd5f686aeb60c42139d7b2b9e1d0c2634198c8ea7.jpg",
@@ -10349,6 +10427,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.28X4.24",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/0c0024254b143417bba3ad676026780071cdc1b8e315e9f97c89fc797e0fb2a9.jpg",
@@ -10740,6 +10821,9 @@
         },
         "bordered": {
           "sku": "5M144M9S11.03X6.01",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/8f22a4b896beadc039c55942a5ed9b4d04f77454732d8dd3382d57a1e1b44313.jpg",
@@ -11117,6 +11201,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.28X4.51",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/3fac6482de0c6a97df3eea6aa5f81e60c7c120a18727c985aab2951a4db87936.jpg",
@@ -11508,6 +11595,9 @@
         },
         "bordered": {
           "sku": "5M144M9S12.3X6.01",
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/d6533ab2d638c085848a08c89b6a24c756d49501dbdab8ef53866ebdb5822274.jpg",
@@ -11885,6 +11975,9 @@
         },
         "bordered": {
           "sku": "5M144M9S9.21X4.5",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/e6feb741784d2fea7ac40fce2a1f498606154a83705df7e5b7723c79fd33ee23.jpg",
@@ -12276,6 +12369,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.47X8.71",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/fee7c7225951fd8ffd07e9edf30cedb912cfaed05cb964d5319de8bf6fae0f7d.jpg",
@@ -12653,6 +12749,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.1X6.53",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/8358e66dbbe566267f7d7f9e6da1912e48ead36853b7ba97cd6ff463769d67e6.jpg",
@@ -13044,6 +13143,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.8X9.47",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/9b436ac4bb75c7b85f8c328f13d2a25413fb84215a841be145e93d0e5b896d1d.jpg",
@@ -13421,6 +13523,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.34X7.09",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/a05d819c11d7b55f3c2557088e3fe633b6a4e243b9e5e3985acc5df1fab89b3f.jpg",
@@ -13812,6 +13917,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.12X8.77",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/81998328db3ee2eb5e433540e0ad2f1cb9f0a38bb6a2c6f9a4fcfe5e2afe3621.jpg",
@@ -14189,6 +14297,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.09X6.57",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/5db3e48c89e6ed3fe77e695f05e81c84b923de18cb68c715fcf0baaa317c7f11.jpg",
@@ -14566,6 +14677,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.05X4.38",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/6d5395d2974e160a889eef2ce39ef613cda7993acb43f2341b12a5500cfbd0f0.jpg",
@@ -14957,6 +15071,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.2X8.55",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/1ec87b50f891b4f95889595318d69b593c6399e1bc1fcedaa634f5f19f279c1a.jpg",
@@ -15348,6 +15465,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.11X8.46",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/24d305ad80cd1d4aa51e57cea0c7d284d1c815a89645f652f19879ecf1363472.jpg",
@@ -15739,6 +15859,9 @@
         },
         "bordered": {
           "sku": "5M144M9S9.2X11.04",
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/72d761931c4a2ce5f6086df28976d1e719518de13b4090e13614a44c44fe23f8.jpg",
@@ -16116,6 +16239,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.9X8.28",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/977fdbc4a5a112c04d6c8588f292b1091ac4e3720cbeb1b76b701708c6d08206.jpg",
@@ -16493,6 +16619,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.59X5.51",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/602921474c9157fddb706b9b678e0821056df141719558cd6551702f0cdeb56a.jpg",
@@ -16884,6 +17013,9 @@
         },
         "bordered": {
           "sku": "5M144M9S9.27X14.22",
+          "amount": "55.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/a4ef0cc67b3ebbd438b0ca9ed8b22dc53a82a58052517f41000cc61046cfabb0.jpg",
@@ -17261,6 +17393,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.95X10.66",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/534c63c66562fda077744c0f2d46c6dd8845ecbeae93bf190533487fd4f6046f.jpg",
@@ -17638,6 +17773,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.63X7.1",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/582a66f74d7c1418ae9a5e2cdf0124bdb4ef53ce380c34f1c801ae89bec79da1.jpg",
@@ -18029,6 +18167,9 @@
         },
         "bordered": {
           "sku": "5M144M9S11.13X9.92",
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/5e2ea9ec4f6fd534e63e8b0f10b5ff7c777414a5af8f78168730427d356c4fe5.jpg",
@@ -18406,6 +18547,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.34X7.43",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/6eec5f4ba7c36805f7789cb00db8abb12ab08a8efab2ca7744efab820149d311.jpg",
@@ -18783,6 +18927,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.56X4.95",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/62a8e91e20a7c3b619934ff64dd69f0d33ebddd8e6f27bb957d6baba64a3e49a.jpg",
@@ -19174,6 +19321,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.56X10.75",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/0d1f55bdb34444985c9e90a9f23187d3b87d9f8eab8664c44a3eb0d54b42bc65.jpg",
@@ -19565,6 +19715,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.44X10.18",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/33c68e55dcb56d9ef1500ac46d2e6ef0d759ee4816e6d86d58da7c6bfb676866.jpg",
@@ -19942,6 +20095,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.82X7.62",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/6533e7f95b5b43a6f53bced4e817885c149fdc6d879252883bf1298954e8a97f.jpg",
@@ -20333,6 +20489,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.53X11.28",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/3a980e10e81ea84938915db4c2259eed6d4728a6c53941abe60cc091aed9e6eb.jpg",
@@ -20710,6 +20869,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.89X8.45",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/2f4eec4f6b1c413553257251f27c9fb110e51e9fa39eddc26a643d3e6f9c6221.jpg",
@@ -21101,6 +21263,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.07X12.99",
+          "amount": "45.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/136b929d138ef6e80fb840190031b09efd30ed40eb0a4efc046cb3ad8f242c74.jpg",
@@ -21478,6 +21643,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.55X9.74",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/659c2e1101b8f3cddfdab087f2c7a05254ed901923c9eb6bef965e999975b66e.jpg",
@@ -21869,6 +22037,9 @@
         },
         "bordered": {
           "sku": "5M144M9S11.85X6.29",
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/5083f84d9c62c0aa5630557776b63053aa17559c603ab2796b643f6ec972107e.jpg",
@@ -22246,6 +22417,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.88X4.71",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/ab161eaa5e9c7d737523845a6c7d947372c6e6528c7dc7f7cfdc856b2e8300d3.jpg",
@@ -22637,6 +22811,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.72X9.17",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/73c6c52643558c064c11f6cec121c4bc5707466de37f79e3951218495805abbc.jpg",
@@ -23014,6 +23191,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.78X6.87",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/19e73a9377efbd8ba4b4a193b44917031b9b3dd8f448326c832a6c95676a9571.jpg",
@@ -23391,6 +23571,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.01X4.74",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/5b8db2e2c49dffca1240fbb86cf56b43ddeaddffc363e67863de2582a2baee08.jpg",
@@ -23782,6 +23965,9 @@
         },
         "bordered": {
           "sku": "5M144M9S12.48X14.15",
+          "amount": "75.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/9fd4c9d4a63ceb7594cc6b830b635e278911d1a1fcb3f4cd24ba93abffd60e30.jpg",
@@ -24159,6 +24345,9 @@
         },
         "bordered": {
           "sku": "5M144M9S9.36X10.61",
+          "amount": "40.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/5baedda4c4e8724179b909bb99b3357ef3b345f157354413bc516cddc71d47d3.jpg",
@@ -24536,6 +24725,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.23X7.07",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/0507cf77fcad8a2ec3332f112fa4fc6039d351ba1f7b36054731a8cedeb496cf.jpg",
@@ -24927,6 +25119,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.18X9.72",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/40b1e29f12aec17b05ed4ea716a7807783ccbf4e97308510a7d17b71f95438fd.jpg",
@@ -25304,6 +25499,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.13X7.28",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/10172fff990839ed2a0041bb8bdfd7dbd0165a870346579257670357daed35b9.jpg",
@@ -25681,6 +25879,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.08X4.85",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/814fcd76f044ec0bc2a830fee91141a243bd04d4029e4976996feb1c37ff6bb8.jpg",
@@ -26072,6 +26273,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.83X10.14",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/278dffdd8942f8278d5cb91fb65d6ce90058f53cbc8f61ca24d9f733f1e042af.jpg",
@@ -26449,6 +26653,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.62X7.6",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/65c5d9e883781e64365927c51662188234d447def9d056f11c0effcd594a91b5.jpg",
@@ -26826,6 +27033,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.41X5.06",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/f1a375eb58838d491993c8d37bb2068aae72f1e3d7acfdf2781f8269b97faf4a.jpg",
@@ -27217,6 +27427,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.22X9.32",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/a4a25a47d6cebc32d6d8c52b83ece4c41ea2746e23d8228b768e0ecd4261c68b.jpg",
@@ -27594,6 +27807,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.16X6.99",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/aeecc24a03fe2aa9dcedc679e8b260c49c934936c838dcc014627b94860a8425.jpg",
@@ -27971,6 +28187,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.1X4.65",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/0eca993e7442b3cc26df1e61c72dd4c63b43dda9b8478c38fd944001bf102d78.jpg",
@@ -28362,6 +28581,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.63X9.59",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/5fa931dca6fc8e19d210e5e5bd4be09f59a0112156ee4e7a22050f1db9cebce7.jpg",
@@ -28739,6 +28961,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.47X7.19",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/7c0b3d0e1898eb7e4e8a983aa746ca8c3566c574531eb4e4896382d254fcd4c9.jpg",
@@ -29116,6 +29341,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.31X4.79",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/77f5d066b1014f895372a1dffd5a99ffd58c35b7d5933fe98ef98ad3be24a537.jpg",
@@ -29507,6 +29735,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.94X14.32",
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/97e657bc2f9d1936e9e963eaa477dab82bc7e012ed7bb5ea64dfe3e4e30d1df8.jpg",
@@ -29884,6 +30115,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.95X10.73",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/fae64cd2654cca08d8aa5465c56d959a8b1638763deb9e086a3c6db11e26693e.jpg",
@@ -30261,6 +30495,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4X7.19",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/a7858cc074d10b3cc0d6d1e85f44b80209b11f7193742af4dd9188b5f26a377b.jpg",
@@ -30652,6 +30889,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.34X9.04",
+          "amount": "30.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/5c2d09462e3e17da0d5c5bd7833da71298d837d0b9eb97b00e3cb95ec1c5f2ca.jpg",
@@ -31029,6 +31269,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.5X6.78",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/08c49a086ade6053b7b5188d4f0c01c5271b0895e679dac4214456c41dbfe45e.jpg",
@@ -31420,6 +31663,9 @@
         },
         "bordered": {
           "sku": "5M144M9S12.54X8.86",
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/d28472581c55bb54aad036cce23caaf3ef0db91021bd84d79ffac1c1d61439c9.jpg",
@@ -31797,6 +32043,9 @@
         },
         "bordered": {
           "sku": "5M144M9S9.4X6.64",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/0666066a48643f21466a7e685d45ad4530819e7c6600691e831c5cda7e1fa177.jpg",
@@ -32174,6 +32423,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.26X4.42",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/d1c33470884601ca30d649096e498ab3f61c8685dceac8a246977b4080bc6f3d.jpg",
@@ -32565,6 +32817,9 @@
         },
         "bordered": {
           "sku": "5M144M9S10.77X5.92",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/18a5e03706aa3ee031a46bda2b803375c978b8844d3cc41462fccc3c0c996171.jpg",
@@ -32942,6 +33197,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.08X4.44",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/772c4edd8aff28992e5b90bea3f53d3df830bb7ae20c074df1a53f71beec61bb.jpg",
@@ -33333,6 +33591,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.58X4.98",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/2d13f97728cabac048c949e44f204a79988ed77945f536361e96d2f65b8dcb3e.jpg",
@@ -33724,6 +33985,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.9X5.6",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/57667af19fe4a1b4ef36a93281c08e2acd28dda48036127d7f0529bd72d007a8.jpg",
@@ -34101,6 +34365,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.92X4.2",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/a47e7f483f08979e9c8cf0027fb7908950a16edb049e18294214893d1dd171fe.jpg",
@@ -34492,6 +34759,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.1X7.57",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/fc1f38c63542c7df3c829e909d1000435aa8902e1ff9a8396df593a93bb43755.jpg",
@@ -34869,6 +35139,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4X5.85",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:58.403Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/cb3668dbecd25786737e4d96111ee1a15b9d928373047afbb0f8267e3918f65f.jpg",
@@ -35260,6 +35533,9 @@
         },
         "bordered": {
           "sku": "5M144M9S9.82X13.98",
+          "amount": "60.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/989c0a86c3724617fdcc5e8c00218d40566ebbf781b2e3f205d6461499285e22.jpg",
@@ -35637,6 +35913,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.36X10.48",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/0455b1da608286605756ed3b215a1948a7abb836a926415f117e807099d87470.jpg",
@@ -36014,6 +36293,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.9X6.98",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:00.044Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/e7f06e31cf07281aa4272caa2972502e917e70158655eaf481d2daeac7f4a873.jpg",
@@ -36405,6 +36687,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.51X4.92",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/aad37ad1dcd7d423f421da047b352287a8f77d8e73505d096ec48cbad1b7a4c2.jpg",
@@ -36796,6 +37081,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.57X5.25",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.980Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/82f0167ec26951ed925a342b1bf2dc07b52436af546a910b605daadcc3ccd601.jpg",
@@ -37187,6 +37475,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.74X6.81",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/d1edb240a4e1e3de2d34f980f74463ae2032bd9d55737cb41fc05bb4954d40b4.jpg",
@@ -37578,6 +37869,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.79X6.81",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/b32c0992389eb84c6faf6dc2bc3ff69b5a8e1232b89791624ebc8a2f5f50c860.jpg",
@@ -37969,6 +38263,9 @@
         },
         "bordered": {
           "sku": "5M144M9S10.05X11.05",
+          "amount": "50.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/acccb7877eda15c4b2b7bd2fd915eae39fa36a15ee0fc7d870477179d49deb67.jpg",
@@ -38346,6 +38643,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.53X8.28",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/440c8651c8104c6e3d019626218dcc1a463408bb2bdadbbd60fff87e3fa599e4.jpg",
@@ -38723,6 +39023,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.02X5.52",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/e15391438e2b8914c48c055b6a3317e055816ec06964e102d7971f9386197caf.jpg",
@@ -39114,6 +39417,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.04X6.64",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/86e057cdf3367f2775611843cf98dbd4973b1ce0b8fd2d6eb7faac33620a8fca.jpg",
@@ -39491,6 +39797,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.53X4.98",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:53:01.010Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/acec6735aa3e7045068e478e344221aa03b860b26df388840a21d8b454590c76.jpg",
@@ -39882,6 +40191,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.23X6.82",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:57.566Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/116f0cc122c8ffd7a0508fec87928e0923c75b6f083fb17e1e38ee1b989ac0ac.jpg",
@@ -40273,6 +40585,9 @@
         },
         "bordered": {
           "sku": "5M144M9S7.59X10.09",
+          "amount": "35.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/4bdc38f194a53e0b4508dce177c0f6fcf4933ba15b9d601fe9d2cee8de5761fb.jpg",
@@ -40650,6 +40965,9 @@
         },
         "bordered": {
           "sku": "5M144M9S5.69X7.56",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/d128626372bd360799b527b5d40e98ffce5937438053c4d961eca987dc17938a.jpg",
@@ -41027,6 +41345,9 @@
         },
         "bordered": {
           "sku": "5M144M9S4.01X5.26",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/cde05da6d322f9d8a51e68969c5f810a3659f5bb6920692e9a811733f67cc65d.jpg",
@@ -41418,6 +41739,9 @@
         },
         "bordered": {
           "sku": "5M144M9S8.05X7.02",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/c2b68ba3adbdb3de21cd678abe50e06ac08e6ba1e9735a579bcc61f5edbc0ec4.jpg",
@@ -41795,6 +42119,9 @@
         },
         "bordered": {
           "sku": "5M144M9S6.03X5.26",
+          "amount": "25.00",
+          "pricingRule": "finerworks-3.5x-v1",
+          "quotedAt": "2026-10-17T20:52:59.215Z",
           "asset": {
             "provider": "finerworks",
             "url": "https://vermillionaurora.com/print-editions/77f9a9778406d0984f4a4440d1efcf03539cc0fba65abf4f05470450d58ba7f5.jpg",

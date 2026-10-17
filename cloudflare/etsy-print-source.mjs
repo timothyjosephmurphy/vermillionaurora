@@ -1,5 +1,5 @@
 // Generated from the approved print catalog. Do not edit by hand.
-export const sourcePrintVersion="71b66c4ea1eabb5be301";
+export const sourcePrintVersion="843f5fd545881d340b91";
 export default [
   {
     "id": "warszawska-syrenka",
@@ -25,11 +25,11 @@ export default [
       {
         "key": "full",
         "label": "Large",
-        "price": "170.00",
-        "sku": "5M144M8S16.86X23.98",
+        "price": "165.00",
+        "sku": "5M144M9S16.6X23.72",
         "paperSize": {
-          "width": 16.86,
-          "height": 23.98,
+          "width": 17.6,
+          "height": 24.72,
           "unit": "in"
         },
         "frames": [
@@ -78,10 +78,10 @@ export default [
         "key": "medium",
         "label": "Medium",
         "price": "95.00",
-        "sku": "5M144M8S12.71X18.05",
+        "sku": "5M144M9S12.45X17.79",
         "paperSize": {
-          "width": 12.71,
-          "height": 18.05,
+          "width": 13.45,
+          "height": 18.79,
           "unit": "in"
         },
         "frames": [
@@ -129,11 +129,11 @@ export default [
       {
         "key": "small",
         "label": "Small",
-        "price": "45.00",
-        "sku": "5M144M8S8.55X12.11",
+        "price": "40.00",
+        "sku": "5M144M9S8.29X11.85",
         "paperSize": {
-          "width": 8.55,
-          "height": 12.11,
+          "width": 9.29,
+          "height": 12.85,
           "unit": "in"
         },
         "frames": [
@@ -205,11 +205,11 @@ export default [
       {
         "key": "full",
         "label": "Large",
-        "price": "160.00",
-        "sku": "5M144M8S16.3X23.18",
+        "price": "155.00",
+        "sku": "5M144M9S16.04X22.92",
         "paperSize": {
-          "width": 16.3,
-          "height": 23.18,
+          "width": 17.04,
+          "height": 23.92,
           "unit": "in"
         },
         "frames": [
@@ -257,11 +257,11 @@ export default [
       {
         "key": "medium",
         "label": "Medium",
-        "price": "90.00",
-        "sku": "5M144M8S12.29X17.45",
+        "price": "85.00",
+        "sku": "5M144M9S12.03X17.19",
         "paperSize": {
-          "width": 12.29,
-          "height": 17.45,
+          "width": 13.03,
+          "height": 18.19,
           "unit": "in"
         },
         "frames": [
@@ -310,10 +310,10 @@ export default [
         "key": "small",
         "label": "Small",
         "price": "40.00",
-        "sku": "5M144M8S8.27X11.71",
+        "sku": "5M144M9S8.01X11.45",
         "paperSize": {
-          "width": 8.27,
-          "height": 11.71,
+          "width": 9.01,
+          "height": 12.45,
           "unit": "in"
         },
         "frames": [
@@ -383,11 +383,11 @@ export default [
       {
         "key": "full",
         "label": "Large",
-        "price": "130.00",
-        "sku": "5M144M8S12.63X23.94",
+        "price": "125.00",
+        "sku": "5M144M9S12.37X23.67",
         "paperSize": {
-          "width": 12.63,
-          "height": 23.94,
+          "width": 13.37,
+          "height": 24.67,
           "unit": "in"
         },
         "frames": [
@@ -436,10 +436,10 @@ export default [
         "key": "medium",
         "label": "Medium",
         "price": "70.00",
-        "sku": "5M144M8S9.53X18.01",
+        "sku": "5M144M9S9.27X17.74",
         "paperSize": {
-          "width": 9.53,
-          "height": 18.01,
+          "width": 10.27,
+          "height": 18.74,
           "unit": "in"
         },
         "frames": [
@@ -488,10 +488,10 @@ export default [
         "key": "small",
         "label": "Small",
         "price": "40.00",
-        "sku": "5M144M8S6.44X12.09",
+        "sku": "5M144M9S6.18X11.83",
         "paperSize": {
-          "width": 6.44,
-          "height": 12.09,
+          "width": 7.18,
+          "height": 12.83,
           "unit": "in"
         },
         "frames": [
@@ -562,10 +562,10 @@ export default [
         "key": "full",
         "label": "Large",
         "price": "130.00",
-        "sku": "5M144M8S25.73X12.3",
+        "sku": "5M144M9S25.47X12.04",
         "paperSize": {
-          "width": 25.73,
-          "height": 12.3,
+          "width": 26.47,
+          "height": 13.04,
           "unit": "in"
         },
         "frames": [
@@ -613,11 +613,11 @@ export default [
       {
         "key": "medium",
         "label": "Medium",
-        "price": "75.00",
-        "sku": "5M144M8S19.36X9.28",
+        "price": "70.00",
+        "sku": "5M144M9S19.09X9.02",
         "paperSize": {
-          "width": 19.36,
-          "height": 9.28,
+          "width": 20.09,
+          "height": 10.02,
           "unit": "in"
         },
         "frames": [
@@ -666,10 +666,10 @@ export default [
         "key": "small",
         "label": "Small",
         "price": "45.00",
-        "sku": "5M144M8S12.99X6.27",
+        "sku": "5M144M9S12.72X6.01",
         "paperSize": {
-          "width": 12.99,
-          "height": 6.27,
+          "width": 13.72,
+          "height": 7.01,
           "unit": "in"
         },
         "frames": [
@@ -739,11 +739,11 @@ export default [
       {
         "key": "full",
         "label": "Large",
-        "price": "125.00",
-        "sku": "5M144M8S12.24X23.85",
+        "price": "120.00",
+        "sku": "5M144M9S11.98X23.59",
         "paperSize": {
-          "width": 12.24,
-          "height": 23.85,
+          "width": 12.98,
+          "height": 24.59,
           "unit": "in"
         },
         "frames": [
@@ -792,10 +792,10 @@ export default [
         "key": "medium",
         "label": "Medium",
         "price": "70.00",
-        "sku": "5M144M8S9.24X17.95",
+        "sku": "5M144M9S8.98X17.69",
         "paperSize": {
-          "width": 9.24,
-          "height": 17.95,
+          "width": 9.98,
+          "height": 18.69,
           "unit": "in"
         },
         "frames": [
@@ -844,10 +844,10 @@ export default [
         "key": "small",
         "label": "Small",
         "price": "40.00",
-        "sku": "5M144M8S6.24X12.05",
+        "sku": "5M144M9S5.98X11.78",
         "paperSize": {
-          "width": 6.24,
-          "height": 12.05,
+          "width": 6.98,
+          "height": 12.78,
           "unit": "in"
         },
         "frames": [
