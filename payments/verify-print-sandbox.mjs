@@ -60,7 +60,7 @@ try {
     const ids=['painting-portrait-in-green','painting-portrait-in-gold'];
     const prices=await verify({task:'edition-prices',productIds:ids});report.prices.push(prices);
     assert.equal(prices.ordersSubmitted,false);assert.equal(prices.variants.length,6);
-    for(const p of prices.variants)assert.equal(p.amount,config.artworks[p.productId].variants[p.key].amount);
+    for(const p of prices.variants){const v=config.artworks[p.productId].variants[p.key];assert.equal(p.amount,v.bordered?.amount??v.amount);}
     const address={name:'Sandbox Verification',street1:'600 4th Ave',street2:'',city:'Seattle',state:'WA',zip:'98104',country:'US'};
     // Use an already-published immutable file for provider validation before the
     // new website release; every newly prepared file is verified locally above.
