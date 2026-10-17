@@ -1987,17 +1987,17 @@
      "flag": "placeholder title",
      "crop": {
       "widthPx": 1185,
-      "heightPx": 6048
+      "heightPx": 5270
      },
      "display": {
-      "base": "/display/older-work-forest-triptych-1",
+      "base": "/display/older-work-forest-triptych-1-62cf81a2",
       "widths": [
        480,
        960
       ],
       "width": 960,
-      "height": 4900,
-      "fallback": "/display/older-work-forest-triptych-1.jpg"
+      "height": 4269,
+      "fallback": "/display/older-work-forest-triptych-1-62cf81a2.jpg"
      }
     },
     {
@@ -2013,18 +2013,18 @@
      "year": null,
      "flag": "placeholder title",
      "crop": {
-      "widthPx": 1282,
-      "heightPx": 6072
+      "widthPx": 1274,
+      "heightPx": 5666
      },
      "display": {
-      "base": "/display/older-work-forest-triptych-2",
+      "base": "/display/older-work-forest-triptych-2-dfccfbad",
       "widths": [
        480,
        960
       ],
       "width": 960,
-      "height": 4547,
-      "fallback": "/display/older-work-forest-triptych-2.jpg"
+      "height": 4270,
+      "fallback": "/display/older-work-forest-triptych-2-dfccfbad.jpg"
      }
     },
     {

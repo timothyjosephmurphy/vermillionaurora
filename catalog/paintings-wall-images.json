@@ -246,21 +246,21 @@
   ]
  },
  "burning-man-temple-2022-blue": {
-  "sha256": "7e4ea9513b",
+  "sha256": "1541891dfc",
   "width": 2400,
-  "height": 1197,
+  "height": 1193,
   "sources": [
    {
     "width": 320,
-    "src": "/wall-paintings/burning-man-temple-2022-blue-7e4ea9513b-320.webp"
+    "src": "/wall-paintings/burning-man-temple-2022-blue-1541891dfc-320.webp"
    },
    {
     "width": 960,
-    "src": "/wall-paintings/burning-man-temple-2022-blue-7e4ea9513b-960.webp"
+    "src": "/wall-paintings/burning-man-temple-2022-blue-1541891dfc-960.webp"
    },
    {
     "width": 1920,
-    "src": "/wall-paintings/burning-man-temple-2022-blue-7e4ea9513b-1920.webp"
+    "src": "/wall-paintings/burning-man-temple-2022-blue-1541891dfc-1920.webp"
    },
    {
     "width": 2400,
@@ -2357,40 +2357,40 @@
   ]
  },
  "older-work-forest-triptych-original-1": {
-  "sha256": "c2340a270a",
+  "sha256": "45ea958b5a",
   "width": 1185,
-  "height": 6048,
+  "height": 5270,
   "sources": [
    {
     "width": 320,
-    "src": "/wall-paintings/older-work-forest-triptych-original-1-c2340a270a-320.webp"
+    "src": "/wall-paintings/older-work-forest-triptych-original-1-45ea958b5a-320.webp"
    },
    {
     "width": 960,
-    "src": "/wall-paintings/older-work-forest-triptych-original-1-c2340a270a-960.webp"
+    "src": "/wall-paintings/older-work-forest-triptych-original-1-45ea958b5a-960.webp"
    },
    {
     "width": 1185,
-    "src": "https://tjm.art/display/older-work-forest-triptych-1.jpg"
+    "src": "https://tjm.art/display/older-work-forest-triptych-1-62cf81a2.jpg"
    }
   ]
  },
  "older-work-forest-triptych-original-2": {
-  "sha256": "dfc6702110",
-  "width": 1282,
-  "height": 6072,
+  "sha256": "64953a2428",
+  "width": 1274,
+  "height": 5666,
   "sources": [
    {
     "width": 320,
-    "src": "/wall-paintings/older-work-forest-triptych-original-2-dfc6702110-320.webp"
+    "src": "/wall-paintings/older-work-forest-triptych-original-2-64953a2428-320.webp"
    },
    {
     "width": 960,
-    "src": "/wall-paintings/older-work-forest-triptych-original-2-dfc6702110-960.webp"
+    "src": "/wall-paintings/older-work-forest-triptych-original-2-64953a2428-960.webp"
    },
    {
-    "width": 1282,
-    "src": "https://tjm.art/display/older-work-forest-triptych-2.jpg"
+    "width": 1274,
+    "src": "https://tjm.art/display/older-work-forest-triptych-2-dfccfbad.jpg"
    }
   ]
  },
