@@ -45,6 +45,16 @@ test('price, title and print edits patch only that painting, everywhere it appea
   assert.equal(pj.prints.find(p => p.id === 'print-el-zonte-at-sunrise-full').amount, '130.00');
   assert.ok(!pj.prints.some(p => p.id === 'print-el-zonte-at-sunrise-medium'));
 });
+test('an unavailable or sold original updates the product page details line; prints stay', () => {
+  for (const [status, text] of [['unavailable', 'Not currently available'], ['sold', 'Sold']]) {
+    const t = rows(t => { const r = t.status.find(s => s.product_id === 'strawberry-point-11'); if (r) r.status = status; else t.status.push({ product_id: 'strawberry-point-11', status }); return t; });
+    const L = live(t), d = diffCatalog(L, snap), src = fs.readFileSync('dist/products/strawberry-point-11/index.html', 'utf8');
+    assert.ok(src.includes('<dt>Original</dt><dd>Available · $200</dd>'));
+    const page = patchHtml(src, 'strawberry-point-11', d, snap, L);
+    assert.ok(page.includes(`<dt>Original</dt><dd>${text}</dd>`) && !page.includes('<dd>Available · $200</dd>'));
+    assert.ok(page.includes('value="print-strawberry-point-11-full"'), 'prints remain');
+  }
+});
 test('checkout uses D1 prices, keeps Etsy on the live price, and falls back to the built catalog when D1 fails', async () => {
   const builtAmount = catalog['el-zonte-at-sunrise'].amount, builtPrint = prints['print-el-zonte-at-sunrise-full'].amount;
   const t = rows(t => { t.paintings.find(p => p.id === 'el-zonte-at-sunrise').price_amount = '1100.00'; t.editions.find(e => e.id === 'print-el-zonte-at-sunrise-full').amount = '130.00'; t.status.find(s => s.product_id === 'el-zonte-at-sunrise').status = 'sold'; return t; });

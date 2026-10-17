@@ -32,6 +32,8 @@ export function diffCatalog(live, snap) {
     if (!o) { if (p.source === 'admin') added.push(p); continue; }
     if (p.title !== o.title) get(id).title = [o.title, p.title];
     if ((p.price_amount || null) !== (o.price || null) && o.price && p.price_amount) get(id).price = [o.price, p.price_amount];
+    const st = live.status.get(id)?.status;
+    if ((st === 'sold' || st === 'unavailable') && st !== (o.status || 'available')) get(id).status = st;
     if (o.width && p.width && o.unit && (p.width !== o.width || p.height !== o.height || p.unit !== o.unit)) get(id).dims = [[o.width, o.height, o.unit], [p.width, p.height, p.unit]];
   }
   for (const [id, e] of live.editions) {
@@ -39,7 +41,7 @@ export function diffCatalog(live, snap) {
     if (!e.enabled || e.amount !== o.amount) get(e.product_id).editions.set(id, { from: o.amount, amount: e.amount, enabled: !!e.enabled });
   }
   for (const [id, list] of live.images) for (const im of list) if (im.rev > 0) get(id).images.push(im);
-  for (const [id, c] of changes) if (!c.title && !c.price && !c.dims && !c.editions.size && !c.images.length) changes.delete(id);
+  for (const [id, c] of changes) if (!c.title && !c.price && !c.dims && !c.status && !c.editions.size && !c.images.length) changes.delete(id);
   return { changes, added };
 }
 function minPrint(snap, live, productId) {
@@ -65,6 +67,8 @@ function patchSegment(text, c, snap, live, productId, isProductPage) {
     const [[ow, oh, ou], [nw, nh, nu]] = c.dims;
     t = t.split(dimsLabel(ow, oh, ou)).join(dimsLabel(nw, nh, nu)).split(dimsLabel(oh, ow, ou)).join(dimsLabel(nh, nw, nu));
   }
+  // Product page details line, e.g. "Original: Available · $200" -> "Not currently available".
+  if (c.status && isProductPage) t = t.replace(/(<dt>Original<\/dt><dd>)Available(?: · [^<]*)?(?=<\/dd>)/, `$1${statusText[c.status]}`);
   for (const im of c.images) t = t.replace(new RegExp(reEsc(`${IMAGE_ORIGIN}/${im.key}`) + '(?:\\?v=\\d+)?', 'g'), `${IMAGE_ORIGIN}/${im.key}?v=${im.rev}`);
   if (c.editions.size) {
     const [before, after] = minPrint(snap, live, productId);
