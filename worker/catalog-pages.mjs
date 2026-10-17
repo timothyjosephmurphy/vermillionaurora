@@ -67,8 +67,18 @@ function patchSegment(text, c, snap, live, productId, isProductPage) {
     const [[ow, oh, ou], [nw, nh, nu]] = c.dims;
     t = t.split(dimsLabel(ow, oh, ou)).join(dimsLabel(nw, nh, nu)).split(dimsLabel(oh, ow, ou)).join(dimsLabel(nh, nw, nu));
   }
-  // Product page details line, e.g. "Original: Available · $200" -> "Not currently available".
-  if (c.status && isProductPage) t = t.replace(/(<dt>Original<\/dt><dd>)Available(?: · [^<]*)?(?=<\/dd>)/, `$1${statusText[c.status]}`);
+  // Unavailable or sold original: details line, description and JSON-LD offer on its page; price captions in listings.
+  if (c.status) {
+    const label = statusText[c.status];
+    if (isProductPage) {
+      t = t.replace(/(<dt>Original<\/dt><dd>)Available(?: · [^<]*)?(?=<\/dd>)/, `$1${label}`)
+        .replace(/Original available for \$[\d,]+(?:\.\d\d)?\./g, c.status === 'sold' ? 'Original sold.' : 'Original not currently available.')
+        .split('"availability":"https://schema.org/InStock"').join('"availability":"https://schema.org/SoldOut"');
+    } else {
+      t = t.replace(/(<p class="sp-price"[^>]*>)\$[\d,]+(?:\.\d\d)?(?=<\/p>)/g, `$1${label}`)
+        .replace(/(<div class="product-info"><p>[^<]*· )\$[\d,]+(?:\.\d\d)?(?=<\/p>)/g, `$1${label}`);
+    }
+  }
   for (const im of c.images) t = t.replace(new RegExp(reEsc(`${IMAGE_ORIGIN}/${im.key}`) + '(?:\\?v=\\d+)?', 'g'), `${IMAGE_ORIGIN}/${im.key}?v=${im.rev}`);
   if (c.editions.size) {
     const [before, after] = minPrint(snap, live, productId);
@@ -95,7 +105,7 @@ function patchSegment(text, c, snap, live, productId, isProductPage) {
 export function patchHtml(html, pageProductId, diff, snap, live) {
   const { changes } = diff;
   if (pageProductId) { const c = changes.get(pageProductId); return c ? patchSegment(html, c, snap, live, pageProductId, true) : html; }
-  const re = /data-product-id="([^"]+)"/g, cuts = [];
+  const re = /data-(?:product|sp)-id="([^"]+)"/g, cuts = [];
   let m; while ((m = re.exec(html))) cuts.push([html.lastIndexOf('<', m.index), m[1]]);
   let out = '', pos = 0, owner = null;
   const flush = end => { const seg = html.slice(pos, end); const c = owner && changes.get(owner); out += c ? patchSegment(seg, c, snap, live, owner, false) : seg; };

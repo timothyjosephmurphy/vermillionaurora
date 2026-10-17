@@ -53,6 +53,12 @@ test('an unavailable or sold original updates the product page details line; pri
     const page = patchHtml(src, 'strawberry-point-11', d, snap, L);
     assert.ok(page.includes(`<dt>Original</dt><dd>${text}</dd>`) && !page.includes('<dd>Available · $200</dd>'));
     assert.ok(page.includes('value="print-strawberry-point-11-full"'), 'prints remain');
+    assert.ok(!page.includes('Original available for $200') && !page.includes('schema.org/InStock'));
+    for (const f of ['dist/gallery/strawberry-point/index.html', 'dist/index.html']) {
+      const h = fs.readFileSync(f, 'utf8'), g = patchHtml(h, null, d, snap, L), at = (x, id) => x.slice(x.search(new RegExp(`data-(?:product|sp)-id="${id}"`)), x.indexOf('</li>', x.search(new RegExp(`data-(?:product|sp)-id="${id}"`))));
+      assert.ok(at(h, 'strawberry-point-11').includes('$200') && !at(g, 'strawberry-point-11').includes('$200') && at(g, 'strawberry-point-11').includes(text), f);
+      assert.equal(at(g, 'strawberry-point-12'), at(h, 'strawberry-point-12'), 'other originals untouched');
+    }
   }
 });
 test('checkout uses D1 prices, keeps Etsy on the live price, and falls back to the built catalog when D1 fails', async () => {
