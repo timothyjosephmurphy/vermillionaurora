@@ -88,29 +88,29 @@
    "photo": "IMG_1736.jpg",
    "position": 1,
    "crop": [
-    251,
-    285,
+    258,
+    295,
     1542,
-    1664
+    1655
    ],
    "display": {
-    "base": "/display/strawberry-point-4-e1b95e42",
+    "base": "/display/strawberry-point-4-897857fb",
     "widths": [
      480,
      960,
      1600
     ],
     "width": 960,
-    "height": 1025,
-    "fallback": "/display/strawberry-point-4-e1b95e42.jpg",
-    "sourceWidth": 1291,
-    "sourceHeight": 1379
+    "height": 1017,
+    "fallback": "/display/strawberry-point-4-897857fb.jpg",
+    "sourceWidth": 1284,
+    "sourceHeight": 1360
    },
    "master": {
-    "url": "https://vermillionaurora.com/print-masters/e0eae411bb55aee28694df82040f3acb0b842ba81aca6c047d0fce4325f4fbfb.jpg",
-    "sha256": "e0eae411bb55aee28694df82040f3acb0b842ba81aca6c047d0fce4325f4fbfb",
-    "widthPx": 1291,
-    "heightPx": 1379
+    "url": "https://vermillionaurora.com/print-masters/d286bc703e88313b8fa43f0eaefc505ed86b515e5f4a5b43e2ea68e9c98521f6.jpg",
+    "sha256": "d286bc703e88313b8fa43f0eaefc505ed86b515e5f4a5b43e2ea68e9c98521f6",
+    "widthPx": 1284,
+    "heightPx": 1360
    }
   },
   {
@@ -181,26 +181,26 @@
     270,
     5816,
     1552,
-    7179
+    7169
    ],
    "display": {
-    "base": "/display/strawberry-point-7-9e3f3e10",
+    "base": "/display/strawberry-point-7-2dff5146",
     "widths": [
      480,
      960,
      1600
     ],
     "width": 960,
-    "height": 1021,
-    "fallback": "/display/strawberry-point-7-9e3f3e10.jpg",
+    "height": 1013,
+    "fallback": "/display/strawberry-point-7-2dff5146.jpg",
     "sourceWidth": 1282,
-    "sourceHeight": 1363
+    "sourceHeight": 1353
    },
    "master": {
-    "url": "https://vermillionaurora.com/print-masters/828a3fa40455efc3f488cec806a9de265665aa4ff6dcfc7816ae1567aa9aefcc.jpg",
-    "sha256": "828a3fa40455efc3f488cec806a9de265665aa4ff6dcfc7816ae1567aa9aefcc",
+    "url": "https://vermillionaurora.com/print-masters/785b736bb2c560d347c9f2257d5609eef029ccc8f38fa09c7cd3ed8f1cfbbba2.jpg",
+    "sha256": "785b736bb2c560d347c9f2257d5609eef029ccc8f38fa09c7cd3ed8f1cfbbba2",
     "widthPx": 1282,
-    "heightPx": 1363
+    "heightPx": 1353
    }
   },
   {
@@ -271,26 +271,26 @@
     240,
     5261,
     2233,
-    7353
+    7339
    ],
    "display": {
-    "base": "/display/strawberry-point-10-86185f7b",
+    "base": "/display/strawberry-point-10-4c8f16e5",
     "widths": [
      480,
      960,
      1600
     ],
     "width": 960,
-    "height": 1008,
-    "fallback": "/display/strawberry-point-10-86185f7b.jpg",
+    "height": 1001,
+    "fallback": "/display/strawberry-point-10-4c8f16e5.jpg",
     "sourceWidth": 1993,
-    "sourceHeight": 2092
+    "sourceHeight": 2078
    },
    "master": {
-    "url": "https://vermillionaurora.com/print-masters/3d721e159b7a80aa9cf306d775d838692e47b3c8ae3310a6243c7d27dc496c0e.jpg",
-    "sha256": "3d721e159b7a80aa9cf306d775d838692e47b3c8ae3310a6243c7d27dc496c0e",
+    "url": "https://vermillionaurora.com/print-masters/6fbaf07d5e47ebd789370e0bb4773c21445cfa551e66d39c14be1215ca9d83f1.jpg",
+    "sha256": "6fbaf07d5e47ebd789370e0bb4773c21445cfa551e66d39c14be1215ca9d83f1",
     "widthPx": 1993,
-    "heightPx": 2092
+    "heightPx": 2078
    }
   },
   {
@@ -298,28 +298,28 @@
    "photo": "IMG_1738.jpg",
    "position": 1,
    "crop": [
-    142,
+    160,
     247,
     2517,
     2589
    ],
    "display": {
-    "base": "/display/strawberry-point-11-b5adc2b1",
+    "base": "/display/strawberry-point-11-59634d47",
     "widths": [
      480,
      960,
      1600
     ],
     "width": 960,
-    "height": 947,
-    "fallback": "/display/strawberry-point-11-b5adc2b1.jpg",
-    "sourceWidth": 2375,
+    "height": 954,
+    "fallback": "/display/strawberry-point-11-59634d47.jpg",
+    "sourceWidth": 2357,
     "sourceHeight": 2342
    },
    "master": {
-    "url": "https://vermillionaurora.com/print-masters/629318b048b36ea41aa4388b1b3766e53e31396edeb489e40620967f179f82de.jpg",
-    "sha256": "629318b048b36ea41aa4388b1b3766e53e31396edeb489e40620967f179f82de",
-    "widthPx": 2375,
+    "url": "https://vermillionaurora.com/print-masters/0a7960cb5d67ef2aa232a11693a5adbc0c3a06ff186906e219d9c6ac976bfe6d.jpg",
+    "sha256": "0a7960cb5d67ef2aa232a11693a5adbc0c3a06ff186906e219d9c6ac976bfe6d",
+    "widthPx": 2357,
     "heightPx": 2342
    }
   },
