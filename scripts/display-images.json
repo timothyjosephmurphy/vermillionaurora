@@ -243,28 +243,28 @@
   ]
  },
  "/gallery-images/burning-man-temple-2022-blue.jpg": {
-  "original": 332655,
+  "original": 335743,
   "width": 2400,
   "variants": [
    {
     "w": 160,
-    "src": "/display/burning-man-temple-2022-blue-810d61d9f9-160.webp",
-    "bytes": 962
+    "src": "/display/burning-man-temple-2022-blue-7836afc7f6-160.webp",
+    "bytes": 946
    },
    {
     "w": 480,
-    "src": "/display/burning-man-temple-2022-blue-810d61d9f9-480.webp",
-    "bytes": 5368
+    "src": "/display/burning-man-temple-2022-blue-7836afc7f6-480.webp",
+    "bytes": 5294
    },
    {
     "w": 960,
-    "src": "/display/burning-man-temple-2022-blue-810d61d9f9-960.webp",
-    "bytes": 19722
+    "src": "/display/burning-man-temple-2022-blue-7836afc7f6-960.webp",
+    "bytes": 19588
    },
    {
     "w": 1600,
-    "src": "/display/burning-man-temple-2022-blue-810d61d9f9-1600.webp",
-    "bytes": 51502
+    "src": "/display/burning-man-temple-2022-blue-7836afc7f6-1600.webp",
+    "bytes": 49368
    }
   ]
  },
