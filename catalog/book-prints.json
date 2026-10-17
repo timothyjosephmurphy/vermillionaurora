@@ -348,6 +348,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S15.53X5.95",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/6444c1102f78970fe8e9e56be4d84b08af5e2d0def2b104eed7de36231e7f5e7.jpg",
+            "sha256": "6444c1102f78970fe8e9e56be4d84b08af5e2d0def2b104eed7de36231e7f5e7",
+            "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+            "editionSha256": "a047519bca7092e55101d9c8667991d99ac47a3cdeb6fcf3eea1157ae36899a9",
+            "productCode": "5M144M9S15.53X5.95",
+            "imageWidthIn": 15.53,
+            "imageHeightIn": 5.95,
+            "printWidthIn": 15.53,
+            "printHeightIn": 5.95,
+            "paperWidthIn": 16.53,
+            "paperHeightIn": 6.95,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 4659,
+              "heightPx": 1785,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 4659,
+                "height": 1785
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 4659,
+                "height": 1785
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -685,6 +723,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S11.65X4.46",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/b576814691e6d001d63b32719627a894e6a71b29a1ca803f5687bb354ada41b8.jpg",
+            "sha256": "b576814691e6d001d63b32719627a894e6a71b29a1ca803f5687bb354ada41b8",
+            "sourceSha256": "171a8c8818a0f05af1cd2bac7211203dd68c49045de1928b17dc15dae989a457",
+            "editionSha256": "f272948fa2955e2821525b868c0b3adb4b5a2f7f8c1069cd9c290651bfa42f64",
+            "productCode": "5M144M9S11.65X4.46",
+            "imageWidthIn": 11.65,
+            "imageHeightIn": 4.46,
+            "printWidthIn": 11.65,
+            "printHeightIn": 4.46,
+            "paperWidthIn": 12.65,
+            "paperHeightIn": 5.46,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3495,
+              "heightPx": 1338,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 3495,
+                "height": 1338
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3495,
+                "height": 1338
+              }
             }
           }
         }
@@ -1040,6 +1116,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.4X11.82",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/76e1b8147160ac6ec788cfd547fe70c644c6ae42c233b182ec9bea4601a4dc57.jpg",
+            "sha256": "76e1b8147160ac6ec788cfd547fe70c644c6ae42c233b182ec9bea4601a4dc57",
+            "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+            "editionSha256": "27fefff77a6ecb0f2799fc71061ac5f60825f82a0401a180b8aa95105d40e18b",
+            "productCode": "5M144M9S6.4X11.82",
+            "imageWidthIn": 6.4,
+            "imageHeightIn": 11.82,
+            "printWidthIn": 6.4,
+            "printHeightIn": 11.82,
+            "paperWidthIn": 7.4,
+            "paperHeightIn": 12.82,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1920,
+              "heightPx": 3546,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1920,
+                "height": 3546
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1920,
+                "height": 3546
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -1377,6 +1491,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.8X8.87",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/1dcf551e450ee6da7afb41d79bf46054d0604073b3613feb0f493218d1a50674.jpg",
+            "sha256": "1dcf551e450ee6da7afb41d79bf46054d0604073b3613feb0f493218d1a50674",
+            "sourceSha256": "3ab7b51f40dcd46c3b9f8585f349ae73d1e8ea422cb6ac83e46cac783b2a139c",
+            "editionSha256": "50af2486d8be47b3bbc623148661f0f36bfa3cf583c4e3f20a9f780eac439f07",
+            "productCode": "5M144M9S4.8X8.87",
+            "imageWidthIn": 4.8,
+            "imageHeightIn": 8.87,
+            "printWidthIn": 4.8,
+            "printHeightIn": 8.87,
+            "paperWidthIn": 5.8,
+            "paperHeightIn": 9.87,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1440,
+              "heightPx": 2661,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1440,
+                "height": 2661
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1440,
+                "height": 2661
+              }
             }
           }
         }
@@ -1732,6 +1884,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.92X9.2",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/bff229f2796285d4783c968eafbea647b8a9269445a53da38ae9c261717a9c22.jpg",
+            "sha256": "bff229f2796285d4783c968eafbea647b8a9269445a53da38ae9c261717a9c22",
+            "sourceSha256": "f4e436a33f9a8b3e24e1c83ac157ca4b4ad2a65d08f84a68e85ef5e409a2578e",
+            "editionSha256": "7de7b2b36e635e4edb306c54218faf77ce89d5ba5039b7a92257226c1a37d733",
+            "productCode": "5M144M9S4.92X9.2",
+            "imageWidthIn": 4.92,
+            "imageHeightIn": 9.2,
+            "printWidthIn": 4.92,
+            "printHeightIn": 9.2,
+            "paperWidthIn": 5.92,
+            "paperHeightIn": 10.2,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1476,
+              "heightPx": 2760,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1476,
+                "height": 2760
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1476,
+                "height": 2760
+              }
+            }
+          }
         }
       }
     }
@@ -2085,6 +2275,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.38X9.79",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/182818617c10365b2b22ad761cc9e20a162cb355f1c6502a10734aa3757b5ef2.jpg",
+            "sha256": "182818617c10365b2b22ad761cc9e20a162cb355f1c6502a10734aa3757b5ef2",
+            "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+            "editionSha256": "cddb3948debd4f2b2d306d58223639a82cea99996dae533c62623665cc4c94d7",
+            "productCode": "5M144M9S5.38X9.79",
+            "imageWidthIn": 5.38,
+            "imageHeightIn": 9.79,
+            "printWidthIn": 5.38,
+            "printHeightIn": 9.79,
+            "paperWidthIn": 6.38,
+            "paperHeightIn": 10.79,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1614,
+              "heightPx": 2937,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1614,
+                "height": 2937
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1614,
+                "height": 2937
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -2422,6 +2650,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.03X7.33",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/9aa01b0a7d2fd7be62b88bc68c2d33a60af60348f3f0fef487d6890998552f53.jpg",
+            "sha256": "9aa01b0a7d2fd7be62b88bc68c2d33a60af60348f3f0fef487d6890998552f53",
+            "sourceSha256": "2f844a8389ed3f5ad8ca911d016c6aa331dd5506237f88b91dd1fda2ce960195",
+            "editionSha256": "c887c163bcef32d7a3f654807688db6118fabdea1ffc7715d36eb0ab87a16bde",
+            "productCode": "5M144M9S4.03X7.33",
+            "imageWidthIn": 4.03,
+            "imageHeightIn": 7.33,
+            "printWidthIn": 4.03,
+            "printHeightIn": 7.33,
+            "paperWidthIn": 5.03,
+            "paperHeightIn": 8.33,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1209,
+              "heightPx": 2199,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1209,
+                "height": 2199
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1209,
+                "height": 2199
+              }
             }
           }
         }
@@ -2777,6 +3043,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.69X4.73",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/a50842b69589016b5a293f02f9615dad1a7c43fdcc002ccd455b928d1f52d2ad.jpg",
+            "sha256": "a50842b69589016b5a293f02f9615dad1a7c43fdcc002ccd455b928d1f52d2ad",
+            "sourceSha256": "0c8fd2894a6db45e93c583b935be0a98eaf8a004d4b0e93e9888e2fa67d00003",
+            "editionSha256": "65ad97672256a2004e0eed383ea31ad689b52c5dbeffb3a72ba28d8ae3fe2606",
+            "productCode": "5M144M9S8.69X4.73",
+            "imageWidthIn": 8.69,
+            "imageHeightIn": 4.73,
+            "printWidthIn": 8.69,
+            "printHeightIn": 4.73,
+            "paperWidthIn": 9.69,
+            "paperHeightIn": 5.73,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2607,
+              "heightPx": 1419,
+              "crop": {
+                "left": 40,
+                "top": 39,
+                "width": 2607,
+                "height": 1419
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2607,
+                "height": 1419
+              }
+            }
+          }
         }
       }
     }
@@ -3128,6 +3432,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.44X7.82",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/8934b501e75b39a0c0f02f89c83162fa7b9a831813038283f50e7094dc9fd02d.jpg",
+            "sha256": "8934b501e75b39a0c0f02f89c83162fa7b9a831813038283f50e7094dc9fd02d",
+            "sourceSha256": "ef0e6f808609f9dd3dcec88b6161cb14825b8080efd74c9f023ed3571587aa6c",
+            "editionSha256": "103c94da2798a7a1f6e32628db377b656fec6211e05117e1aec87aebc00b0881",
+            "productCode": "5M144M9S4.44X7.82",
+            "imageWidthIn": 4.44,
+            "imageHeightIn": 7.82,
+            "printWidthIn": 4.44,
+            "printHeightIn": 7.82,
+            "paperWidthIn": 5.44,
+            "paperHeightIn": 8.82,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1332,
+              "heightPx": 2346,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1332,
+                "height": 2346
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1332,
+                "height": 2346
+              }
             }
           }
         }
@@ -3483,6 +3825,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S11.3X6.07",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/8d3382240f2f0f5db7e7b5c6123047b41a62d1437acd669e16b3100ae8b00501.jpg",
+            "sha256": "8d3382240f2f0f5db7e7b5c6123047b41a62d1437acd669e16b3100ae8b00501",
+            "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+            "editionSha256": "5c2bb03b82f912b4171e9c25f980495f7e94f9f4e09add3d3865464995ffac1f",
+            "productCode": "5M144M9S11.3X6.07",
+            "imageWidthIn": 11.3,
+            "imageHeightIn": 6.07,
+            "printWidthIn": 11.3,
+            "printHeightIn": 6.07,
+            "paperWidthIn": 12.3,
+            "paperHeightIn": 7.07,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3390,
+              "heightPx": 1821,
+              "crop": {
+                "left": 40,
+                "top": 39,
+                "width": 3390,
+                "height": 1821
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3390,
+                "height": 1821
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -3820,6 +4200,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.48X4.55",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/8c7fcc3f5fe5dc5521071fca76a685c753795ababd9d5f843802c834835dca72.jpg",
+            "sha256": "8c7fcc3f5fe5dc5521071fca76a685c753795ababd9d5f843802c834835dca72",
+            "sourceSha256": "b46b8f0e4ee9e4152f16e61fea390c9419fd3103fe1466e4f9c3f176eba302d8",
+            "editionSha256": "d25f4894f931951fd2af373f27a1c054ff4355546a30f31a5949638c0f95ad27",
+            "productCode": "5M144M9S8.48X4.55",
+            "imageWidthIn": 8.48,
+            "imageHeightIn": 4.55,
+            "printWidthIn": 8.48,
+            "printHeightIn": 4.55,
+            "paperWidthIn": 9.48,
+            "paperHeightIn": 5.55,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2544,
+              "heightPx": 1365,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2544,
+                "height": 1365
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2544,
+                "height": 1365
+              }
             }
           }
         }
@@ -4175,6 +4593,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.31X4.22",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/94ef6f88783392c44ac1f408310be39e59f27c54f6b47dccb33e911abc9f142e.jpg",
+            "sha256": "94ef6f88783392c44ac1f408310be39e59f27c54f6b47dccb33e911abc9f142e",
+            "sourceSha256": "b95f74d6d3a6f6d8a6e0343f81d98b66152b453f30cb26ecc95457c88a39f17b",
+            "editionSha256": "4f1db42313313b20b658e79e22662dbd5dc9f629ac653932665677f4d8601c67",
+            "productCode": "5M144M9S5.31X4.22",
+            "imageWidthIn": 5.31,
+            "imageHeightIn": 4.22,
+            "printWidthIn": 5.31,
+            "printHeightIn": 4.22,
+            "paperWidthIn": 6.31,
+            "paperHeightIn": 5.22,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1593,
+              "heightPx": 1266,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1593,
+                "height": 1266
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1593,
+                "height": 1266
+              }
+            }
+          }
         }
       }
     }
@@ -4526,6 +4982,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.81X4.47",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/f726b407bdd24c27921117ed2608d990bfbe215256373d07d2b700441ef63545.jpg",
+            "sha256": "f726b407bdd24c27921117ed2608d990bfbe215256373d07d2b700441ef63545",
+            "sourceSha256": "195cdad363efab3f28a46926c4e9cf2a4804b05f799f23350f4a4bc120690193",
+            "editionSha256": "cf197c099b72f560cf87f16fa18b724018197277b6835c28637923958d8056c5",
+            "productCode": "5M144M9S5.81X4.47",
+            "imageWidthIn": 5.81,
+            "imageHeightIn": 4.47,
+            "printWidthIn": 5.81,
+            "printHeightIn": 4.47,
+            "paperWidthIn": 6.81,
+            "paperHeightIn": 5.47,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1743,
+              "heightPx": 1341,
+              "crop": {
+                "left": 40,
+                "top": 39,
+                "width": 1743,
+                "height": 1341
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1743,
+                "height": 1341
+              }
             }
           }
         }
@@ -4881,6 +5375,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S10.07X13.26",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/b6538f0f824407b766f52c45266157f7cb22c6f15eae8e0a6ef328863251d1aa.jpg",
+            "sha256": "b6538f0f824407b766f52c45266157f7cb22c6f15eae8e0a6ef328863251d1aa",
+            "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+            "editionSha256": "5c7fc63e3b179625205f1c5a4668fcbecce874f5f95dff7991b47c9839fb48e0",
+            "productCode": "5M144M9S10.07X13.26",
+            "imageWidthIn": 10.07,
+            "imageHeightIn": 13.26,
+            "printWidthIn": 10.07,
+            "printHeightIn": 13.26,
+            "paperWidthIn": 11.07,
+            "paperHeightIn": 14.26,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3021,
+              "heightPx": 3978,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 3021,
+                "height": 3978
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3021,
+                "height": 3978
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -5220,6 +5752,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.55X9.94",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/a47b38074af307a490052f23cd1942fe8aaad32db7e9ec3d8f6619371b8c6b68.jpg",
+            "sha256": "a47b38074af307a490052f23cd1942fe8aaad32db7e9ec3d8f6619371b8c6b68",
+            "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+            "editionSha256": "c2ae923714d98e5105499c1a7a9e078a762266524b53c801658241377eedde9a",
+            "productCode": "5M144M9S7.55X9.94",
+            "imageWidthIn": 7.55,
+            "imageHeightIn": 9.94,
+            "printWidthIn": 7.55,
+            "printHeightIn": 9.94,
+            "paperWidthIn": 8.55,
+            "paperHeightIn": 10.94,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2265,
+              "heightPx": 2982,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 2265,
+                "height": 2982
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2265,
+                "height": 2982
+              }
+            }
+          }
         }
       },
       "small": {
@@ -5557,6 +6127,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.03X6.62",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/8704b10a76a2012cf6e4e5c4c88a6bf7e4a6df5d05af4ffb6b551846b922696b.jpg",
+            "sha256": "8704b10a76a2012cf6e4e5c4c88a6bf7e4a6df5d05af4ffb6b551846b922696b",
+            "sourceSha256": "efe8b57a36b9aacbfd40c4423ee820462dc913e5337b6a7e5d93af611691c15b",
+            "editionSha256": "b83faa37d47394ecbb68a4f6e37ed9ab90abd217222240a7be5192e00c83e246",
+            "productCode": "5M144M9S5.03X6.62",
+            "imageWidthIn": 5.03,
+            "imageHeightIn": 6.62,
+            "printWidthIn": 5.03,
+            "printHeightIn": 6.62,
+            "paperWidthIn": 6.03,
+            "paperHeightIn": 7.62,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1509,
+              "heightPx": 1986,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1509,
+                "height": 1986
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1509,
+                "height": 1986
+              }
             }
           }
         }
@@ -5912,6 +6520,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S12.98X9.7",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/12177f5f552c04206d4ae82e29446bc560c7dcd2d3e2bc71625268ebb9fdcdb0.jpg",
+            "sha256": "12177f5f552c04206d4ae82e29446bc560c7dcd2d3e2bc71625268ebb9fdcdb0",
+            "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+            "editionSha256": "e5ae70aa998f02a0d07f1b5056a69385d9b44fcff83e3950e36f7ada701e5e57",
+            "productCode": "5M144M9S12.98X9.7",
+            "imageWidthIn": 12.98,
+            "imageHeightIn": 9.7,
+            "printWidthIn": 12.98,
+            "printHeightIn": 9.7,
+            "paperWidthIn": 13.98,
+            "paperHeightIn": 10.7,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3894,
+              "heightPx": 2910,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 3894,
+                "height": 2910
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3894,
+                "height": 2910
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -6251,6 +6897,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S9.73X7.27",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/75f34b3e74b56beeafc68f9645a97de48e6f5071a81b7476d21ed299b41de115.jpg",
+            "sha256": "75f34b3e74b56beeafc68f9645a97de48e6f5071a81b7476d21ed299b41de115",
+            "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+            "editionSha256": "0368b519b14a691aa09a6f592a01a884eb59a4144daa9beac77200b86ce6fc34",
+            "productCode": "5M144M9S9.73X7.27",
+            "imageWidthIn": 9.73,
+            "imageHeightIn": 7.27,
+            "printWidthIn": 9.73,
+            "printHeightIn": 7.27,
+            "paperWidthIn": 10.73,
+            "paperHeightIn": 8.27,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2919,
+              "heightPx": 2181,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2919,
+                "height": 2181
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2919,
+                "height": 2181
+              }
+            }
+          }
         }
       },
       "small": {
@@ -6588,6 +7272,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.48X4.84",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/d49a9b028f4bced48c3327aeeb7a9ccb6bcf1259420958bf7be00734f21260c2.jpg",
+            "sha256": "d49a9b028f4bced48c3327aeeb7a9ccb6bcf1259420958bf7be00734f21260c2",
+            "sourceSha256": "e4d5114dc8c9200df2bb1c9d50aeba7ce81795cbd1ec850125cc54a3b3f20e10",
+            "editionSha256": "cfbf4e4840e956c556a377ec2fd1fe7aaa961e8ad268e7c2c51de24c314b421d",
+            "productCode": "5M144M9S6.48X4.84",
+            "imageWidthIn": 6.48,
+            "imageHeightIn": 4.84,
+            "printWidthIn": 6.48,
+            "printHeightIn": 4.84,
+            "paperWidthIn": 7.48,
+            "paperHeightIn": 5.84,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1944,
+              "heightPx": 1452,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1944,
+                "height": 1452
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1944,
+                "height": 1452
+              }
             }
           }
         }
@@ -6943,6 +7665,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.68X4.44",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/9795002ca003c648bbf5ccf5b9c9ddb658edf61c2ff6d9d81afdd9a9a11096b9.jpg",
+            "sha256": "9795002ca003c648bbf5ccf5b9c9ddb658edf61c2ff6d9d81afdd9a9a11096b9",
+            "sourceSha256": "a85207826c8015a22a24b624e5a9b54a7acefb349d4fe188e0c3f0c8c959ead3",
+            "editionSha256": "d539f5184546e0bce9326d8a3092bba0b5e8346aef0691667759759164c216f4",
+            "productCode": "5M144M9S5.68X4.44",
+            "imageWidthIn": 5.68,
+            "imageHeightIn": 4.44,
+            "printWidthIn": 5.68,
+            "printHeightIn": 4.44,
+            "paperWidthIn": 6.68,
+            "paperHeightIn": 5.44,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1704,
+              "heightPx": 1332,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1704,
+                "height": 1332
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1704,
+                "height": 1332
+              }
+            }
+          }
         }
       }
     }
@@ -7296,6 +8056,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.41X12.5",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/980e11bcb0c5c2f456f305c34344b51e5bc45925e42379770dd1ab540ae2ea6b.jpg",
+            "sha256": "980e11bcb0c5c2f456f305c34344b51e5bc45925e42379770dd1ab540ae2ea6b",
+            "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+            "editionSha256": "c96da51e5bf646ac91dbebba4fccbe05ba71048823324f8f9f95b853c16ea4ee",
+            "productCode": "5M144M9S6.41X12.5",
+            "imageWidthIn": 6.41,
+            "imageHeightIn": 12.5,
+            "printWidthIn": 6.41,
+            "printHeightIn": 12.5,
+            "paperWidthIn": 7.41,
+            "paperHeightIn": 13.5,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1923,
+              "heightPx": 3750,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1923,
+                "height": 3750
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1923,
+                "height": 3750
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -7633,6 +8431,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.81X9.38",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/1286efaa4bb3596cfe9a94c7416f0c3b6f2b78e4042f216b195ed3575c6acaff.jpg",
+            "sha256": "1286efaa4bb3596cfe9a94c7416f0c3b6f2b78e4042f216b195ed3575c6acaff",
+            "sourceSha256": "d9db397bc1de35874c1fca5a99db233358782596efa0e7b1045655e65e1a8666",
+            "editionSha256": "7be60bf381660a55441e8d1d098c210140a6b24b44c19e2bd443d08b3be14941",
+            "productCode": "5M144M9S4.81X9.38",
+            "imageWidthIn": 4.81,
+            "imageHeightIn": 9.38,
+            "printWidthIn": 4.81,
+            "printHeightIn": 9.38,
+            "paperWidthIn": 5.81,
+            "paperHeightIn": 10.38,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1443,
+              "heightPx": 2814,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1443,
+                "height": 2814
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1443,
+                "height": 2814
+              }
             }
           }
         }
@@ -7988,6 +8824,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S9.99X5.51",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/8cfc03ddd8c4c7f1fd68c6013dcd879850a800635b57e443cfd63b6f69f04a14.jpg",
+            "sha256": "8cfc03ddd8c4c7f1fd68c6013dcd879850a800635b57e443cfd63b6f69f04a14",
+            "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+            "editionSha256": "1fcc72b2953b8165b4768e9b85ef8a0c55f0937640bf135f63f5b591c1dc7d5e",
+            "productCode": "5M144M9S9.99X5.51",
+            "imageWidthIn": 9.99,
+            "imageHeightIn": 5.51,
+            "printWidthIn": 9.99,
+            "printHeightIn": 5.51,
+            "paperWidthIn": 10.99,
+            "paperHeightIn": 6.51,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2997,
+              "heightPx": 1653,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2997,
+                "height": 1653
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2997,
+                "height": 1653
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -8325,6 +9199,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.49X4.13",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/db87a07e95a7ea4594daca8f1117d8dc3c18f53aa6ac122726fd1338ab12d3cc.jpg",
+            "sha256": "db87a07e95a7ea4594daca8f1117d8dc3c18f53aa6ac122726fd1338ab12d3cc",
+            "sourceSha256": "28da06b5cfb0cb98bf45f44743266e59b386d60b03c88e41e5a9749c5a23066e",
+            "editionSha256": "b4d7580b86589371b1f435eafa9184bbceb37e0653122822c84d1ee370eb0c2b",
+            "productCode": "5M144M9S7.49X4.13",
+            "imageWidthIn": 7.49,
+            "imageHeightIn": 4.13,
+            "printWidthIn": 7.49,
+            "printHeightIn": 4.13,
+            "paperWidthIn": 8.49,
+            "paperHeightIn": 5.13,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2247,
+              "heightPx": 1239,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 2247,
+                "height": 1239
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2247,
+                "height": 1239
+              }
             }
           }
         }
@@ -8680,6 +9592,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S10.57X8.49",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/cd1c4f7226fe13e71efc3e3d41fd53a3f8b76000985689c7a0330df0814b06e6.jpg",
+            "sha256": "cd1c4f7226fe13e71efc3e3d41fd53a3f8b76000985689c7a0330df0814b06e6",
+            "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+            "editionSha256": "9d18e8e696221d4b1c856270d7a4da61c50dfea5d17ed8ba27648552ced27291",
+            "productCode": "5M144M9S10.57X8.49",
+            "imageWidthIn": 10.57,
+            "imageHeightIn": 8.49,
+            "printWidthIn": 10.57,
+            "printHeightIn": 8.49,
+            "paperWidthIn": 11.57,
+            "paperHeightIn": 9.49,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3171,
+              "heightPx": 2547,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 3171,
+                "height": 2547
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3171,
+                "height": 2547
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -9019,6 +9969,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.92X6.36",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/b834ee218a63d4e4f66bae2cd5f686aeb60c42139d7b2b9e1d0c2634198c8ea7.jpg",
+            "sha256": "b834ee218a63d4e4f66bae2cd5f686aeb60c42139d7b2b9e1d0c2634198c8ea7",
+            "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+            "editionSha256": "39dc15f99625ea7e9320ecc823253c6afdc2f616816d0e30fef17ef699564f1a",
+            "productCode": "5M144M9S7.92X6.36",
+            "imageWidthIn": 7.92,
+            "imageHeightIn": 6.36,
+            "printWidthIn": 7.92,
+            "printHeightIn": 6.36,
+            "paperWidthIn": 8.92,
+            "paperHeightIn": 7.36,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2376,
+              "heightPx": 1908,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 2376,
+                "height": 1908
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2376,
+                "height": 1908
+              }
+            }
+          }
         }
       },
       "small": {
@@ -9356,6 +10344,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.28X4.24",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/0c0024254b143417bba3ad676026780071cdc1b8e315e9f97c89fc797e0fb2a9.jpg",
+            "sha256": "0c0024254b143417bba3ad676026780071cdc1b8e315e9f97c89fc797e0fb2a9",
+            "sourceSha256": "27e80521df03e0e61b53397fe0ad804144ba024863cd7b21fb5f0dbc25abfa16",
+            "editionSha256": "8173dc8db40485433e48779676eb06d8b7f9e65a037021012dc238b47e87d2e8",
+            "productCode": "5M144M9S5.28X4.24",
+            "imageWidthIn": 5.28,
+            "imageHeightIn": 4.24,
+            "printWidthIn": 5.28,
+            "printHeightIn": 4.24,
+            "paperWidthIn": 6.28,
+            "paperHeightIn": 5.24,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1584,
+              "heightPx": 1272,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1584,
+                "height": 1272
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1584,
+                "height": 1272
+              }
             }
           }
         }
@@ -9711,6 +10737,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S11.03X6.01",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/8f22a4b896beadc039c55942a5ed9b4d04f77454732d8dd3382d57a1e1b44313.jpg",
+            "sha256": "8f22a4b896beadc039c55942a5ed9b4d04f77454732d8dd3382d57a1e1b44313",
+            "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+            "editionSha256": "02222deb78310190ee9f62ddc2157c1f7e28aa791d8bf6d3623e514427d13214",
+            "productCode": "5M144M9S11.03X6.01",
+            "imageWidthIn": 11.03,
+            "imageHeightIn": 6.01,
+            "printWidthIn": 11.03,
+            "printHeightIn": 6.01,
+            "paperWidthIn": 12.03,
+            "paperHeightIn": 7.01,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3309,
+              "heightPx": 1803,
+              "crop": {
+                "left": 40,
+                "top": 39,
+                "width": 3309,
+                "height": 1803
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3309,
+                "height": 1803
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -10048,6 +11112,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.28X4.51",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/3fac6482de0c6a97df3eea6aa5f81e60c7c120a18727c985aab2951a4db87936.jpg",
+            "sha256": "3fac6482de0c6a97df3eea6aa5f81e60c7c120a18727c985aab2951a4db87936",
+            "sourceSha256": "aff44485e93fe806c5b8fc6f9b8dc143f82843b9bfddaae8319503688e1b6b02",
+            "editionSha256": "d61d3496b358fc8e2572a50134ca33499ed9268c10cfb8dc6662f226c1ad40c0",
+            "productCode": "5M144M9S8.28X4.51",
+            "imageWidthIn": 8.28,
+            "imageHeightIn": 4.51,
+            "printWidthIn": 8.28,
+            "printHeightIn": 4.51,
+            "paperWidthIn": 9.28,
+            "paperHeightIn": 5.51,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2484,
+              "heightPx": 1353,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2484,
+                "height": 1353
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2484,
+                "height": 1353
+              }
             }
           }
         }
@@ -10403,6 +11505,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S12.3X6.01",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/d6533ab2d638c085848a08c89b6a24c756d49501dbdab8ef53866ebdb5822274.jpg",
+            "sha256": "d6533ab2d638c085848a08c89b6a24c756d49501dbdab8ef53866ebdb5822274",
+            "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+            "editionSha256": "691815a0be4809cfee2ffc8e049db64cbc8210a407f5c930aafc1eb92edf1792",
+            "productCode": "5M144M9S12.3X6.01",
+            "imageWidthIn": 12.3,
+            "imageHeightIn": 6.01,
+            "printWidthIn": 12.3,
+            "printHeightIn": 6.01,
+            "paperWidthIn": 13.3,
+            "paperHeightIn": 7.01,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3690,
+              "heightPx": 1803,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 3690,
+                "height": 1803
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3690,
+                "height": 1803
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -10740,6 +11880,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S9.21X4.5",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/e6feb741784d2fea7ac40fce2a1f498606154a83705df7e5b7723c79fd33ee23.jpg",
+            "sha256": "e6feb741784d2fea7ac40fce2a1f498606154a83705df7e5b7723c79fd33ee23",
+            "sourceSha256": "3fa2c4ab02b8eb44b094f210841181be6709ac7d880a378658e9fa186a9cf594",
+            "editionSha256": "19ffbb093691856df18ab6a960f4adc21589ab87063f37a8d7c63e2f1723a39b",
+            "productCode": "5M144M9S9.21X4.5",
+            "imageWidthIn": 9.21,
+            "imageHeightIn": 4.5,
+            "printWidthIn": 9.21,
+            "printHeightIn": 4.5,
+            "paperWidthIn": 10.21,
+            "paperHeightIn": 5.5,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2763,
+              "heightPx": 1350,
+              "crop": {
+                "left": 40,
+                "top": 39,
+                "width": 2763,
+                "height": 1350
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2763,
+                "height": 1350
+              }
             }
           }
         }
@@ -11095,6 +12273,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.47X8.71",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/fee7c7225951fd8ffd07e9edf30cedb912cfaed05cb964d5319de8bf6fae0f7d.jpg",
+            "sha256": "fee7c7225951fd8ffd07e9edf30cedb912cfaed05cb964d5319de8bf6fae0f7d",
+            "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+            "editionSha256": "0e909049cd0514d0f04274492c3350e27427ea6b8cadc425cb3f6c5f5ab3cddf",
+            "productCode": "5M144M9S5.47X8.71",
+            "imageWidthIn": 5.47,
+            "imageHeightIn": 8.71,
+            "printWidthIn": 5.47,
+            "printHeightIn": 8.71,
+            "paperWidthIn": 6.47,
+            "paperHeightIn": 9.71,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1641,
+              "heightPx": 2613,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1641,
+                "height": 2613
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1641,
+                "height": 2613
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -11432,6 +12648,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.1X6.53",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/8358e66dbbe566267f7d7f9e6da1912e48ead36853b7ba97cd6ff463769d67e6.jpg",
+            "sha256": "8358e66dbbe566267f7d7f9e6da1912e48ead36853b7ba97cd6ff463769d67e6",
+            "sourceSha256": "a7b1120a2909a39d90a7165519c80e57452a81665d0f9d576c46eb5697a0b0aa",
+            "editionSha256": "fe3f2beadd204a19191ae365ffa6c89e9444d658b1c8090821c7939feeb7b090",
+            "productCode": "5M144M9S4.1X6.53",
+            "imageWidthIn": 4.1,
+            "imageHeightIn": 6.53,
+            "printWidthIn": 4.1,
+            "printHeightIn": 6.53,
+            "paperWidthIn": 5.1,
+            "paperHeightIn": 7.53,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1230,
+              "heightPx": 1959,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1230,
+                "height": 1959
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1230,
+                "height": 1959
+              }
             }
           }
         }
@@ -11787,6 +13041,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.8X9.47",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/9b436ac4bb75c7b85f8c328f13d2a25413fb84215a841be145e93d0e5b896d1d.jpg",
+            "sha256": "9b436ac4bb75c7b85f8c328f13d2a25413fb84215a841be145e93d0e5b896d1d",
+            "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+            "editionSha256": "de6e39fd54d718a590ad7a2d5f1cecd839f3746ab88d229ae0249e007141594e",
+            "productCode": "5M144M9S5.8X9.47",
+            "imageWidthIn": 5.8,
+            "imageHeightIn": 9.47,
+            "printWidthIn": 5.8,
+            "printHeightIn": 9.47,
+            "paperWidthIn": 6.8,
+            "paperHeightIn": 10.47,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1740,
+              "heightPx": 2841,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1740,
+                "height": 2841
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1740,
+                "height": 2841
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -12124,6 +13416,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.34X7.09",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/a05d819c11d7b55f3c2557088e3fe633b6a4e243b9e5e3985acc5df1fab89b3f.jpg",
+            "sha256": "a05d819c11d7b55f3c2557088e3fe633b6a4e243b9e5e3985acc5df1fab89b3f",
+            "sourceSha256": "4b0fa45abe28e30b7ec45e7321ffab24ec04252cabd0e7afa0639e10fd7e12f7",
+            "editionSha256": "894e63203f3a41dd8b80613c5115c5d18d9241082480015a4e6443f320fdeb39",
+            "productCode": "5M144M9S4.34X7.09",
+            "imageWidthIn": 4.34,
+            "imageHeightIn": 7.09,
+            "printWidthIn": 4.34,
+            "printHeightIn": 7.09,
+            "paperWidthIn": 5.34,
+            "paperHeightIn": 8.09,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1302,
+              "heightPx": 2127,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1302,
+                "height": 2127
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1302,
+                "height": 2127
+              }
             }
           }
         }
@@ -12479,6 +13809,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.12X8.77",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/81998328db3ee2eb5e433540e0ad2f1cb9f0a38bb6a2c6f9a4fcfe5e2afe3621.jpg",
+            "sha256": "81998328db3ee2eb5e433540e0ad2f1cb9f0a38bb6a2c6f9a4fcfe5e2afe3621",
+            "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+            "editionSha256": "b1f1c9452b70813d398a7eebb58c5905b06abd8c5785ed192c8b536e538cc4f3",
+            "productCode": "5M144M9S8.12X8.77",
+            "imageWidthIn": 8.12,
+            "imageHeightIn": 8.77,
+            "printWidthIn": 8.12,
+            "printHeightIn": 8.77,
+            "paperWidthIn": 9.12,
+            "paperHeightIn": 9.77,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2436,
+              "heightPx": 2631,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2436,
+                "height": 2631
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2436,
+                "height": 2631
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -12818,6 +14186,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.09X6.57",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/5db3e48c89e6ed3fe77e695f05e81c84b923de18cb68c715fcf0baaa317c7f11.jpg",
+            "sha256": "5db3e48c89e6ed3fe77e695f05e81c84b923de18cb68c715fcf0baaa317c7f11",
+            "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+            "editionSha256": "76031b321e9b03bbe3c80e3e3a76ecf0704911bcb531dabc4c25bfa0cad67574",
+            "productCode": "5M144M9S6.09X6.57",
+            "imageWidthIn": 6.09,
+            "imageHeightIn": 6.57,
+            "printWidthIn": 6.09,
+            "printHeightIn": 6.57,
+            "paperWidthIn": 7.09,
+            "paperHeightIn": 7.57,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1827,
+              "heightPx": 1971,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1827,
+                "height": 1971
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1827,
+                "height": 1971
+              }
+            }
+          }
         }
       },
       "small": {
@@ -13155,6 +14561,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.05X4.38",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/6d5395d2974e160a889eef2ce39ef613cda7993acb43f2341b12a5500cfbd0f0.jpg",
+            "sha256": "6d5395d2974e160a889eef2ce39ef613cda7993acb43f2341b12a5500cfbd0f0",
+            "sourceSha256": "00991cd0cc5c921dc023e05c81d24fe9b7fb3a5fe3499b7ecba9a7473bf9a111",
+            "editionSha256": "ab7d4a074c71dd0545401420d0940653665fea9e48b8cf9af8e9aa55ee103dd2",
+            "productCode": "5M144M9S4.05X4.38",
+            "imageWidthIn": 4.05,
+            "imageHeightIn": 4.38,
+            "printWidthIn": 4.05,
+            "printHeightIn": 4.38,
+            "paperWidthIn": 5.05,
+            "paperHeightIn": 5.38,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1215,
+              "heightPx": 1314,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1215,
+                "height": 1314
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1215,
+                "height": 1314
+              }
             }
           }
         }
@@ -13510,6 +14954,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.2X8.55",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/1ec87b50f891b4f95889595318d69b593c6399e1bc1fcedaa634f5f19f279c1a.jpg",
+            "sha256": "1ec87b50f891b4f95889595318d69b593c6399e1bc1fcedaa634f5f19f279c1a",
+            "sourceSha256": "33094144963f5f4fc7e2fe15e8f1958fb407edfd1e63d5b91b668d96e31381e9",
+            "editionSha256": "611cb8e54e5d3020863336883166590d60d237aa7c59a8a6627701d66449991b",
+            "productCode": "5M144M9S4.2X8.55",
+            "imageWidthIn": 4.2,
+            "imageHeightIn": 8.55,
+            "printWidthIn": 4.2,
+            "printHeightIn": 8.55,
+            "paperWidthIn": 5.2,
+            "paperHeightIn": 9.55,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1260,
+              "heightPx": 2565,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1260,
+                "height": 2565
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1260,
+                "height": 2565
+              }
+            }
+          }
         }
       }
     }
@@ -13861,6 +15343,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.11X8.46",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/24d305ad80cd1d4aa51e57cea0c7d284d1c815a89645f652f19879ecf1363472.jpg",
+            "sha256": "24d305ad80cd1d4aa51e57cea0c7d284d1c815a89645f652f19879ecf1363472",
+            "sourceSha256": "feca1831b68b4619f2e32e9ce4845e1f5b82ee19f9c56f20fede898dcdb9e5d8",
+            "editionSha256": "d1bc0f3c379b57b0410ce2ab57ce8260063e26c78c992ce1313e04bb34ac20e9",
+            "productCode": "5M144M9S4.11X8.46",
+            "imageWidthIn": 4.11,
+            "imageHeightIn": 8.46,
+            "printWidthIn": 4.11,
+            "printHeightIn": 8.46,
+            "paperWidthIn": 5.11,
+            "paperHeightIn": 9.46,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1233,
+              "heightPx": 2538,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1233,
+                "height": 2538
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1233,
+                "height": 2538
+              }
             }
           }
         }
@@ -14216,6 +15736,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S9.2X11.04",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/72d761931c4a2ce5f6086df28976d1e719518de13b4090e13614a44c44fe23f8.jpg",
+            "sha256": "72d761931c4a2ce5f6086df28976d1e719518de13b4090e13614a44c44fe23f8",
+            "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+            "editionSha256": "277eb3c1e8c5b6ea252976da46e9f929cad2b3149be9f55f6581ffaea7c9189d",
+            "productCode": "5M144M9S9.2X11.04",
+            "imageWidthIn": 9.2,
+            "imageHeightIn": 11.04,
+            "printWidthIn": 9.2,
+            "printHeightIn": 11.04,
+            "paperWidthIn": 10.2,
+            "paperHeightIn": 12.04,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2760,
+              "heightPx": 3312,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 2760,
+                "height": 3312
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2760,
+                "height": 3312
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -14555,6 +16113,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.9X8.28",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/977fdbc4a5a112c04d6c8588f292b1091ac4e3720cbeb1b76b701708c6d08206.jpg",
+            "sha256": "977fdbc4a5a112c04d6c8588f292b1091ac4e3720cbeb1b76b701708c6d08206",
+            "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+            "editionSha256": "112cdba0602b04a8bafa9011b3283d0b9c16139283b19cadb1c70895050af359",
+            "productCode": "5M144M9S6.9X8.28",
+            "imageWidthIn": 6.9,
+            "imageHeightIn": 8.28,
+            "printWidthIn": 6.9,
+            "printHeightIn": 8.28,
+            "paperWidthIn": 7.9,
+            "paperHeightIn": 9.28,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2070,
+              "heightPx": 2484,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2070,
+                "height": 2484
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2070,
+                "height": 2484
+              }
+            }
+          }
         }
       },
       "small": {
@@ -14892,6 +16488,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.59X5.51",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/602921474c9157fddb706b9b678e0821056df141719558cd6551702f0cdeb56a.jpg",
+            "sha256": "602921474c9157fddb706b9b678e0821056df141719558cd6551702f0cdeb56a",
+            "sourceSha256": "8582b47c15e26cb4d55c0a9b1d27814db0300c0e95b1c0b236d1de7e6930d5e4",
+            "editionSha256": "cac5bf151e78011642e91a9a50c131d3593b7d84b29155b4bbf103e674f776cc",
+            "productCode": "5M144M9S4.59X5.51",
+            "imageWidthIn": 4.59,
+            "imageHeightIn": 5.51,
+            "printWidthIn": 4.59,
+            "printHeightIn": 5.51,
+            "paperWidthIn": 5.59,
+            "paperHeightIn": 6.51,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1377,
+              "heightPx": 1653,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1377,
+                "height": 1653
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1377,
+                "height": 1653
+              }
             }
           }
         }
@@ -15247,6 +16881,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S9.27X14.22",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/a4ef0cc67b3ebbd438b0ca9ed8b22dc53a82a58052517f41000cc61046cfabb0.jpg",
+            "sha256": "a4ef0cc67b3ebbd438b0ca9ed8b22dc53a82a58052517f41000cc61046cfabb0",
+            "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+            "editionSha256": "b5f034925c7622a9315e7ba65e53e6c09dd5b561fddfb9d75e0be837f7a6ec0e",
+            "productCode": "5M144M9S9.27X14.22",
+            "imageWidthIn": 9.27,
+            "imageHeightIn": 14.22,
+            "printWidthIn": 9.27,
+            "printHeightIn": 14.22,
+            "paperWidthIn": 10.27,
+            "paperHeightIn": 15.22,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2781,
+              "heightPx": 4266,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2781,
+                "height": 4266
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2781,
+                "height": 4266
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -15586,6 +17258,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.95X10.66",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/534c63c66562fda077744c0f2d46c6dd8845ecbeae93bf190533487fd4f6046f.jpg",
+            "sha256": "534c63c66562fda077744c0f2d46c6dd8845ecbeae93bf190533487fd4f6046f",
+            "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+            "editionSha256": "7d6b06918d296267b61db5800fdd81d8af0dc9476847ab91c95d668c36c16a4d",
+            "productCode": "5M144M9S6.95X10.66",
+            "imageWidthIn": 6.95,
+            "imageHeightIn": 10.66,
+            "printWidthIn": 6.95,
+            "printHeightIn": 10.66,
+            "paperWidthIn": 7.95,
+            "paperHeightIn": 11.66,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2085,
+              "heightPx": 3198,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 2085,
+                "height": 3198
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2085,
+                "height": 3198
+              }
+            }
+          }
         }
       },
       "small": {
@@ -15923,6 +17633,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.63X7.1",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/582a66f74d7c1418ae9a5e2cdf0124bdb4ef53ce380c34f1c801ae89bec79da1.jpg",
+            "sha256": "582a66f74d7c1418ae9a5e2cdf0124bdb4ef53ce380c34f1c801ae89bec79da1",
+            "sourceSha256": "79dee2d86ebe0792015d179d41676d3b228722333218a45d0310191870b77d4b",
+            "editionSha256": "3f231460d7256d3201216f46cb71ef2e3cda1bde5b338fd5793e346f753b66a8",
+            "productCode": "5M144M9S4.63X7.1",
+            "imageWidthIn": 4.63,
+            "imageHeightIn": 7.1,
+            "printWidthIn": 4.63,
+            "printHeightIn": 7.1,
+            "paperWidthIn": 5.63,
+            "paperHeightIn": 8.1,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1389,
+              "heightPx": 2130,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 1389,
+                "height": 2130
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1389,
+                "height": 2130
+              }
             }
           }
         }
@@ -16278,6 +18026,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S11.13X9.92",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/5e2ea9ec4f6fd534e63e8b0f10b5ff7c777414a5af8f78168730427d356c4fe5.jpg",
+            "sha256": "5e2ea9ec4f6fd534e63e8b0f10b5ff7c777414a5af8f78168730427d356c4fe5",
+            "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+            "editionSha256": "14d6108667031207534655f815b3680b6eb58fddd0793bcbdadf29057828cfbd",
+            "productCode": "5M144M9S11.13X9.92",
+            "imageWidthIn": 11.13,
+            "imageHeightIn": 9.92,
+            "printWidthIn": 11.13,
+            "printHeightIn": 9.92,
+            "paperWidthIn": 12.13,
+            "paperHeightIn": 10.92,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3339,
+              "heightPx": 2976,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 3339,
+                "height": 2976
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3339,
+                "height": 2976
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -16617,6 +18403,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.34X7.43",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/6eec5f4ba7c36805f7789cb00db8abb12ab08a8efab2ca7744efab820149d311.jpg",
+            "sha256": "6eec5f4ba7c36805f7789cb00db8abb12ab08a8efab2ca7744efab820149d311",
+            "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+            "editionSha256": "75981c4b277ae990fb02edc97d325a6d9af2e2d09131a92486e5c939ca242e8d",
+            "productCode": "5M144M9S8.34X7.43",
+            "imageWidthIn": 8.34,
+            "imageHeightIn": 7.43,
+            "printWidthIn": 8.34,
+            "printHeightIn": 7.43,
+            "paperWidthIn": 9.34,
+            "paperHeightIn": 8.43,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2502,
+              "heightPx": 2229,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 2502,
+                "height": 2229
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2502,
+                "height": 2229
+              }
+            }
+          }
         }
       },
       "small": {
@@ -16954,6 +18778,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.56X4.95",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/62a8e91e20a7c3b619934ff64dd69f0d33ebddd8e6f27bb957d6baba64a3e49a.jpg",
+            "sha256": "62a8e91e20a7c3b619934ff64dd69f0d33ebddd8e6f27bb957d6baba64a3e49a",
+            "sourceSha256": "dc8995433c52d1030a46cb62215f3b82e3656151805ef50fbefc55d137e87abf",
+            "editionSha256": "351479f5e702dddf987a81fd39caba9f0eedb3fa19d2ba886e06584eb8bc97ce",
+            "productCode": "5M144M9S5.56X4.95",
+            "imageWidthIn": 5.56,
+            "imageHeightIn": 4.95,
+            "printWidthIn": 5.56,
+            "printHeightIn": 4.95,
+            "paperWidthIn": 6.56,
+            "paperHeightIn": 5.95,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1668,
+              "heightPx": 1485,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1668,
+                "height": 1485
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1668,
+                "height": 1485
+              }
             }
           }
         }
@@ -17309,6 +19171,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.56X10.75",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/0d1f55bdb34444985c9e90a9f23187d3b87d9f8eab8664c44a3eb0d54b42bc65.jpg",
+            "sha256": "0d1f55bdb34444985c9e90a9f23187d3b87d9f8eab8664c44a3eb0d54b42bc65",
+            "sourceSha256": "ecb81d17191279e61bd833cd5ae946aef1a66692e5d0d33e38684f9ed682cf0e",
+            "editionSha256": "41f82f9a68ff6387bf7bd232300b81d6e367fe9b30a026c8b523995ab360dd79",
+            "productCode": "5M144M9S4.56X10.75",
+            "imageWidthIn": 4.56,
+            "imageHeightIn": 10.75,
+            "printWidthIn": 4.56,
+            "printHeightIn": 10.75,
+            "paperWidthIn": 5.56,
+            "paperHeightIn": 11.75,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1368,
+              "heightPx": 3225,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1368,
+                "height": 3225
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1368,
+                "height": 3225
+              }
+            }
+          }
         }
       }
     }
@@ -17662,6 +19562,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.44X10.18",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/33c68e55dcb56d9ef1500ac46d2e6ef0d759ee4816e6d86d58da7c6bfb676866.jpg",
+            "sha256": "33c68e55dcb56d9ef1500ac46d2e6ef0d759ee4816e6d86d58da7c6bfb676866",
+            "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+            "editionSha256": "53ce646729decb329a58de2b73d3915b8d2caaba5b4cff6aa97c9b15d837b82e",
+            "productCode": "5M144M9S6.44X10.18",
+            "imageWidthIn": 6.44,
+            "imageHeightIn": 10.18,
+            "printWidthIn": 6.44,
+            "printHeightIn": 10.18,
+            "paperWidthIn": 7.44,
+            "paperHeightIn": 11.18,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1932,
+              "heightPx": 3054,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1932,
+                "height": 3054
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1932,
+                "height": 3054
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -17999,6 +19937,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.82X7.62",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/6533e7f95b5b43a6f53bced4e817885c149fdc6d879252883bf1298954e8a97f.jpg",
+            "sha256": "6533e7f95b5b43a6f53bced4e817885c149fdc6d879252883bf1298954e8a97f",
+            "sourceSha256": "6b4902c77605085d03d17e7eb96ec1ddd22174ce66cf95d38854bac454a393c8",
+            "editionSha256": "ede754cf547be12cc7daeb627ceb51361ca2748e8151f0c9ed14ef4e5e2258d6",
+            "productCode": "5M144M9S4.82X7.62",
+            "imageWidthIn": 4.82,
+            "imageHeightIn": 7.62,
+            "printWidthIn": 4.82,
+            "printHeightIn": 7.62,
+            "paperWidthIn": 5.82,
+            "paperHeightIn": 8.62,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1446,
+              "heightPx": 2286,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1446,
+                "height": 2286
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1446,
+                "height": 2286
+              }
             }
           }
         }
@@ -18354,6 +20330,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.53X11.28",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/3a980e10e81ea84938915db4c2259eed6d4728a6c53941abe60cc091aed9e6eb.jpg",
+            "sha256": "3a980e10e81ea84938915db4c2259eed6d4728a6c53941abe60cc091aed9e6eb",
+            "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+            "editionSha256": "b03e87c3e23bf77a2e0d9978a8eb16e03669a7e2614fb05c8c9465e4dea742ad",
+            "productCode": "5M144M9S6.53X11.28",
+            "imageWidthIn": 6.53,
+            "imageHeightIn": 11.28,
+            "printWidthIn": 6.53,
+            "printHeightIn": 11.28,
+            "paperWidthIn": 7.53,
+            "paperHeightIn": 12.28,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1959,
+              "heightPx": 3384,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1959,
+                "height": 3384
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1959,
+                "height": 3384
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -18691,6 +20705,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.89X8.45",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/2f4eec4f6b1c413553257251f27c9fb110e51e9fa39eddc26a643d3e6f9c6221.jpg",
+            "sha256": "2f4eec4f6b1c413553257251f27c9fb110e51e9fa39eddc26a643d3e6f9c6221",
+            "sourceSha256": "04304c3b81d592ca8970bfb39800674b8a32b03167fc047579b32e1af1e8a51e",
+            "editionSha256": "f3bcff4eb3ae0f060d3a3e5befec89d82cdd4b8a8c3f332ab2a9e4266bf68cbf",
+            "productCode": "5M144M9S4.89X8.45",
+            "imageWidthIn": 4.89,
+            "imageHeightIn": 8.45,
+            "printWidthIn": 4.89,
+            "printHeightIn": 8.45,
+            "paperWidthIn": 5.89,
+            "paperHeightIn": 9.45,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1467,
+              "heightPx": 2535,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1467,
+                "height": 2535
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1467,
+                "height": 2535
+              }
             }
           }
         }
@@ -19046,6 +21098,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.07X12.99",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/136b929d138ef6e80fb840190031b09efd30ed40eb0a4efc046cb3ad8f242c74.jpg",
+            "sha256": "136b929d138ef6e80fb840190031b09efd30ed40eb0a4efc046cb3ad8f242c74",
+            "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+            "editionSha256": "58f84d96821916995f47b3b3c1e661b8fba06d6af5d15a1dc517ca526328917b",
+            "productCode": "5M144M9S6.07X12.99",
+            "imageWidthIn": 6.07,
+            "imageHeightIn": 12.99,
+            "printWidthIn": 6.07,
+            "printHeightIn": 12.99,
+            "paperWidthIn": 7.07,
+            "paperHeightIn": 13.99,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1821,
+              "heightPx": 3897,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1821,
+                "height": 3897
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1821,
+                "height": 3897
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -19383,6 +21473,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.55X9.74",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/659c2e1101b8f3cddfdab087f2c7a05254ed901923c9eb6bef965e999975b66e.jpg",
+            "sha256": "659c2e1101b8f3cddfdab087f2c7a05254ed901923c9eb6bef965e999975b66e",
+            "sourceSha256": "e5c29949848fd24e46bc04984e15755111608d9942778df9c471ce701e0d6077",
+            "editionSha256": "37c40b6e5f601eeb74fc983295027140787c8991c6c18e3681cbc9f97a2cc3da",
+            "productCode": "5M144M9S4.55X9.74",
+            "imageWidthIn": 4.55,
+            "imageHeightIn": 9.74,
+            "printWidthIn": 4.55,
+            "printHeightIn": 9.74,
+            "paperWidthIn": 5.55,
+            "paperHeightIn": 10.74,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1365,
+              "heightPx": 2922,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1365,
+                "height": 2922
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1365,
+                "height": 2922
+              }
             }
           }
         }
@@ -19738,6 +21866,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S11.85X6.29",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/5083f84d9c62c0aa5630557776b63053aa17559c603ab2796b643f6ec972107e.jpg",
+            "sha256": "5083f84d9c62c0aa5630557776b63053aa17559c603ab2796b643f6ec972107e",
+            "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+            "editionSha256": "a6cd958c22a561c4901f8598506007494536f930160fda0015f50d0b2759fede",
+            "productCode": "5M144M9S11.85X6.29",
+            "imageWidthIn": 11.85,
+            "imageHeightIn": 6.29,
+            "printWidthIn": 11.85,
+            "printHeightIn": 6.29,
+            "paperWidthIn": 12.85,
+            "paperHeightIn": 7.29,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3555,
+              "heightPx": 1887,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 3555,
+                "height": 1887
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3555,
+                "height": 1887
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -20075,6 +22241,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.88X4.71",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/ab161eaa5e9c7d737523845a6c7d947372c6e6528c7dc7f7cfdc856b2e8300d3.jpg",
+            "sha256": "ab161eaa5e9c7d737523845a6c7d947372c6e6528c7dc7f7cfdc856b2e8300d3",
+            "sourceSha256": "ed56370de4128434cc367fee1e3019c325ecc2488b96d0b0977ae956778e6bd8",
+            "editionSha256": "d7f4340569fc78c9168ba1205a6186d56beb51b66255dfe325b5d9600035266e",
+            "productCode": "5M144M9S8.88X4.71",
+            "imageWidthIn": 8.88,
+            "imageHeightIn": 4.71,
+            "printWidthIn": 8.88,
+            "printHeightIn": 4.71,
+            "paperWidthIn": 9.88,
+            "paperHeightIn": 5.71,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2664,
+              "heightPx": 1413,
+              "crop": {
+                "left": 40,
+                "top": 39,
+                "width": 2664,
+                "height": 1413
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2664,
+                "height": 1413
+              }
             }
           }
         }
@@ -20430,6 +22634,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.72X9.17",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/73c6c52643558c064c11f6cec121c4bc5707466de37f79e3951218495805abbc.jpg",
+            "sha256": "73c6c52643558c064c11f6cec121c4bc5707466de37f79e3951218495805abbc",
+            "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+            "editionSha256": "b1121ca470b381de97af83001ba43ab0aa2a61c1ff8490fd79bd6d46cdd730b2",
+            "productCode": "5M144M9S7.72X9.17",
+            "imageWidthIn": 7.72,
+            "imageHeightIn": 9.17,
+            "printWidthIn": 7.72,
+            "printHeightIn": 9.17,
+            "paperWidthIn": 8.72,
+            "paperHeightIn": 10.17,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2316,
+              "heightPx": 2751,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2316,
+                "height": 2751
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2316,
+                "height": 2751
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -20769,6 +23011,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.78X6.87",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/19e73a9377efbd8ba4b4a193b44917031b9b3dd8f448326c832a6c95676a9571.jpg",
+            "sha256": "19e73a9377efbd8ba4b4a193b44917031b9b3dd8f448326c832a6c95676a9571",
+            "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+            "editionSha256": "f68f373b4a5c730e84f32ea2cf324e47ec3c93e1dc673ba385af929cc2118eae",
+            "productCode": "5M144M9S5.78X6.87",
+            "imageWidthIn": 5.78,
+            "imageHeightIn": 6.87,
+            "printWidthIn": 5.78,
+            "printHeightIn": 6.87,
+            "paperWidthIn": 6.78,
+            "paperHeightIn": 7.87,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1734,
+              "heightPx": 2061,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1734,
+                "height": 2061
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1734,
+                "height": 2061
+              }
+            }
+          }
         }
       },
       "small": {
@@ -21106,6 +23386,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.01X4.74",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/5b8db2e2c49dffca1240fbb86cf56b43ddeaddffc363e67863de2582a2baee08.jpg",
+            "sha256": "5b8db2e2c49dffca1240fbb86cf56b43ddeaddffc363e67863de2582a2baee08",
+            "sourceSha256": "8d0001455d68aeb418bf677d9fea86fb302fc0b87b1c283c05ac66a72c4d1e5f",
+            "editionSha256": "0ed80d227f39779efe6eb4e483e53cc73aa13f65266e8ea55ed0e1f60eae51c7",
+            "productCode": "5M144M9S4.01X4.74",
+            "imageWidthIn": 3.85,
+            "imageHeightIn": 4.58,
+            "printWidthIn": 4.01,
+            "printHeightIn": 4.74,
+            "paperWidthIn": 5.01,
+            "paperHeightIn": 5.74,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1203,
+              "heightPx": 1422,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1155,
+                "height": 1374
+              },
+              "content": {
+                "left": 24,
+                "top": 24,
+                "width": 1155,
+                "height": 1374
+              }
             }
           }
         }
@@ -21461,6 +23779,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S12.48X14.15",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/9fd4c9d4a63ceb7594cc6b830b635e278911d1a1fcb3f4cd24ba93abffd60e30.jpg",
+            "sha256": "9fd4c9d4a63ceb7594cc6b830b635e278911d1a1fcb3f4cd24ba93abffd60e30",
+            "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+            "editionSha256": "68b300ef911769a13343aaf4ba80c3de9d5e47ad59b25a78287d7c5892ab3637",
+            "productCode": "5M144M9S12.48X14.15",
+            "imageWidthIn": 12.48,
+            "imageHeightIn": 14.15,
+            "printWidthIn": 12.48,
+            "printHeightIn": 14.15,
+            "paperWidthIn": 13.48,
+            "paperHeightIn": 15.15,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3744,
+              "heightPx": 4245,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 3744,
+                "height": 4245
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3744,
+                "height": 4245
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -21800,6 +24156,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S9.36X10.61",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/5baedda4c4e8724179b909bb99b3357ef3b345f157354413bc516cddc71d47d3.jpg",
+            "sha256": "5baedda4c4e8724179b909bb99b3357ef3b345f157354413bc516cddc71d47d3",
+            "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+            "editionSha256": "f27b661380a16ba85dcc1db88336002b08306c45b42ba6d26cb32b545663a96c",
+            "productCode": "5M144M9S9.36X10.61",
+            "imageWidthIn": 9.36,
+            "imageHeightIn": 10.61,
+            "printWidthIn": 9.36,
+            "printHeightIn": 10.61,
+            "paperWidthIn": 10.36,
+            "paperHeightIn": 11.61,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2808,
+              "heightPx": 3183,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 2808,
+                "height": 3183
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2808,
+                "height": 3183
+              }
+            }
+          }
         }
       },
       "small": {
@@ -22137,6 +24531,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.23X7.07",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/0507cf77fcad8a2ec3332f112fa4fc6039d351ba1f7b36054731a8cedeb496cf.jpg",
+            "sha256": "0507cf77fcad8a2ec3332f112fa4fc6039d351ba1f7b36054731a8cedeb496cf",
+            "sourceSha256": "f1d2b007c68458ac861ed9baa2f609874e63c2893d5762746b6e9d08736aadb8",
+            "editionSha256": "5423193972a070cea674aa0cb25ca98ce0c037b87cb0a3a11f953a1d8ff030d6",
+            "productCode": "5M144M9S6.23X7.07",
+            "imageWidthIn": 6.23,
+            "imageHeightIn": 7.07,
+            "printWidthIn": 6.23,
+            "printHeightIn": 7.07,
+            "paperWidthIn": 7.23,
+            "paperHeightIn": 8.07,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1869,
+              "heightPx": 2121,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1869,
+                "height": 2121
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1869,
+                "height": 2121
+              }
             }
           }
         }
@@ -22492,6 +24924,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.18X9.72",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/40b1e29f12aec17b05ed4ea716a7807783ccbf4e97308510a7d17b71f95438fd.jpg",
+            "sha256": "40b1e29f12aec17b05ed4ea716a7807783ccbf4e97308510a7d17b71f95438fd",
+            "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+            "editionSha256": "ae734b06fd62e996df2148cd94bd315a9567ddffb3a1cebd373c8fa4119b10c7",
+            "productCode": "5M144M9S8.18X9.72",
+            "imageWidthIn": 8.18,
+            "imageHeightIn": 9.72,
+            "printWidthIn": 8.18,
+            "printHeightIn": 9.72,
+            "paperWidthIn": 9.18,
+            "paperHeightIn": 10.72,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2454,
+              "heightPx": 2916,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2454,
+                "height": 2916
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2454,
+                "height": 2916
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -22831,6 +25301,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.13X7.28",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/10172fff990839ed2a0041bb8bdfd7dbd0165a870346579257670357daed35b9.jpg",
+            "sha256": "10172fff990839ed2a0041bb8bdfd7dbd0165a870346579257670357daed35b9",
+            "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+            "editionSha256": "9f88b426bf5a65585583ef0d911e60e1506b592da62412a96808d3267365a684",
+            "productCode": "5M144M9S6.13X7.28",
+            "imageWidthIn": 6.13,
+            "imageHeightIn": 7.28,
+            "printWidthIn": 6.13,
+            "printHeightIn": 7.28,
+            "paperWidthIn": 7.13,
+            "paperHeightIn": 8.28,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1839,
+              "heightPx": 2184,
+              "crop": {
+                "left": 39,
+                "top": 40,
+                "width": 1839,
+                "height": 2184
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1839,
+                "height": 2184
+              }
+            }
+          }
         }
       },
       "small": {
@@ -23168,6 +25676,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.08X4.85",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/814fcd76f044ec0bc2a830fee91141a243bd04d4029e4976996feb1c37ff6bb8.jpg",
+            "sha256": "814fcd76f044ec0bc2a830fee91141a243bd04d4029e4976996feb1c37ff6bb8",
+            "sourceSha256": "86143871b46604af0b65da02244fd5b03799bb8898b937dab2d0fd536e39b45f",
+            "editionSha256": "9ec52688fbfa96b75edb85c273f2e2b89fcf8d5f2c5c63bfeb86fae3d07fe838",
+            "productCode": "5M144M9S4.08X4.85",
+            "imageWidthIn": 4.08,
+            "imageHeightIn": 4.85,
+            "printWidthIn": 4.08,
+            "printHeightIn": 4.85,
+            "paperWidthIn": 5.08,
+            "paperHeightIn": 5.85,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1224,
+              "heightPx": 1455,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1224,
+                "height": 1455
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1224,
+                "height": 1455
+              }
             }
           }
         }
@@ -23523,6 +26069,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.83X10.14",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/278dffdd8942f8278d5cb91fb65d6ce90058f53cbc8f61ca24d9f733f1e042af.jpg",
+            "sha256": "278dffdd8942f8278d5cb91fb65d6ce90058f53cbc8f61ca24d9f733f1e042af",
+            "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+            "editionSha256": "9a05c95bc42c2414baea6ff4f4bde8fc75720508db3cc7c11c2dd97f3a6d3a54",
+            "productCode": "5M144M9S8.83X10.14",
+            "imageWidthIn": 8.83,
+            "imageHeightIn": 10.14,
+            "printWidthIn": 8.83,
+            "printHeightIn": 10.14,
+            "paperWidthIn": 9.83,
+            "paperHeightIn": 11.14,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2649,
+              "heightPx": 3042,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2649,
+                "height": 3042
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2649,
+                "height": 3042
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -23862,6 +26446,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.62X7.6",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/65c5d9e883781e64365927c51662188234d447def9d056f11c0effcd594a91b5.jpg",
+            "sha256": "65c5d9e883781e64365927c51662188234d447def9d056f11c0effcd594a91b5",
+            "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+            "editionSha256": "3249082cd5c7574f507646a9bf225882ec3857a6d0c7ba57dcb52356e2669936",
+            "productCode": "5M144M9S6.62X7.6",
+            "imageWidthIn": 6.62,
+            "imageHeightIn": 7.6,
+            "printWidthIn": 6.62,
+            "printHeightIn": 7.6,
+            "paperWidthIn": 7.62,
+            "paperHeightIn": 8.6,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1986,
+              "heightPx": 2280,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 1986,
+                "height": 2280
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1986,
+                "height": 2280
+              }
+            }
+          }
         }
       },
       "small": {
@@ -24199,6 +26821,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.41X5.06",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/f1a375eb58838d491993c8d37bb2068aae72f1e3d7acfdf2781f8269b97faf4a.jpg",
+            "sha256": "f1a375eb58838d491993c8d37bb2068aae72f1e3d7acfdf2781f8269b97faf4a",
+            "sourceSha256": "481ae5d44c8a375122b2da8649b31f3ae1824571e80db1fc20e12235101519d6",
+            "editionSha256": "6accb2c124ae350862604d8e0c47e6948e5ad1a647b3e87790a37e9e5d1c5d2e",
+            "productCode": "5M144M9S4.41X5.06",
+            "imageWidthIn": 4.41,
+            "imageHeightIn": 5.06,
+            "printWidthIn": 4.41,
+            "printHeightIn": 5.06,
+            "paperWidthIn": 5.41,
+            "paperHeightIn": 6.06,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1323,
+              "heightPx": 1518,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 1323,
+                "height": 1518
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1323,
+                "height": 1518
+              }
             }
           }
         }
@@ -24554,6 +27214,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.22X9.32",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/a4a25a47d6cebc32d6d8c52b83ece4c41ea2746e23d8228b768e0ecd4261c68b.jpg",
+            "sha256": "a4a25a47d6cebc32d6d8c52b83ece4c41ea2746e23d8228b768e0ecd4261c68b",
+            "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+            "editionSha256": "cc839f9584cfb2c535cbb365b01625990e2258ea2bcd9772de774ade38197ae0",
+            "productCode": "5M144M9S8.22X9.32",
+            "imageWidthIn": 8.22,
+            "imageHeightIn": 9.32,
+            "printWidthIn": 8.22,
+            "printHeightIn": 9.32,
+            "paperWidthIn": 9.22,
+            "paperHeightIn": 10.32,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2466,
+              "heightPx": 2796,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 2466,
+                "height": 2796
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2466,
+                "height": 2796
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -24893,6 +27591,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.16X6.99",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/aeecc24a03fe2aa9dcedc679e8b260c49c934936c838dcc014627b94860a8425.jpg",
+            "sha256": "aeecc24a03fe2aa9dcedc679e8b260c49c934936c838dcc014627b94860a8425",
+            "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+            "editionSha256": "d22369409ffe92586b11a377de8e2ebfd0860a21df0516de5db76710c5236e50",
+            "productCode": "5M144M9S6.16X6.99",
+            "imageWidthIn": 6.16,
+            "imageHeightIn": 6.99,
+            "printWidthIn": 6.16,
+            "printHeightIn": 6.99,
+            "paperWidthIn": 7.16,
+            "paperHeightIn": 7.99,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1848,
+              "heightPx": 2097,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1848,
+                "height": 2097
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1848,
+                "height": 2097
+              }
+            }
+          }
         }
       },
       "small": {
@@ -25230,6 +27966,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.1X4.65",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/0eca993e7442b3cc26df1e61c72dd4c63b43dda9b8478c38fd944001bf102d78.jpg",
+            "sha256": "0eca993e7442b3cc26df1e61c72dd4c63b43dda9b8478c38fd944001bf102d78",
+            "sourceSha256": "c064ff27cc814a19d7f94fdabe29407cfdac91d0b9f2bc3cfb6fe5fadb17f509",
+            "editionSha256": "30db74077dddee5f9ae91fab4c353bdf153e562f53ffc4af8097562d2cf70962",
+            "productCode": "5M144M9S4.1X4.65",
+            "imageWidthIn": 4.1,
+            "imageHeightIn": 4.65,
+            "printWidthIn": 4.1,
+            "printHeightIn": 4.65,
+            "paperWidthIn": 5.1,
+            "paperHeightIn": 5.65,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1230,
+              "heightPx": 1395,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1230,
+                "height": 1395
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1230,
+                "height": 1395
+              }
             }
           }
         }
@@ -25585,6 +28359,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.63X9.59",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/5fa931dca6fc8e19d210e5e5bd4be09f59a0112156ee4e7a22050f1db9cebce7.jpg",
+            "sha256": "5fa931dca6fc8e19d210e5e5bd4be09f59a0112156ee4e7a22050f1db9cebce7",
+            "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+            "editionSha256": "7ef4277e55d3081415b25ea806c1ec83125af7a9954a04b62af209b82cef91ee",
+            "productCode": "5M144M9S8.63X9.59",
+            "imageWidthIn": 8.63,
+            "imageHeightIn": 9.59,
+            "printWidthIn": 8.63,
+            "printHeightIn": 9.59,
+            "paperWidthIn": 9.63,
+            "paperHeightIn": 10.59,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2589,
+              "heightPx": 2877,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2589,
+                "height": 2877
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2589,
+                "height": 2877
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -25924,6 +28736,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.47X7.19",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/7c0b3d0e1898eb7e4e8a983aa746ca8c3566c574531eb4e4896382d254fcd4c9.jpg",
+            "sha256": "7c0b3d0e1898eb7e4e8a983aa746ca8c3566c574531eb4e4896382d254fcd4c9",
+            "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+            "editionSha256": "8f1374a6dc26f65c87773586d90de35ec9404b1c518c868c6f240d58e6082135",
+            "productCode": "5M144M9S6.47X7.19",
+            "imageWidthIn": 6.47,
+            "imageHeightIn": 7.19,
+            "printWidthIn": 6.47,
+            "printHeightIn": 7.19,
+            "paperWidthIn": 7.47,
+            "paperHeightIn": 8.19,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1941,
+              "heightPx": 2157,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1941,
+                "height": 2157
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1941,
+                "height": 2157
+              }
+            }
+          }
         }
       },
       "small": {
@@ -26261,6 +29111,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.31X4.79",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/77f5d066b1014f895372a1dffd5a99ffd58c35b7d5933fe98ef98ad3be24a537.jpg",
+            "sha256": "77f5d066b1014f895372a1dffd5a99ffd58c35b7d5933fe98ef98ad3be24a537",
+            "sourceSha256": "7fe1f219694938047039ba2866c93c4999bfaac5c633e4759ac1eb8d69e8ce0b",
+            "editionSha256": "86b1c77473c8b5a3be244776d9a126eebcb4e8b7447045e99aa41e11e9030f6d",
+            "productCode": "5M144M9S4.31X4.79",
+            "imageWidthIn": 4.31,
+            "imageHeightIn": 4.79,
+            "printWidthIn": 4.31,
+            "printHeightIn": 4.79,
+            "paperWidthIn": 5.31,
+            "paperHeightIn": 5.79,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1293,
+              "heightPx": 1437,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1293,
+                "height": 1437
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1293,
+                "height": 1437
+              }
             }
           }
         }
@@ -26616,6 +29504,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.94X14.32",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/97e657bc2f9d1936e9e963eaa477dab82bc7e012ed7bb5ea64dfe3e4e30d1df8.jpg",
+            "sha256": "97e657bc2f9d1936e9e963eaa477dab82bc7e012ed7bb5ea64dfe3e4e30d1df8",
+            "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+            "editionSha256": "9d598b2f22f3c834deacdcdf5cf14f45c3f66237080dbb3392ed9f46a7852b9d",
+            "productCode": "5M144M9S7.94X14.32",
+            "imageWidthIn": 7.94,
+            "imageHeightIn": 14.32,
+            "printWidthIn": 7.94,
+            "printHeightIn": 14.32,
+            "paperWidthIn": 8.94,
+            "paperHeightIn": 15.32,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2382,
+              "heightPx": 4296,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 2382,
+                "height": 4296
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2382,
+                "height": 4296
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -26955,6 +29881,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.95X10.73",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/fae64cd2654cca08d8aa5465c56d959a8b1638763deb9e086a3c6db11e26693e.jpg",
+            "sha256": "fae64cd2654cca08d8aa5465c56d959a8b1638763deb9e086a3c6db11e26693e",
+            "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+            "editionSha256": "d720ce21d36d8fcf862bbd298f6d183016d772ac65afc456f05624ad1d14dde1",
+            "productCode": "5M144M9S5.95X10.73",
+            "imageWidthIn": 5.95,
+            "imageHeightIn": 10.73,
+            "printWidthIn": 5.95,
+            "printHeightIn": 10.73,
+            "paperWidthIn": 6.95,
+            "paperHeightIn": 11.73,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1785,
+              "heightPx": 3219,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1785,
+                "height": 3219
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1785,
+                "height": 3219
+              }
+            }
+          }
         }
       },
       "small": {
@@ -27292,6 +30256,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4X7.19",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/a7858cc074d10b3cc0d6d1e85f44b80209b11f7193742af4dd9188b5f26a377b.jpg",
+            "sha256": "a7858cc074d10b3cc0d6d1e85f44b80209b11f7193742af4dd9188b5f26a377b",
+            "sourceSha256": "25f264aa6914a699d1b93bfe024f9db1142fc37a0e0796a09ef24c9de884a063",
+            "editionSha256": "f85c04b486df9c91ec36a05d42f7f94fb02dd135d2f9b1277920dedfd74bb2eb",
+            "productCode": "5M144M9S4X7.19",
+            "imageWidthIn": 3.96,
+            "imageHeightIn": 7.15,
+            "printWidthIn": 4,
+            "printHeightIn": 7.19,
+            "paperWidthIn": 5,
+            "paperHeightIn": 8.19,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1200,
+              "heightPx": 2157,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1188,
+                "height": 2145
+              },
+              "content": {
+                "left": 6,
+                "top": 6,
+                "width": 1188,
+                "height": 2145
+              }
             }
           }
         }
@@ -27647,6 +30649,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.34X9.04",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/5c2d09462e3e17da0d5c5bd7833da71298d837d0b9eb97b00e3cb95ec1c5f2ca.jpg",
+            "sha256": "5c2d09462e3e17da0d5c5bd7833da71298d837d0b9eb97b00e3cb95ec1c5f2ca",
+            "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+            "editionSha256": "1670749c1a57fe9d8ca5fc00b9b04b8cd4604aa56c129881cee5abd43b6e28aa",
+            "productCode": "5M144M9S7.34X9.04",
+            "imageWidthIn": 7.34,
+            "imageHeightIn": 9.04,
+            "printWidthIn": 7.34,
+            "printHeightIn": 9.04,
+            "paperWidthIn": 8.34,
+            "paperHeightIn": 10.04,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2202,
+              "heightPx": 2712,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2202,
+                "height": 2712
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2202,
+                "height": 2712
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -27984,6 +31024,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.5X6.78",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/08c49a086ade6053b7b5188d4f0c01c5271b0895e679dac4214456c41dbfe45e.jpg",
+            "sha256": "08c49a086ade6053b7b5188d4f0c01c5271b0895e679dac4214456c41dbfe45e",
+            "sourceSha256": "224cf88ed37480851b9f356aef045f763feaf1dab17791e40de56462e5f7009e",
+            "editionSha256": "5d096ee2a17e9dfa6764f12e5ef22061d72beca381da1b04cef50e725396e07f",
+            "productCode": "5M144M9S5.5X6.78",
+            "imageWidthIn": 5.5,
+            "imageHeightIn": 6.78,
+            "printWidthIn": 5.5,
+            "printHeightIn": 6.78,
+            "paperWidthIn": 6.5,
+            "paperHeightIn": 7.78,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1650,
+              "heightPx": 2034,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1650,
+                "height": 2034
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1650,
+                "height": 2034
+              }
             }
           }
         }
@@ -28339,6 +31417,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S12.54X8.86",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/d28472581c55bb54aad036cce23caaf3ef0db91021bd84d79ffac1c1d61439c9.jpg",
+            "sha256": "d28472581c55bb54aad036cce23caaf3ef0db91021bd84d79ffac1c1d61439c9",
+            "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+            "editionSha256": "64fd490f7437ceb82dc89f78a88364ad687453e098f6626b18b2ca896d74b40d",
+            "productCode": "5M144M9S12.54X8.86",
+            "imageWidthIn": 12.54,
+            "imageHeightIn": 8.86,
+            "printWidthIn": 12.54,
+            "printHeightIn": 8.86,
+            "paperWidthIn": 13.54,
+            "paperHeightIn": 9.86,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3762,
+              "heightPx": 2658,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 3762,
+                "height": 2658
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3762,
+                "height": 2658
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -28678,6 +31794,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S9.4X6.64",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/0666066a48643f21466a7e685d45ad4530819e7c6600691e831c5cda7e1fa177.jpg",
+            "sha256": "0666066a48643f21466a7e685d45ad4530819e7c6600691e831c5cda7e1fa177",
+            "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+            "editionSha256": "eb297a2f5d22f7aa33e7d78b37ad8677ae90e4d5642d29bb98df224fcda0ea23",
+            "productCode": "5M144M9S9.4X6.64",
+            "imageWidthIn": 9.4,
+            "imageHeightIn": 6.64,
+            "printWidthIn": 9.4,
+            "printHeightIn": 6.64,
+            "paperWidthIn": 10.4,
+            "paperHeightIn": 7.64,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2820,
+              "heightPx": 1992,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2820,
+                "height": 1992
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2820,
+                "height": 1992
+              }
+            }
+          }
         }
       },
       "small": {
@@ -29015,6 +32169,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.26X4.42",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/d1c33470884601ca30d649096e498ab3f61c8685dceac8a246977b4080bc6f3d.jpg",
+            "sha256": "d1c33470884601ca30d649096e498ab3f61c8685dceac8a246977b4080bc6f3d",
+            "sourceSha256": "aedc5f02ffad299c06df5b91e0f27d0834f28e857ef21fbbf12e78c2f4eed498",
+            "editionSha256": "7559c3bf73ba8c6d3aff28045644617edcbb2edbe46d8fd572d3a634ddb8ff35",
+            "productCode": "5M144M9S6.26X4.42",
+            "imageWidthIn": 6.26,
+            "imageHeightIn": 4.42,
+            "printWidthIn": 6.26,
+            "printHeightIn": 4.42,
+            "paperWidthIn": 7.26,
+            "paperHeightIn": 5.42,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1878,
+              "heightPx": 1326,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1878,
+                "height": 1326
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1878,
+                "height": 1326
+              }
             }
           }
         }
@@ -29370,6 +32562,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S10.77X5.92",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/18a5e03706aa3ee031a46bda2b803375c978b8844d3cc41462fccc3c0c996171.jpg",
+            "sha256": "18a5e03706aa3ee031a46bda2b803375c978b8844d3cc41462fccc3c0c996171",
+            "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+            "editionSha256": "ff51eb2565503d48b96a6e15aa231111ea49a80845f017cbc08b6ab0cf4138eb",
+            "productCode": "5M144M9S10.77X5.92",
+            "imageWidthIn": 10.77,
+            "imageHeightIn": 5.92,
+            "printWidthIn": 10.77,
+            "printHeightIn": 5.92,
+            "paperWidthIn": 11.77,
+            "paperHeightIn": 6.92,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3231,
+              "heightPx": 1776,
+              "crop": {
+                "left": 40,
+                "top": 39,
+                "width": 3231,
+                "height": 1776
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3231,
+                "height": 1776
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -29707,6 +32937,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.08X4.44",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/772c4edd8aff28992e5b90bea3f53d3df830bb7ae20c074df1a53f71beec61bb.jpg",
+            "sha256": "772c4edd8aff28992e5b90bea3f53d3df830bb7ae20c074df1a53f71beec61bb",
+            "sourceSha256": "1ee3276a27d79c77c6071d61e8a15ca8cdef22755f870b4108857e96544d3324",
+            "editionSha256": "1055a6e737f5b9b32597bdcdee11ee6e0fa806dd2b43e1d6de4dcd0f04c3a20c",
+            "productCode": "5M144M9S8.08X4.44",
+            "imageWidthIn": 8.08,
+            "imageHeightIn": 4.44,
+            "printWidthIn": 8.08,
+            "printHeightIn": 4.44,
+            "paperWidthIn": 9.08,
+            "paperHeightIn": 5.44,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2424,
+              "heightPx": 1332,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 2424,
+                "height": 1332
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2424,
+                "height": 1332
+              }
             }
           }
         }
@@ -30062,6 +33330,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.58X4.98",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/2d13f97728cabac048c949e44f204a79988ed77945f536361e96d2f65b8dcb3e.jpg",
+            "sha256": "2d13f97728cabac048c949e44f204a79988ed77945f536361e96d2f65b8dcb3e",
+            "sourceSha256": "2ac7ebc0362dccb4541843ff4ee59ee8a340b977a81075bd80b59b18e2fd68c0",
+            "editionSha256": "335f96276b81626a04762869cdbdeb3cbdca107a39283635382f1bf76428f0b0",
+            "productCode": "5M144M9S4.58X4.98",
+            "imageWidthIn": 4.58,
+            "imageHeightIn": 4.98,
+            "printWidthIn": 4.58,
+            "printHeightIn": 4.98,
+            "paperWidthIn": 5.58,
+            "paperHeightIn": 5.98,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1374,
+              "heightPx": 1494,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1374,
+                "height": 1494
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1374,
+                "height": 1494
+              }
+            }
+          }
         }
       }
     }
@@ -30415,6 +33721,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.9X5.6",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/57667af19fe4a1b4ef36a93281c08e2acd28dda48036127d7f0529bd72d007a8.jpg",
+            "sha256": "57667af19fe4a1b4ef36a93281c08e2acd28dda48036127d7f0529bd72d007a8",
+            "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+            "editionSha256": "f0cb4fc59e265303f9bac6274911851ded3bdf3a5cc7b7931f238c5be352d114",
+            "productCode": "5M144M9S7.9X5.6",
+            "imageWidthIn": 7.9,
+            "imageHeightIn": 5.6,
+            "printWidthIn": 7.9,
+            "printHeightIn": 5.6,
+            "paperWidthIn": 8.9,
+            "paperHeightIn": 6.6,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2370,
+              "heightPx": 1680,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2370,
+                "height": 1680
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2370,
+                "height": 1680
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -30752,6 +34096,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.92X4.2",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/a47e7f483f08979e9c8cf0027fb7908950a16edb049e18294214893d1dd171fe.jpg",
+            "sha256": "a47e7f483f08979e9c8cf0027fb7908950a16edb049e18294214893d1dd171fe",
+            "sourceSha256": "7c1548e796d8092598d938cdc667490ac5547b9ea3b40dd091dac5f02b9af36a",
+            "editionSha256": "7e9fd5ad31ec0dd92daf8d3c92fba50e822f2797ad9bded6dea28d0db8b0d0b6",
+            "productCode": "5M144M9S5.92X4.2",
+            "imageWidthIn": 5.92,
+            "imageHeightIn": 4.2,
+            "printWidthIn": 5.92,
+            "printHeightIn": 4.2,
+            "paperWidthIn": 6.92,
+            "paperHeightIn": 5.2,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1776,
+              "heightPx": 1260,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1776,
+                "height": 1260
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1776,
+                "height": 1260
+              }
             }
           }
         }
@@ -31107,6 +34489,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.1X7.57",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/fc1f38c63542c7df3c829e909d1000435aa8902e1ff9a8396df593a93bb43755.jpg",
+            "sha256": "fc1f38c63542c7df3c829e909d1000435aa8902e1ff9a8396df593a93bb43755",
+            "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+            "editionSha256": "623f6b3f02fe4118711d60f4f04a7cfe759849811fa8f7baf6c0f1aaf1b9a5d9",
+            "productCode": "5M144M9S5.1X7.57",
+            "imageWidthIn": 5.1,
+            "imageHeightIn": 7.57,
+            "printWidthIn": 5.1,
+            "printHeightIn": 7.57,
+            "paperWidthIn": 6.1,
+            "paperHeightIn": 8.57,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1530,
+              "heightPx": 2271,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1530,
+                "height": 2271
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1530,
+                "height": 2271
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -31444,6 +34864,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4X5.85",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/cb3668dbecd25786737e4d96111ee1a15b9d928373047afbb0f8267e3918f65f.jpg",
+            "sha256": "cb3668dbecd25786737e4d96111ee1a15b9d928373047afbb0f8267e3918f65f",
+            "sourceSha256": "8f9474d0331b5e35dde65eb7231a440a4d2c5a6fe7065fb190c4012fb8011036",
+            "editionSha256": "dd17e4ca71f6bc7dca1c57dbfefb1dcfa322559a5f4a5c1e556dd38d488fea8b",
+            "productCode": "5M144M9S4X5.85",
+            "imageWidthIn": 3.82,
+            "imageHeightIn": 5.67,
+            "printWidthIn": 4,
+            "printHeightIn": 5.85,
+            "paperWidthIn": 5,
+            "paperHeightIn": 6.85,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1200,
+              "heightPx": 1755,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1146,
+                "height": 1701
+              },
+              "content": {
+                "left": 27,
+                "top": 27,
+                "width": 1146,
+                "height": 1701
+              }
             }
           }
         }
@@ -31799,6 +35257,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S9.82X13.98",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/989c0a86c3724617fdcc5e8c00218d40566ebbf781b2e3f205d6461499285e22.jpg",
+            "sha256": "989c0a86c3724617fdcc5e8c00218d40566ebbf781b2e3f205d6461499285e22",
+            "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+            "editionSha256": "4972d917536c3c71b85aefced914a5da4f3dbe5bb417ea15923b81653ba21f73",
+            "productCode": "5M144M9S9.82X13.98",
+            "imageWidthIn": 9.82,
+            "imageHeightIn": 13.98,
+            "printWidthIn": 9.82,
+            "printHeightIn": 13.98,
+            "paperWidthIn": 10.82,
+            "paperHeightIn": 14.98,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2946,
+              "heightPx": 4194,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2946,
+                "height": 4194
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2946,
+                "height": 4194
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -32138,6 +35634,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.36X10.48",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/0455b1da608286605756ed3b215a1948a7abb836a926415f117e807099d87470.jpg",
+            "sha256": "0455b1da608286605756ed3b215a1948a7abb836a926415f117e807099d87470",
+            "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+            "editionSha256": "a8609e56366615ffdae61c5e9ea80dd8b6d4ad671ad1485f8e6dc0e3bddc1ecb",
+            "productCode": "5M144M9S7.36X10.48",
+            "imageWidthIn": 7.36,
+            "imageHeightIn": 10.48,
+            "printWidthIn": 7.36,
+            "printHeightIn": 10.48,
+            "paperWidthIn": 8.36,
+            "paperHeightIn": 11.48,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2208,
+              "heightPx": 3144,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 2208,
+                "height": 3144
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2208,
+                "height": 3144
+              }
+            }
+          }
         }
       },
       "small": {
@@ -32475,6 +36009,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.9X6.98",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/e7f06e31cf07281aa4272caa2972502e917e70158655eaf481d2daeac7f4a873.jpg",
+            "sha256": "e7f06e31cf07281aa4272caa2972502e917e70158655eaf481d2daeac7f4a873",
+            "sourceSha256": "351ea08ba8e9d7e62a0a46973dcb1c5502d9a3bd7e23d29c68a97aa821cb4411",
+            "editionSha256": "4618e5f3b543a693d357860315061f47ce8b9a6be0873e0d8fb338bec4384ba1",
+            "productCode": "5M144M9S4.9X6.98",
+            "imageWidthIn": 4.9,
+            "imageHeightIn": 6.98,
+            "printWidthIn": 4.9,
+            "printHeightIn": 6.98,
+            "paperWidthIn": 5.9,
+            "paperHeightIn": 7.98,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1470,
+              "heightPx": 2094,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1470,
+                "height": 2094
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1470,
+                "height": 2094
+              }
             }
           }
         }
@@ -32830,6 +36402,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.51X4.92",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/aad37ad1dcd7d423f421da047b352287a8f77d8e73505d096ec48cbad1b7a4c2.jpg",
+            "sha256": "aad37ad1dcd7d423f421da047b352287a8f77d8e73505d096ec48cbad1b7a4c2",
+            "sourceSha256": "5f4a86b09b49d0134e2dac402eb65b5372711c23b0bb0c7a07a9862eab9e7163",
+            "editionSha256": "2eac546d899a3e82cb86cbbe92d005274e60f9aa616bc36527d32f3a8d78d047",
+            "productCode": "5M144M9S4.51X4.92",
+            "imageWidthIn": 4.51,
+            "imageHeightIn": 4.92,
+            "printWidthIn": 4.51,
+            "printHeightIn": 4.92,
+            "paperWidthIn": 5.51,
+            "paperHeightIn": 5.92,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1353,
+              "heightPx": 1476,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1353,
+                "height": 1476
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1353,
+                "height": 1476
+              }
+            }
+          }
         }
       }
     }
@@ -33181,6 +36791,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.57X5.25",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/82f0167ec26951ed925a342b1bf2dc07b52436af546a910b605daadcc3ccd601.jpg",
+            "sha256": "82f0167ec26951ed925a342b1bf2dc07b52436af546a910b605daadcc3ccd601",
+            "sourceSha256": "1904273e6e15dd884990184a7a6c577df6d6621be04a839e4f32223d6c3cbddc",
+            "editionSha256": "3007413f9adb044f1c740a98dc46ea68ca8ebefe64d00e77a997bd22d407db82",
+            "productCode": "5M144M9S4.57X5.25",
+            "imageWidthIn": 4.57,
+            "imageHeightIn": 5.25,
+            "printWidthIn": 4.57,
+            "printHeightIn": 5.25,
+            "paperWidthIn": 5.57,
+            "paperHeightIn": 6.25,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1371,
+              "heightPx": 1575,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1371,
+                "height": 1575
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1371,
+                "height": 1575
+              }
             }
           }
         }
@@ -33536,6 +37184,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.74X6.81",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/d1edb240a4e1e3de2d34f980f74463ae2032bd9d55737cb41fc05bb4954d40b4.jpg",
+            "sha256": "d1edb240a4e1e3de2d34f980f74463ae2032bd9d55737cb41fc05bb4954d40b4",
+            "sourceSha256": "738cecea10878b15dfc3c165445da7359d3603c137d579322a64193be34628bc",
+            "editionSha256": "4e3285f1d7c74d5ef74642cf2c216f5bc2ea3764680d9aa1f4c6248d70624d3c",
+            "productCode": "5M144M9S4.74X6.81",
+            "imageWidthIn": 4.74,
+            "imageHeightIn": 6.81,
+            "printWidthIn": 4.74,
+            "printHeightIn": 6.81,
+            "paperWidthIn": 5.74,
+            "paperHeightIn": 7.81,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1422,
+              "heightPx": 2043,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1422,
+                "height": 2043
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1422,
+                "height": 2043
+              }
+            }
+          }
         }
       }
     }
@@ -33887,6 +37573,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.79X6.81",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/b32c0992389eb84c6faf6dc2bc3ff69b5a8e1232b89791624ebc8a2f5f50c860.jpg",
+            "sha256": "b32c0992389eb84c6faf6dc2bc3ff69b5a8e1232b89791624ebc8a2f5f50c860",
+            "sourceSha256": "76d1b80563112ed04fff1f301964c36fe19cfbb0934e8bc763b1ea1d39f1ffce",
+            "editionSha256": "6b11f98860eeeb3d6dc4ee44cb631d6799777131ca5fad14f47ed900e1c1cf99",
+            "productCode": "5M144M9S4.79X6.81",
+            "imageWidthIn": 4.79,
+            "imageHeightIn": 6.81,
+            "printWidthIn": 4.79,
+            "printHeightIn": 6.81,
+            "paperWidthIn": 5.79,
+            "paperHeightIn": 7.81,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1437,
+              "heightPx": 2043,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 1437,
+                "height": 2043
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1437,
+                "height": 2043
+              }
             }
           }
         }
@@ -34242,6 +37966,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S10.05X11.05",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/acccb7877eda15c4b2b7bd2fd915eae39fa36a15ee0fc7d870477179d49deb67.jpg",
+            "sha256": "acccb7877eda15c4b2b7bd2fd915eae39fa36a15ee0fc7d870477179d49deb67",
+            "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+            "editionSha256": "0e18fa51a5f68fd88d8e883c7c0445895123c4657691ccf813f0d9555f751feb",
+            "productCode": "5M144M9S10.05X11.05",
+            "imageWidthIn": 10.05,
+            "imageHeightIn": 11.05,
+            "printWidthIn": 10.05,
+            "printHeightIn": 11.05,
+            "paperWidthIn": 11.05,
+            "paperHeightIn": 12.05,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 3015,
+              "heightPx": 3315,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 3015,
+                "height": 3315
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 3015,
+                "height": 3315
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -34581,6 +38343,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.53X8.28",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/440c8651c8104c6e3d019626218dcc1a463408bb2bdadbbd60fff87e3fa599e4.jpg",
+            "sha256": "440c8651c8104c6e3d019626218dcc1a463408bb2bdadbbd60fff87e3fa599e4",
+            "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+            "editionSha256": "18bdc256f9f3fd81feee5acd5c4f6c0d679eebbf0154293d17b0661f5efbfe99",
+            "productCode": "5M144M9S7.53X8.28",
+            "imageWidthIn": 7.53,
+            "imageHeightIn": 8.28,
+            "printWidthIn": 7.53,
+            "printHeightIn": 8.28,
+            "paperWidthIn": 8.53,
+            "paperHeightIn": 9.28,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2259,
+              "heightPx": 2484,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 2259,
+                "height": 2484
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2259,
+                "height": 2484
+              }
+            }
+          }
         }
       },
       "small": {
@@ -34918,6 +38718,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.02X5.52",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/e15391438e2b8914c48c055b6a3317e055816ec06964e102d7971f9386197caf.jpg",
+            "sha256": "e15391438e2b8914c48c055b6a3317e055816ec06964e102d7971f9386197caf",
+            "sourceSha256": "ae59335fa62d7c60c09ecc9d253326b8004bf5de81d23e51659f843f65acbb02",
+            "editionSha256": "3c952454a6a7550dad0770ff1712f0435549c46e46b2f5c795d5a783b8c629aa",
+            "productCode": "5M144M9S5.02X5.52",
+            "imageWidthIn": 5.02,
+            "imageHeightIn": 5.52,
+            "printWidthIn": 5.02,
+            "printHeightIn": 5.52,
+            "paperWidthIn": 6.02,
+            "paperHeightIn": 6.52,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1506,
+              "heightPx": 1656,
+              "crop": {
+                "left": 39,
+                "top": 38,
+                "width": 1506,
+                "height": 1656
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1506,
+                "height": 1656
+              }
             }
           }
         }
@@ -35273,6 +39111,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.04X6.64",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/86e057cdf3367f2775611843cf98dbd4973b1ce0b8fd2d6eb7faac33620a8fca.jpg",
+            "sha256": "86e057cdf3367f2775611843cf98dbd4973b1ce0b8fd2d6eb7faac33620a8fca",
+            "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+            "editionSha256": "3189a06a4179f9737ed18b12a13a194d3679be43d971c9457164eefb974273d4",
+            "productCode": "5M144M9S6.04X6.64",
+            "imageWidthIn": 6.04,
+            "imageHeightIn": 6.64,
+            "printWidthIn": 6.04,
+            "printHeightIn": 6.64,
+            "paperWidthIn": 7.04,
+            "paperHeightIn": 7.64,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1812,
+              "heightPx": 1992,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1812,
+                "height": 1992
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1812,
+                "height": 1992
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -35610,6 +39486,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.53X4.98",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/acec6735aa3e7045068e478e344221aa03b860b26df388840a21d8b454590c76.jpg",
+            "sha256": "acec6735aa3e7045068e478e344221aa03b860b26df388840a21d8b454590c76",
+            "sourceSha256": "b1c0792fbe9bb8015c1bfea1a5f5a733a2712dde158ee6d6b932d62953840689",
+            "editionSha256": "cfe74c214492589f2e57d31fa4467d8bca4cffb8a3198427cfbac9140a6225c5",
+            "productCode": "5M144M9S4.53X4.98",
+            "imageWidthIn": 4.53,
+            "imageHeightIn": 4.98,
+            "printWidthIn": 4.53,
+            "printHeightIn": 4.98,
+            "paperWidthIn": 5.53,
+            "paperHeightIn": 5.98,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1359,
+              "heightPx": 1494,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1359,
+                "height": 1494
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1359,
+                "height": 1494
+              }
             }
           }
         }
@@ -35965,6 +39879,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.23X6.82",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/116f0cc122c8ffd7a0508fec87928e0923c75b6f083fb17e1e38ee1b989ac0ac.jpg",
+            "sha256": "116f0cc122c8ffd7a0508fec87928e0923c75b6f083fb17e1e38ee1b989ac0ac",
+            "sourceSha256": "a87a784a8e3dcd764542faafaf1898e5397a7fb90a2f441c8eb728e36f3bf93a",
+            "editionSha256": "8b838a6460114d3f2f1afc77992606f6b2e2cd01b4e4ceda73c3cbda21b40b72",
+            "productCode": "5M144M9S4.23X6.82",
+            "imageWidthIn": 4.23,
+            "imageHeightIn": 6.82,
+            "printWidthIn": 4.23,
+            "printHeightIn": 6.82,
+            "paperWidthIn": 5.23,
+            "paperHeightIn": 7.82,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1269,
+              "heightPx": 2046,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1269,
+                "height": 2046
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1269,
+                "height": 2046
+              }
+            }
+          }
         }
       }
     }
@@ -36318,6 +40270,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S7.59X10.09",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/4bdc38f194a53e0b4508dce177c0f6fcf4933ba15b9d601fe9d2cee8de5761fb.jpg",
+            "sha256": "4bdc38f194a53e0b4508dce177c0f6fcf4933ba15b9d601fe9d2cee8de5761fb",
+            "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+            "editionSha256": "2f3c76734f92f3e7d0751c41697baaf503bfcdf7dd3afeea30e72b955bb77b09",
+            "productCode": "5M144M9S7.59X10.09",
+            "imageWidthIn": 7.59,
+            "imageHeightIn": 10.09,
+            "printWidthIn": 7.59,
+            "printHeightIn": 10.09,
+            "paperWidthIn": 8.59,
+            "paperHeightIn": 11.09,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2277,
+              "heightPx": 3027,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 2277,
+                "height": 3027
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2277,
+                "height": 3027
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -36657,6 +40647,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S5.69X7.56",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/d128626372bd360799b527b5d40e98ffce5937438053c4d961eca987dc17938a.jpg",
+            "sha256": "d128626372bd360799b527b5d40e98ffce5937438053c4d961eca987dc17938a",
+            "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+            "editionSha256": "402ce02374afd57279e795ea4a516af97a05931c90fbf105a636f0e6f21bb91a",
+            "productCode": "5M144M9S5.69X7.56",
+            "imageWidthIn": 5.69,
+            "imageHeightIn": 7.56,
+            "printWidthIn": 5.69,
+            "printHeightIn": 7.56,
+            "paperWidthIn": 6.69,
+            "paperHeightIn": 8.56,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1707,
+              "heightPx": 2268,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 1707,
+                "height": 2268
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1707,
+                "height": 2268
+              }
+            }
+          }
         }
       },
       "small": {
@@ -36994,6 +41022,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S4.01X5.26",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/cde05da6d322f9d8a51e68969c5f810a3659f5bb6920692e9a811733f67cc65d.jpg",
+            "sha256": "cde05da6d322f9d8a51e68969c5f810a3659f5bb6920692e9a811733f67cc65d",
+            "sourceSha256": "ee47c2147cea6350c13271b805b6912e0677270435b79fbb2740b98840b73fb1",
+            "editionSha256": "411eb2c9532998676d1abcc48224a95d794975f9e7e6cc3052ff7cef4d7e2ae2",
+            "productCode": "5M144M9S4.01X5.26",
+            "imageWidthIn": 3.79,
+            "imageHeightIn": 5.04,
+            "printWidthIn": 4.01,
+            "printHeightIn": 5.26,
+            "paperWidthIn": 5.01,
+            "paperHeightIn": 6.26,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1203,
+              "heightPx": 1578,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 1137,
+                "height": 1512
+              },
+              "content": {
+                "left": 33,
+                "top": 33,
+                "width": 1137,
+                "height": 1512
+              }
             }
           }
         }
@@ -37349,6 +41415,44 @@
               "layoutReview": "full-image-white-border-mat-overlap"
             }
           }
+        },
+        "bordered": {
+          "sku": "5M144M9S8.05X7.02",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/c2b68ba3adbdb3de21cd678abe50e06ac08e6ba1e9735a579bcc61f5edbc0ec4.jpg",
+            "sha256": "c2b68ba3adbdb3de21cd678abe50e06ac08e6ba1e9735a579bcc61f5edbc0ec4",
+            "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+            "editionSha256": "2da7738d6ee075e7b4bdc8e0655a245f74a8a5a8e370dfa3d94f8bd20b307f49",
+            "productCode": "5M144M9S8.05X7.02",
+            "imageWidthIn": 8.05,
+            "imageHeightIn": 7.02,
+            "printWidthIn": 8.05,
+            "printHeightIn": 7.02,
+            "paperWidthIn": 9.05,
+            "paperHeightIn": 8.02,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 2415,
+              "heightPx": 2106,
+              "crop": {
+                "left": 39,
+                "top": 39,
+                "width": 2415,
+                "height": 2106
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 2415,
+                "height": 2106
+              }
+            }
+          }
         }
       },
       "medium": {
@@ -37686,6 +41790,44 @@
                 }
               },
               "layoutReview": "full-image-white-border-mat-overlap"
+            }
+          }
+        },
+        "bordered": {
+          "sku": "5M144M9S6.03X5.26",
+          "asset": {
+            "provider": "finerworks",
+            "url": "https://vermillionaurora.com/print-editions/77f9a9778406d0984f4a4440d1efcf03539cc0fba65abf4f05470450d58ba7f5.jpg",
+            "sha256": "77f9a9778406d0984f4a4440d1efcf03539cc0fba65abf4f05470450d58ba7f5",
+            "sourceSha256": "10579f595b334fcd8ac4c8815c42ff1505daed415ff8193ebac069659d4cbc56",
+            "editionSha256": "db3807974fc62620fd6c9b535d2ef659aa002dc4707fdb50294f9a7350011872",
+            "productCode": "5M144M9S6.03X5.26",
+            "imageWidthIn": 6.03,
+            "imageHeightIn": 5.26,
+            "printWidthIn": 6.03,
+            "printHeightIn": 5.26,
+            "paperWidthIn": 7.03,
+            "paperHeightIn": 6.26,
+            "borderIn": 0.5,
+            "approved": true,
+            "layoutApproved": true,
+            "layout": "full-image-finerworks-border-v1",
+            "layoutSpec": {
+              "dpi": 300,
+              "widthPx": 1809,
+              "heightPx": 1578,
+              "crop": {
+                "left": 38,
+                "top": 39,
+                "width": 1809,
+                "height": 1578
+              },
+              "content": {
+                "left": 0,
+                "top": 0,
+                "width": 1809,
+                "height": 1578
+              }
             }
           }
         }

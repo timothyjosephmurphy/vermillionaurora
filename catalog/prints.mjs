@@ -12,7 +12,7 @@ export const readyPrints=Object.fromEntries(proposals.flatMap(({product,options}
   amount:o.amount,currency:'USD',sku:o.paper.sku,scale:o.scale,imageSize:o.image,paperSize:{width:o.paper.width,height:o.paper.height,unit:'in'},paper:o.paperLabel,testOnly:o.testOnly,sampleOnly:o.sampleOnly,
   assetUrl:o.asset.url,assetSha256:o.asset.sha256,sourceSha256:config.artworks[product.id].source.sha256,
   layoutApproved:o.asset.layoutApproved===true,preview:product.image,attributes:{},minimumDpi:config.minimumDpi,
-  ...(o.sizeBasis==='image-proportional'?{layout:o.asset.layout,sizeBasis:o.sizeBasis}:{})
+  ...(o.sizeBasis==='image-proportional'?{layout:o.asset.layout,sizeBasis:o.sizeBasis}:{}),...(o.print?{printSize:o.print}:{})
   ,...(o.mat?{mat:o.mat,baseSku:o.baseSku}:{}),...(o.frame?{frame:o.frame,unframedAmount:o.unframedAmount}:{})
 }])));
 // Covers saved prices/materials and every actually sellable output, including image changes.

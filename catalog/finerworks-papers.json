@@ -7,7 +7,8 @@
       "productTypeId": 5,
       "name": "Archival Matte Paper",
       "styleIds": [
-        8
+        8,
+        9
       ]
     },
     "style": {
@@ -28,7 +29,27 @@
       "availableSizes": [],
       "borderSize": 0,
       "bleed": 0.06
-    }
+    },
+    "borderedStyle": {
+      "id": 9,
+      "name": "1/2\" Extra Border Added",
+      "description": "An extra 1/2” border will go around the printed area. This means the actual size of the paper will be one inch larger than the original width and height ordered. ",
+      "customSizing": true,
+      "allowDecimal": true,
+      "allowRotate": true,
+      "min": {
+        "width": 4,
+        "height": 4
+      },
+      "max": {
+        "width": 40,
+        "height": 90
+      },
+      "availableSizes": [],
+      "borderSize": 0.5,
+      "bleed": 0
+    },
+    "borderedVerifiedAt": "2026-10-17"
   },
   {
     "paper": "watercolor-bright-white",
@@ -38,7 +59,8 @@
       "productTypeId": 5,
       "name": "Watercolor Bright White",
       "styleIds": [
-        8
+        8,
+        9
       ]
     },
     "style": {
@@ -59,7 +81,27 @@
       "availableSizes": [],
       "borderSize": 0,
       "bleed": 0.06
-    }
+    },
+    "borderedStyle": {
+      "id": 9,
+      "name": "1/2\" Extra Border Added",
+      "description": "An extra 1/2” border will go around the printed area. This means the actual size of the paper will be one inch larger than the original width and height ordered. ",
+      "customSizing": true,
+      "allowDecimal": true,
+      "allowRotate": true,
+      "min": {
+        "width": 4,
+        "height": 4
+      },
+      "max": {
+        "width": 40,
+        "height": 90
+      },
+      "availableSizes": [],
+      "borderSize": 0.5,
+      "bleed": 0
+    },
+    "borderedVerifiedAt": "2026-10-17"
   },
   {
     "paper": "photo-rag",
@@ -69,7 +111,8 @@
       "productTypeId": 11,
       "name": "Hahnemühle Photo Rag",
       "styleIds": [
-        8
+        8,
+        9
       ]
     },
     "style": {
@@ -90,6 +133,26 @@
       "availableSizes": [],
       "borderSize": 0,
       "bleed": 0.06
-    }
+    },
+    "borderedStyle": {
+      "id": 9,
+      "name": "1/2\" Extra Border Added",
+      "description": "An extra 1/2” border will go around the printed area. This means the actual size of the paper will be one inch larger than the original width and height ordered. ",
+      "customSizing": true,
+      "allowDecimal": true,
+      "allowRotate": true,
+      "min": {
+        "width": 4,
+        "height": 4
+      },
+      "max": {
+        "width": 40,
+        "height": 90
+      },
+      "availableSizes": [],
+      "borderSize": 0.5,
+      "bleed": 0
+    },
+    "borderedVerifiedAt": "2026-10-17"
   }
 ]

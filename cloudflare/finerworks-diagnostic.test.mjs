@@ -9,9 +9,10 @@ test('edition quotes use approved paper geometry and expose retail prices only',
   const {default:catalog}=await import('../catalog/products.json',{with:{type:'json'}}),calls=[];
   t.mock.method(globalThis,'fetch',async(url,init)=>{
     const body=JSON.parse(init.body);calls.push(url);
-    if(url.endsWith('list_media_types'))return Response.json([{id:144,product_type_id:5,name:'Watercolor Bright White',style_ids:[8]}]);
-    if(url.endsWith('list_style_types'))return Response.json([{id:8,name:'Borderless',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90},border_size:0,bleed_amt:0.06}]);
-    assert(url.endsWith('get_prices'));assert.deepEqual(body.products.map(p=>p.product_sku),['5M144M8S4.76X4.52']);
+    if(url.endsWith('list_media_types'))return Response.json([{id:144,product_type_id:5,name:'Watercolor Bright White',style_ids:[8,9]}]);
+    if(url.endsWith('list_style_types'))return Response.json([{id:8,name:'Borderless',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90},border_size:0,bleed_amt:0.06},{id:9,name:'1/2" Extra Border Added',custom_sizing:true,allow_decimal:true,allow_rotate:true,min:{width:4,height:4},max:{width:40,height:90},border_size:0.5,bleed_amt:0}]);
+    // Unframed editions quote FinerWorks' outer-border style at the print (image) size.
+    assert(url.endsWith('get_prices'));assert.deepEqual(body.products.map(p=>p.product_sku),['5M144M9S4.5X4.26']);
     return Response.json(body.products.map(p=>({...p,product_code:p.product_sku,product_price:7,total_price:7})));
   });
   const r=await finerworksDiagnostic(req({task:'edition-prices',productIds:['paul-murphy-painting-55'],width:100,assetUrl:'https://example.com/injected.jpg'}),env,catalog);

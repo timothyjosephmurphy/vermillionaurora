@@ -41,8 +41,8 @@ export async function finerworksDiagnostic(request,env,products) {
       if(artworks.some(p=>!p))return reply({error:'Choose configured edition paintings'},400);
       const materials=await finerworksMaterials(env),candidates=artworks.flatMap(p=>printOptions(p,config,papers));
       for(const o of candidates){
-        const saved=papers.find(p=>p.paper===o.paper.paper),media=materials.media.find(m=>m.id===saved.media.id),style=materials.styles.find(s=>s.id===saved.style.id);
-        if(!media||!style||finerworksProductCode(media,style,o.paper)!==o.paper.sku)throw Error('Edition material or exact paper size needs review');
+        const saved=papers.find(p=>p.paper===o.paper.paper),media=materials.media.find(m=>m.id===saved.media.id),style=materials.styles.find(s=>s.id===(o.print?saved.borderedStyle:saved.style).id);
+        if(!media||!style||(o.print&&style.borderSize!==saved.borderedStyle.borderSize)||finerworksProductCode(media,style,o.print||o.paper)!==o.paper.sku)throw Error('Edition material or exact paper size needs review');
       }
       const prices=await finerworksPrices(env,[...new Set(candidates.map(o=>o.paper.sku))]),quotedAt=new Date().toISOString();
       const variants=candidates.map(o=>{
