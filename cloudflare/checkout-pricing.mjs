@@ -50,7 +50,7 @@ export async function priceShipment(env, slug, input) {
 }
 
 // Washington sales tax applies to artwork (including framing) and shipping for orders shipped to WA; other US
-// destinations are not taxed. A WA rate that cannot be found blocks the quote (TaxAddressError), never $0.
+// destinations are not taxed. A WA rate that cannot be found falls back to the Seattle rate (taxFallback), never $0 and never blocking.
 async function calculateTax(items,address,shippingCents) {
   const base=items.reduce((sum,item)=>sum+cents(item.amount)*(item.quantity||1),0);
   const {taxCents,tax}=await salesTax(address,base+shippingCents);

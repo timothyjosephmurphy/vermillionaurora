@@ -7,6 +7,11 @@ export const TAX_ADDRESS_ERROR='We couldn’t calculate Washington sales tax for
 const ADDRESS_MATCH=new Set([0,1,2]);
 // A ZIP-only request answers 5 (5-digit ZIP located) or better.
 const ZIP_MATCH=new Set([0,1,2,3,4,5]);
+// If both DOR lookups fail (error, timeout, no match) checkout is never blocked: the Seattle rate is charged and the
+// order is flagged taxFallback so the location code can be reviewed before filing.
+export const FALLBACK_RATE={rate:'0.1055',ppm:105500,loccode:'1726',jurisdiction:'SEATTLE (FALLBACK)'};
+// Each DOR request is capped so a slow lookup cannot stall checkout (worst case two requests).
+export const DOR_TIMEOUT_MS=4000;
 
 export class TaxAddressError extends Error {
   constructor(message=TAX_ADDRESS_ERROR){super(message);this.name='TaxAddressError';this.code='TAX_ADDRESS';}
@@ -31,7 +36,7 @@ async function lookup(params,accepted) {
   const url=new URL(DOR_RATE_URL);
   url.search=new URLSearchParams({output:'xml',...params}).toString();
   try {
-    const response=await fetch(url.href,{method:'GET',signal:AbortSignal.timeout(10000),headers:{Accept:'application/xml,text/xml'}});
+    const response=await fetch(url.href,{method:'GET',signal:AbortSignal.timeout(DOR_TIMEOUT_MS),headers:{Accept:'application/xml,text/xml'}});
     if(!response.ok)return null;
     const result=parseRateResponse(await response.text());
     return validRate(result,accepted)?result:null;
@@ -48,11 +53,17 @@ export async function waRate(address) {
   return {rate:String(ppm/1e6),ppm,loccode:result.loccode,jurisdiction:result.jurisdiction.slice(0,60),period:result.period.slice(0,10),basis,resultCode:result.code};
 }
 // taxableCents is artwork (after any code discount) + framing + shipping. Shipping and framing are taxable in Washington.
+// A WA destination whose rate cannot be looked up is taxed at FALLBACK_RATE (basis 'fallback', taxFallback true).
 export async function salesTax(address,taxableCents) {
   if(!Number.isSafeInteger(taxableCents)||taxableCents<0)throw Error('Invalid taxable amount');
   if(address.country&&address.country!=='US')throw Error('Only US addresses are supported');
   if(address.state!=='WA')return {taxCents:0,tax:{state:address.state,collected:false,rate:'0',basis:'out-of-state'}};
-  const found=await waRate(address);
+  let found;
+  try { found=await waRate(address); }
+  catch(error) {
+    if(error?.code!=='TAX_ADDRESS')throw error;
+    found={...FALLBACK_RATE,period:'',basis:'fallback',resultCode:null,taxFallback:true};
+  }
   const {ppm,...rate}=found;
   // Integer arithmetic, rounded half up to the cent.
   const taxCents=Math.floor((taxableCents*ppm+500000)/1e6);
