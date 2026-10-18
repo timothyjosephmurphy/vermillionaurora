@@ -4,9 +4,12 @@ import BookGalleryCarousel from '../components/BookGalleryCarousel.astro';
 import {strawberryPaintings} from '../../catalog/strawberry-point-products.mjs';
 const sp12=strawberryPaintings.find(p=>p.index===12);
 import strawberryProducts,{STRAWBERRY_SIZES,strawberryId} from '../../catalog/strawberry-point-products.mjs';
-// Hero card: cycles only through the Strawberry Point Backpacking Trip paintings, largest first (unsized ones last).
+// Hero card: cycles only through the Strawberry Point Backpacking Trip paintings. Available works come first
+// (studio-tracker #100), then by inquiry, then the rest; within each group largest first (unsized ones last).
 const spSize=p=>STRAWBERRY_SIZES[p.index]?.[0]||0;
-const spHero=[...strawberryPaintings].sort((a,b)=>spSize(b)-spSize(a)||a.index-b.index).map(p=>({p,pr:strawberryProducts.find(x=>x.id===strawberryId(p))})).filter(x=>x.pr);
+const spRank=pr=>({available:0,inquiry:1})[pr.listing?.status]??2;
+const spHero=[...strawberryPaintings].map(p=>({p,pr:strawberryProducts.find(x=>x.id===strawberryId(p))})).filter(x=>x.pr)
+  .sort((a,b)=>spRank(a.pr)-spRank(b.pr)||spSize(b.p)-spSize(a.p)||a.p.index-b.p.index);
 const spSrcset=d=>d.widths.map(w=>`${d.base}-${w}.webp ${w}w`).join(', ');
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -88,13 +91,13 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
           <a class="hero-room-link" href="/gallery/room/">Explore the 3D gallery</a>
           <div class="container hero-grid">
             <div class="hero-copy">
-              <p class="eyebrow">Seattle watercolor &amp; pastel artist · Inspiring self-sovereignty</p>
+              <p class="eyebrow">Original watercolors and prints by TJ Murphy, Seattle</p>
               <h1>Natural beauty. Independent spirit.</h1>
               <p class="lede">
-                I paint the changing light of the Pacific Northwest, the places I travel, and the character of the people I meet. My work celebrates natural beauty and self-sovereignty, the freedom to think, create, and shape a life of your own.
+                I paint the light of the Pacific Northwest, the places I travel, and the people I meet. Originals and prints are available here.
               </p>
               <div class="hero-actions hero-actions-centered">
-                <a href="/gallery/" class="button button-solid">Explore the paintings</a>
+                <a href="/gallery/available/" class="button button-solid">See what's available</a>
               </div>
             </div>
 
