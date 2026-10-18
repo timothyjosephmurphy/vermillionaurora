@@ -20,6 +20,32 @@
    }
   ]
  },
+ "/about/images/tj-murphy-cafe.jpg": {
+  "original": 383248,
+  "width": 1600,
+  "variants": [
+   {
+    "w": 160,
+    "src": "/display/tj-murphy-cafe-ddac27a227-160.webp",
+    "bytes": 6704
+   },
+   {
+    "w": 480,
+    "src": "/display/tj-murphy-cafe-ddac27a227-480.webp",
+    "bytes": 34116
+   },
+   {
+    "w": 960,
+    "src": "/display/tj-murphy-cafe-ddac27a227-960.webp",
+    "bytes": 101050
+   },
+   {
+    "w": 1600,
+    "src": "/display/tj-murphy-cafe-ddac27a227-1600.webp",
+    "bytes": 236792
+   }
+  ]
+ },
  "/about/images/tj-murphy-portrait.jpg": {
   "original": 68449,
   "width": 424,

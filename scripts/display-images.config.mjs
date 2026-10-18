@@ -28,6 +28,7 @@ export const SIZES = [
   ['exhibition-index-grid', '(max-width: 600px) 90vw, 400px'],
   ['books-grid', '(max-width: 600px) 90vw, 320px'],
   ['ex-track', '(max-width: 600px) 70vw, 520px'],
+  ['about-bio-photo', '(max-width: 760px) min(420px, calc(100vw - 48px)), 360px'],
 ];
 export const DEFAULT_SIZES = '(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 600px';
 // Page-specific overrides (the gallery list shows small row thumbnails).
