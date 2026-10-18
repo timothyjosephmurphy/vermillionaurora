@@ -34,13 +34,13 @@ import {catalogVersion} from '../../../catalog/catalog.mjs';
           <div class="cart-address-row"><label>State<input name="state" autocomplete="shipping address-level1" pattern="[A-Za-z]{2}" maxlength="2" placeholder="WA" required/></label><label>ZIP code<input name="zip" autocomplete="shipping postal-code" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" maxlength="10" required/></label></div>
           <details class="cart-code-toggle"><summary>Have a code?</summary><label>Discount code<input name="printCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Discount code"/></label></details>
           <p class="cart-footnote" data-cart-code-note hidden></p>
-          <p class="cart-footnote">United States delivery. Prints ship from the print lab, separately from originals. Shipping includes all shipments.</p>
+          <p class="cart-footnote">United States delivery. Prints ship from the print lab, separately from originals. The shipping total covers every package in your order.</p>
         </fieldset>
         <p class="cart-footnote">Your details are used to quote and fulfill this order. <a href="/privacy/">How your information is handled</a>.</p>
         <button class="button button-solid cart-wide" type="submit" data-cart-quote>Calculate shipping &amp; tax</button>
       </form>
       <div data-cart-payments hidden><p class="cart-footnote" data-cart-payment-help>Calculate shipping and tax to enable payment.</p><div data-cart-methods></div><div data-square-card-box hidden><p class="cart-footnote">Card details are processed securely by Square.</p><div data-square-card></div></div></div>
-      <PurchaseReassurance/>
+      <PurchaseReassurance kind="cart"/>
       <p class="cart-footnote cart-help">A question about your order? <a href="/#contact">Contact TJ</a>.</p>
     </aside>
   </div>

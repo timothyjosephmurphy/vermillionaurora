@@ -321,7 +321,7 @@ test('the homepage ends Exhibitions with the gallery room and framed print wall'
  assert.deepEqual($('.painting-carousel [data-gallery-feature]').map((i,n)=>$(n).attr('data-gallery-feature')).get(),['strawberry-point']);
  // Strawberry Point is the FIRST tile in Featured works (TJ, Oct 16 2026).
  assert.equal($('[data-available-paintings]').children().first().attr('data-gallery-feature'),'strawberry-point');
- assert.equal($('#exhibitions [data-gallery-feature="gallery-room"] .product-title-link').attr('href'),'/gallery/room/');
+ assert.equal($('#exhibitions [data-gallery-feature="gallery-room"] .product-title-link').attr('href'),'/play/');
  const tile=$('#exhibitions [data-gallery-feature="print-wall"]');
  assert.equal(tile.length,1);assert.equal(tile.find('.product-title-link').attr('href'),'/gallery/wall/all/');
  assert.equal(tile.attr('data-product-id'),undefined,'A gallery experience is not original-painting inventory');
