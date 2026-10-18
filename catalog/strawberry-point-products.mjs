@@ -18,7 +18,6 @@ const cmOf=p=>{const d=STRAWBERRY_SIZES[p.index];return d?`${d[2]} × ${d[2]} cm
 const shippingFor=d=>{const weight=estimatePaperParcelWeightLb({dimensions:d,checkout:{shipping:{height:2}}});
   return {length:Math.max(d.width,d.height)+2,width:Math.min(d.width,d.height)+2,height:2,weight,packaging:'flat',insuranceRequested:false,verification:'estimated',notes:'Estimated with the shared paper-parcel rule (catalog/shipping-estimates.mjs). Confirm packed weight before buying a label.'};};
 const priceOf=p=>STRAWBERRY_PRICES[p.index]?{amount:STRAWBERRY_PRICES[p.index].toFixed(2),currency:'USD'}:null;
-const MISSING='Title and size not yet recorded';
 const groupOf=p=>strawberryGroups.find(g=>g.members.includes(p.index));
 export const strawberryGroupTitle=g=>`Strawberry Point Backpacking Trip #${g.members[0]}–${g.members.at(-1)}`;
 const image=(d,alt,caption)=>({src:`https://tjm.art${d.base}-1600.webp`,fullSrc:`${d.base}-1600.webp`,alt,width:d.sourceWidth,height:d.sourceHeight,caption});
@@ -29,15 +28,15 @@ const paintings=strawberryPaintings.map(p=>{const g=groupOf(p),title=strawberryT
   ...(dims?{dimensions:dims,...(price?{checkout:{mode:'integrated',shipping:shippingFor(dims)}}:{})}:{}),
   id:strawberryId(p),slug:strawberryId(p),title,
   description:`${title}, a painting by TJ Murphy from his Strawberry Point backpacking trip on the Pacific coast of the Olympic Peninsula.`,
-  facts:[{label:'Series',value:'Strawberry Point Backpacking Trip, painted fall 2026'},{label:'Index',value:`#${p.index}`},...(dims?[{label:'Size',value:`${dims.width} × ${dims.height} in (${cmOf(p)})`},{label:'Details',value:'Title not yet recorded'}]:[{label:'Details',value:MISSING}]),{label:'Original',value:price?`Available · $${Number(price.amount)}`:'Not yet for sale · inquire'},...(p.master&&p.index>3?[{label:'Prints',value:'Archival prints on watercolor paper, never larger than the original (TJ, Oct 16 2026)'}]:p.master?[{label:'Print master',value:'On file; prints need the painting size'}]:[]),
-    ...(g?[{label:'Photographed with',value:`${strawberryGroupTitle(g)} (position ${p.position})`}]:[])],
+  facts:[{label:'Series',value:'Strawberry Point Backpacking Trip, painted fall 2026'},{label:'Index',value:`#${p.index}`},...(dims?[{label:'Size',value:`${dims.width} × ${dims.height} in (${cmOf(p)})`}]:[]),{label:'Original',value:price?`Available · $${Number(price.amount)}`:'Not yet for sale · inquire'},...(p.master&&p.index>3?[{label:'Prints',value:'Archival prints on watercolor paper, never larger than the original'}]:[]),
+    ...(g?[{label:'Photographed with',value:strawberryGroupTitle(g),href:`/products/${g.id}/`}]:[])],
   story:[],image:image(p.display,`${title}, a painting by TJ Murphy`,title),
   inquiry:{label:'Inquire about this painting',note:''},
   back:g?{href:`/products/${g.id}/`,label:`← Back to ${strawberryGroupTitle(g)}`}:{href:STRAWBERRY_GALLERY,label:'← Back to Strawberry Point Backpacking Trip'}};});
 const groups=strawberryGroups.map(g=>{const title=strawberryGroupTitle(g);return {...common,
   id:g.id,slug:g.id,title,
   description:`${title}: ${g.members.length} paintings by TJ Murphy from his Strawberry Point backpacking trip, photographed together.`,
-  facts:[{label:'Paintings',value:`${g.members.length}, shown as photographed`},...g.members.map((n,i)=>({label:String(i+1),value:`Strawberry Point Backpacking Trip #${n}`,href:`/products/strawberry-point-${n}/`})),{label:'Details',value:MISSING}],
+  facts:[{label:'Paintings',value:`${g.members.length}, shown as photographed`},...g.members.map((n,i)=>({label:String(i+1),value:`Strawberry Point Backpacking Trip #${n}`,href:`/products/strawberry-point-${n}/`}))],
   story:['Each painting in this photograph has its own page, linked above.'],
   image:image(g.display,`${g.members.length} paintings by TJ Murphy from Strawberry Point, photographed together`,title),
   gallery:g.members.map(n=>{const p=strawberryPaintings.find(x=>x.index===n);return {...p.display,alt:`${strawberryTitle(p)}, a painting by TJ Murphy`,caption:strawberryTitle(p),href:`/products/strawberry-point-${n}/`};}),
