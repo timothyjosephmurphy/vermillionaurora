@@ -1,9 +1,10 @@
 // Upload static/display/, static/wall-paintings/ (and static/print-editions/thumbs/ when present) to the tjm-images
 // R2 bucket under the same relative keys (static/display/x.webp -> display/x.webp), skipping
-// objects already there with the same size, then verify counts. Usage: node scripts/sync-images-r2.mjs [--force]  (--force re-uploads everything, e.g. to change Cache-Control)
+// objects already there with the same size, then verify counts. Usage: node scripts/sync-images-r2.mjs [--force] [--only=social]  (--force re-uploads everything, e.g. to change Cache-Control)
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { putObject, listKeys } from './lib/r2.mjs';
-const roots = ['display', 'wall-paintings', 'gallery-wall', 'print-editions/thumbs', 'walkthrough'];
+const only = process.argv.find(a => a.startsWith('--only='))?.slice(7);
+const roots = ['display', 'wall-paintings', 'gallery-wall', 'print-editions/thumbs', 'walkthrough', 'social'].filter(r => !only || r === only);
 let total = 0, uploaded = 0, bad = 0;
 for (const root of roots) {
   const files = await readdir(`static/${root}`, { recursive: true, withFileTypes: true }).catch(() => null);

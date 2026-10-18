@@ -125,7 +125,7 @@ test('Arizona Slot Cave uses the complete left-rotated image in its gallery and 
  const check=image=>{assert.equal(image.attr('viewBox'),'0 0 3192 3450');assert.equal(image.find('image').attr('transform'),'translate(0 3450) rotate(-90)');assert.equal(image.find('image').attr('href'),byId['paul-murphy-painting-8'].image.src);};
  const page=load(fs.readFileSync('dist/products/paul-murphy-painting-8/index.html','utf8'));
  check(page('.painting-image-trigger svg'));check(page('.painting-lightbox svg'));
- assert.equal(page('meta[property="og:image"]').attr('content'),byId['paul-murphy-painting-8'].image.src);
+ assert.match(page('meta[property="og:image"]').attr('content'),/^https:\/\/img\.tjm\.art\/social\/paul-murphy-painting-8-/);
  const gallery=load(fs.readFileSync('dist/exhibitions/paul-murphy/index.html','utf8'));
  check(gallery('[data-product-id="paul-murphy-painting-8"] svg'));
 });
@@ -165,7 +165,7 @@ test('painting cards: price without "USD", "Prints from" the cheapest ready prin
    assert.equal(tile.attr('data-buy')??String(showBuy(p)),String(showBuy(p)),`${path}: ${p.id}`);
    if(tile.attr('data-prints-from')!==undefined)assert.equal(tile.attr('data-prints-from'),printsFromLabel(p),`${path}: ${p.id}`);
    const buy=tile.find('[data-card-buy]');
-   if(buy.length){assert(buy.parent().is('.card-buy-row')&&buy.parent().children().length===2&&buy.is(':last-child'),`${path}: ${p.id} Buy must sit at the end of the card's last text line`);assert.equal(buy.text(),'Buy');assert.equal(buy.attr('aria-hidden'),'true');assert.equal(buy.attr('hidden')!==undefined,!showBuy(p)&&path!=='gallery/available/index.html',`${path}: ${p.id}`);}
+   if(buy.length){assert(buy.parent().is('.card-buy-row')&&buy.parent().children().length===2&&buy.is(':last-child'),`${path}: ${p.id} Buy must sit at the end of the card's last text line`);assert.equal(buy.text(),p.listing?.status==='available'?'Buy':'Buy a print');assert.equal(buy.attr('aria-hidden'),'true');assert.equal(buy.attr('hidden')!==undefined,!showBuy(p)&&path!=='gallery/available/index.html',`${path}: ${p.id}`);}
    checked++;
   });
  }
@@ -329,13 +329,25 @@ test('the homepage ends Exhibitions with the gallery room and framed print wall'
  assert(fs.existsSync('dist/gallery-wall/framed-wall.webp'));
 });
 
-test('homepage and every product page carry a small Manage link into the catalog admin',()=>{
+test('no public page links to the catalog admin (studio-tracker #77)',()=>{
  const home=load(fs.readFileSync('dist/index.html','utf8'));
- assert.equal(home('[data-manage-link]').attr('href'),'/catalog-admin/');
+ assert.equal(home('a[href^="/catalog-admin"]').length,0);
  for(const p of products){
   const file=`dist/products/${p.slug}/index.html`;if(!fs.existsSync(file))continue;
-  assert.equal(load(fs.readFileSync(file,'utf8'))('[data-manage-link]').attr('href'),`/catalog-admin/?slug=${encodeURIComponent(p.slug)}`,p.slug);
+  assert.doesNotMatch(fs.readFileSync(file,'utf8'),/href="\/catalog-admin/,p.slug);
  }
+ assert.match(fs.readFileSync('robots.txt','utf8'),/^Disallow: \/catalog-admin\/$/m);
  const admin=fs.readFileSync('worker/catalog-admin.mjs','utf8');
  assert.match(admin,/u\.get\('slug'\)/,'the admin opens the painting named by ?slug= (or #slug)');
+});
+
+test('internal catalog notes never reach public product pages (studio-tracker #123)',()=>{
+ const bad=/Title not yet recorded|Title and size not yet recorded|\(TJ, [A-Z][a-z]{2} \d{1,2} \d{4}\)|\(position \d+\)|No index visible on the reverse|On file; prints need the painting size/;
+ for(const p of products){const file=`dist/products/${p.slug}/index.html`;if(fs.existsSync(file))assert.doesNotMatch(fs.readFileSync(file,'utf8'),bad,p.slug);}
+});
+test('share metadata uses padded img.tjm.art web copies and carries no prices (#119, #98)',()=>{
+ for(const p of products){const file=`dist/products/${p.slug}/index.html`;if(!fs.existsSync(file))continue;const $=load(fs.readFileSync(file,'utf8'));
+  for(const sel of ['meta[property="og:image"]','meta[name="twitter:image"]'])assert.match($(sel).attr('content')||'',/^https:\/\/img\.tjm\.art\/social\//,p.slug+' '+sel);
+  for(const sel of ['meta[property="og:description"]','meta[name="twitter:description"]'])assert.doesNotMatch($(sel).attr('content')||'',/\$\d/,p.slug+' '+sel);
+  assert.doesNotMatch($('[data-share-image]').attr('data-share-image')||'',/print-masters/,p.slug);}
 });

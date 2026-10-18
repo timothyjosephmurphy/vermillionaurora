@@ -73,7 +73,8 @@ function patchSegment(text, c, snap, live, productId, isProductPage) {
     if (isProductPage) {
       t = t.replace(/(<dt>Original<\/dt><dd>)Available(?: · [^<]*)?(?=<\/dd>)/, `$1${label}`)
         .replace(/Original available for \$[\d,]+(?:\.\d\d)?\./g, c.status === 'sold' ? 'Original sold.' : 'Original not currently available.')
-        .split('"availability":"https://schema.org/InStock"').join('"availability":"https://schema.org/SoldOut"');
+        .split('"availability":"https://schema.org/InStock"').join('"availability":"https://schema.org/SoldOut"')
+        .replace(/<section class="product-purchase-actions"[^>]*>\s*<div data-original-purchase[^]*?<\/p><\/div>\s*<\/div>/, m => m.replace(/<div data-original-purchase/, '<div data-original-purchase hidden'));
     } else {
       t = t.replace(/(<p class="sp-price"[^>]*>)\$[\d,]+(?:\.\d\d)?(?=<\/p>)/g, `$1${label}`)
         .replace(/(<div class="product-info"><p>[^<]*· )\$[\d,]+(?:\.\d\d)?(?=<\/p>)/g, `$1${label}`);

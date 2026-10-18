@@ -70,7 +70,7 @@ const workerFirst=async()=>{
   return config.assets.run_worker_first;
 };
 test('run_worker_first lists exactly the routes the Worker serves, so static files never invoke it',async()=>{
-  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,CATALOG_WORKER_FIRST}=await import('../worker/site.mjs');
+  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,CATALOG_WORKER_FIRST,CART_API,SHOP_REDIRECTS}=await import('../worker/site.mjs');
   const patterns=await workerFirst();
   assert.ok(Array.isArray(patterns)&&patterns.length>0&&patterns.length<=100,'an explicit pattern list, not true');
   assert.ok(patterns.every(p=>p.startsWith('/')&&!p.startsWith('!/')),'no negative patterns needed');
@@ -78,7 +78,7 @@ test('run_worker_first lists exactly the routes the Worker serves, so static fil
   // Every route the Worker handles runs the Worker first.
   for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH])assert.ok(matches(path),path+' must run the Worker');
   // Every pattern is a route the Worker actually handles (no stray patterns).
-  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,TESTIMONIALS_API+'*',...CATALOG_WORKER_FIRST]);
+  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,TESTIMONIALS_API+'*',...CATALOG_WORKER_FIRST]);
   for(const p of patterns)assert.ok(handled.has(p),p+' is not a Worker route');
   assert.equal(patterns.length,handled.size);
   // Static files, pages and admin pages are served by the assets layer, not the Worker.

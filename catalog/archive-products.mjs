@@ -22,7 +22,7 @@ export default archivePaintings.map(p => {
     eyebrow:'Archived Paintings',listing:{status:price?'available':'not-for-sale',price},
     year:p.year||null,dimensions,
     facts:[
-      {label:'Archive index',value:p.index===null?'No index visible on the reverse':`#${p.index}`},
+      ...(p.index===null?[]:[{label:'Archive index',value:`#${p.index}`}]),
       ...(p.dimensionsInscription?[{label:'Size noted on reverse',value:`${p.dimensionsInscription.text} in`}]:[]),
       ...(p.estimatedDimensions?[{label:'Approximate paper size',value:`About ${p.estimatedDimensions.width} × ${p.estimatedDimensions.height} in (W × H), estimated from photographs; allow roughly 10% variation.`}]:[]),
       ...(p.cataloguedDimensions?[{label:'Previously catalogued size',value:`${p.cataloguedDimensions.width} × ${p.cataloguedDimensions.height} ${p.cataloguedDimensions.unit} (W × H)`}]:[])

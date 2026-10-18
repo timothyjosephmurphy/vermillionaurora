@@ -10,3 +10,5 @@ export const dollars=value=>`$${Number(value).toLocaleString('en-US',value%1?{mi
 export function printsFromLabel(p){const value=lowestPrintPrice(p);return value===null?'':`Prints from ${dollars(value)}`;}
 // Buy shows when the original is available or prints exist; the card itself links to the painting's one product page.
 export const showBuy=p=>p?.type==='painting'&&(p.listing?.status==='available'||lowestPrintPrice(p)!==null);
+// Card cue text: "Buy" only when the original itself is for sale; otherwise only prints can be bought (#125).
+export const buyLabel=p=>p?.listing?.status==='available'?'Buy':'Buy a print';

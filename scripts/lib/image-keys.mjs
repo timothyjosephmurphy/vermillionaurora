@@ -7,9 +7,10 @@
 //     <width>  = pixel width (160, 480, 960, 1600, or the original width when smaller)
 //   gallery-wall/<sha256>-<width>.webp     print-wall previews (built by build-gallery-wall-assets.mjs)
 //   print-editions/thumbs/<sha256>.jpg      1000px FinerWorks thumbnails
+//   social/<slug>-<hash10>.jpg              1200x630 padded share images (scripts/make-social-images.py)
 // Phase 3 (D1 catalog) stores the keys per painting, e.g. images_json = ["display/x-ab12cd34ef-160.webp", ...],
 // and pages render imageUrl(key). Nothing else about a URL needs to be stored.
 export const IMAGE_ORIGIN = 'https://img.tjm.art';
-export const R2_PREFIXES = ['display', 'wall-paintings', 'gallery-wall', 'print-editions/thumbs', 'walkthrough'];
+export const R2_PREFIXES = ['display', 'wall-paintings', 'gallery-wall', 'print-editions/thumbs', 'walkthrough', 'social'];
 export const imageUrl = key => `${IMAGE_ORIGIN}/${String(key).replace(/^\/+/, '')}`;
 export const keyFromSrc = src => String(src).replace(/^(?:https?:\/\/[^/]+)?\/+/, '');

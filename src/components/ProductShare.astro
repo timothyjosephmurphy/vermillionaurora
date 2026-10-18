@@ -1,11 +1,12 @@
 ---
 import {urlFor} from '../../catalog/catalog.mjs';
+import {socialImage} from '../data/social-image.mjs';
 const {product}=Astro.props;
 const url=new URL(urlFor(product),Astro.site||'https://tjm.art').href;
 const title=`${product.title} by ${product.artist||product.author||'TJ Murphy'}`;
 const post=`${title}\n${url}`;
 const imageSrc=product.image?.src||product.examples?.[0]?.src;
-const image=imageSrc?new URL(imageSrc,url).href:null;
+const image=socialImage(product)||(imageSrc&&!/print-masters|media\.vermillionaurora\.com/.test(imageSrc)?new URL(imageSrc,url).href:null);
 const label=product.type==='painting'?'Share this painting':product.type==='book'?'Share this book':'Share this page';
 const id=`share-${product.slug}`;
 const xHref=`https://x.com/intent/tweet?${new URLSearchParams({text:title,url})}`;

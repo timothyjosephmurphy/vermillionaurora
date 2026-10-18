@@ -2,10 +2,10 @@
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { catalogVersion, urlFor } from '../../catalog/catalog.mjs';
+import { socialImage, withoutPrices } from '../data/social-image.mjs';
 import bookProductsData from '../../catalog/book-products.json';
 const bookProductList = Array.isArray(bookProductsData) ? bookProductsData : bookProductsData.products || [];
 const { product, metaDescription } = Astro.props;
-const manageHref = `/catalog-admin/?slug=${encodeURIComponent(product.slug)}`;
 const canonical = new URL(urlFor(product), Astro.site || 'https://tjm.art').href;
 const shareTitle = `${product.title} — ${product.artist || product.author || 'TJ Murphy'}`;
 const featuredArtist = product.artist && product.artist !== 'TJ Murphy' ? product.artist : null;
@@ -17,8 +17,8 @@ const pageTitle = featuredArtist
   ? `${product.title} by ${featuredArtist} | TJM.art`
   : `${product.title}${bookLabel}${product.bookGallery ? ' — Book gallery artwork' : ''} | TJ Murphy`;
 const shareDescription = metaDescription || product.description || product.story?.join(' ').slice(0, 180) || shareTitle;
-const shareImageSrc = product.image?.src || product.examples?.[0]?.src;
-const shareImage = shareImageSrc ? new URL(shareImageSrc, canonical).href : null;
+const socialDescription = withoutPrices(shareDescription) || shareTitle;
+const shareImage = socialImage(product);
 const shareImageAlt = product.image?.alt || shareTitle;
 const structuredData = product.type === 'painting'
   ? { '@context':'https://schema.org', '@type':'VisualArtwork', name:product.title,
@@ -41,12 +41,12 @@ const structuredData = product.type === 'painting'
   <link rel="canonical" href={canonical} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={shareTitle} />
-  <meta property="og:description" content={shareDescription} />
+  <meta property="og:description" content={socialDescription} />
   <meta property="og:url" content={canonical} />
-  {shareImage && <><meta property="og:image" content={shareImage} /><meta property="og:image:alt" content={shareImageAlt} /></>}
+  {shareImage && <><meta property="og:image" content={shareImage} /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta property="og:image:alt" content={shareImageAlt} /></>}
   <meta name="twitter:card" content={shareImage ? 'summary_large_image' : 'summary'} />
   <meta name="twitter:title" content={shareTitle} />
-  <meta name="twitter:description" content={shareDescription} />
+  <meta name="twitter:description" content={socialDescription} />
   {shareImage && <><meta name="twitter:image" content={shareImage} /><meta name="twitter:image:alt" content={shareImageAlt} /></>}
   {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g,'\\u003c')} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,7 +82,7 @@ const structuredData = product.type === 'painting'
   {product.examples?.length>0 && <link rel="stylesheet" href="/exhibitions/viewer.css" />}
   <style is:global>.commission-gallery{margin-top:28px}.commission-gallery .section-heading{margin-bottom:12px}.commission-gallery h2{font-size:2rem;margin:0 0 6px}.commission-gallery .section-heading p{font-size:.9rem;margin:0}</style>
 </head>
-<body><div class="page-shell"><SiteHeader /><a class="back-to-dungeon" href="/play/?resume=1" hidden>← Back to the Dungeon</a><script is:inline>(()=>{let p=0;try{p=new URLSearchParams(location.search).get('from')==='play'||!!sessionStorage.getItem('tjmPlayState')}catch(e){}if(p)document.querySelector('.back-to-dungeon').hidden=false})()</script><style>.back-to-dungeon{position:fixed;left:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:50;padding:8px 12px;border-radius:4px;background:#2b1d12;color:#ffcf6a;font:600 13px/1 Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px #0005}.back-to-dungeon[hidden]{display:none}</style><div id="main-content" tabindex="-1"><slot /></div><SiteFooter manage={manageHref} /></div>
+<body><div class="page-shell"><SiteHeader /><a class="back-to-dungeon" href="/play/?resume=1" hidden>← Back to the Dungeon</a><script is:inline>(()=>{let p=0;try{p=new URLSearchParams(location.search).get('from')==='play'||!!sessionStorage.getItem('tjmPlayState')}catch(e){}if(p)document.querySelector('.back-to-dungeon').hidden=false})()</script><style>.back-to-dungeon{position:fixed;left:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:50;padding:8px 12px;border-radius:4px;background:#2b1d12;color:#ffcf6a;font:600 13px/1 Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px #0005}.back-to-dungeon[hidden]{display:none}</style><div id="main-content" tabindex="-1"><slot /></div><SiteFooter /></div>
 {product.type==='painting' && <><script is:inline src="/payments/cart.js" defer></script><script is:inline src="/payments/paypal-checkout.js" defer></script><script is:inline src="/catalog/availability.js" defer></script></>}
 {product.type==='book' && <script is:inline src="/book-viewer/viewer.js" defer></script>}
 {product.examples?.length>0 && <script is:inline src="/exhibitions/viewer.js" defer></script>}

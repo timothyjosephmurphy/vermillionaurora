@@ -37,7 +37,7 @@
     node.querySelectorAll('[data-live-status]').forEach(el=>{el.textContent=value==='available'?el.dataset.initialText:label;if(value!=='available')el.hidden=false;});
     node.querySelectorAll('[data-card-price]').forEach(el=>{el.textContent=value==='available'?el.dataset.price:label;});
     if(node.dataset.caption){node.dataset.caption=value==='available'?node.dataset.initialCaption:node.dataset.initialCaption.replace(/ · [^]*$/,' · '+label);}
-    if(node.dataset.buy!==undefined){const buy=['available','inquiry'].includes(value)||!!node.dataset.printsFrom;node.dataset.buy=String(buy);node.querySelectorAll('[data-card-buy]').forEach(el=>{el.hidden=!buy;});}
+    if(node.dataset.buy!==undefined){const buy=['available','inquiry'].includes(value)||!!node.dataset.printsFrom;node.dataset.buy=String(buy);node.querySelectorAll('[data-card-buy]').forEach(el=>{el.hidden=!buy;el.textContent=value==='available'?'Buy':value==='inquiry'?'Inquire':'Buy a print';});}
     node.querySelectorAll('[data-original-purchase]').forEach(el=>{el.hidden=!['available','inquiry'].includes(value);});
     moveHomepagePainting(node,value);
    }

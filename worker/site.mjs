@@ -45,6 +45,32 @@ export const TESTIMONIALS_API = '/testimonials/api/';
 // Owner original-status page posts here; the checkout Worker holds stock and the Etsy token.
 export const ORIGINALS_API = '/inventory/originals';
 
+// Cart checkout API, same-origin on tjm.art (no workers.dev round trip). The public catalog GET is edge-cached for
+// 60 s; holds, quotes and payments always reach the checkout Worker, which re-validates price and stock.
+export const CART_API = '/checkout/cart/';
+const CART_CATALOG = '/checkout/cart/catalog';
+export async function cartApi(request, env, ctx) {
+  if (!env.CHECKOUT) return Response.json({ error: 'Checkout is temporarily unavailable.' }, { status: 503 });
+  const url = new URL(request.url);
+  if (request.method !== 'GET' || url.pathname !== CART_CATALOG) return env.CHECKOUT.fetch(request);
+  const cache = globalThis.caches?.default, key = new Request(`${url.origin}${CART_CATALOG}`);
+  let cached = cache ? await cache.match(key).catch(() => null) : null;
+  if (!cached) {
+    const origin = await env.CHECKOUT.fetch(new Request(key.url, { headers: { Accept: 'application/json' } }));
+    if (!origin.ok) return origin;
+    const body = await origin.text();
+    cached = new Response(body, { headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=60, s-maxage=60' } });
+    if (cache) ctx?.waitUntil?.(cache.put(key, cached.clone()).catch(() => {}));
+  }
+  const headers = new Headers(cached.headers);
+  headers.set('Cache-Control', 'public, max-age=60');
+  headers.delete('Set-Cookie');
+  return new Response(cached.body, { status: 200, headers });
+}
+
+// Common shop URLs buyers type.
+export const SHOP_REDIRECTS = { '/shop': '/gallery/available/', '/shop/': '/gallery/available/', '/store': '/gallery/available/', '/store/': '/gallery/available/', '/checkout': '/cart/', '/checkout/': '/cart/' };
+
 // Apple Pay on the Web (Square Web Payments SDK): Apple fetches this file to verify tjm.art. Serve Square's
 // current copy (Square asks sellers to keep it in sync and avoid long caches), falling back to the committed snapshot.
 export const APPLE_PAY_ASSOCIATION_PATH = '/.well-known/apple-developer-merchantid-domain-association';
@@ -73,6 +99,8 @@ export default {
     if (url.pathname === ORIGINALS_API && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) {
       return env.CHECKOUT ? env.CHECKOUT.fetch(request) : Response.json({ error: 'Original inventory is temporarily unavailable.' }, { status: 503 });
     }
+    if (url.pathname.startsWith(CART_API) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) return cartApi(request, env, ctx);
+    if (SHOP_REDIRECTS[url.pathname]) return moved(new URL(SHOP_REDIRECTS[url.pathname] + url.search, url).href);
     if (url.pathname === APPLE_PAY_ASSOCIATION_PATH) return applePayAssociation();
     // One painting wall: the older framed print wall moved to the all-paintings wall.
     if (/^\/gallery\/wall\/?$/.test(url.pathname)) return Response.redirect(new URL('/gallery/wall/all/' + url.search, url).href, 301);

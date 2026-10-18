@@ -1,7 +1,7 @@
 /* Anonymous cart: only IDs/quantities and opaque order access keys persist locally.
    Prices, availability, reservations and totals always come from the server. */
 (() => {
-  const API='https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/cart';
+  const API=location.hostname==='tjm.art'?'/checkout/cart':'https://vermillion-commissions.timothyjosephmurphy.workers.dev/checkout/cart';
   const REQUEST=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
   const CART='va-cart-v1',ATTEMPT='va-cart-order-v1',HOLD='va-cart-reservation-v1',MAX=12;
   const read=key=>{try{return JSON.parse(localStorage.getItem(key));}catch{return null;}};
@@ -11,7 +11,7 @@
   const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
   const money=value=>`$${Number(value).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
   const api=async(action,body)=>{
-    const response=await fetch(`${API}/${action}`,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(action==='hold'?10000:60000)}:{cache:'no-store',signal:AbortSignal.timeout(15000)});
+    const response=await fetch(`${API}/${action}`,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(action==='hold'?10000:60000)}:{signal:AbortSignal.timeout(15000)});
     const value=await response.json();if(!response.ok){const error=Error(value.error||'Checkout is temporarily unavailable.');error.data=value;throw error;}return value;
   };
   const capabilitiesPromise=api('catalog').catch(()=>null);
@@ -54,6 +54,11 @@
     const nav=document.querySelector('.main-nav');
     if(nav&&!nav.querySelector('[data-cart-link]')){const a=node('a',undefined,'cart-nav');a.href='/cart/';a.dataset.cartLink='';a.append(node('span','Cart'));const count=node('span',String(cart.length),'cart-count');count.dataset.cartCount='';a.append(count,cartPaymentIcons());nav.append(a);}counts();
     const root=document.querySelector('[data-cart-page]');
+    // Product pages render Buy now / Add to cart enabled from build data; a click made before the
+    // (edge-cached) catalog arrives is replayed once it is ready. The server re-checks price and stock at hold/quote.
+    const earlyArea=document.querySelector('[data-cart-product]');let queuedClick=null,cartReady=false;
+    const queueClick=event=>{if(cartReady)return;const b=event.target.closest('[data-cart-buy],[data-cart-add]');if(!b)return;event.preventDefault();event.stopImmediatePropagation();queuedClick=b.matches('[data-cart-buy]')?'[data-cart-buy]':'[data-cart-add]';b.setAttribute('aria-busy','true');};
+    earlyArea?.addEventListener('click',queueClick,true);
     capabilities=await capabilitiesPromise;
     holdSession=read(HOLD);
     if(!root&&cart.length&&capabilities?.enabled)try{await syncHold(cart);}catch{}
@@ -72,6 +77,7 @@
       const add=area.querySelector('[data-cart-add]'),buy=area.querySelector('[data-cart-buy]'),message=area.querySelector('[data-cart-added]');
       if(fallback)fallback.hidden=true;
       add.hidden=false;buy.hidden=false;
+      setTimeout(()=>{cartReady=true;const q=queuedClick&&area.querySelector(queuedClick);queuedClick=null;q?.removeAttribute('aria-busy');q?.click();});
       const update=()=>{add.textContent=cart.some(i=>i.id===slug)?'Added to cart':'Add to cart';};update();
       const addItem=async()=>{
         let added=false,holdDeferred=false;
@@ -88,6 +94,7 @@
       buy.addEventListener('click',async()=>{const hasOtherItems=cart.some(item=>item.id!==slug);add.disabled=true;buy.disabled=true;if(await addItem())location.assign(hasOtherItems?'/cart/':`/cart/?buy=${encodeURIComponent(slug)}`);else{add.disabled=!eligible(slug);buy.disabled=!eligible(slug);}});
       document.addEventListener('catalog:availability',e=>{const status=e.detail?.[slug];if(!status||heldIds.has(slug))return;const product=capabilities?.products.find(item=>item.id===slug);if(product)product.status=status;if(status==='available'){add.disabled=false;buy.disabled=false;message.textContent='';}else{add.disabled=true;buy.disabled=true;message.textContent=status==='sold'?'This original has sold.':status==='unavailable'?'This original is not currently available.':'This original is currently reserved.';}});
     }
+    else if(area){cartReady=true;area.querySelectorAll('[data-cart-buy],[data-cart-add]').forEach(b=>{b.hidden=true;b.removeAttribute('aria-busy');});const fallback=area.querySelector('[data-purchase-inquiry]');if(fallback)fallback.hidden=false;}
     window.addEventListener('storage',event=>{if(event.key===CART){cart=clean(read(CART));counts();if(root&&!busy&&!pending(current)){syncHold(cart).catch(()=>{});invalidate();render();}}if(event.key===HOLD)holdSession=read(HOLD);});
   });
   document.addEventListener('cart:add-print',event=>{
