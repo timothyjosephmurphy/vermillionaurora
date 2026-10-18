@@ -37,7 +37,7 @@ const map = JSON.parse(await readFile('scripts/display-images.json', 'utf8'));
 const keys = new Map();
 for (const v of map[product.image?.src]?.variants || []) keys.set(v.src.slice(1), { w: v.w, quality: QUALITY[product.image.src] ?? DEFAULT_QUALITY });
 const idRe = new RegExp(`^${product.id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}-(\\d+)\\.webp$`);
-for (const f of await readdir('static/display')) { const m = f.match(idRe); if (m) keys.set(`display/${f}`, { w: +m[1], quality: DEFAULT_QUALITY }); }
+for (const f of JSON.parse(await readFile('scripts/display-files.json', 'utf8'))) { const m = f.match(idRe); if (m) keys.set(`display/${f}`, { w: +m[1], quality: DEFAULT_QUALITY }); }
 if (!keys.size) throw Error(`${slug} has no display images to swap`);
 // Target proportions: recorded dimensions, else the current image's pixel ratio.
 // Target proportions: recorded dimensions, else the current image's pixel ratio. Image-proportional print
