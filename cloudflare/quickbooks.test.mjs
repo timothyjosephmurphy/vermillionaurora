@@ -214,3 +214,15 @@ test('accounting client sparse update posts to the entity with operation=update'
   assert.equal(u.pathname, '/v3/company/9130354/purchase'); assert.equal(u.searchParams.get('operation'), 'update'); assert.equal(seen[0][1].method, 'POST');
   assert.deepEqual(JSON.parse(seen[0][1].body), { Id: '5', SyncToken: '1', sparse: true, PrivateNote: 'n' });
 });
+
+test('a commission balance posts as its own line to the same income account as deposits (studio-tracker #76)', async () => {
+  const { ITEM_DEFAULTS, saleItemKind } = await import('./quickbooks-core.mjs');
+  assert.equal(ITEM_DEFAULTS.balance.account, ITEM_DEFAULTS.deposit.account);
+  const item = { id: 'balance-small-landscape-12x15', type: 'deposit', title: 'Commission balance', amount: '125.00', quantity: 1, commission: { stage: 'balance', packageTitle: 'Landscape 12 × 15' } };
+  assert.equal(saleItemKind(item), 'balance');
+  assert.equal(saleItemKind({ ...item, commission: { packageTitle: 'x' } }), 'deposit');
+  const p = salesReceiptPayload(receipt({ items: [item], shipping: '0.00', tax: '0.00', gross: '125.00', salesTax: undefined, printCode: undefined }), { ...refs, items: { ...refs.items, balance: '7' } });
+  assert.match(p.DocNumber, /^VA-/);
+  assert.deepEqual(p.Line.map(l => [l.SalesItemLineDetail.ItemRef.value, l.Amount]), [['7', 125]]);
+  assert.match(p.Line[0].Description, /^Commission balance — Landscape 12 × 15/);
+});

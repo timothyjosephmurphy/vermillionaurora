@@ -3,7 +3,7 @@ import { sellerMailToken } from './shipping-email.mjs';
 import {
   QboError, QBO_ORIGINS, environment, configured, syncEnabled, discover, authorizationUrl, exchangeCode, refreshTokens, revokeToken,
   accountingClient, signState, verifyState, seal, unseal, randomToken, sha256Hex, qboString, qboName, salesReceiptPayload,
-  validateReceipt, depositAccountKey, docNumberFor, accountName, itemName, ACCOUNT_DEFAULTS, ITEM_DEFAULTS, queueDelayMs,
+  validateReceipt, saleItemKind, depositAccountKey, docNumberFor, accountName, itemName, ACCOUNT_DEFAULTS, ITEM_DEFAULTS, queueDelayMs,
   costSyncEnabled, vendorName, VENDOR_DEFAULTS, costDocNumber, costId, validateCost, purchasePayload, waTaxCollected
 } from './quickbooks-core.mjs';
 import { resolveCost, CostPending } from './quickbooks-costs.mjs';
@@ -492,7 +492,7 @@ export class QuickbooksSync extends DurableObject {
       const id = found[0]?.Id || (await client.create('Item', { Name: name, Type: 'Service', IncomeAccountRef: { value: await account(ITEM_DEFAULTS[key].account) } })).Id;
       refs.items[key] = String(id); return refs.items[key];
     };
-    const needed = new Set(receipt.items.map(i => i.type === 'print' ? 'print' : i.type === 'deposit' ? 'deposit' : 'original'));
+    const needed = new Set(receipt.items.map(saleItemKind));
     if (receipt.items.some(i => i.listAmount && Number(i.listAmount) > Number(i.amount))) needed.add('discount');
     if (Number(receipt.shipping) > 0) needed.add('shipping');
     if (Number(receipt.tax) > 0 || waTaxCollected(receipt)) needed.add('tax');

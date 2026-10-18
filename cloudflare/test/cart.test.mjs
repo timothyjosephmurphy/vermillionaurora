@@ -324,3 +324,26 @@ it('checks out a 50% commission deposit alone: no shipping, stock or labels; lin
   expect(archived.gross).toBe(d.quote.total);expect(archived.items[0].commission.requestId).toBe(requestId);
   expect(archived.commissionDeposit[0]).toMatchObject({package:'small-landscape',option:'12x15',requestId,balance:'125.00'});expect(archived.fulfillment.labelStatus).toBe('ready');
 });
+it('checks out a commission balance alone, like the deposit, with nothing left owing (studio-tracker #76)',async()=>{
+  const on={...env,...config,COMMISSION_DEPOSITS_ENABLED:'true'};
+  expect(paymentMethods(on,'balance-small-landscape-12x15')).toEqual(['paypal']);
+  expect(paymentMethods({...on,COMMISSION_DEPOSITS_PAUSED:'true'},'balance-small-landscape-12x15')).toEqual([]);
+  const btc={...on,CHECKOUT_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true'};
+  expect(paymentMethods(btc,'balance-single-portrait-7-5x12-3f')).toEqual(['paypal','bitcoin']);
+  expect(cartItems([{id:'balance-single-portrait-7-5x12-4f',quantity:1,amount:'0.01'}])[0]).toMatchObject({amount:'200.00',type:'deposit',title:expect.stringMatching(/^Commission balance/),commission:{stage:'balance',packagePrice:'400.00',balance:'0.00'}});
+  expect(()=>cartItems([{id:'balance-single-portrait-7-5x12-1f',quantity:1},{id:ids[0],quantity:1}])).toThrow();
+  expect(()=>cartItems([{id:'balance-single-portrait-7-5x12-1f',quantity:1},{id:'deposit-single-portrait-7-5x12-1f',quantity:1}])).toThrow();
+  const catalogReply=await (await cartCheckout(new Request('https://worker/checkout/cart/catalog'),on)).json();
+  expect(catalogReply.products.find(p=>p.id==='balance-small-landscape-12x15')).toMatchObject({type:'deposit',amount:'125.00',commission:{stage:'balance'},methods:['paypal']});
+  const requestId=crypto.randomUUID(),id=crypto.randomUUID(),key='e'.repeat(64),order=env.CART_ORDERS.getByName(id);objects.push(order);
+  await runInDurableObject(order,i=>{i.env={...i.env,...on};});
+  const items=[{id:'balance-small-landscape-12x15',quantity:1,requestId}];
+  expect((await cartCheckout(request('hold',{holdId:id,key,items}),on)).status).toBe(200);
+  const quoted=await cartCheckout(request('quote',{items,address,email:'buyer@example.test',catalogVersion,holdId:id,key}),on);expect(quoted.status).toBe(200);
+  const q=await quoted.json();expect(q.quote.shipping).toBe('0.00');expect(q.quote.base).toBe('125.00');
+  expect((await (await cartCheckout(request('start',{orderId:id,key,method:'paypal'}),on)).json()).status).toBe('pending');
+  approve();await order.capture();expect((await read(order)).status).toBe('paid');await order.refresh();await order.refresh();
+  const d=await read(order);expect(d.jobs).toEqual([]);expect(d.depositSellerMail.status).toBe('sent');expect(d.customerMail.status).toBe('sent');
+  const archived=await runInDurableObject(order,instance=>instance.receipt());
+  expect(archived.items[0].commission).toMatchObject({stage:'balance',requestId,balance:'0.00'});
+});
