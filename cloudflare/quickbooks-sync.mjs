@@ -8,6 +8,7 @@ import {
 } from './quickbooks-core.mjs';
 import { resolveCost, CostPending } from './quickbooks-costs.mjs';
 import { markAtCostRecords } from './quickbooks-markers.mjs';
+import { validateTip, tipDocNumber, tipSalesReceiptPayload } from './btcpay-tips.mjs';
 
 const OWNER = 'tj@vermillionaurora.com';
 const STATE_TTL = 10 * 60 * 1000;
@@ -177,6 +178,18 @@ export class QuickbooksSync extends DurableObject {
     const inserted = this.ctx.storage.sql.exec(`INSERT INTO queue (order_id,receipt,status,attempts,next_at,doc_number,created_at,updated_at)
       VALUES (?,?,'queued',0,0,?,?,?) ON CONFLICT(order_id) DO NOTHING`, receipt.orderId, JSON.stringify(receipt), docNumberFor(receipt.orderId), now, now).rowsWritten;
     if (inserted) await this.scheduleNext(1000);
+    return { queued: true, duplicate: !inserted };
+  }
+  // Lightning tip (BTCPay invoice that is not a tjm.art order). Keyed tip:<invoice id>; never queued when the same BTCPay
+  // invoice is already queued as a website sale.
+  async enqueueTip(tip) {
+    validateTip(tip);
+    const sale = this.ctx.storage.sql.exec("SELECT order_id FROM queue WHERE json_extract(receipt,'$.transactionId')=? AND order_id<>?", tip.transactionId, tip.orderId).toArray()[0];
+    if (sale) return { queued: false, reason: `BTCPay invoice belongs to order ${sale.order_id}` };
+    const now = new Date().toISOString();
+    const inserted = this.ctx.storage.sql.exec(`INSERT INTO queue (order_id,receipt,status,attempts,next_at,doc_number,created_at,updated_at)
+      VALUES (?,?,'queued',0,0,?,?,?) ON CONFLICT(order_id) DO NOTHING`, tip.orderId, JSON.stringify(tip), tipDocNumber(tip.transactionId), now, now).rowsWritten;
+    if (inserted) { this.log({ level: 'info', op: 'queue tip', orderId: tip.orderId, message: `Lightning tip queued: ${tip.sats} sats = $${tip.gross}` }); await this.scheduleNext(1000); }
     return { queued: true, duplicate: !inserted };
   }
   async enqueueCost(cost) {
@@ -408,6 +421,7 @@ export class QuickbooksSync extends DurableObject {
     }
   }
   async createSalesReceipt(receipt) {
+    if (receipt.kind === 'tip') return this.createTipReceipt(receipt);
     return this.withClient(receipt.orderId, async (client, current) => {
       const docNumber = docNumberFor(receipt.orderId);
       // Idempotency: an earlier attempt may have succeeded after its response was lost.
@@ -428,6 +442,44 @@ export class QuickbooksSync extends DurableObject {
       if (!created?.Id) throw new QboError('SalesReceipt response had no Id', { kind: 'transient' });
       return String(created.Id);
     });
+  }
+  async createTipReceipt(tip) {
+    return this.withClient(tip.orderId, async (client, current) => {
+      const existing = await client.query(`select Id, DocNumber, PrivateNote from SalesReceipt where DocNumber = ${qboString(tipDocNumber(tip.transactionId))}`, 'SalesReceipt');
+      const match = existing.find(r => String(r.PrivateNote || '').includes(tip.transactionId));
+      if (match) return String(match.Id);
+      const cache = this.get('refs');
+      const refs = cache?.realmId === current.realmId ? cache : { realmId: current.realmId, accounts: {}, items: {} };
+      if (!refs.items.tip) {
+        const name = itemName(this.env, 'tip');
+        const found = await client.query(`select Id, Name from Item where Name = ${qboString(name)}`, 'Item');
+        refs.items.tip = String(found[0]?.Id || (await client.create('Item', { Name: name, Type: 'Service', IncomeAccountRef: { value: await this.accountRef(client, refs, 'tips') } })).Id);
+      }
+      const depositAccountId = await this.accountRef(client, refs, 'bitcoin');
+      this.set('refs', refs);
+      const customerId = await this.tipCustomer(client);
+      const payload = tipSalesReceiptPayload(tip, { itemId: refs.items.tip, depositAccountId, customerId });
+      const requestId = (await sha256Hex(`va-qbo-tip:${environment(this.env)}:${current.realmId}:${tip.transactionId}`)).slice(0, 36);
+      let created;
+      try { created = await client.create('SalesReceipt', payload, requestId); }
+      catch (error) {
+        if (error.kind === 'validation' && ['2500', '610', '2020'].includes(error.faultCode)) { this.set('refs', null); throw new QboError(error.message, { ...error, kind: 'transient' }); }
+        throw error;
+      }
+      if (!created?.Id) throw new QboError('SalesReceipt response had no Id', { kind: 'transient' });
+      return String(created.Id);
+    });
+  }
+  // One shared customer for all tips (payers are anonymous): find by name, including an inactive one, else create it.
+  async tipCustomer(client) {
+    const name = qboName(this.env.QBO_TIP_CUSTOMER || 'Nostr/Lightning tips');
+    const find = async () => (await client.query(`select Id from Customer where DisplayName = ${qboString(name)} and Active in (true, false)`, 'Customer'))[0]?.Id;
+    let id = await find();
+    if (!id) {
+      try { id = (await client.create('Customer', { DisplayName: name })).Id; }
+      catch (error) { if (error.faultCode !== '6240') throw error; id = await find(); if (!id) throw error; }
+    }
+    return String(id);
   }
   async references(client, realmId, receipt) {
     const cache = this.get('refs');

@@ -87,3 +87,19 @@ References:
 - https://docs.btcpayserver.org/Development/ecommerce-integration-guide/
 - https://docs.btcpayserver.org/API/Greenfield/v1/
 - https://developers.cloudflare.com/durable-objects/api/alarms/
+
+## Lightning tips and zaps → QuickBooks
+
+Settled BTCPay invoices that are not tjm.art checkout orders (no `va-btc-`/`va-cart-` order id) are recorded in QuickBooks
+as business income: one Sales Receipt per invoice (DocNumber `TIP-…`), customer `Nostr/Lightning tips`, item
+`Lightning tips & zaps` → income account `Tips & Zaps Income` (created on the first tip unless `QBO_TIPS_ACCOUNT` names an
+existing account), deposited to `Bitcoin clearing`. The memo carries sats, USD value, BTC/USD rate and its source, the BTCPay
+invoice id, and the work (invoice `metadata.workTitle` or `itemDesc`) when present.
+
+Detection: the existing signed webhook `/checkout/bitcoin/webhook` (`InvoiceSettled`, `BTCPAY_WEBHOOK_SECRET`), plus an hourly
+poll of the last two days of settled invoices and an owner backfill (`POST /quickbooks/tips/backfill {days, dryRun}`; dry run
+by default). All paths are keyed by `tip:<invoice id>`, so a tip is recorded once.
+
+Setup: set the Worker var `QBO_TIP_SYNC_ENABLED` to `true`. Until then nothing is queued or polled. The BTCPay store webhook
+must send "An invoice has been settled" (or all events), and the `BTCPAY_API_KEY` needs "View invoices" (already required by
+checkout); "View your stores" lets the store's own BTC/USD rate be used for sats-priced zaps (otherwise Coinbase's daily spot).
