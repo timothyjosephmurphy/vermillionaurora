@@ -5,8 +5,13 @@ Display images are served from the public R2 bucket **`tjm-images`** at **https:
 `scripts/r2-image-urls.mjs`, rewrites `/display/...` (and `https://tjm.art/display/...`) in built
 HTML, `styles.css` and `portrait-preview.js` to `https://img.tjm.art/display/...`. Markup, srcset
 widths and file names do not change. Catalog JSON is not rewritten (catalog hashes stay put).
-`static/display/` is still committed and deployed as a fallback; `IMAGE_ORIGIN=self npm run build`
-builds without the rewrite.
+On Oct 18 2026 (studio-tracker#55) 1,148 display files that nothing in the repo, build or tests reads were
+removed from `static/display/`; R2 is now their only copy. The 826 still committed are read at build/test time
+(catalog validation, painting-page image sizes, tests) or are still requested from tjm.art directly (home hero
+slides, catalog JSON, cart `data-image-src`, older posts). `static/_redirects` sends any `/display/*` request to
+`https://img.tjm.art/display/*` (301). `scripts/display-files.json` lists every display file name in the bucket
+(used by build-catalog-snapshot.mjs and swap-image.mjs instead of reading the folder); add new names there when
+adding display images.
 
 ## Key scheme (Phase 3: store these keys in D1)
 
