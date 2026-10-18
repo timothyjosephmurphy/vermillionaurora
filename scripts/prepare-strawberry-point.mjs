@@ -1,7 +1,7 @@
 // Builds display images for the Strawberry Point Backpacking Trip gallery from TJ's photos.
 // Usage: STRAWBERRY_SRC=<folder with IMG_17xx.jpg from R2 images/Strawberry Point Series/> node scripts/prepare-strawberry-point.mjs
 // Each painting is cropped (crop only, no padding) to its painted edge using the boxes in
-// catalog/strawberry-point.json; each group photo is kept whole. Outputs go to static/display/ (R2 / img.tjm.art).
+// catalog/strawberry-point.json; each group photo is kept whole, or trimmed to its crop box [left, top, right, bottom] when it has one. Outputs go to static/display/ (R2 / img.tjm.art).
 import sharp from 'sharp';
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
@@ -26,6 +26,6 @@ for(const p of m.paintings){
     await writeFile(`static/print-masters/${h}.jpg`,jpg);p.master={url:`https://vermillionaurora.com/print-masters/${h}.jpg`,sha256:h,widthPx:meta.width,heightPx:meta.height};
   }
 }
-if(!only.length)for(const g of m.groups)if(!g.display)g.display=await emit(await rotated(g.photo),`/display/${g.id}`);
+if(!only.length)for(const g of m.groups)if(!g.display){const r=await rotated(g.photo),[x0,y0,x1,y1]=g.crop||[];g.display=await emit(g.crop?sharp(await r.extract({left:x0,top:y0,width:x1-x0,height:y1-y0}).toBuffer()):r,`/display/${g.id}`);}
 await writeFile(manifestPath,JSON.stringify(m,null,1)+'\n');
 console.log(`${m.paintings.length} paintings, ${m.groups.length} group photos`);
