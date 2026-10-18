@@ -43,7 +43,7 @@
   }, 1000);
   addEventListener('error', function (e) { if (!(window.__frames > 0) && /WebGL|context/i.test(String(e.message))) window.__playFallback('nostart'); });
 })();
-</script>  <script type="module" crossorigin src="/play/assets/index-B-p2tWIG.js"></script>
+</script>  <script type="module" crossorigin src="/play/assets/index-00qtGgzE.js"></script>
   <link rel="stylesheet" crossorigin href="/play/assets/index-CnKee4z6.css">
 </head><body>
 <!-- museum-gates:arrive -->
@@ -82,28 +82,71 @@ function tunnel(o) {
 }
 
 (function () {
-  var q = new URLSearchParams(location.search), via = q.get('via'); if (!via || !/^[a-z-]{2,12}$/.test(via)) return;
+  var coarse = matchMedia('(pointer:coarse)').matches;
+  function startEl() { return document.getElementById('start') || document.getElementById('overlay') || document.getElementById('intro'); }
+  function startVisible() { var s = startEl(); return !!s && getComputedStyle(s).display !== 'none'; }
+  var hint = null, armed = false, held = false;
+  function showHint() { if (coarse || !armed || paused || document.pointerLockElement || startVisible() || window.__reading || window.__gateLeft) { if (hint) hint.style.display = 'none'; return; }
+    if (!hint) { hint = document.createElement('div'); hint.id = 'gates-lookhint'; hint.textContent = 'Click to look around';
+      hint.style.cssText = 'position:fixed;left:50%;top:58%;transform:translateX(-50%);z-index:50;padding:8px 16px;border-radius:18px;background:rgba(10,6,24,.72);color:#f1dfa8;font:600 15px Georgia,serif;letter-spacing:1px;pointer-events:none'; document.body.appendChild(hint); }
+    hint.style.display = ''; }
+  function relock() { try { var p = document.body.requestPointerLock(); if (p && p.catch) p.catch(function () { setTimeout(showHint, 0); }); } catch (x) { setTimeout(showHint, 0); } }
+  window.__gatesRelock = relock;
+  function mc() { return window.__museumCart || null; } function cnt() { var c = mc(); try { return c ? c.count() : 0; } catch (e) { return 0; } }
+  function goCart() { var c = mc(); if (!c) return; if (panel) panel.style.display = 'none'; paused = false; try { c.go(); } catch (e) {} }
+  var css = 'font:600 14px Georgia,serif;letter-spacing:.5px;border-radius:16px;cursor:pointer;';
+  var cb = null; function cartBtn() { if (cb || !document.body) return; cb = document.createElement('button'); cb.type = 'button'; cb.id = 'museum-cartbtn'; cb.setAttribute('aria-label', 'Go to cart');
+    cb.style.cssText = css + 'position:fixed;top:calc(8px + env(safe-area-inset-top));left:calc(168px + env(safe-area-inset-left));z-index:40;padding:6px 12px;border:1px solid rgba(241,223,168,.45);background:rgba(10,6,24,.62);color:#f1dfa8;font-size:13px';
+    ['mousedown', 'touchstart'].forEach(function (ev) { cb.addEventListener(ev, function (e) { e.stopPropagation(); }, { passive: true }); });
+    cb.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); if (!cnt()) { cb.__empty = true; cb.textContent = 'Cart is empty'; setTimeout(function () { cb.__empty = false; upd(); }, 1400); return; } goCart(); }); document.body.appendChild(cb); upd(); }
+  function upd() { if (cb && !cb.__empty) cb.textContent = 'Cart (' + cnt() + ')'; if (panel && paused) fillPanel(); }
+  setInterval(function () { if (mc()) { cartBtn(); upd(); } }, 700);
+  var panel = null, paused = false, primary = null;
+  function fillPanel() { var n = cnt(), go = panel.querySelector('[data-go]'), rs = panel.querySelector('[data-resume]'), msg = panel.querySelector('[data-msg]');
+    if (n) { go.style.display = 'block'; go.textContent = 'Go to cart (' + n + ')'; msg.textContent = ''; primary = go; rs.style.background = 'transparent'; }
+    else { go.style.display = 'none'; msg.textContent = 'Cart is empty'; primary = rs; rs.style.background = '#f1dfa8'; }
+    rs.style.color = n ? '#f1dfa8' : '#160c28'; }
+  function showPanel() { if (coarse || !mc() || mc().leaving || window.__gateLeft || window.__reading) return false;
+    if (!panel) { panel = document.createElement('div'); panel.id = 'museum-pause';
+      panel.style.cssText = 'position:fixed;inset:0;z-index:2147482000;display:none;place-items:center;background:rgba(6,3,14,.38)';
+      panel.innerHTML = '<div role="dialog" aria-label="Paused" style="min-width:250px;padding:18px 22px;border-radius:14px;background:rgba(14,8,30,.92);border:1px solid rgba(241,223,168,.4);text-align:center;color:#f1dfa8;font:600 15px Georgia,serif">' +
+        '<div style="letter-spacing:3px;font-size:13px;opacity:.75;margin-bottom:10px">PAUSED</div><div data-msg style="margin-bottom:10px"></div>' +
+        '<button type="button" data-go style="' + css + 'display:block;width:100%;padding:10px 14px;margin:0 0 8px;border:0;background:#f1dfa8;color:#160c28;font-size:16px"></button>' +
+        '<button type="button" data-resume style="' + css + 'display:block;width:100%;padding:8px 14px;border:1px solid rgba(241,223,168,.5)">Resume</button></div>';
+      document.body.appendChild(panel);
+      panel.addEventListener('mousedown', function (e) { e.stopPropagation(); }, true);
+      panel.querySelector('[data-go]').addEventListener('click', function (e) { e.stopPropagation(); goCart(); });
+      panel.querySelector('[data-resume]').addEventListener('click', function (e) { e.stopPropagation(); hidePanel(); relock(); });
+      panel.addEventListener('click', function (e) { if (e.target === panel) { hidePanel(); relock(); } });
+      panel.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); (primary || panel.querySelector('[data-resume]')).click(); } }); }
+    var s = startEl(); if (s) s.style.display = 'none'; // the pause panel stands in for the game's CLICK TO ENTER screen
+    fillPanel(); panel.style.display = 'grid'; paused = true; if (hint) hint.style.display = 'none'; setTimeout(function () { try { primary.focus(); } catch (e) {} }, 0); return true; }
+  function hidePanel() { if (panel) panel.style.display = 'none'; paused = false; }
+  window.__museumPause = { show: showPanel, hide: hidePanel, get open() { return paused; } };
+  if (!coarse) {
+    addEventListener('mousedown', function (e) { if (!armed || paused || document.pointerLockElement || e.button !== 0 || startVisible() || window.__reading || window.__gateLeft) return;
+      var t = e.target; if (!(t && (t.tagName === 'CANVAS' || t === document.body || t === document.documentElement || t.id === 'gates-tunnel'))) return; // UI (cart, menus, links) keeps its clicks
+      e.stopImmediatePropagation(); e.preventDefault(); relock(); }, true);
+    document.addEventListener('pointerlockchange', function () { var el = document.pointerLockElement;
+      if (el && el !== document.body) { try { document.exitPointerLock(); } catch (x) {} setTimeout(relock, 0); return; } // wrong element: the controls would ignore it
+      if (el) { if (hint) hint.style.display = 'none'; hidePanel(); armed = true; held = true; } else setTimeout(function () { if (!(held && showPanel())) showHint(); held = false; }, 60); }); // after the game's own unlock handler
+    document.addEventListener('pointerlockerror', function () { setTimeout(showHint, 0); });
+    addEventListener('blur', function () { setTimeout(showHint, 60); });
+  }
+  var q = new URLSearchParams(location.search), via = q.get('via');
+  if (!via || !/^[a-z-]{2,12}$/.test(via)) { armed = true; return; } // normal load: the start screen handles the first click; the guard covers later losses
   var NAMES = { play: 'TJM Gallery', orsay: "Musée d'Orsay", bilbao: 'Guggenheim Bilbao', uffizi: 'Uffizi', 'gugg-ny': 'Guggenheim New York', montreal: 'Montreal — Chase Toole' };
   q.delete('via'); try { history.replaceState(history.state, '', location.pathname + (q.toString() ? '?' + q : '') + location.hash); } catch (e) {}
-  window.__gatesVia = via; var tn = tunnel({ dir: 'out', ms: 2600, text: 'from ' + (NAMES[via] || via) });
-  var t0 = performance.now();
-  function startEl() { return document.getElementById('start') || document.getElementById('overlay') || document.getElementById('intro'); }
+  window.__gatesVia = via; var tn = tunnel({ dir: 'out', ms: 450, text: 'from ' + (NAMES[via] || via) });
+  var t0 = performance.now(); window.__gatesArriveT0 = t0;
   function hideStart(s) { s.__gatesPrev = s.style.display; s.style.display = 'none'; }
   var s0 = null, guard = setInterval(function () { var s = startEl(); if (s && !s0) { s0 = s; hideStart(s); } }, 30);
-  function ready() { var g = window.game; return g && (g.nPaintings > 0 || (g.paintings && g.paintings.length > 0)) && (!g.grav || g.grav.loaded !== false); }
-  var tick = setInterval(function () { var el = performance.now() - t0; if (!(ready() || el > 15000)) return; clearInterval(tick);
-    requestAnimationFrame(function () { requestAnimationFrame(function () { setTimeout(finish, Math.max(0, 1600 - el)); }); }); }, 50);
+  function ready() { var g = window.game; return g && (g.nPaintings > 0 || (g.paintings && g.paintings.length > 0)); }
+  var tick = setInterval(function () { var el = performance.now() - t0; if (!(ready() || el > 15000)) return; clearInterval(tick); requestAnimationFrame(finish); }, 16);
   function audioOk() { try { if (navigator.getAutoplayPolicy) return navigator.getAutoplayPolicy('audiocontext') === 'allowed'; var C = window.AudioContext || window.webkitAudioContext, a = new C(), ok = a.state === 'running'; a.close(); return ok; } catch (e) { return false; } }
-  function finish() { tn.fade(1000).then(function () { clearInterval(guard); var s = s0 || startEl(); if (!s) return;
-    var coarse = matchMedia('(pointer:coarse)').matches;
-    if (!audioOk()) { s.style.display = s.__gatesPrev || ''; window.__gatesArrival = 'start-shown'; return; }
-    window.__gatesArrival = 'skipped-start'; if (coarse) return;
-    var cv = document.querySelector('canvas'), hint = document.createElement('div');
-    hint.textContent = 'Click to look around'; hint.style.cssText = 'position:fixed;left:50%;top:58%;transform:translateX(-50%);z-index:50;padding:8px 16px;border-radius:18px;background:rgba(10,6,24,.72);color:#f1dfa8;font:600 15px Georgia,serif;letter-spacing:1px;pointer-events:none';
-    document.body.appendChild(hint);
-    var lock = function (e) { if (document.pointerLockElement) return; e.stopImmediatePropagation(); try { cv.requestPointerLock(); } catch (x) {} };
-    addEventListener('mousedown', lock, true);
-    document.addEventListener('pointerlockchange', function f() { if (!document.pointerLockElement) return; hint.remove(); removeEventListener('mousedown', lock, true); document.removeEventListener('pointerlockchange', f); }); }); }
+  function finish() { window.__gatesSceneReadyMs = Math.round(performance.now() - t0); tn.fade(300).then(function () { tn.kill(); clearInterval(guard); window.__gatesArriveMs = Math.round(performance.now() - t0); var s = s0 || startEl();
+    armed = true; if (s && !audioOk()) { s.style.display = s.__gatesPrev || ''; window.__gatesArrival = 'start-shown'; return; }
+    window.__gatesArrival = 'skipped-start'; showHint(); }); }
 })();
 
 })();</script>

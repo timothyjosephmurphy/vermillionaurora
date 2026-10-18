@@ -1,0 +1,12 @@
+<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><title>To your cart…</title>
+<style>body{background:#0b0716;color:#f1dfa8;font:600 16px Georgia,serif;display:grid;place-items:center;height:100vh;margin:0}</style>
+<p>Taking your picks to the cart…</p>
+<script>
+// Museum galleries on other origins (Orsay, Bilbao, Uffizi, Guggenheim NY) can't write tjm.art's cart, so their Checkout gate / Go to cart
+// button comes through here: merge the slugs into the site cart (payments/cart.js: localStorage 'va-cart-v1', [{id, quantity}], max 12)
+// and continue to the regular cart page (tax lookup, checkout and order sync all happen there, unchanged).
+(function () { var q = new URLSearchParams(location.search), ids = (q.get('items') || '').split(',').filter(function (s) { return /^[a-z0-9][a-z0-9-]{0,99}$/.test(s); }).slice(0, 12);
+  try { var cur = JSON.parse(localStorage.getItem('va-cart-v1') || '[]'); if (!Array.isArray(cur)) cur = []; var have = {}; cur.forEach(function (i) { have[i && i.id] = 1; });
+    ids.forEach(function (id) { if (!have[id]) { cur.push({ id: id, quantity: 1 }); have[id] = 1; } }); localStorage.setItem('va-cart-v1', JSON.stringify(cur.slice(0, 12))); } catch (e) {}
+  location.replace('/cart/?from=' + (/^[a-z-]{2,12}$/.test(q.get('from') || '') ? q.get('from') : 'play')); })();
+</script>
