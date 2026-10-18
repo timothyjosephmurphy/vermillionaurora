@@ -1,3 +1,4 @@
+import { tipFromWebhook } from './btcpay-tips.mjs';
 import catalog, {catalogVersion} from './checkout-catalog.mjs';
 import { priceOrder } from './checkout-pricing.mjs';
 import { SITE, ORDER, bitcoinApi, bitcoinOffered, validBitcoinSignature } from './bitcoin-api.mjs';
@@ -64,7 +65,9 @@ export async function bitcoinWebhook(request,env) {
       await env.CART_ORDERS.getByName(cartId).refresh(event.invoiceId);return new Response('OK');
     }
     const orderId=invoice.metadata?.orderId?.replace(/^va-btc-/,'');
-    if (!invoice.metadata?.orderId?.startsWith('va-btc-') || !ORDER.test(orderId||'')) return new Response('Ignored');
+    // Not a tjm.art order: a Lightning tip/zap, queued for QuickBooks when tip sync is enabled (idempotent per invoice).
+    if (!invoice.metadata?.orderId?.startsWith('va-btc-')) return new Response((await tipFromWebhook(env,event,invoice)).queued ? 'OK' : 'Ignored');
+    if (!ORDER.test(orderId||'')) return new Response('Ignored');
     await env.BITCOIN_ORDERS.getByName(orderId).refresh(event.invoiceId);
     return new Response('OK');
   } catch(error) {

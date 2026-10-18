@@ -289,3 +289,25 @@ it('preflight reports the production-cost accounts and vendors',async()=>{
   expect(r.accounts.vendorCard.action).toBe('will be created (Credit Card)');
   expect(r.vendors.finerworks.action).toBe('will be created (Vendor)');
 });
+it('records a Lightning tip once as a Tips & Zaps Income SalesReceipt and never for an invoice already queued as a sale',async()=>{
+  const stub=await connected();
+  const tip={kind:'tip',status:'COMPLETED',provider:'btcpay',currency:'USD',orderId:'tip:TipInv1234567890abcdXYZ',transactionId:'TipInv1234567890abcdXYZ',paidAt:'2026-10-18T04:30:00.000Z',
+    gross:'14.28',sats:21000,btcUsd:'68000.50',rateSource:'BTCPay store rate',rateAt:'2026-10-18T04:30:05.000Z',paymentMethod:'BTC-LN',work:'Portrait in Gold'};
+  expect(await stub.enqueueTip(tip)).toEqual({queued:true,duplicate:false});
+  expect(await stub.enqueueTip(tip)).toEqual({queued:true,duplicate:true});
+  await stub.enqueue({...sale(),provider:'btcpay',transactionId:'OrderInvoice1'});
+  expect(await stub.enqueueTip({...tip,orderId:'tip:OrderInvoice1',transactionId:'OrderInvoice1'})).toMatchObject({queued:false});
+  await runDurableObjectAlarm(stub);
+  const tips=created.filter(c=>c.body.DocNumber.startsWith('TIP-'));
+  expect(tips).toHaveLength(1);
+  expect(tips[0].body).toMatchObject({DocNumber:'TIP-TipInv1234567890a',TxnDate:'2026-10-17',PaymentRefNum:'TipInv1234567890abcdXYZ'.slice(-21)});
+  expect(tips[0].body.Line).toHaveLength(1);
+  expect(tips[0].body.Line[0]).toMatchObject({Amount:14.28,SalesItemLineDetail:{Qty:1,UnitPrice:14.28,TaxCodeRef:{value:'NON'}}});
+  expect(tips[0].body.PrivateNote).toContain('21,000 sats = $14.28 at BTC/USD 68,000.50 (BTCPay store rate');
+  const accountQueries=calls.filter(c=>c.url.searchParams.get('query')?.includes('from Account')).map(c=>c.url.searchParams.get('query'));
+  expect(accountQueries.some(q=>q.includes("'Tips & Zaps Income'"))).toBe(true);
+  expect(calls.some(c=>c.url.searchParams.get('query')?.includes("DisplayName = 'Nostr/Lightning tips'"))).toBe(true);
+  expect((await stub.queueRows()).find(r=>r.order_id===tip.orderId)).toMatchObject({status:'synced',gross:'14.28'});
+  await stub.syncNow();
+  expect(created.filter(c=>c.body.DocNumber.startsWith('TIP-'))).toHaveLength(1);
+});

@@ -3,11 +3,13 @@
 //   POST /quickbooks/start       Bearer COMMISSION_MANAGER_TOKEN → Intuit authorization URL (+ state cookie)
 //   GET  /quickbooks/callback    Intuit redirect URI (signed state + cookie + single-use nonce)
 //   POST /quickbooks/status | /quickbooks/disconnect | /quickbooks/sync | /quickbooks/logs | /quickbooks/retry   (Bearer)
+//   POST /quickbooks/tips/backfill {days, dryRun} (Bearer) → BTCPay settled invoices that are not tjm.art orders, queued as Lightning tips (dryRun: list only)
 //   POST /quickbooks/costs/preview {orderId} (read-only) | /quickbooks/costs/backfill {orderIds} (queues production-cost Purchases)
 import { authorized } from './etsy-connection.mjs';
 import { QBO_ORIGINS, environment, configured, DISCONNECTED_PAGE } from './quickbooks-core.mjs';
 import { quickbooksFor } from './quickbooks-sync.mjs';
 import { quickbooksConnectPage } from './quickbooks-connect-page.mjs';
+import { pollTips } from './btcpay-tips.mjs';
 
 const COOKIE = '__Host-qbo-state';
 const headers = { 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer', 'X-Content-Type-Options': 'nosniff', 'X-Robots-Tag': 'noindex, nofollow' };
@@ -28,7 +30,7 @@ export async function quickbooksApi(request, env) {
       return toPage(result);
     } catch { return toPage('internal'); }
   }
-  const routes = ['/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry', '/quickbooks/costs/preview', '/quickbooks/costs/backfill'];
+  const routes = ['/quickbooks/start', '/quickbooks/status', '/quickbooks/preflight', '/quickbooks/disconnect', '/quickbooks/sync', '/quickbooks/logs', '/quickbooks/retry', '/quickbooks/costs/preview', '/quickbooks/costs/backfill', '/quickbooks/tips/backfill'];
   if (request.method !== 'POST' || !routes.includes(path)) return json({ error: 'Not found' }, 404);
   if (request.headers.get('Origin') !== origin || !await authorized(request, env)) return json({ error: 'Invalid management credential or origin.' }, 403);
   if (!configured(env)) return json({ error: 'QuickBooks credentials are missing from this Worker.' }, 503);
@@ -42,6 +44,7 @@ export async function quickbooksApi(request, env) {
     if (path === '/quickbooks/retry') { const body = await request.json().catch(() => ({})); return json(await sync.retry(String(body.orderId || ''))); }
     const body = await request.json().catch(() => ({}));
     if (path === '/quickbooks/costs/preview') return json(await sync.previewCosts(String(body.orderId || '')));
+    if (path === '/quickbooks/tips/backfill') return json(await pollTips(env, { days: Number(body.days) || 30, dryRun: body.dryRun !== false }));
     if (path === '/quickbooks/costs/backfill') return json(await sync.backfillCosts(body.orderIds));
     return json({ environment: environment(env), logs: await sync.logs(Number(body.limit) || 500), queue: await sync.queueRows(), costs: await sync.costRows() });
   } catch (error) {

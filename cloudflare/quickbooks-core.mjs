@@ -197,7 +197,8 @@ export const ITEM_DEFAULTS = {
   deposit: { env: 'QBO_ITEM_DEPOSIT', name: 'Commission deposit', account: 'deposit' },
   shipping: { env: 'QBO_ITEM_SHIPPING', name: 'Shipping', account: 'shipping' },
   tax: { env: 'QBO_ITEM_TAX', name: 'Sales tax collected', account: 'tax' },
-  discount: { env: 'QBO_ITEM_DISCOUNT', name: 'Discounts', account: 'discount' }
+  discount: { env: 'QBO_ITEM_DISCOUNT', name: 'Discounts', account: 'discount' },
+  tip: { env: 'QBO_ITEM_TIP', name: 'Lightning tips & zaps', account: 'tips' }
 };
 export const ACCOUNT_DEFAULTS = {
   income: { env: 'QBO_INCOME_ACCOUNT', name: 'Art sales', type: 'Income', subType: 'SalesOfProductIncome' },
@@ -206,6 +207,8 @@ export const ACCOUNT_DEFAULTS = {
   tax: { env: 'QBO_TAX_ACCOUNT', name: 'Sales tax collected', type: 'Other Current Liability', subType: 'OtherCurrentLiabilities' },
   discount: { env: 'QBO_DISCOUNT_ACCOUNT', name: 'Discounts given', type: 'Income', subType: 'DiscountsRefundsGiven' },
   square: { env: 'QBO_SQUARE_DEPOSIT_ACCOUNT', name: 'Square clearing', type: 'Other Current Asset', subType: 'OtherCurrentAssets' },
+  // Lightning tips / Nostr zaps to the BTCPay store: business income (set QBO_TIPS_ACCOUNT to use an existing account).
+  tips: { env: 'QBO_TIPS_ACCOUNT', name: 'Tips & Zaps Income', type: 'Income', subType: 'OtherPrimaryIncome' },
   bitcoin: { env: 'QBO_BITCOIN_DEPOSIT_ACCOUNT', name: 'Bitcoin clearing', type: 'Other Current Asset', subType: 'OtherCurrentAssets' },
   // Production costs (Purchases to the print lab and the label service)
   cogsPrints: { env: 'QBO_COGS_PRINTS_ACCOUNT', name: 'Cost of goods sold – prints & framing', type: 'Cost of Goods Sold', subType: 'SuppliesMaterialsCogs' },
