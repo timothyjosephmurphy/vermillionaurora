@@ -50,6 +50,17 @@ export async function checkoutReadiness(request,env) {
       checks.bitcoinInvoiceAccess=false;
       checks.bitcoinInvoiceAccessError=error.message;
     }
+    // Report-only (studio-tracker #71): does the store webhook to this Worker send 'invoice settled'? Tip sync
+    // and order settlement both rely on it. Never blocks readiness; URLs and secrets are not echoed.
+    try {
+      const hooks=await bitcoinApi(env,'/webhooks');
+      checks.bitcoinWebhooks=(Array.isArray(hooks)?hooks:[]).filter(h=>/\/checkout\/bitcoin\/webhook\/?$/.test(h?.url||'')).map(h=>{
+        const everything=h.authorizedEvents?.everything===true,events=Array.isArray(h.authorizedEvents?.specificEvents)?h.authorizedEvents.specificEvents:[];
+        return {enabled:h.enabled!==false,host:(()=>{try{return new URL(h.url).host;}catch{return null;}})(),everything,events,
+          sendsInvoiceSettled:h.enabled!==false&&(everything||events.includes('InvoiceSettled')),automaticRedelivery:h.automaticRedelivery===true};
+      });
+      checks.bitcoinWebhookSendsInvoiceSettled=checks.bitcoinWebhooks.some(h=>h.sendsInvoiceSettled);
+    } catch(error) { checks.bitcoinWebhookCheckError=error.message; }
   }
   if(env.SQUARE_CHECKOUT_ENABLED==='true') {
     try {
