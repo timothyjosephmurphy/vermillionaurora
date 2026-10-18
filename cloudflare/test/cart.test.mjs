@@ -1,7 +1,7 @@
 import {env} from 'cloudflare:workers';
 import {runInDurableObject,runDurableObjectAlarm,evictDurableObject} from 'cloudflare:test';
 import {it,expect,beforeEach,afterEach,vi} from 'vitest';
-import {catalogVersion,cartItems,keyHash,paymentMethods} from '../cart-policy.mjs';
+import {catalogVersion,cartItems,commonMethods,keyHash,paymentMethods} from '../cart-policy.mjs';
 import catalog from '../checkout-catalog.mjs';
 import prints from '../print-catalog.mjs';
 import {cartCheckout} from '../cart-checkout.mjs';
@@ -94,6 +94,23 @@ it('offers production Square across eligible originals and prints, preserving Pa
   expect(paymentMethods({...square,PRINT_CHECKOUT_ENABLED:'false'},print.id)).toEqual([]);
   const testPrint=Object.values(prints).find(p=>p.testOnly);
   if(testPrint)expect(paymentMethods(square,testPrint.id)).toEqual([]);
+});
+
+it('offers Bitcoin for every available original and print without an allowlist, including mixed carts (#120)',()=>{
+  const btc={...env,...config,CHECKOUT_MODE:'live',BTCPAY_URL:'https://btcpay.example.test',BTCPAY_STORE_ID:'STORE',BTCPAY_API_KEY:'fake',
+    BTCPAY_WEBHOOK_SECRET:'fake',BTCPAY_CHECKOUT_ENABLED:'true',BTCPAY_CHECKOUT_SLUGS:undefined,
+    PRINT_CHECKOUT_ENABLED:'true',PRINT_CHECKOUT_ALL:'true',PRINT_PROVIDER:'finerworks',FINERWORKS_ORDER_ENABLED:'true',
+    FINERWORKS_WEB_API_KEY:'fake',FINERWORKS_APP_KEY:'fake',FINERWORKS_PAYMENT_TOKEN:'billing-token'};
+  const print=Object.values(prints).find(p=>p.provider==='finerworks'&&!p.testOnly&&!p.sampleOnly);
+  for(const id of [...ids,print.id])expect(paymentMethods(btc,id)).toContain('bitcoin');
+  const available=Object.entries(catalog).filter(([,x])=>x.available!==false).map(([id])=>id);
+  for(const id of available)expect(paymentMethods(btc,id)).toContain('bitcoin');
+  const sold=Object.entries(catalog).find(([,x])=>x.available===false);
+  if(sold)expect(paymentMethods(btc,sold[0])).toEqual([]);
+  expect(commonMethods(btc,cartItems([{id:ids[0],quantity:1},{id:print.id,quantity:2}]))).toContain('bitcoin');
+  expect(paymentMethods({...btc,BTCPAY_CHECKOUT_ENABLED:'false'},ids[0])).not.toContain('bitcoin');
+  expect(paymentMethods({...btc,BTCPAY_API_KEY:''},ids[0])).not.toContain('bitcoin');
+  for(const id of ['not-a-product','__proto__'])expect(paymentMethods(btc,id)).toEqual([]);
 });
 
 it('rejects duplicated originals, quantities, unknown products and client price substitutions',()=>{

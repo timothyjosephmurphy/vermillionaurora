@@ -12,8 +12,9 @@ export function bitcoinConfigured(env) {
     env.PAINTING_STOCK && env.SALES_LEDGER && env.SALES_ARCHIVE &&
     env.SHIPPO_TOKEN && env.SHIP_FROM_STREET && env.CHECKOUT_MODE === 'live');
 }
-export const bitcoinOffered = (env,slug) => env.BTCPAY_CHECKOUT_ENABLED === 'true' && bitcoinConfigured(env) &&
-  !!env.BTCPAY_CHECKOUT_SLUGS?.split(',').map(s=>s.trim()).includes(slug);
+// Bitcoin is offered for every available original (studio-tracker #120). The
+// catalog and stock checks at each call site decide whether the item is for sale.
+export const bitcoinOffered = (env,slug) => env.BTCPAY_CHECKOUT_ENABLED === 'true' && bitcoinConfigured(env) && typeof slug === 'string' && !!slug;
 export async function bitcoinApi(env,path,body) {
   const response = await fetch(`${bitcoinServer(env)}/api/v1/stores/${encodeURIComponent(env.BTCPAY_STORE_ID)}${path}`,{
     // Workers rejects redirect:'error' before sending the request. Manual mode

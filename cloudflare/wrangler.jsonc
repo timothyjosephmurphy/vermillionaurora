@@ -14,7 +14,6 @@
     "SHIPPO_CARRIER_ALLOWLIST": "UPS",
     "CHECKOUT_PILOT_ENABLED": "false",
     "BTCPAY_URL": "https://btcpay884215.lndyn.com",
-    "BTCPAY_CHECKOUT_SLUGS": "painting-portrait-in-green,painting-portrait-in-gold",
     "CART_CHECKOUT_ENABLED": "true",
     "COMMISSION_DEPOSITS_ENABLED": "true",
     "PRINT_CHECKOUT_ENABLED": "true",
@@ -26,7 +25,8 @@
     "BTCPAY_CHECKOUT_ENABLED": "true",
     "QBO_ENVIRONMENT": "production",
     "QBO_SYNC_ENABLED": "true",
-    "QBO_COST_SYNC_ENABLED": "true"
+    "QBO_COST_SYNC_ENABLED": "true",
+    "QBO_TIP_SYNC_ENABLED": "true"
   },
   "d1_databases": [
     {

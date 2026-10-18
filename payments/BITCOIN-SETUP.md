@@ -27,9 +27,9 @@ the store. The invoice requires full payment and one on-chain confirmation
    Select all invoice events (or all events) and enable automatic redelivery.
    Copy the generated secret into Cloudflare as `BTCPAY_WEBHOOK_SECRET`.
 5. The checked-in `BTCPAY_URL` is `https://btcpay884215.lndyn.com`.
-   `BTCPAY_CHECKOUT_SLUGS` initially restricts checkout to the same $20 Chase
-   portrait pilot as PayPal: `painting-portrait-in-green`. Broaden the list only
-   after verifying each original's package, shipping and inventory information.
+   Bitcoin is offered for every available original and print, including mixed
+   carts (studio-tracker #120). There is no per-painting allowlist any more;
+   `BTCPAY_CHECKOUT_SLUGS` is ignored by checkout.
 6. Once the wallet and webhook are ready, add the text variable
    `BTCPAY_CHECKOUT_ENABLED=true` and deploy the settings. This switch is omitted
    from Wrangler's checked-in vars so `keep_vars` preserves a dashboard pause.
