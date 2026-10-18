@@ -8,7 +8,9 @@ import { products, catalogVersion } from '../catalog/catalog.mjs';
 import checkout, { inventory } from '../cloudflare/checkout-catalog.mjs';
 import prints, { printVersion } from '../cloudflare/print-catalog.mjs';
 const map = JSON.parse(await readFile('scripts/display-images.json', 'utf8'));
-const displayFiles = await readdir('static/display');
+// Only part of static/display/ is still committed (the rest lives in R2 only, studio-tracker#55);
+// scripts/display-files.json lists every display file name in the tjm-images bucket.
+const displayFiles = JSON.parse(await readFile('scripts/display-files.json', 'utf8'));
 const keysFor = p => {
   const keys = new Map();
   for (const v of map[p.image?.src]?.variants || []) keys.set(v.src.slice(1), v.w);
