@@ -1,4 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
+// BTCPay Support URL: /commissions/?order={OrderId}&invoice={InvoiceId}#form. Only short id-like values are
+// accepted (anything else, or an empty value, is ignored), so nothing from the URL is injected unchecked.
+function btcpayReference(params) {
+  const clean = (v) => { v = (v || '').trim(); return /^[A-Za-z0-9._:-]{1,64}$/.test(v) ? v : ''; };
+  const invoice = clean(params.get('invoice'));
+  const order = clean(params.get('order'));
+  if (!invoice && !order) return '';
+  return 'Re: BTCPay ' + [invoice && 'invoice ' + invoice, order && 'order ' + order].filter(Boolean).join(', ');
+}
+
+typeof document !== 'undefined' && document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
@@ -6,6 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const productSlug = params.get('product');
   const purchaseSlug = params.get('buy');
   const packageSlug = params.get('package');
+  const btcpayRef = btcpayReference(params);
+  const btcpayField = form.querySelector('[name="btcpayRef"]');
+  if (btcpayRef && btcpayField) {
+    btcpayField.value = btcpayRef;
+    const msg = form.querySelector('[name="message"]');
+    if (msg && !msg.value.includes(btcpayRef)) msg.value = btcpayRef + '\n\n' + msg.value;
+  }
   const message = form.querySelector('[name="message"]');
   const packageSelect = form.querySelector('[name="package"]');
   const sizeInput = form.querySelector('[name="size"]');
@@ -132,6 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (packageLabel && packageSelect?.value) {
         description = 'Package: ' + packageLabel + '\n\n' + description;
       }
+      const btcpayValue = (data.get('btcpayRef') || '').toString();
+      if (btcpayValue && !description.includes(btcpayValue)) description = btcpayValue + '\n\n' + description;
       data.set('description', description);
 
       for (const fieldName of ['referenceImage', 'paletteImage']) {
