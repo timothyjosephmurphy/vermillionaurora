@@ -59,11 +59,12 @@ const REQUEST_ID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
 export function cartItems(input) {
   if(Array.isArray(input)&&input.some(line=>line&&Object.hasOwn(deposits,line.id))) {
     // A deposit is checked out on its own so no shipping or inventory rules mix in.
-    if(input.length!==1||input[0].quantity!==1)throw Error('Pay a commission deposit on its own, one at a time.');
+    if(input.length!==1||input[0].quantity!==1)throw Error('Pay a commission deposit or balance on its own, one at a time.');
     const line=input[0],d=deposits[line.id];
     if(line.requestId!==undefined&&!REQUEST_ID.test(line.requestId))throw Error('The commission request reference is invalid.');
-    return [{id:line.id,type:'deposit',quantity:1,title:d.title,amount:d.amount,commission:{package:d.package,...(d.option?{option:d.option}:{}),packageTitle:d.packageTitle,packagePrice:d.packagePrice,
-      ...(line.requestId?{requestId:line.requestId}:{}),balance:(Number(d.packagePrice)-Number(d.amount)).toFixed(2)}}];
+    // A balance line (stage 'balance') is the final payment, so nothing remains after it.
+    return [{id:line.id,type:'deposit',quantity:1,title:d.title,amount:d.amount,commission:{package:d.package,...(d.option?{option:d.option}:{}),...(d.stage?{stage:d.stage}:{}),packageTitle:d.packageTitle,packagePrice:d.packagePrice,
+      ...(line.requestId?{requestId:line.requestId}:{}),balance:d.stage==='balance'?'0.00':(Number(d.packagePrice)-Number(d.amount)).toFixed(2)}}];
   }
   if(!Array.isArray(input)||input.length<1||input.length>MAX_ITEMS)throw Error(`Choose between 1 and ${MAX_ITEMS} items.`);
   const seen=new Set(),sampleArtworks=new Set();

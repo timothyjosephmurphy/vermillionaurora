@@ -6,7 +6,7 @@
   const CART='va-cart-v1',ATTEMPT='va-cart-order-v1',HOLD='va-cart-reservation-v1',MAX=12;
   const read=key=>{try{return JSON.parse(localStorage.getItem(key));}catch{return null;}};
   const write=(key,value)=>{try{if(value===null)localStorage.removeItem(key);else localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
-  const clean=value=>Array.isArray(value)?[...new Map(value.filter(x=>x&&/^[a-z0-9-]+$/.test(x.id||'')&&Number.isSafeInteger(x.quantity)&&x.quantity>=1&&x.quantity<=(x.id.startsWith('print-')?10:1)).map(x=>[x.id,{id:x.id,quantity:x.quantity,...(x.id.startsWith('deposit-')&&REQUEST.test(x.requestId||'')?{requestId:x.requestId}:{})}])).values()].slice(0,MAX):[];
+  const clean=value=>Array.isArray(value)?[...new Map(value.filter(x=>x&&/^[a-z0-9-]+$/.test(x.id||'')&&Number.isSafeInteger(x.quantity)&&x.quantity>=1&&x.quantity<=(x.id.startsWith('print-')?10:1)).map(x=>[x.id,{id:x.id,quantity:x.quantity,...(/^(deposit|balance)-/.test(x.id)&&REQUEST.test(x.requestId||'')?{requestId:x.requestId}:{})}])).values()].slice(0,MAX):[];
   let cart=clean(read(CART)),meta={},capabilities=null,busy=false,quoted=null,current=null,timer,buyOnly=null,holdSession=null,heldIds=new Set(),holdQueue=Promise.resolve(),awaitingBitcoinRedirect=false;
   const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
   const money=value=>`$${Number(value).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
@@ -17,7 +17,7 @@
   const capabilitiesPromise=api('catalog').catch(()=>null);
   window.vaCartReady=capabilitiesPromise;
   const counts=()=>document.querySelectorAll('[data-cart-count]').forEach(el=>{const count=(buyOnly?clean(read(CART)):cart).reduce((n,i)=>n+i.quantity,0);el.textContent=String(count);el.closest('a')?.setAttribute('aria-label',`Cart, ${count} item${count===1?'':'s'}`);});
-  function persistCart(){if(buyOnly){const rest=clean(read(CART)).filter(i=>i.id!==buyOnly);write(CART,[...rest,...cart.filter(i=>!i.id.startsWith('deposit-'))]);}else write(CART,cart);counts();document.dispatchEvent(new CustomEvent('cart:changed'));}
+  function persistCart(){if(buyOnly){const rest=clean(read(CART)).filter(i=>i.id!==buyOnly);write(CART,[...rest,...cart.filter(i=>!/^(deposit|balance)-/.test(i.id))]);}else write(CART,cart);counts();document.dispatchEvent(new CustomEvent('cart:changed'));}
    const methodIntersection=()=>['square','bitcoin'].filter(m=>cart.length&&cart.every(line=>capabilities?.products.find(p=>p.id===line.id)?.methods.includes(m)));
   const eligible=id=>capabilities?.enabled&&capabilities.products.find(p=>p.id===id&&(p.status==='available'||heldIds.has(id)));
   const reservation=d=>d&&['holding','quoted'].includes(d.status);
@@ -33,7 +33,7 @@
     const slug=location.pathname.match(/^\/products\/([a-z0-9-]+)\/?$/)?.[1],area=document.querySelector('[data-cart-product]');
     if(slug&&heldIds.has(slug)&&area){area.querySelector('[data-cart-add]').disabled=false;area.querySelector('[data-cart-buy]').disabled=false;}
     const note=document.querySelector('[data-cart-reservation]');
-    if(note){const hasOriginal=cart.some(item=>!item.id.startsWith('print-')&&!item.id.startsWith('deposit-'));note.hidden=!hasOriginal;note.textContent=hasOriginal?`Originals in your cart are reserved until ${new Date(result.expiresAt).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}. Complete checkout before then to keep the reservation.`:'';}
+    if(note){const hasOriginal=cart.some(item=>!item.id.startsWith('print-')&&!/^(deposit|balance)-/.test(item.id));note.hidden=!hasOriginal;note.textContent=hasOriginal?`Originals in your cart are reserved until ${new Date(result.expiresAt).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}. Complete checkout before then to keep the reservation.`:'';}
   }
   function syncHold(items=cart){
     if(!capabilities?.enabled)return Promise.resolve(null);
@@ -267,7 +267,7 @@
       if(amount)subtotal+=Number(amount)*line.quantity;
       const row=node('article',undefined,'cart-line'),link=node('a');link.href=isDeposit?'/commissions/':`/products/${details?.productId||line.id}/`;
       if(p?.image||details?.preview){const img=node('img');img.src=(p?.image||details.preview).src;img.alt=p?.title||details.title;link.append(img);}row.append(link);
-      const info=node('div'),title=node('h2'),titleLink=node('a',p?.title||live?.title||'Unavailable artwork');titleLink.href=link.href;title.append(titleLink);info.append(title,node('p',isPrint?`Fine-art print · Image ${inches(details.imageSize.width)} × ${inches(details.imageSize.height)} in · Paper ${inches(details.paperSize.width)} × ${inches(details.paperSize.height)} in${details.mat?` · ${details.mat.name} · Mat / frame ${inches(details.mat.outer.width)} × ${inches(details.mat.outer.height)} in`:""}`:isDeposit?`Commission deposit · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Balance due before the finished work ships${line.requestId?' · Linked to your commission request':''}`:'Original artwork · Quantity 1'),node('p',amount?money(Number(amount)*line.quantity):'Price unavailable','cart-line-price'));
+      const info=node('div'),title=node('h2'),titleLink=node('a',p?.title||live?.title||'Unavailable artwork');titleLink.href=link.href;title.append(titleLink);info.append(title,node('p',isPrint?`Fine-art print · Image ${inches(details.imageSize.width)} × ${inches(details.imageSize.height)} in · Paper ${inches(details.paperSize.width)} × ${inches(details.paperSize.height)} in${details.mat?` · ${details.mat.name} · Mat / frame ${inches(details.mat.outer.width)} × ${inches(details.mat.outer.height)} in`:""}`:isDeposit?(details.commission.stage==='balance'?`Commission balance · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Final payment before the finished work ships${line.requestId?' · Linked to your commission request':''}`:`Commission deposit · ${details.commission.packageTitle} package ${money(details.commission.packagePrice)} · Balance due before the finished work ships${line.requestId?' · Linked to your commission request':''}`):'Original artwork · Quantity 1'),node('p',amount?money(Number(amount)*line.quantity):'Price unavailable','cart-line-price'));
       if(isPrint&&details.frame)info.append(node('p',`${details.frame.name} frame · ${details.frame.glazing.name} acrylic · Assembled by FinerWorks`,'cart-frame-description'));
       if(!eligible(line.id)){invalid=true;info.append(node('p',live?.status==='sold'?'Sold':live?.status==='reserved'?'Temporarily reserved':'Checkout unavailable — please inquire','cart-line-unavailable'));}
       if(details?.sampleOnly)info.append(node('p','Low-resolution sample · Real printed order · One copy','cart-footnote'));
@@ -276,7 +276,7 @@
     root.querySelector('[data-cart-subtotal]').textContent=money(subtotal);
     // The 15-minute hold applies to originals only; prints and deposits are not held.
     const holdNote=root.querySelector('[data-cart-hold-note]');
-    if(holdNote)holdNote.hidden=!cart.some(i=>!i.id.startsWith('print-')&&!i.id.startsWith('deposit-'));
+    if(holdNote)holdNote.hidden=!cart.some(i=>!i.id.startsWith('print-')&&!/^(deposit|balance)-/.test(i.id));
     const active=!!current&&(pending(current)||current.status==='paid');
     layout.hidden=!cart.length||active;root.querySelector('[data-cart-empty]').hidden=!!cart.length||active;
     updateQuoteButton();
@@ -289,7 +289,7 @@
       codeNote.textContent=coded.length?`Discount code applied: ${coded.map(i=>`${i.title} $${i.amount} (was $${i.listAmount})`).join('; ')}.`:'';}
     if(q.quote?.base)root.querySelector('[data-cart-subtotal]').textContent=money(q.quote.base);
     quoted=q;root.querySelector('[data-cart-shipping]').textContent=money(q.quote.shipping);root.querySelector('[data-cart-tax]').textContent=money(q.quote.tax);root.querySelector('[data-cart-total]').textContent=money(q.quote.total);
-    applyHeldState({heldIds:cart.filter(i=>!i.id.startsWith('print-')&&!i.id.startsWith('deposit-')).map(i=>i.id),expiresAt:q.expiresAt});
+    applyHeldState({heldIds:cart.filter(i=>!i.id.startsWith('print-')&&!/^(deposit|balance)-/.test(i.id)).map(i=>i.id),expiresAt:q.expiresAt});
     const quoteButton=form.querySelector('[data-cart-quote]');quoteButton.disabled=true;quoteButton.textContent='Shipping & tax calculated';
     updatePaymentControls(true,q.methods);
   }
@@ -373,7 +373,7 @@
     if(methodsHost&&!root.querySelector('[data-cart-wallets]')){const wallets=node('div',undefined,'cart-wallets');wallets.dataset.cartWallets='';wallets.hidden=true;const label=node('p','Express checkout','cart-wallets-label');const buttons=node('div',undefined,'cart-wallet-buttons');buttons.dataset.walletButtons='';wallets.append(label,buttons,node('p','or','cart-wallets-or'));methodsHost.before(wallets);}
     const params=new URLSearchParams(location.search),buy=params.get('buy');
     // Buy now is a one-item checkout; existing cart contents remain for a later order.
-    if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;const requestId=params.get('request');cart=[{id:buy,quantity:1,...(buy.startsWith('deposit-')&&REQUEST.test(requestId||'')?{requestId}:{})}]; /* view only; do not overwrite a saved multi-item cart */}
+    if(buy&&(eligible(buy)||cart.some(item=>item.id===buy))&&eligible(buy)?.type!=='print'){buyOnly=buy;const requestId=params.get('request');cart=[{id:buy,quantity:1,...(/^(deposit|balance)-/.test(buy)&&REQUEST.test(requestId||'')?{requestId}:{})}]; /* view only; do not overwrite a saved multi-item cart */}
     const addressChanged=()=>{if(quoted)invalidate();else updateQuoteButton();};
     form.addEventListener('input',addressChanged);form.addEventListener('change',addressChanged);
     form.addEventListener('invalid',()=>{const message='Check the highlighted delivery field. Enter your email, name, street, city, two-letter state and ZIP code.';announce(message);quoteFeedback.textContent=message;},true);
