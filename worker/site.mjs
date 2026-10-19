@@ -85,6 +85,16 @@ export async function applePayAssociation(fetcher = fetch) {
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
 }
 
+// NIP-05 (Nostr) identity: tj@tjm.art and _@tjm.art. Served by the Worker so it gets JSON + CORS headers
+// without a static/_headers file and is never caught by trailing-slash handling.
+export const NOSTR_JSON_PATH = '/.well-known/nostr.json';
+export const NOSTR_PUBKEY = '7edfc4a9556797f26adab9d1fd5adbe5f66f174546f8ddeee09502cd532f88cb';
+export function nostrJson() {
+  return new Response(JSON.stringify({ names: { tj: NOSTR_PUBKEY, _: NOSTR_PUBKEY } }), {
+    headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' },
+  });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const redirect = hostRedirect(request, env);
@@ -102,6 +112,7 @@ export default {
     if (url.pathname.startsWith(CART_API) && url.hostname === (env.PRIMARY_HOST || 'tjm.art')) return cartApi(request, env, ctx);
     if (SHOP_REDIRECTS[url.pathname]) return moved(new URL(SHOP_REDIRECTS[url.pathname] + url.search, url).href);
     if (url.pathname === APPLE_PAY_ASSOCIATION_PATH) return applePayAssociation();
+    if (url.pathname === NOSTR_JSON_PATH) return nostrJson();
     // One painting wall: the older framed print wall moved to the all-paintings wall.
     if (/^\/gallery\/wall\/?$/.test(url.pathname)) return Response.redirect(new URL('/gallery/wall/all/' + url.search, url).href, 301);
     // Live catalog (tjm-catalog D1): owner admin, and catalog pages patched at request time (built page on any D1 error).
