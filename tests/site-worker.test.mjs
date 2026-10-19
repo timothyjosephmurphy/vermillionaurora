@@ -70,15 +70,15 @@ const workerFirst=async()=>{
   return config.assets.run_worker_first;
 };
 test('run_worker_first lists exactly the routes the Worker serves, so static files never invoke it',async()=>{
-  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,CATALOG_WORKER_FIRST,CART_API,SHOP_REDIRECTS}=await import('../worker/site.mjs');
+  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,CATALOG_WORKER_FIRST,CART_API,SHOP_REDIRECTS}=await import('../worker/site.mjs');
   const patterns=await workerFirst();
   assert.ok(Array.isArray(patterns)&&patterns.length>0&&patterns.length<=100,'an explicit pattern list, not true');
   assert.ok(patterns.every(p=>p.startsWith('/')&&!p.startsWith('!/')),'no negative patterns needed');
   const matches=(path)=>patterns.some(p=>globRe(p).test(path));
   // Every route the Worker handles runs the Worker first.
-  for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH])assert.ok(matches(path),path+' must run the Worker');
+  for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH])assert.ok(matches(path),path+' must run the Worker');
   // Every pattern is a route the Worker actually handles (no stray patterns).
-  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,TESTIMONIALS_API+'*',...CATALOG_WORKER_FIRST]);
+  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,TESTIMONIALS_API+'*',...CATALOG_WORKER_FIRST]);
   for(const p of patterns)assert.ok(handled.has(p),p+' is not a Worker route');
   assert.equal(patterns.length,handled.size);
   // Static files, pages and admin pages are served by the assets layer, not the Worker.
@@ -155,4 +155,15 @@ test('original inventory API on tjm.art goes to the checkout Worker', async () =
   assert.equal(seen[0], 'https://tjm.art/inventory/originals');
   assert.equal(await (await worker.fetch(new Request('https://tjm.art/originals-manager/'),env)).text(), 'asset');
   assert.equal((await worker.fetch(new Request('https://tjm.art/inventory/originals'),{...env, CHECKOUT:undefined})).status, 503);
+});
+
+test('NIP-05 nostr.json: exact body, JSON content type, CORS, 200 with no redirect',async()=>{
+  const {default:worker,NOSTR_JSON_PATH}=await import('../worker/site.mjs');
+  assert.equal(NOSTR_JSON_PATH,'/.well-known/nostr.json');
+  const hex='7edfc4a9556797f26adab9d1fd5adbe5f66f174546f8ddeee09502cd532f88cb';
+  for(const q of ['','?name=tj']){
+    const r=await worker.fetch(new Request('https://tjm.art/.well-known/nostr.json'+q),{PRIMARY_HOST:'tjm.art',ASSETS:{fetch:()=>new Response('asset',{status:404})}},{});
+    assert.equal(r.status,200);assert.equal(r.headers.get('content-type'),'application/json');assert.equal(r.headers.get('access-control-allow-origin'),'*');
+    assert.equal(await r.text(),JSON.stringify({names:{tj:hex,_:hex}}));
+  }
 });
