@@ -149,5 +149,170 @@ export default {
     "packagePrice": "1000.00",
     "amount": "500.00",
     "currency": "USD"
+  },
+  "balance-single-portrait-7-5x12-1f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "7-5x12-1f",
+    "title": "Commission balance – Portrait 1 face, 7.5 × 12 in (50%)",
+    "packageTitle": "Portrait 1 face, 7.5 × 12 in",
+    "packagePrice": "100.00",
+    "amount": "50.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-7-5x12-2f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "7-5x12-2f",
+    "title": "Commission balance – Portrait 2 faces, 7.5 × 12 in (50%)",
+    "packageTitle": "Portrait 2 faces, 7.5 × 12 in",
+    "packagePrice": "200.00",
+    "amount": "100.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-7-5x12-3f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "7-5x12-3f",
+    "title": "Commission balance – Portrait 3 faces, 7.5 × 12 in (50%)",
+    "packageTitle": "Portrait 3 faces, 7.5 × 12 in",
+    "packagePrice": "300.00",
+    "amount": "150.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-7-5x12-4f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "7-5x12-4f",
+    "title": "Commission balance – Portrait 4 faces, 7.5 × 12 in (50%)",
+    "packageTitle": "Portrait 4 faces, 7.5 × 12 in",
+    "packagePrice": "400.00",
+    "amount": "200.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-12x15-1f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "12x15-1f",
+    "title": "Commission balance – Portrait 1 face, 12 × 15 in (50%)",
+    "packageTitle": "Portrait 1 face, 12 × 15 in",
+    "packagePrice": "150.00",
+    "amount": "75.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-12x15-2f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "12x15-2f",
+    "title": "Commission balance – Portrait 2 faces, 12 × 15 in (50%)",
+    "packageTitle": "Portrait 2 faces, 12 × 15 in",
+    "packagePrice": "300.00",
+    "amount": "150.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-12x15-3f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "12x15-3f",
+    "title": "Commission balance – Portrait 3 faces, 12 × 15 in (50%)",
+    "packageTitle": "Portrait 3 faces, 12 × 15 in",
+    "packagePrice": "450.00",
+    "amount": "225.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-12x15-4f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "12x15-4f",
+    "title": "Commission balance – Portrait 4 faces, 12 × 15 in (50%)",
+    "packageTitle": "Portrait 4 faces, 12 × 15 in",
+    "packagePrice": "600.00",
+    "amount": "300.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-24x15-1f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "24x15-1f",
+    "title": "Commission balance – Portrait 1 face, 24 × 15 in (50%)",
+    "packageTitle": "Portrait 1 face, 24 × 15 in",
+    "packagePrice": "250.00",
+    "amount": "125.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-24x15-2f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "24x15-2f",
+    "title": "Commission balance – Portrait 2 faces, 24 × 15 in (50%)",
+    "packageTitle": "Portrait 2 faces, 24 × 15 in",
+    "packagePrice": "500.00",
+    "amount": "250.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-24x15-3f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "24x15-3f",
+    "title": "Commission balance – Portrait 3 faces, 24 × 15 in (50%)",
+    "packageTitle": "Portrait 3 faces, 24 × 15 in",
+    "packagePrice": "750.00",
+    "amount": "375.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-single-portrait-24x15-4f": {
+    "type": "deposit",
+    "package": "single-portrait",
+    "option": "24x15-4f",
+    "title": "Commission balance – Portrait 4 faces, 24 × 15 in (50%)",
+    "packageTitle": "Portrait 4 faces, 24 × 15 in",
+    "packagePrice": "1000.00",
+    "amount": "500.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-small-landscape-12x15": {
+    "type": "deposit",
+    "package": "small-landscape",
+    "option": "12x15",
+    "title": "Commission balance – Landscape 12 × 15 in (50%)",
+    "packageTitle": "Landscape 12 × 15 in",
+    "packagePrice": "250.00",
+    "amount": "125.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-small-landscape-24x15": {
+    "type": "deposit",
+    "package": "small-landscape",
+    "option": "24x15",
+    "title": "Commission balance – Landscape 24 × 15 in (50%)",
+    "packageTitle": "Landscape 24 × 15 in",
+    "packagePrice": "450.00",
+    "amount": "225.00",
+    "currency": "USD",
+    "stage": "balance"
+  },
+  "balance-small-landscape-24x48": {
+    "type": "deposit",
+    "package": "small-landscape",
+    "option": "24x48",
+    "title": "Commission balance – Landscape 24 × 48 in (50%)",
+    "packageTitle": "Landscape 24 × 48 in",
+    "packagePrice": "1000.00",
+    "amount": "500.00",
+    "currency": "USD",
+    "stage": "balance"
   }
 };

@@ -16,7 +16,7 @@ export async function cartCheckout(request,env) {
     if(env.CART_CHECKOUT_ENABLED!=='true'||!env.CART_ORDERS)return reply({enabled:false,version:catalogVersion,products:[]});
     const products=await Promise.all(Object.entries(catalog).filter(([id])=>paymentMethods(env,id).length).map(async([id,p])=>({id,title:p.title,amount:p.amount,methods:paymentMethods(env,id),status:await env.PAINTING_STOCK.getByName(id).status()})));
     for(const [id,p] of Object.entries(prints))if(paymentMethods(env,id).length)products.push({...publicCartItem({...p,quantity:1}),methods:paymentMethods(env,id),status:'available'});
-    for(const [id,d] of Object.entries(deposits))if(paymentMethods(env,id).length)products.push({id,type:'deposit',title:d.title,amount:d.amount,quantity:1,commission:{package:d.package,packageTitle:d.packageTitle,packagePrice:d.packagePrice},methods:paymentMethods(env,id),status:'available'});
+    for(const [id,d] of Object.entries(deposits))if(paymentMethods(env,id).length)products.push({id,type:'deposit',title:d.title,amount:d.amount,quantity:1,commission:{package:d.package,...(d.stage?{stage:d.stage}:{}),packageTitle:d.packageTitle,packagePrice:d.packagePrice},methods:paymentMethods(env,id),status:'available'});
     const squareReady=products.some(product=>product.methods.includes('square'));
     return reply({enabled:true,version:catalogVersion,products,...(squareReady?{square:{applicationId:env.SQUARE_APPLICATION_ID,locationId:env.SQUARE_LOCATION_ID,mode:env.SQUARE_MODE}}:{})});
   }

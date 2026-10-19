@@ -191,10 +191,13 @@ const dollars = value => (value / 100).toFixed(2);
 export const pacificDate = iso => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso));
 export const docNumberFor = orderId => `VA-${String(orderId).replace(/^cart:/, '').replace(/[^A-Za-z0-9]/g, '').slice(0, 18)}`;
 
+export const saleItemKind = item => item.type === 'print' ? 'print' : item.type === 'deposit' ? (item.commission?.stage === 'balance' ? 'balance' : 'deposit') : 'original';
 export const ITEM_DEFAULTS = {
   original: { env: 'QBO_ITEM_ORIGINAL', name: 'Original painting', account: 'income' },
   print: { env: 'QBO_ITEM_PRINT', name: 'Fine-art print', account: 'income' },
   deposit: { env: 'QBO_ITEM_DEPOSIT', name: 'Commission deposit', account: 'deposit' },
+  // Commission balance (the second 50%): same income account as deposits (cash basis, studio-tracker #76).
+  balance: { env: 'QBO_ITEM_BALANCE', name: 'Commission balance', account: 'deposit' },
   shipping: { env: 'QBO_ITEM_SHIPPING', name: 'Shipping', account: 'shipping' },
   tax: { env: 'QBO_ITEM_TAX', name: 'Sales tax collected', account: 'tax' },
   discount: { env: 'QBO_ITEM_DISCOUNT', name: 'Discounts', account: 'discount' },
@@ -260,11 +263,11 @@ export function salesReceiptPayload(receipt, refs) {
   });
   const lines = []; let discount = 0;
   for (const item of receipt.items) {
-    const kind = item.type === 'print' ? 'print' : item.type === 'deposit' ? 'deposit' : 'original';
+    const kind = saleItemKind(item);
     const qty = Number.isInteger(item.quantity) && item.quantity > 0 ? item.quantity : 1;
     const list = cents(item.listAmount ?? item.amount), paid = cents(item.amount);
     if (!Number.isFinite(list) || !Number.isFinite(paid) || list < 0 || paid < 0) throw new QboError('Sale item amount is invalid', { kind: 'validation' });
-    const label = kind === 'deposit' ? `Commission deposit — ${item.commission?.packageTitle || item.title}` : kind === 'print' ? `Fine-art print — ${item.title}` : `Original painting — ${item.title}`;
+    const label = kind === 'balance' ? `Commission balance — ${item.commission?.packageTitle || item.title}` : kind === 'deposit' ? `Commission deposit — ${item.commission?.packageTitle || item.title}` : kind === 'print' ? `Fine-art print — ${item.title}` : `Original painting — ${item.title}`;
     lines.push(line(kind, list * qty, `${label} (${item.id})`, qty));
     discount += (list - paid) * qty;
   }
