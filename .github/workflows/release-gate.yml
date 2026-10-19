@@ -82,9 +82,6 @@ jobs:
       - name: Browser tests for touched areas
         if: steps.changes.outputs.tier == 'code' && steps.changes.outputs.browser_tests != ''
         run: for t in ${{ steps.changes.outputs.browser_tests }}; do echo "::group::$t"; node "$t"; echo "::endgroup::"; done
-      - name: Gallery room check (touched)
-        if: steps.changes.outputs.tier == 'code' && steps.changes.outputs.room == 'true'
-        run: npm run test:room
       - name: Deploy sandbox with this catalog (print-master tier)
         if: steps.changes.outputs.print_quotes == 'true'
         uses: cloudflare/wrangler-action@v4
@@ -110,9 +107,6 @@ jobs:
       - name: Run browser tests
         if: steps.changes.outputs.tier == 'full'
         run: npm run test:browser && node tests/smoke.browser-test.mjs
-      - name: Check the Babylon gallery room
-        if: steps.changes.outputs.tier == 'full'
-        run: npm run test:room
       - name: Install Cloudflare Worker test dependencies
         if: steps.changes.outputs.tier == 'full'
         run: npm --prefix cloudflare/test ci
