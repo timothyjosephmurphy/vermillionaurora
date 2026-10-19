@@ -70,15 +70,15 @@ const workerFirst=async()=>{
   return config.assets.run_worker_first;
 };
 test('run_worker_first lists exactly the routes the Worker serves, so static files never invoke it',async()=>{
-  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,CATALOG_WORKER_FIRST,CART_API,SHOP_REDIRECTS}=await import('../worker/site.mjs');
+  const {QUICKBOOKS_API,TESTIMONIALS_API,ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX,CATALOG_WORKER_FIRST,CART_API,SHOP_REDIRECTS}=await import('../worker/site.mjs');
   const patterns=await workerFirst();
   assert.ok(Array.isArray(patterns)&&patterns.length>0&&patterns.length<=100,'an explicit pattern list, not true');
   assert.ok(patterns.every(p=>p.startsWith('/')&&!p.startsWith('!/')),'no negative patterns needed');
   const matches=(path)=>patterns.some(p=>globRe(p).test(path));
   // Every route the Worker handles runs the Worker first.
-  for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH])assert.ok(matches(path),path+' must run the Worker');
+  for(const path of [...QUICKBOOKS_API,TESTIMONIALS_API+'approved',TESTIMONIALS_API+'submit',TESTIMONIALS_API+'photo/abc/1',TESTIMONIALS_API+'video/abc/poster',TESTIMONIALS_API+'owner',ORIGINALS_API,APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'tj'])assert.ok(matches(path),path+' must run the Worker');
   // Every pattern is a route the Worker actually handles (no stray patterns).
-  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,TESTIMONIALS_API+'*',...CATALOG_WORKER_FIRST]);
+  const handled=new Set([...QUICKBOOKS_API,ORIGINALS_API,CART_API+'*',...Object.keys(SHOP_REDIRECTS),APPLE_PAY_ASSOCIATION_PATH,NOSTR_JSON_PATH,LNURLP_PREFIX+'*',TESTIMONIALS_API+'*',...CATALOG_WORKER_FIRST]);
   for(const p of patterns)assert.ok(handled.has(p),p+' is not a Worker route');
   assert.equal(patterns.length,handled.size);
   // Static files, pages and admin pages are served by the assets layer, not the Worker.
@@ -166,4 +166,17 @@ test('NIP-05 nostr.json: exact body, JSON content type, CORS, 200 with no redire
     assert.equal(r.status,200);assert.equal(r.headers.get('content-type'),'application/json');assert.equal(r.headers.get('access-control-allow-origin'),'*');
     assert.equal(await r.text(),JSON.stringify({names:{tj:hex,_:hex}}));
   }
+});
+
+test('Lightning address tj@tjm.art: Alby payRequest passed through unchanged, CORS, short cache; LNURL errors otherwise',async()=>{
+  const {lnurlp,LNURLP_NAMES}=await import('../worker/site.mjs');
+  const alby=JSON.stringify({status:'OK',tag:'payRequest',callback:'https://getalby.com/lnurlp/invincibleflamingo368691/callback',minSendable:1000,maxSendable:10000000000,metadata:'[]',allowsNostr:true,nostrPubkey:'79f00d3f5a19ec806189fcab03c1be4ff81d18ee4f653c88fac41fe03570f432'});
+  let asked;
+  const ok=await lnurlp('tj',async(u)=>{asked=u;return new Response(alby,{headers:{'content-type':'application/json'}});});
+  assert.equal(asked,LNURLP_NAMES.tj);assert.equal(ok.status,200);assert.equal(await ok.text(),alby);
+  assert.equal(ok.headers.get('content-type'),'application/json');assert.equal(ok.headers.get('access-control-allow-origin'),'*');assert.equal(ok.headers.get('cache-control'),'public, max-age=300');
+  for(const f of [async()=>{throw Error('offline');},async()=>new Response('oops',{status:500}),async()=>new Response('<html>')]){
+    const r=await lnurlp('tj',f);assert.equal(r.status,502);const j=await r.json();assert.equal(j.status,'ERROR');assert.ok(j.reason);assert.equal(r.headers.get('access-control-allow-origin'),'*');
+  }
+  for(const n of ['bob','toString','']){const r=await lnurlp(n,async()=>{throw Error('must not fetch');});assert.equal(r.status,404);assert.equal((await r.json()).status,'ERROR');}
 });
