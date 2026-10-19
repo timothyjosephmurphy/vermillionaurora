@@ -43,7 +43,7 @@
   }, 1000);
   addEventListener('error', function (e) { if (!(window.__frames > 0) && /WebGL|context/i.test(String(e.message))) window.__playFallback('nostart'); });
 })();
-</script>  <script type="module" crossorigin src="/play/assets/index-_v_6kuOM.js"></script>
+</script>  <script type="module" crossorigin src="/play/assets/index-DpgBE95I.js"></script>
   <link rel="stylesheet" crossorigin href="/play/assets/index-BM26dtda.css">
 </head><body>
 <!-- museum-gates:arrive -->
@@ -95,7 +95,7 @@ function tunnel(o) {
   function mc() { return window.__museumCart || null; } function cnt() { var c = mc(); try { return c ? c.count() : 0; } catch (e) { return 0; } }
   function goCart() { var c = mc(); if (!c) return; if (panel) panel.style.display = 'none'; paused = false; try { c.go(); } catch (e) {} }
   var css = 'font:600 14px Georgia,serif;letter-spacing:.5px;border-radius:16px;cursor:pointer;';
-  var cb = null; function cartBtn() { if (cb || !document.body) return; cb = document.createElement('button'); cb.type = 'button'; cb.id = 'museum-cartbtn'; cb.setAttribute('aria-label', 'Go to cart');
+  var cb = null; function cartBtn() { if (cb || !document.body) return; cb = document.createElement('button'); cb.type = 'button'; cb.id = 'museum-cartbtn'; cb.setAttribute('aria-label', 'Exit to cart');
     cb.style.cssText = css + 'position:fixed;top:calc(8px + env(safe-area-inset-top));left:calc(168px + env(safe-area-inset-left));z-index:40;padding:6px 12px;border:1px solid rgba(241,223,168,.45);background:rgba(10,6,24,.62);color:#f1dfa8;font-size:13px';
     ['mousedown', 'touchstart'].forEach(function (ev) { cb.addEventListener(ev, function (e) { e.stopPropagation(); }, { passive: true }); });
     cb.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); if (!cnt()) { cb.__empty = true; cb.textContent = 'Cart is empty'; setTimeout(function () { cb.__empty = false; upd(); }, 1400); return; } goCart(); }); document.body.appendChild(cb); upd(); }
@@ -103,7 +103,7 @@ function tunnel(o) {
   setInterval(function () { if (mc()) { cartBtn(); upd(); } }, 700);
   var panel = null, paused = false, primary = null;
   function fillPanel() { var n = cnt(), go = panel.querySelector('[data-go]'), rs = panel.querySelector('[data-resume]'), msg = panel.querySelector('[data-msg]');
-    if (n) { go.style.display = 'block'; go.textContent = 'Go to cart (' + n + ')'; msg.textContent = ''; primary = go; rs.style.background = 'transparent'; }
+    if (n) { go.style.display = 'block'; go.textContent = 'Exit to cart (' + n + ')'; msg.textContent = ''; primary = go; rs.style.background = 'transparent'; }
     else { go.style.display = 'none'; msg.textContent = 'Cart is empty'; primary = rs; rs.style.background = '#f1dfa8'; }
     rs.style.color = n ? '#f1dfa8' : '#160c28'; }
   function showPanel() { if (coarse || !mc() || mc().leaving || window.__gateLeft || window.__reading) return false;
@@ -112,7 +112,7 @@ function tunnel(o) {
       panel.innerHTML = '<div role="dialog" aria-label="Paused" style="min-width:250px;padding:18px 22px;border-radius:14px;background:rgba(14,8,30,.92);border:1px solid rgba(241,223,168,.4);text-align:center;color:#f1dfa8;font:600 15px Georgia,serif">' +
         '<div style="letter-spacing:3px;font-size:13px;opacity:.75;margin-bottom:10px">PAUSED</div><div data-msg style="margin-bottom:10px"></div>' +
         '<button type="button" data-go style="' + css + 'display:block;width:100%;padding:10px 14px;margin:0 0 8px;border:0;background:#f1dfa8;color:#160c28;font-size:16px"></button>' +
-        '<button type="button" data-resume style="' + css + 'display:block;width:100%;padding:8px 14px;border:1px solid rgba(241,223,168,.5)">Resume</button></div>';
+        '<button type="button" data-resume style="' + css + 'display:block;width:100%;padding:8px 14px;border:1px solid rgba(241,223,168,.5)">Back to the gallery</button></div>';
       document.body.appendChild(panel);
       panel.addEventListener('mousedown', function (e) { e.stopPropagation(); }, true);
       panel.querySelector('[data-go]').addEventListener('click', function (e) { e.stopPropagation(); goCart(); });
