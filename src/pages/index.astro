@@ -13,6 +13,7 @@ const spHero=[...strawberryPaintings].map(p=>({p,pr:strawberryProducts.find(x=>x
 const spSrcset=d=>d.widths.map(w=>`${d.base}-${w}.webp ${w}w`).join(', ');
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import EmailSignup from '../components/EmailSignup.astro';
 import ProductCard from '../components/ProductCard.astro';
 import PrintWallCard from '../components/PrintWallCard.astro';
 import GalleryRoomCard from '../components/GalleryRoomCard.astro';
@@ -322,6 +323,7 @@ import { printsFromLabel, showBuy, lowestPrintPrice } from '../data/card-commerc
             </form>
           </div>
         </section>
+        <EmailSignup id="home-email" text="New paintings go to subscribers first, a few times a year. Unsubscribe anytime." />
       </main>
 
       <SiteFooter />
