@@ -175,11 +175,11 @@ import SiteFooter from '../../components/SiteFooter.astro';
         imageLink.append(image);
         const story = document.createElement('div');
         story.className = 'journal-copy';
-        for (const paragraphText of post.text.split(/\n\s*\n/).filter(Boolean)) {
-          const paragraph = document.createElement('p');
-          paragraph.textContent = paragraphText;
-          story.append(paragraph);
-        }
+        // Compact card: a short description only; the full text lives on the painting page / Nostr note.
+        const firstParagraph = (post.text.split(/\n\s*\n/).find(Boolean) || '').trim();
+        const summary = document.createElement('p');
+        summary.textContent = firstParagraph.length > 180 ? firstParagraph.slice(0, 177).replace(/\s+\S*$/, '') + '…' : firstParagraph;
+        story.append(summary);
         const links = document.createElement('div');
         links.className = 'journal-links';
         const product = document.createElement('a');
@@ -220,23 +220,33 @@ import SiteFooter from '../../components/SiteFooter.astro';
     </script>
   </body>
 </html>
-<style>
-  .journal{max-width:980px;padding-block:40px 72px}
-  .journal-heading{max-width:760px;margin:0 auto 38px;text-align:center}
+<style is:global>
+  /* Compact story cards for every post, static and Nostr (studio-tracker #217): about three per screen. */
+  .journal{max-width:980px;padding-block:32px 64px}
+  .journal-heading{max-width:760px;margin:0 auto 24px;text-align:center}
   .journal-heading .eyebrow{margin:0 0 10px}
-  .journal-heading h1{font:600 clamp(2.5rem,6vw,4.6rem)/1.04 "Cormorant Garamond",serif;margin:0 0 16px}
-  .journal-heading>p:last-child{max-width:620px;margin:0 auto;color:var(--muted);line-height:1.75}
+  .journal-heading h1{font:600 clamp(2.3rem,5vw,4rem)/1.04 "Cormorant Garamond",serif;margin:0 0 12px}
+  .journal-heading>p:last-child{max-width:620px;margin:0 auto;color:var(--muted);line-height:1.7}
   .journal-status{min-height:1.5em;text-align:center;color:var(--muted);font-size:.92rem}
-  .journal-entries{display:grid;gap:36px}
-  .journal-entry{display:grid;grid-template-columns:minmax(220px,.82fr) minmax(0,1.18fr);gap:14px 28px;align-items:start;padding:26px 0;border-top:1px solid var(--line)}
-  .journal-entry>header{grid-column:2;display:grid;gap:6px}
-  .journal-entry h2{font:600 clamp(1.8rem,3.5vw,2.6rem)/1.1 "Cormorant Garamond",serif;margin:0}
-  .journal-entry time{font-size:.82rem;color:var(--muted)}
-  .journal-image-link{grid-column:1;grid-row:1 / span 3;display:block;background:#eee7dd;border-radius:8px;overflow:hidden}
-  .journal-image-link img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain}
-  .journal-copy{grid-column:2;line-height:1.8}
-  .journal-copy p{margin:0 0 16px}
-  .journal-links{grid-column:2;display:flex;flex-wrap:wrap;gap:18px;font-size:.9rem}
+  .journal-entries{display:grid;gap:14px}
+  .journal-entry{display:grid;grid-template-columns:260px minmax(0,1fr);grid-template-rows:auto auto 1fr;gap:6px 22px;align-items:start;padding:14px;border:1px solid var(--line,#e3d9cb);border-radius:10px;background:#fffcf6}
+  .journal-entry>header{grid-column:2;display:grid;gap:2px}
+  .journal-entry h2{font:600 1.55rem/1.15 "Cormorant Garamond",serif;margin:0}
+  .journal-entry h2 a{text-decoration:none}
+  .journal-entry time{font-size:.8rem;color:var(--muted)}
+  .journal-image-link{grid-column:1;grid-row:1 / span 3;display:block;height:165px;background:#eee7dd;border-radius:6px;overflow:hidden}
+  .journal-image-link img{display:block;width:100%;height:100%;object-fit:cover}
+  .journal-copy{grid-column:2;font-size:.93rem;line-height:1.5}
+  .journal-copy p{margin:0 0 6px}
+  .journal-copy p:first-child{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .journal-links{grid-column:2;display:flex;flex-wrap:wrap;gap:14px;font-size:.88rem}
   .journal-links a{text-decoration:underline;text-underline-offset:4px}
-  @media(max-width:680px){.journal{padding-block:24px 52px}.journal-entry{grid-template-columns:1fr;gap:14px}.journal-entry>header,.journal-image-link,.journal-copy,.journal-links{grid-column:1}.journal-image-link{grid-row:auto;max-width:480px}.journal-entry h2{font-size:2.05rem}}
+  @media(max-width:680px){
+    .journal{padding-block:20px 48px}
+    .journal-entry{grid-template-columns:96px minmax(0,1fr);grid-template-rows:auto auto;gap:6px 12px;padding:10px}
+    .journal-image-link{grid-row:1;height:96px}
+    .journal-entry h2{font-size:1.15rem}
+    .journal-copy,.journal-links{grid-column:1 / -1;font-size:.85rem}
+    .journal-copy p:first-child{-webkit-line-clamp:2}
+  }
 </style>
