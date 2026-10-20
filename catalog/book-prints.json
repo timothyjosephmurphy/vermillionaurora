@@ -42550,6 +42550,10 @@
                 "height": 1785
               }
             }
+          },
+          "priceOverride": {
+            "amount": "55.00",
+            "reason": "TJ, Oct 20 2026: large print sells at $55 instead of the $50 bordered quote (this print only)."
           }
         }
       },

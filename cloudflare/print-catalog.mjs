@@ -1,5 +1,5 @@
 // Generated from catalog/prints.json and verified paper mappings.
-export const printVersion="3116613f6e664847b5a1";
+export const printVersion="7a07079bab1427379910";
 export default {
   "print-el-zonte-at-sunrise-full": {
     "id": "print-el-zonte-at-sunrise-full",
@@ -44793,7 +44793,7 @@ export default {
     "productId": "sunrise-on-rainier-from-denny-blaine",
     "title": "Sunrise on Rainier from Denny Blaine — Large print",
     "artworkTitle": "Sunrise on Rainier from Denny Blaine",
-    "amount": "50.00",
+    "amount": "55.00",
     "currency": "USD",
     "sku": "5M144M9S15.53X5.95",
     "scale": 1,
