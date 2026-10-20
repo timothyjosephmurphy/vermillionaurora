@@ -170,10 +170,10 @@ test('NIP-05 nostr.json: exact body, JSON content type, CORS, 200 with no redire
 
 test('Lightning address tj@tjm.art: BTCPay payRequest passed through unchanged, CORS, short cache; LNURL errors otherwise',async()=>{
   const {lnurlp,LNURLP_NAMES}=await import('../worker/site.mjs');
-  const alby=JSON.stringify({status:'OK',tag:'payRequest',callback:'https://btcpay884215.lndyn.com/BTC/UILNURL/pay/lnaddress/tj',minSendable:1000,maxSendable:612000000000,metadata:'[]'});
+  const alby=JSON.stringify({status:'OK',tag:'payRequest',callback:'https://pay.tjm.art/BTC/UILNURL/pay/lnaddress/tj',minSendable:1000,maxSendable:612000000000,metadata:'[]'});
   let asked;
   const ok=await lnurlp('tj',async(u)=>{asked=u;return new Response(alby,{headers:{'content-type':'application/json'}});});
-  assert.equal(asked,LNURLP_NAMES.tj);assert.equal(LNURLP_NAMES.tj,'https://btcpay884215.lndyn.com/.well-known/lnurlp/tj');assert.equal(ok.status,200);assert.equal(await ok.text(),alby);
+  assert.equal(asked,LNURLP_NAMES.tj);assert.equal(LNURLP_NAMES.tj,'https://pay.tjm.art/.well-known/lnurlp/tj');assert.equal(ok.status,200);assert.equal(await ok.text(),alby);
   assert.equal(ok.headers.get('content-type'),'application/json');assert.equal(ok.headers.get('access-control-allow-origin'),'*');assert.equal(ok.headers.get('cache-control'),'public, max-age=300');
   for(const f of [async()=>{throw Error('offline');},async()=>new Response('oops',{status:500}),async()=>new Response('<html>')]){
     const r=await lnurlp('tj',f);assert.equal(r.status,502);const j=await r.json();assert.equal(j.status,'ERROR');assert.ok(j.reason);assert.equal(r.headers.get('access-control-allow-origin'),'*');

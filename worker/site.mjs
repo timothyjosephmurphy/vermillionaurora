@@ -98,7 +98,7 @@ export function nostrJson() {
 // Lightning address tj@tjm.art, backed by TJ's BTCPay Server (Store > Lightning > Lightning Address 'tj').
 // BTCPay's payRequest JSON is passed through unchanged; its callback issues the invoices.
 export const LNURLP_PREFIX = '/.well-known/lnurlp/';
-export const LNURLP_NAMES = { tj: 'https://btcpay884215.lndyn.com/.well-known/lnurlp/tj' };
+export const LNURLP_NAMES = { tj: 'https://pay.tjm.art/.well-known/lnurlp/tj' };
 const LNURLP_HEADERS = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=300' };
 export async function lnurlp(name, fetcher = fetch) {
   const json = (obj, status) => new Response(JSON.stringify(obj), { status, headers: { ...LNURLP_HEADERS, 'Cache-Control': 'no-store' } });

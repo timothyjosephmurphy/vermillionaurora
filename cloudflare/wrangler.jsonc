@@ -13,7 +13,7 @@
     "SHIPPO_AUTO_LABEL_ENABLED": "true",
     "SHIPPO_CARRIER_ALLOWLIST": "UPS",
     "CHECKOUT_PILOT_ENABLED": "false",
-    "BTCPAY_URL": "https://btcpay884215.lndyn.com",
+    "BTCPAY_URL": "https://pay.tjm.art",
     "CART_CHECKOUT_ENABLED": "true",
     "COMMISSION_DEPOSITS_ENABLED": "true",
     "PRINT_CHECKOUT_ENABLED": "true",
