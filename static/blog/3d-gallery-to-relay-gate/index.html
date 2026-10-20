@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From a One-Room Dungeon to Relay Gate | TJ Murphy</title>
+  <meta name="description" content="How my 3D gallery at tjm.art/play grew from a one-room dungeon into museums, easter eggs and a gallery for Chase Toole, and why it led me to Relay Gate, an open-source gallery tool on Nostr and Bitcoin.">
+  <link rel="canonical" href="https://tjm.art/blog/3d-gallery-to-relay-gate/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="TJ Murphy">
+  <meta property="og:title" content="From a One-Room Dungeon to Relay Gate">
+  <meta property="og:description" content="How my 3D gallery at tjm.art/play grew from a one-room dungeon into museums, easter eggs and a gallery for Chase Toole, and why it led me to Relay Gate, an open-source gallery tool on Nostr and Bitcoin.">
+  <meta property="og:url" content="https://tjm.art/blog/3d-gallery-to-relay-gate/">
+  <meta property="og:image" content="https://img.tjm.art/social/3d-gallery-to-relay-gate-120ddab553.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The first view inside the TJM Gallery 3D dungeon: a dark stone hall lined with lit paintings, a hologram of TJ playing guitar on a platform, and the checkout gate">
+  <meta property="article:published_time" content="2026-10-20">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="From a One-Room Dungeon to Relay Gate">
+  <meta name="twitter:description" content="How my 3D gallery at tjm.art/play grew from a one-room dungeon into museums, easter eggs and a gallery for Chase Toole, and why it led me to Relay Gate, an open-source gallery tool on Nostr and Bitcoin.">
+  <meta name="twitter:image" content="https://img.tjm.art/social/3d-gallery-to-relay-gate-120ddab553.jpg">
+  <meta name="theme-color" content="#f5f0e8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f5f0e8;--ink:#2c2924;--muted:#6f685e;--red:#9c3e32;--line:#d8cfc2;--gold:#c5a46d}
+    *{box-sizing:border-box}
+    html{background:var(--paper)}
+    body{margin:0;color:var(--ink);font:16px/1.78 Inter,system-ui,sans-serif;background:radial-gradient(ellipse at 80% 0%,#eadfcf 0,transparent 34rem),var(--paper)}
+    a{color:inherit}
+    .topbar{max-width:1200px;margin:auto;padding:24px clamp(20px,5vw,68px);display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);font-size:.77rem;letter-spacing:.12em;text-transform:uppercase}
+    .topbar a{text-decoration:none}.brand{font-weight:600;color:var(--red)}
+    .hero{max-width:1000px;margin:auto;padding:clamp(56px,9vw,112px) 24px 56px;text-align:center}
+    h1,h2{font-family:"Cormorant Garamond",Georgia,serif}
+    h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:500;line-height:.98;letter-spacing:-.035em;max-width:900px;margin:0 auto 26px}
+    .byline{color:var(--muted);font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;margin:0}
+    .article{max-width:808px;padding:0 24px 100px;margin:auto}
+    h2{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1;font-weight:500;margin:64px 0 22px;letter-spacing:-.02em}
+    p{margin:0 0 1.25em}
+    .article p a{color:var(--red);text-underline-offset:3px}
+    figure.photo{margin:36px 0;background:#e9e0d4}
+    figure.photo img{display:block;width:100%;height:auto}
+    .article ul{padding-left:1.2em;margin:0 0 1.25em}.article li{margin:0 0 .35em}.article li a{color:var(--red);text-underline-offset:3px}
+    figure.photo.portrait img{width:auto;max-width:100%;max-height:82vh;margin:auto}
+    footer{border-top:1px solid var(--line);max-width:1200px;margin:auto;padding:28px 24px 42px;display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:.78rem}
+    @media(max-width:700px){.topbar{padding:17px 20px}.hero{padding:56px 20px 40px}.article{padding:0 19px 66px}figure.photo{margin:28px -19px}footer{padding:22px 20px;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="Article navigation"><a class="brand" href="/">TJM.art · Vermillion Aurora</a><a href="/blog/">← Stories from the studio</a></nav>
+  <header class="hero">
+    <h1>From a One-Room Dungeon to Relay Gate</h1>
+    <p class="byline">By TJ Murphy · <time datetime="2026-10-20">October 20, 2026</time></p>
+  </header>
+  <main class="article">
+    <figure class="photo"><img src="/display/3d-gallery-slipgate-a9733efa91-960.webp" srcset="/display/3d-gallery-slipgate-a9733efa91-480.webp 480w, /display/3d-gallery-slipgate-a9733efa91-960.webp 960w, /display/3d-gallery-slipgate-a9733efa91-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="The gate room, with glowing gates to Orsay, Bilbao, Uffizi, Guggenheim NY and the Hyperspace Realm" fetchpriority="high" decoding="async"></figure>
+    <p>I hung my paintings in a torch-lit dungeon, and then machine elves started climbing out of them. That dungeon took me about a week. What came out of it is bigger: Relay Gate, an open-source tool that will let any artist turn their website into a gallery people can walk through, with gates to other artists' galleries.</p>
+    <h2>Two first rooms</h2>
+    <p>My first 3D gallery went live on tjm.art on Oct 10, a single room built with Babylon. The dungeon at tjm.art/play was a separate build. I launched it on Oct 15. It's Doom-style, meaning you walk through it in first person like the old 1990s shooter, and it started from a three.js example, with my paintings pulled from my shop pages and pixel-art textures, torches and elves made in code. The two ran side by side until I retired the Babylon room and pointed it to /play.</p>
+    <figure class="photo"><img src="/display/3d-gallery-entrance-df6a5eb85e-960.webp" srcset="/display/3d-gallery-entrance-df6a5eb85e-480.webp 480w, /display/3d-gallery-entrance-df6a5eb85e-960.webp 960w, /display/3d-gallery-entrance-df6a5eb85e-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="The entrance of the TJM Gallery dungeon hall, with a hologram of me and the checkout gate" loading="lazy" decoding="async"></figure>
+    <p>Next I gave it two tool slots, a Paint Gun and a Buy Wand. On Oct 16 I gave it a more realistic look, with quality settings that adjust to your device. The same day I added video holograms of myself in all four rooms, hologram volume that changes with distance, a mute button, a button back to tjm.art, and my three art books on lecterns that you can open and read.</p>
+    <figure class="photo"><img src="/display/3d-gallery-hall-of-paintings-c4d4dd9679-960.webp" srcset="/display/3d-gallery-hall-of-paintings-c4d4dd9679-480.webp 480w, /display/3d-gallery-hall-of-paintings-c4d4dd9679-960.webp 960w, /display/3d-gallery-hall-of-paintings-c4d4dd9679-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="A torch-lit stone hall lined with my paintings" loading="lazy" decoding="async"></figure>
+    <h2>Adding things, then making them better</h2>
+    <p>Oct 17 is when it turned into a game. I added paint splats and machine elves: little floppy-hat creatures with arms and legs that swarm out of the art. Some of the early game text had edgy wording, and I took all of it out. Now the screen says "Machine elves deployed."</p>
+    <figure class="photo"><img src="/display/3d-gallery-machine-elves-1b8bb27e69-960.webp" srcset="/display/3d-gallery-machine-elves-1b8bb27e69-480.webp 480w, /display/3d-gallery-machine-elves-1b8bb27e69-960.webp 960w, /display/3d-gallery-machine-elves-1b8bb27e69-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="A swarm of machine elves climbing out of the paintings" loading="lazy" decoding="async"></figure>
+    <p>At first the elves froze you in place. I didn't like that, so I made them chase you instead, and later made the chase fairer: they now climb out of the paintings behind you. Every third swarm drags you into the Hyperspace Realm, an other-world you visit for about 18 seconds before landing back in the gallery.</p>
+    <figure class="photo"><img src="/display/3d-gallery-realm-giant-elf-summoning-a8e648f7dd-960.webp" srcset="/display/3d-gallery-realm-giant-elf-summoning-a8e648f7dd-480.webp 480w, /display/3d-gallery-realm-giant-elf-summoning-a8e648f7dd-960.webp 960w, /display/3d-gallery-realm-giant-elf-summoning-a8e648f7dd-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="A giant machine elf erupts from the floor on the way into the Hyperspace Realm" loading="lazy" decoding="async"></figure>
+    <p>The gravity gun lets you grab paintings, hang them and launch them. When I hang them, the layout saves, so I can rearrange my own gallery from inside it. A soup thermos replaced the paint gun. I added a glitter cannon and a leaf blower, and later gave the leaf blower enough force to knock elves back.</p>
+    <figure class="photo"><img src="/display/3d-gallery-gravity-gun-b0256285f4-960.webp" srcset="/display/3d-gallery-gravity-gun-b0256285f4-480.webp 480w, /display/3d-gallery-gravity-gun-b0256285f4-960.webp 960w, /display/3d-gallery-gravity-gun-b0256285f4-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="The gravity gun in front of a wall of sunset paintings" loading="lazy" decoding="async"></figure>
+    <figure class="photo"><img src="/display/3d-gallery-glitter-cannon-87f0c5cb22-960.webp" srcset="/display/3d-gallery-glitter-cannon-87f0c5cb22-480.webp 480w, /display/3d-gallery-glitter-cannon-87f0c5cb22-960.webp 960w, /display/3d-gallery-glitter-cannon-87f0c5cb22-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="The glitter cannon spraying confetti in the Burning Man and Bass Coast room" loading="lazy" decoding="async"></figure>
+    <p>The tool I care about most is the Buy Scanner. The wand became the Buy Scanner on Oct 17. Right now you point it at a painting to add it to your cart. I decided it should be on by default, with Esc opening the cart. I took prices off the plaques and the cart list, and plaques go beside paintings.</p>
+    <figure class="photo"><img src="/display/3d-gallery-buy-scanner-f9371f130f-960.webp" srcset="/display/3d-gallery-buy-scanner-f9371f130f-480.webp 480w, /display/3d-gallery-buy-scanner-f9371f130f-960.webp 960w, /display/3d-gallery-buy-scanner-f9371f130f-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="The Buy Scanner in hand, aimed at a wall of paintings" loading="lazy" decoding="async"></figure>
+    <p>Small things mattered too: sprinting (Shift, or a RUN toggle on phones), quiet footsteps that change with the floor, and a guide drone that finds its way through doorways.</p>
+    <h2>Easter eggs</h2>
+    <p>There are more than a dozen. You can find a money printer, bobbleheads, a pizza, a banana, a cardboard box, a starship, a slender figure, a guide bot that waits nearby with your cart, and more.</p>
+    <figure class="photo"><img src="/display/3d-gallery-egg-satoshi-desk-01820b9592-960.webp" srcset="/display/3d-gallery-egg-satoshi-desk-01820b9592-480.webp 480w, /display/3d-gallery-egg-satoshi-desk-01820b9592-960.webp 960w, /display/3d-gallery-egg-satoshi-desk-01820b9592-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="Easter egg: Satoshi&#x27;s desk with a laptop and a newspaper" loading="lazy" decoding="async"></figure>
+    <figure class="photo"><img src="/display/3d-gallery-egg-ostrich-6cd21e3831-960.webp" srcset="/display/3d-gallery-egg-ostrich-6cd21e3831-480.webp 480w, /display/3d-gallery-egg-ostrich-6cd21e3831-960.webp 960w, /display/3d-gallery-egg-ostrich-6cd21e3831-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="Easter egg: a purple ostrich next to the soup thermos" loading="lazy" decoding="async"></figure>
+    <h2>Gates to other museums</h2>
+    <p>Early on Oct 18 I added a gate room. Down a hallway, glowing gates lead to the Hyperspace Realm and to versions of the gallery set in the Musée d'Orsay, the Guggenheim Bilbao, the Uffizi and the Guggenheim in New York. Walking through one plays a hyperspace tunnel and drops you in the next place.</p>
+    <figure class="photo"><img src="/display/3d-gallery-musee-dorsay-161a685605-960.webp" srcset="/display/3d-gallery-musee-dorsay-161a685605-480.webp 480w, /display/3d-gallery-musee-dorsay-161a685605-960.webp 960w, /display/3d-gallery-musee-dorsay-161a685605-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1920" height="1080" alt="The Musée d&#x27;Orsay version of the gallery, under the great clock" loading="lazy" decoding="async"></figure>
+    <p>Under the hood, every gallery now runs on one shared codebase as a single app under tjm.art/play, with its own link for each museum, such as /play/orsay/. Images load from my own image server, and the site deploys through Cloudflare.</p>
+    <h2>Chase Toole's dungeon</h2>
+    <p>Chase and I had talked about a 3D walkthrough gallery for a long time, and he'd mentioned you could build one with something like three.js. When I showed him the dungeon, he said he wanted one, that it was awesome and a really useful tool.</p>
+    <p>So I built him a version. His dungeon went live on Oct 17 with 82 works in five rooms, running from his own website on his own Cloudflare account. It kept growing alongside mine: a sci-fi restyle, a <a href="https://chase-toole-site-7b3.pages.dev/play-montreal/">Montreal Museum of Fine Arts gallery</a> built from the real campus plan, an elf pianist at the Bourgie piano, sprint and footsteps, the gate room, and on Oct 19 the shared gallery code with the Buy Scanner and phone controls. Montreal uses Chase's own cart.</p>
+    <p>That was the moment it clicked. If the same gallery can run from my site and from Chase's, it can run for any artist.</p>
+    <h2>Relay Gate</h2>
+    <p>Relay Gate is an open-source project I'm working on, under the MIT license. The way I described it on Oct 18: a simple, very lightweight gallery that's populated just by giving a URL. Put the URL in, walk through the slipgate, and the paintings are on the walls.</p>
+    <p>The other half is connection, and that's built on Nostr. Nostr is an open network where your identity is a key you own, not an account a company can take away. Your gallery is signed with that key, so it stays yours wherever it's hosted. Relays are the servers that pass Nostr posts around, and anyone can run one, so galleries can be found without one central directory. A gate is a link from one artist's gallery to another's, tied to the artist's key rather than a web address.</p>
+    <p>The Bitcoin half is about getting paid directly. Lightning zaps are small Bitcoin tips sent straight from a viewer to the artist. Sales would go through the artist's own BTCPay or existing shop.</p>
+    <p>Visitors will open an ordinary link and see the art without an account or a wallet. The first visit will be calm: just the art, with the game parts behind a deliberate choice.</p>
+    <p>The plan also includes a forum: a shared place where artists show their work and talk with each other, and where anyone can come walk through and view art.</p>
+    <p>Right now the site importer works. Publishing to Nostr, the viewer, payments and the forum are planned, not built. Relay Gate is what I want to turn into something big: a network of artists who host their own galleries, link to each other, and get paid without a middleman.</p>
+    <p>Two things you can do now:</p>
+    <ul><li>Walk the gallery at <a href="https://tjm.art/play/">tjm.art/play</a>.</li><li>If you're an artist, follow or star the <a href="https://github.com/timothyjosephmurphy/relaygate">Relay Gate repo</a>.</li></ul>
+    <p>Follow along here on my blog, on Nostr and on X.</p>
+  </main>
+  <footer><span>© Vermillion Aurora Productions</span><a href="/blog/">Back to Stories from the Studio</a></footer>
+</body>
+</html>
